@@ -1,0 +1,2842 @@
+.class public Lorg/json/JSONArray;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Iterable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/lang/Iterable<",
+        "Ljava/lang/Object;",
+        ">;"
+    }
+.end annotation
+
+
+# instance fields
+.field private final myArrayList:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Object;)V
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lorg/json/JSONArray;-><init>()V
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->isArray()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-static {p1}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->ensureCapacity(I)V
+
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_0
+
+    invoke-static {p1, v1}, Ljava/lang/reflect/Array;->get(Ljava/lang/Object;I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lorg/json/JSONObject;->wrap(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    :cond_1
+    new-instance p0, Lorg/json/JSONException;
+
+    const-string p1, "JSONArray initial value should be a string or collection or array."
+
+    invoke-direct {p0, p1}, Lorg/json/JSONException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .registers 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    new-instance v0, Lorg/json/JSONTokener;
+
+    invoke-direct {v0, p1}, Lorg/json/JSONTokener;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {p0, v0}, Lorg/json/JSONArray;-><init>(Lorg/json/JSONTokener;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/Collection;)V
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "*>;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p1, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-interface {p1}, Ljava/util/Collection;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-static {v0}, Lorg/json/JSONObject;->wrap(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/json/JSONTokener;)V
+    .registers 7
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lorg/json/JSONArray;-><init>()V
+
+    invoke-virtual {p1}, Lorg/json/JSONTokener;->nextClean()C
+
+    move-result v0
+
+    const/16 v1, 0x5b
+
+    if-ne v0, v1, :cond_8
+
+    invoke-virtual {p1}, Lorg/json/JSONTokener;->nextClean()C
+
+    move-result v0
+
+    const-string v1, "Expected a \',\' or \']\'"
+
+    if-eqz v0, :cond_7
+
+    const/16 v2, 0x5d
+
+    if-eq v0, v2, :cond_6
+
+    invoke-virtual {p1}, Lorg/json/JSONTokener;->back()V
+
+    :goto_0
+    invoke-virtual {p1}, Lorg/json/JSONTokener;->nextClean()C
+
+    move-result v0
+
+    const/16 v3, 0x2c
+
+    if-ne v0, v3, :cond_0
+
+    invoke-virtual {p1}, Lorg/json/JSONTokener;->back()V
+
+    iget-object v0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    sget-object v4, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {p1}, Lorg/json/JSONTokener;->back()V
+
+    iget-object v0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Lorg/json/JSONTokener;->nextValue()Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :goto_1
+    invoke-virtual {p1}, Lorg/json/JSONTokener;->nextClean()C
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    if-eq v0, v3, :cond_2
+
+    if-ne v0, v2, :cond_1
+
+    goto :goto_2
+
+    :cond_1
+    invoke-virtual {p1, v1}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_2
+    invoke-virtual {p1}, Lorg/json/JSONTokener;->nextClean()C
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    if-ne v0, v2, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    invoke-virtual {p1}, Lorg/json/JSONTokener;->back()V
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p1, v1}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_5
+    invoke-virtual {p1, v1}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_6
+    :goto_2
+    return-void
+
+    :cond_7
+    invoke-virtual {p1, v1}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;
+
+    move-result-object p0
+
+    throw p0
+
+    :cond_8
+    const-string p0, "A JSONArray text must start with \'[\'"
+
+    invoke-virtual {p1, p0}, Lorg/json/JSONTokener;->syntaxError(Ljava/lang/String;)Lorg/json/JSONException;
+
+    move-result-object p0
+
+    throw p0
+.end method
+
+
+# virtual methods
+.method public get(I)Ljava/lang/Object;
+    .registers 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Lorg/json/JSONException;
+
+    const-string v0, "JSONArray["
+
+    const-string v1, "] not found."
+
+    invoke-static {p1, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/json/JSONException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public getBigDecimal(I)Ljava/math/BigDecimal;
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    :try_start_0
+    new-instance v0, Ljava/math/BigDecimal;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Lorg/json/JSONException;
+
+    const-string v1, "JSONArray["
+
+    const-string v2, "] could not convert to BigDecimal."
+
+    invoke-static {p1, v1, v2}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public getBigInteger(I)Ljava/math/BigInteger;
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    :try_start_0
+    new-instance v0, Ljava/math/BigInteger;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Lorg/json/JSONException;
+
+    const-string v1, "JSONArray["
+
+    const-string v2, "] could not convert to BigInteger."
+
+    invoke-static {p1, v1, v2}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public getBoolean(I)Z
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    instance-of v0, p0, Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    move-object v1, p0
+
+    check-cast v1, Ljava/lang/String;
+
+    const-string v2, "false"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {p0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    if-eqz v0, :cond_1
+
+    check-cast p0, Ljava/lang/String;
+
+    const-string v0, "true"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p0, Lorg/json/JSONException;
+
+    const-string v0, "JSONArray["
+
+    const-string v1, "] is not a boolean."
+
+    invoke-static {p1, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/json/JSONException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_2
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public getDouble(I)D
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    :try_start_0
+    instance-of v0, p0, Ljava/lang/Number;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->doubleValue()D
+
+    move-result-wide p0
+
+    return-wide p0
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p0, Ljava/lang/String;
+
+    invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-wide p0
+
+    :goto_0
+    new-instance v0, Lorg/json/JSONException;
+
+    const-string v1, "JSONArray["
+
+    const-string v2, "] is not a number."
+
+    invoke-static {p1, v1, v2}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public getEnum(Ljava/lang/Class;I)Ljava/lang/Enum;
+    .registers 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Enum<",
+            "TE;>;>(",
+            "Ljava/lang/Class<",
+            "TE;>;I)TE;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1, p2}, Lorg/json/JSONArray;->optEnum(Ljava/lang/Class;I)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Lorg/json/JSONException;
+
+    const-string v0, "JSONArray["
+
+    const-string v1, "] is not an enum of type "
+
+    invoke-static {p2, v0, v1}, Lgl5;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/json/JSONObject;->quote(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, "."
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/json/JSONException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public getFloat(I)F
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    :try_start_0
+    instance-of v0, p0, Ljava/lang/Number;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
+
+    move-result p0
+
+    return p0
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p0
+
+    :goto_0
+    new-instance v0, Lorg/json/JSONException;
+
+    const-string v1, "JSONArray["
+
+    const-string v2, "] is not a number."
+
+    invoke-static {p1, v1, v2}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public getInt(I)I
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    :try_start_0
+    instance-of v0, p0, Ljava/lang/Number;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->intValue()I
+
+    move-result p0
+
+    return p0
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p0, Ljava/lang/String;
+
+    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p0
+
+    :goto_0
+    new-instance v0, Lorg/json/JSONException;
+
+    const-string v1, "JSONArray["
+
+    const-string v2, "] is not a number."
+
+    invoke-static {p1, v1, v2}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public getJSONArray(I)Lorg/json/JSONArray;
+    .registers 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    instance-of v0, p0, Lorg/json/JSONArray;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lorg/json/JSONArray;
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Lorg/json/JSONException;
+
+    const-string v0, "JSONArray["
+
+    const-string v1, "] is not a JSONArray."
+
+    invoke-static {p1, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/json/JSONException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public getJSONObject(I)Lorg/json/JSONObject;
+    .registers 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    instance-of v0, p0, Lorg/json/JSONObject;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lorg/json/JSONObject;
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Lorg/json/JSONException;
+
+    const-string v0, "JSONArray["
+
+    const-string v1, "] is not a JSONObject."
+
+    invoke-static {p1, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/json/JSONException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public getLong(I)J
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    :try_start_0
+    instance-of v0, p0, Ljava/lang/Number;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide p0
+
+    return-wide p0
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p0, Ljava/lang/String;
+
+    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-wide p0
+
+    :goto_0
+    new-instance v0, Lorg/json/JSONException;
+
+    const-string v1, "JSONArray["
+
+    const-string v2, "] is not a number."
+
+    invoke-static {p1, v1, v2}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public getNumber(I)Ljava/lang/Number;
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    :try_start_0
+    instance-of v0, p0, Ljava/lang/Number;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Ljava/lang/Number;
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/json/JSONObject;->stringToNumber(Ljava/lang/String;)Ljava/lang/Number;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :goto_0
+    new-instance v0, Lorg/json/JSONException;
+
+    const-string v1, "JSONArray["
+
+    const-string v2, "] is not a number."
+
+    invoke-static {p1, v1, v2}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public getString(I)Ljava/lang/String;
+    .registers 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    instance-of v0, p0, Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Ljava/lang/String;
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Lorg/json/JSONException;
+
+    const-string v0, "JSONArray["
+
+    const-string v1, "] not a string."
+
+    invoke-static {p1, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/json/JSONException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public isEmpty()Z
+    .registers 1
+
+    iget-object p0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public isNull(I)Z
+    .registers 3
+
+    sget-object v0, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public iterator()Ljava/util/Iterator;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Iterator<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object p0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public join(Ljava/lang/String;)Ljava/lang/String;
+    .registers 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
+
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_1
+
+    if-lez v2, :cond_0
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_0
+    iget-object v3, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lorg/json/JSONObject;->valueToString(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public length()I
+    .registers 1
+
+    iget-object p0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public opt(I)Ljava/lang/Object;
+    .registers 3
+
+    if-ltz p1, :cond_1
+
+    invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
+
+    move-result v0
+
+    if-lt p1, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public optBigDecimal(ILjava/math/BigDecimal;)Ljava/math/BigDecimal;
+    .registers 5
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of p1, p0, Ljava/math/BigDecimal;
+
+    if-eqz p1, :cond_1
+
+    check-cast p0, Ljava/math/BigDecimal;
+
+    return-object p0
+
+    :cond_1
+    instance-of p1, p0, Ljava/math/BigInteger;
+
+    if-eqz p1, :cond_2
+
+    new-instance p1, Ljava/math/BigDecimal;
+
+    check-cast p0, Ljava/math/BigInteger;
+
+    invoke-direct {p1, p0}, Ljava/math/BigDecimal;-><init>(Ljava/math/BigInteger;)V
+
+    return-object p1
+
+    :cond_2
+    instance-of p1, p0, Ljava/lang/Double;
+
+    if-nez p1, :cond_6
+
+    instance-of p1, p0, Ljava/lang/Float;
+
+    if-eqz p1, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    instance-of p1, p0, Ljava/lang/Long;
+
+    if-nez p1, :cond_5
+
+    instance-of p1, p0, Ljava/lang/Integer;
+
+    if-nez p1, :cond_5
+
+    instance-of p1, p0, Ljava/lang/Short;
+
+    if-nez p1, :cond_5
+
+    instance-of p1, p0, Ljava/lang/Byte;
+
+    if-eqz p1, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    :try_start_0
+    new-instance p1, Ljava/math/BigDecimal;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p1
+
+    :catch_0
+    :goto_0
+    return-object p2
+
+    :cond_5
+    :goto_1
+    new-instance p1, Ljava/math/BigDecimal;
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide v0
+
+    invoke-direct {p1, v0, v1}, Ljava/math/BigDecimal;-><init>(J)V
+
+    return-object p1
+
+    :cond_6
+    :goto_2
+    new-instance p1, Ljava/math/BigDecimal;
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->doubleValue()D
+
+    move-result-wide v0
+
+    invoke-direct {p1, v0, v1}, Ljava/math/BigDecimal;-><init>(D)V
+
+    return-object p1
+.end method
+
+.method public optBigInteger(ILjava/math/BigInteger;)Ljava/math/BigInteger;
+    .registers 5
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of p1, p0, Ljava/math/BigInteger;
+
+    if-eqz p1, :cond_1
+
+    check-cast p0, Ljava/math/BigInteger;
+
+    return-object p0
+
+    :cond_1
+    instance-of p1, p0, Ljava/math/BigDecimal;
+
+    if-eqz p1, :cond_2
+
+    check-cast p0, Ljava/math/BigDecimal;
+
+    invoke-virtual {p0}, Ljava/math/BigDecimal;->toBigInteger()Ljava/math/BigInteger;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_2
+    instance-of p1, p0, Ljava/lang/Double;
+
+    if-nez p1, :cond_7
+
+    instance-of p1, p0, Ljava/lang/Float;
+
+    if-eqz p1, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    instance-of p1, p0, Ljava/lang/Long;
+
+    if-nez p1, :cond_6
+
+    instance-of p1, p0, Ljava/lang/Integer;
+
+    if-nez p1, :cond_6
+
+    instance-of p1, p0, Ljava/lang/Short;
+
+    if-nez p1, :cond_6
+
+    instance-of p1, p0, Ljava/lang/Byte;
+
+    if-eqz p1, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    :try_start_0
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/json/JSONObject;->isDecimalNotation(Ljava/lang/String;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_5
+
+    new-instance p1, Ljava/math/BigDecimal;
+
+    invoke-direct {p1, p0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/math/BigDecimal;->toBigInteger()Ljava/math/BigInteger;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_5
+    new-instance p1, Ljava/math/BigInteger;
+
+    invoke-direct {p1, p0}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p1
+
+    :catch_0
+    :goto_0
+    return-object p2
+
+    :cond_6
+    :goto_1
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_7
+    :goto_2
+    new-instance p1, Ljava/math/BigDecimal;
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->doubleValue()D
+
+    move-result-wide v0
+
+    invoke-direct {p1, v0, v1}, Ljava/math/BigDecimal;-><init>(D)V
+
+    invoke-virtual {p1}, Ljava/math/BigDecimal;->toBigInteger()Ljava/math/BigInteger;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public optBoolean(I)Z
+    .registers 3
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lorg/json/JSONArray;->optBoolean(IZ)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public optBoolean(IZ)Z
+    .registers 3
+
+    :try_start_0
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->getBoolean(I)Z
+
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p0
+
+    :catch_0
+    return p2
+.end method
+
+.method public optDouble(I)D
+    .registers 4
+
+    const-wide/high16 v0, 0x7ff8000000000000L    # Double.NaN
+
+    invoke-virtual {p0, p1, v0, v1}, Lorg/json/JSONArray;->optDouble(ID)D
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public optDouble(ID)D
+    .registers 4
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of p1, p0, Ljava/lang/Number;
+
+    if-eqz p1, :cond_1
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->doubleValue()D
+
+    move-result-wide p0
+
+    return-wide p0
+
+    :cond_1
+    instance-of p1, p0, Ljava/lang/String;
+
+    if-eqz p1, :cond_2
+
+    :try_start_0
+    check-cast p0, Ljava/lang/String;
+
+    invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-wide p0
+
+    :catch_0
+    :cond_2
+    :goto_0
+    return-wide p2
+.end method
+
+.method public optEnum(Ljava/lang/Class;I)Ljava/lang/Enum;
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Enum<",
+            "TE;>;>(",
+            "Ljava/lang/Class<",
+            "TE;>;I)TE;"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, p2, v0}, Lorg/json/JSONArray;->optEnum(Ljava/lang/Class;ILjava/lang/Enum;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public optEnum(Ljava/lang/Class;ILjava/lang/Enum;)Ljava/lang/Enum;
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Enum<",
+            "TE;>;>(",
+            "Ljava/lang/Class<",
+            "TE;>;ITE;)TE;"
+        }
+    .end annotation
+
+    :try_start_0
+    invoke-virtual {p0, p2}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p2, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {p2, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_1
+
+    check-cast p0, Ljava/lang/Enum;
+
+    return-object p0
+
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    :goto_0
+    return-object p3
+.end method
+
+.method public optFloat(I)F
+    .registers 3
+
+    const/high16 v0, 0x7fc00000    # Float.NaN
+
+    invoke-virtual {p0, p1, v0}, Lorg/json/JSONArray;->optFloat(IF)F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public optFloat(IF)F
+    .registers 3
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of p1, p0, Ljava/lang/Number;
+
+    if-eqz p1, :cond_1
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
+
+    move-result p0
+
+    return p0
+
+    :cond_1
+    instance-of p1, p0, Ljava/lang/String;
+
+    if-eqz p1, :cond_2
+
+    :try_start_0
+    check-cast p0, Ljava/lang/String;
+
+    invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p0
+
+    :catch_0
+    :cond_2
+    :goto_0
+    return p2
+.end method
+
+.method public optInt(I)I
+    .registers 3
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lorg/json/JSONArray;->optInt(II)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public optInt(II)I
+    .registers 3
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of p1, p0, Ljava/lang/Number;
+
+    if-eqz p1, :cond_1
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->intValue()I
+
+    move-result p0
+
+    return p0
+
+    :cond_1
+    instance-of p1, p0, Ljava/lang/String;
+
+    if-eqz p1, :cond_2
+
+    :try_start_0
+    new-instance p1, Ljava/math/BigDecimal;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/math/BigDecimal;->intValue()I
+
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return p0
+
+    :catch_0
+    :cond_2
+    :goto_0
+    return p2
+.end method
+
+.method public optJSONArray(I)Lorg/json/JSONArray;
+    .registers 2
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    instance-of p1, p0, Lorg/json/JSONArray;
+
+    if-eqz p1, :cond_0
+
+    check-cast p0, Lorg/json/JSONArray;
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public optJSONObject(I)Lorg/json/JSONObject;
+    .registers 2
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    instance-of p1, p0, Lorg/json/JSONObject;
+
+    if-eqz p1, :cond_0
+
+    check-cast p0, Lorg/json/JSONObject;
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public optLong(I)J
+    .registers 4
+
+    const-wide/16 v0, 0x0
+
+    invoke-virtual {p0, p1, v0, v1}, Lorg/json/JSONArray;->optLong(IJ)J
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public optLong(IJ)J
+    .registers 4
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of p1, p0, Ljava/lang/Number;
+
+    if-eqz p1, :cond_1
+
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide p0
+
+    return-wide p0
+
+    :cond_1
+    instance-of p1, p0, Ljava/lang/String;
+
+    if-eqz p1, :cond_2
+
+    :try_start_0
+    new-instance p1, Ljava/math/BigDecimal;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/math/BigDecimal;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/math/BigDecimal;->longValue()J
+
+    move-result-wide p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-wide p0
+
+    :catch_0
+    :cond_2
+    :goto_0
+    return-wide p2
+.end method
+
+.method public optNumber(I)Ljava/lang/Number;
+    .registers 3
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lorg/json/JSONArray;->optNumber(ILjava/lang/Number;)Ljava/lang/Number;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public optNumber(ILjava/lang/Number;)Ljava/lang/Number;
+    .registers 3
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    instance-of p1, p0, Ljava/lang/Number;
+
+    if-eqz p1, :cond_1
+
+    check-cast p0, Ljava/lang/Number;
+
+    return-object p0
+
+    :cond_1
+    instance-of p1, p0, Ljava/lang/String;
+
+    if-eqz p1, :cond_2
+
+    :try_start_0
+    check-cast p0, Ljava/lang/String;
+
+    invoke-static {p0}, Lorg/json/JSONObject;->stringToNumber(Ljava/lang/String;)Ljava/lang/Number;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    :cond_2
+    :goto_0
+    return-object p2
+.end method
+
+.method public optQuery(Ljava/lang/String;)Ljava/lang/Object;
+    .registers 3
+
+    new-instance v0, Lorg/json/JSONPointer;
+
+    invoke-direct {v0, p1}, Lorg/json/JSONPointer;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Lorg/json/JSONArray;->optQuery(Lorg/json/JSONPointer;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public optQuery(Lorg/json/JSONPointer;)Ljava/lang/Object;
+    .registers 2
+
+    :try_start_0
+    invoke-virtual {p1, p0}, Lorg/json/JSONPointer;->queryFrom(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+    :try_end_0
+    .catch Lorg/json/JSONPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public optString(I)Ljava/lang/String;
+    .registers 3
+
+    const-string v0, ""
+
+    invoke-virtual {p0, p1, v0}, Lorg/json/JSONArray;->optString(ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public optString(ILjava/lang/String;)Ljava/lang/String;
+    .registers 3
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    return-object p2
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(D)Lorg/json/JSONArray;
+    .registers 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(F)Lorg/json/JSONArray;
+    .registers 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(I)Lorg/json/JSONArray;
+    .registers 2
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(ID)Lorg/json/JSONArray;
+    .registers 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-static {p2, p3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p1, p2}, Lorg/json/JSONArray;->put(ILjava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(IF)Lorg/json/JSONArray;
+    .registers 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p1, p2}, Lorg/json/JSONArray;->put(ILjava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(II)Lorg/json/JSONArray;
+    .registers 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p1, p2}, Lorg/json/JSONArray;->put(ILjava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(IJ)Lorg/json/JSONArray;
+    .registers 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p2
+
+    invoke-virtual {p0, p1, p2}, Lorg/json/JSONArray;->put(ILjava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(ILjava/lang/Object;)Lorg/json/JSONArray;
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    if-ltz p1, :cond_3
+
+    invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
+
+    move-result v0
+
+    if-ge p1, v0, :cond_0
+
+    invoke-static {p2}, Lorg/json/JSONObject;->testValidity(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1, p2}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
+
+    move-result v0
+
+    if-ne p1, v0, :cond_1
+
+    invoke-virtual {p0, p2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    iget-object v0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    add-int/lit8 v1, p1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->ensureCapacity(I)V
+
+    :goto_0
+    invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
+
+    move-result v0
+
+    if-eq p1, v0, :cond_2
+
+    iget-object v0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    sget-object v1, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0, p2}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_3
+    new-instance p0, Lorg/json/JSONException;
+
+    const-string p2, "JSONArray["
+
+    const-string v0, "] not found."
+
+    invoke-static {p1, p2, v0}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lorg/json/JSONException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public put(ILjava/util/Collection;)Lorg/json/JSONArray;
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Ljava/util/Collection<",
+            "*>;)",
+            "Lorg/json/JSONArray;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    new-instance v0, Lorg/json/JSONArray;
+
+    invoke-direct {v0, p2}, Lorg/json/JSONArray;-><init>(Ljava/util/Collection;)V
+
+    invoke-virtual {p0, p1, v0}, Lorg/json/JSONArray;->put(ILjava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(ILjava/util/Map;)Lorg/json/JSONArray;
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Ljava/util/Map<",
+            "**>;)",
+            "Lorg/json/JSONArray;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, p2}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
+
+    invoke-virtual {p0, p1, v0}, Lorg/json/JSONArray;->put(ILjava/lang/Object;)Lorg/json/JSONArray;
+
+    return-object p0
+.end method
+
+.method public put(IZ)Lorg/json/JSONArray;
+    .registers 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    if-eqz p2, :cond_0
+
+    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    :goto_0
+    invoke-virtual {p0, p1, p2}, Lorg/json/JSONArray;->put(ILjava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(J)Lorg/json/JSONArray;
+    .registers 3
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    .registers 3
+
+    invoke-static {p1}, Lorg/json/JSONObject;->testValidity(Ljava/lang/Object;)V
+
+    iget-object v0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-object p0
+.end method
+
+.method public put(Ljava/util/Collection;)Lorg/json/JSONArray;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection<",
+            "*>;)",
+            "Lorg/json/JSONArray;"
+        }
+    .end annotation
+
+    new-instance v0, Lorg/json/JSONArray;
+
+    invoke-direct {v0, p1}, Lorg/json/JSONArray;-><init>(Ljava/util/Collection;)V
+
+    invoke-virtual {p0, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(Ljava/util/Map;)Lorg/json/JSONArray;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map<",
+            "**>;)",
+            "Lorg/json/JSONArray;"
+        }
+    .end annotation
+
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, p1}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
+
+    invoke-virtual {p0, v0}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public put(Z)Lorg/json/JSONArray;
+    .registers 2
+
+    if-eqz p1, :cond_0
+
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    :goto_0
+    invoke-virtual {p0, p1}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public query(Ljava/lang/String;)Ljava/lang/Object;
+    .registers 3
+
+    new-instance v0, Lorg/json/JSONPointer;
+
+    invoke-direct {v0, p1}, Lorg/json/JSONPointer;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Lorg/json/JSONArray;->query(Lorg/json/JSONPointer;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public query(Lorg/json/JSONPointer;)Ljava/lang/Object;
+    .registers 2
+
+    invoke-virtual {p1, p0}, Lorg/json/JSONPointer;->queryFrom(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public remove(I)Ljava/lang/Object;
+    .registers 3
+
+    if-ltz p1, :cond_0
+
+    invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
+
+    move-result v0
+
+    if-ge p1, v0, :cond_0
+
+    iget-object p0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public similar(Ljava/lang/Object;)Z
+    .registers 8
+
+    instance-of v0, p1, Lorg/json/JSONArray;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
+    invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
+
+    move-result v0
+
+    check-cast p1, Lorg/json/JSONArray;
+
+    invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
+
+    move-result v2
+
+    if-eq v0, v2, :cond_1
+
+    return v1
+
+    :cond_1
+    move v2, v1
+
+    :goto_0
+    if-ge v2, v0, :cond_7
+
+    iget-object v3, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    iget-object v4, p1, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    if-ne v3, v4, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    if-nez v3, :cond_3
+
+    return v1
+
+    :cond_3
+    instance-of v5, v3, Lorg/json/JSONObject;
+
+    if-eqz v5, :cond_4
+
+    check-cast v3, Lorg/json/JSONObject;
+
+    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->similar(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_6
+
+    return v1
+
+    :cond_4
+    instance-of v5, v3, Lorg/json/JSONArray;
+
+    if-eqz v5, :cond_5
+
+    check-cast v3, Lorg/json/JSONArray;
+
+    invoke-virtual {v3, v4}, Lorg/json/JSONArray;->similar(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_6
+
+    return v1
+
+    :cond_5
+    invoke-virtual {v3, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_6
+
+    return v1
+
+    :cond_6
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_7
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public toJSONObject(Lorg/json/JSONArray;)Lorg/json/JSONObject;
+    .registers 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p1}, Lorg/json/JSONArray;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    invoke-virtual {p0}, Lorg/json/JSONArray;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(I)V
+
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-virtual {p1}, Lorg/json/JSONArray;->length()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_1
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v1}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-object v0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public toList()Ljava/util/List;
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    iget-object p0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3
+
+    sget-object v2, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+    invoke-virtual {v2, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    instance-of v2, v1, Lorg/json/JSONArray;
+
+    if-eqz v2, :cond_1
+
+    check-cast v1, Lorg/json/JSONArray;
+
+    invoke-virtual {v1}, Lorg/json/JSONArray;->toList()Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_1
+    instance-of v2, v1, Lorg/json/JSONObject;
+
+    if-eqz v2, :cond_2
+
+    check-cast v1, Lorg/json/JSONObject;
+
+    invoke-virtual {v1}, Lorg/json/JSONObject;->toMap()Ljava/util/Map;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_3
+    :goto_1
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_4
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 2
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-virtual {p0, v0}, Lorg/json/JSONArray;->toString(I)Ljava/lang/String;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public toString(I)Ljava/lang/String;
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    new-instance v0, Ljava/io/StringWriter;
+
+    invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
+
+    invoke-virtual {v0}, Ljava/io/StringWriter;->getBuffer()Ljava/lang/StringBuffer;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    const/4 v2, 0x0
+
+    :try_start_0
+    invoke-virtual {p0, v0, p1, v2}, Lorg/json/JSONArray;->write(Ljava/io/Writer;II)Ljava/io/Writer;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    monitor-exit v1
+
+    return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+.method public write(Ljava/io/Writer;)Ljava/io/Writer;
+    .registers 3
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0, v0}, Lorg/json/JSONArray;->write(Ljava/io/Writer;II)Ljava/io/Writer;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public write(Ljava/io/Writer;II)Ljava/io/Writer;
+    .registers 10
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/json/JSONException;
+        }
+    .end annotation
+
+    :try_start_0
+    invoke-virtual {p0}, Lorg/json/JSONArray;->length()I
+
+    move-result v0
+
+    const/16 v1, 0x5b
+
+    invoke-virtual {p1, v1}, Ljava/io/Writer;->write(I)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    if-ne v0, v1, :cond_0
+
+    :try_start_1
+    iget-object p0, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {p0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p1, p0, p2, p3}, Lorg/json/JSONObject;->writeValue(Ljava/io/Writer;Ljava/lang/Object;II)Ljava/io/Writer;
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception p0
+
+    :try_start_2
+    new-instance p1, Lorg/json/JSONException;
+
+    const-string p2, "Unable to write JSONArray value at index: 0"
+
+    invoke-direct {p1, p2, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :cond_0
+    if-eqz v0, :cond_5
+
+    add-int v3, p3, p2
+
+    move v4, v2
+
+    :goto_0
+    const/16 v5, 0xa
+
+    if-ge v2, v0, :cond_3
+
+    if-eqz v4, :cond_1
+
+    const/16 v4, 0x2c
+
+    invoke-virtual {p1, v4}, Ljava/io/Writer;->write(I)V
+
+    :cond_1
+    if-lez p2, :cond_2
+
+    invoke-virtual {p1, v5}, Ljava/io/Writer;->write(I)V
+
+    :cond_2
+    invoke-static {p1, v3}, Lorg/json/JSONObject;->indent(Ljava/io/Writer;I)V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+
+    :try_start_3
+    iget-object v4, p0, Lorg/json/JSONArray;->myArrayList:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-static {p1, v4, p2, v3}, Lorg/json/JSONObject;->writeValue(Ljava/io/Writer;Ljava/lang/Object;II)Ljava/io/Writer;
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+
+    add-int/lit8 v2, v2, 0x1
+
+    move v4, v1
+
+    goto :goto_0
+
+    :catch_1
+    move-exception p0
+
+    :try_start_4
+    new-instance p1, Lorg/json/JSONException;
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p3, "Unable to write JSONArray value at index: "
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :cond_3
+    if-lez p2, :cond_4
+
+    invoke-virtual {p1, v5}, Ljava/io/Writer;->write(I)V
+
+    :cond_4
+    invoke-static {p1, p3}, Lorg/json/JSONObject;->indent(Ljava/io/Writer;I)V
+
+    :cond_5
+    :goto_1
+    const/16 p0, 0x5d
+
+    invoke-virtual {p1, p0}, Ljava/io/Writer;->write(I)V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+
+    return-object p1
+
+    :catch_2
+    move-exception p0
+
+    new-instance p1, Lorg/json/JSONException;
+
+    invoke-direct {p1, p0}, Lorg/json/JSONException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p1
+.end method

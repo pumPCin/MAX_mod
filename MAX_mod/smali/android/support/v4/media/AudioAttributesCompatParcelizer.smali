@@ -1,0 +1,31 @@
+.class public final Landroid/support/v4/media/AudioAttributesCompatParcelizer;
+.super Landroidx/media/AudioAttributesCompatParcelizer;
+.source "SourceFile"
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Landroidx/media/AudioAttributesCompatParcelizer;-><init>()V
+
+    return-void
+.end method
+
+.method public static read(Lxjf;)Landroidx/media/AudioAttributesCompat;
+    .registers 1
+
+    invoke-static {p0}, Landroidx/media/AudioAttributesCompatParcelizer;->read(Lxjf;)Landroidx/media/AudioAttributesCompat;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static write(Landroidx/media/AudioAttributesCompat;Lxjf;)V
+    .registers 2
+
+    invoke-static {p0, p1}, Landroidx/media/AudioAttributesCompatParcelizer;->write(Landroidx/media/AudioAttributesCompat;Lxjf;)V
+
+    return-void
+.end method
