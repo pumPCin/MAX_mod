@@ -54,7 +54,7 @@ jobs:
       shell: bash
 
     - name: Build APK
-      run: apktool b MAX_mod -c -o unsigned.apk
+      run: apktool b --use-aapt2 MAX_mod -c -o unsigned.apk
       shell: bash
 
     - name: Zipalign APK
