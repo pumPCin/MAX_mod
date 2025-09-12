@@ -49,11 +49,15 @@ jobs:
       run: mv  MAX_mod/apktool.json  MAX_mod/apktool.yml
       shell: bash
 
-    - name: build APK
+    - name: Remove framework
+      run: apktool empty-framework-dir
+      shell: bash
+
+    - name: Build APK
       run: apktool b MAX_mod -c -o unsigned.apk
       shell: bash
 
-    - name: Zipalign the APK
+    - name: Zipalign APK
       run: zipalign -v 4 unsigned.apk zipaligned.apk
       shell: bash
 
@@ -70,7 +74,7 @@ jobs:
           -dname "CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=XX"
       shell: bash
 
-    - name: Sign the APK
+    - name: Sign APK
       run: |
         apksigner sign --ks temp-release-key.keystore \
         --ks-key-alias temp_alias \
