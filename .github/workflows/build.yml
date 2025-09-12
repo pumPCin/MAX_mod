@@ -24,7 +24,7 @@ jobs:
 
     - name: Download Apktool
       run: |
-        wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.12.0.jar -O apktool.jar
+        wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.9.3.jar -O apktool.jar
         sudo mv apktool.jar /usr/local/bin/apktool.jar
         echo '#!/bin/bash' | sudo tee /usr/local/bin/apktool
         echo 'java -jar /usr/local/bin/apktool.jar "$@"' | sudo tee -a /usr/local/bin/apktool
@@ -33,15 +33,15 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       with:
-        packages: 'platform-tools build-tools;35.0.0'
+        packages: 'platform-tools build-tools;34.0.0'
 
     - name: Add Android Build Tools to PATH
-      run: echo "${ANDROID_HOME}/build-tools/35.0.0" >> $GITHUB_PATH
+      run: echo "${ANDROID_HOME}/build-tools/34.0.0" >> $GITHUB_PATH
       shell: bash
 
     - name: Remove signature
       run: |
-        rm -rf MAX_mod/original/META-INF
+        rm -f MAX_mod/original/AndroidManifest.xml
         rm -f MAX_mod/original/signature.data
       shell: bash
 
