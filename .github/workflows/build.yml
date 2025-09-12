@@ -41,8 +41,12 @@ jobs:
 
     - name: Remove signature
       run: |
-        rm -rf apk_workdir/original/META-INF
-        rm -f apk_workdir/original/stamp-cert-sha256
+        rm -rf MAX_mod/original/META-INF
+        rm -f MAX_mod/original/signature.data
+      shell: bash
+
+    - name: Rename apktool.json (if exists)
+      run: mv  MAX_mod/apktool.json  MAX_mod/apktool.yml
       shell: bash
 
     - name: build APK
