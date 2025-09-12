@@ -1,0 +1,80 @@
+name: Build APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: 
+      - main
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+
+    - name: Download Apktool
+      run: |
+        wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.12.0.jar -O apktool.jar
+        sudo mv apktool.jar /usr/local/bin/apktool.jar
+        echo '#!/bin/bash' | sudo tee /usr/local/bin/apktool
+        echo 'java -jar /usr/local/bin/apktool.jar "$@"' | sudo tee -a /usr/local/bin/apktool
+        sudo chmod +x /usr/local/bin/apktool
+
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v4
+      with:
+        packages: 'platform-tools build-tools;35.0.0'
+
+    - name: Add Android Build Tools to PATH
+      run: echo "${ANDROID_HOME}/build-tools/35.0.0" >> $GITHUB_PATH
+      shell: bash
+
+    - name: build APK
+      run: apktool b MAX_mod -c -o unsigned.apk
+      shell: bash
+
+    - name: Zipalign the APK
+      run: zipalign -v 4 unsigned.apk zipaligned.apk
+      shell: bash
+
+    - name: Generate signing key
+      run: |
+        keytool -genkey -v \
+          -keystore temp-release-key.keystore \
+          -alias temp_alias \
+          -keyalg RSA \
+          -keysize 2048 \
+          -validity 10000 \
+          -storepass temppassword \
+          -keypass temppassword \
+          -dname "CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=XX"
+      shell: bash
+
+    - name: Sign the APK
+      run: |
+        apksigner sign --ks temp-release-key.keystore \
+        --ks-key-alias temp_alias \
+        --ks-pass pass:temppassword \
+        --key-pass pass:temppassword \
+        zipaligned.apk
+      shell: bash
+
+    - name: Rename APK
+      run: mv zipaligned.apk MAX_mod.apk
+      shell: bash
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: MAX_mod
+        path: MAX_mod.apk
