@@ -251,51 +251,8 @@
 .end method
 
 .method public final c(Ljava/io/File;Ljava/lang/String;)V
-    .registers 7
+    .registers 3
 
-    iget-object v0, p0, Lzo9;->f:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Iterable;
-
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lap9;
-
-    if-eqz v2, :cond_0
-
-    iget-object v3, p0, Lzo9;->d:Ljava/lang/String;
-
-    invoke-interface {v2, v3, p1, p2}, Lap9;->onFinished(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)V
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/ref/Reference;->clear()V
-
-    goto :goto_0
-
-    :cond_1
     return-void
 .end method
 
