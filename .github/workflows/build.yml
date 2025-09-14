@@ -14,47 +14,33 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v5
       with:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Download Apktool
+    - name: Download APKEditor
       run: |
-        wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.9.3.jar -O apktool.jar
-        sudo mv apktool.jar /usr/local/bin/apktool.jar
-        echo '#!/bin/bash' | sudo tee /usr/local/bin/apktool
-        echo 'java -jar /usr/local/bin/apktool.jar "$@"' | sudo tee -a /usr/local/bin/apktool
-        sudo chmod +x /usr/local/bin/apktool
+        wget https://github.com/REAndroid/APKEditor/releases/download/V1.4.5/APKEditor-1.4.5.jar -O apkeditor.jar
+        sudo mv apkeditor.jar /usr/local/bin/apkeditor.jar
+        echo '#!/bin/bash' | sudo tee /usr/local/bin/apkeditor
+        echo 'java -jar /usr/local/bin/apkeditor.jar "$@"' | sudo tee -a /usr/local/bin/apkeditor
+        sudo chmod +x /usr/local/bin/apkeditor
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
       with:
-        packages: 'platform-tools build-tools;34.0.0'
+        packages: 'platform-tools build-tools;35.0.0'
 
     - name: Add Android Build Tools to PATH
-      run: echo "${ANDROID_HOME}/build-tools/34.0.0" >> $GITHUB_PATH
-      shell: bash
-
-    - name: Remove signature
-      run: |
-        rm -f MAX_mod/original/AndroidManifest.xml
-        rm -f MAX_mod/original/signature.data
-      shell: bash
-
-    - name: Rename apktool.json (if exists)
-      run: mv  MAX_mod/apktool.json  MAX_mod/apktool.yml
-      shell: bash
-
-    - name: Remove framework
-      run: apktool empty-framework-dir
+      run: echo "${ANDROID_HOME}/build-tools/35.0.0" >> $GITHUB_PATH
       shell: bash
 
     - name: Build APK
-      run: apktool b --use-aapt2 MAX_mod -c -o unsigned.apk
+      run: apkeditor b -i MAX_mod -o unsigned.apk
       shell: bash
 
     - name: Zipalign APK
