@@ -1,97 +1,393 @@
-.class public final enum Lnzc;
-.super Ljava/lang/Enum;
+.class public final Lnzc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic X:[Lnzc;
+# instance fields
+.field public a:I
 
-.field public static final enum a:Lnzc;
+.field public b:Z
 
-.field public static final enum b:Lnzc;
+.field public c:[F
 
-.field public static final enum c:Lnzc;
+.field public d:I
 
-.field public static final enum o:Lnzc;
+.field public e:F
+
+.field public f:I
+
+.field public g:F
+
+.field public h:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public constructor <init>()V
+    .registers 3
 
-    new-instance v0, Lnzc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "STARTED"
+    const/4 v0, 0x2
 
-    const/4 v2, 0x0
+    iput v0, p0, Lnzc;->a:I
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/4 v0, 0x0
 
-    sput-object v0, Lnzc;->a:Lnzc;
+    iput-boolean v0, p0, Lnzc;->b:Z
 
-    new-instance v1, Lnzc;
+    const/4 v1, 0x0
 
-    const-string v2, "ERROR"
+    iput-object v1, p0, Lnzc;->c:[F
 
-    const/4 v3, 0x1
+    iput v0, p0, Lnzc;->d:I
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/4 v1, 0x0
 
-    sput-object v1, Lnzc;->b:Lnzc;
+    iput v1, p0, Lnzc;->e:F
 
-    new-instance v2, Lnzc;
+    iput v0, p0, Lnzc;->f:I
 
-    const-string v3, "FINISHED"
+    iput v1, p0, Lnzc;->g:F
 
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lnzc;->c:Lnzc;
-
-    new-instance v3, Lnzc;
-
-    const-string v4, "INIT"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lnzc;->o:Lnzc;
-
-    filled-new-array {v0, v1, v2, v3}, [Lnzc;
-
-    move-result-object v0
-
-    sput-object v0, Lnzc;->X:[Lnzc;
+    iput-boolean v0, p0, Lnzc;->h:Z
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lnzc;
+.method public static a()Lnzc;
     .registers 2
+
+    new-instance v0, Lnzc;
+
+    invoke-direct {v0}, Lnzc;-><init>()V
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, v0, Lnzc;->b:Z
+
+    return-object v0
+.end method
+
+.method public static b(FFFF)Lnzc;
+    .registers 5
+
+    new-instance v0, Lnzc;
+
+    invoke-direct {v0}, Lnzc;-><init>()V
+
+    invoke-virtual {v0, p0, p1, p2, p3}, Lnzc;->d(FFFF)V
+
+    return-object v0
+.end method
+
+.method public static c([F)Lnzc;
+    .registers 6
+
+    new-instance v0, Lnzc;
+
+    invoke-direct {v0}, Lnzc;-><init>()V
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    array-length v1, p0
+
+    const/4 v2, 0x0
+
+    const/16 v3, 0x8
+
+    if-ne v1, v3, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    move v1, v2
+
+    :goto_0
+    const-string v4, "radii should have exactly 8 values"
+
+    invoke-static {v4, v1}, Lcb7;->f(Ljava/lang/String;Z)V
+
+    iget-object v1, v0, Lnzc;->c:[F
+
+    if-nez v1, :cond_1
+
+    new-array v1, v3, [F
+
+    iput-object v1, v0, Lnzc;->c:[F
+
+    :cond_1
+    iget-object v1, v0, Lnzc;->c:[F
+
+    invoke-static {p0, v2, v1, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final d(FFFF)V
+    .registers 6
+
+    iget-object v0, p0, Lnzc;->c:[F
+
+    if-nez v0, :cond_0
+
+    const/16 v0, 0x8
+
+    new-array v0, v0, [F
+
+    iput-object v0, p0, Lnzc;->c:[F
+
+    :cond_0
+    iget-object p0, p0, Lnzc;->c:[F
+
+    const/4 v0, 0x1
+
+    aput p1, p0, v0
+
+    const/4 v0, 0x0
+
+    aput p1, p0, v0
+
+    const/4 p1, 0x3
+
+    aput p2, p0, p1
+
+    const/4 p1, 0x2
+
+    aput p2, p0, p1
+
+    const/4 p1, 0x5
+
+    aput p3, p0, p1
+
+    const/4 p1, 0x4
+
+    aput p3, p0, p1
+
+    const/4 p1, 0x7
+
+    aput p4, p0, p1
+
+    const/4 p1, 0x6
+
+    aput p4, p0, p1
+
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
+
+    if-ne p0, p1, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    if-eqz p1, :cond_9
 
     const-class v0, Lnzc;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object p0
+    move-result-object v1
 
-    check-cast p0, Lnzc;
+    if-eq v0, v1, :cond_1
 
-    return-object p0
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lnzc;
+
+    iget-boolean v0, p0, Lnzc;->b:Z
+
+    iget-boolean v1, p1, Lnzc;->b:Z
+
+    if-eq v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget v0, p0, Lnzc;->d:I
+
+    iget v1, p1, Lnzc;->d:I
+
+    if-eq v0, v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget v0, p1, Lnzc;->e:F
+
+    iget v1, p0, Lnzc;->e:F
+
+    invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    iget v0, p0, Lnzc;->f:I
+
+    iget v1, p1, Lnzc;->f:I
+
+    if-eq v0, v1, :cond_5
+
+    goto :goto_0
+
+    :cond_5
+    iget v0, p1, Lnzc;->g:F
+
+    iget v1, p0, Lnzc;->g:F
+
+    invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    goto :goto_0
+
+    :cond_6
+    iget v0, p0, Lnzc;->a:I
+
+    iget v1, p1, Lnzc;->a:I
+
+    if-eq v0, v1, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    iget-boolean v0, p0, Lnzc;->h:Z
+
+    iget-boolean v1, p1, Lnzc;->h:Z
+
+    if-eq v0, v1, :cond_8
+
+    goto :goto_0
+
+    :cond_8
+    iget-object p0, p0, Lnzc;->c:[F
+
+    iget-object p1, p1, Lnzc;->c:[F
+
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([F[F)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_9
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
-.method public static values()[Lnzc;
-    .registers 1
+.method public final hashCode()I
+    .registers 6
 
-    sget-object v0, Lnzc;->X:[Lnzc;
+    iget v0, p0, Lnzc;->a:I
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    check-cast v0, [Lnzc;
+    invoke-static {v0}, Lmw1;->t(I)I
 
-    return-object v0
+    move-result v0
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v1
+
+    :goto_0
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v2, p0, Lnzc;->b:Z
+
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v2, p0, Lnzc;->c:[F
+
+    if-eqz v2, :cond_1
+
+    invoke-static {v2}, Ljava/util/Arrays;->hashCode([F)I
+
+    move-result v2
+
+    goto :goto_1
+
+    :cond_1
+    move v2, v1
+
+    :goto_1
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v2, p0, Lnzc;->d:I
+
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v2, p0, Lnzc;->e:F
+
+    const/4 v3, 0x0
+
+    cmpl-float v4, v2, v3
+
+    if-eqz v4, :cond_2
+
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v2
+
+    goto :goto_2
+
+    :cond_2
+    move v2, v1
+
+    :goto_2
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v2, p0, Lnzc;->f:I
+
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v2, p0, Lnzc;->g:F
+
+    cmpl-float v3, v2, v3
+
+    if-eqz v3, :cond_3
+
+    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    :cond_3
+    add-int/2addr v0, v1
+
+    mul-int/lit16 v0, v0, 0x3c1
+
+    iget-boolean p0, p0, Lnzc;->h:Z
+
+    add-int/2addr v0, p0
+
+    return v0
 .end method

@@ -4,84 +4,42 @@
 
 
 # static fields
-.field public static final enum X:Lwx3;
+.field public static final enum a:Lwx3;
 
-.field public static final enum Y:Lwx3;
+.field public static final enum b:Lwx3;
 
-.field public static final synthetic Z:[Lwx3;
-
-.field public static final enum c:Lwx3;
-
-.field public static final enum o:Lwx3;
-
-
-# instance fields
-.field public final a:Z
-
-.field public final b:Z
+.field public static final synthetic c:[Lwx3;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .registers 4
 
     new-instance v0, Lwx3;
 
-    const-string v1, "PUSH_ENTER"
+    const-string v1, "RELEASE_DETACH"
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v0, v1, v2, v3, v3}, Lwx3;-><init>(Ljava/lang/String;IZZ)V
-
-    sput-object v0, Lwx3;->c:Lwx3;
+    sput-object v0, Lwx3;->a:Lwx3;
 
     new-instance v1, Lwx3;
 
-    const-string v4, "PUSH_EXIT"
+    const-string v2, "RETAIN_DETACH"
 
-    invoke-direct {v1, v4, v3, v3, v2}, Lwx3;-><init>(Ljava/lang/String;IZZ)V
+    const/4 v3, 0x1
 
-    sput-object v1, Lwx3;->o:Lwx3;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    new-instance v4, Lwx3;
+    sput-object v1, Lwx3;->b:Lwx3;
 
-    const-string v5, "POP_ENTER"
-
-    const/4 v6, 0x2
-
-    invoke-direct {v4, v5, v6, v2, v3}, Lwx3;-><init>(Ljava/lang/String;IZZ)V
-
-    sput-object v4, Lwx3;->X:Lwx3;
-
-    new-instance v3, Lwx3;
-
-    const-string v5, "POP_EXIT"
-
-    const/4 v6, 0x3
-
-    invoke-direct {v3, v5, v6, v2, v2}, Lwx3;-><init>(Ljava/lang/String;IZZ)V
-
-    sput-object v3, Lwx3;->Y:Lwx3;
-
-    filled-new-array {v0, v1, v4, v3}, [Lwx3;
+    filled-new-array {v0, v1}, [Lwx3;
 
     move-result-object v0
 
-    sput-object v0, Lwx3;->Z:[Lwx3;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;IZZ)V
-    .registers 5
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-boolean p3, p0, Lwx3;->a:Z
-
-    iput-boolean p4, p0, Lwx3;->b:Z
+    sput-object v0, Lwx3;->c:[Lwx3;
 
     return-void
 .end method
@@ -103,9 +61,9 @@
 .method public static values()[Lwx3;
     .registers 1
 
-    sget-object v0, Lwx3;->Z:[Lwx3;
+    sget-object v0, Lwx3;->c:[Lwx3;
 
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Lwx3;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

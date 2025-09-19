@@ -70,7 +70,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p4, p5, p6, v0}, Lone/me/rlottie/RLottieFactory$Way;-><init>(IIZLwc4;)V
+    invoke-direct {p0, p4, p5, p6, v0}, Lone/me/rlottie/RLottieFactory$Way;-><init>(IIZLld4;)V
 
     iput-object p1, p0, Lone/me/rlottie/RLottieFactory$Way$Asset;->context:Landroid/content/Context;
 
@@ -81,7 +81,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZILwc4;)V
+.method public synthetic constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;IIZILld4;)V
     .registers 9
 
     and-int/lit8 p8, p7, 0x4

@@ -3,170 +3,273 @@
 .source "SourceFile"
 
 
+# static fields
+.field public static final c:Ludd;
+
+
 # instance fields
-.field public final a:Landroid/hardware/camera2/params/SessionConfiguration;
+.field public final a:J
+
+.field public final b:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/ArrayList;Ljad;Lwx1;)V
-    .registers 7
+.method static constructor <clinit>()V
+    .registers 6
 
-    new-instance v0, Landroid/hardware/camera2/params/SessionConfiguration;
+    new-instance v0, Ludd;
 
-    new-instance v1, Ljava/util/ArrayList;
+    const-wide/16 v1, 0x0
 
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+    invoke-direct {v0, v1, v2, v1, v2}, Ludd;-><init>(JJ)V
 
-    move-result v2
+    new-instance v3, Ludd;
 
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+    const-wide v4, 0x7fffffffffffffffL
 
-    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-direct {v3, v4, v5, v4, v5}, Ludd;-><init>(JJ)V
 
-    move-result-object p1
+    new-instance v3, Ludd;
 
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {v3, v4, v5, v1, v2}, Ludd;-><init>(JJ)V
 
-    move-result v2
+    new-instance v3, Ludd;
 
-    if-eqz v2, :cond_0
+    invoke-direct {v3, v1, v2, v4, v5}, Ludd;-><init>(JJ)V
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    sput-object v0, Ludd;->c:Ludd;
 
-    move-result-object v2
+    return-void
+.end method
 
-    check-cast v2, Ldqa;
+.method public constructor <init>(JJ)V
+    .registers 10
 
-    iget-object v2, v2, Ldqa;->a:Lfqa;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v2}, Lfqa;->a()Ljava/lang/Object;
+    const-wide/16 v0, 0x0
 
-    move-result-object v2
+    cmp-long v2, p1, v0
 
-    check-cast v2, Landroid/hardware/camera2/params/OutputConfiguration;
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const/4 v4, 0x1
+
+    if-ltz v2, :cond_0
+
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    move v2, v3
 
-    invoke-direct {v0, p1, v1, p2, p3}, Landroid/hardware/camera2/params/SessionConfiguration;-><init>(ILjava/util/List;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)V
+    :goto_0
+    invoke-static {v2}, Lxnd;->k(Z)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    cmp-long v0, p3, v0
 
-    iput-object v0, p0, Ludd;->a:Landroid/hardware/camera2/params/SessionConfiguration;
+    if-ltz v0, :cond_1
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/params/SessionConfiguration;->getOutputConfigurations()Ljava/util/List;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p2
-
-    invoke-direct {p1, p2}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_3
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/hardware/camera2/params/OutputConfiguration;
-
-    if-nez p2, :cond_1
-
-    const/4 p2, 0x0
-
-    goto :goto_3
+    move v3, v4
 
     :cond_1
-    sget p3, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-static {v3}, Lxnd;->k(Z)V
 
-    const/16 v0, 0x21
+    iput-wide p1, p0, Ludd;->a:J
 
-    if-lt p3, v0, :cond_2
-
-    new-instance p3, Lgqa;
-
-    invoke-direct {p3, p2}, Lfqa;-><init>(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_2
-    new-instance p3, Lfqa;
-
-    new-instance v0, Leqa;
-
-    invoke-direct {v0, p2}, Leqa;-><init>(Landroid/hardware/camera2/params/OutputConfiguration;)V
-
-    invoke-direct {p3, v0}, Lfqa;-><init>(Ljava/lang/Object;)V
-
-    :goto_2
-    new-instance p2, Ldqa;
-
-    invoke-direct {p2, p3}, Ldqa;-><init>(Lfqa;)V
-
-    :goto_3
-    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_3
-    invoke-static {p1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+    iput-wide p3, p0, Ludd;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final a(JJJ)J
+    .registers 18
 
-    instance-of v0, p1, Ludd;
+    iget-wide v0, p0, Ludd;->a:J
 
-    if-nez v0, :cond_0
+    const-wide/16 v2, 0x0
 
-    const/4 p0, 0x0
+    cmp-long v4, v0, v2
 
-    return p0
+    iget-wide v5, p0, Ludd;->b:J
+
+    if-nez v4, :cond_0
+
+    cmp-long p0, v5, v2
+
+    if-nez p0, :cond_0
+
+    return-wide p1
 
     :cond_0
+    sget p0, Llrf;->a:I
+
+    sub-long v7, p1, v0
+
+    xor-long/2addr v0, p1
+
+    xor-long v9, p1, v7
+
+    and-long/2addr v0, v9
+
+    cmp-long p0, v0, v2
+
+    if-gez p0, :cond_1
+
+    const-wide/high16 v7, -0x8000000000000000L
+
+    :cond_1
+    add-long v0, p1, v5
+
+    xor-long v9, p1, v0
+
+    xor-long v4, v5, v0
+
+    and-long/2addr v4, v9
+
+    cmp-long p0, v4, v2
+
+    if-gez p0, :cond_2
+
+    const-wide v0, 0x7fffffffffffffffL
+
+    :cond_2
+    cmp-long p0, v7, p3
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    if-gtz p0, :cond_3
+
+    cmp-long p0, p3, v0
+
+    if-gtz p0, :cond_3
+
+    move p0, v3
+
+    goto :goto_0
+
+    :cond_3
+    move p0, v2
+
+    :goto_0
+    cmp-long v4, v7, p5
+
+    if-gtz v4, :cond_4
+
+    cmp-long v0, p5, v0
+
+    if-gtz v0, :cond_4
+
+    move v2, v3
+
+    :cond_4
+    if-eqz p0, :cond_5
+
+    if-eqz v2, :cond_5
+
+    sub-long v0, p3, p1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->abs(J)J
+
+    move-result-wide v0
+
+    sub-long p0, p5, p1
+
+    invoke-static {p0, p1}, Ljava/lang/Math;->abs(J)J
+
+    move-result-wide p0
+
+    cmp-long p0, v0, p0
+
+    if-gtz p0, :cond_7
+
+    goto :goto_1
+
+    :cond_5
+    if-eqz p0, :cond_6
+
+    :goto_1
+    return-wide p3
+
+    :cond_6
+    if-eqz v2, :cond_8
+
+    :cond_7
+    return-wide p5
+
+    :cond_8
+    return-wide v7
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 8
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_2
+
+    const-class v2, Ludd;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
     check-cast p1, Ludd;
 
-    iget-object p1, p1, Ludd;->a:Landroid/hardware/camera2/params/SessionConfiguration;
+    iget-wide v2, p0, Ludd;->a:J
 
-    iget-object p0, p0, Ludd;->a:Landroid/hardware/camera2/params/SessionConfiguration;
+    iget-wide v4, p1, Ludd;->a:J
 
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    cmp-long v2, v2, v4
 
-    move-result p0
+    if-nez v2, :cond_2
 
-    return p0
+    iget-wide v2, p0, Ludd;->b:J
+
+    iget-wide p0, p1, Ludd;->b:J
+
+    cmp-long p0, v2, p0
+
+    if-nez p0, :cond_2
+
+    return v0
+
+    :cond_2
+    :goto_0
+    return v1
 .end method
 
 .method public final hashCode()I
-    .registers 1
+    .registers 4
 
-    iget-object p0, p0, Ludd;->a:Landroid/hardware/camera2/params/SessionConfiguration;
+    iget-wide v0, p0, Ludd;->a:J
 
-    invoke-virtual {p0}, Landroid/hardware/camera2/params/SessionConfiguration;->hashCode()I
+    long-to-int v0, v0
 
-    move-result p0
+    mul-int/lit8 v0, v0, 0x1f
 
-    return p0
+    iget-wide v1, p0, Ludd;->b:J
+
+    long-to-int p0, v1
+
+    add-int/2addr v0, p0
+
+    return v0
 .end method

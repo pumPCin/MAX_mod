@@ -1,73 +1,25 @@
-.class public final enum Ldg0;
-.super Ljava/lang/Enum;
+.class public interface abstract Ldg0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Ldg0;
-
-.field public static final enum b:Ldg0;
-
-.field public static final synthetic c:[Ldg0;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 4
-
-    new-instance v0, Ldg0;
-
-    const-string v1, "EXPONENTIAL"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ldg0;->a:Ldg0;
-
-    new-instance v1, Ldg0;
-
-    const-string v2, "LINEAR"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ldg0;->b:Ldg0;
-
-    filled-new-array {v0, v1}, [Ldg0;
-
-    move-result-object v0
-
-    sput-object v0, Ldg0;->c:[Ldg0;
-
-    return-void
+# virtual methods
+.method public abstract a(Lec4;)V
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ldg0;
-    .registers 2
+.method public b()J
+    .registers 3
 
-    const-class v0, Ldg0;
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Ldg0;
-
-    return-object p0
+    return-wide v0
 .end method
 
-.method public static values()[Ldg0;
-    .registers 1
+.method public abstract e()Lfdf;
+.end method
 
-    sget-object v0, Ldg0;->c:[Ldg0;
+.method public abstract f()J
+.end method
 
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ldg0;
-
-    return-object v0
+.method public abstract g(Landroid/os/Handler;Lec4;)V
 .end method

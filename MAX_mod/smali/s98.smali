@@ -1,78 +1,85 @@
 .class public final Ls98;
-.super Lxie;
+.super Lq2;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic b:I
 
-.field public final synthetic Y:Ln8d;
+.field public final c:Lv5d;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Ln8d;)V
-    .registers 3
+.method public synthetic constructor <init>(La98;Lv5d;I)V
+    .registers 4
 
-    iput-object p2, p0, Ls98;->Y:Ln8d;
+    iput p3, p0, Ls98;->b:I
 
-    const/4 p2, 0x2
+    invoke-direct {p0, p1}, Lq2;-><init>(La98;)V
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Ls98;->c:Lv5d;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final g(Lt98;)V
+    .registers 6
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget v0, p0, Ls98;->b:I
 
-    invoke-virtual {p0, p1, p2}, Ls98;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Lns1;
+
+    invoke-direct {v0, p1}, Lns1;-><init>(Lt98;)V
+
+    invoke-interface {p1, v0}, Lt98;->c(Loq4;)V
+
+    iget-object p1, v0, Lns1;->b:Ljava/lang/Object;
+
+    check-cast p1, Lh12;
+
+    new-instance v1, Lxd6;
+
+    iget-object v2, p0, Lq2;->a:La98;
+
+    const/16 v3, 0xa
+
+    invoke-direct {v1, v0, v3, v2}, Lxd6;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    iget-object p0, p0, Ls98;->c:Lv5d;
+
+    invoke-virtual {p0, v1}, Lv5d;->b(Ljava/lang/Runnable;)Loq4;
 
     move-result-object p0
 
-    check-cast p0, Ls98;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object p1, Lncf;->a:Lncf;
+    invoke-static {p1, p0}, Lsq4;->c(Ljava/util/concurrent/atomic/AtomicReference;Loq4;)Z
 
-    invoke-virtual {p0, p1}, Ls98;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
 
-    return-object p1
-.end method
+    :pswitch_0
+    new-instance v0, Lr98;
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    iget-object v1, p0, Ls98;->c:Lv5d;
 
-    new-instance v0, Ls98;
+    const/4 v2, 0x0
 
-    iget-object p0, p0, Ls98;->Y:Ln8d;
+    invoke-direct {v0, p1, v1, v2}, Lr98;-><init>(Ljava/lang/Object;Lv5d;I)V
 
-    invoke-direct {v0, p2, p0}, Ls98;-><init>(Lkotlin/coroutines/Continuation;Ln8d;)V
+    iget-object p0, p0, Lq2;->a:La98;
 
-    iput-object p1, v0, Ls98;->X:Ljava/lang/Object;
+    invoke-virtual {p0, v0}, La98;->a(Lt98;)V
 
-    return-object v0
-.end method
+    return-void
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    nop
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Ls98;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
-
-    iget-object p0, p0, Ls98;->Y:Ln8d;
-
-    invoke-virtual {p0, p1}, Lhp7;->E(Ljava/util/List;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,55 +1,228 @@
 .class public final Lf46;
-.super Lcx3;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lrc6;
 
 
 # instance fields
-.field public X:Ljava/util/List;
+.field public final synthetic X:I
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public synthetic Y:Lera;
 
-.field public final synthetic Z:Lg46;
+.field public final synthetic Z:Landroid/widget/TextView;
 
-.field public n0:I
-
-.field public o:Lg46;
+.field public final synthetic r0:Landroid/widget/TextView;
 
 
 # direct methods
-.method public constructor <init>(Lg46;Lcx3;)V
-    .registers 3
+.method public synthetic constructor <init>(Landroid/widget/TextView;Landroid/widget/TextView;Lkotlin/coroutines/Continuation;I)V
+    .registers 5
 
-    iput-object p1, p0, Lf46;->Z:Lg46;
+    iput p4, p0, Lf46;->X:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lf46;->Z:Landroid/widget/TextView;
+
+    iput-object p2, p0, Lf46;->r0:Landroid/widget/TextView;
+
+    const/4 p1, 0x3
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
 
-    iput-object p1, p0, Lf46;->Y:Ljava/lang/Object;
+    iget v0, p0, Lf46;->X:I
 
-    iget p1, p0, Lf46;->n0:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    check-cast p1, Landroid/widget/LinearLayout;
 
-    or-int/2addr p1, v0
+    check-cast p2, Lera;
 
-    iput p1, p0, Lf46;->n0:I
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    const/4 p1, 0x0
+    new-instance p1, Lf46;
 
-    const-wide/16 v0, 0x0
+    iget-object v0, p0, Lf46;->r0:Landroid/widget/TextView;
 
-    iget-object v2, p0, Lf46;->Z:Lg46;
+    const/4 v1, 0x2
 
-    invoke-virtual {v2, v0, v1, p0, p1}, Lg46;->b(JLcx3;Ljava/util/List;)Ljava/lang/Object;
+    iget-object p0, p0, Lf46;->Z:Landroid/widget/TextView;
 
-    move-result-object p0
+    invoke-direct {p1, p0, v0, p3, v1}, Lf46;-><init>(Landroid/widget/TextView;Landroid/widget/TextView;Lkotlin/coroutines/Continuation;I)V
+
+    iput-object p2, p1, Lf46;->Y:Lera;
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    invoke-virtual {p1, p0}, Lf46;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p0
+
+    :pswitch_0
+    check-cast p1, Landroid/widget/LinearLayout;
+
+    check-cast p2, Lera;
+
+    check-cast p3, Lkotlin/coroutines/Continuation;
+
+    new-instance p1, Lf46;
+
+    iget-object v0, p0, Lf46;->r0:Landroid/widget/TextView;
+
+    const/4 v1, 0x1
+
+    iget-object p0, p0, Lf46;->Z:Landroid/widget/TextView;
+
+    invoke-direct {p1, p0, v0, p3, v1}, Lf46;-><init>(Landroid/widget/TextView;Landroid/widget/TextView;Lkotlin/coroutines/Continuation;I)V
+
+    iput-object p2, p1, Lf46;->Y:Lera;
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    invoke-virtual {p1, p0}, Lf46;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p0
+
+    :pswitch_1
+    check-cast p1, Landroidx/constraintlayout/widget/ConstraintLayout;
+
+    check-cast p2, Lera;
+
+    check-cast p3, Lkotlin/coroutines/Continuation;
+
+    new-instance p1, Lf46;
+
+    iget-object v0, p0, Lf46;->r0:Landroid/widget/TextView;
+
+    const/4 v1, 0x0
+
+    iget-object p0, p0, Lf46;->Z:Landroid/widget/TextView;
+
+    invoke-direct {p1, p0, v0, p3, v1}, Lf46;-><init>(Landroid/widget/TextView;Landroid/widget/TextView;Lkotlin/coroutines/Continuation;I)V
+
+    iput-object p2, p1, Lf46;->Y:Lera;
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    invoke-virtual {p1, p0}, Lf46;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    iget v0, p0, Lf46;->X:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lf46;->Y:Lera;
+
+    invoke-interface {p1}, Lera;->getText()Lh1f;
+
+    move-result-object v0
+
+    iget v0, v0, Lh1f;->e:I
+
+    iget-object v1, p0, Lf46;->Z:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    invoke-interface {p1}, Lera;->getText()Lh1f;
+
+    move-result-object p1
+
+    iget p1, p1, Lh1f;->i:I
+
+    iget-object p0, p0, Lf46;->r0:Landroid/widget/TextView;
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lf46;->Y:Lera;
+
+    invoke-interface {p1}, Lera;->getText()Lh1f;
+
+    move-result-object v0
+
+    iget v0, v0, Lh1f;->e:I
+
+    iget-object v1, p0, Lf46;->Z:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    invoke-interface {p1}, Lera;->getText()Lh1f;
+
+    move-result-object p1
+
+    iget p1, p1, Lh1f;->g:I
+
+    iget-object p0, p0, Lf46;->r0:Landroid/widget/TextView;
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lf46;->Y:Lera;
+
+    invoke-interface {p1}, Lera;->getText()Lh1f;
+
+    move-result-object v0
+
+    iget v0, v0, Lh1f;->e:I
+
+    iget-object v1, p0, Lf46;->Z:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    invoke-interface {p1}, Lera;->getText()Lh1f;
+
+    move-result-object p1
+
+    iget p1, p1, Lh1f;->e:I
+
+    iget-object p0, p0, Lf46;->r0:Landroid/widget/TextView;
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

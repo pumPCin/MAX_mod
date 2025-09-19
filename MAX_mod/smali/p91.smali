@@ -1,163 +1,170 @@
 .class public final Lp91;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lr91;
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Lc41;
+.field public X:I
 
-.field public final b:Z
-
-.field public final c:Landroid/text/SpannableStringBuilder;
+.field public final synthetic Y:Lr91;
 
 
 # direct methods
-.method public constructor <init>(Lc41;ZLandroid/text/SpannableStringBuilder;)V
-    .registers 4
+.method public constructor <init>(Lr91;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lp91;->Y:Lr91;
 
-    iput-object p1, p0, Lp91;->a:Lc41;
+    const/4 p1, 0x2
 
-    iput-boolean p2, p0, Lp91;->b:Z
-
-    iput-object p3, p0, Lp91;->c:Landroid/text/SpannableStringBuilder;
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    if-ne p0, p1, :cond_0
+    check-cast p1, Ly04;
 
-    goto :goto_1
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lp91;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lp91;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lp91;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lp91;
+
+    iget-object p0, p0, Lp91;->Y:Lr91;
+
+    invoke-direct {p1, p0, p2}, Lp91;-><init>(Lr91;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
+
+    iget v0, p0, Lp91;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-eq v0, v1, :cond_0
+
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     :cond_0
-    instance-of v0, p1, Lp91;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    if-nez v0, :cond_1
+    new-instance p0, Lkotlin/KotlinNothingValueException;
 
-    goto :goto_0
+    invoke-direct {p0}, Lkotlin/KotlinNothingValueException;-><init>()V
+
+    throw p0
 
     :cond_1
-    check-cast p1, Lp91;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lp91;->a:Lc41;
+    iget-object p1, p0, Lp91;->Y:Lr91;
 
-    iget-object v1, p1, Lp91;->a:Lc41;
+    iget-object v0, p1, Lr91;->o:Lrt1;
 
-    invoke-virtual {v0, v1}, Lc41;->equals(Ljava/lang/Object;)Z
+    check-cast v0, Leu1;
 
-    move-result v0
+    invoke-virtual {v0}, Leu1;->m()Lj44;
 
-    if-nez v0, :cond_2
+    move-result-object v0
+
+    iget-object v0, v0, Lj44;->j:Lme5;
+
+    instance-of v2, v0, Lge5;
+
+    if-nez v2, :cond_3
+
+    instance-of v2, v0, Lfe5;
+
+    if-nez v2, :cond_3
+
+    instance-of v0, v0, Lhe5;
+
+    if-eqz v0, :cond_2
 
     goto :goto_0
 
     :cond_2
-    iget-boolean v0, p0, Lp91;->b:Z
+    iget-object v0, p1, Lr91;->c:Lg31;
 
-    iget-boolean v1, p1, Lp91;->b:Z
+    check-cast v0, Lt31;
 
-    if-eq v0, v1, :cond_3
+    iget-object v0, v0, Lt31;->k:Lyce;
 
-    goto :goto_0
+    new-instance v2, Luv;
+
+    const/4 v3, 0x3
+
+    invoke-direct {v2, v3, p1}, Luv;-><init>(ILjava/lang/Object;)V
+
+    iput v1, p0, Lp91;->X:I
+
+    invoke-virtual {v0, v2, p0}, Lyce;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    sget-object p0, Lz04;->a:Lz04;
+
+    return-object p0
 
     :cond_3
-    iget-object p0, p0, Lp91;->c:Landroid/text/SpannableStringBuilder;
-
-    iget-object p1, p1, Lp91;->c:Landroid/text/SpannableStringBuilder;
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
     :goto_0
-    const/4 p0, 0x0
-
-    return p0
+    iget-object p0, p1, Lr91;->t0:Lyce;
 
     :cond_4
-    :goto_1
-    const/4 p0, 0x1
+    invoke-virtual {p0}, Lyce;->getValue()Ljava/lang/Object;
 
-    return p0
-.end method
+    move-result-object p1
 
-.method public final hashCode()I
-    .registers 4
+    move-object v0, p1
 
-    iget-object v0, p0, Lp91;->a:Lc41;
+    check-cast v0, Lo91;
 
-    invoke-virtual {v0}, Lc41;->hashCode()I
+    new-instance v0, Ln91;
 
-    move-result v0
+    const/4 v1, 0x0
 
-    const/16 v1, 0x1f
+    invoke-direct {v0, v1}, Ln91;-><init>(Z)V
 
-    mul-int/2addr v0, v1
+    invoke-virtual {p0, p1, v0}, Lyce;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-boolean v2, p0, Lp91;->b:Z
+    move-result p1
 
-    invoke-static {v0, v1, v2}, Lex3;->e(IIZ)I
+    if-eqz p1, :cond_4
 
-    move-result v0
-
-    iget-object p0, p0, Lp91;->c:Landroid/text/SpannableStringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Calling(chatState="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lp91;->a:Lc41;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isVideo="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lp91;->b:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", callTypeDescription="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lp91;->c:Landroid/text/SpannableStringBuilder;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

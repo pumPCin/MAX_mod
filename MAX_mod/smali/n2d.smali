@@ -1,250 +1,131 @@
-.class public final synthetic Ln2d;
+.class public final Ln2d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcl7;
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public volatile a:Lzb6;
 
-.field public final synthetic b:Lone/me/chatscreen/search/SearchMessageBottomWidget;
+.field public volatile b:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/chatscreen/search/SearchMessageBottomWidget;I)V
+.method static constructor <clinit>()V
     .registers 3
 
-    iput p2, p0, Ln2d;->a:I
+    const-class v0, Ljava/lang/Object;
 
-    iput-object p1, p0, Ln2d;->b:Lone/me/chatscreen/search/SearchMessageBottomWidget;
+    const-string v1, "b"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v2, Ln2d;
+
+    invoke-static {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
+
+    sput-object v0, Ln2d;->c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 8
+.method public final a()Z
+    .registers 2
 
-    iget p1, p0, Ln2d;->a:I
+    iget-object p0, p0, Ln2d;->b:Ljava/lang/Object;
 
-    iget-object p0, p0, Ln2d;->b:Lone/me/chatscreen/search/SearchMessageBottomWidget;
+    sget-object v0, Ld6d;->Z:Ld6d;
 
-    packed-switch p1, :pswitch_data_0
+    if-eq p0, v0, :cond_0
 
-    iget-boolean p1, p0, Lone/me/chatscreen/search/SearchMessageBottomWidget;->Y:Z
+    const/4 p0, 0x1
 
-    if-eqz p1, :cond_4
-
-    invoke-virtual {p0}, Lone/me/chatscreen/search/SearchMessageBottomWidget;->B0()Ly2d;
-
-    move-result-object p0
-
-    iget-object p0, p0, Ly2d;->o:Lom2;
-
-    iget-object p0, p0, Lom2;->a:Ljava/lang/Object;
-
-    move-object v1, p0
-
-    check-cast v1, Lrm2;
-
-    iget-object p0, v1, Lrm2;->f:Ljava/util/ArrayList;
-
-    iget p1, v1, Lrm2;->d:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-gt p1, v0, :cond_2
-
-    iget p1, v1, Lrm2;->d:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    iput p1, v1, Lrm2;->d:I
-
-    iget-object v0, v1, Lrm2;->g:Lom2;
-
-    if-eqz v0, :cond_0
-
-    iget v2, v1, Lrm2;->k:I
-
-    invoke-virtual {v0, p1, v2}, Lom2;->d(II)V
+    return p0
 
     :cond_0
-    iget-object p1, v1, Lrm2;->g:Lom2;
+    const/4 p0, 0x0
 
-    if-eqz p1, :cond_1
+    return p0
+.end method
 
-    iget v0, v1, Lrm2;->d:I
+.method public final getValue()Ljava/lang/Object;
+    .registers 5
 
-    add-int/lit8 v0, v0, -0x1
+    iget-object v0, p0, Ln2d;->b:Ljava/lang/Object;
 
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    sget-object v1, Ld6d;->Z:Ld6d;
+
+    if-eq v0, v1, :cond_0
+
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Ln2d;->a:Lzb6;
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {v0}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lh09;
-
-    invoke-virtual {p1, v0}, Lom2;->e(Lh09;)V
+    sget-object v2, Ln2d;->c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     :cond_1
-    iget p1, v1, Lrm2;->d:I
+    invoke-virtual {v2, p0, v1, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    add-int/lit8 p1, p1, 0x1
+    move-result v3
 
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    move-result v0
-
-    if-gt p1, v0, :cond_2
-
-    iget-object p1, v1, Lrm2;->g:Lom2;
-
-    if-eqz p1, :cond_2
-
-    iget p1, v1, Lrm2;->d:I
-
-    add-int/lit8 p1, p1, -0x1
-
-    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lh09;
-
-    :cond_2
-    iget-object v2, v1, Lrm2;->c:Ljava/lang/String;
-
-    iget-boolean p1, v1, Lrm2;->h:Z
-
-    if-eqz p1, :cond_4
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    move-result p0
-
-    iget p1, v1, Lrm2;->d:I
-
-    sub-int/2addr p0, p1
-
-    const/4 p1, 0x5
-
-    if-ge p0, p1, :cond_4
-
-    iget-wide p0, v1, Lrm2;->j:J
-
-    const-wide/16 v3, 0x0
-
-    cmp-long p0, p0, v3
-
-    if-eqz p0, :cond_4
-
-    if-eqz v2, :cond_4
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    const-string p0, "rm2"
-
-    const-string p1, "Search for next messages"
-
-    invoke-static {p0, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    iput-boolean p0, v1, Lrm2;->h:Z
-
-    iget-wide v3, v1, Lrm2;->j:J
-
-    iget-object p0, v1, Lrm2;->e:Lkotlinx/coroutines/internal/ContextScope;
-
-    new-instance v0, Lpm2;
-
-    const/4 v5, 0x0
-
-    invoke-direct/range {v0 .. v5}, Lpm2;-><init>(Lrm2;Ljava/lang/String;JLkotlin/coroutines/Continuation;)V
-
-    const/4 p1, 0x3
+    if-eqz v3, :cond_2
 
     const/4 v1, 0x0
 
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    iput-object v1, p0, Ln2d;->a:Lzb6;
 
-    :cond_4
-    :goto_0
-    return-void
+    return-object v0
 
-    :pswitch_0
-    iget-boolean p1, p0, Lone/me/chatscreen/search/SearchMessageBottomWidget;->Z:Z
+    :cond_2
+    invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p1, :cond_6
+    move-result-object v3
 
-    invoke-virtual {p0}, Lone/me/chatscreen/search/SearchMessageBottomWidget;->B0()Ly2d;
+    if-eq v3, v1, :cond_1
 
-    move-result-object p0
+    :cond_3
+    iget-object p0, p0, Ln2d;->b:Ljava/lang/Object;
 
-    iget-object p0, p0, Ly2d;->o:Lom2;
+    return-object p0
+.end method
 
-    iget-object p0, p0, Lom2;->a:Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
+    .registers 2
 
-    check-cast p0, Lrm2;
+    invoke-virtual {p0}, Ln2d;->a()Z
 
-    iget-object p1, p0, Lrm2;->f:Ljava/util/ArrayList;
+    move-result v0
 
-    iget v0, p0, Lrm2;->d:I
+    if-eqz v0, :cond_0
 
-    add-int/lit8 v1, v0, -0x1
-
-    if-ltz v1, :cond_6
-
-    add-int/lit8 v0, v0, -0x1
-
-    iput v0, p0, Lrm2;->d:I
-
-    iget-object v1, p0, Lrm2;->g:Lom2;
-
-    if-eqz v1, :cond_5
-
-    iget v2, p0, Lrm2;->k:I
-
-    invoke-virtual {v1, v0, v2}, Lom2;->d(II)V
-
-    :cond_5
-    iget-object v0, p0, Lrm2;->g:Lom2;
-
-    if-eqz v0, :cond_6
-
-    iget p0, p0, Lrm2;->d:I
-
-    add-int/lit8 p0, p0, -0x1
-
-    invoke-virtual {p1, p0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p0}, Ln2d;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lh09;
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v0, p0}, Lom2;->e(Lh09;)V
+    move-result-object p0
 
-    :cond_6
-    return-void
+    return-object p0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_0
+    const-string p0, "Lazy value not initialized yet."
+
+    return-object p0
 .end method

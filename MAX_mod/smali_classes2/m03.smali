@@ -1,45 +1,60 @@
-.class public final Lm03;
-.super Lcx3;
+.class public final synthetic Lm03;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lzb6;
 
 
 # instance fields
-.field public final synthetic X:Lv03;
+.field public final synthetic a:Ly03;
 
-.field public Y:I
+.field public final synthetic b:J
 
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic c:J
+
+.field public final synthetic o:J
 
 
 # direct methods
-.method public constructor <init>(Lv03;Lcx3;)V
-    .registers 3
+.method public synthetic constructor <init>(Ly03;JJJ)V
+    .registers 8
 
-    iput-object p1, p0, Lm03;->X:Lv03;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lm03;->a:Ly03;
+
+    iput-wide p2, p0, Lm03;->b:J
+
+    iput-wide p4, p0, Lm03;->c:J
+
+    iput-wide p6, p0, Lm03;->o:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 10
 
-    iput-object p1, p0, Lm03;->o:Ljava/lang/Object;
+    const/4 v8, 0x0
 
-    iget p1, p0, Lm03;->Y:I
+    iget-object v0, p0, Lm03;->a:Ly03;
 
-    const/high16 v0, -0x80000000
+    invoke-virtual {v0}, Ly03;->M()Lza2;
 
-    or-int/2addr p1, v0
+    move-result-object v0
 
-    iput p1, p0, Lm03;->Y:I
+    iget-wide v1, p0, Lm03;->b:J
 
-    iget-object p1, p0, Lm03;->X:Lv03;
+    iget-wide v3, p0, Lm03;->c:J
 
-    invoke-virtual {p1, p0}, Lv03;->J(Lcx3;)Ljava/lang/Comparable;
+    iget-wide v5, p0, Lm03;->o:J
+
+    const/4 v7, -0x1
+
+    invoke-virtual/range {v0 .. v8}, Lza2;->o0(JJJIZ)Ls72;
 
     move-result-object p0
 

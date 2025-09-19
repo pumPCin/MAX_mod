@@ -1,6 +1,7 @@
-.class public interface abstract Lek9;
-.super Ljava/lang/Object;
+.class public final Lek9;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
 
-# interfaces
-.implements Lrf3;
+
+# instance fields
+.field public a:Ljava/lang/Object;

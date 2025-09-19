@@ -4,10 +4,10 @@
 
 
 # static fields
-.field public static final PARSER:Lpe7;
+.field public static final PARSER:Lvh7;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lpe7;"
+            "Lvh7;"
         }
     .end annotation
 .end field
@@ -25,13 +25,13 @@
 .method static constructor <clinit>()V
     .registers 2
 
-    new-instance v0, Lej5;
+    new-instance v0, Ljl5;
 
-    const/16 v1, 0x1b
+    const/16 v1, 0x19
 
-    invoke-direct {v0, v1}, Lej5;-><init>(I)V
+    invoke-direct {v0, v1}, Ljl5;-><init>(I)V
 
-    sput-object v0, Lru/ok/android/externcalls/sdk/api/InternalIdResponse;->PARSER:Lpe7;
+    sput-object v0, Lru/ok/android/externcalls/sdk/api/InternalIdResponse;->PARSER:Lvh7;
 
     return-void
 .end method
@@ -50,7 +50,7 @@
     return-void
 .end method
 
-.method public static parse(Lue7;)Lru/ok/android/externcalls/sdk/api/InternalIdResponse;
+.method public static parse(Lzh7;)Lru/ok/android/externcalls/sdk/api/InternalIdResponse;
     .registers 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -59,7 +59,7 @@
         }
     .end annotation
 
-    invoke-interface {p0}, Lue7;->s()V
+    invoke-interface {p0}, Lzh7;->s()V
 
     const-wide/16 v0, 0x0
 
@@ -68,13 +68,13 @@
     move-object v3, v2
 
     :goto_0
-    invoke-interface {p0}, Lue7;->hasNext()Z
+    invoke-interface {p0}, Lzh7;->hasNext()Z
 
     move-result v4
 
     if-eqz v4, :cond_3
 
-    invoke-interface {p0}, Lue7;->name()Ljava/lang/String;
+    invoke-interface {p0}, Lzh7;->name()Ljava/lang/String;
 
     move-result-object v4
 
@@ -139,33 +139,33 @@
     :goto_1
     packed-switch v6, :pswitch_data_0
 
-    invoke-interface {p0}, Lue7;->B()V
+    invoke-interface {p0}, Lzh7;->B()V
 
     goto :goto_0
 
     :pswitch_0
-    invoke-interface {p0}, Lue7;->y()J
+    invoke-interface {p0}, Lzh7;->y()J
 
     move-result-wide v0
 
     goto :goto_0
 
     :pswitch_1
-    invoke-interface {p0}, Lue7;->H()Ljava/lang/String;
+    invoke-interface {p0}, Lzh7;->H()Ljava/lang/String;
 
     move-result-object v3
 
     goto :goto_0
 
     :pswitch_2
-    invoke-interface {p0}, Lue7;->H()Ljava/lang/String;
+    invoke-interface {p0}, Lzh7;->H()Ljava/lang/String;
 
     move-result-object v2
 
     goto :goto_0
 
     :cond_3
-    invoke-interface {p0}, Lue7;->q()V
+    invoke-interface {p0}, Lzh7;->q()V
 
     new-instance p0, Lru/ok/android/externcalls/sdk/api/InternalIdResponse;
 

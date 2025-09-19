@@ -1,200 +1,102 @@
-.class public final synthetic Lkr3;
-.super Ljava/lang/Object;
+.class public final Lkr3;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/contactlist/ContactListWidget;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lone/me/contactlist/ContactListWidget;I)V
-    .registers 3
-
-    iput p2, p0, Lkr3;->a:I
-
-    iput-object p1, p0, Lkr3;->b:Lone/me/contactlist/ContactListWidget;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public X:I
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lkr3;->a:I
+    check-cast p1, Ly04;
 
-    sget-object v1, Lncf;->a:Lncf;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Lkr3;->b:Lone/me/contactlist/ContactListWidget;
-
-    packed-switch v0, :pswitch_data_0
-
-    check-cast p1, Landroid/view/View;
-
-    sget-object p1, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
-
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Llrc;->B(Lqx3;)Z
-
-    return-object v1
-
-    :pswitch_0
-    check-cast p1, Landroid/view/View;
-
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->o:Lxh7;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lz97;
-
-    const-string v2, "plus"
-
-    const-string v3, "invite_friends"
-
-    const-string v4, "show"
-
-    invoke-virtual {v0, v4, v2, v3}, Lz97;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 v0, 0x1
-
-    invoke-static {v0}, La94;->b(I)Llw3;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Llw3;->B(Landroid/view/View;)Llw3;
-
-    move-result-object p1
-
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->z0:Ljava/util/List;
-
-    invoke-interface {p1, v0}, Llw3;->l(Ljava/util/Collection;)Llw3;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Llw3;->c()Llw3;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Llw3;->build()Lmw3;
-
-    move-result-object p1
-
-    invoke-interface {p1, p0}, Lmw3;->u(Lone/me/sdk/arch/Widget;)V
-
-    return-object v1
-
-    :pswitch_1
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->p0:Lei0;
-
-    invoke-virtual {v0}, Lhp7;->j()I
-
-    move-result v0
-
-    iget-object v1, p0, Lone/me/contactlist/ContactListWidget;->Y:Lqgg;
-
-    invoke-virtual {v1}, Lhp7;->j()I
-
-    move-result v2
-
-    add-int/2addr v2, v0
-
-    iget-object v3, p0, Lone/me/contactlist/ContactListWidget;->n0:Lqgg;
-
-    invoke-virtual {v3}, Lhp7;->j()I
-
-    move-result v4
-
-    add-int/2addr v4, v2
-
-    iget-object v5, p0, Lone/me/contactlist/ContactListWidget;->o0:Luy5;
-
-    invoke-virtual {v5}, Lhp7;->j()I
-
-    move-result v5
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Ljava/lang/CharSequence;
+    invoke-virtual {p0, p1, p2}, Lkr3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    if-eqz p0, :cond_0
+    check-cast p0, Lkr3;
 
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+    sget-object p1, Lylf;->a:Lylf;
 
-    move-result p0
+    invoke-virtual {p0, p1}, Lkr3;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez p0, :cond_3
+    move-result-object p0
 
-    :cond_0
-    if-lt p1, v0, :cond_3
+    return-object p0
+.end method
 
-    if-ge p1, v5, :cond_1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p0, Lkr3;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-object p0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
+
+    iget v0, p0, Lkr3;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
     :cond_1
-    if-ge p1, v2, :cond_2
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    sub-int/2addr p1, v0
+    sget p1, Lfy4;->o:I
 
-    invoke-virtual {v1, p1}, Lhp7;->C(I)Ljava/lang/Object;
+    const/4 p1, 0x2
+
+    sget-object v0, Lky4;->o:Lky4;
+
+    invoke-static {p1, v0}, Lr94;->b0(ILky4;)J
+
+    move-result-wide v2
+
+    iput v1, p0, Lkr3;->X:I
+
+    invoke-static {v2, v3, p0}, Ln2e;->i(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lpp7;
+    sget-object p1, Lz04;->a:Lz04;
 
-    check-cast p0, Lgq3;
+    if-ne p0, p1, :cond_2
 
-    iget-object p0, p0, Lgq3;->b:Ljava/lang/CharSequence;
-
-    goto :goto_1
+    return-object p1
 
     :cond_2
-    if-ge p1, v4, :cond_3
-
-    sub-int/2addr p1, v2
-
-    invoke-virtual {v3, p1}, Lhp7;->C(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lpp7;
-
-    check-cast p0, Lgq3;
-
-    iget-object p0, p0, Lgq3;->b:Ljava/lang/CharSequence;
-
-    goto :goto_1
-
-    :cond_3
     :goto_0
-    const/4 p0, 0x0
+    sget-object p0, Lylf;->a:Lylf;
 
-    :goto_1
     return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

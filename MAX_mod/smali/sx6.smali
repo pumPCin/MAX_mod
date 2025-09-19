@@ -1,11 +1,33 @@
-.class public interface abstract Lsx6;
+.class public abstract Lsx6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(JLzw1;)V
-.end method
+# static fields
+.field public static final a:Ljava/util/regex/Pattern;
 
-.method public abstract clear()V
+.field public static final b:Ljava/util/regex/Pattern;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    const-string v0, "bytes (\\d+)-(\\d+)/(?:\\d+|\\*)"
+
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lsx6;->a:Ljava/util/regex/Pattern;
+
+    const-string v0, "bytes (?:(?:\\d+-\\d+)|\\*)/(\\d+)"
+
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    move-result-object v0
+
+    sput-object v0, Lsx6;->b:Ljava/util/regex/Pattern;
+
+    return-void
 .end method

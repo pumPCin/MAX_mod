@@ -1,68 +1,96 @@
 .class public final Lx93;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lea3;
+.implements Lpc6;
 
 
-# static fields
-.field public static final a:Lx93;
+# instance fields
+.field public final synthetic X:Lfa3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lfa3;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    new-instance v0, Lx93;
+    iput-object p1, p0, Lx93;->X:Lfa3;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
 
-    sput-object v0, Lx93;->a:Lx93;
-
-    sget-object v0, Laa3;->a:Laa3;
-
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    const/4 v0, 0x1
+    check-cast p1, Ly04;
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return v0
+    invoke-virtual {p0, p1, p2}, Lx93;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    :cond_0
-    instance-of p0, p1, Lx93;
+    move-result-object p0
 
-    if-nez p0, :cond_1
+    check-cast p0, Lx93;
 
-    const/4 p0, 0x0
+    sget-object p1, Lylf;->a:Lylf;
 
-    return p0
+    invoke-virtual {p0, p1}, Lx93;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    return v0
+    return-object p1
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    const p0, 0x47f992fb
+    new-instance p1, Lx93;
 
-    return p0
+    iget-object p0, p0, Lx93;->X:Lfa3;
+
+    invoke-direct {p1, p0, p2}, Lx93;-><init>(Lfa3;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
 
-    const-string p0, "Empty"
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lx93;->X:Lfa3;
+
+    iget-object p1, p0, Lfa3;->k:Lkotlinx/coroutines/internal/ContextScope;
+
+    new-instance v0, Lda3;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lda3;-><init>(Lfa3;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v2, 0x1
+
+    sget-object v3, Lb14;->b:Lb14;
+
+    invoke-static {p1, v1, v3, v0, v2}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lfa3;->l:Lncb;
+
+    sget-object v1, Lfa3;->m:[Lxi7;
+
+    const/4 v2, 0x0
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {v0, p0, v1, p1}, Lncb;->h0(Ljava/lang/Object;Lxi7;Ljava/lang/Object;)V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

@@ -1,169 +1,232 @@
 .class public final Lj98;
-.super Lxie;
+.super Ly4a;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+.field public final b:Lqc6;
+
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
-    .registers 3
+.method public synthetic constructor <init>(Ljava/lang/Object;Lqc6;I)V
+    .registers 4
 
-    iput-object p2, p0, Lj98;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    iput p3, p0, Lj98;->a:I
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lj98;->c:Ljava/lang/Object;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lj98;->b:Lqc6;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final n(Ld8a;)V
+    .registers 5
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget v0, p0, Lj98;->a:I
 
-    invoke-virtual {p0, p1, p2}, Lj98;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Li98;
+
+    iget-object v1, p0, Lj98;->b:Lqc6;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, p1, v1, v2}, Li98;-><init>(Ld8a;Lqc6;I)V
+
+    invoke-interface {p1, v0}, Ld8a;->c(Loq4;)V
+
+    iget-object p0, p0, Lj98;->c:Ljava/lang/Object;
+
+    check-cast p0, Lk2e;
+
+    invoke-virtual {p0, v0}, Lk2e;->k(Le3e;)V
+
+    return-void
+
+    :pswitch_0
+    :try_start_0
+    iget-object v0, p0, Lj98;->b:Lqc6;
+
+    iget-object p0, p0, Lj98;->c:Ljava/lang/Object;
+
+    invoke-interface {v0, p0}, Lqc6;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lj98;
+    const-string v0, "The mapper returned a null ObservableSource"
 
-    sget-object p1, Lncf;->a:Lncf;
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    invoke-virtual {p0, p1}, Lj98;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast p0, Lt7a;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    return-object p1
-.end method
+    instance-of v0, p0, Lype;
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    if-eqz v0, :cond_1
 
-    new-instance v0, Lj98;
+    :try_start_1
+    check-cast p0, Lype;
 
-    iget-object p0, p0, Lj98;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    invoke-interface {p0}, Lype;->get()Ljava/lang/Object;
 
-    invoke-direct {v0, p2, p0}, Lj98;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+    move-result-object p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iput-object p1, v0, Lj98;->X:Ljava/lang/Object;
+    if-nez p0, :cond_0
 
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 11
-
-    iget-object v0, p0, Lj98;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
-
-    iget-object v1, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->c:Lxh7;
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lj98;->X:Ljava/lang/Object;
-
-    check-cast p0, Lfub;
-
-    instance-of p1, p0, Lcub;
-
-    if-eqz p1, :cond_0
-
-    check-cast p0, Lcub;
-
-    iget-object p1, p0, Lcub;->a:Lut7;
-
-    iget p0, p0, Lcub;->b:I
-
-    sget-object v1, Lone/me/chatscreen/mediabar/MediaBarWidget;->Y0:[Lsf7;
-
-    const-string v1, "SELECTED_MEDIA_ALBUM"
-
-    invoke-virtual {v0, p1, p0, v1}, Lone/me/chatscreen/mediabar/MediaBarWidget;->N0(Lut7;ILjava/lang/String;)V
+    invoke-static {p1}, Lk45;->a(Ld8a;)V
 
     goto :goto_0
 
     :cond_0
-    instance-of p1, p0, Leub;
+    new-instance v0, Lr7a;
 
-    const/4 v2, 0x1
+    invoke-direct {v0, p1, p0}, Lr7a;-><init>(Ld8a;Ljava/lang/Object;)V
 
-    if-eqz p1, :cond_1
+    invoke-interface {p1, v0}, Ld8a;->c(Loq4;)V
 
-    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Y0:[Lsf7;
+    invoke-virtual {v0}, Lr7a;->run()V
 
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
+    goto :goto_0
 
-    move-result-object p0
+    :catchall_0
+    move-exception p0
 
-    check-cast p0, Lmwa;
+    invoke-static {p0}, Lzyd;->F(Ljava/lang/Throwable;)V
 
-    new-instance p1, Lbjg;
-
-    invoke-direct {p1, v0, v2}, Lbjg;-><init>(Lone/me/sdk/arch/Widget;I)V
-
-    invoke-virtual {p0, p1}, Lmwa;->h(Lbjg;)V
+    invoke-static {p0, p1}, Lk45;->b(Ljava/lang/Throwable;Ld8a;)V
 
     goto :goto_0
 
     :cond_1
-    instance-of p0, p0, Ldub;
-
-    if-eqz p0, :cond_3
-
-    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Y0:[Lsf7;
-
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lmwa;
-
-    new-instance v3, Lbjg;
-
-    invoke-direct {v3, v0, v2}, Lbjg;-><init>(Lone/me/sdk/arch/Widget;I)V
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v4, Lmwa;->h:[Ljava/lang/String;
-
-    sget v7, Ln4c;->permissions_audio_for_video_request:I
-
-    sget v6, Lsia;->a:I
-
-    sget v8, Lsia;->g:I
-
-    invoke-static {v3, v4}, Lmwa;->i(Lbjg;[Ljava/lang/String;)Z
-
-    move-result p1
-
-    const/16 v5, 0xab
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual/range {v3 .. v8}, Lbjg;->c([Ljava/lang/String;IIII)V
+    invoke-interface {p0, p1}, Lt7a;->a(Ld8a;)V
 
     goto :goto_0
 
-    :cond_2
-    invoke-virtual {p0, v3, v4, v5}, Lmwa;->f(Lbjg;[Ljava/lang/String;I)V
+    :catchall_1
+    move-exception p0
+
+    invoke-static {p0}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    invoke-static {p0, p1}, Lk45;->b(Ljava/lang/Throwable;Ld8a;)V
 
     :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    return-void
 
-    return-object p0
+    :pswitch_1
+    iget-object v0, p0, Lj98;->c:Ljava/lang/Object;
+
+    check-cast v0, Ly4a;
+
+    instance-of v1, v0, Lype;
+
+    iget-object p0, p0, Lj98;->b:Lqc6;
+
+    if-eqz v1, :cond_4
+
+    check-cast v0, Lype;
+
+    :try_start_2
+    invoke-interface {v0}, Lype;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p0, v0}, Lqc6;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    const-string v0, "The mapper returned a null SingleSource"
+
+    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    check-cast p0, Lk2e;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    goto :goto_1
+
+    :catchall_2
+    move-exception p0
+
+    goto :goto_2
+
+    :cond_2
+    const/4 p0, 0x0
+
+    :goto_1
+    if-nez p0, :cond_3
+
+    invoke-static {p1}, Lk45;->a(Ld8a;)V
+
+    goto :goto_3
 
     :cond_3
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Laa8;
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    const/4 v1, 0x1
 
-    throw p0
+    invoke-direct {v0, p1, v1}, Laa8;-><init>(Ld8a;I)V
+
+    invoke-virtual {p0, v0}, Lk2e;->k(Le3e;)V
+
+    goto :goto_3
+
+    :goto_2
+    invoke-static {p0}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    invoke-static {p0, p1}, Lk45;->b(Ljava/lang/Throwable;Ld8a;)V
+
+    goto :goto_3
+
+    :cond_4
+    new-instance v1, Lk5a;
+
+    invoke-direct {v1, p1, p0}, Lk5a;-><init>(Ld8a;Lqc6;)V
+
+    invoke-virtual {v0, v1}, Ly4a;->a(Ld8a;)V
+
+    :goto_3
+    return-void
+
+    :pswitch_2
+    new-instance v0, Li98;
+
+    iget-object v1, p0, Lj98;->b:Lqc6;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, p1, v1, v2}, Li98;-><init>(Ld8a;Lqc6;I)V
+
+    invoke-interface {p1, v0}, Ld8a;->c(Loq4;)V
+
+    iget-object p0, p0, Lj98;->c:Ljava/lang/Object;
+
+    check-cast p0, La98;
+
+    invoke-virtual {p0, v0}, La98;->a(Lt98;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

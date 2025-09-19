@@ -1,29 +1,25 @@
 .class public final Lvof;
-.super Lcx3;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Ljof;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public Y:J
+.field public final synthetic Y:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-.field public synthetic Z:Ljava/lang/Object;
+.field public Z:I
 
-.field public final synthetic n0:Lcpf;
-
-.field public o:Lcpf;
-
-.field public o0:I
+.field public o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
 
 # direct methods
-.method public constructor <init>(Lcpf;Lcx3;)V
+.method public constructor <init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Ljx3;)V
     .registers 3
 
-    iput-object p1, p0, Lvof;->n0:Lcpf;
+    iput-object p1, p0, Lvof;->Y:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -33,21 +29,19 @@
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iput-object p1, p0, Lvof;->Z:Ljava/lang/Object;
+    iput-object p1, p0, Lvof;->X:Ljava/lang/Object;
 
-    iget p1, p0, Lvof;->o0:I
+    iget p1, p0, Lvof;->Z:I
 
     const/high16 v0, -0x80000000
 
     or-int/2addr p1, v0
 
-    iput p1, p0, Lvof;->o0:I
+    iput p1, p0, Lvof;->Z:I
 
-    iget-object p1, p0, Lvof;->n0:Lcpf;
+    iget-object p1, p0, Lvof;->Y:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, v0, v0, p0}, Lcpf;->a(Lo72;Ljof;Ljava/lang/Float;Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->doForegroundWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

@@ -1,265 +1,169 @@
-.class public final Lfrb;
-.super Lkz8;
+.class public final synthetic Lfrb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static volatile c:[Lfrb;
+# interfaces
+.implements Lzb6;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:I
 
-.field public b:[F
+.field public final synthetic b:Lgrb;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public synthetic constructor <init>(Lgrb;I)V
+    .registers 3
 
-    invoke-direct {p0}, Lkz8;-><init>()V
+    iput p2, p0, Lfrb;->a:I
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lfrb;->b:Lgrb;
 
-    iput v0, p0, Lfrb;->a:I
-
-    sget-object v0, Lx44;->e:[F
-
-    iput-object v0, p0, Lfrb;->b:[F
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lkz8;->cachedSize:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final computeSerializedSize()I
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 8
 
     iget v0, p0, Lfrb;->a:I
 
-    if-eqz v0, :cond_0
+    iget-object p0, p0, Lfrb;->b:Lgrb;
 
-    const/4 v1, 0x1
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {v1, v0}, Lk63;->f(II)I
+    iget-object p0, p0, Lgrb;->X:Lone/me/profile/screens/invite/ProfileInviteScreen;
 
-    move-result v0
+    invoke-virtual {p0}, Lone/me/profile/screens/invite/ProfileInviteScreen;->y0()Ltrb;
 
-    goto :goto_0
+    move-result-object p0
 
-    :cond_0
-    const/4 v0, 0x0
+    iget-object p0, p0, Ltrb;->E0:Lv85;
 
-    :goto_0
-    iget-object p0, p0, Lfrb;->b:[F
+    new-instance v0, Lwqb;
 
-    array-length v1, p0
+    new-instance v1, Luw3;
 
-    if-lez v1, :cond_1
+    sget v2, Lqla;->M:I
 
-    array-length v1, p0
+    sget v3, Lsla;->S0:I
 
-    mul-int/lit8 v1, v1, 0x4
+    move v4, v3
 
-    add-int/2addr v1, v0
+    new-instance v3, Lp2f;
 
-    array-length p0, p0
+    invoke-direct {v3, v4}, Lp2f;-><init>(I)V
 
-    add-int/2addr v1, p0
+    sget v4, Lpma;->V:I
 
-    return v1
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :cond_1
-    return v0
-.end method
+    move-result-object v4
 
-.method public final mergeFrom(Lj63;)Lkz8;
-    .registers 8
+    sget v5, Lq0d;->P1:I
 
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lj63;->s()I
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result v0
+    move-result-object v5
 
-    if-eqz v0, :cond_9
+    sget v6, Lpma;->Q:I
 
-    const/16 v1, 0x8
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    if-eq v0, v1, :cond_7
+    move-result-object v6
 
-    const/16 v1, 0x12
+    invoke-direct/range {v1 .. v6}, Luw3;-><init>(ILu2f;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)V
 
-    const/4 v2, 0x0
+    invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    if-eq v0, v1, :cond_4
+    move-result-object v1
 
-    const/16 v1, 0x15
+    invoke-direct {v0, v1}, Lwqb;-><init>(Ljava/util/List;)V
 
-    if-eq v0, v1, :cond_1
+    invoke-static {p0, v0}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
 
-    invoke-virtual {p1, v0}, Lj63;->u(I)Z
+    sget-object p0, Lylf;->a:Lylf;
 
-    move-result v0
+    return-object p0
 
-    if-nez v0, :cond_0
+    :pswitch_0
+    iget-object p0, p0, Lgrb;->X:Lone/me/profile/screens/invite/ProfileInviteScreen;
 
-    goto :goto_3
+    invoke-virtual {p0}, Lone/me/profile/screens/invite/ProfileInviteScreen;->y0()Ltrb;
 
-    :cond_1
-    invoke-static {p1, v1}, Lx44;->o(Lj63;I)I
+    move-result-object p0
 
-    move-result v0
+    iget-object v0, p0, Ltrb;->E0:Lv85;
 
-    iget-object v1, p0, Lfrb;->b:[F
+    invoke-virtual {p0}, Ltrb;->s()Ljava/lang/String;
 
-    array-length v3, v1
+    move-result-object v1
 
-    add-int/2addr v0, v3
-
-    new-array v4, v0, [F
-
-    if-eqz v3, :cond_2
-
-    invoke-static {v1, v2, v4, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    :cond_2
-    :goto_1
-    add-int/lit8 v1, v0, -0x1
-
-    if-ge v3, v1, :cond_3
-
-    invoke-virtual {p1}, Lj63;->i()F
-
-    move-result v1
-
-    aput v1, v4, v3
-
-    invoke-virtual {p1}, Lj63;->s()I
-
-    add-int/lit8 v3, v3, 0x1
+    if-nez v1, :cond_0
 
     goto :goto_1
 
-    :cond_3
-    invoke-virtual {p1}, Lj63;->i()F
+    :cond_0
+    new-instance v2, Luqb;
 
-    move-result v0
+    invoke-direct {v2, v1}, Luqb;-><init>(Ljava/lang/String;)V
 
-    aput v0, v4, v3
+    invoke-static {v0, v2}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
 
-    iput-object v4, p0, Lfrb;->b:[F
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {p1}, Lj63;->p()I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Lj63;->e(I)I
+    invoke-static {}, Lb0b;->l()Z
 
     move-result v1
 
-    div-int/lit8 v0, v0, 0x4
+    if-eqz v1, :cond_2
 
-    iget-object v3, p0, Lfrb;->b:[F
+    new-instance v1, Lxqb;
 
-    array-length v4, v3
+    invoke-virtual {p0}, Ltrb;->r()Ls72;
 
-    add-int/2addr v0, v4
+    move-result-object p0
 
-    new-array v5, v0, [F
+    if-eqz p0, :cond_1
 
-    if-eqz v4, :cond_5
+    invoke-virtual {p0}, Ls72;->H()Z
 
-    invoke-static {v3, v2, v5, v2, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    move-result p0
 
-    :cond_5
-    :goto_2
-    if-ge v4, v0, :cond_6
+    const/4 v2, 0x1
 
-    invoke-virtual {p1}, Lj63;->i()F
+    if-ne p0, v2, :cond_1
 
-    move-result v2
-
-    aput v2, v5, v4
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_2
-
-    :cond_6
-    iput-object v5, p0, Lfrb;->b:[F
-
-    invoke-virtual {p1, v1}, Lj63;->d(I)V
-
-    goto :goto_0
-
-    :cond_7
-    invoke-virtual {p1}, Lj63;->p()I
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_8
-
-    goto :goto_0
-
-    :cond_8
-    iput v0, p0, Lfrb;->a:I
-
-    goto :goto_0
-
-    :cond_9
-    :goto_3
-    return-object p0
-.end method
-
-.method public final writeTo(Lk63;)V
-    .registers 5
-
-    iget v0, p0, Lfrb;->a:I
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v1, v0}, Lk63;->w(II)V
-
-    :cond_0
-    iget-object v0, p0, Lfrb;->b:[F
-
-    array-length v0, v0
-
-    if-lez v0, :cond_1
-
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-object v1, p0, Lfrb;->b:[F
-
-    array-length v2, v1
-
-    if-ge v0, v2, :cond_1
-
-    const/4 v2, 0x2
-
-    aget v1, v1, v0
-
-    invoke-virtual {p1, v2, v1}, Lk63;->v(IF)V
-
-    add-int/lit8 v0, v0, 0x1
+    sget p0, Lsla;->N0:I
 
     goto :goto_0
 
     :cond_1
-    return-void
+    sget p0, Lsla;->P0:I
+
+    :goto_0
+    new-instance v2, Lp2f;
+
+    invoke-direct {v2, p0}, Lp2f;-><init>(I)V
+
+    sget p0, Lq0d;->r:I
+
+    invoke-direct {v1, p0, v2}, Lxqb;-><init>(ILp2f;)V
+
+    iget-object p0, v0, Lv85;->b:Lnxd;
+
+    invoke-virtual {p0, v1}, Lnxd;->h(Ljava/lang/Object;)Z
+
+    :cond_2
+    :goto_1
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

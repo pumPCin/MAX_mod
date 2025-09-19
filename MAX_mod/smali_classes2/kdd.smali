@@ -1,66 +1,67 @@
-.class public final Lkdd;
+.class public interface abstract Lkdd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Serializable;
-
-
-# instance fields
-.field public final X:Z
-
-.field public final a:J
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
-
-.field public final o:Ljava/lang/String;
-
-
-# direct methods
-.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-    .registers 7
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lkdd;->a:J
-
-    iput-object p3, p0, Lkdd;->b:Ljava/lang/String;
-
-    iput-object p4, p0, Lkdd;->c:Ljava/lang/String;
-
-    iput-object p5, p0, Lkdd;->o:Ljava/lang/String;
-
-    iput-boolean p6, p0, Lkdd;->X:Z
-
-    return-void
-.end method
+.implements Lird;
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 5
+.method public abstract a()I
+.end method
 
-    const-string v0, "Session{="
+.method public b()Lu2f;
+    .registers 1
 
-    const-string v1, ", current="
+    const/4 p0, 0x0
 
-    iget-wide v2, p0, Lkdd;->a:J
+    return-object p0
+.end method
 
-    iget-boolean p0, p0, Lkdd;->X:Z
+.method public c()Lzqd;
+    .registers 1
 
-    invoke-static {v2, v3, v0, v1, p0}, Lnh0;->i(JLjava/lang/String;Ljava/lang/String;Z)Ljava/lang/StringBuilder;
+    const/4 p0, 0x0
 
-    move-result-object p0
+    return-object p0
+.end method
 
-    const-string v0, "}"
+.method public d()Lu2f;
+    .registers 1
 
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 p0, 0x0
 
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-object p0
+.end method
 
-    move-result-object p0
+.method public e()Lfrd;
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public f()Lll7;
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public g()Z
+    .registers 1
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public getType()Lhrd;
+    .registers 1
+
+    sget-object p0, Lhrd;->b:Lhrd;
 
     return-object p0
 .end method

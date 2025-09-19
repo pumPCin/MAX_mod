@@ -1,26 +1,26 @@
 .class public final Lvn1;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public X:I
 
-.field public final synthetic Y:Lone/me/calls/share/CallSharePickerScreen;
+.field public final synthetic Y:Lxn1;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/share/CallSharePickerScreen;)V
+.method public constructor <init>(Lxn1;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput-object p2, p0, Lvn1;->Y:Lone/me/calls/share/CallSharePickerScreen;
+    iput-object p1, p0, Lvn1;->Y:Lxn1;
 
-    const/4 p2, 0x2
+    const/4 p1, 0x2
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -30,6 +30,8 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
+    check-cast p1, Ly04;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
 
     invoke-virtual {p0, p1, p2}, Lvn1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -38,218 +40,103 @@
 
     check-cast p0, Lvn1;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lvn1;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lvn1;
+
+    iget-object p0, p0, Lvn1;->Y:Lxn1;
+
+    invoke-direct {p1, p0, p2}, Lvn1;-><init>(Lxn1;Lkotlin/coroutines/Continuation;)V
 
     return-object p1
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lvn1;
-
-    iget-object p0, p0, Lvn1;->Y:Lone/me/calls/share/CallSharePickerScreen;
-
-    invoke-direct {v0, p2, p0}, Lvn1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/share/CallSharePickerScreen;)V
-
-    iput-object p1, v0, Lvn1;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 14
+    .registers 5
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget v0, p0, Lvn1;->X:I
 
-    iget-object p1, p0, Lvn1;->X:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    check-cast p1, Ljp9;
-
-    instance-of v0, p1, Ls53;
-
-    if-eqz v0, :cond_0
-
-    sget-object p0, Lin1;->c:Lin1;
-
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lea4;->d()Z
-
-    goto/16 :goto_2
-
-    :cond_0
-    instance-of v0, p1, Lsn1;
-
-    if-eqz v0, :cond_4
-
-    sget-object p1, Lone/me/calls/share/CallSharePickerScreen;->u0:Lf67;
-
-    sget p1, Lp9a;->a:I
-
-    const/4 v0, 0x4
-
-    const/4 v1, 0x0
-
-    invoke-static {p1, v1, v1, v0}, Lnh0;->d(ILandroid/os/Bundle;Lnyc;I)Lej3;
-
-    move-result-object p1
-
-    new-instance v0, Lij3;
-
-    sget v2, Ln9a;->a:I
-
-    const/4 v3, 0x2
-
-    const/4 v4, 0x1
-
-    invoke-direct {v0, v2, v3, v4}, Lij3;-><init>(III)V
-
-    const-string v2, "icon"
-
-    iget-object v5, p1, Lej3;->a:Landroid/os/Bundle;
-
-    invoke-virtual {v5, v2, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
-
-    new-instance v0, Lgj3;
-
-    sget v2, Lo9a;->b:I
-
-    sget v5, Lp9a;->c:I
-
-    new-instance v6, Lqte;
-
-    invoke-direct {v6, v5}, Lqte;-><init>(I)V
-
-    const/4 v5, 0x3
-
-    const/16 v7, 0x20
-
-    invoke-direct {v0, v2, v6, v5, v7}, Lgj3;-><init>(ILvte;II)V
-
-    new-instance v2, Lgj3;
-
-    sget v5, Lo9a;->a:I
-
-    sget v6, Lp9a;->b:I
-
-    new-instance v8, Lqte;
-
-    invoke-direct {v8, v6}, Lqte;-><init>(I)V
-
-    invoke-direct {v2, v5, v8, v3, v7}, Lgj3;-><init>(ILvte;II)V
-
-    filled-new-array {v0, v2}, [Lgj3;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lej3;->a([Lgj3;)V
-
-    invoke-virtual {p1}, Lej3;->e()Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v4}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->H0(Z)V
-
-    iget-object p1, v6, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->o:Lur;
-
-    sget-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Z:[Lsf7;
-
-    aget-object v0, v0, v3
-
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-virtual {p1, v6, v0}, Lur;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lvn1;->Y:Lone/me/calls/share/CallSharePickerScreen;
-
-    iput-object v6, p0, Lone/me/calls/share/CallSharePickerScreen;->t0:Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
-
-    sget-object p1, Lone/me/sdk/bottomsheet/BottomSheetWidget;->u0:[Lsf7;
-
-    invoke-virtual {v6, p0}, Lqx3;->setTargetController(Lqx3;)V
-
-    move-object p1, p0
-
-    :goto_0
-    invoke-virtual {p1}, Lqx3;->getParentController()Lqx3;
-
-    move-result-object v0
+    iget-object v2, p0, Lvn1;->Y:Lxn1;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p1}, Lqx3;->getParentController()Lqx3;
+    if-ne v0, v1, :cond_0
 
-    move-result-object p1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
     :cond_1
-    instance-of v0, p1, Lrrc;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    if-eqz v0, :cond_2
+    iget-object p1, v2, Lxn1;->b:Lyvg;
 
-    check-cast p1, Lrrc;
+    iput v1, p0, Lvn1;->X:I
 
-    goto :goto_1
+    invoke-virtual {p1, p0}, Lyvg;->G(Ljx3;)Ljava/io/Serializable;
+
+    move-result-object p1
+
+    sget-object p0, Lz04;->a:Lz04;
+
+    if-ne p1, p0, :cond_2
+
+    return-object p0
 
     :cond_2
-    move-object p1, v1
+    :goto_0
+    check-cast p1, Ljava/util/Set;
 
-    :goto_1
-    if-eqz p1, :cond_3
+    iget-object p0, v2, Lxn1;->g:Liic;
 
-    invoke-interface {p1}, Lrrc;->d0()Llrc;
+    iget-object p0, p0, Liic;->a:Lrce;
 
-    move-result-object v1
+    invoke-interface {p0}, Lrce;->getValue()Ljava/lang/Object;
 
-    :cond_3
-    invoke-virtual {v6, p0}, Lone/me/sdk/bottomsheet/BottomSheetWidget;->L0(Lone/me/sdk/arch/Widget;)V
+    move-result-object p0
 
-    if-eqz v1, :cond_5
+    check-cast p0, Lun1;
 
-    new-instance v5, Lorc;
+    iget-object p0, p0, Lun1;->a:Lru/ok/tamtam/android/util/share/ShareData;
 
-    const/4 v10, 0x0
+    iget-object v0, v2, Lxn1;->e:Lcl7;
 
-    const/4 v11, -0x1
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    const/4 v7, 0x0
+    move-result-object v0
 
-    const/4 v8, 0x0
+    check-cast v0, Lqwd;
 
-    const/4 v9, 0x0
+    invoke-static {p1}, Lq73;->B0(Ljava/lang/Iterable;)Ljava/util/List;
 
-    invoke-direct/range {v5 .. v11}, Lorc;-><init>(Lqx3;Ljava/lang/String;Lvx3;Lvx3;ZI)V
+    move-result-object p1
 
-    const/4 p0, 0x0
+    const/4 v1, 0x0
 
-    const-string p1, "BottomSheetWidget"
+    invoke-virtual {v0, p0, p1, v1, v1}, Lqwd;->b(Lru/ok/tamtam/android/util/share/ShareData;Ljava/util/List;Ljava/lang/String;Ljava/util/List;)V
 
-    invoke-static {p0, v5, v4, p1}, Lnh0;->m(ZLorc;ZLjava/lang/String;)V
-
-    invoke-virtual {v1, v5}, Llrc;->H(Lorc;)V
-
-    goto :goto_2
-
-    :cond_4
-    instance-of p0, p1, Laa4;
-
-    if-eqz p0, :cond_5
-
-    sget-object p0, Lin1;->c:Lin1;
-
-    check-cast p1, Laa4;
-
-    invoke-virtual {p0, p1}, Ls2;->F0(Laa4;)V
-
-    :cond_5
-    :goto_2
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

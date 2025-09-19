@@ -1,142 +1,96 @@
 .class public final Lyob;
-.super Lxie;
+.super Luc0;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lnpb;
-
-.field public final synthetic Z:Ljava/lang/String;
+.field public final b:Landroid/content/Intent;
 
 
 # direct methods
-.method public constructor <init>(Lnpb;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Landroid/content/Intent;)V
+    .registers 3
 
-    iput-object p1, p0, Lyob;->Y:Lnpb;
+    const/16 v0, 0xd
 
-    iput-object p2, p0, Lyob;->Z:Ljava/lang/String;
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lyob;->b:Landroid/content/Intent;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    check-cast p1, Lr04;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Lyob;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lyob;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lyob;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p1, Lyob;
-
-    iget-object v0, p0, Lyob;->Y:Lnpb;
-
-    iget-object p0, p0, Lyob;->Z:Ljava/lang/String;
-
-    invoke-direct {p1, v0, p0, p2}, Lyob;-><init>(Lnpb;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
-
-    iget v0, p0, Lyob;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    instance-of v1, p1, Lyob;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-nez v1, :cond_1
 
-    throw p0
+    return v2
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    check-cast p1, Lyob;
 
-    iget-object p1, p0, Lyob;->Y:Lnpb;
+    iget-object p0, p0, Lyob;->b:Landroid/content/Intent;
 
-    iget-object v0, p1, Lnpb;->u0:Lxh7;
+    iget-object p1, p1, Lyob;->b:Landroid/content/Intent;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result p0
 
-    check-cast v0, Lvn7;
+    if-nez p0, :cond_2
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v2, p0, Lyob;->Z:Ljava/lang/String;
-
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Lvn7;->e(Landroid/net/Uri;)Lrq5;
-
-    move-result-object v0
-
-    new-instance v3, Lp69;
-
-    const/16 v4, 0x9
-
-    invoke-direct {v3, p1, v4, v2}, Lp69;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    iput v1, p0, Lyob;->X:I
-
-    invoke-virtual {v0, v3, p0}, Lrq5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
+    return v2
 
     :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lyob;->b:Landroid/content/Intent;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "SelectPhotoFromCamera(intent="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lyob;->b:Landroid/content/Intent;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

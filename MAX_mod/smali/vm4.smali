@@ -1,65 +1,39 @@
 .class public final Lvm4;
-.super Lsud;
+.super Lqe5;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic b:I
-
-.field public final synthetic c:Lev2;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lev2;I)V
+# virtual methods
+.method public final R(Ljava/lang/Object;F)V
     .registers 3
 
-    iput p2, p0, Lvm4;->b:I
+    check-cast p1, Lwm4;
 
-    iput-object p1, p0, Lvm4;->c:Lev2;
+    const p0, 0x461c4000    # 10000.0f
 
-    invoke-direct {p0}, Lsud;-><init>()V
+    div-float/2addr p2, p0
+
+    iget-object p0, p1, Lwm4;->y0:Lew4;
+
+    iput p2, p0, Lew4;->b:F
+
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final b(Ls4;)Ljava/lang/Object;
+.method public final r(Ljava/lang/Object;)F
     .registers 2
 
-    iget p1, p0, Lvm4;->b:I
+    check-cast p1, Lwm4;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object p0, p1, Lwm4;->y0:Lew4;
 
-    iget-object p0, p0, Lvm4;->c:Lev2;
+    iget p0, p0, Lew4;->b:F
 
-    iget-object p0, p0, Lev2;->o:Ljava/lang/Object;
+    const p1, 0x461c4000    # 10000.0f
 
-    check-cast p0, Lafa;
+    mul-float/2addr p0, p1
 
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lvm4;->c:Lev2;
-
-    iget-object p0, p0, Lev2;->c:Ljava/lang/Object;
-
-    check-cast p0, Lr6a;
-
-    return-object p0
-
-    :pswitch_1
-    iget-object p0, p0, Lvm4;->c:Lev2;
-
-    iget-object p0, p0, Lev2;->b:Ljava/lang/Object;
-
-    check-cast p0, Lone/me/android/OneMeApplication;
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

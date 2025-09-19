@@ -1,156 +1,114 @@
-.class public final Lye4;
+.class public final synthetic Lye4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ler6;
+.implements Laf4;
 
 
 # instance fields
-.field public final synthetic a:Lcf4;
+.field public final synthetic a:I
+
+.field public final synthetic b:Ljava/lang/String;
+
+.field public final synthetic c:I
 
 
 # direct methods
-.method public constructor <init>(Lcf4;)V
-    .registers 2
+.method public synthetic constructor <init>(Ljava/lang/String;II)V
+    .registers 4
+
+    iput p3, p0, Lye4;->a:I
+
+    iput-object p1, p0, Lye4;->b:Ljava/lang/String;
+
+    iput p2, p0, Lye4;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lye4;->a:Lcf4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .registers 2
+.method public final a(Landroid/media/MediaCodecInfo;)I
+    .registers 4
 
-    iget-object v0, p0, Lye4;->a:Lcf4;
+    iget v0, p0, Lye4;->a:I
 
-    iget-object v0, v0, Lcf4;->c:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget v1, p0, Lye4;->c:I
 
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+    iget-object p0, p0, Lye4;->b:Ljava/lang/String;
 
-    return-void
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final f(Landroid/net/Uri;Lyr7;Z)Z
-    .registers 12
+    sget-object v0, Lk65;->a:Llr;
 
-    iget-object p0, p0, Lye4;->a:Lcf4;
-
-    iget-object p3, p0, Lcf4;->b:Ljava/util/HashMap;
-
-    iget-object v0, p0, Lcf4;->u0:Ljava/lang/Object;
-
-    check-cast v0, Loq6;
-
-    const/4 v3, 0x0
-
-    if-nez v0, :cond_2
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    iget-object v2, p0, Lcf4;->t0:Ljava/lang/Object;
-
-    check-cast v2, Lwq6;
-
-    sget v4, Lyhf;->a:I
-
-    iget-object v2, v2, Lwq6;->e:Ljava/util/List;
-
-    move v4, v3
-
-    move v5, v4
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v6
-
-    if-ge v4, v6, :cond_1
-
-    invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Luq6;
-
-    iget-object v6, v6, Luq6;->a:Landroid/net/Uri;
-
-    invoke-virtual {p3, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Laf4;
-
-    if-eqz v6, :cond_0
-
-    iget-wide v6, v6, Laf4;->n0:J
-
-    cmp-long v6, v0, v6
-
-    if-gez v6, :cond_0
-
-    add-int/lit8 v5, v5, 0x1
-
-    :cond_0
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v1, Lb25;
-
-    iget-object v0, p0, Lcf4;->t0:Ljava/lang/Object;
-
-    check-cast v0, Lwq6;
-
-    iget-object v0, v0, Lwq6;->e:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    const/4 v6, 0x1
-
-    const/4 v2, 0x1
-
-    invoke-direct/range {v1 .. v6}, Lb25;-><init>(IIIII)V
-
-    iget-object p0, p0, Lcf4;->p0:Ljava/lang/Object;
-
-    check-cast p0, Lbt9;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {v1, p2}, Lbt9;->c(Lb25;Lyr7;)Lr11;
+    invoke-virtual {p1, p0}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     move-result-object p0
 
-    if-eqz p0, :cond_2
+    invoke-virtual {p0}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getEncoderCapabilities()Landroid/media/MediaCodecInfo$EncoderCapabilities;
 
-    iget p2, p0, Lr11;->b:I
+    move-result-object p0
 
-    const/4 v0, 0x2
+    invoke-virtual {p0, v1}, Landroid/media/MediaCodecInfo$EncoderCapabilities;->isBitrateModeSupported(I)Z
 
-    if-ne p2, v0, :cond_2
+    move-result p0
 
-    invoke-virtual {p3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    const p0, 0x7fffffff
+
+    :goto_0
+    return p0
+
+    :pswitch_0
+    sget-object v0, Lk65;->a:Llr;
+
+    invoke-virtual {p1, p0}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getBitrateRange()Landroid/util/Range;
+
+    move-result-object p0
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    check-cast p1, Laf4;
+    invoke-virtual {p0, p1}, Landroid/util/Range;->clamp(Ljava/lang/Comparable;)Ljava/lang/Comparable;
 
-    if-eqz p1, :cond_2
+    move-result-object p0
 
-    iget-wide p2, p0, Lr11;->c:J
+    check-cast p0, Ljava/lang/Integer;
 
-    invoke-static {p1, p2, p3}, Laf4;->a(Laf4;J)Z
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
-    :cond_2
-    return v3
+    move-result p0
+
+    sub-int/2addr p0, v1
+
+    invoke-static {p0}, Ljava/lang/Math;->abs(I)I
+
+    move-result p0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

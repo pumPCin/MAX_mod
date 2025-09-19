@@ -1,99 +1,262 @@
-.class public abstract synthetic Lq88;
-.super Ljava/lang/Object;
+.class public final Lq88;
+.super Lp78;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+# instance fields
+.field public final g:F
 
-.field public static final synthetic $EnumSwitchMapping$1:[I
+.field public final h:F
 
-.field public static final synthetic $EnumSwitchMapping$2:[I
+.field public final i:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public constructor <init>(Landroid/view/View;)V
+    .registers 3
 
-    invoke-static {}, Lbbb;->values()[Lbbb;
+    invoke-direct {p0, p1}, Lp78;-><init>(Landroid/view/View;)V
 
-    move-result-object v0
+    invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
-    array-length v0, v0
+    move-result-object p1
 
-    new-array v0, v0, [I
+    sget v0, Lr3c;->m3_back_progress_side_container_max_scale_x_distance_shrink:I
 
-    const/4 v1, 0x1
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v0
+
+    iput v0, p0, Lq88;->g:F
+
+    sget v0, Lr3c;->m3_back_progress_side_container_max_scale_x_distance_grow:I
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v0
+
+    iput v0, p0, Lq88;->h:F
+
+    sget v0, Lr3c;->m3_back_progress_side_container_max_scale_y_distance:I
+
+    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result p1
+
+    iput p1, p0, Lq88;->i:F
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(FZI)V
+    .registers 13
+
+    iget-object v0, p0, Lp78;->a:Landroid/animation/TimeInterpolator;
+
+    invoke-interface {v0, p1}, Landroid/animation/TimeInterpolator;->getInterpolation(F)F
+
+    move-result p1
+
+    sget-object v0, Lh7g;->a:Ljava/util/WeakHashMap;
+
+    iget-object v0, p0, Lp78;->b:Landroid/view/View;
+
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutDirection()I
+
+    move-result v1
+
+    invoke-static {p3, v1}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
+
+    move-result p3
+
+    const/4 v1, 0x3
+
+    and-int/2addr p3, v1
 
     const/4 v2, 0x0
 
-    :try_start_0
-    aput v1, v0, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    const/4 v3, 0x1
 
-    :catch_0
-    const/4 v3, 0x2
+    if-ne p3, v1, :cond_0
 
-    :try_start_1
-    aput v3, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    move p3, v3
 
-    :catch_1
-    sput-object v0, Lq88;->$EnumSwitchMapping$0:[I
+    goto :goto_0
 
-    invoke-static {}, Lc00;->values()[Lc00;
+    :cond_0
+    move p3, v2
 
-    move-result-object v0
+    :goto_0
+    if-ne p2, p3, :cond_1
 
-    array-length v0, v0
+    goto :goto_1
 
-    new-array v0, v0, [I
+    :cond_1
+    move v3, v2
 
-    :try_start_2
-    aput v1, v0, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    :goto_1
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
-    :catch_2
-    :try_start_3
-    aput v3, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+    move-result p2
 
-    :catch_3
-    sput-object v0, Lq88;->$EnumSwitchMapping$1:[I
+    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
-    const/4 v0, 0x3
+    move-result v1
 
-    invoke-static {v0}, Lew1;->w(I)[I
+    int-to-float v4, p2
 
-    move-result-object v4
+    const/4 v5, 0x0
 
-    array-length v4, v4
+    cmpg-float v6, v4, v5
 
-    new-array v4, v4, [I
+    if-lez v6, :cond_8
 
-    :try_start_4
-    aput v1, v4, v2
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+    int-to-float v1, v1
 
-    :catch_4
-    :try_start_5
-    aput v3, v4, v3
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+    cmpg-float v6, v1, v5
 
-    :catch_5
-    :try_start_6
-    aput v0, v4, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+    if-gtz v6, :cond_2
 
-    :catch_6
-    sput-object v4, Lq88;->$EnumSwitchMapping$2:[I
+    goto/16 :goto_7
 
+    :cond_2
+    iget v6, p0, Lq88;->g:F
+
+    div-float/2addr v6, v4
+
+    iget v7, p0, Lq88;->h:F
+
+    div-float/2addr v7, v4
+
+    iget p0, p0, Lq88;->i:F
+
+    div-float/2addr p0, v1
+
+    if-eqz p3, :cond_3
+
+    move v4, v5
+
+    :cond_3
+    invoke-virtual {v0, v4}, Landroid/view/View;->setPivotX(F)V
+
+    if-eqz v3, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    neg-float v7, v6
+
+    :goto_2
+    invoke-static {v5, v7, p1}, Lng;->a(FFF)F
+
+    move-result v1
+
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    add-float v6, v1, v4
+
+    invoke-virtual {v0, v6}, Landroid/view/View;->setScaleX(F)V
+
+    invoke-static {v5, p0, p1}, Lng;->a(FFF)F
+
+    move-result p0
+
+    sub-float p0, v4, p0
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setScaleY(F)V
+
+    instance-of p1, v0, Landroid/view/ViewGroup;
+
+    if-eqz p1, :cond_8
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    :goto_3
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
+
+    move-result p1
+
+    if-ge v2, p1, :cond_8
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object p1
+
+    if-eqz p3, :cond_5
+
+    invoke-virtual {p1}, Landroid/view/View;->getRight()I
+
+    move-result v7
+
+    sub-int v7, p2, v7
+
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
+
+    move-result v8
+
+    add-int/2addr v8, v7
+
+    int-to-float v7, v8
+
+    goto :goto_4
+
+    :cond_5
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+
+    move-result v7
+
+    neg-int v7, v7
+
+    int-to-float v7, v7
+
+    :goto_4
+    invoke-virtual {p1, v7}, Landroid/view/View;->setPivotX(F)V
+
+    invoke-virtual {p1}, Landroid/view/View;->getTop()I
+
+    move-result v7
+
+    neg-int v7, v7
+
+    int-to-float v7, v7
+
+    invoke-virtual {p1, v7}, Landroid/view/View;->setPivotY(F)V
+
+    if-eqz v3, :cond_6
+
+    sub-float v7, v4, v1
+
+    goto :goto_5
+
+    :cond_6
+    move v7, v4
+
+    :goto_5
+    cmpl-float v8, p0, v5
+
+    if-eqz v8, :cond_7
+
+    div-float v8, v6, p0
+
+    mul-float/2addr v8, v7
+
+    goto :goto_6
+
+    :cond_7
+    move v8, v4
+
+    :goto_6
+    invoke-virtual {p1, v7}, Landroid/view/View;->setScaleX(F)V
+
+    invoke-virtual {p1, v8}, Landroid/view/View;->setScaleY(F)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_3
+
+    :cond_8
+    :goto_7
     return-void
 .end method

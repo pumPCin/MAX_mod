@@ -1,132 +1,73 @@
-.class public final Lvyc;
-.super Ljava/lang/Object;
+.class public final enum Lvyc;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lsx6;
 
+# static fields
+.field public static final enum a:Lvyc;
 
-# instance fields
-.field public a:F
+.field public static final enum b:Lvyc;
 
-.field public b:Landroid/animation/ValueAnimator;
-
-.field public final synthetic c:Lwyc;
+.field public static final synthetic c:[Lvyc;
 
 
 # direct methods
-.method public constructor <init>(Lwyc;)V
+.method static constructor <clinit>()V
+    .registers 4
+
+    new-instance v0, Lvyc;
+
+    const-string v1, "OVAL"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lvyc;->a:Lvyc;
+
+    new-instance v1, Lvyc;
+
+    const-string v2, "RECT"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lvyc;->b:Lvyc;
+
+    filled-new-array {v0, v1}, [Lvyc;
+
+    move-result-object v0
+
+    sput-object v0, Lvyc;->c:[Lvyc;
+
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lvyc;
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Lvyc;
 
-    iput-object p1, p0, Lvyc;->c:Lwyc;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    return-void
+    move-result-object p0
+
+    check-cast p0, Lvyc;
+
+    return-object p0
 .end method
 
+.method public static values()[Lvyc;
+    .registers 1
 
-# virtual methods
-.method public final a(JLzw1;)V
-    .registers 6
+    sget-object v0, Lvyc;->c:[Lvyc;
 
-    iget-object p1, p0, Lvyc;->c:Lwyc;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    invoke-static {p1}, Lwyc;->a(Lwyc;)F
+    move-result-object v0
 
-    move-result p2
+    check-cast v0, [Lvyc;
 
-    iput p2, p0, Lvyc;->a:F
-
-    const/high16 p2, 0x3f800000    # 1.0f
-
-    invoke-static {p1, p2}, Lwyc;->b(Lwyc;F)V
-
-    iget-object p2, p0, Lvyc;->b:Landroid/animation/ValueAnimator;
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p2}, Landroid/animation/ValueAnimator;->cancel()V
-
-    :cond_0
-    invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance p2, Lp9b;
-
-    const/16 v0, 0xe
-
-    invoke-direct {p2, v0, p3}, Lp9b;-><init>(ILjava/lang/Object;)V
-
-    const/4 p3, 0x2
-
-    new-array p3, p3, [F
-
-    fill-array-data p3, :array_0
-
-    invoke-static {p3}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
-
-    move-result-object p3
-
-    invoke-virtual {p1}, Lwyc;->getVisibilityRampUpAnimationDurationMillis()J
-
-    move-result-wide v0
-
-    invoke-virtual {p3, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    new-instance v0, Lo00;
-
-    const/16 v1, 0x13
-
-    invoke-direct {v0, v1, p1}, Lo00;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p3, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    new-instance p1, Ldf;
-
-    const/16 v0, 0x9
-
-    invoke-direct {p1, v0, p2}, Ldf;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p3, p1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
-
-    invoke-virtual {p3}, Landroid/animation/ValueAnimator;->start()V
-
-    iput-object p3, p0, Lvyc;->b:Landroid/animation/ValueAnimator;
-
-    return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
-.end method
-
-.method public final clear()V
-    .registers 3
-
-    iget-object v0, p0, Lvyc;->b:Landroid/animation/ValueAnimator;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lvyc;->b:Landroid/animation/ValueAnimator;
-
-    :cond_0
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Lvyc;->c:Lwyc;
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->setAlpha(F)V
-
-    iget p0, p0, Lvyc;->a:F
-
-    invoke-static {v1, p0}, Lwyc;->b(Lwyc;F)V
-
-    return-void
+    return-object v0
 .end method

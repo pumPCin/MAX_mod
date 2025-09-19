@@ -1,90 +1,126 @@
 .class public final Llob;
-.super Landroid/text/style/ClickableSpan;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public X:I
 
-.field public b:I
+.field public final synthetic Y:Lmob;
 
-.field public c:Z
-
-.field public o:Lio7;
+.field public final synthetic Z:Lgu2;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+.method public constructor <init>(Lmob;Lgu2;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
+    iput-object p1, p0, Llob;->Y:Lmob;
 
-    iput-object p1, p0, Llob;->a:Ljava/lang/String;
+    iput-object p2, p0, Llob;->Z:Lgu2;
 
-    iput p2, p0, Llob;->b:I
+    const/4 p1, 0x2
 
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Llob;->c:Z
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 9
-
-    iget-object p1, p0, Llob;->o:Lio7;
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p1, Lio7;->a:Lko7;
-
-    iget-object v0, p1, Lko7;->o:Le7;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v1
-
-    iget-wide v3, v0, Le7;->a:J
-
-    sub-long v3, v1, v3
-
-    const-wide/16 v5, 0x12c
-
-    cmp-long v3, v3, v5
-
-    if-lez v3, :cond_0
-
-    iput-wide v1, v0, Le7;->a:J
-
-    iget-object p1, p1, Lko7;->a:Lho7;
-
-    if-eqz p1, :cond_0
-
-    sget-object v0, Llo7;->X:Llo7;
-
-    const/4 v1, 0x0
-
-    iget-object p0, p0, Llob;->a:Ljava/lang/String;
-
-    invoke-interface {p1, p0, v0, v1}, Lho7;->b(Ljava/lang/String;Llo7;Landroid/text/style/ClickableSpan;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final updateDrawState(Landroid/text/TextPaint;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Llob;->b:I
+    check-cast p1, Ly04;
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-boolean p0, p0, Llob;->c:Z
+    invoke-virtual {p0, p1, p2}, Llob;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+    move-result-object p0
 
-    return-void
+    check-cast p0, Llob;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Llob;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance p1, Llob;
+
+    iget-object v0, p0, Llob;->Y:Lmob;
+
+    iget-object p0, p0, Llob;->Z:Lgu2;
+
+    invoke-direct {p1, v0, p0, p2}, Llob;-><init>(Lmob;Lgu2;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
+
+    iget v0, p0, Llob;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Llob;->Y:Lmob;
+
+    iget-object p1, p1, Lmob;->a:Lnxd;
+
+    new-instance v0, Lcob;
+
+    iget-object v2, p0, Llob;->Z:Lgu2;
+
+    iget-wide v2, v2, Loi0;->a:J
+
+    invoke-direct {v0, v2, v3}, Lcob;-><init>(J)V
+
+    iput v1, p0, Llob;->X:I
+
+    invoke-virtual {p1, v0, p0}, Lnxd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

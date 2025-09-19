@@ -4,22 +4,16 @@
 
 
 # instance fields
-.field public final a:Lt2;
-
-.field public b:Lhh4;
-
-.field public c:Lu73;
-
-.field public d:Lsr0;
+.field public final a:Lz57;
 
 
 # direct methods
-.method public constructor <init>(Lt2;)V
+.method public constructor <init>(Lz57;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, La67;->a:Lt2;
+    iput-object p1, p0, La67;->a:Lz57;
 
     return-void
 .end method

@@ -1,101 +1,52 @@
-.class public final Lhu3;
+.class public final synthetic Lhu3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final a:Ljava/lang/Integer;
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/Integer;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lhu3;->a:Ljava/lang/Integer;
-
-    return-void
-.end method
+# interfaces
+.implements Lx7;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final a(Lrzc;)V
+    .registers 4
 
-    const/4 v0, 0x1
+    new-instance p0, Landroid/content/Intent;
 
-    if-ne p0, p1, :cond_0
+    const-string v0, "android.intent.action.INSERT"
 
-    return v0
+    invoke-direct {p0, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    :cond_0
-    instance-of v1, p1, Lhu3;
+    const-string v0, "vnd.android.cursor.dir/raw_contact"
 
-    const/4 v2, 0x0
+    invoke-virtual {p0, v0}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    if-nez v1, :cond_1
+    const-string v0, "finishActivityOnSaveCompleted"
 
-    return v2
+    const/4 v1, 0x1
 
-    :cond_1
-    check-cast p1, Lhu3;
+    invoke-virtual {p0, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    iget-object p0, p0, Lhu3;->a:Ljava/lang/Integer;
+    :try_start_0
+    invoke-static {p1}, Ln2e;->w(Lrzc;)Landroid/app/Activity;
 
-    iget-object p1, p1, Lhu3;->a:Ljava/lang/Integer;
+    move-result-object p1
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const/16 v0, 0x66
 
-    move-result p0
+    invoke-virtual {p1, p0, v0}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-nez p0, :cond_2
+    return-void
 
-    return v2
+    :catch_0
+    const-string p0, "createContact: failed, no activity found"
 
-    :cond_2
-    return v0
-.end method
+    const/4 p1, 0x0
 
-.method public final hashCode()I
-    .registers 1
+    const-string v0, "ContactsDeepLinkFactory"
 
-    iget-object p0, p0, Lhu3;->a:Ljava/lang/Integer;
+    invoke-static {v0, p0, p1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ButtonTitle(buttonTitleRes="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lhu3;->a:Ljava/lang/Integer;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

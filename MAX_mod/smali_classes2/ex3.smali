@@ -1,455 +1,297 @@
-.class public abstract synthetic Lex3;
-.super Ljava/lang/Object;
+.class public Lex3;
+.super Landroid/widget/PopupWindow;
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic f:[Lxi7;
+
+
+# instance fields
+.field public final a:Lax3;
+
+.field public final b:Z
+
+.field public c:Z
+
+.field public final d:F
+
+.field public final e:Lak;
+
+
 # direct methods
-.method public static final a(I)Lb64;
+.method static constructor <clinit>()V
     .registers 4
 
-    packed-switch p0, :pswitch_data_0
+    new-instance v0, Lmo9;
 
-    const/4 p0, 0x0
+    const-string v1, "customTheme"
 
-    throw p0
+    const-string v2, "getCustomTheme()Lru/ok/tamtam/themes/TamTheme;"
 
-    :pswitch_0
-    const-string p0, "MAX_FAIL_COUNT"
+    const-class v3, Lex3;
 
-    goto :goto_0
+    invoke-direct {v0, v3, v1, v2}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    :pswitch_1
-    const-string p0, "CANCELLED"
+    sget-object v1, Ljpc;->a:Lkpc;
 
-    goto :goto_0
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :pswitch_2
-    const-string p0, "FAIL"
+    const/4 v1, 0x1
 
-    goto :goto_0
-
-    :pswitch_3
-    const-string p0, "INTERRUPTED"
-
-    goto :goto_0
-
-    :pswitch_4
-    const-string p0, "FILE_IS_NULL"
-
-    goto :goto_0
-
-    :pswitch_5
-    const-string p0, "ALREADY_DOWNLOADING"
-
-    :goto_0
-    new-instance v0, Lura;
-
-    const-string v1, "state"
-
-    invoke-direct {v0, v1, p0}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    filled-new-array {v0}, [Lura;
-
-    move-result-object p0
-
-    new-instance v0, Lxg7;
-
-    const/16 v1, 0xc
+    new-array v1, v1, [Lxi7;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Lxg7;-><init>(IZ)V
+    aput-object v0, v1, v2
 
-    const/4 v1, 0x0
-
-    aget-object p0, p0, v1
-
-    iget-object v1, p0, Lura;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    iget-object p0, p0, Lura;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0, p0, v1}, Lxg7;->R(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Lxg7;->d()Lb64;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public static b(FFI)I
-    .registers 3
-
-    mul-float/2addr p0, p1
-
-    invoke-static {p0}, Lg53;->C(F)I
-
-    move-result p0
-
-    add-int/2addr p0, p2
-
-    return p0
-.end method
-
-.method public static c(IFI)I
-    .registers 3
-
-    invoke-static {p1}, Ljava/lang/Float;->hashCode(F)I
-
-    move-result p1
-
-    add-int/2addr p1, p0
-
-    mul-int/2addr p1, p2
-
-    return p1
-.end method
-
-.method public static d(IILjava/lang/String;)I
-    .registers 3
-
-    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
-
-    move-result p2
-
-    add-int/2addr p2, p0
-
-    mul-int/2addr p2, p1
-
-    return p2
-.end method
-
-.method public static e(IIZ)I
-    .registers 3
-
-    invoke-static {p2}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p2
-
-    add-int/2addr p2, p0
-
-    mul-int/2addr p2, p1
-
-    return p2
-.end method
-
-.method public static f(ILjava/lang/String;)I
-    .registers 2
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    add-int/2addr p1, p0
-
-    return p1
-.end method
-
-.method public static g(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)Ljava/lang/String;
-    .registers 5
-
-    invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static h(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
-    .registers 5
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0, p0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .registers 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static j(Ljava/lang/StringBuilder;Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
-    .registers 4
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static k(ILjava/util/HashMap;Ljava/util/ArrayList;ILjava/lang/String;)Ljava/util/ArrayList;
-    .registers 5
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance p0, Ljava/util/ArrayList;
-
-    invoke-direct {p0, p3}, Ljava/util/ArrayList;-><init>(I)V
-
-    invoke-virtual {p0, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    return-object p0
-.end method
-
-.method public static l(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
-    .registers 5
-
-    invoke-virtual {p4, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p4, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sput-object v1, Lex3;->f:[Lxi7;
 
     return-void
 .end method
 
-.method public static synthetic m(Ljava/lang/Object;)V
-    .registers 1
+.method public constructor <init>(Landroid/content/Context;I)V
+    .registers 5
 
-    if-nez p0, :cond_0
+    new-instance v0, Lax3;
+
+    invoke-direct {v0, p1}, Lax3;-><init>(Landroid/content/Context;)V
+
+    const/4 p1, -0x2
+
+    invoke-direct {p0, v0, p2, p1}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
+
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Lax3;
+
+    iput-object p1, p0, Lex3;->a:Lax3;
+
+    const/4 p2, 0x1
+
+    iput-boolean p2, p0, Lex3;->b:Z
+
+    iput-boolean p2, p0, Lex3;->c:Z
+
+    const/high16 v0, 0x3f000000    # 0.5f
+
+    iput v0, p0, Lex3;->d:F
+
+    new-instance v0, Lak;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, v1, p0}, Lak;-><init>(ILjava/lang/Object;)V
+
+    iput-object v0, p0, Lex3;->e:Lak;
+
+    new-instance v0, Lbx3;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
+
+    invoke-virtual {p0, p2}, Landroid/widget/PopupWindow;->setFocusable(Z)V
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p2
+
+    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 v0, 0x41000000    # 8.0f
+
+    mul-float/2addr p2, v0
+
+    invoke-virtual {p0, p2}, Landroid/widget/PopupWindow;->setElevation(F)V
+
+    invoke-virtual {p1}, Lax3;->getCustomTheme()Lcze;
+
+    move-result-object p1
+
+    if-nez p1, :cond_1
+
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->isInEditMode()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    sget-object p1, Loi4;->e0:Loi4;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    sget-object p2, Lcze;->a0:Lzte;
+
+    invoke-static {p1}, Ln4e;->I(Landroid/content/Context;)Lcze;
+
+    move-result-object p1
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p0, p1}, Lex3;->a(Lcze;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lcze;)V
+    .registers 5
+
+    iget p1, p1, Lcze;->m:I
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    sget v1, Lm3c;->bottom_sheet_corner_radius:I
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
+
+    move-result v0
+
+    const/16 v1, 0x8
+
+    new-array v1, v1, [F
+
+    const/4 v2, 0x0
+
+    aput v0, v1, v2
+
+    const/4 v2, 0x1
+
+    aput v0, v1, v2
+
+    const/4 v2, 0x2
+
+    aput v0, v1, v2
+
+    const/4 v2, 0x3
+
+    aput v0, v1, v2
+
+    const/4 v2, 0x4
+
+    aput v0, v1, v2
+
+    const/4 v2, 0x5
+
+    aput v0, v1, v2
+
+    const/4 v2, 0x6
+
+    aput v0, v1, v2
+
+    const/4 v2, 0x7
+
+    aput v0, v1, v2
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0, v0, v1}, Lhv8;->R(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;[F)Landroid/graphics/drawable/GradientDrawable;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .registers 4
+
+    iget-boolean v0, p0, Lex3;->c:Z
+
+    if-nez v0, :cond_0
 
     return-void
 
     :cond_0
-    new-instance p0, Ljava/lang/ClassCastException;
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
-    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
+    move-result-object v0
 
-    throw p0
-.end method
+    invoke-virtual {v0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
-.method public static n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
-    .registers 5
+    move-result-object v0
 
-    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v1, Landroid/view/WindowManager$LayoutParams;
 
-    invoke-virtual {p2, p4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    iget v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    return-void
-.end method
+    or-int/lit8 v2, v2, 0x2
 
-.method public static o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-    .registers 5
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget v2, p0, Lex3;->d:F
 
-    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    invoke-virtual {p0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
-    invoke-virtual {p0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    return-void
-.end method
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-.method public static p(Ljava/lang/StringBuilder;JLjava/lang/String;I)V
-    .registers 5
+    move-result-object p0
 
-    invoke-virtual {p0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-static {p0}, Lvkf;->r(Landroid/content/Context;)Landroid/view/WindowManager;
 
-    invoke-virtual {p0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    invoke-virtual {p0, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-interface {p0, v0, v1}, Landroid/view/ViewManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method
 
-.method public static q(FFI)I
-    .registers 3
+.method public final showAsDropDown(Landroid/view/View;III)V
+    .registers 5
 
-    mul-float/2addr p0, p1
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;III)V
 
-    invoke-static {p0}, Lg53;->C(F)I
+    invoke-virtual {p0}, Lex3;->b()V
 
-    move-result p0
-
-    sub-int/2addr p2, p0
-
-    return p2
+    return-void
 .end method
 
-.method public static synthetic r(I)Ljava/lang/String;
-    .registers 1
+.method public final showAtLocation(Landroid/view/View;III)V
+    .registers 5
 
-    packed-switch p0, :pswitch_data_0
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    const/4 p0, 0x0
+    invoke-virtual {p0}, Lex3;->b()V
 
-    throw p0
-
-    :pswitch_0
-    const-string p0, "XXXHDPI"
-
-    return-object p0
-
-    :pswitch_1
-    const-string p0, "XXHDPI"
-
-    return-object p0
-
-    :pswitch_2
-    const-string p0, "XHDPI"
-
-    return-object p0
-
-    :pswitch_3
-    const-string p0, "HDPI"
-
-    return-object p0
-
-    :pswitch_4
-    const-string p0, "MDPI"
-
-    return-object p0
-
-    :pswitch_5
-    const-string p0, "LDPI"
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public static synthetic s(I)Ljava/lang/String;
-    .registers 1
-
-    packed-switch p0, :pswitch_data_0
-
-    const-string p0, "null"
-
-    return-object p0
-
-    :pswitch_0
-    const-string p0, "RELEASED"
-
-    return-object p0
-
-    :pswitch_1
-    const-string p0, "ERROR"
-
-    return-object p0
-
-    :pswitch_2
-    const-string p0, "PENDING_RELEASE"
-
-    return-object p0
-
-    :pswitch_3
-    const-string p0, "PENDING_START_PAUSED"
-
-    return-object p0
-
-    :pswitch_4
-    const-string p0, "PENDING_START"
-
-    return-object p0
-
-    :pswitch_5
-    const-string p0, "STOPPING"
-
-    return-object p0
-
-    :pswitch_6
-    const-string p0, "PAUSED"
-
-    return-object p0
-
-    :pswitch_7
-    const-string p0, "STARTED"
-
-    return-object p0
-
-    :pswitch_8
-    const-string p0, "CONFIGURED"
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

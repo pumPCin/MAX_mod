@@ -1,68 +1,87 @@
-.class public final synthetic Lifb;
-.super Ljava/lang/Object;
+.class public final Lifb;
+.super Landroid/view/View$BaseSavedState;
 .source "SourceFile"
 
-# interfaces
-.implements Lja4;
+
+# static fields
+.field public static final CREATOR:Lhfb;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:I
 
-.field public final synthetic b:J
-
-.field public final synthetic c:Z
+.field public final b:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(IJZ)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p1, p0, Lifb;->a:I
+    new-instance v0, Lhfb;
 
-    iput-wide p2, p0, Lifb;->b:J
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p4, p0, Lifb;->c:Z
+    sput-object v0, Lifb;->CREATOR:Lhfb;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .registers 3
+
+    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lifb;->a:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+
+    move-result p1
+
+    if-lez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    iput-boolean p1, p0, Lifb;->b:Z
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcelable;IZ)V
+    .registers 4
+
+    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
+
+    iput p2, p0, Lifb;->a:I
+
+    iput-boolean p3, p0, Lifb;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .registers 4
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
 
-    iget v0, p0, Lifb;->a:I
+    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    packed-switch v0, :pswitch_data_0
+    iget p2, p0, Lifb;->a:I
 
-    new-instance v0, Lone/me/profile/screens/changeowner/ChangeOwnerScreen;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget-wide v1, p0, Lifb;->b:J
+    iget-boolean p0, p0, Lifb;->b:Z
 
-    iget-boolean p0, p0, Lifb;->c:Z
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeByte(B)V
 
-    invoke-direct {v0, v1, v2, p0}, Lone/me/profile/screens/changeowner/ChangeOwnerScreen;-><init>(JZ)V
-
-    return-object v0
-
-    :pswitch_0
-    new-instance v0, Lone/me/profile/screens/addmembers/AddChatMembersScreen;
-
-    iget-wide v1, p0, Lifb;->b:J
-
-    iget-boolean p0, p0, Lifb;->c:Z
-
-    invoke-direct {v0, v1, v2, p0}, Lone/me/profile/screens/addmembers/AddChatMembersScreen;-><init>(JZ)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

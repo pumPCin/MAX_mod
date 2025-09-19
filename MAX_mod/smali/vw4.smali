@@ -2,30 +2,59 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final a:I
-
-.field public final b:Z
-
-.field public final c:[B
-
-.field public final d:[B
+# interfaces
+.implements Lyw4;
 
 
-# direct methods
-.method public constructor <init>(IZ[B[B)V
-    .registers 5
+# virtual methods
+.method public final a(Lrw4;Lx46;)Lnw4;
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object p0, p2, Lx46;->r:Lmw4;
 
-    iput p1, p0, Lvw4;->a:I
+    if-nez p0, :cond_0
 
-    iput-boolean p2, p0, Lvw4;->b:Z
+    const/4 p0, 0x0
 
-    iput-object p3, p0, Lvw4;->c:[B
+    return-object p0
 
-    iput-object p4, p0, Lvw4;->d:[B
+    :cond_0
+    new-instance p0, Li85;
+
+    new-instance p1, Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;
+
+    new-instance p2, Landroidx/media3/exoplayer/drm/UnsupportedDrmException;
+
+    invoke-direct {p2}, Ljava/lang/Exception;-><init>()V
+
+    const/16 v0, 0x1771
+
+    invoke-direct {p1, p2, v0}, Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;-><init>(Ljava/lang/Throwable;I)V
+
+    invoke-direct {p0, p1}, Li85;-><init>(Landroidx/media3/exoplayer/drm/DrmSession$DrmSessionException;)V
+
+    return-object p0
+.end method
+
+.method public final c(Landroid/os/Looper;Lndb;)V
+    .registers 3
 
     return-void
+.end method
+
+.method public final d(Lx46;)I
+    .registers 2
+
+    iget-object p0, p1, Lx46;->r:Lmw4;
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
 .end method

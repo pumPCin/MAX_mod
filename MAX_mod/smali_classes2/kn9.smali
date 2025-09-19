@@ -1,201 +1,157 @@
 .class public final Lkn9;
-.super Lt2;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lqve;
-.implements Lxm9;
+.implements Lpc6;
 
 
 # instance fields
-.field public X:Landroid/widget/ProgressBar;
+.field public final synthetic X:J
 
-.field public Y:Landroid/widget/TextView;
+.field public final synthetic Y:Lon9;
 
-.field public Z:Lmr7;
 
-.field public o:Landroidx/recyclerview/widget/RecyclerView;
+# direct methods
+.method public constructor <init>(JLon9;Lkotlin/coroutines/Continuation;)V
+    .registers 5
+
+    iput-wide p1, p0, Lkn9;->X:J
+
+    iput-object p3, p0, Lkn9;->Y:Lon9;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final A(Z)V
-    .registers 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    if-eqz p1, :cond_0
+    check-cast p1, Ly04;
 
-    iget-object p0, p0, Lkn9;->X:Landroid/widget/ProgressBar;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/4 p1, 0x0
+    invoke-virtual {p0, p1, p2}, Lkn9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    move-result-object p0
 
-    return-void
+    check-cast p0, Lkn9;
 
-    :cond_0
-    iget-object p0, p0, Lkn9;->X:Landroid/widget/ProgressBar;
+    sget-object p1, Lylf;->a:Lylf;
 
-    const/16 p1, 0x8
+    invoke-virtual {p0, p1}, Lkn9;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
-
-    return-void
+    return-object p1
 .end method
 
-.method public final B(Ljava/util/List;)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 5
 
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+    new-instance p1, Lkn9;
 
-    move-result v0
+    iget-wide v0, p0, Lkn9;->X:J
 
-    const/16 v1, 0x8
+    iget-object p0, p0, Lkn9;->Y:Lon9;
 
-    const/4 v2, 0x0
+    invoke-direct {p1, v0, v1, p0, p2}, Lkn9;-><init>(JLon9;Lkotlin/coroutines/Continuation;)V
 
-    if-eqz v0, :cond_0
+    return-object p1
+.end method
 
-    iget-object p1, p0, Lkn9;->Y:Landroid/widget/TextView;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
 
-    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object p0, p0, Lkn9;->o:Landroidx/recyclerview/widget/RecyclerView;
+    sget p1, Lon9;->K:I
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
+    new-instance p1, Ljava/lang/Long;
 
-    return-void
+    iget-wide v0, p0, Lkn9;->X:J
+
+    invoke-direct {p1, v0, v1}, Ljava/lang/Long;-><init>(J)V
+
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string v2, "on9"
+
+    const-string v3, "seekToPosition, posMs %d"
+
+    invoke-static {v2, v3, p1}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lkn9;->Y:Lon9;
+
+    invoke-virtual {p0}, Lon9;->e()V
+
+    iget-object p1, p0, Lon9;->m:Ljf8;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Ljf8;->t()V
+
+    iget-object p1, p1, Ljf8;->c:Lif8;
+
+    invoke-interface {p1}, Lif8;->isConnected()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string p1, "The controller is not connected. Ignoring seekTo()."
+
+    invoke-static {p1}, Lxnd;->l0(Ljava/lang/String;)V
+
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lkn9;->Z:Lmr7;
+    invoke-interface {p1, v0, v1}, Lif8;->seekTo(J)V
 
-    iput-object p1, v0, Lmr7;->X:Ljava/lang/Object;
+    :cond_1
+    :goto_0
+    iget-object p1, p0, Lon9;->s:Lyce;
 
-    invoke-virtual {v0}, Ltgc;->m()V
+    new-instance v2, Ljava/lang/Long;
 
-    iget-object p1, p0, Lkn9;->Y:Landroid/widget/TextView;
+    invoke-direct {v2, v0, v1}, Ljava/lang/Long;-><init>(J)V
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+    const/4 v3, 0x0
 
-    iget-object p0, p0, Lkn9;->o:Landroidx/recyclerview/widget/RecyclerView;
+    invoke-virtual {p1, v3, v2}, Lyce;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
+    iget-object p1, p0, Lon9;->G:Lyce;
 
-    return-void
-.end method
+    long-to-double v0, v0
 
-.method public final e()V
-    .registers 4
+    iget-wide v4, p0, Lon9;->E:J
 
-    iget-object v0, p0, Lt2;->c:Ljava/lang/Object;
+    long-to-double v4, v4
 
-    check-cast v0, Landroid/view/View;
+    div-double/2addr v0, v4
 
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    double-to-float p0, v0
 
-    move-result-object v0
+    const/4 v0, 0x0
 
-    sget-object v1, Ldqe;->a0:Ldle;
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-static {v0}, Lx44;->Q(Landroid/content/Context;)Ldqe;
+    invoke-static {p0, v0, v1}, Lkp;->g(FFF)F
 
-    move-result-object v0
+    move-result p0
 
-    iget-object v1, p0, Lt2;->c:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/Float;
 
-    check-cast v1, Landroid/view/View;
+    invoke-direct {v0, p0}, Ljava/lang/Float;-><init>(F)V
 
-    iget v2, v0, Ldqe;->m:I
+    invoke-virtual {p1, v3, v0}, Lyce;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
+    sget-object p0, Lylf;->a:Lylf;
 
-    iget-object v1, p0, Lkn9;->X:Landroid/widget/ProgressBar;
-
-    iget v2, v0, Ldqe;->k:I
-
-    invoke-static {v1, v2}, Ly6c;->H(Landroid/widget/ProgressBar;I)V
-
-    iget-object p0, p0, Lkn9;->Y:Landroid/widget/TextView;
-
-    iget v0, v0, Ldqe;->F:I
-
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(I)V
-
-    return-void
-.end method
-
-.method public final m()V
-    .registers 5
-
-    iget-object v0, p0, Lt2;->c:Ljava/lang/Object;
-
-    check-cast v0, Landroid/view/View;
-
-    sget v1, Ly0c;->frg_live_location_settings__rv_chats:I
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/recyclerview/widget/RecyclerView;
-
-    iput-object v0, p0, Lkn9;->o:Landroidx/recyclerview/widget/RecyclerView;
-
-    iget-object v0, p0, Lt2;->c:Ljava/lang/Object;
-
-    check-cast v0, Landroid/view/View;
-
-    sget v1, Ly0c;->frg_live_location_settings__pb_loading:I
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ProgressBar;
-
-    iput-object v0, p0, Lkn9;->X:Landroid/widget/ProgressBar;
-
-    iget-object v0, p0, Lt2;->c:Ljava/lang/Object;
-
-    check-cast v0, Landroid/view/View;
-
-    sget v1, Ly0c;->frg_live_location_settings__tv_empty:I
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lkn9;->Y:Landroid/widget/TextView;
-
-    new-instance v0, Lmr7;
-
-    sget-object v1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
-
-    invoke-direct {v0}, Lmr7;-><init>()V
-
-    iput-object v1, v0, Lmr7;->X:Ljava/lang/Object;
-
-    iput-object v0, p0, Lkn9;->Z:Lmr7;
-
-    iget-object v1, p0, Lkn9;->o:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Ltgc;)V
-
-    iget-object v0, p0, Lkn9;->o:Landroidx/recyclerview/widget/RecyclerView;
-
-    new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v3, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(IZ)V
-
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
-
-    iget-object p0, p0, Lkn9;->o:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {p0, v3}, Landroidx/recyclerview/widget/RecyclerView;->setHasFixedSize(Z)V
-
-    return-void
+    return-object p0
 .end method

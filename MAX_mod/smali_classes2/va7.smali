@@ -1,50 +1,47 @@
 .class public final Lva7;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field public final synthetic a:Ljava/util/Iterator;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lxa7;
+
+.field public Z:I
+
+.field public o:Lxa7;
 
 
 # direct methods
-.method public constructor <init>(Lwa7;Ljava/util/Iterator;)V
+.method public constructor <init>(Lxa7;Ljx3;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lva7;->Y:Lxa7;
 
-    iput-object p2, p0, Lva7;->a:Ljava/util/Iterator;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .registers 1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object p0, p0, Lva7;->a:Ljava/util/Iterator;
+    iput-object p1, p0, Lva7;->X:Ljava/lang/Object;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    iget p1, p0, Lva7;->Z:I
 
-    move-result p0
+    const/high16 v0, -0x80000000
 
-    return p0
-.end method
+    or-int/2addr p1, v0
 
-.method public final next()Ljava/lang/Object;
-    .registers 1
+    iput p1, p0, Lva7;->Z:I
 
-    iget-object p0, p0, Lva7;->a:Ljava/util/Iterator;
+    iget-object p1, p0, Lva7;->Y:Lxa7;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/u;->a(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1, p0}, Lxa7;->c(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

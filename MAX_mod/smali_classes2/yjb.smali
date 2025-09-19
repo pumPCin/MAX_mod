@@ -1,19 +1,22 @@
 .class public final Lyjb;
-.super Lckb;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lakb;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(I)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lyjb;->a:Ljava/lang/String;
+    iput p1, p0, Lyjb;->a:I
 
     return-void
 .end method
@@ -41,15 +44,11 @@
     :cond_1
     check-cast p1, Lyjb;
 
-    iget-object p0, p0, Lyjb;->a:Ljava/lang/String;
+    iget p0, p0, Lyjb;->a:I
 
-    iget-object p1, p1, Lyjb;->a:Ljava/lang/String;
+    iget p1, p1, Lyjb;->a:I
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
+    if-eq p0, p1, :cond_2
 
     return v2
 
@@ -60,9 +59,9 @@
 .method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lyjb;->a:Ljava/lang/String;
+    iget p0, p0, Lyjb;->a:I
 
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result p0
 
@@ -72,13 +71,13 @@
 .method public final toString()Ljava/lang/String;
     .registers 3
 
-    const-string v0, "CopyToClipboard(text="
+    const-string v0, "SetMainPhoto(index="
 
     const-string v1, ")"
 
-    iget-object p0, p0, Lyjb;->a:Ljava/lang/String;
+    iget p0, p0, Lyjb;->a:I
 
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0, v1}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

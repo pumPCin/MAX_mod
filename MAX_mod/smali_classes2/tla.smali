@@ -1,51 +1,61 @@
 .class public final Ltla;
-.super Lcx3;
+.super Lama;
 .source "SourceFile"
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lzla;
-
-.field public Z:I
-
-.field public o:Ljava/util/Iterator;
+# static fields
+.field public static final a:Ltla;
 
 
 # direct methods
-.method public constructor <init>(Lzla;Lcx3;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Ltla;->Y:Lzla;
+    new-instance v0, Ltla;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ltla;->a:Ltla;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    iput-object p1, p0, Ltla;->X:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Ltla;->Z:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of p0, p1, Ltla;
 
-    iput p1, p0, Ltla;->Z:I
+    if-nez p0, :cond_1
 
-    iget-object p1, p0, Ltla;->Y:Lzla;
+    const/4 p0, 0x0
 
-    const/4 v0, 0x0
+    return p0
 
-    invoke-virtual {p1, v0, v0, p0}, Lzla;->a(Ljava/io/File;Ljava/lang/String;Lcx3;)Ljava/lang/Object;
+    :cond_1
+    return v0
+.end method
 
-    move-result-object p0
+.method public final hashCode()I
+    .registers 1
+
+    const p0, -0x9ef0dbd
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "Contrast"
 
     return-object p0
 .end method

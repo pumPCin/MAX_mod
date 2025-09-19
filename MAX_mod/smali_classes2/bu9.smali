@@ -1,70 +1,72 @@
 .class public final Lbu9;
-.super Lsoe;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lve1;
 
 
 # instance fields
-.field public c:Lp72;
+.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
 
 # direct methods
-.method public constructor <init>(Lu09;)V
+.method public constructor <init>()V
     .registers 2
 
-    invoke-direct {p0, p1}, Lsoe;-><init>(Lu09;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+
+    iput-object v0, p0, Lbu9;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lu09;Ljava/lang/String;)V
-    .registers 4
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v0, "chat"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    invoke-virtual {p1}, Lu09;->B()V
-
-    return-void
-
-    :cond_0
-    invoke-static {p1}, Lp72;->a(Lu09;)Lp72;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lbu9;->c:Lp72;
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final onCallParticipantNetworkStatusChanged(Ljava/util/List;)V
     .registers 3
 
-    iget-object p0, p0, Lbu9;->c:Lp72;
+    move-object v0, p1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast v0, Ljava/util/ArrayList;
 
-    const-string v1, "{chat="
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_0
 
-    const-string p0, "}"
+    goto :goto_1
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    iget-object p0, p0, Lbu9;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    return-object p0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lve1;
+
+    invoke-interface {v0, p1}, Lve1;->onCallParticipantNetworkStatusChanged(Ljava/util/List;)V
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    return-void
 .end method

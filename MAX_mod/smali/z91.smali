@@ -1,74 +1,63 @@
 .class public final Lz91;
-.super Lxie;
+.super Luc0;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final b:Lz91;
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lz91;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Luc0;-><init>(I)V
+
+    sput-object v0, Lz91;->b:Lz91;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    check-cast p1, Lr04;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Lz91;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    return v0
 
-    move-result-object p0
+    :cond_0
+    instance-of p0, p1, Lz91;
 
-    check-cast p0, Lz91;
+    if-nez p0, :cond_1
 
-    sget-object p1, Lncf;->a:Lncf;
+    const/4 p0, 0x0
 
-    invoke-virtual {p0, p1}, Lz91;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    return p0
 
-    move-result-object p0
-
-    return-object p0
+    :cond_1
+    return v0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public final hashCode()I
+    .registers 1
 
-    new-instance p0, Lz91;
+    const p0, -0x5d3948c3
 
-    const/4 v0, 0x2
-
-    invoke-direct {p0, v0, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    iput-object p1, p0, Lz91;->X:Ljava/lang/Object;
-
-    return-object p0
+    return p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lz91;->X:Ljava/lang/Object;
-
-    check-cast p0, Lr04;
-
-    new-instance p1, Ly91;
-
-    const/4 v0, 0x2
-
-    const/4 v1, 0x0
-
-    invoke-direct {p1, v0, v1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    const/4 v0, 0x3
-
-    invoke-static {p0, v1, v1, p1, v0}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    move-result-object p0
+    const-string p0, "OpenActiveCall"
 
     return-object p0
 .end method

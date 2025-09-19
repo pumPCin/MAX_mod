@@ -1,328 +1,126 @@
-.class public final Ldkc;
-.super Ljava/lang/Object;
+.class public final enum Ldkc;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 # interfaces
 .implements Ljava/io/Serializable;
 
 
+# static fields
+.field public static final enum X:Ldkc;
+
+.field public static final enum Y:Ldkc;
+
+.field public static final synthetic Z:[Ldkc;
+
+.field public static final enum b:Ldkc;
+
+.field public static final enum c:Ldkc;
+
+.field public static final enum o:Ldkc;
+
+
 # instance fields
-.field public final X:Lvpa;
-
 .field public final a:I
-
-.field public final b:I
-
-.field public final c:Ljava/lang/String;
-
-.field public final o:Lcya;
 
 
 # direct methods
-.method public constructor <init>(IILjava/lang/String;Lcya;Lvpa;)V
-    .registers 6
+.method static constructor <clinit>()V
+    .registers 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ldkc;
 
-    iput p1, p0, Ldkc;->a:I
+    const-string v1, "UNKNOWN"
 
-    iput p2, p0, Ldkc;->b:I
+    const/4 v2, 0x0
 
-    iput-object p3, p0, Ldkc;->c:Ljava/lang/String;
+    invoke-direct {v0, v1, v2, v2}, Ldkc;-><init>(Ljava/lang/String;II)V
 
-    iput-object p4, p0, Ldkc;->o:Lcya;
+    sput-object v0, Ldkc;->b:Ldkc;
 
-    iput-object p5, p0, Ldkc;->X:Lvpa;
+    new-instance v1, Ldkc;
+
+    const-string v2, "EMOJI"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3, v3}, Ldkc;-><init>(Ljava/lang/String;II)V
+
+    sput-object v1, Ldkc;->c:Ldkc;
+
+    new-instance v2, Ldkc;
+
+    const-string v3, "STICKER"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4, v4}, Ldkc;-><init>(Ljava/lang/String;II)V
+
+    sput-object v2, Ldkc;->o:Ldkc;
+
+    new-instance v3, Ldkc;
+
+    const-string v4, "GIF"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5, v5}, Ldkc;-><init>(Ljava/lang/String;II)V
+
+    sput-object v3, Ldkc;->X:Ldkc;
+
+    new-instance v4, Ldkc;
+
+    const-string v5, "ANIMOJI"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6, v6}, Ldkc;-><init>(Ljava/lang/String;II)V
+
+    sput-object v4, Ldkc;->Y:Ldkc;
+
+    filled-new-array {v0, v1, v2, v3, v4}, [Ldkc;
+
+    move-result-object v0
+
+    sput-object v0, Ldkc;->Z:[Ldkc;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public constructor <init>(Ljava/lang/String;II)V
     .registers 4
 
-    if-ne p0, p1, :cond_0
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    goto :goto_1
+    iput p3, p0, Ldkc;->a:I
 
-    :cond_0
-    instance-of v0, p1, Ldkc;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Ldkc;
-
-    iget v0, p0, Ldkc;->a:I
-
-    iget v1, p1, Ldkc;->a:I
-
-    if-eq v0, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget v0, p0, Ldkc;->b:I
-
-    iget v1, p1, Ldkc;->b:I
-
-    if-eq v0, v1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v0, p0, Ldkc;->c:Ljava/lang/String;
-
-    iget-object v1, p1, Ldkc;->c:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    iget-object v0, p0, Ldkc;->o:Lcya;
-
-    iget-object v1, p1, Ldkc;->o:Lcya;
-
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    goto :goto_0
-
-    :cond_5
-    iget-object p0, p0, Ldkc;->X:Lvpa;
-
-    iget-object p1, p1, Ldkc;->X:Lvpa;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_6
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_6
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .registers 5
+.method public static valueOf(Ljava/lang/String;)Ldkc;
+    .registers 2
 
-    iget v0, p0, Ldkc;->a:I
+    const-class v0, Ldkc;
 
-    invoke-static {v0}, Lew1;->t(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Ldkc;->b:I
-
-    invoke-static {v2, v0, v1}, Loq9;->f(III)I
-
-    move-result v0
-
-    iget-object v2, p0, Ldkc;->c:Ljava/lang/String;
-
-    invoke-static {v0, v1, v2}, Lex3;->d(IILjava/lang/String;)I
-
-    move-result v0
-
-    const/4 v2, 0x0
-
-    iget-object v3, p0, Ldkc;->o:Lcya;
-
-    if-nez v3, :cond_0
-
-    move v3, v2
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
-
-    move-result v3
-
-    :goto_0
-    add-int/2addr v0, v3
-
-    mul-int/2addr v0, v1
-
-    iget-object p0, p0, Ldkc;->X:Lvpa;
-
-    if-nez p0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    :goto_1
-    add-int/2addr v0, v2
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ReplyButton(type="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const/4 v1, 0x1
-
-    iget v2, p0, Ldkc;->a:I
-
-    if-eq v2, v1, :cond_4
-
-    const/4 v1, 0x2
-
-    if-eq v2, v1, :cond_3
-
-    const/4 v1, 0x3
-
-    if-eq v2, v1, :cond_2
-
-    const/4 v1, 0x4
-
-    if-eq v2, v1, :cond_1
-
-    const/4 v1, 0x5
-
-    if-eq v2, v1, :cond_0
-
-    const-string v1, "null"
-
-    goto :goto_0
-
-    :cond_0
-    const-string v1, "UNKNOWN"
-
-    goto :goto_0
-
-    :cond_1
-    const-string v1, "LOCATION"
-
-    goto :goto_0
-
-    :cond_2
-    const-string v1, "CONTACT"
-
-    goto :goto_0
-
-    :cond_3
-    const-string v1, "IMAGE"
-
-    goto :goto_0
-
-    :cond_4
-    const-string v1, "MESSAGE"
-
-    :goto_0
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", intent="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/4 v1, 0x1
-
-    iget v2, p0, Ldkc;->b:I
-
-    if-eq v2, v1, :cond_8
-
-    const/4 v1, 0x2
-
-    if-eq v2, v1, :cond_7
-
-    const/4 v1, 0x3
-
-    if-eq v2, v1, :cond_6
-
-    const/4 v1, 0x4
-
-    if-eq v2, v1, :cond_5
-
-    const-string v1, "null"
-
-    goto :goto_1
-
-    :cond_5
-    const-string v1, "UNKNOWN"
-
-    goto :goto_1
-
-    :cond_6
-    const-string v1, "NEGATIVE"
-
-    goto :goto_1
-
-    :cond_7
-    const-string v1, "POSITIVE"
-
-    goto :goto_1
-
-    :cond_8
-    const-string v1, "DEFAULT"
-
-    :goto_1
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", text="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ldkc;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", image="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ldkc;->o:Lcya;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", outgoingMessage="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Ldkc;->X:Lvpa;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Ldkc;
+
     return-object p0
+.end method
+
+.method public static values()[Ldkc;
+    .registers 1
+
+    sget-object v0, Ldkc;->Z:[Ldkc;
+
+    invoke-virtual {v0}, [Ldkc;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ldkc;
+
+    return-object v0
 .end method

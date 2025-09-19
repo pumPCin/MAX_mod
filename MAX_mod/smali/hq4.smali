@@ -1,151 +1,85 @@
-.class public abstract synthetic Lhq4;
+.class public abstract Lhq4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic a:[I
-
-
 # direct methods
-.method static constructor <clinit>()V
+.method public static a(Landroid/graphics/Rect;Ljava/util/List;)Landroid/view/DisplayCutout;
     .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/graphics/Rect;",
+            "Ljava/util/List<",
+            "Landroid/graphics/Rect;",
+            ">;)",
+            "Landroid/view/DisplayCutout;"
+        }
+    .end annotation
 
-    invoke-static {}, Ljava/math/RoundingMode;->values()[Ljava/math/RoundingMode;
+    new-instance v0, Landroid/view/DisplayCutout;
 
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Landroid/view/DisplayCutout;-><init>(Landroid/graphics/Rect;Ljava/util/List;)V
 
-    array-length v0, v0
+    return-object v0
+.end method
 
-    new-array v0, v0, [I
+.method public static b(Landroid/view/DisplayCutout;)Ljava/util/List;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/view/DisplayCutout;",
+            ")",
+            "Ljava/util/List<",
+            "Landroid/graphics/Rect;",
+            ">;"
+        }
+    .end annotation
 
-    sput-object v0, Lhq4;->a:[I
+    invoke-virtual {p0}, Landroid/view/DisplayCutout;->getBoundingRects()Ljava/util/List;
 
-    :try_start_0
-    sget-object v1, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
+    move-result-object p0
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    return-object p0
+.end method
 
-    move-result v1
+.method public static c(Landroid/view/DisplayCutout;)I
+    .registers 1
 
-    const/4 v2, 0x1
+    invoke-virtual {p0}, Landroid/view/DisplayCutout;->getSafeInsetBottom()I
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    move-result p0
 
-    :catch_0
-    :try_start_1
-    sget-object v0, Lhq4;->a:[I
+    return p0
+.end method
 
-    sget-object v1, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
+.method public static d(Landroid/view/DisplayCutout;)I
+    .registers 1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {p0}, Landroid/view/DisplayCutout;->getSafeInsetLeft()I
 
-    move-result v1
+    move-result p0
 
-    const/4 v2, 0x2
+    return p0
+.end method
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+.method public static e(Landroid/view/DisplayCutout;)I
+    .registers 1
 
-    :catch_1
-    :try_start_2
-    sget-object v0, Lhq4;->a:[I
+    invoke-virtual {p0}, Landroid/view/DisplayCutout;->getSafeInsetRight()I
 
-    sget-object v1, Ljava/math/RoundingMode;->CEILING:Ljava/math/RoundingMode;
+    move-result p0
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    return p0
+.end method
 
-    move-result v1
+.method public static f(Landroid/view/DisplayCutout;)I
+    .registers 1
 
-    const/4 v2, 0x3
+    invoke-virtual {p0}, Landroid/view/DisplayCutout;->getSafeInsetTop()I
 
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    move-result p0
 
-    :catch_2
-    :try_start_3
-    sget-object v0, Lhq4;->a:[I
-
-    sget-object v1, Ljava/math/RoundingMode;->DOWN:Ljava/math/RoundingMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v0, Lhq4;->a:[I
-
-    sget-object v1, Ljava/math/RoundingMode;->UP:Ljava/math/RoundingMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v0, Lhq4;->a:[I
-
-    sget-object v1, Ljava/math/RoundingMode;->HALF_EVEN:Ljava/math/RoundingMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v0, Lhq4;->a:[I
-
-    sget-object v1, Ljava/math/RoundingMode;->HALF_UP:Ljava/math/RoundingMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
-    :try_start_7
-    sget-object v0, Lhq4;->a:[I
-
-    sget-object v1, Ljava/math/RoundingMode;->HALF_DOWN:Ljava/math/RoundingMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x8
-
-    aput v2, v0, v1
-    :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
-
-    :catch_7
-    return-void
+    return p0
 .end method

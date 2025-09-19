@@ -1,75 +1,130 @@
-.class public abstract Lhx9;
-.super Ljava/lang/Object;
+.class public final Lhx9;
+.super Lf0;
 .source "SourceFile"
+
+# interfaces
+.implements Lqe7;
+
+
+# static fields
+.field public static final a:Lhx9;
 
 
 # direct methods
-.method public static a(Landroid/content/Context;Ljava/lang/String;)Landroid/app/Notification$Builder;
-    .registers 3
-
-    new-instance v0, Landroid/app/Notification$Builder;
-
-    invoke-direct {v0, p0, p1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public static b(Landroid/app/Notification$Builder;I)Landroid/app/Notification$Builder;
+.method static constructor <clinit>()V
     .registers 2
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setBadgeIconType(I)Landroid/app/Notification$Builder;
+    new-instance v0, Lhx9;
 
-    move-result-object p0
+    sget-object v1, Ld6d;->X:Ld6d;
+
+    invoke-direct {v0, v1}, Lf0;-><init>(Lp04;)V
+
+    sput-object v0, Lhx9;->a:Lhx9;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final attachChild(La23;)Lx13;
+    .registers 2
+
+    sget-object p0, Lox9;->a:Lox9;
 
     return-object p0
 .end method
 
-.method public static c(Landroid/app/Notification$Builder;Z)Landroid/app/Notification$Builder;
+.method public final cancel(Ljava/util/concurrent/CancellationException;)V
     .registers 2
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setColorized(Z)Landroid/app/Notification$Builder;
+    return-void
+.end method
 
-    move-result-object p0
+.method public final getCancellationException()Ljava/util/concurrent/CancellationException;
+    .registers 2
+
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v0, "This job is always active"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final getChildren()Lbid;
+    .registers 1
+
+    sget-object p0, Ly45;->a:Ly45;
 
     return-object p0
 .end method
 
-.method public static d(Landroid/app/Notification$Builder;I)Landroid/app/Notification$Builder;
+.method public final invokeOnCompletion(Lbc6;)Lrq4;
     .registers 2
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setGroupAlertBehavior(I)Landroid/app/Notification$Builder;
-
-    move-result-object p0
+    sget-object p0, Lox9;->a:Lox9;
 
     return-object p0
 .end method
 
-.method public static e(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-    .registers 2
+.method public final invokeOnCompletion(ZZLbc6;)Lrq4;
+    .registers 4
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setSettingsText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    move-result-object p0
+    sget-object p0, Lox9;->a:Lox9;
 
     return-object p0
 .end method
 
-.method public static f(Landroid/app/Notification$Builder;Ljava/lang/String;)Landroid/app/Notification$Builder;
-    .registers 2
+.method public final isActive()Z
+    .registers 1
 
-    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setShortcutId(Ljava/lang/String;)Landroid/app/Notification$Builder;
+    const/4 p0, 0x1
 
-    move-result-object p0
-
-    return-object p0
+    return p0
 .end method
 
-.method public static g(Landroid/app/Notification$Builder;J)Landroid/app/Notification$Builder;
-    .registers 3
+.method public final isCancelled()Z
+    .registers 1
 
-    invoke-virtual {p0, p1, p2}, Landroid/app/Notification$Builder;->setTimeoutAfter(J)Landroid/app/Notification$Builder;
+    const/4 p0, 0x0
 
-    move-result-object p0
+    return p0
+.end method
+
+.method public final isCompleted()Z
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final join(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .registers 2
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string p1, "This job is always active"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final start()Z
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "NonCancellable"
 
     return-object p0
 .end method

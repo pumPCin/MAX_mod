@@ -1,231 +1,241 @@
 .class public final Lfug;
-.super Ljava/lang/Object;
+.super Landroid/view/WindowInsetsAnimation$Callback;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:Los7;
+.field public final a:Lb72;
 
-.field public b:Z
+.field public b:Ljava/util/List;
 
-.field public c:Z
+.field public c:Ljava/util/ArrayList;
 
-.field public d:Z
-
-.field public e:Z
-
-.field public final f:Ljava/util/concurrent/Executor;
-
-.field public volatile g:Lgx;
-
-.field public volatile h:Lgx;
-
-.field public final i:Ljava/util/concurrent/Semaphore;
-
-.field public final j:Ljava/util/Set;
+.field public final d:Ljava/util/HashMap;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/util/Set;)V
-    .registers 6
+.method public constructor <init>(Lb72;)V
+    .registers 3
 
-    sget-object v0, Lgx;->n0:Ljava/util/concurrent/ThreadPoolExecutor;
+    iget v0, p1, Lb72;->a:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Landroid/view/WindowInsetsAnimation$Callback;-><init>(I)V
 
-    const/4 v1, 0x0
+    new-instance v0, Ljava/util/HashMap;
 
-    iput-boolean v1, p0, Lfug;->b:Z
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-boolean v1, p0, Lfug;->c:Z
+    iput-object v0, p0, Lfug;->d:Ljava/util/HashMap;
 
-    const/4 v2, 0x1
-
-    iput-boolean v2, p0, Lfug;->d:Z
-
-    iput-boolean v1, p0, Lfug;->e:Z
-
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    iput-object v0, p0, Lfug;->f:Ljava/util/concurrent/Executor;
-
-    new-instance p1, Ljava/util/concurrent/Semaphore;
-
-    invoke-direct {p1, v1}, Ljava/util/concurrent/Semaphore;-><init>(I)V
-
-    iput-object p1, p0, Lfug;->i:Ljava/util/concurrent/Semaphore;
-
-    iput-object p2, p0, Lfug;->j:Ljava/util/Set;
+    iput-object p1, p0, Lfug;->a:Lb72;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .registers 5
+.method public final a(Landroid/view/WindowInsetsAnimation;)Liug;
+    .registers 7
 
-    iget-object v0, p0, Lfug;->g:Lgx;
+    iget-object v0, p0, Lfug;->d:Ljava/util/HashMap;
 
-    if-eqz v0, :cond_3
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-boolean v0, p0, Lfug;->b:Z
+    move-result-object v0
 
-    const/4 v1, 0x1
+    check-cast v0, Liug;
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
-    iput-boolean v1, p0, Lfug;->e:Z
-
-    :cond_0
-    iget-object v0, p0, Lfug;->h:Lgx;
-
-    const/4 v2, 0x0
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lfug;->g:Lgx;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v2, p0, Lfug;->g:Lgx;
-
-    return-void
-
-    :cond_1
-    iget-object v0, p0, Lfug;->g:Lgx;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Lfug;->g:Lgx;
-
-    iget-object v3, v0, Lgx;->o:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v3, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    iget-object v0, v0, Lgx;->b:Lre9;
+    new-instance v0, Liug;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
+    const-wide/16 v2, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v4, v1, v2, v3}, Liug;-><init>(ILandroid/view/animation/Interpolator;J)V
+
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x1e
+
+    if-lt v1, v2, :cond_0
+
+    new-instance v1, Lgug;
+
+    invoke-direct {v1, p1}, Lgug;-><init>(Landroid/view/WindowInsetsAnimation;)V
+
+    iput-object v1, v0, Liug;->a:Lhug;
+
+    :cond_0
+    iget-object p0, p0, Lfug;->d:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    return-object v0
+.end method
+
+.method public final onEnd(Landroid/view/WindowInsetsAnimation;)V
+    .registers 4
+
+    iget-object v0, p0, Lfug;->a:Lb72;
+
+    invoke-virtual {p0, p1}, Lfug;->a(Landroid/view/WindowInsetsAnimation;)Liug;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lb72;->b(Liug;)V
+
+    iget-object p0, p0, Lfug;->d:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final onPrepare(Landroid/view/WindowInsetsAnimation;)V
+    .registers 3
+
+    iget-object v0, p0, Lfug;->a:Lb72;
+
+    invoke-virtual {p0, p1}, Lfug;->a(Landroid/view/WindowInsetsAnimation;)Liug;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lb72;->c(Liug;)V
+
+    return-void
+.end method
+
+.method public final onProgress(Landroid/view/WindowInsets;Ljava/util/List;)Landroid/view/WindowInsets;
+    .registers 7
+
+    iget-object v0, p0, Lfug;->c:Ljava/util/ArrayList;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v0, p0, Lfug;->c:Ljava/util/ArrayList;
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfug;->b:Ljava/util/List;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    :goto_0
+    invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    add-int/lit8 v0, v0, -0x1
 
-    iget-object v0, p0, Lfug;->g:Lgx;
+    :goto_1
+    if-ltz v0, :cond_1
 
-    iput-object v0, p0, Lfug;->h:Lgx;
+    invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    :cond_2
-    iput-object v2, p0, Lfug;->g:Lgx;
+    move-result-object v1
 
-    :cond_3
-    return-void
-.end method
+    invoke-static {v1}, Laxa;->m(Ljava/lang/Object;)Landroid/view/WindowInsetsAnimation;
 
-.method public final b()V
-    .registers 5
+    move-result-object v1
 
-    iget-object v0, p0, Lfug;->h:Lgx;
+    invoke-virtual {p0, v1}, Lfug;->a(Landroid/view/WindowInsetsAnimation;)Liug;
 
-    if-nez v0, :cond_3
+    move-result-object v2
 
-    iget-object v0, p0, Lfug;->g:Lgx;
+    invoke-static {v1}, Laxa;->z(Landroid/view/WindowInsetsAnimation;)F
 
-    if-eqz v0, :cond_3
+    move-result v1
 
-    iget-object v0, p0, Lfug;->g:Lgx;
+    iget-object v3, v2, Liug;->a:Lhug;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v3, v1}, Lhug;->d(F)V
 
-    iget-object v0, p0, Lfug;->g:Lgx;
+    iget-object v1, p0, Lfug;->c:Ljava/util/ArrayList;
 
-    iget-object p0, p0, Lfug;->f:Ljava/util/concurrent/Executor;
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    iget v1, v0, Lgx;->c:I
+    add-int/lit8 v0, v0, -0x1
 
-    const/4 v2, 0x2
-
-    const/4 v3, 0x1
-
-    if-eq v1, v3, :cond_2
-
-    iget p0, v0, Lgx;->c:I
-
-    invoke-static {p0}, Lew1;->t(I)I
-
-    move-result p0
-
-    if-eq p0, v3, :cond_1
-
-    if-eq p0, v2, :cond_0
-
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "We should never reach this state"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "Cannot execute task: the task has already been executed (a task can be executed only once)"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    goto :goto_1
 
     :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    const/4 p2, 0x0
 
-    const-string v0, "Cannot execute task: the task is already running."
+    invoke-static {p2, p1}, Lvug;->f(Landroid/view/View;Landroid/view/WindowInsets;)Lvug;
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result-object p1
 
-    throw p0
+    iget-object p2, p0, Lfug;->b:Ljava/util/List;
 
-    :cond_2
-    iput v2, v0, Lgx;->c:I
+    iget-object p0, p0, Lfug;->a:Lb72;
 
-    iget-object v1, v0, Lgx;->a:Lee4;
+    invoke-virtual {p0, p1, p2}, Lb72;->d(Lvug;Ljava/util/List;)Lvug;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object p0
 
-    iget-object v0, v0, Lgx;->b:Lre9;
+    invoke-virtual {p0}, Lvug;->e()Landroid/view/WindowInsets;
 
-    invoke-interface {p0, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-result-object p0
 
-    :cond_3
-    return-void
+    return-object p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+.method public final onStart(Landroid/view/WindowInsetsAnimation;Landroid/view/WindowInsetsAnimation$Bounds;)Landroid/view/WindowInsetsAnimation$Bounds;
+    .registers 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Lfug;->a(Landroid/view/WindowInsetsAnimation;)Liug;
 
-    const/16 v1, 0x40
+    move-result-object p1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    new-instance v0, Lx4b;
 
-    invoke-static {v0, p0}, Lts;->g(Ljava/lang/StringBuilder;Ljava/lang/Object;)V
+    invoke-direct {v0, p2}, Lx4b;-><init>(Landroid/view/WindowInsetsAnimation$Bounds;)V
 
-    const-string p0, " id="
+    iget-object p0, p0, Lfug;->a:Lb72;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1, v0}, Lb72;->e(Liug;Lx4b;)Lx4b;
 
-    const/4 p0, 0x0
+    move-result-object p0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string p0, "}"
+    invoke-static {}, Laxa;->q()V
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p1, p0, Lx4b;->b:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast p1, Lh97;
+
+    invoke-virtual {p1}, Lh97;->d()Landroid/graphics/Insets;
+
+    move-result-object p1
+
+    iget-object p0, p0, Lx4b;->c:Ljava/lang/Object;
+
+    check-cast p0, Lh97;
+
+    invoke-virtual {p0}, Lh97;->d()Landroid/graphics/Insets;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Laxa;->k(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/view/WindowInsetsAnimation$Bounds;
 
     move-result-object p0
 

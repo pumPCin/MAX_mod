@@ -11,11 +11,11 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/video/CameraManager;",
         "",
-        "Lpz1;",
+        "Lxz1;",
         "cameraParams",
-        "Lncf;",
+        "Lylf;",
         "switchCamera",
-        "(Lpz1;)V",
+        "(Lxz1;)V",
         "",
         "isCapturingFromFrontCamera",
         "()Z",
@@ -51,5 +51,5 @@
 .method public abstract setCameraEnabled(Z)V
 .end method
 
-.method public abstract switchCamera(Lpz1;)V
+.method public abstract switchCamera(Lxz1;)V
 .end method

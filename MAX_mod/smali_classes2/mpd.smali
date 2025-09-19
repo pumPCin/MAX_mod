@@ -1,101 +1,124 @@
 .class public final Lmpd;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/ExecutorService;
+.field public X:I
 
-.field public final b:Ld7c;
+.field public final synthetic Y:Lppd;
 
-.field public volatile c:Ljava/lang/String;
-
-.field public volatile d:Lorg/webrtc/PeerConnectionFactory;
-
-.field public final e:Lp0a;
-
-.field public f:Li02;
-
-.field public g:Lorg/webrtc/audio/JavaAudioDeviceModule;
-
-.field public h:Lorg/webrtc/EglBase;
-
-.field public final i:Llk4;
-
-.field public final j:Lsta;
+.field public final synthetic Z:Lrnd;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/ExecutorService;Lorg/webrtc/EglBase;Ld7c;Lvg1;Llk4;)V
-    .registers 9
+.method public constructor <init>(Lppd;Lrnd;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lmpd;->Y:Lppd;
 
-    iput-object p1, p0, Lmpd;->a:Ljava/util/concurrent/ExecutorService;
+    iput-object p2, p0, Lmpd;->Z:Lrnd;
 
-    iput-object p3, p0, Lmpd;->b:Ld7c;
+    const/4 p1, 0x2
 
-    iput-object p5, p0, Lmpd;->i:Llk4;
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    new-instance v0, Lp0a;
+    return-void
+.end method
 
-    invoke-interface {p2}, Lorg/webrtc/EglBase;->getEglBaseContext()Lorg/webrtc/EglBase$Context;
 
-    move-result-object v1
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-direct {v0, v1, p3}, Lp0a;-><init>(Lorg/webrtc/EglBase$Context;Ld7c;)V
+    check-cast p1, Ly04;
 
-    iput-object v0, p0, Lmpd;->e:Lp0a;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    new-instance v0, Lsta;
+    invoke-virtual {p0, p1, p2}, Lmpd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-interface {p2}, Lorg/webrtc/EglBase;->getEglBaseContext()Lorg/webrtc/EglBase$Context;
+    move-result-object p0
 
-    move-result-object v1
+    check-cast p0, Lmpd;
 
-    iget-object p4, p4, Lvg1;->w:Lg38;
+    sget-object p1, Lylf;->a:Lylf;
 
-    iget-object v2, p4, Lg38;->b:Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lmpd;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    check-cast v2, Lsr0;
+    move-result-object p0
 
-    iget-boolean v2, v2, Lsr0;->a:Z
+    return-object p0
+.end method
 
-    if-nez v2, :cond_1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    iget-object p4, p4, Lg38;->c:Ljava/lang/Object;
+    new-instance p1, Lmpd;
 
-    check-cast p4, Lsr0;
+    iget-object v0, p0, Lmpd;->Y:Lppd;
 
-    iget-boolean p4, p4, Lsr0;->a:Z
+    iget-object p0, p0, Lmpd;->Z:Lrnd;
 
-    if-eqz p4, :cond_0
+    invoke-direct {p1, v0, p0, p2}, Lmpd;-><init>(Lppd;Lrnd;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    iget v0, p0, Lmpd;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    const/4 p4, 0x0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    goto :goto_1
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lmpd;->Y:Lppd;
+
+    iget-object p1, p1, Lppd;->b:Lnxd;
+
+    new-instance v0, Ltpd;
+
+    iget-object v2, p0, Lmpd;->Z:Lrnd;
+
+    invoke-direct {v0, v2}, Ltpd;-><init>(Lrnd;)V
+
+    iput v1, p0, Lmpd;->X:I
+
+    invoke-virtual {p1, v0, p0}, Lnxd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
     :goto_0
-    const/4 p4, 0x1
+    sget-object p0, Lylf;->a:Lylf;
 
-    :goto_1
-    invoke-direct {v0, v1, p4, p3}, Lsta;-><init>(Lorg/webrtc/EglBase$Context;ZLd7c;)V
-
-    iput-object v0, p0, Lmpd;->j:Lsta;
-
-    invoke-virtual {p5, v0}, Llk4;->a(Lz68;)V
-
-    new-instance p4, Lepc;
-
-    const/4 p5, 0x2
-
-    invoke-direct {p4, p0, p2, p3, p5}, Lepc;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
-
-    invoke-interface {p1, p4}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    return-object p0
 .end method

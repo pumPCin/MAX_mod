@@ -1,49 +1,76 @@
-.class public final Lqd3;
-.super Ljava/lang/RuntimeException;
+.class public interface abstract Lqd3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
-
-
-# direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;I)V
-    .registers 3
-
-    iput p2, p0, Lqd3;->a:I
-
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public declared-synchronized fillInStackTrace()Ljava/lang/Throwable;
+.method public a(Ljava/lang/Class;)Ljava/lang/Object;
     .registers 2
 
-    iget v0, p0, Lqd3;->a:I
+    invoke-static {p1}, Ld0c;->a(Ljava/lang/Class;)Ld0c;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object p1
 
-    invoke-super {p0}, Ljava/lang/Throwable;->fillInStackTrace()Ljava/lang/Throwable;
+    invoke-interface {p0, p1}, Lqd3;->j(Ld0c;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
+.end method
 
-    :pswitch_0
-    monitor-enter p0
+.method public c(Ld0c;)Ljava/util/Set;
+    .registers 2
 
-    monitor-exit p0
+    invoke-interface {p0, p1}, Lqd3;->f(Ld0c;)Lqyb;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lqyb;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/Set;
+
+    return-object p0
+.end method
+
+.method public e(Ljava/lang/Class;)Lqyb;
+    .registers 2
+
+    invoke-static {p1}, Ld0c;->a(Ljava/lang/Class;)Ld0c;
+
+    move-result-object p1
+
+    invoke-interface {p0, p1}, Lqd3;->i(Ld0c;)Lqyb;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public abstract f(Ld0c;)Lqyb;
+.end method
+
+.method public abstract i(Ld0c;)Lqyb;
+.end method
+
+.method public j(Ld0c;)Ljava/lang/Object;
+    .registers 2
+
+    invoke-interface {p0, p1}, Lqd3;->i(Ld0c;)Lqyb;
+
+    move-result-object p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
 
     return-object p0
 
-    nop
+    :cond_0
+    invoke-interface {p0}, Lqyb;->get()Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    move-result-object p0
+
+    return-object p0
 .end method

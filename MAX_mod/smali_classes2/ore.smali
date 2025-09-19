@@ -1,132 +1,84 @@
-.class public final synthetic Lore;
-.super Ljava/lang/Object;
+.class public final Lore;
+.super Loi0;
 .source "SourceFile"
-
-# interfaces
-.implements Ly96;
-.implements Lh9b;
 
 
 # instance fields
-.field public final synthetic a:Lpre;
-
-.field public final synthetic b:Ljava/util/List;
+.field public final b:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lpre;Ljava/util/List;)V
+.method public constructor <init>(J)V
     .registers 3
 
-    iput-object p1, p0, Lore;->a:Lpre;
+    invoke-direct {p0}, Loi0;-><init>()V
 
-    iput-object p2, p0, Lore;->b:Ljava/util/List;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p1, p0, Lore;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 7
 
-    check-cast p1, Ljava/lang/Boolean;
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lore;->a:Lpre;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    sget-object p0, Lec3;->a:Lec3;
-
-    return-object p0
+    return v0
 
     :cond_0
-    iget-object p1, v0, Lpre;->c:Lhsb;
+    instance-of v1, p1, Lore;
 
-    new-instance v1, Lore;
+    const/4 v2, 0x0
 
-    iget-object p0, p0, Lore;->b:Ljava/util/List;
+    if-nez v1, :cond_1
 
-    invoke-direct {v1, v0, p0}, Lore;-><init>(Lpre;Ljava/util/List;)V
+    return v2
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :cond_1
+    check-cast p1, Lore;
 
-    new-instance p0, Lv2a;
+    iget-wide v3, p0, Lore;->b:J
 
-    const/4 v0, 0x2
+    iget-wide p0, p1, Lore;->b:J
 
-    invoke-direct {p0, p1, v1, v0}, Lv2a;-><init>(Lt3a;Ljava/lang/Object;I)V
+    cmp-long p0, v3, p0
 
-    new-instance p1, Lp2a;
+    if-eqz p0, :cond_2
 
-    invoke-direct {p1, p0}, Lp2a;-><init>(Lv2a;)V
+    return v2
 
-    return-object p1
+    :cond_2
+    return v0
 .end method
 
-.method public test(Ljava/lang/Object;)Z
-    .registers 4
+.method public final hashCode()I
+    .registers 3
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-wide v0, p0, Lore;->b:J
 
-    iget-object p1, p0, Lore;->a:Lpre;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Ls64;
-
-    const/4 v1, 0x7
-
-    iget-object p0, p0, Lore;->b:Ljava/util/List;
-
-    invoke-direct {v0, p1, v1, p0}, Ls64;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    new-instance p1, Ls3a;
-
-    const/4 v1, 0x4
-
-    invoke-direct {p1, v1, v0}, Ls3a;-><init>(ILjava/lang/Object;)V
-
-    new-instance v0, Lma2;
-
-    const/16 v1, 0x1d
-
-    invoke-direct {v0, v1, p0}, Lma2;-><init>(ILjava/util/List;)V
-
-    new-instance p0, Ljud;
-
-    const/4 v1, 0x1
-
-    invoke-direct {p0, p1, v0, v1}, Ljud;-><init>(Lcud;Lim3;I)V
-
-    new-instance p1, Lf8e;
-
-    const/16 v0, 0xb
-
-    invoke-direct {p1, v0}, Lf8e;-><init>(I)V
-
-    invoke-virtual {p0, p1}, Lcud;->h(Ly96;)Lmud;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lcud;->e()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/Boolean;
-
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
     move-result p0
 
-    xor-int/lit8 p0, p0, 0x1
-
     return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 5
+
+    const-string v0, "SuspendBotEvent(chatId="
+
+    const-string v1, ")"
+
+    iget-wide v2, p0, Lore;->b:J
+
+    invoke-static {v2, v3, v0, v1}, Lwsf;->e(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

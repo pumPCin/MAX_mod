@@ -2,10 +2,7 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lamc;
-
 
 # virtual methods
-.method public abstract get(I)Ljava/lang/Object;
+.method public abstract f(J)Lis5;
 .end method

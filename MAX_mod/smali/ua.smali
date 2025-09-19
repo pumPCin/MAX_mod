@@ -3,85 +3,62 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcb;
-
-
-# instance fields
-.field public final a:Z
-
-
-# direct methods
-.method public constructor <init>(Z)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean p1, p0, Lua;->a:Z
-
-    return-void
-.end method
+.implements Lhb;
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
+    const/4 v0, 0x1
+
     if-ne p0, p1, :cond_0
 
-    goto :goto_1
+    return v0
 
     :cond_0
-    instance-of v0, p1, Lua;
+    instance-of p0, p1, Lua;
 
-    if-nez v0, :cond_1
+    if-nez p0, :cond_1
 
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lua;
-
-    iget-boolean p0, p0, Lua;->a:Z
-
-    iget-boolean p1, p1, Lua;->a:Z
-
-    if-eq p0, p1, :cond_2
-
-    :goto_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
+    :cond_1
+    check-cast p1, Lua;
 
-    return p0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    return v0
 .end method
 
 .method public final hashCode()I
-    .registers 1
+    .registers 2
 
-    iget-boolean p0, p0, Lua;->a:Z
+    const/4 p0, 0x1
 
     invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result p0
 
-    return p0
+    mul-int/lit8 p0, p0, 0x1f
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result v0
+
+    add-int/2addr v0, p0
+
+    return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .registers 1
 
-    const-string v0, "DisableAllRaiseHandsOnce(isSuccess="
-
-    const-string v1, ")"
-
-    iget-boolean p0, p0, Lua;->a:Z
-
-    invoke-static {v0, v1, p0}, Lfge;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
-
-    move-result-object p0
+    const-string p0, "DisableAllCameraAndMicInCall(isSuccess=true, isEnabled=false)"
 
     return-object p0
 .end method

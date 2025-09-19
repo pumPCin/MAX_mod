@@ -1,151 +1,317 @@
-.class public abstract synthetic Lo67;
+.class public final Lo67;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ld7e;
 
-# static fields
-.field public static final synthetic a:[I
+
+# instance fields
+.field public a:I
+
+.field public b:Z
+
+.field public final c:Lkic;
+
+.field public final o:Ljava/util/zip/Inflater;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lkic;Ljava/util/zip/Inflater;)V
     .registers 3
 
-    invoke-static {}, Ljava/math/RoundingMode;->values()[Ljava/math/RoundingMode;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iput-object p1, p0, Lo67;->c:Lkic;
 
-    array-length v0, v0
+    iput-object p2, p0, Lo67;->o:Ljava/util/zip/Inflater;
 
-    new-array v0, v0, [I
+    return-void
+.end method
 
-    sput-object v0, Lo67;->a:[I
+
+# virtual methods
+.method public final b(Let0;J)J
+    .registers 8
+
+    :goto_0
+    invoke-virtual {p0, p1, p2, p3}, Lo67;->c(Let0;J)J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v0, v2
+
+    if-lez v2, :cond_0
+
+    return-wide v0
+
+    :cond_0
+    iget-object v0, p0, Lo67;->o:Ljava/util/zip/Inflater;
+
+    invoke-virtual {v0}, Ljava/util/zip/Inflater;->finished()Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    invoke-virtual {v0}, Ljava/util/zip/Inflater;->needsDictionary()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    iget-object v0, p0, Lo67;->c:Lkic;
+
+    invoke-virtual {v0}, Lkic;->m()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    new-instance p0, Ljava/io/EOFException;
+
+    const-string p1, "source exhausted prematurely"
+
+    invoke-direct {p0, p1}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_3
+    :goto_1
+    const-wide/16 p0, -0x1
+
+    return-wide p0
+.end method
+
+.method public final c(Let0;J)J
+    .registers 11
+
+    iget-object v0, p0, Lo67;->o:Ljava/util/zip/Inflater;
+
+    const-wide/16 v1, 0x0
+
+    cmp-long v3, p2, v1
+
+    if-ltz v3, :cond_7
+
+    iget-boolean v4, p0, Lo67;->b:Z
+
+    if-nez v4, :cond_6
+
+    if-nez v3, :cond_0
+
+    goto :goto_2
+
+    :cond_0
+    const/4 v3, 0x1
 
     :try_start_0
-    sget-object v1, Ljava/math/RoundingMode;->UNNECESSARY:Ljava/math/RoundingMode;
+    invoke-virtual {p1, v3}, Let0;->v0(I)Lhed;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    move-result-object v3
 
-    move-result v1
+    iget v4, v3, Lhed;->c:I
 
-    const/4 v2, 0x1
+    rsub-int v4, v4, 0x2000
 
-    aput v2, v0, v1
+    int-to-long v4, v4
+
+    invoke-static {p2, p3, v4, v5}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide p2
+
+    long-to-int p2, p2
+
+    invoke-virtual {v0}, Ljava/util/zip/Inflater;->needsInput()Z
+
+    move-result p3
     :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/util/zip/DataFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    iget-object v4, p0, Lo67;->c:Lkic;
+
+    if-nez p3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    :try_start_1
+    invoke-virtual {v4}, Lkic;->m()Z
+
+    move-result p3
+
+    if-eqz p3, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p3, v4, Lkic;->a:Let0;
+
+    iget-object p3, p3, Let0;->a:Lhed;
+
+    iget v5, p3, Lhed;->c:I
+
+    iget v6, p3, Lhed;->b:I
+
+    sub-int/2addr v5, v6
+
+    iput v5, p0, Lo67;->a:I
+
+    iget-object p3, p3, Lhed;->a:[B
+
+    invoke-virtual {v0, p3, v6, v5}, Ljava/util/zip/Inflater;->setInput([BII)V
+
+    :goto_0
+    iget-object p3, v3, Lhed;->a:[B
+
+    iget v5, v3, Lhed;->c:I
+
+    invoke-virtual {v0, p3, v5, p2}, Ljava/util/zip/Inflater;->inflate([BII)I
+
+    move-result p2
+
+    iget p3, p0, Lo67;->a:I
+
+    if-nez p3, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {v0}, Ljava/util/zip/Inflater;->getRemaining()I
+
+    move-result v0
+
+    sub-int/2addr p3, v0
+
+    iget v0, p0, Lo67;->a:I
+
+    sub-int/2addr v0, p3
+
+    iput v0, p0, Lo67;->a:I
+
+    int-to-long v5, p3
+
+    invoke-virtual {v4, v5, v6}, Lkic;->skip(J)V
+
+    :goto_1
+    if-lez p2, :cond_4
+
+    iget p0, v3, Lhed;->c:I
+
+    add-int/2addr p0, p2
+
+    iput p0, v3, Lhed;->c:I
+
+    iget-wide v0, p1, Let0;->b:J
+
+    int-to-long p2, p2
+
+    add-long/2addr v0, p2
+
+    iput-wide v0, p1, Let0;->b:J
+
+    return-wide p2
+
+    :cond_4
+    iget p0, v3, Lhed;->b:I
+
+    iget p2, v3, Lhed;->c:I
+
+    if-ne p0, p2, :cond_5
+
+    invoke-virtual {v3}, Lhed;->a()Lhed;
+
+    move-result-object p0
+
+    iput-object p0, p1, Let0;->a:Lhed;
+
+    invoke-static {v3}, Lyed;->a(Lhed;)V
+    :try_end_1
+    .catch Ljava/util/zip/DataFormatException; {:try_start_1 .. :try_end_1} :catch_0
+
+    :cond_5
+    :goto_2
+    return-wide v1
 
     :catch_0
-    :try_start_1
-    sget-object v0, Lo67;->a:[I
+    move-exception p0
 
-    sget-object v1, Ljava/math/RoundingMode;->DOWN:Ljava/math/RoundingMode;
+    new-instance p1, Ljava/io/IOException;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-direct {p1, p0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
-    move-result v1
+    throw p1
 
-    const/4 v2, 0x2
+    :cond_6
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    const-string p1, "closed"
 
-    :catch_1
-    :try_start_2
-    sget-object v0, Lo67;->a:[I
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    sget-object v1, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
+    throw p0
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    :cond_7
+    const-string p0, "byteCount < 0: "
 
-    move-result v1
+    invoke-static {p2, p3, p0}, Lbg9;->i(JLjava/lang/String;)Ljava/lang/String;
 
-    const/4 v2, 0x3
+    move-result-object p0
 
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    :catch_2
-    :try_start_3
-    sget-object v0, Lo67;->a:[I
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    sget-object v1, Ljava/math/RoundingMode;->UP:Ljava/math/RoundingMode;
+    move-result-object p0
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    move-result v1
+    throw p1
+.end method
 
-    const/4 v2, 0x4
+.method public final close()V
+    .registers 2
 
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+    iget-boolean v0, p0, Lo67;->b:Z
 
-    :catch_3
-    :try_start_4
-    sget-object v0, Lo67;->a:[I
+    if-eqz v0, :cond_0
 
-    sget-object v1, Ljava/math/RoundingMode;->CEILING:Ljava/math/RoundingMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v0, Lo67;->a:[I
-
-    sget-object v1, Ljava/math/RoundingMode;->HALF_DOWN:Ljava/math/RoundingMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v0, Lo67;->a:[I
-
-    sget-object v1, Ljava/math/RoundingMode;->HALF_UP:Ljava/math/RoundingMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
-    :try_start_7
-    sget-object v0, Lo67;->a:[I
-
-    sget-object v1, Ljava/math/RoundingMode;->HALF_EVEN:Ljava/math/RoundingMode;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x8
-
-    aput v2, v0, v1
-    :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
-
-    :catch_7
     return-void
+
+    :cond_0
+    iget-object v0, p0, Lo67;->o:Ljava/util/zip/Inflater;
+
+    invoke-virtual {v0}, Ljava/util/zip/Inflater;->end()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lo67;->b:Z
+
+    iget-object p0, p0, Lo67;->c:Lkic;
+
+    invoke-virtual {p0}, Lkic;->close()V
+
+    return-void
+.end method
+
+.method public final p()Lr6f;
+    .registers 1
+
+    iget-object p0, p0, Lo67;->c:Lkic;
+
+    iget-object p0, p0, Lkic;->c:Ld7e;
+
+    invoke-interface {p0}, Ld7e;->p()Lr6f;
+
+    move-result-object p0
+
+    return-object p0
 .end method

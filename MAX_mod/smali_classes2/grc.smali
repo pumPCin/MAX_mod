@@ -1,87 +1,21 @@
 .class public final Lgrc;
-.super Landroid/view/ViewOutlineProvider;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final b:Landroid/graphics/Rect;
-
-.field public final c:F
-
-
 # direct methods
-.method public constructor <init>(Landroid/graphics/Rect;F)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
 
-    const/4 v0, 0x2
+    new-instance v0, Lsxb;
 
-    iput v0, p0, Lgrc;->a:I
+    sget-object v0, Ljpc;->a:Lkpc;
 
-    iput-object p1, p0, Lgrc;->b:Landroid/graphics/Rect;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput p2, p0, Lgrc;->c:F
+    new-instance v1, Lsxb;
 
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Landroid/graphics/Rect;FI)V
-    .registers 4
-
-    iput p3, p0, Lgrc;->a:I
-
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
-
-    iput-object p1, p0, Lgrc;->b:Landroid/graphics/Rect;
-
-    iput p2, p0, Lgrc;->c:F
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .registers 3
-
-    iget p1, p0, Lgrc;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p1, p0, Lgrc;->b:Landroid/graphics/Rect;
-
-    iget p0, p0, Lgrc;->c:F
-
-    invoke-virtual {p2, p1, p0}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p1, p0, Lgrc;->b:Landroid/graphics/Rect;
-
-    iget p0, p0, Lgrc;->c:F
-
-    invoke-virtual {p2, p1, p0}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
-
-    return-void
-
-    :pswitch_1
-    iget-object p1, p0, Lgrc;->b:Landroid/graphics/Rect;
-
-    iget p0, p0, Lgrc;->c:F
-
-    invoke-virtual {p2, p1, p0}, Landroid/graphics/Outline;->setRoundRect(Landroid/graphics/Rect;F)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

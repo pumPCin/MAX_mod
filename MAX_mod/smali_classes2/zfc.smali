@@ -1,88 +1,76 @@
-.class public final Lzfc;
+.class public interface abstract Lzfc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lni1;
-
-
-# instance fields
-.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
-
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public static a(Lrl;Lcxe;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, Lrl;->c:Lsl;
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
-
-    iput-object v0, p0, Lzfc;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onRecordStarted(Lli1;)V
-    .registers 3
-
-    iget-object p0, p0, Lzfc;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lni1;
-
-    invoke-interface {v0, p1}, Lni1;->onRecordStarted(Lli1;)V
 
     goto :goto_0
 
     :cond_0
-    return-void
-.end method
-
-.method public final onRecordStopped(Lmi1;)V
-    .registers 3
-
-    iget-object p0, p0, Lzfc;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
+    move-object v0, v1
 
     :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, v0, Lsl;->d:Lcl7;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lni1;
+    check-cast v0, Lxjd;
 
-    invoke-interface {v0, p1}, Lni1;->onRecordStopped(Lmi1;)V
+    check-cast v0, Lpad;
 
-    goto :goto_0
+    iget-object v0, v0, Lpad;->j:Lvtc;
 
-    :cond_0
+    invoke-virtual {v0}, Lvtc;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
+
+    iget-object v2, p1, Lcxe;->b:Ljava/lang/String;
+
+    invoke-interface {v0, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    const/4 v2, 0x1
+
+    invoke-static {p1, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string v2, "detect common reaction error, call onMaxFailCount() for task"
+
+    invoke-static {v0, v1, v2, p1}, Ljtg;->P(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    check-cast p0, Lt2b;
+
+    invoke-interface {p0}, Lt2b;->d()V
+
+    :cond_1
     return-void
 .end method

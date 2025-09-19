@@ -1,102 +1,256 @@
 .class public final Lbm4;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ljava/util/Iterator;
+.implements Lmi7;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic X:Lcm4;
 
-.field public final synthetic Y:Lone/me/devmenu/DevMenuScreen;
+.field public a:I
 
-.field public final synthetic Z:Ljava/util/ArrayList;
+.field public b:I
+
+.field public c:I
+
+.field public o:Lw97;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/devmenu/DevMenuScreen;Ljava/util/ArrayList;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Lcm4;)V
+    .registers 3
 
-    iput-object p1, p0, Lbm4;->Y:Lone/me/devmenu/DevMenuScreen;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lbm4;->Z:Ljava/util/ArrayList;
+    iput-object p1, p0, Lbm4;->X:Lcm4;
 
-    const/4 p1, 0x2
+    const/4 v0, -0x1
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput v0, p0, Lbm4;->a:I
+
+    iget-object p1, p1, Lcm4;->b:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/CharSequence;
+
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result p1
+
+    const/4 v0, 0x0
+
+    invoke-static {v0, v0, p1}, Lkp;->h(III)I
+
+    move-result p1
+
+    iput p1, p0, Lbm4;->b:I
+
+    iput p1, p0, Lbm4;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()V
+    .registers 8
+
+    iget-object v0, p0, Lbm4;->X:Lcm4;
+
+    iget-object v1, v0, Lcm4;->b:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/CharSequence;
+
+    iget v2, p0, Lbm4;->c:I
+
+    const/4 v3, 0x0
+
+    if-gez v2, :cond_0
+
+    iput v3, p0, Lbm4;->a:I
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lbm4;->o:Lw97;
+
+    return-void
+
+    :cond_0
+    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v4
+
+    const/4 v5, -0x1
+
+    const/4 v6, 0x1
+
+    if-le v2, v4, :cond_1
+
+    new-instance v0, Lw97;
+
+    iget v2, p0, Lbm4;->b:I
+
+    invoke-static {v1}, Ljme;->j0(Ljava/lang/CharSequence;)I
+
+    move-result v1
+
+    invoke-direct {v0, v2, v1, v6}, Lu97;-><init>(III)V
+
+    iput-object v0, p0, Lbm4;->o:Lw97;
+
+    iput v5, p0, Lbm4;->c:I
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, v0, Lcm4;->c:Ljava/lang/Object;
+
+    check-cast v0, Lnk7;
+
+    iget v2, p0, Lbm4;->c:I
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lpc6;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lpxa;
+
+    if-nez v0, :cond_2
+
+    new-instance v0, Lw97;
+
+    iget v2, p0, Lbm4;->b:I
+
+    invoke-static {v1}, Ljme;->j0(Ljava/lang/CharSequence;)I
+
+    move-result v1
+
+    invoke-direct {v0, v2, v1, v6}, Lu97;-><init>(III)V
+
+    iput-object v0, p0, Lbm4;->o:Lw97;
+
+    iput v5, p0, Lbm4;->c:I
+
+    goto :goto_0
+
+    :cond_2
+    iget-object v1, v0, Lpxa;->a:Ljava/lang/Object;
+
+    check-cast v1, Ljava/lang/Number;
+
+    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
+
+    move-result v1
+
+    iget-object v0, v0, Lpxa;->b:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+
+    move-result v0
+
+    iget v2, p0, Lbm4;->b:I
+
+    invoke-static {v2, v1}, Lkp;->M(II)Lw97;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lbm4;->o:Lw97;
+
+    add-int/2addr v1, v0
+
+    iput v1, p0, Lbm4;->b:I
+
+    if-nez v0, :cond_3
+
+    move v3, v6
+
+    :cond_3
+    add-int/2addr v1, v3
+
+    iput v1, p0, Lbm4;->c:I
+
+    :goto_0
+    iput v6, p0, Lbm4;->a:I
+
+    return-void
+.end method
+
+.method public final hasNext()Z
     .registers 3
 
-    check-cast p1, Ljava/util/List;
+    iget v0, p0, Lbm4;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/4 v1, -0x1
 
-    invoke-virtual {p0, p1, p2}, Lbm4;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    if-ne v0, v1, :cond_0
 
-    move-result-object p0
+    invoke-virtual {p0}, Lbm4;->a()V
 
-    check-cast p0, Lbm4;
+    :cond_0
+    iget p0, p0, Lbm4;->a:I
 
-    sget-object p1, Lncf;->a:Lncf;
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, p1}, Lbm4;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    if-ne p0, v0, :cond_1
 
-    return-object p1
+    return v0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
-
-    new-instance v0, Lbm4;
-
-    iget-object v1, p0, Lbm4;->Y:Lone/me/devmenu/DevMenuScreen;
-
-    iget-object p0, p0, Lbm4;->Z:Ljava/util/ArrayList;
-
-    invoke-direct {v0, v1, p0, p2}, Lbm4;-><init>(Lone/me/devmenu/DevMenuScreen;Ljava/util/ArrayList;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lbm4;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final next()Ljava/lang/Object;
     .registers 4
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget v0, p0, Lbm4;->a:I
 
-    iget-object p1, p0, Lbm4;->X:Ljava/lang/Object;
+    const/4 v1, -0x1
 
-    check-cast p1, Ljava/util/List;
+    if-ne v0, v1, :cond_0
 
-    iget-object v0, p0, Lbm4;->Y:Lone/me/devmenu/DevMenuScreen;
+    invoke-virtual {p0}, Lbm4;->a()V
 
-    iget-object v0, v0, Lone/me/devmenu/DevMenuScreen;->X:Lejd;
+    :cond_0
+    iget v0, p0, Lbm4;->a:I
 
-    invoke-static {}, Lso9;->f()Lkp7;
+    if-eqz v0, :cond_1
 
-    move-result-object v1
+    iget-object v0, p0, Lbm4;->o:Lw97;
 
-    iget-object p0, p0, Lbm4;->Z:Ljava/util/ArrayList;
+    const/4 v2, 0x0
 
-    invoke-virtual {v1, p0}, Lkp7;->addAll(Ljava/util/Collection;)Z
+    iput-object v2, p0, Lbm4;->o:Lw97;
 
-    invoke-virtual {v1, p1}, Lkp7;->addAll(Ljava/util/Collection;)Z
+    iput v1, p0, Lbm4;->a:I
 
-    invoke-static {v1}, Lso9;->a(Ljava/util/List;)Lkp7;
+    return-object v0
 
-    move-result-object p0
+    :cond_1
+    new-instance p0, Ljava/util/NoSuchElementException;
 
-    invoke-virtual {v0, p0}, Lhp7;->E(Ljava/util/List;)V
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    sget-object p0, Lncf;->a:Lncf;
+    throw p0
+.end method
 
-    return-object p0
+.method public final remove()V
+    .registers 2
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v0, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

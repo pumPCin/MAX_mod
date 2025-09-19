@@ -1,61 +1,92 @@
-.class public final synthetic Lp3d;
+.class public final Lp3d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/function/Predicate;
-
 
 # instance fields
-.field public final synthetic a:Ls3d;
+.field public final a:Ljava/lang/String;
 
-.field public final synthetic b:Ljava/lang/String;
+.field public final b:Lcl7;
+
+.field public final c:Lcl7;
+
+.field public final d:Lcl7;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ls3d;Ljava/lang/String;)V
-    .registers 3
+.method public constructor <init>(Lcl7;Lcl7;Lcl7;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lp3d;->a:Ls3d;
+    const-class v0, Lp3d;
 
-    iput-object p2, p0, Lp3d;->b:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lp3d;->a:Ljava/lang/String;
+
+    iput-object p1, p0, Lp3d;->b:Lcl7;
+
+    iput-object p2, p0, Lp3d;->c:Lcl7;
+
+    iput-object p3, p0, Lp3d;->d:Lcl7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final test(Ljava/lang/Object;)Z
-    .registers 4
+.method public final a(JLjava/lang/String;JJZLure;)Ljava/lang/Object;
+    .registers 22
 
-    check-cast p1, Ljava/lang/String;
+    iget-object v0, p0, Lp3d;->d:Lcl7;
 
-    iget-object v0, p0, Lp3d;->a:Ls3d;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object v0
 
-    invoke-static {p1}, Lms8;->t(Ljava/lang/CharSequence;)Z
+    check-cast v0, Lxwe;
 
-    move-result v1
+    check-cast v0, Laga;
 
-    if-nez v1, :cond_0
+    invoke-virtual {v0}, Laga;->b()Ls04;
 
-    iget-object p0, p0, Lp3d;->b:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-virtual {v0, p1, p0}, Ls3d;->h(Ljava/lang/String;Ljava/lang/String;)Z
+    new-instance v1, Lo3d;
 
-    move-result p0
+    const/4 v11, 0x0
 
-    if-eqz p0, :cond_0
+    move-object v2, p0
 
-    const/4 p0, 0x1
+    move-wide v8, p1
 
-    return p0
+    move-object v7, p3
+
+    move-wide/from16 v5, p4
+
+    move-wide/from16 v3, p6
+
+    move/from16 v10, p8
+
+    invoke-direct/range {v1 .. v11}, Lo3d;-><init>(Lp3d;JJLjava/lang/String;JZLkotlin/coroutines/Continuation;)V
+
+    move-object/from16 p0, p9
+
+    invoke-static {v0, v1, p0}, Lvyg;->H(Lq04;Lpc6;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_0
+
+    return-object p0
 
     :cond_0
-    const/4 p0, 0x0
+    sget-object p0, Lylf;->a:Lylf;
 
-    return p0
+    return-object p0
 .end method

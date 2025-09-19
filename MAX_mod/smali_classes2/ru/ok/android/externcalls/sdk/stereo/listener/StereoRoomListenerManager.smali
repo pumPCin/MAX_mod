@@ -13,7 +13,7 @@
         "",
         "Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomManagerListener;",
         "listener",
-        "Lncf;",
+        "Lylf;",
         "addListener",
         "(Lru/ok/android/externcalls/sdk/stereo/listener/StereoRoomManagerListener;)V",
         "removeListener",

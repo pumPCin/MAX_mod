@@ -1,77 +1,29 @@
 .class public final Lo08;
-.super Leqc;
+.super Lp08;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lo08;
+# instance fields
+.field public final c:Lu2f;
 
-.field public static final c:Lca4;
+.field public final d:Lu2f;
 
-.field public static final d:Lca4;
-
-.field public static final e:Lca4;
-
-.field public static final f:Lca4;
+.field public final e:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public constructor <init>(Lu2f;Lu2f;I)V
+    .registers 5
 
-    new-instance v0, Lo08;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Lha4;-><init>()V
+    invoke-direct {p0, v0}, Lp08;-><init>(Ljava/lang/Throwable;)V
 
-    sput-object v0, Lo08;->b:Lo08;
+    iput-object p1, p0, Lo08;->c:Lu2f;
 
-    const/4 v6, 0x0
+    iput-object p2, p0, Lo08;->d:Lu2f;
 
-    new-array v2, v6, [Ljava/lang/String;
-
-    const/16 v5, 0xe
-
-    const/4 v4, 0x0
-
-    const-string v1, ":contact-list"
-
-    const/4 v3, 0x0
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v1
-
-    sput-object v1, Lo08;->c:Lca4;
-
-    new-array v2, v6, [Ljava/lang/String;
-
-    const-string v1, ":call-list"
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v1
-
-    sput-object v1, Lo08;->d:Lca4;
-
-    new-array v2, v6, [Ljava/lang/String;
-
-    const-string v1, ":chat-list"
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v1
-
-    sput-object v1, Lo08;->e:Lca4;
-
-    new-array v2, v6, [Ljava/lang/String;
-
-    const-string v1, ":settings"
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v0
-
-    sput-object v0, Lo08;->f:Lca4;
+    iput p3, p0, Lo08;->e:I
 
     return-void
 .end method

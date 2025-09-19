@@ -4,159 +4,177 @@
 
 
 # instance fields
-.field public final synthetic a:La43;
+.field public final a:Ljava/util/HashMap;
+
+.field public final b:Ljava/util/HashMap;
 
 
 # direct methods
-.method public constructor <init>(La43;)V
-    .registers 2
+.method public constructor <init>(Ljava/util/HashMap;)V
+    .registers 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lz33;->a:La43;
+    iput-object p1, p0, Lz33;->b:Ljava/util/HashMap;
 
-    return-void
-.end method
+    new-instance v0, Ljava/util/HashMap;
 
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-# virtual methods
-.method public final onEvent(Lfy7;)V
-    .registers 6
-    .annotation runtime Lpee;
-    .end annotation
+    iput-object v0, p0, Lz33;->a:Ljava/util/HashMap;
 
-    iget-object p1, p0, Lz33;->a:La43;
+    invoke-virtual {p1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
-    :try_start_0
-    iget-object v0, p1, La43;->f:Ljava/lang/Object;
+    move-result-object p1
 
-    check-cast v0, Lxh7;
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lome;
+    check-cast v0, Ljava/util/Map$Entry;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    new-instance v1, Lhme;
+    move-result-object v1
 
-    const/4 v2, 0x0
+    check-cast v1, Lbn7;
 
-    invoke-direct {v1, v0, v2}, Lhme;-><init>(Lome;Lkotlin/coroutines/Continuation;)V
+    iget-object v2, p0, Lz33;->a:Ljava/util/HashMap;
 
-    sget-object v0, Lp25;->a:Lp25;
-
-    new-instance v2, Lrl8;
-
-    const/16 v3, 0x1b
-
-    invoke-direct {v2, v0, v3, v1}, Lrl8;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    new-instance v0, Lbc3;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1, v2}, Lbc3;-><init>(ILjava/lang/Object;)V
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-static {}, Ldyc;->a()Lqxc;
+    invoke-virtual {v2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
-    const-string v3, "unit is null"
+    check-cast v2, Ljava/util/List;
 
-    invoke-static {v1, v3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    if-nez v2, :cond_0
 
-    const-string v1, "scheduler is null"
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-static {v2, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    new-instance v1, Lzb3;
+    iget-object v3, p0, Lz33;->a:Ljava/util/HashMap;
 
-    invoke-direct {v1, v0, v2}, Lzb3;-><init>(Lbc3;Lqxc;)V
+    invoke-virtual {v3, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lyb3;->a()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :cond_0
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, La43;
+
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_1
+    return-void
+.end method
 
-    goto :goto_2
+.method public static a(Ljava/util/List;Lzn7;Lbn7;Ljava/lang/Object;)V
+    .registers 9
 
-    :catch_0
-    move-exception v0
+    if-eqz p0, :cond_3
 
-    :try_start_1
-    iget-object v1, p1, La43;->c:Ljava/lang/Object;
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
-    check-cast v1, Ljava/lang/String;
+    move-result v0
 
-    const-string v2, "error while delete token"
+    const/4 v1, 0x1
 
-    invoke-static {v1, v2, v0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    sub-int/2addr v0, v1
 
     :goto_0
-    iget-object v0, p1, La43;->b:Ljava/lang/Object;
+    if-ltz v0, :cond_3
 
-    check-cast v0, Landroid/content/Context;
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/jakewharton/processphoenix/ProcessPhoenix;->b(Landroid/content/Context;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move-result-object v2
 
-    :goto_1
-    iget-object p1, p1, La43;->d:Ljava/lang/Object;
+    check-cast v2, La43;
 
-    check-cast p1, Lxh7;
+    iget-object v3, v2, La43;->b:Ljava/lang/reflect/Method;
 
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    :try_start_0
+    iget v2, v2, La43;->a:I
 
-    move-result-object p1
+    if-eqz v2, :cond_2
 
-    check-cast p1, Lrv0;
+    if-eq v2, v1, :cond_1
 
-    invoke-virtual {p1, p0}, Lrv0;->f(Ljava/lang/Object;)V
+    const/4 v4, 0x2
 
-    goto :goto_3
-
-    :goto_2
-    :try_start_2
-    iget-object v1, p1, La43;->c:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    const-string v2, "failure to handle logout event"
-
-    invoke-static {v1, v2, v0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    if-eq v2, v4, :cond_0
 
     goto :goto_1
 
-    :goto_3
+    :cond_0
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v3, p3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_1
+
+    :cond_1
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v3, p3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v2, 0x0
+
+    invoke-virtual {v3, p3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_1
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :catch_1
+    move-exception p0
+
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    const-string p2, "Failed to call observer method"
+
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    invoke-direct {p1, p2, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :cond_3
     return-void
-
-    :catchall_1
-    move-exception v0
-
-    iget-object p1, p1, La43;->d:Ljava/lang/Object;
-
-    check-cast p1, Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lrv0;
-
-    invoke-virtual {p1, p0}, Lrv0;->f(Ljava/lang/Object;)V
-
-    throw v0
 .end method

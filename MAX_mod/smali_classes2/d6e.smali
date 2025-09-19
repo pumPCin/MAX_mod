@@ -1,165 +1,201 @@
 .class public final Ld6e;
-.super Landroid/widget/FrameLayout;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Lkm;
+.field public X:Lij3;
 
-.field public b:La8e;
+.field public Y:I
 
-.field public c:Lt6e;
+.field public final synthetic Z:Ljava/util/ArrayList;
+
+.field public final synthetic r0:Lij3;
+
+.field public final synthetic s0:Lg6e;
+
+.field public final synthetic t0:Lx5e;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+.method public constructor <init>(Ljava/util/ArrayList;Lij3;Lg6e;Lx5e;Lkotlin/coroutines/Continuation;)V
+    .registers 6
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Ld6e;->Z:Ljava/util/ArrayList;
 
-    invoke-direct {p0, p1, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    iput-object p2, p0, Ld6e;->r0:Lij3;
 
-    new-instance v0, Lkm;
+    iput-object p3, p0, Ld6e;->s0:Lg6e;
 
-    invoke-direct {v0, p1}, Lkm;-><init>(Landroid/content/Context;)V
+    iput-object p4, p0, Ld6e;->t0:Lx5e;
 
-    iput-object v0, p0, Ld6e;->a:Lkm;
+    const/4 p1, 0x2
 
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
-
-    iget-object p1, v0, Lkm;->b:Ljava/lang/Object;
-
-    check-cast p1, Lone/me/sdk/uikit/common/views/OneMeDraweeView;
-
-    new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
-
-    const/4 v1, -0x1
-
-    invoke-direct {v0, v1, v1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
-
-    invoke-virtual {p0, p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-direct {p0, p1, p5}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lt6e;)V
-    .registers 7
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object v0, p0, Ld6e;->c:Lt6e;
+    check-cast p1, Ly04;
 
-    const/4 v1, 0x0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/4 v2, 0x1
+    invoke-virtual {p0, p1, p2}, Ld6e;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    if-nez v0, :cond_0
+    move-result-object p0
 
-    goto :goto_0
+    check-cast p0, Ld6e;
 
-    :cond_0
-    iget v3, v0, Lt6e;->Z:I
+    sget-object p1, Lylf;->a:Lylf;
 
-    iget v4, p1, Lt6e;->Z:I
+    invoke-virtual {p0, p1}, Ld6e;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-ne v3, v4, :cond_2
-
-    iget v0, v0, Lt6e;->n0:I
-
-    iget v3, p1, Lt6e;->n0:I
-
-    if-eq v0, v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v2, v1
-
-    :cond_2
-    :goto_0
-    iput-object p1, p0, Ld6e;->c:Lt6e;
-
-    iget-object v0, p0, Ld6e;->b:La8e;
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v0, p1}, La8e;->b(Lt6e;)V
-
-    :cond_3
-    iget-object p1, p1, Lt6e;->o:Ljava/lang/String;
-
-    iget-object v0, p0, Ld6e;->a:Lkm;
-
-    iget-object v0, v0, Lkm;->b:Ljava/lang/Object;
-
-    check-cast v0, Lone/me/sdk/uikit/common/views/OneMeDraweeView;
-
-    invoke-static {p1}, Lhz6;->b(Ljava/lang/String;)Lhz6;
-
-    move-result-object p1
-
-    sget v3, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->w0:I
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, p1, v3}, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->o(Lhz6;Lhz6;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    if-eqz v2, :cond_4
-
-    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
-
-    :cond_4
-    return-void
-.end method
-
-.method public final getSizeConfigurator()La8e;
-    .registers 1
-
-    iget-object p0, p0, Ld6e;->b:La8e;
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public final onMeasure(II)V
-    .registers 4
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 9
 
-    iget-object v0, p0, Ld6e;->b:La8e;
+    new-instance v0, Ld6e;
 
-    if-eqz v0, :cond_0
+    iget-object v3, p0, Ld6e;->s0:Lg6e;
 
-    invoke-virtual {v0, p1, p2}, La8e;->a(II)Lws;
+    iget-object v4, p0, Ld6e;->t0:Lx5e;
+
+    iget-object v1, p0, Ld6e;->Z:Ljava/util/ArrayList;
+
+    iget-object v2, p0, Ld6e;->r0:Lij3;
+
+    move-object v5, p2
+
+    invoke-direct/range {v0 .. v5}, Ld6e;-><init>(Ljava/util/ArrayList;Lij3;Lg6e;Lx5e;Lkotlin/coroutines/Continuation;)V
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 11
+
+    iget v0, p0, Ld6e;->Y:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    iget-object p0, p0, Ld6e;->X:Lij3;
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ld6e;->Z:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    if-eqz v0, :cond_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    iget p1, v0, Lws;->b:I
+    move-result v3
 
-    :cond_1
-    if-eqz v0, :cond_2
+    if-eqz v3, :cond_3
 
-    iget p2, v0, Lws;->c:I
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    add-int/lit8 v4, v2, 0x1
+
+    const/4 v5, 0x0
+
+    if-ltz v2, :cond_2
+
+    check-cast v3, Ly77;
+
+    iget-object v6, p0, Ld6e;->s0:Lg6e;
+
+    iget-object v6, v6, Lg6e;->a:Lon7;
+
+    new-instance v7, Lc6e;
+
+    iget-object v8, p0, Ld6e;->t0:Lx5e;
+
+    invoke-direct {v7, v2, v8, v3, v5}, Lc6e;-><init>(ILx5e;Ly77;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v2, 0x3
+
+    invoke-static {v6, v5, v5, v7, v2}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    move v2, v4
+
+    goto :goto_0
 
     :cond_2
-    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+    invoke-static {}, Lr73;->N()V
 
-    return-void
-.end method
+    throw v5
 
-.method public final setSizeConfigurator(La8e;)V
-    .registers 2
+    :cond_3
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
-    iput-object p1, p0, Ld6e;->b:La8e;
+    move-result p1
 
-    return-void
+    int-to-long v2, p1
+
+    const-wide/16 v4, 0x64
+
+    mul-long/2addr v2, v4
+
+    iget-object p1, p0, Ld6e;->r0:Lij3;
+
+    iput-object p1, p0, Ld6e;->X:Lij3;
+
+    iput v1, p0, Ld6e;->Y:I
+
+    invoke-static {v2, v3, p0}, Ln2e;->h(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object v0, Lz04;->a:Lz04;
+
+    if-ne p0, v0, :cond_4
+
+    return-object v0
+
+    :cond_4
+    move-object p0, p1
+
+    :goto_1
+    invoke-interface {p0}, Lzb6;->invoke()Ljava/lang/Object;
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

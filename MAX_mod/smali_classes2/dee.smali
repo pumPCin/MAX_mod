@@ -1,168 +1,85 @@
-.class public final Ldee;
-.super Ljava/lang/Object;
+.class public final enum Ldee;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lcee;
+# static fields
+.field public static final enum a:Ldee;
 
-.field public final b:Leee;
+.field public static final enum b:Ldee;
 
-.field public final c:Lfee;
+.field public static final enum c:Ldee;
+
+.field public static final synthetic o:[Ldee;
 
 
 # direct methods
-.method public constructor <init>(Lcee;Leee;Lfee;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ldee;
 
-    iput-object p1, p0, Ldee;->a:Lcee;
+    const-string v1, "DEFAULT"
 
-    iput-object p2, p0, Ldee;->b:Leee;
+    const/4 v2, 0x0
 
-    iput-object p3, p0, Ldee;->c:Lfee;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ldee;->a:Ldee;
+
+    new-instance v1, Ldee;
+
+    const-string v2, "WITH_CALL_PIP"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Ldee;->b:Ldee;
+
+    new-instance v2, Ldee;
+
+    const-string v3, "WITH_VIDEO_PIP"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Ldee;->c:Ldee;
+
+    filled-new-array {v0, v1, v2}, [Ldee;
+
+    move-result-object v0
+
+    sput-object v0, Ldee;->o:[Ldee;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Ldee;
+    .registers 2
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    const-class v0, Ldee;
 
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Ldee;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Ldee;
-
-    iget-object v1, p0, Ldee;->a:Lcee;
-
-    iget-object v3, p1, Ldee;->a:Lcee;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Ldee;->b:Leee;
-
-    iget-object v3, p1, Ldee;->b:Leee;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object p0, p0, Ldee;->c:Lfee;
-
-    iget-object p1, p1, Ldee;->c:Lfee;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget-object v0, p0, Ldee;->a:Lcee;
-
-    iget v0, v0, Lcee;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Ldee;->b:Leee;
-
-    iget v2, v2, Leee;->a:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget-object p0, p0, Ldee;->c:Lfee;
-
-    iget p0, p0, Lfee;->a:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "StrokeLocalColors(carver="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Ldee;->a:Lcee;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", tabBar="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ldee;->b:Leee;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", topBar="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Ldee;->c:Lfee;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Ldee;
+
     return-object p0
+.end method
+
+.method public static values()[Ldee;
+    .registers 1
+
+    sget-object v0, Ldee;->o:[Ldee;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ldee;
+
+    return-object v0
 .end method

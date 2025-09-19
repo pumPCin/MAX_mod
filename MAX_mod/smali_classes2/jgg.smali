@@ -1,50 +1,61 @@
 .class public final Ljgg;
-.super Ljava/lang/Object;
+.super Lpg7;
 .source "SourceFile"
 
-# interfaces
-.implements Lmgg;
 
-
-# instance fields
-.field public final a:I
+# static fields
+.field public static final c:Ljgg;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljgg;
 
-    sget v0, Luna;->h:I
+    invoke-direct {v0}, Lpg7;-><init>()V
 
-    iput v0, p0, Ljgg;->a:I
+    sput-object v0, Ljgg;->c:Ljgg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .registers 1
-
-    const/4 p0, 0x4
-
-    return p0
-.end method
-
-.method public final getItemId()J
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    const-wide v0, 0x7fffffffffffffffL
+    const/4 v0, 0x1
 
-    return-wide v0
-.end method
+    if-ne p0, p1, :cond_0
 
-.method public final m()I
-    .registers 1
+    return v0
 
-    iget p0, p0, Ljgg;->a:I
+    :cond_0
+    instance-of p0, p1, Ljgg;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
 
     return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, 0x15a8525c
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "RequestScreenMaxBrightness"
+
+    return-object p0
 .end method

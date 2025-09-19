@@ -1,81 +1,241 @@
 .class public final Lz98;
-.super Ljava/lang/Object;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
+
+# interfaces
+.implements Lt98;
+.implements Loq4;
+.implements Lrc3;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final synthetic a:I
 
-.field public final b:Landroid/media/browse/MediaBrowser;
+.field public final b:Le3e;
 
-.field public final c:Landroid/os/Bundle;
-
-.field public final d:Lx98;
-
-.field public final e:Lis;
-
-.field public f:Lgl4;
-
-.field public g:Landroid/os/Messenger;
-
-.field public h:Lel8;
+.field public final c:Lk2e;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/content/ComponentName;Lvu7;)V
-    .registers 7
+.method public synthetic constructor <init>(Le3e;Lk2e;I)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Lz98;->a:I
 
-    new-instance v0, Lx98;
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    invoke-direct {v0, p0}, Lx98;-><init>(Lz98;)V
+    iput-object p1, p0, Lz98;->b:Le3e;
 
-    iput-object v0, p0, Lz98;->d:Lx98;
+    iput-object p2, p0, Lz98;->c:Lk2e;
 
-    new-instance v0, Lis;
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Ljava/lang/Object;)V
+    .registers 2
+
+    iget-object p0, p0, Lz98;->b:Le3e;
+
+    invoke-interface {p0, p1}, Le3e;->a(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final b()V
+    .registers 5
+
+    iget v0, p0, Lz98;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Lnsb;
+
+    iget-object v1, p0, Lz98;->b:Le3e;
+
+    const/4 v2, 0x2
+
+    invoke-direct {v0, p0, v2, v1}, Lnsb;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    iget-object p0, p0, Lz98;->c:Lk2e;
+
+    invoke-virtual {p0, v0}, Lk2e;->k(Le3e;)V
+
+    return-void
+
+    :pswitch_0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Loq4;
+
+    sget-object v1, Lsq4;->a:Lsq4;
+
+    if-eq v0, v1, :cond_0
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lktd;-><init>(I)V
+    invoke-virtual {p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iput-object v0, p0, Lz98;->e:Lis;
+    move-result v0
 
-    iput-object p1, p0, Lz98;->a:Landroid/content/Context;
+    if-eqz v0, :cond_0
 
-    new-instance v0, Landroid/os/Bundle;
+    new-instance v0, Lzxc;
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    const/16 v1, 0x18
 
-    iput-object v0, p0, Lz98;->c:Landroid/os/Bundle;
+    const/4 v2, 0x0
 
-    const-string v1, "extra_client_version"
+    iget-object v3, p0, Lz98;->b:Le3e;
 
-    const/4 v2, 0x1
+    invoke-direct {v0, v3, p0, v2, v1}, Lzxc;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+    iget-object p0, p0, Lz98;->c:Lk2e;
 
-    const-string v1, "extra_calling_pid"
+    invoke-virtual {p0, v0}, Lk2e;->k(Le3e;)V
 
-    invoke-static {}, Landroid/os/Process;->myPid()I
+    :cond_0
+    return-void
 
-    move-result v2
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+.method public final c(Loq4;)V
+    .registers 3
 
-    iput-object p0, p3, Lvu7;->b:Ljava/lang/Object;
+    iget v0, p0, Lz98;->a:I
 
-    new-instance v1, Landroid/media/browse/MediaBrowser;
+    packed-switch v0, :pswitch_data_0
 
-    iget-object p3, p3, Lvu7;->a:Ljava/lang/Object;
+    invoke-static {p0, p1}, Lsq4;->g(Ljava/util/concurrent/atomic/AtomicReference;Loq4;)Z
 
-    check-cast p3, Ly98;
+    move-result p1
 
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz p1, :cond_0
 
-    invoke-direct {v1, p1, p2, p3, v0}, Landroid/media/browse/MediaBrowser;-><init>(Landroid/content/Context;Landroid/content/ComponentName;Landroid/media/browse/MediaBrowser$ConnectionCallback;Landroid/os/Bundle;)V
+    iget-object p1, p0, Lz98;->b:Le3e;
 
-    iput-object v1, p0, Lz98;->b:Landroid/media/browse/MediaBrowser;
+    invoke-interface {p1, p0}, Le3e;->c(Loq4;)V
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    invoke-static {p0, p1}, Lsq4;->g(Ljava/util/concurrent/atomic/AtomicReference;Loq4;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lz98;->b:Le3e;
+
+    invoke-interface {p1, p0}, Le3e;->c(Loq4;)V
+
+    :cond_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final e()V
+    .registers 2
+
+    iget v0, p0, Lz98;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p0}, Lsq4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
 
     return-void
+
+    :pswitch_0
+    invoke-static {p0}, Lsq4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final f()Z
+    .registers 2
+
+    iget v0, p0, Lz98;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Loq4;
+
+    invoke-static {p0}, Lsq4;->b(Loq4;)Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Loq4;
+
+    invoke-static {p0}, Lsq4;->b(Loq4;)Z
+
+    move-result p0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onError(Ljava/lang/Throwable;)V
+    .registers 3
+
+    iget v0, p0, Lz98;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lz98;->b:Le3e;
+
+    invoke-interface {p0, p1}, Le3e;->onError(Ljava/lang/Throwable;)V
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lz98;->b:Le3e;
+
+    invoke-interface {p0, p1}, Le3e;->onError(Ljava/lang/Throwable;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

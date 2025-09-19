@@ -1,285 +1,739 @@
 .class public final Lg32;
-.super Ldy;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lvee;
+
+# static fields
+.field public static final A:[Z
+
+.field public static final B:[I
+
+.field public static final C:[I
+
+.field public static final D:[I
+
+.field public static final E:[I
+
+.field public static final v:I
+
+.field public static final w:I
+
+.field public static final x:[I
+
+.field public static final y:[I
+
+.field public static final z:[I
 
 
 # instance fields
-.field public X:J
+.field public final a:Ljava/util/ArrayList;
 
-.field public final synthetic Y:I
+.field public final b:Landroid/text/SpannableStringBuilder;
 
-.field public Z:Ljava/lang/Object;
+.field public c:Z
 
-.field public c:J
+.field public d:Z
 
-.field public o:Lvee;
+.field public e:I
+
+.field public f:Z
+
+.field public g:I
+
+.field public h:I
+
+.field public i:I
+
+.field public j:I
+
+.field public k:I
+
+.field public l:I
+
+.field public m:I
+
+.field public n:I
+
+.field public o:I
+
+.field public p:I
+
+.field public q:I
+
+.field public r:I
+
+.field public s:I
+
+.field public t:I
+
+.field public u:I
 
 
 # direct methods
-.method public synthetic constructor <init>()V
-    .registers 2
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lg32;->Y:I
+.method static constructor <clinit>()V
+    .registers 9
 
     const/4 v0, 0x2
 
-    invoke-direct {p0, v0}, Ldy;-><init>(I)V
+    const/4 v1, 0x0
+
+    invoke-static {v0, v0, v0, v1}, Lg32;->c(IIII)I
+
+    move-result v0
+
+    sput v0, Lg32;->v:I
+
+    invoke-static {v1, v1, v1, v1}, Lg32;->c(IIII)I
+
+    move-result v2
+
+    sput v2, Lg32;->w:I
+
+    const/4 v0, 0x3
+
+    invoke-static {v1, v1, v1, v0}, Lg32;->c(IIII)I
+
+    move-result v3
+
+    const/4 v0, 0x7
+
+    new-array v1, v0, [I
+
+    fill-array-data v1, :array_0
+
+    sput-object v1, Lg32;->x:[I
+
+    new-array v1, v0, [I
+
+    fill-array-data v1, :array_1
+
+    sput-object v1, Lg32;->y:[I
+
+    new-array v1, v0, [I
+
+    fill-array-data v1, :array_2
+
+    sput-object v1, Lg32;->z:[I
+
+    new-array v1, v0, [Z
+
+    fill-array-data v1, :array_3
+
+    sput-object v1, Lg32;->A:[Z
+
+    move v4, v2
+
+    move v5, v2
+
+    move v6, v3
+
+    move v7, v2
+
+    move v8, v2
+
+    filled-new-array/range {v2 .. v8}, [I
+
+    move-result-object v1
+
+    sput-object v1, Lg32;->B:[I
+
+    new-array v1, v0, [I
+
+    fill-array-data v1, :array_4
+
+    sput-object v1, Lg32;->C:[I
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_5
+
+    sput-object v0, Lg32;->D:[I
+
+    move v7, v3
+
+    move v3, v2
+
+    move v6, v2
+
+    move v8, v7
+
+    filled-new-array/range {v2 .. v8}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lg32;->E:[I
+
+    return-void
+
+    :array_0
+    .array-data 4
+        0x0
+        0x0
+        0x0
+        0x0
+        0x0
+        0x2
+        0x0
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x0
+        0x0
+        0x0
+        0x0
+        0x0
+        0x0
+        0x2
+    .end array-data
+
+    :array_2
+    .array-data 4
+        0x3
+        0x3
+        0x3
+        0x3
+        0x3
+        0x3
+        0x1
+    .end array-data
+
+    :array_3
+    .array-data 1
+        0x0t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x1t
+        0x0t
+    .end array-data
+
+    :array_4
+    .array-data 4
+        0x0
+        0x1
+        0x2
+        0x3
+        0x4
+        0x3
+        0x4
+    .end array-data
+
+    :array_5
+    .array-data 4
+        0x0
+        0x0
+        0x0
+        0x0
+        0x0
+        0x3
+        0x3
+    .end array-data
+.end method
+
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lg32;->a:Ljava/util/ArrayList;
+
+    new-instance v0, Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {v0}, Landroid/text/SpannableStringBuilder;-><init>()V
+
+    iput-object v0, p0, Lg32;->b:Landroid/text/SpannableStringBuilder;
+
+    invoke-virtual {p0}, Lg32;->d()V
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lxee;I)V
-    .registers 3
+.method public static c(IIII)I
+    .registers 8
 
-    iput p2, p0, Lg32;->Y:I
+    const/4 v0, 0x4
 
-    const/4 p2, 0x2
+    invoke-static {p0, v0}, Lmq0;->d(II)V
 
-    invoke-direct {p0, p2}, Ldy;-><init>(I)V
+    invoke-static {p1, v0}, Lmq0;->d(II)V
 
-    iput-object p1, p0, Lg32;->Z:Ljava/lang/Object;
+    invoke-static {p2, v0}, Lmq0;->d(II)V
 
-    return-void
-.end method
+    invoke-static {p3, v0}, Lmq0;->d(II)V
 
+    const/4 v0, 0x1
 
-# virtual methods
-.method public final f(J)I
-    .registers 6
-
-    iget-object v0, p0, Lg32;->o:Lvee;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-wide v1, p0, Lg32;->X:J
-
-    sub-long/2addr p1, v1
-
-    invoke-interface {v0, p1, p2}, Lvee;->f(J)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final h(I)J
-    .registers 4
-
-    iget-object v0, p0, Lg32;->o:Lvee;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v0, p1}, Lvee;->h(I)J
-
-    move-result-wide v0
-
-    iget-wide p0, p0, Lg32;->X:J
-
-    add-long/2addr v0, p0
-
-    return-wide v0
-.end method
-
-.method public final m(J)Ljava/util/List;
-    .registers 6
-
-    iget-object v0, p0, Lg32;->o:Lvee;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-wide v1, p0, Lg32;->X:J
-
-    sub-long/2addr p1, v1
-
-    invoke-interface {v0, p1, p2}, Lvee;->m(J)Ljava/util/List;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final r()I
-    .registers 1
-
-    iget-object p0, p0, Lg32;->o:Lvee;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p0}, Lvee;->r()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final v()V
-    .registers 6
-
-    iget v0, p0, Lg32;->Y:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lg32;->Z:Ljava/lang/Object;
-
-    check-cast v0, Lztd;
-
-    iget-object v1, v0, Lztd;->b:Ljava/lang/Object;
-
-    monitor-enter v1
+    const/16 v1, 0xff
 
     const/4 v2, 0x0
 
-    :try_start_0
-    iput v2, p0, Ldy;->b:I
+    if-eqz p3, :cond_0
 
-    const/4 v2, 0x0
+    if-eq p3, v0, :cond_0
 
-    iput-object v2, p0, Lg32;->o:Lvee;
+    const/4 v3, 0x2
 
-    iget-object v2, v0, Lztd;->f:[Lg32;
+    if-eq p3, v3, :cond_2
 
-    iget v3, v0, Lztd;->h:I
+    const/4 v3, 0x3
 
-    add-int/lit8 v4, v3, 0x1
-
-    iput v4, v0, Lztd;->h:I
-
-    aput-object p0, v2, v3
-
-    iget-object p0, v0, Lztd;->c:Ljava/util/ArrayDeque;
-
-    invoke-virtual {p0}, Ljava/util/ArrayDeque;->isEmpty()Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    iget p0, v0, Lztd;->h:I
-
-    if-lez p0, :cond_0
-
-    iget-object p0, v0, Lztd;->b:Ljava/lang/Object;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->notify()V
+    if-eq p3, v3, :cond_1
 
     :cond_0
-    monitor-exit v1
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-
-    :pswitch_0
-    iget-object v0, p0, Lg32;->Z:Ljava/lang/Object;
-
-    check-cast v0, Lvr0;
-
-    iget-object v0, v0, Lvr0;->e:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/ArrayDeque;
-
-    invoke-virtual {v0}, Ljava/util/ArrayDeque;->size()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    if-ge v1, v2, :cond_1
-
-    move v1, v4
+    move p3, v1
 
     goto :goto_0
 
     :cond_1
-    move v1, v3
+    move p3, v2
+
+    goto :goto_0
+
+    :cond_2
+    const/16 p3, 0x7f
 
     :goto_0
-    invoke-static {v1}, Lnc5;->m(Z)V
+    if-le p0, v0, :cond_3
 
-    invoke-virtual {v0, p0}, Ljava/util/ArrayDeque;->contains(Ljava/lang/Object;)Z
+    move p0, v1
+
+    goto :goto_1
+
+    :cond_3
+    move p0, v2
+
+    :goto_1
+    if-le p1, v0, :cond_4
+
+    move p1, v1
+
+    goto :goto_2
+
+    :cond_4
+    move p1, v2
+
+    :goto_2
+    if-le p2, v0, :cond_5
+
+    goto :goto_3
+
+    :cond_5
+    move v1, v2
+
+    :goto_3
+    invoke-static {p3, p0, p1, v1}, Landroid/graphics/Color;->argb(IIII)I
+
+    move-result p0
+
+    return p0
+.end method
+
+
+# virtual methods
+.method public final a(C)V
+    .registers 5
+
+    const/16 v0, 0xa
+
+    iget-object v1, p0, Lg32;->b:Landroid/text/SpannableStringBuilder;
+
+    if-ne p1, v0, :cond_6
+
+    invoke-virtual {p0}, Lg32;->b()Landroid/text/SpannableString;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lg32;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->clear()V
+
+    iget p1, p0, Lg32;->o:I
+
+    const/4 v1, -0x1
+
+    const/4 v2, 0x0
+
+    if-eq p1, v1, :cond_0
+
+    iput v2, p0, Lg32;->o:I
+
+    :cond_0
+    iget p1, p0, Lg32;->p:I
+
+    if-eq p1, v1, :cond_1
+
+    iput v2, p0, Lg32;->p:I
+
+    :cond_1
+    iget p1, p0, Lg32;->q:I
+
+    if-eq p1, v1, :cond_2
+
+    iput v2, p0, Lg32;->q:I
+
+    :cond_2
+    iget p1, p0, Lg32;->s:I
+
+    if-eq p1, v1, :cond_3
+
+    iput v2, p0, Lg32;->s:I
+
+    :cond_3
+    :goto_0
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result p1
+
+    iget v1, p0, Lg32;->j:I
+
+    if-ge p1, v1, :cond_5
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result p1
+
+    const/16 v1, 0xf
+
+    if-lt p1, v1, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result p1
+
+    iput p1, p0, Lg32;->u:I
+
+    return-void
+
+    :cond_5
+    :goto_1
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_6
+    invoke-virtual {v1, p1}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
+
+    return-void
+.end method
+
+.method public final b()Landroid/text/SpannableString;
+    .registers 7
+
+    new-instance v0, Landroid/text/SpannableStringBuilder;
+
+    iget-object v1, p0, Lg32;->b:Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {v0, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v1
 
-    xor-int/2addr v1, v4
+    if-lez v1, :cond_3
 
-    invoke-static {v1}, Lnc5;->j(Z)V
+    iget v2, p0, Lg32;->o:I
 
-    iput v3, p0, Ldy;->b:I
+    const/16 v3, 0x21
 
-    const/4 v1, 0x0
+    const/4 v4, -0x1
 
-    iput-object v1, p0, Lg32;->o:Lvee;
+    if-eq v2, v4, :cond_0
 
-    invoke-virtual {v0, p0}, Ljava/util/ArrayDeque;->addFirst(Ljava/lang/Object;)V
+    new-instance v2, Landroid/text/style/StyleSpan;
 
-    return-void
+    const/4 v5, 0x2
 
-    :pswitch_1
-    iget-object v0, p0, Lg32;->Z:Ljava/lang/Object;
+    invoke-direct {v2, v5}, Landroid/text/style/StyleSpan;-><init>(I)V
 
-    check-cast v0, Loy1;
+    iget v5, p0, Lg32;->o:I
 
-    iget-object v0, v0, Loy1;->b:Ljava/lang/Object;
+    invoke-virtual {v0, v2, v5, v1, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    check-cast v0, Li32;
+    :cond_0
+    iget v2, p0, Lg32;->p:I
 
-    const/4 v1, 0x0
+    if-eq v2, v4, :cond_1
 
-    iput v1, p0, Ldy;->b:I
+    new-instance v2, Landroid/text/style/UnderlineSpan;
 
-    const/4 v1, 0x0
+    invoke-direct {v2}, Landroid/text/style/UnderlineSpan;-><init>()V
 
-    iput-object v1, p0, Lg32;->o:Lvee;
+    iget v5, p0, Lg32;->p:I
 
-    iget-object v0, v0, Li32;->b:Ljava/util/ArrayDeque;
+    invoke-virtual {v0, v2, v5, v1, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    invoke-virtual {v0, p0}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+    :cond_1
+    iget v2, p0, Lg32;->q:I
 
-    return-void
+    if-eq v2, v4, :cond_2
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    new-instance v2, Landroid/text/style/ForegroundColorSpan;
+
+    iget v5, p0, Lg32;->r:I
+
+    invoke-direct {v2, v5}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+
+    iget v5, p0, Lg32;->q:I
+
+    invoke-virtual {v0, v2, v5, v1, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    :cond_2
+    iget v2, p0, Lg32;->s:I
+
+    if-eq v2, v4, :cond_3
+
+    new-instance v2, Landroid/text/style/BackgroundColorSpan;
+
+    iget v4, p0, Lg32;->t:I
+
+    invoke-direct {v2, v4}, Landroid/text/style/BackgroundColorSpan;-><init>(I)V
+
+    iget p0, p0, Lg32;->s:I
+
+    invoke-virtual {v0, v2, p0, v1, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    :cond_3
+    new-instance p0, Landroid/text/SpannableString;
+
+    invoke-direct {p0, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+
+    return-object p0
 .end method
 
-.method public final w(JLvee;J)V
+.method public final d()V
+    .registers 3
+
+    iget-object v0, p0, Lg32;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    iget-object v0, p0, Lg32;->b:Landroid/text/SpannableStringBuilder;
+
+    invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->clear()V
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lg32;->o:I
+
+    iput v0, p0, Lg32;->p:I
+
+    iput v0, p0, Lg32;->q:I
+
+    iput v0, p0, Lg32;->s:I
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lg32;->u:I
+
+    iput-boolean v0, p0, Lg32;->c:Z
+
+    iput-boolean v0, p0, Lg32;->d:Z
+
+    const/4 v1, 0x4
+
+    iput v1, p0, Lg32;->e:I
+
+    iput-boolean v0, p0, Lg32;->f:Z
+
+    iput v0, p0, Lg32;->g:I
+
+    iput v0, p0, Lg32;->h:I
+
+    iput v0, p0, Lg32;->i:I
+
+    const/16 v1, 0xf
+
+    iput v1, p0, Lg32;->j:I
+
+    iput v0, p0, Lg32;->k:I
+
+    iput v0, p0, Lg32;->l:I
+
+    iput v0, p0, Lg32;->m:I
+
+    sget v0, Lg32;->w:I
+
+    iput v0, p0, Lg32;->n:I
+
+    sget v1, Lg32;->v:I
+
+    iput v1, p0, Lg32;->r:I
+
+    iput v0, p0, Lg32;->t:I
+
+    return-void
+.end method
+
+.method public final e(ZZ)V
     .registers 8
 
-    iput-wide p1, p0, Lg32;->c:J
+    iget v0, p0, Lg32;->o:I
 
-    iput-object p3, p0, Lg32;->o:Lvee;
+    const/16 v1, 0x21
 
-    const-wide v0, 0x7fffffffffffffffL
+    iget-object v2, p0, Lg32;->b:Landroid/text/SpannableStringBuilder;
 
-    cmp-long p3, p4, v0
+    const/4 v3, -0x1
 
-    if-nez p3, :cond_0
+    if-eq v0, v3, :cond_0
+
+    if-nez p1, :cond_1
+
+    new-instance p1, Landroid/text/style/StyleSpan;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p1, v0}, Landroid/text/style/StyleSpan;-><init>(I)V
+
+    iget v0, p0, Lg32;->o:I
+
+    invoke-virtual {v2}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v4
+
+    invoke-virtual {v2, p1, v0, v4, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    iput v3, p0, Lg32;->o:I
 
     goto :goto_0
 
     :cond_0
-    move-wide p1, p4
+    if-eqz p1, :cond_1
 
+    invoke-virtual {v2}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result p1
+
+    iput p1, p0, Lg32;->o:I
+
+    :cond_1
     :goto_0
-    iput-wide p1, p0, Lg32;->X:J
+    iget p1, p0, Lg32;->p:I
 
+    if-eq p1, v3, :cond_2
+
+    if-nez p2, :cond_3
+
+    new-instance p1, Landroid/text/style/UnderlineSpan;
+
+    invoke-direct {p1}, Landroid/text/style/UnderlineSpan;-><init>()V
+
+    iget p2, p0, Lg32;->p:I
+
+    invoke-virtual {v2}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v0
+
+    invoke-virtual {v2, p1, p2, v0, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    iput v3, p0, Lg32;->p:I
+
+    return-void
+
+    :cond_2
+    if-eqz p2, :cond_3
+
+    invoke-virtual {v2}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result p1
+
+    iput p1, p0, Lg32;->p:I
+
+    :cond_3
+    return-void
+.end method
+
+.method public final f(II)V
+    .registers 9
+
+    iget v0, p0, Lg32;->q:I
+
+    const/16 v1, 0x21
+
+    iget-object v2, p0, Lg32;->b:Landroid/text/SpannableStringBuilder;
+
+    const/4 v3, -0x1
+
+    if-eq v0, v3, :cond_0
+
+    iget v0, p0, Lg32;->r:I
+
+    if-eq v0, p1, :cond_0
+
+    new-instance v0, Landroid/text/style/ForegroundColorSpan;
+
+    iget v4, p0, Lg32;->r:I
+
+    invoke-direct {v0, v4}, Landroid/text/style/ForegroundColorSpan;-><init>(I)V
+
+    iget v4, p0, Lg32;->q:I
+
+    invoke-virtual {v2}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v5
+
+    invoke-virtual {v2, v0, v4, v5, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    :cond_0
+    sget v0, Lg32;->v:I
+
+    if-eq p1, v0, :cond_1
+
+    invoke-virtual {v2}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v0
+
+    iput v0, p0, Lg32;->q:I
+
+    iput p1, p0, Lg32;->r:I
+
+    :cond_1
+    iget p1, p0, Lg32;->s:I
+
+    if-eq p1, v3, :cond_2
+
+    iget p1, p0, Lg32;->t:I
+
+    if-eq p1, p2, :cond_2
+
+    new-instance p1, Landroid/text/style/BackgroundColorSpan;
+
+    iget v0, p0, Lg32;->t:I
+
+    invoke-direct {p1, v0}, Landroid/text/style/BackgroundColorSpan;-><init>(I)V
+
+    iget v0, p0, Lg32;->s:I
+
+    invoke-virtual {v2}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v3
+
+    invoke-virtual {v2, p1, v0, v3, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    :cond_2
+    sget p1, Lg32;->w:I
+
+    if-eq p2, p1, :cond_3
+
+    invoke-virtual {v2}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result p1
+
+    iput p1, p0, Lg32;->s:I
+
+    iput p2, p0, Lg32;->t:I
+
+    :cond_3
     return-void
 .end method

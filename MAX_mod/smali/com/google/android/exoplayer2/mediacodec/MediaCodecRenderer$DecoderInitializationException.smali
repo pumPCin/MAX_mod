@@ -8,13 +8,13 @@
 
 .field public final b:Z
 
-.field public final c:Lfb8;
+.field public final c:Lje8;
 
 .field public final o:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;ZLfb8;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;ZLje8;Ljava/lang/String;)V
     .registers 7
 
     invoke-direct {p0, p1, p2}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
@@ -23,14 +23,14 @@
 
     iput-boolean p4, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;->b:Z
 
-    iput-object p5, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;->c:Lfb8;
+    iput-object p5, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;->c:Lje8;
 
     iput-object p6, p0, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;->o:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public constructor <init>(Lr26;Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;ZI)V
+.method public constructor <init>(Lv46;Lcom/google/android/exoplayer2/mediacodec/MediaCodecUtil$DecoderQueryException;ZI)V
     .registers 15
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -63,7 +63,7 @@
 
     move-result-object v4
 
-    iget-object v6, p1, Lr26;->r0:Ljava/lang/String;
+    iget-object v6, p1, Lv46;->v0:Ljava/lang/String;
 
     if-gez p4, :cond_0
 
@@ -109,7 +109,7 @@
 
     move v7, p3
 
-    invoke-direct/range {v3 .. v9}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;ZLfb8;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v9}, Lcom/google/android/exoplayer2/mediacodec/MediaCodecRenderer$DecoderInitializationException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;ZLje8;Ljava/lang/String;)V
 
     return-void
 .end method

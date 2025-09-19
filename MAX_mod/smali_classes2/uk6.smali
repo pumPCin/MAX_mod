@@ -1,55 +1,38 @@
 .class public final Luk6;
-.super Lcx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public X:Ljava/lang/String;
-
-.field public Y:Lmte;
-
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public final synthetic n0:Lyk6;
-
-.field public o:Ln4e;
-
-.field public o0:I
+# interfaces
+.implements Ly9a;
 
 
 # direct methods
-.method public constructor <init>(Lyk6;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 1
 
-    iput-object p1, p0, Luk6;->n0:Lyk6;
-
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final c(Lbaa;)V
+    .registers 2
 
-    iput-object p1, p0, Luk6;->Z:Ljava/lang/Object;
+    sget-object p0, Lz9a;->a:Lz9a;
 
-    iget p1, p0, Luk6;->o0:I
+    invoke-virtual {p0, p1}, Lz9a;->c(Lbaa;)V
 
-    const/high16 v0, -0x80000000
+    return-void
+.end method
 
-    or-int/2addr p1, v0
+.method public final flush()V
+    .registers 1
 
-    iput p1, p0, Luk6;->o0:I
+    sget-object p0, Lz9a;->a:Lz9a;
 
-    iget-object p1, p0, Luk6;->n0:Lyk6;
+    invoke-virtual {p0}, Lz9a;->flush()V
 
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, p0}, Lyk6;->a(Lyk6;Lura;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

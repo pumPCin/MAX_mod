@@ -1,194 +1,97 @@
 .class public final Lsze;
-.super Ldzf;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lix3;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public b:Z
+.field public final synthetic b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public c:I
-
-.field public final synthetic d:Ljava/lang/Object;
+.field public final synthetic c:Lb0f;
 
 
 # direct methods
-.method public constructor <init>(Lbzf;)V
-    .registers 3
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lsze;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lsze;->d:Ljava/lang/Object;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lsze;->b:Z
-
-    iput p1, p0, Lsze;->c:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Ltze;I)V
+.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lb0f;I)V
     .registers 4
 
-    const/4 v0, 0x0
+    iput p3, p0, Lsze;->a:I
 
-    iput v0, p0, Lsze;->a:I
+    iput-object p1, p0, Lsze;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iput-object p2, p0, Lsze;->c:Lb0f;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lsze;->d:Ljava/lang/Object;
-
-    iput p2, p0, Lsze;->c:I
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lsze;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 2
+.method public final a(Lbolts/Task;)Ljava/lang/Object;
+    .registers 5
 
     iget v0, p0, Lsze;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    return-void
+    const/4 v0, 0x0
 
-    :pswitch_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    iput-boolean v0, p0, Lsze;->b:Z
+    iget-object v2, p0, Lsze;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    return-void
+    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final b()V
-    .registers 2
-
-    iget v0, p0, Lsze;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-boolean v0, p0, Lsze;->b:Z
+    move-result v0
 
     if-eqz v0, :cond_0
+
+    iget-object p0, p0, Lsze;->c:Lb0f;
+
+    invoke-virtual {p0, p1}, Lb0f;->c(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
+    invoke-virtual {p1}, Lbolts/Task;->getError()Ljava/lang/Exception;
 
-    iput-boolean v0, p0, Lsze;->b:Z
-
-    iget-object p0, p0, Lsze;->d:Ljava/lang/Object;
-
-    check-cast p0, Lbzf;
-
-    iget-object p0, p0, Lbzf;->d:Lczf;
-
-    if-eqz p0, :cond_1
-
-    invoke-interface {p0}, Lczf;->b()V
-
-    :cond_1
     :goto_0
-    return-void
+    const/4 p0, 0x0
+
+    return-object p0
 
     :pswitch_0
-    iget-object p0, p0, Lsze;->d:Ljava/lang/Object;
-
-    check-cast p0, Ltze;
-
-    iget-object p0, p0, Ltze;->a:Landroidx/appcompat/widget/Toolbar;
-
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+    const/4 v1, 0x1
 
-    return-void
+    iget-object v2, p0, Lsze;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-.method public final c()V
-    .registers 4
+    move-result v0
 
-    iget v0, p0, Lsze;->a:I
+    if-eqz v0, :cond_1
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Lsze;->c:Lb0f;
 
-    iget v0, p0, Lsze;->c:I
+    invoke-virtual {p0, p1}, Lb0f;->c(Ljava/lang/Object;)V
 
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lsze;->c:I
-
-    iget-object v1, p0, Lsze;->d:Ljava/lang/Object;
-
-    check-cast v1, Lbzf;
-
-    iget-object v2, v1, Lbzf;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    if-ne v0, v2, :cond_1
-
-    iget-object v0, v1, Lbzf;->d:Lczf;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lczf;->c()V
-
-    :cond_0
-    const/4 v0, 0x0
-
-    iput v0, p0, Lsze;->c:I
-
-    iput-boolean v0, p0, Lsze;->b:Z
-
-    iput-boolean v0, v1, Lbzf;->e:Z
+    goto :goto_1
 
     :cond_1
-    return-void
+    invoke-virtual {p1}, Lbolts/Task;->getError()Ljava/lang/Exception;
 
-    :pswitch_0
-    iget-boolean v0, p0, Lsze;->b:Z
+    :goto_1
+    const/4 p0, 0x0
 
-    if-nez v0, :cond_2
+    return-object p0
 
-    iget-object v0, p0, Lsze;->d:Ljava/lang/Object;
-
-    check-cast v0, Ltze;
-
-    iget-object v0, v0, Ltze;->a:Landroidx/appcompat/widget/Toolbar;
-
-    iget p0, p0, Lsze;->c:I
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->setVisibility(I)V
-
-    :cond_2
-    return-void
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

@@ -3,36 +3,18 @@
 
 
 # static fields
-.field public static common_google_play_services_enable_button:I = 0x7f1303c7
+.field public static join_widget_confirm_button:I = 0x7f0a0438
 
-.field public static common_google_play_services_enable_text:I = 0x7f1303c8
+.field public static join_widget_root:I = 0x7f0a0439
 
-.field public static common_google_play_services_enable_title:I = 0x7f1303c9
+.field public static link_interceptor_widget_view:I = 0x7f0a0473
 
-.field public static common_google_play_services_install_button:I = 0x7f1303ca
+.field public static root:I = 0x7f0a0a24
 
-.field public static common_google_play_services_install_text:I = 0x7f1303cb
+.field public static root_dialogs_container:I = 0x7f0a0a25
 
-.field public static common_google_play_services_install_title:I = 0x7f1303cc
+.field public static root_screen:I = 0x7f0a0a26
 
-.field public static common_google_play_services_notification_channel_name:I = 0x7f1303cd
+.field public static root_top_indicator:I = 0x7f0a0a27
 
-.field public static common_google_play_services_notification_ticker:I = 0x7f1303ce
-
-.field public static common_google_play_services_unsupported_text:I = 0x7f1303d0
-
-.field public static common_google_play_services_update_button:I = 0x7f1303d1
-
-.field public static common_google_play_services_update_text:I = 0x7f1303d2
-
-.field public static common_google_play_services_update_title:I = 0x7f1303d3
-
-.field public static common_google_play_services_updating_text:I = 0x7f1303d4
-
-.field public static common_google_play_services_wear_update_text:I = 0x7f1303d5
-
-.field public static common_open_on_phone:I = 0x7f1303da
-
-.field public static common_signin_button_text:I = 0x7f1303dc
-
-.field public static common_signin_button_text_long:I = 0x7f1303dd
+.field public static root_view_group:I = 0x7f0a0a28

@@ -105,7 +105,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;ILjava/lang/String;JLjava/util/Map;Lwc4;)V
+.method public synthetic constructor <init>(Ljava/lang/String;ILjava/lang/String;JLjava/util/Map;Lld4;)V
     .registers 8
 
     invoke-direct/range {p0 .. p6}, Lru/ok/android/externcalls/sdk/log/stat/item/ProductStatItem;-><init>(Ljava/lang/String;ILjava/lang/String;JLjava/util/Map;)V

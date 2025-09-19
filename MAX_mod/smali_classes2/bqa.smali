@@ -1,23 +1,19 @@
-.class public final Lbqa;
+.class public abstract Lbqa;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:J
-
-.field public final b:Lq00;
+# static fields
+.field public static final a:I
 
 
 # direct methods
-.method public constructor <init>(JLq00;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lbcc;->oneme_stickers_search_hint:I
 
-    iput-wide p1, p0, Lbqa;->a:J
-
-    iput-object p3, p0, Lbqa;->b:Lq00;
+    sput v0, Lbqa;->a:I
 
     return-void
 .end method

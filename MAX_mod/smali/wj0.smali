@@ -1,344 +1,163 @@
-.class public abstract Lwj0;
+.class public final Lwj0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:Ljava/util/ArrayList;
+.field public final synthetic a:I
 
-.field public final b:Ljava/util/HashSet;
+.field public b:I
 
-.field public final c:Ljn8;
-
-.field public final d:Lf76;
-
-.field public e:Landroid/os/Looper;
-
-.field public f:Lnxe;
-
-.field public g:Lp6b;
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(IILjava/lang/Object;)V
     .registers 4
+
+    iput p2, p0, Lwj0;->a:I
+
+    iput-object p3, p0, Lwj0;->c:Ljava/lang/Object;
+
+    iput p1, p0, Lwj0;->b:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
+    return-void
+.end method
 
-    const/4 v1, 0x1
+.method public constructor <init>(ILy8g;)V
+    .registers 4
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+    const/4 v0, 0x4
 
-    iput-object v0, p0, Lwj0;->a:Ljava/util/ArrayList;
+    iput v0, p0, Lwj0;->a:I
 
-    new-instance v0, Ljava/util/HashSet;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
+    iput p1, p0, Lwj0;->b:I
 
-    iput-object v0, p0, Lwj0;->b:Ljava/util/HashSet;
+    iput-object p2, p0, Lwj0;->c:Ljava/lang/Object;
 
-    new-instance v0, Ljn8;
+    return-void
+.end method
 
-    invoke-direct {v0}, Ljn8;-><init>()V
+.method public constructor <init>(Lzj0;)V
+    .registers 3
 
-    iput-object v0, p0, Lwj0;->c:Ljn8;
+    const/4 v0, 0x0
 
-    new-instance v0, Lf76;
+    iput v0, p0, Lwj0;->a:I
 
-    const/16 v1, 0xb
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v2, 0x0
+    iput-object p1, p0, Lwj0;->c:Ljava/lang/Object;
 
-    invoke-direct {v0, v1, v2}, Lf76;-><init>(IB)V
+    const/4 p1, -0x1
 
-    iput-object v0, p0, Lwj0;->d:Lf76;
+    iput p1, p0, Lwj0;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a(Lan8;Lma4;J)Lbh8;
-.end method
-
-.method public final b(Lcn8;)V
-    .registers 4
-
-    iget-object v0, p0, Lwj0;->b:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
-
-    move-result v1
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lwj0;->c()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public c()V
-    .registers 1
-
-    return-void
-.end method
-
-.method public final d(Lcn8;)V
-    .registers 4
-
-    iget-object v0, p0, Lwj0;->e:Landroid/os/Looper;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Lwj0;->b:Ljava/util/HashSet;
-
-    invoke-virtual {v0}, Ljava/util/HashSet;->isEmpty()Z
-
-    move-result v1
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0}, Lwj0;->e()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public e()V
-    .registers 1
-
-    return-void
-.end method
-
-.method public abstract f()Lue8;
-.end method
-
-.method public abstract g()V
-.end method
-
-.method public final h(Lcn8;La4f;Lp6b;)V
-    .registers 6
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lwj0;->e:Landroid/os/Looper;
-
-    if-eqz v1, :cond_1
-
-    if-ne v1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    const/4 v1, 0x1
-
-    :goto_1
-    invoke-static {v1}, Lnc5;->j(Z)V
-
-    iput-object p3, p0, Lwj0;->g:Lp6b;
-
-    iget-object p3, p0, Lwj0;->f:Lnxe;
-
-    iget-object v1, p0, Lwj0;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-object v1, p0, Lwj0;->e:Landroid/os/Looper;
-
-    if-nez v1, :cond_2
-
-    iput-object v0, p0, Lwj0;->e:Landroid/os/Looper;
-
-    iget-object p3, p0, Lwj0;->b:Ljava/util/HashSet;
-
-    invoke-virtual {p3, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0, p2}, Lwj0;->i(La4f;)V
-
-    return-void
-
-    :cond_2
-    if-eqz p3, :cond_3
-
-    invoke-virtual {p0, p1}, Lwj0;->d(Lcn8;)V
-
-    invoke-interface {p1, p0, p3}, Lcn8;->a(Lwj0;Lnxe;)V
-
-    :cond_3
-    return-void
-.end method
-
-.method public abstract i(La4f;)V
-.end method
-
-.method public final j(Lnxe;)V
-    .registers 4
-
-    iput-object p1, p0, Lwj0;->f:Lnxe;
-
-    iget-object v0, p0, Lwj0;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcn8;
-
-    invoke-interface {v1, p0, p1}, Lcn8;->a(Lwj0;Lnxe;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public abstract k(Lbh8;)V
-.end method
-
-.method public final l(Lcn8;)V
+.method public final run()V
     .registers 3
 
-    iget-object v0, p0, Lwj0;->a:Ljava/util/ArrayList;
+    iget v0, p0, Lwj0;->a:I
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+    iget-object v0, p0, Lwj0;->c:Ljava/lang/Object;
 
-    move-result v0
+    check-cast v0, Lt1h;
+
+    iget p0, p0, Lwj0;->b:I
+
+    invoke-virtual {v0, p0}, Lt1h;->f(I)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lwj0;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroidx/recyclerview/widget/RecyclerView;
+
+    iget p0, p0, Lwj0;->b:I
+
+    invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView;->A0(I)V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lwj0;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroidx/work/impl/foreground/SystemForegroundService;
+
+    iget-object v0, v0, Landroidx/work/impl/foreground/SystemForegroundService;->X:Landroid/app/NotificationManager;
+
+    iget p0, p0, Lwj0;->b:I
+
+    invoke-virtual {v0, p0}, Landroid/app/NotificationManager;->cancel(I)V
+
+    return-void
+
+    :pswitch_2
+    iget-object v0, p0, Lwj0;->c:Ljava/lang/Object;
+
+    check-cast v0, Lcom/google/android/material/datepicker/MaterialCalendar;
+
+    iget-object v0, v0, Lcom/google/android/material/datepicker/MaterialCalendar;->r1:Landroidx/recyclerview/widget/RecyclerView;
+
+    iget p0, p0, Lwj0;->b:I
+
+    invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView;->A0(I)V
+
+    return-void
+
+    :pswitch_3
+    iget-object v0, p0, Lwj0;->c:Ljava/lang/Object;
+
+    check-cast v0, Laue;
+
+    iget p0, p0, Lwj0;->b:I
+
+    iget-object v0, v0, Laue;->a:Ljava/lang/Object;
+
+    check-cast v0, Lr94;
 
     if-eqz v0, :cond_0
 
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lwj0;->e:Landroid/os/Looper;
-
-    iput-object p1, p0, Lwj0;->f:Lnxe;
-
-    iput-object p1, p0, Lwj0;->g:Lp6b;
-
-    iget-object p1, p0, Lwj0;->b:Ljava/util/HashSet;
-
-    invoke-virtual {p1}, Ljava/util/HashSet;->clear()V
-
-    invoke-virtual {p0}, Lwj0;->m()V
-
-    return-void
+    invoke-virtual {v0, p0}, Lr94;->S(I)V
 
     :cond_0
-    invoke-virtual {p0, p1}, Lwj0;->b(Lcn8;)V
+    return-void
+
+    :pswitch_4
+    iget-object v0, p0, Lwj0;->c:Ljava/lang/Object;
+
+    check-cast v0, Lzj0;
+
+    iget-object v0, v0, Lzj0;->u0:Lxj0;
+
+    iget p0, p0, Lwj0;->b:I
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, p0, v1}, Lvd5;->x(II)V
 
     return-void
-.end method
 
-.method public abstract m()V
-.end method
-
-.method public final n(Lvu4;)V
-    .registers 5
-
-    iget-object p0, p0, Lwj0;->d:Lf76;
-
-    iget-object p0, p0, Lf76;->o:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lsu4;
-
-    iget-object v2, v1, Lsu4;->a:Lvu4;
-
-    if-ne v2, p1, :cond_0
-
-    invoke-virtual {p0, v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    return-void
-.end method
-
-.method public final o(Lkn8;)V
-    .registers 5
-
-    iget-object p0, p0, Lwj0;->c:Ljn8;
-
-    iget-object p0, p0, Ljn8;->d:Ljava/io/Serializable;
-
-    check-cast p0, Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lhn8;
-
-    iget-object v2, v1, Lhn8;->b:Lkn8;
-
-    if-ne v2, p1, :cond_0
-
-    invoke-virtual {p0, v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

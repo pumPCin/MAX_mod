@@ -1,123 +1,69 @@
-.class public abstract synthetic Lvf4;
+.class public final Lvf4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc74;
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+
+# instance fields
+.field public final a:Lwvg;
+
+.field public b:Lfdf;
+
+.field public c:Ljava/lang/String;
+
+.field public d:I
+
+.field public e:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .registers 3
 
-    invoke-static {}, Lyj7;->values()[Lyj7;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    new-instance v0, Lwvg;
 
-    array-length v0, v0
+    const/16 v1, 0x15
 
-    new-array v0, v0, [I
+    invoke-direct {v0, v1}, Lwvg;-><init>(I)V
 
-    :try_start_0
-    sget-object v1, Lyj7;->ON_CREATE:Lyj7;
+    iput-object v0, p0, Lvf4;->a:Lwvg;
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    const/16 v0, 0x1f40
 
-    move-result v1
+    iput v0, p0, Lvf4;->d:I
 
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    sget-object v1, Lyj7;->ON_START:Lyj7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v1, Lyj7;->ON_RESUME:Lyj7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v1, Lyj7;->ON_PAUSE:Lyj7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v1, Lyj7;->ON_STOP:Lyj7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v1, Lyj7;->ON_DESTROY:Lyj7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    :try_start_6
-    sget-object v1, Lyj7;->ON_ANY:Lyj7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
-
-    :catch_6
-    sput-object v0, Lvf4;->$EnumSwitchMapping$0:[I
+    iput v0, p0, Lvf4;->e:I
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lf74;
+    .registers 6
+
+    new-instance v0, Lzf4;
+
+    iget-object v1, p0, Lvf4;->c:Ljava/lang/String;
+
+    iget v2, p0, Lvf4;->d:I
+
+    iget v3, p0, Lvf4;->e:I
+
+    iget-object v4, p0, Lvf4;->a:Lwvg;
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lzf4;-><init>(Ljava/lang/String;IILwvg;)V
+
+    iget-object p0, p0, Lvf4;->b:Lfdf;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {v0, p0}, Lii0;->H(Lfdf;)V
+
+    :cond_0
+    return-object v0
 .end method

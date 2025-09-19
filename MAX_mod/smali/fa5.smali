@@ -1,70 +1,248 @@
-.class public final synthetic Lfa5;
-.super Ljava/lang/Object;
+.class public final Lfa5;
+.super Ljava/util/concurrent/atomic/AtomicInteger;
 .source "SourceFile"
 
 # interfaces
-.implements Lkq7;
+.implements Ljava/lang/Runnable;
+.implements Loq4;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/lang/Runnable;
 
-.field public final synthetic b:Lh5b;
+.field public final b:Lpq4;
 
-.field public final synthetic c:I
+.field public volatile c:Ljava/lang/Thread;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lh5b;II)V
-    .registers 4
+.method public constructor <init>(Ljava/lang/Runnable;Lpq4;)V
+    .registers 3
 
-    iput p3, p0, Lfa5;->a:I
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    iput-object p1, p0, Lfa5;->b:Lh5b;
+    iput-object p1, p0, Lfa5;->a:Ljava/lang/Runnable;
 
-    iput p2, p0, Lfa5;->c:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lfa5;->b:Lpq4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .registers 3
+.method public final e()V
+    .registers 4
 
-    iget v0, p0, Lfa5;->a:I
+    :cond_0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
-    check-cast p1, Lt5b;
+    move-result v0
 
-    packed-switch v0, :pswitch_data_0
+    const/4 v1, 0x2
 
-    iget-object v0, p0, Lfa5;->b:Lh5b;
+    if-lt v0, v1, :cond_1
 
-    iget-boolean v0, v0, Lh5b;->l:Z
+    goto :goto_0
 
-    iget p0, p0, Lfa5;->c:I
+    :cond_1
+    const/4 v1, 0x4
 
-    invoke-interface {p1, p0, v0}, Lt5b;->e(IZ)V
+    if-nez v0, :cond_2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lfa5;->b:Lpq4;
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v0, p0}, Lpq4;->c(Loq4;)Z
 
     return-void
 
-    :pswitch_0
-    iget-object v0, p0, Lfa5;->b:Lh5b;
+    :cond_2
+    const/4 v0, 0x1
 
-    iget-object v0, v0, Lh5b;->a:Lnxe;
+    const/4 v2, 0x3
 
-    iget p0, p0, Lfa5;->c:I
+    invoke-virtual {p0, v0, v2}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
 
-    invoke-interface {p1, p0}, Lt5b;->w(I)V
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lfa5;->c:Ljava/lang/Thread;
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lfa5;->c:Ljava/lang/Thread;
+
+    :cond_3
+    invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
+
+    iget-object v0, p0, Lfa5;->b:Lpq4;
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v0, p0}, Lpq4;->c(Loq4;)Z
+
+    :cond_4
+    :goto_0
+    return-void
+.end method
+
+.method public final f()Z
+    .registers 2
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result p0
+
+    const/4 v0, 0x2
+
+    if-lt p0, v0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final run()V
+    .registers 6
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v0
+
+    if-nez v0, :cond_6
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfa5;->c:Ljava/lang/Thread;
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_5
+
+    const/4 v0, 0x3
+
+    const/4 v3, 0x2
+
+    :try_start_0
+    iget-object v4, p0, Lfa5;->a:Ljava/lang/Runnable;
+
+    invoke-interface {v4}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iput-object v2, p0, Lfa5;->c:Ljava/lang/Thread;
+
+    invoke-virtual {p0, v1, v3}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v0, p0, Lfa5;->b:Lpq4;
+
+    if-eqz v0, :cond_6
+
+    invoke-interface {v0, p0}, Lpq4;->c(Loq4;)Z
 
     return-void
 
-    nop
+    :cond_0
+    :goto_0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    move-result v1
+
+    if-ne v1, v0, :cond_1
+
+    invoke-static {}, Ljava/lang/Thread;->yield()V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {}, Ljava/lang/Thread;->interrupted()Z
+
+    return-void
+
+    :catchall_0
+    move-exception v4
+
+    :try_start_1
+    invoke-static {v4}, Ln4e;->D(Ljava/lang/Throwable;)V
+
+    throw v4
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :catchall_1
+    move-exception v4
+
+    iput-object v2, p0, Lfa5;->c:Ljava/lang/Thread;
+
+    invoke-virtual {p0, v1, v3}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    :goto_1
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_2
+
+    invoke-static {}, Ljava/lang/Thread;->yield()V
+
+    goto :goto_1
+
+    :cond_2
+    invoke-static {}, Ljava/lang/Thread;->interrupted()Z
+
+    goto :goto_2
+
+    :cond_3
+    iget-object v0, p0, Lfa5;->b:Lpq4;
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v0, p0}, Lpq4;->c(Loq4;)Z
+
+    :cond_4
+    :goto_2
+    throw v4
+
+    :cond_5
+    iput-object v2, p0, Lfa5;->c:Ljava/lang/Thread;
+
+    :cond_6
+    return-void
 .end method

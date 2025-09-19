@@ -1,30 +1,50 @@
 .class public final Lra9;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public X:I
+.field public X:Lyo9;
 
-.field public final synthetic Y:Lab9;
+.field public Y:Lfb9;
 
-.field public final synthetic Z:J
+.field public Z:J
+
+.field public r0:Z
+
+.field public s0:Z
+
+.field public t0:I
+
+.field public synthetic u0:Ljava/lang/Object;
+
+.field public final synthetic v0:Lfb9;
+
+.field public final synthetic w0:J
+
+.field public final synthetic x0:Z
+
+.field public final synthetic y0:Z
 
 
 # direct methods
-.method public constructor <init>(Lab9;JLkotlin/coroutines/Continuation;)V
-    .registers 5
+.method public constructor <init>(Lfb9;JZZLkotlin/coroutines/Continuation;)V
+    .registers 7
 
-    iput-object p1, p0, Lra9;->Y:Lab9;
+    iput-object p1, p0, Lra9;->v0:Lfb9;
 
-    iput-wide p2, p0, Lra9;->Z:J
+    iput-wide p2, p0, Lra9;->w0:J
+
+    iput-boolean p4, p0, Lra9;->x0:Z
+
+    iput-boolean p5, p0, Lra9;->y0:Z
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p4}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p6}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -34,7 +54,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -44,7 +64,7 @@
 
     check-cast p0, Lra9;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lra9;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -54,43 +74,68 @@
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 6
+    .registers 10
 
-    new-instance p1, Lra9;
+    new-instance v0, Lra9;
 
-    iget-object v0, p0, Lra9;->Y:Lab9;
+    iget-boolean v4, p0, Lra9;->x0:Z
 
-    iget-wide v1, p0, Lra9;->Z:J
+    iget-boolean v5, p0, Lra9;->y0:Z
 
-    invoke-direct {p1, v0, v1, v2, p2}, Lra9;-><init>(Lab9;JLkotlin/coroutines/Continuation;)V
+    iget-object v1, p0, Lra9;->v0:Lfb9;
 
-    return-object p1
+    iget-wide v2, p0, Lra9;->w0:J
+
+    move-object v6, p2
+
+    invoke-direct/range {v0 .. v6}, Lra9;-><init>(Lfb9;JZZLkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lra9;->u0:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 14
 
-    iget v0, p0, Lra9;->X:I
+    iget v0, p0, Lra9;->t0:I
 
-    sget-object v1, Lncf;->a:Lncf;
+    const/4 v1, 0x1
 
-    const/4 v2, 0x2
+    if-eqz v0, :cond_1
 
-    const/4 v3, 0x1
+    if-ne v0, v1, :cond_0
 
-    iget-object v4, p0, Lra9;->Y:Lab9;
+    iget-boolean v0, p0, Lra9;->s0:Z
 
-    sget-object v5, Ls04;->a:Ls04;
+    iget-boolean v2, p0, Lra9;->r0:Z
 
-    if-eqz v0, :cond_2
+    iget-wide v3, p0, Lra9;->Z:J
 
-    if-eq v0, v3, :cond_1
+    iget-object v5, p0, Lra9;->Y:Lfb9;
 
-    if-ne v0, v2, :cond_0
+    iget-object v6, p0, Lra9;->X:Lyo9;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object p0, p0, Lra9;->u0:Ljava/lang/Object;
 
-    return-object v1
+    check-cast p0, Ly04;
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    :goto_0
+    move-wide v10, v3
+
+    move-object v3, v5
+
+    move-wide v4, v10
+
+    move v7, v0
+
+    move-object p1, v6
+
+    move v6, v2
+
+    goto :goto_1
 
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -102,68 +147,108 @@
     throw p0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    move-object v11, p0
+    iget-object p1, p0, Lra9;->u0:Ljava/lang/Object;
 
-    goto :goto_0
+    check-cast p1, Ly04;
 
-    :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object v5, p0, Lra9;->v0:Lfb9;
 
-    sget-object p1, Lab9;->q:[Lsf7;
+    iget-object v6, v5, Lfb9;->s1:Lyo9;
 
-    iget-object p1, v4, Lab9;->j:Lxh7;
+    iput-object p1, p0, Lra9;->u0:Ljava/lang/Object;
 
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    iput-object v6, p0, Lra9;->X:Lyo9;
 
-    move-result-object p1
+    iput-object v5, p0, Lra9;->Y:Lfb9;
 
-    check-cast p1, Lga9;
+    iget-wide v3, p0, Lra9;->w0:J
 
-    iget-object v0, v4, Lab9;->a:Lk99;
+    iput-wide v3, p0, Lra9;->Z:J
 
-    iget-wide v7, v0, Lk99;->a:J
+    iget-boolean v2, p0, Lra9;->x0:Z
 
-    iput v3, p0, Lra9;->X:I
+    iput-boolean v2, p0, Lra9;->r0:Z
 
-    iget-object v6, p1, Lga9;->a:Lopc;
+    iget-boolean v0, p0, Lra9;->y0:Z
 
-    iget-wide v9, p0, Lra9;->Z:J
+    iput-boolean v0, p0, Lra9;->s0:Z
 
-    move-object v11, p0
+    iput v1, p0, Lra9;->t0:I
 
-    invoke-virtual/range {v6 .. v11}, Lopc;->j(JJLcx3;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v5, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    :goto_0
-    check-cast p1, Lvw8;
-
-    if-nez p1, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    iget-wide p0, p1, Lfj0;->a:J
-
-    iput v2, v11, Lra9;->X:I
-
-    invoke-static {v4, p0, p1, v11}, Lab9;->a(Lab9;JLcx3;)Ljava/lang/Object;
+    invoke-virtual {v6, p0}, Lyo9;->d(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    if-ne p0, v5, :cond_5
+    sget-object v7, Lz04;->a:Lz04;
+
+    if-ne p0, v7, :cond_2
+
+    return-object v7
+
+    :cond_2
+    move-object p0, p1
+
+    goto :goto_0
 
     :goto_1
-    return-object v5
+    const/4 v9, 0x0
 
-    :cond_5
+    :try_start_0
+    iget-object v0, v3, Lfb9;->q1:Lcae;
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Le0;->isActive()Z
+
+    move-result v0
+
+    if-ne v0, v1, :cond_3
+
+    goto :goto_2
+
+    :catchall_0
+    move-exception v0
+
+    move-object p0, v0
+
+    goto :goto_3
+
+    :cond_3
+    iget-object v0, v3, Lfb9;->Y:Lxwe;
+
+    check-cast v0, Laga;
+
+    invoke-virtual {v0}, Laga;->b()Ls04;
+
+    move-result-object v0
+
+    new-instance v2, Lqa9;
+
+    const/4 v8, 0x0
+
+    invoke-direct/range {v2 .. v8}, Lqa9;-><init>(Lfb9;JZZLkotlin/coroutines/Continuation;)V
+
+    const/4 v1, 0x2
+
+    invoke-static {p0, v0, v9, v2, v1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    move-result-object p0
+
+    iput-object p0, v3, Lfb9;->q1:Lcae;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
     :goto_2
-    return-object v1
+    invoke-virtual {p1, v9}, Lyo9;->f(Ljava/lang/Object;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :goto_3
+    invoke-virtual {p1, v9}, Lyo9;->f(Ljava/lang/Object;)V
+
+    throw p0
 .end method

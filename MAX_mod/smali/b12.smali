@@ -2,5 +2,7 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lfq5;
+
+# virtual methods
+.method public abstract t(Landroid/graphics/Typeface;)V
+.end method

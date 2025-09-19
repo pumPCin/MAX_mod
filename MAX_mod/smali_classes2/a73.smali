@@ -7,30 +7,22 @@
 
 
 # instance fields
-.field public final synthetic X:J
-
 .field public final synthetic a:I
 
-.field public final synthetic b:Lc73;
+.field public final synthetic b:Ld73;
 
 .field public final synthetic c:Landroid/graphics/drawable/Drawable;
 
-.field public final synthetic o:Ljava/lang/Runnable;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lc73;Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;JI)V
-    .registers 7
+.method public synthetic constructor <init>(Ld73;Landroid/graphics/drawable/Drawable;I)V
+    .registers 4
 
-    iput p6, p0, La73;->a:I
+    iput p3, p0, La73;->a:I
 
-    iput-object p1, p0, La73;->b:Lc73;
+    iput-object p1, p0, La73;->b:Ld73;
 
     iput-object p2, p0, La73;->c:Landroid/graphics/drawable/Drawable;
-
-    iput-object p3, p0, La73;->o:Ljava/lang/Runnable;
-
-    iput-wide p4, p0, La73;->X:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,34 +32,26 @@
 
 # virtual methods
 .method public final run()V
-    .registers 5
+    .registers 2
 
     iget v0, p0, La73;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, La73;->o:Ljava/lang/Runnable;
-
-    iget-wide v1, p0, La73;->X:J
-
-    iget-object v3, p0, La73;->b:Lc73;
+    iget-object v0, p0, La73;->b:Ld73;
 
     iget-object p0, p0, La73;->c:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v3, p0, v0, v1, v2}, Lc73;->z(Lc73;Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+    invoke-static {v0, p0}, Ld73;->y(Ld73;Landroid/graphics/drawable/Drawable;)V
 
     return-void
 
     :pswitch_0
-    iget-object v0, p0, La73;->o:Ljava/lang/Runnable;
-
-    iget-wide v1, p0, La73;->X:J
-
-    iget-object v3, p0, La73;->b:Lc73;
+    iget-object v0, p0, La73;->b:Ld73;
 
     iget-object p0, p0, La73;->c:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v3, p0, v0, v1, v2}, Lc73;->z(Lc73;Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+    invoke-static {v0, p0}, Ld73;->f(Ld73;Landroid/graphics/drawable/Drawable;)V
 
     return-void
 

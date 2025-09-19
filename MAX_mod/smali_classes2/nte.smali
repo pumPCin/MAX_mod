@@ -3,42 +3,28 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/Parcelable$Creator;
+.implements Lmte;
+
+
+# instance fields
+.field public a:Lbc6;
+
+.field public b:Lzb6;
 
 
 # virtual methods
-.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 5
-
-    new-instance p0, Lote;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    const-class v2, Ljava/lang/Object;
-
-    invoke-virtual {v2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Landroid/os/Parcel;->readArrayList(Ljava/lang/ClassLoader;)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1, v0, v1}, Lote;-><init>(Ljava/util/List;II)V
-
-    return-object p0
-.end method
-
-.method public final newArray(I)[Ljava/lang/Object;
+.method public final setOnRequestInterceptTouchEvent(Lzb6;)V
     .registers 2
 
-    new-array p0, p1, [Lote;
+    iput-object p1, p0, Lnte;->b:Lzb6;
 
-    return-object p0
+    return-void
+.end method
+
+.method public final setOnTouch(Lbc6;)V
+    .registers 2
+
+    iput-object p1, p0, Lnte;->a:Lbc6;
+
+    return-void
 .end method

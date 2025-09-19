@@ -1,79 +1,19 @@
 .class public final Lclb;
-.super Lflb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lclb;
+# instance fields
+.field public final synthetic a:Lz4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lz4;)V
+    .registers 2
 
-    new-instance v0, Lclb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lclb;->a:Lclb;
+    iput-object p1, p0, Lclb;->a:Lz4;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lclb;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final getItemId()J
-    .registers 3
-
-    const/16 p0, 0x200
-
-    int-to-long v0, p0
-
-    return-wide v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, 0x563d9696
-
-    return p0
-.end method
-
-.method public final m()I
-    .registers 1
-
-    const/16 p0, 0x200
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "Empty"
-
-    return-object p0
 .end method

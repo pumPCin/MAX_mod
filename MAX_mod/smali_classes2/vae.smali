@@ -1,15 +1,10 @@
 .class public final Lvae;
-.super Ljava/lang/Object;
+.super Lso;
 .source "SourceFile"
-
-# interfaces
-.implements Lz94;
 
 
 # static fields
 .field public static final a:Lvae;
-
-.field public static final b:Lwae;
 
 
 # direct methods
@@ -18,93 +13,29 @@
 
     new-instance v0, Lvae;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Lso;-><init>()V
 
     sput-object v0, Lvae;->a:Lvae;
-
-    sget-object v0, Lwae;->b:Lwae;
-
-    sput-object v0, Lvae;->b:Lwae;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lha4;
-    .registers 1
+.method public final b()Lxjd;
+    .registers 2
 
-    sget-object p0, Lvae;->b:Lwae;
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
-    return-object p0
-.end method
+    move-result-object p0
 
-.method public final b(Ljava/lang/String;Lca4;Landroid/os/Bundle;)Lka4;
-    .registers 12
+    const-class v0, Lxjd;
 
-    sget-object p0, Lvae;->b:Lwae;
+    invoke-virtual {p0, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    iget-object p0, p0, Lha4;->a:Ljava/util/LinkedHashSet;
+    move-result-object p0
 
-    invoke-interface {p0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
+    check-cast p0, Lxjd;
 
     return-object p0
-
-    :cond_0
-    sget-object p0, Lwae;->b:Lwae;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p0, Lwae;->c:Lca4;
-
-    invoke-virtual {p2, p0}, Lca4;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    new-instance v0, Lka4;
-
-    new-instance v6, Lbn1;
-
-    const/16 p0, 0xd
-
-    invoke-direct {v6, p3, p0}, Lbn1;-><init>(Landroid/os/Bundle;I)V
-
-    const/16 v7, 0x10
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    invoke-direct/range {v0 .. v7}, Lka4;-><init>(Ljava/lang/String;Lca4;Landroid/os/Bundle;ILia4;Lja4;I)V
-
-    return-object v0
-
-    :cond_1
-    move-object v2, p2
-
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "invalid route "
-
-    invoke-static {p1, v2}, Lew1;->g(Ljava/lang/String;Lca4;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

@@ -2,148 +2,172 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/concurrent/Callable;
-
 
 # instance fields
-.field public final synthetic X:Z
+.field public final a:Ly04;
 
-.field public final synthetic Y:Lemf;
+.field public final b:Lcv3;
 
-.field public final synthetic a:Ljava/lang/String;
+.field public final c:Lxwe;
 
-.field public final synthetic b:Lbtb;
+.field public final d:Lcl7;
 
-.field public final synthetic c:F
+.field public final e:Lcl7;
 
-.field public final synthetic o:F
+.field public final f:Lcl7;
+
+.field public final g:Lcl7;
+
+.field public final h:Lyce;
+
+.field public final i:Liic;
 
 
 # direct methods
-.method public constructor <init>(Lemf;Ljava/lang/String;Lbtb;FFZ)V
-    .registers 7
+.method public constructor <init>(Lrce;Lkotlinx/coroutines/internal/ContextScope;Lcv3;Lxwe;Lcl7;Lcl7;Lcl7;Lcl7;)V
+    .registers 17
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldmf;->Y:Lemf;
+    iput-object p2, p0, Ldmf;->a:Ly04;
 
-    iput-object p2, p0, Ldmf;->a:Ljava/lang/String;
+    iput-object p3, p0, Ldmf;->b:Lcv3;
 
-    iput-object p3, p0, Ldmf;->b:Lbtb;
+    iput-object p4, p0, Ldmf;->c:Lxwe;
 
-    iput p4, p0, Ldmf;->c:F
+    iput-object p6, p0, Ldmf;->d:Lcl7;
 
-    iput p5, p0, Ldmf;->o:F
+    iput-object p7, p0, Ldmf;->e:Lcl7;
 
-    iput-boolean p6, p0, Ldmf;->X:Z
+    move-object/from16 p6, p8
 
-    return-void
-.end method
+    iput-object p6, p0, Ldmf;->f:Lcl7;
 
+    iput-object p5, p0, Ldmf;->g:Lcl7;
 
-# virtual methods
-.method public final call()Ljava/lang/Object;
-    .registers 7
+    const/4 p5, 0x0
 
-    iget-object v0, p0, Ldmf;->Y:Lemf;
+    invoke-static {p5}, Lzce;->a(Ljava/lang/Object;)Lyce;
 
-    iget-object v1, v0, Lemf;->c:Lroc;
+    move-result-object p6
 
-    iget-object v0, v0, Lemf;->a:Lapc;
+    iput-object p6, p0, Ldmf;->h:Lyce;
 
-    invoke-virtual {v1}, Lt2;->f()Lthe;
+    new-instance v0, Liic;
 
-    move-result-object v2
+    invoke-direct {v0, p6}, Liic;-><init>(Lro9;)V
 
-    const/4 v3, 0x1
+    iput-object v0, p0, Ldmf;->i:Liic;
 
-    iget-object v4, p0, Ldmf;->a:Ljava/lang/String;
+    invoke-interface {p1}, Lrce;->getValue()Ljava/lang/Object;
 
-    if-nez v4, :cond_0
+    move-result-object p1
 
-    invoke-interface {v2, v3}, Lrhe;->Z(I)V
+    check-cast p1, Ls72;
+
+    if-nez p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v2, v3, v4}, Lrhe;->f(ILjava/lang/String;)V
+    invoke-virtual {p1}, Ls72;->L()Z
 
+    move-result p6
+
+    if-eqz p6, :cond_3
+
+    invoke-virtual {p1}, Ls72;->B()Z
+
+    move-result p6
+
+    if-nez p6, :cond_1
+
+    invoke-virtual {p1}, Ls72;->Q()Z
+
+    move-result p6
+
+    if-nez p6, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p1}, Ls72;->l()Ltm3;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    invoke-virtual {p1}, Ltm3;->t()Z
+
+    move-result p6
+
+    if-eqz p6, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p1}, Ltm3;->n()J
+
+    move-result-wide p5
+
+    invoke-static {p5, p6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p5
+
+    :cond_3
     :goto_0
-    iget-object v3, p0, Ldmf;->b:Lbtb;
+    if-eqz p5, :cond_4
 
-    iget v3, v3, Lbtb;->b:I
+    invoke-virtual {p5}, Ljava/lang/Long;->longValue()J
 
-    int-to-long v3, v3
+    move-result-wide p5
 
-    const/4 v5, 0x2
+    invoke-virtual {p3, p5, p6}, Lcv3;->c(J)Liic;
 
-    invoke-interface {v2, v5, v3, v4}, Lrhe;->k(IJ)V
+    move-result-object p1
 
-    iget v3, p0, Ldmf;->c:F
+    new-instance p3, Lzv2;
 
-    float-to-double v3, v3
+    const/16 p5, 0xc
 
-    const/4 v5, 0x3
+    invoke-direct {p3, p1, p5}, Lzv2;-><init>(Lis5;I)V
 
-    invoke-interface {v2, v5, v3, v4}, Lrhe;->g(ID)V
+    new-instance v0, Lj8b;
 
-    iget v3, p0, Ldmf;->o:F
+    const/4 v6, 0x4
 
-    float-to-double v3, v3
+    const/16 v7, 0x1b
 
-    const/4 v5, 0x4
+    const/4 v1, 0x2
 
-    invoke-interface {v2, v5, v3, v4}, Lrhe;->g(ID)V
+    const-class v3, Ldmf;
 
-    iget-boolean p0, p0, Ldmf;->X:Z
+    const-string v4, "handleContact"
 
-    int-to-long v3, p0
+    const-string v5, "handleContact(Lru/ok/tamtam/contacts/Contact;)V"
 
-    const/4 p0, 0x5
+    move-object v2, p0
 
-    invoke-interface {v2, p0, v3, v4}, Lrhe;->k(IJ)V
+    invoke-direct/range {v0 .. v7}, Lj8b;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
 
-    :try_start_0
-    invoke-virtual {v0}, Lapc;->c()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance p0, Lnu5;
 
-    :try_start_1
-    invoke-interface {v2}, Lthe;->C()I
+    const/4 p1, 0x1
 
-    invoke-virtual {v0}, Lapc;->q()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    invoke-direct {p0, p3, v0, p1}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    :try_start_2
-    invoke-virtual {v0}, Lapc;->k()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    check-cast p4, Laga;
 
-    invoke-virtual {v1, v2}, Lt2;->u(Lthe;)V
+    invoke-virtual {p4}, Laga;->b()Ls04;
 
-    const/4 p0, 0x0
+    move-result-object p1
 
-    return-object p0
+    invoke-static {p0, p1}, Lo97;->e0(Lis5;Lq04;)Lis5;
 
-    :catchall_0
-    move-exception p0
+    move-result-object p0
 
-    goto :goto_1
+    invoke-static {p0, p2}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
-    :catchall_1
-    move-exception p0
-
-    :try_start_3
-    invoke-virtual {v0}, Lapc;->k()V
-
-    throw p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :goto_1
-    invoke-virtual {v1, v2}, Lt2;->u(Lthe;)V
-
-    throw p0
+    :cond_4
+    return-void
 .end method

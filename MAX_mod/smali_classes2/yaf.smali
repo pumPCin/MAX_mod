@@ -1,216 +1,120 @@
 .class public final Lyaf;
-.super Ljava/lang/Object;
+.super Lnk7;
 .source "SourceFile"
 
 # interfaces
-.implements Lcbf;
+.implements Lzb6;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic a:I
 
-.field public final b:Lvte;
-
-.field public final c:Lvte;
-
-.field public final d:Labf;
+.field public final synthetic b:Lzaf;
 
 
 # direct methods
-.method public constructor <init>(ILvte;Lvte;Labf;)V
-    .registers 5
+.method public synthetic constructor <init>(Lzaf;I)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lyaf;->a:I
 
-    iput p1, p0, Lyaf;->a:I
+    iput-object p1, p0, Lyaf;->b:Lzaf;
 
-    iput-object p2, p0, Lyaf;->b:Lvte;
+    const/4 p1, 0x0
 
-    iput-object p3, p0, Lyaf;->c:Lvte;
-
-    iput-object p4, p0, Lyaf;->d:Labf;
+    invoke-direct {p0, p1}, Lnk7;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lvte;
-    .registers 1
-
-    iget-object p0, p0, Lyaf;->c:Lvte;
-
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke()Ljava/lang/Object;
     .registers 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lyaf;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lyaf;
-
-    iget v1, p0, Lyaf;->a:I
-
-    iget v3, p1, Lyaf;->a:I
-
-    if-eq v1, v3, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lyaf;->b:Lvte;
-
-    iget-object v3, p1, Lyaf;->b:Lvte;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Lyaf;->c:Lvte;
-
-    iget-object v3, p1, Lyaf;->c:Lvte;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-object p0, p0, Lyaf;->d:Labf;
-
-    iget-object p1, p1, Lyaf;->d:Labf;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_5
-
-    return v2
-
-    :cond_5
-    return v0
-.end method
-
-.method public final getIcon()I
-    .registers 1
-
-    iget p0, p0, Lyaf;->a:I
-
-    return p0
-.end method
-
-.method public final getTitle()Lvte;
-    .registers 1
-
-    iget-object p0, p0, Lyaf;->b:Lvte;
-
-    return-object p0
-.end method
-
-.method public final hashCode()I
-    .registers 4
 
     iget v0, p0, Lyaf;->a:I
 
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+    packed-switch v0, :pswitch_data_0
 
-    move-result v0
+    iget-object p0, p0, Lyaf;->b:Lzaf;
 
-    const/16 v1, 0x1f
+    :try_start_0
+    iget-object p0, p0, Lzaf;->a:Ljava/lang/String;
 
-    mul-int/2addr v0, v1
+    invoke-static {p0}, Lla6;->C(Ljava/lang/String;)Lbbf;
 
-    iget-object v2, p0, Lyaf;->b:Lvte;
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-static {v0, v1, v2}, Lnh0;->c(IILvte;)I
+    goto :goto_0
 
-    move-result v0
+    :catch_0
+    const/4 p0, 0x0
 
-    iget-object v2, p0, Lyaf;->c:Lvte;
+    :goto_0
+    return-object p0
 
-    invoke-static {v0, v1, v2}, Lnh0;->c(IILvte;)I
+    :pswitch_0
+    new-instance v0, Lvaf;
 
-    move-result v0
+    iget-object p0, p0, Lyaf;->b:Lzaf;
 
-    iget-object p0, p0, Lyaf;->d:Labf;
+    iget-object v1, p0, Lzaf;->a:Ljava/lang/String;
 
-    invoke-virtual {p0}, Labf;->hashCode()I
+    invoke-virtual {p0}, Lzaf;->a()Lbbf;
 
-    move-result p0
+    move-result-object v2
 
-    add-int/2addr p0, v0
+    if-eqz v2, :cond_0
 
-    return p0
-.end method
+    invoke-interface {v2}, Lak0;->versionName()Ljava/lang/String;
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    move-result-object v2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    if-nez v2, :cond_1
 
-    const-string v1, "CreateHint(icon="
+    :cond_0
+    const-string v2, "NA"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :cond_1
+    invoke-virtual {p0}, Lzaf;->a()Lbbf;
 
-    iget v1, p0, Lyaf;->a:I
+    move-result-object v3
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/4 v4, 0x0
 
-    const-string v1, ", title="
+    if-eqz v3, :cond_2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v3}, Lak0;->buildUuid()Ljava/lang/String;
 
-    iget-object v1, p0, Lyaf;->b:Lvte;
+    move-result-object v3
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    goto :goto_1
 
-    const-string v1, ", subtitle="
+    :cond_2
+    move-object v3, v4
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lyaf;->c:Lvte;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", inputState="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lyaf;->d:Labf;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :goto_1
+    invoke-virtual {p0}, Lzaf;->a()Lbbf;
 
     move-result-object p0
 
-    return-object p0
+    if-eqz p0, :cond_3
+
+    invoke-interface {p0}, Lak0;->environment()Ljava/lang/String;
+
+    move-result-object v4
+
+    :cond_3
+    invoke-direct {v0, v1, v2, v3, v4}, Lvaf;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

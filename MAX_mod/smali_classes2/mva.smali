@@ -1,127 +1,136 @@
 .class public final Lmva;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
-
-.field public final b:J
+.field public final synthetic X:Lnva;
 
 
 # direct methods
-.method public constructor <init>(JLjava/util/List;)V
-    .registers 4
+.method public constructor <init>(Lnva;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lmva;->X:Lnva;
 
-    iput-object p3, p0, Lmva;->a:Ljava/util/List;
+    const/4 p1, 0x2
 
-    iput-wide p1, p0, Lmva;->b:J
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    const/4 v0, 0x1
+    check-cast p1, Ly04;
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return v0
+    invoke-virtual {p0, p1, p2}, Lmva;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    :cond_0
-    instance-of v1, p1, Lmva;
+    move-result-object p0
 
-    const/4 v2, 0x0
+    check-cast p0, Lmva;
 
-    if-nez v1, :cond_1
+    sget-object p1, Lylf;->a:Lylf;
 
-    return v2
+    invoke-virtual {p0, p1}, Lmva;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    check-cast p1, Lmva;
-
-    iget-object v1, p0, Lmva;->a:Ljava/util/List;
-
-    iget-object v3, p1, Lmva;->a:Ljava/util/List;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-wide v3, p0, Lmva;->b:J
-
-    iget-wide p0, p1, Lmva;->b:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
+    return-object p1
 .end method
 
-.method public final hashCode()I
-    .registers 4
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    iget-object v0, p0, Lmva;->a:Ljava/util/List;
+    new-instance p1, Lmva;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    iget-object p0, p0, Lmva;->X:Lnva;
+
+    invoke-direct {p1, p0, p2}, Lmva;-><init>(Lnva;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    sget-object p1, Lnva;->r0:[Lxi7;
+
+    iget-object p0, p0, Lmva;->X:Lnva;
+
+    iget-object p1, p0, Lnva;->c:Lcl7;
+
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lhp;
+
+    check-cast v0, Ljp;
+
+    iget-object v0, v0, Li3;->g:Lfl7;
+
+    const-string v1, "app.notification.show.new.users"
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Lfl7;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    mul-int/lit8 v0, v0, 0x1f
+    xor-int/2addr v0, v2
 
-    iget-wide v1, p0, Lmva;->b:J
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+    move-result-object p1
 
-    move-result p0
+    check-cast p1, Lhp;
 
-    add-int/2addr p0, v0
+    check-cast p1, Ljp;
 
-    return p0
-.end method
+    invoke-virtual {p1, v1, v0}, Li3;->h(Ljava/lang/String;Z)V
 
-.method public final toString()Ljava/lang/String;
-    .registers 4
+    iget-object p1, p0, Lnva;->b:Lcl7;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    const-string v1, "PerfSpansPreparedForEvent(spans="
+    move-result-object p1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    check-cast p1, Lrk;
 
-    iget-object v1, p0, Lmva;->a:Ljava/util/List;
+    new-instance v1, Lerf;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, ", totalDuration="
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    iget-wide v1, p0, Lmva;->b:J
+    iput-object v0, v1, Lerf;->a:Ljava/lang/Boolean;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    new-instance v0, Lgrf;
 
-    const-string p0, ")"
+    invoke-direct {v0, v1}, Lgrf;-><init>(Lerf;)V
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {p1, v0}, Lrk;->a(Lgrf;)J
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object p1, p0, Lnva;->X:Lyce;
+
+    invoke-virtual {p0}, Lnva;->q()Los7;
 
     move-result-object p0
+
+    invoke-virtual {p1, p0}, Lyce;->setValue(Ljava/lang/Object;)V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

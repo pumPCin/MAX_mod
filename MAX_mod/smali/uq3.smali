@@ -1,184 +1,49 @@
-.class public final synthetic Luq3;
-.super Ljava/lang/Object;
+.class public final Luq3;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lj96;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lir3;
+.field public final synthetic Y:Lyq3;
 
-.field public final synthetic c:J
+.field public Z:I
+
+.field public o:Lyq3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lir3;JI)V
-    .registers 5
+.method public constructor <init>(Lyq3;Ljx3;)V
+    .registers 3
 
-    iput p4, p0, Luq3;->a:I
+    iput-object p1, p0, Luq3;->Y:Lyq3;
 
-    iput-object p1, p0, Luq3;->b:Lir3;
-
-    iput-wide p2, p0, Luq3;->c:J
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Luq3;->a:I
+    iput-object p1, p0, Luq3;->X:Ljava/lang/Object;
 
-    check-cast p1, Leka;
+    iget p1, p0, Luq3;->Z:I
 
-    packed-switch v0, :pswitch_data_0
+    const/high16 v0, -0x80000000
 
-    sget-object v0, Lvq3;->$EnumSwitchMapping$1:[I
+    or-int/2addr p1, v0
 
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+    iput p1, p0, Luq3;->Z:I
 
-    move-result p1
+    iget-object p1, p0, Luq3;->Y:Lyq3;
 
-    aget p1, v0, p1
+    invoke-static {p1, p0}, Lyq3;->c(Lyq3;Ljx3;)Ljava/io/Serializable;
 
-    const/4 v0, 0x1
-
-    if-ne p1, v0, :cond_0
-
-    iget-object p1, p0, Luq3;->b:Lir3;
-
-    iget-object v0, p1, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
-
-    iget-object v1, p1, Lir3;->c:Lzne;
-
-    check-cast v1, Ltba;
-
-    invoke-virtual {v1}, Ltba;->b()Ll04;
-
-    move-result-object v1
-
-    new-instance v2, Lwq3;
-
-    iget-wide v3, p0, Luq3;->c:J
-
-    const/4 p0, 0x0
-
-    invoke-direct {v2, p1, v3, v4, p0}, Lwq3;-><init>(Lir3;JLkotlin/coroutines/Continuation;)V
-
-    const/4 p1, 0x2
-
-    invoke-static {v0, v1, p0, v2, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    :cond_0
-    sget-object p0, Lncf;->a:Lncf;
+    move-result-object p0
 
     return-object p0
-
-    :pswitch_0
-    sget-object v0, Lvq3;->$EnumSwitchMapping$1:[I
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p1
-
-    aget p1, v0, p1
-
-    const/4 v0, 0x1
-
-    if-ne p1, v0, :cond_1
-
-    iget-object p1, p0, Luq3;->b:Lir3;
-
-    iget-object v0, p1, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
-
-    iget-object v1, p1, Lir3;->c:Lzne;
-
-    check-cast v1, Ltba;
-
-    invoke-virtual {v1}, Ltba;->b()Ll04;
-
-    move-result-object v1
-
-    new-instance v2, Lxq3;
-
-    iget-wide v3, p0, Luq3;->c:J
-
-    const/4 p0, 0x0
-
-    invoke-direct {v2, p1, v3, v4, p0}, Lxq3;-><init>(Lir3;JLkotlin/coroutines/Continuation;)V
-
-    const/4 p1, 0x2
-
-    invoke-static {v0, v1, p0, v2, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    :cond_1
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    :pswitch_1
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    const/4 v0, 0x1
-
-    if-eq p1, v0, :cond_2
-
-    const/4 v0, 0x2
-
-    if-eq p1, v0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-object p1, p0, Luq3;->b:Lir3;
-
-    iget-object v0, p1, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
-
-    iget-object v1, p1, Lir3;->c:Lzne;
-
-    check-cast v1, Ltba;
-
-    invoke-virtual {v1}, Ltba;->b()Ll04;
-
-    move-result-object v1
-
-    sget-object v2, Lht9;->a:Lht9;
-
-    invoke-virtual {v1, v2}, Lc0;->plus(Lj04;)Lj04;
-
-    move-result-object v1
-
-    new-instance v2, Lhr3;
-
-    const/4 v3, 0x0
-
-    iget-wide v4, p0, Luq3;->c:J
-
-    invoke-direct {v2, p1, v4, v5, v3}, Lhr3;-><init>(Lir3;JLkotlin/coroutines/Continuation;)V
-
-    sget-object p0, Lu04;->c:Lu04;
-
-    invoke-static {v0, v1, p0, v2}, Las3;->T(Lr04;Lj04;Lu04;Lx96;)Lq1e;
-
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

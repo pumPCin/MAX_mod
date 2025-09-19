@@ -1,118 +1,47 @@
-.class public final synthetic Lvq1;
-.super Ljava/lang/Object;
+.class public final Lvq1;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lh96;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic X:Lxq1;
 
-.field public final synthetic b:Landroid/content/Context;
+.field public Y:I
 
-.field public final synthetic c:Lzq1;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;Lzq1;I)V
-    .registers 4
+.method public constructor <init>(Lxq1;Ljx3;)V
+    .registers 3
 
-    iput p3, p0, Lvq1;->a:I
+    iput-object p1, p0, Lvq1;->X:Lxq1;
 
-    iput-object p1, p0, Lvq1;->b:Landroid/content/Context;
-
-    iput-object p2, p0, Lvq1;->c:Lzq1;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 4
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lvq1;->a:I
+    iput-object p1, p0, Lvq1;->o:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget p1, p0, Lvq1;->Y:I
 
-    new-instance v0, Lhr1;
+    const/high16 v0, -0x80000000
 
-    iget-object v1, p0, Lvq1;->b:Landroid/content/Context;
+    or-int/2addr p1, v0
 
-    invoke-direct {v0, v1}, Lhr1;-><init>(Landroid/content/Context;)V
+    iput p1, p0, Lvq1;->Y:I
 
-    new-instance v1, Lnl3;
+    iget-object p1, p0, Lvq1;->X:Lxq1;
 
-    const/4 v2, -0x1
-
-    invoke-direct {v1, v2, v2}, Lnl3;-><init>(II)V
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lx44;->O(Landroid/view/ViewGroup;Z)V
-
-    new-instance v1, Lkrc;
-
-    const/16 v2, 0x14
-
-    iget-object p0, p0, Lvq1;->c:Lzq1;
-
-    invoke-direct {v1, v2, p0}, Lkrc;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lhr1;->setListener(Lfr1;)V
-
-    new-instance v1, Ltq1;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p0, v2}, Ltq1;-><init>(Lzq1;I)V
-
-    invoke-virtual {v0, v1}, Lhr1;->setVideoLayoutUpdatesControllerProvider(Lh96;)V
-
-    return-object v0
-
-    :pswitch_0
-    iget-object v0, p0, Lvq1;->b:Landroid/content/Context;
-
-    iget-object p0, p0, Lvq1;->c:Lzq1;
-
-    invoke-static {v0, p0}, Lzq1;->z(Landroid/content/Context;Lzq1;)Landroid/view/View;
+    invoke-static {p1, p0}, Lxq1;->a(Lxq1;Ljx3;)Ljava/lang/Comparable;
 
     move-result-object p0
 
     return-object p0
-
-    :pswitch_1
-    iget-object v0, p0, Lvq1;->b:Landroid/content/Context;
-
-    iget-object p0, p0, Lvq1;->c:Lzq1;
-
-    invoke-static {v0, p0}, Lzq1;->x(Landroid/content/Context;Lzq1;)Landroid/widget/ImageView;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_2
-    iget-object v0, p0, Lvq1;->b:Landroid/content/Context;
-
-    iget-object p0, p0, Lvq1;->c:Lzq1;
-
-    invoke-static {v0, p0}, Lzq1;->w(Landroid/content/Context;Lzq1;)Ln7c;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

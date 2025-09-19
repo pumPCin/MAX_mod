@@ -1,71 +1,136 @@
 .class public final Lvrb;
-.super Lwi0;
+.super Lmsb;
 .source "SourceFile"
 
 
 # instance fields
-.field public final j:I
+.field public final a:I
+
+.field public final b:Lxca;
 
 
 # direct methods
-.method public constructor <init>(Lwz4;Lak3;Lu0e;Lvk3;I)V
-    .registers 6
+.method public constructor <init>(ILxca;I)V
+    .registers 4
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lwi0;-><init>(Lwz4;Lak3;Lu0e;Lvk3;)V
+    and-int/lit8 p3, p3, 0x8
 
-    iput p5, p0, Lvrb;->j:I
+    if-eqz p3, :cond_0
+
+    sget-object p2, Lxca;->o:Lxca;
+
+    :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lvrb;->a:I
+
+    iput-object p2, p0, Lvrb;->b:Lxca;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .registers 1
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    return-void
-.end method
+    if-ne p0, p1, :cond_0
 
-.method public final d()I
-    .registers 1
+    goto :goto_1
 
-    iget-object p0, p0, Lwi0;->f:Lak3;
+    :cond_0
+    instance-of v0, p1, Lvrb;
 
-    iget-object p0, p0, Lak3;->d:Ldle;
+    if-nez v0, :cond_1
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
+    goto :goto_0
 
-    move-result-object p0
+    :cond_1
+    check-cast p1, Lvrb;
 
-    check-cast p0, Ljava/lang/Number;
+    iget v0, p0, Lvrb;->a:I
 
-    invoke-virtual {p0}, Ljava/lang/Number;->intValue()I
+    iget v1, p1, Lvrb;->a:I
 
-    move-result p0
+    if-eq v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p0, p0, Lvrb;->b:Lxca;
+
+    iget-object p1, p1, Lvrb;->b:Lxca;
+
+    if-eq p0, p1, :cond_3
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
 
     return p0
 .end method
 
-.method public final g(Z)V
-    .registers 2
+.method public final getItemId()J
+    .registers 3
 
-    return-void
+    const/4 p0, 0x2
+
+    int-to-long v0, p0
+
+    return-wide v0
 .end method
 
-.method public final i()Ljava/lang/String;
-    .registers 1
+.method public final hashCode()I
+    .registers 3
 
-    iget-object p0, p0, Lwi0;->f:Lak3;
+    iget v0, p0, Lvrb;->a:I
 
-    iget-object p0, p0, Lak3;->a:Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
-    return-object p0
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    sget-object v1, Lada;->c:Lada;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    sget-object v0, Lzca;->a:Lzca;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lvrb;->b:Lxca;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
 .end method
 
-.method public final j()I
+.method public final m()I
     .registers 1
 
-    iget p0, p0, Lvrb;->j:I
+    const/4 p0, 0x2
 
     return p0
 .end method
@@ -75,15 +140,39 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ProxyClient{connectionHost="
+    const-string v1, "MainButtonAction(title="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lwi0;->f:Lak3;
+    iget v1, p0, Lvrb;->a:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", size="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-object v1, Lada;->c:Lada;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mode="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget-object v1, Lzca;->a:Lzca;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", appearance="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lvrb;->b:Lxca;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string p0, "}"
+    const-string p0, ")"
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

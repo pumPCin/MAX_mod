@@ -1,24 +1,23 @@
 .class public final Lssd;
-.super Ljava/lang/Object;
+.super Luc0;
 .source "SourceFile"
-
-# interfaces
-.implements Lvsd;
 
 
 # static fields
-.field public static final a:Lssd;
+.field public static final b:Lssd;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 2
 
     new-instance v0, Lssd;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/16 v1, 0x12
 
-    sput-object v0, Lssd;->a:Lssd;
+    invoke-direct {v0, v1}, Luc0;-><init>(I)V
+
+    sput-object v0, Lssd;->b:Lssd;
 
     return-void
 .end method
@@ -50,7 +49,7 @@
 .method public final hashCode()I
     .registers 1
 
-    const p0, -0x63736917
+    const p0, 0x6e285b4b
 
     return p0
 .end method
@@ -58,7 +57,7 @@
 .method public final toString()Ljava/lang/String;
     .registers 1
 
-    const-string p0, "Continue"
+    const-string p0, "CameraPermission"
 
     return-object p0
 .end method

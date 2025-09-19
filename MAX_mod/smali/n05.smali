@@ -1,22 +1,17 @@
-.class public abstract Ln05;
+.class public final Ln05;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a()Ljava/util/Set;
-    .registers 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Set<",
-            "[I>;"
-        }
-    .end annotation
+# instance fields
+.field public a:Lzh8;
 
-    invoke-static {}, Lbug;->q()Ljava/util/Set;
+.field public b:Z
 
-    move-result-object v0
+.field public c:Z
 
-    return-object v0
-.end method
+.field public d:J
+
+.field public e:I
+
+.field public f:La15;

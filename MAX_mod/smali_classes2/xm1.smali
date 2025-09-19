@@ -4,14 +4,5 @@
 
 
 # virtual methods
-.method public abstract onCurrentParticipantActiveRoomChanged(Ltm1;)V
-.end method
-
-.method public abstract onCurrentParticipantInvitedToRoom(Lum1;)V
-.end method
-
-.method public abstract onRoomRemoved(Lvm1;)V
-.end method
-
-.method public abstract onRoomUpdated(Lwm1;)V
+.method public abstract a(Lbh8;)V
 .end method

@@ -1,24 +1,32 @@
 .class public final Lut2;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic X:Lwt2;
+.field public final synthetic X:Lyt2;
+
+.field public final synthetic Y:Landroid/graphics/RectF;
+
+.field public final synthetic Z:Landroid/graphics/Rect;
 
 
 # direct methods
-.method public constructor <init>(Lwt2;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Lyt2;Landroid/graphics/RectF;Landroid/graphics/Rect;Lkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    iput-object p1, p0, Lut2;->X:Lwt2;
+    iput-object p1, p0, Lut2;->X:Lyt2;
+
+    iput-object p2, p0, Lut2;->Y:Landroid/graphics/RectF;
+
+    iput-object p3, p0, Lut2;->Z:Landroid/graphics/Rect;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -28,7 +36,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -38,7 +46,7 @@
 
     check-cast p0, Lut2;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lut2;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -46,63 +54,55 @@
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+    .registers 5
 
     new-instance p1, Lut2;
 
-    iget-object p0, p0, Lut2;->X:Lwt2;
+    iget-object v0, p0, Lut2;->Y:Landroid/graphics/RectF;
 
-    invoke-direct {p1, p0, p2}, Lut2;-><init>(Lwt2;Lkotlin/coroutines/Continuation;)V
+    iget-object v1, p0, Lut2;->Z:Landroid/graphics/Rect;
+
+    iget-object p0, p0, Lut2;->X:Lyt2;
+
+    invoke-direct {p1, p0, v0, v1, p2}, Lut2;-><init>(Lyt2;Landroid/graphics/RectF;Landroid/graphics/Rect;Lkotlin/coroutines/Continuation;)V
 
     return-object p1
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .registers 4
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object p0, p0, Lut2;->X:Lwt2;
+    iget-object p1, p0, Lut2;->X:Lyt2;
 
-    iget-object p1, p0, Lwt2;->y0:Ljava/util/concurrent/atomic/AtomicLong;
+    sget-object v0, Lyt2;->I0:[Lxi7;
 
-    iget-object v0, p0, Lwt2;->X:Lxh7;
+    invoke-virtual {p1}, Lyt2;->r()Lcp5;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v0
+    iget-object v0, p0, Lut2;->X:Lyt2;
 
-    check-cast v0, Lik;
+    iget-object v0, v0, Lyt2;->F0:Ljava/lang/String;
 
-    iget-object v1, p0, Lwt2;->C0:Ljava/lang/String;
+    invoke-virtual {p1, v0}, Lcp5;->r(Ljava/lang/String;)Ljava/io/File;
 
-    iget-object p0, p0, Lwt2;->D0:Ljava/lang/String;
+    move-result-object p1
 
-    check-cast v0, Lb6a;
+    invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    new-instance v2, Lq52;
+    move-result-object p1
 
-    invoke-virtual {v0}, Lb6a;->x()Lt9b;
+    iget-object v0, p0, Lut2;->X:Lyt2;
 
-    move-result-object v3
+    iget-object v1, p0, Lut2;->Y:Landroid/graphics/RectF;
 
-    check-cast v3, Lw9b;
+    iget-object p0, p0, Lut2;->Z:Landroid/graphics/Rect;
 
-    iget-object v3, v3, Lw9b;->a:Le53;
+    invoke-virtual {v0, p1, v1, p0}, Lyt2;->s(Ljava/lang/String;Landroid/graphics/RectF;Landroid/graphics/Rect;)V
 
-    invoke-virtual {v3}, Lz1d;->l()J
-
-    move-result-wide v3
-
-    invoke-direct {v2, v3, v4, v1, p0}, Lq52;-><init>(JLjava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v0, v2}, Lb6a;->u(Lb6a;Lhl;)J
-
-    move-result-wide v0
-
-    invoke-virtual {p1, v0, v1}, Ljava/util/concurrent/atomic/AtomicLong;->set(J)V
-
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

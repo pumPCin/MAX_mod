@@ -1,90 +1,87 @@
-.class public abstract Lmvd;
-.super Ljava/lang/Object;
+.class public final Lmvd;
+.super Lovd;
 .source "SourceFile"
 
-# interfaces
-.implements Lz94;
+
+# static fields
+.field public static final h:Landroid/graphics/RectF;
 
 
 # instance fields
-.field public final a:Llvd;
+.field public final b:F
+
+.field public final c:F
+
+.field public final d:F
+
+.field public final e:F
+
+.field public f:F
+
+.field public g:F
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Landroid/graphics/RectF;
 
-    new-instance v0, Llvd;
+    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
-    invoke-direct {v0}, Lha4;-><init>()V
+    sput-object v0, Lmvd;->h:Landroid/graphics/RectF;
 
-    invoke-virtual {p0, v0}, Lmvd;->e(Llvd;)V
+    return-void
+.end method
 
-    iput-object v0, p0, Lmvd;->a:Llvd;
+.method public constructor <init>(FFFF)V
+    .registers 5
+
+    invoke-direct {p0}, Lovd;-><init>()V
+
+    iput p1, p0, Lmvd;->b:F
+
+    iput p2, p0, Lmvd;->c:F
+
+    iput p3, p0, Lmvd;->d:F
+
+    iput p4, p0, Lmvd;->e:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lha4;
-    .registers 1
+.method public final a(Landroid/graphics/Matrix;Landroid/graphics/Path;)V
+    .registers 8
 
-    iget-object p0, p0, Lmvd;->a:Llvd;
+    iget-object v0, p0, Lovd;->a:Landroid/graphics/Matrix;
 
-    return-object p0
-.end method
+    invoke-virtual {p1, v0}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
 
-.method public final b(Ljava/lang/String;Lca4;Landroid/os/Bundle;)Lka4;
-    .registers 12
+    invoke-virtual {p2, v0}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    iget-object v0, p0, Lmvd;->a:Llvd;
+    iget v0, p0, Lmvd;->d:F
 
-    iget-object v0, v0, Lha4;->a:Ljava/util/LinkedHashSet;
+    iget v1, p0, Lmvd;->e:F
 
-    invoke-interface {v0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    sget-object v2, Lmvd;->h:Landroid/graphics/RectF;
 
-    move-result v0
+    iget v3, p0, Lmvd;->b:F
 
-    if-nez v0, :cond_0
+    iget v4, p0, Lmvd;->c:F
 
-    const/4 p0, 0x0
+    invoke-virtual {v2, v3, v4, v0, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    return-object p0
+    iget v0, p0, Lmvd;->f:F
 
-    :cond_0
-    new-instance v0, Lka4;
+    iget p0, p0, Lmvd;->g:F
 
-    invoke-virtual {p0}, Lmvd;->c()Lia4;
+    const/4 v1, 0x0
 
-    move-result-object v5
+    invoke-virtual {p2, v2, v0, p0, v1}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
-    invoke-virtual {p0, p3}, Lmvd;->d(Landroid/os/Bundle;)Lja4;
+    invoke-virtual {p2, p1}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    move-result-object v6
-
-    const/16 v7, 0x8
-
-    const/4 v4, 0x0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    invoke-direct/range {v0 .. v7}, Lka4;-><init>(Ljava/lang/String;Lca4;Landroid/os/Bundle;ILia4;Lja4;I)V
-
-    return-object v0
-.end method
-
-.method public abstract c()Lia4;
-.end method
-
-.method public abstract d(Landroid/os/Bundle;)Lja4;
-.end method
-
-.method public abstract e(Llvd;)V
+    return-void
 .end method

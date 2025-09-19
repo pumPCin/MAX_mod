@@ -1,265 +1,163 @@
-.class public abstract Lcp9;
+.class public final Lcp9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/lang/String; = "cp9"
+# instance fields
+.field public a:I
 
-.field public static final b:Ljava/lang/ThreadLocal;
+.field public b:I
 
-.field public static final c:Ljava/lang/ThreadLocal;
+.field public c:Z
+
+.field public d:Z
+
+.field public e:Z
+
+.field public f:Ljava/lang/Object;
+
+.field public g:Ljava/lang/Object;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
+# virtual methods
+.method public a()V
+    .registers 7
 
-    new-instance v0, Ljava/lang/ThreadLocal;
+    iget-object v0, p0, Lcp9;->g:Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    check-cast v0, Ljava/util/ArrayList;
 
-    sput-object v0, Lcp9;->b:Ljava/lang/ThreadLocal;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    new-instance v0, Ljava/lang/ThreadLocal;
+    move-result-object v1
 
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    sput-object v0, Lcp9;->c:Ljava/lang/ThreadLocal;
+    move-result v2
 
-    return-void
-.end method
+    if-eqz v2, :cond_0
 
-.method public static final a(Ljava/io/Closeable;)V
-    .registers 1
-
-    if-eqz p0, :cond_0
-
-    :try_start_0
-    invoke-interface {p0}, Ljava/io/Closeable;->close()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    :cond_0
-    return-void
-.end method
-
-.method public static final b(Ljava/io/File;Ljava/io/File;)V
-    .registers 9
-
-    invoke-virtual {p1}, Ljava/io/File;->exists()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p1}, Ljava/io/File;->createNewFile()Z
-
-    :cond_0
-    new-instance v0, Ljava/io/FileInputStream;
-
-    invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    invoke-virtual {v0}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
-    :try_start_0
-    new-instance p0, Ljava/io/FileOutputStream;
+    check-cast v2, Lbp9;
 
-    invoke-direct {p0, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    iget-object v3, p0, Lcp9;->f:Ljava/lang/Object;
 
-    invoke-virtual {p0}, Ljava/io/FileOutputStream;->getChannel()Ljava/nio/channels/FileChannel;
+    check-cast v3, Landroid/media/MediaMuxer;
 
-    move-result-object v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget v4, v2, Lbp9;->a:I
 
-    :try_start_1
-    invoke-virtual {v2}, Ljava/nio/channels/FileChannel;->size()J
+    iget-object v5, v2, Lbp9;->b:Ljava/nio/ByteBuffer;
 
-    move-result-wide v5
+    iget-object v2, v2, Lbp9;->c:Landroid/media/MediaCodec$BufferInfo;
 
-    const-wide/16 v3, 0x0
-
-    invoke-virtual/range {v1 .. v6}, Ljava/nio/channels/FileChannel;->transferFrom(Ljava/nio/channels/ReadableByteChannel;JJ)J
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :try_start_2
-    invoke-interface {v1}, Ljava/io/Closeable;->close()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    invoke-interface {v2}, Ljava/io/Closeable;->close()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    move-object p0, v0
+    invoke-virtual {v3, v4, v5, v2}, Landroid/media/MediaMuxer;->writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;)V
 
     goto :goto_0
-
-    :catchall_1
-    move-exception v0
-
-    move-object p0, v0
-
-    :try_start_3
-    throw p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_2
-
-    :catchall_2
-    move-exception v0
-
-    move-object p1, v0
-
-    :try_start_4
-    invoke-static {v1, p0}, Lp18;->f(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    throw p1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    :goto_0
-    :try_start_5
-    throw p0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_3
-
-    :catchall_3
-    move-exception v0
-
-    move-object p1, v0
-
-    invoke-static {v2, p0}, Lp18;->f(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    throw p1
-.end method
-
-.method public static c(Ljava/io/InputStream;)Ljava/lang/String;
-    .registers 9
-
-    sget-object v0, Lcp9;->b:Ljava/lang/ThreadLocal;
-
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, [B
-
-    if-nez v1, :cond_0
-
-    const/high16 v1, 0x10000
-
-    new-array v1, v1, [B
-
-    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
     :cond_0
-    :try_start_0
-    sget-object v2, Lcp9;->c:Ljava/lang/ThreadLocal;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    invoke-virtual {v2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v3
+.method public b()Z
+    .registers 7
 
-    check-cast v3, [B
+    iget-boolean v0, p0, Lcp9;->d:Z
 
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
-    if-nez v3, :cond_1
+    const/4 v2, 0x1
 
-    const/16 v3, 0x1000
+    const/4 v3, -0x1
 
-    new-array v3, v3, [B
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v2, v3}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    iget v4, p0, Lcp9;->a:I
+
+    if-ne v4, v3, :cond_1
+
+    :cond_0
+    if-nez v0, :cond_2
+
+    iget v0, p0, Lcp9;->a:I
+
+    if-ne v0, v3, :cond_2
 
     :cond_1
-    move v2, v4
+    move v0, v2
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v0
+    :cond_2
+    move v0, v1
+
+    :goto_0
+    iget-boolean v4, p0, Lcp9;->e:Z
+
+    if-eqz v4, :cond_3
+
+    iget v5, p0, Lcp9;->b:I
+
+    if-ne v5, v3, :cond_4
+
+    :cond_3
+    if-nez v4, :cond_5
+
+    iget p0, p0, Lcp9;->b:I
+
+    if-ne p0, v3, :cond_5
+
+    :cond_4
+    move p0, v2
 
     goto :goto_1
 
-    :cond_2
-    :goto_0
-    array-length v5, v3
-
-    invoke-virtual {p0, v3, v4, v5}, Ljava/io/InputStream;->read([BII)I
-
-    move-result v5
-
-    if-ltz v5, :cond_4
-
-    array-length v6, v1
-
-    add-int v7, v2, v5
-
-    if-ge v6, v7, :cond_3
-
-    array-length v6, v1
-
-    mul-int/lit8 v6, v6, 0x2
-
-    new-array v6, v6, [B
-
-    invoke-static {v1, v4, v6, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    invoke-virtual {v0, v6}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
-
-    move-object v1, v6
-
-    :cond_3
-    if-lez v5, :cond_2
-
-    invoke-static {v3, v4, v1, v2, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    move v2, v7
-
-    goto :goto_0
-
-    :cond_4
-    new-instance v0, Ljava/lang/String;
-
-    sget-object v3, Lk72;->a:Ljava/nio/charset/Charset;
-
-    invoke-direct {v0, v1, v4, v2, v3}, Ljava/lang/String;-><init>([BIILjava/nio/charset/Charset;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-static {p0}, Lcp9;->a(Ljava/io/Closeable;)V
-
-    return-object v0
+    :cond_5
+    move p0, v1
 
     :goto_1
-    :try_start_1
-    sget-object v1, Lcp9;->a:Ljava/lang/String;
+    if-eqz v0, :cond_6
 
-    const-string v2, "Can\'t read native media from resources"
+    if-eqz p0, :cond_6
 
-    invoke-static {v1, v2, v0}, Ld86;->H(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    return v2
 
-    invoke-static {p0}, Lcp9;->a(Ljava/io/Closeable;)V
+    :cond_6
+    return v1
+.end method
 
-    const/4 p0, 0x0
+.method public c()V
+    .registers 3
 
-    return-object p0
+    const/4 v0, -0x1
 
-    :catchall_1
-    move-exception v0
+    iput v0, p0, Lcp9;->a:I
 
-    invoke-static {p0}, Lcp9;->a(Ljava/io/Closeable;)V
+    const/high16 v1, -0x80000000
 
-    throw v0
+    iput v1, p0, Lcp9;->b:I
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, p0, Lcp9;->c:Z
+
+    iput-boolean v1, p0, Lcp9;->d:Z
+
+    iput-boolean v1, p0, Lcp9;->e:Z
+
+    iget-object p0, p0, Lcp9;->f:Ljava/lang/Object;
+
+    check-cast p0, [I
+
+    if-eqz p0, :cond_0
+
+    invoke-static {p0, v0}, Ljava/util/Arrays;->fill([II)V
+
+    :cond_0
+    return-void
 .end method

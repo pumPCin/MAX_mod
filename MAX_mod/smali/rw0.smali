@@ -1,67 +1,165 @@
-.class public abstract Lrw0;
+.class public final Lrw0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc74;
 
-# static fields
-.field public static final a:Ljava/util/UUID;
 
-.field public static final b:Ljava/util/UUID;
+# instance fields
+.field public a:Llw0;
 
-.field public static final c:Ljava/util/UUID;
+.field public final b:Ltl5;
 
-.field public static final d:Ljava/util/UUID;
+.field public final c:Lbx0;
+
+.field public d:Z
+
+.field public e:Lc74;
+
+.field public f:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public constructor <init>()V
+    .registers 3
 
-    new-instance v0, Ljava/util/UUID;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v1, 0x0
+    new-instance v0, Ltl5;
 
-    invoke-direct {v0, v1, v2, v1, v2}, Ljava/util/UUID;-><init>(JJ)V
+    const/4 v1, 0x0
 
-    sput-object v0, Lrw0;->a:Ljava/util/UUID;
+    invoke-direct {v0, v1}, Ltl5;-><init>(I)V
 
-    new-instance v0, Ljava/util/UUID;
+    iput-object v0, p0, Lrw0;->b:Ltl5;
 
-    const-wide v1, 0x1077efecc0b24d02L
+    sget-object v0, Lbx0;->c:Lbx0;
 
-    const-wide v3, -0x531cc3e1ad1d04b5L    # -1.8442503140481377E-92
-
-    invoke-direct {v0, v1, v2, v3, v4}, Ljava/util/UUID;-><init>(JJ)V
-
-    sput-object v0, Lrw0;->b:Ljava/util/UUID;
-
-    new-instance v0, Ljava/util/UUID;
-
-    const-wide v1, -0x1d8e62a7567a4c37L    # -1.6229728350858627E166
-
-    const-wide v3, 0x781ab030af78d30eL    # 3.524813189889319E270
-
-    invoke-direct {v0, v1, v2, v3, v4}, Ljava/util/UUID;-><init>(JJ)V
-
-    new-instance v0, Ljava/util/UUID;
-
-    const-wide v1, -0x121074568629b532L    # -3.563403477674908E221
-
-    const-wide v3, -0x5c37d8232ae2de13L
-
-    invoke-direct {v0, v1, v2, v3, v4}, Ljava/util/UUID;-><init>(JJ)V
-
-    sput-object v0, Lrw0;->c:Ljava/util/UUID;
-
-    new-instance v0, Ljava/util/UUID;
-
-    const-wide v1, -0x65fb0f8667bfbd7aL
-
-    const-wide v3, -0x546d19a41f77a06bL    # -8.640911267670052E-99
-
-    invoke-direct {v0, v1, v2, v3, v4}, Ljava/util/UUID;-><init>(JJ)V
-
-    sput-object v0, Lrw0;->d:Ljava/util/UUID;
+    iput-object v0, p0, Lrw0;->c:Lbx0;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final bridge synthetic a()Lf74;
+    .registers 1
+
+    invoke-virtual {p0}, Lrw0;->b()Ltw0;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final b()Ltw0;
+    .registers 4
+
+    iget-object v0, p0, Lrw0;->e:Lc74;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Lc74;->a()Lf74;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    iget v1, p0, Lrw0;->f:I
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v0, v1, v2}, Lrw0;->d(Lf74;II)Ltw0;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final c()Ltw0;
+    .registers 4
+
+    iget-object v0, p0, Lrw0;->e:Lc74;
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Lc74;->a()Lf74;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    iget v1, p0, Lrw0;->f:I
+
+    or-int/lit8 v1, v1, 0x1
+
+    const/16 v2, -0xfa0
+
+    invoke-virtual {p0, v0, v1, v2}, Lrw0;->d(Lf74;II)Ltw0;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final d(Lf74;II)Ltw0;
+    .registers 12
+
+    iget-object v1, p0, Lrw0;->a:Llw0;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-boolean v0, p0, Lrw0;->d:Z
+
+    if-nez v0, :cond_1
+
+    if-nez p1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    new-instance v0, Lpw0;
+
+    invoke-direct {v0, v1}, Lpw0;-><init>(Llw0;)V
+
+    :goto_0
+    move-object v4, v0
+
+    goto :goto_2
+
+    :cond_1
+    :goto_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    :goto_2
+    new-instance v0, Ltw0;
+
+    iget-object v2, p0, Lrw0;->b:Ltl5;
+
+    invoke-virtual {v2}, Ltl5;->a()Lf74;
+
+    move-result-object v3
+
+    iget-object v5, p0, Lrw0;->c:Lbx0;
+
+    move-object v2, p1
+
+    move v6, p2
+
+    move v7, p3
+
+    invoke-direct/range {v0 .. v7}, Ltw0;-><init>(Llw0;Lf74;Lf74;Lpw0;Lbx0;II)V
+
+    return-object v0
 .end method

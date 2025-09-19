@@ -1,105 +1,69 @@
-.class public final Lcda;
-.super Ljava/lang/Object;
+.class public final enum Lcda;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static final enum a:Lcda;
 
-.field public final b:J
-
-.field public final c:J
-
-.field public final synthetic d:Ldda;
+.field public static final synthetic b:[Lcda;
 
 
 # direct methods
-.method public constructor <init>(Ldda;I)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 4
 
-    iput p2, p0, Lcda;->a:I
+    new-instance v0, Lcda;
 
-    packed-switch p2, :pswitch_data_0
+    const-string v1, "IDLE"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
 
-    iput-object p1, p0, Lcda;->d:Ldda;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object p1, p1, Ldda;->a:Lkk8;
+    sput-object v0, Lcda;->a:Lcda;
 
-    iget-wide v0, p1, Lkk8;->o:J
+    new-instance v1, Lcda;
 
-    iput-wide v0, p0, Lcda;->b:J
+    const-string v2, "LOADING"
 
-    iget-wide p1, p1, Lkk8;->c:J
+    const/4 v3, 0x1
 
-    iput-wide p1, p0, Lcda;->c:J
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    return-void
+    filled-new-array {v0, v1}, [Lcda;
 
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
 
-    iput-object p1, p0, Lcda;->d:Ldda;
-
-    iget-object p1, p1, Ldda;->a:Lkk8;
-
-    iget-wide v0, p1, Lkk8;->o:J
-
-    iput-wide v0, p0, Lcda;->b:J
-
-    iget-wide p1, p1, Lkk8;->c:J
-
-    iput-wide p1, p0, Lcda;->c:J
+    sput-object v0, Lcda;->b:[Lcda;
 
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lcda;
+    .registers 2
 
-# virtual methods
-.method public final a(Ljava/util/ArrayList;)V
-    .registers 3
+    const-class v0, Lcda;
 
-    iget v0, p0, Lcda;->a:I
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object p0
 
-    iget-object p0, p0, Lcda;->d:Ldda;
+    check-cast p0, Lcda;
 
-    iget-object p0, p0, Ldda;->a:Lkk8;
+    return-object p0
+.end method
 
-    iget-object p0, p0, Lkk8;->X:Ljava/lang/Object;
+.method public static values()[Lcda;
+    .registers 1
 
-    check-cast p0, Lj96;
+    sget-object v0, Lcda;->b:[Lcda;
 
-    invoke-interface {p0, p1}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    return-void
+    move-result-object v0
 
-    :pswitch_0
-    iget-object p0, p0, Lcda;->d:Ldda;
+    check-cast v0, [Lcda;
 
-    iget-object p0, p0, Ldda;->a:Lkk8;
-
-    iget-object p0, p0, Lkk8;->X:Ljava/lang/Object;
-
-    check-cast p0, Lj96;
-
-    invoke-interface {p0, p1}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

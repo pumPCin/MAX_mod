@@ -3,24 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lbd1;
+.implements Lad1;
 
 
 # static fields
-.field public static final X:Lbjd;
-
 .field public static final a:Lxc1;
 
 .field public static final b:J
 
-.field public static final c:Lqte;
+.field public static final c:Lp2f;
 
-.field public static final o:Lei7;
+.field public static final d:Lzca;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 2
 
     new-instance v0, Lxc1;
 
@@ -28,39 +26,35 @@
 
     sput-object v0, Lxc1;->a:Lxc1;
 
-    sget v0, Li9a;->a:I
-
-    int-to-long v0, v0
+    sget-wide v0, Lqda;->f:J
 
     sput-wide v0, Lxc1;->b:J
 
-    sget v0, Lk9a;->e:I
+    sget v0, Lsda;->h:I
 
-    new-instance v1, Lqte;
+    new-instance v1, Lp2f;
 
-    invoke-direct {v1, v0}, Lqte;-><init>(I)V
+    invoke-direct {v1, v0}, Lp2f;-><init>(I)V
 
-    sput-object v1, Lxc1;->c:Lqte;
+    sput-object v1, Lxc1;->c:Lp2f;
 
-    new-instance v0, Lei7;
+    sget-object v0, Lzca;->a:Lzca;
 
-    sget v1, Lh9a;->d:I
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lei7;-><init>(II)V
-
-    sput-object v0, Lxc1;->o:Lei7;
-
-    sget-object v0, Lbjd;->a:Lbjd;
-
-    sput-object v0, Lxc1;->X:Lbjd;
+    sput-object v0, Lxc1;->d:Lzca;
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final a()Lzca;
+    .registers 1
+
+    sget-object p0, Lxc1;->d:Lzca;
+
+    return-object p0
+.end method
+
 .method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
@@ -83,14 +77,6 @@
     return v0
 .end method
 
-.method public final f()Lhi7;
-    .registers 1
-
-    sget-object p0, Lxc1;->o:Lei7;
-
-    return-object p0
-.end method
-
 .method public final getItemId()J
     .registers 3
 
@@ -99,18 +85,10 @@
     return-wide v0
 .end method
 
-.method public final getTitle()Lvte;
+.method public final getTitle()Lp2f;
     .registers 1
 
-    sget-object p0, Lxc1;->c:Lqte;
-
-    return-object p0
-.end method
-
-.method public final getType()Lbjd;
-    .registers 1
-
-    sget-object p0, Lxc1;->X:Lbjd;
+    sget-object p0, Lxc1;->c:Lp2f;
 
     return-object p0
 .end method
@@ -118,23 +96,7 @@
 .method public final hashCode()I
     .registers 1
 
-    const p0, -0x122eeb95
-
-    return p0
-.end method
-
-.method public final m()I
-    .registers 1
-
-    sget p0, Li9a;->m:I
-
-    return p0
-.end method
-
-.method public final t()I
-    .registers 1
-
-    const/4 p0, 0x1
+    const p0, 0x2e373d72
 
     return p0
 .end method
@@ -142,15 +104,7 @@
 .method public final toString()Ljava/lang/String;
     .registers 1
 
-    const-string p0, "CopyLink"
+    const-string p0, "JoinCall"
 
     return-object p0
-.end method
-
-.method public final u()I
-    .registers 1
-
-    const/4 p0, 0x1
-
-    return p0
 .end method

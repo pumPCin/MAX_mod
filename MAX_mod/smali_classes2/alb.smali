@@ -1,112 +1,71 @@
 .class public final Lalb;
-.super Lmlb;
+.super Lx7g;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/lang/CharSequence;
+.field public final X:Lcl7;
+
+.field public volatile Y:I
+
+.field public final Z:Lv85;
+
+.field public final b:Lekb;
+
+.field public final c:Ljava/lang/String;
+
+.field public final o:Lcl7;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;)V
-    .registers 2
+.method public constructor <init>(Lekb;Lcl7;Lcl7;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lx7g;-><init>()V
 
-    iput-object p1, p0, Lalb;->a:Ljava/lang/CharSequence;
+    iput-object p1, p0, Lalb;->b:Lekb;
+
+    const-class p1, Lalb;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lalb;->c:Ljava/lang/String;
+
+    iput-object p2, p0, Lalb;->o:Lcl7;
+
+    iput-object p3, p0, Lalb;->X:Lcl7;
+
+    new-instance p1, Lv85;
+
+    const/4 p2, 0x0
+
+    invoke-direct {p1, p2}, Lv85;-><init>(I)V
+
+    iput-object p1, p0, Lalb;->Z:Lv85;
+
+    invoke-interface {p3}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lxwe;
+
+    check-cast p1, Laga;
+
+    invoke-virtual {p1}, Laga;->b()Ls04;
+
+    move-result-object p1
+
+    new-instance p2, Lrkb;
+
+    const/4 p3, 0x0
+
+    invoke-direct {p2, p0, p3}, Lrkb;-><init>(Lalb;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p3, 0x2
+
+    invoke-static {p0, p1, p2, p3}, Lx7g;->n(Lx7g;Lq04;Lpc6;I)Lcae;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lalb;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lalb;
-
-    iget-object p0, p0, Lalb;->a:Ljava/lang/CharSequence;
-
-    iget-object p1, p1, Lalb;->a:Ljava/lang/CharSequence;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final getItemId()J
-    .registers 3
-
-    const/16 p0, 0x8
-
-    int-to-long v0, p0
-
-    return-wide v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lalb;->a:Ljava/lang/CharSequence;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final m()I
-    .registers 1
-
-    const/16 p0, 0x8
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ChatDescription(text="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lalb;->a:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

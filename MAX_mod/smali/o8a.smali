@@ -1,21 +1,14 @@
-.class public final Lo8a;
+.class public interface abstract Lo8a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lo8a;
+# virtual methods
+.method public abstract a()Lsdd;
+.end method
 
+.method public abstract b(J)V
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Lo8a;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lo8a;->a:Lo8a;
-
-    return-void
+.method public abstract e(Lpf5;)J
 .end method

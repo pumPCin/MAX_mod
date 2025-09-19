@@ -4,279 +4,116 @@
 
 
 # instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:[I
-
-.field public d:I
+.field public final a:Lu7h;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 4
+.method public constructor <init>(Lu7h;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v0, 0x8
+    invoke-static {p1}, Ljk7;->t(Ljava/lang/Object;)V
 
-    invoke-static {v0}, Ljava/lang/Integer;->bitCount(I)I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    if-eq v1, v2, :cond_0
-
-    const/4 v0, 0x7
-
-    invoke-static {v0}, Ljava/lang/Integer;->highestOneBit(I)I
-
-    move-result v0
-
-    shl-int/2addr v0, v2
-
-    :cond_0
-    add-int/lit8 v1, v0, -0x1
-
-    iput v1, p0, Ln33;->d:I
-
-    new-array v0, v0, [I
-
-    iput-object v0, p0, Ln33;->c:[I
+    iput-object p1, p0, Ln33;->a:Lu7h;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(I)V
-    .registers 8
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    iget-object v0, p0, Ln33;->c:[I
+    instance-of v0, p1, Ln33;
 
-    iget v1, p0, Ln33;->b:I
+    const/4 v1, 0x0
 
-    aput p1, v0, v1
+    if-nez v0, :cond_0
 
-    add-int/lit8 v1, v1, 0x1
-
-    iget p1, p0, Ln33;->d:I
-
-    and-int/2addr p1, v1
-
-    iput p1, p0, Ln33;->b:I
-
-    iget v1, p0, Ln33;->a:I
-
-    if-ne p1, v1, :cond_1
-
-    array-length p1, v0
-
-    sub-int v2, p1, v1
-
-    shl-int/lit8 v3, p1, 0x1
-
-    if-ltz v3, :cond_0
-
-    new-array v4, v3, [I
-
-    const/4 v5, 0x0
-
-    invoke-static {v5, v1, p1, v0, v4}, Lms;->N(III[I[I)V
-
-    iget-object v0, p0, Ln33;->c:[I
-
-    iget v1, p0, Ln33;->a:I
-
-    invoke-static {v2, v5, v1, v0, v4}, Lms;->N(III[I[I)V
-
-    iput-object v4, p0, Ln33;->c:[I
-
-    iput v5, p0, Ln33;->a:I
-
-    iput p1, p0, Ln33;->b:I
-
-    add-int/lit8 v3, v3, -0x1
-
-    iput v3, p0, Ln33;->d:I
-
-    return-void
+    return v1
 
     :cond_0
-    new-instance p0, Ljava/lang/RuntimeException;
+    :try_start_0
+    iget-object p0, p0, Ln33;->a:Lu7h;
 
-    const-string p1, "Max array capacity exceeded"
+    check-cast p1, Ln33;
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    iget-object p1, p1, Ln33;->a:Lu7h;
 
-    throw p0
+    check-cast p0, Ll7h;
+
+    invoke-virtual {p0}, Lk1h;->Y()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Ll4h;->c(Landroid/os/Parcel;Landroid/os/IInterface;)V
+
+    const/16 p1, 0x11
+
+    invoke-virtual {p0, v0, p1}, Lk1h;->B(Landroid/os/Parcel;I)Landroid/os/Parcel;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    const/4 v1, 0x1
 
     :cond_1
-    return-void
+    invoke-virtual {p0}, Landroid/os/Parcel;->recycle()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v1
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Lcom/google/android/gms/maps/model/RuntimeRemoteException;
+
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p1
 .end method
 
-.method public b(II)V
-    .registers 8
+.method public final hashCode()I
+    .registers 3
 
-    if-ltz p1, :cond_3
+    :try_start_0
+    iget-object p0, p0, Ln33;->a:Lu7h;
 
-    if-ltz p2, :cond_2
+    check-cast p0, Ll7h;
 
-    iget v0, p0, Ln33;->d:I
+    invoke-virtual {p0}, Lk1h;->Y()Landroid/os/Parcel;
 
-    mul-int/lit8 v1, v0, 0x2
+    move-result-object v0
 
-    iget-object v2, p0, Ln33;->c:[I
+    const/16 v1, 0x12
 
-    const/4 v3, 0x4
+    invoke-virtual {p0, v0, v1}, Lk1h;->B(Landroid/os/Parcel;I)Landroid/os/Parcel;
 
-    if-nez v2, :cond_0
+    move-result-object p0
 
-    new-array v0, v3, [I
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
-    iput-object v0, p0, Ln33;->c:[I
+    move-result v0
 
-    const/4 v2, -0x1
+    invoke-virtual {p0}, Landroid/os/Parcel;->recycle()V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-static {v0, v2}, Ljava/util/Arrays;->fill([II)V
+    return v0
 
-    goto :goto_0
+    :catch_0
+    move-exception p0
 
-    :cond_0
-    array-length v4, v2
+    new-instance v0, Lcom/google/android/gms/maps/model/RuntimeRemoteException;
 
-    if-lt v1, v4, :cond_1
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    mul-int/2addr v0, v3
-
-    new-array v0, v0, [I
-
-    iput-object v0, p0, Ln33;->c:[I
-
-    array-length v3, v2
-
-    const/4 v4, 0x0
-
-    invoke-static {v2, v4, v0, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Ln33;->c:[I
-
-    aput p1, v0, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    aput p2, v0, v1
-
-    iget p1, p0, Ln33;->d:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    iput p1, p0, Ln33;->d:I
-
-    return-void
-
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Pixel distance must be non-negative"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Layout positions must be non-negative"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public c(Landroidx/recyclerview/widget/RecyclerView;Z)V
-    .registers 7
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Ln33;->d:I
-
-    iget-object v0, p0, Ln33;->c:[I
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, -0x1
-
-    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([II)V
-
-    :cond_0
-    iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView;->w0:Landroidx/recyclerview/widget/a;
-
-    iget-object v1, p1, Landroidx/recyclerview/widget/RecyclerView;->v0:Ltgc;
-
-    if-eqz v1, :cond_3
-
-    if-eqz v0, :cond_3
-
-    iget-boolean v1, v0, Landroidx/recyclerview/widget/a;->i:Z
-
-    if-eqz v1, :cond_3
-
-    if-eqz p2, :cond_1
-
-    iget-object v1, p1, Landroidx/recyclerview/widget/RecyclerView;->n0:Lq8;
-
-    invoke-virtual {v1}, Lq8;->D()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    iget-object v1, p1, Landroidx/recyclerview/widget/RecyclerView;->v0:Ltgc;
-
-    invoke-virtual {v1}, Ltgc;->j()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1, p0}, Landroidx/recyclerview/widget/a;->j(ILn33;)V
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->W()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    iget v1, p0, Ln33;->a:I
-
-    iget v2, p0, Ln33;->b:I
-
-    iget-object v3, p1, Landroidx/recyclerview/widget/RecyclerView;->n1:Llhc;
-
-    invoke-virtual {v0, v1, v2, v3, p0}, Landroidx/recyclerview/widget/a;->i(IILlhc;Ln33;)V
-
-    :cond_2
-    :goto_0
-    iget p0, p0, Ln33;->d:I
-
-    iget v1, v0, Landroidx/recyclerview/widget/a;->j:I
-
-    if-le p0, v1, :cond_3
-
-    iput p0, v0, Landroidx/recyclerview/widget/a;->j:I
-
-    iput-boolean p2, v0, Landroidx/recyclerview/widget/a;->k:Z
-
-    iget-object p0, p1, Landroidx/recyclerview/widget/RecyclerView;->c:Lhhc;
-
-    invoke-virtual {p0}, Lhhc;->l()V
-
-    :cond_3
-    return-void
+    throw v0
 .end method

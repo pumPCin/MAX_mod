@@ -1,271 +1,91 @@
 .class public abstract Lf0;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lnp4;
-
-
-# static fields
-.field public static final X:Ljava/util/concurrent/FutureTask;
-
-.field public static final o:Ljava/util/concurrent/FutureTask;
+.implements Lo04;
 
 
 # instance fields
-.field public final a:Ljava/lang/Runnable;
-
-.field public final b:Z
-
-.field public c:Ljava/lang/Thread;
+.field private final key:Lp04;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lp04;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>(Lp04;)V
+    .registers 2
 
-    new-instance v0, Ljava/util/concurrent/FutureTask;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Lr7;->e:Lqrg;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
-
-    sput-object v0, Lf0;->o:Ljava/util/concurrent/FutureTask;
-
-    new-instance v0, Ljava/util/concurrent/FutureTask;
-
-    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
-
-    sput-object v0, Lf0;->X:Ljava/util/concurrent/FutureTask;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Runnable;Z)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    iput-object p1, p0, Lf0;->a:Ljava/lang/Runnable;
-
-    iput-boolean p2, p0, Lf0;->b:Z
+    iput-object p1, p0, Lf0;->key:Lp04;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/concurrent/Future;)V
-    .registers 4
+.method public fold(Ljava/lang/Object;Lpc6;)Ljava/lang/Object;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<R:",
+            "Ljava/lang/Object;",
+            ">(TR;",
+            "Lpc6;",
+            ")TR;"
+        }
+    .end annotation
 
-    :cond_0
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-interface {p2, p1, p0}, Lpc6;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
 
-    check-cast v0, Ljava/util/concurrent/Future;
-
-    sget-object v1, Lf0;->o:Ljava/util/concurrent/FutureTask;
-
-    if-ne v0, v1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    sget-object v1, Lf0;->X:Ljava/util/concurrent/FutureTask;
-
-    if-ne v0, v1, :cond_3
-
-    iget-object v0, p0, Lf0;->c:Ljava/lang/Thread;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v1
-
-    if-ne v0, v1, :cond_2
-
-    const/4 p0, 0x0
-
-    invoke-interface {p1, p0}, Ljava/util/concurrent/Future;->cancel(Z)Z
-
-    goto :goto_0
-
-    :cond_2
-    iget-boolean p0, p0, Lf0;->b:Z
-
-    invoke-interface {p1, p0}, Ljava/util/concurrent/Future;->cancel(Z)Z
-
-    :goto_0
-    return-void
-
-    :cond_3
-    invoke-virtual {p0, v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :goto_1
-    return-void
+    return-object p0
 .end method
 
-.method public final g()V
-    .registers 4
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Future;
-
-    sget-object v1, Lf0;->o:Ljava/util/concurrent/FutureTask;
-
-    if-eq v0, v1, :cond_1
-
-    sget-object v1, Lf0;->X:Ljava/util/concurrent/FutureTask;
-
-    if-eq v0, v1, :cond_1
-
-    invoke-virtual {p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    if-eqz v0, :cond_1
-
-    iget-object v1, p0, Lf0;->c:Ljava/lang/Thread;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v2
-
-    if-ne v1, v2, :cond_0
-
-    const/4 p0, 0x0
-
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Future;->cancel(Z)Z
-
-    return-void
-
-    :cond_0
-    iget-boolean p0, p0, Lf0;->b:Z
-
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Future;->cancel(Z)Z
-
-    :cond_1
-    return-void
-.end method
-
-.method public final h()Z
+.method public get(Lp04;)Lo04;
     .registers 2
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-static {p0, p1}, Lkp;->n(Lo04;Lp04;)Lo04;
 
     move-result-object p0
 
-    check-cast p0, Ljava/util/concurrent/Future;
-
-    sget-object v0, Lf0;->o:Ljava/util/concurrent/FutureTask;
-
-    if-eq p0, v0, :cond_1
-
-    sget-object v0, Lf0;->X:Ljava/util/concurrent/FutureTask;
-
-    if-ne p0, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    return p0
+    return-object p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+.method public getKey()Lp04;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lp04;"
+        }
+    .end annotation
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    iget-object p0, p0, Lf0;->key:Lp04;
 
-    move-result-object v0
+    return-object p0
+.end method
 
-    check-cast v0, Ljava/util/concurrent/Future;
+.method public minusKey(Lp04;)Lq04;
+    .registers 2
 
-    sget-object v1, Lf0;->o:Ljava/util/concurrent/FutureTask;
-
-    if-ne v0, v1, :cond_0
-
-    const-string v0, "Finished"
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v1, Lf0;->X:Ljava/util/concurrent/FutureTask;
-
-    if-ne v0, v1, :cond_1
-
-    const-string v0, "Disposed"
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lf0;->c:Ljava/lang/Thread;
-
-    if-eqz v0, :cond_2
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Running on "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lf0;->c:Ljava/lang/Thread;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_2
-    const-string v0, "Waiting"
-
-    :goto_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p0, p1}, Lkp;->z(Lo04;Lp04;)Lq04;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    return-object p0
+.end method
 
-    move-result-object p0
+.method public plus(Lq04;)Lq04;
+    .registers 2
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, "["
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, "]"
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, p1}, Lw7;->B(Lq04;Lq04;)Lq04;
 
     move-result-object p0
 

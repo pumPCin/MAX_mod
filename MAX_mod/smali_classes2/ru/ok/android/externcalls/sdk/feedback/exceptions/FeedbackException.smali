@@ -47,7 +47,7 @@
 
     const/4 v1, 0x3
 
-    invoke-direct {p0, v0, v0, v1, v0}, Lru/ok/android/externcalls/sdk/feedback/exceptions/FeedbackException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILwc4;)V
+    invoke-direct {p0, v0, v0, v1, v0}, Lru/ok/android/externcalls/sdk/feedback/exceptions/FeedbackException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILld4;)V
 
     return-void
 .end method
@@ -59,7 +59,7 @@
 
     const/4 v1, 0x2
 
-    invoke-direct {p0, p1, v0, v1, v0}, Lru/ok/android/externcalls/sdk/feedback/exceptions/FeedbackException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILwc4;)V
+    invoke-direct {p0, p1, v0, v1, v0}, Lru/ok/android/externcalls/sdk/feedback/exceptions/FeedbackException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILld4;)V
 
     return-void
 .end method
@@ -76,7 +76,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;ILwc4;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;ILld4;)V
     .registers 6
 
     and-int/lit8 p4, p3, 0x1

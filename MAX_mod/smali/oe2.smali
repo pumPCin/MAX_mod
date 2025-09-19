@@ -1,450 +1,413 @@
-.class public final synthetic Loe2;
-.super Ljava/lang/Object;
+.class public final Loe2;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lve2;
+.field public final synthetic Y:Lqe2;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lve2;I)V
+.method public constructor <init>(Lqe2;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p2, p0, Loe2;->a:I
+    iput-object p1, p0, Loe2;->Y:Lqe2;
 
-    iput-object p1, p0, Loe2;->b:Lve2;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Lera;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Loe2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Loe2;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Loe2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
 
-    iget v0, p0, Loe2;->a:I
+    new-instance v0, Loe2;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Loe2;->Y:Lqe2;
 
-    sget v0, Ljsc;->y:I
+    invoke-direct {v0, p0, p2}, Loe2;-><init>(Lqe2;Lkotlin/coroutines/Continuation;)V
 
-    iget-object p0, p0, Loe2;->b:Lve2;
+    iput-object p1, v0, Loe2;->X:Ljava/lang/Object;
 
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
+    return-object v0
+.end method
 
-    invoke-static {p0, v0}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Loe2;->X:Ljava/lang/Object;
+
+    check-cast p1, Lera;
+
+    iget-object p0, p0, Loe2;->Y:Lqe2;
+
+    iget-object v0, p0, Lqe2;->j:Lzte;
+
+    invoke-virtual {v0}, Lzte;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
-    invoke-static {v1, p0}, Lbkc;->i(Lws9;Landroid/content/Context;)Lpv6;
+    move-result-object v1
 
-    move-result-object p0
+    iget v1, v1, Lqy6;->j:I
 
-    iget p0, p0, Lpv6;->j:I
+    invoke-static {v0, v1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-static {v0, p0}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
-
-    return-object v0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iget-object v0, p0, Lqe2;->k:Lzte;
 
-    const-string v0, "Required value was null."
+    invoke-virtual {v0}, Lzte;->a()Z
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p0
+    if-eqz v1, :cond_1
 
-    :pswitch_0
-    sget v0, Ljsc;->p:I
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-static {p0, v0}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
-    invoke-static {v1, p0}, Lbkc;->i(Lws9;Landroid/content/Context;)Lpv6;
+    move-result-object v1
 
-    move-result-object p0
+    iget v1, v1, Lqy6;->j:I
 
-    iget p0, p0, Lpv6;->j:I
+    invoke-static {v0, v1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-static {v0, p0}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
-
-    return-object v0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_1
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iget-object v0, p0, Lqe2;->l:Lzte;
 
-    const-string v0, "Required value was null."
+    invoke-virtual {v0}, Lzte;->a()Z
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p0
+    if-eqz v1, :cond_2
 
-    :pswitch_1
-    new-instance v0, Lpo5;
-
-    new-instance v1, Lbm5;
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-direct {v1, p0}, Lbm5;-><init>(Landroid/content/Context;)V
-
-    sget-object p0, Ljo5;->a:Ljo5;
-
-    const/4 v2, 0x4
-
-    invoke-direct {v0, v1, p0, v2}, Lpo5;-><init>(Landroid/graphics/drawable/Drawable;Ljo5;I)V
-
-    return-object v0
-
-    :pswitch_2
-    new-instance v0, Lpo5;
-
-    new-instance v1, Ld8e;
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-direct {v1, p0}, Ld8e;-><init>(Landroid/content/Context;)V
-
-    sget-object p0, Ljo5;->a:Ljo5;
-
-    const/4 v2, 0x4
-
-    invoke-direct {v0, v1, p0, v2}, Lpo5;-><init>(Landroid/graphics/drawable/Drawable;Ljo5;I)V
-
-    return-object v0
-
-    :pswitch_3
-    new-instance v0, Lpo5;
-
-    new-instance v1, Lyte;
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-direct {v1, p0}, Lyte;-><init>(Landroid/content/Context;)V
-
-    sget-object p0, Ljo5;->a:Ljo5;
-
-    const/4 v2, 0x4
-
-    invoke-direct {v0, v1, p0, v2}, Lpo5;-><init>(Landroid/graphics/drawable/Drawable;Ljo5;I)V
-
-    return-object v0
-
-    :pswitch_4
-    sget v0, Ljsc;->W1:I
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-static {p0, v0}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
-    invoke-static {v1, p0}, Lbkc;->i(Lws9;Landroid/content/Context;)Lpv6;
+    move-result-object v1
 
-    move-result-object p0
+    iget v1, v1, Lqy6;->j:I
 
-    iget p0, p0, Lpv6;->j:I
+    invoke-static {v0, v1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-static {v0, p0}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
-
-    return-object v0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_2
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iget-object v0, p0, Lqe2;->m:Lzte;
 
-    const-string v0, "Required value was null."
+    invoke-virtual {v0}, Lzte;->a()Z
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p0
+    if-eqz v1, :cond_3
 
-    :pswitch_5
-    sget v0, Ljsc;->H1:I
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-static {p0, v0}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_3
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
-    invoke-static {v1, p0}, Lbkc;->i(Lws9;Landroid/content/Context;)Lpv6;
+    move-result-object v1
 
-    move-result-object p0
+    iget v1, v1, Lqy6;->j:I
 
-    iget p0, p0, Lpv6;->b:I
+    invoke-static {v0, v1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-static {v0, p0}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
-
-    return-object v0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_3
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iget-object v0, p0, Lqe2;->n:Lzte;
 
-    const-string v0, "Required value was null."
+    invoke-virtual {v0}, Lzte;->a()Z
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p0
+    if-eqz v1, :cond_4
 
-    :pswitch_6
-    sget v0, Ljsc;->i2:I
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-static {p0, v0}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_4
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
-    invoke-static {v1, p0}, Lbkc;->i(Lws9;Landroid/content/Context;)Lpv6;
+    move-result-object v1
 
-    move-result-object p0
+    iget v1, v1, Lqy6;->j:I
 
-    iget p0, p0, Lpv6;->c:I
+    invoke-static {v0, v1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-static {v0, p0}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
-
-    return-object v0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_4
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iget-object v0, p0, Lqe2;->o:Lzte;
 
-    const-string v0, "Required value was null."
+    invoke-virtual {v0}, Lzte;->a()Z
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p0
+    if-eqz v1, :cond_5
 
-    :pswitch_7
-    sget v0, Ljsc;->y1:I
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-static {p0, v0}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
-    invoke-static {v1, p0}, Lbkc;->i(Lws9;Landroid/content/Context;)Lpv6;
+    move-result-object v1
 
-    move-result-object p0
+    iget v1, v1, Lqy6;->j:I
 
-    iget p0, p0, Lpv6;->c:I
+    invoke-static {v0, v1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-static {v0, p0}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
-
-    return-object v0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_5
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iget-object v0, p0, Lqe2;->p:Lzte;
 
-    const-string v0, "Required value was null."
+    invoke-virtual {v0}, Lzte;->a()Z
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p0
+    if-eqz v1, :cond_6
 
-    :pswitch_8
-    sget v0, Ljsc;->k2:I
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-static {p0, v0}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_6
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
-    invoke-static {v1, p0}, Lbkc;->i(Lws9;Landroid/content/Context;)Lpv6;
+    move-result-object v1
 
-    move-result-object p0
+    iget v1, v1, Lqy6;->j:I
 
-    iget p0, p0, Lpv6;->j:I
+    invoke-static {v0, v1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-static {v0, p0}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
-
-    return-object v0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_6
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iget-object v0, p0, Lqe2;->s:Lzte;
 
-    const-string v0, "Required value was null."
+    invoke-virtual {v0}, Lzte;->a()Z
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p0
+    if-eqz v1, :cond_7
 
-    :pswitch_9
-    sget v0, Ljsc;->z1:I
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-static {p0, v0}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_7
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
-    invoke-static {v1, p0}, Lbkc;->i(Lws9;Landroid/content/Context;)Lpv6;
+    move-result-object v1
 
-    move-result-object p0
+    iget v1, v1, Lqy6;->c:I
 
-    iget p0, p0, Lpv6;->j:I
+    invoke-static {v0, v1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-static {v0, p0}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
-
-    return-object v0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_7
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iget-object v0, p0, Lqe2;->t:Lzte;
 
-    const-string v0, "Required value was null."
+    invoke-virtual {v0}, Lzte;->a()Z
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p0
+    if-eqz v1, :cond_8
 
-    :pswitch_a
-    sget v0, Ljsc;->P:I
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-static {p0, v0}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
-    invoke-static {v1, p0}, Lbkc;->i(Lws9;Landroid/content/Context;)Lpv6;
+    move-result-object v1
 
-    move-result-object p0
+    iget v1, v1, Lqy6;->c:I
 
-    iget p0, p0, Lpv6;->j:I
+    invoke-static {v0, v1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-static {v0, p0}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
-
-    return-object v0
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
     :cond_8
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iget-object v0, p0, Lqe2;->u:Lzte;
 
-    const-string v0, "Required value was null."
+    invoke-virtual {v0}, Lzte;->a()Z
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p0
+    if-eqz v1, :cond_9
 
-    :pswitch_b
-    sget v0, Ljsc;->o1:I
-
-    iget-object p0, p0, Loe2;->b:Lve2;
-
-    iget-object p0, p0, Lve2;->a:Landroid/content/Context;
-
-    invoke-static {p0, v0}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
-    invoke-static {v1, p0}, Lbkc;->i(Lws9;Landroid/content/Context;)Lpv6;
+    move-result-object v1
+
+    iget v1, v1, Lqy6;->b:I
+
+    invoke-static {v0, v1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+
+    :cond_9
+    iget-object v0, p0, Lqe2;->v:Lzte;
+
+    invoke-virtual {v0}, Lzte;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_a
+
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrq5;
+
+    invoke-virtual {v0, p1}, Lrq5;->onThemeChanged(Lera;)V
+
+    :cond_a
+    iget-object v0, p0, Lqe2;->w:Lzte;
+
+    invoke-virtual {v0}, Lzte;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_b
+
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrq5;
+
+    invoke-virtual {v0, p1}, Lrq5;->onThemeChanged(Lera;)V
+
+    :cond_b
+    iget-object v0, p0, Lqe2;->x:Lzte;
+
+    invoke-virtual {v0}, Lzte;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_c
+
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrq5;
+
+    invoke-virtual {v0, p1}, Lrq5;->onThemeChanged(Lera;)V
+
+    :cond_c
+    iget-object v0, p0, Lqe2;->y:Lzte;
+
+    invoke-virtual {v0}, Lzte;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_d
+
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrq5;
+
+    invoke-virtual {v0, p1}, Lrq5;->onThemeChanged(Lera;)V
+
+    :cond_d
+    iget-object p0, p0, Lqe2;->z:Lzte;
+
+    invoke-virtual {p0}, Lzte;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    iget p0, p0, Lpv6;->j:I
+    check-cast p0, Lrq5;
 
-    invoke-static {v0, p0}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
+    invoke-virtual {p0, p1}, Lrq5;->onThemeChanged(Lera;)V
 
-    return-object v0
+    :cond_e
+    sget-object p0, Lylf;->a:Lylf;
 
-    :cond_9
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "Required value was null."
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

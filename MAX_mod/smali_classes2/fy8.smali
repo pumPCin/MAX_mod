@@ -1,64 +1,51 @@
 .class public final Lfy8;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
-# interfaces
-.implements Lgy8;
 
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
 
-# static fields
-.field public static final a:Lfy8;
+.field public final synthetic Y:Lgy8;
+
+.field public Z:I
+
+.field public o:Lgy8;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lgy8;Ljx3;)V
+    .registers 3
 
-    new-instance v0, Lfy8;
+    iput-object p1, p0, Lfy8;->Y:Lgy8;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lfy8;->a:Lfy8;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lfy8;->X:Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    iget p1, p0, Lfy8;->Z:I
 
-    return v0
+    const/high16 v0, -0x80000000
 
-    :cond_0
-    instance-of p0, p1, Lfy8;
+    or-int/2addr p1, v0
 
-    if-nez p0, :cond_1
+    iput p1, p0, Lfy8;->Z:I
 
-    const/4 p0, 0x0
+    iget-object p1, p0, Lfy8;->Y:Lgy8;
 
-    return p0
+    const/4 v0, 0x0
 
-    :cond_1
-    return v0
-.end method
+    invoke-virtual {p1, v0, p0}, Lgy8;->e(Ljava/util/Set;Ljx3;)Ljava/io/Serializable;
 
-.method public final hashCode()I
-    .registers 1
-
-    const p0, -0x15cdca80
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "DoneWithDisable"
+    move-result-object p0
 
     return-object p0
 .end method

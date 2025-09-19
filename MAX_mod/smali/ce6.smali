@@ -1,190 +1,281 @@
-.class public final Lce6;
+.class public abstract Lce6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Ljava/util/regex/Pattern;
-
-
 # instance fields
-.field public a:I
+.field public final a:I
 
 .field public b:I
 
+.field public c:I
+
+.field public d:I
+
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .registers 10
 
-    const-string v0, "^ [0-9a-fA-F]{8} ([0-9a-fA-F]{8}) ([0-9a-fA-F]{8})"
+    const-string v0, "glAttachShader"
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    move-result-object v0
-
-    sput-object v0, Lce6;->c:Ljava/util/regex/Pattern;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .registers 2
+    const-string v1, "Could not link program: "
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, -0x1
+    const/4 v2, -0x1
 
-    iput v0, p0, Lce6;->a:I
+    iput v2, p0, Lce6;->b:I
 
-    iput v0, p0, Lce6;->b:I
+    iput v2, p0, Lce6;->c:I
+
+    iput v2, p0, Lce6;->d:I
+
+    const v3, 0x8b31
+
+    :try_start_0
+    invoke-static {v3, p1}, Lee6;->j(ILjava/lang/String;)I
+
+    move-result p1
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_3
+
+    const v3, 0x8b30
+
+    :try_start_1
+    invoke-static {v3, p2}, Lee6;->j(ILjava/lang/String;)I
+
+    move-result p2
+    :try_end_1
+    .catch Ljava/lang/IllegalStateException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_2
+
+    :try_start_2
+    invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
+
+    move-result v3
+    :try_end_2
+    .catch Ljava/lang/IllegalStateException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_2 .. :try_end_2} :catch_1
+
+    :try_start_3
+    const-string v4, "glCreateProgram"
+
+    invoke-static {v4}, Lee6;->b(Ljava/lang/String;)V
+
+    invoke-static {v3, p1}, Landroid/opengl/GLES20;->glAttachShader(II)V
+
+    invoke-static {v0}, Lee6;->b(Ljava/lang/String;)V
+
+    invoke-static {v3, p2}, Landroid/opengl/GLES20;->glAttachShader(II)V
+
+    invoke-static {v0}, Lee6;->b(Ljava/lang/String;)V
+
+    invoke-static {v3}, Landroid/opengl/GLES20;->glLinkProgram(I)V
+
+    const/4 v0, 0x1
+
+    new-array v4, v0, [I
+
+    const v5, 0x8b82
+
+    const/4 v6, 0x0
+
+    invoke-static {v3, v5, v4, v6}, Landroid/opengl/GLES20;->glGetProgramiv(II[II)V
+
+    aget v4, v4, v6
+
+    if-ne v4, v0, :cond_0
+
+    iput v3, p0, Lce6;->a:I
+    :try_end_3
+    .catch Ljava/lang/IllegalStateException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_0
+
+    invoke-virtual {p0}, Lce6;->a()V
 
     return-void
+
+    :catch_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    :try_start_4
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v3}, Landroid/opengl/GLES20;->glGetProgramInfoLog(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+    :try_end_4
+    .catch Ljava/lang/IllegalStateException; {:try_start_4 .. :try_end_4} :catch_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_0
+
+    :catch_1
+    move-exception p0
+
+    move v3, v2
+
+    goto :goto_1
+
+    :catch_2
+    move-exception p0
+
+    move p2, v2
+
+    :goto_0
+    move v3, p2
+
+    goto :goto_1
+
+    :catch_3
+    move-exception p0
+
+    move p1, v2
+
+    move p2, p1
+
+    goto :goto_0
+
+    :goto_1
+    if-eq p1, v2, :cond_1
+
+    invoke-static {p1}, Landroid/opengl/GLES20;->glDeleteShader(I)V
+
+    :cond_1
+    if-eq p2, v2, :cond_2
+
+    invoke-static {p2}, Landroid/opengl/GLES20;->glDeleteShader(I)V
+
+    :cond_2
+    if-eq v3, v2, :cond_3
+
+    invoke-static {v3}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
+
+    :cond_3
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Z
-    .registers 6
+.method public final a()V
+    .registers 4
 
-    sget-object v0, Lce6;->c:Ljava/util/regex/Pattern;
+    iget v0, p0, Lce6;->a:I
 
-    invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    const-string v1, "aPosition"
 
-    move-result-object p1
+    invoke-static {v0, v1}, Landroid/opengl/GLES20;->glGetAttribLocation(ILjava/lang/String;)I
 
-    invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
+    move-result v2
+
+    iput v2, p0, Lce6;->d:I
+
+    invoke-static {v2, v1}, Lee6;->e(ILjava/lang/String;)V
+
+    const-string v1, "uTransMatrix"
+
+    invoke-static {v0, v1}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
+
+    move-result v2
+
+    iput v2, p0, Lce6;->b:I
+
+    invoke-static {v2, v1}, Lee6;->e(ILjava/lang/String;)V
+
+    const-string v1, "uAlphaScale"
+
+    invoke-static {v0, v1}, Landroid/opengl/GLES20;->glGetUniformLocation(ILjava/lang/String;)I
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    iput v0, p0, Lce6;->c:I
 
-    const/4 v0, 0x1
+    invoke-static {v0, v1}, Lee6;->e(ILjava/lang/String;)V
 
-    :try_start_0
-    invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    sget v2, Laif;->a:I
-
-    const/16 v2, 0x10
-
-    invoke-static {v1, v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    const/4 v3, 0x2
-
-    invoke-virtual {p1, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1, v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
-
-    move-result p1
-
-    if-gtz v1, :cond_0
-
-    if-lez p1, :cond_1
-
-    :cond_0
-    iput v1, p0, Lce6;->a:I
-
-    iput p1, p0, Lce6;->b:I
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return v0
-
-    :catch_0
-    :cond_1
-    const/4 p0, 0x0
-
-    return p0
+    return-void
 .end method
 
-.method public final b(Lvb9;)V
-    .registers 7
+.method public b()V
+    .registers 8
 
-    const/4 v0, 0x0
+    iget v0, p0, Lce6;->a:I
 
-    :goto_0
-    iget-object v1, p1, Lvb9;->a:[Ltb9;
+    invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
 
-    array-length v2, v1
+    const-string v0, "glUseProgram"
 
-    if-ge v0, v2, :cond_2
+    invoke-static {v0}, Lee6;->b(Ljava/lang/String;)V
 
-    aget-object v1, v1, v0
+    iget v0, p0, Lce6;->d:I
 
-    instance-of v2, v1, Lr83;
+    invoke-static {v0}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
 
-    const-string v3, "iTunSMPB"
+    const-string v0, "glEnableVertexAttribArray"
 
-    if-eqz v2, :cond_0
+    invoke-static {v0}, Lee6;->b(Ljava/lang/String;)V
 
-    check-cast v1, Lr83;
+    iget v1, p0, Lce6;->d:I
 
-    iget-object v2, v1, Lr83;->c:Ljava/lang/String;
+    const/4 v4, 0x0
 
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    sget-object v6, Lee6;->h:Ljava/nio/FloatBuffer;
 
-    move-result v2
+    const/4 v2, 0x2
 
-    if-eqz v2, :cond_1
+    const/16 v3, 0x1406
 
-    iget-object v1, v1, Lr83;->o:Ljava/lang/String;
+    const/4 v5, 0x0
 
-    invoke-virtual {p0, v1}, Lce6;->a(Ljava/lang/String;)Z
+    invoke-static/range {v1 .. v6}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
 
-    move-result v1
+    const-string v0, "glVertexAttribPointer"
 
-    if-eqz v1, :cond_1
+    invoke-static {v0}, Lee6;->b(Ljava/lang/String;)V
 
-    goto :goto_1
+    const/16 v0, 0x10
 
-    :cond_0
-    instance-of v2, v1, Ld77;
+    new-array v0, v0, [F
 
-    if-eqz v2, :cond_1
+    const/4 v1, 0x0
 
-    check-cast v1, Ld77;
+    invoke-static {v0, v1}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
-    const-string v2, "com.apple.iTunes"
+    iget v2, p0, Lce6;->b:I
 
-    iget-object v4, v1, Ld77;->b:Ljava/lang/String;
+    const/4 v3, 0x1
 
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v2, v3, v1, v0, v1}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
 
-    move-result v2
+    const-string v0, "glUniformMatrix4fv"
 
-    if-eqz v2, :cond_1
+    invoke-static {v0}, Lee6;->b(Ljava/lang/String;)V
 
-    iget-object v2, v1, Ld77;->c:Ljava/lang/String;
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iget p0, p0, Lce6;->c:I
 
-    move-result v2
+    invoke-static {p0, v0}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    if-eqz v2, :cond_1
+    const-string p0, "glUniform1f"
 
-    iget-object v1, v1, Ld77;->o:Ljava/lang/String;
+    invoke-static {p0}, Lee6;->b(Ljava/lang/String;)V
 
-    invoke-virtual {p0, v1}, Lce6;->a(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    :goto_1
     return-void
 .end method

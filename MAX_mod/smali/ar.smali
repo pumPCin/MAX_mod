@@ -1,91 +1,126 @@
-.class public final synthetic Lar;
-.super Ljava/lang/Object;
+.class public final Lar;
+.super Ls6e;
 .source "SourceFile"
 
 # interfaces
-.implements Lja6;
+.implements Lync;
 
 
 # instance fields
-.field public final synthetic a:Lnr;
+.field public final a:I
+
+.field public b:Lgp4;
 
 
 # direct methods
-.method public constructor <init>(Lnr;)V
-    .registers 2
+.method public constructor <init>(Landroid/content/Context;I)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lar;->a:Lnr;
+    iput p2, p0, Lar;->a:I
+
+    new-instance v0, Lgp4;
+
+    new-instance v1, Ljava/io/File;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+
+    move-result-object p1
+
+    iget-object p1, p1, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;
+
+    invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v0, v1, p2}, Lgp4;-><init>(Ljava/io/File;I)V
+
+    iput-object v0, p0, Lar;->b:Lgp4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final a(Landroid/content/Context;)Ls6e;
+    .registers 4
 
-    instance-of v0, p1, Lar;
+    new-instance v0, Lgp4;
 
-    if-eqz v0, :cond_0
+    new-instance v1, Ljava/io/File;
 
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lar;->getFunctionDelegate()Lca6;
-
-    move-result-object p0
-
-    check-cast p1, Lja6;
-
-    invoke-interface {p1}, Lja6;->getFunctionDelegate()Lca6;
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget-object p1, p1, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;
+
+    invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    iget p1, p0, Lar;->a:I
+
+    or-int/lit8 p1, p1, 0x1
+
+    invoke-direct {v0, v1, p1}, Lgp4;-><init>(Ljava/io/File;I)V
+
+    iput-object v0, p0, Lar;->b:Lgp4;
+
+    return-object p0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .registers 1
+
+    const/4 p0, 0x0
+
+    throw p0
+.end method
+
+.method public final c(Ljava/lang/String;ILandroid/os/StrictMode$ThreadPolicy;)I
+    .registers 4
+
+    iget-object p0, p0, Lar;->b:Lgp4;
+
+    invoke-virtual {p0, p1, p2, p3}, Lgp4;->c(Ljava/lang/String;ILandroid/os/StrictMode$ThreadPolicy;)I
 
     move-result p0
 
     return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
 .end method
 
-.method public final getFunctionDelegate()Lca6;
-    .registers 8
+.method public final d(I)V
+    .registers 2
 
-    new-instance v0, Lma6;
+    iget-object p0, p0, Lar;->b:Lgp4;
 
-    const-string v6, "modeSelected(Lone/me/appearancesettings/singletheme/model/AppearanceMode;)V"
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v2, 0x0
-
-    const/4 v1, 0x1
-
-    const-class v3, Lnr;
-
-    iget-object v4, p0, Lar;->a:Lnr;
-
-    const-string v5, "modeSelected"
-
-    invoke-direct/range {v0 .. v6}, Lla6;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    invoke-virtual {p0}, Lar;->getFunctionDelegate()Lca6;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ApplicationSoSource["
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lar;->b:Lgp4;
+
+    invoke-virtual {p0}, Lgp4;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result p0
+    const-string p0, "]"
 
-    return p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

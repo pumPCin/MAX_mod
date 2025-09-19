@@ -1,208 +1,288 @@
-.class public final synthetic Llx;
+.class public abstract Llx;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/media/MediaCodec$OnFrameRenderedListener;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lzb8;
+.field public b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lza8;Lzb8;I)V
-    .registers 4
+.method public synthetic constructor <init>(I)V
+    .registers 2
 
-    iput p3, p0, Llx;->a:I
-
-    iput-object p2, p0, Llx;->b:Lzb8;
+    iput p1, p0, Llx;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method public synthetic constructor <init>(II)V
+    .registers 3
 
-# virtual methods
-.method public final onFrameRendered(Landroid/media/MediaCodec;JJ)V
+    iput p2, p0, Llx;->a:I
+
+    iput p1, p0, Llx;->b:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static d(I)Ljava/lang/String;
     .registers 6
 
-    iget p1, p0, Llx;->a:I
+    shr-int/lit8 v0, p0, 0x18
 
-    packed-switch p1, :pswitch_data_0
+    and-int/lit16 v0, v0, 0xff
 
-    iget-object p0, p0, Llx;->b:Lzb8;
+    int-to-char v0, v0
 
-    iget-object p1, p0, Lzb8;->b:Landroid/os/Handler;
+    shr-int/lit8 v1, p0, 0x10
 
-    sget p4, Lyhf;->a:I
+    and-int/lit16 v1, v1, 0xff
 
-    const/16 p5, 0x1e
+    int-to-char v1, v1
 
-    if-ge p4, p5, :cond_0
+    shr-int/lit8 v2, p0, 0x8
 
-    const/16 p0, 0x20
+    and-int/lit16 v2, v2, 0xff
 
-    shr-long p4, p2, p0
+    int-to-char v2, v2
 
-    long-to-int p0, p4
+    and-int/lit16 p0, p0, 0xff
 
-    long-to-int p2, p2
+    int-to-char p0, p0
 
-    const/4 p3, 0x0
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-static {p1, p3, p0, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
+    const/4 v4, 0x4
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {p1, p0}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
+    return-object p0
+.end method
 
-    goto :goto_0
+.method public static e(I)Ljava/lang/String;
+    .registers 3
 
-    :cond_0
-    iget-object p1, p0, Lzb8;->c:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    check-cast p1, Lac8;
+    const-string v1, ""
 
-    iget-object p4, p1, Lac8;->r2:Lzb8;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-eq p0, p4, :cond_1
+    shr-int/lit8 v1, p0, 0x18
 
-    goto :goto_0
+    and-int/lit16 v1, v1, 0xff
 
-    :cond_1
-    const-wide p4, 0x7fffffffffffffffL
+    int-to-char v1, v1
 
-    cmp-long p0, p2, p4
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    const/4 p4, 0x1
+    shr-int/lit8 v1, p0, 0x10
 
-    if-nez p0, :cond_2
+    and-int/lit16 v1, v1, 0xff
 
-    iput-boolean p4, p1, Lnb8;->D1:Z
+    int-to-char v1, v1
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    :cond_2
-    :try_start_0
-    invoke-virtual {p1, p2, p3}, Lnb8;->m0(J)V
+    shr-int/lit8 v1, p0, 0x8
 
-    invoke-virtual {p1}, Lac8;->u0()V
+    and-int/lit16 v1, v1, 0xff
 
-    iget-object p0, p1, Lnb8;->F1:Ll94;
+    int-to-char v1, v1
 
-    iget p5, p0, Ll94;->f:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    add-int/2addr p5, p4
+    and-int/lit16 p0, p0, 0xff
 
-    iput p5, p0, Ll94;->f:I
+    int-to-char p0, p0
 
-    invoke-virtual {p1}, Lac8;->t0()V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p2, p3}, Lac8;->W(J)V
-    :try_end_0
-    .catch Lcom/google/android/exoplayer2/ExoPlaybackException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object p0
 
-    :catch_0
-    move-exception p0
+    return-object p0
+.end method
 
-    iput-object p0, p1, Lnb8;->E1:Lcom/google/android/exoplayer2/ExoPlaybackException;
+.method public static t(I)I
+    .registers 1
 
-    :goto_0
+    shr-int/lit8 p0, p0, 0x18
+
+    and-int/lit16 p0, p0, 0xff
+
+    return p0
+.end method
+
+
+# virtual methods
+.method public a(I)V
+    .registers 3
+
+    iget v0, p0, Llx;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget v0, p0, Llx;->b:I
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Llx;->b:I
+
     return-void
 
     :pswitch_0
-    iget-object p0, p0, Llx;->b:Lzb8;
+    iget v0, p0, Llx;->b:I
 
-    iget-object p1, p0, Lzb8;->b:Landroid/os/Handler;
+    or-int/2addr p1, v0
 
-    sget p4, Lyhf;->a:I
+    iput p1, p0, Llx;->b:I
 
-    const/16 p5, 0x1e
-
-    if-ge p4, p5, :cond_3
-
-    const/16 p0, 0x20
-
-    shr-long p4, p2, p0
-
-    long-to-int p0, p4
-
-    long-to-int p2, p2
-
-    const/4 p3, 0x0
-
-    invoke-static {p1, p3, p0, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
-
-    goto :goto_1
-
-    :cond_3
-    iget-object p1, p0, Lzb8;->c:Ljava/lang/Object;
-
-    check-cast p1, Lac8;
-
-    iget-object p4, p1, Lac8;->r2:Lzb8;
-
-    if-eq p0, p4, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    const-wide p4, 0x7fffffffffffffffL
-
-    cmp-long p0, p2, p4
-
-    const/4 p4, 0x1
-
-    if-nez p0, :cond_5
-
-    iput-boolean p4, p1, Lnb8;->D1:Z
-
-    goto :goto_1
-
-    :cond_5
-    :try_start_1
-    invoke-virtual {p1, p2, p3}, Lnb8;->m0(J)V
-
-    invoke-virtual {p1}, Lac8;->u0()V
-
-    iget-object p0, p1, Lnb8;->F1:Ll94;
-
-    iget p5, p0, Ll94;->f:I
-
-    add-int/2addr p5, p4
-
-    iput p5, p0, Ll94;->f:I
-
-    invoke-virtual {p1}, Lac8;->t0()V
-
-    invoke-virtual {p1, p2, p3}, Lac8;->W(J)V
-    :try_end_1
-    .catch Lcom/google/android/exoplayer2/ExoPlaybackException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_1
-
-    :catch_1
-    move-exception p0
-
-    iput-object p0, p1, Lnb8;->E1:Lcom/google/android/exoplayer2/ExoPlaybackException;
-
-    :goto_1
     return-void
 
     nop
 
     :pswitch_data_0
-    .packed-switch 0x0
+    .packed-switch 0x1
         :pswitch_0
     .end packed-switch
+.end method
+
+.method public abstract b(Lda6;)V
+.end method
+
+.method public abstract c(Lda6;)V
+.end method
+
+.method public h(I)Z
+    .registers 3
+
+    iget v0, p0, Llx;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget p0, p0, Llx;->b:I
+
+    and-int/2addr p0, p1
+
+    if-ne p0, p1, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+
+    :pswitch_0
+    iget p0, p0, Llx;->b:I
+
+    and-int/2addr p0, p1
+
+    if-ne p0, p1, :cond_1
+
+    const/4 p0, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 p0, 0x0
+
+    :goto_1
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public abstract i()I
+.end method
+
+.method public abstract j()I
+.end method
+
+.method public abstract k()I
+.end method
+
+.method public abstract l()I
+.end method
+
+.method public abstract n()I
+.end method
+
+.method public abstract o()V
+.end method
+
+.method public abstract p(Lda6;)V
+.end method
+
+.method public abstract q(Lda6;)V
+.end method
+
+.method public abstract s(Lda6;)Lm39;
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 2
+
+    iget v0, p0, Llx;->a:I
+
+    sparse-switch v0, :sswitch_data_0
+
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :sswitch_0
+    iget p0, p0, Llx;->b:I
+
+    invoke-static {p0}, Llx;->e(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :sswitch_1
+    iget p0, p0, Llx;->b:I
+
+    invoke-static {p0}, Llx;->d(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_1
+        0x4 -> :sswitch_0
+    .end sparse-switch
 .end method

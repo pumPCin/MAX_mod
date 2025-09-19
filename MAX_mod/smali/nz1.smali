@@ -1,312 +1,171 @@
-.class public final Lnz1;
-.super Lnk0;
+.class public final enum Lnz1;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
+# static fields
+.field public static final enum X:Lnz1;
+
+.field public static final enum Y:Lnz1;
+
+.field public static final enum Z:Lnz1;
+
+.field public static final enum b:Lnz1;
+
+.field public static final enum c:Lnz1;
+
+.field public static final enum o:Lnz1;
+
+.field public static final enum r0:Lnz1;
+
+.field public static final enum s0:Lnz1;
+
+.field public static final synthetic t0:[Lnz1;
+
+
 # instance fields
-.field public final s0:Lm94;
-
-.field public final t0:Llif;
-
-.field public u0:J
-
-.field public v0:Lmz1;
-
-.field public w0:J
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 11
 
-    const/4 v0, 0x6
+    new-instance v0, Lnz1;
 
-    invoke-direct {p0, v0}, Lnk0;-><init>(I)V
-
-    new-instance v0, Lm94;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lm94;-><init>(I)V
-
-    iput-object v0, p0, Lnz1;->s0:Lm94;
-
-    new-instance v0, Llif;
-
-    const/4 v1, 0x3
+    const-string v1, "RELEASED"
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Llif;-><init>(IZ)V
+    invoke-direct {v0, v1, v2, v2}, Lnz1;-><init>(Ljava/lang/String;IZ)V
 
-    iput-object v0, p0, Lnz1;->t0:Llif;
+    sput-object v0, Lnz1;->b:Lnz1;
+
+    new-instance v1, Lnz1;
+
+    const-string v3, "RELEASING"
+
+    const/4 v4, 0x1
+
+    invoke-direct {v1, v3, v4, v4}, Lnz1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v1, Lnz1;->c:Lnz1;
+
+    move v3, v2
+
+    new-instance v2, Lnz1;
+
+    const-string v5, "CLOSED"
+
+    const/4 v6, 0x2
+
+    invoke-direct {v2, v5, v6, v3}, Lnz1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v2, Lnz1;->o:Lnz1;
+
+    move v5, v3
+
+    new-instance v3, Lnz1;
+
+    const-string v6, "PENDING_OPEN"
+
+    const/4 v7, 0x3
+
+    invoke-direct {v3, v6, v7, v5}, Lnz1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v3, Lnz1;->X:Lnz1;
+
+    move v5, v4
+
+    new-instance v4, Lnz1;
+
+    const-string v6, "CLOSING"
+
+    const/4 v7, 0x4
+
+    invoke-direct {v4, v6, v7, v5}, Lnz1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v4, Lnz1;->Y:Lnz1;
+
+    move v6, v5
+
+    new-instance v5, Lnz1;
+
+    const-string v7, "OPENING"
+
+    const/4 v8, 0x5
+
+    invoke-direct {v5, v7, v8, v6}, Lnz1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v5, Lnz1;->Z:Lnz1;
+
+    move v7, v6
+
+    new-instance v6, Lnz1;
+
+    const-string v8, "OPEN"
+
+    const/4 v9, 0x6
+
+    invoke-direct {v6, v8, v9, v7}, Lnz1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v6, Lnz1;->r0:Lnz1;
+
+    move v8, v7
+
+    new-instance v7, Lnz1;
+
+    const-string v9, "CONFIGURED"
+
+    const/4 v10, 0x7
+
+    invoke-direct {v7, v9, v10, v8}, Lnz1;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v7, Lnz1;->s0:Lnz1;
+
+    filled-new-array/range {v0 .. v7}, [Lnz1;
+
+    move-result-object v0
+
+    sput-object v0, Lnz1;->t0:[Lnz1;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(ILjava/lang/Object;)V
+.method public constructor <init>(Ljava/lang/String;IZ)V
     .registers 4
 
-    const/16 v0, 0x8
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    if-ne p1, v0, :cond_0
+    iput-boolean p3, p0, Lnz1;->a:Z
 
-    check-cast p2, Lmz1;
-
-    iput-object p2, p0, Lnz1;->v0:Lmz1;
-
-    :cond_0
     return-void
 .end method
 
-.method public final f()Ljava/lang/String;
-    .registers 1
+.method public static valueOf(Ljava/lang/String;)Lnz1;
+    .registers 2
 
-    const-string p0, "CameraMotionRenderer"
+    const-class v0, Lnz1;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lnz1;
 
     return-object p0
 .end method
 
-.method public final h()Z
+.method public static values()[Lnz1;
     .registers 1
 
-    invoke-virtual {p0}, Lnk0;->g()Z
+    sget-object v0, Lnz1;->t0:[Lnz1;
 
-    move-result p0
+    invoke-virtual {v0}, [Lnz1;->clone()Ljava/lang/Object;
 
-    return p0
-.end method
+    move-result-object v0
 
-.method public final i()Z
-    .registers 1
+    check-cast v0, [Lnz1;
 
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final j()V
-    .registers 1
-
-    iget-object p0, p0, Lnz1;->v0:Lmz1;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Lmz1;->c()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final l(JZ)V
-    .registers 4
-
-    const-wide/high16 p1, -0x8000000000000000L
-
-    iput-wide p1, p0, Lnz1;->w0:J
-
-    iget-object p0, p0, Lnz1;->v0:Lmz1;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Lmz1;->c()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final p([Lr26;JJ)V
-    .registers 6
-
-    iput-wide p4, p0, Lnz1;->u0:J
-
-    return-void
-.end method
-
-.method public final t(JJ)V
-    .registers 9
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p0}, Lnk0;->g()Z
-
-    move-result p3
-
-    if-nez p3, :cond_6
-
-    iget-wide p3, p0, Lnz1;->w0:J
-
-    const-wide/32 v0, 0x186a0
-
-    add-long/2addr v0, p1
-
-    cmp-long p3, p3, v0
-
-    if-gez p3, :cond_6
-
-    iget-object p3, p0, Lnz1;->s0:Lm94;
-
-    invoke-virtual {p3}, Lm94;->v()V
-
-    iget-object p4, p0, Lnk0;->b:Lgl4;
-
-    invoke-virtual {p4}, Lgl4;->w()V
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p4, p3, v0}, Lnk0;->s(Lgl4;Lm94;I)I
-
-    move-result p4
-
-    const/4 v1, -0x4
-
-    if-ne p4, v1, :cond_6
-
-    const/4 p4, 0x4
-
-    invoke-virtual {p3, p4}, Ldy;->g(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    goto :goto_3
-
-    :cond_1
-    iget-wide v1, p3, Lm94;->Y:J
-
-    iput-wide v1, p0, Lnz1;->w0:J
-
-    iget-object v1, p0, Lnz1;->v0:Lmz1;
-
-    if-eqz v1, :cond_0
-
-    const/high16 v1, -0x80000000
-
-    invoke-virtual {p3, v1}, Ldy;->g(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p3}, Lm94;->y()V
-
-    iget-object p3, p3, Lm94;->o:Ljava/nio/ByteBuffer;
-
-    sget v1, Lyhf;->a:I
-
-    invoke-virtual {p3}, Ljava/nio/Buffer;->remaining()I
-
-    move-result v1
-
-    const/16 v2, 0x10
-
-    if-eq v1, v2, :cond_3
-
-    const/4 p3, 0x0
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object v1
-
-    invoke-virtual {p3}, Ljava/nio/Buffer;->limit()I
-
-    move-result v2
-
-    iget-object v3, p0, Lnz1;->t0:Llif;
-
-    invoke-virtual {v3, v2, v1}, Llif;->C(I[B)V
-
-    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->arrayOffset()I
-
-    move-result p3
-
-    add-int/2addr p3, p4
-
-    invoke-virtual {v3, p3}, Llif;->E(I)V
-
-    const/4 p3, 0x3
-
-    new-array p4, p3, [F
-
-    :goto_1
-    if-ge v0, p3, :cond_4
-
-    invoke-virtual {v3}, Llif;->h()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    move-result v1
-
-    aput v1, p4, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    :cond_4
-    move-object p3, p4
-
-    :goto_2
-    if-nez p3, :cond_5
-
-    goto :goto_0
-
-    :cond_5
-    iget-object p4, p0, Lnz1;->v0:Lmz1;
-
-    iget-wide v0, p0, Lnz1;->w0:J
-
-    iget-wide v2, p0, Lnz1;->u0:J
-
-    sub-long/2addr v0, v2
-
-    invoke-interface {p4, v0, v1, p3}, Lmz1;->b(J[F)V
-
-    goto/16 :goto_0
-
-    :cond_6
-    :goto_3
-    return-void
-.end method
-
-.method public final x(Lr26;)I
-    .registers 2
-
-    const-string p0, "application/x-camera-motion"
-
-    iget-object p1, p1, Lr26;->r0:Ljava/lang/String;
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    const/4 p1, 0x0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x4
-
-    invoke-static {p0, p1, p1}, Lnk0;->b(III)I
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    invoke-static {p1, p1, p1}, Lnk0;->b(III)I
-
-    move-result p0
-
-    return p0
+    return-object v0
 .end method

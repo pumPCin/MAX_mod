@@ -1,34 +1,58 @@
-.class public interface abstract Lx53;
+.class public final Lx53;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Closeable;
-.implements Lgy6;
-.implements Lcom/facebook/fresco/middleware/HasExtraData;
+.implements Ly53;
+
+
+# instance fields
+.field public final a:Landroid/util/CloseGuard;
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Landroid/util/CloseGuard;
+
+    invoke-direct {v0}, Landroid/util/CloseGuard;-><init>()V
+
+    iput-object v0, p0, Lx53;->a:Landroid/util/CloseGuard;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract close()V
+.method public final a()V
+    .registers 1
+
+    iget-object p0, p0, Lx53;->a:Landroid/util/CloseGuard;
+
+    invoke-virtual {p0}, Landroid/util/CloseGuard;->warnIfOpen()V
+
+    return-void
 .end method
 
-.method public abstract getHeight()I
+.method public final c(Ljava/lang/String;)V
+    .registers 2
+
+    iget-object p0, p0, Lx53;->a:Landroid/util/CloseGuard;
+
+    invoke-virtual {p0, p1}, Landroid/util/CloseGuard;->open(Ljava/lang/String;)V
+
+    return-void
 .end method
 
-.method public abstract getImageInfo()Lgy6;
-.end method
+.method public final close()V
+    .registers 1
 
-.method public abstract getQualityInfo()Letb;
-.end method
+    iget-object p0, p0, Lx53;->a:Landroid/util/CloseGuard;
 
-.method public abstract getSizeInBytes()I
-.end method
+    invoke-virtual {p0}, Landroid/util/CloseGuard;->close()V
 
-.method public abstract getWidth()I
-.end method
-
-.method public abstract isClosed()Z
-.end method
-
-.method public abstract isStateful()Z
+    return-void
 .end method

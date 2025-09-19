@@ -1,125 +1,193 @@
 .class public final La29;
-.super Lxie;
+.super Lx2;
 .source "SourceFile"
-
-# interfaces
-.implements Lba6;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic c:I
 
-.field public synthetic Y:Lm19;
-
-.field public synthetic Z:Lp19;
-
-.field public synthetic n0:Z
-
-.field public final synthetic o0:Lm29;
+.field public final synthetic o:Lb29;
 
 
 # direct methods
-.method public constructor <init>(Lm29;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lb29;I)V
     .registers 3
 
-    iput-object p1, p0, La29;->o0:Lm29;
+    iput p2, p0, La29;->c:I
 
-    const/4 p1, 0x4
+    packed-switch p2, :pswitch_data_0
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, La29;->o:Lb29;
+
+    const/16 p1, 0x9
+
+    sget-object p2, Ly19;->a:Ly19;
+
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
 
     return-void
+
+    :pswitch_0
+    sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    iput-object p1, p0, La29;->o:Lb29;
+
+    const/16 p1, 0x9
+
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final i(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 5
 
-    check-cast p1, Lm19;
+    iget v0, p0, La29;->c:I
 
-    check-cast p2, Lp19;
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p3, Ljava/lang/Boolean;
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result v0
 
-    move-result p3
+    if-nez v0, :cond_1
 
-    check-cast p4, Lkotlin/coroutines/Continuation;
+    check-cast p2, Ljava/lang/Boolean;
 
-    new-instance v0, La29;
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object p0, p0, La29;->o0:Lm29;
+    move-result p2
 
-    invoke-direct {v0, p0, p4}, La29;-><init>(Lm29;Lkotlin/coroutines/Continuation;)V
+    check-cast p1, Ljava/lang/Boolean;
 
-    iput-object p1, v0, La29;->Y:Lm19;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p2, v0, La29;->Z:Lp19;
+    iget-object p0, p0, La29;->o:Lb29;
 
-    iput-boolean p3, v0, La29;->n0:Z
+    iget-object p1, p0, Lb29;->F0:Landroid/graphics/Paint;
 
-    sget-object p0, Lncf;->a:Lncf;
+    if-eqz p2, :cond_0
 
-    invoke-virtual {v0, p0}, La29;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object p2
 
-    return-object p0
-.end method
+    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    move-result-object p2
 
-    iget v0, p0, La29;->X:I
+    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
 
-    const/4 v1, 0x1
+    const/high16 v0, 0x40800000    # 4.0f
 
-    if-eqz v0, :cond_1
+    :goto_0
+    mul-float/2addr p2, v0
 
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object p1
+    goto :goto_1
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    move-result-object p2
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    throw p0
+    move-result-object p2
+
+    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 v0, 0x40000000    # 2.0f
+
+    goto :goto_0
+
+    :goto_1
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    return-void
 
-    iget-object p1, p0, La29;->Y:Lm19;
+    :pswitch_0
+    check-cast p2, Ly19;
 
-    iget-object v0, p0, La29;->Z:Lp19;
+    check-cast p1, Ly19;
 
-    iget-boolean v2, p0, La29;->n0:Z
+    iget-object p0, p0, La29;->o:Lb29;
 
-    const/4 v3, 0x0
+    const/4 p1, 0x0
 
-    iput-object v3, p0, La29;->Y:Lm19;
+    iput-object p1, p0, Lb29;->o:Landroid/text/Layout;
 
-    iput v1, p0, La29;->X:I
+    iput-object p1, p0, Lb29;->r0:Landroid/text/Layout;
 
-    iget-object v1, p0, La29;->o0:Lm29;
+    iput-object p1, p0, Lb29;->s0:Landroid/text/Layout;
 
-    invoke-static {v1, p1, v0, v2, p0}, Lm29;->q(Lm29;Lm19;Lp19;ZLcx3;)Ljava/lang/Object;
+    iput-object p1, p0, Lb29;->t0:Landroid/text/Layout;
 
-    move-result-object p0
+    iget-object p2, p0, Lb29;->u0:Ljava/lang/Object;
 
-    sget-object p1, Ls04;->a:Ls04;
+    invoke-interface {p2}, Lcl7;->a()Z
 
-    if-ne p0, p1, :cond_2
+    move-result v0
 
-    return-object p1
+    const/16 v1, 0x8
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p2}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Loba;
+
+    invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_2
-    return-object p0
+    iput-object p1, p0, Lb29;->y0:Landroid/text/Layout;
+
+    iget-object p2, p0, Lb29;->B0:Ljava/lang/Object;
+
+    invoke-interface {p2}, Lcl7;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    invoke-interface {p2}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lone/me/sdk/uikit/common/views/OneMeDraweeView;
+
+    invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_3
+    iput-object p1, p0, Lb29;->w0:Landroid/text/Layout;
+
+    iput-object p1, p0, Lb29;->v0:Landroid/text/Layout;
+
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

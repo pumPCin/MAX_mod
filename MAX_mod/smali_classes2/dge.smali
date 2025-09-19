@@ -2,22 +2,98 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lege;
+
 
 # instance fields
-.field public final a:Landroid/view/View;
-
-.field public final b:Lkge;
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lkge;)V
-    .registers 3
+.method public constructor <init>(I)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldge;->a:Landroid/view/View;
-
-    iput-object p2, p0, Ldge;->b:Lkge;
+    iput p1, p0, Ldge;->a:I
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
+
+    if-ne p0, p1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    instance-of v0, p1, Ldge;
+
+    if-nez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Ldge;
+
+    iget p0, p0, Ldge;->a:I
+
+    iget p1, p1, Ldge;->a:I
+
+    if-eq p0, p1, :cond_2
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget p0, p0, Ldge;->a:I
+
+    invoke-static {p0}, Lmw1;->t(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "TypeChange(newType="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget p0, p0, Ldge;->a:I
+
+    invoke-static {p0}, Lz7e;->D(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

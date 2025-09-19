@@ -1,132 +1,86 @@
 .class public final Lvob;
-.super Lxie;
+.super Luc0;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lnpb;
+.field public final b:J
 
 
 # direct methods
-.method public constructor <init>(Lnpb;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(J)V
+    .registers 4
 
-    iput-object p1, p0, Lvob;->Y:Lnpb;
+    const/16 v0, 0xd
 
-    const/4 p1, 0x2
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-wide p1, p0, Lvob;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 7
 
-    check-cast p1, Lr04;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Lvob;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lvob;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lvob;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Lvob;
-
-    iget-object p0, p0, Lvob;->Y:Lnpb;
-
-    invoke-direct {p1, p0, p2}, Lvob;-><init>(Lnpb;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-
-    iget v0, p0, Lvob;->X:I
-
-    iget-object v1, p0, Lvob;->Y:Lnpb;
-
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v2, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    instance-of v1, p1, Lvob;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-nez v1, :cond_1
 
-    throw p0
+    return v2
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    check-cast p1, Lvob;
 
-    iget-object p1, v1, Lnpb;->M0:Lrcb;
+    iget-wide v3, p0, Lvob;->b:J
 
-    iput v2, p0, Lvob;->X:I
+    iget-wide p0, p1, Lvob;->b:J
 
-    invoke-virtual {p1, p0}, Lrcb;->a(Lvob;)Lncf;
+    cmp-long p0, v3, p0
 
-    move-result-object p0
+    if-eqz p0, :cond_2
 
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
+    return v2
 
     :cond_2
-    :goto_0
-    iget-object p0, v1, Lnpb;->x0:Lx65;
+    return v0
+.end method
 
-    new-instance p1, Ldob;
+.method public final hashCode()I
+    .registers 3
 
-    sget v0, Ldha;->E0:I
+    iget-wide v0, p0, Lvob;->b:J
 
-    new-instance v2, Lqte;
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
-    invoke-direct {v2, v0}, Lqte;-><init>(I)V
+    move-result p0
 
-    new-instance v0, Lrob;
+    return p0
+.end method
 
-    const/4 v3, 0x2
+.method public final toString()Ljava/lang/String;
+    .registers 5
 
-    invoke-direct {v0, v1, v3}, Lrob;-><init>(Lnpb;I)V
+    const-string v0, "OpenChat(chatId="
 
-    invoke-direct {p1, v2, v0}, Ldob;-><init>(Lvte;Lj96;)V
+    const-string v1, ")"
 
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
+    iget-wide v2, p0, Lvob;->b:J
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-static {v2, v3, v0, v1}, Lwsf;->e(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

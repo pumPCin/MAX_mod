@@ -1,73 +1,35 @@
-.class public final enum Ljma;
-.super Ljava/lang/Enum;
+.class public final Ljma;
+.super Lfxc;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Ljma;
+# instance fields
+.field public final X:Lru/ok/tamtam/logout/a;
 
-.field public static final enum b:Ljma;
-
-.field public static final synthetic c:[Ljma;
+.field public final Y:Lru4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public constructor <init>(Landroid/content/Context;Lru/ok/tamtam/logout/a;Lru4;Lkha;Lcl7;)V
+    .registers 8
 
-    new-instance v0, Ljma;
+    new-instance v0, Ll13;
 
-    const-string v1, "DEFAULT"
+    invoke-direct {v0, p3}, Ll13;-><init>(Lru4;)V
 
-    const/4 v2, 0x0
+    new-instance v1, Lqe9;
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, p5}, Lqe9;-><init>(Lcl7;)V
 
-    sput-object v0, Ljma;->a:Ljma;
+    filled-new-array {v0, v1}, [Ljava/lang/Object;
 
-    new-instance v1, Ljma;
+    move-result-object p5
 
-    const-string v2, "PASSWORD"
+    invoke-direct {p0, p1, p4, p5}, Lfxc;-><init>(Landroid/content/Context;Lkha;[Ljava/lang/Object;)V
 
-    const/4 v3, 0x1
+    iput-object p2, p0, Ljma;->X:Lru/ok/tamtam/logout/a;
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ljma;->b:Ljma;
-
-    filled-new-array {v0, v1}, [Ljma;
-
-    move-result-object v0
-
-    sput-object v0, Ljma;->c:[Ljma;
+    iput-object p3, p0, Ljma;->Y:Lru4;
 
     return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Ljma;
-    .registers 2
-
-    const-class v0, Ljma;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Ljma;
-
-    return-object p0
-.end method
-
-.method public static values()[Ljma;
-    .registers 1
-
-    sget-object v0, Ljma;->c:[Ljma;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ljma;
-
-    return-object v0
 .end method

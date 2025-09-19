@@ -1,244 +1,144 @@
 .class public final La19;
-.super Ljava/lang/Object;
+.super Landroid/text/method/LinkMovementMethod;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/concurrent/Callable;
 
-
-# instance fields
-.field public final synthetic X:Ljava/lang/Object;
-
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/String;
-
-.field public final synthetic c:J
-
-.field public final synthetic o:J
+# static fields
+.field public static final a:La19;
 
 
 # direct methods
-.method public constructor <init>(Lc19;JJLjava/lang/String;)V
-    .registers 8
+.method static constructor <clinit>()V
+    .registers 1
 
-    const/4 v0, 0x0
+    new-instance v0, La19;
 
-    iput v0, p0, La19;->a:I
+    invoke-direct {v0}, Landroid/text/method/LinkMovementMethod;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, La19;->X:Ljava/lang/Object;
-
-    iput-wide p2, p0, La19;->c:J
-
-    iput-wide p4, p0, La19;->o:J
-
-    iput-object p6, p0, La19;->b:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lm3g;Ljava/lang/String;JJ)V
-    .registers 8
-
-    const/4 v0, 0x1
-
-    iput v0, p0, La19;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, La19;->X:Ljava/lang/Object;
-
-    iput-object p2, p0, La19;->b:Ljava/lang/String;
-
-    iput-wide p3, p0, La19;->c:J
-
-    iput-wide p5, p0, La19;->o:J
+    sput-object v0, La19;->a:La19;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
-    .registers 7
+.method public final onTouchEvent(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z
+    .registers 8
 
-    iget v0, p0, La19;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, La19;->X:Ljava/lang/Object;
-
-    check-cast v0, Lm3g;
-
-    iget-object v1, v0, Lm3g;->d:Lroc;
-
-    iget-object v0, v0, Lm3g;->a:Lapc;
-
-    invoke-virtual {v1}, Lt2;->f()Lthe;
-
-    move-result-object v2
-
-    const/4 v3, 0x1
-
-    iget-object v4, p0, La19;->b:Ljava/lang/String;
-
-    if-nez v4, :cond_0
-
-    invoke-interface {v2, v3}, Lrhe;->Z(I)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {v2, v3, v4}, Lrhe;->f(ILjava/lang/String;)V
-
-    :goto_0
-    const/4 v3, 0x2
-
-    iget-wide v4, p0, La19;->c:J
-
-    invoke-interface {v2, v3, v4, v5}, Lrhe;->k(IJ)V
-
-    const/4 v3, 0x3
-
-    iget-wide v4, p0, La19;->o:J
-
-    invoke-interface {v2, v3, v4, v5}, Lrhe;->k(IJ)V
-
-    :try_start_0
-    invoke-virtual {v0}, Lapc;->c()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    invoke-interface {v2}, Lthe;->C()I
+    invoke-virtual {p3}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p0
 
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/4 v0, 0x0
 
-    move-result-object p0
+    const/4 v1, 0x1
 
-    invoke-virtual {v0}, Lapc;->q()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    if-eq p0, v1, :cond_0
 
-    :try_start_2
-    invoke-virtual {v0}, Lapc;->k()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    if-eqz p0, :cond_0
 
-    invoke-virtual {v1, v2}, Lt2;->u(Lthe;)V
+    return v0
 
-    return-object p0
+    :cond_0
+    invoke-virtual {p3}, Landroid/view/MotionEvent;->getX()F
 
-    :catchall_0
-    move-exception p0
+    move-result v2
+
+    float-to-int v2, v2
+
+    invoke-virtual {p3}, Landroid/view/MotionEvent;->getY()F
+
+    move-result p3
+
+    float-to-int p3, p3
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->getTotalPaddingLeft()I
+
+    move-result v3
+
+    sub-int/2addr v2, v3
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->getTotalPaddingTop()I
+
+    move-result v3
+
+    sub-int/2addr p3, v3
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
+
+    move-result v3
+
+    add-int/2addr v3, v2
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result v2
+
+    add-int/2addr v2, p3
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+
+    move-result-object p3
+
+    invoke-virtual {p3, v2}, Landroid/text/Layout;->getLineForVertical(I)I
+
+    move-result v2
+
+    int-to-float v3, v3
+
+    invoke-virtual {p3, v2, v3}, Landroid/text/Layout;->getOffsetForHorizontal(IF)I
+
+    move-result p3
+
+    const-class v2, Landroid/text/style/ClickableSpan;
+
+    invoke-interface {p2, p3, p3, v2}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, [Landroid/text/style/ClickableSpan;
+
+    array-length v2, p3
+
+    if-nez v2, :cond_1
+
+    move v2, v1
+
+    goto :goto_0
+
+    :cond_1
+    move v2, v0
+
+    :goto_0
+    if-nez v2, :cond_4
+
+    aget-object p3, p3, v0
+
+    if-eqz p0, :cond_3
+
+    if-eq p0, v1, :cond_2
 
     goto :goto_1
 
-    :catchall_1
-    move-exception p0
+    :cond_2
+    invoke-virtual {p3, p1}, Landroid/text/style/ClickableSpan;->onClick(Landroid/view/View;)V
 
-    :try_start_3
-    invoke-virtual {v0}, Lapc;->k()V
+    goto :goto_1
 
-    throw p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :cond_3
+    invoke-interface {p2, p3}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
+
+    move-result p0
+
+    invoke-interface {p2, p3}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
+
+    move-result p1
+
+    invoke-static {p2, p0, p1}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;II)V
 
     :goto_1
-    invoke-virtual {v1, v2}, Lt2;->u(Lthe;)V
+    return v1
 
-    throw p0
-
-    :pswitch_0
-    iget-object v0, p0, La19;->X:Ljava/lang/Object;
-
-    check-cast v0, Lc19;
-
-    iget-object v1, v0, Lc19;->c:Lmh;
-
-    iget-object v0, v0, Lc19;->a:Lapc;
-
-    invoke-virtual {v1}, Lt2;->f()Lthe;
-
-    move-result-object v2
-
-    const/4 v3, 0x1
-
-    iget-wide v4, p0, La19;->c:J
-
-    invoke-interface {v2, v3, v4, v5}, Lrhe;->k(IJ)V
-
-    const/4 v3, 0x2
-
-    iget-wide v4, p0, La19;->o:J
-
-    invoke-interface {v2, v3, v4, v5}, Lrhe;->k(IJ)V
-
-    const/4 v3, 0x3
-
-    iget-object p0, p0, La19;->b:Ljava/lang/String;
-
-    if-nez p0, :cond_1
-
-    invoke-interface {v2, v3}, Lrhe;->Z(I)V
-
-    goto :goto_2
-
-    :cond_1
-    invoke-interface {v2, v3, p0}, Lrhe;->f(ILjava/lang/String;)V
-
-    :goto_2
-    :try_start_4
-    invoke-virtual {v0}, Lapc;->c()V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
-
-    :try_start_5
-    invoke-interface {v2}, Lthe;->C()I
-
-    invoke-virtual {v0}, Lapc;->q()V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_3
-
-    :try_start_6
-    invoke-virtual {v0}, Lapc;->k()V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_2
-
-    invoke-virtual {v1, v2}, Lt2;->u(Lthe;)V
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :catchall_2
-    move-exception p0
-
-    goto :goto_3
-
-    :catchall_3
-    move-exception p0
-
-    :try_start_7
-    invoke-virtual {v0}, Lapc;->k()V
-
-    throw p0
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_2
-
-    :goto_3
-    invoke-virtual {v1, v2}, Lt2;->u(Lthe;)V
-
-    throw p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_4
+    return v0
 .end method

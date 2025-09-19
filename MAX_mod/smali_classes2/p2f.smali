@@ -1,96 +1,35 @@
 .class public final Lp2f;
-.super Ljava/lang/Object;
+.super Lu2f;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lp2f;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final c:Lp2f;
+.field public static final CREATOR:Lo2f;
 
 
 # instance fields
-.field public final a:Lo2f;
-
-.field public final b:Ljava/util/List;
+.field public final b:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 1
 
-    new-instance v0, Lp2f;
+    new-instance v0, Lo2f;
 
-    sget-object v1, Lo2f;->p0:Lo2f;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v2, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
-
-    invoke-direct {v0, v1, v2}, Lp2f;-><init>(Lo2f;Ljava/util/List;)V
-
-    sput-object v0, Lp2f;->c:Lp2f;
-
-    new-instance v0, Lxid;
-
-    const/16 v1, 0x19
-
-    invoke-direct {v0, v1}, Lxid;-><init>(I)V
-
-    sput-object v0, Lp2f;->CREATOR:Landroid/os/Parcelable$Creator;
+    sput-object v0, Lp2f;->CREATOR:Lo2f;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+.method public constructor <init>(I)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-class v0, Lo2f;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
-
-    move-result-object v0
-
-    check-cast v0, Lo2f;
-
-    iput-object v0, p0, Lp2f;->a:Lo2f;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lp2f;->b:Ljava/util/List;
-
-    sget-object p0, Lo2f;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-virtual {p1, v0, p0}, Landroid/os/Parcel;->readTypedList(Ljava/util/List;Landroid/os/Parcelable$Creator;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lo2f;Ljava/util/List;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lp2f;->a:Lo2f;
-
-    iput-object p2, p0, Lp2f;->b:Ljava/util/List;
+    iput p1, p0, Lp2f;->b:I
 
     return-void
 .end method
@@ -108,76 +47,44 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 5
 
+    const/4 v0, 0x1
+
     if-ne p0, p1, :cond_0
 
-    const/4 p0, 0x1
-
-    return p0
+    return v0
 
     :cond_0
-    const/4 v0, 0x0
+    instance-of v1, p1, Lp2f;
 
-    if-eqz p1, :cond_3
+    const/4 v2, 0x0
 
-    const-class v1, Lp2f;
+    if-nez v1, :cond_1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    if-eq v1, v2, :cond_1
-
-    goto :goto_0
+    return v2
 
     :cond_1
     check-cast p1, Lp2f;
 
-    iget-object v1, p0, Lp2f;->a:Lo2f;
+    iget p0, p0, Lp2f;->b:I
 
-    iget-object v2, p1, Lp2f;->a:Lo2f;
+    iget p1, p1, Lp2f;->b:I
 
-    invoke-virtual {v1, v2}, Lo2f;->equals(Ljava/lang/Object;)Z
+    if-eq p0, p1, :cond_2
 
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v0
+    return v2
 
     :cond_2
-    iget-object p0, p0, Lp2f;->b:Ljava/util/List;
-
-    iget-object p1, p1, Lp2f;->b:Ljava/util/List;
-
-    invoke-interface {p0, p1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_3
-    :goto_0
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .registers 1
 
-    iget-object v0, p0, Lp2f;->a:Lo2f;
+    iget p0, p0, Lp2f;->b:I
 
-    invoke-virtual {v0}, Lo2f;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lp2f;->b:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->hashCode()I
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result p0
-
-    add-int/2addr p0, v0
 
     return p0
 .end method
@@ -185,29 +92,13 @@
 .method public final toString()Ljava/lang/String;
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "Resource(resId="
 
-    const-string v1, "TrackContainer{videoTrack="
+    const-string v1, ")"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget p0, p0, Lp2f;->b:I
 
-    iget-object v1, p0, Lp2f;->a:Lo2f;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", audioTracks="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lp2f;->b:Ljava/util/List;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v0, v1}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -215,15 +106,11 @@
 .end method
 
 .method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 4
+    .registers 3
 
-    iget-object v0, p0, Lp2f;->a:Lo2f;
+    iget p0, p0, Lp2f;->b:I
 
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
-
-    iget-object p0, p0, Lp2f;->b:Ljava/util/List;
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
 
     return-void
 .end method

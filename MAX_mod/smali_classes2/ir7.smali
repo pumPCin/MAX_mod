@@ -1,31 +1,44 @@
-.class public interface abstract Lir7;
+.class public final synthetic Lir7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lgr7;
 
-# static fields
-.field public static final a:Lhr7;
+
+# instance fields
+.field public final synthetic a:Lnr7;
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lnr7;Ljava/lang/Object;)V
+    .registers 3
 
-    new-instance v0, Lhr7;
+    iput-object p1, p0, Lir7;->a:Lnr7;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lir7;->b:Ljava/lang/Object;
 
-    sput-object v0, Lir7;->a:Lhr7;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(JLandroid/app/PendingIntent;)Landroid/app/Notification;
-    .registers 4
+.method public b(Landroid/view/View;Ljava/lang/String;)V
+    .registers 5
 
-    const/4 p0, 0x0
+    sget-object v0, Lor7;->Y:Lor7;
 
-    return-object p0
+    iget-object v1, p0, Lir7;->b:Ljava/lang/Object;
+
+    check-cast v1, Landroid/text/style/ClickableSpan;
+
+    iget-object p0, p0, Lir7;->a:Lnr7;
+
+    invoke-virtual {p0, p1, p2, v0, v1}, Lnr7;->b(Landroid/view/View;Ljava/lang/String;Lor7;Landroid/text/style/ClickableSpan;)V
+
+    return-void
 .end method

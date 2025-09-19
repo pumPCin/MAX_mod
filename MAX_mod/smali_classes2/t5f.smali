@@ -1,72 +1,145 @@
 .class public final Lt5f;
-.super Lr5f;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lt5f;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final b:Ljava/util/Iterator;
+.field public final a:I
+
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lwl5;Ljava/lang/Object;)V
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Le5d;
+
+    const/16 v1, 0x18
+
+    invoke-direct {v0, v1}, Le5d;-><init>(I)V
+
+    sput-object v0, Lt5f;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(I)V
     .registers 3
 
-    iget-object p1, p1, Lwl5;->X:Lv9d;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    check-cast p1, Lmp5;
+    iput p1, p0, Lt5f;->a:I
 
-    invoke-direct {p0, p2}, Lw5f;-><init>(Ljava/lang/Object;)V
-
-    iget-object p1, p1, Lmp5;->c:Lj96;
-
-    invoke-interface {p1, p2}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    check-cast p1, Lv9d;
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lv9d;->iterator()Ljava/util/Iterator;
+    filled-new-array {p1}, [Ljava/lang/Object;
 
     move-result-object p1
 
-    goto :goto_0
+    const/4 v0, 0x1
 
-    :cond_0
-    const/4 p1, 0x0
+    invoke-static {p1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    :goto_0
-    iput-object p1, p0, Lt5f;->b:Ljava/util/Iterator;
+    move-result-object p1
+
+    const-string v0, "%02d"
+
+    invoke-static {v0, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lt5f;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .registers 3
+.method public final describeContents()I
+    .registers 1
 
-    iget-object p0, p0, Lt5f;->b:Ljava/util/Iterator;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
     const/4 p0, 0x0
 
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lt5f;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lt5f;
+
+    iget p0, p0, Lt5f;->a:I
+
+    iget p1, p1, Lt5f;->a:I
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget p0, p0, Lt5f;->a:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    iget-object p0, p0, Lt5f;->b:Ljava/lang/String;
+
     return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
+
+    iget p0, p0, Lt5f;->a:I
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
 .end method

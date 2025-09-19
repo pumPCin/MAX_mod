@@ -1,69 +1,73 @@
 .class public final Lxm6;
-.super Lan6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Lxm6;
+# instance fields
+.field public final a:Lbn6;
+
+.field public final b:Ldn6;
+
+.field public c:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>(Lbn6;Ldn6;)V
+    .registers 4
 
-    new-instance v0, Lxm6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget v1, Lmaa;->p:I
+    const/4 v0, 0x1
 
-    new-instance v2, Lqte;
+    iput-boolean v0, p0, Lxm6;->c:Z
 
-    invoke-direct {v2, v1}, Lqte;-><init>(I)V
+    iput-object p1, p0, Lxm6;->a:Lbn6;
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v2, v1}, Lan6;-><init>(Lqte;Lqte;)V
-
-    sput-object v0, Lxm6;->c:Lxm6;
+    iput-object p2, p0, Lxm6;->b:Ldn6;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final toString()Ljava/lang/String;
+    .registers 4
 
-    const/4 v0, 0x1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    if-ne p0, p1, :cond_0
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    return v0
+    iget-object v1, p0, Lxm6;->a:Lbn6;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v2, p0, Lxm6;->c:Z
+
+    if-nez v2, :cond_0
+
+    const-string v2, "+>"
+
+    goto :goto_0
 
     :cond_0
-    instance-of p0, p1, Lxm6;
+    const-string v2, "->"
 
-    if-nez p0, :cond_1
+    :goto_0
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 p0, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return p0
+    iget-object p0, p0, Lxm6;->b:Ldn6;
 
-    :cond_1
-    return v0
-.end method
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-.method public final hashCode()I
-    .registers 1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const p0, -0x783d121b
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "Connected"
+    move-result-object p0
 
     return-object p0
 .end method

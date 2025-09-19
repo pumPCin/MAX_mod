@@ -1,129 +1,156 @@
-.class public final Li57;
-.super Lxie;
+.class public final synthetic Li57;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lbc6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/login/inputphone/InputPhoneScreen;
+.field public final synthetic b:I
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/login/inputphone/InputPhoneScreen;)V
+.method public synthetic constructor <init>(II)V
     .registers 3
 
-    iput-object p2, p0, Li57;->Y:Lone/me/login/inputphone/InputPhoneScreen;
+    iput p2, p0, Li57;->a:I
 
-    const/4 p2, 0x2
+    iput p1, p0, Li57;->b:I
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lg6e;I)V
+    .registers 3
+
+    const/4 p1, 0x2
+
+    iput p1, p0, Li57;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p2, p0, Li57;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 7
 
-    check-cast p1, Ljp9;
+    iget v0, p0, Li57;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const-string v1, "prefetch "
 
-    invoke-virtual {p0, p1, p2}, Li57;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    sget-object v2, Lylf;->a:Lylf;
+
+    iget p0, p0, Li57;->b:I
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p1, Ly77;
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [F
+
+    fill-array-data v0, :array_0
+
+    invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+
+    move-result-object v0
+
+    const-wide/16 v3, 0xc8
+
+    invoke-virtual {v0, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    new-instance v1, La6e;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, p1, v3}, La6e;-><init>(Ly77;I)V
+
+    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    new-instance v1, Lqg;
+
+    const/4 v3, 0x3
+
+    invoke-direct {v1, p0, v3, p1}, Lqg;-><init>(IILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
+
+    return-object v2
+
+    :pswitch_0
+    check-cast p1, Ljava/lang/Throwable;
+
+    if-eqz p1, :cond_0
+
+    sget-object v0, Lr57;->D0:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p0, " fetchRealAlbums() completed by error"
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Li57;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Li57;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Li57;
-
-    iget-object p0, p0, Li57;->Y:Lone/me/login/inputphone/InputPhoneScreen;
-
-    invoke-direct {v0, p2, p0}, Li57;-><init>(Lkotlin/coroutines/Continuation;Lone/me/login/inputphone/InputPhoneScreen;)V
-
-    iput-object p1, v0, Li57;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Li57;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljp9;
-
-    instance-of v0, p1, Lg57;
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Li57;->Y:Lone/me/login/inputphone/InputPhoneScreen;
-
-    iget-object p0, p0, Lone/me/login/inputphone/InputPhoneScreen;->v0:Ljava/lang/Object;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lf77;
-
-    check-cast p1, Lg57;
-
-    iget-object v0, p1, Lg57;->b:Ljava/lang/String;
-
-    iget-object v1, p1, Lg57;->c:Ljava/lang/String;
-
-    iget p1, p1, Lg57;->d:I
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v2, Lone/me/login/confirm/ConfirmPhoneScreen;
-
-    invoke-direct {v2, v0, v1, p1}, Lone/me/login/confirm/ConfirmPhoneScreen;-><init>(Ljava/lang/String;Ljava/lang/String;I)V
-
-    const/4 p1, 0x0
-
-    invoke-static {v2, p1, p1}, Lbp;->e(Lqx3;Lvg;Lvg;)Lorc;
-
-    move-result-object p1
-
-    const-string v0, "ConfirmPhoneScreen"
-
-    invoke-virtual {p0, p1, v0}, Lf77;->a(Lorc;Ljava/lang/String;)V
-
-    goto :goto_0
+    invoke-static {v0, p0, p1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_0
-    instance-of p0, p1, Laa4;
+    return-object v2
 
-    if-eqz p0, :cond_1
+    :pswitch_1
+    check-cast p1, Ljava/lang/Throwable;
 
-    sget-object p0, Lvx7;->c:Lvx7;
+    if-eqz p1, :cond_1
 
-    check-cast p1, Laa4;
+    sget-object v0, Lr57;->D0:Ljava/lang/String;
 
-    invoke-virtual {p0, p1}, Ls2;->F0(Laa4;)V
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p0, " fetchVirtualAlbums() completed by error"
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {v0, p0, p1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_1
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    return-object v2
 
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+
+    :array_0
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x0
+    .end array-data
 .end method

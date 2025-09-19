@@ -1,62 +1,64 @@
 .class public final Lus4;
-.super Lsoe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lvs4;
 
-# instance fields
-.field public c:J
+
+# static fields
+.field public static final a:Lus4;
 
 
 # direct methods
-.method public constructor <init>(Lu09;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0, p1}, Lsoe;-><init>(Lu09;)V
+    new-instance v0, Lus4;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lus4;->a:Lus4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lu09;Ljava/lang/String;)V
-    .registers 5
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    const-string v0, "time"
+    const/4 v0, 0x1
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-ne p0, p1, :cond_0
 
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    const-wide/16 v0, 0x0
-
-    invoke-static {p1, v0, v1}, Lbv7;->g0(Lu09;J)J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lus4;->c:J
-
-    return-void
+    return v0
 
     :cond_0
-    invoke-virtual {p1}, Lu09;->B()V
+    instance-of p0, p1, Lus4;
 
-    return-void
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, 0x26c2381a
+
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .registers 1
 
-    iget-wide v0, p0, Lus4;->c:J
-
-    const-string p0, "Response{time="
-
-    const-string v2, "}"
-
-    invoke-static {v0, v1, p0, v2}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
+    const-string p0, "MaxFailedCount"
 
     return-object p0
 .end method

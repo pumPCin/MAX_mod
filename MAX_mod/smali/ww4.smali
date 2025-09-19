@@ -1,31 +1,28 @@
-.class public final Lww4;
+.class public interface abstract Lww4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:Z
-
-.field public final c:[B
-
-.field public final d:[B
+# static fields
+.field public static final m:Lqj4;
 
 
 # direct methods
-.method public constructor <init>(IZ[B[B)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lqj4;
 
-    iput p1, p0, Lww4;->a:I
+    const/4 v1, 0x5
 
-    iput-boolean p2, p0, Lww4;->b:Z
+    invoke-direct {v0, v1}, Lqj4;-><init>(I)V
 
-    iput-object p3, p0, Lww4;->c:[B
-
-    iput-object p4, p0, Lww4;->d:[B
+    sput-object v0, Lww4;->m:Lqj4;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract release()V
 .end method

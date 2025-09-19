@@ -1,35 +1,49 @@
-.class public interface abstract Lwq1;
-.super Ljava/lang/Object;
+.class public final Lwq1;
+.super Ljx3;
 .source "SourceFile"
 
 
-# virtual methods
-.method public B()V
-    .registers 1
+# instance fields
+.field public final synthetic X:Lxq1;
 
-    return-void
-.end method
+.field public Y:I
 
-.method public D(Lbh1;)V
-    .registers 2
+.field public synthetic o:Ljava/lang/Object;
 
-    return-void
-.end method
 
-.method public s(Lbh1;Landroid/graphics/Point;)V
+# direct methods
+.method public constructor <init>(Lxq1;Ljx3;)V
     .registers 3
 
-    return-void
-.end method
+    iput-object p1, p0, Lwq1;->X:Lxq1;
 
-.method public u(Lbh1;)V
-    .registers 2
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public z(Lbh1;)V
-    .registers 2
 
-    return-void
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    iput-object p1, p0, Lwq1;->o:Ljava/lang/Object;
+
+    iget p1, p0, Lwq1;->Y:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lwq1;->Y:I
+
+    iget-object p1, p0, Lwq1;->X:Lxq1;
+
+    const-wide/16 v0, 0x0
+
+    invoke-virtual {p1, v0, v1, p0}, Lxq1;->c(JLjx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

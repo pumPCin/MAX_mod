@@ -1,48 +1,30 @@
-.class public final Lq4f;
-.super Lrud;
+.class public interface abstract Lq4f;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ls4f;
+.implements Lfic;
 
 
-# instance fields
-.field public v0:Lmnf;
+# static fields
+.field public static final e0:Ld90;
 
 
-# virtual methods
-.method public final c(I)Ltj6;
-    .registers 6
+# direct methods
+.method static constructor <clinit>()V
+    .registers 4
 
-    iget-object v0, p0, Lq4f;->v0:Lmnf;
+    new-instance v0, Ld90;
 
-    if-nez v0, :cond_0
+    const-string v1, "camerax.core.thread.backgroundExecutor"
 
-    const/4 v0, 0x1
+    const-class v2, Ljava/util/concurrent/Executor;
 
-    goto :goto_0
+    const/4 v3, 0x0
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
 
-    :goto_0
-    invoke-static {v0}, Lr76;->l(Z)V
+    sput-object v0, Lq4f;->e0:Ld90;
 
-    invoke-virtual {p0, p1}, Lrud;->d(I)V
-
-    new-instance v0, Lmnf;
-
-    invoke-virtual {p0, p1}, Lrud;->a(I)Lpnf;
-
-    move-result-object p1
-
-    iget-object v1, p0, Lrud;->o0:Lhab;
-
-    iget-wide v2, p0, Lrud;->n0:J
-
-    invoke-direct {v0, p1, v1, v2, v3}, Lmnf;-><init>(Lpnf;Lhab;J)V
-
-    iput-object v0, p0, Lq4f;->v0:Lmnf;
-
-    return-object v0
+    return-void
 .end method

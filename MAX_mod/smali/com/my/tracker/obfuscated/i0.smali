@@ -221,21 +221,21 @@
 
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v2, Lbqg;
+    new-instance v2, Ls0h;
 
     const/4 v3, 0x0
 
-    invoke-direct {v2, v1, v3}, Lbqg;-><init>(Lcom/my/tracker/obfuscated/t;I)V
+    invoke-direct {v2, v1, v3}, Ls0h;-><init>(Lcom/my/tracker/obfuscated/t;I)V
 
     iget-object v1, p0, Lcom/my/tracker/obfuscated/i0;->d:Lcom/my/tracker/obfuscated/t;
 
     invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v3, Lbqg;
+    new-instance v3, Ls0h;
 
     const/4 v4, 0x1
 
-    invoke-direct {v3, v1, v4}, Lbqg;-><init>(Lcom/my/tracker/obfuscated/t;I)V
+    invoke-direct {v3, v1, v4}, Ls0h;-><init>(Lcom/my/tracker/obfuscated/t;I)V
 
     invoke-virtual {v0, v2, v3}, Lcom/my/tracker/obfuscated/z0;->a(Lcom/my/tracker/obfuscated/n;Lcom/my/tracker/obfuscated/n;)V
 

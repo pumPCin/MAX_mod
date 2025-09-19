@@ -1,166 +1,364 @@
-.class public final synthetic Lq12;
-.super Ljava/lang/Object;
+.class public Lq12;
+.super Lr3;
 .source "SourceFile"
 
-# interfaces
-.implements Llm3;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lq12;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:I
 
-.field public final synthetic b:Lhc4;
+.field public final b:Lnyc;
+
+.field public final c:Ljava/lang/Float;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhc4;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput p2, p0, Lq12;->a:I
+    new-instance v0, Lp3h;
 
-    iput-object p1, p0, Lq12;->b:Lhc4;
+    const/4 v1, 0x5
+
+    invoke-direct {v0, v1}, Lp3h;-><init>(I)V
+
+    sput-object v0, Lq12;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(ILnyc;Ljava/lang/Float;)V
+    .registers 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    if-eqz p3, :cond_0
+
+    invoke-virtual {p3}, Ljava/lang/Float;->floatValue()F
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    cmpl-float v2, v2, v3
+
+    if-lez v2, :cond_0
+
+    move v2, v0
+
+    goto :goto_0
+
+    :cond_0
+    move v2, v1
+
+    :goto_0
+    const/4 v3, 0x3
+
+    if-ne p1, v3, :cond_2
+
+    if-eqz p2, :cond_1
+
+    if-eqz v2, :cond_1
+
+    :goto_1
+    move p1, v3
+
+    goto :goto_2
+
+    :cond_1
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_2
+    :goto_2
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Invalid Cap: type="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, " bitmapDescriptor="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, " bitmapRefWidth="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Ljk7;->l(Ljava/lang/String;Z)V
+
+    iput p1, p0, Lq12;->a:I
+
+    iput-object p2, p0, Lq12;->b:Lnyc;
+
+    iput-object p3, p0, Lq12;->c:Ljava/lang/Float;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .registers 7
+.method public final b()Lq12;
+    .registers 6
 
     iget v0, p0, Lq12;->a:I
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz v0, :cond_5
 
-    check-cast p1, Lfc0;
-
-    invoke-static {}, Lg5e;->d()V
-
-    iget-object p0, p0, Lq12;->b:Lhc4;
-
-    iget-object p0, p0, Lhc4;->a:Ljava/lang/Object;
-
-    check-cast p0, Lacb;
-
-    if-eqz p0, :cond_3
-
-    iget v0, p0, Lacb;->a:I
-
-    iget v1, p1, Lfc0;->a:I
-
-    if-ne v0, v1, :cond_3
-
-    iget-object p1, p1, Lfc0;->b:Landroidx/camera/core/ImageCaptureException;
-
-    iget-object p0, p0, Lacb;->f:Lilc;
-
-    iget-object v0, p0, Lilc;->a:Lgc0;
-
-    invoke-static {}, Lg5e;->d()V
-
-    iget-boolean v1, p0, Lilc;->g:Z
-
-    if-eqz v1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    invoke-static {}, Lg5e;->d()V
-
-    iget v1, v0, Lgc0;->a:I
-
-    if-lez v1, :cond_1
+    const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    sub-int/2addr v1, v2
+    if-eq v0, v2, :cond_4
 
-    iput v1, v0, Lgc0;->a:I
+    const/4 v3, 0x2
+
+    if-eq v0, v3, :cond_3
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_0
+
+    return-object p0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lq12;->b:Lnyc;
+
+    if-eqz v1, :cond_1
+
+    move v3, v2
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v3, v0
 
     :goto_0
-    if-nez v2, :cond_2
+    const-string v4, "bitmapDescriptor must not be null"
 
-    invoke-static {}, Lg5e;->d()V
+    invoke-static {v4, v3}, Ljk7;->v(Ljava/lang/String;Z)V
 
-    iget-object v1, v0, Lgc0;->b:Ljava/util/concurrent/Executor;
+    iget-object p0, p0, Lq12;->c:Ljava/lang/Float;
 
-    new-instance v3, Lcsc;
+    if-eqz p0, :cond_2
 
-    const/16 v4, 0x14
-
-    invoke-direct {v3, v0, v4, p1}, Lcsc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-interface {v1, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    goto :goto_1
 
     :cond_2
-    invoke-virtual {p0}, Lilc;->a()V
+    move v2, v0
 
-    iget-object v1, p0, Lilc;->e:Lks1;
+    :goto_1
+    const-string v0, "bitmapRefWidth must not be null"
 
-    invoke-virtual {v1, p1}, Lks1;->d(Ljava/lang/Throwable;)Z
+    invoke-static {v0, v2}, Ljk7;->v(Ljava/lang/String;Z)V
 
-    if-eqz v2, :cond_3
+    new-instance v0, Lp44;
 
-    iget-object p0, p0, Lilc;->b:Lmne;
+    invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
 
-    invoke-virtual {p0, v0}, Lmne;->d(Lgc0;)V
+    move-result p0
+
+    invoke-direct {v0, v1, p0}, Lp44;-><init>(Lnyc;F)V
+
+    return-object v0
 
     :cond_3
-    :goto_1
-    return-void
-
-    :pswitch_0
-    check-cast p1, Lacb;
-
-    iget-object p0, p0, Lq12;->b:Lhc4;
-
-    invoke-virtual {p0, p1}, Lhc4;->e(Lacb;)V
-
-    iget-object p0, p0, Lhc4;->X:Ljava/lang/Object;
-
-    check-cast p0, Lplg;
-
-    iget-object v0, p0, Lplg;->c:Ljava/lang/Object;
-
-    check-cast v0, Lacb;
-
-    if-nez v0, :cond_4
+    new-instance p0, Lgv0;
 
     const/4 v0, 0x1
 
-    goto :goto_2
+    invoke-direct {p0, v3, v1, v1, v0}, Lgv0;-><init>(ILnyc;Ljava/lang/Float;I)V
+
+    return-object p0
 
     :cond_4
+    new-instance p0, Lgv0;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p0, v2, v1, v1, v0}, Lgv0;-><init>(ILnyc;Ljava/lang/Float;I)V
+
+    return-object p0
+
+    :cond_5
+    new-instance p0, Lgv0;
+
+    invoke-direct {p0}, Lgv0;-><init>()V
+
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lq12;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lq12;
+
+    iget v1, p0, Lq12;->a:I
+
+    iget v3, p1, Lq12;->a:I
+
+    if-ne v1, v3, :cond_2
+
+    iget-object v1, p0, Lq12;->b:Lnyc;
+
+    iget-object v3, p1, Lq12;->b:Lnyc;
+
+    invoke-static {v1, v3}, Lhv8;->l(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    iget-object p0, p0, Lq12;->c:Ljava/lang/Float;
+
+    iget-object p1, p1, Lq12;->c:Ljava/lang/Float;
+
+    invoke-static {p0, p1}, Lhv8;->l(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
+
+    :cond_2
+    return v2
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    iget v0, p0, Lq12;->a:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lq12;->b:Lnyc;
+
+    iget-object p0, p0, Lq12;->c:Ljava/lang/Float;
+
+    filled-new-array {v0, v1, p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "[Cap: type="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget p0, p0, Lq12;->a:I
+
+    const-string v1, "]"
+
+    invoke-static {v0, p0, v1}, Lyv7;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 6
+
+    const/16 p2, 0x4f45
+
+    invoke-static {p1, p2}, Ljs9;->U(Landroid/os/Parcel;I)I
+
+    move-result p2
+
+    const/4 v0, 0x2
+
+    const/4 v1, 0x4
+
+    invoke-static {p1, v0, v1}, Ljs9;->W(Landroid/os/Parcel;II)V
+
+    iget v0, p0, Lq12;->a:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object v0, p0, Lq12;->b:Lnyc;
+
+    if-nez v0, :cond_0
+
     const/4 v0, 0x0
 
-    :goto_2
-    const-string v1, "Pending request should be null"
+    goto :goto_0
 
-    invoke-static {v1, v0}, Lts;->q(Ljava/lang/String;Z)V
+    :cond_0
+    iget-object v0, v0, Lnyc;->b:Ljava/lang/Object;
 
-    iput-object p1, p0, Lplg;->c:Ljava/lang/Object;
+    check-cast v0, Lny6;
+
+    invoke-interface {v0}, Landroid/os/IInterface;->asBinder()Landroid/os/IBinder;
+
+    move-result-object v0
+
+    :goto_0
+    const/4 v2, 0x3
+
+    invoke-static {p1, v2, v0}, Ljs9;->K(Landroid/os/Parcel;ILandroid/os/IBinder;)V
+
+    iget-object p0, p0, Lq12;->c:Ljava/lang/Float;
+
+    invoke-static {p1, v1, p0}, Ljs9;->J(Landroid/os/Parcel;ILjava/lang/Float;)V
+
+    invoke-static {p1, p2}, Ljs9;->V(Landroid/os/Parcel;I)V
 
     return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lq12;->b:Lhc4;
-
-    check-cast p1, Lacb;
-
-    invoke-virtual {p0, p1}, Lhc4;->e(Lacb;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

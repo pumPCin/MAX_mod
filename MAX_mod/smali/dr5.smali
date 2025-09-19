@@ -1,52 +1,45 @@
 .class public final Ldr5;
-.super Lcx3;
-
-
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lf01;
-
-.field public Z:Lhq5;
-
-.field public n0:Ljava/util/Iterator;
-
-.field public synthetic o:Ljava/lang/Object;
+.super Lpm0;
+.source "SourceFile"
 
 
 # direct methods
-.method public constructor <init>(Lf01;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public static f(I[B)I
+    .registers 4
 
-    iput-object p1, p0, Ldr5;->Y:Lf01;
+    aget-byte v0, p1, p0
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    and-int/lit16 v0, v0, 0xff
 
-    return-void
-.end method
+    shl-int/lit8 v0, v0, 0x18
 
+    add-int/lit8 v1, p0, 0x1
 
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    aget-byte v1, p1, v1
 
-    iput-object p1, p0, Ldr5;->o:Ljava/lang/Object;
+    and-int/lit16 v1, v1, 0xff
 
-    iget p1, p0, Ldr5;->X:I
+    shl-int/lit8 v1, v1, 0x10
 
-    const/high16 v0, -0x80000000
+    or-int/2addr v0, v1
 
-    or-int/2addr p1, v0
+    add-int/lit8 v1, p0, 0x2
 
-    iput p1, p0, Ldr5;->X:I
+    aget-byte v1, p1, v1
 
-    iget-object p1, p0, Ldr5;->Y:Lf01;
+    and-int/lit16 v1, v1, 0xff
 
-    const/4 v0, 0x0
+    shl-int/lit8 v1, v1, 0x8
 
-    invoke-virtual {p1, v0, p0}, Lf01;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    or-int/2addr v0, v1
 
-    move-result-object p0
+    add-int/lit8 p0, p0, 0x3
 
-    return-object p0
+    aget-byte p0, p1, p0
+
+    and-int/lit16 p0, p0, 0xff
+
+    or-int/2addr p0, v0
+
+    return p0
 .end method

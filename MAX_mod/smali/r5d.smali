@@ -2,138 +2,128 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final c:Lr5d;
+# interfaces
+.implements Loq4;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:J
+.field public final a:Ljava/lang/Runnable;
 
-.field public final b:J
+.field public final b:Lt5d;
+
+.field public c:Ljava/lang/Thread;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/Runnable;Lt5d;)V
     .registers 3
-
-    new-instance v0, Lr5d;
-
-    const-wide/16 v1, 0x0
-
-    invoke-direct {v0, v1, v2, v1, v2}, Lr5d;-><init>(JJ)V
-
-    sput-object v0, Lr5d;->c:Lr5d;
-
-    return-void
-.end method
-
-.method public constructor <init>(JJ)V
-    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lr5d;->a:J
+    iput-object p1, p0, Lr5d;->a:Ljava/lang/Runnable;
 
-    iput-wide p3, p0, Lr5d;->b:J
+    iput-object p2, p0, Lr5d;->b:Lt5d;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 8
+.method public final e()V
+    .registers 3
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lr5d;->c:Ljava/lang/Thread;
 
-    if-ne p0, p1, :cond_0
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    return v0
+    move-result-object v1
+
+    if-ne v0, v1, :cond_1
+
+    iget-object v0, p0, Lr5d;->b:Lt5d;
+
+    instance-of v1, v0, Ljw9;
+
+    if-eqz v1, :cond_1
+
+    check-cast v0, Ljw9;
+
+    iget-boolean p0, v0, Ljw9;->b:Z
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    iput-boolean p0, v0, Ljw9;->b:Z
+
+    iget-object p0, v0, Ljw9;->a:Ljava/util/concurrent/ScheduledThreadPoolExecutor;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/ScheduledThreadPoolExecutor;->shutdown()V
 
     :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_2
-
-    const-class v2, Lr5d;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_1
-
-    goto :goto_0
+    return-void
 
     :cond_1
-    check-cast p1, Lr5d;
+    iget-object p0, p0, Lr5d;->b:Lt5d;
 
-    iget-wide v2, p0, Lr5d;->a:J
+    invoke-interface {p0}, Loq4;->e()V
 
-    iget-wide v4, p1, Lr5d;->a:J
-
-    cmp-long v2, v2, v4
-
-    if-nez v2, :cond_2
-
-    iget-wide v2, p0, Lr5d;->b:J
-
-    iget-wide p0, p1, Lr5d;->b:J
-
-    cmp-long p0, v2, p0
-
-    if-nez p0, :cond_2
-
-    return v0
-
-    :cond_2
-    :goto_0
-    return v1
+    return-void
 .end method
 
-.method public final hashCode()I
-    .registers 4
+.method public final f()Z
+    .registers 1
 
-    iget-wide v0, p0, Lr5d;->a:J
+    iget-object p0, p0, Lr5d;->b:Lt5d;
 
-    long-to-int v0, v0
+    invoke-interface {p0}, Loq4;->f()Z
 
-    mul-int/lit8 v0, v0, 0x1f
+    move-result p0
 
-    iget-wide v1, p0, Lr5d;->b:J
-
-    long-to-int p0, v1
-
-    add-int/2addr v0, p0
-
-    return v0
+    return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 4
+.method public final run()V
+    .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    const-string v1, "[timeUs="
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iput-object v0, p0, Lr5d;->c:Ljava/lang/Thread;
 
-    iget-wide v1, p0, Lr5d;->a:J
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    :try_start_0
+    iget-object v1, p0, Lr5d;->a:Ljava/lang/Runnable;
 
-    const-string v1, ", position="
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lr5d;->e()V
 
-    iget-wide v1, p0, Lr5d;->b:J
+    iput-object v0, p0, Lr5d;->c:Ljava/lang/Thread;
 
-    const-string p0, "]"
+    return-void
 
-    invoke-static {v0, v1, v2, p0}, La78;->n(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+    :catchall_0
+    move-exception v1
 
-    move-result-object p0
+    :try_start_1
+    invoke-static {v1}, Ln4e;->D(Ljava/lang/Throwable;)V
 
-    return-object p0
+    throw v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :catchall_1
+    move-exception v1
+
+    invoke-virtual {p0}, Lr5d;->e()V
+
+    iput-object v0, p0, Lr5d;->c:Ljava/lang/Thread;
+
+    throw v1
 .end method

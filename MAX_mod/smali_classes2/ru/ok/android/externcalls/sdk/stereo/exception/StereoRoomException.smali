@@ -38,7 +38,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;ILwc4;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;ILld4;)V
     .registers 5
 
     and-int/lit8 p3, p3, 0x2

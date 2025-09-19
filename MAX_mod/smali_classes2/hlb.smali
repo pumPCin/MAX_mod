@@ -1,102 +1,82 @@
 .class public final Lhlb;
-.super Lmlb;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:J
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lhlb;->Y:Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
 
-    iput-wide p1, p0, Lhlb;->a:J
+    const/4 p2, 0x2
+
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lhlb;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lhlb;
-
-    iget-wide v3, p0, Lhlb;->a:J
-
-    iget-wide p0, p1, Lhlb;->a:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final getItemId()J
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    const/16 p0, 0x1000
+    check-cast p1, Ljava/util/List;
 
-    int-to-long v0, p0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return-wide v0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    iget-wide v0, p0, Lhlb;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final m()I
-    .registers 1
-
-    const/16 p0, 0x1000
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 5
-
-    const-string v0, "DebugProfileInfo(id="
-
-    const-string v1, ")"
-
-    iget-wide v2, p0, Lhlb;->a:J
-
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lhlb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Lhlb;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lhlb;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Lhlb;
+
+    iget-object p0, p0, Lhlb;->Y:Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
+
+    invoke-direct {v0, p2, p0}, Lhlb;-><init>(Lkotlin/coroutines/Continuation;Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;)V
+
+    iput-object p1, v0, Lhlb;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lhlb;->X:Ljava/lang/Object;
+
+    check-cast p1, Ljava/util/List;
+
+    iget-object p0, p0, Lhlb;->Y:Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
+
+    iget-object p0, p0, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->Y:Lwqg;
+
+    invoke-virtual {p0, p1}, Lls7;->E(Ljava/util/List;)V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

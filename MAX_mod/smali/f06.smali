@@ -1,215 +1,238 @@
 .class public final Lf06;
-.super Lo44;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final v0:Lpz9;
-
-
 # instance fields
-.field public final r0:Lqx3;
+.field public final a:Ljava/lang/String;
 
-.field public final s0:Landroidx/recyclerview/widget/b;
+.field public final b:Ljava/lang/CharSequence;
 
-.field public final t0:Le06;
+.field public final c:Ljava/lang/CharSequence;
 
-.field public u0:Ljava/util/List;
+.field public final d:Ln14;
+
+.field public final e:Ljava/util/Set;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;Ln14;Ljava/util/Set;)V
+    .registers 6
 
-    new-instance v0, Lpz9;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0xb
+    iput-object p1, p0, Lf06;->a:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Lpz9;-><init>(I)V
+    iput-object p2, p0, Lf06;->b:Ljava/lang/CharSequence;
 
-    sput-object v0, Lf06;->v0:Lpz9;
+    iput-object p3, p0, Lf06;->c:Ljava/lang/CharSequence;
 
-    return-void
-.end method
+    iput-object p4, p0, Lf06;->d:Ln14;
 
-.method public constructor <init>(Lqx3;Landroidx/recyclerview/widget/b;Le06;)V
-    .registers 4
-
-    invoke-direct {p0, p1}, Lo44;-><init>(Lqx3;)V
-
-    iput-object p1, p0, Lf06;->r0:Lqx3;
-
-    iput-object p2, p0, Lf06;->s0:Landroidx/recyclerview/widget/b;
-
-    iput-object p3, p0, Lf06;->t0:Le06;
-
-    sget-object p1, Lv25;->a:Lv25;
-
-    iput-object p1, p0, Lf06;->u0:Ljava/util/List;
+    iput-object p5, p0, Lf06;->e:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final E(Llrc;I)V
-    .registers 12
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    invoke-virtual {p1}, Llrc;->n()Z
+    const/4 v0, 0x1
 
-    move-result v0
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
-
-    return-void
+    return v0
 
     :cond_0
-    iget-object v0, p0, Lf06;->u0:Ljava/util/List;
+    instance-of v1, p1, Lf06;
 
-    invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    move-result-object p2
+    if-nez v1, :cond_1
 
-    check-cast p2, Ley5;
+    return v2
 
-    iget-object p2, p2, Ley5;->a:Ljava/lang/String;
+    :cond_1
+    check-cast p1, Lf06;
 
-    iget-object v0, p0, Lf06;->t0:Le06;
+    iget-object v1, p0, Lf06;->a:Ljava/lang/String;
 
-    iget-object v1, p0, Lf06;->s0:Landroidx/recyclerview/widget/b;
+    iget-object v3, p1, Lf06;->a:Ljava/lang/String;
 
-    invoke-interface {v0, p2, v1}, Le06;->g(Ljava/lang/String;Landroidx/recyclerview/widget/b;)Lone/me/sdk/arch/Widget;
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object v3
+    move-result v1
 
-    iget-object p0, p0, Lf06;->r0:Lqx3;
+    if-nez v1, :cond_2
 
-    invoke-virtual {v3, p0}, Lqx3;->setTargetController(Lqx3;)V
+    return v2
 
-    sget-object p0, Lpx3;->b:Lpx3;
+    :cond_2
+    iget-object v1, p0, Lf06;->b:Ljava/lang/CharSequence;
 
-    invoke-virtual {v3, p0}, Lqx3;->setRetainViewMode(Lpx3;)V
+    iget-object v3, p1, Lf06;->b:Ljava/lang/CharSequence;
 
-    new-instance v2, Lorc;
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const/4 v7, 0x0
+    move-result v1
 
-    const/4 v8, -0x1
+    if-nez v1, :cond_3
 
-    const/4 v4, 0x0
+    return v2
 
-    const/4 v5, 0x0
+    :cond_3
+    iget-object v1, p0, Lf06;->c:Ljava/lang/CharSequence;
 
-    const/4 v6, 0x0
+    iget-object v3, p1, Lf06;->c:Ljava/lang/CharSequence;
 
-    invoke-direct/range {v2 .. v8}, Lorc;-><init>(Lqx3;Ljava/lang/String;Lvx3;Lvx3;ZI)V
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p1, v2}, Llrc;->S(Lorc;)V
+    move-result v1
 
-    return-void
-.end method
+    if-nez v1, :cond_4
 
-.method public final M(Ljava/util/List;)V
-    .registers 5
+    return v2
 
-    iget-object v0, p0, Lf06;->u0:Ljava/util/List;
+    :cond_4
+    iget-object v1, p0, Lf06;->d:Ln14;
 
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+    iget-object v3, p1, Lf06;->d:Ln14;
 
-    move-result v0
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v0, :cond_0
+    move-result v1
 
-    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+    if-nez v1, :cond_5
 
-    move-result v0
+    return v2
 
-    if-nez v0, :cond_0
+    :cond_5
+    iget-object p0, p0, Lf06;->e:Ljava/util/Set;
 
-    iput-object p1, p0, Lf06;->u0:Ljava/util/List;
+    iget-object p1, p1, Lf06;->e:Ljava/util/Set;
 
-    const/4 v0, 0x0
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    invoke-virtual {p0, v0, p1}, Ltgc;->p(II)V
-
-    return-void
-
-    :cond_0
-    new-instance v0, Lr81;
-
-    iget-object v1, p0, Lf06;->u0:Ljava/util/List;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v0, v2, v1, p1}, Lr81;-><init>(ILjava/util/List;Ljava/util/List;)V
-
-    invoke-static {v0}, Lms8;->c(Lj67;)Lmn4;
-
-    move-result-object v0
-
-    iput-object p1, p0, Lf06;->u0:Ljava/util/List;
-
-    new-instance p1, Lgng;
-
-    const/4 v1, 0x1
-
-    invoke-direct {p1, v1, p0}, Lgng;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v0, p1}, Lmn4;->a(Lyp7;)V
-
-    return-void
-.end method
-
-.method public final j()I
-    .registers 1
-
-    iget-object p0, p0, Lf06;->u0:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
-    return p0
+    if-nez p0, :cond_6
+
+    return v2
+
+    :cond_6
+    return v0
 .end method
 
-.method public final k(I)J
-    .registers 2
+.method public final hashCode()I
+    .registers 4
 
-    iget-object p0, p0, Lf06;->u0:Ljava/util/List;
+    iget-object v0, p0, Lf06;->a:Ljava/lang/String;
 
-    invoke-static {p1, p0}, Lj73;->n0(ILjava/util/List;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    move-result-object p0
+    move-result v0
 
-    check-cast p0, Ley5;
+    const/16 v1, 0x1f
 
-    if-eqz p0, :cond_0
+    mul-int/2addr v0, v1
 
-    iget-object p0, p0, Ley5;->a:Ljava/lang/String;
+    iget-object v2, p0, Lf06;->b:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v0, v1}, Lee5;->e(Ljava/lang/CharSequence;II)I
+
+    move-result v0
+
+    iget-object v2, p0, Lf06;->c:Ljava/lang/CharSequence;
+
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x0
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
 
     :goto_0
-    if-eqz p0, :cond_1
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lf06;->d:Ln14;
+
+    iget v2, v2, Ln14;->a:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-object p0, p0, Lf06;->e:Ljava/util/Set;
 
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
-    goto :goto_1
+    add-int/2addr p0, v0
 
-    :cond_1
-    const/4 p0, 0x0
+    return p0
+.end method
 
-    :goto_1
-    int-to-long p0, p0
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    return-wide p0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "FolderModel(id="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lf06;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", name="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lf06;->b:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", emoji="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lf06;->c:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", counter="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lf06;->d:Ln14;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", options="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lf06;->e:Ljava/util/Set;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

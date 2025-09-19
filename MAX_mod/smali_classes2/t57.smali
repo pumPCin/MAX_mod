@@ -1,94 +1,152 @@
 .class public final Lt57;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lnob;
 
 
 # instance fields
-.field public final synthetic X:Lxh7;
-
-.field public final synthetic Y:Lbca;
+.field public final a:Ln2f;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lbca;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Ln2f;)V
+    .registers 2
 
-    iput-object p1, p0, Lt57;->X:Lxh7;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lt57;->Y:Lbca;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lt57;->a:Ln2f;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    check-cast p1, Lr04;
+    if-ne p0, p1, :cond_0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    goto :goto_1
 
-    invoke-virtual {p0, p1, p2}, Lt57;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    :cond_0
+    instance-of v0, p1, Lt57;
 
-    move-result-object p0
+    if-nez v0, :cond_1
 
-    check-cast p0, Lt57;
+    goto :goto_0
 
-    sget-object p1, Lncf;->a:Lncf;
+    :cond_1
+    check-cast p1, Lt57;
 
-    invoke-virtual {p0, p1}, Lt57;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p0, p0, Lt57;->a:Ln2f;
+
+    iget-object p1, p1, Lt57;->a:Ln2f;
+
+    invoke-virtual {p0, p1}, Ln2f;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final getItemId()J
+    .registers 3
+
+    const/16 p0, 0x40
+
+    int-to-long v0, p0
+
+    return-wide v0
+.end method
+
+.method public final h(Lts7;)Z
+    .registers 4
+
+    const/16 p0, 0x40
+
+    int-to-long v0, p0
+
+    invoke-interface {p1}, Lts7;->getItemId()J
+
+    move-result-wide p0
+
+    cmp-long p0, v0, p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lt57;->a:Ln2f;
+
+    invoke-virtual {p0}, Ln2f;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final m()I
+    .registers 1
+
+    const/16 p0, 0x40
+
+    return p0
+.end method
+
+.method public final q(Lts7;)Z
+    .registers 2
+
+    invoke-virtual {p0, p1}, Lt57;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "InactiveTimeDeleteProfileItem(text="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lt57;->a:Ln2f;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p1, Lt57;
-
-    iget-object v0, p0, Lt57;->X:Lxh7;
-
-    iget-object p0, p0, Lt57;->Y:Lbca;
-
-    invoke-direct {p1, v0, p0, p2}, Lt57;-><init>(Lxh7;Lbca;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lt57;->X:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lixa;
-
-    iget-object p0, p0, Lt57;->Y:Lbca;
-
-    iget-object p0, p0, Lbca;->a:Ljava/lang/String;
-
-    invoke-static {p1, p0}, Lfud;->m(Lixa;Ljava/lang/String;)I
-
-    move-result p0
-
-    new-instance p1, Ljava/lang/Integer;
-
-    invoke-direct {p1, p0}, Ljava/lang/Integer;-><init>(I)V
-
-    return-object p1
 .end method

@@ -1,89 +1,80 @@
-.class public final synthetic Lmv5;
-.super Ljava/lang/Object;
+.class public final Lmv5;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Luv1;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:Lnv5;
+.field public final synthetic X:Lcu7;
 
-.field public final synthetic b:J
-
-.field public final synthetic c:Lks1;
+.field public final synthetic Y:Lrw1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnv5;JLks1;)V
-    .registers 5
+.method public constructor <init>(Lcu7;Lrw1;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lmv5;->X:Lcu7;
 
-    iput-object p1, p0, Lmv5;->a:Lnv5;
+    iput-object p2, p0, Lmv5;->Y:Lrw1;
 
-    iput-wide p2, p0, Lmv5;->b:J
+    const/4 p1, 0x2
 
-    iput-object p4, p0, Lmv5;->c:Lks1;
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/hardware/camera2/TotalCaptureResult;)Z
-    .registers 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+    check-cast p1, Ly04;
 
-    invoke-virtual {p1, v0}, Landroid/hardware/camera2/CaptureResult;->get(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    move-result-object v0
+    invoke-virtual {p0, p1, p2}, Lmv5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast v0, Ljava/lang/Integer;
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    check-cast p0, Lmv5;
 
-    move-result v0
+    sget-object p1, Lylf;->a:Lylf;
 
-    const/4 v1, 0x5
+    invoke-virtual {p0, p1}, Lmv5;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    return-object p1
+.end method
 
-    const/4 v3, 0x1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    if-ne v0, v1, :cond_0
+    new-instance p1, Lmv5;
 
-    move v0, v3
+    iget-object v0, p0, Lmv5;->X:Lcu7;
 
-    goto :goto_0
+    iget-object p0, p0, Lmv5;->Y:Lrw1;
 
-    :cond_0
-    move v0, v2
+    invoke-direct {p1, v0, p0, p2}, Lmv5;-><init>(Lcu7;Lrw1;Lkotlin/coroutines/Continuation;)V
 
-    :goto_0
-    iget-object v1, p0, Lmv5;->a:Lnv5;
+    return-object p1
+.end method
 
-    iget-boolean v1, v1, Lnv5;->t:Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    if-ne v0, v1, :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-wide v0, p0, Lmv5;->b:J
+    iget-object p1, p0, Lmv5;->X:Lcu7;
 
-    invoke-static {p1, v0, v1}, Lvv1;->x(Landroid/hardware/camera2/TotalCaptureResult;J)Z
+    iget-object p0, p0, Lmv5;->Y:Lrw1;
 
-    move-result p1
+    invoke-virtual {p1, p0}, Lcu7;->f(Le8a;)V
 
-    if-eqz p1, :cond_1
+    sget-object p0, Lylf;->a:Lylf;
 
-    const/4 p1, 0x0
-
-    iget-object p0, p0, Lmv5;->c:Lks1;
-
-    invoke-virtual {p0, p1}, Lks1;->b(Ljava/lang/Object;)Z
-
-    return v3
-
-    :cond_1
-    return v2
+    return-object p0
 .end method

@@ -3,37 +3,39 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lip9;
-.implements Lyp3;
-.implements Lqh6;
-.implements Lqt3;
-.implements Lgu3;
-.implements Lsw3;
-.implements Lhj3;
+.implements Lxs9;
+.implements Leq3;
+.implements Llk6;
+.implements Ltt3;
+.implements Lku3;
+.implements Lyw3;
+.implements Lnj3;
+.implements Ld9d;
 
 
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\u0008B\u0013\u0012\n\u0008\u0002\u0010\n\u001a\u0004\u0018\u00010\t\u00a2\u0006\u0004\u0008\u000b\u0010\u000cB\u0011\u0008\u0016\u0012\u0006\u0010\u000e\u001a\u00020\r\u00a2\u0006\u0004\u0008\u000b\u0010\u000f\u00a8\u0006\u0010"
+        "\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u00002\u00020\u00012\u00020\u00022\u00020\u00032\u00020\u00042\u00020\u00052\u00020\u00062\u00020\u00072\u00020\u00082\u00020\tB\u0013\u0012\n\u0008\u0002\u0010\u000b\u001a\u0004\u0018\u00010\n\u00a2\u0006\u0004\u0008\u000c\u0010\rB\u0011\u0008\u0016\u0012\u0006\u0010\u000f\u001a\u00020\u000e\u00a2\u0006\u0004\u0008\u000c\u0010\u0010\u00a8\u0006\u0011"
     }
     d2 = {
         "Lone/me/contactlist/ContactListWidget;",
         "Lone/me/sdk/arch/Widget;",
-        "Lip9;",
-        "Lyp3;",
-        "Lqh6;",
-        "Lqt3;",
-        "Lgu3;",
-        "Lsw3;",
-        "Lhj3;",
+        "Lxs9;",
+        "Leq3;",
+        "Llk6;",
+        "Ltt3;",
+        "Lku3;",
+        "Lyw3;",
+        "Lnj3;",
+        "Ld9d;",
         "Landroid/os/Bundle;",
         "args",
         "<init>",
         "(Landroid/os/Bundle;)V",
-        "Lor3;",
+        "Lur3;",
         "type",
-        "(Lor3;)V",
+        "(Lur3;)V",
         "contact-list_release"
     }
     k = 0x1
@@ -47,76 +49,76 @@
 
 
 # static fields
-.field public static final synthetic K0:[Lsf7;
+.field public static final synthetic O0:[Lxi7;
 
 
 # instance fields
-.field public final A0:Lxh7;
+.field public final A0:Lrm0;
 
-.field public final B0:Lxh7;
+.field public final B0:Lcic;
 
-.field public final C0:Ldle;
+.field public final C0:Ljava/lang/Object;
 
-.field public final D0:Lqfd;
+.field public final D0:Ljava/util/List;
 
-.field public final E0:Lur;
+.field public final E0:Lcl7;
 
-.field public final F0:Lur;
+.field public final F0:Lcl7;
 
-.field public final G0:Lur;
+.field public final G0:Lzte;
 
-.field public final H0:Lur;
+.field public final H0:Lncb;
 
-.field public final I0:Lur;
+.field public final I0:Lfr;
 
-.field public final J0:Lls7;
+.field public final J0:Lfr;
+
+.field public final K0:Lfr;
+
+.field public final L0:Lfr;
+
+.field public final M0:Lfr;
+
+.field public final N0:Lzlb;
 
 .field public final X:Ljava/util/concurrent/ExecutorService;
 
-.field public final Y:Lqgg;
+.field public final Y:Lwqg;
 
-.field public final Z:Lei0;
+.field public final Z:Lmk6;
 
-.field public final a:Lf67;
+.field public final a:Lj97;
 
-.field public final b:Lxh7;
+.field public final b:Lcl7;
 
-.field public final c:Lxh7;
+.field public final c:Lcl7;
 
-.field public final n0:Lqgg;
+.field public final o:Lcl7;
 
-.field public final o:Lxh7;
+.field public final r0:Lwqg;
 
-.field public final o0:Luy5;
+.field public final s0:Ljh0;
 
-.field public final p0:Lei0;
+.field public final t0:Ljh0;
 
-.field public final q0:Lve3;
+.field public final u0:Lye3;
 
-.field public final r0:Lxh7;
+.field public final v0:Lcl7;
 
-.field public final s0:Lin0;
+.field public final w0:Lrm0;
 
-.field public final t0:Ljava/lang/Object;
-
-.field public final u0:Ljava/lang/Object;
-
-.field public final v0:Lxh7;
-
-.field public final w0:Lin0;
-
-.field public final x0:Lxac;
+.field public final x0:Ljava/lang/Object;
 
 .field public final y0:Ljava/lang/Object;
 
-.field public final z0:Ljava/util/List;
+.field public final z0:Lcl7;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 13
 
-    new-instance v0, Lrqb;
+    new-instance v0, Lsxb;
 
     const-class v1, Lone/me/contactlist/ContactListWidget;
 
@@ -126,77 +128,77 @@
 
     const/4 v4, 0x0
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    sget-object v2, Lyhc;->a:Lzhc;
+    sget-object v2, Ljpc;->a:Lkpc;
 
     const-string v3, "snackBar"
 
     const-string v5, "getSnackBar()Lone/me/sdk/snackbar/OneMeSnackbar;"
 
-    invoke-static {v2, v1, v3, v5, v4}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
+    invoke-static {v2, v1, v3, v5, v4}, Lee5;->h(Lkpc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lsxb;
 
     move-result-object v2
 
-    new-instance v3, Lrqb;
+    new-instance v3, Lsxb;
 
     const-string v5, "recyclerView"
 
     const-string v6, "getRecyclerView()Lone/me/sdk/lists/widgets/EndlessRecyclerView2;"
 
-    invoke-direct {v3, v1, v5, v6, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v3, v1, v5, v6, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    new-instance v5, Lal9;
+    new-instance v5, Lmo9;
 
     const-string v6, "contextMenuJob"
 
     const-string v7, "getContextMenuJob()Lkotlinx/coroutines/Job;"
 
-    invoke-direct {v5, v1, v6, v7}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v5, v1, v6, v7}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v6, Lal9;
+    new-instance v6, Lmo9;
 
     const-string v7, "selectedContactIdForAction"
 
     const-string v8, "getSelectedContactIdForAction()Ljava/lang/Long;"
 
-    invoke-direct {v6, v1, v7, v8}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v6, v1, v7, v8}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v7, Lal9;
+    new-instance v7, Lmo9;
 
     const-string v8, "searchQuery"
 
     const-string v9, "getSearchQuery()Ljava/lang/CharSequence;"
 
-    invoke-direct {v7, v1, v8, v9}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v7, v1, v8, v9}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v8, Lal9;
+    new-instance v8, Lmo9;
 
     const-string v9, "isInSearch"
 
     const-string v10, "isInSearch()Z"
 
-    invoke-direct {v8, v1, v9, v10}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v8, v1, v9, v10}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v9, Lal9;
+    new-instance v9, Lmo9;
 
     const-string v10, "isNeedScrollToTop"
 
     const-string v11, "isNeedScrollToTop()Z"
 
-    invoke-direct {v9, v1, v10, v11}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v9, v1, v10, v11}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v10, Lal9;
+    new-instance v10, Lmo9;
 
     const-string v11, "isPermissionChecked"
 
     const-string v12, "isPermissionChecked()Z"
 
-    invoke-direct {v10, v1, v11, v12}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v10, v1, v11, v12}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
     const/16 v1, 0x9
 
-    new-array v1, v1, [Lsf7;
+    new-array v1, v1, [Lxi7;
 
     aput-object v0, v1, v4
 
@@ -232,7 +234,7 @@
 
     aput-object v10, v1, v0
 
-    sput-object v1, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
+    sput-object v1, Lone/me/contactlist/ContactListWidget;->O0:[Lxi7;
 
     return-void
 .end method
@@ -244,7 +246,7 @@
 
     const/4 v1, 0x1
 
-    invoke-direct {p0, v0, v1, v0}, Lone/me/contactlist/ContactListWidget;-><init>(Landroid/os/Bundle;ILwc4;)V
+    invoke-direct {p0, v0, v1, v0}, Lone/me/contactlist/ContactListWidget;-><init>(Landroid/os/Bundle;ILld4;)V
 
     return-void
 .end method
@@ -262,109 +264,109 @@
 
     const/4 v4, 0x0
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILwc4;)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILld4;)V
 
-    sget-object v5, Lf67;->d:Lf67;
+    sget-object v5, Lj97;->d:Lj97;
 
-    iput-object v5, v0, Lone/me/contactlist/ContactListWidget;->a:Lf67;
+    iput-object v5, v0, Lone/me/contactlist/ContactListWidget;->a:Lj97;
 
-    sget-object v5, Lau3;->a:Lau3;
+    sget-object v5, Ldu3;->a:Ldu3;
 
-    invoke-virtual {v5}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v6
-
-    const-class v7, Lop9;
-
-    invoke-virtual {v6, v7}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {v5}, Lscout/Component;->getAccessor()Lz4;
 
     move-result-object v6
 
-    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->b:Lxh7;
+    const-class v7, Ldt9;
 
-    invoke-virtual {v5}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v6
-
-    const-class v7, Ldv1;
-
-    invoke-virtual {v6, v7}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {v6, v7}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     move-result-object v6
 
-    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->c:Lxh7;
+    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->b:Lcl7;
 
-    invoke-virtual {v5}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v6
-
-    const-class v7, Lz97;
-
-    invoke-virtual {v6, v7}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {v5}, Lscout/Component;->getAccessor()Lz4;
 
     move-result-object v6
 
-    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->o:Lxh7;
+    const-class v7, Llv1;
 
-    invoke-virtual {v5}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v6
-
-    const-class v7, Ldda;
-
-    invoke-virtual {v6, v7}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v6, v7}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     move-result-object v6
 
-    check-cast v6, Ldda;
+    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->c:Lcl7;
 
-    invoke-virtual {v6}, Ldda;->a()Ljava/util/concurrent/ExecutorService;
+    invoke-virtual {v5}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v6
+
+    const-class v7, Lfd7;
+
+    invoke-virtual {v6, v7}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v6
+
+    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->o:Lcl7;
+
+    invoke-virtual {v5}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v6
+
+    const-class v7, Lkha;
+
+    invoke-virtual {v6, v7}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lkha;
+
+    invoke-virtual {v6}, Lkha;->a()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v6
 
     iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->X:Ljava/util/concurrent/ExecutorService;
 
-    new-instance v7, Lqgg;
+    new-instance v7, Lwqg;
 
-    invoke-direct {v7, v0, v6, v3}, Lqgg;-><init>(Ljava/lang/Object;Ljava/util/concurrent/ExecutorService;I)V
+    invoke-direct {v7, v0, v6, v3}, Lwqg;-><init>(Ljava/lang/Object;Ljava/util/concurrent/ExecutorService;I)V
 
-    iput-object v7, v0, Lone/me/contactlist/ContactListWidget;->Y:Lqgg;
+    iput-object v7, v0, Lone/me/contactlist/ContactListWidget;->Y:Lwqg;
 
-    new-instance v8, Lei0;
+    new-instance v8, Lmk6;
 
-    invoke-direct {v8, v0, v6}, Lei0;-><init>(Lqh6;Ljava/util/concurrent/ExecutorService;)V
+    invoke-direct {v8, v0, v6}, Lmk6;-><init>(Llk6;Ljava/util/concurrent/ExecutorService;)V
 
-    iput-object v8, v0, Lone/me/contactlist/ContactListWidget;->Z:Lei0;
+    iput-object v8, v0, Lone/me/contactlist/ContactListWidget;->Z:Lmk6;
 
-    new-instance v9, Lqgg;
+    new-instance v9, Lwqg;
 
-    invoke-direct {v9, v0, v6, v3}, Lqgg;-><init>(Ljava/lang/Object;Ljava/util/concurrent/ExecutorService;I)V
+    invoke-direct {v9, v0, v6, v3}, Lwqg;-><init>(Ljava/lang/Object;Ljava/util/concurrent/ExecutorService;I)V
 
-    iput-object v9, v0, Lone/me/contactlist/ContactListWidget;->n0:Lqgg;
+    iput-object v9, v0, Lone/me/contactlist/ContactListWidget;->r0:Lwqg;
 
-    new-instance v10, Luy5;
+    new-instance v10, Ljh0;
 
-    invoke-direct {v10, v0, v6}, Luy5;-><init>(Lgu3;Ljava/util/concurrent/ExecutorService;)V
+    invoke-direct {v10, v0, v6}, Ljh0;-><init>(Lku3;Ljava/util/concurrent/ExecutorService;)V
 
-    iput-object v10, v0, Lone/me/contactlist/ContactListWidget;->o0:Luy5;
+    iput-object v10, v0, Lone/me/contactlist/ContactListWidget;->s0:Ljh0;
 
-    new-instance v11, Lei0;
+    new-instance v11, Ljh0;
 
-    invoke-direct {v11, v0, v6}, Lei0;-><init>(Lqt3;Ljava/util/concurrent/ExecutorService;)V
+    invoke-direct {v11, v0, v6}, Ljh0;-><init>(Ltt3;Ljava/util/concurrent/ExecutorService;)V
 
-    iput-object v11, v0, Lone/me/contactlist/ContactListWidget;->p0:Lei0;
+    iput-object v11, v0, Lone/me/contactlist/ContactListWidget;->t0:Ljh0;
 
-    new-instance v6, Lve3;
+    new-instance v6, Lye3;
 
-    new-instance v12, Lue3;
+    new-instance v12, Lxe3;
 
     const/4 v13, 0x1
 
-    invoke-direct {v12, v2, v13}, Lue3;-><init>(ZI)V
+    invoke-direct {v12, v2, v13}, Lxe3;-><init>(ZI)V
 
     const/4 v14, 0x5
 
-    new-array v15, v14, [Ltgc;
+    new-array v15, v14, [Lcoc;
 
     aput-object v11, v15, v2
 
@@ -380,125 +382,125 @@
 
     aput-object v10, v15, v7
 
-    invoke-direct {v6, v12, v15}, Lve3;-><init>(Lue3;[Ltgc;)V
+    invoke-direct {v6, v12, v15}, Lye3;-><init>(Lxe3;[Lcoc;)V
 
-    new-instance v8, Lx25;
+    new-instance v8, Ls45;
 
-    new-instance v9, Ljr3;
+    new-instance v9, Lpr3;
 
-    invoke-direct {v9, v0, v2}, Ljr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
+    invoke-direct {v9, v0, v2}, Lpr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
 
     const/4 v2, 0x7
 
-    invoke-direct {v8, v2, v9}, Lx25;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v8, v2, v9}, Ls45;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {v6, v8}, Ltgc;->z(Lvgc;)V
+    invoke-virtual {v6, v8}, Lcoc;->z(Leoc;)V
 
-    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->q0:Lve3;
+    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->u0:Lye3;
 
-    new-instance v6, Loi2;
+    new-instance v6, Luh1;
 
-    invoke-direct {v6, v1, v3}, Loi2;-><init>(Landroid/os/Bundle;I)V
+    invoke-direct {v6, v1, v7}, Luh1;-><init>(Landroid/os/Bundle;I)V
 
-    new-instance v8, Lzh3;
+    new-instance v8, Lhi3;
 
-    invoke-direct {v8, v7, v6}, Lzh3;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v8, v7, v6}, Lhi3;-><init>(ILjava/lang/Object;)V
 
-    const-class v6, Lir3;
+    const-class v6, Lor3;
 
-    invoke-virtual {v0, v6, v8}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lh96;)Lxh7;
-
-    move-result-object v6
-
-    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->r0:Lxh7;
-
-    new-instance v6, Ljr3;
-
-    invoke-direct {v6, v0, v3}, Ljr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
-
-    invoke-virtual {v0, v6}, Lone/me/sdk/arch/Widget;->binding(Lh96;)Lin0;
+    invoke-virtual {v0, v6, v8}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lzb6;)Lcl7;
 
     move-result-object v6
 
-    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->s0:Lin0;
+    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->v0:Lcl7;
 
-    new-instance v6, Ljr3;
+    new-instance v6, Lpr3;
 
-    invoke-direct {v6, v0, v7}, Ljr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
+    invoke-direct {v6, v0, v3}, Lpr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
 
-    invoke-static {v3, v6}, Lmtg;->u(ILh96;)Lxh7;
+    invoke-virtual {v0, v6}, Lone/me/sdk/arch/Widget;->binding(Lzb6;)Lrm0;
 
     move-result-object v6
 
-    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->t0:Ljava/lang/Object;
+    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->w0:Lrm0;
 
-    new-instance v6, Loi2;
+    new-instance v6, Lpr3;
 
-    invoke-direct {v6, v1, v7}, Loi2;-><init>(Landroid/os/Bundle;I)V
+    invoke-direct {v6, v0, v7}, Lpr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
 
-    invoke-static {v3, v6}, Lmtg;->u(ILh96;)Lxh7;
+    invoke-static {v3, v6}, Lcb7;->G(ILzb6;)Lcl7;
 
-    move-result-object v1
+    move-result-object v6
 
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->u0:Ljava/lang/Object;
+    iput-object v6, v0, Lone/me/contactlist/ContactListWidget;->x0:Ljava/lang/Object;
 
-    new-instance v1, Ljr3;
+    new-instance v6, Luh1;
 
-    invoke-direct {v1, v0, v14}, Ljr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
+    invoke-direct {v6, v1, v14}, Luh1;-><init>(Landroid/os/Bundle;I)V
 
-    new-instance v6, Lzh3;
-
-    invoke-direct {v6, v14, v1}, Lzh3;-><init>(ILjava/lang/Object;)V
-
-    const-class v1, Luh0;
-
-    invoke-virtual {v0, v1, v6}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lh96;)Lxh7;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->v0:Lxh7;
-
-    new-instance v1, Ljr3;
-
-    const/4 v6, 0x6
-
-    invoke-direct {v1, v0, v6}, Ljr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
-
-    invoke-virtual {v0, v1}, Lone/me/sdk/arch/Widget;->binding(Lh96;)Lin0;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->w0:Lin0;
-
-    sget v1, Lvyb;->oneme_contactlist_rv:I
-
-    invoke-virtual {v0, v1}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lxac;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->x0:Lxac;
-
-    new-instance v1, Ljr3;
-
-    invoke-direct {v1, v0, v2}, Ljr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
-
-    invoke-static {v3, v1}, Lmtg;->u(ILh96;)Lxh7;
+    invoke-static {v3, v6}, Lcb7;->G(ILzb6;)Lcl7;
 
     move-result-object v1
 
     iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->y0:Ljava/lang/Object;
 
-    new-instance v7, Low3;
+    new-instance v1, Lpr3;
 
-    sget v8, Luaa;->q:I
+    invoke-direct {v1, v0, v14}, Lpr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
 
-    sget v1, Lvaa;->h:I
+    new-instance v6, Lhi3;
 
-    new-instance v9, Lqte;
+    invoke-direct {v6, v14, v1}, Lhi3;-><init>(ILjava/lang/Object;)V
 
-    invoke-direct {v9, v1}, Lqte;-><init>(I)V
+    const-class v1, Lzg0;
 
-    sget v1, Ljsc;->L0:I
+    invoke-virtual {v0, v1, v6}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lzb6;)Lcl7;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->z0:Lcl7;
+
+    new-instance v1, Lpr3;
+
+    const/4 v6, 0x6
+
+    invoke-direct {v1, v0, v6}, Lpr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
+
+    invoke-virtual {v0, v1}, Lone/me/sdk/arch/Widget;->binding(Lzb6;)Lrm0;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->A0:Lrm0;
+
+    sget v1, Ly5c;->oneme_contactlist_rv:I
+
+    invoke-virtual {v0, v1}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lcic;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->B0:Lcic;
+
+    new-instance v1, Lpr3;
+
+    invoke-direct {v1, v0, v2}, Lpr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
+
+    invoke-static {v3, v1}, Lcb7;->G(ILzb6;)Lcl7;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->C0:Ljava/lang/Object;
+
+    new-instance v7, Luw3;
+
+    sget v8, Lcfa;->q:I
+
+    sget v1, Ldfa;->h:I
+
+    new-instance v9, Lp2f;
+
+    invoke-direct {v9, v1}, Lp2f;-><init>(I)V
+
+    sget v1, Lq0d;->O0:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -508,19 +510,19 @@
 
     const/16 v12, 0x14
 
-    invoke-direct/range {v7 .. v12}, Low3;-><init>(ILvte;Ljava/lang/Integer;Ljava/lang/Integer;I)V
+    invoke-direct/range {v7 .. v12}, Luw3;-><init>(ILu2f;Ljava/lang/Integer;Ljava/lang/Integer;I)V
 
-    new-instance v14, Low3;
+    new-instance v14, Luw3;
 
-    sget v15, Luaa;->r:I
+    sget v15, Lcfa;->r:I
 
-    sget v1, Lwsc;->a:I
+    sget v1, Ld1d;->a:I
 
-    new-instance v2, Lqte;
+    new-instance v2, Lp2f;
 
-    invoke-direct {v2, v1}, Lqte;-><init>(I)V
+    invoke-direct {v2, v1}, Lp2f;-><init>(I)V
 
-    sget v1, Ljsc;->d2:I
+    sget v1, Lq0d;->g2:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -532,19 +534,19 @@
 
     move-object/from16 v16, v2
 
-    invoke-direct/range {v14 .. v19}, Low3;-><init>(ILvte;Ljava/lang/Integer;Ljava/lang/Integer;I)V
+    invoke-direct/range {v14 .. v19}, Luw3;-><init>(ILu2f;Ljava/lang/Integer;Ljava/lang/Integer;I)V
 
-    new-instance v15, Low3;
+    new-instance v15, Luw3;
 
-    sget v16, Lqea;->d:I
+    sget v16, Lyia;->d:I
 
-    sget v1, Lsea;->e:I
+    sget v1, Laja;->e:I
 
-    new-instance v2, Lqte;
+    new-instance v2, Lp2f;
 
-    invoke-direct {v2, v1}, Lqte;-><init>(I)V
+    invoke-direct {v2, v1}, Lp2f;-><init>(I)V
 
-    sget v1, Ljsc;->e1:I
+    sget v1, Lq0d;->h1:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -556,19 +558,19 @@
 
     move-object/from16 v17, v2
 
-    invoke-direct/range {v15 .. v20}, Low3;-><init>(ILvte;Ljava/lang/Integer;Ljava/lang/Integer;I)V
+    invoke-direct/range {v15 .. v20}, Luw3;-><init>(ILu2f;Ljava/lang/Integer;Ljava/lang/Integer;I)V
 
-    new-instance v16, Low3;
+    new-instance v16, Luw3;
 
-    sget v17, Lqea;->k:I
+    sget v17, Lyia;->e:I
 
-    sget v1, Lsea;->k:I
+    sget v1, Laja;->f:I
 
-    new-instance v2, Lqte;
+    new-instance v2, Lp2f;
 
-    invoke-direct {v2, v1}, Lqte;-><init>(I)V
+    invoke-direct {v2, v1}, Lp2f;-><init>(I)V
 
-    sget v1, Ljsc;->L1:I
+    sget v1, Lq0d;->d0:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -580,226 +582,204 @@
 
     move-object/from16 v18, v2
 
-    invoke-direct/range {v16 .. v21}, Low3;-><init>(ILvte;Ljava/lang/Integer;Ljava/lang/Integer;I)V
+    invoke-direct/range {v16 .. v21}, Luw3;-><init>(ILu2f;Ljava/lang/Integer;Ljava/lang/Integer;I)V
 
     move-object/from16 v1, v16
 
-    new-instance v16, Low3;
-
-    sget v17, Lqea;->e:I
-
-    sget v2, Lsea;->f:I
-
-    new-instance v3, Lqte;
-
-    invoke-direct {v3, v2}, Lqte;-><init>(I)V
-
-    sget v2, Ljsc;->c0:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v19
-
-    move-object/from16 v18, v3
-
-    invoke-direct/range {v16 .. v21}, Low3;-><init>(ILvte;Ljava/lang/Integer;Ljava/lang/Integer;I)V
-
-    move-object/from16 v2, v16
-
-    filled-new-array {v7, v14, v15, v1, v2}, [Low3;
+    filled-new-array {v7, v14, v15, v1}, [Luw3;
 
     move-result-object v1
 
-    invoke-static {v1}, Lk73;->O([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v1}, Lr73;->I([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->z0:Ljava/util/List;
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->D0:Ljava/util/List;
 
-    sget-object v1, Lnwa;->a:Lnwa;
+    sget-object v1, Lq2b;->a:Lq2b;
 
-    invoke-virtual {v1}, Lnwa;->b()Lxh7;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->A0:Lxh7;
-
-    invoke-virtual {v5}, Lscout/Component;->getAccessor()Ls4;
+    invoke-virtual {v1}, Lq2b;->b()Lcl7;
 
     move-result-object v1
 
-    const-class v2, Lc53;
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->E0:Lcl7;
 
-    invoke-virtual {v1, v2}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    move-result-object v1
-
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->B0:Lxh7;
-
-    invoke-virtual {v5}, Lscout/Component;->getAccessor()Ls4;
+    invoke-virtual {v5}, Lscout/Component;->getAccessor()Lz4;
 
     move-result-object v1
 
-    const-class v2, Lqbd;
+    const-class v2, Lf53;
 
-    invoke-virtual {v1, v2}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    invoke-virtual {v5}, Lscout/Component;->getAccessor()Ls4;
+    invoke-virtual {v1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     move-result-object v1
 
-    const-class v2, Lkxa;
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->F0:Lcl7;
 
-    invoke-virtual {v1, v2}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {v5}, Lscout/Component;->getAccessor()Lz4;
 
-    new-instance v1, Lnb3;
+    move-result-object v1
+
+    const-class v2, Lxjd;
+
+    invoke-virtual {v1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    invoke-virtual {v5}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v1
+
+    const-class v2, Lc4b;
+
+    invoke-virtual {v1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    new-instance v1, Lxb3;
 
     const/16 v2, 0x14
 
-    invoke-direct {v1, v2}, Lnb3;-><init>(I)V
+    invoke-direct {v1, v2}, Lxb3;-><init>(I)V
 
-    new-instance v2, Ldle;
+    new-instance v2, Lzte;
 
-    invoke-direct {v2, v1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {v2, v1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object v2, v0, Lone/me/contactlist/ContactListWidget;->C0:Ldle;
+    iput-object v2, v0, Lone/me/contactlist/ContactListWidget;->G0:Lzte;
 
-    invoke-static {}, Lb38;->C()Lqfd;
+    invoke-static {}, Lmq0;->L()Lncb;
 
     move-result-object v1
 
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->D0:Lqfd;
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->H0:Lncb;
 
-    new-instance v1, Lur;
+    new-instance v1, Lfr;
 
     const-class v2, Ljava/lang/Long;
 
     const-string v3, "selected.contactId.Action"
 
-    invoke-direct {v1, v2, v4, v3}, Lur;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v4, v3}, Lfr;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->E0:Lur;
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->I0:Lfr;
 
-    new-instance v1, Lur;
+    new-instance v1, Lfr;
 
     const-class v2, Ljava/lang/CharSequence;
 
     const-string v3, "contact_list_widget_search_query"
 
-    invoke-direct {v1, v2, v4, v3}, Lur;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v4, v3}, Lfr;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->F0:Lur;
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->J0:Lfr;
 
     sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    new-instance v2, Lur;
+    new-instance v2, Lfr;
 
     const-class v3, Ljava/lang/Boolean;
 
     const-string v5, "contact_list_widget_is_in_search"
 
-    invoke-direct {v2, v3, v1, v5}, Lur;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v1, v5}, Lfr;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object v2, v0, Lone/me/contactlist/ContactListWidget;->G0:Lur;
+    iput-object v2, v0, Lone/me/contactlist/ContactListWidget;->K0:Lfr;
 
-    new-instance v2, Lur;
+    new-instance v2, Lfr;
 
     const-string v5, "contact_list_widget_is_need_scroll_to_top"
 
-    invoke-direct {v2, v3, v1, v5}, Lur;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v1, v5}, Lfr;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object v2, v0, Lone/me/contactlist/ContactListWidget;->H0:Lur;
+    iput-object v2, v0, Lone/me/contactlist/ContactListWidget;->L0:Lfr;
 
-    new-instance v2, Lur;
+    new-instance v2, Lfr;
 
     const-string v5, "contact_list_widget_permission_check"
 
-    invoke-direct {v2, v3, v1, v5}, Lur;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v1, v5}, Lfr;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object v2, v0, Lone/me/contactlist/ContactListWidget;->I0:Lur;
+    iput-object v2, v0, Lone/me/contactlist/ContactListWidget;->M0:Lfr;
 
-    new-instance v1, Lls7;
+    new-instance v1, Lzlb;
 
-    new-instance v2, Ljr3;
+    new-instance v2, Lpr3;
 
     const/16 v3, 0x8
 
-    invoke-direct {v2, v0, v3}, Ljr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
+    invoke-direct {v2, v0, v3}, Lpr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
 
-    invoke-direct {v1, v2, v4, v6}, Lls7;-><init>(Lh96;Lh96;I)V
+    invoke-direct {v1, v2, v4, v6}, Lzlb;-><init>(Lzb6;Lzb6;I)V
 
-    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->J0:Lls7;
+    iput-object v1, v0, Lone/me/contactlist/ContactListWidget;->N0:Lzlb;
 
-    invoke-virtual {v0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-virtual {v0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
     move-result-object v1
 
-    iget-object v1, v1, Lir3;->z0:Lx65;
+    iget-object v1, v1, Lor3;->E0:Lv85;
 
-    iget-object v2, v0, Lqx3;->lifecycleOwner:Lwk7;
+    iget-object v2, v0, Lxx3;->lifecycleOwner:Lzn7;
 
-    invoke-interface {v2}, Lwk7;->L()Lyk7;
+    invoke-interface {v2}, Lzn7;->L()Lbo7;
 
     move-result-object v2
 
-    sget-object v3, Lzj7;->o:Lzj7;
+    sget-object v3, Lcn7;->o:Lcn7;
 
-    invoke-static {v1, v2, v3}, Lcjg;->j(Lfq5;Lyk7;Lzj7;)Ljs1;
-
-    move-result-object v1
-
-    new-instance v2, Lmr3;
-
-    invoke-direct {v2, v0, v4}, Lmr3;-><init>(Lone/me/contactlist/ContactListWidget;Lkotlin/coroutines/Continuation;)V
-
-    new-instance v5, Lks5;
-
-    invoke-direct {v5, v1, v2, v13}, Lks5;-><init>(Lfq5;Lx96;I)V
-
-    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getLifecycleScope()Ljk7;
+    invoke-static {v1, v2, v3}, Lya6;->n(Lis5;Lbo7;Lcn7;)Lps1;
 
     move-result-object v1
 
-    invoke-static {v5, v1}, Lfog;->L(Lfq5;Lr04;)Lq1e;
+    new-instance v2, Lsr3;
 
-    invoke-virtual {v0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-direct {v2, v0, v4}, Lsr3;-><init>(Lone/me/contactlist/ContactListWidget;Lkotlin/coroutines/Continuation;)V
+
+    new-instance v5, Lnu5;
+
+    invoke-direct {v5, v1, v2, v13}, Lnu5;-><init>(Lis5;Lpc6;I)V
+
+    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getLifecycleScope()Lmn7;
 
     move-result-object v1
 
-    iget-object v1, v1, Lir3;->A0:Lx65;
+    invoke-static {v5, v1}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
-    iget-object v2, v0, Lqx3;->lifecycleOwner:Lwk7;
+    invoke-virtual {v0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
-    invoke-interface {v2}, Lwk7;->L()Lyk7;
+    move-result-object v1
+
+    iget-object v1, v1, Lor3;->F0:Lv85;
+
+    iget-object v2, v0, Lxx3;->lifecycleOwner:Lzn7;
+
+    invoke-interface {v2}, Lzn7;->L()Lbo7;
 
     move-result-object v2
 
-    invoke-static {v1, v2, v3}, Lcjg;->j(Lfq5;Lyk7;Lzj7;)Ljs1;
+    invoke-static {v1, v2, v3}, Lya6;->n(Lis5;Lbo7;Lcn7;)Lps1;
 
     move-result-object v1
 
-    new-instance v2, Luw2;
+    new-instance v2, Lww2;
 
-    invoke-direct {v2, v1, v13}, Luw2;-><init>(Ljs1;I)V
+    invoke-direct {v2, v1, v13}, Lww2;-><init>(Lps1;I)V
 
-    new-instance v1, Lnr3;
+    new-instance v1, Ltr3;
 
-    invoke-direct {v1, v0, v4}, Lnr3;-><init>(Lone/me/contactlist/ContactListWidget;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v1, v0, v4}, Ltr3;-><init>(Lone/me/contactlist/ContactListWidget;Lkotlin/coroutines/Continuation;)V
 
-    new-instance v3, Lks5;
+    new-instance v3, Lnu5;
 
-    invoke-direct {v3, v2, v1, v13}, Lks5;-><init>(Lfq5;Lx96;I)V
+    invoke-direct {v3, v2, v1, v13}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getLifecycleScope()Ljk7;
+    invoke-virtual {v0}, Lone/me/sdk/arch/Widget;->getLifecycleScope()Lmn7;
 
     move-result-object v0
 
-    invoke-static {v3, v0}, Lfog;->L(Lfq5;Lr04;)Lq1e;
+    invoke-static {v3, v0}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Landroid/os/Bundle;ILwc4;)V
+.method public synthetic constructor <init>(Landroid/os/Bundle;ILld4;)V
     .registers 4
 
     and-int/lit8 p2, p2, 0x1
@@ -814,24 +794,24 @@
     return-void
 .end method
 
-.method public constructor <init>(Lor3;)V
+.method public constructor <init>(Lur3;)V
     .registers 4
 
     invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p1
 
-    new-instance v0, Lura;
+    new-instance v0, Lpxa;
 
     const-string v1, "contact_screen_open_mode"
 
-    invoke-direct {v0, v1, p1}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, v1, p1}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    filled-new-array {v0}, [Lura;
+    filled-new-array {v0}, [Lpxa;
 
     move-result-object p1
 
-    invoke-static {p1}, La94;->c([Lura;)Landroid/os/Bundle;
+    invoke-static {p1}, Lw7;->c([Lpxa;)Landroid/os/Bundle;
 
     move-result-object p1
 
@@ -842,16 +822,22 @@
 
 
 # virtual methods
-.method public final A0()Lir3;
-    .registers 1
+.method public final A0()Ldsa;
+    .registers 3
 
-    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->r0:Lxh7;
+    sget-object v0, Lone/me/contactlist/ContactListWidget;->O0:[Lxi7;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    const/4 v1, 0x0
+
+    aget-object v0, v0, v1
+
+    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->w0:Lrm0;
+
+    invoke-virtual {p0}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lir3;
+    check-cast p0, Ldsa;
 
     return-object p0
 .end method
@@ -859,31 +845,84 @@
 .method public final B(J)V
     .registers 4
 
-    invoke-static {p0}, Lcjg;->o(Lqx3;)V
+    invoke-static {p0}, Lqe5;->t(Lxx3;)V
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
     move-result-object p0
 
-    sget v0, Luaa;->i:I
+    sget v0, Lcfa;->i:I
 
-    invoke-virtual {p0, v0, p1, p2}, Lir3;->q(IJ)V
+    invoke-virtual {p0, v0, p1, p2}, Lor3;->q(IJ)V
 
     return-void
 .end method
 
-.method public final B0()Z
+.method public final B0()Lor3;
+    .registers 1
+
+    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->v0:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lor3;
+
+    return-object p0
+.end method
+
+.method public final C(I)V
+    .registers 4
+
+    invoke-static {p1}, Lmw1;->t(I)I
+
+    move-result p1
+
+    const/4 v0, 0x5
+
+    if-eq p1, v0, :cond_0
+
+    const/4 v0, 0x6
+
+    if-eq p1, v0, :cond_0
+
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->D0()V
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Lp2b;
+
+    move-result-object p1
+
+    new-instance v0, Litg;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, v1}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
+
+    sget-object p0, Lp2b;->h:[Ljava/lang/String;
+
+    const/16 v1, 0xa0
+
+    invoke-virtual {p1, v0, p0, v1}, Lp2b;->f(Litg;[Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public final C0()Z
     .registers 3
 
-    sget-object v0, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
+    sget-object v0, Lone/me/contactlist/ContactListWidget;->O0:[Lxi7;
 
     const/4 v1, 0x6
 
     aget-object v0, v0, v1
 
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->G0:Lur;
+    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->K0:Lfr;
 
-    invoke-virtual {v0, p0}, Lur;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Lfr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -896,200 +935,24 @@
     return p0
 .end method
 
-.method public final C(I)V
+.method public final D0()V
     .registers 4
 
-    invoke-static {p1}, Lew1;->t(I)I
-
-    move-result p1
-
-    const/4 v0, 0x5
-
-    if-eq p1, v0, :cond_0
-
-    const/4 v0, 0x6
-
-    if-eq p1, v0, :cond_0
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->C0()V
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->x0()Lmwa;
-
-    move-result-object p1
-
-    new-instance v0, Lbjg;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p0, v1}, Lbjg;-><init>(Lone/me/sdk/arch/Widget;I)V
-
-    sget-object p0, Lmwa;->h:[Ljava/lang/String;
-
-    const/16 v1, 0xa0
-
-    invoke-virtual {p1, v0, p0, v1}, Lmwa;->f(Lbjg;[Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public final C0()V
-    .registers 4
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->x0()Lmwa;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Lp2b;
 
     move-result-object v0
 
-    new-instance v1, Lbjg;
+    new-instance v1, Litg;
 
     const/4 v2, 0x1
 
-    invoke-direct {v1, p0, v2}, Lbjg;-><init>(Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {v1, p0, v2}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
 
-    sget-object p0, Lmwa;->e:[Ljava/lang/String;
+    sget-object p0, Lp2b;->e:[Ljava/lang/String;
 
     const/16 v2, 0x9c
 
-    invoke-virtual {v0, v1, p0, v2}, Lmwa;->f(Lbjg;[Ljava/lang/String;I)V
-
-    return-void
-.end method
-
-.method public final D0()V
-    .registers 6
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lir3;->y0:Ldv3;
-
-    iget-object v0, v0, Ldv3;->i:Ldbc;
-
-    iget-object v0, v0, Ldbc;->a:Lg4e;
-
-    invoke-interface {v0}, Lg4e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lwp3;
-
-    invoke-virtual {v0}, Lwp3;->b()Z
-
-    move-result v0
-
-    iget-object v1, p0, Lone/me/contactlist/ContactListWidget;->o0:Luy5;
-
-    iget-object v2, p0, Lone/me/contactlist/ContactListWidget;->p0:Lei0;
-
-    const/4 v3, 0x0
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->x0()Lmwa;
-
-    move-result-object p0
-
-    sget-object v0, Lmwa;->f:[Ljava/lang/String;
-
-    invoke-virtual {p0, v0}, Lmwa;->b([Ljava/lang/String;)Z
-
-    move-result p0
-
-    new-instance v0, Liu3;
-
-    sget v4, Ljsc;->a:I
-
-    sget v4, Lvaa;->a:I
-
-    if-eqz p0, :cond_0
-
-    sget v4, Lvaa;->p:I
-
-    goto :goto_0
-
-    :cond_0
-    sget v4, Lvaa;->o:I
-
-    :goto_0
-    if-eqz p0, :cond_1
-
-    move-object p0, v3
-
-    goto :goto_1
-
-    :cond_1
-    sget p0, Lvaa;->n:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    :goto_1
-    invoke-direct {v0, v4, p0}, Liu3;-><init>(ILjava/lang/Integer;)V
-
-    invoke-virtual {v2, v3}, Lhp7;->E(Ljava/util/List;)V
-
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Lhp7;->E(Ljava/util/List;)V
-
-    return-void
-
-    :cond_2
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_4
-
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    sget-object p0, Lv25;->a:Lv25;
-
-    goto :goto_3
-
-    :cond_4
-    :goto_2
-    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->v0:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Luh0;
-
-    iget-object p0, p0, Luh0;->n0:Ldbc;
-
-    iget-object p0, p0, Ldbc;->a:Lg4e;
-
-    invoke-interface {p0}, Lg4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/util/List;
-
-    :goto_3
-    invoke-virtual {v2, p0}, Lhp7;->E(Ljava/util/List;)V
-
-    invoke-virtual {v1, v3}, Lhp7;->E(Ljava/util/List;)V
+    invoke-virtual {v0, v1, p0, v2}, Lp2b;->f(Litg;[Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -1097,15 +960,15 @@
 .method public final E(ILandroid/os/Bundle;)V
     .registers 7
 
-    sget-object p2, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
+    sget-object p2, Lone/me/contactlist/ContactListWidget;->O0:[Lxi7;
 
     const/4 v0, 0x4
 
     aget-object v1, p2, v0
 
-    iget-object v1, p0, Lone/me/contactlist/ContactListWidget;->E0:Lur;
+    iget-object v1, p0, Lone/me/contactlist/ContactListWidget;->I0:Lfr;
 
-    invoke-virtual {v1, p0}, Lur;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+    invoke-virtual {v1, p0}, Lfr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1127,101 +990,238 @@
 
     const/4 p2, 0x0
 
-    invoke-virtual {v1, p0, p2}, Lur;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
+    invoke-virtual {v1, p0, p2}, Lfr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
     move-result-object p0
 
-    invoke-virtual {p0, p1, v2, v3}, Lir3;->q(IJ)V
+    invoke-virtual {p0, p1, v2, v3}, Lor3;->q(IJ)V
 
     return-void
 .end method
 
-.method public final P(Lrh6;)V
-    .registers 5
-
-    invoke-static {p0}, Lcjg;->o(Lqx3;)V
-
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
-
-    move-result-object v0
-
-    new-instance v1, Lrr3;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p0, p1, v2}, Lrr3;-><init>(Lone/me/contactlist/ContactListWidget;Lrh6;Lkotlin/coroutines/Continuation;)V
-
-    const/4 p0, 0x3
-
-    invoke-static {v0, v2, v2, v1, p0}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    return-void
-.end method
-
-.method public final V(Lrh6;Z)V
+.method public final E0()V
     .registers 6
 
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->c:Lxh7;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
     move-result-object v0
 
-    check-cast v0, Ldv1;
+    iget-object v0, v0, Lor3;->D0:Lhv3;
 
-    sget-object v1, Lbv1;->Y:Lbv1;
+    iget-object v0, v0, Lhv3;->i:Liic;
 
-    invoke-virtual {v0, v1, p2}, Ldv1;->e(Lcv1;Z)V
+    iget-object v0, v0, Liic;->a:Lrce;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
+    invoke-interface {v0}, Lrce;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Lqr3;
+    check-cast v0, Lcq3;
 
-    const/4 v2, 0x0
+    invoke-virtual {v0}, Lcq3;->b()Z
 
-    invoke-direct {v1, p0, p1, p2, v2}, Lqr3;-><init>(Lone/me/contactlist/ContactListWidget;Lrh6;ZLkotlin/coroutines/Continuation;)V
+    move-result v0
 
-    const/4 p0, 0x3
+    iget-object v1, p0, Lone/me/contactlist/ContactListWidget;->s0:Ljh0;
 
-    invoke-static {v0, v2, v2, v1, p0}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    iget-object v2, p0, Lone/me/contactlist/ContactListWidget;->t0:Ljh0;
+
+    const/4 v3, 0x0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->C0()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Lp2b;
+
+    move-result-object p0
+
+    sget-object v0, Lp2b;->f:[Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lp2b;->b([Ljava/lang/String;)Z
+
+    move-result p0
+
+    new-instance v0, Lmu3;
+
+    sget v4, Lq0d;->a:I
+
+    sget v4, Ldfa;->a:I
+
+    if-eqz p0, :cond_0
+
+    sget v4, Ldfa;->o:I
+
+    goto :goto_0
+
+    :cond_0
+    sget v4, Ldfa;->n:I
+
+    :goto_0
+    if-eqz p0, :cond_1
+
+    move-object p0, v3
+
+    goto :goto_1
+
+    :cond_1
+    sget p0, Ldfa;->m:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    :goto_1
+    invoke-direct {v0, v4, p0}, Lmu3;-><init>(ILjava/lang/Integer;)V
+
+    invoke-virtual {v2, v3}, Lls7;->E(Ljava/util/List;)V
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Lls7;->E(Ljava/util/List;)V
+
+    return-void
+
+    :cond_2
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->z0()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_4
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    sget-object p0, Lp45;->a:Lp45;
+
+    goto :goto_3
+
+    :cond_4
+    :goto_2
+    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->z0:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lzg0;
+
+    iget-object p0, p0, Lzg0;->r0:Liic;
+
+    iget-object p0, p0, Liic;->a:Lrce;
+
+    invoke-interface {p0}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/List;
+
+    :goto_3
+    invoke-virtual {v2, p0}, Lls7;->E(Ljava/util/List;)V
+
+    invoke-virtual {v1, v3}, Lls7;->E(Ljava/util/List;)V
 
     return-void
 .end method
 
-.method public final W()V
+.method public final P(Lnk6;)V
+    .registers 5
+
+    invoke-static {p0}, Lqe5;->t(Lxx3;)V
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
+
+    move-result-object v0
+
+    new-instance v1, Lxr3;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, p1, v2}, Lxr3;-><init>(Lone/me/contactlist/ContactListWidget;Lnk6;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p0, 0x3
+
+    invoke-static {v0, v2, v2, v1, p0}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    return-void
+.end method
+
+.method public final U(Lnk6;Z)V
+    .registers 6
+
+    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->c:Lcl7;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Llv1;
+
+    sget-object v1, Ljv1;->Y:Ljv1;
+
+    invoke-virtual {v0, v1, p2}, Llv1;->e(Lkv1;Z)V
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
+
+    move-result-object v0
+
+    new-instance v1, Lwr3;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, p1, p2, v2}, Lwr3;-><init>(Lone/me/contactlist/ContactListWidget;Lnk6;ZLkotlin/coroutines/Continuation;)V
+
+    const/4 p0, 0x3
+
+    invoke-static {v0, v2, v2, v1, p0}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    return-void
+.end method
+
+.method public final V()V
     .registers 3
 
-    sget-object v0, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
+    sget-object v0, Lone/me/contactlist/ContactListWidget;->O0:[Lxi7;
 
     const/4 v1, 0x1
 
     aget-object v0, v0, v1
 
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->w0:Lin0;
+    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->A0:Lrm0;
 
-    invoke-virtual {v0}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lbka;
+    check-cast v0, Lqoa;
 
     invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
-    sget v1, Lvaa;->r:I
+    sget v1, Ldfa;->q:I
 
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {v0, p0}, Lbka;->h(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p0}, Lqoa;->h(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0}, Lbka;->i()Laka;
+    invoke-virtual {v0}, Lqoa;->i()Lpoa;
 
     return-void
 .end method
@@ -1229,29 +1229,29 @@
 .method public final Z()V
     .registers 1
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->C0()V
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->D0()V
 
     return-void
 .end method
 
-.method public final e(J)V
+.method public final d(J)V
     .registers 8
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
     move-result-object v0
 
-    iget-object v0, v0, Lir3;->w0:Ldbc;
+    iget-object v0, v0, Lor3;->B0:Liic;
 
-    iget-object v0, v0, Ldbc;->a:Lg4e;
+    iget-object v0, v0, Liic;->a:Lrce;
 
-    invoke-interface {v0}, Lg4e;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Lrce;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lwp3;
+    check-cast v0, Lcq3;
 
-    iget-object v0, v0, Lwp3;->c:Ljava/util/List;
+    iget-object v0, v0, Lcq3;->c:Ljava/util/List;
 
     const/4 v1, 0x0
 
@@ -1274,9 +1274,9 @@
 
     move-object v3, v2
 
-    check-cast v3, Lgq3;
+    check-cast v3, Lmq3;
 
-    iget-wide v3, v3, Lgq3;->a:J
+    iget-wide v3, v3, Lmq3;->a:J
 
     cmp-long v3, v3, p1
 
@@ -1288,71 +1288,71 @@
     move-object v2, v1
 
     :goto_0
-    check-cast v2, Lgq3;
+    check-cast v2, Lmq3;
 
     if-eqz v2, :cond_2
 
-    iget-object v1, v2, Lgq3;->r0:Lywa;
+    iget-object v1, v2, Lmq3;->v0:Lq3b;
 
     :cond_2
     if-eqz v1, :cond_3
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lir3;->r()V
+    invoke-virtual {p0}, Lor3;->r()V
 
     :cond_3
     return-void
 .end method
 
-.method public final f(JZ)V
+.method public final e(JZ)V
     .registers 6
 
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->c:Lxh7;
+    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->c:Lcl7;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ldv1;
+    check-cast v0, Llv1;
 
-    sget-object v1, Lbv1;->Y:Lbv1;
+    sget-object v1, Ljv1;->Y:Ljv1;
 
-    invoke-virtual {v0, v1, p3}, Ldv1;->e(Lcv1;Z)V
+    invoke-virtual {v0, v1, p3}, Llv1;->e(Lkv1;Z)V
 
-    invoke-static {p0}, Lcjg;->o(Lqx3;)V
+    invoke-static {p0}, Lqe5;->t(Lxx3;)V
 
-    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->y0:Ljava/lang/Object;
+    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->C0:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lmh1;
+    check-cast p0, Lih1;
 
-    new-instance v0, Llr3;
+    new-instance v0, Lrr3;
 
-    invoke-direct {v0, p1, p2, p3}, Llr3;-><init>(JZ)V
+    invoke-direct {v0, p1, p2, p3}, Lrr3;-><init>(JZ)V
 
-    invoke-virtual {p0, p1, p2, p3, v0}, Lmh1;->l(JZLh96;)V
+    invoke-virtual {p0, p1, p2, p3, v0}, Lih1;->l(JZLzb6;)V
 
     return-void
 .end method
 
-.method public final getInsetsConfig()Lf67;
+.method public final getInsetsConfig()Lj97;
     .registers 1
 
-    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->a:Lf67;
+    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->a:Lj97;
 
     return-object p0
 .end method
 
-.method public final getScreenDelegate()Lsyc;
+.method public final getScreenDelegate()Lx6d;
     .registers 1
 
-    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->J0:Lls7;
+    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->N0:Lzlb;
 
     return-object p0
 .end method
@@ -1360,15 +1360,15 @@
 .method public final i(ILandroid/os/Bundle;)V
     .registers 5
 
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->y0:Ljava/lang/Object;
+    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->C0:Ljava/lang/Object;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lmh1;
+    check-cast v0, Lih1;
 
-    invoke-virtual {v0, p1}, Lmh1;->g(I)Z
+    invoke-virtual {v0, p1}, Lih1;->g(I)Z
 
     move-result v0
 
@@ -1385,25 +1385,41 @@
 
     move-result-wide v0
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
     move-result-object p0
 
-    invoke-virtual {p0, p1, v0, v1}, Lir3;->q(IJ)V
+    invoke-virtual {p0, p1, v0, v1}, Lor3;->q(IJ)V
 
     :cond_1
     :goto_0
     return-void
 .end method
 
+.method public final i0()V
+    .registers 2
+
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
+
+    move-result-object p0
+
+    iget-object p0, p0, Lor3;->F0:Lv85;
+
+    sget-object v0, Lb9d;->a:Lb9d;
+
+    invoke-static {p0, v0}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public final j(JLandroid/view/View;)V
     .registers 12
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
     move-result-object v0
 
-    iget-object v0, v0, Lir3;->b:Lor3;
+    iget-object v0, v0, Lor3;->b:Lur3;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
@@ -1415,11 +1431,11 @@
 
     if-ne v0, v1, :cond_0
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object v0
 
-    new-instance v2, Lvr3;
+    new-instance v2, Lbs3;
 
     const/4 v7, 0x0
 
@@ -1429,25 +1445,25 @@
 
     move-object v6, p3
 
-    invoke-direct/range {v2 .. v7}, Lvr3;-><init>(Lone/me/contactlist/ContactListWidget;JLandroid/view/View;Lkotlin/coroutines/Continuation;)V
+    invoke-direct/range {v2 .. v7}, Lbs3;-><init>(Lone/me/contactlist/ContactListWidget;JLandroid/view/View;Lkotlin/coroutines/Continuation;)V
 
     const/4 p0, 0x0
 
-    sget-object p1, Lu04;->b:Lu04;
+    sget-object p1, Lb14;->b:Lb14;
 
-    invoke-static {v0, p0, p1, v2, v1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    invoke-static {v0, p0, p1, v2, v1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
 
     move-result-object p0
 
-    sget-object p1, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
+    sget-object p1, Lone/me/contactlist/ContactListWidget;->O0:[Lxi7;
 
     const/4 p2, 0x3
 
     aget-object p1, p1, p2
 
-    iget-object p2, v3, Lone/me/contactlist/ContactListWidget;->D0:Lqfd;
+    iget-object p2, v3, Lone/me/contactlist/ContactListWidget;->H0:Lncb;
 
-    invoke-virtual {p2, v3, p1, p0}, Lqfd;->g0(Ljava/lang/Object;Lsf7;Ljava/lang/Object;)V
+    invoke-virtual {p2, v3, p1, p0}, Lncb;->h0(Ljava/lang/Object;Lxi7;Ljava/lang/Object;)V
 
     return-void
 
@@ -1462,21 +1478,21 @@
     return-void
 .end method
 
-.method public final o()Lnyc;
+.method public final n()Ls6d;
     .registers 1
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Z
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->C0()Z
 
     move-result p0
 
     if-eqz p0, :cond_0
 
-    sget-object p0, Lnyc;->p0:Lnyc;
+    sget-object p0, Ls6d;->t0:Ls6d;
 
     return-object p0
 
     :cond_0
-    sget-object p0, Lnyc;->n0:Lnyc;
+    sget-object p0, Ls6d;->r0:Ls6d;
 
     return-object p0
 .end method
@@ -1484,17 +1500,17 @@
 .method public final onAttach(Landroid/view/View;)V
     .registers 7
 
-    invoke-super {p0, p1}, Lqx3;->onAttach(Landroid/view/View;)V
+    invoke-super {p0, p1}, Lxx3;->onAttach(Landroid/view/View;)V
 
-    sget-object p1, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
+    sget-object p1, Lone/me/contactlist/ContactListWidget;->O0:[Lxi7;
 
     const/16 v0, 0x8
 
     aget-object v1, p1, v0
 
-    iget-object v1, p0, Lone/me/contactlist/ContactListWidget;->I0:Lur;
+    iget-object v1, p0, Lone/me/contactlist/ContactListWidget;->M0:Lfr;
 
-    invoke-virtual {v1, p0}, Lur;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+    invoke-virtual {v1, p0}, Lfr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1513,15 +1529,15 @@
 
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-virtual {v1, p0, p1}, Lur;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
+    invoke-virtual {v1, p0, p1}, Lfr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->x0()Lmwa;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Lp2b;
 
     move-result-object p1
 
-    sget-object v0, Lmwa;->f:[Ljava/lang/String;
+    sget-object v0, Lp2b;->f:[Ljava/lang/String;
 
-    invoke-virtual {p1, v0}, Lmwa;->b([Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Lp2b;->b([Ljava/lang/String;)Z
 
     move-result p1
 
@@ -1529,92 +1545,92 @@
 
     const-string v1, "app.writeConctatsRequested"
 
-    iget-object v2, p0, Lone/me/contactlist/ContactListWidget;->B0:Lxh7;
+    iget-object v2, p0, Lone/me/contactlist/ContactListWidget;->F0:Lcl7;
 
     if-nez p1, :cond_1
 
-    invoke-interface {v2}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lc53;
+    check-cast p1, Lf53;
 
-    check-cast p1, Lz1d;
+    check-cast p1, Lgad;
 
-    invoke-virtual {p1, v1, v0}, Lc3;->g(Ljava/lang/String;Z)V
+    invoke-virtual {p1, v1, v0}, Li3;->h(Ljava/lang/String;Z)V
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->x0()Lmwa;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Lp2b;
 
     move-result-object p1
 
-    new-instance v0, Lbjg;
+    new-instance v0, Litg;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lbjg;-><init>(Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {v0, p0, v1}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
 
-    invoke-virtual {p1, v0}, Lmwa;->e(Lbjg;)V
+    invoke-virtual {p1, v0}, Lp2b;->e(Litg;)V
 
     return-void
 
     :cond_1
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->x0()Lmwa;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Lp2b;
 
     move-result-object p1
 
-    sget-object v3, Lmwa;->g:[Ljava/lang/String;
+    sget-object v3, Lp2b;->g:[Ljava/lang/String;
 
-    invoke-virtual {p1, v3}, Lmwa;->b([Ljava/lang/String;)Z
+    invoke-virtual {p1, v3}, Lp2b;->b([Ljava/lang/String;)Z
 
     move-result p1
 
     if-nez p1, :cond_2
 
-    invoke-interface {v2}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lc53;
+    check-cast p1, Lf53;
 
-    check-cast p1, Lz1d;
+    check-cast p1, Lgad;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    check-cast p1, Le53;
+    check-cast p1, Lh53;
 
-    iget-object p1, p1, Lc3;->g:Lai7;
+    iget-object p1, p1, Li3;->g:Lfl7;
 
     const/4 v4, 0x0
 
-    invoke-virtual {p1, v1, v4}, Lai7;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {p1, v1, v4}, Lfl7;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result p1
 
     if-nez p1, :cond_2
 
-    invoke-interface {v2}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lc53;
+    check-cast p1, Lf53;
 
-    check-cast p1, Lz1d;
+    check-cast p1, Lgad;
 
-    invoke-virtual {p1, v1, v0}, Lc3;->g(Ljava/lang/String;Z)V
+    invoke-virtual {p1, v1, v0}, Li3;->h(Ljava/lang/String;Z)V
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->x0()Lmwa;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Lp2b;
 
     move-result-object p1
 
-    new-instance v0, Lbjg;
+    new-instance v0, Litg;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lbjg;-><init>(Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {v0, p0, v1}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
 
     const/16 p0, 0x9c
 
-    invoke-virtual {p1, v0, v3, p0}, Lmwa;->f(Lbjg;[Ljava/lang/String;I)V
+    invoke-virtual {p1, v0, v3, p0}, Lp2b;->f(Litg;[Ljava/lang/String;I)V
 
     :cond_2
     :goto_0
@@ -1632,59 +1648,59 @@
 
     invoke-direct {p2, p1}, Landroidx/constraintlayout/widget/ConstraintLayout;-><init>(Landroid/content/Context;)V
 
-    sget p1, Luaa;->n:I
+    sget p1, Lcfa;->n:I
 
     invoke-virtual {p2, p1}, Landroidx/constraintlayout/widget/ConstraintLayout;->setId(I)V
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->z0()Llna;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Ldsa;
 
     move-result-object p1
 
-    new-instance p3, Lnl3;
+    new-instance p3, Ltl3;
 
     const/4 v0, -0x2
 
     const/4 v1, -0x1
 
-    invoke-direct {p3, v1, v0}, Lnl3;-><init>(II)V
+    invoke-direct {p3, v1, v0}, Ltl3;-><init>(II)V
 
     const/4 v0, 0x0
 
-    iput v0, p3, Lnl3;->i:I
+    iput v0, p3, Ltl3;->i:I
 
-    iput v0, p3, Lnl3;->e:I
+    iput v0, p3, Ltl3;->e:I
 
-    iput v0, p3, Lnl3;->h:I
+    iput v0, p3, Ltl3;->h:I
 
     invoke-virtual {p2, p1, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    new-instance p1, Lwca;
+    new-instance p1, Ldha;
 
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p3
 
-    invoke-direct {p1, p3, v0}, Lwca;-><init>(Landroid/content/Context;I)V
+    invoke-direct {p1, p3, v0}, Ldha;-><init>(Landroid/content/Context;I)V
 
-    sget p3, Ljsc;->l0:I
+    sget p3, Lq0d;->m0:I
 
-    invoke-virtual {p1, p3}, Lwca;->setIcon(I)V
+    invoke-virtual {p1, p3}, Ldha;->setIcon(I)V
 
-    sget p3, Lvaa;->m:I
+    sget p3, Ldfa;->l:I
 
-    new-instance v2, Lqte;
+    new-instance v2, Lp2f;
 
-    invoke-direct {v2, p3}, Lqte;-><init>(I)V
+    invoke-direct {v2, p3}, Lp2f;-><init>(I)V
 
-    invoke-virtual {p1, v2}, Lwca;->setTitle(Lvte;)V
+    invoke-virtual {p1, v2}, Ldha;->setTitle(Lu2f;)V
 
-    sget p3, Lvaa;->l:I
+    sget p3, Ldfa;->k:I
 
-    new-instance v2, Lqte;
+    new-instance v2, Lp2f;
 
-    invoke-direct {v2, p3}, Lqte;-><init>(I)V
+    invoke-direct {v2, p3}, Lp2f;-><init>(I)V
 
-    invoke-virtual {p1, v2}, Lwca;->setSubtitle(Lvte;)V
+    invoke-virtual {p1, v2}, Ldha;->setSubtitle(Lu2f;)V
 
     new-instance p3, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
 
@@ -1698,15 +1714,15 @@
 
     invoke-direct {p3, v2, v4, v3}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    sget v2, Lvyb;->oneme_contactlist_rv:I
+    sget v2, Ly5c;->oneme_contactlist_rv:I
 
     invoke-virtual {p3, v2}, Landroid/view/View;->setId(I)V
 
-    invoke-virtual {p3, v4}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Lygc;)V
+    invoke-virtual {p3, v4}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Lhoc;)V
 
-    iget-object v2, p0, Lone/me/contactlist/ContactListWidget;->q0:Lve3;
+    iget-object v2, p0, Lone/me/contactlist/ContactListWidget;->u0:Lye3;
 
-    invoke-virtual {p3, v2}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Ltgc;)V
+    invoke-virtual {p3, v2}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Lcoc;)V
 
     new-instance v3, Landroidx/recyclerview/widget/LinearLayoutManager;
 
@@ -1722,73 +1738,71 @@
 
     invoke-virtual {p3, p1}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setEmptyView(Landroid/view/View;)V
 
-    new-instance v3, Lvtf;
+    new-instance v3, Ly9e;
 
-    new-instance v5, Lkr3;
+    new-instance v5, Lqr3;
 
     const/4 v6, 0x0
 
-    invoke-direct {v5, p0, v6}, Lkr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
+    invoke-direct {v5, p0, v6}, Lqr3;-><init>(Lone/me/contactlist/ContactListWidget;I)V
 
-    const/16 v6, 0x10
+    invoke-direct {v3, v5}, Ly9e;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v3, v6, v5}, Lvtf;-><init>(ILjava/lang/Object;)V
+    new-instance v5, Luke;
 
-    new-instance v5, Lcce;
+    invoke-direct {v5, p3, v2, v3}, Luke;-><init>(Landroidx/recyclerview/widget/RecyclerView;Lcoc;Lvke;)V
 
-    invoke-direct {v5, p3, v2, v3}, Lcce;-><init>(Landroidx/recyclerview/widget/RecyclerView;Ltgc;Ldce;)V
+    invoke-virtual {p3, v5}, Landroidx/recyclerview/widget/RecyclerView;->j(Ljoc;)V
 
-    invoke-virtual {p3, v5}, Landroidx/recyclerview/widget/RecyclerView;->j(Lzgc;)V
+    new-instance v6, Liq3;
 
-    new-instance v6, Lcq3;
+    sget-object v7, Lyu4;->t0:Lbx9;
 
-    sget-object v7, Lct4;->p0:Lws9;
-
-    invoke-virtual {v7, p3}, Lws9;->e(Landroid/view/View;)Loma;
+    invoke-virtual {v7, p3}, Lbx9;->l(Landroid/view/View;)Lera;
 
     move-result-object v7
 
-    new-instance v8, Loy1;
+    new-instance v8, Lbx1;
 
-    const/16 v9, 0x16
+    const/16 v9, 0x19
 
-    invoke-direct {v8, v9, p0}, Loy1;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v8, v9, p0}, Lbx1;-><init>(ILjava/lang/Object;)V
 
-    invoke-direct {v6, v3, v7, v8}, Lcq3;-><init>(Lvtf;Loma;Lbq3;)V
+    invoke-direct {v6, v3, v7, v8}, Liq3;-><init>(Ly9e;Lera;Lhq3;)V
 
-    invoke-virtual {p3, v6}, Landroidx/recyclerview/widget/RecyclerView;->j(Lzgc;)V
+    invoke-virtual {p3, v6}, Landroidx/recyclerview/widget/RecyclerView;->j(Ljoc;)V
 
-    new-instance v3, Lgng;
+    new-instance v3, Lf7;
 
-    new-instance v6, Lz9;
+    new-instance v6, Lea;
 
-    const/16 v7, 0xb
+    const/16 v7, 0xc
 
-    invoke-direct {v6, p0, v7, p3}, Lz9;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v6, p0, v7, p3}, Lea;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    const/16 v7, 0x9
+    const/16 v7, 0x8
 
-    invoke-direct {v3, v7, v6}, Lgng;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v3, v7, v6}, Lf7;-><init>(ILjava/lang/Object;)V
 
-    new-instance v6, Lcce;
+    new-instance v6, Luke;
 
-    invoke-direct {v6, p3, v2, v3}, Lcce;-><init>(Landroidx/recyclerview/widget/RecyclerView;Ltgc;Ldce;)V
+    invoke-direct {v6, p3, v2, v3}, Luke;-><init>(Landroidx/recyclerview/widget/RecyclerView;Lcoc;Lvke;)V
 
-    invoke-virtual {p3, v6}, Landroidx/recyclerview/widget/RecyclerView;->j(Lzgc;)V
+    invoke-virtual {p3, v6}, Landroidx/recyclerview/widget/RecyclerView;->j(Ljoc;)V
 
-    new-instance v2, La3;
+    new-instance v2, Lg3;
 
     const/16 v3, 0x9
 
-    invoke-direct {v2, v5, v6, v4, v3}, La3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
+    invoke-direct {v2, v5, v6, v4, v3}, Lg3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
 
-    invoke-static {v2, p3}, Lx77;->M(Lz96;Landroid/view/View;)V
+    invoke-static {v2, p3}, Ljs9;->t(Lrc6;Landroid/view/View;)V
 
-    new-instance v2, Lnl3;
+    new-instance v2, Ltl3;
 
-    invoke-direct {v2, v1, v0}, Lnl3;-><init>(II)V
+    invoke-direct {v2, v1, v0}, Ltl3;-><init>(II)V
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->z0()Llna;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Ldsa;
 
     move-result-object v3
 
@@ -1796,21 +1810,21 @@
 
     move-result v3
 
-    iput v3, v2, Lnl3;->j:I
+    iput v3, v2, Ltl3;->j:I
 
-    iput v0, v2, Lnl3;->e:I
+    iput v0, v2, Ltl3;->e:I
 
-    iput v0, v2, Lnl3;->h:I
+    iput v0, v2, Ltl3;->h:I
 
-    iput v0, v2, Lnl3;->l:I
+    iput v0, v2, Ltl3;->l:I
 
     invoke-virtual {p2, p3, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    new-instance p3, Lnl3;
+    new-instance p3, Ltl3;
 
-    invoke-direct {p3, v1, v0}, Lnl3;-><init>(II)V
+    invoke-direct {p3, v1, v0}, Ltl3;-><init>(II)V
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->z0()Llna;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Ldsa;
 
     move-result-object p0
 
@@ -1818,13 +1832,13 @@
 
     move-result p0
 
-    iput p0, p3, Lnl3;->j:I
+    iput p0, p3, Ltl3;->j:I
 
-    iput v0, p3, Lnl3;->e:I
+    iput v0, p3, Ltl3;->e:I
 
-    iput v0, p3, Lnl3;->h:I
+    iput v0, p3, Ltl3;->h:I
 
-    iput v0, p3, Lnl3;->l:I
+    iput v0, p3, Ltl3;->l:I
 
     invoke-virtual {p2, p1, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
@@ -1834,17 +1848,17 @@
 .method public final onDestroyView(Landroid/view/View;)V
     .registers 3
 
-    invoke-super {p0, p1}, Lqx3;->onDestroyView(Landroid/view/View;)V
+    invoke-super {p0, p1}, Lxx3;->onDestroyView(Landroid/view/View;)V
 
-    sget-object p1, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
+    sget-object p1, Lone/me/contactlist/ContactListWidget;->O0:[Lxi7;
 
     const/4 v0, 0x2
 
     aget-object p1, p1, v0
 
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->x0:Lxac;
+    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->B0:Lcic;
 
-    invoke-interface {v0, p0, p1}, Lxac;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
+    invoke-interface {v0, p0, p1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -1852,17 +1866,17 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Ltgc;)V
+    invoke-virtual {p1, v0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Lcoc;)V
 
-    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->t0:Ljava/lang/Object;
+    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->x0:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lsr3;
+    check-cast p0, Lyr3;
 
-    invoke-virtual {p0}, Ly4a;->e()V
+    invoke-virtual {p0}, Lb9a;->e()V
 
     return-void
 .end method
@@ -1870,15 +1884,15 @@
 .method public final onRequestPermissionsResult(I[Ljava/lang/String;[I)V
     .registers 10
 
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->y0:Ljava/lang/Object;
+    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->C0:Ljava/lang/Object;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lmh1;
+    check-cast v0, Lih1;
 
-    invoke-virtual {v0, p1, p2, p3}, Lmh1;->b(I[Ljava/lang/String;[I)Z
+    invoke-virtual {v0, p1, p2, p3}, Lih1;->b(I[Ljava/lang/String;[I)Z
 
     move-result v0
 
@@ -1891,21 +1905,21 @@
 
     if-ne p1, v0, :cond_1
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->x0()Lmwa;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Lp2b;
 
     move-result-object p1
 
-    new-instance v0, Lbjg;
+    new-instance v0, Litg;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lbjg;-><init>(Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {v0, p0, v1}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
 
-    sget-object v3, Lmwa;->e:[Ljava/lang/String;
+    sget-object v3, Lp2b;->e:[Ljava/lang/String;
 
-    sget v4, Lwsc;->X1:I
+    sget v4, Ld1d;->a2:I
 
-    sget v5, Lwsc;->d2:I
+    sget v5, Ld1d;->g2:I
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1913,10 +1927,10 @@
 
     move-object v2, p3
 
-    invoke-static/range {v0 .. v5}, Lmwa;->k(Lbjg;[Ljava/lang/String;[I[Ljava/lang/String;II)Z
+    invoke-static/range {v0 .. v5}, Lp2b;->k(Litg;[Ljava/lang/String;[I[Ljava/lang/String;II)Z
 
     :cond_1
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->D0()V
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->E0()V
 
     return-void
 .end method
@@ -1926,140 +1940,120 @@
 
     invoke-super {p0, p1}, Lone/me/sdk/arch/Widget;->onViewCreated(Landroid/view/View;)V
 
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
+    invoke-virtual {p0}, Lxx3;->getRouter()Lrzc;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Llrc;->h()Lg5a;
+    invoke-virtual {p1}, Lrzc;->h()Lj9a;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->t0:Ljava/lang/Object;
+    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->x0:Ljava/lang/Object;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lsr3;
+    check-cast v0, Lyr3;
 
-    invoke-virtual {p1, v0}, Lg5a;->b(Ly4a;)Lf5a;
+    invoke-virtual {p1, v0}, Lj9a;->b(Lb9a;)Li9a;
 
     :cond_0
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
     move-result-object p1
 
-    iget-object p1, p1, Lir3;->w0:Ldbc;
+    iget-object p1, p1, Lor3;->B0:Liic;
 
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->v0:Lxh7;
+    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->z0:Lcl7;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Luh0;
+    check-cast v0, Lzg0;
 
-    iget-object v0, v0, Luh0;->n0:Ldbc;
+    iget-object v0, v0, Lzg0;->r0:Liic;
 
-    new-instance v1, La3;
+    new-instance v1, Lg3;
 
     const/16 v2, 0xa
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, p0, v3, v2}, La3;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
+    invoke-direct {v1, p0, v3, v2}, Lg3;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
 
-    new-instance v2, Ly31;
+    new-instance v2, Lq31;
 
     const/4 v4, 0x4
 
-    invoke-direct {v2, p1, v0, v1, v4}, Ly31;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v2, p1, v0, v1, v4}, Lq31;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
-
-    move-result-object p1
-
-    invoke-static {v2, p1}, Lfog;->L(Lfq5;Lr04;)Lq1e;
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p1
 
-    iget-object p1, p1, Lir3;->C0:Ln4e;
+    invoke-static {v2, p1}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
-    new-instance v0, Ltr3;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
-    invoke-direct {v0, p0, v3}, Ltr3;-><init>(Lone/me/contactlist/ContactListWidget;Lkotlin/coroutines/Continuation;)V
+    move-result-object p1
 
-    new-instance v1, Lks5;
+    iget-object p1, p1, Lor3;->H0:Lyce;
+
+    new-instance v0, Lzr3;
+
+    invoke-direct {v0, p0, v3}, Lzr3;-><init>(Lone/me/contactlist/ContactListWidget;Lkotlin/coroutines/Continuation;)V
+
+    new-instance v1, Lnu5;
 
     const/4 v2, 0x1
 
-    invoke-direct {v1, p1, v0, v2}, Lks5;-><init>(Lfq5;Lx96;I)V
+    invoke-direct {v1, p1, v0, v2}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
-
-    move-result-object p1
-
-    invoke-static {v1, p1}, Lfog;->L(Lfq5;Lr04;)Lq1e;
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p1
 
-    iget-object p1, p1, Lir3;->y0:Ldv3;
+    invoke-static {v1, p1}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
-    iget-object p1, p1, Ldv3;->i:Ldbc;
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->B0()Lor3;
 
-    new-instance v0, Lur3;
+    move-result-object p1
 
-    invoke-direct {v0, p0, v3}, Lur3;-><init>(Lone/me/contactlist/ContactListWidget;Lkotlin/coroutines/Continuation;)V
+    iget-object p1, p1, Lor3;->D0:Lhv3;
 
-    new-instance v1, Lks5;
+    iget-object p1, p1, Lhv3;->i:Liic;
 
-    invoke-direct {v1, p1, v0, v2}, Lks5;-><init>(Lfq5;Lx96;I)V
+    new-instance v0, Las3;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
+    invoke-direct {v0, p0, v3}, Las3;-><init>(Lone/me/contactlist/ContactListWidget;Lkotlin/coroutines/Continuation;)V
+
+    new-instance v1, Lnu5;
+
+    invoke-direct {v1, p1, v0, v2}, Lnu5;-><init>(Lis5;Lpc6;I)V
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p0
 
-    invoke-static {v1, p0}, Lfog;->L(Lfq5;Lr04;)Lq1e;
+    invoke-static {v1, p0}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
     return-void
 .end method
 
-.method public final x0()Lmwa;
+.method public final y0()Lp2b;
     .registers 1
 
-    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->A0:Lxh7;
+    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->E0:Lcl7;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lmwa;
-
-    return-object p0
-.end method
-
-.method public final y0()Ljava/lang/CharSequence;
-    .registers 3
-
-    sget-object v0, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
-
-    const/4 v1, 0x5
-
-    aget-object v0, v0, v1
-
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->F0:Lur;
-
-    invoke-virtual {v0, p0}, Lur;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Ljava/lang/CharSequence;
+    check-cast p0, Lp2b;
 
     return-object p0
 .end method
@@ -2067,27 +2061,27 @@
 .method public final z()V
     .registers 1
 
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->C0()V
+    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->D0()V
 
     return-void
 .end method
 
-.method public final z0()Llna;
+.method public final z0()Ljava/lang/CharSequence;
     .registers 3
 
-    sget-object v0, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
+    sget-object v0, Lone/me/contactlist/ContactListWidget;->O0:[Lxi7;
 
-    const/4 v1, 0x0
+    const/4 v1, 0x5
 
     aget-object v0, v0, v1
 
-    iget-object p0, p0, Lone/me/contactlist/ContactListWidget;->s0:Lin0;
+    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->J0:Lfr;
 
-    invoke-virtual {p0}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Lfr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Llna;
+    check-cast p0, Ljava/lang/CharSequence;
 
     return-object p0
 .end method

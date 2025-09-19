@@ -1,180 +1,74 @@
-.class public abstract Lsxb;
-.super Ljava/lang/Object;
+.class public Lsxb;
+.super Ltxb;
+.source "SourceFile"
 
+# interfaces
+.implements Lwi7;
 
-# static fields
-.field public static media3_icon_album:I = 0x7f0807b6
 
-.field public static media3_icon_artist:I = 0x7f0807b7
+# direct methods
+.method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    .registers 11
 
-.field public static media3_icon_block:I = 0x7f0807b8
+    sget-object v1, Lks1;->NO_RECEIVER:Ljava/lang/Object;
 
-.field public static media3_icon_bookmark_filled:I = 0x7f0807b9
+    move-object v0, p0
 
-.field public static media3_icon_bookmark_unfilled:I = 0x7f0807ba
+    move-object v2, p1
 
-.field public static media3_icon_check_circle_filled:I = 0x7f0807bb
+    move-object v3, p2
 
-.field public static media3_icon_check_circle_unfilled:I = 0x7f0807bc
+    move-object v4, p3
 
-.field public static media3_icon_circular_play:I = 0x7f0807bd
+    move v5, p4
 
-.field public static media3_icon_closed_captions:I = 0x7f0807be
+    invoke-direct/range {v0 .. v5}, Ltxb;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-.field public static media3_icon_closed_captions_off:I = 0x7f0807bf
+    return-void
+.end method
 
-.field public static media3_icon_fast_forward:I = 0x7f0807c0
 
-.field public static media3_icon_feed:I = 0x7f0807c1
+# virtual methods
+.method public final computeReflected()Lii7;
+    .registers 2
 
-.field public static media3_icon_flag_filled:I = 0x7f0807c2
+    sget-object v0, Ljpc;->a:Lkpc;
 
-.field public static media3_icon_flag_unfilled:I = 0x7f0807c3
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.field public static media3_icon_heart_filled:I = 0x7f0807c4
+    return-object p0
+.end method
 
-.field public static media3_icon_heart_unfilled:I = 0x7f0807c5
+.method public get(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-.field public static media3_icon_minus:I = 0x7f0807c6
+    invoke-virtual {p0}, Lsxb;->getGetter()V
 
-.field public static media3_icon_minus_circle_filled:I = 0x7f0807c7
+    const/4 p0, 0x0
 
-.field public static media3_icon_minus_circle_unfilled:I = 0x7f0807c8
+    throw p0
+.end method
 
-.field public static media3_icon_next:I = 0x7f0807c9
+.method public final getGetter()V
+    .registers 1
 
-.field public static media3_icon_pause:I = 0x7f0807ca
+    invoke-virtual {p0}, Ltxb;->getReflected()Lxi7;
 
-.field public static media3_icon_play:I = 0x7f0807cb
+    move-result-object p0
 
-.field public static media3_icon_playback_speed:I = 0x7f0807cc
+    check-cast p0, Lwi7;
 
-.field public static media3_icon_playback_speed_0_5:I = 0x7f0807cd
+    invoke-interface {p0}, Lwi7;->getGetter()V
 
-.field public static media3_icon_playback_speed_0_8:I = 0x7f0807ce
+    return-void
+.end method
 
-.field public static media3_icon_playback_speed_1_0:I = 0x7f0807cf
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-.field public static media3_icon_playback_speed_1_2:I = 0x7f0807d0
+    invoke-interface {p0, p1}, Lwi7;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static media3_icon_playback_speed_1_5:I = 0x7f0807d1
+    move-result-object p0
 
-.field public static media3_icon_playback_speed_1_8:I = 0x7f0807d2
-
-.field public static media3_icon_playback_speed_2_0:I = 0x7f0807d3
-
-.field public static media3_icon_playlist_add:I = 0x7f0807d4
-
-.field public static media3_icon_playlist_remove:I = 0x7f0807d5
-
-.field public static media3_icon_plus:I = 0x7f0807d6
-
-.field public static media3_icon_plus_circle_filled:I = 0x7f0807d7
-
-.field public static media3_icon_plus_circle_unfilled:I = 0x7f0807d8
-
-.field public static media3_icon_previous:I = 0x7f0807d9
-
-.field public static media3_icon_quality:I = 0x7f0807da
-
-.field public static media3_icon_queue_add:I = 0x7f0807db
-
-.field public static media3_icon_queue_next:I = 0x7f0807dc
-
-.field public static media3_icon_queue_remove:I = 0x7f0807dd
-
-.field public static media3_icon_radio:I = 0x7f0807de
-
-.field public static media3_icon_repeat_all:I = 0x7f0807df
-
-.field public static media3_icon_repeat_off:I = 0x7f0807e0
-
-.field public static media3_icon_repeat_one:I = 0x7f0807e1
-
-.field public static media3_icon_rewind:I = 0x7f0807e2
-
-.field public static media3_icon_settings:I = 0x7f0807e3
-
-.field public static media3_icon_share:I = 0x7f0807e4
-
-.field public static media3_icon_shuffle_off:I = 0x7f0807e5
-
-.field public static media3_icon_shuffle_on:I = 0x7f0807e6
-
-.field public static media3_icon_shuffle_star:I = 0x7f0807e7
-
-.field public static media3_icon_signal:I = 0x7f0807e8
-
-.field public static media3_icon_skip_back:I = 0x7f0807e9
-
-.field public static media3_icon_skip_back_10:I = 0x7f0807ea
-
-.field public static media3_icon_skip_back_15:I = 0x7f0807eb
-
-.field public static media3_icon_skip_back_30:I = 0x7f0807ec
-
-.field public static media3_icon_skip_back_5:I = 0x7f0807ed
-
-.field public static media3_icon_skip_forward:I = 0x7f0807ee
-
-.field public static media3_icon_skip_forward_10:I = 0x7f0807ef
-
-.field public static media3_icon_skip_forward_15:I = 0x7f0807f0
-
-.field public static media3_icon_skip_forward_30:I = 0x7f0807f1
-
-.field public static media3_icon_skip_forward_5:I = 0x7f0807f2
-
-.field public static media3_icon_star_filled:I = 0x7f0807f3
-
-.field public static media3_icon_star_unfilled:I = 0x7f0807f4
-
-.field public static media3_icon_stop:I = 0x7f0807f5
-
-.field public static media3_icon_subtitles:I = 0x7f0807f6
-
-.field public static media3_icon_subtitles_off:I = 0x7f0807f7
-
-.field public static media3_icon_sync:I = 0x7f0807f8
-
-.field public static media3_icon_thumb_down_filled:I = 0x7f0807f9
-
-.field public static media3_icon_thumb_down_unfilled:I = 0x7f0807fa
-
-.field public static media3_icon_thumb_up_filled:I = 0x7f0807fb
-
-.field public static media3_icon_thumb_up_unfilled:I = 0x7f0807fc
-
-.field public static media3_icon_volume_down:I = 0x7f0807fd
-
-.field public static media3_icon_volume_off:I = 0x7f0807fe
-
-.field public static media3_icon_volume_up:I = 0x7f0807ff
-
-.field public static media3_notification_small_icon:I = 0x7f080800
-
-.field public static media_session_service_notification_ic_music_note:I = 0x7f080805
-
-.field public static notification_action_background:I = 0x7f080860
-
-.field public static notification_bg:I = 0x7f080861
-
-.field public static notification_bg_low:I = 0x7f080862
-
-.field public static notification_bg_low_normal:I = 0x7f080863
-
-.field public static notification_bg_low_pressed:I = 0x7f080864
-
-.field public static notification_bg_normal:I = 0x7f080865
-
-.field public static notification_bg_normal_pressed:I = 0x7f080866
-
-.field public static notification_icon_background:I = 0x7f080867
-
-.field public static notification_template_icon_bg:I = 0x7f08086b
-
-.field public static notification_template_icon_low_bg:I = 0x7f08086c
-
-.field public static notification_tile_bg:I = 0x7f08086d
-
-.field public static notify_panel_notification_icon_bg:I = 0x7f08086e
+    return-object p0
+.end method

@@ -3,64 +3,191 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lxg6;
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static final a:Lpig;
 
-.field public final synthetic b:Lone/me/sdk/arch/Widget;
+.field private static final descriptor:Lqid;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/sdk/arch/Widget;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 4
 
-    iput p2, p0, Lpig;->a:I
+    new-instance v0, Lpig;
 
-    iput-object p1, p0, Lpig;->b:Lone/me/sdk/arch/Widget;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lpig;->a:Lpig;
+
+    new-instance v1, Ljeb;
+
+    const-string v2, "one.me.webapp.domain.jsbridge.delegates.haptic.WebAppHapticFeedbackResponse"
+
+    const/4 v3, 0x2
+
+    invoke-direct {v1, v2, v0, v3}, Ljeb;-><init>(Ljava/lang/String;Lxg6;I)V
+
+    const-string v0, "requestId"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
+
+    const-string v0, "status"
+
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
+
+    sput-object v1, Lpig;->descriptor:Lqid;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public final a(Lu8;)Ljava/lang/Object;
+    .registers 11
 
-    iget v0, p0, Lpig;->a:I
+    sget-object p0, Lpig;->descriptor:Lqid;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p1, p0}, Lu8;->k(Lqid;)Lu8;
 
-    iget-object p0, p0, Lpig;->b:Lone/me/sdk/arch/Widget;
+    move-result-object p1
 
-    check-cast p2, Lx33;
+    sget-object v0, Lrig;->c:[Lyi7;
 
-    invoke-static {p0, p1, p2}, Lone/me/sdk/arch/Widget;->w0(Lone/me/sdk/arch/Widget;Ljava/lang/Object;Lx33;)Lncf;
+    const/4 v1, 0x1
 
-    move-result-object p0
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    move v5, v1
+
+    move v6, v2
+
+    move-object v4, v3
+
+    :goto_0
+    if-eqz v5, :cond_3
+
+    invoke-virtual {p1, p0}, Lu8;->q(Lqid;)I
+
+    move-result v7
+
+    const/4 v8, -0x1
+
+    if-eq v7, v8, :cond_2
+
+    if-eqz v7, :cond_1
+
+    if-ne v7, v1, :cond_0
+
+    aget-object v7, v0, v1
+
+    invoke-virtual {p1, p0, v1, v7, v4}, Lu8;->t(Lqid;ILyi7;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lwig;
+
+    or-int/lit8 v6, v6, 0x2
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+
+    invoke-direct {p0, v7}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
+
+    throw p0
+
+    :cond_1
+    invoke-virtual {p1, p0, v2}, Lu8;->w(Lqid;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    or-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    move v5, v2
+
+    goto :goto_0
+
+    :cond_3
+    invoke-virtual {p1, p0}, Lu8;->z(Lqid;)V
+
+    new-instance p0, Lrig;
+
+    invoke-direct {p0, v6, v3, v4}, Lrig;-><init>(ILjava/lang/String;Lwig;)V
 
     return-object p0
+.end method
 
-    :pswitch_0
-    check-cast p1, Landroid/view/View;
+.method public final b(Lay3;Ljava/lang/Object;)V
+    .registers 6
 
-    check-cast p2, Lx33;
+    check-cast p2, Lrig;
 
-    iget-object p0, p0, Lpig;->b:Lone/me/sdk/arch/Widget;
+    sget-object p0, Lpig;->descriptor:Lqid;
 
-    invoke-static {p0, p1, p2}, Lone/me/sdk/arch/Widget;->u0(Lone/me/sdk/arch/Widget;Landroid/view/View;Lx33;)Lncf;
+    invoke-virtual {p1, p0}, Lay3;->b(Lqid;)Lay3;
 
-    move-result-object p0
+    move-result-object p1
+
+    sget-object v0, Lrig;->c:[Lyi7;
+
+    iget-object v1, p2, Lrig;->a:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, p0, v2, v1}, Lay3;->l(Lqid;ILjava/lang/String;)V
+
+    const/4 v1, 0x1
+
+    aget-object v0, v0, v1
+
+    iget-object p2, p2, Lrig;->b:Lwig;
+
+    invoke-virtual {p1, p0, v1, v0, p2}, Lay3;->i(Lqid;ILyi7;Ljava/lang/Object;)V
+
+    invoke-virtual {p1}, Lay3;->m()V
+
+    return-void
+.end method
+
+.method public final c()[Lyi7;
+    .registers 5
+
+    sget-object p0, Lrig;->c:[Lyi7;
+
+    const/4 v0, 0x1
+
+    aget-object p0, p0, v0
+
+    const/4 v1, 0x2
+
+    new-array v1, v1, [Lyi7;
+
+    sget-object v2, Lfme;->a:Lfme;
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    aput-object p0, v1, v0
+
+    return-object v1
+.end method
+
+.method public final d()Lqid;
+    .registers 1
+
+    sget-object p0, Lpig;->descriptor:Lqid;
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

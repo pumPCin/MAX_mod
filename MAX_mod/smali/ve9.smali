@@ -1,28 +1,19 @@
-.class public interface abstract Lve9;
+.class public final Lve9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public now()J
-    .registers 4
-    .annotation build Ldq4;
-    .end annotation
+# instance fields
+.field public final a:Lue9;
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-interface {p0}, Lve9;->nowNanos()J
+# direct methods
+.method public constructor <init>(Lue9;)V
+    .registers 2
 
-    move-result-wide v1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+    iput-object p1, p0, Lve9;->a:Lue9;
 
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public abstract nowNanos()J
-    .annotation build Ldq4;
-    .end annotation
+    return-void
 .end method

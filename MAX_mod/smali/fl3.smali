@@ -2,107 +2,23 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final a:F
-
-.field public final b:D
-
-.field public final c:I
-
-.field public final d:J
-
-.field public e:I
-
-
-# direct methods
-.method public constructor <init>(FJ)V
-    .registers 9
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v2, p2, v0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    if-lez v2, :cond_0
-
-    move v2, v4
-
-    goto :goto_0
-
-    :cond_0
-    move v2, v3
-
-    :goto_0
-    invoke-static {v2}, Lr76;->h(Z)V
-
-    const/4 v2, 0x0
-
-    cmpl-float v2, p1, v2
-
-    if-lez v2, :cond_1
-
-    move v2, v4
-
-    goto :goto_1
-
-    :cond_1
-    move v2, v3
-
-    :goto_1
-    invoke-static {v2}, Lr76;->h(Z)V
-
-    cmp-long v0, v0, p2
-
-    if-gez v0, :cond_2
-
-    move v3, v4
-
-    :cond_2
-    invoke-static {v3}, Lr76;->h(Z)V
-
-    iput-wide p2, p0, Lfl3;->d:J
-
-    iput p1, p0, Lfl3;->a:F
-
-    long-to-float p2, p2
-
-    const p3, 0x49742400    # 1000000.0f
-
-    div-float/2addr p2, p3
-
-    mul-float/2addr p2, p1
-
-    invoke-static {p2}, Ljava/lang/Math;->round(F)I
-
-    move-result p2
-
-    iput p2, p0, Lfl3;->c:I
-
-    div-float/2addr p3, p1
-
-    float-to-double p1, p3
-
-    iput-wide p1, p0, Lfl3;->b:D
-
-    return-void
-.end method
+# interfaces
+.implements Lwk4;
 
 
 # virtual methods
-.method public final a()Z
+.method public final a(Ljavax/net/ssl/SSLSocket;)Z
     .registers 2
 
-    iget v0, p0, Lfl3;->e:I
+    sget-boolean p0, Lel3;->d:Z
 
-    iget p0, p0, Lfl3;->c:I
+    if-eqz p0, :cond_0
 
-    if-ge v0, p0, :cond_0
+    invoke-static {p1}, Lorg/conscrypt/Conscrypt;->isConscrypt(Ljavax/net/ssl/SSLSocket;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
@@ -112,4 +28,14 @@
     const/4 p0, 0x0
 
     return p0
+.end method
+
+.method public final b(Ljavax/net/ssl/SSLSocket;)Lt6e;
+    .registers 2
+
+    new-instance p0, Lgl3;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-object p0
 .end method

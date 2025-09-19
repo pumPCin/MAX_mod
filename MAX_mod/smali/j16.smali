@@ -1,48 +1,50 @@
 .class public final Lj16;
-.super Lcx3;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Le16;
 
 
 # instance fields
-.field public X:I
+.field public final a:I
 
-.field public final synthetic Y:Lky2;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final b:J
 
 
 # direct methods
-.method public constructor <init>(Lky2;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>()V
     .registers 3
 
-    iput-object p1, p0, Lj16;->Y:Lky2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    sget v0, Lw5c;->oneme_folder_widget_section_empty_view_type:I
+
+    iput v0, p0, Lj16;->a:I
+
+    sget v0, Lw5c;->oneme_folder_widget_section_empty_id:I
+
+    int-to-long v0, v0
+
+    iput-wide v0, p0, Lj16;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final getItemId()J
     .registers 3
 
-    iput-object p1, p0, Lj16;->o:Ljava/lang/Object;
+    iget-wide v0, p0, Lj16;->b:J
 
-    iget p1, p0, Lj16;->X:I
+    return-wide v0
+.end method
 
-    const/high16 v0, -0x80000000
+.method public final m()I
+    .registers 1
 
-    or-int/2addr p1, v0
+    iget p0, p0, Lj16;->a:I
 
-    iput p1, p0, Lj16;->X:I
-
-    iget-object p1, p0, Lj16;->Y:Lky2;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lky2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return p0
 .end method

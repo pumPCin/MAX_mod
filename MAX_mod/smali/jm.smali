@@ -3,143 +3,70 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lm9a;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lvm;
+.field public final synthetic a:Lkm;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lvm;I)V
-    .registers 3
-
-    iput p2, p0, Ljm;->a:I
-
-    iput-object p1, p0, Ljm;->b:Lvm;
+.method public constructor <init>(Lkm;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljm;->a:Lkm;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 6
+.method public final a()V
+    .registers 5
 
-    iget v0, p0, Ljm;->a:I
+    iget-object p0, p0, Ljm;->a:Lkm;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0}, Lkm;->F()Lsm;
 
-    iget-object v0, p0, Ljm;->b:Lvm;
+    move-result-object v0
 
-    iget-object v1, v0, Lvm;->C0:Landroid/widget/PopupWindow;
+    move-object v1, v0
 
-    iget-object v2, v0, Lvm;->B0:Landroidx/appcompat/widget/ActionBarContextView;
+    check-cast v1, Len;
 
-    const/16 v3, 0x37
+    iget-object v2, v1, Len;->u0:Landroid/content/Context;
 
-    const/4 v4, 0x0
+    invoke-static {v2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    invoke-virtual {v1, v2, v3, v4, v4}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
+    move-result-object v2
 
-    iget-object v1, v0, Lvm;->E0:Lazf;
+    invoke-virtual {v2}, Landroid/view/LayoutInflater;->getFactory()Landroid/view/LayoutInflater$Factory;
 
-    if-eqz v1, :cond_0
+    move-result-object v3
 
-    invoke-virtual {v1}, Lazf;->b()V
+    if-nez v3, :cond_0
 
-    :cond_0
-    iget-boolean v1, v0, Lvm;->F0:Z
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, v0, Lvm;->G0:Landroid/view/ViewGroup;
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v1}, Landroid/view/View;->isLaidOut()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, v0, Lvm;->B0:Landroidx/appcompat/widget/ActionBarContextView;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v3}, Landroid/view/View;->setAlpha(F)V
-
-    iget-object v1, v0, Lvm;->B0:Landroidx/appcompat/widget/ActionBarContextView;
-
-    invoke-static {v1}, Lexf;->a(Landroid/view/View;)Lazf;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Lazf;->a(F)V
-
-    iput-object v1, v0, Lvm;->E0:Lazf;
-
-    new-instance v0, Llm;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v2, p0}, Llm;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v1, v0}, Lazf;->d(Lczf;)V
+    invoke-virtual {v2, v1}, Landroid/view/LayoutInflater;->setFactory2(Landroid/view/LayoutInflater$Factory2;)V
 
     goto :goto_0
 
-    :cond_1
-    iget-object p0, v0, Lvm;->B0:Landroidx/appcompat/widget/ActionBarContextView;
-
-    invoke-virtual {p0, v2}, Landroid/view/View;->setAlpha(F)V
-
-    iget-object p0, v0, Lvm;->B0:Landroidx/appcompat/widget/ActionBarContextView;
-
-    invoke-virtual {p0, v4}, Landroidx/appcompat/widget/ActionBarContextView;->setVisibility(I)V
+    :cond_0
+    invoke-virtual {v2}, Landroid/view/LayoutInflater;->getFactory2()Landroid/view/LayoutInflater$Factory2;
 
     :goto_0
-    return-void
+    iget-object p0, p0, Lpd3;->o:Lrd;
 
-    :pswitch_0
-    iget-object p0, p0, Ljm;->b:Lvm;
+    iget-object p0, p0, Lrd;->o:Ljava/lang/Object;
 
-    iget v0, p0, Lvm;->f1:I
+    check-cast p0, Lom;
 
-    and-int/lit8 v0, v0, 0x1
+    const-string v1, "androidx:appcompat"
 
-    const/4 v1, 0x0
+    invoke-virtual {p0, v1}, Lom;->c(Ljava/lang/String;)Landroid/os/Bundle;
 
-    if-eqz v0, :cond_2
-
-    invoke-virtual {p0, v1}, Lvm;->u(I)V
-
-    :cond_2
-    iget v0, p0, Lvm;->f1:I
-
-    and-int/lit16 v0, v0, 0x1000
-
-    if-eqz v0, :cond_3
-
-    const/16 v0, 0x6c
-
-    invoke-virtual {p0, v0}, Lvm;->u(I)V
-
-    :cond_3
-    iput-boolean v1, p0, Lvm;->e1:Z
-
-    iput v1, p0, Lvm;->f1:I
+    invoke-virtual {v0}, Lsm;->c()V
 
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

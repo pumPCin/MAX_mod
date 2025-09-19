@@ -1,222 +1,70 @@
 .class public final Lnj1;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/calls/ui/ui/call/CallScreen;
+.field public final synthetic b:Lone/me/calls/ui/ui/call/CallScreen;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/call/CallScreen;)V
+.method public synthetic constructor <init>(Lone/me/calls/ui/ui/call/CallScreen;I)V
     .registers 3
 
-    iput-object p2, p0, Lnj1;->Y:Lone/me/calls/ui/ui/call/CallScreen;
+    iput p2, p0, Lnj1;->a:I
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lnj1;->b:Lone/me/calls/ui/ui/call/CallScreen;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .registers 10
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget p2, p0, Lnj1;->a:I
 
-    invoke-virtual {p0, p1, p2}, Lnj1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object p3, p0, Lnj1;->b:Lone/me/calls/ui/ui/call/CallScreen;
 
-    move-result-object p0
+    packed-switch p2, :pswitch_data_0
 
-    check-cast p0, Lnj1;
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p0, Lone/me/calls/ui/ui/call/CallScreen;->N0:Lad4;
 
-    invoke-virtual {p0, p1}, Lnj1;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lnj1;
-
-    iget-object p0, p0, Lnj1;->Y:Lone/me/calls/ui/ui/call/CallScreen;
-
-    invoke-direct {v0, p2, p0}, Lnj1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/call/CallScreen;)V
-
-    iput-object p1, v0, Lnj1;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lnj1;->X:Ljava/lang/Object;
-
-    check-cast p1, Lap1;
-
-    sget-object v0, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lq1d;
-
-    if-eqz p1, :cond_0
-
-    iget v0, p1, Lap1;->a:I
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-nez v0, :cond_1
-
-    const/4 v0, -0x1
-
-    goto :goto_1
-
-    :cond_1
-    sget-object v1, Lej1;->$EnumSwitchMapping$0:[I
-
-    invoke-static {v0}, Lew1;->t(I)I
-
-    move-result v0
-
-    aget v0, v1, v0
-
-    :goto_1
-    const/4 v1, 0x1
-
-    iget-object p0, p0, Lnj1;->Y:Lone/me/calls/ui/ui/call/CallScreen;
-
-    if-eq v0, v1, :cond_6
-
-    const/4 p1, 0x2
-
-    if-eq v0, p1, :cond_2
-
-    goto :goto_4
-
-    :cond_2
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->D0()Lnp1;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_4
-
-    check-cast p1, Lone/me/calls/ui/ui/call/panels/CallTopPanelWidget;
-
-    invoke-virtual {p1}, Lqx3;->getView()Landroid/view/View;
-
-    move-result-object v1
-
-    if-nez v1, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {p1}, Lone/me/calls/ui/ui/call/panels/CallTopPanelWidget;->x0()Lmp1;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Lmp1;->setTitle(Ljava/lang/CharSequence;)V
-
-    :cond_4
-    :goto_2
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->D0()Lnp1;
+    invoke-virtual {p3}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Ljab;
 
     move-result-object p0
 
-    if-eqz p0, :cond_a
+    invoke-virtual {p0}, Ljab;->c()V
 
-    check-cast p0, Lone/me/calls/ui/ui/call/panels/CallTopPanelWidget;
+    return-void
 
-    invoke-virtual {p0}, Lqx3;->getView()Landroid/view/View;
+    :pswitch_0
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    move-result-object p1
+    sget-object p0, Lone/me/calls/ui/ui/call/CallScreen;->N0:Lad4;
 
-    if-nez p1, :cond_5
-
-    goto :goto_4
-
-    :cond_5
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/panels/CallTopPanelWidget;->x0()Lmp1;
+    invoke-virtual {p3}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Ljab;
 
     move-result-object p0
 
-    invoke-virtual {p0, v0}, Lmp1;->setStatus(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0}, Ljab;->c()V
 
-    goto :goto_4
+    return-void
 
-    :cond_6
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->D0()Lnp1;
+    nop
 
-    move-result-object v0
-
-    if-eqz v0, :cond_8
-
-    iget-object v1, p1, Lap1;->b:Ljava/lang/CharSequence;
-
-    check-cast v0, Lone/me/calls/ui/ui/call/panels/CallTopPanelWidget;
-
-    invoke-virtual {v0}, Lqx3;->getView()Landroid/view/View;
-
-    move-result-object v2
-
-    if-nez v2, :cond_7
-
-    goto :goto_3
-
-    :cond_7
-    invoke-virtual {v0}, Lone/me/calls/ui/ui/call/panels/CallTopPanelWidget;->x0()Lmp1;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Lmp1;->setTitle(Ljava/lang/CharSequence;)V
-
-    :cond_8
-    :goto_3
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->D0()Lnp1;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_a
-
-    iget-object p1, p1, Lap1;->c:Ljava/lang/CharSequence;
-
-    check-cast p0, Lone/me/calls/ui/ui/call/panels/CallTopPanelWidget;
-
-    invoke-virtual {p0}, Lqx3;->getView()Landroid/view/View;
-
-    move-result-object v0
-
-    if-nez v0, :cond_9
-
-    goto :goto_4
-
-    :cond_9
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/panels/CallTopPanelWidget;->x0()Lmp1;
-
-    move-result-object p0
-
-    invoke-virtual {p0, p1}, Lmp1;->setStatus(Ljava/lang/CharSequence;)V
-
-    :cond_a
-    :goto_4
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

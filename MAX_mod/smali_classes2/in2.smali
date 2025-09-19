@@ -1,39 +1,23 @@
 .class public final Lin2;
-.super Lcx3;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Lbn2;
+.field public final synthetic X:Lrn2;
 
-.field public Y:Lbn2;
+.field public Y:I
 
-.field public Z:Lfq5;
-
-.field public n0:Ljava/util/LinkedHashMap;
-
-.field public o:Lln2;
-
-.field public o0:Ljava/util/Iterator;
-
-.field public p0:Lzm2;
-
-.field public q0:J
-
-.field public synthetic r0:Ljava/lang/Object;
-
-.field public final synthetic s0:Lln2;
-
-.field public t0:I
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lln2;Lcx3;)V
+.method public constructor <init>(Lrn2;Ljx3;)V
     .registers 3
 
-    iput-object p1, p0, Lin2;->s0:Lln2;
+    iput-object p1, p0, Lin2;->X:Lrn2;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -41,31 +25,23 @@
 
 # virtual methods
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    .registers 4
 
-    iput-object p1, p0, Lin2;->r0:Ljava/lang/Object;
+    iput-object p1, p0, Lin2;->o:Ljava/lang/Object;
 
-    iget p1, p0, Lin2;->t0:I
+    iget p1, p0, Lin2;->Y:I
 
     const/high16 v0, -0x80000000
 
     or-int/2addr p1, v0
 
-    iput p1, p0, Lin2;->t0:I
+    iput p1, p0, Lin2;->Y:I
 
-    const/4 v3, 0x0
+    iget-object p1, p0, Lin2;->X:Lrn2;
 
-    const/4 v4, 0x0
+    const-wide/16 v0, 0x0
 
-    iget-object v0, p0, Lin2;->s0:Lln2;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move-object v5, p0
-
-    invoke-virtual/range {v0 .. v5}, Lln2;->f(Ljava/util/Set;Lbn2;Lbn2;Lfq5;Lcx3;)Ljava/io/Serializable;
+    invoke-virtual {p1, v0, v1, p0}, Lrn2;->a(JLjx3;)Ljava/lang/Object;
 
     move-result-object p0
 

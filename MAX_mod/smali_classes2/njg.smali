@@ -1,114 +1,128 @@
-.class public final Lnjg;
-.super Ljava/lang/Object;
+.class public final enum Lnjg;
+.super Ljava/lang/Enum;
 .source "SourceFile"
+
+# interfaces
+.implements Lxjg;
+
+
+# static fields
+.field public static final synthetic c:[Lnjg;
+
+.field public static final synthetic o:Ly75;
 
 
 # instance fields
-.field public final a:Lcl9;
+.field public final a:Ljava/lang/String;
 
-.field public final b:Lcl9;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lnjg;
 
-    new-instance v0, Lcl9;
+    const-string v1, "WebAppOpenLink"
 
-    const/4 v1, 0x1
+    const-string v2, "open_link"
 
-    invoke-direct {v0, v1}, Lcl9;-><init>(I)V
+    const-string v3, "OPEN_LINK"
 
-    iput-object v0, p0, Lnjg;->a:Lcl9;
+    const/4 v4, 0x0
 
-    new-instance v0, Lcl9;
+    invoke-direct {v0, v3, v4, v1, v2}, Lnjg;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Lcl9;-><init>(I)V
+    new-instance v1, Lnjg;
 
-    iput-object v0, p0, Lnjg;->b:Lcl9;
+    const-string v2, "WebAppOpenMaxLink"
+
+    const-string v3, "open_max_link"
+
+    const-string v4, "OPEN_MAX_LINK"
+
+    const/4 v5, 0x1
+
+    invoke-direct {v1, v4, v5, v2, v3}, Lnjg;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+
+    filled-new-array {v0, v1}, [Lnjg;
+
+    move-result-object v0
+
+    sput-object v0, Lnjg;->c:[Lnjg;
+
+    new-instance v1, Ly75;
+
+    invoke-direct {v1, v0}, Ly75;-><init>([Ljava/lang/Enum;)V
+
+    sput-object v1, Lnjg;->o:Ly75;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+    .registers 5
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput-object p3, p0, Lnjg;->a:Ljava/lang/String;
+
+    iput-object p4, p0, Lnjg;->b:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lnjg;
+    .registers 2
+
+    const-class v0, Lnjg;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lnjg;
+
+    return-object p0
+.end method
+
+.method public static values()[Lnjg;
+    .registers 1
+
+    sget-object v0, Lnjg;->c:[Lnjg;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lnjg;
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a(Ljava/lang/Class;)Luxf;
-    .registers 7
+.method public final a()Ljava/lang/Integer;
+    .registers 1
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "one.me.sdk.arch.ViewModelStore:key:"
-
-    invoke-static {v1, v0}, Lnh0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lnjg;->a:Lcl9;
-
-    invoke-virtual {v1, v0}, Lcl9;->f(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Luxf;
-
-    invoke-virtual {p1, v2}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    const-string v4, "Required value was null."
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {p1, v2}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_0
-
-    check-cast p0, Luxf;
+    const/4 p0, 0x0
 
     return-object p0
+.end method
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+.method public final b()Ljava/lang/String;
+    .registers 1
 
-    invoke-direct {p0, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    iget-object p0, p0, Lnjg;->b:Lcl9;
-
-    invoke-virtual {p0, v0}, Lcl9;->f(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ltxf;
-
-    invoke-virtual {p0, v0}, Lcl9;->f(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_2
-
-    check-cast p0, Ltxf;
-
-    invoke-interface {p0, p1}, Ltxf;->a(Ljava/lang/Class;)Luxf;
-
-    move-result-object p0
-
-    invoke-virtual {v1, v0, p0}, Lcl9;->k(Ljava/lang/Object;Ljava/lang/Object;)V
+    iget-object p0, p0, Lnjg;->a:Ljava/lang/String;
 
     return-object p0
+.end method
 
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+.method public final c()Ljava/lang/String;
+    .registers 1
 
-    invoke-direct {p0, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lnjg;->b:Ljava/lang/String;
 
-    throw p0
+    return-object p0
 .end method

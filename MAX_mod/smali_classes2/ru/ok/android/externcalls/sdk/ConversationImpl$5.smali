@@ -22,7 +22,7 @@
 .method static constructor <clinit>()V
     .registers 11
 
-    invoke-static {}, Lo61;->values()[Lo61;
+    invoke-static {}, Lg61;->values()[Lg61;
 
     move-result-object v0
 

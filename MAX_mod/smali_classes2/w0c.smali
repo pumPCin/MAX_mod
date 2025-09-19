@@ -1,32 +1,97 @@
-.class public abstract Lw0c;
+.class public final Lw0c;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lz0c;
 
 
-# static fields
-.field public static one_chat_react_default_react_anim_view:I = 0x7f0a061e
+# instance fields
+.field public final a:Ljava/io/File;
 
-.field public static one_chat_react_lottie_debug_big_view:I = 0x7f0a061f
 
-.field public static one_chat_react_lottie_debug_centered_view:I = 0x7f0a0620
+# direct methods
+.method public constructor <init>(Ljava/io/File;)V
+    .registers 2
 
-.field public static one_chat_react_lottie_react_anim_view:I = 0x7f0a0621
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static one_chat_react_panel_layout:I = 0x7f0a0622
+    iput-object p1, p0, Lw0c;->a:Ljava/io/File;
 
-.field public static one_chat_reactions_expand_view_type:I = 0x7f0a0623
+    return-void
+.end method
 
-.field public static one_chat_reactions_selection_animoji_view_type:I = 0x7f0a0624
 
-.field public static one_chat_reactions_selection_emoji_view_type:I = 0x7f0a0625
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-.field public static onechat_react_badge_container:I = 0x7f0a0627
+    const/4 v0, 0x1
 
-.field public static onechat_react_bubble:I = 0x7f0a0628
+    if-ne p0, p1, :cond_0
 
-.field public static onechat_react_bubble_counter:I = 0x7f0a0629
+    return v0
 
-.field public static onechat_react_bubble_counter_container:I = 0x7f0a062a
+    :cond_0
+    instance-of v1, p1, Lw0c;
 
-.field public static onechat_react_message_reaction_bubble:I = 0x7f0a062b
+    const/4 v2, 0x0
 
-.field public static tag_reaction_effects_view:I = 0x7f0a0bf8
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lw0c;
+
+    iget-object p0, p0, Lw0c;->a:Ljava/io/File;
+
+    iget-object p1, p1, Lw0c;->a:Ljava/io/File;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lw0c;->a:Ljava/io/File;
+
+    invoke-virtual {p0}, Ljava/io/File;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "StartRecordVideo(file="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lw0c;->a:Ljava/io/File;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method

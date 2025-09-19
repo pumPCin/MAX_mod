@@ -1,10 +1,3 @@
 .class public abstract Lt4;
-.super Lcrg;
+.super Lya6;
 .source "SourceFile"
-
-# interfaces
-.implements Ltu6;
-
-
-# static fields
-.field public static final synthetic d:I

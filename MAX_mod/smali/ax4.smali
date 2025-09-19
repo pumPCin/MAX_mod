@@ -1,55 +1,89 @@
-.class public final Lax4;
+.class public abstract Lax4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
+# static fields
+.field public static final a:Ljava/lang/reflect/Method;
 
-.field public final b:Z
+.field public static final b:Ljava/lang/reflect/Method;
 
-.field public final c:I
+.field public static final c:Ljava/lang/reflect/Method;
 
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:I
-
-.field public final i:I
-
-.field public final j:Landroid/util/SparseArray;
+.field public static final d:Z
 
 
 # direct methods
-.method public constructor <init>(IZIIIIIIILandroid/util/SparseArray;)V
-    .registers 11
+.method static constructor <clinit>()V
+    .registers 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Landroid/widget/AdapterView;
 
-    iput p1, p0, Lax4;->a:I
+    :try_start_0
+    const-class v1, Landroid/widget/AbsListView;
 
-    iput-boolean p2, p0, Lax4;->b:Z
+    const-string v2, "positionSelector"
 
-    iput p3, p0, Lax4;->c:I
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    iput p4, p0, Lax4;->d:I
+    const-class v4, Landroid/view/View;
 
-    iput p5, p0, Lax4;->e:I
+    sget-object v5, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    iput p6, p0, Lax4;->f:I
+    sget-object v6, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    iput p7, p0, Lax4;->g:I
+    filled-new-array {v3, v4, v5, v6, v6}, [Ljava/lang/Class;
 
-    iput p8, p0, Lax4;->h:I
+    move-result-object v4
 
-    iput p9, p0, Lax4;->i:I
+    invoke-virtual {v1, v2, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    iput-object p10, p0, Lax4;->j:Landroid/util/SparseArray;
+    move-result-object v1
+
+    sput-object v1, Lax4;->a:Ljava/lang/reflect/Method;
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v2}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+
+    const-string v1, "setSelectedPositionInt"
+
+    filled-new-array {v3}, [Ljava/lang/Class;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v1, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v1
+
+    sput-object v1, Lax4;->b:Ljava/lang/reflect/Method;
+
+    invoke-virtual {v1, v2}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+
+    const-string v1, "setNextSelectedPositionInt"
+
+    filled-new-array {v3}, [Ljava/lang/Class;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    sput-object v0, Lax4;->c:Ljava/lang/reflect/Method;
+
+    invoke-virtual {v0, v2}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+
+    sput-boolean v2, Lax4;->d:Z
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-void
 .end method

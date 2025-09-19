@@ -1,27 +1,20 @@
-.class public final Lnp5;
-.super Lhe6;
+.class public abstract Lnp5;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final m(I)Lgt0;
-    .registers 4
+# direct methods
+.method public static a(Landroid/graphics/drawable/Drawable;)V
+    .registers 2
 
-    new-instance v0, Lr0a;
+    instance-of v0, p0, Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    iget-object p0, p0, Lfk0;->c:Lu7b;
+    if-eqz v0, :cond_0
 
-    iget p0, p0, Lu7b;->d:I
+    check-cast p0, Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    const/4 v1, 0x0
+    invoke-virtual {p0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
-    invoke-direct {v0, p1, p0, v1}, Lgt0;-><init>(III)V
-
-    new-instance p0, Ljava/util/LinkedList;
-
-    invoke-direct {p0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object p0, v0, Lr0a;->e:Ljava/util/LinkedList;
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

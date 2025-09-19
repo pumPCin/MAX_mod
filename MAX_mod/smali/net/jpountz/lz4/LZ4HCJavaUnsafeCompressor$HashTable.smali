@@ -113,7 +113,7 @@
 .method private addHash([BI)V
     .registers 3
 
-    invoke-static {p2, p1}, Lidf;->b(I[B)I
+    invoke-static {p2, p1}, Ltmf;->b(I[B)I
 
     move-result p1
 
@@ -153,7 +153,7 @@
 .method private hashPointer([BI)I
     .registers 3
 
-    invoke-static {p2, p1}, Lidf;->b(I[B)I
+    invoke-static {p2, p1}, Ltmf;->b(I[B)I
 
     move-result p1
 
@@ -587,7 +587,7 @@
 
     iget-object v1, p0, Lnet/jpountz/lz4/LZ4HCJavaUnsafeCompressor$HashTable;->hashTable:[I
 
-    invoke-static {p2, p1}, Lidf;->b(I[B)I
+    invoke-static {p2, p1}, Ltmf;->b(I[B)I
 
     move-result v4
 

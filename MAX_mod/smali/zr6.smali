@@ -1,3 +1,3 @@
-.class public final Lzr6;
+.class public interface abstract Lzr6;
 .super Ljava/lang/Object;
 .source "SourceFile"

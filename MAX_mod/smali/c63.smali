@@ -1,76 +1,34 @@
-.class public abstract Lc63;
+.class public interface abstract Lc63;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/io/Closeable;
+.implements Lh17;
+.implements Lcom/facebook/fresco/middleware/HasExtraData;
 
-# static fields
-.field public static final a:Ljava/util/logging/Logger;
 
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    const-class v0, Lc63;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
-
-    move-result-object v0
-
-    sput-object v0, Lc63;->a:Ljava/util/logging/Logger;
-
-    return-void
+# virtual methods
+.method public abstract close()V
 .end method
 
-.method public static a(Ljava/io/Closeable;)V
-    .registers 4
-
-    if-nez p0, :cond_0
-
-    return-void
-
-    :cond_0
-    :try_start_0
-    invoke-interface {p0}, Ljava/io/Closeable;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p0
-
-    sget-object v0, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
-
-    const-string v1, "IOException thrown while closing Closeable."
-
-    sget-object v2, Lc63;->a:Ljava/util/logging/Logger;
-
-    invoke-virtual {v2, v0, v1, p0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
+.method public abstract getHeight()I
 .end method
 
-.method public static b(Ljava/io/InputStream;)V
-    .registers 2
+.method public abstract getImageInfo()Lh17;
+.end method
 
-    :try_start_0
-    invoke-static {p0}, Lc63;->a(Ljava/io/Closeable;)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+.method public abstract getQualityInfo()Li0c;
+.end method
 
-    return-void
+.method public abstract getSizeInBytes()I
+.end method
 
-    :catch_0
-    move-exception p0
+.method public abstract getWidth()I
+.end method
 
-    new-instance v0, Ljava/lang/AssertionError;
+.method public abstract isClosed()Z
+.end method
 
-    invoke-direct {v0, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v0
+.method public abstract isStateful()Z
 .end method

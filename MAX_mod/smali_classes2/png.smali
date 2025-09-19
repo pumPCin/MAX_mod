@@ -1,158 +1,152 @@
-.class public final Lpng;
+.class public final synthetic Lpng;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lxg6;
 
-# instance fields
-.field public final a:Ls26;
 
-.field public final b:Ljava/lang/String;
+# static fields
+.field public static final a:Lpng;
+
+.field private static final descriptor:Lqid;
 
 
 # direct methods
-.method public constructor <init>(Ls26;Ljava/lang/String;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lpng;
 
-    iput-object p1, p0, Lpng;->a:Ls26;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lpng;->b:Ljava/lang/String;
+    sput-object v0, Lpng;->a:Lpng;
+
+    new-instance v1, Ljeb;
+
+    const-string v2, "one.me.webapp.domain.jsbridge.delegates.system.WebAppSetupClosingBehaviorRequest"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v0, v3}, Ljeb;-><init>(Ljava/lang/String;Lxg6;I)V
+
+    const-string v0, "needConfirmation"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
+
+    sput-object v1, Lpng;->descriptor:Lqid;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final a(Lu8;)Ljava/lang/Object;
+    .registers 9
+
+    sget-object p0, Lpng;->descriptor:Lqid;
+
+    invoke-virtual {p1, p0}, Lu8;->k(Lqid;)Lu8;
+
+    move-result-object p1
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_5
+    move v2, v0
 
-    const-class v2, Lpng;
+    move v3, v1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move v4, v3
 
-    move-result-object v3
+    :goto_0
+    if-eqz v2, :cond_2
 
-    if-eq v2, v3, :cond_1
+    invoke-virtual {p1, p0}, Lu8;->q(Lqid;)I
 
-    goto :goto_1
+    move-result v5
+
+    const/4 v6, -0x1
+
+    if-eq v5, v6, :cond_1
+
+    if-nez v5, :cond_0
+
+    invoke-virtual {p1, p0, v1}, Lu8;->p(Lqid;I)Z
+
+    move-result v4
+
+    move v3, v0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+
+    invoke-direct {p0, v5}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
+
+    throw p0
 
     :cond_1
-    check-cast p1, Lpng;
-
-    iget-object v2, p1, Lpng;->b:Ljava/lang/String;
-
-    iget-object p1, p1, Lpng;->a:Ls26;
-
-    iget-object v3, p0, Lpng;->a:Ls26;
-
-    if-eqz v3, :cond_2
-
-    invoke-virtual {v3, p1}, Ls26;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_3
+    move v2, v1
 
     goto :goto_0
 
     :cond_2
-    if-eqz p1, :cond_3
+    invoke-virtual {p1, p0}, Lu8;->z(Lqid;)V
 
-    :goto_0
-    return v1
+    new-instance p0, Lrng;
 
-    :cond_3
-    iget-object p0, p0, Lpng;->b:Ljava/lang/String;
+    invoke-direct {p0, v3, v4}, Lrng;-><init>(IZ)V
 
-    if-eqz p0, :cond_4
-
-    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_4
-    if-nez v2, :cond_5
-
-    return v0
-
-    :cond_5
-    :goto_1
-    return v1
+    return-object p0
 .end method
 
-.method public final hashCode()I
-    .registers 3
+.method public final b(Lay3;Ljava/lang/Object;)V
+    .registers 4
+
+    check-cast p2, Lrng;
+
+    sget-object p0, Lpng;->descriptor:Lqid;
+
+    invoke-virtual {p1, p0}, Lay3;->b(Lqid;)Lay3;
+
+    move-result-object p1
+
+    iget-boolean p2, p2, Lrng;->a:Z
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lpng;->a:Ls26;
+    invoke-virtual {p1, p0, v0, p2}, Lay3;->e(Lqid;IZ)V
 
-    if-eqz v1, :cond_0
+    invoke-virtual {p1}, Lay3;->m()V
 
-    invoke-virtual {v1}, Ls26;->hashCode()I
-
-    move-result v1
-
-    goto :goto_0
-
-    :cond_0
-    move v1, v0
-
-    :goto_0
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-object p0, p0, Lpng;->b:Ljava/lang/String;
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    :cond_1
-    add-int/2addr v1, v0
-
-    return v1
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final c()[Lyi7;
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 p0, 0x1
 
-    const-string v1, "YtFile{format="
+    new-array p0, p0, [Lyi7;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    sget-object v0, Lzp0;->a:Lzp0;
 
-    iget-object v1, p0, Lpng;->a:Ls26;
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    aput-object v0, p0, v1
 
-    const-string v1, ", url=\'"
+    return-object p0
+.end method
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public final d()Lqid;
+    .registers 1
 
-    iget-object p0, p0, Lpng;->b:Ljava/lang/String;
-
-    const-string v1, "\'}"
-
-    invoke-static {v0, p0, v1}, La78;->o(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
+    sget-object p0, Lpng;->descriptor:Lqid;
 
     return-object p0
 .end method

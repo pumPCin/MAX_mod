@@ -70,13 +70,13 @@
 .method public final toString()Ljava/lang/String;
     .registers 3
 
-    const-string v0, "CommonStrokeSeparatorColors(primary="
+    const-string v0, "CommonStatesBackgroundActiveActionColors(themed="
 
     const-string v1, ")"
 
     iget p0, p0, Lza3;->a:I
 
-    invoke-static {p0, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0, v1}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

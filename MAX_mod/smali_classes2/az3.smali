@@ -3,22 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljm3;
+.implements Lqm3;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lru/ok/android/externcalls/sdk/factory/CreateConfParams;
+.field public final synthetic b:Lru/ok/android/externcalls/sdk/factory/StartCallParams;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/android/externcalls/sdk/factory/CreateConfParams;I)V
+.method public synthetic constructor <init>(Lru/ok/android/externcalls/sdk/factory/StartCallParams;I)V
     .registers 3
 
     iput p2, p0, Laz3;->a:I
 
-    iput-object p1, p0, Laz3;->b:Lru/ok/android/externcalls/sdk/factory/CreateConfParams;
+    iput-object p1, p0, Laz3;->b:Lru/ok/android/externcalls/sdk/factory/StartCallParams;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,20 +32,20 @@
 
     iget v0, p0, Laz3;->a:I
 
-    iget-object p0, p0, Laz3;->b:Lru/ok/android/externcalls/sdk/factory/CreateConfParams;
+    iget-object p0, p0, Laz3;->b:Lru/ok/android/externcalls/sdk/factory/StartCallParams;
 
     packed-switch v0, :pswitch_data_0
 
     check-cast p1, Ljava/lang/Throwable;
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/ConversationFactory;->j(Lru/ok/android/externcalls/sdk/factory/CreateConfParams;Ljava/lang/Throwable;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/ConversationFactory;->c(Lru/ok/android/externcalls/sdk/factory/StartCallParams;Ljava/lang/Throwable;)V
 
     return-void
 
     :pswitch_0
     check-cast p1, Lru/ok/android/externcalls/sdk/Conversation;
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/ConversationFactory;->n(Lru/ok/android/externcalls/sdk/factory/CreateConfParams;Lru/ok/android/externcalls/sdk/Conversation;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/ConversationFactory;->i(Lru/ok/android/externcalls/sdk/factory/StartCallParams;Lru/ok/android/externcalls/sdk/Conversation;)V
 
     return-void
 

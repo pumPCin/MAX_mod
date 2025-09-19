@@ -1,84 +1,59 @@
-.class public abstract Ld59;
-.super Ljava/lang/Object;
+.class public final Ld59;
+.super Ljx3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Liyc;
+# instance fields
+.field public X:Luz8;
+
+.field public Y:Z
+
+.field public Z:I
+
+.field public o:Ljava/lang/Object;
+
+.field public synthetic r0:Ljava/lang/Object;
+
+.field public final synthetic s0:Ln59;
+
+.field public t0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ln59;Ljx3;)V
     .registers 3
 
-    new-instance v0, Lhdf;
+    iput-object p1, p0, Ld59;->s0:Ln59;
 
-    const-string v1, "messages-list-scope"
-
-    invoke-direct {v0, v1}, Lhdf;-><init>(Ljava/lang/String;)V
-
-    sget-object v1, Lkv0;->p0:Liyc;
-
-    if-eqz v1, :cond_0
-
-    iget-object v2, v0, Lhdf;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    new-instance v1, Lsi7;
-
-    const/16 v2, 0x19
-
-    invoke-direct {v1, v2}, Lsi7;-><init>(I)V
-
-    const-class v2, Lb59;
-
-    invoke-virtual {v0, v2, v1}, Lhdf;->e(Ljava/lang/Class;Li67;)V
-
-    new-instance v1, Lqi7;
-
-    const/16 v2, 0xb
-
-    invoke-direct {v1, v2}, Lqi7;-><init>(I)V
-
-    const-class v2, Lc59;
-
-    invoke-virtual {v0, v2, v1}, Lhdf;->e(Ljava/lang/Class;Li67;)V
-
-    new-instance v1, Lqi7;
-
-    const/16 v2, 0xc
-
-    invoke-direct {v1, v2}, Lqi7;-><init>(I)V
-
-    const-class v2, Llf6;
-
-    invoke-virtual {v0, v2, v1}, Lhdf;->e(Ljava/lang/Class;Li67;)V
-
-    new-instance v1, Lqi7;
-
-    const/16 v2, 0xd
-
-    invoke-direct {v1, v2}, Lqi7;-><init>(I)V
-
-    const-class v2, Ldb9;
-
-    invoke-virtual {v0, v2, v1}, Lhdf;->e(Ljava/lang/Class;Li67;)V
-
-    invoke-virtual {v0}, Lhdf;->a()Liyc;
-
-    move-result-object v0
-
-    sput-object v0, Ld59;->a:Liyc;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
 
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "Trying to access DI graph before initialization!"
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Ld59;->r0:Ljava/lang/Object;
 
-    throw v0
+    iget p1, p0, Ld59;->t0:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Ld59;->t0:I
+
+    const/4 p1, 0x0
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Ld59;->s0:Ln59;
+
+    invoke-virtual {v1, p1, v0, p0}, Ln59;->x(Ljava/lang/Long;ZLjx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

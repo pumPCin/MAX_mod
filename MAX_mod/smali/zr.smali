@@ -3,347 +3,148 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lkad;
+.implements Lbid;
 
 
 # instance fields
-.field public final a:Lkad;
+.field public final synthetic a:I
+
+.field public final b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lkad;)V
-    .registers 2
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .registers 3
+
+    iput p1, p0, Lzr;->a:I
+
+    iput-object p2, p0, Lzr;->b:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lzr;->a:Lkad;
+    return-void
+.end method
+
+.method public constructor <init>(Lpc6;)V
+    .registers 3
+
+    const/4 v0, 0x5
+
+    iput v0, p0, Lzr;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    check-cast p1, Lcvc;
+
+    iput-object p1, p0, Lzr;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "kotlin.collections.ArrayList"
-
-    return-object p0
-.end method
-
-.method public final c()Z
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final d(Ljava/lang/String;)I
+.method public final iterator()Ljava/util/Iterator;
     .registers 3
 
-    invoke-static {p1}, Lxde;->Z(Ljava/lang/String;)Ljava/lang/Integer;
+    iget v0, p0, Lzr;->a:I
 
-    move-result-object p0
+    packed-switch v0, :pswitch_data_0
 
-    if-eqz p0, :cond_0
+    iget-object p0, p0, Lzr;->b:Ljava/lang/Object;
 
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+    check-cast p0, Landroid/view/ViewGroup;
 
-    move-result p0
+    new-instance v0, Lw1;
 
-    return p0
+    const/4 v1, 0x5
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    invoke-direct {v0, v1, p0}, Lw1;-><init>(ILjava/lang/Object;)V
 
-    const-string v0, " is not a valid list index"
+    return-object v0
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    :pswitch_0
+    iget-object p0, p0, Lzr;->b:Ljava/lang/Object;
 
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final e()Luo9;
-    .registers 1
-
-    sget-object p0, Liee;->i:Liee;
+    check-cast p0, Ljava/util/Iterator;
 
     return-object p0
-.end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    :pswitch_1
+    iget-object p0, p0, Lzr;->b:Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    check-cast p0, Lcvc;
 
-    goto :goto_0
-
-    :cond_0
-    instance-of v0, p1, Lzr;
-
-    if-nez v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    check-cast p1, Lzr;
-
-    iget-object v0, p1, Lzr;->a:Lkad;
-
-    iget-object v1, p0, Lzr;->a:Lkad;
-
-    invoke-static {v1, v0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {p0}, Lkad;->a()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-interface {p1}, Lkad;->a()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    :goto_0
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_2
-    :goto_1
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final f()I
-    .registers 1
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final g(I)Ljava/lang/String;
-    .registers 2
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-static {p0}, Li4h;->L(Lpc6;)Leid;
 
     move-result-object p0
 
     return-object p0
-.end method
 
-.method public final getAnnotations()Ljava/util/List;
-    .registers 1
+    :pswitch_2
+    iget-object p0, p0, Lzr;->b:Ljava/lang/Object;
 
-    sget-object p0, Lv25;->a:Lv25;
+    check-cast p0, Landroid/view/Menu;
 
-    return-object p0
-.end method
+    new-instance v0, Lw1;
 
-.method public final h(I)Ljava/util/List;
-    .registers 4
+    const/4 v1, 0x3
 
-    if-ltz p1, :cond_0
+    invoke-direct {v0, v1, p0}, Lw1;-><init>(ILjava/lang/Object;)V
 
-    sget-object p0, Lv25;->a:Lv25;
+    return-object v0
 
-    return-object p0
+    :pswitch_3
+    new-instance v0, Lvo7;
 
-    :cond_0
-    const-string v0, "Illegal index "
+    invoke-direct {v0, p0}, Lvo7;-><init>(Lzr;)V
 
-    const-string v1, ", "
+    return-object v0
 
-    invoke-static {p1, v0, v1}, Lgl5;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :pswitch_4
+    iget-object p0, p0, Lzr;->b:Ljava/lang/Object;
 
-    move-result-object p1
+    check-cast p0, Ljava/lang/Iterable;
 
-    invoke-interface {p0}, Lkad;->a()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, " expects only non-negative indices"
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-object v0, p0, Lzr;->a:Lkad;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    invoke-interface {p0}, Lkad;->a()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final i(I)Lkad;
-    .registers 4
-
-    if-ltz p1, :cond_0
-
-    iget-object p0, p0, Lzr;->a:Lkad;
-
-    return-object p0
-
-    :cond_0
-    const-string v0, "Illegal index "
-
-    const-string v1, ", "
-
-    invoke-static {p1, v0, v1}, Lgl5;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p1
-
-    invoke-interface {p0}, Lkad;->a()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, " expects only non-negative indices"
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final isInline()Z
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final j(I)Z
-    .registers 4
-
-    if-ltz p1, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    const-string v0, "Illegal index "
-
-    const-string v1, ", "
-
-    invoke-static {p1, v0, v1}, Lgl5;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p1
-
-    invoke-interface {p0}, Lkad;->a()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, " expects only non-negative indices"
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-interface {p0}, Lkad;->a()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x28
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lzr;->a:Lkad;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x29
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_5
+    iget-object p0, p0, Lzr;->b:Ljava/lang/Object;
+
+    check-cast p0, [F
+
+    new-instance v0, Lw1;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1, p0}, Lw1;-><init>(ILjava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_6
+    iget-object p0, p0, Lzr;->b:Ljava/lang/Object;
+
+    check-cast p0, [Ljava/lang/Object;
+
+    new-instance v0, Lw1;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1, p0}, Lw1;-><init>(ILjava/lang/Object;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

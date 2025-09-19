@@ -1,256 +1,193 @@
-.class public final Lbl4;
+.class public final synthetic Lbl4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
-.implements Lhf7;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic X:Lcl4;
+.field public final synthetic a:I
 
-.field public a:I
-
-.field public b:I
-
-.field public c:I
-
-.field public o:Lr67;
+.field public final synthetic b:Lcl4;
 
 
 # direct methods
-.method public constructor <init>(Lcl4;)V
+.method public synthetic constructor <init>(Lcl4;I)V
     .registers 3
 
+    iput p2, p0, Lbl4;->a:I
+
+    iput-object p1, p0, Lbl4;->b:Lcl4;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lbl4;->X:Lcl4;
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lbl4;->a:I
-
-    iget-object p1, p1, Lcl4;->b:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/CharSequence;
-
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
-
-    move-result p1
-
-    const/4 v0, 0x0
-
-    invoke-static {v0, v0, p1}, Lb38;->f(III)I
-
-    move-result p1
-
-    iput p1, p0, Lbl4;->b:I
-
-    iput p1, p0, Lbl4;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final run()V
     .registers 8
-
-    iget-object v0, p0, Lbl4;->X:Lcl4;
-
-    iget-object v1, v0, Lcl4;->b:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/CharSequence;
-
-    iget v2, p0, Lbl4;->c:I
-
-    const/4 v3, 0x0
-
-    if-gez v2, :cond_0
-
-    iput v3, p0, Lbl4;->a:I
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lbl4;->o:Lr67;
-
-    return-void
-
-    :cond_0
-    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v4
-
-    const/4 v5, -0x1
-
-    const/4 v6, 0x1
-
-    if-le v2, v4, :cond_1
-
-    new-instance v0, Lr67;
-
-    iget v2, p0, Lbl4;->b:I
-
-    invoke-static {v1}, Lqde;->q0(Ljava/lang/CharSequence;)I
-
-    move-result v1
-
-    invoke-direct {v0, v2, v1, v6}, Lp67;-><init>(III)V
-
-    iput-object v0, p0, Lbl4;->o:Lr67;
-
-    iput v5, p0, Lbl4;->c:I
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, v0, Lcl4;->c:Ljava/lang/Object;
-
-    check-cast v0, Lih7;
-
-    iget v2, p0, Lbl4;->c:I
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-interface {v0, v1, v2}, Lx96;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lura;
-
-    if-nez v0, :cond_2
-
-    new-instance v0, Lr67;
-
-    iget v2, p0, Lbl4;->b:I
-
-    invoke-static {v1}, Lqde;->q0(Ljava/lang/CharSequence;)I
-
-    move-result v1
-
-    invoke-direct {v0, v2, v1, v6}, Lp67;-><init>(III)V
-
-    iput-object v0, p0, Lbl4;->o:Lr67;
-
-    iput v5, p0, Lbl4;->c:I
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v1, v0, Lura;->a:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Number;
-
-    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
-
-    move-result v1
-
-    iget-object v0, v0, Lura;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Number;
-
-    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
-
-    move-result v0
-
-    iget v2, p0, Lbl4;->b:I
-
-    invoke-static {v2, v1}, Lb38;->H(II)Lr67;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lbl4;->o:Lr67;
-
-    add-int/2addr v1, v0
-
-    iput v1, p0, Lbl4;->b:I
-
-    if-nez v0, :cond_3
-
-    move v3, v6
-
-    :cond_3
-    add-int/2addr v1, v3
-
-    iput v1, p0, Lbl4;->c:I
-
-    :goto_0
-    iput v6, p0, Lbl4;->a:I
-
-    return-void
-.end method
-
-.method public final hasNext()Z
-    .registers 3
 
     iget v0, p0, Lbl4;->a:I
 
-    const/4 v1, -0x1
+    iget-object p0, p0, Lbl4;->b:Lcl4;
 
-    if-ne v0, v1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0}, Lbl4;->a()V
+    iget v0, p0, Lcl4;->Z:I
 
-    :cond_0
-    iget p0, p0, Lbl4;->a:I
+    if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
-    if-ne p0, v0, :cond_1
+    iput v0, p0, Lcl4;->Z:I
 
-    return v0
+    invoke-static {}, Lmq0;->w()Lmq0;
 
-    :cond_1
-    const/4 p0, 0x0
+    move-result-object v0
 
-    return p0
-.end method
+    sget-object v1, Lcl4;->w0:Ljava/lang/String;
 
-.method public final next()Ljava/lang/Object;
-    .registers 4
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    iget v0, p0, Lbl4;->a:I
+    const-string v3, "onAllConstraintsMet for "
 
-    const/4 v1, -0x1
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-ne v0, v1, :cond_0
+    iget-object v3, p0, Lcl4;->c:Ljvg;
 
-    invoke-virtual {p0}, Lbl4;->a()V
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    iget v0, p0, Lbl4;->a:I
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    move-result-object v2
 
-    iget-object v0, p0, Lbl4;->o:Lr67;
+    invoke-virtual {v0, v1, v2}, Lmq0;->q(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcl4;->o:Ldue;
+
+    iget-object v0, v0, Ldue;->o:Lzib;
+
+    iget-object v1, p0, Lcl4;->v0:Lgce;
 
     const/4 v2, 0x0
 
-    iput-object v2, p0, Lbl4;->o:Lr67;
+    invoke-virtual {v0, v1, v2}, Lzib;->h(Lgce;Lfo8;)Z
 
-    iput v1, p0, Lbl4;->a:I
+    move-result v0
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcl4;->o:Ldue;
+
+    iget-object v0, v0, Ldue;->c:Lmwg;
+
+    iget-object v1, p0, Lcl4;->c:Ljvg;
+
+    const-string v2, "Starting timer for "
+
+    iget-object v3, v0, Lmwg;->d:Ljava/lang/Object;
+
+    monitor-enter v3
+
+    :try_start_0
+    invoke-static {}, Lmq0;->w()Lmq0;
+
+    move-result-object v4
+
+    sget-object v5, Lmwg;->e:Ljava/lang/String;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v4, v5, v2}, Lmq0;->q(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Lmwg;->a(Ljvg;)V
+
+    new-instance v2, Llwg;
+
+    invoke-direct {v2, v0, v1}, Llwg;-><init>(Lmwg;Ljvg;)V
+
+    iget-object v4, v0, Lmwg;->b:Ljava/util/HashMap;
+
+    invoke-virtual {v4, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v4, v0, Lmwg;->c:Ljava/util/HashMap;
+
+    invoke-virtual {v4, v1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object p0, v0, Lmwg;->a:Lck7;
+
+    iget-object p0, p0, Lck7;->b:Ljava/lang/Object;
+
+    check-cast p0, Landroid/os/Handler;
+
+    const-wide/32 v0, 0x927c0
+
+    invoke-virtual {p0, v2, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    monitor-exit v3
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+
+    :cond_0
+    invoke-virtual {p0}, Lcl4;->b()V
+
+    goto :goto_0
 
     :cond_1
-    new-instance p0, Ljava/util/NoSuchElementException;
+    invoke-static {}, Lmq0;->w()Lmq0;
 
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+    move-result-object v0
 
-    throw p0
-.end method
+    sget-object v1, Lcl4;->w0:Ljava/lang/String;
 
-.method public final remove()V
-    .registers 2
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    const-string v3, "Already started work for "
 
-    const-string v0, "Operation is not supported for read-only collection"
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lcl4;->c:Ljvg;
 
-    throw p0
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v1, p0}, Lmq0;->q(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
+    return-void
+
+    :pswitch_0
+    invoke-static {p0}, Lcl4;->a(Lcl4;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

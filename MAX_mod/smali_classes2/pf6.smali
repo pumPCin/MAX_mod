@@ -1,139 +1,95 @@
-.class public final Lpf6;
-.super Lxie;
+.class public final synthetic Lpf6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Landroid/view/ViewStub$OnInflateListener;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Luf6;
+.field public final synthetic a:Lqf6;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Luf6;)V
-    .registers 4
+.method public synthetic constructor <init>(Lqf6;)V
+    .registers 2
 
-    iput-object p1, p0, Lpf6;->Y:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lpf6;->Z:Luf6;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lpf6;->a:Lqf6;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final onInflate(Landroid/view/ViewStub;Landroid/view/View;)V
+    .registers 11
 
-    check-cast p1, Lr04;
+    sget p1, Lyma;->b:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {p0, p1, p2}, Lpf6;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-result-object v6
+
+    sget p1, Lyma;->a:I
+
+    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    move-object v1, p1
+
+    check-cast v1, Lone/me/sdk/gallery/view/NumericCheckButton;
+
+    iget-object p0, p0, Lpf6;->a:Lqf6;
+
+    iput-object v1, p0, Lqf6;->F0:Lone/me/sdk/gallery/view/NumericCheckButton;
+
+    iget-object p0, p0, Lzoc;->a:Landroid/view/View;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
-    check-cast p0, Lpf6;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lpf6;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
 
-    return-object p0
-.end method
+    const/16 p1, 0xa
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    int-to-float p1, p1
 
-    new-instance p1, Lpf6;
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    iget-object v0, p0, Lpf6;->Y:Ljava/lang/Object;
+    move-result-object p0
 
-    iget-object p0, p0, Lpf6;->Z:Luf6;
+    iget p0, p0, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-direct {p1, v0, p2, p0}, Lpf6;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Luf6;)V
+    mul-float/2addr p1, p0
 
-    return-object p1
-.end method
+    invoke-static {p1}, Lya6;->G(F)I
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    move-result v2
 
-    iget v0, p0, Lpf6;->X:I
+    if-nez v6, :cond_0
 
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object p1
+    return-void
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance v0, Lme3;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const/4 v7, 0x1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move v3, v2
 
-    throw p0
+    move v4, v2
 
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    move v5, v2
 
-    iget-object p1, p0, Lpf6;->Y:Ljava/lang/Object;
+    invoke-direct/range {v0 .. v7}, Lme3;-><init>(Landroid/view/View;IIIILandroid/view/View;I)V
 
-    check-cast p1, Ljava/lang/Number;
+    invoke-virtual {v6, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v2
-
-    iget-object p1, p0, Lpf6;->Z:Luf6;
-
-    iget-object p1, p1, Luf6;->c:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ltt7;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/16 v0, 0x1a
-
-    const/4 v4, 0x0
-
-    invoke-static {p1, v2, v3, v4, v0}, Ltt7;->b(Ltt7;JZI)Ls3a;
-
-    move-result-object p1
-
-    iput v1, p0, Lpf6;->X:I
-
-    invoke-static {p1, p0}, Lcr0;->e(Lcud;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    return-object p0
+    return-void
 .end method

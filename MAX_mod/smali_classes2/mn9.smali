@@ -1,72 +1,95 @@
-.class public final synthetic Lmn9;
-.super Ljava/lang/Object;
+.class public final Lmn9;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Z
-
-.field public final synthetic c:Landroid/view/View;
+.field public final synthetic X:Lon9;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILandroid/view/View;Z)V
-    .registers 4
+.method public constructor <init>(Lon9;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p1, p0, Lmn9;->a:I
+    iput-object p1, p0, Lmn9;->X:Lon9;
 
-    iput-boolean p3, p0, Lmn9;->b:Z
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Lmn9;->c:Landroid/view/View;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Ly04;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lmn9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lmn9;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lmn9;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lmn9;
+
+    iget-object p0, p0, Lmn9;->X:Lon9;
+
+    invoke-direct {p1, p0, p2}, Lmn9;-><init>(Lon9;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    iget v0, p0, Lmn9;->a:I
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Lmn9;->X:Lon9;
 
-    iget-boolean v0, p0, Lmn9;->b:Z
+    iget-object p0, p0, Lon9;->m:Ljf8;
 
-    if-nez v0, :cond_0
+    if-eqz p0, :cond_1
 
-    const/16 v0, 0x8
+    invoke-virtual {p0}, Ljf8;->t()V
 
-    iget-object p0, p0, Lmn9;->c:Landroid/view/View;
+    iget-object p0, p0, Ljf8;->c:Lif8;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-interface {p0}, Lif8;->isConnected()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    const-string p0, "The controller is not connected. Ignoring stop()."
+
+    invoke-static {p0}, Lxnd;->l0(Ljava/lang/String;)V
+
+    goto :goto_0
 
     :cond_0
-    return-void
-
-    :pswitch_0
-    iget-boolean v0, p0, Lmn9;->b:Z
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x0
-
-    iget-object p0, p0, Lmn9;->c:Landroid/view/View;
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-interface {p0}, Lif8;->stop()V
 
     :cond_1
-    return-void
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

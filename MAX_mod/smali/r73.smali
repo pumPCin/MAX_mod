@@ -1,187 +1,181 @@
-.class public final Lr73;
-.super Ljava/lang/Object;
+.class public abstract Lr73;
+.super Lgs3;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
-
-.field public b:I
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public h:I
-
-.field public i:I
-
-.field public final synthetic j:La43;
-
-
 # direct methods
-.method public constructor <init>(La43;II)V
+.method public static G(Ljava/util/Collection;)Lw97;
     .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lw97;
 
-    iput-object p1, p0, Lr73;->j:La43;
+    invoke-interface {p0}, Ljava/util/Collection;->size()I
 
-    iput p2, p0, Lr73;->a:I
+    move-result p0
 
-    iput p3, p0, Lr73;->b:I
+    const/4 v1, 0x1
 
-    invoke-virtual {p0}, Lr73;->a()V
+    sub-int/2addr p0, v1
 
-    return-void
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v2, p0, v1}, Lu97;-><init>(III)V
+
+    return-object v0
 .end method
 
+.method public static H(Ljava/util/List;)I
+    .registers 1
 
-# virtual methods
-.method public final a()V
-    .registers 14
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
-    iget-object v0, p0, Lr73;->j:La43;
+    move-result p0
 
-    iget-object v1, v0, La43;->b:Ljava/lang/Object;
+    add-int/lit8 p0, p0, -0x1
 
-    check-cast v1, [I
+    return p0
+.end method
 
-    iget-object v0, v0, La43;->c:Ljava/lang/Object;
+.method public static varargs I([Ljava/lang/Object;)Ljava/util/List;
+    .registers 2
 
-    check-cast v0, [I
+    array-length v0, p0
 
-    const v2, 0x7fffffff
+    if-lez v0, :cond_0
 
-    const/high16 v3, -0x80000000
+    invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    const/4 v4, 0x0
+    move-result-object p0
 
-    iget v5, p0, Lr73;->a:I
-
-    move v6, v3
-
-    move v7, v6
-
-    move v8, v4
-
-    move v9, v5
-
-    move v3, v2
-
-    move v4, v3
-
-    move v5, v7
-
-    :goto_0
-    iget v10, p0, Lr73;->b:I
-
-    if-gt v9, v10, :cond_6
-
-    aget v10, v1, v9
-
-    aget v11, v0, v10
-
-    add-int/2addr v8, v11
-
-    shr-int/lit8 v11, v10, 0xa
-
-    and-int/lit8 v11, v11, 0x1f
-
-    shr-int/lit8 v12, v10, 0x5
-
-    and-int/lit8 v12, v12, 0x1f
-
-    and-int/lit8 v10, v10, 0x1f
-
-    if-le v11, v5, :cond_0
-
-    move v5, v11
+    return-object p0
 
     :cond_0
-    if-ge v11, v2, :cond_1
+    sget-object p0, Lp45;->a:Lp45;
 
-    move v2, v11
-
-    :cond_1
-    if-le v12, v6, :cond_2
-
-    move v6, v12
-
-    :cond_2
-    if-ge v12, v3, :cond_3
-
-    move v3, v12
-
-    :cond_3
-    if-le v10, v7, :cond_4
-
-    move v7, v10
-
-    :cond_4
-    if-ge v10, v4, :cond_5
-
-    move v4, v10
-
-    :cond_5
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_0
-
-    :cond_6
-    iput v2, p0, Lr73;->d:I
-
-    iput v5, p0, Lr73;->e:I
-
-    iput v3, p0, Lr73;->f:I
-
-    iput v6, p0, Lr73;->g:I
-
-    iput v4, p0, Lr73;->h:I
-
-    iput v7, p0, Lr73;->i:I
-
-    iput v8, p0, Lr73;->c:I
-
-    return-void
+    return-object p0
 .end method
 
-.method public final b()I
+.method public static varargs J([Ljava/lang/Object;)Ljava/util/ArrayList;
     .registers 4
 
-    iget v0, p0, Lr73;->e:I
+    array-length v0, p0
 
-    iget v1, p0, Lr73;->d:I
+    if-nez v0, :cond_0
 
-    sub-int/2addr v0, v1
+    new-instance p0, Ljava/util/ArrayList;
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    iget v1, p0, Lr73;->g:I
+    return-object p0
 
-    iget v2, p0, Lr73;->f:I
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
 
-    sub-int/2addr v1, v2
+    new-instance v1, Lgr;
 
-    add-int/lit8 v1, v1, 0x1
+    const/4 v2, 0x1
 
-    mul-int/2addr v1, v0
+    invoke-direct {v1, p0, v2}, Lgr;-><init>([Ljava/lang/Object;Z)V
 
-    iget v0, p0, Lr73;->i:I
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    iget p0, p0, Lr73;->h:I
+    return-object v0
+.end method
 
-    sub-int/2addr v0, p0
+.method public static final K(Ljava/util/List;)Ljava/util/List;
+    .registers 3
 
-    add-int/lit8 v0, v0, 0x1
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
-    mul-int/2addr v0, v1
+    move-result v0
 
-    return v0
+    if-eqz v0, :cond_1
+
+    const/4 v1, 0x1
+
+    if-eq v0, v1, :cond_0
+
+    return-object p0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    sget-object p0, Lp45;->a:Lp45;
+
+    return-object p0
+.end method
+
+.method public static final L(II)V
+    .registers 6
+
+    const-string v0, ")."
+
+    if-ltz p1, :cond_1
+
+    if-gt p1, p0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v1, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string v2, "toIndex ("
+
+    const-string v3, ") is greater than size ("
+
+    invoke-static {v2, p1, v3, p0, v0}, Lsg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "fromIndex (0) is greater than toIndex ("
+
+    invoke-static {p1, v1, v0}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static M()V
+    .registers 2
+
+    new-instance v0, Ljava/lang/ArithmeticException;
+
+    const-string v1, "Count overflow has happened."
+
+    invoke-direct {v0, v1}, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static N()V
+    .registers 2
+
+    new-instance v0, Ljava/lang/ArithmeticException;
+
+    const-string v1, "Index overflow has happened."
+
+    invoke-direct {v0, v1}, Ljava/lang/ArithmeticException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

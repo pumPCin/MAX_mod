@@ -1,172 +1,147 @@
-.class public final Lpnc;
-.super Ljava/io/BufferedOutputStream;
+.class public final synthetic Lpnc;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lrs1;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public b:Z
+.field public final synthetic b:Lvnc;
+
+.field public final synthetic c:Lsa0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/io/OutputStream;I)V
-    .registers 3
-
-    iput p2, p0, Lpnc;->a:I
-
-    invoke-direct {p0, p1}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/io/OutputStream;II)V
+.method public synthetic constructor <init>(Lvnc;Lsa0;I)V
     .registers 4
 
     iput p3, p0, Lpnc;->a:I
 
-    invoke-direct {p0, p1, p2}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;I)V
+    iput-object p1, p0, Lpnc;->b:Lvnc;
+
+    iput-object p2, p0, Lpnc;->c:Lsa0;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Ljava/io/OutputStream;)V
-    .registers 3
+.method public final t(Lqs1;)Ljava/lang/String;
+    .registers 10
 
     iget v0, p0, Lpnc;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    iget-boolean v0, p0, Lpnc;->b:Z
+    iget-object v0, p0, Lpnc;->b:Lvnc;
 
-    invoke-static {v0}, Lr76;->l(Z)V
+    iget-object p0, p0, Lpnc;->c:Lsa0;
 
-    iput-object p1, p0, Ljava/io/BufferedOutputStream;->out:Ljava/io/OutputStream;
+    new-instance v1, Lh02;
 
-    const/4 p1, 0x0
+    const/4 v2, 0x4
 
-    iput p1, p0, Ljava/io/BufferedOutputStream;->count:I
+    invoke-direct {v1, v0, v2, p1}, Lh02;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    iput-boolean p1, p0, Lpnc;->b:Z
+    iget-object v2, v0, Lvnc;->D:Lt50;
 
-    return-void
+    iget-object v3, v0, Lvnc;->e:Lpid;
 
-    :pswitch_0
-    iget-boolean v0, p0, Lpnc;->b:Z
+    new-instance v4, Lzab;
 
-    invoke-static {v0}, Lnc5;->m(Z)V
+    const/4 v5, 0x3
 
-    iput-object p1, p0, Ljava/io/BufferedOutputStream;->out:Ljava/io/OutputStream;
+    const/4 v6, 0x0
 
-    const/4 p1, 0x0
+    invoke-direct {v4, v0, v1, v6, v5}, Lzab;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
 
-    iput p1, p0, Ljava/io/BufferedOutputStream;->count:I
+    iget-object v5, v2, Lt50;->a:Lpid;
 
-    iput-boolean p1, p0, Lpnc;->b:Z
+    new-instance v6, Lj5;
 
-    return-void
+    const/4 v7, 0x2
 
-    nop
+    invoke-direct {v6, v2, v3, v4, v7}, Lj5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-virtual {v5, v6}, Lpid;->execute(Ljava/lang/Runnable;)V
 
-.method public final close()V
-    .registers 4
+    iget-object v2, v0, Lvnc;->G:Lg65;
 
-    iget v0, p0, Lpnc;->a:I
+    new-instance v4, Lyvg;
 
-    const/4 v1, 0x0
+    invoke-direct {v4, v0, p1, v1, p0}, Lyvg;-><init>(Lvnc;Lqs1;Lh02;Lsa0;)V
 
-    const/4 v2, 0x1
+    iget-object v0, v2, Lg65;->a:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
-
-    iput-boolean v2, p0, Lpnc;->b:Z
+    monitor-enter v0
 
     :try_start_0
-    invoke-virtual {p0}, Ljava/io/OutputStream;->flush()V
+    iput-object v4, v2, Lg65;->q:Lr55;
+
+    iput-object v3, v2, Lg65;->r:Ljava/util/concurrent/Executor;
+
+    monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_0
+    const-string p0, "audioEncodingFuture"
+
+    return-object p0
 
     :catchall_0
-    move-exception v1
+    move-exception p0
 
-    :goto_0
     :try_start_1
-    iget-object p0, p0, Ljava/io/BufferedOutputStream;->out:Ljava/io/OutputStream;
-
-    invoke-virtual {p0}, Ljava/io/OutputStream;->close()V
+    monitor-exit v0
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_1
+    throw p0
+
+    :pswitch_0
+    iget-object v0, p0, Lpnc;->b:Lvnc;
+
+    iget-object p0, p0, Lpnc;->c:Lsa0;
+
+    iget-object v1, v0, Lvnc;->E:Lg65;
+
+    new-instance v2, Lfo8;
+
+    invoke-direct {v2, v0, p1, p0}, Lfo8;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    iget-object p0, v0, Lvnc;->e:Lpid;
+
+    iget-object p1, v1, Lg65;->a:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    :try_start_2
+    iput-object v2, v1, Lg65;->q:Lr55;
+
+    iput-object p0, v1, Lg65;->r:Ljava/util/concurrent/Executor;
+
+    monitor-exit p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    const-string p0, "videoEncodingFuture"
+
+    return-object p0
 
     :catchall_1
     move-exception p0
 
-    if-nez v1, :cond_0
-
-    move-object v1, p0
-
-    :cond_0
-    :goto_1
-    if-nez v1, :cond_1
-
-    return-void
-
-    :cond_1
-    sget p0, Laif;->a:I
-
-    throw v1
-
-    :pswitch_0
-    iput-boolean v2, p0, Lpnc;->b:Z
-
-    :try_start_2
-    invoke-virtual {p0}, Ljava/io/OutputStream;->flush()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    goto :goto_2
-
-    :catchall_2
-    move-exception v1
-
-    :goto_2
     :try_start_3
-    iget-object p0, p0, Ljava/io/BufferedOutputStream;->out:Ljava/io/OutputStream;
-
-    invoke-virtual {p0}, Ljava/io/OutputStream;->close()V
+    monitor-exit p1
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    goto :goto_3
-
-    :catchall_3
-    move-exception p0
-
-    if-nez v1, :cond_2
-
-    move-object v1, p0
-
-    :cond_2
-    :goto_3
-    if-nez v1, :cond_3
-
-    return-void
-
-    :cond_3
-    sget p0, Lyhf;->a:I
-
-    throw v1
+    throw p0
 
     nop
 

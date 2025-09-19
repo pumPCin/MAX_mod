@@ -1,122 +1,77 @@
-.class public abstract Lxsb;
-.super Ljava/lang/Object;
+.class public final Lxsb;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:J
-
-.field public final b:Ljava/lang/String;
-
-
-# direct methods
-.method public constructor <init>(JLjava/lang/String;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lxsb;->a:J
-
-    iput-object p3, p0, Lxsb;->b:Ljava/lang/String;
-
-    return-void
-.end method
+.field public synthetic X:Ljava/lang/Object;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 9
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    const/4 v0, 0x1
+    check-cast p1, Lys9;
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return v0
+    invoke-virtual {p0, p1, p2}, Lxsb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    :cond_0
-    instance-of v1, p1, Lxsb;
+    move-result-object p0
 
-    const/4 v2, 0x0
+    check-cast p0, Lxsb;
 
-    if-nez v1, :cond_1
+    sget-object p1, Lylf;->a:Lylf;
 
-    return v2
+    invoke-virtual {p0, p1}, Lxsb;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v1, v3, :cond_2
-
-    return v2
-
-    :cond_2
-    check-cast p1, Lxsb;
-
-    iget-wide v3, p1, Lxsb;->a:J
-
-    iget-wide v5, p0, Lxsb;->a:J
-
-    cmp-long v1, v5, v3
-
-    if-eqz v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object p0, p0, Lxsb;->b:Ljava/lang/String;
-
-    iget-object p1, p1, Lxsb;->b:Ljava/lang/String;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
+    return-object p1
 .end method
 
-.method public final hashCode()I
-    .registers 5
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance p0, Lxsb;
 
-    move-result-object v0
+    const/4 v0, 0x2
 
-    invoke-static {v0}, Lyhc;->a(Ljava/lang/Class;)Lt33;
+    invoke-direct {p0, v0, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    move-result-object v0
+    iput-object p1, p0, Lxsb;->X:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lt33;->hashCode()I
+    return-object p0
+.end method
 
-    move-result v0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    const/16 v1, 0x1f
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    mul-int/2addr v0, v1
+    iget-object p0, p0, Lxsb;->X:Ljava/lang/Object;
 
-    iget-wide v2, p0, Lxsb;->a:J
+    check-cast p0, Lys9;
 
-    invoke-static {v0, v1, v2, v3}, Lp2g;->a(IIJ)I
+    sget-object p1, Lw53;->b:Lw53;
 
-    move-result v0
-
-    iget-object p0, p0, Lxsb;->b:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
-    add-int/2addr p0, v0
+    if-eqz p0, :cond_0
 
-    return p0
+    sget-object p0, Loob;->c:Loob;
+
+    invoke-virtual {p0}, Lx2;->F0()Lza4;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lza4;->d()Z
+
+    :cond_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

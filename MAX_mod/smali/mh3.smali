@@ -1,128 +1,163 @@
 .class public final Lmh3;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Lnh3;
+.field public final a:Ljava/util/concurrent/ExecutorService;
 
-.field public final synthetic Y:Z
+.field public final b:Ljava/util/concurrent/ExecutorService;
 
-.field public final synthetic Z:J
+.field public final c:Lqwg;
+
+.field public final d:Lr52;
+
+.field public final e:Lck7;
+
+.field public final f:I
+
+.field public final g:I
+
+.field public final h:I
 
 
 # direct methods
-.method public constructor <init>(Lnh3;ZJLkotlin/coroutines/Continuation;)V
-    .registers 6
+.method public constructor <init>(Lgu9;)V
+    .registers 8
 
-    iput-object p1, p0, Lmh3;->X:Lnh3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p2, p0, Lmh3;->Y:Z
+    iget-object v0, p1, Lgu9;->d:Ljava/lang/Object;
 
-    iput-wide p3, p0, Lmh3;->Z:J
+    check-cast v0, Ljava/util/concurrent/ExecutorService;
 
-    const/4 p1, 0x2
+    const/4 v1, 0x2
 
-    invoke-direct {p0, p1, p5}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v2, 0x4
 
-    return-void
-.end method
+    const/4 v3, 0x1
 
+    if-nez v0, :cond_0
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lmh3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lmh3;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lmh3;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 9
-
-    new-instance v0, Lmh3;
-
-    iget-boolean v2, p0, Lmh3;->Y:Z
-
-    iget-wide v3, p0, Lmh3;->Z:J
-
-    iget-object v1, p0, Lmh3;->X:Lnh3;
-
-    move-object v5, p2
-
-    invoke-direct/range {v0 .. v5}, Lmh3;-><init>(Lnh3;ZJLkotlin/coroutines/Continuation;)V
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lmh3;->X:Lnh3;
-
-    iget-object v0, p1, Lnh3;->c:Lxh7;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
-    check-cast v0, Lc53;
+    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
 
-    check-cast v0, Le53;
+    move-result v0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sub-int/2addr v0, v3
 
-    const-string v1, "app.call.add.dontshowconfirmation"
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
-    iget-boolean v2, p0, Lmh3;->Y:Z
+    move-result v0
 
-    invoke-virtual {v0, v1, v2}, Lc3;->g(Ljava/lang/String;Z)V
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
-    iget-object p1, p1, Lnh3;->Y:Lx65;
+    move-result v0
 
-    sget-object v0, Lye1;->c:Lye1;
+    new-instance v4, Ljh3;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v5, 0x0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {v4, v5}, Ljh3;-><init>(Z)V
 
-    const-string v1, ":profile/add-members?chat_id="
+    invoke-static {v0, v4}, Ljava/util/concurrent/Executors;->newFixedThreadPool(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object v0
 
-    iget-wide v1, p0, Lmh3;->Z:J
+    iput-object v0, p0, Lmh3;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    const-string p0, "&is_chat=true"
+    :cond_0
+    iput-object v0, p0, Lmh3;->a:Ljava/util/concurrent/ExecutorService;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_0
+    iget-object v0, p1, Lgu9;->c:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    check-cast v0, Ljava/util/concurrent/ExecutorService;
 
-    move-result-object p0
+    if-nez v0, :cond_1
 
-    invoke-static {p0, p1}, Lnh0;->l(Ljava/lang/String;Lx65;)V
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
-    sget-object p0, Lncf;->a:Lncf;
+    move-result-object v0
 
-    return-object p0
+    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
+
+    move-result v0
+
+    sub-int/2addr v0, v3
+
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    new-instance v1, Ljh3;
+
+    invoke-direct {v1, v3}, Ljh3;-><init>(Z)V
+
+    invoke-static {v0, v1}, Ljava/util/concurrent/Executors;->newFixedThreadPool(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lmh3;->b:Ljava/util/concurrent/ExecutorService;
+
+    goto :goto_1
+
+    :cond_1
+    iput-object v0, p0, Lmh3;->b:Ljava/util/concurrent/ExecutorService;
+
+    :goto_1
+    iget-object v0, p1, Lgu9;->e:Ljava/lang/Object;
+
+    check-cast v0, Lqwg;
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Lqwg;->a:Ljava/lang/String;
+
+    new-instance v0, Lpwg;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lmh3;->c:Lqwg;
+
+    goto :goto_2
+
+    :cond_2
+    iput-object v0, p0, Lmh3;->c:Lqwg;
+
+    :goto_2
+    new-instance v0, Lr52;
+
+    const/16 v1, 0xd
+
+    invoke-direct {v0, v1}, Lr52;-><init>(I)V
+
+    iput-object v0, p0, Lmh3;->d:Lr52;
+
+    new-instance v0, Lck7;
+
+    invoke-direct {v0, v1}, Lck7;-><init>(I)V
+
+    iput-object v0, p0, Lmh3;->e:Lck7;
+
+    iput v2, p0, Lmh3;->f:I
+
+    const v0, 0x7fffffff
+
+    iput v0, p0, Lmh3;->g:I
+
+    iget p1, p1, Lgu9;->b:I
+
+    iput p1, p0, Lmh3;->h:I
+
+    return-void
 .end method

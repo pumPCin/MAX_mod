@@ -2,60 +2,121 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbc6;
 
-# static fields
-.field public static final a:Lnt2;
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lys9;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;Lys9;I)V
+    .registers 4
 
-    new-instance v0, Lnt2;
+    iput p3, p0, Lnt2;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lnt2;->b:Lys9;
 
-    sput-object v0, Lnt2;->a:Lnt2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
 
-    const/4 v0, 0x1
+    iget v0, p0, Lnt2;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    check-cast p1, Lbbe;
 
-    :cond_0
-    instance-of p0, p1, Lnt2;
+    invoke-virtual {p1}, Lbbe;->X0()V
 
-    if-nez p0, :cond_1
+    iget-object p0, p0, Lnt2;->b:Lys9;
 
-    const/4 p0, 0x0
+    check-cast p0, Lct2;
 
-    return p0
+    iget-wide v0, p0, Lct2;->b:J
 
-    :cond_1
-    return v0
-.end method
+    const-string p0, ":start-conversation/add-subscribers?id="
 
-.method public final hashCode()I
-    .registers 1
+    invoke-static {v0, v1, p0}, Lbg9;->i(JLjava/lang/String;)Ljava/lang/String;
 
-    const p0, 0x67a4b98e
+    move-result-object p0
 
-    return p0
-.end method
+    invoke-virtual {p1}, Lx2;->F0()Lza4;
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    move-result-object p1
 
-    const-string p0, "CreateChannelError"
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p0, v0}, Lza4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
+
+    :pswitch_0
+    check-cast p1, Lbbe;
+
+    invoke-virtual {p1}, Lbbe;->X0()V
+
+    iget-object p0, p0, Lnt2;->b:Lys9;
+
+    check-cast p0, Ldt2;
+
+    iget-wide v0, p0, Ldt2;->b:J
+
+    const-string p0, ":profile/edit/link?id="
+
+    const-string v2, "&type=local_chat&flow=create"
+
+    invoke-static {v0, v1, p0, v2}, Lwsf;->e(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p1}, Lx2;->F0()Lza4;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p0, v0}, Lza4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_1
+    check-cast p1, Lbbe;
+
+    invoke-virtual {p1}, Lbbe;->X0()V
+
+    iget-object p0, p0, Lnt2;->b:Lys9;
+
+    check-cast p0, Let2;
+
+    iget-wide v0, p0, Let2;->b:J
+
+    invoke-virtual {p1, v0, v1}, Lbbe;->W0(J)Lva4;
+
+    move-result-object p0
+
+    invoke-virtual {p1, p0}, Lx2;->H0(Lva4;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

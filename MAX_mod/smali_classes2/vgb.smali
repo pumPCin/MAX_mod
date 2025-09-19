@@ -1,138 +1,73 @@
 .class public final Lvgb;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lz96;
+
+# static fields
+.field public static final c:Lvgb;
+
+.field public static final d:Lvgb;
 
 
 # instance fields
-.field public final synthetic X:I
+.field public final a:I
 
-.field public synthetic Y:Llna;
-
-.field public synthetic Z:Loma;
+.field public final b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;I)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 3
 
-    iput p3, p0, Lvgb;->X:I
+    new-instance v0, Lvgb;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1, v1}, Lvgb;-><init>(II)V
+
+    sput-object v0, Lvgb;->c:Lvgb;
+
+    new-instance v0, Lvgb;
+
+    const/16 v2, 0x1e
+
+    invoke-direct {v0, v2, v1}, Lvgb;-><init>(II)V
+
+    sput-object v0, Lvgb;->d:Lvgb;
+
+    return-void
+.end method
+
+.method public constructor <init>(II)V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lvgb;->a:I
+
+    iput p2, p0, Lvgb;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+.method public final toString()Ljava/lang/String;
+    .registers 5
 
-    iget p0, p0, Lvgb;->X:I
+    const-string v0, ",seen="
 
-    check-cast p1, Llna;
+    const-string v1, "}"
 
-    check-cast p2, Loma;
+    const-string v2, "Presence{type="
 
-    check-cast p3, Lkotlin/coroutines/Continuation;
+    iget v3, p0, Lvgb;->a:I
 
-    packed-switch p0, :pswitch_data_0
+    iget p0, p0, Lvgb;->b:I
 
-    new-instance p0, Lvgb;
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x1
-
-    invoke-direct {p0, v0, p3, v1}, Lvgb;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p1, p0, Lvgb;->Y:Llna;
-
-    iput-object p2, p0, Lvgb;->Z:Loma;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lvgb;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_0
-    new-instance p0, Lvgb;
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, p3, v1}, Lvgb;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p1, p0, Lvgb;->Y:Llna;
-
-    iput-object p2, p0, Lvgb;->Z:Loma;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lvgb;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iget v0, p0, Lvgb;->X:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lvgb;->Y:Llna;
-
-    iget-object p0, p0, Lvgb;->Z:Loma;
-
-    invoke-interface {p0}, Loma;->b()Lef0;
+    invoke-static {v2, v3, v0, p0, v1}, Lsg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    iget p0, p0, Lef0;->l:I
-
-    invoke-virtual {p1, p0}, Landroid/view/View;->setBackgroundColor(I)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
     return-object p0
-
-    :pswitch_0
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lvgb;->Y:Llna;
-
-    iget-object p0, p0, Lvgb;->Z:Loma;
-
-    invoke-interface {p0}, Loma;->b()Lef0;
-
-    move-result-object p0
-
-    iget p0, p0, Lef0;->k:I
-
-    invoke-virtual {p1, p0}, Landroid/view/View;->setBackgroundColor(I)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

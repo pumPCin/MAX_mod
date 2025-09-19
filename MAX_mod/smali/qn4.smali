@@ -1,53 +1,37 @@
-.class public final Lqn4;
+.class public abstract Lqn4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Landroid/content/Context;
-
-.field public final b:Lm1e;
-
-.field public c:Landroid/view/VelocityTracker;
-
-.field public d:F
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public final h:[I
+# static fields
+.field public static volatile a:Lkga;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lm1e;)V
+.method static constructor <clinit>()V
     .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lw1c;->c:Lw1c;
 
-    const/4 v0, -0x1
+    invoke-static {}, Ln4e;->q()Lep4;
 
-    iput v0, p0, Lqn4;->e:I
+    move-result-object v1
 
-    iput v0, p0, Lqn4;->f:I
+    new-instance v2, Lej0;
 
-    iput v0, p0, Lqn4;->g:I
+    const/16 v3, 0xb
 
-    const v0, 0x7fffffff
+    invoke-direct {v2, v3}, Lej0;-><init>(I)V
 
-    const/4 v1, 0x0
+    iget-object v0, v0, Lw1c;->a:Lax;
 
-    filled-new-array {v0, v1}, [I
+    new-instance v3, Lv1c;
 
-    move-result-object v0
+    const/4 v4, 0x0
 
-    iput-object v0, p0, Lqn4;->h:[I
+    invoke-direct {v3, v4, v2}, Lv1c;-><init>(ILjava/lang/Object;)V
 
-    iput-object p1, p0, Lqn4;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lqn4;->b:Lm1e;
+    invoke-virtual {v0, v1, v3}, Lax;->f(Ljava/util/concurrent/Executor;Lx4a;)V
 
     return-void
 .end method

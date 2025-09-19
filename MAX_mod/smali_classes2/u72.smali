@@ -1,723 +1,327 @@
-.class public final Lu72;
-.super Ljava/lang/Object;
+.class public final enum Lu72;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lxh7;
+# static fields
+.field public static final enum A0:Lu72;
 
-.field public final b:Lxh7;
+.field public static final enum B0:Lu72;
 
-.field public final c:Lxh7;
+.field public static final enum C0:Lu72;
 
-.field public final d:Lxh7;
+.field public static final enum D0:Lu72;
 
-.field public final e:Lxh7;
+.field public static final synthetic E0:[Lu72;
+
+.field public static final enum X:Lu72;
+
+.field public static final enum Y:Lu72;
+
+.field public static final enum Z:Lu72;
+
+.field public static final enum a:Lu72;
+
+.field public static final enum b:Lu72;
+
+.field public static final enum c:Lu72;
+
+.field public static final enum o:Lu72;
+
+.field public static final enum r0:Lu72;
+
+.field public static final enum s0:Lu72;
+
+.field public static final enum t0:Lu72;
+
+.field public static final enum u0:Lu72;
+
+.field public static final enum v0:Lu72;
+
+.field public static final enum w0:Lu72;
+
+.field public static final enum x0:Lu72;
+
+.field public static final enum y0:Lu72;
+
+.field public static final enum z0:Lu72;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;)V
-    .registers 6
+.method static constructor <clinit>()V
+    .registers 23
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v1, Lu72;
 
-    iput-object p2, p0, Lu72;->a:Lxh7;
+    const-string v0, "ADD_TO_FOLDER"
 
-    iput-object p1, p0, Lu72;->b:Lxh7;
+    const/4 v2, 0x0
 
-    iput-object p3, p0, Lu72;->c:Lxh7;
+    invoke-direct {v1, v0, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p4, p0, Lu72;->d:Lxh7;
+    sput-object v1, Lu72;->a:Lu72;
 
-    iput-object p5, p0, Lu72;->e:Lxh7;
+    new-instance v2, Lu72;
+
+    const-string v0, "REMOVE_FROM_FOLDER"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v2, v0, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v3, Lu72;
+
+    const-string v0, "ADD_FAVORITE"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v3, v0, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lu72;->b:Lu72;
+
+    new-instance v4, Lu72;
+
+    const-string v0, "REMOVE_FAVORITE"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v4, v0, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Lu72;->c:Lu72;
+
+    new-instance v5, Lu72;
+
+    const-string v0, "MARK_AS_UNREAD"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v5, v0, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lu72;->o:Lu72;
+
+    new-instance v6, Lu72;
+
+    const-string v0, "MARK_AS_READ"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v6, v0, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v6, Lu72;->X:Lu72;
+
+    new-instance v7, Lu72;
+
+    const-string v0, "MUTE"
+
+    const/4 v8, 0x6
+
+    invoke-direct {v7, v0, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v7, Lu72;->Y:Lu72;
+
+    new-instance v8, Lu72;
+
+    const-string v0, "UNMUTE"
+
+    const/4 v9, 0x7
+
+    invoke-direct {v8, v0, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v8, Lu72;->Z:Lu72;
+
+    new-instance v9, Lu72;
+
+    const-string v0, "LEAVE_CHAT"
+
+    const/16 v10, 0x8
+
+    invoke-direct {v9, v0, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v9, Lu72;->r0:Lu72;
+
+    new-instance v10, Lu72;
+
+    const-string v0, "LEAVE_CHANNEL"
+
+    const/16 v11, 0x9
+
+    invoke-direct {v10, v0, v11}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v10, Lu72;->s0:Lu72;
+
+    new-instance v11, Lu72;
+
+    const-string v0, "UNSUBSCRIBE_CHANNEL"
+
+    const/16 v12, 0xa
+
+    invoke-direct {v11, v0, v12}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v11, Lu72;->t0:Lu72;
+
+    new-instance v12, Lu72;
+
+    const-string v0, "DELETE_CHANNEL"
+
+    const/16 v13, 0xb
+
+    invoke-direct {v12, v0, v13}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v12, Lu72;->u0:Lu72;
+
+    new-instance v13, Lu72;
+
+    const-string v0, "DELETE_FOR_ALL"
+
+    const/16 v14, 0xc
+
+    invoke-direct {v13, v0, v14}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v13, Lu72;->v0:Lu72;
+
+    new-instance v14, Lu72;
+
+    const-string v0, "DELETE_CHAT"
+
+    const/16 v15, 0xd
+
+    invoke-direct {v14, v0, v15}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v14, Lu72;->w0:Lu72;
+
+    new-instance v15, Lu72;
+
+    const-string v0, "BLOCK"
+
+    move-object/from16 v16, v1
+
+    const/16 v1, 0xe
+
+    invoke-direct {v15, v0, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v15, Lu72;->x0:Lu72;
+
+    new-instance v0, Lu72;
+
+    const-string v1, "SELECT"
+
+    move-object/from16 v17, v2
+
+    const/16 v2, 0xf
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lu72;->y0:Lu72;
+
+    new-instance v1, Lu72;
+
+    const-string v2, "REPORT"
+
+    move-object/from16 v18, v0
+
+    const/16 v0, 0x10
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lu72;->z0:Lu72;
+
+    new-instance v0, Lu72;
+
+    const-string v2, "CLEAR_HISTORY"
+
+    move-object/from16 v19, v1
+
+    const/16 v1, 0x11
+
+    invoke-direct {v0, v2, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lu72;->A0:Lu72;
+
+    new-instance v1, Lu72;
+
+    const-string v2, "SUSPEND_BOT"
+
+    move-object/from16 v20, v0
+
+    const/16 v0, 0x12
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lu72;->B0:Lu72;
+
+    new-instance v0, Lu72;
+
+    const-string v2, "SUSPEND_AND_DELETE_BOT"
+
+    move-object/from16 v21, v1
+
+    const/16 v1, 0x13
+
+    invoke-direct {v0, v2, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lu72;->C0:Lu72;
+
+    new-instance v1, Lu72;
+
+    const-string v2, "CLEAR_SAVED_MESSAGES"
+
+    move-object/from16 v22, v0
+
+    const/16 v0, 0x14
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lu72;->D0:Lu72;
+
+    move-object/from16 v2, v17
+
+    move-object/from16 v17, v19
+
+    move-object/from16 v19, v21
+
+    move-object/from16 v21, v1
+
+    move-object/from16 v1, v16
+
+    move-object/from16 v16, v18
+
+    move-object/from16 v18, v20
+
+    move-object/from16 v20, v22
+
+    filled-new-array/range {v1 .. v21}, [Lu72;
+
+    move-result-object v0
+
+    sput-object v0, Lu72;->E0:[Lu72;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lu72;
+    .registers 2
 
-# virtual methods
-.method public final a(JLcx3;Ljava/lang/String;)Ljava/io/Serializable;
-    .registers 12
+    const-class v0, Lu72;
 
-    instance-of v0, p3, Lt72;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p3
-
-    check-cast v0, Lt72;
-
-    iget v1, v0, Lt72;->q0:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lt72;->q0:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lt72;
-
-    invoke-direct {v0, p0, p3}, Lt72;-><init>(Lu72;Lcx3;)V
-
-    :goto_0
-    iget-object p3, v0, Lt72;->o0:Ljava/lang/Object;
-
-    iget v1, v0, Lt72;->q0:I
-
-    const/4 v2, 0x3
-
-    const/4 v3, 0x2
-
-    const/4 v4, 0x1
-
-    sget-object v5, Ls04;->a:Ls04;
-
-    if-eqz v1, :cond_4
-
-    if-eq v1, v4, :cond_3
-
-    if-eq v1, v3, :cond_2
-
-    if-ne v1, v2, :cond_1
-
-    iget-boolean p0, v0, Lt72;->n0:Z
-
-    iget-object p1, v0, Lt72;->Z:Lkp7;
-
-    iget-object p2, v0, Lt72;->Y:Lkp7;
-
-    iget-object p4, v0, Lt72;->X:Ljava/lang/Comparable;
-
-    check-cast p4, Lo72;
-
-    iget-object v0, v0, Lt72;->o:Lu72;
-
-    invoke-static {p3}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto/16 :goto_6
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    iget-object p0, v0, Lt72;->X:Ljava/lang/Comparable;
-
-    check-cast p0, Lo72;
-
-    iget-object p1, v0, Lt72;->o:Lu72;
-
-    invoke-static {p3}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_3
-    iget-object p0, v0, Lt72;->X:Ljava/lang/Comparable;
-
-    move-object p4, p0
-
-    check-cast p4, Ljava/lang/String;
-
-    iget-object p0, v0, Lt72;->o:Lu72;
-
-    invoke-static {p3}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_4
-    invoke-static {p3}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p3, p0, Lu72;->b:Lxh7;
-
-    invoke-interface {p3}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Lvz2;
-
-    iput-object p0, v0, Lt72;->o:Lu72;
-
-    iput-object p4, v0, Lt72;->X:Ljava/lang/Comparable;
-
-    iput v4, v0, Lt72;->q0:I
-
-    check-cast p3, Lv03;
-
-    invoke-virtual {p3, p1, p2, v0}, Lv03;->K(JLcx3;)Ljava/lang/Comparable;
-
-    move-result-object p3
-
-    if-ne p3, v5, :cond_5
-
-    goto/16 :goto_5
-
-    :cond_5
-    :goto_1
-    move-object p1, p3
-
-    check-cast p1, Lo72;
-
-    if-nez p1, :cond_6
-
-    sget-object p0, Lv25;->a:Lv25;
-
-    return-object p0
-
-    :cond_6
-    if-eqz p4, :cond_8
-
-    iget-object p2, p0, Lu72;->c:Lxh7;
-
-    invoke-interface {p2}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lb16;
-
-    iput-object p0, v0, Lt72;->o:Lu72;
-
-    iput-object p1, v0, Lt72;->X:Ljava/lang/Comparable;
-
-    iput v3, v0, Lt72;->q0:I
-
-    invoke-interface {p2, p4, v0}, Lb16;->d(Ljava/lang/String;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p3
-
-    if-ne p3, v5, :cond_7
-
-    goto/16 :goto_5
-
-    :cond_7
-    move-object v6, p1
-
-    move-object p1, p0
-
-    move-object p0, v6
-
-    :goto_2
-    check-cast p3, Lqv5;
-
-    move-object p4, p0
-
-    move-object p0, p1
-
-    goto :goto_3
-
-    :cond_8
-    const/4 p3, 0x0
-
-    move-object p4, p1
-
-    :goto_3
-    iget-object p1, p0, Lu72;->d:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lc53;
-
-    check-cast p1, Lz1d;
-
-    invoke-virtual {p1}, Lz1d;->p()J
-
-    move-result-wide p1
-
-    iget-object v1, p4, Lo72;->b:Lac2;
-
-    invoke-virtual {v1, p1, p2}, Lac2;->e(J)Z
-
-    move-result p1
-
-    invoke-static {}, Lso9;->f()Lkp7;
-
-    move-result-object p2
-
-    if-eqz p3, :cond_9
-
-    invoke-virtual {p3}, Lqv5;->b()Z
-
-    move-result v1
-
-    if-ne v1, v4, :cond_9
-
-    sget-object v1, Lq72;->a:Lq72;
-
-    invoke-virtual {p2, v1}, Lkp7;->add(Ljava/lang/Object;)Z
-
-    :cond_9
-    if-eqz p3, :cond_a
-
-    invoke-virtual {p3}, Lqv5;->b()Z
-
-    move-result v1
-
-    if-ne v1, v4, :cond_a
-
-    goto :goto_4
-
-    :cond_a
-    if-nez p3, :cond_e
-
-    :goto_4
-    invoke-virtual {p4}, Lo72;->M()Z
-
-    move-result p3
-
-    if-eqz p3, :cond_b
-
-    sget-object p3, Lq72;->c:Lq72;
-
-    invoke-virtual {p2, p3}, Lkp7;->add(Ljava/lang/Object;)Z
-
-    goto :goto_7
-
-    :cond_b
-    iget-object p3, p0, Lu72;->a:Lxh7;
-
-    invoke-interface {p3}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Lld2;
-
-    iput-object p0, v0, Lt72;->o:Lu72;
-
-    iput-object p4, v0, Lt72;->X:Ljava/lang/Comparable;
-
-    iput-object p2, v0, Lt72;->Y:Lkp7;
-
-    iput-object p2, v0, Lt72;->Z:Lkp7;
-
-    iput-boolean p1, v0, Lt72;->n0:Z
-
-    iput v2, v0, Lt72;->q0:I
-
-    iget-object p3, p3, Lld2;->c:Lxh7;
-
-    invoke-interface {p3}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Leb2;
-
-    invoke-virtual {p3}, Leb2;->G()I
-
-    move-result p3
-
-    new-instance v0, Ljava/lang/Integer;
-
-    invoke-direct {v0, p3}, Ljava/lang/Integer;-><init>(I)V
-
-    if-ne v0, v5, :cond_c
-
-    :goto_5
-    return-object v5
-
-    :cond_c
-    move-object p3, v0
-
-    move-object v0, p0
-
-    move p0, p1
-
-    move-object p1, p2
-
-    :goto_6
-    check-cast p3, Ljava/lang/Number;
-
-    invoke-virtual {p3}, Ljava/lang/Number;->intValue()I
-
-    move-result p3
-
-    iget-object v1, v0, Lu72;->e:Lxh7;
-
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lqbd;
-
-    check-cast v1, Li2d;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v2, Lru/ok/tamtam/android/prefs/PmsKey;->max-favorite-chats:Lru/ok/tamtam/android/prefs/PmsKey;
-
-    const/4 v3, 0x5
-
-    int-to-long v3, v3
-
-    invoke-virtual {v1, v2, v3, v4}, Li2d;->n(Ljava/lang/Enum;J)J
-
-    move-result-wide v1
-
-    long-to-int v1, v1
-
-    if-ge p3, v1, :cond_d
-
-    sget-object p3, Lq72;->b:Lq72;
-
-    invoke-interface {p1, p3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_d
-    move-object p3, p2
-
-    move-object p2, p1
-
-    move p1, p0
-
-    move-object p0, v0
-
-    goto :goto_8
-
-    :cond_e
-    :goto_7
-    move-object p3, p2
-
-    :goto_8
-    invoke-virtual {p4}, Lo72;->E()Z
-
-    move-result v0
-
-    iget-object v1, p4, Lo72;->b:Lac2;
-
-    iget-object v2, p4, Lo72;->c:Lav8;
-
-    if-nez v0, :cond_f
-
-    invoke-virtual {p4}, Lo72;->d0()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    iget v0, v1, Lac2;->m:I
-
-    if-nez v0, :cond_f
-
-    if-eqz v2, :cond_f
-
-    sget-object v0, Lq72;->o:Lq72;
-
-    invoke-interface {p2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_9
-
-    :cond_f
-    invoke-virtual {p4}, Lo72;->d0()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    iget v0, v1, Lac2;->m:I
-
-    if-lez v0, :cond_10
-
-    if-eqz v2, :cond_10
-
-    sget-object v0, Lq72;->X:Lq72;
-
-    invoke-interface {p2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_10
-    :goto_9
-    sget-object v0, Lq72;->w0:Lq72;
-
-    if-nez p1, :cond_13
-
-    invoke-virtual {p4}, Lo72;->B()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_13
-
-    invoke-virtual {p4}, Lo72;->f0()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_11
-
-    invoke-virtual {p4}, Lo72;->e0()Z
-
-    move-result v3
-
-    if-nez v3, :cond_13
-
-    if-eqz v2, :cond_13
-
-    invoke-interface {p2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_a
-
-    :cond_11
-    iget-object v3, p0, Lu72;->d:Lxh7;
-
-    invoke-interface {v3}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lc53;
-
-    invoke-virtual {p4, v3}, Lo72;->U(Lc53;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_12
-
-    sget-object v3, Lq72;->Z:Lq72;
-
-    invoke-interface {p2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_a
-
-    :cond_12
-    sget-object v3, Lq72;->Y:Lq72;
-
-    invoke-interface {p2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_13
-    :goto_a
-    sget-object v3, Lq72;->u0:Lq72;
-
-    invoke-interface {p2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    if-nez p1, :cond_15
-
-    invoke-virtual {p4}, Lo72;->H()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_15
-
-    invoke-virtual {p4}, Lo72;->c0()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_14
-
-    sget-object p0, Lq72;->o0:Lq72;
-
-    invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    sget-object p0, Lq72;->q0:Lq72;
-
-    invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_b
-
-    :cond_14
-    sget-object p0, Lq72;->p0:Lq72;
-
-    invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_b
-
-    :cond_15
-    if-eqz p1, :cond_16
-
-    if-eqz v2, :cond_1f
-
-    sget-object p0, Lq72;->z0:Lq72;
-
-    invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_b
-
-    :cond_16
-    invoke-virtual {p4}, Lo72;->S()Z
-
-    move-result p1
-
-    sget-object v3, Lq72;->n0:Lq72;
-
-    if-nez p1, :cond_17
-
-    invoke-virtual {p4}, Lo72;->K()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_18
-
-    :cond_17
-    invoke-virtual {p4}, Lo72;->e0()Z
-
-    move-result p1
-
-    if-nez p1, :cond_18
-
-    invoke-interface {p2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_b
-
-    :cond_18
-    invoke-virtual {p4}, Lo72;->G()Z
-
-    move-result p1
-
-    sget-object v4, Lq72;->s0:Lq72;
-
-    if-eqz p1, :cond_1d
-
-    invoke-virtual {p4}, Lo72;->e0()Z
-
-    move-result p1
-
-    if-nez p1, :cond_19
-
-    invoke-virtual {p4}, Lo72;->f0()Z
-
-    move-result p1
-
-    if-nez p1, :cond_19
-
-    if-eqz v2, :cond_19
-
-    invoke-interface {p2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_19
-    iget-object p0, p0, Lu72;->e:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    check-cast p0, Lqbd;
-
-    check-cast p0, Li2d;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->bot-complaint-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Li2d;->k(Ljava/lang/Enum;Z)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1a
-
-    iget-object p0, v1, Lac2;->I:Lwo5;
-
-    const/16 p1, 0x100
-
-    invoke-virtual {p0, p1}, Lwo5;->c(I)Z
-
-    move-result p0
-
-    if-nez p0, :cond_1a
-
-    sget-object p0, Lq72;->v0:Lq72;
-
-    invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_1a
-    invoke-virtual {p4}, Lo72;->G()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1b
-
-    iget-object p0, v1, Lac2;->I:Lwo5;
-
-    const/16 p1, 0x80
-
-    invoke-virtual {p0, p1}, Lwo5;->c(I)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1b
-
-    goto :goto_b
-
-    :cond_1b
-    invoke-virtual {p4}, Lo72;->e0()Z
-
-    move-result p0
-
-    if-nez p0, :cond_1c
-
-    invoke-virtual {p4}, Lo72;->f0()Z
-
-    move-result p0
-
-    if-nez p0, :cond_1c
-
-    sget-object p0, Lq72;->x0:Lq72;
-
-    invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    sget-object p0, Lq72;->y0:Lq72;
-
-    invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_b
-
-    :cond_1c
-    invoke-interface {p2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_b
-
-    :cond_1d
-    invoke-virtual {p4}, Lo72;->L()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1e
-
-    invoke-virtual {p4}, Lo72;->e0()Z
-
-    move-result p0
-
-    if-nez p0, :cond_1e
-
-    sget-object p0, Lq72;->t0:Lq72;
-
-    invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-interface {p2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_b
-
-    :cond_1e
-    invoke-virtual {p4}, Lo72;->e0()Z
-
-    move-result p0
-
-    if-nez p0, :cond_1f
-
-    invoke-interface {p2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p4}, Lo72;->a0()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1f
-
-    sget-object p0, Lq72;->r0:Lq72;
-
-    invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_1f
-    :goto_b
-    invoke-static {p3}, Lso9;->a(Ljava/util/List;)Lkp7;
-
-    move-result-object p0
+    check-cast p0, Lu72;
 
     return-object p0
+.end method
+
+.method public static values()[Lu72;
+    .registers 1
+
+    sget-object v0, Lu72;->E0:[Lu72;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lu72;
+
+    return-object v0
 .end method

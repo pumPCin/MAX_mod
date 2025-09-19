@@ -1,86 +1,231 @@
-.class public final synthetic Lmd3;
+.class public final Lmd3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lprb;
+.implements Landroid/view/ViewTreeObserver$OnDrawListener;
+.implements Ljava/lang/Runnable;
+.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:J
+
+.field public b:Ljava/lang/Runnable;
+
+.field public c:Z
+
+.field public final synthetic o:Landroidx/fragment/app/b;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .registers 2
-
-    iput p1, p0, Lmd3;->a:I
+.method public constructor <init>(Landroidx/fragment/app/b;)V
+    .registers 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmd3;->o:Landroidx/fragment/app/b;
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    const/16 p1, 0x2710
+
+    int-to-long v2, p1
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lmd3;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .registers 2
+.method public final a(Landroid/view/View;)V
+    .registers 3
 
-    iget p0, p0, Lmd3;->a:I
+    iget-boolean v0, p0, Lmd3;->c:Z
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lmd3;->c:Z
+
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->addOnDrawListener(Landroid/view/ViewTreeObserver$OnDrawListener;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final execute(Ljava/lang/Runnable;)V
+    .registers 4
+
+    iput-object p1, p0, Lmd3;->b:Ljava/lang/Runnable;
+
+    iget-object p1, p0, Lmd3;->o:Landroidx/fragment/app/b;
+
+    invoke-virtual {p1}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p1
+
+    iget-boolean v0, p0, Lmd3;->c:Z
+
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object p0
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->postInvalidate()V
+
+    return-void
+
+    :cond_1
+    new-instance v0, Liw1;
+
+    const/16 v1, 0x13
+
+    invoke-direct {v0, v1, p0}, Liw1;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public final onDraw()V
+    .registers 7
+
+    iget-object v0, p0, Lmd3;->b:Ljava/lang/Runnable;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     const/4 v0, 0x0
 
-    packed-switch p0, :pswitch_data_0
+    iput-object v0, p0, Lmd3;->b:Ljava/lang/Runnable;
 
-    return-object v0
+    iget-object v0, p0, Lmd3;->o:Landroidx/fragment/app/b;
 
-    :pswitch_0
-    sget-object p0, Lcom/google/firebase/messaging/FirebaseMessaging;->k:Lvtf;
+    iget-object v0, v0, Lpd3;->Z:Lzte;
 
-    return-object v0
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
-    :pswitch_1
-    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->b()Ljava/util/concurrent/ScheduledExecutorService;
+    move-result-object v0
 
-    move-result-object p0
+    check-cast v0, Lyb6;
 
-    return-object p0
+    iget-object v2, v0, Lyb6;->b:Ljava/lang/Object;
 
-    :pswitch_2
-    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->h()Ljava/util/concurrent/ScheduledExecutorService;
+    monitor-enter v2
 
-    move-result-object p0
+    :try_start_0
+    iget-boolean v0, v0, Lyb6;->c:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object p0
+    monitor-exit v2
 
-    :pswitch_3
-    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->c()Ljava/util/concurrent/ScheduledExecutorService;
+    if-eqz v0, :cond_1
 
-    move-result-object p0
+    iput-boolean v1, p0, Lmd3;->c:Z
 
-    return-object p0
+    iget-object v0, p0, Lmd3;->o:Landroidx/fragment/app/b;
 
-    :pswitch_4
-    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->f()Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
-    move-result-object p0
+    move-result-object v0
 
-    return-object p0
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
-    :pswitch_5
-    sget-object p0, Ljava/util/Collections;->EMPTY_SET:Ljava/util/Set;
+    move-result-object v0
 
-    return-object p0
+    invoke-virtual {v0, p0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    nop
+    return-void
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v2
+
+    throw p0
+
+    :cond_0
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    iget-wide v4, p0, Lmd3;->a:J
+
+    cmp-long v0, v2, v4
+
+    if-lez v0, :cond_1
+
+    iput-boolean v1, p0, Lmd3;->c:Z
+
+    iget-object v0, p0, Lmd3;->o:Landroidx/fragment/app/b;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    :cond_1
+    return-void
+.end method
+
+.method public final run()V
+    .registers 2
+
+    iget-object v0, p0, Lmd3;->o:Landroidx/fragment/app/b;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnDrawListener(Landroid/view/ViewTreeObserver$OnDrawListener;)V
+
+    return-void
 .end method

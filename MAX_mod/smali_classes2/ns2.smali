@@ -1,219 +1,162 @@
 .class public final Lns2;
-.super Lxie;
+.super Lrl;
 .source "SourceFile"
 
 # interfaces
-.implements Lz96;
+.implements Lvye;
+.implements Lt2b;
 
 
 # instance fields
-.field public final synthetic X:I
+.field public final X:Z
 
-.field public synthetic Y:Ljava/lang/Throwable;
+.field public final o:J
 
 
 # direct methods
-.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;I)V
-    .registers 4
+.method public constructor <init>(JJZ)V
+    .registers 6
 
-    iput p3, p0, Lns2;->X:I
+    invoke-direct {p0, p1, p2}, Lrl;-><init>(J)V
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-wide p3, p0, Lns2;->o:J
+
+    iput-boolean p5, p0, Lns2;->X:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+.method public final c()I
+    .registers 1
 
-    iget p0, p0, Lns2;->X:I
+    const/4 p0, 0x1
 
-    check-cast p1, Lhq5;
-
-    check-cast p2, Ljava/lang/Throwable;
-
-    check-cast p3, Lkotlin/coroutines/Continuation;
-
-    packed-switch p0, :pswitch_data_0
-
-    new-instance p0, Lns2;
-
-    const/4 p1, 0x3
-
-    const/4 v0, 0x4
-
-    invoke-direct {p0, p1, p3, v0}, Lns2;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p2, p0, Lns2;->Y:Ljava/lang/Throwable;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lns2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_0
-    new-instance p0, Lns2;
-
-    const/4 p1, 0x3
-
-    const/4 v0, 0x3
-
-    invoke-direct {p0, p1, p3, v0}, Lns2;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p2, p0, Lns2;->Y:Ljava/lang/Throwable;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lns2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_1
-    new-instance p0, Lns2;
-
-    const/4 p1, 0x3
-
-    const/4 v0, 0x2
-
-    invoke-direct {p0, p1, p3, v0}, Lns2;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p2, p0, Lns2;->Y:Ljava/lang/Throwable;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lns2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_2
-    new-instance p0, Lns2;
-
-    const/4 p1, 0x3
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, p3, v0}, Lns2;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p2, p0, Lns2;->Y:Ljava/lang/Throwable;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lns2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_3
-    new-instance p0, Lns2;
-
-    const/4 p1, 0x3
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p3, v0}, Lns2;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p2, p0, Lns2;->Y:Ljava/lang/Throwable;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lns2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final d()V
+    .registers 4
+
+    invoke-virtual {p0}, Lrl;->s()Lo0f;
+
+    move-result-object v0
+
+    iget-wide v1, p0, Lrl;->a:J
+
+    invoke-virtual {v0, v1, v2}, Lo0f;->d(J)V
+
+    return-void
+.end method
+
+.method public final e(Lsxe;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method public final f()[B
+    .registers 4
+
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$ChatSubscribe;
+
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$ChatSubscribe;-><init>()V
+
+    iget-wide v1, p0, Lrl;->a:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$ChatSubscribe;->requestId:J
+
+    iget-wide v1, p0, Lns2;->o:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$ChatSubscribe;->chatServerId:J
+
+    iget-boolean p0, p0, Lns2;->X:Z
+
+    iput-boolean p0, v0, Lru/ok/tamtam/nano/Tasks$ChatSubscribe;->subscribe:Z
+
+    invoke-static {v0}, Lj29;->toByteArray(Lj29;)[B
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final g()I
+    .registers 1
+
+    const p0, 0xf4240
+
+    return p0
+.end method
+
+.method public final getId()J
+    .registers 3
+
+    iget-wide v0, p0, Lrl;->a:J
+
+    return-wide v0
+.end method
+
+.method public final getType()Lu2b;
+    .registers 1
+
+    sget-object p0, Lu2b;->D0:Lu2b;
+
+    return-object p0
+.end method
+
+.method public final h()Lpxe;
     .registers 5
 
-    iget v0, p0, Lns2;->X:I
+    new-instance v0, Lbc2;
 
-    const-string v1, "fail"
+    const/4 v1, 0x0
 
-    sget-object v2, Lncf;->a:Lncf;
+    const/16 v2, 0xd
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v0, v1, v2}, Lbc2;-><init>(Lyta;I)V
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    const-string v1, "chatId"
 
-    iget-object p0, p0, Lns2;->Y:Ljava/lang/Throwable;
+    iget-wide v2, p0, Lns2;->o:J
 
-    const-string p1, "ViewThemeUtils"
+    invoke-virtual {v0, v2, v3, v1}, Lpxe;->j(JLjava/lang/String;)V
 
-    const-string v0, "fail to change theme for spans"
+    const-string v1, "subscribe"
 
-    invoke-static {p1, v0, p0}, Ld86;->H(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    iget-boolean p0, p0, Lns2;->X:Z
 
-    return-object v2
+    invoke-virtual {v0, v1, p0}, Lpxe;->e(Ljava/lang/String;Z)V
 
-    :pswitch_0
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    return-object v0
+.end method
 
-    iget-object p0, p0, Lns2;->Y:Ljava/lang/Throwable;
+.method public final j(Lcxe;)V
+    .registers 6
 
-    instance-of p1, p0, Ljava/util/concurrent/CancellationException;
+    invoke-virtual {p0}, Lrl;->l()Lfv0;
+
+    move-result-object v0
+
+    new-instance v1, Lni0;
+
+    iget-wide v2, p0, Lrl;->a:J
+
+    invoke-direct {v1, v2, v3, p1}, Lni0;-><init>(JLcxe;)V
+
+    invoke-virtual {v0, v1}, Lfv0;->c(Ljava/lang/Object;)V
+
+    iget-object p1, p1, Lcxe;->b:Ljava/lang/String;
+
+    invoke-static {p1}, Lxfc;->s(Ljava/lang/String;)Z
+
+    move-result p1
 
     if-nez p1, :cond_0
 
-    sget-object p1, Ltaa;->a:Ltaa;
-
-    invoke-virtual {p1}, Ltaa;->g()Ls75;
-
-    move-result-object p1
-
-    invoke-static {p1, p0}, Ls75;->b(Ls75;Ljava/lang/Throwable;)V
+    invoke-virtual {p0}, Lns2;->d()V
 
     :cond_0
-    return-object v2
-
-    :pswitch_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lns2;->Y:Ljava/lang/Throwable;
-
-    const-string p1, "MiniChatsUpdated"
-
-    invoke-static {p1, v1, p0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-object v2
-
-    :pswitch_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lns2;->Y:Ljava/lang/Throwable;
-
-    const-string p1, "ChatVM/MissedContactsController"
-
-    invoke-static {p1, v1, p0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-object v2
-
-    :pswitch_3
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lns2;->Y:Ljava/lang/Throwable;
-
-    const-string p1, "ss2"
-
-    const-string v0, "catch error in chatUpdateFlow"
-
-    invoke-static {p1, v0, p0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-object v2
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

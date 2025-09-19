@@ -3,19 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lorg/webrtc/AndroidVideoDecoder$ErrorCallback;
-.implements Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
+.implements Lzb6;
 
 
 # instance fields
-.field public final synthetic a:Lez0;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lbh1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lez0;)V
-    .registers 2
+.method public synthetic constructor <init>(Lbh1;I)V
+    .registers 3
 
-    iput-object p1, p0, Loy0;->a:Lez0;
+    iput p2, p0, Loy0;->a:I
+
+    iput-object p1, p0, Loy0;->b:Lbh1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,30 +27,34 @@
 
 
 # virtual methods
-.method public error(Ljava/lang/Exception;Ljava/lang/String;)V
-    .registers 4
+.method public final invoke()Ljava/lang/Object;
+    .registers 2
 
-    iget-object p0, p0, Loy0;->a:Lez0;
+    iget v0, p0, Loy0;->a:I
 
-    iget-object p0, p0, Lez0;->K:Ld7c;
+    iget-object p0, p0, Loy0;->b:Lbh1;
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, p2, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0}, Lbh1;->q()I
 
-    const-string p1, "OKRTCCall"
+    move-result p0
 
-    invoke-interface {p0, p1, p2, v0}, Ld7c;->logException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return-void
-.end method
-
-.method public getSignaling()Lmsd;
-    .registers 1
-
-    iget-object p0, p0, Loy0;->a:Lez0;
-
-    iget-object p0, p0, Lez0;->g:Lmsd;
+    move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lbh1;->k:Lvmd;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

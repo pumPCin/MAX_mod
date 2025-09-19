@@ -1,48 +1,86 @@
 .class public final Lkp4;
-.super Lcx3;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lwpe;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lky2;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lky2;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
     .registers 3
 
-    iput-object p1, p0, Lkp4;->Y:Lky2;
+    iput p1, p0, Lkp4;->a:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lkp4;->b:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final get()Ljava/lang/Object;
+    .registers 2
 
-    iput-object p1, p0, Lkp4;->o:Ljava/lang/Object;
+    iget v0, p0, Lkp4;->a:I
 
-    iget p1, p0, Lkp4;->X:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object p0, p0, Lkp4;->b:Ljava/lang/Object;
 
-    or-int/2addr p1, v0
+    return-object p0
 
-    iput p1, p0, Lkp4;->X:I
+    :pswitch_0
+    iget-object p0, p0, Lkp4;->b:Ljava/lang/Object;
 
-    iget-object p1, p0, Lkp4;->Y:Lky2;
+    check-cast p0, Lcl7;
 
-    const/4 v0, 0x0
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, p0}, Lky2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result-object p0
+
+    check-cast p0, Lcp5;
+
+    invoke-virtual {p0}, Lcp5;->m()Ljava/io/File;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_1
+    iget-object p0, p0, Lkp4;->b:Ljava/lang/Object;
+
+    check-cast p0, Lmp4;
+
+    iget-object v0, p0, Lmp4;->j:Landroid/content/Context;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p0, p0, Lmp4;->j:Landroid/content/Context;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

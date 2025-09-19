@@ -1,151 +1,249 @@
-.class public final synthetic Ljn4;
+.class public abstract Ljn4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lyrc;
+
+# static fields
+.field public static volatile f:Lon4;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Landroid/content/Context;
 
-.field public final synthetic b:Lkn4;
+.field public final b:Lqgb;
+
+.field public final c:Lcl7;
+
+.field public d:Landroid/os/PowerManager;
+
+.field public final e:Lvtc;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkn4;I)V
-    .registers 3
-
-    iput p2, p0, Ljn4;->a:I
-
-    iput-object p1, p0, Ljn4;->b:Lkn4;
+.method public constructor <init>(Landroid/content/Context;Lqgb;Lcl7;)V
+    .registers 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljn4;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Ljn4;->b:Lqgb;
+
+    new-instance p1, Lyu3;
+
+    const/16 v0, 0xd
+
+    invoke-direct {p1, v0, p0}, Lyu3;-><init>(ILjava/lang/Object;)V
+
+    new-instance v0, Lvtc;
+
+    invoke-direct {v0, p1}, Lvtc;-><init>(Lzb6;)V
+
+    iput-object v0, p0, Ljn4;->e:Lvtc;
+
+    new-instance p1, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {p1, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    check-cast p2, Ltgb;
+
+    iget-object p2, p2, Ltgb;->b:Lyjd;
+
+    new-instance v0, Lin4;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1, p1}, Lin4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    iget-object p1, p2, Lpad;->l:Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    invoke-virtual {p1, v0}, Ljava/util/concurrent/CopyOnWriteArraySet;->add(Ljava/lang/Object;)Z
+
+    iput-object p3, p0, Ljn4;->c:Lcl7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ltrc;Lesc;)V
-    .registers 4
+.method public final a()Ljava/lang/String;
+    .registers 7
 
-    iget v0, p0, Ljn4;->a:I
+    iget-object v0, p0, Ljn4;->b:Lqgb;
 
-    check-cast p1, Lpdf;
+    check-cast v0, Ltgb;
 
-    check-cast p2, Lrdf;
+    iget-object v1, v0, Ltgb;->a:Lh53;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, v1, Li3;->g:Lfl7;
 
-    iget-object p0, p0, Ljn4;->b:Lkn4;
+    const-string v2, "device.id"
 
-    iget-object p0, p0, Lkn4;->a:Ld7c;
+    const/4 v3, 0x0
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2, v3}, Lfl7;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v0, "Stop stream on participant removed response: "
+    move-result-object v1
 
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {v1}, Lm7g;->m(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result v4
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v4, :cond_2
 
-    move-result-object p1
+    const-string v1, "New device id generated"
 
-    const-string p2, "DisplayLayouts"
+    const-string v4, "jn4"
 
-    invoke-interface {p0, p2, p1}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    return-void
+    :try_start_0
+    iget-object v1, p0, Ljn4;->a:Landroid/content/Context;
 
-    :pswitch_0
-    iget-object p1, p2, Lrdf;->a:Ljava/util/Map;
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
+    move-result-object v1
 
-    move-result p1
+    const-string v5, "android_id"
 
-    if-nez p1, :cond_0
+    invoke-static {v1, v5}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
-    iget-object p0, p0, Ljn4;->b:Lkn4;
+    move-result-object v1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object p1, p0, Lkn4;->a:Ld7c;
+    goto :goto_0
 
-    const-string p2, "DisplayLayouts"
+    :catch_0
+    move-exception v1
 
-    const-string v0, "Resend next time after response with errors"
+    const-string v5, "Can\'t get hardware device id"
 
-    invoke-interface {p1, p2, v0}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v4, v5, v1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    const/4 p1, 0x1
+    move-object v1, v3
 
-    iput-boolean p1, p0, Lkn4;->e:Z
+    :goto_0
+    invoke-static {v1}, Lm7g;->m(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    goto :goto_2
 
     :cond_0
-    return-void
+    check-cast p0, Lmn4;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget-object p0, p0, Lmn4;->i:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lnve;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    :try_start_1
+    invoke-virtual {p0}, Lnve;->J()Ljava/lang/String;
+
+    move-result-object v3
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v1
+
+    iget-object p0, p0, Lnve;->b:Ljava/lang/String;
+
+    const-string v4, "error while get instance id"
+
+    invoke-static {p0, v4, v1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :goto_1
+    invoke-static {v3}, Lm7g;->m(Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_1
+
+    move-object v1, v3
+
+    goto :goto_2
+
+    :cond_1
+    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/util/UUID;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    :goto_2
+    iget-object p0, v0, Ltgb;->a:Lh53;
+
+    invoke-virtual {p0, v2, v1}, Li3;->k(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_2
+    return-object v1
 .end method
 
-.method public b(Ltrc;Ljava/lang/Throwable;)V
-    .registers 4
+.method public final b()Lon4;
+    .registers 2
 
-    iget v0, p0, Ljn4;->a:I
+    sget-object v0, Ljn4;->f:Lon4;
 
-    check-cast p1, Lpdf;
+    if-nez v0, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Ljn4;->a:Landroid/content/Context;
 
-    iget-object p0, p0, Ljn4;->b:Lkn4;
+    invoke-static {p0}, Ljtg;->x(Landroid/content/Context;)Lon4;
 
-    iget-object p0, p0, Lkn4;->a:Ld7c;
+    move-result-object p0
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    sput-object p0, Ljn4;->f:Lon4;
 
-    const-string v0, "Stop stream on participant removed error: "
+    :cond_0
+    sget-object p0, Ljn4;->f:Lon4;
 
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    return-object p0
+.end method
 
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+.method public abstract c()Z
+.end method
 
-    move-result-object p2
+.method public final d()Z
+    .registers 1
 
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Ljn4;->c:Lcl7;
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object p0
 
-    const-string p2, "DisplayLayouts"
+    check-cast p0, Lyp;
 
-    invoke-interface {p0, p2, p1}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
+    check-cast p0, Loag;
 
-    return-void
+    invoke-virtual {p0}, Loag;->c()Z
 
-    :pswitch_0
-    iget-object p0, p0, Ljn4;->b:Lkn4;
+    move-result p0
 
-    iget-object p1, p0, Lkn4;->a:Ld7c;
+    return p0
+.end method
 
-    const-string p2, "DisplayLayouts"
+.method public abstract e()V
+.end method
 
-    const-string v0, "Resend next time after error"
+.method public abstract f(Ljava/lang/String;)V
+.end method
 
-    invoke-interface {p1, p2, v0}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
+.method public abstract g(Ljava/lang/String;)V
+.end method
 
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lkn4;->e:Z
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
+.method public abstract h()Ltqf;
 .end method

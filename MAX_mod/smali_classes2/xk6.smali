@@ -1,20 +1,38 @@
 .class public final Lxk6;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic X:Landroid/text/Layout;
+
+.field public final synthetic Y:Lyk6;
+
+
+# direct methods
+.method public constructor <init>(Landroid/text/Layout;Lyk6;Lkotlin/coroutines/Continuation;)V
+    .registers 4
+
+    iput-object p1, p0, Lxk6;->X:Landroid/text/Layout;
+
+    iput-object p2, p0, Lxk6;->Y:Lyk6;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, [Lmm3;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -24,69 +42,101 @@
 
     check-cast p0, Lxk6;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lxk6;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p0
-
-    return-object p0
+    return-object p1
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
 
-    new-instance p0, Lxk6;
+    new-instance p1, Lxk6;
 
-    const/4 v0, 0x2
+    iget-object v0, p0, Lxk6;->X:Landroid/text/Layout;
 
-    invoke-direct {p0, v0, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iget-object p0, p0, Lxk6;->Y:Lyk6;
 
-    iput-object p1, p0, Lxk6;->X:Ljava/lang/Object;
+    invoke-direct {p1, v0, p0, p2}, Lxk6;-><init>(Landroid/text/Layout;Lyk6;Lkotlin/coroutines/Continuation;)V
 
-    return-object p0
+    return-object p1
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .registers 6
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object v0, p0, Lxk6;->X:Landroid/text/Layout;
 
-    iget-object p0, p0, Lxk6;->X:Ljava/lang/Object;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    check-cast p0, [Lmm3;
+    sget-object p1, Lyk6;->c:Lbfb;
 
-    array-length p1, p0
+    invoke-virtual {p1}, Lbfb;->e()Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    move-result-object v1
 
-    move v1, v0
+    check-cast v1, Landroid/graphics/Picture;
 
-    :goto_0
-    if-ge v1, p1, :cond_1
+    if-nez v1, :cond_0
 
-    aget-object v2, p0, v1
+    new-instance v1, Landroid/graphics/Picture;
 
-    invoke-static {v2}, Lds0;->E(Lmm3;)Z
+    invoke-direct {v1}, Landroid/graphics/Picture;-><init>()V
+
+    :cond_0
+    :try_start_0
+    invoke-virtual {v0}, Landroid/text/Layout;->getWidth()I
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    invoke-virtual {v0}, Landroid/text/Layout;->getHeight()I
+
+    move-result v3
+
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/Picture;->beginRecording(II)Landroid/graphics/Canvas;
+
+    move-result-object v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-virtual {v0, v2}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :try_start_2
+    invoke-virtual {v1}, Landroid/graphics/Picture;->endRecording()V
+
+    invoke-virtual {p1, v1}, Lbfb;->d(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
+    :catchall_0
+    move-exception p1
 
     goto :goto_0
 
-    :cond_1
-    const/4 v0, 0x1
+    :catchall_1
+    move-exception p1
+
+    invoke-virtual {v1}, Landroid/graphics/Picture;->endRecording()V
+
+    throw p1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :goto_0
+    iget-object p0, p0, Lxk6;->Y:Lyk6;
+
+    iget-object p0, p0, Lyk6;->b:Ljava/lang/String;
+
+    const-string v0, "fail to warm layout"
+
+    invoke-static {p0, v0, p1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

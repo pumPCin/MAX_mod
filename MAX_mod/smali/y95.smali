@@ -4,212 +4,107 @@
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
-
-.field public b:Ljle;
-
-.field public final c:Lche;
-
-.field public d:Lche;
-
-.field public e:Lche;
-
-.field public f:Lche;
-
-.field public final g:Lw95;
-
-.field public final h:Ldg4;
-
-.field public i:Landroid/os/Looper;
-
-.field public final j:I
-
-.field public final k:Ls20;
-
-.field public final l:I
-
-.field public final m:Z
-
-.field public final n:Lp5d;
-
-.field public final o:J
-
-.field public final p:J
-
-.field public final q:J
-
-.field public final r:Lxf4;
-
-.field public s:J
-
-.field public final t:J
-
-.field public u:Z
-
-.field public v:Z
-
-.field public final w:Ljava/lang/String;
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 5
+.method public synthetic constructor <init>(Ljava/lang/String;)V
+    .registers 2
 
-    new-instance v0, Lw95;
+    iput-object p1, p0, Ly95;->a:Ljava/lang/String;
 
-    const/4 v1, 0x1
-
-    invoke-direct {v0, p1, v1}, Lw95;-><init>(Landroid/content/Context;I)V
-
-    new-instance v1, Lw95;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v1, p1, v2}, Lw95;-><init>(Landroid/content/Context;I)V
-
-    invoke-direct {p0, p1, v0, v1}, Ly95;-><init>(Landroid/content/Context;Lche;Lche;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lche;Lche;)V
-    .registers 10
+.method public static a(J)Ljava/lang/String;
+    .registers 7
 
-    new-instance v0, Lw95;
+    const-wide v0, 0x7fffffffffffffffL
 
-    const/4 v1, 0x4
+    cmp-long v0, p0, v0
 
-    invoke-direct {v0, p1, v1}, Lw95;-><init>(Landroid/content/Context;I)V
+    if-nez v0, :cond_0
 
-    new-instance v1, Lfe3;
+    const-string p0, "Long.MAX_VALUE"
 
-    const/4 v2, 0x3
+    return-object p0
 
-    invoke-direct {v1, v2}, Lfe3;-><init>(I)V
+    :cond_0
+    const-wide/high16 v0, -0x8000000000000000L
 
-    new-instance v2, Lw95;
+    cmp-long v0, p0, v0
 
-    const/4 v3, 0x6
+    if-nez v0, :cond_1
 
-    invoke-direct {v2, p1, v3}, Lw95;-><init>(Landroid/content/Context;I)V
+    const-string p0, "Long.MIN_VALUE"
 
-    new-instance v3, Ldg4;
+    return-object p0
 
-    const/16 v4, 0x10
+    :cond_1
+    const-wide/16 v0, 0x0
 
-    invoke-direct {v3, v4}, Ldg4;-><init>(I)V
+    cmp-long v0, p0, v0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-gez v0, :cond_2
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p0, p1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
-    iput-object p1, p0, Ly95;->a:Landroid/content/Context;
+    move-result-object p0
 
-    iput-object p2, p0, Ly95;->c:Lche;
+    return-object p0
 
-    iput-object p3, p0, Ly95;->d:Lche;
+    :cond_2
+    sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    iput-object v0, p0, Ly95;->e:Lche;
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iput-object v1, p0, Ly95;->f:Lche;
+    move-result-object v1
 
-    iput-object v2, p0, Ly95;->g:Lw95;
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    iput-object v3, p0, Ly95;->h:Ldg4;
+    move-result-object v2
 
-    invoke-static {}, Laif;->v()Landroid/os/Looper;
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object p1
+    move-result-object v3
 
-    iput-object p1, p0, Ly95;->i:Landroid/os/Looper;
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    sget-object p1, Ls20;->g:Ls20;
+    move-result-object v4
 
-    iput-object p1, p0, Ly95;->k:Ls20;
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 p1, 0x1
+    move-result-object p0
 
-    iput p1, p0, Ly95;->l:I
+    filled-new-array {v1, v2, v3, v4, p0}, [Ljava/lang/Object;
 
-    iput-boolean p1, p0, Ly95;->m:Z
+    move-result-object p0
 
-    sget-object p2, Lp5d;->c:Lp5d;
+    const/4 p1, 0x5
 
-    iput-object p2, p0, Ly95;->n:Lp5d;
+    invoke-static {p0, p1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    const-wide/16 p2, 0x1388
+    move-result-object p0
 
-    iput-wide p2, p0, Ly95;->o:J
+    const-string p1, "%td.%tm/%tH:%tM:%tS"
 
-    const-wide/16 p2, 0x3a98
+    invoke-static {v0, p1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    iput-wide p2, p0, Ly95;->p:J
+    move-result-object p0
 
-    const-wide/16 p2, 0xbb8
-
-    iput-wide p2, p0, Ly95;->q:J
-
-    const-wide/16 p2, 0x14
-
-    invoke-static {p2, p3}, Laif;->Q(J)J
-
-    move-result-wide v1
-
-    const-wide/16 p2, 0x1f4
-
-    invoke-static {p2, p3}, Laif;->Q(J)J
-
-    move-result-wide v3
-
-    new-instance v0, Lxf4;
-
-    const/4 v5, 0x1
-
-    invoke-direct/range {v0 .. v5}, Lxf4;-><init>(JJI)V
-
-    iput-object v0, p0, Ly95;->r:Lxf4;
-
-    sget-object v0, Ljle;->a:Ljle;
-
-    iput-object v0, p0, Ly95;->b:Ljle;
-
-    iput-wide p2, p0, Ly95;->s:J
-
-    const-wide/16 p2, 0x7d0
-
-    iput-wide p2, p0, Ly95;->t:J
-
-    iput-boolean p1, p0, Ly95;->u:Z
-
-    const-string p1, ""
-
-    iput-object p1, p0, Ly95;->w:Ljava/lang/String;
-
-    const/16 p1, -0x3e8
-
-    iput p1, p0, Ly95;->j:I
-
-    return-void
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final a()Lva5;
-    .registers 3
+.method public b(Ljava/lang/String;)V
+    .registers 2
 
-    iget-boolean v0, p0, Ly95;->v:Z
+    iget-object p0, p0, Ly95;->a:Ljava/lang/String;
 
-    const/4 v1, 0x1
+    invoke-static {p0, p1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    xor-int/2addr v0, v1
-
-    invoke-static {v0}, Lr76;->l(Z)V
-
-    iput-boolean v1, p0, Ly95;->v:Z
-
-    new-instance v0, Lva5;
-
-    invoke-direct {v0, p0}, Lva5;-><init>(Ly95;)V
-
-    return-object v0
+    return-void
 .end method

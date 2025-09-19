@@ -1,56 +1,27 @@
-.class public final synthetic Lsm8;
-.super Ljava/lang/Object;
+.class public final Lsm8;
+.super Lzoc;
 .source "SourceFile"
-
-# interfaces
-.implements Lvj3;
 
 
 # instance fields
-.field public final synthetic a:Lwm8;
-
-.field public final synthetic b:Lml8;
-
-.field public final synthetic c:Lsk8;
-
-.field public final synthetic d:I
+.field public final E0:Landroid/widget/TextView;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lwm8;Lml8;Lsk8;I)V
-    .registers 5
+.method public constructor <init>(Landroid/view/View;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lzoc;-><init>(Landroid/view/View;)V
 
-    iput-object p1, p0, Lsm8;->a:Lwm8;
+    sget v0, Le5c;->mr_cast_header_name:I
 
-    iput-object p2, p0, Lsm8;->b:Lml8;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    iput-object p3, p0, Lsm8;->c:Lsk8;
+    move-result-object p1
 
-    iput p4, p0, Lsm8;->d:I
+    check-cast p1, Landroid/widget/TextView;
+
+    iput-object p1, p0, Lsm8;->E0:Landroid/widget/TextView;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final run()Lcq7;
-    .registers 4
-
-    iget-object v0, p0, Lsm8;->c:Lsk8;
-
-    iget v1, p0, Lsm8;->d:I
-
-    iget-object v2, p0, Lsm8;->a:Lwm8;
-
-    iget-object p0, p0, Lsm8;->b:Lml8;
-
-    invoke-interface {v2, p0, v0, v1}, Lwm8;->k(Lml8;Lsk8;I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lcq7;
-
-    return-object p0
 .end method

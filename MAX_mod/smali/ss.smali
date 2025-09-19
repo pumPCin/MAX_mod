@@ -1,609 +1,356 @@
 .class public final Lss;
-.super Ljava/lang/Object;
+.super Lii0;
 .source "SourceFile"
-
-# interfaces
-.implements Llt8;
-.implements Ljava/io/Closeable;
 
 
 # instance fields
-.field public a:Landroid/os/SharedMemory;
+.field public final X:Landroid/content/res/AssetManager;
 
-.field public b:Ljava/nio/ByteBuffer;
+.field public Y:Landroid/net/Uri;
 
-.field public final c:J
+.field public Z:Ljava/io/InputStream;
+
+.field public r0:J
+
+.field public s0:Z
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 4
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    if-lez p1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
     const/4 v0, 0x0
 
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-direct {p0, v0}, Lii0;-><init>(Z)V
 
-    move-result-object v0
-
-    invoke-static {v0}, Lg53;->f(Ljava/lang/Boolean;)V
-
-    :try_start_0
-    const-string v0, "AshmemMemoryChunk"
-
-    invoke-static {v0, p1}, Landroid/os/SharedMemory;->create(Ljava/lang/String;I)Landroid/os/SharedMemory;
+    invoke-virtual {p1}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object p1
 
-    iput-object p1, p0, Lss;->a:Landroid/os/SharedMemory;
-
-    invoke-virtual {p1}, Landroid/os/SharedMemory;->mapReadWrite()Ljava/nio/ByteBuffer;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lss;->b:Ljava/nio/ByteBuffer;
-    :try_end_0
-    .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
-
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result p1
-
-    int-to-long v0, p1
-
-    iput-wide v0, p0, Lss;->c:J
+    iput-object p1, p0, Lss;->X:Landroid/content/res/AssetManager;
 
     return-void
-
-    :catch_0
-    move-exception p0
-
-    new-instance p1, Ljava/lang/RuntimeException;
-
-    const-string v0, "Fail to create AshmemMemory"
-
-    invoke-direct {p1, v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p1
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized W(III[B)I
-    .registers 7
-
-    monitor-enter p0
+.method public final G(Ln74;)J
+    .registers 9
 
     :try_start_0
-    iget-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
+    iget-object v0, p1, Ln74;->a:Landroid/net/Uri;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-wide v1, p1, Ln74;->f:J
 
-    invoke-virtual {p0}, Lss;->getSize()I
+    iput-object v0, p0, Lss;->Y:Landroid/net/Uri;
 
-    move-result v0
-
-    invoke-static {p1, p3, v0}, Ld86;->c(III)I
-
-    move-result p3
-
-    array-length v0, p4
-
-    invoke-virtual {p0}, Lss;->getSize()I
-
-    move-result v1
-
-    invoke-static {p1, v0, p2, p3, v1}, Ld86;->g(IIIII)V
-
-    iget-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget-object p1, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p1, p4, p2, p3}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return p3
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final declared-synchronized X(III[B)I
-    .registers 7
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0}, Lss;->getSize()I
-
-    move-result v0
-
-    invoke-static {p1, p3, v0}, Ld86;->c(III)I
-
-    move-result p3
-
-    array-length v0, p4
-
-    invoke-virtual {p0}, Lss;->getSize()I
-
-    move-result v1
-
-    invoke-static {p1, v0, p2, p3, v1}, Ld86;->g(IIIII)V
-
-    iget-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget-object p1, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p1, p4, p2, p3}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return p3
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final c(Llt8;I)V
-    .registers 6
-
-    instance-of v0, p1, Lss;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lss;->isClosed()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    invoke-static {v0}, Lg53;->k(Z)V
-
-    check-cast p1, Lss;
-
-    invoke-virtual {p1}, Lss;->isClosed()Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    invoke-static {v0}, Lg53;->k(Z)V
-
-    iget-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p1, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Lss;->getSize()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Lss;->getSize()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    invoke-static {v2, v0, v2, p2, v1}, Ld86;->g(IIIII)V
-
-    iget-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    iget-object v0, p1, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    new-array v0, p2, [B
-
-    iget-object p0, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p0, v0, v2, p2}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
-
-    iget-object p0, p1, Lss;->b:Ljava/nio/ByteBuffer;
-
-    invoke-virtual {p0, v0, v2, p2}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
-
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Cannot copy two incompatible MemoryChunks"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final declared-synchronized close()V
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-virtual {p0}, Lss;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Lss;->a:Landroid/os/SharedMemory;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/os/SharedMemory;->close()V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    if-eqz v0, :cond_1
-
-    invoke-static {v0}, Landroid/os/SharedMemory;->unmap(Ljava/nio/ByteBuffer;)V
-
-    :cond_1
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    iput-object v0, p0, Lss;->a:Landroid/os/SharedMemory;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_2
-    monitor-exit p0
-
-    return-void
-
-    :goto_1
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public final getSize()I
-    .registers 2
-
-    iget-object v0, p0, Lss;->a:Landroid/os/SharedMemory;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p0, p0, Lss;->a:Landroid/os/SharedMemory;
-
-    invoke-virtual {p0}, Landroid/os/SharedMemory;->getSize()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final i0()J
-    .registers 2
-
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    const-string v0, "Cannot get the pointer of an  AshmemMemoryChunk"
-
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final declared-synchronized isClosed()Z
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lss;->a:Landroid/os/SharedMemory;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_2
-
-    :cond_1
-    :goto_0
-    const/4 v0, 0x1
-
-    :goto_1
-    monitor-exit p0
-
-    return v0
-
-    :goto_2
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public final m()J
-    .registers 3
-
-    iget-wide v0, p0, Lss;->c:J
-
-    return-wide v0
-.end method
-
-.method public final n(Llt8;I)V
-    .registers 7
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p1}, Llt8;->m()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Lss;->c:J
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_0
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
-
-    invoke-interface {p1}, Llt8;->m()J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->toHexString(J)Ljava/lang/String;
-
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-static {v0}, Lg53;->f(Ljava/lang/Boolean;)V
-
-    :cond_0
-    invoke-interface {p1}, Llt8;->m()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Lss;->c:J
-
-    cmp-long v0, v0, v2
-
-    if-gez v0, :cond_1
-
-    monitor-enter p1
-
-    :try_start_0
-    monitor-enter p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :try_start_1
-    invoke-virtual {p0, p1, p2}, Lss;->c(Llt8;I)V
-
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    :try_start_2
-    monitor-exit p1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_0
-
-    :catchall_1
-    move-exception p2
-
-    :try_start_3
-    monitor-exit p0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    :try_start_4
-    throw p2
-
-    :goto_0
-    monitor-exit p1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    throw p0
-
-    :cond_1
-    monitor-enter p0
-
-    :try_start_5
-    monitor-enter p1
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
-
-    :try_start_6
-    invoke-virtual {p0, p1, p2}, Lss;->c(Llt8;I)V
-
-    monitor-exit p1
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_3
-
-    :try_start_7
-    monitor-exit p0
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_2
-
-    return-void
-
-    :catchall_2
-    move-exception p1
-
-    goto :goto_1
-
-    :catchall_3
-    move-exception p2
-
-    :try_start_8
-    monitor-exit p1
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_3
-
-    :try_start_9
-    throw p2
-
-    :goto_1
-    monitor-exit p0
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_2
-
-    throw p1
-.end method
-
-.method public final declared-synchronized o(I)B
-    .registers 5
-
-    monitor-enter p0
-
-    :try_start_0
-    invoke-virtual {p0}, Lss;->isClosed()Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    xor-int/2addr v0, v1
-
-    invoke-static {v0}, Lg53;->k(Z)V
-
-    const/4 v0, 0x0
-
-    if-ltz p1, :cond_0
-
-    move v2, v1
-
-    goto :goto_0
-
-    :cond_0
-    move v2, v0
-
-    :goto_0
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lg53;->f(Ljava/lang/Boolean;)V
-
-    invoke-virtual {p0}, Lss;->getSize()I
-
-    move-result v2
-
-    if-ge p1, v2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    move v1, v0
-
-    :goto_1
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lg53;->f(Ljava/lang/Boolean;)V
-
-    iget-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
-
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v0, p0, Lss;->b:Ljava/nio/ByteBuffer;
+    const-string v3, "/android_asset/"
 
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->get(I)B
+    invoke-virtual {v0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result p1
+    move-result v3
+
+    const/4 v4, 0x1
+
+    if-eqz v3, :cond_0
+
+    const/16 v3, 0xf
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const-string v3, "/"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v0, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p0, p1}, Lii0;->c(Ln74;)V
+
+    iget-object v3, p0, Lss;->X:Landroid/content/res/AssetManager;
+
+    invoke-virtual {v3, v0, v4}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;I)Ljava/io/InputStream;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lss;->Z:Ljava/io/InputStream;
+
+    invoke-virtual {v0, v1, v2}, Ljava/io/InputStream;->skip(J)J
+
+    move-result-wide v5
+
+    cmp-long v0, v5, v1
+
+    if-ltz v0, :cond_4
+
+    iget-wide v0, p1, Ln74;->g:J
+
+    const-wide/16 v2, -0x1
+
+    cmp-long v5, v0, v2
+
+    if-eqz v5, :cond_2
+
+    iput-wide v0, p0, Lss;->r0:J
+
+    goto :goto_1
+
+    :cond_2
+    iget-object v0, p0, Lss;->Z:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    iput-wide v0, p0, Lss;->r0:J
+
+    const-wide/32 v5, 0x7fffffff
+
+    cmp-long v0, v0, v5
+
+    if-nez v0, :cond_3
+
+    iput-wide v2, p0, Lss;->r0:J
     :try_end_0
+    .catch Landroidx/media3/datasource/AssetDataSource$AssetDataSourceException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_3
+    :goto_1
+    iput-boolean v4, p0, Lss;->s0:Z
+
+    invoke-virtual {p0, p1}, Lii0;->e(Ln74;)V
+
+    iget-wide p0, p0, Lss;->r0:J
+
+    return-wide p0
+
+    :cond_4
+    :try_start_1
+    new-instance p0, Landroidx/media3/datasource/AssetDataSource$AssetDataSourceException;
+
+    const/4 p1, 0x0
+
+    const/16 v0, 0x7d8
+
+    invoke-direct {p0, p1, v0}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw p0
+    :try_end_1
+    .catch Landroidx/media3/datasource/AssetDataSource$AssetDataSourceException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Landroidx/media3/datasource/AssetDataSource$AssetDataSourceException;
+
+    instance-of v0, p0, Ljava/io/FileNotFoundException;
+
+    if-eqz v0, :cond_5
+
+    const/16 v0, 0x7d5
+
+    goto :goto_2
+
+    :cond_5
+    const/16 v0, 0x7d0
+
+    :goto_2
+    invoke-direct {p1, p0, v0}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw p1
+
+    :catch_1
+    move-exception p0
+
+    throw p0
+.end method
+
+.method public final close()V
+    .registers 6
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lss;->Y:Landroid/net/Uri;
+
+    const/4 v1, 0x0
+
+    :try_start_0
+    iget-object v2, p0, Lss;->Z:Ljava/io/InputStream;
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2}, Ljava/io/InputStream;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    monitor-exit p0
-
-    return p1
+    goto :goto_0
 
     :catchall_0
-    move-exception p1
+    move-exception v2
 
+    goto :goto_2
+
+    :catch_0
+    move-exception v2
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    iput-object v0, p0, Lss;->Z:Ljava/io/InputStream;
+
+    iget-boolean v0, p0, Lss;->s0:Z
+
+    if-eqz v0, :cond_1
+
+    iput-boolean v1, p0, Lss;->s0:Z
+
+    invoke-virtual {p0}, Lii0;->b()V
+
+    :cond_1
+    return-void
+
+    :goto_1
     :try_start_1
-    monitor-exit p0
+    new-instance v3, Landroidx/media3/datasource/AssetDataSource$AssetDataSourceException;
+
+    const/16 v4, 0x7d0
+
+    invoke-direct {v3, v2, v4}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw p1
+    :goto_2
+    iput-object v0, p0, Lss;->Z:Ljava/io/InputStream;
+
+    iget-boolean v0, p0, Lss;->s0:Z
+
+    if-eqz v0, :cond_2
+
+    iput-boolean v1, p0, Lss;->s0:Z
+
+    invoke-virtual {p0}, Lii0;->b()V
+
+    :cond_2
+    throw v2
 .end method
 
-.method public final r()Ljava/nio/ByteBuffer;
+.method public final getUri()Landroid/net/Uri;
     .registers 1
 
-    iget-object p0, p0, Lss;->b:Ljava/nio/ByteBuffer;
+    iget-object p0, p0, Lss;->Y:Landroid/net/Uri;
 
     return-object p0
+.end method
+
+.method public final read([BII)I
+    .registers 12
+
+    if-nez p3, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    iget-wide v0, p0, Lss;->r0:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v0, v2
+
+    const/4 v3, -0x1
+
+    if-nez v2, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    const-wide/16 v4, -0x1
+
+    cmp-long v2, v0, v4
+
+    if-nez v2, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    int-to-long v6, p3
+
+    :try_start_0
+    invoke-static {v0, v1, v6, v7}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v0
+
+    long-to-int p3, v0
+
+    :goto_0
+    iget-object v0, p0, Lss;->Z:Ljava/io/InputStream;
+
+    sget v1, Lnrf;->a:I
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
+
+    move-result p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-ne p1, v3, :cond_3
+
+    :goto_1
+    return v3
+
+    :cond_3
+    iget-wide p2, p0, Lss;->r0:J
+
+    cmp-long v0, p2, v4
+
+    if-eqz v0, :cond_4
+
+    int-to-long v0, p1
+
+    sub-long/2addr p2, v0
+
+    iput-wide p2, p0, Lss;->r0:J
+
+    :cond_4
+    invoke-virtual {p0, p1}, Lii0;->a(I)V
+
+    return p1
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Landroidx/media3/datasource/AssetDataSource$AssetDataSourceException;
+
+    const/16 p2, 0x7d0
+
+    invoke-direct {p1, p0, p2}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw p1
 .end method

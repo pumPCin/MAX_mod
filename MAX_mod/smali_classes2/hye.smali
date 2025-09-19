@@ -1,131 +1,71 @@
-.class public final Lhye;
-.super Lxie;
+.class public final synthetic Lhye;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ljava/util/function/UnaryOperator;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lvye;
-
-.field public final synthetic Z:Ljava/nio/ByteBuffer;
+.field public final synthetic b:Liye;
 
 
 # direct methods
-.method public constructor <init>(Lvye;Ljava/nio/ByteBuffer;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public synthetic constructor <init>(Liye;I)V
+    .registers 3
 
-    iput-object p1, p0, Lhye;->Y:Lvye;
+    iput p2, p0, Lhye;->a:I
 
-    iput-object p2, p0, Lhye;->Z:Ljava/nio/ByteBuffer;
+    iput-object p1, p0, Lhye;->b:Liye;
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    iget v0, p0, Lhye;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Lhye;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    check-cast p1, Ltld;
 
-    move-result-object p0
+    if-eqz p1, :cond_0
 
-    check-cast p0, Lhye;
+    const/4 v0, 0x0
 
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lhye;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p1, Lhye;
-
-    iget-object v0, p0, Lhye;->Y:Lvye;
-
-    iget-object p0, p0, Lhye;->Z:Ljava/nio/ByteBuffer;
-
-    invoke-direct {p1, v0, p0, p2}, Lhye;-><init>(Lvye;Ljava/nio/ByteBuffer;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    iget v0, p0, Lhye;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object p1
+    invoke-virtual {p1, v0}, Ltld;->f(Z)V
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iget-object p0, p0, Lhye;->b:Liye;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lhye;->Y:Lvye;
-
-    iget-object p1, p1, Lvye;->b:Ljava/nio/channels/AsynchronousByteChannel;
-
-    iput v1, p0, Lhye;->X:I
-
-    new-instance v0, Ly02;
-
-    invoke-static {p0}, Lx77;->H(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Ly02;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {v0}, Ly02;->o()V
-
-    sget-object v1, Lsu;->b:Lsu;
-
-    iget-object p0, p0, Lhye;->Z:Ljava/nio/ByteBuffer;
-
-    invoke-interface {p1, p0, v0, v1}, Ljava/nio/channels/AsynchronousByteChannel;->write(Ljava/nio/ByteBuffer;Ljava/lang/Object;Ljava/nio/channels/CompletionHandler;)V
-
-    invoke-virtual {v0}, Ly02;->m()Ljava/lang/Object;
+    invoke-virtual {p0}, Liye;->f()Ltld;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
     return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lhye;->b:Liye;
+
+    check-cast p1, Ltld;
+
+    invoke-static {p0, p1}, Liye;->c(Liye;Ltld;)Ltld;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

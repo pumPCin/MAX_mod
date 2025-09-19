@@ -1,274 +1,130 @@
 .class public final Lvr5;
-.super Ljava/lang/Object;
+.super Lloc;
 .source "SourceFile"
 
 # interfaces
-.implements Lhq5;
+.implements Lrr5;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lvr5;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:F
 
-.field public final synthetic b:Lxhc;
+.field public Y:F
 
-.field public final synthetic c:Lhq5;
+.field public Z:I
+
+.field public r0:F
+
+.field public s0:I
+
+.field public t0:I
+
+.field public u0:I
+
+.field public v0:I
+
+.field public w0:Z
 
 
 # direct methods
-.method public constructor <init>(Lhq5;Lxhc;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
 
-    const/4 v0, 0x0
+    new-instance v0, Li84;
 
-    iput v0, p0, Lvr5;->a:I
+    const/16 v1, 0xd
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1}, Li84;-><init>(I)V
 
-    iput-object p1, p0, Lvr5;->c:Lhq5;
-
-    iput-object p2, p0, Lvr5;->b:Lxhc;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lxhc;Lhq5;)V
-    .registers 4
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lvr5;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lvr5;->b:Lxhc;
-
-    iput-object p2, p0, Lvr5;->c:Lhq5;
+    sput-object v0, Lvr5;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+.method public final describeContents()I
+    .registers 1
 
-    iget v0, p0, Lvr5;->a:I
+    const/4 p0, 0x0
 
-    packed-switch v0, :pswitch_data_0
+    return p0
+.end method
 
-    instance-of v0, p2, Lbt5;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
 
-    if-eqz v0, :cond_0
+    iget p2, p0, Lvr5;->X:F
 
-    move-object v0, p2
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
 
-    check-cast v0, Lbt5;
+    iget p2, p0, Lvr5;->Y:F
 
-    iget v1, v0, Lbt5;->Z:I
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
 
-    const/high16 v2, -0x80000000
+    iget p2, p0, Lvr5;->Z:I
 
-    and-int v3, v1, v2
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    if-eqz v3, :cond_0
+    iget p2, p0, Lvr5;->r0:F
 
-    sub-int/2addr v1, v2
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
 
-    iput v1, v0, Lbt5;->Z:I
+    iget p2, p0, Lvr5;->s0:I
 
-    goto :goto_0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    :cond_0
-    new-instance v0, Lbt5;
+    iget p2, p0, Lvr5;->t0:I
 
-    invoke-direct {v0, p0, p2}, Lbt5;-><init>(Lvr5;Lkotlin/coroutines/Continuation;)V
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    :goto_0
-    iget-object p2, v0, Lbt5;->X:Ljava/lang/Object;
+    iget p2, p0, Lvr5;->u0:I
 
-    iget v1, v0, Lbt5;->Z:I
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/4 v2, 0x1
+    iget p2, p0, Lvr5;->v0:I
 
-    if-eqz v1, :cond_2
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    if-ne v1, v2, :cond_1
+    iget-boolean p2, p0, Lvr5;->w0:Z
 
-    iget-object p0, v0, Lbt5;->o:Lvr5;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
 
-    invoke-static {p2}, Lg53;->F(Ljava/lang/Object;)V
+    iget p2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    goto :goto_1
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iget p2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget p2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    throw p0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    :cond_2
-    invoke-static {p2}, Lg53;->F(Ljava/lang/Object;)V
+    iget p2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    iget-object p2, p0, Lvr5;->b:Lxhc;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget-object v1, p2, Lxhc;->a:Ljava/lang/Object;
+    iget p2, p0, Landroid/view/ViewGroup$MarginLayoutParams;->height:I
 
-    check-cast v1, Ljava/util/ArrayList;
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    const/16 v3, 0x14
+    iget p0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->width:I
 
-    if-nez v1, :cond_3
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
 
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1, v3}, Ljava/util/ArrayList;-><init>(I)V
-
-    iput-object v1, p2, Lxhc;->a:Ljava/lang/Object;
-
-    :cond_3
-    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result p1
-
-    if-ne p1, v3, :cond_5
-
-    iput-object p0, v0, Lbt5;->o:Lvr5;
-
-    iput v2, v0, Lbt5;->Z:I
-
-    iget-object p1, p0, Lvr5;->c:Lhq5;
-
-    invoke-interface {p1, v1, v0}, Lhq5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object p2, Ls04;->a:Ls04;
-
-    if-ne p1, p2, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    :goto_1
-    iget-object p0, p0, Lvr5;->b:Lxhc;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lxhc;->a:Ljava/lang/Object;
-
-    :cond_5
-    sget-object p2, Lncf;->a:Lncf;
-
-    :goto_2
-    return-object p2
-
-    :pswitch_0
-    instance-of v0, p2, Lur5;
-
-    if-eqz v0, :cond_6
-
-    move-object v0, p2
-
-    check-cast v0, Lur5;
-
-    iget v1, v0, Lur5;->Z:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_6
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lur5;->Z:I
-
-    goto :goto_3
-
-    :cond_6
-    new-instance v0, Lur5;
-
-    invoke-direct {v0, p0, p2}, Lur5;-><init>(Lvr5;Lkotlin/coroutines/Continuation;)V
-
-    :goto_3
-    iget-object p2, v0, Lur5;->X:Ljava/lang/Object;
-
-    iget v1, v0, Lur5;->Z:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_8
-
-    if-ne v1, v2, :cond_7
-
-    iget-object p0, v0, Lur5;->o:Lvr5;
-
-    :try_start_0
-    invoke-static {p2}, Lg53;->F(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_4
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_6
-
-    :cond_7
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_8
-    invoke-static {p2}, Lg53;->F(Ljava/lang/Object;)V
-
-    :try_start_1
-    iget-object p2, p0, Lvr5;->c:Lhq5;
-
-    iput-object p0, v0, Lur5;->o:Lvr5;
-
-    iput v2, v0, Lur5;->Z:I
-
-    invoke-interface {p2, p1, v0}, Lhq5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_9
-
-    goto :goto_5
-
-    :cond_9
-    :goto_4
-    sget-object p1, Lncf;->a:Lncf;
-
-    :goto_5
-    return-object p1
-
-    :goto_6
-    iget-object p0, p0, Lvr5;->b:Lxhc;
-
-    iput-object p1, p0, Lxhc;->a:Ljava/lang/Object;
-
-    throw p1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

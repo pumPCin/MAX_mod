@@ -1,193 +1,356 @@
 .class public final Lxh2;
-.super Lzh2;
+.super Lv44;
 .source "SourceFile"
 
 
+# static fields
+.field public static final A0:Lyw9;
+
+
 # instance fields
-.field public final b:Lyp8;
+.field public final synthetic v0:I
 
-.field public final c:Lvte;
+.field public final w0:J
 
-.field public final d:Lvte;
+.field public x0:Ljava/util/List;
 
-.field public final e:Ljava/util/List;
+.field public final y0:Ljava/lang/Object;
+
+.field public final z0:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lyp8;Lvte;Lvte;Ljava/util/List;)V
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lyw9;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1}, Lyw9;-><init>(I)V
+
+    sput-object v0, Lxh2;->A0:Lyw9;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lone/me/keyboardmedia/MediaKeyboardWidget;La38;JLjava/lang/String;)V
+    .registers 7
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lxh2;->v0:I
+
+    invoke-direct {p0, p1}, Lv44;-><init>(Lone/me/sdk/arch/Widget;)V
+
+    iput-object p2, p0, Lxh2;->y0:Ljava/lang/Object;
+
+    iput-wide p3, p0, Lxh2;->w0:J
+
+    iput-object p5, p0, Lxh2;->z0:Ljava/lang/Object;
+
+    sget-object p1, Lp45;->a:Lp45;
+
+    iput-object p1, p0, Lxh2;->x0:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lone/me/profile/screens/media/ChatMediaTabWidget;J)V
     .registers 5
 
-    invoke-direct {p0}, Lzh2;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object p1, p0, Lxh2;->b:Lyp8;
+    iput v0, p0, Lxh2;->v0:I
 
-    iput-object p2, p0, Lxh2;->c:Lvte;
+    invoke-direct {p0, p1}, Lv44;-><init>(Lone/me/sdk/arch/Widget;)V
 
-    iput-object p3, p0, Lxh2;->d:Lvte;
+    iput-object p1, p0, Lxh2;->y0:Ljava/lang/Object;
 
-    iput-object p4, p0, Lxh2;->e:Ljava/util/List;
+    iput-wide p2, p0, Lxh2;->w0:J
+
+    sget-object p1, Lxh2;->A0:Lyw9;
+
+    iput-object p1, p0, Lxh2;->z0:Ljava/lang/Object;
+
+    sget-object p1, Lqi2;->o:Ly75;
+
+    invoke-static {p1}, Lq73;->B0(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lxh2;->x0:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final E(Lrzc;I)V
+    .registers 13
 
-    const/4 v0, 0x1
+    iget v0, p0, Lxh2;->v0:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    invoke-virtual {p1}, Lrzc;->n()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_1
 
     :cond_0
-    instance-of v1, p1, Lxh2;
+    if-ltz p2, :cond_5
 
-    const/4 v2, 0x0
+    iget-object v0, p0, Lxh2;->x0:Ljava/util/List;
 
-    if-nez v1, :cond_1
+    invoke-static {v0}, Lr73;->H(Ljava/util/List;)I
 
-    return v2
+    move-result v0
+
+    if-gt p2, v0, :cond_5
+
+    iget-object v0, p0, Lxh2;->z0:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/String;
+
+    iget-object v1, p0, Lxh2;->x0:Ljava/util/List;
+
+    invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lyj7;
+
+    sget-object v1, Lqj7;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p2
+
+    aget p2, v1, p2
+
+    const/4 v1, 0x1
+
+    sget-object v2, Lwx3;->b:Lwx3;
+
+    const/4 v3, 0x0
+
+    if-eq p2, v1, :cond_3
+
+    const/4 p0, 0x2
+
+    if-eq p2, p0, :cond_2
+
+    const/4 p0, 0x3
+
+    if-ne p2, p0, :cond_1
+
+    move-object v4, v3
+
+    goto :goto_0
 
     :cond_1
-    check-cast p1, Lxh2;
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
-    iget-object v1, p0, Lxh2;->b:Lyp8;
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
-    iget-object v3, p1, Lxh2;->b:Lyp8;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
+    throw p0
 
     :cond_2
-    iget-object v1, p0, Lxh2;->c:Lvte;
+    new-instance p0, Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;
 
-    iget-object v3, p1, Lxh2;->c:Lvte;
+    invoke-direct {p0, v0, v3}, Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;-><init>(Ljava/lang/String;Lld4;)V
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p0, v2}, Lxx3;->setRetainViewMode(Lwx3;)V
 
-    move-result v1
+    move-object v4, p0
 
-    if-nez v1, :cond_3
-
-    return v2
+    goto :goto_0
 
     :cond_3
-    iget-object v1, p0, Lxh2;->d:Lvte;
+    new-instance p2, Lone/me/keyboardmedia/stickers/KeyboardStickersWidget;
 
-    iget-object v3, p1, Lxh2;->d:Lvte;
+    iget-wide v4, p0, Lxh2;->w0:J
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {p2, v4, v5, v0, v3}, Lone/me/keyboardmedia/stickers/KeyboardStickersWidget;-><init>(JLjava/lang/String;Lld4;)V
 
-    move-result v1
+    iget-object p0, p0, Lxh2;->y0:Ljava/lang/Object;
 
-    if-nez v1, :cond_4
+    check-cast p0, La38;
 
-    return v2
+    iput-object p0, p2, Lone/me/keyboardmedia/stickers/KeyboardStickersWidget;->c:La38;
+
+    invoke-virtual {p2, v2}, Lxx3;->setRetainViewMode(Lwx3;)V
+
+    move-object v4, p2
+
+    :goto_0
+    if-nez v4, :cond_4
+
+    goto :goto_1
 
     :cond_4
-    iget-object p0, p0, Lxh2;->e:Ljava/util/List;
+    new-instance v3, Luzc;
 
-    iget-object p1, p1, Lxh2;->e:Ljava/util/List;
+    const/4 v8, 0x0
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const/4 v9, -0x1
 
-    move-result p0
+    const/4 v5, 0x0
 
-    if-nez p0, :cond_5
+    const/4 v6, 0x0
 
-    return v2
+    const/4 v7, 0x0
+
+    invoke-direct/range {v3 .. v9}, Luzc;-><init>(Lxx3;Ljava/lang/String;Lcy3;Lcy3;ZI)V
+
+    invoke-virtual {p1, v3}, Lrzc;->S(Luzc;)V
 
     :cond_5
-    return v0
+    :goto_1
+    return-void
+
+    :pswitch_0
+    invoke-virtual {p1}, Lrzc;->n()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    goto :goto_2
+
+    :cond_6
+    iget-object v0, p0, Lxh2;->x0:Ljava/util/List;
+
+    invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lqi2;
+
+    iget-object v0, p0, Lxh2;->z0:Ljava/lang/Object;
+
+    check-cast v0, Lyw9;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v2, Lone/me/profile/screens/media/ChatMediaListWidget;
+
+    iget-wide v0, p0, Lxh2;->w0:J
+
+    invoke-direct {v2, v0, v1, p2}, Lone/me/profile/screens/media/ChatMediaListWidget;-><init>(JLqi2;)V
+
+    iget-object p0, p0, Lxh2;->y0:Ljava/lang/Object;
+
+    check-cast p0, Lone/me/profile/screens/media/ChatMediaTabWidget;
+
+    invoke-virtual {v2, p0}, Lxx3;->setTargetController(Lxx3;)V
+
+    sget-object p0, Lwx3;->b:Lwx3;
+
+    invoke-virtual {v2, p0}, Lxx3;->setRetainViewMode(Lwx3;)V
+
+    new-instance v1, Luzc;
+
+    const/4 v6, 0x0
+
+    const/4 v7, -0x1
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    invoke-direct/range {v1 .. v7}, Luzc;-><init>(Lxx3;Ljava/lang/String;Lcy3;Lcy3;ZI)V
+
+    invoke-virtual {p1, v1}, Lrzc;->S(Luzc;)V
+
+    :goto_2
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
-    .registers 4
+.method public final j()I
+    .registers 2
 
-    iget-object v0, p0, Lxh2;->b:Lyp8;
+    iget v0, p0, Lxh2;->v0:I
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    packed-switch v0, :pswitch_data_0
 
-    move-result v0
+    iget-object p0, p0, Lxh2;->x0:Ljava/util/List;
 
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lxh2;->c:Lvte;
-
-    invoke-static {v0, v1, v2}, Lnh0;->c(IILvte;)I
-
-    move-result v0
-
-    iget-object v2, p0, Lxh2;->d:Lvte;
-
-    invoke-static {v0, v1, v2}, Lnh0;->c(IILvte;)I
-
-    move-result v0
-
-    iget-object p0, p0, Lxh2;->e:Ljava/util/List;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result p0
 
-    add-int/2addr p0, v0
+    return p0
+
+    :pswitch_0
+    iget-object p0, p0, Lxh2;->x0:Ljava/util/List;
+
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result p0
 
     return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final k(I)J
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget v0, p0, Lxh2;->v0:I
 
-    const-string v1, "ShowConfirmationBottomSheet(model="
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lxh2;->x0:Ljava/util/List;
 
-    iget-object v1, p0, Lxh2;->b:Lyp8;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", title="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lxh2;->c:Lvte;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", description="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lxh2;->d:Lvte;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", actions="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lxh2;->e:Ljava/util/List;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Lyj7;
+
+    iget p0, p0, Lyj7;->c:I
+
+    :goto_0
+    int-to-long p0, p0
+
+    return-wide p0
+
+    :pswitch_0
+    iget-object p0, p0, Lxh2;->x0:Ljava/util/List;
+
+    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqi2;
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p0
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

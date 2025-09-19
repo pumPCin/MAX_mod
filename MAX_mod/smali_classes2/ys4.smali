@@ -1,103 +1,49 @@
 .class public final Lys4;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic f:[Lsf7;
-
-.field public static final g:Ljava/lang/String;
-
-
 # instance fields
-.field public final a:Lqxc;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Lfq4;
+.field public final synthetic Y:Lgt4;
 
-.field public final c:Lfq4;
+.field public Z:I
 
-.field public final d:Lfq4;
-
-.field public final e:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public o:Lgt4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public constructor <init>(Lgt4;Ljx3;)V
+    .registers 3
 
-    new-instance v0, Lrqb;
+    iput-object p1, p0, Lys4;->Y:Lgt4;
 
-    const-class v1, Lys4;
-
-    const-string v2, "authStorage"
-
-    const-string v3, "getAuthStorage()Lru/ok/tamtam/AuthStorage;"
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sget-object v2, Lyhc;->a:Lzhc;
-
-    const-string v3, "fileAttachUploader"
-
-    const-string v5, "getFileAttachUploader()Lru/ok/tamtam/FileAttachUploader;"
-
-    invoke-static {v2, v1, v3, v5, v4}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
-
-    move-result-object v2
-
-    new-instance v3, Lrqb;
-
-    const-string v5, "draftUploadsRepository"
-
-    const-string v6, "getDraftUploadsRepository()Lru/ok/tamtam/upload/drafts/DraftUploadsRepository;"
-
-    invoke-direct {v3, v1, v5, v6, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Lsf7;
-
-    aput-object v0, v5, v4
-
-    const/4 v0, 0x1
-
-    aput-object v2, v5, v0
-
-    const/4 v0, 0x2
-
-    aput-object v3, v5, v0
-
-    sput-object v5, Lys4;->f:[Lsf7;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lys4;->g:Ljava/lang/String;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lqxc;Lfq4;Lfq4;Lfq4;)V
-    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iput-object p1, p0, Lys4;->a:Lqxc;
+    iput-object p1, p0, Lys4;->X:Ljava/lang/Object;
 
-    iput-object p3, p0, Lys4;->b:Lfq4;
+    iget p1, p0, Lys4;->Z:I
 
-    iput-object p2, p0, Lys4;->c:Lfq4;
+    const/high16 v0, -0x80000000
 
-    iput-object p4, p0, Lys4;->d:Lfq4;
+    or-int/2addr p1, v0
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput p1, p0, Lys4;->Z:I
 
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+    iget-object p1, p0, Lys4;->Y:Lgt4;
 
-    iput-object p1, p0, Lys4;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-virtual {p1, p0}, Lgt4;->c(Ljx3;)Ljava/lang/Object;
 
-    return-void
+    move-result-object p0
+
+    return-object p0
 .end method

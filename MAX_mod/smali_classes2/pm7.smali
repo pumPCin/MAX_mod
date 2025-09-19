@@ -3,74 +3,45 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lan7;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lpm7;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public final a:J
-
-.field public final b:Ljava/lang/String;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Ldn6;
-
-    const/16 v1, 0x1a
-
-    invoke-direct {v0, v1}, Ldn6;-><init>(I)V
-
-    sput-object v0, Lpm7;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(JLjava/lang/String;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lpm7;->a:J
-
-    iput-object p3, p0, Lpm7;->b:Ljava/lang/String;
-
-    return-void
-.end method
+.implements Lvrf;
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
+.method public final a(ILjava/lang/String;)Lp2f;
+    .registers 3
 
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    move-result p0
+
+    const/16 p2, 0x3c
+
+    if-lt p0, p2, :cond_0
+
+    const-class p0, Lpm7;
+
+    invoke-static {p0}, Ljpc;->a(Ljava/lang/Class;)Ly33;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lmu0;->n(ILy33;)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    new-instance p1, Lp2f;
+
+    invoke-direct {p1, p0}, Lp2f;-><init>(I)V
+
+    return-object p1
+
+    :cond_0
     const/4 p0, 0x0
 
-    return p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
-
-    iget-wide v0, p0, Lpm7;->a:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-object p0, p0, Lpm7;->b:Ljava/lang/String;
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    return-void
+    return-object p0
 .end method

@@ -1,62 +1,63 @@
 .class public final Lrsd;
-.super Ljava/lang/Object;
+.super Luc0;
 .source "SourceFile"
 
-# interfaces
-.implements Lpsd;
 
-
-# instance fields
-.field public final a:Lysd;
-
-.field public final b:Z
-
-.field public final c:Z
+# static fields
+.field public static final b:Lrsd;
 
 
 # direct methods
-.method public constructor <init>(Lysd;ZZ)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lrsd;
 
-    iput-object p1, p0, Lrsd;->a:Lysd;
+    const/16 v1, 0x12
 
-    iput-boolean p2, p0, Lrsd;->b:Z
+    invoke-direct {v0, v1}, Luc0;-><init>(I)V
 
-    iput-boolean p3, p0, Lrsd;->c:Z
+    sput-object v0, Lrsd;->b:Lrsd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lorg/json/JSONObject;
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    new-instance v0, Lorg/json/JSONObject;
+    const/4 v0, 0x1
 
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+    if-ne p0, p1, :cond_0
 
-    const-string v1, "command"
+    return v0
 
-    const-string v2, "change-media-settings"
+    :cond_0
+    instance-of p0, p1, Lrsd;
 
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    if-nez p0, :cond_1
 
-    iget-boolean v1, p0, Lrsd;->b:Z
+    const/4 p0, 0x0
 
-    iget-boolean v2, p0, Lrsd;->c:Z
+    return p0
 
-    iget-object p0, p0, Lrsd;->a:Lysd;
+    :cond_1
+    return v0
+.end method
 
-    invoke-static {p0, v1, v2}, Lcr0;->v(Lysd;ZZ)Lorg/json/JSONObject;
+.method public final hashCode()I
+    .registers 1
 
-    move-result-object p0
+    const p0, -0x631275ef
 
-    const-string v1, "mediaSettings"
+    return p0
+.end method
 
-    invoke-virtual {v0, v1, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    return-object v0
+    const-string p0, "AvatarsBottomSheet"
+
+    return-object p0
 .end method

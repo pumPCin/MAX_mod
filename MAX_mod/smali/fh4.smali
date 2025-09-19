@@ -1,297 +1,1137 @@
 .class public final Lfh4;
-.super Ljava/util/concurrent/AbstractExecutorService;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Load;
-
-
-# static fields
-.field public static final synthetic n0:I
+.implements Lo8a;
+.implements Lp8a;
 
 
 # instance fields
-.field public final X:Lhe;
+.field public X:J
 
-.field public final Y:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public Y:J
 
-.field public final Z:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public Z:J
 
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:I
 
-.field public final b:Ljava/util/concurrent/Executor;
+.field public final b:J
 
-.field public volatile c:I
+.field public final c:J
 
-.field public final o:Ljava/util/concurrent/LinkedBlockingQueue;
+.field public o:I
+
+.field public r0:J
+
+.field public s0:J
+
+.field public t0:J
+
+.field public u0:J
+
+.field public final v0:Ljava/lang/Object;
+
+.field public final w0:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;)V
-    .registers 4
-
-    new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;
-
-    invoke-direct {v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
-
-    invoke-direct {p0}, Ljava/util/concurrent/AbstractExecutorService;-><init>()V
-
-    const-string v1, "SerialExecutor"
-
-    iput-object v1, p0, Lfh4;->a:Ljava/lang/String;
-
-    iput-object p1, p0, Lfh4;->b:Ljava/util/concurrent/Executor;
-
-    const/4 p1, 0x1
-
-    iput p1, p0, Lfh4;->c:I
-
-    iput-object v0, p0, Lfh4;->o:Ljava/util/concurrent/LinkedBlockingQueue;
-
-    new-instance p1, Lhe;
-
-    const/16 v0, 0x9
-
-    invoke-direct {p1, v0, p0}, Lhe;-><init>(ILjava/lang/Object;)V
-
-    iput-object p1, p0, Lfh4;->X:Lhe;
-
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
+.method public constructor <init>(Lnle;JJJJZ)V
+    .registers 13
 
     const/4 v0, 0x0
 
-    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+    iput v0, p0, Lfh4;->a:I
 
-    iput-object p1, p0, Lfh4;->Y:Ljava/util/concurrent/atomic/AtomicInteger;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
+    const-wide/16 v0, 0x0
 
-    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+    cmp-long v0, p2, v0
 
-    iput-object p1, p0, Lfh4;->Z:Ljava/util/concurrent/atomic/AtomicInteger;
+    const/4 v1, 0x0
+
+    if-ltz v0, :cond_0
+
+    cmp-long v0, p4, p2
+
+    if-lez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v1
+
+    :goto_0
+    invoke-static {v0}, Lxnd;->k(Z)V
+
+    iput-object p1, p0, Lfh4;->w0:Ljava/lang/Object;
+
+    iput-wide p2, p0, Lfh4;->b:J
+
+    iput-wide p4, p0, Lfh4;->c:J
+
+    sub-long/2addr p4, p2
+
+    cmp-long p1, p6, p4
+
+    if-eqz p1, :cond_2
+
+    if-eqz p10, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    iput v1, p0, Lfh4;->o:I
+
+    goto :goto_2
+
+    :cond_2
+    :goto_1
+    iput-wide p8, p0, Lfh4;->X:J
+
+    const/4 p1, 0x4
+
+    iput p1, p0, Lfh4;->o:I
+
+    :goto_2
+    new-instance p1, Ln8a;
+
+    const/4 p2, 0x0
+
+    invoke-direct {p1, p2}, Ln8a;-><init>(I)V
+
+    iput-object p1, p0, Lfh4;->v0:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lnle;JJJJZB)V
+    .registers 14
+
+    const/4 p11, 0x1
+
+    iput p11, p0, Lfh4;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-wide/16 v0, 0x0
+
+    cmp-long p11, p2, v0
+
+    const/4 v0, 0x0
+
+    if-ltz p11, :cond_0
+
+    cmp-long p11, p4, p2
+
+    if-lez p11, :cond_0
+
+    const/4 p11, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    move p11, v0
+
+    :goto_0
+    invoke-static {p11}, Lmq0;->c(Z)V
+
+    iput-object p1, p0, Lfh4;->w0:Ljava/lang/Object;
+
+    iput-wide p2, p0, Lfh4;->b:J
+
+    iput-wide p4, p0, Lfh4;->c:J
+
+    sub-long/2addr p4, p2
+
+    cmp-long p1, p6, p4
+
+    if-eqz p1, :cond_2
+
+    if-eqz p10, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    iput v0, p0, Lfh4;->o:I
+
+    goto :goto_2
+
+    :cond_2
+    :goto_1
+    iput-wide p8, p0, Lfh4;->X:J
+
+    const/4 p1, 0x4
+
+    iput p1, p0, Lfh4;->o:I
+
+    :goto_2
+    new-instance p1, Ln8a;
+
+    const/4 p2, 0x1
+
+    invoke-direct {p1, p2}, Ln8a;-><init>(I)V
+
+    iput-object p1, p0, Lfh4;->v0:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Runnable;)V
+.method public a()Lsdd;
     .registers 5
 
-    if-eqz p1, :cond_2
+    iget-wide v0, p0, Lfh4;->X:J
 
-    iget-object v0, p0, Lfh4;->o:Ljava/util/concurrent/LinkedBlockingQueue;
+    const-wide/16 v2, 0x0
 
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/LinkedBlockingQueue;->offer(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    iget-object v1, p0, Lfh4;->a:Ljava/lang/String;
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {v0}, Ljava/util/concurrent/LinkedBlockingQueue;->size()I
-
-    move-result p1
-
-    iget-object v0, p0, Lfh4;->Z:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v2
-
-    if-le p1, v2, :cond_0
-
-    invoke-virtual {v0, v2, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
-
-    move-result v0
+    cmp-long v0, v0, v2
 
     if-eqz v0, :cond_0
 
-    const-string v0, "%s: max pending work in queue = %d"
+    new-instance v0, Ldh4;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-direct {v0, p0}, Ldh4;-><init>(Lfh4;)V
 
-    move-result-object p1
-
-    const-class v2, Lfh4;
-
-    invoke-static {v2, v0, v1, p1}, Ltd5;->e(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    return-object v0
 
     :cond_0
-    invoke-virtual {p0}, Lfh4;->b()V
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public a()Ltdd;
+    .registers 5
+
+    iget-wide v0, p0, Lfh4;->X:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_0
+
+    new-instance v0, Leh4;
+
+    invoke-direct {v0, p0}, Leh4;-><init>(Lfh4;)V
+
+    return-object v0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final b(J)V
+    .registers 13
+
+    iget v0, p0, Lfh4;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-wide v0, p0, Lfh4;->X:J
+
+    const-wide/16 v2, 0x1
+
+    sub-long v8, v0, v2
+
+    const-wide/16 v6, 0x0
+
+    move-wide v4, p1
+
+    invoke-static/range {v4 .. v9}, Lnrf;->j(JJJ)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lfh4;->Z:J
+
+    const/4 p1, 0x2
+
+    iput p1, p0, Lfh4;->o:I
+
+    iget-wide p1, p0, Lfh4;->b:J
+
+    iput-wide p1, p0, Lfh4;->r0:J
+
+    iget-wide p1, p0, Lfh4;->c:J
+
+    iput-wide p1, p0, Lfh4;->s0:J
+
+    const-wide/16 p1, 0x0
+
+    iput-wide p1, p0, Lfh4;->t0:J
+
+    iget-wide p1, p0, Lfh4;->X:J
+
+    iput-wide p1, p0, Lfh4;->u0:J
 
     return-void
+
+    :pswitch_0
+    move-wide v0, p1
+
+    iget-wide p1, p0, Lfh4;->X:J
+
+    const-wide/16 v2, 0x1
+
+    sub-long v4, p1, v2
+
+    const-wide/16 v2, 0x0
+
+    invoke-static/range {v0 .. v5}, Llrf;->j(JJJ)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lfh4;->Z:J
+
+    const/4 p1, 0x2
+
+    iput p1, p0, Lfh4;->o:I
+
+    iget-wide p1, p0, Lfh4;->b:J
+
+    iput-wide p1, p0, Lfh4;->r0:J
+
+    iget-wide p1, p0, Lfh4;->c:J
+
+    iput-wide p1, p0, Lfh4;->s0:J
+
+    const-wide/16 p1, 0x0
+
+    iput-wide p1, p0, Lfh4;->t0:J
+
+    iget-wide p1, p0, Lfh4;->X:J
+
+    iput-wide p1, p0, Lfh4;->u0:J
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public c(Lqf5;)J
+    .registers 29
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    iget-object v2, v0, Lfh4;->v0:Ljava/lang/Object;
+
+    check-cast v2, Ln8a;
+
+    iget v3, v0, Lfh4;->o:I
+
+    iget-wide v6, v0, Lfh4;->c:J
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x1
+
+    const-wide/16 v10, -0x1
+
+    const/4 v12, 0x4
+
+    if-eqz v3, :cond_d
+
+    if-eq v3, v9, :cond_c
+
+    const/4 v6, 0x2
+
+    const/4 v7, 0x3
+
+    if-eq v3, v6, :cond_2
+
+    if-eq v3, v7, :cond_1
+
+    if-ne v3, v12, :cond_0
+
+    return-wide v10
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
 
     :cond_1
-    new-instance p0, Ljava/util/concurrent/RejectedExecutionException;
+    const-wide/16 v19, 0x2
 
-    const-string p1, " queue is full, size="
-
-    invoke-static {v1, p1}, Lgl5;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p1
-
-    invoke-virtual {v0}, Ljava/util/concurrent/LinkedBlockingQueue;->size()I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/util/concurrent/RejectedExecutionException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    goto/16 :goto_4
 
     :cond_2
-    new-instance p0, Ljava/lang/NullPointerException;
+    const-wide/16 v15, 0x2
 
-    const-string p1, "runnable parameter is null"
+    iget-wide v13, v0, Lfh4;->r0:J
 
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    const-wide/16 v17, 0x0
 
-    throw p0
-.end method
+    iget-wide v4, v0, Lfh4;->s0:J
 
-.method public final awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
-    .registers 4
+    cmp-long v3, v13, v4
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    if-nez v3, :cond_3
 
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p0
-.end method
-
-.method public final b()V
-    .registers 6
-
-    iget-object v0, p0, Lfh4;->Y:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v0
+    move-wide v5, v10
 
     :goto_0
-    iget v1, p0, Lfh4;->c:I
+    move-wide/from16 v19, v15
 
-    if-ge v0, v1, :cond_1
+    goto/16 :goto_3
 
-    add-int/lit8 v1, v0, 0x1
+    :cond_3
+    invoke-interface {v1}, Lqf5;->getPosition()J
 
-    iget-object v2, p0, Lfh4;->Y:Ljava/util/concurrent/atomic/AtomicInteger;
+    move-result-wide v3
 
-    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
+    iget-wide v5, v0, Lfh4;->s0:J
 
-    move-result v0
+    invoke-virtual {v2, v1, v5, v6}, Ln8a;->d(Lqf5;J)Z
 
-    const-class v2, Lfh4;
+    move-result v5
 
-    if-eqz v0, :cond_0
+    if-nez v5, :cond_5
 
-    iget-object v0, p0, Lfh4;->a:Ljava/lang/String;
+    iget-wide v5, v0, Lfh4;->r0:J
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    cmp-long v3, v5, v3
 
-    move-result-object v1
-
-    iget v3, p0, Lfh4;->c:I
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    const-string v4, "%s: starting worker %d of %d"
-
-    invoke-static {v2, v4, v0, v1, v3}, Ltd5;->f(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lfh4;->b:Ljava/util/concurrent/Executor;
-
-    iget-object p0, p0, Lfh4;->X:Lhe;
-
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :cond_0
-    const-string v0, "%s: race in startWorkerIfNeeded; retrying"
-
-    iget-object v1, p0, Lfh4;->a:Ljava/lang/String;
-
-    invoke-static {v2, v1, v0}, Ltd5;->d(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lfh4;->Y:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
-
-    move-result v0
+    if-eqz v3, :cond_4
 
     goto :goto_0
 
-    :cond_1
-    return-void
-.end method
+    :cond_4
+    new-instance v0, Ljava/io/IOException;
 
-.method public final declared-synchronized execute(Ljava/lang/Runnable;)V
-    .registers 2
+    const-string v1, "No ogg page can be found."
 
-    monitor-enter p0
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_5
+    invoke-virtual {v2, v1, v8}, Ln8a;->b(Lqf5;Z)Z
+
+    invoke-interface {v1}, Lqf5;->x()V
+
+    iget-wide v5, v0, Lfh4;->Z:J
+
+    iget-wide v13, v2, Ln8a;->b:J
+
+    sub-long/2addr v5, v13
+
+    iget v9, v2, Ln8a;->d:I
+
+    move-wide/from16 v19, v15
+
+    iget v15, v2, Ln8a;->e:I
+
+    add-int/2addr v9, v15
+
+    cmp-long v15, v17, v5
+
+    if-gtz v15, :cond_6
+
+    const-wide/32 v15, 0x11940
+
+    cmp-long v15, v5, v15
+
+    if-gez v15, :cond_6
+
+    move-wide v5, v10
+
+    goto :goto_3
+
+    :cond_6
+    cmp-long v15, v5, v17
+
+    if-gez v15, :cond_7
+
+    iput-wide v3, v0, Lfh4;->s0:J
+
+    iput-wide v13, v0, Lfh4;->u0:J
+
+    goto :goto_1
+
+    :cond_7
+    invoke-interface {v1}, Lqf5;->getPosition()J
+
+    move-result-wide v3
+
+    int-to-long v13, v9
+
+    add-long/2addr v3, v13
+
+    iput-wide v3, v0, Lfh4;->r0:J
+
+    iget-wide v3, v2, Ln8a;->b:J
+
+    iput-wide v3, v0, Lfh4;->t0:J
+
+    :goto_1
+    iget-wide v3, v0, Lfh4;->s0:J
+
+    iget-wide v13, v0, Lfh4;->r0:J
+
+    sub-long/2addr v3, v13
+
+    const-wide/32 v16, 0x186a0
+
+    cmp-long v3, v3, v16
+
+    if-gez v3, :cond_8
+
+    iput-wide v13, v0, Lfh4;->s0:J
+
+    move-wide v5, v13
+
+    goto :goto_3
+
+    :cond_8
+    int-to-long v3, v9
+
+    if-gtz v15, :cond_9
+
+    move-wide/from16 v15, v19
+
+    goto :goto_2
+
+    :cond_9
+    const-wide/16 v15, 0x1
+
+    :goto_2
+    mul-long/2addr v3, v15
+
+    invoke-interface {v1}, Lqf5;->getPosition()J
+
+    move-result-wide v15
+
+    sub-long/2addr v15, v3
+
+    iget-wide v3, v0, Lfh4;->s0:J
+
+    const-wide/16 v17, 0x1
+
+    iget-wide v13, v0, Lfh4;->r0:J
+
+    sub-long v21, v3, v13
+
+    mul-long v21, v21, v5
+
+    iget-wide v5, v0, Lfh4;->u0:J
+
+    move-wide/from16 v23, v13
+
+    iget-wide v12, v0, Lfh4;->t0:J
+
+    sub-long/2addr v5, v12
+
+    div-long v21, v21, v5
+
+    add-long v21, v21, v15
+
+    sub-long v25, v3, v17
+
+    invoke-static/range {v21 .. v26}, Lnrf;->j(JJJ)J
+
+    move-result-wide v5
+
+    :goto_3
+    cmp-long v3, v5, v10
+
+    if-eqz v3, :cond_a
+
+    return-wide v5
+
+    :cond_a
+    iput v7, v0, Lfh4;->o:I
+
+    :goto_4
+    invoke-virtual {v2, v1, v10, v11}, Ln8a;->d(Lqf5;J)Z
+
+    invoke-virtual {v2, v1, v8}, Ln8a;->b(Lqf5;Z)Z
+
+    iget-wide v3, v2, Ln8a;->b:J
+
+    iget-wide v5, v0, Lfh4;->Z:J
+
+    cmp-long v3, v3, v5
+
+    if-lez v3, :cond_b
+
+    invoke-interface {v1}, Lqf5;->x()V
+
+    const/4 v1, 0x4
+
+    iput v1, v0, Lfh4;->o:I
+
+    iget-wide v0, v0, Lfh4;->t0:J
+
+    add-long v0, v0, v19
+
+    neg-long v0, v0
+
+    return-wide v0
+
+    :cond_b
+    iget v3, v2, Ln8a;->d:I
+
+    iget v4, v2, Ln8a;->e:I
+
+    add-int/2addr v3, v4
+
+    invoke-interface {v1, v3}, Lqf5;->y(I)V
+
+    invoke-interface {v1}, Lqf5;->getPosition()J
+
+    move-result-wide v3
+
+    iput-wide v3, v0, Lfh4;->r0:J
+
+    iget-wide v3, v2, Ln8a;->b:J
+
+    iput-wide v3, v0, Lfh4;->t0:J
+
+    goto :goto_4
+
+    :cond_c
+    const-wide/16 v17, 0x0
+
+    goto :goto_5
+
+    :cond_d
+    const-wide/16 v17, 0x0
+
+    invoke-interface {v1}, Lqf5;->getPosition()J
+
+    move-result-wide v3
+
+    iput-wide v3, v0, Lfh4;->Y:J
+
+    iput v9, v0, Lfh4;->o:I
+
+    const-wide/32 v12, 0xff1b
+
+    sub-long v12, v6, v12
+
+    cmp-long v3, v12, v3
+
+    if-lez v3, :cond_e
+
+    return-wide v12
+
+    :cond_e
+    :goto_5
+    iput v8, v2, Ln8a;->a:I
+
+    move-wide/from16 v3, v17
+
+    iput-wide v3, v2, Ln8a;->b:J
+
+    iput v8, v2, Ln8a;->c:I
+
+    iput v8, v2, Ln8a;->d:I
+
+    iput v8, v2, Ln8a;->e:I
+
+    invoke-virtual {v2, v1, v10, v11}, Ln8a;->d(Lqf5;J)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_10
+
+    invoke-virtual {v2, v1, v8}, Ln8a;->b(Lqf5;Z)Z
+
+    iget v3, v2, Ln8a;->d:I
+
+    iget v4, v2, Ln8a;->e:I
+
+    add-int/2addr v3, v4
+
+    invoke-interface {v1, v3}, Lqf5;->y(I)V
+
+    iget-wide v3, v2, Ln8a;->b:J
+
+    :goto_6
+    iget v5, v2, Ln8a;->a:I
+
+    const/4 v8, 0x4
+
+    and-int/2addr v5, v8
+
+    if-eq v5, v8, :cond_f
+
+    invoke-virtual {v2, v1, v10, v11}, Ln8a;->d(Lqf5;J)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_f
+
+    invoke-interface {v1}, Lqf5;->getPosition()J
+
+    move-result-wide v12
+
+    cmp-long v5, v12, v6
+
+    if-gez v5, :cond_f
+
+    invoke-virtual {v2, v1, v9}, Ln8a;->b(Lqf5;Z)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_f
+
+    iget v5, v2, Ln8a;->d:I
+
+    iget v8, v2, Ln8a;->e:I
+
+    add-int/2addr v5, v8
 
     :try_start_0
-    invoke-virtual {p0, p1}, Lfh4;->a(Ljava/lang/Runnable;)V
+    invoke-interface {v1, v5}, Lqf5;->y(I)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
 
-    monitor-exit p0
+    iget-wide v3, v2, Ln8a;->b:J
 
-    return-void
+    goto :goto_6
 
-    :catchall_0
-    move-exception p1
+    :catch_0
+    :cond_f
+    iput-wide v3, v0, Lfh4;->X:J
 
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    const/4 v1, 0x4
 
-    throw p1
+    iput v1, v0, Lfh4;->o:I
+
+    iget-wide v0, v0, Lfh4;->Y:J
+
+    return-wide v0
+
+    :cond_10
+    new-instance v0, Ljava/io/EOFException;
+
+    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
+
+    throw v0
 .end method
 
-.method public final isShutdown()Z
-    .registers 1
+.method public e(Lpf5;)J
+    .registers 29
 
-    const/4 p0, 0x0
+    move-object/from16 v0, p0
 
-    return p0
-.end method
+    move-object/from16 v1, p1
 
-.method public final isTerminated()Z
-    .registers 1
+    iget-object v2, v0, Lfh4;->v0:Ljava/lang/Object;
 
-    const/4 p0, 0x0
+    check-cast v2, Ln8a;
 
-    return p0
-.end method
+    iget v3, v0, Lfh4;->o:I
 
-.method public final shutdown()V
-    .registers 1
+    iget-wide v6, v0, Lfh4;->c:J
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    const/4 v8, 0x0
 
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    const/4 v9, 0x1
 
-    throw p0
-.end method
+    const-wide/16 v10, -0x1
 
-.method public final shutdownNow()Ljava/util/List;
-    .registers 1
+    const/4 v12, 0x4
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    if-eqz v3, :cond_d
 
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    if-eq v3, v9, :cond_c
 
-    throw p0
+    const/4 v6, 0x2
+
+    const/4 v7, 0x3
+
+    if-eq v3, v6, :cond_2
+
+    if-eq v3, v7, :cond_1
+
+    if-ne v3, v12, :cond_0
+
+    return-wide v10
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw v0
+
+    :cond_1
+    const-wide/16 v19, 0x2
+
+    goto/16 :goto_4
+
+    :cond_2
+    const-wide/16 v15, 0x2
+
+    iget-wide v13, v0, Lfh4;->r0:J
+
+    const-wide/16 v17, 0x0
+
+    iget-wide v4, v0, Lfh4;->s0:J
+
+    cmp-long v3, v13, v4
+
+    if-nez v3, :cond_3
+
+    move-wide v5, v10
+
+    :goto_0
+    move-wide/from16 v19, v15
+
+    goto/16 :goto_3
+
+    :cond_3
+    invoke-interface {v1}, Lpf5;->getPosition()J
+
+    move-result-wide v3
+
+    iget-wide v5, v0, Lfh4;->s0:J
+
+    invoke-virtual {v2, v1, v5, v6}, Ln8a;->c(Lpf5;J)Z
+
+    move-result v5
+
+    if-nez v5, :cond_5
+
+    iget-wide v5, v0, Lfh4;->r0:J
+
+    cmp-long v3, v5, v3
+
+    if-eqz v3, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    new-instance v0, Ljava/io/IOException;
+
+    const-string v1, "No ogg page can be found."
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_5
+    invoke-virtual {v2, v1, v8}, Ln8a;->a(Lpf5;Z)Z
+
+    invoke-interface {v1}, Lpf5;->x()V
+
+    iget-wide v5, v0, Lfh4;->Z:J
+
+    iget-wide v13, v2, Ln8a;->b:J
+
+    sub-long/2addr v5, v13
+
+    iget v9, v2, Ln8a;->d:I
+
+    move-wide/from16 v19, v15
+
+    iget v15, v2, Ln8a;->e:I
+
+    add-int/2addr v9, v15
+
+    cmp-long v15, v17, v5
+
+    if-gtz v15, :cond_6
+
+    const-wide/32 v15, 0x11940
+
+    cmp-long v15, v5, v15
+
+    if-gez v15, :cond_6
+
+    move-wide v5, v10
+
+    goto :goto_3
+
+    :cond_6
+    cmp-long v15, v5, v17
+
+    if-gez v15, :cond_7
+
+    iput-wide v3, v0, Lfh4;->s0:J
+
+    iput-wide v13, v0, Lfh4;->u0:J
+
+    goto :goto_1
+
+    :cond_7
+    invoke-interface {v1}, Lpf5;->getPosition()J
+
+    move-result-wide v3
+
+    int-to-long v13, v9
+
+    add-long/2addr v3, v13
+
+    iput-wide v3, v0, Lfh4;->r0:J
+
+    iget-wide v3, v2, Ln8a;->b:J
+
+    iput-wide v3, v0, Lfh4;->t0:J
+
+    :goto_1
+    iget-wide v3, v0, Lfh4;->s0:J
+
+    iget-wide v13, v0, Lfh4;->r0:J
+
+    sub-long/2addr v3, v13
+
+    const-wide/32 v16, 0x186a0
+
+    cmp-long v3, v3, v16
+
+    if-gez v3, :cond_8
+
+    iput-wide v13, v0, Lfh4;->s0:J
+
+    move-wide v5, v13
+
+    goto :goto_3
+
+    :cond_8
+    int-to-long v3, v9
+
+    if-gtz v15, :cond_9
+
+    move-wide/from16 v15, v19
+
+    goto :goto_2
+
+    :cond_9
+    const-wide/16 v15, 0x1
+
+    :goto_2
+    mul-long/2addr v3, v15
+
+    invoke-interface {v1}, Lpf5;->getPosition()J
+
+    move-result-wide v15
+
+    sub-long/2addr v15, v3
+
+    iget-wide v3, v0, Lfh4;->s0:J
+
+    const-wide/16 v17, 0x1
+
+    iget-wide v13, v0, Lfh4;->r0:J
+
+    sub-long v21, v3, v13
+
+    mul-long v21, v21, v5
+
+    iget-wide v5, v0, Lfh4;->u0:J
+
+    move-wide/from16 v23, v13
+
+    iget-wide v12, v0, Lfh4;->t0:J
+
+    sub-long/2addr v5, v12
+
+    div-long v21, v21, v5
+
+    add-long v21, v21, v15
+
+    sub-long v25, v3, v17
+
+    invoke-static/range {v21 .. v26}, Llrf;->j(JJJ)J
+
+    move-result-wide v5
+
+    :goto_3
+    cmp-long v3, v5, v10
+
+    if-eqz v3, :cond_a
+
+    return-wide v5
+
+    :cond_a
+    iput v7, v0, Lfh4;->o:I
+
+    :goto_4
+    invoke-virtual {v2, v1, v10, v11}, Ln8a;->c(Lpf5;J)Z
+
+    invoke-virtual {v2, v1, v8}, Ln8a;->a(Lpf5;Z)Z
+
+    iget-wide v3, v2, Ln8a;->b:J
+
+    iget-wide v5, v0, Lfh4;->Z:J
+
+    cmp-long v3, v3, v5
+
+    if-lez v3, :cond_b
+
+    invoke-interface {v1}, Lpf5;->x()V
+
+    const/4 v1, 0x4
+
+    iput v1, v0, Lfh4;->o:I
+
+    iget-wide v0, v0, Lfh4;->t0:J
+
+    add-long v0, v0, v19
+
+    neg-long v0, v0
+
+    return-wide v0
+
+    :cond_b
+    iget v3, v2, Ln8a;->d:I
+
+    iget v4, v2, Ln8a;->e:I
+
+    add-int/2addr v3, v4
+
+    invoke-interface {v1, v3}, Lpf5;->y(I)V
+
+    invoke-interface {v1}, Lpf5;->getPosition()J
+
+    move-result-wide v3
+
+    iput-wide v3, v0, Lfh4;->r0:J
+
+    iget-wide v3, v2, Ln8a;->b:J
+
+    iput-wide v3, v0, Lfh4;->t0:J
+
+    goto :goto_4
+
+    :cond_c
+    const-wide/16 v17, 0x0
+
+    goto :goto_5
+
+    :cond_d
+    const-wide/16 v17, 0x0
+
+    invoke-interface {v1}, Lpf5;->getPosition()J
+
+    move-result-wide v3
+
+    iput-wide v3, v0, Lfh4;->Y:J
+
+    iput v9, v0, Lfh4;->o:I
+
+    const-wide/32 v12, 0xff1b
+
+    sub-long v12, v6, v12
+
+    cmp-long v3, v12, v3
+
+    if-lez v3, :cond_e
+
+    return-wide v12
+
+    :cond_e
+    :goto_5
+    iput v8, v2, Ln8a;->a:I
+
+    move-wide/from16 v3, v17
+
+    iput-wide v3, v2, Ln8a;->b:J
+
+    iput v8, v2, Ln8a;->c:I
+
+    iput v8, v2, Ln8a;->d:I
+
+    iput v8, v2, Ln8a;->e:I
+
+    invoke-virtual {v2, v1, v10, v11}, Ln8a;->c(Lpf5;J)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_10
+
+    invoke-virtual {v2, v1, v8}, Ln8a;->a(Lpf5;Z)Z
+
+    iget v3, v2, Ln8a;->d:I
+
+    iget v4, v2, Ln8a;->e:I
+
+    add-int/2addr v3, v4
+
+    invoke-interface {v1, v3}, Lpf5;->y(I)V
+
+    iget-wide v3, v2, Ln8a;->b:J
+
+    :goto_6
+    iget v5, v2, Ln8a;->a:I
+
+    const/4 v8, 0x4
+
+    and-int/2addr v5, v8
+
+    if-eq v5, v8, :cond_f
+
+    invoke-virtual {v2, v1, v10, v11}, Ln8a;->c(Lpf5;J)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_f
+
+    invoke-interface {v1}, Lpf5;->getPosition()J
+
+    move-result-wide v12
+
+    cmp-long v5, v12, v6
+
+    if-gez v5, :cond_f
+
+    invoke-virtual {v2, v1, v9}, Ln8a;->a(Lpf5;Z)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_f
+
+    iget v5, v2, Ln8a;->d:I
+
+    iget v8, v2, Ln8a;->e:I
+
+    add-int/2addr v5, v8
+
+    :try_start_0
+    invoke-interface {v1, v5}, Lpf5;->y(I)V
+    :try_end_0
+    .catch Ljava/io/EOFException; {:try_start_0 .. :try_end_0} :catch_0
+
+    iget-wide v3, v2, Ln8a;->b:J
+
+    goto :goto_6
+
+    :catch_0
+    :cond_f
+    iput-wide v3, v0, Lfh4;->X:J
+
+    const/4 v1, 0x4
+
+    iput v1, v0, Lfh4;->o:I
+
+    iget-wide v0, v0, Lfh4;->Y:J
+
+    return-wide v0
+
+    :cond_10
+    new-instance v0, Ljava/io/EOFException;
+
+    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
+
+    throw v0
 .end method

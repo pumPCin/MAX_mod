@@ -1,34 +1,13 @@
-.class public final Lqt9;
+.class public abstract Lqt9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lhq5;
-
-
-# static fields
-.field public static final a:Lqt9;
-
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public static final a(Landroid/net/ConnectivityManager;Landroid/net/ConnectivityManager$NetworkCallback;)V
+    .registers 2
 
-    new-instance v0, Lqt9;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lqt9;->a:Lqt9;
+    invoke-virtual {p0, p1}, Landroid/net/ConnectivityManager;->registerDefaultNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
 .end method

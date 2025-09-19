@@ -1,34 +1,66 @@
 .class public final Lb9f;
-.super Ljava/lang/Object;
+.super Ltd7;
 .source "SourceFile"
-
-# interfaces
-.implements Le9f;
-
-
-# instance fields
-.field public final a:Lqte;
-
-.field public final b:Lqte;
-
-.field public final c:Ljava/util/List;
-
-.field public final d:Lnyc;
 
 
 # direct methods
-.method public constructor <init>(Lqte;Lqte;Ljava/util/List;Lnyc;)V
-    .registers 5
+.method public static final d(Lb9f;Landroidx/recyclerview/widget/RecyclerView;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
 
-    iput-object p1, p0, Lb9f;->a:Lqte;
+    move-result-object p0
 
-    iput-object p2, p0, Lb9f;->b:Lqte;
+    instance-of v0, p0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    iput-object p3, p0, Lb9f;->c:Ljava/util/List;
+    if-eqz v0, :cond_0
 
-    iput-object p4, p0, Lb9f;->d:Lnyc;
+    check-cast p0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-nez p0, :cond_1
+
+    const/4 p0, -0x1
+
+    invoke-virtual {p1, p0}, Landroid/view/View;->canScrollVertically(I)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/LinearLayoutManager;->V0()I
+
+    move-result p0
+
+    if-gtz p0, :cond_2
+
+    :goto_1
+    const/4 p0, 0x0
+
+    invoke-virtual {p1, p0}, Landroidx/recyclerview/widget/RecyclerView;->w0(I)V
+
+    :cond_2
     return-void
+.end method
+
+
+# virtual methods
+.method public final c(Landroidx/recyclerview/widget/RecyclerView;Lcoc;)Leoc;
+    .registers 4
+
+    new-instance p2, Lqke;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p2, p0, v0, p1}, Lqke;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    return-object p2
 .end method

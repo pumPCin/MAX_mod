@@ -18,7 +18,7 @@
         "Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;",
         "",
         "",
-        "Lmed;",
+        "Lumd;",
         "",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
@@ -48,7 +48,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
-            "Lmed;",
+            "Lumd;",
             "Ljava/util/List<",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
             ">;>;"
@@ -60,7 +60,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
-            "Lmed;",
+            "Lumd;",
             "Ljava/util/List<",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
             ">;>;"
@@ -76,13 +76,13 @@
         value = {
             "(",
             "Ljava/util/Map<",
-            "Lmed;",
+            "Lumd;",
             "+",
             "Ljava/util/List<",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
             ">;>;",
             "Ljava/util/Map<",
-            "Lmed;",
+            "Lumd;",
             "+",
             "Ljava/util/List<",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
@@ -99,7 +99,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/util/Map;Ljava/util/Map;Lwc4;)V
+.method public synthetic constructor <init>(Ljava/util/Map;Ljava/util/Map;Lld4;)V
     .registers 4
 
     invoke-direct {p0, p1, p2}, Lru/ok/android/externcalls/sdk/sessionroom/admin/AssignParticipantsToRoomsParams;-><init>(Ljava/util/Map;Ljava/util/Map;)V
@@ -115,7 +115,7 @@
         value = {
             "()",
             "Ljava/util/Map<",
-            "Lmed;",
+            "Lumd;",
             "Ljava/util/List<",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
             ">;>;"
@@ -133,7 +133,7 @@
         value = {
             "()",
             "Ljava/util/Map<",
-            "Lmed;",
+            "Lumd;",
             "Ljava/util/List<",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
             ">;>;"

@@ -1,25 +1,8 @@
-.class public abstract Lgxf;
+.class public interface abstract Lgxf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Landroid/view/ViewConfiguration;)I
-    .registers 1
-
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledHoverSlop()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static b(Landroid/view/ViewConfiguration;)Z
-    .registers 1
-
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->shouldShowMenuShortcutsWhenKeyboardPresent()Z
-
-    move-result p0
-
-    return p0
+# virtual methods
+.method public abstract a(Landroid/content/Context;Lbx0;Lc83;ZLz13;)Lixf;
 .end method

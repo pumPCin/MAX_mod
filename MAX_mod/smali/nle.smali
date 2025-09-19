@@ -3,29 +3,211 @@
 .source "SourceFile"
 
 
+# instance fields
+.field public final synthetic a:I
+
+.field public b:J
+
+.field public c:J
+
+.field public d:J
+
+.field public e:I
+
+.field public f:I
+
+.field public g:J
+
+.field public h:Z
+
+.field public i:Z
+
+.field public final j:Ljava/lang/Object;
+
+.field public k:Ljava/lang/Object;
+
+.field public l:Ljava/lang/Object;
+
+.field public m:Ljava/lang/Object;
+
+.field public n:Ljava/lang/Object;
+
+
 # direct methods
-.method public static a(Landroid/app/Service;ILandroid/app/Notification;I)V
+.method public constructor <init>(I)V
+    .registers 3
+
+    iput p1, p0, Lnle;->a:I
+
+    packed-switch p1, :pswitch_data_0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance p1, Lm8a;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, v0}, Lm8a;-><init>(I)V
+
+    iput-object p1, p0, Lnle;->j:Ljava/lang/Object;
+
+    new-instance p1, Lnsb;
+
+    const/4 v0, 0x7
+
+    invoke-direct {p1, v0}, Lnsb;-><init>(I)V
+
+    iput-object p1, p0, Lnle;->n:Ljava/lang/Object;
+
+    return-void
+
+    :pswitch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance p1, Lm8a;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p1, v0}, Lm8a;-><init>(I)V
+
+    iput-object p1, p0, Lnle;->j:Ljava/lang/Object;
+
+    new-instance p1, Lc0d;
+
+    const/4 v0, 0x5
+
+    invoke-direct {p1, v0}, Lc0d;-><init>(I)V
+
+    iput-object p1, p0, Lnle;->n:Ljava/lang/Object;
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+
+# virtual methods
+.method public a(J)V
     .registers 4
 
-    :try_start_0
-    invoke-virtual {p0, p1, p2, p3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
-    :try_end_0
-    .catch Landroid/app/ForegroundServiceStartNotAllowedException; {:try_start_0 .. :try_end_0} :catch_0
+    iget v0, p0, Lnle;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iput-wide p1, p0, Lnle;->d:J
 
     return-void
 
-    :catch_0
-    move-exception p0
-
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object p1
-
-    sget-object p2, Landroidx/work/impl/foreground/SystemForegroundService;->Y:Ljava/lang/String;
-
-    const-string p3, "Unable to start foreground service"
-
-    invoke-virtual {p1, p2, p3, p0}, Las3;->l0(Ljava/lang/String;Ljava/lang/String;Ljava/lang/RuntimeException;)V
+    :pswitch_0
+    iput-wide p1, p0, Lnle;->d:J
 
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public abstract b(Lcya;)J
+.end method
+
+.method public abstract c(Lcsf;)J
+.end method
+
+.method public abstract d(Lcya;JLc0d;)Z
+.end method
+
+.method public abstract e(Lcsf;JLnsb;)Z
+.end method
+
+.method public f(Z)V
+    .registers 6
+
+    iget v0, p0, Lnle;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    const-wide/16 v0, 0x0
+
+    if-eqz p1, :cond_0
+
+    new-instance p1, Lc0d;
+
+    const/4 v2, 0x5
+
+    invoke-direct {p1, v2}, Lc0d;-><init>(I)V
+
+    iput-object p1, p0, Lnle;->n:Ljava/lang/Object;
+
+    iput-wide v0, p0, Lnle;->c:J
+
+    const/4 p1, 0x0
+
+    iput p1, p0, Lnle;->e:I
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x1
+
+    iput p1, p0, Lnle;->e:I
+
+    :goto_0
+    const-wide/16 v2, -0x1
+
+    iput-wide v2, p0, Lnle;->b:J
+
+    iput-wide v0, p0, Lnle;->d:J
+
+    return-void
+
+    :pswitch_0
+    const-wide/16 v0, 0x0
+
+    if-eqz p1, :cond_1
+
+    new-instance p1, Lnsb;
+
+    const/4 v2, 0x7
+
+    invoke-direct {p1, v2}, Lnsb;-><init>(I)V
+
+    iput-object p1, p0, Lnle;->n:Ljava/lang/Object;
+
+    iput-wide v0, p0, Lnle;->c:J
+
+    const/4 p1, 0x0
+
+    iput p1, p0, Lnle;->e:I
+
+    goto :goto_1
+
+    :cond_1
+    const/4 p1, 0x1
+
+    iput p1, p0, Lnle;->e:I
+
+    :goto_1
+    const-wide/16 v2, -0x1
+
+    iput-wide v2, p0, Lnle;->b:J
+
+    iput-wide v0, p0, Lnle;->d:J
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

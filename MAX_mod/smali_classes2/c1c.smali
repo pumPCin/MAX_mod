@@ -1,16 +1,64 @@
-.class public abstract Lc1c;
+.class public final Lc1c;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lf1c;
 
 
 # static fields
-.field public static cancel:I = 0x7f0a022e
+.field public static final a:Lc1c;
 
-.field public static music_player_control_thumb_bg:I = 0x7f0a05fe
 
-.field public static music_player_control_thumb_circle:I = 0x7f0a05ff
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
 
-.field public static presense_accent:I = 0x7f0a08fb
+    new-instance v0, Lc1c;
 
-.field public static presense_bg:I = 0x7f0a08fc
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-.field public static ripple_bg:I = 0x7f0a0a07
+    sput-object v0, Lc1c;->a:Lc1c;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lc1c;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, -0x55c70cd5
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "ModePhotoTaking"
+
+    return-object p0
+.end method

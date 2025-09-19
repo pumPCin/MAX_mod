@@ -1,87 +1,131 @@
-.class public final Ly;
+.class public abstract Ly;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lf04;
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Ly;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final b:Lw;
 
 
 # instance fields
-.field public final a:F
+.field public final a:Landroid/os/Parcelable;
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method static constructor <clinit>()V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lw;
 
-    iput p1, p0, Ly;->a:F
+    invoke-direct {v0}, Ly;-><init>()V
+
+    sput-object v0, Ly;->b:Lw;
+
+    new-instance v0, Lx;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lx;-><init>(I)V
+
+    sput-object v0, Ly;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Landroid/graphics/RectF;)F
+.method public constructor <init>()V
     .registers 2
 
-    iget p0, p0, Ly;->a:F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return p0
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ly;->a:Landroid/os/Parcelable;
+
+    return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    .registers 3
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
-    return v0
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Ly;
+    sget-object p1, Ly;->b:Lw;
 
-    const/4 v2, 0x0
+    :goto_0
+    iput-object p1, p0, Ly;->a:Landroid/os/Parcelable;
 
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Ly;
-
-    iget p0, p0, Ly;->a:F
-
-    iget p1, p1, Ly;->a:F
-
-    cmpl-float p0, p0, p1
-
-    if-nez p0, :cond_2
-
-    return v0
-
-    :cond_2
-    return v2
+    return-void
 .end method
 
-.method public final hashCode()I
+.method public constructor <init>(Landroid/os/Parcelable;)V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    if-eqz p1, :cond_1
+
+    sget-object v0, Ly;->b:Lw;
+
+    if-eq p1, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    iput-object p1, p0, Ly;->a:Landroid/os/Parcelable;
+
+    return-void
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "superState must not be null"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+
+# virtual methods
+.method public final describeContents()I
     .registers 1
 
-    iget p0, p0, Ly;->a:F
-
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p0
-
-    filled-new-array {p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result p0
+    const/4 p0, 0x0
 
     return p0
+.end method
+
+.method public writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
+
+    iget-object p0, p0, Ly;->a:Landroid/os/Parcelable;
+
+    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+
+    return-void
 .end method

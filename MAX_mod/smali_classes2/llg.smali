@@ -1,52 +1,64 @@
 .class public final Lllg;
-.super Landroid/content/ContextWrapper;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lch3;
+.implements Lzlg;
 
 
-# instance fields
-.field public final synthetic a:Lnlg;
+# static fields
+.field public static final a:Lllg;
 
 
 # direct methods
-.method public constructor <init>(Lnlg;Landroid/content/Context;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Lllg;->a:Lnlg;
+    new-instance v0, Lllg;
 
-    invoke-direct {p0, p2}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lllg;->a:Lllg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Leh3;
-    .registers 1
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    iget-object p0, p0, Lllg;->a:Lnlg;
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Lnlg;->a:Landroid/content/Context;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    return v0
 
-    move-result-object p0
+    :cond_0
+    instance-of p0, p1, Lllg;
 
-    check-cast p0, Lch3;
-
-    invoke-interface {p0}, Lch3;->a()Leh3;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final isDeviceProtectedStorage()Z
-    .registers 1
+    if-nez p0, :cond_1
 
     const/4 p0, 0x0
 
     return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, -0x7202fb25
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "ResetUpload"
+
+    return-object p0
 .end method

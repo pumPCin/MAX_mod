@@ -4,100 +4,83 @@
 
 
 # instance fields
-.field public final a:Z
+.field public final a:Ljava/lang/CharSequence;
 
-.field public final b:Z
+.field public final b:[Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(ZZ)V
+.method public constructor <init>(Ljava/lang/CharSequence;[Ljava/lang/String;)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lbgb;->a:Z
+    iput-object p1, p0, Lbgb;->a:Ljava/lang/CharSequence;
 
-    iput-boolean p2, p0, Lbgb;->b:Z
+    iput-object p2, p0, Lbgb;->b:[Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static a(Lbgb;Z)Lbgb;
+.method public static a()Lbgb;
     .registers 3
 
-    iget-boolean v0, p0, Lbgb;->b:Z
+    new-instance v0, Lbgb;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v1, 0x0
 
-    new-instance p0, Lbgb;
+    new-array v1, v1, [Ljava/lang/String;
 
-    invoke-direct {p0, p1, v0}, Lbgb;-><init>(ZZ)V
+    const-string v2, ""
 
-    return-object p0
+    invoke-direct {v0, v2, v1}, Lbgb;-><init>(Ljava/lang/CharSequence;[Ljava/lang/String;)V
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
+    .registers 5
 
     if-ne p0, p1, :cond_0
 
-    return v0
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_0
-    instance-of v1, p1, Lbgb;
+    instance-of v0, p1, Lbgb;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    return v2
+    return v1
 
     :cond_1
     check-cast p1, Lbgb;
 
-    iget-boolean v1, p0, Lbgb;->a:Z
+    iget-object v0, p0, Lbgb;->a:Ljava/lang/CharSequence;
 
-    iget-boolean v3, p1, Lbgb;->a:Z
+    iget-object v2, p1, Lbgb;->a:Ljava/lang/CharSequence;
 
-    if-eq v1, v3, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-boolean p0, p0, Lbgb;->b:Z
-
-    iget-boolean p1, p1, Lbgb;->b:Z
-
-    if-eq p0, p1, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-boolean v0, p0, Lbgb;->a:Z
-
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    mul-int/lit8 v0, v0, 0x1f
+    if-nez v0, :cond_2
 
-    iget-boolean p0, p0, Lbgb;->b:Z
+    return v1
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    :cond_2
+    iget-object p0, p0, Lbgb;->b:[Ljava/lang/String;
+
+    iget-object p1, p1, Lbgb;->b:[Ljava/lang/String;
+
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
 
     move-result p0
-
-    add-int/2addr p0, v0
 
     return p0
 .end method
@@ -107,27 +90,29 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "State(isChecked="
+    const-string v1, "PreProcessedText{text="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-boolean v1, p0, Lbgb;->a:Z
+    iget-object v1, p0, Lbgb;->a:Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Ljtg;->w(Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    const-string v1, ", isEnabled="
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", tokens="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean p0, p0, Lbgb;->b:Z
+    iget-object p0, p0, Lbgb;->b:[Ljava/lang/String;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    array-length p0, p0
 
-    const-string p0, ")"
+    const/16 v1, 0x7d
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lmw1;->i(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
 
     move-result-object p0
 

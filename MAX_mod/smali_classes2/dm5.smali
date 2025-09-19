@@ -1,63 +1,21 @@
 .class public final Ldm5;
-.super Ljava/lang/Object;
+.super Lso;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:J
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
+# static fields
+.field public static final a:Ldm5;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ldm5;
 
-    iput-wide p1, p0, Ldm5;->a:J
+    invoke-direct {v0}, Lso;-><init>()V
 
-    iput-object p3, p0, Ldm5;->b:Ljava/lang/String;
-
-    iput-object p4, p0, Ldm5;->c:Ljava/lang/String;
+    sput-object v0, Ldm5;->a:Ldm5;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    iget-object v0, p0, Ldm5;->b:Ljava/lang/String;
-
-    invoke-static {v0}, Lms8;->t(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    xor-int/lit8 v0, v0, 0x1
-
-    const-string v1, "FileUploadInfo{fileId="
-
-    const-string v2, ", token=\'"
-
-    iget-wide v3, p0, Ldm5;->a:J
-
-    invoke-static {v3, v4, v1, v2, v0}, Lnh0;->i(JLjava/lang/String;Ljava/lang/String;Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\', url=\'"
-
-    const-string v2, "\'}"
-
-    iget-object p0, p0, Ldm5;->c:Ljava/lang/String;
-
-    invoke-static {v0, v1, p0, v2}, Lfge;->s(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

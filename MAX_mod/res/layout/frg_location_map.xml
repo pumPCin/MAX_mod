@@ -3,6 +3,7 @@
     android:id="@id/frg_location_map__root"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:layout_marginBottom="-48.0dip"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <fragment
@@ -40,6 +41,7 @@
         app:layout_constraintStart_toStartOf="@id/frg_location_map__marker_dot" />
     <one.me.sdk.uikit.common.button.OneMeButton
         android:id="@id/frg_location_map__layer_fab"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18.0dip"
@@ -77,6 +79,7 @@
         android:inflatedId="@id/frg_location_map__contact_location"
         android:layout_width="0.0dip"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="48.0dip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

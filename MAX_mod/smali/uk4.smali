@@ -1,90 +1,195 @@
-.class public final Luk4;
-.super Lk3;
+.class public Luk4;
+.super Lwk0;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/concurrent/ScheduledFuture;
 
 
 # instance fields
-.field public final n0:Ljava/util/concurrent/ScheduledFuture;
+.field public final a:Ld8a;
+
+.field public b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ltk4;)V
-    .registers 4
+.method public constructor <init>(Ld8a;)V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    new-instance v0, Lp8d;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, v1, p0}, Lp8d;-><init>(ILjava/lang/Object;)V
-
-    invoke-interface {p1, v0}, Ltk4;->b(Lp8d;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object p1
-
-    iput-object p1, p0, Luk4;->n0:Ljava/util/concurrent/ScheduledFuture;
+    iput-object p1, p0, Luk4;->a:Ld8a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 3
+.method public a(Ljava/lang/Object;)V
+    .registers 2
 
-    iget-object v0, p0, Luk4;->n0:Ljava/util/concurrent/ScheduledFuture;
-
-    iget-object p0, p0, Lk3;->a:Ljava/lang/Object;
-
-    instance-of v1, p0, Le3;
-
-    if-eqz v1, :cond_0
-
-    check-cast p0, Le3;
-
-    iget-boolean p0, p0, Le3;->a:Z
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Future;->cancel(Z)Z
+    invoke-virtual {p0, p1}, Luk4;->d(Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public final compareTo(Ljava/lang/Object;)I
+.method public final clear()V
     .registers 2
 
-    check-cast p1, Ljava/util/concurrent/Delayed;
+    const/16 v0, 0x20
 
-    iget-object p0, p0, Luk4;->n0:Ljava/util/concurrent/ScheduledFuture;
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
 
-    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Luk4;->b:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final d(Ljava/lang/Object;)V
+    .registers 5
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v0
+
+    and-int/lit8 v1, v0, 0x36
+
+    if-eqz v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const/16 v1, 0x8
+
+    iget-object v2, p0, Luk4;->a:Ld8a;
+
+    if-ne v0, v1, :cond_1
+
+    iput-object p1, p0, Luk4;->b:Ljava/lang/Object;
+
+    const/16 p1, 0x10
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+
+    const/4 p1, 0x0
+
+    invoke-interface {v2, p1}, Ld8a;->s(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+
+    invoke-interface {v2, p1}, Ld8a;->s(Ljava/lang/Object;)V
+
+    :goto_0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result p0
+
+    const/4 p1, 0x4
+
+    if-eq p0, p1, :cond_2
+
+    invoke-interface {v2}, Ld8a;->b()V
+
+    :cond_2
+    :goto_1
+    return-void
+.end method
+
+.method public e()V
+    .registers 2
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Luk4;->b:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final f()Z
+    .registers 2
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result p0
+
+    const/4 v0, 0x4
+
+    if-ne p0, v0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final getDelay(Ljava/util/concurrent/TimeUnit;)J
+.method public final isEmpty()Z
     .registers 2
 
-    iget-object p0, p0, Luk4;->n0:Ljava/util/concurrent/ScheduledFuture;
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
-    invoke-interface {p0, p1}, Ljava/util/concurrent/Delayed;->getDelay(Ljava/util/concurrent/TimeUnit;)J
+    move-result p0
 
-    move-result-wide p0
+    const/16 v0, 0x10
 
-    return-wide p0
+    if-eq p0, v0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final poll()Ljava/lang/Object;
+    .registers 4
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v0
+
+    const/16 v1, 0x10
+
+    const/4 v2, 0x0
+
+    if-ne v0, v1, :cond_0
+
+    iget-object v0, p0, Luk4;->b:Ljava/lang/Object;
+
+    iput-object v2, p0, Luk4;->b:Ljava/lang/Object;
+
+    const/16 v1, 0x20
+
+    invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+
+    return-object v0
+
+    :cond_0
+    return-object v2
+.end method
+
+.method public final q(I)I
+    .registers 2
+
+    const/16 p1, 0x8
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+
+    const/4 p0, 0x2
+
+    return p0
 .end method

@@ -1,36 +1,23 @@
-.class public interface abstract Lmd5;
+.class public final Lmd5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract W(Lqd5;)V
-.end method
+# instance fields
+.field public final a:Ltbf;
 
-.method public abstract X(Lod5;Le7;)I
-.end method
+.field public final b:[I
 
-.method public abstract d(JJ)V
-.end method
 
-.method public m()Lmd5;
-    .registers 1
+# direct methods
+.method public constructor <init>(ILtbf;[I)V
+    .registers 4
 
-    return-object p0
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract n(Lod5;)Z
-.end method
+    iput-object p2, p0, Lmd5;->a:Ltbf;
 
-.method public o()Ljava/util/List;
-    .registers 1
+    iput-object p3, p0, Lmd5;->b:[I
 
-    sget-object p0, Lj07;->b:Ldv5;
-
-    sget-object p0, Lqic;->X:Lqic;
-
-    return-object p0
-.end method
-
-.method public abstract release()V
+    return-void
 .end method

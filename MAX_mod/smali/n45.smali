@@ -1,17 +1,34 @@
-.class public interface abstract Ln45;
+.class public final Ln45;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lis5;
+
+
+# static fields
+.field public static final a:Ln45;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Ln45;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ln45;->a:Ln45;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .registers 3
 
-.method public abstract b()I
-.end method
+    sget-object p0, Lylf;->a:Lylf;
 
-.method public abstract c()Ljava/util/List;
-.end method
-
-.method public abstract d()Ljava/util/List;
+    return-object p0
 .end method

@@ -1,26 +1,26 @@
 .class public final Lmpb;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public X:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Lnpb;
+.field public final synthetic Y:Lone/me/profileedit/ProfileEditScreen;
 
 
 # direct methods
-.method public constructor <init>(Lnpb;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lone/me/profileedit/ProfileEditScreen;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput-object p1, p0, Lmpb;->Y:Lnpb;
+    iput-object p1, p0, Lmpb;->Y:Lone/me/profileedit/ProfileEditScreen;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -30,7 +30,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Lrpb;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -40,93 +40,95 @@
 
     check-cast p0, Lmpb;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lmpb;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p0
-
-    return-object p0
+    return-object p1
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+    .registers 4
 
-    new-instance p1, Lmpb;
+    new-instance v0, Lmpb;
 
-    iget-object p0, p0, Lmpb;->Y:Lnpb;
+    iget-object p0, p0, Lmpb;->Y:Lone/me/profileedit/ProfileEditScreen;
 
-    invoke-direct {p1, p0, p2}, Lmpb;-><init>(Lnpb;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p2}, Lmpb;-><init>(Lone/me/profileedit/ProfileEditScreen;Lkotlin/coroutines/Continuation;)V
 
-    return-object p1
+    iput-object p1, v0, Lmpb;->X:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .registers 7
 
-    iget v0, p0, Lmpb;->X:I
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lmpb;->Y:Lnpb;
+    iget-object p1, p0, Lmpb;->X:Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    check-cast p1, Lrpb;
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_1
 
-    if-ne v0, v2, :cond_0
+    iget-object v0, p1, Lrpb;->a:Lp2f;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object p0, p0, Lmpb;->Y:Lone/me/profileedit/ProfileEditScreen;
 
-    goto :goto_0
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lu2f;->b(Landroid/content/Context;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    sget-object v1, Lylf;->a:Lylf;
+
+    if-nez v0, :cond_0
+
+    return-object v1
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance v2, Lqoa;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-direct {v2, p0}, Lqoa;-><init>(Lone/me/sdk/arch/Widget;)V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    sget-object p0, Lipa;->a:Lipa;
 
-    throw p0
+    invoke-virtual {v2, p0}, Lqoa;->e(Ljpa;)V
+
+    invoke-virtual {v2, v0}, Lqoa;->h(Ljava/lang/CharSequence;)V
+
+    sget-object p0, Lkpa;->a:Lkpa;
+
+    invoke-virtual {v2, p0}, Lqoa;->f(Lopa;)V
+
+    new-instance p0, Lyoa;
+
+    iget v0, p1, Lrpb;->b:I
+
+    const/4 v3, 0x3
+
+    const/4 v4, 0x0
+
+    invoke-direct {p0, v4, v4, v0, v3}, Lyoa;-><init>(IIII)V
+
+    invoke-virtual {v2, p0}, Lqoa;->c(Lyoa;)V
+
+    iget-object p0, p1, Lrpb;->c:Lbx1;
+
+    invoke-virtual {v2, p0}, Lqoa;->d(Lroa;)V
+
+    invoke-virtual {v2}, Lqoa;->i()Lpoa;
+
+    return-object v1
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
-    iget-object p1, v1, Lnpb;->M0:Lrcb;
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
-    iput v2, p0, Lmpb;->X:I
-
-    invoke-virtual {p1, p0}, Lrcb;->C(Lmpb;)Lncf;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    :goto_0
-    iget-object p0, v1, Lnpb;->x0:Lx65;
-
-    new-instance p1, Liob;
-
-    sget v0, Ljsc;->n:I
-
-    new-instance v1, Ljava/lang/Integer;
-
-    invoke-direct {v1, v0}, Ljava/lang/Integer;-><init>(I)V
-
-    sget v0, Ldha;->F0:I
-
-    new-instance v2, Lqte;
-
-    invoke-direct {v2, v0}, Lqte;-><init>(I)V
-
-    invoke-direct {p1, v2, v1}, Liob;-><init>(Lvte;Ljava/lang/Integer;)V
-
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    throw p0
 .end method

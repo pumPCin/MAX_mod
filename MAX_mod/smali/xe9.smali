@@ -1,23 +1,30 @@
-.class public abstract Lxe9;
+.class public interface abstract Lxe9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final a:J
-
-.field public static final synthetic b:I
+# interfaces
+.implements Landroid/os/Parcelable;
 
 
-# direct methods
-.method static constructor <clinit>()V
+# virtual methods
+.method public l()Lv46;
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public o()[B
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public p(Ljj8;)V
     .registers 2
-
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v0
-
-    sput-wide v0, Lxe9;->a:J
 
     return-void
 .end method

@@ -46,7 +46,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lwc4;)V
+.method public synthetic constructor <init>(Lld4;)V
     .registers 2
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/id/local/LocalParticipantId$Companion;-><init>()V
@@ -71,7 +71,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {p0, v0, v1}, Lru/ok/android/externcalls/sdk/id/local/LocalParticipantId;-><init>(ILwc4;)V
+    invoke-direct {p0, v0, v1}, Lru/ok/android/externcalls/sdk/id/local/LocalParticipantId;-><init>(ILld4;)V
 
     return-object p0
 .end method

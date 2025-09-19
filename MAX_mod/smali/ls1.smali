@@ -4,5 +4,8 @@
 
 
 # virtual methods
-.method public abstract Q(Lks1;)Ljava/lang/String;
+.method public abstract m(Lnic;Lpuc;)V
+.end method
+
+.method public abstract s(Lnic;Ljava/io/IOException;)V
 .end method

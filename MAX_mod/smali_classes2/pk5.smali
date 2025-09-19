@@ -1,80 +1,63 @@
-.class public final synthetic Lpk5;
-.super Ljava/lang/Object;
+.class public final Lpk5;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lh96;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lsk5;
+.field public final synthetic Y:Lrk5;
+
+.field public Z:I
+
+.field public o:Lrk5;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lsk5;I)V
+.method public constructor <init>(Lrk5;Ljx3;)V
     .registers 3
 
-    iput p2, p0, Lpk5;->a:I
+    iput-object p1, p0, Lpk5;->Y:Lrk5;
 
-    iput-object p1, p0, Lpk5;->b:Lsk5;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 12
 
-    iget v0, p0, Lpk5;->a:I
+    iput-object p1, p0, Lpk5;->X:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget p1, p0, Lpk5;->Z:I
 
-    iget-object p0, p0, Lpk5;->b:Lsk5;
+    const/high16 v0, -0x80000000
 
-    invoke-static {p0}, Lsk5;->w(Lsk5;)Landroid/graphics/drawable/Drawable;
+    or-int/2addr p1, v0
 
-    move-result-object p0
+    iput p1, p0, Lpk5;->Z:I
 
-    return-object p0
+    const/4 v7, 0x0
 
-    :pswitch_0
-    sget v0, Ljsc;->I1:I
+    const/4 v8, 0x0
 
-    iget-object p0, p0, Lpk5;->b:Lsk5;
+    iget-object v0, p0, Lpk5;->Y:Lrk5;
 
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    const-wide/16 v1, 0x0
 
-    move-result-object p0
+    const-wide/16 v3, 0x0
 
-    invoke-static {p0, v0}, Lfw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    const/4 v5, 0x0
 
-    move-result-object p0
+    const/4 v6, 0x0
 
-    return-object p0
+    move-object v9, p0
 
-    :pswitch_1
-    sget v0, Ljsc;->u0:I
-
-    iget-object p0, p0, Lpk5;->b:Lsk5;
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p0
-
-    invoke-static {p0, v0}, Lfw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual/range {v0 .. v9}, Lrk5;->a(JJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjx3;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

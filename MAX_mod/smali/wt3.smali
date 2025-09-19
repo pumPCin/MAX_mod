@@ -1,182 +1,85 @@
 .class public final Lwt3;
-.super Lxie;
+.super Lzoc;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final E0:Ltt3;
 
-.field public final synthetic Y:Lo1b;
-
-.field public final synthetic Z:J
+.field public final F0:Lih0;
 
 
 # direct methods
-.method public constructor <init>(Lo1b;JLkotlin/coroutines/Continuation;)V
-    .registers 5
+.method public constructor <init>(Landroid/content/Context;Ltt3;)V
+    .registers 6
 
-    iput-object p1, p0, Lwt3;->Y:Lo1b;
+    sget-object v0, Lbh0;->a:Lbh0;
 
-    iput-wide p2, p0, Lwt3;->Z:J
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
 
-    const/4 p1, 0x2
+    move-result-object v0
 
-    invoke-direct {p0, p1, p4}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const-class v1, Lih0;
+
+    invoke-virtual {v0, v1}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lih0;
+
+    new-instance v1, Ldha;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p1, v2}, Ldha;-><init>(Landroid/content/Context;I)V
+
+    invoke-direct {p0, v1}, Lzoc;-><init>(Landroid/view/View;)V
+
+    iput-object p2, p0, Lwt3;->E0:Ltt3;
+
+    iput-object v0, p0, Lwt3;->F0:Lih0;
+
+    new-instance p2, Landroid/view/ViewGroup$LayoutParams;
+
+    const/4 v0, -0x1
+
+    invoke-direct {p2, v0, v0}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    sget p2, Lq0d;->X:I
+
+    invoke-virtual {v1, p2}, Ldha;->setIcon(I)V
+
+    sget p2, Lgac;->banner_big_permit_phone_book_contacts_title:I
+
+    new-instance v0, Lp2f;
+
+    invoke-direct {v0, p2}, Lp2f;-><init>(I)V
+
+    invoke-virtual {v1, v0}, Ldha;->setTitle(Lu2f;)V
+
+    sget p2, Lgac;->banner_big_permit_phone_book_contacts_subtitle:I
+
+    new-instance v0, Lp2f;
+
+    invoke-direct {v0, p2}, Lp2f;-><init>(I)V
+
+    invoke-virtual {v1, v0}, Ldha;->setSubtitle(Lu2f;)V
+
+    sget p2, Lgac;->banner_big_permit_phone_book_contacts_action_button_text:I
+
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance p2, Lg5;
+
+    const/16 v0, 0x16
+
+    invoke-direct {p2, v0, p0}, Lg5;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v1, p1, p2}, Ldha;->w(Ljava/lang/String;Landroid/view/View$OnClickListener;)V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lwp3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lwt3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lwt3;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lwt3;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 7
-
-    new-instance v0, Lwt3;
-
-    iget-object v1, p0, Lwt3;->Y:Lo1b;
-
-    iget-wide v2, p0, Lwt3;->Z:J
-
-    invoke-direct {v0, v1, v2, v3, p2}, Lwt3;-><init>(Lo1b;JLkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lwt3;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lwt3;->X:Ljava/lang/Object;
-
-    check-cast p1, Lwp3;
-
-    iget-object v0, p0, Lwt3;->Y:Lo1b;
-
-    iget-object v0, v0, Lo1b;->b:Ln1b;
-
-    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    iget-wide v2, p0, Lwt3;->Z:J
-
-    const/4 p0, 0x0
-
-    if-eq v0, v1, :cond_4
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v1, 0x3
-
-    if-eq v0, v1, :cond_4
-
-    return-object p0
-
-    :cond_0
-    iget-object p1, p1, Lwp3;->c:Ljava/util/List;
-
-    if-eqz p1, :cond_3
-
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_1
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    check-cast v1, Lgq3;
-
-    iget-wide v4, v1, Lgq3;->a:J
-
-    cmp-long v1, v4, v2
-
-    if-nez v1, :cond_1
-
-    move-object p0, v0
-
-    :cond_2
-    check-cast p0, Lgq3;
-
-    :cond_3
-    return-object p0
-
-    :cond_4
-    iget-object p1, p1, Lwp3;->a:Ljava/util/List;
-
-    if-eqz p1, :cond_7
-
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_5
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    check-cast v1, Lgq3;
-
-    iget-wide v4, v1, Lgq3;->a:J
-
-    cmp-long v1, v4, v2
-
-    if-nez v1, :cond_5
-
-    move-object p0, v0
-
-    :cond_6
-    check-cast p0, Lgq3;
-
-    :cond_7
-    return-object p0
 .end method

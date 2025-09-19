@@ -1,133 +1,129 @@
 .class public final Lgde;
-.super Landroid/text/style/CharacterStyle;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Ln38;
-.implements Landroid/text/style/UpdateAppearance;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lfde;
 
-.field public final b:I
+.field public final b:Lhde;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 2
+.method public constructor <init>(Lfde;Lhde;)V
+    .registers 3
 
-    iput p1, p0, Lgde;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    packed-switch p1, :pswitch_data_0
+    iput-object p1, p0, Lgde;->a:Lfde;
 
-    invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
-
-    const/4 p1, 0x7
-
-    iput p1, p0, Lgde;->b:I
+    iput-object p2, p0, Lgde;->b:Lhde;
 
     return-void
-
-    :pswitch_0
-    invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
-
-    const/4 p1, 0x4
-
-    iput p1, p0, Lgde;->b:I
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final copy()Lsz3;
-    .registers 2
-
-    iget p0, p0, Lgde;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    new-instance p0, Lgde;
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lgde;-><init>(I)V
+    if-ne p0, p1, :cond_0
 
-    return-object p0
+    return v0
 
-    :pswitch_0
-    new-instance p0, Lgde;
+    :cond_0
+    instance-of v1, p1, Lgde;
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    invoke-direct {p0, v0}, Lgde;-><init>(I)V
+    if-nez v1, :cond_1
 
-    return-object p0
+    return v2
 
-    nop
+    :cond_1
+    check-cast p1, Lgde;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget-object v1, p0, Lgde;->a:Lfde;
+
+    iget-object v3, p1, Lgde;->a:Lfde;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object p0, p0, Lgde;->b:Lhde;
+
+    iget-object p1, p1, Lgde;->b:Lhde;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
 .end method
 
-.method public final getType()I
+.method public final hashCode()I
     .registers 2
 
-    iget v0, p0, Lgde;->a:I
+    iget-object v0, p0, Lgde;->a:Lfde;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v0}, Lfde;->hashCode()I
 
-    iget p0, p0, Lgde;->b:I
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lgde;->b:Lhde;
+
+    invoke-virtual {p0}, Lhde;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
-
-    :pswitch_0
-    iget p0, p0, Lgde;->b:I
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method
 
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .registers 2
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    iget p0, p0, Lgde;->a:I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    packed-switch p0, :pswitch_data_0
+    const-string v1, "StatesBackgroundColors(active="
 
-    const/4 p0, 0x1
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+    iget-object v1, p0, Lgde;->a:Lfde;
 
-    return-void
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    :pswitch_0
-    const/4 p0, 0x1
+    const-string v1, ", disabled="
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setStrikeThruText(Z)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
+    iget-object p0, p0, Lgde;->b:Lhde;
 
-    nop
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

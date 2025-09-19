@@ -3,8 +3,8 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lxm1;
-.implements Loz0;
+.implements Ldn1;
+.implements Ldz0;
 
 
 # annotations
@@ -14,48 +14,48 @@
     }
     d2 = {
         "Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;",
-        "Lxm1;",
-        "Loz0;",
+        "Ldn1;",
+        "Ldz0;",
         "Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;",
         "participantStatesManager",
         "Lkotlin/Function0;",
         "",
         "isMeCreatorOrAdmin",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;Lh96;)V",
+        "(Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;Lzb6;)V",
         "",
-        "Lah1;",
+        "Lwg1;",
         "participants",
-        "Lncf;",
+        "Lylf;",
         "dismissAssistanceRequestIfAdminAppearedInRoom",
         "(Ljava/util/Collection;)V",
         "dismissAssistanceRequestIfNecessary",
         "()V",
         "lowerMyHandAndDismissAssistanceRequestIfNecessary",
-        "Ltm1;",
+        "Lzm1;",
         "params",
         "onCurrentParticipantActiveRoomChanged",
-        "(Ltm1;)V",
-        "Ljz0;",
+        "(Lzm1;)V",
+        "Lyy0;",
         "onActiveParticipantsAdded",
-        "(Ljz0;)V",
-        "Lnz0;",
+        "(Lyy0;)V",
+        "Lcz0;",
         "onActiveParticipantUpdated",
-        "(Lnz0;)V",
-        "Lkz0;",
+        "(Lcz0;)V",
+        "Lzy0;",
         "onActiveParticipantsChanged",
-        "(Lkz0;)V",
-        "Llz0;",
+        "(Lzy0;)V",
+        "Laz0;",
         "onActiveParticipantsDeAnonimized",
-        "(Llz0;)V",
-        "Lmz0;",
+        "(Laz0;)V",
+        "Lbz0;",
         "onActiveParticipantsRemoved",
-        "(Lmz0;)V",
+        "(Lbz0;)V",
         "Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;",
-        "Lh96;",
-        "Lned;",
+        "Lzb6;",
+        "Lvmd;",
         "roomId",
-        "Lned;",
+        "Lvmd;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -69,27 +69,27 @@
 
 
 # instance fields
-.field private final isMeCreatorOrAdmin:Lh96;
+.field private final isMeCreatorOrAdmin:Lzb6;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lh96;"
+            "Lzb6;"
         }
     .end annotation
 .end field
 
 .field private final participantStatesManager:Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;
 
-.field private roomId:Lned;
+.field private roomId:Lvmd;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;Lh96;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;Lzb6;)V
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;",
-            "Lh96;",
+            "Lzb6;",
             ")V"
         }
     .end annotation
@@ -98,11 +98,11 @@
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->participantStatesManager:Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->isMeCreatorOrAdmin:Lh96;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->isMeCreatorOrAdmin:Lzb6;
 
-    sget-object p1, Lled;->a:Lled;
+    sget-object p1, Ltmd;->a:Ltmd;
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->roomId:Lned;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->roomId:Lvmd;
 
     return-void
 .end method
@@ -113,14 +113,14 @@
         value = {
             "(",
             "Ljava/util/Collection<",
-            "Lah1;",
+            "Lwg1;",
             ">;)V"
         }
     .end annotation
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->roomId:Lned;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->roomId:Lvmd;
 
-    instance-of v0, v0, Lled;
+    instance-of v0, v0, Ltmd;
 
     if-eqz v0, :cond_0
 
@@ -142,11 +142,11 @@
 
     move-result-object v0
 
-    check-cast v0, Lah1;
+    check-cast v0, Lwg1;
 
-    iget-object v0, v0, Lah1;->e:Ljava/util/List;
+    iget-object v0, v0, Lwg1;->e:Ljava/util/List;
 
-    sget-object v1, Lzg1;->b:Lzg1;
+    sget-object v1, Lvg1;->b:Lvg1;
 
     invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -154,7 +154,7 @@
 
     if-nez v1, :cond_2
 
-    sget-object v1, Lzg1;->a:Lzg1;
+    sget-object v1, Lvg1;->a:Lvg1;
 
     invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -204,9 +204,9 @@
 
     move-result-object v2
 
-    new-instance v3, Lura;
+    new-instance v3, Lpxa;
 
-    invoke-direct {v3, p0, v2}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v3, p0, v2}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     sget-object p0, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl$State;->ASSISTANCE_REQUESTED:Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl$State;
 
@@ -214,15 +214,15 @@
 
     move-result-object v1
 
-    new-instance v2, Lura;
+    new-instance v2, Lpxa;
 
-    invoke-direct {v2, p0, v1}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v2, p0, v1}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    filled-new-array {v3, v2}, [Lura;
+    filled-new-array {v3, v2}, [Lpxa;
 
     move-result-object p0
 
-    invoke-static {p0}, Lc38;->P([Lura;)Ljava/util/Map;
+    invoke-static {p0}, Li68;->J([Lpxa;)Ljava/util/Map;
 
     move-result-object v1
 
@@ -234,67 +234,67 @@
 
     const/4 v3, 0x0
 
-    invoke-static/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;->updateMyStates$default(Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;Ljava/util/Map;Llsd;Llsd;ILjava/lang/Object;)V
+    invoke-static/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;->updateMyStates$default(Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;Ljava/util/Map;Ls0e;Ls0e;ILjava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onActiveParticipantUpdated(Lnz0;)V
+.method public onActiveParticipantUpdated(Lcz0;)V
     .registers 2
 
-    iget-object p1, p1, Lnz0;->b:Ljava/util/Collection;
+    iget-object p1, p1, Lcz0;->b:Ljava/util/Collection;
 
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->dismissAssistanceRequestIfAdminAppearedInRoom(Ljava/util/Collection;)V
 
     return-void
 .end method
 
-.method public onActiveParticipantsAdded(Ljz0;)V
+.method public onActiveParticipantsAdded(Lyy0;)V
     .registers 2
 
-    iget-object p1, p1, Ljz0;->a:Ljava/util/Collection;
+    iget-object p1, p1, Lyy0;->a:Ljava/util/Collection;
 
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->dismissAssistanceRequestIfAdminAppearedInRoom(Ljava/util/Collection;)V
 
     return-void
 .end method
 
-.method public onActiveParticipantsChanged(Lkz0;)V
+.method public onActiveParticipantsChanged(Lzy0;)V
     .registers 2
 
-    iget-object p1, p1, Lkz0;->a:Ljava/util/List;
+    iget-object p1, p1, Lzy0;->a:Ljava/util/List;
 
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->dismissAssistanceRequestIfAdminAppearedInRoom(Ljava/util/Collection;)V
 
     return-void
 .end method
 
-.method public onActiveParticipantsDeAnonimized(Llz0;)V
+.method public onActiveParticipantsDeAnonimized(Laz0;)V
     .registers 2
 
-    iget-object p1, p1, Llz0;->a:Ljava/util/Collection;
+    iget-object p1, p1, Laz0;->a:Ljava/util/Collection;
 
     invoke-direct {p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->dismissAssistanceRequestIfAdminAppearedInRoom(Ljava/util/Collection;)V
 
     return-void
 .end method
 
-.method public onActiveParticipantsRemoved(Lmz0;)V
+.method public onActiveParticipantsRemoved(Lbz0;)V
     .registers 2
 
     return-void
 .end method
 
-.method public onCurrentParticipantActiveRoomChanged(Ltm1;)V
+.method public onCurrentParticipantActiveRoomChanged(Lzm1;)V
     .registers 10
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->roomId:Lned;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->roomId:Lvmd;
 
-    iget-object p1, p1, Ltm1;->a:Lned;
+    iget-object p1, p1, Lzm1;->a:Lvmd;
 
-    invoke-static {v0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -305,9 +305,9 @@
     :cond_0
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->lowerMyHandAndDismissAssistanceRequestIfNecessary()V
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->isMeCreatorOrAdmin:Lh96;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->isMeCreatorOrAdmin:Lzb6;
 
-    invoke-interface {v0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {v0}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -319,7 +319,7 @@
 
     if-eqz v0, :cond_1
 
-    instance-of v0, p1, Lmed;
+    instance-of v0, p1, Lumd;
 
     if-eqz v0, :cond_1
 
@@ -329,7 +329,7 @@
 
     move-object v3, p1
 
-    check-cast v3, Lmed;
+    check-cast v3, Lumd;
 
     const/16 v6, 0xc
 
@@ -339,27 +339,27 @@
 
     const/4 v5, 0x0
 
-    invoke-static/range {v1 .. v7}, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;->resetStates$default(Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl$State;Lmed;Llsd;Llsd;ILjava/lang/Object;)V
+    invoke-static/range {v1 .. v7}, Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;->resetStates$default(Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl;Lru/ok/android/externcalls/sdk/participant/state/internal/ParticipantStatesManagerImpl$State;Lumd;Ls0e;Ls0e;ILjava/lang/Object;)V
 
     :cond_1
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->roomId:Lned;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/sessionroom/internal/participant/SessionRoomParticipantStatesHandler;->roomId:Lvmd;
 
     return-void
 .end method
 
-.method public bridge synthetic onCurrentParticipantInvitedToRoom(Lum1;)V
+.method public bridge synthetic onCurrentParticipantInvitedToRoom(Lan1;)V
     .registers 2
 
     return-void
 .end method
 
-.method public bridge synthetic onRoomRemoved(Lvm1;)V
+.method public bridge synthetic onRoomRemoved(Lbn1;)V
     .registers 2
 
     return-void
 .end method
 
-.method public bridge synthetic onRoomUpdated(Lwm1;)V
+.method public bridge synthetic onRoomUpdated(Lcn1;)V
     .registers 2
 
     return-void

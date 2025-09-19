@@ -3,51 +3,28 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpq2;
+.implements Lsq2;
 
 
 # instance fields
-.field public final a:J
+.field public final a:Ljava/lang/CharSequence;
 
-.field public final b:J
+.field public final b:Ljava/lang/Long;
 
-.field public final c:Ljava/lang/String;
+.field public final c:Ljava/lang/Long;
 
 
 # direct methods
-.method public constructor <init>(IJJLjava/lang/String;)V
-    .registers 10
+.method public constructor <init>(Ljava/lang/CharSequence;Ljava/lang/Long;Ljava/lang/Long;)V
+    .registers 4
 
-    and-int/lit8 v0, p1, 0x1
-
-    const-wide/16 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    move-wide p2, v1
-
-    :cond_0
-    and-int/lit8 v0, p1, 0x2
-
-    if-eqz v0, :cond_1
-
-    move-wide p4, v1
-
-    :cond_1
-    and-int/lit8 p1, p1, 0x4
-
-    if-eqz p1, :cond_2
-
-    const/4 p6, 0x0
-
-    :cond_2
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p2, p0, Loq2;->a:J
+    iput-object p1, p0, Loq2;->a:Ljava/lang/CharSequence;
 
-    iput-wide p4, p0, Loq2;->b:J
+    iput-object p2, p0, Loq2;->b:Ljava/lang/Long;
 
-    iput-object p6, p0, Loq2;->c:Ljava/lang/String;
+    iput-object p3, p0, Loq2;->c:Ljava/lang/Long;
 
     return-void
 .end method

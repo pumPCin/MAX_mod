@@ -1,96 +1,279 @@
 .class public final Lo93;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Lw93;
+.field public final a:[I
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:I
+
+.field public final f:I
+
+.field public final g:I
+
+.field public final h:I
 
 
 # direct methods
-.method public constructor <init>(Lw93;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>([IIIIIIII)V
+    .registers 9
 
-    iput-object p1, p0, Lo93;->X:Lw93;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lo93;->a:[I
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput p2, p0, Lo93;->b:I
+
+    iput p3, p0, Lo93;->c:I
+
+    iput p4, p0, Lo93;->d:I
+
+    iput p5, p0, Lo93;->e:I
+
+    iput p6, p0, Lo93;->f:I
+
+    iput p7, p0, Lo93;->g:I
+
+    iput p8, p0, Lo93;->h:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    check-cast p1, Lr04;
+    if-ne p0, p1, :cond_0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    goto :goto_1
 
-    invoke-virtual {p0, p1, p2}, Lo93;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    :cond_0
+    instance-of v0, p1, Lo93;
 
-    move-result-object p0
+    if-nez v0, :cond_1
 
-    check-cast p0, Lo93;
+    goto :goto_0
 
-    sget-object p1, Lncf;->a:Lncf;
+    :cond_1
+    check-cast p1, Lo93;
 
-    invoke-virtual {p0, p1}, Lo93;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lo93;->a:[I
 
-    return-object p1
+    iget-object v1, p1, Lo93;->a:[I
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget v0, p0, Lo93;->b:I
+
+    iget v1, p1, Lo93;->b:I
+
+    if-eq v0, v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget v0, p0, Lo93;->c:I
+
+    iget v1, p1, Lo93;->c:I
+
+    if-eq v0, v1, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    iget v0, p0, Lo93;->d:I
+
+    iget v1, p1, Lo93;->d:I
+
+    if-eq v0, v1, :cond_5
+
+    goto :goto_0
+
+    :cond_5
+    iget v0, p0, Lo93;->e:I
+
+    iget v1, p1, Lo93;->e:I
+
+    if-eq v0, v1, :cond_6
+
+    goto :goto_0
+
+    :cond_6
+    iget v0, p0, Lo93;->f:I
+
+    iget v1, p1, Lo93;->f:I
+
+    if-eq v0, v1, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    iget v0, p0, Lo93;->g:I
+
+    iget v1, p1, Lo93;->g:I
+
+    if-eq v0, v1, :cond_8
+
+    goto :goto_0
+
+    :cond_8
+    iget p0, p0, Lo93;->h:I
+
+    iget p1, p1, Lo93;->h:I
+
+    if-eq p0, p1, :cond_9
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_9
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+.method public final hashCode()I
+    .registers 4
 
-    new-instance p1, Lo93;
+    iget-object v0, p0, Lo93;->a:[I
 
-    iget-object p0, p0, Lo93;->X:Lw93;
+    invoke-static {v0}, Ljava/util/Arrays;->hashCode([I)I
 
-    invoke-direct {p1, p0, p2}, Lo93;-><init>(Lw93;Lkotlin/coroutines/Continuation;)V
+    move-result v0
 
-    return-object p1
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lo93;->b:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget v2, p0, Lo93;->c:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget v2, p0, Lo93;->d:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget v2, p0, Lo93;->e:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget v2, p0, Lo93;->f:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    const v2, 0x33ffffff
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    const v2, 0x1affffff
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget v2, p0, Lo93;->g:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget p0, p0, Lo93;->h:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
     .registers 6
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object v0, p0, Lo93;->a:[I
 
-    iget-object p0, p0, Lo93;->X:Lw93;
+    invoke-static {v0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
-    iget-object p1, p0, Lw93;->k:Lkotlinx/coroutines/internal/ContextScope;
+    move-result-object v0
 
-    new-instance v0, Lu93;
+    const-string v1, ", qRBackground="
 
-    const/4 v1, 0x0
+    const-string v2, ", qRStep1="
 
-    invoke-direct {v0, p0, v1}, Lu93;-><init>(Lw93;Lkotlin/coroutines/Continuation;)V
+    iget v3, p0, Lo93;->b:I
 
-    const/4 v2, 0x1
+    const-string v4, "CommonBackgroundSystemBubbleGradientColors(gradient="
 
-    sget-object v3, Lu04;->b:Lu04;
+    invoke-static {v3, v4, v0, v1, v2}, Lyv7;->m(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p1, v1, v3, v0, v2}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    move-result-object v0
 
-    move-result-object p1
+    const-string v1, ", qRStep2="
 
-    iget-object v0, p0, Lw93;->l:Lqfd;
+    const-string v2, ", qRStep3="
 
-    sget-object v1, Lw93;->m:[Lsf7;
+    iget v3, p0, Lo93;->c:I
 
-    const/4 v2, 0x0
+    iget v4, p0, Lo93;->d:I
 
-    aget-object v1, v1, v2
+    invoke-static {v0, v3, v1, v4, v2}, Lsq3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
 
-    invoke-virtual {v0, p0, v1, p1}, Lqfd;->g0(Ljava/lang/Object;Lsf7;Ljava/lang/Object;)V
+    const-string v1, ", qRStep4="
 
-    sget-object p0, Lncf;->a:Lncf;
+    const-string v2, ", strokeFadeStep1=872415231, strokeFadeStep2=452984831, strokeStep1="
+
+    iget v3, p0, Lo93;->e:I
+
+    iget v4, p0, Lo93;->f:I
+
+    invoke-static {v0, v3, v1, v4, v2}, Lsq3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
+
+    const-string v1, ", strokeStep2="
+
+    const-string v2, ")"
+
+    iget v3, p0, Lo93;->g:I
+
+    iget p0, p0, Lo93;->h:I
+
+    invoke-static {v0, v3, v1, p0, v2}, Lsg0;->h(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

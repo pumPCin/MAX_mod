@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract getType()I
+.method public abstract a(Z)V
 .end method

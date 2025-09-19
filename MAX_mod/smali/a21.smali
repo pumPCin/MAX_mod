@@ -1,142 +1,95 @@
-.class public final synthetic La21;
-.super Ljava/lang/Object;
+.class public final La21;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Ltc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Z
 
-.field public final synthetic b:Le21;
+.field public synthetic Y:Z
 
-
-# direct methods
-.method public synthetic constructor <init>(Le21;I)V
-    .registers 3
-
-    iput p2, p0, La21;->a:I
-
-    iput-object p1, p0, La21;->b:Le21;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public synthetic Z:Ly9;
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 12
+.method public final i(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
 
-    iget v0, p0, La21;->a:I
+    check-cast p1, Ljava/lang/Boolean;
 
-    sget-object v1, Lncf;->a:Lncf;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    check-cast p2, Ljava/lang/Boolean;
+
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    check-cast p3, Ly9;
+
+    check-cast p4, Lkotlin/coroutines/Continuation;
+
+    new-instance p2, La21;
+
+    const/4 v0, 0x4
+
+    invoke-direct {p2, v0, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    iput-boolean p0, p2, La21;->X:Z
+
+    iput-boolean p1, p2, La21;->Y:Z
+
+    iput-object p3, p2, La21;->Z:Ly9;
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    invoke-virtual {p2, p0}, La21;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-boolean p1, p0, La21;->X:Z
+
+    iget-boolean v0, p0, La21;->Y:Z
+
+    iget-object p0, p0, La21;->Z:Ly9;
+
+    iget-boolean v1, p0, Ly9;->a:Z
 
     const/4 v2, 0x0
 
-    iget-object p0, p0, La21;->b:Le21;
+    if-nez v1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    iget-boolean p0, p0, Ly9;->c:Z
 
-    iput-object v2, p0, Le21;->P0:Lb0f;
-
-    return-object v1
-
-    :pswitch_0
-    sget v0, Lpyb;->call_bottom_control_container:I
-
-    invoke-static {p0, v0}, Las3;->z(Landroid/view/View;I)Landroid/view/View;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
+    if-nez p0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    move-object p0, v0
-
-    :goto_0
-    return-object p0
-
-    :pswitch_1
-    sget-object v0, Lct4;->p0:Lws9;
-
-    invoke-virtual {v0, p0}, Lws9;->g(Landroid/view/View;)Ldea;
-
-    move-result-object p0
-
-    iget-object p0, p0, Ldea;->c:Loma;
-
-    return-object p0
-
-    :pswitch_2
-    iput-object v2, p0, Le21;->Q0:Lb0f;
-
-    iget-object p0, p0, Le21;->K0:Ld21;
-
-    if-eqz p0, :cond_2
-
-    check-cast p0, Lhqc;
-
-    iget-object p0, p0, Lhqc;->b:Ljava/lang/Object;
-
-    check-cast p0, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
-
-    sget-object v0, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->n0:[Lsf7;
-
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->y0()Lw21;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lw21;->r()Lit1;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lit1;->n:Ln4e;
-
-    :cond_1
-    invoke-virtual {p0}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v2, v0
-
-    check-cast v2, Lsq1;
-
-    const-wide/16 v8, 0x0
-
-    const/16 v10, 0xdf
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    invoke-static/range {v2 .. v10}, Lsq1;->a(Lsq1;Lbh1;Lbh1;Lbh1;Lsxf;Lghf;JI)Lsq1;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v0, v2}, Ln4e;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
+    if-eqz p1, :cond_1
 
     if-eqz v0, :cond_1
 
-    :cond_2
-    return-object v1
+    const/4 v2, 0x1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :cond_1
+    :goto_0
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    return-object p0
 .end method

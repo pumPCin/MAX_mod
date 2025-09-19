@@ -1,101 +1,81 @@
 .class public final Lts6;
-.super Lps6;
+.super Lck0;
 .source "SourceFile"
 
 
 # instance fields
-.field public o:Z
+.field public g:I
 
 
 # virtual methods
-.method public final b(Lrt0;J)J
-    .registers 7
+.method public final b()I
+    .registers 1
 
-    const-wide/16 v0, 0x0
+    iget p0, p0, Lts6;->g:I
 
-    cmp-long v0, p2, v0
+    return p0
+.end method
 
-    if-ltz v0, :cond_3
+.method public final k()I
+    .registers 1
 
-    iget-boolean v0, p0, Lps6;->b:Z
+    const/4 p0, 0x0
 
-    if-nez v0, :cond_2
+    return p0
+.end method
 
-    iget-boolean v0, p0, Lts6;->o:Z
+.method public final m()Ljava/lang/Object;
+    .registers 1
 
-    const-wide/16 v1, -0x1
+    const/4 p0, 0x0
 
-    if-eqz v0, :cond_0
+    return-object p0
+.end method
 
-    return-wide v1
+.method public final r(JJJLjava/util/List;[Lxd8;)V
+    .registers 9
 
-    :cond_0
-    invoke-super {p0, p1, p2, p3}, Lps6;->b(Lrt0;J)J
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
 
-    cmp-long p3, p1, v1
+    iget p3, p0, Lts6;->g:I
 
-    if-nez p3, :cond_1
+    invoke-virtual {p0, p3, p1, p2}, Lck0;->q(IJ)Z
 
-    const/4 p1, 0x1
+    move-result p3
 
-    iput-boolean p1, p0, Lts6;->o:Z
+    if-nez p3, :cond_0
 
-    invoke-virtual {p0}, Lps6;->m()V
+    return-void
 
-    return-wide v1
+    :cond_0
+    iget p3, p0, Lck0;->b:I
+
+    add-int/lit8 p3, p3, -0x1
+
+    :goto_0
+    if-ltz p3, :cond_2
+
+    invoke-virtual {p0, p3, p1, p2}, Lck0;->q(IJ)Z
+
+    move-result p4
+
+    if-nez p4, :cond_1
+
+    iput p3, p0, Lts6;->g:I
+
+    return-void
 
     :cond_1
-    return-wide p1
+    add-int/lit8 p3, p3, -0x1
+
+    goto :goto_0
 
     :cond_2
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string p1, "closed"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw p0
-
-    :cond_3
-    const-string p0, "byteCount < 0: "
-
-    invoke-static {p2, p3, p0}, La78;->i(JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-.end method
-
-.method public final close()V
-    .registers 2
-
-    iget-boolean v0, p0, Lps6;->b:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-boolean v0, p0, Lts6;->o:Z
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p0}, Lps6;->m()V
-
-    :cond_1
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lps6;->b:Z
-
-    return-void
 .end method

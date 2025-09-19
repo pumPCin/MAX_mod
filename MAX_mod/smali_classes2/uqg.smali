@@ -1,69 +1,38 @@
 .class public final Luqg;
-.super Lt02;
+.super Lj2e;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic c:I
-
-.field public final o:Ljm3;
-
-
-# direct methods
-.method public constructor <init>(Lxua;Ljm3;I)V
-    .registers 4
-
-    iput p3, p0, Luqg;->c:I
-
-    packed-switch p3, :pswitch_data_0
-
-    iput-object p2, p0, Luqg;->o:Ljm3;
-
-    invoke-direct {p0, p1}, Lt02;-><init>(Lxua;)V
-
-    return-void
-
-    :pswitch_0
-    invoke-direct {p0, p1}, Lt02;-><init>(Lxua;)V
-
-    iput-object p2, p0, Luqg;->o:Ljm3;
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
+.field public E0:Lsqg;
 
 
 # virtual methods
-.method public final a(Lorg/webrtc/PeerConnection;)V
+.method public final y(Lts7;)V
     .registers 3
 
-    iget v0, p0, Luqg;->c:I
+    instance-of v0, p1, Lqqg;
 
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Luqg;->o:Ljm3;
-
-    invoke-interface {p0, p1}, Ljm3;->accept(Ljava/lang/Object;)V
+    if-nez v0, :cond_0
 
     return-void
 
-    :pswitch_0
-    iget-object p0, p0, Luqg;->o:Ljm3;
+    :cond_0
+    move-object v0, p1
 
-    invoke-interface {p0, p1}, Ljm3;->accept(Ljava/lang/Object;)V
+    check-cast v0, Lsqg;
+
+    iput-object v0, p0, Luqg;->E0:Lsqg;
+
+    iget-object p0, p0, Lzoc;->a:Landroid/view/View;
+
+    check-cast p0, Lsrd;
+
+    check-cast p1, Lqqg;
+
+    iget-object p1, p1, Lqqg;->a:Ltrd;
+
+    invoke-virtual {p0, p1}, Lsrd;->setModelItem(Lird;)V
 
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

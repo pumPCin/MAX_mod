@@ -43,7 +43,7 @@
 
     const-string v0, "ru.ok.messages.views.fragments.base.FrgBaseNonUi"
 
-    invoke-static {v0, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p0}, Landroidx/fragment/app/a;->O0()V
 

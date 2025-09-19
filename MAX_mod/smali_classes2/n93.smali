@@ -4,191 +4,130 @@
 
 
 # instance fields
-.field public final a:Lrv0;
+.field public final a:Lm93;
 
-.field public final b:Lzne;
-
-.field public final c:Lgpd;
-
-.field public final d:Lxh7;
-
-.field public final e:Lkotlinx/coroutines/internal/ContextScope;
+.field public final b:[I
 
 
 # direct methods
-.method public constructor <init>(Lrv0;Lzne;Lxh7;)V
-    .registers 6
+.method public constructor <init>(Lm93;[I)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ln93;->a:Lrv0;
+    iput-object p1, p0, Ln93;->a:Lm93;
 
-    iput-object p2, p0, Ln93;->b:Lzne;
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x7
-
-    invoke-static {v0, v0, v1}, Lhpd;->b(III)Lgpd;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ln93;->c:Lgpd;
-
-    iput-object p3, p0, Ln93;->d:Lxh7;
-
-    check-cast p2, Ltba;
-
-    invoke-virtual {p2}, Ltba;->a()Ll04;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
-
-    move-result-object p2
-
-    iput-object p2, p0, Ln93;->e:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-virtual {p1, p0}, Lrv0;->d(Ljava/lang/Object;)V
+    iput-object p2, p0, Ln93;->b:[I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Li93;)V
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    new-instance v0, Lj93;
+    const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    if-ne p0, p1, :cond_0
 
-    invoke-direct {v0, p0, p1, v1}, Lj93;-><init>(Ln93;Li93;Lkotlin/coroutines/Continuation;)V
-
-    const/4 p1, 0x3
-
-    iget-object p0, p0, Ln93;->e:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    return-void
-.end method
-
-.method public final onAddChatEvent(Lb9;)V
-    .registers 5
-    .annotation runtime Lpee;
-    .end annotation
-
-    new-instance v0, Lg93;
-
-    iget-wide v1, p1, Lb9;->b:J
-
-    invoke-direct {v0, v1, v2}, Lg93;-><init>(J)V
-
-    invoke-virtual {p0, v0}, Ln93;->a(Li93;)V
-
-    return-void
-.end method
-
-.method public final onChatMembersUpdateEvent(Ldm2;)V
-    .registers 5
-    .annotation runtime Lpee;
-    .end annotation
-
-    iget-wide v0, p1, Ldm2;->o:J
-
-    iget p1, p1, Ldm2;->X:I
-
-    invoke-static {p1}, Lew1;->t(I)I
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/4 v2, 0x1
-
-    if-ne p1, v2, :cond_0
-
-    new-instance p1, Lh93;
-
-    invoke-direct {p1, v0, v1}, Lh93;-><init>(J)V
-
-    invoke-virtual {p0, p1}, Ln93;->a(Li93;)V
-
-    return-void
+    return v0
 
     :cond_0
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    instance-of v1, p1, Ln93;
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    const/4 v2, 0x0
 
-    throw p0
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    new-instance p1, Lg93;
+    check-cast p1, Ln93;
 
-    invoke-direct {p1, v0, v1}, Lg93;-><init>(J)V
+    iget-object v1, p0, Ln93;->a:Lm93;
 
-    invoke-virtual {p0, p1}, Ln93;->a(Li93;)V
+    iget-object v3, p1, Ln93;->a:Lm93;
 
-    return-void
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object p0, p0, Ln93;->b:[I
+
+    iget-object p1, p1, Ln93;->b:[I
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
 .end method
 
-.method public final onIncomingMessageEvent(Ls27;)V
+.method public final hashCode()I
+    .registers 2
+
+    iget-object v0, p0, Ln93;->a:Lm93;
+
+    invoke-virtual {v0}, Lm93;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Ln93;->b:[I
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([I)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 4
-    .annotation runtime Lpee;
-    .end annotation
 
-    iget-boolean v0, p1, Ls27;->Y:Z
+    iget-object v0, p0, Ln93;->b:[I
 
-    if-nez v0, :cond_0
+    invoke-static {v0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
-    return-void
+    move-result-object v0
 
-    :cond_0
-    new-instance v0, Lm93;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    const-string v2, "CommonBackgroundSkeletonStickerSecondaryColors(baseGradient="
 
-    invoke-direct {v0, p0, p1, v1}, Lm93;-><init>(Ln93;Ls27;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const/4 p1, 0x3
+    iget-object p0, p0, Ln93;->a:Lm93;
 
-    iget-object p0, p0, Ln93;->e:Lkotlinx/coroutines/internal/ContextScope;
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    const-string p0, ", tongueGradient="
 
-    return-void
-.end method
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final onLeaveChatEvent(Lli7;)V
-    .registers 5
-    .annotation runtime Lpee;
-    .end annotation
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v0, Lh93;
+    const-string p0, ")"
 
-    iget-wide v1, p1, Lli7;->b:J
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v1, v2}, Lh93;-><init>(J)V
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {p0, v0}, Ln93;->a(Li93;)V
+    move-result-object p0
 
-    return-void
-.end method
-
-.method public final onRemoveChatEvent(Lhjc;)V
-    .registers 5
-    .annotation runtime Lpee;
-    .end annotation
-
-    new-instance v0, Lh93;
-
-    iget-wide v1, p1, Lhjc;->b:J
-
-    invoke-direct {v0, v1, v2}, Lh93;-><init>(J)V
-
-    invoke-virtual {p0, v0}, Ln93;->a(Li93;)V
-
-    return-void
+    return-object p0
 .end method

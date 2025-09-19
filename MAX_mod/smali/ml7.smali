@@ -4,229 +4,111 @@
 
 
 # instance fields
-.field public a:Z
+.field public final a:Ljava/util/TreeSet;
 
-.field public b:I
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:I
-
-.field public g:I
-
-.field public h:I
-
-.field public i:I
-
-.field public j:I
-
-.field public k:Ljava/util/List;
-
-.field public l:Z
+.field public b:J
 
 
-# virtual methods
-.method public final a(Landroid/view/View;)V
-    .registers 9
+# direct methods
+.method public constructor <init>()V
+    .registers 4
 
-    iget-object v0, p0, Lml7;->k:Ljava/util/List;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    new-instance v0, Ljava/util/TreeSet;
 
-    move-result v0
+    new-instance v1, Lkj4;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x6
 
-    const v2, 0x7fffffff
+    invoke-direct {v1, v2}, Lkj4;-><init>(I)V
 
-    const/4 v3, 0x0
+    invoke-direct {v0, v1}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
 
-    :goto_0
-    if-ge v3, v0, :cond_4
-
-    iget-object v4, p0, Lml7;->k:Ljava/util/List;
-
-    invoke-interface {v4, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lphc;
-
-    iget-object v4, v4, Lphc;->a:Landroid/view/View;
-
-    invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v5
-
-    check-cast v5, Lbhc;
-
-    if-eq v4, p1, :cond_3
-
-    iget-object v6, v5, Lbhc;->a:Lphc;
-
-    invoke-virtual {v6}, Lphc;->o()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v5, v5, Lbhc;->a:Lphc;
-
-    invoke-virtual {v5}, Lphc;->i()I
-
-    move-result v5
-
-    iget v6, p0, Lml7;->d:I
-
-    sub-int/2addr v5, v6
-
-    iget v6, p0, Lml7;->e:I
-
-    mul-int/2addr v5, v6
-
-    if-gez v5, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    if-ge v5, v2, :cond_3
-
-    move-object v1, v4
-
-    if-nez v5, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    move v2, v5
-
-    :cond_3
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    :goto_2
-    if-nez v1, :cond_5
-
-    const/4 p1, -0x1
-
-    iput p1, p0, Lml7;->d:I
-
-    return-void
-
-    :cond_5
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p1
-
-    check-cast p1, Lbhc;
-
-    iget-object p1, p1, Lbhc;->a:Lphc;
-
-    invoke-virtual {p1}, Lphc;->i()I
-
-    move-result p1
-
-    iput p1, p0, Lml7;->d:I
+    iput-object v0, p0, Lml7;->a:Ljava/util/TreeSet;
 
     return-void
 .end method
 
-.method public final b(Lhhc;)Landroid/view/View;
-    .registers 6
 
-    iget-object v0, p0, Lml7;->k:Ljava/util/List;
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    const/4 v0, 0x0
+# virtual methods
+.method public final a(Lmw0;J)V
+    .registers 8
 
     :goto_0
-    if-ge v0, p1, :cond_2
+    iget-wide v0, p0, Lml7;->b:J
 
-    iget-object v1, p0, Lml7;->k:Ljava/util/List;
+    add-long/2addr v0, p2
 
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    const-wide/32 v2, 0x6400000
 
-    move-result-object v1
+    cmp-long v0, v0, v2
 
-    check-cast v1, Lphc;
+    if-lez v0, :cond_0
 
-    iget-object v1, v1, Lphc;->a:Landroid/view/View;
+    iget-object v0, p0, Lml7;->a:Ljava/util/TreeSet;
 
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v0}, Ljava/util/TreeSet;->isEmpty()Z
 
-    move-result-object v2
+    move-result v0
 
-    check-cast v2, Lbhc;
+    if-nez v0, :cond_0
 
-    iget-object v3, v2, Lbhc;->a:Lphc;
+    iget-object v0, p0, Lml7;->a:Ljava/util/TreeSet;
 
-    invoke-virtual {v3}, Lphc;->o()Z
+    invoke-virtual {v0}, Ljava/util/TreeSet;->first()Ljava/lang/Object;
 
-    move-result v3
+    move-result-object v0
 
-    if-eqz v3, :cond_0
+    check-cast v0, Lhx0;
 
-    goto :goto_1
+    move-object v1, p1
 
-    :cond_0
-    iget v3, p0, Lml7;->d:I
+    check-cast v1, Ls1e;
 
-    iget-object v2, v2, Lbhc;->a:Lphc;
+    monitor-enter v1
 
-    invoke-virtual {v2}, Lphc;->i()I
+    :try_start_0
+    invoke-virtual {v1, v0}, Ls1e;->j(Lhx0;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v2
-
-    if-ne v3, v2, :cond_1
-
-    invoke-virtual {p0, v1}, Lml7;->a(Landroid/view/View;)V
-
-    return-object v1
-
-    :cond_1
-    :goto_1
-    add-int/lit8 v0, v0, 0x1
+    monitor-exit v1
 
     goto :goto_0
 
-    :cond_2
-    const/4 p0, 0x0
+    :catchall_0
+    move-exception p0
 
-    return-object p0
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :cond_3
-    iget v0, p0, Lml7;->d:I
+    throw p0
 
-    const-wide v1, 0x7fffffffffffffffL
+    :cond_0
+    return-void
+.end method
 
-    invoke-virtual {p1, v0, v1, v2}, Lhhc;->j(IJ)Lphc;
+.method public final b(Ls1e;Lv1e;)V
+    .registers 7
 
-    move-result-object p1
+    iget-object v0, p0, Lml7;->a:Ljava/util/TreeSet;
 
-    iget-object p1, p1, Lphc;->a:Landroid/view/View;
+    invoke-virtual {v0, p2}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
-    iget v0, p0, Lml7;->d:I
+    iget-wide v0, p0, Lml7;->b:J
 
-    iget v1, p0, Lml7;->e:I
+    iget-wide v2, p2, Lhx0;->c:J
 
-    add-int/2addr v0, v1
+    add-long/2addr v0, v2
 
-    iput v0, p0, Lml7;->d:I
+    iput-wide v0, p0, Lml7;->b:J
 
-    return-object p1
+    const-wide/16 v0, 0x0
+
+    invoke-virtual {p0, p1, v0, v1}, Lml7;->a(Lmw0;J)V
+
+    return-void
 .end method

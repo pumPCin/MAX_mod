@@ -1,21 +1,47 @@
-.class public abstract Lgy1;
-.super Ljava/lang/Object;
+.class public final Lgy1;
+.super Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lfy1;
+# virtual methods
+.method public final onActive(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .registers 2
 
+    return-void
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public final onCaptureQueueEmpty(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .registers 2
 
-    new-instance v0, Lfy1;
+    return-void
+.end method
 
-    invoke-direct {v0}, Lfy1;-><init>()V
+.method public final onClosed(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .registers 2
 
-    sput-object v0, Lgy1;->a:Lfy1;
+    return-void
+.end method
+
+.method public final onConfigureFailed(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method public final onConfigured(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method public final onReady(Landroid/hardware/camera2/CameraCaptureSession;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method public final onSurfacePrepared(Landroid/hardware/camera2/CameraCaptureSession;Landroid/view/Surface;)V
+    .registers 3
 
     return-void
 .end method

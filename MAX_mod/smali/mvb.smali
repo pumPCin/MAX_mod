@@ -1,24 +1,30 @@
 .class public abstract Lmvb;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field public static fastScrollEnabled:I = 0x7f0403b0
+# direct methods
+.method public static a(Landroid/content/pm/PackageManager;Landroid/content/Context;)Landroid/content/pm/PackageInfo;
+    .registers 4
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/content/pm/PackageManager$NameNotFoundException;
+        }
+    .end annotation
 
-.field public static fastScrollHorizontalThumbDrawable:I = 0x7f0403b1
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-.field public static fastScrollHorizontalTrackDrawable:I = 0x7f0403b2
+    move-result-object p1
 
-.field public static fastScrollVerticalThumbDrawable:I = 0x7f0403b3
+    const-wide/16 v0, 0x0
 
-.field public static fastScrollVerticalTrackDrawable:I = 0x7f0403b4
+    invoke-static {v0, v1}, Landroid/content/pm/PackageManager$PackageInfoFlags;->of(J)Landroid/content/pm/PackageManager$PackageInfoFlags;
 
-.field public static layoutManager:I = 0x7f040597
+    move-result-object v0
 
-.field public static recyclerViewStyle:I = 0x7f040714
+    invoke-virtual {p0, p1, v0}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;Landroid/content/pm/PackageManager$PackageInfoFlags;)Landroid/content/pm/PackageInfo;
 
-.field public static reverseLayout:I = 0x7f04071e
+    move-result-object p0
 
-.field public static spanCount:I = 0x7f040791
-
-.field public static stackFromEnd:I = 0x7f0407d6
+    return-object p0
+.end method

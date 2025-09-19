@@ -1,97 +1,69 @@
 .class public final Lcrc;
-.super Lj67;
+.super Lr3;
 .source "SourceFile"
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lcrc;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field public final a:Landroid/os/Bundle;
+
+.field public b:Ltr;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lgpa;
+
+    const/16 v1, 0x1a
+
+    invoke-direct {v0, v1}, Lgpa;-><init>(I)V
+
+    sput-object v0, Lcrc;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Bundle;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcrc;->a:Landroid/os/Bundle;
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public final q(Ljnd;FF)V
-    .registers 10
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 4
 
-    mul-float p0, p3, p2
+    const/16 p2, 0x4f45
 
-    const/4 v0, 0x0
+    invoke-static {p1, p2}, Ljs9;->U(Landroid/os/Parcel;I)I
 
-    const/high16 v1, 0x43340000    # 180.0f
+    move-result p2
 
-    const/high16 v2, 0x42b40000    # 90.0f
+    const/4 v0, 0x2
 
-    invoke-virtual {p1, v0, p0, v1, v2}, Ljnd;->d(FFFF)V
+    iget-object p0, p0, Lcrc;->a:Landroid/os/Bundle;
 
-    const/high16 p0, 0x40000000    # 2.0f
+    invoke-static {p1, v0, p0}, Ljs9;->I(Landroid/os/Parcel;ILandroid/os/Bundle;)V
 
-    mul-float/2addr p3, p0
-
-    mul-float/2addr p3, p2
-
-    new-instance p2, Lfnd;
-
-    invoke-direct {p2, v0, v0, p3, p3}, Lfnd;-><init>(FFFF)V
-
-    iput v1, p2, Lfnd;->f:F
-
-    iput v2, p2, Lfnd;->g:F
-
-    iget-object v2, p1, Ljnd;->g:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    new-instance v2, Ldnd;
-
-    invoke-direct {v2, p2}, Ldnd;-><init>(Lfnd;)V
-
-    invoke-virtual {p1, v1}, Ljnd;->a(F)V
-
-    iget-object p2, p1, Ljnd;->h:Ljava/util/ArrayList;
-
-    invoke-virtual {p2, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const/high16 p2, 0x43870000    # 270.0f
-
-    iput p2, p1, Ljnd;->e:F
-
-    add-float v1, v0, p3
-
-    const/high16 v2, 0x3f000000    # 0.5f
-
-    mul-float/2addr v1, v2
-
-    sub-float/2addr p3, v0
-
-    div-float/2addr p3, p0
-
-    float-to-double v2, p2
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->toRadians(D)D
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->cos(D)D
-
-    move-result-wide v4
-
-    double-to-float p0, v4
-
-    mul-float/2addr p0, p3
-
-    add-float/2addr p0, v1
-
-    iput p0, p1, Ljnd;->c:F
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->toRadians(D)D
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->sin(D)D
-
-    move-result-wide v2
-
-    double-to-float p0, v2
-
-    mul-float/2addr p3, p0
-
-    add-float/2addr p3, v1
-
-    iput p3, p1, Ljnd;->d:F
+    invoke-static {p1, p2}, Ljs9;->V(Landroid/os/Parcel;I)V
 
     return-void
 .end method

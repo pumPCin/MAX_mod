@@ -1,35 +1,51 @@
-.class public interface abstract Lfja;
-.super Ljava/lang/Object;
+.class public final Lfja;
+.super Ljx3;
 .source "SourceFile"
 
 
+# instance fields
+.field public X:Ljava/nio/file/Path;
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lv94;
+
+.field public o:Lv94;
+
+.field public r0:I
+
+
+# direct methods
+.method public constructor <init>(Lv94;Ljx3;)V
+    .registers 3
+
+    iput-object p1, p0, Lfja;->Z:Lv94;
+
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public N(Ljava/lang/CharSequence;)V
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    return-void
-.end method
+    iput-object p1, p0, Lfja;->Y:Ljava/lang/Object;
 
-.method public d()V
-    .registers 1
+    iget p1, p0, Lfja;->r0:I
 
-    return-void
-.end method
+    const/high16 v0, -0x80000000
 
-.method public e0()V
-    .registers 1
+    or-int/2addr p1, v0
 
-    return-void
-.end method
+    iput p1, p0, Lfja;->r0:I
 
-.method public n()V
-    .registers 1
+    iget-object p1, p0, Lfja;->Z:Lv94;
 
-    return-void
-.end method
+    invoke-static {p1, p0}, Lv94;->a(Lv94;Ljx3;)V
 
-.method public p()V
-    .registers 1
+    sget-object p0, Lz04;->a:Lz04;
 
-    return-void
+    return-object p0
 .end method

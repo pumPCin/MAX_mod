@@ -1,155 +1,242 @@
 .class public final Lp98;
-.super Lxie;
+.super Ljava/util/concurrent/atomic/AtomicReferenceArray;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lq98;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field public final synthetic Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+.field public b:I
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
-    .registers 3
+.method public constructor <init>(I)V
+    .registers 2
 
-    iput-object p2, p0, Lp98;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    invoke-direct {p0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
 
-    const/4 p2, 0x2
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+
+    iput-object p1, p0, Lp98;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final clear()V
+    .registers 5
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    :goto_0
+    iget v0, p0, Lp98;->b:I
 
-    invoke-virtual {p0, p1, p2}, Lp98;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
 
-    move-result-object p0
+    move-result v1
 
-    check-cast p0, Lp98;
+    const/4 v2, 0x0
 
-    sget-object p1, Lncf;->a:Lncf;
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {p0, p1}, Lp98;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_1
 
-    return-object p1
-.end method
+    :cond_0
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    move-result-object v1
 
-    new-instance v0, Lp98;
+    if-eqz v1, :cond_1
 
-    iget-object p0, p0, Lp98;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    add-int/lit8 v3, v0, 0x1
 
-    invoke-direct {v0, p2, p0}, Lp98;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+    iput v3, p0, Lp98;->b:I
 
-    iput-object p1, v0, Lp98;->X:Ljava/lang/Object;
+    invoke-virtual {p0, v0, v2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->lazySet(ILjava/lang/Object;)V
 
-    return-object v0
-.end method
+    move-object v2, v1
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 11
+    goto :goto_1
 
-    iget-object v0, p0, Lp98;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    :cond_1
+    iget-object v1, p0, Lp98;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iget-object v1, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->v0:Lxac;
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    move-result v1
 
-    iget-object p0, p0, Lp98;->X:Ljava/lang/Object;
+    if-ne v1, v0, :cond_0
 
-    check-cast p0, Ljava/lang/Boolean;
+    :goto_1
+    if-eqz v2, :cond_2
 
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {p0}, Lp98;->isEmpty()Z
 
-    move-result p0
+    move-result v0
 
-    const/16 p1, 0x8
-
-    if-eqz p0, :cond_0
-
-    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Y0:[Lsf7;
-
-    aget-object p0, p0, p1
-
-    invoke-interface {v1, v0, p0}, Lxac;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ly13;
-
-    invoke-virtual {p0}, Ly13;->c()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v1, "partial_media_access_widget"
-
-    invoke-static {p1, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    iget-object p0, p0, Ly13;->a:Llrc;
-
-    new-instance v3, Lone/me/chatscreen/mediabar/partialmediaaccess/PartialMediaAccessWidget;
-
-    const/4 p1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-direct {v3, p1, v2, p1}, Lone/me/chatscreen/mediabar/partialmediaaccess/PartialMediaAccessWidget;-><init>(Landroid/os/Bundle;ILwc4;)V
-
-    new-instance v2, Lorc;
-
-    const/4 v7, 0x0
-
-    const/4 v8, -0x1
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    invoke-direct/range {v2 .. v8}, Lorc;-><init>(Lqx3;Ljava/lang/String;Lvx3;Lvx3;ZI)V
-
-    invoke-virtual {v2, v1}, Lorc;->d(Ljava/lang/String;)V
-
-    invoke-virtual {p0, v2}, Llrc;->S(Lorc;)V
+    if-nez v0, :cond_2
 
     goto :goto_0
 
+    :cond_2
+    return-void
+.end method
+
+.method public final g()I
+    .registers 1
+
+    iget-object p0, p0, Lp98;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final isEmpty()Z
+    .registers 2
+
+    iget v0, p0, Lp98;->b:I
+
+    iget-object p0, p0, Lp98;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result p0
+
+    if-ne v0, p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
     :cond_0
-    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Y0:[Lsf7;
+    const/4 p0, 0x0
 
-    aget-object p0, p0, p1
+    return p0
+.end method
 
-    invoke-interface {v1, v0, p0}, Lxac;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
+.method public final j()I
+    .registers 1
+
+    iget p0, p0, Lp98;->b:I
+
+    return p0
+.end method
+
+.method public final l()V
+    .registers 3
+
+    iget v0, p0, Lp98;->b:I
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->lazySet(ILjava/lang/Object;)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lp98;->b:I
+
+    return-void
+.end method
+
+.method public final offer(Ljava/lang/Object;)Z
+    .registers 4
+
+    const-string v0, "value is null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lp98;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    invoke-virtual {p0, v0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->lazySet(ILjava/lang/Object;)V
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final peek()Ljava/lang/Object;
+    .registers 3
+
+    iget v0, p0, Lp98;->b:I
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Ly13;
+    return-object p0
+.end method
 
-    invoke-virtual {p0}, Ly13;->a()V
+.method public final poll()Ljava/lang/Object;
+    .registers 5
+
+    iget v0, p0, Lp98;->b:I
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    if-ne v0, v1, :cond_0
+
+    return-object v2
+
+    :cond_0
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_1
+
+    add-int/lit8 v3, v0, 0x1
+
+    iput v3, p0, Lp98;->b:I
+
+    invoke-virtual {p0, v0, v2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->lazySet(ILjava/lang/Object;)V
+
+    return-object v1
 
     :cond_1
-    :goto_0
-    invoke-static {v0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->z0(Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+    iget-object v1, p0, Lp98;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
-    return-object p0
+    move-result v1
+
+    if-ne v1, v0, :cond_0
+
+    return-object v2
 .end method

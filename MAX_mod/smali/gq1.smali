@@ -1,79 +1,51 @@
-.class public final synthetic Lgq1;
-.super Ljava/lang/Object;
+.class public final Lgq1;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lsqc;
-.implements Lxud;
-.implements Ldka;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lh96;
+.field public final synthetic Y:Liq1;
+
+.field public Z:I
+
+.field public o:Liq1;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILh96;)V
+.method public constructor <init>(Liq1;Ljx3;)V
     .registers 3
 
-    iput p1, p0, Lgq1;->a:I
+    iput-object p1, p0, Lgq1;->Y:Liq1;
 
-    iput-object p2, p0, Lgq1;->b:Lh96;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
 
-    iget v0, p0, Lgq1;->a:I
+    iput-object p1, p0, Lgq1;->X:Ljava/lang/Object;
 
-    iget-object p0, p0, Lgq1;->b:Lh96;
+    iget p1, p0, Lgq1;->Z:I
 
-    packed-switch v0, :pswitch_data_0
+    const/high16 v0, -0x80000000
 
-    invoke-static {p0}, Lmq1;->x(Lh96;)V
+    or-int/2addr p1, v0
 
-    return-void
+    iput p1, p0, Lgq1;->Z:I
 
-    :pswitch_0
-    invoke-static {p0}, Lmq1;->z(Lh96;)V
+    iget-object p1, p0, Lgq1;->Y:Liq1;
 
-    return-void
+    const-wide/16 v0, 0x0
 
-    nop
+    invoke-virtual {p1, v0, v1, p0}, Liq1;->d(JLjx3;)Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    move-result-object p0
 
-.method public h(Lgud;)V
-    .registers 2
-
-    iget-object p0, p0, Lgq1;->b:Lh96;
-
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/util/CallsThreadUtilsKt;->a(Lh96;Lgud;)V
-
-    return-void
-.end method
-
-.method public n(Leka;)V
-    .registers 2
-
-    iget-object p0, p0, Lgq1;->b:Lh96;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
-
-    :cond_0
-    return-void
+    return-object p0
 .end method

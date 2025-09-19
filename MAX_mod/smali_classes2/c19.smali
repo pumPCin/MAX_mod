@@ -2,48 +2,63 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lf19;
 
-# instance fields
-.field public final a:Lapc;
 
-.field public final b:Llh;
-
-.field public final c:Lmh;
-
-.field public final d:Lmh;
+# static fields
+.field public static final a:Lc19;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lc19;
 
-    iput-object p1, p0, Lc19;->a:Lapc;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Llh;
-
-    const/16 v1, 0xb
-
-    invoke-direct {v0, p1, v1}, Llh;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lc19;->b:Llh;
-
-    new-instance v0, Lmh;
-
-    const/16 v1, 0x18
-
-    invoke-direct {v0, p1, v1}, Lmh;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lc19;->c:Lmh;
-
-    new-instance v0, Lmh;
-
-    const/16 v1, 0x19
-
-    invoke-direct {v0, p1, v1}, Lmh;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lc19;->d:Lmh;
+    sput-object v0, Lc19;->a:Lc19;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lc19;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, 0xf30cd61
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "Default"
+
+    return-object p0
 .end method

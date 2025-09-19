@@ -4,16 +4,16 @@
 
 
 # virtual methods
-.method public abstract a(Ljava/util/concurrent/Executor;Lh5a;)Ldyg;
+.method public abstract a(Ljava/util/concurrent/Executor;Lk9a;)Lz8h;
 .end method
 
-.method public abstract b(Ljava/util/concurrent/Executor;Li5a;)Ldyg;
+.method public abstract b(Ljava/util/concurrent/Executor;Ll9a;)Lz8h;
 .end method
 
-.method public abstract c(Ljava/util/concurrent/Executor;Lk5a;)Ldyg;
+.method public abstract c(Ljava/util/concurrent/Executor;Ln9a;)Lz8h;
 .end method
 
-.method public abstract d(Ljava/util/concurrent/Executor;Lr5a;)Ldyg;
+.method public abstract d(Ljava/util/concurrent/Executor;Lu9a;)Lz8h;
 .end method
 
 .method public abstract e()Ljava/lang/Exception;

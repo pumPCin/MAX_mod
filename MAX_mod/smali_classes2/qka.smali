@@ -1,129 +1,31 @@
-.class public final Lqka;
+.class public abstract Lqka;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Luka;
-
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lqka;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final a:I
 
+.field public static final b:I
 
-# instance fields
-.field public final a:I
+.field public static final c:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Lif9;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1}, Lif9;-><init>(I)V
-
-    sput-object v0, Lqka;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lqka;->a:I
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final describeContents()I
     .registers 1
 
-    const/4 p0, 0x0
+    sget v0, Lfbc;->oneme_messages_settings_send_by_enter_action_title:I
 
-    return p0
-.end method
+    sput v0, Lqka;->a:I
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    sget v0, Lfbc;->oneme_messages_settings_stickers_settings_action_title:I
 
-    const/4 v0, 0x1
+    sput v0, Lqka;->b:I
 
-    if-ne p0, p1, :cond_0
+    sget v0, Lfbc;->oneme_messages_settings_toolbar_title:I
 
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lqka;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lqka;
-
-    iget p0, p0, Lqka;->a:I
-
-    iget p1, p1, Lqka;->a:I
-
-    if-eq p0, p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget p0, p0, Lqka;->a:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    const-string v0, "ContrastIcon(iconRes="
-
-    const-string v1, ")"
-
-    iget p0, p0, Lqka;->a:I
-
-    invoke-static {p0, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
-
-    iget p0, p0, Lqka;->a:I
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    sput v0, Lqka;->c:I
 
     return-void
 .end method

@@ -1,140 +1,109 @@
-.class public final Lkf0;
-.super Ljava/lang/Object;
+.class public final enum Lkf0;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lwy4;
 
+# static fields
+.field public static final enum X:Lkf0;
 
-# instance fields
-.field public final a:Landroid/graphics/drawable/Drawable;
+.field public static final synthetic Y:[Lkf0;
 
-.field public final b:Landroid/graphics/Rect;
+.field public static final enum a:Lkf0;
 
-.field public c:I
+.field public static final enum b:Lkf0;
 
-.field public d:I
+.field public static final enum c:Lkf0;
+
+.field public static final enum o:Lkf0;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lkf0;
 
-    new-instance v0, Landroid/graphics/Rect;
+    const-string v1, "REMOTE"
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    const/4 v2, 0x0
 
-    iput-object v0, p0, Lkf0;->b:Landroid/graphics/Rect;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p1, p0, Lkf0;->a:Landroid/graphics/drawable/Drawable;
+    sput-object v0, Lkf0;->a:Lkf0;
 
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    new-instance v1, Lkf0;
 
-    move-result v0
+    const-string v2, "LOCAL_RTT"
 
-    iput v0, p0, Lkf0;->c:I
+    const/4 v3, 0x1
 
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    move-result p1
+    sput-object v1, Lkf0;->b:Lkf0;
 
-    iput p1, p0, Lkf0;->d:I
+    new-instance v2, Lkf0;
 
-    return-void
-.end method
+    const-string v3, "LOCAL_LOSS"
 
-.method public static a(Lkf0;IILandroid/graphics/Rect;)V
-    .registers 8
+    const/4 v4, 0x2
 
-    int-to-float v0, p1
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget v1, p0, Lkf0;->d:I
+    sput-object v2, Lkf0;->c:Lkf0;
 
-    int-to-float v2, v1
+    new-instance v3, Lkf0;
 
-    iget p0, p0, Lkf0;->c:I
+    const-string v4, "REMOTE_RTT"
 
-    int-to-float v3, p0
+    const/4 v5, 0x3
 
-    div-float/2addr v2, v3
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    mul-float/2addr v2, v0
+    sput-object v3, Lkf0;->o:Lkf0;
 
-    float-to-int v0, v2
+    new-instance v4, Lkf0;
 
-    if-le v0, p2, :cond_0
+    const-string v5, "REMOTE_LOSS"
 
-    int-to-float v0, p2
+    const/4 v6, 0x4
 
-    int-to-float p0, p0
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    int-to-float v1, v1
+    sput-object v4, Lkf0;->X:Lkf0;
 
-    div-float/2addr p0, v1
+    filled-new-array {v0, v1, v2, v3, v4}, [Lkf0;
 
-    mul-float/2addr p0, v0
+    move-result-object v0
 
-    float-to-int p0, p0
-
-    move v0, p2
-
-    goto :goto_0
-
-    :cond_0
-    move p0, p1
-
-    :goto_0
-    sub-int/2addr p2, v0
-
-    int-to-float p2, p2
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    div-float/2addr p2, v1
-
-    float-to-int p2, p2
-
-    sub-int/2addr p1, p0
-
-    int-to-float p1, p1
-
-    div-float/2addr p1, v1
-
-    float-to-int p1, p1
-
-    add-int/2addr p0, p1
-
-    add-int/2addr v0, p2
-
-    invoke-virtual {p3, p1, p2, p0, v0}, Landroid/graphics/Rect;->set(IIII)V
+    sput-object v0, Lkf0;->Y:[Lkf0;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lkf0;
+    .registers 2
 
-# virtual methods
-.method public final draw(Landroid/graphics/Canvas;)V
-    .registers 5
+    const-class v0, Lkf0;
 
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->getWidth()I
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    move-result v0
+    move-result-object p0
 
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->getHeight()I
+    check-cast p0, Lkf0;
 
-    move-result v1
+    return-object p0
+.end method
 
-    iget-object v2, p0, Lkf0;->b:Landroid/graphics/Rect;
+.method public static values()[Lkf0;
+    .registers 1
 
-    invoke-static {p0, v0, v1, v2}, Lkf0;->a(Lkf0;IILandroid/graphics/Rect;)V
+    sget-object v0, Lkf0;->Y:[Lkf0;
 
-    iget-object p0, p0, Lkf0;->a:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, [Lkf0;->clone()Ljava/lang/Object;
 
-    invoke-virtual {p0, v2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+    move-result-object v0
 
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    check-cast v0, [Lkf0;
 
-    return-void
+    return-object v0
 .end method

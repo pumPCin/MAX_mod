@@ -13,15 +13,15 @@
         "",
         "Lcom/facebook/fresco/ui/common/c;",
         "imagePerfData",
-        "Lky6;",
+        "Ll17;",
         "imageLoadStatus",
-        "Lncf;",
+        "Lylf;",
         "onImageLoadStatusUpdated",
-        "(Lcom/facebook/fresco/ui/common/c;Lky6;)V",
-        "Lp0g;",
+        "(Lcom/facebook/fresco/ui/common/c;Ll17;)V",
+        "Lqag;",
         "visibilityState",
         "onImageVisibilityUpdated",
-        "(Lcom/facebook/fresco/ui/common/c;Lp0g;)V",
+        "(Lcom/facebook/fresco/ui/common/c;Lqag;)V",
         "ui-common_release"
     }
     k = 0x1
@@ -35,8 +35,8 @@
 
 
 # virtual methods
-.method public abstract onImageLoadStatusUpdated(Lcom/facebook/fresco/ui/common/c;Lky6;)V
+.method public abstract onImageLoadStatusUpdated(Lcom/facebook/fresco/ui/common/c;Ll17;)V
 .end method
 
-.method public abstract onImageVisibilityUpdated(Lcom/facebook/fresco/ui/common/c;Lp0g;)V
+.method public abstract onImageVisibilityUpdated(Lcom/facebook/fresco/ui/common/c;Lqag;)V
 .end method

@@ -6,18 +6,18 @@
 # instance fields
 .field public final a:Lb93;
 
-.field public final b:[I
+.field public final b:Ld93;
 
 
 # direct methods
-.method public constructor <init>(Lb93;[I)V
+.method public constructor <init>(Lb93;Ld93;)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lc93;->a:Lb93;
 
-    iput-object p2, p0, Lc93;->b:[I
+    iput-object p2, p0, Lc93;->b:Ld93;
 
     return-void
 .end method
@@ -49,7 +49,7 @@
 
     iget-object v3, p1, Lc93;->a:Lb93;
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -58,11 +58,11 @@
     return v2
 
     :cond_2
-    iget-object p0, p0, Lc93;->b:[I
+    iget-object p0, p0, Lc93;->b:Ld93;
 
-    iget-object p1, p1, Lc93;->b:[I
+    iget-object p1, p1, Lc93;->b:Ld93;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -85,9 +85,9 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object p0, p0, Lc93;->b:[I
+    iget-object p0, p0, Lc93;->b:Ld93;
 
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([I)I
+    invoke-virtual {p0}, Ld93;->hashCode()I
 
     move-result p0
 
@@ -97,35 +97,31 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .registers 3
 
-    iget-object v0, p0, Lc93;->b:[I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+    const-string v1, "CommonActionColors(background="
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lc93;->a:Lb93;
 
-    const-string v2, "CommonBackgroundSkeletonStickerPrimaryColors(baseGradient="
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v1, ", icon="
 
-    iget-object p0, p0, Lc93;->a:Lb93;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lc93;->b:Ld93;
 
-    const-string p0, ", tongueGradient="
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string p0, ")"
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

@@ -36,7 +36,7 @@
         "myId",
         "Lkotlin/Function1;",
         "Lru/ok/android/externcalls/sdk/Conversation;",
-        "Lncf;",
+        "Lylf;",
         "onPrepared",
         "",
         "onError",
@@ -44,12 +44,12 @@
         "shouldStartWithVideo",
         "Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;",
         "eventListener",
-        "Ly12;",
+        "Lf22;",
         "frameInterceptor",
-        "Ln0a;",
+        "Ln4a;",
         "cameraCapturerFactory",
         "<init>",
-        "(Ljava/lang/String;Ljava/lang/Long;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lj96;Lj96;ZLru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ly12;Ln0a;)V",
+        "(Ljava/lang/String;Ljava/lang/Long;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lbc6;Lbc6;ZLru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lf22;Ln4a;)V",
         "Ljava/lang/String;",
         "getConversationId",
         "()Ljava/lang/String;",
@@ -76,7 +76,7 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/String;Ljava/lang/Long;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lj96;Lj96;ZLru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ly12;Ln0a;)V
+.method private constructor <init>(Ljava/lang/String;Ljava/lang/Long;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lbc6;Lbc6;ZLru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lf22;Ln4a;)V
     .registers 18
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -84,12 +84,12 @@
             "Ljava/lang/String;",
             "Ljava/lang/Long;",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Lj96;",
-            "Lj96;",
+            "Lbc6;",
+            "Lbc6;",
             "Z",
             "Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;",
-            "Ly12;",
-            "Ln0a;",
+            "Lf22;",
+            "Ln4a;",
             ")V"
         }
     .end annotation
@@ -110,7 +110,7 @@
 
     move-object/from16 v7, p9
 
-    invoke-direct/range {v0 .. v7}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;-><init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lj96;Lj96;ZLy12;Ln0a;)V
+    invoke-direct/range {v0 .. v7}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;-><init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lbc6;Lbc6;ZLf22;Ln4a;)V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/factory/JoinCallParams;->conversationId:Ljava/lang/String;
 
@@ -119,10 +119,10 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Long;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lj96;Lj96;ZLru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ly12;Ln0a;Lwc4;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/Long;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lbc6;Lbc6;ZLru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lf22;Ln4a;Lld4;)V
     .registers 11
 
-    invoke-direct/range {p0 .. p9}, Lru/ok/android/externcalls/sdk/factory/JoinCallParams;-><init>(Ljava/lang/String;Ljava/lang/Long;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lj96;Lj96;ZLru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ly12;Ln0a;)V
+    invoke-direct/range {p0 .. p9}, Lru/ok/android/externcalls/sdk/factory/JoinCallParams;-><init>(Ljava/lang/String;Ljava/lang/Long;Lru/ok/android/externcalls/sdk/id/ParticipantId;Lbc6;Lbc6;ZLru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lf22;Ln4a;)V
 
     return-void
 .end method

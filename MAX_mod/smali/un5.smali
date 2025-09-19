@@ -1,123 +1,74 @@
 .class public final Lun5;
-.super Ljava/lang/Object;
+.super Ltn5;
 .source "SourceFile"
 
-# interfaces
-.implements Lif0;
 
+# instance fields
+.field public b:Z
 
-# static fields
-.field public static final a:Ljava/util/concurrent/atomic/AtomicReference;
+.field public c:[Ljava/io/File;
 
+.field public d:I
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    sput-object v0, Lun5;->a:Ljava/util/concurrent/atomic/AtomicReference;
-
-    return-void
-.end method
+.field public e:Z
 
 
 # virtual methods
-.method public final a(Z)V
-    .registers 5
+.method public final a()Ljava/io/File;
+    .registers 6
 
-    sget-object p0, Lwn5;->j:Ljava/lang/Object;
+    iget-boolean v0, p0, Lun5;->e:Z
 
-    monitor-enter p0
+    const/4 v1, 0x1
 
-    :try_start_0
-    new-instance v0, Ljava/util/ArrayList;
+    iget-object v2, p0, Lyn5;->a:Ljava/io/File;
 
-    sget-object v1, Lwn5;->k:Lis;
+    if-nez v0, :cond_0
 
-    invoke-virtual {v1}, Lis;->values()Ljava/util/Collection;
+    iget-object v0, p0, Lun5;->c:[Ljava/io/File;
 
-    move-result-object v1
+    if-nez v0, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v2}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v0
 
+    iput-object v0, p0, Lun5;->c:[Ljava/io/File;
+
+    if-nez v0, :cond_0
+
+    iput-boolean v1, p0, Lun5;->e:Z
+
     :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Lun5;->c:[Ljava/io/File;
 
-    move-result v1
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_2
+    iget v3, p0, Lun5;->d:I
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    array-length v4, v0
 
-    move-result-object v1
+    if-ge v3, v4, :cond_1
 
-    check-cast v1, Lwn5;
+    add-int/lit8 v1, v3, 0x1
 
-    iget-object v2, v1, Lwn5;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput v1, p0, Lun5;->d:I
 
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    aget-object p0, v0, v3
 
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    iget-object v1, v1, Lwn5;->i:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
+    return-object p0
 
     :cond_1
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-boolean v0, p0, Lun5;->b:Z
 
-    move-result v2
+    if-nez v0, :cond_2
 
-    if-eqz v2, :cond_0
+    iput-boolean v1, p0, Lun5;->b:Z
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ltn5;
-
-    iget-object v2, v2, Ltn5;->a:Lwn5;
-
-    if-nez p1, :cond_1
-
-    iget-object v2, v2, Lwn5;->h:Lprb;
-
-    invoke-interface {v2}, Lprb;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lwe4;
-
-    invoke-virtual {v2}, Lwe4;->b()V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_1
+    return-object v2
 
     :cond_2
-    monitor-exit p0
+    const/4 p0, 0x0
 
-    return-void
-
-    :goto_1
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p1
+    return-object p0
 .end method

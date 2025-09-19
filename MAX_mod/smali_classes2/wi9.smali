@@ -4,32 +4,81 @@
 
 
 # instance fields
-.field public final a:Landroidx/recyclerview/widget/RecyclerView;
-
-.field public final b:Lqgg;
-
-.field public final c:Lqi9;
-
-.field public final d:Lu8d;
-
-.field public e:Lcq3;
-
-.field public f:Lu94;
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Landroidx/recyclerview/widget/RecyclerView;Lqgg;Lqi9;Llna;)V
-    .registers 5
+.method public constructor <init>(J)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lwi9;->a:Landroidx/recyclerview/widget/RecyclerView;
-
-    iput-object p2, p0, Lwi9;->b:Lqgg;
-
-    iput-object p3, p0, Lwi9;->c:Lqi9;
-
-    iput-object p4, p0, Lwi9;->d:Lu8d;
+    iput-wide p1, p0, Lwi9;->a:J
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 7
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lwi9;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lwi9;
+
+    iget-wide v3, p0, Lwi9;->a:J
+
+    iget-wide p0, p1, Lwi9;->a:J
+
+    cmp-long p0, v3, p0
+
+    if-eqz p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    iget-wide v0, p0, Lwi9;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 5
+
+    const-string v0, "MovieId(id="
+
+    const-string v1, ")"
+
+    iget-wide v2, p0, Lwi9;->a:J
+
+    invoke-static {v2, v3, v0, v1}, Lwsf;->e(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

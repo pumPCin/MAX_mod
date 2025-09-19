@@ -3,56 +3,49 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Liqe;
-
-
-# direct methods
-.method public constructor <init>(Ljqe;)V
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
-    instance-of v0, p1, Liqe;
+    if-ne p0, p1, :cond_0
 
-    if-eqz v0, :cond_0
-
-    move-object v0, p1
-
-    check-cast v0, Liqe;
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    const/4 v0, 0x0
+    instance-of p0, p1, Lafd;
 
-    :goto_0
-    if-nez v0, :cond_1
+    if-nez p0, :cond_1
 
-    new-instance v0, Liqe;
+    const/4 p0, 0x0
 
-    invoke-direct {v0, p1}, Liqe;-><init>(Ljqe;)V
+    return p0
 
     :cond_1
-    iput-object v0, p0, Lafd;->a:Liqe;
+    check-cast p1, Lafd;
 
-    return-void
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    return v0
 .end method
 
+.method public final hashCode()I
+    .registers 1
 
-# virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 3
+    const/4 p0, 0x1
 
-    iget-object p0, p0, Lafd;->a:Liqe;
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
-    invoke-virtual {p0, p1}, Liqe;->a(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
+    move-result p0
 
-    move-result-object p0
+    return p0
+.end method
 
-    invoke-interface {p0, p2}, Ljava/util/concurrent/ThreadFactory;->newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    move-result-object p0
+    const-string p0, "Close(isAnimated=true)"
 
     return-object p0
 .end method

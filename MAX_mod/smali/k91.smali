@@ -1,180 +1,392 @@
 .class public final Lk91;
-.super Luxf;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final X:Lxh7;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final Y:Ljava/lang/Object;
-
-.field public final Z:Ln4e;
-
-.field public final b:Lxh7;
-
-.field public final c:Ltbd;
-
-.field public final n0:Ln4e;
-
-.field public final o:Lmh1;
-
-.field public final o0:Ln4e;
-
-.field public final p0:Ln4e;
-
-.field public final q0:Ln4e;
+.field public final synthetic Y:Lone/me/calls/ui/ui/incoming/CallIncomingScreen;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;Ltbd;Lmh1;)V
-    .registers 5
+.method public constructor <init>(Lone/me/calls/ui/ui/incoming/CallIncomingScreen;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Luxf;-><init>()V
+    iput-object p1, p0, Lk91;->Y:Lone/me/calls/ui/ui/incoming/CallIncomingScreen;
 
-    iput-object p2, p0, Lk91;->b:Lxh7;
+    const/4 p1, 0x2
 
-    iput-object p3, p0, Lk91;->c:Ltbd;
-
-    iput-object p4, p0, Lk91;->o:Lmh1;
-
-    iput-object p1, p0, Lk91;->X:Lxh7;
-
-    new-instance p1, Lt5;
-
-    const/16 p2, 0x1b
-
-    invoke-direct {p1, p2, p0}, Lt5;-><init>(ILjava/lang/Object;)V
-
-    const/4 p2, 0x3
-
-    invoke-static {p2, p1}, Lmtg;->u(ILh96;)Lxh7;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lk91;->Y:Ljava/lang/Object;
-
-    new-instance p1, Li91;
-
-    invoke-direct {p1}, Li91;-><init>()V
-
-    invoke-static {p1}, Lo4e;->a(Ljava/lang/Object;)Ln4e;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lk91;->Z:Ln4e;
-
-    iput-object p1, p0, Lk91;->n0:Ln4e;
-
-    new-instance p1, Lmu1;
-
-    sget-object p2, Lv25;->a:Lv25;
-
-    const/4 p3, 0x0
-
-    invoke-direct {p1, p2, p3, p3}, Lmu1;-><init>(Ljava/util/List;ZZ)V
-
-    invoke-static {p1}, Lo4e;->a(Ljava/lang/Object;)Ln4e;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lk91;->o0:Ln4e;
-
-    iput-object p1, p0, Lk91;->p0:Ln4e;
-
-    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-static {p1}, Lo4e;->a(Ljava/lang/Object;)Ln4e;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lk91;->q0:Ln4e;
-
-    new-instance p2, Lh91;
-
-    const/4 p3, 0x0
-
-    invoke-direct {p2, p0, p3}, Lh91;-><init>(Lk91;Lkotlin/coroutines/Continuation;)V
-
-    new-instance p3, Lks5;
-
-    const/4 p4, 0x1
-
-    invoke-direct {p3, p1, p2, p4}, Lks5;-><init>(Lfq5;Lx96;I)V
-
-    iget-object p0, p0, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p3, p0}, Lfog;->L(Lfq5;Lr04;)Lq1e;
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final q(JLap6;)V
-    .registers 9
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    :cond_0
-    iget-object v0, p0, Lk91;->Z:Ln4e;
+    check-cast p1, Lo91;
 
-    invoke-virtual {v0}, Ln4e;->getValue()Ljava/lang/Object;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    move-result-object v1
+    invoke-virtual {p0, p1, p2}, Lk91;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    move-object v2, v1
+    move-result-object p0
 
-    check-cast v2, Li91;
+    check-cast p0, Lk91;
 
-    iget-object v3, v2, Li91;->b:Ljava/util/Map;
+    sget-object p1, Lylf;->a:Lylf;
 
-    new-instance v4, Ljava/util/LinkedHashMap;
+    invoke-virtual {p0, p1}, Lk91;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v4, v3}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
+    return-object p1
+.end method
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    move-result-object v3
+    new-instance v0, Lk91;
 
-    invoke-interface {v4, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    iget-object p0, p0, Lk91;->Y:Lone/me/calls/ui/ui/incoming/CallIncomingScreen;
 
-    move-result v3
+    invoke-direct {v0, p0, p2}, Lk91;-><init>(Lone/me/calls/ui/ui/incoming/CallIncomingScreen;Lkotlin/coroutines/Continuation;)V
 
-    if-eqz v3, :cond_1
+    iput-object p1, v0, Lk91;->X:Ljava/lang/Object;
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    return-object v0
+.end method
 
-    move-result-object v3
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 24
 
-    invoke-interface {v4, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v0, p0
 
-    move-result-object v3
+    invoke-static/range {p1 .. p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    check-cast v3, Lap6;
+    iget-object v1, v0, Lk91;->X:Ljava/lang/Object;
+
+    check-cast v1, Lo91;
+
+    instance-of v2, v1, Lm91;
+
+    iget-object v5, v0, Lk91;->Y:Lone/me/calls/ui/ui/incoming/CallIncomingScreen;
+
+    if-eqz v2, :cond_5
+
+    iget-object v0, v5, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;->o:Lcic;
+
+    sget-object v2, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;->s0:[Lxi7;
+
+    const/4 v3, 0x0
+
+    aget-object v2, v2, v3
+
+    invoke-interface {v0, v5, v2}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lsq1;
+
+    check-cast v1, Lm91;
+
+    iget-object v2, v1, Lm91;->a:Lu31;
+
+    iget-object v3, v1, Lm91;->a:Lu31;
+
+    iget-boolean v4, v1, Lm91;->b:Z
+
+    iget-object v2, v2, Lu31;->c:Lhd0;
+
+    iget-object v6, v0, Lsq1;->F0:Loba;
+
+    const/4 v7, 0x0
+
+    if-eqz v2, :cond_0
+
+    iget-object v8, v2, Lhd0;->b:Ljava/lang/String;
 
     goto :goto_0
 
-    :cond_1
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-interface {v4, v3, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lap6;
+    :cond_0
+    move-object v8, v7
 
     :goto_0
-    iget-boolean v2, v2, Li91;->a:Z
+    if-eqz v2, :cond_1
 
-    new-instance v3, Li91;
+    iget-object v2, v2, Lhd0;->a:Lyb0;
 
-    invoke-direct {v3, v2, v4}, Li91;-><init>(ZLjava/util/Map;)V
+    goto :goto_1
 
-    invoke-virtual {v0, v1, v3}, Ln4e;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :cond_1
+    move-object v2, v7
+
+    :goto_1
+    invoke-static {v6, v8, v2}, Loba;->m(Loba;Ljava/lang/String;Lyb0;)V
+
+    invoke-virtual {v6, v7}, Loba;->setCustomOverlay(Ljd0;)V
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v4, v2}, Lsq1;->S(ZZ)V
+
+    iget-object v6, v1, Lm91;->c:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v6}, Lsq1;->setCameraPreviewButtonEnable(Ljava/lang/CharSequence;)V
+
+    if-eqz v4, :cond_2
+
+    iget-object v7, v3, Lu31;->c:Lhd0;
+
+    :cond_2
+    invoke-virtual {v0, v7}, Lsq1;->setSmallAvatar(Lhd0;)V
+
+    iget-object v3, v3, Lu31;->b:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v3}, Lsq1;->setName(Ljava/lang/CharSequence;)V
+
+    iget-object v3, v1, Lm91;->d:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v3}, Lsq1;->setStatus(Ljava/lang/CharSequence;)V
+
+    iget-object v3, v1, Lm91;->e:Ll91;
+
+    iget v4, v3, Ll91;->b:I
+
+    iget v6, v3, Ll91;->a:I
+
+    iget-object v3, v3, Ll91;->c:Lu2f;
+
+    new-instance v7, Lj11;
+
+    invoke-virtual {v5}, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;->A0()Lr91;
+
+    move-result-object v9
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x2
+
+    const/4 v8, 0x0
+
+    const-class v10, Lr91;
+
+    const-string v11, "declineCall"
+
+    const-string v12, "declineCall()V"
+
+    invoke-direct/range {v7 .. v14}, Lj11;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    invoke-virtual {v0, v4, v6, v3, v7}, Lsq1;->V(IILu2f;Lzb6;)V
+
+    iget-object v3, v1, Lm91;->f:Ll91;
+
+    iget v11, v3, Ll91;->b:I
+
+    iget v12, v3, Ll91;->a:I
+
+    iget-object v13, v3, Ll91;->c:Lu2f;
+
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    if-eq v3, v2, :cond_3
+
+    const/4 v2, 0x2
+
+    if-eq v3, v2, :cond_4
+
+    const/4 v2, 0x3
+
+    if-eq v3, v2, :cond_3
+
+    new-instance v14, Lj11;
+
+    invoke-virtual {v5}, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;->A0()Lr91;
+
+    move-result-object v16
+
+    const/16 v20, 0x0
+
+    const/16 v21, 0x5
+
+    const/4 v15, 0x0
+
+    const-class v17, Lr91;
+
+    const-string v18, "declineCall"
+
+    const-string v19, "declineCall()V"
+
+    invoke-direct/range {v14 .. v21}, Lj11;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    goto :goto_3
+
+    :cond_3
+    new-instance v3, Lj11;
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x4
+
+    const/4 v4, 0x0
+
+    const-class v6, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;
+
+    const-string v7, "acceptAudioCallIfPossible"
+
+    const-string v8, "acceptAudioCallIfPossible()V"
+
+    invoke-direct/range {v3 .. v10}, Lj11;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    :goto_2
+    move-object v14, v3
+
+    goto :goto_3
+
+    :cond_4
+    new-instance v3, Lj11;
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x3
+
+    const/4 v4, 0x0
+
+    const-class v6, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;
+
+    const-string v7, "acceptVideoCallIfPossible"
+
+    const-string v8, "acceptVideoCallIfPossible()V"
+
+    invoke-direct/range {v3 .. v10}, Lj11;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    goto :goto_2
+
+    :goto_3
+    const/4 v7, 0x1
+
+    move-object v6, v0
+
+    move v8, v11
+
+    move v9, v12
+
+    move-object v10, v13
+
+    move-object v11, v14
+
+    invoke-virtual/range {v6 .. v11}, Lsq1;->X(ZIILu2f;Lzb6;)V
+
+    iget-object v1, v1, Lm91;->g:Ll91;
+
+    if-eqz v1, :cond_7
+
+    iget v2, v1, Ll91;->b:I
+
+    iget-object v11, v1, Ll91;->c:Lu2f;
+
+    iget v1, v1, Ll91;->a:I
+
+    new-instance v3, Lj11;
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x6
+
+    const/4 v4, 0x0
+
+    const-class v6, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;
+
+    const-string v7, "acceptVideoCallIfPossible"
+
+    const-string v8, "acceptVideoCallIfPossible()V"
+
+    invoke-direct/range {v3 .. v10}, Lj11;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    invoke-virtual {v0, v2, v1, v11, v3}, Lsq1;->W(IILu2f;Lj11;)V
+
+    goto :goto_4
+
+    :cond_5
+    instance-of v0, v1, Ln91;
+
+    if-eqz v0, :cond_8
+
+    sget-object v0, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;->r0:Lse2;
+
+    invoke-virtual {v5}, Lone/me/sdk/arch/Widget;->requireActivity()Lkm;
+
+    move-result-object v0
+
+    check-cast v1, Ln91;
+
+    iget-boolean v1, v1, Ln91;->a:Z
+
+    invoke-static {v0, v1}, Lm7g;->q(Lkm;Z)V
+
+    invoke-virtual {v5}, Lone/me/calls/ui/ui/incoming/CallIncomingScreen;->A0()Lr91;
+
+    move-result-object v0
+
+    iget-object v1, v0, Lr91;->X:Lwu1;
+
+    invoke-virtual {v1, v0}, Lwu1;->c(Lyo1;)V
+
+    invoke-virtual {v5}, Lone/me/sdk/arch/Widget;->requireView()Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_6
 
-    return-void
+    invoke-virtual {v5}, Lxx3;->getRouter()Lrzc;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v5}, Lrzc;->B(Lxx3;)Z
+
+    goto :goto_4
+
+    :cond_6
+    invoke-virtual {v5}, Lone/me/sdk/arch/Widget;->requireView()Landroid/view/View;
+
+    move-result-object v0
+
+    new-instance v1, Lb;
+
+    const/16 v2, 0x18
+
+    invoke-direct {v1, v2, v5}, Lb;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    :cond_7
+    :goto_4
+    sget-object v0, Lylf;->a:Lylf;
+
+    return-object v0
+
+    :cond_8
+    new-instance v0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw v0
 .end method

@@ -1,353 +1,138 @@
 .class public final Lzgb;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public X:I
 
-.field public final b:J
+.field public final synthetic Y:Lahb;
 
-.field public final c:Ljava/lang/CharSequence;
-
-.field public final d:Ljava/lang/CharSequence;
-
-.field public final e:Z
-
-.field public final f:Z
-
-.field public final g:I
+.field public final synthetic Z:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;JLjava/lang/CharSequence;Ljava/lang/CharSequence;ZZI)V
-    .registers 9
+.method public constructor <init>(Lahb;JLkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lzgb;->Y:Lahb;
 
-    iput-object p1, p0, Lzgb;->a:Ljava/lang/String;
+    iput-wide p2, p0, Lzgb;->Z:J
 
-    iput-wide p2, p0, Lzgb;->b:J
+    const/4 p1, 0x2
 
-    iput-object p4, p0, Lzgb;->c:Ljava/lang/CharSequence;
-
-    iput-object p5, p0, Lzgb;->d:Ljava/lang/CharSequence;
-
-    iput-boolean p6, p0, Lzgb;->e:Z
-
-    iput-boolean p7, p0, Lzgb;->f:Z
-
-    iput p8, p0, Lzgb;->g:I
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static a(Lzgb;Ljava/lang/String;ZI)Lzgb;
-    .registers 13
-
-    and-int/lit8 v0, p3, 0x1
-
-    if-eqz v0, :cond_0
-
-    iget-object p1, p0, Lzgb;->a:Ljava/lang/String;
-
-    :cond_0
-    move-object v1, p1
-
-    iget-wide v2, p0, Lzgb;->b:J
-
-    iget-object v4, p0, Lzgb;->c:Ljava/lang/CharSequence;
-
-    iget-object v5, p0, Lzgb;->d:Ljava/lang/CharSequence;
-
-    and-int/lit8 p1, p3, 0x10
-
-    if-eqz p1, :cond_1
-
-    iget-boolean p2, p0, Lzgb;->e:Z
-
-    :cond_1
-    move v6, p2
-
-    iget-boolean v7, p0, Lzgb;->f:Z
-
-    iget v8, p0, Lzgb;->g:I
-
-    new-instance v0, Lzgb;
-
-    invoke-direct/range {v0 .. v8}, Lzgb;-><init>(Ljava/lang/String;JLjava/lang/CharSequence;Ljava/lang/CharSequence;ZZI)V
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    if-ne p0, p1, :cond_0
+    check-cast p1, Ly04;
 
-    goto :goto_1
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    :cond_0
-    instance-of v0, p1, Lzgb;
+    invoke-virtual {p0, p1, p2}, Lzgb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    if-nez v0, :cond_1
+    move-result-object p0
 
-    goto :goto_0
+    check-cast p0, Lzgb;
 
-    :cond_1
-    check-cast p1, Lzgb;
+    sget-object p1, Lylf;->a:Lylf;
 
-    iget-object v0, p0, Lzgb;->a:Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lzgb;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, p1, Lzgb;->a:Ljava/lang/String;
+    move-result-object p0
 
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-wide v0, p0, Lzgb;->b:J
-
-    iget-wide v2, p1, Lzgb;->b:J
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v0, p0, Lzgb;->c:Ljava/lang/CharSequence;
-
-    iget-object v1, p1, Lzgb;->c:Ljava/lang/CharSequence;
-
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    iget-object v0, p0, Lzgb;->d:Ljava/lang/CharSequence;
-
-    iget-object v1, p1, Lzgb;->d:Ljava/lang/CharSequence;
-
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    goto :goto_0
-
-    :cond_5
-    iget-boolean v0, p0, Lzgb;->e:Z
-
-    iget-boolean v1, p1, Lzgb;->e:Z
-
-    if-eq v0, v1, :cond_6
-
-    goto :goto_0
-
-    :cond_6
-    iget-boolean v0, p0, Lzgb;->f:Z
-
-    iget-boolean v1, p1, Lzgb;->f:Z
-
-    if-eq v0, v1, :cond_7
-
-    goto :goto_0
-
-    :cond_7
-    iget p0, p0, Lzgb;->g:I
-
-    iget p1, p1, Lzgb;->g:I
-
-    if-eq p0, p1, :cond_8
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_8
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
+    return-object p0
 .end method
 
-.method public final hashCode()I
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 6
 
-    const/4 v0, 0x0
+    new-instance p1, Lzgb;
 
-    iget-object v1, p0, Lzgb;->a:Ljava/lang/String;
+    iget-object v0, p0, Lzgb;->Y:Lahb;
 
-    if-nez v1, :cond_0
+    iget-wide v1, p0, Lzgb;->Z:J
 
-    move v1, v0
+    invoke-direct {p1, v0, v1, v2, p2}, Lzgb;-><init>(Lahb;JLkotlin/coroutines/Continuation;)V
 
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    :goto_0
-    const/16 v2, 0x1f
-
-    mul-int/2addr v1, v2
-
-    iget-wide v3, p0, Lzgb;->b:J
-
-    invoke-static {v1, v2, v3, v4}, Lp2g;->a(IIJ)I
-
-    move-result v1
-
-    iget-object v3, p0, Lzgb;->c:Ljava/lang/CharSequence;
-
-    if-nez v3, :cond_1
-
-    move v3, v0
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
-
-    move-result v3
-
-    :goto_1
-    add-int/2addr v1, v3
-
-    mul-int/2addr v1, v2
-
-    iget-object v3, p0, Lzgb;->d:Ljava/lang/CharSequence;
-
-    if-nez v3, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    :goto_2
-    add-int/2addr v1, v0
-
-    mul-int/2addr v1, v2
-
-    iget-boolean v0, p0, Lzgb;->e:Z
-
-    invoke-static {v1, v2, v0}, Lex3;->e(IIZ)I
-
-    move-result v0
-
-    iget-boolean v1, p0, Lzgb;->f:Z
-
-    invoke-static {v0, v2, v1}, Lex3;->e(IIZ)I
-
-    move-result v0
-
-    iget p0, p0, Lzgb;->g:I
-
-    invoke-static {p0}, Lew1;->t(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
+    return-object p1
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 6
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 7
 
-    const-string v0, "ProfileEditAppBarState(avatarUrl="
-
-    const-string v1, ", avatarSourceId="
-
-    iget-wide v2, p0, Lzgb;->b:J
-
-    iget-object v4, p0, Lzgb;->a:Ljava/lang/String;
-
-    invoke-static {v0, v2, v3, v4, v1}, Lfge;->t(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", firstName="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lzgb;->c:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", abbreviation="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lzgb;->d:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", showAcceptChanges="
-
-    const-string v2, ", showAddPhoto="
-
-    iget-boolean v3, p0, Lzgb;->e:Z
-
-    iget-boolean v4, p0, Lzgb;->f:Z
-
-    invoke-static {v1, v2, v0, v3, v4}, Lex3;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
-
-    const-string v1, ", confirmType="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v0, p0, Lzgb;->X:I
 
     const/4 v1, 0x1
 
-    iget p0, p0, Lzgb;->g:I
+    if-eqz v0, :cond_1
 
-    if-eq p0, v1, :cond_1
+    if-ne v0, v1, :cond_0
 
-    const/4 v1, 0x2
-
-    if-eq p0, v1, :cond_0
-
-    const-string p0, "null"
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    const-string p0, "TOOLBAR_ACTION"
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    goto :goto_0
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     :cond_1
-    const-string p0, "BUTTON"
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    :goto_0
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p1, p0, Lzgb;->Y:Lahb;
 
-    const-string p0, ")"
+    iget-object v0, p1, Lahb;->s0:Lnxd;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget v2, Lfy4;->o:I
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-wide v2, p0, Lzgb;->Z:J
+
+    sget-object v4, Lky4;->c:Lky4;
+
+    invoke-static {v2, v3, v4}, Lr94;->c0(JLky4;)J
+
+    move-result-wide v2
+
+    invoke-static {v0, v2, v3}, Lla6;->E(Lis5;J)La62;
+
+    move-result-object v0
+
+    new-instance v2, Luv;
+
+    const/16 v3, 0x9
+
+    invoke-direct {v2, v3, p1}, Luv;-><init>(ILjava/lang/Object;)V
+
+    iput v1, p0, Lzgb;->X:I
+
+    invoke-virtual {v0, v2, p0}, Lz52;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

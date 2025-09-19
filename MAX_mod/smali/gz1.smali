@@ -2,67 +2,29 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lkx1;
-.implements Lwgf;
+
+# static fields
+.field public static final a:Lt90;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v1, Lt90;
+
+    invoke-direct {v1, v0}, Lt90;-><init>(Ljava/lang/Object;)V
+
+    sput-object v1, Lgz1;->a:Lt90;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public a()Lez1;
-    .registers 1
-
-    invoke-interface {p0}, Lgz1;->n()Lez1;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public c(Lfy1;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public abstract e()Lz0a;
-.end method
-
-.method public abstract f()Lmy1;
-.end method
-
-.method public g()Ldy1;
-    .registers 1
-
-    sget-object p0, Lgy1;->a:Lfy1;
-
-    return-object p0
-.end method
-
-.method public i(Z)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public abstract j(Ljava/util/ArrayList;)V
-.end method
-
-.method public abstract k(Ljava/util/ArrayList;)V
-.end method
-
-.method public l()Z
-    .registers 1
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public m(Z)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public abstract n()Lez1;
+.method public abstract a(Ljava/util/List;)Ljava/util/List;
 .end method

@@ -1,43 +1,35 @@
-.class public abstract synthetic Lbtf;
+.class public abstract Lbtf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
-
-
 # direct methods
-.method static constructor <clinit>()V
+.method public static a(Landroid/view/VelocityTracker;I)F
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/view/VelocityTracker;->getAxisVelocity(I)F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static b(Landroid/view/VelocityTracker;II)F
     .registers 3
 
-    invoke-static {}, Lvab;->values()[Lvab;
+    invoke-virtual {p0, p1, p2}, Landroid/view/VelocityTracker;->getAxisVelocity(II)F
 
-    move-result-object v0
+    move-result p0
 
-    array-length v0, v0
+    return p0
+.end method
 
-    new-array v0, v0, [I
+.method public static c(Landroid/view/VelocityTracker;I)Z
+    .registers 2
 
-    const/4 v1, 0x1
+    invoke-virtual {p0, p1}, Landroid/view/VelocityTracker;->isAxisSupported(I)Z
 
-    const/4 v2, 0x0
+    move-result p0
 
-    :try_start_0
-    aput v1, v0, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v2, 0x2
-
-    :try_start_1
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    sput-object v0, Lbtf;->$EnumSwitchMapping$0:[I
-
-    return-void
+    return p0
 .end method

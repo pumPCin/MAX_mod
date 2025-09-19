@@ -1,59 +1,58 @@
-.class public final Lpzf;
+.class public final synthetic Lpzf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.implements Lzb6;
 
 
 # instance fields
-.field public final synthetic a:Lh96;
+.field public final synthetic a:I
 
-.field public final synthetic b:Landroid/view/ViewTreeObserver;
-
-.field public final synthetic c:Landroid/view/View;
+.field public final synthetic b:Lwzf;
 
 
 # direct methods
-.method public constructor <init>(Lh96;Landroid/view/ViewTreeObserver;Landroid/view/View;)V
-    .registers 4
+.method public synthetic constructor <init>(Lwzf;I)V
+    .registers 3
+
+    iput p2, p0, Lpzf;->a:I
+
+    iput-object p1, p0, Lpzf;->b:Lwzf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lpzf;->a:Lh96;
-
-    iput-object p2, p0, Lpzf;->b:Landroid/view/ViewTreeObserver;
-
-    iput-object p3, p0, Lpzf;->c:Landroid/view/View;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onGlobalLayout()V
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 2
 
-    iget-object v0, p0, Lpzf;->a:Lh96;
+    iget v0, p0, Lpzf;->a:I
 
-    invoke-interface {v0}, Lh96;->invoke()Ljava/lang/Object;
+    iget-object p0, p0, Lpzf;->b:Lwzf;
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v0, Ljava/lang/Boolean;
+    invoke-static {p0}, Lwzf;->a(Lwzf;)Lqzf;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result-object p0
 
-    move-result v0
+    return-object p0
 
-    if-eqz v0, :cond_0
+    :pswitch_0
+    invoke-static {p0}, Lwzf;->e(Lwzf;)Lqzf;
 
-    iget-object v0, p0, Lpzf;->b:Landroid/view/ViewTreeObserver;
+    move-result-object p0
 
-    iget-object v1, p0, Lpzf;->c:Landroid/view/View;
+    return-object p0
 
-    invoke-static {p0, v0, v1}, Lqzf;->a(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;Landroid/view/ViewTreeObserver;Landroid/view/View;)V
+    nop
 
-    :cond_0
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

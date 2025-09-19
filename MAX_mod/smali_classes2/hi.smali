@@ -1,27 +1,23 @@
 .class public final Lhi;
-.super Lncc;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+
+# instance fields
+.field public final a:Ljava/util/concurrent/ConcurrentHashMap;
 
 
 # direct methods
 .method public constructor <init>()V
-    .registers 4
+    .registers 2
 
-    sget-object v0, Lzcc;->b:Lzcc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v1, 0x0
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {p0, v0, v1, v2}, Lncc;-><init>(Lzcc;J)V
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    return-void
-.end method
-
-.method public constructor <init>(J)V
-    .registers 4
-
-    sget-object v0, Lzcc;->Y:Lzcc;
-
-    invoke-direct {p0, v0, p1, p2}, Lncc;-><init>(Lzcc;J)V
+    iput-object v0, p0, Lhi;->a:Ljava/util/concurrent/ConcurrentHashMap;
 
     return-void
 .end method

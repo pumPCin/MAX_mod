@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/contacts/ContactCallManager;
-.implements Li41;
+.implements La41;
 
 
 # annotations
@@ -15,20 +15,20 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/contacts/internal/ContactCallManagerImpl;",
         "Lru/ok/android/externcalls/sdk/contacts/ContactCallManager;",
-        "Li41;",
+        "La41;",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
         "participantsStore",
         "",
         "iAmAnonymous",
         "<init>",
         "(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Z)V",
-        "Lncf;",
+        "Lylf;",
         "notifyContactCallStateChanged",
         "()V",
-        "Lh41;",
+        "Lz31;",
         "info",
         "onDecorativeParticipantIdChanged",
-        "(Lh41;)V",
+        "(Lz31;)V",
         "Lru/ok/android/externcalls/sdk/contacts/listener/ContactCallListener;",
         "listener",
         "addContactCallListener",
@@ -153,7 +153,7 @@
     return p0
 .end method
 
-.method public onDecorativeParticipantIdChanged(Lh41;)V
+.method public onDecorativeParticipantIdChanged(Lz31;)V
     .registers 4
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/contacts/internal/ContactCallManagerImpl;->participantsStore:Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;
@@ -164,7 +164,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getCallParticipant()Lah1;
+    invoke-virtual {v0}, Lru/ok/android/externcalls/sdk/ConversationParticipant;->getCallParticipant()Lwg1;
 
     move-result-object v0
 
@@ -185,11 +185,11 @@
 
     if-eqz v1, :cond_2
 
-    iget-object p1, p1, Lh41;->a:Lwg1;
+    iget-object p1, p1, Lz31;->a:Lsg1;
 
-    iget-object v0, v0, Lah1;->a:Lwg1;
+    iget-object v0, v0, Lwg1;->a:Lsg1;
 
-    invoke-static {p1, v0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, v0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 

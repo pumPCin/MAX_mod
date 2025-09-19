@@ -3,92 +3,62 @@
 .source "SourceFile"
 
 # interfaces
-.implements Li82;
-.implements Lja6;
+.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field public final synthetic a:Lnr;
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lnr;)V
+.method public synthetic constructor <init>(I)V
     .registers 2
+
+    iput p1, p0, Lcr;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcr;->a:Lnr;
+    return-void
+.end method
+
+.method private final a(Ljava/lang/Runnable;)V
+    .registers 2
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final execute(Ljava/lang/Runnable;)V
+    .registers 2
 
-    instance-of v0, p1, Li82;
+    iget p0, p0, Lcr;->a:I
 
-    if-eqz v0, :cond_0
+    packed-switch p0, :pswitch_data_0
 
-    instance-of v0, p1, Lja6;
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    if-eqz v0, :cond_0
+    :pswitch_0
+    return-void
 
-    invoke-virtual {p0}, Lcr;->getFunctionDelegate()Lca6;
-
-    move-result-object p0
-
-    check-cast p1, Lja6;
-
-    invoke-interface {p1}, Lja6;->getFunctionDelegate()Lca6;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final getFunctionDelegate()Lca6;
-    .registers 8
-
-    new-instance v0, Lma6;
-
-    const-string v6, "backgroundSelected(Lone/me/appearancesettings/singletheme/model/ChatBackground;)V"
-
-    const/4 v2, 0x0
-
-    const/4 v1, 0x1
-
-    const-class v3, Lnr;
-
-    iget-object v4, p0, Lcr;->a:Lnr;
-
-    const-string v5, "backgroundSelected"
-
-    invoke-direct/range {v0 .. v6}, Lla6;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    invoke-virtual {p0}, Lcr;->getFunctionDelegate()Lca6;
+    :pswitch_1
+    invoke-static {}, Ldr;->E()Ldr;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    iget-object p0, p0, Ldr;->c:Lni4;
 
-    move-result p0
+    iget-object p0, p0, Lni4;->d:Ljava/util/concurrent/ExecutorService;
 
-    return p0
+    invoke-interface {p0, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

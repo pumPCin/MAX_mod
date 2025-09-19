@@ -3,443 +3,455 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lxw7;
-.implements Lay3;
+.implements Landroid/view/LayoutInflater$Factory2;
 
 
 # instance fields
-.field public final synthetic a:Lbj0;
-
-.field public final b:Lls;
-
-.field public c:I
+.field public final a:Landroidx/fragment/app/c;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroidx/fragment/app/c;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lbj0;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lw76;->a:Lbj0;
-
-    const-string v0, "WrappingUtils"
-
-    filled-new-array {v0}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lx44;->b([Ljava/lang/Object;)Lls;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lw76;->b:Lls;
-
-    const/4 v0, 0x6
-
-    iput v0, p0, Lw76;->c:I
+    iput-object p1, p0, Lw76;->a:Landroidx/fragment/app/c;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)V
-    .registers 2
+.method public final onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+    .registers 13
 
-    iget-object p0, p0, Lw76;->b:Lls;
+    const-class v0, Landroidx/fragment/app/FragmentContainerView;
 
-    invoke-static {p0, p1}, Lj73;->e0(Ljava/lang/Iterable;Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result p0
+    move-result-object v0
 
-    if-eqz p0, :cond_0
+    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    return-void
+    move-result v0
 
-    :cond_0
-    const-string p0, "Fresco:"
+    iget-object v1, p0, Lw76;->a:Landroidx/fragment/app/c;
 
-    invoke-virtual {p0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    return-void
-.end method
+    new-instance p0, Landroidx/fragment/app/FragmentContainerView;
 
-.method public final b(Ljava/io/IOException;)V
-    .registers 3
+    invoke-direct {p0, p3, p4, v1}, Landroidx/fragment/app/FragmentContainerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Landroidx/fragment/app/c;)V
 
-    iget-object p0, p0, Lw76;->b:Lls;
-
-    const-string v0, "HeifExifUtil"
-
-    invoke-static {p0, v0}, Lj73;->e0(Ljava/lang/Iterable;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    return-void
+    return-object p0
 
     :cond_0
-    const-string p0, "Fresco:"
+    const-string v0, "fragment"
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object p0
+    move-result p2
 
-    const-string v0, "Failed reading Heif Exif orientation -> ignoring"
+    const/4 v0, 0x0
 
-    invoke-static {p0, v0, p1}, Ld86;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    if-nez p2, :cond_1
 
-    return-void
-.end method
+    goto/16 :goto_4
 
-.method public final c(Ljava/lang/String;Ljava/lang/Object;Landroid/graphics/drawable/Animatable;)V
-    .registers 4
+    :cond_1
+    const-string p2, "class"
 
-    check-cast p2, Lgy6;
+    invoke-interface {p4, v0, p2}, Landroid/util/AttributeSet;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    iget-object p0, p0, Lw76;->a:Lbj0;
+    move-result-object p2
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v2, Ltdc;->Fragment:[I
 
-    return-void
-.end method
-
-.method public final d(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
-
-    iget-object p0, p0, Lw76;->b:Lls;
-
-    invoke-static {p0, p1}, Lj73;->e0(Ljava/lang/Iterable;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    return-void
-
-    :cond_0
-    const-string p0, "Fresco:"
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0, p2}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final d(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 5
-
-    const-string p0, "ControllerListener"
-
-    const-string v0, "Fresco:"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "onFailure "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p0, p1, p2}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final e(Ljava/lang/String;)V
-    .registers 2
-
-    iget-object p0, p0, Lw76;->a:Lbj0;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-void
-.end method
-
-.method public final e(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
-
-    iget-object p0, p0, Lw76;->b:Lls;
-
-    invoke-static {p0, p1}, Lj73;->e0(Ljava/lang/Iterable;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    return-void
-
-    :cond_0
-    const-string p0, "Fresco:"
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    const/4 p1, 0x0
-
-    invoke-static {p0, p2, p1}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
-
-    iget-object p0, p0, Lw76;->b:Lls;
-
-    invoke-static {p0, p1}, Lj73;->e0(Ljava/lang/Iterable;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    return-void
-
-    :cond_0
-    const-string p0, "Fresco:"
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    const/4 p1, 0x0
-
-    new-array p1, p1, [Ljava/lang/Object;
-
-    invoke-static {p0, p3, p2, p1}, Ld86;->p(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final f(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 10
-
-    iget-object p0, p0, Lw76;->b:Lls;
-
-    invoke-static {p0, p1}, Lj73;->e0(Ljava/lang/Iterable;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const-string p0, "Fresco:"
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p3, p4, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v2
 
-    const/4 p0, 0x0
+    if-nez p2, :cond_2
 
-    new-array v4, p0, [Ljava/lang/Object;
+    sget p2, Ltdc;->Fragment_android_name:I
 
-    sget-object v0, Ld86;->f:Lafa;
+    invoke-virtual {v2, p2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    move-result-object p2
 
-    sget-object v1, Llw7;->n0:Llw7;
+    :cond_2
+    sget v3, Ltdc;->Fragment_android_id:I
 
-    const/4 v5, 0x0
+    const/4 v4, -0x1
 
-    const/16 v6, 0x10
+    invoke-virtual {v2, v3, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-object v3, p2
+    move-result v3
 
-    invoke-static/range {v0 .. v6}, Lafa;->e(Lafa;Llw7;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Throwable;I)V
+    sget v5, Ltdc;->Fragment_android_tag:I
 
-    :cond_1
-    :goto_0
-    return-void
-.end method
+    invoke-virtual {v2, v5}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-.method public final g(Ljava/lang/Exception;Ljava/lang/String;)V
-    .registers 10
+    move-result-object v5
 
-    iget-object p0, p0, Lw76;->b:Lls;
+    invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
 
-    invoke-static {p0, p2}, Lj73;->e0(Ljava/lang/Iterable;Ljava/lang/Object;)Z
+    if-eqz p2, :cond_11
 
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const-string p0, "Fresco:"
-
-    invoke-virtual {p0, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p3}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v2
 
-    invoke-static {p1}, Las3;->e0(Ljava/lang/Throwable;)Ljava/lang/String;
+    const/4 v6, 0x0
 
-    move-result-object p0
+    :try_start_0
+    invoke-static {v2, p2}, Lb86;->b(Ljava/lang/ClassLoader;Ljava/lang/String;)Ljava/lang/Class;
 
-    const-string p1, "unhandled exception"
+    move-result-object v2
 
-    invoke-virtual {p1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    const-class v7, Landroidx/fragment/app/a;
 
-    move-result-object v3
+    invoke-virtual {v7, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    const/4 p0, 0x0
+    move-result v2
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    new-array v4, p0, [Ljava/lang/Object;
+    goto :goto_0
 
-    sget-object v0, Ld86;->f:Lafa;
+    :catch_0
+    move v2, v6
 
-    if-eqz v0, :cond_1
-
-    sget-object v1, Llw7;->n0:Llw7;
-
-    const/4 v5, 0x0
-
-    const/16 v6, 0x10
-
-    invoke-static/range {v0 .. v6}, Lafa;->e(Lafa;Llw7;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Throwable;I)V
-
-    :cond_1
     :goto_0
-    return-void
-.end method
+    if-nez v2, :cond_3
 
-.method public final h(Ljava/lang/String;)V
-    .registers 2
+    goto/16 :goto_4
 
-    return-void
-.end method
+    :cond_3
+    if-eqz p1, :cond_4
 
-.method public final i(I)Z
-    .registers 2
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
 
-    iget p0, p0, Lw76;->c:I
+    move-result v6
 
-    if-gt p0, p1, :cond_0
+    :cond_4
+    if-ne v6, v4, :cond_6
 
-    const/4 p0, 0x1
+    if-ne v3, v4, :cond_6
 
-    return p0
+    if-eqz v5, :cond_5
 
-    :cond_0
-    const/4 p0, 0x0
+    goto :goto_1
 
-    return p0
-.end method
+    :cond_5
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-.method public final j(I)V
-    .registers 2
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    iput p1, p0, Lw76;->c:I
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    return-void
-.end method
+    invoke-interface {p4}, Landroid/util/AttributeSet;->getPositionDescription()Ljava/lang/String;
 
-.method public final k(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 5
+    move-result-object p3
 
-    const-string p0, "ControllerListener"
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "Fresco:"
+    const-string p3, ": Must specify unique android:id, android:tag, or have a parent with an id for "
 
-    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p0
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "onIntermediateImageFailed "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-static {p0, p1, p2}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    return-void
+    throw p0
+
+    :cond_6
+    :goto_1
+    if-eq v3, v4, :cond_7
+
+    invoke-virtual {v1, v3}, Landroidx/fragment/app/c;->C(I)Landroidx/fragment/app/a;
+
+    move-result-object v0
+
+    :cond_7
+    if-nez v0, :cond_8
+
+    if-eqz v5, :cond_8
+
+    invoke-virtual {v1, v5}, Landroidx/fragment/app/c;->D(Ljava/lang/String;)Landroidx/fragment/app/a;
+
+    move-result-object v0
+
+    :cond_8
+    if-nez v0, :cond_9
+
+    if-eq v6, v4, :cond_9
+
+    invoke-virtual {v1, v6}, Landroidx/fragment/app/c;->C(I)Landroidx/fragment/app/a;
+
+    move-result-object v0
+
+    :cond_9
+    const/4 v2, 0x2
+
+    const/4 v4, 0x1
+
+    if-nez v0, :cond_b
+
+    invoke-virtual {v1}, Landroidx/fragment/app/c;->I()Lb86;
+
+    move-result-object v0
+
+    invoke-virtual {p3}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
+
+    invoke-virtual {v0, p2}, Lb86;->a(Ljava/lang/String;)Landroidx/fragment/app/a;
+
+    move-result-object v0
+
+    iput-boolean v4, v0, Landroidx/fragment/app/a;->y0:Z
+
+    if-eqz v3, :cond_a
+
+    move p3, v3
+
+    goto :goto_2
+
+    :cond_a
+    move p3, v6
+
+    :goto_2
+    iput p3, v0, Landroidx/fragment/app/a;->I0:I
+
+    iput v6, v0, Landroidx/fragment/app/a;->J0:I
+
+    iput-object v5, v0, Landroidx/fragment/app/a;->K0:Ljava/lang/String;
+
+    iput-boolean v4, v0, Landroidx/fragment/app/a;->z0:Z
+
+    iput-object v1, v0, Landroidx/fragment/app/a;->E0:Landroidx/fragment/app/c;
+
+    iget-object p3, v1, Landroidx/fragment/app/c;->w:Lu76;
+
+    iput-object p3, v0, Landroidx/fragment/app/a;->F0:Lu76;
+
+    iget-object p3, p3, Lu76;->r0:Landroidx/fragment/app/b;
+
+    iget-object p3, v0, Landroidx/fragment/app/a;->b:Landroid/os/Bundle;
+
+    invoke-virtual {v0, p4, p3}, Landroidx/fragment/app/a;->t0(Landroid/util/AttributeSet;Landroid/os/Bundle;)V
+
+    invoke-virtual {v1, v0}, Landroidx/fragment/app/c;->a(Landroidx/fragment/app/a;)Landroidx/fragment/app/e;
+
+    move-result-object p3
+
+    invoke-static {v2}, Landroidx/fragment/app/c;->K(I)Z
+
+    move-result p4
+
+    if-eqz p4, :cond_c
+
+    invoke-virtual {v0}, Landroidx/fragment/app/a;->toString()Ljava/lang/String;
+
+    invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    goto :goto_3
+
+    :cond_b
+    iget-boolean p3, v0, Landroidx/fragment/app/a;->z0:Z
+
+    if-nez p3, :cond_10
+
+    iput-boolean v4, v0, Landroidx/fragment/app/a;->z0:Z
+
+    iput-object v1, v0, Landroidx/fragment/app/a;->E0:Landroidx/fragment/app/c;
+
+    iget-object p3, v1, Landroidx/fragment/app/c;->w:Lu76;
+
+    iput-object p3, v0, Landroidx/fragment/app/a;->F0:Lu76;
+
+    iget-object p3, p3, Lu76;->r0:Landroidx/fragment/app/b;
+
+    iget-object p3, v0, Landroidx/fragment/app/a;->b:Landroid/os/Bundle;
+
+    invoke-virtual {v0, p4, p3}, Landroidx/fragment/app/a;->t0(Landroid/util/AttributeSet;Landroid/os/Bundle;)V
+
+    invoke-virtual {v1, v0}, Landroidx/fragment/app/c;->g(Landroidx/fragment/app/a;)Landroidx/fragment/app/e;
+
+    move-result-object p3
+
+    invoke-static {v2}, Landroidx/fragment/app/c;->K(I)Z
+
+    move-result p4
+
+    if-eqz p4, :cond_c
+
+    invoke-virtual {v0}, Landroidx/fragment/app/a;->toString()Ljava/lang/String;
+
+    invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    :cond_c
+    :goto_3
+    check-cast p1, Landroid/view/ViewGroup;
+
+    sget-object p4, Lp86;->a:Lo86;
+
+    new-instance p4, Landroidx/fragment/app/strictmode/FragmentTagUsageViolation;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Attempting to use <fragment> tag to add fragment "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, " to container "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {p4, v0, v1}, Landroidx/fragment/app/strictmode/Violation;-><init>(Landroidx/fragment/app/a;Ljava/lang/String;)V
+
+    invoke-static {p4}, Lp86;->b(Landroidx/fragment/app/strictmode/Violation;)V
+
+    invoke-static {v0}, Lp86;->a(Landroidx/fragment/app/a;)Lo86;
+
+    move-result-object p4
+
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, v0, Landroidx/fragment/app/a;->S0:Landroid/view/ViewGroup;
+
+    invoke-virtual {p3}, Landroidx/fragment/app/e;->k()V
+
+    invoke-virtual {p3}, Landroidx/fragment/app/e;->j()V
+
+    iget-object p1, v0, Landroidx/fragment/app/a;->T0:Landroid/view/View;
+
+    if-eqz p1, :cond_f
+
+    if-eqz v3, :cond_d
+
+    invoke-virtual {p1, v3}, Landroid/view/View;->setId(I)V
+
+    :cond_d
+    iget-object p1, v0, Landroidx/fragment/app/a;->T0:Landroid/view/View;
+
+    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-nez p1, :cond_e
+
+    iget-object p1, v0, Landroidx/fragment/app/a;->T0:Landroid/view/View;
+
+    invoke-virtual {p1, v5}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    :cond_e
+    iget-object p1, v0, Landroidx/fragment/app/a;->T0:Landroid/view/View;
+
+    new-instance p2, Lf40;
+
+    invoke-direct {p2, p0, p3}, Lf40;-><init>(Lw76;Landroidx/fragment/app/e;)V
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    iget-object p0, v0, Landroidx/fragment/app/a;->T0:Landroid/view/View;
+
+    return-object p0
+
+    :cond_f
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "Fragment "
+
+    const-string p3, " did not create a view."
+
+    invoke-static {p1, p2, p3}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_10
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-interface {p4}, Landroid/util/AttributeSet;->getPositionDescription()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p3, ": Duplicate id 0x"
+
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v3}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p3, ", tag "
+
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p3, ", or parent id 0x"
+
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {v6}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p3, " with another fragment for "
+
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_11
+    :goto_4
+    return-object v0
 .end method
 
-.method public final onIntermediateImageSet(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 3
+.method public final onCreateView(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+    .registers 5
 
-    check-cast p2, Lgy6;
+    const/4 v0, 0x0
 
-    iget-object p0, p0, Lw76;->a:Lbj0;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-void
-.end method
-
-.method public final w(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
-
-    iget-object p0, p0, Lw76;->b:Lls;
-
-    invoke-static {p0, p1}, Lj73;->e0(Ljava/lang/Iterable;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    return-void
-
-    :cond_0
-    const-string p0, "Fresco:"
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0, p1, p2, p3}, Lw76;->onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
 
     move-result-object p0
 
-    invoke-static {p0, p2}, Ld86;->J(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
-
-    iget-object p0, p0, Lw76;->b:Lls;
-
-    invoke-static {p0, p1}, Lj73;->e0(Ljava/lang/Iterable;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    return-void
-
-    :cond_0
-    const-string p0, "Fresco:"
-
-    invoke-virtual {p0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0, p2, p3}, Ld86;->H(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
+    return-object p0
 .end method

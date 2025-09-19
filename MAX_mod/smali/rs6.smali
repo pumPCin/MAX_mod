@@ -1,324 +1,95 @@
 .class public final Lrs6;
-.super Lps6;
+.super Lzi0;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Z
+.field public final X:Ljava/util/List;
 
-.field public final Y:Llu6;
-
-.field public final synthetic Z:Lq8;
-
-.field public o:J
+.field public final Y:J
 
 
 # direct methods
-.method public constructor <init>(Lq8;Llu6;)V
-    .registers 3
+.method public constructor <init>(JLjava/util/List;)V
+    .registers 11
 
-    iput-object p1, p0, Lrs6;->Z:Lq8;
+    invoke-interface {p3}, Ljava/util/List;->size()I
 
-    invoke-direct {p0, p1}, Lps6;-><init>(Lq8;)V
+    move-result v0
 
-    iput-object p2, p0, Lrs6;->Y:Llu6;
+    add-int/lit8 v0, v0, -0x1
 
-    const-wide/16 p1, -0x1
+    int-to-long v5, v0
 
-    iput-wide p1, p0, Lrs6;->o:J
+    const/4 v2, 0x1
 
-    const/4 p1, 0x1
+    const-wide/16 v3, 0x0
 
-    iput-boolean p1, p0, Lrs6;->X:Z
+    move-object v1, p0
+
+    invoke-direct/range {v1 .. v6}, Lzi0;-><init>(IJJ)V
+
+    iput-wide p1, v1, Lrs6;->Y:J
+
+    iput-object p3, v1, Lrs6;->X:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lrt0;J)J
-    .registers 15
+.method public final a()J
+    .registers 5
 
-    iget-object v0, p0, Lrs6;->Z:Lq8;
+    invoke-virtual {p0}, Lzi0;->c()V
 
-    iget-object v1, v0, Lq8;->e:Ljava/lang/Object;
+    iget-wide v0, p0, Lzi0;->o:J
 
-    check-cast v1, Luu0;
+    long-to-int v0, v0
 
-    const-wide/16 v2, 0x0
+    iget-object v1, p0, Lrs6;->X:Ljava/util/List;
 
-    cmp-long v4, p2, v2
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    if-ltz v4, :cond_9
+    move-result-object v0
 
-    iget-boolean v4, p0, Lps6;->b:Z
+    check-cast v0, Lmt6;
 
-    if-nez v4, :cond_8
+    iget-wide v0, v0, Lmt6;->X:J
 
-    iget-boolean v4, p0, Lrs6;->X:Z
+    iget-wide v2, p0, Lrs6;->Y:J
 
-    const-wide/16 v5, -0x1
+    add-long/2addr v2, v0
 
-    if-nez v4, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-wide v7, p0, Lrs6;->o:J
-
-    cmp-long v4, v7, v2
-
-    if-eqz v4, :cond_1
-
-    cmp-long v4, v7, v5
-
-    if-nez v4, :cond_5
-
-    :cond_1
-    const-string v4, "expected chunk size and optional extensions but was \""
-
-    cmp-long v7, v7, v5
-
-    if-eqz v7, :cond_2
-
-    invoke-interface {v1}, Luu0;->a0()Ljava/lang/String;
-
-    :cond_2
-    :try_start_0
-    invoke-interface {v1}, Luu0;->o0()J
-
-    move-result-wide v7
-
-    iput-wide v7, p0, Lrs6;->o:J
-
-    invoke-interface {v1}, Luu0;->a0()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lqde;->U0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-wide v7, p0, Lrs6;->o:J
-
-    cmp-long v7, v7, v2
-
-    if-ltz v7, :cond_7
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v7
-
-    const/4 v8, 0x0
-
-    if-lez v7, :cond_3
-
-    const-string v7, ";"
-
-    invoke-static {v1, v7, v8}, Lyde;->j0(Ljava/lang/String;Ljava/lang/String;Z)Z
-
-    move-result v7
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-eqz v7, :cond_7
-
-    :cond_3
-    iget-wide v9, p0, Lrs6;->o:J
-
-    cmp-long v1, v9, v2
-
-    if-nez v1, :cond_4
-
-    iput-boolean v8, p0, Lrs6;->X:Z
-
-    iget-object v1, v0, Lq8;->b:Ljava/lang/Object;
-
-    check-cast v1, Lv13;
-
-    invoke-virtual {v1}, Lv13;->Z()Lcn6;
-
-    move-result-object v1
-
-    iget-object v2, v0, Lq8;->c:Ljava/lang/Object;
-
-    check-cast v2, Ls4a;
-
-    iget-object v2, v2, Ls4a;->p0:Ltud;
-
-    iget-object v3, p0, Lrs6;->Y:Llu6;
-
-    invoke-static {v2, v3, v1}, Lcu6;->b(Ltud;Llu6;Lcn6;)V
-
-    invoke-virtual {p0}, Lps6;->m()V
-
-    :cond_4
-    iget-boolean v1, p0, Lrs6;->X:Z
-
-    if-nez v1, :cond_5
-
-    :goto_0
-    return-wide v5
-
-    :cond_5
-    iget-wide v1, p0, Lrs6;->o:J
-
-    invoke-static {p2, p3, v1, v2}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide p2
-
-    invoke-super {p0, p1, p2, p3}, Lps6;->b(Lrt0;J)J
-
-    move-result-wide p1
-
-    cmp-long p3, p1, v5
-
-    if-eqz p3, :cond_6
-
-    iget-wide v0, p0, Lrs6;->o:J
-
-    sub-long/2addr v0, p1
-
-    iput-wide v0, p0, Lrs6;->o:J
-
-    return-wide p1
-
-    :cond_6
-    iget-object p1, v0, Lq8;->d:Ljava/lang/Object;
-
-    check-cast p1, Lmbc;
-
-    invoke-virtual {p1}, Lmbc;->k()V
-
-    new-instance p1, Ljava/net/ProtocolException;
-
-    const-string p2, "unexpected end of stream"
-
-    invoke-direct {p1, p2}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lps6;->m()V
-
-    throw p1
-
-    :cond_7
-    :try_start_1
-    new-instance p1, Ljava/net/ProtocolException;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v2, p0, Lrs6;->o:J
-
-    invoke-virtual {p2, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x22
-
-    invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-    :try_end_1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_0
-
-    :catch_0
-    move-exception p0
-
-    new-instance p1, Ljava/net/ProtocolException;
-
-    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/net/ProtocolException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-
-    :cond_8
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "closed"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_9
-    const-string p0, "byteCount < 0: "
-
-    invoke-static {p2, p3, p0}, La78;->i(JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p1
+    return-wide v2
 .end method
 
-.method public final close()V
-    .registers 2
+.method public final b()J
+    .registers 6
 
-    iget-boolean v0, p0, Lps6;->b:Z
+    invoke-virtual {p0}, Lzi0;->c()V
 
-    if-eqz v0, :cond_0
+    iget-wide v0, p0, Lzi0;->o:J
 
-    return-void
+    long-to-int v0, v0
 
-    :cond_0
-    iget-boolean v0, p0, Lrs6;->X:Z
+    iget-object v1, p0, Lrs6;->X:Ljava/util/List;
 
-    if-eqz v0, :cond_1
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    move-result-object v0
 
-    const/16 v0, 0x64
+    check-cast v0, Lmt6;
 
-    :try_start_0
-    invoke-static {p0, v0}, Lzhf;->t(Loyd;I)Z
+    iget-wide v1, p0, Lrs6;->Y:J
 
-    move-result v0
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    iget-wide v3, v0, Lmt6;->X:J
 
-    goto :goto_0
+    add-long/2addr v1, v3
 
-    :catch_0
-    const/4 v0, 0x0
+    iget-wide v3, v0, Lmt6;->c:J
 
-    :goto_0
-    if-nez v0, :cond_1
+    add-long/2addr v1, v3
 
-    iget-object v0, p0, Lrs6;->Z:Lq8;
-
-    iget-object v0, v0, Lq8;->d:Ljava/lang/Object;
-
-    check-cast v0, Lmbc;
-
-    invoke-virtual {v0}, Lmbc;->k()V
-
-    invoke-virtual {p0}, Lps6;->m()V
-
-    :cond_1
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lps6;->b:Z
-
-    return-void
+    return-wide v1
 .end method

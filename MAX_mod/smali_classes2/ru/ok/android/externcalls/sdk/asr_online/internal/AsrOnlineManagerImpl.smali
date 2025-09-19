@@ -4,7 +4,7 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineManager;
-.implements Lh11;
+.implements Lv01;
 .implements Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManager;
 .implements Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutor;
 
@@ -17,22 +17,22 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/asr_online/internal/AsrOnlineManagerImpl;",
         "Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineManager;",
-        "Lh11;",
+        "Lv01;",
         "Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManager;",
         "Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutor;",
         "commandExecutor",
         "Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;",
         "listenerManager",
         "Lkotlin/Function0;",
-        "Lez0;",
+        "Lty0;",
         "getCall",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutor;Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;Lh96;)V",
-        "Lgt;",
+        "(Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutor;Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;Lzb6;)V",
+        "Lqs;",
         "asrRecvDataPackage",
-        "Lncf;",
+        "Lylf;",
         "onAsrDataPackage",
-        "(Lgt;)V",
+        "(Lqs;)V",
         "Lru/ok/android/externcalls/sdk/asr_online/listener/AsrOnlineListener;",
         "listener",
         "addAsrOnlineListener",
@@ -50,7 +50,7 @@
         "()Z",
         "Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutor;",
         "Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;",
-        "Lh96;",
+        "Lzb6;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -66,10 +66,10 @@
 # instance fields
 .field private final commandExecutor:Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutor;
 
-.field private final getCall:Lh96;
+.field private final getCall:Lzb6;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lh96;"
+            "Lzb6;"
         }
     .end annotation
 .end field
@@ -78,14 +78,14 @@
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutor;Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;Lh96;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutor;Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;Lzb6;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/asr_online/internal/commands/AsrOnlineCommandsExecutor;",
             "Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;",
-            "Lh96;",
+            "Lzb6;",
             ")V"
         }
     .end annotation
@@ -96,7 +96,7 @@
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/AsrOnlineManagerImpl;->listenerManager:Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;
 
-    iput-object p3, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/AsrOnlineManagerImpl;->getCall:Lh96;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/AsrOnlineManagerImpl;->getCall:Lzb6;
 
     return-void
 .end method
@@ -126,19 +126,19 @@
 .method public isAsrAvailable()Z
     .registers 2
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/AsrOnlineManagerImpl;->getCall:Lh96;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/AsrOnlineManagerImpl;->getCall:Lzb6;
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lez0;
+    check-cast p0, Lty0;
 
     if-eqz p0, :cond_0
 
-    sget-object v0, Ldz0;->Y:Ldz0;
+    sget-object v0, Lsy0;->Y:Lsy0;
 
-    iget-object p0, p0, Lez0;->o:Ljava/util/EnumSet;
+    iget-object p0, p0, Lty0;->o:Ljava/util/EnumSet;
 
     invoke-virtual {p0, v0}, Ljava/util/AbstractCollection;->contains(Ljava/lang/Object;)Z
 
@@ -166,12 +166,12 @@
     return-void
 .end method
 
-.method public onAsrDataPackage(Lgt;)V
+.method public onAsrDataPackage(Lqs;)V
     .registers 2
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/asr_online/internal/AsrOnlineManagerImpl;->listenerManager:Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;->onAsrDataPackage(Lgt;)V
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/asr_online/internal/listeners/AsrOnlineListenerManagerImpl;->onAsrDataPackage(Lqs;)V
 
     return-void
 .end method

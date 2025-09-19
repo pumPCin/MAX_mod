@@ -1,57 +1,46 @@
-.class public abstract Lfv5;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.class public final Lfv5;
+.super Ljx3;
 
-# interfaces
-.implements Ljava/lang/Iterable;
+
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Lmy2;
+
+.field public synthetic o:Ljava/lang/Object;
+
+
+# direct methods
+.method public constructor <init>(Lmy2;Lkotlin/coroutines/Continuation;)V
+    .registers 3
+
+    iput-object p1, p0, Lfv5;->Y:Lmy2;
+
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 4
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    iput-object p1, p0, Lfv5;->o:Ljava/lang/Object;
 
-    move-result-object p0
+    iget p1, p0, Lfv5;->X:I
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/high16 v0, -0x80000000
 
-    const-string v1, "["
+    or-int/2addr p1, v0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iput p1, p0, Lfv5;->X:I
 
-    const/4 v1, 0x1
+    iget-object p1, p0, Lfv5;->Y:Lmy2;
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v0, 0x0
 
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    if-nez v1, :cond_0
-
-    const-string v1, ", "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/4 v1, 0x0
-
-    goto :goto_0
-
-    :cond_1
-    const/16 p0, 0x5d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, v0, p0}, Lmy2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

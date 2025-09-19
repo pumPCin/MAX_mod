@@ -1,123 +1,118 @@
 .class public final Le72;
-.super Lc72;
+.super Ld72;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:C
+
+
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>(C)V
+    .registers 2
 
-    new-instance v0, Le72;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lc72;-><init>(CC)V
+    iput-char p1, p0, Le72;->a:C
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final a(C)Z
+    .registers 2
 
-    instance-of v0, p1, Le72;
+    iget-char p0, p0, Le72;->a:C
 
-    if-eqz v0, :cond_1
+    if-ne p1, p0, :cond_0
 
-    iget-char v0, p0, Lc72;->a:C
-
-    iget-char p0, p0, Lc72;->b:C
-
-    invoke-static {v0, p0}, Lj67;->i(II)I
-
-    move-result v1
-
-    if-lez v1, :cond_0
-
-    move-object v1, p1
-
-    check-cast v1, Le72;
-
-    iget-char v2, v1, Lc72;->a:C
-
-    iget-char v1, v1, Lc72;->b:C
-
-    invoke-static {v2, v1}, Lj67;->i(II)I
-
-    move-result v1
-
-    if-lez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    check-cast p1, Le72;
-
-    iget-char v1, p1, Lc72;->a:C
-
-    if-ne v0, v1, :cond_1
-
-    iget-char p1, p1, Lc72;->b:C
-
-    if-ne p0, p1, :cond_1
-
-    :goto_0
     const/4 p0, 0x1
 
     return p0
 
-    :cond_1
+    :cond_0
     const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final hashCode()I
-    .registers 3
-
-    iget-char v0, p0, Lc72;->a:C
-
-    iget-char p0, p0, Lc72;->b:C
-
-    invoke-static {v0, p0}, Lj67;->i(II)I
-
-    move-result v1
-
-    if-lez v1, :cond_0
-
-    const/4 p0, -0x1
-
-    return p0
-
-    :cond_0
-    mul-int/lit8 v0, v0, 0x1f
-
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .registers 8
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "CharMatcher.is(\'"
 
-    iget-char v1, p0, Lc72;->a:C
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/4 v1, 0x6
 
-    const-string v1, ".."
+    new-array v1, v1, [C
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/16 v2, 0x5c
 
-    iget-char p0, p0, Lc72;->b:C
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    aput-char v2, v1, v3
+
+    const/4 v2, 0x1
+
+    const/16 v4, 0x75
+
+    aput-char v4, v1, v2
+
+    const/4 v2, 0x2
+
+    aput-char v3, v1, v2
+
+    const/4 v2, 0x3
+
+    aput-char v3, v1, v2
+
+    const/4 v2, 0x4
+
+    aput-char v3, v1, v2
+
+    const/4 v4, 0x5
+
+    aput-char v3, v1, v4
+
+    iget-char p0, p0, Le72;->a:C
+
+    :goto_0
+    if-ge v3, v2, :cond_0
+
+    rsub-int/lit8 v4, v3, 0x5
+
+    and-int/lit8 v5, p0, 0xf
+
+    const-string v6, "0123456789ABCDEF"
+
+    invoke-virtual {v6, v5}, Ljava/lang/String;->charAt(I)C
+
+    move-result v5
+
+    aput-char v5, v1, v4
+
+    shr-int/2addr p0, v2
+
+    int-to-char p0, p0
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {v1}, Ljava/lang/String;->copyValueOf([C)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, "\')"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

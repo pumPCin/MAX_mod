@@ -1,69 +1,102 @@
 .class public final Lf6;
-.super Landroid/view/View;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic a:I
 
+.field public final synthetic b:Landroidx/appcompat/widget/ActionBarOverlayLayout;
+
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;I)V
+.method public synthetic constructor <init>(Landroidx/appcompat/widget/ActionBarOverlayLayout;I)V
     .registers 3
 
     iput p2, p0, Lf6;->a:I
 
-    invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    iput-object p1, p0, Lf6;->b:Landroidx/appcompat/widget/ActionBarOverlayLayout;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getWindowSystemUiVisibility()I
-    .registers 2
-
-    iget v0, p0, Lf6;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0}, Landroid/view/View;->getWindowSystemUiVisibility()I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+.method public final run()V
     .registers 3
 
     iget v0, p0, Lf6;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    iget-object p0, p0, Lf6;->b:Landroidx/appcompat/widget/ActionBarOverlayLayout;
 
-    move-result p0
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->b()V
 
-    return p0
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->o:Landroidx/appcompat/widget/ActionBarContainer;
+
+    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->o:Landroidx/appcompat/widget/ActionBarContainer;
+
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+
+    move-result v1
+
+    neg-int v1, v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->K0:Le6;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->J0:Landroid/view/ViewPropertyAnimator;
+
+    return-void
 
     :pswitch_0
-    const/4 p0, 0x1
+    iget-object p0, p0, Lf6;->b:Landroidx/appcompat/widget/ActionBarOverlayLayout;
 
-    return p0
+    invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->b()V
+
+    iget-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->o:Landroidx/appcompat/widget/ActionBarContainer;
+
+    invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->K0:Le6;
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroidx/appcompat/widget/ActionBarOverlayLayout;->J0:Landroid/view/ViewPropertyAnimator;
+
+    return-void
 
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x0
         :pswitch_0
     .end packed-switch
 .end method

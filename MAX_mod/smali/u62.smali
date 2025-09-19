@@ -1,317 +1,294 @@
 .class public final Lu62;
-.super Lqw6;
+.super Lkotlinx/coroutines/internal/Segment;
 .source "SourceFile"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lu62;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # instance fields
-.field public final X:[Ljava/lang/String;
+.field public final a:Lcu0;
 
-.field public final Y:[Lqw6;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Z
-
-.field public final o:Z
+.field public final synthetic b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Lu7;
-
-    const/16 v1, 0x14
-
-    invoke-direct {v0, v1}, Lu7;-><init>(I)V
-
-    sput-object v0, Lu62;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method public constructor <init>(JLu62;Lcu0;I)V
     .registers 6
 
-    const-string v0, "CTOC"
+    invoke-direct {p0, p1, p2, p3, p5}, Lkotlinx/coroutines/internal/Segment;-><init>(JLkotlinx/coroutines/internal/Segment;I)V
 
-    invoke-direct {p0, v0}, Lqw6;-><init>(Ljava/lang/String;)V
+    iput-object p4, p0, Lu62;->a:Lcu0;
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    move-result-object v0
+    sget p2, Leu0;->b:I
 
-    sget v1, Lyhf;->a:I
+    mul-int/lit8 p2, p2, 0x2
 
-    iput-object v0, p0, Lu62;->b:Ljava/lang/String;
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_0
-
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
-    iput-boolean v0, p0, Lu62;->c:Z
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    move v2, v1
-
-    :goto_1
-    iput-boolean v2, p0, Lu62;->o:Z
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lu62;->X:[Ljava/lang/String;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    new-array v2, v0, [Lqw6;
-
-    iput-object v2, p0, Lu62;->Y:[Lqw6;
-
-    :goto_2
-    if-ge v1, v0, :cond_2
-
-    iget-object v2, p0, Lu62;->Y:[Lqw6;
-
-    const-class v3, Lqw6;
-
-    invoke-virtual {v3}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
-
-    move-result-object v3
-
-    check-cast v3, Lqw6;
-
-    aput-object v3, v2, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_2
-
-    :cond_2
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;ZZ[Ljava/lang/String;[Lqw6;)V
-    .registers 7
-
-    const-string v0, "CTOC"
-
-    invoke-direct {p0, v0}, Lqw6;-><init>(Ljava/lang/String;)V
-
-    iput-object p1, p0, Lu62;->b:Ljava/lang/String;
-
-    iput-boolean p2, p0, Lu62;->c:Z
-
-    iput-boolean p3, p0, Lu62;->o:Z
-
-    iput-object p4, p0, Lu62;->X:[Ljava/lang/String;
-
-    iput-object p5, p0, Lu62;->Y:[Lqw6;
+    iput-object p1, p0, Lu62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final a(Ljava/lang/Object;ILjava/lang/Object;)Z
+    .registers 7
+
+    mul-int/lit8 p2, p2, 0x2
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
-
-    return v0
+    add-int/2addr p2, v0
 
     :cond_0
-    const/4 v1, 0x0
+    iget-object v1, p0, Lu62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    if-eqz p1, :cond_2
+    invoke-virtual {v1, p2, p1, p3}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->compareAndSet(ILjava/lang/Object;Ljava/lang/Object;)Z
 
-    const-class v2, Lu62;
+    move-result v2
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz v2, :cond_1
 
-    move-result-object v3
-
-    if-eq v2, v3, :cond_1
-
-    goto :goto_0
+    return v0
 
     :cond_1
-    check-cast p1, Lu62;
+    invoke-virtual {v1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
 
-    iget-boolean v2, p0, Lu62;->c:Z
+    move-result-object v1
 
-    iget-boolean v3, p1, Lu62;->c:Z
+    if-eq v1, p1, :cond_0
 
-    if-ne v2, v3, :cond_2
-
-    iget-boolean v2, p0, Lu62;->o:Z
-
-    iget-boolean v3, p1, Lu62;->o:Z
-
-    if-ne v2, v3, :cond_2
-
-    iget-object v2, p0, Lu62;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Lu62;->b:Ljava/lang/String;
-
-    invoke-static {v2, v3}, Lyhf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, p0, Lu62;->X:[Ljava/lang/String;
-
-    iget-object v3, p1, Lu62;->X:[Ljava/lang/String;
-
-    invoke-static {v2, v3}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object p0, p0, Lu62;->Y:[Lqw6;
-
-    iget-object p1, p1, Lu62;->Y:[Lqw6;
-
-    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    return v0
-
-    :cond_2
-    :goto_0
-    return v1
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    const/16 v0, 0x20f
-
-    iget-boolean v1, p0, Lu62;->c:Z
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v1, p0, Lu62;->o:Z
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lu62;->b:Ljava/lang/String;
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    goto :goto_0
-
-    :cond_0
     const/4 p0, 0x0
 
-    :goto_0
-    add-int/2addr v0, p0
-
-    return v0
+    return p0
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 6
+.method public final c(I)Ljava/lang/Object;
+    .registers 2
 
-    iget-object p2, p0, Lu62;->b:Ljava/lang/String;
+    mul-int/lit8 p1, p1, 0x2
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    add-int/lit8 p1, p1, 0x1
 
-    iget-boolean p2, p0, Lu62;->c:Z
+    iget-object p0, p0, Lu62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    int-to-byte p2, p2
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+    move-result-object p0
 
-    iget-boolean p2, p0, Lu62;->o:Z
+    return-object p0
+.end method
 
-    int-to-byte p2, p2
+.method public final d(IZ)V
+    .registers 7
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+    if-eqz p2, :cond_0
 
-    iget-object p2, p0, Lu62;->X:[Ljava/lang/String;
+    iget-wide v0, p0, Lkotlinx/coroutines/internal/Segment;->id:J
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
+    sget p2, Leu0;->b:I
 
-    iget-object p0, p0, Lu62;->Y:[Lqw6;
+    int-to-long v2, p2
 
-    array-length p2, p0
+    mul-long/2addr v0, v2
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    int-to-long p1, p1
 
-    array-length p2, p0
+    add-long/2addr v0, p1
 
-    const/4 v0, 0x0
+    iget-object p1, p0, Lu62;->a:Lcu0;
 
-    move v1, v0
+    invoke-virtual {p1, v0, v1}, Lcu0;->I(J)V
 
-    :goto_0
-    if-ge v1, p2, :cond_0
+    :cond_0
+    invoke-virtual {p0}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
 
-    aget-object v2, p0, v1
+    return-void
+.end method
 
-    invoke-virtual {p1, v2, v0}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+.method public final e(ILjava/lang/Object;)V
+    .registers 3
 
-    add-int/lit8 v1, v1, 0x1
+    mul-int/lit8 p1, p1, 0x2
+
+    iget-object p0, p0, Lu62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final f(ILjava/lang/Object;)V
+    .registers 3
+
+    mul-int/lit8 p1, p1, 0x2
+
+    add-int/lit8 p1, p1, 0x1
+
+    iget-object p0, p0, Lu62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final getNumberOfSlots()I
+    .registers 1
+
+    sget p0, Leu0;->b:I
+
+    return p0
+.end method
+
+.method public final onCancellation(ILjava/lang/Throwable;Lq04;)V
+    .registers 7
+
+    sget p2, Leu0;->b:I
+
+    if-lt p1, p2, :cond_0
+
+    const/4 p3, 0x1
 
     goto :goto_0
 
     :cond_0
+    const/4 p3, 0x0
+
+    :goto_0
+    if-eqz p3, :cond_1
+
+    sub-int/2addr p1, p2
+
+    :cond_1
+    mul-int/lit8 p2, p1, 0x2
+
+    iget-object v0, p0, Lu62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+
+    invoke-virtual {v0, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+
+    :cond_2
+    :goto_1
+    invoke-virtual {p0, p1}, Lu62;->c(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    instance-of v0, p2, Ljbg;
+
+    iget-object v1, p0, Lu62;->a:Lcu0;
+
+    const/4 v2, 0x0
+
+    if-nez v0, :cond_9
+
+    instance-of v0, p2, Lkbg;
+
+    if-eqz v0, :cond_3
+
+    goto :goto_3
+
+    :cond_3
+    sget-object v0, Leu0;->j:Lkotlinx/coroutines/internal/Symbol;
+
+    if-eq p2, v0, :cond_8
+
+    sget-object v0, Leu0;->k:Lkotlinx/coroutines/internal/Symbol;
+
+    if-ne p2, v0, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    sget-object v0, Leu0;->g:Lkotlinx/coroutines/internal/Symbol;
+
+    if-eq p2, v0, :cond_2
+
+    sget-object v0, Leu0;->f:Lkotlinx/coroutines/internal/Symbol;
+
+    if-ne p2, v0, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    sget-object p0, Leu0;->i:Lkotlinx/coroutines/internal/Symbol;
+
+    if-eq p2, p0, :cond_b
+
+    sget-object p0, Leu0;->d:Lkotlinx/coroutines/internal/Symbol;
+
+    if-ne p2, p0, :cond_6
+
+    goto :goto_5
+
+    :cond_6
+    sget-object p0, Leu0;->l:Lkotlinx/coroutines/internal/Symbol;
+
+    if-ne p2, p0, :cond_7
+
+    goto :goto_5
+
+    :cond_7
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string p3, "unexpected state: "
+
+    invoke-direct {p1, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_8
+    :goto_2
+    invoke-virtual {p0, p1, v2}, Lu62;->e(ILjava/lang/Object;)V
+
+    if-eqz p3, :cond_b
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    return-void
+
+    :cond_9
+    :goto_3
+    if-eqz p3, :cond_a
+
+    sget-object v0, Leu0;->j:Lkotlinx/coroutines/internal/Symbol;
+
+    goto :goto_4
+
+    :cond_a
+    sget-object v0, Leu0;->k:Lkotlinx/coroutines/internal/Symbol;
+
+    :goto_4
+    invoke-virtual {p0, p2, p1, v0}, Lu62;->a(Ljava/lang/Object;ILjava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_2
+
+    invoke-virtual {p0, p1, v2}, Lu62;->e(ILjava/lang/Object;)V
+
+    xor-int/lit8 p2, p3, 0x1
+
+    invoke-virtual {p0, p1, p2}, Lu62;->d(IZ)V
+
+    if-eqz p3, :cond_b
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    :cond_b
+    :goto_5
     return-void
 .end method

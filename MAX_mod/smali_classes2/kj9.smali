@@ -1,84 +1,52 @@
-.class public final Lkj9;
-.super Lfog;
+.class public abstract Lkj9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final d:J
+# static fields
+.field public static final a:F
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iput-wide p1, p0, Lkj9;->d:J
+    invoke-static {v0}, Lkj9;->a(F)V
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-static {v0}, Lkj9;->a(F)V
+
+    sput v0, Lkj9;->a:F
 
     return-void
 .end method
 
+.method public static a(F)V
+    .registers 2
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+    const/4 v0, 0x0
 
-    const/4 v0, 0x1
+    cmpg-float v0, v0, p0
 
-    if-ne p0, p1, :cond_0
+    if-gtz v0, :cond_0
 
-    return v0
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    cmpg-float p0, p0, v0
+
+    if-gtz p0, :cond_0
+
+    return-void
 
     :cond_0
-    instance-of v1, p1, Lkj9;
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const/4 v2, 0x0
+    const-string v0, "Gain must be in range of 0f and 1f"
 
-    if-nez v1, :cond_1
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    return v2
-
-    :cond_1
-    check-cast p1, Lkj9;
-
-    iget-wide v3, p0, Lkj9;->d:J
-
-    iget-wide p0, p1, Lkj9;->d:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    iget-wide v0, p0, Lkj9;->d:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 5
-
-    const-string v0, "AudioRecord(recordAudioId="
-
-    const-string v1, ")"
-
-    iget-wide v2, p0, Lkj9;->d:J
-
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    throw p0
 .end method

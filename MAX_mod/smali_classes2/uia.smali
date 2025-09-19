@@ -1,43 +1,115 @@
-.class public abstract Luia;
-.super Ljava/lang/Object;
+.class public final Luia;
+.super Lure;
 .source "SourceFile"
 
+# interfaces
+.implements Lpc6;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:I
+# instance fields
+.field public X:I
 
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:I
+.field public final synthetic Y:Lwia;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lwia;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    sget v0, Lf0c;->oneme_snackbar_caption_id:I
+    iput-object p1, p0, Luia;->Y:Lwia;
 
-    sput v0, Luia;->a:I
+    const/4 p1, 0x2
 
-    sget v0, Lf0c;->oneme_snackbar_container_id:I
-
-    sput v0, Luia;->b:I
-
-    sget v0, Lf0c;->oneme_snackbar_left_icon_id:I
-
-    sput v0, Luia;->c:I
-
-    sget v0, Lf0c;->oneme_snackbar_right_button_id:I
-
-    sput v0, Luia;->d:I
-
-    sget v0, Lf0c;->oneme_snackbar_title_id:I
-
-    sput v0, Luia;->e:I
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Ly04;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Luia;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Luia;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Luia;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Luia;
+
+    iget-object p0, p0, Luia;->Y:Lwia;
+
+    invoke-direct {p1, p0, p2}, Luia;-><init>(Lwia;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    iget v0, p0, Luia;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    return-object p1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Luia;->Y:Lwia;
+
+    iget-object p1, p1, Lwia;->c:Lzte;
+
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lsg9;
+
+    iput v1, p0, Luia;->X:I
+
+    invoke-virtual {p1, p0}, Lkd8;->d(Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    return-object p0
 .end method

@@ -14,7 +14,7 @@
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
         "initiator",
-        "Lbgc;",
+        "Lknc;",
         "type",
         "",
         "start",
@@ -23,13 +23,13 @@
         "externalMovieId",
         "externalOwnerId",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lbgc;JJLjava/lang/String;Ljava/lang/String;)V",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lknc;JJLjava/lang/String;Ljava/lang/String;)V",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "getInitiator",
         "()Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-        "Lbgc;",
+        "Lknc;",
         "getType",
-        "()Lbgc;",
+        "()Lknc;",
         "J",
         "getStart",
         "()J",
@@ -61,18 +61,18 @@
 
 .field private final start:J
 
-.field private final type:Lbgc;
+.field private final type:Lknc;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lbgc;JJLjava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lknc;JJLjava/lang/String;Ljava/lang/String;)V
     .registers 9
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->initiator:Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->type:Lbgc;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->type:Lknc;
 
     iput-wide p3, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->start:J
 
@@ -127,10 +127,10 @@
     return-wide v0
 .end method
 
-.method public final getType()Lbgc;
+.method public final getType()Lknc;
     .registers 1
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->type:Lbgc;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/record/RecordDescription;->type:Lknc;
 
     return-object p0
 .end method

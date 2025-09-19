@@ -1,174 +1,119 @@
 .class public final Loz8;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Cloneable;
+.implements Lpc6;
 
 
 # instance fields
-.field public X:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public a:Ljava/nio/charset/CodingErrorAction;
+.field public final synthetic Y:Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;
 
-.field public b:Ljava/nio/charset/CodingErrorAction;
 
-.field public c:I
+# direct methods
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;)V
+    .registers 3
 
-.field public o:I
+    iput-object p2, p0, Loz8;->Y:Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;
+
+    const/4 p2, 0x2
+
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final clone()Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Loz8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Loz8;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Loz8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
     new-instance v0, Loz8;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iget-object p0, p0, Loz8;->Y:Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;
 
-    sget-object v1, Ljava/nio/charset/CodingErrorAction;->REPLACE:Ljava/nio/charset/CodingErrorAction;
+    invoke-direct {v0, p2, p0}, Loz8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;)V
 
-    iput-object v1, v0, Loz8;->a:Ljava/nio/charset/CodingErrorAction;
-
-    iput-object v1, v0, Loz8;->b:Ljava/nio/charset/CodingErrorAction;
-
-    const v1, 0x7fffffff
-
-    iput v1, v0, Loz8;->c:I
-
-    const/16 v1, 0x2000
-
-    iput v1, v0, Loz8;->o:I
-
-    iput v1, v0, Loz8;->X:I
-
-    iget-object v1, p0, Loz8;->a:Ljava/nio/charset/CodingErrorAction;
-
-    iput-object v1, v0, Loz8;->a:Ljava/nio/charset/CodingErrorAction;
-
-    iget-object v1, p0, Loz8;->b:Ljava/nio/charset/CodingErrorAction;
-
-    iput-object v1, v0, Loz8;->b:Ljava/nio/charset/CodingErrorAction;
-
-    iget v1, p0, Loz8;->c:I
-
-    iput v1, v0, Loz8;->c:I
-
-    iget p0, p0, Loz8;->o:I
-
-    iput p0, v0, Loz8;->o:I
+    iput-object p1, v0, Loz8;->X:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    instance-of v0, p1, Loz8;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    if-nez v0, :cond_0
+    iget-object p1, p0, Loz8;->X:Ljava/lang/Object;
 
-    goto :goto_0
+    check-cast p1, Lys9;
 
-    :cond_0
-    check-cast p1, Loz8;
+    sget-object v0, Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;->a1:[Lxi7;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v0, p0, Loz8;->a:Ljava/nio/charset/CodingErrorAction;
-
-    iget-object v1, p1, Loz8;->a:Ljava/nio/charset/CodingErrorAction;
-
-    if-ne v0, v1, :cond_1
-
-    iget-object v0, p0, Loz8;->b:Ljava/nio/charset/CodingErrorAction;
-
-    iget-object v1, p1, Loz8;->b:Ljava/nio/charset/CodingErrorAction;
-
-    if-ne v0, v1, :cond_1
-
-    iget v0, p0, Loz8;->c:I
-
-    iget v1, p1, Loz8;->c:I
-
-    if-ne v0, v1, :cond_1
-
-    iget v0, p0, Loz8;->X:I
-
-    iget v1, p1, Loz8;->X:I
-
-    if-ne v0, v1, :cond_1
-
-    iget p0, p0, Loz8;->o:I
-
-    iget p1, p1, Loz8;->o:I
-
-    if-ne p0, p1, :cond_1
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget-object v0, p0, Loz8;->a:Ljava/nio/charset/CodingErrorAction;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
-    const/16 v2, 0x3e0
-
-    add-int/2addr v2, v0
-
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget-object v0, p0, Loz8;->b:Ljava/nio/charset/CodingErrorAction;
+    instance-of v0, p1, Lva4;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    const/4 v0, 0x1
 
-    move-result v1
+    iget-object p0, p0, Loz8;->Y:Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;
+
+    invoke-virtual {p0, v0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->E0(Z)V
+
+    new-instance v0, Llz8;
+
+    invoke-direct {v0, p0, p1}, Llz8;-><init>(Lone/me/messages/list/ui/contextmenu/MessageContextMenuBottomSheet;Lys9;)V
+
+    new-instance p1, Llr0;
+
+    invoke-direct {p1, p0, v0}, Llr0;-><init>(Lxx3;Lzb6;)V
+
+    invoke-virtual {p0}, Lxx3;->getRouter()Lrzc;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lxx3;->getRouter()Lrzc;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Lrzc;->a(Lby3;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Lm9;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, p0, v1, p1}, Lm9;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {p0, v0}, Lxx3;->addLifecycleListener(Lvx3;)V
 
     :cond_1
-    add-int/2addr v2, v1
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget v0, p0, Loz8;->c:I
-
-    add-int/2addr v2, v0
-
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget v0, p0, Loz8;->o:I
-
-    add-int/2addr v2, v0
-
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget p0, p0, Loz8;->X:I
-
-    add-int/2addr v2, p0
-
-    return v2
+    return-object p0
 .end method

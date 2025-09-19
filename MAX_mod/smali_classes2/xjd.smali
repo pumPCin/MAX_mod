@@ -1,82 +1,82 @@
-.class public final Lxjd;
-.super Lxie;
+.class public interface abstract Lxjd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
 
+# static fields
+.field public static final a:Lwr;
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public static final b:[Ljava/lang/String;
 
-.field public final synthetic Y:Lone/me/settings/SettingsListScreen;
+.field public static final c:[J
+
+.field public static final d:[I
 
 
 # direct methods
-.method public constructor <init>(Lone/me/settings/SettingsListScreen;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 7
 
-    iput-object p1, p0, Lxjd;->Y:Lone/me/settings/SettingsListScreen;
+    new-instance v0, Lwr;
 
-    const/4 p1, 0x2
+    const-string v5, "error.message.like.unknown.like"
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const-string v6, "error.message.like.unknown.reaction"
+
+    const-string v1, "error.comment.chat.access"
+
+    const-string v2, "error.comment.invalid"
+
+    const-string v3, "error.message.invalid"
+
+    const-string v4, "error.message.chat.access"
+
+    filled-new-array/range {v1 .. v6}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lwr;-><init>(Ljava/util/Collection;)V
+
+    sput-object v0, Lxjd;->a:Lwr;
+
+    const-string v0, "modifiers"
+
+    const-string v1, "accessFlags"
+
+    filled-new-array {v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lxjd;->b:[Ljava/lang/String;
+
+    const/4 v0, 0x3
+
+    new-array v1, v0, [J
+
+    fill-array-data v1, :array_0
+
+    sput-object v1, Lxjd;->c:[J
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x4
+
+    filled-new-array {v1, v0, v2}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lxjd;->d:[I
 
     return-void
-.end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Ljava/util/List;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lxjd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lxjd;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lxjd;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lxjd;
-
-    iget-object p0, p0, Lxjd;->Y:Lone/me/settings/SettingsListScreen;
-
-    invoke-direct {v0, p0, p2}, Lxjd;-><init>(Lone/me/settings/SettingsListScreen;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lxjd;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lxjd;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
-
-    iget-object p0, p0, Lxjd;->Y:Lone/me/settings/SettingsListScreen;
-
-    iget-object p0, p0, Lone/me/settings/SettingsListScreen;->u0:Lejd;
-
-    invoke-virtual {p0, p1}, Lhp7;->E(Ljava/util/List;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    :array_0
+    .array-data 8
+        0x3a98
+        0x2710
+        0x1388
+    .end array-data
 .end method

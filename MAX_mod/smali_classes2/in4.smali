@@ -1,145 +1,83 @@
-.class public final Lin4;
+.class public final synthetic Lin4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lvjd;
+
 
 # instance fields
-.field public final a:J
+.field public final synthetic e:I
 
-.field public final b:Lrv0;
+.field public final synthetic f:Ljava/lang/Object;
 
-.field public final c:Lvz2;
-
-.field public final d:Lgpd;
-
-.field public final e:Lkotlinx/coroutines/internal/ContextScope;
+.field public final synthetic g:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(JLrv0;Lzne;Lvz2;)V
-    .registers 6
+.method public synthetic constructor <init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    .registers 4
+
+    iput p2, p0, Lin4;->e:I
+
+    iput-object p1, p0, Lin4;->f:Ljava/lang/Object;
+
+    iput-object p3, p0, Lin4;->g:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lin4;->a:J
-
-    iput-object p3, p0, Lin4;->b:Lrv0;
-
-    iput-object p5, p0, Lin4;->c:Lvz2;
-
-    const/4 p1, 0x0
-
-    const/4 p2, 0x7
-
-    invoke-static {p1, p1, p2}, Lhpd;->b(III)Lgpd;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lin4;->d:Lgpd;
-
-    check-cast p4, Ltba;
-
-    invoke-virtual {p4}, Ltba;->c()Lm08;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lm08;->getImmediate()Lm08;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lin4;->e:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-virtual {p3, p0}, Lrv0;->d(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onEvent(Li13;)V
-    .registers 6
-    .annotation runtime Lpee;
-    .end annotation
+.method public final a()V
+    .registers 2
 
-    iget-object p1, p1, Li13;->b:Ljava/util/Collection;
+    iget v0, p0, Lin4;->e:I
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p1
+    iget-object v0, p0, Lin4;->f:Ljava/lang/Object;
 
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v0, Landroid/content/Context;
 
-    move-result v0
+    iget-object p0, p0, Lin4;->g:Ljava/lang/Object;
 
-    if-eqz v0, :cond_2
+    check-cast p0, Lqgb;
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v0, p0}, Ly30;->h(Landroid/content/Context;Lqgb;)V
 
-    move-result-object v0
+    return-void
 
-    check-cast v0, Ljava/lang/Number;
+    :pswitch_0
+    iget-object v0, p0, Lin4;->f:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
+    check-cast v0, Ljn4;
 
-    move-result-wide v0
+    iget-object p0, p0, Lin4;->g:Ljava/lang/Object;
 
-    iget-object v2, p0, Lin4;->c:Lvz2;
+    check-cast p0, Ljava/lang/ref/WeakReference;
 
-    check-cast v2, Lv03;
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
-    invoke-virtual {v2, v0, v1}, Lv03;->N(J)Ldbc;
+    move-result-object p0
 
-    move-result-object v0
+    check-cast p0, Ljn4;
 
-    iget-object v0, v0, Ldbc;->a:Lg4e;
+    if-eqz p0, :cond_0
 
-    invoke-interface {v0}, Lg4e;->getValue()Ljava/lang/Object;
+    iget-object p0, v0, Ljn4;->e:Lvtc;
 
-    move-result-object v0
-
-    check-cast v0, Lo72;
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
+    invoke-virtual {p0}, Lvtc;->reset()V
 
     :cond_0
-    invoke-virtual {v0}, Lo72;->l()Lmm3;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v0}, Lmm3;->n()J
-
-    move-result-wide v0
-
-    iget-wide v2, p0, Lin4;->a:J
-
-    cmp-long p1, v0, v2
-
-    if-nez p1, :cond_2
-
-    new-instance p1, Lhn4;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, p0, v0}, Lhn4;-><init>(Lin4;Lkotlin/coroutines/Continuation;)V
-
-    const/4 v1, 0x3
-
-    iget-object p0, p0, Lin4;->e:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p0, v0, v0, p1, v1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    :cond_2
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

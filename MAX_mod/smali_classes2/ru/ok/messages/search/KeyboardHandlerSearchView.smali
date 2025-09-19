@@ -1,10 +1,10 @@
 .class public Lru/ok/messages/search/KeyboardHandlerSearchView;
-.super Lf4d;
+.super Lmcd;
 .source "SourceFile"
 
 
 # instance fields
-.field private listener:Lhg7;
+.field private listener:Lmj7;
 
 
 # direct methods
@@ -13,7 +13,7 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lf4d;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, v0}, Lmcd;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     return-void
 .end method
@@ -21,7 +21,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 3
 
-    invoke-direct {p0, p1, p2}, Lf4d;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lmcd;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     return-void
 .end method
@@ -29,7 +29,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 4
 
-    invoke-direct {p0, p1, p2, p3}, Lf4d;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lmcd;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     return-void
 .end method
@@ -69,7 +69,7 @@
     return p0
 .end method
 
-.method public setListener(Lhg7;)V
+.method public setListener(Lmj7;)V
     .registers 2
 
     return-void

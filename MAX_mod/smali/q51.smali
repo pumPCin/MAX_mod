@@ -1,78 +1,36 @@
 .class public final Lq51;
-.super Ljava/lang/Object;
+.super Lrag;
 .source "SourceFile"
 
 # interfaces
-.implements Ls51;
+.implements Lr51;
 
 
-# instance fields
-.field public final a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:Lqte;
-
-.field public final f:Lqte;
+# static fields
+.field public static final c:Lq51;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
+.method static constructor <clinit>()V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lq51;
 
-    iput-object p1, p0, Lq51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    sget v1, Lmac;->call_screen_connection_restoring:I
 
-    sget p1, Ls9a;->L:I
+    const/4 v2, 0x0
 
-    iput p1, p0, Lq51;->b:I
+    invoke-direct {v0, v1, v2}, Lrag;-><init>(ILjava/lang/Long;)V
 
-    sget p1, Lr9a;->x0:I
-
-    iput p1, p0, Lq51;->c:I
-
-    sget p1, Lr9a;->K0:I
-
-    iput p1, p0, Lq51;->d:I
-
-    sget p1, Lv9a;->t2:I
-
-    new-instance v0, Lqte;
-
-    invoke-direct {v0, p1}, Lqte;-><init>(I)V
-
-    iput-object v0, p0, Lq51;->e:Lqte;
-
-    iput-object v0, p0, Lq51;->f:Lqte;
+    sput-object v0, Lq51;->c:Lq51;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .registers 1
-
-    iget p0, p0, Lq51;->c:I
-
-    return p0
-.end method
-
-.method public final b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-    .registers 1
-
-    iget-object p0, p0, Lq51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    return-object p0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .registers 3
 
     const/4 v0, 0x1
 
@@ -81,97 +39,30 @@
     return v0
 
     :cond_0
-    instance-of v1, p1, Lq51;
+    instance-of p0, p1, Lq51;
 
-    const/4 v2, 0x0
+    if-nez p0, :cond_1
 
-    if-nez v1, :cond_1
+    const/4 p0, 0x0
 
-    return v2
+    return p0
 
     :cond_1
-    check-cast p1, Lq51;
-
-    iget-object p0, p0, Lq51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    iget-object p1, p1, Lq51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
     return v0
-.end method
-
-.method public final getContentDescription()Lvte;
-    .registers 1
-
-    iget-object p0, p0, Lq51;->f:Lqte;
-
-    return-object p0
-.end method
-
-.method public final getIcon()I
-    .registers 1
-
-    iget p0, p0, Lq51;->d:I
-
-    return p0
-.end method
-
-.method public final getId()I
-    .registers 1
-
-    iget p0, p0, Lq51;->b:I
-
-    return p0
-.end method
-
-.method public final getTitle()Lvte;
-    .registers 1
-
-    iget-object p0, p0, Lq51;->e:Lqte;
-
-    return-object p0
 .end method
 
 .method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lq51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->hashCode()I
-
-    move-result p0
+    const p0, 0x9c8d45e
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .registers 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Unknown(device="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lq51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    const-string p0, "Restoring"
 
     return-object p0
 .end method

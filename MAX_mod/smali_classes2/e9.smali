@@ -1,92 +1,165 @@
 .class public final Le9;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:I
 
-.field public final synthetic Y:Lone/me/profile/screens/addmembers/AddChatMembersScreen;
+.field public final b:I
+
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/profile/screens/addmembers/AddChatMembersScreen;)V
-    .registers 3
+.method public constructor <init>(III)V
+    .registers 4
 
-    iput-object p2, p0, Le9;->Y:Lone/me/profile/screens/addmembers/AddChatMembersScreen;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
+    iput p1, p0, Le9;->a:I
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput p2, p0, Le9;->b:I
+
+    iput p3, p0, Le9;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Ljava/util/Set;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Le9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Le9;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Le9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 4
 
-    new-instance v0, Le9;
+    if-ne p0, p1, :cond_0
 
-    iget-object p0, p0, Le9;->Y:Lone/me/profile/screens/addmembers/AddChatMembersScreen;
+    goto :goto_1
 
-    invoke-direct {v0, p2, p0}, Le9;-><init>(Lkotlin/coroutines/Continuation;Lone/me/profile/screens/addmembers/AddChatMembersScreen;)V
+    :cond_0
+    instance-of v0, p1, Le9;
 
-    iput-object p1, v0, Le9;->X:Ljava/lang/Object;
+    if-nez v0, :cond_1
 
-    return-object v0
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Le9;
+
+    iget v0, p0, Le9;->a:I
+
+    iget v1, p1, Le9;->a:I
+
+    if-eq v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget v0, p0, Le9;->b:I
+
+    iget v1, p1, Le9;->b:I
+
+    if-eq v0, v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget p0, p0, Le9;->c:I
+
+    iget p1, p1, Le9;->c:I
+
+    if-eq p0, p1, :cond_4
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+.method public final hashCode()I
+    .registers 4
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget v0, p0, Le9;->a:I
 
-    iget-object p1, p0, Le9;->X:Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
-    check-cast p1, Ljava/util/Set;
+    move-result v0
 
-    invoke-static {p1}, Lj73;->I0(Ljava/util/Collection;)[J
+    const/16 v1, 0x1f
 
-    move-result-object p1
+    mul-int/2addr v0, v1
 
-    iget-object p0, p0, Le9;->Y:Lone/me/profile/screens/addmembers/AddChatMembersScreen;
+    iget v2, p0, Le9;->b:I
 
-    iget-object v0, p0, Lone/me/profile/screens/addmembers/AddChatMembersScreen;->r0:Lur;
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
 
-    sget-object v1, Lone/me/profile/screens/addmembers/AddChatMembersScreen;->u0:[Lsf7;
+    move-result v0
 
-    const/4 v2, 0x2
+    iget p0, p0, Le9;->c:I
 
-    aget-object v1, v1, v2
+    invoke-static {p0}, Lmw1;->t(I)I
 
-    invoke-virtual {v0, p0, p1}, Lur;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
+    move-result p0
 
-    sget-object p0, Lncf;->a:Lncf;
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    const-string v0, ", title="
+
+    const-string v1, ", type="
+
+    const-string v2, "AddAdminsTabState(id="
+
+    iget v3, p0, Le9;->a:I
+
+    iget v4, p0, Le9;->b:I
+
+    invoke-static {v2, v3, v0, v4, v1}, Lsg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    iget p0, p0, Le9;->c:I
+
+    if-eq p0, v1, :cond_1
+
+    const/4 v1, 0x2
+
+    if-eq p0, v1, :cond_0
+
+    const-string p0, "null"
+
+    goto :goto_0
+
+    :cond_0
+    const-string p0, "CONTACTS"
+
+    goto :goto_0
+
+    :cond_1
+    const-string p0, "CHAT_MEMBERS"
+
+    :goto_0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

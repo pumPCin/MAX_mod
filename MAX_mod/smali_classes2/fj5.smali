@@ -1,112 +1,107 @@
-.class public final synthetic Lfj5;
-.super Ljava/lang/Object;
+.class public final Lfj5;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lz5;
 
 
 # instance fields
-.field public final synthetic a:Lgj5;
+.field public A0:Ljava/lang/Object;
 
-.field public final synthetic b:Lw10;
+.field public B0:Ljava/util/Iterator;
 
-.field public final synthetic c:Z
+.field public C0:Lkj5;
 
-.field public final synthetic d:Lav8;
+.field public D0:Ljava/lang/Comparable;
+
+.field public E0:Ljava/lang/Object;
+
+.field public F0:Ljava/lang/Long;
+
+.field public G0:Ljava/lang/String;
+
+.field public H0:Z
+
+.field public I0:I
+
+.field public J0:I
+
+.field public K0:I
+
+.field public L0:J
+
+.field public M0:J
+
+.field public N0:J
+
+.field public O0:J
+
+.field public P0:J
+
+.field public synthetic Q0:Ljava/lang/Object;
+
+.field public final synthetic R0:Lij5;
+
+.field public S0:I
+
+.field public X:Lgj7;
+
+.field public Y:Ljava/lang/Object;
+
+.field public Z:Ljava/lang/Object;
+
+.field public o:Lij5;
+
+.field public r0:Ljava/util/Iterator;
+
+.field public s0:Ljava/lang/Long;
+
+.field public t0:Ljava/util/List;
+
+.field public u0:Ljava/util/ArrayList;
+
+.field public v0:Ljava/util/ArrayList;
+
+.field public w0:Ljava/lang/Object;
+
+.field public x0:Ljava/lang/Object;
+
+.field public y0:Ljava/lang/Object;
+
+.field public z0:Ljava/io/Serializable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgj5;Lw10;ZLav8;)V
-    .registers 5
+.method public constructor <init>(Lij5;Ljx3;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfj5;->R0:Lij5;
 
-    iput-object p1, p0, Lfj5;->a:Lgj5;
-
-    iput-object p2, p0, Lfj5;->b:Lw10;
-
-    iput-boolean p3, p0, Lfj5;->c:Z
-
-    iput-object p4, p0, Lfj5;->d:Lav8;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 5
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object v0, p0, Lfj5;->a:Lgj5;
+    iput-object p1, p0, Lfj5;->Q0:Ljava/lang/Object;
 
-    iget-object v1, v0, Lgj5;->c:Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;
+    iget p1, p0, Lfj5;->S0:I
 
-    invoke-virtual {v0}, Lgj5;->a()Z
+    const/high16 v0, -0x80000000
 
-    move-result v2
+    or-int/2addr p1, v0
 
-    if-nez v2, :cond_0
+    iput p1, p0, Lfj5;->S0:I
 
-    goto :goto_0
+    iget-object p1, p0, Lfj5;->R0:Lij5;
 
-    :cond_0
-    iget-object v2, v0, Lgj5;->g:Lan5;
+    const/4 v0, 0x0
 
-    iget-object v3, p0, Lfj5;->b:Lw10;
+    invoke-static {p1, v0, v0, p0}, Lij5;->W0(Lij5;Ljava/util/ArrayList;Lao9;Ljx3;)Ljava/io/Serializable;
 
-    invoke-virtual {v2, v3}, Lan5;->h(Lw10;)Ljava/io/File;
+    move-result-object p0
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    iget-boolean v2, p0, Lfj5;->c:Z
-
-    if-eqz v2, :cond_2
-
-    invoke-static {v3}, Lbv7;->E(Lw10;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    invoke-static {v3}, Lbv7;->G(Lw10;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    :cond_1
-    :goto_0
-    return-void
-
-    :cond_2
-    iget-object v2, v0, Lgj5;->a:Landroid/content/Context;
-
-    iget-object v0, v0, Lgj5;->b:Lune;
-
-    check-cast v0, Lb2d;
-
-    invoke-virtual {v0}, Lb2d;->n()Ltw8;
-
-    move-result-object v0
-
-    iget-object v1, v1, Lru/ok/messages/views/fragments/base/FrgBase;->k1:Ln9b;
-
-    iget-object v1, v1, Ln9b;->b:Ljava/lang/Object;
-
-    check-cast v1, Lme3;
-
-    check-cast v1, Ltaa;
-
-    invoke-virtual {v1}, Ltaa;->h()Lan5;
-
-    move-result-object v1
-
-    iget-object p0, p0, Lfj5;->d:Lav8;
-
-    invoke-static {v2, p0, v3, v0, v1}, Leh7;->E(Landroid/content/Context;Lav8;Lw10;Ltw8;Lan5;)V
-
-    return-void
+    return-object p0
 .end method

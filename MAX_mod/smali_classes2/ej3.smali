@@ -1,199 +1,189 @@
 .class public final Lej3;
-.super Ljava/lang/Object;
+.super Landroid/widget/EditText;
 .source "SourceFile"
+
+# interfaces
+.implements Lx3f;
+
+
+# static fields
+.field public static final b:Lmpc;
+
+.field public static final c:Ldj3;
 
 
 # instance fields
-.field public final a:Landroid/os/Bundle;
+.field public a:Z
 
 
 # direct methods
-.method public constructor <init>(Lvte;Landroid/os/Bundle;Lnyc;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lmpc;
 
-    new-instance v0, Landroid/os/Bundle;
+    const-string v1, "[0-9]*"
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {v0, v1}, Lmpc;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lej3;->a:Landroid/os/Bundle;
+    sput-object v0, Lej3;->b:Lmpc;
 
-    const-string p0, "title"
+    new-instance v0, Ldj3;
 
-    invoke-virtual {v0, p0, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    const/4 v1, 0x0
 
-    const-string p0, "payload"
+    invoke-direct {v0, v1}, Ldj3;-><init>(I)V
 
-    invoke-virtual {v0, p0, p2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+    sput-object v0, Lej3;->c:Ldj3;
 
-    if-eqz p3, :cond_0
-
-    const-string p0, "stat_screen"
-
-    invoke-virtual {p3}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p0, p1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final varargs a([Lgj3;)V
+.method public final onFocusChanged(ZILandroid/graphics/Rect;)V
     .registers 4
 
-    iget-object p0, p0, Lej3;->a:Landroid/os/Bundle;
-
-    const-string v0, "buttons"
-
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    :cond_0
-    invoke-static {v1, p1}, Lp73;->Z(Ljava/util/AbstractList;[Ljava/lang/Object;)V
-
-    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    return-void
-.end method
-
-.method public final b(ILvte;)V
-    .registers 8
-
-    iget-object p0, p0, Lej3;->a:Landroid/os/Bundle;
-
-    const-string v0, "buttons"
-
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    :cond_0
-    new-instance v2, Lgj3;
-
-    const/4 v3, 0x1
-
-    const/16 v4, 0x38
-
-    invoke-direct {v2, p1, p2, v3, v4}, Lgj3;-><init>(ILvte;II)V
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    return-void
-.end method
-
-.method public final c(ILvte;)V
-    .registers 8
-
-    iget-object p0, p0, Lej3;->a:Landroid/os/Bundle;
-
-    const-string v0, "buttons"
-
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    :cond_0
-    new-instance v2, Lgj3;
-
-    const/4 v3, 0x2
-
-    const/16 v4, 0x38
-
-    invoke-direct {v2, p1, p2, v3, v4}, Lgj3;-><init>(ILvte;II)V
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    return-void
-.end method
-
-.method public final d(ILvte;)V
-    .registers 8
-
-    iget-object p0, p0, Lej3;->a:Landroid/os/Bundle;
-
-    const-string v0, "buttons"
-
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    :cond_0
-    new-instance v2, Lgj3;
-
-    const/4 v3, 0x3
-
-    const/16 v4, 0x38
-
-    invoke-direct {v2, p1, p2, v3, v4}, Lgj3;-><init>(ILvte;II)V
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
-
-    return-void
-.end method
-
-.method public final e()Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
-    .registers 2
-
-    new-instance v0, Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
-
-    iget-object p0, p0, Lej3;->a:Landroid/os/Bundle;
-
-    invoke-direct {v0, p0}, Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;-><init>(Landroid/os/Bundle;)V
-
-    return-object v0
-.end method
-
-.method public final f(Lvte;)V
-    .registers 3
-
-    const-string v0, "description"
-
-    iget-object p0, p0, Lej3;->a:Landroid/os/Bundle;
+    invoke-super {p0, p1, p2, p3}, Landroid/view/View;->onFocusChanged(ZILandroid/graphics/Rect;)V
 
     if-nez p1, :cond_0
 
-    invoke-virtual {p0, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+    iget-boolean p1, p0, Lej3;->a:Z
+
+    if-eqz p1, :cond_0
+
+    const-wide/16 p1, 0x5dc
+
+    invoke-virtual {p0, p1, p2}, Landroid/view/View;->postInvalidateDelayed(J)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onThemeChanged(Lera;)V
+    .registers 4
+
+    sget-object v0, Lyu4;->t0:Lbx9;
+
+    invoke-virtual {v0, p0}, Lbx9;->l(Landroid/view/View;)Lera;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lera;->b()Lie0;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lie0;->a:Lhe0;
+
+    iget v0, v0, Lhe0;->i:I
+
+    new-instance v1, Landroid/graphics/drawable/ColorDrawable;
+
+    invoke-direct {v1, v0}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getTextCursorDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    instance-of v1, v0, Landroid/graphics/drawable/GradientDrawable;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Landroid/graphics/drawable/GradientDrawable;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Lera;->getText()Lh1f;
+
+    move-result-object v1
+
+    iget v1, v1, Lh1f;->j:I
+
+    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/GradientDrawable;->setColor(Landroid/content/res/ColorStateList;)V
+
+    :cond_1
+    invoke-interface {p1}, Lera;->getText()Lh1f;
+
+    move-result-object p1
+
+    iget p1, p1, Lh1f;->e:I
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+
+    return-void
+.end method
+
+.method public final setSecure(Z)V
+    .registers 2
+
+    iput-boolean p1, p0, Lej3;->a:Z
+
+    if-eqz p1, :cond_0
+
+    invoke-static {}, Landroid/text/method/PasswordTransformationMethod;->getInstance()Landroid/text/method/PasswordTransformationMethod;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
+
+    const p1, 0x80012
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setInputType(I)V
+
+    invoke-static {}, Landroid/text/method/PasswordTransformationMethod;->getInstance()Landroid/text/method/PasswordTransformationMethod;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+
+    invoke-static {}, Landroid/text/method/PasswordTransformationMethod;->getInstance()Landroid/text/method/PasswordTransformationMethod;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     return-void
 
     :cond_0
-    invoke-virtual {p0, v0, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    invoke-static {}, Landroid/text/method/PasswordTransformationMethod;->getInstance()Landroid/text/method/PasswordTransformationMethod;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+
+    invoke-static {}, Landroid/text/method/SingleLineTransformationMethod;->getInstance()Landroid/text/method/SingleLineTransformationMethod;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
+
+    const/4 p1, 0x2
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setInputType(I)V
+
+    return-void
+.end method
+
+.method public final setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+    .registers 4
+
+    iget-boolean v0, p0, Lej3;->a:Z
+
+    invoke-virtual {p0, v0}, Lej3;->setSecure(Z)V
+
+    invoke-super {p0, p1, p2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
     return-void
 .end method

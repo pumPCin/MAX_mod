@@ -17,7 +17,7 @@
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {}, Lrn4;->b()Lrn4;
+    invoke-static {}, Lro4;->b()Lro4;
 
     move-result-object p1
 
@@ -39,9 +39,9 @@
 
     move-result-object v1
 
-    sget v2, Lrsc;->d:I
+    sget v2, Ly0d;->d:I
 
-    invoke-static {v1, v2}, Lgw3;->a(Landroid/content/Context;I)I
+    invoke-static {v1, v2}, Lmw3;->a(Landroid/content/Context;I)I
 
     move-result v1
 
@@ -61,7 +61,7 @@
 
     invoke-direct {v0, v1, v2}, Landroidx/appcompat/widget/AppCompatImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget v1, Ltsc;->i0:I
+    sget v1, La1d;->v0:I
 
     invoke-virtual {v0, v1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageResource(I)V
 
@@ -93,7 +93,7 @@
 
     iget-object p2, p0, Lru/ok/messages/views/widgets/BlockedAttachView;->a:Landroidx/appcompat/widget/AppCompatTextView;
 
-    iget v0, p1, Lrn4;->G:F
+    iget v0, p1, Lro4;->F:F
 
     const/4 v1, 0x0
 
@@ -105,7 +105,7 @@
 
     move-result-object v0
 
-    sget v2, Lwsc;->W:I
+    sget v2, Ld1d;->Z:I
 
     invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -119,7 +119,7 @@
 
     iget-object p2, p0, Lru/ok/messages/views/widgets/BlockedAttachView;->a:Landroidx/appcompat/widget/AppCompatTextView;
 
-    iget p1, p1, Lrn4;->i:I
+    iget p1, p1, Lro4;->i:I
 
     invoke-virtual {p2, v1, p1, v1, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 

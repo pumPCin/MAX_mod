@@ -1,89 +1,73 @@
-.class public final synthetic Lbja;
+.class public abstract Lbja;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final synthetic a:I
+.field public static final b:I
 
-.field public final synthetic b:Lija;
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lija;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p2, p0, Lbja;->a:I
+    sget v0, Ld4c;->add_8:I
 
-    iput-object p1, p0, Lbja;->b:Lija;
+    sput v0, Lbja;->a:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Ld4c;->apple_outline_24:I
 
-    return-void
-.end method
+    sput v0, Lbja;->b:I
 
+    sget v0, Ld4c;->ball_outline_24:I
 
-# virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 2
+    sput v0, Lbja;->c:I
 
-    iget p1, p0, Lbja;->a:I
+    sget v0, Ld4c;->car_outline_24:I
 
-    packed-switch p1, :pswitch_data_0
+    sput v0, Lbja;->d:I
 
-    iget-object p0, p0, Lbja;->b:Lija;
+    sget v0, Ld4c;->fire_24:I
 
-    iget-object p0, p0, Lija;->x0:Ljava/lang/Object;
+    sput v0, Lbja;->e:I
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    sget v0, Ld4c;->flags_outline_24:I
 
-    move-result-object p0
+    sput v0, Lbja;->f:I
 
-    check-cast p0, Landroidx/appcompat/widget/AppCompatEditText;
+    sget v0, Ld4c;->lamp_outline_24:I
 
-    const/4 p1, 0x0
+    sput v0, Lbja;->g:I
 
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    sget v0, Ld4c;->paw_outline_24:I
 
-    return-void
+    sput v0, Lbja;->h:I
 
-    :pswitch_0
-    iget-object p0, p0, Lbja;->b:Lija;
+    sget v0, Ld4c;->remove_outline_24:I
 
-    invoke-virtual {p0}, Lija;->d()V
+    sput v0, Lbja;->i:I
 
-    return-void
+    sget v0, Ld4c;->symbols_outline_24:I
 
-    :pswitch_1
-    iget-object p0, p0, Lbja;->b:Lija;
-
-    invoke-virtual {p0}, Lija;->b()V
-
-    iget-object p0, p0, Lija;->p0:Lfja;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Lfja;->p()V
-
-    :cond_0
-    return-void
-
-    :pswitch_2
-    iget-object p0, p0, Lbja;->b:Lija;
-
-    invoke-virtual {p0}, Lija;->d()V
+    sput v0, Lbja;->j:I
 
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

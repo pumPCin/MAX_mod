@@ -1,222 +1,133 @@
-.class public final Lfna;
+.class public abstract Lfna;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lhna;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final a:I
+.field public static final b:I
 
-.field public final b:I
+.field public static final c:I
 
-.field public final c:F
+.field public static final d:I
 
-.field public final d:I
+.field public static final e:I
 
-.field public final e:Lj96;
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
+.field public static final s:I
+
+.field public static final t:I
 
 
 # direct methods
-.method public constructor <init>(ILj96;I)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 1
 
-    sget v0, Laia;->R:I
+    sget v0, Lobc;->audio_record_active_call_error_snackbar_title:I
 
-    and-int/lit8 p3, p3, 0x8
+    sput v0, Lfna;->a:I
 
-    if-eqz p3, :cond_0
+    sget v0, Lobc;->audio_record_confirm_exit_accept:I
 
-    sget v0, Laia;->P:I
+    sput v0, Lfna;->b:I
 
-    :cond_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lobc;->audio_record_confirm_exit_description:I
 
-    iput p1, p0, Lfna;->a:I
+    sput v0, Lfna;->c:I
 
-    const/4 p1, 0x4
+    sget v0, Lobc;->audio_record_confirm_exit_title:I
 
-    iput p1, p0, Lfna;->b:I
+    sput v0, Lfna;->d:I
 
-    const/high16 p1, 0x41400000    # 12.0f
+    sget v0, Lobc;->audio_record_error_common:I
 
-    iput p1, p0, Lfna;->c:F
+    sput v0, Lfna;->e:I
 
-    iput v0, p0, Lfna;->d:I
+    sget v0, Lobc;->audio_record_error_limit:I
 
-    iput-object p2, p0, Lfna;->e:Lj96;
+    sput v0, Lfna;->f:I
+
+    sget v0, Lobc;->audio_record_hold_to_start:I
+
+    sput v0, Lfna;->g:I
+
+    sget v0, Lobc;->channel_input_hint:I
+
+    sput v0, Lfna;->h:I
+
+    sget v0, Lobc;->chat_input_hint:I
+
+    sput v0, Lfna;->i:I
+
+    sget v0, Lobc;->messagewrite_edit_quote_title:I
+
+    sput v0, Lfna;->j:I
+
+    sget v0, Lobc;->reply_quote_self:I
+
+    sput v0, Lfna;->k:I
+
+    sget v0, Lobc;->reply_quote_to_somebody:I
+
+    sput v0, Lfna;->l:I
+
+    sget v0, Lobc;->video_message_record_error_common:I
+
+    sput v0, Lfna;->m:I
+
+    sget v0, Lobc;->video_message_record_error_no_camera:I
+
+    sput v0, Lfna;->n:I
+
+    sget v0, Lobc;->video_record_active_call_error_snackbar_title:I
+
+    sput v0, Lfna;->o:I
+
+    sget v0, Lobc;->writebar__add_link_button:I
+
+    sput v0, Lfna;->p:I
+
+    sget v0, Lobc;->writebar__add_link_title:I
+
+    sput v0, Lfna;->q:I
+
+    sget v0, Lobc;->writebar_commands_not_found:I
+
+    sput v0, Lfna;->r:I
+
+    sget v0, Lobc;->writebar_mentions_not_found:I
+
+    sput v0, Lfna;->s:I
+
+    sget v0, Lobc;->writebar_mentions_title:I
+
+    sput v0, Lfna;->t:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Lfna;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lfna;
-
-    iget v0, p0, Lfna;->a:I
-
-    iget v1, p1, Lfna;->a:I
-
-    if-eq v0, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget v0, p0, Lfna;->b:I
-
-    iget v1, p1, Lfna;->b:I
-
-    if-eq v0, v1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget v0, p0, Lfna;->c:F
-
-    iget v1, p1, Lfna;->c:F
-
-    invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    iget v0, p0, Lfna;->d:I
-
-    iget v1, p1, Lfna;->d:I
-
-    if-eq v0, v1, :cond_5
-
-    goto :goto_0
-
-    :cond_5
-    iget-object p0, p0, Lfna;->e:Lj96;
-
-    iget-object p1, p1, Lfna;->e:Lj96;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_6
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_6
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget v0, p0, Lfna;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lfna;->b:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lfna;->c:F
-
-    invoke-static {v0, v2, v1}, Lex3;->c(IFI)I
-
-    move-result v0
-
-    iget v2, p0, Lfna;->d:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget-object p0, p0, Lfna;->e:Lj96;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    const-string v0, ", padding="
-
-    const-string v1, ", cornersRadius="
-
-    const-string v2, "CustomIcon(iconRes="
-
-    iget v3, p0, Lfna;->a:I
-
-    iget v4, p0, Lfna;->b:I
-
-    invoke-static {v2, v3, v0, v4, v1}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lfna;->c:F
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v1, ", iconColor="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lfna;->d:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", onClick="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lfna;->e:Lj96;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

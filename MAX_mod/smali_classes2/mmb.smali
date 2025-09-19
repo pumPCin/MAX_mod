@@ -1,284 +1,145 @@
 .class public final Lmmb;
-.super Ls2;
+.super Lure;
 .source "SourceFile"
 
+# interfaces
+.implements Lpc6;
 
-# static fields
-.field public static final c:Lmmb;
+
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/settings/twofa/restore/ProfileDeletionInfoScreen;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/settings/twofa/restore/ProfileDeletionInfoScreen;)V
+    .registers 3
 
-    new-instance v0, Lmmb;
+    iput-object p2, p0, Lmmb;->Y:Lone/me/settings/twofa/restore/ProfileDeletionInfoScreen;
 
-    const/16 v1, 0x8
+    const/4 p2, 0x2
 
-    invoke-direct {v0, v1}, Ls2;-><init>(I)V
-
-    sput-object v0, Lmmb;->c:Lmmb;
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
-.end method
-
-.method public static W0(JJ)Laa4;
-    .registers 6
-
-    const-string v0, ":profile/edit/admin_permission?chat_id="
-
-    const-string v1, "&contact_id="
-
-    invoke-static {p0, p1, v0, v1}, Lew1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object p0
-
-    const-string p1, "&permissions_type=change_admin"
-
-    invoke-static {p0, p2, p3, p1}, La78;->n(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Laa4;
-
-    invoke-direct {p1, p0}, Laa4;-><init>(Ljava/lang/String;)V
-
-    return-object p1
-.end method
-
-.method public static a1(JLjava/lang/String;IZ)Laa4;
-    .registers 7
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, ":invite/qr?height="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p3, "&id="
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p0, "&type="
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, "&is_for_chat_bot="
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Laa4;
-
-    invoke-direct {p1, p0}, Laa4;-><init>(Ljava/lang/String;)V
-
-    return-object p1
 .end method
 
 
 # virtual methods
-.method public final U0(JZ)V
-    .registers 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lmmb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast p0, Lmmb;
 
-    const-string v1, ":profile/add-members?chat_id="
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lmmb;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p1, "&is_chat="
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    return-void
+    return-object p1
 .end method
 
-.method public final V0(J)V
-    .registers 5
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
+    new-instance v0, Lmmb;
 
-    move-result-object p0
+    iget-object p0, p0, Lmmb;->Y:Lone/me/settings/twofa/restore/ProfileDeletionInfoScreen;
 
-    const-string v0, ":chats?id="
+    invoke-direct {v0, p2, p0}, Lmmb;-><init>(Lkotlin/coroutines/Continuation;Lone/me/settings/twofa/restore/ProfileDeletionInfoScreen;)V
 
-    const-string v1, "&type=local"
+    iput-object p1, v0, Lmmb;->X:Ljava/lang/Object;
 
-    invoke-static {p1, p2, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    return-void
+    return-object v0
 .end method
 
-.method public final X0(J)V
-    .registers 5
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 7
 
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    move-result-object p0
+    iget-object p1, p0, Lmmb;->X:Ljava/lang/Object;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast p1, Loif;
 
-    const-string v1, ":profile/invite?id="
+    iget-object p0, p0, Lmmb;->Y:Lone/me/settings/twofa/restore/ProfileDeletionInfoScreen;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v0, p0, Lone/me/settings/twofa/restore/ProfileDeletionInfoScreen;->X:Lcic;
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    sget-object v1, Lone/me/settings/twofa/restore/ProfileDeletionInfoScreen;->Y:[Lxi7;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    instance-of v1, p1, Lmif;
 
-    move-result-object p1
+    const/4 v2, 0x1
 
-    const/4 p2, 0x0
+    if-eqz v1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+    new-instance v1, Lqoa;
 
-    return-void
-.end method
+    invoke-direct {v1, p0}, Lqoa;-><init>(Lone/me/sdk/arch/Widget;)V
 
-.method public final Y0(JLjava/lang/String;)V
-    .registers 6
+    new-instance v3, Lepa;
 
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
+    check-cast p1, Lmif;
 
-    move-result-object p0
+    iget v4, p1, Lmif;->b:I
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {v3, v4}, Lepa;-><init>(I)V
 
-    const-string v1, ":profile/members?id="
+    invoke-virtual {v1, v3}, Lqoa;->e(Ljpa;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object p1, p1, Lmif;->a:Lu2f;
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Lqoa;->g(Lu2f;)V
 
-    const-string p1, "&type="
+    invoke-virtual {v1}, Lqoa;->i()Lpoa;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object p1, Lone/me/settings/twofa/restore/ProfileDeletionInfoScreen;->Y:[Lxi7;
 
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aget-object p1, p1, v2
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    return-void
-.end method
-
-.method public final Z0(J)V
-    .registers 5
-
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
+    invoke-interface {v0, p0, p1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
     move-result-object p0
 
-    new-instance v0, Lda4;
+    check-cast p0, Lone/me/sdk/uikit/common/button/OneMeButton;
 
-    invoke-direct {v0}, Lda4;-><init>()V
+    const/4 p1, 0x0
 
-    const-string v1, ":profile"
+    invoke-virtual {p0, p1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setProgressEnabled(Z)V
 
-    iput-object v1, v0, Lda4;->a:Ljava/lang/String;
-
-    const-string v1, "id"
-
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1, v1}, Lda4;->c(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string p1, "type"
-
-    const-string p2, "contact"
-
-    invoke-virtual {v0, p2, p1}, Lda4;->c(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Lda4;->a()Landroid/net/Uri;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Lea4;->c(Landroid/net/Uri;Landroid/os/Bundle;)Z
-
-    return-void
-.end method
-
-.method public final b1()V
-    .registers 2
-
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lea4;->d()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lea4;->a()Lv94;
-
-    move-result-object p0
-
-    check-cast p0, Leca;
-
-    invoke-virtual {p0}, Leca;->f()Lrrc;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Lrrc;->H()Llrc;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Llrc;->d()Landroid/app/Activity;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+    goto :goto_0
 
     :cond_0
-    return-void
+    instance-of v1, p1, Lnif;
+
+    if-eqz v1, :cond_1
+
+    sget-object v1, Lone/me/settings/twofa/restore/ProfileDeletionInfoScreen;->Y:[Lxi7;
+
+    aget-object v1, v1, v2
+
+    invoke-interface {v0, p0, v1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lone/me/sdk/uikit/common/button/OneMeButton;
+
+    check-cast p1, Lnif;
+
+    iget-boolean p1, p1, Lnif;->a:Z
+
+    invoke-virtual {p0, p1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setProgressEnabled(Z)V
+
+    :cond_1
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

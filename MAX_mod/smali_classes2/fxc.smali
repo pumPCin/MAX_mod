@@ -1,207 +1,169 @@
-.class public final Lfxc;
-.super Lxie;
+.class public abstract Lfxc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ljava/io/Closeable;
 
 
 # instance fields
-.field public synthetic X:Z
+.field public final a:Landroid/content/Context;
 
-.field public final synthetic Y:Landroid/view/View;
+.field public final b:Lkha;
 
-.field public final synthetic Z:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
+.field public final c:[Ljava/lang/Object;
+
+.field public final o:Lzte;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Landroid/content/Context;Lkha;[Ljava/lang/Object;)V
     .registers 4
 
-    iput-object p1, p0, Lfxc;->Y:Landroid/view/View;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lfxc;->Z:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
+    iput-object p1, p0, Lfxc;->a:Landroid/content/Context;
 
-    const/4 p1, 0x2
+    iput-object p2, p0, Lfxc;->b:Lkha;
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p3, p0, Lfxc;->c:[Ljava/lang/Object;
+
+    new-instance p1, Lkra;
+
+    const/16 p2, 0x1a
+
+    invoke-direct {p1, p2, p0}, Lkra;-><init>(ILjava/lang/Object;)V
+
+    new-instance p2, Lzte;
+
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
+
+    iput-object p2, p0, Lfxc;->o:Lzte;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final close()V
+    .registers 4
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, p0, Lfxc;->o:Lzte;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Lzte;->a()Z
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    move-result v0
 
-    invoke-virtual {p0, p1, p2}, Lfxc;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    if-eqz v0, :cond_2
+
+    iget-object p0, p0, Lfxc;->o:Lzte;
+
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lfxc;
+    check-cast p0, Lexc;
 
-    sget-object p1, Lncf;->a:Lncf;
+    iget-object v0, p0, Lexc;->a:Lda6;
 
-    invoke-virtual {p0, p1}, Lfxc;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    return-object p1
-.end method
+    if-eqz v0, :cond_0
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    iget-object v0, v0, Lda6;->a:Landroid/database/sqlite/SQLiteDatabase;
 
-    new-instance v0, Lfxc;
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->isOpen()Z
 
-    iget-object v1, p0, Lfxc;->Y:Landroid/view/View;
+    move-result v0
 
-    iget-object p0, p0, Lfxc;->Z:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-direct {v0, v1, p0, p2}, Lfxc;-><init>(Landroid/view/View;Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;Lkotlin/coroutines/Continuation;)V
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-
-    iput-boolean p0, v0, Lfxc;->X:Z
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-boolean p1, p0, Lfxc;->X:Z
-
-    iget-object v0, p0, Lfxc;->Y:Landroid/view/View;
-
-    instance-of v1, v0, Landroid/view/ViewGroup;
-
-    sget-object v2, Lncf;->a:Lncf;
-
-    if-nez v1, :cond_0
-
-    return-object v2
-
-    :cond_0
-    check-cast v0, Landroid/view/ViewGroup;
-
-    invoke-static {v0}, Lg5f;->b(Landroid/view/ViewGroup;)V
-
-    new-instance v1, Lxd5;
-
-    if-eqz p1, :cond_1
-
-    const/4 v3, 0x2
+    move-result-object v0
 
     goto :goto_0
 
-    :cond_1
-    const/4 v3, 0x1
+    :cond_0
+    move-object v0, v1
 
     :goto_0
-    invoke-direct {v1, v3}, Lxd5;-><init>(I)V
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    iget-object p0, p0, Lfxc;->Z:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
+    invoke-static {v0, v2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->I0()Landroid/content/Context;
+    move-result v0
 
-    move-result-object v3
+    if-eqz v0, :cond_2
 
-    invoke-virtual {v3}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    iget-object v0, p0, Lexc;->i:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
-    move-result-object v3
-
-    check-cast v3, Lng;
-
-    check-cast v3, Lol;
-
-    iget-object v3, v3, Lol;->c:Ldle;
-
-    invoke-virtual {v3}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lme3;
-
-    check-cast v3, Ltaa;
-
-    invoke-virtual {v3}, Ltaa;->c()Lmg;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lmg;->a:Ltj4;
-
-    const-wide/16 v3, 0x96
-
-    iput-wide v3, v1, La5f;->c:J
-
-    invoke-static {v0, v1}, Lg5f;->a(Landroid/view/ViewGroup;La5f;)V
-
-    invoke-virtual {p0}, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;->a1()Ldxc;
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ldxc;->c()Lru/ok/utils/widgets/LongRoundedTitleSubtitleButton;
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    move-result-object v1
+    :try_start_0
+    iget-object v2, p0, Lexc;->e:Lob7;
 
-    if-eqz p1, :cond_2
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    iget-object p0, p0, Lexc;->d:Lnqe;
+
+    if-nez p0, :cond_1
 
     goto :goto_1
 
-    :cond_2
-    const v3, 0x3e99999a    # 0.3f
+    :cond_1
+    move-object v1, p0
 
     :goto_1
-    invoke-virtual {v1, v3}, Landroid/view/View;->setAlpha(F)V
+    invoke-interface {v1}, Ljava/io/Closeable;->close()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0}, Ldxc;->c()Lru/ok/utils/widgets/LongRoundedTitleSubtitleButton;
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    move-result-object v0
+    return-void
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
+    :catchall_0
+    move-exception p0
 
-    invoke-virtual {p0}, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;->a1()Ldxc;
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    throw p0
+
+    :cond_2
+    return-void
+.end method
+
+.method public final m()Lexc;
+    .registers 1
+
+    iget-object p0, p0, Lfxc;->o:Lzte;
+
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    iget-object v0, p0, Ldxc;->n0:Lwz4;
+    check-cast p0, Lexc;
 
-    sget-object v1, Ldxc;->o0:[Lsf7;
+    return-object p0
+.end method
 
-    const/4 v3, 0x5
+.method public final n()Ls7a;
+    .registers 3
 
-    aget-object v1, v1, v3
+    new-instance v0, Lo5;
 
-    invoke-virtual {v0, p0, v1}, Lwz4;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
+    const/16 v1, 0xd
 
-    move-result-object p0
+    invoke-direct {v0, v1, p0}, Lo5;-><init>(ILjava/lang/Object;)V
 
-    check-cast p0, Landroidx/appcompat/widget/AppCompatTextView;
+    new-instance p0, Ls7a;
 
-    if-nez p1, :cond_3
+    const/4 v1, 0x4
 
-    const/4 p1, 0x0
+    invoke-direct {p0, v1, v0}, Ls7a;-><init>(ILjava/lang/Object;)V
 
-    goto :goto_2
-
-    :cond_3
-    const/16 p1, 0x8
-
-    :goto_2
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
-
-    return-object v2
+    return-object p0
 .end method

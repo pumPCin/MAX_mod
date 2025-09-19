@@ -1,174 +1,101 @@
-.class public final Llq5;
-.super Ljava/lang/Object;
+.class public final enum Llq5;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lhq5;
 
+# static fields
+.field public static final synthetic X:Ly75;
 
-# instance fields
-.field public final synthetic a:I
+.field public static final enum a:Llq5;
 
-.field public final synthetic b:Llcb;
+.field public static final enum b:Llq5;
+
+.field public static final enum c:Llq5;
+
+.field public static final synthetic o:[Llq5;
 
 
 # direct methods
-.method public synthetic constructor <init>(Llcb;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 6
 
-    iput p2, p0, Llq5;->a:I
+    new-instance v0, Llq5;
 
-    iput-object p1, p0, Llq5;->b:Llcb;
+    const-string v1, "FIT_XY"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v1, Llq5;
+
+    const-string v2, "FILL"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Llq5;->a:Llq5;
+
+    new-instance v2, Llq5;
+
+    const-string v3, "CENTER_INSIDE"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Llq5;->b:Llq5;
+
+    new-instance v3, Llq5;
+
+    const-string v4, "CENTER"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Llq5;->c:Llq5;
+
+    filled-new-array {v0, v1, v2, v3}, [Llq5;
+
+    move-result-object v0
+
+    sput-object v0, Llq5;->o:[Llq5;
+
+    new-instance v1, Ly75;
+
+    invoke-direct {v1, v0}, Ly75;-><init>([Ljava/lang/Enum;)V
+
+    sput-object v1, Llq5;->X:Ly75;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Llq5;
+    .registers 2
 
-# virtual methods
-.method public final a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    const-class v0, Llq5;
 
-    iget v0, p0, Llq5;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    instance-of v0, p2, Lir5;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p2
-
-    check-cast v0, Lir5;
-
-    iget v1, v0, Lir5;->Y:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lir5;->Y:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lir5;
-
-    invoke-direct {v0, p0, p2}, Lir5;-><init>(Llq5;Lkotlin/coroutines/Continuation;)V
-
-    :goto_0
-    iget-object p2, v0, Lir5;->o:Ljava/lang/Object;
-
-    iget v1, v0, Lir5;->Y:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_2
-
-    if-ne v1, v2, :cond_1
-
-    invoke-static {p2}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    invoke-static {p2}, Lg53;->F(Ljava/lang/Object;)V
-
-    if-nez p1, :cond_3
-
-    sget-object p1, Lh0a;->a:Lkotlinx/coroutines/internal/Symbol;
-
-    :cond_3
-    iput v2, v0, Lir5;->Y:I
-
-    iget-object p0, p0, Llq5;->b:Llcb;
-
-    check-cast p0, Licb;
-
-    iget-object p0, p0, Licb;->a:Lou0;
-
-    invoke-interface {p0, p1, v0}, Lb9d;->h(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
+    check-cast p0, Llq5;
 
-    if-ne p0, p1, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    :goto_1
-    sget-object p1, Lncf;->a:Lncf;
-
-    :goto_2
-    return-object p1
-
-    :pswitch_0
-    iget-object p0, p0, Llq5;->b:Llcb;
-
-    check-cast p0, Licb;
-
-    iget-object p0, p0, Licb;->a:Lou0;
-
-    invoke-interface {p0, p1, p2}, Lb9d;->h(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_5
-
-    goto :goto_3
-
-    :cond_5
-    sget-object p0, Lncf;->a:Lncf;
-
-    :goto_3
     return-object p0
+.end method
 
-    :pswitch_1
-    iget-object p0, p0, Llq5;->b:Llcb;
+.method public static values()[Llq5;
+    .registers 1
 
-    check-cast p0, Licb;
+    sget-object v0, Llq5;->o:[Llq5;
 
-    iget-object p0, p0, Licb;->a:Lou0;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    invoke-interface {p0, p1, p2}, Lb9d;->h(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object p0
+    check-cast v0, [Llq5;
 
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_6
-
-    goto :goto_4
-
-    :cond_6
-    sget-object p0, Lncf;->a:Lncf;
-
-    :goto_4
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

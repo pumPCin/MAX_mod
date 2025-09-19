@@ -1,9 +1,9 @@
 .class public final Lnp2;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
@@ -20,7 +20,7 @@
 
     const/4 p2, 0x2
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -38,7 +38,7 @@
 
     check-cast p0, Lnp2;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lnp2;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -62,44 +62,75 @@
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lnp2;->X:Ljava/lang/Object;
 
-    check-cast p1, Ls19;
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object v0, p1, Ls19;->b:Landroid/view/MotionEvent;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-virtual {v0}, Landroid/view/MotionEvent;->getAction()I
+    sget-object v0, Lone/me/chatscreen/ChatScreen;->j1:[Lxi7;
 
-    move-result v0
+    iget-object p0, p0, Lnp2;->Y:Lone/me/chatscreen/ChatScreen;
 
-    const/4 v1, 0x3
+    iget-object v0, p0, Lone/me/chatscreen/ChatScreen;->W0:Lcic;
 
-    const/4 v2, 0x1
+    sget-object v1, Lone/me/chatscreen/ChatScreen;->j1:[Lxi7;
 
-    if-eq v0, v1, :cond_1
+    const/16 v2, 0x11
 
-    iget-object p1, p1, Ls19;->b:Landroid/view/MotionEvent;
+    aget-object v1, v1, v2
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    invoke-interface {v0, p0, v1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
-    move-result p1
+    move-result-object p0
 
-    if-ne p1, v2, :cond_0
+    check-cast p0, Lc23;
+
+    invoke-virtual {p0}, Lc23;->b()Lxx3;
+
+    move-result-object p0
+
+    instance-of v0, p0, Lone/me/chatscreen/videomsg/VideoMessageWidget;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lone/me/chatscreen/videomsg/VideoMessageWidget;
 
     goto :goto_0
 
     :cond_0
-    const/4 v2, 0x0
+    const/4 p0, 0x0
+
+    :goto_0
+    if-eqz p0, :cond_2
+
+    invoke-virtual {p0}, Lone/me/chatscreen/videomsg/VideoMessageWidget;->G0()Ly2g;
+
+    move-result-object p0
+
+    iget-object p0, p0, Ly2g;->Y:Lyce;
 
     :cond_1
-    :goto_0
-    iget-object p0, p0, Lnp2;->Y:Lone/me/chatscreen/ChatScreen;
+    invoke-virtual {p0}, Lyce;->getValue()Ljava/lang/Object;
 
-    iput-boolean v2, p0, Lone/me/chatscreen/ChatScreen;->v0:Z
+    move-result-object v0
 
-    sget-object p0, Lncf;->a:Lncf;
+    move-object v1, v0
+
+    check-cast v1, Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p0, v0, p1}, Lyce;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_2
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

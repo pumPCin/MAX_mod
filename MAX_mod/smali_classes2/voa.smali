@@ -1,48 +1,27 @@
 .class public final Lvoa;
-.super Lcx3;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field public X:I
+.field public final a:Lcpa;
 
-.field public final synthetic Y:Lwoa;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final b:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>(Lwoa;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ltoa;Lcpa;)V
     .registers 3
 
-    iput-object p1, p0, Lvoa;->Y:Lwoa;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lvoa;->a:Lcpa;
+
+    new-instance p2, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {p2, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object p2, p0, Lvoa;->b:Ljava/lang/ref/WeakReference;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iput-object p1, p0, Lvoa;->o:Ljava/lang/Object;
-
-    iget p1, p0, Lvoa;->X:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lvoa;->X:I
-
-    iget-object p1, p0, Lvoa;->Y:Lwoa;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lwoa;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

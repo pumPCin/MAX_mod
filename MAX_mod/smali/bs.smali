@@ -1,156 +1,78 @@
 .class public final Lbs;
-.super Ljava/lang/Object;
+.super Ltbb;
 .source "SourceFile"
-
-# interfaces
-.implements Ltf7;
 
 
 # instance fields
-.field public final a:Ltf7;
+.field public final a:Lgo0;
 
-.field public final b:Lzr;
+.field public final b:Lb7;
 
 
 # direct methods
-.method public constructor <init>(Ltf7;)V
+.method public constructor <init>(Lgo0;Lb7;)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbs;->a:Ltf7;
+    iput-object p1, p0, Lbs;->a:Lgo0;
 
-    new-instance v0, Lzr;
-
-    invoke-interface {p1}, Ltf7;->d()Lkad;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Lzr;-><init>(Lkad;)V
-
-    iput-object v0, p0, Lbs;->b:Lzr;
+    iput-object p2, p0, Lbs;->b:Lb7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lq8;)Ljava/lang/Object;
-    .registers 8
+.method public final c(IILandroid/graphics/Bitmap$Config;)Lf63;
+    .registers 9
 
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    invoke-interface {p0}, Ltf7;->d()Lkad;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Lq8;->j(Lkad;)Lq8;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p0}, Ltf7;->d()Lkad;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2}, Lq8;->p(Lkad;)I
-
-    move-result v2
-
-    const/4 v3, -0x1
-
-    if-eq v2, v3, :cond_0
-
-    add-int/2addr v2, v1
-
-    invoke-interface {p0}, Ltf7;->d()Lkad;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lbs;->a:Ltf7;
-
-    const/4 v5, 0x0
-
-    invoke-virtual {p1, v3, v2, v4, v5}, Lq8;->s(Lkad;ILtf7;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v2, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p0}, Ltf7;->d()Lkad;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Lq8;->y(Lkad;)V
-
-    return-object v0
-.end method
-
-.method public b(Ltx3;Ljava/lang/Object;)V
-    .registers 8
-
-    move-object v0, p2
-
-    check-cast v0, Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
+    invoke-static {p1, p2, p3}, Lqo0;->c(IILandroid/graphics/Bitmap$Config;)I
 
     move-result v0
 
-    invoke-interface {p0}, Ltf7;->d()Lkad;
+    iget-object v1, p0, Lbs;->a:Lgo0;
 
-    move-result-object v1
+    invoke-interface {v1, v0}, Lreb;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {p1, v1}, Ltx3;->b(Lkad;)Ltx3;
+    move-result-object v0
 
-    move-result-object p1
+    check-cast v0, Landroid/graphics/Bitmap;
 
-    check-cast p2, Ljava/util/Collection;
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getAllocationByteCount()I
 
-    invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    move-result v2
 
-    move-result-object p2
+    mul-int v3, p1, p2
 
-    const/4 v1, 0x0
+    invoke-static {p3}, Lqo0;->b(Landroid/graphics/Bitmap$Config;)I
 
-    :goto_0
-    if-ge v1, v0, :cond_0
+    move-result v4
 
-    invoke-interface {p0}, Ltf7;->d()Lkad;
+    mul-int/2addr v4, v3
 
-    move-result-object v2
+    if-lt v2, v4, :cond_0
 
-    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v0, p1, p2, p3}, Landroid/graphics/Bitmap;->reconfigure(IILandroid/graphics/Bitmap$Config;)V
 
-    move-result-object v3
+    iget-object p0, p0, Lbs;->b:Lb7;
 
-    iget-object v4, p0, Lbs;->a:Ltf7;
+    iget-object p0, p0, Lb7;->b:Ljava/lang/Object;
 
-    invoke-virtual {p1, v2, v1, v4, v3}, Ltx3;->i(Lkad;ILtf7;Ljava/lang/Object;)V
+    check-cast p0, Ly9e;
 
-    add-int/lit8 v1, v1, 0x1
+    invoke-static {v0, v1, p0}, Lf63;->t0(Ljava/lang/Object;Lguc;Le63;)Lid4;
 
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Ltx3;->m()V
-
-    return-void
-.end method
-
-.method public final d()Lkad;
-    .registers 1
-
-    iget-object p0, p0, Lbs;->b:Lzr;
+    move-result-object p0
 
     return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "Check failed."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

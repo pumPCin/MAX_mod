@@ -1,47 +1,150 @@
 .class public final Lyr5;
-.super Lcx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic X:Lrb;
-
-.field public Y:I
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Lrb;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(J)V
     .registers 3
 
-    iput-object p1, p0, Lyr5;->X:Lrb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-wide p1, p0, Lyr5;->a:J
 
     return-void
 .end method
 
+.method public static a(FF)J
+    .registers 6
+
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    move-result p0
+
+    int-to-long v0, p0
+
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    move-result p0
+
+    int-to-long p0, p0
+
+    const/16 v2, 0x20
+
+    shl-long/2addr v0, v2
+
+    const-wide v2, 0xffffffffL
+
+    and-long/2addr p0, v2
+
+    or-long/2addr p0, v0
+
+    return-wide p0
+.end method
+
+.method public static b(J)Ljava/lang/String;
+    .registers 5
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "("
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const/16 v1, 0x20
+
+    shr-long v1, p0, v1
+
+    long-to-int v1, v1
+
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v1, ", "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-wide v1, 0xffffffffL
+
+    and-long/2addr p0, v1
+
+    long-to-int p0, p0
+
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    move-result p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x29
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
+
+    instance-of v0, p1, Lyr5;
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p1, Lyr5;
+
+    iget-wide v0, p1, Lyr5;->a:J
+
+    iget-wide p0, p0, Lyr5;->a:J
+
+    cmp-long p0, p0, v0
+
+    if-eqz p0, :cond_1
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
     .registers 3
 
-    iput-object p1, p0, Lyr5;->o:Ljava/lang/Object;
+    iget-wide v0, p0, Lyr5;->a:J
 
-    iget p1, p0, Lyr5;->Y:I
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
-    const/high16 v0, -0x80000000
+    move-result p0
 
-    or-int/2addr p1, v0
+    return p0
+.end method
 
-    iput p1, p0, Lyr5;->Y:I
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    iget-object p1, p0, Lyr5;->X:Lrb;
+    iget-wide v0, p0, Lyr5;->a:J
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lrb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lyr5;->b(J)Ljava/lang/String;
 
     move-result-object p0
 

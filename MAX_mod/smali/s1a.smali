@@ -1,129 +1,25 @@
-.class public final Ls1a;
-.super Lml0;
+.class public abstract Ls1a;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public Y:Ljava/lang/Object;
+# direct methods
+.method public static a(Landroid/app/NotificationManager;)Z
+    .registers 1
 
-.field public Z:Z
+    invoke-virtual {p0}, Landroid/app/NotificationManager;->areNotificationsEnabled()Z
 
+    move-result p0
 
-# virtual methods
-.method public final d(Ljava/lang/Object;)V
-    .registers 4
-
-    iget-boolean v0, p0, Lml0;->o:Z
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget v0, p0, Lml0;->X:I
-
-    iget-object v1, p0, Lml0;->a:Ld4a;
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v1, p1}, Ld4a;->d(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_1
-    :try_start_0
-    iget-boolean v0, p0, Ls1a;->Z:Z
-
-    if-eqz v0, :cond_2
-
-    iget-object v0, p0, Ls1a;->Y:Ljava/lang/Object;
-
-    invoke-static {v0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    iput-object p1, p0, Ls1a;->Y:Ljava/lang/Object;
-
-    if-eqz v0, :cond_3
-
-    :goto_0
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ls1a;->Z:Z
-
-    iput-object p1, p0, Ls1a;->Y:Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :cond_3
-    invoke-interface {v1, p1}, Ld4a;->d(Ljava/lang/Object;)V
-
-    return-void
-
-    :goto_1
-    invoke-static {p1}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    iget-object v0, p0, Lml0;->b:Lnp4;
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    invoke-virtual {p0, p1}, Lml0;->onError(Ljava/lang/Throwable;)V
-
-    return-void
+    return p0
 .end method
 
-.method public final poll()Ljava/lang/Object;
-    .registers 3
+.method public static b(Landroid/app/NotificationManager;)I
+    .registers 1
 
-    :goto_0
-    iget-object v0, p0, Lml0;->c:Lntb;
+    invoke-virtual {p0}, Landroid/app/NotificationManager;->getImportance()I
 
-    invoke-interface {v0}, Lxtd;->poll()Ljava/lang/Object;
+    move-result p0
 
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    iget-boolean v1, p0, Ls1a;->Z:Z
-
-    if-nez v1, :cond_1
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Ls1a;->Z:Z
-
-    iput-object v0, p0, Ls1a;->Y:Ljava/lang/Object;
-
-    return-object v0
-
-    :cond_1
-    iget-object v1, p0, Ls1a;->Y:Ljava/lang/Object;
-
-    invoke-static {v1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    iput-object v0, p0, Ls1a;->Y:Ljava/lang/Object;
-
-    return-object v0
-
-    :cond_2
-    iput-object v0, p0, Ls1a;->Y:Ljava/lang/Object;
-
-    goto :goto_0
+    return p0
 .end method

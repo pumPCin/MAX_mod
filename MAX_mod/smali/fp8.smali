@@ -1,64 +1,169 @@
-.class public final Lfp8;
+.class public final synthetic Lfp8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lkp8;
+.implements Lrp8;
+.implements Lsp8;
 
 
-# static fields
-.field public static final a:Lfp8;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lup8;
+
+.field public final synthetic c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lup8;II)V
+    .registers 4
 
-    new-instance v0, Lfp8;
+    iput p3, p0, Lfp8;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfp8;->b:Lup8;
 
-    sput-object v0, Lfp8;->a:Lfp8;
+    iput p2, p0, Lfp8;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public b(Lbeb;Ltn8;Ljava/util/List;)V
+    .registers 7
 
-    const/4 v0, 0x1
+    iget v0, p0, Lfp8;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    iget-object v0, p0, Lfp8;->b:Lup8;
+
+    iget p0, p0, Lfp8;->c:I
+
+    invoke-virtual {v0, p2, p1, p0}, Lup8;->a0(Ltn8;Lbeb;I)I
+
+    move-result p0
+
+    invoke-virtual {p1, p0, p3}, Lbeb;->b(ILjava/util/List;)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lfp8;->b:Lup8;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {p3}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    iget p0, p0, Lfp8;->c:I
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    invoke-virtual {v0, p2, p1, p0}, Lup8;->a0(Ltn8;Lbeb;I)I
+
+    move-result p0
+
+    const/4 p2, 0x0
+
+    invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lzh8;
+
+    invoke-virtual {p1}, Lbeb;->p0()V
+
+    iget-object p1, p1, Lbeb;->a:Ltc5;
+
+    add-int/lit8 p3, p0, 0x1
+
+    invoke-static {p2}, Ll37;->m(Ljava/lang/Object;)Llqc;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2, p0, p3}, Ltc5;->v1(Ljava/util/List;II)V
+
+    goto :goto_0
 
     :cond_0
-    instance-of p0, p1, Lfp8;
+    invoke-virtual {v0, p2, p1, p0}, Lup8;->a0(Ltn8;Lbeb;I)I
 
-    if-nez p0, :cond_1
+    move-result v1
 
-    const/4 p0, 0x0
+    add-int/2addr p0, v2
 
-    return p0
+    invoke-virtual {v0, p2, p1, p0}, Lup8;->a0(Ltn8;Lbeb;I)I
 
-    :cond_1
-    return v0
+    move-result p0
+
+    invoke-virtual {p1, p3, v1, p0}, Lbeb;->W(Ljava/util/List;II)V
+
+    :goto_0
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lfp8;->b:Lup8;
+
+    iget p0, p0, Lfp8;->c:I
+
+    invoke-virtual {v0, p2, p1, p0}, Lup8;->a0(Ltn8;Lbeb;I)I
+
+    move-result p0
+
+    invoke-virtual {p1, p0, p3}, Lbeb;->b(ILjava/util/List;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public h(Lbeb;Ltn8;)V
+    .registers 4
 
-    const p0, -0x48bb79d3
+    iget v0, p0, Lfp8;->a:I
 
-    return p0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    iget-object v0, p0, Lfp8;->b:Lup8;
 
-    const-string p0, "Contact"
+    iget p0, p0, Lfp8;->c:I
 
-    return-object p0
+    invoke-virtual {v0, p2, p1, p0}, Lup8;->a0(Ltn8;Lbeb;I)I
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Lbeb;->V(I)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lfp8;->b:Lup8;
+
+    iget p0, p0, Lfp8;->c:I
+
+    invoke-virtual {v0, p2, p1, p0}, Lup8;->a0(Ltn8;Lbeb;I)I
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Lbeb;->a0(I)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,259 +1,102 @@
 .class public final Lcng;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:I
+.field public final synthetic Y:Lone/me/webapp/settings/WebAppSettingsScreen;
 
 
 # direct methods
-.method public constructor <init>(IIIIIIII)V
-    .registers 9
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/settings/WebAppSettingsScreen;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lcng;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
 
-    iput p1, p0, Lcng;->a:I
+    const/4 p2, 0x2
 
-    iput p2, p0, Lcng;->b:I
-
-    iput p3, p0, Lcng;->c:I
-
-    iput p4, p0, Lcng;->d:I
-
-    iput p5, p0, Lcng;->e:I
-
-    iput p6, p0, Lcng;->f:I
-
-    iput p7, p0, Lcng;->g:I
-
-    iput p8, p0, Lcng;->h:I
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Lcng;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lcng;
-
-    iget v0, p0, Lcng;->a:I
-
-    iget v1, p1, Lcng;->a:I
-
-    if-eq v0, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget v0, p0, Lcng;->b:I
-
-    iget v1, p1, Lcng;->b:I
-
-    if-eq v0, v1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget v0, p0, Lcng;->c:I
-
-    iget v1, p1, Lcng;->c:I
-
-    if-eq v0, v1, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    iget v0, p0, Lcng;->d:I
-
-    iget v1, p1, Lcng;->d:I
-
-    if-eq v0, v1, :cond_5
-
-    goto :goto_0
-
-    :cond_5
-    iget v0, p0, Lcng;->e:I
-
-    iget v1, p1, Lcng;->e:I
-
-    if-eq v0, v1, :cond_6
-
-    goto :goto_0
-
-    :cond_6
-    iget v0, p0, Lcng;->f:I
-
-    iget v1, p1, Lcng;->f:I
-
-    if-eq v0, v1, :cond_7
-
-    goto :goto_0
-
-    :cond_7
-    iget v0, p0, Lcng;->g:I
-
-    iget v1, p1, Lcng;->g:I
-
-    if-eq v0, v1, :cond_8
-
-    goto :goto_0
-
-    :cond_8
-    iget p0, p0, Lcng;->h:I
-
-    iget p1, p1, Lcng;->h:I
-
-    if-eq p0, p1, :cond_9
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_9
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget v0, p0, Lcng;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lcng;->b:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lcng;->c:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lcng;->d:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lcng;->e:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lcng;->f:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lcng;->g:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget p0, p0, Lcng;->h:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    const-string v0, ", inputMDLink="
-
-    const-string v1, ", inputPlaceholder="
-
-    const-string v2, "WritebarTextColors(input="
-
-    iget v3, p0, Lcng;->a:I
-
-    iget v4, p0, Lcng;->b:I
-
-    invoke-static {v2, v3, v0, v4, v1}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", primary="
-
-    const-string v2, ", replyMessage="
-
-    iget v3, p0, Lcng;->c:I
-
-    iget v4, p0, Lcng;->d:I
-
-    invoke-static {v0, v3, v1, v4, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    const-string v1, ", replyTo="
-
-    const-string v2, ", secondary="
-
-    iget v3, p0, Lcng;->e:I
-
-    iget v4, p0, Lcng;->f:I
-
-    invoke-static {v0, v3, v1, v4, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    const-string v1, ", themed="
-
-    const-string v2, ")"
-
-    iget v3, p0, Lcng;->g:I
-
-    iget p0, p0, Lcng;->h:I
-
-    invoke-static {v0, v3, v1, p0, v2}, Lnh0;->h(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lcng;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
+    check-cast p0, Lcng;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lcng;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Lcng;
+
+    iget-object p0, p0, Lcng;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
+
+    invoke-direct {v0, p2, p0}, Lcng;-><init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/settings/WebAppSettingsScreen;)V
+
+    iput-object p1, v0, Lcng;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lcng;->X:Ljava/lang/Object;
+
+    check-cast p1, Lfng;
+
+    iget-object p0, p0, Lcng;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
+
+    if-eqz p1, :cond_1
+
+    iget-object p0, p0, Lone/me/webapp/settings/WebAppSettingsScreen;->Y:Lbgg;
+
+    if-eqz p0, :cond_0
+
+    iget-object v0, p1, Lfng;->a:Ljava/lang/String;
+
+    iget-object p1, p1, Lfng;->b:Llhd;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, p1, v0, v1}, Lbgg;->b(Llhd;Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    sget-object p0, Lylf;->a:Lylf;
+
     return-object p0
+
+    :cond_1
+    sget-object p1, Lone/me/webapp/settings/WebAppSettingsScreen;->r0:[Lxi7;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
 .end method

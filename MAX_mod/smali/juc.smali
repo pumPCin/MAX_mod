@@ -1,75 +1,39 @@
-.class public interface abstract Ljuc;
+.class public final Ljuc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public a()Landroid/view/Surface;
-    .registers 1
+# instance fields
+.field public final a:Landroid/content/res/ColorStateList;
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+.field public final b:Landroid/content/res/Configuration;
 
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+.field public final c:I
 
-    throw p0
-.end method
 
-.method public c()I
-    .registers 1
+# direct methods
+.method public constructor <init>(Landroid/content/res/ColorStateList;Landroid/content/res/Configuration;Landroid/content/res/Resources$Theme;)V
+    .registers 4
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    iput-object p1, p0, Ljuc;->a:Landroid/content/res/ColorStateList;
 
-    throw p0
-.end method
+    iput-object p2, p0, Ljuc;->b:Landroid/content/res/Configuration;
 
-.method public d(Landroid/graphics/Bitmap;Lfl3;)I
-    .registers 3
+    if-nez p3, :cond_0
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    const/4 p1, 0x0
 
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    goto :goto_0
 
-    throw p0
-.end method
+    :cond_0
+    invoke-virtual {p3}, Landroid/content/res/Resources$Theme;->hashCode()I
 
-.method public e()Ln94;
-    .registers 1
+    move-result p1
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    :goto_0
+    iput p1, p0, Ljuc;->c:I
 
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p0
-.end method
-
-.method public f()V
-    .registers 1
-
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p0
-.end method
-
-.method public g()Z
-    .registers 1
-
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p0
-.end method
-
-.method public h(J)Z
-    .registers 3
-
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    throw p0
+    return-void
 .end method

@@ -1,43 +1,46 @@
-.class public interface abstract Ld15;
+.class public final synthetic Ld15;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lorg/webrtc/EglThread$RenderUpdate;
+
+
+# instance fields
+.field public final synthetic a:Lorg/webrtc/EglRenderer;
+
+.field public final synthetic b:Lorg/webrtc/VideoFrame;
+
+.field public final synthetic c:J
+
+
+# direct methods
+.method public synthetic constructor <init>(Lorg/webrtc/EglRenderer;Lorg/webrtc/VideoFrame;J)V
+    .registers 5
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ld15;->a:Lorg/webrtc/EglRenderer;
+
+    iput-object p2, p0, Ld15;->b:Lorg/webrtc/VideoFrame;
+
+    iput-wide p3, p0, Ld15;->c:J
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a(ILjava/lang/CharSequence;)Z
-.end method
+.method public final update(Z)V
+    .registers 5
 
-.method public b(ILjava/lang/CharSequence;)Ljava/lang/CharSequence;
-    .registers 3
+    iget-object v0, p0, Ld15;->b:Lorg/webrtc/VideoFrame;
 
-    invoke-interface {p0, p2}, Ld15;->e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    iget-wide v1, p0, Ld15;->c:J
 
-    move-result-object p0
+    iget-object p0, p0, Ld15;->a:Lorg/webrtc/EglRenderer;
 
-    return-object p0
-.end method
+    invoke-static {p0, v0, v1, v2, p1}, Lorg/webrtc/EglRenderer;->b(Lorg/webrtc/EglRenderer;Lorg/webrtc/VideoFrame;JZ)V
 
-.method public abstract c(Ljava/lang/CharSequence;)Ljava/util/List;
-.end method
-
-.method public d(JLjava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;I)Ljava/lang/CharSequence;
-    .registers 7
-
-    const-string p0, ""
-
-    return-object p0
-.end method
-
-.method public abstract e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-.end method
-
-.method public f(Ljava/lang/CharSequence;)Ljava/util/List;
-    .registers 2
-
-    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
-
-    return-object p0
-.end method
-
-.method public abstract g(Ljava/lang/CharSequence;)Z
+    return-void
 .end method

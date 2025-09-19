@@ -1,82 +1,204 @@
-.class public final Lnnc;
+.class public final synthetic Lnnc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final d:Lnnc;
-
-.field public static final e:Lnnc;
-
-.field public static final f:Lnnc;
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic a:I
 
-.field public final b:Z
-
-.field public final c:Z
+.field public final synthetic b:Lvnc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public synthetic constructor <init>(Lvnc;I)V
+    .registers 3
 
-    new-instance v0, Lnnc;
+    iput p2, p0, Lnnc;->a:I
 
-    const-wide/16 v1, 0x0
+    iput-object p1, p0, Lnnc;->b:Lvnc;
 
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v1, v2, v3, v3}, Lnnc;-><init>(JZZ)V
-
-    sput-object v0, Lnnc;->d:Lnnc;
-
-    new-instance v0, Lnnc;
-
-    const-wide/16 v4, 0x1f4
-
-    const/4 v6, 0x1
-
-    invoke-direct {v0, v4, v5, v6, v3}, Lnnc;-><init>(JZZ)V
-
-    sput-object v0, Lnnc;->e:Lnnc;
-
-    new-instance v0, Lnnc;
-
-    const-wide/16 v4, 0x64
-
-    invoke-direct {v0, v4, v5, v6, v3}, Lnnc;-><init>(JZZ)V
-
-    new-instance v0, Lnnc;
-
-    invoke-direct {v0, v1, v2, v3, v6}, Lnnc;-><init>(JZZ)V
-
-    sput-object v0, Lnnc;->f:Lnnc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(JZZ)V
-    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final run()V
+    .registers 8
 
-    iput-boolean p3, p0, Lnnc;->b:Z
+    iget v0, p0, Lnnc;->a:I
 
-    iput-wide p1, p0, Lnnc;->a:J
+    iget-object p0, p0, Lnnc;->b:Lvnc;
 
-    if-eqz p4, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    xor-int/lit8 p1, p3, 0x1
+    iget-object v0, p0, Lvnc;->x:Lire;
 
-    const-string p2, "shouldRetry must be false when completeWithoutFailure is set to true"
+    if-eqz v0, :cond_0
 
-    invoke-static {p2, p1}, Lts;->h(Ljava/lang/String;Z)V
+    iget-object v1, p0, Lvnc;->y:Le6f;
 
-    :cond_0
-    iput-boolean p4, p0, Lnnc;->c:Z
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v0, v1, v2}, Lvnc;->g(Lire;Le6f;Z)V
 
     return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/AssertionError;
+
+    const-string v0, "surface request is required to retry initialization."
+
+    invoke-direct {p0, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw p0
+
+    :pswitch_0
+    iget-object v0, p0, Lvnc;->h:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lvnc;->j:Lunc;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    if-eq v1, v2, :cond_1
+
+    const/4 v5, 0x2
+
+    if-eq v1, v5, :cond_2
+
+    move v5, v3
+
+    move-object v1, v4
+
+    :goto_0
+    move-object v2, v1
+
+    goto :goto_2
+
+    :cond_1
+    move v2, v3
+
+    :cond_2
+    iget-object v1, p0, Lvnc;->m:Lsa0;
+
+    if-nez v1, :cond_5
+
+    iget-boolean v1, p0, Lvnc;->Y:Z
+
+    if-eqz v1, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    iget v1, p0, Lvnc;->f0:I
+
+    const/4 v5, 0x3
+
+    if-ne v1, v5, :cond_4
+
+    iget-object v1, p0, Lvnc;->n:Lsa0;
+
+    iput-object v4, p0, Lvnc;->n:Lsa0;
+
+    invoke-virtual {p0}, Lvnc;->y()V
+
+    sget-object v3, Lvnc;->l0:Ljava/lang/RuntimeException;
+
+    const/4 v5, 0x4
+
+    move-object v6, v3
+
+    move v3, v2
+
+    move-object v2, v6
+
+    goto :goto_2
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_4
+
+    :cond_4
+    iget-object v1, p0, Lvnc;->E:Lg65;
+
+    if-eqz v1, :cond_5
+
+    iget-object v1, p0, Lvnc;->j:Lunc;
+
+    invoke-virtual {p0, v1}, Lvnc;->q(Lunc;)Lsa0;
+
+    move-result-object v1
+
+    move v5, v3
+
+    move v3, v2
+
+    move-object v2, v4
+
+    move-object v4, v1
+
+    move-object v1, v2
+
+    goto :goto_2
+
+    :cond_5
+    :goto_1
+    move v5, v3
+
+    move-object v1, v4
+
+    move v3, v2
+
+    goto :goto_0
+
+    :goto_2
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v4, :cond_6
+
+    invoke-virtual {p0, v4, v3}, Lvnc;->E(Lsa0;Z)V
+
+    goto :goto_3
+
+    :cond_6
+    if-eqz v1, :cond_7
+
+    invoke-virtual {p0, v1, v5, v2}, Lvnc;->i(Lsa0;ILjava/lang/Throwable;)V
+
+    :cond_7
+    :goto_3
+    return-void
+
+    :goto_4
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

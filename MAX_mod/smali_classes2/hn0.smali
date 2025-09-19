@@ -1,28 +1,26 @@
 .class public final Lhn0;
-.super Ljava/lang/Object;
+.super Lpg7;
 .source "SourceFile"
 
 # interfaces
-.implements Lx33;
+.implements Lmn0;
 
 
 # instance fields
-.field public a:Z
+.field public final c:Ljava/lang/String;
 
-.field public final synthetic b:Lin0;
-
-.field public final synthetic c:Lone/me/sdk/arch/Widget;
+.field public final d:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lin0;Lone/me/sdk/arch/Widget;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lpg7;-><init>()V
 
-    iput-object p1, p0, Lhn0;->b:Lin0;
+    iput-object p1, p0, Lhn0;->c:Ljava/lang/String;
 
-    iput-object p2, p0, Lhn0;->c:Lone/me/sdk/arch/Widget;
+    iput-object p2, p0, Lhn0;->d:Ljava/lang/String;
 
     return-void
 .end method

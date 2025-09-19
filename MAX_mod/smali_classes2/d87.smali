@@ -1,113 +1,204 @@
-.class public abstract Ld87;
+.class public final synthetic Ld87;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbc6;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lone/me/login/inputname/InputNameScreen;
+
 
 # direct methods
-.method public static a([B)Le87;
-    .registers 12
+.method public synthetic constructor <init>(Lone/me/login/inputname/InputNameScreen;I)V
+    .registers 3
 
-    new-instance v0, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;
+    iput p2, p0, Ld87;->a:I
 
-    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;-><init>()V
+    iput-object p1, p0, Ld87;->b:Lone/me/login/inputname/InputNameScreen;
 
-    :try_start_0
-    invoke-static {v0, p0}, Lkz8;->mergeFrom(Lkz8;[B)Lkz8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
+
+    iget v0, p0, Ld87;->a:I
+
+    sget-object v1, Lylf;->a:Lylf;
+
+    iget-object p0, p0, Ld87;->b:Lone/me/login/inputname/InputNameScreen;
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    sget-object v0, Lone/me/login/inputname/InputNameScreen;->A0:[Lxi7;
+
+    invoke-virtual {p0}, Lone/me/login/inputname/InputNameScreen;->A0()Lbra;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lbra;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lone/me/login/inputname/InputNameScreen;->C0()Lj87;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lone/me/login/inputname/InputNameScreen;->B0()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;
-    :try_end_0
-    .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0, p0, p1}, Lj87;->q(Ljava/lang/String;Z)V
 
-    new-instance v0, Lzqe;
+    :goto_0
+    return-object v1
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    :pswitch_0
+    check-cast p1, Ljava/lang/CharSequence;
 
-    iget-object v1, p0, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;->fileDownload:Lru/ok/tamtam/nano/Tasks$FileDownload;
+    sget-object v0, Lone/me/login/inputname/InputNameScreen;->A0:[Lxi7;
 
-    iget-wide v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->messageId:J
+    invoke-virtual {p0}, Lone/me/login/inputname/InputNameScreen;->C0()Lj87;
 
-    iput-wide v2, v0, Lzqe;->a:J
+    move-result-object v0
 
-    iget-object v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->attachId:Ljava/lang/String;
+    iget-object v0, v0, Lj87;->r0:Lv85;
 
-    iput-object v2, v0, Lzqe;->b:Ljava/lang/String;
+    new-instance v2, Lwq6;
 
-    iget-wide v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->videoId:J
+    const/4 v3, 0x2
 
-    iput-wide v2, v0, Lzqe;->c:J
+    invoke-direct {v2, v3}, Lwq6;-><init>(I)V
 
-    iget-wide v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->audioId:J
+    invoke-static {v0, v2}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
 
-    iput-wide v2, v0, Lzqe;->d:J
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    iget-wide v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->mp4GifId:J
+    move-result-object v0
 
-    iput-wide v2, v0, Lzqe;->e:J
+    iget-object v2, p0, Lone/me/login/inputname/InputNameScreen;->z0:Lfr;
 
-    iget-wide v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->stickerId:J
+    sget-object v3, Lone/me/login/inputname/InputNameScreen;->A0:[Lxi7;
 
-    iput-wide v2, v0, Lzqe;->f:J
+    const/4 v4, 0x6
 
-    iget-wide v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->fileId:J
+    aget-object v3, v3, v4
 
-    iput-wide v2, v0, Lzqe;->j:J
+    invoke-virtual {v2, p0, v0}, Lfr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
 
-    iget-object v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->fileName:Ljava/lang/String;
+    invoke-virtual {p0}, Lone/me/login/inputname/InputNameScreen;->C0()Lj87;
 
-    iput-object v2, v0, Lzqe;->k:Ljava/lang/String;
+    move-result-object v0
 
-    iget-object v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->url:Ljava/lang/String;
+    invoke-virtual {p0}, Lone/me/login/inputname/InputNameScreen;->A0()Lbra;
 
-    iput-object v2, v0, Lzqe;->g:Ljava/lang/String;
+    move-result-object p0
 
-    iget-boolean v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->notifyProgress:Z
+    iget-object p0, p0, Lbra;->a:Landroid/widget/EditText;
 
-    iput-boolean v2, v0, Lzqe;->h:Z
+    invoke-virtual {p0}, Landroid/view/View;->isFocused()Z
 
-    iget-boolean v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->checkAutoloadConnection:Z
+    move-result p0
 
-    iput-boolean v2, v0, Lzqe;->i:Z
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    iget v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->invalidateCount:I
+    move-result-object p1
 
-    iput v2, v0, Lzqe;->l:I
+    invoke-virtual {v0, p1, p0}, Lj87;->q(Ljava/lang/String;Z)V
 
-    iget-boolean v2, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->useOriginalExtension:Z
+    return-object v1
 
-    iput-boolean v2, v0, Lzqe;->m:Z
+    :pswitch_1
+    check-cast p1, Ljava/lang/CharSequence;
 
-    iget-boolean v1, v1, Lru/ok/tamtam/nano/Tasks$FileDownload;->notCopyVideoToGallery:Z
+    sget-object v0, Lone/me/login/inputname/InputNameScreen;->A0:[Lxi7;
 
-    iput-boolean v1, v0, Lzqe;->n:Z
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    new-instance v10, Lare;
+    move-result v0
 
-    invoke-direct {v10, v0}, Lare;-><init>(Lzqe;)V
+    const/4 v2, 0x1
 
-    new-instance v2, Le87;
+    if-lez v0, :cond_1
 
-    iget-wide v3, p0, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;->requestId:J
+    move v0, v2
 
-    iget-object v5, p0, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;->outputPath:Ljava/lang/String;
+    goto :goto_1
 
-    iget-wide v6, p0, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;->chatServerId:J
+    :cond_1
+    const/4 v0, 0x0
 
-    iget-wide v8, p0, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;->serverMessageId:J
+    :goto_1
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-direct/range {v2 .. v10}, Le87;-><init>(JLjava/lang/String;JJLare;)V
+    move-result-object p1
 
-    return-object v2
+    iget-object v3, p0, Lone/me/login/inputname/InputNameScreen;->y0:Lfr;
 
-    :catch_0
-    move-exception v0
+    sget-object v4, Lone/me/login/inputname/InputNameScreen;->A0:[Lxi7;
 
-    move-object p0, v0
+    const/4 v5, 0x5
 
-    new-instance v0, Lru/ok/tamtam/nano/ProtoException;
+    aget-object v4, v4, v5
 
-    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+    invoke-virtual {v3, p0, p1}, Lfr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
 
-    throw v0
+    invoke-virtual {p0}, Lone/me/login/inputname/InputNameScreen;->y0()Lmf;
+
+    move-result-object p1
+
+    iput-boolean v2, p1, Lmf;->c:Z
+
+    invoke-virtual {p1, v0}, Lmf;->setEnabled(Z)V
+
+    invoke-virtual {p0}, Lone/me/login/inputname/InputNameScreen;->C0()Lj87;
+
+    move-result-object p0
+
+    iget-object p0, p0, Lj87;->r0:Lv85;
+
+    new-instance p1, Lwq6;
+
+    invoke-direct {p1, v2}, Lwq6;-><init>(I)V
+
+    invoke-static {p0, p1}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
+
+    return-object v1
+
+    :pswitch_2
+    check-cast p1, Landroid/view/View;
+
+    sget-object p1, Lone/me/login/inputname/InputNameScreen;->A0:[Lxi7;
+
+    invoke-virtual {p0}, Lone/me/login/inputname/InputNameScreen;->D0()V
+
+    return-object v1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

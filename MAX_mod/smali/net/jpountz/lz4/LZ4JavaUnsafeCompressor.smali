@@ -97,7 +97,7 @@
 
     move-result v14
 
-    invoke-static {v2, v14}, Lidf;->e([SI)I
+    invoke-static {v2, v14}, Ltmf;->e([SI)I
 
     move-result v15
 
@@ -107,7 +107,7 @@
 
     sub-int v4, v8, v1
 
-    invoke-static {v2, v14, v4}, Lidf;->l([SII)V
+    invoke-static {v2, v14, v4}, Ltmf;->l([SII)V
 
     invoke-static {v0, v15, v8}, Lnet/jpountz/lz4/LZ4ByteBufferUtils;->readIntEquals(Ljava/nio/ByteBuffer;II)Z
 
@@ -174,7 +174,7 @@
 
     int-to-short v4, v4
 
-    invoke-static {v3, v11, v4}, Ljw0;->e(Ljava/nio/ByteBuffer;II)V
+    invoke-static {v3, v11, v4}, Lyv0;->e(Ljava/nio/ByteBuffer;II)V
 
     add-int/lit8 v4, v11, 0x2
 
@@ -252,7 +252,7 @@
 
     sub-int/2addr v4, v1
 
-    invoke-static {v2, v9, v4}, Lidf;->l([SII)V
+    invoke-static {v2, v9, v4}, Ltmf;->l([SII)V
 
     invoke-virtual {v0, v8}, Ljava/nio/ByteBuffer;->getInt(I)I
 
@@ -262,7 +262,7 @@
 
     move-result v4
 
-    invoke-static {v2, v4}, Lidf;->e([SI)I
+    invoke-static {v2, v4}, Ltmf;->e([SI)I
 
     move-result v9
 
@@ -270,7 +270,7 @@
 
     sub-int v9, v8, v1
 
-    invoke-static {v2, v4, v9}, Lidf;->l([SII)V
+    invoke-static {v2, v4, v9}, Ltmf;->l([SII)V
 
     invoke-static {v0, v8, v15}, Lnet/jpountz/lz4/LZ4ByteBufferUtils;->readIntEquals(Ljava/nio/ByteBuffer;II)Z
 
@@ -402,7 +402,7 @@
     goto/16 :goto_7
 
     :cond_0
-    invoke-static {v8, v0}, Lidf;->b(I[B)I
+    invoke-static {v8, v0}, Ltmf;->b(I[B)I
 
     move-result v14
 
@@ -410,7 +410,7 @@
 
     move-result v14
 
-    invoke-static {v2, v14}, Lidf;->e([SI)I
+    invoke-static {v2, v14}, Ltmf;->e([SI)I
 
     move-result v15
 
@@ -420,7 +420,7 @@
 
     sub-int v4, v8, v1
 
-    invoke-static {v2, v14, v4}, Lidf;->l([SII)V
+    invoke-static {v2, v14, v4}, Ltmf;->l([SII)V
 
     invoke-static {v0, v15, v8}, Lnet/jpountz/lz4/LZ4UnsafeUtils;->readIntEquals([BII)Z
 
@@ -460,7 +460,7 @@
 
     int-to-byte v14, v14
 
-    invoke-static {v3, v10, v14}, Lidf;->g([BIB)V
+    invoke-static {v3, v10, v14}, Ltmf;->g([BIB)V
 
     add-int/lit8 v14, v4, -0xf
 
@@ -475,7 +475,7 @@
 
     int-to-byte v14, v14
 
-    invoke-static {v3, v10, v14}, Lidf;->g([BIB)V
+    invoke-static {v3, v10, v14}, Ltmf;->g([BIB)V
 
     :goto_3
     invoke-static {v0, v9, v3, v11, v4}, Lnet/jpountz/lz4/LZ4UnsafeUtils;->wildArraycopy([BI[BII)V
@@ -489,7 +489,7 @@
 
     int-to-byte v9, v4
 
-    invoke-static {v3, v11, v9}, Lidf;->g([BIB)V
+    invoke-static {v3, v11, v9}, Ltmf;->g([BIB)V
 
     add-int/lit8 v9, v11, 0x1
 
@@ -497,7 +497,7 @@
 
     int-to-byte v4, v4
 
-    invoke-static {v3, v9, v4}, Lidf;->g([BIB)V
+    invoke-static {v3, v9, v4}, Ltmf;->g([BIB)V
 
     add-int/lit8 v4, v11, 0x2
 
@@ -521,7 +521,7 @@
 
     if-lt v9, v12, :cond_2
 
-    invoke-static {v10, v3}, Lidf;->a(I[B)B
+    invoke-static {v10, v3}, Ltmf;->a(I[B)B
 
     move-result v11
 
@@ -529,7 +529,7 @@
 
     int-to-byte v11, v11
 
-    invoke-static {v3, v10, v11}, Lidf;->g([BIB)V
+    invoke-static {v3, v10, v11}, Ltmf;->g([BIB)V
 
     add-int/lit8 v9, v9, -0xf
 
@@ -543,7 +543,7 @@
     goto :goto_6
 
     :cond_2
-    invoke-static {v10, v3}, Lidf;->a(I[B)B
+    invoke-static {v10, v3}, Ltmf;->a(I[B)B
 
     move-result v11
 
@@ -551,7 +551,7 @@
 
     int-to-byte v9, v9
 
-    invoke-static {v3, v10, v9}, Lidf;->g([BIB)V
+    invoke-static {v3, v10, v9}, Ltmf;->g([BIB)V
 
     goto :goto_5
 
@@ -565,7 +565,7 @@
     :cond_3
     add-int/lit8 v4, v8, -0x2
 
-    invoke-static {v4, v0}, Lidf;->b(I[B)I
+    invoke-static {v4, v0}, Ltmf;->b(I[B)I
 
     move-result v9
 
@@ -575,9 +575,9 @@
 
     sub-int/2addr v4, v1
 
-    invoke-static {v2, v9, v4}, Lidf;->l([SII)V
+    invoke-static {v2, v9, v4}, Ltmf;->l([SII)V
 
-    invoke-static {v8, v0}, Lidf;->b(I[B)I
+    invoke-static {v8, v0}, Ltmf;->b(I[B)I
 
     move-result v4
 
@@ -585,7 +585,7 @@
 
     move-result v4
 
-    invoke-static {v2, v4}, Lidf;->e([SI)I
+    invoke-static {v2, v4}, Ltmf;->e([SI)I
 
     move-result v9
 
@@ -593,7 +593,7 @@
 
     sub-int v9, v8, v1
 
-    invoke-static {v2, v4, v9}, Lidf;->l([SII)V
+    invoke-static {v2, v4, v9}, Ltmf;->l([SII)V
 
     invoke-static {v0, v8, v15}, Lnet/jpountz/lz4/LZ4UnsafeUtils;->readIntEquals([BII)Z
 
@@ -618,7 +618,7 @@
 
     int-to-byte v4, v4
 
-    invoke-static {v3, v10, v4}, Lidf;->g([BIB)V
+    invoke-static {v3, v10, v4}, Ltmf;->g([BIB)V
 
     goto :goto_4
 
@@ -726,17 +726,17 @@
 
     move/from16 v6, p6
 
-    invoke-static/range {p1 .. p1}, Ljw0;->c(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+    invoke-static/range {p1 .. p1}, Lyv0;->c(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    invoke-static/range {p4 .. p4}, Ljw0;->c(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
+    invoke-static/range {p4 .. p4}, Lyv0;->c(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
     move-result-object v4
 
-    invoke-static {v1, v0, v2}, Ljw0;->b(Ljava/nio/ByteBuffer;II)V
+    invoke-static {v1, v0, v2}, Lyv0;->b(Ljava/nio/ByteBuffer;II)V
 
-    invoke-static {v4, v3, v6}, Ljw0;->b(Ljava/nio/ByteBuffer;II)V
+    invoke-static {v4, v3, v6}, Lyv0;->b(Ljava/nio/ByteBuffer;II)V
 
     add-int v5, v3, v6
 
@@ -827,7 +827,7 @@
 
     move-result v14
 
-    invoke-static {v14, v8}, Lidf;->c(I[I)I
+    invoke-static {v14, v8}, Ltmf;->c(I[I)I
 
     move-result v15
 
@@ -835,7 +835,7 @@
 
     sub-int v2, v10, v15
 
-    invoke-static {v14, v10, v8}, Lidf;->h(II[I)V
+    invoke-static {v14, v10, v8}, Ltmf;->h(II[I)V
 
     const/high16 v14, 0x10000
 
@@ -902,7 +902,7 @@
     add-int/2addr v12, v11
 
     :goto_4
-    invoke-static {v3, v12, v2}, Ljw0;->e(Ljava/nio/ByteBuffer;II)V
+    invoke-static {v3, v12, v2}, Lyv0;->e(Ljava/nio/ByteBuffer;II)V
 
     add-int/lit8 v2, v12, 0x2
 
@@ -991,7 +991,7 @@
 
     move-result v7
 
-    invoke-static {v7, v2, v8}, Lidf;->h(II[I)V
+    invoke-static {v7, v2, v8}, Ltmf;->h(II[I)V
 
     invoke-virtual {v0, v10}, Ljava/nio/ByteBuffer;->getInt(I)I
 
@@ -1001,11 +1001,11 @@
 
     move-result v2
 
-    invoke-static {v2, v8}, Lidf;->c(I[I)I
+    invoke-static {v2, v8}, Ltmf;->c(I[I)I
 
     move-result v15
 
-    invoke-static {v2, v10, v8}, Lidf;->h(II[I)V
+    invoke-static {v2, v10, v8}, Ltmf;->h(II[I)V
 
     sub-int v2, v10, v15
 
@@ -1085,11 +1085,11 @@
 
     move/from16 v5, p6
 
-    sget-object v6, Lidf;->a:Lsun/misc/Unsafe;
+    sget-object v6, Ltmf;->a:Lsun/misc/Unsafe;
 
-    invoke-static {v1, v0, v2}, Liuc;->b(I[BI)V
+    invoke-static {v1, v0, v2}, Lo2d;->b(I[BI)V
 
-    invoke-static {v4, v3, v5}, Liuc;->b(I[BI)V
+    invoke-static {v4, v3, v5}, Lo2d;->b(I[BI)V
 
     add-int/2addr v5, v4
 
@@ -1152,7 +1152,7 @@
     goto/16 :goto_7
 
     :cond_1
-    invoke-static {v10, v0}, Lidf;->b(I[B)I
+    invoke-static {v10, v0}, Ltmf;->b(I[B)I
 
     move-result v14
 
@@ -1160,7 +1160,7 @@
 
     move-result v14
 
-    invoke-static {v14, v8}, Lidf;->c(I[I)I
+    invoke-static {v14, v8}, Ltmf;->c(I[I)I
 
     move-result v15
 
@@ -1168,7 +1168,7 @@
 
     sub-int v2, v10, v15
 
-    invoke-static {v14, v10, v8}, Lidf;->h(II[I)V
+    invoke-static {v14, v10, v8}, Ltmf;->h(II[I)V
 
     const/high16 v14, 0x10000
 
@@ -1212,7 +1212,7 @@
 
     int-to-byte v13, v13
 
-    invoke-static {v3, v9, v13}, Lidf;->g([BIB)V
+    invoke-static {v3, v9, v13}, Ltmf;->g([BIB)V
 
     add-int/lit8 v13, v11, -0xf
 
@@ -1227,7 +1227,7 @@
 
     int-to-byte v13, v13
 
-    invoke-static {v3, v9, v13}, Lidf;->g([BIB)V
+    invoke-static {v3, v9, v13}, Ltmf;->g([BIB)V
 
     :goto_3
     invoke-static {v0, v7, v3, v12, v11}, Lnet/jpountz/lz4/LZ4UnsafeUtils;->wildArraycopy([BI[BII)V
@@ -1237,7 +1237,7 @@
     :goto_4
     int-to-byte v7, v2
 
-    invoke-static {v3, v12, v7}, Lidf;->g([BIB)V
+    invoke-static {v3, v12, v7}, Ltmf;->g([BIB)V
 
     add-int/lit8 v7, v12, 0x1
 
@@ -1245,7 +1245,7 @@
 
     int-to-byte v2, v2
 
-    invoke-static {v3, v7, v2}, Lidf;->g([BIB)V
+    invoke-static {v3, v7, v2}, Ltmf;->g([BIB)V
 
     add-int/lit8 v2, v12, 0x2
 
@@ -1271,7 +1271,7 @@
 
     if-lt v7, v11, :cond_3
 
-    invoke-static {v9, v3}, Lidf;->a(I[B)B
+    invoke-static {v9, v3}, Ltmf;->a(I[B)B
 
     move-result v12
 
@@ -1279,7 +1279,7 @@
 
     int-to-byte v12, v12
 
-    invoke-static {v3, v9, v12}, Lidf;->g([BIB)V
+    invoke-static {v3, v9, v12}, Ltmf;->g([BIB)V
 
     add-int/lit8 v7, v7, -0xf
 
@@ -1293,7 +1293,7 @@
     goto :goto_6
 
     :cond_3
-    invoke-static {v9, v3}, Lidf;->a(I[B)B
+    invoke-static {v9, v3}, Ltmf;->a(I[B)B
 
     move-result v12
 
@@ -1301,7 +1301,7 @@
 
     int-to-byte v7, v7
 
-    invoke-static {v3, v9, v7}, Lidf;->g([BIB)V
+    invoke-static {v3, v9, v7}, Ltmf;->g([BIB)V
 
     goto :goto_5
 
@@ -1326,7 +1326,7 @@
     :cond_4
     add-int/lit8 v2, v10, -0x2
 
-    invoke-static {v2, v0}, Lidf;->b(I[B)I
+    invoke-static {v2, v0}, Ltmf;->b(I[B)I
 
     move-result v7
 
@@ -1334,9 +1334,9 @@
 
     move-result v7
 
-    invoke-static {v7, v2, v8}, Lidf;->h(II[I)V
+    invoke-static {v7, v2, v8}, Ltmf;->h(II[I)V
 
-    invoke-static {v10, v0}, Lidf;->b(I[B)I
+    invoke-static {v10, v0}, Ltmf;->b(I[B)I
 
     move-result v2
 
@@ -1344,11 +1344,11 @@
 
     move-result v2
 
-    invoke-static {v2, v8}, Lidf;->c(I[I)I
+    invoke-static {v2, v8}, Ltmf;->c(I[I)I
 
     move-result v15
 
-    invoke-static {v2, v10, v8}, Lidf;->h(II[I)V
+    invoke-static {v2, v10, v8}, Ltmf;->h(II[I)V
 
     sub-int v2, v10, v15
 
@@ -1371,7 +1371,7 @@
 
     int-to-byte v13, v13
 
-    invoke-static {v3, v9, v13}, Lidf;->g([BIB)V
+    invoke-static {v3, v9, v13}, Ltmf;->g([BIB)V
 
     goto :goto_4
 

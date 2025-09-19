@@ -1,142 +1,84 @@
 .class public final Liw0;
-.super Lkpa;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final a:Lt96;
+.field public a:Z
 
-.field public final b:Lkpa;
+.field public b:J
 
-
-# direct methods
-.method public constructor <init>(Lt96;Lkpa;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Liw0;->a:Lt96;
-
-    iput-object p2, p0, Liw0;->b:Lkpa;
-
-    return-void
-.end method
+.field public c:J
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
-
-    iget-object v0, p0, Liw0;->a:Lt96;
-
-    invoke-interface {v0, p1}, Lt96;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-interface {v0, p2}, Lt96;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    iget-object p0, p0, Liw0;->b:Lkpa;
-
-    invoke-interface {p0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
-
-    if-ne p1, p0, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Liw0;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Liw0;
-
-    iget-object v1, p0, Liw0;->a:Lt96;
-
-    iget-object v3, p1, Liw0;->a:Lt96;
-
-    invoke-interface {v1, v3}, Lt96;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object p0, p0, Liw0;->b:Lkpa;
-
-    iget-object p1, p1, Liw0;->b:Lkpa;
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-object v0, p0, Liw0;->a:Lt96;
-
-    iget-object p0, p0, Liw0;->b:Lkpa;
-
-    filled-new-array {v0, p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public declared-synchronized a()J
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    monitor-enter p0
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    :try_start_0
+    iget-wide v0, p0, Liw0;->b:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v1, p0, Liw0;->b:Lkpa;
+    monitor-exit p0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    return-wide v0
 
-    const-string v1, ".onResultOf("
+    :catchall_0
+    move-exception v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object p0, p0, Liw0;->a:Lt96;
+    throw v0
+.end method
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+.method public declared-synchronized b(JJ)V
+    .registers 7
 
-    const-string p0, ")"
+    monitor-enter p0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_0
+    iget-boolean v0, p0, Liw0;->a:Z
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    move-result-object p0
+    iget-wide v0, p0, Liw0;->b:J
 
-    return-object p0
+    add-long/2addr v0, p1
+
+    iput-wide v0, p0, Liw0;->b:J
+
+    iget-wide p1, p0, Liw0;->c:J
+
+    add-long/2addr p1, p3
+
+    iput-wide p1, p0, Liw0;->c:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    monitor-exit p0
+
+    return-void
+
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
 .end method

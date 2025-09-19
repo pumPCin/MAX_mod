@@ -4,94 +4,82 @@
 
 
 # instance fields
-.field public final a:J
+.field public final a:I
 
-.field public final b:Lic0;
-
-.field public final c:Lia0;
+.field public final b:Landroid/view/Surface;
 
 
 # direct methods
-.method public constructor <init>(JLic0;Lia0;)V
-    .registers 5
+.method public constructor <init>(ILandroid/view/Surface;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lgb0;->a:J
+    iput p1, p0, Lgb0;->a:I
 
-    iput-object p3, p0, Lgb0;->b:Lic0;
+    if-eqz p2, :cond_0
 
-    iput-object p4, p0, Lgb0;->c:Lia0;
+    iput-object p2, p0, Lgb0;->b:Landroid/view/Surface;
 
     return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "Null surface"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 9
-
-    const/4 v0, 0x1
+    .registers 4
 
     if-ne p1, p0, :cond_0
 
-    return v0
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Lgb0;
+    instance-of v0, p1, Lgb0;
 
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
     check-cast p1, Lgb0;
 
-    iget-wide v3, p0, Lgb0;->a:J
+    iget v0, p0, Lgb0;->a:I
 
-    iget-wide v5, p1, Lgb0;->a:J
+    iget v1, p1, Lgb0;->a:I
 
-    cmp-long v1, v3, v5
+    if-ne v0, v1, :cond_1
 
-    if-nez v1, :cond_1
+    iget-object p0, p0, Lgb0;->b:Landroid/view/Surface;
 
-    iget-object v1, p0, Lgb0;->b:Lic0;
+    iget-object p1, p1, Lgb0;->b:Landroid/view/Surface;
 
-    iget-object v3, p1, Lgb0;->b:Lic0;
-
-    invoke-virtual {v1, v3}, Lic0;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object p0, p0, Lgb0;->c:Lia0;
-
-    iget-object p1, p1, Lgb0;->c:Lia0;
-
-    invoke-virtual {p0, p1}, Lia0;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     if-eqz p0, :cond_1
 
-    return v0
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
-    return v2
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method public final hashCode()I
-    .registers 6
+    .registers 3
 
-    const/16 v0, 0x20
-
-    iget-wide v1, p0, Lgb0;->a:J
-
-    ushr-long v3, v1, v0
-
-    xor-long v0, v3, v1
-
-    long-to-int v0, v0
+    iget v0, p0, Lgb0;->a:I
 
     const v1, 0xf4243
 
@@ -99,19 +87,9 @@
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Lgb0;->b:Lic0;
+    iget-object p0, p0, Lgb0;->b:Landroid/view/Surface;
 
-    invoke-virtual {v2}, Lic0;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-object p0, p0, Lgb0;->c:Lia0;
-
-    invoke-virtual {p0}, Lia0;->hashCode()I
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
@@ -121,31 +99,23 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .registers 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "PersistedEvent{id="
+    const-string v1, "Result{resultCode="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-wide v1, p0, Lgb0;->a:J
+    iget v1, p0, Lgb0;->a:I
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, ", transportContext="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lgb0;->b:Lic0;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", event="
+    const-string v1, ", surface="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lgb0;->c:Lia0;
+    iget-object p0, p0, Lgb0;->b:Landroid/view/Surface;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

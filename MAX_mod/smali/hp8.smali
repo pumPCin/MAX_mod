@@ -1,64 +1,76 @@
-.class public final Lhp8;
+.class public final synthetic Lhp8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lkp8;
+.implements Ltp8;
 
 
-# static fields
-.field public static final a:Lhp8;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lzh8;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lzh8;I)V
+    .registers 3
 
-    new-instance v0, Lhp8;
+    iput p2, p0, Lhp8;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhp8;->b:Lzh8;
 
-    sput-object v0, Lhp8;->a:Lhp8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final l(Llo8;Ltn8;I)Ljava/lang/Object;
+    .registers 4
 
-    const/4 v0, 0x1
+    iget p3, p0, Lhp8;->a:I
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Lhp8;->b:Lzh8;
 
-    return v0
+    packed-switch p3, :pswitch_data_0
 
-    :cond_0
-    instance-of p0, p1, Lhp8;
+    invoke-static {p0}, Ll37;->m(Ljava/lang/Object;)Llqc;
 
-    if-nez p0, :cond_1
+    move-result-object p0
 
-    const/4 p0, 0x0
+    invoke-virtual {p1, p2, p0}, Llo8;->j(Ltn8;Ljava/util/List;)Lgt7;
 
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, 0x72d9d95f
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "Gallery"
+    move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    invoke-static {p0}, Ll37;->m(Ljava/lang/Object;)Llqc;
+
+    move-result-object p0
+
+    invoke-virtual {p1, p2, p0}, Llo8;->j(Ltn8;Ljava/util/List;)Lgt7;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_1
+    invoke-static {p0}, Ll37;->m(Ljava/lang/Object;)Llqc;
+
+    move-result-object p0
+
+    invoke-virtual {p1, p2, p0}, Llo8;->j(Ltn8;Ljava/util/List;)Lgt7;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

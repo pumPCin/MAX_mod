@@ -49,7 +49,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$Companion;-><init>(Lwc4;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$Companion;-><init>(Lld4;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;->Companion:Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles$Companion;
 
@@ -64,7 +64,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lwc4;)V
+.method public synthetic constructor <init>(Lld4;)V
     .registers 2
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/feature/roles/FeatureRoles;-><init>()V

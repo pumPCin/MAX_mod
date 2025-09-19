@@ -3,29 +3,87 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:J
+# static fields
+.field public static final Companion:Lpog;
 
-.field public final b:Lccb;
+
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(JLccb;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Lpog;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lrog;->Companion:Lpog;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+    .registers 8
+
+    and-int/lit8 v0, p2, 0x1
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-ne v2, v0, :cond_2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lrog;->a:J
+    iput-object p1, p0, Lrog;->a:Ljava/lang/String;
 
-    iput-object p3, p0, Lrog;->b:Lccb;
+    and-int/lit8 p1, p2, 0x2
+
+    if-nez p1, :cond_0
+
+    iput-object v1, p0, Lrog;->b:Ljava/lang/String;
+
+    goto :goto_0
+
+    :cond_0
+    iput-object p3, p0, Lrog;->b:Ljava/lang/String;
+
+    :goto_0
+    and-int/lit8 p1, p2, 0x4
+
+    if-nez p1, :cond_1
+
+    iput-object v1, p0, Lrog;->c:Ljava/lang/String;
 
     return-void
+
+    :cond_1
+    iput-object p4, p0, Lrog;->c:Ljava/lang/String;
+
+    return-void
+
+    :cond_2
+    sget-object p0, Lnog;->a:Lnog;
+
+    invoke-virtual {p0}, Lnog;->d()Lqid;
+
+    move-result-object p0
+
+    invoke-static {p2, v2, p0}, Lla6;->F(IILqid;)V
+
+    throw v1
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 9
+    .registers 6
 
     const/4 v0, 0x1
 
@@ -45,81 +103,118 @@
     :cond_1
     check-cast p1, Lrog;
 
-    iget-wide v3, p0, Lrog;->a:J
+    iget-object v1, p0, Lrog;->a:Ljava/lang/String;
 
-    iget-wide v5, p1, Lrog;->a:J
+    iget-object v3, p1, Lrog;->a:Ljava/lang/String;
 
-    cmp-long v1, v3, v5
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v1, :cond_2
+    move-result v1
+
+    if-nez v1, :cond_2
 
     return v2
 
     :cond_2
-    iget-object p0, p0, Lrog;->b:Lccb;
+    iget-object v1, p0, Lrog;->b:Ljava/lang/String;
 
-    iget-object p1, p1, Lrog;->b:Lccb;
+    iget-object v3, p1, Lrog;->b:Ljava/lang/String;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result p0
+    move-result v1
 
-    if-nez p0, :cond_3
+    if-nez v1, :cond_3
 
     return v2
 
     :cond_3
+    iget-object p0, p0, Lrog;->c:Ljava/lang/String;
+
+    iget-object p1, p1, Lrog;->c:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    return v2
+
+    :cond_4
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .registers 4
 
-    iget-wide v0, p0, Lrog;->a:J
+    iget-object v0, p0, Lrog;->a:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget-object p0, p0, Lrog;->b:Lccb;
+    const/4 v1, 0x0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    iget-object v2, p0, Lrog;->b:Ljava/lang/String;
 
-    move-result p0
+    if-nez v2, :cond_0
 
-    add-int/2addr p0, v0
+    move v2, v1
 
-    return p0
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    :goto_0
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lrog;->c:Ljava/lang/String;
+
+    if-nez p0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    :goto_1
+    add-int/2addr v0, v1
+
+    return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .registers 6
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, ", text="
 
-    const-string v1, "State(uptime="
+    const-string v1, ", link="
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v2, "WebAppShareRequest(requestId="
 
-    iget-wide v1, p0, Lrog;->a:J
+    iget-object v3, p0, Lrog;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget-object v4, p0, Lrog;->b:Ljava/lang/String;
 
-    const-string v1, ", processorInfo="
+    invoke-static {v2, v3, v0, v4, v1}, Lz7e;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    iget-object p0, p0, Lrog;->b:Lccb;
+    const-string v1, ")"
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lrog;->c:Ljava/lang/String;
 
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lyv7;->k(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

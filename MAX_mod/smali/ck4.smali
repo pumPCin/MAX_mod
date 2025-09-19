@@ -1,648 +1,294 @@
-.class public final Lck4;
+.class public final synthetic Lck4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lvkg;
-.implements Ldmg;
-
-
-# static fields
-.field public static final s0:Ljava/lang/String;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public final X:Lvu7;
+.field public final synthetic X:Z
 
-.field public final Y:Ljava/lang/Object;
+.field public final synthetic Y:Lvv1;
 
-.field public Z:I
+.field public final synthetic Z:Ljava/util/concurrent/Executor;
 
-.field public final a:Landroid/content/Context;
+.field public final synthetic a:Ldk4;
 
-.field public final b:I
+.field public final synthetic b:Landroid/content/Context;
 
-.field public final c:Ldlg;
+.field public final synthetic c:Lbx0;
 
-.field public final n0:Lnad;
+.field public final synthetic o:Lc83;
 
-.field public final o:Lgle;
+.field public final synthetic r0:Lhxf;
 
-.field public final o0:Lv30;
+.field public final synthetic s0:Lvj6;
 
-.field public p0:Landroid/os/PowerManager$WakeLock;
-
-.field public q0:Z
-
-.field public final r0:Lv3e;
+.field public final synthetic t0:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    const-string v0, "DelayMetCommandHandler"
-
-    invoke-static {v0}, Las3;->f0(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lck4;->s0:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;ILgle;Lv3e;)V
-    .registers 5
+.method public synthetic constructor <init>(Ldk4;Landroid/content/Context;Lbx0;Lc83;ZLvv1;Ljava/util/concurrent/Executor;Lhxf;Lvj6;Z)V
+    .registers 11
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lck4;->a:Landroid/content/Context;
+    iput-object p1, p0, Lck4;->a:Ldk4;
 
-    iput p2, p0, Lck4;->b:I
+    iput-object p2, p0, Lck4;->b:Landroid/content/Context;
 
-    iput-object p3, p0, Lck4;->o:Lgle;
+    iput-object p3, p0, Lck4;->c:Lbx0;
 
-    iget-object p1, p4, Lv3e;->a:Ldlg;
+    iput-object p4, p0, Lck4;->o:Lc83;
 
-    iput-object p1, p0, Lck4;->c:Ldlg;
+    iput-boolean p5, p0, Lck4;->X:Z
 
-    iput-object p4, p0, Lck4;->r0:Lv3e;
+    iput-object p6, p0, Lck4;->Y:Lvv1;
 
-    iget-object p1, p3, Lgle;->X:Lklg;
+    iput-object p7, p0, Lck4;->Z:Ljava/util/concurrent/Executor;
 
-    iget-object p1, p1, Lklg;->j:Lrlg;
+    iput-object p8, p0, Lck4;->r0:Lhxf;
 
-    iget-object p2, p3, Lgle;->b:Lhre;
+    iput-object p9, p0, Lck4;->s0:Lvj6;
 
-    check-cast p2, Lqo8;
-
-    iget-object p3, p2, Lqo8;->b:Ljava/lang/Object;
-
-    check-cast p3, Lnad;
-
-    iput-object p3, p0, Lck4;->n0:Lnad;
-
-    iget-object p2, p2, Lqo8;->o:Ljava/lang/Object;
-
-    check-cast p2, Lv30;
-
-    iput-object p2, p0, Lck4;->o0:Lv30;
-
-    new-instance p2, Lvu7;
-
-    invoke-direct {p2, p1, p0}, Lvu7;-><init>(Lrlg;Lvkg;)V
-
-    iput-object p2, p0, Lck4;->X:Lvu7;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lck4;->q0:Z
-
-    iput p1, p0, Lck4;->Z:I
-
-    new-instance p1, Ljava/lang/Object;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lck4;->Y:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public static a(Lck4;)V
-    .registers 11
-
-    iget v0, p0, Lck4;->b:I
-
-    iget-object v1, p0, Lck4;->o0:Lv30;
-
-    iget-object v2, p0, Lck4;->a:Landroid/content/Context;
-
-    iget-object v3, p0, Lck4;->o:Lgle;
-
-    iget-object v4, p0, Lck4;->c:Ldlg;
-
-    iget-object v5, v4, Ldlg;->a:Ljava/lang/String;
-
-    iget v6, p0, Lck4;->Z:I
-
-    sget-object v7, Lck4;->s0:Ljava/lang/String;
-
-    const/4 v8, 0x2
-
-    if-ge v6, v8, :cond_1
-
-    iput v8, p0, Lck4;->Z:I
-
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object p0
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v8, "Stopping work for WorkSpec "
-
-    invoke-direct {v6, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {p0, v7, v6}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance p0, Landroid/content/Intent;
-
-    const-class v6, Landroidx/work/impl/background/systemalarm/SystemAlarmService;
-
-    invoke-direct {p0, v2, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string v8, "ACTION_STOP_WORK"
-
-    invoke-virtual {p0, v8}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-static {p0, v4}, Lo83;->d(Landroid/content/Intent;Ldlg;)V
-
-    new-instance v8, Lun;
-
-    const/4 v9, 0x4
-
-    invoke-direct {v8, v3, p0, v0, v9}, Lun;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V
-
-    invoke-virtual {v1, v8}, Lv30;->execute(Ljava/lang/Runnable;)V
-
-    iget-object p0, v3, Lgle;->o:Lbcb;
-
-    invoke-virtual {p0, v5}, Lbcb;->d(Ljava/lang/String;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object p0
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    const-string v9, "WorkSpec "
-
-    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v5, " needs to be rescheduled"
-
-    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {p0, v7, v5}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance p0, Landroid/content/Intent;
-
-    invoke-direct {p0, v2, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string v2, "ACTION_SCHEDULE_WORK"
-
-    invoke-virtual {p0, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-static {p0, v4}, Lo83;->d(Landroid/content/Intent;Ldlg;)V
-
-    new-instance v2, Lun;
-
-    const/4 v4, 0x4
-
-    invoke-direct {v2, v3, p0, v0, v4}, Lun;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V
-
-    invoke-virtual {v1, v2}, Lv30;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :cond_0
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object p0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Processor does not have WorkSpec "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ". No need to reschedule"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v7, v0}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_1
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object p0
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Already stopped work for "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v7, v0}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
+    iput-boolean p10, p0, Lck4;->t0:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 6
+.method public final call()Ljava/lang/Object;
+    .registers 25
 
-    const-string v0, "Releasing wakelock "
+    move-object/from16 v0, p0
 
-    iget-object v1, p0, Lck4;->Y:Ljava/lang/Object;
+    iget-object v2, v0, Lck4;->s0:Lvj6;
 
-    monitor-enter v1
+    iget-object v1, v0, Lck4;->a:Ldk4;
 
-    :try_start_0
-    iget-object v2, p0, Lck4;->X:Lvu7;
+    iget-object v12, v1, Ldk4;->d:Ldk6;
 
-    invoke-virtual {v2}, Lvu7;->u()V
+    iget v13, v1, Ldk4;->e:I
 
-    iget-object v2, p0, Lck4;->o:Lgle;
+    iget-boolean v8, v1, Ldk4;->a:Z
 
-    iget-object v2, v2, Lgle;->c:Lfmg;
+    iget-boolean v9, v1, Ldk4;->f:Z
 
-    iget-object v3, p0, Lck4;->c:Ldlg;
+    iget-boolean v10, v1, Ldk4;->g:Z
 
-    invoke-virtual {v2, v3}, Lfmg;->a(Ldlg;)V
+    sget v1, Lfk4;->v:I
 
-    iget-object v2, p0, Lck4;->p0:Landroid/os/PowerManager$WakeLock;
+    invoke-static {}, Li4h;->B()Landroid/opengl/EGLDisplay;
 
-    if-eqz v2, :cond_0
+    move-result-object v11
 
-    invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
+    iget-object v14, v0, Lck4;->o:Lc83;
 
-    move-result v2
+    invoke-static {v14}, Lc83;->g(Lc83;)Z
 
-    if-eqz v2, :cond_0
+    move-result v1
 
-    invoke-static {}, Las3;->C()Las3;
+    if-eqz v1, :cond_0
 
-    move-result-object v2
-
-    sget-object v3, Lck4;->s0:Ljava/lang/String;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lck4;->p0:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, "for WorkSpec "
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v0, p0, Lck4;->c:Ldlg;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v3, v0}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p0, p0, Lck4;->p0:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {p0}, Landroid/os/PowerManager$WakeLock;->release()V
+    sget-object v1, Li4h;->d:[I
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
+    :cond_0
+    sget-object v1, Li4h;->c:[I
+
+    :goto_0
+    const/4 v3, 0x3
+
+    :try_start_0
+    invoke-interface {v2, v11, v3, v1}, Lvj6;->c(Landroid/opengl/EGLDisplay;I[I)Landroid/opengl/EGLContext;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3, v11}, Lvj6;->t(Landroid/opengl/EGLContext;Landroid/opengl/EGLDisplay;)Landroid/opengl/EGLSurface;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v1
+    :try_end_0
+    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_1
+    move-object v15, v1
+
+    goto :goto_2
+
+    :catch_0
+    const/4 v3, 0x2
+
+    invoke-interface {v2, v11, v3, v1}, Lvj6;->c(Landroid/opengl/EGLDisplay;I[I)Landroid/opengl/EGLContext;
+
+    move-result-object v1
+
+    invoke-interface {v2, v1, v11}, Lvj6;->t(Landroid/opengl/EGLContext;Landroid/opengl/EGLDisplay;)Landroid/opengl/EGLSurface;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object v1
 
     goto :goto_1
 
-    :cond_0
-    :goto_0
-    monitor-exit v1
-
-    return-void
-
-    :goto_1
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-.end method
-
-.method public final c()V
-    .registers 7
-
-    iget-object v0, p0, Lck4;->c:Ldlg;
-
-    iget-object v0, v0, Ldlg;->a:Ljava/lang/String;
-
-    const-string v1, " ("
-
-    invoke-static {v0, v1}, Lgl5;->m(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :goto_2
+    invoke-virtual {v14}, Lc83;->a()La83;
 
     move-result-object v1
 
-    iget v2, p0, Lck4;->b:I
+    const/4 v3, 0x1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iput v3, v1, La83;->c:I
 
-    const-string v2, ")"
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object v3, v1, La83;->d:[B
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance v16, Lc83;
 
-    move-result-object v1
+    iget v3, v1, La83;->a:I
 
-    iget-object v2, p0, Lck4;->a:Landroid/content/Context;
+    iget v4, v1, La83;->b:I
 
-    invoke-static {v2, v1}, Lq1g;->a(Landroid/content/Context;Ljava/lang/String;)Landroid/os/PowerManager$WakeLock;
+    iget v5, v1, La83;->c:I
 
-    move-result-object v1
+    iget-object v6, v1, La83;->d:[B
 
-    iput-object v1, p0, Lck4;->p0:Landroid/os/PowerManager$WakeLock;
+    iget v7, v1, La83;->e:I
 
-    invoke-static {}, Las3;->C()Las3;
+    iget v1, v1, La83;->f:I
 
-    move-result-object v1
+    move/from16 v21, v1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    move/from16 v17, v3
 
-    const-string v3, "Acquiring wakelock "
+    move/from16 v18, v4
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move/from16 v19, v5
 
-    iget-object v3, p0, Lck4;->p0:Landroid/os/PowerManager$WakeLock;
+    move-object/from16 v22, v6
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move/from16 v20, v7
 
-    const-string v3, "for WorkSpec "
+    invoke-direct/range {v16 .. v22}, Lc83;-><init>(IIIII[B)V
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v14}, Lc83;->g(Lc83;)Z
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v1, :cond_1
 
-    move-result-object v2
+    move-object/from16 v3, v16
 
-    sget-object v3, Lck4;->s0:Ljava/lang/String;
-
-    invoke-virtual {v1, v3, v2}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v1, p0, Lck4;->p0:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->acquire()V
-
-    iget-object v1, p0, Lck4;->o:Lgle;
-
-    iget-object v1, v1, Lgle;->X:Lklg;
-
-    iget-object v1, v1, Lklg;->c:Landroidx/work/impl/WorkDatabase;
-
-    invoke-virtual {v1}, Landroidx/work/impl/WorkDatabase;->x()Lamg;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lamg;->o(Ljava/lang/String;)Lylg;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    new-instance v0, Lbk4;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lbk4;-><init>(Lck4;I)V
-
-    iget-object p0, p0, Lck4;->n0:Lnad;
-
-    invoke-virtual {p0, v0}, Lnad;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :cond_0
-    invoke-virtual {v1}, Lylg;->c()Z
-
-    move-result v2
-
-    iput-boolean v2, p0, Lck4;->q0:Z
-
-    if-nez v2, :cond_1
-
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object v2
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "No constraints for "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v3, v0}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lck4;->f(Ljava/util/List;)V
-
-    return-void
+    goto :goto_3
 
     :cond_1
-    iget-object p0, p0, Lck4;->X:Lvu7;
+    move-object v3, v14
 
-    invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    :goto_3
+    new-instance v1, Lk20;
 
-    move-result-object v0
+    new-instance v7, Lyj4;
 
-    invoke-virtual {p0, v0}, Lvu7;->t(Ljava/util/Collection;)V
+    const/4 v4, 0x0
 
-    return-void
-.end method
+    move-object/from16 v16, v11
 
-.method public final d(Ljava/util/ArrayList;)V
-    .registers 3
+    iget-object v11, v0, Lck4;->r0:Lhxf;
 
-    new-instance p1, Lbk4;
+    invoke-direct {v7, v11, v4}, Lyj4;-><init>(Lhxf;I)V
 
-    const/4 v0, 0x0
+    iget-object v4, v0, Lck4;->b:Landroid/content/Context;
 
-    invoke-direct {p1, p0, v0}, Lbk4;-><init>(Lck4;I)V
+    iget-object v5, v0, Lck4;->Y:Lvv1;
 
-    iget-object p0, p0, Lck4;->n0:Lnad;
+    iget-object v6, v0, Lck4;->Z:Ljava/util/concurrent/Executor;
 
-    invoke-virtual {p0, p1}, Lnad;->execute(Ljava/lang/Runnable;)V
+    move-object/from16 v23, v4
 
-    return-void
-.end method
+    move-object v4, v2
 
-.method public final e(Z)V
-    .registers 9
+    move-object/from16 v2, v23
 
-    invoke-static {}, Las3;->C()Las3;
+    invoke-direct/range {v1 .. v10}, Lk20;-><init>(Landroid/content/Context;Lc83;Lvj6;Lvv1;Ljava/util/concurrent/Executor;Lyj4;ZZZ)V
 
-    move-result-object v0
+    move-object/from16 v23, v4
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    move-object v4, v2
 
-    const-string v2, "onExecuted "
+    move-object/from16 v2, v23
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    new-instance v3, Ljp5;
 
-    iget-object v2, p0, Lck4;->c:Ldlg;
+    iget-object v7, v15, Landroid/util/Pair;->first:Ljava/lang/Object;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    check-cast v7, Landroid/opengl/EGLContext;
 
-    const-string v3, ", "
+    iget-object v8, v15, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v8, Landroid/opengl/EGLSurface;
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    iget-boolean v10, v0, Lck4;->X:Z
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move v9, v10
 
-    move-result-object v1
+    move-object v10, v6
 
-    sget-object v3, Lck4;->s0:Ljava/lang/String;
+    move-object v6, v7
 
-    invoke-virtual {v0, v3, v1}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
+    move-object v7, v8
 
-    invoke-virtual {p0}, Lck4;->b()V
+    move-object v8, v14
 
-    const-class v0, Landroidx/work/impl/background/systemalarm/SystemAlarmService;
+    move v14, v9
 
-    iget v1, p0, Lck4;->b:I
+    move-object v9, v5
 
-    iget-object v3, p0, Lck4;->o:Lgle;
+    move-object/from16 v5, v16
 
-    iget-object v4, p0, Lck4;->o0:Lv30;
+    invoke-direct/range {v3 .. v14}, Ljp5;-><init>(Landroid/content/Context;Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;Landroid/opengl/EGLSurface;Lc83;Lvv1;Ljava/util/concurrent/Executor;Lhxf;Ldk6;IZ)V
 
-    iget-object v5, p0, Lck4;->a:Landroid/content/Context;
+    move-object v5, v9
 
-    if-eqz p1, :cond_0
+    move-object v6, v10
 
-    new-instance p1, Landroid/content/Intent;
+    move-object v7, v11
 
-    invoke-direct {p1, v5, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    move v10, v14
 
-    const-string v6, "ACTION_SCHEDULE_WORK"
+    new-instance v9, Lfk4;
 
-    invoke-virtual {p1, v6}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    move-object v11, v9
 
-    invoke-static {p1, v2}, Lo83;->d(Landroid/content/Intent;Ldlg;)V
+    move-object v9, v3
 
-    new-instance v2, Lun;
+    iget-boolean v3, v0, Lck4;->t0:Z
 
-    const/4 v6, 0x4
+    iget-object v12, v0, Lck4;->c:Lbx0;
 
-    invoke-direct {v2, v3, p1, v1, v6}, Lun;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V
+    move-object v0, v11
 
-    invoke-virtual {v4, v2}, Lv30;->execute(Ljava/lang/Runnable;)V
+    move-object v11, v8
 
-    :cond_0
-    iget-boolean p0, p0, Lck4;->q0:Z
+    move-object v8, v6
 
-    if-eqz p0, :cond_1
+    move-object v6, v5
 
-    new-instance p0, Landroid/content/Intent;
+    move-object v5, v1
 
-    invoke-direct {p0, v5, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    move-object v1, v4
 
-    const-string p1, "ACTION_CONSTRAINTS_CHANGED"
+    move-object/from16 v4, v16
 
-    invoke-virtual {p0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-direct/range {v0 .. v12}, Lfk4;-><init>(Landroid/content/Context;Lvj6;ZLandroid/opengl/EGLDisplay;Lk20;Lvv1;Lhxf;Ljava/util/concurrent/Executor;Ljp5;ZLc83;Lbx0;)V
 
-    new-instance p1, Lun;
-
-    const/4 v0, 0x4
-
-    invoke-direct {p1, v3, p0, v1, v0}, Lun;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V
-
-    invoke-virtual {v4, p1}, Lv30;->execute(Ljava/lang/Runnable;)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final f(Ljava/util/List;)V
-    .registers 4
-
-    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lylg;
-
-    invoke-static {v0}, Lfog;->B(Lylg;)Ldlg;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lck4;->c:Ldlg;
-
-    invoke-virtual {v0, v1}, Ldlg;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    new-instance p1, Lbk4;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, p0, v0}, Lbk4;-><init>(Lck4;I)V
-
-    iget-object p0, p0, Lck4;->n0:Lnad;
-
-    invoke-virtual {p0, p1}, Lnad;->execute(Ljava/lang/Runnable;)V
-
-    :cond_1
-    return-void
+    return-object v0
 .end method

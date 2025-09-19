@@ -1,97 +1,198 @@
-.class public final Lgi9;
-.super Ljava/lang/Object;
+.class public Lgi9;
+.super Ljava/util/concurrent/AbstractExecutorService;
 .source "SourceFile"
 
 # interfaces
-.implements Lhxa;
-
-
-# static fields
-.field public static final b:Ljava/util/regex/Pattern;
+.implements Lvt7;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Ljava/util/concurrent/ExecutorService;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ljava/util/concurrent/ExecutorService;)V
+    .registers 2
 
-    const-string v0, "^[\\p{L}\\p{N}]+$"
+    invoke-direct {p0}, Ljava/util/concurrent/AbstractExecutorService;-><init>()V
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
-
-    sput-object v0, Lgi9;->b:Ljava/util/regex/Pattern;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-string v0, "_"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lgi9;->a:Ljava/lang/String;
+    iput-object p1, p0, Lgi9;->a:Ljava/util/concurrent/ExecutorService;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Ljava/lang/String;
+.method public final a(Ljava/util/concurrent/Callable;)Lgt7;
+    .registers 2
+
+    invoke-super {p0, p1}, Ljava/util/concurrent/AbstractExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+
+    move-result-object p0
+
+    check-cast p0, Lgt7;
+
+    return-object p0
+.end method
+
+.method public final awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
     .registers 4
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-object p0, p0, Lgi9;->a:Ljava/util/concurrent/ExecutorService;
 
-    move-result-object v0
+    invoke-interface {p0, p1, p2, p3}, Ljava/util/concurrent/ExecutorService;->awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
 
-    sget-object v1, Lgi9;->b:Ljava/util/regex/Pattern;
+    move-result p0
 
-    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    return p0
+.end method
 
-    move-result-object v1
+.method public final execute(Ljava/lang/Runnable;)V
+    .registers 2
 
-    invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
+    iget-object p0, p0, Lgi9;->a:Ljava/util/concurrent/ExecutorService;
 
-    move-result v1
+    invoke-interface {p0, p1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    if-eqz v1, :cond_0
+    return-void
+.end method
+
+.method public final isShutdown()Z
+    .registers 1
+
+    iget-object p0, p0, Lgi9;->a:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->isShutdown()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final isTerminated()Z
+    .registers 1
+
+    iget-object p0, p0, Lgi9;->a:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->isTerminated()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final newTaskFor(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/RunnableFuture;
+    .registers 3
+
+    new-instance p0, Lpff;
+
+    invoke-static {p1, p2}, Ljava/util/concurrent/Executors;->callable(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Callable;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Lpff;-><init>(Ljava/util/concurrent/Callable;)V
+
+    return-object p0
+.end method
+
+.method public final newTaskFor(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/RunnableFuture;
+    .registers 2
+
+    new-instance p0, Lpff;
+
+    invoke-direct {p0, p1}, Lpff;-><init>(Ljava/util/concurrent/Callable;)V
+
+    return-object p0
+.end method
+
+.method public final shutdown()V
+    .registers 1
+
+    iget-object p0, p0, Lgi9;->a:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
+
+    return-void
+.end method
+
+.method public final shutdownNow()Ljava/util/List;
+    .registers 1
+
+    iget-object p0, p0, Lgi9;->a:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {p0}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+    .registers 2
+
+    invoke-super {p0, p1}, Ljava/util/concurrent/AbstractExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+
+    move-result-object p0
+
+    check-cast p0, Lgt7;
+
+    return-object p0
+.end method
+
+.method public final submit(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;
+    .registers 3
+
+    invoke-super {p0, p1, p2}, Ljava/util/concurrent/AbstractExecutorService;->submit(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;
+
+    move-result-object p0
+
+    check-cast p0, Lgt7;
+
+    return-object p0
+.end method
+
+.method public final submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    .registers 2
+
+    invoke-super {p0, p1}, Ljava/util/concurrent/AbstractExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+
+    move-result-object p0
+
+    check-cast p0, Lgt7;
+
+    return-object p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object p0, p0, Lgi9;->a:Ljava/lang/String;
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "["
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lgi9;->a:Ljava/util/concurrent/ExecutorService;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "]"
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Invalid key: "
-
-    invoke-static {p1, v0}, Lnh0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

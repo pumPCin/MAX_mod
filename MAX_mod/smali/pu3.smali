@@ -1,112 +1,159 @@
 .class public final Lpu3;
-.super Lxie;
+.super Lzoc;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final G0:[I
+
+.field public static final H0:[I
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final E0:Ltt3;
 
-.field public final synthetic Y:Lone/me/sdk/uikit/common/button/OneMeButton;
+.field public final F0:Lih0;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/sdk/uikit/common/button/OneMeButton;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Lpu3;->Y:Lone/me/sdk/uikit/common/button/OneMeButton;
+    const v0, -0xf7cb2d
 
-    const/4 p1, 0x2
+    const v1, -0xff6610
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    filled-new-array {v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lpu3;->G0:[I
+
+    const v0, -0xb1fb14
+
+    const v1, -0x717a01
+
+    filled-new-array {v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lpu3;->H0:[I
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;Ltt3;)V
+    .registers 8
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    sget-object v0, Lbh0;->a:Lbh0;
 
-    check-cast p1, Ljava/util/Set;
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    move-result-object v0
 
-    invoke-virtual {p0, p1, p2}, Lpu3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    const-class v1, Lih0;
 
-    move-result-object p0
+    invoke-virtual {v0, v1}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    check-cast p0, Lpu3;
+    move-result-object v0
 
-    sget-object p1, Lncf;->a:Lncf;
+    check-cast v0, Lih0;
 
-    invoke-virtual {p0, p1}, Lpu3;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v1, Ltka;
 
-    return-object p1
-.end method
+    invoke-direct {v1, p1}, Ltka;-><init>(Landroid/content/Context;)V
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    invoke-direct {p0, v1}, Lzoc;-><init>(Landroid/view/View;)V
 
-    new-instance v0, Lpu3;
+    iput-object p2, p0, Lpu3;->E0:Ltt3;
 
-    iget-object p0, p0, Lpu3;->Y:Lone/me/sdk/uikit/common/button/OneMeButton;
+    iput-object v0, p0, Lpu3;->F0:Lih0;
 
-    invoke-direct {v0, p0, p2}, Lpu3;-><init>(Lone/me/sdk/uikit/common/button/OneMeButton;Lkotlin/coroutines/Continuation;)V
+    new-instance p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    iput-object p1, v0, Lpu3;->X:Ljava/lang/Object;
+    const/4 p2, -0x1
 
-    return-object v0
-.end method
+    invoke-direct {p1, p2, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    const/16 p2, 0xc
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    int-to-float p2, p2
 
-    iget-object p1, p0, Lpu3;->X:Ljava/lang/Object;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    check-cast p1, Ljava/util/Set;
+    move-result-object v0
 
-    invoke-interface {p1}, Ljava/util/Set;->size()I
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result p1
+    move-result-object v0
 
-    const/4 v0, 0x1
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    iget-object p0, p0, Lpu3;->Y:Lone/me/sdk/uikit/common/button/OneMeButton;
+    mul-float/2addr v0, p2
 
-    if-nez p1, :cond_0
+    invoke-static {v0}, Lya6;->G(F)I
 
-    const/16 p1, 0x8
+    move-result v0
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    const/4 p1, 0x0
+    move-result-object v2
 
-    invoke-virtual {p0, p1, v0}, Lone/me/sdk/uikit/common/button/OneMeButton;->c(Ljava/lang/Integer;Z)V
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    goto :goto_0
+    move-result-object v2
 
-    :cond_0
-    const/4 v1, 0x0
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
+    mul-float/2addr v2, p2
 
-    sget v1, Lmaa;->H:I
+    invoke-static {v2}, Lya6;->G(F)I
 
-    invoke-virtual {p0, v1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setText(I)V
+    move-result v2
 
-    new-instance v1, Ljava/lang/Integer;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    invoke-direct {v1, p1}, Ljava/lang/Integer;-><init>(I)V
+    move-result-object v3
 
-    invoke-virtual {p0, v1, v0}, Lone/me/sdk/uikit/common/button/OneMeButton;->c(Ljava/lang/Integer;Z)V
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    move-result-object v3
 
-    return-object p0
+    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v3, p2
+
+    invoke-static {v3}, Lya6;->G(F)I
+
+    move-result v3
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v4
+
+    iget v4, v4, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p2, v4
+
+    invoke-static {p2}, Lya6;->G(F)I
+
+    move-result p2
+
+    invoke-virtual {p1, v0, v2, v3, p2}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
+
+    invoke-virtual {v1, p1}, Ltka;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    new-instance p1, Ljj1;
+
+    const/4 p2, 0x1
+
+    invoke-direct {p1, p2, p0}, Ljj1;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v1, p1}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+    return-void
 .end method

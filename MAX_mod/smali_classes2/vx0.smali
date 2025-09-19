@@ -1,157 +1,905 @@
-.class public final enum Lvx0;
-.super Ljava/lang/Enum;
+.class public final Lvx0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum X:Lvx0;
+# instance fields
+.field public final a:D
 
-.field public static final enum Y:Lvx0;
+.field public final b:D
 
-.field public static final enum Z:Lvx0;
+.field public final c:D
 
-.field public static final enum a:Lvx0;
+.field public final d:D
 
-.field public static final enum b:Lvx0;
+.field public final e:D
 
-.field public static final enum c:Lvx0;
+.field public final f:D
 
-.field public static final enum n0:Lvx0;
+.field public final g:D
 
-.field public static final enum o:Lvx0;
+.field public final h:D
 
-.field public static final enum o0:Lvx0;
+.field public final i:D
 
-.field public static final synthetic p0:[Lvx0;
+.field public final j:D
+
+.field public final k:D
+
+.field public final l:D
+
+.field public final m:D
+
+.field public final n:D
+
+.field public final o:D
+
+.field public final p:D
+
+.field public final q:Z
+
+.field public final r:D
+
+.field public final s:D
+
+.field public final t:D
+
+.field public final u:Z
+
+.field public final v:D
+
+.field public final w:D
+
+.field public final x:D
+
+.field public final y:D
+
+.field public final z:D
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 11
+.method public constructor <init>(DDDDDDDDDDDDDDDDZDDDZDDDDD)V
+    .registers 51
 
-    new-instance v0, Lvx0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "ROOT"
+    iput-wide p1, p0, Lvx0;->a:D
 
-    const/4 v2, 0x0
+    iput-wide p3, p0, Lvx0;->b:D
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-wide p5, p0, Lvx0;->c:D
 
-    sput-object v0, Lvx0;->a:Lvx0;
+    iput-wide p7, p0, Lvx0;->d:D
 
-    new-instance v1, Lvx0;
+    iput-wide p9, p0, Lvx0;->e:D
 
-    const-string v2, "IMAGES"
+    iput-wide p11, p0, Lvx0;->f:D
 
-    const/4 v3, 0x1
+    iput-wide p13, p0, Lvx0;->g:D
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    move-wide p1, p15
 
-    sput-object v1, Lvx0;->b:Lvx0;
+    iput-wide p1, p0, Lvx0;->h:D
 
-    new-instance v2, Lvx0;
+    move-wide/from16 p1, p17
 
-    const-string v3, "AUDIO"
+    iput-wide p1, p0, Lvx0;->i:D
 
-    const/4 v4, 0x2
+    move-wide/from16 p1, p19
 
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-wide p1, p0, Lvx0;->j:D
 
-    sput-object v2, Lvx0;->c:Lvx0;
+    move-wide/from16 p1, p21
 
-    new-instance v3, Lvx0;
+    iput-wide p1, p0, Lvx0;->k:D
 
-    const-string v4, "GIF"
+    move-wide/from16 p1, p23
 
-    const/4 v5, 0x3
+    iput-wide p1, p0, Lvx0;->l:D
 
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    move-wide/from16 p1, p25
 
-    sput-object v3, Lvx0;->o:Lvx0;
+    iput-wide p1, p0, Lvx0;->m:D
 
-    new-instance v4, Lvx0;
+    move-wide/from16 p1, p27
 
-    const-string v5, "STICKERS"
+    iput-wide p1, p0, Lvx0;->n:D
 
-    const/4 v6, 0x4
+    move-wide/from16 p1, p29
 
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-wide p1, p0, Lvx0;->o:D
 
-    sput-object v4, Lvx0;->X:Lvx0;
+    move-wide/from16 p1, p31
 
-    new-instance v5, Lvx0;
+    iput-wide p1, p0, Lvx0;->p:D
 
-    const-string v6, "UPLOAD"
+    move/from16 p1, p33
 
-    const/4 v7, 0x5
+    iput-boolean p1, p0, Lvx0;->q:Z
 
-    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    move-wide/from16 p1, p34
 
-    sput-object v5, Lvx0;->Y:Lvx0;
+    iput-wide p1, p0, Lvx0;->r:D
 
-    new-instance v6, Lvx0;
+    move-wide/from16 p1, p36
 
-    const-string v7, "MUSIC"
+    iput-wide p1, p0, Lvx0;->s:D
 
-    const/4 v8, 0x6
+    move-wide/from16 p1, p38
 
-    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-wide p1, p0, Lvx0;->t:D
 
-    sput-object v6, Lvx0;->Z:Lvx0;
+    move/from16 p1, p40
 
-    new-instance v7, Lvx0;
+    iput-boolean p1, p0, Lvx0;->u:Z
 
-    const-string v8, "VIDEO"
+    move-wide/from16 p1, p41
 
-    const/4 v9, 0x7
+    iput-wide p1, p0, Lvx0;->v:D
 
-    invoke-direct {v7, v8, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    move-wide/from16 p1, p43
 
-    sput-object v7, Lvx0;->n0:Lvx0;
+    iput-wide p1, p0, Lvx0;->w:D
 
-    new-instance v8, Lvx0;
+    move-wide/from16 p1, p45
 
-    const-string v9, "OTHERS"
+    iput-wide p1, p0, Lvx0;->x:D
 
-    const/16 v10, 0x8
+    move-wide/from16 p1, p47
 
-    invoke-direct {v8, v9, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-wide p1, p0, Lvx0;->y:D
 
-    sput-object v8, Lvx0;->o0:Lvx0;
+    move-wide/from16 p1, p49
 
-    filled-new-array/range {v0 .. v8}, [Lvx0;
-
-    move-result-object v0
-
-    sput-object v0, Lvx0;->p0:[Lvx0;
+    iput-wide p1, p0, Lvx0;->z:D
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lvx0;
-    .registers 2
 
-    const-class v0, Lvx0;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 9
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lvx0;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lvx0;
+
+    iget-wide v3, p0, Lvx0;->a:D
+
+    iget-wide v5, p1, Lvx0;->a:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-wide v3, p0, Lvx0;->b:D
+
+    iget-wide v5, p1, Lvx0;->b:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-wide v3, p0, Lvx0;->c:D
+
+    iget-wide v5, p1, Lvx0;->c:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-wide v3, p0, Lvx0;->d:D
+
+    iget-wide v5, p1, Lvx0;->d:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-wide v3, p0, Lvx0;->e:D
+
+    iget-wide v5, p1, Lvx0;->e:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-wide v3, p0, Lvx0;->f:D
+
+    iget-wide v5, p1, Lvx0;->f:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_7
+
+    return v2
+
+    :cond_7
+    iget-wide v3, p0, Lvx0;->g:D
+
+    iget-wide v5, p1, Lvx0;->g:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_8
+
+    return v2
+
+    :cond_8
+    iget-wide v3, p0, Lvx0;->h:D
+
+    iget-wide v5, p1, Lvx0;->h:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_9
+
+    return v2
+
+    :cond_9
+    iget-wide v3, p0, Lvx0;->i:D
+
+    iget-wide v5, p1, Lvx0;->i:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_a
+
+    return v2
+
+    :cond_a
+    iget-wide v3, p0, Lvx0;->j:D
+
+    iget-wide v5, p1, Lvx0;->j:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_b
+
+    return v2
+
+    :cond_b
+    iget-wide v3, p0, Lvx0;->k:D
+
+    iget-wide v5, p1, Lvx0;->k:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_c
+
+    return v2
+
+    :cond_c
+    iget-wide v3, p0, Lvx0;->l:D
+
+    iget-wide v5, p1, Lvx0;->l:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_d
+
+    return v2
+
+    :cond_d
+    iget-wide v3, p0, Lvx0;->m:D
+
+    iget-wide v5, p1, Lvx0;->m:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_e
+
+    return v2
+
+    :cond_e
+    iget-wide v3, p0, Lvx0;->n:D
+
+    iget-wide v5, p1, Lvx0;->n:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_f
+
+    return v2
+
+    :cond_f
+    iget-wide v3, p0, Lvx0;->o:D
+
+    iget-wide v5, p1, Lvx0;->o:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_10
+
+    return v2
+
+    :cond_10
+    iget-wide v3, p0, Lvx0;->p:D
+
+    iget-wide v5, p1, Lvx0;->p:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_11
+
+    return v2
+
+    :cond_11
+    iget-boolean v1, p0, Lvx0;->q:Z
+
+    iget-boolean v3, p1, Lvx0;->q:Z
+
+    if-eq v1, v3, :cond_12
+
+    return v2
+
+    :cond_12
+    iget-wide v3, p0, Lvx0;->r:D
+
+    iget-wide v5, p1, Lvx0;->r:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_13
+
+    return v2
+
+    :cond_13
+    iget-wide v3, p0, Lvx0;->s:D
+
+    iget-wide v5, p1, Lvx0;->s:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_14
+
+    return v2
+
+    :cond_14
+    iget-wide v3, p0, Lvx0;->t:D
+
+    iget-wide v5, p1, Lvx0;->t:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_15
+
+    return v2
+
+    :cond_15
+    iget-boolean v1, p0, Lvx0;->u:Z
+
+    iget-boolean v3, p1, Lvx0;->u:Z
+
+    if-eq v1, v3, :cond_16
+
+    return v2
+
+    :cond_16
+    iget-wide v3, p0, Lvx0;->v:D
+
+    iget-wide v5, p1, Lvx0;->v:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_17
+
+    return v2
+
+    :cond_17
+    iget-wide v3, p0, Lvx0;->w:D
+
+    iget-wide v5, p1, Lvx0;->w:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_18
+
+    return v2
+
+    :cond_18
+    iget-wide v3, p0, Lvx0;->x:D
+
+    iget-wide v5, p1, Lvx0;->x:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_19
+
+    return v2
+
+    :cond_19
+    iget-wide v3, p0, Lvx0;->y:D
+
+    iget-wide v5, p1, Lvx0;->y:D
+
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+
+    move-result v1
+
+    if-eqz v1, :cond_1a
+
+    return v2
+
+    :cond_1a
+    iget-wide v3, p0, Lvx0;->z:D
+
+    iget-wide p0, p1, Lvx0;->z:D
+
+    invoke-static {v3, v4, p0, p1}, Ljava/lang/Double;->compare(DD)I
+
+    move-result p0
+
+    if-eqz p0, :cond_1b
+
+    return v2
+
+    :cond_1b
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 5
+
+    iget-wide v0, p0, Lvx0;->a:D
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->hashCode(D)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-wide v2, p0, Lvx0;->b:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->c:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->d:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->e:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->f:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->g:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->h:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->i:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->j:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->k:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->l:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->m:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->n:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->o:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->p:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lvx0;->q:Z
+
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->r:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->s:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lvx0;->t:D
+
+    invoke-static {v0, v2, v3}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lvx0;->u:Z
+
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
+
+    move-result v0
+
+    iget-wide v1, p0, Lvx0;->v:D
+
+    invoke-static {v0, v1, v2}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v1, p0, Lvx0;->w:D
+
+    invoke-static {v0, v1, v2}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v1, p0, Lvx0;->x:D
+
+    invoke-static {v0, v1, v2}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v1, p0, Lvx0;->y:D
+
+    invoke-static {v0, v1, v2}, Lqe5;->a(ID)I
+
+    move-result v0
+
+    iget-wide v1, p0, Lvx0;->z:D
+
+    invoke-static {v1, v2}, Ljava/lang/Double;->hashCode(D)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "CalcNetworkStatusConfig(redline="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v1, p0, Lvx0;->a:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", redlineMargin="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->b:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", ratingWeightUp="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->c:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", ratingWeightDown="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->d:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", goodRtt="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->e:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", rttWeightUp="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->f:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", rttWeightDown="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->g:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", rttStep="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->h:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", rttStepWeight="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->i:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", fastLossWeight="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->j:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", slowLossWeight="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->k:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", fastLossValue="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->l:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", slowLossValue="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->m:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", criticalRtt="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->n:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", criticalFastLoss="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->o:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", criticalSlowLoss="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->p:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", newNetworkRatingModelEnabled="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lvx0;->q:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", goodLoss="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->r:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", lossStep="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->s:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", lossStepWeight="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->t:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", bitrateRatingEnabled="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lvx0;->u:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", bitrateRatingInfluenceFactor="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->v:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", estimatedBitrateWeightUp="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->w:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", estimatedBitrateWeightDown="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->x:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", reportedBitrateWeightUp="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->y:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string v1, ", reportedBitrateWeightDown="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lvx0;->z:D
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lvx0;
-
     return-object p0
-.end method
-
-.method public static values()[Lvx0;
-    .registers 1
-
-    sget-object v0, Lvx0;->p0:[Lvx0;
-
-    invoke-virtual {v0}, [Lvx0;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lvx0;
-
-    return-object v0
 .end method

@@ -1,90 +1,61 @@
-.class public final synthetic Lpu;
-.super Ljava/lang/Object;
+.class public final Lpu;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lz5;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Ljava/lang/Object;
 
-.field public final synthetic b:Ldh2;
+.field public Y:Lzn9;
+
+.field public Z:Ljava/util/Iterator;
+
+.field public o:Lyv;
+
+.field public r0:Lzn9;
+
+.field public s0:J
+
+.field public synthetic t0:Ljava/lang/Object;
+
+.field public final synthetic u0:Lyv;
+
+.field public v0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldh2;I)V
+.method public constructor <init>(Lyv;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p2, p0, Lpu;->a:I
+    iput-object p1, p0, Lpu;->u0:Lyv;
 
-    iput-object p1, p0, Lpu;->b:Ldh2;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Lpu;->a:I
+    iput-object p1, p0, Lpu;->t0:Ljava/lang/Object;
 
-    iget-object p0, p0, Lpu;->b:Ldh2;
+    iget p1, p0, Lpu;->v0:I
 
-    packed-switch v0, :pswitch_data_0
+    const/high16 v0, -0x80000000
 
-    iget-object v0, p0, Ldh2;->n0:Lru;
+    or-int/2addr p1, v0
 
-    monitor-enter v0
+    iput p1, p0, Lpu;->v0:I
 
-    monitor-exit v0
+    iget-object p1, p0, Lpu;->u0:Lyv;
 
-    iget-object v0, p0, Ldh2;->p0:Lru;
+    const/4 v0, 0x0
 
-    monitor-enter v0
+    invoke-virtual {p1, v0, p0}, Lyv;->n(Lp09;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    monitor-exit v0
+    move-result-object p0
 
-    iget-object v0, p0, Ldh2;->o0:Lru;
-
-    monitor-enter v0
-
-    monitor-exit v0
-
-    iget-object v0, p0, Ldh2;->o:Lqxc;
-
-    new-instance v1, Lcc;
-
-    invoke-direct {v1, p0}, Lcc;-><init>(Ldh2;)V
-
-    invoke-virtual {v0, v1}, Lqxc;->b(Ljava/lang/Runnable;)Lnp4;
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Ldh2;->o0:Lru;
-
-    monitor-enter v0
-
-    monitor-exit v0
-
-    iget-object v0, p0, Ldh2;->o:Lqxc;
-
-    new-instance v1, Lcc;
-
-    invoke-direct {v1, p0}, Lcc;-><init>(Ldh2;)V
-
-    invoke-virtual {v0, v1}, Lqxc;->b(Ljava/lang/Runnable;)Lnp4;
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

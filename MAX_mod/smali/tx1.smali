@@ -4,8 +4,5 @@
 
 
 # virtual methods
-.method public abstract a()Lcq7;
-.end method
-
-.method public abstract b()Lcq7;
+.method public abstract a()Lmz1;
 .end method

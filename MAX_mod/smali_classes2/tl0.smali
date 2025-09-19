@@ -1,357 +1,176 @@
 .class public final Ltl0;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lrk;
-
-
-# static fields
-.field public static final c:Landroid/net/Uri;
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:[Lbl;
+.field public X:I
 
-.field public final b:Lxg7;
+.field public final synthetic Y:Lcl7;
+
+.field public final synthetic Z:Lzl0;
+
+.field public final synthetic r0:Lcl7;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lcl7;Lzl0;Lcl7;Lkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    const-string v0, "batch.executeV2"
+    iput-object p1, p0, Ltl0;->Y:Lcl7;
 
-    invoke-static {v0}, Lll;->a(Ljava/lang/String;)Landroid/net/Uri;
+    iput-object p2, p0, Ltl0;->Z:Lzl0;
 
-    move-result-object v0
+    iput-object p3, p0, Ltl0;->r0:Lcl7;
 
-    sput-object v0, Ltl0;->c:Landroid/net/Uri;
+    const/4 p1, 0x2
 
-    return-void
-.end method
-
-.method public constructor <init>([Lbl;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ltl0;->a:[Lbl;
-
-    new-instance v0, Lxg7;
-
-    invoke-direct {v0, p1}, Lxg7;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Ltl0;->b:Lxg7;
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getOkParser()Lpe7;
-    .registers 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object p0, p0, Ltl0;->b:Lxg7;
+    check-cast p1, Ly04;
 
-    return-object p0
-.end method
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-.method public final getPriority()I
-    .registers 5
+    invoke-virtual {p0, p1, p2}, Ltl0;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Ltl0;->a:[Lbl;
+    move-result-object p0
 
-    array-length v0, p0
+    check-cast p0, Ltl0;
 
-    const/4 v1, 0x1
+    sget-object p1, Lylf;->a:Lylf;
 
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v0, :cond_1
-
-    aget-object v3, p0, v2
-
-    iget-object v3, v3, Lbl;->b:Lrk;
-
-    invoke-interface {v3}, Lyk;->getPriority()I
-
-    move-result v3
-
-    if-ge v1, v3, :cond_0
-
-    move v1, v3
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    return v1
-.end method
-
-.method public final getScope()Ldl;
-    .registers 7
-
-    iget-object p0, p0, Ltl0;->a:[Lbl;
-
-    array-length v0, p0
-
-    sget-object v1, Ldl;->a:Ldl;
-
-    if-eqz v0, :cond_4
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    if-eq v0, v3, :cond_3
-
-    array-length v0, p0
-
-    :goto_0
-    if-ge v2, v0, :cond_2
-
-    aget-object v3, p0, v2
-
-    iget-object v4, v3, Lbl;->b:Lrk;
-
-    invoke-interface {v4}, Lyk;->getScope()Ldl;
-
-    move-result-object v4
-
-    invoke-interface {v1, v4}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
-
-    move-result v5
-
-    if-gez v5, :cond_0
-
-    move-object v1, v4
-
-    :cond_0
-    iget-object v3, v3, Lbl;->b:Lrk;
-
-    invoke-interface {v3}, Lrk;->getScopeAfter()Lel;
-
-    move-result-object v3
-
-    sget-object v4, Lel;->a:Lel;
-
-    if-eq v3, v4, :cond_1
-
-    return-object v1
-
-    :cond_1
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    return-object v1
-
-    :cond_3
-    aget-object p0, p0, v2
-
-    iget-object p0, p0, Lbl;->b:Lrk;
-
-    invoke-interface {p0}, Lyk;->getScope()Ldl;
+    invoke-virtual {p0, p1}, Ltl0;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
-
-    :cond_4
-    return-object v1
 .end method
 
-.method public final getScopeAfter()Lel;
-    .registers 4
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 5
 
-    iget-object p0, p0, Ltl0;->a:[Lbl;
+    new-instance p1, Ltl0;
 
-    array-length v0, p0
+    iget-object v0, p0, Ltl0;->Z:Lzl0;
 
-    sget-object v1, Lel;->a:Lel;
+    iget-object v1, p0, Ltl0;->r0:Lcl7;
 
-    if-eqz v0, :cond_3
+    iget-object p0, p0, Ltl0;->Y:Lcl7;
+
+    invoke-direct {p1, p0, v0, v1, p2}, Ltl0;-><init>(Lcl7;Lzl0;Lcl7;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
+
+    iget v0, p0, Ltl0;->X:I
+
+    const/4 v1, 0x2
 
     const/4 v2, 0x1
 
-    if-eq v0, v2, :cond_2
+    sget-object v3, Lz04;->a:Lz04;
 
-    sub-int/2addr v0, v2
+    if-eqz v0, :cond_2
 
-    :goto_0
-    const/4 v2, -0x1
+    if-eq v0, v2, :cond_1
 
-    if-ge v2, v0, :cond_1
+    if-ne v0, v1, :cond_0
 
-    aget-object v2, p0, v0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object v2, v2, Lbl;->b:Lrk;
+    goto :goto_2
 
-    invoke-interface {v2}, Lrk;->getScopeAfter()Lel;
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    move-result-object v2
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    if-ne v2, v1, :cond_0
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    add-int/lit8 v0, v0, -0x1
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    :cond_0
-    return-object v2
-
-    :cond_1
-    return-object v1
-
     :cond_2
-    const/4 v0, 0x0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    aget-object p0, p0, v0
+    iget-object p1, p0, Ltl0;->Y:Lcl7;
 
-    iget-object p0, p0, Lbl;->b:Lrk;
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    invoke-interface {p0}, Lrk;->getScopeAfter()Lel;
+    move-result-object p1
+
+    check-cast p1, Lyz2;
+
+    iget-object v0, p0, Ltl0;->Z:Lzl0;
+
+    iget-wide v4, v0, Lzl0;->a:J
+
+    check-cast p1, Ly03;
+
+    invoke-virtual {p1, v4, v5}, Ly03;->N(J)Liic;
+
+    move-result-object p1
+
+    new-instance v0, Lzv2;
+
+    const/16 v4, 0xc
+
+    invoke-direct {v0, p1, v4}, Lzv2;-><init>(Lis5;I)V
+
+    iput v2, p0, Ltl0;->X:I
+
+    invoke-static {v0, p0}, Lo97;->Z(Lis5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v3, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    :goto_0
+    check-cast p1, Ls72;
+
+    iget-object v0, p0, Ltl0;->r0:Lcl7;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrh9;
+
+    iput v1, p0, Ltl0;->X:I
+
+    invoke-virtual {v0, p1, p0}, Lrh9;->R(Ls72;Lure;)Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    if-ne p0, v3, :cond_4
 
-    :cond_3
-    return-object v1
-.end method
+    :goto_1
+    return-object v3
 
-.method public final getUri()Landroid/net/Uri;
-    .registers 1
-
-    sget-object p0, Ltl0;->c:Landroid/net/Uri;
+    :cond_4
+    :goto_2
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
-.end method
-
-.method public final shouldGzip()Z
-    .registers 5
-
-    iget-object p0, p0, Ltl0;->a:[Lbl;
-
-    array-length v0, p0
-
-    const/4 v1, 0x0
-
-    move v2, v1
-
-    :goto_0
-    if-ge v2, v0, :cond_1
-
-    aget-object v3, p0, v2
-
-    iget-object v3, v3, Lbl;->b:Lrk;
-
-    invoke-interface {v3}, Lyk;->shouldGzip()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    return v1
-.end method
-
-.method public final shouldPost()Z
-    .registers 1
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final writeParams(Lbf7;)V
-    .registers 6
-
-    const-string v0, "methods"
-
-    invoke-interface {p1, v0}, Lbf7;->k0(Ljava/lang/String;)Lbf7;
-
-    invoke-interface {p1}, Lbf7;->u()V
-
-    iget-object p0, p0, Ltl0;->a:[Lbl;
-
-    array-length v0, p0
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_2
-
-    aget-object v2, p0, v1
-
-    iget-object v3, v2, Lbl;->b:Lrk;
-
-    invoke-interface {p1}, Lbf7;->s()V
-
-    iget-object v2, v2, Lbl;->c:Ljava/lang/String;
-
-    invoke-interface {p1, v2}, Lbf7;->k0(Ljava/lang/String;)Lbf7;
-
-    invoke-interface {p1}, Lbf7;->s()V
-
-    invoke-interface {v3}, Lyk;->willWriteParams()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    const-string v2, "params"
-
-    invoke-interface {p1, v2}, Lbf7;->k0(Ljava/lang/String;)Lbf7;
-
-    invoke-interface {p1}, Lbf7;->s()V
-
-    invoke-interface {v3, p1}, Lyk;->writeParams(Lbf7;)V
-
-    invoke-interface {p1}, Lbf7;->q()V
-
-    :cond_0
-    invoke-interface {v3}, Lyk;->willWriteSupplyParams()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    const-string v2, "supplyParams"
-
-    invoke-interface {p1, v2}, Lbf7;->k0(Ljava/lang/String;)Lbf7;
-
-    invoke-interface {p1}, Lbf7;->s()V
-
-    invoke-interface {v3, p1}, Lyk;->writeSupplyParams(Lbf7;)V
-
-    invoke-interface {p1}, Lbf7;->q()V
-
-    :cond_1
-    invoke-interface {p1}, Lbf7;->q()V
-
-    invoke-interface {p1}, Lbf7;->q()V
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    invoke-interface {p1}, Lbf7;->t()V
-
-    return-void
 .end method

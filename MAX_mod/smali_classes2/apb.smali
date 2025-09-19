@@ -1,98 +1,170 @@
 .class public final Lapb;
-.super Lxie;
+.super Luc0;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Lnpb;
+.field public final b:Lu2f;
 
-.field public final synthetic Y:J
+.field public final c:Lu2f;
+
+.field public final d:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lnpb;JLkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lu2f;Lu2f;Ljava/util/List;)V
     .registers 5
 
-    iput-object p1, p0, Lapb;->X:Lnpb;
+    const/16 v0, 0xd
 
-    iput-wide p2, p0, Lapb;->Y:J
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lapb;->b:Lu2f;
 
-    invoke-direct {p0, p1, p4}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lapb;->c:Lu2f;
+
+    iput-object p3, p0, Lapb;->d:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lapb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lapb;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lapb;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 6
 
-    new-instance p1, Lapb;
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lapb;->X:Lnpb;
+    if-ne p0, p1, :cond_0
 
-    iget-wide v1, p0, Lapb;->Y:J
+    return v0
 
-    invoke-direct {p1, v0, v1, v2, p2}, Lapb;-><init>(Lnpb;JLkotlin/coroutines/Continuation;)V
+    :cond_0
+    instance-of v1, p1, Lapb;
 
-    return-object p1
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lapb;
+
+    iget-object v1, p0, Lapb;->b:Lu2f;
+
+    iget-object v3, p1, Lapb;->b:Lu2f;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lapb;->c:Lu2f;
+
+    iget-object v3, p1, Lapb;->c:Lu2f;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object p0, p0, Lapb;->d:Ljava/util/List;
+
+    iget-object p1, p1, Lapb;->d:Ljava/util/List;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+.method public final hashCode()I
+    .registers 3
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object v0, p0, Lapb;->b:Lu2f;
 
-    sget-object p1, Lnpb;->Q0:[Lsf7;
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    iget-object p1, p0, Lapb;->X:Lnpb;
+    move-result v0
 
-    invoke-virtual {p1}, Lnpb;->t()Lvz2;
+    mul-int/lit8 v0, v0, 0x1f
 
-    move-result-object v0
+    iget-object v1, p0, Lapb;->c:Lu2f;
 
-    check-cast v0, Lv03;
+    if-nez v1, :cond_0
 
-    invoke-virtual {v0}, Lv03;->M()Leb2;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    goto :goto_0
 
-    iget-wide v1, p0, Lapb;->Y:J
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    invoke-virtual {v0, v1, v2}, Leb2;->Q(J)V
+    move-result v1
 
-    iget-object p0, p1, Lnpb;->y0:Lx65;
+    :goto_0
+    add-int/2addr v0, v1
 
-    sget-object p1, Lanb;->b:Lanb;
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
+    iget-object p0, p0, Lapb;->d:Ljava/util/List;
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ShowConfirmation(title="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lapb;->b:Lu2f;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", description="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lapb;->c:Lu2f;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", buttons="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    iget-object p0, p0, Lapb;->d:Ljava/util/List;
+
+    invoke-static {v0, p0, v1}, Lmw1;->j(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

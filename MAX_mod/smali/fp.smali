@@ -1,54 +1,55 @@
-.class public final Lfp;
+.class public abstract Lfp;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Luc;
-
-
-# static fields
-.field public static final a:Lfp;
-
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public static a(Landroid/content/Context;Ljava/lang/Class;)Ljava/lang/Object;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroid/content/Context;",
+            "Ljava/lang/Class<",
+            "TT;>;)TT;"
+        }
+    .end annotation
 
-    new-instance v0, Lfp;
+    invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    move-result-object p0
 
-    sput-object v0, Lfp;->a:Lfp;
-
-    return-void
+    return-object p0
 .end method
 
-.method public static a(Ljava/lang/String;J[Lura;)V
-    .registers 5
+.method public static b(Landroid/app/AppOpsManager;Ljava/lang/String;Ljava/lang/String;)I
+    .registers 3
 
-    :try_start_0
-    sget-object v0, Lh2f;->a:Lh2f;
+    invoke-virtual {p0, p1, p2}, Landroid/app/AppOpsManager;->noteProxyOp(Ljava/lang/String;Ljava/lang/String;)I
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
+    move-result p0
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    return p0
+.end method
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+.method public static c(Landroid/app/AppOpsManager;Ljava/lang/String;Ljava/lang/String;)I
+    .registers 3
 
-    move-result-wide p1
+    invoke-virtual {p0, p1, p2}, Landroid/app/AppOpsManager;->noteProxyOpNoThrow(Ljava/lang/String;Ljava/lang/String;)I
 
-    array-length v0, p3
+    move-result p0
 
-    invoke-static {p3, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    return p0
+.end method
 
-    move-result-object p3
+.method public static d(Ljava/lang/String;)Ljava/lang/String;
+    .registers 1
 
-    check-cast p3, [Lura;
+    invoke-static {p0}, Landroid/app/AppOpsManager;->permissionToOp(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {p0, p1, p2, p3}, Lh2f;->a(Ljava/lang/String;J[Lura;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object p0
 
-    :catchall_0
-    return-void
+    return-object p0
 .end method

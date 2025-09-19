@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lu50;)V
+.method public constructor <init>(Lz40;)V
     .registers 4
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;

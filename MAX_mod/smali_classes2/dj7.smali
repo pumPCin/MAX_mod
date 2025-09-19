@@ -1,116 +1,193 @@
-.class public final synthetic Ldj7;
+.class public final Ldj7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lja4;
-
 
 # instance fields
-.field public final synthetic X:Ljava/lang/Long;
+.field public a:F
 
-.field public final synthetic a:J
+.field public b:F
 
-.field public final synthetic b:J
+.field public c:F
 
-.field public final synthetic c:Lev7;
-
-.field public final synthetic o:F
+.field public d:F
 
 
 # direct methods
-.method public synthetic constructor <init>(JJLev7;FLjava/lang/Long;)V
-    .registers 8
+.method public constructor <init>(FFFF)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Ldj7;->a:J
+    iput p1, p0, Ldj7;->a:F
 
-    iput-wide p3, p0, Ldj7;->b:J
+    iput p2, p0, Ldj7;->b:F
 
-    iput-object p5, p0, Ldj7;->c:Lev7;
+    iput p3, p0, Ldj7;->c:F
 
-    iput p6, p0, Ldj7;->o:F
-
-    iput-object p7, p0, Ldj7;->X:Ljava/lang/Long;
+    iput p4, p0, Ldj7;->d:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .registers 8
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    new-instance v0, Landroidx/fragment/app/FragmentWrapperWidget;
+    const/4 v0, 0x1
 
-    iget-wide v1, p0, Ldj7;->a:J
+    if-ne p0, p1, :cond_0
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    return v0
 
-    move-result-object v1
+    :cond_0
+    instance-of v1, p1, Ldj7;
 
-    new-instance v2, Lura;
+    const/4 v2, 0x0
 
-    const-string v3, "ru.ok.tamtam.extra.CHAT_ID"
+    if-nez v1, :cond_1
 
-    invoke-direct {v2, v3, v1}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    return v2
 
-    iget-wide v3, p0, Ldj7;->b:J
+    :cond_1
+    check-cast p1, Ldj7;
 
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget v1, p0, Ldj7;->a:F
 
-    move-result-object v1
+    iget v3, p1, Ldj7;->a:F
 
-    new-instance v3, Lura;
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
 
-    const-string v4, "ru.ok.tamtam.extra.MESSAGE_ID"
+    move-result v1
 
-    invoke-direct {v3, v4, v1}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    if-eqz v1, :cond_2
 
-    new-instance v1, Lura;
+    return v2
 
-    const-string v4, "ru.ok.tamtam.extra.LOCATION"
+    :cond_2
+    iget v1, p0, Ldj7;->b:F
 
-    iget-object v5, p0, Ldj7;->c:Lev7;
+    iget v3, p1, Ldj7;->b:F
 
-    invoke-direct {v1, v4, v5}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
 
-    iget v4, p0, Ldj7;->o:F
+    move-result v1
 
-    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    if-eqz v1, :cond_3
 
-    move-result-object v4
+    return v2
 
-    new-instance v5, Lura;
+    :cond_3
+    iget v1, p0, Ldj7;->c:F
 
-    const-string v6, "ru.ok.tamtam.extra.ZOOM"
+    iget v3, p1, Ldj7;->c:F
 
-    invoke-direct {v5, v6, v4}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
 
-    new-instance v4, Lura;
+    move-result v1
 
-    const-string v6, "ru.ok.tamtam.extra.CONTACT_ID"
+    if-eqz v1, :cond_4
 
-    iget-object p0, p0, Ldj7;->X:Ljava/lang/Long;
+    return v2
 
-    invoke-direct {v4, v6, p0}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    :cond_4
+    iget p0, p0, Ldj7;->d:F
 
-    filled-new-array {v2, v3, v1, v5, v4}, [Lura;
+    iget p1, p1, Ldj7;->d:F
+
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+
+    move-result p0
+
+    if-eqz p0, :cond_5
+
+    return v2
+
+    :cond_5
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget v0, p0, Ldj7;->a:F
+
+    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Ldj7;->b:F
+
+    invoke-static {v0, v2, v1}, Lsq3;->c(IFI)I
+
+    move-result v0
+
+    iget v2, p0, Ldj7;->c:F
+
+    invoke-static {v0, v2, v1}, Lsq3;->c(IFI)I
+
+    move-result v0
+
+    iget p0, p0, Ldj7;->d:F
+
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    iget v0, p0, Ldj7;->a:F
+
+    iget v1, p0, Ldj7;->b:F
+
+    iget v2, p0, Ldj7;->c:F
+
+    iget p0, p0, Ldj7;->d:F
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "KeyFrame(t="
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, ", alpha="
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, ", trimStart="
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, ", trimEnd="
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {p0}, La94;->c([Lura;)Landroid/os/Bundle;
-
-    move-result-object p0
-
-    const v1, 0x7a3a1dca
-
-    const-class v2, Lru/ok/messages/location/FrgLocationMap;
-
-    const-string v3, "ru.ok.messages.location.FrgLocationMap"
-
-    invoke-direct {v0, v1, v2, v3, p0}, Landroidx/fragment/app/FragmentWrapperWidget;-><init>(ILjava/lang/Class;Ljava/lang/String;Landroid/os/Bundle;)V
-
-    return-object v0
+    return-object p0
 .end method

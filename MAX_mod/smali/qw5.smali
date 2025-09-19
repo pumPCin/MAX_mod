@@ -1,295 +1,168 @@
 .class public final Lqw5;
-.super Lzgc;
+.super Ljava/util/concurrent/atomic/AtomicInteger;
 .source "SourceFile"
+
+# interfaces
+.implements Lbx5;
+.implements Llne;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lkzb;
 
-.field public final b:I
+.field public final b:Ljava/util/concurrent/atomic/AtomicReference;
 
-.field public final c:I
+.field public final c:Ljava/util/concurrent/atomic/AtomicLong;
 
-.field public final o:Ljava/lang/Object;
+.field public o:Lrw5;
 
 
 # direct methods
-.method public constructor <init>(ILc08;)V
-    .registers 4
+.method public constructor <init>(Lkzb;)V
+    .registers 2
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    iput v0, p0, Lqw5;->a:I
+    iput-object p1, p0, Lqw5;->a:Lkzb;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput p1, p0, Lqw5;->b:I
+    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    iput-object p2, p0, Lqw5;->o:Ljava/lang/Object;
+    iput-object p1, p0, Lqw5;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
-    const/16 p1, 0xc
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicLong;
 
-    int-to-float p1, p1
+    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p2
-
-    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p1, p2
-
-    invoke-static {p1}, Lg53;->C(F)I
-
-    move-result p1
-
-    iput p1, p0, Lqw5;->c:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Llv5;)V
-    .registers 3
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lqw5;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lqw5;->o:Ljava/lang/Object;
-
-    const/16 p1, 0x10
-
-    int-to-float p1, p1
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p1, v0
-
-    invoke-static {p1}, Lg53;->C(F)I
-
-    move-result p1
-
-    iput p1, p0, Lqw5;->b:I
-
-    const/16 p1, 0xc
-
-    int-to-float p1, p1
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p1, v0
-
-    invoke-static {p1}, Lg53;->C(F)I
-
-    move-result p1
-
-    iput p1, p0, Lqw5;->c:I
+    iput-object p1, p0, Lqw5;->c:Ljava/util/concurrent/atomic/AtomicLong;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final f(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Llhc;)V
-    .registers 8
+.method public final b()V
+    .registers 2
 
-    iget p4, p0, Lqw5;->a:I
+    iget-object v0, p0, Lqw5;->o:Lrw5;
 
-    packed-switch p4, :pswitch_data_0
+    invoke-virtual {v0}, Lrw5;->cancel()V
 
-    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Ltgc;
+    iget-object p0, p0, Lqw5;->o:Lrw5;
 
-    move-result-object p4
+    iget-object p0, p0, Lrw5;->r0:Lbjd;
 
-    if-nez p4, :cond_0
+    invoke-virtual {p0}, Lbjd;->b()V
 
-    goto :goto_1
+    return-void
+.end method
 
-    :cond_0
-    invoke-static {p3}, Lsqd;->p(Landroidx/recyclerview/widget/RecyclerView;)Landroidx/recyclerview/widget/GridLayoutManager;
+.method public final cancel()V
+    .registers 1
 
-    move-result-object p3
+    iget-object p0, p0, Lqw5;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
-    if-eqz p3, :cond_5
+    invoke-static {p0}, Lnne;->a(Ljava/util/concurrent/atomic/AtomicReference;)V
 
-    iget-object p3, p3, Landroidx/recyclerview/widget/GridLayoutManager;->K:Llk6;
+    return-void
+.end method
 
-    if-nez p3, :cond_1
+.method public final d(Llne;)V
+    .registers 6
 
-    goto :goto_1
+    iget-object v0, p0, Lqw5;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
-    :cond_1
-    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
-
-    move-result p2
-
-    if-ltz p2, :cond_5
-
-    invoke-virtual {p4}, Ltgc;->j()I
+    invoke-static {v0, p1}, Lnne;->c(Ljava/util/concurrent/atomic/AtomicReference;Llne;)Z
 
     move-result v0
 
-    if-ge p2, v0, :cond_5
+    if-eqz v0, :cond_0
 
-    const/16 v0, 0x8
+    iget-object p0, p0, Lqw5;->c:Ljava/util/concurrent/atomic/AtomicLong;
 
-    invoke-virtual {p3, p2, v0}, Llk6;->b(II)I
+    const-wide/16 v0, 0x0
 
-    move-result v1
+    invoke-virtual {p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicLong;->getAndSet(J)J
 
-    invoke-virtual {p3, p2, v0}, Llk6;->a(II)I
+    move-result-wide v2
 
-    move-result p2
+    cmp-long p0, v2, v0
 
-    invoke-virtual {p4}, Ltgc;->j()I
+    if-eqz p0, :cond_0
 
-    move-result p4
+    invoke-interface {p1, v2, v3}, Llne;->h(J)V
 
-    add-int/lit8 p4, p4, -0x1
+    :cond_0
+    return-void
+.end method
 
-    invoke-virtual {p3, p4, v0}, Llk6;->a(II)I
+.method public final h(J)V
+    .registers 4
 
-    move-result p3
+    iget-object v0, p0, Lqw5;->b:Ljava/util/concurrent/atomic/AtomicReference;
 
-    iget p4, p0, Lqw5;->c:I
+    iget-object p0, p0, Lqw5;->c:Ljava/util/concurrent/atomic/AtomicLong;
 
-    div-int/lit8 p4, p4, 0x2
+    invoke-static {v0, p0, p1, p2}, Lnne;->b(Ljava/util/concurrent/atomic/AtomicReference;Ljava/util/concurrent/atomic/AtomicLong;J)V
 
-    iget-object v2, p0, Lqw5;->o:Ljava/lang/Object;
+    return-void
+.end method
 
-    check-cast v2, Lc08;
+.method public final onError(Ljava/lang/Throwable;)V
+    .registers 3
 
-    invoke-interface {v2}, Lh96;->invoke()Ljava/lang/Object;
+    iget-object v0, p0, Lqw5;->o:Lrw5;
 
-    move-result-object v2
+    invoke-virtual {v0}, Lrw5;->cancel()V
 
-    check-cast v2, Ljava/lang/Boolean;
+    iget-object p0, p0, Lqw5;->o:Lrw5;
 
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object p0, p0, Lrw5;->r0:Lbjd;
 
-    move-result v2
+    invoke-virtual {p0, p1}, Lbjd;->onError(Ljava/lang/Throwable;)V
 
-    if-eqz v2, :cond_4
+    return-void
+.end method
 
-    if-nez p2, :cond_2
+.method public final s(Ljava/lang/Object;)V
+    .registers 3
 
-    iput p4, p1, Landroid/graphics/Rect;->bottom:I
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    :cond_0
+    iget-object p1, p0, Lqw5;->b:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object v0, Lnne;->a:Lnne;
+
+    if-ne p1, v0, :cond_1
 
     goto :goto_0
+
+    :cond_1
+    iget-object p1, p0, Lqw5;->o:Lrw5;
+
+    iget-object v0, p0, Lqw5;->a:Lkzb;
+
+    check-cast v0, Lrv5;
+
+    invoke-virtual {v0, p1}, Lrv5;->e(Ljne;)V
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+
+    move-result p1
+
+    if-nez p1, :cond_0
 
     :cond_2
-    if-ne p2, p3, :cond_3
-
-    iput p4, p1, Landroid/graphics/Rect;->top:I
-
-    goto :goto_0
-
-    :cond_3
-    iput p4, p1, Landroid/graphics/Rect;->bottom:I
-
-    iput p4, p1, Landroid/graphics/Rect;->top:I
-
-    :cond_4
     :goto_0
-    iget p0, p0, Lqw5;->b:I
-
-    mul-int p2, v1, p0
-
-    div-int/2addr p2, v0
-
-    iput p2, p1, Landroid/graphics/Rect;->left:I
-
-    add-int/lit8 v1, v1, 0x1
-
-    mul-int/2addr v1, p0
-
-    div-int/2addr v1, v0
-
-    sub-int/2addr p0, v1
-
-    iput p0, p1, Landroid/graphics/Rect;->right:I
-
-    :cond_5
-    :goto_1
     return-void
-
-    :pswitch_0
-    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
-
-    move-result p2
-
-    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Ltgc;
-
-    move-result-object p3
-
-    if-eqz p3, :cond_7
-
-    if-ltz p2, :cond_7
-
-    invoke-virtual {p3}, Ltgc;->j()I
-
-    move-result p3
-
-    if-ge p2, p3, :cond_7
-
-    iget p3, p0, Lqw5;->c:I
-
-    iput p3, p1, Landroid/graphics/Rect;->left:I
-
-    iput p3, p1, Landroid/graphics/Rect;->right:I
-
-    iget-object p3, p0, Lqw5;->o:Ljava/lang/Object;
-
-    check-cast p3, Llv5;
-
-    invoke-virtual {p3, p2}, Llv5;->d(I)I
-
-    move-result p2
-
-    if-eqz p2, :cond_6
-
-    const/4 p3, 0x1
-
-    if-eq p2, p3, :cond_6
-
-    const/4 p3, 0x4
-
-    if-ne p2, p3, :cond_7
-
-    :cond_6
-    iget p0, p0, Lqw5;->b:I
-
-    iput p0, p1, Landroid/graphics/Rect;->top:I
-
-    :cond_7
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -1,215 +1,181 @@
-.class public final Le09;
-.super Ljava/lang/Object;
+.class public final enum Le09;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/Object;
+# static fields
+.field public static final enum X:Le09;
 
-.field public final b:Lc09;
+.field public static final enum Y:Le09;
 
-.field public final c:Lyz8;
+.field public static final enum Z:Le09;
 
-.field public final d:J
+.field public static final enum a:Le09;
+
+.field public static final enum b:Le09;
+
+.field public static final enum c:Le09;
+
+.field public static final enum o:Le09;
+
+.field public static final enum r0:Le09;
+
+.field public static final enum s0:Le09;
+
+.field public static final enum t0:Le09;
+
+.field public static final enum u0:Le09;
+
+.field public static final synthetic v0:[Le09;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Lc09;Lyz8;J)V
-    .registers 6
+.method static constructor <clinit>()V
+    .registers 13
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Le09;
 
-    iput-object p1, p0, Le09;->a:Ljava/lang/Object;
+    const-string v1, "USER_MENTION"
 
-    iput-object p2, p0, Le09;->b:Lc09;
+    const/4 v2, 0x0
 
-    iput-object p3, p0, Le09;->c:Lyz8;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-wide p4, p0, Le09;->d:J
+    sput-object v0, Le09;->a:Le09;
+
+    new-instance v1, Le09;
+
+    const-string v2, "GROUP_MENTION"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Le09;->b:Le09;
+
+    new-instance v2, Le09;
+
+    const-string v3, "MONOSPACED"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Le09;->c:Le09;
+
+    new-instance v3, Le09;
+
+    const-string v4, "STRONG"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Le09;->o:Le09;
+
+    new-instance v4, Le09;
+
+    const-string v5, "EMPHASIZED"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Le09;->X:Le09;
+
+    new-instance v5, Le09;
+
+    const-string v6, "LINK"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Le09;->Y:Le09;
+
+    new-instance v6, Le09;
+
+    const-string v7, "STRIKETHROUGH"
+
+    const/4 v8, 0x6
+
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v6, Le09;->Z:Le09;
+
+    new-instance v7, Le09;
+
+    const-string v8, "CODE"
+
+    const/4 v9, 0x7
+
+    invoke-direct {v7, v8, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v7, Le09;->r0:Le09;
+
+    new-instance v8, Le09;
+
+    const-string v9, "UNDERLINE"
+
+    const/16 v10, 0x8
+
+    invoke-direct {v8, v9, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v8, Le09;->s0:Le09;
+
+    new-instance v9, Le09;
+
+    const-string v10, "HEADING"
+
+    const/16 v11, 0x9
+
+    invoke-direct {v9, v10, v11}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v9, Le09;->t0:Le09;
+
+    new-instance v10, Le09;
+
+    const-string v11, "ANIMOJI"
+
+    const/16 v12, 0xa
+
+    invoke-direct {v10, v11, v12}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v10, Le09;->u0:Le09;
+
+    filled-new-array/range {v0 .. v10}, [Le09;
+
+    move-result-object v0
+
+    sput-object v0, Le09;->v0:[Le09;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Le09;
+    .registers 2
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    const-class v0, Le09;
 
-    if-ne p0, p1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Le09;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Le09;
-
-    iget-object v0, p0, Le09;->a:Ljava/lang/Object;
-
-    iget-object v1, p1, Le09;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Le09;->b:Lc09;
-
-    iget-object v1, p1, Le09;->b:Lc09;
-
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v0, p0, Le09;->c:Lyz8;
-
-    iget-object v1, p1, Le09;->c:Lyz8;
-
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    iget-wide v0, p0, Le09;->d:J
-
-    iget-wide p0, p1, Le09;->d:J
-
-    cmp-long p0, v0, p0
-
-    if-eqz p0, :cond_5
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_5
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget-object v0, p0, Le09;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    const/4 v1, 0x0
-
-    iget-object v2, p0, Le09;->b:Lc09;
-
-    if-nez v2, :cond_0
-
-    move v2, v1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v2}, Lc09;->hashCode()I
-
-    move-result v2
-
-    :goto_0
-    add-int/2addr v0, v2
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v2, p0, Le09;->c:Lyz8;
-
-    if-nez v2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v2}, Lyz8;->hashCode()I
-
-    move-result v1
-
-    :goto_1
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-wide v1, p0, Le09;->d:J
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "MessageReactionsDetailedData(reactionEntries="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Le09;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", reactionsInfo="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Le09;->b:Lc09;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", yourReactionEntry="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Le09;->c:Lyz8;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", markerForNextQuery="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Le09;->d:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Le09;
+
     return-object p0
+.end method
+
+.method public static values()[Le09;
+    .registers 1
+
+    sget-object v0, Le09;->v0:[Le09;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Le09;
+
+    return-object v0
 .end method

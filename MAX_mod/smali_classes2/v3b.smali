@@ -1,174 +1,30 @@
 .class public final Lv3b;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:J
 
-.field public final b:La4b;
+.field public final b:Ljava/lang/String;
 
-.field public final c:Landroid/content/IntentFilter;
-
-.field public d:Z
+.field public final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;La4b;)V
-    .registers 3
+.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;)V
+    .registers 5
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lv3b;->a:Landroid/content/Context;
+    iput-wide p1, p0, Lv3b;->a:J
 
-    iput-object p2, p0, Lv3b;->b:La4b;
+    iput-object p3, p0, Lv3b;->b:Ljava/lang/String;
 
-    new-instance p1, Landroid/content/IntentFilter;
-
-    invoke-direct {p1}, Landroid/content/IntentFilter;-><init>()V
-
-    iput-object p1, p0, Lv3b;->c:Landroid/content/IntentFilter;
-
-    const-string p2, "ru.ok.video.ACTION_VIDEO_PLAY"
-
-    invoke-virtual {p1, p2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string p2, "ru.ok.video.ACTION_VIDEO_PAUSE"
-
-    invoke-virtual {p1, p2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string p2, "ru.ok.video.ACTION_VIDEO_STOP"
-
-    invoke-virtual {p1, p2}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lv3b;->d:Z
+    iput-object p4, p0, Lv3b;->c:Ljava/lang/String;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 6
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_4
-
-    iget-object p2, p0, Lv3b;->c:Landroid/content/IntentFilter;
-
-    invoke-virtual {p2, p1}, Landroid/content/IntentFilter;->hasAction(Ljava/lang/String;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
-
-    move-result p2
-
-    const/4 v0, 0x2
-
-    const/4 v1, 0x1
-
-    const/4 v2, -0x1
-
-    sparse-switch p2, :sswitch_data_0
-
-    goto :goto_0
-
-    :sswitch_0
-    const-string p2, "ru.ok.video.ACTION_VIDEO_PAUSE"
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v2, v0
-
-    goto :goto_0
-
-    :sswitch_1
-    const-string p2, "ru.ok.video.ACTION_VIDEO_STOP"
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    move v2, v1
-
-    goto :goto_0
-
-    :sswitch_2
-    const-string p2, "ru.ok.video.ACTION_VIDEO_PLAY"
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    const/4 v2, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lv3b;->b:La4b;
-
-    packed-switch v2, :pswitch_data_0
-
-    goto :goto_1
-
-    :pswitch_0
-    invoke-virtual {p0, v0}, La4b;->c(I)V
-
-    return-void
-
-    :pswitch_1
-    const/4 p1, 0x3
-
-    invoke-virtual {p0, p1}, La4b;->c(I)V
-
-    return-void
-
-    :pswitch_2
-    invoke-virtual {p0, v1}, La4b;->c(I)V
-
-    :cond_4
-    :goto_1
-    return-void
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x610323f9 -> :sswitch_2
-        -0x6101a72b -> :sswitch_1
-        0x4099ef63 -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

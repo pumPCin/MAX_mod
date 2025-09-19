@@ -3,4 +3,4 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lvy1;
+.implements Ldz1;

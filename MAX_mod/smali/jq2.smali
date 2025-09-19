@@ -3,22 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpq2;
+.implements Lsq2;
 
 
-# static fields
-.field public static final a:Ljq2;
+# instance fields
+.field public final a:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Z)V
+    .registers 2
 
-    new-instance v0, Ljq2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Ljq2;->a:Ljq2;
+    iput-boolean p1, p0, Ljq2;->a:Z
 
     return-void
 .end method

@@ -1,73 +1,39 @@
-.class public abstract Ll72;
+.class public final Ll72;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/nio/charset/Charset;
+# instance fields
+.field public final a:Ljava/lang/String;
 
-.field public static final b:Ljava/nio/charset/Charset;
+.field public final b:Ll72;
 
-.field public static final c:Ljava/nio/charset/Charset;
-
-.field public static final d:Ljava/nio/charset/Charset;
-
-.field public static final e:Ljava/nio/charset/Charset;
-
-.field public static final f:Ljava/nio/charset/Charset;
+.field public final c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ljava/lang/String;Ll72;)V
+    .registers 3
 
-    const-string v0, "US-ASCII"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    iput-object p1, p0, Ll72;->a:Ljava/lang/String;
 
-    move-result-object v0
+    iput-object p2, p0, Ll72;->b:Ll72;
 
-    sput-object v0, Ll72;->a:Ljava/nio/charset/Charset;
+    const/4 p1, 0x1
 
-    const-string v0, "ISO-8859-1"
+    if-nez p2, :cond_0
 
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    goto :goto_0
 
-    move-result-object v0
+    :cond_0
+    iget p2, p2, Ll72;->c:I
 
-    sput-object v0, Ll72;->b:Ljava/nio/charset/Charset;
+    add-int/2addr p1, p2
 
-    const-string v0, "UTF-8"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Ll72;->c:Ljava/nio/charset/Charset;
-
-    const-string v0, "UTF-16BE"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Ll72;->d:Ljava/nio/charset/Charset;
-
-    const-string v0, "UTF-16LE"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Ll72;->e:Ljava/nio/charset/Charset;
-
-    const-string v0, "UTF-16"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    sput-object v0, Ll72;->f:Ljava/nio/charset/Charset;
+    :goto_0
+    iput p1, p0, Ll72;->c:I
 
     return-void
 .end method

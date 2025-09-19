@@ -1,6 +1,23 @@
-.class public interface abstract Lfc3;
-.super Ljava/lang/Object;
+.class public final Lfc3;
+.super Lx2;
 .source "SourceFile"
 
-# interfaces
-.implements Llb7;
+
+# static fields
+.field public static final c:Lfc3;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lfc3;
+
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Lx2;-><init>(I)V
+
+    sput-object v0, Lfc3;->c:Lfc3;
+
+    return-void
+.end method

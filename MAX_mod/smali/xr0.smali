@@ -1,87 +1,116 @@
 .class public final Lxr0;
-.super Lur0;
+.super Ljl4;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final c:Lejb;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic d:Ls4f;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .registers 3
+.method public constructor <init>(Ls4f;Ldi0;Lejb;)V
+    .registers 4
 
-    iput p1, p0, Lxr0;->a:I
+    iput-object p1, p0, Lxr0;->d:Ls4f;
 
-    iput-object p2, p0, Lxr0;->b:Ljava/lang/Object;
+    invoke-direct {p0, p2}, Ljl4;-><init>(Ldi0;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private final d(Landroid/view/View;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method private final e(Landroid/view/View;)V
-    .registers 2
+    iput-object p3, p0, Lxr0;->c:Lejb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Landroid/view/View;)V
-    .registers 2
+.method public final f(Ljava/lang/Throwable;)V
+    .registers 3
 
-    iget p0, p0, Lxr0;->a:I
+    iget-object p1, p0, Lxr0;->d:Ls4f;
+
+    iget-object p1, p1, Ls4f;->c:Ljava/lang/Object;
+
+    check-cast p1, Lh5f;
+
+    iget-object v0, p0, Ljl4;->b:Ldi0;
+
+    iget-object p0, p0, Lxr0;->c:Lejb;
+
+    invoke-virtual {p1, v0, p0}, Lh5f;->a(Ldi0;Lejb;)V
 
     return-void
 .end method
 
-.method public final c(Landroid/view/View;I)V
-    .registers 3
+.method public final h(ILjava/lang/Object;)V
+    .registers 9
 
-    iget p1, p0, Lxr0;->a:I
+    check-cast p2, Lk55;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object v0, p0, Lxr0;->c:Lejb;
 
-    const/4 p1, 0x5
+    move-object v1, v0
 
-    if-ne p2, p1, :cond_0
+    check-cast v1, Lmj0;
 
-    iget-object p0, p0, Lxr0;->b:Ljava/lang/Object;
+    iget-object v1, v1, Lmj0;->a:Li27;
 
-    check-cast p0, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
+    invoke-static {p1}, Ldi0;->a(I)Z
 
-    invoke-virtual {p0}, Lcom/google/android/material/bottomsheet/BottomSheetDialogFragment;->Z0()V
+    move-result v2
+
+    iget-object v3, v1, Li27;->h:Lztc;
+
+    invoke-static {p2, v3}, Lb0b;->t(Lk55;Lztc;)Z
+
+    move-result v3
+
+    iget-object v4, p0, Ljl4;->b:Ldi0;
+
+    if-eqz p2, :cond_2
+
+    if-nez v3, :cond_0
+
+    iget-boolean v5, v1, Li27;->e:Z
+
+    if-eqz v5, :cond_2
 
     :cond_0
-    return-void
+    if-eqz v2, :cond_1
 
-    :pswitch_0
-    const/4 p1, 0x5
+    if-eqz v3, :cond_1
 
-    if-ne p2, p1, :cond_1
+    invoke-virtual {v4, p1, p2}, Ldi0;->g(ILjava/lang/Object;)V
 
-    iget-object p0, p0, Lxr0;->b:Ljava/lang/Object;
-
-    check-cast p0, Lzr0;
-
-    invoke-virtual {p0}, Lzr0;->cancel()V
+    goto :goto_0
 
     :cond_1
+    and-int/lit8 p1, p1, -0x2
+
+    invoke-virtual {v4, p1, p2}, Ldi0;->g(ILjava/lang/Object;)V
+
+    :cond_2
+    :goto_0
+    if-eqz v2, :cond_3
+
+    if-nez v3, :cond_3
+
+    invoke-virtual {v1}, Li27;->c()Z
+
+    move-result p1
+
+    if-nez p1, :cond_3
+
+    invoke-static {p2}, Lk55;->d(Lk55;)V
+
+    iget-object p0, p0, Lxr0;->d:Ls4f;
+
+    iget-object p0, p0, Ls4f;->c:Ljava/lang/Object;
+
+    check-cast p0, Lh5f;
+
+    invoke-virtual {p0, v4, v0}, Lh5f;->a(Ldi0;Lejb;)V
+
+    :cond_3
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

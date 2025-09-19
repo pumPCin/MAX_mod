@@ -1,73 +1,72 @@
-.class public final Ll07;
+.class public final synthetic Ll07;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final b:Ljava/lang/Object;
+.field public final synthetic b:Lm07;
 
-.field public final c:Ljava/lang/Object;
+.field public final synthetic c:Landroid/graphics/Bitmap;
+
+.field public final synthetic o:Lx46;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+.method public synthetic constructor <init>(Lm07;Landroid/graphics/Bitmap;Lx46;I)V
+    .registers 5
+
+    iput p4, p0, Ll07;->a:I
+
+    iput-object p1, p0, Ll07;->b:Lm07;
+
+    iput-object p2, p0, Ll07;->c:Landroid/graphics/Bitmap;
+
+    iput-object p3, p0, Ll07;->o:Lx46;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ll07;->a:Ljava/lang/Object;
-
-    iput-object p2, p0, Ll07;->b:Ljava/lang/Object;
-
-    iput-object p3, p0, Ll07;->c:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/IllegalArgumentException;
-    .registers 6
+.method public final run()V
+    .registers 3
 
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    iget v0, p0, Ll07;->a:I
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    packed-switch v0, :pswitch_data_0
 
-    const-string v2, "Multiple entries with same key: "
+    iget-object v0, p0, Ll07;->c:Landroid/graphics/Bitmap;
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v1, p0, Ll07;->o:Lx46;
 
-    iget-object v2, p0, Ll07;->a:Ljava/lang/Object;
+    iget-object p0, p0, Ll07;->b:Lm07;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0, v1}, Lm07;->b(Landroid/graphics/Bitmap;Lx46;)V
 
-    const-string v3, "="
+    return-void
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :pswitch_0
+    iget-object v0, p0, Ll07;->c:Landroid/graphics/Bitmap;
 
-    iget-object v4, p0, Ll07;->b:Ljava/lang/Object;
+    iget-object v1, p0, Ll07;->o:Lx46;
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Ll07;->b:Lm07;
 
-    const-string v4, " and "
+    invoke-virtual {p0, v0, v1}, Lm07;->b(Landroid/graphics/Bitmap;Lx46;)V
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    nop
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Ll07;->c:Ljava/lang/Object;
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

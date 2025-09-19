@@ -1,109 +1,82 @@
 .class public final Ldqg;
-.super Ljava/lang/Object;
+.super Lpg7;
 .source "SourceFile"
-
-# interfaces
-.implements Lim3;
-.implements Lysg;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final c:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;)V
+.method public constructor <init>(Z)V
     .registers 2
 
-    iput-object p1, p0, Ldqg;->a:Ljava/lang/Object;
+    invoke-direct {p0}, Lpg7;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean p1, p0, Ldqg;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public accept(Ljava/lang/Object;)V
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    check-cast p1, Ljava/lang/Throwable;
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Ldqg;->a:Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
-    check-cast p0, Lzqa;
+    return v0
 
-    iget-object p0, p0, Lzqa;->f:Ld14;
+    :cond_0
+    instance-of v1, p1, Ldqg;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v2, 0x0
 
-    const-string v1, "error occurred: "
+    if-nez v1, :cond_1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    return v2
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :cond_1
+    check-cast p1, Ldqg;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-boolean p0, p0, Ldqg;->c:Z
 
-    move-result-object p1
+    iget-boolean p1, p1, Ldqg;->c:Z
 
-    invoke-virtual {p0, p1}, Ld14;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eq p0, p1, :cond_2
 
-    return-void
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public n()Ljava/lang/Object;
-    .registers 7
+.method public final hashCode()I
+    .registers 1
 
-    iget-object p0, p0, Ldqg;->a:Ljava/lang/Object;
+    iget-boolean p0, p0, Ldqg;->c:Z
 
-    check-cast p0, Lwxe;
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
-    iget-object p0, p0, Lwxe;->a:Ljava/lang/Object;
+    move-result p0
 
-    check-cast p0, Liyf;
+    return p0
+.end method
 
-    iget-object p0, p0, Liyf;->a:Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    check-cast p0, Landroid/content/Context;
+    const-string v0, "ScreenCaptureBehavior(isEnabled="
 
-    new-instance v0, Lrtg;
+    const-string v1, ")"
 
-    invoke-static {}, Landroid/os/Process;->myUid()I
+    iget-boolean p0, p0, Ldqg;->c:Z
 
-    move-result v1
+    invoke-static {v0, v1, p0}, Lz7e;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
-    invoke-static {}, Landroid/os/Process;->myPid()I
+    move-result-object p0
 
-    move-result v2
-
-    const-string v3, "]  PID: ["
-
-    const-string v4, "] "
-
-    const-string v5, "UID: ["
-
-    invoke-static {v5, v1, v3, v2, v4}, Lnh0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "AppUpdateListenerRegistry"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    new-instance v1, Landroid/content/IntentFilter;
-
-    const-string v2, "com.google.android.play.core.install.ACTION_INSTALL_STATUS"
-
-    invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v1, Ljava/util/HashSet;
-
-    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
-
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    return-object v0
+    return-object p0
 .end method

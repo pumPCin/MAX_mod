@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lhj3;
+.implements Lnj3;
 
 
 # annotations
@@ -20,16 +20,16 @@
     d2 = {
         "Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;",
         "Lone/me/sdk/arch/Widget;",
-        "Lhj3;",
+        "Lnj3;",
         "Landroid/os/Bundle;",
         "args",
         "<init>",
         "(Landroid/os/Bundle;)V",
-        "Ljyc;",
+        "Lo6d;",
         "parentScope",
         "",
         "chatId",
-        "(Ljava/lang/String;JLwc4;)V",
+        "(Ljava/lang/String;JLld4;)V",
         "chat-screen_release"
     }
     k = 0x1
@@ -43,26 +43,26 @@
 
 
 # static fields
-.field public static final synthetic Y:[Lsf7;
+.field public static final synthetic Y:[Lxi7;
 
 
 # instance fields
-.field public final X:Lop9;
+.field public final X:Ldt9;
 
-.field public final a:Lur;
+.field public final a:Lfr;
 
-.field public final b:Lur;
+.field public final b:Lfr;
 
-.field public final c:Lxh7;
+.field public final c:Lcl7;
 
-.field public final o:Lin0;
+.field public final o:Lrm0;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 7
 
-    new-instance v0, Lrqb;
+    new-instance v0, Lsxb;
 
     const-class v1, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;
 
@@ -72,29 +72,29 @@
 
     const/4 v4, 0x0
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    sget-object v2, Lyhc;->a:Lzhc;
+    sget-object v2, Ljpc;->a:Lkpc;
 
     const-string v3, "parentScope"
 
     const-string v5, "getParentScope-IluPPks()Ljava/lang/String;"
 
-    invoke-static {v2, v1, v3, v5, v4}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
+    invoke-static {v2, v1, v3, v5, v4}, Lee5;->h(Lkpc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lsxb;
 
     move-result-object v2
 
-    new-instance v3, Lrqb;
+    new-instance v3, Lsxb;
 
     const-string v5, "root"
 
     const-string v6, "getRoot()Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerButtonsView;"
 
-    invoke-direct {v3, v1, v5, v6, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v3, v1, v5, v6, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     const/4 v1, 0x3
 
-    new-array v1, v1, [Lsf7;
+    new-array v1, v1, [Lxi7;
 
     aput-object v0, v1, v4
 
@@ -106,7 +106,7 @@
 
     aput-object v3, v1, v0
 
-    sput-object v1, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->Y:[Lsf7;
+    sput-object v1, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->Y:[Lxi7;
 
     return-void
 .end method
@@ -120,107 +120,107 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {p0, p1, v2, v0, v1}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILwc4;)V
+    invoke-direct {p0, p1, v2, v0, v1}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILld4;)V
 
-    new-instance p1, Lur;
+    new-instance p1, Lfr;
 
     const-class v0, Ljava/lang/Long;
 
     const-string v1, "chat_id"
 
-    invoke-direct {p1, v0, v1}, Lur;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-direct {p1, v0, v1}, Lfr;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
-    iput-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->a:Lur;
+    iput-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->a:Lfr;
 
-    new-instance p1, Lur;
+    new-instance p1, Lfr;
 
-    const-class v0, Ljyc;
+    const-class v0, Lo6d;
 
     const-string v1, "arg_key_scope_id"
 
-    invoke-direct {p1, v0, v1}, Lur;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-direct {p1, v0, v1}, Lfr;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
-    iput-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->b:Lur;
+    iput-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->b:Lfr;
 
-    new-instance p1, Lmp8;
+    new-instance p1, Lis8;
 
     const/4 v0, 0x0
 
-    invoke-direct {p1, p0, v0}, Lmp8;-><init>(Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;I)V
+    invoke-direct {p1, p0, v0}, Lis8;-><init>(Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;I)V
 
-    new-instance v0, Lv98;
+    new-instance v0, Lcd8;
 
-    const/4 v1, 0x6
+    const/4 v1, 0x7
 
-    invoke-direct {v0, v1, p1}, Lv98;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, p1}, Lcd8;-><init>(ILjava/lang/Object;)V
 
-    const-class p1, Lep8;
+    const-class p1, Las8;
 
-    invoke-virtual {p0, p1, v0}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lh96;)Lxh7;
+    invoke-virtual {p0, p1, v0}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lzb6;)Lcl7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->c:Lxh7;
+    iput-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->c:Lcl7;
 
-    new-instance p1, Lmp8;
+    new-instance p1, Lis8;
 
     const/4 v0, 0x1
 
-    invoke-direct {p1, p0, v0}, Lmp8;-><init>(Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;I)V
+    invoke-direct {p1, p0, v0}, Lis8;-><init>(Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;I)V
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lh96;)Lin0;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->o:Lin0;
-
-    sget-object p1, Lcq2;->a:Lcq2;
-
-    invoke-virtual {p1}, Lscout/Component;->getAccessor()Ls4;
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lzb6;)Lrm0;
 
     move-result-object p1
 
-    const-class v0, Lop9;
+    iput-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->o:Lrm0;
 
-    invoke-virtual {p1, v0}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    sget-object p1, Lfq2;->a:Lfq2;
+
+    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lz4;
 
     move-result-object p1
 
-    check-cast p1, Lop9;
+    const-class v0, Ldt9;
 
-    iput-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->X:Lop9;
+    invoke-virtual {p1, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ldt9;
+
+    iput-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->X:Ldt9;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;JLwc4;)V
+.method public constructor <init>(Ljava/lang/String;JLld4;)V
     .registers 6
 
-    new-instance p4, Ljyc;
+    new-instance p4, Lo6d;
 
-    invoke-direct {p4, p1}, Ljyc;-><init>(Ljava/lang/String;)V
+    invoke-direct {p4, p1}, Lo6d;-><init>(Ljava/lang/String;)V
 
-    new-instance p1, Lura;
+    new-instance p1, Lpxa;
 
     const-string v0, "arg_key_scope_id"
 
-    invoke-direct {p1, v0, p4}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p1, v0, p4}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p2
 
-    new-instance p3, Lura;
+    new-instance p3, Lpxa;
 
     const-string p4, "chat_id"
 
-    invoke-direct {p3, p4, p2}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p3, p4, p2}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    filled-new-array {p1, p3}, [Lura;
+    filled-new-array {p1, p3}, [Lpxa;
 
     move-result-object p1
 
-    invoke-static {p1}, La94;->c([Lura;)Landroid/os/Bundle;
+    invoke-static {p1}, Lw7;->c([Lpxa;)Landroid/os/Bundle;
 
     move-result-object p1
 
@@ -246,7 +246,7 @@
 
     :cond_0
     :try_start_0
-    sget-object p1, Lw67;->a:Ljava/lang/String;
+    sget-object p1, Lba7;->a:Ljava/lang/String;
 
     new-instance p1, Landroid/content/Intent;
 
@@ -264,57 +264,57 @@
 
     const/16 p2, 0x175
 
-    invoke-virtual {p0, p1, p2}, Lqx3;->startActivityForResult(Landroid/content/Intent;I)V
+    invoke-virtual {p0, p1, p2}, Lxx3;->startActivityForResult(Landroid/content/Intent;I)V
 
-    iget-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->X:Lop9;
+    iget-object p1, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->X:Ldt9;
 
-    sget-object p2, Lnyc;->Q0:Lnyc;
+    sget-object p2, Ls6d;->U0:Ls6d;
 
-    invoke-static {p1, p2}, Lop9;->g(Lop9;Lnyc;)V
+    invoke-static {p1, p2}, Ldt9;->g(Ldt9;Ls6d;)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     return-void
 
     :catch_0
-    new-instance p1, Lbka;
+    new-instance p1, Lqoa;
 
-    invoke-direct {p1, p0}, Lbka;-><init>(Lone/me/sdk/arch/Widget;)V
+    invoke-direct {p1, p0}, Lqoa;-><init>(Lone/me/sdk/arch/Widget;)V
 
-    sget p2, Lwsc;->M1:I
+    sget p2, Ld1d;->P1:I
 
     invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
-    invoke-static {p0, p2}, Lr7;->v(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-static {p0, p2}, Lw7;->q(Landroid/content/Context;I)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {p1, p0}, Lbka;->h(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, p0}, Lqoa;->h(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p1}, Lbka;->i()Laka;
+    invoke-virtual {p1}, Lqoa;->i()Lpoa;
 
     return-void
 
     :cond_1
-    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->x0()Lep8;
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->y0()Las8;
 
     move-result-object p0
 
-    iget-object p0, p0, Lep8;->b:Lcp8;
+    iget-object p0, p0, Las8;->b:Lyr8;
 
-    iget-object p0, p0, Lcp8;->b:Lx65;
+    iget-object p0, p0, Lyr8;->b:Lv85;
 
-    sget-object p1, Lyo8;->a:Lyo8;
+    sget-object p1, Lur8;->a:Lur8;
 
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
+    invoke-static {p0, p1}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
 
     return-void
 .end method
 
 .method public final onActivityResult(IILandroid/content/Intent;)V
-    .registers 12
+    .registers 8
 
     const/16 v0, 0x173
 
@@ -340,7 +340,7 @@
 
     const-string p1, "MediaTypePickerWidget"
 
-    invoke-static {p1, p0, v1}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {p1, p0, v1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 
@@ -356,33 +356,33 @@
     goto :goto_1
 
     :cond_1
-    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->x0()Lep8;
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->y0()Las8;
 
     move-result-object p0
 
-    iget-object p2, p0, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
+    iget-object p2, p0, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
 
-    iget-object p3, p0, Lep8;->o0:Lxh7;
+    iget-object p3, p0, Las8;->s0:Lcl7;
 
-    invoke-interface {p3}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Lzne;
-
-    check-cast p3, Ltba;
-
-    invoke-virtual {p3}, Ltba;->b()Ll04;
+    invoke-interface {p3}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p3
 
-    new-instance v0, Ldp8;
+    check-cast p3, Lxwe;
 
-    invoke-direct {v0, p1, p0, v1}, Ldp8;-><init>(Landroid/net/Uri;Lep8;Lkotlin/coroutines/Continuation;)V
+    check-cast p3, Laga;
+
+    invoke-virtual {p3}, Laga;->b()Ls04;
+
+    move-result-object p3
+
+    new-instance v0, Lzr8;
+
+    invoke-direct {v0, p1, p0, v1}, Lzr8;-><init>(Landroid/net/Uri;Las8;Lkotlin/coroutines/Continuation;)V
 
     const/4 p0, 0x2
 
-    invoke-static {p2, p3, v1, v0, p0}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    invoke-static {p2, p3, v1, v0, p0}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
 
     return-void
 
@@ -402,73 +402,71 @@
 
     move-result-object p1
 
-    instance-of p2, p1, Lev7;
+    instance-of p2, p1, Ljy7;
 
     if-eqz p2, :cond_4
 
     move-object v1, p1
 
-    check-cast v1, Lev7;
+    check-cast v1, Ljy7;
 
     :cond_4
     if-nez v1, :cond_5
 
-    sget-object v1, Lev7;->Z:Lev7;
+    sget-object v1, Ljy7;->Z:Ljy7;
 
     :cond_5
-    move-object v3, v1
-
     const-string p1, "ru.ok.tamtam.extra.LIVE"
 
-    const-wide/16 v0, 0x0
+    const-wide/16 v2, 0x0
 
-    invoke-virtual {p3, p1, v0, v1}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    invoke-virtual {p3, p1, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
-    move-result-wide v4
+    move-result-wide p1
 
-    const-string p1, "ru.ok.tamtam.extra.ZOOM"
+    const-string v0, "ru.ok.tamtam.extra.ZOOM"
 
-    invoke-virtual {p3, p1, v0, v1}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    const/4 v2, 0x0
 
-    move-result-wide v6
+    invoke-virtual {p3, v0, v2}, Landroid/content/Intent;->getFloatExtra(Ljava/lang/String;F)F
 
-    new-instance v2, Lnpe;
+    move-result p3
 
-    invoke-direct/range {v2 .. v7}, Lnpe;-><init>(Lev7;JJ)V
+    new-instance v0, Lmye;
 
-    move-object v1, v2
+    invoke-direct {v0, p3, p1, p2, v1}, Lmye;-><init>(FJLjy7;)V
+
+    move-object v1, v0
 
     :cond_6
     :goto_0
     if-eqz v1, :cond_7
 
-    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->x0()Lep8;
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->y0()Las8;
 
     move-result-object p0
 
-    iget-object p0, p0, Lep8;->b:Lcp8;
+    iget-object p0, p0, Las8;->b:Lyr8;
 
-    iget-object p1, p0, Lcp8;->b:Lx65;
+    iget-object p1, p0, Lyr8;->b:Lv85;
 
-    new-instance p2, Lap8;
+    new-instance p2, Lwr8;
 
-    iget-object p3, v1, Lnpe;->a:Lev7;
+    iget-object p3, v1, Lmye;->a:Ljy7;
 
-    iget-wide v2, v1, Lnpe;->c:J
+    iget v0, v1, Lmye;->c:F
 
-    long-to-float v0, v2
+    iget-wide v1, v1, Lmye;->b:J
 
-    iget-wide v1, v1, Lnpe;->b:J
+    invoke-direct {p2, v0, v1, v2, p3}, Lwr8;-><init>(FJLjy7;)V
 
-    invoke-direct {p2, p3, v0, v1, v2}, Lap8;-><init>(Lev7;FJ)V
+    invoke-static {p1, p2}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
 
-    invoke-static {p1, p2}, Luxf;->o(Lx65;Ljava/lang/Object;)V
+    iget-object p0, p0, Lyr8;->b:Lv85;
 
-    iget-object p0, p0, Lcp8;->b:Lx65;
+    sget-object p1, Ltr8;->a:Ltr8;
 
-    sget-object p1, Lxo8;->a:Lxo8;
-
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
+    invoke-static {p0, p1}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
 
     :cond_7
     :goto_1
@@ -478,19 +476,19 @@
 .method public final onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .registers 4
 
-    sget-object p1, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->Y:[Lsf7;
+    sget-object p1, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->Y:[Lxi7;
 
     const/4 p2, 0x2
 
     aget-object p1, p1, p2
 
-    iget-object p0, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->o:Lin0;
+    iget-object p0, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->o:Lrm0;
 
-    invoke-virtual {p0}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Luo8;
+    check-cast p0, Lqr8;
 
     return-object p0
 .end method
@@ -500,91 +498,91 @@
 
     invoke-super {p0, p1}, Lone/me/sdk/arch/Widget;->onViewCreated(Landroid/view/View;)V
 
-    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->x0()Lep8;
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->y0()Las8;
 
     move-result-object p1
 
-    iget-object p1, p1, Lep8;->X:Ln4e;
+    iget-object p1, p1, Las8;->X:Lyce;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleOwner()Lwk7;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lwk7;->L()Lyk7;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleOwner()Lzn7;
 
     move-result-object v0
 
-    sget-object v1, Lzj7;->o:Lzj7;
+    invoke-interface {v0}, Lzn7;->L()Lbo7;
 
-    invoke-static {p1, v0, v1}, Lcjg;->j(Lfq5;Lyk7;Lzj7;)Ljs1;
+    move-result-object v0
+
+    sget-object v1, Lcn7;->o:Lcn7;
+
+    invoke-static {p1, v0, v1}, Lya6;->n(Lis5;Lbo7;Lcn7;)Lps1;
 
     move-result-object p1
 
-    new-instance v0, Lnp8;
+    new-instance v0, Ljs8;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v2, p0}, Lnp8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;)V
+    invoke-direct {v0, v2, p0}, Ljs8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;)V
 
-    new-instance v3, Lks5;
+    new-instance v3, Lnu5;
 
     const/4 v4, 0x1
 
-    invoke-direct {v3, p1, v0, v4}, Lks5;-><init>(Lfq5;Lx96;I)V
+    invoke-direct {v3, p1, v0, v4}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
-
-    move-result-object p1
-
-    invoke-static {v3, p1}, Lfog;->L(Lfq5;Lr04;)Lq1e;
-
-    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->x0()Lep8;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p1
 
-    iget-object p1, p1, Lep8;->Y:Lx65;
+    invoke-static {v3, p1}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleOwner()Lwk7;
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->y0()Las8;
+
+    move-result-object p1
+
+    iget-object p1, p1, Las8;->Y:Lv85;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleOwner()Lzn7;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lwk7;->L()Lyk7;
+    invoke-interface {v0}, Lzn7;->L()Lbo7;
 
     move-result-object v0
 
-    invoke-static {p1, v0, v1}, Lcjg;->j(Lfq5;Lyk7;Lzj7;)Ljs1;
+    invoke-static {p1, v0, v1}, Lya6;->n(Lis5;Lbo7;Lcn7;)Lps1;
 
     move-result-object p1
 
-    new-instance v0, Lop8;
+    new-instance v0, Lks8;
 
-    invoke-direct {v0, v2, p0}, Lop8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;)V
+    invoke-direct {v0, v2, p0}, Lks8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;)V
 
-    new-instance v1, Lks5;
+    new-instance v1, Lnu5;
 
     const/4 v2, 0x1
 
-    invoke-direct {v1, p1, v0, v2}, Lks5;-><init>(Lfq5;Lx96;I)V
+    invoke-direct {v1, p1, v0, v2}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p0
 
-    invoke-static {v1, p0}, Lfog;->L(Lfq5;Lr04;)Lq1e;
+    invoke-static {v1, p0}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
     return-void
 .end method
 
-.method public final x0()Lep8;
+.method public final y0()Las8;
     .registers 1
 
-    iget-object p0, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->c:Lxh7;
+    iget-object p0, p0, Lone/me/chatscreen/mediabar/mediatypepicker/MediaTypePickerWidget;->c:Lcl7;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lep8;
+    check-cast p0, Las8;
 
     return-object p0
 .end method

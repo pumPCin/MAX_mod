@@ -1,152 +1,137 @@
-.class public final synthetic Lh57;
-.super Ljava/lang/Object;
+.class public final Lh57;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lone/me/login/inputphone/InputPhoneScreen;
+.field public final synthetic Y:Lr57;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/login/inputphone/InputPhoneScreen;I)V
+.method public constructor <init>(Lr57;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p2, p0, Lh57;->a:I
+    iput-object p1, p0, Lh57;->Y:Lr57;
 
-    iput-object p1, p0, Lh57;->b:Lone/me/login/inputphone/InputPhoneScreen;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 9
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lh57;->a:I
+    check-cast p1, Ly04;
 
-    iget-object p0, p0, Lh57;->b:Lone/me/login/inputphone/InputPhoneScreen;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0, p1, p2}, Lh57;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    sget-object v0, Lone/me/login/inputphone/InputPhoneScreen;->z0:[Lsf7;
+    move-result-object p0
 
-    sget-object v0, Lone/me/sdk/bottomsheet/BottomSheetWidget;->u0:[Lsf7;
+    check-cast p0, Lh57;
 
-    new-instance v2, Lone/me/sdk/phoneutils/SelectCountryBottomSheet;
+    sget-object p1, Lylf;->a:Lylf;
 
-    new-instance v0, Lura;
+    invoke-virtual {p0, p1}, Lh57;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v1, "add_country"
+    move-result-object p0
 
-    const/4 v3, 0x0
+    return-object p0
+.end method
 
-    invoke-direct {v0, v1, v3}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    filled-new-array {v0}, [Lura;
+    new-instance p1, Lh57;
 
-    move-result-object v0
+    iget-object p0, p0, Lh57;->Y:Lr57;
 
-    invoke-static {v0}, La94;->c([Lura;)Landroid/os/Bundle;
+    invoke-direct {p1, p0, p2}, Lh57;-><init>(Lr57;Lkotlin/coroutines/Continuation;)V
 
-    move-result-object v0
+    return-object p1
+.end method
 
-    invoke-direct {v2, v0}, Lone/me/sdk/phoneutils/SelectCountryBottomSheet;-><init>(Landroid/os/Bundle;)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
 
-    invoke-virtual {v2, p0}, Lqx3;->setTargetController(Lqx3;)V
+    iget v0, p0, Lh57;->X:I
 
-    move-object v0, p0
+    const/4 v1, 0x1
 
-    :goto_0
-    invoke-virtual {v0}, Lqx3;->getParentController()Lqx3;
+    if-eqz v0, :cond_1
 
-    move-result-object v1
+    if-ne v0, v1, :cond_0
 
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lqx3;->getParentController()Lqx3;
-
-    move-result-object v0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    instance-of v1, v0, Lrrc;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    if-eqz v1, :cond_1
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    check-cast v0, Lrrc;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_1
+    throw p0
 
     :cond_1
-    move-object v0, v3
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    :goto_1
+    iget-object p1, p0, Lh57;->Y:Lr57;
+
+    iget-object v0, p1, Lr57;->u0:Lyce;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Lyce;->setValue(Ljava/lang/Object;)V
+
+    sget-object v0, Lr57;->D0:Ljava/lang/String;
+
+    const-string v3, "cancel prefetchJob"
+
+    invoke-static {v0, v3}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p1, Lr57;->x0:Lcae;
+
     if-eqz v0, :cond_2
 
-    invoke-interface {v0}, Lrrc;->d0()Llrc;
-
-    move-result-object v3
+    invoke-virtual {v0, v2}, Lsf7;->cancel(Ljava/util/concurrent/CancellationException;)V
 
     :cond_2
-    move-object v0, v3
+    iput-object v2, p1, Lr57;->x0:Lcae;
 
-    invoke-virtual {v2, p0}, Lone/me/sdk/bottomsheet/BottomSheetWidget;->L0(Lone/me/sdk/arch/Widget;)V
+    invoke-virtual {p1}, Lr57;->e()V
 
-    if-eqz v0, :cond_3
+    iget-object p1, p1, Lr57;->x0:Lcae;
 
-    new-instance v1, Lorc;
+    if-eqz p1, :cond_3
 
-    const/4 v6, 0x0
+    iput v1, p0, Lh57;->X:I
 
-    const/4 v7, -0x1
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    invoke-direct/range {v1 .. v7}, Lorc;-><init>(Lqx3;Ljava/lang/String;Lvx3;Lvx3;ZI)V
-
-    const/4 p0, 0x0
-
-    const/4 v2, 0x1
-
-    const-string v3, "BottomSheetWidget"
-
-    invoke-static {p0, v1, v2, v3}, Lnh0;->m(ZLorc;ZLjava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Llrc;->H(Lorc;)V
-
-    :cond_3
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    :pswitch_0
-    sget-object v0, Lone/me/login/inputphone/InputPhoneScreen;->z0:[Lsf7;
-
-    new-instance v0, Lf77;
-
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
+    invoke-virtual {p1, p0}, Lsf7;->join(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-direct {v0, p0}, Lf77;-><init>(Llrc;)V
+    sget-object p1, Lz04;->a:Lz04;
 
-    return-object v0
+    if-ne p0, p1, :cond_3
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p1
+
+    :cond_3
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

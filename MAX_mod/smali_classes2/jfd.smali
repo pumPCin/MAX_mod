@@ -1,43 +1,46 @@
 .class public final Ljfd;
-.super Lij0;
-.source "SourceFile"
+.super Ljx3;
 
 
 # instance fields
-.field public final b:Ljava/util/List;
+.field public X:I
+
+.field public final synthetic Y:Lifd;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(JLjava/util/List;)V
-    .registers 4
+.method public constructor <init>(Lifd;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0, p1, p2}, Lij0;-><init>(J)V
+    iput-object p1, p0, Ljfd;->Y:Lifd;
 
-    iput-object p3, p0, Ljfd;->b:Ljava/util/List;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-object p1, p0, Ljfd;->o:Ljava/lang/Object;
 
-    const-string v1, "SessionsInfoEvent{sessions="
+    iget p1, p0, Ljfd;->X:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/high16 v0, -0x80000000
 
-    iget-object p0, p0, Ljfd;->b:Ljava/util/List;
+    or-int/2addr p1, v0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iput p1, p0, Ljfd;->X:I
 
-    const/16 p0, 0x7d
+    iget-object p1, p0, Ljfd;->Y:Lifd;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, v0, p0}, Lifd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

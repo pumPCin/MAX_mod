@@ -4,166 +4,204 @@
 
 
 # instance fields
-.field public final a:Lxh7;
+.field public final a:J
 
-.field public final b:Lxh7;
+.field public final b:I
 
-.field public final c:Lxh7;
+.field public final c:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;Lxh7;)V
-    .registers 4
+.method public constructor <init>(JILjava/lang/CharSequence;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lau2;->a:Lxh7;
+    iput-wide p1, p0, Lau2;->a:J
 
-    iput-object p2, p0, Lau2;->b:Lxh7;
+    iput p3, p0, Lau2;->b:I
 
-    iput-object p3, p0, Lau2;->c:Lxh7;
+    iput-object p4, p0, Lau2;->c:Ljava/lang/CharSequence;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(JJ)Lncf;
-    .registers 25
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    move-object/from16 v0, p0
+    if-ne p0, p1, :cond_0
 
-    move-wide/from16 v4, p1
+    goto :goto_1
 
-    iget-object v1, v0, Lau2;->a:Lxh7;
+    :cond_0
+    instance-of v0, p1, Lau2;
 
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lsc;
-
-    const-string v2, "ACTION_MSG_UNPIN"
-
-    invoke-virtual {v1, v2}, Lsc;->f(Ljava/lang/String;)V
-
-    iget-object v1, v0, Lau2;->b:Lxh7;
-
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lik;
-
-    check-cast v1, Lb6a;
-
-    invoke-virtual {v1, v4, v5}, Lb6a;->n(J)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
+    if-nez v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    move-object v2, v1
+    :cond_1
+    check-cast p1, Lau2;
 
-    new-instance v1, Lcu2;
+    iget-wide v0, p0, Lau2;->a:J
 
-    invoke-virtual {v2}, Lb6a;->x()Lt9b;
+    iget-wide v2, p1, Lau2;->a:J
 
-    move-result-object v3
+    cmp-long v0, v0, v2
 
-    check-cast v3, Lw9b;
+    if-eqz v0, :cond_2
 
-    iget-object v3, v3, Lw9b;->a:Le53;
+    goto :goto_0
 
-    invoke-virtual {v3}, Lz1d;->l()J
+    :cond_2
+    iget v0, p0, Lau2;->b:I
 
-    move-result-wide v6
+    iget v1, p1, Lau2;->b:I
 
-    const-wide/16 v8, -0x1
+    if-eq v0, v1, :cond_3
 
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    goto :goto_0
 
-    move-result-object v16
+    :cond_3
+    iget-object p0, p0, Lau2;->c:Ljava/lang/CharSequence;
 
-    const-wide/16 v18, 0x0
+    iget-object p1, p1, Lau2;->c:Ljava/lang/CharSequence;
 
-    const/4 v8, 0x0
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    const/4 v9, 0x0
+    move-result p0
 
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    const/4 v15, 0x0
-
-    const/16 v17, 0x0
-
-    move-object v0, v2
-
-    move-wide v2, v6
-
-    move-wide/from16 v6, p3
-
-    invoke-direct/range {v1 .. v19}, Lcu2;-><init>(JJJILjava/lang/String;ZLjava/lang/String;Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;Ln10;Ljava/lang/Long;ZJ)V
-
-    invoke-static {v0, v1}, Lb6a;->v(Lb6a;Lhl;)J
-
-    move-object/from16 v0, p0
+    if-nez p0, :cond_4
 
     :goto_0
-    iget-object v0, v0, Lau2;->c:Lxh7;
+    const/4 p0, 0x0
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    return p0
+
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget-wide v0, p0, Lau2;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lau2;->b:I
+
+    invoke-static {v2, v0, v1}, Lbg9;->h(III)I
+
+    move-result v0
+
+    iget-object p0, p0, Lau2;->c:Ljava/lang/CharSequence;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 5
+
+    const-string v0, "ChatTyping(chatId="
+
+    const-string v1, ", type="
+
+    iget-wide v2, p0, Lau2;->a:J
+
+    invoke-static {v2, v3, v0, v1}, Lmw1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Lvz2;
+    iget v1, p0, Lau2;->b:I
 
-    check-cast v0, Lv03;
+    packed-switch v1, :pswitch_data_0
 
-    invoke-virtual {v0}, Lv03;->M()Leb2;
+    const-string v1, "null"
 
-    move-result-object v0
+    goto :goto_0
 
-    new-instance v1, Ljava/lang/Long;
+    :pswitch_0
+    const-string v1, "VIDEO"
 
-    invoke-direct {v1, v4, v5}, Ljava/lang/Long;-><init>(J)V
+    goto :goto_0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :pswitch_1
+    const-string v1, "PHOTO"
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    goto :goto_0
 
-    move-result-wide v2
+    :pswitch_2
+    const-string v1, "FILE"
 
-    sget-object v4, Lkb2;->o:Lkb2;
+    goto :goto_0
 
-    invoke-virtual {v0, v2, v3, v4}, Leb2;->c(JLkb2;)V
+    :pswitch_3
+    const-string v1, "STICKER"
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    goto :goto_0
 
-    move-result-wide v1
+    :pswitch_4
+    const-string v1, "VIDEO_MSG"
 
-    new-instance v3, Llo0;
+    goto :goto_0
 
-    const/16 v4, 0x11
+    :pswitch_5
+    const-string v1, "AUDIO"
 
-    invoke-direct {v3, v4}, Llo0;-><init>(I)V
+    goto :goto_0
 
-    const/4 v4, 0x0
+    :pswitch_6
+    const-string v1, "TEXT"
 
-    invoke-virtual {v0, v1, v2, v4, v3}, Leb2;->h(JZLim3;)Lo72;
+    :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lncf;->a:Lncf;
+    const-string v1, ", typingText="
 
-    return-object v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lau2;->c:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

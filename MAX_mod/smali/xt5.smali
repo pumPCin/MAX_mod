@@ -1,42 +1,51 @@
 .class public final Lxt5;
-.super Lot5;
+.super Ljx3;
 .source "SourceFile"
 
-# interfaces
-.implements Lzvc;
 
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
 
-# static fields
-.field public static final b:Lxt5;
+.field public final synthetic Y:Lyt5;
+
+.field public Z:I
+
+.field public o:Lyt5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lyt5;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    new-instance v0, Lxt5;
+    iput-object p1, p0, Lxt5;->Y:Lyt5;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lxt5;->b:Lxt5;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g(Lyu5;)V
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-static {p1}, Lk35;->a(Lqee;)V
+    iput-object p1, p0, Lxt5;->X:Ljava/lang/Object;
 
-    return-void
-.end method
+    iget p1, p0, Lxt5;->Z:I
 
-.method public final get()Ljava/lang/Object;
-    .registers 1
+    const/high16 v0, -0x80000000
 
-    const/4 p0, 0x0
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lxt5;->Z:I
+
+    iget-object p1, p0, Lxt5;->Y:Lyt5;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lyt5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
 
     return-object p0
 .end method

@@ -1,313 +1,362 @@
 .class public final Lrq1;
-.super Ljava/lang/Object;
+.super Lx2;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lxh7;
+.field public final synthetic c:I
 
-.field public final b:Lxh7;
-
-.field public final c:Lxh7;
-
-.field public final d:Lxh7;
-
-.field public final e:Lxh7;
+.field public final synthetic o:Lsq1;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;)V
-    .registers 6
+.method public constructor <init>(Lsq1;I)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lrq1;->c:I
 
-    iput-object p3, p0, Lrq1;->a:Lxh7;
+    iput-object p1, p0, Lrq1;->o:Lsq1;
 
-    iput-object p2, p0, Lrq1;->b:Lxh7;
+    const/16 p1, 0x9
 
-    iput-object p1, p0, Lrq1;->c:Lxh7;
+    packed-switch p2, :pswitch_data_0
 
-    iput-object p4, p0, Lrq1;->d:Lxh7;
+    sget-object p2, Loq1;->b:Loq1;
 
-    iput-object p5, p0, Lrq1;->e:Lxh7;
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
 
     return-void
-.end method
 
-.method public static final a(Lrq1;Lcx3;)Ljava/lang/Comparable;
-    .registers 7
+    :pswitch_0
+    sget-object p2, Lpq1;->o:Lpq1;
 
-    instance-of v0, p1, Lpq1;
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
 
-    if-eqz v0, :cond_0
+    return-void
 
-    move-object v0, p1
+    nop
 
-    check-cast v0, Lpq1;
-
-    iget v1, v0, Lpq1;->Y:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lpq1;->Y:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lpq1;
-
-    invoke-direct {v0, p0, p1}, Lpq1;-><init>(Lrq1;Lcx3;)V
-
-    :goto_0
-    iget-object p1, v0, Lpq1;->o:Ljava/lang/Object;
-
-    iget v1, v0, Lpq1;->Y:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_2
-
-    if-ne v1, v2, :cond_1
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lrq1;->e:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lmnb;
-
-    iget-object p0, p0, Lrq1;->a:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lc53;
-
-    check-cast p0, Lz1d;
-
-    invoke-virtual {p0}, Lz1d;->p()J
-
-    move-result-wide v3
-
-    iput v2, v0, Lpq1;->Y:I
-
-    invoke-virtual {p1, v3, v4, v0}, Lmnb;->a(JLcx3;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object p0, Ls04;->a:Ls04;
-
-    if-ne p1, p0, :cond_3
-
-    return-object p0
-
-    :cond_3
-    :goto_1
-    check-cast p1, Lqcb;
-
-    iget-object p0, p1, Lqcb;->d:Lmm3;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/util/Set;Lcx3;)Ljava/lang/Object;
+.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 6
 
-    iget-object v0, p0, Lrq1;->c:Lxh7;
+    iget v0, p0, Lrq1;->c:I
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    check-cast v0, Lzne;
+    move-result v0
 
-    check-cast v0, Ltba;
+    if-nez v0, :cond_c
 
-    invoke-virtual {v0}, Ltba;->b()Ll04;
+    check-cast p2, Lpq1;
 
-    move-result-object v0
+    check-cast p1, Lpq1;
 
-    new-instance v1, Lnq1;
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
 
-    const/4 v2, 0x0
+    move-result v0
 
-    invoke-direct {v1, p1, p0, v2}, Lnq1;-><init>(Ljava/util/Set;Lrq1;Lkotlin/coroutines/Continuation;)V
+    sget-object v1, Lyu4;->t0:Lbx9;
 
-    invoke-static {v0, v1, p2}, Las3;->m0(Lj04;Lx96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object p0, p0, Lrq1;->o:Lsq1;
 
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final c(JLcx3;)Ljava/lang/Object;
-    .registers 8
-
-    instance-of v0, p3, Lqq1;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p3
-
-    check-cast v0, Lqq1;
-
-    iget v1, v0, Lqq1;->Y:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lqq1;->Y:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lqq1;
-
-    invoke-direct {v0, p0, p3}, Lqq1;-><init>(Lrq1;Lcx3;)V
-
-    :goto_0
-    iget-object p3, v0, Lqq1;->o:Ljava/lang/Object;
-
-    iget v1, v0, Lqq1;->Y:I
+    if-eqz v0, :cond_6
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_2
+    if-eq v0, v2, :cond_6
 
-    if-ne v1, v2, :cond_1
+    const/4 p1, 0x2
 
-    invoke-static {p3}, Lg53;->F(Ljava/lang/Object;)V
+    if-eq v0, p1, :cond_2
 
-    goto :goto_1
+    const/4 p1, 0x3
+
+    if-ne v0, p1, :cond_1
+
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p1}, Loyd;->stop()V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    goto/16 :goto_1
 
     :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
     throw p0
 
     :cond_2
-    invoke-static {p3}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lrq1;->b:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lxu3;
-
-    iput v2, v0, Lqq1;->Y:I
-
-    invoke-virtual {p0, p1, p2, v0}, Lxu3;->b(JLcx3;)Ljava/lang/Comparable;
-
-    move-result-object p3
-
-    sget-object p0, Ls04;->a:Ls04;
-
-    if-ne p3, p0, :cond_3
-
-    return-object p0
-
-    :cond_3
-    :goto_1
-    check-cast p3, Lmm3;
-
-    if-eqz p3, :cond_4
-
-    invoke-virtual {p3}, Lmm3;->w()Z
-
-    move-result v2
-
-    :cond_4
-    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final d(Ljava/util/Set;Lxie;)Ljava/lang/Object;
-    .registers 5
-
-    invoke-interface {p1}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p0, p0, Lrq1;->d:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lle9;
-
-    invoke-static {p1}, Luo9;->Q(Ljava/util/Collection;)Lpk9;
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
 
     move-result-object p1
 
-    sget v0, Llw4;->o:I
+    if-nez p1, :cond_3
 
-    const/16 v0, 0x1e
+    invoke-static {p0}, Lsq1;->L(Lsq1;)Loyd;
 
-    sget-object v1, Lqw4;->o:Lqw4;
+    move-result-object p1
 
-    invoke-static {v0, v1}, Lg5e;->G(ILqw4;)J
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    move-result-wide v0
+    :cond_3
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
 
-    invoke-virtual {p0, p1, v0, v1, p2}, Lle9;->W(Lpk9;JLcx3;)Ljava/lang/Object;
+    move-result-object p1
+
+    if-eqz p1, :cond_4
+
+    sget-object p2, Lkyd;->o:Lkyd;
+
+    iget-object p1, p1, Loyd;->b:Lnyd;
+
+    invoke-virtual {p1, p2}, Lnyd;->c(Lkyd;)V
+
+    :cond_4
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_c
+
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_c
+
+    invoke-virtual {p1}, Loyd;->isRunning()Z
+
+    move-result p1
+
+    if-nez p1, :cond_c
+
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_5
+
+    invoke-virtual {v1, p0}, Lbx9;->q(Landroid/view/View;)Llia;
+
+    move-result-object p2
+
+    iget-object p2, p2, Llia;->c:Lera;
+
+    invoke-virtual {p1, p2}, Loyd;->onThemeChanged(Lera;)V
+
+    :cond_5
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
+    if-eqz p0, :cond_c
 
-    if-ne p0, p1, :cond_1
+    invoke-virtual {p0}, Loyd;->start()V
 
-    return-object p0
+    goto :goto_1
 
-    :cond_1
+    :cond_6
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
+
+    move-result-object v0
+
+    if-nez v0, :cond_7
+
+    invoke-static {p0}, Lsq1;->L(Lsq1;)Loyd;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_7
+    sget-object v0, Lpq1;->b:Lpq1;
+
+    sget-object v2, Lpq1;->a:Lpq1;
+
+    if-ne p1, v0, :cond_8
+
+    if-ne p2, v2, :cond_8
+
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_8
+
+    const/16 v0, 0x80
+
+    invoke-virtual {p1, v0}, Loyd;->setAlpha(I)V
+
+    :cond_8
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_a
+
+    if-ne p2, v2, :cond_9
+
+    sget-object p2, Lkyd;->c:Lkyd;
+
+    goto :goto_0
+
+    :cond_9
+    sget-object p2, Lkyd;->b:Lkyd;
+
     :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    iget-object p1, p1, Loyd;->b:Lnyd;
 
-    return-object p0
+    invoke-virtual {p1, p2}, Lnyd;->c(Lkyd;)V
+
+    :cond_a
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_c
+
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_c
+
+    invoke-virtual {p1}, Loyd;->isRunning()Z
+
+    move-result p1
+
+    if-nez p1, :cond_c
+
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_b
+
+    invoke-virtual {v1, p0}, Lbx9;->q(Landroid/view/View;)Llia;
+
+    move-result-object p2
+
+    iget-object p2, p2, Llia;->c:Lera;
+
+    invoke-virtual {p1, p2}, Loyd;->onThemeChanged(Lera;)V
+
+    :cond_b
+    invoke-virtual {p0}, Lsq1;->getBackground()Loyd;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_c
+
+    invoke-virtual {p0}, Loyd;->start()V
+
+    :cond_c
+    :goto_1
+    return-void
+
+    :pswitch_0
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_f
+
+    check-cast p2, Loq1;
+
+    check-cast p1, Loq1;
+
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p1
+
+    sget-object p2, Lwyc;->b:Lwyc;
+
+    iget-object p0, p0, Lrq1;->o:Lsq1;
+
+    if-eqz p1, :cond_e
+
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_d
+
+    invoke-static {p0}, Lsq1;->N(Lsq1;)Lbzc;
+
+    move-result-object p1
+
+    sget-object v0, Lwyc;->a:Lwyc;
+
+    invoke-virtual {p1, v0}, Lbzc;->setMode(Lwyc;)V
+
+    invoke-static {p0}, Lsq1;->P(Lsq1;)Lbzc;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Lbzc;->setMode(Lwyc;)V
+
+    invoke-static {p0}, Lsq1;->O(Lsq1;)Lbzc;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p2}, Lbzc;->setMode(Lwyc;)V
+
+    goto :goto_2
+
+    :cond_d
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :cond_e
+    invoke-static {p0}, Lsq1;->N(Lsq1;)Lbzc;
+
+    move-result-object p1
+
+    sget-object v0, Lwyc;->c:Lwyc;
+
+    invoke-virtual {p1, v0}, Lbzc;->setMode(Lwyc;)V
+
+    invoke-static {p0}, Lsq1;->O(Lsq1;)Lbzc;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p2}, Lbzc;->setMode(Lwyc;)V
+
+    :cond_f
+    :goto_2
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

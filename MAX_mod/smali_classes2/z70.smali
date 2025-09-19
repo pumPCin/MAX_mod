@@ -1,92 +1,39 @@
 .class public final Lz70;
-.super Lsoe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final c:Lis;
+.field public final a:Lcl7;
+
+.field public final b:Lcl7;
+
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lis;)V
-    .registers 2
+.method public constructor <init>(Lcl7;Lcl7;Lr1b;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lz70;->c:Lis;
+    iput-object p1, p0, Lz70;->a:Lcl7;
+
+    iput-object p2, p0, Lz70;->b:Lcl7;
+
+    new-instance p1, Lb3;
+
+    const/4 p2, 0x4
+
+    invoke-direct {p1, p3, p2, p0}, Lb3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    const/4 p2, 0x3
+
+    invoke-static {p2, p1}, Lcb7;->G(ILzb6;)Lcl7;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lz70;->c:Ljava/lang/Object;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Lz70;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lz70;
-
-    iget-object p0, p0, Lz70;->c:Lis;
-
-    iget-object p1, p1, Lz70;->c:Lis;
-
-    invoke-virtual {p0, p1}, Lktd;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lz70;->c:Lis;
-
-    invoke-virtual {p0}, Lktd;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    iget-object p0, p0, Lz70;->c:Lis;
-
-    invoke-static {p0}, Lms8;->A(Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v0, "Response(tokenTypes=\'"
-
-    const-string v1, "\')"
-
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

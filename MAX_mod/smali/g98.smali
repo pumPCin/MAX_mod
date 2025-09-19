@@ -1,48 +1,46 @@
 .class public final Lg98;
-.super Lcx3;
+.super La98;
+.source "SourceFile"
+
+# interfaces
+.implements Lf4d;
 
 
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lar7;
-
-.field public synthetic o:Ljava/lang/Object;
+# static fields
+.field public static final a:Lg98;
 
 
 # direct methods
-.method public constructor <init>(Lar7;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Lg98;->Y:Lar7;
+    new-instance v0, Lg98;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lg98;->a:Lg98;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final g(Lt98;)V
+    .registers 2
 
-    iput-object p1, p0, Lg98;->o:Ljava/lang/Object;
+    sget-object p0, Lk45;->a:Lk45;
 
-    iget p1, p0, Lg98;->X:I
+    invoke-interface {p1, p0}, Lt98;->c(Loq4;)V
 
-    const/high16 v0, -0x80000000
+    invoke-interface {p1}, Lt98;->b()V
 
-    or-int/2addr p1, v0
+    return-void
+.end method
 
-    iput p1, p0, Lg98;->X:I
+.method public final get()Ljava/lang/Object;
+    .registers 1
 
-    iget-object p1, p0, Lg98;->Y:Lar7;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lar7;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
+    const/4 p0, 0x0
 
     return-object p0
 .end method

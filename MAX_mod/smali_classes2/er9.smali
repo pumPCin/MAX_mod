@@ -1,99 +1,114 @@
-.class public final Ler9;
-.super Lbud;
+.class public final synthetic Ler9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
-# virtual methods
-.method public final F(Lcr9;)V
-    .registers 7
 
-    iget-object p0, p0, Lphc;->a:Landroid/view/View;
+# instance fields
+.field public final synthetic a:I
 
-    check-cast p0, Lone/me/sdk/uikit/common/views/OneMeDraweeView;
+.field public final synthetic b:Lgr9;
 
-    iget-wide v0, p1, Lcr9;->a:J
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+# direct methods
+.method public synthetic constructor <init>(Lgr9;I)V
+    .registers 3
 
-    move-result v0
+    iput p2, p0, Ler9;->a:I
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setId(I)V
+    iput-object p1, p0, Ler9;->b:Lgr9;
 
-    iget-object p1, p1, Lcr9;->b:Ljava/lang/String;
-
-    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object p1
-
-    invoke-static {p1}, Liz6;->d(Landroid/net/Uri;)Liz6;
-
-    move-result-object p1
-
-    new-instance v0, Lulc;
-
-    const/16 v1, 0x40
-
-    int-to-float v1, v1
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v2
-
-    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v2, v1
-
-    invoke-static {v2}, Lg53;->C(F)I
-
-    move-result v2
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v3
-
-    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v1, v3
-
-    invoke-static {v1}, Lg53;->C(F)I
-
-    move-result v1
-
-    const/4 v3, 0x0
-
-    const/16 v4, 0xc
-
-    invoke-direct {v0, v3, v2, v1, v4}, Lulc;-><init>(FIII)V
-
-    iput-object v0, p1, Liz6;->d:Lulc;
-
-    invoke-virtual {p1}, Liz6;->a()Lhz6;
-
-    move-result-object p1
-
-    sget v0, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->w0:I
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->o(Lhz6;Lhz6;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public final bridge synthetic x(Lpp7;)V
-    .registers 2
+
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .registers 4
+
+    iget p1, p0, Ler9;->a:I
+
+    iget-object p0, p0, Ler9;->b:Lgr9;
+
+    packed-switch p1, :pswitch_data_0
+
+    iget-object p0, p0, Ly2;->a:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/Set;
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p1
 
     check-cast p1, Lcr9;
 
-    invoke-virtual {p0, p1}, Ler9;->F(Lcr9;)V
+    new-instance v0, Lej0;
 
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lej0;-><init>(I)V
+
+    invoke-virtual {p1, v0}, Ly2;->n(Lsm3;)V
+
+    goto :goto_0
+
+    :cond_0
     return-void
+
+    :pswitch_0
+    iget-object p0, p0, Ly2;->a:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/Set;
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_1
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcr9;
+
+    new-instance v0, Lej0;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lej0;-><init>(I)V
+
+    invoke-virtual {p1, v0}, Ly2;->n(Lsm3;)V
+
+    goto :goto_1
+
+    :cond_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

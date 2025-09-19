@@ -1,59 +1,108 @@
 .class public final Lhe2;
-.super Lij0;
+.super Lug2;
 .source "SourceFile"
 
 
-# instance fields
-.field public final b:J
+# virtual methods
+.method public final F(Lus8;Lbc6;Lpc6;)V
+    .registers 6
 
-.field public final c:Ljava/lang/Long;
+    check-cast p1, Lss8;
 
+    iget-object v0, p0, Lzoc;->a:Landroid/view/View;
 
-# direct methods
-.method public constructor <init>(JLjava/lang/Long;)V
-    .registers 4
+    check-cast v0, Lrg2;
 
-    invoke-direct {p0}, Lij0;-><init>()V
+    invoke-virtual {p0, p1}, Lhe2;->G(Lss8;)V
 
-    iput-wide p1, p0, Lhe2;->b:J
+    new-instance v1, Lqb;
 
-    iput-object p3, p0, Lhe2;->c:Ljava/lang/Long;
+    invoke-direct {v1, p2, p1}, Lqb;-><init>(Lbc6;Lss8;)V
+
+    invoke-static {v0, v1}, Lz48;->D(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+
+    new-instance p2, Ll82;
+
+    invoke-direct {p2, p3, p1, p0}, Ll82;-><init>(Lpc6;Lss8;Lhe2;)V
+
+    invoke-virtual {v0, p2}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     return-void
 .end method
 
+.method public final G(Lss8;)V
+    .registers 6
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 5
+    iget-object p0, p0, Lzoc;->a:Landroid/view/View;
 
-    invoke-super {p0}, Lij0;->toString()Ljava/lang/String;
+    check-cast p0, Lrg2;
+
+    iget-wide v0, p1, Lss8;->a:J
+
+    long-to-int v0, v0
+
+    invoke-virtual {p0, v0}, Landroidx/constraintlayout/widget/ConstraintLayout;->setId(I)V
+
+    iget-object v0, p1, Lss8;->X:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lrg2;->setTitle(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p1, Lss8;->Z:Ljava/lang/CharSequence;
+
+    invoke-virtual {p0, v0}, Lrg2;->setLink(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p1, Lss8;->Y:Ljava/lang/CharSequence;
+
+    invoke-virtual {p0, v0}, Lrg2;->setSubtitle(Ljava/lang/CharSequence;)V
+
+    iget-boolean v0, p1, Lss8;->r0:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object p1, p0, Lrg2;->J0:Loba;
+
+    iget-object v0, p0, Lrg2;->F0:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    check-cast v0, Landroid/graphics/drawable/Drawable;
 
-    const-string v2, "ChatLastReactionUpdatedEvent{chatId="
+    new-instance v1, Lif1;
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/16 v2, 0xe
 
-    iget-wide v2, p0, Lhe2;->b:J
+    invoke-direct {v1, v2}, Lif1;-><init>(I)V
 
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    new-instance v2, Lif1;
 
-    const-string v2, "\'lastReactionMessageId="
+    const/16 v3, 0xf
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v2, v3}, Lif1;-><init>(I)V
 
-    iget-object p0, p0, Lhe2;->c:Ljava/lang/Long;
+    const/4 v3, 0x6
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {p1, v0, v1, v2, v3}, Loba;->o(Loba;Landroid/graphics/drawable/Drawable;Lbc6;Lbc6;I)V
 
-    const-string p0, "\', lastReaction=null}"
+    invoke-virtual {p0}, Lrg2;->v()V
 
-    invoke-static {v1, p0, v0}, La78;->o(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    return-void
 
-    move-result-object p0
+    :cond_0
+    iget-object p1, p1, Lss8;->o:Ljava/lang/String;
 
-    return-object p0
+    invoke-virtual {p0, p1}, Lrg2;->setLinkPhoto(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final bridge synthetic y(Lts7;)V
+    .registers 2
+
+    check-cast p1, Lss8;
+
+    invoke-virtual {p0, p1}, Lhe2;->G(Lss8;)V
+
+    return-void
 .end method

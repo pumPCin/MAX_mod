@@ -1,73 +1,67 @@
-.class public final enum Lpqc;
-.super Ljava/lang/Enum;
+.class public final Lpqc;
+.super Ll37;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Lpqc;
+# instance fields
+.field public final transient X:I
 
-.field public static final enum b:Lpqc;
+.field public final transient c:[Ljava/lang/Object;
 
-.field public static final synthetic c:[Lpqc;
+.field public final transient o:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(II[Ljava/lang/Object;)V
     .registers 4
 
-    new-instance v0, Lpqc;
+    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
-    const-string v1, "OVAL"
+    iput-object p3, p0, Lpqc;->c:[Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    iput p1, p0, Lpqc;->o:I
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lpqc;->a:Lpqc;
-
-    new-instance v1, Lpqc;
-
-    const-string v2, "RECT"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lpqc;->b:Lpqc;
-
-    filled-new-array {v0, v1}, [Lpqc;
-
-    move-result-object v0
-
-    sput-object v0, Lpqc;->c:[Lpqc;
+    iput p2, p0, Lpqc;->X:I
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lpqc;
-    .registers 2
 
-    const-class v0, Lpqc;
+# virtual methods
+.method public final f()Z
+    .registers 1
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const/4 p0, 0x1
 
-    move-result-object p0
+    return p0
+.end method
 
-    check-cast p0, Lpqc;
+.method public final get(I)Ljava/lang/Object;
+    .registers 3
+
+    iget v0, p0, Lpqc;->X:I
+
+    invoke-static {p1, v0}, Lgy7;->m(II)V
+
+    mul-int/lit8 p1, p1, 0x2
+
+    iget v0, p0, Lpqc;->o:I
+
+    add-int/2addr p1, v0
+
+    iget-object p0, p0, Lpqc;->c:[Ljava/lang/Object;
+
+    aget-object p0, p0, p1
+
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p0
 .end method
 
-.method public static values()[Lpqc;
+.method public final size()I
     .registers 1
 
-    sget-object v0, Lpqc;->c:[Lpqc;
+    iget p0, p0, Lpqc;->X:I
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lpqc;
-
-    return-object v0
+    return p0
 .end method

@@ -1,215 +1,50 @@
 .class public final Lbb7;
-.super Ljava/lang/Object;
+.super Ljava/util/concurrent/locks/AbstractOwnableSynchronizer;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public a:Ljava/util/Iterator;
+.field public final a:Loff;
 
-.field public b:Ljava/util/Iterator;
 
-.field public c:Ljava/util/Iterator;
+# direct methods
+.method public constructor <init>(Loff;)V
+    .registers 2
 
-.field public o:Ljava/util/ArrayDeque;
+    invoke-direct {p0}, Ljava/util/concurrent/locks/AbstractOwnableSynchronizer;-><init>()V
+
+    iput-object p1, p0, Lbb7;->a:Loff;
+
+    return-void
+.end method
+
+.method public static a(Lbb7;Ljava/lang/Thread;)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/locks/AbstractOwnableSynchronizer;->setExclusiveOwnerThread(Ljava/lang/Thread;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .registers 4
+.method public final run()V
+    .registers 1
 
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Lbb7;->b:Ljava/util/Iterator;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_7
-
-    :goto_1
-    iget-object v0, p0, Lbb7;->c:Ljava/util/Iterator;
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    goto :goto_2
-
-    :cond_1
-    iget-object v0, p0, Lbb7;->c:Ljava/util/Iterator;
-
-    goto :goto_3
-
-    :cond_2
-    :goto_2
-    iget-object v0, p0, Lbb7;->o:Ljava/util/ArrayDeque;
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v0}, Ljava/util/ArrayDeque;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    iget-object v0, p0, Lbb7;->o:Ljava/util/ArrayDeque;
-
-    invoke-virtual {v0}, Ljava/util/ArrayDeque;->removeFirst()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Iterator;
-
-    iput-object v0, p0, Lbb7;->c:Ljava/util/Iterator;
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v0, 0x0
-
-    :goto_3
-    iput-object v0, p0, Lbb7;->c:Ljava/util/Iterator;
-
-    if-nez v0, :cond_4
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_4
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Iterator;
-
-    iput-object v0, p0, Lbb7;->b:Ljava/util/Iterator;
-
-    instance-of v1, v0, Lbb7;
-
-    if-eqz v1, :cond_0
-
-    check-cast v0, Lbb7;
-
-    iget-object v1, v0, Lbb7;->b:Ljava/util/Iterator;
-
-    iput-object v1, p0, Lbb7;->b:Ljava/util/Iterator;
-
-    iget-object v1, p0, Lbb7;->o:Ljava/util/ArrayDeque;
-
-    if-nez v1, :cond_5
-
-    new-instance v1, Ljava/util/ArrayDeque;
-
-    invoke-direct {v1}, Ljava/util/ArrayDeque;-><init>()V
-
-    iput-object v1, p0, Lbb7;->o:Ljava/util/ArrayDeque;
-
-    :cond_5
-    iget-object v1, p0, Lbb7;->o:Ljava/util/ArrayDeque;
-
-    iget-object v2, p0, Lbb7;->c:Ljava/util/Iterator;
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayDeque;->addFirst(Ljava/lang/Object;)V
-
-    iget-object v1, v0, Lbb7;->o:Ljava/util/ArrayDeque;
-
-    if-eqz v1, :cond_6
-
-    :goto_4
-    iget-object v1, v0, Lbb7;->o:Ljava/util/ArrayDeque;
-
-    invoke-virtual {v1}, Ljava/util/ArrayDeque;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_6
-
-    iget-object v1, p0, Lbb7;->o:Ljava/util/ArrayDeque;
-
-    iget-object v2, v0, Lbb7;->o:Ljava/util/ArrayDeque;
-
-    invoke-virtual {v2}, Ljava/util/ArrayDeque;->removeLast()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Iterator;
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayDeque;->addFirst(Ljava/lang/Object;)V
-
-    goto :goto_4
-
-    :cond_6
-    iget-object v0, v0, Lbb7;->c:Ljava/util/Iterator;
-
-    iput-object v0, p0, Lbb7;->c:Ljava/util/Iterator;
-
-    goto :goto_0
-
-    :cond_7
-    const/4 p0, 0x1
-
-    return p0
+    return-void
 .end method
 
-.method public final next()Ljava/lang/Object;
-    .registers 2
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    invoke-virtual {p0}, Lbb7;->hasNext()Z
+    iget-object p0, p0, Lbb7;->a:Loff;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lbb7;->b:Ljava/util/Iterator;
-
-    iput-object v0, p0, Lbb7;->a:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {p0}, Loff;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw p0
-.end method
-
-.method public final remove()V
-    .registers 2
-
-    iget-object v0, p0, Lbb7;->a:Ljava/util/Iterator;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lbb7;->a:Ljava/util/Iterator;
-
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "no calls to next() since the last call to remove()"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method

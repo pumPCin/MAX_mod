@@ -4,44 +4,20 @@
 
 
 # instance fields
-.field public final a:I
+.field public final a:Lza3;
 
 .field public final b:I
 
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:I
-
 
 # direct methods
-.method public constructor <init>(IIIIIIII)V
-    .registers 9
+.method public constructor <init>(Lza3;I)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lab3;->a:I
+    iput-object p1, p0, Lab3;->a:Lza3;
 
     iput p2, p0, Lab3;->b:I
-
-    iput p3, p0, Lab3;->c:I
-
-    iput p4, p0, Lab3;->d:I
-
-    iput p5, p0, Lab3;->e:I
-
-    iput p6, p0, Lab3;->f:I
-
-    iput p7, p0, Lab3;->g:I
-
-    iput p8, p0, Lab3;->h:I
 
     return-void
 .end method
@@ -65,81 +41,31 @@
     :cond_1
     check-cast p1, Lab3;
 
-    iget v0, p0, Lab3;->a:I
+    iget-object v0, p0, Lab3;->a:Lza3;
 
-    iget v1, p1, Lab3;->a:I
+    iget-object v1, p1, Lab3;->a:Lza3;
 
-    if-eq v0, v1, :cond_2
+    invoke-virtual {v0, v1}, Lza3;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
 
     goto :goto_0
 
     :cond_2
-    iget v0, p0, Lab3;->b:I
+    iget p0, p0, Lab3;->b:I
 
-    iget v1, p1, Lab3;->b:I
+    iget p1, p1, Lab3;->b:I
 
-    if-eq v0, v1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget v0, p0, Lab3;->c:I
-
-    iget v1, p1, Lab3;->c:I
-
-    if-eq v0, v1, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    iget v0, p0, Lab3;->d:I
-
-    iget v1, p1, Lab3;->d:I
-
-    if-eq v0, v1, :cond_5
-
-    goto :goto_0
-
-    :cond_5
-    iget v0, p0, Lab3;->e:I
-
-    iget v1, p1, Lab3;->e:I
-
-    if-eq v0, v1, :cond_6
-
-    goto :goto_0
-
-    :cond_6
-    iget v0, p0, Lab3;->f:I
-
-    iget v1, p1, Lab3;->f:I
-
-    if-eq v0, v1, :cond_7
-
-    goto :goto_0
-
-    :cond_7
-    iget v0, p0, Lab3;->g:I
-
-    iget v1, p1, Lab3;->g:I
-
-    if-eq v0, v1, :cond_8
-
-    goto :goto_0
-
-    :cond_8
-    iget p0, p0, Lab3;->h:I
-
-    iget p1, p1, Lab3;->h:I
-
-    if-eq p0, p1, :cond_9
+    if-eq p0, p1, :cond_3
 
     :goto_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_9
+    :cond_3
     :goto_1
     const/4 p0, 0x1
 
@@ -147,67 +73,19 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .registers 2
 
-    iget v0, p0, Lab3;->a:I
+    iget-object v0, p0, Lab3;->a:Lza3;
+
+    iget v0, v0, Lza3;->a:I
 
     invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result v0
 
-    const/16 v1, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lab3;->b:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lab3;->c:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    const/4 v2, -0x1
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    const v2, -0x1f000001
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lab3;->d:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lab3;->e:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lab3;->f:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lab3;->g:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget p0, p0, Lab3;->h:I
+    iget p0, p0, Lab3;->b:I
 
     invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -219,51 +97,31 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .registers 3
 
-    const-string v0, ", capsuleSecondary="
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, ", contrast="
+    const-string v1, "CommonStatesBackgroundActiveColors(action="
 
-    const-string v2, "CommonTextColors(capsule="
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v3, p0, Lab3;->a:I
+    iget-object v1, p0, Lab3;->a:Lza3;
 
-    iget v4, p0, Lab3;->b:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v3, v0, v4, v1}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", neutralFadeTertiary="
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", contrastStatic=-1, fileType=-520093697, negative="
+    iget p0, p0, Lab3;->b:I
 
-    const-string v2, ", primary="
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget v3, p0, Lab3;->c:I
+    const-string p0, ")"
 
-    iget v4, p0, Lab3;->d:I
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v3, v1, v4, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    const-string v1, ", secondary="
-
-    const-string v2, ", tertiary="
-
-    iget v3, p0, Lab3;->e:I
-
-    iget v4, p0, Lab3;->f:I
-
-    invoke-static {v0, v3, v1, v4, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    const-string v1, ", themed="
-
-    const-string v2, ")"
-
-    iget v3, p0, Lab3;->g:I
-
-    iget p0, p0, Lab3;->h:I
-
-    invoke-static {v0, v3, v1, p0, v2}, Lnh0;->h(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

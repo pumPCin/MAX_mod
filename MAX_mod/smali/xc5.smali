@@ -3,59 +3,29 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lxc5;
+# instance fields
+.field public final a:Ljava/util/ArrayList;
+
+.field public final b:Lg0e;
+
+.field public final c:I
+
+.field public final d:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ljava/util/ArrayList;Lg0e;IJ)V
+    .registers 6
 
-    new-instance v0, Lxc5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lxc5;->a:Ljava/util/ArrayList;
 
-    sput-object v0, Lxc5;->a:Lxc5;
+    iput-object p2, p0, Lxc5;->b:Lg0e;
+
+    iput p3, p0, Lxc5;->c:I
+
+    iput-wide p4, p0, Lxc5;->d:J
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lxc5;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, -0x1b0269f
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "Removed"
-
-    return-object p0
 .end method

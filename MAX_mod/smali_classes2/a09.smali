@@ -4,11 +4,19 @@
 
 
 # static fields
-.field public static final enum b:La09;
+.field public static final enum X:La09;
 
-.field public static final synthetic c:[La09;
+.field public static final enum Y:La09;
 
-.field public static final synthetic o:Lc65;
+.field public static final enum Z:La09;
+
+.field public static final b:Ljava/util/List;
+
+.field public static final enum c:La09;
+
+.field public static final enum o:La09;
+
+.field public static final synthetic r0:[La09;
 
 
 # instance fields
@@ -17,37 +25,81 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .registers 8
 
     new-instance v0, La09;
 
-    const-string v1, "EMOJI"
+    const-string v1, "UNKNOWN"
 
     const/4 v2, 0x0
 
     invoke-direct {v0, v1, v2, v2}, La09;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, La09;->b:La09;
+    sput-object v0, La09;->c:La09;
 
     new-instance v1, La09;
 
-    const-string v2, "STICKER"
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
+    const/16 v3, 0xa
 
-    invoke-direct {v1, v2, v3, v3}, La09;-><init>(Ljava/lang/String;II)V
+    const-string v4, "SENDING"
 
-    filled-new-array {v0, v1}, [La09;
+    invoke-direct {v1, v4, v2, v3}, La09;-><init>(Ljava/lang/String;II)V
+
+    sput-object v1, La09;->o:La09;
+
+    new-instance v2, La09;
+
+    const/4 v3, 0x2
+
+    const/16 v4, 0x14
+
+    const-string v5, "SENT"
+
+    invoke-direct {v2, v5, v3, v4}, La09;-><init>(Ljava/lang/String;II)V
+
+    sput-object v2, La09;->X:La09;
+
+    new-instance v3, La09;
+
+    const/4 v4, 0x3
+
+    const/16 v5, 0x1e
+
+    const-string v6, "READ"
+
+    invoke-direct {v3, v6, v4, v5}, La09;-><init>(Ljava/lang/String;II)V
+
+    sput-object v3, La09;->Y:La09;
+
+    new-instance v4, La09;
+
+    const/4 v5, 0x4
+
+    const/16 v6, 0x28
+
+    const-string v7, "ERROR"
+
+    invoke-direct {v4, v7, v5, v6}, La09;-><init>(Ljava/lang/String;II)V
+
+    sput-object v4, La09;->Z:La09;
+
+    filled-new-array {v0, v1, v2, v3, v4}, [La09;
 
     move-result-object v0
 
-    sput-object v0, La09;->c:[La09;
+    sput-object v0, La09;->r0:[La09;
 
-    new-instance v1, Lc65;
+    new-instance v1, Ly75;
 
-    invoke-direct {v1, v0}, Lc65;-><init>([Ljava/lang/Enum;)V
+    invoke-direct {v1, v0}, Ly75;-><init>([Ljava/lang/Enum;)V
 
-    sput-object v1, La09;->o:Lc65;
+    invoke-static {v1}, Lq73;->B0(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object v0
+
+    sput-object v0, La09;->b:Ljava/util/List;
 
     return-void
 .end method
@@ -79,7 +131,7 @@
 .method public static values()[La09;
     .registers 1
 
-    sget-object v0, La09;->c:[La09;
+    sget-object v0, La09;->r0:[La09;
 
     invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 

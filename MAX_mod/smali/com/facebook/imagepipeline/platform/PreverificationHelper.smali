@@ -4,7 +4,7 @@
 
 
 # annotations
-.annotation build Lcq4;
+.annotation build Ldr4;
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
         value = 0x1a
     .end annotation
 
-    .annotation build Lcq4;
+    .annotation build Ldr4;
     .end annotation
 
     sget-object p0, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;

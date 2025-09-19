@@ -1,30 +1,26 @@
 .class public final Lxo2;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public X:I
 
-.field public final synthetic Y:Lfq5;
-
-.field public final synthetic Z:Lone/me/chatscreen/ChatScreen;
+.field public final synthetic Y:Lone/me/chatscreen/ChatScreen;
 
 
 # direct methods
-.method public constructor <init>(Lfq5;Lkotlin/coroutines/Continuation;Lone/me/chatscreen/ChatScreen;)V
-    .registers 4
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/ChatScreen;)V
+    .registers 3
 
-    iput-object p1, p0, Lxo2;->Y:Lfq5;
+    iput-object p2, p0, Lxo2;->Y:Lone/me/chatscreen/ChatScreen;
 
-    iput-object p3, p0, Lxo2;->Z:Lone/me/chatscreen/ChatScreen;
+    const/4 p2, 0x2
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -34,7 +30,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lu65;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -44,73 +40,138 @@
 
     check-cast p0, Lxo2;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lxo2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lxo2;
+
+    iget-object p0, p0, Lxo2;->Y:Lone/me/chatscreen/ChatScreen;
+
+    invoke-direct {p1, p2, p0}, Lxo2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/ChatScreen;)V
 
     return-object p1
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
-
-    new-instance v0, Lxo2;
-
-    iget-object v1, p0, Lxo2;->Y:Lfq5;
-
-    iget-object p0, p0, Lxo2;->Z:Lone/me/chatscreen/ChatScreen;
-
-    invoke-direct {v0, v1, p2, p0}, Lxo2;-><init>(Lfq5;Lkotlin/coroutines/Continuation;Lone/me/chatscreen/ChatScreen;)V
-
-    iput-object p1, v0, Lxo2;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .registers 10
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget v0, p0, Lxo2;->X:I
 
-    iget-object p1, p0, Lxo2;->X:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    check-cast p1, Lu65;
+    sget-object v2, Lylf;->a:Lylf;
 
-    invoke-virtual {p1}, Lu65;->a()Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
-    move-result-object p1
+    if-ne v0, v1, :cond_0
 
-    invoke-static {p1}, Lcnc;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    return-object v2
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lxo2;->Y:Lone/me/chatscreen/ChatScreen;
+
+    invoke-virtual {p1}, Lxx3;->getView()Landroid/view/View;
 
     move-result-object v0
 
-    sget-object v1, Lncf;->a:Lncf;
+    if-nez v0, :cond_2
 
-    if-nez v0, :cond_0
+    goto :goto_2
 
-    :try_start_0
-    check-cast p1, Lg19;
+    :cond_2
+    invoke-virtual {p1}, Lone/me/chatscreen/ChatScreen;->W0()Lfbd;
 
-    iget-object p0, p0, Lxo2;->Z:Lone/me/chatscreen/ChatScreen;
+    move-result-object v0
 
-    invoke-static {p0, p1}, Lone/me/chatscreen/ChatScreen;->G0(Lone/me/chatscreen/ChatScreen;Lg19;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, v0, Lfbd;->Y:Liic;
 
-    move-object p1, v1
+    invoke-virtual {p1}, Lone/me/chatscreen/ChatScreen;->c1()Lds2;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lds2;->c1:Liic;
+
+    new-instance v4, Lg3;
+
+    const/4 v5, 0x7
+
+    const/4 v6, 0x0
+
+    invoke-direct {v4, p1, v6, v5}, Lg3;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
+
+    new-instance v5, Lq31;
+
+    const/4 v7, 0x4
+
+    invoke-direct {v5, v0, v3, v4, v7}, Lq31;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+
+    invoke-static {v5}, Lo97;->R(Lis5;)Lis5;
+
+    move-result-object v0
+
+    new-instance v3, Lwo2;
+
+    invoke-direct {v3, v6, p1}, Lwo2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/ChatScreen;)V
+
+    iput v1, p0, Lxo2;->X:I
+
+    new-instance p1, Lmu5;
+
+    const/4 v1, 0x1
+
+    sget-object v4, Lqx9;->a:Lqx9;
+
+    invoke-direct {p1, v4, v3, v1}, Lmu5;-><init>(Lks5;Lpc6;I)V
+
+    invoke-interface {v0, p1, p0}, Lis5;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_3
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
-
-    new-instance p1, Lanc;
-
-    invoke-direct {p1, p0}, Lanc;-><init>(Ljava/lang/Throwable;)V
+    :cond_3
+    move-object p0, v2
 
     :goto_0
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    if-ne p0, p1, :cond_4
 
-    :cond_0
-    return-object v1
+    goto :goto_1
+
+    :cond_4
+    move-object p0, v2
+
+    :goto_1
+    if-ne p0, p1, :cond_5
+
+    return-object p1
+
+    :cond_5
+    :goto_2
+    return-object v2
 .end method

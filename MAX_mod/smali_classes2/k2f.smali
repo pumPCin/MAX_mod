@@ -1,65 +1,34 @@
-.class public abstract Lk2f;
+.class public final Lk2f;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final a:Ldle;
-
-.field public static final b:Ldle;
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 2
+# virtual methods
+.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .registers 3
 
-    sget-object v0, Lb8;->Z:Lb8;
+    new-instance p0, Ll2f;
 
-    new-instance v1, Ldle;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    invoke-direct {v1, v0}, Ldle;-><init>(Lh96;)V
+    move-result v0
 
-    sput-object v1, Lk2f;->a:Ldle;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    sget-object v0, Lb8;->Y:Lb8;
+    move-result p1
 
-    new-instance v1, Ldle;
+    invoke-direct {p0, v0, p1}, Ll2f;-><init>(II)V
 
-    invoke-direct {v1, v0}, Ldle;-><init>(Lh96;)V
-
-    sput-object v1, Lk2f;->b:Ldle;
-
-    return-void
+    return-object p0
 .end method
 
-.method public static a(Ljava/lang/Runnable;)V
+.method public final newArray(I)[Ljava/lang/Object;
     .registers 2
 
-    sget-object v0, Lk2f;->b:Ldle;
+    new-array p0, p1, [Ll2f;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public static b(Ljava/lang/Runnable;)V
-    .registers 2
-
-    sget-object v0, Lk2f;->a:Ldle;
-
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/concurrent/Executor;
-
-    invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
+    return-object p0
 .end method

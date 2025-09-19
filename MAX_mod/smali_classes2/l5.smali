@@ -1,54 +1,59 @@
 .class public final Ll5;
-.super Ljava/lang/Object;
+.super Landroid/app/SharedElementCallback;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:Lm5;
+.field public final synthetic a:Landroid/graphics/Rect;
 
 
 # direct methods
-.method public constructor <init>(Lm5;)V
+.method public constructor <init>(Landroid/graphics/Rect;)V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ll5;->a:Landroid/graphics/Rect;
 
-    iput-object p1, p0, Ll5;->a:Lm5;
+    invoke-direct {p0}, Landroid/app/SharedElementCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onEvent(Lcbd;)V
-    .registers 2
-    .annotation runtime Lpee;
-    .end annotation
-
-    return-void
-.end method
-
-.method public onEvent(Lfy7;)V
+.method public final onMapSharedElements(Ljava/util/List;Ljava/util/Map;)V
     .registers 3
-    .annotation runtime Lpee;
-    .end annotation
 
-    iget-object p0, p0, Ll5;->a:Lm5;
+    if-eqz p2, :cond_0
 
-    iget-boolean v0, p0, Lm5;->K0:Z
+    iget-object p0, p0, Ll5;->a:Landroid/graphics/Rect;
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Lm5;->U()V
+    invoke-interface {p2}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    return-void
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/view/View;
+
+    invoke-static {p0, p2}, Ly30;->f(Landroid/graphics/Rect;Landroid/view/View;)V
+
+    goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
-
-    iget-object p0, p0, Lm5;->L0:Ljava/util/HashSet;
-
-    invoke-static {p0, p1, v0}, Lgog;->L(Ljava/util/Set;Lij0;Z)V
-
     return-void
 .end method

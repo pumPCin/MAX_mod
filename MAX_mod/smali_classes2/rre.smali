@@ -4,80 +4,54 @@
 
 
 # static fields
-.field public static final synthetic X:[Lrre;
-
-.field public static final synthetic Y:Lc65;
+.field public static final enum a:Lrre;
 
 .field public static final enum b:Lrre;
 
 .field public static final enum c:Lrre;
 
-.field public static final enum o:Lrre;
-
-
-# instance fields
-.field public final a:I
+.field public static final synthetic o:[Lrre;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .registers 5
 
     new-instance v0, Lrre;
 
-    const-string v1, "WAITING"
+    const-string v1, "ALREADY_DOWNLOADING_BY_OTHER"
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2, v2}, Lrre;-><init>(Ljava/lang/String;II)V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lrre;->b:Lrre;
+    sput-object v0, Lrre;->a:Lrre;
 
     new-instance v1, Lrre;
 
-    const/4 v2, 0x1
+    const-string v2, "FINISH"
 
-    const/16 v3, 0xa
+    const/4 v3, 0x1
 
-    const-string v4, "PROCESSING"
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v1, v4, v2, v3}, Lrre;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lrre;->c:Lrre;
+    sput-object v1, Lrre;->b:Lrre;
 
     new-instance v2, Lrre;
 
-    const/4 v3, 0x2
+    const-string v3, "ERROR"
 
-    const/16 v4, 0x14
+    const/4 v4, 0x2
 
-    const-string v5, "FAILED"
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-direct {v2, v5, v3, v4}, Lrre;-><init>(Ljava/lang/String;II)V
-
-    sput-object v2, Lrre;->o:Lrre;
+    sput-object v2, Lrre;->c:Lrre;
 
     filled-new-array {v0, v1, v2}, [Lrre;
 
     move-result-object v0
 
-    sput-object v0, Lrre;->X:[Lrre;
-
-    new-instance v1, Lc65;
-
-    invoke-direct {v1, v0}, Lc65;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lrre;->Y:Lc65;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;II)V
-    .registers 4
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput p3, p0, Lrre;->a:I
+    sput-object v0, Lrre;->o:[Lrre;
 
     return-void
 .end method
@@ -99,7 +73,7 @@
 .method public static values()[Lrre;
     .registers 1
 
-    sget-object v0, Lrre;->X:[Lrre;
+    sget-object v0, Lrre;->o:[Lrre;
 
     invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 

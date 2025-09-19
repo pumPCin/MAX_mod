@@ -1,159 +1,73 @@
-.class public final Lur3;
-.super Lxie;
+.class public final enum Lur3;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
 
+# static fields
+.field public static final enum a:Lur3;
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public static final enum b:Lur3;
 
-.field public final synthetic Y:Lone/me/contactlist/ContactListWidget;
+.field public static final synthetic c:[Lur3;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/contactlist/ContactListWidget;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 4
 
-    iput-object p1, p0, Lur3;->Y:Lone/me/contactlist/ContactListWidget;
+    new-instance v0, Lur3;
 
-    const/4 p1, 0x2
+    const-string v1, "CALL"
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lur3;->a:Lur3;
+
+    new-instance v1, Lur3;
+
+    const-string v2, "CONTACT"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lur3;->b:Lur3;
+
+    filled-new-array {v0, v1}, [Lur3;
+
+    move-result-object v0
+
+    sput-object v0, Lur3;->c:[Lur3;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lur3;
+    .registers 2
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    const-class v0, Lur3;
 
-    check-cast p1, Lwp3;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lur3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
     check-cast p0, Lur3;
 
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lur3;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return-object p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public static values()[Lur3;
+    .registers 1
 
-    new-instance v0, Lur3;
+    sget-object v0, Lur3;->c:[Lur3;
 
-    iget-object p0, p0, Lur3;->Y:Lone/me/contactlist/ContactListWidget;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    invoke-direct {v0, p0, p2}, Lur3;-><init>(Lone/me/contactlist/ContactListWidget;Lkotlin/coroutines/Continuation;)V
+    move-result-object v0
 
-    iput-object p1, v0, Lur3;->X:Ljava/lang/Object;
+    check-cast v0, [Lur3;
 
     return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lur3;->X:Ljava/lang/Object;
-
-    check-cast p1, Lwp3;
-
-    iget-object p0, p0, Lur3;->Y:Lone/me/contactlist/ContactListWidget;
-
-    iget-object v0, p0, Lone/me/contactlist/ContactListWidget;->n0:Lqgg;
-
-    iget-object v1, p0, Lone/me/contactlist/ContactListWidget;->Z:Lei0;
-
-    iget-object v2, p0, Lone/me/contactlist/ContactListWidget;->Y:Lqgg;
-
-    sget-object v3, Lone/me/contactlist/ContactListWidget;->K0:[Lsf7;
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->D0()V
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->y0()Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    sget-object v4, Lncf;->a:Lncf;
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p0, p1, Lwp3;->a:Ljava/util/List;
-
-    invoke-virtual {v2, p0}, Lhp7;->E(Ljava/util/List;)V
-
-    iget-object p0, p1, Lwp3;->b:Ljava/util/List;
-
-    invoke-virtual {v1, p0}, Lhp7;->E(Ljava/util/List;)V
-
-    iget-object p0, p1, Lwp3;->c:Ljava/util/List;
-
-    invoke-virtual {v0, p0}, Lhp7;->E(Ljava/util/List;)V
-
-    return-object v4
-
-    :cond_1
-    :goto_0
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lir3;->w0:Ldbc;
-
-    iget-object p1, p1, Ldbc;->a:Lg4e;
-
-    invoke-interface {p1}, Lg4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lwp3;
-
-    iget-object p1, p1, Lwp3;->a:Ljava/util/List;
-
-    invoke-virtual {v2, p1}, Lhp7;->E(Ljava/util/List;)V
-
-    sget-object p1, Lv25;->a:Lv25;
-
-    invoke-virtual {v1, p1}, Lhp7;->E(Ljava/util/List;)V
-
-    invoke-virtual {p0}, Lone/me/contactlist/ContactListWidget;->A0()Lir3;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lir3;->w0:Ldbc;
-
-    iget-object p0, p0, Ldbc;->a:Lg4e;
-
-    invoke-interface {p0}, Lg4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lwp3;
-
-    iget-object p0, p0, Lwp3;->c:Ljava/util/List;
-
-    invoke-virtual {v0, p0}, Lhp7;->E(Ljava/util/List;)V
-
-    return-object v4
 .end method

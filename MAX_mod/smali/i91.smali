@@ -1,137 +1,182 @@
-.class public final Li91;
+.class public final synthetic Li91;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lzb6;
+
 
 # instance fields
-.field public final a:Z
+.field public final synthetic a:I
 
-.field public final b:Ljava/util/Map;
+.field public final synthetic b:Lrwa;
 
 
 # direct methods
-.method public synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lrwa;I)V
     .registers 3
 
-    const/4 v0, 0x0
+    iput p2, p0, Li91;->a:I
 
-    sget-object v1, Lw25;->a:Lw25;
-
-    invoke-direct {p0, v0, v1}, Li91;-><init>(ZLjava/util/Map;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(ZLjava/util/Map;)V
-    .registers 3
+    iput-object p1, p0, Li91;->b:Lrwa;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean p1, p0, Li91;->a:Z
-
-    iput-object p2, p0, Li91;->b:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Li91;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Li91;
-
-    iget-boolean v1, p0, Li91;->a:Z
-
-    iget-boolean v3, p1, Li91;->a:Z
-
-    if-eq v1, v3, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Li91;->b:Ljava/util/Map;
-
-    iget-object p1, p1, Li91;->b:Ljava/util/Map;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-boolean v0, p0, Li91;->a:Z
-
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Li91;->b:Ljava/util/Map;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final invoke()Ljava/lang/Object;
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget v0, p0, Li91;->a:I
 
-    const-string v1, "SelectedMode(isEnabled="
+    iget-object p0, p0, Li91;->b:Lrwa;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-boolean v1, p0, Li91;->a:Z
+    iget-object p0, p0, Lrwa;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    check-cast p0, Landroid/content/Context;
 
-    const-string v1, ", selectedIds="
+    sget v0, Lx3c;->ic_link_16:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget v1, Lpma;->a:I
 
-    iget-object p0, p0, Li91;->b:Ljava/util/Map;
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    const-string p0, ")"
+    new-instance v1, Ly3f;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v0, p0}, Ly3f;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-object v1
 
-    move-result-object p0
+    :pswitch_0
+    iget-object p0, p0, Lrwa;->a:Ljava/lang/Object;
 
-    return-object p0
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, La1d;->h0:I
+
+    sget v1, Lpma;->a:I
+
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Ly3f;
+
+    invoke-direct {v1, v0, p0}, Ly3f;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_1
+    iget-object p0, p0, Lrwa;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, La1d;->i0:I
+
+    sget v1, Lpma;->a:I
+
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Ly3f;
+
+    invoke-direct {v1, v0, p0}, Ly3f;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_2
+    iget-object p0, p0, Lrwa;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, La1d;->X:I
+
+    sget v1, Lpma;->a:I
+
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Ly3f;
+
+    invoke-direct {v1, v0, p0}, Ly3f;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_3
+    iget-object p0, p0, Lrwa;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, La1d;->Y:I
+
+    sget v1, Lpma;->a:I
+
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Ly3f;
+
+    invoke-direct {v1, v0, p0}, Ly3f;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_4
+    iget-object p0, p0, Lrwa;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, La1d;->e0:I
+
+    sget v1, Lpma;->a:I
+
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Ly3f;
+
+    invoke-direct {v1, v0, p0}, Ly3f;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    :pswitch_5
+    iget-object p0, p0, Lrwa;->a:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    sget v0, La1d;->f0:I
+
+    sget v1, Lpma;->a:I
+
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    new-instance v1, Ly3f;
+
+    invoke-direct {v1, v0, p0}, Ly3f;-><init>(Landroid/graphics/drawable/Drawable;Landroid/content/Context;)V
+
+    return-object v1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

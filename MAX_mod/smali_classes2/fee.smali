@@ -2,83 +2,57 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lap1;
+
 
 # instance fields
-.field public final a:I
+.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lfee;->a:I
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+
+    iput-object v0, p0, Lfee;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final onMediaDataReceived(J)V
+    .registers 4
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Lfee;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Lfee;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lfee;
-
-    iget p0, p0, Lfee;->a:I
-
-    iget p1, p1, Lfee;->a:I
-
-    if-eq p0, p1, :cond_2
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget p0, p0, Lfee;->a:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    const-string v0, "StrokeLocalTopBarColors(primary="
-
-    const-string v1, ")"
-
-    iget p0, p0, Lfee;->a:I
-
-    invoke-static {p0, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    return-object p0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lap1;
+
+    invoke-interface {v0, p1, p2}, Lap1;->onMediaDataReceived(J)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

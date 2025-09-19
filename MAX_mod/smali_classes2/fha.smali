@@ -1,61 +1,75 @@
 .class public final Lfha;
-.super Llha;
+.super Ljava/util/concurrent/LinkedTransferQueue;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lfha;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Lfha;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lfha;->a:Lfha;
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final bridge contains(Ljava/lang/Object;)Z
     .registers 3
+
+    if-nez p1, :cond_0
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
-
-    return v0
+    goto :goto_0
 
     :cond_0
-    instance-of p0, p1, Lfha;
+    instance-of v0, p1, Ljava/lang/Runnable;
 
-    if-nez p0, :cond_1
+    :goto_0
+    if-nez v0, :cond_1
 
     const/4 p0, 0x0
 
     return p0
 
     :cond_1
-    return v0
-.end method
+    check-cast p1, Ljava/lang/Runnable;
 
-.method public final hashCode()I
-    .registers 1
+    invoke-super {p0, p1}, Ljava/util/concurrent/LinkedTransferQueue;->contains(Ljava/lang/Object;)Z
 
-    const p0, 0x3a87ae91
+    move-result p0
 
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+.method public final offer(Ljava/lang/Object;)Z
+    .registers 2
 
-    const-string p0, "ContrastStatic"
+    check-cast p1, Ljava/lang/Runnable;
 
-    return-object p0
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/LinkedTransferQueue;->tryTransfer(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final bridge remove(Ljava/lang/Object;)Z
+    .registers 3
+
+    if-nez p1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    instance-of v0, p1, Ljava/lang/Runnable;
+
+    :goto_0
+    if-nez v0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    check-cast p1, Ljava/lang/Runnable;
+
+    invoke-super {p0, p1}, Ljava/util/concurrent/LinkedTransferQueue;->remove(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
 .end method

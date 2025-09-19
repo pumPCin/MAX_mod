@@ -146,7 +146,7 @@
 
     const-string v2, "]"
 
-    invoke-static {p0, v1, v2}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v1, v2}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

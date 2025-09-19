@@ -1,147 +1,41 @@
-.class public La2;
+.class public abstract La2;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
+.implements Ljava/util/ListIterator;
+.implements Lmi7;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public a:I
 
-.field public final b:Ljava/util/Iterator;
-
-.field public c:Ljava/lang/Object;
-
-.field public final synthetic o:Ljava/lang/Object;
+.field public b:I
 
 
 # direct methods
-.method public constructor <init>(Lb2;)V
+.method public constructor <init>(II)V
     .registers 3
 
-    const/4 v0, 0x0
-
-    iput v0, p0, La2;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, La2;->o:Ljava/lang/Object;
+    iput p1, p0, La2;->a:I
 
-    iget-object p1, p1, Lb2;->c:Ljava/util/Map;
-
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    iput-object p1, p0, La2;->b:Ljava/util/Iterator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lc2;Ljava/util/Iterator;)V
-    .registers 4
-
-    const/4 v0, 0x1
-
-    iput v0, p0, La2;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, La2;->o:Ljava/lang/Object;
-
-    iput-object p2, p0, La2;->b:Ljava/util/Iterator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj2;)V
-    .registers 3
-
-    const/4 v0, 0x2
-
-    iput v0, p0, La2;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, La2;->o:Ljava/lang/Object;
-
-    iget-object p1, p1, Lj2;->b:Ljava/util/Collection;
-
-    iput-object p1, p0, La2;->c:Ljava/lang/Object;
-
-    instance-of v0, p1, Ljava/util/List;
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Ljava/util/List;
-
-    invoke-interface {p1}, Ljava/util/List;->listIterator()Ljava/util/ListIterator;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    iput-object p1, p0, La2;->b:Ljava/util/Iterator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj2;Ljava/util/ListIterator;)V
-    .registers 4
-
-    const/4 v0, 0x2
-
-    iput v0, p0, La2;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, La2;->o:Ljava/lang/Object;
-
-    iget-object p1, p1, Lj2;->b:Ljava/util/Collection;
-
-    iput-object p1, p0, La2;->c:Ljava/lang/Object;
-
-    iput-object p2, p0, La2;->b:Ljava/util/Iterator;
+    iput p2, p0, La2;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
+.method public add(Ljava/lang/Object;)V
     .registers 2
 
-    iget-object v0, p0, La2;->o:Ljava/lang/Object;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    check-cast v0, Lj2;
+    const-string p1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {v0}, Lj2;->b()V
-
-    iget-object v0, v0, Lj2;->b:Ljava/util/Collection;
-
-    iget-object p0, p0, La2;->c:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/Collection;
-
-    if-ne v0, p0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/util/ConcurrentModificationException;
-
-    invoke-direct {p0}, Ljava/util/ConcurrentModificationException;-><init>()V
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
@@ -151,267 +45,75 @@
 
     iget v0, p0, La2;->a:I
 
-    packed-switch v0, :pswitch_data_0
+    iget p0, p0, La2;->b:I
 
-    invoke-virtual {p0}, La2;->a()V
+    if-ge v0, p0, :cond_0
 
-    iget-object p0, p0, La2;->b:Ljava/util/Iterator;
-
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
-
-    :pswitch_0
-    iget-object p0, p0, La2;->b:Ljava/util/Iterator;
-
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_1
-    iget-object p0, p0, La2;->b:Ljava/util/Iterator;
-
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p0
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .registers 3
-
-    iget v0, p0, La2;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, La2;->a()V
-
-    iget-object p0, p0, La2;->b:Ljava/util/Iterator;
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    iget-object v0, p0, La2;->b:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    iput-object v0, p0, La2;->c:Ljava/lang/Object;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_1
-    iget-object v0, p0, La2;->b:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/Collection;
-
-    iput-object v1, p0, La2;->c:Ljava/lang/Object;
-
-    iget-object p0, p0, La2;->o:Ljava/lang/Object;
-
-    check-cast p0, Lb2;
-
-    invoke-virtual {p0, v0}, Lb2;->a(Ljava/util/Map$Entry;)Ld07;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final remove()V
-    .registers 5
-
-    iget v0, p0, La2;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, La2;->b:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    iget-object p0, p0, La2;->o:Ljava/lang/Object;
-
-    check-cast p0, Lj2;
-
-    iget-object v0, p0, Lj2;->X:Lx1;
-
-    iget v1, v0, Lx1;->X:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, v0, Lx1;->X:I
-
-    invoke-virtual {p0}, Lj2;->c()V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, La2;->c:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 p0, 0x0
 
-    :goto_0
-    if-eqz v1, :cond_1
+    return p0
+.end method
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+.method public final hasPrevious()Z
+    .registers 1
 
-    move-result-object v0
+    iget p0, p0, La2;->a:I
 
-    check-cast v0, Ljava/util/Collection;
+    if-lez p0, :cond_0
 
-    iget-object v1, p0, La2;->b:Ljava/util/Iterator;
+    const/4 p0, 0x1
 
-    invoke-interface {v1}, Ljava/util/Iterator;->remove()V
+    return p0
 
-    iget-object v1, p0, La2;->o:Ljava/lang/Object;
+    :cond_0
+    const/4 p0, 0x0
 
-    check-cast v1, Lc2;
+    return p0
+.end method
 
-    iget-object v1, v1, Lc2;->b:Lx1;
+.method public final nextIndex()I
+    .registers 1
 
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
+    iget p0, p0, La2;->a:I
 
-    move-result v2
+    return p0
+.end method
 
-    iget v3, v1, Lx1;->X:I
+.method public final previousIndex()I
+    .registers 1
 
-    sub-int/2addr v3, v2
+    iget p0, p0, La2;->a:I
 
-    iput v3, v1, Lx1;->X:I
+    add-int/lit8 p0, p0, -0x1
 
-    invoke-interface {v0}, Ljava/util/Collection;->clear()V
+    return p0
+.end method
 
-    const/4 v0, 0x0
+.method public remove()V
+    .registers 2
 
-    iput-object v0, p0, La2;->c:Ljava/lang/Object;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    return-void
+    const-string v0, "Operation is not supported for read-only collection"
 
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "no calls to next() since the last call to remove()"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :pswitch_1
-    iget-object v0, p0, La2;->c:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/Collection;
-
-    if-eqz v0, :cond_2
-
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_1
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, La2;->b:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    iget-object v0, p0, La2;->o:Ljava/lang/Object;
-
-    check-cast v0, Lb2;
-
-    iget-object v0, v0, Lb2;->o:Lx1;
-
-    iget-object v1, p0, La2;->c:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/Collection;
-
-    invoke-interface {v1}, Ljava/util/Collection;->size()I
-
-    move-result v1
-
-    iget v2, v0, Lx1;->X:I
-
-    sub-int/2addr v2, v1
-
-    iput v2, v0, Lx1;->X:I
-
-    iget-object v0, p0, La2;->c:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->clear()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, La2;->c:Ljava/lang/Object;
-
-    return-void
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v0, "no calls to next() since the last call to remove()"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw p0
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+.method public set(Ljava/lang/Object;)V
+    .registers 2
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string p1, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

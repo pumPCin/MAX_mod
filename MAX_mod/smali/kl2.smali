@@ -1,42 +1,48 @@
 .class public final Lkl2;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ljava/util/function/UnaryOperator;
+.super Ljx3;
 
 
 # instance fields
-.field public final synthetic a:Ly49;
+.field public X:I
+
+.field public final synthetic Y:Lll2;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ly49;)V
-    .registers 2
+.method public constructor <init>(Lll2;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lkl2;->Y:Lll2;
 
-    iput-object p1, p0, Lkl2;->a:Ly49;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Llk2;
+    iput-object p1, p0, Lkl2;->o:Ljava/lang/Object;
 
-    new-instance p1, Llk2;
+    iget p1, p0, Lkl2;->X:I
 
-    iget-object p0, p0, Lkl2;->a:Ly49;
+    const/high16 v0, -0x80000000
 
-    iget-boolean v0, p0, Ly49;->c:Z
+    or-int/2addr p1, v0
 
-    iget-boolean p0, p0, Ly49;->b:Z
+    iput p1, p0, Lkl2;->X:I
 
-    invoke-direct {p1, v0, p0}, Llk2;-><init>(ZZ)V
+    iget-object p1, p0, Lkl2;->Y:Lll2;
 
-    return-object p1
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lll2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

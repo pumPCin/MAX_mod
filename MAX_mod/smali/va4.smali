@@ -1,68 +1,21 @@
-.class public final synthetic Lva4;
-.super Ljava/lang/Object;
+.class public final Lva4;
+.super Lys9;
 .source "SourceFile"
-
-# interfaces
-.implements Llq7;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lxc;
-
-.field public final synthetic c:Lt26;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxc;Lt26;Lq94;I)V
-    .registers 5
-
-    iput p4, p0, Lva4;->a:I
-
-    iput-object p1, p0, Lva4;->b:Lxc;
-
-    iput-object p2, p0, Lva4;->c:Lt26;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .registers 3
 
-    iget v0, p0, Lva4;->a:I
+    sget-object v0, Lylf;->a:Lylf;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {p0, v0}, Lys9;-><init>(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lva4;->c:Lt26;
-
-    check-cast p1, Lyc;
-
-    iget-object p0, p0, Lva4;->b:Lxc;
-
-    invoke-interface {p1, p0, v0}, Lyc;->G(Lxc;Lt26;)V
+    iput-object p1, p0, Lva4;->b:Ljava/lang/String;
 
     return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lva4;->c:Lt26;
-
-    check-cast p1, Lyc;
-
-    iget-object p0, p0, Lva4;->b:Lxc;
-
-    invoke-interface {p1, p0, v0}, Lyc;->U(Lxc;Lt26;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

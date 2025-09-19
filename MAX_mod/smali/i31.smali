@@ -1,272 +1,107 @@
 .class public final Li31;
-.super Landroid/widget/FrameLayout;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Lwab;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Ljava/lang/Object;
+.field public final synthetic Y:Lt31;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 5
+.method public constructor <init>(Lt31;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Li31;->Y:Lt31;
 
-    const/4 v1, 0x0
+    const/4 p1, 0x2
 
-    invoke-direct {p0, p1, v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-
-    new-instance v0, Lwab;
-
-    invoke-direct {v0, p1}, Lwab;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, Li31;->a:Lwab;
-
-    new-instance v1, Lt5;
-
-    const/16 v2, 0x16
-
-    invoke-direct {v1, v2, p0}, Lt5;-><init>(ILjava/lang/Object;)V
-
-    const/4 v2, 0x3
-
-    invoke-static {v2, v1}, Lmtg;->u(ILh96;)Lxh7;
-
-    move-result-object v1
-
-    iput-object v1, p0, Li31;->b:Ljava/lang/Object;
-
-    const/4 v1, -0x1
-
-    invoke-virtual {p0, v0, v1, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
-
-    invoke-direct {p0}, Li31;->getCameraPreviewController()Lh31;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v0, Lobb;->f:Lobb;
-
-    invoke-static {p1}, Lcr0;->R(Landroid/content/Context;)Lu32;
-
-    move-result-object v0
-
-    new-instance v1, Lc;
-
-    const/16 v2, 0xd
-
-    invoke-direct {v1, p0, v2, v0}, Lc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-static {p1}, Ljw3;->a(Landroid/content/Context;)Ljava/util/concurrent/Executor;
-
-    move-result-object p0
-
-    invoke-virtual {v0, v1, p0}, Lya6;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
-.end method
-
-.method private final getCameraPreviewController()Lh31;
-    .registers 1
-
-    iget-object p0, p0, Li31;->b:Ljava/lang/Object;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lh31;
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final a(ZZ)V
-    .registers 9
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    if-eqz p1, :cond_6
+    check-cast p1, Ls72;
 
-    invoke-direct {p0}, Li31;->getCameraPreviewController()Lh31;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    move-result-object p1
-
-    iget-object v0, p1, Lh31;->b:Lobb;
-
-    if-nez v0, :cond_0
-
-    goto/16 :goto_3
-
-    :cond_0
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Lobb;->f()V
-
-    :cond_1
-    const/4 v1, 0x1
-
-    xor-int/2addr p2, v1
-
-    new-instance v2, Ljava/util/LinkedHashSet;
-
-    invoke-direct {v2}, Ljava/util/LinkedHashSet;-><init>()V
-
-    const/4 v3, -0x1
-
-    const/4 v4, 0x0
-
-    if-eq p2, v3, :cond_2
-
-    move v3, v1
-
-    goto :goto_0
-
-    :cond_2
-    move v3, v4
-
-    :goto_0
-    const-string v5, "The specified lens facing is invalid."
-
-    invoke-static {v5, v3}, Lts;->q(Ljava/lang/String;Z)V
-
-    new-instance v3, Lnj7;
-
-    invoke-direct {v3, p2}, Lnj7;-><init>(I)V
-
-    invoke-virtual {v2, v3}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
-
-    move-object p2, v2
-
-    new-instance v2, Luz1;
-
-    invoke-direct {v2, p2}, Luz1;-><init>(Ljava/util/LinkedHashSet;)V
-
-    new-instance p2, Lax6;
-
-    const/4 v3, 0x2
-
-    invoke-direct {p2, v3}, Lax6;-><init>(I)V
-
-    invoke-virtual {p2}, Lax6;->b()Lnab;
-
-    move-result-object p2
-
-    iget-object p0, p0, Li31;->a:Lwab;
-
-    invoke-virtual {p0}, Lwab;->getSurfaceProvider()Lmab;
+    invoke-virtual {p0, p1, p2}, Li31;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-virtual {p2, p0}, Lnab;->G(Lmab;)V
+    check-cast p0, Li31;
 
-    iget-object p0, p1, Lh31;->a:Lwk7;
+    sget-object p1, Lylf;->a:Lylf;
 
-    new-array p1, v1, [Lxgf;
+    invoke-virtual {p0, p1}, Li31;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    aput-object p2, p1, v4
+    return-object p1
+.end method
 
-    const-string p2, "CX:bindToLifecycle"
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    invoke-static {p2}, Lds0;->Z(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v0, Li31;
 
-    move-result-object p2
+    iget-object p0, p0, Li31;->Y:Lt31;
 
-    invoke-static {p2}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2}, Li31;-><init>(Lt31;Lkotlin/coroutines/Continuation;)V
 
-    :try_start_0
-    iget-object p2, v0, Lobb;->d:Le02;
+    iput-object p1, v0, Li31;->X:Ljava/lang/Object;
 
-    if-nez p2, :cond_3
+    return-object v0
+.end method
 
-    goto :goto_1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
 
-    :cond_3
-    iget-object p2, p2, Le02;->f:Lii2;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    if-eqz p2, :cond_5
+    iget-object p1, p0, Li31;->X:Ljava/lang/Object;
 
-    iget-object p2, p2, Lii2;->c:Ljava/lang/Object;
+    check-cast p1, Ls72;
 
-    check-cast p2, Ln3f;
+    if-eqz p1, :cond_0
 
-    iget v4, p2, Ln3f;->b:I
+    iget-object p0, p0, Li31;->Y:Lt31;
 
-    :goto_1
-    if-eq v4, v3, :cond_4
+    iget-object v0, p0, Lt31;->a:Lqt1;
 
-    invoke-static {v0, v1}, Lobb;->b(Lobb;I)V
+    iget-object v1, p0, Lt31;->f:Lcl7;
 
-    sget-object v4, Lv25;->a:Lv25;
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    invoke-static {p1, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    move-result-object v1
 
-    move-result-object p1
+    check-cast v1, Lxwe;
 
-    move-object v5, p1
+    check-cast v1, Laga;
 
-    check-cast v5, [Lxgf;
+    invoke-virtual {v1}, Laga;->a()Ls04;
+
+    move-result-object v1
+
+    new-instance v2, Lh31;
 
     const/4 v3, 0x0
 
-    move-object v1, p0
+    invoke-direct {v2, p0, p1, v3}, Lh31;-><init>(Lt31;Ls72;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual/range {v0 .. v5}, Lobb;->d(Lwk7;Luz1;Lzyf;Ljava/util/List;[Lxgf;)Lbk7;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 p0, 0x2
 
-    invoke-static {}, Landroid/os/Trace;->endSection()V
+    invoke-static {v0, v1, v3, v2, p0}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
 
-    return-void
+    :cond_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    :cond_4
-    :try_start_1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    const-string p1, "bindToLifecycle for single camera is not supported in concurrent camera mode, call unbindAll() first"
-
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :catchall_0
-    move-exception v0
-
-    move-object p0, v0
-
-    goto :goto_2
-
-    :cond_5
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "CameraX not initialized yet."
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    :goto_2
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    throw p0
-
-    :cond_6
-    invoke-direct {p0}, Li31;->getCameraPreviewController()Lh31;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lh31;->b:Lobb;
-
-    if-eqz p0, :cond_7
-
-    invoke-virtual {p0}, Lobb;->f()V
-
-    :cond_7
-    :goto_3
-    return-void
+    return-object p0
 .end method

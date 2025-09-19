@@ -1,23 +1,13 @@
-.class public final Lzw4;
+.class public abstract Lzw4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:I
-
-
 # direct methods
-.method public constructor <init>(II)V
+.method public static a(Landroid/view/View;FF)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lzw4;->a:I
-
-    iput p2, p0, Lzw4;->b:I
+    invoke-virtual {p0, p1, p2}, Landroid/view/View;->drawableHotspotChanged(FF)V
 
     return-void
 .end method

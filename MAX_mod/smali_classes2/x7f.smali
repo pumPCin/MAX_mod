@@ -1,23 +1,49 @@
 .class public final Lx7f;
-.super Lz7f;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Ljava/lang/String;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final c:Ln77;
+.field public final synthetic Y:Lz7f;
+
+.field public Z:I
+
+.field public o:Lz7f;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ln77;)V
+.method public constructor <init>(Lz7f;Ljx3;)V
     .registers 3
 
-    invoke-direct {p0}, Lz7f;-><init>()V
+    iput-object p1, p0, Lx7f;->Y:Lz7f;
 
-    iput-object p1, p0, Lx7f;->b:Ljava/lang/String;
-
-    iput-object p2, p0, Lx7f;->c:Ln77;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iput-object p1, p0, Lx7f;->X:Ljava/lang/Object;
+
+    iget p1, p0, Lx7f;->Z:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lx7f;->Z:I
+
+    iget-object p1, p0, Lx7f;->Y:Lz7f;
+
+    invoke-virtual {p1, p0}, Lz7f;->a(Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

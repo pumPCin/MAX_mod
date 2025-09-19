@@ -1,30 +1,30 @@
 .class public final Lzq2;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
 .field public X:I
 
-.field public final synthetic Y:Lo72;
+.field public final synthetic Y:Lds2;
 
-.field public final synthetic Z:Las2;
+.field public final synthetic Z:J
 
 
 # direct methods
-.method public constructor <init>(Lo72;Las2;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Lds2;JLkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    iput-object p1, p0, Lzq2;->Y:Lo72;
+    iput-object p1, p0, Lzq2;->Y:Lds2;
 
-    iput-object p2, p0, Lzq2;->Z:Las2;
+    iput-wide p2, p0, Lzq2;->Z:J
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -34,7 +34,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -44,7 +44,7 @@
 
     check-cast p0, Lzq2;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lzq2;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -54,37 +54,33 @@
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    .registers 6
 
     new-instance p1, Lzq2;
 
-    iget-object v0, p0, Lzq2;->Y:Lo72;
+    iget-object v0, p0, Lzq2;->Y:Lds2;
 
-    iget-object p0, p0, Lzq2;->Z:Las2;
+    iget-wide v1, p0, Lzq2;->Z:J
 
-    invoke-direct {p1, v0, p0, p2}, Lzq2;-><init>(Lo72;Las2;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, v0, v1, v2, p2}, Lzq2;-><init>(Lds2;JLkotlin/coroutines/Continuation;)V
 
     return-object p1
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .registers 6
 
-    iget-object v0, p0, Lzq2;->Y:Lo72;
+    iget v0, p0, Lzq2;->X:I
 
-    iget-wide v1, v0, Lo72;->a:J
+    const/4 v1, 0x1
 
-    iget v3, p0, Lzq2;->X:I
+    if-eqz v0, :cond_1
 
-    const/4 v4, 0x1
+    if-ne v0, v1, :cond_0
 
-    if-eqz v3, :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    if-ne v3, v4, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -96,103 +92,47 @@
     throw p0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lzq2;->Z:Las2;
+    iget-object p1, p0, Lzq2;->Y:Lds2;
 
-    iget-object v3, p1, Las2;->s0:Lxh7;
+    iget-object v0, p1, Lds2;->X:Lyz2;
 
-    invoke-interface {v3}, Lxh7;->getValue()Ljava/lang/Object;
+    check-cast v0, Ly03;
 
-    move-result-object v3
-
-    check-cast v3, Lc53;
-
-    check-cast v3, Lz1d;
-
-    invoke-virtual {v3}, Lz1d;->p()J
-
-    move-result-wide v5
-
-    iget-object v0, v0, Lo72;->b:Lac2;
-
-    invoke-virtual {v0, v5, v6}, Lac2;->e(J)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    sget-object v0, Leq2;->c:Leq2;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v3, ":profile/attaches?id="
-
-    invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ly03;->M()Lza2;
 
     move-result-object v0
 
-    new-instance v1, Laa4;
+    iget-wide v2, p0, Lzq2;->Z:J
 
-    invoke-direct {v1, v0}, Laa4;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v3}, Lza2;->Q(J)V
 
-    goto :goto_0
+    iget-object v0, p1, Lds2;->c:Lcf5;
 
-    :cond_2
-    sget-object v0, Leq2;->c:Leq2;
+    iget-object v2, v0, Lcf5;->a:Lfv0;
 
-    invoke-virtual {p1}, Las2;->v()Z
+    invoke-virtual {v2, v0}, Lfv0;->f(Ljava/lang/Object;)V
 
-    move-result v3
+    iget-object p1, p1, Lds2;->Z0:Lnxd;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v0, Lw53;->b:Lw53;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput v1, p0, Lzq2;->X:I
 
-    const-string v5, ":profile?id="
-
-    invoke-direct {v0, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, "&type=local_chat&is_opened_from_dialog="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Laa4;
-
-    invoke-direct {v1, v0}, Laa4;-><init>(Ljava/lang/String;)V
-
-    :goto_0
-    iget-object p1, p1, Las2;->V0:Lgpd;
-
-    iput v4, p0, Lzq2;->X:I
-
-    invoke-virtual {p1, v1, p0}, Lgpd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, p0}, Lnxd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
+    sget-object p1, Lz04;->a:Lz04;
 
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :cond_2
 
     return-object p1
 
-    :cond_3
-    :goto_1
-    sget-object p0, Lncf;->a:Lncf;
+    :cond_2
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

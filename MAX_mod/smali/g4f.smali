@@ -4,373 +4,254 @@
 
 
 # static fields
-.field public static final a:Landroid/graphics/RectF;
+.field public static final a:[I
+
+.field public static final b:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 1
 
-    new-instance v0, Landroid/graphics/RectF;
+    sget v0, Ls2c;->colorPrimary:I
 
-    const/high16 v1, -0x40800000    # -1.0f
+    filled-new-array {v0}, [I
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    move-result-object v0
 
-    invoke-direct {v0, v1, v1, v2, v2}, Landroid/graphics/RectF;-><init>(FFFF)V
+    sput-object v0, Lg4f;->a:[I
 
-    sput-object v0, Lg4f;->a:Landroid/graphics/RectF;
+    sget v0, Ls2c;->colorPrimaryVariant:I
+
+    filled-new-array {v0}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lg4f;->b:[I
 
     return-void
 .end method
 
-.method public static a(Landroid/graphics/RectF;Landroid/graphics/RectF;IZ)Landroid/graphics/Matrix;
-    .registers 7
+.method public static a(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    .registers 5
 
-    new-instance v0, Landroid/graphics/Matrix;
+    sget-object v0, Lgdc;->ThemeEnforcement:[I
 
-    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+    invoke-virtual {p0, p1, v0, p2, p3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    sget-object v1, Landroid/graphics/Matrix$ScaleToFit;->FILL:Landroid/graphics/Matrix$ScaleToFit;
+    move-result-object p1
 
-    sget-object v2, Lg4f;->a:Landroid/graphics/RectF;
+    sget p2, Lgdc;->ThemeEnforcement_enforceMaterialTheme:I
 
-    invoke-virtual {v0, p0, v2, v1}, Landroid/graphics/Matrix;->setRectToRect(Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/Matrix$ScaleToFit;)Z
+    const/4 p3, 0x0
 
-    int-to-float p0, p2
-
-    invoke-virtual {v0, p0}, Landroid/graphics/Matrix;->postRotate(F)Z
-
-    if-eqz p3, :cond_0
-
-    const/high16 p0, -0x40800000    # -1.0f
-
-    const/high16 p2, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, p0, p2}, Landroid/graphics/Matrix;->postScale(FF)Z
-
-    :cond_0
-    new-instance p0, Landroid/graphics/Matrix;
-
-    invoke-direct {p0}, Landroid/graphics/Matrix;-><init>()V
-
-    invoke-virtual {p0, v2, p1, v1}, Landroid/graphics/Matrix;->setRectToRect(Landroid/graphics/RectF;Landroid/graphics/RectF;Landroid/graphics/Matrix$ScaleToFit;)Z
-
-    invoke-virtual {v0, p0}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
-
-    return-object v0
-.end method
-
-.method public static b(I)Z
-    .registers 3
-
-    const/16 v0, 0x5a
-
-    if-eq p0, v0, :cond_3
-
-    const/16 v0, 0x10e
-
-    if-ne p0, v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    if-eqz p0, :cond_2
-
-    const/16 v0, 0xb4
-
-    if-ne p0, v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Invalid rotation degrees: "
-
-    invoke-static {p0, v1}, La78;->h(ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_2
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public static c(Landroid/util/Size;ZLandroid/util/Size;)Z
-    .registers 6
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
-
-    move-result p1
-
-    int-to-float p1, p1
-
-    invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
-
-    move-result p0
-
-    int-to-float p0, p0
-
-    div-float/2addr p1, p0
-
-    move p0, p1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
-
-    move-result p1
-
-    int-to-float p1, p1
-
-    add-float/2addr p1, v0
-
-    invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    sub-float/2addr v1, v0
-
-    div-float/2addr p1, v1
-
-    invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    sub-float/2addr v1, v0
-
-    invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
-
-    move-result p0
-
-    int-to-float p0, p0
-
-    add-float/2addr p0, v0
-
-    div-float p0, v1, p0
-
-    :goto_0
-    invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    add-float/2addr v1, v0
-
-    invoke-virtual {p2}, Landroid/util/Size;->getHeight()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    sub-float/2addr v2, v0
-
-    div-float/2addr v1, v2
-
-    invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    sub-float/2addr v2, v0
-
-    invoke-virtual {p2}, Landroid/util/Size;->getHeight()I
+    invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result p2
 
-    int-to-float p2, p2
+    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
-    add-float/2addr p2, v0
+    if-eqz p2, :cond_1
 
-    div-float/2addr v2, p2
+    new-instance p1, Landroid/util/TypedValue;
 
-    cmpl-float p1, p1, v2
+    invoke-direct {p1}, Landroid/util/TypedValue;-><init>()V
 
-    if-ltz p1, :cond_1
+    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    cmpl-float p0, v1, p0
+    move-result-object p2
 
-    if-ltz p0, :cond_1
+    sget p3, Ls2c;->isMaterialTheme:I
 
-    const/4 p0, 0x1
+    const/4 v0, 0x1
 
-    return p0
+    invoke-virtual {p2, p3, p1, v0}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    iget p2, p1, Landroid/util/TypedValue;->type:I
+
+    const/16 p3, 0x12
+
+    if-ne p2, p3, :cond_1
+
+    iget p1, p1, Landroid/util/TypedValue;->data:I
+
+    if-nez p1, :cond_1
+
+    :cond_0
+    sget-object p1, Lg4f;->b:[I
+
+    const-string p2, "Theme.MaterialComponents"
+
+    invoke-static {p0, p1, p2}, Lg4f;->c(Landroid/content/Context;[ILjava/lang/String;)V
 
     :cond_1
-    const/4 p0, 0x0
+    sget-object p1, Lg4f;->a:[I
 
-    return p0
+    const-string p2, "Theme.AppCompat"
+
+    invoke-static {p0, p1, p2}, Lg4f;->c(Landroid/content/Context;[ILjava/lang/String;)V
+
+    return-void
 .end method
 
-.method public static d(Landroid/graphics/Rect;)Landroid/util/Size;
-    .registers 3
+.method public static varargs b(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)V
+    .registers 11
 
-    new-instance v0, Landroid/util/Size;
+    sget-object v0, Lgdc;->ThemeEnforcement:[I
 
-    invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
+    invoke-virtual {p0, p1, v0, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object v0
+
+    sget v1, Lgdc;->ThemeEnforcement_enforceTextAppearance:I
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
+    if-nez v1, :cond_0
+
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+
+    return-void
+
+    :cond_0
+    array-length v1, p5
+
+    const/4 v3, 0x1
+
+    const/4 v4, -0x1
+
+    if-nez v1, :cond_1
+
+    sget p0, Lgdc;->ThemeEnforcement_android_textAppearance:I
+
+    invoke-virtual {v0, p0, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result p0
 
-    invoke-direct {v0, v1, p0}, Landroid/util/Size;-><init>(II)V
+    if-eq p0, v4, :cond_4
 
-    return-object v0
-.end method
+    :goto_0
+    move v2, v3
 
-.method public static e(Landroid/graphics/Rect;)Ljava/lang/String;
-    .registers 4
+    goto :goto_2
 
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-virtual {p0}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
-
-    move-result v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, "("
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, "x"
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_1
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p0
 
-    return-object p0
+    array-length p1, p5
+
+    move p2, v2
+
+    :goto_1
+    if-ge p2, p1, :cond_3
+
+    aget p3, p5, p2
+
+    invoke-virtual {p0, p3, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result p3
+
+    if-ne p3, v4, :cond_2
+
+    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
+
+    goto :goto_2
+
+    :cond_2
+    add-int/lit8 p2, p2, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
+
+    goto :goto_0
+
+    :cond_4
+    :goto_2
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+
+    if-eqz v2, :cond_5
+
+    return-void
+
+    :cond_5
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "This component requires that you specify a valid TextAppearance attribute. Update your app theme to inherit from Theme.MaterialComponents (or a descendant)."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
-.method public static f(Landroid/util/Size;I)Landroid/util/Size;
+.method public static c(Landroid/content/Context;[ILjava/lang/String;)V
     .registers 5
 
-    rem-int/lit8 v0, p1, 0x5a
+    invoke-virtual {p0, p1}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
 
-    if-nez v0, :cond_0
+    move-result-object p0
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
+
+    :goto_0
+    array-length v1, p1
+
+    if-ge v0, v1, :cond_1
+
+    invoke-virtual {p0, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
 
-    :goto_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "Invalid rotation degrees: "
+    const-string p1, "The style on this component requires your app theme to be "
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v0, " (or a descendant)."
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {p1, p2, v0}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v1
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1, v0}, Lts;->h(Ljava/lang/String;Z)V
-
-    invoke-static {p1}, Lg4f;->h(I)I
-
-    move-result p1
-
-    invoke-static {p1}, Lg4f;->b(I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    new-instance p1, Landroid/util/Size;
-
-    invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
-
-    move-result p0
-
-    invoke-direct {p1, v0, p0}, Landroid/util/Size;-><init>(II)V
-
-    return-object p1
+    throw p0
 
     :cond_1
+    invoke-virtual {p0}, Landroid/content/res/TypedArray;->recycle()V
+
+    return-void
+.end method
+
+.method public static varargs d(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)Landroid/content/res/TypedArray;
+    .registers 6
+
+    invoke-static {p0, p1, p3, p4}, Lg4f;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+    invoke-static/range {p0 .. p5}, Lg4f;->b(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)V
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object p0
+
     return-object p0
-.end method
-
-.method public static g(Landroid/util/Size;)Landroid/graphics/Rect;
-    .registers 4
-
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
-
-    move-result p0
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v2, v2, v1, p0}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    return-object v0
-.end method
-
-.method public static h(I)I
-    .registers 1
-
-    rem-int/lit16 p0, p0, 0x168
-
-    add-int/lit16 p0, p0, 0x168
-
-    rem-int/lit16 p0, p0, 0x168
-
-    return p0
 .end method

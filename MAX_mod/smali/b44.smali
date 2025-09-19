@@ -4,49 +4,178 @@
 
 
 # instance fields
-.field public final a:Lj07;
+.field public a:Ljava/lang/CharSequence;
 
-.field public final b:J
+.field public b:Landroid/graphics/Bitmap;
 
-.field public final c:J
+.field public c:Landroid/text/Layout$Alignment;
 
-.field public final d:J
+.field public d:Landroid/text/Layout$Alignment;
+
+.field public e:F
+
+.field public f:I
+
+.field public g:I
+
+.field public h:F
+
+.field public i:I
+
+.field public j:I
+
+.field public k:F
+
+.field public l:F
+
+.field public m:F
+
+.field public n:Z
+
+.field public o:I
+
+.field public p:I
+
+.field public q:F
 
 
 # direct methods
-.method public constructor <init>(JJLjava/util/List;)V
-    .registers 8
+.method public constructor <init>()V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p5}, Lj07;->j(Ljava/util/Collection;)Lj07;
+    const/4 v0, 0x0
 
-    move-result-object p5
+    iput-object v0, p0, Lb44;->a:Ljava/lang/CharSequence;
 
-    iput-object p5, p0, Lb44;->a:Lj07;
+    iput-object v0, p0, Lb44;->b:Landroid/graphics/Bitmap;
 
-    iput-wide p1, p0, Lb44;->b:J
+    iput-object v0, p0, Lb44;->c:Landroid/text/Layout$Alignment;
 
-    iput-wide p3, p0, Lb44;->c:J
+    iput-object v0, p0, Lb44;->d:Landroid/text/Layout$Alignment;
 
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+    const v0, -0x800001
 
-    cmp-long p5, p1, v0
+    iput v0, p0, Lb44;->e:F
 
-    if-eqz p5, :cond_1
+    const/high16 v1, -0x80000000
 
-    cmp-long p5, p3, v0
+    iput v1, p0, Lb44;->f:I
 
-    if-nez p5, :cond_0
+    iput v1, p0, Lb44;->g:I
 
-    goto :goto_0
+    iput v0, p0, Lb44;->h:F
 
-    :cond_0
-    add-long v0, p1, p3
+    iput v1, p0, Lb44;->i:I
 
-    :cond_1
-    :goto_0
-    iput-wide v0, p0, Lb44;->d:J
+    iput v1, p0, Lb44;->j:I
+
+    iput v0, p0, Lb44;->k:F
+
+    iput v0, p0, Lb44;->l:F
+
+    iput v0, p0, Lb44;->m:F
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lb44;->n:Z
+
+    const/high16 v0, -0x1000000
+
+    iput v0, p0, Lb44;->o:I
+
+    iput v1, p0, Lb44;->p:I
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ld44;
+    .registers 20
+
+    move-object/from16 v0, p0
+
+    new-instance v1, Ld44;
+
+    move-object v2, v1
+
+    iget-object v1, v0, Lb44;->a:Ljava/lang/CharSequence;
+
+    move-object v3, v2
+
+    iget-object v2, v0, Lb44;->c:Landroid/text/Layout$Alignment;
+
+    move-object v4, v3
+
+    iget-object v3, v0, Lb44;->d:Landroid/text/Layout$Alignment;
+
+    move-object v5, v4
+
+    iget-object v4, v0, Lb44;->b:Landroid/graphics/Bitmap;
+
+    move-object v6, v5
+
+    iget v5, v0, Lb44;->e:F
+
+    move-object v7, v6
+
+    iget v6, v0, Lb44;->f:I
+
+    move-object v8, v7
+
+    iget v7, v0, Lb44;->g:I
+
+    move-object v9, v8
+
+    iget v8, v0, Lb44;->h:F
+
+    move-object v10, v9
+
+    iget v9, v0, Lb44;->i:I
+
+    move-object v11, v10
+
+    iget v10, v0, Lb44;->j:I
+
+    move-object v12, v11
+
+    iget v11, v0, Lb44;->k:F
+
+    move-object v13, v12
+
+    iget v12, v0, Lb44;->l:F
+
+    move-object v14, v13
+
+    iget v13, v0, Lb44;->m:F
+
+    move-object v15, v14
+
+    iget-boolean v14, v0, Lb44;->n:Z
+
+    move-object/from16 v16, v15
+
+    iget v15, v0, Lb44;->o:I
+
+    move-object/from16 v17, v1
+
+    iget v1, v0, Lb44;->p:I
+
+    iget v0, v0, Lb44;->q:F
+
+    move-object/from16 v18, v17
+
+    move/from16 v17, v0
+
+    move-object/from16 v0, v16
+
+    move/from16 v16, v1
+
+    move-object/from16 v1, v18
+
+    invoke-direct/range {v0 .. v17}, Ld44;-><init>(Ljava/lang/CharSequence;Landroid/text/Layout$Alignment;Landroid/text/Layout$Alignment;Landroid/graphics/Bitmap;FIIFIIFFFZIIF)V
+
+    return-object v0
 .end method

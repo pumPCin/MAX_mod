@@ -1,47 +1,50 @@
-.class public Lrcd;
-.super Ltcd;
+.class public final Lrcd;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lxcd;
 
 
 # instance fields
-.field public final g:Ljava/util/List;
-
-.field public h:Ljava/lang/String;
-
-.field public i:Ljava/util/List;
-
-.field public j:Z
+.field public final a:Lp2f;
 
 
 # direct methods
-.method public constructor <init>(JLjava/util/List;)V
-    .registers 4
+.method public constructor <init>(Lp2f;)V
+    .registers 3
 
-    invoke-direct {p0, p1, p2}, Ltcd;-><init>(J)V
+    sget v0, Ldqa;->a:I
 
-    iput-object p3, p0, Lrcd;->g:Ljava/util/List;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lrcd;->a:Lp2f;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic a()Lucd;
+.method public final a()I
     .registers 1
 
-    invoke-virtual {p0}, Lrcd;->b()Lscd;
+    const/4 p0, 0x0
 
-    move-result-object p0
-
-    return-object p0
+    return p0
 .end method
 
-.method public b()Lscd;
-    .registers 2
+.method public final getItemId()J
+    .registers 3
 
-    new-instance v0, Lscd;
+    const-wide v0, 0x7ffffffffffffffcL
 
-    invoke-direct {v0, p0}, Lscd;-><init>(Lrcd;)V
+    return-wide v0
+.end method
 
-    return-object v0
+.method public final m()I
+    .registers 1
+
+    sget p0, Ldqa;->s:I
+
+    return p0
 .end method

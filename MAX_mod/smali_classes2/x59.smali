@@ -1,112 +1,97 @@
-.class public final synthetic Lx59;
-.super Ljava/lang/Object;
+.class public final Lx59;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Ld89;
+.field public final synthetic Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ld89;I)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
     .registers 3
 
-    iput p2, p0, Lx59;->a:I
+    iput-object p2, p0, Lx59;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    iput-object p1, p0, Lx59;->b:Ld89;
+    const/4 p2, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 14
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lx59;->a:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0, p1, p2}, Lx59;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    new-instance v1, Lab9;
+    move-result-object p0
 
-    iget-object v4, p0, Lx59;->b:Ld89;
+    check-cast p0, Lx59;
 
-    iget-object p0, v4, Ld89;->b:Lk99;
+    sget-object p1, Lylf;->a:Lylf;
 
-    iget-object v0, v4, Ld89;->w0:Ll04;
+    invoke-virtual {p0, p1}, Lx59;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v10, v4, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
+    return-object p1
+.end method
 
-    iget-object v11, v4, Ld89;->n1:Ldbc;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    iget-object v12, v4, Ld89;->p1:Ldbc;
+    new-instance v0, Lx59;
 
-    new-instance v2, Liw;
+    iget-object p0, p0, Lx59;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    const/4 v8, 0x0
+    invoke-direct {v0, p2, p0}, Lx59;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
 
-    const/16 v9, 0x1c
-
-    const/4 v3, 0x2
-
-    const-class v5, Ld89;
-
-    const-string v6, "processReactionEffect"
-
-    const-string v7, "processReactionEffect(Ljava/util/Set;J)V"
-
-    invoke-direct/range {v2 .. v9}, Liw;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
-
-    new-instance v8, Lfo7;
-
-    const/16 v3, 0xd
-
-    invoke-direct {v8, v3, v4}, Lfo7;-><init>(ILjava/lang/Object;)V
-
-    move-object v3, v0
-
-    move-object v7, v2
-
-    move-object v4, v10
-
-    move-object v5, v11
-
-    move-object v6, v12
-
-    move-object v2, p0
-
-    invoke-direct/range {v1 .. v8}, Lab9;-><init>(Lk99;Ll04;Lkotlinx/coroutines/internal/ContextScope;Ldbc;Ldbc;Liw;Lfo7;)V
-
-    return-object v1
-
-    :pswitch_0
-    new-instance v0, Lfdf;
-
-    iget-object p0, p0, Lx59;->b:Ld89;
-
-    iget-object v1, p0, Ld89;->n1:Ldbc;
-
-    iget-object v2, p0, Ld89;->p1:Ldbc;
-
-    iget-object v3, p0, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
-
-    iget-object p0, p0, Ld89;->Y:Lzne;
-
-    invoke-direct {v0, v1, v2, v3, p0}, Lfdf;-><init>(Ldbc;Ldbc;Lkotlinx/coroutines/internal/ContextScope;Lzne;)V
+    iput-object p1, v0, Lx59;->X:Ljava/lang/Object;
 
     return-object v0
+.end method
 
-    nop
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lx59;->X:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    sget-object v0, Lone/me/sdk/messagewrite/MessageWriteWidget;->E0:[Lxi7;
+
+    iget-object p0, p0, Lx59;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+
+    invoke-virtual {p0}, Lxx3;->getView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->C0()Lk19;
+
+    move-result-object p0
+
+    xor-int/lit8 p1, p1, 0x1
+
+    invoke-virtual {p0, p1}, Lk19;->setInputEnabled(Z)V
+
+    :cond_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

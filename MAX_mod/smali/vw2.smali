@@ -1,47 +1,48 @@
-.class public final synthetic Lvw2;
-.super Lo8;
-.source "SourceFile"
+.class public final Lvw2;
+.super Ljx3;
 
-# interfaces
-.implements Lz96;
+
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Lcm1;
+
+.field public synthetic o:Ljava/lang/Object;
+
+
+# direct methods
+.method public constructor <init>(Lcm1;Lkotlin/coroutines/Continuation;)V
+    .registers 3
+
+    iput-object p1, p0, Lvw2;->Y:Lcm1;
+
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    check-cast p1, Ljava/util/List;
+    iput-object p1, p0, Lvw2;->o:Ljava/lang/Object;
 
-    check-cast p2, Ldx2;
+    iget p1, p0, Lvw2;->X:I
 
-    check-cast p3, Lkotlin/coroutines/Continuation;
+    const/high16 v0, -0x80000000
 
-    iget-object p0, p0, Lo8;->a:Ljava/lang/Object;
+    or-int/2addr p1, v0
 
-    check-cast p0, Lone/me/chats/search/ChatsListSearchScreen;
+    iput p1, p0, Lvw2;->X:I
 
-    sget-object p3, Lone/me/chats/search/ChatsListSearchScreen;->E0:[Lsf7;
+    iget-object p1, p0, Lvw2;->Y:Lcm1;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, 0x0
 
-    iget-object p0, p2, Ldx2;->a:Lcx2;
+    invoke-virtual {p1, v0, p0}, Lcm1;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    sget-object p2, Lpw2;->$EnumSwitchMapping$1:[I
-
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p0
-
-    aget p0, p2, p0
-
-    const/4 p2, 0x2
-
-    if-ne p0, p2, :cond_0
-
-    return-object p1
-
-    :cond_0
-    sget-object p0, Lv25;->a:Lv25;
+    move-result-object p0
 
     return-object p0
 .end method

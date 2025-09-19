@@ -1,132 +1,380 @@
 .class public final Lwgb;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final c:Lwgb;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:I
 
-.field public final synthetic Y:Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;)V
+.method static constructor <clinit>()V
     .registers 3
 
-    iput-object p2, p0, Lwgb;->Y:Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;
+    new-instance v0, Lwgb;
 
-    const/4 p2, 0x2
+    const/4 v1, 0x5
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lwgb;-><init>(II)V
+
+    sput-object v0, Lwgb;->c:Lwgb;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public constructor <init>(II)V
     .registers 3
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0, p1, p2}, Lwgb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iput p1, p0, Lwgb;->a:I
 
-    move-result-object p0
+    iput p2, p0, Lwgb;->b:I
 
-    check-cast p0, Lwgb;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lwgb;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return-void
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public static a(Lt39;)Lwgb;
+    .registers 13
+
+    invoke-static {p0}, Lqe5;->M(Lt39;)I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return-object v1
+
+    :cond_0
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    move v4, v3
+
+    move v5, v4
+
+    :goto_0
+    const/4 v6, 0x1
+
+    if-ge v3, v0, :cond_8
+
+    invoke-virtual {p0}, Lt39;->D0()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string v8, "on"
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_2
+
+    const-string v6, "seen"
+
+    invoke-virtual {v7, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_1
+
+    invoke-virtual {p0}, Lt39;->B()V
+
+    goto/16 :goto_3
+
+    :cond_1
+    invoke-virtual {p0}, Lt39;->z0()I
+
+    move-result v5
+
+    goto/16 :goto_3
+
+    :cond_2
+    invoke-virtual {p0}, Lt39;->D0()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
+
+    move-result v7
+
+    const/4 v8, 0x4
+
+    const/4 v9, 0x3
+
+    const/4 v10, 0x2
+
+    const/4 v11, -0x1
+
+    sparse-switch v7, :sswitch_data_0
+
+    goto :goto_1
+
+    :sswitch_0
+    const-string v7, "UNKNOWN"
+
+    invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    move v11, v8
+
+    goto :goto_1
+
+    :sswitch_1
+    const-string v7, "WEB"
+
+    invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    move v11, v9
+
+    goto :goto_1
+
+    :sswitch_2
+    const-string v7, "MSG"
+
+    invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    move v11, v10
+
+    goto :goto_1
+
+    :sswitch_3
+    const-string v7, "MOB"
+
+    invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_6
+
+    goto :goto_1
+
+    :cond_6
+    move v11, v6
+
+    goto :goto_1
+
+    :sswitch_4
+    const-string v7, "ON"
+
+    invoke-virtual {v4, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_7
+
+    goto :goto_1
+
+    :cond_7
+    move v11, v2
+
+    :goto_1
+    const-string v7, "PresenceType"
+
+    packed-switch v11, :pswitch_data_0
+
+    filled-new-array {v4}, [Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-static {v4, v6}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v4
+
+    const-string v8, "not contains enum value %s"
+
+    invoke-static {v7, v1, v8, v4}, Ljtg;->P(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    :goto_2
+    move v4, v6
+
+    goto :goto_3
+
+    :pswitch_0
+    filled-new-array {v4}, [Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-static {v4, v6}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v4
+
+    const-string v8, "unknown! %s"
+
+    invoke-static {v7, v1, v8, v4}, Ljtg;->P(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    :pswitch_1
+    move v4, v10
+
+    goto :goto_3
+
+    :pswitch_2
+    move v4, v8
+
+    goto :goto_3
+
+    :pswitch_3
+    move v4, v9
+
+    goto :goto_3
+
+    :pswitch_4
+    const/4 v4, 0x5
+
+    :goto_3
+    add-int/lit8 v3, v3, 0x1
+
+    goto/16 :goto_0
+
+    :cond_8
+    if-nez v4, :cond_9
+
+    move v4, v6
+
+    :cond_9
+    new-instance p0, Lwgb;
+
+    invoke-direct {p0, v4, v5}, Lwgb;-><init>(II)V
+
+    return-object p0
+
+    :sswitch_data_0
+    .sparse-switch
+        0x9df -> :sswitch_4
+        0x12ae0 -> :sswitch_3
+        0x12b61 -> :sswitch_2
+        0x14f34 -> :sswitch_1
+        0x19d1382a -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
     .registers 4
 
-    new-instance v0, Lwgb;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lwgb;->Y:Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;
+    const-string v1, "{on="
 
-    invoke-direct {v0, p2, p0}, Lwgb;-><init>(Lkotlin/coroutines/Continuation;Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iput-object p1, v0, Lwgb;->X:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    return-object v0
-.end method
+    iget v2, p0, Lwgb;->a:I
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    if-eq v2, v1, :cond_4
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    const/4 v1, 0x2
 
-    iget-object p1, p0, Lwgb;->X:Ljava/lang/Object;
+    if-eq v2, v1, :cond_3
 
-    check-cast p1, Ljp9;
+    const/4 v1, 0x3
 
-    instance-of v0, p1, Ldgb;
+    if-eq v2, v1, :cond_2
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x4
 
-    sget-object p0, Lshb;->c:Lshb;
+    if-eq v2, v1, :cond_1
 
-    check-cast p1, Ldgb;
+    const/4 v1, 0x5
 
-    iget-wide v0, p1, Ldgb;->b:J
+    if-eq v2, v1, :cond_0
 
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
-
-    move-result-object p0
-
-    const-string p1, ":chats?id="
-
-    const-string v2, "&type=local"
-
-    invoke-static {v0, v1, p1, v2}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+    const-string v1, "null"
 
     goto :goto_0
 
     :cond_0
-    instance-of v0, p1, Ls53;
-
-    if-eqz v0, :cond_1
-
-    iget-object p0, p0, Lwgb;->Y:Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;
-
-    invoke-static {p0}, Lcjg;->o(Lqx3;)V
-
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Llrc;->B(Lqx3;)Z
+    const-string v1, "ON"
 
     goto :goto_0
 
     :cond_1
-    instance-of p0, p1, Laa4;
+    const-string v1, "MSG"
 
-    if-eqz p0, :cond_2
-
-    sget-object p0, Lshb;->c:Lshb;
-
-    check-cast p1, Laa4;
-
-    invoke-virtual {p0, p1}, Ls2;->F0(Laa4;)V
+    goto :goto_0
 
     :cond_2
+    const-string v1, "MOB"
+
+    goto :goto_0
+
+    :cond_3
+    const-string v1, "WEB"
+
+    goto :goto_0
+
+    :cond_4
+    const-string v1, "UNKNOWN"
+
     :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", seen="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget p0, p0, Lwgb;->b:I
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

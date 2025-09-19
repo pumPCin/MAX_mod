@@ -1,205 +1,53 @@
 .class public final Lj62;
-.super Loi0;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public i:[I
+.field public X:Ljava/lang/Object;
 
-.field public j:[I
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Ld62;
+
+.field public o:Ld62;
+
+.field public r0:I
+
+
+# direct methods
+.method public constructor <init>(Ld62;Lkotlin/coroutines/Continuation;)V
+    .registers 3
+
+    iput-object p1, p0, Lj62;->Z:Ld62;
+
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final b(Ljava/nio/ByteBuffer;)V
-    .registers 9
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object v0, p0, Lj62;->j:[I
+    iput-object p1, p0, Lj62;->Y:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget p1, p0, Lj62;->r0:I
 
-    invoke-virtual {p1}, Ljava/nio/Buffer;->position()I
+    const/high16 v0, -0x80000000
 
-    move-result v1
+    or-int/2addr p1, v0
 
-    invoke-virtual {p1}, Ljava/nio/Buffer;->limit()I
+    iput p1, p0, Lj62;->r0:I
 
-    move-result v2
-
-    sub-int v3, v2, v1
-
-    iget-object v4, p0, Loi0;->b:Lu50;
-
-    iget v4, v4, Lu50;->d:I
-
-    div-int/2addr v3, v4
-
-    iget-object v4, p0, Loi0;->c:Lu50;
-
-    iget v4, v4, Lu50;->d:I
-
-    mul-int/2addr v3, v4
-
-    invoke-virtual {p0, v3}, Loi0;->j(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v3
-
-    :goto_0
-    if-ge v1, v2, :cond_1
-
-    array-length v4, v0
-
-    const/4 v5, 0x0
-
-    :goto_1
-    if-ge v5, v4, :cond_0
-
-    aget v6, v0, v5
-
-    mul-int/lit8 v6, v6, 0x2
-
-    add-int/2addr v6, v1
-
-    invoke-virtual {p1, v6}, Ljava/nio/ByteBuffer;->getShort(I)S
-
-    move-result v6
-
-    invoke-virtual {v3, v6}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
-
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v4, p0, Loi0;->b:Lu50;
-
-    iget v4, v4, Lu50;->d:I
-
-    add-int/2addr v1, v4
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p1, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
-    invoke-virtual {v3}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
-
-    return-void
-.end method
-
-.method public final f(Lu50;)Lu50;
-    .registers 9
-
-    iget-object p0, p0, Lj62;->i:[I
-
-    if-nez p0, :cond_0
-
-    sget-object p0, Lu50;->e:Lu50;
-
-    return-object p0
-
-    :cond_0
-    iget v0, p1, Lu50;->c:I
-
-    iget v1, p1, Lu50;->b:I
-
-    const/4 v2, 0x2
-
-    if-ne v0, v2, :cond_6
-
-    array-length v0, p0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    if-eq v1, v0, :cond_1
-
-    move v0, v4
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v3
-
-    :goto_0
-    move v5, v3
-
-    :goto_1
-    array-length v6, p0
-
-    if-ge v5, v6, :cond_4
-
-    aget v6, p0, v5
-
-    if-ge v6, v1, :cond_3
-
-    if-eq v6, v5, :cond_2
-
-    move v6, v4
-
-    goto :goto_2
-
-    :cond_2
-    move v6, v3
-
-    :goto_2
-    or-int/2addr v0, v6
-
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    new-instance p0, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;
-
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;-><init>(Lu50;)V
-
-    throw p0
-
-    :cond_4
-    if-eqz v0, :cond_5
-
-    new-instance v0, Lu50;
-
-    iget p1, p1, Lu50;->a:I
-
-    array-length p0, p0
-
-    invoke-direct {v0, p1, p0, v2}, Lu50;-><init>(III)V
-
-    return-object v0
-
-    :cond_5
-    sget-object p0, Lu50;->e:Lu50;
-
-    return-object p0
-
-    :cond_6
-    new-instance p0, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;
-
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/audio/AudioProcessor$UnhandledAudioFormatException;-><init>(Lu50;)V
-
-    throw p0
-.end method
-
-.method public final g()V
-    .registers 2
-
-    iget-object v0, p0, Lj62;->i:[I
-
-    iput-object v0, p0, Lj62;->j:[I
-
-    return-void
-.end method
-
-.method public final i()V
-    .registers 2
+    iget-object p1, p0, Lj62;->Z:Ld62;
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lj62;->j:[I
+    invoke-virtual {p1, v0, p0}, Ld62;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lj62;->i:[I
+    move-result-object p0
 
-    return-void
+    return-object p0
 .end method

@@ -1,310 +1,385 @@
 .class public final Lj6a;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ld8a;
+.implements Loq4;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/android/OneMeApplication;
+.field public final b:Ld8a;
+
+.field public final c:Lqc6;
+
+.field public o:Loq4;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/android/OneMeApplication;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public synthetic constructor <init>(Ld8a;Lqc6;I)V
+    .registers 4
 
-    iput-object p1, p0, Lj6a;->Y:Lone/me/android/OneMeApplication;
+    iput p3, p0, Lj6a;->a:I
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lj6a;->b:Ld8a;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lj6a;->c:Lqc6;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final b()V
     .registers 3
 
-    check-cast p1, Lr04;
+    iget v0, p0, Lj6a;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Lj6a;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lj6a;->b:Ld8a;
 
-    move-result-object p0
+    invoke-interface {p0}, Ld8a;->b()V
 
-    check-cast p0, Lj6a;
+    return-void
 
-    sget-object p1, Lncf;->a:Lncf;
+    :pswitch_0
+    iget-object v0, p0, Lj6a;->o:Loq4;
 
-    invoke-virtual {p0, p1}, Lj6a;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object v1, Lsq4;->a:Lsq4;
 
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Lj6a;
-
-    iget-object p0, p0, Lj6a;->Y:Lone/me/android/OneMeApplication;
-
-    invoke-direct {p1, p0, p2}, Lj6a;-><init>(Lone/me/android/OneMeApplication;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 13
-
-    iget v0, p0, Lj6a;->X:I
-
-    const-class v1, Loh5;
-
-    const/4 v2, 0x2
-
-    sget-object v3, Lncf;->a:Lncf;
-
-    const/4 v4, 0x1
-
-    sget-object v5, Ls04;->a:Ls04;
-
-    if-eqz v0, :cond_2
-
-    if-eq v0, v4, :cond_1
-
-    if-ne v0, v2, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object v3
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto/16 :goto_2
-
-    :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    new-instance p1, Lqjc;
-
-    sget-object v0, La2d;->a:Lxh7;
-
-    sget-object v0, Lb2d;->a:Lb2d;
-
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v6
-
-    const-class v7, Lc53;
-
-    invoke-virtual {v6, v7}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    move-result-object v6
-
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    move-result-object v0
-
-    invoke-direct {p1, v6, v0}, Lqjc;-><init>(Lxh7;Lxh7;)V
-
-    iput v4, p0, Lj6a;->X:I
-
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Loh5;
-
-    check-cast v0, Lqh5;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v6, Lru/ok/tamtam/android/prefs/PmsKey;->appearance-multi-theme-screen-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
-
-    const/4 v7, 0x0
-
-    invoke-virtual {v0, v6, v7}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
-
-    move-result v0
-
-    const-string v6, "SavedBackgroundThemeMigration"
-
-    if-eqz v0, :cond_3
-
-    const-string p1, "Chat theme use new multithemes, migration not needed"
-
-    invoke-static {v6, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {p1}, Lqjc;->a()Lc53;
-
-    move-result-object v0
-
-    invoke-static {v0, v4}, Lfud;->l(Lc53;Z)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lqjc;->a()Lc53;
-
-    move-result-object v8
-
-    invoke-static {v8, v7}, Lfud;->l(Lc53;Z)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {p1}, Lqjc;->a()Lc53;
-
-    move-result-object v9
-
-    sget-object v10, Lqf0;->c:Ljava/util/List;
-
-    invoke-interface {v10, v0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    sget-object v0, Lqf0;->b:Ljava/util/List;
-
-    invoke-interface {v0, v8}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    move v0, v4
+    if-ne v0, v1, :cond_0
 
     goto :goto_0
 
-    :cond_4
-    move v0, v7
+    :cond_0
+    iput-object v1, p0, Lj6a;->o:Loq4;
+
+    iget-object p0, p0, Lj6a;->b:Ld8a;
+
+    invoke-interface {p0}, Ld8a;->b()V
 
     :goto_0
-    check-cast v9, Le53;
+    return-void
 
-    const-string v8, "app.chat.background.migrated"
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    invoke-virtual {v9, v8, v0}, Lc3;->g(Ljava/lang/String;Z)V
+.method public final c(Loq4;)V
+    .registers 3
 
-    invoke-virtual {p1}, Lqjc;->a()Lc53;
+    iget v0, p0, Lj6a;->a:I
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast v0, Le53;
+    iget-object v0, p0, Lj6a;->o:Loq4;
 
-    iget-object v0, v0, Lc3;->g:Lai7;
-
-    invoke-virtual {v0, v8, v7}, Lai7;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {v0, p1}, Lsq4;->h(Loq4;Loq4;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
-    const-string p1, "Chat theme background already migrated."
+    iput-object p1, p0, Lj6a;->o:Loq4;
 
-    invoke-static {v6, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object p1, p0, Lj6a;->b:Ld8a;
 
-    goto :goto_1
+    invoke-interface {p1, p0}, Ld8a;->c(Loq4;)V
 
-    :cond_5
-    invoke-virtual {p1, v4}, Lqjc;->b(Z)V
+    :cond_0
+    return-void
 
-    invoke-virtual {p1, v7}, Lqjc;->b(Z)V
+    :pswitch_0
+    iget-object v0, p0, Lj6a;->o:Loq4;
 
-    invoke-virtual {p1}, Lqjc;->a()Lc53;
+    invoke-static {v0, p1}, Lsq4;->h(Loq4;Loq4;)Z
 
-    move-result-object p1
+    move-result v0
 
-    check-cast p1, Le53;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {p1, v8, v4}, Lc3;->g(Ljava/lang/String;Z)V
+    iput-object p1, p0, Lj6a;->o:Loq4;
 
-    :goto_1
-    if-ne v3, v5, :cond_6
+    iget-object p1, p0, Lj6a;->b:Ld8a;
 
-    goto :goto_4
+    invoke-interface {p1, p0}, Ld8a;->c(Loq4;)V
 
-    :cond_6
-    :goto_2
-    new-instance p1, Ls9b;
+    :cond_1
+    return-void
 
-    sget-object v0, La2d;->l:Lxh7;
+    nop
 
-    sget-object v4, Lb2d;->a:Lb2d;
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    invoke-virtual {v4}, Lscout/Component;->getAccessor()Ls4;
+.method public final e()V
+    .registers 2
 
-    move-result-object v4
+    iget v0, p0, Lj6a;->a:I
 
-    invoke-virtual {v4, v1}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v1
+    iget-object p0, p0, Lj6a;->o:Loq4;
 
-    invoke-direct {p1, v0, v1}, Ls9b;-><init>(Lxh7;Lxh7;)V
+    invoke-interface {p0}, Loq4;->e()V
 
-    iput v2, p0, Lj6a;->X:I
+    return-void
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    :pswitch_0
+    iget-object v0, p0, Lj6a;->o:Loq4;
 
-    move-result-object v0
+    invoke-interface {v0}, Loq4;->e()V
 
-    check-cast v0, Lzne;
+    sget-object v0, Lsq4;->a:Lsq4;
 
-    check-cast v0, Ltba;
+    iput-object v0, p0, Lj6a;->o:Loq4;
 
-    invoke-virtual {v0}, Ltba;->b()Ll04;
+    return-void
 
-    move-result-object v0
+    nop
 
-    new-instance v1, Lr9b;
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    iget-object v2, p0, Lj6a;->Y:Lone/me/android/OneMeApplication;
+.method public final f()Z
+    .registers 2
 
-    const/4 v4, 0x0
+    iget v0, p0, Lj6a;->a:I
 
-    invoke-direct {v1, v2, p1, v4}, Lr9b;-><init>(Landroid/content/Context;Ls9b;Lkotlin/coroutines/Continuation;)V
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {v0, v1, p0}, Las3;->m0(Lj04;Lx96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object p0, p0, Lj6a;->o:Loq4;
+
+    invoke-interface {p0}, Loq4;->f()Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_0
+    iget-object p0, p0, Lj6a;->o:Loq4;
+
+    invoke-interface {p0}, Loq4;->f()Z
+
+    move-result p0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onError(Ljava/lang/Throwable;)V
+    .registers 4
+
+    iget v0, p0, Lj6a;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lj6a;->b:Ld8a;
+
+    :try_start_0
+    iget-object p0, p0, Lj6a;->c:Lqc6;
+
+    invoke-interface {p0, p1}, Lqc6;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez p0, :cond_0
+
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string v1, "The supplied value is null"
+
+    invoke-direct {p0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, p1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    invoke-interface {v0, p0}, Ld8a;->onError(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-interface {v0, p0}, Ld8a;->s(Ljava/lang/Object;)V
+
+    invoke-interface {v0}, Ld8a;->b()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    invoke-static {p0}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    new-instance v1, Lio/reactivex/rxjava3/exceptions/CompositeException;
+
+    filled-new-array {p1, p0}, [Ljava/lang/Throwable;
 
     move-result-object p0
 
-    if-ne p0, v5, :cond_7
+    invoke-direct {v1, p0}, Lio/reactivex/rxjava3/exceptions/CompositeException;-><init>([Ljava/lang/Throwable;)V
 
-    goto :goto_3
+    invoke-interface {v0, v1}, Ld8a;->onError(Ljava/lang/Throwable;)V
 
-    :cond_7
-    move-object p0, v3
+    :goto_0
+    return-void
 
-    :goto_3
-    if-ne p0, v5, :cond_8
+    :pswitch_0
+    iget-object v0, p0, Lj6a;->o:Loq4;
 
-    :goto_4
-    return-object v5
+    sget-object v1, Lsq4;->a:Lsq4;
 
-    :cond_8
-    return-object v3
+    if-ne v0, v1, :cond_1
+
+    invoke-static {p1}, Ln4e;->D(Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    :cond_1
+    iput-object v1, p0, Lj6a;->o:Loq4;
+
+    iget-object p0, p0, Lj6a;->b:Ld8a;
+
+    invoke-interface {p0, p1}, Ld8a;->onError(Ljava/lang/Throwable;)V
+
+    :goto_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final s(Ljava/lang/Object;)V
+    .registers 4
+
+    iget v0, p0, Lj6a;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lj6a;->b:Ld8a;
+
+    invoke-interface {p0, p1}, Ld8a;->s(Ljava/lang/Object;)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lj6a;->o:Loq4;
+
+    sget-object v1, Lsq4;->a:Lsq4;
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    :try_start_0
+    iget-object v0, p0, Lj6a;->c:Lqc6;
+
+    invoke-interface {v0, p1}, Lqc6;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Iterable;
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+
+    :goto_0
+    :try_start_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    if-eqz v0, :cond_1
+
+    :try_start_2
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    const-string v1, "The iterator returned a null value"
+
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    iget-object v1, p0, Lj6a;->b:Ld8a;
+
+    invoke-interface {v1, v0}, Ld8a;->s(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    invoke-static {p1}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    iget-object v0, p0, Lj6a;->o:Loq4;
+
+    invoke-interface {v0}, Loq4;->e()V
+
+    invoke-virtual {p0, p1}, Lj6a;->onError(Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    :catchall_1
+    move-exception p1
+
+    invoke-static {p1}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    iget-object v0, p0, Lj6a;->o:Loq4;
+
+    invoke-interface {v0}, Loq4;->e()V
+
+    invoke-virtual {p0, p1}, Lj6a;->onError(Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    :catchall_2
+    move-exception p1
+
+    invoke-static {p1}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    iget-object v0, p0, Lj6a;->o:Loq4;
+
+    invoke-interface {v0}, Loq4;->e()V
+
+    invoke-virtual {p0, p1}, Lj6a;->onError(Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_1
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

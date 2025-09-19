@@ -38,17 +38,17 @@
 .method public constructor <init>(I)V
     .registers 4
 
-    sget p1, Llw4;->o:I
+    sget p1, Lfy4;->o:I
 
     const-wide/16 v0, 0x1f40
 
-    sget-object p1, Lqw4;->c:Lqw4;
+    sget-object p1, Lky4;->c:Lky4;
 
-    invoke-static {v0, v1, p1}, Lg5e;->H(JLqw4;)J
+    invoke-static {v0, v1, p1}, Lr94;->c0(JLky4;)J
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Llw4;->j(J)Ljava/lang/String;
+    invoke-static {v0, v1}, Lfy4;->j(J)Ljava/lang/String;
 
     move-result-object p1
 
@@ -56,7 +56,7 @@
 
     const-string v1, " seconds"
 
-    invoke-static {v0, p1, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1, v1}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 

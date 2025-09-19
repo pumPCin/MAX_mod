@@ -2,85 +2,42 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/text/TextWatcher;
-
 
 # instance fields
-.field public a:Z
+.field public final a:Lj7;
+
+.field public final b:Landroid/content/Context;
+
+.field public final c:Lvka;
+
+.field public final d:Loka;
+
+.field public final e:Lcd4;
+
+.field public final f:Lk25;
 
 
-# virtual methods
-.method public final afterTextChanged(Landroid/text/Editable;)V
-    .registers 10
+# direct methods
+.method public constructor <init>(Landroid/content/Context;Lvka;Loka;Lcd4;Lk25;)V
+    .registers 7
 
-    iget-boolean v0, p0, Ll25;->a:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-nez v0, :cond_2
+    new-instance v0, Lj7;
 
-    const/4 v0, 0x1
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean v0, p0, Ll25;->a:Z
+    iput-object v0, p0, Ll25;->a:Lj7;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iput-object p1, p0, Ll25;->b:Landroid/content/Context;
 
-    move-result-object v1
+    iput-object p2, p0, Ll25;->c:Lvka;
 
-    sget-object v2, Lpfd;->a:[[Ljava/lang/String;
+    iput-object p3, p0, Ll25;->d:Loka;
 
-    const/4 v3, 0x0
+    iput-object p4, p0, Ll25;->e:Lcd4;
 
-    move v4, v3
-
-    :goto_0
-    const/16 v5, 0x42
-
-    if-ge v4, v5, :cond_1
-
-    aget-object v5, v2, v4
-
-    aget-object v6, v5, v3
-
-    invoke-virtual {v1, v6}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
-
-    move-result v6
-
-    const/4 v7, -0x1
-
-    if-eq v6, v7, :cond_0
-
-    aget-object v7, v5, v3
-
-    invoke-virtual {v7}, Ljava/lang/String;->length()I
-
-    move-result v7
-
-    add-int/2addr v7, v6
-
-    aget-object v5, v5, v0
-
-    invoke-interface {p1, v6, v7, v5}, Landroid/text/Editable;->replace(IILjava/lang/CharSequence;)Landroid/text/Editable;
-
-    :cond_0
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    iput-boolean v3, p0, Ll25;->a:Z
-
-    :cond_2
-    return-void
-.end method
-
-.method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
-
-    return-void
-.end method
-
-.method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    iput-object p5, p0, Ll25;->f:Lk25;
 
     return-void
 .end method

@@ -1,69 +1,67 @@
-.class public final Lm01;
-.super Lcx3;
+.class public interface abstract Lm01;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public X:Lls;
-
-.field public Y:Lfl9;
-
-.field public Z:Ljava/lang/Object;
-
-.field public n0:Lha;
-
-.field public o:Lo01;
-
-.field public o0:Ljava/lang/Object;
-
-.field public p0:Ljava/lang/Object;
-
-.field public q0:Ljava/util/Iterator;
-
-.field public r0:Lis;
-
-.field public s0:J
-
-.field public synthetic t0:Ljava/lang/Object;
-
-.field public final synthetic u0:Lo01;
-
-.field public v0:I
-
-
-# direct methods
-.method public constructor <init>(Lo01;Lcx3;)V
-    .registers 3
-
-    iput-object p1, p0, Lm01;->u0:Lo01;
-
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+# interfaces
+.implements Lird;
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public abstract a()I
+.end method
 
-    iput-object p1, p0, Lm01;->t0:Ljava/lang/Object;
+.method public b()Lu2f;
+    .registers 1
 
-    iget p1, p0, Lm01;->v0:I
+    const/4 p0, 0x0
 
-    const/high16 v0, -0x80000000
+    return-object p0
+.end method
 
-    or-int/2addr p1, v0
+.method public c()Lzqd;
+    .registers 1
 
-    iput p1, p0, Lm01;->v0:I
+    const/4 p0, 0x0
 
-    iget-object p1, p0, Lm01;->u0:Lo01;
+    return-object p0
+.end method
 
-    const/4 v0, 0x0
+.method public d()Lu2f;
+    .registers 1
 
-    invoke-static {p1, v0, p0}, Lo01;->a(Lo01;Lls;Lcx3;)Ljava/lang/Object;
+    const/4 p0, 0x0
 
-    move-result-object p0
+    return-object p0
+.end method
+
+.method public e()Lfrd;
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public f()Lll7;
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public g()Z
+    .registers 1
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public getType()Lhrd;
+    .registers 1
+
+    sget-object p0, Lhrd;->b:Lhrd;
 
     return-object p0
 .end method

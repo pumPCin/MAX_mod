@@ -1,69 +1,247 @@
-.class public final Lx0d;
-.super Lrna;
+.class public abstract Lx0d;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lvp9;
+
+# static fields
+.field public static final A:I
+
+.field public static final B:I
+
+.field public static final C:I
+
+.field public static final D:I
+
+.field public static final E:I
+
+.field public static final F:I
+
+.field public static final G:I
+
+.field public static final H:I
+
+.field public static final I:I
+
+.field public static final J:I
+
+.field public static final K:I
+
+.field public static final L:I
+
+.field public static final M:I
+
+.field public static final a:I
+
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
+.field public static final s:I
+
+.field public static final t:I
+
+.field public static final u:I
+
+.field public static final v:I
+
+.field public static final w:I
+
+.field public static final x:I
+
+.field public static final y:I
+
+.field public static final z:I
 
 
-# instance fields
-.field public b:Z
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
 
+    sget v0, Ljcc;->attach_description_union:I
 
-# virtual methods
-.method public final onOverScrolled(IIZZ)V
-    .registers 6
+    sput v0, Lx0d;->a:I
 
-    if-gtz p2, :cond_0
+    sget v0, Ljcc;->feedback_subject:I
 
-    if-eqz p4, :cond_0
+    sput v0, Lx0d;->b:I
 
-    const/4 v0, 0x1
+    sget v0, Ljcc;->feedback_subject_auth:I
 
-    goto :goto_0
+    sput v0, Lx0d;->c:I
 
-    :cond_0
-    const/4 v0, 0x0
+    sget v0, Ljcc;->feedback_user_info:I
 
-    :goto_0
-    iput-boolean v0, p0, Lx0d;->b:Z
+    sput v0, Lx0d;->d:I
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onOverScrolled(IIZZ)V
+    sget v0, Ljcc;->file_downloading_no_progress:I
+
+    sput v0, Lx0d;->e:I
+
+    sget v0, Ljcc;->file_downloading_progress_media:I
+
+    sput v0, Lx0d;->f:I
+
+    sget v0, Ljcc;->file_downloading_progress_photo:I
+
+    sput v0, Lx0d;->g:I
+
+    sget v0, Ljcc;->file_downloading_progress_single_photo:I
+
+    sput v0, Lx0d;->h:I
+
+    sget v0, Ljcc;->file_downloading_progress_single_video:I
+
+    sput v0, Lx0d;->i:I
+
+    sget v0, Ljcc;->file_downloading_progress_video:I
+
+    sput v0, Lx0d;->j:I
+
+    sget v0, Ljcc;->link_context_menu_action_copy_link:I
+
+    sput v0, Lx0d;->k:I
+
+    sget v0, Ljcc;->link_context_menu_action_copy_mail_link:I
+
+    sput v0, Lx0d;->l:I
+
+    sget v0, Ljcc;->link_context_menu_action_copy_phone_link:I
+
+    sput v0, Lx0d;->m:I
+
+    sget v0, Ljcc;->link_context_menu_action_open_link:I
+
+    sput v0, Lx0d;->n:I
+
+    sget v0, Ljcc;->link_context_menu_action_open_mail_link:I
+
+    sput v0, Lx0d;->o:I
+
+    sget v0, Ljcc;->link_context_menu_action_open_phone_link:I
+
+    sput v0, Lx0d;->p:I
+
+    sget v0, Ljcc;->link_copied:I
+
+    sput v0, Lx0d;->q:I
+
+    sget v0, Ljcc;->mail_copied:I
+
+    sput v0, Lx0d;->r:I
+
+    sget v0, Ljcc;->noncontact_presence:I
+
+    sput v0, Lx0d;->s:I
+
+    sget v0, Ljcc;->phone_copied:I
+
+    sput v0, Lx0d;->t:I
+
+    sget v0, Ljcc;->reply_quote_content_level_body:I
+
+    sput v0, Lx0d;->u:I
+
+    sget v0, Ljcc;->saved_messages_description:I
+
+    sput v0, Lx0d;->v:I
+
+    sget v0, Ljcc;->tt_active_live_location_in_chat:I
+
+    sput v0, Lx0d;->w:I
+
+    sget v0, Ljcc;->tt_active_live_location_in_chat_dialog:I
+
+    sput v0, Lx0d;->x:I
+
+    sget v0, Ljcc;->tt_at:I
+
+    sput v0, Lx0d;->y:I
+
+    sget v0, Ljcc;->tt_audio:I
+
+    sput v0, Lx0d;->z:I
+
+    sget v0, Ljcc;->tt_contact_name_unknown:I
+
+    sput v0, Lx0d;->A:I
+
+    sget v0, Ljcc;->tt_dates_today:I
+
+    sput v0, Lx0d;->B:I
+
+    sget v0, Ljcc;->tt_email_invite_subject:I
+
+    sput v0, Lx0d;->C:I
+
+    sget v0, Ljcc;->tt_live_location_updating:I
+
+    sput v0, Lx0d;->D:I
+
+    sget v0, Ljcc;->tt_location:I
+
+    sput v0, Lx0d;->E:I
+
+    sget v0, Ljcc;->tt_notif_category_group_calls:I
+
+    sput v0, Lx0d;->F:I
+
+    sget v0, Ljcc;->tt_notif_category_group_chats:I
+
+    sput v0, Lx0d;->G:I
+
+    sget v0, Ljcc;->tt_notif_category_group_other:I
+
+    sput v0, Lx0d;->H:I
+
+    sget v0, Ljcc;->tt_of:I
+
+    sput v0, Lx0d;->I:I
+
+    sget v0, Ljcc;->tt_sms_invite_text:I
+
+    sput v0, Lx0d;->J:I
+
+    sget v0, Ljcc;->tt_stop_live_location:I
+
+    sput v0, Lx0d;->K:I
+
+    sget v0, Ljcc;->tt_you:I
+
+    sput v0, Lx0d;->L:I
+
+    sget v0, Ljcc;->tt_you_in_subtitle:I
+
+    sput v0, Lx0d;->M:I
 
     return-void
-.end method
-
-.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 5
-
-    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    if-eq v1, v2, :cond_1
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    return v0
-
-    :cond_1
-    :goto_0
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lx0d;->b:Z
-
-    return v0
 .end method

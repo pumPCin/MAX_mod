@@ -3,22 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lim3;
+.implements Lbc6;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lgm9;
+.field public final synthetic b:Lhm9;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgm9;I)V
+.method public synthetic constructor <init>(Lhm9;I)V
     .registers 3
 
     iput p2, p0, Lfm9;->a:I
 
-    iput-object p1, p0, Lfm9;->b:Lgm9;
+    iput-object p1, p0, Lfm9;->b:Lhm9;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,91 +27,214 @@
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .registers 6
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 9
 
     iget v0, p0, Lfm9;->a:I
 
-    const/4 v1, 0x0
+    check-cast p1, Ljava/lang/Integer;
 
-    const-string v2, "gm9"
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    iget-object p0, p0, Lfm9;->b:Lgm9;
+    move-result p1
 
     packed-switch v0, :pswitch_data_0
 
-    check-cast p1, Ljava/lang/Throwable;
+    iget-object p0, p0, Lfm9;->b:Lhm9;
 
-    const-string p1, "Can\'t load locations"
+    iget-object p0, p0, Lhm9;->b:La89;
 
-    const/4 v0, 0x0
+    invoke-virtual {p0, p1}, La89;->M(I)Lone/me/messages/list/loader/MessageModel;
 
-    invoke-static {v2, p1, v0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object p0
 
-    iget-object p0, p0, Ls2;->b:Ljava/lang/Object;
+    if-nez p0, :cond_0
 
-    check-cast p0, Lxm9;
+    goto :goto_0
 
-    check-cast p0, Lkn9;
+    :cond_0
+    iget p0, p0, Lone/me/messages/list/loader/MessageModel;->J0:I
 
-    invoke-virtual {p0, v1}, Lkn9;->A(Z)V
+    if-nez p0, :cond_1
 
-    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+    goto :goto_0
 
-    invoke-virtual {p0, p1}, Lkn9;->B(Ljava/util/List;)V
+    :cond_1
+    invoke-static {p0}, Lg49;->e(I)Z
 
-    return-void
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    const/4 p0, 0x1
+
+    goto :goto_1
+
+    :cond_2
+    :goto_0
+    const/4 p0, 0x0
+
+    :goto_1
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    return-object p0
 
     :pswitch_0
-    check-cast p1, Ljava/util/List;
+    iget-object p0, p0, Lfm9;->b:Lhm9;
 
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    iget-object p0, p0, Lhm9;->b:La89;
+
+    invoke-virtual {p0, p1}, La89;->M(I)Lone/me/messages/list/loader/MessageModel;
+
+    move-result-object p0
+
+    const/4 p1, 0x0
+
+    if-nez p0, :cond_3
+
+    goto :goto_4
+
+    :cond_3
+    iget-object v0, p0, Lone/me/messages/list/loader/MessageModel;->t0:Lny;
+
+    iget-object v0, v0, Lny;->d:Lkz;
+
+    instance-of v1, v0, Ldyf;
+
+    if-eqz v1, :cond_4
+
+    check-cast v0, Ldyf;
+
+    goto :goto_2
+
+    :cond_4
+    const/4 v0, 0x0
+
+    :goto_2
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_5
+
+    invoke-virtual {v0}, Ldyf;->d()Ly1g;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_5
+
+    iget-wide v3, v2, Ly1g;->a:J
+
+    iget-wide v5, v0, Ldyf;->a:J
+
+    cmp-long v0, v3, v5
+
+    if-nez v0, :cond_5
+
+    iget v0, v2, Ly1g;->X:I
+
+    if-eq v0, v1, :cond_5
+
+    const/4 v2, 0x5
+
+    if-eq v0, v2, :cond_5
+
+    move v0, v1
+
+    goto :goto_3
+
+    :cond_5
+    move v0, p1
+
+    :goto_3
+    iget-boolean v2, p0, Lone/me/messages/list/loader/MessageModel;->E0:Z
+
+    if-nez v2, :cond_6
+
+    if-eqz v0, :cond_8
+
+    :cond_6
+    invoke-virtual {p0}, Lone/me/messages/list/loader/MessageModel;->n()Z
 
     move-result v0
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-nez v0, :cond_8
 
-    move-result-object v0
+    iget-object p0, p0, Lone/me/messages/list/loader/MessageModel;->z0:Lz13;
 
-    filled-new-array {v0}, [Ljava/lang/Object;
+    if-eqz p0, :cond_7
 
-    move-result-object v0
+    goto :goto_4
 
-    const-string v3, "Loaded %d"
+    :cond_7
+    move p1, v1
 
-    invoke-static {v2, v3, v0}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    :cond_8
+    :goto_4
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v0, p0, Ls2;->b:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast v0, Lxm9;
-
-    check-cast v0, Lkn9;
-
-    invoke-virtual {v0, v1}, Lkn9;->A(Z)V
-
-    invoke-virtual {v0, p1}, Lkn9;->B(Ljava/util/List;)V
-
-    iget-boolean p1, p0, Lgm9;->r0:Z
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lgm9;->r0:Z
-
-    iget-object p0, p0, Lgm9;->Z:Lls7;
-
-    invoke-virtual {p0}, Lls7;->L()V
-
-    :cond_0
-    return-void
+    return-object p0
 
     :pswitch_1
-    check-cast p1, Ljava/lang/Long;
+    iget-object p0, p0, Lfm9;->b:Lhm9;
 
-    invoke-virtual {p0}, Lgm9;->U0()V
+    iget-object v0, p0, Lhm9;->b:La89;
 
-    return-void
+    invoke-virtual {v0}, Lls7;->j()I
+
+    move-result v1
+
+    if-le v1, p1, :cond_a
+
+    if-ltz p1, :cond_a
+
+    invoke-virtual {v0, p1}, La89;->M(I)Lone/me/messages/list/loader/MessageModel;
+
+    move-result-object p1
+
+    if-nez p1, :cond_9
+
+    goto :goto_5
+
+    :cond_9
+    iget-object p0, p0, Lhm9;->c:Lbm9;
+
+    iget-wide v0, p1, Lone/me/messages/list/loader/MessageModel;->a:J
+
+    iget-object p0, p0, Lbm9;->g:Liic;
+
+    iget-object p0, p0, Liic;->a:Lrce;
+
+    invoke-interface {p0}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lvl9;
+
+    iget-object p0, p0, Lvl9;->a:Ljava/util/Set;
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
+
+    invoke-interface {p0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    goto :goto_6
+
+    :cond_a
+    :goto_5
+    const/4 p0, 0x0
+
+    :goto_6
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    return-object p0
 
     nop
 

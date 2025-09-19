@@ -3,214 +3,554 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lohe;
-
-
-# static fields
-.field public static final b:[Ljava/lang/String;
-
-.field public static final c:[Ljava/lang/String;
+.implements Litc;
 
 
 # instance fields
-.field public final a:Landroid/database/sqlite/SQLiteDatabase;
+.field public final a:Ljava/util/ArrayList;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
-
-    const-string v4, " OR IGNORE "
-
-    const-string v5, " OR REPLACE "
-
-    const-string v0, ""
-
-    const-string v1, " OR ROLLBACK "
-
-    const-string v2, " OR ABORT "
-
-    const-string v3, " OR FAIL "
-
-    filled-new-array/range {v0 .. v5}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lj76;->b:[Ljava/lang/String;
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Ljava/lang/String;
-
-    sput-object v0, Lj76;->c:[Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/database/sqlite/SQLiteDatabase;)V
-    .registers 2
+.method public constructor <init>(Ljava/util/Set;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
+    if-nez p1, :cond_0
 
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object p1, p0, Lj76;->a:Ljava/util/ArrayList;
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-interface {p1}, Ljava/util/Set;->size()I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    iput-object v0, p0, Lj76;->a:Ljava/util/ArrayList;
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_1
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
-.method public final D(Ljava/lang/String;)Lthe;
-    .registers 3
+.method public final a(Lejb;Ljava/lang/String;Ljava/util/Map;)V
+    .registers 7
 
-    new-instance v0, Lp76;
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
 
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteDatabase;->compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    invoke-direct {v0, p0}, Lp76;-><init>(Landroid/database/sqlite/SQLiteStatement;)V
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    return-object v0
-.end method
+    move-result v0
 
-.method public final G()V
-    .registers 1
+    if-eqz v0, :cond_0
 
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+    move-result-object v0
 
+    check-cast v0, Litc;
+
+    :try_start_0
+    invoke-interface {v0, p1, p2, p3}, Lhjb;->a(Lejb;Ljava/lang/String;Ljava/util/Map;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ForwardingRequestListener2"
+
+    const-string v2, "InternalListener exception in onProducerFinishWithSuccess"
+
+    invoke-static {v1, v2, v0}, Lvf5;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method
 
-.method public final I()V
-    .registers 1
-
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransactionNonExclusive()V
-
-    return-void
-.end method
-
-.method public final P(Ljava/lang/String;)Landroid/database/Cursor;
+.method public final b(Lbod;)V
     .registers 5
 
-    new-instance v0, Lfnc;
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x3
-
-    invoke-direct {v0, p1, v2, v1}, Lfnc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {p0, v0}, Lj76;->x(Lshe;)Landroid/database/Cursor;
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    return-object p0
-.end method
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-.method public final T()V
-    .registers 1
+    move-result v0
 
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    move-result-object v0
+
+    check-cast v0, Litc;
+
+    :try_start_0
+    invoke-interface {v0, p1}, Litc;->b(Lbod;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ForwardingRequestListener2"
+
+    const-string v2, "InternalListener exception in onRequestStart"
+
+    invoke-static {v1, v2, v0}, Lvf5;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method
 
-.method public final c(Ljava/lang/String;[Ljava/lang/Object;)V
-    .registers 3
+.method public final c(Lejb;)V
+    .registers 5
 
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Litc;
+
+    :try_start_0
+    invoke-interface {v0, p1}, Lhjb;->c(Lejb;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ForwardingRequestListener2"
+
+    const-string v2, "InternalListener exception in onIntermediateChunkStart"
+
+    invoke-static {v1, v2, v0}, Lvf5;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method
 
-.method public final c0()Z
-    .registers 1
+.method public final d(Lejb;Ljava/lang/String;Ljava/lang/Throwable;Ljava/util/Map;)V
+    .registers 8
 
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->inTransaction()Z
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result p0
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Litc;
+
+    :try_start_0
+    invoke-interface {v0, p1, p2, p3, p4}, Lhjb;->d(Lejb;Ljava/lang/String;Ljava/lang/Throwable;Ljava/util/Map;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ForwardingRequestListener2"
+
+    const-string v2, "InternalListener exception in onProducerFinishWithFailure"
+
+    invoke-static {v1, v2, v0}, Lvf5;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final e(Lejb;Ljava/lang/String;Z)V
+    .registers 7
+
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Litc;
+
+    :try_start_0
+    invoke-interface {v0, p1, p2, p3}, Lhjb;->e(Lejb;Ljava/lang/String;Z)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ForwardingRequestListener2"
+
+    const-string v2, "InternalListener exception in onProducerFinishWithSuccess"
+
+    invoke-static {v1, v2, v0}, Lvf5;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final f(Lejb;Ljava/lang/Throwable;)V
+    .registers 6
+
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Litc;
+
+    :try_start_0
+    invoke-interface {v0, p1, p2}, Litc;->f(Lejb;Ljava/lang/Throwable;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ForwardingRequestListener2"
+
+    const-string v2, "InternalListener exception in onRequestFailure"
+
+    invoke-static {v1, v2, v0}, Lvf5;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final g(Lejb;)V
+    .registers 5
+
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Litc;
+
+    :try_start_0
+    invoke-interface {v0, p1}, Litc;->g(Lejb;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ForwardingRequestListener2"
+
+    const-string v2, "InternalListener exception in onRequestSuccess"
+
+    invoke-static {v1, v2, v0}, Lvf5;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final h(Lejb;)V
+    .registers 5
+
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Litc;
+
+    :try_start_0
+    invoke-interface {v0, p1}, Litc;->h(Lejb;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ForwardingRequestListener2"
+
+    const-string v2, "InternalListener exception in onRequestCancellation"
+
+    invoke-static {v1, v2, v0}, Lvf5;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final i(Lejb;Ljava/lang/String;)Z
+    .registers 4
+
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_1
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Litc;
+
+    invoke-interface {v0, p1, p2}, Lhjb;->i(Lejb;Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_2
+    :goto_0
+    const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final close()V
-    .registers 1
+.method public final j(Lejb;Ljava/lang/String;)V
+    .registers 6
 
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->close()V
-
-    return-void
-.end method
-
-.method public final f0()Z
-    .registers 1
-
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->isWriteAheadLoggingEnabled()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final v()V
-    .registers 1
-
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
-
-    return-void
-.end method
-
-.method public final x(Lshe;)Landroid/database/Cursor;
-    .registers 5
-
-    new-instance v0, Li76;
-
-    invoke-direct {v0, p1}, Li76;-><init>(Lshe;)V
-
-    new-instance v1, Lh76;
-
-    invoke-direct {v1, v0}, Lh76;-><init>(Li76;)V
-
-    invoke-interface {p1}, Lshe;->m()Ljava/lang/String;
-
-    move-result-object p1
-
-    sget-object v0, Lj76;->c:[Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
-
-    invoke-virtual {p0, v1, p1, v0, v2}, Landroid/database/sqlite/SQLiteDatabase;->rawQueryWithFactory(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    return-object p0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Litc;
+
+    :try_start_0
+    invoke-interface {v0, p1, p2}, Lhjb;->j(Lejb;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ForwardingRequestListener2"
+
+    const-string v2, "InternalListener exception in onProducerStart"
+
+    invoke-static {v1, v2, v0}, Lvf5;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method
 
-.method public final z(Ljava/lang/String;)V
-    .registers 2
+.method public final k(Lejb;Ljava/lang/String;)V
+    .registers 6
 
-    iget-object p0, p0, Lj76;->a:Landroid/database/sqlite/SQLiteDatabase;
+    iget-object p0, p0, Lj76;->a:Ljava/util/ArrayList;
 
-    invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Litc;
+
+    :try_start_0
+    invoke-interface {v0, p1, p2}, Lhjb;->k(Lejb;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    const-string v1, "ForwardingRequestListener2"
+
+    const-string v2, "InternalListener exception in onProducerFinishWithCancellation"
+
+    invoke-static {v1, v2, v0}, Lvf5;->c(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
     return-void
 .end method

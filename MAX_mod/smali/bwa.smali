@@ -1,35 +1,68 @@
 .class public final Lbwa;
-.super Ljava/lang/Object;
+.super Lawa;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lxh7;
-
-
-# direct methods
-.method public constructor <init>(Lxh7;)V
+# virtual methods
+.method public final a()Ljava/lang/Object;
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object p0, p0, Lawa;->a:Ljava/lang/Object;
 
-    iput-object p1, p0, Lbwa;->a:Lxh7;
+    instance-of v0, p0, Landroid/hardware/camera2/params/OutputConfiguration;
+
+    invoke-static {v0}, Ln4e;->i(Z)V
+
+    return-object p0
+.end method
+
+.method public final c(J)V
+    .registers 3
+
+    invoke-virtual {p0}, Lbwa;->a()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/hardware/camera2/params/OutputConfiguration;
+
+    invoke-virtual {p0, p1, p2}, Landroid/hardware/camera2/params/OutputConfiguration;->setDynamicRangeProfile(J)V
 
     return-void
 .end method
 
+.method public final d(I)V
+    .registers 2
 
-# virtual methods
-.method public final a()Lmwa;
-    .registers 1
-
-    iget-object p0, p0, Lbwa;->a:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lbwa;->a()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lmwa;
+    check-cast p0, Landroid/hardware/camera2/params/OutputConfiguration;
 
-    return-object p0
+    invoke-virtual {p0, p1}, Landroid/hardware/camera2/params/OutputConfiguration;->setMirrorMode(I)V
+
+    return-void
+.end method
+
+.method public final e(J)V
+    .registers 5
+
+    const-wide/16 v0, -0x1
+
+    cmp-long v0, p1, v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Lbwa;->a()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/hardware/camera2/params/OutputConfiguration;
+
+    invoke-virtual {p0, p1, p2}, Landroid/hardware/camera2/params/OutputConfiguration;->setStreamUseCase(J)V
+
+    return-void
 .end method

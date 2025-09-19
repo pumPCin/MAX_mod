@@ -1,47 +1,52 @@
 .class public final Lg4a;
-.super Ley4;
+.super Ljava/net/ProxySelector;
 .source "SourceFile"
 
 
-# instance fields
-.field public final r0:Lu38;
-
-.field public final s0:F
+# static fields
+.field public static final a:Lg4a;
 
 
 # direct methods
-.method public constructor <init>(Lu38;F)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lg4a;
 
-    iput-object p1, p0, Lg4a;->r0:Lu38;
+    invoke-direct {v0}, Ljava/net/ProxySelector;-><init>()V
 
-    iput p2, p0, Lg4a;->s0:F
+    sput-object v0, Lg4a;->a:Lg4a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final q()Z
-    .registers 1
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final x(FFFLjnd;)V
-    .registers 6
-
-    iget v0, p0, Lg4a;->s0:F
-
-    sub-float/2addr p2, v0
-
-    iget-object p0, p0, Lg4a;->r0:Lu38;
-
-    invoke-virtual {p0, p1, p2, p3, p4}, Lu38;->x(FFFLjnd;)V
+.method public final connectFailed(Ljava/net/URI;Ljava/net/SocketAddress;Ljava/io/IOException;)V
+    .registers 4
 
     return-void
+.end method
+
+.method public final select(Ljava/net/URI;)Ljava/util/List;
+    .registers 2
+
+    if-eqz p1, :cond_0
+
+    sget-object p0, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
+
+    invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "uri must not be null"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

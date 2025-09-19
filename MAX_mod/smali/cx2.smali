@@ -1,109 +1,104 @@
-.class public final enum Lcx2;
-.super Ljava/lang/Enum;
+.class public final Lcx2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ldef;
 
-# static fields
-.field public static final enum X:Lcx2;
 
-.field public static final synthetic Y:[Lcx2;
+# instance fields
+.field public final synthetic a:Landroid/view/View;
 
-.field public static final enum a:Lcx2;
+.field public final synthetic b:Ldx2;
 
-.field public static final enum b:Lcx2;
-
-.field public static final enum c:Lcx2;
-
-.field public static final enum o:Lcx2;
+.field public final synthetic c:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public constructor <init>(Landroid/view/View;Ldx2;Z)V
+    .registers 4
 
-    new-instance v0, Lcx2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "LOADING"
+    iput-object p1, p0, Lcx2;->a:Landroid/view/View;
 
-    const/4 v2, 0x0
+    iput-object p2, p0, Lcx2;->b:Ldx2;
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lcx2;->a:Lcx2;
-
-    new-instance v1, Lcx2;
-
-    const-string v2, "LOADING_NEXT_PAGE"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lcx2;->b:Lcx2;
-
-    new-instance v2, Lcx2;
-
-    const-string v3, "IDLE_SEARCH"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lcx2;->c:Lcx2;
-
-    new-instance v3, Lcx2;
-
-    const-string v4, "SEARCH_RESULT"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lcx2;->o:Lcx2;
-
-    new-instance v4, Lcx2;
-
-    const-string v5, "EMPTY_SEARCH_RESULT"
-
-    const/4 v6, 0x4
-
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v4, Lcx2;->X:Lcx2;
-
-    filled-new-array {v0, v1, v2, v3, v4}, [Lcx2;
-
-    move-result-object v0
-
-    sput-object v0, Lcx2;->Y:[Lcx2;
+    iput-boolean p3, p0, Lcx2;->c:Z
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lcx2;
-    .registers 2
 
-    const-class v0, Lcx2;
+# virtual methods
+.method public final a(Lfef;)V
+    .registers 3
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget-object p1, p0, Lcx2;->a:Landroid/view/View;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lcx2;->b:Ldx2;
+
+    iget-object v0, v0, Ldx2;->w0:Ljava/lang/String;
+
+    invoke-static {p1, v0}, Lw48;->m(Landroid/view/View;Ljava/lang/String;)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Ldsa;
+
+    iget-boolean p0, p0, Lcx2;->c:Z
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p1}, Ldsa;->getSearchView()Lxna;
 
     move-result-object p0
 
-    check-cast p0, Lcx2;
+    if-eqz p0, :cond_2
 
-    return-object p0
+    invoke-virtual {p0}, Lxna;->d()V
+
+    return-void
+
+    :cond_1
+    invoke-virtual {p1}, Ldsa;->getSearchView()Lxna;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_2
+
+    invoke-virtual {p0}, Lxna;->b()V
+
+    :cond_2
+    :goto_0
+    return-void
 .end method
 
-.method public static values()[Lcx2;
+.method public final b()V
     .registers 1
 
-    sget-object v0, Lcx2;->Y:[Lcx2;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+.method public final c(Lfef;)V
+    .registers 2
 
-    move-result-object v0
+    return-void
+.end method
 
-    check-cast v0, [Lcx2;
+.method public final f()V
+    .registers 1
 
-    return-object v0
+    return-void
+.end method
+
+.method public final h(Lfef;)V
+    .registers 2
+
+    return-void
 .end method

@@ -1,82 +1,244 @@
 .class public final Lgr;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ljava/util/Collection;
+.implements Lmi7;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:[Ljava/lang/Object;
 
-.field public final synthetic Y:Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>([Ljava/lang/Object;Z)V
     .registers 3
 
-    iput-object p1, p0, Lgr;->Y:Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lgr;->a:[Ljava/lang/Object;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-boolean p2, p0, Lgr;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final add(Ljava/lang/Object;)Z
+    .registers 2
 
-    check-cast p1, Ljava/util/List;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const-string p1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {p0, p1, p2}, Lgr;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result-object p0
-
-    check-cast p0, Lgr;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lgr;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    throw p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public final addAll(Ljava/util/Collection;)Z
+    .registers 2
 
-    new-instance v0, Lgr;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    iget-object p0, p0, Lgr;->Y:Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;
+    const-string p1, "Operation is not supported for read-only collection"
 
-    invoke-direct {v0, p0, p2}, Lgr;-><init>(Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    iput-object p1, v0, Lgr;->X:Ljava/lang/Object;
+    throw p0
+.end method
+
+.method public final clear()V
+    .registers 2
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v0, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .registers 2
+
+    iget-object p0, p0, Lgr;->a:[Ljava/lang/Object;
+
+    invoke-static {p0, p1}, Lxr;->F([Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final containsAll(Ljava/util/Collection;)Z
+    .registers 5
+
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_0
+
+    return v1
+
+    :cond_0
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lgr;->a:[Ljava/lang/Object;
+
+    invoke-static {v2, v0}, Lxr;->F([Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_2
+    return v1
+.end method
+
+.method public final isEmpty()Z
+    .registers 1
+
+    iget-object p0, p0, Lgr;->a:[Ljava/lang/Object;
+
+    array-length p0, p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .registers 3
+
+    new-instance v0, Lw1;
+
+    const/4 v1, 0x2
+
+    iget-object p0, p0, Lgr;->a:[Ljava/lang/Object;
+
+    invoke-direct {v0, v1, p0}, Lw1;-><init>(ILjava/lang/Object;)V
 
     return-object v0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final remove(Ljava/lang/Object;)Z
     .registers 2
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    iget-object p1, p0, Lgr;->X:Ljava/lang/Object;
+    const-string p1, "Operation is not supported for read-only collection"
 
-    check-cast p1, Ljava/util/List;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lgr;->Y:Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;
+    throw p0
+.end method
 
-    iget-object p0, p0, Lone/me/appearancesettings/singletheme/AppearanceSettingsScreen;->X:Luy5;
+.method public final removeAll(Ljava/util/Collection;)Z
+    .registers 2
 
-    invoke-virtual {p0, p1}, Lhp7;->E(Ljava/util/List;)V
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    sget-object p0, Lncf;->a:Lncf;
+    const-string p1, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final retainAll(Ljava/util/Collection;)Z
+    .registers 2
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string p1, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final size()I
+    .registers 1
+
+    iget-object p0, p0, Lgr;->a:[Ljava/lang/Object;
+
+    array-length p0, p0
+
+    return p0
+.end method
+
+.method public final toArray()[Ljava/lang/Object;
+    .registers 3
+
+    iget-object v0, p0, Lgr;->a:[Ljava/lang/Object;
+
+    iget-boolean p0, p0, Lgr;->b:Z
+
+    const-class v1, [Ljava/lang/Object;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    array-length p0, v0
+
+    invoke-static {v0, p0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .registers 2
+
+    invoke-static {p0, p1}, Lqe5;->X(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p0
 
     return-object p0
 .end method

@@ -1,101 +1,124 @@
 .class public final Lstf;
-.super Ljava/lang/Object;
+.super Leh;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
-
-
-# instance fields
-.field public final synthetic a:Lone/me/chatscreen/videomsg/VideoMessageWidget;
-
-.field public final synthetic b:Z
-
-.field public final synthetic c:Z
 
 
 # direct methods
-.method public constructor <init>(Lone/me/chatscreen/videomsg/VideoMessageWidget;ZZ)V
+.method public constructor <init>()V
+    .registers 2
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Leh;-><init>(I)V
+
+    return-void
+.end method
+
+.method public constructor <init>(I)V
     .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-wide/16 v0, 0xc8
 
-    iput-object p1, p0, Lstf;->a:Lone/me/chatscreen/videomsg/VideoMessageWidget;
+    const/4 p1, 0x2
 
-    iput-boolean p2, p0, Lstf;->b:Z
-
-    iput-boolean p3, p0, Lstf;->c:Z
+    invoke-direct {p0, v0, v1, p1}, Leh;-><init>(JI)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .registers 2
+.method public final b()Lcy3;
+    .registers 4
 
-    return-void
+    new-instance v0, Lstf;
+
+    iget-wide v1, p0, Leh;->o:J
+
+    iget-boolean p0, p0, Leh;->t0:Z
+
+    invoke-direct {v0, v1, v2, p0}, Leh;-><init>(JZ)V
+
+    return-object v0
 .end method
 
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .registers 2
+.method public final l(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/View;ZZ)Landroid/animation/AnimatorSet;
+    .registers 8
 
-    return-void
-.end method
+    new-instance p0, Landroid/animation/AnimatorSet;
 
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
-    .registers 2
+    invoke-direct {p0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    return-void
-.end method
+    new-instance p1, Ljava/util/ArrayList;
 
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .registers 6
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    sget-object p1, Lone/me/chatscreen/videomsg/VideoMessageWidget;->B0:[Lsf7;
+    const/4 p5, 0x1
 
-    iget-object p1, p0, Lstf;->a:Lone/me/chatscreen/videomsg/VideoMessageWidget;
+    const/4 v0, 0x0
 
-    invoke-virtual {p1}, Lone/me/chatscreen/videomsg/VideoMessageWidget;->E0()Landroid/widget/ImageView;
+    if-eqz p4, :cond_0
 
-    move-result-object v0
+    if-eqz p3, :cond_0
 
-    iget-boolean v1, p0, Lstf;->b:Z
+    sget-object p2, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
-    const/16 v2, 0x8
+    invoke-virtual {p3}, Landroid/view/View;->getHeight()I
 
-    const/4 v3, 0x0
+    move-result p4
 
-    if-eqz v1, :cond_0
+    int-to-float p4, p4
 
-    move v1, v3
+    const/4 v1, 0x2
+
+    new-array v1, v1, [F
+
+    aput p4, v1, v0
+
+    const/4 p4, 0x0
+
+    aput p4, v1, p5
+
+    invoke-static {p3, p2, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_0
-    move v1, v2
+    if-nez p4, :cond_1
 
-    :goto_0
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    if-eqz p2, :cond_1
 
-    invoke-virtual {p1}, Lone/me/chatscreen/videomsg/VideoMessageWidget;->B0()Landroid/widget/ImageView;
+    sget-object p3, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
-    move-result-object v0
+    invoke-virtual {p2}, Landroid/view/View;->getHeight()I
 
-    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
+    move-result p4
 
-    invoke-virtual {p1}, Lone/me/chatscreen/videomsg/VideoMessageWidget;->D0()Landroid/widget/TextView;
+    int-to-float p4, p4
 
-    move-result-object p1
+    new-array p5, p5, [F
 
-    iget-boolean p0, p0, Lstf;->c:Z
+    aput p4, p5, v0
 
-    if-eqz p0, :cond_1
+    invoke-static {p2, p3, p5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move v2, v3
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_1
-    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
+    :goto_0
+    invoke-virtual {p0, p1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
+
+    return-object p0
+.end method
+
+.method public final n(Landroid/view/View;)V
+    .registers 2
 
     return-void
 .end method

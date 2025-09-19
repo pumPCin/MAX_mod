@@ -1,27 +1,44 @@
 .class public final Lwta;
-.super Lpoe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Comparable;
 
-# static fields
-.field public static final o:Lwta;
+
+# instance fields
+.field public final a:I
+
+.field public final b:Lbsg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public constructor <init>(ILbsg;)V
+    .registers 3
 
-    new-instance v0, Lwta;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Landroid/graphics/Path$FillType;->WINDING:Landroid/graphics/Path$FillType;
+    iput p1, p0, Lwta;->a:I
 
-    const/16 v2, 0xa
-
-    const-string v3, "fillType"
-
-    invoke-direct {v0, v3, v2, v1}, Lpoe;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    sput-object v0, Lwta;->o:Lwta;
+    iput-object p2, p0, Lwta;->b:Lbsg;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final compareTo(Ljava/lang/Object;)I
+    .registers 2
+
+    check-cast p1, Lwta;
+
+    iget p0, p0, Lwta;->a:I
+
+    iget p1, p1, Lwta;->a:I
+
+    invoke-static {p0, p1}, Ljava/lang/Integer;->compare(II)I
+
+    move-result p0
+
+    return p0
 .end method

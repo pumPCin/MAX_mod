@@ -1,59 +1,100 @@
 .class public final Lxye;
-.super Lcx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lvye;
 
 
 # instance fields
-.field public X:Ljava/lang/Object;
+.field public final a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public Y:Ljava/lang/Object;
-
-.field public Z:Ljavax/net/ssl/SSLEngine;
-
-.field public n0:Lyye;
-
-.field public o:Ljava/lang/Object;
-
-.field public synthetic o0:Ljava/lang/Object;
-
-.field public final synthetic p0:Lyye;
-
-.field public q0:I
+.field public final synthetic b:Lf12;
 
 
 # direct methods
-.method public constructor <init>(Lyye;Lcx3;)V
+.method public constructor <init>(Lf12;)V
     .registers 3
 
-    iput-object p1, p0, Lxye;->p0:Lyye;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lxye;->b:Lf12;
+
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object p1, p0, Lxye;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final e(Lsxe;)V
+    .registers 5
 
-    iput-object p1, p0, Lxye;->o0:Ljava/lang/Object;
+    iget-object v0, p0, Lxye;->b:Lf12;
 
-    iget p1, p0, Lxye;->q0:I
+    invoke-virtual {v0}, Lf12;->r()Z
 
-    const/high16 v0, -0x80000000
+    move-result v1
 
-    or-int/2addr p1, v0
+    if-eqz v1, :cond_0
 
-    iput p1, p0, Lxye;->q0:I
+    const/4 v1, 0x0
 
-    iget-object p1, p0, Lxye;->p0:Lyye;
+    const/4 v2, 0x1
 
-    const/4 v0, 0x0
+    iget-object p0, p0, Lxye;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {p1, v0, p0}, Lyye;->b(Ljava/lang/String;Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    move-result-object p0
+    move-result p0
 
-    return-object p0
+    if-eqz p0, :cond_0
+
+    invoke-virtual {v0, p1}, Lf12;->resumeWith(Ljava/lang/Object;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final j(Lcxe;)V
+    .registers 5
+
+    iget-object v0, p0, Lxye;->b:Lf12;
+
+    invoke-virtual {v0}, Lf12;->r()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    iget-object p0, p0, Lxye;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {p0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    new-instance p0, Lru/ok/tamtam/errors/TamErrorException;
+
+    invoke-direct {p0, p1}, Lru/ok/tamtam/errors/TamErrorException;-><init>(Lcxe;)V
+
+    new-instance p1, Lhvc;
+
+    invoke-direct {p1, p0}, Lhvc;-><init>(Ljava/lang/Throwable;)V
+
+    invoke-virtual {v0, p1}, Lf12;->resumeWith(Ljava/lang/Object;)V
+
+    :cond_0
+    return-void
 .end method

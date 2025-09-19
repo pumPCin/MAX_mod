@@ -1,100 +1,157 @@
-.class public final Lxka;
+.class public abstract Lxka;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lzka;
-
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lxka;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final a:I
 
-.field public static final a:Lxka;
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
+.field public static final s:I
+
+.field public static final t:I
+
+.field public static final u:I
+
+.field public static final v:I
+
+.field public static final w:I
+
+.field public static final x:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Lxka;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lxka;->a:Lxka;
-
-    new-instance v0, Lif9;
-
-    const/16 v1, 0x16
-
-    invoke-direct {v0, v1}, Lif9;-><init>(I)V
-
-    sput-object v0, Lxka;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final describeContents()I
     .registers 1
 
-    const/4 p0, 0x0
+    sget v0, Lr6c;->oneme_notifications_settings_chat_enable_notifications_button:I
 
-    return p0
-.end method
+    sput v0, Lxka;->a:I
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    sget v0, Lr6c;->oneme_notifications_settings_chat_linearlayout:I
 
-    const/4 v0, 0x1
+    sput v0, Lxka;->b:I
 
-    if-ne p0, p1, :cond_0
+    sget v0, Lr6c;->oneme_notifications_settings_chat_recycler_view:I
 
-    return v0
+    sput v0, Lxka;->c:I
 
-    :cond_0
-    instance-of p0, p1, Lxka;
+    sget v0, Lr6c;->oneme_notifications_settings_chat_settings_button:I
 
-    if-nez p0, :cond_1
+    sput v0, Lxka;->d:I
 
-    const/4 p0, 0x0
+    sget v0, Lr6c;->oneme_notifications_settings_chat_toolbar:I
 
-    return p0
+    sput v0, Lxka;->e:I
 
-    :cond_1
-    return v0
-.end method
+    sget v0, Lr6c;->oneme_notifications_settings_chat_type_all_button:I
 
-.method public final hashCode()I
-    .registers 1
+    sput v0, Lxka;->f:I
 
-    const p0, -0x472bda66
+    sget v0, Lr6c;->oneme_notifications_settings_chat_type_pin_reply_button:I
 
-    return p0
-.end method
+    sput v0, Lxka;->g:I
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    sget v0, Lr6c;->oneme_notifications_settings_dialog_enable_notifications_button:I
 
-    const-string p0, "Empty"
+    sput v0, Lxka;->h:I
 
-    return-object p0
-.end method
+    sget v0, Lr6c;->oneme_notifications_settings_dialog_linearlayout:I
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    sput v0, Lxka;->i:I
 
-    const/4 p0, 0x1
+    sget v0, Lr6c;->oneme_notifications_settings_dialog_recycler_view:I
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    sput v0, Lxka;->j:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_dialog_settings_button:I
+
+    sput v0, Lxka;->k:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_dialog_toolbar:I
+
+    sput v0, Lxka;->l:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_enable_all_notifications_button:I
+
+    sput v0, Lxka;->m:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_linearlayout:I
+
+    sput v0, Lxka;->n:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_open_settings_button:I
+
+    sput v0, Lxka;->o:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_other_linearlayout:I
+
+    sput v0, Lxka;->p:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_other_new_user_button:I
+
+    sput v0, Lxka;->q:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_other_recycler_view:I
+
+    sput v0, Lxka;->r:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_other_settings_button:I
+
+    sput v0, Lxka;->s:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_other_toolbar:I
+
+    sput v0, Lxka;->t:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_recycler_view:I
+
+    sput v0, Lxka;->u:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_reset_default_button:I
+
+    sput v0, Lxka;->v:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_show_content_button:I
+
+    sput v0, Lxka;->w:I
+
+    sget v0, Lr6c;->oneme_notifications_settings_toolbar:I
+
+    sput v0, Lxka;->x:I
 
     return-void
 .end method

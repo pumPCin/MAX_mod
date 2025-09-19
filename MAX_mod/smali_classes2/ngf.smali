@@ -1,89 +1,78 @@
-.class public final synthetic Lngf;
-.super Ljava/lang/Object;
+.class public final Lngf;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Ljc3;
-.implements Lq68;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:Logf;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lpef;
+.field public final synthetic Y:Lqkf;
 
 
 # direct methods
-.method public synthetic constructor <init>(Logf;Lpef;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lqkf;)V
     .registers 3
 
-    iput-object p1, p0, Lngf;->a:Logf;
+    iput-object p2, p0, Lngf;->Y:Lqkf;
 
-    iput-object p2, p0, Lngf;->b:Lpef;
+    const/4 p2, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b(Ly58;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-object v0, p0, Lngf;->a:Logf;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, v0, Logf;->b:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/Map;
-
-    iget-object p0, p0, Lngf;->b:Lpef;
-
-    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lngf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    check-cast p0, Lhef;
+    check-cast p0, Lngf;
 
-    if-eqz p0, :cond_0
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-virtual {p1}, Ly58;->h()Z
+    invoke-virtual {p0, p1}, Lngf;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p1, p0}, Ly58;->a(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p1}, Ly58;->h()Z
-
-    move-result p0
-
-    if-nez p0, :cond_1
-
-    invoke-virtual {p1}, Ly58;->b()V
-
-    :cond_1
-    return-void
+    return-object p1
 .end method
 
-.method public c(Lac3;)V
-    .registers 3
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    iget-object v0, p0, Lngf;->a:Logf;
+    new-instance v0, Lngf;
 
-    iget-object v0, v0, Logf;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lngf;->Y:Lqkf;
 
-    check-cast v0, Ljava/util/Map;
+    invoke-direct {v0, p2, p0}, Lngf;-><init>(Lkotlin/coroutines/Continuation;Lqkf;)V
 
-    iget-object p0, p0, Lngf;->b:Lpef;
+    iput-object p1, v0, Lngf;->X:Ljava/lang/Object;
 
-    invoke-interface {v0, p0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    return-object v0
+.end method
 
-    invoke-virtual {p1}, Lac3;->b()V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    return-void
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lngf;->X:Ljava/lang/Object;
+
+    check-cast p1, Lnkf;
+
+    iget-object p0, p0, Lngf;->Y:Lqkf;
+
+    invoke-virtual {p0, p1}, Lqkf;->f(Lnkf;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

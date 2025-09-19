@@ -1,9 +1,19 @@
 .class public final Lcpg;
-.super Ljava/lang/Object;
+.super Lgpg;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:I
+.field public final a:Z
 
-.field public b:D
+
+# direct methods
+.method public constructor <init>(Z)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Throwable;-><init>()V
+
+    iput-boolean p1, p0, Lcpg;->a:Z
+
+    return-void
+.end method

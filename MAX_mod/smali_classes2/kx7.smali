@@ -1,15 +1,3 @@
-.class public abstract Lkx7;
-.super Lf65;
+.class public final Lkx7;
+.super Lmx7;
 .source "SourceFile"
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 3
-
-    sget-object v0, Lncf;->a:Lncf;
-
-    invoke-direct {p0, v0, p1}, Lf65;-><init>(Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    return-void
-.end method

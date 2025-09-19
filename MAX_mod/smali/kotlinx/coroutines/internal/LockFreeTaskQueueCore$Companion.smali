@@ -36,7 +36,7 @@
         "Lkotlin/Function2;",
         "block",
         "withState",
-        "(JLx96;)Ljava/lang/Object;",
+        "(JLpc6;)Ljava/lang/Object;",
         "addFailReason",
         "(J)I",
         "INITIAL_CAPACITY",
@@ -80,7 +80,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lwc4;)V
+.method public synthetic constructor <init>(Lld4;)V
     .registers 2
 
     invoke-direct {p0}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;-><init>()V
@@ -149,14 +149,14 @@
     return-wide p0
 .end method
 
-.method public final withState(JLx96;)Ljava/lang/Object;
+.method public final withState(JLpc6;)Ljava/lang/Object;
     .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(J",
-            "Lx96;",
+            "Lpc6;",
             ")TT;"
         }
     .end annotation
@@ -185,7 +185,7 @@
 
     move-result-object p1
 
-    invoke-interface {p3, p0, p1}, Lx96;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0, p1}, Lpc6;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 

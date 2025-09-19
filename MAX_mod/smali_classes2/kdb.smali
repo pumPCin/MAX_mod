@@ -1,51 +1,11 @@
-.class public final Lkdb;
-.super Lcx3;
+.class public interface abstract Lkdb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Lf38;
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lf38;
-
-.field public n0:I
-
-.field public o:Lf38;
-
-
-# direct methods
-.method public constructor <init>(Lf38;Lcx3;)V
-    .registers 3
-
-    iput-object p1, p0, Lkdb;->Z:Lf38;
-
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
+# virtual methods
+.method public abstract a(Ld4g;)V
 .end method
 
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iput-object p1, p0, Lkdb;->Y:Ljava/lang/Object;
-
-    iget p1, p0, Lkdb;->n0:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lkdb;->n0:I
-
-    iget-object p1, p0, Lkdb;->Z:Lf38;
-
-    invoke-virtual {p1, p0}, Lf38;->b(Lcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+.method public abstract get()Ld4g;
 .end method

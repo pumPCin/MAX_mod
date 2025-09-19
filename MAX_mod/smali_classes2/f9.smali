@@ -1,26 +1,26 @@
 .class public final Lf9;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
 .field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Lone/me/sdk/uikit/common/button/OneMeButton;
+.field public final synthetic Y:Lone/me/profile/screens/addadmins/AddChatAdminsScreen;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/sdk/uikit/common/button/OneMeButton;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/profile/screens/addadmins/AddChatAdminsScreen;)V
     .registers 3
 
-    iput-object p1, p0, Lf9;->Y:Lone/me/sdk/uikit/common/button/OneMeButton;
+    iput-object p2, p0, Lf9;->Y:Lone/me/profile/screens/addadmins/AddChatAdminsScreen;
 
-    const/4 p1, 0x2
+    const/4 p2, 0x2
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -30,8 +30,6 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Ljava/util/Set;
-
     check-cast p2, Lkotlin/coroutines/Continuation;
 
     invoke-virtual {p0, p1, p2}, Lf9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -40,7 +38,7 @@
 
     check-cast p0, Lf9;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lf9;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -52,9 +50,9 @@
 
     new-instance v0, Lf9;
 
-    iget-object p0, p0, Lf9;->Y:Lone/me/sdk/uikit/common/button/OneMeButton;
+    iget-object p0, p0, Lf9;->Y:Lone/me/profile/screens/addadmins/AddChatAdminsScreen;
 
-    invoke-direct {v0, p0, p2}, Lf9;-><init>(Lone/me/sdk/uikit/common/button/OneMeButton;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p2, p0}, Lf9;-><init>(Lkotlin/coroutines/Continuation;Lone/me/profile/screens/addadmins/AddChatAdminsScreen;)V
 
     iput-object p1, v0, Lf9;->X:Ljava/lang/Object;
 
@@ -62,43 +60,62 @@
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .registers 8
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lf9;->X:Ljava/lang/Object;
 
-    check-cast p1, Ljava/util/Set;
+    check-cast p1, Lnu8;
 
-    invoke-interface {p1}, Ljava/util/Set;->size()I
+    instance-of v0, p1, Lju8;
 
-    move-result p1
+    sget-object v1, Lylf;->a:Lylf;
 
-    iget-object p0, p0, Lf9;->Y:Lone/me/sdk/uikit/common/button/OneMeButton;
+    if-eqz v0, :cond_0
 
-    if-nez p1, :cond_0
+    sget-object v0, Lltb;->c:Lltb;
 
-    const/16 p1, 0x8
+    sget-object v2, Lone/me/profile/screens/addadmins/AddChatAdminsScreen;->w0:[Lxi7;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    iget-object p0, p0, Lf9;->Y:Lone/me/profile/screens/addadmins/AddChatAdminsScreen;
 
-    goto :goto_0
+    invoke-virtual {p0}, Lone/me/profile/screens/addadmins/AddChatAdminsScreen;->y0()J
 
-    :cond_0
+    move-result-wide v2
+
+    check-cast p1, Lju8;
+
+    iget-wide p0, p1, Lju8;->a:J
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, ":profile/edit/admin_permission?chat_id="
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v2, "&contact_id="
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "&permissions_type=setup_new_admin"
+
+    invoke-static {v4, p0, p1, v2}, Lyv7;->j(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0}, Lx2;->F0()Lza4;
+
+    move-result-object p1
+
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, p0, v0}, Lza4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
 
-    new-instance v0, Ljava/lang/Integer;
-
-    invoke-direct {v0, p1}, Ljava/lang/Integer;-><init>(I)V
-
-    const/4 p1, 0x1
-
-    invoke-virtual {p0, v0, p1}, Lone/me/sdk/uikit/common/button/OneMeButton;->c(Ljava/lang/Integer;Z)V
-
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    :cond_0
+    return-object v1
 .end method

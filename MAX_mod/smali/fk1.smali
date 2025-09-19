@@ -1,10 +1,10 @@
 .class public final Lfk1;
-.super Lvk1;
+.super Lso;
 .source "SourceFile"
 
 
 # static fields
-.field public static final D:Lfk1;
+.field public static final a:Lfk1;
 
 
 # direct methods
@@ -13,49 +13,45 @@
 
     new-instance v0, Lfk1;
 
-    invoke-direct {v0}, Lvk1;-><init>()V
+    invoke-direct {v0}, Lso;-><init>()V
 
-    sput-object v0, Lfk1;->D:Lfk1;
+    sput-object v0, Lfk1;->a:Lfk1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final b()Lot1;
+    .registers 2
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
-    if-ne p0, p1, :cond_0
+    move-result-object p0
 
-    return v0
+    const-class v0, Lot1;
 
-    :cond_0
-    instance-of p0, p1, Lfk1;
+    invoke-virtual {p0, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    if-nez p0, :cond_1
+    move-result-object p0
 
-    const/4 p0, 0x0
+    check-cast p0, Lot1;
 
-    return p0
-
-    :cond_1
-    return v0
+    return-object p0
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final c()Lcl7;
+    .registers 2
 
-    const p0, -0x460cc81d
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
-    return p0
-.end method
+    move-result-object p0
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    const-class v0, Lqa1;
 
-    const-string p0, "OpenAddUserChatConfirmation"
+    invoke-virtual {p0, v0}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object p0
 
     return-object p0
 .end method

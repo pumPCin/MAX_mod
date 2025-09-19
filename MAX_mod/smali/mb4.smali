@@ -1,23 +1,48 @@
-.class public abstract Lmb4;
+.class public final synthetic Lmb4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpt7;
+
+
+# instance fields
+.field public final synthetic a:Lfd;
+
+.field public final synthetic b:Z
+
+.field public final synthetic c:I
+
 
 # direct methods
-.method public static a(Landroid/media/AudioTrack;Lr30;)V
-    .registers 2
+.method public synthetic constructor <init>(Lfd;ZI)V
+    .registers 4
 
-    if-nez p1, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x0
+    iput-object p1, p0, Lmb4;->a:Lfd;
 
-    goto :goto_0
+    iput-boolean p2, p0, Lmb4;->b:Z
 
-    :cond_0
-    iget-object p1, p1, Lr30;->a:Landroid/media/AudioDeviceInfo;
+    iput p3, p0, Lmb4;->c:I
 
-    :goto_0
-    invoke-virtual {p0, p1}, Landroid/media/AudioTrack;->setPreferredDevice(Landroid/media/AudioDeviceInfo;)Z
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)V
+    .registers 4
+
+    iget v0, p0, Lmb4;->c:I
+
+    check-cast p1, Lgd;
+
+    iget-object v1, p0, Lmb4;->a:Lfd;
+
+    iget-boolean p0, p0, Lmb4;->b:Z
+
+    invoke-interface {p1, v1, p0, v0}, Lgd;->K0(Lfd;ZI)V
 
     return-void
 .end method

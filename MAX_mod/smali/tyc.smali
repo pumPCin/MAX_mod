@@ -1,73 +1,33 @@
-.class public final enum Ltyc;
-.super Ljava/lang/Enum;
+.class public final Ltyc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Ltyc;
+# instance fields
+.field public final a:Lbx1;
 
-.field public static final enum b:Ltyc;
+.field public final b:Ljava/util/concurrent/Executor;
 
-.field public static final synthetic c:[Ltyc;
+.field public final c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public constructor <init>(Lbx1;Lxo6;)V
+    .registers 3
 
-    new-instance v0, Ltyc;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "PREVIEW_VIEW"
+    iput-object p1, p0, Ltyc;->a:Lbx1;
 
-    const/4 v2, 0x0
+    iput-object p2, p0, Ltyc;->b:Ljava/util/concurrent/Executor;
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    sput-object v0, Ltyc;->a:Ltyc;
+    const/4 p2, 0x1
 
-    new-instance v1, Ltyc;
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    const-string v2, "SCREEN_FLASH_VIEW"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ltyc;->b:Ltyc;
-
-    filled-new-array {v0, v1}, [Ltyc;
-
-    move-result-object v0
-
-    sput-object v0, Ltyc;->c:[Ltyc;
+    iput-object p1, p0, Ltyc;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Ltyc;
-    .registers 2
-
-    const-class v0, Ltyc;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Ltyc;
-
-    return-object p0
-.end method
-
-.method public static values()[Ltyc;
-    .registers 1
-
-    sget-object v0, Ltyc;->c:[Ltyc;
-
-    invoke-virtual {v0}, [Ltyc;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ltyc;
-
-    return-object v0
 .end method

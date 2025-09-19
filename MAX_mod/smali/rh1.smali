@@ -1,200 +1,101 @@
 .class public final Lrh1;
-.super Ls2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic c:I
-
-.field public final synthetic o:Lsh1;
+.field public final a:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method public constructor <init>(Lsh1;I)V
-    .registers 3
+.method public constructor <init>(Ljava/lang/CharSequence;)V
+    .registers 2
 
-    iput p2, p0, Lrh1;->c:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lrh1;->o:Lsh1;
-
-    const/16 p1, 0x9
-
-    packed-switch p2, :pswitch_data_0
-
-    const/4 p2, 0x0
-
-    invoke-direct {p0, p1, p2}, Ls2;-><init>(ILjava/lang/Object;)V
-
-    return-void
-
-    :pswitch_0
-    sget-object p2, Lph1;->a:Lph1;
-
-    invoke-direct {p0, p1, p2}, Ls2;-><init>(ILjava/lang/Object;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public constructor <init>(Lu3b;Lsh1;)V
-    .registers 4
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Lrh1;->c:I
-
-    iput-object p2, p0, Lrh1;->o:Lsh1;
-
-    const/16 p2, 0x9
-
-    invoke-direct {p0, p2, p1}, Ls2;-><init>(ILjava/lang/Object;)V
+    iput-object p1, p0, Lrh1;->a:Ljava/lang/CharSequence;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final equals(Ljava/lang/Object;)Z
     .registers 5
 
-    iget v0, p0, Lrh1;->c:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    invoke-static {p1, p2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    check-cast p2, Lu3b;
-
-    check-cast p1, Lu3b;
-
-    iget-object p0, p0, Lrh1;->o:Lsh1;
-
-    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
-
-    move-result p1
-
-    invoke-virtual {p0}, Landroid/view/View;->getTop()I
-
-    move-result p2
-
-    invoke-virtual {p0}, Landroid/view/View;->getRight()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getBottom()I
-
-    move-result v1
-
-    invoke-virtual {p0, p1, p2, v0, v1}, Lsh1;->c(IIII)V
+    return v0
 
     :cond_0
-    return-void
+    instance-of v1, p1, Lrh1;
 
-    :pswitch_0
-    check-cast p2, Lph1;
+    const/4 v2, 0x0
 
-    check-cast p1, Lph1;
+    if-nez v1, :cond_1
 
-    if-eq p1, p2, :cond_4
-
-    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p1
-
-    iget-object p0, p0, Lrh1;->o:Lsh1;
-
-    if-eqz p1, :cond_3
-
-    const/4 p2, 0x1
-
-    if-eq p1, p2, :cond_2
-
-    const/4 p2, 0x2
-
-    if-ne p1, p2, :cond_1
-
-    new-instance p1, Lq3b;
-
-    new-instance p2, Li02;
-
-    invoke-direct {p2, p0}, Li02;-><init>(Ljava/lang/Object;)V
-
-    invoke-static {p0}, Lsh1;->b(Lsh1;)Lsa1;
-
-    move-result-object v0
-
-    invoke-direct {p1, p0, p2, v0}, Lq3b;-><init>(Landroid/view/View;Li02;Lsa1;)V
-
-    goto :goto_0
+    return v2
 
     :cond_1
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    check-cast p1, Lrh1;
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    iget-object p0, p0, Lrh1;->a:Ljava/lang/CharSequence;
 
-    throw p0
+    iget-object p1, p1, Lrh1;->a:Ljava/lang/CharSequence;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
 
     :cond_2
-    new-instance p1, Lf4b;
+    return v0
+.end method
 
-    new-instance p2, Lhqc;
+.method public final hashCode()I
+    .registers 1
 
-    const/4 v0, 0x5
+    iget-object p0, p0, Lrh1;->a:Ljava/lang/CharSequence;
 
-    invoke-direct {p2, v0, p0}, Lhqc;-><init>(ILjava/lang/Object;)V
+    if-nez p0, :cond_0
 
-    invoke-static {p0}, Lsh1;->b(Lsh1;)Lsa1;
+    const/4 p0, 0x0
 
-    move-result-object v0
+    return p0
 
-    invoke-direct {p1, p0, p2, v0}, Lf4b;-><init>(Landroid/view/View;Lhqc;Lsa1;)V
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    goto :goto_0
+    move-result p0
 
-    :cond_3
-    sget-object p1, Lg4b;->a:Le38;
+    return p0
+.end method
 
-    :goto_0
-    iput-object p1, p0, Lsh1;->o:Li4b;
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    :cond_4
-    return-void
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    :pswitch_1
-    check-cast p2, Loma;
+    const-string v1, "CallPresettingsEditChanges(changedName="
 
-    check-cast p1, Loma;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p1, p2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object p0, p0, Lrh1;->a:Ljava/lang/CharSequence;
 
-    move-result p1
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    if-nez p1, :cond_5
+    const-string p0, ")"
 
-    iget-object p0, p0, Lrh1;->o:Lsh1;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, Lsh1;->a(Lsh1;)Lzq1;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {p0, p2}, Lzq1;->setCustomTheme(Loma;)V
-
-    :cond_5
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

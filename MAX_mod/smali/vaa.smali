@@ -1,121 +1,110 @@
-.class public abstract Lvaa;
-.super Ljava/lang/Object;
+.class public final Lvaa;
+.super Lure;
 .source "SourceFile"
 
-
-# static fields
-.field public static final a:I
-
-.field public static final b:I
-
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:I
-
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-.field public static final p:I
-
-.field public static final q:I
-
-.field public static final r:I
+# interfaces
+.implements Lpc6;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
+# instance fields
+.field public X:I
 
-    sget v0, Lp3c;->contact_list_confirm_contact_block_action:I
 
-    sput v0, Lvaa;->a:I
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    sget v0, Lp3c;->contact_list_confirm_contact_block_description:I
+    check-cast p1, Ly04;
 
-    sput v0, Lvaa;->b:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    sget v0, Lp3c;->contact_list_confirm_contact_block_title:I
+    invoke-virtual {p0, p1, p2}, Lvaa;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    sput v0, Lvaa;->c:I
+    move-result-object p0
 
-    sget v0, Lp3c;->contact_list_confirm_contact_delete_action:I
+    check-cast p0, Lvaa;
 
-    sput v0, Lvaa;->d:I
+    sget-object p1, Lylf;->a:Lylf;
 
-    sget v0, Lp3c;->contact_list_confirm_contact_delete_title:I
+    invoke-virtual {p0, p1}, Lvaa;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sput v0, Lvaa;->e:I
+    move-result-object p0
 
-    sget v0, Lp3c;->contact_list_contact_block_snackbar_title:I
+    return-object p0
+.end method
 
-    sput v0, Lvaa;->f:I
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    sget v0, Lp3c;->contact_list_contact_delete_snackbar_title:I
+    new-instance p0, Lvaa;
 
-    sput v0, Lvaa;->g:I
+    const/4 p1, 0x2
 
-    sget v0, Lp3c;->contact_list_menu_item_add_contact:I
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    sput v0, Lvaa;->h:I
+    return-object p0
+.end method
 
-    sget v0, Lp3c;->contact_list_search_hint:I
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
 
-    sput v0, Lvaa;->i:I
+    iget v0, p0, Lvaa;->X:I
 
-    sget v0, Lp3c;->contact_list_search_hint_with_nick:I
+    const/4 v1, 0x1
 
-    sput v0, Lvaa;->j:I
+    if-eqz v0, :cond_1
 
-    sget v0, Lp3c;->contact_list_suspend_bot_snackbar_title:I
+    if-ne v0, v1, :cond_0
 
-    sput v0, Lvaa;->k:I
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    sget v0, Lp3c;->empty_contact_list_description:I
+    goto :goto_0
 
-    sput v0, Lvaa;->l:I
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    sget v0, Lp3c;->empty_contact_list_title:I
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    sput v0, Lvaa;->m:I
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    sget v0, Lp3c;->empty_search_contact_btn_title:I
+    throw p0
 
-    sput v0, Lvaa;->n:I
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    sget v0, Lp3c;->empty_search_contact_disabled_description:I
+    sget-object p1, Liad;->a:Liad;
 
-    sput v0, Lvaa;->o:I
+    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lz4;
 
-    sget v0, Lp3c;->empty_search_contact_enabled_description:I
+    move-result-object p1
 
-    sput v0, Lvaa;->p:I
+    const-class v0, Lc36;
 
-    sget v0, Lp3c;->empty_search_contact_title:I
+    invoke-virtual {p1, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    sput v0, Lvaa;->q:I
+    move-result-object p1
 
-    sget v0, Lp3c;->snackbar_self_title:I
+    check-cast p1, Lc36;
 
-    sput v0, Lvaa;->r:I
+    invoke-interface {p1}, Lc36;->y()Lis5;
 
-    return-void
+    move-result-object p1
+
+    iput v1, p0, Lvaa;->X:I
+
+    invoke-static {p1, p0}, Lo97;->T0(Lis5;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

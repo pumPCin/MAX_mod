@@ -2,84 +2,170 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lts7;
+
 
 # instance fields
-.field public final a:Lgpd;
+.field public final a:I
 
-.field public final b:Lkotlinx/coroutines/internal/ContextScope;
+.field public final b:I
+
+.field public final c:Lp2f;
 
 
 # direct methods
-.method public constructor <init>(Lrv0;Lzne;)V
-    .registers 5
+.method public constructor <init>(IILp2f;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput p1, p0, Lb24;->a:I
 
-    const/4 v1, 0x7
+    iput p2, p0, Lb24;->b:I
 
-    invoke-static {v0, v0, v1}, Lhpd;->b(III)Lgpd;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lb24;->a:Lgpd;
-
-    check-cast p2, Ltba;
-
-    invoke-virtual {p2}, Ltba;->a()Ll04;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lb24;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-virtual {p1, p0}, Lrv0;->d(Ljava/lang/Object;)V
+    iput-object p3, p0, Lb24;->c:Lp2f;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onEvent(Lhj0;)V
+.method public final equals(Ljava/lang/Object;)Z
     .registers 4
-    .annotation runtime Lpee;
-    .end annotation
 
-    new-instance v0, La24;
+    if-ne p0, p1, :cond_0
 
-    const/4 v1, 0x0
+    goto :goto_1
 
-    invoke-direct {v0, p0, p1, v1}, La24;-><init>(Lb24;Lhj0;Lkotlin/coroutines/Continuation;)V
+    :cond_0
+    instance-of v0, p1, Lb24;
 
-    const/4 p1, 0x3
+    if-nez v0, :cond_1
 
-    iget-object p0, p0, Lb24;->b:Lkotlinx/coroutines/internal/ContextScope;
+    goto :goto_0
 
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    :cond_1
+    check-cast p1, Lb24;
 
-    return-void
+    iget v0, p0, Lb24;->a:I
+
+    iget v1, p1, Lb24;->a:I
+
+    if-eq v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget v0, p0, Lb24;->b:I
+
+    iget v1, p1, Lb24;->b:I
+
+    if-eq v0, v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget-object p0, p0, Lb24;->c:Lp2f;
+
+    iget-object p1, p1, Lb24;->c:Lp2f;
+
+    invoke-virtual {p0, p1}, Lp2f;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
-.method public final onEvent(Lr52;)V
+.method public final getItemId()J
+    .registers 3
+
+    iget p0, p0, Lb24;->a:I
+
+    int-to-long v0, p0
+
+    return-wide v0
+.end method
+
+.method public final hashCode()I
     .registers 4
-    .annotation runtime Lpee;
-    .end annotation
 
-    new-instance v0, Lz14;
+    iget v0, p0, Lb24;->a:I
 
-    const/4 v1, 0x0
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
-    invoke-direct {v0, p0, p1, v1}, Lz14;-><init>(Lb24;Lr52;Lkotlin/coroutines/Continuation;)V
+    move-result v0
 
-    const/4 p1, 0x3
+    const/16 v1, 0x1f
 
-    iget-object p0, p0, Lb24;->b:Lkotlinx/coroutines/internal/ContextScope;
+    mul-int/2addr v0, v1
 
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    iget v2, p0, Lb24;->b:I
 
-    return-void
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-object p0, p0, Lb24;->c:Lp2f;
+
+    iget p0, p0, Lp2f;->b:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final m()I
+    .registers 1
+
+    sget p0, Lwpa;->n:I
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    const-string v0, ", icon="
+
+    const-string v1, ", text="
+
+    const-string v2, "CreateButton(id="
+
+    iget v3, p0, Lb24;->a:I
+
+    iget v4, p0, Lb24;->b:I
+
+    invoke-static {v2, v3, v0, v4, v1}, Lsg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object p0, p0, Lb24;->c:Lp2f;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

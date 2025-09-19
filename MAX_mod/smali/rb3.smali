@@ -1,510 +1,107 @@
 .class public final Lrb3;
-.super Lox3;
+.super Ltb3;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
-
-.field public final b:Ljava/lang/Object;
-
-
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .registers 3
+.method public static g(I)Ltb3;
+    .registers 1
 
-    iput p1, p0, Lrb3;->a:I
+    if-gez p0, :cond_0
 
-    iput-object p2, p0, Lrb3;->b:Ljava/lang/Object;
+    sget-object p0, Ltb3;->b:Lsb3;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-object p0
 
-    return-void
-.end method
+    :cond_0
+    if-lez p0, :cond_1
 
-.method private final u(Lqx3;)V
-    .registers 2
+    sget-object p0, Ltb3;->c:Lsb3;
 
-    return-void
+    return-object p0
+
+    :cond_1
+    sget-object p0, Ltb3;->a:Lrb3;
+
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public d(Lqx3;)V
-    .registers 2
+.method public final a(II)Ltb3;
+    .registers 3
 
-    iget p1, p0, Lrb3;->a:I
+    invoke-static {p1, p2}, Ljava/lang/Integer;->compare(II)I
 
-    packed-switch p1, :pswitch_data_0
+    move-result p0
 
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lcy3;
-
-    iget-object p0, p0, Lcy3;->a:Lyk7;
-
-    sget-object p1, Lyj7;->ON_CREATE:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public g(Lqx3;)V
-    .registers 2
-
-    iget p1, p0, Lrb3;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    :pswitch_0
-    return-void
-
-    :pswitch_1
-    sget-object p1, Ll08;->a:Ll08;
-
-    invoke-virtual {p1}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ls4;->e()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Le17;
-
-    if-eqz p1, :cond_0
-
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lnyc;
-
-    iget p0, p0, Lnyc;->a:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p0}, Lrb3;->g(I)Ltb3;
 
     move-result-object p0
 
-    invoke-virtual {p1, p0}, Le17;->e(Ljava/lang/Integer;)V
-
-    :cond_0
-    return-void
-
-    :pswitch_2
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lcy3;
-
-    iget-object p0, p0, Lcy3;->a:Lyk7;
-
-    sget-object p1, Lyj7;->ON_RESUME:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    return-void
-
-    :pswitch_3
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lhz1;
-
-    iget-object p0, p0, Lhz1;->b:Lyk7;
-
-    sget-object p1, Lyj7;->ON_RESUME:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_3
-        :pswitch_2
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public h(Lqx3;)V
-    .registers 2
+.method public final b(JJ)Ltb3;
+    .registers 5
 
-    iget p1, p0, Lrb3;->a:I
+    invoke-static {p1, p2, p3, p4}, Ljava/lang/Long;->compare(JJ)I
 
-    packed-switch p1, :pswitch_data_0
+    move-result p0
 
-    return-void
+    invoke-static {p0}, Lrb3;->g(I)Ltb3;
 
-    :pswitch_0
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast p0, Lhz1;
-
-    iget-object p0, p0, Lhz1;->b:Lyk7;
-
-    sget-object p1, Lyj7;->ON_CREATE:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public j(Lqx3;Landroid/view/View;)V
+.method public final c(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Ltb3;
     .registers 4
 
-    iget v0, p0, Lrb3;->a:I
+    invoke-interface {p3, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    packed-switch v0, :pswitch_data_0
+    move-result p0
 
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lcy3;
-
-    invoke-static {p2, p0}, Leh7;->J(Landroid/view/View;Lwk7;)V
-
-    invoke-static {p1}, Lbv7;->A(Lqx3;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    iget-object p0, p0, Lcy3;->a:Lyk7;
-
-    sget-object p1, Lyj7;->ON_CREATE:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    :cond_0
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lhz1;
-
-    iget-object p0, p0, Lhz1;->b:Lyk7;
-
-    sget-object p1, Lyj7;->ON_START:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public k(Lqx3;)V
-    .registers 3
-
-    iget v0, p0, Lrb3;->a:I
-
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    sparse-switch v0, :sswitch_data_0
-
-    return-void
-
-    :sswitch_0
-    check-cast p0, Llrc;
-
-    iget-object p0, p0, Llrc;->d:Ljava/util/ArrayList;
-
-    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    return-void
-
-    :sswitch_1
-    check-cast p0, Lone/me/filedownloadwarning/FileDownloadWarningBottomSheet;
-
-    sget p1, Lone/me/filedownloadwarning/FileDownloadWarningBottomSheet;->c:I
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p0, Ldk5;->c:Ldk5;
-
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
+    invoke-static {p0}, Lrb3;->g(I)Ltb3;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lea4;->d()Z
+    return-object p0
+.end method
 
-    return-void
+.method public final d(ZZ)Ltb3;
+    .registers 3
 
-    :sswitch_2
-    check-cast p0, Lone/me/complaintbottomsheet/ComplaintBottomSheet;
+    invoke-static {p1, p2}, Ljava/lang/Boolean;->compare(ZZ)I
 
-    sget-object p1, Lone/me/complaintbottomsheet/ComplaintBottomSheet;->X:[Lsf7;
+    move-result p0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p0, Lwb3;->c:Lwb3;
-
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
+    invoke-static {p0}, Lrb3;->g(I)Ltb3;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lea4;->d()Z
-
-    return-void
-
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_2
-        0x3 -> :sswitch_1
-        0x5 -> :sswitch_0
-    .end sparse-switch
+    return-object p0
 .end method
 
-.method public l(Lqx3;)V
+.method public final e(ZZ)Ltb3;
     .registers 3
 
-    iget p1, p0, Lrb3;->a:I
+    invoke-static {p2, p1}, Ljava/lang/Boolean;->compare(ZZ)I
 
-    packed-switch p1, :pswitch_data_0
+    move-result p0
 
-    return-void
+    invoke-static {p0}, Lrb3;->g(I)Ltb3;
 
-    :pswitch_0
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast p0, Lcy3;
-
-    iget-object p1, p0, Lcy3;->a:Lyk7;
-
-    iget-object p1, p1, Lyk7;->d:Lzj7;
-
-    sget-object v0, Lzj7;->c:Lzj7;
-
-    invoke-virtual {p1, v0}, Lzj7;->a(Lzj7;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    iget-object p0, p0, Lcy3;->a:Lyk7;
-
-    sget-object p1, Lyj7;->ON_DESTROY:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    :cond_0
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public n(Lqx3;Landroid/view/View;)V
-    .registers 3
+.method public final f()I
+    .registers 1
 
-    iget p1, p0, Lrb3;->a:I
+    const/4 p0, 0x0
 
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lcy3;
-
-    iget-object p0, p0, Lcy3;->a:Lyk7;
-
-    sget-object p1, Lyj7;->ON_START:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public p(Lqx3;)V
-    .registers 2
-
-    iget p0, p0, Lrb3;->a:I
-
-    return-void
-.end method
-
-.method public q(Lqx3;)V
-    .registers 3
-
-    iget p1, p0, Lrb3;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lcy3;
-
-    iget-object p1, p0, Lcy3;->a:Lyk7;
-
-    iget-object p1, p1, Lyk7;->d:Lzj7;
-
-    sget-object v0, Lzj7;->a:Lzj7;
-
-    if-ne p1, v0, :cond_0
-
-    new-instance p1, Lyk7;
-
-    invoke-direct {p1, p0}, Lyk7;-><init>(Lwk7;)V
-
-    iput-object p1, p0, Lcy3;->a:Lyk7;
-
-    :cond_0
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public r(Lqx3;)V
-    .registers 3
-
-    iget p1, p0, Lrb3;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lhz1;
-
-    iget-object p0, p0, Lhz1;->b:Lyk7;
-
-    iget-object p1, p0, Lyk7;->d:Lzj7;
-
-    sget-object v0, Lzj7;->b:Lzj7;
-
-    if-eq p1, v0, :cond_0
-
-    sget-object p1, Lyj7;->ON_DESTROY:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    :cond_0
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public s(Lqx3;Landroid/view/View;)V
-    .registers 3
-
-    iget p1, p0, Lrb3;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lcy3;
-
-    iget-object p0, p0, Lcy3;->a:Lyk7;
-
-    sget-object p1, Lyj7;->ON_STOP:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lhz1;
-
-    iget-object p0, p0, Lhz1;->b:Lyk7;
-
-    sget-object p1, Lyj7;->ON_STOP:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public t(Lqx3;)V
-    .registers 2
-
-    iget p1, p0, Lrb3;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lcy3;
-
-    iget-object p0, p0, Lcy3;->a:Lyk7;
-
-    sget-object p1, Lyj7;->ON_PAUSE:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lrb3;->b:Ljava/lang/Object;
-
-    check-cast p0, Lhz1;
-
-    iget-object p0, p0, Lhz1;->b:Lyk7;
-
-    sget-object p1, Lyj7;->ON_PAUSE:Lyj7;
-
-    invoke-virtual {p0, p1}, Lyk7;->d(Lyj7;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

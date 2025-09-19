@@ -1,97 +1,19 @@
 .class public final Low5;
-.super Ljava/lang/Object;
+.super Lq0;
 .source "SourceFile"
-
-# interfaces
-.implements Lpw5;
-
-
-# instance fields
-.field public final a:Ljava/util/List;
-
-
-# direct methods
-.method public constructor <init>(Ljava/util/List;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Low5;->a:Ljava/util/List;
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Low5;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Low5;
-
-    iget-object p0, p0, Low5;->a:Ljava/util/List;
-
-    iget-object p1, p1, Low5;->a:Ljava/util/List;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Low5;->a:Ljava/util/List;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final f(Lbx5;)V
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Lnw5;
 
-    const-string v1, "OpenPicker(includes="
+    invoke-direct {v0, p1}, Lnw5;-><init>(Ljne;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lq0;->b:Lrv5;
 
-    iget-object p0, p0, Low5;->a:Ljava/util/List;
+    invoke-virtual {p0, v0}, Lrv5;->c(Lbx5;)V
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

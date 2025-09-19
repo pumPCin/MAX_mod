@@ -1,43 +1,66 @@
-.class public abstract Lpi4;
+.class public final synthetic Lpi4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lhj4;
+
 
 # instance fields
-.field public final a:I
-
-.field public final b:Lt2f;
-
-.field public final c:I
-
-.field public final o:Lr26;
+.field public final synthetic a:Laj4;
 
 
 # direct methods
-.method public constructor <init>(ILt2f;I)V
-    .registers 4
+.method public synthetic constructor <init>(Laj4;)V
+    .registers 2
+
+    iput-object p1, p0, Lpi4;->a:Laj4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lpi4;->a:I
-
-    iput-object p2, p0, Lpi4;->b:Lt2f;
-
-    iput p3, p0, Lpi4;->c:I
-
-    iget-object p1, p2, Lt2f;->c:[Lr26;
-
-    aget-object p1, p1, p3
-
-    iput-object p1, p0, Lpi4;->o:Lr26;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public h(ILubf;[I)Llqc;
+    .registers 12
 
-.method public abstract b(Lpi4;)Z
+    invoke-static {}, Ll37;->i()Li37;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    move v5, v1
+
+    :goto_0
+    iget v1, p2, Lubf;->a:I
+
+    if-ge v5, v1, :cond_0
+
+    new-instance v2, Lvi4;
+
+    aget v7, p3, v5
+
+    iget-object v6, p0, Lpi4;->a:Laj4;
+
+    move v3, p1
+
+    move-object v4, p2
+
+    invoke-direct/range {v2 .. v7}, Lvi4;-><init>(ILubf;ILaj4;I)V
+
+    invoke-virtual {v0, v2}, Lb37;->a(Ljava/lang/Object;)V
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Li37;->h()Llqc;
+
+    move-result-object p0
+
+    return-object p0
 .end method

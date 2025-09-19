@@ -3,104 +3,522 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lso6;
+.implements Landroid/os/Parcelable;
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lbaa;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
+.field public final X:I
+
+.field public final Y:J
+
+.field public final Z:Ljava/lang/String;
+
+.field public final a:Ljava/lang/String;
+
 .field public final b:J
 
-.field public final c:Lxh7;
+.field public final c:I
+
+.field public final o:Ljava/lang/String;
+
+.field public final r0:Ljava/lang/String;
+
+.field public final s0:Ljava/util/List;
+
+.field public final t0:Ljava/util/List;
+
+.field public final u0:Ljava/util/List;
+
+.field public final v0:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;J)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lba8;
 
-    iput-wide p2, p0, Lbaa;->b:J
+    const/16 v1, 0x13
 
-    iput-object p1, p0, Lbaa;->c:Lxh7;
+    invoke-direct {v0, v1}, Lba8;-><init>(I)V
+
+    sput-object v0, Lbaa;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .registers 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaa;->a:Ljava/lang/String;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lbaa;->b:J
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lbaa;->c:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaa;->o:Ljava/lang/String;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    iput v0, p0, Lbaa;->X:I
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lbaa;->Y:J
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaa;->Z:Ljava/lang/String;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaa;->r0:Ljava/lang/String;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaa;->s0:Ljava/util/List;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaa;->t0:Ljava/util/List;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lbaa;->u0:Ljava/util/List;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lbaa;->v0:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;IJLjava/lang/String;Ljava/util/List;Ljava/util/List;)V
+    .registers 11
+
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbaa;->a:Ljava/lang/String;
+
+    iput p2, p0, Lbaa;->c:I
+
+    iput-object p3, p0, Lbaa;->o:Ljava/lang/String;
+
+    iput p4, p0, Lbaa;->X:I
+
+    iput-wide p5, p0, Lbaa;->Y:J
+
+    iput-object p7, p0, Lbaa;->Z:Ljava/lang/String;
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lbaa;->r0:Ljava/lang/String;
+
+    iput-object v0, p0, Lbaa;->s0:Ljava/util/List;
+
+    iput-object v0, p0, Lbaa;->t0:Ljava/util/List;
+
+    iput-object p8, p0, Lbaa;->u0:Ljava/util/List;
+
+    iput-object p9, p0, Lbaa;->v0:Ljava/util/List;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lbaa;->b:J
+
+    return-void
+.end method
+
+.method public static a()Laaa;
+    .registers 1
+
+    new-instance v0, Laaa;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {v0}, Laaa;->b()V
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final g()J
+.method public final b()V
     .registers 3
 
-    new-instance v0, Laaa;
+    sget-object v0, Lx9a;->a:Ljava/util/ArrayList;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v0, p0, v1}, Laaa;-><init>(Lbaa;Lkotlin/coroutines/Continuation;)V
+    move-result-object v0
 
-    sget-object p0, Lp25;->a:Lp25;
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {p0, v0}, Las3;->a0(Lj04;Lx96;)Ljava/lang/Object;
+    move-result v1
 
-    move-result-object p0
+    if-eqz v1, :cond_0
 
-    check-cast p0, Lo72;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget-object p0, p0, Lo72;->b:Lac2;
+    move-result-object v1
 
-    iget-wide v0, p0, Lac2;->w:J
+    check-cast v1, Ly9a;
 
-    return-wide v0
+    invoke-interface {v1, p0}, Ly9a;->c(Lbaa;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method
 
-.method public final h()J
-    .registers 3
+.method public final describeContents()I
+    .registers 1
 
-    new-instance v0, Laaa;
+    const/4 p0, 0x0
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Laaa;-><init>(Lbaa;Lkotlin/coroutines/Continuation;)V
-
-    sget-object p0, Lp25;->a:Lp25;
-
-    invoke-static {p0, v0}, Las3;->a0(Lj04;Lx96;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lo72;
-
-    iget-object p0, p0, Lo72;->b:Lac2;
-
-    iget-wide v0, p0, Lac2;->j:J
-
-    return-wide v0
+    return p0
 .end method
 
-.method public final i()Ljava/util/List;
-    .registers 3
+.method public final toString()Ljava/lang/String;
+    .registers 8
 
-    new-instance v0, Laaa;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    const-string v1, "{collector: "
 
-    invoke-direct {v0, p0, v1}, Laaa;-><init>(Lbaa;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object p0, Lp25;->a:Lp25;
+    iget-object v1, p0, Lbaa;->a:Ljava/lang/String;
 
-    invoke-static {p0, v0}, Las3;->a0(Lj04;Lx96;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p0
+    const-string v1, ", timetamp: "
 
-    check-cast p0, Lo72;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lo72;->b:Lac2;
+    iget-wide v1, p0, Lbaa;->b:J
 
-    iget-object p0, p0, Lac2;->n:Ltb2;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lek4;->X:Lek4;
+    const-string v1, ", type: "
 
-    invoke-virtual {p0, v0}, Ltb2;->d(Lek4;)Ljava/util/ArrayList;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lbaa;->c:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", operation: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lbaa;->o:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", time: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lbaa;->Y:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lbaa;->Z:Ljava/lang/String;
+
+    if-eqz v1, :cond_0
+
+    const-string v2, ", uid: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_0
+    iget-object v1, p0, Lbaa;->r0:Ljava/lang/String;
+
+    if-eqz v1, :cond_1
+
+    const-string v2, ", network: "
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_1
+    iget v1, p0, Lbaa;->X:I
+
+    const-string v2, ", "
+
+    const/4 v3, 0x1
+
+    if-eq v1, v3, :cond_2
+
+    const-string v3, ", count: "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_2
+    iget-object v1, p0, Lbaa;->t0:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    const-string v4, "]"
+
+    const/4 v5, 0x0
+
+    if-nez v3, :cond_5
+
+    const-string v3, ", data: ["
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move v3, v5
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v6
+
+    if-ge v3, v6, :cond_4
+
+    if-lez v3, :cond_3
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_3
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_5
+    iget-object v1, p0, Lbaa;->s0:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    if-nez v3, :cond_8
+
+    const-string v3, ", groups: ["
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move v3, v5
+
+    :goto_1
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v6
+
+    if-ge v3, v6, :cond_7
+
+    if-lez v3, :cond_6
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_6
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_1
+
+    :cond_7
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_8
+    iget-object v1, p0, Lbaa;->u0:Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v3
+
+    const-string v4, "}"
+
+    if-nez v3, :cond_b
+
+    const-string v3, ", custom: {"
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :goto_2
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v5, v3, :cond_a
+
+    if-lez v5, :cond_9
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_9
+    invoke-interface {v1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, ": "
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v3, p0, Lbaa;->v0:Ljava/util/List;
+
+    invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_2
+
+    :cond_a
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_b
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 5
+
+    iget-object p2, p0, Lbaa;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-wide v0, p0, Lbaa;->b:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    iget p2, p0, Lbaa;->c:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object p2, p0, Lbaa;->o:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget p2, p0, Lbaa;->X:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-wide v0, p0, Lbaa;->Y:J
+
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+
+    iget-object p2, p0, Lbaa;->Z:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-object p2, p0, Lbaa;->r0:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-object p2, p0, Lbaa;->s0:Ljava/util/List;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
+
+    iget-object p2, p0, Lbaa;->t0:Ljava/util/List;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
+
+    iget-object p2, p0, Lbaa;->u0:Ljava/util/List;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
+
+    iget-object p0, p0, Lbaa;->v0:Ljava/util/List;
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
+
+    return-void
 .end method

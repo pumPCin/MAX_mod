@@ -1,61 +1,181 @@
 .class public final Lm7a;
-.super Lg64;
+.super Ljava/util/concurrent/atomic/AtomicInteger;
 .source "SourceFile"
 
+# interfaces
+.implements Ld8a;
 
-# static fields
-.field public static final f:Lm7a;
+
+# instance fields
+.field public X:J
+
+.field public final a:Ld8a;
+
+.field public final b:Lh12;
+
+.field public final c:Lt7a;
+
+.field public final o:Lggb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ld8a;JLggb;Lh12;Lt7a;)V
+    .registers 7
 
-    new-instance v0, Lm7a;
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lm7a;->a:Ld8a;
 
-    sput-object v0, Lm7a;->f:Lm7a;
+    iput-object p5, p0, Lm7a;->b:Lh12;
+
+    iput-object p6, p0, Lm7a;->c:Lt7a;
+
+    iput-object p4, p0, Lm7a;->o:Lggb;
+
+    iput-wide p2, p0, Lm7a;->X:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a()V
     .registers 3
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    move-result v0
+
+    if-nez v0, :cond_2
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
-
-    return v0
-
     :cond_0
-    instance-of p0, p1, Lm7a;
+    iget-object v1, p0, Lm7a;->b:Lh12;
 
-    if-nez p0, :cond_1
+    invoke-virtual {v1}, Lh12;->f()Z
 
-    const/4 p0, 0x0
+    move-result v1
 
-    return p0
+    if-eqz v1, :cond_1
+
+    goto :goto_0
 
     :cond_1
-    return v0
+    iget-object v1, p0, Lm7a;->c:Lt7a;
+
+    invoke-interface {v1, p0}, Lt7a;->a(Ld8a;)V
+
+    neg-int v0, v0
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->addAndGet(I)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    :cond_2
+    :goto_0
+    return-void
 .end method
 
-.method public final hashCode()I
+.method public final b()V
     .registers 1
 
-    const p0, -0x2654655d
+    iget-object p0, p0, Lm7a;->a:Ld8a;
 
-    return p0
+    invoke-interface {p0}, Ld8a;->b()V
+
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+.method public final c(Loq4;)V
+    .registers 2
 
-    const-string p0, "Dot"
+    iget-object p0, p0, Lm7a;->b:Lh12;
 
-    return-object p0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p0, p1}, Lsq4;->c(Ljava/util/concurrent/atomic/AtomicReference;Loq4;)Z
+
+    return-void
+.end method
+
+.method public final onError(Ljava/lang/Throwable;)V
+    .registers 6
+
+    iget-wide v0, p0, Lm7a;->X:J
+
+    const-wide v2, 0x7fffffffffffffffL
+
+    cmp-long v2, v0, v2
+
+    if-eqz v2, :cond_0
+
+    const-wide/16 v2, 0x1
+
+    sub-long v2, v0, v2
+
+    iput-wide v2, p0, Lm7a;->X:J
+
+    :cond_0
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    iget-object v1, p0, Lm7a;->a:Ld8a;
+
+    if-nez v0, :cond_1
+
+    invoke-interface {v1, p1}, Ld8a;->onError(Ljava/lang/Throwable;)V
+
+    return-void
+
+    :cond_1
+    :try_start_0
+    iget-object v0, p0, Lm7a;->o:Lggb;
+
+    invoke-interface {v0, p1}, Lggb;->test(Ljava/lang/Object;)Z
+
+    move-result v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v0, :cond_2
+
+    invoke-interface {v1, p1}, Ld8a;->onError(Ljava/lang/Throwable;)V
+
+    return-void
+
+    :cond_2
+    invoke-virtual {p0}, Lm7a;->a()V
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    invoke-static {p0}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    new-instance v0, Lio/reactivex/rxjava3/exceptions/CompositeException;
+
+    filled-new-array {p1, p0}, [Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Lio/reactivex/rxjava3/exceptions/CompositeException;-><init>([Ljava/lang/Throwable;)V
+
+    invoke-interface {v1, v0}, Ld8a;->onError(Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final s(Ljava/lang/Object;)V
+    .registers 2
+
+    iget-object p0, p0, Lm7a;->a:Ld8a;
+
+    invoke-interface {p0, p1}, Ld8a;->s(Ljava/lang/Object;)V
+
+    return-void
 .end method

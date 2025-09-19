@@ -1,133 +1,158 @@
 .class public final Lcv5;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lyu5;
-.implements Lnp4;
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Lvud;
+.field public X:I
 
-.field public b:Lsee;
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public c:Ljava/util/ArrayList;
+.field public final synthetic Z:Lis5;
+
+.field public final synthetic r0:Lmc3;
 
 
 # direct methods
-.method public constructor <init>(Lvud;Ljava/util/ArrayList;)V
-    .registers 3
+.method public constructor <init>(Lis5;Lmc3;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcv5;->Z:Lis5;
 
-    iput-object p1, p0, Lcv5;->a:Lvud;
+    iput-object p2, p0, Lcv5;->r0:Lmc3;
 
-    iput-object p2, p0, Lcv5;->c:Ljava/util/ArrayList;
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 2
-
-    sget-object v0, Luee;->a:Luee;
-
-    iput-object v0, p0, Lcv5;->b:Lsee;
-
-    iget-object v0, p0, Lcv5;->a:Lvud;
-
-    iget-object p0, p0, Lcv5;->c:Ljava/util/ArrayList;
-
-    invoke-interface {v0, p0}, Lvud;->a(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final d(Ljava/lang/Object;)V
-    .registers 2
-
-    iget-object p0, p0, Lcv5;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method public final f(Lsee;)V
-    .registers 4
-
-    iget-object v0, p0, Lcv5;->b:Lsee;
-
-    invoke-static {v0, p1}, Luee;->e(Lsee;Lsee;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iput-object p1, p0, Lcv5;->b:Lsee;
-
-    iget-object v0, p0, Lcv5;->a:Lvud;
-
-    invoke-interface {v0, p0}, Lvud;->c(Lnp4;)V
-
-    const-wide v0, 0x7fffffffffffffffL
-
-    invoke-interface {p1, v0, v1}, Lsee;->i(J)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final g()V
-    .registers 2
-
-    iget-object v0, p0, Lcv5;->b:Lsee;
-
-    invoke-interface {v0}, Lsee;->cancel()V
-
-    sget-object v0, Luee;->a:Luee;
-
-    iput-object v0, p0, Lcv5;->b:Lsee;
-
-    return-void
-.end method
-
-.method public final h()Z
-    .registers 2
-
-    iget-object p0, p0, Lcv5;->b:Lsee;
-
-    sget-object v0, Luee;->a:Luee;
-
-    if-ne p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
+
+    check-cast p1, Ly04;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lcv5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lcv5;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lcv5;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 5
+
+    new-instance v0, Lcv5;
+
+    iget-object v1, p0, Lcv5;->Z:Lis5;
+
+    iget-object p0, p0, Lcv5;->r0:Lmc3;
+
+    invoke-direct {v0, v1, p0, p2}, Lcv5;-><init>(Lis5;Lmc3;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lcv5;->Y:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
+
+    iget v0, p0, Lcv5;->X:I
+
+    iget-object v1, p0, Lcv5;->r0:Lmc3;
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v2, :cond_0
+
+    :try_start_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lcv5;->Y:Ljava/lang/Object;
+
+    check-cast p1, Ly04;
+
+    :try_start_1
+    new-instance v0, Lipc;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iget-object v3, p0, Lcv5;->Z:Lis5;
+
+    new-instance v4, Ln30;
+
+    const/4 v5, 0x6
+
+    invoke-direct {v4, v0, p1, v1, v5}, Ln30;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+
+    iput v2, p0, Lcv5;->X:I
+
+    invoke-interface {v3, v4, p0}, Lis5;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :goto_1
+    new-instance p1, Lbd3;
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcv5;->c:Ljava/util/ArrayList;
+    invoke-direct {p1, p0, v0}, Lbd3;-><init>(Ljava/lang/Throwable;Z)V
 
-    sget-object v0, Luee;->a:Luee;
+    invoke-virtual {v1, p1}, Lsf7;->makeCompleting$kotlinx_coroutines_core(Ljava/lang/Object;)Z
 
-    iput-object v0, p0, Lcv5;->b:Lsee;
-
-    iget-object p0, p0, Lcv5;->a:Lvud;
-
-    invoke-interface {p0, p1}, Lvud;->onError(Ljava/lang/Throwable;)V
-
-    return-void
+    throw p0
 .end method

@@ -1,68 +1,264 @@
 .class public final Lsj2;
-.super Ls2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc4g;
 
-# static fields
-.field public static final c:Lsj2;
+
+# instance fields
+.field public final synthetic a:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)V
     .registers 2
 
-    new-instance v0, Lsj2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Ls2;-><init>(I)V
-
-    sput-object v0, Lsj2;->c:Lsj2;
+    iput-object p1, p0, Lsj2;->a:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
 
     return-void
 .end method
 
-.method public static U0(JLjava/lang/Long;)Laa4;
-    .registers 5
 
-    const-string v0, ":chats/forward?messages_ids="
+# virtual methods
+.method public final D()V
+    .registers 2
 
-    if-eqz p2, :cond_0
+    iget-object p0, p0, Lsj2;->a:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->I0(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)Z
 
-    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    invoke-virtual {v1, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_0
 
-    const-string p0, "&attach_id="
+    iget-object p0, p0, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->y0:Lxq8;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz p0, :cond_0
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/4 v0, 0x4
 
-    const-string p0, "&is_forward_attach=true"
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance p1, Laa4;
-
-    invoke-direct {p1, p0}, Laa4;-><init>(Ljava/lang/String;)V
-
-    return-object p1
+    invoke-virtual {p0, v0}, Lxq8;->b(I)V
 
     :cond_0
-    invoke-static {p0, p1, v0}, La78;->i(JLjava/lang/String;)Ljava/lang/String;
+    return-void
+.end method
+
+.method public final H(Ljava/lang/Throwable;)V
+    .registers 2
+
+    iget-object p0, p0, Lsj2;->a:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+
+    invoke-static {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->I0(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->Q0(Z)V
+
+    iget-object p0, p0, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->y0:Lxq8;
+
+    if-eqz p0, :cond_0
+
+    const/4 p1, 0x5
+
+    invoke-virtual {p0, p1}, Lxq8;->b(I)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final b()V
+    .registers 3
+
+    iget-object p0, p0, Lsj2;->a:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+
+    invoke-virtual {p0}, Lxx3;->getView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setKeepScreenOn(Z)V
+
+    :cond_0
+    invoke-static {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->I0(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object p0, p0, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->y0:Lxq8;
+
+    if-eqz p0, :cond_1
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Lxq8;->b(I)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final c(Z)V
+    .registers 3
+
+    iget-object p0, p0, Lsj2;->a:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+
+    invoke-static {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->I0(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->y0:Lxq8;
+
+    if-eqz v0, :cond_1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x3
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x2
+
+    :goto_0
+    invoke-virtual {v0, p1}, Lxq8;->b(I)V
+
+    :cond_1
+    invoke-static {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->H0(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)V
+
+    :cond_2
+    return-void
+.end method
+
+.method public final d()V
+    .registers 3
+
+    iget-object p0, p0, Lsj2;->a:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+
+    invoke-virtual {p0}, Lxx3;->getView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setKeepScreenOn(Z)V
+
+    :cond_0
+    invoke-static {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->I0(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object p0, p0, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->y0:Lxq8;
+
+    if-eqz p0, :cond_1
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Lxq8;->b(I)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final f()V
+    .registers 3
+
+    iget-object p0, p0, Lsj2;->a:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+
+    invoke-virtual {p0}, Lxx3;->getView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setKeepScreenOn(Z)V
+
+    :cond_0
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->M0()Ld4g;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ld4g;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-static {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->I0(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->y0:Lxq8;
+
+    if-eqz v0, :cond_1
+
+    const/4 v1, 0x3
+
+    invoke-virtual {v0, v1}, Lxq8;->b(I)V
+
+    :cond_1
+    invoke-static {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->H0(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)V
+
+    :cond_2
+    return-void
+.end method
+
+.method public final i()V
+    .registers 3
+
+    iget-object p0, p0, Lsj2;->a:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+
+    invoke-virtual {p0}, Lxx3;->getView()Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setKeepScreenOn(Z)V
+
+    :cond_0
+    invoke-static {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->I0(Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->y0:Lxq8;
+
+    if-eqz v0, :cond_1
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Lxq8;->b(I)V
+
+    :cond_1
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->O0()Lql2;
 
     move-result-object p0
 
-    new-instance p1, Laa4;
+    invoke-virtual {p0}, Lql2;->w()V
 
-    invoke-direct {p1, p0}, Laa4;-><init>(Ljava/lang/String;)V
-
-    return-object p1
+    :cond_2
+    return-void
 .end method

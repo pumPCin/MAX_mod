@@ -1,63 +1,45 @@
-.class public abstract synthetic Lpx7;
+.class public final Lpx7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+# instance fields
+.field public a:Lorg/webrtc/PeerConnectionFactory;
 
-.field public static final synthetic $EnumSwitchMapping$1:[I
+.field public b:Lx30;
 
+.field public c:Ljava/util/concurrent/Executor;
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.field public d:Landroid/content/Context;
 
-    invoke-static {}, Ljt3;->values()[Ljt3;
+.field public e:Ljava/lang/String;
 
-    move-result-object v0
+.field public f:Ljava/lang/String;
 
-    array-length v0, v0
+.field public g:Ljava/lang/String;
 
-    new-array v0, v0, [I
+.field public h:Lfec;
 
-    const/4 v1, 0x1
+.field public i:Lorg/webrtc/EglBase$Context;
 
-    :try_start_0
-    aput v1, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+.field public j:Ldy0;
 
-    :catch_0
-    sput-object v0, Lpx7;->$EnumSwitchMapping$0:[I
+.field public k:Z
 
-    invoke-static {}, Ll09;->values()[Ll09;
+.field public l:Z
 
-    move-result-object v0
+.field public m:Luyc;
 
-    array-length v0, v0
+.field public n:Lc0d;
 
-    new-array v0, v0, [I
+.field public o:Z
 
-    :try_start_1
-    sget-object v2, Ll09;->a:Ljava/util/HashMap;
+.field public p:Z
 
-    aput v1, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+.field public q:Lgx7;
 
-    :catch_1
-    :try_start_2
-    sget-object v1, Ll09;->a:Ljava/util/HashMap;
+.field public r:Lzjd;
 
-    const/4 v1, 0x2
+.field public s:Ljava/lang/Integer;
 
-    aput v1, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    sput-object v0, Lpx7;->$EnumSwitchMapping$1:[I
-
-    return-void
-.end method
+.field public t:Z

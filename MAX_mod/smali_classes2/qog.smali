@@ -3,29 +3,17 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
+# virtual methods
+.method public final serializer()Lyi7;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lyi7;"
+        }
+    .end annotation
 
-.field public final b:Lru/ok/android/externcalls/analytics/events/EventItemValue;
+    sget-object p0, Loog;->a:Loog;
 
-.field public final c:Lru/ok/android/externcalls/analytics/events/EventItemsMap;
-
-.field public final d:Ljava/lang/Long;
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/String;Lru/ok/android/externcalls/analytics/events/EventItemValue;Lru/ok/android/externcalls/analytics/events/EventItemsMap;Ljava/lang/Long;)V
-    .registers 5
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lqog;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Lqog;->b:Lru/ok/android/externcalls/analytics/events/EventItemValue;
-
-    iput-object p3, p0, Lqog;->c:Lru/ok/android/externcalls/analytics/events/EventItemsMap;
-
-    iput-object p4, p0, Lqog;->d:Ljava/lang/Long;
-
-    return-void
+    return-object p0
 .end method

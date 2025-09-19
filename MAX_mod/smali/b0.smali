@@ -1,332 +1,370 @@
-.class public abstract Lb0;
-.super Lnc7;
+.class public final Lb0;
+.super Lnk7;
 .source "SourceFile"
 
 # interfaces
-.implements Lkotlin/coroutines/Continuation;
-.implements Lr04;
+.implements Lbc6;
 
 
 # instance fields
-.field private final context:Lj04;
+.field public final synthetic a:I
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lj04;ZZ)V
-    .registers 4
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .registers 3
 
-    invoke-direct {p0, p3}, Lnc7;-><init>(Z)V
+    iput p1, p0, Lb0;->a:I
 
-    if-eqz p2, :cond_0
+    iput-object p2, p0, Lb0;->b:Ljava/lang/Object;
 
-    sget-object p2, Lhy9;->o:Lhy9;
+    const/4 p1, 0x1
 
-    invoke-interface {p1, p2}, Lj04;->get(Li04;)Lh04;
-
-    move-result-object p2
-
-    check-cast p2, Llb7;
-
-    invoke-virtual {p0, p2}, Lnc7;->initParentJob(Llb7;)V
-
-    :cond_0
-    invoke-interface {p1, p0}, Lj04;->plus(Lj04;)Lj04;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lb0;->context:Lj04;
-
-    return-void
-.end method
-
-.method public static synthetic getContext$annotations()V
-    .registers 0
+    invoke-direct {p0, p1}, Lnk7;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public cancellationExceptionMessage()Ljava/lang/String;
-    .registers 2
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v0, p0, Lb0;->a:I
 
-    move-result-object p0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    check-cast p1, Lye1;
 
-    move-result-object p0
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
 
-    const-string v0, " was cancelled"
+    check-cast p0, Lhr1;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    iget-object p0, p0, Lze1;->a:Landroid/opengl/EGLSurface;
 
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final getContext()Lj04;
-    .registers 1
-
-    iget-object p0, p0, Lb0;->context:Lj04;
-
-    return-object p0
-.end method
-
-.method public getCoroutineContext()Lj04;
-    .registers 1
-
-    iget-object p0, p0, Lb0;->context:Lj04;
-
-    return-object p0
-.end method
-
-.method public final handleOnCompletionException$kotlinx_coroutines_core(Ljava/lang/Throwable;)V
-    .registers 2
-
-    iget-object p0, p0, Lb0;->context:Lj04;
-
-    invoke-static {p0, p1}, Ls18;->y(Lj04;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public isActive()Z
-    .registers 1
-
-    invoke-super {p0}, Lnc7;->isActive()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public nameString$kotlinx_coroutines_core()Ljava/lang/String;
-    .registers 1
-
-    invoke-super {p0}, Lnc7;->nameString$kotlinx_coroutines_core()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public onCancelled(Ljava/lang/Throwable;Z)V
-    .registers 3
-
-    return-void
-.end method
-
-.method public onCompleted(Ljava/lang/Object;)V
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")V"
-        }
-    .end annotation
-
-    return-void
-.end method
-
-.method public final onCompletionInternal(Ljava/lang/Object;)V
-    .registers 4
-
-    instance-of v0, p1, Ltc3;
-
-    if-eqz v0, :cond_1
-
-    check-cast p1, Ltc3;
-
-    iget-object v0, p1, Ltc3;->a:Ljava/lang/Throwable;
-
-    sget-object v1, Ltc3;->b:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    invoke-virtual {v1, p1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->get(Ljava/lang/Object;)I
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
+    if-nez p0, :cond_0
 
     goto :goto_0
 
     :cond_0
+    sget-object v0, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
+
+    if-ne p0, v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p1, Lye1;->e:Landroid/opengl/EGLDisplay;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p1, p0}, Lye1;->b(Landroid/opengl/EGLSurface;)V
+
     const/4 p1, 0x0
 
-    :goto_0
-    invoke-virtual {p0, v0, p1}, Lb0;->onCancelled(Ljava/lang/Throwable;Z)V
+    invoke-static {p1, p1, p1, p1}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
 
-    return-void
+    const/16 p1, 0x4000
 
-    :cond_1
-    invoke-virtual {p0, p1}, Lb0;->onCompleted(Ljava/lang/Object;)V
+    invoke-static {p1}, Landroid/opengl/GLES20;->glClear(I)V
 
-    return-void
-.end method
+    invoke-static {v0, p0}, Landroid/opengl/EGL14;->eglSwapBuffers(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
 
-.method public final resumeWith(Ljava/lang/Object;)V
-    .registers 3
+    const-string p0, "clearImage()"
 
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lg5e;->I(Ljava/lang/Object;Lj96;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lnc7;->makeCompletingOnce$kotlinx_coroutines_core(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object v0, Loc7;->b:Lkotlinx/coroutines/internal/Symbol;
-
-    if-ne p1, v0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p0, p1}, Lb0;->afterResume(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final start(Lu04;Ljava/lang/Object;Lx96;)V
-    .registers 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<R:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lu04;",
-            "TR;",
-            "Lx96;",
-            ")V"
-        }
-    .end annotation
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p1
-
-    if-eqz p1, :cond_4
-
-    const/4 v0, 0x1
-
-    if-eq p1, v0, :cond_3
-
-    const/4 v0, 0x2
-
-    if-eq p1, v0, :cond_2
-
-    const/4 v1, 0x3
-
-    if-ne p1, v1, :cond_1
-
-    :try_start_0
-    invoke-interface {p0}, Lkotlin/coroutines/Continuation;->getContext()Lj04;
-
-    move-result-object p1
-
-    const/4 v1, 0x0
-
-    invoke-static {p1, v1}, Lkotlinx/coroutines/internal/ThreadContextKt;->updateThreadContext(Lj04;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    :try_start_1
-    invoke-static {p0}, Lr7;->C(Lkotlin/coroutines/Continuation;)V
-
-    instance-of v2, p3, Lzi0;
-
-    if-nez v2, :cond_0
-
-    invoke-static {p3, p2, p0}, Lx77;->Z(Lx96;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p2
-
-    goto :goto_1
-
-    :cond_0
-    invoke-static {v0, p3}, Lkbf;->i(ILjava/lang/Object;)V
-
-    invoke-interface {p3, p2, p0}, Lx96;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-static {p0}, Lye1;->a(Ljava/lang/String;)V
 
     :goto_0
-    :try_start_2
-    invoke-static {p1, v1}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lj04;Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    sget-object p0, Lylf;->a:Lylf;
 
-    sget-object p1, Ls04;->a:Ls04;
+    return-object p0
 
-    if-eq p2, p1, :cond_3
+    :cond_2
+    new-instance p0, Lru/ok/android/webrtc/opengl/CallOpenGLContext$CallOpenGLContextNotInitialized;
 
-    invoke-interface {p0, p2}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
-
-    :catchall_1
-    move-exception p1
-
-    goto :goto_2
-
-    :goto_1
-    :try_start_3
-    invoke-static {p1, v1}, Lkotlinx/coroutines/internal/ThreadContextKt;->restoreThreadContext(Lj04;Ljava/lang/Object;)V
-
-    throw p2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    :goto_2
-    new-instance p2, Lanc;
-
-    invoke-direct {p2, p1}, Lanc;-><init>(Ljava/lang/Throwable;)V
-
-    invoke-interface {p0, p2}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_1
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    invoke-direct {p0}, Lru/ok/android/webrtc/opengl/CallOpenGLContext$CallOpenGLContextNotInitialized;-><init>()V
 
     throw p0
 
-    :cond_2
-    invoke-static {p3, p2, p0}, Lx77;->p(Lx96;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    :pswitch_0
+    check-cast p1, Lw97;
+
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Ljava/lang/CharSequence;
+
+    iget v0, p1, Lu97;->a:I
+
+    iget p1, p1, Lu97;->b:I
+
+    add-int/lit8 p1, p1, 0x1
+
+    invoke-interface {p0, v0, p1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object p0
 
-    invoke-static {p0}, Lx77;->H(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    sget-object p1, Lncf;->a:Lncf;
+    return-object p0
 
-    invoke-interface {p0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
+    :pswitch_1
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Lbc6;
+
+    invoke-interface {p0, p1}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+
+    :pswitch_2
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Lpo9;
+
+    if-ne p1, p0, :cond_3
+
+    const-string p0, "(this)"
+
+    goto :goto_1
 
     :cond_3
-    return-void
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    :goto_1
+    return-object p0
+
+    :pswitch_3
+    check-cast p1, Ljava/lang/Void;
+
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Lm02;
+
+    iget-object p0, p0, Lm02;->j:Lts1;
+
+    return-object p0
+
+    :pswitch_4
+    check-cast p1, Lm02;
+
+    sget-object v0, Lmib;->f:Lmib;
+
+    iput-object p1, v0, Lmib;->d:Lm02;
+
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Landroid/content/Context;
+
+    invoke-static {p0}, Lvyg;->m(Landroid/content/Context;)Landroid/content/Context;
+
+    return-object v0
+
+    :pswitch_5
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/Collection;
+
+    invoke-interface {p0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_6
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Ljo9;
+
+    if-ne p1, p0, :cond_4
+
+    const-string p0, "(this)"
+
+    goto :goto_2
 
     :cond_4
-    invoke-static {p3, p2, p0}, Lmtg;->E(Lx96;Ljava/lang/Object;Lb0;)V
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    return-void
+    move-result-object p0
+
+    :goto_2
+    return-object p0
+
+    :pswitch_7
+    check-cast p1, Ljava/lang/Throwable;
+
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Lcf7;
+
+    if-nez p1, :cond_6
+
+    iget-object p0, p0, Lcf7;->a:Lznd;
+
+    invoke-virtual {p0}, Lo1;->isDone()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_5
+
+    goto :goto_4
+
+    :cond_5
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Failed requirement."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_6
+    instance-of v0, p1, Ljava/util/concurrent/CancellationException;
+
+    if-eqz v0, :cond_7
+
+    iget-object p0, p0, Lcf7;->a:Lznd;
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Lo1;->cancel(Z)Z
+
+    goto :goto_4
+
+    :cond_7
+    iget-object p0, p0, Lcf7;->a:Lznd;
+
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    if-nez v0, :cond_8
+
+    goto :goto_3
+
+    :cond_8
+    move-object p1, v0
+
+    :goto_3
+    invoke-virtual {p0, p1}, Lznd;->j(Ljava/lang/Throwable;)Z
+
+    :goto_4
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_8
+    check-cast p1, Ljava/lang/String;
+
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/ArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_9
+    check-cast p1, Ljava/util/Map$Entry;
+
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Lc2;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    const-string v2, "(this Map)"
+
+    if-ne v1, p0, :cond_9
+
+    move-object v1, v2
+
+    goto :goto_5
+
+    :cond_9
+    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    :goto_5
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x3d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, p0, :cond_a
+
+    goto :goto_6
+
+    :cond_a
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    :goto_6
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_a
+    iget-object p0, p0, Lb0;->b:Ljava/lang/Object;
+
+    check-cast p0, Lc0;
+
+    if-ne p1, p0, :cond_b
+
+    const-string p0, "(this Collection)"
+
+    goto :goto_7
+
+    :cond_b
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    :goto_7
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

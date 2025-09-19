@@ -1,113 +1,154 @@
 .class public final Lsc1;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lwc1;
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+# static fields
+.field public static final X:Lhrd;
 
-.field public final synthetic Y:Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;
+.field public static final a:Lsc1;
+
+.field public static final b:J
+
+.field public static final c:Lp2f;
+
+.field public static final o:Ljl7;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;)V
+.method static constructor <clinit>()V
     .registers 3
 
-    iput-object p2, p0, Lsc1;->Y:Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;
+    new-instance v0, Lsc1;
 
-    const/4 p2, 0x2
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Lsc1;->a:Lsc1;
+
+    sget-wide v0, Lqda;->a:J
+
+    sput-wide v0, Lsc1;->b:J
+
+    sget v0, Lsda;->e:I
+
+    new-instance v1, Lp2f;
+
+    invoke-direct {v1, v0}, Lp2f;-><init>(I)V
+
+    sput-object v1, Lsc1;->c:Lp2f;
+
+    new-instance v0, Ljl7;
+
+    sget v1, Loda;->d:I
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljl7;-><init>(II)V
+
+    sput-object v0, Lsc1;->o:Ljl7;
+
+    sget-object v0, Lhrd;->a:Lhrd;
+
+    sput-object v0, Lsc1;->X:Lhrd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, p2}, Lsc1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    move-result-object p0
-
-    check-cast p0, Lsc1;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lsc1;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lsc1;
-
-    iget-object p0, p0, Lsc1;->Y:Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;
-
-    invoke-direct {v0, p2, p0}, Lsc1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;)V
-
-    iput-object p1, v0, Lsc1;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lsc1;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljp9;
-
-    instance-of v0, p1, Lwa1;
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->w0:[Lsf7;
-
-    iget-object p0, p0, Lsc1;->Y:Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;
-
-    iget-object v0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->c:Ljava/lang/Object;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    check-cast v1, Lmh1;
-
-    move-object v0, p1
-
-    check-cast v0, Lwa1;
-
-    iget-object v2, v0, Lwa1;->b:Ljava/lang/String;
-
-    new-instance v6, Luc1;
-
-    const/4 v0, 0x0
-
-    invoke-direct {v6, p1, v0, p0}, Luc1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x1
-
-    invoke-virtual/range {v1 .. v6}, Lmh1;->j(Ljava/lang/String;ZZZLh96;)V
+    return v0
 
     :cond_0
-    sget-object p0, Lncf;->a:Lncf;
+    instance-of p0, p1, Lsc1;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final f()Lll7;
+    .registers 1
+
+    sget-object p0, Lsc1;->o:Ljl7;
 
     return-object p0
+.end method
+
+.method public final getItemId()J
+    .registers 3
+
+    sget-wide v0, Lsc1;->b:J
+
+    return-wide v0
+.end method
+
+.method public final getTitle()Lu2f;
+    .registers 1
+
+    sget-object p0, Lsc1;->c:Lp2f;
+
+    return-object p0
+.end method
+
+.method public final getType()Lhrd;
+    .registers 1
+
+    sget-object p0, Lsc1;->X:Lhrd;
+
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, -0x122eeb95
+
+    return p0
+.end method
+
+.method public final m()I
+    .registers 1
+
+    sget p0, Lpda;->m:I
+
+    return p0
+.end method
+
+.method public final t()I
+    .registers 1
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "CopyLink"
+
+    return-object p0
+.end method
+
+.method public final u()I
+    .registers 1
+
+    const/4 p0, 0x1
+
+    return p0
 .end method

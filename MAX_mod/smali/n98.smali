@@ -1,80 +1,91 @@
 .class public final Ln98;
-.super Lxie;
+.super Ljava/util/concurrent/ConcurrentLinkedQueue;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lq98;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public a:I
 
-.field public final synthetic Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+.field public final b:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p2, p0, Ln98;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
 
-    const/4 p2, 0x2
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+
+    iput-object v0, p0, Ln98;->b:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final g()I
+    .registers 1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Ln98;->b:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-virtual {p0, p1, p2}, Ln98;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
-    move-result-object p0
+    move-result p0
 
-    check-cast p0, Ln98;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Ln98;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public final j()I
+    .registers 1
 
-    new-instance v0, Ln98;
+    iget p0, p0, Ln98;->a:I
 
-    iget-object p0, p0, Ln98;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    return p0
+.end method
 
-    invoke-direct {v0, p2, p0}, Ln98;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+.method public final l()V
+    .registers 1
 
-    iput-object p1, v0, Ln98;->X:Ljava/lang/Object;
+    invoke-virtual {p0}, Ln98;->poll()Ljava/lang/Object;
 
+    return-void
+.end method
+
+.method public final offer(Ljava/lang/Object;)Z
+    .registers 3
+
+    iget-object v0, p0, Ln98;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    invoke-super {p0, p1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->offer(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final poll()Ljava/lang/Object;
+    .registers 3
+
+    invoke-super {p0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->poll()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget v1, p0, Ln98;->a:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    iput v1, p0, Ln98;->a:I
+
+    :cond_0
     return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Ln98;->X:Ljava/lang/Object;
-
-    check-cast p1, La9d;
-
-    sget-object v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Y0:[Lsf7;
-
-    iget-object p0, p0, Ln98;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
-
-    invoke-virtual {p0, p1}, Lone/me/chatscreen/mediabar/MediaBarWidget;->O0(La9d;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
 .end method

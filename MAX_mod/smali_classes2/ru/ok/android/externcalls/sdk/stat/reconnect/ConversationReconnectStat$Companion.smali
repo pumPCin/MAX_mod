@@ -45,7 +45,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lwc4;)V
+.method public synthetic constructor <init>(Lld4;)V
     .registers 2
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat$Companion;-><init>()V

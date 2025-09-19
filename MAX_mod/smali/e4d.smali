@@ -1,225 +1,153 @@
 .class public final Le4d;
-.super Landroid/view/TouchDelegate;
+.super Ljava/util/concurrent/atomic/AtomicInteger;
 .source "SourceFile"
+
+# interfaces
+.implements Lt0c;
 
 
 # instance fields
-.field public final a:Landroid/view/View;
+.field public final a:Ljava/lang/Object;
 
-.field public final b:Landroid/graphics/Rect;
-
-.field public final c:Landroid/graphics/Rect;
-
-.field public final d:Landroid/graphics/Rect;
-
-.field public final e:I
-
-.field public f:Z
+.field public final b:Ljne;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-    .registers 8
+.method public constructor <init>(Ljne;Ljava/lang/Object;)V
+    .registers 3
 
-    invoke-direct {p0, p2, p1}, Landroid/view/TouchDelegate;-><init>(Landroid/graphics/Rect;Landroid/view/View;)V
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    iput-object p1, p0, Le4d;->b:Ljne;
 
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
-
-    move-result v0
-
-    iput v0, p0, Le4d;->e:I
-
-    new-instance v1, Landroid/graphics/Rect;
-
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v1, p0, Le4d;->b:Landroid/graphics/Rect;
-
-    new-instance v2, Landroid/graphics/Rect;
-
-    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v2, p0, Le4d;->d:Landroid/graphics/Rect;
-
-    new-instance v3, Landroid/graphics/Rect;
-
-    invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v3, p0, Le4d;->c:Landroid/graphics/Rect;
-
-    invoke-virtual {v1, p2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    invoke-virtual {v2, p2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    neg-int p2, v0
-
-    invoke-virtual {v2, p2, p2}, Landroid/graphics/Rect;->inset(II)V
-
-    invoke-virtual {v3, p3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    iput-object p1, p0, Le4d;->a:Landroid/view/View;
+    iput-object p2, p0, Le4d;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 10
+.method public final cancel()V
+    .registers 2
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+    const/4 v0, 0x2
 
-    move-result v0
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
 
-    float-to-int v0, v0
+    return-void
+.end method
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+.method public final clear()V
+    .registers 2
 
-    move-result v1
+    const/4 v0, 0x1
 
-    float-to-int v1, v1
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    return-void
+.end method
 
-    move-result v2
+.method public final h(J)V
+    .registers 3
 
-    const/4 v3, 0x2
+    invoke-static {p1, p2}, Lnne;->d(J)Z
 
-    const/4 v4, 0x0
+    move-result p1
 
-    const/4 v5, 0x1
-
-    if-eqz v2, :cond_3
-
-    if-eq v2, v5, :cond_2
-
-    if-eq v2, v3, :cond_2
-
-    const/4 v6, 0x3
-
-    if-eq v2, v6, :cond_0
+    if-nez p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    iget-boolean v2, p0, Le4d;->f:Z
+    const/4 p1, 0x0
 
-    iput-boolean v4, p0, Le4d;->f:Z
+    const/4 p2, 0x1
 
-    :cond_1
-    move v7, v5
+    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
 
-    move v5, v2
+    move-result p1
 
-    move v2, v7
+    if-eqz p1, :cond_1
 
-    goto :goto_1
+    iget-object p1, p0, Le4d;->a:Ljava/lang/Object;
 
-    :cond_2
-    iget-boolean v2, p0, Le4d;->f:Z
+    iget-object p2, p0, Le4d;->b:Ljne;
 
-    if-eqz v2, :cond_1
+    invoke-interface {p2, p1}, Ljne;->s(Ljava/lang/Object;)V
 
-    iget-object v6, p0, Le4d;->d:Landroid/graphics/Rect;
-
-    invoke-virtual {v6, v0, v1}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v6
-
-    if-nez v6, :cond_1
-
-    move v5, v2
-
-    move v2, v4
-
-    goto :goto_1
-
-    :cond_3
-    iget-object v2, p0, Le4d;->b:Landroid/graphics/Rect;
-
-    invoke-virtual {v2, v0, v1}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    iput-boolean v5, p0, Le4d;->f:Z
-
-    move v2, v5
-
-    goto :goto_1
-
-    :cond_4
-    :goto_0
-    move v2, v5
-
-    move v5, v4
-
-    :goto_1
-    if-eqz v5, :cond_6
-
-    iget-object v4, p0, Le4d;->c:Landroid/graphics/Rect;
-
-    iget-object p0, p0, Le4d;->a:Landroid/view/View;
-
-    if-eqz v2, :cond_5
-
-    invoke-virtual {v4, v0, v1}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v2
-
-    if-nez v2, :cond_5
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result v0
-
-    div-int/2addr v0, v3
-
-    int-to-float v0, v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
-
-    move-result v1
-
-    div-int/2addr v1, v3
-
-    int-to-float v1, v1
-
-    invoke-virtual {p1, v0, v1}, Landroid/view/MotionEvent;->setLocation(FF)V
-
-    goto :goto_2
-
-    :cond_5
-    iget v2, v4, Landroid/graphics/Rect;->left:I
-
-    sub-int/2addr v0, v2
-
-    int-to-float v0, v0
-
-    iget v2, v4, Landroid/graphics/Rect;->top:I
-
-    sub-int/2addr v1, v2
-
-    int-to-float v1, v1
-
-    invoke-virtual {p1, v0, v1}, Landroid/view/MotionEvent;->setLocation(FF)V
-
-    :goto_2
-    invoke-virtual {p0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result p0
 
+    const/4 p1, 0x2
+
+    if-eq p0, p1, :cond_1
+
+    invoke-interface {p2}, Ljne;->b()V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final isEmpty()Z
+    .registers 1
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
     return p0
 
-    :cond_6
-    return v4
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final offer(Ljava/lang/Object;)Z
+    .registers 2
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string p1, "Should not be called!"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final poll()Ljava/lang/Object;
+    .registers 2
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+
+    iget-object p0, p0, Le4d;->a:Ljava/lang/Object;
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public final q(I)I
+    .registers 2
+
+    const/4 p0, 0x1
+
+    return p0
 .end method

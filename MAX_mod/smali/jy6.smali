@@ -1,77 +1,56 @@
-.class public abstract synthetic Ljy6;
+.class public final Ljy6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lky6;
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+
+# instance fields
+.field public c:Landroid/os/IBinder;
 
 
-# direct methods
-.method static constructor <clinit>()V
+# virtual methods
+.method public final asBinder()Landroid/os/IBinder;
+    .registers 1
+
+    iget-object p0, p0, Ljy6;->c:Landroid/os/IBinder;
+
+    return-object p0
+.end method
+
+.method public final l([Ljava/lang/String;)V
     .registers 4
 
-    invoke-static {}, Lky6;->values()[Lky6;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
     :try_start_0
-    sget-object v1, Lky6;->a:[Lky6;
+    sget-object v1, Lky6;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
+
+    iget-object p0, p0, Ljy6;->c:Landroid/os/IBinder;
+
+    const/4 p1, 0x0
 
     const/4 v1, 0x1
 
-    aput v1, v0, v1
+    invoke-interface {p0, v1, v0, p1, v1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :catch_0
-    const/4 v1, 0x2
-
-    const/4 v2, 0x3
-
-    :try_start_1
-    sget-object v3, Lky6;->a:[Lky6;
-
-    aput v1, v0, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v3, Lky6;->a:[Lky6;
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    :try_start_3
-    sget-object v1, Lky6;->a:[Lky6;
-
-    const/4 v1, 0x4
-
-    aput v1, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v1, Lky6;->a:[Lky6;
-
-    const/4 v1, 0x6
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    sput-object v0, Ljy6;->$EnumSwitchMapping$0:[I
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     return-void
+
+    :catchall_0
+    move-exception p0
+
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw p0
 .end method

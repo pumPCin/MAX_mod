@@ -1,240 +1,365 @@
-.class public final Lq3f;
+.class public abstract Lq3f;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final f:Ljava/lang/String;
-
-.field public static final g:Ljava/lang/String;
-
-.field public static final h:Ljava/lang/String;
-
-.field public static final i:Ljava/lang/String;
-
-
-# instance fields
-.field public final a:I
-
-.field public final b:Lu2f;
-
-.field public final c:Z
-
-.field public final d:[I
-
-.field public final e:[Z
+.field public static final a:Ljava/util/regex/Pattern;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 1
 
-    sget v0, Laif;->a:I
+    const-string v0, "#(?i)([\\p{L}0-9_]+)"
 
-    const/4 v0, 0x0
-
-    const/16 v1, 0x24
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
-    sput-object v0, Lq3f;->f:Ljava/lang/String;
-
-    const/4 v0, 0x1
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lq3f;->g:Ljava/lang/String;
-
-    const/4 v0, 0x3
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lq3f;->h:Ljava/lang/String;
-
-    const/4 v0, 0x4
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lq3f;->i:Ljava/lang/String;
+    sput-object v0, Lq3f;->a:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
-.method public constructor <init>(Lu2f;Z[I[Z)V
-    .registers 9
+.method public static a(Landroid/text/Spannable;Lor7;ZI)V
+    .registers 10
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v5, Lti0;
 
-    iget v0, p1, Lu2f;->a:I
+    const/16 v0, 0x9
 
-    iput v0, p0, Lq3f;->a:I
+    invoke-direct {v5, p0, p1, p3, v0}, Lti0;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V
 
-    array-length v1, p3
+    sget-object p3, Lor7;->o:Lor7;
 
-    const/4 v2, 0x0
+    if-ne p1, p3, :cond_0
 
-    const/4 v3, 0x1
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    if-ne v0, v1, :cond_0
+    move-result-object v0
 
-    array-length v1, p4
+    invoke-static {p1, p2}, Lq3f;->b(Lor7;Z)Ljava/util/regex/Pattern;
 
-    if-ne v0, v1, :cond_0
+    move-result-object v1
 
-    move v1, v3
+    sget-object v2, Ld0b;->a:Ljava/util/regex/Pattern;
 
-    goto :goto_0
+    sget-object v3, Ld0b;->b:Ljava/util/regex/Pattern;
+
+    const/4 v4, 0x0
+
+    invoke-static/range {v0 .. v5}, Lq3f;->c(Ljava/lang/CharSequence;Ljava/util/regex/Pattern;Ljava/util/regex/Pattern;Ljava/util/regex/Pattern;ZLpm3;)V
+
+    return-void
 
     :cond_0
-    move v1, v2
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    :goto_0
-    invoke-static {v1}, Lr76;->h(Z)V
+    move-result-object v0
 
-    iput-object p1, p0, Lq3f;->b:Lu2f;
+    invoke-static {p1, p2}, Lq3f;->b(Lor7;Z)Ljava/util/regex/Pattern;
 
-    if-eqz p2, :cond_1
+    move-result-object v1
 
-    if-le v0, v3, :cond_1
+    sget-object v2, Ld0b;->a:Ljava/util/regex/Pattern;
 
-    move v2, v3
+    const/4 v3, 0x0
 
-    :cond_1
-    iput-boolean v2, p0, Lq3f;->c:Z
+    const/4 v4, 0x0
 
-    invoke-virtual {p3}, [I->clone()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [I
-
-    iput-object p1, p0, Lq3f;->d:[I
-
-    invoke-virtual {p4}, [Z->clone()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, [Z
-
-    iput-object p1, p0, Lq3f;->e:[Z
+    invoke-static/range {v0 .. v5}, Lq3f;->c(Ljava/lang/CharSequence;Ljava/util/regex/Pattern;Ljava/util/regex/Pattern;Ljava/util/regex/Pattern;ZLpm3;)V
 
     return-void
 .end method
 
+.method public static b(Lor7;Z)Ljava/util/regex/Pattern;
+    .registers 3
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_2
-
-    const-class v2, Lq3f;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lq3f;
-
-    iget-boolean v2, p0, Lq3f;->c:Z
-
-    iget-boolean v3, p1, Lq3f;->c:Z
-
-    if-ne v2, v3, :cond_2
-
-    iget-object v2, p0, Lq3f;->b:Lu2f;
-
-    iget-object v3, p1, Lq3f;->b:Lu2f;
-
-    invoke-virtual {v2, v3}, Lu2f;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, p0, Lq3f;->d:[I
-
-    iget-object v3, p1, Lq3f;->d:[I
-
-    invoke-static {v2, v3}, Ljava/util/Arrays;->equals([I[I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object p0, p0, Lq3f;->e:[Z
-
-    iget-object p1, p1, Lq3f;->e:[Z
-
-    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([Z[Z)Z
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
     move-result p0
 
-    if-eqz p0, :cond_2
+    const/4 v0, 0x1
 
-    return v0
+    if-eq p0, v0, :cond_3
+
+    const/4 v0, 0x2
+
+    if-eq p0, v0, :cond_1
+
+    const/4 p1, 0x3
+
+    if-eq p0, p1, :cond_0
+
+    sget-object p0, Lp3f;->a:Ljava/util/regex/Pattern;
+
+    return-object p0
+
+    :cond_0
+    sget-object p0, Lp3f;->a:Ljava/util/regex/Pattern;
+
+    return-object p0
+
+    :cond_1
+    if-eqz p1, :cond_2
+
+    sget-object p0, Lp3f;->e:Ljava/util/regex/Pattern;
+
+    return-object p0
 
     :cond_2
-    :goto_0
-    return v1
+    sget-object p0, Lp3f;->c:Ljava/util/regex/Pattern;
+
+    return-object p0
+
+    :cond_3
+    sget-object p0, Lq3f;->a:Ljava/util/regex/Pattern;
+
+    return-object p0
 .end method
 
-.method public final hashCode()I
-    .registers 3
+.method public static c(Ljava/lang/CharSequence;Ljava/util/regex/Pattern;Ljava/util/regex/Pattern;Ljava/util/regex/Pattern;ZLpm3;)V
+    .registers 11
 
-    iget-object v0, p0, Lq3f;->b:Lu2f;
+    invoke-virtual {p1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    invoke-virtual {v0}, Lu2f;->hashCode()I
+    move-result-object v0
 
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v1, p0, Lq3f;->c:Z
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lq3f;->d:[I
-
-    invoke-static {v1}, Ljava/util/Arrays;->hashCode([I)I
+    :cond_0
+    :goto_0
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v1
 
-    add-int/2addr v1, v0
+    if-eqz v1, :cond_b
 
-    mul-int/lit8 v1, v1, 0x1f
+    invoke-virtual {p2, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    iget-object p0, p0, Lq3f;->e:[Z
+    move-result-object v1
 
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Z)I
+    :cond_1
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
-    move-result p0
+    move-result v2
 
-    add-int/2addr p0, v1
+    if-eqz v2, :cond_4
 
-    return p0
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v3
+
+    if-lt v2, v3, :cond_2
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v3
+
+    if-le v2, v3, :cond_0
+
+    :cond_2
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v3
+
+    if-gt v2, v3, :cond_3
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_0
+
+    :cond_3
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v3
+
+    if-gt v2, v3, :cond_1
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v3
+
+    if-lt v2, v3, :cond_1
+
+    goto :goto_0
+
+    :cond_4
+    if-nez p4, :cond_7
+
+    sget-object v1, Lp3f;->a:Ljava/util/regex/Pattern;
+
+    if-eq p1, v1, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    sget-object v1, Lp3f;->e:Ljava/util/regex/Pattern;
+
+    invoke-virtual {v1, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v1
+
+    :cond_6
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_7
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v3
+
+    if-lt v2, v3, :cond_7
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v3
+
+    if-gt v2, v3, :cond_7
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    goto/16 :goto_0
+
+    :cond_7
+    :goto_1
+    if-nez p3, :cond_8
+
+    goto :goto_2
+
+    :cond_8
+    invoke-virtual {p3, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v1
+
+    :cond_9
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_a
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v3
+
+    if-lt v2, v3, :cond_a
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v3
+
+    if-gt v2, v3, :cond_a
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_9
+
+    goto/16 :goto_0
+
+    :cond_a
+    :goto_2
+    :try_start_0
+    new-instance v1, Lm3f;
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v2
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v3
+
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v1, v2, v3, v4}, Lm3f;-><init>(IILjava/lang/String;)V
+
+    invoke-interface {p5, v1}, Lpm3;->accept(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto/16 :goto_0
+
+    :catchall_0
+    move-exception v1
+
+    const-string v2, "q3f"
+
+    invoke-virtual {v1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3, v1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto/16 :goto_0
+
+    :cond_b
+    return-void
 .end method

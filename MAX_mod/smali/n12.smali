@@ -1,30 +1,64 @@
 .class public final Ln12;
-.super Lnx1;
+.super Lbd3;
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic c:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+
 # instance fields
-.field public final a:Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
+.field private volatile synthetic _resumed$volatile:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)V
+.method static constructor <clinit>()V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Ln12;
 
-    if-eqz p1, :cond_0
+    const-string v1, "_resumed$volatile"
 
-    iput-object p1, p0, Ln12;->a:Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
+    invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    move-result-object v0
+
+    sput-object v0, Ln12;->c:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     return-void
+.end method
+
+.method public constructor <init>(Lf12;Ljava/lang/Throwable;Z)V
+    .registers 6
+
+    if-nez p2, :cond_0
+
+    new-instance p2, Ljava/util/concurrent/CancellationException;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Continuation "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p1, " was cancelled normally"
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p2, p1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
 
     :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
+    invoke-direct {p0, p2, p3}, Lbd3;-><init>(Ljava/lang/Throwable;Z)V
 
-    const-string p1, "captureCallback is null"
+    const/4 p1, 0x0
 
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    iput p1, p0, Ln12;->_resumed$volatile:I
 
-    throw p0
+    return-void
 .end method

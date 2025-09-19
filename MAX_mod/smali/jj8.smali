@@ -1,65 +1,128 @@
 .class public final Ljj8;
-.super Lphc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final A0:Landroid/view/View;
+.field public A:Ljava/lang/Integer;
 
-.field public final B0:Landroid/widget/ImageView;
+.field public B:Ljava/lang/Integer;
 
-.field public final C0:Landroid/widget/ProgressBar;
+.field public C:Ljava/lang/CharSequence;
 
-.field public final D0:Landroid/widget/TextView;
+.field public D:Ljava/lang/CharSequence;
 
-.field public final synthetic E0:Lkj8;
+.field public E:Ljava/lang/CharSequence;
+
+.field public F:Landroid/os/Bundle;
+
+.field public a:Ljava/lang/CharSequence;
+
+.field public b:Ljava/lang/CharSequence;
+
+.field public c:Ljava/lang/CharSequence;
+
+.field public d:Ljava/lang/CharSequence;
+
+.field public e:Ljava/lang/CharSequence;
+
+.field public f:Ljava/lang/CharSequence;
+
+.field public g:Ljava/lang/CharSequence;
+
+.field public h:Landroid/net/Uri;
+
+.field public i:Lifc;
+
+.field public j:Lifc;
+
+.field public k:[B
+
+.field public l:Ljava/lang/Integer;
+
+.field public m:Landroid/net/Uri;
+
+.field public n:Ljava/lang/Integer;
+
+.field public o:Ljava/lang/Integer;
+
+.field public p:Ljava/lang/Integer;
+
+.field public q:Ljava/lang/Boolean;
+
+.field public r:Ljava/lang/Integer;
+
+.field public s:Ljava/lang/Integer;
+
+.field public t:Ljava/lang/Integer;
+
+.field public u:Ljava/lang/Integer;
+
+.field public v:Ljava/lang/Integer;
+
+.field public w:Ljava/lang/Integer;
+
+.field public x:Ljava/lang/CharSequence;
+
+.field public y:Ljava/lang/CharSequence;
+
+.field public z:Ljava/lang/CharSequence;
 
 
-# direct methods
-.method public constructor <init>(Lkj8;Landroid/view/View;)V
-    .registers 5
+# virtual methods
+.method public final a(I[B)V
+    .registers 6
 
-    iput-object p1, p0, Ljj8;->E0:Lkj8;
+    const/4 v0, 0x3
 
-    invoke-direct {p0, p2}, Lphc;-><init>(Landroid/view/View;)V
-
-    iput-object p2, p0, Ljj8;->A0:Landroid/view/View;
-
-    sget v0, Layb;->mr_picker_route_icon:I
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ImageView;
+    iget-object v1, p0, Ljj8;->k:[B
 
-    iput-object v0, p0, Ljj8;->B0:Landroid/widget/ImageView;
+    if-eqz v1, :cond_1
 
-    sget v0, Layb;->mr_picker_route_progress_bar:I
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object v1
 
-    move-result-object v0
+    sget v2, Llrf;->a:I
 
-    check-cast v0, Landroid/widget/ProgressBar;
+    invoke-virtual {v1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iput-object v0, p0, Ljj8;->C0:Landroid/widget/ProgressBar;
+    move-result v1
 
-    sget v1, Layb;->mr_picker_route_name:I
+    if-nez v1, :cond_1
 
-    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    iget-object v1, p0, Ljj8;->l:Ljava/lang/Integer;
+
+    invoke-static {v1, v0}, Llrf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p2}, [B->clone()Ljava/lang/Object;
 
     move-result-object p2
 
-    check-cast p2, Landroid/widget/TextView;
+    check-cast p2, [B
 
-    iput-object p2, p0, Ljj8;->D0:Landroid/widget/TextView;
+    iput-object p2, p0, Ljj8;->k:[B
 
-    iget-object p0, p1, Lkj8;->p0:Llj8;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object p0, p0, Llj8;->n0:Landroid/content/Context;
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lpk8;->i(Landroid/content/Context;Landroid/widget/ProgressBar;)V
+    iput-object p1, p0, Ljj8;->l:Ljava/lang/Integer;
 
     return-void
 .end method

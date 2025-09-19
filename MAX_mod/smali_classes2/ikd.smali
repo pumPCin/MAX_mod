@@ -1,136 +1,298 @@
 .class public final Likd;
-.super Ljava/lang/Object;
+.super Lckd;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lqte;
+.field public final b:J
 
-.field public final b:I
+.field public final c:J
+
+.field public final o:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(ILqte;)V
-    .registers 3
+.method public constructor <init>(JJ)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Likd;->a:Lqte;
+    iput-wide p1, p0, Likd;->b:J
 
-    iput p1, p0, Likd;->b:I
+    iput-wide p3, p0, Likd;->c:J
+
+    const-class p1, Likd;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Likd;->o:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final w()V
+    .registers 21
 
-    const/4 v0, 0x1
+    move-object/from16 v0, p0
 
-    if-ne p0, p1, :cond_0
+    iget-wide v1, v0, Likd;->c:J
 
-    return v0
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    :cond_0
-    instance-of v1, p1, Likd;
+    move-result-object v3
 
-    if-nez v1, :cond_1
+    invoke-static {v3}, Lgy7;->F(Ljava/lang/Long;)Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "run, chatId = "
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v5, v0, Likd;->b:J
+
+    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v7, ", lastEventTime = "
+
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    iget-object v4, v0, Likd;->o:Ljava/lang/String;
+
+    invoke-static {v4, v3}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Lckd;->b()Lza2;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v5, v6}, Lza2;->C(J)Ls72;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_7
+
+    iget-object v7, v3, Ls72;->b:Lvb2;
+
+    iget-wide v8, v7, Lvb2;->a:J
+
+    const-wide/16 v10, 0x0
+
+    cmp-long v8, v8, v10
+
+    if-nez v8, :cond_1
+
+    invoke-virtual {v0}, Lckd;->b()Lza2;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v3}, Lza2;->P(Ls72;)Z
+
+    move-result v8
+
+    if-nez v8, :cond_1
+
+    const-string v3, "delete local chat with serverId = 0"
+
+    invoke-static {v4, v3}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v3, v0, Lckd;->a:Ldkd;
+
+    if-eqz v3, :cond_0
 
     goto :goto_0
 
+    :cond_0
+    const/4 v3, 0x0
+
+    :goto_0
+    iget-object v3, v3, Ldkd;->t:Lcl7;
+
+    invoke-interface {v3}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lj43;
+
+    invoke-virtual {v3, v5, v6, v1, v2}, Lj43;->a(JJ)V
+
+    goto/16 :goto_4
+
     :cond_1
-    check-cast p1, Likd;
-
-    iget-object v1, p0, Likd;->a:Lqte;
-
-    iget-object v2, p1, Likd;->a:Lqte;
-
-    invoke-virtual {v1, v2}, Lqte;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3}, Ls72;->I()Z
 
     move-result v1
 
-    if-nez v1, :cond_2
+    if-eqz v1, :cond_2
 
-    goto :goto_0
+    iget-wide v1, v7, Lvb2;->d:J
+
+    invoke-virtual {v0}, Lckd;->o()Lqgb;
+
+    move-result-object v8
+
+    check-cast v8, Ltgb;
+
+    iget-object v8, v8, Ltgb;->a:Lh53;
+
+    invoke-virtual {v8}, Lgad;->q()J
+
+    move-result-wide v8
+
+    cmp-long v1, v1, v8
+
+    if-eqz v1, :cond_3
 
     :cond_2
-    iget p0, p0, Likd;->b:I
+    invoke-virtual {v3}, Ls72;->E()Z
 
-    iget p1, p1, Likd;->b:I
+    move-result v1
 
-    if-eq p0, p1, :cond_3
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
+    if-eqz v1, :cond_4
 
     :cond_3
-    return v0
-.end method
+    const/4 v1, 0x1
 
-.method public final hashCode()I
-    .registers 3
+    :goto_1
+    move v13, v1
 
-    iget-object v0, p0, Likd;->a:Lqte;
+    goto :goto_2
 
-    iget v0, v0, Lqte;->b:I
+    :cond_4
+    const/4 v1, 0x0
 
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+    goto :goto_1
 
-    move-result v0
+    :goto_2
+    invoke-virtual {v3}, Ls72;->L()Z
 
-    const/16 v1, 0x1f
+    move-result v1
 
-    mul-int/2addr v0, v1
+    if-nez v1, :cond_5
 
-    iget p0, p0, Likd;->b:I
+    iget-object v1, v7, Lvb2;->c:Ltb2;
 
-    invoke-static {p0, v0, v1}, Lfge;->m(III)I
+    sget-object v2, Ltb2;->c:Ltb2;
 
-    move-result p0
+    if-ne v1, v2, :cond_5
 
-    const/4 v0, 0x0
+    goto :goto_3
 
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+    :cond_5
+    invoke-virtual {v3}, Ls72;->S()Z
 
-    move-result v0
+    move-result v1
 
-    add-int/2addr v0, p0
+    if-eqz v1, :cond_6
 
-    return v0
-.end method
+    :goto_3
+    new-instance v1, Ljava/lang/StringBuilder;
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    const-string v2, "delete LEFT chat = "
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v1, "Button(title="
+    invoke-virtual {v1, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v1, p0, Likd;->a:Lqte;
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-string v1, ", id="
+    invoke-virtual {v0}, Lckd;->a()Lrk;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    iget p0, p0, Likd;->b:I
+    iget-wide v11, v7, Lvb2;->a:J
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-wide v14, v0, Likd;->c:J
 
-    const-string p0, ", isNegative=false)"
+    move-object v8, v1
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v8, Lgaa;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-wide v9, v0, Likd;->b:J
 
-    move-result-object p0
+    invoke-virtual/range {v8 .. v15}, Lgaa;->h(JJZJ)J
 
-    return-object p0
+    goto :goto_4
+
+    :cond_6
+    invoke-virtual {v0}, Lckd;->m()Lsz8;
+
+    move-result-object v14
+
+    iget-wide v1, v0, Likd;->c:J
+
+    sget-object v19, Lj39;->c:Lj39;
+
+    iget-wide v8, v0, Likd;->b:J
+
+    move-wide/from16 v17, v1
+
+    move-wide v15, v8
+
+    invoke-virtual/range {v14 .. v19}, Lsz8;->y(JJLj39;)V
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v1
+
+    invoke-static {v13}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    filled-new-array {v1, v2}, [Ljava/lang/Object;
+
+    move-result-object v1
+
+    const-string v2, "delete chat, chatId = %d canClearForAll = %s"
+
+    invoke-static {v4, v2, v1}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    invoke-virtual {v0}, Lckd;->a()Lrk;
+
+    move-result-object v1
+
+    iget-wide v9, v3, Ls72;->a:J
+
+    iget-wide v11, v7, Lvb2;->a:J
+
+    iget-wide v14, v0, Likd;->c:J
+
+    move-object v8, v1
+
+    check-cast v8, Lgaa;
+
+    invoke-virtual/range {v8 .. v15}, Lgaa;->h(JJZJ)J
+
+    :goto_4
+    invoke-virtual {v0}, Lckd;->l()Lbz7;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Lckd;->m()Lsz8;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v5, v6}, Lsz8;->i(J)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Lbz7;->c(Ljava/util/ArrayList;)V
+
+    :cond_7
+    return-void
 .end method

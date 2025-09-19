@@ -1,102 +1,99 @@
 .class public final Lv33;
-.super Ljava/lang/Object;
+.super Lrj0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:I
+.field public h:I
 
-.field public final b:Ljava/lang/reflect/Method;
+.field public i:I
+
+.field public j:I
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/reflect/Method;)V
-    .registers 3
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 11
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v3, Ls2c;->circularProgressIndicatorStyle:I
 
-    iput p1, p0, Lv33;->a:I
+    sget v4, Lu33;->z0:I
 
-    iput-object p2, p0, Lv33;->b:Ljava/lang/reflect/Method;
+    invoke-direct {p0, v3, v4, p1}, Lrj0;-><init>(IILandroid/content/Context;)V
 
-    const/4 p0, 0x1
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {p2, p0}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    move-result-object v0
 
-    return-void
-.end method
+    sget v1, Lr3c;->mtrl_progress_circular_size_medium:I
 
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    move-result v6
 
-    const/4 v0, 0x1
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    if-ne p0, p1, :cond_0
+    move-result-object v0
 
-    return v0
+    sget v1, Lr3c;->mtrl_progress_circular_inset_medium:I
 
-    :cond_0
-    instance-of v1, p1, Lv33;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    const/4 v2, 0x0
+    move-result v7
 
-    if-nez v1, :cond_1
+    sget-object v2, Lgdc;->CircularProgressIndicator:[I
 
-    return v2
+    const/4 v8, 0x0
 
-    :cond_1
-    check-cast p1, Lv33;
+    new-array v5, v8, [I
 
-    iget v1, p0, Lv33;->a:I
+    const/4 v1, 0x0
 
-    iget v3, p1, Lv33;->a:I
+    invoke-static {p1, v1, v3, v4}, Lg4f;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    if-ne v1, v3, :cond_2
+    move-object v0, p1
 
-    iget-object p0, p0, Lv33;->b:Ljava/lang/reflect/Method;
+    invoke-static/range {v0 .. v5}, Lg4f;->b(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)V
 
-    invoke-virtual {p0}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    iget-object p1, p1, Lv33;->b:Ljava/lang/reflect/Method;
-
-    invoke-virtual {p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    sget v1, Lgdc;->CircularProgressIndicator_indicatorSize:I
 
-    move-result p0
+    invoke-static {v0, p1, v1, v6}, Lqe5;->m(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
 
-    if-eqz p0, :cond_2
+    move-result v1
 
-    return v0
+    iget v2, p0, Lrj0;->a:I
 
-    :cond_2
-    return v2
-.end method
+    mul-int/lit8 v2, v2, 0x2
 
-.method public final hashCode()I
-    .registers 2
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
-    iget v0, p0, Lv33;->a:I
+    move-result v1
 
-    mul-int/lit8 v0, v0, 0x1f
+    iput v1, p0, Lv33;->h:I
 
-    iget-object p0, p0, Lv33;->b:Ljava/lang/reflect/Method;
+    sget v1, Lgdc;->CircularProgressIndicator_indicatorInset:I
 
-    invoke-virtual {p0}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    invoke-static {v0, p1, v1, v7}, Lqe5;->m(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
 
-    move-result-object p0
+    move-result v0
 
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    iput v0, p0, Lv33;->i:I
 
-    move-result p0
+    sget v0, Lgdc;->CircularProgressIndicator_indicatorDirectionCircular:I
 
-    add-int/2addr p0, v0
+    invoke-virtual {p1, v0, v8}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    return p0
+    move-result v0
+
+    iput v0, p0, Lv33;->j:I
+
+    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+
+    invoke-virtual {p0}, Lrj0;->a()V
+
+    return-void
 .end method

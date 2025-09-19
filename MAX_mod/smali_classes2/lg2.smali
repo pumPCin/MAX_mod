@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lrg2;
+.implements Lng2;
 
 
 # instance fields
@@ -73,13 +73,13 @@
 .method public final toString()Ljava/lang/String;
     .registers 5
 
-    const-string v0, "Add(messageId="
+    const-string v0, "Update(messageId="
 
     const-string v1, ")"
 
     iget-wide v2, p0, Llg2;->a:J
 
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v0, v1}, Lwsf;->e(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

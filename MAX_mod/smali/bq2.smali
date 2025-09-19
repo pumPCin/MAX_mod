@@ -1,45 +1,48 @@
-.class public abstract Lbq2;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.class public final Lbq2;
+.super Ljx3;
 
 
-# static fields
-.field public static final a:Lxh7;
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Lcm1;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lcm1;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    sget-object v0, Lcq2;->a:Lcq2;
+    iput-object p1, p0, Lbq2;->Y:Lcm1;
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v1
-
-    const-class v2, Li8d;
-
-    invoke-virtual {v1, v2}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    move-result-object v1
-
-    sput-object v1, Lbq2;->a:Lxh7;
-
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v1
-
-    const-class v2, Lbka;
-
-    invoke-virtual {v1, v2}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v0
-
-    const-class v1, Lmwa;
-
-    invoke-virtual {v0, v1}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iput-object p1, p0, Lbq2;->o:Ljava/lang/Object;
+
+    iget p1, p0, Lbq2;->X:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lbq2;->X:I
+
+    iget-object p1, p0, Lbq2;->Y:Lcm1;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lcm1;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

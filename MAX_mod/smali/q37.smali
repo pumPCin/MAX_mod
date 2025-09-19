@@ -1,24 +1,43 @@
-.class public interface abstract Lq37;
-.super Ljava/lang/Object;
+.class public final Lq37;
+.super Ljava/util/HashMap;
 .source "SourceFile"
 
 
-# static fields
-.field public static final I:Lp37;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Map;
+    .registers 4
 
-    sget-object v0, Lp37;->a:Lp37;
+    new-instance v0, Ljava/util/HashMap;
 
-    sput-object v0, Lq37;->I:Lp37;
+    const/4 v1, 0x1
 
-    return-void
+    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
+
+    invoke-virtual {v0, p0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
+.method public static b(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Map;
+    .registers 6
 
-# virtual methods
-.method public abstract s()Lxu2;
+    new-instance v0, Ljava/util/HashMap;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
+
+    invoke-virtual {v0, p0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0, p2, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object p0
+
+    return-object p0
 .end method

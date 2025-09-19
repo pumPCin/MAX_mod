@@ -1,34 +1,23 @@
-.class public final synthetic Lmvf;
+.class public interface abstract Lmvf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lorg/webrtc/VideoSink;
-
-
-# instance fields
-.field public final synthetic a:Lorg/webrtc/VideoSource;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lorg/webrtc/VideoSource;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lmvf;->a:Lorg/webrtc/VideoSource;
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final onFrame(Lorg/webrtc/VideoFrame;)V
-    .registers 2
+.method public abstract g()I
+.end method
 
-    iget-object p0, p0, Lmvf;->a:Lorg/webrtc/VideoSource;
+.method public abstract getHeight()I
+.end method
 
-    invoke-static {p0, p1}, Lorg/webrtc/VideoSource;->b(Lorg/webrtc/VideoSource;Lorg/webrtc/VideoFrame;)V
+.method public abstract getWidth()I
+.end method
 
-    return-void
+.method public abstract h()J
+.end method
+
+.method public abstract i()Landroid/net/Uri;
+.end method
+
+.method public abstract j()J
 .end method

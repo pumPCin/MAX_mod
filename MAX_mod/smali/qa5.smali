@@ -3,146 +3,273 @@
 .source "SourceFile"
 
 # interfaces
-.implements Linf;
-.implements Lmz1;
-.implements Lw6b;
+.implements Lts7;
 
 
 # instance fields
-.field public a:Linf;
+.field public final X:I
 
-.field public b:Lmz1;
+.field public final Y:Z
 
-.field public c:Linf;
+.field public final Z:Z
 
-.field public o:Lmz1;
+.field public final a:Ljava/lang/String;
+
+.field public final b:I
+
+.field public final c:J
+
+.field public final o:I
+
+.field public final r0:J
+
+
+# direct methods
+.method public constructor <init>(IIIJLjava/lang/String;ZZ)V
+    .registers 9
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p6, p0, Lqa5;->a:Ljava/lang/String;
+
+    iput p1, p0, Lqa5;->b:I
+
+    iput-wide p4, p0, Lqa5;->c:J
+
+    iput p2, p0, Lqa5;->o:I
+
+    iput p3, p0, Lqa5;->X:I
+
+    iput-boolean p7, p0, Lqa5;->Y:Z
+
+    iput-boolean p8, p0, Lqa5;->Z:Z
+
+    invoke-virtual {p6}, Ljava/lang/String;->hashCode()I
+
+    move-result p1
+
+    int-to-long p1, p1
+
+    iput-wide p1, p0, Lqa5;->r0:J
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(ILjava/lang/Object;)V
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 9
 
-    const/4 v0, 0x7
+    const/4 v0, 0x1
 
-    if-eq p1, v0, :cond_3
+    if-ne p0, p1, :cond_0
 
-    const/16 v0, 0x8
-
-    if-eq p1, v0, :cond_2
-
-    const/16 v0, 0x2710
-
-    if-eq p1, v0, :cond_0
-
-    return-void
+    return v0
 
     :cond_0
-    check-cast p2, Lnzd;
+    instance-of v1, p1, Lqa5;
 
-    if-nez p2, :cond_1
+    const/4 v2, 0x0
 
-    const/4 p1, 0x0
+    if-nez v1, :cond_1
 
-    iput-object p1, p0, Lqa5;->c:Linf;
-
-    iput-object p1, p0, Lqa5;->o:Lmz1;
-
-    return-void
+    return v2
 
     :cond_1
-    invoke-virtual {p2}, Lnzd;->getVideoFrameMetadataListener()Linf;
+    check-cast p1, Lqa5;
 
-    move-result-object p1
+    iget-object v1, p0, Lqa5;->a:Ljava/lang/String;
 
-    iput-object p1, p0, Lqa5;->c:Linf;
+    iget-object v3, p1, Lqa5;->a:Ljava/lang/String;
 
-    invoke-virtual {p2}, Lnzd;->getCameraMotionListener()Lmz1;
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object p1
+    move-result v1
 
-    iput-object p1, p0, Lqa5;->o:Lmz1;
+    if-nez v1, :cond_2
 
-    return-void
+    return v2
 
     :cond_2
-    check-cast p2, Lmz1;
+    iget v1, p0, Lqa5;->b:I
 
-    iput-object p2, p0, Lqa5;->b:Lmz1;
+    iget v3, p1, Lqa5;->b:I
 
-    return-void
+    if-eq v1, v3, :cond_3
+
+    return v2
 
     :cond_3
-    check-cast p2, Linf;
+    iget-wide v3, p0, Lqa5;->c:J
 
-    iput-object p2, p0, Lqa5;->a:Linf;
+    iget-wide v5, p1, Lqa5;->c:J
 
-    return-void
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget v1, p0, Lqa5;->o:I
+
+    iget v3, p1, Lqa5;->o:I
+
+    if-eq v1, v3, :cond_5
+
+    return v2
+
+    :cond_5
+    iget v1, p0, Lqa5;->X:I
+
+    iget v3, p1, Lqa5;->X:I
+
+    if-eq v1, v3, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-boolean v1, p0, Lqa5;->Y:Z
+
+    iget-boolean v3, p1, Lqa5;->Y:Z
+
+    if-eq v1, v3, :cond_7
+
+    return v2
+
+    :cond_7
+    iget-boolean p0, p0, Lqa5;->Z:Z
+
+    iget-boolean p1, p1, Lqa5;->Z:Z
+
+    if-eq p0, p1, :cond_8
+
+    return v2
+
+    :cond_8
+    return v0
 .end method
 
-.method public final b(J[F)V
+.method public final getItemId()J
+    .registers 3
+
+    iget-wide v0, p0, Lqa5;->r0:J
+
+    return-wide v0
+.end method
+
+.method public final hashCode()I
     .registers 5
 
-    iget-object v0, p0, Lqa5;->o:Lmz1;
+    iget-object v0, p0, Lqa5;->a:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    invoke-interface {v0, p1, p2, p3}, Lmz1;->b(J[F)V
+    move-result v0
 
-    :cond_0
-    iget-object p0, p0, Lqa5;->b:Lmz1;
+    const/16 v1, 0x1f
 
-    if-eqz p0, :cond_1
+    mul-int/2addr v0, v1
 
-    invoke-interface {p0, p1, p2, p3}, Lmz1;->b(J[F)V
+    iget v2, p0, Lqa5;->b:I
 
-    :cond_1
-    return-void
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lqa5;->c:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget v2, p0, Lqa5;->o:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget v2, p0, Lqa5;->X:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lqa5;->Y:Z
+
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
+
+    move-result v0
+
+    iget-boolean p0, p0, Lqa5;->Z:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
 .end method
 
-.method public final c()V
-    .registers 2
+.method public final m()I
+    .registers 1
 
-    iget-object v0, p0, Lqa5;->o:Lmz1;
+    const/4 p0, 0x0
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lmz1;->c()V
-
-    :cond_0
-    iget-object p0, p0, Lqa5;->b:Lmz1;
-
-    if-eqz p0, :cond_1
-
-    invoke-interface {p0}, Lmz1;->c()V
-
-    :cond_1
-    return-void
+    return p0
 .end method
 
-.method public final d(JJLr26;Landroid/media/MediaFormat;)V
-    .registers 14
+.method public final toString()Ljava/lang/String;
+    .registers 6
 
-    iget-object v0, p0, Lqa5;->c:Linf;
+    const-string v0, ", numberOfIdleThreads="
 
-    if-eqz v0, :cond_0
+    const-string v1, ", completedTasksCount="
 
-    move-wide v1, p1
+    iget v2, p0, Lqa5;->b:I
 
-    move-wide v3, p3
+    const-string v3, "ExecutorState(name="
 
-    move-object v5, p5
+    iget-object v4, p0, Lqa5;->a:Ljava/lang/String;
 
-    move-object v6, p6
+    invoke-static {v2, v3, v4, v0, v1}, Lyv7;->m(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface/range {v0 .. v6}, Linf;->d(JJLr26;Landroid/media/MediaFormat;)V
+    move-result-object v0
 
-    :cond_0
-    iget-object p0, p0, Lqa5;->a:Linf;
+    const-string v1, ", activeTasksCount="
 
-    if-eqz p0, :cond_1
+    iget-wide v2, p0, Lqa5;->c:J
 
-    invoke-interface/range {p0 .. p6}, Linf;->d(JJLr26;Landroid/media/MediaFormat;)V
+    iget v4, p0, Lqa5;->o:I
 
-    :cond_1
-    return-void
+    invoke-static {v0, v2, v3, v1, v4}, Lsq3;->p(Ljava/lang/StringBuilder;JLjava/lang/String;I)V
+
+    const-string v1, ", tasksInQueue="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lqa5;->X:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", shutdown="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lqa5;->Y:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", terminated="
+
+    const-string v2, ")"
+
+    iget-boolean p0, p0, Lqa5;->Z:Z
+
+    invoke-static {v0, v1, p0, v2}, Lyv7;->l(Ljava/lang/StringBuilder;Ljava/lang/String;ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

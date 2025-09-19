@@ -1,8 +1,19 @@
-.class public interface abstract Lks7;
+.class public final Lks7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()V
+# instance fields
+.field public final synthetic a:Lls7;
+
+
+# direct methods
+.method public constructor <init>(Lls7;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lks7;->a:Lls7;
+
+    return-void
 .end method

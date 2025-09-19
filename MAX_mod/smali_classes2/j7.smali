@@ -2,98 +2,118 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final d:Ljava/util/List;
+# interfaces
+.implements Lqc6;
+.implements Ls9e;
 
 
 # instance fields
-.field public final a:Le71;
-
-.field public final b:Ll7;
-
-.field public final c:Lzd8;
+.field public a:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public constructor <init>()V
+    .registers 3
 
-    const-string v0, "libvpx"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "unknown"
+    const-wide/16 v0, -0x1
 
-    const-string v2, ""
-
-    const-string v3, "null"
-
-    filled-new-array {v2, v3, v0, v1}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lk73;->O([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    sput-object v0, Lj7;->d:Ljava/util/List;
+    iput-wide v0, p0, Lj7;->a:J
 
     return-void
 .end method
 
-.method public constructor <init>(Le71;Lxwe;)V
-    .registers 12
+.method public synthetic constructor <init>(J)V
+    .registers 3
+
+    iput-wide p1, p0, Lj7;->a:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj7;->a:Le71;
-
-    new-instance v8, Ll7;
-
-    new-instance v0, Lcaa;
-
-    const/4 v6, 0x0
-
-    const/16 v7, 0xb
-
-    const/4 v1, 0x2
-
-    const-class v3, Lj7;
-
-    const-string v4, "onVideoCodec"
-
-    const-string v5, "onVideoCodec(Lru/ok/android/webrtc/stat/codec/ActiveEncodersStats$NamedCodecInfo;J)V"
-
-    move-object v2, p0
-
-    invoke-direct/range {v0 .. v7}, Lcaa;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
-
-    move-object v1, v0
-
-    invoke-direct {v8, p2, v1}, Ll7;-><init>(Lxwe;Lcaa;)V
-
-    iput-object v8, p0, Lj7;->b:Ll7;
-
-    new-instance v8, Lzd8;
-
-    new-instance v0, Liq8;
-
-    const/16 v7, 0x15
-
-    const/4 v1, 0x1
-
-    const-class v3, Lj7;
-
-    const-string v4, "onAudioCodec"
-
-    const-string v5, "onAudioCodec(Lru/ok/android/webrtc/stat/codec/ActiveEncodersStats$NamedCodecInfo;)V"
-
-    invoke-direct/range {v0 .. v7}, Liq8;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
-
-    const/4 v1, 0x2
-
-    invoke-direct {v8, v1, v0}, Lzd8;-><init>(ILjava/lang/Object;)V
-
-    iput-object v8, p0, Lj7;->c:Lzd8;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public H()Lr9e;
+    .registers 2
+
+    new-instance v0, Lzab;
+
+    invoke-direct {v0, p0}, Lzab;-><init>(Lj7;)V
+
+    return-object v0
+.end method
+
+.method public a(J)J
+    .registers 7
+
+    const-wide/16 v0, -0x1
+
+    cmp-long v2, p1, v0
+
+    if-nez v2, :cond_0
+
+    iput-wide v0, p0, Lj7;->a:J
+
+    return-wide v0
+
+    :cond_0
+    iget-wide v2, p0, Lj7;->a:J
+
+    cmp-long v0, v2, v0
+
+    if-eqz v0, :cond_2
+
+    cmp-long v0, p1, v2
+
+    if-gez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    sub-long v0, p1, v2
+
+    iput-wide p1, p0, Lj7;->a:J
+
+    return-wide v0
+
+    :cond_2
+    :goto_0
+    iput-wide p1, p0, Lj7;->a:J
+
+    const-wide/16 p0, 0x0
+
+    return-wide p0
+.end method
+
+.method public apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    check-cast p1, Lbv4;
+
+    iget-wide v0, p0, Lj7;->a:J
+
+    const/4 p0, 0x1
+
+    const-string v2, "SELECT * FROM draft_uploads WHERE chat_id = ?"
+
+    invoke-static {p0, v2}, Lvxc;->c(ILjava/lang/String;)Lvxc;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0, v0, v1}, Lvxc;->k(IJ)V
+
+    new-instance p0, Lav4;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, p1, v2, v0}, Lav4;-><init>(Lbv4;Lvxc;I)V
+
+    new-instance p1, Ll98;
+
+    invoke-direct {p1, p0}, Ll98;-><init>(Ljava/util/concurrent/Callable;)V
+
+    return-object p1
 .end method

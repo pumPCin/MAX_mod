@@ -1,75 +1,63 @@
 .class public final Ldv9;
-.super Ljava/lang/Object;
+.super Luc0;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic c:[Lsf7;
-
-.field public static final d:Ljava/lang/String;
-
-
-# instance fields
-.field public final a:Lfq4;
-
-.field public final b:Lfq4;
+.field public static final b:Ldv9;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .registers 2
 
-    new-instance v0, Lrqb;
+    new-instance v0, Ldv9;
 
-    const-class v1, Ldv9;
+    sget-object v1, Lylf;->a:Lylf;
 
-    const-string v2, "chats"
+    invoke-direct {v0, v1}, Lys9;-><init>(Ljava/lang/Object;)V
 
-    const-string v3, "getChats()Lru/ok/tamtam/chats/ChatController;"
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sget-object v2, Lyhc;->a:Lzhc;
-
-    const-string v3, "messages"
-
-    const-string v5, "getMessages()Lru/ok/tamtam/messages/MessageController;"
-
-    invoke-static {v2, v1, v3, v5, v4}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
-
-    move-result-object v2
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Lsf7;
-
-    aput-object v0, v3, v4
-
-    const/4 v0, 0x1
-
-    aput-object v2, v3, v0
-
-    sput-object v3, Ldv9;->c:[Lsf7;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Ldv9;->d:Ljava/lang/String;
+    sput-object v0, Ldv9;->b:Ldv9;
 
     return-void
 .end method
 
-.method public constructor <init>(Lfq4;Lfq4;)V
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
-    iput-object p1, p0, Ldv9;->a:Lfq4;
+    if-ne p0, p1, :cond_0
 
-    iput-object p2, p0, Ldv9;->b:Lfq4;
+    return v0
 
-    return-void
+    :cond_0
+    instance-of p0, p1, Ldv9;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, -0x40700a78
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "MainScreen"
+
+    return-object p0
 .end method

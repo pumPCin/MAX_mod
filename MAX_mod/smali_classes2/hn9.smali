@@ -1,109 +1,100 @@
 .class public final Lhn9;
-.super Lt2;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lqve;
+.implements Lpc6;
 
 
 # instance fields
-.field public X:Landroid/widget/TextView;
-
-.field public Y:Landroid/view/View;
-
-.field public Z:Z
-
-.field public final o:Lmg;
+.field public final synthetic X:Lon9;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lmg;)V
+.method public constructor <init>(Lon9;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    invoke-direct {p0, p1}, Lt2;-><init>(Landroid/content/Context;)V
+    iput-object p1, p0, Lhn9;->X:Lon9;
 
-    iput-object p2, p0, Lhn9;->o:Lmg;
+    const/4 p1, 0x2
 
-    sget p1, Ly1c;->view_floating_video_trash:I
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p2, p1}, Lt2;->k(Landroid/view/ViewGroup;I)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e()V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-boolean v0, p0, Lhn9;->Z:Z
+    check-cast p1, Ly04;
 
-    if-eqz v0, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, p0, Lt2;->c:Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lhn9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast v0, Landroid/view/View;
+    move-result-object p0
 
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    check-cast p0, Lhn9;
 
-    move-result-object v0
+    sget-object p1, Lylf;->a:Lylf;
 
-    sget-object v1, Ldqe;->a0:Ldle;
+    invoke-virtual {p0, p1}, Lhn9;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0}, Lx44;->Q(Landroid/content/Context;)Ldqe;
-
-    move-result-object v0
-
-    iget-object p0, p0, Lhn9;->X:Landroid/widget/TextView;
-
-    iget v0, v0, Ldqe;->k:I
-
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(I)V
-
-    return-void
-
-    :cond_0
-    iget-object p0, p0, Lhn9;->X:Landroid/widget/TextView;
-
-    const/4 v0, -0x1
-
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(I)V
-
-    return-void
+    return-object p1
 .end method
 
-.method public final m()V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 3
 
-    iget-object v0, p0, Lt2;->c:Ljava/lang/Object;
+    new-instance p1, Lhn9;
 
-    check-cast v0, Landroid/view/View;
+    iget-object p0, p0, Lhn9;->X:Lon9;
 
-    sget v1, Ly0c;->view_floating_video_trash__tv_tip:I
+    invoke-direct {p1, p0, p2}, Lhn9;-><init>(Lon9;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    return-object p1
+.end method
 
-    move-result-object v0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    check-cast v0, Landroid/widget/TextView;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lhn9;->X:Landroid/widget/TextView;
+    iget-object p0, p0, Lhn9;->X:Lon9;
 
-    iget-object v0, p0, Lt2;->c:Ljava/lang/Object;
+    iget-object p1, p0, Lon9;->m:Ljf8;
 
-    check-cast v0, Landroid/view/View;
+    if-eqz p1, :cond_0
 
-    sget v1, Ly0c;->view_floating_video_trash__v_background:I
+    invoke-virtual {p1}, Ljf8;->getPlaybackState()I
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result p1
 
-    move-result-object v0
+    const/4 v0, 0x3
 
-    iput-object v0, p0, Lhn9;->Y:Landroid/view/View;
+    if-ne p1, v0, :cond_0
 
-    invoke-virtual {p0}, Lhn9;->e()V
+    goto :goto_0
 
-    return-void
+    :cond_0
+    iget-object p1, p0, Lon9;->m:Ljf8;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Ljf8;->prepare()V
+
+    :cond_1
+    :goto_0
+    iget-object p0, p0, Lon9;->m:Ljf8;
+
+    if-eqz p0, :cond_2
+
+    invoke-virtual {p0}, Ljf8;->play()V
+
+    :cond_2
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

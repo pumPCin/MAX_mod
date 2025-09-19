@@ -1,261 +1,110 @@
-.class public abstract Lqzf;
-.super Ljava/lang/Object;
+.class public final Lqzf;
+.super Landroid/graphics/drawable/LayerDrawable;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Landroid/graphics/Rect;
-
-.field public static final b:[I
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>()V
+    .registers 2
 
-    new-instance v0, Landroid/graphics/Rect;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    new-array v0, v0, [Landroid/graphics/drawable/Drawable;
 
-    sput-object v0, Lqzf;->a:Landroid/graphics/Rect;
-
-    const/4 v0, 0x2
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lqzf;->b:[I
+    invoke-direct {p0, v0}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
 
-.method public static final a(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;Landroid/view/ViewTreeObserver;Landroid/view/View;)V
-    .registers 4
 
-    invoke-virtual {p1}, Landroid/view/ViewTreeObserver;->isAlive()Z
+# virtual methods
+.method public final a()V
+    .registers 3
 
-    move-result v0
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    instance-of v1, v0, Landroid/graphics/drawable/ShapeDrawable;
+
+    if-eqz v1, :cond_0
+
+    check-cast v0, Landroid/graphics/drawable/ShapeDrawable;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    const/high16 v1, 0x5c000000
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    :cond_1
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_2
+
+    const/4 v0, -0x1
+
+    invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->setTint(I)V
+
+    :cond_2
+    return-void
+.end method
+
+.method public final b(ILjava/lang/Integer;)V
+    .registers 5
+
+    new-instance v0, Landroid/graphics/drawable/ShapeDrawable;
+
+    new-instance v1, Landroid/graphics/drawable/shapes/OvalShape;
+
+    invoke-direct {v1}, Landroid/graphics/drawable/shapes/OvalShape;-><init>()V
+
+    invoke-direct {v0, v1}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
+
+    invoke-virtual {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->addLayer(Landroid/graphics/drawable/Drawable;)I
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
+
+    move-result-object v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    return-void
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     :cond_0
-    invoke-virtual {p2}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    return-void
-.end method
-
-.method public static final b(Landroid/view/ViewGroup;Lh96;)Lozf;
-    .registers 8
-
-    invoke-virtual {p0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
-
-    move-result-object v3
-
-    new-instance v2, Lpzf;
-
-    invoke-direct {v2, p1, v3, p0}, Lpzf;-><init>(Lh96;Landroid/view/ViewTreeObserver;Landroid/view/View;)V
-
-    invoke-virtual {v3, v2}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+    move-result p2
 
-    move-result p1
+    const/4 v0, 0x0
 
-    if-nez p1, :cond_0
+    invoke-virtual {p0, v0, p1, p2}, Landroid/graphics/drawable/LayerDrawable;->setLayerSize(III)V
 
-    invoke-static {v2, v3, p0}, Lqzf;->a(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;Landroid/view/ViewTreeObserver;Landroid/view/View;)V
+    const/16 p1, 0x11
 
-    move-object v1, p0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lnzf;
-
-    const/4 v5, 0x1
-
-    move-object v4, p0
-
-    move-object v1, p0
-
-    invoke-direct/range {v0 .. v5}, Lnzf;-><init>(Landroid/view/View;Lpzf;Landroid/view/ViewTreeObserver;Landroid/view/View;I)V
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
-
-    goto :goto_0
-
-    :cond_1
-    move-object v1, p0
-
-    invoke-virtual {v1}, Landroid/view/View;->isAttachedToWindow()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_3
-
-    invoke-virtual {v1}, Landroid/view/View;->isAttachedToWindow()Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    invoke-static {v2, v3, v1}, Lqzf;->a(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;Landroid/view/ViewTreeObserver;Landroid/view/View;)V
-
-    goto :goto_0
-
-    :cond_2
-    new-instance v0, Lnzf;
-
-    const/4 v5, 0x2
-
-    move-object v4, v1
-
-    invoke-direct/range {v0 .. v5}, Lnzf;-><init>(Landroid/view/View;Lpzf;Landroid/view/ViewTreeObserver;Landroid/view/View;I)V
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
-
-    goto :goto_0
-
-    :cond_3
-    new-instance v0, Lnzf;
-
-    const/4 v5, 0x0
-
-    move-object v4, v1
-
-    invoke-direct/range {v0 .. v5}, Lnzf;-><init>(Landroid/view/View;Lpzf;Landroid/view/ViewTreeObserver;Landroid/view/View;I)V
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
-
-    :goto_0
-    new-instance p0, Lozf;
-
-    invoke-direct {p0, v3, v1, v2}, Lozf;-><init>(Landroid/view/ViewTreeObserver;Landroid/view/View;Lpzf;)V
-
-    return-object p0
-.end method
-
-.method public static final c(Landroid/view/View;Landroid/view/View;)Landroid/graphics/Rect;
-    .registers 6
-
-    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getTop()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v2
-
-    :goto_0
-    if-eq v2, p1, :cond_1
-
-    instance-of v3, v2, Landroid/view/View;
-
-    if-nez v3, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    check-cast v2, Landroid/view/View;
-
-    invoke-virtual {v2}, Landroid/view/View;->getScrollX()I
-
-    move-result v3
-
-    sub-int/2addr v0, v3
-
-    invoke-virtual {v2}, Landroid/view/View;->getScrollY()I
-
-    move-result v3
-
-    sub-int/2addr v1, v3
-
-    invoke-virtual {v2}, Landroid/view/View;->getLeft()I
-
-    move-result v3
-
-    add-int/2addr v0, v3
-
-    invoke-virtual {v2}, Landroid/view/View;->getTop()I
-
-    move-result v3
-
-    add-int/2addr v1, v3
-
-    invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result p1
-
-    add-int/2addr p1, v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
-
-    move-result p0
-
-    add-int/2addr p0, v1
-
-    sget-object v2, Lqzf;->a:Landroid/graphics/Rect;
-
-    invoke-virtual {v2, v0, v1, p1, p0}, Landroid/graphics/Rect;->set(IIII)V
-
-    return-object v2
-.end method
-
-.method public static final d(Landroid/graphics/Rect;Landroid/view/View;)V
-    .registers 7
-
-    sget-object v0, Lqzf;->b:[I
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->getLocationInWindow([I)V
-
-    const/4 v1, 0x0
-
-    aget v1, v0, v1
-
-    const/4 v2, 0x1
-
-    aget v3, v0, v2
-
-    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
-
-    move-result v4
-
-    add-int/2addr v4, v1
-
-    aget v0, v0, v2
-
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
-
-    move-result p1
-
-    add-int/2addr p1, v0
-
-    invoke-virtual {p0, v1, v3, v4, p1}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {p0, v0, p1}, Landroid/graphics/drawable/LayerDrawable;->setLayerGravity(II)V
 
     return-void
 .end method

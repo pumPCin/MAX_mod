@@ -1,51 +1,75 @@
 .class public final La4g;
-.super Lcx3;
+.super Loi0;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Lzn0;
+.field public final X:Ljava/lang/String;
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public final b:Ljava/util/Map;
 
-.field public final synthetic Z:Lp4g;
+.field public final c:J
 
-.field public n0:I
-
-.field public o:Ljava/lang/Object;
+.field public final o:J
 
 
 # direct methods
-.method public constructor <init>(Lp4g;Lcx3;)V
-    .registers 3
+.method public constructor <init>(JJJLjava/lang/String;Ljava/util/Map;)V
+    .registers 9
 
-    iput-object p1, p0, La4g;->Z:Lp4g;
+    invoke-direct {p0, p1, p2}, Loi0;-><init>(J)V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p8, p0, La4g;->b:Ljava/util/Map;
+
+    iput-wide p3, p0, La4g;->c:J
+
+    iput-wide p5, p0, La4g;->o:J
+
+    iput-object p7, p0, La4g;->X:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final toString()Ljava/lang/String;
+    .registers 4
 
-    iput-object p1, p0, La4g;->Y:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget p1, p0, La4g;->n0:I
+    const-string v1, "VideoPlayEvent{urls="
 
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    or-int/2addr p1, v0
+    iget-object v1, p0, La4g;->b:Ljava/util/Map;
 
-    iput p1, p0, La4g;->n0:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, La4g;->Z:Lp4g;
+    const-string v1, ", videoId="
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p1, v0, p0}, Lp4g;->b(Lp4g;Lzn0;Lcx3;)Ljava/lang/Object;
+    iget-wide v1, p0, La4g;->c:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", messageId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, La4g;->o:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", attachLocalId=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, La4g;->X:Ljava/lang/String;
+
+    const-string v1, "\'}"
+
+    invoke-static {v0, p0, v1}, Lyv7;->k(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

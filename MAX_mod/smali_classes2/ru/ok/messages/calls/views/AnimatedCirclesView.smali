@@ -11,7 +11,7 @@
     d2 = {
         "Lru/ok/messages/calls/views/AnimatedCirclesView;",
         "Landroid/widget/FrameLayout;",
-        "ee",
+        "le",
         "ui-utils_release"
     }
     k = 0x1
@@ -36,7 +36,7 @@
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    sget-object p2, Lv25;->a:Lv25;
+    sget-object p2, Lp45;->a:Lp45;
 
     iput-object p2, p0, Lru/ok/messages/calls/views/AnimatedCirclesView;->a:Ljava/lang/Object;
 
@@ -44,25 +44,25 @@
 
     invoke-direct {p2}, Landroid/animation/AnimatorSet;-><init>()V
 
-    sget p2, Lbwb;->calls_circle_1:I
+    sget p2, Lg3c;->calls_circle_1:I
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p2
 
-    sget v0, Lbwb;->calls_circle_3:I
+    sget v0, Lg3c;->calls_circle_3:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    sget v1, Lbwb;->calls_circle_4:I
+    sget v1, Lg3c;->calls_circle_4:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    sget v2, Lbwb;->calls_circle_2:I
+    sget v2, Lg3c;->calls_circle_2:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -72,7 +72,7 @@
 
     move-result-object p2
 
-    invoke-static {p2}, Lk73;->O([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p2}, Lr73;->I([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p2
 
@@ -80,7 +80,7 @@
 
     const/16 v1, 0xa
 
-    invoke-static {p2, v1}, Ll73;->U(Ljava/lang/Iterable;I)I
+    invoke-static {p2, v1}, Ls73;->O(Ljava/lang/Iterable;I)I
 
     move-result v1
 
@@ -107,9 +107,9 @@
 
     move-result v1
 
-    new-instance v2, Lee;
+    new-instance v2, Lle;
 
-    invoke-direct {v2, p1}, Lee;-><init>(Landroid/content/Context;)V
+    invoke-direct {v2, p1}, Lle;-><init>(Landroid/content/Context;)V
 
     new-instance v3, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -123,11 +123,11 @@
 
     move-result-object v3
 
-    invoke-static {v3, v1}, Lgw3;->a(Landroid/content/Context;I)I
+    invoke-static {v3, v1}, Lmw3;->a(Landroid/content/Context;I)I
 
     move-result v1
 
-    iget-object v3, v2, Lee;->a:Landroid/graphics/Paint;
+    iget-object v3, v2, Lle;->a:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v1}, Landroid/graphics/Paint;->setColor(I)V
 
@@ -207,7 +207,7 @@
 
     move-result-object v4
 
-    check-cast v4, Lee;
+    check-cast v4, Lle;
 
     add-float/2addr v3, v2
 

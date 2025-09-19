@@ -1,126 +1,127 @@
 .class public final Lg90;
-.super Lj46;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public X:I
+.field public final a:Lga0;
 
-.field public Y:Z
-
-.field public Z:F
-
-.field public n0:Z
+.field public final b:Lga0;
 
 
-# virtual methods
-.method public final draw(Landroid/graphics/Canvas;)V
-    .registers 9
+# direct methods
+.method public constructor <init>(Lga0;Lga0;)V
+    .registers 3
 
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result v0
+    iput-object p1, p0, Lg90;->a:Lga0;
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    iput-object p2, p0, Lg90;->b:Lga0;
 
-    move-result-object v1
-
-    iget v2, v1, Landroid/graphics/Rect;->right:I
-
-    iget v3, v1, Landroid/graphics/Rect;->left:I
-
-    sub-int/2addr v2, v3
-
-    iget v4, v1, Landroid/graphics/Rect;->bottom:I
-
-    iget v1, v1, Landroid/graphics/Rect;->top:I
-
-    sub-int/2addr v4, v1
-
-    iget v5, p0, Lg90;->Z:F
-
-    iget-boolean v6, p0, Lg90;->Y:Z
-
-    if-nez v6, :cond_0
-
-    const/high16 v6, 0x43b40000    # 360.0f
-
-    sub-float v5, v6, v5
-
-    :cond_0
-    div-int/lit8 v2, v2, 0x2
-
-    add-int/2addr v2, v3
-
-    int-to-float v2, v2
-
-    div-int/lit8 v4, v4, 0x2
-
-    add-int/2addr v4, v1
-
-    int-to-float v1, v4
-
-    invoke-virtual {p1, v5, v2, v1}, Landroid/graphics/Canvas;->rotate(FFF)V
-
-    invoke-super {p0, p1}, Lj46;->draw(Landroid/graphics/Canvas;)V
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    iget-boolean p1, p0, Lg90;->n0:Z
-
-    if-nez p1, :cond_1
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lg90;->n0:Z
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x14
-
-    add-long/2addr v0, v2
-
-    invoke-virtual {p0, p0, v0, v1}, Landroid/graphics/drawable/Drawable;->scheduleSelf(Ljava/lang/Runnable;J)V
-
-    :cond_1
     return-void
 .end method
 
-.method public final run()V
-    .registers 4
 
-    const/4 v0, 0x0
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    iput-boolean v0, p0, Lg90;->n0:Z
+    const/4 v0, 0x1
 
-    iget v0, p0, Lg90;->Z:F
+    if-ne p1, p0, :cond_0
 
-    iget v1, p0, Lg90;->X:I
+    return v0
 
-    int-to-float v1, v1
+    :cond_0
+    instance-of v1, p1, Lg90;
 
-    const/high16 v2, 0x41a00000    # 20.0f
+    const/4 v2, 0x0
 
-    div-float/2addr v2, v1
+    if-eqz v1, :cond_1
 
-    const/high16 v1, 0x43b40000    # 360.0f
+    check-cast p1, Lg90;
 
-    mul-float/2addr v2, v1
+    iget-object v1, p0, Lg90;->a:Lga0;
 
-    float-to-int v1, v2
+    iget-object v3, p1, Lg90;->a:Lga0;
 
-    int-to-float v1, v1
+    invoke-virtual {v1, v3}, Lga0;->equals(Ljava/lang/Object;)Z
 
-    add-float/2addr v0, v1
+    move-result v1
 
-    iput v0, p0, Lg90;->Z:F
+    if-eqz v1, :cond_1
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+    iget-object p0, p0, Lg90;->b:Lga0;
 
-    return-void
+    iget-object p1, p1, Lg90;->b:Lga0;
+
+    invoke-virtual {p0, p1}, Lga0;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    iget-object v0, p0, Lg90;->a:Lga0;
+
+    invoke-virtual {v0}, Lga0;->hashCode()I
+
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v1
+
+    iget-object p0, p0, Lg90;->b:Lga0;
+
+    invoke-virtual {p0}, Lga0;->hashCode()I
+
+    move-result p0
+
+    xor-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "DualOutConfig{primaryOutConfig="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lg90;->a:Lga0;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", secondaryOutConfig="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lg90;->b:Lga0;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

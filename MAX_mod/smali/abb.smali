@@ -1,237 +1,152 @@
-.class public final Labb;
+.class public final synthetic Labb;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final e:Labb;
+# interfaces
+.implements Lzb6;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:I
 
-.field public final b:Lms8;
-
-.field public final c:Ljc5;
-
-.field public final d:Lm31;
+.field public final synthetic b:Lone/me/calls/ui/ui/pip/PipScreen;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public synthetic constructor <init>(Lone/me/calls/ui/ui/pip/PipScreen;I)V
+    .registers 3
 
-    new-instance v0, Labb;
+    iput p2, p0, Labb;->a:I
 
-    sget-object v1, Lec5;->a:Lec5;
-
-    sget-object v2, Lm31;->h:Lm31;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v3, v3, v1, v2}, Labb;-><init>(Ljava/lang/String;Lms8;Ljc5;Lm31;)V
-
-    sput-object v0, Labb;->e:Labb;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Lms8;Ljc5;Lm31;)V
-    .registers 5
+    iput-object p1, p0, Labb;->b:Lone/me/calls/ui/ui/pip/PipScreen;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Labb;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Labb;->b:Lms8;
-
-    iput-object p3, p0, Labb;->c:Ljc5;
-
-    iput-object p4, p0, Labb;->d:Lm31;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final invoke()Ljava/lang/Object;
+    .registers 9
 
-    const/4 v0, 0x1
+    iget v0, p0, Labb;->a:I
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Labb;->b:Lone/me/calls/ui/ui/pip/PipScreen;
 
-    return v0
+    packed-switch v0, :pswitch_data_0
 
-    :cond_0
-    instance-of v1, p1, Labb;
+    sget-object v0, Lone/me/calls/ui/ui/pip/PipScreen;->X:[Lxi7;
 
-    const/4 v2, 0x0
+    iget-object p0, p0, Lone/me/calls/ui/ui/pip/PipScreen;->c:Ljava/lang/Object;
 
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Labb;
-
-    iget-object v1, p0, Labb;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Labb;->a:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Labb;->b:Lms8;
-
-    iget-object v3, p1, Labb;->b:Lms8;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Labb;->c:Ljc5;
-
-    iget-object v3, p1, Labb;->c:Ljc5;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-object p0, p0, Labb;->d:Lm31;
-
-    iget-object p1, p1, Labb;->d:Lm31;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_5
-
-    return v2
-
-    :cond_5
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Labb;->a:Ljava/lang/String;
-
-    if-nez v1, :cond_0
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    :goto_0
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-object v2, p0, Labb;->b:Lms8;
-
-    if-nez v2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    :goto_1
-    add-int/2addr v1, v0
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-object v0, p0, Labb;->c:Ljc5;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Labb;->d:Lm31;
-
-    invoke-virtual {p0}, Lm31;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "PreviousCallState(callId="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Labb;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", recallTarget="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Labb;->b:Lms8;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", state="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Labb;->c:Ljc5;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", chatInfo="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Labb;->d:Lm31;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
+    check-cast p0, Ltab;
+
+    iget-object p0, p0, Ltab;->Y:Ljava/lang/Object;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lzxf;
+
     return-object p0
+
+    :pswitch_0
+    sget-object v0, Lone/me/calls/ui/ui/pip/PipScreen;->X:[Lxi7;
+
+    sget-object v0, Lv31;->a:Lv31;
+
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v1
+
+    const-class v2, Luya;
+
+    invoke-virtual {v1, v2}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v3, v1
+
+    check-cast v3, Luya;
+
+    invoke-virtual {v0}, Lv31;->c()Lwu1;
+
+    move-result-object v5
+
+    invoke-virtual {v0}, Lv31;->d()Lrt1;
+
+    move-result-object v4
+
+    new-instance v6, Lq02;
+
+    const/16 v0, 0x16
+
+    invoke-direct {v6, v0, p0}, Lq02;-><init>(ILjava/lang/Object;)V
+
+    invoke-static {}, Lek1;->b()Lcl7;
+
+    move-result-object v7
+
+    new-instance v2, Ltab;
+
+    invoke-direct/range {v2 .. v7}, Ltab;-><init>(Luya;Lrt1;Lwu1;Lrab;Lcl7;)V
+
+    return-object v2
+
+    :pswitch_1
+    sget-object v0, Lone/me/calls/ui/ui/pip/PipScreen;->X:[Lxi7;
+
+    new-instance v0, Loh1;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Loh1;-><init>(Landroid/content/Context;)V
+
+    sget-object v1, Lyu4;->t0:Lbx9;
+
+    invoke-virtual {v1, v0}, Lbx9;->q(Landroid/view/View;)Llia;
+
+    move-result-object v1
+
+    iget-object v1, v1, Llia;->c:Lera;
+
+    invoke-virtual {v0, v1}, Loh1;->setPipTheme(Lera;)V
+
+    new-instance v1, Landroid/view/ViewGroup$LayoutParams;
+
+    const/4 v2, -0x1
+
+    invoke-direct {v1, v2, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    new-instance v1, Labb;
+
+    const/4 v2, 0x2
+
+    invoke-direct {v1, p0, v2}, Labb;-><init>(Lone/me/calls/ui/ui/pip/PipScreen;I)V
+
+    invoke-virtual {v0, v1}, Loh1;->setVideoLayoutUpdatesControllerProvider(Lzb6;)V
+
+    const/4 p0, 0x0
+
+    invoke-virtual {v0, p0}, Loh1;->setBackgroundCorners(F)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

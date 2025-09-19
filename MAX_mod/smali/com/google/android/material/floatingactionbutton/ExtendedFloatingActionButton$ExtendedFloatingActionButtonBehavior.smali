@@ -1,5 +1,5 @@
 .class public Lcom/google/android/material/floatingactionbutton/ExtendedFloatingActionButton$ExtendedFloatingActionButtonBehavior;
-.super Lmz3;
+.super Ltz3;
 .source "SourceFile"
 
 
@@ -9,7 +9,7 @@
         "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Lmz3;"
+        "Ltz3;"
     }
 .end annotation
 
@@ -28,19 +28,19 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object p0, Le6c;->ExtendedFloatingActionButton_Behavior_Layout:[I
+    sget-object p0, Lgdc;->ExtendedFloatingActionButton_Behavior_Layout:[I
 
     invoke-virtual {p1, p2, p0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object p0
 
-    sget p1, Le6c;->ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide:I
+    sget p1, Lgdc;->ExtendedFloatingActionButton_Behavior_Layout_behavior_autoHide:I
 
     const/4 p2, 0x0
 
     invoke-virtual {p0, p1, p2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    sget p1, Le6c;->ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink:I
+    sget p1, Lgdc;->ExtendedFloatingActionButton_Behavior_Layout_behavior_autoShrink:I
 
     const/4 p2, 0x1
 
@@ -63,16 +63,16 @@
     throw p0
 .end method
 
-.method public final g(Lpz3;)V
+.method public final g(Lwz3;)V
     .registers 2
 
-    iget p0, p1, Lpz3;->h:I
+    iget p0, p1, Lwz3;->h:I
 
     if-nez p0, :cond_0
 
     const/16 p0, 0x50
 
-    iput p0, p1, Lpz3;->h:I
+    iput p0, p1, Lwz3;->h:I
 
     :cond_0
     return-void

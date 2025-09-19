@@ -1,39 +1,58 @@
-.class public interface abstract Lonc;
+.class public final synthetic Lonc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# static fields
-.field public static final a:Ltz1;
+
+# instance fields
+.field public final synthetic X:Ljava/lang/Throwable;
+
+.field public final synthetic a:Lvnc;
+
+.field public final synthetic b:Lsa0;
+
+.field public final synthetic c:J
+
+.field public final synthetic o:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public synthetic constructor <init>(Lvnc;Lsa0;JILjava/lang/Throwable;)V
+    .registers 7
 
-    new-instance v0, Ltz1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Lonc;->a:Lvnc;
 
-    const-wide/16 v2, 0x1770
+    iput-object p2, p0, Lonc;->b:Lsa0;
 
-    invoke-direct {v0, v2, v3, v1}, Ltz1;-><init>(JI)V
+    iput-wide p3, p0, Lonc;->c:J
 
-    sput-object v0, Lonc;->a:Ltz1;
+    iput p5, p0, Lonc;->o:I
 
-    new-instance v0, Ltz1;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v2, v3, v1}, Ltz1;-><init>(JI)V
+    iput-object p6, p0, Lonc;->X:Ljava/lang/Throwable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract a()J
-.end method
+.method public final run()V
+    .registers 7
 
-.method public abstract b(Lrz1;)Lnnc;
+    iget v4, p0, Lonc;->o:I
+
+    iget-object v5, p0, Lonc;->X:Ljava/lang/Throwable;
+
+    iget-object v0, p0, Lonc;->a:Lvnc;
+
+    iget-object v1, p0, Lonc;->b:Lsa0;
+
+    iget-wide v2, p0, Lonc;->c:J
+
+    invoke-virtual/range {v0 .. v5}, Lvnc;->F(Lsa0;JILjava/lang/Throwable;)V
+
+    return-void
 .end method

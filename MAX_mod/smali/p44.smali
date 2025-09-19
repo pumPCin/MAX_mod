@@ -1,112 +1,82 @@
-.class public abstract Lp44;
-.super Ljava/lang/Object;
+.class public final Lp44;
+.super Lq12;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
+# instance fields
+.field public final X:F
 
-.field public static final b:Ljava/lang/String;
-
-.field public static final c:Ljava/lang/String;
-
-.field public static final d:Ljava/lang/String;
-
-.field public static final e:Ljava/lang/String;
+.field public final o:Lnyc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Lnyc;F)V
+    .registers 5
 
-    sget v0, Laif;->a:I
+    const-string v0, "bitmapDescriptor must not be null"
+
+    invoke-static {p1, v0}, Ljk7;->u(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
-    const/16 v1, 0x24
+    cmpg-float v0, p2, v0
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lp44;->a:Ljava/lang/String;
-
-    const/4 v0, 0x1
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lp44;->b:Ljava/lang/String;
-
-    const/4 v0, 0x2
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lp44;->c:Ljava/lang/String;
+    if-lez v0, :cond_0
 
     const/4 v0, 0x3
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lp44;->d:Ljava/lang/String;
+    invoke-direct {p0, v0, p1, v1}, Lq12;-><init>(ILnyc;Ljava/lang/Float;)V
 
-    const/4 v0, 0x4
+    iput-object p1, p0, Lp44;->o:Lnyc;
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lp44;->e:Ljava/lang/String;
+    iput p2, p0, Lp44;->X:F
 
     return-void
-.end method
-
-.method public static a(Landroid/text/Spanned;Ljava/lang/Object;ILandroid/os/Bundle;)Landroid/os/Bundle;
-    .registers 7
-
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    sget-object v1, Lp44;->a:Ljava/lang/String;
-
-    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    sget-object v1, Lp44;->b:Ljava/lang/String;
-
-    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
-
-    move-result v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    sget-object v1, Lp44;->c:Ljava/lang/String;
-
-    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanFlags(Ljava/lang/Object;)I
-
-    move-result p0
-
-    invoke-virtual {v0, v1, p0}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    sget-object p0, Lp44;->d:Ljava/lang/String;
-
-    invoke-virtual {v0, p0, p2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    if-eqz p3, :cond_0
-
-    sget-object p0, Lp44;->e:Ljava/lang/String;
-
-    invoke-virtual {v0, p0, p3}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     :cond_0
-    return-object v0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "refWidth must be positive"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .registers 4
+
+    iget-object v0, p0, Lp44;->o:Lnyc;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "[CustomCap: bitmapDescriptor="
+
+    const-string v2, " refWidth="
+
+    invoke-static {v1, v0, v2}, Lmw1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget p0, p0, Lp44;->X:F
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string p0, "]"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,43 +1,51 @@
 .class public final Lz7d;
-.super Landroidx/recyclerview/widget/RecyclerView;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final onMeasure(II)V
+# instance fields
+.field public final a:Ljava/util/concurrent/ConcurrentHashMap;
+
+.field public final b:Lfec;
+
+.field public final c:Ltgd;
+
+.field public d:Lq64;
+
+.field public final e:Ly0b;
+
+.field public volatile f:Z
+
+.field public g:Ldzg;
+
+.field public volatile h:Ljava/util/Set;
+
+.field public final i:Ly5f;
+
+
+# direct methods
+.method public constructor <init>(Lfec;Ltgd;Ljava/util/concurrent/Future;Ly0b;Lc0d;)V
     .registers 6
 
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result v0
+    new-instance p3, Ljava/util/concurrent/ConcurrentHashMap;
 
-    const/16 v1, 0x96
+    invoke-direct {p3}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    int-to-float v1, v1
+    iput-object p3, p0, Lz7d;->a:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    const/4 p3, 0x0
 
-    move-result-object v2
+    iput-boolean p3, p0, Lz7d;->f:Z
 
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    iput-object p1, p0, Lz7d;->b:Lfec;
 
-    move-result-object v2
+    iput-object p2, p0, Lz7d;->c:Ltgd;
 
-    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+    iput-object p4, p0, Lz7d;->e:Ly0b;
 
-    invoke-static {v1, v2, v0}, Lex3;->q(FFI)I
-
-    move-result v0
-
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
-
-    move-result p2
-
-    invoke-static {v0, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result p2
-
-    invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->onMeasure(II)V
+    iput-object p5, p0, Lz7d;->i:Ly5f;
 
     return-void
 .end method

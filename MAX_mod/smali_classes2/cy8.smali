@@ -1,60 +1,49 @@
 .class public final Lcy8;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
-# interfaces
-.implements Lgy8;
+
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lgy8;
+
+.field public Z:I
+
+.field public o:Lgy8;
+
+
+# direct methods
+.method public constructor <init>(Lgy8;Ljx3;)V
+    .registers 3
+
+    iput-object p1, p0, Lcy8;->Y:Lgy8;
+
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lcy8;->X:Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    iget p1, p0, Lcy8;->Z:I
 
-    return v0
+    const/high16 v0, -0x80000000
 
-    :cond_0
-    instance-of p0, p1, Lcy8;
+    or-int/2addr p1, v0
 
-    if-nez p0, :cond_1
+    iput p1, p0, Lcy8;->Z:I
 
-    const/4 p0, 0x0
+    iget-object p1, p0, Lcy8;->Y:Lgy8;
 
-    return p0
+    const/4 v0, 0x0
 
-    :cond_1
-    check-cast p1, Lcy8;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const/4 p0, 0x1
-
-    invoke-static {p0}, Lew1;->t(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    const-string p0, "MICROPHONE"
-
-    const-string v0, ")"
-
-    const-string v1, "Alternate(iconType="
-
-    invoke-static {v1, p0, v0}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v0, p0}, Lgy8;->a(Ljava/util/List;Ljx3;)Ljava/lang/Object;
 
     move-result-object p0
 

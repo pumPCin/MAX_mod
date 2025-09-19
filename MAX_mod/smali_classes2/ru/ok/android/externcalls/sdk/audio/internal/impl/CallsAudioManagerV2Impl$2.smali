@@ -1,9 +1,9 @@
 .class final Lru/ok/android/externcalls/sdk/audio/internal/impl/CallsAudioManagerV2Impl$2;
-.super Lih7;
+.super Lnk7;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Lzb6;
 
 
 # annotations
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lih7;",
-        "Lh96;"
+        "Lnk7;",
+        "Lzb6;"
     }
 .end annotation
 
@@ -55,7 +55,7 @@
 
     const/4 p1, 0x0
 
-    invoke-direct {p0, p1}, Lih7;-><init>(I)V
+    invoke-direct {p0, p1}, Lnk7;-><init>(I)V
 
     return-void
 .end method

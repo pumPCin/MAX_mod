@@ -1,11 +1,41 @@
-.class public interface abstract Lnn8;
-.super Ljava/lang/Object;
+.class public final Lnn8;
+.super Landroid/media/MediaRouter$VolumeCallback;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()Ljava/lang/Object;
+# instance fields
+.field public final a:Lmn8;
+
+
+# direct methods
+.method public constructor <init>(Lmn8;)V
+    .registers 2
+
+    invoke-direct {p0}, Landroid/media/MediaRouter$VolumeCallback;-><init>()V
+
+    iput-object p1, p0, Lnn8;->a:Lmn8;
+
+    return-void
 .end method
 
-.method public abstract b()Loxe;
+
+# virtual methods
+.method public final onVolumeSetRequest(Landroid/media/MediaRouter$RouteInfo;I)V
+    .registers 3
+
+    iget-object p0, p0, Lnn8;->a:Lmn8;
+
+    invoke-interface {p0, p1, p2}, Lmn8;->a(Landroid/media/MediaRouter$RouteInfo;I)V
+
+    return-void
+.end method
+
+.method public final onVolumeUpdateRequest(Landroid/media/MediaRouter$RouteInfo;I)V
+    .registers 3
+
+    iget-object p0, p0, Lnn8;->a:Lmn8;
+
+    invoke-interface {p0, p1, p2}, Lmn8;->b(Landroid/media/MediaRouter$RouteInfo;I)V
+
+    return-void
 .end method

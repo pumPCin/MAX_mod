@@ -1,204 +1,193 @@
-.class public final synthetic Lq3d;
+.class public final Lq3d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/function/Predicate;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lexc;
 
-.field public final synthetic b:Ljava/util/List;
+.field public final b:Lwwc;
 
-.field public final synthetic c:Ljava/util/Collection;
+.field public final c:Lwwc;
 
-.field public final synthetic d:Ljava/util/Collection;
+.field public final d:Lwwc;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/List;Ljava/util/Collection;Ljava/util/Collection;I)V
-    .registers 5
-
-    iput p4, p0, Lq3d;->a:I
-
-    iput-object p1, p0, Lq3d;->b:Ljava/util/List;
-
-    iput-object p2, p0, Lq3d;->c:Ljava/util/Collection;
-
-    iput-object p3, p0, Lq3d;->d:Ljava/util/Collection;
+.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lq3d;->a:Lexc;
+
+    new-instance v0, Lwwc;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p1, v1}, Lwwc;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lq3d;->b:Lwwc;
+
+    new-instance v0, Lwwc;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, p1, v1}, Lwwc;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lq3d;->c:Lwwc;
+
+    new-instance v0, Lwwc;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, p1, v1}, Lwwc;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lq3d;->d:Lwwc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final test(Ljava/lang/Object;)Z
-    .registers 8
+.method public final a(J)Lr3d;
+    .registers 7
 
-    iget v0, p0, Lq3d;->a:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    const-string v1, "SELECT * FROM saved_msg_chat WHERE user_id = ?"
 
-    iget-object v0, p0, Lq3d;->c:Ljava/util/Collection;
+    invoke-static {v0, v1}, Lvxc;->c(ILjava/lang/String;)Lvxc;
 
-    check-cast v0, Ljava/util/List;
+    move-result-object v1
 
-    iget-object v1, p0, Lq3d;->d:Ljava/util/Collection;
+    invoke-virtual {v1, v0, p1, p2}, Lvxc;->k(IJ)V
 
-    check-cast v1, Ljava/util/List;
+    iget-object p0, p0, Lq3d;->a:Lexc;
 
-    check-cast p1, Lfsb;
+    invoke-virtual {p0}, Lexc;->b()V
 
-    iget-object v2, p1, Lfsb;->a:Lp72;
-
-    iget-object p1, p1, Lfsb;->c:Let3;
-
-    if-eqz v2, :cond_0
-
-    iget-wide p0, v2, Lp72;->a:J
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p0, v1}, Lexc;->n(Lpqe;)Landroid/database/Cursor;
 
     move-result-object p0
 
-    invoke-interface {v0, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    :try_start_0
+    const-string p1, "user_id"
 
-    move-result p0
+    invoke-static {p0, p1}, Le54;->k(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result p1
+
+    const-string p2, "chat_id"
+
+    invoke-static {p0, p2}, Le54;->k(Landroid/database/Cursor;Ljava/lang/String;)I
+
+    move-result p2
+
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0, p1}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v2
+
+    invoke-interface {p0, p2}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide p1
+
+    new-instance v0, Lr3d;
+
+    invoke-direct {v0, v2, v3, p1, p2}, Lr3d;-><init>(JJ)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
 
     goto :goto_1
 
     :cond_0
-    if-eqz p1, :cond_2
+    const/4 v0, 0x0
 
-    iget-object p1, p1, Let3;->a:Lop3;
+    :goto_0
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
-    iget-wide v2, p1, Lop3;->a:J
+    invoke-virtual {v1}, Lvxc;->n()V
 
-    new-instance v0, Lr00;
+    return-object v0
 
-    const/16 v4, 0x18
+    :goto_1
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
-    invoke-direct {v0, v2, v3, v4}, Lr00;-><init>(JI)V
+    invoke-virtual {v1}, Lvxc;->n()V
 
-    iget-object p0, p0, Lq3d;->b:Ljava/util/List;
+    throw p1
+.end method
 
-    invoke-static {p0, v0}, Las3;->g(Ljava/lang/Iterable;Lh9b;)Z
+.method public final b(JJ)V
+    .registers 8
 
-    move-result p0
+    iget-object v0, p0, Lq3d;->a:Lexc;
 
-    if-eqz p0, :cond_1
+    invoke-virtual {v0}, Lexc;->b()V
+
+    iget-object p0, p0, Lq3d;->b:Lwwc;
+
+    invoke-virtual {p0}, Ly2;->f()Lqqe;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-interface {v1, v2, p1, p2}, Loqe;->k(IJ)V
+
+    const/4 p1, 0x2
+
+    invoke-interface {v1, p1, p3, p4}, Loqe;->k(IJ)V
+
+    :try_start_0
+    invoke-virtual {v0}, Lexc;->c()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-interface {v1}, Lqqe;->n0()J
+
+    invoke-virtual {v0}, Lexc;->q()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :try_start_2
+    invoke-virtual {v0}, Lexc;->k()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    invoke-virtual {p0, v1}, Ly2;->u(Lqqe;)V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
 
     goto :goto_0
 
-    :cond_1
-    iget-wide p0, p1, Lop3;->a:J
+    :catchall_1
+    move-exception p1
 
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    :try_start_3
+    invoke-virtual {v0}, Lexc;->k()V
 
-    move-result-object p0
-
-    invoke-interface {v1, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
+    throw p1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :goto_0
-    const/4 p0, 0x1
+    invoke-virtual {p0, v1}, Ly2;->u(Lqqe;)V
 
-    goto :goto_1
-
-    :cond_2
-    const/4 p0, 0x0
-
-    :goto_1
-    return p0
-
-    :pswitch_0
-    iget-object v0, p0, Lq3d;->b:Ljava/util/List;
-
-    check-cast v0, Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lq3d;->c:Ljava/util/Collection;
-
-    check-cast v1, Ljava/util/Set;
-
-    iget-object p0, p0, Lq3d;->d:Ljava/util/Collection;
-
-    check-cast p0, Ljava/util/Set;
-
-    check-cast p1, Lb3d;
-
-    iget-object v2, p1, Lb3d;->o:Lo72;
-
-    iget-object p1, p1, Lb3d;->X:Lmm3;
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_3
-
-    iget-wide p0, v2, Lo72;->a:J
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    invoke-interface {v1, p0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    :goto_2
-    xor-int/2addr v3, p0
-
-    goto :goto_3
-
-    :cond_3
-    if-eqz p1, :cond_5
-
-    invoke-virtual {p1}, Lmm3;->n()J
-
-    move-result-wide v1
-
-    new-instance v4, Lr00;
-
-    const/16 v5, 0x18
-
-    invoke-direct {v4, v1, v2, v5}, Lr00;-><init>(JI)V
-
-    invoke-static {v0, v4}, Las3;->g(Ljava/lang/Iterable;Lh9b;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    const/4 v3, 0x0
-
-    goto :goto_3
-
-    :cond_4
-    invoke-virtual {p1}, Lmm3;->n()J
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p1
-
-    invoke-interface {p0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    goto :goto_2
-
-    :cond_5
-    :goto_3
-    return v3
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw p1
 .end method

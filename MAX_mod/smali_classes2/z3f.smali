@@ -4,36 +4,36 @@
 
 
 # instance fields
-.field public final synthetic a:Ls4;
+.field public final a:Lgv7;
 
-.field public final synthetic b:Lzne;
-
-.field public final synthetic c:Ldle;
-
-.field public final synthetic d:Lxh7;
-
-.field public final synthetic e:Lxh7;
-
-.field public final synthetic f:Ly3f;
+.field public final b:Lcl7;
 
 
 # direct methods
-.method public constructor <init>(Ls4;Lzne;Ldle;Lxh7;Lxh7;Ly3f;)V
-    .registers 7
+.method public constructor <init>(Lz4;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lz3f;->a:Ls4;
+    new-instance v0, Lgv7;
 
-    iput-object p2, p0, Lz3f;->b:Lzne;
+    const-class v1, Lxwe;
 
-    iput-object p3, p0, Lz3f;->c:Ldle;
+    invoke-virtual {p1, v1}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
-    iput-object p4, p0, Lz3f;->d:Lxh7;
+    move-result-object v1
 
-    iput-object p5, p0, Lz3f;->e:Lxh7;
+    invoke-direct {v0, v1}, Lgv7;-><init>(Lcl7;)V
 
-    iput-object p6, p0, Lz3f;->f:Ly3f;
+    iput-object v0, p0, Lz3f;->a:Lgv7;
+
+    const-class v0, Landroid/content/Context;
+
+    invoke-virtual {p1, v0}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lz3f;->b:Lcl7;
 
     return-void
 .end method

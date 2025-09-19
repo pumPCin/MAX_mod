@@ -1,19 +1,22 @@
 .class public final Lwb1;
-.super Lyb1;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lyb1;
 
 
 # instance fields
-.field public final a:Z
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Z)V
+.method public constructor <init>(Ljava/lang/String;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lwb1;->a:Z
+    iput-object p1, p0, Lwb1;->a:Ljava/lang/String;
 
     return-void
 .end method
@@ -41,11 +44,15 @@
     :cond_1
     check-cast p1, Lwb1;
 
-    iget-boolean p0, p0, Lwb1;->a:Z
+    iget-object p0, p0, Lwb1;->a:Ljava/lang/String;
 
-    iget-boolean p1, p1, Lwb1;->a:Z
+    iget-object p1, p1, Lwb1;->a:Ljava/lang/String;
 
-    if-eq p0, p1, :cond_2
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
 
     return v2
 
@@ -53,14 +60,53 @@
     return v0
 .end method
 
+.method public final getItemId()J
+    .registers 3
+
+    const-wide v0, 0x7ffffffffffffffdL
+
+    return-wide v0
+.end method
+
+.method public final h(Lts7;)Z
+    .registers 4
+
+    const-wide v0, 0x7ffffffffffffffdL
+
+    invoke-interface {p1}, Lts7;->getItemId()J
+
+    move-result-wide p0
+
+    cmp-long p0, v0, p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method public final hashCode()I
     .registers 1
 
-    iget-boolean p0, p0, Lwb1;->a:Z
+    iget-object p0, p0, Lwb1;->a:Ljava/lang/String;
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result p0
+
+    return p0
+.end method
+
+.method public final m()I
+    .registers 1
+
+    const/4 p0, 0x3
 
     return p0
 .end method
@@ -68,13 +114,13 @@
 .method public final toString()Ljava/lang/String;
     .registers 3
 
-    const-string v0, "TalkingState(isEnabled="
+    const-string v0, "CallShareLinkPreviewState(link="
 
     const-string v1, ")"
 
-    iget-boolean p0, p0, Lwb1;->a:Z
+    iget-object p0, p0, Lwb1;->a:Ljava/lang/String;
 
-    invoke-static {v0, v1, p0}, Lfge;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

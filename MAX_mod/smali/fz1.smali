@@ -1,171 +1,200 @@
-.class public final enum Lfz1;
-.super Ljava/lang/Enum;
+.class public final Lfz1;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/concurrent/Executor;
 
 
 # static fields
-.field public static final enum X:Lfz1;
-
-.field public static final enum Y:Lfz1;
-
-.field public static final enum Z:Lfz1;
-
-.field public static final enum b:Lfz1;
-
-.field public static final enum c:Lfz1;
-
-.field public static final enum n0:Lfz1;
-
-.field public static final enum o:Lfz1;
-
-.field public static final enum o0:Lfz1;
-
-.field public static final synthetic p0:[Lfz1;
+.field public static final c:Lu20;
 
 
 # instance fields
-.field public final a:Z
+.field public final a:Ljava/lang/Object;
+
+.field public b:Ljava/util/concurrent/ThreadPoolExecutor;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 11
+    .registers 2
 
-    new-instance v0, Lfz1;
+    new-instance v0, Lu20;
 
-    const-string v1, "RELEASED"
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lu20;-><init>(I)V
+
+    sput-object v0, Lfz1;->c:Lu20;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 10
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lfz1;->a:Ljava/lang/Object;
+
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
+
+    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+
+    sget-object v8, Lfz1;->c:Lu20;
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x1
+
+    const-wide/16 v4, 0x0
+
+    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+
+    new-instance v0, Lez1;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2, v2}, Lfz1;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v0, v2}, Lez1;-><init>(I)V
 
-    sput-object v0, Lfz1;->b:Lfz1;
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/ThreadPoolExecutor;->setRejectedExecutionHandler(Ljava/util/concurrent/RejectedExecutionHandler;)V
 
-    new-instance v1, Lfz1;
+    iput-object v1, p0, Lfz1;->b:Ljava/util/concurrent/ThreadPoolExecutor;
 
-    const-string v3, "RELEASING"
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lgi2;)V
+    .registers 12
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v1, p0, Lfz1;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v0, p0, Lfz1;->b:Ljava/util/concurrent/ThreadPoolExecutor;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->isShutdown()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    new-instance v2, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    sget-object v7, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    new-instance v8, Ljava/util/concurrent/LinkedBlockingQueue;
+
+    invoke-direct {v8}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+
+    sget-object v9, Lfz1;->c:Lu20;
+
+    const/4 v3, 0x1
 
     const/4 v4, 0x1
 
-    invoke-direct {v1, v3, v4, v4}, Lfz1;-><init>(Ljava/lang/String;IZ)V
+    const-wide/16 v5, 0x0
 
-    sput-object v1, Lfz1;->c:Lfz1;
+    invoke-direct/range {v2 .. v9}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
 
-    move v3, v2
+    new-instance v0, Lez1;
 
-    new-instance v2, Lfz1;
+    const/4 v3, 0x0
 
-    const-string v5, "CLOSED"
+    invoke-direct {v0, v3}, Lez1;-><init>(I)V
 
-    const/4 v6, 0x2
+    invoke-virtual {v2, v0}, Ljava/util/concurrent/ThreadPoolExecutor;->setRejectedExecutionHandler(Ljava/util/concurrent/RejectedExecutionHandler;)V
 
-    invoke-direct {v2, v5, v6, v3}, Lfz1;-><init>(Ljava/lang/String;IZ)V
+    iput-object v2, p0, Lfz1;->b:Ljava/util/concurrent/ThreadPoolExecutor;
 
-    sput-object v2, Lfz1;->o:Lfz1;
+    goto :goto_0
 
-    move v5, v3
+    :catchall_0
+    move-exception v0
 
-    new-instance v3, Lfz1;
+    move-object p0, v0
 
-    const-string v6, "PENDING_OPEN"
+    goto :goto_1
 
-    const/4 v7, 0x3
+    :cond_0
+    :goto_0
+    iget-object p0, p0, Lfz1;->b:Ljava/util/concurrent/ThreadPoolExecutor;
 
-    invoke-direct {v3, v6, v7, v5}, Lfz1;-><init>(Ljava/lang/String;IZ)V
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sput-object v3, Lfz1;->X:Lfz1;
+    new-instance v0, Ljava/util/LinkedHashSet;
 
-    move v5, v4
+    iget-object p1, p1, Lgi2;->g:Ljava/lang/Object;
 
-    new-instance v4, Lfz1;
+    check-cast p1, Ljava/util/ArrayList;
 
-    const-string v6, "CLOSING"
+    invoke-direct {v0, p1}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
 
-    const/4 v7, 0x4
+    invoke-interface {v0}, Ljava/util/Set;->size()I
 
-    invoke-direct {v4, v6, v7, v5}, Lfz1;-><init>(Ljava/lang/String;IZ)V
+    move-result p1
 
-    sput-object v4, Lfz1;->Y:Lfz1;
+    const/4 v0, 0x1
 
-    move v6, v5
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
-    new-instance v5, Lfz1;
+    move-result p1
 
-    const-string v7, "OPENING"
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->setMaximumPoolSize(I)V
 
-    const/4 v8, 0x5
-
-    invoke-direct {v5, v7, v8, v6}, Lfz1;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v5, Lfz1;->Z:Lfz1;
-
-    move v7, v6
-
-    new-instance v6, Lfz1;
-
-    const-string v8, "OPEN"
-
-    const/4 v9, 0x6
-
-    invoke-direct {v6, v8, v9, v7}, Lfz1;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v6, Lfz1;->n0:Lfz1;
-
-    move v8, v7
-
-    new-instance v7, Lfz1;
-
-    const-string v9, "CONFIGURED"
-
-    const/4 v10, 0x7
-
-    invoke-direct {v7, v9, v10, v8}, Lfz1;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v7, Lfz1;->o0:Lfz1;
-
-    filled-new-array/range {v0 .. v7}, [Lfz1;
-
-    move-result-object v0
-
-    sput-object v0, Lfz1;->p0:[Lfz1;
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->setCorePoolSize(I)V
 
     return-void
+
+    :goto_1
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IZ)V
-    .registers 4
+.method public final execute(Ljava/lang/Runnable;)V
+    .registers 3
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-boolean p3, p0, Lfz1;->a:Z
+    iget-object v0, p0, Lfz1;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object p0, p0, Lfz1;->b:Ljava/util/concurrent/ThreadPoolExecutor;
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
+
+    monitor-exit v0
 
     return-void
-.end method
 
-.method public static valueOf(Ljava/lang/String;)Lfz1;
-    .registers 2
+    :catchall_0
+    move-exception p0
 
-    const-class v0, Lfz1;
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Lfz1;
-
-    return-object p0
-.end method
-
-.method public static values()[Lfz1;
-    .registers 1
-
-    sget-object v0, Lfz1;->p0:[Lfz1;
-
-    invoke-virtual {v0}, [Lfz1;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lfz1;
-
-    return-object v0
+    throw p0
 .end method

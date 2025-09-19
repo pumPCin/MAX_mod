@@ -1,31 +1,27 @@
 .class public final Ldsg;
-.super Lcom/google/android/gms/common/api/internal/BasePendingResult;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final z:Lcom/google/android/gms/common/api/Status;
+.field public final a:Le44;
+
+.field public final b:J
+
+.field public final c:J
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/api/Status;)V
-    .registers 3
+.method public constructor <init>(Le44;JJ)V
+    .registers 6
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/google/android/gms/common/api/internal/BasePendingResult;-><init>(Lgrg;)V
+    iput-object p1, p0, Ldsg;->a:Le44;
 
-    iput-object p1, p0, Ldsg;->z:Lcom/google/android/gms/common/api/Status;
+    iput-wide p2, p0, Ldsg;->b:J
+
+    iput-wide p4, p0, Ldsg;->c:J
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final S(Lcom/google/android/gms/common/api/Status;)Lenc;
-    .registers 2
-
-    iget-object p0, p0, Ldsg;->z:Lcom/google/android/gms/common/api/Status;
-
-    return-object p0
 .end method

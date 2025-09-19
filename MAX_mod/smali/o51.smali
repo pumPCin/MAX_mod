@@ -3,74 +3,26 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ls51;
+.implements Ld61;
 
 
 # instance fields
-.field public final a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:Lqte;
-
-.field public final f:Lqte;
+.field public final a:Lm13;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
-    .registers 3
+.method public constructor <init>(Lm13;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lo51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    sget p1, Ls9a;->J:I
-
-    iput p1, p0, Lo51;->b:I
-
-    sget p1, Lr9a;->x0:I
-
-    iput p1, p0, Lo51;->c:I
-
-    sget p1, Lr9a;->J0:I
-
-    iput p1, p0, Lo51;->d:I
-
-    sget p1, Lv9a;->r2:I
-
-    new-instance v0, Lqte;
-
-    invoke-direct {v0, p1}, Lqte;-><init>(I)V
-
-    iput-object v0, p0, Lo51;->e:Lqte;
-
-    iput-object v0, p0, Lo51;->f:Lqte;
+    iput-object p1, p0, Lo51;->a:Lm13;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .registers 1
-
-    iget p0, p0, Lo51;->c:I
-
-    return p0
-.end method
-
-.method public final b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-    .registers 1
-
-    iget-object p0, p0, Lo51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
-
-    return-object p0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
     .registers 5
 
@@ -92,11 +44,11 @@
     :cond_1
     check-cast p1, Lo51;
 
-    iget-object p0, p0, Lo51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    iget-object p0, p0, Lo51;->a:Lm13;
 
-    iget-object p1, p1, Lo51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    iget-object p1, p1, Lo51;->a:Lm13;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -108,44 +60,12 @@
     return v0
 .end method
 
-.method public final getContentDescription()Lvte;
-    .registers 1
-
-    iget-object p0, p0, Lo51;->f:Lqte;
-
-    return-object p0
-.end method
-
-.method public final getIcon()I
-    .registers 1
-
-    iget p0, p0, Lo51;->d:I
-
-    return p0
-.end method
-
-.method public final getId()I
-    .registers 1
-
-    iget p0, p0, Lo51;->b:I
-
-    return p0
-.end method
-
-.method public final getTitle()Lvte;
-    .registers 1
-
-    iget-object p0, p0, Lo51;->e:Lqte;
-
-    return-object p0
-.end method
-
 .method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lo51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    iget-object p0, p0, Lo51;->a:Lm13;
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->hashCode()I
+    invoke-virtual {p0}, Lm13;->hashCode()I
 
     move-result p0
 
@@ -157,11 +77,11 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "Earpiece(device="
+    const-string v1, "ChatsUpdate(info="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lo51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    iget-object p0, p0, Lo51;->a:Lm13;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

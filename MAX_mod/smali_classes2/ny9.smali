@@ -1,108 +1,167 @@
 .class public final Lny9;
-.super Ljava/lang/Object;
+.super Lsxe;
 .source "SourceFile"
-
-# interfaces
-.implements Liy7;
 
 
 # instance fields
-.field public final a:Lapc;
+.field public X:Lky7;
 
-.field public final b:Llh;
+.field public c:J
 
-.field public final c:Le49;
-
-.field public final o:Le49;
+.field public o:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
-    .registers 4
+.method public constructor <init>(Lt39;)V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lny9;->a:Lapc;
-
-    new-instance v0, Llh;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, p1, v1}, Llh;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lny9;->b:Llh;
-
-    new-instance v0, Le49;
-
-    invoke-direct {v0, p1, v1}, Le49;-><init>(Lapc;I)V
-
-    new-instance v0, Le49;
-
-    const/16 v1, 0xd
-
-    invoke-direct {v0, p1, v1}, Le49;-><init>(Lapc;I)V
-
-    new-instance v0, Le49;
-
-    const/16 v1, 0xe
-
-    invoke-direct {v0, p1, v1}, Le49;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lny9;->c:Le49;
-
-    new-instance v0, Le49;
-
-    const/16 v1, 0xf
-
-    invoke-direct {v0, p1, v1}, Le49;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lny9;->o:Le49;
+    invoke-direct {p0, p1}, Lsxe;-><init>(Lt39;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final f()V
-    .registers 3
+.method public final c(Lt39;Ljava/lang/String;)V
+    .registers 5
 
-    new-instance v0, Lmy9;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    sparse-switch v0, :sswitch_data_0
+
+    goto :goto_0
+
+    :sswitch_0
+    const-string v0, "location"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x2
+
+    goto :goto_0
+
+    :sswitch_1
+    const-string v0, "deviceId"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :sswitch_2
+    const-string v0, "userId"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_2
+
+    goto :goto_0
+
+    :cond_2
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Lmy9;-><init>(Lny9;Lkotlin/coroutines/Continuation;)V
+    :goto_0
+    packed-switch v1, :pswitch_data_0
 
-    invoke-static {v0}, Las3;->b0(Lx96;)Ljava/lang/Object;
+    invoke-virtual {p1}, Lt39;->B()V
 
     return-void
+
+    :pswitch_0
+    invoke-static {p1}, Lky7;->a(Lt39;)Lky7;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lny9;->X:Lky7;
+
+    return-void
+
+    :pswitch_1
+    invoke-static {p1}, Lqe5;->O(Lt39;)Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lny9;->o:Ljava/lang/String;
+
+    return-void
+
+    :pswitch_2
+    const-wide/16 v0, 0x0
+
+    invoke-static {p1, v0, v1}, Lqe5;->L(Lt39;J)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lny9;->c:J
+
+    return-void
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x31d4d1ba -> :sswitch_2
+        0x421cea11 -> :sswitch_1
+        0x714f9fb5 -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final p(JLbh5;)Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
     .registers 6
 
-    const/4 v0, 0x1
+    iget-wide v0, p0, Lny9;->c:J
 
-    const-string v1, "SELECT * FROM fcm_notifications where time > ? ORDER BY time ASC"
+    iget-object v2, p0, Lny9;->o:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lqpc;->c(ILjava/lang/String;)Lqpc;
+    iget-object p0, p0, Lny9;->X:Lky7;
 
-    move-result-object v1
+    const-string v3, "Response{userId="
 
-    invoke-virtual {v1, v0, p1, p2}, Lqpc;->k(IJ)V
+    const-string v4, ", deviceId=\'"
 
-    new-instance p1, Landroid/os/CancellationSignal;
+    invoke-static {v3, v0, v1, v4, v2}, Lmhc;->i(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {p1}, Landroid/os/CancellationSignal;-><init>()V
+    move-result-object v0
 
-    new-instance p2, Lnh;
+    const-string v1, "\', location="
 
-    const/16 v0, 0x11
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {p2, p0, v0, v1}, Lnh;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lny9;->a:Lapc;
+    const-string p0, "}"
 
-    invoke-static {p0, p1, p2, p3}, Lso9;->k(Lapc;Landroid/os/CancellationSignal;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

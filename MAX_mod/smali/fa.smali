@@ -1,54 +1,87 @@
 .class public final Lfa;
-.super Ljava/lang/Object;
+.super Lj2e;
 .source "SourceFile"
-
-# interfaces
-.implements Lba;
 
 
 # instance fields
-.field public final synthetic a:Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;
+.field public final E0:Lmbg;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;)V
-    .registers 2
+.method public constructor <init>(Landroid/content/Context;Lmbg;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lkn3;
 
-    iput-object p1, p0, Lfa;->a:Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1}, Lkn3;-><init>(Landroid/content/Context;I)V
+
+    invoke-direct {p0, v0}, Lzoc;-><init>(Landroid/view/View;)V
+
+    iput-object p2, p0, Lfa;->E0:Lmbg;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final m(Lbh1;Z)V
-    .registers 4
+.method public final F(Lzqf;)V
+    .registers 5
 
-    sget-object v0, Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;->n0:[Lsf7;
+    iget-object p0, p0, Lzoc;->a:Landroid/view/View;
 
-    iget-object p0, p0, Lfa;->a:Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;
+    check-cast p0, Lkn3;
 
-    iget-object p0, p0, Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;->a:Lxh7;
+    sget-object v0, Lyu4;->t0:Lbx9;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Lbx9;->q(Landroid/view/View;)Llia;
 
-    move-result-object p0
+    move-result-object v0
 
-    check-cast p0, Lja;
+    iget-object v0, v0, Llia;->c:Lera;
 
-    iget-object p0, p0, Lja;->c:Lxh7;
+    invoke-virtual {p0, v0}, Lkn3;->setCustomTheme(Lera;)V
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    sget-object v0, Lin3;->b:Lin3;
 
-    move-result-object p0
+    invoke-virtual {p0, v0}, Lkn3;->setCallButtonMode(Lin3;)V
 
-    check-cast p0, Ltz0;
+    iget-object v0, p1, Lzqf;->a:Lt2f;
 
-    check-cast p0, Lo01;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-virtual {p0, p1, p2}, Lo01;->c(Lbh1;Z)V
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lu2f;->b(Landroid/content/Context;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lkn3;->setName(Ljava/lang/CharSequence;)V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lkn3;->setMessage(Ljava/lang/CharSequence;)V
+
+    iget-object v0, p1, Lzqf;->b:Lyb0;
+
+    iget-wide v1, v0, Lyb0;->a:J
+
+    iget-object v0, v0, Lyb0;->b:Ljava/lang/CharSequence;
+
+    iget-object p1, p1, Lzqf;->c:Ljava/lang/String;
+
+    invoke-virtual {p0, v1, v2, v0, p1}, Lkn3;->L(JLjava/lang/CharSequence;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public final bridge synthetic y(Lts7;)V
+    .registers 2
+
+    check-cast p1, Lzqf;
+
+    invoke-virtual {p0, p1}, Lfa;->F(Lzqf;)V
 
     return-void
 .end method

@@ -1,101 +1,139 @@
-.class public final enum Ljo5;
-.super Ljava/lang/Enum;
+.class public final Ljo5;
+.super Lure;
 .source "SourceFile"
 
+# interfaces
+.implements Lpc6;
 
-# static fields
-.field public static final synthetic X:Lc65;
 
-.field public static final enum a:Ljo5;
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
 
-.field public static final enum b:Ljo5;
+.field public final synthetic Y:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public static final enum c:Ljo5;
+.field public final synthetic Z:Lpo5;
 
-.field public static final synthetic o:[Ljo5;
+.field public final synthetic r0:Ljava/nio/channels/AsynchronousFileChannel;
+
+.field public final synthetic s0:Ljava/util/concurrent/atomic/AtomicReference;
+
+.field public final synthetic t0:Lijb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lpo5;Ljava/nio/channels/AsynchronousFileChannel;Ljava/util/concurrent/atomic/AtomicReference;Lijb;Lkotlin/coroutines/Continuation;)V
+    .registers 7
 
-    new-instance v0, Ljo5;
+    iput-object p1, p0, Ljo5;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const-string v1, "FIT_XY"
+    iput-object p2, p0, Ljo5;->Z:Lpo5;
 
-    const/4 v2, 0x0
+    iput-object p3, p0, Ljo5;->r0:Ljava/nio/channels/AsynchronousFileChannel;
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p4, p0, Ljo5;->s0:Ljava/util/concurrent/atomic/AtomicReference;
 
-    new-instance v1, Ljo5;
+    iput-object p5, p0, Ljo5;->t0:Lijb;
 
-    const-string v2, "FILL"
+    const/4 p1, 0x2
 
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ljo5;->a:Ljo5;
-
-    new-instance v2, Ljo5;
-
-    const-string v3, "CENTER_INSIDE"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Ljo5;->b:Ljo5;
-
-    new-instance v3, Ljo5;
-
-    const-string v4, "CENTER"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Ljo5;->c:Ljo5;
-
-    filled-new-array {v0, v1, v2, v3}, [Ljo5;
-
-    move-result-object v0
-
-    sput-object v0, Ljo5;->o:[Ljo5;
-
-    new-instance v1, Lc65;
-
-    invoke-direct {v1, v0}, Lc65;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Ljo5;->X:Lc65;
+    invoke-direct {p0, p1, p6}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ljo5;
-    .registers 2
 
-    const-class v0, Ljo5;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    check-cast p1, Lz7f;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Ljo5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Ljo5;
 
-    return-object p0
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Ljo5;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public static values()[Ljo5;
-    .registers 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 10
 
-    sget-object v0, Ljo5;->o:[Ljo5;
+    new-instance v0, Ljo5;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object v4, p0, Ljo5;->s0:Ljava/util/concurrent/atomic/AtomicReference;
 
-    move-result-object v0
+    iget-object v5, p0, Ljo5;->t0:Lijb;
 
-    check-cast v0, [Ljo5;
+    iget-object v1, p0, Ljo5;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iget-object v2, p0, Ljo5;->Z:Lpo5;
+
+    iget-object v3, p0, Ljo5;->r0:Ljava/nio/channels/AsynchronousFileChannel;
+
+    move-object v6, p2
+
+    invoke-direct/range {v0 .. v6}, Ljo5;-><init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lpo5;Ljava/nio/channels/AsynchronousFileChannel;Ljava/util/concurrent/atomic/AtomicReference;Lijb;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Ljo5;->X:Ljava/lang/Object;
 
     return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 12
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ljo5;->X:Ljava/lang/Object;
+
+    move-object v2, p1
+
+    check-cast v2, Lz7f;
+
+    iget-object v4, p0, Ljo5;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result p1
+
+    sget-object v8, Lylf;->a:Lylf;
+
+    if-nez p1, :cond_0
+
+    return-object v8
+
+    :cond_0
+    iget-object v1, p0, Ljo5;->Z:Lpo5;
+
+    iget-object p1, v1, Lpo5;->q:Lkotlinx/coroutines/internal/ContextScope;
+
+    iget-object v9, v1, Lpo5;->p:Lre7;
+
+    new-instance v0, Lio5;
+
+    iget-object v6, p0, Ljo5;->t0:Lijb;
+
+    const/4 v7, 0x0
+
+    iget-object v3, p0, Ljo5;->r0:Ljava/nio/channels/AsynchronousFileChannel;
+
+    iget-object v5, p0, Ljo5;->s0:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct/range {v0 .. v7}, Lio5;-><init>(Lpo5;Lz7f;Ljava/nio/channels/AsynchronousFileChannel;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicReference;Lijb;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p0, 0x2
+
+    const/4 v1, 0x0
+
+    invoke-static {p1, v9, v1, v0, p0}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    return-object v8
 .end method

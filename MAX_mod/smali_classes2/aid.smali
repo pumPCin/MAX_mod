@@ -1,122 +1,198 @@
 .class public final Laid;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Landroid/hardware/SensorEventListener;
+
+
+# static fields
+.field public static final synthetic d:I
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Landroid/hardware/SensorManager;
 
-.field public final synthetic Y:Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;
+.field public final b:Landroid/hardware/Sensor;
+
+.field public final c:Ljava/util/Set;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .registers 3
 
-    iput-object p2, p0, Laid;->Y:Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
+    new-instance v0, Ljava/util/LinkedHashSet;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    invoke-static {v0}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v0
+
+    iput-object v0, p0, Laid;->c:Ljava/util/Set;
+
+    new-instance v0, Ljava/util/LinkedHashSet;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    invoke-static {v0}, Ljava/util/Collections;->synchronizedSet(Ljava/util/Set;)Ljava/util/Set;
+
+    const-string v0, "sensor"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/hardware/SensorManager;
+
+    iput-object p1, p0, Laid;->a:Landroid/hardware/SensorManager;
+
+    const/16 v0, 0x8
+
+    invoke-virtual {p1, v0}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+
+    move-result-object v0
+
+    iput-object v0, p0, Laid;->b:Landroid/hardware/Sensor;
+
+    const/4 p0, 0x5
+
+    invoke-virtual {p1, p0}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
     .registers 3
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Laid;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Laid;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Laid;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return-void
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .registers 6
 
-    new-instance v0, Laid;
+    iget-object v0, p0, Laid;->c:Ljava/util/Set;
 
-    iget-object p0, p0, Laid;->Y:Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;
+    monitor-enter v0
 
-    invoke-direct {v0, p2, p0}, Laid;-><init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;)V
+    :try_start_0
+    iget-object v1, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
-    iput-object p1, v0, Laid;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Laid;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/Map;
-
-    iget-object p0, p0, Laid;->Y:Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;
-
-    iget-object v0, p0, Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;->X:Lxac;
-
-    sget-object v1, Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;->Z:[Lsf7;
-
-    const/4 v2, 0x1
-
-    aget-object v1, v1, v2
-
-    invoke-interface {v0, p0, v1}, Lxac;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lwca;
-
-    invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Collection;->isEmpty()Z
+    invoke-virtual {v1}, Landroid/hardware/Sensor;->getType()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    const/16 v2, 0x8
 
-    const/4 v1, 0x0
+    if-ne v1, v2, :cond_5
+
+    iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
+
+    const/4 v2, 0x0
+
+    aget v1, v1, v2
+
+    iget-object p1, p1, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
+
+    invoke-virtual {p1}, Landroid/hardware/Sensor;->getMaximumRange()F
+
+    move-result p1
+
+    cmpg-float p1, v1, p1
+
+    if-gez p1, :cond_0
+
+    const/4 v2, 0x1
+
+    :cond_0
+    iget-object p0, p0, Laid;->c:Ljava/util/Set;
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_1
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_5
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lr20;
+
+    if-eqz v2, :cond_4
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string v1, "r20"
+
+    const-string v3, "onDeviceNextToEar"
+
+    invoke-static {v1, v3}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v1, p1, Lr20;->c:Lon9;
+
+    iget-boolean v3, v1, Lon9;->x:Z
+
+    if-nez v3, :cond_2
 
     goto :goto_0
 
-    :cond_0
-    const/16 v1, 0x8
+    :cond_2
+    invoke-virtual {p1}, Lr20;->k()Z
 
-    :goto_0
-    invoke-virtual {v0, v1}, Lwca;->setVisibility(I)V
+    move-result v3
 
-    iget-object p0, p0, Lone/me/settings/privacy/ui/blacklist/SettingsBlacklistScreen;->Y:Luy5;
+    if-nez v3, :cond_3
 
-    invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
+    iget-object p1, p1, Lr20;->s0:Lzte;
 
-    move-result-object p1
-
-    invoke-static {p1}, Lj73;->H0(Ljava/lang/Iterable;)Ljava/util/List;
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lhp7;->E(Ljava/util/List;)V
+    check-cast p1, Landroid/os/PowerManager$WakeLock;
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {p1}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    return-object p0
+    :cond_3
+    iget-boolean p1, v1, Lon9;->x:Z
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {v1}, Lon9;->l()Lai8;
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p1}, Lr20;->m()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_5
+    monitor-exit v0
+
+    return-void
+
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
 .end method

@@ -1,353 +1,75 @@
 .class public final Lasg;
-.super Lirg;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Lbre;
+.field public a:Ljava/lang/String;
 
-.field public final synthetic c:I
+.field public b:Ljava/lang/String;
 
-.field public final d:Ljava/lang/Object;
+.field public c:Ljava/util/Set;
+
+.field public d:Ljava/lang/String;
+
+.field public e:Ljava/lang/String;
+
+.field public f:I
+
+.field public g:Z
+
+.field public h:I
+
+.field public i:Z
+
+.field public j:I
+
+.field public k:I
+
+.field public l:I
+
+.field public m:I
+
+.field public n:I
+
+.field public o:F
+
+.field public p:I
+
+.field public q:Z
 
 
 # direct methods
-.method public constructor <init>(ILbre;)V
-    .registers 3
-
-    invoke-direct {p0, p1}, Lgsg;-><init>(I)V
-
-    iput-object p2, p0, Lasg;->b:Lbre;
-
-    return-void
-.end method
-
-.method public constructor <init>(Liq7;Lbre;)V
-    .registers 4
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lasg;->c:I
-
-    const/4 v0, 0x4
-
-    invoke-direct {p0, v0, p2}, Lasg;-><init>(ILbre;)V
-
-    iput-object p1, p0, Lasg;->d:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lprg;Lbre;)V
-    .registers 4
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lasg;->c:I
-
-    const/4 v0, 0x3
-
-    invoke-direct {p0, v0, p2}, Lasg;-><init>(ILbre;)V
-
-    iput-object p1, p0, Lasg;->d:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method private final bridge synthetic i(Lhtc;Z)V
-    .registers 3
-
-    return-void
-.end method
-
-.method private final bridge synthetic j(Lhtc;Z)V
-    .registers 3
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Lcom/google/android/gms/common/api/Status;)V
-    .registers 3
-
-    new-instance v0, Lcom/google/android/gms/common/api/ApiException;
-
-    invoke-direct {v0, p1}, Lcom/google/android/gms/common/api/ApiException;-><init>(Lcom/google/android/gms/common/api/Status;)V
-
-    iget-object p0, p0, Lasg;->b:Lbre;
-
-    invoke-virtual {p0, v0}, Lbre;->c(Ljava/lang/Exception;)V
-
-    return-void
-.end method
-
-.method public final b(Ljava/lang/Exception;)V
-    .registers 2
-
-    iget-object p0, p0, Lasg;->b:Lbre;
-
-    invoke-virtual {p0, p1}, Lbre;->c(Ljava/lang/Exception;)V
-
-    return-void
-.end method
-
-.method public final c(Lerg;)V
-    .registers 3
-
-    :try_start_0
-    invoke-virtual {p0, p1}, Lasg;->h(Lerg;)V
-    :try_end_0
-    .catch Landroid/os/DeadObjectException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception p1
-
-    iget-object p0, p0, Lasg;->b:Lbre;
-
-    invoke-virtual {p0, p1}, Lbre;->c(Ljava/lang/Exception;)V
-
-    return-void
-
-    :catch_1
-    move-exception p1
-
-    invoke-static {p1}, Lgsg;->e(Landroid/os/RemoteException;)Lcom/google/android/gms/common/api/Status;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lasg;->a(Lcom/google/android/gms/common/api/Status;)V
-
-    return-void
-
-    :catch_2
-    move-exception p1
-
-    invoke-static {p1}, Lgsg;->e(Landroid/os/RemoteException;)Lcom/google/android/gms/common/api/Status;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lasg;->a(Lcom/google/android/gms/common/api/Status;)V
-
-    throw p1
-.end method
-
-.method public final bridge synthetic d(Lhtc;Z)V
-    .registers 3
-
-    iget p0, p0, Lasg;->c:I
-
-    return-void
-.end method
-
-.method public final f(Lerg;)Z
-    .registers 3
-
-    iget v0, p0, Lasg;->c:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p1, p1, Lerg;->h:Ljava/util/HashMap;
-
-    iget-object p0, p0, Lasg;->d:Ljava/lang/Object;
-
-    check-cast p0, Liq7;
-
-    invoke-virtual {p1, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lprg;
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Lasg;->d:Ljava/lang/Object;
-
-    check-cast p0, Lprg;
-
-    iget-object p0, p0, Lprg;->a:Lxrb;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final g(Lerg;)[Lnh5;
-    .registers 3
-
-    iget v0, p0, Lasg;->c:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p1, p1, Lerg;->h:Ljava/util/HashMap;
-
-    iget-object p0, p0, Lasg;->d:Ljava/lang/Object;
-
-    check-cast p0, Liq7;
-
-    invoke-virtual {p1, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lprg;
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lasg;->d:Ljava/lang/Object;
-
-    check-cast p0, Lprg;
-
-    iget-object p0, p0, Lprg;->a:Lxrb;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final h(Lerg;)V
+.method public static a(Ljava/lang/String;IILjava/lang/String;)I
     .registers 5
 
-    iget v0, p0, Lasg;->c:I
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
-    packed-switch v0, :pswitch_data_0
+    move-result v0
 
-    iget-object v0, p0, Lasg;->b:Lbre;
+    if-nez v0, :cond_2
 
-    iget-object v1, p1, Lerg;->h:Ljava/util/HashMap;
+    const/4 v0, -0x1
 
-    iget-object p0, p0, Lasg;->d:Ljava/lang/Object;
-
-    check-cast p0, Liq7;
-
-    invoke-virtual {v1, p0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lprg;
-
-    if-eqz p0, :cond_0
-
-    iget-object p1, p1, Lerg;->d:Lhk;
-
-    iget-object v1, p0, Lprg;->b:Lwxe;
-
-    iget-object v1, v1, Lwxe;->a:Ljava/lang/Object;
-
-    check-cast v1, Lyxg;
-
-    iget-object v1, v1, Lyxg;->c:Ljava/lang/Object;
-
-    check-cast v1, Ljd;
-
-    invoke-virtual {v1, p1, v0}, Ljd;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lprg;->a:Lxrb;
-
-    iget-object p0, p0, Lxrb;->b:Ljava/lang/Object;
-
-    check-cast p0, Lb05;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lb05;->b:Ljava/lang/Object;
-
-    iput-object p1, p0, Lb05;->c:Ljava/lang/Object;
+    if-ne p1, v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    invoke-virtual {p0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, p0}, Lbre;->d(Ljava/lang/Object;)V
+    move-result p0
 
-    :goto_0
-    return-void
+    if-eqz p0, :cond_1
 
-    :pswitch_0
-    iget-object v0, p0, Lasg;->d:Ljava/lang/Object;
+    add-int/2addr p1, p2
 
-    check-cast v0, Lprg;
-
-    iget-object v0, v0, Lprg;->a:Lxrb;
-
-    iget-object v1, p1, Lerg;->d:Lhk;
-
-    iget-object v2, p0, Lasg;->b:Lbre;
-
-    iget-object v0, v0, Lxrb;->c:Ljava/lang/Object;
-
-    check-cast v0, Lyxg;
-
-    iget-object v0, v0, Lyxg;->b:Ljava/lang/Object;
-
-    check-cast v0, Ldcb;
-
-    invoke-virtual {v0, v1, v2}, Ldcb;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lasg;->d:Ljava/lang/Object;
-
-    check-cast v0, Lprg;
-
-    iget-object v0, v0, Lprg;->a:Lxrb;
-
-    iget-object v0, v0, Lxrb;->b:Ljava/lang/Object;
-
-    check-cast v0, Lb05;
-
-    iget-object v0, v0, Lb05;->c:Ljava/lang/Object;
-
-    check-cast v0, Liq7;
-
-    if-eqz v0, :cond_1
-
-    iget-object p1, p1, Lerg;->h:Ljava/util/HashMap;
-
-    iget-object p0, p0, Lasg;->d:Ljava/lang/Object;
-
-    check-cast p0, Lprg;
-
-    invoke-virtual {p1, v0, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    return p1
 
     :cond_1
-    return-void
+    return v0
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_2
+    :goto_0
+    return p1
 .end method

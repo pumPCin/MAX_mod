@@ -1,646 +1,231 @@
 .class public final Lkt6;
-.super Ljava/lang/Object;
+.super Lmt6;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:J
+.field public final v0:Ljava/lang/String;
 
-.field public b:J
-
-.field public c:J
-
-.field public d:J
-
-.field public final e:Ljava/util/ArrayDeque;
-
-.field public f:Z
-
-.field public final g:Lit6;
-
-.field public final h:Lht6;
-
-.field public final i:Ljt6;
-
-.field public final j:Ljt6;
-
-.field public k:I
-
-.field public l:Ljava/io/IOException;
-
-.field public final m:I
-
-.field public final n:Ldt6;
+.field public final w0:Ll37;
 
 
 # direct methods
-.method public constructor <init>(ILdt6;ZZLcn6;)V
-    .registers 9
+.method public constructor <init>(JJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 27
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Ll37;->b:Lgx5;
 
-    iput p1, p0, Lkt6;->m:I
+    sget-object v18, Llqc;->X:Llqc;
 
-    iput-object p2, p0, Lkt6;->n:Ldt6;
+    const/4 v3, 0x0
 
-    iget-object p1, p2, Ldt6;->w0:Lvhd;
+    const-string v4, ""
 
-    invoke-virtual {p1}, Lvhd;->a()I
+    const-wide/16 v5, 0x0
 
-    move-result p1
+    const/4 v7, -0x1
 
-    int-to-long v0, p1
+    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
 
-    iput-wide v0, p0, Lkt6;->d:J
+    const/4 v10, 0x0
 
-    new-instance p1, Ljava/util/ArrayDeque;
+    const/16 v17, 0x0
 
-    invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
+    move-object/from16 v1, p0
 
-    iput-object p1, p0, Lkt6;->e:Ljava/util/ArrayDeque;
+    move-wide/from16 v13, p1
 
-    new-instance v0, Lit6;
+    move-wide/from16 v15, p3
 
-    iget-object p2, p2, Ldt6;->v0:Lvhd;
+    move-object/from16 v2, p5
 
-    invoke-virtual {p2}, Lvhd;->a()I
+    move-object/from16 v11, p6
 
-    move-result p2
+    move-object/from16 v12, p7
 
-    int-to-long v1, p2
-
-    invoke-direct {v0, p0, v1, v2, p4}, Lit6;-><init>(Lkt6;JZ)V
-
-    iput-object v0, p0, Lkt6;->g:Lit6;
-
-    new-instance p2, Lht6;
-
-    invoke-direct {p2, p0, p3}, Lht6;-><init>(Lkt6;Z)V
-
-    iput-object p2, p0, Lkt6;->h:Lht6;
-
-    new-instance p2, Ljt6;
-
-    const/4 p3, 0x0
-
-    invoke-direct {p2, p3, p0}, Ljt6;-><init>(ILjava/lang/Object;)V
-
-    iput-object p2, p0, Lkt6;->i:Ljt6;
-
-    new-instance p2, Ljt6;
-
-    invoke-direct {p2, p3, p0}, Ljt6;-><init>(ILjava/lang/Object;)V
-
-    iput-object p2, p0, Lkt6;->j:Ljt6;
-
-    if-eqz p5, :cond_1
-
-    invoke-virtual {p0}, Lkt6;->h()Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    invoke-virtual {p1, p5}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+    invoke-direct/range {v1 .. v18}, Lkt6;-><init>(Ljava/lang/String;Lkt6;Ljava/lang/String;JIJLmw4;Ljava/lang/String;Ljava/lang/String;JJZLjava/util/List;)V
 
     return-void
+.end method
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+.method public constructor <init>(Ljava/lang/String;Lkt6;Ljava/lang/String;JIJLmw4;Ljava/lang/String;Ljava/lang/String;JJZLjava/util/List;)V
+    .registers 34
 
-    const-string p1, "locally-initiated streams shouldn\'t have headers yet"
+    move-object/from16 v0, p0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-object/from16 v1, p1
 
-    throw p0
+    move-object/from16 v2, p2
 
-    :cond_1
-    invoke-virtual {p0}, Lkt6;->h()Z
+    move-wide/from16 v3, p4
 
-    move-result p0
+    move/from16 v5, p6
 
-    if-eqz p0, :cond_2
+    move-wide/from16 v6, p7
+
+    move-object/from16 v8, p9
+
+    move-object/from16 v9, p10
+
+    move-object/from16 v10, p11
+
+    move-wide/from16 v11, p12
+
+    move-wide/from16 v13, p14
+
+    move/from16 v15, p16
+
+    invoke-direct/range {v0 .. v15}, Lmt6;-><init>(Ljava/lang/String;Lkt6;JIJLmw4;Ljava/lang/String;Ljava/lang/String;JJZ)V
+
+    move-object/from16 v1, p3
+
+    iput-object v1, v0, Lkt6;->v0:Ljava/lang/String;
+
+    invoke-static/range {p17 .. p17}, Ll37;->j(Ljava/util/Collection;)Ll37;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lkt6;->w0:Ll37;
 
     return-void
-
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "remotely-initiated streams should have headers"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .registers 3
+.method public final a(IJ)Lkt6;
+    .registers 28
 
-    sget-object v0, Lzhf;->a:[B
+    move-object/from16 v0, p0
 
-    monitor-enter p0
+    new-instance v1, Ljava/util/ArrayList;
 
-    :try_start_0
-    iget-object v0, p0, Lkt6;->g:Lit6;
-
-    iget-boolean v1, v0, Lit6;->X:Z
-
-    if-nez v1, :cond_1
-
-    iget-boolean v0, v0, Lit6;->c:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lkt6;->h:Lht6;
-
-    iget-boolean v1, v0, Lht6;->c:Z
-
-    if-nez v1, :cond_0
-
-    iget-boolean v0, v0, Lht6;->b:Z
-
-    if-eqz v0, :cond_1
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_2
-
-    :cond_0
-    :goto_0
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_1
-    invoke-virtual {p0}, Lkt6;->i()Z
-
-    move-result v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    if-eqz v0, :cond_2
-
-    const/16 v0, 0x9
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Lkt6;->c(ILjava/io/IOException;)V
-
-    return-void
-
-    :cond_2
-    if-nez v1, :cond_3
-
-    iget-object v0, p0, Lkt6;->n:Ldt6;
-
-    iget p0, p0, Lkt6;->m:I
-
-    invoke-virtual {v0, p0}, Ldt6;->i(I)Lkt6;
-
-    :cond_3
-    return-void
-
-    :goto_2
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final b()V
-    .registers 3
-
-    iget-object v0, p0, Lkt6;->h:Lht6;
-
-    iget-boolean v1, v0, Lht6;->b:Z
-
-    if-nez v1, :cond_3
-
-    iget-boolean v0, v0, Lht6;->c:Z
-
-    if-nez v0, :cond_2
-
-    iget v0, p0, Lkt6;->k:I
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lkt6;->l:Ljava/io/IOException;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lokhttp3/internal/http2/StreamResetException;
-
-    iget p0, p0, Lkt6;->k:I
-
-    invoke-direct {v0, p0}, Lokhttp3/internal/http2/StreamResetException;-><init>(I)V
-
-    :goto_0
-    throw v0
-
-    :cond_1
-    return-void
-
-    :cond_2
-    new-instance p0, Ljava/io/IOException;
-
-    const-string v0, "stream finished"
-
-    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_3
-    new-instance p0, Ljava/io/IOException;
-
-    const-string v0, "stream closed"
-
-    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final c(ILjava/io/IOException;)V
-    .registers 3
-
-    invoke-virtual {p0, p1, p2}, Lkt6;->d(ILjava/io/IOException;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    return-void
-
-    :cond_0
-    iget p2, p0, Lkt6;->m:I
-
-    iget-object p0, p0, Lkt6;->n:Ldt6;
-
-    iget-object p0, p0, Ldt6;->C0:Llt6;
-
-    invoke-virtual {p0, p2, p1}, Llt6;->W(II)V
-
-    return-void
-.end method
-
-.method public final d(ILjava/io/IOException;)Z
-    .registers 5
-
-    sget-object v0, Lzhf;->a:[B
-
-    monitor-enter p0
-
-    :try_start_0
-    iget v0, p0, Lkt6;->k:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    monitor-exit p0
-
-    return v1
-
-    :cond_0
-    :try_start_1
-    iget-object v0, p0, Lkt6;->g:Lit6;
-
-    iget-boolean v0, v0, Lit6;->X:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lkt6;->h:Lht6;
-
-    iget-boolean v0, v0, Lht6;->c:Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    if-eqz v0, :cond_1
-
-    monitor-exit p0
-
-    return v1
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_0
-
-    :cond_1
-    :try_start_2
-    iput p1, p0, Lkt6;->k:I
-
-    iput-object p2, p0, Lkt6;->l:Ljava/io/IOException;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    monitor-exit p0
-
-    iget-object p1, p0, Lkt6;->n:Ldt6;
-
-    iget p0, p0, Lkt6;->m:I
-
-    invoke-virtual {p1, p0}, Ldt6;->i(I)Lkt6;
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :goto_0
-    monitor-exit p0
-
-    throw p1
-.end method
-
-.method public final e(I)V
-    .registers 3
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Lkt6;->d(ILjava/io/IOException;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Lkt6;->n:Ldt6;
-
-    iget p0, p0, Lkt6;->m:I
-
-    invoke-virtual {v0, p0, p1}, Ldt6;->W(II)V
-
-    return-void
-.end method
-
-.method public final declared-synchronized f()I
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget v0, p0, Lkt6;->k:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public final g()Lht6;
-    .registers 3
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lkt6;->f:Z
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p0}, Lkt6;->h()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const-string v0, "reply before requesting the sink"
-
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    monitor-exit p0
-
-    iget-object p0, p0, Lkt6;->h:Lht6;
-
-    return-object p0
-
-    :goto_1
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public final h()Z
-    .registers 4
-
-    iget v0, p0, Lkt6;->m:I
-
-    const/4 v1, 0x1
-
-    and-int/2addr v0, v1
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v2, 0x0
 
-    if-ne v0, v1, :cond_0
+    move-wide/from16 v9, p2
 
-    move v0, v1
+    :goto_0
+    iget-object v3, v0, Lkt6;->w0:Ll37;
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-ge v2, v4, :cond_0
+
+    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lgt6;
+
+    new-instance v4, Lgt6;
+
+    move-object v5, v4
+
+    iget-object v4, v3, Lmt6;->a:Ljava/lang/String;
+
+    move-object v6, v5
+
+    iget-object v5, v3, Lmt6;->b:Lkt6;
+
+    move-object v8, v6
+
+    iget-wide v6, v3, Lmt6;->c:J
+
+    iget-object v11, v3, Lmt6;->Y:Lmw4;
+
+    iget-object v12, v3, Lmt6;->Z:Ljava/lang/String;
+
+    iget-object v13, v3, Lmt6;->r0:Ljava/lang/String;
+
+    iget-wide v14, v3, Lmt6;->s0:J
+
+    move-object/from16 v16, v4
+
+    move-object/from16 v17, v5
+
+    iget-wide v4, v3, Lmt6;->t0:J
+
+    move/from16 v21, v2
+
+    iget-boolean v2, v3, Lmt6;->u0:Z
+
+    move/from16 v18, v2
+
+    iget-boolean v2, v3, Lgt6;->v0:Z
+
+    move/from16 v19, v2
+
+    iget-boolean v2, v3, Lgt6;->w0:Z
+
+    move/from16 v20, v2
+
+    move-object v2, v3
+
+    move-object v3, v8
+
+    move/from16 v8, p1
+
+    move-wide/from16 v22, v4
+
+    move-object/from16 v4, v16
+
+    move-object/from16 v5, v17
+
+    move-wide/from16 v16, v22
+
+    invoke-direct/range {v3 .. v20}, Lgt6;-><init>(Ljava/lang/String;Lkt6;JIJLmw4;Ljava/lang/String;Ljava/lang/String;JJZZZ)V
+
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-wide v2, v2, Lmt6;->c:J
+
+    add-long/2addr v9, v2
+
+    add-int/lit8 v2, v21, 0x1
 
     goto :goto_0
 
     :cond_0
-    move v0, v2
+    new-instance v2, Lkt6;
 
-    :goto_0
-    iget-object p0, p0, Lkt6;->n:Ldt6;
+    iget-wide v14, v0, Lmt6;->t0:J
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-boolean v3, v0, Lmt6;->u0:Z
 
-    if-ne v1, v0, :cond_1
+    move-object/from16 v17, v1
 
-    return v1
+    iget-object v1, v0, Lmt6;->a:Ljava/lang/String;
 
-    :cond_1
-    return v2
-.end method
+    move-object v4, v2
 
-.method public final declared-synchronized i()Z
-    .registers 4
+    iget-object v2, v0, Lmt6;->b:Lkt6;
 
-    monitor-enter p0
+    move/from16 v16, v3
 
-    :try_start_0
-    iget v0, p0, Lkt6;->k:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v3, v0, Lkt6;->v0:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    move-object v6, v4
 
-    if-eqz v0, :cond_0
+    iget-wide v4, v0, Lmt6;->c:J
 
-    monitor-exit p0
+    iget-object v9, v0, Lmt6;->Y:Lmw4;
 
-    return v1
+    iget-object v10, v0, Lmt6;->Z:Ljava/lang/String;
 
-    :cond_0
-    :try_start_1
-    iget-object v0, p0, Lkt6;->g:Lit6;
+    iget-object v11, v0, Lmt6;->r0:Ljava/lang/String;
 
-    iget-boolean v2, v0, Lit6;->X:Z
+    iget-wide v12, v0, Lmt6;->s0:J
 
-    if-nez v2, :cond_1
+    move-wide/from16 v7, p2
 
-    iget-boolean v0, v0, Lit6;->c:Z
+    move-object v0, v6
 
-    if-eqz v0, :cond_3
+    move/from16 v6, p1
 
-    goto :goto_0
+    invoke-direct/range {v0 .. v17}, Lkt6;-><init>(Ljava/lang/String;Lkt6;Ljava/lang/String;JIJLmw4;Ljava/lang/String;Ljava/lang/String;JJZLjava/util/List;)V
 
-    :catchall_0
-    move-exception v0
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    iget-object v0, p0, Lkt6;->h:Lht6;
-
-    iget-boolean v2, v0, Lht6;->c:Z
-
-    if-nez v2, :cond_2
-
-    iget-boolean v0, v0, Lht6;->b:Z
-
-    if-eqz v0, :cond_3
-
-    :cond_2
-    iget-boolean v0, p0, Lkt6;->f:Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    if-eqz v0, :cond_3
-
-    monitor-exit p0
-
-    return v1
-
-    :cond_3
-    monitor-exit p0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :goto_1
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v0
-.end method
-
-.method public final j(Lcn6;Z)V
-    .registers 5
-
-    sget-object v0, Lzhf;->a:[B
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lkt6;->f:Z
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-nez p2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p1, p0, Lkt6;->g:Lit6;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_2
-
-    :cond_1
-    :goto_0
-    iput-boolean v1, p0, Lkt6;->f:Z
-
-    iget-object v0, p0, Lkt6;->e:Ljava/util/ArrayDeque;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
-
-    :goto_1
-    if-eqz p2, :cond_2
-
-    iget-object p1, p0, Lkt6;->g:Lit6;
-
-    iput-boolean v1, p1, Lit6;->X:Z
-
-    :cond_2
-    invoke-virtual {p0}, Lkt6;->i()Z
-
-    move-result p1
-
-    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    if-nez p1, :cond_3
-
-    iget-object p1, p0, Lkt6;->n:Ldt6;
-
-    iget p0, p0, Lkt6;->m:I
-
-    invoke-virtual {p1, p0}, Ldt6;->i(I)Lkt6;
-
-    :cond_3
-    return-void
-
-    :goto_2
-    monitor-exit p0
-
-    throw p1
+    return-object v0
 .end method

@@ -1,64 +1,28 @@
-.class public final Lldc;
+.class public abstract Lldc;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lrdc;
 
 
 # static fields
-.field public static final a:Lldc;
+.field public static MarkdownItemView:[I = null
+
+.field public static MarkdownItemView_miv_highlight_title:I = 0x0
+
+.field public static MarkdownItemView_miv_title:I = 0x1
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public static constructor <clinit>()V
+    .registers 2
 
-    new-instance v0, Lldc;
+    const v0, 0x7f04066f
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const v1, 0x7f040670
 
-    sput-object v0, Lldc;->a:Lldc;
+    filled-new-array {v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lldc;->MarkdownItemView:[I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lldc;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, -0x5ce2dfa5
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "CloseTooltip"
-
-    return-object p0
 .end method

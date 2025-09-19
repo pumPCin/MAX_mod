@@ -1,126 +1,100 @@
 .class public final Ld99;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/messages/list/ui/MessagesListWidget;
-
-.field public final synthetic c:Ljava/util/List;
+.field public final synthetic X:Lfb9;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/messages/list/ui/MessagesListWidget;Ljava/util/List;I)V
-    .registers 4
+.method public constructor <init>(Lfb9;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p3, p0, Ld99;->a:I
+    iput-object p1, p0, Ld99;->X:Lfb9;
 
-    iput-object p1, p0, Ld99;->b:Lone/me/messages/list/ui/MessagesListWidget;
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Ld99;->c:Ljava/util/List;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Ld99;->a:I
+    check-cast p1, Ly04;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, p0, Ld99;->b:Lone/me/messages/list/ui/MessagesListWidget;
-
-    iget-object v0, v0, Lone/me/messages/list/ui/MessagesListWidget;->a:Ljava/lang/String;
-
-    iget-object p0, p0, Ld99;->c:Ljava/util/List;
-
-    sget-object v1, Ld86;->f:Lafa;
-
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v2, Llw7;->Y:Llw7;
-
-    invoke-virtual {v1, v2}, Lafa;->a(Llw7;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    const-string v3, "WARNING! Can\'t set new messages, size="
-
-    invoke-static {p0, v3}, La78;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Ld99;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    const/4 v3, 0x0
+    check-cast p0, Ld99;
 
-    invoke-virtual {v1, v2, v0, p0, v3}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    sget-object p1, Lylf;->a:Lylf;
 
-    :cond_1
-    :goto_0
-    return-void
+    invoke-virtual {p0, p1}, Ld99;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :pswitch_0
-    iget-object v0, p0, Ld99;->b:Lone/me/messages/list/ui/MessagesListWidget;
+    return-object p1
+.end method
 
-    iget-object v0, v0, Lone/me/messages/list/ui/MessagesListWidget;->a:Ljava/lang/String;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    iget-object p0, p0, Ld99;->c:Ljava/util/List;
+    new-instance p1, Ld99;
 
-    sget-object v1, Ld86;->f:Lafa;
+    iget-object p0, p0, Ld99;->X:Lfb9;
 
-    if-nez v1, :cond_2
+    invoke-direct {p1, p0, p2}, Ld99;-><init>(Lfb9;Lkotlin/coroutines/Continuation;)V
 
-    goto :goto_1
+    return-object p1
+.end method
 
-    :cond_2
-    sget-object v2, Llw7;->o:Llw7;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
 
-    invoke-virtual {v1, v2}, Lafa;->a(Llw7;)Z
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    move-result v3
+    sget-object p1, Lfb9;->K1:[Lxi7;
 
-    if-eqz v3, :cond_3
+    iget-object p0, p0, Ld99;->X:Lfb9;
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    iget-object p1, p0, Lfb9;->J0:Lcl7;
 
-    move-result p0
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    const-string v3, "New messages submitted, size="
+    move-result-object p1
 
-    invoke-static {p0, v3}, La78;->h(ILjava/lang/String;)Ljava/lang/String;
+    check-cast p1, Lqoa;
 
-    move-result-object p0
+    new-instance v0, Lepa;
 
-    const/4 v3, 0x0
+    sget v1, Lq0d;->n:I
 
-    invoke-virtual {v1, v2, v0, p0, v3}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v0, v1}, Lepa;-><init>(I)V
 
-    :cond_3
-    :goto_1
-    return-void
+    invoke-virtual {p1, v0}, Lqoa;->e(Ljpa;)V
 
-    nop
+    sget v0, Ljka;->t0:I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    new-instance v1, Lp2f;
+
+    invoke-direct {v1, v0}, Lp2f;-><init>(I)V
+
+    invoke-virtual {p1, v1}, Lqoa;->g(Lu2f;)V
+
+    invoke-virtual {p0, p1}, Lfb9;->L(Lqoa;)V
+
+    invoke-virtual {p1}, Lqoa;->i()Lpoa;
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

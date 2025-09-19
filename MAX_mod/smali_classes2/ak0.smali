@@ -1,101 +1,28 @@
-.class public final synthetic Lak0;
+.class public interface abstract Lak0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lh96;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lrn9;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lrn9;I)V
-    .registers 3
-
-    iput p2, p0, Lak0;->a:I
-
-    iput-object p1, p0, Lak0;->b:Lrn9;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 3
+.method public abstract appToken()Ljava/lang/String;
+.end method
 
-    iget v0, p0, Lak0;->a:I
+.method public abstract buildUuid()Ljava/lang/String;
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public abstract environment()Ljava/lang/String;
+.end method
 
-    iget-object p0, p0, Lak0;->b:Lrn9;
+.method public isDisabled()Z
+    .registers 1
 
-    iget-object v0, p0, Lrn9;->n0:Lsc;
+    const/4 p0, 0x0
 
-    const-string v1, "LOCATION_MAP_TYPE_HYBRID"
+    return p0
+.end method
 
-    invoke-virtual {v0, v1}, Lsc;->f(Ljava/lang/String;)V
+.method public abstract namespace()Ljava/lang/String;
+.end method
 
-    new-instance v0, Lyj0;
-
-    const/16 v1, 0x9
-
-    invoke-direct {v0, v1}, Lyj0;-><init>(I)V
-
-    invoke-virtual {p0, v0}, Lt2;->n(Llm3;)V
-
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lak0;->b:Lrn9;
-
-    iget-object v0, p0, Lrn9;->n0:Lsc;
-
-    const-string v1, "LOCATION_MAP_TYPE_SATELLITE"
-
-    invoke-virtual {v0, v1}, Lsc;->f(Ljava/lang/String;)V
-
-    new-instance v0, Lyj0;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1}, Lyj0;-><init>(I)V
-
-    invoke-virtual {p0, v0}, Lt2;->n(Llm3;)V
-
-    goto :goto_0
-
-    :pswitch_1
-    iget-object p0, p0, Lak0;->b:Lrn9;
-
-    iget-object v0, p0, Lrn9;->n0:Lsc;
-
-    const-string v1, "LOCATION_MAP_TYPE_NORMAL"
-
-    invoke-virtual {v0, v1}, Lsc;->f(Ljava/lang/String;)V
-
-    new-instance v0, Lyj0;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Lyj0;-><init>(I)V
-
-    invoke-virtual {p0, v0}, Lt2;->n(Llm3;)V
-
-    goto :goto_0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+.method public abstract versionName()Ljava/lang/String;
 .end method

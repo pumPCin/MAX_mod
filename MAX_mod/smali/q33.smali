@@ -1,99 +1,104 @@
 .class public final Lq33;
-.super Lmk0;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
 
 
 # instance fields
-.field public h:I
+.field public final synthetic a:I
 
-.field public i:I
-
-.field public j:I
+.field public final synthetic b:Lr33;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 11
+.method public synthetic constructor <init>(Lr33;I)V
+    .registers 3
 
-    sget v3, Lnvb;->circularProgressIndicatorStyle:I
+    iput p2, p0, Lq33;->a:I
 
-    sget v4, Lp33;->v0:I
+    iput-object p1, p0, Lq33;->b:Lr33;
 
-    invoke-direct {p0, v3, v4, p1}, Lmk0;-><init>(IILandroid/content/Context;)V
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v1, Lmwb;->mtrl_progress_circular_size_medium:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v6
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v1, Lmwb;->mtrl_progress_circular_inset_medium:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v7
-
-    sget-object v2, Le6c;->CircularProgressIndicator:[I
-
-    const/4 v8, 0x0
-
-    new-array v5, v8, [I
-
-    const/4 v1, 0x0
-
-    invoke-static {p1, v1, v3, v4}, Lgve;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-
-    move-object v0, p1
-
-    invoke-static/range {v0 .. v5}, Lgve;->b(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)V
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
-    move-result-object p1
-
-    sget v1, Le6c;->CircularProgressIndicator_indicatorSize:I
-
-    invoke-static {v0, p1, v1, v6}, Lfog;->E(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
-
-    move-result v1
-
-    iget v2, p0, Lmk0;->a:I
-
-    mul-int/lit8 v2, v2, 0x2
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v1
-
-    iput v1, p0, Lq33;->h:I
-
-    sget v1, Le6c;->CircularProgressIndicator_indicatorInset:I
-
-    invoke-static {v0, p1, v1, v7}, Lfog;->E(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
-
-    move-result v0
-
-    iput v0, p0, Lq33;->i:I
-
-    sget v0, Le6c;->CircularProgressIndicator_indicatorDirectionCircular:I
-
-    invoke-virtual {p1, v0, v8}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v0
-
-    iput v0, p0, Lq33;->j:I
-
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
-
-    invoke-virtual {p0}, Lmk0;->a()V
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .registers 3
+
+    iget v0, p0, Lq33;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    return-void
+
+    :pswitch_0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
+
+    iget-object p0, p0, Lq33;->b:Lr33;
+
+    invoke-virtual {p0}, Lr33;->x()V
+
+    iget-object p1, p0, Lr33;->u0:Lie;
+
+    if-eqz p1, :cond_0
+
+    iget-object p0, p0, Lpxe;->b:Ljava/lang/Object;
+
+    check-cast p0, Lf67;
+
+    invoke-virtual {p1, p0}, Lie;->a(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_0
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+    .registers 3
+
+    iget v0, p0, Lq33;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationRepeat(Landroid/animation/Animator;)V
+
+    return-void
+
+    :pswitch_0
+    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationRepeat(Landroid/animation/Animator;)V
+
+    iget-object p0, p0, Lq33;->b:Lr33;
+
+    iget p1, p0, Lr33;->r0:I
+
+    add-int/lit8 p1, p1, 0x4
+
+    iget-object v0, p0, Lr33;->Z:Lv33;
+
+    iget-object v0, v0, Lrj0;->c:[I
+
+    array-length v0, v0
+
+    rem-int/2addr p1, v0
+
+    iput p1, p0, Lr33;->r0:I
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

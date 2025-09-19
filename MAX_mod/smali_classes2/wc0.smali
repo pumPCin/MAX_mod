@@ -1,117 +1,268 @@
-.class public final Lwc0;
-.super Lgk0;
+.class public final synthetic Lwc0;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lone/me/mediapicker/crop/AvatarEditScreen;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lone/me/mediapicker/crop/AvatarEditScreen;I)V
+    .registers 3
+
+    iput p2, p0, Lwc0;->a:I
+
+    iput-object p1, p0, Lwc0;->b:Lone/me/mediapicker/crop/AvatarEditScreen;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Bitmap;Lc5b;)La63;
-    .registers 8
+.method public final onClick(Landroid/view/View;)V
+    .registers 11
 
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+    iget p1, p0, Lwc0;->a:I
 
-    move-result p0
+    const/4 v0, 0x2
 
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+    const/4 v1, 0x0
 
-    move-result v0
+    const/4 v2, 0x0
 
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    iget-object p0, p0, Lwc0;->b:Lone/me/mediapicker/crop/AvatarEditScreen;
 
-    invoke-virtual {p2, p0, v0, v1}, Lc5b;->c(IILandroid/graphics/Bitmap$Config;)La63;
+    packed-switch p1, :pswitch_data_0
+
+    sget-object p1, Lone/me/mediapicker/crop/AvatarEditScreen;->t0:[Lxi7;
+
+    invoke-virtual {p0}, Lone/me/mediapicker/crop/AvatarEditScreen;->z0()Lgd0;
 
     move-result-object p0
 
-    invoke-virtual {p0}, La63;->i0()Ljava/lang/Object;
+    iget-object p0, p0, Lgd0;->o:Lv85;
 
-    move-result-object p2
+    sget-object p1, Lw53;->b:Lw53;
 
-    check-cast p2, Landroid/graphics/Bitmap;
+    invoke-static {p0, p1}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
 
-    sget-object v0, Lknd;->a:Lso0;
+    return-void
 
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+    :pswitch_0
+    sget-object p1, Lone/me/mediapicker/crop/AvatarEditScreen;->t0:[Lxi7;
 
-    move-result v0
+    invoke-virtual {p0}, Lone/me/mediapicker/crop/AvatarEditScreen;->z0()Lgd0;
 
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+    move-result-object v4
 
-    move-result v1
+    iget-object p1, p0, Lone/me/mediapicker/crop/AvatarEditScreen;->b:Ljava/lang/Object;
 
-    new-instance v2, Landroid/graphics/Canvas;
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    invoke-direct {v2, p2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+    move-result-object p1
 
-    sget-object p2, Lknd;->b:Landroid/graphics/Matrix;
+    move-object v5, p1
 
-    const/4 v3, 0x0
+    check-cast v5, Landroid/net/Uri;
 
-    invoke-virtual {v2, p1, p2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
+    iget-object p1, p0, Lone/me/mediapicker/crop/AvatarEditScreen;->c:Lfr;
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    sget-object v0, Lone/me/mediapicker/crop/AvatarEditScreen;->t0:[Lxi7;
+
+    const/4 v1, 0x1
+
+    aget-object v0, v0, v1
+
+    invoke-virtual {p1, p0}, Lfr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v6, p1
+
+    check-cast v6, Ljava/lang/String;
+
+    new-instance v7, Ll;
+
+    const/16 p1, 0xc
+
+    invoke-direct {v7, p1, p0}, Ll;-><init>(ILjava/lang/Object;)V
+
+    iget-object p0, v4, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    iget-object p1, v4, Lgd0;->b:Lcl7;
+
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lxwe;
+
+    check-cast p1, Laga;
+
+    invoke-virtual {p1}, Laga;->b()Ls04;
+
+    move-result-object p1
+
+    sget-object v0, Lb14;->b:Lb14;
+
+    new-instance v3, Lcd0;
+
+    const/4 v8, 0x0
+
+    invoke-direct/range {v3 .. v8}, Lcd0;-><init>(Lgd0;Landroid/net/Uri;Ljava/lang/String;Ll;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {p0, p1, v0, v3}, Lvyg;->t(Ly04;Lq04;Lb14;Lpc6;)Lcae;
+
+    move-result-object p0
+
+    iget-object p1, v4, Lgd0;->t0:Lncb;
+
+    sget-object v0, Lgd0;->v0:[Lxi7;
+
+    aget-object v0, v0, v2
+
+    invoke-virtual {p1, v4, v0, p0}, Lncb;->h0(Ljava/lang/Object;Lxi7;Ljava/lang/Object;)V
+
+    return-void
+
+    :pswitch_1
+    sget-object p1, Lone/me/mediapicker/crop/AvatarEditScreen;->t0:[Lxi7;
+
+    invoke-virtual {p0}, Lone/me/mediapicker/crop/AvatarEditScreen;->y0()Lru/ok/messages/views/widgets/AvatarCropView;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lru/ok/messages/views/widgets/AvatarCropView;->u()Z
 
     move-result p1
 
-    div-int/lit8 p1, p1, 0x2
+    if-eqz p1, :cond_0
 
-    invoke-static {p1}, Lknd;->b(I)Landroid/graphics/Path;
+    invoke-virtual {p0}, Lone/me/mediapicker/crop/AvatarEditScreen;->z0()Lgd0;
 
-    move-result-object p2
+    move-result-object p0
 
-    new-instance v3, Landroid/graphics/Matrix;
+    iget-object p1, p0, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
 
-    invoke-direct {v3}, Landroid/graphics/Matrix;-><init>()V
+    iget-object v2, p0, Lgd0;->b:Lcl7;
 
-    int-to-float v0, v0
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
 
-    const/high16 v4, 0x40000000    # 2.0f
+    move-result-object v2
 
-    div-float/2addr v0, v4
+    check-cast v2, Lxwe;
 
-    int-to-float p1, p1
+    check-cast v2, Laga;
 
-    sub-float/2addr v0, p1
+    invoke-virtual {v2}, Laga;->a()Ls04;
 
-    int-to-float v1, v1
+    move-result-object v2
 
-    div-float/2addr v1, v4
+    new-instance v3, Lfd0;
 
-    sub-float/2addr v1, p1
+    invoke-direct {v3, p0, v1}, Lfd0;-><init>(Lgd0;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v3, v0, v1}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+    invoke-static {p1, v2, v1, v3, v0}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
 
-    invoke-virtual {p2, v3}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
+    :cond_0
+    return-void
 
-    new-instance p1, Landroid/graphics/Paint;
+    :pswitch_2
+    sget-object p1, Lone/me/mediapicker/crop/AvatarEditScreen;->t0:[Lxi7;
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Lone/me/mediapicker/crop/AvatarEditScreen;->y0()Lru/ok/messages/views/widgets/AvatarCropView;
 
-    invoke-direct {p1, v0}, Landroid/graphics/Paint;-><init>(I)V
+    move-result-object p1
 
-    new-instance v0, Landroid/graphics/PorterDuffXfermode;
+    invoke-virtual {p1}, Lru/ok/messages/views/widgets/AvatarCropView;->r()Z
 
-    sget-object v1, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
+    move-result p1
 
-    invoke-direct {v0, v1}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
+    if-eqz p1, :cond_1
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
+    invoke-virtual {p0}, Lone/me/mediapicker/crop/AvatarEditScreen;->z0()Lgd0;
 
-    sget-object v0, Landroid/graphics/Path$FillType;->INVERSE_WINDING:Landroid/graphics/Path$FillType;
+    move-result-object p0
 
-    invoke-virtual {p2, v0}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
+    iget-object p1, p0, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
 
-    invoke-virtual {v2, p2, p1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    iget-object v2, p0, Lgd0;->b:Lcl7;
 
-    return-object p0
-.end method
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
 
-.method public final b()Llx0;
-    .registers 2
+    move-result-object v2
 
-    new-instance p0, Lntd;
+    check-cast v2, Lxwe;
 
-    const-string v0, "AvatarAsSquirclePostProcessor"
+    check-cast v2, Laga;
 
-    invoke-direct {p0, v0}, Lntd;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2}, Laga;->a()Ls04;
 
-    return-object p0
+    move-result-object v2
+
+    new-instance v3, Ldd0;
+
+    invoke-direct {v3, p0, v1}, Ldd0;-><init>(Lgd0;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {p1, v2, v1, v3, v0}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    :cond_1
+    return-void
+
+    :pswitch_3
+    sget-object p1, Lone/me/mediapicker/crop/AvatarEditScreen;->t0:[Lxi7;
+
+    invoke-virtual {p0}, Lone/me/mediapicker/crop/AvatarEditScreen;->y0()Lru/ok/messages/views/widgets/AvatarCropView;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lru/ok/messages/views/widgets/AvatarCropView;->t()V
+
+    invoke-virtual {p0}, Lone/me/mediapicker/crop/AvatarEditScreen;->z0()Lgd0;
+
+    move-result-object p1
+
+    iput-boolean v2, p1, Lgd0;->s0:Z
+
+    iget-object p1, p1, Lgd0;->Y:Landroid/graphics/Matrix;
+
+    invoke-virtual {p1}, Landroid/graphics/Matrix;->reset()V
+
+    iget-object p1, p0, Lone/me/mediapicker/crop/AvatarEditScreen;->r0:Lcic;
+
+    sget-object v0, Lone/me/mediapicker/crop/AvatarEditScreen;->t0:[Lxi7;
+
+    const/4 v1, 0x3
+
+    aget-object v0, v0, v1
+
+    invoke-interface {p1, p0, v0}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lone/me/sdk/uikit/common/button/OneMeButton;
+
+    const/16 p1, 0x8
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

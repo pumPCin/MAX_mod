@@ -1,79 +1,126 @@
-.class public final synthetic Lid;
+.class public final Lid;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/media/ImageReader$OnImageAvailableListener;
-
-
-# instance fields
-.field public final synthetic a:Ljd;
-
-.field public final synthetic b:Ljava/util/concurrent/Executor;
-
-.field public final synthetic c:Laz6;
-
-
-# direct methods
-.method public synthetic constructor <init>(Ljd;Ljava/util/concurrent/Executor;Laz6;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lid;->a:Ljd;
-
-    iput-object p2, p0, Lid;->b:Ljava/util/concurrent/Executor;
-
-    iput-object p3, p0, Lid;->c:Laz6;
-
-    return-void
-.end method
+.implements Lt6e;
 
 
 # virtual methods
-.method public final onImageAvailable(Landroid/media/ImageReader;)V
-    .registers 6
+.method public final a(Ljavax/net/ssl/SSLSocket;)Z
+    .registers 2
 
-    iget-object p1, p0, Lid;->a:Ljd;
+    invoke-static {p1}, Landroid/net/ssl/SSLSockets;->isSupportedSocket(Ljavax/net/ssl/SSLSocket;)Z
 
-    iget-object v0, p0, Lid;->b:Ljava/util/concurrent/Executor;
+    move-result p0
 
-    iget-object p0, p0, Lid;->c:Laz6;
+    return p0
+.end method
 
-    iget-object v1, p1, Ljd;->o:Ljava/lang/Object;
+.method public final b()Z
+    .registers 1
 
-    monitor-enter v1
+    sget-object p0, Lrbb;->a:Lrbb;
 
-    :try_start_0
-    iget-boolean v2, p1, Ljd;->b:Z
+    invoke-static {}, Lc3e;->k()Z
 
-    if-nez v2, :cond_0
+    move-result p0
 
-    new-instance v2, Lc;
+    return p0
+.end method
 
-    const/4 v3, 0x2
+.method public final c(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
+    .registers 2
 
-    invoke-direct {v2, p1, v3, p0}, Lc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getApplicationProtocol()Ljava/lang/String;
 
-    invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-result-object p0
+
+    if-nez p0, :cond_0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p1
+
+    if-eqz p1, :cond_1
 
     goto :goto_1
 
-    :cond_0
+    :cond_1
+    const-string p1, ""
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
     :goto_0
-    monitor-exit v1
+    const/4 p0, 0x0
+
+    :cond_2
+    :goto_1
+    return-object p0
+.end method
+
+.method public final d(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;)V
+    .registers 4
+
+    const/4 p0, 0x1
+
+    :try_start_0
+    invoke-static {p1, p0}, Landroid/net/ssl/SSLSockets;->setUseSessionTickets(Ljavax/net/ssl/SSLSocket;Z)V
+
+    invoke-virtual {p1}, Ljavax/net/ssl/SSLSocket;->getSSLParameters()Ljavax/net/ssl/SSLParameters;
+
+    move-result-object p0
+
+    sget-object p2, Lrbb;->a:Lrbb;
+
+    invoke-static {p3}, Lc3e;->f(Ljava/util/List;)Ljava/util/ArrayList;
+
+    move-result-object p2
+
+    const/4 p3, 0x0
+
+    new-array p3, p3, [Ljava/lang/String;
+
+    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_0
+
+    check-cast p2, [Ljava/lang/String;
+
+    invoke-virtual {p0, p2}, Ljavax/net/ssl/SSLParameters;->setApplicationProtocols([Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljavax/net/ssl/SSLSocket;->setSSLParameters(Ljavax/net/ssl/SSLParameters;)V
 
     return-void
 
-    :goto_1
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :cond_0
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "null cannot be cast to non-null type kotlin.Array<T>"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p0
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Ljava/io/IOException;
+
+    const-string p2, "Android internal error"
+
+    invoke-direct {p1, p2, p0}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
 .end method

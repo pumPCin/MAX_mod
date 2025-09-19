@@ -1,62 +1,86 @@
 .class public final Lcxg;
-.super Ldi6;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lcp;
 
 
 # static fields
-.field public static final s0:Lg38;
+.field public static final b:Lcxg;
 
 
 # instance fields
-.field public final q0:Landroid/content/Context;
-
-.field public final r0:Lfi6;
+.field public a:Lpl6;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .registers 2
 
-    new-instance v0, Lbt9;
+    new-instance v0, Lcxg;
 
-    const/4 v1, 0x7
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lbt9;-><init>(I)V
+    const/4 v1, 0x0
 
-    new-instance v1, Lxqg;
+    iput-object v1, v0, Lcxg;->a:Lpl6;
 
-    const/4 v2, 0x7
-
-    invoke-direct {v1, v2}, Lxqg;-><init>(I)V
-
-    new-instance v2, Lg38;
-
-    const-string v3, "AppSet.API"
-
-    invoke-direct {v2, v3, v1, v0}, Lg38;-><init>(Ljava/lang/String;Lbp;Lbt9;)V
-
-    sput-object v2, Lcxg;->s0:Lg38;
+    sput-object v0, Lcxg;->b:Lcxg;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lfi6;)V
-    .registers 6
+.method public static a(Landroid/content/Context;)Lpl6;
+    .registers 4
 
-    sget-object v0, Lgk;->d:Lfk;
+    sget-object v0, Lcxg;->b:Lcxg;
 
-    sget-object v1, Lci6;->c:Lci6;
+    monitor-enter v0
 
-    sget-object v2, Lcxg;->s0:Lg38;
+    :try_start_0
+    iget-object v1, v0, Lcxg;->a:Lpl6;
 
-    invoke-direct {p0, p1, v2, v0, v1}, Ldi6;-><init>(Landroid/content/Context;Lg38;Lgk;Lci6;)V
+    if-nez v1, :cond_1
 
-    iput-object p1, p0, Lcxg;->q0:Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    iput-object p2, p0, Lcxg;->r0:Lfi6;
+    move-result-object v1
 
-    return-void
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    new-instance v1, Lpl6;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lpl6;-><init>(Landroid/content/Context;Z)V
+
+    iput-object v1, v0, Lcxg;->a:Lpl6;
+
+    :cond_1
+    iget-object p0, v0, Lcxg;->a:Lpl6;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v0
+
+    return-object p0
+
+    :goto_1
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
 .end method

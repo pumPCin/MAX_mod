@@ -1,242 +1,207 @@
 .class public final Li89;
-.super Lfhc;
+.super Lx2;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:I
-
-.field public b:I
-
-.field public final synthetic c:Lone/me/messages/list/ui/MessagesListWidget;
+# static fields
+.field public static final c:Li89;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/messages/list/ui/MessagesListWidget;)V
+.method static constructor <clinit>()V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Li89;
 
-    iput-object p1, p0, Li89;->c:Lone/me/messages/list/ui/MessagesListWidget;
+    const/16 v1, 0x8
 
-    const/4 p1, -0x1
+    invoke-direct {v0, v1}, Lx2;-><init>(I)V
 
-    iput p1, p0, Li89;->a:I
-
-    iput p1, p0, Li89;->b:I
+    sput-object v0, Li89;->c:Li89;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final b(Landroidx/recyclerview/widget/RecyclerView;II)V
-    .registers 13
-
-    invoke-static {p1}, Lsqd;->r(Landroidx/recyclerview/widget/RecyclerView;)Landroidx/recyclerview/widget/LinearLayoutManager;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_a
-
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->V0()I
-
-    move-result p2
-
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->X0()I
-
-    move-result p1
-
-    const/4 p3, -0x1
-
-    if-eq p2, p3, :cond_9
-
-    if-ne p1, p3, :cond_0
-
-    goto/16 :goto_3
-
-    :cond_0
-    iget p3, p0, Li89;->a:I
-
-    if-ne p2, p3, :cond_1
-
-    iget p3, p0, Li89;->b:I
-
-    if-eq p1, p3, :cond_9
-
-    :cond_1
-    iput p2, p0, Li89;->a:I
-
-    iput p1, p0, Li89;->b:I
-
-    sget-object p3, Lone/me/messages/list/ui/MessagesListWidget;->V0:[Lsf7;
-
-    iget-object p0, p0, Li89;->c:Lone/me/messages/list/ui/MessagesListWidget;
-
-    invoke-virtual {p0}, Lone/me/messages/list/ui/MessagesListWidget;->J0()Ld89;
-
-    move-result-object p3
-
-    iget-object p0, p0, Lone/me/messages/list/ui/MessagesListWidget;->w0:Lz49;
-
-    iget-object v0, p0, Lhp7;->o:Lvu;
-
-    iget-object v0, v0, Lvu;->f:Ljava/util/List;
-
-    invoke-static {p2, v0}, Lj73;->n0(ILjava/util/List;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lpp7;
-
-    instance-of v1, v0, Lone/me/messages/list/loader/MessageModel;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_2
-
-    check-cast v0, Lone/me/messages/list/loader/MessageModel;
-
-    goto :goto_0
-
-    :cond_2
-    instance-of v0, v0, Llc2;
-
-    if-eqz v0, :cond_3
-
-    add-int/lit8 p2, p2, 0x1
-
-    invoke-virtual {p0, p2}, Lz49;->M(I)Lone/me/messages/list/loader/MessageModel;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_3
-    move-object v0, v2
-
-    :goto_0
-    invoke-virtual {p0, p1}, Lz49;->M(I)Lone/me/messages/list/loader/MessageModel;
-
-    move-result-object p0
-
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    if-eqz v0, :cond_9
-
-    if-nez p0, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    invoke-virtual {p3}, Ld89;->B()Lab9;
-
-    move-result-object p1
-
-    iget-wide v0, v0, Lone/me/messages/list/loader/MessageModel;->c:J
-
-    iget-wide v3, p0, Lone/me/messages/list/loader/MessageModel;->c:J
-
-    iget-object p0, p1, Lab9;->n:Ln4e;
-
-    invoke-virtual {p0}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lu0d;
-
-    iget-object p1, p1, Lu0d;->d:Lt0d;
-
-    if-nez p1, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    iget-wide p1, p1, Lt0d;->b:J
-
-    cmp-long v0, v0, p1
-
-    if-gtz v0, :cond_6
-
-    cmp-long p1, p1, v3
-
-    if-gtz p1, :cond_6
-
-    invoke-virtual {p0}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lu0d;
-
-    iget-object p1, p1, Lu0d;->d:Lt0d;
-
-    if-eqz p1, :cond_7
-
-    invoke-virtual {p0}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p2
-
-    move-object v3, p2
-
-    check-cast v3, Lu0d;
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x7
+.method public static W0(Ljava/util/List;Z)Lva4;
+    .registers 8
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    const/16 v5, 0x3e
 
-    const/4 v6, 0x0
+    const-string v1, ","
 
-    invoke-static/range {v3 .. v8}, Lu0d;->a(Lu0d;IZZLt0d;I)Lu0d;
+    const/4 v2, 0x0
 
-    move-result-object p2
+    const/4 v3, 0x0
 
-    invoke-virtual {p0, v2, p2}, Ln4e;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-object v0, p0
 
-    goto :goto_2
+    invoke-static/range {v0 .. v5}, Lq73;->l0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lbc6;I)Ljava/lang/String;
 
-    :cond_6
-    :goto_1
-    move-object p1, v2
+    move-result-object p0
 
-    :cond_7
-    :goto_2
-    if-nez p1, :cond_8
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    goto :goto_3
+    const-string v1, ":chats/forward?messages_ids="
 
-    :cond_8
-    iget-object p0, p3, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p2, p3, Ld89;->Y:Lzne;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast p2, Ltba;
+    const-string p0, "&show_ext_sharing="
 
-    invoke-virtual {p2}, Ltba;->b()Ll04;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p2
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    new-instance v0, Lx69;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-direct {v0, p3, p1, v2}, Lx69;-><init>(Ld89;Lt0d;Lkotlin/coroutines/Continuation;)V
+    move-result-object p0
 
-    const/4 p1, 0x2
+    new-instance p1, Lva4;
 
-    invoke-static {p0, p2, v2, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    invoke-direct {p1, p0}, Lva4;-><init>(Ljava/lang/String;)V
 
-    :cond_9
-    :goto_3
-    return-void
+    return-object p1
+.end method
 
-    :cond_a
-    new-instance p0, Ljava/lang/IllegalStateException;
+.method public static X0(Li89;JLjava/lang/String;Ljava/lang/Boolean;Ljava/lang/Long;I)Lva4;
+    .registers 9
 
-    const-string p1, "Only linear layout manger supported"
+    and-int/lit8 v0, p6, 0x2
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const/4 v1, 0x0
 
-    throw p0
+    if-eqz v0, :cond_0
+
+    move-object p3, v1
+
+    :cond_0
+    and-int/lit8 v0, p6, 0x4
+
+    if-eqz v0, :cond_1
+
+    sget-object p4, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    :cond_1
+    and-int/lit8 p6, p6, 0x8
+
+    if-eqz p6, :cond_2
+
+    move-object p5, v1
+
+    :cond_2
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Lh89;
+
+    invoke-direct/range {p0 .. p5}, Lh89;-><init>(JLjava/lang/String;Ljava/lang/Boolean;Ljava/lang/Long;)V
+
+    invoke-static {p0}, Lx2;->Q0(Lbc6;)Lva4;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static Y0(JJLjava/lang/String;Lhs4;)Lva4;
+    .registers 8
+
+    invoke-virtual {p5}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p5
+
+    const-string v0, ":dialogs/share-media?msg_id="
+
+    const-string v1, "&attach_id="
+
+    invoke-static {p0, p1, v0, v1}, Lmw1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string p1, "&local_attach_id="
+
+    invoke-static {p2, p3, p1, p4, p0}, Lsq3;->l(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    const-string p1, "&cause_ordinal="
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance p1, Lva4;
+
+    invoke-direct {p1, p0}, Lva4;-><init>(Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public static Z0(JLjava/lang/Long;Ljava/lang/String;Lpcg;)Lva4;
+    .registers 8
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object p4, p4, Lpcg;->a:Ljava/lang/String;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, ":webapp:root?bot_id="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string p0, "&entry_point="
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string p1, "&chat_id="
+
+    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz p3, :cond_0
+
+    const-string p0, "&start_param="
+
+    invoke-virtual {p0, p3}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance p1, Lva4;
+
+    invoke-direct {p1, p0}, Lva4;-><init>(Ljava/lang/String;)V
+
+    return-object p1
 .end method

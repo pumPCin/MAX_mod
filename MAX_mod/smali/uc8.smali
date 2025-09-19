@@ -1,96 +1,80 @@
-.class public final synthetic Luc8;
-.super Ljava/lang/Object;
+.class public final Luc8;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Llq7;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lt6b;
-
-.field public final synthetic c:Ljava/lang/Integer;
+.field public final synthetic Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lt6b;Ljava/lang/Integer;I)V
-    .registers 4
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+    .registers 3
 
-    iput p3, p0, Luc8;->a:I
+    iput-object p2, p0, Luc8;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    iput-object p1, p0, Luc8;->b:Lt6b;
+    const/4 p2, 0x2
 
-    iput-object p2, p0, Luc8;->c:Ljava/lang/Integer;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Luc8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Luc8;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Luc8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
 
-    iget v0, p0, Luc8;->a:I
+    new-instance v0, Luc8;
 
-    check-cast p1, Lu5b;
+    iget-object p0, p0, Luc8;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v0, p2, p0}, Luc8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
 
-    iget-object v0, p0, Luc8;->b:Lt6b;
+    iput-object p1, v0, Luc8;->X:Ljava/lang/Object;
 
-    iget-boolean v0, v0, Lt6b;->t:Z
+    return-object v0
+.end method
 
-    iget-object p0, p0, Luc8;->c:Ljava/lang/Integer;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    move-result p0
+    iget-object p1, p0, Luc8;->X:Ljava/lang/Object;
 
-    invoke-interface {p1, p0, v0}, Lu5b;->e(IZ)V
+    check-cast p1, Lihd;
 
-    return-void
+    sget-object v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->c1:[Lxi7;
 
-    :pswitch_0
-    iget-object v0, p0, Luc8;->b:Lt6b;
+    iget-object p0, p0, Luc8;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    iget-object v1, v0, Lt6b;->d:Lw5b;
+    invoke-virtual {p0, p1}, Lone/me/chatscreen/mediabar/MediaBarWidget;->P0(Lihd;)V
 
-    iget-object v0, v0, Lt6b;->e:Lw5b;
+    sget-object p0, Lylf;->a:Lylf;
 
-    iget-object p0, p0, Luc8;->c:Ljava/lang/Integer;
-
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
-
-    move-result p0
-
-    invoke-interface {p1, v1, v0, p0}, Lu5b;->q(Lw5b;Lw5b;I)V
-
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Luc8;->b:Lt6b;
-
-    iget-object v0, v0, Lt6b;->j:Loxe;
-
-    iget-object p0, p0, Luc8;->c:Ljava/lang/Integer;
-
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
-
-    move-result p0
-
-    invoke-interface {p1, v0, p0}, Lu5b;->e0(Loxe;I)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

@@ -1,117 +1,130 @@
-.class public final enum Lk09;
-.super Ljava/lang/Enum;
+.class public final Lk09;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final enum X:Lk09;
-
-.field public static final synthetic Y:[Lk09;
-
-.field public static final enum b:Lk09;
-
-.field public static final enum c:Lk09;
-
-.field public static final enum o:Lk09;
+# interfaces
+.implements Lq09;
 
 
 # instance fields
-.field public final a:I
+.field public final a:Ljava/util/Set;
+
+.field public final b:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public constructor <init>(Ljava/util/Set;Z)V
+    .registers 3
 
-    new-instance v0, Lk09;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "ACTIVE"
+    iput-object p1, p0, Lk09;->a:Ljava/util/Set;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2, v2}, Lk09;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lk09;->b:Lk09;
-
-    new-instance v1, Lk09;
-
-    const/4 v2, 0x1
-
-    const/16 v3, 0xa
-
-    const-string v4, "DELETED"
-
-    invoke-direct {v1, v4, v2, v3}, Lk09;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lk09;->c:Lk09;
-
-    new-instance v2, Lk09;
-
-    const/4 v3, 0x2
-
-    const/16 v4, 0x14
-
-    const-string v5, "EDITED"
-
-    invoke-direct {v2, v5, v3, v4}, Lk09;-><init>(Ljava/lang/String;II)V
-
-    sput-object v2, Lk09;->o:Lk09;
-
-    new-instance v3, Lk09;
-
-    const/4 v4, 0x3
-
-    const/16 v5, 0x1e
-
-    const-string v6, "DELAYED_FIRE_ERROR"
-
-    invoke-direct {v3, v6, v4, v5}, Lk09;-><init>(Ljava/lang/String;II)V
-
-    sput-object v3, Lk09;->X:Lk09;
-
-    filled-new-array {v0, v1, v2, v3}, [Lk09;
-
-    move-result-object v0
-
-    sput-object v0, Lk09;->Y:[Lk09;
+    iput-boolean p2, p0, Lk09;->b:Z
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
     .registers 4
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    if-ne p0, p1, :cond_0
 
-    iput p3, p0, Lk09;->a:I
+    goto :goto_1
 
-    return-void
+    :cond_0
+    instance-of v0, p1, Lk09;
+
+    if-nez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lk09;
+
+    iget-object v0, p0, Lk09;->a:Ljava/util/Set;
+
+    iget-object v1, p1, Lk09;->a:Ljava/util/Set;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-boolean p0, p0, Lk09;->b:Z
+
+    iget-boolean p1, p1, Lk09;->b:Z
+
+    if-eq p0, p1, :cond_3
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lk09;
+.method public final hashCode()I
     .registers 2
 
-    const-class v0, Lk09;
+    iget-object v0, p0, Lk09;->a:Ljava/util/Set;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean p0, p0, Lk09;->b:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Add(messageIds="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lk09;->a:Ljava/util/Set;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isSelf="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lk09;->b:Z
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lk09;
-
     return-object p0
-.end method
-
-.method public static values()[Lk09;
-    .registers 1
-
-    sget-object v0, Lk09;->Y:[Lk09;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lk09;
-
-    return-object v0
 .end method

@@ -1,471 +1,155 @@
-.class public final Lfy6;
+.class public interface abstract Lfy6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final b:[B
-
-.field public static final c:[I
-
-
-# instance fields
-.field public final a:Lp8d;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    const-string v0, "UTF-8"
-
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
-
-    move-result-object v0
-
-    const-string v1, "Exif\u0000\u0000"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    move-result-object v0
-
-    sput-object v0, Lfy6;->b:[B
-
-    const/16 v0, 0xd
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lfy6;->c:[I
-
-    return-void
-
-    :array_0
-    .array-data 4
-        0x0
-        0x1
-        0x1
-        0x2
-        0x4
-        0x8
-        0x1
-        0x1
-        0x2
-        0x4
-        0x8
-        0x4
-        0x8
-    .end array-data
-.end method
-
-.method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Lp8d;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1, p1}, Lp8d;-><init>(ILjava/lang/Object;)V
-
-    iput-object v0, p0, Lfy6;->a:Lp8d;
-
-    return-void
-.end method
+# interfaces
+.implements Landroid/os/IInterface;
 
 
 # virtual methods
-.method public final a()I
-    .registers 18
+.method public abstract D(Ljava/lang/String;Landroid/os/Bundle;Ldo8;)V
+.end method
 
-    move-object/from16 v0, p0
+.method public abstract E(Lcy6;)V
+.end method
 
-    iget-object v0, v0, Lfy6;->a:Lp8d;
+.method public abstract L(Lcy6;)V
+.end method
 
-    iget-object v0, v0, Lp8d;->b:Ljava/lang/Object;
+.method public abstract O(Log8;)V
+.end method
 
-    check-cast v0, Ljava/io/InputStream;
+.method public abstract T(Log8;I)V
+.end method
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+.method public abstract W(Log8;)V
+.end method
 
-    move-result v1
+.method public abstract adjustVolume(II)V
+.end method
 
-    shl-int/lit8 v1, v1, 0x8
+.method public abstract fastForward()V
+.end method
 
-    const v2, 0xff00
+.method public abstract getExtras()Landroid/os/Bundle;
+.end method
 
-    and-int/2addr v1, v2
+.method public abstract getFlags()J
+.end method
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+.method public abstract getLaunchPendingIntent()Landroid/app/PendingIntent;
+.end method
 
-    move-result v3
+.method public abstract getMetadata()Lnj8;
+.end method
 
-    const/16 v4, 0xff
+.method public abstract getPackageName()Ljava/lang/String;
+.end method
 
-    and-int/2addr v3, v4
+.method public abstract getPlaybackState()Lgcb;
+.end method
 
-    or-int/2addr v1, v3
+.method public abstract getQueue()Ljava/util/List;
+.end method
 
-    const v3, 0xffd8
+.method public abstract getQueueTitle()Ljava/lang/CharSequence;
+.end method
 
-    and-int v5, v1, v3
+.method public abstract getRatingType()I
+.end method
 
-    const/16 v6, 0x4949
+.method public abstract getRepeatMode()I
+.end method
 
-    const/16 v7, 0x4d4d
+.method public abstract getSessionInfo()Landroid/os/Bundle;
+.end method
 
-    const/4 v8, -0x1
+.method public abstract getShuffleMode()I
+.end method
 
-    if-eq v5, v3, :cond_0
+.method public abstract getTag()Ljava/lang/String;
+.end method
 
-    if-eq v1, v7, :cond_0
+.method public abstract getVolumeAttributes()Laya;
+.end method
 
-    if-ne v1, v6, :cond_18
+.method public abstract isCaptioningEnabled()Z
+.end method
 
-    :cond_0
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+.method public abstract isTransportControlEnabled()Z
+.end method
 
-    move-result v1
+.method public abstract j(Lmfc;Landroid/os/Bundle;)V
+.end method
 
-    and-int/2addr v1, v4
+.method public abstract m(Lmfc;)V
+.end method
 
-    int-to-short v1, v1
+.method public abstract next()V
+.end method
 
-    if-eq v1, v4, :cond_1
+.method public abstract pause()V
+.end method
 
-    :goto_0
-    move v3, v8
+.method public abstract play()V
+.end method
 
-    goto :goto_5
+.method public abstract playFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
 
-    :cond_1
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+.method public abstract playFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
 
-    move-result v1
+.method public abstract playFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+.end method
 
-    and-int/2addr v1, v4
+.method public abstract prepare()V
+.end method
 
-    int-to-short v1, v1
+.method public abstract prepareFromMediaId(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
 
-    const/16 v3, 0xda
+.method public abstract prepareFromSearch(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
 
-    if-ne v1, v3, :cond_2
+.method public abstract prepareFromUri(Landroid/net/Uri;Landroid/os/Bundle;)V
+.end method
 
-    goto :goto_0
+.method public abstract previous()V
+.end method
 
-    :cond_2
-    const/16 v3, 0xd9
+.method public abstract removeQueueItemAt(I)V
+.end method
 
-    if-ne v1, v3, :cond_3
+.method public abstract rewind()V
+.end method
 
-    goto :goto_0
+.method public abstract seekTo(J)V
+.end method
 
-    :cond_3
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+.method public abstract sendCustomAction(Ljava/lang/String;Landroid/os/Bundle;)V
+.end method
 
-    move-result v3
+.method public abstract sendMediaButton(Landroid/view/KeyEvent;)Z
+.end method
 
-    shl-int/lit8 v3, v3, 0x8
+.method public abstract setCaptioningEnabled(Z)V
+.end method
 
-    and-int/2addr v3, v2
+.method public abstract setPlaybackSpeed(F)V
+.end method
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+.method public abstract setRepeatMode(I)V
+.end method
 
-    move-result v5
+.method public abstract setShuffleMode(I)V
+.end method
 
-    and-int/2addr v5, v4
+.method public abstract setVolumeTo(II)V
+.end method
 
-    or-int/2addr v3, v5
+.method public abstract skipToQueueItem(J)V
+.end method
 
-    add-int/lit8 v3, v3, -0x2
-
-    const/16 v5, 0xe1
-
-    if-eq v1, v5, :cond_8
-
-    int-to-long v9, v3
-
-    const-wide/16 v11, 0x0
-
-    cmp-long v1, v9, v11
-
-    if-gez v1, :cond_4
-
-    goto :goto_4
-
-    :cond_4
-    move-wide v13, v9
-
-    :goto_1
-    cmp-long v1, v13, v11
-
-    if-lez v1, :cond_7
-
-    invoke-virtual {v0, v13, v14}, Ljava/io/InputStream;->skip(J)J
-
-    move-result-wide v15
-
-    cmp-long v1, v15, v11
-
-    if-lez v1, :cond_5
-
-    :goto_2
-    sub-long/2addr v13, v15
-
-    goto :goto_1
-
-    :cond_5
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
-
-    move-result v1
-
-    if-ne v1, v8, :cond_6
-
-    goto :goto_3
-
-    :cond_6
-    const-wide/16 v15, 0x1
-
-    goto :goto_2
-
-    :cond_7
-    :goto_3
-    sub-long v11, v9, v13
-
-    :goto_4
-    cmp-long v1, v11, v9
-
-    if-eqz v1, :cond_0
-
-    goto :goto_0
-
-    :cond_8
-    :goto_5
-    if-ne v3, v8, :cond_9
-
-    goto/16 :goto_d
-
-    :cond_9
-    new-array v1, v3, [B
-
-    move v2, v3
-
-    :goto_6
-    if-lez v2, :cond_a
-
-    sub-int v4, v3, v2
-
-    invoke-virtual {v0, v1, v4, v2}, Ljava/io/InputStream;->read([BII)I
-
-    move-result v4
-
-    if-eq v4, v8, :cond_a
-
-    sub-int/2addr v2, v4
-
-    goto :goto_6
-
-    :cond_a
-    sub-int v0, v3, v2
-
-    if-eq v0, v3, :cond_b
-
-    goto/16 :goto_d
-
-    :cond_b
-    sget-object v0, Lfy6;->b:[B
-
-    array-length v2, v0
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x1
-
-    if-le v3, v2, :cond_c
-
-    move v2, v5
-
-    goto :goto_7
-
-    :cond_c
-    move v2, v4
-
-    :goto_7
-    if-eqz v2, :cond_e
-
-    move v9, v4
-
-    :goto_8
-    array-length v10, v0
-
-    if-ge v9, v10, :cond_e
-
-    aget-byte v10, v1, v9
-
-    aget-byte v11, v0, v9
-
-    if-eq v10, v11, :cond_d
-
-    move v2, v4
-
-    goto :goto_9
-
-    :cond_d
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_8
-
-    :cond_e
-    :goto_9
-    if-eqz v2, :cond_18
-
-    invoke-static {v1}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    sget-object v1, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
-
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v3}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/nio/ByteBuffer;
-
-    const/4 v2, 0x6
-
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->getShort(I)S
-
-    move-result v2
-
-    if-ne v2, v7, :cond_f
-
-    goto :goto_a
-
-    :cond_f
-    if-ne v2, v6, :cond_10
-
-    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
-
-    :cond_10
-    :goto_a
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    const/16 v1, 0xa
-
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->getInt(I)I
-
-    move-result v1
-
-    add-int/lit8 v2, v1, 0x6
-
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->getShort(I)S
-
-    move-result v2
-
-    :goto_b
-    if-ge v4, v2, :cond_18
-
-    add-int/lit8 v3, v1, 0x8
-
-    mul-int/lit8 v6, v4, 0xc
-
-    add-int/2addr v6, v3
-
-    invoke-virtual {v0, v6}, Ljava/nio/ByteBuffer;->getShort(I)S
-
-    move-result v3
-
-    const/16 v7, 0x112
-
-    if-eq v3, v7, :cond_11
-
-    goto :goto_c
-
-    :cond_11
-    add-int/lit8 v3, v6, 0x2
-
-    invoke-virtual {v0, v3}, Ljava/nio/ByteBuffer;->getShort(I)S
-
-    move-result v3
-
-    if-lt v3, v5, :cond_17
-
-    const/16 v7, 0xc
-
-    if-le v3, v7, :cond_12
-
-    goto :goto_c
-
-    :cond_12
-    add-int/lit8 v7, v6, 0x4
-
-    invoke-virtual {v0, v7}, Ljava/nio/ByteBuffer;->getInt(I)I
-
-    move-result v7
-
-    if-gez v7, :cond_13
-
-    goto :goto_c
-
-    :cond_13
-    sget-object v9, Lfy6;->c:[I
-
-    aget v3, v9, v3
-
-    add-int/2addr v7, v3
-
-    const/4 v3, 0x4
-
-    if-le v7, v3, :cond_14
-
-    goto :goto_c
-
-    :cond_14
-    add-int/lit8 v6, v6, 0x8
-
-    if-ltz v6, :cond_17
-
-    invoke-virtual {v0}, Ljava/nio/Buffer;->remaining()I
-
-    move-result v3
-
-    if-le v6, v3, :cond_15
-
-    goto :goto_c
-
-    :cond_15
-    if-ltz v7, :cond_17
-
-    add-int/2addr v7, v6
-
-    invoke-virtual {v0}, Ljava/nio/Buffer;->remaining()I
-
-    move-result v3
-
-    if-le v7, v3, :cond_16
-
-    goto :goto_c
-
-    :cond_16
-    invoke-virtual {v0, v6}, Ljava/nio/ByteBuffer;->getShort(I)S
-
-    move-result v0
-
-    return v0
-
-    :cond_17
-    :goto_c
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_b
-
-    :cond_18
-    :goto_d
-    return v8
+.method public abstract stop()V
 .end method

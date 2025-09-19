@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract c()V
+.method public abstract draw(Landroid/graphics/Canvas;)V
 .end method

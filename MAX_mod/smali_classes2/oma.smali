@@ -1,41 +1,31 @@
-.class public interface abstract Loma;
+.class public abstract Loma;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a()Lws2;
-.end method
+# static fields
+.field public static final a:I
 
-.method public abstract b()Lef0;
-.end method
+.field public static final b:I
 
-.method public abstract c(I)I
-.end method
+.field public static final c:I
 
-.method public abstract d()Lx4e;
-.end method
 
-.method public abstract e()Ldj6;
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
 
-.method public abstract f()Lu3;
-.end method
+    sget v0, Lmbc;->oneme_too_many_requests_bottomsheet_positive_button:I
 
-.method public abstract g()Lgkf;
-.end method
+    sput v0, Loma;->a:I
 
-.method public abstract getIcon()Lpv6;
-.end method
+    sget v0, Lmbc;->oneme_too_many_requests_bottomsheet_subtitle:I
 
-.method public abstract getName()Ljava/lang/String;
-.end method
+    sput v0, Loma;->b:I
 
-.method public abstract getText()Lise;
-.end method
+    sget v0, Lmbc;->oneme_too_many_requests_bottomsheet_title:I
 
-.method public abstract h()Lx73;
-.end method
+    sput v0, Loma;->c:I
 
-.method public abstract i()Lbee;
+    return-void
 .end method

@@ -1,201 +1,168 @@
 .class public abstract Lq1;
-.super Lr1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements La47;
 
-# direct methods
-.method public static c(Ljava/lang/String;)J
-    .registers 12
 
-    const/16 v0, 0x2e
+# virtual methods
+.method public bridge synthetic c()Lt27;
+    .registers 1
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v0
-
-    if-gez v0, :cond_9
-
-    const/16 v0, 0x65
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v0
-
-    if-gez v0, :cond_9
-
-    const/16 v0, 0x45
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v0
-
-    if-gez v0, :cond_9
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    const/16 v3, 0x2d
-
-    const-string v4, "Cannot parse long from "
-
-    const-wide/16 v5, 0xa
-
-    const/16 v7, 0x39
-
-    const-wide/16 v8, 0x0
-
-    const/16 v10, 0x30
-
-    if-eq v2, v3, :cond_4
-
-    const/16 v2, 0x13
-
-    if-ge v0, v2, :cond_0
-
-    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    return-wide v0
-
-    :cond_0
-    if-ne v0, v2, :cond_1
-
-    const-string v2, "9223372036854775807"
-
-    invoke-virtual {p0, v2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v2
-
-    if-gtz v2, :cond_1
-
-    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    return-wide v0
-
-    :cond_1
-    :goto_0
-    if-ge v1, v0, :cond_3
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    if-lt v2, v10, :cond_2
-
-    if-gt v2, v7, :cond_2
-
-    mul-long/2addr v8, v5
-
-    add-int/lit8 v2, v2, -0x30
-
-    int-to-long v2, v2
-
-    add-long/2addr v8, v2
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    new-instance v0, Ljava/lang/NumberFormatException;
-
-    invoke-virtual {v4, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Lq1;->r()Lt27;
 
     move-result-object p0
 
-    invoke-direct {v0, p0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+    return-object p0
+.end method
 
-    throw v0
+.method public bridge synthetic f()Lh37;
+    .registers 1
 
-    :cond_3
-    return-wide v8
-
-    :cond_4
-    const/16 v1, 0x14
-
-    if-ge v0, v1, :cond_5
-
-    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    return-wide v0
-
-    :cond_5
-    if-ne v0, v1, :cond_6
-
-    const-string v1, "-9223372036854775808"
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v1
-
-    if-gtz v1, :cond_6
-
-    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    return-wide v0
-
-    :cond_6
-    const/4 v1, 0x1
-
-    :goto_1
-    if-ge v1, v0, :cond_8
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    if-lt v2, v10, :cond_7
-
-    if-gt v2, v7, :cond_7
-
-    mul-long/2addr v8, v5
-
-    add-int/lit8 v2, v2, -0x30
-
-    int-to-long v2, v2
-
-    add-long/2addr v8, v2
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_7
-    new-instance v0, Ljava/lang/NumberFormatException;
-
-    invoke-virtual {v4, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Lq1;->k()Lh37;
 
     move-result-object p0
 
-    invoke-direct {v0, p0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+    return-object p0
+.end method
 
-    throw v0
+.method public bridge synthetic g()Ls37;
+    .registers 1
 
-    :cond_8
-    neg-long v0, v8
+    invoke-virtual {p0}, Lq1;->w()Ls37;
 
-    return-wide v0
+    move-result-object p0
 
-    :cond_9
-    invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+    return-object p0
+.end method
 
-    move-result-wide v0
+.method public k()Lh37;
+    .registers 1
 
-    double-to-long v0, v0
+    new-instance p0, Lorg/msgpack/core/MessageTypeCastException;
 
-    return-wide v0
+    invoke-direct {p0}, Lorg/msgpack/core/MessageTypeCastException;-><init>()V
+
+    throw p0
+.end method
+
+.method public bridge synthetic l()Ld37;
+    .registers 1
+
+    invoke-virtual {p0}, Lq1;->v()Ld37;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public bridge synthetic m()Ly37;
+    .registers 1
+
+    invoke-virtual {p0}, Lq1;->p()Ly37;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public bridge synthetic n()Lf37;
+    .registers 1
+
+    invoke-virtual {p0}, Lq1;->u()Lf37;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public bridge synthetic o()Lx27;
+    .registers 1
+
+    invoke-virtual {p0}, Lq1;->s()Lx27;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public p()Ly37;
+    .registers 1
+
+    new-instance p0, Lorg/msgpack/core/MessageTypeCastException;
+
+    invoke-direct {p0}, Lorg/msgpack/core/MessageTypeCastException;-><init>()V
+
+    throw p0
+.end method
+
+.method public bridge synthetic q()Lz27;
+    .registers 1
+
+    invoke-virtual {p0}, Lq1;->t()Lz27;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public r()Lt27;
+    .registers 1
+
+    new-instance p0, Lorg/msgpack/core/MessageTypeCastException;
+
+    invoke-direct {p0}, Lorg/msgpack/core/MessageTypeCastException;-><init>()V
+
+    throw p0
+.end method
+
+.method public s()Lx27;
+    .registers 1
+
+    new-instance p0, Lorg/msgpack/core/MessageTypeCastException;
+
+    invoke-direct {p0}, Lorg/msgpack/core/MessageTypeCastException;-><init>()V
+
+    throw p0
+.end method
+
+.method public t()Lz27;
+    .registers 1
+
+    new-instance p0, Lorg/msgpack/core/MessageTypeCastException;
+
+    invoke-direct {p0}, Lorg/msgpack/core/MessageTypeCastException;-><init>()V
+
+    throw p0
+.end method
+
+.method public u()Lf37;
+    .registers 1
+
+    new-instance p0, Lorg/msgpack/core/MessageTypeCastException;
+
+    invoke-direct {p0}, Lorg/msgpack/core/MessageTypeCastException;-><init>()V
+
+    throw p0
+.end method
+
+.method public v()Ld37;
+    .registers 1
+
+    new-instance p0, Lorg/msgpack/core/MessageTypeCastException;
+
+    invoke-direct {p0}, Lorg/msgpack/core/MessageTypeCastException;-><init>()V
+
+    throw p0
+.end method
+
+.method public w()Ls37;
+    .registers 1
+
+    new-instance p0, Lorg/msgpack/core/MessageTypeCastException;
+
+    invoke-direct {p0}, Lorg/msgpack/core/MessageTypeCastException;-><init>()V
+
+    throw p0
 .end method

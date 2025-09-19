@@ -12,12 +12,12 @@
         "Lkotlinx/coroutines/internal/MainDispatcherFactory;",
         "",
         "factories",
-        "Lm08;",
+        "Lt38;",
         "tryCreateDispatcher",
-        "(Lkotlinx/coroutines/internal/MainDispatcherFactory;Ljava/util/List;)Lm08;",
+        "(Lkotlinx/coroutines/internal/MainDispatcherFactory;Ljava/util/List;)Lt38;",
         "",
         "isMissing",
-        "(Lm08;)Z",
+        "(Lt38;)Z",
         "",
         "cause",
         "",
@@ -102,10 +102,10 @@
     return-void
 .end method
 
-.method public static final isMissing(Lm08;)Z
+.method public static final isMissing(Lt38;)Z
     .registers 1
 
-    invoke-virtual {p0}, Lm08;->getImmediate()Lm08;
+    invoke-virtual {p0}, Lt38;->getImmediate()Lt38;
 
     move-result-object p0
 
@@ -126,7 +126,7 @@
     throw v0
 .end method
 
-.method public static final tryCreateDispatcher(Lkotlinx/coroutines/internal/MainDispatcherFactory;Ljava/util/List;)Lm08;
+.method public static final tryCreateDispatcher(Lkotlinx/coroutines/internal/MainDispatcherFactory;Ljava/util/List;)Lt38;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -136,12 +136,12 @@
             "+",
             "Lkotlinx/coroutines/internal/MainDispatcherFactory;",
             ">;)",
-            "Lm08;"
+            "Lt38;"
         }
     .end annotation
 
     :try_start_0
-    invoke-interface {p0, p1}, Lkotlinx/coroutines/internal/MainDispatcherFactory;->createDispatcher(Ljava/util/List;)Lm08;
+    invoke-interface {p0, p1}, Lkotlinx/coroutines/internal/MainDispatcherFactory;->createDispatcher(Ljava/util/List;)Lt38;
 
     move-result-object p0
     :try_end_0

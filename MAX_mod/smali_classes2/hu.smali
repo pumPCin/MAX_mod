@@ -1,73 +1,172 @@
 .class public final Lhu;
-.super Lij0;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lro9;
 
 
 # instance fields
-.field public final synthetic b:I
+.field public final synthetic a:Lyce;
+
+.field public final synthetic b:Lyv;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>(Lyv;)V
     .registers 2
 
-    iput p1, p0, Lhu;->b:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lij0;-><init>()V
+    iput-object p1, p0, Lhu;->b:Lyv;
 
-    return-void
-.end method
+    new-instance p1, Ltr6;
 
-.method public synthetic constructor <init>(JI)V
-    .registers 4
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    iput p3, p0, Lhu;->b:I
+    invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    invoke-direct {p0, p1, p2}, Lij0;-><init>(J)V
+    move-result-object p1
+
+    invoke-static {p1}, Lzce;->a(Ljava/lang/Object;)Lyce;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lhu;->a:Lyce;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
-    .registers 2
+.method public final a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lhu;->b:I
+    check-cast p1, Ljava/util/List;
 
-    sparse-switch v0, :sswitch_data_0
+    iget-object p0, p0, Lhu;->a:Lyce;
 
-    invoke-super {p0}, Lij0;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lyce;->setValue(Ljava/lang/Object;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+.end method
+
+.method public final b()Ljava/util/List;
+    .registers 1
+
+    iget-object p0, p0, Lhu;->a:Lyce;
+
+    invoke-virtual {p0}, Lyce;->b()Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
+.end method
 
-    :sswitch_0
-    const-string p0, "PhonesSortEvent"
+.method public final c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .registers 3
+
+    check-cast p1, Ljava/util/List;
+
+    check-cast p2, Ljava/util/List;
+
+    iget-object p0, p0, Lhu;->a:Lyce;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p0, p1, p2}, Lyce;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .registers 3
+
+    iget-object p0, p0, Lhu;->a:Lyce;
+
+    invoke-virtual {p0, p1, p2}, Lyce;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    sget-object p0, Lz04;->a:Lz04;
 
     return-object p0
+.end method
 
-    :sswitch_1
-    const-string p0, "ContactSortEvent"
+.method public final f()Ljava/util/List;
+    .registers 1
+
+    iget-object p0, p0, Lhu;->a:Lyce;
+
+    invoke-virtual {p0}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/List;
 
     return-object p0
+.end method
 
-    :sswitch_2
-    const-string p0, "AudioRecordLimitEvent{}"
+.method public final g()V
+    .registers 1
+
+    iget-object p0, p0, Lhu;->a:Lyce;
+
+    invoke-virtual {p0}, Lyce;->g()V
+
+    const/4 p0, 0x0
+
+    throw p0
+.end method
+
+.method public final bridge synthetic getValue()Ljava/lang/Object;
+    .registers 1
+
+    invoke-virtual {p0}, Lhu;->f()Ljava/util/List;
+
+    move-result-object p0
 
     return-object p0
+.end method
 
-    :sswitch_3
-    const-string p0, "AssetsUpdateEvent{chatId=0}"
+.method public final h(Ljava/lang/Object;)Z
+    .registers 2
+
+    check-cast p1, Ljava/util/List;
+
+    iget-object p0, p0, Lhu;->a:Lyce;
+
+    invoke-virtual {p0, p1}, Lyce;->setValue(Ljava/lang/Object;)V
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final j()Lrce;
+    .registers 1
+
+    iget-object p0, p0, Lhu;->a:Lyce;
+
+    invoke-virtual {p0}, Ls3;->j()Lrce;
+
+    move-result-object p0
 
     return-object p0
+.end method
 
-    :sswitch_data_0
-    .sparse-switch
-        0x0 -> :sswitch_3
-        0x1 -> :sswitch_2
-        0x2 -> :sswitch_1
-        0x8 -> :sswitch_0
-    .end sparse-switch
+.method public final setValue(Ljava/lang/Object;)V
+    .registers 3
+
+    check-cast p1, Ljava/util/List;
+
+    iget-object p0, p0, Lhu;->a:Lyce;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, p1}, Lyce;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    return-void
 .end method

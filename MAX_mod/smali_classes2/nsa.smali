@@ -1,43 +1,91 @@
-.class public final Lnsa;
+.class public abstract Lnsa;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lwg1;
+# static fields
+.field public static final a:I
 
-.field public final b:Lbsa;
+.field public static final b:I
 
-.field public final c:Lbsa;
+.field public static final c:I
 
-.field public final d:Lbsa;
+.field public static final d:I
 
-.field public final e:Lbsa;
+.field public static final e:I
 
-.field public final f:Lbsa;
+.field public static final f:I
 
-.field public final g:Lbsa;
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
 
 
 # direct methods
-.method public constructor <init>(Lwg1;Lbsa;Lbsa;Lbsa;Lbsa;Lbsa;Lbsa;)V
-    .registers 8
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lx7c;->web_app_root_choose_media_bottomsheet_camera:I
 
-    iput-object p1, p0, Lnsa;->a:Lwg1;
+    sput v0, Lnsa;->a:I
 
-    iput-object p2, p0, Lnsa;->b:Lbsa;
+    sget v0, Lx7c;->web_app_root_choose_media_bottomsheet_file_manager:I
 
-    iput-object p3, p0, Lnsa;->c:Lbsa;
+    sput v0, Lnsa;->b:I
 
-    iput-object p4, p0, Lnsa;->d:Lbsa;
+    sget v0, Lx7c;->web_app_root_choose_media_bottomsheet_gallery:I
 
-    iput-object p5, p0, Lnsa;->e:Lbsa;
+    sput v0, Lnsa;->c:I
 
-    iput-object p6, p0, Lnsa;->f:Lbsa;
+    sget v0, Lx7c;->webapp_root_content_container:I
 
-    iput-object p7, p0, Lnsa;->g:Lbsa;
+    sput v0, Lnsa;->d:I
+
+    sget v0, Lx7c;->webapp_root_error_container:I
+
+    sput v0, Lnsa;->e:I
+
+    sget v0, Lx7c;->webapp_root_frame:I
+
+    sput v0, Lnsa;->f:I
+
+    sget v0, Lx7c;->webapp_root_progressbar:I
+
+    sput v0, Lnsa;->g:I
+
+    sget v0, Lx7c;->webapp_root_settings_header:I
+
+    sput v0, Lnsa;->h:I
+
+    sget v0, Lx7c;->webapp_root_settings_sections_recycler:I
+
+    sput v0, Lnsa;->i:I
+
+    sget v0, Lx7c;->webapp_root_settings_switcher:I
+
+    sput v0, Lnsa;->j:I
+
+    sget v0, Lx7c;->webapp_root_settings_transition:I
+
+    sput v0, Lnsa;->k:I
+
+    sget v0, Lx7c;->webapp_root_toolbar:I
+
+    sput v0, Lnsa;->l:I
+
+    sget v0, Lx7c;->webapp_root_webview:I
+
+    sput v0, Lnsa;->m:I
 
     return-void
 .end method

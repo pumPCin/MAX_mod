@@ -1,44 +1,82 @@
-.class public final synthetic Ljx3;
-.super Ljava/lang/Object;
+.class public abstract Ljx3;
+.super Lei0;
 .source "SourceFile"
-
-# interfaces
-.implements Lmrc;
 
 
 # instance fields
-.field public final synthetic a:Lqx3;
+.field public final b:Lq04;
 
-.field public final synthetic b:I
+.field public transient c:Lkotlin/coroutines/Continuation;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lqx3;I)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-eqz p1, :cond_0
 
-    iput-object p1, p0, Ljx3;->a:Lqx3;
+    invoke-interface {p1}, Lkotlin/coroutines/Continuation;->getContext()Lq04;
 
-    iput p2, p0, Ljx3;->b:I
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-direct {p0, v0, p1}, Ljx3;-><init>(Lq04;Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lq04;Lkotlin/coroutines/Continuation;)V
+    .registers 3
+
+    invoke-direct {p0, p2}, Lei0;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, p0, Ljx3;->b:Lq04;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .registers 3
+.method public getContext()Lq04;
+    .registers 1
 
-    iget-object v0, p0, Ljx3;->a:Lqx3;
+    iget-object p0, p0, Ljx3;->b:Lq04;
 
-    iget-object v1, v0, Lqx3;->router:Llrc;
+    return-object p0
+.end method
 
-    iget-object v0, v0, Lqx3;->instanceId:Ljava/lang/String;
+.method public p()V
+    .registers 4
 
-    iget p0, p0, Ljx3;->b:I
+    iget-object v0, p0, Ljx3;->c:Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {v1, p0, v0}, Llrc;->K(ILjava/lang/String;)V
+    if-eqz v0, :cond_0
+
+    if-eq v0, p0, :cond_0
+
+    invoke-virtual {p0}, Ljx3;->getContext()Lq04;
+
+    move-result-object v1
+
+    sget-object v2, Lc3e;->b:Lc3e;
+
+    invoke-interface {v1, v2}, Lq04;->get(Lp04;)Lo04;
+
+    move-result-object v1
+
+    check-cast v1, Lkx3;
+
+    invoke-interface {v1, v0}, Lkx3;->releaseInterceptedContinuation(Lkotlin/coroutines/Continuation;)V
+
+    :cond_0
+    sget-object v0, Lad3;->b:Lad3;
+
+    iput-object v0, p0, Ljx3;->c:Lkotlin/coroutines/Continuation;
 
     return-void
 .end method

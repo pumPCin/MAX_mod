@@ -3,75 +3,83 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lsg7;
 
 
 # instance fields
-.field public final synthetic X:Lara;
-
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/Runnable;
-
-.field public volatile c:Z
-
-.field public o:I
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(Lara;Ljava/lang/String;Ljava/lang/Runnable;)V
-    .registers 4
+.method public constructor <init>(Z)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Leqg;->X:Lara;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Leqg;->c:Z
-
-    iput p1, p0, Leqg;->o:I
-
-    iput-object p2, p0, Leqg;->a:Ljava/lang/String;
-
-    iput-object p3, p0, Leqg;->b:Ljava/lang/Runnable;
+    iput-boolean p1, p0, Leqg;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final equals(Ljava/lang/Object;)Z
     .registers 5
-
-    iget-object v0, p0, Leqg;->X:Lara;
-
-    iget-object v0, v0, Lara;->b:Landroid/os/Handler;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
-
-    move-result-object v0
-
-    iput-object p0, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    iget-object v1, p0, Leqg;->X:Lara;
-
-    iget-object v1, v1, Lara;->b:Landroid/os/Handler;
-
-    const-wide/16 v2, 0x1388
-
-    invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
-
-    :cond_0
-    iget-object v0, p0, Leqg;->b:Ljava/lang/Runnable;
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Leqg;->c:Z
+    if-ne p0, p1, :cond_0
 
-    return-void
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Leqg;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Leqg;
+
+    iget-boolean p0, p0, Leqg;->a:Z
+
+    iget-boolean p1, p1, Leqg;->a:Z
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-boolean p0, p0, Leqg;->a:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    const-string v0, "ShowBackButton(isVisible="
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Leqg;->a:Z
+
+    invoke-static {v0, v1, p0}, Lz7e;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,98 +1,103 @@
-.class public final Lx5;
+.class public final synthetic Lx5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lkm3;
+.implements Lz8a;
 
 
 # instance fields
-.field public final synthetic a:Lru/ok/messages/media/mediabar/ActLocalMedias;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lru/ok/messages/media/mediabar/ActLocalMedias;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/messages/media/mediabar/ActLocalMedias;)V
-    .registers 2
+.method public synthetic constructor <init>(Lru/ok/messages/media/mediabar/ActLocalMedias;I)V
+    .registers 3
+
+    iput p2, p0, Lx5;->a:I
+
+    iput-object p1, p0, Lx5;->b:Lru/ok/messages/media/mediabar/ActLocalMedias;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lx5;->a:Lru/ok/messages/media/mediabar/ActLocalMedias;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .registers 5
+.method public final O(Landroid/view/View;Lvug;)Lvug;
+    .registers 7
 
-    check-cast p1, Lbtb;
+    iget p1, p0, Lx5;->a:I
 
-    iget-object p0, p0, Lx5;->a:Lru/ok/messages/media/mediabar/ActLocalMedias;
+    iget-object p0, p0, Lx5;->b:Lru/ok/messages/media/mediabar/ActLocalMedias;
 
-    iget-object p0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->d1:Lmm9;
+    packed-switch p1, :pswitch_data_0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->d1:Landroid/view/View;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Lvug;->a()I
 
-    move-result-object v0
+    move-result p1
 
-    filled-new-array {v0}, [Ljava/lang/Object;
-
-    move-result-object v0
-
-    const-string v1, "mm9"
-
-    const-string v2, "onQualitySelected: %s"
-
-    invoke-static {v1, v2, v0}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lmm9;->o0:Lfmf;
-
-    invoke-virtual {v0}, Lfmf;->a()Lu10;
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    iput-object p1, v0, Lu10;->c:Lbtb;
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    new-instance v1, Lfmf;
+    iget v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    invoke-direct {v1, v0}, Lfmf;-><init>(Lu10;)V
+    if-eq v1, p1, :cond_0
 
-    iput-object v1, p0, Lmm9;->o0:Lfmf;
+    iput p1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    invoke-virtual {p0}, Lmm9;->X0()V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    new-instance v0, Lny1;
+    :cond_0
+    return-object p2
 
-    const/4 v1, 0x1
+    :pswitch_0
+    iget-object p0, p0, Lru/ok/messages/media/mediabar/ActLocalMedias;->e1:Lru/ok/messages/media/mediabar/MediaBarPreviewLayout;
 
-    invoke-direct {v0, v1, p1}, Lny1;-><init>(ILjava/lang/Object;)V
+    invoke-virtual {p2}, Lvug;->b()I
 
-    invoke-virtual {p0, v0}, Lmm9;->Y0(Lia6;)V
+    move-result p1
 
-    new-instance p1, Lhm9;
+    invoke-virtual {p2}, Lvug;->c()I
 
-    const/4 v0, 0x3
+    move-result v0
 
-    invoke-direct {p1, p0, v0}, Lhm9;-><init>(Lmm9;I)V
+    invoke-virtual {p2}, Lvug;->a()I
 
-    invoke-virtual {p0, p1}, Lmm9;->Y0(Lia6;)V
+    move-result v1
 
-    iget-object p1, p0, Lmm9;->q0:Lsc;
+    iget-object v2, p0, Lru/ok/messages/media/mediabar/MediaBarPreviewLayout;->H0:Landroid/view/View;
 
-    iget-object p0, p0, Lmm9;->o0:Lfmf;
+    invoke-static {v2, p1}, Ly30;->B(Landroid/view/View;I)V
 
-    iget-object p0, p0, Lfmf;->a:Lbtb;
+    iget-object v3, p0, Lru/ok/messages/media/mediabar/MediaBarPreviewLayout;->G0:Landroid/view/View;
 
-    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-static {v3, p1}, Ly30;->B(Landroid/view/View;I)V
 
-    move-result-object p0
+    invoke-static {v2, v0}, Ly30;->A(Landroid/view/View;I)V
 
-    const-string v0, "VIDEO_UPLOAD_QUALITY_SELECTED"
+    invoke-static {v3, v0}, Ly30;->A(Landroid/view/View;I)V
 
-    invoke-virtual {p1, v0, p0}, Lsc;->g(Ljava/lang/String;Ljava/lang/String;)V
+    const/4 p1, 0x0
 
-    return-void
+    invoke-static {p0, p1}, Ly30;->e(Landroid/view/View;I)V
+
+    invoke-static {p0, v1}, Ly30;->b(Landroid/view/View;I)V
+
+    return-object p2
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

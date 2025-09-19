@@ -1,109 +1,70 @@
 .class public final Lco2;
-.super Lxie;
+.super Lsxe;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Lko2;
-
-.field public final synthetic Y:Lo72;
+.field public c:Lt72;
 
 
 # direct methods
-.method public constructor <init>(Lko2;Lo72;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Lt39;)V
+    .registers 2
 
-    iput-object p1, p0, Lco2;->X:Lko2;
-
-    iput-object p2, p0, Lco2;->Y:Lo72;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1}, Lsxe;-><init>(Lt39;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lco2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lco2;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lco2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final c(Lt39;Ljava/lang/String;)V
     .registers 4
 
-    new-instance p1, Lco2;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v0, p0, Lco2;->X:Lko2;
+    const-string v0, "chat"
 
-    iget-object p0, p0, Lco2;->Y:Lo72;
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-direct {p1, v0, p0, p2}, Lco2;-><init>(Lko2;Lo72;Lkotlin/coroutines/Continuation;)V
+    move-result p2
 
-    return-object p1
-.end method
+    if-nez p2, :cond_0
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    invoke-virtual {p1}, Lt39;->B()V
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    return-void
 
-    iget-object p1, p0, Lco2;->X:Lko2;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p0, p0, Lco2;->Y:Lo72;
-
-    invoke-virtual {p0}, Lo72;->H()Z
-
-    move-result v0
-
-    iget-object p0, p0, Lo72;->b:Lac2;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lac2;->f()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p1, p1, Lko2;->p:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    :cond_0
+    invoke-static {p1}, Lt72;->a(Lt39;)Lt72;
 
     move-result-object p1
 
-    check-cast p1, Lik;
+    iput-object p1, p0, Lco2;->c:Lt72;
 
-    iget-wide v0, p0, Lac2;->a:J
+    return-void
+.end method
 
-    check-cast p1, Lb6a;
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    invoke-virtual {p1, v0, v1}, Lb6a;->i(J)J
+    iget-object p0, p0, Lco2;->c:Lt72;
 
-    :cond_0
-    sget-object p0, Lncf;->a:Lncf;
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "{chat="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

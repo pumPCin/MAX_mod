@@ -1,78 +1,61 @@
 .class public final Lwk1;
-.super Ljava/lang/Object;
+.super Ldl1;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Laa1;
-
-.field public final b:Lkt1;
+# static fields
+.field public static final D:Lwk1;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    sget-object v0, Lxj1;->a:Lxj1;
+    new-instance v0, Lwk1;
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Ls4;
+    invoke-direct {v0}, Ldl1;-><init>()V
 
-    move-result-object v0
-
-    const-class v1, Laa1;
-
-    invoke-virtual {v0, v1}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Laa1;
-
-    sget-object v1, Ld41;->a:Ld41;
-
-    invoke-virtual {v1}, Ld41;->d()Lkt1;
-
-    move-result-object v1
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lwk1;->a:Laa1;
-
-    iput-object v1, p0, Lwk1;->b:Lkt1;
+    sput-object v0, Lwk1;->D:Lwk1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .registers 2
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    iget-object p0, p0, Lwk1;->b:Lkt1;
+    const/4 v0, 0x1
 
-    move-object v0, p0
+    if-ne p0, p1, :cond_0
 
-    check-cast v0, Lxt1;
-
-    invoke-virtual {v0}, Lxt1;->p()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    check-cast p0, Lxt1;
-
-    invoke-virtual {p0}, Lxt1;->y()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
+    return v0
 
     :cond_0
+    instance-of p0, p1, Lwk1;
+
+    if-nez p0, :cond_1
+
     const/4 p0, 0x0
 
     return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, 0x7f1049e7
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "RecordStopDialog"
+
+    return-object p0
 .end method

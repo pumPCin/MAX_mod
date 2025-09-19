@@ -1,85 +1,52 @@
 .class public final Lhu5;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ld4a;
-.implements Lsee;
+.super Ljx3;
 
 
 # instance fields
-.field public final a:Lqee;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public b:Lnp4;
+.field public Y:I
+
+.field public final synthetic Z:Lwb;
+
+.field public o:Lwb;
+
+.field public r0:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lqee;)V
-    .registers 2
+.method public constructor <init>(Lwb;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lhu5;->Z:Lwb;
 
-    iput-object p1, p0, Lhu5;->a:Lqee;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 1
-
-    iget-object p0, p0, Lhu5;->a:Lqee;
-
-    invoke-interface {p0}, Lqee;->b()V
-
-    return-void
-.end method
-
-.method public final c(Lnp4;)V
-    .registers 2
-
-    iput-object p1, p0, Lhu5;->b:Lnp4;
-
-    iget-object p1, p0, Lhu5;->a:Lqee;
-
-    invoke-interface {p1, p0}, Lqee;->f(Lsee;)V
-
-    return-void
-.end method
-
-.method public final cancel()V
-    .registers 1
-
-    iget-object p0, p0, Lhu5;->b:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-.end method
-
-.method public final d(Ljava/lang/Object;)V
-    .registers 2
-
-    iget-object p0, p0, Lhu5;->a:Lqee;
-
-    invoke-interface {p0, p1}, Lqee;->d(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final i(J)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    return-void
-.end method
+    iput-object p1, p0, Lhu5;->X:Ljava/lang/Object;
 
-.method public final onError(Ljava/lang/Throwable;)V
-    .registers 2
+    iget p1, p0, Lhu5;->Y:I
 
-    iget-object p0, p0, Lhu5;->a:Lqee;
+    const/high16 v0, -0x80000000
 
-    invoke-interface {p0, p1}, Lqee;->onError(Ljava/lang/Throwable;)V
+    or-int/2addr p1, v0
 
-    return-void
+    iput p1, p0, Lhu5;->Y:I
+
+    iget-object p1, p0, Lhu5;->Z:Lwb;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lwb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

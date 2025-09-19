@@ -1,23 +1,25 @@
-.class public interface abstract La44;
+.class public abstract La44;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(J)J
+# direct methods
+.method public static a(Landroid/security/identity/IdentityCredential;)Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
+    .registers 2
+
+    new-instance v0, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
+
+    invoke-direct {v0, p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;-><init>(Landroid/security/identity/IdentityCredential;)V
+
+    return-object v0
 .end method
 
-.method public abstract clear()V
-.end method
+.method public static b(Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;)Landroid/security/identity/IdentityCredential;
+    .registers 1
 
-.method public abstract d(Lb44;J)Z
-.end method
+    invoke-virtual {p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;->getIdentityCredential()Landroid/security/identity/IdentityCredential;
 
-.method public abstract e(J)Lj07;
-.end method
+    move-result-object p0
 
-.method public abstract f(J)J
-.end method
-
-.method public abstract h(J)V
+    return-object p0
 .end method

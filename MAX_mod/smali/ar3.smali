@@ -1,129 +1,184 @@
-.class public final Lar3;
-.super Lxie;
+.class public final synthetic Lar3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lbc6;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lir3;
+.field public final synthetic b:Lor3;
 
-.field public final synthetic Z:Lop3;
+.field public final synthetic c:J
 
 
 # direct methods
-.method public constructor <init>(Lir3;Lop3;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public synthetic constructor <init>(Lor3;JI)V
+    .registers 5
 
-    iput-object p1, p0, Lar3;->Y:Lir3;
+    iput p4, p0, Lar3;->a:I
 
-    iput-object p2, p0, Lar3;->Z:Lop3;
+    iput-object p1, p0, Lar3;->b:Lor3;
 
-    const/4 p1, 0x2
+    iput-wide p2, p0, Lar3;->c:J
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
 
-    check-cast p1, Lr04;
+    iget v0, p0, Lar3;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    check-cast p1, Lsoa;
 
-    invoke-virtual {p0, p1, p2}, Lar3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
+    sget-object v0, Lbr3;->$EnumSwitchMapping$1:[I
 
-    check-cast p0, Lar3;
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
-    sget-object p1, Lncf;->a:Lncf;
+    move-result p1
 
-    invoke-virtual {p0, p1}, Lar3;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    aget p1, v0, p1
 
-    move-result-object p0
+    const/4 v0, 0x1
 
-    return-object p0
-.end method
+    if-ne p1, v0, :cond_0
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    iget-object p1, p0, Lar3;->b:Lor3;
 
-    new-instance p1, Lar3;
+    iget-object v0, p1, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
 
-    iget-object v0, p0, Lar3;->Y:Lir3;
+    iget-object v1, p1, Lor3;->c:Lxwe;
 
-    iget-object p0, p0, Lar3;->Z:Lop3;
+    check-cast v1, Laga;
 
-    invoke-direct {p1, v0, p0, p2}, Lar3;-><init>(Lir3;Lop3;Lkotlin/coroutines/Continuation;)V
+    invoke-virtual {v1}, Laga;->b()Ls04;
 
-    return-object p1
-.end method
+    move-result-object v1
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    new-instance v2, Lcr3;
 
-    iget v0, p0, Lar3;->X:I
+    iget-wide v3, p0, Lar3;->c:J
 
-    const/4 v1, 0x1
+    const/4 p0, 0x0
 
-    if-eqz v0, :cond_1
+    invoke-direct {v2, p1, v3, v4, p0}, Lcr3;-><init>(Lor3;JLkotlin/coroutines/Continuation;)V
 
-    if-ne v0, v1, :cond_0
+    const/4 p1, 0x2
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object p1
+    invoke-static {v0, v1, p0, v2, p1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    sget-object p0, Lylf;->a:Lylf;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    return-object p0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    :pswitch_0
+    sget-object v0, Lbr3;->$EnumSwitchMapping$1:[I
 
-    throw p0
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p1
+
+    aget p1, v0, p1
+
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_1
+
+    iget-object p1, p0, Lar3;->b:Lor3;
+
+    iget-object v0, p1, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    iget-object v1, p1, Lor3;->c:Lxwe;
+
+    check-cast v1, Laga;
+
+    invoke-virtual {v1}, Laga;->b()Ls04;
+
+    move-result-object v1
+
+    new-instance v2, Ldr3;
+
+    iget-wide v3, p0, Lar3;->c:J
+
+    const/4 p0, 0x0
+
+    invoke-direct {v2, p1, v3, v4, p0}, Ldr3;-><init>(Lor3;JLkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x2
+
+    invoke-static {v0, v1, p0, v2, p1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    sget-object p0, Lylf;->a:Lylf;
 
-    iget-object p1, p0, Lar3;->Y:Lir3;
+    return-object p0
 
-    iget-object p1, p1, Lir3;->X:Lxh7;
+    :pswitch_1
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    move-result p1
 
-    move-result-object p1
+    if-eqz p1, :cond_2
 
-    check-cast p1, Lxu3;
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lar3;->Z:Lop3;
+    if-eq p1, v0, :cond_2
 
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    const/4 v0, 0x2
 
-    move-result-object v0
+    if-eq p1, v0, :cond_2
 
-    iput v1, p0, Lar3;->X:I
-
-    sget-object v1, Lgo3;->b:Lgo3;
-
-    invoke-virtual {p1, v0, v1, p0}, Lxu3;->e(Ljava/util/List;Lgo3;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
+    goto :goto_0
 
     :cond_2
+    iget-object p1, p0, Lar3;->b:Lor3;
+
+    iget-object v0, p1, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    iget-object v1, p1, Lor3;->c:Lxwe;
+
+    check-cast v1, Laga;
+
+    invoke-virtual {v1}, Laga;->b()Ls04;
+
+    move-result-object v1
+
+    sget-object v2, Lhx9;->a:Lhx9;
+
+    invoke-virtual {v1, v2}, Lf0;->plus(Lq04;)Lq04;
+
+    move-result-object v1
+
+    new-instance v2, Lnr3;
+
+    const/4 v3, 0x0
+
+    iget-wide v4, p0, Lar3;->c:J
+
+    invoke-direct {v2, p1, v4, v5, v3}, Lnr3;-><init>(Lor3;JLkotlin/coroutines/Continuation;)V
+
+    sget-object p0, Lb14;->c:Lb14;
+
+    invoke-static {v0, v1, p0, v2}, Lvyg;->t(Ly04;Lq04;Lb14;Lpc6;)Lcae;
+
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
     return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

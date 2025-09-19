@@ -59,9 +59,9 @@
 
     if-nez v0, :cond_7
 
-    invoke-static {p1, p2, p3}, Ljw0;->b(Ljava/nio/ByteBuffer;II)V
+    invoke-static {p1, p2, p3}, Lyv0;->b(Ljava/nio/ByteBuffer;II)V
 
-    invoke-static {p4, p5, p6}, Ljw0;->b(Ljava/nio/ByteBuffer;II)V
+    invoke-static {p4, p5, p6}, Lyv0;->b(Ljava/nio/ByteBuffer;II)V
 
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->hasArray()Z
 
@@ -216,9 +216,9 @@
 .method public compress([BII[BII)I
     .registers 16
 
-    invoke-static {p2, p1, p3}, Liuc;->b(I[BI)V
+    invoke-static {p2, p1, p3}, Lo2d;->b(I[BI)V
 
-    invoke-static {p5, p4, p6}, Liuc;->b(I[BI)V
+    invoke-static {p5, p4, p6}, Lo2d;->b(I[BI)V
 
     const/4 v5, 0x0
 

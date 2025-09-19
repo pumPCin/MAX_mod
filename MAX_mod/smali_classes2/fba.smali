@@ -1,63 +1,61 @@
 .class public final Lfba;
-.super Lcx3;
+.super Liba;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Lp28;
-
-.field public Y:I
-
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public final synthetic n0:Lhba;
-
-.field public o:Lhba;
-
-.field public o0:I
+# static fields
+.field public static final a:Lfba;
 
 
 # direct methods
-.method public constructor <init>(Lhba;Lcx3;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Lfba;->n0:Lhba;
+    new-instance v0, Lfba;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lfba;->a:Lfba;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    iput-object p1, p0, Lfba;->Z:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    iget p1, p0, Lfba;->o0:I
+    if-ne p0, p1, :cond_0
 
-    const/high16 v0, -0x80000000
+    return v0
 
-    or-int/2addr p1, v0
+    :cond_0
+    instance-of p0, p1, Lfba;
 
-    iput p1, p0, Lfba;->o0:I
+    if-nez p0, :cond_1
 
-    const/4 v3, 0x0
+    const/4 p0, 0x0
 
-    const/4 v4, 0x0
+    return p0
 
-    iget-object v0, p0, Lfba;->n0:Lhba;
+    :cond_1
+    return v0
+.end method
 
-    const/4 v1, 0x0
+.method public final hashCode()I
+    .registers 1
 
-    const/4 v2, 0x0
+    const p0, 0x21b20048
 
-    move-object v5, p0
+    return p0
+.end method
 
-    invoke-virtual/range {v0 .. v5}, Lhba;->b(Lp28;IIILcx3;)Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    move-result-object p0
+    const-string p0, "Circle"
 
     return-object p0
 .end method

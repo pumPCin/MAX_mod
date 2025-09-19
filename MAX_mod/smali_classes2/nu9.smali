@@ -1,169 +1,199 @@
 .class public final Lnu9;
-.super Lsoe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Lfv7;
+.field public final a:Lcl7;
 
-.field public c:J
+.field public final b:Lcl7;
 
-.field public o:Ljava/lang/String;
+.field public final c:Lcl7;
+
+.field public final d:Lcl7;
+
+.field public final e:Lcl7;
+
+.field public final f:Lcl7;
+
+.field public final g:Ljava/lang/String;
+
+.field public final h:Lkotlinx/coroutines/internal/ContextScope;
+
+.field public final i:Lnxd;
+
+.field public final j:Lhic;
+
+.field public final k:Lyce;
+
+.field public final l:Liic;
+
+.field public volatile m:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lu09;)V
-    .registers 2
+.method public constructor <init>(Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;)V
+    .registers 8
 
-    invoke-direct {p0, p1}, Lsoe;-><init>(Lu09;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lnu9;->a:Lcl7;
+
+    iput-object p3, p0, Lnu9;->b:Lcl7;
+
+    iput-object p4, p0, Lnu9;->c:Lcl7;
+
+    iput-object p5, p0, Lnu9;->d:Lcl7;
+
+    iput-object p6, p0, Lnu9;->e:Lcl7;
+
+    iput-object p7, p0, Lnu9;->f:Lcl7;
+
+    const-class p1, Lnu9;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lnu9;->g:Ljava/lang/String;
+
+    invoke-interface {p2}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lxwe;
+
+    check-cast p1, Laga;
+
+    invoke-virtual {p1}, Laga;->b()Ls04;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lb0b;->a(Lq04;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lnu9;->h:Lkotlinx/coroutines/internal/ContextScope;
+
+    const/4 p1, 0x4
+
+    const/4 p2, 0x0
+
+    const p3, 0x7fffffff
+
+    invoke-static {p2, p3, p1}, Loxd;->b(III)Lnxd;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lnu9;->i:Lnxd;
+
+    new-instance p2, Lhic;
+
+    invoke-direct {p2, p1}, Lhic;-><init>(Lqo9;)V
+
+    iput-object p2, p0, Lnu9;->j:Lhic;
+
+    const/4 p1, 0x0
+
+    invoke-static {p1}, Lzce;->a(Ljava/lang/Object;)Lyce;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lnu9;->k:Lyce;
+
+    new-instance p2, Liic;
+
+    invoke-direct {p2, p1}, Liic;-><init>(Lro9;)V
+
+    iput-object p2, p0, Lnu9;->l:Liic;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lu09;Ljava/lang/String;)V
-    .registers 5
+.method public final a()Lcp5;
+    .registers 1
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lnu9;->b:Lcl7;
 
-    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    sparse-switch v0, :sswitch_data_0
-
-    goto :goto_0
-
-    :sswitch_0
-    const-string v0, "location"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x2
-
-    goto :goto_0
-
-    :sswitch_1
-    const-string v0, "deviceId"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :sswitch_2
-    const-string v0, "userId"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v1, 0x0
-
-    :goto_0
-    packed-switch v1, :pswitch_data_0
-
-    invoke-virtual {p1}, Lu09;->B()V
-
-    return-void
-
-    :pswitch_0
-    invoke-static {p1}, Lfv7;->a(Lu09;)Lfv7;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lnu9;->X:Lfv7;
-
-    return-void
-
-    :pswitch_1
-    invoke-static {p1}, Lbv7;->j0(Lu09;)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lnu9;->o:Ljava/lang/String;
-
-    return-void
-
-    :pswitch_2
-    const-wide/16 v0, 0x0
-
-    invoke-static {p1, v0, v1}, Lbv7;->g0(Lu09;J)J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lnu9;->c:J
-
-    return-void
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x31d4d1ba -> :sswitch_2
-        0x421cea11 -> :sswitch_1
-        0x714f9fb5 -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    iget-wide v0, p0, Lnu9;->c:J
-
-    iget-object v2, p0, Lnu9;->o:Ljava/lang/String;
-
-    iget-object p0, p0, Lnu9;->X:Lfv7;
-
-    const-string v3, "Response{userId="
-
-    const-string v4, ", deviceId=\'"
-
-    invoke-static {v3, v0, v1, v4, v2}, Lbkc;->j(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\', location="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, "}"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
+    check-cast p0, Lcp5;
+
     return-object p0
+.end method
+
+.method public final b()V
+    .registers 3
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lnu9;->m:Ljava/lang/String;
+
+    iget-object p0, p0, Lnu9;->f:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqoa;
+
+    sget v0, Ld1d;->t:I
+
+    new-instance v1, Lp2f;
+
+    invoke-direct {v1, v0}, Lp2f;-><init>(I)V
+
+    invoke-virtual {p0, v1}, Lqoa;->g(Lu2f;)V
+
+    new-instance v0, Lepa;
+
+    sget v1, Lq0d;->I:I
+
+    invoke-direct {v0, v1}, Lepa;-><init>(I)V
+
+    invoke-virtual {p0, v0}, Lqoa;->e(Ljpa;)V
+
+    invoke-virtual {p0}, Lqoa;->i()Lpoa;
+
+    return-void
+.end method
+
+.method public final c()V
+    .registers 3
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lnu9;->m:Ljava/lang/String;
+
+    iget-object p0, p0, Lnu9;->f:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqoa;
+
+    sget v0, Ld1d;->v:I
+
+    new-instance v1, Lp2f;
+
+    invoke-direct {v1, v0}, Lp2f;-><init>(I)V
+
+    invoke-virtual {p0, v1}, Lqoa;->g(Lu2f;)V
+
+    new-instance v0, Lepa;
+
+    sget v1, Lq0d;->I:I
+
+    invoke-direct {v0, v1}, Lepa;-><init>(I)V
+
+    invoke-virtual {p0, v0}, Lqoa;->e(Ljpa;)V
+
+    invoke-virtual {p0}, Lqoa;->i()Lpoa;
+
+    return-void
 .end method

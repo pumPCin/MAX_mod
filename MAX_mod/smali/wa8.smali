@@ -2,34 +2,63 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lcb8;
 
-# instance fields
-.field public final a:Lgb8;
 
-.field public final b:Landroid/media/MediaFormat;
-
-.field public final c:Lt26;
-
-.field public final d:Landroid/view/Surface;
-
-.field public final e:Landroid/media/MediaCrypto;
+# static fields
+.field public static final a:Lwa8;
 
 
 # direct methods
-.method public constructor <init>(Lgb8;Landroid/media/MediaFormat;Lt26;Landroid/view/Surface;Landroid/media/MediaCrypto;)V
-    .registers 6
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lwa8;
 
-    iput-object p1, p0, Lwa8;->a:Lgb8;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lwa8;->b:Landroid/media/MediaFormat;
-
-    iput-object p3, p0, Lwa8;->c:Lt26;
-
-    iput-object p4, p0, Lwa8;->d:Landroid/view/Surface;
-
-    iput-object p5, p0, Lwa8;->e:Landroid/media/MediaCrypto;
+    sput-object v0, Lwa8;->a:Lwa8;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lwa8;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, 0x8c5b203
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "Show"
+
+    return-object p0
 .end method

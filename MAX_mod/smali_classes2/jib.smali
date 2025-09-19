@@ -1,100 +1,75 @@
 .class public final Ljib;
-.super Ljava/lang/Object;
+.super Lni0;
 .source "SourceFile"
 
-# interfaces
-.implements Lkib;
+
+# static fields
+.field public static final X:Lcxe;
 
 
 # instance fields
-.field public final a:Lr7;
+.field public final c:J
+
+.field public final o:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lr7;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcxe;
 
-    iput-object p1, p0, Ljib;->a:Lr7;
+    const-string v1, "privacy.restricted"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2, v2}, Lcxe;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Ljib;->X:Lcxe;
+
+    return-void
+.end method
+
+.method public constructor <init>(JLjava/util/List;)V
+    .registers 5
+
+    sget-object v0, Ljib;->X:Lcxe;
+
+    invoke-direct {p0, v0}, Lni0;-><init>(Lcxe;)V
+
+    iput-wide p1, p0, Ljib;->c:J
+
+    iput-object p3, p0, Ljib;->o:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Ljib;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Ljib;
-
-    iget-object p0, p0, Ljib;->a:Lr7;
-
-    iget-object p1, p1, Ljib;->a:Lr7;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Ljib;->a:Lr7;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .registers 4
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ShortLinkPayload(state="
+    const-string v1, "PrivacyRestrictedError{chatId="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Ljib;->a:Lr7;
+    iget-wide v1, p0, Ljib;->c:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", contactIds="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Ljib;->o:Ljava/util/List;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string p0, ")"
+    const/16 p0, 0x7d
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

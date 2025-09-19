@@ -43,7 +43,7 @@
         "()Lone/me/rlottie/RLottieFactory$Way$RawRes;",
         "<set-?>",
         "rawResId$delegate",
-        "Lzac;",
+        "Leic;",
         "getRawResId",
         "()I",
         "(I)V",
@@ -61,11 +61,11 @@
 
 
 # static fields
-.field static final synthetic $$delegatedProperties:[Lsf7;
+.field static final synthetic $$delegatedProperties:[Lxi7;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "[",
-            "Lsf7;"
+            "Lxi7;"
         }
     .end annotation
 .end field
@@ -74,14 +74,14 @@
 # instance fields
 .field private cacheName:Ljava/lang/String;
 
-.field private final rawResId$delegate:Lzac;
+.field private final rawResId$delegate:Leic;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 4
 
-    new-instance v0, Lal9;
+    new-instance v0, Lmo9;
 
     const-string v1, "rawResId"
 
@@ -89,21 +89,21 @@
 
     const-class v3, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;
 
-    invoke-direct {v0, v3, v1, v2}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v3, v1, v2}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v1, Lyhc;->a:Lzhc;
+    sget-object v1, Ljpc;->a:Lkpc;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const/4 v1, 0x1
 
-    new-array v1, v1, [Lsf7;
+    new-array v1, v1, [Lxi7;
 
     const/4 v2, 0x0
 
     aput-object v0, v1, v2
 
-    sput-object v1, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->$$delegatedProperties:[Lsf7;
+    sput-object v1, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->$$delegatedProperties:[Lxi7;
 
     return-void
 .end method
@@ -113,13 +113,13 @@
 
     invoke-direct {p0}, Lone/me/rlottie/RLottieFactory$Way$Builder;-><init>()V
 
-    new-instance v0, Lvtf;
+    new-instance v0, Lne4;
 
-    const/16 v1, 0x13
+    const/4 v1, 0x1
 
-    invoke-direct {v0, v1}, Lvtf;-><init>(I)V
+    invoke-direct {v0, v1}, Lne4;-><init>(I)V
 
-    iput-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->rawResId$delegate:Lzac;
+    iput-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->rawResId$delegate:Leic;
 
     return-void
 .end method
@@ -127,15 +127,15 @@
 .method private final getRawResId()I
     .registers 4
 
-    iget-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->rawResId$delegate:Lzac;
+    iget-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->rawResId$delegate:Leic;
 
-    sget-object v1, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->$$delegatedProperties:[Lsf7;
+    sget-object v1, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->$$delegatedProperties:[Lxi7;
 
     const/4 v2, 0x0
 
     aget-object v1, v1, v2
 
-    invoke-interface {v0, p0, v1}, Lxac;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
+    invoke-interface {v0, p0, v1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -151,9 +151,9 @@
 .method private final setRawResId(I)V
     .registers 5
 
-    iget-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->rawResId$delegate:Lzac;
+    iget-object v0, p0, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->rawResId$delegate:Leic;
 
-    sget-object v1, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->$$delegatedProperties:[Lsf7;
+    sget-object v1, Lone/me/rlottie/RLottieFactory$Way$RawRes$Builder;->$$delegatedProperties:[Lxi7;
 
     const/4 v2, 0x0
 
@@ -163,7 +163,7 @@
 
     move-result-object p1
 
-    invoke-interface {v0, p0, v1, p1}, Lzac;->g0(Ljava/lang/Object;Lsf7;Ljava/lang/Object;)V
+    invoke-interface {v0, p0, v1, p1}, Leic;->h0(Ljava/lang/Object;Lxi7;Ljava/lang/Object;)V
 
     return-void
 .end method

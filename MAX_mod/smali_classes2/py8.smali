@@ -1,231 +1,85 @@
 .class public final Lpy8;
-.super Ljava/lang/Object;
+.super Lx2;
 .source "SourceFile"
-
-# interfaces
-.implements Lty8;
 
 
 # instance fields
-.field public final a:Landroid/text/Layout;
+.field public final synthetic c:I
 
-.field public final b:Landroid/text/Layout;
-
-.field public final c:J
-
-.field public final d:Ljava/lang/CharSequence;
-
-.field public final e:Ljava/lang/String;
+.field public final synthetic o:Lqy8;
 
 
 # direct methods
-.method public constructor <init>(Landroid/text/Layout;Landroid/text/Layout;JLjava/lang/CharSequence;Ljava/lang/String;)V
-    .registers 7
+.method public synthetic constructor <init>(Ljava/lang/Object;Lqy8;I)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Lpy8;->c:I
 
-    iput-object p1, p0, Lpy8;->a:Landroid/text/Layout;
+    iput-object p2, p0, Lpy8;->o:Lqy8;
 
-    iput-object p2, p0, Lpy8;->b:Landroid/text/Layout;
+    const/16 p2, 0x9
 
-    iput-wide p3, p0, Lpy8;->c:J
-
-    iput-object p5, p0, Lpy8;->d:Ljava/lang/CharSequence;
-
-    iput-object p6, p0, Lpy8;->e:Ljava/lang/String;
+    invoke-direct {p0, p2, p1}, Lx2;-><init>(ILjava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 9
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lpy8;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lpy8;
-
-    iget-object v1, p0, Lpy8;->a:Landroid/text/Layout;
-
-    iget-object v3, p1, Lpy8;->a:Landroid/text/Layout;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lpy8;->b:Landroid/text/Layout;
-
-    iget-object v3, p1, Lpy8;->b:Landroid/text/Layout;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-wide v3, p0, Lpy8;->c:J
-
-    iget-wide v5, p1, Lpy8;->c:J
-
-    cmp-long v1, v3, v5
-
-    if-eqz v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-object v1, p0, Lpy8;->d:Ljava/lang/CharSequence;
-
-    iget-object v3, p1, Lpy8;->d:Ljava/lang/CharSequence;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    return v2
-
-    :cond_5
-    iget-object p0, p0, Lpy8;->e:Ljava/lang/String;
-
-    iget-object p1, p1, Lpy8;->e:Ljava/lang/String;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_6
-
-    return v2
-
-    :cond_6
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 6
-
-    iget-object v0, p0, Lpy8;->a:Landroid/text/Layout;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lpy8;->b:Landroid/text/Layout;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    add-int/2addr v2, v0
-
-    mul-int/2addr v2, v1
-
-    iget-wide v3, p0, Lpy8;->c:J
-
-    invoke-static {v2, v1, v3, v4}, Lp2g;->a(IIJ)I
-
-    move-result v0
-
-    iget-object v2, p0, Lpy8;->d:Ljava/lang/CharSequence;
-
-    invoke-static {v2, v0, v1}, Lgl5;->d(Ljava/lang/CharSequence;II)I
-
-    move-result v0
-
-    iget-object p0, p0, Lpy8;->e:Ljava/lang/String;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    :goto_0
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget v0, p0, Lpy8;->c:I
 
-    const-string v1, "Contact(contactTitleLayout="
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v1, p0, Lpy8;->a:Landroid/text/Layout;
+    move-result v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    if-nez v0, :cond_0
 
-    const-string v1, ", contactNameLayout="
+    check-cast p2, [I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast p1, [I
 
-    iget-object v1, p0, Lpy8;->b:Landroid/text/Layout;
+    iget-object p0, p0, Lpy8;->o:Lqy8;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    const-string v1, ", contactId="
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p2, p1}, Lqy8;->e([ILandroid/graphics/Rect;)V
 
-    iget-wide v1, p0, Lpy8;->c:J
+    :cond_0
+    return-void
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    :pswitch_0
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const-string v1, ", nameForAbbreviation="
+    move-result v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez v0, :cond_1
 
-    iget-object v1, p0, Lpy8;->d:Ljava/lang/CharSequence;
+    check-cast p2, [I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    check-cast p1, [I
 
-    const-string v1, ", url="
+    iget-object p0, p0, Lpy8;->o:Lqy8;
 
-    const-string v2, ")"
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    iget-object p0, p0, Lpy8;->e:Ljava/lang/String;
+    move-result-object p1
 
-    invoke-static {v0, v1, p0, v2}, Lfge;->s(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p2, p1}, Lqy8;->d([ILandroid/graphics/Rect;)V
 
-    move-result-object p0
+    :cond_1
+    return-void
 
-    return-object p0
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,45 +1,37 @@
-.class public abstract synthetic Lzja;
+.class public abstract Lzja;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+.field public static final a:I
+
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 1
 
-    const/4 v0, 0x5
+    sget v0, Lo6c;->members_list_action_view_type:I
 
-    invoke-static {v0}, Lew1;->w(I)[I
+    sput v0, Lzja;->a:I
 
-    move-result-object v0
+    sget v0, Lo6c;->members_list_empty_search_view_type:I
 
-    array-length v0, v0
+    sput v0, Lzja;->b:I
 
-    new-array v0, v0, [I
+    sget v0, Lo6c;->members_list_rv:I
 
-    const/4 v1, 0x1
+    sput v0, Lzja;->c:I
 
-    const/4 v2, 0x2
+    sget v0, Lo6c;->members_list_shimmer_view_type:I
 
-    :try_start_0
-    aput v1, v0, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v1, 0x4
-
-    :try_start_1
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    sput-object v0, Lzja;->$EnumSwitchMapping$0:[I
+    sput v0, Lzja;->d:I
 
     return-void
 .end method

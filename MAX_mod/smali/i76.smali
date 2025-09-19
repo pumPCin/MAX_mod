@@ -1,52 +1,467 @@
 .class public final Li76;
-.super Lih7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lba6;
+.implements Lscb;
 
 
 # instance fields
-.field public final synthetic a:Lshe;
+.field public final a:Lbeb;
+
+.field public final b:Lscb;
 
 
 # direct methods
-.method public constructor <init>(Lshe;)V
-    .registers 2
+.method public constructor <init>(Lbeb;Lscb;)V
+    .registers 3
 
-    iput-object p1, p0, Li76;->a:Lshe;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x4
+    iput-object p1, p0, Li76;->a:Lbeb;
 
-    invoke-direct {p0, p1}, Lih7;-><init>(I)V
+    iput-object p2, p0, Li76;->b:Lscb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final i(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final A0(Landroidx/media3/common/PlaybackException;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->A0(Landroidx/media3/common/PlaybackException;)V
+
+    return-void
+.end method
+
+.method public final B0(Laf9;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->B0(Laf9;)V
+
+    return-void
+.end method
+
+.method public final C0(Lnn4;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->C0(Lnn4;)V
+
+    return-void
+.end method
+
+.method public final D0(J)V
+    .registers 3
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1, p2}, Lscb;->D0(J)V
+
+    return-void
+.end method
+
+.method public final E0(Lzh8;I)V
+    .registers 3
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1, p2}, Lscb;->E0(Lzh8;I)V
+
+    return-void
+.end method
+
+.method public final H0(Landroidx/media3/common/PlaybackException;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->H0(Landroidx/media3/common/PlaybackException;)V
+
+    return-void
+.end method
+
+.method public final J(I)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->J(I)V
+
+    return-void
+.end method
+
+.method public final S(Z)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->S(Z)V
+
+    return-void
+.end method
+
+.method public final U(Lf44;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->U(Lf44;)V
+
+    return-void
+.end method
+
+.method public final c0(Ltcf;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->c0(Ltcf;)V
+
+    return-void
+.end method
+
+.method public final d0(Lvcb;Lqcb;)V
+    .registers 3
+
+    iget-object p1, p0, Li76;->b:Lscb;
+
+    iget-object p0, p0, Li76;->a:Lbeb;
+
+    invoke-interface {p1, p0, p2}, Lscb;->d0(Lvcb;Lqcb;)V
+
+    return-void
+.end method
+
+.method public final e()V
+    .registers 1
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0}, Lscb;->e()V
+
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .registers 5
 
-    check-cast p1, Landroid/database/sqlite/SQLiteDatabase;
+    if-ne p0, p1, :cond_0
 
-    check-cast p2, Landroid/database/sqlite/SQLiteCursorDriver;
+    const/4 p0, 0x1
 
-    check-cast p3, Ljava/lang/String;
+    return p0
 
-    check-cast p4, Landroid/database/sqlite/SQLiteQuery;
+    :cond_0
+    instance-of v0, p1, Li76;
 
-    new-instance p1, Lo76;
+    const/4 v1, 0x0
 
-    invoke-direct {p1, p4}, Lo76;-><init>(Landroid/database/sqlite/SQLiteProgram;)V
+    if-nez v0, :cond_1
 
-    iget-object p0, p0, Li76;->a:Lshe;
+    return v1
 
-    invoke-interface {p0, p1}, Lshe;->n(Lrhe;)V
+    :cond_1
+    check-cast p1, Li76;
 
-    new-instance p0, Landroid/database/sqlite/SQLiteCursor;
+    iget-object v0, p0, Li76;->a:Lbeb;
 
-    invoke-direct {p0, p2, p3, p4}, Landroid/database/sqlite/SQLiteCursor;-><init>(Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)V
+    iget-object v2, p1, Li76;->a:Lbeb;
 
-    return-object p0
+    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    return v1
+
+    :cond_2
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    iget-object p1, p1, Li76;->b:Lscb;
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final f(I)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->f(I)V
+
+    return-void
+.end method
+
+.method public final f0(J)V
+    .registers 3
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1, p2}, Lscb;->f0(J)V
+
+    return-void
+.end method
+
+.method public final g(Ln5g;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->g(Ln5g;)V
+
+    return-void
+.end method
+
+.method public final g0(Lmj8;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->g0(Lmj8;)V
+
+    return-void
+.end method
+
+.method public final h(Z)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->h(Z)V
+
+    return-void
+.end method
+
+.method public final h0(Lmj8;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->h0(Lmj8;)V
+
+    return-void
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    iget-object v0, p0, Li76;->a:Lbeb;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final i(IZ)V
+    .registers 3
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1, p2}, Lscb;->i(IZ)V
+
+    return-void
+.end method
+
+.method public final i0(J)V
+    .registers 3
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1, p2}, Lscb;->i0(J)V
+
+    return-void
+.end method
+
+.method public final j(F)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->j(F)V
+
+    return-void
+.end method
+
+.method public final k(I)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->k(I)V
+
+    return-void
+.end method
+
+.method public final k0(Lp6f;I)V
+    .registers 3
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1, p2}, Lscb;->k0(Lp6f;I)V
+
+    return-void
+.end method
+
+.method public final l(IZ)V
+    .registers 3
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1, p2}, Lscb;->l(IZ)V
+
+    return-void
+.end method
+
+.method public final m(Z)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->m(Z)V
+
+    return-void
+.end method
+
+.method public final n(Ljava/util/List;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->n(Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public final o(IZ)V
+    .registers 3
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1, p2}, Lscb;->o(IZ)V
+
+    return-void
+.end method
+
+.method public final onRepeatModeChanged(I)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->onRepeatModeChanged(I)V
+
+    return-void
+.end method
+
+.method public final p(II)V
+    .registers 3
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1, p2}, Lscb;->p(II)V
+
+    return-void
+.end method
+
+.method public final q(Z)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->q(Z)V
+
+    return-void
+.end method
+
+.method public final r(Z)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->h(Z)V
+
+    return-void
+.end method
+
+.method public final s(I)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->s(I)V
+
+    return-void
+.end method
+
+.method public final t(Lucb;Lucb;I)V
+    .registers 4
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1, p2, p3}, Lscb;->t(Lucb;Lucb;I)V
+
+    return-void
+.end method
+
+.method public final x(Lx10;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->x(Lx10;)V
+
+    return-void
+.end method
+
+.method public final y0(Ldcb;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->y0(Ldcb;)V
+
+    return-void
+.end method
+
+.method public final z(Lncf;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->z(Lncf;)V
+
+    return-void
+.end method
+
+.method public final z0(Lpcb;)V
+    .registers 2
+
+    iget-object p0, p0, Li76;->b:Lscb;
+
+    invoke-interface {p0, p1}, Lscb;->z0(Lpcb;)V
+
+    return-void
 .end method

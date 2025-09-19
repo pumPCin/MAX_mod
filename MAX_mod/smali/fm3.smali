@@ -1,51 +1,23 @@
-.class public final Lfm3;
+.class public abstract Lfm3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final c:Ljava/lang/String;
-
-
-# instance fields
-.field public final a:I
-
-.field public final b:Lvu7;
+.field public static final a:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
-    const-string v0, "ConstraintsCmdHandler"
+    const-string v0, "ConstraintTracker"
 
-    invoke-static {v0}, Las3;->f0(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lmq0;->M(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    sput-object v0, Lfm3;->c:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;ILgle;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p2, p0, Lfm3;->a:I
-
-    iget-object p1, p3, Lgle;->X:Lklg;
-
-    iget-object p1, p1, Lklg;->j:Lrlg;
-
-    new-instance p2, Lvu7;
-
-    const/4 p3, 0x0
-
-    invoke-direct {p2, p1, p3}, Lvu7;-><init>(Lrlg;Lvkg;)V
-
-    iput-object p2, p0, Lfm3;->b:Lvu7;
+    sput-object v0, Lfm3;->a:Ljava/lang/String;
 
     return-void
 .end method

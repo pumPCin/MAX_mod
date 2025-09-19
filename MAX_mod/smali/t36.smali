@@ -1,216 +1,292 @@
 .class public final Lt36;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements La25;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public X:Landroid/os/Handler;
 
-.field public final synthetic Y:Lwub;
+.field public Y:Ljava/util/concurrent/ThreadPoolExecutor;
 
-.field public final synthetic Z:Lone/me/chats/forward/ForwardPickerScreen;
+.field public Z:Ljava/util/concurrent/ThreadPoolExecutor;
+
+.field public final a:Landroid/content/Context;
+
+.field public final b:Lcec;
+
+.field public final c:Lad4;
+
+.field public final o:Ljava/lang/Object;
+
+.field public r0:Lw48;
 
 
 # direct methods
-.method public constructor <init>(Lwub;Lone/me/chats/forward/ForwardPickerScreen;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Landroid/content/Context;Lcec;)V
     .registers 4
 
-    iput-object p1, p0, Lt36;->Y:Lwub;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lt36;->Z:Lone/me/chats/forward/ForwardPickerScreen;
+    new-instance v0, Ljava/lang/Object;
 
-    const/4 p1, 0x2
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object v0, p0, Lt36;->o:Ljava/lang/Object;
+
+    const-string v0, "Context cannot be null"
+
+    invoke-static {p1, v0}, Ln4e;->m(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lt36;->a:Landroid/content/Context;
+
+    iput-object p2, p0, Lt36;->b:Lcec;
+
+    sget-object p1, Lu36;->g:Lad4;
+
+    iput-object p1, p0, Lt36;->c:Lad4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Ld46;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lt36;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lt36;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lt36;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final a()V
     .registers 5
 
-    new-instance v0, Lt36;
+    iget-object v0, p0, Lt36;->o:Ljava/lang/Object;
 
-    iget-object v1, p0, Lt36;->Y:Lwub;
-
-    iget-object p0, p0, Lt36;->Z:Lone/me/chats/forward/ForwardPickerScreen;
-
-    invoke-direct {v0, v1, p0, p2}, Lt36;-><init>(Lwub;Lone/me/chats/forward/ForwardPickerScreen;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lt36;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lt36;->X:Ljava/lang/Object;
-
-    check-cast p1, Ld46;
-
-    sget-object v0, Lncf;->a:Lncf;
-
-    const/16 v1, 0x8
-
-    iget-object v2, p0, Lt36;->Y:Lwub;
-
-    if-nez p1, :cond_0
-
-    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
-
-    return-object v0
-
-    :cond_0
-    sget-object v3, Lone/me/chats/forward/ForwardPickerScreen;->E0:[Lsf7;
-
-    iget-object p0, p0, Lt36;->Z:Lone/me/chats/forward/ForwardPickerScreen;
-
-    invoke-virtual {p0}, Lone/me/chats/picker/AbstractPickerScreen;->G0()La0b;
-
-    move-result-object v3
-
-    iget-object v3, v3, La0b;->Z:Ldbc;
-
-    iget-object v3, v3, Ldbc;->a:Lg4e;
-
-    invoke-interface {v3}, Lg4e;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/Collection;
-
-    invoke-interface {v3}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v3
-
-    if-nez v3, :cond_1
-
-    invoke-virtual {p0}, Lone/me/chats/forward/ForwardPickerScreen;->M0()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
+    monitor-enter v0
 
     const/4 v1, 0x0
 
+    :try_start_0
+    iput-object v1, p0, Lt36;->r0:Lw48;
+
+    iget-object v2, p0, Lt36;->X:Landroid/os/Handler;
+
+    if-eqz v2, :cond_0
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    iput-object v1, p0, Lt36;->X:Landroid/os/Handler;
+
+    iget-object v2, p0, Lt36;->Z:Ljava/util/concurrent/ThreadPoolExecutor;
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v2}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
+
     :cond_1
-    invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
+    iput-object v1, p0, Lt36;->Y:Ljava/util/concurrent/ThreadPoolExecutor;
 
-    iget-object v1, p1, Ld46;->a:Lvte;
+    iput-object v1, p0, Lt36;->Z:Ljava/util/concurrent/ThreadPoolExecutor;
 
-    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
+    monitor-exit v0
 
-    move-result-object v3
+    return-void
 
-    invoke-virtual {v1, v3}, Lvte;->b(Landroid/content/Context;)Ljava/lang/CharSequence;
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v1
+    throw p0
+.end method
 
-    if-eqz v1, :cond_5
+.method public final b()Ld46;
+    .registers 4
 
-    invoke-virtual {v2, v1}, Lwub;->setTitle(Ljava/lang/CharSequence;)V
+    :try_start_0
+    iget-object v0, p0, Lt36;->c:Lad4;
 
-    iget-object v1, p1, Ld46;->c:Lty;
+    iget-object v1, p0, Lt36;->a:Landroid/content/Context;
 
-    invoke-virtual {v2, v1}, Lwub;->setAttachDescription(Lty;)V
+    iget-object p0, p0, Lt36;->b:Lcec;
 
-    invoke-virtual {p0}, Lone/me/chats/forward/ForwardPickerScreen;->L0()Z
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result v1
+    invoke-static {v1, p0}, Ljtg;->q(Landroid/content/Context;Lcec;)Lrh0;
 
-    if-eqz v1, :cond_2
+    move-result-object p0
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 p0, 0x0
+    iget v0, p0, Lrh0;->b:I
 
-    invoke-virtual {v2, p0}, Lwub;->setStartIconDrawable(Landroid/graphics/drawable/Drawable;)V
+    if-nez v0, :cond_1
 
-    invoke-virtual {v2, p0}, Lwub;->setStartIconClickListener(Landroid/view/View$OnClickListener;)V
+    iget-object p0, p0, Lrh0;->c:Ljava/lang/Object;
 
-    return-object v0
+    check-cast p0, [Ld46;
 
-    :cond_2
-    iget-boolean p1, p1, Ld46;->d:Z
+    if-eqz p0, :cond_0
 
-    if-nez p1, :cond_3
+    array-length v0, p0
 
-    return-object v0
+    if-eqz v0, :cond_0
 
-    :cond_3
-    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
+    const/4 v0, 0x0
 
-    move-result p1
+    aget-object p0, p0, v0
 
-    if-nez p1, :cond_4
+    return-object p0
 
-    invoke-virtual {p0}, Lone/me/chats/picker/AbstractPickerScreen;->G0()La0b;
+    :cond_0
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    move-result-object p1
+    const-string v0, "fetchFonts failed (empty result)"
 
-    iget-object p1, p1, La0b;->c:Ly1b;
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    check-cast p1, Ll36;
+    throw p0
 
-    invoke-virtual {p1}, Ll36;->f()V
+    :cond_1
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    :cond_4
-    invoke-virtual {p0}, Lone/me/chats/picker/AbstractPickerScreen;->G0()La0b;
+    const-string v1, "fetchFonts failed ("
 
-    move-result-object p1
+    const-string v2, ")"
 
-    iget-object p1, p1, La0b;->c:Ly1b;
+    invoke-static {v0, v1, v2}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    check-cast p1, Ll36;
+    move-result-object v0
 
-    invoke-virtual {p1}, Ll36;->g()Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    move-result-object p1
+    throw p0
 
-    invoke-virtual {v2, p1}, Lwub;->setStartIconDrawable(Landroid/graphics/drawable/Drawable;)V
+    :catch_0
+    move-exception p0
 
-    new-instance p1, Luz4;
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    const/4 v1, 0x4
+    const-string v1, "provider not found"
 
-    invoke-direct {p1, p0, v1, v2}, Luz4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v0, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-virtual {v2, p1}, Lwub;->setStartIconClickListener(Landroid/view/View$OnClickListener;)V
+    throw v0
+.end method
 
-    return-object v0
+.method public final d(Lw48;)V
+    .registers 11
 
-    :cond_5
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    iget-object v1, p0, Lt36;->o:Ljava/lang/Object;
 
-    const-string p1, "Required value was null."
+    monitor-enter v1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    :try_start_0
+    iput-object p1, p0, Lt36;->r0:Lw48;
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    iget-object p1, p0, Lt36;->o:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    :try_start_1
+    iget-object v0, p0, Lt36;->r0:Lw48;
+
+    if-nez v0, :cond_0
+
+    monitor-exit p1
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    move-object p0, v0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lt36;->Y:Ljava/util/concurrent/ThreadPoolExecutor;
+
+    if-nez v0, :cond_1
+
+    const-string v0, "emojiCompat"
+
+    new-instance v8, Lmf3;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v8, v1, v0}, Lmf3;-><init>(ILjava/io/Serializable;)V
+
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    new-instance v7, Ljava/util/concurrent/LinkedBlockingDeque;
+
+    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingDeque;-><init>()V
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    const-wide/16 v4, 0xf
+
+    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
+
+    iput-object v1, p0, Lt36;->Z:Ljava/util/concurrent/ThreadPoolExecutor;
+
+    iput-object v1, p0, Lt36;->Y:Ljava/util/concurrent/ThreadPoolExecutor;
+
+    :cond_1
+    iget-object v0, p0, Lt36;->Y:Ljava/util/concurrent/ThreadPoolExecutor;
+
+    new-instance v1, Ls36;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v2, p0}, Ls36;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
+
+    monitor-exit p1
+
+    return-void
+
+    :goto_0
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
+
+    :catchall_1
+    move-exception v0
+
+    move-object p0, v0
+
+    :try_start_2
+    monitor-exit v1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     throw p0
 .end method

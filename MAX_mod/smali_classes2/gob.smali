@@ -1,3 +1,3 @@
-.class public abstract Lgob;
-.super Ljob;
+.class public interface abstract Lgob;
+.super Ljava/lang/Object;
 .source "SourceFile"

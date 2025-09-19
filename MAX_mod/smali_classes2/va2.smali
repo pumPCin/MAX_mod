@@ -3,24 +3,40 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lim3;
+.implements Lpm3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic X:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final synthetic b:Lkb2;
+.field public final synthetic Y:Z
+
+.field public final synthetic a:Lza2;
+
+.field public final synthetic b:J
+
+.field public final synthetic c:J
+
+.field public final synthetic o:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkb2;I)V
-    .registers 3
-
-    iput p2, p0, Lva2;->a:I
-
-    iput-object p1, p0, Lva2;->b:Lkb2;
+.method public synthetic constructor <init>(Lza2;JJILjava/util/concurrent/atomic/AtomicBoolean;Z)V
+    .registers 9
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lva2;->a:Lza2;
+
+    iput-wide p2, p0, Lva2;->b:J
+
+    iput-wide p4, p0, Lva2;->c:J
+
+    iput p6, p0, Lva2;->o:I
+
+    iput-object p7, p0, Lva2;->X:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iput-boolean p8, p0, Lva2;->Y:Z
 
     return-void
 .end method
@@ -28,63 +44,97 @@
 
 # virtual methods
 .method public final accept(Ljava/lang/Object;)V
-    .registers 4
+    .registers 12
 
-    iget v0, p0, Lva2;->a:I
+    check-cast p1, Leb2;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, p0, Lva2;->a:Lza2;
 
-    iget-object p0, p0, Lva2;->b:Lkb2;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    check-cast p1, Ljb2;
-
-    invoke-virtual {p1, p0}, Ljb2;->a(Lkb2;)V
-
-    return-void
-
-    :pswitch_0
-    check-cast p1, Ljb2;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-virtual {p1}, Ljb2;->b()Ljava/util/List;
+    invoke-virtual {p1}, Leb2;->c()Ljava/util/Map;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    iget-wide v2, p0, Lva2;->b:J
 
-    iget-object p0, p0, Lva2;->b:Lkb2;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    move-result-object v4
 
-    iget-object p0, p1, Ljb2;->A:Ljava/util/ArrayList;
+    invoke-interface {v1, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz p0, :cond_0
+    move-result-object v4
 
-    invoke-virtual {p0}, Ljava/util/ArrayList;->clear()V
+    check-cast v4, Ljava/lang/Long;
 
-    :cond_0
-    iget-object p0, p1, Ljb2;->A:Ljava/util/ArrayList;
-
-    if-nez p0, :cond_1
-
-    new-instance p0, Ljava/util/ArrayList;
-
-    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p0, p1, Ljb2;->A:Ljava/util/ArrayList;
-
-    :cond_1
-    iget-object p0, p1, Ljb2;->A:Ljava/util/ArrayList;
-
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+    if-nez v4, :cond_0
 
     return-void
 
-    nop
+    :cond_0
+    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    move-result-wide v4
+
+    iget-wide v6, p0, Lva2;->c:J
+
+    cmp-long v4, v4, v6
+
+    const/4 v5, 0x0
+
+    const/4 v8, 0x1
+
+    if-eqz v4, :cond_1
+
+    move v4, v8
+
+    goto :goto_0
+
+    :cond_1
+    move v4, v5
+
+    :goto_0
+    if-eqz v4, :cond_2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v9
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v6
+
+    invoke-interface {v1, v9, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_2
+    iget v1, p0, Lva2;->o:I
+
+    if-ltz v1, :cond_3
+
+    iput v1, p1, Leb2;->m:I
+
+    :cond_3
+    iget-boolean p1, p0, Lva2;->Y:Z
+
+    if-eqz p1, :cond_4
+
+    if-eqz v4, :cond_4
+
+    invoke-virtual {v0}, Lza2;->K()J
+
+    move-result-wide v0
+
+    cmp-long p1, v2, v0
+
+    if-nez p1, :cond_4
+
+    move v5, v8
+
+    :cond_4
+    iget-object p0, p0, Lva2;->X:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {p0, v5}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    return-void
 .end method

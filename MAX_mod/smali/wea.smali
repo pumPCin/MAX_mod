@@ -1,81 +1,193 @@
-.class public final Lwea;
+.class public abstract Lwea;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Landroid/content/Context;
+# static fields
+.field public static final A:I
 
-.field public final b:Lxh7;
+.field public static final B:I
+
+.field public static final C:I
+
+.field public static final D:I
+
+.field public static final a:I
+
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
+.field public static final s:I
+
+.field public static final t:I
+
+.field public static final u:I
+
+.field public static final v:I
+
+.field public static final w:I
+
+.field public static final x:I
+
+.field public static final y:I
+
+.field public static final z:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lxh7;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lx5c;->chat__background:I
 
-    iput-object p1, p0, Lwea;->a:Landroid/content/Context;
+    sput v0, Lwea;->a:I
 
-    iput-object p2, p0, Lwea;->b:Lxh7;
+    sget v0, Lx5c;->chat__bottom_container:I
 
-    return-void
-.end method
+    sput v0, Lwea;->b:I
 
+    sget v0, Lx5c;->chat__bottom_container_chat_status_button:I
 
-# virtual methods
-.method public final a(J)V
-    .registers 5
+    sput v0, Lwea;->c:I
 
-    const-string v0, ":chats?id="
+    sget v0, Lx5c;->chat__bottom_container_search:I
 
-    const-string v1, "&type=local"
+    sput v0, Lwea;->d:I
 
-    invoke-static {p1, p2, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    sget v0, Lx5c;->chat__bottom_container_search_down_button:I
 
-    move-result-object p1
+    sput v0, Lwea;->e:I
 
-    iget-object p2, p0, Lwea;->b:Lxh7;
+    sget v0, Lx5c;->chat__bottom_container_search_separator:I
 
-    invoke-interface {p2}, Lxh7;->getValue()Ljava/lang/Object;
+    sput v0, Lwea;->f:I
 
-    move-result-object p2
+    sget v0, Lx5c;->chat__bottom_container_search_up_button:I
 
-    check-cast p2, Ltk;
+    sput v0, Lwea;->g:I
 
-    check-cast p2, Lfp7;
+    sget v0, Lx5c;->chat__main_container:I
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sput v0, Lwea;->h:I
 
-    invoke-static {p1}, Lyu0;->e(Ljava/lang/String;)Landroid/net/Uri;
+    sget v0, Lx5c;->chat__media_bar_container:I
 
-    move-result-object p1
+    sput v0, Lwea;->i:I
 
-    sget p2, Lone/me/android/deeplink/NewWidgetActivity;->Q0:I
+    sget v0, Lx5c;->chat__media_keyboard:I
 
-    new-instance p2, Landroid/content/Intent;
+    sput v0, Lwea;->j:I
 
-    const-class v0, Lone/me/android/deeplink/NewWidgetActivity;
+    sget v0, Lx5c;->chat__messages_container:I
 
-    iget-object p0, p0, Lwea;->a:Landroid/content/Context;
+    sput v0, Lwea;->k:I
 
-    invoke-direct {p2, p0, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    sget v0, Lx5c;->chat__pinbars_container:I
 
-    const-string v0, "deep_link"
+    sput v0, Lwea;->l:I
 
-    invoke-virtual {p2, v0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+    sget v0, Lx5c;->chat__search_view:I
 
-    const-string p1, "snackbar"
+    sput v0, Lwea;->m:I
 
-    const/4 v0, 0x0
+    sget v0, Lx5c;->chat__suggestion_container:I
 
-    invoke-virtual {p2, p1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+    sput v0, Lwea;->n:I
 
-    const/high16 p1, 0x10000000
+    sget v0, Lx5c;->chat__toolbar:I
 
-    invoke-virtual {p2, p1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    sput v0, Lwea;->o:I
 
-    invoke-virtual {p0, p2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    sget v0, Lx5c;->chat__video_msg_container:I
+
+    sput v0, Lwea;->p:I
+
+    sget v0, Lx5c;->chat_screen__action_cancel:I
+
+    sput v0, Lwea;->q:I
+
+    sget v0, Lx5c;->chat_screen__leave_chat_confirm:I
+
+    sput v0, Lwea;->r:I
+
+    sget v0, Lx5c;->chat_screen__remove_chat_confirm:I
+
+    sput v0, Lwea;->s:I
+
+    sget v0, Lx5c;->chat_screen__video_msg_placeholder:I
+
+    sput v0, Lwea;->t:I
+
+    sget v0, Lx5c;->chat_screen__video_msg_preview:I
+
+    sput v0, Lwea;->u:I
+
+    sget v0, Lx5c;->chat_screen__video_msg_progress:I
+
+    sput v0, Lwea;->v:I
+
+    sget v0, Lx5c;->chat_screen__video_msg_root_container:I
+
+    sput v0, Lwea;->w:I
+
+    sget v0, Lx5c;->chat_screen__video_msg_switch_camera_btn:I
+
+    sput v0, Lwea;->x:I
+
+    sget v0, Lx5c;->chat_screen__video_msg_timer:I
+
+    sput v0, Lwea;->y:I
+
+    sget v0, Lx5c;->chat_screen__video_msg_torch_btn:I
+
+    sput v0, Lwea;->z:I
+
+    sget v0, Lx5c;->chat_screen__video_msg_video_view:I
+
+    sput v0, Lwea;->A:I
+
+    sget v0, Lx5c;->media_bar__emoji_keyboard_container:I
+
+    sput v0, Lwea;->B:I
+
+    sget v0, Lx5c;->media_bar__media_type_picker_button:I
+
+    sput v0, Lwea;->C:I
+
+    sget v0, Lx5c;->media_bar__select_album_container:I
+
+    sput v0, Lwea;->D:I
 
     return-void
 .end method

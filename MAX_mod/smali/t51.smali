@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lz51;
+.implements Lu51;
 
 
 # static fields
@@ -50,7 +50,7 @@
 .method public final hashCode()I
     .registers 1
 
-    const p0, -0x6cbb84b4
+    const p0, -0x293f37ba
 
     return p0
 .end method
@@ -58,7 +58,7 @@
 .method public final toString()Ljava/lang/String;
     .registers 1
 
-    const-string p0, "Failed"
+    const-string p0, "Restored"
 
     return-object p0
 .end method

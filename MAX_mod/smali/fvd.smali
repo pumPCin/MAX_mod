@@ -2,127 +2,155 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lis7;
+
+# static fields
+.field public static final i:[I
+
+.field public static final j:[F
+
+.field public static final k:[I
+
+.field public static final l:[F
 
 
 # instance fields
-.field public final a:Ly64;
+.field public final a:Landroid/graphics/Paint;
 
-.field public final b:Lo5e;
+.field public final b:Landroid/graphics/Paint;
 
-.field public c:[B
+.field public final c:Landroid/graphics/Paint;
+
+.field public final d:I
+
+.field public final e:I
+
+.field public final f:I
+
+.field public final g:Landroid/graphics/Path;
+
+.field public final h:Landroid/graphics/Paint;
 
 
 # direct methods
-.method public constructor <init>(Lr64;Ly64;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
+
+    const/4 v0, 0x3
+
+    new-array v1, v0, [I
+
+    sput-object v1, Lfvd;->i:[I
+
+    new-array v0, v0, [F
+
+    fill-array-data v0, :array_0
+
+    sput-object v0, Lfvd;->j:[F
+
+    const/4 v0, 0x4
+
+    new-array v1, v0, [I
+
+    sput-object v1, Lfvd;->k:[I
+
+    new-array v0, v0, [F
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Lfvd;->l:[F
+
+    return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x0
+        0x3f000000    # 0.5f
+        0x3f800000    # 1.0f
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x0
+        0x0
+        0x3f000000    # 0.5f
+        0x3f800000    # 1.0f
+    .end array-data
+.end method
+
+.method public constructor <init>()V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v0, Las7;->b:Ljava/util/concurrent/atomic/AtomicLong;
+    new-instance v0, Landroid/graphics/Path;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->getAndIncrement()J
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object p2, p0, Lfvd;->a:Ly64;
+    iput-object v0, p0, Lfvd;->g:Landroid/graphics/Path;
 
-    new-instance p2, Lo5e;
+    new-instance v0, Landroid/graphics/Paint;
 
-    invoke-direct {p2, p1}, Lo5e;-><init>(Lr64;)V
+    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object p2, p0, Lfvd;->b:Lo5e;
+    iput-object v0, p0, Lfvd;->h:Landroid/graphics/Paint;
 
-    return-void
-.end method
+    new-instance v1, Landroid/graphics/Paint;
 
+    invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
-# virtual methods
-.method public final a()V
-    .registers 1
+    iput-object v1, p0, Lfvd;->a:Landroid/graphics/Paint;
 
-    return-void
-.end method
+    const/16 v2, 0x44
 
-.method public final load()V
-    .registers 5
+    const/high16 v3, -0x1000000
 
-    const-wide/16 v0, 0x0
+    invoke-static {v3, v2}, Lm83;->i(II)I
 
-    iget-object v2, p0, Lfvd;->b:Lo5e;
+    move-result v2
 
-    iput-wide v0, v2, Lo5e;->b:J
+    iput v2, p0, Lfvd;->d:I
 
-    :try_start_0
-    iget-object v0, p0, Lfvd;->a:Ly64;
+    const/16 v2, 0x14
 
-    invoke-virtual {v2, v0}, Lo5e;->F(Ly64;)J
+    invoke-static {v3, v2}, Lm83;->i(II)I
 
-    const/4 v0, 0x0
+    move-result v2
 
-    :goto_0
-    const/4 v1, -0x1
+    iput v2, p0, Lfvd;->e:I
 
-    if-eq v0, v1, :cond_2
+    const/4 v2, 0x0
 
-    iget-wide v0, v2, Lo5e;->b:J
+    invoke-static {v3, v2}, Lm83;->i(II)I
 
-    long-to-int v0, v0
+    move-result v3
 
-    iget-object v1, p0, Lfvd;->c:[B
+    iput v3, p0, Lfvd;->f:I
 
-    if-nez v1, :cond_0
+    iget v3, p0, Lfvd;->d:I
 
-    const/16 v1, 0x400
+    invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    new-array v1, v1, [B
+    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    iput-object v1, p0, Lfvd;->c:[B
+    new-instance v0, Landroid/graphics/Paint;
 
-    goto :goto_1
+    const/4 v1, 0x4
 
-    :catchall_0
-    move-exception p0
+    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
-    goto :goto_2
+    iput-object v0, p0, Lfvd;->b:Landroid/graphics/Paint;
 
-    :cond_0
-    array-length v3, v1
+    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
-    if-ne v0, v3, :cond_1
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    array-length v3, v1
+    new-instance v1, Landroid/graphics/Paint;
 
-    mul-int/lit8 v3, v3, 0x2
+    invoke-direct {v1, v0}, Landroid/graphics/Paint;-><init>(Landroid/graphics/Paint;)V
 
-    invoke-static {v1, v3}, Ljava/util/Arrays;->copyOf([BI)[B
-
-    move-result-object v1
-
-    iput-object v1, p0, Lfvd;->c:[B
-
-    :cond_1
-    :goto_1
-    iget-object v1, p0, Lfvd;->c:[B
-
-    array-length v3, v1
-
-    sub-int/2addr v3, v0
-
-    invoke-virtual {v2, v1, v0, v3}, Lo5e;->read([BII)I
-
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {v2}, Lfog;->h(Lr64;)V
+    iput-object v1, p0, Lfvd;->c:Landroid/graphics/Paint;
 
     return-void
-
-    :goto_2
-    invoke-static {v2}, Lfog;->h(Lr64;)V
-
-    throw p0
 .end method

@@ -1,23 +1,26 @@
-.class public abstract Le12;
+.class public interface abstract Le12;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lkotlin/coroutines/Continuation;
 
-# direct methods
-.method public static a(Landroid/os/CancellationSignal;)V
-    .registers 1
 
-    invoke-virtual {p0}, Landroid/os/CancellationSignal;->cancel()V
-
-    return-void
+# virtual methods
+.method public abstract d(Ls04;)V
 .end method
 
-.method public static b()Landroid/os/CancellationSignal;
-    .registers 1
+.method public abstract e(Lbc6;)V
+.end method
 
-    new-instance v0, Landroid/os/CancellationSignal;
+.method public abstract f(Ljava/lang/Object;Lrc6;)V
+.end method
 
-    invoke-direct {v0}, Landroid/os/CancellationSignal;-><init>()V
+.method public abstract isCancelled()Z
+.end method
 
-    return-object v0
+.method public abstract k(Ljava/lang/Object;Lrc6;)Lkotlinx/coroutines/internal/Symbol;
+.end method
+
+.method public abstract n(Ljava/lang/Object;)V
 .end method

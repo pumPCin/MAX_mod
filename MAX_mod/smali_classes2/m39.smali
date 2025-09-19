@@ -1,119 +1,129 @@
 .class public final Lm39;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public synthetic X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.field public final b:Z
+
+.field public final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
-    .registers 3
+.method public constructor <init>(Ljava/lang/String;Z)V
+    .registers 4
 
-    iput-object p2, p0, Lm39;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    const/4 v0, 0x1
 
-    const/4 p2, 0x2
+    iput v0, p0, Lm39;->a:I
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p2, p0, Lm39;->b:Z
+
+    iput-object p1, p0, Lm39;->c:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;ZI)V
+    .registers 6
+
+    iput p3, p0, Lm39;->a:I
+
+    packed-switch p3, :pswitch_data_0
+
+    new-instance p3, Ll39;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p3, p1, v0}, Ll39;-><init>(Ljava/lang/String;I)V
+
+    new-instance v0, Ll39;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1}, Ll39;-><init>(Ljava/lang/String;I)V
+
+    iput v1, p0, Lm39;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lm39;->c:Ljava/lang/String;
+
+    iput-boolean p2, p0, Lm39;->b:Z
+
+    const/4 p0, 0x3
+
+    invoke-static {p0, p3}, Lcb7;->G(ILzb6;)Lcl7;
+
+    invoke-static {p0, v0}, Lcb7;->G(ILzb6;)Lcl7;
+
+    return-void
+
+    :pswitch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lm39;->c:Ljava/lang/String;
+
+    iput-boolean p2, p0, Lm39;->b:Z
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+    .end packed-switch
+.end method
+
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public toString()Ljava/lang/String;
     .registers 3
 
-    check-cast p1, Ljava/lang/Number;
+    iget v0, p0, Lm39;->a:I
 
-    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
+    packed-switch v0, :pswitch_data_0
 
-    move-result p1
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1, p2}, Lm39;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
-
-    check-cast p0, Lm39;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lm39;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lm39;
-
-    iget-object p0, p0, Lm39;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    invoke-direct {v0, p2, p0}, Lm39;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
-
-    check-cast p1, Ljava/lang/Number;
-
-    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
-
-    move-result p0
-
-    iput p0, v0, Lm39;->X:I
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget p1, p0, Lm39;->X:I
-
-    sget-object v0, Lone/me/sdk/messagewrite/MessageWriteWidget;->z0:[Lsf7;
-
-    iget-object p0, p0, Lm39;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->H0()Lrge;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lrge;->E0:Ln4e;
-
-    :cond_0
-    invoke-virtual {p0}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    check-cast v1, Ljava/lang/Number;
-
-    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Ln4e;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object p0, Lncf;->a:Lncf;
 
     return-object p0
+
+    :pswitch_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "MessageText(text=\'"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string v1, "***"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "\', bundled="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lm39;->b:Z
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

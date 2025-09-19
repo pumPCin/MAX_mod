@@ -1,133 +1,107 @@
 .class public final Lrjd;
-.super Ltjd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Lkotlinx/coroutines/internal/ContextScope;
 
-.field public final b:Lqte;
+.field public final b:Lcl7;
+
+.field public final c:Lcl7;
+
+.field public final d:Lcl7;
+
+.field public final e:Lcl7;
+
+.field public final f:Lcl7;
+
+.field public final g:Lcl7;
+
+.field public final h:Lcl7;
+
+.field public final i:Lcl7;
+
+.field public final j:Lcl7;
+
+.field public final k:Lcl7;
+
+.field public final l:Lcl7;
+
+.field public final m:Lcl7;
+
+.field public final n:Lcl7;
+
+.field public final o:Lcl7;
+
+.field public final p:Lcl7;
+
+.field public final q:Lcl7;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lqte;)V
-    .registers 3
+.method public constructor <init>(Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lt04;Lxwe;Lcl7;)V
+    .registers 21
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lrjd;->a:Ljava/lang/String;
+    move-object/from16 v0, p17
 
-    iput-object p2, p0, Lrjd;->b:Lqte;
+    check-cast v0, Laga;
+
+    invoke-virtual {v0}, Laga;->b()Ls04;
+
+    move-result-object v0
+
+    move-object/from16 v1, p16
+
+    invoke-virtual {v0, v1}, Lf0;->plus(Lq04;)Lq04;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lb0b;->a(Lq04;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lrjd;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    iput-object p1, p0, Lrjd;->b:Lcl7;
+
+    iput-object p2, p0, Lrjd;->c:Lcl7;
+
+    iput-object p3, p0, Lrjd;->d:Lcl7;
+
+    iput-object p4, p0, Lrjd;->e:Lcl7;
+
+    iput-object p5, p0, Lrjd;->f:Lcl7;
+
+    iput-object p6, p0, Lrjd;->g:Lcl7;
+
+    iput-object p7, p0, Lrjd;->h:Lcl7;
+
+    iput-object p8, p0, Lrjd;->i:Lcl7;
+
+    iput-object p9, p0, Lrjd;->j:Lcl7;
+
+    iput-object p10, p0, Lrjd;->k:Lcl7;
+
+    iput-object p11, p0, Lrjd;->l:Lcl7;
+
+    iput-object p12, p0, Lrjd;->m:Lcl7;
+
+    iput-object p13, p0, Lrjd;->n:Lcl7;
+
+    move-object/from16 p1, p14
+
+    iput-object p1, p0, Lrjd;->o:Lcl7;
+
+    move-object/from16 p1, p15
+
+    iput-object p1, p0, Lrjd;->p:Lcl7;
+
+    move-object/from16 p1, p18
+
+    iput-object p1, p0, Lrjd;->q:Lcl7;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Lrjd;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lrjd;
-
-    iget-object v0, p0, Lrjd;->a:Ljava/lang/String;
-
-    iget-object v1, p1, Lrjd;->a:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-object p0, p0, Lrjd;->b:Lqte;
-
-    iget-object p1, p1, Lrjd;->b:Lqte;
-
-    invoke-virtual {p0, p1}, Lqte;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-object v0, p0, Lrjd;->a:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lrjd;->b:Lqte;
-
-    iget p0, p0, Lqte;->b:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "CopyToClipboard(textToCopy="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lrjd;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", snackbarTitle="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lrjd;->b:Lqte;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

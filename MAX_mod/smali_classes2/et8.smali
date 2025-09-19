@@ -1,118 +1,129 @@
 .class public final Let8;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public X:I
+.field public final a:Ljava/util/List;
 
-.field public final synthetic Y:Lht8;
-
-.field public final synthetic Z:Lo72;
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lht8;Lo72;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Ljava/util/List;Ljava/util/List;)V
+    .registers 3
 
-    iput-object p1, p0, Let8;->Y:Lht8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Let8;->Z:Lo72;
+    iput-object p1, p0, Let8;->a:Ljava/util/List;
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Let8;->b:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    check-cast p1, Lr04;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Let8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Let8;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Let8;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p1, Let8;
-
-    iget-object v0, p0, Let8;->Y:Lht8;
-
-    iget-object p0, p0, Let8;->Z:Lo72;
-
-    invoke-direct {p1, v0, p0, p2}, Let8;-><init>(Lht8;Lo72;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    iget v0, p0, Let8;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    instance-of v1, p1, Let8;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-nez v1, :cond_1
 
-    throw p0
+    return v2
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    check-cast p1, Let8;
 
-    iput v1, p0, Let8;->X:I
+    iget-object v1, p0, Let8;->a:Ljava/util/List;
 
-    iget-object p1, p0, Let8;->Y:Lht8;
+    iget-object v3, p1, Let8;->a:Ljava/util/List;
 
-    iget-object v0, p0, Let8;->Z:Lo72;
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-static {p1, v0, p0}, Lht8;->r(Lht8;Lo72;Lcx3;)Ljava/lang/Object;
+    move-result v1
 
-    move-result-object p0
+    if-nez v1, :cond_2
 
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
+    return v2
 
     :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    iget-object p0, p0, Let8;->b:Ljava/util/List;
+
+    iget-object p1, p1, Let8;->b:Ljava/util/List;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    iget-object v0, p0, Let8;->a:Ljava/util/List;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Let8;->b:Ljava/util/List;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "MemberListActionsWrapper(topActions="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Let8;->a:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", bottomActions="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Let8;->b:Ljava/util/List;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

@@ -1,69 +1,150 @@
-.class public final synthetic Lnua;
-.super Ljava/lang/Object;
+.class public final Lnua;
+.super Lys9;
 .source "SourceFile"
-
-# interfaces
-.implements Ljm3;
 
 
 # instance fields
-.field public final synthetic a:Lxua;
+.field public final b:J
 
-.field public final synthetic b:Z
+.field public final c:Ljava/lang/String;
 
-.field public final synthetic c:Lorg/webrtc/SessionDescription;
+.field public final d:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxua;ZLorg/webrtc/SessionDescription;)V
-    .registers 4
+.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;)V
+    .registers 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lylf;->a:Lylf;
 
-    iput-object p1, p0, Lnua;->a:Lxua;
+    invoke-direct {p0, v0}, Lys9;-><init>(Ljava/lang/Object;)V
 
-    iput-boolean p2, p0, Lnua;->b:Z
+    iput-wide p1, p0, Lnua;->b:J
 
-    iput-object p3, p0, Lnua;->c:Lorg/webrtc/SessionDescription;
+    iput-object p3, p0, Lnua;->c:Ljava/lang/String;
+
+    iput-object p4, p0, Lnua;->d:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .registers 5
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 9
 
-    check-cast p1, Lorg/webrtc/PeerConnection;
+    const/4 v0, 0x1
 
-    iget-object p1, p0, Lnua;->a:Lxua;
+    if-ne p0, p1, :cond_0
 
-    iget-object v0, p1, Lxua;->r:Landroid/os/Handler;
+    return v0
 
-    iget-boolean v1, p0, Lnua;->b:Z
-
-    iget-object p0, p0, Lnua;->c:Lorg/webrtc/SessionDescription;
-
-    if-eqz v1, :cond_0
-
-    new-instance v1, Lrua;
+    :cond_0
+    instance-of v1, p1, Lnua;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p1, p0, v2}, Lrua;-><init>(Lxua;Lorg/webrtc/SessionDescription;I)V
+    if-nez v1, :cond_1
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    return v2
 
-    return-void
+    :cond_1
+    check-cast p1, Lnua;
 
-    :cond_0
-    new-instance v1, Lrua;
+    iget-wide v3, p0, Lnua;->b:J
 
-    const/4 v2, 0x1
+    iget-wide v5, p1, Lnua;->b:J
 
-    invoke-direct {v1, p1, p0, v2}, Lrua;-><init>(Lxua;Lorg/webrtc/SessionDescription;I)V
+    cmp-long v1, v3, v5
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    if-eqz v1, :cond_2
 
-    return-void
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lnua;->c:Ljava/lang/String;
+
+    iget-object v3, p1, Lnua;->c:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object p0, p0, Lnua;->d:Ljava/lang/String;
+
+    iget-object p1, p1, Lnua;->d:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget-wide v0, p0, Lnua;->b:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lnua;->c:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2}, Lsq3;->d(IILjava/lang/String;)I
+
+    move-result v0
+
+    iget-object p0, p0, Lnua;->d:Ljava/lang/String;
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    const-string v0, "OpenPhoneBook(contactId="
+
+    const-string v1, ", fullName="
+
+    iget-wide v2, p0, Lnua;->b:J
+
+    iget-object v4, p0, Lnua;->c:Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v1, v4}, Lmhc;->i(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", phone="
+
+    const-string v2, ")"
+
+    iget-object p0, p0, Lnua;->d:Ljava/lang/String;
+
+    invoke-static {v0, v1, p0, v2}, Lz7e;->s(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

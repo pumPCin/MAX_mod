@@ -1,192 +1,192 @@
-.class public abstract Lml0;
+.class public final Lml0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ld4a;
-.implements Lntb;
+.implements Loq4;
+.implements Lzq;
 
 
 # instance fields
-.field public X:I
+.field public X:Lz96;
 
-.field public final a:Ld4a;
+.field public Y:Z
 
-.field public b:Lnp4;
+.field public volatile Z:Z
 
-.field public c:Lntb;
+.field public final a:Ld8a;
+
+.field public final b:Lnl0;
+
+.field public c:Z
 
 .field public o:Z
 
+.field public r0:J
+
 
 # direct methods
-.method public constructor <init>(Ld4a;)V
-    .registers 2
+.method public constructor <init>(Ld8a;Lnl0;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lml0;->a:Ld4a;
+    iput-object p1, p0, Lml0;->a:Ld8a;
+
+    iput-object p2, p0, Lml0;->b:Lnl0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public b()V
-    .registers 2
+.method public final a(JLjava/lang/Object;)V
+    .registers 6
 
-    iget-boolean v0, p0, Lml0;->o:Z
+    iget-boolean v0, p0, Lml0;->Z:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
     :cond_0
-    const/4 v0, 0x1
+    iget-boolean v0, p0, Lml0;->Y:Z
 
-    iput-boolean v0, p0, Lml0;->o:Z
+    if-nez v0, :cond_5
 
-    iget-object p0, p0, Lml0;->a:Ld4a;
+    monitor-enter p0
 
-    invoke-interface {p0}, Ld4a;->b()V
-
-    return-void
-.end method
-
-.method public final c(Lnp4;)V
-    .registers 3
-
-    iget-object v0, p0, Lml0;->b:Lnp4;
-
-    invoke-static {v0, p1}, Lrp4;->f(Lnp4;Lnp4;)Z
-
-    move-result v0
+    :try_start_0
+    iget-boolean v0, p0, Lml0;->Z:Z
 
     if-eqz v0, :cond_1
 
-    iput-object p1, p0, Lml0;->b:Lnp4;
+    monitor-exit p0
 
-    instance-of v0, p1, Lntb;
+    return-void
 
-    if-eqz v0, :cond_0
+    :catchall_0
+    move-exception p1
 
-    check-cast p1, Lntb;
-
-    iput-object p1, p0, Lml0;->c:Lntb;
-
-    :cond_0
-    iget-object p1, p0, Lml0;->a:Ld4a;
-
-    invoke-interface {p1, p0}, Ld4a;->c(Lnp4;)V
+    goto :goto_0
 
     :cond_1
+    iget-wide v0, p0, Lml0;->r0:J
+
+    cmp-long p1, v0, p1
+
+    if-nez p1, :cond_2
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_2
+    iget-boolean p1, p0, Lml0;->o:Z
+
+    if-eqz p1, :cond_4
+
+    iget-object p1, p0, Lml0;->X:Lz96;
+
+    if-nez p1, :cond_3
+
+    new-instance p1, Lz96;
+
+    const/4 p2, 0x2
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, p2, v0}, Lz96;-><init>(IB)V
+
+    iput-object p1, p0, Lml0;->X:Lz96;
+
+    :cond_3
+    invoke-virtual {p1, p3}, Lz96;->k(Ljava/lang/Object;)V
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_4
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lml0;->c:Z
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    iput-boolean p1, p0, Lml0;->Y:Z
+
+    goto :goto_1
+
+    :goto_0
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+
+    :cond_5
+    :goto_1
+    invoke-virtual {p0, p3}, Lml0;->test(Ljava/lang/Object;)Z
+
     return-void
 .end method
 
-.method public clear()V
-    .registers 1
-
-    iget-object p0, p0, Lml0;->c:Lntb;
-
-    invoke-interface {p0}, Lxtd;->clear()V
-
-    return-void
-.end method
-
-.method public final g()V
-    .registers 1
-
-    iget-object p0, p0, Lml0;->b:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-.end method
-
-.method public final h()Z
-    .registers 1
-
-    iget-object p0, p0, Lml0;->b:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->h()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final isEmpty()Z
-    .registers 1
-
-    iget-object p0, p0, Lml0;->c:Lntb;
-
-    invoke-interface {p0}, Lxtd;->isEmpty()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final offer(Ljava/lang/Object;)Z
+.method public final e()V
     .registers 2
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    iget-boolean v0, p0, Lml0;->Z:Z
 
-    const-string p1, "Should not be called!"
+    if-nez v0, :cond_0
 
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public onError(Ljava/lang/Throwable;)V
-    .registers 3
-
-    iget-boolean v0, p0, Lml0;->o:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_0
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lml0;->o:Z
+    iput-boolean v0, p0, Lml0;->Z:Z
 
-    iget-object p0, p0, Lml0;->a:Ld4a;
+    iget-object v0, p0, Lml0;->b:Lnl0;
 
-    invoke-interface {p0, p1}, Ld4a;->onError(Ljava/lang/Throwable;)V
+    invoke-virtual {v0, p0}, Lnl0;->z(Lml0;)V
 
+    :cond_0
     return-void
 .end method
 
-.method public t(I)I
-    .registers 4
+.method public final f()Z
+    .registers 1
 
-    iget-object v0, p0, Lml0;->c:Lntb;
+    iget-boolean p0, p0, Lml0;->Z:Z
 
-    if-eqz v0, :cond_0
+    return p0
+.end method
 
-    and-int/lit8 v1, p1, 0x4
+.method public final test(Ljava/lang/Object;)Z
+    .registers 3
 
-    if-nez v1, :cond_0
+    iget-boolean v0, p0, Lml0;->Z:Z
 
-    invoke-interface {v0, p1}, Lotb;->t(I)I
+    if-nez v0, :cond_1
 
-    move-result p1
+    iget-object p0, p0, Lml0;->a:Ld8a;
 
-    if-eqz p1, :cond_1
+    invoke-static {p0, p1}, Lq1a;->a(Ld8a;Ljava/lang/Object;)Z
 
-    iput p1, p0, Lml0;->X:I
+    move-result p0
+
+    if-eqz p0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 p1, 0x0
+    const/4 p0, 0x0
+
+    return p0
 
     :cond_1
     :goto_0
-    return p1
+    const/4 p0, 0x1
+
+    return p0
 .end method

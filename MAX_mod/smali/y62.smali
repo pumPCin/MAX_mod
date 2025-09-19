@@ -1,167 +1,316 @@
 .class public final Ly62;
-.super Ljava/lang/Object;
+.super Lrz6;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:[C
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Ly62;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public static final b:[B
+
+# instance fields
+.field public final X:[Ljava/lang/String;
+
+.field public final Y:[Lrz6;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:Z
+
+.field public final o:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 10
+    .registers 2
 
-    const/16 v0, 0x75
+    new-instance v0, Lz7;
 
-    new-array v0, v0, [C
+    const/16 v1, 0x10
 
-    sput-object v0, Ly62;->a:[C
+    invoke-direct {v0, v1}, Lz7;-><init>(I)V
 
-    const/16 v0, 0x7e
+    sput-object v0, Ly62;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    new-array v0, v0, [B
+    return-void
+.end method
 
-    sput-object v0, Ly62;->b:[B
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .registers 6
+
+    const-string v0, "CTOC"
+
+    invoke-direct {p0, v0}, Lrz6;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sget v1, Llrf;->a:I
+
+    iput-object v0, p0, Ly62;->b:Ljava/lang/String;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_0
+
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v1
+
+    :goto_0
+    iput-boolean v0, p0, Ly62;->c:Z
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    move v2, v1
+
+    :goto_1
+    iput-boolean v2, p0, Ly62;->o:Z
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArray()[Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ly62;->X:[Ljava/lang/String;
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    new-array v2, v0, [Lrz6;
+
+    iput-object v2, p0, Ly62;->Y:[Lrz6;
+
+    :goto_2
+    if-ge v1, v0, :cond_2
+
+    iget-object v2, p0, Ly62;->Y:[Lrz6;
+
+    const-class v3, Lrz6;
+
+    invoke-virtual {v3}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v3}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object v3
+
+    check-cast v3, Lrz6;
+
+    aput-object v3, v2, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ZZ[Ljava/lang/String;[Lrz6;)V
+    .registers 7
+
+    const-string v0, "CTOC"
+
+    invoke-direct {p0, v0}, Lrz6;-><init>(Ljava/lang/String;)V
+
+    iput-object p1, p0, Ly62;->b:Ljava/lang/String;
+
+    iput-boolean p2, p0, Ly62;->c:Z
+
+    iput-boolean p3, p0, Ly62;->o:Z
+
+    iput-object p4, p0, Ly62;->X:[Ljava/lang/String;
+
+    iput-object p5, p0, Ly62;->Y:[Lrz6;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_2
+
+    const-class v2, Ly62;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Ly62;
+
+    iget-boolean v2, p0, Ly62;->c:Z
+
+    iget-boolean v3, p1, Ly62;->c:Z
+
+    if-ne v2, v3, :cond_2
+
+    iget-boolean v2, p0, Ly62;->o:Z
+
+    iget-boolean v3, p1, Ly62;->o:Z
+
+    if-ne v2, v3, :cond_2
+
+    iget-object v2, p0, Ly62;->b:Ljava/lang/String;
+
+    iget-object v3, p1, Ly62;->b:Ljava/lang/String;
+
+    invoke-static {v2, v3}, Llrf;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p0, Ly62;->X:[Ljava/lang/String;
+
+    iget-object v3, p1, Ly62;->X:[Ljava/lang/String;
+
+    invoke-static {v2, v3}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object p0, p0, Ly62;->Y:[Lrz6;
+
+    iget-object p1, p1, Ly62;->Y:[Lrz6;
+
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
+
+    :cond_2
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    const/16 v0, 0x20f
+
+    iget-boolean v1, p0, Ly62;->c:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Ly62;->o:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Ly62;->b:Ljava/lang/String;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 6
+
+    iget-object p2, p0, Ly62;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-boolean p2, p0, Ly62;->c:Z
+
+    int-to-byte p2, p2
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+
+    iget-boolean p2, p0, Ly62;->o:Z
+
+    int-to-byte p2, p2
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByte(B)V
+
+    iget-object p2, p0, Ly62;->X:[Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
+
+    iget-object p0, p0, Ly62;->Y:[Lrz6;
+
+    array-length p2, p0
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    array-length p2, p0
 
     const/4 v0, 0x0
 
     move v1, v0
 
     :goto_0
-    const/16 v2, 0x20
+    if-ge v1, p2, :cond_0
 
-    if-ge v1, v2, :cond_0
+    aget-object v2, p0, v1
+
+    invoke-virtual {p1, v2, v0}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
-
-    :cond_0
-    const/16 v1, 0x62
-
-    const/16 v3, 0x8
-
-    invoke-static {v1, v3}, Ly62;->a(CI)V
-
-    const/16 v1, 0x74
-
-    const/16 v4, 0x9
-
-    invoke-static {v1, v4}, Ly62;->a(CI)V
-
-    const/16 v1, 0x6e
-
-    const/16 v5, 0xa
-
-    invoke-static {v1, v5}, Ly62;->a(CI)V
-
-    const/16 v1, 0xc
-
-    const/16 v6, 0x66
-
-    invoke-static {v6, v1}, Ly62;->a(CI)V
-
-    const/16 v1, 0x72
-
-    const/16 v6, 0xd
-
-    invoke-static {v1, v6}, Ly62;->a(CI)V
-
-    const/16 v1, 0x2f
-
-    invoke-static {v1, v1}, Ly62;->a(CI)V
-
-    const/16 v1, 0x22
-
-    invoke-static {v1, v1}, Ly62;->a(CI)V
-
-    const/16 v7, 0x5c
-
-    invoke-static {v7, v7}, Ly62;->a(CI)V
-
-    sget-object v8, Ly62;->b:[B
-
-    :goto_1
-    const/16 v9, 0x21
-
-    if-ge v0, v9, :cond_1
-
-    const/16 v9, 0x7f
-
-    aput-byte v9, v8, v0
-
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x3
-
-    aput-byte v0, v8, v4
-
-    aput-byte v0, v8, v5
-
-    aput-byte v0, v8, v6
-
-    aput-byte v0, v8, v2
-
-    const/16 v0, 0x2c
-
-    const/4 v2, 0x4
-
-    aput-byte v2, v8, v0
-
-    const/16 v0, 0x3a
-
-    const/4 v2, 0x5
-
-    aput-byte v2, v8, v0
-
-    const/16 v0, 0x7b
-
-    const/4 v2, 0x6
-
-    aput-byte v2, v8, v0
-
-    const/16 v0, 0x7d
-
-    const/4 v2, 0x7
-
-    aput-byte v2, v8, v0
-
-    const/16 v0, 0x5b
-
-    aput-byte v3, v8, v0
-
-    const/16 v0, 0x5d
-
-    aput-byte v4, v8, v0
-
-    const/4 v0, 0x1
-
-    aput-byte v0, v8, v1
-
-    const/4 v0, 0x2
-
-    aput-byte v0, v8, v7
-
-    return-void
-.end method
-
-.method public static a(CI)V
-    .registers 3
-
-    const/16 v0, 0x75
-
-    if-eq p0, v0, :cond_0
-
-    sget-object v0, Ly62;->a:[C
-
-    int-to-char p1, p1
-
-    aput-char p1, v0, p0
 
     :cond_0
     return-void

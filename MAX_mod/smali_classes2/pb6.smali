@@ -1,194 +1,73 @@
-.class public final Lpb6;
-.super Lsb6;
+.class public final synthetic Lpb6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpm3;
+.implements Lqyg;
 
-# static fields
-.field public static final e:Lpb6;
 
-.field public static final f:Landroid/net/Uri;
-
-.field public static final g:Ljava/lang/String;
-
-.field public static final h:Ljava/lang/String;
-
-.field public static final i:Ljava/lang/String;
-
-.field public static final j:Ljava/lang/String;
-
-.field public static final k:Ljava/lang/String;
-
-.field public static final l:Ljava/lang/String;
-
-.field public static final m:Ljava/lang/String;
-
-.field public static final n:Ljava/lang/String;
-
-.field public static final o:Ljava/lang/String;
-
-.field public static final p:Ljava/lang/String;
+# instance fields
+.field public final synthetic a:Lru/ok/messages/views/fragments/FrgProfilePhoto;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Lru/ok/messages/views/fragments/FrgProfilePhoto;)V
     .registers 2
 
-    new-instance v0, Lpb6;
+    iput-object p1, p0, Lpb6;->a:Lru/ok/messages/views/fragments/FrgProfilePhoto;
 
-    const-string v1, "\n              _size > 0\n              AND\n              (\n                media_type = 1\n                OR\n                media_type = 3\n              )\n            "
-
-    invoke-direct {v0, v1}, Lsb6;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lpb6;->e:Lpb6;
-
-    const-string v0, "external"
-
-    invoke-static {v0}, Landroid/provider/MediaStore$Files;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    sput-object v0, Lpb6;->f:Landroid/net/Uri;
-
-    const-string v0, "_id"
-
-    sput-object v0, Lpb6;->g:Ljava/lang/String;
-
-    const-string v0, "bucket_id"
-
-    sput-object v0, Lpb6;->h:Ljava/lang/String;
-
-    const-string v0, "bucket_display_name"
-
-    sput-object v0, Lpb6;->i:Ljava/lang/String;
-
-    const-string v0, "_data"
-
-    sput-object v0, Lpb6;->j:Ljava/lang/String;
-
-    const-string v0, "date_modified"
-
-    sput-object v0, Lpb6;->k:Ljava/lang/String;
-
-    const-string v0, "mime_type"
-
-    sput-object v0, Lpb6;->l:Ljava/lang/String;
-
-    const-string v0, "orientation"
-
-    sput-object v0, Lpb6;->m:Ljava/lang/String;
-
-    const-string v0, "duration"
-
-    sput-object v0, Lpb6;->n:Ljava/lang/String;
-
-    const-string v0, "media_type"
-
-    sput-object v0, Lpb6;->o:Ljava/lang/String;
-
-    const-string v0, "unknown"
-
-    sput-object v0, Lpb6;->p:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "no content uri for MediaStore.Files"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .registers 1
+.method public accept(Ljava/lang/Object;)V
+    .registers 4
 
-    sget-object p0, Lpb6;->i:Ljava/lang/String;
+    check-cast p1, Lxx8;
 
-    return-object p0
-.end method
+    iget-object p1, p1, Lxx8;->a:Luz8;
 
-.method public final b()Ljava/lang/String;
-    .registers 1
+    iget-object p0, p0, Lpb6;->a:Lru/ok/messages/views/fragments/FrgProfilePhoto;
 
-    sget-object p0, Lpb6;->h:Ljava/lang/String;
+    iput-object p1, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->E1:Luz8;
 
-    return-object p0
-.end method
+    invoke-virtual {p1}, Luz8;->g()Lk00;
 
-.method public final c()Ljava/lang/String;
-    .registers 1
+    move-result-object p1
 
-    sget-object p0, Lpb6;->j:Ljava/lang/String;
+    iget-object p1, p1, Lk00;->f:Ljava/lang/String;
 
-    return-object p0
-.end method
+    iget-object v0, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->E1:Luz8;
 
-.method public final d()Ljava/lang/String;
-    .registers 1
+    invoke-virtual {v0}, Luz8;->g()Lk00;
 
-    sget-object p0, Lpb6;->k:Ljava/lang/String;
+    move-result-object v0
 
-    return-object p0
-.end method
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public final e()Ljava/lang/String;
-    .registers 1
+    new-instance v0, Lru/ok/messages/views/ActProfilePhoto$a;
 
-    sget-object p0, Lpb6;->n:Ljava/lang/String;
+    invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
-    return-object p0
-.end method
+    move-result-object p1
 
-.method public final f()Ljava/lang/String;
-    .registers 1
+    iget-object v1, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->D1:Lru/ok/messages/views/ActProfilePhoto$a;
 
-    sget-object p0, Lpb6;->g:Ljava/lang/String;
+    iget-object v1, v1, Lru/ok/messages/views/ActProfilePhoto$a;->c:Ljava/lang/String;
 
-    return-object p0
-.end method
+    invoke-direct {v0, p1, v1}, Lru/ok/messages/views/ActProfilePhoto$a;-><init>(Ljava/util/List;Ljava/lang/String;)V
 
-.method public final g()Ljava/lang/String;
-    .registers 1
+    iput-object v0, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->D1:Lru/ok/messages/views/ActProfilePhoto$a;
 
-    sget-object p0, Lpb6;->o:Ljava/lang/String;
+    const/4 p1, 0x1
 
-    return-object p0
-.end method
+    iput-boolean p1, p0, Lru/ok/messages/views/fragments/FrgProfilePhoto;->G1:Z
 
-.method public final h()Ljava/lang/String;
-    .registers 1
+    invoke-virtual {p0}, Lru/ok/messages/views/fragments/FrgProfilePhoto;->f1()V
 
-    sget-object p0, Lpb6;->l:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public final i()Ljava/lang/String;
-    .registers 1
-
-    sget-object p0, Lpb6;->m:Ljava/lang/String;
-
-    return-object p0
-.end method
-
-.method public final j()Landroid/net/Uri;
-    .registers 1
-
-    sget-object p0, Lpb6;->f:Landroid/net/Uri;
-
-    return-object p0
-.end method
-
-.method public final k()Ljava/lang/String;
-    .registers 1
-
-    sget-object p0, Lpb6;->p:Ljava/lang/String;
-
-    return-object p0
+    return-void
 .end method

@@ -1,9 +1,9 @@
 .class public final Le13;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
@@ -20,7 +20,7 @@
 
     const/4 p2, 0x2
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -30,6 +30,8 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
+    check-cast p1, Ljava/util/List;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
 
     invoke-virtual {p0, p1, p2}, Le13;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -38,7 +40,7 @@
 
     check-cast p0, Le13;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Le13;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -60,61 +62,38 @@
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .registers 3
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     iget-object p1, p0, Le13;->X:Ljava/lang/Object;
 
     check-cast p1, Ljava/util/List;
 
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    const/4 v0, 0x0
-
     iget-object p0, p0, Le13;->Y:Lone/me/chats/tab/ChatsTabWidget;
 
-    const/4 v1, 0x1
+    iget-object v0, p0, Lone/me/chats/tab/ChatsTabWidget;->x0:Lf36;
 
-    if-le p1, v1, :cond_0
+    invoke-virtual {v0, p1}, Lf36;->e(Ljava/util/List;)V
 
-    sget-object p1, Lone/me/chats/tab/ChatsTabWidget;->y0:[Lsf7;
+    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->y0()Lg26;
 
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->y0()Ldma;
+    move-result-object v0
 
-    move-result-object p1
+    invoke-virtual {v0, p1}, Lg26;->M(Ljava/util/List;)V
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    iget-object p1, p0, Lone/me/chats/tab/ChatsTabWidget;->c:Lsw3;
 
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->z0()Landroidx/viewpager2/widget/ViewPager2;
+    if-eqz p1, :cond_0
 
-    move-result-object p0
-
-    invoke-virtual {p0, v1}, Landroidx/viewpager2/widget/ViewPager2;->setUserInputEnabled(Z)V
-
-    goto :goto_0
+    invoke-interface {p1}, Lsw3;->dismiss()V
 
     :cond_0
-    sget-object p1, Lone/me/chats/tab/ChatsTabWidget;->y0:[Lsf7;
+    const/4 p1, 0x0
 
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->y0()Ldma;
+    iput-object p1, p0, Lone/me/chats/tab/ChatsTabWidget;->c:Lsw3;
 
-    move-result-object p1
-
-    const/16 v1, 0x8
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
-
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->z0()Landroidx/viewpager2/widget/ViewPager2;
-
-    move-result-object p0
-
-    invoke-virtual {p0, v0}, Landroidx/viewpager2/widget/ViewPager2;->setUserInputEnabled(Z)V
-
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

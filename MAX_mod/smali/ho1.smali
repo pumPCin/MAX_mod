@@ -2,6 +2,7 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ldn1;
-.implements Lkq1;
+
+# virtual methods
+.method public abstract o()V
+.end method

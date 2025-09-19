@@ -1,266 +1,390 @@
-.class public abstract Luwb;
+.class public final Luwb;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field public static call_audio_32:I = 0x7f080287
+# instance fields
+.field public a:I
 
-.field public static call_video_32:I = 0x7f08028a
+.field public b:I
 
-.field public static cancel_outline_32:I = 0x7f08028f
+.field public c:I
 
-.field public static ic_add_members_fill_24:I = 0x7f08047c
+.field public d:I
 
-.field public static ic_add_more_users_22:I = 0x7f08047d
+.field public e:I
 
-.field public static ic_add_to_call_24:I = 0x7f08047f
+.field public f:I
 
-.field public static ic_add_user_18:I = 0x7f080481
+.field public g:Z
 
-.field public static ic_admin_camera_and_mic_disabled_28:I = 0x7f080484
+.field public final h:Lah6;
 
-.field public static ic_admin_camera_disable_24:I = 0x7f080485
 
-.field public static ic_admin_camera_disable_28:I = 0x7f080486
+# direct methods
+.method public constructor <init>(Lah6;)V
+    .registers 2
 
-.field public static ic_admin_camera_setting_24:I = 0x7f080487
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static ic_admin_mic_disable_24:I = 0x7f080488
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.field public static ic_admin_mic_disable_28:I = 0x7f080489
+    iput-object p1, p0, Luwb;->h:Lah6;
 
-.field public static ic_admin_mic_setting_24:I = 0x7f08048a
+    const/4 p1, 0x0
 
-.field public static ic_admin_record_setting_24:I = 0x7f08048b
+    iput p1, p0, Luwb;->c:I
 
-.field public static ic_admin_screen_action_disable_28:I = 0x7f08048c
+    iput p1, p0, Luwb;->b:I
 
-.field public static ic_admin_screen_action_disable_me_28:I = 0x7f08048d
+    iput p1, p0, Luwb;->d:I
 
-.field public static ic_admin_screen_record_action_disable_28:I = 0x7f08048e
+    iput p1, p0, Luwb;->f:I
 
-.field public static ic_admin_setting_camera_disable_24:I = 0x7f08048f
+    iput p1, p0, Luwb;->e:I
 
-.field public static ic_admin_setting_mic_disable_24:I = 0x7f080490
+    iput p1, p0, Luwb;->a:I
 
-.field public static ic_admin_setting_remove_user_24:I = 0x7f080491
+    return-void
+.end method
 
-.field public static ic_admin_setting_sharing_disable_24:I = 0x7f080492
 
-.field public static ic_admin_settings_24:I = 0x7f080493
+# virtual methods
+.method public final a(Lveb;)Z
+    .registers 13
 
-.field public static ic_admin_settings_low_hand_24:I = 0x7f080494
+    iget v0, p0, Luwb;->e:I
 
-.field public static ic_admin_sharing_setting_24:I = 0x7f080495
+    :goto_0
+    :try_start_0
+    iget v1, p0, Luwb;->a:I
 
-.field public static ic_apply_16:I = 0x7f080499
+    const/4 v2, 0x0
 
-.field public static ic_back_18:I = 0x7f0804b5
+    const/4 v3, 0x6
 
-.field public static ic_bluetooth_32:I = 0x7f0804bf
+    const/4 v4, 0x1
 
-.field public static ic_bluetooth_fill_24:I = 0x7f0804c0
+    if-eq v1, v3, :cond_13
 
-.field public static ic_bluetooth_fill_28:I = 0x7f0804c1
+    invoke-virtual {p1}, Lveb;->read()I
 
-.field public static ic_call_22:I = 0x7f0804c8
+    move-result v1
 
-.field public static ic_call_90:I = 0x7f0804ca
+    const/4 v5, -0x1
 
-.field public static ic_call_add_user_24:I = 0x7f0804cb
+    if-eq v1, v5, :cond_13
 
-.field public static ic_call_fill_16:I = 0x7f0804d3
+    iget v5, p0, Luwb;->c:I
 
-.field public static ic_call_mode_default_18:I = 0x7f0804db
+    add-int/lit8 v6, v5, 0x1
 
-.field public static ic_call_mode_grid_24:I = 0x7f0804dc
+    iput v6, p0, Luwb;->c:I
 
-.field public static ic_call_oneme_18:I = 0x7f0804de
+    iget-boolean v6, p0, Luwb;->g:Z
 
-.field public static ic_call_settings_24:I = 0x7f0804e1
+    if-eqz v6, :cond_0
 
-.field public static ic_call_settings_28:I = 0x7f0804e2
+    iput v3, p0, Luwb;->a:I
 
-.field public static ic_call_speaker_24:I = 0x7f0804e3
+    iput-boolean v2, p0, Luwb;->g:Z
 
-.field public static ic_cancel_call_25:I = 0x7f0804eb
+    return v2
 
-.field public static ic_chevron_down_24:I = 0x7f080506
+    :cond_0
+    iget v6, p0, Luwb;->a:I
 
-.field public static ic_chevron_left_12:I = 0x7f080507
+    const/16 v7, 0xff
 
-.field public static ic_clear_16:I = 0x7f080508
+    if-eqz v6, :cond_10
 
-.field public static ic_close_16:I = 0x7f080513
+    const/16 v8, 0xd8
 
-.field public static ic_close_24:I = 0x7f080514
+    const/4 v9, 0x2
 
-.field public static ic_close_gray_20:I = 0x7f080515
+    if-eq v6, v4, :cond_e
 
-.field public static ic_connection_fill_16:I = 0x7f08051a
+    const/4 v3, 0x3
 
-.field public static ic_connection_fill_28:I = 0x7f08051b
+    if-eq v6, v9, :cond_d
 
-.field public static ic_copy_18:I = 0x7f080521
+    const/4 v10, 0x4
 
-.field public static ic_copy_21:I = 0x7f080523
+    if-eq v6, v3, :cond_3
 
-.field public static ic_delete_user_22:I = 0x7f080538
+    const/4 v3, 0x5
 
-.field public static ic_down_chevron_24:I = 0x7f080545
+    if-eq v6, v10, :cond_2
 
-.field public static ic_grid_mode_24:I = 0x7f080583
+    if-eq v6, v3, :cond_1
 
-.field public static ic_hand_40:I = 0x7f0805a5
+    invoke-static {v2}, Lcb7;->j(Z)V
 
-.field public static ic_hand_fill_left_28:I = 0x7f0805a6
+    goto/16 :goto_2
 
-.field public static ic_handdown_24:I = 0x7f0805a7
+    :cond_1
+    iget v2, p0, Luwb;->b:I
 
-.field public static ic_handdown_fill_28:I = 0x7f0805a8
+    shl-int/lit8 v2, v2, 0x8
 
-.field public static ic_handup_fill_20:I = 0x7f0805a9
+    add-int/2addr v2, v1
 
-.field public static ic_headphones_24:I = 0x7f0805ab
+    sub-int/2addr v2, v9
 
-.field public static ic_headphones_fill_24:I = 0x7f0805ac
+    int-to-long v3, v2
 
-.field public static ic_headphones_fill_28:I = 0x7f0805ad
+    invoke-static {p1, v3, v4}, Lmu0;->A(Lveb;J)V
 
-.field public static ic_headphones_fill_32:I = 0x7f0805ae
+    iget v3, p0, Luwb;->c:I
 
-.field public static ic_incoming_call_fill_16:I = 0x7f0805b7
+    add-int/2addr v3, v2
 
-.field public static ic_incoming_video_call_fill_16:I = 0x7f0805b9
+    iput v3, p0, Luwb;->c:I
 
-.field public static ic_invite_opponents_43:I = 0x7f0805be
+    iput v9, p0, Luwb;->a:I
 
-.field public static ic_invite_to_p2p_24:I = 0x7f0805bf
+    goto/16 :goto_2
 
-.field public static ic_link_20:I = 0x7f0805ca
+    :cond_2
+    iput v3, p0, Luwb;->a:I
 
-.field public static ic_link_24:I = 0x7f0805cc
+    goto/16 :goto_2
 
-.field public static ic_link_44:I = 0x7f0805cd
+    :cond_3
+    if-ne v1, v7, :cond_4
 
-.field public static ic_loading_16:I = 0x7f0805cf
+    iput v3, p0, Luwb;->a:I
 
-.field public static ic_lock_36:I = 0x7f0805d5
+    goto :goto_2
 
-.field public static ic_logo_21:I = 0x7f0805d6
+    :cond_4
+    if-nez v1, :cond_5
 
-.field public static ic_make_admin_19:I = 0x7f0805e1
+    iput v9, p0, Luwb;->a:I
 
-.field public static ic_message_fill_28:I = 0x7f0805f4
+    goto :goto_2
 
-.field public static ic_mic_disabled_24:I = 0x7f0805f8
+    :cond_5
+    const/16 v2, 0xd9
 
-.field public static ic_microphone_22:I = 0x7f0805fa
+    if-ne v1, v2, :cond_7
 
-.field public static ic_microphone_26:I = 0x7f0805fc
+    iput-boolean v4, p0, Luwb;->g:Z
 
-.field public static ic_microphone_disable_12:I = 0x7f0805fd
+    add-int/lit8 v5, v5, -0x1
 
-.field public static ic_microphone_disable_14:I = 0x7f0805fe
+    iget v2, p0, Luwb;->d:I
 
-.field public static ic_microphone_disable_26:I = 0x7f0805ff
+    if-lez v2, :cond_6
 
-.field public static ic_microphone_off_fill_28:I = 0x7f080604
+    iput v5, p0, Luwb;->f:I
 
-.field public static ic_microphone_on_fill_28:I = 0x7f080607
+    :cond_6
+    add-int/lit8 v3, v2, 0x1
 
-.field public static ic_more_22:I = 0x7f08060c
+    iput v3, p0, Luwb;->d:I
 
-.field public static ic_more_action_24:I = 0x7f08060d
+    iput v2, p0, Luwb;->e:I
 
-.field public static ic_open_chat_20:I = 0x7f0806ac
+    iput v9, p0, Luwb;->a:I
 
-.field public static ic_open_chat_22:I = 0x7f0806ad
+    goto :goto_2
 
-.field public static ic_phone_off_fill_28:I = 0x7f0806bc
+    :cond_7
+    const/16 v3, 0xda
 
-.field public static ic_pin_13:I = 0x7f0806c0
+    if-ne v1, v3, :cond_9
 
-.field public static ic_pin_21:I = 0x7f0806c1
+    add-int/lit8 v5, v5, -0x1
 
-.field public static ic_pin_chat_21:I = 0x7f0806c3
+    iget v3, p0, Luwb;->d:I
 
-.field public static ic_pin_profile_21:I = 0x7f0806c5
+    if-lez v3, :cond_8
 
-.field public static ic_pip_mic_none_24:I = 0x7f0806c8
+    iput v5, p0, Luwb;->f:I
 
-.field public static ic_pip_mic_off_24:I = 0x7f0806c9
+    :cond_8
+    add-int/lit8 v5, v3, 0x1
 
-.field public static ic_profile_21:I = 0x7f0806d5
+    iput v5, p0, Luwb;->d:I
 
-.field public static ic_record_24:I = 0x7f0806d8
+    iput v3, p0, Luwb;->e:I
 
-.field public static ic_record_screen_20:I = 0x7f0806d9
+    :cond_9
+    if-ne v1, v4, :cond_a
 
-.field public static ic_reject_16:I = 0x7f0806db
+    goto :goto_1
 
-.field public static ic_rotation_view_16:I = 0x7f0806ea
+    :cond_a
+    const/16 v3, 0xd0
 
-.field public static ic_row_right_24:I = 0x7f0806ed
+    if-lt v1, v3, :cond_b
 
-.field public static ic_save_favorite_28:I = 0x7f0806ef
+    const/16 v3, 0xd7
 
-.field public static ic_search_32:I = 0x7f0806f1
+    if-gt v1, v3, :cond_b
 
-.field public static ic_search_outline_16:I = 0x7f0806f4
+    goto :goto_1
 
-.field public static ic_send_21:I = 0x7f0806f8
+    :cond_b
+    if-eq v1, v2, :cond_c
 
-.field public static ic_services_fill_24:I = 0x7f080700
+    if-eq v1, v8, :cond_c
 
-.field public static ic_share_24:I = 0x7f080706
+    iput v10, p0, Luwb;->a:I
 
-.field public static ic_share_screen_20:I = 0x7f08070b
+    goto :goto_2
 
-.field public static ic_share_screen_41:I = 0x7f08070c
+    :cond_c
+    :goto_1
+    iput v9, p0, Luwb;->a:I
 
-.field public static ic_share_screen_fill_20:I = 0x7f08070d
+    goto :goto_2
 
-.field public static ic_share_sound_22:I = 0x7f08070f
+    :cond_d
+    if-ne v1, v7, :cond_12
 
-.field public static ic_sound_on_fill_24:I = 0x7f08071c
+    iput v3, p0, Luwb;->a:I
 
-.field public static ic_sound_on_fill_28:I = 0x7f08071d
+    goto :goto_2
 
-.field public static ic_sound_on_fill_32:I = 0x7f08071e
+    :cond_e
+    if-ne v1, v8, :cond_f
 
-.field public static ic_speaker_mode_24:I = 0x7f08071f
+    iput v9, p0, Luwb;->a:I
 
-.field public static ic_stop_record_24:I = 0x7f080729
+    goto :goto_2
 
-.field public static ic_unpin_21:I = 0x7f08073c
+    :cond_f
+    iput v3, p0, Luwb;->a:I
 
-.field public static ic_user_more_24:I = 0x7f080747
+    goto :goto_2
 
-.field public static ic_user_waiting_room_48:I = 0x7f080748
+    :cond_10
+    if-ne v1, v7, :cond_11
 
-.field public static ic_user_was_removed_28:I = 0x7f080749
+    iput v4, p0, Luwb;->a:I
 
-.field public static ic_video_22:I = 0x7f08074f
+    goto :goto_2
 
-.field public static ic_video_27:I = 0x7f080751
+    :cond_11
+    iput v3, p0, Luwb;->a:I
 
-.field public static ic_video_disabled_27:I = 0x7f080755
+    :cond_12
+    :goto_2
+    iput v1, p0, Luwb;->b:I
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-.field public static ic_videocam_off_fill_28:I = 0x7f08075a
+    goto/16 :goto_0
 
-.field public static ic_videocam_on_fill_16:I = 0x7f08075b
+    :cond_13
+    iget p1, p0, Luwb;->a:I
 
-.field public static ic_videocam_on_fill_28:I = 0x7f08075d
+    if-eq p1, v3, :cond_14
 
-.field public static ic_volume_bluetooth_23:I = 0x7f080769
+    iget p0, p0, Luwb;->e:I
 
-.field public static ic_volume_phone_24:I = 0x7f08076a
+    if-eq p0, v0, :cond_14
 
-.field public static ic_volume_speakerphone_25:I = 0x7f08076b
+    return v4
 
-.field public static ic_waitin_room_24:I = 0x7f08076c
+    :cond_14
+    return v2
 
-.field public static saved_group_call_avatar:I = 0x7f0808b9
+    :catch_0
+    move-exception p0
 
-.field public static show_profile_24:I = 0x7f0808cc
+    invoke-static {p0}, Lmq0;->K(Ljava/lang/Throwable;)V
+
+    const/4 p0, 0x0
+
+    throw p0
+.end method
+
+.method public final b(Lk55;)Z
+    .registers 5
+
+    iget v0, p0, Luwb;->a:I
+
+    const/4 v1, 0x6
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Lk55;->o()I
+
+    move-result v0
+
+    iget v1, p0, Luwb;->c:I
+
+    if-gt v0, v1, :cond_1
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    new-instance v0, Lveb;
+
+    invoke-virtual {p1}, Lk55;->n()Ljava/io/InputStream;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/16 v1, 0x4000
+
+    iget-object v2, p0, Luwb;->h:Lah6;
+
+    invoke-virtual {v2, v1}, Lkj0;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [B
+
+    invoke-direct {v0, p1, v1, v2}, Lveb;-><init>(Ljava/io/InputStream;[BLguc;)V
+
+    :try_start_0
+    iget p1, p0, Luwb;->c:I
+
+    int-to-long v1, p1
+
+    invoke-static {v0, v1, v2}, Lmu0;->A(Lveb;J)V
+
+    invoke-virtual {p0, v0}, Luwb;->a(Lveb;)Z
+
+    move-result p0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-static {v0}, Lh63;->b(Ljava/io/InputStream;)V
+
+    return p0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception p0
+
+    :try_start_1
+    invoke-static {p0}, Lmq0;->K(Ljava/lang/Throwable;)V
+
+    const/4 p0, 0x0
+
+    throw p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :goto_1
+    invoke-static {v0}, Lh63;->b(Ljava/io/InputStream;)V
+
+    throw p0
+.end method

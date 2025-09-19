@@ -1,61 +1,97 @@
-.class public final Lzca;
-.super Ljava/lang/Object;
+.class public final enum Lzca;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lxoc;
+# static fields
+.field public static final synthetic X:[Lzca;
+
+.field public static final enum a:Lzca;
+
+.field public static final enum b:Lzca;
+
+.field public static final enum c:Lzca;
+
+.field public static final enum o:Lzca;
 
 
 # direct methods
-.method public constructor <init>(Lxoc;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lzca;
 
-    iput-object p1, p0, Lzca;->a:Lxoc;
+    const-string v1, "PRIMARY"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lzca;->a:Lzca;
+
+    new-instance v1, Lzca;
+
+    const-string v2, "SECONDARY"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lzca;->b:Lzca;
+
+    new-instance v2, Lzca;
+
+    const-string v3, "TERTIARY"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lzca;->c:Lzca;
+
+    new-instance v3, Lzca;
+
+    const-string v4, "LINK"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lzca;->o:Lzca;
+
+    filled-new-array {v0, v1, v2, v3}, [Lzca;
+
+    move-result-object v0
+
+    sput-object v0, Lzca;->X:[Lzca;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lzca;
+    .registers 2
 
-# virtual methods
-.method public final a(ILjava/lang/String;)Ljn5;
-    .registers 11
+    const-class v0, Lzca;
 
-    new-instance v6, Lyca;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    invoke-direct {v6}, Ljava/util/concurrent/LinkedTransferQueue;-><init>()V
+    move-result-object p0
 
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    check-cast p0, Lzca;
 
-    iget-object p0, p0, Lzca;->a:Lxoc;
+    return-object p0
+.end method
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+.method public static values()[Lzca;
+    .registers 1
 
-    move-result-object p1
+    sget-object v0, Lzca;->X:[Lzca;
 
-    invoke-virtual {p0, p2, p1}, Lxoc;->t(Ljava/lang/String;Ljava/lang/Integer;)Ljava/util/concurrent/ThreadFactory;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v0
 
-    new-instance v0, Ljn5;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x1
-
-    const-wide/16 v3, 0x0
-
-    invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
-
-    new-instance p0, Lwy1;
-
-    const/4 p1, 0x1
-
-    invoke-direct {p0, p1}, Lwy1;-><init>(I)V
-
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/ThreadPoolExecutor;->setRejectedExecutionHandler(Ljava/util/concurrent/RejectedExecutionHandler;)V
+    check-cast v0, [Lzca;
 
     return-object v0
 .end method

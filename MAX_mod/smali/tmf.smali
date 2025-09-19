@@ -1,326 +1,401 @@
-.class public final Ltmf;
-.super Ls2;
+.class public abstract enum Ltmf;
+.super Ljava/lang/Enum;
 .source "SourceFile"
-
-# interfaces
-.implements Lsmf;
 
 
 # static fields
-.field public static final o:Lpw1;
+.field public static final X:I
 
+.field public static final Y:J
 
-# instance fields
-.field public final c:Landroid/media/MediaCodecInfo$VideoCapabilities;
+.field public static final Z:I
+
+.field public static final a:Lsun/misc/Unsafe;
+
+.field public static final b:J
+
+.field public static final c:I
+
+.field public static final o:J
+
+.field public static final synthetic r0:[Ltmf;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 7
 
-    new-instance v0, Lpw1;
+    const-class v0, [S
 
-    const/16 v1, 0x10
+    const-class v1, [I
 
-    invoke-direct {v0, v1}, Lpw1;-><init>(I)V
+    const-class v2, [B
 
-    sput-object v0, Ltmf;->o:Lpw1;
+    const-string v3, "Cannot access Unsafe"
 
-    return-void
-.end method
+    const/4 v4, 0x0
 
-.method public constructor <init>(Landroid/media/MediaCodecInfo;Ljava/lang/String;)V
-    .registers 3
+    new-array v4, v4, [Ltmf;
 
-    invoke-direct {p0, p1, p2}, Ls2;-><init>(Landroid/media/MediaCodecInfo;Ljava/lang/String;)V
-
-    iget-object p1, p0, Ls2;->b:Ljava/lang/Object;
-
-    check-cast p1, Landroid/media/MediaCodecInfo$CodecCapabilities;
-
-    invoke-virtual {p1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object p1, p0, Ltmf;->c:Landroid/media/MediaCodecInfo$VideoCapabilities;
-
-    return-void
-.end method
-
-.method public static U0(Ljc0;)Ltmf;
-    .registers 6
-
-    new-instance v0, Ltmf;
-
-    sget-object v1, Li63;->a:Landroid/util/LruCache;
-
-    iget-object v1, p0, Ljc0;->a:Ljava/lang/String;
-
-    sget-object v2, Li63;->a:Landroid/util/LruCache;
-
-    monitor-enter v2
+    sput-object v4, Ltmf;->r0:[Ltmf;
 
     :try_start_0
-    invoke-virtual {v2, v1}, Landroid/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const-class v4, Lsun/misc/Unsafe;
 
-    move-result-object v3
+    const-string v5, "theUnsafe"
 
-    check-cast v3, Landroid/media/MediaCodecInfo;
-
-    monitor-exit v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_3
-
-    if-eqz v3, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    :try_start_1
-    invoke-static {v1}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
-
-    move-result-object v3
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
-
-    :try_start_2
-    invoke-virtual {v3}, Landroid/media/MediaCodec;->getCodecInfo()Landroid/media/MediaCodecInfo;
+    invoke-virtual {v4, v5}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v4
 
-    monitor-enter v2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    const/4 v5, 0x1
 
-    :try_start_3
-    invoke-virtual {v2, v1, v4}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
-    monitor-exit v2
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    const/4 v5, 0x0
 
-    invoke-virtual {v3}, Landroid/media/MediaCodec;->release()V
+    invoke-virtual {v4, v5}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object v3, v4
+    move-result-object v4
 
-    :goto_0
-    iget-object p0, p0, Ljc0;->a:Ljava/lang/String;
+    check-cast v4, Lsun/misc/Unsafe;
 
-    invoke-direct {v0, v3, p0}, Ltmf;-><init>(Landroid/media/MediaCodecInfo;Ljava/lang/String;)V
+    sput-object v4, Ltmf;->a:Lsun/misc/Unsafe;
 
-    return-object v0
+    invoke-virtual {v4, v2}, Lsun/misc/Unsafe;->arrayBaseOffset(Ljava/lang/Class;)I
 
-    :catchall_0
-    move-exception p0
+    move-result v5
 
-    :try_start_4
-    monitor-exit v2
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    int-to-long v5, v5
 
-    :try_start_5
-    throw p0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+    sput-wide v5, Ltmf;->b:J
 
-    :catchall_1
-    move-exception p0
+    invoke-virtual {v4, v2}, Lsun/misc/Unsafe;->arrayIndexScale(Ljava/lang/Class;)I
 
-    goto :goto_2
+    move-result v2
 
-    :catchall_2
-    move-exception p0
+    sput v2, Ltmf;->c:I
 
-    goto :goto_1
+    invoke-virtual {v4, v1}, Lsun/misc/Unsafe;->arrayBaseOffset(Ljava/lang/Class;)I
+
+    move-result v2
+
+    int-to-long v5, v2
+
+    sput-wide v5, Ltmf;->o:J
+
+    invoke-virtual {v4, v1}, Lsun/misc/Unsafe;->arrayIndexScale(Ljava/lang/Class;)I
+
+    move-result v1
+
+    sput v1, Ltmf;->X:I
+
+    invoke-virtual {v4, v0}, Lsun/misc/Unsafe;->arrayBaseOffset(Ljava/lang/Class;)I
+
+    move-result v1
+
+    int-to-long v1, v1
+
+    sput-wide v1, Ltmf;->Y:J
+
+    invoke-virtual {v4, v0}, Lsun/misc/Unsafe;->arrayIndexScale(Ljava/lang/Class;)I
+
+    move-result v0
+
+    sput v0, Ltmf;->Z:I
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
 
     :catch_0
-    move-exception p0
+    new-instance v0, Ljava/lang/ExceptionInInitializerError;
 
-    :try_start_6
-    new-instance v0, Landroidx/camera/video/internal/encoder/InvalidConfigException;
-
-    invoke-direct {v0, p0}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v0, v3}, Ljava/lang/ExceptionInInitializerError;-><init>(Ljava/lang/String;)V
 
     throw v0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    :goto_1
-    const/4 v3, 0x0
+    :catch_1
+    new-instance v0, Ljava/lang/ExceptionInInitializerError;
 
-    :goto_2
-    if-eqz v3, :cond_1
+    invoke-direct {v0, v3}, Ljava/lang/ExceptionInInitializerError;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v3}, Landroid/media/MediaCodec;->release()V
+    throw v0
 
-    :cond_1
-    throw p0
+    :catch_2
+    new-instance v0, Ljava/lang/ExceptionInInitializerError;
 
-    :catchall_3
-    move-exception p0
+    invoke-direct {v0, v3}, Ljava/lang/ExceptionInInitializerError;-><init>(Ljava/lang/String;)V
 
-    :try_start_7
-    monitor-exit v2
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_3
-
-    throw p0
+    throw v0
 .end method
 
+.method public static a(I[B)B
+    .registers 7
 
-# virtual methods
-.method public final T()I
-    .registers 1
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
 
-    iget-object p0, p0, Ltmf;->c:Landroid/media/MediaCodecInfo$VideoCapabilities;
+    sget v1, Ltmf;->c:I
 
-    invoke-virtual {p0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getWidthAlignment()I
+    mul-int/2addr v1, p0
+
+    int-to-long v1, v1
+
+    sget-wide v3, Ltmf;->b:J
+
+    add-long/2addr v3, v1
+
+    invoke-virtual {v0, p1, v3, v4}, Lsun/misc/Unsafe;->getByte(Ljava/lang/Object;J)B
 
     move-result p0
 
     return p0
 .end method
 
-.method public final U()Landroid/util/Range;
-    .registers 1
+.method public static b(I[B)I
+    .registers 7
 
-    iget-object p0, p0, Ltmf;->c:Landroid/media/MediaCodecInfo$VideoCapabilities;
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
 
-    invoke-virtual {p0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getBitrateRange()Landroid/util/Range;
+    sget-wide v1, Ltmf;->b:J
 
-    move-result-object p0
+    int-to-long v3, p0
 
-    return-object p0
-.end method
+    add-long/2addr v1, v3
 
-.method public final a0()Z
-    .registers 1
+    invoke-virtual {v0, p1, v1, v2}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
 
-    const/4 p0, 0x1
+    move-result p0
 
     return p0
 .end method
 
-.method public final i0(I)Landroid/util/Range;
+.method public static c(I[I)I
+    .registers 7
+
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
+
+    sget v1, Ltmf;->X:I
+
+    mul-int/2addr v1, p0
+
+    int-to-long v1, v1
+
+    sget-wide v3, Ltmf;->o:J
+
+    add-long/2addr v3, v1
+
+    invoke-virtual {v0, p1, v3, v4}, Lsun/misc/Unsafe;->getInt(Ljava/lang/Object;J)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static d(I[B)J
+    .registers 7
+
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
+
+    sget-wide v1, Ltmf;->b:J
+
+    int-to-long v3, p0
+
+    add-long/2addr v1, v3
+
+    invoke-virtual {v0, p1, v1, v2}, Lsun/misc/Unsafe;->getLong(Ljava/lang/Object;J)J
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public static e([SI)I
+    .registers 7
+
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
+
+    sget v1, Ltmf;->Z:I
+
+    mul-int/2addr v1, p1
+
+    int-to-long v1, v1
+
+    sget-wide v3, Ltmf;->Y:J
+
+    add-long/2addr v3, v1
+
+    invoke-virtual {v0, p0, v3, v4}, Lsun/misc/Unsafe;->getShort(Ljava/lang/Object;J)S
+
+    move-result p0
+
+    const p1, 0xffff
+
+    and-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public static f(I[B)S
+    .registers 7
+
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
+
+    sget-wide v1, Ltmf;->b:J
+
+    int-to-long v3, p0
+
+    add-long/2addr v1, v3
+
+    invoke-virtual {v0, p1, v1, v2}, Lsun/misc/Unsafe;->getShort(Ljava/lang/Object;J)S
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static g([BIB)V
+    .registers 8
+
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
+
+    sget v1, Ltmf;->c:I
+
+    mul-int/2addr v1, p1
+
+    int-to-long v1, v1
+
+    sget-wide v3, Ltmf;->b:J
+
+    add-long/2addr v3, v1
+
+    invoke-virtual {v0, p0, v3, v4, p2}, Lsun/misc/Unsafe;->putByte(Ljava/lang/Object;JB)V
+
+    return-void
+.end method
+
+.method public static h(II[I)V
+    .registers 8
+
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
+
+    sget v1, Ltmf;->X:I
+
+    mul-int/2addr v1, p0
+
+    int-to-long v1, v1
+
+    sget-wide v3, Ltmf;->o:J
+
+    add-long/2addr v3, v1
+
+    invoke-virtual {v0, p2, v3, v4, p1}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
+
+    return-void
+.end method
+
+.method public static i(I[BI)V
+    .registers 8
+
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
+
+    sget-wide v1, Ltmf;->b:J
+
+    int-to-long v3, p0
+
+    add-long/2addr v1, v3
+
+    invoke-virtual {v0, p1, v1, v2, p2}, Lsun/misc/Unsafe;->putInt(Ljava/lang/Object;JI)V
+
+    return-void
+.end method
+
+.method public static j(I[BJ)V
+    .registers 10
+
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
+
+    sget-wide v1, Ltmf;->b:J
+
+    int-to-long v3, p0
+
+    add-long v2, v1, v3
+
+    move-object v1, p1
+
+    move-wide v4, p2
+
+    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->putLong(Ljava/lang/Object;JJ)V
+
+    return-void
+.end method
+
+.method public static k([BIS)V
+    .registers 8
+
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
+
+    sget-wide v1, Ltmf;->b:J
+
+    int-to-long v3, p1
+
+    add-long/2addr v1, v3
+
+    invoke-virtual {v0, p0, v1, v2, p2}, Lsun/misc/Unsafe;->putShort(Ljava/lang/Object;JS)V
+
+    return-void
+.end method
+
+.method public static l([SII)V
+    .registers 8
+
+    sget-object v0, Ltmf;->a:Lsun/misc/Unsafe;
+
+    sget v1, Ltmf;->Z:I
+
+    mul-int/2addr v1, p1
+
+    int-to-long v1, v1
+
+    sget-wide v3, Ltmf;->Y:J
+
+    add-long/2addr v3, v1
+
+    int-to-short p1, p2
+
+    invoke-virtual {v0, p0, v3, v4, p1}, Lsun/misc/Unsafe;->putShort(Ljava/lang/Object;JS)V
+
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Ltmf;
     .registers 2
 
-    :try_start_0
-    iget-object p0, p0, Ltmf;->c:Landroid/media/MediaCodecInfo$VideoCapabilities;
+    const-class v0, Ltmf;
 
-    invoke-virtual {p0, p1}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedWidthsFor(I)Landroid/util/Range;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object p0
+    invoke-static {p0}, Lsq3;->r(Ljava/lang/Object;)V
 
-    :catchall_0
-    move-exception p0
+    const/4 p0, 0x0
 
-    instance-of p1, p0, Ljava/lang/IllegalArgumentException;
-
-    if-eqz p1, :cond_0
-
-    check-cast p0, Ljava/lang/IllegalArgumentException;
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
-
-    move-object p0, p1
-
-    :goto_0
     throw p0
 .end method
 
-.method public final m0(I)Landroid/util/Range;
-    .registers 2
-
-    :try_start_0
-    iget-object p0, p0, Ltmf;->c:Landroid/media/MediaCodecInfo$VideoCapabilities;
-
-    invoke-virtual {p0, p1}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedHeightsFor(I)Landroid/util/Range;
-
-    move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    instance-of p1, p0, Ljava/lang/IllegalArgumentException;
-
-    if-eqz p1, :cond_0
-
-    check-cast p0, Ljava/lang/IllegalArgumentException;
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
-
-    move-object p0, p1
-
-    :goto_0
-    throw p0
-.end method
-
-.method public final n0()I
+.method public static values()[Ltmf;
     .registers 1
 
-    iget-object p0, p0, Ltmf;->c:Landroid/media/MediaCodecInfo$VideoCapabilities;
+    sget-object v0, Ltmf;->r0:[Ltmf;
 
-    invoke-virtual {p0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getHeightAlignment()I
+    invoke-virtual {v0}, [Ltmf;->clone()Ljava/lang/Object;
 
-    move-result p0
+    move-result-object v0
 
-    return p0
-.end method
+    check-cast v0, [Ltmf;
 
-.method public final o0()Landroid/util/Range;
-    .registers 1
-
-    iget-object p0, p0, Ltmf;->c:Landroid/media/MediaCodecInfo$VideoCapabilities;
-
-    invoke-virtual {p0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedWidths()Landroid/util/Range;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final p0(II)Z
-    .registers 3
-
-    iget-object p0, p0, Ltmf;->c:Landroid/media/MediaCodecInfo$VideoCapabilities;
-
-    invoke-virtual {p0, p1, p2}, Landroid/media/MediaCodecInfo$VideoCapabilities;->isSizeSupported(II)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final s0()Landroid/util/Range;
-    .registers 1
-
-    iget-object p0, p0, Ltmf;->c:Landroid/media/MediaCodecInfo$VideoCapabilities;
-
-    invoke-virtual {p0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedHeights()Landroid/util/Range;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method

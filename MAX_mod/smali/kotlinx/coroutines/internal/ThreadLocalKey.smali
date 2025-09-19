@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Li04;
+.implements Lp04;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Li04;"
+        "Lp04;"
     }
 .end annotation
 
@@ -20,7 +20,7 @@
     }
     d2 = {
         "Lkotlinx/coroutines/internal/ThreadLocalKey;",
-        "Li04;",
+        "Lp04;",
         "Lkotlinx/coroutines/internal/ThreadLocalElement;",
         "Ljava/lang/ThreadLocal;",
         "threadLocal",
@@ -160,7 +160,7 @@
 
     iget-object p1, p1, Lkotlinx/coroutines/internal/ThreadLocalKey;->threadLocal:Ljava/lang/ThreadLocal;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 

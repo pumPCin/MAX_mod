@@ -1,67 +1,29 @@
-.class public abstract synthetic Lxpf;
+.class public interface abstract Lxpf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+# virtual methods
+.method public abstract a(Lvnf;)Lhc3;
+.end method
 
+.method public abstract b(J)Lhc3;
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public abstract c(Ldof;)Lhc3;
+.end method
 
-    const/4 v0, 0x5
+.method public abstract clear()Lhc3;
+.end method
 
-    invoke-static {v0}, Lew1;->w(I)[I
+.method public abstract d(Ldof;)La98;
+.end method
 
-    move-result-object v1
+.method public abstract e(Ljava/lang/String;)Lhc3;
+.end method
 
-    array-length v1, v1
+.method public abstract f(Ljava/lang/String;)La98;
+.end method
 
-    new-array v1, v1, [I
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    :try_start_0
-    aput v2, v1, v3
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v3, 0x2
-
-    :try_start_1
-    aput v3, v1, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    const/4 v2, 0x3
-
-    :try_start_2
-    aput v2, v1, v3
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    const/4 v3, 0x4
-
-    :try_start_3
-    aput v3, v1, v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    aput v0, v1, v3
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    sput-object v1, Lxpf;->$EnumSwitchMapping$0:[I
-
-    return-void
+.method public abstract g()La98;
 .end method

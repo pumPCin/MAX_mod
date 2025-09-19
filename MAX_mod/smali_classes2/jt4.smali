@@ -1,38 +1,48 @@
 .class public final Ljt4;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lit4;
+.super Ljx3;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public X:I
 
-.field public final b:Lw9b;
+.field public final synthetic Y:Lmy2;
 
-.field public final c:Lgga;
-
-.field public final d:Lmc4;
-
-.field public final e:Leb2;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lw9b;Lgga;Lmc4;Leb2;)V
-    .registers 6
+.method public constructor <init>(Lmy2;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljt4;->Y:Lmy2;
 
-    iput-object p1, p0, Ljt4;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Ljt4;->b:Lw9b;
-
-    iput-object p3, p0, Ljt4;->c:Lgga;
-
-    iput-object p4, p0, Ljt4;->d:Lmc4;
-
-    iput-object p5, p0, Ljt4;->e:Leb2;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iput-object p1, p0, Ljt4;->o:Ljava/lang/Object;
+
+    iget p1, p0, Ljt4;->X:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Ljt4;->X:I
+
+    iget-object p1, p0, Ljt4;->Y:Lmy2;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lmy2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

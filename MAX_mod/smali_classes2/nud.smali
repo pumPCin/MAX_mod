@@ -1,50 +1,37 @@
 .class public final Lnud;
-.super Ljava/lang/Object;
+.super Luc0;
 .source "SourceFile"
-
-# interfaces
-.implements Lk78;
 
 
 # instance fields
-.field public final a:J
+.field public final b:Lu2f;
 
-.field public final b:Ljava/lang/String;
+.field public final c:Ljava/util/List;
 
-.field public final c:Lmx6;
-
-.field public final d:Z
+.field public final d:Lu2f;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Lmx6;Z)V
-    .registers 6
+.method public constructor <init>(Lp2f;Lu2f;Ljava/util/List;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0x13
 
-    iput-wide p1, p0, Lnud;->a:J
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
 
-    iput-object p3, p0, Lnud;->b:Ljava/lang/String;
+    iput-object p2, p0, Lnud;->b:Lu2f;
 
-    iput-object p4, p0, Lnud;->c:Lmx6;
+    iput-object p3, p0, Lnud;->c:Ljava/util/List;
 
-    iput-boolean p5, p0, Lnud;->d:Z
+    iput-object p1, p0, Lnud;->d:Lu2f;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()Z
-    .registers 1
-
-    iget-boolean p0, p0, Lnud;->d:Z
-
-    return p0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 9
+    .registers 6
 
     const/4 v0, 0x1
 
@@ -64,22 +51,24 @@
     :cond_1
     check-cast p1, Lnud;
 
-    iget-wide v3, p0, Lnud;->a:J
+    iget-object v1, p0, Lnud;->b:Lu2f;
 
-    iget-wide v5, p1, Lnud;->a:J
+    iget-object v3, p1, Lnud;->b:Lu2f;
 
-    cmp-long v1, v3, v5
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz v1, :cond_2
+    move-result v1
+
+    if-nez v1, :cond_2
 
     return v2
 
     :cond_2
-    iget-object v1, p0, Lnud;->b:Ljava/lang/String;
+    iget-object v1, p0, Lnud;->c:Ljava/util/List;
 
-    iget-object v3, p1, Lnud;->b:Ljava/lang/String;
+    iget-object v3, p1, Lnud;->c:Ljava/util/List;
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -88,37 +77,28 @@
     return v2
 
     :cond_3
-    iget-object v1, p0, Lnud;->c:Lmx6;
+    iget-object p0, p0, Lnud;->d:Lu2f;
 
-    iget-object v3, p1, Lnud;->c:Lmx6;
+    iget-object p1, p1, Lnud;->d:Lu2f;
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result p0
 
-    if-nez v1, :cond_4
+    if-nez p0, :cond_4
 
     return v2
 
     :cond_4
-    iget-boolean p0, p0, Lnud;->d:Z
-
-    iget-boolean p1, p1, Lnud;->d:Z
-
-    if-eq p0, p1, :cond_5
-
-    return v2
-
-    :cond_5
     return v0
 .end method
 
 .method public final hashCode()I
     .registers 4
 
-    iget-wide v0, p0, Lnud;->a:J
+    iget-object v0, p0, Lnud;->b:Lu2f;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
@@ -126,63 +106,59 @@
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Lnud;->b:Ljava/lang/String;
+    iget-object v2, p0, Lnud;->c:Ljava/util/List;
 
-    invoke-static {v0, v1, v2}, Lex3;->d(IILjava/lang/String;)I
+    invoke-static {v2, v0, v1}, Lz7e;->n(Ljava/util/List;II)I
 
     move-result v0
 
-    iget-object v2, p0, Lnud;->c:Lmx6;
+    iget-object p0, p0, Lnud;->d:Lu2f;
 
-    invoke-virtual {v2}, Lmx6;->hashCode()I
+    if-nez p0, :cond_0
 
-    move-result v2
+    const/4 p0, 0x0
 
-    add-int/2addr v2, v0
+    goto :goto_0
 
-    mul-int/2addr v2, v1
-
-    iget-boolean p0, p0, Lnud;->d:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
-    add-int/2addr p0, v2
+    :goto_0
+    add-int/2addr v0, p0
 
-    return p0
+    return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .registers 3
 
-    const-string v0, "SingleImageAttach(messageId="
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, ", attachId="
+    const-string v1, "OpenConfirmationDialog(title="
 
-    iget-wide v2, p0, Lnud;->a:J
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v4, p0, Lnud;->b:Ljava/lang/String;
-
-    invoke-static {v0, v2, v3, v1, v4}, Lbkc;->j(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", imageAttach="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lnud;->c:Lmx6;
+    iget-object v1, p0, Lnud;->b:Lu2f;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", isMediaOrderedFirst="
+    const-string v1, ", buttons="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean p0, p0, Lnud;->d:Z
+    iget-object v1, p0, Lnud;->c:Ljava/util/List;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", desc="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lnud;->d:Lu2f;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string p0, ")"
 

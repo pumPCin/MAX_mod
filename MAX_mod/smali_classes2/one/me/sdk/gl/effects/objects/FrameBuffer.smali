@@ -83,7 +83,7 @@
 
     const-string v1, "Framebuffer incomplete: error="
 
-    invoke-static {v0, v1}, La78;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lyv7;->e(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -157,13 +157,13 @@
 
     const-string p0, "glTexImage2D"
 
-    invoke-static {p0}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {p0}, Lya6;->b(Ljava/lang/String;)V
 
     invoke-static {v3, v2}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
     const-string p0, "glBindTexture"
 
-    invoke-static {p0}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {p0}, Lya6;->b(Ljava/lang/String;)V
 
     return v0
 .end method
@@ -185,7 +185,7 @@
 
     const-string v0, "glGenFramebuffers"
 
-    invoke-static {v0}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {v0}, Lya6;->b(Ljava/lang/String;)V
 
     iget-object v0, p0, Lone/me/sdk/gl/effects/objects/FrameBuffer;->fboIds:[I
 
@@ -197,7 +197,7 @@
 
     const-string v0, "glBindFramebuffer"
 
-    invoke-static {v0}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {v0}, Lya6;->b(Ljava/lang/String;)V
 
     iget-object v4, p0, Lone/me/sdk/gl/effects/objects/FrameBuffer;->rbIds:[I
 
@@ -205,7 +205,7 @@
 
     const-string v1, "glGenRenderbuffers"
 
-    invoke-static {v1}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {v1}, Lya6;->b(Ljava/lang/String;)V
 
     iget-object v1, p0, Lone/me/sdk/gl/effects/objects/FrameBuffer;->rbIds:[I
 
@@ -217,7 +217,7 @@
 
     const-string v1, "glBindRenderbuffer"
 
-    invoke-static {v1}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {v1}, Lya6;->b(Ljava/lang/String;)V
 
     const v1, 0x81a5
 
@@ -225,7 +225,7 @@
 
     const-string p1, "glRenderbufferStorage"
 
-    invoke-static {p1}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {p1}, Lya6;->b(Ljava/lang/String;)V
 
     iget-object p1, p0, Lone/me/sdk/gl/effects/objects/FrameBuffer;->rbIds:[I
 
@@ -237,7 +237,7 @@
 
     const-string p1, "glFramebufferRenderbuffer"
 
-    invoke-static {p1}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {p1}, Lya6;->b(Ljava/lang/String;)V
 
     iget-object p1, p0, Lone/me/sdk/gl/effects/objects/FrameBuffer;->texIds:[I
 
@@ -251,13 +251,13 @@
 
     const-string p1, "glFramebufferTexture2D"
 
-    invoke-static {p1}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {p1}, Lya6;->b(Ljava/lang/String;)V
 
     invoke-direct {p0}, Lone/me/sdk/gl/effects/objects/FrameBuffer;->checkFramebufferStatus()V
 
     invoke-static {v3, v2}, Landroid/opengl/GLES20;->glBindFramebuffer(II)V
 
-    invoke-static {v0}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {v0}, Lya6;->b(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -322,7 +322,7 @@
 
     const-string v0, "glBindFramebuffer"
 
-    invoke-static {v0}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {v0}, Lya6;->b(Ljava/lang/String;)V
 
     if-eqz p1, :cond_0
 
@@ -415,7 +415,7 @@
     return-void
 .end method
 
-.method public render(Laqg;Ljava/lang/Runnable;)V
+.method public render(Lr0h;Ljava/lang/Runnable;)V
     .registers 4
 
     const/4 v0, 0x1
@@ -424,7 +424,7 @@
 
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    invoke-virtual {p1}, Laqg;->render()V
+    invoke-virtual {p1}, Lr0h;->render()V
 
     invoke-virtual {p0}, Lone/me/sdk/gl/effects/objects/FrameBuffer;->unbind()V
 
@@ -442,7 +442,7 @@
 
     const-string p0, "glUnBindFramebuffer"
 
-    invoke-static {p0}, Lye2;->c(Ljava/lang/String;)V
+    invoke-static {p0}, Lya6;->b(Ljava/lang/String;)V
 
     return-void
 .end method

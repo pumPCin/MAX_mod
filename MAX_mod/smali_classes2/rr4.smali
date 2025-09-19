@@ -2,63 +2,32 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lwr4;
 
+# instance fields
+.field public a:Lqr4;
 
-# static fields
-.field public static final a:Lrr4;
+.field public final b:Landroid/view/GestureDetector;
+
+.field public c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 5
 
-    new-instance v0, Lrr4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Landroid/view/GestureDetector;
 
-    sput-object v0, Lrr4;->a:Lrr4;
+    new-instance v1, Lmz;
+
+    const/16 v2, 0x8
+
+    invoke-direct {v1, v2, p0}, Lmz;-><init>(ILjava/lang/Object;)V
+
+    invoke-direct {v0, p1, v1}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
+
+    iput-object v0, p0, Lrr4;->b:Landroid/view/GestureDetector;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lrr4;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, -0x45aaf562
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "Cancelled"
-
-    return-object p0
 .end method

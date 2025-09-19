@@ -1,135 +1,99 @@
-.class public abstract Lflb;
-.super Lmlb;
+.class public final synthetic Lflb;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lzb6;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lwqg;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lwqg;I)V
+    .registers 3
+
+    iput p2, p0, Lflb;->a:I
+
+    iput-object p1, p0, Lflb;->b:Lwqg;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final h(Lpp7;)Z
+.method public final invoke()Ljava/lang/Object;
     .registers 4
 
-    sget-object v0, Lclb;->a:Lclb;
+    iget v0, p0, Lflb;->a:I
 
-    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget-object p0, p0, Lflb;->b:Lwqg;
 
-    move-result v0
+    packed-switch v0, :pswitch_data_0
 
-    if-eqz v0, :cond_0
+    iget-object p0, p0, Lwqg;->Y:Ljava/lang/Object;
 
-    instance-of p0, p1, Lclb;
+    check-cast p0, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
 
-    return p0
+    invoke-virtual {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->B0()La52;
 
-    :cond_0
-    instance-of v0, p0, Ldlb;
+    move-result-object p0
 
-    if-eqz v0, :cond_1
+    iget-object p0, p0, La52;->b:Lo42;
 
-    instance-of p0, p1, Ldlb;
+    invoke-virtual {p0}, Lo42;->e()V
 
-    return p0
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    :cond_1
-    instance-of v0, p0, Lelb;
+    return-object p0
 
-    if-eqz v0, :cond_3
+    :pswitch_0
+    iget-object p0, p0, Lwqg;->Y:Ljava/lang/Object;
 
-    instance-of v0, p1, Lelb;
+    check-cast p0, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
 
-    if-eqz v0, :cond_2
+    invoke-virtual {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->B0()La52;
 
-    check-cast p0, Lelb;
+    move-result-object p0
 
-    iget-object p0, p0, Lelb;->a:Lbfb;
+    iget-object v0, p0, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
 
-    iget-wide v0, p0, Lbfb;->a:J
+    new-instance v1, Ly42;
 
-    check-cast p1, Lelb;
+    const/4 v2, 0x0
 
-    iget-object p0, p1, Lelb;->a:Lbfb;
+    invoke-direct {v1, p0, v2}, Ly42;-><init>(La52;Lkotlin/coroutines/Continuation;)V
 
-    iget-wide p0, p0, Lbfb;->a:J
+    const/4 p0, 0x3
 
-    cmp-long p0, v0, p0
+    invoke-static {v0, v2, v2, v1, p0}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
 
-    if-nez p0, :cond_2
+    goto :goto_0
 
-    const/4 p0, 0x1
+    :pswitch_1
+    iget-object p0, p0, Lwqg;->Y:Ljava/lang/Object;
 
-    return p0
+    check-cast p0, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;
 
-    :cond_2
-    const/4 p0, 0x0
+    invoke-virtual {p0}, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->B0()La52;
 
-    return p0
+    move-result-object p0
 
-    :cond_3
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    iget-object p0, p0, La52;->b:Lo42;
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    invoke-virtual {p0}, Lo42;->a()V
 
-    throw p0
-.end method
+    goto :goto_0
 
-.method public final q(Lpp7;)Z
-    .registers 3
-
-    sget-object v0, Lclb;->a:Lclb;
-
-    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    instance-of p0, p1, Lclb;
-
-    return p0
-
-    :cond_0
-    instance-of v0, p0, Ldlb;
-
-    if-eqz v0, :cond_1
-
-    instance-of p0, p1, Ldlb;
-
-    return p0
-
-    :cond_1
-    instance-of v0, p0, Lelb;
-
-    if-eqz v0, :cond_3
-
-    instance-of v0, p1, Lelb;
-
-    if-eqz v0, :cond_2
-
-    check-cast p0, Lelb;
-
-    check-cast p1, Lelb;
-
-    iget-object p1, p1, Lelb;->a:Lbfb;
-
-    iget-object p0, p0, Lelb;->a:Lbfb;
-
-    invoke-virtual {p0, p1}, Lbfb;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_2
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_3
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

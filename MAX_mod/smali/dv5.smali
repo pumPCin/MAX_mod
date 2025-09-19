@@ -1,87 +1,52 @@
 .class public final Ldv5;
-.super Lo1;
-.source "SourceFile"
+.super Ljx3;
 
 
 # instance fields
-.field public final X:Ljava/lang/Iterable;
+.field public X:I
 
-.field public final synthetic o:I
+.field public final synthetic Y:Lzv2;
+
+.field public Z:Lks5;
+
+.field public synthetic o:Ljava/lang/Object;
+
+.field public r0:Lipc;
 
 
 # direct methods
-.method public constructor <init>(Lev5;I)V
-    .registers 4
+.method public constructor <init>(Lzv2;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Ldv5;->Y:Lzv2;
 
-    iput v0, p0, Ldv5;->o:I
-
-    iput-object p1, p0, Ldv5;->X:Ljava/lang/Iterable;
-
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p2, p1}, Lo1;-><init>(II)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lj07;I)V
-    .registers 4
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Ldv5;->o:I
-
-    invoke-virtual {p1}, Ljava/util/AbstractCollection;->size()I
-
-    move-result v0
-
-    invoke-direct {p0, v0, p2}, Lo1;-><init>(II)V
-
-    iput-object p1, p0, Ldv5;->X:Ljava/lang/Iterable;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)Ljava/lang/Object;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Ldv5;->o:I
+    iput-object p1, p0, Ldv5;->o:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget p1, p0, Ldv5;->X:I
 
-    iget-object p0, p0, Ldv5;->X:Ljava/lang/Iterable;
+    const/high16 v0, -0x80000000
 
-    check-cast p0, Lj07;
+    or-int/2addr p1, v0
 
-    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iput p1, p0, Ldv5;->X:I
 
-    move-result-object p0
+    iget-object p1, p0, Ldv5;->Y:Lzv2;
 
-    return-object p0
+    const/4 v0, 0x0
 
-    :pswitch_0
-    iget-object p0, p0, Ldv5;->X:Ljava/lang/Iterable;
-
-    check-cast p0, Lev5;
-
-    iget-object p0, p0, Lev5;->a:[Ljava/lang/Iterable;
-
-    aget-object p0, p0, p1
-
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p1, v0, p0}, Lzv2;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

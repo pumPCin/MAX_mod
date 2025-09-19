@@ -19,7 +19,7 @@
         "",
         "",
         "chatId",
-        "Lncf;",
+        "Lylf;",
         "onChatCreated",
         "(J)V",
         "onChatUpdated",

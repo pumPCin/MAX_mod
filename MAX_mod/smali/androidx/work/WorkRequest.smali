@@ -19,19 +19,19 @@
         "",
         "Ljava/util/UUID;",
         "id",
-        "Lylg;",
+        "Lfwg;",
         "workSpec",
         "",
         "",
         "tags",
         "<init>",
-        "(Ljava/util/UUID;Lylg;Ljava/util/Set;)V",
+        "(Ljava/util/UUID;Lfwg;Ljava/util/Set;)V",
         "Ljava/util/UUID;",
         "getId",
         "()Ljava/util/UUID;",
-        "Lylg;",
+        "Lfwg;",
         "getWorkSpec",
-        "()Lylg;",
+        "()Lfwg;",
         "Ljava/util/Set;",
         "getTags",
         "()Ljava/util/Set;",
@@ -40,7 +40,7 @@
         "stringId",
         "Companion",
         "Builder",
-        "ulg",
+        "bwg",
         "work-runtime_release"
     }
     k = 0x1
@@ -54,7 +54,7 @@
 
 
 # static fields
-.field public static final Companion:Lulg;
+.field public static final Companion:Lbwg;
 
 .field public static final DEFAULT_BACKOFF_DELAY_MILLIS:J = 0x7530L
 
@@ -88,29 +88,29 @@
     .end annotation
 .end field
 
-.field private final workSpec:Lylg;
+.field private final workSpec:Lfwg;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
-    new-instance v0, Lulg;
+    new-instance v0, Lbwg;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Landroidx/work/WorkRequest;->Companion:Lulg;
+    sput-object v0, Landroidx/work/WorkRequest;->Companion:Lbwg;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/UUID;Lylg;Ljava/util/Set;)V
+.method public constructor <init>(Ljava/util/UUID;Lfwg;Ljava/util/Set;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/UUID;",
-            "Lylg;",
+            "Lfwg;",
             "Ljava/util/Set<",
             "Ljava/lang/String;",
             ">;)V"
@@ -121,7 +121,7 @@
 
     iput-object p1, p0, Landroidx/work/WorkRequest;->id:Ljava/util/UUID;
 
-    iput-object p2, p0, Landroidx/work/WorkRequest;->workSpec:Lylg;
+    iput-object p2, p0, Landroidx/work/WorkRequest;->workSpec:Lfwg;
 
     iput-object p3, p0, Landroidx/work/WorkRequest;->tags:Ljava/util/Set;
 
@@ -168,10 +168,10 @@
     return-object p0
 .end method
 
-.method public final getWorkSpec()Lylg;
+.method public final getWorkSpec()Lfwg;
     .registers 1
 
-    iget-object p0, p0, Landroidx/work/WorkRequest;->workSpec:Lylg;
+    iget-object p0, p0, Landroidx/work/WorkRequest;->workSpec:Lfwg;
 
     return-object p0
 .end method

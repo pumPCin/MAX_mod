@@ -1,248 +1,252 @@
-.class public final Lth0;
+.class public abstract Lth0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lfq5;
+.implements Lb50;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public b:Lz40;
 
-.field public final synthetic b:Ln4e;
+.field public c:Lz40;
+
+.field public d:Lz40;
+
+.field public e:Lz40;
+
+.field public f:Ljava/nio/ByteBuffer;
+
+.field public g:Ljava/nio/ByteBuffer;
+
+.field public h:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ln4e;I)V
-    .registers 3
-
-    iput p2, p0, Lth0;->a:I
-
-    iput-object p1, p0, Lth0;->b:Ln4e;
+.method public constructor <init>()V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object v0, Lb50;->a:Ljava/nio/ByteBuffer;
+
+    iput-object v0, p0, Lth0;->f:Ljava/nio/ByteBuffer;
+
+    iput-object v0, p0, Lth0;->g:Ljava/nio/ByteBuffer;
+
+    sget-object v0, Lz40;->e:Lz40;
+
+    iput-object v0, p0, Lth0;->d:Lz40;
+
+    iput-object v0, p0, Lth0;->e:Lz40;
+
+    iput-object v0, p0, Lth0;->b:Lz40;
+
+    iput-object v0, p0, Lth0;->c:Lz40;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+.method public a()Ljava/nio/ByteBuffer;
+    .registers 3
 
-    iget v0, p0, Lth0;->a:I
+    iget-object v0, p0, Lth0;->g:Ljava/nio/ByteBuffer;
 
-    packed-switch v0, :pswitch_data_0
+    sget-object v1, Lb50;->a:Ljava/nio/ByteBuffer;
 
-    new-instance v0, Lwoa;
+    iput-object v1, p0, Lth0;->g:Ljava/nio/ByteBuffer;
 
-    const/16 v1, 0x14
+    return-object v0
+.end method
 
-    invoke-direct {v0, p1, v1}, Lwoa;-><init>(Lhq5;I)V
+.method public final c()V
+    .registers 2
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iput-boolean v0, p0, Lth0;->h:Z
 
-    sget-object p0, Ls04;->a:Ls04;
+    invoke-virtual {p0}, Lth0;->h()V
 
-    return-object p0
+    return-void
+.end method
 
-    :pswitch_0
-    new-instance v0, Lwoa;
+.method public d()Z
+    .registers 2
 
-    const/16 v1, 0x13
+    iget-boolean v0, p0, Lth0;->h:Z
 
-    invoke-direct {v0, p1, v1}, Lwoa;-><init>(Lhq5;I)V
+    if-eqz v0, :cond_0
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+    iget-object p0, p0, Lth0;->g:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    sget-object v0, Lb50;->a:Ljava/nio/ByteBuffer;
 
-    sget-object p0, Ls04;->a:Ls04;
+    if-ne p0, v0, :cond_0
 
-    return-object p0
+    const/4 p0, 0x1
 
-    :pswitch_1
-    new-instance v0, Lwoa;
+    return p0
 
-    const/4 v1, 0x5
+    :cond_0
+    const/4 p0, 0x0
 
-    invoke-direct {v0, p1, v1}, Lwoa;-><init>(Lhq5;I)V
+    return p0
+.end method
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+.method public final e(Lz40;)Lz40;
+    .registers 2
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iput-object p1, p0, Lth0;->d:Lz40;
 
-    sget-object p0, Ls04;->a:Ls04;
+    invoke-virtual {p0, p1}, Lth0;->f(Lz40;)Lz40;
 
-    return-object p0
+    move-result-object p1
 
-    :pswitch_2
-    new-instance v0, Lar7;
+    iput-object p1, p0, Lth0;->e:Lz40;
 
-    const/16 v1, 0x13
+    invoke-virtual {p0}, Lth0;->isActive()Z
 
-    invoke-direct {v0, p1, v1}, Lar7;-><init>(Lhq5;I)V
+    move-result p1
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+    if-eqz p1, :cond_0
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    sget-object p0, Ls04;->a:Ls04;
-
-    return-object p0
-
-    :pswitch_3
-    new-instance v0, Lar7;
-
-    const/16 v1, 0x12
-
-    invoke-direct {v0, p1, v1}, Lar7;-><init>(Lhq5;I)V
-
-    iget-object p0, p0, Lth0;->b:Ln4e;
-
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    sget-object p0, Ls04;->a:Ls04;
+    iget-object p0, p0, Lth0;->e:Lz40;
 
     return-object p0
 
-    :pswitch_4
-    new-instance v0, Lar7;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, p1, v1}, Lar7;-><init>(Lhq5;I)V
-
-    iget-object p0, p0, Lth0;->b:Ln4e;
-
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    sget-object p0, Ls04;->a:Ls04;
+    :cond_0
+    sget-object p0, Lz40;->e:Lz40;
 
     return-object p0
+.end method
 
-    :pswitch_5
-    new-instance v0, Lar7;
+.method public abstract f(Lz40;)Lz40;
+.end method
 
-    const/16 v1, 0xb
+.method public final flush()V
+    .registers 2
 
-    invoke-direct {v0, p1, v1}, Lar7;-><init>(Lhq5;I)V
+    sget-object v0, Lb50;->a:Ljava/nio/ByteBuffer;
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+    iput-object v0, p0, Lth0;->g:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    sget-object p0, Ls04;->a:Ls04;
+    iput-boolean v0, p0, Lth0;->h:Z
 
-    return-object p0
+    iget-object v0, p0, Lth0;->d:Lz40;
 
-    :pswitch_6
-    new-instance v0, Lky2;
+    iput-object v0, p0, Lth0;->b:Lz40;
 
-    const/16 v1, 0x8
+    iget-object v0, p0, Lth0;->e:Lz40;
 
-    invoke-direct {v0, p1, v1}, Lky2;-><init>(Lhq5;I)V
+    iput-object v0, p0, Lth0;->c:Lz40;
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+    invoke-virtual {p0}, Lth0;->g()V
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    return-void
+.end method
 
-    sget-object p0, Ls04;->a:Ls04;
+.method public g()V
+    .registers 1
 
-    return-object p0
+    return-void
+.end method
 
-    :pswitch_7
-    new-instance v0, Lky2;
+.method public h()V
+    .registers 1
 
-    const/4 v1, 0x0
+    return-void
+.end method
 
-    invoke-direct {v0, p1, v1}, Lky2;-><init>(Lhq5;I)V
+.method public i()V
+    .registers 1
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+    return-void
+.end method
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.method public isActive()Z
+    .registers 2
 
-    sget-object p0, Ls04;->a:Ls04;
+    iget-object p0, p0, Lth0;->e:Lz40;
 
-    return-object p0
+    sget-object v0, Lz40;->e:Lz40;
 
-    :pswitch_8
-    new-instance v0, Lxl1;
+    if-eq p0, v0, :cond_0
 
-    const/16 v1, 0x1d
+    const/4 p0, 0x1
 
-    invoke-direct {v0, p1, v1}, Lxl1;-><init>(Lhq5;I)V
+    return p0
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+    :cond_0
+    const/4 p0, 0x0
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    return p0
+.end method
 
-    sget-object p0, Ls04;->a:Ls04;
+.method public final j(I)Ljava/nio/ByteBuffer;
+    .registers 3
 
-    return-object p0
+    iget-object v0, p0, Lth0;->f:Ljava/nio/ByteBuffer;
 
-    :pswitch_9
-    new-instance v0, Lxl1;
+    invoke-virtual {v0}, Ljava/nio/Buffer;->capacity()I
 
-    const/16 v1, 0x8
+    move-result v0
 
-    invoke-direct {v0, p1, v1}, Lxl1;-><init>(Lhq5;I)V
+    if-ge v0, p1, :cond_0
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+    invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result-object p1
 
-    sget-object p0, Ls04;->a:Ls04;
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
-    return-object p0
+    move-result-object v0
 
-    :pswitch_a
-    new-instance v0, Lcw;
+    invoke-virtual {p1, v0}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    const/16 v1, 0x18
+    move-result-object p1
 
-    invoke-direct {v0, p1, v1}, Lcw;-><init>(Lhq5;I)V
+    iput-object p1, p0, Lth0;->f:Ljava/nio/ByteBuffer;
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+    goto :goto_0
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    :cond_0
+    iget-object p1, p0, Lth0;->f:Ljava/nio/ByteBuffer;
 
-    sget-object p0, Ls04;->a:Ls04;
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    return-object p0
+    :goto_0
+    iget-object p1, p0, Lth0;->f:Ljava/nio/ByteBuffer;
 
-    :pswitch_b
-    new-instance v0, Lcw;
+    iput-object p1, p0, Lth0;->g:Ljava/nio/ByteBuffer;
 
-    const/4 v1, 0x7
+    return-object p1
+.end method
 
-    invoke-direct {v0, p1, v1}, Lcw;-><init>(Lhq5;I)V
+.method public final reset()V
+    .registers 2
 
-    iget-object p0, p0, Lth0;->b:Ln4e;
+    invoke-virtual {p0}, Lth0;->flush()V
 
-    invoke-virtual {p0, v0, p2}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    sget-object v0, Lb50;->a:Ljava/nio/ByteBuffer;
 
-    sget-object p0, Ls04;->a:Ls04;
+    iput-object v0, p0, Lth0;->f:Ljava/nio/ByteBuffer;
 
-    return-object p0
+    sget-object v0, Lz40;->e:Lz40;
 
-    nop
+    iput-object v0, p0, Lth0;->d:Lz40;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iput-object v0, p0, Lth0;->e:Lz40;
+
+    iput-object v0, p0, Lth0;->b:Lz40;
+
+    iput-object v0, p0, Lth0;->c:Lz40;
+
+    invoke-virtual {p0}, Lth0;->i()V
+
+    return-void
 .end method

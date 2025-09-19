@@ -45,7 +45,7 @@
 .method public constructor <init>(Ljava/io/InputStream;Lnet/jpountz/lz4/LZ4FastDecompressor;)V
     .registers 3
 
-    invoke-static {}, Lfng;->b()Lfng;
+    invoke-static {}, Lpxg;->b()Lpxg;
 
     const/4 p0, 0x0
 
@@ -103,7 +103,7 @@
 
     invoke-virtual {p0}, Lnet/jpountz/lz4/LZ4Factory;->fastDecompressor()Lnet/jpountz/lz4/LZ4FastDecompressor;
 
-    invoke-static {}, Lfng;->b()Lfng;
+    invoke-static {}, Lpxg;->b()Lpxg;
 
     const/4 p0, 0x0
 
@@ -238,7 +238,7 @@
     :goto_1
     add-int/lit8 v9, v3, 0x1
 
-    invoke-static {v9, v2}, Liuc;->d(I[B)I
+    invoke-static {v9, v2}, Lo2d;->d(I[B)I
 
     move-result v2
 
@@ -246,7 +246,7 @@
 
     add-int/lit8 v10, v3, 0x5
 
-    invoke-static {v10, v9}, Liuc;->d(I[B)I
+    invoke-static {v10, v9}, Lo2d;->d(I[B)I
 
     move-result v9
 
@@ -256,7 +256,7 @@
 
     add-int/lit8 v3, v3, 0x9
 
-    invoke-static {v3, v9}, Liuc;->d(I[B)I
+    invoke-static {v3, v9}, Lo2d;->d(I[B)I
 
     move-result v3
 
@@ -605,7 +605,7 @@
         }
     .end annotation
 
-    invoke-static {p2, p1, p3}, Liuc;->b(I[BI)V
+    invoke-static {p2, p1, p3}, Lo2d;->b(I[BI)V
 
     iget-boolean v0, p0, Lnet/jpountz/lz4/LZ4BlockInputStream;->finished:Z
 

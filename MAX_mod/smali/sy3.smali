@@ -1,83 +1,211 @@
-.class public abstract Lsy3;
+.class public final Lsy3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Ljava/util/Set;
+.field public static final d:Lsy3;
 
-.field public static final b:Ljava/util/Set;
 
-.field public static final c:Ljava/util/Set;
+# instance fields
+.field public final a:I
 
-.field public static final d:Ljava/util/Set;
+.field public final b:I
+
+.field public final c:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .registers 1
 
-    sget-object v0, Lrx1;->Y:Lrx1;
+    new-instance v0, Lsy3;
 
-    sget-object v1, Lrx1;->Z:Lrx1;
+    invoke-direct {v0}, Lsy3;-><init>()V
 
-    sget-object v2, Lrx1;->o:Lrx1;
-
-    sget-object v3, Lrx1;->X:Lrx1;
-
-    invoke-static {v2, v3, v0, v1}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    sput-object v0, Lsy3;->a:Ljava/util/Set;
-
-    sget-object v0, Lsx1;->o:Lsx1;
-
-    sget-object v1, Lsx1;->a:Lsx1;
-
-    invoke-static {v0, v1}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    sput-object v0, Lsy3;->b:Ljava/util/Set;
-
-    sget-object v0, Lqx1;->X:Lqx1;
-
-    sget-object v1, Lqx1;->o:Lqx1;
-
-    sget-object v2, Lqx1;->a:Lqx1;
-
-    invoke-static {v0, v1, v2}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    sput-object v0, Lsy3;->c:Ljava/util/Set;
-
-    invoke-static {v0}, Ljava/util/EnumSet;->copyOf(Ljava/util/Collection;)Ljava/util/EnumSet;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/util/AbstractCollection;->remove(Ljava/lang/Object;)Z
-
-    invoke-virtual {v0, v2}, Ljava/util/AbstractCollection;->remove(Ljava/lang/Object;)Z
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
-
-    move-result-object v0
-
-    sput-object v0, Lsy3;->d:Ljava/util/Set;
+    sput-object v0, Lsy3;->d:Lsy3;
 
     return-void
+.end method
+
+.method public synthetic constructor <init>()V
+    .registers 3
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v0, v0, v1}, Lsy3;-><init>(IIZ)V
+
+    return-void
+.end method
+
+.method public constructor <init>(IIZ)V
+    .registers 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lsy3;->a:I
+
+    iput p2, p0, Lsy3;->b:I
+
+    iput-boolean p3, p0, Lsy3;->c:Z
+
+    return-void
+.end method
+
+.method public static a(Lsy3;IIZI)Lsy3;
+    .registers 6
+
+    and-int/lit8 v0, p4, 0x1
+
+    if-eqz v0, :cond_0
+
+    iget p1, p0, Lsy3;->a:I
+
+    :cond_0
+    and-int/lit8 v0, p4, 0x2
+
+    if-eqz v0, :cond_1
+
+    iget p2, p0, Lsy3;->b:I
+
+    :cond_1
+    and-int/lit8 p4, p4, 0x4
+
+    if-eqz p4, :cond_2
+
+    iget-boolean p3, p0, Lsy3;->c:Z
+
+    :cond_2
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Lsy3;
+
+    invoke-direct {p0, p1, p2, p3}, Lsy3;-><init>(IIZ)V
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final b()I
+    .registers 2
+
+    iget v0, p0, Lsy3;->a:I
+
+    iget p0, p0, Lsy3;->b:I
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lsy3;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lsy3;
+
+    iget v1, p0, Lsy3;->a:I
+
+    iget v3, p1, Lsy3;->a:I
+
+    if-eq v1, v3, :cond_2
+
+    return v2
+
+    :cond_2
+    iget v1, p0, Lsy3;->b:I
+
+    iget v3, p1, Lsy3;->b:I
+
+    if-eq v1, v3, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-boolean p0, p0, Lsy3;->c:Z
+
+    iget-boolean p1, p1, Lsy3;->c:Z
+
+    if-eq p0, p1, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget v0, p0, Lsy3;->a:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lsy3;->b:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-boolean p0, p0, Lsy3;->c:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    const-string v0, ", inset="
+
+    const-string v1, ", isVisible="
+
+    const-string v2, "ControlState(heightView="
+
+    iget v3, p0, Lsy3;->a:I
+
+    iget v4, p0, Lsy3;->b:I
+
+    invoke-static {v2, v3, v0, v4, v1}, Lsg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Lsy3;->c:Z
+
+    invoke-static {v0, p0, v1}, Lmw1;->k(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

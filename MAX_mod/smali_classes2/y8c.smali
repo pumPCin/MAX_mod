@@ -1,146 +1,20 @@
-.class public final Ly8c;
+.class public abstract Ly8c;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static oneme_layout_quick_camera_api_view:I = 0x7f0d0102
 
-.field public final synthetic b:F
+.field public static oneme_ll_chat_media_progress:I = 0x7f0d0103
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public static oneme_media_bar_header_view:I = 0x7f0d0105
 
+.field public static oneme_row_gallery_camera:I = 0x7f0d0106
 
-# direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;FI)V
-    .registers 4
+.field public static oneme_row_gallery_media:I = 0x7f0d0107
 
-    iput p3, p0, Ly8c;->a:I
+.field public static oneme_row_gallery_media_check_button_layout:I = 0x7f0d0108
 
-    iput-object p1, p0, Ly8c;->c:Ljava/lang/Object;
+.field public static oneme_view_media_permissions:I = 0x7f0d0109
 
-    iput p2, p0, Ly8c;->b:F
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private final a(Landroid/animation/Animator;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method private final b(Landroid/animation/Animator;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method private final c(Landroid/animation/Animator;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method private final d(Landroid/animation/Animator;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method private final e(Landroid/animation/Animator;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method private final f(Landroid/animation/Animator;)V
-    .registers 2
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .registers 2
-
-    iget p0, p0, Ly8c;->a:I
-
-    return-void
-.end method
-
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .registers 3
-
-    iget p1, p0, Ly8c;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p1, p0, Ly8c;->c:Ljava/lang/Object;
-
-    check-cast p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
-
-    sget-object v0, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->a1:[Lsf7;
-
-    invoke-virtual {p1}, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->K0()Landroid/view/View;
-
-    move-result-object p1
-
-    iget p0, p0, Ly8c;->b:F
-
-    invoke-virtual {p1, p0}, Landroid/view/View;->setTranslationY(F)V
-
-    :pswitch_0
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final onAnimationRepeat(Landroid/animation/Animator;)V
-    .registers 2
-
-    iget p0, p0, Ly8c;->a:I
-
-    return-void
-.end method
-
-.method public final onAnimationStart(Landroid/animation/Animator;)V
-    .registers 3
-
-    iget p1, p0, Ly8c;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p1, p0, Ly8c;->c:Ljava/lang/Object;
-
-    check-cast p1, La9c;
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p1, La9c;->a:Z
-
-    iget p0, p0, Ly8c;->b:F
-
-    iput p0, p1, La9c;->o:F
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+.field public static row_media_bar_extra_actions:I = 0x7f0d0155

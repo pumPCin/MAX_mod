@@ -1,17 +1,77 @@
-.class public interface abstract Lb3f;
+.class public abstract Lb3f;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(JIIILz2f;)V
+# direct methods
+.method public static a(Landroid/widget/TextView;)I
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getBreakStrategy()I
+
+    move-result p0
+
+    return p0
 .end method
 
-.method public abstract b(Lgsa;II)V
+.method public static b(Landroid/widget/TextView;)Landroid/content/res/ColorStateList;
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawableTintList()Landroid/content/res/ColorStateList;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public abstract c(Lk64;IZ)I
+.method public static c(Landroid/widget/TextView;)Landroid/graphics/PorterDuff$Mode;
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawableTintMode()Landroid/graphics/PorterDuff$Mode;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public abstract d(Lt26;)V
+.method public static d(Landroid/widget/TextView;)I
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getHyphenationFrequency()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static e(Landroid/widget/TextView;I)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setBreakStrategy(I)V
+
+    return-void
+.end method
+
+.method public static f(Landroid/widget/TextView;Landroid/content/res/ColorStateList;)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setCompoundDrawableTintList(Landroid/content/res/ColorStateList;)V
+
+    return-void
+.end method
+
+.method public static g(Landroid/widget/TextView;Landroid/graphics/PorterDuff$Mode;)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setCompoundDrawableTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    return-void
+.end method
+
+.method public static h(Landroid/widget/TextView;I)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setHyphenationFrequency(I)V
+
+    return-void
 .end method

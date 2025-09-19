@@ -3,22 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lzb6;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lone/me/calls/ui/ui/call/CallScreen;
+.field public final synthetic b:Lcj1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/calls/ui/ui/call/CallScreen;I)V
+.method public synthetic constructor <init>(Lcj1;I)V
     .registers 3
 
     iput p2, p0, Laj1;->a:I
 
-    iput-object p1, p0, Laj1;->b:Lone/me/calls/ui/ui/call/CallScreen;
+    iput-object p1, p0, Laj1;->b:Lcj1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,72 +27,64 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public final invoke()Ljava/lang/Object;
+    .registers 3
 
     iget v0, p0, Laj1;->a:I
 
-    sget-object v1, Lncf;->a:Lncf;
-
-    iget-object p0, p0, Laj1;->b:Lone/me/calls/ui/ui/call/CallScreen;
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
+    iget-object p0, p0, Laj1;->b:Lcj1;
 
     packed-switch v0, :pswitch_data_0
 
-    sget-object v0, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lq1d;
+    iget-object p0, p0, Lcj1;->c:Lxjd;
 
-    if-nez p1, :cond_0
+    check-cast p0, Lpad;
 
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Lkm1;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->reconnect-call-ringtone:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lpad;->l(Ljava/lang/Enum;Z)Z
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
 
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Lkm1;->t(Z)V
-
-    :cond_0
-    return-object v1
+    return-object p0
 
     :pswitch_0
-    if-eqz p1, :cond_1
+    iget-object p0, p0, Lcj1;->a:Landroid/content/Context;
 
-    iget-boolean p1, p0, Lone/me/calls/ui/ui/call/CallScreen;->o0:Z
+    const-string v0, "vibrator"
 
-    if-nez p1, :cond_2
-
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Lkm1;
-
-    move-result-object p1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Lkm1;->t(Z)V
-
-    goto :goto_0
-
-    :cond_1
-    sget-object p1, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lq1d;
-
-    :cond_2
-    :goto_0
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->G0()Lt3b;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lt3b;->c()V
+    check-cast p0, Landroid/os/Vibrator;
 
-    return-object v1
+    return-object p0
 
-    nop
+    :pswitch_1
+    iget-object p0, p0, Lcj1;->a:Landroid/content/Context;
+
+    const-string v0, "audio"
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/media/AudioManager;
+
+    return-object p0
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

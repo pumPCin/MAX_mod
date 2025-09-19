@@ -2,317 +2,195 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ltb9;
-
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lkf9;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public final X:J
-
-.field public final a:J
-
-.field public final b:J
-
-.field public final c:J
-
-.field public final o:J
+.field public static final a:Ljava/util/logging/Logger;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Lif9;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lif9;-><init>(I)V
-
-    sput-object v0, Lkf9;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(JJJJJ)V
-    .registers 11
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lkf9;->a:J
-
-    iput-wide p3, p0, Lkf9;->b:J
-
-    iput-wide p5, p0, Lkf9;->c:J
-
-    iput-wide p7, p0, Lkf9;->o:J
-
-    iput-wide p9, p0, Lkf9;->X:J
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lkf9;->a:J
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lkf9;->b:J
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lkf9;->c:J
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lkf9;->o:J
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lkf9;->X:J
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final describeContents()I
     .registers 1
 
-    const/4 p0, 0x0
+    const-class v0, Lkf9;
 
-    return p0
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
+
+    move-result-object v0
+
+    sput-object v0, Lkf9;->a:Ljava/util/logging/Logger;
+
+    return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 8
+.method public static a(Ljava/io/InputStream;)Ljava/util/List;
+    .registers 9
 
-    const/4 v0, 0x1
+    const-string v0, "Error closing input stream (ignored)"
 
-    if-ne p0, p1, :cond_0
+    sget-object v1, Lkf9;->a:Ljava/util/logging/Logger;
 
-    return v0
+    if-nez p0, :cond_0
+
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    return-object p0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    if-eqz p1, :cond_2
+    :try_start_0
+    new-instance v3, Ljava/io/ObjectInputStream;
 
-    const-class v2, Lkf9;
+    invoke-direct {v3, p0}, Ljava/io/ObjectInputStream;-><init>(Ljava/io/InputStream;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_start_1
+    new-instance v2, Ljava/util/ArrayList;
 
-    move-result-object v3
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    if-eq v2, v3, :cond_1
+    invoke-virtual {v3}, Ljava/io/ObjectInputStream;->readInt()I
+
+    move-result v4
+
+    const/4 v5, 0x0
+
+    :goto_0
+    if-ge v5, v4, :cond_1
+
+    new-instance v6, Lp4b;
+
+    invoke-direct {v6}, Lp4b;-><init>()V
+
+    invoke-virtual {v6, v3}, Lp4b;->readExternal(Ljava/io/ObjectInput;)V
+
+    invoke-virtual {v2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
     :cond_1
-    check-cast p1, Lkf9;
+    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
-    iget-wide v2, p0, Lkf9;->a:J
+    move-result v4
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-wide v4, p1, Lkf9;->a:J
+    if-nez v4, :cond_2
 
-    cmp-long v2, v2, v4
+    :try_start_2
+    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    if-nez v2, :cond_2
+    return-object v2
 
-    iget-wide v2, p0, Lkf9;->b:J
+    :catch_0
+    move-exception p0
 
-    iget-wide v4, p1, Lkf9;->b:J
+    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
 
-    cmp-long v2, v2, v4
+    invoke-virtual {v1, v3, v0, p0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    if-nez v2, :cond_2
-
-    iget-wide v2, p0, Lkf9;->c:J
-
-    iget-wide v4, p1, Lkf9;->c:J
-
-    cmp-long v2, v2, v4
-
-    if-nez v2, :cond_2
-
-    iget-wide v2, p0, Lkf9;->o:J
-
-    iget-wide v4, p1, Lkf9;->o:J
-
-    cmp-long v2, v2, v4
-
-    if-nez v2, :cond_2
-
-    iget-wide v2, p0, Lkf9;->X:J
-
-    iget-wide p0, p1, Lkf9;->X:J
-
-    cmp-long p0, v2, p0
-
-    if-nez p0, :cond_2
-
-    return v0
+    return-object v2
 
     :cond_2
-    :goto_0
-    return v1
-.end method
+    :try_start_3
+    new-instance v2, Ljava/lang/IllegalStateException;
 
-.method public final hashCode()I
-    .registers 5
+    const-string v4, "Empty metadata"
 
-    iget-wide v0, p0, Lkf9;->a:J
+    invoke-direct {v2, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Looa;->s(J)I
+    throw v2
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    move-result v0
+    :catchall_0
+    move-exception v2
 
-    add-int/lit16 v0, v0, 0x20f
+    goto :goto_2
 
-    mul-int/lit8 v0, v0, 0x1f
+    :catch_1
+    move-exception v2
 
-    iget-wide v1, p0, Lkf9;->b:J
+    goto :goto_1
 
-    invoke-static {v1, v2}, Looa;->s(J)I
+    :catchall_1
+    move-exception v3
 
-    move-result v1
+    move-object v7, v3
 
-    add-int/2addr v1, v0
+    move-object v3, v2
 
-    mul-int/lit8 v1, v1, 0x1f
+    move-object v2, v7
 
-    iget-wide v2, p0, Lkf9;->c:J
+    goto :goto_2
 
-    invoke-static {v2, v3}, Looa;->s(J)I
+    :catch_2
+    move-exception v3
 
-    move-result v0
+    move-object v7, v3
 
-    add-int/2addr v0, v1
+    move-object v3, v2
 
-    mul-int/lit8 v0, v0, 0x1f
+    move-object v2, v7
 
-    iget-wide v1, p0, Lkf9;->o:J
+    :goto_1
+    :try_start_4
+    new-instance v4, Ljava/lang/IllegalStateException;
 
-    invoke-static {v1, v2}, Looa;->s(J)I
+    const-string v5, "Unable to parse metadata file"
 
-    move-result v1
+    invoke-direct {v4, v5, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    add-int/2addr v1, v0
+    throw v4
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    mul-int/lit8 v1, v1, 0x1f
+    :goto_2
+    if-eqz v3, :cond_3
 
-    iget-wide v2, p0, Lkf9;->X:J
+    :try_start_5
+    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
+    :try_end_5
+    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    invoke-static {v2, v3}, Looa;->s(J)I
+    goto :goto_3
 
-    move-result p0
+    :catch_3
+    move-exception p0
 
-    add-int/2addr p0, v1
+    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
 
-    return p0
-.end method
+    invoke-virtual {v1, v3, v0, p0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-.method public final toString()Ljava/lang/String;
-    .registers 4
+    goto :goto_3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    :cond_3
+    :try_start_6
+    invoke-virtual {p0}, Ljava/io/InputStream;->close()V
+    :try_end_6
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
 
-    const-string v1, "Motion photo metadata: photoStartPosition="
+    goto :goto_3
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :catch_4
+    move-exception p0
 
-    iget-wide v1, p0, Lkf9;->a:J
+    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3, v0, p0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    const-string v1, ", photoSize="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lkf9;->b:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", photoPresentationTimestampUs="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lkf9;->c:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", videoStartPosition="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lkf9;->o:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", videoSize="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lkf9;->X:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
-
-    iget-wide v0, p0, Lkf9;->a:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-wide v0, p0, Lkf9;->b:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-wide v0, p0, Lkf9;->c:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-wide v0, p0, Lkf9;->o:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-wide v0, p0, Lkf9;->X:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    return-void
+    :goto_3
+    throw v2
 .end method

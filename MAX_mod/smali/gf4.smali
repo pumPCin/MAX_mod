@@ -1,690 +1,421 @@
 .class public final Lgf4;
-.super Lkv0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/Map;
 
+# static fields
+.field public static final a:[I
 
-# instance fields
-.field public final synthetic t0:I
-
-.field public final u0:Ljava/util/Map;
+.field public static final b:Lim4;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/util/Map;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput p1, p0, Lgf4;->t0:I
+    const/16 v0, 0xe
 
-    invoke-direct {p0}, Lkv0;-><init>()V
+    new-array v0, v0, [I
 
-    iput-object p2, p0, Lgf4;->u0:Ljava/util/Map;
+    fill-array-data v0, :array_0
+
+    sput-object v0, Lgf4;->a:[I
+
+    new-instance v0, Lim4;
+
+    const/16 v1, 0x10
+
+    invoke-direct {v0, v1}, Lim4;-><init>(I)V
+
+    sput-object v0, Lgf4;->b:Lim4;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final I(Ljava/lang/Object;)Z
-    .registers 2
-
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final J()Ljava/util/Map;
-    .registers 2
-
-    iget v0, p0, Lgf4;->t0:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lgf4;->u0:Ljava/util/Map;
-
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lgf4;->u0:Ljava/util/Map;
-
-    return-object p0
 
     nop
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :array_0
+    .array-data 4
+        0x5
+        0x4
+        0xc
+        0x8
+        0x3
+        0xa
+        0x9
+        0xb
+        0x6
+        0x2
+        0x0
+        0x1
+        0x7
+        0xe
+    .end array-data
 .end method
 
-.method public final K()Ljava/util/Set;
-    .registers 1
-
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final L(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final M()Z
-    .registers 1
-
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final N()Ljava/util/Set;
-    .registers 1
-
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final O()I
-    .registers 1
-
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Map;->size()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final clear()V
-    .registers 1
-
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Map;->clear()V
-
-    return-void
-.end method
-
-.method public final containsKey(Ljava/lang/Object;)Z
-    .registers 3
-
-    iget v0, p0, Lgf4;->t0:I
-
-    packed-switch v0, :pswitch_data_0
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0, p1}, Lgf4;->I(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-
-    :pswitch_0
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p0, p1}, Lgf4;->I(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    const/4 p0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_1
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public containsValue(Ljava/lang/Object;)Z
-    .registers 3
-
-    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    new-instance v0, La38;
-
-    invoke-direct {v0, p0}, Li4f;-><init>(Ljava/util/Iterator;)V
-
-    if-nez p1, :cond_1
-
-    :cond_0
-    invoke-virtual {v0}, Li4f;->hasNext()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    invoke-virtual {v0}, Li4f;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v0}, Li4f;->hasNext()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    invoke-virtual {v0}, Li4f;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    :goto_0
-    const/4 p0, 0x1
-
-    goto :goto_1
-
-    :cond_2
-    const/4 p0, 0x0
-
-    :goto_1
-    return p0
-.end method
-
-.method public final entrySet()Ljava/util/Set;
-    .registers 3
-
-    iget v0, p0, Lgf4;->t0:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lgf4;->K()Ljava/util/Set;
-
-    move-result-object p0
-
-    new-instance v0, Lff4;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lff4;-><init>(I)V
-
-    invoke-static {p0, v0}, Ly6c;->o(Ljava/util/Set;Lg9b;)Lmfd;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lgf4;->K()Ljava/util/Set;
-
-    move-result-object p0
-
-    new-instance v0, Lff4;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lff4;-><init>(I)V
-
-    invoke-static {p0, v0}, Ly6c;->o(Ljava/util/Set;Lg9b;)Lmfd;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    iget v0, p0, Lgf4;->t0:I
-
-    packed-switch v0, :pswitch_data_0
-
-    if-eqz p1, :cond_0
-
-    invoke-static {p0, p1}, Lsqd;->k(Ljava/util/Map;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-
-    :pswitch_0
-    if-eqz p1, :cond_1
-
-    invoke-static {p0, p1}, Lsqd;->k(Ljava/util/Map;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    const/4 p0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_1
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iget v0, p0, Lgf4;->t0:I
-
-    packed-switch v0, :pswitch_data_0
-
-    if-nez p1, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0, p1}, Lgf4;->L(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/util/List;
-
-    :goto_0
-    return-object p0
-
-    :pswitch_0
-    if-nez p1, :cond_1
-
-    const/4 p0, 0x0
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p0, p1}, Lgf4;->L(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/util/List;
-
-    :goto_1
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget v0, p0, Lgf4;->t0:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lgf4;->entrySet()Ljava/util/Set;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ly6c;->s(Ljava/util/Set;)I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lgf4;->entrySet()Ljava/util/Set;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ly6c;->s(Ljava/util/Set;)I
-
-    move-result p0
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final isEmpty()Z
-    .registers 3
-
-    iget v0, p0, Lgf4;->t0:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lgf4;->M()Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p0}, Lgf4;->O()I
-
-    move-result v0
-
-    if-ne v0, v1, :cond_0
+.method public static a(Ljava/util/ArrayList;I)V
+    .registers 9
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lgf4;->I(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :cond_1
-    :goto_0
-    return v1
-
-    :pswitch_0
-    invoke-virtual {p0}, Lgf4;->M()Z
-
-    move-result v0
-
     const/4 v1, 0x1
 
-    if-nez v0, :cond_3
+    const/4 v2, 0x0
 
-    invoke-virtual {p0}, Lgf4;->O()I
+    packed-switch p1, :pswitch_data_0
 
-    move-result v0
+    :pswitch_0
+    goto/16 :goto_3
 
-    if-ne v0, v1, :cond_2
+    :pswitch_1
+    new-instance p1, Lig7;
 
-    const/4 v0, 0x0
+    invoke-direct {p1}, Lig7;-><init>()V
 
-    invoke-virtual {p0, v0}, Lgf4;->I(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move-result p0
+    return-void
 
-    if-eqz p0, :cond_2
+    :pswitch_2
+    new-instance p1, Lacg;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput v2, p1, Lacg;->c:I
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p1, Lacg;->d:J
+
+    const/4 v2, -0x1
+
+    iput v2, p1, Lacg;->f:I
+
+    iput-wide v0, p1, Lacg;->g:J
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_3
+    new-instance p1, Lrff;
+
+    new-instance v0, Lv6f;
+
+    const-wide/16 v3, 0x0
+
+    invoke-direct {v0, v3, v4}, Lv6f;-><init>(J)V
+
+    new-instance v3, Lpj4;
+
+    sget-object v4, Ll37;->b:Lgx5;
+
+    sget-object v4, Llqc;->X:Llqc;
+
+    invoke-direct {v3, v4, v2, v2}, Lpj4;-><init>(Ljava/util/List;II)V
+
+    invoke-direct {p1, v1, v0, v3}, Lrff;-><init>(ILv6f;Lpj4;)V
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_4
+    new-instance p1, Lezb;
+
+    invoke-direct {p1}, Lezb;-><init>()V
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_5
+    new-instance p1, Lj8a;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_6
+    new-instance p1, Lz86;
+
+    sget-object v1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    invoke-direct {p1, v2, v0, v1, v0}, Lz86;-><init>(ILv6f;Ljava/util/List;Lhdb;)V
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    new-instance p1, Lrj9;
+
+    invoke-direct {p1, v2}, Lrj9;-><init>(I)V
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_7
+    new-instance p1, Llj9;
+
+    invoke-direct {p1, v2}, Llj9;-><init>(I)V
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_8
+    new-instance p1, Lw88;
+
+    invoke-direct {p1, v2}, Lw88;-><init>(I)V
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_9
+    new-instance p1, Lkx5;
+
+    invoke-direct {p1}, Lkx5;-><init>()V
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    :pswitch_a
+    sget-object p1, Lgf4;->b:Lim4;
+
+    iget-object v3, p1, Lim4;->b:Ljava/lang/Object;
+
+    check-cast v3, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    monitor-enter v3
+
+    :try_start_0
+    iget-object v4, p1, Lim4;->b:Ljava/lang/Object;
+
+    check-cast v4, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    iget-object p1, p1, Lim4;->c:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/reflect/Constructor;
+
+    monitor-exit v3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_1
 
+    :catchall_0
+    move-exception p0
+
+    goto :goto_4
+
+    :cond_0
+    :try_start_1
+    sget-object v4, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    const-string v5, "com.google.android.exoplayer2.ext.flac.FlacLibrary"
+
+    invoke-static {v5}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v5
+
+    const-string v6, "isAvailable"
+
+    invoke-virtual {v5, v6, v0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v0, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/Boolean;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    const-string v4, "com.google.android.exoplayer2.ext.flac.FlacExtractor"
+
+    invoke-static {v4}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v4
+
+    const-class v5, Lnf5;
+
+    invoke-virtual {v4, v5}, Ljava/lang/Class;->asSubclass(Ljava/lang/Class;)Ljava/lang/Class;
+
+    move-result-object v4
+
+    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    filled-new-array {v5}, [Ljava/lang/Class;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+
+    move-result-object v4
+
+    iput-object v4, p1, Lim4;->c:Ljava/lang/Object;
+    :try_end_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p0
+
+    :try_start_2
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    const-string v0, "Error instantiating FLAC extension"
+
+    invoke-direct {p1, v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :catch_1
+    :cond_1
+    :goto_0
+    iget-object v4, p1, Lim4;->b:Ljava/lang/Object;
+
+    check-cast v4, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v4, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    iget-object p1, p1, Lim4;->c:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/reflect/Constructor;
+
+    monitor-exit v3
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    :goto_1
+    if-nez p1, :cond_2
+
+    goto :goto_2
+
     :cond_2
-    const/4 v1, 0x0
+    :try_start_3
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    filled-new-array {v0}, [Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v0, p1
+
+    check-cast v0, Lnf5;
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
+
+    :goto_2
+    if-eqz v0, :cond_3
+
+    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_3
 
     :cond_3
-    :goto_1
-    return v1
+    new-instance p1, Lfr5;
 
-    nop
+    invoke-direct {p1}, Lfr5;-><init>()V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-.method public final k()Ljava/lang/Object;
-    .registers 2
+    :goto_3
+    return-void
 
-    iget v0, p0, Lgf4;->t0:I
+    :catch_2
+    move-exception p0
 
-    packed-switch v0, :pswitch_data_0
+    new-instance p1, Ljava/lang/IllegalStateException;
 
-    iget-object p0, p0, Lgf4;->u0:Ljava/util/Map;
+    const-string v0, "Unexpected error creating FLAC extractor"
 
-    return-object p0
+    invoke-direct {p1, v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :pswitch_0
-    iget-object p0, p0, Lgf4;->u0:Ljava/util/Map;
+    throw p1
 
-    return-object p0
+    :goto_4
+    :try_start_4
+    monitor-exit v3
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    nop
+    throw p0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    :pswitch_b
+    new-instance p1, Lxc;
 
-.method public final keySet()Ljava/util/Set;
-    .registers 3
+    invoke-direct {p1}, Lxc;-><init>()V
 
-    iget v0, p0, Lgf4;->t0:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lgf4;->N()Ljava/util/Set;
-
-    move-result-object p0
-
-    new-instance v0, Lff4;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1}, Lff4;-><init>(I)V
-
-    invoke-static {p0, v0}, Ly6c;->o(Ljava/util/Set;Lg9b;)Lmfd;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lgf4;->N()Ljava/util/Set;
-
-    move-result-object p0
-
-    new-instance v0, Lff4;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lff4;-><init>(I)V
-
-    invoke-static {p0, v0}, Ly6c;->o(Ljava/util/Set;Lg9b;)Lmfd;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final putAll(Ljava/util/Map;)V
-    .registers 2
-
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
-.end method
 
-.method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    :pswitch_c
+    new-instance p1, Lac;
 
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
+    invoke-direct {p1, v2}, Lac;-><init>(I)V
 
-    move-result-object p0
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {p0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
 
-    move-result-object p0
+    :pswitch_d
+    new-instance p1, Ly3;
 
-    return-object p0
-.end method
+    invoke-direct {p1}, Ly3;-><init>()V
 
-.method public final size()I
-    .registers 3
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    iget v0, p0, Lgf4;->t0:I
+    return-void
 
-    packed-switch v0, :pswitch_data_0
+    :pswitch_e
+    new-instance p1, Lu3;
 
-    invoke-virtual {p0}, Lgf4;->O()I
+    invoke-direct {p1}, Lu3;-><init>()V
 
-    move-result v0
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x0
+    return-void
 
-    invoke-virtual {p0, v1}, Lgf4;->I(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    :goto_0
-    sub-int/2addr v0, p0
-
-    return v0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lgf4;->O()I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1}, Lgf4;->I(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    goto :goto_0
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
         :pswitch_0
+        :pswitch_1
     .end packed-switch
-.end method
-
-.method public final values()Ljava/util/Collection;
-    .registers 1
-
-    invoke-virtual {p0}, Lgf4;->J()Ljava/util/Map;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object p0
-
-    return-object p0
 .end method

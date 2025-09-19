@@ -1,57 +1,168 @@
-.class public abstract Lc72;
+.class public final Lc72;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Iterable;
-.implements Lhf7;
 
+# static fields
+.field public static final a:[C
 
-# instance fields
-.field public final a:C
-
-.field public final b:C
-
-.field public final c:I
+.field public static final b:[B
 
 
 # direct methods
-.method public constructor <init>(CC)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 10
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0x75
 
-    iput-char p1, p0, Lc72;->a:C
+    new-array v0, v0, [C
+
+    sput-object v0, Lc72;->a:[C
+
+    const/16 v0, 0x7e
+
+    new-array v0, v0, [B
+
+    sput-object v0, Lc72;->b:[B
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    const/16 v2, 0x20
+
+    if-ge v1, v2, :cond_0
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v1, 0x62
+
+    const/16 v3, 0x8
+
+    invoke-static {v1, v3}, Lc72;->a(CI)V
+
+    const/16 v1, 0x74
+
+    const/16 v4, 0x9
+
+    invoke-static {v1, v4}, Lc72;->a(CI)V
+
+    const/16 v1, 0x6e
+
+    const/16 v5, 0xa
+
+    invoke-static {v1, v5}, Lc72;->a(CI)V
+
+    const/16 v1, 0xc
+
+    const/16 v6, 0x66
+
+    invoke-static {v6, v1}, Lc72;->a(CI)V
+
+    const/16 v1, 0x72
+
+    const/16 v6, 0xd
+
+    invoke-static {v1, v6}, Lc72;->a(CI)V
+
+    const/16 v1, 0x2f
+
+    invoke-static {v1, v1}, Lc72;->a(CI)V
+
+    const/16 v1, 0x22
+
+    invoke-static {v1, v1}, Lc72;->a(CI)V
+
+    const/16 v7, 0x5c
+
+    invoke-static {v7, v7}, Lc72;->a(CI)V
+
+    sget-object v8, Lc72;->b:[B
+
+    :goto_1
+    const/16 v9, 0x21
+
+    if-ge v0, v9, :cond_1
+
+    const/16 v9, 0x7f
+
+    aput-byte v9, v8, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v0, 0x3
+
+    aput-byte v0, v8, v4
+
+    aput-byte v0, v8, v5
+
+    aput-byte v0, v8, v6
+
+    aput-byte v0, v8, v2
+
+    const/16 v0, 0x2c
+
+    const/4 v2, 0x4
+
+    aput-byte v2, v8, v0
+
+    const/16 v0, 0x3a
+
+    const/4 v2, 0x5
+
+    aput-byte v2, v8, v0
+
+    const/16 v0, 0x7b
+
+    const/4 v2, 0x6
+
+    aput-byte v2, v8, v0
+
+    const/16 v0, 0x7d
+
+    const/4 v2, 0x7
+
+    aput-byte v2, v8, v0
+
+    const/16 v0, 0x5b
+
+    aput-byte v3, v8, v0
+
+    const/16 v0, 0x5d
+
+    aput-byte v4, v8, v0
 
     const/4 v0, 0x1
 
-    invoke-static {p1, p2, v0}, Lnc5;->A(III)I
+    aput-byte v0, v8, v1
 
-    move-result p1
+    const/4 v0, 0x2
 
-    int-to-char p1, p1
-
-    iput-char p1, p0, Lc72;->b:C
-
-    iput v0, p0, Lc72;->c:I
+    aput-byte v0, v8, v7
 
     return-void
 .end method
 
+.method public static a(CI)V
+    .registers 3
 
-# virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .registers 4
+    const/16 v0, 0x75
 
-    new-instance v0, Ld72;
+    if-eq p0, v0, :cond_0
 
-    iget-char v1, p0, Lc72;->b:C
+    sget-object v0, Lc72;->a:[C
 
-    iget v2, p0, Lc72;->c:I
+    int-to-char p1, p1
 
-    iget-char p0, p0, Lc72;->a:C
+    aput-char p1, v0, p0
 
-    invoke-direct {v0, p0, v1, v2}, Ld72;-><init>(CCI)V
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

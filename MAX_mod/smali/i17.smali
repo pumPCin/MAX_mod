@@ -1,23 +1,14 @@
-.class public final Li17;
+.class public interface abstract Li17;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Li17;
+# virtual methods
+.method public abstract d(Lwa5;)V
+.end method
 
-.field public static b:Lh17;
+.method public abstract e()Ldwe;
+.end method
 
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Li17;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Li17;->a:Li17;
-
-    return-void
+.method public abstract getTimestamp()J
 .end method

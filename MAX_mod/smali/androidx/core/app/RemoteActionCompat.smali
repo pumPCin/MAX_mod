@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lzjf;
+.implements Lrtf;
 
 
 # instance fields

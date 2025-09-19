@@ -1,23 +1,26 @@
-.class public final Lpcd;
-.super Ltcd;
+.class public abstract Lpcd;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public g:Lev7;
+.field public final a:I
 
-.field public h:F
-
-.field public i:J
+.field public final b:Ljava/lang/String;
 
 
-# virtual methods
-.method public final a()Lucd;
-    .registers 2
+# direct methods
+.method public constructor <init>(ILjava/lang/String;)V
+    .registers 3
 
-    new-instance v0, Lqcd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p0}, Lqcd;-><init>(Lpcd;)V
+    iput p1, p0, Lpcd;->a:I
 
-    return-object v0
+    iput-object p2, p0, Lpcd;->b:Ljava/lang/String;
+
+    return-void
 .end method

@@ -1,249 +1,242 @@
 .class public final Llb9;
-.super Ljava/lang/Object;
+.super Lpoc;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lxh7;
+.field public a:I
+
+.field public b:I
+
+.field public final synthetic c:Lone/me/messages/list/ui/MessagesListWidget;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;)V
+.method public constructor <init>(Lone/me/messages/list/ui/MessagesListWidget;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llb9;->a:Lxh7;
+    iput-object p1, p0, Llb9;->c:Lone/me/messages/list/ui/MessagesListWidget;
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Llb9;->a:I
+
+    iput p1, p0, Llb9;->b:I
 
     return-void
 .end method
 
-.method public static a([B)Ljava/util/List;
-    .registers 3
 
-    :try_start_0
-    new-instance v0, Lru/ok/tamtam/nano/Protos$MessageElements;
+# virtual methods
+.method public final b(Landroidx/recyclerview/widget/RecyclerView;II)V
+    .registers 13
 
-    invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$MessageElements;-><init>()V
+    invoke-static {p1}, Lsu0;->q(Landroidx/recyclerview/widget/RecyclerView;)Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    invoke-static {v0, p0}, Lkz8;->mergeFrom(Lkz8;[B)Lkz8;
+    move-result-object p1
 
-    iget-object p0, v0, Lru/ok/tamtam/nano/Protos$MessageElements;->elements:[Lru/ok/tamtam/nano/Protos$MessageElement;
+    if-eqz p1, :cond_a
 
-    invoke-static {p0}, Lhx8;->a([Lru/ok/tamtam/nano/Protos$MessageElement;)Ljava/util/ArrayList;
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->V0()I
 
-    move-result-object p0
-    :try_end_0
-    .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result p2
 
-    return-object p0
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->X0()I
 
-    :catch_0
-    move-exception p0
+    move-result p1
 
-    const-string v0, "MessagesTypeConverters"
+    const/4 p3, -0x1
 
-    const-string v1, "InvalidProtocolBufferNanoException"
+    if-eq p2, p3, :cond_9
 
-    invoke-static {v0, v1, p0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    if-ne p1, p3, :cond_0
 
-    sget-object p0, Lv25;->a:Lv25;
+    goto/16 :goto_3
 
-    return-object p0
-.end method
+    :cond_0
+    iget p3, p0, Llb9;->a:I
 
-.method public static b(I)Lk09;
-    .registers 6
+    if-ne p2, p3, :cond_1
 
-    invoke-static {}, Lk09;->values()[Lk09;
+    iget p3, p0, Llb9;->b:I
+
+    if-eq p1, p3, :cond_9
+
+    :cond_1
+    iput p2, p0, Llb9;->a:I
+
+    iput p1, p0, Llb9;->b:I
+
+    sget-object p3, Lone/me/messages/list/ui/MessagesListWidget;->Z0:[Lxi7;
+
+    iget-object p0, p0, Llb9;->c:Lone/me/messages/list/ui/MessagesListWidget;
+
+    invoke-virtual {p0}, Lone/me/messages/list/ui/MessagesListWidget;->K0()Lfb9;
+
+    move-result-object p3
+
+    iget-object p0, p0, Lone/me/messages/list/ui/MessagesListWidget;->z0:La89;
+
+    iget-object v0, p0, Lls7;->o:Lfu;
+
+    iget-object v0, v0, Lfu;->f:Ljava/util/List;
+
+    invoke-static {p2, v0}, Lq73;->h0(ILjava/util/List;)Ljava/lang/Object;
 
     move-result-object v0
 
-    array-length v1, v0
+    check-cast v0, Lts7;
+
+    instance-of v1, v0, Lone/me/messages/list/loader/MessageModel;
 
     const/4 v2, 0x0
 
-    :goto_0
-    if-ge v2, v1, :cond_1
+    if-eqz v1, :cond_2
 
-    aget-object v3, v0, v2
-
-    iget v4, v3, Lk09;->a:I
-
-    if-ne v4, p0, :cond_0
-
-    return-object v3
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
+    check-cast v0, Lone/me/messages/list/loader/MessageModel;
 
     goto :goto_0
 
-    :cond_1
-    new-instance p0, Ljava/util/NoSuchElementException;
+    :cond_2
+    instance-of v0, v0, Lgc2;
 
-    const-string v0, "Array contains no element matching the predicate."
+    if-eqz v0, :cond_3
 
-    invoke-direct {p0, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+    add-int/lit8 p2, p2, 0x1
 
-    throw p0
-.end method
+    invoke-virtual {p0, p2}, La89;->M(I)Lone/me/messages/list/loader/MessageModel;
 
-.method public static d(Lc09;)[B
-    .registers 11
+    move-result-object v0
 
-    if-eqz p0, :cond_2
+    goto :goto_0
 
-    sget-object v0, Lru/ok/tamtam/nano/b;->a:[B
+    :cond_3
+    move-object v0, v2
 
-    new-instance v0, Lru/ok/tamtam/nano/Protos$MessageReactions;
+    :goto_0
+    invoke-virtual {p0, p1}, La89;->M(I)Lone/me/messages/list/loader/MessageModel;
 
-    invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$MessageReactions;-><init>()V
+    move-result-object p0
 
-    iget-object v1, p0, Lc09;->a:Ljava/util/List;
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v2, p0, Lc09;->c:Ld9c;
+    if-eqz v0, :cond_9
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    if-nez p0, :cond_4
 
-    move-result v3
+    goto :goto_3
 
-    new-array v4, v3, [Lru/ok/tamtam/nano/Protos$MessageReactionWithCount;
+    :cond_4
+    invoke-virtual {p3}, Lfb9;->B()Lfe9;
+
+    move-result-object p1
+
+    iget-wide v0, v0, Lone/me/messages/list/loader/MessageModel;->c:J
+
+    iget-wide v3, p0, Lone/me/messages/list/loader/MessageModel;->c:J
+
+    iget-object p0, p1, Lfe9;->n:Lyce;
+
+    invoke-virtual {p0}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lz8d;
+
+    iget-object p1, p1, Lz8d;->d:Ly8d;
+
+    if-nez p1, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    iget-wide p1, p1, Ly8d;->b:J
+
+    cmp-long v0, v0, p1
+
+    if-gtz v0, :cond_6
+
+    cmp-long p1, p1, v3
+
+    if-gtz p1, :cond_6
+
+    invoke-virtual {p0}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lz8d;
+
+    iget-object p1, p1, Lz8d;->d:Ly8d;
+
+    if-eqz p1, :cond_7
+
+    invoke-virtual {p0}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    move-object v3, p2
+
+    check-cast v3, Lz8d;
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x7
+
+    const/4 v4, 0x0
 
     const/4 v5, 0x0
 
-    :goto_0
-    if-ge v5, v3, :cond_0
+    const/4 v6, 0x0
 
-    invoke-interface {v1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static/range {v3 .. v8}, Lz8d;->a(Lz8d;IZZLy8d;I)Lz8d;
 
-    move-result-object v6
+    move-result-object p2
 
-    check-cast v6, Lb09;
+    invoke-virtual {p0, v2, p2}, Lyce;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    new-instance v7, Lru/ok/tamtam/nano/Protos$MessageReactionWithCount;
+    goto :goto_2
 
-    invoke-direct {v7}, Lru/ok/tamtam/nano/Protos$MessageReactionWithCount;-><init>()V
+    :cond_6
+    :goto_1
+    move-object p1, v2
 
-    new-instance v8, Lru/ok/tamtam/nano/Protos$ReactionData;
+    :cond_7
+    :goto_2
+    if-nez p1, :cond_8
 
-    invoke-direct {v8}, Lru/ok/tamtam/nano/Protos$ReactionData;-><init>()V
+    goto :goto_3
 
-    iget-object v9, v6, Lb09;->a:Ld9c;
+    :cond_8
+    iget-object p0, p3, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
 
-    iget-object v9, v9, Ld9c;->b:Lw8c;
+    iget-object p2, p3, Lfb9;->Y:Lxwe;
 
-    iget-object v9, v9, Lw8c;->a:Ljava/lang/CharSequence;
+    check-cast p2, Laga;
 
-    invoke-virtual {v9}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Laga;->b()Ls04;
 
-    move-result-object v9
+    move-result-object p2
 
-    iput-object v9, v8, Lru/ok/tamtam/nano/Protos$ReactionData;->reaction:Ljava/lang/String;
+    new-instance v0, Lx99;
 
-    iget-object v9, v6, Lb09;->a:Ld9c;
+    invoke-direct {v0, p3, p1, v2}, Lx99;-><init>(Lfb9;Ly8d;Lkotlin/coroutines/Continuation;)V
 
-    iget-object v9, v9, Ld9c;->a:Le9c;
+    const/4 p1, 0x2
 
-    iget v9, v9, Le9c;->a:I
+    invoke-static {p0, p2, v2, v0, p1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
 
-    iput v9, v8, Lru/ok/tamtam/nano/Protos$ReactionData;->type:I
+    :cond_9
+    :goto_3
+    return-void
 
-    iget v6, v6, Lb09;->b:I
+    :cond_a
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    iput v6, v7, Lru/ok/tamtam/nano/Protos$MessageReactionWithCount;->count:I
+    const-string p1, "Only linear layout manger supported"
 
-    iput-object v8, v7, Lru/ok/tamtam/nano/Protos$MessageReactionWithCount;->reaction:Lru/ok/tamtam/nano/Protos$ReactionData;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    aput-object v7, v4, v5
-
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iput-object v4, v0, Lru/ok/tamtam/nano/Protos$MessageReactions;->reactions:[Lru/ok/tamtam/nano/Protos$MessageReactionWithCount;
-
-    iget p0, p0, Lc09;->b:I
-
-    iput p0, v0, Lru/ok/tamtam/nano/Protos$MessageReactions;->totalCount:I
-
-    if-eqz v2, :cond_1
-
-    new-instance p0, Lru/ok/tamtam/nano/Protos$ReactionData;
-
-    invoke-direct {p0}, Lru/ok/tamtam/nano/Protos$ReactionData;-><init>()V
-
-    iget-object v1, v2, Ld9c;->b:Lw8c;
-
-    iget-object v1, v1, Lw8c;->a:Ljava/lang/CharSequence;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lru/ok/tamtam/nano/Protos$ReactionData;->reaction:Ljava/lang/String;
-
-    iget-object v1, v2, Ld9c;->a:Le9c;
-
-    iget v1, v1, Le9c;->a:I
-
-    iput v1, p0, Lru/ok/tamtam/nano/Protos$ReactionData;->type:I
-
-    iput-object p0, v0, Lru/ok/tamtam/nano/Protos$MessageReactions;->yourReaction:Lru/ok/tamtam/nano/Protos$ReactionData;
-
-    :cond_1
-    invoke-static {v0}, Lkz8;->toByteArray(Lkz8;)[B
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_2
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-
-# virtual methods
-.method public final c([B)Lc09;
-    .registers 3
-
-    iget-object p0, p0, Llb9;->a:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ld09;
-
-    if-eqz p1, :cond_0
-
-    array-length v0, p1
-
-    if-lez v0, :cond_0
-
-    :try_start_0
-    invoke-virtual {p0, p1}, Ld09;->a([B)Lc09;
-
-    move-result-object p0
-    :try_end_0
-    .catch Lru/ok/tamtam/nano/ProtoException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception p0
-
-    new-instance p1, Ljava/lang/RuntimeException;
-
-    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw p1
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return-object p0
+    throw p0
 .end method

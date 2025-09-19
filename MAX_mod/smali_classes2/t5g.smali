@@ -1,57 +1,31 @@
-.class public final Lt5g;
-.super Lcx3;
+.class public Lt5g;
+.super Lpxe;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Li6g;
-
-.field public Y:Lf5g;
-
-.field public Z:Ljava/lang/String;
-
-.field public n0:Lco0;
-
-.field public o:Lw5g;
-
-.field public synthetic o0:Ljava/lang/Object;
-
-.field public final synthetic p0:Lw5g;
-
-.field public q0:I
-
-
-# direct methods
-.method public constructor <init>(Lw5g;Lcx3;)V
-    .registers 3
-
-    iput-object p1, p0, Lt5g;->p0:Lw5g;
-
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
-
-
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    iput-object p1, p0, Lt5g;->o0:Ljava/lang/Object;
+    iget-object p0, p0, Lpxe;->c:Ljava/lang/Object;
 
-    iget p1, p0, Lt5g;->q0:I
+    check-cast p0, Lpg8;
 
-    const/high16 v0, -0x80000000
+    check-cast p0, Lzwf;
 
-    or-int/2addr p1, v0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iput p1, p0, Lt5g;->q0:I
+    const-string v1, "VideoTrack(format: "
 
-    iget-object p1, p0, Lt5g;->p0:Lw5g;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0, p0}, Lw5g;->l(Ljava/lang/String;Lcx3;)Ljava/lang/Object;
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,40 +1,14 @@
-.class public final Lxi7;
+.class public interface abstract Lxi7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lehe;
-
-
-# instance fields
-.field public final synthetic a:Ls4;
-
-
-# direct methods
-.method public constructor <init>(Ls4;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lxi7;->a:Ls4;
-
-    return-void
-.end method
+.implements Lii7;
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .registers 2
+.method public abstract isConst()Z
+.end method
 
-    iget-object p0, p0, Lxi7;->a:Ls4;
-
-    const-class v0, Lsc;
-
-    invoke-virtual {p0, v0}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lsc;
-
-    return-object p0
+.method public abstract isLateinit()Z
 .end method

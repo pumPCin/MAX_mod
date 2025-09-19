@@ -1,296 +1,117 @@
 .class public final Ljrb;
-.super Lkz8;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public a:F
+.field public synthetic X:Ljava/lang/Object;
 
-.field public b:F
-
-.field public c:F
-
-.field public d:F
+.field public final synthetic Y:Ltrb;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public constructor <init>(Ltrb;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Lkz8;-><init>()V
+    iput-object p1, p0, Ljrb;->Y:Ltrb;
 
-    const/4 v0, 0x0
+    const/4 p1, 0x2
 
-    iput v0, p0, Ljrb;->a:F
-
-    iput v0, p0, Ljrb;->b:F
-
-    iput v0, p0, Ljrb;->c:F
-
-    iput v0, p0, Ljrb;->d:F
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lkz8;->cachedSize:I
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final computeSerializedSize()I
-    .registers 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Ljrb;->a:F
+    check-cast p1, Llqb;
 
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    move-result v0
+    invoke-virtual {p0, p1, p2}, Ljrb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    const/4 v1, 0x0
+    move-result-object p0
 
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+    check-cast p0, Ljrb;
 
-    move-result v2
+    sget-object p1, Lylf;->a:Lylf;
 
-    if-eq v0, v2, :cond_0
+    invoke-virtual {p0, p1}, Ljrb;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Lk63;->e(I)I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iget v2, p0, Ljrb;->b:F
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v3
-
-    if-eq v2, v3, :cond_1
-
-    const/4 v2, 0x2
-
-    invoke-static {v2}, Lk63;->e(I)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    :cond_1
-    iget v2, p0, Ljrb;->c:F
-
-    invoke-static {v2}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v3
-
-    if-eq v2, v3, :cond_2
-
-    const/4 v2, 0x3
-
-    invoke-static {v2}, Lk63;->e(I)I
-
-    move-result v2
-
-    add-int/2addr v0, v2
-
-    :cond_2
-    iget p0, p0, Ljrb;->d:F
-
-    invoke-static {p0}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result p0
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    if-eq p0, v1, :cond_3
-
-    const/4 p0, 0x4
-
-    invoke-static {p0}, Lk63;->e(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-
-    :cond_3
-    return v0
+    return-object p1
 .end method
 
-.method public final mergeFrom(Lj63;)Lkz8;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
 
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lj63;->s()I
+    new-instance v0, Ljrb;
 
-    move-result v0
+    iget-object p0, p0, Ljrb;->Y:Ltrb;
 
-    if-eqz v0, :cond_5
+    invoke-direct {v0, p0, p2}, Ljrb;-><init>(Ltrb;Lkotlin/coroutines/Continuation;)V
 
-    const/16 v1, 0xd
+    iput-object p1, v0, Ljrb;->X:Ljava/lang/Object;
 
-    if-eq v0, v1, :cond_4
-
-    const/16 v1, 0x15
-
-    if-eq v0, v1, :cond_3
-
-    const/16 v1, 0x1d
-
-    if-eq v0, v1, :cond_2
-
-    const/16 v1, 0x25
-
-    if-eq v0, v1, :cond_1
-
-    invoke-virtual {p1, v0}, Lj63;->u(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p1}, Lj63;->i()F
-
-    move-result v0
-
-    iput v0, p0, Ljrb;->d:F
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p1}, Lj63;->i()F
-
-    move-result v0
-
-    iput v0, p0, Ljrb;->c:F
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {p1}, Lj63;->i()F
-
-    move-result v0
-
-    iput v0, p0, Ljrb;->b:F
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {p1}, Lj63;->i()F
-
-    move-result v0
-
-    iput v0, p0, Ljrb;->a:F
-
-    goto :goto_0
-
-    :cond_5
-    :goto_1
-    return-object p0
+    return-object v0
 .end method
 
-.method public final writeTo(Lk63;)V
-    .registers 5
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
 
-    iget v0, p0, Ljrb;->a:F
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
+    iget-object p1, p0, Ljrb;->X:Ljava/lang/Object;
 
-    move-result v0
+    check-cast p1, Llqb;
 
-    const/4 v1, 0x0
+    instance-of v0, p1, Ljqb;
 
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+    if-eqz v0, :cond_0
 
-    move-result v2
+    check-cast p1, Ljqb;
 
-    if-eq v0, v2, :cond_0
+    iget-object p1, p1, Ljqb;->a:Ljava/lang/Long;
 
-    const/4 v0, 0x1
+    iget-object p0, p0, Ljrb;->Y:Ltrb;
 
-    iget v2, p0, Ljrb;->a:F
+    iget-object v0, p0, Ltrb;->y0:Ljava/util/concurrent/atomic/AtomicLong;
 
-    invoke-virtual {p1, v0, v2}, Lk63;->v(IF)V
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v0
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    cmp-long p1, v2, v0
+
+    if-nez p1, :cond_0
+
+    iget-object p0, p0, Ltrb;->E0:Lv85;
+
+    new-instance p1, Lxqb;
+
+    sget v0, Lsla;->U0:I
+
+    new-instance v1, Lp2f;
+
+    invoke-direct {v1, v0}, Lp2f;-><init>(I)V
+
+    sget v0, Lq0d;->z:I
+
+    invoke-direct {p1, v0, v1}, Lxqb;-><init>(ILp2f;)V
+
+    invoke-static {p0, p1}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
 
     :cond_0
-    iget v0, p0, Ljrb;->b:F
+    sget-object p0, Lylf;->a:Lylf;
 
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v0
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    if-eq v0, v2, :cond_1
-
-    const/4 v0, 0x2
-
-    iget v2, p0, Ljrb;->b:F
-
-    invoke-virtual {p1, v0, v2}, Lk63;->v(IF)V
-
-    :cond_1
-    iget v0, p0, Ljrb;->c:F
-
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v0
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v2
-
-    if-eq v0, v2, :cond_2
-
-    const/4 v0, 0x3
-
-    iget v2, p0, Ljrb;->c:F
-
-    invoke-virtual {p1, v0, v2}, Lk63;->v(IF)V
-
-    :cond_2
-    iget v0, p0, Ljrb;->d:F
-
-    invoke-static {v0}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v0
-
-    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
-
-    move-result v1
-
-    if-eq v0, v1, :cond_3
-
-    const/4 v0, 0x4
-
-    iget p0, p0, Ljrb;->d:F
-
-    invoke-virtual {p1, v0, p0}, Lk63;->v(IF)V
-
-    :cond_3
-    return-void
+    return-object p0
 .end method

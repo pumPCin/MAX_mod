@@ -1,64 +1,51 @@
 .class public final Ldp3;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
-# interfaces
-.implements Lfp3;
 
+# instance fields
+.field public X:La05;
 
-# static fields
-.field public static final a:Ldp3;
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lip3;
+
+.field public o:Lip3;
+
+.field public r0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lip3;Ljx3;)V
+    .registers 3
 
-    new-instance v0, Ldp3;
+    iput-object p1, p0, Ldp3;->Z:Lip3;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Ldp3;->a:Ldp3;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Ldp3;->Y:Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    iget p1, p0, Ldp3;->r0:I
 
-    return v0
+    const/high16 v0, -0x80000000
 
-    :cond_0
-    instance-of p0, p1, Ldp3;
+    or-int/2addr p1, v0
 
-    if-nez p0, :cond_1
+    iput p1, p0, Ldp3;->r0:I
 
-    const/4 p0, 0x0
+    iget-object p1, p0, Ldp3;->Z:Lip3;
 
-    return p0
+    invoke-virtual {p1, p0}, Lip3;->l(Ljx3;)Ljava/lang/Object;
 
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, -0x41b324a5    # -0.20005552f
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "Invalidate"
+    move-result-object p0
 
     return-object p0
 .end method

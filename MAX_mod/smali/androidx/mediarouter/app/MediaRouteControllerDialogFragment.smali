@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field public final w1:Z
+.field public final A1:Z
 
-.field public x1:Lxm;
+.field public B1:Lgn;
 
-.field public y1:Lbk8;
+.field public C1:Lcn8;
 
 
 # direct methods
@@ -19,13 +19,13 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->w1:Z
+    iput-boolean v0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->A1:Z
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroidx/fragment/app/DialogFragment;->m1:Z
+    iput-boolean v0, p0, Landroidx/fragment/app/DialogFragment;->q1:Z
 
-    iget-object p0, p0, Landroidx/fragment/app/DialogFragment;->r1:Landroid/app/Dialog;
+    iget-object p0, p0, Landroidx/fragment/app/DialogFragment;->v1:Landroid/app/Dialog;
 
     if-eqz p0, :cond_0
 
@@ -42,11 +42,11 @@
 
     invoke-super {p0}, Landroidx/fragment/app/DialogFragment;->B0()V
 
-    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->x1:Lxm;
+    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->B1:Lgn;
 
     if-eqz v0, :cond_0
 
-    iget-boolean p0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->w1:Z
+    iget-boolean p0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->A1:Z
 
     if-nez p0, :cond_0
 
@@ -63,7 +63,7 @@
 .method public final V0()Landroid/app/Dialog;
     .registers 3
 
-    iget-boolean v0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->w1:Z
+    iget-boolean v0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->A1:Z
 
     if-eqz v0, :cond_0
 
@@ -71,15 +71,15 @@
 
     move-result-object v0
 
-    new-instance v1, Luj8;
+    new-instance v1, Lwm8;
 
-    invoke-direct {v1, v0}, Luj8;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v0}, Lwm8;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->x1:Lxm;
+    iput-object v1, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->B1:Lgn;
 
-    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->y1:Lbk8;
+    iget-object v0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->C1:Lcn8;
 
-    invoke-virtual {v1, v0}, Luj8;->h(Lbk8;)V
+    invoke-virtual {v1, v0}, Lwm8;->h(Lcn8;)V
 
     goto :goto_0
 
@@ -92,10 +92,10 @@
 
     invoke-direct {v1, v0}, Landroidx/mediarouter/app/d;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->x1:Lxm;
+    iput-object v1, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->B1:Lgn;
 
     :goto_0
-    iget-object p0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->x1:Lxm;
+    iget-object p0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->B1:Lgn;
 
     return-object p0
 .end method
@@ -105,19 +105,19 @@
 
     const/4 p1, 0x1
 
-    iput-boolean p1, p0, Landroidx/fragment/app/a;->N0:Z
+    iput-boolean p1, p0, Landroidx/fragment/app/a;->R0:Z
 
-    iget-object p1, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->x1:Lxm;
+    iget-object p1, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->B1:Lgn;
 
     if-eqz p1, :cond_1
 
-    iget-boolean p0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->w1:Z
+    iget-boolean p0, p0, Landroidx/mediarouter/app/MediaRouteControllerDialogFragment;->A1:Z
 
     if-eqz p0, :cond_0
 
-    check-cast p1, Luj8;
+    check-cast p1, Lwm8;
 
-    invoke-virtual {p1}, Luj8;->i()V
+    invoke-virtual {p1}, Lwm8;->i()V
 
     return-void
 

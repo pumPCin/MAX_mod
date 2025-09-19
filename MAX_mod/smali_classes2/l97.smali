@@ -1,102 +1,51 @@
-.class public final Ll97;
-.super Lxie;
+.class public abstract synthetic Ll97;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
-# instance fields
-.field public X:I
+# direct methods
+.method static constructor <clinit>()V
+    .registers 4
 
+    const/4 v0, 0x3
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    invoke-static {v0}, Lmw1;->w(I)[I
 
-    check-cast p1, Lr04;
+    move-result-object v1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    array-length v1, v1
 
-    invoke-virtual {p0, p1, p2}, Ll97;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    new-array v1, v1, [I
 
-    move-result-object p0
+    const/4 v2, 0x1
 
-    check-cast p0, Ll97;
+    const/4 v3, 0x0
 
-    sget-object p1, Lncf;->a:Lncf;
+    :try_start_0
+    aput v2, v1, v3
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {p0, p1}, Ll97;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    :catch_0
+    const/4 v3, 0x2
 
-    move-result-object p0
+    :try_start_1
+    aput v3, v1, v3
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    return-object p0
-.end method
+    :catch_1
+    :try_start_2
+    aput v0, v1, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+    :catch_2
+    sput-object v1, Ll97;->$EnumSwitchMapping$0:[I
 
-    new-instance p0, Ll97;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-object p0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-
-    iget v0, p0, Ll97;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    sget p1, Llw4;->o:I
-
-    const/4 p1, 0x2
-
-    sget-object v0, Lqw4;->o:Lqw4;
-
-    invoke-static {p1, v0}, Lg5e;->G(ILqw4;)J
-
-    move-result-wide v2
-
-    iput v1, p0, Ll97;->X:I
-
-    invoke-static {v2, v3, p0}, Las3;->s(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    return-void
 .end method

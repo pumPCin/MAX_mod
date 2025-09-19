@@ -1,6 +1,11 @@
-.class public interface abstract annotation Lm5f;
+.class public interface abstract Lm5f;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/annotation/Annotation;
+.implements Ldjb;
+
+
+# virtual methods
+.method public abstract b(Lztc;)Z
+.end method

@@ -1,97 +1,112 @@
-.class public final enum Lil5;
-.super Ljava/lang/Enum;
+.class public final synthetic Lil5;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc6;
 
-# static fields
-.field public static final synthetic X:[Lil5;
 
-.field public static final enum a:Lil5;
+# instance fields
+.field public final synthetic a:Lkl5;
 
-.field public static final enum b:Lil5;
+.field public final synthetic b:Ld10;
 
-.field public static final enum c:Lil5;
+.field public final synthetic c:Z
 
-.field public static final enum o:Lil5;
+.field public final synthetic d:Lxx8;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public synthetic constructor <init>(Lkl5;Ld10;ZLxx8;)V
+    .registers 5
 
-    new-instance v0, Lil5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "PresentArrow"
+    iput-object p1, p0, Lil5;->a:Lkl5;
 
-    const/4 v2, 0x0
+    iput-object p2, p0, Lil5;->b:Ld10;
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-boolean p3, p0, Lil5;->c:Z
 
-    sput-object v0, Lil5;->a:Lil5;
-
-    new-instance v1, Lil5;
-
-    const-string v2, "ArrowToProgress"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lil5;->b:Lil5;
-
-    new-instance v2, Lil5;
-
-    const-string v3, "ProgressToArrow"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lil5;->c:Lil5;
-
-    new-instance v3, Lil5;
-
-    const-string v4, "ProgressSpinning"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lil5;->o:Lil5;
-
-    filled-new-array {v0, v1, v2, v3}, [Lil5;
-
-    move-result-object v0
-
-    sput-object v0, Lil5;->X:[Lil5;
+    iput-object p4, p0, Lil5;->d:Lxx8;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lil5;
-    .registers 2
 
-    const-class v0, Lil5;
+# virtual methods
+.method public final run()V
+    .registers 5
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget-object v0, p0, Lil5;->a:Lkl5;
 
-    move-result-object p0
+    iget-object v1, v0, Lkl5;->c:Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;
 
-    check-cast p0, Lil5;
+    invoke-virtual {v0}, Lkl5;->a()Z
 
-    return-object p0
-.end method
+    move-result v2
 
-.method public static values()[Lil5;
-    .registers 1
+    if-nez v2, :cond_0
 
-    sget-object v0, Lil5;->X:[Lil5;
+    goto :goto_0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    :cond_0
+    iget-object v2, v0, Lkl5;->g:Lcp5;
+
+    iget-object v3, p0, Lil5;->b:Ld10;
+
+    invoke-virtual {v2, v3}, Lcp5;->h(Ld10;)Ljava/io/File;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    iget-boolean v2, p0, Lil5;->c:Z
+
+    if-eqz v2, :cond_2
+
+    invoke-static {v3}, Lte2;->x(Ld10;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1
+
+    invoke-static {v3}, Lte2;->z(Ld10;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    :cond_1
+    :goto_0
+    return-void
+
+    :cond_2
+    iget-object v2, v0, Lkl5;->a:Landroid/content/Context;
+
+    iget-object v0, v0, Lkl5;->b:Lswe;
+
+    check-cast v0, Liad;
+
+    invoke-virtual {v0}, Liad;->n()Lsz8;
 
     move-result-object v0
 
-    check-cast v0, [Lil5;
+    iget-object v1, v1, Lru/ok/messages/views/fragments/base/FrgBase;->o1:Lr2b;
 
-    return-object v0
+    iget-object v1, v1, Lr2b;->a:Ljava/lang/Object;
+
+    check-cast v1, Lpe3;
+
+    check-cast v1, Lbfa;
+
+    invoke-virtual {v1}, Lbfa;->h()Lcp5;
+
+    move-result-object v1
+
+    iget-object p0, p0, Lil5;->d:Lxx8;
+
+    invoke-static {v2, p0, v3, v0, v1}, Lyu0;->B(Landroid/content/Context;Lxx8;Ld10;Lsz8;Lcp5;)V
+
+    return-void
 .end method

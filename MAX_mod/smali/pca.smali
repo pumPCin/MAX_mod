@@ -2,70 +2,84 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final e:J
-
-.field public static final synthetic f:I
+# interfaces
+.implements Lqca;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
-
-.field public final b:Lxh7;
-
-.field public final c:Lxh7;
-
-.field public final d:Lxh7;
+.field public final a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(I)V
     .registers 2
-
-    sget v0, Llw4;->o:I
-
-    const/4 v0, 0x3
-
-    sget-object v1, Lqw4;->o:Lqw4;
-
-    invoke-static {v0, v1}, Lg5e;->G(ILqw4;)J
-
-    move-result-wide v0
-
-    sput-wide v0, Lpca;->e:J
-
-    return-void
-.end method
-
-.method public constructor <init>(Lxh7;Lxh7;Lxh7;Landroid/content/Context;)V
-    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lpca;->a:Landroid/content/Context;
-
-    iput-object p1, p0, Lpca;->b:Lxh7;
-
-    iput-object p2, p0, Lpca;->c:Lxh7;
-
-    iput-object p3, p0, Lpca;->d:Lxh7;
+    iput p1, p0, Lpca;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lgs4;
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lpca;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lpca;
+
+    iget p0, p0, Lpca;->a:I
+
+    iget p1, p1, Lpca;->a:I
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lpca;->b:Lxh7;
+    iget p0, p0, Lpca;->a:I
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    const-string v0, "Resource(iconRes="
+
+    const-string v1, ")"
+
+    iget p0, p0, Lpca;->a:I
+
+    invoke-static {p0, v0, v1}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
-
-    check-cast p0, Lgs4;
 
     return-object p0
 .end method

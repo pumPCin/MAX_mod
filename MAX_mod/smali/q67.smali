@@ -1,135 +1,156 @@
-.class public final Lq67;
+.class public final synthetic Lq67;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
-.implements Lhf7;
+.implements Lzb6;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic a:I
 
-.field public final b:I
+.field public final synthetic b:Landroid/content/Context;
 
-.field public c:Z
-
-.field public o:I
+.field public final synthetic c:Ls67;
 
 
 # direct methods
-.method public constructor <init>(III)V
-    .registers 6
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public synthetic constructor <init>(Landroid/content/Context;Ls67;I)V
+    .registers 4
 
     iput p3, p0, Lq67;->a:I
 
-    iput p2, p0, Lq67;->b:I
+    iput-object p1, p0, Lq67;->b:Landroid/content/Context;
 
-    const/4 v0, 0x0
+    iput-object p2, p0, Lq67;->c:Ls67;
 
-    const/4 v1, 0x1
-
-    if-lez p3, :cond_0
-
-    if-gt p1, p2, :cond_1
-
-    :goto_0
-    move v0, v1
-
-    goto :goto_1
-
-    :cond_0
-    if-lt p1, p2, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
-    iput-boolean v0, p0, Lq67;->c:Z
-
-    if-eqz v0, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    move p1, p2
-
-    :goto_2
-    iput p1, p0, Lq67;->o:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .registers 1
+.method public final invoke()Ljava/lang/Object;
+    .registers 6
 
-    iget-boolean p0, p0, Lq67;->c:Z
+    iget v0, p0, Lq67;->a:I
 
-    return p0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final bridge synthetic next()Ljava/lang/Object;
-    .registers 1
+    new-instance v0, Landroid/widget/ImageView;
 
-    invoke-virtual {p0}, Lq67;->nextInt()I
+    iget-object v1, p0, Lq67;->b:Landroid/content/Context;
 
-    move-result p0
+    invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    sget v1, Lq0d;->c2:I
 
-    move-result-object p0
+    sget-object v2, Lyu4;->t0:Lbx9;
 
-    return-object p0
-.end method
+    invoke-virtual {v2, v0}, Lbx9;->q(Landroid/view/View;)Llia;
 
-.method public final nextInt()I
-    .registers 3
+    move-result-object v3
 
-    iget v0, p0, Lq67;->o:I
+    iget-object v3, v3, Llia;->c:Lera;
 
-    iget v1, p0, Lq67;->b:I
+    invoke-interface {v3}, Lera;->getIcon()Lqy6;
 
-    if-ne v0, v1, :cond_1
+    move-result-object v3
 
-    iget-boolean v1, p0, Lq67;->c:Z
+    iget v3, v3, Lqy6;->f:I
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    const/4 v1, 0x0
+    move-result-object v4
 
-    iput-boolean v1, p0, Lq67;->c:Z
+    invoke-static {v4, v1}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    return v0
+    move-result-object v1
 
-    :cond_0
-    new-instance p0, Ljava/util/NoSuchElementException;
+    invoke-static {v1, v3}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    throw p0
+    invoke-virtual {v2, v0}, Lbx9;->q(Landroid/view/View;)Llia;
 
-    :cond_1
-    iget v1, p0, Lq67;->a:I
+    move-result-object v1
 
-    add-int/2addr v1, v0
+    iget-object v1, v1, Llia;->c:Lera;
 
-    iput v1, p0, Lq67;->o:I
+    invoke-interface {v1}, Lera;->c()Lide;
 
-    return v0
-.end method
+    move-result-object v1
 
-.method public final remove()V
-    .registers 2
+    iget-object v1, v1, Lide;->a:Lgde;
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    iget-object v1, v1, Lgde;->a:Lfde;
 
-    const-string v0, "Operation is not supported for read-only collection"
+    iget v1, v1, Lfde;->h:I
 
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    new-instance v2, Landroid/graphics/drawable/RippleDrawable;
 
-    throw p0
+    invoke-static {v1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+
+    move-result-object v1
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v1, v3, v3}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    const/16 v1, 0x8
+
+    int-to-float v1, v1
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v1, v2
+
+    invoke-static {v1}, Lya6;->G(F)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
+
+    new-instance v1, Lr67;
+
+    const/4 v2, 0x1
+
+    iget-object p0, p0, Lq67;->c:Ls67;
+
+    invoke-direct {v1, p0, v2}, Lr67;-><init>(Ls67;I)V
+
+    invoke-static {v0, v1}, Lz48;->D(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+
+    return-object v0
+
+    :pswitch_0
+    new-instance v0, Lbdb;
+
+    iget-object v1, p0, Lq67;->b:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Lbdb;-><init>(Landroid/content/Context;)V
+
+    iget-object p0, p0, Lq67;->c:Ls67;
+
+    invoke-virtual {v0, p0}, Lbdb;->setListener(Ladb;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

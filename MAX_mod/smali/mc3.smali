@@ -1,64 +1,32 @@
 .class public final Lmc3;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.super Lsf7;
 .source "SourceFile"
 
 # interfaces
-.implements Lnp4;
-
-
-# instance fields
-.field public final a:Lic3;
+.implements Llc3;
 
 
 # direct methods
-.method public constructor <init>(Lic3;Lnc3;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    const/4 v0, 0x1
 
-    iput-object p1, p0, Lmc3;->a:Lic3;
+    invoke-direct {p0, v0}, Lsf7;-><init>(Z)V
 
-    invoke-virtual {p0, p2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lsf7;->initParentJob(Lqe7;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g()V
-    .registers 2
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lnc3;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, p0}, Lnc3;->m(Lmc3;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final h()Z
+.method public final getOnCancelComplete$kotlinx_coroutines_core()Z
     .registers 1
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
-
     const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
 
     return p0
 .end method

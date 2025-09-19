@@ -9,22 +9,32 @@
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Ljava/lang/Runnable;
-
-.field public final synthetic c:Lp8d;
+.field public final synthetic b:Lpk4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;Lp8d;I)V
-    .registers 4
+.method public synthetic constructor <init>(Lpk4;I)V
+    .registers 3
 
-    iput p3, p0, Lok4;->a:I
+    iput p2, p0, Lok4;->a:I
 
-    iput-object p1, p0, Lok4;->b:Ljava/lang/Runnable;
-
-    iput-object p2, p0, Lok4;->c:Lp8d;
+    iput-object p1, p0, Lok4;->b:Lpk4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lpk4;Ljava/lang/String;)V
+    .registers 3
+
+    const/4 p2, 0x0
+
+    iput p2, p0, Lok4;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lok4;->b:Lpk4;
 
     return-void
 .end method
@@ -32,85 +42,89 @@
 
 # virtual methods
 .method public final run()V
-    .registers 2
+    .registers 7
 
     iget v0, p0, Lok4;->a:I
 
+    iget-object p0, p0, Lok4;->b:Lpk4;
+
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lok4;->b:Ljava/lang/Runnable;
+    invoke-virtual {p0}, Lpk4;->b()V
 
-    iget-object p0, p0, Lok4;->c:Lp8d;
+    return-void
 
-    iget-object p0, p0, Lp8d;->b:Ljava/lang/Object;
+    :pswitch_0
+    invoke-virtual {p0}, Lpk4;->a()V
 
-    check-cast p0, Luk4;
+    return-void
 
+    :pswitch_1
     :try_start_0
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    iget-object v0, p0, Lpk4;->e:Lts1;
 
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Lts1;->get()Ljava/lang/Object;
 
-    invoke-virtual {p0, v0}, Lk3;->j(Ljava/lang/Object;)Z
+    sget-object v0, Lpk4;->m:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+
+    sget-object v0, Lpk4;->l:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    return-void
 
     :catch_0
     move-exception v0
 
-    invoke-virtual {p0, v0}, Lk3;->k(Ljava/lang/Throwable;)Z
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    :goto_0
-    return-void
+    iget-object v1, p0, Lpk4;->a:Ljava/lang/Object;
 
-    :pswitch_0
-    iget-object v0, p0, Lok4;->b:Ljava/lang/Runnable;
+    monitor-enter v1
 
     :try_start_1
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    new-instance v2, Ljava/lang/IllegalArgumentException;
+
+    const-string v3, "DeferrableSurface %s [closed: %b, use_count: %s] terminated with unexpected exception."
+
+    iget-boolean v4, p0, Lpk4;->c:Z
+
+    invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v4
+
+    iget v5, p0, Lpk4;->b:I
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    filled-new-array {p0, v4, v5}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {v3, p0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v2, p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v2
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v1
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    iget-object p0, p0, Lok4;->c:Lp8d;
-
-    iget-object p0, p0, Lp8d;->b:Ljava/lang/Object;
-
-    check-cast p0, Luk4;
-
-    invoke-virtual {p0, v0}, Lk3;->k(Ljava/lang/Throwable;)Z
-
-    :goto_1
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Lok4;->b:Ljava/lang/Runnable;
-
-    :try_start_2
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
-
-    return-void
-
-    :catch_2
-    move-exception v0
-
-    iget-object p0, p0, Lok4;->c:Lp8d;
-
-    iget-object p0, p0, Lp8d;->b:Ljava/lang/Object;
-
-    check-cast p0, Luk4;
-
-    invoke-virtual {p0, v0}, Lk3;->k(Ljava/lang/Throwable;)Z
-
-    throw v0
+    throw p0
 
     :pswitch_data_0
     .packed-switch 0x0

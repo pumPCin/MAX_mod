@@ -38,37 +38,37 @@
         "eventListener",
         "Lkotlin/Function1;",
         "Lru/ok/android/externcalls/sdk/Conversation;",
-        "Lncf;",
+        "Lylf;",
         "onPrepared",
         "",
         "onError",
         "",
         "shouldStartWithVideo",
-        "Ly12;",
+        "Lf22;",
         "frameInterceptor",
-        "Ln0a;",
+        "Ln4a;",
         "cameraCapturerFactory",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lj96;Lj96;ZLy12;Ln0a;)V",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lbc6;Lbc6;ZLf22;Ln4a;)V",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "getMyId",
         "()Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;",
         "getEventListener",
         "()Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;",
-        "Lj96;",
+        "Lbc6;",
         "getOnPrepared",
-        "()Lj96;",
+        "()Lbc6;",
         "getOnError",
         "Z",
         "getShouldStartWithVideo",
         "()Z",
-        "Ly12;",
+        "Lf22;",
         "getFrameInterceptor",
-        "()Ly12;",
-        "Ln0a;",
+        "()Lf22;",
+        "Ln4a;",
         "getCameraCapturerFactory",
-        "()Ln0a;",
+        "()Ln4a;",
         "Builder",
         "calls-sdk_release"
     }
@@ -83,26 +83,26 @@
 
 
 # instance fields
-.field private final cameraCapturerFactory:Ln0a;
+.field private final cameraCapturerFactory:Ln4a;
 
 .field private final eventListener:Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;
 
-.field private final frameInterceptor:Ly12;
+.field private final frameInterceptor:Lf22;
 
 .field private final myId:Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-.field private final onError:Lj96;
+.field private final onError:Lbc6;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lj96;"
+            "Lbc6;"
         }
     .end annotation
 .end field
 
-.field private final onPrepared:Lj96;
+.field private final onPrepared:Lbc6;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lj96;"
+            "Lbc6;"
         }
     .end annotation
 .end field
@@ -111,18 +111,18 @@
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lj96;Lj96;ZLy12;Ln0a;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lbc6;Lbc6;ZLf22;Ln4a;)V
     .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
             "Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;",
-            "Lj96;",
-            "Lj96;",
+            "Lbc6;",
+            "Lbc6;",
             "Z",
-            "Ly12;",
-            "Ln0a;",
+            "Lf22;",
+            "Ln4a;",
             ")V"
         }
     .end annotation
@@ -133,23 +133,23 @@
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->eventListener:Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;
 
-    iput-object p3, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->onPrepared:Lj96;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->onPrepared:Lbc6;
 
-    iput-object p4, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->onError:Lj96;
+    iput-object p4, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->onError:Lbc6;
 
     iput-boolean p5, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->shouldStartWithVideo:Z
 
-    iput-object p7, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->cameraCapturerFactory:Ln0a;
+    iput-object p7, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->cameraCapturerFactory:Ln4a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getCameraCapturerFactory()Ln0a;
+.method public final getCameraCapturerFactory()Ln4a;
     .registers 1
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->cameraCapturerFactory:Ln0a;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->cameraCapturerFactory:Ln4a;
 
     return-object p0
 .end method
@@ -162,7 +162,7 @@
     return-object p0
 .end method
 
-.method public final getFrameInterceptor()Ly12;
+.method public final getFrameInterceptor()Lf22;
     .registers 1
 
     const/4 p0, 0x0
@@ -178,30 +178,30 @@
     return-object p0
 .end method
 
-.method public final getOnError()Lj96;
+.method public final getOnError()Lbc6;
     .registers 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lj96;"
+            "Lbc6;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->onError:Lj96;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->onError:Lbc6;
 
     return-object p0
 .end method
 
-.method public final getOnPrepared()Lj96;
+.method public final getOnPrepared()Lbc6;
     .registers 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lj96;"
+            "Lbc6;"
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->onPrepared:Lj96;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;->onPrepared:Lbc6;
 
     return-object p0
 .end method

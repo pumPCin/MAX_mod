@@ -1,47 +1,64 @@
-.class public abstract La1e;
-.super Le1e;
+.class public final La1e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc1e;
 
-# instance fields
-.field public final h:Ljava/math/BigInteger;
 
-.field public final i:Ljava/math/BigInteger;
-
-.field public final j:Ljava/math/BigInteger;
-
-.field public final k:J
+# static fields
+.field public static final a:La1e;
 
 
 # direct methods
-.method public constructor <init>(IJLjava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;JLjava/lang/String;Lmwg;)V
-    .registers 20
+.method static constructor <clinit>()V
+    .registers 1
 
-    const/4 v2, 0x1
+    new-instance v0, La1e;
 
-    move-object v0, p0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move v1, p1
-
-    move-wide v3, p2
-
-    move-object v5, p4
-
-    move-object/from16 v6, p10
-
-    move-object/from16 v7, p11
-
-    invoke-direct/range {v0 .. v7}, Le1e;-><init>(IIJLjava/lang/String;Ljava/lang/String;Lmwg;)V
-
-    iput-object p5, p0, La1e;->h:Ljava/math/BigInteger;
-
-    iput-object p6, p0, La1e;->i:Ljava/math/BigInteger;
-
-    iput-object p7, p0, La1e;->j:Ljava/math/BigInteger;
-
-    move-wide/from16 p1, p8
-
-    iput-wide p1, p0, La1e;->k:J
+    sput-object v0, La1e;->a:La1e;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, La1e;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, 0x79e8661
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "Reject"
+
+    return-object p0
 .end method

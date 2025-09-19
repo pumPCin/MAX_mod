@@ -1,48 +1,144 @@
 .class public final Ls23;
-.super Lcx3;
+.super Lure;
+.source "SourceFile"
+
+# interfaces
+.implements Lrc6;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic X:I
 
-.field public final synthetic Y:Lj23;
+.field public synthetic Y:Ljava/lang/Throwable;
 
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic Z:Lyu4;
 
 
 # direct methods
-.method public constructor <init>(Lj23;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public synthetic constructor <init>(Lyu4;Lkotlin/coroutines/Continuation;I)V
+    .registers 4
 
-    iput-object p1, p0, Ls23;->Y:Lj23;
+    iput p3, p0, Ls23;->X:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Ls23;->Z:Lyu4;
+
+    const/4 p1, 0x3
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
 
-    iput-object p1, p0, Ls23;->o:Ljava/lang/Object;
+    iget v0, p0, Ls23;->X:I
 
-    iget p1, p0, Ls23;->X:I
+    check-cast p1, Lks5;
 
-    const/high16 v0, -0x80000000
+    check-cast p2, Ljava/lang/Throwable;
 
-    or-int/2addr p1, v0
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    iput p1, p0, Ls23;->X:I
+    packed-switch v0, :pswitch_data_0
 
-    iget-object p1, p0, Ls23;->Y:Lj23;
+    new-instance p1, Ls23;
+
+    iget-object p0, p0, Ls23;->Z:Lyu4;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p1, p0, p3, v0}, Ls23;-><init>(Lyu4;Lkotlin/coroutines/Continuation;I)V
+
+    iput-object p2, p1, Ls23;->Y:Ljava/lang/Throwable;
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    invoke-virtual {p1, p0}, Ls23;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p0
+
+    :pswitch_0
+    new-instance p1, Ls23;
+
+    iget-object p0, p0, Ls23;->Z:Lyu4;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lj23;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-direct {p1, p0, p3, v0}, Ls23;-><init>(Lyu4;Lkotlin/coroutines/Continuation;I)V
 
-    move-result-object p0
+    iput-object p2, p1, Ls23;->Y:Ljava/lang/Throwable;
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    invoke-virtual {p1, p0}, Ls23;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 p0, 0x0
+
+    throw p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iget v0, p0, Ls23;->X:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Ls23;->Z:Lyu4;
+
+    iget-object v0, v0, Lyu4;->a:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Ls23;->Y:Ljava/lang/Throwable;
+
+    const-string p1, "big_flow: completion"
+
+    if-eqz p0, :cond_0
+
+    invoke-static {v0, p1, p0}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {v0, p1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
+
+    :pswitch_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ls23;->Y:Ljava/lang/Throwable;
+
+    iget-object p0, p0, Ls23;->Z:Lyu4;
+
+    iget-object p0, p0, Lyu4;->a:Ljava/lang/Object;
+
+    check-cast p0, Ljava/lang/String;
+
+    const-string v0, "big_flow: fail"
+
+    invoke-static {p0, v0, p1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

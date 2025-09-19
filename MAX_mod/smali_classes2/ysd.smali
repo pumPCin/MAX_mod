@@ -1,51 +1,23 @@
 .class public final Lysd;
-.super Ljava/lang/Object;
+.super Luc0;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Z
-
-.field public final b:Z
-
-.field public final c:Z
-
-.field public final d:Z
-
-.field public final e:Z
-
-.field public final f:Z
+# static fields
+.field public static final b:Lysd;
 
 
 # direct methods
-.method public constructor <init>(Lxsd;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lysd;
 
-    iget-boolean v0, p1, Lxsd;->a:Z
+    const/16 v1, 0x12
 
-    iput-boolean v0, p0, Lysd;->a:Z
+    invoke-direct {v0, v1}, Luc0;-><init>(I)V
 
-    iget-boolean v0, p1, Lxsd;->b:Z
-
-    iput-boolean v0, p0, Lysd;->b:Z
-
-    iget-boolean v0, p1, Lxsd;->c:Z
-
-    iput-boolean v0, p0, Lysd;->c:Z
-
-    iget-boolean v0, p1, Lxsd;->e:Z
-
-    iput-boolean v0, p0, Lysd;->e:Z
-
-    iget-boolean v0, p1, Lxsd;->d:Z
-
-    iput-boolean v0, p0, Lysd;->d:Z
-
-    iget-boolean p1, p1, Lxsd;->f:Z
-
-    iput-boolean p1, p0, Lysd;->f:Z
+    sput-object v0, Lysd;->b:Lysd;
 
     return-void
 .end method
@@ -53,125 +25,39 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .registers 3
+
+    const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    goto :goto_0
+    return v0
 
     :cond_0
-    if-eqz p1, :cond_7
+    instance-of p0, p1, Lysd;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-nez p0, :cond_1
 
-    move-result-object v0
-
-    const-class v1, Lysd;
-
-    if-eq v1, v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    check-cast p1, Lysd;
-
-    iget-boolean v0, p0, Lysd;->a:Z
-
-    iget-boolean v1, p1, Lysd;->a:Z
-
-    if-eq v0, v1, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    iget-boolean v0, p0, Lysd;->b:Z
-
-    iget-boolean v1, p1, Lysd;->b:Z
-
-    if-eq v0, v1, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    iget-boolean v0, p0, Lysd;->c:Z
-
-    iget-boolean v1, p1, Lysd;->c:Z
-
-    if-eq v0, v1, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    iget-boolean v0, p0, Lysd;->d:Z
-
-    iget-boolean v1, p1, Lysd;->d:Z
-
-    if-eq v0, v1, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    iget-boolean v0, p0, Lysd;->f:Z
-
-    iget-boolean v1, p1, Lysd;->f:Z
-
-    if-eq v0, v1, :cond_6
-
-    goto :goto_1
-
-    :cond_6
-    iget-boolean p0, p0, Lysd;->e:Z
-
-    iget-boolean p1, p1, Lysd;->e:Z
-
-    if-ne p0, p1, :cond_7
-
-    :goto_0
-    const/4 p0, 0x1
+    const/4 p0, 0x0
 
     return p0
 
-    :cond_7
-    :goto_1
-    const/4 p0, 0x0
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, -0xc7cb8f7
 
     return p0
 .end method
 
-.method public final hashCode()I
-    .registers 3
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    iget-boolean v0, p0, Lysd;->a:Z
+    const-string p0, "SelectPhotoFromGallery"
 
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v1, p0, Lysd;->b:Z
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v1, p0, Lysd;->c:Z
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v1, p0, Lysd;->e:Z
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean v1, p0, Lysd;->d:Z
-
-    add-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean p0, p0, Lysd;->f:Z
-
-    add-int/2addr v0, p0
-
-    return v0
+    return-object p0
 .end method

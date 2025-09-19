@@ -1,65 +1,73 @@
-.class public final Lb6g;
-.super Lbp;
+.class public final enum Lb6g;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic g:Lc6g;
+# static fields
+.field public static final enum a:Lb6g;
+
+.field public static final enum b:Lb6g;
+
+.field public static final synthetic c:[Lb6g;
 
 
 # direct methods
-.method public constructor <init>(Lc6g;)V
+.method static constructor <clinit>()V
+    .registers 4
+
+    new-instance v0, Lb6g;
+
+    const-string v1, "ASPECT_RATIO"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lb6g;->a:Lb6g;
+
+    new-instance v1, Lb6g;
+
+    const-string v2, "FILL"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lb6g;->b:Lb6g;
+
+    filled-new-array {v0, v1}, [Lb6g;
+
+    move-result-object v0
+
+    sput-object v0, Lb6g;->c:[Lb6g;
+
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lb6g;
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Lb6g;
 
-    iput-object p1, p0, Lb6g;->g:Lc6g;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    return-void
+    move-result-object p0
+
+    check-cast p0, Lb6g;
+
+    return-object p0
 .end method
 
-
-# virtual methods
-.method public final F()V
+.method public static values()[Lb6g;
     .registers 1
 
-    iget-object p0, p0, Lb6g;->g:Lc6g;
+    sget-object v0, Lb6g;->c:[Lb6g;
 
-    iget-object p0, p0, Lc6g;->c:Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    check-cast p0, Lma6;
+    move-result-object v0
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    check-cast v0, [Lb6g;
 
-    return-void
-.end method
-
-.method public final G()V
-    .registers 2
-
-    iget-object p0, p0, Lb6g;->g:Lc6g;
-
-    iget-object p0, p0, Lc6g;->d:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    const-string v0, "onAuthenticationFailed"
-
-    invoke-static {p0, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final H()V
-    .registers 1
-
-    iget-object p0, p0, Lb6g;->g:Lc6g;
-
-    iget-object p0, p0, Lc6g;->b:Ljava/lang/Object;
-
-    check-cast p0, Lma6;
-
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
-
-    return-void
+    return-object v0
 .end method

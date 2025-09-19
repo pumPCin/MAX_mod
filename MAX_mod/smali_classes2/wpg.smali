@@ -1,105 +1,150 @@
-.class public final enum Lwpg;
-.super Ljava/lang/Enum;
+.class public final Lwpg;
+.super Lure;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic X:[Lwpg;
-
-.field public static final enum b:Lwpg;
-
-.field public static final enum c:Lwpg;
-
-.field public static final enum o:Lwpg;
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public X:I
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lxpg;
+
+.field public final synthetic r0:Lnpg;
+
+.field public final synthetic s0:Laqg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public constructor <init>(Lnpg;Lxpg;Laqg;Lkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    new-instance v0, Lwpg;
+    iput-object p2, p0, Lwpg;->Z:Lxpg;
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Lwpg;->r0:Lnpg;
 
-    const-string v2, "tcp_relay"
+    iput-object p3, p0, Lwpg;->s0:Laqg;
 
-    const-string v3, "TCP_RELAY"
+    const/4 p1, 0x2
 
-    invoke-direct {v0, v3, v1, v2}, Lwpg;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lwpg;->b:Lwpg;
-
-    new-instance v1, Lwpg;
-
-    const/4 v2, 0x1
-
-    const-string v3, "udp_relay"
-
-    const-string v4, "UDP_RELAY"
-
-    invoke-direct {v1, v4, v2, v3}, Lwpg;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v1, Lwpg;->c:Lwpg;
-
-    new-instance v2, Lwpg;
-
-    const/4 v3, 0x2
-
-    const-string v4, "srflx"
-
-    const-string v5, "SRFLX"
-
-    invoke-direct {v2, v5, v3, v4}, Lwpg;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v2, Lwpg;->o:Lwpg;
-
-    filled-new-array {v0, v1, v2}, [Lwpg;
-
-    move-result-object v0
-
-    sput-object v0, Lwpg;->X:[Lwpg;
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iput-object p3, p0, Lwpg;->a:Ljava/lang/String;
+    check-cast p1, Ljava/lang/Throwable;
 
-    return-void
-.end method
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-.method public static valueOf(Ljava/lang/String;)Lwpg;
-    .registers 2
-
-    const-class v0, Lwpg;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-virtual {p0, p1, p2}, Lwpg;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lwpg;
 
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lwpg;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
     return-object p0
 .end method
 
-.method public static values()[Lwpg;
-    .registers 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 6
 
-    sget-object v0, Lwpg;->X:[Lwpg;
+    new-instance v0, Lwpg;
 
-    invoke-virtual {v0}, [Lwpg;->clone()Ljava/lang/Object;
+    iget-object v1, p0, Lwpg;->r0:Lnpg;
 
-    move-result-object v0
+    iget-object v2, p0, Lwpg;->s0:Laqg;
 
-    check-cast v0, [Lwpg;
+    iget-object p0, p0, Lwpg;->Z:Lxpg;
+
+    invoke-direct {v0, v1, p0, v2, p2}, Lwpg;-><init>(Lnpg;Lxpg;Laqg;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lwpg;->Y:Ljava/lang/Object;
 
     return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 10
+
+    iget v0, p0, Lwpg;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lwpg;->Y:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Throwable;
+
+    iget-object v0, p0, Lwpg;->Z:Lxpg;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p1}, Lxpg;->f(Ljava/lang/Throwable;)Lzg7;
+
+    move-result-object v4
+
+    invoke-virtual {v0}, Lxpg;->g()Lra3;
+
+    move-result-object v2
+
+    iget-object v3, v0, Lxpg;->e:Lcu0;
+
+    iget-object p1, p0, Lwpg;->s0:Laqg;
+
+    iget-object v6, p1, Laqg;->b:Ljava/lang/String;
+
+    iput v1, p0, Lwpg;->X:I
+
+    iget-object v5, p0, Lwpg;->r0:Lnpg;
+
+    move-object v7, p0
+
+    invoke-virtual/range {v2 .. v7}, Lra3;->a(Lt52;Lzg7;Lxjg;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

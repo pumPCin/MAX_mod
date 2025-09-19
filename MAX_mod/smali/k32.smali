@@ -1,159 +1,80 @@
 .class public final Lk32;
-.super Ljava/lang/Object;
+.super Lvne;
 .source "SourceFile"
 
 # interfaces
-.implements Lwee;
-.implements Lvee;
+.implements Ljava/lang/Comparable;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final b:Ljava/util/List;
-
-
-# direct methods
-.method public synthetic constructor <init>(ILjava/util/List;)V
-    .registers 3
-
-    iput p1, p0, Lk32;->a:I
-
-    iput-object p2, p0, Lk32;->b:Ljava/util/List;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public t0:J
 
 
 # virtual methods
-.method public final f(J)I
-    .registers 5
+.method public final compareTo(Ljava/lang/Object;)I
+    .registers 7
 
-    iget p0, p0, Lk32;->a:I
+    check-cast p1, Lk32;
 
-    packed-switch p0, :pswitch_data_0
+    const/4 v0, 0x4
 
-    const/4 p0, -0x1
+    invoke-virtual {p0, v0}, Llx;->h(I)Z
 
-    return p0
+    move-result v1
 
-    :pswitch_0
-    const-wide/16 v0, 0x0
+    invoke-virtual {p1, v0}, Llx;->h(I)Z
 
-    cmp-long p0, p1, v0
+    move-result v2
 
-    if-gez p0, :cond_0
+    if-eq v1, v2, :cond_0
+
+    invoke-virtual {p0, v0}, Llx;->h(I)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    goto :goto_0
+
+    :cond_0
+    iget-wide v0, p0, Lfa4;->Y:J
+
+    iget-wide v2, p1, Lfa4;->Y:J
+
+    sub-long/2addr v0, v2
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v4, v0, v2
+
+    if-nez v4, :cond_1
+
+    iget-wide v0, p0, Lk32;->t0:J
+
+    iget-wide p0, p1, Lk32;->t0:J
+
+    sub-long/2addr v0, p0
+
+    cmp-long p0, v0, v2
+
+    if-nez p0, :cond_1
 
     const/4 p0, 0x0
 
-    goto :goto_0
+    return p0
 
-    :cond_0
+    :cond_1
+    cmp-long p0, v0, v2
+
+    if-lez p0, :cond_2
+
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_2
     const/4 p0, -0x1
 
-    :goto_0
     return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final h(I)J
-    .registers 2
-
-    iget p0, p0, Lk32;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    const-wide/16 p0, 0x0
-
-    return-wide p0
-
-    :pswitch_0
-    if-nez p1, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-static {p0}, Lr76;->h(Z)V
-
-    const-wide/16 p0, 0x0
-
-    return-wide p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final m(J)Ljava/util/List;
-    .registers 5
-
-    iget v0, p0, Lk32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lk32;->b:Ljava/util/List;
-
-    return-object p0
-
-    :pswitch_0
-    const-wide/16 v0, 0x0
-
-    cmp-long p1, p1, v0
-
-    if-ltz p1, :cond_0
-
-    iget-object p0, p0, Lk32;->b:Ljava/util/List;
-
-    goto :goto_0
-
-    :cond_0
-    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
-
-    :goto_0
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final r()I
-    .registers 1
-
-    iget p0, p0, Lk32;->a:I
-
-    packed-switch p0, :pswitch_data_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :pswitch_0
-    const/4 p0, 0x1
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

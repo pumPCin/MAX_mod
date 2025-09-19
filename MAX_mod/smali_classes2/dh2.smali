@@ -2,101 +2,50 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljp6;
-
 
 # instance fields
-.field public final X:Lpd3;
+.field public final a:Lv5d;
 
-.field public final Y:Ls75;
+.field public final b:Lv5d;
 
-.field public Z:Lrj2;
+.field public final c:Lv5d;
 
-.field public final a:Ljava/lang/String;
+.field public final d:Lfv0;
 
-.field public final b:Lnp6;
+.field public final e:Lza2;
 
-.field public final c:Lqxc;
+.field public final f:Lsz8;
 
-.field public final n0:Lru;
+.field public final g:Llf2;
 
-.field public final o:Lqxc;
+.field public final h:Lyfb;
 
-.field public final o0:Lru;
-
-.field public final p0:Lru;
+.field public final i:Lr09;
 
 
 # direct methods
-.method public constructor <init>(Lnp6;Loy1;Lqxc;Ls75;Ljava/lang/String;)V
-    .registers 7
+.method public constructor <init>(Lv5d;Lv5d;Lv5d;Lfv0;Lza2;Lsz8;Llf2;Lyfb;Lr09;)V
+    .registers 10
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lpd3;
+    iput-object p1, p0, Ldh2;->a:Lv5d;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Ldh2;->b:Lv5d;
 
-    iput-object v0, p0, Ldh2;->X:Lpd3;
+    iput-object p3, p0, Ldh2;->c:Lv5d;
 
-    new-instance v0, Lru;
+    iput-object p4, p0, Ldh2;->d:Lfv0;
 
-    invoke-direct {v0}, Lru;-><init>()V
+    iput-object p5, p0, Ldh2;->e:Lza2;
 
-    iput-object v0, p0, Ldh2;->n0:Lru;
+    iput-object p6, p0, Ldh2;->f:Lsz8;
 
-    new-instance v0, Lru;
+    iput-object p7, p0, Ldh2;->g:Llf2;
 
-    invoke-direct {v0}, Lru;-><init>()V
+    iput-object p8, p0, Ldh2;->h:Lyfb;
 
-    iput-object v0, p0, Ldh2;->o0:Lru;
-
-    new-instance v0, Lru;
-
-    invoke-direct {v0}, Lru;-><init>()V
-
-    iput-object v0, p0, Ldh2;->p0:Lru;
-
-    iput-object p1, p0, Ldh2;->b:Lnp6;
-
-    iput-object p0, p1, Lnp6;->i:Ljp6;
-
-    iget-object p1, p2, Loy1;->b:Ljava/lang/Object;
-
-    check-cast p1, Ltoe;
-
-    check-cast p1, Lvoe;
-
-    invoke-virtual {p1}, Lvoe;->a()Lqxc;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ldh2;->c:Lqxc;
-
-    iput-object p3, p0, Ldh2;->o:Lqxc;
-
-    iput-object p4, p0, Ldh2;->Y:Ls75;
-
-    iput-object p5, p0, Ldh2;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final k()V
-    .registers 3
-
-    new-instance v0, Lb;
-
-    const/16 v1, 0xa
-
-    invoke-direct {v0, v1, p0}, Lb;-><init>(ILjava/lang/Object;)V
-
-    iget-object p0, p0, Ldh2;->o:Lqxc;
-
-    invoke-virtual {p0, v0}, Lqxc;->b(Ljava/lang/Runnable;)Lnp4;
+    iput-object p9, p0, Ldh2;->i:Lr09;
 
     return-void
 .end method

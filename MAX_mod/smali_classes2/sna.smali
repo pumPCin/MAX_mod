@@ -3,46 +3,43 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/webkit/ValueCallback;
+.implements Landroid/widget/TextView$OnEditorActionListener;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic a:Landroidx/appcompat/widget/AppCompatEditText;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public synthetic constructor <init>(Landroidx/appcompat/widget/AppCompatEditText;)V
     .registers 2
 
-    iput p1, p0, Lsna;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lsna;->a:Landroidx/appcompat/widget/AppCompatEditText;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onReceiveValue(Ljava/lang/Object;)V
-    .registers 2
+.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+    .registers 4
 
-    iget p0, p0, Lsna;->a:I
+    const/4 p1, 0x3
 
-    check-cast p1, Ljava/lang/String;
+    if-ne p2, p1, :cond_0
 
-    packed-switch p0, :pswitch_data_0
+    iget-object p0, p0, Lsna;->a:Landroidx/appcompat/widget/AppCompatEditText;
 
-    return-void
+    invoke-static {p0}, Lqe5;->v(Landroid/view/View;)V
 
-    :pswitch_0
-    sget p0, Ltna;->d:I
+    const/4 p0, 0x1
 
-    return-void
+    return p0
 
-    nop
+    :cond_0
+    const/4 p0, 0x0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

@@ -1,3 +1,3 @@
 .class public final Lpnd;
-.super Ljava/lang/Object;
+.super Loi0;
 .source "SourceFile"

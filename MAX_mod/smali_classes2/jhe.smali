@@ -1,27 +1,49 @@
-.class public final synthetic Ljhe;
-.super Ljava/lang/Object;
+.class public final Ljhe;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:Ll28;
+.field public final synthetic X:Lmhe;
 
-.field public final synthetic b:Lqxc;
+.field public Y:I
 
-.field public final synthetic c:Lrn9;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ll28;Lqxc;Lrn9;)V
-    .registers 4
+.method public constructor <init>(Lmhe;Ljx3;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljhe;->X:Lmhe;
 
-    iput-object p1, p0, Ljhe;->a:Ll28;
-
-    iput-object p2, p0, Ljhe;->b:Lqxc;
-
-    iput-object p3, p0, Ljhe;->c:Lrn9;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    iput-object p1, p0, Ljhe;->o:Ljava/lang/Object;
+
+    iget p1, p0, Ljhe;->Y:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Ljhe;->Y:I
+
+    iget-object p1, p0, Ljhe;->X:Lmhe;
+
+    const-wide/16 v0, 0x0
+
+    invoke-virtual {p1, v0, v1, p0}, Lmhe;->a(JLjx3;)Ljava/io/Serializable;
+
+    move-result-object p0
+
+    return-object p0
 .end method

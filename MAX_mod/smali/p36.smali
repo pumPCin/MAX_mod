@@ -1,64 +1,98 @@
 .class public final Lp36;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lq36;
+.implements Lpc6;
 
 
-# static fields
-.field public static final a:Lp36;
+# instance fields
+.field public final synthetic X:Lq36;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lq36;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    new-instance v0, Lp36;
+    iput-object p1, p0, Lp36;->X:Lq36;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
 
-    sput-object v0, Lp36;->a:Lp36;
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    const/4 v0, 0x1
+    check-cast p1, Ly04;
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return v0
+    invoke-virtual {p0, p1, p2}, Lp36;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    :cond_0
-    instance-of p0, p1, Lp36;
+    move-result-object p0
 
-    if-nez p0, :cond_1
+    check-cast p0, Lp36;
 
-    const/4 p0, 0x0
+    sget-object p1, Lylf;->a:Lylf;
 
-    return p0
+    invoke-virtual {p0, p1}, Lp36;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    return v0
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    const p0, -0x64e35cdf
+    new-instance p1, Lp36;
 
-    return p0
+    iget-object p0, p0, Lp36;->X:Lq36;
+
+    invoke-direct {p1, p0, p2}, Lp36;-><init>(Lq36;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    const-string p0, "ShowAuthorVisibilityOnboarding"
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lp36;->X:Lq36;
+
+    iget-object p0, p0, Lq36;->Z:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqoa;
+
+    sget p1, Ld1d;->n3:I
+
+    new-instance v0, Lp2f;
+
+    invoke-direct {v0, p1}, Lp2f;-><init>(I)V
+
+    invoke-virtual {p0, v0}, Lqoa;->g(Lu2f;)V
+
+    sget p1, Ld1d;->m3:I
+
+    new-instance v0, Lp2f;
+
+    invoke-direct {v0, p1}, Lp2f;-><init>(I)V
+
+    invoke-virtual {p0, v0}, Lqoa;->a(Lu2f;)V
+
+    invoke-virtual {p0}, Lqoa;->i()Lpoa;
+
+    move-result-object p0
 
     return-object p0
 .end method

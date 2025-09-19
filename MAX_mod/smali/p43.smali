@@ -1,3 +1,3 @@
-.class public final Lp43;
-.super Lhv2;
+.class public interface abstract Lp43;
+.super Ljava/lang/Object;
 .source "SourceFile"

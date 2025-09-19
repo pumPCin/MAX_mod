@@ -3,90 +3,108 @@
 
 
 # static fields
-.field public static AsyncViewStub:[I = null
+.field public static oneme_login_conductor:I = 0x7f0a06f9
 
-.field public static AsyncViewStub_layout:I = 0x0
+.field public static oneme_login_confirm_description:I = 0x7f0a06fa
 
-.field public static LongRoundedTitleSubtitleButton:[I = null
+.field public static oneme_login_confirm_resend_code:I = 0x7f0a06fb
 
-.field public static LongRoundedTitleSubtitleButton_lrts_subtitle:I = 0x0
+.field public static oneme_login_confirm_sms_input:I = 0x7f0a06fc
 
-.field public static LongRoundedTitleSubtitleButton_lrts_title:I = 0x1
+.field public static oneme_login_confirm_timer:I = 0x7f0a06fd
 
-.field public static PopupLayout:[I = null
+.field public static oneme_login_confirm_title:I = 0x7f0a06fe
 
-.field public static PopupLayout_sensitivity:I = 0x0
+.field public static oneme_login_input_constraint_layout:I = 0x7f0a0700
 
-.field public static RoundedRectConstraintLayout:[I = null
+.field public static oneme_login_input_continue_button:I = 0x7f0a0701
 
-.field public static RoundedRectConstraintLayout_roundRadius:I = 0x0
+.field public static oneme_login_input_description:I = 0x7f0a0702
 
-.field public static RoundedRectFrameLayout:[I = null
+.field public static oneme_login_input_gradient_bg:I = 0x7f0a0705
 
-.field public static RoundedRectFrameLayout_cornersRadius:I = 0x0
+.field public static oneme_login_input_help_button:I = 0x7f0a0706
 
-.field public static TamLoadingView:[I = null
+.field public static oneme_login_input_logo:I = 0x7f0a0707
 
-.field public static TamLoadingView_tlv_auto_repeat:I = 0x0
+.field public static oneme_login_input_name:I = 0x7f0a0708
 
-.field public static TamLoadingView_tlv_network_fetch:I = 0x1
+.field public static oneme_login_input_name_btn_container:I = 0x7f0a0709
 
+.field public static oneme_login_input_name_confirmation_cancel:I = 0x7f0a070a
 
-# direct methods
-.method public static constructor <clinit>()V
-    .registers 2
+.field public static oneme_login_input_name_confirmation_return:I = 0x7f0a070b
 
-    const v0, 0x7f040594
+.field public static oneme_login_input_name_continue_btn:I = 0x7f0a070c
 
-    filled-new-array {v0}, [I
+.field public static oneme_login_input_name_description:I = 0x7f0a070d
 
-    move-result-object v0
+.field public static oneme_login_input_name_title:I = 0x7f0a070e
 
-    sput-object v0, Ll6c;->AsyncViewStub:[I
+.field public static oneme_login_input_name_toolbar:I = 0x7f0a070f
 
-    const v0, 0x7f040609
+.field public static oneme_login_input_phone_number_input:I = 0x7f0a0710
 
-    const v1, 0x7f04060a
+.field public static oneme_login_input_surname:I = 0x7f0a0711
 
-    filled-new-array {v0, v1}, [I
+.field public static oneme_login_input_title:I = 0x7f0a0712
 
-    move-result-object v0
+.field public static oneme_login_input_toolbar:I = 0x7f0a0713
 
-    sput-object v0, Ll6c;->LongRoundedTitleSubtitleButton:[I
+.field public static oneme_login_neuro_avatars_appbar:I = 0x7f0a0714
 
-    const v0, 0x7f04074f
+.field public static oneme_login_neuro_avatars_avatar:I = 0x7f0a0715
 
-    filled-new-array {v0}, [I
+.field public static oneme_login_neuro_avatars_button_background:I = 0x7f0a0716
 
-    move-result-object v0
+.field public static oneme_login_neuro_avatars_cancel_action:I = 0x7f0a0717
 
-    sput-object v0, Ll6c;->PopupLayout:[I
+.field public static oneme_login_neuro_avatars_collapsible:I = 0x7f0a0718
 
-    const v0, 0x7f040728
+.field public static oneme_login_neuro_avatars_continue_btn:I = 0x7f0a0719
 
-    filled-new-array {v0}, [I
+.field public static oneme_login_neuro_avatars_continue_disabled_btn:I = 0x7f0a071a
 
-    move-result-object v0
+.field public static oneme_login_neuro_avatars_continue_enabled_btn:I = 0x7f0a071b
 
-    sput-object v0, Ll6c;->RoundedRectConstraintLayout:[I
+.field public static oneme_login_neuro_avatars_description:I = 0x7f0a071c
 
-    const v0, 0x7f04031a
+.field public static oneme_login_neuro_avatars_load_from_gallery_action:I = 0x7f0a071d
 
-    filled-new-array {v0}, [I
+.field public static oneme_login_neuro_avatars_pick_image_text:I = 0x7f0a071e
 
-    move-result-object v0
+.field public static oneme_login_neuro_avatars_pick_neuroavatar_button:I = 0x7f0a071f
 
-    sput-object v0, Ll6c;->RoundedRectFrameLayout:[I
+.field public static oneme_login_neuro_avatars_pick_neuroavatar_icon:I = 0x7f0a0720
 
-    const v0, 0x7f040898
+.field public static oneme_login_neuro_avatars_recycler_view:I = 0x7f0a0721
 
-    const v1, 0x7f040899
+.field public static oneme_login_neuro_avatars_remove_photo_action:I = 0x7f0a0722
 
-    filled-new-array {v0, v1}, [I
+.field public static oneme_login_neuro_avatars_root_container:I = 0x7f0a0723
 
-    move-result-object v0
+.field public static oneme_login_neuro_avatars_tabs:I = 0x7f0a0724
 
-    sput-object v0, Ll6c;->TamLoadingView:[I
+.field public static oneme_login_neuro_avatars_tabs_shimmer:I = 0x7f0a0725
 
-    return-void
-.end method
+.field public static oneme_login_neuro_avatars_take_photo_action:I = 0x7f0a0726
+
+.field public static oneme_login_neuro_avatars_title:I = 0x7f0a0727
+
+.field public static oneme_login_neuro_avatars_toolbar:I = 0x7f0a0728
+
+.field public static oneme_login_sms_code_exceeded_ok_btn:I = 0x7f0a072a
+
+.field public static oneme_login_welcome_continue_btn:I = 0x7f0a072b
+
+.field public static oneme_login_welcome_description:I = 0x7f0a072c
+
+.field public static oneme_login_welcome_placeholder:I = 0x7f0a072d
+
+.field public static oneme_login_welcome_switch_language_btn:I = 0x7f0a072e
+
+.field public static oneme_login_welcome_terms:I = 0x7f0a072f
+
+.field public static oneme_login_welcome_title:I = 0x7f0a0730
+
+.field public static oneme_login_welcome_toolbar:I = 0x7f0a0731

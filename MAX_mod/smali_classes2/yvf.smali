@@ -1,93 +1,179 @@
-.class public final Lyvf;
+.class public final synthetic Lyvf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lzvf;
+.implements Lpm3;
+.implements Lqc6;
 
 
 # instance fields
-.field public final a:[F
+.field public final synthetic a:I
+
+.field public final synthetic b:Lsvf;
 
 
 # direct methods
-.method public constructor <init>([F)V
-    .registers 2
+.method public synthetic constructor <init>(Lsvf;I)V
+    .registers 3
+
+    iput p2, p0, Lyvf;->a:I
+
+    iput-object p1, p0, Lyvf;->b:Lsvf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lyvf;->a:[F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public accept(Ljava/lang/Object;)V
+    .registers 4
 
-    const/4 v0, 0x1
+    check-cast p1, Ljava/lang/Throwable;
 
-    if-ne p0, p1, :cond_0
+    sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
-    return v0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    :cond_0
-    instance-of v1, p1, Lyvf;
+    const-string v1, "removeFromRepository: failed conversionData = "
 
-    const/4 v2, 0x0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-nez v1, :cond_1
+    iget-object p0, p0, Lyvf;->b:Lsvf;
 
-    return v2
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    :cond_1
-    check-cast p1, Lyvf;
-
-    iget-object p0, p0, Lyvf;->a:[F
-
-    iget-object p1, p1, Lyvf;->a:[F
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lyvf;->a:[F
-
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([F)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    iget-object p0, p0, Lyvf;->a:[F
-
-    invoke-static {p0}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v0, "WithCorners(corners="
+    const-string v0, "bwf"
 
-    const-string v1, ")"
+    invoke-static {v0, p0, p1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object p0
+.method public apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 10
+
+    iget v0, p0, Lyvf;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    move-object v2, p1
+
+    check-cast v2, Lwvf;
+
+    iget-object p0, p0, Lyvf;->b:Lsvf;
+
+    iget-object v3, p0, Lsvf;->a:Ljava/lang/String;
+
+    iget-object p0, p0, Lsvf;->b:Lxvf;
+
+    iget-object v4, p0, Lxvf;->a:Le0c;
+
+    iget v5, p0, Lxvf;->b:F
+
+    iget v6, p0, Lxvf;->c:F
+
+    iget-boolean v7, p0, Lxvf;->d:Z
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v1, Lvvf;
+
+    invoke-direct/range {v1 .. v7}, Lvvf;-><init>(Lwvf;Ljava/lang/String;Le0c;FFZ)V
+
+    new-instance p0, Lkc3;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, v1}, Lkc3;-><init>(ILjava/lang/Object;)V
 
     return-object p0
+
+    :pswitch_0
+    check-cast p1, Lwvf;
+
+    iget-object p0, p0, Lyvf;->b:Lsvf;
+
+    iget-object v0, p0, Lsvf;->a:Ljava/lang/String;
+
+    iget-object p0, p0, Lsvf;->b:Lxvf;
+
+    iget-object v1, p0, Lxvf;->a:Le0c;
+
+    iget v2, p0, Lxvf;->b:F
+
+    iget v3, p0, Lxvf;->c:F
+
+    iget-boolean p0, p0, Lxvf;->d:Z
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v4, 0x5
+
+    const-string v5, "SELECT * FROM video_conversions WHERE source_uri=? AND quality=? AND start_trim_position=? AND end_trim_position=? AND mute=?"
+
+    invoke-static {v4, v5}, Lvxc;->c(ILjava/lang/String;)Lvxc;
+
+    move-result-object v5
+
+    const/4 v6, 0x1
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {v5, v6}, Lvxc;->Z(I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v5, v6, v0}, Lvxc;->f(ILjava/lang/String;)V
+
+    :goto_0
+    iget v0, v1, Le0c;->b:I
+
+    int-to-long v0, v0
+
+    const/4 v6, 0x2
+
+    invoke-virtual {v5, v6, v0, v1}, Lvxc;->k(IJ)V
+
+    const/4 v0, 0x3
+
+    float-to-double v1, v2
+
+    invoke-virtual {v5, v0, v1, v2}, Lvxc;->g(ID)V
+
+    const/4 v0, 0x4
+
+    float-to-double v1, v3
+
+    invoke-virtual {v5, v0, v1, v2}, Lvxc;->g(ID)V
+
+    int-to-long v0, p0
+
+    invoke-virtual {v5, v4, v0, v1}, Lvxc;->k(IJ)V
+
+    new-instance p0, Lrwc;
+
+    const/16 v0, 0xd
+
+    invoke-direct {p0, p1, v0, v5}, Lrwc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    new-instance p1, Ll98;
+
+    invoke-direct {p1, p0}, Ll98;-><init>(Ljava/util/concurrent/Callable;)V
+
+    return-object p1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method

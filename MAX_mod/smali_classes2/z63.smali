@@ -9,18 +9,18 @@
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lc73;
+.field public final synthetic b:Ld73;
 
 .field public final synthetic c:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lc73;Landroid/graphics/drawable/Drawable;I)V
+.method public synthetic constructor <init>(Ld73;Landroid/graphics/drawable/Drawable;I)V
     .registers 4
 
     iput p3, p0, Lz63;->a:I
 
-    iput-object p1, p0, Lz63;->b:Lc73;
+    iput-object p1, p0, Lz63;->b:Ld73;
 
     iput-object p2, p0, Lz63;->c:Landroid/graphics/drawable/Drawable;
 
@@ -38,20 +38,20 @@
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Lz63;->b:Lc73;
+    iget-object v0, p0, Lz63;->b:Ld73;
 
     iget-object p0, p0, Lz63;->c:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, p0}, Lc73;->A(Lc73;Landroid/graphics/drawable/Drawable;)V
+    invoke-static {v0, p0}, Ld73;->y(Ld73;Landroid/graphics/drawable/Drawable;)V
 
     return-void
 
     :pswitch_0
-    iget-object v0, p0, Lz63;->b:Lc73;
+    iget-object v0, p0, Lz63;->b:Ld73;
 
     iget-object p0, p0, Lz63;->c:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, p0}, Lc73;->y(Lc73;Landroid/graphics/drawable/Drawable;)V
+    invoke-static {v0, p0}, Ld73;->f(Ld73;Landroid/graphics/drawable/Drawable;)V
 
     return-void
 

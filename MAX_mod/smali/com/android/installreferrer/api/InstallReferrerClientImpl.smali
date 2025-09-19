@@ -29,7 +29,7 @@
 
 .field private final mApplicationContext:Landroid/content/Context;
 
-.field private service:Lxu6;
+.field private service:Lyx6;
 
 .field private serviceConnection:Landroid/content/ServiceConnection;
 
@@ -53,10 +53,10 @@
     return-void
 .end method
 
-.method public static synthetic access$102(Lcom/android/installreferrer/api/InstallReferrerClientImpl;Lxu6;)Lxu6;
+.method public static synthetic access$102(Lcom/android/installreferrer/api/InstallReferrerClientImpl;Lyx6;)Lyx6;
     .registers 2
 
-    iput-object p1, p0, Lcom/android/installreferrer/api/InstallReferrerClientImpl;->service:Lxu6;
+    iput-object p1, p0, Lcom/android/installreferrer/api/InstallReferrerClientImpl;->service:Lyx6;
 
     return-object p1
 .end method
@@ -136,7 +136,7 @@
     iput-object v1, p0, Lcom/android/installreferrer/api/InstallReferrerClientImpl;->serviceConnection:Landroid/content/ServiceConnection;
 
     :cond_0
-    iput-object v1, p0, Lcom/android/installreferrer/api/InstallReferrerClientImpl;->service:Lxu6;
+    iput-object v1, p0, Lcom/android/installreferrer/api/InstallReferrerClientImpl;->service:Lyx6;
 
     return-void
 .end method
@@ -172,11 +172,11 @@
     :try_start_0
     new-instance v1, Lcom/android/installreferrer/api/ReferrerDetails;
 
-    iget-object v2, p0, Lcom/android/installreferrer/api/InstallReferrerClientImpl;->service:Lxu6;
+    iget-object v2, p0, Lcom/android/installreferrer/api/InstallReferrerClientImpl;->service:Lyx6;
 
-    check-cast v2, Lvu6;
+    check-cast v2, Lwx6;
 
-    invoke-virtual {v2, v0}, Lvu6;->j(Landroid/os/Bundle;)Landroid/os/Bundle;
+    invoke-virtual {v2, v0}, Lwx6;->k(Landroid/os/Bundle;)Landroid/os/Bundle;
 
     move-result-object v0
 
@@ -220,7 +220,7 @@
 
     if-ne v0, v1, :cond_0
 
-    iget-object v0, p0, Lcom/android/installreferrer/api/InstallReferrerClientImpl;->service:Lxu6;
+    iget-object v0, p0, Lcom/android/installreferrer/api/InstallReferrerClientImpl;->service:Lyx6;
 
     if-eqz v0, :cond_0
 

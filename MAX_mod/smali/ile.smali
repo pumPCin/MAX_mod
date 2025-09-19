@@ -2,36 +2,31 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lqd0;
 
-# static fields
-.field public static final a:Lile;
+
+# instance fields
+.field public final a:Lx46;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lx46;)V
+    .registers 2
 
-    new-instance v0, Lile;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lile;->a:Lile;
+    iput-object p1, p0, Lile;->a:Lx46;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/os/Looper;Landroid/os/Handler$Callback;)Lqle;
-    .registers 4
+.method public final getType()I
+    .registers 1
 
-    new-instance p0, Lqle;
+    const p0, 0x66727473
 
-    new-instance v0, Landroid/os/Handler;
-
-    invoke-direct {v0, p1, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
-
-    invoke-direct {p0, v0}, Lqle;-><init>(Landroid/os/Handler;)V
-
-    return-object p0
+    return p0
 .end method

@@ -1,168 +1,107 @@
 .class public final Lkmd;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final synthetic e:[Lxi7;
+
+.field public static final f:Ljava/lang/String;
 
 
 # instance fields
-.field public X:I
+.field public final a:Lgr4;
 
-.field public final synthetic Y:Lqmd;
+.field public final b:Lgr4;
+
+.field public final c:Lgr4;
+
+.field public final d:Lgr4;
 
 
 # direct methods
-.method public constructor <init>(Lqmd;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 8
 
-    iput-object p1, p0, Lkmd;->Y:Lqmd;
+    new-instance v0, Lsxb;
 
-    const/4 p1, 0x2
+    const-class v1, Lkmd;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const-string v2, "exceptionHandler"
+
+    const-string v3, "getExceptionHandler()Lru/ok/tamtam/ExceptionHandler;"
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sget-object v2, Ljpc;->a:Lkpc;
+
+    const-string v3, "sessionStateInfo"
+
+    const-string v5, "getSessionStateInfo()Lru/ok/tamtam/session/SessionStateInfo;"
+
+    invoke-static {v2, v1, v3, v5, v4}, Lee5;->h(Lkpc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lsxb;
+
+    move-result-object v2
+
+    new-instance v3, Lsxb;
+
+    const-string v5, "api"
+
+    const-string v6, "getApi()Lru/ok/tamtam/api/Api;"
+
+    invoke-direct {v3, v1, v5, v6, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    new-instance v5, Lsxb;
+
+    const-string v6, "tamSessionController"
+
+    const-string v7, "getTamSessionController()Lru/ok/tamtam/services/TamSessionController;"
+
+    invoke-direct {v5, v1, v6, v7, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    const/4 v6, 0x4
+
+    new-array v6, v6, [Lxi7;
+
+    aput-object v0, v6, v4
+
+    const/4 v0, 0x1
+
+    aput-object v2, v6, v0
+
+    const/4 v0, 0x2
+
+    aput-object v3, v6, v0
+
+    const/4 v0, 0x3
+
+    aput-object v5, v6, v0
+
+    sput-object v6, Lkmd;->e:[Lxi7;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lkmd;->f:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Lgr4;Lgr4;Lgr4;Lgr4;)V
+    .registers 5
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    check-cast p1, Lr04;
+    iput-object p1, p0, Lkmd;->a:Lgr4;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iput-object p2, p0, Lkmd;->b:Lgr4;
 
-    invoke-virtual {p0, p1, p2}, Lkmd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iput-object p3, p0, Lkmd;->c:Lgr4;
 
-    move-result-object p0
+    iput-object p4, p0, Lkmd;->d:Lgr4;
 
-    check-cast p0, Lkmd;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lkmd;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Lkmd;
-
-    iget-object p0, p0, Lkmd;->Y:Lqmd;
-
-    invoke-direct {p1, p0, p2}, Lkmd;-><init>(Lqmd;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-
-    iget v0, p0, Lkmd;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lkmd;->Y:Lqmd;
-
-    iget-object v0, p1, Lqmd;->X:Lxh7;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkj5;
-
-    new-instance v2, Lxg7;
-
-    iget-object v3, v0, Lkj5;->j:Ljj5;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v3}, Lxg7;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v2}, Lkj5;->a(Lxg7;)Lqo8;
-
-    move-result-object v0
-
-    sget-object v2, Lvx0;->a:Lvx0;
-
-    invoke-static {v2}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lqo8;->m(Ljava/util/Collection;)V
-
-    iget-object v0, p1, Lqmd;->Z:Ln4e;
-
-    invoke-virtual {v0}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lux0;
-
-    if-eqz v0, :cond_2
-
-    iget-wide v2, v0, Lux0;->a:J
-
-    new-instance v0, Ljava/lang/Long;
-
-    invoke-direct {v0, v2, v3}, Ljava/lang/Long;-><init>(J)V
-
-    move-object v3, v0
-
-    :cond_2
-    if-eqz v3, :cond_3
-
-    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    invoke-static {p1, v2, v3}, Lqmd;->q(Lqmd;J)V
-
-    :cond_3
-    iput v1, p0, Lkmd;->X:I
-
-    invoke-static {p1, p0}, Lqmd;->r(Lqmd;Lxie;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_4
-
-    return-object p1
-
-    :cond_4
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    return-void
 .end method

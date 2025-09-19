@@ -1,111 +1,85 @@
-.class public final Lz04;
-.super Lg87;
+.class public final enum Lz04;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic b:I
+# static fields
+.field public static final enum a:Lz04;
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public static final enum b:Lz04;
+
+.field public static final enum c:Lz04;
+
+.field public static final synthetic o:[Lz04;
 
 
 # direct methods
-.method public synthetic constructor <init>([Ljava/lang/String;Ljava/lang/Object;I)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 5
 
-    iput p3, p0, Lz04;->b:I
+    new-instance v0, Lz04;
 
-    iput-object p2, p0, Lz04;->c:Ljava/lang/Object;
+    const-string v1, "COROUTINE_SUSPENDED"
 
-    invoke-direct {p0, p1}, Lg87;-><init>([Ljava/lang/String;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lz04;->a:Lz04;
+
+    new-instance v1, Lz04;
+
+    const-string v2, "UNDECIDED"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lz04;->b:Lz04;
+
+    new-instance v2, Lz04;
+
+    const-string v3, "RESUMED"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lz04;->c:Lz04;
+
+    filled-new-array {v0, v1, v2}, [Lz04;
+
+    move-result-object v0
+
+    sput-object v0, Lz04;->o:[Lz04;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lz04;
+    .registers 2
 
-# virtual methods
-.method public final a(Ljava/util/Set;)V
-    .registers 4
+    const-class v0, Lz04;
 
-    iget p1, p0, Lz04;->b:I
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    packed-switch p1, :pswitch_data_0
+    move-result-object p0
 
-    iget-object p0, p0, Lz04;->c:Ljava/lang/Object;
+    check-cast p0, Lz04;
 
-    check-cast p0, Ll1a;
+    return-object p0
+.end method
 
-    sget-object p1, Lfog;->b:Ljava/lang/Object;
+.method public static values()[Lz04;
+    .registers 1
 
-    invoke-virtual {p0, p1}, Ll1a;->d(Ljava/lang/Object;)V
+    sget-object v0, Lz04;->o:[Lz04;
 
-    return-void
-
-    :pswitch_0
-    invoke-static {}, Lsr;->K()Lsr;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lz04;->c:Ljava/lang/Object;
-
-    check-cast p0, Lwpc;
-
-    iget-object p0, p0, Lwpc;->u:Lvpc;
-
-    iget-object v0, p1, Lsr;->h:Lwh4;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
+    check-cast v0, [Lz04;
 
-    move-result-object v0
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v1
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Lvpc;->run()V
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p1, p0}, Lsr;->L(Ljava/lang/Runnable;)V
-
-    :goto_1
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lz04;->c:Ljava/lang/Object;
-
-    check-cast p0, Lou0;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-interface {p0, p1}, Lb9d;->g(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

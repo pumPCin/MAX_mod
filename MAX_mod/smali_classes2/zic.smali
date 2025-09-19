@@ -1,40 +1,19 @@
-.class public interface abstract Lzic;
+.class public final Lzic;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:Landroid/content/Context;
+
+
 # direct methods
-.method public static synthetic d(Lzic;JIJLcx3;)Ljava/lang/Object;
-    .registers 17
-
-    const/4 v4, 0x0
-
-    const-wide v7, 0x7fffffffffffffffL
-
-    move-object v0, p0
-
-    move-wide v1, p1
-
-    move v3, p3
-
-    move-wide v5, p4
-
-    move-object/from16 v9, p6
-
-    invoke-interface/range {v0 .. v9}, Lzic;->c(JIIJJLcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-
-# virtual methods
-.method public abstract c(JIIJJLcx3;)Ljava/lang/Object;
-.end method
-
-.method public e(Lso6;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lzic;->a:Landroid/content/Context;
 
     return-void
 .end method

@@ -1,30 +1,28 @@
 .class public final Lk43;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic X:Ll43;
 
-.field public final synthetic Y:Ll43;
-
-.field public final synthetic Z:J
+.field public final synthetic Y:J
 
 
 # direct methods
 .method public constructor <init>(Ll43;JLkotlin/coroutines/Continuation;)V
     .registers 5
 
-    iput-object p1, p0, Lk43;->Y:Ll43;
+    iput-object p1, p0, Lk43;->X:Ll43;
 
-    iput-wide p2, p0, Lk43;->Z:J
+    iput-wide p2, p0, Lk43;->Y:J
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p4}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -34,7 +32,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -44,13 +42,11 @@
 
     check-cast p0, Lk43;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lk43;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p0
-
-    return-object p0
+    return-object p1
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -58,9 +54,9 @@
 
     new-instance p1, Lk43;
 
-    iget-object v0, p0, Lk43;->Y:Ll43;
+    iget-object v0, p0, Lk43;->X:Ll43;
 
-    iget-wide v1, p0, Lk43;->Z:J
+    iget-wide v1, p0, Lk43;->Y:J
 
     invoke-direct {p1, v0, v1, v2, p2}, Lk43;-><init>(Ll43;JLkotlin/coroutines/Continuation;)V
 
@@ -68,248 +64,160 @@
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 15
+    .registers 9
 
-    sget-object v0, Lncf;->a:Lncf;
+    const-string v0, "cancelAllRunningDraftTasks: all tasks count = "
 
-    sget-object v1, Ls04;->a:Ls04;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget v2, p0, Lk43;->X:I
+    iget-object p1, p0, Lk43;->X:Ll43;
 
-    const/4 v3, 0x1
+    iget-object v1, p1, Ll43;->c:Lcl7;
 
-    if-eqz v2, :cond_1
+    iget-object p1, p1, Ll43;->a:Ljava/lang/String;
 
-    if-ne v2, v3, :cond_0
+    const-string v2, "cancelAllRunningDraftTasks for chat "
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-wide v3, p0, Lk43;->Y:J
 
-    return-object v0
+    invoke-static {v3, v4, v2, p1}, Lb22;->l(JLjava/lang/String;Ljava/lang/String;)V
+
+    :try_start_0
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lo0f;
+
+    sget-object v2, Ll43;->d:Ljava/util/Set;
+
+    invoke-virtual {p0, v2}, Lo0f;->i(Ljava/util/Collection;)Ljava/util/List;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v0, Ljava/util/LinkedHashSet;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    move-result v2
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-eqz v2, :cond_2
 
-    throw p0
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Le0f;
+
+    iget-object v5, v2, Le0f;->f:Lt2b;
+
+    instance-of v6, v5, Llu4;
+
+    if-eqz v6, :cond_1
+
+    check-cast v5, Llu4;
+
+    iget-wide v5, v5, Llu4;->o:J
+
+    cmp-long v5, v5, v3
+
+    if-nez v5, :cond_0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_2
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    instance-of v6, v5, Lpu4;
 
-    iget-object p1, p0, Lk43;->Y:Ll43;
+    if-eqz v6, :cond_0
 
-    iget-object p1, p1, Ll43;->a:Ljava/lang/Object;
+    check-cast v5, Lpu4;
 
-    check-cast p1, Ljava/lang/String;
+    iget-wide v5, v5, Lpu4;->o:J
 
-    iget-wide v4, p0, Lk43;->Z:J
+    cmp-long v5, v5, v3
 
-    sget-object v2, Ld86;->f:Lafa;
+    if-nez v5, :cond_0
 
-    const/4 v6, 0x0
+    :goto_1
+    iget-wide v5, v2, Le0f;->a:J
 
-    if-nez v2, :cond_2
+    new-instance v2, Ljava/lang/Long;
+
+    invoke-direct {v2, v5, v6}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-interface {v0, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_2
-    sget-object v7, Llw7;->o:Llw7;
-
-    invoke-virtual {v2, v7}, Lafa;->a(Llw7;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_3
-
-    const-string v8, "start clear draft for chatId:"
-
-    invoke-static {v4, v5, v8}, La78;->i(JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v7, p1, v4, v6}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_3
-    :goto_0
-    iget-object p1, p0, Lk43;->Y:Ll43;
-
-    iget-object p1, p1, Ll43;->c:Ljava/lang/Object;
-
-    check-cast p1, Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lvz2;
-
-    iget-wide v4, p0, Lk43;->Z:J
-
-    check-cast p1, Lv03;
-
-    invoke-virtual {p1, v4, v5}, Lv03;->N(J)Ldbc;
-
-    move-result-object p1
-
-    iget-object p1, p1, Ldbc;->a:Lg4e;
-
-    invoke-interface {p1}, Lg4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lo72;
-
-    if-nez p1, :cond_4
-
-    iget-object p0, p0, Lk43;->Y:Ll43;
-
-    iget-object p0, p0, Ll43;->a:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    const-string p1, "can\'t clear draft because chat is null"
-
-    invoke-static {p0, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v0
-
-    :cond_4
-    iget-object v2, p1, Lo72;->b:Lac2;
-
-    iget-object v2, v2, Lac2;->b0:Lqca;
-
-    instance-of v4, v2, Lqca;
-
-    if-eqz v4, :cond_5
-
-    move-object v6, v2
-
-    :cond_5
-    if-nez v6, :cond_6
-
-    iget-object p0, p0, Lk43;->Y:Ll43;
-
-    iget-object p0, p0, Ll43;->a:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    const-string p1, "Draft empty in chat don\'t need clear"
-
-    invoke-static {p0, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v0
-
-    :cond_6
-    iget-object v2, p0, Lk43;->Y:Ll43;
-
-    iget-object v2, v2, Ll43;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/String;
-
-    const-string v4, "Clear local draft"
-
-    invoke-static {v2, v4}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v2, p0, Lk43;->Y:Ll43;
-
-    iput v3, p0, Lk43;->X:I
-
-    iget-object v3, v2, Ll43;->a:Ljava/lang/Object;
-
-    check-cast v3, Ljava/lang/String;
-
-    iget-wide v4, p1, Lo72;->a:J
-
-    const-string v7, "dropAllDrafts "
-
-    invoke-static {v4, v5, v7, v3}, Lf22;->l(JLjava/lang/String;Ljava/lang/String;)V
-
-    iget-object v3, p1, Lo72;->b:Lac2;
-
-    iget-object v4, v3, Lac2;->b0:Lqca;
-
-    if-eqz v4, :cond_9
-
-    iget-object v4, v6, Lqca;->e:Ljava/lang/Long;
-
-    if-eqz v4, :cond_7
-
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    goto :goto_1
-
-    :cond_7
-    iget-wide v3, v3, Lac2;->c0:J
-
-    :goto_1
-    iget-object v5, v2, Ll43;->Y:Ljava/lang/Object;
-
-    check-cast v5, Lxh7;
-
-    invoke-interface {v5}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lqbd;
-
-    check-cast v5, Li2d;
-
-    invoke-virtual {v5}, Li2d;->r()Z
-
-    move-result v5
-
-    if-nez v5, :cond_8
-
-    const-wide/16 v3, 0x0
-
-    :cond_8
-    move-wide v10, v3
-
-    iget-object v3, v2, Ll43;->c:Ljava/lang/Object;
-
-    check-cast v3, Lxh7;
-
-    invoke-interface {v3}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lvz2;
-
-    iget-wide v8, p1, Lo72;->a:J
-
-    check-cast v3, Lv03;
-
-    invoke-virtual {v3}, Lv03;->M()Leb2;
-
-    move-result-object v7
-
-    const/4 v12, 0x0
-
-    invoke-virtual/range {v7 .. v12}, Leb2;->k(JJLqca;)V
-
-    :cond_9
-    iget-wide v3, p1, Lo72;->a:J
-
-    invoke-virtual {v2, v3, v4, v6, p0}, Ll43;->b(JLqca;Lcx3;)Ljava/lang/Object;
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    if-ne p0, v1, :cond_a
+    check-cast p0, Lo0f;
 
-    goto :goto_2
+    invoke-virtual {p0, v0}, Lo0f;->e(Ljava/util/AbstractCollection;)V
 
-    :cond_a
-    move-object p0, v0
+    invoke-interface {v0}, Ljava/util/Set;->size()I
+
+    move-result p0
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "cancelAllRunningDraftTasks: removed tasks count = "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_3
 
     :goto_2
-    if-ne p0, v1, :cond_b
+    const-string v0, "cancelAllRunningDraftTasks: error!"
 
-    return-object v1
+    invoke-static {p1, v0, p0}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    :cond_b
-    return-object v0
+    :goto_3
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

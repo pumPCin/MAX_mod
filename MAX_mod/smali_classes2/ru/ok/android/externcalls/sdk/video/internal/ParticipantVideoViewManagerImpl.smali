@@ -39,10 +39,10 @@
         "Lkotlin/Function1;",
         "Landroid/content/Context;",
         "factory",
-        "Lncf;",
+        "Lylf;",
         "onOwnCameraRendererSet",
         "<init>",
-        "(Lh96;Lj96;Lh96;)V",
+        "(Lzb6;Lbc6;Lzb6;)V",
         "Lru/ok/android/externcalls/sdk/ConversationParticipant;",
         "participant",
         "rebindParticipantView",
@@ -77,8 +77,8 @@
         "updateDisplayLayout",
         "(Ljava/util/Collection;)V",
         "releaseParticipantView",
-        "Lh96;",
-        "Lj96;",
+        "Lzb6;",
+        "Lbc6;",
         "Lru/ok/android/externcalls/sdk/video/VideoRender;",
         "videoRender",
         "Lru/ok/android/externcalls/sdk/video/VideoRender;",
@@ -98,26 +98,26 @@
 
 
 # instance fields
-.field private final conversation:Lh96;
+.field private final conversation:Lzb6;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lh96;"
+            "Lzb6;"
         }
     .end annotation
 .end field
 
-.field private final factory:Lj96;
+.field private final factory:Lbc6;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lj96;"
+            "Lbc6;"
         }
     .end annotation
 .end field
 
-.field private final onOwnCameraRendererSet:Lh96;
+.field private final onOwnCameraRendererSet:Lzb6;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lh96;"
+            "Lzb6;"
         }
     .end annotation
 .end field
@@ -133,25 +133,25 @@
 
 
 # direct methods
-.method public constructor <init>(Lh96;Lj96;Lh96;)V
+.method public constructor <init>(Lzb6;Lbc6;Lzb6;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lh96;",
-            "Lj96;",
-            "Lh96;",
+            "Lzb6;",
+            "Lbc6;",
+            "Lzb6;",
             ")V"
         }
     .end annotation
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lh96;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lzb6;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->factory:Lj96;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->factory:Lbc6;
 
-    iput-object p3, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->onOwnCameraRendererSet:Lh96;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->onOwnCameraRendererSet:Lzb6;
 
     new-instance p1, Lru/ok/android/externcalls/sdk/video/VideoRender;
 
@@ -238,9 +238,9 @@
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->factory:Lj96;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->factory:Lbc6;
 
-    invoke-interface {p0, p1}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, p1}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -264,9 +264,9 @@
 .method public getOwnVideoTrack()Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;
     .registers 2
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lh96;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lzb6;
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -305,9 +305,9 @@
 .method public rebindParticipantView(Lru/ok/android/externcalls/sdk/ConversationParticipant;)V
     .registers 3
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lh96;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lzb6;
 
-    invoke-interface {v0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {v0}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -324,9 +324,9 @@
 .method public rebindParticipantViews()V
     .registers 4
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lh96;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lzb6;
 
-    invoke-interface {v0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {v0}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -443,9 +443,9 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lh96;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lzb6;
 
-    invoke-interface {v0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {v0}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -575,9 +575,9 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lh96;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lzb6;
 
-    invoke-interface {v0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {v0}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -648,23 +648,23 @@
 
     move-result-object v2
 
-    invoke-static {v2, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v2, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->getType()Lqvf;
+    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/layout/ConversationVideoTrackParticipantKey;->getType()Lv5g;
 
     move-result-object v1
 
-    sget-object v2, Lqvf;->a:Lqvf;
+    sget-object v2, Lv5g;->a:Lv5g;
 
     if-ne v1, v2, :cond_3
 
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->onOwnCameraRendererSet:Lh96;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->onOwnCameraRendererSet:Lzb6;
 
-    invoke-interface {v1}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {v1}, Lzb6;->invoke()Ljava/lang/Object;
 
     goto :goto_0
 
@@ -694,7 +694,7 @@
 
     move-result-object p0
 
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/video/VideoRenderManager;->getCallRenderer()Lef1;
+    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/video/VideoRenderManager;->getCallRenderer()Laf1;
 
     move-result-object p0
 
@@ -704,7 +704,7 @@
 
     const/4 p1, 0x0
 
-    invoke-interface {p2, p0, p1, p3}, Lru/ok/android/externcalls/sdk/ui/RendererView;->init(Lef1;Lorg/webrtc/RendererCommon$RendererEvents;Lru/ok/android/externcalls/sdk/ui/FrameDecorator;)Z
+    invoke-interface {p2, p0, p1, p3}, Lru/ok/android/externcalls/sdk/ui/RendererView;->init(Laf1;Lorg/webrtc/RendererCommon$RendererEvents;Lru/ok/android/externcalls/sdk/ui/FrameDecorator;)Z
 
     :cond_4
     :goto_1
@@ -732,9 +732,9 @@
         }
     .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lh96;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/video/internal/ParticipantVideoViewManagerImpl;->conversation:Lzb6;
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 

@@ -1,50 +1,47 @@
-.class public abstract Lczb;
+.class public final Lczb;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field public static oneme_folders_chats_picker_toolbar:I = 0x7f0a06bb
+# instance fields
+.field public final a:Lh15;
 
-.field public static oneme_folders_delete_folder_bottom_sheet_cancel_button:I = 0x7f0a06bc
+.field public final b:Lv6f;
 
-.field public static oneme_folders_delete_folder_bottom_sheet_delete_button:I = 0x7f0a06bd
+.field public final c:Lh32;
 
-.field public static oneme_folders_edit_bottom_sheet_cancel_button:I = 0x7f0a06be
+.field public d:Z
 
-.field public static oneme_folders_edit_bottom_sheet_delete_button:I = 0x7f0a06bf
+.field public e:Z
 
-.field public static oneme_folders_edit_create_button:I = 0x7f0a06c0
+.field public f:Z
 
-.field public static oneme_folders_edit_delete_button:I = 0x7f0a06c1
+.field public g:J
 
-.field public static oneme_folders_edit_folder_name_field:I = 0x7f0a06c2
 
-.field public static oneme_folders_edit_members_add_button:I = 0x7f0a06c3
+# direct methods
+.method public constructor <init>(Lh15;Lv6f;)V
+    .registers 6
 
-.field public static oneme_folders_edit_members_list:I = 0x7f0a06c4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static oneme_folders_edit_save_button:I = 0x7f0a06c5
+    iput-object p1, p0, Lczb;->a:Lh15;
 
-.field public static oneme_folders_edit_screen:I = 0x7f0a06c6
+    iput-object p2, p0, Lczb;->b:Lv6f;
 
-.field public static oneme_folders_edit_title_input:I = 0x7f0a06c7
+    new-instance p1, Lh32;
 
-.field public static oneme_folders_edit_toolbar:I = 0x7f0a06c8
+    const/16 p2, 0x40
 
-.field public static oneme_folders_list_all_folder_view_type:I = 0x7f0a06c9
+    new-array v0, p2, [B
 
-.field public static oneme_folders_list_create_folder_view_type:I = 0x7f0a06ca
+    const/4 v1, 0x1
 
-.field public static oneme_folders_list_menu_action_change:I = 0x7f0a06cb
+    const/4 v2, 0x0
 
-.field public static oneme_folders_list_menu_action_delete_folder:I = 0x7f0a06cc
+    invoke-direct {p1, v0, p2, v1, v2}, Lh32;-><init>([BIIB)V
 
-.field public static oneme_folders_list_recommended_folder_view_type:I = 0x7f0a06cd
+    iput-object p1, p0, Lczb;->c:Lh32;
 
-.field public static oneme_folders_list_recycler_view:I = 0x7f0a06ce
-
-.field public static oneme_folders_list_screen:I = 0x7f0a06cf
-
-.field public static oneme_folders_list_toolbar:I = 0x7f0a06d0
-
-.field public static oneme_folders_list_user_folder_view_type:I = 0x7f0a06d1
+    return-void
+.end method

@@ -1,90 +1,164 @@
 .class public final Ls79;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Ld89;
+.field public final a:I
 
-.field public final synthetic Y:Lvw8;
+.field public final b:I
+
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(Ld89;Lvw8;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ls72;Lxx8;Z)V
     .registers 4
 
-    iput-object p1, p0, Ls79;->X:Ld89;
+    invoke-virtual {p2, p1}, Lxx8;->c(Ls72;)Ljava/lang/CharSequence;
 
-    iput-object p2, p0, Ls79;->Y:Lvw8;
+    move-result-object p1
 
-    const/4 p1, 0x2
+    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    move-result p1
+
+    iget-object p2, p2, Lxx8;->a:Luz8;
+
+    iget-object p2, p2, Luz8;->O0:Ljava/util/List;
+
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p2}, Ljava/lang/Object;->hashCode()I
+
+    move-result p2
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p2, 0x0
+
+    :goto_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Ls79;->a:I
+
+    iput p2, p0, Ls79;->b:I
+
+    iput-boolean p3, p0, Ls79;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Ls79;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Ls79;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Ls79;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 4
 
-    new-instance p1, Ls79;
+    if-ne p0, p1, :cond_0
 
-    iget-object v0, p0, Ls79;->X:Ld89;
+    goto :goto_1
 
-    iget-object p0, p0, Ls79;->Y:Lvw8;
+    :cond_0
+    instance-of v0, p1, Ls79;
 
-    invoke-direct {p1, v0, p0, p2}, Ls79;-><init>(Ld89;Lvw8;Lkotlin/coroutines/Continuation;)V
+    if-nez v0, :cond_1
 
-    return-object p1
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Ls79;
+
+    iget v0, p0, Ls79;->a:I
+
+    iget v1, p1, Ls79;->a:I
+
+    if-eq v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget v0, p0, Ls79;->b:I
+
+    iget v1, p1, Ls79;->b:I
+
+    if-eq v0, v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget-boolean p0, p0, Ls79;->c:Z
+
+    iget-boolean p1, p1, Ls79;->c:Z
+
+    if-eq p0, p1, :cond_4
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+.method public final hashCode()I
+    .registers 4
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget v0, p0, Ls79;->a:I
 
-    iget-object p1, p0, Ls79;->Y:Lvw8;
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
-    iget-wide v1, p1, Lfj0;->a:J
+    move-result v0
 
-    sget-object p1, Ld89;->C1:[Lsf7;
+    const/16 v1, 0x1f
 
-    const/4 v5, 0x0
+    mul-int/2addr v0, v1
 
-    iget-object v0, p0, Ls79;->X:Ld89;
+    iget v2, p0, Ls79;->b:I
 
-    const/4 v3, 0x0
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
 
-    const/4 v4, 0x0
+    move-result v0
 
-    invoke-virtual/range {v0 .. v5}, Ld89;->J(JZZZ)V
+    iget-boolean p0, p0, Ls79;->c:Z
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    const-string v0, ", messageElementsHash="
+
+    const-string v1, ", isChild="
+
+    const-string v2, "Key(textHash="
+
+    iget v3, p0, Ls79;->a:I
+
+    iget v4, p0, Ls79;->b:I
+
+    invoke-static {v2, v3, v0, v4, v1}, Lsg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Ls79;->c:Z
+
+    invoke-static {v0, p0, v1}, Lmw1;->k(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

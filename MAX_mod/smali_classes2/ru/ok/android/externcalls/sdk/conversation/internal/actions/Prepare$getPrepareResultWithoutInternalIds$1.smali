@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ly96;
+.implements Lqc6;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->getPrepareResultWithoutInternalIds(Lh96;)Lcud;
+    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->getPrepareResultWithoutInternalIds(Lzb6;)Lk2e;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Ly96;"
+        "Lqc6;"
     }
 .end annotation
 
@@ -33,12 +33,12 @@
         "\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0010\u0006\u001a\u00020\u00032\u000c\u0010\u0002\u001a\u0008\u0012\u0004\u0012\u00020\u00010\u0000H\n\u00a2\u0006\u0004\u0008\u0004\u0010\u0005"
     }
     d2 = {
-        "Lepa;",
+        "Lzua;",
         "Lru/ok/android/externcalls/sdk/api/ConversationParams;",
         "params",
         "Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;",
         "apply",
-        "(Lepa;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;",
+        "(Lzua;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;",
         "<anonymous>"
     }
     k = 0x3
@@ -87,21 +87,21 @@
 .method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    check-cast p1, Lepa;
+    check-cast p1, Lzua;
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$getPrepareResultWithoutInternalIds$1;->apply(Lepa;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$getPrepareResultWithoutInternalIds$1;->apply(Lzua;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final apply(Lepa;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;
+.method public final apply(Lzua;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lepa;",
+            "Lzua;",
             ")",
             "Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;"
         }
@@ -109,7 +109,7 @@
 
     new-instance p0, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;
 
-    iget-object p1, p1, Lepa;->a:Ljava/lang/Object;
+    iget-object p1, p1, Lzua;->a:Ljava/lang/Object;
 
     if-eqz p1, :cond_1
 
@@ -130,7 +130,7 @@
     const/4 p1, 0x0
 
     :goto_0
-    sget-object v0, Le35;->a:Le35;
+    sget-object v0, Lz45;->a:Lz45;
 
     invoke-direct {p0, p1, v0}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;-><init>(Lru/ok/android/externcalls/sdk/api/ConversationParams;Ljava/util/Set;)V
 

@@ -1,91 +1,94 @@
 .class public final Ltfd;
-.super Ll46;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final X:Lhy6;
+.field public final a:Ljava/lang/Object;
 
-.field public final Y:I
+.field public final b:Lrc6;
 
-.field public final Z:I
+.field public final c:Lrc6;
 
-.field public final o:Ljava/lang/Object;
+.field public final d:Ljava/lang/Object;
+
+.field public final e:Lure;
+
+.field public final f:Lrc6;
+
+.field public g:Ljava/lang/Object;
+
+.field public h:I
+
+.field public final synthetic i:Lvfd;
 
 
 # direct methods
-.method public constructor <init>(Lzy6;Landroid/util/Size;Lhy6;)V
-    .registers 4
+.method public constructor <init>(Lvfd;Ljava/lang/Object;Lrc6;Lrc6;Ljava/lang/Object;Lure;Lrc6;)V
+    .registers 8
 
-    invoke-direct {p0, p1}, Ll46;-><init>(Lzy6;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance p1, Ljava/lang/Object;
+    iput-object p1, p0, Ltfd;->i:Lvfd;
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Ltfd;->a:Ljava/lang/Object;
 
-    iput-object p1, p0, Ltfd;->o:Ljava/lang/Object;
+    iput-object p3, p0, Ltfd;->b:Lrc6;
 
-    if-nez p2, :cond_0
+    iput-object p4, p0, Ltfd;->c:Lrc6;
 
-    iget-object p1, p0, Ll46;->b:Lzy6;
+    iput-object p5, p0, Ltfd;->d:Ljava/lang/Object;
 
-    invoke-interface {p1}, Lzy6;->getWidth()I
+    iput-object p6, p0, Ltfd;->e:Lure;
 
-    move-result p1
+    iput-object p7, p0, Ltfd;->f:Lrc6;
 
-    iput p1, p0, Ltfd;->Y:I
+    const/4 p1, -0x1
 
-    iget-object p1, p0, Ll46;->b:Lzy6;
-
-    invoke-interface {p1}, Lzy6;->getHeight()I
-
-    move-result p1
-
-    iput p1, p0, Ltfd;->Z:I
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
-
-    move-result p1
-
-    iput p1, p0, Ltfd;->Y:I
-
-    invoke-virtual {p2}, Landroid/util/Size;->getHeight()I
-
-    move-result p1
-
-    iput p1, p0, Ltfd;->Z:I
-
-    :goto_0
-    iput-object p3, p0, Ltfd;->X:Lhy6;
+    iput p1, p0, Ltfd;->h:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getHeight()I
-    .registers 1
+.method public final a()V
+    .registers 4
 
-    iget p0, p0, Ltfd;->Z:I
+    iget-object v0, p0, Ltfd;->g:Ljava/lang/Object;
 
-    return p0
-.end method
+    instance-of v1, v0, Lkotlinx/coroutines/internal/Segment;
 
-.method public final getImageInfo()Lhy6;
-    .registers 1
+    const/4 v2, 0x0
 
-    iget-object p0, p0, Ltfd;->X:Lhy6;
+    if-eqz v1, :cond_0
 
-    return-object p0
-.end method
+    check-cast v0, Lkotlinx/coroutines/internal/Segment;
 
-.method public final getWidth()I
-    .registers 1
+    iget v1, p0, Ltfd;->h:I
 
-    iget p0, p0, Ltfd;->Y:I
+    iget-object p0, p0, Ltfd;->i:Lvfd;
 
-    return p0
+    iget-object p0, p0, Lvfd;->a:Lq04;
+
+    invoke-virtual {v0, v1, v2, p0}, Lkotlinx/coroutines/internal/Segment;->onCancellation(ILjava/lang/Throwable;Lq04;)V
+
+    return-void
+
+    :cond_0
+    instance-of p0, v0, Lrq4;
+
+    if-eqz p0, :cond_1
+
+    move-object v2, v0
+
+    check-cast v2, Lrq4;
+
+    :cond_1
+    if-eqz v2, :cond_2
+
+    invoke-interface {v2}, Lrq4;->dispose()V
+
+    :cond_2
+    return-void
 .end method

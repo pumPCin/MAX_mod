@@ -107,7 +107,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lone/me/rlottie/RLottieFactory$Config$Companion;-><init>(Lwc4;)V
+    invoke-direct {v0, v1}, Lone/me/rlottie/RLottieFactory$Config$Companion;-><init>(Lld4;)V
 
     sput-object v0, Lone/me/rlottie/RLottieFactory$Config;->Companion:Lone/me/rlottie/RLottieFactory$Config$Companion;
 
@@ -143,7 +143,7 @@
 
     move-object v1, p1
 
-    invoke-direct/range {v0 .. v7}, Lone/me/rlottie/RLottieFactory$Config;-><init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZILwc4;)V
+    invoke-direct/range {v0 .. v7}, Lone/me/rlottie/RLottieFactory$Config;-><init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZILld4;)V
 
     return-void
 .end method
@@ -167,7 +167,7 @@
 
     move v2, p2
 
-    invoke-direct/range {v0 .. v7}, Lone/me/rlottie/RLottieFactory$Config;-><init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZILwc4;)V
+    invoke-direct/range {v0 .. v7}, Lone/me/rlottie/RLottieFactory$Config;-><init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZILld4;)V
 
     return-void
 .end method
@@ -191,7 +191,7 @@
 
     move v3, p3
 
-    invoke-direct/range {v0 .. v7}, Lone/me/rlottie/RLottieFactory$Config;-><init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZILwc4;)V
+    invoke-direct/range {v0 .. v7}, Lone/me/rlottie/RLottieFactory$Config;-><init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZILld4;)V
 
     return-void
 .end method
@@ -215,7 +215,7 @@
 
     move v4, p4
 
-    invoke-direct/range {v0 .. v7}, Lone/me/rlottie/RLottieFactory$Config;-><init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZILwc4;)V
+    invoke-direct/range {v0 .. v7}, Lone/me/rlottie/RLottieFactory$Config;-><init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZILld4;)V
 
     return-void
 .end method
@@ -238,7 +238,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZILwc4;)V
+.method public synthetic constructor <init>(Lone/me/rlottie/RLottieFactory$Way;ZZZZILld4;)V
     .registers 14
 
     and-int/lit8 p7, p6, 0x2

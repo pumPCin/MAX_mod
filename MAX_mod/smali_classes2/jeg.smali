@@ -1,19 +1,53 @@
 .class public final Ljeg;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final serializer()Ltf7;
-    .registers 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ltf7;"
-        }
-    .end annotation
+# instance fields
+.field public X:Lln0;
 
-    sget-object p0, Lheg;->a:Lheg;
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Loeg;
+
+.field public o:Ljava/lang/Object;
+
+.field public r0:I
+
+
+# direct methods
+.method public constructor <init>(Loeg;Ljx3;)V
+    .registers 3
+
+    iput-object p1, p0, Ljeg;->Z:Loeg;
+
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iput-object p1, p0, Ljeg;->Y:Ljava/lang/Object;
+
+    iget p1, p0, Ljeg;->r0:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Ljeg;->r0:I
+
+    iget-object p1, p0, Ljeg;->Z:Loeg;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Loeg;->k(Lln0;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
 
     return-object p0
 .end method

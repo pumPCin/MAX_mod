@@ -3,4 +3,6 @@
 
 
 # static fields
-.field public static oneme_gallery_max_attach_count_error:I = 0x7f110023
+.field public static fullscreen_to_pip:I = 0x7f010020
+
+.field public static pip_to_fullscreen:I = 0x7f010032

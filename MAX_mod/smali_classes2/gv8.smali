@@ -1,53 +1,20 @@
-.class public final Lgv8;
-.super Lcx3;
+.class public interface abstract Lgv8;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:J
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Ljv8;
-
-.field public n0:I
-
-.field public o:Ljv8;
-
-
-# direct methods
-.method public constructor <init>(Ljv8;Lcx3;)V
-    .registers 3
-
-    iput-object p1, p0, Lgv8;->Z:Ljv8;
-
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
+# virtual methods
+.method public abstract a(Ljava/lang/String;)V
 .end method
 
+.method public abstract b()Lis5;
+.end method
 
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public abstract c()Z
+.end method
 
-    iput-object p1, p0, Lgv8;->Y:Ljava/lang/Object;
+.method public abstract d()Liic;
+.end method
 
-    iget p1, p0, Lgv8;->n0:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lgv8;->n0:I
-
-    iget-object p1, p0, Lgv8;->Z:Ljv8;
-
-    const-wide/16 v0, 0x0
-
-    invoke-virtual {p1, v0, v1, p0}, Ljv8;->c(JLcx3;)Ljava/io/Serializable;
-
-    move-result-object p0
-
-    return-object p0
+.method public abstract e()V
 .end method

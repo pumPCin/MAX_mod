@@ -1,27 +1,61 @@
 .class public final Lo9b;
-.super Ljava/lang/Object;
+.super Lx2;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Landroid/content/SharedPreferences;
+# static fields
+.field public static final c:Lo9b;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lo9b;
 
-    const-string v0, "webrtc-android-sdk-pref"
+    const/16 v1, 0x8
 
-    const/4 v1, 0x0
+    invoke-direct {v0, v1}, Lx2;-><init>(I)V
 
-    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lo9b;->a:Landroid/content/SharedPreferences;
+    sput-object v0, Lo9b;->c:Lo9b;
 
     return-void
+.end method
+
+.method public static W0(JJZ)Lva4;
+    .registers 7
+
+    if-eqz p4, :cond_0
+
+    const-string p4, "local"
+
+    goto :goto_0
+
+    :cond_0
+    const-string p4, "server"
+
+    :goto_0
+    const-string v0, ":chats?id="
+
+    const-string v1, "&type="
+
+    invoke-static {v0, p0, p1, v1, p4}, Lmhc;->i(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string p1, "&message_id="
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    new-instance p1, Lva4;
+
+    invoke-direct {p1, p0}, Lva4;-><init>(Ljava/lang/String;)V
+
+    return-object p1
 .end method

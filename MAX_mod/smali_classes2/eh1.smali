@@ -1,8 +1,19 @@
-.class public interface abstract Leh1;
+.class public final Leh1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract onStateChanged(Lwg1;Lyg1;)V
+# instance fields
+.field public final a:Ljava/util/List;
+
+
+# direct methods
+.method public constructor <init>(Ljava/util/List;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Leh1;->a:Ljava/util/List;
+
+    return-void
 .end method

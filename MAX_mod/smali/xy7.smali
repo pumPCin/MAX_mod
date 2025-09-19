@@ -1,116 +1,88 @@
 .class public final Lxy7;
-.super Lxie;
+.super Lr3;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Llvc;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lxy7;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public X:I
+.field public final a:Lcom/google/android/gms/common/api/Status;
 
-.field public final synthetic Y:Ldz7;
+.field public final b:Lyy7;
 
 
 # direct methods
-.method public constructor <init>(Ldz7;Lkotlin/coroutines/Continuation;)V
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lp3h;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lp3h;-><init>(I)V
+
+    sput-object v0, Lxy7;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcom/google/android/gms/common/api/Status;Lyy7;)V
     .registers 3
 
-    iput-object p1, p0, Lxy7;->Y:Ldz7;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lxy7;->a:Lcom/google/android/gms/common/api/Status;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lxy7;->b:Lyy7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final a()Lcom/google/android/gms/common/api/Status;
+    .registers 1
 
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lxy7;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lxy7;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lxy7;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
+    iget-object p0, p0, Lxy7;->a:Lcom/google/android/gms/common/api/Status;
 
     return-object p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 6
 
-    new-instance p1, Lxy7;
+    const/16 v0, 0x4f45
 
-    iget-object p0, p0, Lxy7;->Y:Ldz7;
+    invoke-static {p1, v0}, Ljs9;->U(Landroid/os/Parcel;I)I
 
-    invoke-direct {p1, p0, p2}, Lxy7;-><init>(Ldz7;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    iget v0, p0, Lxy7;->X:I
+    move-result v0
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_1
+    iget-object v2, p0, Lxy7;->a:Lcom/google/android/gms/common/api/Status;
 
-    if-ne v0, v1, :cond_0
+    invoke-static {p1, v1, v2, p2}, Ljs9;->O(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    const/4 v1, 0x2
 
-    goto :goto_0
+    iget-object p0, p0, Lxy7;->b:Lyy7;
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    invoke-static {p1, v1, p0, p2}, Ljs9;->O(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-static {p1, v0}, Ljs9;->V(Landroid/os/Parcel;I)V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    new-instance p1, Lmy7;
-
-    const/4 v0, 0x1
-
-    iget-object v2, p0, Lxy7;->Y:Ldz7;
-
-    invoke-direct {p1, v2, v0}, Lmy7;-><init>(Ldz7;I)V
-
-    iput v1, p0, Lxy7;->X:I
-
-    invoke-static {p1, p0}, Ld86;->B(Lh96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    return-void
 .end method

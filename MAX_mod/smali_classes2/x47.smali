@@ -1,96 +1,87 @@
 .class public final Lx47;
-.super Ljp9;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final b:Llic;
+.field public final synthetic X:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(Llic;)V
+.method public constructor <init>(Ljava/util/ArrayList;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    sget-object v0, Lncf;->a:Lncf;
+    iput-object p1, p0, Lx47;->X:Ljava/util/ArrayList;
 
-    invoke-direct {p0, v0}, Ljp9;-><init>(Ljava/lang/Object;)V
+    const/4 p1, 0x2
 
-    iput-object p1, p0, Lx47;->b:Llic;
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Ly04;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lx47;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lx47;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lx47;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lx47;
+
+    iget-object p0, p0, Lx47;->X:Ljava/util/ArrayList;
+
+    invoke-direct {p1, p0, p2}, Lx47;-><init>(Ljava/util/ArrayList;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lx47;->X:Ljava/util/ArrayList;
+
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result p1
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
+    if-le p1, v0, :cond_0
 
-    return v0
+    new-instance p1, Lw47;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, v0}, Lw47;-><init>(I)V
+
+    invoke-static {p0, p1}, Lv73;->Q(Ljava/util/List;Ljava/util/Comparator;)V
 
     :cond_0
-    instance-of v1, p1, Lx47;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lx47;
-
-    iget-object p0, p0, Lx47;->b:Llic;
-
-    iget-object p1, p1, Lx47;->b:Llic;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lx47;->b:Llic;
-
-    invoke-virtual {p0}, Llic;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "NeuroAvatarScreen(registrationData="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lx47;->b:Llic;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

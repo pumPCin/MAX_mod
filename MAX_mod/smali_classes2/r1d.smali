@@ -1,19 +1,49 @@
-.class public final Lr1d;
+.class public final synthetic Lr1d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lsc3;
+.implements Lpm3;
+
 
 # instance fields
-.field public final synthetic a:Ls4;
+.field public final synthetic a:Lc6;
 
 
 # direct methods
-.method public constructor <init>(Ls4;)V
+.method public synthetic constructor <init>(Lc6;)V
     .registers 2
+
+    iput-object p1, p0, Lr1d;->a:Lc6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lr1d;->a:Ls4;
+    return-void
+.end method
+
+
+# virtual methods
+.method public accept(Ljava/lang/Object;)V
+    .registers 2
+
+    check-cast p1, Lylf;
+
+    iget-object p0, p0, Lr1d;->a:Lc6;
+
+    invoke-interface {p0}, Lc6;->run()V
+
+    return-void
+.end method
+
+.method public d(Ljc3;)V
+    .registers 2
+
+    iget-object p0, p0, Lr1d;->a:Lc6;
+
+    invoke-interface {p0}, Lc6;->run()V
+
+    invoke-virtual {p1}, Ljc3;->b()V
 
     return-void
 .end method

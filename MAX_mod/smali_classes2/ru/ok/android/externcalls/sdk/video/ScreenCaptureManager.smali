@@ -14,7 +14,7 @@
         "",
         "enabled",
         "isFastScreenShareEnabled",
-        "Lncf;",
+        "Lylf;",
         "setScreenCaptureEnabled",
         "(ZZ)V",
         "setAudioCaptureEnabled",

@@ -1,59 +1,85 @@
-.class public final Ly5d;
-.super Ljava/lang/Object;
+.class public final enum Ly5d;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
 # static fields
-.field public static final d:Lf76;
+.field public static final enum a:Ly5d;
 
-.field public static final e:Lf76;
+.field public static final enum b:Ly5d;
 
+.field public static final enum c:Ly5d;
 
-# instance fields
-.field public final a:Ljava/util/ArrayList;
-
-.field public b:I
-
-.field public c:I
+.field public static final synthetic o:[Ly5d;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 5
 
-    const/16 v0, 0x3a
+    new-instance v0, Ly5d;
 
-    invoke-static {v0}, Lf76;->S(C)Lf76;
+    const-string v1, "NETWORK_UNMETERED"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Ly5d;->a:Ly5d;
+
+    new-instance v1, Ly5d;
+
+    const-string v2, "DEVICE_IDLE"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Ly5d;->b:Ly5d;
+
+    new-instance v2, Ly5d;
+
+    const-string v3, "DEVICE_CHARGING"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Ly5d;->c:Ly5d;
+
+    filled-new-array {v0, v1, v2}, [Ly5d;
 
     move-result-object v0
 
-    sput-object v0, Ly5d;->d:Lf76;
-
-    const/16 v0, 0x2a
-
-    invoke-static {v0}, Lf76;->S(C)Lf76;
-
-    move-result-object v0
-
-    sput-object v0, Ly5d;->e:Lf76;
+    sput-object v0, Ly5d;->o:[Ly5d;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method public static valueOf(Ljava/lang/String;)Ly5d;
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Ly5d;
 
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    move-result-object p0
 
-    iput-object v0, p0, Ly5d;->a:Ljava/util/ArrayList;
+    check-cast p0, Ly5d;
 
-    const/4 v0, 0x0
+    return-object p0
+.end method
 
-    iput v0, p0, Ly5d;->b:I
+.method public static values()[Ly5d;
+    .registers 1
 
-    return-void
+    sget-object v0, Ly5d;->o:[Ly5d;
+
+    invoke-virtual {v0}, [Ly5d;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ly5d;
+
+    return-object v0
 .end method

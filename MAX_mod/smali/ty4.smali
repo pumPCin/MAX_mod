@@ -4,14 +4,20 @@
 
 
 # instance fields
-.field public a:Lwe8;
+.field public final a:I
 
-.field public b:Z
+.field public final b:I
 
-.field public c:Z
 
-.field public d:J
+# direct methods
+.method public constructor <init>(II)V
+    .registers 3
 
-.field public e:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public f:Lez4;
+    iput p1, p0, Lty4;->a:I
+
+    iput p2, p0, Lty4;->b:I
+
+    return-void
+.end method

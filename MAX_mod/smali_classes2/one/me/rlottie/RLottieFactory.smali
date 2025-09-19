@@ -650,7 +650,7 @@
     .registers 11
 
     :try_start_0
-    sget-object v0, Lcp9;->a:Ljava/lang/String;
+    sget-object v0, Lrs9;->a:Ljava/lang/String;
 
     invoke-virtual {p0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
@@ -660,7 +660,7 @@
 
     move-result-object p0
 
-    invoke-static {p0}, Lcp9;->c(Ljava/io/InputStream;)Ljava/lang/String;
+    invoke-static {p0}, Lrs9;->c(Ljava/io/InputStream;)Ljava/lang/String;
 
     move-result-object p0
     :try_end_0
@@ -1015,7 +1015,7 @@
 
     if-eqz p1, :cond_0
 
-    new-instance v0, Lkp0;
+    new-instance v0, Lso0;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
@@ -1038,9 +1038,9 @@
     goto :goto_0
 
     :goto_1
-    invoke-direct/range {v1 .. v6}, Lone/me/rlottie/RLottieDrawable;-><init>(Ljava/io/File;IILkp0;Z)V
+    invoke-direct/range {v1 .. v6}, Lone/me/rlottie/RLottieDrawable;-><init>(Ljava/io/File;IILso0;Z)V
 
-    iput-boolean p1, v1, Lone/me/rlottie/RLottieDrawable;->d1:Z
+    iput-boolean p1, v1, Lone/me/rlottie/RLottieDrawable;->h1:Z
 
     sget-object p0, Lone/me/rlottie/RLottieFactory;->INSTANCE:Lone/me/rlottie/RLottieFactory;
 
@@ -1410,11 +1410,11 @@
 
     invoke-direct/range {v1 .. v7}, Lone/me/rlottie/RLottieDrawable;-><init>(Ljava/lang/String;Ljava/lang/String;IIZ[I)V
 
-    iput-boolean p6, v1, Lone/me/rlottie/RLottieDrawable;->O0:Z
+    iput-boolean p6, v1, Lone/me/rlottie/RLottieDrawable;->S0:Z
 
     move/from16 p0, p8
 
-    iput-boolean p0, v1, Lone/me/rlottie/RLottieDrawable;->d1:Z
+    iput-boolean p0, v1, Lone/me/rlottie/RLottieDrawable;->h1:Z
 
     sget-object p0, Lone/me/rlottie/RLottieFactory;->INSTANCE:Lone/me/rlottie/RLottieFactory;
 
@@ -1814,9 +1814,9 @@
 
     invoke-direct {v0, p0, p1, p2, p3}, Lone/me/rlottie/RLottieDrawable;-><init>(ILjava/lang/String;II)V
 
-    iput-boolean p5, v0, Lone/me/rlottie/RLottieDrawable;->O0:Z
+    iput-boolean p5, v0, Lone/me/rlottie/RLottieDrawable;->S0:Z
 
-    iput-boolean p8, v0, Lone/me/rlottie/RLottieDrawable;->d1:Z
+    iput-boolean p8, v0, Lone/me/rlottie/RLottieDrawable;->h1:Z
 
     if-eqz p7, :cond_0
 
@@ -2260,13 +2260,13 @@
 
     invoke-direct/range {v0 .. v6}, Lone/me/rlottie/RLottieDrawable;-><init>(Ljava/lang/String;Ljava/lang/String;IIZ[I)V
 
-    iput-object p0, v0, Lone/me/rlottie/RLottieDrawable;->v1:Ljava/lang/String;
+    iput-object p0, v0, Lone/me/rlottie/RLottieDrawable;->z1:Ljava/lang/String;
 
-    iput-boolean p3, v0, Lone/me/rlottie/RLottieDrawable;->O0:Z
+    iput-boolean p3, v0, Lone/me/rlottie/RLottieDrawable;->S0:Z
 
-    iput-object p0, v0, Lone/me/rlottie/RLottieDrawable;->y1:Ljava/lang/String;
+    iput-object p0, v0, Lone/me/rlottie/RLottieDrawable;->C1:Ljava/lang/String;
 
-    iput-boolean p8, v0, Lone/me/rlottie/RLottieDrawable;->d1:Z
+    iput-boolean p8, v0, Lone/me/rlottie/RLottieDrawable;->h1:Z
 
     sget-object v1, Lone/me/rlottie/RLottieFactory;->INSTANCE:Lone/me/rlottie/RLottieFactory;
 
@@ -2285,11 +2285,11 @@
     :cond_0
     const/4 v1, 0x1
 
-    invoke-static {p0, v1, p5}, Lbp9;->a(Ljava/lang/String;IZ)Lzo9;
+    invoke-static {p0, v1, p5}, Lqs9;->a(Ljava/lang/String;IZ)Los9;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lzo9;->e(Lap9;)V
+    invoke-virtual {v1, v0}, Los9;->e(Lps9;)V
 
     return-object v0
 .end method

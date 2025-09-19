@@ -1,84 +1,99 @@
 .class public final Lh98;
-.super Lxie;
+.super La98;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Lone/me/chatscreen/mediabar/MediaBarWidget;
+.field public final synthetic a:I
+
+.field public final b:Ljava/lang/Object;
+
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
-    .registers 3
+.method public synthetic constructor <init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    .registers 4
 
-    iput-object p2, p0, Lh98;->X:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    iput p2, p0, Lh98;->a:I
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lh98;->b:Ljava/lang/Object;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p3, p0, Lh98;->c:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final g(Lt98;)V
+    .registers 5
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget v0, p0, Lh98;->a:I
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object v0, p0, Lh98;->b:Ljava/lang/Object;
 
-    invoke-virtual {p0, p1, p2}, Lh98;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    check-cast v0, Lk2e;
 
-    move-result-object p0
+    new-instance v1, Lns1;
 
-    check-cast p0, Lh98;
+    iget-object p0, p0, Lh98;->c:Ljava/lang/Object;
 
-    sget-object p1, Lncf;->a:Lncf;
+    check-cast p0, Lqc6;
 
-    invoke-virtual {p0, p1}, Lh98;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const/16 v2, 0x9
 
-    return-object p1
-.end method
+    invoke-direct {v1, p1, v2, p0}, Lns1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+    invoke-virtual {v0, v1}, Lk2e;->k(Le3e;)V
 
-    new-instance p1, Lh98;
+    return-void
 
-    iget-object p0, p0, Lh98;->X:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    :pswitch_0
+    iget-object v0, p0, Lh98;->b:Ljava/lang/Object;
 
-    invoke-direct {p1, p2, p0}, Lh98;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+    check-cast v0, Lk98;
 
-    return-object p1
-.end method
+    new-instance v1, Lns1;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    iget-object p0, p0, Lh98;->c:Ljava/lang/Object;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    check-cast p0, Lawf;
 
-    sget-object p1, Lone/me/chatscreen/mediabar/MediaBarWidget;->Y0:[Lsf7;
+    const/4 v2, 0x3
 
-    iget-object p0, p0, Lh98;->X:Lone/me/chatscreen/mediabar/MediaBarWidget;
+    invoke-direct {v1, p1, v2, p0}, Lns1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->C0()Landroid/widget/LinearLayout;
+    invoke-virtual {v0, v1}, La98;->a(Lt98;)V
 
-    move-result-object p0
+    return-void
 
-    sget-object p1, Lone/me/chatscreen/mediabar/MediaBarWidget;->Z0:Lf67;
+    :pswitch_1
+    iget-object v0, p0, Lh98;->b:Ljava/lang/Object;
 
-    const/4 v0, 0x0
+    check-cast v0, Lk2e;
 
-    invoke-static {p0, p1, v0}, Lgwd;->f(Landroid/view/View;Lf67;Lj96;)V
+    new-instance v1, Ltc3;
 
-    sget-object p0, Lncf;->a:Lncf;
+    iget-object p0, p0, Lh98;->c:Ljava/lang/Object;
 
-    return-object p0
+    check-cast p0, Lggb;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, p1, v2, p0}, Ltc3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Lk2e;->k(Le3e;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

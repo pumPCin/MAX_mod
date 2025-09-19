@@ -1,103 +1,244 @@
-.class public abstract Lwna;
+.class public final Lwna;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/animation/Animator$AnimatorListener;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:I
+# instance fields
+.field public final synthetic a:I
 
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:I
-
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
+.field public final synthetic b:Lxna;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lxna;I)V
+    .registers 3
 
-    sget v0, Ld5c;->web_app_root_biometry_open_settings_dialog_accept:I
+    iput p2, p0, Lwna;->a:I
 
-    sput v0, Lwna;->a:I
+    iput-object p1, p0, Lwna;->b:Lxna;
 
-    sget v0, Ld5c;->web_app_root_biometry_open_settings_dialog_title:I
-
-    sput v0, Lwna;->b:I
-
-    sget v0, Ld5c;->web_app_root_biometry_request_dialog_accept:I
-
-    sput v0, Lwna;->c:I
-
-    sget v0, Ld5c;->web_app_root_biometry_request_dialog_decline:I
-
-    sput v0, Lwna;->d:I
-
-    sget v0, Ld5c;->web_app_root_biometry_request_dialog_default_reason:I
-
-    sput v0, Lwna;->e:I
-
-    sget v0, Ld5c;->web_app_root_biometry_request_dialog_title:I
-
-    sput v0, Lwna;->f:I
-
-    sget v0, Ld5c;->web_app_root_biometry_setting:I
-
-    sput v0, Lwna;->g:I
-
-    sget v0, Ld5c;->web_app_root_biometry_setting_description:I
-
-    sput v0, Lwna;->h:I
-
-    sget v0, Ld5c;->web_app_root_choose_media_bottomsheet_gallery:I
-
-    sput v0, Lwna;->i:I
-
-    sget v0, Ld5c;->web_app_root_choose_media_bottomsheet_title:I
-
-    sput v0, Lwna;->j:I
-
-    sget v0, Ld5c;->web_app_root_max_share_quote_title:I
-
-    sput v0, Lwna;->k:I
-
-    sget v0, Ld5c;->web_app_root_setting_open_webapp:I
-
-    sput v0, Lwna;->l:I
-
-    sget v0, Ld5c;->web_app_root_settings_header_subtitle:I
-
-    sput v0, Lwna;->m:I
-
-    sget v0, Ld5c;->web_app_root_settings_header_title:I
-
-    sput v0, Lwna;->n:I
-
-    sget v0, Ld5c;->web_app_root_settings_webapps:I
-
-    sput v0, Lwna;->o:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method private final a(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final b(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final c(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final d(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final e(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .registers 2
+
+    iget p0, p0, Lwna;->a:I
+
+    return-void
+.end method
+
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .registers 3
+
+    iget p1, p0, Lwna;->a:I
+
+    packed-switch p1, :pswitch_data_0
+
+    iget-object p0, p0, Lwna;->b:Lxna;
+
+    iget-object p1, p0, Lxna;->B0:Ljava/lang/Object;
+
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/appcompat/widget/AppCompatEditText;
+
+    iget-object v0, p0, Lxna;->r0:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setHint(Ljava/lang/CharSequence;)V
+
+    sget-object p1, Lvna;->c:Lvna;
+
+    iput-object p1, p0, Lxna;->z0:Lvna;
+
+    iget-object p0, p0, Lxna;->t0:Luna;
+
+    if-eqz p0, :cond_0
+
+    invoke-interface {p0}, Luna;->o()V
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lwna;->b:Lxna;
+
+    iget-object p0, p0, Lxna;->B0:Ljava/lang/Object;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/view/View;
+
+    invoke-static {p0}, Lqe5;->S(Landroid/view/View;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .registers 2
+
+    iget p0, p0, Lwna;->a:I
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .registers 6
+
+    iget p1, p0, Lwna;->a:I
+
+    packed-switch p1, :pswitch_data_0
+
+    iget-object p0, p0, Lwna;->b:Lxna;
+
+    iget-object p1, p0, Lxna;->B0:Ljava/lang/Object;
+
+    iget-object v0, p0, Lxna;->D0:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->a()Z
+
+    move-result v1
+
+    const/16 v2, 0x8
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_0
+    iget-object v0, p0, Lxna;->C0:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroidx/appcompat/widget/AppCompatImageView;
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_1
+    iget-object v0, p0, Lxna;->A0:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v0, p0, Lxna;->E0:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroidx/appcompat/widget/AppCompatEditText;
+
+    invoke-virtual {v3}, Landroidx/appcompat/widget/AppCompatEditText;->getText()Landroid/text/Editable;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_3
+
+    invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    move v2, v1
+
+    :cond_3
+    :goto_0
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/view/View;
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
+
+    sget-object p1, Lvna;->o:Lvna;
+
+    iput-object p1, p0, Lxna;->z0:Lvna;
+
+    :pswitch_0
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

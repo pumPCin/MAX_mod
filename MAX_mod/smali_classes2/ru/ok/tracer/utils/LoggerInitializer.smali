@@ -3,14 +3,14 @@
 .source "SourceFile"
 
 # interfaces
-.implements Le47;
+.implements Li77;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Le47;"
+        "Li77;"
     }
 .end annotation
 
@@ -20,8 +20,8 @@
     }
     d2 = {
         "Lru/ok/tracer/utils/LoggerInitializer;",
-        "Le47;",
-        "Lyxc;",
+        "Li77;",
+        "Lw9d;",
         "<init>",
         "()V",
         "tracer-commons_release"
@@ -59,17 +59,17 @@
     .registers 2
 
     :try_start_0
-    instance-of p0, p1, Lsm6;
+    instance-of p0, p1, Lqp6;
 
     if-eqz p0, :cond_0
 
-    check-cast p1, Lsm6;
+    check-cast p1, Lqp6;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
     :cond_0
-    sget-object p0, Lyxc;->o:Lyxc;
+    sget-object p0, Lw9d;->Y:Lw9d;
 
     return-object p0
 .end method

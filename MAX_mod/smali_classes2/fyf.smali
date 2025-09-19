@@ -1,265 +1,94 @@
 .class public final Lfyf;
-.super Ljava/lang/Object;
+.super Liyf;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/View$OnAttachStateChangeListener;
-.implements Landroid/text/TextWatcher;
 
 
 # instance fields
-.field public final a:Ljava/lang/ref/WeakReference;
+.field public final a:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/TextView;)V
-    .registers 3
+.method public constructor <init>(Ljava/util/List;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    iput-object p1, p0, Lfyf;->a:Ljava/util/List;
 
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v0, p0, Lfyf;->a:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {p1}, Landroid/view/View;->isAttachedToWindow()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-static {p1}, Lfyf;->a(Landroid/widget/TextView;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public static a(Landroid/widget/TextView;)V
-    .registers 9
-
-    invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    instance-of v1, v0, Landroid/text/Spanned;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
-    check-cast v0, Landroid/text/Spanned;
-
-    goto :goto_0
-
-    :cond_0
-    move-object v0, v2
-
-    :goto_0
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
-
-    move-result v3
-
-    const-class v4, Leyf;
-
-    invoke-interface {v0, v1, v3, v4}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    :cond_1
-    move-object v0, v2
-
-    :goto_1
-    if-nez v0, :cond_2
-
-    new-array v0, v1, [Leyf;
-
-    :cond_2
-    array-length v3, v0
-
-    :goto_2
-    if-ge v1, v3, :cond_6
-
-    aget-object v4, v0, v1
-
-    check-cast v4, Leyf;
-
-    check-cast v4, Lpo5;
-
-    invoke-virtual {v4}, Landroid/text/style/DynamicDrawableSpan;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    iget-object v6, v4, Lpo5;->Y:Ljava/util/WeakHashMap;
-
-    sget-object v7, Lncf;->a:Lncf;
-
-    invoke-virtual {v6, p0, v7}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    if-eqz v7, :cond_3
-
-    invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
-
-    move-result-object v7
-
-    if-eqz v7, :cond_3
-
-    goto :goto_4
-
-    :cond_3
-    new-instance v7, Lno5;
-
-    invoke-direct {v7, v4, v6}, Lno5;-><init>(Lpo5;Ljava/util/WeakHashMap;)V
-
-    invoke-virtual {v5, v7}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
-
-    invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
-
-    instance-of v4, v5, Landroid/graphics/drawable/Animatable;
-
-    if-eqz v4, :cond_4
-
-    check-cast v5, Landroid/graphics/drawable/Animatable;
-
-    goto :goto_3
-
-    :cond_4
-    move-object v5, v2
-
-    :goto_3
-    if-eqz v5, :cond_5
-
-    invoke-interface {v5}, Landroid/graphics/drawable/Animatable;->start()V
-
-    :cond_5
-    :goto_4
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_2
-
-    :cond_6
     return-void
 .end method
 
 
 # virtual methods
-.method public final afterTextChanged(Landroid/text/Editable;)V
-    .registers 2
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    iget-object p0, p0, Lfyf;->a:Ljava/lang/ref/WeakReference;
+    const/4 v0, 0x1
 
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
-    move-result-object p0
-
-    check-cast p0, Landroid/widget/TextView;
-
-    if-eqz p0, :cond_0
-
-    invoke-static {p0}, Lfyf;->a(Landroid/widget/TextView;)V
+    return v0
 
     :cond_0
-    return-void
-.end method
+    instance-of v1, p1, Lfyf;
 
-.method public final beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
+    const/4 v2, 0x0
 
-    return-void
-.end method
+    if-nez v1, :cond_1
 
-.method public final onTextChanged(Ljava/lang/CharSequence;III)V
-    .registers 5
-
-    return-void
-.end method
-
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
-    .registers 2
-
-    check-cast p1, Landroid/widget/TextView;
-
-    invoke-static {p1}, Lfyf;->a(Landroid/widget/TextView;)V
-
-    return-void
-.end method
-
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
-    .registers 5
-
-    check-cast p1, Landroid/widget/TextView;
-
-    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object p0
-
-    instance-of v0, p0, Landroid/text/Spanned;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    check-cast p0, Landroid/text/Spanned;
-
-    goto :goto_0
-
-    :cond_0
-    move-object p0, v1
-
-    :goto_0
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v1
-
-    const-class v2, Leyf;
-
-    invoke-interface {p0, v0, v1, v2}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-
-    move-result-object v1
+    return v2
 
     :cond_1
-    if-nez v1, :cond_2
+    check-cast p1, Lfyf;
 
-    new-array v1, v0, [Leyf;
+    iget-object p0, p0, Lfyf;->a:Ljava/util/List;
+
+    iget-object p1, p1, Lfyf;->a:Ljava/util/List;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
 
     :cond_2
-    array-length p0, v1
+    return v0
+.end method
 
-    :goto_1
-    if-ge v0, p0, :cond_3
+.method public final hashCode()I
+    .registers 1
 
-    aget-object v2, v1, v0
+    iget-object p0, p0, Lfyf;->a:Ljava/util/List;
 
-    check-cast v2, Leyf;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    check-cast v2, Lpo5;
+    move-result p0
 
-    invoke-virtual {v2, p1}, Lpo5;->c(Landroid/widget/TextView;)V
+    return p0
+.end method
 
-    add-int/lit8 v0, v0, 0x1
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    goto :goto_1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    :cond_3
-    return-void
+    const-string v1, "FilesReady(uriList="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lfyf;->a:Ljava/util/List;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -3,157 +3,56 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Lko8;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic a:Lmmd;
 
-.field public final synthetic b:Lio8;
+.field public final synthetic b:Z
+
+.field public final synthetic c:Z
+
+.field public final synthetic o:Ltn8;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lio8;I)V
-    .registers 3
-
-    iput p2, p0, Lho8;->a:I
-
-    iput-object p1, p0, Lho8;->b:Lio8;
+.method public synthetic constructor <init>(Lmmd;ZZLtn8;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lho8;->a:Lmmd;
+
+    iput-boolean p2, p0, Lho8;->b:Z
+
+    iput-boolean p3, p0, Lho8;->c:Z
+
+    iput-object p4, p0, Lho8;->o:Ltn8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 4
+.method public final a(Lsn8;I)V
+    .registers 10
 
-    iget v0, p0, Lho8;->a:I
+    iget-object v0, p0, Lho8;->o:Ltn8;
 
-    packed-switch v0, :pswitch_data_0
+    iget v6, v0, Ltn8;->c:I
 
-    iget-object p0, p0, Lho8;->b:Lio8;
+    iget-object v3, p0, Lho8;->a:Lmmd;
 
-    iget-object p0, p0, Lio8;->c:Ldle;
+    iget-boolean v4, p0, Lho8;->b:Z
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
+    iget-boolean v5, p0, Lho8;->c:Z
 
-    move-result-object p0
+    move-object v1, p1
 
-    check-cast p0, Lorg/json/JSONObject;
+    move v2, p2
 
-    const/4 v0, 0x0
+    invoke-interface/range {v1 .. v6}, Lsn8;->k(ILmmd;ZZI)V
 
-    if-eqz p0, :cond_0
-
-    const-string v1, "hdr_enabled"
-
-    invoke-virtual {p0, v1, v0}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    :cond_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lho8;->b:Lio8;
-
-    iget-object p0, p0, Lio8;->c:Ldle;
-
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lorg/json/JSONObject;
-
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_1
-
-    const-string v1, "hevc_enabled"
-
-    invoke-virtual {p0, v1, v0}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    :cond_1
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_1
-    iget-object p0, p0, Lho8;->b:Lio8;
-
-    iget-object p0, p0, Lio8;->c:Ldle;
-
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lorg/json/JSONObject;
-
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_2
-
-    const-string v1, "enabled"
-
-    invoke-virtual {p0, v1, v0}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    :cond_2
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_2
-    iget-object p0, p0, Lho8;->b:Lio8;
-
-    iget-object v0, p0, Lio8;->a:Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_3
-
-    :try_start_0
-    new-instance v2, Lorg/json/JSONObject;
-
-    invoke-direct {v2, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-object v1, v2
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    iget-object p0, p0, Lio8;->b:Ljava/lang/String;
-
-    const-string v2, "Failed to parse media transform params"
-
-    invoke-static {p0, v2, v0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_3
-    :goto_0
-    return-object v1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

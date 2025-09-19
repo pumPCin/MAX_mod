@@ -1,92 +1,64 @@
 .class public final Ll51;
-.super Lvg;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lr51;
+
+
+# static fields
+.field public static final a:Ll51;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 1
 
-    const-wide/16 v0, -0x1
+    new-instance v0, Ll51;
 
-    const/4 v2, 0x2
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0, v1, v2}, Lvg;-><init>(JI)V
+    sput-object v0, Ll51;->a:Ll51;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final l(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/View;ZZ)Landroid/animation/AnimatorSet;
-    .registers 7
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    new-instance p0, Landroid/animation/AnimatorSet;
+    const/4 v0, 0x1
 
-    invoke-direct {p0}, Landroid/animation/AnimatorSet;-><init>()V
+    if-ne p0, p1, :cond_0
 
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    if-eqz p4, :cond_0
-
-    if-eqz p3, :cond_0
-
-    sget-object p2, Landroid/view/View;->ALPHA:Landroid/util/Property;
-
-    const/4 p4, 0x2
-
-    new-array p4, p4, [F
-
-    fill-array-data p4, :array_0
-
-    invoke-static {p3, p2, p4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    if-nez p4, :cond_1
+    instance-of p0, p1, Ll51;
 
-    if-eqz p2, :cond_1
+    if-nez p0, :cond_1
 
-    sget-object p3, Landroid/view/View;->ALPHA:Landroid/util/Property;
+    const/4 p0, 0x0
 
-    const/4 p4, 0x1
-
-    new-array p4, p4, [F
-
-    const/4 p5, 0x0
-
-    const/4 v0, 0x0
-
-    aput p5, p4, v0
-
-    invoke-static {p2, p3, p4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    return p0
 
     :cond_1
-    :goto_0
-    invoke-virtual {p0, p1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
-
-    return-object p0
-
-    :array_0
-    .array-data 4
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
+    return v0
 .end method
 
-.method public final n(Landroid/view/View;)V
-    .registers 2
+.method public final hashCode()I
+    .registers 1
 
-    return-void
+    const p0, -0x6cbb84b4
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "Failed"
+
+    return-object p0
 .end method

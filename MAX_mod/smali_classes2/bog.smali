@@ -1,80 +1,61 @@
-.class public final synthetic Lbog;
-.super Ljava/lang/Object;
+.class public final Lbog;
+.super Ldog;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/sdk/zoom/ZoomableDraweeView;
+# static fields
+.field public static final a:Lbog;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/sdk/zoom/ZoomableDraweeView;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p2, p0, Lbog;->a:I
+    new-instance v0, Lbog;
 
-    iput-object p1, p0, Lbog;->b:Lone/me/sdk/zoom/ZoomableDraweeView;
+    invoke-direct {v0}, Ljava/lang/Throwable;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lbog;->a:Lbog;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    iget v0, p0, Lbog;->a:I
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Lbog;->b:Lone/me/sdk/zoom/ZoomableDraweeView;
+    if-ne p0, p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    return v0
 
-    sget v0, Lone/me/sdk/zoom/ZoomableDraweeView;->z0:I
+    :cond_0
+    instance-of p0, p1, Lbog;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    if-nez p0, :cond_1
 
-    move-result v0
+    const/4 p0, 0x0
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    return p0
 
-    move-result-object v0
+    :cond_1
+    return v0
+.end method
 
-    const-class v1, Lone/me/sdk/zoom/ZoomableDraweeView;
+.method public final hashCode()I
+    .registers 1
 
-    const-string v2, "onRelease: view %x"
+    const p0, 0x7af3fee5
 
-    invoke-static {v1, v0, v2}, Ltd5;->d(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+    return p0
+.end method
 
-    iget-object p0, p0, Lone/me/sdk/zoom/ZoomableDraweeView;->y0:Laog;
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    check-cast p0, Lmj4;
+    const-string p0, "TooLargeLink"
 
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lmj4;->c:Z
-
-    invoke-virtual {p0}, Lmj4;->reset()V
-
-    return-void
-
-    :pswitch_0
-    sget v0, Lone/me/sdk/zoom/ZoomableDraweeView;->z0:I
-
-    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
-
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

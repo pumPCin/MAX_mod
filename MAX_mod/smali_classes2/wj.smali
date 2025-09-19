@@ -1,370 +1,85 @@
-.class public final Lwj;
-.super Ljava/lang/Object;
+.class public final enum Lwj;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lta8;
-.implements Lua8;
 
+# static fields
+.field public static final enum a:Lwj;
 
-# instance fields
-.field public X:Ljava/lang/Object;
+.field public static final enum b:Lwj;
 
-.field public Y:Ljava/lang/Object;
+.field public static final enum c:Lwj;
 
-.field public Z:Ljava/lang/Object;
-
-.field public final synthetic a:I
-
-.field public b:Z
-
-.field public c:Z
-
-.field public o:Ljava/lang/Object;
+.field public static final synthetic o:[Lwj;
 
 
 # direct methods
-.method public synthetic constructor <init>()V
-    .registers 2
-
-    const/4 v0, 0x3
-
-    iput v0, p0, Lwj;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lgb5;Lile;)V
-    .registers 4
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lwj;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lwj;->X:Ljava/lang/Object;
-
-    new-instance p1, Lkk8;
-
-    invoke-direct {p1, p2}, Lkk8;-><init>(Lile;)V
-
-    iput-object p1, p0, Lwj;->o:Ljava/lang/Object;
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lwj;->b:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Lhb5;Ljle;)V
-    .registers 4
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Lwj;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lwj;->X:Ljava/lang/Object;
-
-    new-instance p1, Lkk8;
-
-    invoke-direct {p1, p2}, Lkk8;-><init>(Ljle;)V
-
-    iput-object p1, p0, Lwj;->o:Ljava/lang/Object;
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Lwj;->b:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Lru/ok/tamtam/animoji/views/AnimojiTextView;Luj;Lk;)V
+.method static constructor <clinit>()V
     .registers 5
 
-    const/4 v0, 0x0
+    new-instance v0, Lwj;
 
-    iput v0, p0, Lwj;->a:I
+    const-string v1, "EMPTY"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
 
-    iput-object p1, p0, Lwj;->o:Ljava/lang/Object;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p2, p0, Lwj;->X:Ljava/lang/Object;
+    sput-object v0, Lwj;->a:Lwj;
 
-    iput-object p3, p0, Lwj;->Y:Ljava/lang/Object;
+    new-instance v1, Lwj;
 
-    new-instance p2, Lvj;
+    const-string v2, "STATIC"
 
-    const/4 p3, 0x0
+    const/4 v3, 0x1
 
-    invoke-direct {p2, p3, p0}, Lvj;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-virtual {p1, p2}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+    sput-object v1, Lwj;->b:Lwj;
 
-    return-void
-.end method
+    new-instance v2, Lwj;
 
+    const-string v3, "RLOTTIE"
 
-# virtual methods
-.method public H(Lk5b;)V
-    .registers 3
+    const/4 v4, 0x2
 
-    iget-object v0, p0, Lwj;->Z:Ljava/lang/Object;
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    check-cast v0, Lua8;
+    sput-object v2, Lwj;->c:Lwj;
 
-    if-eqz v0, :cond_0
+    filled-new-array {v0, v1, v2}, [Lwj;
 
-    invoke-interface {v0, p1}, Lua8;->H(Lk5b;)V
+    move-result-object v0
 
-    iget-object p1, p0, Lwj;->Z:Ljava/lang/Object;
-
-    check-cast p1, Lua8;
-
-    invoke-interface {p1}, Lua8;->d()Lk5b;
-
-    move-result-object p1
-
-    :cond_0
-    iget-object p0, p0, Lwj;->o:Ljava/lang/Object;
-
-    check-cast p0, Lkk8;
-
-    invoke-virtual {p0, p1}, Lkk8;->H(Lk5b;)V
+    sput-object v0, Lwj;->o:[Lwj;
 
     return-void
 .end method
 
-.method public I()Z
+.method public static valueOf(Ljava/lang/String;)Lwj;
     .registers 2
 
-    iget-boolean v0, p0, Lwj;->b:Z
+    const-class v0, Lwj;
 
-    if-eqz v0, :cond_0
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    iget-object p0, p0, Lwj;->o:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast p0, Lkk8;
+    check-cast p0, Lwj;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    iget-object p0, p0, Lwj;->Z:Ljava/lang/Object;
-
-    check-cast p0, Lua8;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p0}, Lua8;->I()Z
-
-    move-result p0
-
-    return p0
+    return-object p0
 .end method
 
-.method public a()Ltwa;
-    .registers 3
+.method public static values()[Lwj;
+    .registers 1
 
-    new-instance v0, Ltwa;
+    sget-object v0, Lwj;->o:[Lwj;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    iget-object v1, p0, Lwj;->o:Ljava/lang/Object;
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/CharSequence;
-
-    iput-object v1, v0, Ltwa;->a:Ljava/lang/CharSequence;
-
-    iget-object v1, p0, Lwj;->X:Ljava/lang/Object;
-
-    check-cast v1, Landroidx/core/graphics/drawable/IconCompat;
-
-    iput-object v1, v0, Ltwa;->b:Landroidx/core/graphics/drawable/IconCompat;
-
-    iget-object v1, p0, Lwj;->Y:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    iput-object v1, v0, Ltwa;->c:Ljava/lang/String;
-
-    iget-object v1, p0, Lwj;->Z:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    iput-object v1, v0, Ltwa;->d:Ljava/lang/String;
-
-    iget-boolean v1, p0, Lwj;->b:Z
-
-    iput-boolean v1, v0, Ltwa;->e:Z
-
-    iget-boolean p0, p0, Lwj;->c:Z
-
-    iput-boolean p0, v0, Ltwa;->f:Z
+    check-cast v0, [Lwj;
 
     return-object v0
-.end method
-
-.method public d()Lj5b;
-    .registers 2
-
-    iget-object v0, p0, Lwj;->Z:Ljava/lang/Object;
-
-    check-cast v0, Lta8;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lta8;->d()Lj5b;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    iget-object p0, p0, Lwj;->o:Ljava/lang/Object;
-
-    check-cast p0, Lkk8;
-
-    iget-object p0, p0, Lkk8;->Y:Ljava/lang/Object;
-
-    check-cast p0, Lj5b;
-
-    return-object p0
-.end method
-
-.method public d()Lk5b;
-    .registers 2
-
-    iget-object v0, p0, Lwj;->Z:Ljava/lang/Object;
-
-    check-cast v0, Lua8;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lua8;->d()Lk5b;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    iget-object p0, p0, Lwj;->o:Ljava/lang/Object;
-
-    check-cast p0, Lkk8;
-
-    iget-object p0, p0, Lkk8;->Y:Ljava/lang/Object;
-
-    check-cast p0, Lk5b;
-
-    return-object p0
-.end method
-
-.method public q()J
-    .registers 3
-
-    iget v0, p0, Lwj;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-boolean v0, p0, Lwj;->b:Z
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Lwj;->o:Ljava/lang/Object;
-
-    check-cast p0, Lkk8;
-
-    invoke-virtual {p0}, Lkk8;->q()J
-
-    move-result-wide v0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p0, p0, Lwj;->Z:Ljava/lang/Object;
-
-    check-cast p0, Lua8;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p0}, Lua8;->q()J
-
-    move-result-wide v0
-
-    :goto_0
-    return-wide v0
-
-    :pswitch_0
-    iget-boolean v0, p0, Lwj;->b:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object p0, p0, Lwj;->o:Ljava/lang/Object;
-
-    check-cast p0, Lkk8;
-
-    invoke-virtual {p0}, Lkk8;->q()J
-
-    move-result-wide v0
-
-    goto :goto_1
-
-    :cond_1
-    iget-object p0, p0, Lwj;->Z:Ljava/lang/Object;
-
-    check-cast p0, Lta8;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {p0}, Lta8;->q()J
-
-    move-result-wide v0
-
-    :goto_1
-    return-wide v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public r(Lj5b;)V
-    .registers 3
-
-    iget-object v0, p0, Lwj;->Z:Ljava/lang/Object;
-
-    check-cast v0, Lta8;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lta8;->r(Lj5b;)V
-
-    iget-object p1, p0, Lwj;->Z:Ljava/lang/Object;
-
-    check-cast p1, Lta8;
-
-    invoke-interface {p1}, Lta8;->d()Lj5b;
-
-    move-result-object p1
-
-    :cond_0
-    iget-object p0, p0, Lwj;->o:Ljava/lang/Object;
-
-    check-cast p0, Lkk8;
-
-    invoke-virtual {p0, p1}, Lkk8;->r(Lj5b;)V
-
-    return-void
 .end method

@@ -12,7 +12,7 @@
     return-void
 .end method
 
-.method public static synthetic a(Lcom/my/tracker/campaign/CampaignService;Ljava/lang/String;Law1;)V
+.method public static synthetic a(Lcom/my/tracker/campaign/CampaignService;Ljava/lang/String;Liw1;)V
     .registers 3
 
     invoke-direct {p0, p1, p2}, Lcom/my/tracker/campaign/CampaignService;->a(Ljava/lang/String;Ljava/lang/Runnable;)V
@@ -65,11 +65,11 @@
 .method public onStartCommand(Landroid/content/Intent;II)I
     .registers 7
 
-    new-instance v0, Law1;
+    new-instance v0, Liw1;
 
-    const/4 v1, 0x7
+    const/16 v1, 0x8
 
-    invoke-direct {v0, v1, p0}, Law1;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0, v1, p0}, Liw1;-><init>(ILjava/lang/Object;)V
 
     if-eqz p1, :cond_0
 
@@ -85,11 +85,11 @@
 
     if-nez v1, :cond_0
 
-    new-instance v1, Lc5;
+    new-instance v1, Lj5;
 
     const/16 v2, 0xc
 
-    invoke-direct {v1, p0, p1, v0, v2}, Lc5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v1, p0, p1, v0, v2}, Lj5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
     invoke-static {v1}, Lcom/my/tracker/obfuscated/h;->a(Ljava/lang/Runnable;)V
 

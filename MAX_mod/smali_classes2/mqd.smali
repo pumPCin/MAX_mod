@@ -1,184 +1,121 @@
 .class public final Lmqd;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lrhb;
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Lr7;
+.field public final synthetic X:Loqd;
+
+.field public final synthetic Y:J
 
 
 # direct methods
-.method public constructor <init>(Lr7;)V
-    .registers 2
+.method public constructor <init>(Loqd;JLkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lmqd;->X:Loqd;
 
-    iput-object p1, p0, Lmqd;->a:Lr7;
+    iput-wide p2, p0, Lmqd;->Y:J
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lmqd;
-
-    if-nez v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lmqd;
-
-    iget-object p0, p0, Lmqd;->a:Lr7;
-
-    iget-object p1, p1, Lmqd;->a:Lr7;
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_2
-    return v0
-.end method
-
-.method public final getItemId()J
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    const/16 p0, 0x10
+    check-cast p1, Ly04;
 
-    int-to-long v0, p0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return-wide v0
-.end method
-
-.method public final h(Lpp7;)Z
-    .registers 4
-
-    const/16 p0, 0x10
-
-    int-to-long v0, p0
-
-    invoke-interface {p1}, Lpp7;->getItemId()J
-
-    move-result-wide p0
-
-    cmp-long p0, v0, p0
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-object p0, p0, Lmqd;->a:Lr7;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    mul-int/lit8 p0, p0, 0x1f
-
-    const v0, -0x7ffffff0
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final k(Lpp7;)Ljava/lang/Object;
-    .registers 2
-
-    instance-of p0, p1, Lmqd;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljib;
-
-    check-cast p1, Lmqd;
-
-    iget-object p1, p1, Lmqd;->a:Lr7;
-
-    invoke-direct {p0, p1}, Ljib;-><init>(Lr7;)V
-
-    return-object p0
-.end method
-
-.method public final m()I
-    .registers 1
-
-    const p0, -0x7ffffff0
-
-    return p0
-.end method
-
-.method public final q(Lpp7;)Z
-    .registers 2
-
-    invoke-virtual {p0, p1}, Lmqd;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ShortLinkInputItem(state="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lmqd;->a:Lr7;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ", viewType=-2147483632)"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lmqd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Lmqd;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lmqd;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 6
+
+    new-instance p1, Lmqd;
+
+    iget-object v0, p0, Lmqd;->X:Loqd;
+
+    iget-wide v1, p0, Lmqd;->Y:J
+
+    invoke-direct {p1, v0, v1, v2, p2}, Lmqd;-><init>(Loqd;JLkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lmqd;->X:Loqd;
+
+    iget-object v0, p1, Loqd;->X:Lcl7;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lyz2;
+
+    iget-wide v1, p0, Lmqd;->Y:J
+
+    check-cast v0, Ly03;
+
+    invoke-virtual {v0, v1, v2}, Ly03;->R(J)Ls72;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    iget-object p1, p1, Loqd;->x0:Lv85;
+
+    sget-object v0, Lgtd;->c:Lgtd;
+
+    iget-wide v1, p0, Ls72;->a:J
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string v0, ":profile?id="
+
+    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, "&type=local_chat&is_opened_from_dialog=false"
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0, p1}, Lsg0;->l(Ljava/lang/String;Lv85;)V
+
+    :cond_0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

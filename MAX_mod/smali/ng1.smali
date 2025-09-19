@@ -1,259 +1,349 @@
 .class public final Lng1;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final g:Lng1;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Ljava/util/List;
 
-.field public final synthetic Y:Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;
+.field public final b:Ljava/util/List;
+
+.field public final c:Ljava/util/List;
+
+.field public final d:Z
+
+.field public final e:Ljava/lang/CharSequence;
+
+.field public final f:Z
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 7
 
-    iput-object p2, p0, Lng1;->Y:Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;
+    new-instance v0, Lng1;
 
-    const/4 p2, 0x2
+    const-string v5, ""
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v6, 0x0
+
+    sget-object v1, Lp45;->a:Lp45;
+
+    const/4 v4, 0x1
+
+    move-object v2, v1
+
+    move-object v3, v1
+
+    invoke-direct/range {v0 .. v6}, Lng1;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;ZLjava/lang/CharSequence;Z)V
+
+    sput-object v0, Lng1;->g:Lng1;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;ZLjava/lang/CharSequence;Z)V
+    .registers 7
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iput-object p1, p0, Lng1;->a:Ljava/util/List;
 
-    invoke-virtual {p0, p1, p2}, Lng1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iput-object p2, p0, Lng1;->b:Ljava/util/List;
 
-    move-result-object p0
+    iput-object p3, p0, Lng1;->c:Ljava/util/List;
 
-    check-cast p0, Lng1;
+    iput-boolean p4, p0, Lng1;->d:Z
 
-    sget-object p1, Lncf;->a:Lncf;
+    iput-object p5, p0, Lng1;->e:Ljava/lang/CharSequence;
 
-    invoke-virtual {p0, p1}, Lng1;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-boolean p6, p0, Lng1;->f:Z
 
-    return-object p1
+    return-void
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public static a(Lng1;Ljava/util/List;Los7;Ljava/util/List;Ljava/lang/CharSequence;ZI)Lng1;
+    .registers 14
+
+    and-int/lit8 v0, p6, 0x1
+
+    if-eqz v0, :cond_0
+
+    iget-object p1, p0, Lng1;->a:Ljava/util/List;
+
+    :cond_0
+    move-object v1, p1
+
+    and-int/lit8 p1, p6, 0x2
+
+    if-eqz p1, :cond_1
+
+    iget-object p2, p0, Lng1;->b:Ljava/util/List;
+
+    :cond_1
+    move-object v2, p2
+
+    and-int/lit8 p1, p6, 0x4
+
+    if-eqz p1, :cond_2
+
+    iget-object p3, p0, Lng1;->c:Ljava/util/List;
+
+    :cond_2
+    move-object v3, p3
+
+    and-int/lit8 p1, p6, 0x8
+
+    if-eqz p1, :cond_3
+
+    iget-boolean p1, p0, Lng1;->d:Z
+
+    :goto_0
+    move v4, p1
+
+    goto :goto_1
+
+    :cond_3
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :goto_1
+    and-int/lit8 p1, p6, 0x10
+
+    if-eqz p1, :cond_4
+
+    iget-object p4, p0, Lng1;->e:Ljava/lang/CharSequence;
+
+    :cond_4
+    move-object v5, p4
+
+    and-int/lit8 p1, p6, 0x20
+
+    if-eqz p1, :cond_5
+
+    iget-boolean p5, p0, Lng1;->f:Z
+
+    :cond_5
+    move v6, p5
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     new-instance v0, Lng1;
 
-    iget-object p0, p0, Lng1;->Y:Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;
-
-    invoke-direct {v0, p2, p0}, Lng1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;)V
-
-    iput-object p1, v0, Lng1;->X:Ljava/lang/Object;
+    invoke-direct/range {v0 .. v6}, Lng1;-><init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;ZLjava/lang/CharSequence;Z)V
 
     return-object v0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    iget-object p1, p0, Lng1;->X:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    check-cast p1, Lrg1;
+    if-ne p0, p1, :cond_0
 
-    iget-object p0, p0, Lng1;->Y:Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;
-
-    iget-object v0, p0, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->y0:Lin0;
-
-    sget-object v1, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->D0:[Lsf7;
-
-    iget-object v1, p0, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->s0:Lin0;
-
-    sget-object v2, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->D0:[Lsf7;
-
-    const/4 v3, 0x5
-
-    aget-object v3, v2, v3
-
-    invoke-virtual {v1}, Lin0;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/TextView;
-
-    iget-object v3, p1, Lrg1;->e:Ljava/lang/CharSequence;
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->B0()Llna;
-
-    move-result-object v1
-
-    iget-object v3, p1, Lrg1;->e:Ljava/lang/CharSequence;
-
-    invoke-virtual {v1, v3}, Llna;->setTitle(Ljava/lang/CharSequence;)V
-
-    iget-object v1, p0, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->q0:Lin0;
-
-    const/4 v3, 0x3
-
-    aget-object v3, v2, v3
-
-    invoke-virtual {v1}, Lin0;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lf9a;
-
-    iget-object v3, p1, Lrg1;->b:Ljava/util/List;
-
-    iget-object v4, p1, Lrg1;->c:Ljava/util/List;
-
-    iget-boolean v5, p1, Lrg1;->d:Z
-
-    invoke-virtual {v1, v3, v4, v5}, Lf9a;->b(Ljava/util/List;Ljava/util/List;Z)V
-
-    iget-boolean v1, p1, Lrg1;->f:Z
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->B0()Llna;
-
-    move-result-object v1
-
-    iget-object v3, p0, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->o0:Ljava/lang/Object;
-
-    invoke-interface {v3}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lyma;
-
-    invoke-virtual {v1, v3}, Llna;->setRightActions(Lbna;)V
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->B0()Llna;
+    instance-of v1, p1, Lng1;
 
-    move-result-object v1
-
-    sget-object v3, Lwma;->a:Lwma;
-
-    invoke-virtual {v1, v3}, Llna;->setRightActions(Lbna;)V
-
-    :goto_0
-    invoke-static {}, Lso9;->f()Lkp7;
-
-    move-result-object v1
-
-    iget-object p1, p1, Lrg1;->a:Ljava/util/List;
-
-    invoke-virtual {v1, p1}, Lkp7;->addAll(Ljava/util/Collection;)Z
-
-    invoke-static {v1}, Lso9;->a(Ljava/util/List;)Lkp7;
-
-    move-result-object p1
-
-    iget-object v1, p0, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->z0:Ldle;
-
-    invoke-virtual {v1}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lsf1;
-
-    invoke-virtual {v1, p1}, Lhp7;->E(Ljava/util/List;)V
-
-    invoke-virtual {p1}, Lkp7;->isEmpty()Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->z0()Landroid/view/ViewStub;
-
-    move-result-object v1
-
-    invoke-static {v1}, Las3;->R(Landroid/view/ViewStub;)Z
-
-    move-result v1
+    const/4 v2, 0x0
 
     if-nez v1, :cond_1
 
-    goto :goto_2
+    return v2
 
     :cond_1
-    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->z0()Landroid/view/ViewStub;
+    check-cast p1, Lng1;
 
-    move-result-object v1
+    iget-object v1, p0, Lng1;->a:Ljava/util/List;
 
-    const/16 v3, 0xb
+    iget-object v3, p1, Lng1;->a:Ljava/util/List;
 
-    aget-object v4, v2, v3
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {v0}, Lin0;->getValue()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v4
+    if-nez v1, :cond_2
 
-    check-cast v4, Lwca;
-
-    const/4 v5, 0x0
-
-    invoke-static {v1, v4, v5}, Las3;->N(Landroid/view/ViewStub;Landroid/view/View;Lh96;)V
-
-    aget-object v1, v2, v3
-
-    invoke-virtual {v0}, Lin0;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lwca;
-
-    const/16 v1, 0x8
-
-    const/4 v3, 0x0
-
-    if-eqz p1, :cond_2
-
-    move v4, v3
-
-    goto :goto_1
+    return v2
 
     :cond_2
-    move v4, v1
+    iget-object v1, p0, Lng1;->b:Ljava/util/List;
 
-    :goto_1
-    invoke-virtual {v0, v4}, Lwca;->setVisibility(I)V
+    iget-object v3, p1, Lng1;->b:Ljava/util/List;
 
-    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/opponents/CallOpponentsListWidget;->r0:Lin0;
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const/4 v0, 0x4
+    move-result v1
 
-    aget-object v0, v2, v0
+    if-nez v1, :cond_3
 
-    invoke-virtual {p0}, Lin0;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroidx/recyclerview/widget/RecyclerView;
-
-    if-nez p1, :cond_3
-
-    move v1, v3
+    return v2
 
     :cond_3
-    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
+    iget-object v1, p0, Lng1;->c:Ljava/util/List;
 
-    :goto_2
-    sget-object p0, Lncf;->a:Lncf;
+    iget-object v3, p1, Lng1;->c:Ljava/util/List;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-boolean v1, p0, Lng1;->d:Z
+
+    iget-boolean v3, p1, Lng1;->d:Z
+
+    if-eq v1, v3, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-object v1, p0, Lng1;->e:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lng1;->e:Ljava/lang/CharSequence;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-boolean p0, p0, Lng1;->f:Z
+
+    iget-boolean p1, p1, Lng1;->f:Z
+
+    if-eq p0, p1, :cond_7
+
+    return v2
+
+    :cond_7
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget-object v0, p0, Lng1;->a:Ljava/util/List;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lng1;->b:Ljava/util/List;
+
+    invoke-static {v2, v0, v1}, Lz7e;->n(Ljava/util/List;II)I
+
+    move-result v0
+
+    iget-object v2, p0, Lng1;->c:Ljava/util/List;
+
+    invoke-static {v2, v0, v1}, Lz7e;->n(Ljava/util/List;II)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lng1;->d:Z
+
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
+
+    move-result v0
+
+    iget-object v2, p0, Lng1;->e:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v0, v1}, Lee5;->e(Ljava/lang/CharSequence;II)I
+
+    move-result v0
+
+    iget-boolean p0, p0, Lng1;->f:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "CallOpponentsState(opponents="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lng1;->a:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", buttons="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lng1;->b:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", contextMenuButtons="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lng1;->c:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isMoreButtonEnabled="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lng1;->d:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", title="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lng1;->e:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", canOpenSettings="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lng1;->f:Z
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

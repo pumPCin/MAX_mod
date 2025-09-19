@@ -1,67 +1,88 @@
-.class public final Llm5;
-.super Lcx3;
+.class public final synthetic Llm5;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lzb6;
 
 
 # instance fields
-.field public X:Lyye;
+.field public final synthetic a:I
 
-.field public Y:Lief;
-
-.field public Z:Ljava/nio/channels/AsynchronousFileChannel;
-
-.field public n0:Lx96;
-
-.field public o:Lom5;
-
-.field public synthetic o0:Ljava/lang/Object;
-
-.field public final synthetic p0:Lom5;
-
-.field public q0:I
+.field public final synthetic b:Lmm5;
 
 
 # direct methods
-.method public constructor <init>(Lom5;Lcx3;)V
+.method public synthetic constructor <init>(Lmm5;I)V
     .registers 3
 
-    iput-object p1, p0, Llm5;->p0:Lom5;
+    iput p2, p0, Llm5;->a:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Llm5;->b:Lmm5;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+.method public final invoke()Ljava/lang/Object;
+    .registers 2
 
-    iput-object p1, p0, Llm5;->o0:Ljava/lang/Object;
+    iget v0, p0, Llm5;->a:I
 
-    iget p1, p0, Llm5;->q0:I
+    iget-object p0, p0, Llm5;->b:Lmm5;
 
-    const/high16 v0, -0x80000000
+    packed-switch v0, :pswitch_data_0
 
-    or-int/2addr p1, v0
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
 
-    iput p1, p0, Llm5;->q0:I
+    move-result-object p0
 
-    const/4 v3, 0x0
+    check-cast p0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
 
-    const/4 v4, 0x0
+    const-string v0, "corner"
 
-    iget-object v0, p0, Llm5;->p0:Lom5;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move-object v5, p0
-
-    invoke-static/range {v0 .. v5}, Lom5;->a(Lom5;Lyye;Lief;Ljava/nio/channels/AsynchronousFileChannel;Lgm5;Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;->findPath(Ljava/lang/String;)Lone/me/sdk/richvector/VectorPath;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    check-cast p0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
+
+    const-string v0, "foreground"
+
+    invoke-virtual {p0, v0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;->findPath(Ljava/lang/String;)Lone/me/sdk/richvector/VectorPath;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_1
+    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    check-cast p0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
+
+    const-string v0, "background"
+
+    invoke-virtual {p0, v0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;->findPath(Ljava/lang/String;)Lone/me/sdk/richvector/VectorPath;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

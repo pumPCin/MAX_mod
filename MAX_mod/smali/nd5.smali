@@ -1,44 +1,36 @@
-.class public interface abstract Lnd5;
+.class public final Lnd5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lj64;
+
+# instance fields
+.field public final a:Lubf;
+
+.field public final b:[I
 
 
-# virtual methods
-.method public abstract Q()I
-.end method
+# direct methods
+.method public constructor <init>(ILubf;[I)V
+    .registers 5
 
-.method public abstract c([BIIZ)Z
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract e(I[BI)V
-.end method
+    array-length p1, p3
 
-.method public abstract getLength()J
-.end method
+    if-nez p1, :cond_0
 
-.method public abstract getPosition()J
-.end method
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-.method public abstract n([BIIZ)Z
-.end method
+    invoke-direct {p1}, Ljava/lang/IllegalArgumentException;-><init>()V
 
-.method public abstract o()J
-.end method
+    const-string v0, "Empty tracks are not allowed"
 
-.method public abstract p(I)V
-.end method
+    invoke-static {v0, p1}, Lxnd;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-.method public abstract readFully([BII)V
-.end method
+    :cond_0
+    iput-object p2, p0, Lnd5;->a:Lubf;
 
-.method public abstract s(I[BI)I
-.end method
+    iput-object p3, p0, Lnd5;->b:[I
 
-.method public abstract x()V
-.end method
-
-.method public abstract y(I)V
+    return-void
 .end method

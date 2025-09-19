@@ -40,16 +40,16 @@
 
 
 # virtual methods
-.method public final a()Lgq7;
+.method public final a()Lkt7;
     .registers 2
 
-    invoke-virtual {p0}, Lhq7;->getInputData()Lb64;
+    invoke-virtual {p0}, Llt7;->getInputData()Lp64;
 
     move-result-object p0
 
-    new-instance v0, Lfq7;
+    new-instance v0, Ljt7;
 
-    invoke-direct {v0, p0}, Lfq7;-><init>(Lb64;)V
+    invoke-direct {v0, p0}, Ljt7;-><init>(Lp64;)V
 
     return-object v0
 .end method

@@ -1,209 +1,294 @@
 .class public final Lkw6;
-.super Ljava/lang/Object;
+.super Luw;
 .source "SourceFile"
-
-# interfaces
-.implements Ltb9;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lkw6;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 
 # instance fields
-.field public final a:[B
+.field public final synthetic k:I
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
+.field public final l:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Ldn6;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Ldn6;-><init>(I)V
-
-    sput-object v0, Lkw6;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lkw6;->k:I
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v0, p0, Lkw6;->a:[B
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lkw6;->b:Ljava/lang/String;
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lkw6;->c:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;[B)V
-    .registers 4
+    iput-object p2, p0, Lkw6;->l:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p3, p0, Lkw6;->a:[B
-
-    iput-object p1, p0, Lkw6;->b:Ljava/lang/String;
-
-    iput-object p2, p0, Lkw6;->c:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
+.method public final k()V
+    .registers 6
 
-    const/4 p0, 0x0
+    iget v0, p0, Lkw6;->k:I
 
-    return p0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    const-string v0, "Failed to close timed out socket "
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Lkw6;->l:Ljava/lang/Object;
 
-    const/4 p0, 0x1
+    check-cast p0, Ljava/net/Socket;
 
-    return p0
+    :try_start_0
+    invoke-virtual {p0}, Ljava/net/Socket;->close()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/AssertionError; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_0
-    if-eqz p1, :cond_2
+    goto :goto_1
 
-    const-class v0, Lkw6;
+    :catch_0
+    move-exception v1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v2, Ly8a;->a:Ljava/util/logging/Logger;
 
-    move-result-object v1
+    invoke-virtual {v1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
-    if-eq v0, v1, :cond_1
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    const-string v4, "getsockname failed"
+
+    invoke-static {v2, v4, v3}, Ljme;->d0(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
+
+    move-result v2
 
     goto :goto_0
 
+    :cond_0
+    move v2, v3
+
+    :goto_0
+    if-eqz v2, :cond_1
+
+    const/4 v3, 0x1
+
     :cond_1
-    check-cast p1, Lkw6;
+    if-eqz v3, :cond_2
 
-    iget-object p0, p0, Lkw6;->a:[B
+    sget-object v2, Ly8a;->a:Ljava/util/logging/Logger;
 
-    iget-object p1, p1, Lkw6;->a:[B
+    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
 
-    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([B[B)Z
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    move-result p0
+    invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    return p0
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v2, v3, p0, v1}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_1
 
     :cond_2
-    :goto_0
-    const/4 p0, 0x0
+    throw v1
 
-    return p0
-.end method
+    :catch_1
+    move-exception v1
 
-.method public final hashCode()I
-    .registers 1
+    sget-object v2, Ly8a;->a:Ljava/util/logging/Logger;
 
-    iget-object p0, p0, Lkw6;->a:[B
+    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
 
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([B)I
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    move-result p0
+    invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    return p0
-.end method
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    iget-object v0, p0, Lkw6;->a:[B
-
-    array-length v0, v0
-
-    const-string v1, "\", url=\""
-
-    const-string v2, "\", rawMetadata.length=\""
-
-    const-string v3, "ICY: title=\""
-
-    iget-object v4, p0, Lkw6;->b:Ljava/lang/String;
-
-    iget-object p0, p0, Lkw6;->c:Ljava/lang/String;
-
-    invoke-static {v3, v4, v1, p0, v2}, Lfge;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "\""
+    invoke-virtual {v2, v3, p0, v1}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-static {p0, v0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    :goto_1
+    return-void
 
-    move-result-object p0
+    :pswitch_0
+    iget-object p0, p0, Lkw6;->l:Ljava/lang/Object;
 
-    return-object p0
+    check-cast p0, Lnic;
+
+    invoke-virtual {p0}, Lnic;->d()V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lkw6;->l:Ljava/lang/Object;
+
+    check-cast v0, Llw6;
+
+    const/16 v1, 0x9
+
+    invoke-virtual {v0, v1}, Llw6;->e(I)V
+
+    iget-object p0, p0, Lkw6;->l:Ljava/lang/Object;
+
+    check-cast p0, Llw6;
+
+    iget-object p0, p0, Llw6;->n:Lew6;
+
+    monitor-enter p0
+
+    :try_start_1
+    iget-wide v0, p0, Lew6;->x0:J
+
+    iget-wide v2, p0, Lew6;->w0:J
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    cmp-long v0, v0, v2
+
+    if-gez v0, :cond_3
+
+    monitor-exit p0
+
+    goto :goto_2
+
+    :cond_3
+    const-wide/16 v0, 0x1
+
+    add-long/2addr v2, v0
+
+    :try_start_2
+    iput-wide v2, p0, Lew6;->w0:J
+
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v0
+
+    const v2, 0x3b9aca00
+
+    int-to-long v2, v2
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lew6;->y0:J
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    monitor-exit p0
+
+    iget-object v0, p0, Lew6;->r0:Lm0f;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v2, p0, Lew6;->c:Ljava/lang/String;
+
+    const-string v3, " ping"
+
+    invoke-static {v1, v2, v3}, Lyv7;->k(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Lcw6;
+
+    invoke-direct {v2, v1, p0}, Lcw6;-><init>(Ljava/lang/String;Lew6;)V
+
+    const-wide/16 v3, 0x0
+
+    invoke-virtual {v0, v2, v3, v4}, Lm0f;->c(Lwze;J)V
+
+    :goto_2
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final v(Lig8;)V
+.method public l()V
     .registers 2
 
-    iget-object p0, p0, Lkw6;->b:Ljava/lang/String;
+    invoke-virtual {p0}, Luw;->j()Z
 
-    if-eqz p0, :cond_0
+    move-result v0
 
-    iput-object p0, p1, Lig8;->a:Ljava/lang/CharSequence;
+    if-nez v0, :cond_0
+
+    return-void
 
     :cond_0
-    return-void
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lkw6;->m(Ljava/io/IOException;)Ljava/io/IOException;
+
+    move-result-object p0
+
+    throw p0
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public m(Ljava/io/IOException;)Ljava/io/IOException;
     .registers 3
 
-    iget-object p2, p0, Lkw6;->a:[B
+    iget p0, p0, Lkw6;->k:I
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeByteArray([B)V
+    packed-switch p0, :pswitch_data_0
 
-    iget-object p2, p0, Lkw6;->b:Ljava/lang/String;
+    new-instance p0, Ljava/net/SocketTimeoutException;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    const-string v0, "timeout"
 
-    iget-object p0, p0, Lkw6;->c:Ljava/lang/String;
+    invoke-direct {p0, v0}, Ljava/net/SocketTimeoutException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    if-eqz p1, :cond_0
 
-    return-void
+    invoke-virtual {p0, p1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    :cond_0
+    return-object p0
+
+    :pswitch_0
+    new-instance p0, Ljava/net/SocketTimeoutException;
+
+    const-string v0, "timeout"
+
+    invoke-direct {p0, v0}, Ljava/net/SocketTimeoutException;-><init>(Ljava/lang/String;)V
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p0, p1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    :cond_1
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

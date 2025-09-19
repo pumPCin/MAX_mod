@@ -23,7 +23,7 @@
         "",
         "Landroid/media/AudioDeviceInfo;",
         "addedDevices",
-        "Lncf;",
+        "Lylf;",
         "onAudioDevicesAdded",
         "([Landroid/media/AudioDeviceInfo;)V",
         "removedDevices",

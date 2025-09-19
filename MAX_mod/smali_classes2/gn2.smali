@@ -1,184 +1,152 @@
-.class public final Lgn2;
-.super Lxie;
+.class public final enum Lgn2;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Landroid/os/Parcelable;
 
 
-# instance fields
-.field public X:I
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lgn2;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public static final enum X:Lgn2;
 
-.field public final synthetic Z:Lls;
+.field public static final synthetic Y:[Lgn2;
 
-.field public final synthetic n0:Lln2;
+.field public static final enum a:Lgn2;
+
+.field public static final enum b:Lgn2;
+
+.field public static final enum c:Lgn2;
+
+.field public static final enum o:Lgn2;
 
 
 # direct methods
-.method public constructor <init>(Lls;Lln2;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 7
 
-    iput-object p1, p0, Lgn2;->Z:Lls;
+    new-instance v0, Lgn2;
 
-    iput-object p2, p0, Lgn2;->n0:Lln2;
+    const-string v1, "DIALOG_MESSAGE"
 
-    const/4 p1, 0x2
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lgn2;->a:Lgn2;
+
+    new-instance v1, Lgn2;
+
+    const-string v2, "CHAT_MESSAGE"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lgn2;->b:Lgn2;
+
+    new-instance v2, Lgn2;
+
+    const-string v3, "CHANNEL_MESSAGE"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lgn2;->c:Lgn2;
+
+    new-instance v3, Lgn2;
+
+    const-string v4, "GROUP_CHAT"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lgn2;->o:Lgn2;
+
+    new-instance v4, Lgn2;
+
+    const-string v5, "SCHEDULED_MESSAGE"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Lgn2;->X:Lgn2;
+
+    filled-new-array {v0, v1, v2, v3, v4}, [Lgn2;
+
+    move-result-object v0
+
+    sput-object v0, Lgn2;->Y:[Lgn2;
+
+    new-instance v0, Lz7;
+
+    const/16 v1, 0x14
+
+    invoke-direct {v0, v1}, Lz7;-><init>(I)V
+
+    sput-object v0, Lgn2;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lgn2;
+    .registers 2
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    const-class v0, Lgn2;
 
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lgn2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
     check-cast p0, Lgn2;
 
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lgn2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
     return-object p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+.method public static values()[Lgn2;
+    .registers 1
 
-    new-instance v0, Lgn2;
+    sget-object v0, Lgn2;->Y:[Lgn2;
 
-    iget-object v1, p0, Lgn2;->Z:Lls;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    iget-object p0, p0, Lgn2;->n0:Lln2;
+    move-result-object v0
 
-    invoke-direct {v0, v1, p0, p2}, Lgn2;-><init>(Lls;Lln2;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lgn2;->Y:Ljava/lang/Object;
+    check-cast v0, [Lgn2;
 
     return-object v0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
 
-    iget v0, p0, Lgn2;->X:I
+# virtual methods
+.method public final describeContents()I
+    .registers 1
 
-    const/4 v1, 0x1
+    const/4 p0, 0x0
 
-    if-eqz v0, :cond_1
+    return p0
+.end method
 
-    if-ne v0, v1, :cond_0
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object p1
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lgn2;->Y:Ljava/lang/Object;
-
-    check-cast p1, Lr04;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v2, "getFcmHistory: chats="
-
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lgn2;->Z:Lls;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v3, "ln2"
-
-    invoke-static {v3, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Lls;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    sget-object p0, Lt25;->a:Lt25;
-
-    return-object p0
-
-    :cond_2
-    new-instance v0, Lfn2;
-
-    iget-object v3, p0, Lgn2;->n0:Lln2;
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v2, v3, v4}, Lfn2;-><init>(Lls;Lln2;Lkotlin/coroutines/Continuation;)V
-
-    new-instance v2, Lwtc;
-
-    invoke-direct {v2, v0}, Lwtc;-><init>(Lx96;)V
-
-    iput v1, p0, Lgn2;->X:I
-
-    invoke-static {v2, v1}, Lbug;->o(Lfq5;I)Liy;
-
-    move-result-object v0
-
-    new-instance v1, Ldc3;
-
-    invoke-direct {v1}, Ldc3;-><init>()V
-
-    iget-object v2, v0, Liy;->d:Ljava/lang/Object;
-
-    check-cast v2, Lj04;
-
-    iget-object v0, v0, Liy;->c:Ljava/lang/Object;
-
-    check-cast v0, Lfq5;
-
-    new-instance v3, Lzs5;
-
-    invoke-direct {v3, v0, v1, v4}, Lzs5;-><init>(Lfq5;Ldc3;Lkotlin/coroutines/Continuation;)V
-
-    const/4 v0, 0x2
-
-    invoke-static {p1, v2, v4, v3, v0}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    invoke-virtual {v1, p0}, Lnc7;->awaitInternal(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    if-ne p0, p1, :cond_3
-
-    return-object p1
-
-    :cond_3
-    return-object p0
+    return-void
 .end method

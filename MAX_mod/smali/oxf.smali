@@ -1,184 +1,171 @@
 .class public final Loxf;
-.super Lvmc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Landroid/view/Choreographer$FrameCallback;
+.implements Landroid/os/Handler$Callback;
+
+
+# static fields
+.field public static final X:Loxf;
 
 
 # instance fields
-.field public final synthetic X:Landroid/view/View;
+.field public volatile a:J
 
-.field public c:I
+.field public final b:Landroid/os/Handler;
 
-.field public synthetic o:Ljava/lang/Object;
+.field public c:Landroid/view/Choreographer;
+
+.field public o:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lkotlin/coroutines/Continuation;)V
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Loxf;
+
+    invoke-direct {v0}, Loxf;-><init>()V
+
+    sput-object v0, Loxf;->X:Loxf;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .registers 3
 
-    iput-object p1, p0, Loxf;->X:Landroid/view/View;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    invoke-direct {p0, p1, p2}, Lvmc;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-wide v0, p0, Loxf;->a:J
+
+    new-instance v0, Landroid/os/HandlerThread;
+
+    const-string v1, "ExoPlayer:FrameReleaseChoreographer"
+
+    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    sget v1, Lnrf;->a:I
+
+    new-instance v1, Landroid/os/Handler;
+
+    invoke-direct {v1, v0, p0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+
+    iput-object v1, p0, Loxf;->b:Landroid/os/Handler;
+
+    const/4 p0, 0x1
+
+    invoke-virtual {v1, p0}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final doFrame(J)V
+    .registers 5
 
-    check-cast p1, Ly9d;
+    iput-wide p1, p0, Loxf;->a:J
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p1, p0, Loxf;->c:Landroid/view/Choreographer;
 
-    invoke-virtual {p0, p1, p2}, Loxf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object p0
+    const-wide/16 v0, 0x1f4
 
-    check-cast p0, Loxf;
+    invoke-virtual {p1, p0, v0, v1}, Landroid/view/Choreographer;->postFrameCallbackDelayed(Landroid/view/Choreographer$FrameCallback;J)V
 
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Loxf;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public final handleMessage(Landroid/os/Message;)Z
+    .registers 5
 
-    new-instance v0, Loxf;
+    iget p1, p1, Landroid/os/Message;->what:I
 
-    iget-object p0, p0, Loxf;->X:Landroid/view/View;
+    const/4 v0, 0x1
 
-    invoke-direct {v0, p0, p2}, Loxf;-><init>(Landroid/view/View;Lkotlin/coroutines/Continuation;)V
+    if-eq p1, v0, :cond_3
 
-    iput-object p1, v0, Loxf;->o:Ljava/lang/Object;
+    const/4 v1, 0x2
 
-    return-object v0
-.end method
+    if-eq p1, v1, :cond_1
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    const/4 v1, 0x3
 
-    iget v0, p0, Loxf;->c:I
+    if-eq p1, v1, :cond_0
 
-    iget-object v1, p0, Loxf;->X:Landroid/view/View;
+    const/4 p0, 0x0
 
-    const/4 v2, 0x1
-
-    sget-object v3, Ls04;->a:Ls04;
-
-    if-eqz v0, :cond_5
-
-    sget-object v4, Lncf;->a:Lncf;
-
-    const/4 v5, 0x2
-
-    if-eq v0, v2, :cond_1
-
-    if-ne v0, v5, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object v4
+    return p0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iget-object p1, p0, Loxf;->c:Landroid/view/Choreographer;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    if-eqz p1, :cond_2
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget v1, p0, Loxf;->o:I
 
-    throw p0
+    sub-int/2addr v1, v0
 
-    :cond_1
-    iget-object v0, p0, Loxf;->o:Ljava/lang/Object;
-
-    check-cast v0, Ly9d;
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    instance-of p1, v1, Landroid/view/ViewGroup;
-
-    if-eqz p1, :cond_4
-
-    check-cast v1, Landroid/view/ViewGroup;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Loxf;->o:Ljava/lang/Object;
-
-    iput v5, p0, Loxf;->c:I
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p1, Lt4f;
-
-    new-instance v2, Lt1;
-
-    const/4 v6, 0x5
-
-    invoke-direct {v2, v6, v1}, Lt1;-><init>(ILjava/lang/Object;)V
-
-    invoke-direct {p1, v2}, Lt4f;-><init>(Lt1;)V
-
-    iget-object v1, p1, Lt4f;->b:Ljava/util/Iterator;
-
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
+    iput v1, p0, Loxf;->o:I
 
     if-nez v1, :cond_2
 
-    move-object p0, v4
+    invoke-virtual {p1, p0}, Landroid/view/Choreographer;->removeFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
-    goto :goto_0
+    const-wide v1, -0x7fffffffffffffffL    # -4.9E-324
+
+    iput-wide v1, p0, Loxf;->a:J
+
+    return v0
+
+    :cond_1
+    iget-object p1, p0, Loxf;->c:Landroid/view/Choreographer;
+
+    if-eqz p1, :cond_2
+
+    iget v1, p0, Loxf;->o:I
+
+    add-int/2addr v1, v0
+
+    iput v1, p0, Loxf;->o:I
+
+    if-ne v1, v0, :cond_2
+
+    invoke-virtual {p1, p0}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
     :cond_2
-    iput-object p1, v0, Ly9d;->c:Ljava/util/Iterator;
-
-    iput v5, v0, Ly9d;->a:I
-
-    iput-object p0, v0, Ly9d;->o:Lkotlin/coroutines/Continuation;
-
-    move-object p0, v3
-
-    :goto_0
-    if-ne p0, v3, :cond_3
-
-    goto :goto_1
+    return v0
 
     :cond_3
-    move-object p0, v4
+    :try_start_0
+    invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
-    :goto_1
-    if-ne p0, v3, :cond_4
+    move-result-object p1
 
-    return-object v3
+    iput-object p1, p0, Loxf;->c:Landroid/view/Choreographer;
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_4
-    return-object v4
+    return v0
 
-    :cond_5
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    :catch_0
+    move-exception p0
 
-    iget-object p1, p0, Loxf;->o:Ljava/lang/Object;
+    const-string p1, "Vsync sampling disabled due to platform error"
 
-    check-cast p1, Ly9d;
+    invoke-static {p1, p0}, Lxnd;->m0(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iput-object p1, p0, Loxf;->o:Ljava/lang/Object;
-
-    iput v2, p0, Loxf;->c:I
-
-    invoke-virtual {p1, v1, p0}, Ly9d;->b(Ljava/lang/Object;Lvmc;)V
-
-    return-object v3
+    return v0
 .end method

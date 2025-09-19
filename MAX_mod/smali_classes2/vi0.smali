@@ -1,89 +1,140 @@
-.class public abstract Lvi0;
+.class public final synthetic Lvi0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpm3;
+
 
 # instance fields
-.field public final a:Lgpd;
+.field public final synthetic a:Ln58;
 
-.field public final b:Lkotlinx/coroutines/internal/ContextScope;
+.field public final synthetic b:J
+
+.field public final synthetic c:Z
+
+.field public final synthetic o:J
 
 
 # direct methods
-.method public constructor <init>(Lzne;)V
-    .registers 4
+.method public synthetic constructor <init>(Ln58;JZJ)V
+    .registers 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lvi0;->a:Ln58;
 
-    const/4 v1, 0x7
+    iput-wide p2, p0, Lvi0;->b:J
 
-    invoke-static {v0, v0, v1}, Lhpd;->b(III)Lgpd;
+    iput-boolean p4, p0, Lvi0;->c:Z
 
-    move-result-object v0
-
-    iput-object v0, p0, Lvi0;->a:Lgpd;
-
-    check-cast p1, Ltba;
-
-    invoke-virtual {p1}, Ltba;->a()Ll04;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lvi0;->b:Lkotlinx/coroutines/internal/ContextScope;
+    iput-wide p5, p0, Lvi0;->o:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ltu2;)V
-    .registers 4
+.method public final accept(Ljava/lang/Object;)V
+    .registers 7
 
-    new-instance v0, Lui0;
+    check-cast p1, Ljava/util/Map;
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lvi0;->a:Ln58;
 
-    invoke-direct {v0, p0, p1, v1}, Lui0;-><init>(Lvi0;Ltu2;Lkotlin/coroutines/Continuation;)V
+    iget-object v0, v0, Ln58;->b:Ljava/util/LinkedHashMap;
 
-    const/4 p1, 0x3
+    iget-wide v1, p0, Lvi0;->b:J
 
-    iget-object p0, p0, Lvi0;->b:Lkotlinx/coroutines/internal/ContextScope;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    move-result-object v1
 
-    return-void
-.end method
+    invoke-virtual {v0, v1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public final b()Ljn3;
-    .registers 5
+    move-result-object v1
 
-    sget v0, Llw4;->o:I
+    check-cast v1, Lwi0;
 
-    const/16 v0, 0x12c
+    iget-boolean v2, p0, Lvi0;->c:Z
 
-    sget-object v1, Lqw4;->c:Lqw4;
+    if-eqz v1, :cond_1
 
-    invoke-static {v0, v1}, Lg5e;->G(ILqw4;)J
+    iget-object v1, v1, Lwi0;->a:Lq2e;
 
-    move-result-wide v0
+    if-eqz v2, :cond_0
 
-    new-instance v2, Lti0;
+    sget-object v3, Lr58;->a:Lr58;
 
-    const/4 v3, 0x0
+    invoke-interface {p1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v2, v3}, Lti0;-><init>(I)V
+    move-result-object v3
 
-    iget-object p0, p0, Lvi0;->a:Lgpd;
+    check-cast v3, Lsn0;
 
-    invoke-static {p0, v0, v1, v2}, Lkbf;->k(Lfq5;JLx96;)Ljn3;
+    invoke-virtual {v1, v3}, Lq2e;->p(Lsn0;)V
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v3, Lr58;->c:Lr58;
+
+    invoke-interface {p1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lsn0;
+
+    invoke-virtual {v1, v3}, Lq2e;->p(Lsn0;)V
+
+    :goto_0
+    invoke-virtual {v1}, Lq2e;->r()V
+
+    :cond_1
+    iget-wide v3, p0, Lvi0;->o:J
+
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
 
-    return-object p0
+    invoke-virtual {v0, p0}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lwi0;
+
+    if-eqz p0, :cond_3
+
+    iget-object p0, p0, Lwi0;->a:Lq2e;
+
+    if-eqz v2, :cond_2
+
+    sget-object v0, Lr58;->b:Lr58;
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lsn0;
+
+    invoke-virtual {p0, p1}, Lq2e;->p(Lsn0;)V
+
+    goto :goto_1
+
+    :cond_2
+    sget-object v0, Lr58;->o:Lr58;
+
+    invoke-interface {p1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lsn0;
+
+    invoke-virtual {p0, p1}, Lq2e;->p(Lsn0;)V
+
+    :goto_1
+    invoke-virtual {p0}, Lq2e;->r()V
+
+    :cond_3
+    return-void
 .end method

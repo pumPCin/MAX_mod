@@ -1,528 +1,236 @@
-.class public final enum Lpi5;
-.super Ljava/lang/Enum;
+.class public final Lpi5;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lri5;
-
-
-# static fields
-.field public static final synthetic b:[Lpi5;
-
-.field public static final synthetic c:Lc65;
 
 
 # instance fields
-.field public final a:Lki5;
+.field public final a:Lexc;
+
+.field public final b:Luh;
+
+.field public final c:Lvh;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 42
-
-    new-instance v1, Lpi5;
-
-    sget-object v0, Lki5;->Z:Lki5;
-
-    const-string v2, "PDF"
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v2, Lpi5;
-
-    const-string v3, "PPT"
-
-    const/4 v4, 0x1
-
-    invoke-direct {v2, v3, v4, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v3, Lpi5;
-
-    const-string v4, "PPTX"
-
-    const/4 v5, 0x2
-
-    invoke-direct {v3, v4, v5, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v4, Lpi5;
-
-    const-string v5, "KEY"
-
-    const/4 v6, 0x3
-
-    invoke-direct {v4, v5, v6, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v5, Lpi5;
-
-    sget-object v0, Lki5;->n0:Lki5;
-
-    const-string v6, "XLS"
-
-    const/4 v7, 0x4
-
-    invoke-direct {v5, v6, v7, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v6, Lpi5;
-
-    const-string v7, "XLSX"
-
-    const/4 v8, 0x5
-
-    invoke-direct {v6, v7, v8, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v7, Lpi5;
-
-    const-string v8, "CSV"
-
-    const/4 v9, 0x6
-
-    invoke-direct {v7, v8, v9, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v8, Lpi5;
-
-    sget-object v0, Lki5;->o0:Lki5;
-
-    const-string v9, "DOC"
-
-    const/4 v10, 0x7
-
-    invoke-direct {v8, v9, v10, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v9, Lpi5;
-
-    const-string v10, "DOCX"
-
-    const/16 v11, 0x8
-
-    invoke-direct {v9, v10, v11, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v10, Lpi5;
-
-    const-string v11, "TXT"
-
-    const/16 v12, 0x9
-
-    invoke-direct {v10, v11, v12, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v11, Lpi5;
-
-    const-string v12, "RTF"
-
-    const/16 v13, 0xa
-
-    invoke-direct {v11, v12, v13, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v12, Lpi5;
-
-    const-string v13, "ODT"
-
-    const/16 v14, 0xb
-
-    invoke-direct {v12, v13, v14, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v13, Lpi5;
-
-    sget-object v0, Lki5;->p0:Lki5;
-
-    const-string v14, "JPG"
-
-    const/16 v15, 0xc
-
-    invoke-direct {v13, v14, v15, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v14, Lpi5;
-
-    const-string v15, "PNG"
-
-    move-object/from16 v16, v1
-
-    const/16 v1, 0xd
-
-    invoke-direct {v14, v15, v1, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v15, Lpi5;
-
-    const-string v1, "GIF"
-
-    move-object/from16 v17, v2
-
-    const/16 v2, 0xe
-
-    invoke-direct {v15, v1, v2, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v1, Lpi5;
-
-    const-string v2, "BMP"
-
-    move-object/from16 v18, v3
-
-    const/16 v3, 0xf
-
-    invoke-direct {v1, v2, v3, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v2, Lpi5;
-
-    const-string v3, "HEIC"
-
-    move-object/from16 v19, v1
-
-    const/16 v1, 0x10
-
-    invoke-direct {v2, v3, v1, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v1, Lpi5;
-
-    const-string v3, "WEBP"
-
-    move-object/from16 v20, v2
-
-    const/16 v2, 0x11
-
-    invoke-direct {v1, v3, v2, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v2, Lpi5;
-
-    const-string v3, "SVG"
-
-    move-object/from16 v21, v1
-
-    const/16 v1, 0x12
-
-    invoke-direct {v2, v3, v1, v0}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v0, Lpi5;
-
-    sget-object v1, Lki5;->q0:Lki5;
-
-    const-string v3, "MP4"
-
-    move-object/from16 v22, v2
-
-    const/16 v2, 0x13
-
-    invoke-direct {v0, v3, v2, v1}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v2, Lpi5;
-
-    const-string v3, "MOV"
-
-    move-object/from16 v23, v0
-
-    const/16 v0, 0x14
-
-    invoke-direct {v2, v3, v0, v1}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v0, Lpi5;
-
-    const-string v3, "AVI"
-
-    move-object/from16 v24, v2
-
-    const/16 v2, 0x15
-
-    invoke-direct {v0, v3, v2, v1}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v2, Lpi5;
-
-    const-string v3, "MKV"
-
-    move-object/from16 v25, v0
-
-    const/16 v0, 0x16
-
-    invoke-direct {v2, v3, v0, v1}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v0, Lpi5;
-
-    const-string v3, "WEBM"
-
-    move-object/from16 v26, v2
-
-    const/16 v2, 0x17
-
-    invoke-direct {v0, v3, v2, v1}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v1, Lpi5;
-
-    sget-object v2, Lki5;->r0:Lki5;
-
-    const-string v3, "ZIP"
-
-    move-object/from16 v27, v0
-
-    const/16 v0, 0x18
-
-    invoke-direct {v1, v3, v0, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v0, Lpi5;
-
-    const-string v3, "RAR"
-
-    move-object/from16 v28, v1
-
-    const/16 v1, 0x19
-
-    invoke-direct {v0, v3, v1, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v1, Lpi5;
-
-    const-string v3, "Z7"
-
-    move-object/from16 v29, v0
-
-    const/16 v0, 0x1a
-
-    invoke-direct {v1, v3, v0, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v0, Lpi5;
-
-    const-string v3, "TAR"
-
-    move-object/from16 v30, v1
-
-    const/16 v1, 0x1b
-
-    invoke-direct {v0, v3, v1, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v1, Lpi5;
-
-    const-string v3, "GZ"
-
-    move-object/from16 v31, v0
-
-    const/16 v0, 0x1c
-
-    invoke-direct {v1, v3, v0, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v0, Lpi5;
-
-    sget-object v2, Lki5;->s0:Lki5;
-
-    const-string v3, "EXE"
-
-    move-object/from16 v32, v1
-
-    const/16 v1, 0x1d
-
-    invoke-direct {v0, v3, v1, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v1, Lpi5;
-
-    const-string v3, "APK"
-
-    move-object/from16 v33, v0
-
-    const/16 v0, 0x1e
-
-    invoke-direct {v1, v3, v0, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v0, Lpi5;
-
-    const-string v3, "DMG"
-
-    move-object/from16 v34, v1
-
-    const/16 v1, 0x1f
-
-    invoke-direct {v0, v3, v1, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v1, Lpi5;
-
-    const-string v3, "BAT"
-
-    move-object/from16 v35, v0
-
-    const/16 v0, 0x20
-
-    invoke-direct {v1, v3, v0, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v0, Lpi5;
-
-    const-string v3, "SH"
-
-    move-object/from16 v36, v1
-
-    const/16 v1, 0x21
-
-    invoke-direct {v0, v3, v1, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v1, Lpi5;
-
-    sget-object v2, Lki5;->t0:Lki5;
-
-    const-string v3, "MP3"
-
-    move-object/from16 v37, v0
-
-    const/16 v0, 0x22
-
-    invoke-direct {v1, v3, v0, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v0, Lpi5;
-
-    const-string v3, "WAV"
-
-    move-object/from16 v38, v1
-
-    const/16 v1, 0x23
-
-    invoke-direct {v0, v3, v1, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v1, Lpi5;
-
-    const-string v3, "AAC"
-
-    move-object/from16 v39, v0
-
-    const/16 v0, 0x24
-
-    invoke-direct {v1, v3, v0, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v0, Lpi5;
-
-    const-string v3, "OGG"
-
-    move-object/from16 v40, v1
-
-    const/16 v1, 0x25
-
-    invoke-direct {v0, v3, v1, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    new-instance v1, Lpi5;
-
-    const-string v3, "FLAC"
-
-    move-object/from16 v41, v0
-
-    const/16 v0, 0x26
-
-    invoke-direct {v1, v3, v0, v2}, Lpi5;-><init>(Ljava/lang/String;ILki5;)V
-
-    move-object/from16 v2, v17
-
-    move-object/from16 v3, v18
-
-    move-object/from16 v17, v20
-
-    move-object/from16 v18, v21
-
-    move-object/from16 v20, v23
-
-    move-object/from16 v21, v24
-
-    move-object/from16 v23, v26
-
-    move-object/from16 v24, v27
-
-    move-object/from16 v26, v29
-
-    move-object/from16 v27, v30
-
-    move-object/from16 v29, v32
-
-    move-object/from16 v30, v33
-
-    move-object/from16 v32, v35
-
-    move-object/from16 v33, v36
-
-    move-object/from16 v35, v38
-
-    move-object/from16 v36, v39
-
-    move-object/from16 v38, v41
-
-    move-object/from16 v39, v1
-
-    move-object/from16 v1, v16
-
-    move-object/from16 v16, v19
-
-    move-object/from16 v19, v22
-
-    move-object/from16 v22, v25
-
-    move-object/from16 v25, v28
-
-    move-object/from16 v28, v31
-
-    move-object/from16 v31, v34
-
-    move-object/from16 v34, v37
-
-    move-object/from16 v37, v40
-
-    filled-new-array/range {v1 .. v39}, [Lpi5;
-
-    move-result-object v0
-
-    sput-object v0, Lpi5;->b:[Lpi5;
-
-    new-instance v1, Lc65;
-
-    invoke-direct {v1, v0}, Lc65;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lpi5;->c:Lc65;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;ILki5;)V
+.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
     .registers 4
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lpi5;->a:Lki5;
+    iput-object p1, p0, Lpi5;->a:Lexc;
+
+    new-instance v0, Luh;
+
+    const/16 v1, 0x8
+
+    invoke-direct {v0, p1, v1}, Luh;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lpi5;->b:Luh;
+
+    new-instance v0, Lvh;
+
+    const/16 v1, 0x13
+
+    invoke-direct {v0, p1, v1}, Lvh;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lpi5;->c:Lvh;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lpi5;
-    .registers 2
+.method public static b(ILjava/util/List;)Ljava/util/ArrayList;
+    .registers 8
 
-    const-class v0, Lpi5;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result-object p0
+    move-result v1
 
-    check-cast p0, Lpi5;
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    return-object p0
-.end method
+    const/4 v1, 0x0
 
-.method public static values()[Lpi5;
-    .registers 1
+    :goto_0
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    sget-object v0, Lpi5;->b:[Lpi5;
+    move-result v2
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    if-ge v1, v2, :cond_0
 
-    move-result-object v0
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    check-cast v0, [Lpi5;
+    move-result-object v2
 
+    check-cast v2, Ljava/lang/Long;
+
+    new-instance v3, Ldh5;
+
+    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    iput-wide v4, v3, Ldh5;->a:J
+
+    add-int v2, p0, v1
+
+    int-to-long v4, v2
+
+    iput-wide v4, v3, Ldh5;->b:J
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .registers 1
+.method public final a(Ljava/util/List;)V
+    .registers 6
 
-    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    iget-object v0, p0, Lpi5;->a:Lexc;
+
+    invoke-virtual {v0}, Lexc;->c()V
+
+    :try_start_0
+    new-instance v1, Lue4;
+
+    const/4 v2, 0x3
+
+    invoke-direct {v1, v2, p0}, Lue4;-><init>(ILjava/lang/Object;)V
+
+    new-instance v2, Lkc3;
+
+    const/4 v3, 0x2
+
+    invoke-direct {v2, v3, v1}, Lkc3;-><init>(ILjava/lang/Object;)V
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, p1}, Lpi5;->b(ILjava/util/List;)Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    new-instance v1, Lwh;
+
+    const/16 v3, 0x9
+
+    invoke-direct {v1, p0, v3, p1}, Lwh;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    new-instance p0, Lkc3;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, v1}, Lkc3;-><init>(ILjava/lang/Object;)V
+
+    new-instance p1, Lic3;
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, v2, v1, p0}, Lic3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {p1}, Lhc3;->a()V
+
+    invoke-virtual {v0}, Lexc;->q()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v0}, Lexc;->k()V
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    invoke-virtual {v0}, Lexc;->k()V
+
+    throw p0
+.end method
+
+.method public final c()Ljava/util/ArrayList;
+    .registers 6
+
+    const/4 v0, 0x0
+
+    const-string v1, "SELECT id FROM favorite_stickers ORDER BY `index` ASC"
+
+    invoke-static {v0, v1}, Lvxc;->c(ILjava/lang/String;)Lvxc;
+
+    move-result-object v1
+
+    iget-object p0, p0, Lpi5;->a:Lexc;
+
+    invoke-virtual {p0}, Lexc;->b()V
+
+    invoke-virtual {p0, v1}, Lexc;->n(Lpqe;)Landroid/database/Cursor;
 
     move-result-object p0
 
-    return-object p0
-.end method
+    :try_start_0
+    new-instance v2, Ljava/util/ArrayList;
 
-.method public final b()Lki5;
-    .registers 1
+    invoke-interface {p0}, Landroid/database/Cursor;->getCount()I
 
-    iget-object p0, p0, Lpi5;->a:Lki5;
+    move-result v3
 
-    return-object p0
+    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
+
+    :goto_0
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-interface {p0, v0}, Landroid/database/Cursor;->isNull(I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    const/4 v3, 0x0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-interface {p0, v0}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    :goto_1
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_2
+
+    :cond_1
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v1}, Lvxc;->n()V
+
+    return-object v2
+
+    :goto_2
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v1}, Lvxc;->n()V
+
+    throw v0
 .end method

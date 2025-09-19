@@ -1,19 +1,19 @@
 .class public final Lzeg;
-.super Lafg;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Z
+# virtual methods
+.method public final serializer()Lyi7;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lyi7;"
+        }
+    .end annotation
 
+    sget-object p0, Lyeg;->a:Lyeg;
 
-# direct methods
-.method public constructor <init>(Z)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Throwable;-><init>()V
-
-    iput-boolean p1, p0, Lzeg;->a:Z
-
-    return-void
+    return-object p0
 .end method

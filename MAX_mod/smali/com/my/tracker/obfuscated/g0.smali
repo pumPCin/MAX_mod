@@ -251,11 +251,11 @@
 .method public static a(Lcom/my/tracker/obfuscated/z0;Lcom/my/tracker/obfuscated/t;Landroid/content/Context;)V
     .registers 5
 
-    new-instance v0, Lepc;
+    new-instance v0, Ljxc;
 
     const/16 v1, 0x13
 
-    invoke-direct {v0, p2, p0, p1, v1}, Lepc;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v0, p2, p0, p1, v1}, Ljxc;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
     invoke-static {v0}, Lcom/my/tracker/obfuscated/h;->a(Ljava/lang/Runnable;)V
 

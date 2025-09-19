@@ -1,616 +1,359 @@
-.class public final Llcf;
-.super Lmu5;
+.class public Llcf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public volatile X:Z
+.field public A:Z
 
-.field public Y:Ljava/lang/Throwable;
+.field public B:Z
 
-.field public final Z:Ljava/util/concurrent/atomic/AtomicReference;
+.field public C:Z
 
-.field public final b:Lk0e;
+.field public D:Ljava/util/HashMap;
 
-.field public final c:Ljava/util/concurrent/atomic/AtomicReference;
+.field public E:Ljava/util/HashSet;
 
-.field public volatile n0:Z
+.field public a:I
 
-.field public final o:Z
+.field public b:I
 
-.field public final o0:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public c:I
 
-.field public final p0:Lkcf;
+.field public d:I
 
-.field public final q0:Ljava/util/concurrent/atomic/AtomicLong;
+.field public e:I
 
-.field public r0:Z
+.field public f:I
+
+.field public g:I
+
+.field public h:I
+
+.field public i:I
+
+.field public j:I
+
+.field public k:Z
+
+.field public l:Z
+
+.field public m:Ll37;
+
+.field public n:Ll37;
+
+.field public o:I
+
+.field public p:Ll37;
+
+.field public q:I
+
+.field public r:I
+
+.field public s:I
+
+.field public t:Ll37;
+
+.field public u:Ljcf;
+
+.field public v:Ll37;
+
+.field public w:I
+
+.field public x:Z
+
+.field public y:I
+
+.field public z:Z
 
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lk0e;
+    const v0, 0x7fffffff
 
-    const/16 v1, 0x8
+    iput v0, p0, Llcf;->a:I
 
-    invoke-direct {v0, v1}, Lk0e;-><init>(I)V
+    iput v0, p0, Llcf;->b:I
 
-    iput-object v0, p0, Llcf;->b:Lk0e;
+    iput v0, p0, Llcf;->c:I
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+    iput v0, p0, Llcf;->d:I
 
-    const/4 v1, 0x0
+    iput v0, p0, Llcf;->i:I
 
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+    iput v0, p0, Llcf;->j:I
 
-    iput-object v0, p0, Llcf;->c:Ljava/util/concurrent/atomic/AtomicReference;
+    const/4 v1, 0x1
 
-    const/4 v0, 0x1
+    iput-boolean v1, p0, Llcf;->k:Z
 
-    iput-boolean v0, p0, Llcf;->o:Z
+    iput-boolean v1, p0, Llcf;->l:Z
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+    sget-object v2, Ll37;->b:Lgx5;
 
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    sget-object v2, Llqc;->X:Llqc;
 
-    iput-object v0, p0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object v2, p0, Llcf;->m:Ll37;
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v2, p0, Llcf;->n:Ll37;
 
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+    const/4 v3, 0x0
 
-    iput-object v0, p0, Llcf;->o0:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput v3, p0, Llcf;->o:I
 
-    new-instance v0, Lkcf;
+    iput-object v2, p0, Llcf;->p:Ll37;
 
-    invoke-direct {v0, p0}, Lkcf;-><init>(Llcf;)V
+    iput v3, p0, Llcf;->q:I
 
-    iput-object v0, p0, Llcf;->p0:Lkcf;
+    iput v0, p0, Llcf;->r:I
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
+    iput v0, p0, Llcf;->s:I
 
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
+    iput-object v2, p0, Llcf;->t:Ll37;
 
-    iput-object v0, p0, Llcf;->q0:Ljava/util/concurrent/atomic/AtomicLong;
+    sget-object v0, Ljcf;->d:Ljcf;
+
+    iput-object v0, p0, Llcf;->u:Ljcf;
+
+    iput-object v2, p0, Llcf;->v:Ll37;
+
+    iput v3, p0, Llcf;->w:I
+
+    iput-boolean v1, p0, Llcf;->x:Z
+
+    iput v3, p0, Llcf;->y:I
+
+    iput-boolean v3, p0, Llcf;->z:Z
+
+    iput-boolean v3, p0, Llcf;->A:Z
+
+    iput-boolean v3, p0, Llcf;->B:Z
+
+    iput-boolean v3, p0, Llcf;->C:Z
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Llcf;->D:Ljava/util/HashMap;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, Llcf;->E:Ljava/util/HashSet;
 
     return-void
+.end method
+
+.method public static e([Ljava/lang/String;)Llqc;
+    .registers 5
+
+    invoke-static {}, Ll37;->i()Li37;
+
+    move-result-object v0
+
+    array-length v1, p0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    aget-object v3, p0, v2
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {v3}, Lnrf;->V(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lb37;->a(Ljava/lang/Object;)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Li37;->h()Llqc;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final b()V
+.method public a(Lgcf;)V
     .registers 3
 
-    iget-boolean v0, p0, Llcf;->X:Z
+    iget-object p0, p0, Llcf;->D:Ljava/util/HashMap;
 
-    if-nez v0, :cond_2
+    iget-object v0, p1, Lgcf;->a:Lubf;
 
-    iget-boolean v0, p0, Llcf;->n0:Z
+    invoke-virtual {p0, v0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Llcf;->X:Z
-
-    iget-object v0, p0, Llcf;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Runnable;
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    :cond_1
-    invoke-virtual {p0}, Llcf;->i()V
-
-    :cond_2
-    :goto_0
     return-void
 .end method
 
-.method public final d(Ljava/lang/Object;)V
-    .registers 3
+.method public b()Lncf;
+    .registers 2
 
-    const-string v0, "onNext called with a null value."
+    new-instance v0, Lncf;
 
-    invoke-static {p1, v0}, Lu75;->c(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, p0}, Lncf;-><init>(Llcf;)V
 
-    iget-boolean v0, p0, Llcf;->X:Z
-
-    if-nez v0, :cond_1
-
-    iget-boolean v0, p0, Llcf;->n0:Z
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Llcf;->b:Lk0e;
-
-    invoke-virtual {v0, p1}, Lk0e;->offer(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0}, Llcf;->i()V
-
-    :cond_1
-    :goto_0
-    return-void
+    return-object v0
 .end method
 
-.method public final f(Lsee;)V
+.method public c()Llcf;
+    .registers 2
+
+    iget-object v0, p0, Llcf;->D:Ljava/util/HashMap;
+
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    return-object p0
+.end method
+
+.method public final d(Lncf;)V
     .registers 4
 
-    iget-boolean v0, p0, Llcf;->X:Z
+    iget v0, p1, Lncf;->a:I
 
-    if-nez v0, :cond_1
+    iput v0, p0, Llcf;->a:I
 
-    iget-boolean p0, p0, Llcf;->n0:Z
+    iget v0, p1, Lncf;->b:I
 
-    if-eqz p0, :cond_0
+    iput v0, p0, Llcf;->b:I
 
-    goto :goto_0
+    iget v0, p1, Lncf;->c:I
 
-    :cond_0
-    const-wide v0, 0x7fffffffffffffffL
+    iput v0, p0, Llcf;->c:I
 
-    invoke-interface {p1, v0, v1}, Lsee;->i(J)V
+    iget v0, p1, Lncf;->d:I
 
-    return-void
+    iput v0, p0, Llcf;->d:I
 
-    :cond_1
-    :goto_0
-    invoke-interface {p1}, Lsee;->cancel()V
+    iget v0, p1, Lncf;->e:I
 
-    return-void
-.end method
+    iput v0, p0, Llcf;->e:I
 
-.method public final g(Lyu5;)V
-    .registers 5
+    iget v0, p1, Lncf;->f:I
 
-    iget-object v0, p0, Llcf;->o0:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput v0, p0, Llcf;->f:I
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    iget v0, p1, Lncf;->g:I
 
-    move-result v0
+    iput v0, p0, Llcf;->g:I
 
-    if-nez v0, :cond_1
+    iget v0, p1, Lncf;->h:I
 
-    iget-object v0, p0, Llcf;->o0:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput v0, p0, Llcf;->h:I
 
-    const/4 v1, 0x0
+    iget v0, p1, Lncf;->i:I
 
-    const/4 v2, 0x1
+    iput v0, p0, Llcf;->i:I
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    iget v0, p1, Lncf;->j:I
 
-    move-result v0
+    iput v0, p0, Llcf;->j:I
 
-    if-eqz v0, :cond_1
+    iget-boolean v0, p1, Lncf;->k:Z
 
-    iget-object v0, p0, Llcf;->p0:Lkcf;
+    iput-boolean v0, p0, Llcf;->k:Z
 
-    invoke-interface {p1, v0}, Lqee;->f(Lsee;)V
+    iget-boolean v0, p1, Lncf;->l:Z
 
-    iget-object v0, p0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-boolean v0, p0, Llcf;->l:Z
 
-    invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    iget-object v0, p1, Lncf;->m:Ll37;
 
-    iget-boolean p1, p0, Llcf;->n0:Z
+    iput-object v0, p0, Llcf;->m:Ll37;
 
-    if-eqz p1, :cond_0
+    iget-object v0, p1, Lncf;->n:Ll37;
 
-    iget-object p0, p0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object v0, p0, Llcf;->n:Ll37;
 
-    const/4 p1, 0x0
+    iget v0, p1, Lncf;->o:I
 
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+    iput v0, p0, Llcf;->o:I
 
-    return-void
+    iget-object v0, p1, Lncf;->p:Ll37;
 
-    :cond_0
-    invoke-virtual {p0}, Llcf;->i()V
+    iput-object v0, p0, Llcf;->p:Ll37;
 
-    return-void
+    iget v0, p1, Lncf;->q:I
 
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iput v0, p0, Llcf;->q:I
 
-    const-string v0, "This processor allows only a single Subscriber"
+    iget v0, p1, Lncf;->r:I
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iput v0, p0, Llcf;->r:I
 
-    invoke-static {p0, p1}, Lk35;->b(Ljava/lang/Throwable;Lqee;)V
+    iget v0, p1, Lncf;->s:I
 
-    return-void
-.end method
+    iput v0, p0, Llcf;->s:I
 
-.method public final h(ZZZLqee;Lk0e;)Z
-    .registers 9
+    iget-object v0, p1, Lncf;->t:Ll37;
 
-    iget-boolean v0, p0, Llcf;->n0:Z
+    iput-object v0, p0, Llcf;->t:Ll37;
 
-    const/4 v1, 0x1
+    iget-object v0, p1, Lncf;->u:Ljcf;
 
-    const/4 v2, 0x0
+    iput-object v0, p0, Llcf;->u:Ljcf;
 
-    if-eqz v0, :cond_0
+    iget-object v0, p1, Lncf;->v:Ll37;
 
-    invoke-virtual {p5}, Lk0e;->clear()V
+    iput-object v0, p0, Llcf;->v:Ll37;
 
-    iget-object p0, p0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
+    iget v0, p1, Lncf;->w:I
 
-    invoke-virtual {p0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+    iput v0, p0, Llcf;->w:I
 
-    return v1
+    iget-boolean v0, p1, Lncf;->x:Z
 
-    :cond_0
-    if-eqz p2, :cond_3
+    iput-boolean v0, p0, Llcf;->x:Z
 
-    if-eqz p1, :cond_1
+    iget v0, p1, Lncf;->y:I
 
-    iget-object p1, p0, Llcf;->Y:Ljava/lang/Throwable;
+    iput v0, p0, Llcf;->y:I
 
-    if-eqz p1, :cond_1
+    iget-boolean v0, p1, Lncf;->z:Z
 
-    invoke-virtual {p5}, Lk0e;->clear()V
+    iput-boolean v0, p0, Llcf;->z:Z
 
-    iget-object p1, p0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-boolean v0, p1, Lncf;->A:Z
 
-    invoke-virtual {p1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+    iput-boolean v0, p0, Llcf;->A:Z
 
-    iget-object p0, p0, Llcf;->Y:Ljava/lang/Throwable;
+    iget-boolean v0, p1, Lncf;->B:Z
 
-    invoke-interface {p4, p0}, Lqee;->onError(Ljava/lang/Throwable;)V
+    iput-boolean v0, p0, Llcf;->B:Z
 
-    return v1
+    iget-boolean v0, p1, Lncf;->C:Z
 
-    :cond_1
-    if-eqz p3, :cond_3
+    iput-boolean v0, p0, Llcf;->C:Z
 
-    iget-object p1, p0, Llcf;->Y:Ljava/lang/Throwable;
+    new-instance v0, Ljava/util/HashSet;
 
-    iget-object p0, p0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v1, p1, Lncf;->E:Lw37;
 
-    invoke-virtual {p0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    if-eqz p1, :cond_2
+    iput-object v0, p0, Llcf;->E:Ljava/util/HashSet;
 
-    invoke-interface {p4, p1}, Lqee;->onError(Ljava/lang/Throwable;)V
+    new-instance v0, Ljava/util/HashMap;
 
-    return v1
+    iget-object p1, p1, Lncf;->D:Lp37;
 
-    :cond_2
-    invoke-interface {p4}, Lqee;->b()V
+    invoke-direct {v0, p1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    return v1
-
-    :cond_3
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final i()V
-    .registers 17
-
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Llcf;->p0:Lkcf;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    goto/16 :goto_5
-
-    :cond_0
-    iget-object v1, v0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lqee;
-
-    const/4 v6, 0x1
-
-    move-object v4, v1
-
-    move v1, v6
-
-    :goto_0
-    if-eqz v4, :cond_f
-
-    iget-boolean v1, v0, Llcf;->r0:Z
-
-    if-eqz v1, :cond_6
-
-    iget-object v1, v0, Llcf;->b:Lk0e;
-
-    iget-boolean v2, v0, Llcf;->o:Z
-
-    :cond_1
-    iget-boolean v3, v0, Llcf;->n0:Z
-
-    const/4 v5, 0x0
-
-    if-eqz v3, :cond_2
-
-    iget-object v0, v0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0, v5}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_2
-    iget-boolean v3, v0, Llcf;->X:Z
-
-    if-nez v2, :cond_3
-
-    if-eqz v3, :cond_3
-
-    iget-object v7, v0, Llcf;->Y:Ljava/lang/Throwable;
-
-    if-eqz v7, :cond_3
-
-    invoke-virtual {v1}, Lk0e;->clear()V
-
-    iget-object v1, v0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v1, v5}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    iget-object v0, v0, Llcf;->Y:Ljava/lang/Throwable;
-
-    invoke-interface {v4, v0}, Lqee;->onError(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_3
-    invoke-interface {v4, v5}, Lqee;->d(Ljava/lang/Object;)V
-
-    if-eqz v3, :cond_5
-
-    iget-object v1, v0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v1, v5}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    iget-object v0, v0, Llcf;->Y:Ljava/lang/Throwable;
-
-    if-eqz v0, :cond_4
-
-    invoke-interface {v4, v0}, Lqee;->onError(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_4
-    invoke-interface {v4}, Lqee;->b()V
-
-    return-void
-
-    :cond_5
-    iget-object v3, v0, Llcf;->p0:Lkcf;
-
-    neg-int v5, v6
-
-    invoke-virtual {v3, v5}, Ljava/util/concurrent/atomic/AtomicInteger;->addAndGet(I)I
-
-    move-result v6
-
-    if-nez v6, :cond_1
-
-    goto/16 :goto_5
-
-    :cond_6
-    iget-object v5, v0, Llcf;->b:Lk0e;
-
-    iget-boolean v1, v0, Llcf;->o:Z
-
-    xor-int/2addr v1, v6
-
-    move v7, v6
-
-    :goto_1
-    iget-object v2, v0, Llcf;->q0:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v8
-
-    const-wide/16 v10, 0x0
-
-    move-wide v12, v10
-
-    :goto_2
-    cmp-long v14, v8, v12
-
-    if-eqz v14, :cond_a
-
-    iget-boolean v2, v0, Llcf;->X:Z
-
-    invoke-virtual {v5}, Lk0e;->poll()Ljava/lang/Object;
-
-    move-result-object v15
-
-    if-nez v15, :cond_7
-
-    move v3, v6
-
-    goto :goto_3
-
-    :cond_7
-    const/4 v3, 0x0
-
-    :goto_3
-    invoke-virtual/range {v0 .. v5}, Llcf;->h(ZZZLqee;Lk0e;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_8
-
-    goto :goto_5
-
-    :cond_8
-    if-eqz v3, :cond_9
-
-    goto :goto_4
-
-    :cond_9
-    invoke-interface {v4, v15}, Lqee;->d(Ljava/lang/Object;)V
-
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v12, v2
-
-    goto :goto_2
-
-    :cond_a
-    :goto_4
-    if-nez v14, :cond_b
-
-    iget-boolean v2, v0, Llcf;->X:Z
-
-    invoke-virtual {v5}, Lk0e;->isEmpty()Z
-
-    move-result v3
-
-    invoke-virtual/range {v0 .. v5}, Llcf;->h(ZZZLqee;Lk0e;)Z
-
-    move-result v2
-
-    move v3, v1
-
-    if-eqz v2, :cond_c
-
-    goto :goto_5
-
-    :cond_b
-    move v3, v1
-
-    :cond_c
-    cmp-long v1, v12, v10
-
-    if-eqz v1, :cond_d
-
-    const-wide v1, 0x7fffffffffffffffL
-
-    cmp-long v1, v8, v1
-
-    if-eqz v1, :cond_d
-
-    iget-object v1, v0, Llcf;->q0:Ljava/util/concurrent/atomic/AtomicLong;
-
-    neg-long v8, v12
-
-    invoke-virtual {v1, v8, v9}, Ljava/util/concurrent/atomic/AtomicLong;->addAndGet(J)J
-
-    :cond_d
-    iget-object v1, v0, Llcf;->p0:Lkcf;
-
-    neg-int v2, v7
-
-    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicInteger;->addAndGet(I)I
-
-    move-result v7
-
-    if-nez v7, :cond_e
-
-    goto :goto_5
-
-    :cond_e
-    move v1, v3
-
-    goto :goto_1
-
-    :cond_f
-    iget-object v2, v0, Llcf;->p0:Lkcf;
-
-    neg-int v1, v1
-
-    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->addAndGet(I)I
-
-    move-result v1
-
-    if-nez v1, :cond_10
-
-    :goto_5
-    return-void
-
-    :cond_10
-    iget-object v2, v0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v2
-
-    move-object v4, v2
-
-    check-cast v4, Lqee;
-
-    goto/16 :goto_0
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .registers 3
-
-    const-string v0, "onError called with a null Throwable."
-
-    invoke-static {p1, v0}, Lu75;->c(Ljava/lang/Object;Ljava/lang/String;)V
-
-    iget-boolean v0, p0, Llcf;->X:Z
-
-    if-nez v0, :cond_2
-
-    iget-boolean v0, p0, Llcf;->n0:Z
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iput-object p1, p0, Llcf;->Y:Ljava/lang/Throwable;
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Llcf;->X:Z
-
-    iget-object p1, p0, Llcf;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Runnable;
-
-    if-eqz p1, :cond_1
-
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-
-    :cond_1
-    invoke-virtual {p0}, Llcf;->i()V
-
-    return-void
-
-    :cond_2
-    :goto_0
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
+    iput-object v0, p0, Llcf;->D:Ljava/util/HashMap;
 
     return-void
 .end method

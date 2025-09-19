@@ -1,99 +1,140 @@
 .class public final Le0b;
-.super Lxie;
+.super Ls04;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public X:I
+.field public final a:Lzp4;
 
-.field public synthetic Y:Ljava/lang/Object;
+
+# direct methods
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Ls04;-><init>()V
+
+    new-instance v0, Lzp4;
+
+    invoke-direct {v0}, Lzp4;-><init>()V
+
+    iput-object v0, p0, Le0b;->a:Lzp4;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final dispatch(Lq04;Ljava/lang/Runnable;)V
+    .registers 6
 
-    check-cast p1, Lhq5;
+    iget-object p0, p0, Le0b;->a:Lzp4;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p0, p1, p2}, Le0b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    sget-object v0, Lfq4;->a:Lsh4;
 
-    move-result-object p0
+    sget-object v0, Lkotlinx/coroutines/internal/MainDispatcherLoader;->dispatcher:Lt38;
 
-    check-cast p0, Le0b;
+    invoke-virtual {v0}, Lt38;->getImmediate()Lt38;
 
-    sget-object p1, Lncf;->a:Lncf;
+    move-result-object v0
 
-    invoke-virtual {p0, p1}, Le0b;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ls04;->isDispatchNeeded(Lq04;)Z
 
-    move-result-object p0
+    move-result v1
 
-    return-object p0
-.end method
+    if-nez v1, :cond_2
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    iget-boolean v1, p0, Lzp4;->b:Z
 
-    new-instance p0, Le0b;
+    if-nez v1, :cond_2
 
-    const/4 v0, 0x2
+    iget-boolean v1, p0, Lzp4;->a:Z
 
-    invoke-direct {p0, v0, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    if-nez v1, :cond_0
 
-    iput-object p1, p0, Le0b;->Y:Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    iget v0, p0, Le0b;->X:I
-
-    sget-object v1, Lncf;->a:Lncf;
-
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v2, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object v1
+    goto :goto_0
 
     :cond_0
+    iget-object p1, p0, Lzp4;->d:Ljava/util/ArrayDeque;
+
+    invoke-virtual {p1, p2}, Ljava/util/ArrayDeque;->offer(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p0}, Lzp4;->a()V
+
+    return-void
+
+    :cond_1
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string p1, "cannot enqueue any more runnables"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
+    :cond_2
+    :goto_0
+    new-instance v1, Lik4;
+
+    const/4 v2, 0x2
+
+    invoke-direct {v1, p0, v2, p2}, Lik4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v0, p1, v1}, Ls04;->dispatch(Lq04;Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public final isDispatchNeeded(Lq04;)Z
+    .registers 3
+
+    sget-object v0, Lfq4;->a:Lsh4;
+
+    sget-object v0, Lkotlinx/coroutines/internal/MainDispatcherLoader;->dispatcher:Lt38;
+
+    invoke-virtual {v0}, Lt38;->getImmediate()Lt38;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ls04;->isDispatchNeeded(Lq04;)Z
+
+    move-result p1
+
+    const/4 v0, 0x1
+
+    if-eqz p1, :cond_0
+
+    return v0
+
+    :cond_0
+    iget-object p0, p0, Le0b;->a:Lzp4;
+
+    iget-boolean p1, p0, Lzp4;->b:Z
+
+    if-nez p1, :cond_2
+
+    iget-boolean p0, p0, Lzp4;->a:Z
+
+    if-nez p0, :cond_1
+
+    goto :goto_0
+
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    const/4 p0, 0x0
 
-    iget-object p1, p0, Le0b;->Y:Ljava/lang/Object;
-
-    check-cast p1, Lhq5;
-
-    iput v2, p0, Le0b;->X:I
-
-    invoke-interface {p1, v1, p0}, Lhq5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
+    goto :goto_1
 
     :cond_2
-    return-object v1
+    :goto_0
+    move p0, v0
+
+    :goto_1
+    xor-int/2addr p0, v0
+
+    return p0
 .end method

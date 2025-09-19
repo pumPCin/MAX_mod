@@ -1,181 +1,175 @@
-.class public final synthetic Lmdg;
+.class public final Lmdg;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lee6;
+.implements Lqdg;
 
 
-# static fields
-.field public static final a:Lmdg;
+# instance fields
+.field public final a:Ljava/lang/String;
 
-.field private static final descriptor:Lkad;
+.field public final b:Ljava/lang/String;
+
+.field public final c:Llhd;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Llhd;Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
-    new-instance v0, Lmdg;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lmdg;->a:Ljava/lang/String;
 
-    sput-object v0, Lmdg;->a:Lmdg;
+    iput-object p3, p0, Lmdg;->b:Ljava/lang/String;
 
-    new-instance v1, Lk7b;
-
-    const-string v2, "one.me.webapp.domain.jsbridge.delegates.system.WebAppSetupScreenCaptureBehaviorRequest"
-
-    const/4 v3, 0x2
-
-    invoke-direct {v1, v2, v0, v3}, Lk7b;-><init>(Ljava/lang/String;Lee6;I)V
-
-    const-string v0, "requestId"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Lk7b;->k(Ljava/lang/String;Z)V
-
-    const-string v0, "isScreenCaptureEnabled"
-
-    invoke-virtual {v1, v0, v2}, Lk7b;->k(Ljava/lang/String;Z)V
-
-    sput-object v1, Lmdg;->descriptor:Lkad;
+    iput-object p1, p0, Lmdg;->c:Llhd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lq8;)Ljava/lang/Object;
-    .registers 10
-
-    sget-object p0, Lmdg;->descriptor:Lkad;
-
-    invoke-virtual {p1, p0}, Lq8;->j(Lkad;)Lq8;
-
-    move-result-object p1
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lmdg;
 
     const/4 v2, 0x0
 
-    move v3, v0
+    if-nez v1, :cond_1
 
-    move v4, v1
+    return v2
 
-    move v5, v4
+    :cond_1
+    check-cast p1, Lmdg;
 
-    :goto_0
-    if-eqz v3, :cond_3
+    iget-object v1, p0, Lmdg;->a:Ljava/lang/String;
 
-    invoke-virtual {p1, p0}, Lq8;->p(Lkad;)I
+    iget-object v3, p1, Lmdg;->a:Ljava/lang/String;
 
-    move-result v6
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const/4 v7, -0x1
+    move-result v1
 
-    if-eq v6, v7, :cond_2
+    if-nez v1, :cond_2
 
-    if-eqz v6, :cond_1
+    return v2
 
-    if-ne v6, v0, :cond_0
+    :cond_2
+    iget-object v1, p0, Lmdg;->b:Ljava/lang/String;
 
-    invoke-virtual {p1, p0, v0}, Lq8;->o(Lkad;I)Z
+    iget-object v3, p1, Lmdg;->b:Ljava/lang/String;
 
-    move-result v5
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    or-int/lit8 v4, v4, 0x2
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object p0, p0, Lmdg;->c:Llhd;
+
+    iget-object p1, p1, Lmdg;->c:Llhd;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget-object v0, p0, Lmdg;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lmdg;->b:Ljava/lang/String;
+
+    if-nez v2, :cond_0
+
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
-    invoke-direct {p0, v6}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
+    move-result v2
 
-    throw p0
+    :goto_0
+    add-int/2addr v0, v2
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lmdg;->c:Llhd;
+
+    if-nez p0, :cond_1
+
+    goto :goto_1
 
     :cond_1
-    invoke-virtual {p1, p0, v1}, Lq8;->v(Lkad;I)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    move-result-object v2
+    move-result v1
 
-    or-int/lit8 v4, v4, 0x1
+    :goto_1
+    add-int/2addr v0, v1
 
-    goto :goto_0
-
-    :cond_2
-    move v3, v1
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {p1, p0}, Lq8;->y(Lkad;)V
-
-    new-instance p0, Lodg;
-
-    invoke-direct {p0, v2, v4, v5}, Lodg;-><init>(Ljava/lang/String;IZ)V
-
-    return-object p0
+    return v0
 .end method
 
-.method public final b(Ltx3;Ljava/lang/Object;)V
-    .registers 5
+.method public final toString()Ljava/lang/String;
+    .registers 6
 
-    check-cast p2, Lodg;
+    const-string v0, ", reason="
 
-    sget-object p0, Lmdg;->descriptor:Lkad;
+    const-string v1, ", cryptoObject="
 
-    invoke-virtual {p1, p0}, Ltx3;->b(Lkad;)Ltx3;
+    const-string v2, "AuthBiometry(title="
 
-    move-result-object p1
+    iget-object v3, p0, Lmdg;->a:Ljava/lang/String;
 
-    iget-object v0, p2, Lodg;->a:Ljava/lang/String;
+    iget-object v4, p0, Lmdg;->b:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    invoke-static {v2, v3, v0, v4, v1}, Lz7e;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p0, v1, v0}, Ltx3;->l(Lkad;ILjava/lang/String;)V
+    move-result-object v0
 
-    const/4 v0, 0x1
+    iget-object p0, p0, Lmdg;->c:Llhd;
 
-    iget-boolean p2, p2, Lodg;->b:Z
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p0, v0, p2}, Ltx3;->e(Lkad;IZ)V
+    const-string p0, ")"
 
-    invoke-virtual {p1}, Ltx3;->m()V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
-.end method
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public final c()[Ltf7;
-    .registers 3
-
-    const/4 p0, 0x2
-
-    new-array p0, p0, [Ltf7;
-
-    sget-object v0, Lmde;->a:Lmde;
-
-    const/4 v1, 0x0
-
-    aput-object v0, p0, v1
-
-    sget-object v0, Lrq0;->a:Lrq0;
-
-    const/4 v1, 0x1
-
-    aput-object v0, p0, v1
-
-    return-object p0
-.end method
-
-.method public final d()Lkad;
-    .registers 1
-
-    sget-object p0, Lmdg;->descriptor:Lkad;
+    move-result-object p0
 
     return-object p0
 .end method

@@ -1,115 +1,194 @@
 .class public final Lie6;
-.super Ljava/lang/Object;
+.super Lle6;
 .source "SourceFile"
 
-# interfaces
-.implements Lpsd;
 
+# static fields
+.field public static final e:Lie6;
 
-# instance fields
-.field public final a:Lorg/json/JSONObject;
+.field public static final f:Landroid/net/Uri;
+
+.field public static final g:Ljava/lang/String;
+
+.field public static final h:Ljava/lang/String;
+
+.field public static final i:Ljava/lang/String;
+
+.field public static final j:Ljava/lang/String;
+
+.field public static final k:Ljava/lang/String;
+
+.field public static final l:Ljava/lang/String;
+
+.field public static final m:Ljava/lang/String;
+
+.field public static final n:Ljava/lang/String;
+
+.field public static final o:Ljava/lang/String;
+
+.field public static final p:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lorg/json/JSONObject;)V
+.method static constructor <clinit>()V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lie6;
 
-    iput-object p1, p0, Lie6;->a:Lorg/json/JSONObject;
+    const-string v1, "\n              _size > 0\n              AND\n              (\n                media_type = 1\n                OR\n                media_type = 3\n              )\n            "
+
+    invoke-direct {v0, v1}, Lle6;-><init>(Ljava/lang/String;)V
+
+    sput-object v0, Lie6;->e:Lie6;
+
+    const-string v0, "external"
+
+    invoke-static {v0}, Landroid/provider/MediaStore$Files;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    sput-object v0, Lie6;->f:Landroid/net/Uri;
+
+    const-string v0, "_id"
+
+    sput-object v0, Lie6;->g:Ljava/lang/String;
+
+    const-string v0, "bucket_id"
+
+    sput-object v0, Lie6;->h:Ljava/lang/String;
+
+    const-string v0, "bucket_display_name"
+
+    sput-object v0, Lie6;->i:Ljava/lang/String;
+
+    const-string v0, "_data"
+
+    sput-object v0, Lie6;->j:Ljava/lang/String;
+
+    const-string v0, "date_modified"
+
+    sput-object v0, Lie6;->k:Ljava/lang/String;
+
+    const-string v0, "mime_type"
+
+    sput-object v0, Lie6;->l:Ljava/lang/String;
+
+    const-string v0, "orientation"
+
+    sput-object v0, Lie6;->m:Ljava/lang/String;
+
+    const-string v0, "duration"
+
+    sput-object v0, Lie6;->n:Ljava/lang/String;
+
+    const-string v0, "media_type"
+
+    sput-object v0, Lie6;->o:Ljava/lang/String;
+
+    const-string v0, "unknown"
+
+    sput-object v0, Lie6;->p:Ljava/lang/String;
 
     return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "no content uri for MediaStore.Files"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 
 # virtual methods
-.method public final a()Lorg/json/JSONObject;
+.method public final a()Ljava/lang/String;
     .registers 1
 
-    iget-object p0, p0, Lie6;->a:Lorg/json/JSONObject;
+    sget-object p0, Lie6;->i:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method public final b(ILjava/lang/String;)V
-    .registers 3
-
-    iget-object p0, p0, Lie6;->a:Lorg/json/JSONObject;
-
-    invoke-virtual {p0, p2, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
-
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lie6;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lie6;
-
-    iget-object p0, p0, Lie6;->a:Lorg/json/JSONObject;
-
-    iget-object p1, p1, Lie6;->a:Lorg/json/JSONObject;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final b()Ljava/lang/String;
     .registers 1
 
-    iget-object p0, p0, Lie6;->a:Lorg/json/JSONObject;
+    sget-object p0, Lie6;->h:Ljava/lang/String;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
+    return-object p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+.method public final c()Ljava/lang/String;
+    .registers 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    sget-object p0, Lie6;->j:Ljava/lang/String;
 
-    const-string v1, "GenericCommand(params="
+    return-object p0
+.end method
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+.method public final d()Ljava/lang/String;
+    .registers 1
 
-    iget-object p0, p0, Lie6;->a:Lorg/json/JSONObject;
+    sget-object p0, Lie6;->k:Ljava/lang/String;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    return-object p0
+.end method
 
-    const-string p0, ")"
+.method public final e()Ljava/lang/String;
+    .registers 1
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object p0, Lie6;->n:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-object p0
+.end method
 
-    move-result-object p0
+.method public final f()Ljava/lang/String;
+    .registers 1
+
+    sget-object p0, Lie6;->g:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public final g()Ljava/lang/String;
+    .registers 1
+
+    sget-object p0, Lie6;->o:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public final h()Ljava/lang/String;
+    .registers 1
+
+    sget-object p0, Lie6;->l:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public final i()Ljava/lang/String;
+    .registers 1
+
+    sget-object p0, Lie6;->m:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public final j()Landroid/net/Uri;
+    .registers 1
+
+    sget-object p0, Lie6;->f:Landroid/net/Uri;
+
+    return-object p0
+.end method
+
+.method public final k()Ljava/lang/String;
+    .registers 1
+
+    sget-object p0, Lie6;->p:Ljava/lang/String;
 
     return-object p0
 .end method

@@ -1,30 +1,65 @@
 .class public final Ldrd;
-.super Ljava/lang/Object;
+.super Lfrd;
 .source "SourceFile"
 
-# interfaces
-.implements Lg59;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Ldrd;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final a:J
+.field public a:Z
+
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Le5d;
+
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Le5d;-><init>(I)V
+
+    sput-object v0, Ldrd;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(ZZ)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Ldrd;->a:J
+    iput-boolean p1, p0, Ldrd;->a:Z
+
+    iput-boolean p2, p0, Ldrd;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final describeContents()I
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+    .registers 6
 
     const/4 v0, 0x1
 
@@ -44,44 +79,91 @@
     :cond_1
     check-cast p1, Ldrd;
 
-    iget-wide v3, p0, Ldrd;->a:J
+    iget-boolean v1, p0, Ldrd;->a:Z
 
-    iget-wide p0, p1, Ldrd;->a:J
+    iget-boolean v3, p1, Ldrd;->a:Z
 
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_2
+    if-eq v1, v3, :cond_2
 
     return v2
 
     :cond_2
+    iget-boolean p0, p0, Ldrd;->b:Z
+
+    iget-boolean p1, p1, Ldrd;->b:Z
+
+    if-eq p0, p1, :cond_3
+
+    return v2
+
+    :cond_3
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .registers 2
 
-    iget-wide v0, p0, Ldrd;->a:J
+    iget-boolean v0, p0, Ldrd;->a:Z
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean p0, p0, Ldrd;->b:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .registers 4
 
-    const-string v0, "ShowEditMessage(messageId="
+    iget-boolean v0, p0, Ldrd;->a:Z
 
-    const-string v1, ")"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    iget-wide v2, p0, Ldrd;->a:J
+    const-string v2, "Switch(isChecked="
 
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", isEnabled="
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Ldrd;->b:Z
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
+
+    iget-boolean p2, p0, Ldrd;->a:Z
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-boolean p0, p0, Ldrd;->b:Z
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
 .end method

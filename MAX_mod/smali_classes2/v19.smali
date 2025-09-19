@@ -2,21 +2,38 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ly19;
-
 
 # instance fields
-.field public final a:Landroid/net/Uri;
+.field public final a:J
+
+.field public final b:J
+
+.field public final c:Landroid/text/Layout;
+
+.field public final d:Ls19;
+
+.field public final e:Ln19;
+
+.field public final f:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/net/Uri;)V
-    .registers 2
+.method public constructor <init>(JJLandroid/text/Layout;Ls19;Ln19;Z)V
+    .registers 9
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lv19;->a:Landroid/net/Uri;
+    iput-wide p1, p0, Lv19;->a:J
+
+    iput-wide p3, p0, Lv19;->b:J
+
+    iput-object p5, p0, Lv19;->c:Landroid/text/Layout;
+
+    iput-object p6, p0, Lv19;->d:Ls19;
+
+    iput-object p7, p0, Lv19;->e:Ln19;
+
+    iput-boolean p8, p0, Lv19;->f:Z
 
     return-void
 .end method
@@ -24,7 +41,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .registers 9
 
     const/4 v0, 0x1
 
@@ -44,52 +61,211 @@
     :cond_1
     check-cast p1, Lv19;
 
-    iget-object p0, p0, Lv19;->a:Landroid/net/Uri;
+    iget-wide v3, p0, Lv19;->a:J
 
-    iget-object p1, p1, Lv19;->a:Landroid/net/Uri;
+    iget-wide v5, p1, Lv19;->a:J
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    cmp-long v1, v3, v5
 
-    move-result p0
-
-    if-nez p0, :cond_2
+    if-eqz v1, :cond_2
 
     return v2
 
     :cond_2
+    iget-wide v3, p0, Lv19;->b:J
+
+    iget-wide v5, p1, Lv19;->b:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lv19;->c:Landroid/text/Layout;
+
+    iget-object v3, p1, Lv19;->c:Landroid/text/Layout;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object v1, p0, Lv19;->d:Ls19;
+
+    iget-object v3, p1, Lv19;->d:Ls19;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-object v1, p0, Lv19;->e:Ln19;
+
+    iget-object v3, p1, Lv19;->e:Ln19;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-boolean p0, p0, Lv19;->f:Z
+
+    iget-boolean p1, p1, Lv19;->f:Z
+
+    if-eq p0, p1, :cond_7
+
+    return v2
+
+    :cond_7
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 1
+    .registers 5
 
-    iget-object p0, p0, Lv19;->a:Landroid/net/Uri;
+    iget-wide v0, p0, Lv19;->a:J
 
-    invoke-virtual {p0}, Landroid/net/Uri;->hashCode()I
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-wide v2, p0, Lv19;->b:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lv19;->c:Landroid/text/Layout;
+
+    if-nez v3, :cond_0
+
+    move v3, v2
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
+
+    :goto_0
+    add-int/2addr v0, v3
+
+    mul-int/2addr v0, v1
+
+    iget-object v3, p0, Lv19;->d:Ls19;
+
+    if-nez v3, :cond_1
+
+    move v3, v2
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
+
+    :goto_1
+    add-int/2addr v0, v3
+
+    mul-int/2addr v0, v1
+
+    iget-object v3, p0, Lv19;->e:Ln19;
+
+    if-nez v3, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    :goto_2
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-boolean p0, p0, Lv19;->f:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .registers 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "MessageLink(messageId="
 
-    const-string v1, "SendImage(mediaUri="
+    const-string v1, ", messageLinkId="
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-wide v2, p0, Lv19;->a:J
 
-    iget-object p0, p0, Lv19;->a:Landroid/net/Uri;
+    invoke-static {v2, v3, v0, v1}, Lmw1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    const-string p0, ")"
+    iget-wide v1, p0, Lv19;->b:J
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v1, ", senderLayout="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lv19;->c:Landroid/text/Layout;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", replyModel="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lv19;->d:Ls19;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", forwardModel="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lv19;->e:Ln19;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isFloating="
+
+    const-string v2, ")"
+
+    iget-boolean p0, p0, Lv19;->f:Z
+
+    invoke-static {v0, v1, p0, v2}, Lyv7;->l(Ljava/lang/StringBuilder;Ljava/lang/String;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

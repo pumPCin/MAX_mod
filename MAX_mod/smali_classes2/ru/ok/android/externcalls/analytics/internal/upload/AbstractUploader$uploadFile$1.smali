@@ -1,9 +1,9 @@
 .class final Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$uploadFile$1;
-.super Lih7;
+.super Lnk7;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Lzb6;
 
 
 # annotations
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lih7;",
-        "Lh96;"
+        "Lnk7;",
+        "Lzb6;"
     }
 .end annotation
 
@@ -58,7 +58,7 @@
 
     const/4 p1, 0x0
 
-    invoke-direct {p0, p1}, Lih7;-><init>(I)V
+    invoke-direct {p0, p1}, Lnk7;-><init>(I)V
 
     return-void
 .end method
@@ -135,17 +135,17 @@
     :cond_1
     iget-object v0, p0, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$uploadFile$1;->this$0:Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;
 
-    invoke-virtual {v1}, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->getOkApi()Lo4a;
+    invoke-virtual {v1}, Lru/ok/android/externcalls/analytics/config/CallAnalyticsConfig;->getOkApi()Lq8a;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lo4a;->a()Lnk;
+    invoke-virtual {v1}, Lq8a;->a()Lwk;
 
     move-result-object v1
 
     iget-object v2, p0, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$uploadFile$1;->$file:Ljava/io/File;
 
-    invoke-static {v0, v1, v2}, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;->access$uploadFileWithContent(Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;Lnk;Ljava/io/File;)Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;
+    invoke-static {v0, v1, v2}, Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;->access$uploadFileWithContent(Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader;Lwk;Ljava/io/File;)Lru/ok/android/externcalls/analytics/internal/upload/AbstractUploader$UploadResult;
 
     move-result-object v0
 

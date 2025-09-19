@@ -1,69 +1,106 @@
-.class public abstract Ll67;
-.super Ljava/lang/Object;
+.class public final Ll67;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic a:I
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Landroid/widget/TextView;
+
+.field public final synthetic c:I
+
+.field public final synthetic d:Landroid/widget/TextView;
+
+.field public final synthetic e:Ln67;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Ln67;ILandroid/widget/TextView;ILandroid/widget/TextView;)V
+    .registers 6
 
-    new-instance v0, Lhk9;
+    iput-object p1, p0, Ll67;->e:Ln67;
 
-    const/4 v1, 0x0
+    iput p2, p0, Ll67;->a:I
 
-    invoke-direct {v0, v1}, Lhk9;-><init>(I)V
+    iput-object p3, p0, Ll67;->b:Landroid/widget/TextView;
+
+    iput p4, p0, Ll67;->c:I
+
+    iput-object p5, p0, Ll67;->d:Landroid/widget/TextView;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
-.method public static final a(III)Lhk9;
+
+# virtual methods
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
     .registers 5
 
-    new-instance v0, Lhk9;
+    iget p1, p0, Ll67;->a:I
 
-    invoke-direct {v0}, Lhk9;-><init>()V
+    iget-object v0, p0, Ll67;->e:Ln67;
 
-    const/16 v1, 0x2000
+    iput p1, v0, Ln67;->n:I
 
-    invoke-virtual {v0, v1, p0}, Lhk9;->e(II)V
+    const/4 p1, 0x0
 
-    const/4 p0, 0x4
+    iput-object p1, v0, Ln67;->l:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v0, p0, p1}, Lhk9;->e(II)V
+    iget-object v1, p0, Ll67;->b:Landroid/widget/TextView;
 
-    const/16 p0, 0x4000
+    if-eqz v1, :cond_0
 
-    invoke-virtual {v0, p0, p2}, Lhk9;->e(II)V
+    const/4 v2, 0x4
 
-    return-object v0
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+
+    iget v1, p0, Ll67;->c:I
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    iget-object v0, v0, Ln67;->r:Landroidx/appcompat/widget/AppCompatTextView;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :cond_0
+    iget-object p0, p0, Ll67;->d:Landroid/widget/TextView;
+
+    if-eqz p0, :cond_1
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setTranslationY(F)V
+
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
+
+    :cond_1
+    return-void
 .end method
 
-.method public static final b(IIIIIII)Lhk9;
-    .registers 9
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .registers 2
 
-    new-instance v0, Lhk9;
+    iget-object p0, p0, Ll67;->d:Landroid/widget/TextView;
 
-    invoke-direct {v0}, Lhk9;-><init>()V
+    if-eqz p0, :cond_0
 
-    const/16 v1, 0x400
+    const/4 p1, 0x0
 
-    invoke-virtual {v0, v1, p0}, Lhk9;->e(II)V
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    const/16 p0, 0x800
+    const/4 p1, 0x0
 
-    invoke-virtual {v0, p0, p1}, Lhk9;->e(II)V
+    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
 
-    invoke-virtual {v0, p2, p3}, Lhk9;->e(II)V
-
-    invoke-virtual {v0, p4, p5}, Lhk9;->e(II)V
-
-    const/16 p0, 0x80
-
-    invoke-virtual {v0, p0, p6}, Lhk9;->e(II)V
-
-    return-object v0
+    :cond_0
+    return-void
 .end method

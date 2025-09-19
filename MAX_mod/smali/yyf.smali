@@ -1,67 +1,97 @@
-.class public abstract Lyyf;
+.class public final Lyyf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lazf;
+
+
+# instance fields
+.field public final a:F
+
 
 # direct methods
-.method public static a(Landroid/view/ViewParent;Landroid/view/View;FFZ)Z
-    .registers 5
-
-    invoke-interface {p0, p1, p2, p3, p4}, Landroid/view/ViewParent;->onNestedFling(Landroid/view/View;FFZ)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static b(Landroid/view/ViewParent;Landroid/view/View;FF)Z
-    .registers 4
-
-    invoke-interface {p0, p1, p2, p3}, Landroid/view/ViewParent;->onNestedPreFling(Landroid/view/View;FF)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static c(Landroid/view/ViewParent;Landroid/view/View;II[I)V
-    .registers 5
-
-    invoke-interface {p0, p1, p2, p3, p4}, Landroid/view/ViewParent;->onNestedPreScroll(Landroid/view/View;II[I)V
-
-    return-void
-.end method
-
-.method public static d(Landroid/view/ViewParent;Landroid/view/View;IIII)V
-    .registers 6
-
-    invoke-interface/range {p0 .. p5}, Landroid/view/ViewParent;->onNestedScroll(Landroid/view/View;IIII)V
-
-    return-void
-.end method
-
-.method public static e(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/View;I)V
-    .registers 4
-
-    invoke-interface {p0, p1, p2, p3}, Landroid/view/ViewParent;->onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
-
-    return-void
-.end method
-
-.method public static f(Landroid/view/ViewParent;Landroid/view/View;Landroid/view/View;I)Z
-    .registers 4
-
-    invoke-interface {p0, p1, p2, p3}, Landroid/view/ViewParent;->onStartNestedScroll(Landroid/view/View;Landroid/view/View;I)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static g(Landroid/view/ViewParent;Landroid/view/View;)V
+.method public constructor <init>(F)V
     .registers 2
 
-    invoke-interface {p0, p1}, Landroid/view/ViewParent;->onStopNestedScroll(Landroid/view/View;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lyyf;->a:F
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lyyf;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lyyf;
+
+    iget p0, p0, Lyyf;->a:F
+
+    iget p1, p1, Lyyf;->a:F
+
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget p0, p0, Lyyf;->a:F
+
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "SeekProgress(progress="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget p0, p0, Lyyf;->a:F
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

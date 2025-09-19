@@ -1,142 +1,142 @@
-.class public final synthetic Lda5;
-.super Ljava/lang/Object;
+.class public final Lda5;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
 
 # interfaces
-.implements Lkq7;
+.implements Ljava/lang/Runnable;
+.implements Loq4;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lh12;
 
-.field public final synthetic b:Lh5b;
+.field public final b:Lh12;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lh5b;I)V
+.method public constructor <init>(Ljava/lang/Runnable;)V
     .registers 3
 
-    iput p2, p0, Lda5;->a:I
+    invoke-direct {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object p1, p0, Lda5;->b:Lh5b;
+    new-instance p1, Lh12;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x2
+
+    invoke-direct {p1, v0}, Lh12;-><init>(I)V
+
+    iput-object p1, p0, Lda5;->a:Lh12;
+
+    new-instance p1, Lh12;
+
+    invoke-direct {p1, v0}, Lh12;-><init>(I)V
+
+    iput-object p1, p0, Lda5;->b:Lh12;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .registers 3
+.method public final e()V
+    .registers 2
 
-    iget v0, p0, Lda5;->a:I
+    const/4 v0, 0x0
 
-    check-cast p1, Lt5b;
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object v0
 
-    iget-object p0, p0, Lda5;->b:Lh5b;
+    if-eqz v0, :cond_0
 
-    iget-object p0, p0, Lh5b;->n:Lj5b;
+    iget-object v0, p0, Lda5;->a:Lh12;
 
-    invoke-interface {p1, p0}, Lt5b;->v(Lj5b;)V
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {v0}, Lsq4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+
+    iget-object p0, p0, Lda5;->b:Lh12;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p0}, Lsq4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+
+    :cond_0
+    return-void
+.end method
+
+.method public final f()Z
+    .registers 1
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final run()V
+    .registers 6
+
+    iget-object v0, p0, Lda5;->b:Lh12;
+
+    iget-object v1, p0, Lda5;->a:Lh12;
+
+    sget-object v2, Lsq4;->a:Lsq4;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Runnable;
+
+    if-eqz v3, :cond_0
+
+    const/4 v4, 0x0
+
+    :try_start_0
+    invoke-interface {v3}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-virtual {p0, v4}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
 
     return-void
 
-    :pswitch_0
-    iget-object p0, p0, Lda5;->b:Lh5b;
+    :catchall_0
+    move-exception v3
 
-    invoke-static {p0}, Lua5;->a1(Lh5b;)Z
+    invoke-virtual {p0, v4}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
 
-    move-result p0
+    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
 
-    invoke-interface {p1, p0}, Lt5b;->n(Z)V
+    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
 
+    throw v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :catchall_1
+    move-exception p0
+
+    invoke-static {p0}, Ln4e;->D(Ljava/lang/Throwable;)V
+
+    throw p0
+
+    :cond_0
     return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lda5;->b:Lh5b;
-
-    iget p0, p0, Lh5b;->m:I
-
-    invoke-interface {p1, p0}, Lt5b;->b(I)V
-
-    return-void
-
-    :pswitch_2
-    iget-object p0, p0, Lda5;->b:Lh5b;
-
-    iget p0, p0, Lh5b;->e:I
-
-    invoke-interface {p1, p0}, Lt5b;->g(I)V
-
-    return-void
-
-    :pswitch_3
-    iget-object p0, p0, Lda5;->b:Lh5b;
-
-    iget-boolean v0, p0, Lh5b;->l:Z
-
-    iget p0, p0, Lh5b;->e:I
-
-    invoke-interface {p1, p0, v0}, Lt5b;->l(IZ)V
-
-    return-void
-
-    :pswitch_4
-    iget-object p0, p0, Lda5;->b:Lh5b;
-
-    iget-boolean v0, p0, Lh5b;->g:Z
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-boolean p0, p0, Lh5b;->g:Z
-
-    invoke-interface {p1, p0}, Lt5b;->d(Z)V
-
-    return-void
-
-    :pswitch_5
-    iget-object p0, p0, Lda5;->b:Lh5b;
-
-    iget-object p0, p0, Lh5b;->i:Ln3f;
-
-    iget-object p0, p0, Ln3f;->Y:Ljava/lang/Object;
-
-    check-cast p0, Lt3f;
-
-    invoke-interface {p1, p0}, Lt5b;->t(Lt3f;)V
-
-    return-void
-
-    :pswitch_6
-    iget-object p0, p0, Lda5;->b:Lh5b;
-
-    iget-object p0, p0, Lh5b;->f:Lcom/google/android/exoplayer2/ExoPlaybackException;
-
-    invoke-interface {p1, p0}, Lt5b;->r(Lcom/google/android/exoplayer2/PlaybackException;)V
-
-    return-void
-
-    :pswitch_7
-    iget-object p0, p0, Lda5;->b:Lh5b;
-
-    iget-object p0, p0, Lh5b;->f:Lcom/google/android/exoplayer2/ExoPlaybackException;
-
-    invoke-interface {p1, p0}, Lt5b;->A(Lcom/google/android/exoplayer2/PlaybackException;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

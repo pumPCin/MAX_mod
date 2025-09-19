@@ -1,613 +1,214 @@
 .class public final Le87;
-.super Lqs3;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lqwa;
-
-
-# static fields
-.field public static final synthetic o0:I
+.implements Lpc6;
 
 
 # instance fields
-.field public final Z:Ljava/lang/String;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final n0:Lare;
+.field public final synthetic Y:Lone/me/login/inputname/InputNameScreen;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;JJLare;)V
-    .registers 16
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/login/inputname/InputNameScreen;)V
+    .registers 3
 
-    invoke-static {p6, p7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iput-object p2, p0, Le87;->Y:Lone/me/login/inputname/InputNameScreen;
 
-    move-result-object p6
+    const/4 p2, 0x2
 
-    invoke-static {p6}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v6
-
-    const/4 v1, 0x1
-
-    move-object v0, p0
-
-    move-wide v2, p1
-
-    move-wide v4, p4
-
-    invoke-direct/range {v0 .. v6}, Lqs3;-><init>(IJJLjava/lang/Object;)V
-
-    iput-object p3, v0, Le87;->Z:Ljava/lang/String;
-
-    iput-object p8, v0, Le87;->n0:Lare;
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()I
-    .registers 7
-
-    invoke-virtual {p0}, Lhl;->o()Ltw8;
-
-    move-result-object v0
-
-    iget-object v1, p0, Le87;->n0:Lare;
-
-    iget-wide v2, v1, Lare;->a:J
-
-    iget-wide v4, v1, Lare;->a:J
-
-    invoke-virtual {v0, v2, v3}, Ltw8;->q(J)Lvw8;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    iget-object v1, v0, Lvw8;->p0:Lk09;
-
-    sget-object v2, Lk09;->c:Lk09;
-
-    if-eq v1, v2, :cond_1
-
-    invoke-virtual {v0}, Lvw8;->u()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_1
-    :goto_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "onPreExecute: messageId "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v2, " is wrong"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "e87"
-
-    invoke-static {v2, v1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p0, v0}, Le87;->v(Lvw8;)V
-
-    invoke-virtual {p0}, Lhl;->l()Lrv0;
-
-    move-result-object p0
-
-    new-instance v0, Lhs4;
-
-    invoke-direct {v0, v4, v5}, Lhs4;-><init>(J)V
-
-    invoke-virtual {p0, v0}, Lrv0;->c(Ljava/lang/Object;)V
-
-    const/4 p0, 0x3
-
-    return p0
-.end method
-
-.method public final d()V
-    .registers 5
-
-    const-string v0, "e87"
-
-    const-string v1, "onMaxFailCount"
-
-    invoke-static {v0, v1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lhl;->s()Lpre;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Lhl;->a:J
-
-    invoke-virtual {v0, v1, v2}, Lpre;->d(J)V
-
-    invoke-virtual {p0}, Lhl;->o()Ltw8;
-
-    move-result-object v0
-
-    iget-object v1, p0, Le87;->n0:Lare;
-
-    iget-wide v2, v1, Lare;->a:J
-
-    invoke-virtual {v0, v2, v3}, Ltw8;->q(J)Lvw8;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Le87;->v(Lvw8;)V
-
-    invoke-virtual {p0}, Lhl;->l()Lrv0;
-
-    move-result-object p0
-
-    new-instance v0, Lhs4;
-
-    iget-wide v1, v1, Lare;->a:J
-
-    invoke-direct {v0, v1, v2}, Lhs4;-><init>(J)V
-
-    invoke-virtual {p0, v0}, Lrv0;->c(Ljava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final e()[B
-    .registers 5
-
-    new-instance v0, Lru/ok/tamtam/nano/Tasks$FileDownload;
-
-    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$FileDownload;-><init>()V
-
-    iget-object v1, p0, Le87;->n0:Lare;
-
-    iget-wide v2, v1, Lare;->a:J
-
-    iput-wide v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->messageId:J
-
-    iget-object v2, v1, Lare;->b:Ljava/lang/String;
-
-    iput-object v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->attachId:Ljava/lang/String;
-
-    iget-wide v2, v1, Lare;->c:J
-
-    iput-wide v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->videoId:J
-
-    iget-wide v2, v1, Lare;->d:J
-
-    iput-wide v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->audioId:J
-
-    iget-wide v2, v1, Lare;->e:J
-
-    iput-wide v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->mp4GifId:J
-
-    iget-wide v2, v1, Lare;->f:J
-
-    iput-wide v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->stickerId:J
-
-    iget-wide v2, v1, Lare;->j:J
-
-    iput-wide v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->fileId:J
-
-    iget-object v2, v1, Lare;->k:Ljava/lang/String;
-
-    iput-object v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->fileName:Ljava/lang/String;
-
-    iget-object v2, v1, Lare;->g:Ljava/lang/String;
-
-    iput-object v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->url:Ljava/lang/String;
-
-    iget-boolean v2, v1, Lare;->h:Z
-
-    iput-boolean v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->notifyProgress:Z
-
-    iget-boolean v2, v1, Lare;->i:Z
-
-    iput-boolean v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->checkAutoloadConnection:Z
-
-    iget v2, v1, Lare;->l:I
-
-    iput v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->invalidateCount:I
-
-    iget-boolean v2, v1, Lare;->m:Z
-
-    iput-boolean v2, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->useOriginalExtension:Z
-
-    iget-boolean v1, v1, Lare;->n:Z
-
-    iput-boolean v1, v0, Lru/ok/tamtam/nano/Tasks$FileDownload;->notCopyVideoToGallery:Z
-
-    new-instance v1, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;
-
-    invoke-direct {v1}, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;-><init>()V
-
-    iget-wide v2, p0, Lhl;->a:J
-
-    iput-wide v2, v1, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;->requestId:J
-
-    iget-object v2, p0, Le87;->Z:Ljava/lang/String;
-
-    iput-object v2, v1, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;->outputPath:Ljava/lang/String;
-
-    iget-wide v2, p0, Lqs3;->X:J
-
-    iput-wide v2, v1, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;->chatServerId:J
-
-    iget-object p0, p0, Lqs3;->Y:Ljava/lang/Object;
-
-    check-cast p0, Ljava/util/List;
-
-    const/4 v2, 0x0
-
-    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/Number;
-
-    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v2
-
-    iput-wide v2, v1, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;->serverMessageId:J
-
-    iput-object v0, v1, Lru/ok/tamtam/nano/Tasks$InvalidateAndDownloadAudio;->fileDownload:Lru/ok/tamtam/nano/Tasks$FileDownload;
-
-    invoke-static {v1}, Lkz8;->toByteArray(Lkz8;)[B
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final f()I
-    .registers 1
-
-    const p0, 0xf4240
-
-    return p0
-.end method
-
-.method public final bridge synthetic g(Lsoe;)V
-    .registers 2
-
-    check-cast p1, Ljh9;
-
-    invoke-virtual {p0, p1}, Le87;->t(Ljh9;)V
-
-    return-void
-.end method
-
-.method public final getId()J
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-wide v0, p0, Lhl;->a:J
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return-wide v0
+    invoke-virtual {p0, p1, p2}, Le87;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Le87;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Le87;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public final getType()Lrwa;
-    .registers 1
-
-    sget-object p0, Lrwa;->I0:Lrwa;
-
-    return-object p0
-.end method
-
-.method public final i(Ldoe;)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
 
-    invoke-super {p0, p1}, Lqs3;->i(Ldoe;)V
+    new-instance v0, Le87;
 
-    iget-object p1, p1, Ldoe;->b:Ljava/lang/String;
+    iget-object p0, p0, Le87;->Y:Lone/me/login/inputname/InputNameScreen;
 
-    invoke-static {p1}, Lkv0;->r(Ljava/lang/String;)Z
+    invoke-direct {v0, p2, p0}, Le87;-><init>(Lkotlin/coroutines/Continuation;Lone/me/login/inputname/InputNameScreen;)V
 
-    move-result p1
+    iput-object p1, v0, Le87;->X:Ljava/lang/Object;
 
-    if-nez p1, :cond_0
-
-    const-string p1, "Can\'t update msg"
-
-    const/4 v0, 0x0
-
-    const-string v1, "e87"
-
-    invoke-static {v1, p1, v0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    invoke-virtual {p0}, Le87;->d()V
-
-    :cond_0
-    return-void
+    return-object v0
 .end method
 
-.method public final t(Ljh9;)V
-    .registers 8
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 7
 
-    invoke-super {p0, p1}, Lqs3;->t(Ljh9;)V
+    iget-object v0, p0, Le87;->Y:Lone/me/login/inputname/InputNameScreen;
 
-    const-string p1, "e87"
+    iget-object v1, v0, Lone/me/login/inputname/InputNameScreen;->Z:Lcl7;
 
-    const-string v0, "Receive msg get response"
+    iget-object v2, v0, Lone/me/login/inputname/InputNameScreen;->Y:Lcl7;
 
-    invoke-static {p1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lhl;->o()Ltw8;
+    iget-object p0, p0, Le87;->X:Ljava/lang/Object;
 
-    move-result-object v0
+    check-cast p0, Ljava/lang/Boolean;
 
-    iget-object v1, p0, Le87;->n0:Lare;
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-wide v2, v1, Lare;->a:J
+    move-result p0
 
-    invoke-virtual {v0, v2, v3}, Ltw8;->q(J)Lvw8;
+    if-eqz p0, :cond_1
 
-    move-result-object v0
+    sget-object p0, Lone/me/login/inputname/InputNameScreen;->A0:[Lxi7;
 
-    const/4 v2, 0x0
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
 
-    if-eqz v0, :cond_4
+    move-result-object p0
 
-    invoke-virtual {v0}, Lvw8;->u()Z
+    check-cast p0, Lp2b;
 
-    move-result v3
+    sget-object p1, Lp2b;->f:[Ljava/lang/String;
 
-    if-eqz v3, :cond_4
+    invoke-virtual {p0, p1}, Lp2b;->b([Ljava/lang/String;)Z
 
-    invoke-virtual {v0}, Lvw8;->q()Z
+    move-result p0
 
-    move-result v3
+    const/4 p1, 0x1
 
-    if-eqz v3, :cond_0
+    const-string v3, "app.writeConctatsRequested"
 
-    iget-object v3, v0, Lvw8;->w0:Lvw8;
+    if-nez p0, :cond_0
+
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lf53;
+
+    check-cast p0, Lgad;
+
+    invoke-virtual {p0, v3, p1}, Li3;->h(Ljava/lang/String;Z)V
+
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lp2b;
+
+    new-instance v1, Litg;
+
+    invoke-direct {v1, v0, p1}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
+
+    invoke-virtual {p0, v1}, Lp2b;->e(Litg;)V
 
     goto :goto_0
 
     :cond_0
-    move-object v3, v2
-
-    :goto_0
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    const-string v5, "messageDb = "
-
-    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v5, ", forwardLink = "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {p1, v3}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v0}, Lvw8;->d()Lw00;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_3
-
-    iget-object p1, p1, Lw00;->b:Ljava/lang/String;
-
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v0, Lzqe;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iget-wide v3, v1, Lare;->a:J
-
-    iput-wide v3, v0, Lzqe;->a:J
-
-    iget-object v3, v1, Lare;->b:Ljava/lang/String;
-
-    iput-object v3, v0, Lzqe;->b:Ljava/lang/String;
-
-    iget-wide v3, v1, Lare;->c:J
-
-    iput-wide v3, v0, Lzqe;->c:J
-
-    iget-wide v3, v1, Lare;->d:J
-
-    iput-wide v3, v0, Lzqe;->d:J
-
-    iget-wide v3, v1, Lare;->e:J
-
-    iput-wide v3, v0, Lzqe;->e:J
-
-    iget-wide v3, v1, Lare;->f:J
-
-    iput-wide v3, v0, Lzqe;->f:J
-
-    iget-wide v3, v1, Lare;->j:J
-
-    iput-wide v3, v0, Lzqe;->j:J
-
-    iget-object v3, v1, Lare;->k:Ljava/lang/String;
-
-    iput-object v3, v0, Lzqe;->k:Ljava/lang/String;
-
-    iget-boolean v3, v1, Lare;->h:Z
-
-    iput-boolean v3, v0, Lzqe;->h:Z
-
-    iget-boolean v3, v1, Lare;->i:Z
-
-    iput-boolean v3, v0, Lzqe;->i:Z
-
-    iget v3, v1, Lare;->l:I
-
-    iget-boolean v4, v1, Lare;->m:Z
-
-    iput-boolean v4, v0, Lzqe;->m:Z
-
-    iget-boolean v1, v1, Lare;->n:Z
-
-    iput-boolean v1, v0, Lzqe;->n:Z
-
-    add-int/lit8 v3, v3, 0x1
-
-    iput v3, v0, Lzqe;->l:I
-
-    iput-object p1, v0, Lzqe;->g:Ljava/lang/String;
-
-    new-instance p1, Lare;
-
-    invoke-direct {p1, v0}, Lare;-><init>(Lzqe;)V
-
-    iget-object p0, p0, Lhl;->c:Lil;
-
-    if-eqz p0, :cond_2
-
-    move-object v2, p0
-
-    :cond_2
-    iget-object p0, v2, Lil;->H:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Loi5;
+    check-cast p0, Lp2b;
 
-    invoke-virtual {p0, p1}, Loi5;->a(Lare;)Lxv2;
+    sget-object v4, Lp2b;->g:[Ljava/lang/String;
 
-    :cond_3
-    :goto_1
-    return-void
+    invoke-virtual {p0, v4}, Lp2b;->b([Ljava/lang/String;)Z
 
-    :cond_4
-    const-string v0, "No message after msg get"
+    move-result p0
 
-    invoke-static {p1, v0, v2}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    if-nez p0, :cond_2
 
-    invoke-virtual {p0}, Le87;->d()V
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object p0
 
-.method public final v(Lvw8;)V
-    .registers 8
+    check-cast p0, Lf53;
 
-    if-eqz p1, :cond_2
+    check-cast p0, Lgad;
 
-    iget-object v0, p1, Lvw8;->p0:Lk09;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object v1, Lk09;->c:Lk09;
+    check-cast p0, Lh53;
 
-    if-eq v0, v1, :cond_2
+    iget-object p0, p0, Li3;->g:Lfl7;
 
-    iget-object v0, p0, Le87;->n0:Lare;
+    const/4 v4, 0x0
 
-    iget-object v1, v0, Lare;->b:Ljava/lang/String;
+    invoke-virtual {p0, v3, v4}, Lfl7;->getBoolean(Ljava/lang/String;Z)Z
 
-    invoke-static {p1, v1}, Lbv7;->q(Lvw8;Ljava/lang/String;)Lw10;
+    move-result p0
 
-    move-result-object v1
+    if-nez p0, :cond_2
 
-    if-eqz v1, :cond_2
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    iget-object v2, v1, Lw10;->o:Lp10;
+    move-result-object p0
 
-    invoke-virtual {v2}, Lp10;->a()Z
+    check-cast p0, Lf53;
 
-    move-result v2
+    check-cast p0, Lgad;
 
-    if-eqz v2, :cond_1
+    invoke-virtual {p0, v3, p1}, Li3;->h(Ljava/lang/String;Z)V
 
-    iget-object p1, p0, Lhl;->c:Lil;
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
 
-    if-eqz p1, :cond_0
+    move-result-object p0
+
+    check-cast p0, Lp2b;
+
+    new-instance v1, Litg;
+
+    invoke-direct {v1, v0, p1}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
+
+    invoke-virtual {p0, v1}, Lp2b;->e(Litg;)V
 
     goto :goto_0
 
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    iget-object p1, p1, Lil;->G:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lxt6;
-
-    iget-object p1, p1, Lxt6;->a:Lgd;
-
-    new-instance v1, Ljava/io/File;
-
-    iget-object p0, p0, Le87;->Z:Ljava/lang/String;
-
-    invoke-direct {v1, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, v0, Lare;->b:Ljava/lang/String;
-
-    invoke-virtual {p1, v1, p0}, Lgd;->a(Ljava/io/File;Ljava/lang/String;)V
-
-    return-void
-
     :cond_1
-    invoke-virtual {p0}, Lhl;->o()Ltw8;
+    sget p0, Lsj7;->a:I
 
-    move-result-object v0
+    sget p0, Lsj7;->c:I
 
-    iget-wide v2, p1, Lfj0;->a:J
+    invoke-static {p0}, Lsj7;->b(I)Z
 
-    iget-object v1, v1, Lw10;->r:Ljava/lang/String;
+    move-result p0
 
-    new-instance v4, Lej5;
+    if-nez p0, :cond_2
 
-    const/16 v5, 0x1c
+    sget-object p0, Lone/me/login/inputname/InputNameScreen;->A0:[Lxi7;
 
-    invoke-direct {v4, v5}, Lej5;-><init>(I)V
-
-    invoke-virtual {v0, v2, v3, v1, v4}, Ltw8;->v(JLjava/lang/String;Lim3;)V
-
-    invoke-virtual {p0}, Lhl;->l()Lrv0;
+    invoke-virtual {v0}, Lone/me/login/inputname/InputNameScreen;->z0()Lbra;
 
     move-result-object p0
 
-    new-instance v0, Lxdf;
+    iget-object p0, p0, Lbra;->a:Landroid/widget/EditText;
 
-    iget-wide v1, p1, Lvw8;->n0:J
-
-    iget-wide v3, p1, Lfj0;->a:J
-
-    const/4 v5, 0x0
-
-    invoke-direct/range {v0 .. v5}, Lxdf;-><init>(JJI)V
-
-    invoke-virtual {p0, v0}, Lrv0;->c(Ljava/lang/Object;)V
+    invoke-static {p0}, Lqe5;->S(Landroid/view/View;)V
 
     :cond_2
-    return-void
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

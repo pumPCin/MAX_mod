@@ -4,28 +4,28 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Lqz4;
 
-.field public final b:Ljava/lang/String;
+.field public final b:Lqz4;
 
-.field public final c:Ljava/lang/String;
+.field public final c:I
 
-.field public final d:Ljava/lang/String;
+.field public final d:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Lqz4;Lqz4;II)V
     .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lna0;->a:Ljava/lang/String;
+    iput-object p1, p0, Lna0;->a:Lqz4;
 
-    iput-object p2, p0, Lna0;->b:Ljava/lang/String;
+    iput-object p2, p0, Lna0;->b:Lqz4;
 
-    iput-object p3, p0, Lna0;->c:Ljava/lang/String;
+    iput p3, p0, Lna0;->c:I
 
-    iput-object p4, p0, Lna0;->d:Ljava/lang/String;
+    iput p4, p0, Lna0;->d:I
 
     return-void
 .end method
@@ -50,45 +50,37 @@
 
     check-cast p1, Lna0;
 
-    iget-object v1, p0, Lna0;->a:Ljava/lang/String;
+    iget-object v1, p0, Lna0;->a:Lqz4;
 
-    iget-object v3, p1, Lna0;->a:Ljava/lang/String;
+    iget-object v3, p1, Lna0;->a:Lqz4;
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Lna0;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Lna0;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    iget-object v1, p0, Lna0;->c:Ljava/lang/String;
+    iget-object v1, p0, Lna0;->b:Lqz4;
 
-    iget-object v3, p1, Lna0;->c:Ljava/lang/String;
+    iget-object v3, p1, Lna0;->b:Lqz4;
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    iget-object p0, p0, Lna0;->d:Ljava/lang/String;
+    iget v1, p0, Lna0;->c:I
 
-    iget-object p1, p1, Lna0;->d:Ljava/lang/String;
+    iget v3, p1, Lna0;->c:I
 
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-ne v1, v3, :cond_1
 
-    move-result p0
+    iget p0, p0, Lna0;->d:I
 
-    if-eqz p0, :cond_1
+    iget p1, p1, Lna0;->d:I
+
+    if-ne p0, p1, :cond_1
 
     return v0
 
@@ -99,9 +91,9 @@
 .method public final hashCode()I
     .registers 4
 
-    iget-object v0, p0, Lna0;->a:Ljava/lang/String;
+    iget-object v0, p0, Lna0;->a:Lqz4;
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
@@ -111,19 +103,9 @@
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Lna0;->b:Ljava/lang/String;
+    iget-object v2, p0, Lna0;->b:Lqz4;
 
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lna0;->c:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
@@ -131,11 +113,13 @@
 
     mul-int/2addr v0, v1
 
-    iget-object p0, p0, Lna0;->d:Ljava/lang/String;
+    iget v2, p0, Lna0;->c:I
 
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    xor-int/2addr v0, v2
 
-    move-result p0
+    mul-int/2addr v0, v1
+
+    iget p0, p0, Lna0;->d:I
 
     xor-int/2addr p0, v0
 
@@ -147,39 +131,39 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "GraphicDeviceInfo{glVersion="
+    const-string v1, "In{edge="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lna0;->a:Ljava/lang/String;
+    iget-object v1, p0, Lna0;->a:Lqz4;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", postviewEdge="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", eglVersion="
+    iget-object v1, p0, Lna0;->b:Lqz4;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", inputFormat="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lna0;->b:Ljava/lang/String;
+    iget v1, p0, Lna0;->c:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", outputFormat="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", glExtensions="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lna0;->c:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", eglExtensions="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lna0;->d:Ljava/lang/String;
+    iget p0, p0, Lna0;->d:I
 
     const-string v1, "}"
 
-    invoke-static {v0, p0, v1}, La78;->o(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lyv7;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

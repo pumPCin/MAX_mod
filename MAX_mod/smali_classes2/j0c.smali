@@ -1,138 +1,167 @@
-.class public abstract Lj0c;
+.class public final Lj0c;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/os/Parcelable;
 
 
 # static fields
-.field public static oneme_settings_privacy_black_list_empty_state:I = 0x7f0a07c6
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lj0c;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public static oneme_settings_privacy_black_list_rv:I = 0x7f0a07c7
 
-.field public static oneme_settings_privacy_black_list_toolbar:I = 0x7f0a07c8
+# instance fields
+.field public final a:Lg0c;
 
-.field public static oneme_settings_privacy_black_list_unblock_action:I = 0x7f0a07c9
 
-.field public static oneme_settings_privacy_black_list_unblock_cancel_action:I = 0x7f0a07ca
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
 
-.field public static oneme_settings_privacy_enter_pin_code_root:I = 0x7f0a07cb
+    new-instance v0, Lgpa;
 
-.field public static oneme_settings_privacy_info_header:I = 0x7f0a07cc
+    const/16 v1, 0x17
 
-.field public static oneme_settings_privacy_onboarding_content:I = 0x7f0a07cd
+    invoke-direct {v0, v1}, Lgpa;-><init>(I)V
 
-.field public static oneme_settings_privacy_onboarding_content_subtitle:I = 0x7f0a07ce
+    sput-object v0, Lj0c;->CREATOR:Landroid/os/Parcelable$Creator;
 
-.field public static oneme_settings_privacy_onboarding_content_title:I = 0x7f0a07cf
+    return-void
+.end method
 
-.field public static oneme_settings_privacy_onboarding_item_1:I = 0x7f0a07d0
+.method public constructor <init>(Lg0c;)V
+    .registers 2
 
-.field public static oneme_settings_privacy_onboarding_item_2:I = 0x7f0a07d1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static oneme_settings_privacy_onboarding_item_3:I = 0x7f0a07d2
+    iput-object p1, p0, Lj0c;->a:Lg0c;
 
-.field public static oneme_settings_privacy_onboarding_lock:I = 0x7f0a07d3
+    return-void
+.end method
 
-.field public static oneme_settings_privacy_onboarding_lock_background:I = 0x7f0a07d4
 
-.field public static oneme_settings_privacy_onboarding_root:I = 0x7f0a07d5
+# virtual methods
+.method public final describeContents()I
+    .registers 1
 
-.field public static oneme_settings_privacy_onboarding_scroll_view:I = 0x7f0a07d6
+    const/4 p0, 0x0
 
-.field public static oneme_settings_privacy_onboarding_set_password_button:I = 0x7f0a07d7
+    return p0
+.end method
 
-.field public static oneme_settings_privacy_onboarding_set_pin_code_button:I = 0x7f0a07d8
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-.field public static oneme_settings_privacy_onboarding_toolbar:I = 0x7f0a07d9
+    const/4 v0, 0x1
 
-.field public static oneme_settings_privacy_onboarding_top_guideline:I = 0x7f0a07da
+    if-ne p0, p1, :cond_0
 
-.field public static oneme_settings_privacy_onboarding_without_code_button:I = 0x7f0a07db
+    return v0
 
-.field public static oneme_settings_privacy_pin_code_toolbar:I = 0x7f0a07dc
+    :cond_0
+    instance-of v1, p1, Lj0c;
 
-.field public static oneme_settings_privacy_safe_files:I = 0x7f0a07dd
+    const/4 v2, 0x0
 
-.field public static oneme_settings_privacy_screen_add_me_to_chat:I = 0x7f0a07de
+    if-nez v1, :cond_1
 
-.field public static oneme_settings_privacy_screen_black_list:I = 0x7f0a07df
+    return v2
 
-.field public static oneme_settings_privacy_screen_blacklist:I = 0x7f0a07e0
+    :cond_1
+    check-cast p1, Lj0c;
 
-.field public static oneme_settings_privacy_screen_call_me:I = 0x7f0a07e1
+    iget-object p0, p0, Lj0c;->a:Lg0c;
 
-.field public static oneme_settings_privacy_screen_dialog_add_chat_button_all:I = 0x7f0a07e2
+    iget-object p1, p1, Lj0c;->a:Lg0c;
 
-.field public static oneme_settings_privacy_screen_dialog_add_chat_button_contacts:I = 0x7f0a07e3
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-.field public static oneme_settings_privacy_screen_dialog_call_button_all:I = 0x7f0a07e4
+    move-result p0
 
-.field public static oneme_settings_privacy_screen_dialog_call_button_contacts:I = 0x7f0a07e5
+    if-nez p0, :cond_2
 
-.field public static oneme_settings_privacy_screen_dialog_finished_session_cancel_btn:I = 0x7f0a07e6
+    return v2
 
-.field public static oneme_settings_privacy_screen_dialog_finished_session_finish_btn:I = 0x7f0a07e7
+    :cond_2
+    return v0
+.end method
 
-.field public static oneme_settings_privacy_screen_dialog_online_button_contacts:I = 0x7f0a07e8
+.method public final hashCode()I
+    .registers 1
 
-.field public static oneme_settings_privacy_screen_dialog_online_button_nobody:I = 0x7f0a07e9
+    iget-object p0, p0, Lj0c;->a:Lg0c;
 
-.field public static oneme_settings_privacy_screen_dialog_online_never_accept_btn:I = 0x7f0a07ea
+    invoke-virtual {p0}, Lg0c;->hashCode()I
 
-.field public static oneme_settings_privacy_screen_dialog_online_never_cancel_btn:I = 0x7f0a07eb
+    move-result p0
 
-.field public static oneme_settings_privacy_screen_dialog_safe_file_no_btn:I = 0x7f0a07ec
+    return p0
+.end method
 
-.field public static oneme_settings_privacy_screen_dialog_safe_file_yes_btn:I = 0x7f0a07ed
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-.field public static oneme_settings_privacy_screen_dialog_search_by_phone_all:I = 0x7f0a07ee
+    new-instance v0, Ljava/lang/StringBuilder;
 
-.field public static oneme_settings_privacy_screen_dialog_search_by_phone_contacts:I = 0x7f0a07ef
+    const-string v1, "QualityParc(value="
 
-.field public static oneme_settings_privacy_screen_finished_sessions:I = 0x7f0a07f0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-.field public static oneme_settings_privacy_screen_how_can_section:I = 0x7f0a07f1
+    iget-object p0, p0, Lj0c;->a:Lg0c;
 
-.field public static oneme_settings_privacy_screen_how_session:I = 0x7f0a07f2
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-.field public static oneme_settings_privacy_screen_list:I = 0x7f0a07f3
+    const-string p0, ")"
 
-.field public static oneme_settings_privacy_screen_online_state_all:I = 0x7f0a07f4
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.field public static oneme_settings_privacy_screen_online_state_nobody:I = 0x7f0a07f5
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.field public static oneme_settings_privacy_screen_safe_mode:I = 0x7f0a07f6
+    move-result-object p0
 
-.field public static oneme_settings_privacy_screen_search_by_phone:I = 0x7f0a07f7
+    return-object p0
+.end method
 
-.field public static oneme_settings_privacy_screen_see_online_state:I = 0x7f0a07f8
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 5
 
-.field public static oneme_settings_privacy_screen_settings_header_vh:I = 0x7f0a07f9
+    iget-object p0, p0, Lj0c;->a:Lg0c;
 
-.field public static oneme_settings_privacy_screen_settings_item_vh:I = 0x7f0a07fa
+    iget-object p2, p0, Lg0c;->a:Le0c;
 
-.field public static oneme_settings_privacy_screen_settings_warning_vh:I = 0x7f0a07fb
+    iget-object p2, p2, Le0c;->a:Ljava/lang/String;
 
-.field public static oneme_settings_privacy_screen_toolbar:I = 0x7f0a07fc
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-.field public static oneme_settings_privacy_screen_twofa:I = 0x7f0a07fd
+    iget p2, p0, Lg0c;->b:I
 
-.field public static oneme_settings_privacy_screen_twofa_profile_delete:I = 0x7f0a07fe
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-.field public static oneme_settings_privacy_screen_twofa_warning_item:I = 0x7f0a07ff
+    iget p2, p0, Lg0c;->c:I
 
-.field public static oneme_settings_privacy_screen_web_apps:I = 0x7f0a0800
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-.field public static oneme_settings_privacy_setup_pin_code_description:I = 0x7f0a0801
+    iget p2, p0, Lg0c;->d:I
 
-.field public static oneme_settings_privacy_setup_pin_code_error:I = 0x7f0a0802
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-.field public static oneme_settings_privacy_setup_pin_code_forgot:I = 0x7f0a0803
+    iget-wide v0, p0, Lg0c;->e:J
 
-.field public static oneme_settings_privacy_setup_pin_code_input:I = 0x7f0a0804
+    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
-.field public static oneme_settings_privacy_setup_pin_code_lock:I = 0x7f0a0805
+    iget-boolean p0, p0, Lg0c;->f:Z
 
-.field public static oneme_settings_privacy_setup_pin_code_root_view:I = 0x7f0a0806
+    int-to-byte p0, p0
 
-.field public static oneme_settings_privacy_setup_pin_code_title:I = 0x7f0a0807
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeByte(B)V
 
-.field public static top_barrier:I = 0x7f0a0c38
+    return-void
+.end method

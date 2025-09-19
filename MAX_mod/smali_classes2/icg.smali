@@ -1,126 +1,192 @@
 .class public final Licg;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lrc6;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic X:I
 
-.field public final synthetic Y:Lpcg;
+.field public synthetic Y:Lmcg;
 
 
 # direct methods
-.method public constructor <init>(Lpcg;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    iput-object p1, p0, Licg;->Y:Lpcg;
+    const/4 v0, 0x0
 
-    const/4 p1, 0x2
+    iput v0, p0, Licg;->X:I
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lmcg;Lkotlin/coroutines/Continuation;)V
+    .registers 4
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Licg;->X:I
+
+    iput-object p1, p0, Licg;->Y:Lmcg;
+
+    const/4 p1, 0x3
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Licg;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Licg;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Licg;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Licg;
-
-    iget-object p0, p0, Licg;->Y:Lpcg;
-
-    invoke-direct {p1, p0, p2}, Licg;-><init>(Lpcg;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
 
     iget v0, p0, Licg;->X:I
 
-    const/4 v1, 0x1
+    packed-switch v0, :pswitch_data_0
 
-    if-eqz v0, :cond_1
+    check-cast p1, Landroid/widget/TextView;
 
-    if-ne v0, v1, :cond_0
+    check-cast p2, Lera;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    goto :goto_0
+    new-instance p1, Licg;
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iget-object p0, p0, Licg;->Y:Lmcg;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-direct {p1, p0, p3}, Licg;-><init>(Lmcg;Lkotlin/coroutines/Continuation;)V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    sget-object p0, Lylf;->a:Lylf;
 
-    throw p0
+    invoke-virtual {p1, p0}, Licg;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    return-object p0
 
-    iget-object p1, p0, Licg;->Y:Lpcg;
+    :pswitch_0
+    check-cast p1, Lmcg;
 
-    iget-object v0, p1, Lpcg;->C0:Lnc9;
+    check-cast p2, Lera;
 
-    iget-object v0, v0, Lnc9;->f:Ljava/lang/Object;
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    check-cast v0, Lou0;
+    new-instance p0, Licg;
 
-    new-instance v2, Lp52;
+    const/4 p2, 0x3
 
-    invoke-direct {v2, v0}, Lp52;-><init>(Lxbc;)V
+    invoke-direct {p0, p2, p3}, Licg;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    new-instance v0, Lkw;
+    iput-object p1, p0, Licg;->Y:Lmcg;
 
-    const/16 v3, 0xd
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-direct {v0, v3, p1}, Lkw;-><init>(ILjava/lang/Object;)V
-
-    iput v1, p0, Licg;->X:I
-
-    invoke-virtual {v2, v0, p0}, Lp52;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
+    invoke-virtual {p0, p1}, Licg;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p1
 
-    :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    return-object p0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    iget v0, p0, Licg;->X:I
+
+    sget-object v1, Lylf;->a:Lylf;
+
+    const/4 v2, 0x0
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Licg;->Y:Lmcg;
+
+    iget-object p1, p0, Lmcg;->c:Ljcg;
+
+    if-eqz p1, :cond_0
+
+    check-cast p1, Ly9e;
+
+    iget-object p1, p1, Ly9e;->a:Ljava/lang/Object;
+
+    check-cast p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+
+    sget-object v0, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->e1:[Lxi7;
+
+    invoke-virtual {p1}, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->T0()Lwlc;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lwlc;->x0:Liic;
+
+    iget-object p1, p1, Liic;->a:Lrce;
+
+    invoke-interface {p1}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v2, p1
+
+    check-cast v2, Lolc;
+
+    :cond_0
+    instance-of p1, v2, Lklc;
+
+    invoke-virtual {p0, p1}, Lmcg;->setDurationColor(Z)V
+
+    return-object v1
+
+    :pswitch_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Licg;->Y:Lmcg;
+
+    iget-object p1, p0, Lmcg;->c:Ljcg;
+
+    if-eqz p1, :cond_1
+
+    check-cast p1, Ly9e;
+
+    iget-object p1, p1, Ly9e;->a:Ljava/lang/Object;
+
+    check-cast p1, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;
+
+    sget-object v0, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->e1:[Lxi7;
+
+    invoke-virtual {p1}, Lone/me/sdk/messagewrite/recordcontrols/RecordControlsWidget;->T0()Lwlc;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lwlc;->x0:Liic;
+
+    iget-object p1, p1, Liic;->a:Lrce;
+
+    invoke-interface {p1}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    move-object v2, p1
+
+    check-cast v2, Lolc;
+
+    :cond_1
+    instance-of p1, v2, Lklc;
+
+    invoke-virtual {p0, p1}, Lmcg;->setBackgroundColor(Z)V
+
+    return-object v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,43 +1,59 @@
 .class public final Lopg;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public X:Lapg;
 
-.field public b:Ljava/lang/String;
+.field public Y:Lnpg;
 
-.field public final c:Ljava/util/ArrayList;
+.field public Z:Lzke;
 
-.field public final d:Ljava/util/ArrayList;
+.field public o:Lxpg;
+
+.field public synthetic r0:Ljava/lang/Object;
+
+.field public final synthetic s0:Lxpg;
+
+.field public t0:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(Lxpg;Ljx3;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lopg;->s0:Lxpg;
 
-    iput-object p1, p0, Lopg;->a:Ljava/lang/String;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    iput-object p1, p0, Lopg;->r0:Ljava/lang/Object;
+
+    iget p1, p0, Lopg;->t0:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lopg;->t0:I
 
     const/4 p1, 0x0
 
-    iput-object p1, p0, Lopg;->b:Ljava/lang/String;
+    const/4 v0, 0x0
 
-    new-instance p1, Ljava/util/ArrayList;
+    iget-object v1, p0, Lopg;->s0:Lxpg;
 
-    const/4 v0, 0x7
+    invoke-virtual {v1, p1, v0, p0}, Lxpg;->h(Ljava/lang/String;ZLjx3;)Ljava/lang/Object;
 
-    invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(I)V
+    move-result-object p0
 
-    iput-object p1, p0, Lopg;->c:Ljava/util/ArrayList;
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Lopg;->d:Ljava/util/ArrayList;
-
-    return-void
+    return-object p0
 .end method

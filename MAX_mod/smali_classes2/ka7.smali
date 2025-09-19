@@ -2,51 +2,46 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/Comparator;
+
+# instance fields
+.field public final a:Lrzc;
+
+
+# direct methods
+.method public constructor <init>(Lrzc;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lka7;->a:Lrzc;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 3
+.method public final a(Luzc;Ljava/lang/String;)V
+    .registers 4
 
-    check-cast p1, Lja7;
+    invoke-virtual {p1, p2}, Luzc;->d(Ljava/lang/String;)V
 
-    check-cast p2, Lja7;
+    new-instance p2, Lxu6;
 
-    iget p0, p1, Lja7;->b:I
+    const/4 v0, 0x0
 
-    if-nez p0, :cond_0
+    invoke-direct {p2, v0}, Lxu6;-><init>(I)V
 
-    iget p0, p2, Lja7;->b:I
+    invoke-virtual {p1, p2}, Luzc;->c(Lcy3;)V
 
-    if-eqz p0, :cond_0
+    new-instance p2, Lxu6;
 
-    const/4 p0, -0x1
+    invoke-direct {p2, v0}, Lxu6;-><init>(I)V
 
-    return p0
+    invoke-virtual {p1, p2}, Luzc;->a(Lcy3;)V
 
-    :cond_0
-    iget p0, p1, Lja7;->b:I
+    iget-object p0, p0, Lka7;->a:Lrzc;
 
-    if-eqz p0, :cond_1
+    invoke-virtual {p0, p1}, Lrzc;->H(Luzc;)V
 
-    iget p0, p2, Lja7;->b:I
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_1
-    iget p0, p1, Lja7;->e:F
-
-    iget p1, p2, Lja7;->e:F
-
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
-
-    move-result p0
-
-    return p0
+    return-void
 .end method

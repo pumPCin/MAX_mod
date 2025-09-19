@@ -58,7 +58,7 @@
 
     if-eqz p1, :cond_1
 
-    sget-object p1, Lxh4;->e0:Lxh4;
+    sget-object p1, Loi4;->e0:Loi4;
 
     goto :goto_0
 
@@ -67,18 +67,18 @@
 
     move-result-object p1
 
-    sget-object p2, Ldqe;->a0:Ldle;
+    sget-object p2, Lcze;->a0:Lzte;
 
-    invoke-static {p1}, Lx44;->Q(Landroid/content/Context;)Ldqe;
+    invoke-static {p1}, Ln4e;->I(Landroid/content/Context;)Lcze;
 
     move-result-object p1
 
     :goto_0
-    iget p2, p1, Ldqe;->t:I
+    iget p2, p1, Lcze;->t:I
 
     invoke-virtual {p0, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    sget p2, Lssc;->c:I
+    sget p2, Lz0d;->c:I
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -116,7 +116,7 @@
 
     mul-float/2addr p2, v2
 
-    invoke-static {p2}, Lg53;->C(F)I
+    invoke-static {p2}, Lya6;->G(F)I
 
     move-result p2
 
@@ -138,7 +138,7 @@
 
     mul-float/2addr v3, v0
 
-    invoke-static {v3}, Lg53;->C(F)I
+    invoke-static {v3}, Lya6;->G(F)I
 
     move-result v3
 
@@ -158,7 +158,7 @@
 
     mul-float/2addr v4, v2
 
-    invoke-static {v4}, Lg53;->C(F)I
+    invoke-static {v4}, Lya6;->G(F)I
 
     move-result v4
 
@@ -178,7 +178,7 @@
 
     mul-float/2addr v0, v5
 
-    invoke-static {v0}, Lg53;->C(F)I
+    invoke-static {v0}, Lya6;->G(F)I
 
     move-result v0
 
@@ -202,7 +202,7 @@
 
     mul-float/2addr v2, p2
 
-    invoke-static {v2}, Lg53;->C(F)I
+    invoke-static {v2}, Lya6;->G(F)I
 
     move-result p2
 
@@ -212,7 +212,7 @@
 
     invoke-virtual {p0, p2}, Landroid/widget/TextView;->setGravity(I)V
 
-    iget p1, p1, Ldqe;->r:I
+    iget p1, p1, Lcze;->r:I
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -238,11 +238,11 @@
 
     mul-float/2addr p3, p2
 
-    invoke-static {p3}, Lg53;->C(F)I
+    invoke-static {p3}, Lya6;->G(F)I
 
     move-result p2
 
-    invoke-static {p1, v1, v1, p2}, Lg64;->z(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;I)Landroid/graphics/drawable/GradientDrawable;
+    invoke-static {p1, v1, v1, p2}, Lhv8;->Q(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;I)Landroid/graphics/drawable/GradientDrawable;
 
     move-result-object p1
 

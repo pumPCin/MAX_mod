@@ -1,61 +1,59 @@
 .class public final Lzu;
-.super Ldv;
+.super Ljx3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lzu;
+# instance fields
+.field public X:J
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lyv;
+
+.field public o:Liu;
+
+.field public r0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lyv;Ljx3;)V
+    .registers 3
 
-    new-instance v0, Lzu;
+    iput-object p1, p0, Lzu;->Z:Lyv;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lzu;->a:Lzu;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lzu;->Y:Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    iget p1, p0, Lzu;->r0:I
 
-    return v0
+    const/high16 v0, -0x80000000
 
-    :cond_0
-    instance-of p0, p1, Lzu;
+    or-int/2addr p1, v0
 
-    if-nez p0, :cond_1
+    iput p1, p0, Lzu;->r0:I
 
-    const/4 p0, 0x0
+    const-wide/16 v2, 0x0
 
-    return p0
+    const/4 v4, 0x0
 
-    :cond_1
-    return v0
-.end method
+    iget-object v0, p0, Lzu;->Z:Lyv;
 
-.method public final hashCode()I
-    .registers 1
+    const/4 v1, 0x0
 
-    const p0, 0x2c75b5e3
+    move-object v5, p0
 
-    return p0
-.end method
+    invoke-virtual/range {v0 .. v5}, Lyv;->u(Ltt;JLiu;Ljx3;)Ljava/lang/Object;
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "Idle"
+    move-result-object p0
 
     return-object p0
 .end method

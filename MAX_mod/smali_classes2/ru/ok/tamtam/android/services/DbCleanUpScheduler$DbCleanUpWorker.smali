@@ -15,12 +15,12 @@
         "context",
         "Landroidx/work/WorkerParameters;",
         "workerParams",
-        "Lp5e;",
+        "Lcee;",
         "statsDatabase",
-        "Ls75;",
+        "Lq95;",
         "exceptionHandler",
         "<init>",
-        "(Landroid/content/Context;Landroidx/work/WorkerParameters;Lp5e;Ls75;)V",
+        "(Landroid/content/Context;Landroidx/work/WorkerParameters;Lcee;Lq95;)V",
         "tamtam-android-sdk_release"
     }
     k = 0x1
@@ -34,20 +34,20 @@
 
 
 # instance fields
-.field public final a:Lp5e;
+.field public final a:Lcee;
 
-.field public final b:Ls75;
+.field public final b:Lq95;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lp5e;Ls75;)V
+.method public constructor <init>(Landroid/content/Context;Landroidx/work/WorkerParameters;Lcee;Lq95;)V
     .registers 5
 
     invoke-direct {p0, p1, p2}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
 
-    iput-object p3, p0, Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;->a:Lp5e;
+    iput-object p3, p0, Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;->a:Lcee;
 
-    iput-object p4, p0, Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;->b:Ls75;
+    iput-object p4, p0, Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;->b:Lq95;
 
     return-void
 .end method
@@ -57,15 +57,15 @@
 .method public final doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .registers 9
 
-    instance-of v0, p1, La84;
+    instance-of v0, p1, Lr84;
 
     if-eqz v0, :cond_0
 
     move-object v0, p1
 
-    check-cast v0, La84;
+    check-cast v0, Lr84;
 
-    iget v1, v0, La84;->Z:I
+    iget v1, v0, Lr84;->Z:I
 
     const/high16 v2, -0x80000000
 
@@ -75,21 +75,21 @@
 
     sub-int/2addr v1, v2
 
-    iput v1, v0, La84;->Z:I
+    iput v1, v0, Lr84;->Z:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, La84;
+    new-instance v0, Lr84;
 
-    check-cast p1, Lcx3;
+    check-cast p1, Ljx3;
 
-    invoke-direct {v0, p0, p1}, La84;-><init>(Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;Lcx3;)V
+    invoke-direct {v0, p0, p1}, Lr84;-><init>(Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;Ljx3;)V
 
     :goto_0
-    iget-object p1, v0, La84;->X:Ljava/lang/Object;
+    iget-object p1, v0, Lr84;->X:Ljava/lang/Object;
 
-    iget v1, v0, La84;->Z:I
+    iget v1, v0, Lr84;->Z:I
 
     const-string v2, "DbCleanUpScheduler"
 
@@ -99,9 +99,9 @@
 
     if-ne v1, v3, :cond_1
 
-    iget-object p0, v0, La84;->o:Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;
+    iget-object p0, v0, Lr84;->o:Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -115,19 +115,19 @@
     throw p0
 
     :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     const-string p1, "Work started"
 
-    invoke-static {v2, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, p1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    iput-object p0, v0, La84;->o:Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;
+    iput-object p0, v0, Lr84;->o:Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;
 
-    iput v3, v0, La84;->Z:I
+    iput v3, v0, Lr84;->Z:I
 
-    iget-object p1, p0, Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;->a:Lp5e;
+    iget-object p1, p0, Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;->a:Lcee;
 
-    check-cast p1, Lspc;
+    check-cast p1, Lxxc;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -135,43 +135,43 @@
 
     move-result-wide v3
 
-    sget v1, Llw4;->o:I
+    sget v1, Lfy4;->o:I
 
-    sget-object v1, Lqw4;->Y:Lqw4;
+    sget-object v1, Lky4;->Y:Lky4;
 
     const/16 v5, 0x30
 
-    invoke-static {v5, v1}, Lg5e;->G(ILqw4;)J
+    invoke-static {v5, v1}, Lr94;->b0(ILky4;)J
 
     move-result-wide v5
 
-    invoke-static {v5, v6}, Llw4;->e(J)J
+    invoke-static {v5, v6}, Lfy4;->e(J)J
 
     move-result-wide v5
 
     sub-long/2addr v3, v5
 
-    iget-object p1, p1, Lspc;->b:Ldle;
+    iget-object p1, p1, Lxxc;->b:Lzte;
 
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lm5e;
+    check-cast p1, Lzde;
 
-    iget-object v1, p1, Lm5e;->a:Lapc;
+    iget-object v1, p1, Lzde;->a:Lexc;
 
-    new-instance v5, Lrg5;
+    new-instance v5, Lui5;
 
     const/4 v6, 0x4
 
-    invoke-direct {v5, p1, v3, v4, v6}, Lrg5;-><init>(Ljava/lang/Object;JI)V
+    invoke-direct {v5, p1, v3, v4, v6}, Lui5;-><init>(Ljava/lang/Object;JI)V
 
-    invoke-static {v1, v5, v0}, Lso9;->l(Lapc;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v1, v5, v0}, Lmu0;->i(Lexc;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
-    sget-object v0, Ls04;->a:Ls04;
+    sget-object v0, Lz04;->a:Lz04;
 
     if-ne p1, v0, :cond_3
 
@@ -201,17 +201,17 @@
 
     move-result-object v0
 
-    invoke-static {v2, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
     if-lez p1, :cond_4
 
-    iget-object p0, p0, Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;->b:Ls75;
+    iget-object p0, p0, Lru/ok/tamtam/android/services/DbCleanUpScheduler$DbCleanUpWorker;->b:Lq95;
 
     new-instance v0, Lru/ok/tamtam/ExceptionHandler$HandledException;
 
     const-string v3, " events older than 48 hours"
 
-    invoke-static {p1, v1, v3}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1, v3}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -223,14 +223,14 @@
 
     invoke-direct {v0, p1, v4, v3, v1}, Lru/ok/tamtam/ExceptionHandler$HandledException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/String;)V
 
-    invoke-static {p0, v0}, Ls75;->b(Ls75;Ljava/lang/Throwable;)V
+    invoke-static {p0, v0}, Lq95;->b(Lq95;Ljava/lang/Throwable;)V
 
     :cond_4
     const-string p0, "Work finished"
 
-    invoke-static {v2, p0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, p0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {}, Lgq7;->b()Lfq7;
+    invoke-static {}, Lkt7;->b()Ljt7;
 
     move-result-object p0
 

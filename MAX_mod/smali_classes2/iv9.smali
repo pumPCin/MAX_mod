@@ -1,94 +1,92 @@
-.class public final Liv9;
-.super Lsoe;
+.class public final synthetic Liv9;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lgm;
 
 
 # instance fields
-.field public final c:Lpcb;
+.field public final synthetic a:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
 
 
 # direct methods
-.method public constructor <init>(Lpcb;)V
+.method public synthetic constructor <init>(Lone/me/login/neuroavatars/NeuroAvatarsScreen;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Liv9;->c:Lpcb;
+    iput-object p1, p0, Liv9;->a:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final f0(Lhm;I)V
     .registers 5
 
-    const/4 v0, 0x1
+    sget-object p1, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->K0:[Lxi7;
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Liv9;->a:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
 
-    return v0
+    invoke-virtual {p0}, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->y0()Lhm;
 
-    :cond_0
-    instance-of v1, p1, Liv9;
+    move-result-object p1
 
-    const/4 v2, 0x0
+    invoke-virtual {p1}, Lhm;->getTotalScrollRange()I
 
-    if-nez v1, :cond_1
+    move-result p1
 
-    return v2
+    iget-object v0, p0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->w0:Lzg5;
 
-    :cond_1
-    check-cast p1, Liv9;
+    invoke-static {p2}, Ljava/lang/Math;->abs(I)I
 
-    iget-object p0, p0, Liv9;->c:Lpcb;
+    move-result p2
 
-    iget-object p1, p1, Liv9;->c:Lpcb;
+    int-to-float p2, p2
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    int-to-float p1, p1
 
-    move-result p0
+    div-float/2addr p2, p1
 
-    if-nez p0, :cond_2
+    invoke-virtual {v0, p2}, Lt28;->getInterpolation(F)F
 
-    return v2
+    move-result p1
 
-    :cond_2
-    return v0
-.end method
+    iget-object p2, p0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->Z:Lcic;
 
-.method public final hashCode()I
-    .registers 1
+    sget-object v0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->K0:[Lxi7;
 
-    iget-object p0, p0, Liv9;->c:Lpcb;
+    const/4 v1, 0x2
 
-    invoke-virtual {p0}, Lpcb;->hashCode()I
+    aget-object v1, v0, v1
 
-    move-result p0
+    invoke-interface {p2, p0, v1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
-    return p0
-.end method
+    move-result-object p2
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    check-cast p2, Landroid/view/ViewGroup;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    const-string v1, "Response(profile="
+    sub-float/2addr v1, p1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p2, v1}, Landroid/view/View;->setAlpha(F)V
 
-    iget-object p0, p0, Liv9;->c:Lpcb;
+    iget-object p2, p0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->s0:Lcic;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/4 v1, 0x4
 
-    const-string p0, ")"
+    aget-object v0, v0, v1
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p2, p0, v0}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Ldsa;
+
+    invoke-virtual {p0, p1}, Ldsa;->setTitleAlpha(F)V
+
+    return-void
 .end method

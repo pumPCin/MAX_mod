@@ -2,308 +2,172 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbh8;
-.implements Lzg8;
-
 
 # instance fields
-.field public X:Lbh8;
-
-.field public Y:Lzg8;
-
-.field public Z:J
-
-.field public final a:Lan8;
+.field public final a:Ljava/lang/String;
 
 .field public final b:J
 
-.field public final c:Lma4;
+.field public final c:J
 
-.field public o:Lwj0;
+.field public final d:J
 
 
 # direct methods
-.method public constructor <init>(Lan8;Lma4;J)V
-    .registers 5
+.method public constructor <init>(Ljava/lang/String;JJJ)V
+    .registers 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lx38;->a:Lan8;
+    iput-object p1, p0, Lx38;->a:Ljava/lang/String;
 
-    iput-object p2, p0, Lx38;->c:Lma4;
+    iput-wide p2, p0, Lx38;->b:J
 
-    iput-wide p3, p0, Lx38;->b:J
+    iput-wide p4, p0, Lx38;->c:J
 
-    const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
-
-    iput-wide p1, p0, Lx38;->Z:J
+    iput-wide p6, p0, Lx38;->d:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lbad;)V
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 9
 
-    check-cast p1, Lbh8;
+    const/4 v0, 0x1
 
-    iget-object p1, p0, Lx38;->Y:Lzg8;
+    if-ne p0, p1, :cond_0
 
-    sget v0, Lyhf;->a:I
-
-    invoke-interface {p1, p0}, Lz9d;->b(Lbad;)V
-
-    return-void
-.end method
-
-.method public final c()J
-    .registers 3
-
-    iget-object p0, p0, Lx38;->X:Lbh8;
-
-    sget v0, Lyhf;->a:I
-
-    invoke-interface {p0}, Lbad;->c()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final d(Lbh8;)V
-    .registers 3
-
-    iget-object p1, p0, Lx38;->Y:Lzg8;
-
-    sget v0, Lyhf;->a:I
-
-    invoke-interface {p1, p0}, Lzg8;->d(Lbh8;)V
-
-    return-void
-.end method
-
-.method public final e()V
-    .registers 2
-
-    iget-object v0, p0, Lx38;->X:Lbh8;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lbh8;->e()V
-
-    return-void
+    return v0
 
     :cond_0
-    iget-object p0, p0, Lx38;->o:Lwj0;
+    instance-of v1, p1, Lx38;
 
-    if-eqz p0, :cond_1
+    const/4 v2, 0x0
 
-    invoke-virtual {p0}, Lwj0;->g()V
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    return-void
+    check-cast p1, Lx38;
+
+    iget-object v1, p0, Lx38;->a:Ljava/lang/String;
+
+    iget-object v3, p1, Lx38;->a:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-wide v3, p0, Lx38;->b:J
+
+    iget-wide v5, p1, Lx38;->b:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-wide v3, p0, Lx38;->c:J
+
+    iget-wide v5, p1, Lx38;->c:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-wide v3, p0, Lx38;->d:J
+
+    iget-wide p0, p1, Lx38;->d:J
+
+    cmp-long p0, v3, p0
+
+    if-eqz p0, :cond_5
+
+    return v2
+
+    :cond_5
+    return v0
 .end method
 
-.method public final g(J)J
-    .registers 4
+.method public final hashCode()I
+    .registers 5
 
-    iget-object p0, p0, Lx38;->X:Lbh8;
+    iget-object v0, p0, Lx38;->a:Ljava/lang/String;
 
-    sget v0, Lyhf;->a:I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    invoke-interface {p0, p1, p2}, Lbh8;->g(J)J
+    move-result v0
 
-    move-result-wide p0
+    const/16 v1, 0x1f
 
-    return-wide p0
-.end method
+    mul-int/2addr v0, v1
 
-.method public final h()Z
-    .registers 1
+    iget-wide v2, p0, Lx38;->b:J
 
-    iget-object p0, p0, Lx38;->X:Lbh8;
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
 
-    if-eqz p0, :cond_0
+    move-result v0
 
-    invoke-interface {p0}, Lbad;->h()Z
+    iget-wide v2, p0, Lx38;->c:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget-wide v1, p0, Lx38;->d:J
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
 
     move-result p0
 
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
+    add-int/2addr p0, v0
 
     return p0
 .end method
 
-.method public final i()J
-    .registers 3
+.method public final toString()Ljava/lang/String;
+    .registers 6
 
-    iget-object p0, p0, Lx38;->X:Lbh8;
+    const-string v0, "LooperMessage(message="
 
-    sget v0, Lyhf;->a:I
+    const-string v1, ", startTime="
 
-    invoke-interface {p0}, Lbh8;->i()J
+    iget-wide v2, p0, Lx38;->b:J
 
-    move-result-wide v0
+    iget-object v4, p0, Lx38;->a:Ljava/lang/String;
 
-    return-wide v0
-.end method
+    invoke-static {v0, v2, v3, v4, v1}, Lz7e;->t(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final j()Lv2f;
-    .registers 2
+    move-result-object v0
 
-    iget-object p0, p0, Lx38;->X:Lbh8;
+    const-string v1, ", endTime="
 
-    sget v0, Lyhf;->a:I
+    const-string v2, ", messageQueueSize="
 
-    invoke-interface {p0}, Lbh8;->j()Lv2f;
+    iget-wide v3, p0, Lx38;->c:J
+
+    invoke-static {v3, v4, v1, v2, v0}, Lmw1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    const-string v1, ")"
+
+    iget-wide v2, p0, Lx38;->d:J
+
+    invoke-static {v0, v2, v3, v1}, Lyv7;->j(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final k()J
-    .registers 3
-
-    iget-object p0, p0, Lx38;->X:Lbh8;
-
-    sget v0, Lyhf;->a:I
-
-    invoke-interface {p0}, Lbad;->k()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final m(J)V
-    .registers 4
-
-    iget-object p0, p0, Lx38;->X:Lbh8;
-
-    sget v0, Lyhf;->a:I
-
-    invoke-interface {p0, p1, p2}, Lbad;->m(J)V
-
-    return-void
-.end method
-
-.method public final p(JLo5d;)J
-    .registers 5
-
-    iget-object p0, p0, Lx38;->X:Lbh8;
-
-    sget v0, Lyhf;->a:I
-
-    invoke-interface {p0, p1, p2, p3}, Lbh8;->p(JLo5d;)J
-
-    move-result-wide p0
-
-    return-wide p0
-.end method
-
-.method public final u(J)V
-    .registers 4
-
-    iget-object p0, p0, Lx38;->X:Lbh8;
-
-    sget v0, Lyhf;->a:I
-
-    invoke-interface {p0, p1, p2}, Lbh8;->u(J)V
-
-    return-void
-.end method
-
-.method public final x(J)Z
-    .registers 3
-
-    iget-object p0, p0, Lx38;->X:Lbh8;
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0, p1, p2}, Lbad;->x(J)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final y(Lzg8;J)V
-    .registers 6
-
-    iput-object p1, p0, Lx38;->Y:Lzg8;
-
-    iget-object p1, p0, Lx38;->X:Lbh8;
-
-    if-eqz p1, :cond_1
-
-    iget-wide p2, p0, Lx38;->Z:J
-
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v0, p2, v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-wide p2, p0, Lx38;->b:J
-
-    :goto_0
-    invoke-interface {p1, p0, p2, p3}, Lbh8;->y(Lzg8;J)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final z([Lnb5;[Z[Lsuc;[ZJ)J
-    .registers 13
-
-    iget-wide v0, p0, Lx38;->Z:J
-
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v4, v0, v2
-
-    if-eqz v4, :cond_0
-
-    iget-wide v4, p0, Lx38;->b:J
-
-    cmp-long v4, p5, v4
-
-    if-nez v4, :cond_0
-
-    iput-wide v2, p0, Lx38;->Z:J
-
-    move-wide p5, v0
-
-    :cond_0
-    iget-object p0, p0, Lx38;->X:Lbh8;
-
-    sget v0, Lyhf;->a:I
-
-    invoke-interface/range {p0 .. p6}, Lbh8;->z([Lnb5;[Z[Lsuc;[ZJ)J
-
-    move-result-wide p0
-
-    return-wide p0
 .end method

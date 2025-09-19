@@ -1,66 +1,50 @@
-.class public final Lsn3;
-.super Landroid/text/style/ClickableSpan;
+.class public final synthetic Lsn3;
+.super Ls8;
 .source "SourceFile"
 
+# interfaces
+.implements Lrc6;
 
-# instance fields
-.field public final a:J
 
-.field public b:Loy1;
+# static fields
+.field public static final r0:Lsn3;
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 5
 
-    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
+    new-instance v0, Lsn3;
 
-    iput-wide p1, p0, Lsn3;->a:J
+    const-string v1, "<init>(Lone/me/profileedit/screens/changelink/ChangeLinkScreenState;Ljava/util/List;)V"
+
+    const/4 v2, 0x4
+
+    const/4 v3, 0x3
+
+    const-class v4, Ln42;
+
+    invoke-direct {v0, v3, v4, v1, v2}, Ls8;-><init>(ILjava/lang/Class;Ljava/lang/String;I)V
+
+    sput-object v0, Lsn3;->r0:Lsn3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    iget-object p1, p0, Lsn3;->b:Loy1;
+    check-cast p1, Lb52;
 
-    if-eqz p1, :cond_0
+    check-cast p2, Ljava/util/List;
 
-    iget-object p1, p1, Loy1;->b:Ljava/lang/Object;
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    check-cast p1, Lhx3;
+    new-instance p0, Ln42;
 
-    iget-object p1, p1, Lhx3;->D0:Lkm;
+    invoke-direct {p0, p1, p2}, Ln42;-><init>(Lb52;Ljava/util/List;)V
 
-    if-eqz p1, :cond_0
-
-    iget-object p1, p1, Lkm;->b:Ljava/lang/Object;
-
-    check-cast p1, Lone/me/messages/list/ui/MessagesListWidget;
-
-    sget-object v0, Lone/me/messages/list/ui/MessagesListWidget;->V0:[Lsf7;
-
-    invoke-virtual {p1}, Lone/me/messages/list/ui/MessagesListWidget;->J0()Ld89;
-
-    move-result-object p1
-
-    iget-wide v0, p0, Lsn3;->a:J
-
-    invoke-virtual {p1, v0, v1}, Ld89;->E(J)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .registers 2
-
-    const/4 p0, 0x1
-
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
-
-    return-void
+    return-object p0
 .end method

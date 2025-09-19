@@ -1,24 +1,70 @@
-.class public final Ldc5;
+.class public final synthetic Ldc5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljc5;
+.implements Lot7;
 
 
-# static fields
-.field public static final a:Ldc5;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lacb;
+
+.field public final synthetic c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lacb;II)V
+    .registers 4
 
-    new-instance v0, Ldc5;
+    iput p3, p0, Ldc5;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldc5;->b:Lacb;
 
-    sput-object v0, Ldc5;->a:Ldc5;
+    iput p2, p0, Ldc5;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)V
+    .registers 3
+
+    iget v0, p0, Ldc5;->a:I
+
+    check-cast p1, Lrcb;
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Ldc5;->b:Lacb;
+
+    iget-boolean v0, v0, Lacb;->l:Z
+
+    iget p0, p0, Ldc5;->c:I
+
+    invoke-interface {p1, p0, v0}, Lrcb;->i(IZ)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Ldc5;->b:Lacb;
+
+    iget-object v0, v0, Lacb;->a:Lo6f;
+
+    iget p0, p0, Ldc5;->c:I
+
+    invoke-interface {p1, p0}, Lrcb;->z(I)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

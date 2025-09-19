@@ -1,64 +1,80 @@
-.class public final synthetic Lsh4;
-.super Ljava/lang/Object;
+.class public final Lsh4;
+.super Lz5d;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lks1;
+# static fields
+.field public static final b:Lsh4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lks1;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 7
 
-    iput p2, p0, Lsh4;->a:I
+    new-instance v0, Lsh4;
 
-    iput-object p1, p0, Lsh4;->b:Lks1;
+    sget v5, Lt0f;->c:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v6, Lt0f;->d:I
+
+    sget-wide v2, Lt0f;->e:J
+
+    sget-object v4, Lt0f;->a:Ljava/lang/String;
+
+    invoke-direct {v0}, Ls04;-><init>()V
+
+    new-instance v1, Lx04;
+
+    invoke-direct/range {v1 .. v6}, Lx04;-><init>(JLjava/lang/String;II)V
+
+    iput-object v1, v0, Lz5d;->a:Lx04;
+
+    sput-object v0, Lsh4;->b:Lsh4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 3
+.method public final close()V
+    .registers 2
 
-    iget v0, p0, Lsh4;->a:I
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    packed-switch v0, :pswitch_data_0
+    const-string v0, "Dispatchers.Default cannot be closed"
 
-    iget-object p0, p0, Lsh4;->b:Lks1;
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    const/4 v0, 0x0
+    throw p0
+.end method
 
-    invoke-virtual {p0, v0}, Lks1;->b(Ljava/lang/Object;)Z
+.method public final limitedParallelism(ILjava/lang/String;)Ls04;
+    .registers 4
 
-    return-void
+    invoke-static {p1}, Lkotlinx/coroutines/internal/LimitedDispatcherKt;->checkParallelism(I)V
 
-    :pswitch_0
-    new-instance v0, Ljava/lang/Exception;
+    sget v0, Lt0f;->c:I
 
-    const-string v1, "Failed to snapshot: OpenGLRenderer not ready."
+    if-lt p1, v0, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
+    invoke-static {p0, p2}, Lkotlinx/coroutines/internal/LimitedDispatcherKt;->namedOrThis(Ls04;Ljava/lang/String;)Ls04;
 
-    iget-object p0, p0, Lsh4;->b:Lks1;
+    move-result-object p0
 
-    invoke-virtual {p0, v0}, Lks1;->d(Ljava/lang/Throwable;)Z
+    return-object p0
 
-    return-void
+    :cond_0
+    invoke-super {p0, p1, p2}, Ls04;->limitedParallelism(ILjava/lang/String;)Ls04;
 
-    nop
+    move-result-object p0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "Dispatchers.Default"
+
+    return-object p0
 .end method

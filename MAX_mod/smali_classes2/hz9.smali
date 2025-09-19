@@ -1,80 +1,157 @@
 .class public final Lhz9;
-.super Lxie;
+.super Lsxe;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public X:J
 
-.field public final synthetic Y:Lone/me/notifications/settings/NotificationsSettingsScreen;
+.field public c:J
 
-
-# direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/notifications/settings/NotificationsSettingsScreen;)V
-    .registers 3
-
-    iput-object p2, p0, Lhz9;->Y:Lone/me/notifications/settings/NotificationsSettingsScreen;
-
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+.field public o:Lwgb;
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final c(Lt39;Ljava/lang/String;)V
+    .registers 5
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p0, p1, p2}, Lhz9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    sparse-switch v0, :sswitch_data_0
+
+    goto :goto_0
+
+    :sswitch_0
+    const-string v0, "time"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x2
+
+    goto :goto_0
+
+    :sswitch_1
+    const-string v0, "userId"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :sswitch_2
+    const-string v0, "presence"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v1, 0x0
+
+    :goto_0
+    packed-switch v1, :pswitch_data_0
+
+    invoke-virtual {p1}, Lt39;->B()V
+
+    return-void
+
+    :pswitch_0
+    invoke-virtual {p1}, Lt39;->A0()J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lhz9;->X:J
+
+    return-void
+
+    :pswitch_1
+    invoke-virtual {p1}, Lt39;->A0()J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lhz9;->c:J
+
+    return-void
+
+    :pswitch_2
+    invoke-static {p1}, Lwgb;->a(Lt39;)Lwgb;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lhz9;->o:Lwgb;
+
+    return-void
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x4c186305 -> :sswitch_2
+        -0x31d4d1ba -> :sswitch_1
+        0x3652cd -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 7
+
+    iget-wide v0, p0, Lhz9;->c:J
+
+    iget-object v2, p0, Lhz9;->o:Lwgb;
+
+    iget-wide v3, p0, Lhz9;->X:J
+
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string v5, "{userId="
+
+    invoke-direct {p0, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, ", presence="
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", time="
+
+    const-string v1, "}"
+
+    invoke-static {v3, v4, v0, v1, p0}, Lsq3;->g(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)Ljava/lang/String;
 
     move-result-object p0
-
-    check-cast p0, Lhz9;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lhz9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lhz9;
-
-    iget-object p0, p0, Lhz9;->Y:Lone/me/notifications/settings/NotificationsSettingsScreen;
-
-    invoke-direct {v0, p2, p0}, Lhz9;-><init>(Lkotlin/coroutines/Continuation;Lone/me/notifications/settings/NotificationsSettingsScreen;)V
-
-    iput-object p1, v0, Lhz9;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lhz9;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
-
-    iget-object p0, p0, Lhz9;->Y:Lone/me/notifications/settings/NotificationsSettingsScreen;
-
-    iget-object p0, p0, Lone/me/notifications/settings/NotificationsSettingsScreen;->X:Lejd;
-
-    invoke-virtual {p0, p1}, Lhp7;->E(Ljava/util/List;)V
-
-    sget-object p0, Lncf;->a:Lncf;
 
     return-object p0
 .end method

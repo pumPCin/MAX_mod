@@ -1,55 +1,35 @@
 .class public final Luv9;
-.super Ljava/lang/Object;
+.super Lj2e;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
+# virtual methods
+.method public final E()V
+    .registers 1
 
-.field public final b:Ljava/lang/String;
+    iget-object p0, p0, Lzoc;->a:Landroid/view/View;
 
-.field public final c:Z
+    check-cast p0, Lfyd;
 
-.field public final d:Z
+    iget-object p0, p0, Lfyd;->b:Leyd;
 
-.field public final e:Landroid/net/Uri;
+    invoke-virtual {p0}, Leyd;->d()V
 
-.field public final f:Z
+    return-void
+.end method
 
-.field public final g:[J
+.method public final y(Lts7;)V
+    .registers 2
 
-.field public final h:Z
+    check-cast p1, Ltv9;
 
-.field public final i:I
+    iget-object p0, p0, Lzoc;->a:Landroid/view/View;
 
-.field public final j:Z
+    check-cast p0, Lfyd;
 
+    iget-object p0, p0, Lfyd;->b:Leyd;
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ZZLandroid/net/Uri;Z[JZIZ)V
-    .registers 11
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Luv9;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Luv9;->b:Ljava/lang/String;
-
-    iput-boolean p3, p0, Luv9;->c:Z
-
-    iput-boolean p4, p0, Luv9;->d:Z
-
-    iput-object p5, p0, Luv9;->e:Landroid/net/Uri;
-
-    iput-boolean p6, p0, Luv9;->f:Z
-
-    iput-object p7, p0, Luv9;->g:[J
-
-    iput-boolean p8, p0, Luv9;->h:Z
-
-    iput p9, p0, Luv9;->i:I
-
-    iput-boolean p10, p0, Luv9;->j:Z
+    invoke-virtual {p0}, Leyd;->c()V
 
     return-void
 .end method

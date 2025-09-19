@@ -1,24 +1,28 @@
-.class public final Lyh5;
+.class public final synthetic Lyh5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lc6;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Le0;
+.field public final synthetic b:Lhi5;
+
+.field public final synthetic c:Ljava/util/List;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le0;I)V
-    .registers 3
+.method public synthetic constructor <init>(Lhi5;Ljava/util/List;I)V
+    .registers 4
 
-    iput p2, p0, Lyh5;->a:I
+    iput p3, p0, Lyh5;->a:I
 
-    iput-object p1, p0, Lyh5;->b:Le0;
+    iput-object p1, p0, Lyh5;->b:Lhi5;
+
+    iput-object p2, p0, Lyh5;->c:Ljava/util/List;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,53 +31,114 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final run()V
+    .registers 6
 
     iget v0, p0, Lyh5;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    check-cast p1, Ljava/lang/Throwable;
+    iget-object v0, p0, Lyh5;->c:Ljava/util/List;
 
-    iget-object p0, p0, Lyh5;->b:Le0;
+    iget-object p0, p0, Lyh5;->b:Lhi5;
 
-    invoke-virtual {p0}, Le0;->a()Z
+    iget-object v1, p0, Lhi5;->a:Lexc;
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {v1}, Lexc;->c()V
 
-    return-object p0
+    :try_start_0
+    const-string v2, "SELECT MAX(`index`) FROM favorite_sticker_sets"
 
-    :pswitch_0
-    check-cast p1, Ljava/lang/Throwable;
+    const/4 v3, 0x0
 
-    iget-object p0, p0, Lyh5;->b:Le0;
+    invoke-static {v3, v2}, Lvxc;->c(ILjava/lang/String;)Lvxc;
 
-    invoke-virtual {p0}, Le0;->a()Z
+    move-result-object v2
 
-    sget-object p0, Lncf;->a:Lncf;
+    iget-object p0, p0, Lhi5;->a:Lexc;
 
-    return-object p0
+    invoke-virtual {p0}, Lexc;->b()V
 
-    :pswitch_1
-    check-cast p1, Ljava/lang/Throwable;
+    invoke-virtual {p0, v2}, Lexc;->n(Lpqe;)Landroid/database/Cursor;
 
-    if-eqz p1, :cond_0
+    move-result-object p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    iget-object p0, p0, Lyh5;->b:Le0;
+    :try_start_1
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
 
-    invoke-virtual {p0}, Le0;->a()Z
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-interface {p0, v3}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
 
     :cond_0
-    sget-object p0, Lncf;->a:Lncf;
+    :goto_0
+    :try_start_2
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
-    return-object p0
+    invoke-virtual {v2}, Lvxc;->n()V
+
+    add-int/lit8 v3, v3, 0x1
+
+    int-to-long v2, v3
+
+    invoke-static {v2, v3, v0}, Lhi5;->b(JLjava/util/List;)Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Lexc;->q()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    invoke-virtual {v1}, Lexc;->k()V
+
+    return-void
+
+    :catchall_1
+    move-exception p0
+
+    goto :goto_2
+
+    :goto_1
+    :try_start_3
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v2}, Lvxc;->n()V
+
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :goto_2
+    invoke-virtual {v1}, Lexc;->k()V
+
+    throw p0
+
+    :pswitch_0
+    iget-object v0, p0, Lyh5;->b:Lhi5;
+
+    iget-object p0, p0, Lyh5;->c:Ljava/util/List;
+
+    invoke-virtual {v0, p0}, Lhi5;->a(Ljava/util/List;)V
+
+    return-void
 
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

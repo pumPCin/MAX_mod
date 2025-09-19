@@ -1,208 +1,125 @@
 .class public final Lxw5;
-.super Lyw5;
+.super Lk2e;
 .source "SourceFile"
+
+# interfaces
+.implements Lld6;
 
 
 # instance fields
-.field public final a:Ljava/lang/CharSequence;
+.field public final synthetic a:I
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:Z
+.field public final b:Lq0;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;Ljava/lang/String;Z)V
-    .registers 4
+.method public synthetic constructor <init>(Lq0;I)V
+    .registers 3
+
+    iput p2, p0, Lxw5;->a:I
+
+    iput-object p1, p0, Lxw5;->b:Lq0;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lxw5;->a:Ljava/lang/CharSequence;
-
-    iput-object p2, p0, Lxw5;->b:Ljava/lang/String;
-
-    iput-boolean p3, p0, Lxw5;->c:Z
-
     return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
-    .registers 4
-
-    and-int/lit8 p3, p3, 0x1
-
-    if-eqz p3, :cond_0
-
-    const/4 p2, 0x0
-
-    :cond_0
-    const/4 p3, 0x0
-
-    invoke-direct {p0, p2, p1, p3}, Lxw5;-><init>(Ljava/lang/CharSequence;Ljava/lang/String;Z)V
-
-    return-void
-.end method
-
-.method public static b(Lxw5;Ljava/lang/CharSequence;ZI)Lxw5;
-    .registers 4
-
-    and-int/lit8 p3, p3, 0x1
-
-    if-eqz p3, :cond_0
-
-    iget-object p1, p0, Lxw5;->a:Ljava/lang/CharSequence;
-
-    :cond_0
-    iget-object p3, p0, Lxw5;->b:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p0, Lxw5;
-
-    invoke-direct {p0, p1, p3, p2}, Lxw5;-><init>(Ljava/lang/CharSequence;Ljava/lang/String;Z)V
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/CharSequence;
-    .registers 1
+.method public final b()Lrv5;
+    .registers 2
 
-    iget-object p0, p0, Lxw5;->a:Ljava/lang/CharSequence;
+    iget v0, p0, Lxw5;->a:I
 
-    return-object p0
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Lsw5;
+
+    iget-object p0, p0, Lxw5;->b:Lq0;
+
+    check-cast p0, Ltv5;
+
+    invoke-direct {v0, p0}, Lsw5;-><init>(Ltv5;)V
+
+    return-object v0
+
+    :pswitch_0
+    new-instance v0, Lvw5;
+
+    iget-object p0, p0, Lxw5;->b:Lq0;
+
+    check-cast p0, Lsw5;
+
+    invoke-direct {v0, p0}, Lvw5;-><init>(Lsw5;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lxw5;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lxw5;
-
-    iget-object v1, p0, Lxw5;->a:Ljava/lang/CharSequence;
-
-    iget-object v3, p1, Lxw5;->a:Ljava/lang/CharSequence;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lxw5;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Lxw5;->b:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-boolean p0, p0, Lxw5;->c:Z
-
-    iget-boolean p1, p1, Lxw5;->c:Z
-
-    if-eq p0, p1, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final l(Le3e;)V
     .registers 4
 
-    iget-object v0, p0, Lxw5;->a:Ljava/lang/CharSequence;
+    iget v0, p0, Lxw5;->a:I
 
-    if-nez v0, :cond_0
+    iget-object p0, p0, Lxw5;->b:Lq0;
 
-    const/4 v0, 0x0
+    packed-switch v0, :pswitch_data_0
+
+    :try_start_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sget-object v1, Ls95;->a:Lr95;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    check-cast p0, Ltv5;
+
+    new-instance v1, Lfx5;
+
+    invoke-direct {v1, p1, v0}, Lfx5;-><init>(Le3e;Ljava/util/ArrayList;)V
+
+    invoke-virtual {p0, v1}, Lrv5;->c(Lbx5;)V
 
     goto :goto_0
 
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    :catchall_0
+    move-exception p0
 
-    move-result v0
+    invoke-static {p0}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    sget-object v0, Lk45;->a:Lk45;
+
+    invoke-interface {p1, v0}, Le3e;->c(Loq4;)V
+
+    invoke-interface {p1, p0}, Le3e;->onError(Ljava/lang/Throwable;)V
 
     :goto_0
-    const/16 v1, 0x1f
+    return-void
 
-    mul-int/2addr v0, v1
+    :pswitch_0
+    check-cast p0, Lsw5;
 
-    iget-object v2, p0, Lxw5;->b:Ljava/lang/String;
+    new-instance v0, Lww5;
 
-    invoke-static {v0, v1, v2}, Lex3;->d(IILjava/lang/String;)I
+    invoke-direct {v0, p1}, Lww5;-><init>(Le3e;)V
 
-    move-result v0
+    invoke-virtual {p0, v0}, Lrv5;->c(Lbx5;)V
 
-    iget-boolean p0, p0, Lxw5;->c:Z
+    return-void
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    nop
 
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Edit(name="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lxw5;->a:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", folderId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lxw5;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", canSave="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ")"
-
-    iget-boolean p0, p0, Lxw5;->c:Z
-
-    invoke-static {v0, p0, v1}, Lew1;->k(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

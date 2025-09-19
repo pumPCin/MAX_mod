@@ -1,45 +1,49 @@
 .class public final Ly78;
-.super Luxf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final b:Llwa;
+# static fields
+.field public static final e:Lz;
 
-.field public final c:Ldbc;
+
+# instance fields
+.field public final a:Lm04;
+
+.field public final b:Lm04;
+
+.field public final c:Lm04;
+
+.field public final d:Lm04;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lz;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lz;-><init>(F)V
+
+    sput-object v0, Ly78;->e:Lz;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lm04;Lm04;Lm04;Lm04;)V
     .registers 5
 
-    invoke-direct {p0}, Luxf;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Llwa;
+    iput-object p1, p0, Ly78;->a:Lm04;
 
-    sget-object v1, Lmwa;->l:[Ljava/lang/String;
+    iput-object p3, p0, Ly78;->b:Lm04;
 
-    invoke-direct {v0, v1}, Llwa;-><init>([Ljava/lang/String;)V
+    iput-object p4, p0, Ly78;->c:Lm04;
 
-    iput-object v0, p0, Ly78;->b:Llwa;
-
-    new-instance v1, Lf01;
-
-    const/16 v2, 0xe
-
-    invoke-direct {v1, v2, v0}, Lf01;-><init>(ILjava/lang/Object;)V
-
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    sget-object v2, Lspd;->a:Lxe2;
-
-    iget-object v3, p0, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {v1, v3, v2, v0}, Lfog;->U(Lfq5;Lr04;Ltpd;Ljava/lang/Object;)Ldbc;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ly78;->c:Ldbc;
+    iput-object p2, p0, Ly78;->d:Lm04;
 
     return-void
 .end method

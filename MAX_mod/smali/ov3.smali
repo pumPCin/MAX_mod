@@ -1,607 +1,287 @@
 .class public final Lov3;
-.super Ldj0;
+.super Lxi0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final X:Landroid/content/ContentResolver;
+.field public final A0:Lbv0;
 
-.field public Y:Landroid/net/Uri;
+.field public B0:J
 
-.field public Z:Landroid/content/res/AssetFileDescriptor;
+.field public volatile C0:Z
 
-.field public n0:Ljava/io/FileInputStream;
+.field public D0:Z
 
-.field public o0:J
+.field public final y0:I
 
-.field public p0:Z
+.field public final z0:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+.method public constructor <init>(Ld74;Lm74;Lv46;ILjava/lang/Object;JJJJJIJLbv0;)V
+    .registers 20
 
-    const/4 v0, 0x0
+    invoke-direct/range {p0 .. p15}, Lxi0;-><init>(Ld74;Lm74;Lv46;ILjava/lang/Object;JJJJJ)V
 
-    invoke-direct {p0, v0}, Ldj0;-><init>(Z)V
+    move/from16 p1, p16
 
-    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    iput p1, p0, Lov3;->y0:I
 
-    move-result-object p1
+    move-wide/from16 p1, p17
 
-    iput-object p1, p0, Lov3;->X:Landroid/content/ContentResolver;
+    iput-wide p1, p0, Lov3;->z0:J
+
+    move-object/from16 p1, p19
+
+    iput-object p1, p0, Lov3;->A0:Lbv0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final F(Ly64;)J
-    .registers 22
+.method public final a()V
+    .registers 2
 
-    move-object/from16 v0, p0
+    const/4 v0, 0x1
 
-    move-object/from16 v1, p1
+    iput-boolean v0, p0, Lov3;->C0:Z
 
-    const-string v2, "Could not open file descriptor for: "
-
-    :try_start_0
-    iget-object v4, v1, Ly64;->a:Landroid/net/Uri;
-
-    iget-wide v5, v1, Ly64;->g:J
-
-    iget-wide v7, v1, Ly64;->f:J
-
-    invoke-virtual {v4}, Landroid/net/Uri;->normalizeScheme()Landroid/net/Uri;
-
-    move-result-object v4
-
-    iput-object v4, v0, Lov3;->Y:Landroid/net/Uri;
-
-    invoke-virtual {v0}, Ldj0;->d()V
-
-    const-string v9, "content"
-
-    invoke-virtual {v4}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-    :try_end_0
-    .catch Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    iget-object v10, v0, Lov3;->X:Landroid/content/ContentResolver;
-
-    const/4 v11, 0x1
-
-    if-eqz v9, :cond_0
-
-    :try_start_1
-    new-instance v9, Landroid/os/Bundle;
-
-    invoke-direct {v9}, Landroid/os/Bundle;-><init>()V
-
-    const-string v12, "android.provider.extra.ACCEPT_ORIGINAL_MEDIA_FORMAT"
-
-    invoke-virtual {v9, v12, v11}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
-
-    const-string v12, "*/*"
-
-    invoke-virtual {v10, v4, v12, v9}, Landroid/content/ContentResolver;->openTypedAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/res/AssetFileDescriptor;
-
-    move-result-object v9
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    const/16 v2, 0x7d0
-
-    goto/16 :goto_4
-
-    :cond_0
-    const-string v9, "r"
-
-    invoke-virtual {v10, v4, v9}, Landroid/content/ContentResolver;->openAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
-
-    move-result-object v9
-
-    :goto_0
-    iput-object v9, v0, Lov3;->Z:Landroid/content/res/AssetFileDescriptor;
-
-    if-eqz v9, :cond_b
-
-    invoke-virtual {v9}, Landroid/content/res/AssetFileDescriptor;->getLength()J
-
-    move-result-wide v12
-
-    new-instance v2, Ljava/io/FileInputStream;
-
-    invoke-virtual {v9}, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
-
-    move-result-object v4
-
-    invoke-direct {v2, v4}, Ljava/io/FileInputStream;-><init>(Ljava/io/FileDescriptor;)V
-
-    iput-object v2, v0, Lov3;->n0:Ljava/io/FileInputStream;
-
-    const-wide/16 v14, -0x1
-
-    cmp-long v4, v12, v14
-
-    const/16 v10, 0x7d8
-
-    const/4 v3, 0x0
-
-    if-eqz v4, :cond_2
-
-    cmp-long v16, v7, v12
-
-    if-gtz v16, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v0, Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException;
-
-    invoke-direct {v0, v3, v10}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
-
-    throw v0
-
-    :cond_2
-    :goto_1
-    invoke-virtual {v9}, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
-
-    move-result-wide v16
-
-    move-wide/from16 v18, v12
-
-    add-long v11, v16, v7
-
-    invoke-virtual {v2, v11, v12}, Ljava/io/FileInputStream;->skip(J)J
-
-    move-result-wide v11
-
-    sub-long v11, v11, v16
-
-    cmp-long v7, v11, v7
-
-    if-nez v7, :cond_a
-
-    const-wide/16 v7, 0x0
-
-    if-nez v4, :cond_5
-
-    invoke-virtual {v2}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/nio/channels/FileChannel;->size()J
-
-    move-result-wide v11
-
-    cmp-long v4, v11, v7
-
-    if-nez v4, :cond_3
-
-    iput-wide v14, v0, Lov3;->o0:J
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {v2}, Ljava/nio/channels/FileChannel;->position()J
-
-    move-result-wide v16
-
-    sub-long v11, v11, v16
-
-    iput-wide v11, v0, Lov3;->o0:J
-
-    cmp-long v2, v11, v7
-
-    if-ltz v2, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    new-instance v0, Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException;
-
-    invoke-direct {v0, v3, v10}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
-
-    throw v0
-
-    :cond_5
-    sub-long v12, v18, v11
-
-    iput-wide v12, v0, Lov3;->o0:J
-    :try_end_1
-    .catch Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-
-    cmp-long v2, v12, v7
-
-    if-ltz v2, :cond_9
-
-    :goto_2
-    cmp-long v2, v5, v14
-
-    if-eqz v2, :cond_7
-
-    iget-wide v3, v0, Lov3;->o0:J
-
-    cmp-long v7, v3, v14
-
-    if-nez v7, :cond_6
-
-    move-wide v3, v5
-
-    goto :goto_3
-
-    :cond_6
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v3
-
-    :goto_3
-    iput-wide v3, v0, Lov3;->o0:J
-
-    :cond_7
-    const/4 v9, 0x1
-
-    iput-boolean v9, v0, Lov3;->p0:Z
-
-    invoke-virtual/range {p0 .. p1}, Ldj0;->f(Ly64;)V
-
-    if-eqz v2, :cond_8
-
-    return-wide v5
-
-    :cond_8
-    iget-wide v0, v0, Lov3;->o0:J
-
-    return-wide v0
-
-    :cond_9
-    :try_start_2
-    new-instance v0, Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException;
-
-    invoke-direct {v0, v3, v10}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
-
-    throw v0
-
-    :cond_a
-    new-instance v0, Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException;
-
-    invoke-direct {v0, v3, v10}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
-
-    throw v0
-
-    :cond_b
-    new-instance v0, Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException;
-
-    new-instance v1, Ljava/io/IOException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-    :try_end_2
-    .catch Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException; {:try_start_2 .. :try_end_2} :catch_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-
-    const/16 v2, 0x7d0
-
-    :try_start_3
-    invoke-direct {v0, v1, v2}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
-
-    throw v0
-    :try_end_3
-    .catch Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException; {:try_start_3 .. :try_end_3} :catch_2
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
-
-    :catch_1
-    move-exception v0
-
-    :goto_4
-    new-instance v1, Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException;
-
-    instance-of v3, v0, Ljava/io/FileNotFoundException;
-
-    if-eqz v3, :cond_c
-
-    const/16 v3, 0x7d5
-
-    goto :goto_5
-
-    :cond_c
-    move v3, v2
-
-    :goto_5
-    invoke-direct {v1, v0, v3}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
-
-    throw v1
-
-    :catch_2
-    move-exception v0
-
-    throw v0
-.end method
-
-.method public final close()V
-    .registers 6
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lov3;->Y:Landroid/net/Uri;
-
-    const/16 v1, 0x7d0
-
-    const/4 v2, 0x0
-
-    :try_start_0
-    iget-object v3, p0, Lov3;->n0:Ljava/io/FileInputStream;
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v3
-
-    goto :goto_5
-
-    :catch_0
-    move-exception v3
-
-    goto :goto_4
-
-    :cond_0
-    :goto_0
-    iput-object v0, p0, Lov3;->n0:Ljava/io/FileInputStream;
-
-    :try_start_1
-    iget-object v3, p0, Lov3;->Z:Landroid/content/res/AssetFileDescriptor;
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v3}, Landroid/content/res/AssetFileDescriptor;->close()V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception v1
-
-    goto :goto_3
-
-    :catch_1
-    move-exception v3
-
-    goto :goto_2
-
-    :cond_1
-    :goto_1
-    iput-object v0, p0, Lov3;->Z:Landroid/content/res/AssetFileDescriptor;
-
-    iget-boolean v0, p0, Lov3;->p0:Z
-
-    if-eqz v0, :cond_2
-
-    iput-boolean v2, p0, Lov3;->p0:Z
-
-    invoke-virtual {p0}, Ldj0;->b()V
-
-    :cond_2
     return-void
-
-    :goto_2
-    :try_start_2
-    new-instance v4, Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException;
-
-    invoke-direct {v4, v3, v1}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
-
-    throw v4
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    :goto_3
-    iput-object v0, p0, Lov3;->Z:Landroid/content/res/AssetFileDescriptor;
-
-    iget-boolean v0, p0, Lov3;->p0:Z
-
-    if-eqz v0, :cond_3
-
-    iput-boolean v2, p0, Lov3;->p0:Z
-
-    invoke-virtual {p0}, Ldj0;->b()V
-
-    :cond_3
-    throw v1
-
-    :goto_4
-    :try_start_3
-    new-instance v4, Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException;
-
-    invoke-direct {v4, v3, v1}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
-
-    throw v4
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    :goto_5
-    iput-object v0, p0, Lov3;->n0:Ljava/io/FileInputStream;
-
-    :try_start_4
-    iget-object v4, p0, Lov3;->Z:Landroid/content/res/AssetFileDescriptor;
-
-    if-eqz v4, :cond_4
-
-    invoke-virtual {v4}, Landroid/content/res/AssetFileDescriptor;->close()V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
-
-    goto :goto_6
-
-    :catchall_2
-    move-exception v1
-
-    goto :goto_8
-
-    :catch_2
-    move-exception v3
-
-    goto :goto_7
-
-    :cond_4
-    :goto_6
-    iput-object v0, p0, Lov3;->Z:Landroid/content/res/AssetFileDescriptor;
-
-    iget-boolean v0, p0, Lov3;->p0:Z
-
-    if-eqz v0, :cond_5
-
-    iput-boolean v2, p0, Lov3;->p0:Z
-
-    invoke-virtual {p0}, Ldj0;->b()V
-
-    :cond_5
-    throw v3
-
-    :goto_7
-    :try_start_5
-    new-instance v4, Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException;
-
-    invoke-direct {v4, v3, v1}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
-
-    throw v4
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
-
-    :goto_8
-    iput-object v0, p0, Lov3;->Z:Landroid/content/res/AssetFileDescriptor;
-
-    iget-boolean v0, p0, Lov3;->p0:Z
-
-    if-eqz v0, :cond_6
-
-    iput-boolean v2, p0, Lov3;->p0:Z
-
-    invoke-virtual {p0}, Ldj0;->b()V
-
-    :cond_6
-    throw v1
 .end method
 
-.method public final getUri()Landroid/net/Uri;
+.method public final b()J
+    .registers 5
+
+    iget v0, p0, Lov3;->y0:I
+
+    int-to-long v0, v0
+
+    iget-wide v2, p0, Lud8;->t0:J
+
+    add-long/2addr v2, v0
+
+    return-wide v2
+.end method
+
+.method public final c()Z
     .registers 1
 
-    iget-object p0, p0, Lov3;->Y:Landroid/net/Uri;
-
-    return-object p0
-.end method
-
-.method public final read([BII)I
-    .registers 12
-
-    if-nez p3, :cond_0
-
-    const/4 p0, 0x0
+    iget-boolean p0, p0, Lov3;->D0:Z
 
     return p0
+.end method
 
-    :cond_0
-    iget-wide v0, p0, Lov3;->o0:J
+.method public final load()V
+    .registers 12
+
+    iget-wide v0, p0, Lov3;->B0:J
 
     const-wide/16 v2, 0x0
 
-    cmp-long v2, v0, v2
+    cmp-long v0, v0, v2
 
-    const/4 v3, -0x1
+    const/4 v1, 0x0
 
-    if-nez v2, :cond_1
+    const/4 v2, 0x1
 
-    goto :goto_1
+    if-nez v0, :cond_4
 
-    :cond_1
-    const-wide/16 v4, -0x1
+    iget-object v4, p0, Lxi0;->w0:Lbh8;
 
-    cmp-long v2, v0, v4
+    invoke-static {v4}, Lxnd;->n(Ljava/lang/Object;)V
 
-    if-nez v2, :cond_2
+    iget-wide v5, p0, Lov3;->z0:J
+
+    iget-object v0, v4, Lbh8;->c:Ljava/lang/Object;
+
+    check-cast v0, [Lw2d;
+
+    array-length v3, v0
+
+    move v7, v1
+
+    :goto_0
+    if-ge v7, v3, :cond_1
+
+    aget-object v8, v0, v7
+
+    iget-wide v9, v8, Lw2d;->F:J
+
+    cmp-long v9, v9, v5
+
+    if-eqz v9, :cond_0
+
+    iput-wide v5, v8, Lw2d;->F:J
+
+    iput-boolean v2, v8, Lw2d;->z:Z
+
+    :cond_0
+    add-int/lit8 v7, v7, 0x1
 
     goto :goto_0
 
+    :cond_1
+    iget-object v3, p0, Lov3;->A0:Lbv0;
+
+    iget-wide v5, p0, Lxi0;->u0:J
+
+    const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long v0, v5, v7
+
+    if-nez v0, :cond_2
+
+    move-wide v5, v7
+
+    goto :goto_1
+
     :cond_2
-    int-to-long v6, p3
+    iget-wide v9, p0, Lov3;->z0:J
 
-    :try_start_0
-    invoke-static {v0, v1, v6, v7}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    long-to-int p3, v0
-
-    :goto_0
-    iget-object v0, p0, Lov3;->n0:Ljava/io/FileInputStream;
-
-    sget v1, Laif;->a:I
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/FileInputStream;->read([BII)I
-
-    move-result p1
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-ne p1, v3, :cond_3
+    sub-long/2addr v5, v9
 
     :goto_1
-    return v3
+    iget-wide v9, p0, Lxi0;->v0:J
+
+    cmp-long v0, v9, v7
+
+    if-nez v0, :cond_3
+
+    goto :goto_2
 
     :cond_3
-    iget-wide p2, p0, Lov3;->o0:J
+    iget-wide v7, p0, Lov3;->z0:J
 
-    cmp-long v0, p2, v4
+    sub-long v7, v9, v7
 
-    if-eqz v0, :cond_4
-
-    int-to-long v0, p1
-
-    sub-long/2addr p2, v0
-
-    iput-wide p2, p0, Lov3;->o0:J
+    :goto_2
+    invoke-virtual/range {v3 .. v8}, Lbv0;->a(Lbh8;JJ)V
 
     :cond_4
-    invoke-virtual {p0, p1}, Ldj0;->a(I)V
+    :try_start_0
+    iget-object v0, p0, Lz23;->b:Lm74;
 
-    return p1
+    iget-wide v3, p0, Lov3;->B0:J
 
-    :catch_0
-    move-exception p0
+    invoke-virtual {v0, v3, v4}, Lm74;->b(J)Lm74;
 
-    new-instance p1, Landroidx/media3/datasource/ContentDataSource$ContentDataSourceException;
+    move-result-object v0
 
-    const/16 p2, 0x7d0
+    new-instance v3, Lef4;
 
-    invoke-direct {p1, p0, p2}, Landroidx/media3/datasource/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+    iget-object v4, p0, Lz23;->s0:Laee;
 
-    throw p1
+    iget-wide v5, v0, Lm74;->f:J
+
+    invoke-virtual {v4, v0}, Laee;->P(Lm74;)J
+
+    move-result-wide v7
+
+    invoke-direct/range {v3 .. v8}, Lef4;-><init>(Lx64;JJ)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :goto_3
+    :try_start_1
+    iget-boolean v0, p0, Lov3;->C0:Z
+
+    if-nez v0, :cond_7
+
+    iget-object v0, p0, Lov3;->A0:Lbv0;
+
+    iget-object v0, v0, Lbv0;->a:Lnf5;
+
+    sget-object v4, Lbv0;->t0:Lj7;
+
+    invoke-interface {v0, v3, v4}, Lnf5;->i(Lpf5;Lj7;)I
+
+    move-result v0
+
+    if-eq v0, v2, :cond_5
+
+    move v4, v2
+
+    goto :goto_4
+
+    :cond_5
+    move v4, v1
+
+    :goto_4
+    invoke-static {v4}, Lxnd;->m(Z)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    if-nez v0, :cond_6
+
+    move v0, v2
+
+    goto :goto_5
+
+    :cond_6
+    move v0, v1
+
+    :goto_5
+    if-eqz v0, :cond_7
+
+    goto :goto_3
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_6
+
+    :cond_7
+    :try_start_2
+    iget-wide v0, v3, Lef4;->o:J
+
+    iget-object v3, p0, Lz23;->b:Lm74;
+
+    iget-wide v3, v3, Lm74;->f:J
+
+    sub-long/2addr v0, v3
+
+    iput-wide v0, p0, Lov3;->B0:J
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    iget-object v0, p0, Lz23;->s0:Laee;
+
+    invoke-static {v0}, Lya6;->g(Ld74;)V
+
+    iget-boolean v0, p0, Lov3;->C0:Z
+
+    xor-int/2addr v0, v2
+
+    iput-boolean v0, p0, Lov3;->D0:Z
+
+    return-void
+
+    :catchall_1
+    move-exception v0
+
+    goto :goto_7
+
+    :goto_6
+    :try_start_3
+    iget-wide v1, v3, Lef4;->o:J
+
+    iget-object v3, p0, Lz23;->b:Lm74;
+
+    iget-wide v3, v3, Lm74;->f:J
+
+    sub-long/2addr v1, v3
+
+    iput-wide v1, p0, Lov3;->B0:J
+
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :goto_7
+    iget-object p0, p0, Lz23;->s0:Laee;
+
+    invoke-static {p0}, Lya6;->g(Ld74;)V
+
+    throw v0
 .end method

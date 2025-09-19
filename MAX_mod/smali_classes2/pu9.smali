@@ -1,171 +1,232 @@
 .class public final Lpu9;
-.super Lsoe;
+.super Lone/me/sdk/uikit/common/views/OneMeDraweeView;
 .source "SourceFile"
+
+# interfaces
+.implements Lx3f;
 
 
 # instance fields
-.field public final X:J
+.field public B0:Z
 
-.field public final Y:I
-
-.field public final c:J
-
-.field public final o:J
+.field public final C0:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(IJJJ)V
-    .registers 8
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lone/me/sdk/uikit/common/views/OneMeDraweeView;-><init>(Landroid/content/Context;)V
 
-    iput-wide p2, p0, Lpu9;->c:J
+    const/4 p1, 0x1
 
-    iput-wide p4, p0, Lpu9;->o:J
+    iput-boolean p1, p0, Lpu9;->B0:Z
 
-    iput-wide p6, p0, Lpu9;->X:J
+    new-instance v0, Lq47;
 
-    iput p1, p0, Lpu9;->Y:I
+    const/16 v1, 0x14
+
+    invoke-direct {v0, v1, p0}, Lq47;-><init>(ILjava/lang/Object;)V
+
+    const/4 v1, 0x3
+
+    invoke-static {v1, v0}, Lcb7;->G(ILzb6;)Lcl7;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lpu9;->C0:Ljava/lang/Object;
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setClipToOutline(Z)V
+
+    new-instance p1, Ldh6;
+
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ldh6;-><init>(Landroid/content/res/Resources;)V
+
+    invoke-direct {p0}, Lpu9;->getShimmerDrawable()Lou9;
+
+    move-result-object v0
+
+    iput-object v0, p1, Ldh6;->d:Landroid/graphics/drawable/Drawable;
+
+    invoke-static {}, Lnzc;->a()Lnzc;
+
+    move-result-object v0
+
+    iput-object v0, p1, Ldh6;->p:Lnzc;
+
+    invoke-virtual {p1}, Ldh6;->a()Lch6;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ldw4;->setHierarchy(Law4;)V
 
     return-void
 .end method
 
+.method private final getShimmerDrawable()Lou9;
+    .registers 1
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 9
+    iget-object p0, p0, Lpu9;->C0:Ljava/lang/Object;
 
-    const/4 v0, 0x1
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    if-ne p0, p1, :cond_0
+    move-result-object p0
 
-    return v0
+    check-cast p0, Lou9;
 
-    :cond_0
-    instance-of v1, p1, Lpu9;
+    return-object p0
+.end method
+
+.method public static q(Lera;)Lbyd;
+    .registers 4
+
+    new-instance v0, Lg8h;
+
+    const/16 v1, 0x1d
+
+    invoke-direct {v0, v1}, Lg8h;-><init>(I)V
+
+    iget-object v1, v0, Lg8h;->a:Ljava/lang/Object;
+
+    check-cast v1, Lbyd;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_1
+    iput-boolean v2, v1, Lbyd;->j:Z
 
-    return v2
+    invoke-interface {p0}, Lera;->b()Lie0;
 
-    :cond_1
-    check-cast p1, Lpu9;
+    move-result-object v2
 
-    iget-wide v3, p0, Lpu9;->c:J
+    iget v2, v2, Lie0;->m:I
 
-    iget-wide v5, p1, Lpu9;->c:J
+    invoke-virtual {v0, v2}, Lg8h;->C(I)V
 
-    cmp-long v1, v3, v5
+    invoke-interface {p0}, Lera;->b()Lie0;
 
-    if-eqz v1, :cond_2
+    move-result-object p0
 
-    return v2
+    iget p0, p0, Lie0;->l:I
 
-    :cond_2
-    iget-wide v3, p0, Lpu9;->o:J
+    iput p0, v1, Lbyd;->d:I
 
-    iget-wide v5, p1, Lpu9;->o:J
+    const/high16 p0, 0x3f800000    # 1.0f
 
-    cmp-long v1, v3, v5
+    invoke-virtual {v0, p0}, Lg8h;->B(F)V
 
-    if-eqz v1, :cond_3
+    const/16 p0, 0x40
 
-    return v2
+    int-to-float p0, p0
 
-    :cond_3
-    iget-wide v3, p0, Lpu9;->X:J
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    iget-wide v5, p1, Lpu9;->X:J
+    move-result-object v1
 
-    cmp-long v1, v3, v5
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    if-eqz v1, :cond_4
+    move-result-object v1
 
-    return v2
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    :cond_4
-    iget p0, p0, Lpu9;->Y:I
+    mul-float/2addr p0, v1
 
-    iget p1, p1, Lpu9;->Y:I
-
-    if-eq p0, p1, :cond_5
-
-    return v2
-
-    :cond_5
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 5
-
-    iget-wide v0, p0, Lpu9;->c:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-wide v2, p0, Lpu9;->o:J
-
-    invoke-static {v0, v1, v2, v3}, Lp2g;->a(IIJ)I
-
-    move-result v0
-
-    iget-wide v2, p0, Lpu9;->X:J
-
-    invoke-static {v0, v1, v2, v3}, Lp2g;->a(IIJ)I
-
-    move-result v0
-
-    iget p0, p0, Lpu9;->Y:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    invoke-static {p0}, Lya6;->G(F)I
 
     move-result p0
 
-    add-int/2addr p0, v0
+    invoke-virtual {v0, p0}, Lg8h;->F(I)V
 
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    const-string v0, "Response(chatId="
-
-    const-string v1, ", userId="
-
-    iget-wide v2, p0, Lpu9;->c:J
-
-    invoke-static {v2, v3, v0, v1}, Lew1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Lpu9;->o:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mark="
-
-    const-string v2, ", unread="
-
-    iget-wide v3, p0, Lpu9;->X:J
-
-    invoke-static {v3, v4, v1, v2, v0}, Lew1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
-
-    const-string v1, ")"
-
-    iget p0, p0, Lpu9;->Y:I
-
-    invoke-static {v0, p0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Lg8h;->b()Lbyd;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+
+# virtual methods
+.method public final onAttachedToWindow()V
+    .registers 2
+
+    invoke-super {p0}, Ldw4;->onAttachedToWindow()V
+
+    iget-boolean v0, p0, Lpu9;->B0:Z
+
+    xor-int/lit8 v0, v0, 0x1
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setClickable(Z)V
+
+    iget-boolean v0, p0, Lpu9;->B0:Z
+
+    if-nez v0, :cond_0
+
+    invoke-direct {p0}, Lpu9;->getShimmerDrawable()Lou9;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Leyd;->c()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onDetachedFromWindow()V
+    .registers 2
+
+    invoke-super {p0}, Ldw4;->onDetachedFromWindow()V
+
+    iget-boolean v0, p0, Lpu9;->B0:Z
+
+    if-nez v0, :cond_0
+
+    invoke-direct {p0}, Lpu9;->getShimmerDrawable()Lou9;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Leyd;->d()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onThemeChanged(Lera;)V
+    .registers 2
+
+    invoke-direct {p0}, Lpu9;->getShimmerDrawable()Lou9;
+
+    move-result-object p0
+
+    invoke-static {p1}, Lpu9;->q(Lera;)Lbyd;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Leyd;->b(Lbyd;)V
+
+    return-void
+.end method
+
+.method public final p(Lh17;Landroid/graphics/drawable/Animatable;)V
+    .registers 3
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lpu9;->B0:Z
+
+    invoke-direct {p0}, Lpu9;->getShimmerDrawable()Lou9;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Leyd;->d()V
+
+    iget-boolean p1, p0, Lpu9;->B0:Z
+
+    xor-int/lit8 p1, p1, 0x1
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setClickable(Z)V
+
+    return-void
 .end method

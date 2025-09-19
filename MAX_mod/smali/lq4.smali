@@ -1,72 +1,48 @@
-.class public final synthetic Llq4;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lh96;
+.class public final Llq4;
+.super Ljx3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lnq4;
+.field public final synthetic Y:Lmy2;
 
-.field public final synthetic c:Landroid/content/Context;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnq4;Landroid/content/Context;I)V
-    .registers 4
+.method public constructor <init>(Lmy2;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p3, p0, Llq4;->a:I
+    iput-object p1, p0, Llq4;->Y:Lmy2;
 
-    iput-object p1, p0, Llq4;->b:Lnq4;
-
-    iput-object p2, p0, Llq4;->c:Landroid/content/Context;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Llq4;->a:I
+    iput-object p1, p0, Llq4;->o:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget p1, p0, Llq4;->X:I
 
-    iget-object v0, p0, Llq4;->c:Landroid/content/Context;
+    const/high16 v0, -0x80000000
 
-    const/4 v1, 0x0
+    or-int/2addr p1, v0
 
-    iget-object p0, p0, Llq4;->b:Lnq4;
+    iput p1, p0, Llq4;->X:I
 
-    invoke-virtual {p0, v0, v1}, Lnq4;->f(Landroid/content/Context;Z)Landroid/widget/FrameLayout;
+    iget-object p1, p0, Llq4;->Y:Lmy2;
 
-    move-result-object p0
+    const/4 v0, 0x0
 
-    return-object p0
-
-    :pswitch_0
-    iget-object v0, p0, Llq4;->c:Landroid/content/Context;
-
-    const/4 v1, 0x1
-
-    iget-object p0, p0, Llq4;->b:Lnq4;
-
-    invoke-virtual {p0, v0, v1}, Lnq4;->f(Landroid/content/Context;Z)Landroid/widget/FrameLayout;
+    invoke-virtual {p1, v0, p0}, Lmy2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

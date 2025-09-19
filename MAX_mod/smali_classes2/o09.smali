@@ -2,52 +2,119 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic b:[Lsf7;
+# interfaces
+.implements Lq09;
 
 
 # instance fields
-.field public final a:Lfq4;
+.field public final a:J
+
+.field public final b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(JJ)V
     .registers 5
 
-    new-instance v0, Lrqb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-class v1, Lo09;
+    iput-wide p1, p0, Lo09;->a:J
 
-    const-string v2, "prefs"
-
-    const-string v3, "getPrefs()Lru/ok/tamtam/Prefs;"
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sget-object v1, Lyhc;->a:Lzhc;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Lsf7;
-
-    aput-object v0, v1, v4
-
-    sput-object v1, Lo09;->b:[Lsf7;
+    iput-wide p3, p0, Lo09;->b:J
 
     return-void
 .end method
 
-.method public constructor <init>(Lfq4;)V
-    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 9
 
-    iput-object p1, p0, Lo09;->a:Lfq4;
+    const/4 v0, 0x1
 
-    return-void
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lo09;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lo09;
+
+    iget-wide v3, p0, Lo09;->a:J
+
+    iget-wide v5, p1, Lo09;->a:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-wide v3, p0, Lo09;->b:J
+
+    iget-wide p0, p1, Lo09;->b:J
+
+    cmp-long p0, v3, p0
+
+    if-eqz p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget-wide v0, p0, Lo09;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-wide v1, p0, Lo09;->b:J
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 5
+
+    const-string v0, "ByRange(startTime="
+
+    const-string v1, ", endTime="
+
+    iget-wide v2, p0, Lo09;->a:J
+
+    invoke-static {v2, v3, v0, v1}, Lmw1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    iget-wide v2, p0, Lo09;->b:J
+
+    invoke-static {v0, v2, v3, v1}, Lyv7;->j(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,720 +1,361 @@
-.class public abstract Lk0a;
+.class public final Lk0a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
+# instance fields
+.field public A:I
 
-.field public static final b:Ljava/lang/String;
+.field public B:Ljava/lang/String;
 
-.field public static final c:[I
+.field public C:I
+
+.field public D:I
+
+.field public final E:Z
+
+.field public final F:Landroid/app/Notification;
+
+.field public final G:Ljava/util/ArrayList;
+
+.field public final a:Landroid/content/Context;
+
+.field public final b:Ljava/util/ArrayList;
+
+.field public final c:Ljava/util/ArrayList;
+
+.field public final d:Ljava/util/ArrayList;
+
+.field public e:Ljava/lang/CharSequence;
+
+.field public f:Ljava/lang/CharSequence;
+
+.field public g:Landroid/app/PendingIntent;
+
+.field public h:Landroid/app/PendingIntent;
+
+.field public i:Landroidx/core/graphics/drawable/IconCompat;
+
+.field public j:I
+
+.field public k:I
+
+.field public l:Z
+
+.field public m:Z
+
+.field public n:Ly0a;
+
+.field public o:I
+
+.field public p:I
+
+.field public q:Z
+
+.field public r:Ljava/lang/String;
+
+.field public s:Z
+
+.field public t:Ljava/lang/String;
+
+.field public u:Z
+
+.field public v:Ljava/lang/String;
+
+.field public w:Landroid/os/Bundle;
+
+.field public x:I
+
+.field public y:I
+
+.field public z:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 9
-
-    const/high16 v0, -0x80000000
-
-    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lk0a;->a:Ljava/lang/String;
-
-    const-wide/high16 v0, -0x8000000000000000L
-
-    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lk0a;->b:Ljava/lang/String;
-
-    const/16 v0, 0x3e8
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lk0a;->c:[I
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    move v2, v1
-
-    :goto_0
-    const/16 v3, 0xa
-
-    if-ge v1, v3, :cond_2
-
-    move v4, v0
-
-    :goto_1
-    if-ge v4, v3, :cond_1
-
-    move v5, v0
-
-    :goto_2
-    if-ge v5, v3, :cond_0
-
-    add-int/lit8 v6, v1, 0x30
-
-    shl-int/lit8 v6, v6, 0x10
-
-    add-int/lit8 v7, v4, 0x30
-
-    shl-int/lit8 v7, v7, 0x8
-
-    or-int/2addr v6, v7
-
-    add-int/lit8 v7, v5, 0x30
-
-    or-int/2addr v6, v7
-
-    sget-object v7, Lk0a;->c:[I
-
-    add-int/lit8 v8, v2, 0x1
-
-    aput v6, v7, v2
-
-    add-int/lit8 v5, v5, 0x1
-
-    move v2, v8
-
-    goto :goto_2
-
-    :cond_0
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    return-void
-.end method
-
-.method public static a([CII)I
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;)V
     .registers 6
 
-    sget-object v0, Lk0a;->c:[I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    aget p1, v0, p1
+    new-instance v0, Ljava/util/ArrayList;
 
-    add-int/lit8 v0, p2, 0x1
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    shr-int/lit8 v1, p1, 0x10
+    iput-object v0, p0, Lk0a;->b:Ljava/util/ArrayList;
 
-    int-to-char v1, v1
+    new-instance v0, Ljava/util/ArrayList;
 
-    aput-char v1, p0, p2
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    add-int/lit8 v1, p2, 0x2
+    iput-object v0, p0, Lk0a;->c:Ljava/util/ArrayList;
 
-    shr-int/lit8 v2, p1, 0x8
+    new-instance v0, Ljava/util/ArrayList;
 
-    and-int/lit8 v2, v2, 0x7f
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    int-to-char v2, v2
+    iput-object v0, p0, Lk0a;->d:Ljava/util/ArrayList;
 
-    aput-char v2, p0, v0
+    const/4 v0, 0x1
 
-    add-int/lit8 p2, p2, 0x3
-
-    and-int/lit8 p1, p1, 0x7f
-
-    int-to-char p1, p1
-
-    aput-char p1, p0, v1
-
-    return p2
-.end method
-
-.method public static b([CII)I
-    .registers 5
-
-    sget-object v0, Lk0a;->c:[I
-
-    aget v0, v0, p1
-
-    const/16 v1, 0x9
-
-    if-le p1, v1, :cond_1
-
-    const/16 v1, 0x63
-
-    if-le p1, v1, :cond_0
-
-    add-int/lit8 p1, p2, 0x1
-
-    shr-int/lit8 v1, v0, 0x10
-
-    int-to-char v1, v1
-
-    aput-char v1, p0, p2
-
-    move p2, p1
-
-    :cond_0
-    add-int/lit8 p1, p2, 0x1
-
-    shr-int/lit8 v1, v0, 0x8
-
-    and-int/lit8 v1, v1, 0x7f
-
-    int-to-char v1, v1
-
-    aput-char v1, p0, p2
-
-    move p2, p1
-
-    :cond_1
-    add-int/lit8 p1, p2, 0x1
-
-    and-int/lit8 v0, v0, 0x7f
-
-    int-to-char v0, v0
-
-    aput-char v0, p0, p2
-
-    return p1
-.end method
-
-.method public static c([CII)I
-    .registers 10
-
-    div-int/lit16 v0, p1, 0x3e8
-
-    mul-int/lit16 v1, v0, 0x3e8
-
-    sub-int/2addr p1, v1
-
-    div-int/lit16 v1, v0, 0x3e8
-
-    sget-object v2, Lk0a;->c:[I
-
-    aget v3, v2, v1
-
-    add-int/lit8 v4, p2, 0x1
-
-    shr-int/lit8 v5, v3, 0x10
-
-    int-to-char v5, v5
-
-    aput-char v5, p0, p2
-
-    add-int/lit8 v5, p2, 0x2
-
-    shr-int/lit8 v6, v3, 0x8
-
-    and-int/lit8 v6, v6, 0x7f
-
-    int-to-char v6, v6
-
-    aput-char v6, p0, v4
-
-    add-int/lit8 v4, p2, 0x3
-
-    and-int/lit8 v3, v3, 0x7f
-
-    int-to-char v3, v3
-
-    aput-char v3, p0, v5
-
-    mul-int/lit16 v1, v1, 0x3e8
-
-    sub-int/2addr v0, v1
-
-    aget v0, v2, v0
-
-    add-int/lit8 v1, p2, 0x4
-
-    shr-int/lit8 v3, v0, 0x10
-
-    int-to-char v3, v3
-
-    aput-char v3, p0, v4
-
-    add-int/lit8 v3, p2, 0x5
-
-    shr-int/lit8 v4, v0, 0x8
-
-    and-int/lit8 v4, v4, 0x7f
-
-    int-to-char v4, v4
-
-    aput-char v4, p0, v1
-
-    add-int/lit8 v1, p2, 0x6
-
-    and-int/lit8 v0, v0, 0x7f
-
-    int-to-char v0, v0
-
-    aput-char v0, p0, v3
-
-    aget p1, v2, p1
-
-    add-int/lit8 v0, p2, 0x7
-
-    shr-int/lit8 v2, p1, 0x10
-
-    int-to-char v2, v2
-
-    aput-char v2, p0, v1
-
-    add-int/lit8 v1, p2, 0x8
-
-    shr-int/lit8 v2, p1, 0x8
-
-    and-int/lit8 v2, v2, 0x7f
-
-    int-to-char v2, v2
-
-    aput-char v2, p0, v0
-
-    add-int/lit8 p2, p2, 0x9
-
-    and-int/lit8 p1, p1, 0x7f
-
-    int-to-char p1, p1
-
-    aput-char p1, p0, v1
-
-    return p2
-.end method
-
-.method public static d([CII)I
-    .registers 6
-
-    if-gez p1, :cond_1
-
-    const/high16 v0, -0x80000000
-
-    if-ne p1, v0, :cond_0
-
-    sget-object p1, Lk0a;->a:Ljava/lang/String;
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v0
+    iput-boolean v0, p0, Lk0a;->l:Z
 
     const/4 v1, 0x0
 
-    invoke-virtual {p1, v1, v0, p0, p2}, Ljava/lang/String;->getChars(II[CI)V
+    iput-boolean v1, p0, Lk0a;->u:Z
 
-    add-int/2addr v0, p2
+    iput v1, p0, Lk0a;->x:I
 
-    return v0
+    iput v1, p0, Lk0a;->y:I
 
-    :cond_0
-    add-int/lit8 v0, p2, 0x1
+    iput v1, p0, Lk0a;->A:I
 
-    const/16 v1, 0x2d
+    iput v1, p0, Lk0a;->C:I
 
-    aput-char v1, p0, p2
+    iput v1, p0, Lk0a;->D:I
 
-    neg-int p1, p1
+    new-instance v2, Landroid/app/Notification;
 
-    move p2, v0
+    invoke-direct {v2}, Landroid/app/Notification;-><init>()V
 
-    :cond_1
-    const v0, 0xf4240
+    iput-object v2, p0, Lk0a;->F:Landroid/app/Notification;
 
-    if-ge p1, v0, :cond_4
+    iput-object p1, p0, Lk0a;->a:Landroid/content/Context;
 
-    const/16 v0, 0x3e8
+    iput-object p2, p0, Lk0a;->z:Ljava/lang/String;
 
-    if-ge p1, v0, :cond_3
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    const/16 v0, 0xa
+    move-result-wide p1
 
-    if-ge p1, v0, :cond_2
+    iput-wide p1, v2, Landroid/app/Notification;->when:J
 
-    add-int/lit8 p1, p1, 0x30
+    const/4 p1, -0x1
 
-    int-to-char p1, p1
+    iput p1, v2, Landroid/app/Notification;->audioStreamType:I
 
-    aput-char p1, p0, p2
+    iput v1, p0, Lk0a;->k:I
 
-    add-int/lit8 p2, p2, 0x1
+    new-instance p1, Ljava/util/ArrayList;
 
-    return p2
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    :cond_2
-    invoke-static {p0, p1, p2}, Lk0a;->b([CII)I
+    iput-object p1, p0, Lk0a;->G:Ljava/util/ArrayList;
 
-    move-result p0
+    iput-boolean v0, p0, Lk0a;->E:Z
 
-    return p0
-
-    :cond_3
-    div-int/lit16 v0, p1, 0x3e8
-
-    mul-int/lit16 v1, v0, 0x3e8
-
-    sub-int/2addr p1, v1
-
-    invoke-static {p0, v0, p2}, Lk0a;->b([CII)I
-
-    move-result p2
-
-    invoke-static {p0, p1, p2}, Lk0a;->a([CII)I
-
-    move-result p0
-
-    return p0
-
-    :cond_4
-    const v0, 0x3b9aca00
-
-    if-lt p1, v0, :cond_6
-
-    sub-int v1, p1, v0
-
-    if-lt v1, v0, :cond_5
-
-    const v0, 0x77359400
-
-    sub-int v1, p1, v0
-
-    add-int/lit8 p1, p2, 0x1
-
-    const/16 v0, 0x32
-
-    aput-char v0, p0, p2
-
-    goto :goto_0
-
-    :cond_5
-    add-int/lit8 p1, p2, 0x1
-
-    const/16 v0, 0x31
-
-    aput-char v0, p0, p2
-
-    :goto_0
-    invoke-static {p0, v1, p1}, Lk0a;->c([CII)I
-
-    move-result p0
-
-    return p0
-
-    :cond_6
-    div-int/lit16 v0, p1, 0x3e8
-
-    mul-int/lit16 v1, v0, 0x3e8
-
-    sub-int/2addr p1, v1
-
-    div-int/lit16 v1, v0, 0x3e8
-
-    mul-int/lit16 v2, v1, 0x3e8
-
-    sub-int/2addr v0, v2
-
-    invoke-static {p0, v1, p2}, Lk0a;->b([CII)I
-
-    move-result p2
-
-    invoke-static {p0, v0, p2}, Lk0a;->a([CII)I
-
-    move-result p2
-
-    invoke-static {p0, p1, p2}, Lk0a;->a([CII)I
-
-    move-result p0
-
-    return p0
+    return-void
 .end method
 
-.method public static e(J[CI)I
-    .registers 10
+.method public static b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .registers 3
 
-    const-wide/16 v0, 0x0
+    if-nez p0, :cond_0
 
-    cmp-long v0, p0, v0
-
-    if-gez v0, :cond_2
-
-    const-wide/32 v0, -0x80000000
-
-    cmp-long v0, p0, v0
-
-    if-lez v0, :cond_0
-
-    long-to-int p0, p0
-
-    invoke-static {p2, p0, p3}, Lk0a;->d([CII)I
-
-    move-result p0
-
-    return p0
+    return-object p0
 
     :cond_0
-    const-wide/high16 v0, -0x8000000000000000L
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
-    cmp-long v0, p0, v0
+    move-result v0
 
-    if-nez v0, :cond_1
+    const/16 v1, 0x1400
 
-    sget-object p0, Lk0a;->b:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result p1
+    if-le v0, v1, :cond_1
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0, p1, p2, p3}, Ljava/lang/String;->getChars(II[CI)V
+    invoke-interface {p0, v0, v1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
-    add-int/2addr p1, p3
-
-    return p1
+    move-result-object p0
 
     :cond_1
-    add-int/lit8 v0, p3, 0x1
+    return-object p0
+.end method
 
-    const/16 v1, 0x2d
 
-    aput-char v1, p2, p3
+# virtual methods
+.method public final a()Landroid/app/Notification;
+    .registers 3
 
-    neg-long p0, p0
+    new-instance v0, Lyvg;
 
-    move p3, v0
+    invoke-direct {v0, p0}, Lyvg;-><init>(Lk0a;)V
+
+    iget-object p0, v0, Lyvg;->o:Ljava/lang/Object;
+
+    check-cast p0, Lk0a;
+
+    iget-object v1, p0, Lk0a;->n:Ly0a;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1, v0}, Ly0a;->b(Lyvg;)V
+
+    :cond_0
+    iget-object v0, v0, Lyvg;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroid/app/Notification$Builder;
+
+    invoke-virtual {v0}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
+
+    move-result-object v0
+
+    if-eqz v1, :cond_1
+
+    iget-object p0, p0, Lk0a;->n:Ly0a;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    :cond_1
+    if-eqz v1, :cond_2
+
+    iget-object p0, v0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
+
+    if-eqz p0, :cond_2
+
+    invoke-virtual {v1, p0}, Ly0a;->a(Landroid/os/Bundle;)V
+
+    :cond_2
+    return-object v0
+.end method
+
+.method public final c(Ljava/lang/CharSequence;)V
+    .registers 2
+
+    invoke-static {p1}, Lk0a;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lk0a;->f:Ljava/lang/CharSequence;
+
+    return-void
+.end method
+
+.method public final d(I)V
+    .registers 2
+
+    iget-object p0, p0, Lk0a;->F:Landroid/app/Notification;
+
+    iput p1, p0, Landroid/app/Notification;->defaults:I
+
+    and-int/lit8 p1, p1, 0x4
+
+    if-eqz p1, :cond_0
+
+    iget p1, p0, Landroid/app/Notification;->flags:I
+
+    or-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Landroid/app/Notification;->flags:I
+
+    :cond_0
+    return-void
+.end method
+
+.method public final e(IZ)V
+    .registers 3
+
+    iget-object p0, p0, Lk0a;->F:Landroid/app/Notification;
+
+    if-eqz p2, :cond_0
+
+    iget p2, p0, Landroid/app/Notification;->flags:I
+
+    or-int/2addr p1, p2
+
+    iput p1, p0, Landroid/app/Notification;->flags:I
+
+    return-void
+
+    :cond_0
+    iget p2, p0, Landroid/app/Notification;->flags:I
+
+    not-int p1, p1
+
+    and-int/2addr p1, p2
+
+    iput p1, p0, Landroid/app/Notification;->flags:I
+
+    return-void
+.end method
+
+.method public final f(Landroid/graphics/Bitmap;)V
+    .registers 2
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x0
 
     goto :goto_0
 
-    :cond_2
-    const-wide/32 v0, 0x7fffffff
+    :cond_0
+    invoke-static {p1}, Landroidx/core/graphics/drawable/IconCompat;->b(Landroid/graphics/Bitmap;)Landroidx/core/graphics/drawable/IconCompat;
 
-    cmp-long v0, p0, v0
+    move-result-object p1
 
-    if-gtz v0, :cond_3
-
-    long-to-int p0, p0
-
-    invoke-static {p2, p0, p3}, Lk0a;->d([CII)I
-
-    move-result p0
-
-    return p0
-
-    :cond_3
     :goto_0
-    const-wide/32 v0, 0x3b9aca00
+    iput-object p1, p0, Lk0a;->i:Landroidx/core/graphics/drawable/IconCompat;
 
-    div-long v2, p0, v0
+    return-void
+.end method
 
-    mul-long v4, v2, v0
+.method public final g(Landroid/net/Uri;)V
+    .registers 3
 
-    sub-long/2addr p0, v4
+    iget-object p0, p0, Lk0a;->F:Landroid/app/Notification;
 
-    cmp-long v4, v2, v0
+    iput-object p1, p0, Landroid/app/Notification;->sound:Landroid/net/Uri;
 
-    if-gez v4, :cond_8
+    const/4 p1, -0x1
 
-    long-to-int v0, v2
+    iput p1, p0, Landroid/app/Notification;->audioStreamType:I
 
-    const v1, 0xf4240
+    invoke-static {}, Lj0a;->b()Landroid/media/AudioAttributes$Builder;
 
-    sget-object v2, Lk0a;->c:[I
+    move-result-object p1
 
-    if-ge v0, v1, :cond_7
+    const/4 v0, 0x4
 
-    const/16 v1, 0x3e8
+    invoke-static {p1, v0}, Lj0a;->c(Landroid/media/AudioAttributes$Builder;I)Landroid/media/AudioAttributes$Builder;
 
-    if-ge v0, v1, :cond_4
+    move-result-object p1
 
-    invoke-static {p2, v0, p3}, Lk0a;->b([CII)I
+    const/4 v0, 0x5
 
-    move-result p3
+    invoke-static {p1, v0}, Lj0a;->e(Landroid/media/AudioAttributes$Builder;I)Landroid/media/AudioAttributes$Builder;
 
-    goto/16 :goto_1
+    move-result-object p1
 
-    :cond_4
-    div-int/lit16 v1, v0, 0x3e8
+    invoke-static {p1}, Lj0a;->a(Landroid/media/AudioAttributes$Builder;)Landroid/media/AudioAttributes;
 
-    mul-int/lit16 v3, v1, 0x3e8
+    move-result-object p1
 
-    sub-int/2addr v0, v3
+    iput-object p1, p0, Landroid/app/Notification;->audioAttributes:Landroid/media/AudioAttributes;
 
-    aget v3, v2, v1
+    return-void
+.end method
 
-    const/16 v4, 0x9
+.method public final h(Ly0a;)V
+    .registers 3
 
-    if-le v1, v4, :cond_6
+    iget-object v0, p0, Lk0a;->n:Ly0a;
 
-    const/16 v4, 0x63
+    if-eq v0, p1, :cond_0
 
-    if-le v1, v4, :cond_5
+    iput-object p1, p0, Lk0a;->n:Ly0a;
 
-    add-int/lit8 v1, p3, 0x1
+    if-eqz p1, :cond_0
 
-    shr-int/lit8 v4, v3, 0x10
+    iget-object v0, p1, Ly0a;->b:Ljava/lang/Object;
 
-    int-to-char v4, v4
+    check-cast v0, Lk0a;
 
-    aput-char v4, p2, p3
+    if-eq v0, p0, :cond_0
 
-    move p3, v1
+    iput-object p0, p1, Ly0a;->b:Ljava/lang/Object;
 
-    :cond_5
-    add-int/lit8 v1, p3, 0x1
+    invoke-virtual {p0, p1}, Lk0a;->h(Ly0a;)V
 
-    shr-int/lit8 v4, v3, 0x8
-
-    and-int/lit8 v4, v4, 0x7f
-
-    int-to-char v4, v4
-
-    aput-char v4, p2, p3
-
-    move p3, v1
-
-    :cond_6
-    add-int/lit8 v1, p3, 0x1
-
-    and-int/lit8 v3, v3, 0x7f
-
-    int-to-char v3, v3
-
-    aput-char v3, p2, p3
-
-    aget v0, v2, v0
-
-    add-int/lit8 v2, p3, 0x2
-
-    shr-int/lit8 v3, v0, 0x10
-
-    int-to-char v3, v3
-
-    aput-char v3, p2, v1
-
-    add-int/lit8 v1, p3, 0x3
-
-    shr-int/lit8 v3, v0, 0x8
-
-    and-int/lit8 v3, v3, 0x7f
-
-    int-to-char v3, v3
-
-    aput-char v3, p2, v2
-
-    add-int/lit8 p3, p3, 0x4
-
-    and-int/lit8 v0, v0, 0x7f
-
-    int-to-char v0, v0
-
-    aput-char v0, p2, v1
-
-    goto :goto_1
-
-    :cond_7
-    div-int/lit16 v1, v0, 0x3e8
-
-    mul-int/lit16 v3, v1, 0x3e8
-
-    sub-int/2addr v0, v3
-
-    div-int/lit16 v3, v1, 0x3e8
-
-    mul-int/lit16 v4, v3, 0x3e8
-
-    sub-int/2addr v1, v4
-
-    invoke-static {p2, v3, p3}, Lk0a;->b([CII)I
-
-    move-result p3
-
-    aget v1, v2, v1
-
-    add-int/lit8 v3, p3, 0x1
-
-    shr-int/lit8 v4, v1, 0x10
-
-    int-to-char v4, v4
-
-    aput-char v4, p2, p3
-
-    add-int/lit8 v4, p3, 0x2
-
-    shr-int/lit8 v5, v1, 0x8
-
-    and-int/lit8 v5, v5, 0x7f
-
-    int-to-char v5, v5
-
-    aput-char v5, p2, v3
-
-    add-int/lit8 v3, p3, 0x3
-
-    and-int/lit8 v1, v1, 0x7f
-
-    int-to-char v1, v1
-
-    aput-char v1, p2, v4
-
-    aget v0, v2, v0
-
-    add-int/lit8 v1, p3, 0x4
-
-    shr-int/lit8 v2, v0, 0x10
-
-    int-to-char v2, v2
-
-    aput-char v2, p2, v3
-
-    add-int/lit8 v2, p3, 0x5
-
-    shr-int/lit8 v3, v0, 0x8
-
-    and-int/lit8 v3, v3, 0x7f
-
-    int-to-char v3, v3
-
-    aput-char v3, p2, v1
-
-    add-int/lit8 p3, p3, 0x6
-
-    and-int/lit8 v0, v0, 0x7f
-
-    int-to-char v0, v0
-
-    aput-char v0, p2, v2
-
-    goto :goto_1
-
-    :cond_8
-    div-long v4, v2, v0
-
-    mul-long/2addr v0, v4
-
-    sub-long/2addr v2, v0
-
-    long-to-int v0, v4
-
-    invoke-static {p2, v0, p3}, Lk0a;->b([CII)I
-
-    move-result p3
-
-    long-to-int v0, v2
-
-    invoke-static {p2, v0, p3}, Lk0a;->c([CII)I
-
-    move-result p3
-
-    :goto_1
-    long-to-int p0, p0
-
-    invoke-static {p2, p0, p3}, Lk0a;->c([CII)I
-
-    move-result p0
-
-    return p0
+    :cond_0
+    return-void
 .end method

@@ -1,176 +1,104 @@
 .class public final Leoe;
-.super Ldoe;
+.super Lcoe;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Ldoe;
 
 
 # instance fields
-.field public final Y:Ljava/lang/String;
-
-.field public final Z:Ljava/lang/String;
+.field public final b:Le44;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 6
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0, p1, p2, p3}, Ldoe;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v0, Ldoe;
 
-    iput-object p4, p0, Leoe;->Y:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p5, p0, Leoe;->Z:Ljava/lang/String;
+    sput-object v0, Leoe;->CREATOR:Ldoe;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .registers 3
+
+    const-class v0, Le44;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readBundle(Ljava/lang/ClassLoader;)Landroid/os/Bundle;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
+
+    :cond_0
+    invoke-static {p1}, Le44;->b(Landroid/os/Bundle;)Le44;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Leoe;-><init>(Le44;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Le44;)V
+    .registers 3
+
+    iget-object v0, p1, Le44;->a:Ljava/lang/CharSequence;
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lcoe;-><init>(Ljava/lang/String;)V
+
+    iput-object p1, p0, Leoe;->b:Le44;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final describeContents()I
+    .registers 1
 
-    const/4 v0, 0x1
+    const/4 p0, 0x0
 
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Leoe;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    invoke-super {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    check-cast p1, Leoe;
-
-    iget-object v1, p1, Leoe;->Y:Ljava/lang/String;
-
-    iget-object v3, p0, Leoe;->Y:Ljava/lang/String;
-
-    invoke-static {v3, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    iget-object p0, p0, Leoe;->Z:Ljava/lang/String;
-
-    iget-object p1, p1, Leoe;->Z:Ljava/lang/String;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_3
-
-    return v0
-
-    :cond_3
-    return v2
+    return p0
 .end method
 
-.method public final hashCode()I
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .registers 4
 
-    invoke-super {p0}, Ljava/lang/Object;->hashCode()I
+    iget-object p0, p0, Leoe;->b:Le44;
 
-    move-result v0
+    invoke-virtual {p0}, Le44;->c()Landroid/os/Bundle;
 
-    mul-int/lit8 v0, v0, 0x1f
+    move-result-object p2
 
-    const/4 v1, 0x0
+    iget-object p0, p0, Le44;->d:Landroid/graphics/Bitmap;
 
-    iget-object v2, p0, Leoe;->Y:Ljava/lang/String;
+    if-eqz p0, :cond_0
 
-    if-eqz v2, :cond_0
+    sget-object v0, Le44;->v:Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    goto :goto_0
+    invoke-virtual {p2, v0, p0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     :cond_0
-    move v2, v1
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeBundle(Landroid/os/Bundle;)V
 
-    :goto_0
-    add-int/2addr v0, v2
-
-    iget-object p0, p0, Leoe;->Z:Ljava/lang/String;
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    :cond_1
-    add-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    const-class v0, Leoe;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "{error=\'"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v0, p0, Ldoe;->b:Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "\', message=\'"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v0, p0, Ldoe;->c:Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "\', title=\'"
-
-    const-string v2, "\', description=\'"
-
-    iget-object v3, p0, Leoe;->Y:Ljava/lang/String;
-
-    iget-object v4, p0, Leoe;->Z:Ljava/lang/String;
-
-    invoke-static {v1, v0, v3, v2, v4}, Lgl5;->p(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v0, "\', localizedMessage=\'"
-
-    const-string v2, "\'}"
-
-    iget-object p0, p0, Ldoe;->o:Ljava/lang/String;
-
-    invoke-static {v1, v0, p0, v2}, Lfge;->s(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

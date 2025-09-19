@@ -2,292 +2,246 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final c:Lmx4;
-
-.field public static final d:Lmx4;
-
-.field public static final e:Lmx4;
-
-.field public static final f:Lmx4;
-
-.field public static final g:Lmx4;
-
-.field public static final h:Lmx4;
-
-.field public static final i:Lmx4;
+# interfaces
+.implements Ljava/util/Iterator;
+.implements Lmi7;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic a:I
 
-.field public final b:I
+.field public final b:Ljava/util/Iterator;
+
+.field public c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public constructor <init>(Ljava/util/Iterator;)V
+    .registers 3
 
-    new-instance v0, Lmx4;
+    const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    iput v0, p0, Lmx4;->a:I
 
-    invoke-direct {v0, v1, v1}, Lmx4;-><init>(II)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lmx4;->c:Lmx4;
-
-    new-instance v0, Lmx4;
-
-    const/4 v1, 0x1
-
-    const/16 v2, 0x8
-
-    invoke-direct {v0, v1, v2}, Lmx4;-><init>(II)V
-
-    sput-object v0, Lmx4;->d:Lmx4;
-
-    new-instance v0, Lmx4;
-
-    const/4 v1, 0x3
-
-    const/16 v3, 0xa
-
-    invoke-direct {v0, v1, v3}, Lmx4;-><init>(II)V
-
-    sput-object v0, Lmx4;->e:Lmx4;
-
-    new-instance v0, Lmx4;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1, v3}, Lmx4;-><init>(II)V
-
-    sput-object v0, Lmx4;->f:Lmx4;
-
-    new-instance v0, Lmx4;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1, v3}, Lmx4;-><init>(II)V
-
-    sput-object v0, Lmx4;->g:Lmx4;
-
-    new-instance v0, Lmx4;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1, v3}, Lmx4;-><init>(II)V
-
-    sput-object v0, Lmx4;->h:Lmx4;
-
-    new-instance v0, Lmx4;
-
-    invoke-direct {v0, v1, v2}, Lmx4;-><init>(II)V
-
-    sput-object v0, Lmx4;->i:Lmx4;
+    iput-object p1, p0, Lmx4;->b:Ljava/util/Iterator;
 
     return-void
 .end method
 
-.method public constructor <init>(II)V
+.method public constructor <init>(Lnx4;)V
     .registers 3
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lmx4;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lmx4;->a:I
+    iget-object v0, p1, Lnx4;->b:Lbid;
 
-    iput p2, p0, Lmx4;->b:I
+    invoke-interface {v0}, Lbid;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lmx4;->b:Ljava/util/Iterator;
+
+    iget p1, p1, Lnx4;->c:I
+
+    iput p1, p0, Lmx4;->c:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Lnx4;B)V
+    .registers 3
+
+    const/4 p2, 0x2
+
+    iput p2, p0, Lmx4;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iget p2, p1, Lnx4;->c:I
+
+    iput p2, p0, Lmx4;->c:I
+
+    iget-object p1, p1, Lnx4;->b:Lbid;
+
+    invoke-interface {p1}, Lbid;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lmx4;->b:Ljava/util/Iterator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .registers 3
-
-    invoke-virtual {p0}, Lmx4;->b()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lmx4;->a:I
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_0
-
-    iget p0, p0, Lmx4;->b:I
-
-    const/16 v0, 0xa
-
-    if-ne p0, v0, :cond_0
-
-    return v1
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final b()Z
+.method public final hasNext()Z
     .registers 3
 
     iget v0, p0, Lmx4;->a:I
 
-    if-eqz v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v1, 0x2
+    iget v0, p0, Lmx4;->c:I
 
-    if-eq v0, v1, :cond_0
+    if-lez v0, :cond_0
 
-    iget p0, p0, Lmx4;->b:I
+    iget-object p0, p0, Lmx4;->b:Ljava/util/Iterator;
+
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p0
 
     if-eqz p0, :cond_0
 
     const/4 p0, 0x1
 
-    return p0
+    goto :goto_0
 
     :cond_0
     const/4 p0, 0x0
 
+    :goto_0
     return p0
-.end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    :pswitch_0
+    iget-object p0, p0, Lmx4;->b:Ljava/util/Iterator;
 
-    const/4 v0, 0x1
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    if-ne p1, p0, :cond_0
+    move-result p0
 
-    return v0
+    return p0
 
-    :cond_0
-    instance-of v1, p1, Lmx4;
+    :goto_1
+    :pswitch_1
+    iget v0, p0, Lmx4;->c:I
 
-    const/4 v2, 0x0
+    iget-object v1, p0, Lmx4;->b:Ljava/util/Iterator;
 
-    if-eqz v1, :cond_1
+    if-lez v0, :cond_1
 
-    check-cast p1, Lmx4;
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    iget v1, p0, Lmx4;->a:I
+    move-result v0
 
-    iget v3, p1, Lmx4;->a:I
+    if-eqz v0, :cond_1
 
-    if-ne v1, v3, :cond_1
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget p0, p0, Lmx4;->b:I
+    iget v0, p0, Lmx4;->c:I
 
-    iget p1, p1, Lmx4;->b:I
+    add-int/lit8 v0, v0, -0x1
 
-    if-ne p0, p1, :cond_1
+    iput v0, p0, Lmx4;->c:I
 
-    return v0
+    goto :goto_1
 
     :cond_1
-    return v2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
-    .registers 3
+.method public final next()Ljava/lang/Object;
+    .registers 4
 
     iget v0, p0, Lmx4;->a:I
 
-    const v1, 0xf4243
+    packed-switch v0, :pswitch_data_0
 
-    xor-int/2addr v0, v1
+    iget v0, p0, Lmx4;->c:I
 
-    mul-int/2addr v0, v1
+    if-eqz v0, :cond_0
 
-    iget p0, p0, Lmx4;->b:I
+    add-int/lit8 v0, v0, -0x1
 
-    xor-int/2addr p0, v0
+    iput v0, p0, Lmx4;->c:I
 
-    return p0
-.end method
+    iget-object p0, p0, Lmx4;->b:Ljava/util/Iterator;
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    const-string v1, "DynamicRange@"
+    return-object p0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :cond_0
+    new-instance p0, Ljava/util/NoSuchElementException;
 
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "{encoding="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lmx4;->a:I
-
-    packed-switch v1, :pswitch_data_0
-
-    const-string v1, "<Unknown>"
-
-    goto :goto_0
+    throw p0
 
     :pswitch_0
-    const-string v1, "DOLBY_VISION"
+    new-instance v0, Lk67;
 
-    goto :goto_0
+    iget v1, p0, Lmx4;->c:I
 
-    :pswitch_1
-    const-string v1, "HDR10_PLUS"
+    add-int/lit8 v2, v1, 0x1
 
-    goto :goto_0
+    iput v2, p0, Lmx4;->c:I
 
-    :pswitch_2
-    const-string v1, "HDR10"
+    if-ltz v1, :cond_1
 
-    goto :goto_0
+    iget-object p0, p0, Lmx4;->b:Ljava/util/Iterator;
 
-    :pswitch_3
-    const-string v1, "HLG"
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object p0
 
-    :pswitch_4
-    const-string v1, "HDR_UNSPECIFIED"
+    invoke-direct {v0, v1, p0}, Lk67;-><init>(ILjava/lang/Object;)V
 
-    goto :goto_0
+    return-object v0
 
-    :pswitch_5
-    const-string v1, "SDR"
+    :cond_1
+    invoke-static {}, Lr73;->N()V
 
-    goto :goto_0
+    const/4 p0, 0x0
 
-    :pswitch_6
-    const-string v1, "UNSPECIFIED"
+    throw p0
 
     :goto_0
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :pswitch_1
+    iget v0, p0, Lmx4;->c:I
 
-    const-string v1, ", bitDepth="
+    iget-object v1, p0, Lmx4;->b:Ljava/util/Iterator;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-lez v0, :cond_2
 
-    iget p0, p0, Lmx4;->b:I
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    const-string v1, "}"
+    move-result v0
 
-    invoke-static {v0, p0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    if-eqz v0, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    iget v0, p0, Lmx4;->c:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lmx4;->c:I
+
+    goto :goto_0
+
+    :cond_2
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -295,11 +249,48 @@
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final remove()V
+    .registers 2
+
+    iget p0, p0, Lmx4;->a:I
+
+    packed-switch p0, :pswitch_data_0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v0, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :pswitch_0
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v0, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :pswitch_1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v0, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
         :pswitch_1
         :pswitch_0
     .end packed-switch

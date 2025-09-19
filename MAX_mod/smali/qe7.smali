@@ -1,44 +1,41 @@
-.class public abstract Lqe7;
+.class public interface abstract Lqe7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Closeable;
-
-
-# instance fields
-.field public a:I
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    invoke-static {}, Luce;->values()[Luce;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lhy9;->e([Lgb7;)Lhy9;
-
-    return-void
-.end method
+.implements Lo04;
 
 
 # virtual methods
-.method public abstract W()I
+.method public abstract attachChild(La23;)Lx13;
 .end method
 
-.method public abstract X()I
+.method public abstract cancel(Ljava/util/concurrent/CancellationException;)V
 .end method
 
-.method public abstract i0()Lye7;
+.method public abstract getCancellationException()Ljava/util/concurrent/CancellationException;
 .end method
 
-.method public abstract m()Lme7;
+.method public abstract getChildren()Lbid;
 .end method
 
-.method public abstract n()Ljava/lang/String;
+.method public abstract invokeOnCompletion(Lbc6;)Lrq4;
 .end method
 
-.method public abstract o()[C
+.method public abstract invokeOnCompletion(ZZLbc6;)Lrq4;
+.end method
+
+.method public abstract isActive()Z
+.end method
+
+.method public abstract isCancelled()Z
+.end method
+
+.method public abstract isCompleted()Z
+.end method
+
+.method public abstract join(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.end method
+
+.method public abstract start()Z
 .end method

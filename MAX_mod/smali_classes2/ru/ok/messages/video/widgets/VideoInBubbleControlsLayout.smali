@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field public final a:Lrn4;
+.field public final a:Lro4;
 
 .field public final b:I
 
@@ -17,13 +17,13 @@
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {}, Lrn4;->b()Lrn4;
+    invoke-static {}, Lro4;->b()Lro4;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/messages/video/widgets/VideoInBubbleControlsLayout;->a:Lrn4;
+    iput-object p1, p0, Lru/ok/messages/video/widgets/VideoInBubbleControlsLayout;->a:Lro4;
 
-    iget p1, p1, Lrn4;->e:I
+    iget p1, p1, Lro4;->e:I
 
     iput p1, p0, Lru/ok/messages/video/widgets/VideoInBubbleControlsLayout;->b:I
 
@@ -62,9 +62,9 @@
 
     move-result p2
 
-    iget-object p3, p0, Lru/ok/messages/video/widgets/VideoInBubbleControlsLayout;->a:Lrn4;
+    iget-object p3, p0, Lru/ok/messages/video/widgets/VideoInBubbleControlsLayout;->a:Lro4;
 
-    iget p3, p3, Lrn4;->h:I
+    iget p3, p3, Lro4;->h:I
 
     if-ge p2, p3, :cond_3
 

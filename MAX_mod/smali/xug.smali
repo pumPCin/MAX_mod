@@ -1,109 +1,205 @@
 .class public final Lxug;
-.super Ll3;
+.super Lw7;
 .source "SourceFile"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lxug;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # instance fields
-.field public final X:Ljava/lang/String;
+.field public final s:Landroid/view/WindowInsetsController;
 
-.field public final a:I
+.field public final t:Lq2e;
 
-.field public final b:Landroid/os/IBinder;
-
-.field public final c:Landroid/os/IBinder;
-
-.field public final o:Landroid/app/PendingIntent;
+.field public u:Landroid/view/Window;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Landroid/view/WindowInsetsController;Lq2e;)V
+    .registers 4
 
-    new-instance v0, Latg;
+    const/16 v0, 0x14
 
-    const/16 v1, 0xd
+    invoke-direct {p0, v0}, Lw7;-><init>(I)V
 
-    invoke-direct {v0, v1}, Latg;-><init>(I)V
+    iput-object p1, p0, Lxug;->s:Landroid/view/WindowInsetsController;
 
-    sput-object v0, Lxug;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(ILandroid/os/IBinder;Landroid/os/IBinder;Landroid/app/PendingIntent;Ljava/lang/String;)V
-    .registers 6
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lxug;->a:I
-
-    iput-object p2, p0, Lxug;->b:Landroid/os/IBinder;
-
-    iput-object p3, p0, Lxug;->c:Landroid/os/IBinder;
-
-    iput-object p4, p0, Lxug;->o:Landroid/app/PendingIntent;
-
-    iput-object p5, p0, Lxug;->X:Ljava/lang/String;
+    iput-object p2, p0, Lxug;->t:Lq2e;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 7
+.method public final K(Z)V
+    .registers 3
 
-    const/16 v0, 0x4f45
+    iget-object v0, p0, Lxug;->u:Landroid/view/Window;
 
-    invoke-static {p1, v0}, Las3;->v0(Landroid/os/Parcel;I)I
+    if-eqz p1, :cond_1
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->getSystemUiVisibility()I
 
     move-result v0
 
-    const/4 v1, 0x1
+    or-int/lit8 v0, v0, 0x10
 
-    const/4 v2, 0x4
+    invoke-virtual {p1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    invoke-static {p1, v1, v2}, Las3;->y0(Landroid/os/Parcel;II)V
+    :cond_0
+    iget-object p0, p0, Lxug;->s:Landroid/view/WindowInsetsController;
 
-    iget v1, p0, Lxug;->a:I
-
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/4 v1, 0x2
-
-    iget-object v3, p0, Lxug;->b:Landroid/os/IBinder;
-
-    invoke-static {p1, v1, v3}, Las3;->p0(Landroid/os/Parcel;ILandroid/os/IBinder;)V
-
-    const/4 v1, 0x3
-
-    iget-object v3, p0, Lxug;->c:Landroid/os/IBinder;
-
-    invoke-static {p1, v1, v3}, Las3;->p0(Landroid/os/Parcel;ILandroid/os/IBinder;)V
-
-    iget-object v1, p0, Lxug;->o:Landroid/app/PendingIntent;
-
-    invoke-static {p1, v2, v1, p2}, Las3;->q0(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
-
-    const/4 p2, 0x6
-
-    iget-object p0, p0, Lxug;->X:Ljava/lang/String;
-
-    invoke-static {p1, p2, p0}, Las3;->r0(Landroid/os/Parcel;ILjava/lang/String;)V
-
-    invoke-static {p1, v0}, Las3;->x0(Landroid/os/Parcel;I)V
+    invoke-static {p0}, Lrug;->k(Landroid/view/WindowInsetsController;)V
 
     return-void
+
+    :cond_1
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->getSystemUiVisibility()I
+
+    move-result v0
+
+    and-int/lit8 v0, v0, -0x11
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
+
+    :cond_2
+    iget-object p0, p0, Lxug;->s:Landroid/view/WindowInsetsController;
+
+    invoke-static {p0}, Lrug;->m(Landroid/view/WindowInsetsController;)V
+
+    return-void
+.end method
+
+.method public final L(Z)V
+    .registers 3
+
+    iget-object v0, p0, Lxug;->u:Landroid/view/Window;
+
+    if-eqz p1, :cond_1
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->getSystemUiVisibility()I
+
+    move-result v0
+
+    or-int/lit16 v0, v0, 0x2000
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
+
+    :cond_0
+    iget-object p0, p0, Lxug;->s:Landroid/view/WindowInsetsController;
+
+    invoke-static {p0}, Lrug;->f(Landroid/view/WindowInsetsController;)V
+
+    return-void
+
+    :cond_1
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/View;->getSystemUiVisibility()I
+
+    move-result v0
+
+    and-int/lit16 v0, v0, -0x2001
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
+
+    :cond_2
+    iget-object p0, p0, Lxug;->s:Landroid/view/WindowInsetsController;
+
+    invoke-static {p0}, Lrug;->i(Landroid/view/WindowInsetsController;)V
+
+    return-void
+.end method
+
+.method public final M()V
+    .registers 1
+
+    iget-object p0, p0, Lxug;->s:Landroid/view/WindowInsetsController;
+
+    invoke-static {p0}, Lrug;->q(Landroid/view/WindowInsetsController;)V
+
+    return-void
+.end method
+
+.method public final N(I)V
+    .registers 3
+
+    and-int/lit8 v0, p1, 0x8
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lxug;->t:Lq2e;
+
+    iget-object v0, v0, Lq2e;->a:Ljava/lang/Object;
+
+    check-cast v0, Ltgd;
+
+    invoke-virtual {v0}, Ltgd;->p()V
+
+    :cond_0
+    iget-object p0, p0, Lxug;->s:Landroid/view/WindowInsetsController;
+
+    and-int/lit8 p1, p1, -0x9
+
+    invoke-static {p0, p1}, Laxa;->x(Landroid/view/WindowInsetsController;I)V
+
+    return-void
+.end method
+
+.method public final t(I)V
+    .registers 2
+
+    iget-object p0, p0, Lxug;->s:Landroid/view/WindowInsetsController;
+
+    and-int/lit8 p1, p1, -0x9
+
+    invoke-static {p0, p1}, Laxa;->C(Landroid/view/WindowInsetsController;I)V
+
+    return-void
+.end method
+
+.method public final x()Z
+    .registers 2
+
+    iget-object v0, p0, Lxug;->s:Landroid/view/WindowInsetsController;
+
+    invoke-static {v0}, Lrug;->o(Landroid/view/WindowInsetsController;)V
+
+    iget-object p0, p0, Lxug;->s:Landroid/view/WindowInsetsController;
+
+    invoke-static {p0}, Lrug;->b(Landroid/view/WindowInsetsController;)I
+
+    move-result p0
+
+    and-int/lit8 p0, p0, 0x8
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
 .end method

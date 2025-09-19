@@ -20,7 +20,7 @@
         "<init>",
         "(Ljava/lang/String;)V",
         "Companion",
-        "htd",
+        "o1e",
         "dev-menu_playGoogleRelease"
     }
     k = 0x1
@@ -34,7 +34,7 @@
 
 
 # static fields
-.field public static final Companion:Lhtd;
+.field public static final Companion:Lo1e;
 
 .field public static final ISSUE_KEY:Ljava/lang/String; = "18003"
 
@@ -43,11 +43,11 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    new-instance v0, Lhtd;
+    new-instance v0, Lo1e;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lone/me/devmenu/SimilarDevButtonIdsException;->Companion:Lhtd;
+    sput-object v0, Lone/me/devmenu/SimilarDevButtonIdsException;->Companion:Lo1e;
 
     return-void
 .end method

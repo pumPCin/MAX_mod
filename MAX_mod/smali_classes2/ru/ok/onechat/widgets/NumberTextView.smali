@@ -102,7 +102,7 @@
     return-void
 .end method
 
-.method public setOnTextWidthProgressChangedListener(Ll0a;)V
+.method public setOnTextWidthProgressChangedListener(Ll4a;)V
     .registers 2
 
     return-void
@@ -140,13 +140,13 @@
 .method public setTextSize(I)V
     .registers 3
 
-    sget-object v0, Lvn4;->a:Ljava/lang/Object;
+    sget-object v0, Lvo4;->a:Ljava/lang/Object;
 
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     int-to-float p0, p1
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object p1
 

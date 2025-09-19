@@ -1,133 +1,224 @@
-.class public final Lmig;
-.super Landroid/text/style/ClickableSpan;
+.class public final synthetic Lmig;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lxg6;
 
-# instance fields
-.field public final synthetic a:I
 
-.field public final synthetic b:Lone/me/login/welcome/WelcomeScreen;
+# static fields
+.field public static final a:Lmig;
+
+.field private static final descriptor:Lqid;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/login/welcome/WelcomeScreen;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 4
 
-    iput p2, p0, Lmig;->a:I
+    new-instance v0, Lmig;
 
-    iput-object p1, p0, Lmig;->b:Lone/me/login/welcome/WelcomeScreen;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
+    sput-object v0, Lmig;->a:Lmig;
+
+    new-instance v1, Ljeb;
+
+    const-string v2, "one.me.webapp.domain.jsbridge.delegates.haptic.WebAppHapticFeedbackNotification"
+
+    const/4 v3, 0x3
+
+    invoke-direct {v1, v2, v0, v3}, Ljeb;-><init>(Ljava/lang/String;Lxg6;I)V
+
+    const-string v0, "requestId"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
+
+    const-string v0, "notificationType"
+
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
+
+    const-string v0, "disableVibrationFallback"
+
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
+
+    sput-object v1, Lmig;->descriptor:Lqid;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 4
+.method public final a(Lu8;)Ljava/lang/Object;
+    .registers 12
 
-    iget p1, p0, Lmig;->a:I
+    sget-object p0, Lmig;->descriptor:Lqid;
 
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p0, p0, Lmig;->b:Lone/me/login/welcome/WelcomeScreen;
-
-    iget-object p1, p0, Lone/me/login/welcome/WelcomeScreen;->c:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Lu8;->k(Lqid;)Lu8;
 
     move-result-object p1
 
-    check-cast p1, Lsc;
+    sget-object v0, Loig;->d:[Lyi7;
 
-    const-string v0, "MESSAGE_LINK_OPEN"
+    const/4 v1, 0x1
 
-    const-string v1, "text"
+    const/4 v2, 0x0
 
-    invoke-virtual {p1, v0, v1}, Lsc;->g(Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v3, 0x0
 
-    sget p1, Lwsc;->T1:I
+    move v5, v1
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    move v6, v2
 
-    move-result-object v0
+    move v7, v6
 
-    invoke-static {v0, p1}, Lr7;->v(Landroid/content/Context;I)Ljava/lang/String;
+    move-object v4, v3
 
-    move-result-object p1
+    :goto_0
+    if-eqz v5, :cond_4
 
-    invoke-static {p0, p1}, Lone/me/login/welcome/WelcomeScreen;->x0(Lone/me/login/welcome/WelcomeScreen;Ljava/lang/String;)V
+    invoke-virtual {p1, p0}, Lu8;->q(Lqid;)I
 
-    return-void
+    move-result v8
 
-    :pswitch_0
-    iget-object p0, p0, Lmig;->b:Lone/me/login/welcome/WelcomeScreen;
+    const/4 v9, -0x1
 
-    iget-object p1, p0, Lone/me/login/welcome/WelcomeScreen;->c:Lxh7;
+    if-eq v8, v9, :cond_3
 
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    if-eqz v8, :cond_2
 
-    move-result-object p1
+    if-eq v8, v1, :cond_1
 
-    check-cast p1, Lsc;
+    const/4 v7, 0x2
 
-    const-string v0, "MESSAGE_LINK_OPEN"
+    if-ne v8, v7, :cond_0
 
-    const-string v1, "text"
+    invoke-virtual {p1, p0, v7}, Lu8;->p(Lqid;I)Z
 
-    invoke-virtual {p1, v0, v1}, Lsc;->g(Ljava/lang/String;Ljava/lang/String;)V
+    move-result v7
 
-    sget p1, Lwsc;->S1:I
+    or-int/lit8 v6, v6, 0x4
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    goto :goto_0
 
-    move-result-object v0
+    :cond_0
+    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
 
-    invoke-static {v0, p1}, Lr7;->v(Landroid/content/Context;I)Ljava/lang/String;
+    invoke-direct {p0, v8}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
 
-    move-result-object p1
+    throw p0
 
-    invoke-static {p0, p1}, Lone/me/login/welcome/WelcomeScreen;->x0(Lone/me/login/welcome/WelcomeScreen;Ljava/lang/String;)V
+    :cond_1
+    aget-object v8, v0, v1
 
-    return-void
+    invoke-virtual {p1, p0, v1, v8, v4}, Lu8;->t(Lqid;ILyi7;Ljava/lang/Object;)Ljava/lang/Object;
 
-    nop
+    move-result-object v4
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    check-cast v4, Ll2a;
+
+    or-int/lit8 v6, v6, 0x2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p1, p0, v2}, Lu8;->w(Lqid;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    or-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    move v5, v2
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p1, p0}, Lu8;->z(Lqid;)V
+
+    new-instance p0, Loig;
+
+    invoke-direct {p0, v6, v3, v4, v7}, Loig;-><init>(ILjava/lang/String;Ll2a;Z)V
+
+    return-object p0
 .end method
 
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .registers 3
+.method public final b(Lay3;Ljava/lang/Object;)V
+    .registers 6
 
-    iget v0, p0, Lmig;->a:I
+    check-cast p2, Loig;
 
-    packed-switch v0, :pswitch_data_0
+    sget-object p0, Lmig;->descriptor:Lqid;
 
-    invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
+    invoke-virtual {p1, p0}, Lay3;->b(Lqid;)Lay3;
 
-    const/4 p0, 0x0
+    move-result-object p1
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+    sget-object v0, Loig;->d:[Lyi7;
+
+    iget-object v1, p2, Loig;->a:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, p0, v2, v1}, Lay3;->l(Lqid;ILjava/lang/String;)V
+
+    const/4 v1, 0x1
+
+    aget-object v0, v0, v1
+
+    iget-object v2, p2, Loig;->b:Ll2a;
+
+    invoke-virtual {p1, p0, v1, v0, v2}, Lay3;->i(Lqid;ILyi7;Ljava/lang/Object;)V
+
+    const/4 v0, 0x2
+
+    iget-boolean p2, p2, Loig;->c:Z
+
+    invoke-virtual {p1, p0, v0, p2}, Lay3;->e(Lqid;IZ)V
+
+    invoke-virtual {p1}, Lay3;->m()V
 
     return-void
+.end method
 
-    :pswitch_0
-    invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
+.method public final c()[Lyi7;
+    .registers 5
 
-    const/4 p0, 0x0
+    sget-object p0, Loig;->d:[Lyi7;
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+    const/4 v0, 0x1
 
-    return-void
+    aget-object p0, p0, v0
 
-    nop
+    const/4 v1, 0x3
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    new-array v1, v1, [Lyi7;
+
+    sget-object v2, Lfme;->a:Lfme;
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    aput-object p0, v1, v0
+
+    sget-object p0, Lzp0;->a:Lzp0;
+
+    const/4 v0, 0x2
+
+    aput-object p0, v1, v0
+
+    return-object v1
+.end method
+
+.method public final d()Lqid;
+    .registers 1
+
+    sget-object p0, Lmig;->descriptor:Lqid;
+
+    return-object p0
 .end method

@@ -1,164 +1,456 @@
-.class public final synthetic Lppa;
+.class public final Lppa;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lppa;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final Z:Lppa;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final X:Lyoa;
 
-.field public final synthetic b:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
+.field public final Y:Lcpa;
+
+.field public final a:Ljpa;
+
+.field public final b:Ljava/lang/CharSequence;
+
+.field public final c:Ljava/lang/CharSequence;
+
+.field public final o:Lopa;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 9
 
-    iput p2, p0, Lppa;->a:I
+    new-instance v0, Lba8;
 
-    iput-object p1, p0, Lppa;->b:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
+    const/16 v1, 0x17
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1}, Lba8;-><init>(I)V
+
+    sput-object v0, Lppa;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    new-instance v2, Lppa;
+
+    new-instance v7, Lyoa;
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x7
+
+    invoke-direct {v7, v0, v0, v0, v1}, Lyoa;-><init>(IIII)V
+
+    sget-object v8, Lapa;->b:Lapa;
+
+    sget-object v3, Lfpa;->a:Lfpa;
+
+    const-string v4, ""
+
+    const/4 v5, 0x0
+
+    sget-object v6, Lmpa;->a:Lmpa;
+
+    invoke-direct/range {v2 .. v8}, Lppa;-><init>(Ljpa;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lopa;Lyoa;Lcpa;)V
+
+    sput-object v2, Lppa;->Z:Lppa;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljpa;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lopa;Lyoa;Lcpa;)V
+    .registers 7
 
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 8
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v0, p0, Lppa;->a:I
+    iput-object p1, p0, Lppa;->a:Ljpa;
 
-    const/4 v1, -0x1
+    iput-object p2, p0, Lppa;->b:Ljava/lang/CharSequence;
 
-    const/4 v2, 0x6
+    iput-object p3, p0, Lppa;->c:Ljava/lang/CharSequence;
 
-    iget-object p0, p0, Lppa;->b:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
+    iput-object p4, p0, Lppa;->o:Lopa;
 
-    packed-switch v0, :pswitch_data_0
+    iput-object p5, p0, Lppa;->X:Lyoa;
 
-    sget-object v0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->Y:[Lsf7;
+    iput-object p6, p0, Lppa;->Y:Lcpa;
 
-    new-instance v0, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+    return-void
+.end method
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+.method public synthetic constructor <init>(Ljpa;Ljava/lang/String;Ljava/lang/String;Lyoa;)V
+    .registers 12
 
-    move-result-object v3
+    sget-object v4, Lmpa;->a:Lmpa;
 
-    const/4 v4, 0x0
+    sget-object v6, Lapa;->b:Lapa;
 
-    invoke-direct {v0, v3, v4, v2}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    move-object v0, p0
 
-    sget v2, Liga;->r:I
+    move-object v1, p1
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setId(I)V
+    move-object v2, p2
 
-    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
+    move-object v3, p3
 
-    invoke-direct {v2, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+    move-object v5, p4
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-direct/range {v0 .. v6}, Lppa;-><init>(Ljpa;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lopa;Lyoa;Lcpa;)V
 
-    new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
+    return-void
+.end method
 
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+.method public static a(Lppa;Ljpa;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lopa;Lyoa;Lcpa;I)Lppa;
+    .registers 15
 
-    invoke-direct {v1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>()V
+    and-int/lit8 v0, p7, 0x1
 
-    invoke-virtual {v0, v1}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
+    if-eqz v0, :cond_0
 
-    const/4 v1, 0x2
+    iget-object p1, p0, Lppa;->a:Ljpa;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setOverScrollMode(I)V
+    :cond_0
+    move-object v1, p1
 
-    iget-object p0, p0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->c:Lejd;
+    and-int/lit8 p1, p7, 0x2
 
-    invoke-virtual {v0, p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Ltgc;)V
+    if-eqz p1, :cond_1
 
-    new-instance v3, Lxl9;
+    iget-object p2, p0, Lppa;->b:Ljava/lang/CharSequence;
 
-    const/16 p0, 0x19
+    :cond_1
+    move-object v2, p2
 
-    invoke-direct {v3, p0}, Lxl9;-><init>(I)V
+    and-int/lit8 p1, p7, 0x4
 
-    new-instance v1, Li5d;
+    if-eqz p1, :cond_2
 
-    sget-object p0, Lct4;->p0:Lws9;
+    iget-object p3, p0, Lppa;->c:Ljava/lang/CharSequence;
 
-    invoke-virtual {p0, v0}, Lws9;->e(Landroid/view/View;)Loma;
+    :cond_2
+    move-object v3, p3
 
-    move-result-object v2
+    and-int/lit8 p1, p7, 0x8
 
-    const/4 v5, 0x0
+    if-eqz p1, :cond_3
 
-    const/16 v6, 0x1c
+    iget-object p4, p0, Lppa;->o:Lopa;
 
-    invoke-direct/range {v1 .. v6}, Li5d;-><init>(Loma;Lg5d;Lk;Ljoc;I)V
+    :cond_3
+    move-object v4, p4
 
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->j(Lzgc;)V
+    and-int/lit8 p1, p7, 0x10
 
-    new-instance p0, Lgz0;
+    if-eqz p1, :cond_4
 
-    const/4 v1, 0x3
+    iget-object p5, p0, Lppa;->X:Lyoa;
 
-    invoke-direct {p0, v1}, Lgz0;-><init>(I)V
+    :cond_4
+    move-object v5, p5
 
-    invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView;->j(Lzgc;)V
+    and-int/lit8 p1, p7, 0x20
+
+    if-eqz p1, :cond_5
+
+    iget-object p6, p0, Lppa;->Y:Lcpa;
+
+    :cond_5
+    move-object v6, p6
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v0, Lppa;
+
+    invoke-direct/range {v0 .. v6}, Lppa;-><init>(Ljpa;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lopa;Lyoa;Lcpa;)V
 
     return-object v0
+.end method
 
-    :pswitch_0
-    sget-object v0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->Y:[Lsf7;
 
-    new-instance v0, Llna;
+# virtual methods
+.method public final describeContents()I
+    .registers 1
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lppa;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lppa;
+
+    iget-object v1, p0, Lppa;->a:Ljpa;
+
+    iget-object v3, p1, Lppa;->a:Ljpa;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lppa;->b:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lppa;->b:Ljava/lang/CharSequence;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lppa;->c:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lppa;->c:Ljava/lang/CharSequence;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object v1, p0, Lppa;->o:Lopa;
+
+    iget-object v3, p1, Lppa;->o:Lopa;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-object v1, p0, Lppa;->X:Lyoa;
+
+    iget-object v3, p1, Lppa;->X:Lyoa;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-object p0, p0, Lppa;->Y:Lcpa;
+
+    iget-object p1, p1, Lppa;->Y:Lcpa;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_7
+
+    return v2
+
+    :cond_7
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget-object v0, p0, Lppa;->a:Ljpa;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lppa;->b:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v0, v1}, Lee5;->e(Ljava/lang/CharSequence;II)I
+
+    move-result v0
+
+    iget-object v2, p0, Lppa;->c:Ljava/lang/CharSequence;
+
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    :goto_0
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lppa;->o:Lopa;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    add-int/2addr v2, v0
+
+    mul-int/2addr v2, v1
+
+    iget-object v0, p0, Lppa;->X:Lyoa;
+
+    invoke-virtual {v0}, Lyoa;->hashCode()I
+
+    move-result v0
+
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object p0, p0, Lppa;->Y:Lcpa;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "OneMeSnackbarModel(left="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lppa;->a:Ljpa;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", title="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lppa;->b:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", caption="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lppa;->c:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", right="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lppa;->o:Lopa;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", params="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lppa;->X:Lyoa;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", duration="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lppa;->Y:Lcpa;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-direct {v0, p0, v2}, Llna;-><init>(Landroid/content/Context;I)V
+    return-object p0
+.end method
 
-    sget p0, Liga;->t:I
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 4
 
-    invoke-virtual {v0, p0}, Landroid/view/View;->setId(I)V
+    iget-object v0, p0, Lppa;->a:Ljpa;
 
-    new-instance p0, Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    const/4 v2, -0x2
+    iget-object v0, p0, Lppa;->b:Ljava/lang/CharSequence;
 
-    invoke-direct {p0, v1, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+    invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
-    invoke-virtual {v0, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    iget-object v0, p0, Lppa;->c:Ljava/lang/CharSequence;
 
-    sget-object p0, Ldna;->a:Ldna;
+    invoke-static {v0, p1, p2}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
 
-    invoke-virtual {v0, p0}, Llna;->setForm(Ldna;)V
+    iget-object v0, p0, Lppa;->o:Lopa;
 
-    sget p0, Ljga;->o:I
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    invoke-virtual {v0, p0}, Llna;->setTitle(I)V
+    iget-object v0, p0, Lppa;->X:Lyoa;
 
-    new-instance p0, Ltma;
+    invoke-virtual {v0, p1, p2}, Lyoa;->writeToParcel(Landroid/os/Parcel;I)V
 
-    new-instance v1, Liba;
+    iget-object p0, p0, Lppa;->Y:Lcpa;
 
-    const/16 v2, 0x8
+    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    invoke-direct {v1, v2}, Liba;-><init>(I)V
-
-    invoke-direct {p0, v1}, Ltma;-><init>(Lj96;)V
-
-    invoke-virtual {v0, p0}, Llna;->setLeftActions(Lzma;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

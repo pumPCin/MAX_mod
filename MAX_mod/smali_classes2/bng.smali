@@ -1,140 +1,100 @@
 .class public final Lbng;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:I
-
-.field public final c:I
+.field public final synthetic Y:Lone/me/webapp/settings/WebAppSettingsScreen;
 
 
 # direct methods
-.method public constructor <init>(III)V
-    .registers 4
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/settings/WebAppSettingsScreen;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lbng;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
 
-    iput p1, p0, Lbng;->a:I
+    const/4 p2, 0x2
 
-    iput p2, p0, Lbng;->b:I
-
-    iput p3, p0, Lbng;->c:I
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Lbng;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lbng;
-
-    iget v0, p0, Lbng;->a:I
-
-    iget v1, p1, Lbng;->a:I
-
-    if-eq v0, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget v0, p0, Lbng;->b:I
-
-    iget v1, p1, Lbng;->b:I
-
-    if-eq v0, v1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget p0, p0, Lbng;->c:I
-
-    iget p1, p1, Lbng;->c:I
-
-    if-eq p0, p1, :cond_4
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_4
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget v0, p0, Lbng;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lbng;->b:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget p0, p0, Lbng;->c:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    const-string v0, ", input="
-
-    const-string v1, ", themed="
-
-    const-string v2, "WritebarStrokeColors(areaSeparator="
-
-    iget v3, p0, Lbng;->a:I
-
-    iget v4, p0, Lbng;->b:I
-
-    invoke-static {v2, v3, v0, v4, v1}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ")"
-
-    iget p0, p0, Lbng;->c:I
-
-    invoke-static {v0, p0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lbng;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Lbng;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lbng;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Lbng;
+
+    iget-object p0, p0, Lbng;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
+
+    invoke-direct {v0, p2, p0}, Lbng;-><init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/settings/WebAppSettingsScreen;)V
+
+    iput-object p1, v0, Lbng;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lbng;->X:Ljava/lang/Object;
+
+    check-cast p1, Lhng;
+
+    iget-object p0, p0, Lbng;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
+
+    iget-object v0, p0, Lone/me/webapp/settings/WebAppSettingsScreen;->Z:Lwqg;
+
+    iget-object v1, p1, Lhng;->b:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Lls7;->E(Ljava/util/List;)V
+
+    iget-object v0, p0, Lone/me/webapp/settings/WebAppSettingsScreen;->X:Lcic;
+
+    sget-object v1, Lone/me/webapp/settings/WebAppSettingsScreen;->r0:[Lxi7;
+
+    const/4 v2, 0x2
+
+    aget-object v1, v1, v2
+
+    invoke-interface {v0, p0, v1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ldsa;
+
+    iget-object p1, p1, Lhng;->a:Ljava/lang/String;
+
+    invoke-virtual {p0, p1}, Ldsa;->setTitle(Ljava/lang/CharSequence;)V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

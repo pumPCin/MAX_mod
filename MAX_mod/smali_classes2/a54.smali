@@ -2,80 +2,23 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:J
-
-.field public c:J
-
-.field public d:J
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/String;J)V
-    .registers 6
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const-wide/16 v0, 0xc8
-
-    iput-wide v0, p0, La54;->c:J
-
-    iput-object p1, p0, La54;->a:Ljava/lang/String;
-
-    iput-wide p2, p0, La54;->b:J
-
-    return-void
-.end method
+# interfaces
+.implements Lize;
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 4
+.method public final a(Ljava/lang/String;)Ljava/util/concurrent/ThreadFactory;
+    .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p0, Ly44;
 
-    const-string v1, "Command{seq:"
+    const-string v0, "1me-"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    iget-wide v1, p0, La54;->b:J
+    move-result-object p1
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, "|retry count:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, La54;->d:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, "|retry timeout:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, La54;->c:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x7c
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, La54;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    invoke-direct {p0, p1}, Ly44;-><init>(Ljava/lang/String;)V
 
     return-object p0
 .end method

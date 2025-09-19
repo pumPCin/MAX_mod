@@ -1,86 +1,118 @@
 .class public final Lm9g;
-.super Ln9g;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public a:Lcae;
+
+.field public final synthetic b:Lure;
+
+.field public final synthetic c:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+.method public constructor <init>(Lrc6;Landroid/view/View;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lm9g;->a:Ljava/lang/String;
+    check-cast p1, Lure;
+
+    iput-object p1, p0, Lm9g;->b:Lure;
+
+    iput-object p2, p0, Lm9g;->c:Landroid/view/View;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
+    .registers 8
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lm9g;->a:Lcae;
 
-    if-ne p0, p1, :cond_0
+    if-eqz v0, :cond_0
 
-    return v0
+    invoke-virtual {v0}, Le0;->isActive()Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    return-void
 
     :cond_0
-    instance-of v1, p1, Lm9g;
+    sget-object v0, Lyu4;->t0:Lbx9;
 
-    const/4 v2, 0x0
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    if-nez v1, :cond_1
+    move-result-object v1
 
-    return v2
+    invoke-virtual {v0, v1}, Lbx9;->k(Landroid/content/Context;)Lyu4;
 
-    :cond_1
-    check-cast p1, Lm9g;
+    move-result-object v0
 
-    iget-object p0, p0, Lm9g;->a:Ljava/lang/String;
+    iget-object v0, v0, Lyu4;->s0:Ljava/lang/Object;
 
-    iget-object p1, p1, Lm9g;->a:Ljava/lang/String;
+    check-cast v0, Liic;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    new-instance v1, Lk9g;
 
-    move-result p0
+    iget-object v2, p0, Lm9g;->b:Lure;
 
-    if-nez p0, :cond_2
+    iget-object v3, p0, Lm9g;->c:Landroid/view/View;
 
-    return v2
+    const/4 v4, 0x0
 
-    :cond_2
-    return v0
+    invoke-direct {v1, v2, v3, p1, v4}, Lk9g;-><init>(Lrc6;Landroid/view/View;Landroid/view/View;Lkotlin/coroutines/Continuation;)V
+
+    new-instance v5, Lus5;
+
+    invoke-direct {v5, v1, v0}, Lus5;-><init>(Lpc6;Lis5;)V
+
+    new-instance v0, Ll9g;
+
+    invoke-direct {v0, v2, v3, v4}, Ll9g;-><init>(Lrc6;Landroid/view/View;Lkotlin/coroutines/Continuation;)V
+
+    new-instance v1, Lnu5;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, v5, v0, v2}, Lnu5;-><init>(Lis5;Lpc6;I)V
+
+    invoke-static {p1}, Lt7g;->b(Landroid/view/View;)Lon7;
+
+    move-result-object p1
+
+    invoke-static {v1, p1}, Lo97;->u0(Lis5;Ly04;)Lcae;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lm9g;->a:Lcae;
+
+    return-void
 .end method
 
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lm9g;->a:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
     .registers 3
 
-    const-string v0, "OpenLinkExternal(url="
+    iget-object p1, p0, Lm9g;->a:Lcae;
 
-    const-string v1, ")"
+    const/4 v0, 0x0
 
-    iget-object p0, p0, Lm9g;->a:Ljava/lang/String;
+    if-eqz p1, :cond_0
 
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Lsf7;->cancel(Ljava/util/concurrent/CancellationException;)V
 
-    move-result-object p0
+    :cond_0
+    iput-object v0, p0, Lm9g;->a:Lcae;
 
-    return-object p0
+    return-void
 .end method

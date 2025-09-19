@@ -2,148 +2,186 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public a:I
 
-.field public final b:Ljava/lang/ref/WeakReference;
+.field public b:J
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:Lg8h;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/biometric/BiometricFragment;)V
-    .registers 3
+.method public constructor <init>(II)V
+    .registers 6
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lqn0;->a:I
+    const/4 v1, 0x1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-lez p1, :cond_0
 
-    new-instance v0, Ljava/lang/ref/WeakReference;
+    move v2, v1
 
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    goto :goto_0
 
-    iput-object v0, p0, Lqn0;->b:Ljava/lang/ref/WeakReference;
+    :cond_0
+    move v2, v0
 
-    return-void
-.end method
+    :goto_0
+    if-eqz v2, :cond_3
 
-.method public constructor <init>(Landroidx/biometric/BiometricViewModel;I)V
-    .registers 3
+    if-lez p2, :cond_1
 
-    iput p2, p0, Lqn0;->a:I
+    move v0, v1
 
-    packed-switch p2, :pswitch_data_0
+    :cond_1
+    if-eqz v0, :cond_2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lqn0;->c:I
 
-    new-instance p2, Ljava/lang/ref/WeakReference;
+    iput p2, p0, Lqn0;->d:I
 
-    invoke-direct {p2, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    new-instance p1, Lg8h;
 
-    iput-object p2, p0, Lqn0;->b:Ljava/lang/ref/WeakReference;
+    invoke-direct {p1, p0}, Lg8h;-><init>(Ljava/lang/Object;)V
 
-    return-void
-
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance p2, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {p2, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object p2, p0, Lqn0;->b:Ljava/lang/ref/WeakReference;
+    iput-object p1, p0, Lqn0;->e:Lg8h;
 
     return-void
 
-    nop
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
+    invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw p0
+
+    :cond_3
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 2
+.method public final declared-synchronized a(Landroid/graphics/Bitmap;)V
+    .registers 9
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-static {p1}, Lqo0;->d(Landroid/graphics/Bitmap;)I
+
+    move-result p1
 
     iget v0, p0, Lqn0;->a:I
 
-    packed-switch v0, :pswitch_data_0
+    const/4 v1, 0x0
 
-    iget-object p0, p0, Lqn0;->b:Ljava/lang/ref/WeakReference;
+    const/4 v2, 0x1
 
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    if-lez v0, :cond_0
 
-    move-result-object v0
+    move v0, v2
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroidx/biometric/BiometricViewModel;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroidx/biometric/BiometricViewModel;->l:Z
+    goto :goto_0
 
     :cond_0
-    return-void
+    move v0, v1
 
-    :pswitch_0
-    iget-object p0, p0, Lqn0;->b:Ljava/lang/ref/WeakReference;
+    :goto_0
+    const-string v3, "No bitmaps registered."
 
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    invoke-static {v3, v0}, Lcb7;->f(Ljava/lang/String;Z)V
 
-    move-result-object v0
+    int-to-long v3, p1
 
-    if-eqz v0, :cond_1
+    iget-wide v5, p0, Lqn0;->b:J
 
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    cmp-long v0, v3, v5
 
-    move-result-object p0
+    if-gtz v0, :cond_1
 
-    check-cast p0, Landroidx/biometric/BiometricViewModel;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Landroidx/biometric/BiometricViewModel;->k:Z
+    move v1, v2
 
     :cond_1
+    const-string v0, "Bitmap size bigger than the total registered size: %d, %d"
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    iget-wide v5, p0, Lqn0;->b:J
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v5
+
+    filled-new-array {p1, v5}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v1, v0, p1}, Lcb7;->g(ZLjava/lang/String;[Ljava/lang/Object;)V
+
+    iget-wide v0, p0, Lqn0;->b:J
+
+    sub-long/2addr v0, v3
+
+    iput-wide v0, p0, Lqn0;->b:J
+
+    iget p1, p0, Lqn0;->a:I
+
+    sub-int/2addr p1, v2
+
+    iput p1, p0, Lqn0;->a:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
     return-void
 
-    :pswitch_1
-    iget-object p0, p0, Lqn0;->b:Ljava/lang/ref/WeakReference;
+    :catchall_0
+    move-exception p1
 
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result-object v0
+    throw p1
+.end method
 
-    if-eqz v0, :cond_2
+.method public final declared-synchronized b()I
+    .registers 2
 
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    monitor-enter p0
 
-    move-result-object p0
+    :try_start_0
+    iget v0, p0, Lqn0;->d:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    check-cast p0, Landroidx/biometric/BiometricFragment;
+    monitor-exit p0
 
-    invoke-virtual {p0}, Landroidx/biometric/BiometricFragment;->X0()V
+    return v0
 
-    :cond_2
-    return-void
+    :catchall_0
+    move-exception v0
 
-    nop
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw v0
 .end method

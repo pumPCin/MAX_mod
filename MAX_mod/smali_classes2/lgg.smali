@@ -1,66 +1,94 @@
-.class public final Llgg;
-.super Ljava/lang/Object;
+.class public final enum Llgg;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 # interfaces
-.implements Lmgg;
+.implements Lxjg;
 
 
-# instance fields
-.field public final X:I
+# static fields
+.field public static final synthetic a:[Llgg;
 
-.field public final a:Lnjd;
-
-.field public final b:Laa4;
-
-.field public final c:J
-
-.field public final o:I
+.field public static final synthetic b:Ly75;
 
 
 # direct methods
-.method public constructor <init>(Lnjd;Laa4;JI)V
-    .registers 6
+.method static constructor <clinit>()V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Llgg;
 
-    iput-object p1, p0, Llgg;->a:Lnjd;
+    const-string v1, "CHANGE_SCREEN_BRIGHTNESS"
 
-    iput-object p2, p0, Llgg;->b:Laa4;
+    const/4 v2, 0x0
 
-    iput-wide p3, p0, Llgg;->c:J
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput p5, p0, Llgg;->o:I
+    filled-new-array {v0}, [Llgg;
 
-    sget p1, Luna;->k:I
+    move-result-object v0
 
-    iput p1, p0, Llgg;->X:I
+    sput-object v0, Llgg;->a:[Llgg;
+
+    new-instance v1, Ly75;
+
+    invoke-direct {v1, v0}, Ly75;-><init>([Ljava/lang/Enum;)V
+
+    sput-object v1, Llgg;->b:Ly75;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Llgg;
+    .registers 2
+
+    const-class v0, Llgg;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Llgg;
+
+    return-object p0
+.end method
+
+.method public static values()[Llgg;
+    .registers 1
+
+    sget-object v0, Llgg;->a:[Llgg;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Llgg;
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public final a()I
+.method public final a()Ljava/lang/Integer;
     .registers 1
 
-    iget p0, p0, Llgg;->o:I
+    const/4 p0, 0x0
 
-    return p0
+    return-object p0
 .end method
 
-.method public final getItemId()J
-    .registers 3
-
-    iget-wide v0, p0, Llgg;->c:J
-
-    return-wide v0
-.end method
-
-.method public final m()I
+.method public final b()Ljava/lang/String;
     .registers 1
 
-    iget p0, p0, Llgg;->X:I
+    const-string p0, "WebAppChangeScreenBrightness"
 
-    return p0
+    return-object p0
+.end method
+
+.method public final c()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "change_screen_brightness"
+
+    return-object p0
 .end method

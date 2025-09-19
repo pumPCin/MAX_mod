@@ -1,73 +1,65 @@
-.class public final Lz34;
+.class public abstract Lz34;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Lz34;
-
-.field public static final d:Ljava/lang/String;
-
-.field public static final e:Ljava/lang/String;
-
-
-# instance fields
-.field public final a:Lj07;
-
-.field public final b:J
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public static a(Ljava/security/Signature;)Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
+    .registers 2
 
-    new-instance v0, Lz34;
+    new-instance v0, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
 
-    sget-object v1, Lj07;->b:Ldv5;
+    invoke-direct {v0, p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;-><init>(Ljava/security/Signature;)V
 
-    sget-object v1, Lqic;->X:Lqic;
-
-    const-wide/16 v2, 0x0
-
-    invoke-direct {v0, v2, v3, v1}, Lz34;-><init>(JLjava/util/List;)V
-
-    sput-object v0, Lz34;->c:Lz34;
-
-    sget v0, Laif;->a:I
-
-    const/4 v0, 0x0
-
-    const/16 v1, 0x24
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lz34;->d:Ljava/lang/String;
-
-    const/4 v0, 0x1
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lz34;->e:Ljava/lang/String;
-
-    return-void
+    return-object v0
 .end method
 
-.method public constructor <init>(JLjava/util/List;)V
-    .registers 4
+.method public static b(Ljavax/crypto/Cipher;)Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
 
-    invoke-static {p3}, Lj07;->j(Ljava/util/Collection;)Lj07;
+    invoke-direct {v0, p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;-><init>(Ljavax/crypto/Cipher;)V
 
-    move-result-object p3
+    return-object v0
+.end method
 
-    iput-object p3, p0, Lz34;->a:Lj07;
+.method public static c(Ljavax/crypto/Mac;)Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
+    .registers 2
 
-    iput-wide p1, p0, Lz34;->b:J
+    new-instance v0, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
 
-    return-void
+    invoke-direct {v0, p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;-><init>(Ljavax/crypto/Mac;)V
+
+    return-object v0
+.end method
+
+.method public static d(Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;)Ljavax/crypto/Cipher;
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;->getCipher()Ljavax/crypto/Cipher;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static e(Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;)Ljavax/crypto/Mac;
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;->getMac()Ljavax/crypto/Mac;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static f(Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;)Ljava/security/Signature;
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;->getSignature()Ljava/security/Signature;
+
+    move-result-object p0
+
+    return-object p0
 .end method

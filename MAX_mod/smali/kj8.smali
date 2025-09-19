@@ -1,371 +1,198 @@
 .class public final Lkj8;
-.super Ltgc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final X:Landroid/view/LayoutInflater;
+.field public A:Ljava/lang/CharSequence;
 
-.field public final Y:Landroid/graphics/drawable/Drawable;
+.field public B:Ljava/lang/Integer;
 
-.field public final Z:Landroid/graphics/drawable/Drawable;
+.field public C:Ljava/lang/Integer;
 
-.field public final n0:Landroid/graphics/drawable/Drawable;
+.field public D:Ljava/lang/CharSequence;
 
-.field public final o:Ljava/util/ArrayList;
+.field public E:Ljava/lang/CharSequence;
 
-.field public final o0:Landroid/graphics/drawable/Drawable;
+.field public F:Ljava/lang/CharSequence;
 
-.field public final synthetic p0:Llj8;
+.field public G:Ljava/lang/Integer;
+
+.field public H:Landroid/os/Bundle;
+
+.field public I:Ll37;
+
+.field public a:Ljava/lang/CharSequence;
+
+.field public b:Ljava/lang/CharSequence;
+
+.field public c:Ljava/lang/CharSequence;
+
+.field public d:Ljava/lang/CharSequence;
+
+.field public e:Ljava/lang/CharSequence;
+
+.field public f:Ljava/lang/CharSequence;
+
+.field public g:Ljava/lang/CharSequence;
+
+.field public h:Ljava/lang/Long;
+
+.field public i:Ljfc;
+
+.field public j:Ljfc;
+
+.field public k:[B
+
+.field public l:Ljava/lang/Integer;
+
+.field public m:Landroid/net/Uri;
+
+.field public n:Ljava/lang/Integer;
+
+.field public o:Ljava/lang/Integer;
+
+.field public p:Ljava/lang/Integer;
+
+.field public q:Ljava/lang/Boolean;
+
+.field public r:Ljava/lang/Boolean;
+
+.field public s:Ljava/lang/Integer;
+
+.field public t:Ljava/lang/Integer;
+
+.field public u:Ljava/lang/Integer;
+
+.field public v:Ljava/lang/Integer;
+
+.field public w:Ljava/lang/Integer;
+
+.field public x:Ljava/lang/Integer;
+
+.field public y:Ljava/lang/CharSequence;
+
+.field public z:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method public constructor <init>(Llj8;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, Lkj8;->p0:Llj8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ltgc;-><init>()V
+    sget-object v0, Ll37;->b:Lgx5;
 
-    new-instance v0, Ljava/util/ArrayList;
+    sget-object v0, Llqc;->X:Llqc;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lkj8;->o:Ljava/util/ArrayList;
-
-    iget-object v0, p1, Llj8;->n0:Landroid/content/Context;
-
-    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lkj8;->X:Landroid/view/LayoutInflater;
-
-    iget-object p1, p1, Llj8;->n0:Landroid/content/Context;
-
-    sget v0, Lkvb;->mediaRouteDefaultIconDrawable:I
-
-    invoke-static {p1, v0}, Lpk8;->d(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lkj8;->Y:Landroid/graphics/drawable/Drawable;
-
-    sget v0, Lkvb;->mediaRouteTvIconDrawable:I
-
-    invoke-static {p1, v0}, Lpk8;->d(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lkj8;->Z:Landroid/graphics/drawable/Drawable;
-
-    sget v0, Lkvb;->mediaRouteSpeakerIconDrawable:I
-
-    invoke-static {p1, v0}, Lpk8;->d(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lkj8;->n0:Landroid/graphics/drawable/Drawable;
-
-    sget v0, Lkvb;->mediaRouteSpeakerGroupIconDrawable:I
-
-    invoke-static {p1, v0}, Lpk8;->d(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lkj8;->o0:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0}, Lkj8;->C()V
+    iput-object v0, p0, Lkj8;->I:Ll37;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final C()V
-    .registers 6
+.method public final a(I[B)V
+    .registers 5
 
-    iget-object v0, p0, Lkj8;->o:Ljava/util/ArrayList;
+    iget-object v0, p0, Lkj8;->k:[B
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+    if-eqz v0, :cond_1
 
-    new-instance v1, Lij8;
+    const/4 v0, 0x3
 
-    iget-object v2, p0, Lkj8;->p0:Llj8;
+    if-eq p1, v0, :cond_1
 
-    iget-object v3, v2, Llj8;->n0:Landroid/content/Context;
+    iget-object v1, p0, Lkj8;->l:Ljava/lang/Integer;
 
-    sget v4, Lq4c;->mr_chooser_title:I
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v3
-
-    invoke-direct {v1, v3}, Lij8;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-object v1, v2, Llj8;->p0:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lik8;
-
-    new-instance v3, Lij8;
-
-    invoke-direct {v3, v2}, Lij8;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Ltgc;->m()V
-
-    return-void
-.end method
-
-.method public final j()I
-    .registers 1
-
-    iget-object p0, p0, Lkj8;->o:Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final l(I)I
-    .registers 2
-
-    iget-object p0, p0, Lkj8;->o:Ljava/util/ArrayList;
-
-    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lij8;
-
-    iget p0, p0, Lij8;->b:I
-
-    return p0
-.end method
-
-.method public final r(Lphc;I)V
-    .registers 8
-
-    invoke-virtual {p0, p2}, Lkj8;->l(I)I
+    invoke-static {v1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    iget-object p0, p0, Lkj8;->o:Ljava/util/ArrayList;
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lij8;
-
-    const/4 p2, 0x1
-
-    if-eq v0, p2, :cond_5
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_0
-
-    return-void
+    goto :goto_0
 
     :cond_0
-    check-cast p1, Ljj8;
-
-    iget-object p0, p0, Lij8;->a:Ljava/lang/Object;
-
-    check-cast p0, Lik8;
-
-    iget-object v0, p1, Ljj8;->A0:Landroid/view/View;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-
-    iget-object v2, p1, Ljj8;->C0:Landroid/widget/ProgressBar;
-
-    const/4 v3, 0x4
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
-
-    new-instance v2, Lxp;
-
-    invoke-direct {v2, p1, p0}, Lxp;-><init>(Ljj8;Lik8;)V
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    iget-object v0, p1, Ljj8;->D0:Landroid/widget/TextView;
-
-    iget-object v2, p0, Lik8;->d:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object v0, p1, Ljj8;->B0:Landroid/widget/ImageView;
-
-    iget-object p1, p1, Ljj8;->E0:Lkj8;
-
-    iget-object v2, p0, Lik8;->f:Landroid/net/Uri;
-
-    if-eqz v2, :cond_1
-
-    :try_start_0
-    iget-object v3, p1, Lkj8;->p0:Llj8;
-
-    iget-object v3, v3, Llj8;->n0:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    invoke-static {v3, v4}, Landroid/graphics/drawable/Drawable;->createFromStream(Ljava/io/InputStream;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-eqz v2, :cond_1
-
-    goto :goto_1
-
-    :catch_0
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    :cond_1
-    iget v2, p0, Lik8;->m:I
-
-    if-eq v2, p2, :cond_4
-
-    if-eq v2, v1, :cond_3
-
-    invoke-virtual {p0}, Lik8;->e()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    iget-object p0, p1, Lkj8;->o0:Landroid/graphics/drawable/Drawable;
-
-    :goto_0
-    move-object v2, p0
-
-    goto :goto_1
-
-    :cond_2
-    iget-object p0, p1, Lkj8;->Y:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_0
-
-    :cond_3
-    iget-object p0, p1, Lkj8;->n0:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_0
-
-    :cond_4
-    iget-object p0, p1, Lkj8;->Z:Landroid/graphics/drawable/Drawable;
-
-    goto :goto_0
-
-    :goto_1
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
     return-void
 
-    :cond_5
-    check-cast p1, Lhj8;
+    :cond_1
+    :goto_0
+    invoke-virtual {p2}, [B->clone()Ljava/lang/Object;
 
-    iget-object p0, p0, Lij8;->a:Ljava/lang/Object;
+    move-result-object p2
 
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    check-cast p2, [B
 
-    move-result-object p0
+    iput-object p2, p0, Lkj8;->k:[B
 
-    iget-object p1, p1, Lhj8;->A0:Landroid/widget/TextView;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {p1, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    move-result-object p1
+
+    iput-object p1, p0, Lkj8;->l:Ljava/lang/Integer;
 
     return-void
 .end method
 
-.method public final t(Landroid/view/ViewGroup;I)Lphc;
-    .registers 6
+.method public final b([BLjava/lang/Integer;)V
+    .registers 3
 
-    const/4 v0, 0x1
+    if-nez p1, :cond_0
 
-    const/4 v1, 0x0
+    const/4 p1, 0x0
 
-    iget-object v2, p0, Lkj8;->X:Landroid/view/LayoutInflater;
-
-    if-eq p2, v0, :cond_1
-
-    const/4 v0, 0x2
-
-    if-eq p2, v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
+    goto :goto_0
 
     :cond_0
-    sget p2, Ls1c;->mr_picker_route_item:I
-
-    invoke-virtual {v2, p2, p1, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1}, [B->clone()Ljava/lang/Object;
 
     move-result-object p1
 
-    new-instance p2, Ljj8;
+    check-cast p1, [B
 
-    invoke-direct {p2, p0, p1}, Ljj8;-><init>(Lkj8;Landroid/view/View;)V
+    :goto_0
+    iput-object p1, p0, Lkj8;->k:[B
 
-    return-object p2
+    iput-object p2, p0, Lkj8;->l:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public final c(Ljava/lang/Long;)V
+    .registers 6
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-ltz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_1
 
     :cond_1
-    sget p0, Ls1c;->mr_picker_header_item:I
+    :goto_0
+    const/4 v0, 0x1
 
-    invoke-virtual {v2, p0, p1, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    :goto_1
+    invoke-static {v0}, Lmq0;->c(Z)V
 
-    move-result-object p0
+    iput-object p1, p0, Lkj8;->h:Ljava/lang/Long;
 
-    new-instance p1, Lhj8;
-
-    invoke-direct {p1, p0}, Lphc;-><init>(Landroid/view/View;)V
-
-    sget p2, Layb;->mr_picker_header_name:I
-
-    invoke-virtual {p0, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/widget/TextView;
-
-    iput-object p0, p1, Lhj8;->A0:Landroid/widget/TextView;
-
-    return-object p1
+    return-void
 .end method

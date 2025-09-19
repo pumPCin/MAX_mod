@@ -1,29 +1,14 @@
 .class public final Lpyd;
-.super Luyd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final c:J
-
-
-# direct methods
-.method public constructor <init>(J)V
-    .registers 4
-
-    const/4 v0, 0x4
-
-    invoke-direct {p0, p1, p2, v0}, Luyd;-><init>(JI)V
-
-    iput-wide p1, p0, Lpyd;->c:J
-
-    return-void
-.end method
+# interfaces
+.implements Lnob;
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+    .registers 3
 
     const/4 v0, 0x1
 
@@ -32,37 +17,81 @@
     return v0
 
     :cond_0
-    instance-of v1, p1, Lpyd;
+    instance-of p0, p1, Lpyd;
 
-    const/4 v2, 0x0
+    if-nez p0, :cond_1
 
-    if-nez v1, :cond_1
+    const/4 p0, 0x0
 
-    return v2
+    return p0
 
     :cond_1
     check-cast p1, Lpyd;
 
-    iget-wide v3, p0, Lpyd;->c:J
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-wide p0, p1, Lpyd;->c:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_2
-
-    return v2
-
-    :cond_2
     return v0
 .end method
 
-.method public final hashCode()I
+.method public final getItemId()J
     .registers 3
 
-    iget-wide v0, p0, Lpyd;->c:J
+    const/16 p0, 0x8
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    int-to-long v0, p0
+
+    return-wide v0
+.end method
+
+.method public final h(Lts7;)Z
+    .registers 4
+
+    const/16 p0, 0x8
+
+    int-to-long v0, p0
+
+    invoke-interface {p1}, Lts7;->getItemId()J
+
+    move-result-wide p0
+
+    cmp-long p0, v0, p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, 0x20000008
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final m()I
+    .registers 1
+
+    const p0, 0x20000008
+
+    return p0
+.end method
+
+.method public final q(Lts7;)Z
+    .registers 2
+
+    invoke-virtual {p0, p1}, Lpyd;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -70,17 +99,9 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .registers 1
 
-    const-string v0, "ChannelId(channelId="
-
-    const-string v1, ")"
-
-    iget-wide v2, p0, Lpyd;->c:J
-
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
+    const-string p0, "ShortLinkHeaderItem(viewType=536870920)"
 
     return-object p0
 .end method

@@ -2,78 +2,135 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Comparable;
+
+
+# static fields
+.field public static final X:Lpz7;
+
+.field public static final Y:Lpz7;
+
+.field public static final Z:Lpz7;
+
+.field public static final b:Lpz7;
+
+.field public static final c:Lpz7;
+
+.field public static final o:Lpz7;
+
 
 # instance fields
-.field public a:J
+.field public final a:Lcvd;
 
-.field public b:J
 
-.field public c:J
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
 
-.field public d:J
+    new-instance v0, Lpz7;
+
+    sget-object v1, Lcvd;->c:Lcvd;
+
+    invoke-direct {v0, v1}, Lpz7;-><init>(Lcvd;)V
+
+    sput-object v0, Lpz7;->b:Lpz7;
+
+    new-instance v0, Lpz7;
+
+    sget-object v1, Lcvd;->o:Lcvd;
+
+    invoke-direct {v0, v1}, Lpz7;-><init>(Lcvd;)V
+
+    sput-object v0, Lpz7;->c:Lpz7;
+
+    new-instance v0, Lpz7;
+
+    sget-object v1, Lcvd;->X:Lcvd;
+
+    invoke-direct {v0, v1}, Lpz7;-><init>(Lcvd;)V
+
+    sput-object v0, Lpz7;->o:Lpz7;
+
+    new-instance v0, Lpz7;
+
+    sget-object v1, Lcvd;->Y:Lcvd;
+
+    invoke-direct {v0, v1}, Lpz7;-><init>(Lcvd;)V
+
+    sput-object v0, Lpz7;->X:Lpz7;
+
+    new-instance v0, Lpz7;
+
+    sget-object v1, Lcvd;->Z:Lcvd;
+
+    invoke-direct {v0, v1}, Lpz7;-><init>(Lcvd;)V
+
+    sput-object v0, Lpz7;->Y:Lpz7;
+
+    new-instance v0, Lpz7;
+
+    sget-object v1, Lcvd;->r0:Lcvd;
+
+    invoke-direct {v0, v1}, Lpz7;-><init>(Lcvd;)V
+
+    sput-object v0, Lpz7;->Z:Lpz7;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcvd;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lpz7;->a:Lcvd;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(JJ)D
-    .registers 12
+.method public final compareTo(Ljava/lang/Object;)I
+    .registers 2
 
-    iget-wide v0, p0, Lpz7;->a:J
+    check-cast p1, Lpz7;
 
-    sub-long v0, p1, v0
+    iget-object p1, p1, Lpz7;->a:Lcvd;
 
-    const-wide/16 v2, 0x0
+    iget-object p0, p0, Lpz7;->a:Lcvd;
 
-    cmp-long v4, v0, v2
+    iget p0, p0, Lcvd;->b:I
 
-    if-gez v4, :cond_0
+    iget p1, p1, Lcvd;->b:I
 
-    move-wide v0, v2
+    invoke-static {p0, p1}, Lvyg;->g(II)I
 
-    :cond_0
-    iput-wide v0, p0, Lpz7;->c:J
+    move-result p0
 
-    iget-wide v4, p0, Lpz7;->b:J
+    return p0
+.end method
 
-    sub-long v4, p3, v4
+.method public final hashCode()I
+    .registers 1
 
-    cmp-long v6, v4, v2
+    iget-object p0, p0, Lpz7;->a:Lcvd;
 
-    if-gez v6, :cond_1
+    iget-object p0, p0, Lcvd;->a:Ljava/lang/String;
 
-    move-wide v4, v2
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
-    :cond_1
-    iput-wide v4, p0, Lpz7;->d:J
+    move-result p0
 
-    cmp-long v6, v4, v2
+    return p0
+.end method
 
-    if-nez v6, :cond_3
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    cmp-long v2, v0, v2
+    iget-object p0, p0, Lpz7;->a:Lcvd;
 
-    if-eqz v2, :cond_2
+    iget-object p0, p0, Lcvd;->a:Ljava/lang/String;
 
-    goto :goto_0
-
-    :cond_2
-    const-wide/16 v0, 0x0
-
-    goto :goto_1
-
-    :cond_3
-    :goto_0
-    long-to-double v2, v0
-
-    add-long/2addr v4, v0
-
-    long-to-double v0, v4
-
-    div-double v0, v2, v0
-
-    :goto_1
-    iput-wide p1, p0, Lpz7;->a:J
-
-    iput-wide p3, p0, Lpz7;->b:J
-
-    return-wide v0
+    return-object p0
 .end method

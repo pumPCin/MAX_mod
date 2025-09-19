@@ -1,146 +1,145 @@
 .class public final Lowd;
-.super Ls2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic c:I
+.field public final a:Lu2f;
 
-.field public final synthetic o:Lpwd;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lpwd;I)V
+.method public constructor <init>(Lu2f;Ljava/lang/String;)V
     .registers 3
 
-    iput p2, p0, Lowd;->c:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    packed-switch p2, :pswitch_data_0
+    iput-object p1, p0, Lowd;->a:Lu2f;
 
-    const/4 p2, 0x0
-
-    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p2
-
-    iput-object p1, p0, Lowd;->o:Lpwd;
-
-    const/16 p1, 0x9
-
-    invoke-direct {p0, p1, p2}, Ls2;-><init>(ILjava/lang/Object;)V
+    iput-object p2, p0, Lowd;->b:Ljava/lang/String;
 
     return-void
-
-    :pswitch_0
-    const/high16 p2, 0x3f800000    # 1.0f
-
-    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p2
-
-    iput-object p1, p0, Lowd;->o:Lpwd;
-
-    const/16 p1, 0x9
-
-    invoke-direct {p0, p1, p2}, Ls2;-><init>(ILjava/lang/Object;)V
-
-    return-void
-
-    :pswitch_1
-    const/high16 p2, 0x3f800000    # 1.0f
-
-    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p2
-
-    iput-object p1, p0, Lowd;->o:Lpwd;
-
-    const/16 p1, 0x9
-
-    invoke-direct {p0, p1, p2}, Ls2;-><init>(ILjava/lang/Object;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    iget v0, p0, Lowd;->c:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    invoke-static {p1, p2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    iget-object p0, p0, Lowd;->o:Lpwd;
-
-    invoke-virtual {p0}, Lpwd;->a()I
-
-    move-result p1
-
-    iput p1, p0, Lpwd;->e:I
+    return v0
 
     :cond_0
-    return-void
+    instance-of v1, p1, Lowd;
 
-    :pswitch_0
-    invoke-static {p1, p2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const/4 v2, 0x0
 
-    move-result p1
+    if-nez v1, :cond_1
 
-    if-nez p1, :cond_1
-
-    iget-object p0, p0, Lowd;->o:Lpwd;
-
-    iget p1, p0, Lpwd;->d:F
-
-    invoke-virtual {p0, p1}, Lpwd;->c(F)V
-
-    invoke-virtual {p0}, Lpwd;->a()I
-
-    move-result p1
-
-    iput p1, p0, Lpwd;->e:I
+    return v2
 
     :cond_1
-    return-void
+    check-cast p1, Lowd;
 
-    :pswitch_1
-    invoke-static {p1, p2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v1, p0, Lowd;->a:Lu2f;
 
-    move-result p1
+    iget-object v3, p1, Lowd;->a:Lu2f;
 
-    if-nez p1, :cond_2
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object p0, p0, Lowd;->o:Lpwd;
+    move-result v1
 
-    iget p1, p0, Lpwd;->d:F
+    if-nez v1, :cond_2
 
-    invoke-virtual {p0, p1}, Lpwd;->c(F)V
-
-    invoke-virtual {p0}, Lpwd;->a()I
-
-    move-result p1
-
-    iput p1, p0, Lpwd;->e:I
+    return v2
 
     :cond_2
-    return-void
+    iget-object p0, p0, Lowd;->b:Ljava/lang/String;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget-object p1, p1, Lowd;->b:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lowd;->a:Lu2f;
+
+    if-nez v1, :cond_0
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :goto_0
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object p0, p0, Lowd;->b:Ljava/lang/String;
+
+    if-nez p0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_1
+    add-int/2addr v1, v0
+
+    return v1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "QuoteContent(body="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lowd;->a:Lu2f;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", imageUri="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lowd;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

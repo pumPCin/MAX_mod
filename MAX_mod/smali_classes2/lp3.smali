@@ -2,136 +2,96 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lmp3;
+
 
 # instance fields
-.field public final a:Lgpd;
-
-.field public final b:Lkotlinx/coroutines/internal/ContextScope;
+.field public final a:Lao9;
 
 
 # direct methods
-.method public constructor <init>(Lrv0;Lzne;)V
-    .registers 5
+.method public constructor <init>(Lao9;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
-
-    const/4 v1, 0x7
-
-    invoke-static {v0, v0, v1}, Lhpd;->b(III)Lgpd;
-
-    move-result-object v0
-
-    iput-object v0, p0, Llp3;->a:Lgpd;
-
-    check-cast p2, Ltba;
-
-    invoke-virtual {p2}, Ltba;->a()Ll04;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
-
-    move-result-object p2
-
-    iput-object p2, p0, Llp3;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-virtual {p1, p0}, Lrv0;->d(Ljava/lang/Object;)V
+    iput-object p1, p0, Llp3;->a:Lao9;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lfq5;
-    .registers 2
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    new-instance v0, Lcbc;
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Llp3;->a:Lgpd;
+    if-ne p0, p1, :cond_0
 
-    invoke-direct {v0, p0}, Lcbc;-><init>(Lel9;)V
+    return v0
 
-    return-object v0
+    :cond_0
+    instance-of v1, p1, Llp3;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Llp3;
+
+    iget-object p0, p0, Llp3;->a:Lao9;
+
+    iget-object p1, p1, Llp3;->a:Lao9;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public final onEvent(Lbya;)V
-    .registers 4
-    .annotation runtime Lpee;
-    .end annotation
+.method public final hashCode()I
+    .registers 1
 
-    new-instance p1, Lip3;
+    iget-object p0, p0, Llp3;->a:Lao9;
 
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Lao9;->hashCode()I
 
-    invoke-direct {p1, p0, v0}, Lip3;-><init>(Llp3;Lkotlin/coroutines/Continuation;)V
+    move-result p0
 
-    const/4 v1, 0x3
-
-    iget-object p0, p0, Llp3;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p0, v0, v0, p1, v1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    return-void
+    return p0
 .end method
 
-.method public final onEvent(Liv3;)V
-    .registers 4
-    .annotation runtime Lpee;
-    .end annotation
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    new-instance v0, Ljp3;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x0
+    const-string v1, "Update(contactIds="
 
-    invoke-direct {v0, p0, p1, v1}, Ljp3;-><init>(Llp3;Liv3;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const/4 p1, 0x3
+    iget-object p0, p0, Llp3;->a:Lao9;
 
-    iget-object p0, p0, Llp3;->b:Lkotlinx/coroutines/internal/ContextScope;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    const-string p0, ")"
 
-    return-void
-.end method
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final onEvent(Llx7;)V
-    .registers 4
-    .annotation runtime Lpee;
-    .end annotation
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    new-instance p1, Lhp3;
+    move-result-object p0
 
-    const/4 v0, 0x0
-
-    invoke-direct {p1, p0, v0}, Lhp3;-><init>(Llp3;Lkotlin/coroutines/Continuation;)V
-
-    const/4 v1, 0x3
-
-    iget-object p0, p0, Llp3;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p0, v0, v0, p1, v1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    return-void
-.end method
-
-.method public final onEvent(Lodf;)V
-    .registers 4
-    .annotation runtime Lpee;
-    .end annotation
-
-    new-instance p1, Lkp3;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, p0, v0}, Lkp3;-><init>(Llp3;Lkotlin/coroutines/Continuation;)V
-
-    const/4 v1, 0x3
-
-    iget-object p0, p0, Llp3;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p0, v0, v0, p1, v1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    return-void
+    return-object p0
 .end method

@@ -1,119 +1,66 @@
-.class public final Lx89;
-.super Lxie;
+.class public final synthetic Lx89;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lzb6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:Lfb9;
 
-.field public final synthetic Y:Lone/me/messages/list/ui/MessagesListWidget;
+.field public final synthetic b:Lkz;
+
+.field public final synthetic c:J
+
+.field public final synthetic o:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/messages/list/ui/MessagesListWidget;)V
-    .registers 3
+.method public synthetic constructor <init>(Lfb9;Lkz;JLjava/lang/String;)V
+    .registers 6
 
-    iput-object p2, p0, Lx89;->Y:Lone/me/messages/list/ui/MessagesListWidget;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lx89;->a:Lfb9;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lx89;->b:Lkz;
+
+    iput-wide p3, p0, Lx89;->c:J
+
+    iput-object p5, p0, Lx89;->o:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 10
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object v2, p0, Lx89;->a:Lfb9;
 
-    invoke-virtual {p0, p1, p2}, Lx89;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object v7, v2, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    iget-object v8, v2, Lfb9;->C0:Ls04;
+
+    new-instance v0, Lu99;
+
+    const/4 v6, 0x0
+
+    iget-object v1, p0, Lx89;->b:Lkz;
+
+    iget-wide v3, p0, Lx89;->c:J
+
+    iget-object v5, p0, Lx89;->o:Ljava/lang/String;
+
+    invoke-direct/range {v0 .. v6}, Lu99;-><init>(Lkz;Lfb9;JLjava/lang/String;Lkotlin/coroutines/Continuation;)V
+
+    sget-object p0, Lb14;->b:Lb14;
+
+    invoke-static {v7, v8, p0, v0}, Lvyg;->t(Ly04;Lq04;Lb14;Lpc6;)Lcae;
 
     move-result-object p0
 
-    check-cast p0, Lx89;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lx89;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lx89;
-
-    iget-object p0, p0, Lx89;->Y:Lone/me/messages/list/ui/MessagesListWidget;
-
-    invoke-direct {v0, p2, p0}, Lx89;-><init>(Lkotlin/coroutines/Continuation;Lone/me/messages/list/ui/MessagesListWidget;)V
-
-    iput-object p1, v0, Lx89;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lx89;->X:Ljava/lang/Object;
-
-    check-cast p1, Lt9c;
-
-    sget-object v0, Lone/me/messages/list/ui/MessagesListWidget;->V0:[Lsf7;
-
-    iget-object p0, p0, Lx89;->Y:Lone/me/messages/list/ui/MessagesListWidget;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    if-eqz p1, :cond_2
-
-    iget-boolean v0, p1, Lt9c;->e:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lone/me/messages/list/ui/MessagesListWidget;->E0()Lbb9;
-
-    move-result-object v0
-
-    iget-wide v1, p1, Lt9c;->c:J
-
-    invoke-virtual {v0, v1, v2}, Lbb9;->a(J)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    iget-object p0, p0, Lone/me/messages/list/ui/MessagesListWidget;->U0:Lbac;
-
-    if-eqz p0, :cond_1
-
-    iget-wide v0, p1, Lt9c;->b:J
-
-    iget-object v2, p1, Lt9c;->d:Ljava/lang/String;
-
-    iget-object p1, p1, Lt9c;->a:Lw8c;
-
-    invoke-virtual {p0, v0, v1, p1, v2}, Lbac;->d(JLw8c;Ljava/lang/String;)V
-
-    :cond_1
-    sget-object p0, Lncf;->a:Lncf;
-
     return-object p0
-
-    :cond_2
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
 .end method

@@ -1,44 +1,104 @@
 .class public final Lba3;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lda3;
+.implements Lpc6;
 
 
-# static fields
-.field public static final a:Lba3;
+# instance fields
+.field public final synthetic X:Lfa3;
 
-.field public static final b:J
+.field public final synthetic Y:Lr93;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Lfa3;Lr93;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    new-instance v0, Lba3;
+    iput-object p1, p0, Lba3;->X:Lfa3;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lba3;->Y:Lr93;
 
-    sput-object v0, Lba3;->a:Lba3;
+    const/4 p1, 0x2
 
-    const-class v0, Lba3;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    const-wide/16 v0, 0x1
-
-    sput-wide v0, Lba3;->b:J
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getId()J
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    sget-wide v0, Lba3;->b:J
+    check-cast p1, Ly04;
 
-    return-wide v0
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lba3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lba3;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lba3;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance p1, Lba3;
+
+    iget-object v0, p0, Lba3;->X:Lfa3;
+
+    iget-object p0, p0, Lba3;->Y:Lr93;
+
+    invoke-direct {p1, v0, p0, p2}, Lba3;-><init>(Lfa3;Lr93;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    sget-object p1, Lfa3;->m:[Lxi7;
+
+    iget-object p1, p0, Lba3;->X:Lfa3;
+
+    iget-object p1, p1, Lfa3;->f:Lcl7;
+
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lyz2;
+
+    iget-object p0, p0, Lba3;->Y:Lr93;
+
+    check-cast p0, Lq93;
+
+    iget-wide v0, p0, Lq93;->a:J
+
+    check-cast p1, Ly03;
+
+    invoke-virtual {p1, v0, v1}, Ly03;->N(J)Liic;
+
+    move-result-object p0
+
+    iget-object p0, p0, Liic;->a:Lrce;
+
+    invoke-interface {p0}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

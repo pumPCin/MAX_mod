@@ -1,114 +1,117 @@
-.class public final Lk97;
-.super Lxie;
+.class public abstract Lk97;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
 
-
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lo97;
+# static fields
+.field public static final a:Lpo9;
 
 
 # direct methods
-.method public constructor <init>(Lo97;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Lk97;->Y:Lo97;
+    sget-object v0, Lr4d;->a:Lpo9;
 
-    const/4 p1, 0x2
+    new-instance v0, Lpo9;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Lpo9;-><init>()V
+
+    sput-object v0, Lk97;->a:Lpo9;
 
     return-void
 .end method
 
+.method public static final a()V
+    .registers 14
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    sget-object v0, Lk97;->a:Lpo9;
 
-    check-cast p1, Lr04;
+    iget-object v1, v0, Lpo9;->b:[Ljava/lang/Object;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object v0, v0, Lpo9;->a:[J
 
-    invoke-virtual {p0, p1, p2}, Lk97;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    array-length v2, v0
 
-    move-result-object p0
+    add-int/lit8 v2, v2, -0x2
 
-    check-cast p0, Lk97;
+    if-ltz v2, :cond_3
 
-    sget-object p1, Lncf;->a:Lncf;
+    const/4 v3, 0x0
 
-    invoke-virtual {p0, p1}, Lk97;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move v4, v3
 
-    move-result-object p0
+    :goto_0
+    aget-wide v5, v0, v4
 
-    return-object p0
-.end method
+    not-long v7, v5
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+    const/4 v9, 0x7
 
-    new-instance p1, Lk97;
+    shl-long/2addr v7, v9
 
-    iget-object p0, p0, Lk97;->Y:Lo97;
+    and-long/2addr v7, v5
 
-    invoke-direct {p1, p0, p2}, Lk97;-><init>(Lo97;Lkotlin/coroutines/Continuation;)V
+    const-wide v9, -0x7f7f7f7f7f7f7f80L    # -2.937446524422997E-306
 
-    return-object p1
-.end method
+    and-long/2addr v7, v9
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    cmp-long v7, v7, v9
 
-    iget v0, p0, Lk97;->X:I
+    if-eqz v7, :cond_2
 
-    const/4 v1, 0x1
+    sub-int v7, v4, v2
 
-    if-eqz v0, :cond_1
+    not-int v7, v7
 
-    if-ne v0, v1, :cond_0
+    ushr-int/lit8 v7, v7, 0x1f
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    const/16 v8, 0x8
+
+    rsub-int/lit8 v7, v7, 0x8
+
+    move v9, v3
+
+    :goto_1
+    if-ge v9, v7, :cond_1
+
+    const-wide/16 v10, 0xff
+
+    and-long/2addr v10, v5
+
+    const-wide/16 v12, 0x80
+
+    cmp-long v10, v10, v12
+
+    if-gez v10, :cond_0
+
+    shl-int/lit8 v10, v4, 0x3
+
+    add-int/2addr v10, v9
+
+    aget-object v10, v1, v10
+
+    check-cast v10, Lode;
+
+    invoke-virtual {v10}, Lode;->e()V
+
+    :cond_0
+    shr-long/2addr v5, v8
+
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    if-ne v7, v8, :cond_3
+
+    :cond_2
+    if-eq v4, v2, :cond_3
+
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lk97;->Y:Lo97;
-
-    iget-object p1, p1, Lo97;->r0:Lgpd;
-
-    iput v1, p0, Lk97;->X:I
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lgpd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    :cond_3
+    return-void
 .end method

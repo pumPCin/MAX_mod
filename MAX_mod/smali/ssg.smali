@@ -1,31 +1,68 @@
-.class public abstract Lssg;
+.class public final synthetic Lssg;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/Comparator;
 
-# static fields
-.field public static final a:I
+
+# instance fields
+.field public final synthetic a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(I)V
     .registers 2
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iput p1, p0, Lssg;->a:I
 
-    const/16 v1, 0x1f
-
-    if-lt v0, v1, :cond_0
-
-    const/high16 v0, 0x2000000
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    sput v0, Lssg;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .registers 5
+
+    iget p0, p0, Lssg;->a:I
+
+    packed-switch p0, :pswitch_data_0
+
+    check-cast p1, Ldsg;
+
+    check-cast p2, Ldsg;
+
+    iget-wide p0, p1, Ldsg;->b:J
+
+    iget-wide v0, p2, Ldsg;->b:J
+
+    invoke-static {p0, p1, v0, v1}, Ljava/lang/Long;->compare(JJ)I
+
+    move-result p0
+
+    return p0
+
+    :pswitch_0
+    check-cast p1, Lcsg;
+
+    check-cast p2, Lcsg;
+
+    iget-wide p0, p1, Lcsg;->b:J
+
+    iget-wide v0, p2, Lcsg;->b:J
+
+    invoke-static {p0, p1, v0, v1}, Ljava/lang/Long;->compare(JJ)I
+
+    move-result p0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

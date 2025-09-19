@@ -1,32 +1,45 @@
 .class public final Lrcg;
-.super Ljava/lang/Object;
+.super Lb72;
 .source "SourceFile"
 
-# interfaces
-.implements Lqcg;
 
-
-# static fields
-.field public static final a:Lrcg;
+# instance fields
+.field public final c:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(J)V
+    .registers 5
 
-    new-instance v0, Lrcg;
+    const/4 v0, 0x3
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    sput-object v0, Lrcg;->a:Lrcg;
+    move-result-object v1
+
+    invoke-direct {p0, v0, v1}, Lb72;-><init>(ILjava/lang/Long;)V
+
+    iput-wide p1, p0, Lrcg;->c:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a()Ljava/lang/Long;
     .registers 3
+
+    iget-wide v0, p0, Lrcg;->c:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 7
 
     const/4 v0, 0x1
 
@@ -35,30 +48,55 @@
     return v0
 
     :cond_0
-    instance-of p0, p1, Lrcg;
+    instance-of v1, p1, Lrcg;
 
-    if-nez p0, :cond_1
+    const/4 v2, 0x0
 
-    const/4 p0, 0x0
+    if-nez v1, :cond_1
 
-    return p0
+    return v2
 
     :cond_1
+    check-cast p1, Lrcg;
+
+    iget-wide v3, p0, Lrcg;->c:J
+
+    iget-wide p0, p1, Lrcg;->c:J
+
+    cmp-long p0, v3, p0
+
+    if-eqz p0, :cond_2
+
+    return v2
+
+    :cond_2
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 1
+    .registers 3
 
-    const p0, 0x294c79ad
+    iget-wide v0, p0, Lrcg;->c:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result p0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 1
+    .registers 5
 
-    const-string p0, "ShowError"
+    const-string v0, "ChatId(sourceId="
+
+    const-string v1, ")"
+
+    iget-wide v2, p0, Lrcg;->c:J
+
+    invoke-static {v2, v3, v0, v1}, Lwsf;->e(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

@@ -1,95 +1,93 @@
-.class public final synthetic Lwha;
-.super Ljava/lang/Object;
+.class public final Lwha;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lbc6;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lxha;
+.field public final synthetic X:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxha;I)V
-    .registers 3
+.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;I)V
+    .registers 4
 
-    iput p2, p0, Lwha;->a:I
+    iput p3, p0, Lwha;->X:I
 
-    iput-object p1, p0, Lwha;->b:Lxha;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 5
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
 
-    iget v0, p0, Lwha;->a:I
+    iget p0, p0, Lwha;->X:I
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p1, Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Lwha;->b:Lxha;
+    packed-switch p0, :pswitch_data_0
 
-    iget-object v0, p0, Lxha;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance p0, Lwha;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    const/4 v0, 0x1
 
-    move-result v0
+    const/4 v1, 0x1
 
-    if-eqz v0, :cond_0
+    invoke-direct {p0, v0, p1, v1}, Lwha;-><init>(ILkotlin/coroutines/Continuation;I)V
 
-    goto :goto_0
+    sget-object p1, Lylf;->a:Lylf;
 
-    :cond_0
-    iget-object v0, p0, Lxha;->b:Ljava/util/concurrent/ExecutorService;
+    invoke-virtual {p0, p1}, Lwha;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance v1, Li60;
-
-    const/16 v2, 0x9
-
-    const/4 v3, 0x0
-
-    invoke-direct {v1, p0, v3, v2}, Li60;-><init>(Ljava/lang/Object;ZI)V
-
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    :goto_0
-    return-void
+    return-object p1
 
     :pswitch_0
-    iget-object p0, p0, Lwha;->b:Lxha;
+    new-instance p0, Lwha;
 
-    iget-object v0, p0, Lxha;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    const/4 v1, 0x0
 
-    move-result v0
+    invoke-direct {p0, v0, p1, v1}, Lwha;-><init>(ILkotlin/coroutines/Continuation;I)V
 
-    if-eqz v0, :cond_1
+    sget-object p1, Lylf;->a:Lylf;
 
-    goto :goto_1
+    invoke-virtual {p0, p1}, Lwha;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    iget-object v0, p0, Lxha;->b:Ljava/util/concurrent/ExecutorService;
+    return-object p1
 
-    new-instance v1, Li60;
+    nop
 
-    const/16 v2, 0x9
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    const/4 v3, 0x1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    invoke-direct {v1, p0, v3, v2}, Li60;-><init>(Ljava/lang/Object;ZI)V
+    iget p0, p0, Lwha;->X:I
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    packed-switch p0, :pswitch_data_0
 
-    :goto_1
-    return-void
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 
     nop
 

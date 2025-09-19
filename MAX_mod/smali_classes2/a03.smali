@@ -1,53 +1,74 @@
-.class public final La03;
-.super Lcx3;
+.class public final synthetic La03;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lzb6;
 
 
 # instance fields
-.field public X:J
+.field public final synthetic a:I
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lf03;
-
-.field public n0:I
-
-.field public o:Lf03;
+.field public final synthetic b:Lxwe;
 
 
 # direct methods
-.method public constructor <init>(Lf03;Lcx3;)V
+.method public synthetic constructor <init>(Lxwe;I)V
     .registers 3
 
-    iput-object p1, p0, La03;->Z:Lf03;
+    iput p2, p0, La03;->a:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, La03;->b:Lxwe;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public final invoke()Ljava/lang/Object;
+    .registers 2
 
-    iput-object p1, p0, La03;->Y:Ljava/lang/Object;
+    iget v0, p0, La03;->a:I
 
-    iget p1, p0, La03;->n0:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    new-instance v0, Lyk6;
 
-    or-int/2addr p1, v0
+    iget-object p0, p0, La03;->b:Lxwe;
 
-    iput p1, p0, La03;->n0:I
+    check-cast p0, Laga;
 
-    iget-object p1, p0, La03;->Z:Lf03;
+    invoke-virtual {p0}, Laga;->a()Ls04;
 
-    const-wide/16 v0, 0x0
+    move-result-object p0
 
-    invoke-static {p1, v0, v1, p0}, Lf03;->b(Lf03;JLcx3;)Ljava/lang/Comparable;
+    invoke-static {p0}, Lb0b;->a(Lq04;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Lyk6;-><init>(Lkotlinx/coroutines/internal/ContextScope;)V
+
+    return-object v0
+
+    :pswitch_0
+    iget-object p0, p0, La03;->b:Lxwe;
+
+    check-cast p0, Laga;
+
+    invoke-virtual {p0}, Laga;->b()Ls04;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lb0b;->a(Lq04;)Lkotlinx/coroutines/internal/ContextScope;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

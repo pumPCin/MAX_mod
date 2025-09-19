@@ -1,48 +1,31 @@
 .class public final Lim2;
-.super Lcx3;
+.super Loi0;
+.source "SourceFile"
 
 
 # instance fields
-.field public X:I
+.field public final X:I
 
-.field public final synthetic Y:Lfm2;
+.field public final b:Ljava/util/List;
 
-.field public synthetic o:Ljava/lang/Object;
+.field public final c:Lsl2;
+
+.field public final o:J
 
 
 # direct methods
-.method public constructor <init>(Lfm2;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(JLjava/util/List;Lsl2;JI)V
+    .registers 8
 
-    iput-object p1, p0, Lim2;->Y:Lfm2;
+    invoke-direct {p0, p1, p2}, Loi0;-><init>(J)V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p3, p0, Lim2;->b:Ljava/util/List;
+
+    iput-object p4, p0, Lim2;->c:Lsl2;
+
+    iput-wide p5, p0, Lim2;->o:J
+
+    iput p7, p0, Lim2;->X:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iput-object p1, p0, Lim2;->o:Ljava/lang/Object;
-
-    iget p1, p0, Lim2;->X:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lim2;->X:I
-
-    iget-object p1, p0, Lim2;->Y:Lfm2;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lfm2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

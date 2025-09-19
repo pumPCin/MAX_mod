@@ -1,27 +1,84 @@
 .class public final Leb5;
-.super Ljava/lang/Object;
+.super Lab5;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lnxe;
-
-.field public final b:I
-
-.field public final c:J
-
-
 # direct methods
-.method public constructor <init>(Lnxe;IJ)V
-    .registers 5
+.method public constructor <init>(Ljava/io/InputStream;)V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lab5;-><init>(Ljava/io/InputStream;)V
 
-    iput-object p1, p0, Leb5;->a:Lnxe;
+    invoke-virtual {p1}, Ljava/io/InputStream;->markSupported()Z
 
-    iput p2, p0, Leb5;->b:I
+    move-result p1
 
-    iput-wide p3, p0, Leb5;->c:J
+    if-eqz p1, :cond_0
+
+    iget-object p0, p0, Lab5;->a:Ljava/io/DataInputStream;
+
+    const p1, 0x7fffffff
+
+    invoke-virtual {p0, p1}, Ljava/io/InputStream;->mark(I)V
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Cannot create SeekableByteOrderedDataInputStream with stream that does not support mark/reset"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public constructor <init>([B)V
+    .registers 2
+
+    invoke-direct {p0, p1}, Lab5;-><init>([B)V
+
+    iget-object p0, p0, Lab5;->a:Ljava/io/DataInputStream;
+
+    const p1, 0x7fffffff
+
+    invoke-virtual {p0, p1}, Ljava/io/InputStream;->mark(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final d(J)V
+    .registers 6
+
+    iget v0, p0, Lab5;->c:I
+
+    int-to-long v1, v0
+
+    cmp-long v1, v1, p1
+
+    if-lez v1, :cond_0
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lab5;->c:I
+
+    iget-object v0, p0, Lab5;->a:Ljava/io/DataInputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
+
+    goto :goto_0
+
+    :cond_0
+    int-to-long v0, v0
+
+    sub-long/2addr p1, v0
+
+    :goto_0
+    long-to-int p1, p1
+
+    invoke-virtual {p0, p1}, Lab5;->c(I)V
 
     return-void
 .end method

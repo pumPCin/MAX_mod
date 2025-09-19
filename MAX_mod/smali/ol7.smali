@@ -1,503 +1,250 @@
 .class public final Lol7;
-.super Llk0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lvw0;
 
-# static fields
-.field public static final v0:I
+
+# instance fields
+.field public final a:Ljava/util/LinkedHashMap;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ljava/util/Map;)V
+    .registers 8
 
-    sget v0, Lr5c;->Widget_MaterialComponents_LinearProgressIndicator:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lol7;->v0:I
+    new-instance v0, Ljava/util/LinkedHashMap;
 
-    return-void
-.end method
+    invoke-interface {p1}, Ljava/util/Map;->size()I
 
+    move-result v1
 
-# virtual methods
-.method public final a(Landroid/content/Context;)Lmk0;
-    .registers 9
+    invoke-static {v1}, Li68;->I(I)I
 
-    new-instance p0, Lpl7;
+    move-result v1
 
-    sget v0, Lnvb;->linearProgressIndicatorStyle:I
+    invoke-direct {v0, v1}, Ljava/util/LinkedHashMap;-><init>(I)V
 
-    sget v5, Lol7;->v0:I
-
-    invoke-direct {p0, v0, v5, p1}, Lmk0;-><init>(IILandroid/content/Context;)V
-
-    sget-object v3, Le6c;->LinearProgressIndicator:[I
-
-    sget v4, Lnvb;->linearProgressIndicatorStyle:I
-
-    const/4 v0, 0x0
-
-    new-array v6, v0, [I
-
-    const/4 v2, 0x0
-
-    invoke-static {p1, v2, v4, v5}, Lgve;->a(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-
-    move-object v1, p1
-
-    invoke-static/range {v1 .. v6}, Lgve;->b(Landroid/content/Context;Landroid/util/AttributeSet;[III[I)V
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p1
 
-    sget v1, Le6c;->LinearProgressIndicator_indeterminateAnimationType:I
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    const/4 v2, 0x1
+    move-result-object p1
 
-    invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v1
-
-    iput v1, p0, Lpl7;->h:I
-
-    sget v1, Le6c;->LinearProgressIndicator_indicatorDirectionLinear:I
-
-    invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getInt(II)I
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    iput v1, p0, Lpl7;->i:I
+    if-eqz v1, :cond_0
 
-    sget v1, Le6c;->LinearProgressIndicator_trackStopIndicatorSize:I
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {p1, v1, v0}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    move-result-object v1
 
-    move-result v1
+    check-cast v1, Ljava/util/Map$Entry;
 
-    iget v3, p0, Lmk0;->a:I
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
+    move-result-object v2
 
-    move-result v1
+    new-instance v3, Lnl7;
 
-    iput v1, p0, Lpl7;->k:I
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+    move-result-object v1
 
-    invoke-virtual {p0}, Lpl7;->a()V
+    check-cast v1, Ljava/lang/Number;
 
-    iget p1, p0, Lpl7;->i:I
+    invoke-virtual {v1}, Ljava/lang/Number;->longValue()J
 
-    if-ne p1, v2, :cond_0
+    move-result-wide v4
 
-    move v0, v2
+    invoke-direct {v3, v4, v5}, Lnl7;-><init>(J)V
 
-    :cond_0
-    iput-boolean v0, p0, Lpl7;->j:Z
-
-    return-object p0
-.end method
-
-.method public final b(I)V
-    .registers 3
-
-    iget-object v0, p0, Llk0;->a:Lmk0;
-
-    if-eqz v0, :cond_0
-
-    check-cast v0, Lpl7;
-
-    iget v0, v0, Lpl7;->h:I
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {p0}, Landroid/widget/ProgressBar;->isIndeterminate()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-super {p0, p1}, Llk0;->b(I)V
-
-    return-void
-.end method
-
-.method public getIndeterminateAnimationType()I
-    .registers 1
-
-    iget-object p0, p0, Llk0;->a:Lmk0;
-
-    check-cast p0, Lpl7;
-
-    iget p0, p0, Lpl7;->h:I
-
-    return p0
-.end method
-
-.method public getIndicatorDirection()I
-    .registers 1
-
-    iget-object p0, p0, Llk0;->a:Lmk0;
-
-    check-cast p0, Lpl7;
-
-    iget p0, p0, Lpl7;->i:I
-
-    return p0
-.end method
-
-.method public getTrackStopIndicatorSize()I
-    .registers 1
-
-    iget-object p0, p0, Llk0;->a:Lmk0;
-
-    check-cast p0, Lpl7;
-
-    iget p0, p0, Lpl7;->k:I
-
-    return p0
-.end method
-
-.method public final onLayout(ZIIII)V
-    .registers 6
-
-    invoke-super/range {p0 .. p5}, Landroid/view/View;->onLayout(ZIIII)V
-
-    iget-object p1, p0, Llk0;->a:Lmk0;
-
-    move-object p2, p1
-
-    check-cast p2, Lpl7;
-
-    move-object p3, p1
-
-    check-cast p3, Lpl7;
-
-    iget p3, p3, Lpl7;->i:I
-
-    const/4 p4, 0x1
-
-    if-eq p3, p4, :cond_2
-
-    sget-object p3, Lexf;->a:Ljava/util/WeakHashMap;
-
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
-
-    move-result p3
-
-    if-ne p3, p4, :cond_0
-
-    move-object p3, p1
-
-    check-cast p3, Lpl7;
-
-    iget p3, p3, Lpl7;->i:I
-
-    const/4 p5, 0x2
-
-    if-eq p3, p5, :cond_2
-
-    :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
-
-    move-result p0
-
-    if-nez p0, :cond_1
-
-    check-cast p1, Lpl7;
-
-    iget p0, p1, Lpl7;->i:I
-
-    const/4 p1, 0x3
-
-    if-ne p0, p1, :cond_1
+    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    :cond_1
-    const/4 p4, 0x0
-
-    :cond_2
-    :goto_0
-    iput-boolean p4, p2, Lpl7;->j:Z
+    :cond_0
+    iput-object v0, p0, Lol7;->a:Ljava/util/LinkedHashMap;
 
     return-void
 .end method
 
-.method public final onSizeChanged(IIII)V
-    .registers 5
+.method public static e(Ljava/lang/String;)Lai8;
+    .registers 4
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
-
-    move-result p3
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
-
-    move-result p4
-
-    add-int/2addr p4, p3
-
-    sub-int/2addr p1, p4
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
-
-    move-result p3
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
-
-    move-result p4
-
-    add-int/2addr p4, p3
-
-    sub-int/2addr p2, p4
-
-    invoke-virtual {p0}, Llk0;->getIndeterminateDrawable()Lb37;
-
-    move-result-object p3
-
-    const/4 p4, 0x0
-
-    if-eqz p3, :cond_0
-
-    invoke-virtual {p3, p4, p4, p1, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    :cond_0
-    invoke-virtual {p0}, Llk0;->getProgressDrawable()Lul4;
+    invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
 
-    if-eqz p0, :cond_1
+    const-string v0, "MediaItemType"
 
-    invoke-virtual {p0, p4, p4, p1, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {p0, v0}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
-    :cond_1
-    return-void
-.end method
+    move-result-object p0
 
-.method public setIndeterminateAnimationType(I)V
-    .registers 5
+    if-eqz p0, :cond_0
 
-    iget-object v0, p0, Llk0;->a:Lmk0;
+    invoke-static {p0}, Lqme;->S(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-object v1, v0
+    move-result-object p0
 
-    check-cast v1, Lpl7;
+    if-eqz p0, :cond_0
 
-    iget v1, v1, Lpl7;->h:I
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
-    if-ne v1, p1, :cond_0
+    move-result p0
 
-    return-void
+    goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Llk0;->c()Z
+    const/4 p0, -0x1
+
+    :goto_0
+    new-instance v0, Lw1;
+
+    const/4 v1, 0x0
+
+    sget-object v2, Lai8;->Y:Ly75;
+
+    invoke-direct {v0, v1, v2}, Lw1;-><init>(ILjava/lang/Object;)V
+
+    :cond_1
+    invoke-virtual {v0}, Lw1;->hasNext()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    invoke-virtual {p0}, Landroid/widget/ProgressBar;->isIndeterminate()Z
+    invoke-virtual {v0}, Lw1;->next()Ljava/lang/Object;
 
-    move-result v1
+    move-result-object v1
 
-    if-nez v1, :cond_1
+    move-object v2, v1
 
-    goto :goto_0
+    check-cast v2, Lai8;
 
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
-    const-string p1, "Cannot change indeterminate animation type while the progress indicator is show in indeterminate mode."
+    move-result v2
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    :goto_0
-    move-object v1, v0
-
-    check-cast v1, Lpl7;
-
-    iput p1, v1, Lpl7;->h:I
-
-    move-object v1, v0
-
-    check-cast v1, Lpl7;
-
-    invoke-virtual {v1}, Lpl7;->a()V
-
-    if-nez p1, :cond_3
-
-    invoke-virtual {p0}, Llk0;->getIndeterminateDrawable()Lb37;
-
-    move-result-object p1
-
-    new-instance v1, Lgl7;
-
-    check-cast v0, Lpl7;
-
-    invoke-direct {v1, v0}, Lgl7;-><init>(Lpl7;)V
-
-    iput-object v1, p1, Lb37;->s0:Lpoe;
-
-    iput-object p1, v1, Lpoe;->b:Ljava/lang/Object;
+    if-ne v2, p0, :cond_1
 
     goto :goto_1
 
-    :cond_3
-    invoke-virtual {p0}, Llk0;->getIndeterminateDrawable()Lb37;
-
-    move-result-object p1
-
-    new-instance v1, Lil7;
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    check-cast v0, Lpl7;
-
-    invoke-direct {v1, v2, v0}, Lil7;-><init>(Landroid/content/Context;Lpl7;)V
-
-    iput-object v1, p1, Lb37;->s0:Lpoe;
-
-    iput-object p1, v1, Lpoe;->b:Ljava/lang/Object;
+    :cond_2
+    const/4 v1, 0x0
 
     :goto_1
-    invoke-virtual {p0}, Llk0;->invalidate()V
+    check-cast v1, Lai8;
 
-    return-void
+    if-nez v1, :cond_3
+
+    sget-object p0, Lai8;->a:Lai8;
+
+    return-object p0
+
+    :cond_3
+    return-object v1
 .end method
 
-.method public varargs setIndicatorColor([I)V
-    .registers 2
 
-    invoke-super {p0, p1}, Llk0;->setIndicatorColor([I)V
+# virtual methods
+.method public final a(Lt1e;Lw1e;)V
+    .registers 4
 
-    iget-object p0, p0, Llk0;->a:Lmk0;
+    iget-object v0, p2, Lix0;->a:Ljava/lang/String;
 
-    check-cast p0, Lpl7;
+    invoke-static {v0}, Lol7;->e(Ljava/lang/String;)Lai8;
 
-    invoke-virtual {p0}, Lpl7;->a()V
+    move-result-object v0
 
-    return-void
-.end method
+    iget-object p0, p0, Lol7;->a:Ljava/util/LinkedHashMap;
 
-.method public setIndicatorDirection(I)V
-    .registers 6
+    invoke-virtual {p0, v0}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v0, p0, Llk0;->a:Lmk0;
+    move-result-object p0
 
-    move-object v1, v0
+    check-cast p0, Lnl7;
 
-    check-cast v1, Lpl7;
+    if-eqz p0, :cond_0
 
-    iput p1, v1, Lpl7;->i:I
-
-    move-object v1, v0
-
-    check-cast v1, Lpl7;
-
-    const/4 v2, 0x1
-
-    if-eq p1, v2, :cond_2
-
-    sget-object v3, Lexf;->a:Ljava/util/WeakHashMap;
-
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
-
-    move-result v3
-
-    if-ne v3, v2, :cond_0
-
-    check-cast v0, Lpl7;
-
-    iget v0, v0, Lpl7;->i:I
-
-    const/4 v3, 0x2
-
-    if-eq v0, v3, :cond_2
+    invoke-virtual {p0, p1, p2}, Lnl7;->a(Lt1e;Lw1e;)V
 
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutDirection()I
+    return-void
+.end method
 
-    move-result v0
+.method public final b(Llw0;Ljava/lang/String;JJ)V
+    .registers 14
 
-    if-nez v0, :cond_1
+    iget-object p0, p0, Lol7;->a:Ljava/util/LinkedHashMap;
 
-    const/4 v0, 0x3
+    invoke-static {p2}, Lol7;->e(Ljava/lang/String;)Lai8;
 
-    if-ne p1, v0, :cond_1
+    move-result-object v0
 
-    goto :goto_0
+    invoke-virtual {p0, v0}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    const/4 v2, 0x0
+    move-result-object p0
 
-    :cond_2
-    :goto_0
-    iput-boolean v2, v1, Lpl7;->j:Z
+    move-object v0, p0
 
-    invoke-virtual {p0}, Llk0;->invalidate()V
+    check-cast v0, Lnl7;
+
+    if-eqz v0, :cond_0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-wide v3, p3
+
+    move-wide v5, p5
+
+    invoke-virtual/range {v0 .. v6}, Lnl7;->b(Llw0;Ljava/lang/String;JJ)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c(Lt1e;Lw1e;Lw1e;)V
+    .registers 4
+
+    invoke-virtual {p0, p1, p2}, Lol7;->d(Lt1e;Lix0;)V
+
+    invoke-virtual {p0, p1, p3}, Lol7;->a(Lt1e;Lw1e;)V
 
     return-void
 .end method
 
-.method public setTrackCornerRadius(I)V
-    .registers 2
+.method public final d(Lt1e;Lix0;)V
+    .registers 4
 
-    invoke-super {p0, p1}, Llk0;->setTrackCornerRadius(I)V
+    iget-object v0, p2, Lix0;->a:Ljava/lang/String;
 
-    iget-object p1, p0, Llk0;->a:Lmk0;
+    invoke-static {v0}, Lol7;->e(Ljava/lang/String;)Lai8;
 
-    check-cast p1, Lpl7;
+    move-result-object v0
 
-    invoke-virtual {p1}, Lpl7;->a()V
+    iget-object p0, p0, Lol7;->a:Ljava/util/LinkedHashMap;
 
-    invoke-virtual {p0}, Llk0;->invalidate()V
+    invoke-virtual {p0, v0}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
-.end method
+    move-result-object p0
 
-.method public setTrackStopIndicatorSize(I)V
-    .registers 5
+    check-cast p0, Lnl7;
 
-    iget-object v0, p0, Llk0;->a:Lmk0;
+    if-eqz p0, :cond_0
 
-    move-object v1, v0
-
-    check-cast v1, Lpl7;
-
-    iget v1, v1, Lpl7;->k:I
-
-    if-eq v1, p1, :cond_0
-
-    move-object v1, v0
-
-    check-cast v1, Lpl7;
-
-    move-object v2, v0
-
-    check-cast v2, Lpl7;
-
-    iget v2, v2, Lmk0;->a:I
-
-    invoke-static {p1, v2}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    iput p1, v1, Lpl7;->k:I
-
-    check-cast v0, Lpl7;
-
-    invoke-virtual {v0}, Lpl7;->a()V
-
-    invoke-virtual {p0}, Llk0;->invalidate()V
+    invoke-virtual {p0, p1, p2}, Lnl7;->d(Lt1e;Lix0;)V
 
     :cond_0
     return-void

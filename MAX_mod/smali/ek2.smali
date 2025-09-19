@@ -1,137 +1,67 @@
-.class public final Lek2;
-.super Lxie;
+.class public final synthetic Lek2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ljava/util/function/UnaryOperator;
 
 
 # instance fields
-.field public synthetic X:J
+.field public final synthetic a:Lql2;
 
-.field public final synthetic Y:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+.field public final synthetic b:Lfj8;
+
+.field public final synthetic c:Luz8;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)V
-    .registers 3
+.method public synthetic constructor <init>(Lql2;Lfj8;Luz8;)V
+    .registers 4
 
-    iput-object p2, p0, Lek2;->Y:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lek2;->a:Lql2;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lek2;->b:Lfj8;
+
+    iput-object p3, p0, Lek2;->c:Luz8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    check-cast p1, Llw4;
-
-    iget-wide v0, p1, Llw4;->a:J
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    new-instance p1, Llw4;
-
-    invoke-direct {p1, v0, v1}, Llw4;-><init>(J)V
-
-    invoke-virtual {p0, p1, p2}, Lek2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lek2;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lek2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lek2;
-
-    iget-object p0, p0, Lek2;->Y:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
-
-    invoke-direct {v0, p2, p0}, Lek2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatmedia/viewer/ChatMediaViewerScreen;)V
-
-    check-cast p1, Llw4;
-
-    iget-wide p0, p1, Llw4;->a:J
-
-    iput-wide p0, v0, Lek2;->X:J
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 12
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    check-cast p1, Lfj8;
 
-    iget-wide v0, p0, Lek2;->X:J
+    iget-object p1, p0, Lek2;->a:Lql2;
 
-    iget-object p0, p0, Lek2;->Y:Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
+    iget-object v0, p0, Lek2;->b:Lfj8;
 
-    iget-boolean p1, p0, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->B0:Z
+    invoke-static {p1, v0}, Lql2;->v(Lql2;Lfj8;)Z
 
-    sget-object v2, Lncf;->a:Lncf;
+    move-result v1
 
-    if-eqz p1, :cond_0
+    if-eqz v1, :cond_0
 
-    return-object v2
+    return-object v0
 
     :cond_0
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->K0()Lo37;
+    new-instance v2, Lfj8;
 
-    move-result-object v3
+    iget-object p0, p0, Lek2;->c:Luz8;
 
-    invoke-static {v0, v1}, Llw4;->e(J)J
+    iget-wide v3, p0, Luz8;->b:J
 
-    move-result-wide v4
+    iget-object v7, p1, Lql2;->G0:Ljava/util/Set;
 
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->L0()Lduf;
+    iget-wide v8, p1, Lql2;->b:J
 
-    move-result-object p1
+    move-wide v5, v3
 
-    iget-object v0, p1, Lduf;->Z:Lvlf;
-
-    if-eqz v0, :cond_1
-
-    iget-object p1, p1, Lduf;->o:Lva5;
-
-    invoke-virtual {p1}, Lva5;->Z0()J
-
-    move-result-wide v6
-
-    invoke-interface {v0}, Lvlf;->i()J
-
-    move-result-wide v0
-
-    sub-long/2addr v6, v0
-
-    goto :goto_0
-
-    :cond_1
-    const-wide/16 v6, 0x0
-
-    :goto_0
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->L0()Lduf;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lduf;->F0()J
-
-    move-result-wide v8
-
-    invoke-virtual/range {v3 .. v9}, Lo37;->c(JJJ)V
+    invoke-direct/range {v2 .. v9}, Lfj8;-><init>(JJLjava/util/Set;J)V
 
     return-object v2
 .end method

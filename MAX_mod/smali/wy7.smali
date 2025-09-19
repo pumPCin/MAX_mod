@@ -1,48 +1,97 @@
 .class public final Lwy7;
-.super Lcx3;
+.super Lr3;
+.source "SourceFile"
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lwy7;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public X:I
+.field public final a:Ljava/util/List;
 
-.field public final synthetic Y:Lar7;
+.field public final b:Z
 
-.field public synthetic o:Ljava/lang/Object;
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(Lar7;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Lwy7;->Y:Lar7;
+    new-instance v0, Lfvf;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/16 v1, 0x1d
+
+    invoke-direct {v0, v1}, Lfvf;-><init>(I)V
+
+    sput-object v0, Lwy7;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/ArrayList;ZZ)V
+    .registers 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lwy7;->a:Ljava/util/List;
+
+    iput-boolean p2, p0, Lwy7;->b:Z
+
+    iput-boolean p3, p0, Lwy7;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 5
 
-    iput-object p1, p0, Lwy7;->o:Ljava/lang/Object;
+    const/16 p2, 0x4f45
 
-    iget p1, p0, Lwy7;->X:I
+    invoke-static {p1, p2}, Ljs9;->U(Landroid/os/Parcel;I)I
 
-    const/high16 v0, -0x80000000
+    move-result p2
 
-    or-int/2addr p1, v0
+    const/4 v0, 0x1
 
-    iput p1, p0, Lwy7;->X:I
+    iget-object v1, p0, Lwy7;->a:Ljava/util/List;
 
-    iget-object p1, p0, Lwy7;->Y:Lar7;
+    invoke-static {v1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
-    const/4 v0, 0x0
+    move-result-object v1
 
-    invoke-virtual {p1, v0, p0}, Lar7;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p1, v1, v0}, Ljs9;->R(Landroid/os/Parcel;Ljava/util/List;I)V
 
-    move-result-object p0
+    const/4 v0, 0x2
 
-    return-object p0
+    const/4 v1, 0x4
+
+    invoke-static {p1, v0, v1}, Ljs9;->W(Landroid/os/Parcel;II)V
+
+    iget-boolean v0, p0, Lwy7;->b:Z
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v0, 0x3
+
+    invoke-static {p1, v0, v1}, Ljs9;->W(Landroid/os/Parcel;II)V
+
+    iget-boolean p0, p0, Lwy7;->c:Z
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-static {p1, p2}, Ljs9;->V(Landroid/os/Parcel;I)V
+
+    return-void
 .end method

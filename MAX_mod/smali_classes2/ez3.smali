@@ -3,22 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lim3;
+.implements Lqm3;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Ljm3;
+.field public final synthetic b:Lru/ok/android/externcalls/sdk/factory/JoinCallParams;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljm3;I)V
+.method public synthetic constructor <init>(Lru/ok/android/externcalls/sdk/factory/JoinCallParams;I)V
     .registers 3
 
     iput p2, p0, Lez3;->a:I
 
-    iput-object p1, p0, Lez3;->b:Ljm3;
+    iput-object p1, p0, Lez3;->b:Lru/ok/android/externcalls/sdk/factory/JoinCallParams;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,21 +32,24 @@
 
     iget v0, p0, Lez3;->a:I
 
-    iget-object p0, p0, Lez3;->b:Ljm3;
+    iget-object p0, p0, Lez3;->b:Lru/ok/android/externcalls/sdk/factory/JoinCallParams;
 
     packed-switch v0, :pswitch_data_0
 
     check-cast p1, Ljava/lang/Throwable;
 
-    :goto_0
-    invoke-interface {p0, p1}, Ljm3;->accept(Ljava/lang/Object;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/ConversationFactory;->h(Lru/ok/android/externcalls/sdk/factory/JoinCallParams;Ljava/lang/Throwable;)V
 
     return-void
 
     :pswitch_0
-    check-cast p1, Ljava/lang/String;
+    check-cast p1, Lru/ok/android/externcalls/sdk/Conversation;
 
-    goto :goto_0
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/ConversationFactory;->p(Lru/ok/android/externcalls/sdk/factory/JoinCallParams;Lru/ok/android/externcalls/sdk/Conversation;)V
+
+    return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

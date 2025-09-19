@@ -1,25 +1,62 @@
 .class public final Lss1;
-.super Ljava/lang/Object;
+.super Lq3;
 .source "SourceFile"
 
-# interfaces
-.implements Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$DisabledAudioDeviceUsagePolicy;
+
+# instance fields
+.field public final synthetic r0:Lts1;
+
+
+# direct methods
+.method public constructor <init>(Lts1;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lss1;->r0:Lts1;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final isAvailableForAutoSelect(Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;)Z
-    .registers 2
+.method public final h()Ljava/lang/String;
+    .registers 3
 
-    sget-object p0, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->BLUETOOTH:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+    iget-object p0, p0, Lss1;->r0:Lts1;
 
-    if-ne p1, p0, :cond_0
+    iget-object p0, p0, Lts1;->a:Ljava/lang/ref/WeakReference;
 
-    const/4 p0, 0x1
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
-    return p0
+    move-result-object p0
+
+    check-cast p0, Lqs1;
+
+    if-nez p0, :cond_0
+
+    const-string p0, "Completer object has been garbage collected, future will fail soon"
+
+    return-object p0
 
     :cond_0
-    const/4 p0, 0x0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    return p0
+    const-string v1, "tag=["
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lqs1;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "]"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

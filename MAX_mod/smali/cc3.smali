@@ -1,6 +1,21 @@
-.class public interface abstract Lcc3;
-.super Ljava/lang/Object;
+.class public final Lcc3;
+.super Lso;
 .source "SourceFile"
 
-# interfaces
-.implements Lqj4;
+
+# static fields
+.field public static final a:Lcc3;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Lcc3;
+
+    invoke-direct {v0}, Lso;-><init>()V
+
+    sput-object v0, Lcc3;->a:Lcc3;
+
+    return-void
+.end method

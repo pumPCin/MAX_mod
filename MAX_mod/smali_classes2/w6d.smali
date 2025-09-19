@@ -1,51 +1,54 @@
-.class public final Lw6d;
+.class public final synthetic Lw6d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lorg/webrtc/ScreenCapturerAndroid;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lorg/webrtc/ScreenCapturerAndroid;I)V
     .registers 3
 
-    const/4 v0, 0x1
+    iput p2, p0, Lw6d;->a:I
 
-    if-ne p0, p1, :cond_0
+    iput-object p1, p0, Lw6d;->b:Lorg/webrtc/ScreenCapturerAndroid;
 
-    return v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    :cond_0
-    instance-of p0, p1, Lw6d;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    check-cast p1, Lw6d;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return v0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .registers 1
 
-    const/4 p0, 0x1
+# virtual methods
+.method public final run()V
+    .registers 2
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    iget v0, p0, Lw6d;->a:I
 
-    move-result p0
+    iget-object p0, p0, Lw6d;->b:Lorg/webrtc/ScreenCapturerAndroid;
 
-    return p0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    invoke-static {p0}, Lorg/webrtc/ScreenCapturerAndroid;->b(Lorg/webrtc/ScreenCapturerAndroid;)V
 
-    const-string p0, "Close(isAnimated=true)"
+    return-void
 
-    return-object p0
+    :pswitch_0
+    invoke-static {p0}, Lorg/webrtc/ScreenCapturerAndroid;->a(Lorg/webrtc/ScreenCapturerAndroid;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

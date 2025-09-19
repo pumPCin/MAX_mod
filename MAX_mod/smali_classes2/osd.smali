@@ -1,96 +1,63 @@
-.class public abstract Losd;
-.super Ljava/lang/Object;
+.class public final Losd;
+.super Luc0;
 .source "SourceFile"
 
 
-# instance fields
-.field public final direct:Z
-
-.field public final message:Ljava/lang/String;
+# static fields
+.field public static final b:Losd;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Z)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Losd;
 
-    iput-object p1, p0, Losd;->message:Ljava/lang/String;
+    const/16 v1, 0x11
 
-    iput-boolean p2, p0, Losd;->direct:Z
+    invoke-direct {v0, v1}, Luc0;-><init>(I)V
+
+    sput-object v0, Losd;->b:Losd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
+
+    const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    if-eqz p1, :cond_3
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    if-eq v1, v2, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Losd;
-
-    iget-boolean v1, p0, Losd;->direct:Z
-
-    iget-boolean v2, p1, Losd;->direct:Z
-
-    if-eq v1, v2, :cond_2
-
     return v0
 
-    :cond_2
-    iget-object p0, p0, Losd;->message:Ljava/lang/String;
+    :cond_0
+    instance-of p0, p1, Losd;
 
-    iget-object p1, p1, Losd;->message:Ljava/lang/String;
+    if-nez p0, :cond_1
 
-    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
+    const/4 p0, 0x0
 
     return p0
 
-    :cond_3
-    :goto_0
+    :cond_1
     return v0
 .end method
 
-.method public hashCode()I
-    .registers 2
+.method public final hashCode()I
+    .registers 1
 
-    iget-object v0, p0, Losd;->message:Ljava/lang/String;
+    const p0, -0x48cff30e
 
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    return p0
+.end method
 
-    move-result v0
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    mul-int/lit8 v0, v0, 0x1f
+    const-string p0, "OpenCachingScreen"
 
-    iget-boolean p0, p0, Losd;->direct:Z
-
-    add-int/2addr v0, p0
-
-    return v0
+    return-object p0
 .end method

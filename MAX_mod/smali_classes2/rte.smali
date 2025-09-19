@@ -1,40 +1,84 @@
 .class public final Lrte;
-.super Ljava/lang/Object;
+.super Loi0;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/os/Parcelable$Creator;
+
+# instance fields
+.field public final b:Z
+
+
+# direct methods
+.method public constructor <init>(Z)V
+    .registers 2
+
+    invoke-direct {p0}, Loi0;-><init>()V
+
+    iput-boolean p1, p0, Lrte;->b:Z
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    new-instance p0, Lste;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+    goto :goto_1
 
-    move-result v0
+    :cond_0
+    instance-of v0, p1, Lrte;
 
-    const-class v1, Ljava/lang/Object;
+    if-nez v0, :cond_1
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    goto :goto_0
 
-    move-result-object v1
+    :cond_1
+    check-cast p1, Lrte;
 
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->readArrayList(Ljava/lang/ClassLoader;)Ljava/util/ArrayList;
+    iget-boolean p0, p0, Lrte;->b:Z
 
-    move-result-object p1
+    iget-boolean p1, p1, Lrte;->b:Z
 
-    invoke-direct {p0, v0, p1}, Lste;-><init>(ILjava/util/List;)V
+    if-eq p0, p1, :cond_2
 
-    return-object p0
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
-.method public final newArray(I)[Ljava/lang/Object;
-    .registers 2
+.method public final hashCode()I
+    .registers 1
 
-    new-array p0, p1, [Lste;
+    iget-boolean p0, p0, Lrte;->b:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    const-string v0, "SyncMutedChatsEvent(isSuccessful="
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Lrte;->b:Z
+
+    invoke-static {v0, v1, p0}, Lz7e;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

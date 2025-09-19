@@ -1,259 +1,164 @@
 .class public final Ln49;
-.super Lql7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final p:Z
+.field public final a:Ljava/util/Set;
 
-.field public final q:Lz55;
+.field public final b:Ljava/lang/Long;
+
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;IZLz55;)V
-    .registers 5
+.method public constructor <init>(Ljava/util/Set;Ljava/lang/Long;Z)V
+    .registers 4
 
-    invoke-direct {p0, p1}, Lql7;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p3, p0, Ln49;->p:Z
+    iput-object p1, p0, Ln49;->a:Ljava/util/Set;
 
-    iput-object p4, p0, Ln49;->q:Lz55;
+    iput-object p2, p0, Ln49;->b:Ljava/lang/Long;
 
-    if-ltz p2, :cond_0
+    iput-boolean p3, p0, Ln49;->c:Z
 
-    iput p2, p0, Lql7;->a:I
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final j()V
-    .registers 1
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    invoke-super {p0}, Lql7;->j()V
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Ln49;->q:Lz55;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0}, Lz55;->invoke()Ljava/lang/Object;
+    return v0
 
-    return-void
-.end method
+    :cond_0
+    instance-of v1, p1, Ln49;
 
-.method public final k(Landroid/view/View;Lma4;)V
-    .registers 10
-
-    invoke-virtual {p0}, Lql7;->h()I
-
-    move-result v5
-
-    iget-object v0, p0, Lql7;->c:Landroidx/recyclerview/widget/a;
-
-    const/4 v6, 0x0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->f()Z
-
-    move-result v1
+    const/4 v2, 0x0
 
     if-nez v1, :cond_1
 
-    :cond_0
-    move-object v0, p0
-
-    goto :goto_0
+    return v2
 
     :cond_1
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    check-cast p1, Ln49;
 
-    move-result-object v1
+    iget-object v1, p0, Ln49;->a:Ljava/util/Set;
 
-    check-cast v1, Lbhc;
+    iget-object v3, p1, Ln49;->a:Ljava/util/Set;
 
-    invoke-static {p1}, Landroidx/recyclerview/widget/a;->F(Landroid/view/View;)I
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    iget v3, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    if-nez v1, :cond_2
 
-    sub-int/2addr v2, v3
+    return v2
 
-    invoke-static {p1}, Landroidx/recyclerview/widget/a;->z(Landroid/view/View;)I
+    :cond_2
+    iget-object v1, p0, Ln49;->b:Ljava/lang/Long;
 
-    move-result p1
+    iget-object v3, p1, Ln49;->b:Ljava/lang/Long;
 
-    iget v1, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    add-int/2addr p1, v1
+    move-result v1
 
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->L()I
+    if-nez v1, :cond_3
 
-    move-result v3
+    return v2
 
-    iget v1, v0, Landroidx/recyclerview/widget/a;->o:I
+    :cond_3
+    iget-boolean p0, p0, Ln49;->c:Z
 
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/a;->I()I
+    iget-boolean p1, p1, Ln49;->c:Z
+
+    if-eq p0, p1, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    iget-object v0, p0, Ln49;->a:Ljava/util/Set;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    sub-int v4, v1, v0
+    mul-int/lit8 v0, v0, 0x1f
 
-    move-object v0, p0
+    iget-object v1, p0, Ln49;->b:Ljava/lang/Long;
 
-    move v1, v2
+    if-nez v1, :cond_0
 
-    move v2, p1
+    const/4 v1, 0x0
 
-    invoke-virtual/range {v0 .. v5}, Ln49;->m(IIIII)I
-
-    move-result p0
-
-    goto :goto_1
-
-    :goto_0
-    move p0, v6
-
-    :goto_1
-    invoke-virtual {v0, p0}, Lql7;->e(I)I
-
-    move-result p1
-
-    if-lez p1, :cond_3
-
-    neg-int p0, p0
-
-    const/16 v1, 0x12c
-
-    if-le p1, v1, :cond_2
-
-    move p1, v1
-
-    :cond_2
-    iget-object v0, v0, Lql7;->i:Landroid/view/animation/DecelerateInterpolator;
-
-    invoke-virtual {p2, v6, p0, p1, v0}, Lma4;->e(IIILandroid/view/animation/BaseInterpolator;)V
-
-    :cond_3
-    return-void
-.end method
-
-.method public final m(IIIII)I
-    .registers 12
-
-    const/4 v0, -0x1
-
-    if-eq p5, v0, :cond_6
-
-    iget-boolean v0, p0, Ln49;->p:Z
-
-    if-eqz p5, :cond_2
-
-    const/4 p0, 0x1
-
-    if-ne p5, p0, :cond_1
-
-    sub-int/2addr p4, p2
-
-    sub-int/2addr p2, p1
-
-    sub-int p0, p4, p2
-
-    if-ge p0, p3, :cond_0
-
-    if-nez v0, :cond_0
-
-    sub-int/2addr p3, p1
-
-    return p3
+    goto :goto_0
 
     :cond_0
-    return p4
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    move-result v1
 
-    const-string p1, "snap preference should be one of the constants defined in SmoothScroller, starting with SNAP_"
+    :goto_0
+    add-int/2addr v0, v1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    mul-int/lit8 v0, v0, 0x1f
 
-    throw p0
+    iget-boolean p0, p0, Ln49;->c:Z
 
-    :cond_2
-    if-nez v0, :cond_3
-
-    const/4 v5, -0x1
-
-    move-object v0, p0
-
-    move v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    invoke-virtual/range {v0 .. v5}, Ln49;->m(IIIII)I
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result p0
 
-    if-lez p0, :cond_4
+    add-int/2addr p0, v0
 
     return p0
+.end method
 
-    :cond_3
-    move-object v0, p0
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    move v1, p1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    move v2, p2
+    const-string v1, "ForwardIds(messageIds="
 
-    move v3, p3
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move v4, p4
+    iget-object v1, p0, Ln49;->a:Ljava/util/Set;
 
-    :cond_4
-    const/4 v5, 0x1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual/range {v0 .. v5}, Ln49;->m(IIIII)I
+    const-string v1, ", attachId="
 
-    move-result p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-gez p0, :cond_5
+    iget-object v1, p0, Ln49;->b:Ljava/lang/Long;
 
-    return p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    :cond_5
-    const/4 p0, 0x0
+    const-string v1, ", isForwardAttach="
 
-    return p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_6
-    move v1, p1
+    const-string v1, ")"
 
-    move v3, p3
+    iget-boolean p0, p0, Ln49;->c:Z
 
-    sub-int p3, v3, v1
+    invoke-static {v0, p0, v1}, Lmw1;->k(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
-    const/16 p0, 0x1e
+    move-result-object p0
 
-    int-to-float p0, p0
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p1
-
-    iget p1, p1, Landroid/util/DisplayMetrics;->density:F
-
-    invoke-static {p0, p1, p3}, Lex3;->b(FFI)I
-
-    move-result p0
-
-    return p0
+    return-object p0
 .end method

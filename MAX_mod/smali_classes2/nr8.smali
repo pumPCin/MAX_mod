@@ -1,126 +1,175 @@
-.class public final Lnr8;
+.class public abstract Lnr8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lsr8;
 
+# static fields
+.field public static final a:Ljava/util/HashSet;
 
-# instance fields
-.field public final a:I
+.field public static final b:Ljava/util/HashSet;
 
-.field public final b:J
+.field public static final c:Ljava/util/Set;
+
+.field public static final d:Ljava/util/HashSet;
+
+.field public static final e:Ljava/util/HashSet;
+
+.field public static final f:Ljava/util/HashSet;
+
+.field public static final g:Ljava/util/HashSet;
+
+.field public static final h:Ljava/util/HashSet;
 
 
 # direct methods
-.method public constructor <init>(IJ)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 9
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/HashSet;
 
-    iput p1, p0, Lnr8;->a:I
+    const/4 v1, 0x1
 
-    iput-wide p2, p0, Lnr8;->b:J
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    const/4 v1, 0x3
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    const/4 v1, 0x4
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    const/4 v1, 0x2
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    const/4 v1, 0x6
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    const/4 v1, 0x5
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    const/4 v1, 0x7
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    filled-new-array/range {v2 .. v8}, [Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    sput-object v0, Lnr8;->a:Ljava/util/HashSet;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    filled-new-array {v6, v8}, [Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    sput-object v0, Lnr8;->b:Ljava/util/HashSet;
+
+    invoke-static {v5}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
+
+    move-result-object v0
+
+    sput-object v0, Lnr8;->c:Ljava/util/Set;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    filled-new-array {v2, v3, v4}, [Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    sput-object v0, Lnr8;->d:Ljava/util/HashSet;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    const/16 v1, 0xb
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    filled-new-array {v2, v3, v4, v1}, [Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    sput-object v0, Lnr8;->e:Ljava/util/HashSet;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-static {v7}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    sput-object v0, Lnr8;->f:Ljava/util/HashSet;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-static {v8}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    sput-object v0, Lnr8;->g:Ljava/util/HashSet;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    const/16 v1, 0x9
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    sput-object v0, Lnr8;->h:Ljava/util/HashSet;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lnr8;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lnr8;
-
-    iget v1, p0, Lnr8;->a:I
-
-    iget v3, p1, Lnr8;->a:I
-
-    if-eq v1, v3, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-wide v3, p0, Lnr8;->b:J
-
-    iget-wide p0, p1, Lnr8;->b:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget v0, p0, Lnr8;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-wide v1, p0, Lnr8;->b:J
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "OnContextActionClicked(actionId="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lnr8;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", memberId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lnr8;->b:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

@@ -1,120 +1,198 @@
 .class public final Laa8;
-.super Ljava/lang/Object;
+.super Luk4;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Laa8;",
-            ">;"
-        }
-    .end annotation
-.end field
+.implements Lt98;
+.implements Le3e;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic c:I
 
-.field public final b:Lnd8;
+.field public o:Loq4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Ltm7;
-
-    const/16 v1, 0xe
-
-    invoke-direct {v0, v1}, Ltm7;-><init>(I)V
-
-    sput-object v0, Laa8;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
+.method public synthetic constructor <init>(Ld8a;I)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Laa8;->c:I
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Laa8;->a:I
-
-    sget-object v0, Lnd8;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lnd8;
-
-    iput-object p1, p0, Laa8;->b:Lnd8;
+    invoke-direct {p0, p1}, Luk4;-><init>(Ld8a;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
+.method public b()V
+    .registers 2
 
-    const/4 p0, 0x0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
-    return p0
-.end method
+    move-result v0
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    and-int/lit8 v0, v0, 0x36
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "MediaItem{mFlags="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Laa8;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mDescription="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Laa8;->b:Lnd8;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 4
-
-    iget v0, p0, Laa8;->a:I
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-object p0, p0, Laa8;->b:Lnd8;
-
-    invoke-virtual {p0, p1, p2}, Lnd8;->writeToParcel(Landroid/os/Parcel;I)V
+    if-eqz v0, :cond_0
 
     return-void
+
+    :cond_0
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+
+    iget-object p0, p0, Luk4;->a:Ld8a;
+
+    invoke-interface {p0}, Ld8a;->b()V
+
+    return-void
+.end method
+
+.method public final c(Loq4;)V
+    .registers 3
+
+    iget v0, p0, Laa8;->c:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Laa8;->o:Loq4;
+
+    invoke-static {v0, p1}, Lsq4;->h(Loq4;Loq4;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iput-object p1, p0, Laa8;->o:Loq4;
+
+    iget-object p1, p0, Luk4;->a:Ld8a;
+
+    invoke-interface {p1, p0}, Ld8a;->c(Loq4;)V
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Laa8;->o:Loq4;
+
+    invoke-static {v0, p1}, Lsq4;->h(Loq4;Loq4;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iput-object p1, p0, Laa8;->o:Loq4;
+
+    iget-object p1, p0, Luk4;->a:Ld8a;
+
+    invoke-interface {p1, p0}, Ld8a;->c(Loq4;)V
+
+    :cond_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final e()V
+    .registers 2
+
+    iget v0, p0, Laa8;->c:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0}, Luk4;->e()V
+
+    iget-object p0, p0, Laa8;->o:Loq4;
+
+    invoke-interface {p0}, Loq4;->e()V
+
+    return-void
+
+    :pswitch_0
+    invoke-super {p0}, Luk4;->e()V
+
+    iget-object p0, p0, Laa8;->o:Loq4;
+
+    invoke-interface {p0}, Loq4;->e()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onError(Ljava/lang/Throwable;)V
+    .registers 3
+
+    iget v0, p0, Laa8;->c:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v0
+
+    and-int/lit8 v0, v0, 0x36
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p1}, Ln4e;->D(Ljava/lang/Throwable;)V
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+
+    iget-object p0, p0, Luk4;->a:Ld8a;
+
+    invoke-interface {p0, p1}, Ld8a;->onError(Ljava/lang/Throwable;)V
+
+    :goto_0
+    return-void
+
+    :pswitch_0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    move-result v0
+
+    and-int/lit8 v0, v0, 0x36
+
+    if-eqz v0, :cond_1
+
+    invoke-static {p1}, Ln4e;->D(Ljava/lang/Throwable;)V
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v0, 0x2
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+
+    iget-object p0, p0, Luk4;->a:Ld8a;
+
+    invoke-interface {p0, p1}, Ld8a;->onError(Ljava/lang/Throwable;)V
+
+    :goto_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

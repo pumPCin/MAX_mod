@@ -1,95 +1,132 @@
 .class public final Lvj9;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Ldk9;
+.field public final a:Ljava/lang/String;
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
-.method public constructor <init>(Ldk9;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(ILjava/lang/String;II)V
+    .registers 5
 
-    iput-object p1, p0, Lvj9;->X:Ldk9;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iput-object p2, p0, Lvj9;->a:Ljava/lang/String;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput p1, p0, Lvj9;->b:I
+
+    iput p3, p0, Lvj9;->c:I
+
+    iput p4, p0, Lvj9;->d:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    check-cast p1, Lr04;
+    if-ne p0, p1, :cond_0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/4 p0, 0x1
 
-    invoke-virtual {p0, p1, p2}, Lvj9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    return p0
 
-    move-result-object p0
+    :cond_0
+    const/4 v0, 0x0
 
-    check-cast p0, Lvj9;
+    if-eqz p1, :cond_5
 
-    sget-object p1, Lncf;->a:Lncf;
+    const-class v1, Lvj9;
 
-    invoke-virtual {p0, p1}, Lvj9;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object p1
-.end method
+    move-result-object v2
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Lvj9;
-
-    iget-object p0, p0, Lvj9;->X:Ldk9;
-
-    invoke-direct {p1, p0, p2}, Lvj9;-><init>(Ldk9;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lvj9;->X:Ldk9;
-
-    iget-object p0, p0, Ldk9;->m:Lhc8;
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p0}, Lhc8;->s()V
-
-    iget-object p0, p0, Lhc8;->c:Lgc8;
-
-    invoke-interface {p0}, Lgc8;->isConnected()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    const-string p0, "The controller is not connected. Ignoring pause()."
-
-    invoke-static {p0}, Lye2;->r0(Ljava/lang/String;)V
+    if-eq v1, v2, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    invoke-interface {p0}, Lgc8;->pause()V
-
     :cond_1
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    check-cast p1, Lvj9;
 
-    return-object p0
+    iget v1, p0, Lvj9;->b:I
+
+    iget v2, p1, Lvj9;->b:I
+
+    if-eq v1, v2, :cond_2
+
+    return v0
+
+    :cond_2
+    iget v1, p0, Lvj9;->c:I
+
+    iget v2, p1, Lvj9;->c:I
+
+    if-eq v1, v2, :cond_3
+
+    return v0
+
+    :cond_3
+    iget v1, p0, Lvj9;->d:I
+
+    iget v2, p1, Lvj9;->d:I
+
+    if-eq v1, v2, :cond_4
+
+    return v0
+
+    :cond_4
+    iget-object p0, p0, Lvj9;->a:Ljava/lang/String;
+
+    iget-object p1, p1, Lvj9;->a:Ljava/lang/String;
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_5
+    :goto_0
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    iget-object v0, p0, Lvj9;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lvj9;->b:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lvj9;->c:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget p0, p0, Lvj9;->d:I
+
+    add-int/2addr v0, p0
+
+    return v0
 .end method

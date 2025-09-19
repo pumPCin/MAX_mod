@@ -3,68 +3,162 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lnl7;",
-            ">;"
-        }
-    .end annotation
-.end field
+.implements Lvw0;
 
 
 # instance fields
-.field public a:I
+.field public final a:J
 
-.field public b:I
+.field public final b:Ljava/util/TreeSet;
 
-.field public c:Z
+.field public c:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(J)V
+    .registers 4
 
-    new-instance v0, Ldn6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0xf
+    iput-wide p1, p0, Lnl7;->a:J
 
-    invoke-direct {v0, v1}, Ldn6;-><init>(I)V
+    new-instance p1, Ljava/util/TreeSet;
 
-    sput-object v0, Lnl7;->CREATOR:Landroid/os/Parcelable$Creator;
+    new-instance p2, Lkj4;
+
+    const/4 v0, 0x7
+
+    invoke-direct {p2, v0}, Lkj4;-><init>(I)V
+
+    invoke-direct {p1, p2}, Ljava/util/TreeSet;-><init>(Ljava/util/Comparator;)V
+
+    iput-object p1, p0, Lnl7;->b:Ljava/util/TreeSet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
+.method public final a(Lt1e;Lw1e;)V
+    .registers 7
 
-    const/4 p0, 0x0
+    iget-object v0, p0, Lnl7;->b:Ljava/util/TreeSet;
 
-    return p0
+    invoke-virtual {v0, p2}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    iget-wide v0, p0, Lnl7;->c:J
+
+    iget-wide v2, p2, Lix0;->c:J
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lnl7;->c:J
+
+    const-wide/16 v0, 0x0
+
+    invoke-virtual {p0, p1, v0, v1}, Lnl7;->e(Llw0;J)V
+
+    return-void
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+.method public final b(Llw0;Ljava/lang/String;JJ)V
+    .registers 7
 
-    iget p2, p0, Lnl7;->a:I
+    const-wide/16 p2, -0x1
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    cmp-long p2, p5, p2
 
-    iget p2, p0, Lnl7;->b:I
+    if-eqz p2, :cond_0
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p0, p1, p5, p6}, Lnl7;->e(Llw0;J)V
 
-    iget-boolean p0, p0, Lnl7;->c:Z
+    :cond_0
+    return-void
+.end method
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+.method public final c(Lt1e;Lw1e;Lw1e;)V
+    .registers 4
 
+    invoke-virtual {p0, p1, p2}, Lnl7;->d(Lt1e;Lix0;)V
+
+    invoke-virtual {p0, p1, p3}, Lnl7;->a(Lt1e;Lw1e;)V
+
+    return-void
+.end method
+
+.method public final d(Lt1e;Lix0;)V
+    .registers 5
+
+    iget-object p1, p0, Lnl7;->b:Ljava/util/TreeSet;
+
+    invoke-virtual {p1, p2}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
+
+    iget-wide v0, p0, Lnl7;->c:J
+
+    iget-wide p1, p2, Lix0;->c:J
+
+    sub-long/2addr v0, p1
+
+    iput-wide v0, p0, Lnl7;->c:J
+
+    return-void
+.end method
+
+.method public final e(Llw0;J)V
+    .registers 8
+
+    :goto_0
+    iget-wide v0, p0, Lnl7;->c:J
+
+    add-long/2addr v0, p2
+
+    iget-wide v2, p0, Lnl7;->a:J
+
+    cmp-long v0, v0, v2
+
+    if-lez v0, :cond_0
+
+    iget-object v0, p0, Lnl7;->b:Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lnl7;->b:Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->first()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lix0;
+
+    move-object v1, p1
+
+    check-cast v1, Lt1e;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {v1, v0}, Lt1e;->m(Lix0;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit v1
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
+
+    :cond_0
     return-void
 .end method

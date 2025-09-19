@@ -1,47 +1,52 @@
-.class public final Lqn6;
-.super Ljava/lang/Object;
+.class public final synthetic Lqn6;
+.super Ls8;
 .source "SourceFile"
 
+# interfaces
+.implements Lrc6;
 
-# instance fields
-.field public final a:Lxh7;
 
-.field public final b:Lxh7;
-
-.field public final c:Lxh7;
-
-.field public final d:Lxh7;
-
-.field public final e:Lxh7;
-
-.field public final f:Lxh7;
-
-.field public final g:Lxh7;
-
-.field public final h:Lxh7;
+# static fields
+.field public static final r0:Lqn6;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;)V
-    .registers 9
+.method static constructor <clinit>()V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lqn6;
 
-    iput-object p1, p0, Lqn6;->a:Lxh7;
+    const-string v1, "<init>(Ljava/lang/Object;Ljava/lang/Object;)V"
 
-    iput-object p2, p0, Lqn6;->b:Lxh7;
+    const/4 v2, 0x4
 
-    iput-object p3, p0, Lqn6;->c:Lxh7;
+    const/4 v3, 0x3
 
-    iput-object p4, p0, Lqn6;->d:Lxh7;
+    const-class v4, Lpxa;
 
-    iput-object p5, p0, Lqn6;->e:Lxh7;
+    invoke-direct {v0, v3, v4, v1, v2}, Ls8;-><init>(ILjava/lang/Class;Ljava/lang/String;I)V
 
-    iput-object p6, p0, Lqn6;->f:Lxh7;
-
-    iput-object p7, p0, Lqn6;->g:Lxh7;
-
-    iput-object p8, p0, Lqn6;->h:Lxh7;
+    sput-object v0, Lqn6;->r0:Lqn6;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    check-cast p1, Ls72;
+
+    check-cast p2, Lj44;
+
+    check-cast p3, Lkotlin/coroutines/Continuation;
+
+    sget-object p0, Lvn6;->j:Lpxa;
+
+    new-instance p0, Lpxa;
+
+    invoke-direct {p0, p1, p2}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    return-object p0
 .end method

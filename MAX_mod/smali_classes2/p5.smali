@@ -3,176 +3,188 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lz5;
+.implements Lpm3;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:J
-
-.field public final synthetic c:Ljava/lang/Object;
-
-.field public final synthetic d:Ljava/io/Serializable;
+.field public final synthetic b:Lru/ok/messages/views/ActAvatarCrop;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/messages/contacts/profile/ActContactAvatars;Ljava/lang/String;J)V
-    .registers 6
+.method public synthetic constructor <init>(Lru/ok/messages/views/ActAvatarCrop;I)V
+    .registers 3
 
-    const/4 v0, 0x0
+    iput p2, p0, Lp5;->a:I
 
-    iput v0, p0, Lp5;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lp5;->c:Ljava/lang/Object;
-
-    iput-object p2, p0, Lp5;->d:Ljava/io/Serializable;
-
-    iput-wide p3, p0, Lp5;->b:J
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lvq0;JLwq0;)V
-    .registers 6
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lp5;->a:I
+    iput-object p1, p0, Lp5;->b:Lru/ok/messages/views/ActAvatarCrop;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lp5;->c:Ljava/lang/Object;
-
-    iput-wide p2, p0, Lp5;->b:J
-
-    iput-object p4, p0, Lp5;->d:Ljava/io/Serializable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 6
+.method public final accept(Ljava/lang/Object;)V
+    .registers 10
 
     iget v0, p0, Lp5;->a:I
 
-    iget-object v1, p0, Lp5;->d:Ljava/io/Serializable;
+    const/4 v1, 0x0
 
-    iget-wide v2, p0, Lp5;->b:J
-
-    iget-object p0, p0, Lp5;->c:Ljava/lang/Object;
+    iget-object p0, p0, Lp5;->b:Lru/ok/messages/views/ActAvatarCrop;
 
     packed-switch v0, :pswitch_data_0
 
-    check-cast p0, Lvq0;
+    check-cast p1, Ljava/lang/Throwable;
 
-    check-cast v1, Lwq0;
+    sget v0, Lru/ok/messages/views/ActAvatarCrop;->d1:I
 
-    iget-object p0, p0, Lvq0;->a:Lml5;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object v0, v1, Lwq0;->a:Ljava/util/List;
+    const-string v2, "Error occurred during applying image transformation. Error: "
 
-    invoke-static {v0}, Las3;->Q(Ljava/util/Collection;)Z
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result v0
+    invoke-virtual {p1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
 
-    const-string v4, "vq0"
+    move-result-object p1
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :try_start_0
-    check-cast p0, Lan5;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {p0, v2, v3}, Lan5;->e(J)Ljava/io/File;
+    move-result-object p1
 
-    move-result-object p0
+    const-string v0, "ru.ok.messages.views.ActAvatarCrop"
 
-    invoke-virtual {p0}, Ljava/io/File;->delete()Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-static {v0, p1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    invoke-virtual {p0, v1}, Landroid/app/Activity;->setResult(I)V
 
-    :catch_0
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    sget p1, Ld1d;->K:I
 
-    move-result-object p0
+    sget-object v0, Lte2;->d:Landroid/os/Handler;
 
-    filled-new-array {p0}, [Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object p1
 
-    const-string v0, "deleteBotCommandsForChat: exception when delete botCommands for, chatId = %d"
+    const/4 v0, 0x1
 
-    invoke-static {v4, v0, p0}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, p0, p1}, Lte2;->M(ILandroid/content/Context;Ljava/lang/String;)V
 
-    goto :goto_0
+    invoke-virtual {p0}, Lt5;->finish()V
 
-    :cond_0
-    check-cast p0, Lan5;
-
-    invoke-virtual {p0, v2, v3}, Lan5;->e(J)Ljava/io/File;
-
-    move-result-object p0
-
-    invoke-static {p0, v1}, Luo9;->L(Ljava/io/File;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_1
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    filled-new-array {p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    const-string v0, "Failed to store botCommands, chatId = %d"
-
-    invoke-static {v4, v0, p0}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    :cond_1
-    :goto_0
     return-void
 
     :pswitch_0
-    check-cast p0, Lru/ok/messages/contacts/profile/ActContactAvatars;
+    check-cast p1, Landroid/graphics/Rect;
 
-    check-cast v1, Ljava/lang/String;
+    sget v0, Lru/ok/messages/views/ActAvatarCrop;->d1:I
 
-    sget v0, Lru/ok/messages/contacts/profile/ActContactAvatars;->c1:I
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object p0, p0, Lm5;->F0:Ln9b;
+    new-instance v0, Landroid/content/Intent;
 
-    iget-object p0, p0, Ln9b;->b:Ljava/lang/Object;
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    check-cast p0, Lme3;
+    const-string v2, "ru.ok.tamtam.extra.CROPPED_ABSOLUTE"
 
-    check-cast p0, Ltaa;
+    invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Ls4;
+    iget-object v2, p0, Lru/ok/messages/views/ActAvatarCrop;->a1:Landroid/graphics/Point;
 
-    move-result-object p0
+    new-instance v3, Landroid/graphics/RectF;
 
-    const-class v0, Lwn3;
+    iget v4, p1, Landroid/graphics/Rect;->left:I
 
-    invoke-virtual {p0, v0}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    int-to-float v4, v4
 
-    move-result-object p0
+    iget v5, v2, Landroid/graphics/Point;->x:I
 
-    check-cast p0, Lwn3;
+    int-to-float v5, v5
 
-    invoke-virtual {p0, v2, v3, v1, v1}, Lwn3;->d(JLjava/lang/String;Ljava/lang/String;)V
+    div-float/2addr v4, v5
 
+    iget v6, p1, Landroid/graphics/Rect;->top:I
+
+    int-to-float v6, v6
+
+    iget v2, v2, Landroid/graphics/Point;->y:I
+
+    int-to-float v2, v2
+
+    div-float/2addr v6, v2
+
+    iget v7, p1, Landroid/graphics/Rect;->right:I
+
+    int-to-float v7, v7
+
+    div-float/2addr v7, v5
+
+    iget p1, p1, Landroid/graphics/Rect;->bottom:I
+
+    int-to-float p1, p1
+
+    div-float/2addr p1, v2
+
+    invoke-direct {v3, v4, v6, v7, p1}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    const-string p1, "ru.ok.tamtam.extra.CROPPED_RECT"
+
+    invoke-virtual {v0, p1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object p1
+
+    const-string v2, "ru.ok.tamtam.extra.URI"
+
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/net/Uri;
+
+    invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object p1
+
+    const-string v2, "ru.ok.tamtam.extra.FILE_PATH"
+
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    const/4 p1, -0x1
+
+    invoke-virtual {p0, p1, v0}, Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V
+
+    invoke-virtual {p0}, Lt5;->finish()V
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+    move-result-object p1
+
+    const-string v0, "ru.ok.tamtam.extra.NO_ANIM "
+
+    invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0, v1, v1}, Landroid/app/Activity;->overridePendingTransition(II)V
+
+    :cond_0
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

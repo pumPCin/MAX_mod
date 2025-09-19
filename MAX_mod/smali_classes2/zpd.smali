@@ -1,34 +1,21 @@
 .class public final Lzpd;
-.super Ljava/lang/Object;
+.super Luc0;
 .source "SourceFile"
-
-# interfaces
-.implements Lpp7;
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:J
+.field public final b:Lp2f;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 4
+.method public constructor <init>(Lp2f;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0x10
 
-    iput p1, p0, Lzpd;->a:I
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
 
-    sget v0, Lkfa;->d:I
-
-    iput v0, p0, Lzpd;->b:I
-
-    int-to-long v0, p1
-
-    iput-wide v0, p0, Lzpd;->c:J
+    iput-object p1, p0, Lzpd;->b:Lp2f;
 
     return-void
 .end method
@@ -36,50 +23,50 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
+    .registers 3
 
     if-ne p0, p1, :cond_0
 
-    return v0
+    goto :goto_1
 
     :cond_0
-    instance-of v1, p1, Lzpd;
+    instance-of v0, p1, Lzpd;
 
-    const/4 v2, 0x0
+    if-nez v0, :cond_1
 
-    if-nez v1, :cond_1
-
-    return v2
+    goto :goto_0
 
     :cond_1
     check-cast p1, Lzpd;
 
-    iget p0, p0, Lzpd;->a:I
+    iget-object p0, p0, Lzpd;->b:Lp2f;
 
-    iget p1, p1, Lzpd;->a:I
+    iget-object p1, p1, Lzpd;->b:Lp2f;
 
-    if-eq p0, p1, :cond_2
+    invoke-virtual {p0, p1}, Lp2f;->equals(Ljava/lang/Object;)Z
 
-    return v2
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
 
     :cond_2
-    return v0
-.end method
+    :goto_1
+    const/4 p0, 0x1
 
-.method public final getItemId()J
-    .registers 3
-
-    iget-wide v0, p0, Lzpd;->c:J
-
-    return-wide v0
+    return p0
 .end method
 
 .method public final hashCode()I
     .registers 1
 
-    iget p0, p0, Lzpd;->a:I
+    iget-object p0, p0, Lzpd;->b:Lp2f;
+
+    iget p0, p0, Lp2f;->b:I
 
     invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -88,24 +75,24 @@
     return p0
 .end method
 
-.method public final m()I
-    .registers 1
-
-    iget p0, p0, Lzpd;->b:I
-
-    return p0
-.end method
-
 .method public final toString()Ljava/lang/String;
     .registers 3
 
-    const-string v0, "ShimmerMemberListItem(pos="
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    const-string v1, "ShowError(message="
 
-    iget p0, p0, Lzpd;->a:I
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p0, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iget-object p0, p0, Lzpd;->b:Lp2f;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,75 +1,110 @@
-.class public final Lmf3;
-.super Lr2;
+.class public final synthetic Lmf3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
 
 
 # instance fields
-.field public final a:Lx96;
+.field public final synthetic a:I
 
-.field public final synthetic b:Lnf3;
+.field public final synthetic b:Ljava/io/Serializable;
 
 
 # direct methods
-.method public constructor <init>(Lnf3;Lx96;)V
+.method public synthetic constructor <init>(ILjava/io/Serializable;)V
     .registers 3
 
-    iput-object p1, p0, Lmf3;->b:Lnf3;
+    iput p1, p0, Lmf3;->a:I
 
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    iput-object p2, p0, Lmf3;->b:Ljava/io/Serializable;
 
-    iput-object p2, p0, Lmf3;->a:Lx96;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final add(Ljava/lang/Object;)Z
-    .registers 2
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .registers 5
 
-    sget-object p0, Lof3;->a:Lkotlinx/coroutines/internal/Symbol;
+    iget v0, p0, Lmf3;->a:I
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    iget-object p0, p0, Lmf3;->b:Ljava/io/Serializable;
 
-    const-string p1, "not implemented"
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    check-cast p0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    throw p0
-.end method
+    new-instance v0, Ljava/lang/Thread;
 
-.method public final getSize()I
-    .registers 1
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lmf3;->b:Lnf3;
+    const-string v2, "tracer-io-"
 
-    invoke-virtual {p0}, Lq2;->size()I
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
     move-result p0
 
-    return p0
-.end method
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method public final iterator()Ljava/util/Iterator;
-    .registers 3
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    sget-object v0, Lnf3;->c:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+    move-result-object p0
 
-    iget-object v1, p0, Lmf3;->b:Lnf3;
+    invoke-direct {v0, p1, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    return-object v0
 
-    move-result-object v0
+    :pswitch_0
+    check-cast p0, Ljava/lang/String;
 
-    check-cast v0, Lkf3;
+    new-instance v0, Ljava/lang/Thread;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v0, p1, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    new-instance v1, Ljf3;
+    return-object v0
 
-    iget-object p0, p0, Lmf3;->a:Lx96;
+    :pswitch_1
+    check-cast p0, Ljava/lang/String;
 
-    invoke-direct {v1, v0, p0}, Ljf3;-><init>(Lkf3;Lx96;)V
+    new-instance v0, Ljava/lang/Thread;
 
-    return-object v1
+    invoke-direct {v0, p1, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    return-object v0
+
+    :pswitch_2
+    check-cast p0, Ljava/lang/String;
+
+    new-instance v0, Ljava/lang/Thread;
+
+    invoke-direct {v0, p1, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    return-object v0
+
+    :pswitch_3
+    check-cast p0, Ljava/lang/String;
+
+    new-instance v0, Ljava/lang/Thread;
+
+    invoke-direct {v0, p1, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    const/16 p0, 0xa
+
+    invoke-virtual {v0, p0}, Ljava/lang/Thread;->setPriority(I)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

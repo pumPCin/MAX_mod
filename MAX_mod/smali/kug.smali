@@ -1,49 +1,149 @@
-.class public final Lkug;
-.super Lhxg;
+.class public Lkug;
+.super Lmug;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic d:Lbre;
-
-.field public final synthetic e:Loug;
+.field public final c:Landroid/view/WindowInsets$Builder;
 
 
 # direct methods
-.method public constructor <init>(Lbre;Loug;)V
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Lmug;-><init>()V
+
+    new-instance v0, Landroid/view/WindowInsets$Builder;
+
+    invoke-direct {v0}, Landroid/view/WindowInsets$Builder;-><init>()V
+
+    iput-object v0, p0, Lkug;->c:Landroid/view/WindowInsets$Builder;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lvug;)V
     .registers 3
 
-    iput-object p1, p0, Lkug;->d:Lbre;
+    invoke-direct {p0, p1}, Lmug;-><init>(Lvug;)V
 
-    iput-object p2, p0, Lkug;->e:Loug;
+    invoke-virtual {p1}, Lvug;->e()Landroid/view/WindowInsets;
 
-    invoke-direct {p0}, Lhxg;-><init>()V
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    new-instance v0, Landroid/view/WindowInsets$Builder;
+
+    invoke-direct {v0, p1}, Landroid/view/WindowInsets$Builder;-><init>(Landroid/view/WindowInsets;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Landroid/view/WindowInsets$Builder;
+
+    invoke-direct {v0}, Landroid/view/WindowInsets$Builder;-><init>()V
+
+    :goto_0
+    iput-object v0, p0, Lkug;->c:Landroid/view/WindowInsets$Builder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final F()V
-    .registers 1
+.method public b()Lvug;
+    .registers 3
 
-    iget-object p0, p0, Lkug;->e:Loug;
+    invoke-virtual {p0}, Lmug;->a()V
 
-    invoke-virtual {p0}, Loug;->a0()V
+    iget-object v0, p0, Lkug;->c:Landroid/view/WindowInsets$Builder;
+
+    invoke-virtual {v0}, Landroid/view/WindowInsets$Builder;->build()Landroid/view/WindowInsets;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, v0}, Lvug;->f(Landroid/view/View;Landroid/view/WindowInsets;)Lvug;
+
+    move-result-object v0
+
+    iget-object p0, p0, Lmug;->b:[Lh97;
+
+    iget-object v1, v0, Lvug;->a:Ltug;
+
+    invoke-virtual {v1, p0}, Ltug;->p([Lh97;)V
+
+    return-object v0
+.end method
+
+.method public d(Lh97;)V
+    .registers 2
+
+    iget-object p0, p0, Lkug;->c:Landroid/view/WindowInsets$Builder;
+
+    invoke-virtual {p1}, Lh97;->d()Landroid/graphics/Insets;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setMandatorySystemGestureInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
 
     return-void
 .end method
 
-.method public final g(Lowg;)V
-    .registers 3
+.method public e(Lh97;)V
+    .registers 2
 
-    iget-object p1, p1, Lowg;->a:Lcom/google/android/gms/common/api/Status;
+    iget-object p0, p0, Lkug;->c:Landroid/view/WindowInsets$Builder;
 
-    iget-object p0, p0, Lkug;->d:Lbre;
+    invoke-virtual {p1}, Lh97;->d()Landroid/graphics/Insets;
 
-    const/4 v0, 0x0
+    move-result-object p1
 
-    invoke-static {p1, v0, p0}, Lx77;->V(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lbre;)V
+    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setSystemGestureInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
+
+    return-void
+.end method
+
+.method public f(Lh97;)V
+    .registers 2
+
+    iget-object p0, p0, Lkug;->c:Landroid/view/WindowInsets$Builder;
+
+    invoke-virtual {p1}, Lh97;->d()Landroid/graphics/Insets;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setSystemWindowInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
+
+    return-void
+.end method
+
+.method public g(Lh97;)V
+    .registers 2
+
+    iget-object p0, p0, Lkug;->c:Landroid/view/WindowInsets$Builder;
+
+    invoke-virtual {p1}, Lh97;->d()Landroid/graphics/Insets;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setTappableElementInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
+
+    return-void
+.end method
+
+.method public i(Lh97;)V
+    .registers 2
+
+    iget-object p0, p0, Lkug;->c:Landroid/view/WindowInsets$Builder;
+
+    invoke-virtual {p1}, Lh97;->d()Landroid/graphics/Insets;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setStableInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
 
     return-void
 .end method

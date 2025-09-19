@@ -1,137 +1,310 @@
 .class public final Lmaf;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
 
+# static fields
+.field public static final a:Lmaf;
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public static volatile b:Z
 
-.field public final synthetic Y:Lone/me/settings/twofa/restore/TwoFAStartRestoreScreen;
+.field public static c:Lso8;
+
+.field public static d:Landroid/content/Context;
+
+.field public static e:Lgnd;
+
+.field public static f:Lfwe;
+
+.field public static final g:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public static final h:Lzte;
+
+.field public static final i:Lzte;
+
+.field public static volatile j:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/settings/twofa/restore/TwoFAStartRestoreScreen;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p2, p0, Lmaf;->Y:Lone/me/settings/twofa/restore/TwoFAStartRestoreScreen;
+    new-instance v0, Lmaf;
 
-    const/4 p2, 0x2
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Lmaf;->a:Lmaf;
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+
+    sput-object v0, Lmaf;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    sget-object v0, Lf8;->X:Lf8;
+
+    new-instance v1, Lzte;
+
+    invoke-direct {v1, v0}, Lzte;-><init>(Lzb6;)V
+
+    sput-object v1, Lmaf;->h:Lzte;
+
+    sget-object v0, Lf8;->o:Lf8;
+
+    new-instance v1, Lzte;
+
+    invoke-direct {v1, v0}, Lzte;-><init>(Lzb6;)V
+
+    sput-object v1, Lmaf;->i:Lzte;
+
+    sget-object v0, Lq45;->a:Lq45;
+
+    sput-object v0, Lmaf;->j:Ljava/lang/Object;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public static a()Ljava/lang/String;
     .registers 3
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    sget-boolean v0, Lmaf;->b:Z
 
-    invoke-virtual {p0, p1, p2}, Lmaf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    const/4 v1, 0x0
 
-    move-result-object p0
+    if-eqz v0, :cond_0
 
-    check-cast p0, Lmaf;
+    return-object v1
 
-    sget-object p1, Lncf;->a:Lncf;
+    :cond_0
+    invoke-static {}, Lmaf;->c()Ljava/util/Map;
 
-    invoke-virtual {p0, p1}, Lmaf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v0
 
-    return-object p1
+    sget-object v2, Laec;->b:Luaf;
+
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    instance-of v2, v0, Ll04;
+
+    if-eqz v2, :cond_1
+
+    check-cast v0, Ll04;
+
+    goto :goto_0
+
+    :cond_1
+    move-object v0, v1
+
+    :goto_0
+    if-nez v0, :cond_2
+
+    new-instance v0, Lwvg;
+
+    const/16 v2, 0xd
+
+    invoke-direct {v0, v2}, Lwvg;-><init>(I)V
+
+    invoke-virtual {v0}, Lwvg;->s()Ll04;
+
+    :cond_2
+    sget-object v0, Lmaf;->d:Landroid/content/Context;
+
+    if-eqz v0, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    move-object v0, v1
+
+    :goto_1
+    const-string v2, "tracer_app_token"
+
+    invoke-static {v0, v2}, Li4h;->F(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_5
+
+    const-string v2, "0000000000000000000000000000000000000000000"
+
+    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    return-object v1
+
+    :cond_4
+    return-object v0
+
+    :cond_5
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Could not find Tracer\'s appToken. Is Tracer plugin configured properly?"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public static b()Ljx4;
+    .registers 1
 
-    new-instance v0, Lmaf;
+    sget-object v0, Lmaf;->i:Lzte;
 
-    iget-object p0, p0, Lmaf;->Y:Lone/me/settings/twofa/restore/TwoFAStartRestoreScreen;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
-    invoke-direct {v0, p2, p0}, Lmaf;-><init>(Lkotlin/coroutines/Continuation;Lone/me/settings/twofa/restore/TwoFAStartRestoreScreen;)V
+    move-result-object v0
 
-    iput-object p1, v0, Lmaf;->X:Ljava/lang/Object;
+    check-cast v0, Ljx4;
 
     return-object v0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+.method public static c()Ljava/util/Map;
+    .registers 2
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    sget-object v0, Lmaf;->g:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object p1, p0, Lmaf;->X:Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    check-cast p1, Lr9f;
+    move-result v0
 
-    sget-object v0, Lone/me/settings/twofa/restore/TwoFAStartRestoreScreen;->o0:[Lsf7;
+    if-eqz v0, :cond_0
 
-    if-eqz p1, :cond_0
+    sget-object v0, Lmaf;->j:Ljava/lang/Object;
 
-    iget-object p0, p0, Lmaf;->Y:Lone/me/settings/twofa/restore/TwoFAStartRestoreScreen;
-
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Llrc;->C()Z
-
-    iget-object v0, p0, Lone/me/settings/twofa/restore/TwoFAStartRestoreScreen;->X:Ljava/lang/Object;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ll77;
-
-    iget-object v5, p1, Lr9f;->b:Ljava/lang/String;
-
-    iget-object p0, p0, Lone/me/settings/twofa/restore/TwoFAStartRestoreScreen;->b:Ljava/lang/Object;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lk77;
-
-    iget-object v6, p1, Lr9f;->c:Ln77;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v1, Lone/me/settings/twofa/creation/TwoFACreationScreen;
-
-    const-string v3, "CREATE_PASSWORD"
-
-    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v2, "RESTORE"
-
-    invoke-direct/range {v1 .. v6}, Lone/me/settings/twofa/creation/TwoFACreationScreen;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ln77;)V
-
-    const/4 p0, 0x0
-
-    invoke-static {v1, p0, p0}, Lbp;->e(Lqx3;Lvg;Lvg;)Lorc;
-
-    move-result-object p0
-
-    const-string p1, "CREATE_PASSWORD"
-
-    invoke-virtual {v0, p0, p1}, Ll77;->a(Lorc;Ljava/lang/String;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    return-object v0
 
     :cond_0
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    const-string v1, "Tracer is not initialized"
 
-    throw p0
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public static d(Lpp6;)Ljava/util/List;
+    .registers 10
+
+    new-instance p0, Lwvg;
+
+    const/16 v0, 0xd
+
+    invoke-direct {p0, v0}, Lwvg;-><init>(I)V
+
+    const v0, 0x7ffffc17
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lwvg;->c:Ljava/lang/Object;
+
+    new-instance v0, Ll04;
+
+    invoke-direct {v0, p0}, Ll04;-><init>(Lwvg;)V
+
+    new-instance p0, Lad4;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v1, Lz14;
+
+    invoke-direct {v1, p0}, Lz14;-><init>(Lad4;)V
+
+    new-instance p0, Lx14;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    iput-object v2, p0, Lx14;->a:Ljava/lang/Boolean;
+
+    new-instance v3, Ly14;
+
+    invoke-direct {v3, p0}, Ly14;-><init>(Lx14;)V
+
+    new-instance p0, Lx14;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v2, p0, Lx14;->a:Ljava/lang/Boolean;
+
+    new-instance v4, Leq6;
+
+    invoke-direct {v4, p0}, Leq6;-><init>(Lx14;)V
+
+    new-instance p0, Ly9e;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v2, p0, Ly9e;->a:Ljava/lang/Object;
+
+    new-instance v5, Lwp4;
+
+    invoke-direct {v5, p0}, Lwp4;-><init>(Ly9e;)V
+
+    new-instance p0, Lb3d;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v6, Lrh0;
+
+    const/16 v7, 0xb
+
+    const/4 v8, 0x0
+
+    invoke-direct {v6, v7, v8}, Lrh0;-><init>(IB)V
+
+    iput-object v2, v6, Lrh0;->c:Ljava/lang/Object;
+
+    const/16 v2, 0x3e8
+
+    iput v2, v6, Lrh0;->b:I
+
+    new-instance v2, Ls1b;
+
+    invoke-direct {v2, v6}, Ls1b;-><init>(Lrh0;)V
+
+    const/4 v6, 0x7
+
+    new-array v6, v6, [Lpaf;
+
+    aput-object v0, v6, v8
+
+    const/4 v0, 0x1
+
+    aput-object v1, v6, v0
+
+    const/4 v0, 0x2
+
+    aput-object v3, v6, v0
+
+    const/4 v0, 0x3
+
+    aput-object v4, v6, v0
+
+    const/4 v0, 0x4
+
+    aput-object v5, v6, v0
+
+    const/4 v0, 0x5
+
+    aput-object p0, v6, v0
+
+    const/4 p0, 0x6
+
+    aput-object v2, v6, p0
+
+    invoke-static {v6}, Lr73;->I([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
 .end method

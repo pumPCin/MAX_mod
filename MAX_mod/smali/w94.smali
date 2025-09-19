@@ -1,62 +1,50 @@
-.class public final synthetic Lw94;
-.super Lma6;
+.class public final Lw94;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lzeb;
 
 
 # static fields
-.field public static final a:Lw94;
+.field public static final a:Ldv0;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .registers 2
 
-    new-instance v0, Lw94;
+    new-instance v0, Ldv0;
 
-    const-string v4, "isNotEmpty(Ljava/lang/CharSequence;)Z"
+    const/4 v1, 0x3
 
-    const/4 v5, 0x1
+    invoke-direct {v0, v1}, Ldv0;-><init>(I)V
 
-    const/4 v1, 0x1
-
-    const-class v2, Lqde;
-
-    const-string v3, "isNotEmpty"
-
-    invoke-direct/range {v0 .. v5}, Lma6;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sput-object v0, Lw94;->a:Lw94;
+    sput-object v0, Lw94;->a:Ldv0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final bridge synthetic d(Ljava/lang/Object;)Z
     .registers 2
-
-    check-cast p1, Ljava/lang/String;
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result p0
-
-    if-lez p0, :cond_0
 
     const/4 p0, 0x1
 
-    goto :goto_0
+    return p0
+.end method
 
-    :cond_0
-    const/4 p0, 0x0
+.method public final e()Ljava/lang/Object;
+    .registers 1
 
-    :goto_0
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    sget-object p0, Lw94;->a:Ldv0;
+
+    invoke-virtual {p0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Ljava/nio/ByteBuffer;
 
     return-object p0
 .end method

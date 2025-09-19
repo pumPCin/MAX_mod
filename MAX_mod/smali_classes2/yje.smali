@@ -1,52 +1,23 @@
 .class public final Lyje;
-.super Lcx3;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field public X:I
+.field public final a:Ljava/util/List;
 
-.field public Y:Lhq5;
-
-.field public final synthetic Z:Lvje;
-
-.field public n0:Lhef;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lvje;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ljava/util/List;Ljava/util/List;)V
     .registers 3
 
-    iput-object p1, p0, Lyje;->Z:Lvje;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lyje;->a:Ljava/util/List;
+
+    iput-object p2, p0, Lyje;->b:Ljava/util/List;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iput-object p1, p0, Lyje;->o:Ljava/lang/Object;
-
-    iget p1, p0, Lyje;->X:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lyje;->X:I
-
-    iget-object p1, p0, Lyje;->Z:Lvje;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lvje;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

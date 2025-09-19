@@ -1,113 +1,129 @@
 .class public final Lrd7;
-.super Ltd7;
+.super Lxd7;
 .source "SourceFile"
 
 
 # instance fields
-.field public final d:Lud7;
+.field public final Y:Ldk;
+
+.field public final Z:Lzie;
 
 
 # direct methods
-.method public constructor <init>(Lud7;)V
-    .registers 4
+.method public constructor <init>(Ldk;Lzie;)V
+    .registers 5
 
-    const-string v0, "client"
+    const/4 v0, 0x3
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
-    invoke-direct {p0, v0, v1, p1}, Ltd7;-><init>(Ljava/lang/String;ILud7;)V
+    invoke-direct {p0, v0, v1}, Lxd7;-><init>(II)V
 
-    iput-object p1, p0, Lrd7;->d:Lud7;
+    iput-object p1, p0, Lrd7;->Y:Ldk;
+
+    iput-object p2, p0, Lrd7;->Z:Lzie;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final a(Landroidx/recyclerview/widget/RecyclerView;Lzoc;)V
+    .registers 4
 
-    const/4 v0, 0x1
+    invoke-super {p0, p1, p2}, Lxd7;->a(Landroidx/recyclerview/widget/RecyclerView;Lzoc;)V
 
-    if-ne p0, p1, :cond_0
+    instance-of p1, p2, Lhv4;
 
-    return v0
+    if-eqz p1, :cond_0
 
-    :cond_0
-    instance-of v1, p1, Lrd7;
+    move-object p1, p2
 
-    const/4 v2, 0x0
+    check-cast p1, Lhv4;
 
-    if-nez v1, :cond_1
+    check-cast p1, Lbge;
 
-    return v2
+    iget-object p1, p1, Lzoc;->a:Landroid/view/View;
 
-    :cond_1
-    check-cast p1, Lrd7;
+    invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
-    iget-object p0, p0, Lrd7;->d:Lud7;
+    move-result-object p1
 
-    iget-object p1, p1, Lrd7;->d:Lud7;
+    const/4 v0, 0x0
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->translationZ(F)Landroid/view/ViewPropertyAnimator;
 
-    move-result p0
+    iget-object p0, p0, Lrd7;->Z:Lzie;
 
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lrd7;->d:Lud7;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
+    invoke-virtual {p0, p2}, Lzie;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    invoke-virtual {p0}, Lud7;->hashCode()I
-
-    move-result p0
-
-    return p0
+    return-void
 .end method
 
-.method public final l()Lud7;
-    .registers 1
-
-    iget-object p0, p0, Lrd7;->d:Lud7;
-
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final i(Lzoc;Lzoc;)Z
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Lzoc;->g()I
 
-    const-string v1, "ClientError(reason="
+    move-result p1
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget-object p0, p0, Lrd7;->d:Lud7;
+    move-result-object p1
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2}, Lzoc;->g()I
 
-    const-string p0, ")"
+    move-result p2
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p2
+
+    iget-object p0, p0, Lrd7;->Y:Ldk;
+
+    invoke-virtual {p0, p1, p2}, Ldk;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final j(Lzoc;I)V
+    .registers 3
+
+    if-eqz p2, :cond_0
+
+    instance-of p0, p1, Lhv4;
+
+    if-eqz p0, :cond_0
+
+    check-cast p1, Lhv4;
+
+    check-cast p1, Lbge;
+
+    iget-object p0, p1, Lzoc;->a:Landroid/view/View;
+
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
-    return-object p0
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p1
+
+    iget p1, p1, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 p2, 0x41a00000    # 20.0f
+
+    mul-float/2addr p1, p2
+
+    invoke-virtual {p0, p1}, Landroid/view/ViewPropertyAnimator;->translationZ(F)Landroid/view/ViewPropertyAnimator;
+
+    :cond_0
+    return-void
 .end method

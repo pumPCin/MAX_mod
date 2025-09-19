@@ -1,53 +1,176 @@
 .class public final Lwf0;
-.super Lcx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Ljava/util/List;
+.field public final a:Landroid/graphics/drawable/GradientDrawable;
 
-.field public Y:I
+.field public final b:I
 
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public final synthetic n0:Lru/ok/tamtam/workmanager/BacklogWorker;
-
-.field public o:Lru/ok/tamtam/workmanager/BacklogWorker;
-
-.field public o0:I
+.field public final c:F
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/workmanager/BacklogWorker;Lcx3;)V
-    .registers 3
+.method public constructor <init>(Landroid/graphics/drawable/GradientDrawable;II)V
+    .registers 4
 
-    iput-object p1, p0, Lwf0;->n0:Lru/ok/tamtam/workmanager/BacklogWorker;
+    and-int/lit8 p3, p3, 0x8
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    if-eqz p3, :cond_0
+
+    const/high16 p3, 0x41400000    # 12.0f
+
+    goto :goto_0
+
+    :cond_0
+    const/high16 p3, 0x41200000    # 10.0f
+
+    :goto_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lwf0;->a:Landroid/graphics/drawable/GradientDrawable;
+
+    iput p2, p0, Lwf0;->b:I
+
+    iput p3, p0, Lwf0;->c:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
+
+    if-ne p0, p1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    instance-of v0, p1, Lwf0;
+
+    if-nez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lwf0;
+
+    iget-object v0, p0, Lwf0;->a:Landroid/graphics/drawable/GradientDrawable;
+
+    iget-object v1, p1, Lwf0;->a:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget v0, p0, Lwf0;->b:I
+
+    iget v1, p1, Lwf0;->b:I
+
+    if-eq v0, v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget p0, p0, Lwf0;->c:F
+
+    iget p1, p1, Lwf0;->c:F
+
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+
+    move-result p0
+
+    if-eqz p0, :cond_4
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget-object v0, p0, Lwf0;->a:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lwf0;->b:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    const/16 v2, 0x14
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget p0, p0, Lwf0;->c:F
+
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    iput-object p1, p0, Lwf0;->Z:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget p1, p0, Lwf0;->o0:I
+    const-string v1, "Style(backgroundDrawable="
 
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    or-int/2addr p1, v0
+    iget-object v1, p0, Lwf0;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    iput p1, p0, Lwf0;->o0:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lwf0;->n0:Lru/ok/tamtam/workmanager/BacklogWorker;
+    const-string v1, ", width="
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0, p0}, Lru/ok/tamtam/workmanager/BacklogWorker;->g(Ljava/util/List;Lcx3;)Ljava/lang/Object;
+    iget v1, p0, Lwf0;->b:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", height=20, textSize="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget p0, p0, Lwf0;->c:F
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

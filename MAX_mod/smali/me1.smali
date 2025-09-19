@@ -1,68 +1,81 @@
-.class public final synthetic Lme1;
-.super Ljava/lang/Object;
+.class public final enum Lme1;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
+# static fields
+.field public static final enum a:Lme1;
 
-# instance fields
-.field public final synthetic a:I
+.field public static final enum b:Lme1;
 
-.field public final synthetic b:Lkm;
-
-.field public final synthetic c:Lhz0;
+.field public static final synthetic c:[Lme1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkm;Lhz0;I)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 5
 
-    iput p3, p0, Lme1;->a:I
+    new-instance v0, Lme1;
 
-    iput-object p1, p0, Lme1;->b:Lkm;
+    const-string v1, "UNDEFINE"
 
-    iput-object p2, p0, Lme1;->c:Lhz0;
+    const/4 v2, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v1, Lme1;
+
+    const-string v2, "MENU"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lme1;->a:Lme1;
+
+    new-instance v2, Lme1;
+
+    const-string v3, "RECORD"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lme1;->b:Lme1;
+
+    filled-new-array {v0, v1, v2}, [Lme1;
+
+    move-result-object v0
+
+    sput-object v0, Lme1;->c:[Lme1;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lme1;
+    .registers 2
 
-# virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 4
+    const-class v0, Lme1;
 
-    iget p1, p0, Lme1;->a:I
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    packed-switch p1, :pswitch_data_0
+    move-result-object p0
 
-    iget-object p1, p0, Lme1;->c:Lhz0;
+    check-cast p0, Lme1;
 
-    iget-wide v0, p1, Lhz0;->c:J
+    return-object p0
+.end method
 
-    iget-object p0, p0, Lme1;->b:Lkm;
+.method public static values()[Lme1;
+    .registers 1
 
-    invoke-virtual {p0, v0, v1}, Lkm;->E(J)V
+    sget-object v0, Lme1;->c:[Lme1;
 
-    return-void
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    :pswitch_0
-    iget-object p1, p0, Lme1;->c:Lhz0;
+    move-result-object v0
 
-    iget-wide v0, p1, Lhz0;->c:J
+    check-cast v0, [Lme1;
 
-    iget-object p0, p0, Lme1;->b:Lkm;
-
-    invoke-virtual {p0, v0, v1}, Lkm;->E(J)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

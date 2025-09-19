@@ -1,0 +1,54 @@
+.class public final Lz5a;
+.super La98;
+.source "SourceFile"
+
+# interfaces
+.implements Lmd6;
+
+
+# instance fields
+.field public final a:Lb5a;
+
+
+# direct methods
+.method public constructor <init>(Lb5a;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lz5a;->a:Lb5a;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final d()Ly4a;
+    .registers 3
+
+    new-instance v0, Lx5a;
+
+    iget-object p0, p0, Lz5a;->a:Lb5a;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lx5a;-><init>(Lz2;Z)V
+
+    return-object v0
+.end method
+
+.method public final g(Lt98;)V
+    .registers 4
+
+    new-instance v0, Ly5a;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1, p1}, Ly5a;-><init>(ILjava/lang/Object;)V
+
+    iget-object p0, p0, Lz5a;->a:Lb5a;
+
+    invoke-virtual {p0, v0}, Ly4a;->a(Ld8a;)V
+
+    return-void
+.end method

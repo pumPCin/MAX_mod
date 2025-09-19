@@ -3,84 +3,189 @@
 .source "SourceFile"
 
 
+# static fields
+.field public static final h:Lfh8;
+
+.field public static final i:Ljava/lang/String;
+
+.field public static final j:Ljava/lang/String;
+
+.field public static final k:Ljava/lang/String;
+
+.field public static final l:Ljava/lang/String;
+
+.field public static final m:Ljava/lang/String;
+
+.field public static final n:Ljava/lang/String;
+
+.field public static final o:Ljava/lang/String;
+
+
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final a:J
 
-.field public final b:I
+.field public final b:J
 
-.field public final c:I
+.field public final c:J
 
 .field public final d:J
 
-.field public final e:I
+.field public final e:Z
+
+.field public final f:Z
+
+.field public final g:Z
 
 
 # direct methods
-.method public constructor <init>(Lfh8;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ldh8;
 
-    iget-object v0, p1, Lfh8;->a:Ljava/lang/Object;
+    invoke-direct {v0}, Ldh8;-><init>()V
 
-    iput-object v0, p0, Lfh8;->a:Ljava/lang/Object;
+    new-instance v1, Lfh8;
 
-    iget v0, p1, Lfh8;->b:I
+    invoke-direct {v1, v0}, Lfh8;-><init>(Ldh8;)V
 
-    iput v0, p0, Lfh8;->b:I
+    sput-object v1, Lfh8;->h:Lfh8;
 
-    iget v0, p1, Lfh8;->c:I
+    const/4 v0, 0x0
 
-    iput v0, p0, Lfh8;->c:I
+    const/16 v1, 0x24
 
-    iget-wide v0, p1, Lfh8;->d:J
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
-    iput-wide v0, p0, Lfh8;->d:J
+    move-result-object v0
 
-    iget p1, p1, Lfh8;->e:I
+    sput-object v0, Lfh8;->i:Ljava/lang/String;
 
-    iput p1, p0, Lfh8;->e:I
+    const/4 v0, 0x1
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lfh8;->j:Ljava/lang/String;
+
+    const/4 v0, 0x2
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lfh8;->k:Ljava/lang/String;
+
+    const/4 v0, 0x3
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lfh8;->l:Ljava/lang/String;
+
+    const/4 v0, 0x4
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lfh8;->m:Ljava/lang/String;
+
+    const/4 v0, 0x5
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lfh8;->n:Ljava/lang/String;
+
+    const/4 v0, 0x6
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lfh8;->o:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Object;IIJI)V
-    .registers 7
+.method public constructor <init>(Ldh8;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfh8;->a:Ljava/lang/Object;
+    iget-wide v0, p1, Ldh8;->a:J
 
-    iput p2, p0, Lfh8;->b:I
+    invoke-static {v0, v1}, Lnrf;->j0(J)J
 
-    iput p3, p0, Lfh8;->c:I
+    move-result-wide v0
 
-    iput-wide p4, p0, Lfh8;->d:J
+    iput-wide v0, p0, Lfh8;->a:J
 
-    iput p6, p0, Lfh8;->e:I
+    iget-wide v0, p1, Ldh8;->b:J
+
+    invoke-static {v0, v1}, Lnrf;->j0(J)J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lfh8;->c:J
+
+    iget-wide v0, p1, Ldh8;->a:J
+
+    iput-wide v0, p0, Lfh8;->b:J
+
+    iget-wide v0, p1, Ldh8;->b:J
+
+    iput-wide v0, p0, Lfh8;->d:J
+
+    iget-boolean v0, p1, Ldh8;->c:Z
+
+    iput-boolean v0, p0, Lfh8;->e:Z
+
+    iget-boolean v0, p1, Ldh8;->d:Z
+
+    iput-boolean v0, p0, Lfh8;->f:Z
+
+    iget-boolean p1, p1, Ldh8;->e:Z
+
+    iput-boolean p1, p0, Lfh8;->g:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .registers 2
+.method public final a()Ldh8;
+    .registers 4
 
-    iget p0, p0, Lfh8;->b:I
+    new-instance v0, Ldh8;
 
-    const/4 v0, -0x1
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    if-eq p0, v0, :cond_0
+    iget-wide v1, p0, Lfh8;->b:J
 
-    const/4 p0, 0x1
+    iput-wide v1, v0, Ldh8;->a:J
 
-    return p0
+    iget-wide v1, p0, Lfh8;->d:J
 
-    :cond_0
-    const/4 p0, 0x0
+    iput-wide v1, v0, Ldh8;->b:J
 
-    return p0
+    iget-boolean v1, p0, Lfh8;->e:Z
+
+    iput-boolean v1, v0, Ldh8;->c:Z
+
+    iget-boolean v1, p0, Lfh8;->f:Z
+
+    iput-boolean v1, v0, Ldh8;->d:Z
+
+    iget-boolean p0, p0, Lfh8;->g:Z
+
+    iput-boolean p0, v0, Ldh8;->e:Z
+
+    return-object v0
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
@@ -104,27 +209,13 @@
     :cond_1
     check-cast p1, Lfh8;
 
-    iget-object v1, p0, Lfh8;->a:Ljava/lang/Object;
+    iget-wide v3, p0, Lfh8;->b:J
 
-    iget-object v3, p1, Lfh8;->a:Ljava/lang/Object;
+    iget-wide v5, p1, Lfh8;->b:J
 
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    cmp-long v1, v3, v5
 
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget v1, p0, Lfh8;->b:I
-
-    iget v3, p1, Lfh8;->b:I
-
-    if-ne v1, v3, :cond_2
-
-    iget v1, p0, Lfh8;->c:I
-
-    iget v3, p1, Lfh8;->c:I
-
-    if-ne v1, v3, :cond_2
+    if-nez v1, :cond_2
 
     iget-wide v3, p0, Lfh8;->d:J
 
@@ -134,9 +225,21 @@
 
     if-nez v1, :cond_2
 
-    iget p0, p0, Lfh8;->e:I
+    iget-boolean v1, p0, Lfh8;->e:Z
 
-    iget p1, p1, Lfh8;->e:I
+    iget-boolean v3, p1, Lfh8;->e:Z
+
+    if-ne v1, v3, :cond_2
+
+    iget-boolean v1, p0, Lfh8;->f:Z
+
+    iget-boolean v3, p1, Lfh8;->f:Z
+
+    if-ne v1, v3, :cond_2
+
+    iget-boolean p0, p0, Lfh8;->g:Z
+
+    iget-boolean p1, p1, Lfh8;->g:Z
 
     if-ne p0, p1, :cond_2
 
@@ -147,31 +250,25 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .registers 6
 
-    iget-object v0, p0, Lfh8;->a:Ljava/lang/Object;
+    iget-wide v0, p0, Lfh8;->b:J
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    const/16 v2, 0x20
 
-    move-result v0
+    ushr-long v3, v0, v2
 
-    add-int/lit16 v0, v0, 0x20f
+    xor-long/2addr v0, v3
 
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget v1, p0, Lfh8;->b:I
-
-    add-int/2addr v0, v1
+    long-to-int v0, v0
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget v1, p0, Lfh8;->c:I
+    iget-wide v3, p0, Lfh8;->d:J
 
-    add-int/2addr v0, v1
+    ushr-long v1, v3, v2
 
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-wide v1, p0, Lfh8;->d:J
+    xor-long/2addr v1, v3
 
     long-to-int v1, v1
 
@@ -179,7 +276,19 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    iget p0, p0, Lfh8;->e:I
+    iget-boolean v1, p0, Lfh8;->e:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean v1, p0, Lfh8;->f:Z
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean p0, p0, Lfh8;->g:Z
 
     add-int/2addr v0, p0
 

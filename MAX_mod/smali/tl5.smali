@@ -1,74 +1,52 @@
 .class public final Ltl5;
-.super Lsl5;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lc74;
 
 
 # instance fields
-.field public b:Z
+.field public final synthetic a:I
 
-.field public c:[Ljava/io/File;
 
-.field public d:I
+# direct methods
+.method public synthetic constructor <init>(I)V
+    .registers 2
 
-.field public e:Z
+    iput p1, p0, Ltl5;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a()Ljava/io/File;
-    .registers 6
+.method public final a()Lf74;
+    .registers 2
 
-    iget-boolean v0, p0, Ltl5;->e:Z
+    iget p0, p0, Ltl5;->a:I
 
-    const/4 v1, 0x1
+    packed-switch p0, :pswitch_data_0
 
-    iget-object v2, p0, Lxl5;->a:Ljava/io/File;
+    new-instance p0, Lp0d;
 
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Ltl5;->c:[Ljava/io/File;
-
-    if-nez v0, :cond_0
-
-    invoke-virtual {v2}, Ljava/io/File;->listFiles()[Ljava/io/File;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ltl5;->c:[Ljava/io/File;
-
-    if-nez v0, :cond_0
-
-    iput-boolean v1, p0, Ltl5;->e:Z
-
-    :cond_0
-    iget-object v0, p0, Ltl5;->c:[Ljava/io/File;
-
-    if-eqz v0, :cond_1
-
-    iget v3, p0, Ltl5;->d:I
-
-    array-length v4, v0
-
-    if-ge v3, v4, :cond_1
-
-    add-int/lit8 v1, v3, 0x1
-
-    iput v1, p0, Ltl5;->d:I
-
-    aget-object p0, v0, v3
+    invoke-direct {p0}, Lp0d;-><init>()V
 
     return-object p0
 
-    :cond_1
-    iget-boolean v0, p0, Ltl5;->b:Z
+    :pswitch_0
+    new-instance p0, Lvl5;
 
-    if-nez v0, :cond_2
+    const/4 v0, 0x0
 
-    iput-boolean v1, p0, Ltl5;->b:Z
-
-    return-object v2
-
-    :cond_2
-    const/4 p0, 0x0
+    invoke-direct {p0, v0}, Lii0;-><init>(Z)V
 
     return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

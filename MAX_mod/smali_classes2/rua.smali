@@ -1,172 +1,48 @@
-.class public final synthetic Lrua;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public final Lrua;
+.super Ljx3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lxua;
+.field public final synthetic Y:Leia;
 
-.field public final synthetic c:Lorg/webrtc/SessionDescription;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxua;Lorg/webrtc/SessionDescription;I)V
-    .registers 4
+.method public constructor <init>(Leia;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p3, p0, Lrua;->a:I
+    iput-object p1, p0, Lrua;->Y:Leia;
 
-    iput-object p1, p0, Lrua;->b:Lxua;
-
-    iput-object p2, p0, Lrua;->c:Lorg/webrtc/SessionDescription;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 10
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lrua;->a:I
+    iput-object p1, p0, Lrua;->o:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget p1, p0, Lrua;->X:I
 
-    iget-object v0, p0, Lrua;->b:Lxua;
+    const/high16 v0, -0x80000000
 
-    iget-object v1, v0, Lxua;->E:Lsn5;
+    or-int/2addr p1, v0
 
-    iget-object p0, p0, Lrua;->c:Lorg/webrtc/SessionDescription;
+    iput p1, p0, Lrua;->X:I
 
-    iget-object v2, p0, Lorg/webrtc/SessionDescription;->description:Ljava/lang/String;
+    iget-object p1, p0, Lrua;->Y:Leia;
 
-    iget-boolean v3, v1, Lsn5;->c:Z
+    const/4 v0, 0x0
 
-    const-wide/16 v4, 0x0
+    invoke-virtual {p1, v0, p0}, Leia;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    if-nez v3, :cond_0
+    move-result-object p0
 
-    goto :goto_0
-
-    :cond_0
-    iput-wide v4, v1, Lsn5;->b:J
-
-    iput-wide v4, v1, Lsn5;->a:J
-
-    const/4 v3, 0x0
-
-    iput-boolean v3, v1, Lsn5;->c:Z
-
-    :goto_0
-    invoke-static {v2}, Lsn5;->a(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v1, Lsn5;->a:J
-
-    iget-wide v6, v1, Lsn5;->b:J
-
-    cmp-long v8, v6, v4
-
-    if-eqz v8, :cond_1
-
-    cmp-long v4, v2, v4
-
-    if-eqz v4, :cond_1
-
-    xor-long/2addr v2, v6
-
-    const/4 v4, 0x1
-
-    iput-boolean v4, v1, Lsn5;->c:Z
-
-    iget-object v1, v1, Lsn5;->d:Lrn5;
-
-    invoke-interface {v1, v2, v3}, Lrn5;->c(J)V
-
-    :cond_1
-    iget-object v1, v0, Lxua;->N:Lwua;
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v1, v0, p0}, Lwua;->a(Lxua;Lorg/webrtc/SessionDescription;)V
-
-    :cond_2
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lrua;->b:Lxua;
-
-    iget-object v1, v0, Lxua;->E:Lsn5;
-
-    iget-object p0, p0, Lrua;->c:Lorg/webrtc/SessionDescription;
-
-    iget-object v2, p0, Lorg/webrtc/SessionDescription;->description:Ljava/lang/String;
-
-    iget-boolean v3, v1, Lsn5;->c:Z
-
-    const-wide/16 v4, 0x0
-
-    if-nez v3, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    iput-wide v4, v1, Lsn5;->b:J
-
-    iput-wide v4, v1, Lsn5;->a:J
-
-    const/4 v3, 0x0
-
-    iput-boolean v3, v1, Lsn5;->c:Z
-
-    :goto_1
-    invoke-static {v2}, Lsn5;->a(Ljava/lang/String;)J
-
-    move-result-wide v2
-
-    iput-wide v2, v1, Lsn5;->b:J
-
-    cmp-long v6, v2, v4
-
-    if-eqz v6, :cond_4
-
-    iget-wide v6, v1, Lsn5;->a:J
-
-    cmp-long v4, v6, v4
-
-    if-eqz v4, :cond_4
-
-    xor-long/2addr v2, v6
-
-    const/4 v4, 0x1
-
-    iput-boolean v4, v1, Lsn5;->c:Z
-
-    iget-object v1, v1, Lsn5;->d:Lrn5;
-
-    invoke-interface {v1, v2, v3}, Lrn5;->c(J)V
-
-    :cond_4
-    iget-object v1, v0, Lxua;->N:Lwua;
-
-    if-eqz v1, :cond_5
-
-    invoke-interface {v1, v0, p0}, Lwua;->m(Lxua;Lorg/webrtc/SessionDescription;)V
-
-    :cond_5
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

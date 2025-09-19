@@ -2,127 +2,121 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/animation/Animation$AnimationListener;
+
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:I
 
-.field public final b:I
-
-.field public final c:I
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .registers 3
+
+    iput p1, p0, Lyl8;->a:I
+
+    iput-object p2, p0, Lyl8;->b:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lyl8;->a:Ljava/lang/String;
+    return-void
+.end method
 
-    iput p2, p0, Lyl8;->b:I
+.method private final a(Landroid/view/animation/Animation;)V
+    .registers 2
 
-    iput p3, p0, Lyl8;->c:I
+    return-void
+.end method
+
+.method private final b(Landroid/view/animation/Animation;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final c(Landroid/view/animation/Animation;)V
+    .registers 2
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lyl8;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lyl8;
-
-    iget v1, p0, Lyl8;->c:I
-
-    iget-object v3, p0, Lyl8;->a:Ljava/lang/String;
-
-    iget p0, p0, Lyl8;->b:I
-
-    if-ltz p0, :cond_4
-
-    iget v4, p1, Lyl8;->b:I
-
-    if-gez v4, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v4, p1, Lyl8;->a:Ljava/lang/String;
-
-    invoke-static {v3, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    iget v3, p1, Lyl8;->b:I
-
-    if-ne p0, v3, :cond_3
-
-    iget p0, p1, Lyl8;->c:I
-
-    if-ne v1, p0, :cond_3
-
-    return v0
-
-    :cond_3
-    return v2
-
-    :cond_4
-    :goto_0
-    iget-object p0, p1, Lyl8;->a:Ljava/lang/String;
-
-    invoke-static {v3, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_5
-
-    iget p0, p1, Lyl8;->c:I
-
-    if-ne v1, p0, :cond_5
-
-    return v0
-
-    :cond_5
-    return v2
-.end method
-
-.method public final hashCode()I
+.method public final onAnimationEnd(Landroid/view/animation/Animation;)V
     .registers 2
 
-    iget v0, p0, Lyl8;->c:I
+    iget p1, p0, Lyl8;->a:I
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    packed-switch p1, :pswitch_data_0
 
-    move-result-object v0
+    iget-object p0, p0, Lyl8;->b:Ljava/lang/Object;
 
-    iget-object p0, p0, Lyl8;->a:Ljava/lang/String;
+    check-cast p0, Lum8;
 
-    filled-new-array {p0, v0}, [Ljava/lang/Object;
+    iget-object p0, p0, Lum8;->w0:Lwm8;
 
-    move-result-object p0
+    const/4 p1, 0x0
 
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    iput-boolean p1, p0, Lwm8;->I0:Z
 
-    move-result p0
+    invoke-virtual {p0}, Lwm8;->m()V
 
-    return p0
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lyl8;->b:Ljava/lang/Object;
+
+    check-cast p0, Landroidx/mediarouter/app/d;
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Landroidx/mediarouter/app/d;->i(Z)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .registers 2
+
+    iget p0, p0, Lyl8;->a:I
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/view/animation/Animation;)V
+    .registers 2
+
+    iget p1, p0, Lyl8;->a:I
+
+    packed-switch p1, :pswitch_data_0
+
+    iget-object p0, p0, Lyl8;->b:Ljava/lang/Object;
+
+    check-cast p0, Lum8;
+
+    iget-object p0, p0, Lum8;->w0:Lwm8;
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lwm8;->I0:Z
+
+    :pswitch_0
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

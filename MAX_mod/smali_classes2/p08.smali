@@ -1,19 +1,15 @@
-.class public final Lp08;
-.super Ljava/lang/Object;
+.class public abstract Lp08;
+.super Lb85;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lm08;
-
-
 # direct methods
-.method public constructor <init>(Lm08;)V
-    .registers 2
+.method public constructor <init>(Ljava/lang/Throwable;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lylf;->a:Lylf;
 
-    iput-object p1, p0, Lp08;->a:Lm08;
+    invoke-direct {p0, v0, p1}, Lb85;-><init>(Ljava/lang/Object;Ljava/lang/Throwable;)V
 
     return-void
 .end method

@@ -4,65 +4,38 @@
 
 
 # instance fields
-.field public a:J
+.field public final a:Lqwe;
 
-.field public b:I
+.field public final b:Lgxa;
 
-.field public c:Ljava/lang/String;
-
-.field public d:J
-
-.field public e:Ljava/lang/String;
-
-.field public f:Ljava/lang/String;
-
-.field public g:Ljava/lang/String;
+.field public final c:J
 
 
-# virtual methods
-.method public final a()Ljava/lang/String;
-    .registers 3
+# direct methods
+.method public constructor <init>(Lqwe;Lgxa;)V
+    .registers 4
 
-    iget-object v0, p0, Lexa;->e:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0}, Lms8;->u(Ljava/lang/CharSequence;)Z
+    iput-object p1, p0, Lexa;->a:Lqwe;
 
-    move-result v0
+    iput-object p2, p0, Lexa;->b:Lgxa;
 
-    if-eqz v0, :cond_0
+    sget p1, Lzi7;->a:I
 
-    iget-object v0, p0, Lexa;->f:Ljava/lang/String;
+    sget p1, Lfy4;->o:I
 
-    invoke-static {v0}, Lms8;->u(Ljava/lang/CharSequence;)Z
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result v0
+    move-result-wide p1
 
-    if-eqz v0, :cond_0
+    sget-object v0, Lky4;->c:Lky4;
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-static {p1, p2, v0}, Lr94;->c0(JLky4;)J
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-wide p1
 
-    iget-object v1, p0, Lexa;->e:Ljava/lang/String;
+    iput-wide p1, p0, Lexa;->c:J
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, " "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lexa;->f:Ljava/lang/String;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    iget-object p0, p0, Lexa;->e:Ljava/lang/String;
-
-    return-object p0
+    return-void
 .end method

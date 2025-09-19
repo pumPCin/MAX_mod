@@ -1,127 +1,152 @@
-.class public final Lkvg;
-.super Lrsg;
+.class public final enum Lkvg;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final g:Landroid/os/IBinder;
+# static fields
+.field public static final enum X:Lkvg;
 
-.field public final synthetic h:Lcom/google/android/gms/common/internal/a;
+.field public static final enum Y:Lkvg;
+
+.field public static final synthetic Z:[Lkvg;
+
+.field public static final enum a:Lkvg;
+
+.field public static final enum b:Lkvg;
+
+.field public static final enum c:Lkvg;
+
+.field public static final enum o:Lkvg;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/gms/common/internal/a;ILandroid/os/IBinder;Landroid/os/Bundle;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 8
 
-    iput-object p1, p0, Lkvg;->h:Lcom/google/android/gms/common/internal/a;
+    new-instance v0, Lkvg;
 
-    invoke-direct {p0, p1, p2, p4}, Lrsg;-><init>(Lcom/google/android/gms/common/internal/a;ILandroid/os/Bundle;)V
+    const-string v1, "ENQUEUED"
 
-    iput-object p3, p0, Lkvg;->g:Landroid/os/IBinder;
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lkvg;->a:Lkvg;
+
+    new-instance v1, Lkvg;
+
+    const-string v2, "RUNNING"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lkvg;->b:Lkvg;
+
+    new-instance v2, Lkvg;
+
+    const-string v3, "SUCCEEDED"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lkvg;->c:Lkvg;
+
+    new-instance v3, Lkvg;
+
+    const-string v4, "FAILED"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lkvg;->o:Lkvg;
+
+    new-instance v4, Lkvg;
+
+    const-string v5, "BLOCKED"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Lkvg;->X:Lkvg;
+
+    new-instance v5, Lkvg;
+
+    const-string v6, "CANCELLED"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lkvg;->Y:Lkvg;
+
+    filled-new-array/range {v0 .. v5}, [Lkvg;
+
+    move-result-object v0
+
+    sput-object v0, Lkvg;->Z:[Lkvg;
 
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lkvg;
+    .registers 2
+
+    const-class v0, Lkvg;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lkvg;
+
+    return-object p0
+.end method
+
+.method public static values()[Lkvg;
+    .registers 1
+
+    sget-object v0, Lkvg;->Z:[Lkvg;
+
+    invoke-virtual {v0}, [Lkvg;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lkvg;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Llk3;)V
+.method public final a()Z
     .registers 2
 
-    iget-object p0, p0, Lkvg;->h:Lcom/google/android/gms/common/internal/a;
+    sget-object v0, Lkvg;->c:Lkvg;
 
-    iget-object p0, p0, Lcom/google/android/gms/common/internal/a;->u0:Lize;
+    if-eq p0, v0, :cond_1
 
-    if-eqz p0, :cond_0
+    sget-object v0, Lkvg;->o:Lkvg;
 
-    iget-object p0, p0, Lize;->a:Ljava/lang/Object;
+    if-eq p0, v0, :cond_1
 
-    check-cast p0, Lhi6;
+    sget-object v0, Lkvg;->Y:Lkvg;
 
-    invoke-interface {p0, p1}, Lhi6;->j(Llk3;)V
-
-    :cond_0
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    return-void
-.end method
-
-.method public final b()Z
-    .registers 4
-
-    iget-object v0, p0, Lkvg;->g:Landroid/os/IBinder;
-
-    :try_start_0
-    invoke-static {v0}, Lmtg;->l(Ljava/lang/Object;)V
-
-    invoke-interface {v0}, Landroid/os/IBinder;->getInterfaceDescriptor()Ljava/lang/String;
-
-    move-result-object v1
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    iget-object p0, p0, Lkvg;->h:Lcom/google/android/gms/common/internal/a;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/common/internal/a;->p()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
+    if-ne p0, v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/common/internal/a;->l(Landroid/os/IBinder;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x4
-
-    invoke-static {p0, v1, v2, v0}, Lcom/google/android/gms/common/internal/a;->u(Lcom/google/android/gms/common/internal/a;IILandroid/os/IInterface;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const/4 v1, 0x3
-
-    invoke-static {p0, v1, v2, v0}, Lcom/google/android/gms/common/internal/a;->u(Lcom/google/android/gms/common/internal/a;IILandroid/os/IInterface;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    :cond_1
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/android/gms/common/internal/a;->y0:Llk3;
-
-    iget-object p0, p0, Lcom/google/android/gms/common/internal/a;->t0:Lkpg;
-
-    if-eqz p0, :cond_2
-
-    iget-object p0, p0, Lkpg;->a:Ljava/lang/Object;
-
-    check-cast p0, Lgi6;
-
-    invoke-interface {p0}, Lgi6;->onConnected()V
-
-    :cond_2
-    const/4 p0, 0x1
+    const/4 p0, 0x0
 
     return p0
 
-    :catch_0
-    :cond_3
+    :cond_1
     :goto_0
-    const/4 p0, 0x0
+    const/4 p0, 0x1
 
     return p0
 .end method

@@ -1,63 +1,41 @@
 .class public final Lkkd;
-.super Lqd0;
+.super Lzkd;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lkkd;
+# instance fields
+.field public final k:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(JJLjava/util/List;)V
+    .registers 6
 
-    new-instance v0, Lkkd;
+    invoke-direct {p0, p3, p4, p5}, Lzkd;-><init>(JLjava/util/List;)V
 
-    const/16 v1, 0x12
-
-    invoke-direct {v0, v1}, Lqd0;-><init>(I)V
-
-    sput-object v0, Lkkd;->b:Lkkd;
+    iput-wide p1, p0, Lkkd;->k:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final a()Lcld;
+    .registers 2
 
-    const/4 v0, 0x1
+    new-instance v0, Llkd;
 
-    if-ne p0, p1, :cond_0
+    invoke-direct {v0, p0}, Llkd;-><init>(Lkkd;)V
 
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lkkd;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
+    return-object v0
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final b()Lald;
+    .registers 2
 
-    const p0, -0x631275ef
+    new-instance v0, Llkd;
 
-    return p0
-.end method
+    invoke-direct {v0, p0}, Llkd;-><init>(Lkkd;)V
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "AvatarsBottomSheet"
-
-    return-object p0
+    return-object v0
 .end method

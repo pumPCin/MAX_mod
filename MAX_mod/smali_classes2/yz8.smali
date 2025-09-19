@@ -1,125 +1,55 @@
 .class public final Lyz8;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:J
+.field public X:Ljava/util/List;
 
-.field public final b:Lw8c;
+.field public Y:Z
+
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Lzz8;
+
+.field public final synthetic r0:Lzz8;
+
+.field public s0:I
 
 
 # direct methods
-.method public constructor <init>(JLw8c;)V
-    .registers 4
+.method public constructor <init>(Lzz8;Ljx3;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lyz8;->r0:Lzz8;
 
-    iput-wide p1, p0, Lyz8;->a:J
-
-    iput-object p3, p0, Lyz8;->b:Lw8c;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 9
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lyz8;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lyz8;
-
-    iget-wide v3, p0, Lyz8;->a:J
-
-    iget-wide v5, p1, Lyz8;->a:J
-
-    cmp-long v1, v3, v5
-
-    if-eqz v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Lyz8;->b:Lw8c;
-
-    iget-object p1, p1, Lyz8;->b:Lw8c;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    iget-wide v0, p0, Lyz8;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lyz8;->b:Lw8c;
-
-    invoke-virtual {p0}, Lw8c;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-object p1, p0, Lyz8;->Z:Ljava/lang/Object;
 
-    const-string v1, "MessageReactionEntryData(userId="
+    iget p1, p0, Lyz8;->s0:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/high16 v0, -0x80000000
 
-    iget-wide v1, p0, Lyz8;->a:J
+    or-int/2addr p1, v0
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iput p1, p0, Lyz8;->s0:I
 
-    const-string v1, ", reaction="
+    const/4 p1, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    iget-object p0, p0, Lyz8;->b:Lw8c;
+    iget-object v1, p0, Lyz8;->r0:Lzz8;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, p0, v0, p1}, Lzz8;->a(Ljx3;Ljava/util/List;Z)Ljava/lang/Object;
 
     move-result-object p0
 

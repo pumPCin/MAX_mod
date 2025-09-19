@@ -3,22 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lzb6;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
+.field public final synthetic b:Lbxc;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;I)V
+.method public synthetic constructor <init>(Lbxc;I)V
     .registers 3
 
     iput p2, p0, Lywc;->a:I
 
-    iput-object p1, p0, Lywc;->b:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
+    iput-object p1, p0, Lywc;->b:Lbxc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,75 +27,62 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 2
 
-    iget p1, p0, Lywc;->a:I
+    iget v0, p0, Lywc;->a:I
 
-    packed-switch p1, :pswitch_data_0
+    iget-object p0, p0, Lywc;->b:Lbxc;
 
-    const-string p1, "ScheduledSendPickerDialogFragment"
+    packed-switch v0, :pswitch_data_0
 
-    const-string v0, "handle nav click"
+    iget-object p0, p0, Lbxc;->a:Lfxc;
 
-    invoke-static {p1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance p1, Lzwc;
-
-    iget-object p0, p0, Lywc;->b:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
-
-    iget-object v0, p0, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;->A1:Ljava/lang/Object;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/Parcelable;
-
-    invoke-direct {p1, v0}, Lzwc;-><init>(Landroid/os/Parcelable;)V
-
-    invoke-virtual {p0, p1}, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;->c1(Lbxc;)V
-
-    invoke-virtual {p0}, Lcom/google/android/material/bottomsheet/BottomSheetDialogFragment;->S0()V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lywc;->b:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
-
-    invoke-virtual {p0}, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;->b1()Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerViewModel;
+    invoke-virtual {p0}, Lfxc;->m()Lexc;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p0, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;
 
-    const-string p1, "ScheduledSendPickerViewModel"
+    invoke-virtual {p0}, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;->E()Lj79;
 
-    const-string v0, "onSendClick"
+    move-result-object p0
 
-    invoke-static {p1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    return-object p0
 
-    invoke-virtual {p0}, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerViewModel;->h()Z
+    :pswitch_0
+    iget-object p0, p0, Lbxc;->a:Lfxc;
 
-    move-result p1
+    invoke-virtual {p0}, Lfxc;->m()Lexc;
 
-    if-eqz p1, :cond_0
+    move-result-object p0
 
-    iget-object p0, p0, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerViewModel;->m:Ln4e;
+    check-cast p0, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;
 
-    new-instance p1, Lgp9;
+    invoke-virtual {p0}, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;->N()Lq3d;
 
-    invoke-direct {p1}, Lgp9;-><init>()V
+    move-result-object p0
 
-    const/4 v0, 0x0
+    return-object p0
 
-    invoke-virtual {p0, v0, p1}, Ln4e;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :pswitch_1
+    iget-object p0, p0, Lbxc;->a:Lfxc;
 
-    :cond_0
-    return-void
+    invoke-virtual {p0}, Lfxc;->m()Lexc;
+
+    move-result-object p0
+
+    check-cast p0, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;
+
+    invoke-virtual {p0}, Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;->v()Lqu2;
+
+    move-result-object p0
+
+    return-object p0
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

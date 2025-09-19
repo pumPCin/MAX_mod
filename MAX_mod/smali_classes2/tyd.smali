@@ -1,141 +1,184 @@
-.class public final enum Ltyd;
-.super Ljava/lang/Enum;
+.class public final Ltyd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final enum X:Ltyd;
-
-.field public static final enum Y:Ltyd;
-
-.field public static final synthetic Z:[Ltyd;
-
-.field public static final enum b:Ltyd;
-
-.field public static final enum c:Ltyd;
-
-.field public static final synthetic n0:Lc65;
-
-.field public static final enum o:Ltyd;
+# interfaces
+.implements Lnob;
 
 
 # instance fields
-.field public final a:I
+.field public final a:Lqe5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 9
-
-    new-instance v0, Ltyd;
-
-    const-string v1, "DIALOG_USER_ID"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v1, v2, v3}, Ltyd;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Ltyd;->b:Ltyd;
-
-    new-instance v1, Ltyd;
-
-    const-string v2, "DIALOG_BOT_ID"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v1, v2, v3, v4}, Ltyd;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Ltyd;->c:Ltyd;
-
-    new-instance v2, Ltyd;
-
-    const-string v3, "CHAT_ID"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v2, v3, v4, v5}, Ltyd;-><init>(Ljava/lang/String;II)V
-
-    sput-object v2, Ltyd;->o:Ltyd;
-
-    new-instance v3, Ltyd;
-
-    const-string v4, "CHANNEL_ID"
-
-    const/4 v6, 0x4
-
-    invoke-direct {v3, v4, v5, v6}, Ltyd;-><init>(Ljava/lang/String;II)V
-
-    new-instance v4, Ltyd;
-
-    const-string v5, "FOLDER_ID"
-
-    const/4 v7, 0x5
-
-    invoke-direct {v4, v5, v6, v7}, Ltyd;-><init>(Ljava/lang/String;II)V
-
-    sput-object v4, Ltyd;->X:Ltyd;
-
-    new-instance v5, Ltyd;
-
-    const-string v6, "WEBAPP_ID"
-
-    const/4 v8, 0x6
-
-    invoke-direct {v5, v6, v7, v8}, Ltyd;-><init>(Ljava/lang/String;II)V
-
-    sput-object v5, Ltyd;->Y:Ltyd;
-
-    filled-new-array/range {v0 .. v5}, [Ltyd;
-
-    move-result-object v0
-
-    sput-object v0, Ltyd;->Z:[Ltyd;
-
-    new-instance v1, Lc65;
-
-    invoke-direct {v1, v0}, Lc65;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Ltyd;->n0:Lc65;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;II)V
-    .registers 4
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput p3, p0, Ltyd;->a:I
-
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Ltyd;
+.method public constructor <init>(Lqe5;)V
     .registers 2
 
-    const-class v0, Ltyd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iput-object p1, p0, Ltyd;->a:Lqe5;
 
-    move-result-object p0
+    return-void
+.end method
 
-    check-cast p0, Ltyd;
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Ltyd;
+
+    if-nez v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Ltyd;
+
+    iget-object p0, p0, Ltyd;->a:Lqe5;
+
+    iget-object p1, p1, Ltyd;->a:Lqe5;
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_2
+    return v0
+.end method
+
+.method public final getItemId()J
+    .registers 3
+
+    const/16 p0, 0x10
+
+    int-to-long v0, p0
+
+    return-wide v0
+.end method
+
+.method public final h(Lts7;)Z
+    .registers 4
+
+    const/16 p0, 0x10
+
+    int-to-long v0, p0
+
+    invoke-interface {p1}, Lts7;->getItemId()J
+
+    move-result-wide p0
+
+    cmp-long p0, v0, p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    iget-object p0, p0, Ltyd;->a:Lqe5;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    mul-int/lit8 p0, p0, 0x1f
+
+    const v0, -0x7ffffff0
+
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result v0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public final k(Lts7;)Ljava/lang/Object;
+    .registers 2
+
+    instance-of p0, p1, Ltyd;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Lfpb;
+
+    check-cast p1, Ltyd;
+
+    iget-object p1, p1, Ltyd;->a:Lqe5;
+
+    invoke-direct {p0, p1}, Lfpb;-><init>(Lqe5;)V
 
     return-object p0
 .end method
 
-.method public static values()[Ltyd;
+.method public final m()I
     .registers 1
 
-    sget-object v0, Ltyd;->Z:[Ltyd;
+    const p0, -0x7ffffff0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    return p0
+.end method
 
-    move-result-object v0
+.method public final q(Lts7;)Z
+    .registers 2
 
-    check-cast v0, [Ltyd;
+    invoke-virtual {p0, p1}, Ltyd;->equals(Ljava/lang/Object;)Z
 
-    return-object v0
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ShortLinkInputItem(state="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Ltyd;->a:Lqe5;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ", viewType=-2147483632)"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

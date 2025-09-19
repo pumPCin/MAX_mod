@@ -1,53 +1,101 @@
-.class public final Lg4g;
-.super Lcx3;
+.class public final synthetic Lg4g;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lpm3;
 
 
 # instance fields
-.field public X:Lyn0;
+.field public final synthetic a:I
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lp4g;
-
-.field public n0:I
-
-.field public o:Lp4g;
+.field public final synthetic b:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
 
 
 # direct methods
-.method public constructor <init>(Lp4g;Lcx3;)V
+.method public synthetic constructor <init>(Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;I)V
     .registers 3
 
-    iput-object p1, p0, Lg4g;->Z:Lp4g;
+    iput p2, p0, Lg4g;->a:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lg4g;->b:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final accept(Ljava/lang/Object;)V
+    .registers 6
 
-    iput-object p1, p0, Lg4g;->Y:Ljava/lang/Object;
+    iget v0, p0, Lg4g;->a:I
 
-    iget p1, p0, Lg4g;->n0:I
+    iget-object p0, p0, Lg4g;->b:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
 
-    const/high16 v0, -0x80000000
+    packed-switch v0, :pswitch_data_0
 
-    or-int/2addr p1, v0
+    check-cast p1, Landroid/graphics/Bitmap;
 
-    iput p1, p0, Lg4g;->n0:I
+    sget v0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->D0:I
 
-    iget-object p1, p0, Lg4g;->Z:Lp4g;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    const/4 v0, 0x0
+    move-result-wide v0
 
-    invoke-virtual {p1, v0, p0}, Lp4g;->i(Lyn0;Lcx3;)Ljava/lang/Object;
+    iput-wide v0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->A0:J
 
-    move-result-object p0
+    iget-object v0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->t0:Lok7;
 
-    return-object p0
+    invoke-static {v0}, Ls1d;->b(Loq4;)V
+
+    iget-object p0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->c:Lru/ok/messages/video/widgets/VideoFramePreview;
+
+    iget-object v0, p0, Lru/ok/messages/video/widgets/VideoFramePreview;->r0:Landroidx/appcompat/widget/AppCompatImageView;
+
+    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Lru/ok/messages/video/widgets/VideoFramePreview;->a(Z)V
+
+    return-void
+
+    :pswitch_0
+    check-cast p1, Ljava/lang/Long;
+
+    sget p1, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->D0:I
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    iget-wide v2, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->A0:J
+
+    sub-long/2addr v0, v2
+
+    const-wide/16 v2, 0x3e8
+
+    cmp-long p1, v0, v2
+
+    if-lez p1, :cond_0
+
+    iget-object p0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->c:Lru/ok/messages/video/widgets/VideoFramePreview;
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Lru/ok/messages/video/widgets/VideoFramePreview;->a(Z)V
+
+    :cond_0
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

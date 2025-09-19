@@ -1,97 +1,22 @@
-.class public final enum Llra;
-.super Ljava/lang/Enum;
+.class public final Llra;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lrra;
 
-# static fields
-.field public static final synthetic X:[Llra;
 
-.field public static final enum a:Llra;
-
-.field public static final enum b:Llra;
-
-.field public static final enum c:Llra;
-
-.field public static final enum o:Llra;
+# instance fields
+.field public final a:Lbc6;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
-
-    new-instance v0, Llra;
-
-    const-string v1, "Loading"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Llra;->a:Llra;
-
-    new-instance v1, Llra;
-
-    const-string v2, "PartialSuccess"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Llra;->b:Llra;
-
-    new-instance v2, Llra;
-
-    const-string v3, "Success"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Llra;->c:Llra;
-
-    new-instance v3, Llra;
-
-    const-string v4, "Error"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Llra;->o:Llra;
-
-    filled-new-array {v0, v1, v2, v3}, [Llra;
-
-    move-result-object v0
-
-    sput-object v0, Llra;->X:[Llra;
-
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Llra;
+.method public constructor <init>(Lbc6;)V
     .registers 2
 
-    const-class v0, Llra;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iput-object p1, p0, Llra;->a:Lbc6;
 
-    move-result-object p0
-
-    check-cast p0, Llra;
-
-    return-object p0
-.end method
-
-.method public static values()[Llra;
-    .registers 1
-
-    sget-object v0, Llra;->X:[Llra;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Llra;
-
-    return-object v0
+    return-void
 .end method

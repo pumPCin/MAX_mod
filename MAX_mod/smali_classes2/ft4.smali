@@ -1,49 +1,67 @@
 .class public final Lft4;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lru/ok/tamtam/android/db/room/OneMeRoomDatabase_Impl;
+.field public X:Luz8;
 
-.field public final b:Llh;
+.field public Y:J
 
-.field public final c:Lmh;
+.field public synthetic Z:Ljava/lang/Object;
 
-.field public final d:Lmh;
+.field public o:Lgt4;
+
+.field public final synthetic r0:Lgt4;
+
+.field public s0:I
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase_Impl;)V
-    .registers 4
+.method public constructor <init>(Lgt4;Ljx3;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lft4;->r0:Lgt4;
 
-    iput-object p1, p0, Lft4;->a:Lru/ok/tamtam/android/db/room/OneMeRoomDatabase_Impl;
-
-    new-instance v0, Llh;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, p1, v1}, Llh;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lft4;->b:Llh;
-
-    new-instance v0, Lmh;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, p1, v1}, Lmh;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lft4;->c:Lmh;
-
-    new-instance v0, Lmh;
-
-    const/16 v1, 0x11
-
-    invoke-direct {v0, p1, v1}, Lmh;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lft4;->d:Lmh;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 12
+
+    iput-object p1, p0, Lft4;->Z:Ljava/lang/Object;
+
+    iget p1, p0, Lft4;->s0:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lft4;->s0:I
+
+    const-wide/16 v6, 0x0
+
+    const/4 v8, 0x0
+
+    iget-object v0, p0, Lft4;->r0:Lgt4;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const-wide/16 v4, 0x0
+
+    move-object v9, p0
+
+    invoke-virtual/range {v0 .. v9}, Lgt4;->k(Luz8;Lw00;IJJLjava/io/File;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

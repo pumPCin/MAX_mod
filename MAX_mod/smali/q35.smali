@@ -1,142 +1,123 @@
 .class public final Lq35;
-.super Ljava/lang/Object;
+.super Lz15;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lq45;
+.field public final synthetic a:I
 
-.field public final b:[B
+.field public final b:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>(Lq45;[B)V
+.method public constructor <init>(Landroid/widget/EditText;)V
     .registers 3
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lq35;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p1, :cond_1
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
-    if-eqz p2, :cond_0
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object p1, p0, Lq35;->a:Lq45;
-
-    iput-object p2, p0, Lq35;->b:[B
+    iput-object v0, p0, Lq35;->b:Ljava/lang/ref/WeakReference;
 
     return-void
+.end method
 
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
+.method public constructor <init>(Landroidx/appcompat/widget/SwitchCompat;)V
+    .registers 3
 
-    const-string p1, "bytes is null"
+    const/4 v0, 0x1
 
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    iput v0, p0, Lq35;->a:I
 
-    throw p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    :cond_1
-    new-instance p0, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/ref/WeakReference;
 
-    const-string p1, "encoding is null"
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    iput-object v0, p0, Lq35;->b:Ljava/lang/ref/WeakReference;
 
-    throw p0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public h(Ljava/lang/Throwable;)V
+    .registers 2
 
-    if-ne p0, p1, :cond_0
+    iget p1, p0, Lq35;->a:I
 
-    const/4 p0, 0x1
+    packed-switch p1, :pswitch_data_0
 
-    return p0
+    return-void
 
-    :cond_0
-    instance-of v0, p1, Lq35;
+    :pswitch_0
+    iget-object p0, p0, Lq35;->b:Ljava/lang/ref/WeakReference;
 
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_1
-
-    return v1
-
-    :cond_1
-    check-cast p1, Lq35;
-
-    iget-object v0, p0, Lq35;->a:Lq45;
-
-    iget-object v2, p1, Lq35;->a:Lq45;
-
-    invoke-virtual {v0, v2}, Lq45;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    return v1
-
-    :cond_2
-    iget-object p0, p0, Lq35;->b:[B
-
-    iget-object p1, p1, Lq35;->b:[B
-
-    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([B[B)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    iget-object v0, p0, Lq35;->a:Lq45;
-
-    invoke-virtual {v0}, Lq45;->hashCode()I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v1
-
-    iget-object p0, p0, Lq35;->b:[B
-
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([B)I
-
-    move-result p0
-
-    xor-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "EncodedPayload{encoding="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lq35;->a:Lq45;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ", bytes=[...]}"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Landroidx/appcompat/widget/SwitchCompat;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Landroidx/appcompat/widget/SwitchCompat;->d()V
+
+    :cond_0
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final i()V
+    .registers 2
+
+    iget v0, p0, Lq35;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lq35;->b:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroidx/appcompat/widget/SwitchCompat;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Landroidx/appcompat/widget/SwitchCompat;->d()V
+
+    :cond_0
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lq35;->b:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/widget/EditText;
+
+    const/4 v0, 0x1
+
+    invoke-static {p0, v0}, Ls35;->a(Landroid/widget/EditText;I)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

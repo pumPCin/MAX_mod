@@ -1,77 +1,48 @@
 .class public final Lc8b;
-.super Lb8b;
-.source "SourceFile"
+.super Ljx3;
 
 
 # instance fields
-.field public final c:Ljava/lang/Object;
+.field public X:I
+
+.field public final synthetic Y:Lhc9;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 2
+.method public constructor <init>(Lhc9;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0, p1}, Lb8b;-><init>(I)V
+    iput-object p1, p0, Lc8b;->Y:Lhc9;
 
-    new-instance p1, Ljava/lang/Object;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lc8b;->c:Ljava/lang/Object;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final f(Ljava/lang/Object;)Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-object v0, p0, Lc8b;->c:Ljava/lang/Object;
+    iput-object p1, p0, Lc8b;->o:Ljava/lang/Object;
 
-    monitor-enter v0
+    iget p1, p0, Lc8b;->X:I
 
-    :try_start_0
-    invoke-super {p0, p1}, Lb8b;->f(Ljava/lang/Object;)Z
+    const/high16 v0, -0x80000000
 
-    move-result p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    or-int/2addr p1, v0
 
-    monitor-exit v0
+    iput p1, p0, Lc8b;->X:I
 
-    return p0
+    iget-object p1, p0, Lc8b;->Y:Lhc9;
 
-    :catchall_0
-    move-exception p0
+    const/4 v0, 0x0
 
-    monitor-exit v0
-
-    throw p0
-.end method
-
-.method public final g()Ljava/lang/Object;
-    .registers 2
-
-    iget-object v0, p0, Lc8b;->c:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-super {p0}, Lb8b;->g()Ljava/lang/Object;
+    invoke-virtual {p1, v0, p0}, Lhc9;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v0
 
     return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-
-    throw p0
 .end method

@@ -1,69 +1,68 @@
-.class public final enum Lv8a;
-.super Ljava/lang/Enum;
+.class public final Lv8a;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbc6;
 
-# static fields
-.field public static final enum a:Lv8a;
 
-.field public static final synthetic b:[Lv8a;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lnic;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public synthetic constructor <init>(Lnic;I)V
+    .registers 3
 
-    new-instance v0, Lv8a;
+    iput p2, p0, Lv8a;->a:I
 
-    const-string v1, "IDLE"
+    iput-object p1, p0, Lv8a;->b:Lnic;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lv8a;->a:Lv8a;
-
-    new-instance v1, Lv8a;
-
-    const-string v2, "LOADING"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    filled-new-array {v0, v1}, [Lv8a;
-
-    move-result-object v0
-
-    sput-object v0, Lv8a;->b:[Lv8a;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lv8a;
-    .registers 2
 
-    const-class v0, Lv8a;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget v0, p0, Lv8a;->a:I
 
-    move-result-object p0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p0, Lv8a;
+    check-cast p1, Ljava/lang/Throwable;
+
+    iget-object p0, p0, Lv8a;->b:Lnic;
+
+    invoke-virtual {p0}, Lnic;->d()V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
-.end method
 
-.method public static values()[Lv8a;
-    .registers 1
+    :pswitch_0
+    check-cast p1, Ljava/lang/Throwable;
 
-    sget-object v0, Lv8a;->b:[Lv8a;
+    :try_start_0
+    iget-object p0, p0, Lv8a;->b:Lnic;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Lnic;->d()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-object v0
+    :catchall_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    check-cast v0, [Lv8a;
+    return-object p0
 
-    return-object v0
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

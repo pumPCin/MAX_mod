@@ -1,67 +1,108 @@
-.class public interface abstract Lv4d;
-.super Ljava/lang/Object;
+.class public final Lv4d;
+.super Lpa5;
 .source "SourceFile"
 
 # interfaces
-.implements Lcjd;
+.implements Ljava/util/concurrent/ScheduledExecutorService;
+
+
+# instance fields
+.field public final u0:Ljava/util/concurrent/ScheduledExecutorService;
+
+
+# direct methods
+.method public constructor <init>(Ljava/util/concurrent/ScheduledExecutorService;Ljha;Lh42;)V
+    .registers 4
+
+    invoke-direct {p0, p1, p2, p3}, Lpa5;-><init>(Ljava/util/concurrent/ExecutorService;Ljha;Lbc6;)V
+
+    iput-object p1, p0, Lv4d;->u0:Ljava/util/concurrent/ScheduledExecutorService;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a()I
-.end method
+.method public final schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    .registers 7
 
-.method public b()Lvte;
-    .registers 1
+    invoke-virtual {p0}, Lpa5;->b()Lvbg;
 
-    const/4 p0, 0x0
+    move-result-object v0
 
-    return-object p0
-.end method
+    iget-object v1, p0, Lv4d;->u0:Ljava/util/concurrent/ScheduledExecutorService;
 
-.method public c()Lsid;
-    .registers 1
+    invoke-virtual {p0, p1, v0}, Lpa5;->i(Ljava/lang/Runnable;Lvbg;)Loa5;
 
-    const/4 p0, 0x0
+    move-result-object p0
 
-    return-object p0
-.end method
+    invoke-interface {v1, p0, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
 
-.method public d()Lvte;
-    .registers 1
-
-    const/4 p0, 0x0
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public e()Lzid;
-    .registers 1
+.method public final schedule(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    .registers 7
 
-    const/4 p0, 0x0
+    invoke-virtual {p0}, Lpa5;->b()Lvbg;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lv4d;->u0:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-virtual {p0, p1, v0}, Lpa5;->h(Ljava/util/concurrent/Callable;Lvbg;)Lna5;
+
+    move-result-object p0
+
+    invoke-interface {v1, p0, p2, p3, p4}, Ljava/util/concurrent/ScheduledExecutorService;->schedule(Ljava/util/concurrent/Callable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public f()Lhi7;
-    .registers 1
+.method public final scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    .registers 9
 
-    const/4 p0, 0x0
+    invoke-virtual {p0}, Lpa5;->b()Lvbg;
+
+    move-result-object v0
+
+    move-object v1, p0
+
+    iget-object p0, v1, Lv4d;->u0:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-virtual {v1, p1, v0}, Lpa5;->i(Ljava/lang/Runnable;Lvbg;)Loa5;
+
+    move-result-object p1
+
+    invoke-interface/range {p0 .. p6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public g()Z
-    .registers 1
+.method public final scheduleWithFixedDelay(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    .registers 9
 
-    const/4 p0, 0x1
+    invoke-virtual {p0}, Lpa5;->b()Lvbg;
 
-    return p0
-.end method
+    move-result-object v0
 
-.method public getType()Lbjd;
-    .registers 1
+    move-object v1, p0
 
-    sget-object p0, Lbjd;->b:Lbjd;
+    iget-object p0, v1, Lv4d;->u0:Ljava/util/concurrent/ScheduledExecutorService;
+
+    invoke-virtual {v1, p1, v0}, Lpa5;->i(Ljava/lang/Runnable;Lvbg;)Loa5;
+
+    move-result-object p1
+
+    invoke-interface/range {p0 .. p6}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+
+    move-result-object p0
 
     return-object p0
 .end method

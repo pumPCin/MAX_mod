@@ -1,112 +1,65 @@
 .class public final Lblb;
-.super Lnlb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lce2;
+.field public final synthetic a:Lz4;
 
 
 # direct methods
-.method public constructor <init>(Lce2;)V
+.method public constructor <init>(Lz4;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lblb;->a:Lce2;
+    iput-object p1, p0, Lblb;->a:Lz4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final a(J)Lio4;
+    .registers 9
 
-    const/4 v0, 0x1
+    new-instance v0, Lio4;
 
-    if-ne p0, p1, :cond_0
+    const-class v1, Lfv0;
 
-    return v0
+    iget-object p0, p0, Lblb;->a:Lz4;
 
-    :cond_0
-    instance-of v1, p1, Lblb;
+    invoke-virtual {p0, v1}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    move-result-object v1
 
-    if-nez v1, :cond_1
+    move-object v3, v1
 
-    return v2
+    check-cast v3, Lfv0;
 
-    :cond_1
-    check-cast p1, Lblb;
+    const-class v1, Lxwe;
 
-    iget-object p0, p0, Lblb;->a:Lce2;
+    invoke-virtual {p0, v1}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    iget-object p1, p1, Lblb;->a:Lce2;
+    move-result-object v1
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-object v4, v1
 
-    move-result p0
+    check-cast v4, Lxwe;
 
-    if-nez p0, :cond_2
+    const-class v1, Lyz2;
 
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final getItemId()J
-    .registers 3
-
-    const/16 p0, 0x4000
-
-    int-to-long v0, p0
-
-    return-wide v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lblb;->a:Lce2;
-
-    invoke-virtual {p0}, Lce2;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final m()I
-    .registers 1
-
-    const/16 p0, 0x4000
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ChatLinkItem(model="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lblb;->a:Lce2;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v1}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    move-object v5, p0
+
+    check-cast v5, Lyz2;
+
+    move-wide v1, p1
+
+    invoke-direct/range {v0 .. v5}, Lio4;-><init>(JLfv0;Lxwe;Lyz2;)V
+
+    return-object v0
 .end method

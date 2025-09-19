@@ -1,64 +1,85 @@
-.class public final synthetic Lgka;
+.class public abstract Lgka;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/os/Handler$Callback;
+
+# static fields
+.field public static final a:I
+
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
 
 
-# virtual methods
-.method public final handleMessage(Landroid/os/Message;)Z
-    .registers 5
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
 
-    iget p0, p1, Landroid/os/Message;->what:I
+    sget v0, Lg4c;->contact_icon_corner:I
 
-    const/4 v0, 0x0
+    sput v0, Lgka;->a:I
 
-    if-nez p0, :cond_3
+    sget v0, Lg4c;->geo_icon_corner:I
 
-    sget-object p0, Lika;->a:Landroid/os/Handler;
+    sput v0, Lgka;->b:I
 
-    iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    sget v0, Lg4c;->ic_call_incoming_audio_24:I
 
-    check-cast p0, Lhka;
+    sput v0, Lgka;->c:I
 
-    sget-object p1, Lika;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sget v0, Lg4c;->ic_call_incoming_audio_missed_24:I
 
-    const/4 v1, 0x1
+    sput v0, Lgka;->d:I
 
-    invoke-virtual {p1, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    sget v0, Lg4c;->ic_call_incoming_video_missed_24:I
 
-    move-result v2
+    sput v0, Lgka;->e:I
 
-    if-eqz v2, :cond_2
+    sget v0, Lg4c;->ic_call_incomnig_video_24:I
 
-    sget-object v2, Lika;->b:Lhka;
+    sput v0, Lgka;->f:I
 
-    invoke-static {v2, p0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    sget v0, Lg4c;->ic_call_outgoing_audio_24:I
 
-    move-result v2
+    sput v0, Lgka;->g:I
 
-    if-nez v2, :cond_0
+    sget v0, Lg4c;->ic_call_outgoing_video_24:I
 
-    sget-object v2, Lika;->c:Lhka;
+    sput v0, Lgka;->h:I
 
-    invoke-static {v2, p0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    sget v0, Lg4c;->ic_chat_16:I
 
-    move-result v2
+    sput v0, Lgka;->i:I
 
-    if-eqz v2, :cond_1
+    sget v0, Lg4c;->ic_contact_16:I
 
-    :cond_0
-    sget-object v2, Leka;->a:Leka;
+    sput v0, Lgka;->j:I
 
-    invoke-static {p0, v2}, Lika;->a(Lhka;Leka;)V
+    sget v0, Lg4c;->link_icon_corner:I
 
-    :cond_1
-    invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    sput v0, Lgka;->k:I
 
-    :cond_2
-    return v1
+    sget v0, Lg4c;->miniapp_icon_corner:I
 
-    :cond_3
-    return v0
+    sput v0, Lgka;->l:I
+
+    return-void
 .end method

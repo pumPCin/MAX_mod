@@ -3,40 +3,85 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/lang/reflect/Field;
-
-
 # direct methods
-.method static constructor <clinit>()V
+.method public static a(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources$Theme;)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
+
+    return-void
+.end method
+
+.method public static b(Landroid/graphics/drawable/Drawable;)Z
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->canApplyTheme()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static c(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getColorFilter()Landroid/graphics/ColorFilter;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static d(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
+    .registers 5
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/xmlpull/v1/XmlPullParserException;,
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
+
+    return-void
+.end method
+
+.method public static e(Landroid/graphics/drawable/Drawable;FF)V
     .registers 3
 
-    const/4 v0, 0x0
+    invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
-    :try_start_0
-    const-class v1, Landroid/widget/AbsListView;
+    return-void
+.end method
 
-    const-string v2, "mIsChildViewEnabled"
+.method public static f(Landroid/graphics/drawable/Drawable;IIII)V
+    .registers 5
 
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setHotspotBounds(IIII)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    const/4 v1, 0x1
+.method public static g(Landroid/graphics/drawable/Drawable;I)V
+    .registers 2
 
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    goto :goto_0
+    return-void
+.end method
 
-    :catch_0
-    move-exception v1
+.method public static h(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
+    .registers 2
 
-    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    :goto_0
-    sput-object v0, Liv4;->a:Ljava/lang/reflect/Field;
+    return-void
+.end method
+
+.method public static i(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
     return-void
 .end method

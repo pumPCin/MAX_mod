@@ -1,110 +1,128 @@
 .class public final Lvgd;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lfhd;
+.field public final a:Ljava/util/LinkedHashMap;
 
 
 # direct methods
-.method public constructor <init>(Lfhd;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Ltgd;Lid7;Lbe4;)V
+    .registers 9
 
-    iput-object p1, p0, Lvgd;->Y:Lfhd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iget-object p2, p2, Lid7;->a:Ls04;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    sget-object v0, Lhx9;->a:Lhx9;
+
+    invoke-virtual {p2, v0}, Lf0;->plus(Lq04;)Lq04;
+
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+
+    iput-object v0, p0, Lvgd;->a:Ljava/util/LinkedHashMap;
+
+    const-string v0, "SELECT * FROM selected_mentions"
+
+    const/4 v1, 0x0
+
+    invoke-static {v1, v0}, Lvxc;->c(ILjava/lang/String;)Lvxc;
+
+    move-result-object v0
+
+    iget-object v1, p1, Ltgd;->b:Ljava/lang/Object;
+
+    check-cast v1, Lexc;
+
+    const-string v2, "selected_mentions"
+
+    filled-new-array {v2}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Lrwc;
+
+    const/4 v4, 0x4
+
+    invoke-direct {v3, p1, v4, v0}, Lrwc;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    new-instance p1, Li14;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, v1, v2, v3, v0}, Li14;-><init>(Lexc;[Ljava/lang/String;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)V
+
+    new-instance v1, Lc2d;
+
+    invoke-direct {v1, p1}, Lc2d;-><init>(Lpc6;)V
+
+    invoke-static {v1, p2}, Lo97;->e0(Lis5;Lq04;)Lis5;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lo97;->R(Lis5;)Lis5;
+
+    move-result-object p1
+
+    iget-object p2, p3, Lbe4;->a:Ls04;
+
+    invoke-static {p1, p2}, Lo97;->e0(Lis5;Lq04;)Lis5;
+
+    move-result-object p1
+
+    new-instance p3, Lugd;
+
+    invoke-direct {p3, p0, v0}, Lugd;-><init>(Lvgd;Lkotlin/coroutines/Continuation;)V
+
+    new-instance p0, Lnu5;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, p1, p3, v0}, Lnu5;-><init>(Lis5;Lpc6;I)V
+
+    invoke-static {p2}, Lb0b;->a(Lq04;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p1
+
+    invoke-static {p0, p1}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a(J)I
     .registers 3
 
-    check-cast p1, Lr04;
+    iget-object p0, p0, Lvgd;->a:Ljava/util/LinkedHashMap;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-virtual {p0, p1, p2}, Lvgd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lvgd;
+    check-cast p0, Lsgd;
 
-    sget-object p1, Lncf;->a:Lncf;
+    if-eqz p0, :cond_1
 
-    invoke-virtual {p0, p1}, Lvgd;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget p0, p0, Lsgd;->b:I
 
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Lvgd;
-
-    iget-object p0, p0, Lvgd;->Y:Lfhd;
-
-    invoke-direct {p1, p0, p2}, Lvgd;-><init>(Lfhd;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    iget v0, p0, Lvgd;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    if-nez p0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return p0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iput v1, p0, Lvgd;->X:I
-
-    iget-object p1, p0, Lvgd;->Y:Lfhd;
-
-    invoke-static {p1, p0}, Lfhd;->q(Lfhd;Lxie;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
     :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    const/4 p0, 0x1
 
-    return-object p0
+    return p0
 .end method

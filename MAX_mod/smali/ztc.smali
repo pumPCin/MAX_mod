@@ -1,136 +1,160 @@
 .class public final Lztc;
-.super Lauc;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field public a:Lytc;
+.field public final a:I
 
-.field public b:Z
+.field public final b:I
 
-.field public final synthetic c:Lbuc;
+.field public final c:F
+
+.field public final d:F
 
 
 # direct methods
-.method public constructor <init>(Lbuc;)V
-    .registers 2
+.method public constructor <init>(FIII)V
+    .registers 5
 
+    and-int/lit8 p4, p4, 0x4
+
+    if-eqz p4, :cond_0
+
+    const/high16 p1, 0x45000000    # 2048.0f
+
+    :cond_0
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lztc;->c:Lbuc;
+    iput p2, p0, Lztc;->a:I
 
-    const/4 p1, 0x1
+    iput p3, p0, Lztc;->b:I
 
-    iput-boolean p1, p0, Lztc;->b:Z
+    iput p1, p0, Lztc;->c:F
+
+    const p1, 0x3f2aaaab
+
+    iput p1, p0, Lztc;->d:F
+
+    const-string p0, "Check failed."
+
+    if-lez p2, :cond_2
+
+    if-lez p3, :cond_1
+
+    return-void
+
+    :cond_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    :cond_2
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method
+
+.method public constructor <init>(IFI)V
+    .registers 5
+
+    const/16 v0, 0x8
+
+    invoke-direct {p0, p2, p1, p3, v0}, Lztc;-><init>(FIII)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lytc;)V
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    iget-object v0, p0, Lztc;->a:Lytc;
+    const/4 v0, 0x1
 
-    if-ne p1, v0, :cond_1
+    if-ne p1, p0, :cond_0
 
-    iget-object p1, v0, Lytc;->o:Lytc;
-
-    iput-object p1, p0, Lztc;->a:Lytc;
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    const/4 p1, 0x0
+    instance-of v1, p1, Lztc;
 
-    :goto_0
-    iput-boolean p1, p0, Lztc;->b:Z
+    if-eqz v1, :cond_1
 
-    :cond_1
-    return-void
-.end method
+    check-cast p1, Lztc;
 
-.method public final hasNext()Z
-    .registers 4
+    iget v1, p1, Lztc;->a:I
 
-    iget-boolean v0, p0, Lztc;->b:Z
+    iget v2, p0, Lztc;->a:I
 
-    const/4 v1, 0x0
+    if-ne v2, v1, :cond_1
 
-    const/4 v2, 0x1
+    iget p0, p0, Lztc;->b:I
 
-    if-eqz v0, :cond_1
+    iget p1, p1, Lztc;->b:I
 
-    iget-object p0, p0, Lztc;->c:Lbuc;
+    if-ne p0, p1, :cond_1
 
-    iget-object p0, p0, Lbuc;->a:Lytc;
-
-    if-eqz p0, :cond_0
-
-    return v2
-
-    :cond_0
-    return v1
+    return v0
 
     :cond_1
-    iget-object p0, p0, Lztc;->a:Lytc;
+    const/4 p0, 0x0
 
-    if-eqz p0, :cond_2
-
-    iget-object p0, p0, Lytc;->c:Lytc;
-
-    if-eqz p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v1
+    return p0
 .end method
 
-.method public final next()Ljava/lang/Object;
+.method public final hashCode()I
     .registers 2
 
-    iget-boolean v0, p0, Lztc;->b:Z
+    iget v0, p0, Lztc;->a:I
 
-    if-eqz v0, :cond_0
+    add-int/lit8 v0, v0, 0x1f
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget p0, p0, Lztc;->b:I
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    iget v0, p0, Lztc;->a:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    iget p0, p0, Lztc;->b:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    filled-new-array {v0, p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    const/4 v0, 0x2
+
+    invoke-static {p0, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p0
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lztc;->b:Z
+    const-string v1, "%dx%d"
 
-    iget-object v0, p0, Lztc;->c:Lbuc;
+    invoke-static {v0, v1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    iget-object v0, v0, Lbuc;->a:Lytc;
-
-    iput-object v0, p0, Lztc;->a:Lytc;
-
-    goto :goto_1
-
-    :cond_0
-    iget-object v0, p0, Lztc;->a:Lytc;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, v0, Lytc;->c:Lytc;
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_0
-    iput-object v0, p0, Lztc;->a:Lytc;
-
-    :goto_1
-    iget-object p0, p0, Lztc;->a:Lytc;
+    move-result-object p0
 
     return-object p0
 .end method

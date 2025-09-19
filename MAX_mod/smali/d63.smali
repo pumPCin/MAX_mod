@@ -1,67 +1,168 @@
 .class public final Ld63;
-.super Ll3;
+.super Lh0;
 .source "SourceFile"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Ld63;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # instance fields
-.field public final a:Landroid/content/Intent;
+.field public final h:Lbod;
+
+.field public final i:Loa7;
+
+.field public final synthetic j:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Ldjb;Lbod;Loa7;I)V
+    .registers 5
 
-    new-instance v0, Lnlf;
+    iput p4, p0, Ld63;->j:I
 
-    const/16 v1, 0x14
+    iget-object p4, p2, Lmj0;->Y:Ljava/util/HashMap;
 
-    invoke-direct {v0, v1}, Lnlf;-><init>(I)V
+    invoke-direct {p0}, Lh0;-><init>()V
 
-    sput-object v0, Ld63;->CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object p2, p0, Ld63;->h:Lbod;
 
-    return-void
-.end method
+    iput-object p3, p0, Ld63;->i:Loa7;
 
-.method public constructor <init>(Landroid/content/Intent;)V
-    .registers 2
+    invoke-static {}, Lya6;->q()Lxa6;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p4, p0, Lh0;->a:Ljava/util/Map;
 
-    iput-object p1, p0, Ld63;->a:Landroid/content/Intent;
+    invoke-static {}, Lya6;->q()Lxa6;
+
+    invoke-virtual {p3, p2}, Loa7;->b(Lbod;)V
+
+    invoke-static {}, Lya6;->q()Lxa6;
+
+    new-instance p3, Lj3;
+
+    const/4 p4, 0x0
+
+    invoke-direct {p3, p4, p0}, Lj3;-><init>(ILjava/lang/Object;)V
+
+    invoke-interface {p1, p3, p2}, Ldjb;->a(Ldi0;Lejb;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+.method public final a()Z
+    .registers 2
 
-    const/16 v0, 0x4f45
-
-    invoke-static {p1, v0}, Las3;->v0(Landroid/os/Parcel;I)I
+    invoke-super {p0}, Lh0;->a()Z
 
     move-result v0
 
-    const/4 v1, 0x1
+    if-nez v0, :cond_0
 
-    iget-object p0, p0, Ld63;->a:Landroid/content/Intent;
+    const/4 p0, 0x0
 
-    invoke-static {p1, v1, p0, p2}, Las3;->q0(Landroid/os/Parcel;ILandroid/os/Parcelable;I)V
+    return p0
 
-    invoke-static {p1, v0}, Las3;->x0(Landroid/os/Parcel;I)V
+    :cond_0
+    invoke-virtual {p0}, Lh0;->h()Z
 
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Ld63;->i:Loa7;
+
+    iget-object p0, p0, Ld63;->h:Lbod;
+
+    invoke-virtual {v0, p0}, Loa7;->h(Lejb;)V
+
+    invoke-virtual {p0}, Lmj0;->e()V
+
+    :cond_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public b(Ljava/lang/Object;)V
+    .registers 2
+
+    iget p0, p0, Ld63;->j:I
+
+    packed-switch p0, :pswitch_data_0
+
+    return-void
+
+    :pswitch_0
+    check-cast p1, Lf63;
+
+    invoke-static {p1}, Lf63;->W(Lf63;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public e()Ljava/lang/Object;
+    .registers 2
+
+    iget v0, p0, Ld63;->j:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0}, Lh0;->e()Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    invoke-super {p0}, Lh0;->e()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lf63;
+
+    invoke-static {p0}, Lf63;->o(Lf63;)Lf63;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final o(Ljava/lang/Object;ILejb;)V
+    .registers 4
+
+    invoke-static {p2}, Ldi0;->a(I)Z
+
+    move-result p2
+
+    check-cast p3, Lmj0;
+
+    iget-object p3, p3, Lmj0;->Y:Ljava/util/HashMap;
+
+    invoke-virtual {p0, p1, p2, p3}, Lh0;->l(Ljava/lang/Object;ZLjava/util/Map;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    if-eqz p2, :cond_0
+
+    iget-object p1, p0, Ld63;->i:Loa7;
+
+    iget-object p0, p0, Ld63;->h:Lbod;
+
+    invoke-virtual {p1, p0}, Loa7;->g(Lejb;)V
+
+    :cond_0
     return-void
 .end method

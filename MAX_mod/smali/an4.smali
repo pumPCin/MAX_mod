@@ -1,39 +1,123 @@
 .class public final Lan4;
-.super Ljava/lang/Object;
+.super Lcb4;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
 
+# static fields
+.field public static final b:Lan4;
 
-# instance fields
-.field public final synthetic a:Landroidx/fragment/app/DialogFragment;
+.field public static final c:Lxa4;
+
+.field public static final d:Lxa4;
+
+.field public static final e:Lxa4;
+
+.field public static final f:Lxa4;
+
+.field public static final g:Lxa4;
+
+.field public static final h:Lxa4;
+
+.field public static final i:Lxa4;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/fragment/app/DialogFragment;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lan4;
 
-    iput-object p1, p0, Lan4;->a:Landroidx/fragment/app/DialogFragment;
+    invoke-direct {v0}, Lcb4;-><init>()V
 
-    return-void
-.end method
+    sput-object v0, Lan4;->b:Lan4;
 
+    const/4 v6, 0x0
 
-# virtual methods
-.method public final onDismiss(Landroid/content/DialogInterface;)V
-    .registers 2
+    new-array v2, v6, [Ljava/lang/String;
 
-    iget-object p0, p0, Lan4;->a:Landroidx/fragment/app/DialogFragment;
+    const/4 v4, 0x2
 
-    iget-object p1, p0, Landroidx/fragment/app/DialogFragment;->r1:Landroid/app/Dialog;
+    const/4 v5, 0x2
 
-    if-eqz p1, :cond_0
+    const-string v1, ":-1113596792"
 
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/DialogFragment;->onDismiss(Landroid/content/DialogInterface;)V
+    const/4 v3, 0x0
 
-    :cond_0
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lan4;->c:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const/16 v5, 0xa
+
+    const-string v1, ":settings/dev"
+
+    const/4 v4, 0x1
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lan4;->d:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v1, ":743233864"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lan4;->e:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v1, ":1462995683"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lan4;->f:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v1, ":-388796178"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lan4;->g:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v1, ":-1933980664"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lan4;->h:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v1, ":2046483142"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lan4;->i:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v1, ":59501677"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
     return-void
 .end method

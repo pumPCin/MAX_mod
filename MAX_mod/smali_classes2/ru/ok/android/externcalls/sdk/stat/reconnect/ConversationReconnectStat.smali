@@ -19,16 +19,16 @@
         "",
         "Lru/ok/android/externcalls/sdk/log/ExtLogger;",
         "statReporter",
-        "Lcz3;",
+        "Lkz3;",
         "cidProvider",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/log/ExtLogger;Lcz3;)V",
-        "Lncf;",
+        "(Lru/ok/android/externcalls/sdk/log/ExtLogger;Lkz3;)V",
+        "Lylf;",
         "onDisconnected",
         "()V",
         "onConnected",
         "Lru/ok/android/externcalls/sdk/log/ExtLogger;",
-        "Lcz3;",
+        "Lkz3;",
         "",
         "wasDisconnected",
         "Z",
@@ -54,7 +54,7 @@
 
 
 # instance fields
-.field private final cidProvider:Lcz3;
+.field private final cidProvider:Lkz3;
 
 .field private final statReporter:Lru/ok/android/externcalls/sdk/log/ExtLogger;
 
@@ -69,21 +69,21 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat$Companion;-><init>(Lwc4;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat$Companion;-><init>(Lld4;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->Companion:Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat$Companion;
 
     return-void
 .end method
 
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/log/ExtLogger;Lcz3;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/log/ExtLogger;Lkz3;)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->statReporter:Lru/ok/android/externcalls/sdk/log/ExtLogger;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lcz3;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lkz3;
 
     return-void
 .end method
@@ -102,17 +102,17 @@
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->statReporter:Lru/ok/android/externcalls/sdk/log/ExtLogger;
 
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lcz3;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lkz3;
 
-    check-cast v1, Ldz3;
+    check-cast v1, Llz3;
 
-    iget-object v1, v1, Ldz3;->a:Ljava/lang/String;
+    iget-object v1, v1, Llz3;->a:Ljava/lang/String;
 
     const-string v2, "0"
 
-    sget-object v3, Lb4e;->s0:Lb4e;
+    sget-object v3, Lmce;->w0:Lmce;
 
-    invoke-virtual {v0, v3, v1, v2}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->logSimple(Lb4e;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v3, v1, v2}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->logSimple(Lmce;Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v0, 0x0
 
@@ -130,17 +130,17 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->statReporter:Lru/ok/android/externcalls/sdk/log/ExtLogger;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lcz3;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stat/reconnect/ConversationReconnectStat;->cidProvider:Lkz3;
 
-    check-cast p0, Ldz3;
+    check-cast p0, Llz3;
 
-    iget-object p0, p0, Ldz3;->a:Ljava/lang/String;
+    iget-object p0, p0, Llz3;->a:Ljava/lang/String;
 
     const-string v1, "1"
 
-    sget-object v2, Lb4e;->s0:Lb4e;
+    sget-object v2, Lmce;->w0:Lmce;
 
-    invoke-virtual {v0, v2, p0, v1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->logSimple(Lb4e;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p0, v1}, Lru/ok/android/externcalls/sdk/log/ExtLogger;->logSimple(Lmce;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

@@ -1,51 +1,48 @@
 .class public final Lj4b;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.super Ljx3;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public X:I
 
-.field public final b:Lgga;
+.field public final synthetic Y:Leia;
 
-.field public final c:Lmc4;
-
-.field public final d:Ldle;
-
-.field public final e:Lg38;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lgga;Lmc4;)V
-    .registers 5
+.method public constructor <init>(Leia;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lj4b;->Y:Leia;
 
-    iput-object p1, p0, Lj4b;->a:Landroid/content/Context;
-
-    iput-object p2, p0, Lj4b;->b:Lgga;
-
-    iput-object p3, p0, Lj4b;->c:Lmc4;
-
-    new-instance p3, Ldga;
-
-    const/16 v0, 0xa
-
-    invoke-direct {p3, p1, v0}, Ldga;-><init>(Landroid/content/Context;I)V
-
-    new-instance v0, Ldle;
-
-    invoke-direct {v0, p3}, Ldle;-><init>(Lh96;)V
-
-    iput-object v0, p0, Lj4b;->d:Ldle;
-
-    new-instance p3, Lg38;
-
-    const/16 v0, 0x1a
-
-    invoke-direct {p3, p1, v0, p2}, Lg38;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    iput-object p3, p0, Lj4b;->e:Lg38;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iput-object p1, p0, Lj4b;->o:Ljava/lang/Object;
+
+    iget p1, p0, Lj4b;->X:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lj4b;->X:I
+
+    iget-object p1, p0, Lj4b;->Y:Leia;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Leia;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

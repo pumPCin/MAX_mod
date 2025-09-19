@@ -4,249 +4,304 @@
 
 
 # instance fields
-.field public a:Ljava/lang/String;
+.field public a:J
 
-.field public b:I
+.field public b:J
 
-.field public c:Z
+.field public c:J
 
-.field public d:I
-
-.field public e:Z
-
-.field public f:I
-
-.field public g:I
-
-.field public h:I
-
-.field public i:I
-
-.field public j:I
-
-.field public k:F
-
-.field public l:Ljava/lang/String;
-
-.field public m:I
-
-.field public n:I
-
-.field public o:Landroid/text/Layout$Alignment;
-
-.field public p:Landroid/text/Layout$Alignment;
-
-.field public q:I
-
-.field public r:Lqse;
-
-.field public s:F
+.field public final d:Ljava/lang/ThreadLocal;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public constructor <init>(J)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, -0x1
+    new-instance v0, Ljava/lang/ThreadLocal;
 
-    iput v0, p0, Lv6f;->f:I
+    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
-    iput v0, p0, Lv6f;->g:I
+    iput-object v0, p0, Lv6f;->d:Ljava/lang/ThreadLocal;
 
-    iput v0, p0, Lv6f;->h:I
-
-    iput v0, p0, Lv6f;->i:I
-
-    iput v0, p0, Lv6f;->j:I
-
-    iput v0, p0, Lv6f;->m:I
-
-    iput v0, p0, Lv6f;->n:I
-
-    iput v0, p0, Lv6f;->q:I
-
-    const v0, 0x7f7fffff    # Float.MAX_VALUE
-
-    iput v0, p0, Lv6f;->s:F
+    invoke-virtual {p0, p1, p2}, Lv6f;->d(J)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lv6f;)V
-    .registers 6
+.method public final declared-synchronized a(J)J
+    .registers 7
 
-    if-eqz p1, :cond_e
+    monitor-enter p0
 
-    iget-boolean v0, p0, Lv6f;->c:Z
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    const/4 v1, 0x1
+    cmp-long v2, p1, v0
 
-    if-nez v0, :cond_0
+    if-nez v2, :cond_0
 
-    iget-boolean v0, p1, Lv6f;->c:Z
+    monitor-exit p0
 
-    if-eqz v0, :cond_0
-
-    iget v0, p1, Lv6f;->b:I
-
-    iput v0, p0, Lv6f;->b:I
-
-    iput-boolean v1, p0, Lv6f;->c:Z
+    return-wide v0
 
     :cond_0
-    iget v0, p0, Lv6f;->h:I
+    :try_start_0
+    iget-wide v2, p0, Lv6f;->b:J
 
-    const/4 v2, -0x1
+    cmp-long v0, v2, v0
 
-    if-ne v0, v2, :cond_1
+    if-nez v0, :cond_2
 
-    iget v0, p1, Lv6f;->h:I
+    iget-wide v0, p0, Lv6f;->a:J
 
-    iput v0, p0, Lv6f;->h:I
+    const-wide v2, 0x7ffffffffffffffeL
+
+    cmp-long v2, v0, v2
+
+    if-nez v2, :cond_1
+
+    iget-object v0, p0, Lv6f;->d:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
 
     :cond_1
-    iget v0, p0, Lv6f;->i:I
+    :goto_0
+    sub-long/2addr v0, p1
 
-    if-ne v0, v2, :cond_2
+    iput-wide v0, p0, Lv6f;->b:J
 
-    iget v0, p1, Lv6f;->i:I
-
-    iput v0, p0, Lv6f;->i:I
+    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
     :cond_2
-    iget-object v0, p0, Lv6f;->a:Ljava/lang/String;
+    iput-wide p1, p0, Lv6f;->c:J
 
-    if-nez v0, :cond_3
+    iget-wide v0, p0, Lv6f;->b:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-object v0, p1, Lv6f;->a:Ljava/lang/String;
+    add-long/2addr p1, v0
 
-    if-eqz v0, :cond_3
+    monitor-exit p0
 
-    iput-object v0, p0, Lv6f;->a:Ljava/lang/String;
+    return-wide p1
 
-    :cond_3
-    iget v0, p0, Lv6f;->f:I
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-ne v0, v2, :cond_4
+    throw p1
+.end method
 
-    iget v0, p1, Lv6f;->f:I
+.method public final declared-synchronized b(J)J
+    .registers 15
 
-    iput v0, p0, Lv6f;->f:I
+    monitor-enter p0
 
-    :cond_4
-    iget v0, p0, Lv6f;->g:I
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-ne v0, v2, :cond_5
+    cmp-long v2, p1, v0
 
-    iget v0, p1, Lv6f;->g:I
+    if-nez v2, :cond_0
 
-    iput v0, p0, Lv6f;->g:I
+    monitor-exit p0
 
-    :cond_5
-    iget v0, p0, Lv6f;->n:I
+    return-wide v0
 
-    if-ne v0, v2, :cond_6
+    :cond_0
+    :try_start_0
+    iget-wide v2, p0, Lv6f;->c:J
 
-    iget v0, p1, Lv6f;->n:I
+    cmp-long v0, v2, v0
 
-    iput v0, p0, Lv6f;->n:I
+    const-wide/32 v4, 0xf4240
 
-    :cond_6
-    iget-object v0, p0, Lv6f;->o:Landroid/text/Layout$Alignment;
+    const-wide/32 v6, 0x15f90
 
-    if-nez v0, :cond_7
+    if-eqz v0, :cond_2
 
-    iget-object v0, p1, Lv6f;->o:Landroid/text/Layout$Alignment;
+    mul-long/2addr v2, v6
 
-    if-eqz v0, :cond_7
+    div-long/2addr v2, v4
 
-    iput-object v0, p0, Lv6f;->o:Landroid/text/Layout$Alignment;
+    const-wide v0, 0x100000000L
 
-    :cond_7
-    iget-object v0, p0, Lv6f;->p:Landroid/text/Layout$Alignment;
+    add-long/2addr v0, v2
 
-    if-nez v0, :cond_8
+    const-wide v8, 0x200000000L
 
-    iget-object v0, p1, Lv6f;->p:Landroid/text/Layout$Alignment;
+    div-long/2addr v0, v8
 
-    if-eqz v0, :cond_8
+    const-wide/16 v10, 0x1
 
-    iput-object v0, p0, Lv6f;->p:Landroid/text/Layout$Alignment;
+    sub-long v10, v0, v10
 
-    :cond_8
-    iget v0, p0, Lv6f;->q:I
+    mul-long/2addr v10, v8
 
-    if-ne v0, v2, :cond_9
+    add-long/2addr v10, p1
 
-    iget v0, p1, Lv6f;->q:I
+    mul-long/2addr v0, v8
 
-    iput v0, p0, Lv6f;->q:I
+    add-long/2addr v0, p1
 
-    :cond_9
-    iget v0, p0, Lv6f;->j:I
+    sub-long p1, v10, v2
 
-    if-ne v0, v2, :cond_a
+    invoke-static {p1, p2}, Ljava/lang/Math;->abs(J)J
 
-    iget v0, p1, Lv6f;->j:I
+    move-result-wide p1
 
-    iput v0, p0, Lv6f;->j:I
+    sub-long v2, v0, v2
 
-    iget v0, p1, Lv6f;->k:F
+    invoke-static {v2, v3}, Ljava/lang/Math;->abs(J)J
 
-    iput v0, p0, Lv6f;->k:F
+    move-result-wide v2
 
-    :cond_a
-    iget-object v0, p0, Lv6f;->r:Lqse;
+    cmp-long p1, p1, v2
 
-    if-nez v0, :cond_b
+    if-gez p1, :cond_1
 
-    iget-object v0, p1, Lv6f;->r:Lqse;
+    move-wide p1, v10
 
-    iput-object v0, p0, Lv6f;->r:Lqse;
+    goto :goto_0
 
-    :cond_b
-    iget v0, p0, Lv6f;->s:F
+    :cond_1
+    move-wide p1, v0
 
-    const v3, 0x7f7fffff    # Float.MAX_VALUE
+    goto :goto_0
 
-    cmpl-float v0, v0, v3
+    :catchall_0
+    move-exception p1
 
-    if-nez v0, :cond_c
+    goto :goto_1
 
-    iget v0, p1, Lv6f;->s:F
+    :cond_2
+    :goto_0
+    mul-long/2addr p1, v4
 
-    iput v0, p0, Lv6f;->s:F
+    div-long/2addr p1, v6
 
-    :cond_c
-    iget-boolean v0, p0, Lv6f;->e:Z
+    invoke-virtual {p0, p1, p2}, Lv6f;->a(J)J
 
-    if-nez v0, :cond_d
+    move-result-wide p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget-boolean v0, p1, Lv6f;->e:Z
+    monitor-exit p0
 
-    if-eqz v0, :cond_d
+    return-wide p1
 
-    iget v0, p1, Lv6f;->d:I
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iput v0, p0, Lv6f;->d:I
+    throw p1
+.end method
 
-    iput-boolean v1, p0, Lv6f;->e:Z
+.method public final declared-synchronized c()J
+    .registers 5
 
-    :cond_d
-    iget v0, p0, Lv6f;->m:I
+    monitor-enter p0
 
-    if-ne v0, v2, :cond_e
+    :try_start_0
+    iget-wide v0, p0, Lv6f;->a:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iget p1, p1, Lv6f;->m:I
+    const-wide v2, 0x7fffffffffffffffL
 
-    if-eq p1, v2, :cond_e
+    cmp-long v2, v0, v2
 
-    iput p1, p0, Lv6f;->m:I
+    if-eqz v2, :cond_0
 
-    :cond_e
+    const-wide v2, 0x7ffffffffffffffeL
+
+    cmp-long v2, v0, v2
+
+    if-nez v2, :cond_1
+
+    :cond_0
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    :cond_1
+    monitor-exit p0
+
+    return-wide v0
+
+    :catchall_0
+    move-exception v0
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized d(J)V
+    .registers 5
+
+    monitor-enter p0
+
+    :try_start_0
+    iput-wide p1, p0, Lv6f;->a:J
+
+    const-wide v0, 0x7fffffffffffffffL
+
+    cmp-long p1, p1, v0
+
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
+
+    if-nez p1, :cond_0
+
+    const-wide/16 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    move-wide p1, v0
+
+    :goto_0
+    iput-wide p1, p0, Lv6f;->b:J
+
+    iput-wide v0, p0, Lv6f;->c:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
     return-void
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
 .end method

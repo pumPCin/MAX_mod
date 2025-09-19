@@ -1,140 +1,109 @@
 .class public final Lis0;
-.super Lwk;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Lhs0;
+.field public final a:I
 
-.field public final c:Ljs0;
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(Lhs0;Ljs0;)V
-    .registers 4
+.method public constructor <init>(II)V
+    .registers 3
 
-    iget-object v0, p1, Lhs0;->a:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lwk;-><init>(Ljava/lang/String;)V
+    iput p1, p0, Lis0;->a:I
 
-    iput-object p1, p0, Lis0;->b:Lhs0;
-
-    iput-object p2, p0, Lis0;->c:Ljs0;
+    iput p2, p0, Lis0;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .registers 2
-
-    iget-object v0, p0, Lis0;->b:Lhs0;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p0, p0, Lis0;->c:Ljs0;
-
-    invoke-virtual {p0}, Ljs0;->canRepeat()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final b()Z
-    .registers 1
-
-    iget-object p0, p0, Lis0;->c:Ljs0;
-
-    invoke-virtual {p0}, Ljs0;->isSupplied()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final c()Z
-    .registers 2
-
-    iget-object v0, p0, Lis0;->b:Lhs0;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p0, p0, Lis0;->c:Ljs0;
-
-    invoke-virtual {p0}, Ljs0;->shouldPost()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final d(Lbf7;)V
+.method public final equals(Ljava/lang/Object;)Z
     .registers 4
 
-    iget-object v0, p0, Lis0;->c:Ljs0;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {v0}, Ljs0;->shouldSkipParam()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-void
+    goto :goto_1
 
     :cond_0
-    iget-object p0, p0, Lis0;->b:Lhs0;
+    instance-of v0, p1, Lis0;
 
-    iget-object p0, p0, Lhs0;->a:Ljava/lang/String;
+    if-nez v0, :cond_1
 
-    invoke-interface {p1, p0}, Lbf7;->k0(Ljava/lang/String;)Lbf7;
+    goto :goto_0
 
-    invoke-virtual {v0, p1}, Ljs0;->write(Lbf7;)V
+    :cond_1
+    check-cast p1, Lis0;
 
-    return-void
+    iget v0, p0, Lis0;->a:I
+
+    iget v1, p1, Lis0;->a:I
+
+    if-eq v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget p0, p0, Lis0;->b:I
+
+    iget p1, p1, Lis0;->b:I
+
+    if-eq p0, p1, :cond_3
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    iget v0, p0, Lis0;->a:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget p0, p0, Lis0;->b:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .registers 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, ", min="
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, ")"
 
-    iget-object v1, p0, Lwk;->a:Ljava/lang/String;
+    const-string v2, "BubbleBackgroundFocusSingleMediaColors(max="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v3, p0, Lis0;->a:I
 
-    const-string v1, " = "
+    iget p0, p0, Lis0;->b:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lis0;->c:Ljs0;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, v3, v0, p0, v1}, Lsg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

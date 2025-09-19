@@ -1,91 +1,73 @@
-.class public final Lzqa;
-.super Ljava/lang/Object;
+.class public final enum Lzqa;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lmkc;
+# static fields
+.field public static final enum a:Lzqa;
 
-.field public final b:Lyqa;
+.field public static final enum b:Lzqa;
 
-.field public final c:Ld7c;
-
-.field public final d:Lgt2;
-
-.field public final e:Lz9;
-
-.field public final f:Ld14;
-
-.field public volatile g:Ljh7;
-
-.field public volatile h:Lqxc;
-
-.field public i:D
-
-.field public j:J
-
-.field public final k:Lm1e;
-
-.field public l:D
-
-.field public m:D
-
-.field public final n:Lpz7;
-
-.field public final o:Lop0;
-
-.field public final p:Lop0;
+.field public static final synthetic c:[Lzqa;
 
 
 # direct methods
-.method public constructor <init>(Lmkc;Lyqa;Ld7c;Lgt2;Lz9;Ld14;)V
-    .registers 7
+.method static constructor <clinit>()V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lzqa;
 
-    iput-object p1, p0, Lzqa;->a:Lmkc;
+    const-string v1, "DEFAULT"
 
-    iput-object p2, p0, Lzqa;->b:Lyqa;
+    const/4 v2, 0x0
 
-    iput-object p3, p0, Lzqa;->c:Ld7c;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p4, p0, Lzqa;->d:Lgt2;
+    sput-object v0, Lzqa;->a:Lzqa;
 
-    iput-object p5, p0, Lzqa;->e:Lz9;
+    new-instance v1, Lzqa;
 
-    iput-object p6, p0, Lzqa;->f:Ld14;
+    const-string v2, "PASSWORD"
 
-    const-wide/high16 p1, 0x3ff0000000000000L    # 1.0
+    const/4 v3, 0x1
 
-    iput-wide p1, p0, Lzqa;->i:D
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    new-instance p1, Lm1e;
+    sput-object v1, Lzqa;->b:Lzqa;
 
-    const/16 p2, 0x1a
+    filled-new-array {v0, v1}, [Lzqa;
 
-    invoke-direct {p1, p2}, Lm1e;-><init>(I)V
+    move-result-object v0
 
-    iput-object p1, p0, Lzqa;->k:Lm1e;
-
-    new-instance p1, Lpz7;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lzqa;->n:Lpz7;
-
-    new-instance p1, Lop0;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p2}, Lop0;-><init>(I)V
-
-    iput-object p1, p0, Lzqa;->o:Lop0;
-
-    new-instance p1, Lop0;
-
-    invoke-direct {p1, p2}, Lop0;-><init>(I)V
-
-    iput-object p1, p0, Lzqa;->p:Lop0;
+    sput-object v0, Lzqa;->c:[Lzqa;
 
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lzqa;
+    .registers 2
+
+    const-class v0, Lzqa;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lzqa;
+
+    return-object p0
+.end method
+
+.method public static values()[Lzqa;
+    .registers 1
+
+    sget-object v0, Lzqa;->c:[Lzqa;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lzqa;
+
+    return-object v0
 .end method

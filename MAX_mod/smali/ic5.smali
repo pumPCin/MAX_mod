@@ -1,24 +1,56 @@
-.class public final Lic5;
+.class public final synthetic Lic5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljc5;
+.implements Lpt7;
 
 
-# static fields
-.field public static final a:Lic5;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lx10;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lx10;I)V
+    .registers 3
 
-    new-instance v0, Lic5;
+    iput p2, p0, Lic5;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lic5;->b:Lx10;
 
-    sput-object v0, Lic5;->a:Lic5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)V
+    .registers 3
+
+    iget v0, p0, Lic5;->a:I
+
+    iget-object p0, p0, Lic5;->b:Lx10;
+
+    check-cast p1, Lscb;
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-interface {p1, p0}, Lscb;->x(Lx10;)V
+
+    return-void
+
+    :pswitch_0
+    invoke-interface {p1, p0}, Lscb;->x(Lx10;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

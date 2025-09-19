@@ -1,107 +1,73 @@
 .class public final Lg52;
-.super Lxie;
+.super Lr3;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lg52;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Lzw7;
 
-.field public final synthetic Y:Lone/me/profile/screens/changeowner/ChangeOwnerScreen;
+.field public final b:Landroid/net/Uri;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/profile/screens/changeowner/ChangeOwnerScreen;)V
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lz7;
+
+    const/16 v1, 0xc
+
+    invoke-direct {v0, v1}, Lz7;-><init>(I)V
+
+    sput-object v0, Lg52;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lzw7;Landroid/net/Uri;)V
     .registers 3
 
-    iput-object p2, p0, Lg52;->Y:Lone/me/profile/screens/changeowner/ChangeOwnerScreen;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lg52;->a:Lzw7;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lg52;->b:Landroid/net/Uri;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final describeContents()I
+    .registers 1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/4 p0, 0x0
 
-    invoke-virtual {p0, p1, p2}, Lg52;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lg52;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lg52;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .registers 4
 
-    new-instance v0, Lg52;
+    iget-object v0, p0, Lg52;->a:Lzw7;
 
-    iget-object p0, p0, Lg52;->Y:Lone/me/profile/screens/changeowner/ChangeOwnerScreen;
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    invoke-direct {v0, p2, p0}, Lg52;-><init>(Lkotlin/coroutines/Continuation;Lone/me/profile/screens/changeowner/ChangeOwnerScreen;)V
+    iget-object p0, p0, Lg52;->b:Landroid/net/Uri;
 
-    iput-object p1, v0, Lg52;->X:Ljava/lang/Object;
+    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lg52;->X:Ljava/lang/Object;
-
-    check-cast p1, Lh52;
-
-    if-eqz p1, :cond_0
-
-    new-instance v0, Lbka;
-
-    iget-object p0, p0, Lg52;->Y:Lone/me/profile/screens/changeowner/ChangeOwnerScreen;
-
-    invoke-direct {v0, p0}, Lbka;-><init>(Lone/me/sdk/arch/Widget;)V
-
-    iget-object p0, p1, Lh52;->a:Lqte;
-
-    invoke-virtual {v0, p0}, Lbka;->g(Lvte;)V
-
-    iget-object p0, p1, Lh52;->b:Ljava/lang/Integer;
-
-    new-instance p1, Lqka;
-
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
-
-    move-result p0
-
-    invoke-direct {p1, p0}, Lqka;-><init>(I)V
-
-    invoke-virtual {v0, p1}, Lbka;->e(Luka;)V
-
-    invoke-virtual {v0}, Lbka;->i()Laka;
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
+    return-void
 .end method

@@ -3,22 +3,24 @@
 
 
 # static fields
-.field public static IconSwitch:[I
+.field public static fake_in_app_review_bottom_sheet_rate_view:I = 0x7f0a0382
 
-.field public static IconSwitch_icon_switch_start_drawable:I
+.field public static fake_in_app_review_bottom_sheet_rate_view_icon:I = 0x7f0a0383
 
+.field public static fake_in_app_review_bottom_sheet_rate_view_not_now_btn:I = 0x7f0a0384
 
-# direct methods
-.method public static constructor <clinit>()V
-    .registers 1
+.field public static fake_in_app_review_bottom_sheet_rate_view_rating_bar:I = 0x7f0a0385
 
-    const v0, 0x7f040548
+.field public static fake_in_app_review_bottom_sheet_rate_view_send_btn:I = 0x7f0a0386
 
-    filled-new-array {v0}, [I
+.field public static fake_in_app_review_bottom_sheet_rate_view_subtitle:I = 0x7f0a0387
 
-    move-result-object v0
+.field public static fake_in_app_review_bottom_sheet_rate_view_title:I = 0x7f0a0388
 
-    sput-object v0, Lh6c;->IconSwitch:[I
+.field public static fake_in_app_review_bottom_sheet_thank_view:I = 0x7f0a0389
 
-    return-void
-.end method
+.field public static fake_in_app_review_bottom_sheet_thank_view_close_btn:I = 0x7f0a038a
+
+.field public static fake_in_app_review_bottom_sheet_thank_view_icon:I = 0x7f0a038b
+
+.field public static fake_in_app_review_bottom_sheet_thank_view_title:I = 0x7f0a038c

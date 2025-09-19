@@ -1,137 +1,27 @@
 .class public final Lfxg;
-.super Lwqg;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final Y(Lw0a;Ljava/lang/String;I)Lmv6;
-    .registers 5
+# instance fields
+.field public final a:I
 
-    invoke-virtual {p0}, Lwqg;->W()Landroid/os/Parcel;
+.field public final b:[B
 
-    move-result-object v0
+.field public final c:Z
 
-    invoke-static {v0, p1}, Lytg;->c(Landroid/os/Parcel;Landroid/os/IInterface;)V
 
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+# direct methods
+.method public constructor <init>(I[BZ)V
+    .registers 4
 
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iput p1, p0, Lfxg;->a:I
 
-    invoke-virtual {p0, v0, p1}, Lwqg;->j(Landroid/os/Parcel;I)Landroid/os/Parcel;
+    iput-object p2, p0, Lfxg;->b:[B
 
-    move-result-object p0
+    iput-boolean p3, p0, Lfxg;->c:Z
 
-    invoke-virtual {p0}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lw0a;->a0(Landroid/os/IBinder;)Lmv6;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Landroid/os/Parcel;->recycle()V
-
-    return-object p1
-.end method
-
-.method public final Z(Lw0a;Ljava/lang/String;ILw0a;)Lmv6;
-    .registers 6
-
-    invoke-virtual {p0}, Lwqg;->W()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lytg;->c(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-static {v0, p4}, Lytg;->c(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/16 p1, 0x8
-
-    invoke-virtual {p0, v0, p1}, Lwqg;->j(Landroid/os/Parcel;I)Landroid/os/Parcel;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lw0a;->a0(Landroid/os/IBinder;)Lmv6;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Landroid/os/Parcel;->recycle()V
-
-    return-object p1
-.end method
-
-.method public final a0(Lw0a;Ljava/lang/String;I)Lmv6;
-    .registers 5
-
-    invoke-virtual {p0}, Lwqg;->W()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lytg;->c(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    const/4 p1, 0x4
-
-    invoke-virtual {p0, v0, p1}, Lwqg;->j(Landroid/os/Parcel;I)Landroid/os/Parcel;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lw0a;->a0(Landroid/os/IBinder;)Lmv6;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Landroid/os/Parcel;->recycle()V
-
-    return-object p1
-.end method
-
-.method public final b0(Lw0a;Ljava/lang/String;ZJ)Lmv6;
-    .registers 7
-
-    invoke-virtual {p0}, Lwqg;->W()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lytg;->c(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-virtual {v0, p4, p5}, Landroid/os/Parcel;->writeLong(J)V
-
-    const/4 p1, 0x7
-
-    invoke-virtual {p0, v0, p1}, Lwqg;->j(Landroid/os/Parcel;I)Landroid/os/Parcel;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object p1
-
-    invoke-static {p1}, Lw0a;->a0(Landroid/os/IBinder;)Lmv6;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Landroid/os/Parcel;->recycle()V
-
-    return-object p1
+    return-void
 .end method

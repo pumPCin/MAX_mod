@@ -1,64 +1,169 @@
 .class public final Lnw5;
-.super Ljava/lang/Object;
+.super Ljava/util/concurrent/atomic/AtomicLong;
 .source "SourceFile"
 
 # interfaces
-.implements Lpw5;
+.implements Lbx5;
+.implements Llne;
 
 
-# static fields
-.field public static final a:Lnw5;
+# instance fields
+.field public final a:Ljne;
+
+.field public b:Llne;
+
+.field public c:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ljne;)V
+    .registers 2
 
-    new-instance v0, Lnw5;
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lnw5;->a:Lnw5;
+    iput-object p1, p0, Lnw5;->a:Ljne;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final b()V
+    .registers 2
 
-    const/4 v0, 0x1
+    iget-boolean v0, p0, Lnw5;->c:Z
 
-    if-ne p0, p1, :cond_0
+    if-eqz v0, :cond_0
 
-    return v0
+    return-void
 
     :cond_0
-    instance-of p0, p1, Lnw5;
+    const/4 v0, 0x1
 
-    if-nez p0, :cond_1
+    iput-boolean v0, p0, Lnw5;->c:Z
 
-    const/4 p0, 0x0
+    iget-object p0, p0, Lnw5;->a:Ljne;
 
-    return p0
+    invoke-interface {p0}, Ljne;->b()V
+
+    return-void
+.end method
+
+.method public final cancel()V
+    .registers 1
+
+    iget-object p0, p0, Lnw5;->b:Llne;
+
+    invoke-interface {p0}, Llne;->cancel()V
+
+    return-void
+.end method
+
+.method public final d(Llne;)V
+    .registers 4
+
+    iget-object v0, p0, Lnw5;->b:Llne;
+
+    invoke-static {v0, p1}, Lnne;->e(Llne;Llne;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iput-object p1, p0, Lnw5;->b:Llne;
+
+    iget-object v0, p0, Lnw5;->a:Ljne;
+
+    invoke-interface {v0, p0}, Ljne;->d(Llne;)V
+
+    const-wide v0, 0x7fffffffffffffffL
+
+    invoke-interface {p1, v0, v1}, Llne;->h(J)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final h(J)V
+    .registers 4
+
+    invoke-static {p1, p2}, Lnne;->d(J)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p0, p1, p2}, Lz48;->a(Ljava/util/concurrent/atomic/AtomicLong;J)J
+
+    :cond_0
+    return-void
+.end method
+
+.method public final onError(Ljava/lang/Throwable;)V
+    .registers 3
+
+    iget-boolean v0, p0, Lnw5;->c:Z
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p1}, Ln4e;->D(Ljava/lang/Throwable;)V
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lnw5;->c:Z
+
+    iget-object p0, p0, Lnw5;->a:Ljne;
+
+    invoke-interface {p0, p1}, Ljne;->onError(Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final s(Ljava/lang/Object;)V
+    .registers 6
+
+    iget-boolean v0, p0, Lnw5;->c:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lnw5;->a:Ljne;
+
+    invoke-interface {v0, p1}, Ljne;->s(Ljava/lang/Object;)V
+
+    const-wide/16 v0, 0x1
+
+    invoke-static {p0, v0, v1}, Lz48;->A(Ljava/util/concurrent/atomic/AtomicLong;J)V
+
+    return-void
 
     :cond_1
-    return v0
-.end method
+    iget-object p1, p0, Lnw5;->b:Llne;
 
-.method public final hashCode()I
-    .registers 1
+    invoke-interface {p1}, Llne;->cancel()V
 
-    const p0, -0x667a69eb
+    new-instance p1, Lio/reactivex/rxjava3/exceptions/MissingBackpressureException;
 
-    return p0
-.end method
+    const-string v0, "Could not emit value due to lack of requests"
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    invoke-direct {p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    const-string p0, "ConfirmDeletion"
+    invoke-virtual {p0, p1}, Lnw5;->onError(Ljava/lang/Throwable;)V
 
-    return-object p0
+    return-void
 .end method

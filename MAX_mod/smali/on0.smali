@@ -4,10 +4,42 @@
 
 
 # direct methods
-.method public static a(Landroid/hardware/biometrics/BiometricPrompt$Builder;I)V
+.method public static a(Landroid/content/Context;I)Landroid/content/Context;
     .registers 2
 
-    invoke-virtual {p0, p1}, Landroid/hardware/biometrics/BiometricPrompt$Builder;->setAllowedAuthenticators(I)Landroid/hardware/biometrics/BiometricPrompt$Builder;
+    invoke-virtual {p0, p1}, Landroid/content/Context;->createDeviceContext(I)Landroid/content/Context;
 
-    return-void
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static b(Landroid/content/Context;)I
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/content/Context;->getDeviceId()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static c(Landroid/content/Context;)I
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/content/Context;->getDeviceId()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static d(Landroid/graphics/Bitmap;)Z
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->hasGainmap()Z
+
+    move-result p0
+
+    return p0
 .end method

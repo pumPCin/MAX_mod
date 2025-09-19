@@ -1,99 +1,92 @@
-.class public abstract Ly7b;
-.super Ljava/lang/Object;
+.class public final Ly7b;
+.super Lure;
 .source "SourceFile"
 
+# interfaces
+.implements Lpc6;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:I
+# instance fields
+.field public final synthetic X:Lone/me/chats/picker/contacts/PickerContactsListWidget;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lone/me/chats/picker/contacts/PickerContactsListWidget;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    sget v0, Lb0c;->pooling_container_listener_holder_tag:I
+    iput-object p1, p0, Ly7b;->X:Lone/me/chats/picker/contacts/PickerContactsListWidget;
 
-    sput v0, Ly7b;->a:I
+    const/4 p1, 0x2
 
-    sget v0, Lb0c;->is_pooling_container_tag:I
-
-    sput v0, Ly7b;->b:I
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static final a(Landroid/view/View;)V
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Ljava/util/Set;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Ly7b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Ly7b;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Ly7b;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Ly7b;
+
+    iget-object p0, p0, Ly7b;->X:Lone/me/chats/picker/contacts/PickerContactsListWidget;
+
+    invoke-direct {p1, p0, p2}, Ly7b;-><init>(Lone/me/chats/picker/contacts/PickerContactsListWidget;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    invoke-static {p0}, Lg64;->l(Landroid/view/View;)Los;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    sget-object p1, Lone/me/chats/picker/contacts/PickerContactsListWidget;->y0:[Lxi7;
+
+    iget-object p0, p0, Ly7b;->X:Lone/me/chats/picker/contacts/PickerContactsListWidget;
+
+    invoke-virtual {p0}, Lone/me/chats/picker/contacts/PickerContactsListWidget;->A0()Landroidx/recyclerview/widget/RecyclerView;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lone/me/chats/picker/contacts/PickerContactsListWidget;->A0()Landroidx/recyclerview/widget/RecyclerView;
 
     move-result-object p0
 
-    iget-object p0, p0, Los;->b:Ljava/lang/Object;
+    new-instance v0, Lx7b;
 
-    check-cast p0, Lvmc;
+    const/4 v1, 0x0
 
-    invoke-static {p0}, Lms8;->w(Lx96;)Ly9d;
+    invoke-direct {v0, p0, v1}, Lx7b;-><init>(Landroidx/recyclerview/widget/RecyclerView;I)V
 
-    move-result-object p0
+    const/4 p0, 0x0
 
-    :goto_0
-    invoke-virtual {p0}, Ly9d;->hasNext()Z
+    const/4 v1, 0x5
 
-    move-result v0
+    invoke-static {v1, p1, v0, p0}, Lyu0;->D(ILandroidx/recyclerview/widget/RecyclerView;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    if-eqz v0, :cond_2
+    sget-object p0, Lylf;->a:Lylf;
 
-    invoke-virtual {p0}, Ly9d;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/View;
-
-    sget v1, Ly7b;->a:I
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lz7b;
-
-    if-nez v2, :cond_0
-
-    new-instance v2, Lz7b;
-
-    invoke-direct {v2}, Lz7b;-><init>()V
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    :cond_0
-    iget-object v0, v2, Lz7b;->a:Ljava/util/ArrayList;
-
-    invoke-static {v0}, Lk73;->N(Ljava/util/List;)I
-
-    move-result v1
-
-    const/4 v2, -0x1
-
-    if-lt v2, v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p0, Ljava/lang/ClassCastException;
-
-    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
-
-    throw p0
-
-    :cond_2
-    return-void
+    return-object p0
 .end method

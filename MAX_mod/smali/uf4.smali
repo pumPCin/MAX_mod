@@ -1,35 +1,60 @@
-.class public interface abstract Luf4;
+.class public final Luf4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lsk7;
+.implements Lb74;
+
+
+# instance fields
+.field public final a:Lzxc;
+
+.field public b:Ljava/lang/String;
+
+.field public final c:I
+
+.field public final d:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lzxc;
+
+    const/16 v1, 0x15
+
+    invoke-direct {v0, v1}, Lzxc;-><init>(I)V
+
+    iput-object v0, p0, Luf4;->a:Lzxc;
+
+    const/16 v0, 0x1f40
+
+    iput v0, p0, Luf4;->c:I
+
+    iput v0, p0, Luf4;->d:I
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public onDestroy(Lwk7;)V
-    .registers 2
+.method public final a()Ld74;
+    .registers 5
 
-    return-void
-.end method
+    new-instance v0, Lyf4;
 
-.method public onPause(Lwk7;)V
-    .registers 2
+    iget-object v1, p0, Luf4;->b:Ljava/lang/String;
 
-    return-void
-.end method
+    iget v2, p0, Luf4;->d:I
 
-.method public abstract onResume(Lwk7;)V
-.end method
+    iget-object v3, p0, Luf4;->a:Lzxc;
 
-.method public onStart(Lwk7;)V
-    .registers 2
+    iget p0, p0, Luf4;->c:I
 
-    return-void
-.end method
+    invoke-direct {v0, v1, p0, v2, v3}, Lyf4;-><init>(Ljava/lang/String;IILzxc;)V
 
-.method public onStop(Lwk7;)V
-    .registers 2
-
-    return-void
+    return-object v0
 .end method

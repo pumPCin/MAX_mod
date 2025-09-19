@@ -1,35 +1,47 @@
-.class public interface abstract Ly54;
+.class public final Ly54;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract B()J
-.end method
+# instance fields
+.field public final a:[I
 
-.method public abstract C(J)J
-.end method
+.field public final b:I
 
-.method public abstract D(JJ)J
-.end method
+.field public final c:I
 
-.method public abstract b(J)J
-.end method
+.field public final d:I
 
-.method public abstract g(JJ)J
-.end method
+.field public final e:I
 
-.method public abstract i(JJ)J
-.end method
+.field public final f:I
 
-.method public abstract j(JJ)J
-.end method
+.field public final g:I
 
-.method public abstract k(J)Lt7c;
-.end method
+.field public final h:Ll37;
 
-.method public abstract t(JJ)J
-.end method
 
-.method public abstract z()Z
+# direct methods
+.method public constructor <init>(II[IIIIILl37;)V
+    .registers 9
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Ly54;->b:I
+
+    iput-object p3, p0, Ly54;->a:[I
+
+    iput p2, p0, Ly54;->c:I
+
+    iput p4, p0, Ly54;->e:I
+
+    iput p5, p0, Ly54;->f:I
+
+    iput p6, p0, Ly54;->g:I
+
+    iput p7, p0, Ly54;->d:I
+
+    iput-object p8, p0, Ly54;->h:Ll37;
+
+    return-void
 .end method

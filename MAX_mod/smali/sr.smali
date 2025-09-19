@@ -1,155 +1,336 @@
 .class public final Lsr;
-.super Ld86;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static volatile i:Lsr;
-
-.field public static final j:Lrr;
+# interfaces
+.implements Ljava/util/Collection;
 
 
 # instance fields
-.field public final h:Lwh4;
+.field public final synthetic a:Ltr;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Lrr;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lrr;-><init>(I)V
-
-    sput-object v0, Lsr;->j:Lrr;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
+.method public constructor <init>(Ltr;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lwh4;
-
-    invoke-direct {v0}, Lwh4;-><init>()V
-
-    iput-object v0, p0, Lsr;->h:Lwh4;
+    iput-object p1, p0, Lsr;->a:Ltr;
 
     return-void
-.end method
-
-.method public static K()Lsr;
-    .registers 2
-
-    sget-object v0, Lsr;->i:Lsr;
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Lsr;->i:Lsr;
-
-    return-object v0
-
-    :cond_0
-    const-class v0, Lsr;
-
-    monitor-enter v0
-
-    :try_start_0
-    sget-object v1, Lsr;->i:Lsr;
-
-    if-nez v1, :cond_1
-
-    new-instance v1, Lsr;
-
-    invoke-direct {v1}, Lsr;-><init>()V
-
-    sput-object v1, Lsr;->i:Lsr;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    sget-object v0, Lsr;->i:Lsr;
-
-    return-object v0
-
-    :goto_1
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v1
 .end method
 
 
 # virtual methods
-.method public final L(Ljava/lang/Runnable;)V
-    .registers 4
+.method public final add(Ljava/lang/Object;)Z
+    .registers 2
 
-    iget-object p0, p0, Lsr;->h:Lwh4;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    iget-object v0, p0, Lwh4;->j:Landroid/os/Handler;
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    if-nez v0, :cond_1
+    throw p0
+.end method
 
-    iget-object v0, p0, Lwh4;->h:Ljava/lang/Object;
+.method public final addAll(Ljava/util/Collection;)Z
+    .registers 2
 
-    monitor-enter v0
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    :try_start_0
-    iget-object v1, p0, Lwh4;->j:Landroid/os/Handler;
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
 
-    if-nez v1, :cond_0
+    throw p0
+.end method
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+.method public final clear()V
+    .registers 1
 
-    move-result-object v1
+    iget-object p0, p0, Lsr;->a:Ltr;
 
-    invoke-static {v1}, Landroid/os/Handler;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
+    invoke-virtual {p0}, Lr1e;->clear()V
 
-    move-result-object v1
+    return-void
+.end method
 
-    iput-object v1, p0, Lwh4;->j:Landroid/os/Handler;
+.method public final contains(Ljava/lang/Object;)Z
+    .registers 2
+
+    iget-object p0, p0, Lsr;->a:Ltr;
+
+    invoke-virtual {p0, p1}, Lr1e;->a(Ljava/lang/Object;)I
+
+    move-result p0
+
+    if-ltz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final containsAll(Ljava/util/Collection;)Z
+    .registers 3
+
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lsr;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final isEmpty()Z
+    .registers 1
+
+    iget-object p0, p0, Lsr;->a:Ltr;
+
+    invoke-virtual {p0}, Lr1e;->isEmpty()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .registers 3
+
+    new-instance v0, Lpr;
+
+    iget-object p0, p0, Lsr;->a:Ltr;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, v1}, Lpr;-><init>(Ltr;I)V
+
+    return-object v0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .registers 2
+
+    iget-object p0, p0, Lsr;->a:Ltr;
+
+    invoke-virtual {p0, p1}, Lr1e;->a(Ljava/lang/Object;)I
+
+    move-result p1
+
+    if-ltz p1, :cond_0
+
+    invoke-virtual {p0, p1}, Lr1e;->g(I)Ljava/lang/Object;
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final removeAll(Ljava/util/Collection;)Z
+    .registers 7
+
+    iget-object p0, p0, Lsr;->a:Ltr;
+
+    iget v0, p0, Lr1e;->c:I
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    if-ge v1, v0, :cond_1
+
+    invoke-virtual {p0, v1}, Lr1e;->i(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    const/4 v4, 0x1
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {p0, v1}, Lr1e;->g(I)Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, -0x1
+
+    add-int/lit8 v0, v0, -0x1
+
+    move v2, v4
+
+    :cond_0
+    add-int/2addr v1, v4
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
+    :cond_1
+    return v2
+.end method
 
-    goto :goto_1
+.method public final retainAll(Ljava/util/Collection;)Z
+    .registers 7
+
+    iget-object p0, p0, Lsr;->a:Ltr;
+
+    iget v0, p0, Lr1e;->c:I
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    if-ge v1, v0, :cond_1
+
+    invoke-virtual {p0, v1}, Lr1e;->i(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    const/4 v4, 0x1
+
+    if-nez v3, :cond_0
+
+    invoke-virtual {p0, v1}, Lr1e;->g(I)Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, -0x1
+
+    add-int/lit8 v0, v0, -0x1
+
+    move v2, v4
 
     :cond_0
-    :goto_0
-    monitor-exit v0
+    add-int/2addr v1, v4
 
-    goto :goto_2
-
-    :goto_1
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
+    goto :goto_0
 
     :cond_1
-    :goto_2
-    iget-object p0, p0, Lwh4;->j:Landroid/os/Handler;
+    return v2
+.end method
 
-    invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+.method public final size()I
+    .registers 1
 
-    return-void
+    iget-object p0, p0, Lsr;->a:Ltr;
+
+    iget p0, p0, Lr1e;->c:I
+
+    return p0
+.end method
+
+.method public final toArray()[Ljava/lang/Object;
+    .registers 5
+
+    iget-object p0, p0, Lsr;->a:Ltr;
+
+    iget v0, p0, Lr1e;->c:I
+
+    new-array v1, v0, [Ljava/lang/Object;
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_0
+
+    invoke-virtual {p0, v2}, Lr1e;->i(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object v1
+.end method
+
+.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .registers 5
+
+    iget-object p0, p0, Lsr;->a:Ltr;
+
+    iget v0, p0, Lr1e;->c:I
+
+    array-length v1, p1
+
+    if-ge v1, v0, :cond_0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-static {p1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [Ljava/lang/Object;
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    if-ge v1, v0, :cond_1
+
+    invoke-virtual {p0, v1}, Lr1e;->i(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    aput-object v2, p1, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    array-length p0, p1
+
+    if-le p0, v0, :cond_2
+
+    const/4 p0, 0x0
+
+    aput-object p0, p1, v0
+
+    :cond_2
+    return-object p1
 .end method

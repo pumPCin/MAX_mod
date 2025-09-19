@@ -1,188 +1,185 @@
-.class public final Lol1;
-.super Lxie;
+.class public final synthetic Lol1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lzb6;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lkm1;
+.field public final synthetic b:Lqm1;
 
 
 # direct methods
-.method public constructor <init>(Lkm1;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lqm1;I)V
     .registers 3
 
-    iput-object p1, p0, Lol1;->Y:Lkm1;
+    iput p2, p0, Lol1;->a:I
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lol1;->b:Lqm1;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke()Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    iget v0, p0, Lol1;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lol1;->b:Lqm1;
 
-    invoke-virtual {p0, p1, p2}, Lol1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lqm1;->t0:Le7d;
+
+    iget-boolean p0, p0, Le7d;->e:Z
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x6
+
+    goto :goto_0
+
+    :cond_0
+    const/16 p0, 0x8
+
+    :goto_0
+    new-instance v0, Landroidx/recyclerview/widget/b;
+
+    invoke-direct {v0}, Landroidx/recyclerview/widget/b;-><init>()V
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1, p0}, Landroidx/recyclerview/widget/b;->setMaxRecycledViews(II)V
+
+    return-object v0
+
+    :pswitch_0
+    iget-object p0, p0, Lqm1;->u0:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lol1;
+    check-cast p0, Lrj5;
 
-    sget-object p1, Lncf;->a:Lncf;
+    check-cast p0, Ltj5;
 
-    invoke-virtual {p0, p1}, Lol1;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->grse:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lnad;->l(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+
+    move-result p0
+
+    :goto_1
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
 
     return-object p0
-.end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+    :pswitch_1
+    iget-object p0, p0, Lqm1;->u0:Lcl7;
 
-    new-instance p1, Lol1;
-
-    iget-object p0, p0, Lol1;->Y:Lkm1;
-
-    invoke-direct {p1, p0, p2}, Lol1;-><init>(Lkm1;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
-
-    iget-object v0, p0, Lol1;->Y:Lkm1;
-
-    iget-object v1, v0, Lkm1;->c:Lit1;
-
-    iget v2, p0, Lol1;->X:I
-
-    sget-object v3, Lncf;->a:Lncf;
-
-    const/4 v4, 0x1
-
-    if-eqz v2, :cond_1
-
-    if-ne v2, v4, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    invoke-virtual {v1}, Lit1;->b()Ln4e;
-
-    move-result-object p1
-
-    invoke-virtual {v1}, Lit1;->e()Lg4e;
-
-    move-result-object v2
-
-    iget-object v5, v1, Lit1;->f:Lp31;
-
-    check-cast v5, Lb41;
-
-    iget-object v5, v5, Lb41;->k:Ln4e;
-
-    invoke-virtual {v1}, Lit1;->f()Ln4e;
-
-    move-result-object v6
-
-    iget-object v1, v1, Lit1;->l:Ltz0;
-
-    check-cast v1, Lo01;
-
-    iget-object v1, v1, Lo01;->A0:Ln4e;
-
-    new-instance v7, Lnl1;
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    invoke-direct {v7, v0, v8, v9}, Lnl1;-><init>(Ljava/lang/Object;Lgt5;I)V
-
-    const/4 v0, 0x5
-
-    new-array v0, v0, [Lfq5;
-
-    aput-object p1, v0, v9
-
-    aput-object v2, v0, v4
-
-    const/4 p1, 0x2
-
-    aput-object v5, v0, p1
-
-    const/4 p1, 0x3
-
-    aput-object v6, v0, p1
-
-    const/4 p1, 0x4
-
-    aput-object v1, v0, p1
-
-    iput v4, p0, Lol1;->X:I
-
-    sget-object p1, Lxx3;->Z:Lxx3;
-
-    new-instance v1, Lgt5;
-
-    invoke-direct {v1, v8, v7}, Lgt5;-><init>(Lkotlin/coroutines/Continuation;Lea6;)V
-
-    sget-object v2, Lqt9;->a:Lqt9;
-
-    invoke-static {v2, p1, v1, p0, v0}, Ly6c;->k(Lhq5;Lh96;Lz96;Lkotlin/coroutines/Continuation;[Lfq5;)Ljava/lang/Object;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
+    check-cast p0, Lrj5;
 
-    if-ne p0, p1, :cond_2
+    check-cast p0, Ltj5;
 
-    goto :goto_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :cond_2
-    move-object p0, v3
+    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->gc-from-p2p:Lru/ok/tamtam/android/prefs/PmsKey;
 
-    :goto_0
-    if-ne p0, p1, :cond_3
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lnad;->l(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+
+    move-result p0
 
     goto :goto_1
 
-    :cond_3
-    move-object p0, v3
+    :pswitch_2
+    iget-object p0, p0, Lqm1;->u0:Lcl7;
 
-    :goto_1
-    if-ne p0, p1, :cond_4
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    return-object p1
+    move-result-object p0
 
-    :cond_4
-    :goto_2
-    return-object v3
+    check-cast p0, Lrj5;
+
+    check-cast p0, Ltj5;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->sse:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lnad;->l(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+
+    move-result p0
+
+    goto :goto_1
+
+    :pswitch_3
+    iget-object p0, p0, Lqm1;->u0:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lrj5;
+
+    check-cast p0, Ltj5;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->gsse:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lnad;->l(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+
+    move-result p0
+
+    goto :goto_1
+
+    :pswitch_4
+    iget-object p0, p0, Lqm1;->u0:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lrj5;
+
+    check-cast p0, Ltj5;
+
+    invoke-virtual {p0}, Ltj5;->u()Z
+
+    move-result p0
+
+    goto :goto_1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

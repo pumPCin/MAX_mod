@@ -1,406 +1,569 @@
 .class public final Ln15;
-.super Landroid/text/style/ReplacementSpan;
+.super Lf8a;
 .source "SourceFile"
 
-# interfaces
-.implements Lzyd;
+
+# static fields
+.field public static final w0:Landroid/graphics/Rect;
+
+.field public static final x0:Ljava/util/regex/Pattern;
 
 
 # instance fields
-.field public final X:I
+.field public b:Z
 
-.field public final Y:Landroid/graphics/drawable/Drawable;
+.field public c:Z
 
-.field public a:I
+.field public o:Ljava/lang/CharSequence;
 
-.field public b:I
+.field public r0:I
 
-.field public c:Landroid/graphics/Rect;
+.field public s0:F
 
-.field public final o:Landroid/graphics/Paint$FontMetricsInt;
+.field public t0:F
+
+.field public u0:Ljava/util/regex/Pattern;
+
+.field public v0:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
+    new-instance v0, Landroid/graphics/Rect;
 
-    new-instance v0, Landroid/graphics/Paint$FontMetricsInt;
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    invoke-direct {v0}, Landroid/graphics/Paint$FontMetricsInt;-><init>()V
+    sput-object v0, Ln15;->w0:Landroid/graphics/Rect;
 
-    iput-object v0, p0, Ln15;->o:Landroid/graphics/Paint$FontMetricsInt;
+    const-string v0, "[\\.,\u2026\\:\\s]*$"
 
-    iput-object p1, p0, Ln15;->Y:Landroid/graphics/drawable/Drawable;
+    const/16 v1, 0x20
 
-    const/4 v0, 0x2
+    invoke-static {v0, v1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
-    iput v0, p0, Ln15;->X:I
+    move-result-object v0
 
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ln15;->c:Landroid/graphics/Rect;
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->width()I
-
-    move-result p1
-
-    iput p1, p0, Ln15;->a:I
-
-    iget-object p1, p0, Ln15;->c:Landroid/graphics/Rect;
-
-    invoke-virtual {p1}, Landroid/graphics/Rect;->height()I
-
-    move-result p1
-
-    iput p1, p0, Ln15;->b:I
+    sput-object v0, Ln15;->x0:Ljava/util/regex/Pattern;
 
     return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 4
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, p1, v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    const p1, 0x7fffffff
+
+    iput p1, p0, Ln15;->r0:I
+
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    iput p1, p0, Ln15;->s0:F
+
+    sget-object p1, Ln15;->x0:Ljava/util/regex/Pattern;
+
+    iput-object p1, p0, Ln15;->u0:Ljava/util/regex/Pattern;
+
+    return-void
+.end method
+
+.method private final getFullyVisibleLinesCount()I
+    .registers 4
+
+    const-string v0, ""
+
+    invoke-virtual {p0, v0}, Ln15;->a(Ljava/lang/CharSequence;)Landroid/text/StaticLayout;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v2
+
+    sub-int/2addr v1, v2
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingBottom()I
+
+    move-result p0
+
+    sub-int/2addr v1, p0
+
+    const/4 p0, 0x0
+
+    invoke-virtual {v0, p0}, Landroid/text/Layout;->getLineBottom(I)I
+
+    move-result p0
+
+    div-int/2addr v1, p0
+
+    return v1
+.end method
+
+.method private final getLinesCount()I
+    .registers 2
+
+    invoke-direct {p0}, Ln15;->getFullyVisibleLinesCount()I
+
+    move-result p0
+
+    const/4 v0, -0x1
+
+    if-ne p0, v0, :cond_0
+
+    const/4 p0, 0x1
+
+    :cond_0
+    return p0
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
-    .registers 8
+.method public final a(Ljava/lang/CharSequence;)Landroid/text/StaticLayout;
+    .registers 14
 
-    iget-object p2, p0, Ln15;->Y:Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawables()[Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    move-result-object v0
 
-    move-result-object p2
+    const/4 v1, 0x0
 
-    iput-object p2, p0, Ln15;->c:Landroid/graphics/Rect;
+    aget-object v2, v0, v1
 
-    invoke-virtual {p2}, Landroid/graphics/Rect;->width()I
+    if-eqz v2, :cond_0
 
-    move-result p2
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
-    iput p2, p0, Ln15;->a:I
+    move-result v2
 
-    iget-object p2, p0, Ln15;->c:Landroid/graphics/Rect;
-
-    invoke-virtual {p2}, Landroid/graphics/Rect;->height()I
-
-    move-result p2
-
-    iput p2, p0, Ln15;->b:I
-
-    if-nez p5, :cond_0
-
-    iget p0, p0, Ln15;->a:I
-
-    return p0
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
-
-    move-result-object p1
-
-    iget p3, p1, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
-
-    iput p3, p5, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
-
-    iget p4, p1, Landroid/graphics/Paint$FontMetricsInt;->descent:I
-
-    iput p4, p5, Landroid/graphics/Paint$FontMetricsInt;->descent:I
-
-    iget v0, p1, Landroid/graphics/Paint$FontMetricsInt;->leading:I
-
-    iput v0, p5, Landroid/graphics/Paint$FontMetricsInt;->leading:I
-
-    iget v0, p0, Ln15;->X:I
-
-    if-eqz v0, :cond_2
-
-    const/4 v1, 0x2
-
-    if-eq v0, v1, :cond_1
-
-    neg-int p2, p2
-
-    if-le p3, p2, :cond_3
-
-    iput p2, p5, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
-
-    goto :goto_0
-
-    :cond_1
-    sub-int/2addr p4, p3
-
-    if-ge p4, p2, :cond_3
-
-    sub-int p4, p2, p4
-
-    div-int/2addr p4, v1
-
-    sub-int/2addr p3, p4
-
-    iput p3, p5, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
-
-    add-int/2addr p3, p2
-
-    iput p3, p5, Landroid/graphics/Paint$FontMetricsInt;->descent:I
-
-    goto :goto_0
-
-    :cond_2
-    sub-int/2addr p4, p2
-
-    if-le p3, p4, :cond_3
-
-    iput p4, p5, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
-
-    :cond_3
-    :goto_0
-    iget p2, p1, Landroid/graphics/Paint$FontMetricsInt;->top:I
-
-    iget p3, p5, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
-
-    invoke-static {p2, p3}, Ljava/lang/Math;->min(II)I
-
-    move-result p2
-
-    iput p2, p5, Landroid/graphics/Paint$FontMetricsInt;->top:I
-
-    iget p1, p1, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
-
-    iget p2, p5, Landroid/graphics/Paint$FontMetricsInt;->descent:I
-
-    invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
-
-    move-result p1
-
-    iput p1, p5, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
-
-    iget p0, p0, Ln15;->a:I
-
-    return p0
-.end method
-
-.method public final b()Landroid/graphics/drawable/Drawable;
-    .registers 1
-
-    iget-object p0, p0, Ln15;->Y:Landroid/graphics/drawable/Drawable;
-
-    return-object p0
-.end method
-
-.method public final draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
-    .registers 10
-
-    iget-object p2, p0, Ln15;->o:Landroid/graphics/Paint$FontMetricsInt;
-
-    invoke-virtual {p9, p2}, Landroid/graphics/Paint;->getFontMetricsInt(Landroid/graphics/Paint$FontMetricsInt;)I
-
-    iget p3, p0, Ln15;->b:I
-
-    iget p4, p0, Ln15;->X:I
-
-    if-eqz p4, :cond_1
-
-    const/4 p6, 0x2
-
-    if-eq p4, p6, :cond_0
-
-    neg-int p2, p3
-
-    goto :goto_0
-
-    :cond_0
-    iget p4, p2, Landroid/graphics/Paint$FontMetricsInt;->descent:I
-
-    iget p2, p2, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
-
-    sub-int/2addr p4, p2
-
-    sub-int/2addr p4, p3
-
-    div-int/2addr p4, p6
-
-    add-int/2addr p2, p4
-
-    goto :goto_0
-
-    :cond_1
-    iget p2, p2, Landroid/graphics/Paint$FontMetricsInt;->descent:I
-
-    sub-int/2addr p2, p3
-
-    :goto_0
-    add-int/2addr p7, p2
-
-    int-to-float p2, p7
-
-    invoke-virtual {p1, p5, p2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    iget-object p0, p0, Ln15;->Y:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    neg-float p0, p5
-
-    neg-int p2, p7
-
-    int-to-float p2, p2
-
-    invoke-virtual {p1, p0, p2}, Landroid/graphics/Canvas;->translate(FF)V
-
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    instance-of v0, p1, Ln15;
-
-    if-nez v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    check-cast p1, Ln15;
-
-    iget v0, p0, Ln15;->X:I
-
-    iget v1, p1, Ln15;->X:I
-
-    if-ne v0, v1, :cond_2
-
-    iget-object v0, p0, Ln15;->c:Landroid/graphics/Rect;
-
-    iget-object v1, p1, Ln15;->c:Landroid/graphics/Rect;
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iget-object p0, p0, Ln15;->Y:Landroid/graphics/drawable/Drawable;
-
-    iget-object p1, p1, Ln15;->Y:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    :goto_0
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_2
-    :goto_1
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
-    .registers 10
-
-    iget-object v0, p0, Ln15;->Y:Landroid/graphics/drawable/Drawable;
-
-    instance-of v1, v0, Lh0e;
-
-    if-eqz v1, :cond_3
-
-    check-cast v0, Lh0e;
-
-    invoke-virtual {p1}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
-
-    move-result-object v1
-
-    if-nez v1, :cond_0
-
-    move-object v1, p5
-
-    :cond_0
-    sget-object v2, Lh0e;->d:Landroid/graphics/Paint;
-
-    iget-object v2, v0, Lh0e;->a:Li0e;
-
-    if-nez v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    iget v3, v1, Landroid/graphics/Paint$FontMetricsInt;->descent:I
-
-    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
+    invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawablePadding()I
 
     move-result v3
 
-    iget v1, v1, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
+    goto :goto_0
 
-    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
+    :cond_0
+    move v2, v1
+
+    move v3, v2
+
+    :goto_0
+    const/4 v4, 0x2
+
+    aget-object v0, v0, v4
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v1
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getCompoundDrawablePadding()I
+
+    move-result v0
+
+    add-int/2addr v3, v0
+
+    :cond_1
+    new-instance v4, Landroid/text/StaticLayout;
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
+
+    move-result-object v6
+
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
+
+    move-result v5
+
+    sub-int/2addr v0, v5
+
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
+
+    move-result v5
+
+    sub-int/2addr v0, v5
+
+    sub-int/2addr v0, v2
+
+    sub-int/2addr v0, v1
+
+    sub-int v7, v0, v3
+
+    sget-object v8, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
+
+    iget v9, p0, Ln15;->s0:F
+
+    iget v10, p0, Ln15;->t0:F
+
+    const/4 v11, 0x0
+
+    move-object v5, p1
+
+    invoke-direct/range {v4 .. v11}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
+
+    return-object v4
+.end method
+
+.method public getMaxLines()I
+    .registers 1
+
+    iget p0, p0, Ln15;->r0:I
+
+    return p0
+.end method
+
+.method public final onDraw(Landroid/graphics/Canvas;)V
+    .registers 10
+
+    iget-boolean v0, p0, Ln15;->b:Z
+
+    if-eqz v0, :cond_8
+
+    iget-object v0, p0, Ln15;->o:Ljava/lang/CharSequence;
+
+    if-nez v0, :cond_0
+
+    goto/16 :goto_3
+
+    :cond_0
+    iget-boolean v1, p0, Ln15;->v0:Z
+
+    const/4 v2, 0x2
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    const-string v5, "\u2026"
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v1
+
+    sub-int/2addr v1, v3
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v6
+
+    invoke-interface {v0, v1, v6}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    new-array v6, v2, [Ljava/lang/CharSequence;
+
+    aput-object v5, v6, v4
+
+    aput-object v1, v6, v3
+
+    invoke-static {v6}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v5
+
+    :cond_1
+    invoke-virtual {p0, v0}, Ln15;->a(Ljava/lang/CharSequence;)Landroid/text/StaticLayout;
+
+    move-result-object v1
+
+    invoke-direct {p0}, Ln15;->getLinesCount()I
+
+    move-result v6
+
+    if-lez v6, :cond_6
+
+    invoke-virtual {v1}, Landroid/text/Layout;->getLineCount()I
+
+    move-result v7
+
+    if-le v7, v6, :cond_6
+
+    add-int/lit8 v7, v6, -0x1
+
+    invoke-virtual {v1, v7}, Landroid/text/Layout;->getLineEnd(I)I
 
     move-result v1
 
     add-int/2addr v1, v3
 
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v7
+
+    if-lt v1, v7, :cond_2
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v1
+
+    sub-int/2addr v1, v3
+
+    :cond_2
+    invoke-interface {v0, v4, v1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    :goto_0
+    new-array v7, v2, [Ljava/lang/CharSequence;
+
+    aput-object v0, v7, v4
+
+    aput-object v5, v7, v3
+
+    invoke-static {v7}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v7
+
+    invoke-virtual {p0, v7}, Ln15;->a(Ljava/lang/CharSequence;)Landroid/text/StaticLayout;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/text/Layout;->getLineCount()I
+
+    move-result v7
+
+    if-le v7, v6, :cond_3
+
+    add-int/lit8 v1, v1, -0x1
+
     if-lez v1, :cond_3
 
-    iget v3, v2, Li0e;->b:I
+    invoke-interface {v0, v4, v1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
-    if-ne v3, v1, :cond_2
+    move-result-object v0
 
     goto :goto_0
 
-    :cond_2
-    iput v1, v2, Li0e;->b:I
-
-    iget-object v1, v0, Lh0e;->a:Li0e;
-
-    iget v1, v1, Li0e;->b:I
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v2, v2, v1, v1}, Lh0e;->setBounds(IIII)V
-
-    invoke-virtual {v0}, Lh0e;->a()V
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
-
     :cond_3
-    :goto_0
-    invoke-virtual/range {p0 .. p5}, Ln15;->a(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
+    instance-of v1, v0, Landroid/text/Spanned;
 
-    move-result p0
+    if-eqz v1, :cond_5
 
-    return p0
-.end method
+    new-instance v1, Landroid/text/SpannableStringBuilder;
 
-.method public final hashCode()I
-    .registers 3
+    invoke-direct {v1, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    iget-object v0, p0, Ln15;->c:Landroid/graphics/Rect;
+    iget-object v2, p0, Ln15;->u0:Ljava/util/regex/Pattern;
 
-    iget v1, p0, Ln15;->X:I
+    invoke-virtual {v2, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    invoke-virtual {v2}, Ljava/util/regex/Matcher;->start()I
+
+    move-result v2
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0, v5}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    :cond_4
+    move-object v0, v1
+
+    goto :goto_1
+
+    :cond_5
+    iget-object v1, p0, Ln15;->u0:Ljava/util/regex/Pattern;
+
+    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    move-result-object v0
+
+    const-string v1, ""
+
+    invoke-virtual {v0, v1}, Ljava/util/regex/Matcher;->replaceFirst(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-array v1, v2, [Ljava/lang/CharSequence;
+
+    aput-object v0, v1, v4
+
+    aput-object v5, v1, v3
+
+    invoke-static {v1}, Landroid/text/TextUtils;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    :cond_6
+    :goto_1
+    invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    iget-object p0, p0, Ln15;->Y:Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    filled-new-array {v0, v1, p0}, [Ljava/lang/Object;
+    move-result v1
 
-    move-result-object p0
+    if-nez v1, :cond_7
 
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    iput-boolean v3, p0, Ln15;->c:Z
 
-    move-result p0
+    :try_start_0
+    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return p0
+    iput-boolean v4, p0, Ln15;->c:Z
+
+    goto :goto_2
+
+    :catchall_0
+    move-exception p1
+
+    iput-boolean v4, p0, Ln15;->c:Z
+
+    throw p1
+
+    :cond_7
+    :goto_2
+    iput-boolean v4, p0, Ln15;->b:Z
+
+    :cond_8
+    :goto_3
+    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+
+    return-void
+.end method
+
+.method public final onSizeChanged(IIII)V
+    .registers 5
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Ln15;->b:Z
+
+    return-void
+.end method
+
+.method public final onTextChanged(Ljava/lang/CharSequence;III)V
+    .registers 5
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->onTextChanged(Ljava/lang/CharSequence;III)V
+
+    iget-boolean p2, p0, Ln15;->c:Z
+
+    const/4 p3, 0x1
+
+    if-nez p2, :cond_0
+
+    iget-object p2, p0, Ln15;->o:Ljava/lang/CharSequence;
+
+    if-eqz p2, :cond_1
+
+    :cond_0
+    if-eqz p1, :cond_1
+
+    iget-object p2, p0, Ln15;->o:Ljava/lang/CharSequence;
+
+    invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-ne p2, p3, :cond_1
+
+    return-void
+
+    :cond_1
+    iput-object p1, p0, Ln15;->o:Ljava/lang/CharSequence;
+
+    iput-boolean p3, p0, Ln15;->b:Z
+
+    return-void
+.end method
+
+.method public final setEndPunctuationPattern(Ljava/util/regex/Pattern;)V
+    .registers 2
+
+    if-nez p1, :cond_0
+
+    sget-object p1, Ln15;->x0:Ljava/util/regex/Pattern;
+
+    :cond_0
+    iput-object p1, p0, Ln15;->u0:Ljava/util/regex/Pattern;
+
+    return-void
+.end method
+
+.method public final setLineSpacing(FF)V
+    .registers 3
+
+    iput p1, p0, Ln15;->t0:F
+
+    iput p2, p0, Ln15;->s0:F
+
+    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setLineSpacing(FF)V
+
+    return-void
+.end method
+
+.method public setMaxLines(I)V
+    .registers 2
+
+    invoke-super {p0, p1}, Landroid/widget/TextView;->setMaxLines(I)V
+
+    iput p1, p0, Ln15;->r0:I
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Ln15;->b:Z
+
+    return-void
+.end method
+
+.method public final setPadding(IIII)V
+    .registers 5
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->setPadding(IIII)V
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Ln15;->b:Z
+
+    return-void
+.end method
+
+.method public final setPaddingRelative(IIII)V
+    .registers 5
+
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->setPaddingRelative(IIII)V
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Ln15;->b:Z
+
+    return-void
+.end method
+
+.method public final setSaveLastCharPosition(Z)V
+    .registers 2
+
+    iput-boolean p1, p0, Ln15;->v0:Z
+
+    return-void
 .end method

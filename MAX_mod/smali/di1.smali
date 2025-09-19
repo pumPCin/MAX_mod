@@ -1,64 +1,66 @@
-.class public final Ldi1;
+.class public final synthetic Ldi1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lei1;
+.implements Lzb6;
 
 
-# static fields
-.field public static final a:Ldi1;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lei1;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lei1;I)V
+    .registers 3
 
-    new-instance v0, Ldi1;
+    iput p2, p0, Ldi1;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldi1;->b:Lei1;
 
-    sput-object v0, Ldi1;->a:Ldi1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 2
 
-    const/4 v0, 0x1
+    iget v0, p0, Ldi1;->a:I
 
-    if-ne p0, p1, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    return v0
+    iget-object p0, p0, Ldi1;->b:Lei1;
 
-    :cond_0
-    instance-of p0, p1, Ldi1;
+    invoke-static {p0}, Lei1;->v(Lei1;)Landroid/graphics/drawable/LayerDrawable;
 
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, -0x2bda81dc
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "ShowCustomReasonInput"
+    move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    sget v0, Lq0d;->W0:I
+
+    iget-object p0, p0, Ldi1;->b:Lei1;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

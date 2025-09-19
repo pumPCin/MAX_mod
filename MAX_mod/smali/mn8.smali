@@ -4,8 +4,8 @@
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/Object;
+.method public abstract a(Landroid/media/MediaRouter$RouteInfo;I)V
 .end method
 
-.method public abstract b()Lnxe;
+.method public abstract b(Landroid/media/MediaRouter$RouteInfo;I)V
 .end method

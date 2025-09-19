@@ -1,102 +1,53 @@
-.class public final synthetic Lou;
-.super Ljava/lang/Object;
+.class public final Lou;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lim3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Ljava/util/List;
 
-.field public final synthetic b:Ldh2;
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lyv;
+
+.field public o:Lyv;
+
+.field public r0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldh2;I)V
+.method public constructor <init>(Lyv;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p2, p0, Lou;->a:I
+    iput-object p1, p0, Lou;->Z:Lyv;
 
-    iput-object p1, p0, Lou;->b:Ldh2;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .registers 4
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lou;->a:I
+    iput-object p1, p0, Lou;->Y:Ljava/lang/Object;
 
-    check-cast p1, Ljava/lang/Throwable;
+    iget p1, p0, Lou;->r0:I
 
-    packed-switch v0, :pswitch_data_0
+    const/high16 v0, -0x80000000
 
-    iget-object p0, p0, Lou;->b:Ldh2;
+    or-int/2addr p1, v0
 
-    iget-object v0, p0, Ldh2;->a:Ljava/lang/String;
+    iput p1, p0, Lou;->r0:I
 
-    const-string v1, "load: exception"
+    iget-object p1, p0, Lou;->Z:Lyv;
 
-    invoke-static {v0, v1, p1}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    const/4 v0, 0x0
 
-    iget-object p0, p0, Ldh2;->Y:Ls75;
+    invoke-virtual {p1, v0, p0}, Lyv;->m(Lk09;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    new-instance v0, Lru/ok/tamtam/util/HandledException;
+    move-result-object p0
 
-    invoke-direct {v0, p1}, Lru/ok/tamtam/util/HandledException;-><init>(Ljava/lang/Throwable;)V
-
-    invoke-interface {p0, v0}, Ls75;->a(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lou;->b:Ldh2;
-
-    iget-object p0, p0, Ldh2;->n0:Lru;
-
-    invoke-virtual {p0}, Lru;->b()V
-
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lou;->b:Ldh2;
-
-    iget-object v0, p0, Ldh2;->a:Ljava/lang/String;
-
-    const-string v1, "loadPrev: exception"
-
-    invoke-static {v0, v1, p1}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    iget-object p0, p0, Ldh2;->Y:Ls75;
-
-    new-instance v0, Lru/ok/tamtam/util/HandledException;
-
-    invoke-direct {v0, p1}, Lru/ok/tamtam/util/HandledException;-><init>(Ljava/lang/Throwable;)V
-
-    invoke-interface {p0, v0}, Ls75;->a(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :pswitch_2
-    iget-object p0, p0, Lou;->b:Ldh2;
-
-    iget-object p0, p0, Ldh2;->o0:Lru;
-
-    invoke-virtual {p0}, Lru;->b()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

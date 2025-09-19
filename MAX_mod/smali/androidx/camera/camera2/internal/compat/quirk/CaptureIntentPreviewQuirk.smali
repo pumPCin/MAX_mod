@@ -3,11 +3,11 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpub;
+.implements Lt1c;
 
 
 # virtual methods
-.method public d()Z
+.method public c()Z
     .registers 1
 
     const/4 p0, 0x1

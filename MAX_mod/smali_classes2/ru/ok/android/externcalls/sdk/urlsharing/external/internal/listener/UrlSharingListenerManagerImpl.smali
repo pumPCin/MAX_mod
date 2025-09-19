@@ -4,8 +4,8 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManager;
-.implements Lyp1;
-.implements Lxm1;
+.implements Ldq1;
+.implements Ldn1;
 
 
 # annotations
@@ -22,30 +22,30 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;",
         "Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManager;",
-        "Lyp1;",
-        "Lxm1;",
+        "Ldq1;",
+        "Ldn1;",
         "Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;",
         "idMappingResolver",
         "Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;",
         "idMappingWrapper",
-        "Ld7c;",
+        "Lfec;",
         "logger",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;Ld7c;)V",
-        "Lned;",
+        "(Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;Lfec;)V",
+        "Lvmd;",
         "roomId",
-        "Letd;",
+        "Ll1e;",
         "info",
-        "Lncf;",
+        "Lylf;",
         "saveUrlSharing",
-        "(Lned;Letd;)V",
+        "(Lvmd;Ll1e;)V",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Lru/ok/android/externcalls/sdk/id/ExternalId;",
         "initiator",
         "",
         "url",
         "saveUrlSharingWithId",
-        "(Lned;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;)V",
+        "(Lvmd;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;)V",
         "reportForActiveRoom",
         "()V",
         "Lru/ok/android/externcalls/sdk/urlsharing/external/UrlSharingListener;",
@@ -53,17 +53,17 @@
         "addListener",
         "(Lru/ok/android/externcalls/sdk/urlsharing/external/UrlSharingListener;)V",
         "removeListener",
-        "Lxp1;",
+        "Lcq1;",
         "state",
         "onUrlSharingInfoUpdated",
-        "(Lxp1;)V",
-        "Ltm1;",
+        "(Lcq1;)V",
+        "Lzm1;",
         "params",
         "onCurrentParticipantActiveRoomChanged",
-        "(Ltm1;)V",
+        "(Lzm1;)V",
         "Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;",
         "Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;",
-        "Ld7c;",
+        "Lfec;",
         "Ljava/util/concurrent/CopyOnWriteArraySet;",
         "listeners",
         "Ljava/util/concurrent/CopyOnWriteArraySet;",
@@ -72,7 +72,7 @@
         "roomIdToUrlSharingInfo",
         "Ljava/util/Map;",
         "activeRoomId",
-        "Lned;",
+        "Lvmd;",
         "Companion",
         "calls-sdk_release"
     }
@@ -93,7 +93,7 @@
 
 
 # instance fields
-.field private activeRoomId:Lned;
+.field private activeRoomId:Lvmd;
 
 .field private final idMappingResolver:Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;
 
@@ -109,13 +109,13 @@
     .end annotation
 .end field
 
-.field private final logger:Ld7c;
+.field private final logger:Lfec;
 
 .field private roomIdToUrlSharingInfo:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
-            "Lned;",
+            "Lvmd;",
             "Lru/ok/android/externcalls/sdk/urlsharing/external/UrlSharingInfo;",
             ">;"
         }
@@ -131,14 +131,14 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl$Companion;-><init>(Lwc4;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl$Companion;-><init>(Lld4;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->Companion:Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl$Companion;
 
     return-void
 .end method
 
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;Ld7c;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;Lfec;)V
     .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -147,7 +147,7 @@
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->idMappingWrapper:Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;
 
-    iput-object p3, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->logger:Ld7c;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->logger:Lfec;
 
     new-instance p1, Ljava/util/concurrent/CopyOnWriteArraySet;
 
@@ -161,9 +161,9 @@
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->roomIdToUrlSharingInfo:Ljava/util/Map;
 
-    sget-object p1, Lled;->a:Lled;
+    sget-object p1, Ltmd;->a:Ltmd;
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lned;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lvmd;
 
     return-void
 .end method
@@ -176,10 +176,10 @@
     return-void
 .end method
 
-.method public static synthetic b(Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;Letd;Lned;)V
+.method public static synthetic b(Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;Ll1e;Lvmd;)V
     .registers 3
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->saveUrlSharing$lambda$0(Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;Letd;Lned;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->saveUrlSharing$lambda$0(Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;Ll1e;Lvmd;)V
 
     return-void
 .end method
@@ -189,7 +189,7 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->roomIdToUrlSharingInfo:Ljava/util/Map;
 
-    iget-object v1, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lned;
+    iget-object v1, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lvmd;
 
     invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -231,59 +231,59 @@
     return-void
 .end method
 
-.method private final saveUrlSharing(Lned;Letd;)V
+.method private final saveUrlSharing(Lvmd;Ll1e;)V
     .registers 7
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->idMappingWrapper:Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;
 
-    iget-object v1, p2, Letd;->a:Lwg1;
+    iget-object v1, p2, Ll1e;->a:Lsg1;
 
-    invoke-virtual {v0, v1}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lwg1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    invoke-virtual {v0, v1}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lsg1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    iget-object p2, p2, Letd;->b:Ljava/lang/String;
+    iget-object p2, p2, Ll1e;->b:Ljava/lang/String;
 
-    invoke-direct {p0, p1, v0, p2}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->saveUrlSharingWithId(Lned;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;)V
+    invoke-direct {p0, p1, v0, p2}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->saveUrlSharingWithId(Lvmd;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;)V
 
     return-void
 
     :cond_0
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->idMappingResolver:Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;
 
-    iget-object v1, p2, Letd;->a:Lwg1;
+    iget-object v1, p2, Ll1e;->a:Lsg1;
 
     invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
 
-    new-instance v2, Lepc;
+    new-instance v2, Ljxc;
 
     const/16 v3, 0xb
 
-    invoke-direct {v2, p0, p2, p1, v3}, Lepc;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v2, p0, p2, p1, v3}, Ljxc;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    new-instance p1, Lfne;
+    new-instance p1, Lsle;
 
-    const/16 p2, 0xc
+    const/16 p2, 0x10
 
-    invoke-direct {p1, p2, p0}, Lfne;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p1, p2, p0}, Lsle;-><init>(ILjava/lang/Object;)V
 
     invoke-interface {v0, v1, v2, p1}, Lru/ok/android/externcalls/sdk/id/mapping/IdMappingResolver;->resolveExternalsByInternalsIds(Ljava/util/List;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private static final saveUrlSharing$lambda$0(Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;Letd;Lned;)V
+.method private static final saveUrlSharing$lambda$0(Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;Ll1e;Lvmd;)V
     .registers 5
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->idMappingWrapper:Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;
 
-    iget-object v1, p1, Letd;->a:Lwg1;
+    iget-object v1, p1, Ll1e;->a:Lsg1;
 
-    invoke-virtual {v0, v1}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lwg1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
+    invoke-virtual {v0, v1}, Lru/ok/android/externcalls/sdk/id/IdMappingWrapper;->getByInternal(Lsg1;)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     move-result-object v0
 
@@ -292,9 +292,9 @@
     return-void
 
     :cond_0
-    iget-object p1, p1, Letd;->b:Ljava/lang/String;
+    iget-object p1, p1, Ll1e;->b:Ljava/lang/String;
 
-    invoke-direct {p0, p2, v0, p1}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->saveUrlSharingWithId(Lned;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;)V
+    invoke-direct {p0, p2, v0, p1}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->saveUrlSharingWithId(Lvmd;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -302,18 +302,18 @@
 .method private static final saveUrlSharing$lambda$1(Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;)V
     .registers 3
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->logger:Ld7c;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->logger:Lfec;
 
     const-string v0, "UrlSharingListenerManagerImpl"
 
     const-string v1, "Can\'t resolve internal id"
 
-    invoke-interface {p0, v0, v1}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p0, v0, v1}, Lfec;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private final saveUrlSharingWithId(Lned;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;)V
+.method private final saveUrlSharingWithId(Lvmd;Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;)V
     .registers 6
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->roomIdToUrlSharingInfo:Ljava/util/Map;
@@ -324,9 +324,9 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object p2, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lned;
+    iget-object p2, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lvmd;
 
-    invoke-static {p1, p2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -349,7 +349,7 @@
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->roomIdToUrlSharingInfo:Ljava/util/Map;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lned;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lvmd;
 
     invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -365,14 +365,14 @@
     return-void
 .end method
 
-.method public onCurrentParticipantActiveRoomChanged(Ltm1;)V
+.method public onCurrentParticipantActiveRoomChanged(Lzm1;)V
     .registers 3
 
-    iget-object v0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lned;
+    iget-object v0, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lvmd;
 
-    iget-object p1, p1, Ltm1;->a:Lned;
+    iget-object p1, p1, Lzm1;->a:Lvmd;
 
-    invoke-static {v0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -381,37 +381,37 @@
     return-void
 
     :cond_0
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lned;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lvmd;
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->reportForActiveRoom()V
 
     return-void
 .end method
 
-.method public bridge synthetic onCurrentParticipantInvitedToRoom(Lum1;)V
+.method public bridge synthetic onCurrentParticipantInvitedToRoom(Lan1;)V
     .registers 2
 
     return-void
 .end method
 
-.method public bridge synthetic onRoomRemoved(Lvm1;)V
+.method public bridge synthetic onRoomRemoved(Lbn1;)V
     .registers 2
 
     return-void
 .end method
 
-.method public bridge synthetic onRoomUpdated(Lwm1;)V
+.method public bridge synthetic onRoomUpdated(Lcn1;)V
     .registers 2
 
     return-void
 .end method
 
-.method public onUrlSharingInfoUpdated(Lxp1;)V
+.method public onUrlSharingInfoUpdated(Lcq1;)V
     .registers 4
 
-    iget-object v0, p1, Lxp1;->a:Lned;
+    iget-object v0, p1, Lcq1;->a:Lvmd;
 
-    iget-object p1, p1, Lxp1;->b:Letd;
+    iget-object p1, p1, Lcq1;->b:Ll1e;
 
     if-nez p1, :cond_1
 
@@ -421,9 +421,9 @@
 
     invoke-interface {p1, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object p1, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lned;
+    iget-object p1, p0, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->activeRoomId:Lvmd;
 
-    invoke-static {v0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p1
 
@@ -435,7 +435,7 @@
     return-void
 
     :cond_1
-    invoke-direct {p0, v0, p1}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->saveUrlSharing(Lned;Letd;)V
+    invoke-direct {p0, v0, p1}, Lru/ok/android/externcalls/sdk/urlsharing/external/internal/listener/UrlSharingListenerManagerImpl;->saveUrlSharing(Lvmd;Ll1e;)V
 
     return-void
 .end method

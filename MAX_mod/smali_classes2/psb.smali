@@ -2,108 +2,207 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic e:[Lsf7;
-
-.field public static final f:Ljava/lang/String;
+# interfaces
+.implements Lssb;
 
 
 # instance fields
-.field public final a:Lqbd;
+.field public final a:Lu2f;
 
-.field public final b:Ljava/util/concurrent/atomic/AtomicLong;
+.field public final b:Lu2f;
 
-.field public final c:Lfq4;
+.field public final c:Ljava/util/List;
 
-.field public final d:Lfq4;
+.field public final d:Landroid/os/Bundle;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
-
-    new-instance v0, Lrqb;
-
-    const-class v1, Lpsb;
-
-    const-string v2, "connectionController"
-
-    const-string v3, "getConnectionController()Lru/ok/tamtam/controllers/ConnectionController;"
-
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sget-object v2, Lyhc;->a:Lzhc;
-
-    const-string v3, "device"
-
-    const-string v5, "getDevice()Lru/ok/tamtam/Device;"
-
-    invoke-static {v2, v1, v3, v5, v4}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
-
-    move-result-object v2
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Lsf7;
-
-    aput-object v0, v3, v4
-
-    const/4 v0, 0x1
-
-    aput-object v2, v3, v0
-
-    sput-object v3, Lpsb;->e:[Lsf7;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lpsb;->f:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lqbd;Lfq4;Lfq4;)V
-    .registers 4
+.method public constructor <init>(Lu2f;Lu2f;Ljava/util/List;Landroid/os/Bundle;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lpsb;->a:Lqbd;
+    iput-object p1, p0, Lpsb;->a:Lu2f;
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicLong;
+    iput-object p2, p0, Lpsb;->b:Lu2f;
 
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
+    iput-object p3, p0, Lpsb;->c:Ljava/util/List;
 
-    iput-object p1, p0, Lpsb;->b:Ljava/util/concurrent/atomic/AtomicLong;
-
-    iput-object p2, p0, Lpsb;->c:Lfq4;
-
-    iput-object p3, p0, Lpsb;->d:Lfq4;
+    iput-object p4, p0, Lpsb;->d:Landroid/os/Bundle;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhm4;
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lpsb;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lpsb;
+
+    iget-object v1, p0, Lpsb;->a:Lu2f;
+
+    iget-object v3, p1, Lpsb;->a:Lu2f;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lpsb;->b:Lu2f;
+
+    iget-object v3, p1, Lpsb;->b:Lu2f;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lpsb;->c:Ljava/util/List;
+
+    iget-object v3, p1, Lpsb;->c:Ljava/util/List;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object p0, p0, Lpsb;->d:Landroid/os/Bundle;
+
+    iget-object p1, p1, Lpsb;->d:Landroid/os/Bundle;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_5
+
+    return v2
+
+    :cond_5
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget-object v0, p0, Lpsb;->a:Lu2f;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lpsb;->b:Lu2f;
+
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    :goto_0
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lpsb;->c:Ljava/util/List;
+
+    invoke-static {v2, v0, v1}, Lz7e;->n(Ljava/util/List;II)I
+
+    move-result v0
+
+    iget-object p0, p0, Lpsb;->d:Landroid/os/Bundle;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    sget-object v0, Lpsb;->e:[Lsf7;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x1
+    const-string v1, "ShowConfirmationDialog(title="
 
-    aget-object v0, v0, v1
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lpsb;->d:Lfq4;
+    iget-object v1, p0, Lpsb;->a:Lu2f;
 
-    invoke-virtual {p0}, Lfq4;->get()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", subtitle="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lpsb;->b:Lu2f;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", buttons="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lpsb;->c:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", payload="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lpsb;->d:Landroid/os/Bundle;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
-
-    check-cast p0, Lhm4;
 
     return-object p0
 .end method

@@ -1,49 +1,48 @@
 .class public final Lm5e;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.super Ljx3;
 
 
 # instance fields
-.field public final a:Lapc;
+.field public X:I
 
-.field public final b:Llh;
+.field public final synthetic Y:Lhc9;
 
-.field public final c:Lroc;
-
-.field public final d:Lroc;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
-    .registers 4
+.method public constructor <init>(Lhc9;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lm5e;->Y:Lhc9;
 
-    iput-object p1, p0, Lm5e;->a:Lapc;
-
-    new-instance v0, Llh;
-
-    const/16 v1, 0x17
-
-    invoke-direct {v0, p1, v1}, Llh;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lm5e;->b:Llh;
-
-    new-instance v0, Lroc;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, p1, v1}, Lroc;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lm5e;->c:Lroc;
-
-    new-instance v0, Lroc;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, p1, v1}, Lroc;-><init>(Lapc;I)V
-
-    iput-object v0, p0, Lm5e;->d:Lroc;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iput-object p1, p0, Lm5e;->o:Ljava/lang/Object;
+
+    iget p1, p0, Lm5e;->X:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lm5e;->X:I
+
+    iget-object p1, p0, Lm5e;->Y:Lhc9;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lhc9;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

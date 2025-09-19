@@ -1,22 +1,17 @@
-.class public final Lf2e;
+.class public interface abstract Lf2e;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lg2e;
 
+# virtual methods
+.method public abstract clear()V
+.end method
 
-# instance fields
-.field public final a:Lms8;
+.method public abstract isEmpty()Z
+.end method
 
+.method public abstract offer(Ljava/lang/Object;)Z
+.end method
 
-# direct methods
-.method public constructor <init>(Lms8;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lf2e;->a:Lms8;
-
-    return-void
+.method public abstract poll()Ljava/lang/Object;
 .end method

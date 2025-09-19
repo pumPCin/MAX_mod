@@ -1,156 +1,115 @@
 .class public final Lo6a;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lbx5;
+.implements Loq4;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Ld8a;
 
-.field public final synthetic Y:Lone/me/android/OneMeApplication;
+.field public b:Llne;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/android/OneMeApplication;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Ld8a;)V
+    .registers 2
 
-    iput-object p1, p0, Lo6a;->Y:Lone/me/android/OneMeApplication;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lo6a;->a:Ld8a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final b()V
+    .registers 1
 
-    check-cast p1, Llx4;
+    iget-object p0, p0, Lo6a;->a:Ld8a;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-interface {p0}, Ld8a;->b()V
 
-    invoke-virtual {p0, p1, p2}, Lo6a;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lo6a;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lo6a;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return-void
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final d(Llne;)V
     .registers 4
 
-    new-instance v0, Lo6a;
+    iget-object v0, p0, Lo6a;->b:Llne;
 
-    iget-object p0, p0, Lo6a;->Y:Lone/me/android/OneMeApplication;
-
-    invoke-direct {v0, p0, p2}, Lo6a;-><init>(Lone/me/android/OneMeApplication;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lo6a;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lo6a;->X:Ljava/lang/Object;
-
-    check-cast p1, Llx4;
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p1
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "change dynamic font to "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "OneMeDynamicFont"
-
-    invoke-static {v0, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance p1, Landroid/content/res/Configuration;
-
-    iget-object p0, p0, Lo6a;->Y:Lone/me/android/OneMeApplication;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v0
-
-    invoke-direct {p1, v0}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
-
-    iget v0, p1, Landroid/content/res/Configuration;->fontScale:F
-
-    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+    invoke-static {v0, p1}, Lnne;->e(Llne;Llne;)Z
 
     move-result v0
 
-    sget-object v1, Lq7c;->b:Lb3;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v1}, Lb3;->h()Z
+    iput-object p1, p0, Lo6a;->b:Llne;
 
-    move-result v1
+    iget-object v0, p0, Lo6a;->a:Ld8a;
 
-    if-eqz v1, :cond_0
+    invoke-interface {v0, p0}, Ld8a;->c(Loq4;)V
 
-    const/4 v1, -0x1
+    const-wide v0, 0x7fffffffffffffffL
 
-    goto :goto_0
+    invoke-interface {p1, v0, v1}, Llne;->h(J)V
 
     :cond_0
-    const/4 v1, 0x1
+    return-void
+.end method
 
-    :goto_0
-    add-int/2addr v0, v1
+.method public final e()V
+    .registers 2
 
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+    iget-object v0, p0, Lo6a;->b:Llne;
 
-    move-result v0
+    invoke-interface {v0}, Llne;->cancel()V
 
-    iput v0, p1, Landroid/content/res/Configuration;->fontScale:F
+    sget-object v0, Lnne;->a:Lnne;
 
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    iput-object v0, p0, Lo6a;->b:Llne;
 
-    move-result-object v0
+    return-void
+.end method
 
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+.method public final f()Z
+    .registers 2
 
-    move-result-object v1
+    iget-object p0, p0, Lo6a;->b:Llne;
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    sget-object v0, Lnne;->a:Lnne;
 
-    move-result-object v1
+    if-ne p0, v0, :cond_0
 
-    invoke-virtual {v0, p1, v1}, Landroid/content/res/Resources;->updateConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;)V
+    const/4 p0, 0x1
 
-    invoke-virtual {p0, p1}, Lone/me/android/OneMeApplication;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+    return p0
 
-    sget-object p0, Lncf;->a:Lncf;
+    :cond_0
+    const/4 p0, 0x0
 
-    return-object p0
+    return p0
+.end method
+
+.method public final onError(Ljava/lang/Throwable;)V
+    .registers 2
+
+    iget-object p0, p0, Lo6a;->a:Ld8a;
+
+    invoke-interface {p0, p1}, Ld8a;->onError(Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public final s(Ljava/lang/Object;)V
+    .registers 2
+
+    iget-object p0, p0, Lo6a;->a:Ld8a;
+
+    invoke-interface {p0, p1}, Ld8a;->s(Ljava/lang/Object;)V
+
+    return-void
 .end method

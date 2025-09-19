@@ -1,29 +1,20 @@
 .class public abstract Lal0;
-.super Ljava/lang/Object;
+.super Ljava/util/concurrent/atomic/AtomicLong;
 .source "SourceFile"
 
+# interfaces
+.implements Lt0c;
 
-# static fields
-.field public static final synthetic a:I
 
+# virtual methods
+.method public final offer(Ljava/lang/Object;)Z
+    .registers 2
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 3
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    sget-object v0, Lgg;->a:Landroid/view/animation/LinearInterpolator;
+    const-string p1, "Should not be called!"
 
-    new-instance v0, Landroid/os/Handler;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    new-instance v2, Lyk0;
-
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    invoke-direct {v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
-
-    return-void
+    throw p0
 .end method

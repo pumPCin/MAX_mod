@@ -1,57 +1,141 @@
-.class public final Lt1a;
-.super Lu2;
+.class public abstract Lt1a;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic b:I
-
-
 # direct methods
-.method public synthetic constructor <init>(Lt3a;I)V
-    .registers 3
+.method public static a(Landroid/app/NotificationManager;Landroid/app/NotificationChannel;)V
+    .registers 2
 
-    iput p2, p0, Lt1a;->b:I
-
-    invoke-direct {p0, p1}, Lu2;-><init>(Lt3a;)V
+    invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
     return-void
 .end method
 
+.method public static b(Landroid/app/NotificationManager;Landroid/app/NotificationChannelGroup;)V
+    .registers 2
 
-# virtual methods
-.method public final o(Ld4a;)V
-    .registers 4
-
-    iget v0, p0, Lt1a;->b:I
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Lo68;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1, p1}, Lo68;-><init>(ILjava/lang/Object;)V
-
-    iget-object p0, p0, Lu2;->a:Lt3a;
-
-    invoke-interface {p0, v0}, Lt3a;->a(Ld4a;)V
+    invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->createNotificationChannelGroup(Landroid/app/NotificationChannelGroup;)V
 
     return-void
+.end method
 
-    :pswitch_0
-    new-instance v0, Ls1a;
+.method public static c(Landroid/app/NotificationManager;Ljava/util/List;)V
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/NotificationManager;",
+            "Ljava/util/List<",
+            "Landroid/app/NotificationChannelGroup;",
+            ">;)V"
+        }
+    .end annotation
 
-    invoke-direct {v0, p1}, Lml0;-><init>(Ld4a;)V
-
-    iget-object p0, p0, Lu2;->a:Lt3a;
-
-    invoke-interface {p0, v0}, Lt3a;->a(Ld4a;)V
+    invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->createNotificationChannelGroups(Ljava/util/List;)V
 
     return-void
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public static d(Landroid/app/NotificationManager;Ljava/util/List;)V
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/NotificationManager;",
+            "Ljava/util/List<",
+            "Landroid/app/NotificationChannel;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->createNotificationChannels(Ljava/util/List;)V
+
+    return-void
+.end method
+
+.method public static e(Landroid/app/NotificationManager;Ljava/lang/String;)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->deleteNotificationChannel(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static f(Landroid/app/NotificationManager;Ljava/lang/String;)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->deleteNotificationChannelGroup(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static g(Landroid/app/NotificationChannel;)Ljava/lang/String;
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/app/NotificationChannel;->getId()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static h(Landroid/app/NotificationChannelGroup;)Ljava/lang/String;
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/app/NotificationChannelGroup;->getId()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static i(Landroid/app/NotificationManager;Ljava/lang/String;)Landroid/app/NotificationChannel;
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->getNotificationChannel(Ljava/lang/String;)Landroid/app/NotificationChannel;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static j(Landroid/app/NotificationManager;)Ljava/util/List;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/NotificationManager;",
+            ")",
+            "Ljava/util/List<",
+            "Landroid/app/NotificationChannelGroup;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroid/app/NotificationManager;->getNotificationChannelGroups()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static k(Landroid/app/NotificationManager;)Ljava/util/List;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/app/NotificationManager;",
+            ")",
+            "Ljava/util/List<",
+            "Landroid/app/NotificationChannel;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Landroid/app/NotificationManager;->getNotificationChannels()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
 .end method

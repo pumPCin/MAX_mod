@@ -1,61 +1,74 @@
-.class public final Liha;
-.super Llha;
+.class public final synthetic Liha;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lzb6;
 
-# static fields
-.field public static final a:Liha;
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lkha;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lkha;I)V
+    .registers 3
 
-    new-instance v0, Liha;
+    iput p2, p0, Liha;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Liha;->b:Lkha;
 
-    sput-object v0, Liha;->a:Liha;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 5
 
-    const/4 v0, 0x1
+    iget v0, p0, Liha;->a:I
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Liha;->b:Lkha;
 
-    return v0
+    packed-switch v0, :pswitch_data_0
 
-    :cond_0
-    instance-of p0, p1, Liha;
+    invoke-virtual {p0}, Lkha;->c()Ljava/util/concurrent/ExecutorService;
 
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, 0x715c406f
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "PrimaryStatic"
+    move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    new-instance v0, Lay7;
+
+    iget-object v1, p0, Lkha;->c:Lof3;
+
+    new-instance v2, Liha;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, p0, v3}, Liha;-><init>(Lkha;I)V
+
+    invoke-direct {v0, v1, v2}, Lay7;-><init>(Lof3;Liha;)V
+
+    new-instance p0, Lgha;
+
+    invoke-direct {p0, v0}, Lgha;-><init>(Lay7;)V
+
+    return-object p0
+
+    :pswitch_1
+    iget-object p0, p0, Lkha;->b:Lce;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

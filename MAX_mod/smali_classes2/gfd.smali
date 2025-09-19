@@ -1,64 +1,45 @@
 .class public final Lgfd;
-.super Lsoe;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public c:Ljava/lang/String;
+.field public final synthetic X:Lmfd;
+
+.field public Y:I
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lu09;)V
-    .registers 2
+.method public constructor <init>(Lmfd;Ljx3;)V
+    .registers 3
 
-    invoke-direct {p0, p1}, Lsoe;-><init>(Lu09;)V
+    iput-object p1, p0, Lgfd;->X:Lmfd;
+
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lu09;Ljava/lang/String;)V
-    .registers 4
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v0, "token"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    invoke-virtual {p1}, Lu09;->B()V
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p1}, Lu09;->D0()Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lgfd;->c:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-object p0, p0, Lgfd;->c:Ljava/lang/String;
+    iput-object p1, p0, Lgfd;->o:Ljava/lang/Object;
 
-    invoke-static {p0}, Lms8;->z(Ljava/lang/CharSequence;)Ljava/lang/String;
+    iget p1, p0, Lgfd;->Y:I
 
-    move-result-object p0
+    const/high16 v0, -0x80000000
 
-    const-string v0, "{token=\'"
+    or-int/2addr p1, v0
 
-    const-string v1, "\'}"
+    iput p1, p0, Lgfd;->Y:I
 
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iget-object p1, p0, Lgfd;->X:Lmfd;
+
+    invoke-virtual {p1, p0}, Lmfd;->q(Ljx3;)Ljava/lang/Object;
 
     move-result-object p0
 

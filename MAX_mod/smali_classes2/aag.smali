@@ -1,152 +1,77 @@
-.class public final synthetic Laag;
-.super Ljava/lang/Object;
+.class public final Laag;
+.super Lvx3;
 .source "SourceFile"
 
-# interfaces
-.implements Lee6;
 
+# instance fields
+.field public final synthetic a:Lax;
 
-# static fields
-.field public static final a:Laag;
+.field public final synthetic b:Landroid/view/ViewTreeObserver;
 
-.field private static final descriptor:Lkad;
+.field public final synthetic c:Lbag;
+
+.field public final synthetic d:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public constructor <init>(Lax;Landroid/view/ViewTreeObserver;Lbag;Landroid/view/View;)V
+    .registers 5
 
-    new-instance v0, Laag;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Laag;->a:Lax;
 
-    sput-object v0, Laag;->a:Laag;
+    iput-object p2, p0, Laag;->b:Landroid/view/ViewTreeObserver;
 
-    new-instance v1, Lk7b;
+    iput-object p3, p0, Laag;->c:Lbag;
 
-    const-string v2, "one.me.webapp.domain.jsbridge.delegates.link.WebAppOpenLinkRequest"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v0, v3}, Lk7b;-><init>(Ljava/lang/String;Lee6;I)V
-
-    const-string v0, "url"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Lk7b;->k(Ljava/lang/String;Z)V
-
-    sput-object v1, Laag;->descriptor:Lkad;
+    iput-object p4, p0, Laag;->d:Landroid/view/View;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lq8;)Ljava/lang/Object;
-    .registers 9
+.method public final s(Lxx3;Landroid/view/View;)V
+    .registers 4
 
-    sget-object p0, Laag;->descriptor:Lkad;
+    iget-object p2, p0, Laag;->a:Lax;
 
-    invoke-virtual {p1, p0}, Lq8;->j(Lkad;)Lq8;
+    iget-object p2, p2, Lax;->Y:Ljava/lang/Object;
 
-    move-result-object p1
+    check-cast p2, Ljava/util/ArrayList;
 
-    const/4 v0, 0x1
+    invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move v3, v0
-
-    move v4, v1
+    move-result-object p2
 
     :goto_0
-    if-eqz v3, :cond_2
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {p1, p0}, Lq8;->p(Lkad;)I
+    move-result v0
 
-    move-result v5
+    if-eqz v0, :cond_0
 
-    const/4 v6, -0x1
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    if-eq v5, v6, :cond_1
+    move-result-object v0
 
-    if-nez v5, :cond_0
+    check-cast v0, Ly9g;
 
-    invoke-virtual {p1, p0, v1}, Lq8;->v(Lkad;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    move v4, v0
+    invoke-interface {v0}, Ly9g;->b()V
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+    invoke-virtual {p1, p0}, Lxx3;->removeLifecycleListener(Lvx3;)V
 
-    invoke-direct {p0, v5}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
+    iget-object p1, p0, Laag;->c:Lbag;
 
-    throw p0
+    iget-object p2, p0, Laag;->d:Landroid/view/View;
 
-    :cond_1
-    move v3, v1
+    iget-object p0, p0, Laag;->b:Landroid/view/ViewTreeObserver;
 
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p1, p0}, Lq8;->y(Lkad;)V
-
-    new-instance p0, Lcag;
-
-    invoke-direct {p0, v4, v2}, Lcag;-><init>(ILjava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public final b(Ltx3;Ljava/lang/Object;)V
-    .registers 4
-
-    check-cast p2, Lcag;
-
-    sget-object p0, Laag;->descriptor:Lkad;
-
-    invoke-virtual {p1, p0}, Ltx3;->b(Lkad;)Ltx3;
-
-    move-result-object p1
-
-    iget-object p2, p2, Lcag;->a:Ljava/lang/String;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p0, v0, p2}, Ltx3;->l(Lkad;ILjava/lang/String;)V
-
-    invoke-virtual {p1}, Ltx3;->m()V
+    invoke-static {p1, p2, p0}, Lax;->b(Lbag;Landroid/view/View;Landroid/view/ViewTreeObserver;)V
 
     return-void
-.end method
-
-.method public final c()[Ltf7;
-    .registers 3
-
-    const/4 p0, 0x1
-
-    new-array p0, p0, [Ltf7;
-
-    sget-object v0, Lmde;->a:Lmde;
-
-    const/4 v1, 0x0
-
-    aput-object v0, p0, v1
-
-    return-object p0
-.end method
-
-.method public final d()Lkad;
-    .registers 1
-
-    sget-object p0, Laag;->descriptor:Lkad;
-
-    return-object p0
 .end method

@@ -1,626 +1,1249 @@
 .class public final Ll13;
-.super Lyfd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic K0:I
-
-.field public final L0:Landroid/view/View;
-
-.field public final M0:Landroid/view/View;
+.field public final a:Lru4;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lru/ok/messages/settings/FrgBaseSettings;I)V
-    .registers 6
+.method public constructor <init>(Lru4;)V
+    .registers 2
 
-    iput p3, p0, Ll13;->K0:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    packed-switch p3, :pswitch_data_0
-
-    invoke-direct {p0, p1, p2}, Lyfd;-><init>(Landroid/view/View;Lru/ok/messages/settings/FrgBaseSettings;)V
-
-    sget p2, Ly0c;->row_setting_contact__av_view:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Lru/ok/messages/views/widgets/TamAvatarView;
-
-    iput-object p2, p0, Ll13;->M0:Landroid/view/View;
-
-    sget p2, Ly0c;->row_contact_base__tv_name:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/widget/TextView;
-
-    iput-object p2, p0, Ll13;->L0:Landroid/view/View;
-
-    new-instance p3, Ljue;
-
-    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lev0;->c(Landroid/content/Context;)Lccf;
-
-    move-result-object v0
-
-    invoke-direct {p3, p2, v0}, Ljue;-><init>(Landroid/widget/TextView;Lccf;)V
-
-    invoke-virtual {p3}, Ljue;->a()V
-
-    iget-object p3, p0, Lyfd;->J0:Ldqe;
-
-    iget p3, p3, Ldqe;->F:I
-
-    invoke-virtual {p2, p3}, Landroid/widget/TextView;->setTextColor(I)V
-
-    sget p2, Ly0c;->row_contact_base__tv_last_seen:I
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/TextView;
-
-    iget-object p0, p0, Lyfd;->J0:Ldqe;
-
-    iget p0, p0, Ldqe;->M:I
-
-    invoke-virtual {p1, p0}, Landroid/widget/TextView;->setTextColor(I)V
+    iput-object p1, p0, Ll13;->a:Lru4;
 
     return-void
-
-    :pswitch_0
-    invoke-direct {p0, p1, p2}, Lyfd;-><init>(Landroid/view/View;Lru/ok/messages/settings/FrgBaseSettings;)V
-
-    if-eqz p2, :cond_0
-
-    new-instance p3, Lmve;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p3, p0, v0}, Lmve;-><init>(Ll13;I)V
-
-    invoke-static {p1, p3}, Lkv0;->f(Landroid/view/View;Lz5;)Ljh7;
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p3
-
-    sget-object v0, Ldqe;->a0:Ldle;
-
-    invoke-static {p3}, Lx44;->Q(Landroid/content/Context;)Ldqe;
-
-    move-result-object p3
-
-    sget v0, Ly0c;->row_setting_theme__iv__selected:I
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    iput-object v0, p0, Ll13;->M0:Landroid/view/View;
-
-    iget v1, p3, Ldqe;->k:I
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(I)V
-
-    sget v0, Ly0c;->row_setting_theme__iv__forward:I
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/ImageView;
-
-    iput-object p1, p0, Ll13;->L0:Landroid/view/View;
-
-    iget v0, p3, Ldqe;->k:I
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setColorFilter(I)V
-
-    invoke-virtual {p3}, Ldqe;->a()Landroid/graphics/drawable/RippleDrawable;
-
-    move-result-object p3
-
-    invoke-virtual {p1, p3}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    if-eqz p2, :cond_1
-
-    new-instance p2, Lmve;
-
-    const/4 p3, 0x1
-
-    invoke-direct {p2, p0, p3}, Lmve;-><init>(Ll13;I)V
-
-    invoke-static {p1, p2}, Lkv0;->f(Landroid/view/View;Lz5;)Ljh7;
-
-    :cond_1
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x3
-        :pswitch_0
-    .end packed-switch
 .end method
 
-.method public constructor <init>(Landroid/view/ViewGroup;Landroid/view/LayoutInflater;Lru/ok/messages/settings/FrgBaseSettings;I)V
-    .registers 7
+.method public static a(Ljava/lang/Integer;)I
+    .registers 3
 
-    iput p4, p0, Ll13;->K0:I
+    const/4 v0, 0x1
 
-    const/4 v0, 0x0
+    if-nez p0, :cond_0
 
-    packed-switch p4, :pswitch_data_0
+    goto :goto_0
 
-    invoke-direct {p0, p1, p3}, Lyfd;-><init>(Landroid/view/View;Lru/ok/messages/settings/FrgBaseSettings;)V
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    move-result v1
 
-    move-result-object p3
+    if-nez v1, :cond_1
 
-    sget-object p4, Ldqe;->a0:Ldle;
+    return v0
 
-    invoke-static {p3}, Lx44;->Q(Landroid/content/Context;)Ldqe;
+    :cond_1
+    :goto_0
+    if-nez p0, :cond_2
 
-    move-result-object p3
+    goto :goto_1
 
-    sget p4, Ly1c;->row_setting_checkbox:I
+    :cond_2
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {p2, p4, p1, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    move-result p0
 
-    move-result-object p2
+    if-ne p0, v0, :cond_3
 
-    sget p4, Ly0c;->row_setting__fl_value:I
+    const/4 p0, 0x2
 
-    invoke-virtual {p1, p4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    return p0
 
-    move-result-object p4
+    :cond_3
+    :goto_1
+    const/4 p0, 0x0
 
-    check-cast p4, Landroid/widget/FrameLayout;
+    return p0
+.end method
 
-    invoke-virtual {p4, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+.method public static b(I)Ljava/lang/Integer;
+    .registers 3
 
-    invoke-virtual {p4, v0}, Landroid/view/View;->setVisibility(I)V
+    if-nez p0, :cond_0
 
-    sget p4, Ly0c;->row_checkbox_setting__cb_check:I
+    const/4 p0, -0x1
 
-    invoke-virtual {p2, p4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    goto :goto_0
 
-    move-result-object p4
+    :cond_0
+    sget-object v0, Lk13;->$EnumSwitchMapping$0:[I
 
-    check-cast p4, Landroidx/appcompat/widget/SwitchCompat;
+    invoke-static {p0}, Lmw1;->t(I)I
 
-    iput-object p4, p0, Ll13;->M0:Landroid/view/View;
+    move-result p0
 
-    invoke-static {p3, p4}, Ly6c;->f(Ldqe;Landroidx/appcompat/widget/SwitchCompat;)V
+    aget p0, v0, p0
 
-    sget p4, Ly0c;->row_checkbox_setting__tv_value:I
+    :goto_0
+    const/4 v0, 0x1
 
-    invoke-virtual {p2, p4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    if-eq p0, v0, :cond_2
 
-    move-result-object p2
+    const/4 v1, 0x2
 
-    check-cast p2, Landroid/widget/TextView;
+    if-eq p0, v1, :cond_1
 
-    iput-object p2, p0, Ll13;->L0:Landroid/view/View;
+    const/4 p0, 0x0
 
-    iget p3, p3, Ldqe;->M:I
+    return-object p0
 
-    invoke-virtual {p2, p3}, Landroid/widget/TextView;->setTextColor(I)V
-
-    iget-object p2, p0, Lyfd;->D0:Landroid/widget/TextView;
-
-    iget-object p3, p0, Lyfd;->A0:Lrn4;
-
-    iget p3, p3, Lrn4;->B:I
-
-    invoke-static {p2, p3}, Lgwd;->z(Landroid/view/View;I)V
-
-    new-instance p2, Lz4;
-
-    const/16 p3, 0x14
-
-    invoke-direct {p2, p3, p0}, Lz4;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    return-void
-
-    :pswitch_0
-    invoke-direct {p0, p1, p3}, Lyfd;-><init>(Landroid/view/View;Lru/ok/messages/settings/FrgBaseSettings;)V
-
-    sget p3, Ly1c;->row_setting_online:I
-
-    invoke-virtual {p2, p3, p1, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p2
-
-    sget p3, Ly0c;->row_setting_online__circle:I
-
-    invoke-virtual {p2, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p3
-
-    iput-object p3, p0, Ll13;->M0:Landroid/view/View;
-
-    iget-object p4, p0, Lyfd;->J0:Ldqe;
-
-    iget p4, p4, Ldqe;->k:I
-
-    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p4
-
-    const/4 v1, 0x0
-
-    invoke-static {p4, v1, v1}, Lg64;->u(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)Landroid/graphics/drawable/GradientDrawable;
-
-    move-result-object p4
-
-    invoke-virtual {p3, p4}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    sget p3, Ly0c;->row_setting_online__tv:I
-
-    invoke-virtual {p2, p3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p3
-
-    check-cast p3, Landroid/widget/TextView;
-
-    iput-object p3, p0, Ll13;->L0:Landroid/view/View;
-
-    invoke-virtual {p3}, Landroid/view/View;->getContext()Landroid/content/Context;
+    :cond_1
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    sget-object p4, Ldqe;->a0:Ldle;
+    return-object p0
 
-    invoke-static {p0}, Lx44;->Q(Landroid/content/Context;)Ldqe;
+    :cond_2
+    const/4 p0, 0x0
 
-    move-result-object p0
-
-    iget p0, p0, Ldqe;->F:I
-
-    invoke-virtual {p3, p0}, Landroid/widget/TextView;->setTextColor(I)V
-
-    sget p0, Ly0c;->row_setting__fl_value:I
-
-    invoke-virtual {p1, p0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    check-cast p0, Landroid/widget/FrameLayout;
-
-    invoke-virtual {p0, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final x(Lvfd;Z)V
-    .registers 9
+.method public final c([B)Lvb2;
+    .registers 21
 
-    iget v0, p0, Ll13;->K0:I
+    sget-object v0, Lru/ok/tamtam/nano/b;->a:[B
 
-    packed-switch v0, :pswitch_data_0
+    new-instance v0, Lru/ok/tamtam/nano/Protos$Chat;
 
-    iget-object v0, p0, Ll13;->L0:Landroid/view/View;
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$Chat;-><init>()V
 
-    check-cast v0, Landroid/widget/ImageView;
+    move-object/from16 v1, p1
 
-    iget-object v1, p0, Ll13;->M0:Landroid/view/View;
+    :try_start_0
+    invoke-static {v0, v1}, Lj29;->mergeFrom(Lj29;[B)Lj29;
 
-    check-cast v1, Landroid/widget/ImageView;
+    move-result-object v0
 
-    invoke-super {p0, p1, p2}, Lyfd;->x(Lvfd;Z)V
+    check-cast v0, Lru/ok/tamtam/nano/Protos$Chat;
+    :try_end_0
+    .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    iget-object p1, p1, Lvfd;->X:Ljava/lang/Object;
+    new-instance v1, Leb2;
 
-    check-cast p1, Ldqe;
+    invoke-direct {v1}, Leb2;-><init>()V
 
-    iget-object v2, p0, Lphc;->a:Landroid/view/View;
+    iget-wide v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->serverId:J
 
-    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
+    iput-wide v2, v1, Leb2;->a:J
 
-    move-result-object v2
+    iget v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->type:I
 
-    iget-object v3, p1, Ldqe;->a:Ljava/lang/String;
+    const/4 v3, 0x3
 
-    instance-of v4, p1, Lxh4;
+    const/4 v4, 0x1
 
-    if-eqz v4, :cond_0
+    const/4 v5, 0x2
 
-    sget v3, Lwsc;->e3:I
+    if-eqz v2, :cond_2
+
+    sget-object v6, Lub2;->b:Lub2;
+
+    if-eq v2, v4, :cond_3
+
+    if-eq v2, v5, :cond_1
+
+    if-eq v2, v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    instance-of v4, p1, Lw74;
-
-    if-eqz v4, :cond_1
-
-    sget v3, Lwsc;->d3:I
+    sget-object v6, Lub2;->o:Lub2;
 
     goto :goto_0
 
     :cond_1
-    instance-of v4, p1, Luj6;
-
-    if-eqz v4, :cond_2
-
-    sget v3, Lwsc;->f3:I
+    sget-object v6, Lub2;->c:Lub2;
 
     goto :goto_0
 
     :cond_2
-    instance-of v4, p1, Leo8;
+    sget-object v6, Lub2;->a:Lub2;
 
-    if-eqz v4, :cond_3
+    :cond_3
+    :goto_0
+    iput-object v6, v1, Leb2;->b:Lub2;
+
+    iget v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->status:I
+
+    packed-switch v2, :pswitch_data_0
+
+    sget-object v2, Ltb2;->a:Ltb2;
 
     goto :goto_1
 
-    :cond_3
-    instance-of v4, p1, Lrs9;
+    :pswitch_0
+    sget-object v2, Ltb2;->Z:Ltb2;
 
-    if-eqz v4, :cond_4
+    goto :goto_1
 
-    sget v3, Lwsc;->g3:I
+    :pswitch_1
+    sget-object v2, Ltb2;->Y:Ltb2;
 
-    :goto_0
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    goto :goto_1
 
-    move-result-object v3
+    :pswitch_2
+    sget-object v2, Ltb2;->X:Ltb2;
 
-    :cond_4
+    goto :goto_1
+
+    :pswitch_3
+    sget-object v2, Ltb2;->o:Ltb2;
+
+    goto :goto_1
+
+    :pswitch_4
+    sget-object v2, Ltb2;->c:Ltb2;
+
+    goto :goto_1
+
+    :pswitch_5
+    sget-object v2, Ltb2;->b:Ltb2;
+
     :goto_1
-    iget-object v2, p0, Lyfd;->C0:Landroid/widget/TextView;
+    iput-object v2, v1, Leb2;->c:Ltb2;
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iget-wide v6, v0, Lru/ok/tamtam/nano/Protos$Chat;->owner:J
 
-    iget-object v2, p1, Ldqe;->e:Ljava/lang/String;
+    iput-wide v6, v1, Leb2;->d:J
 
-    sget-object v3, Lol;->o:Lol;
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->participants:Ljava/util/Map;
 
-    invoke-virtual {v3}, Lol;->a()Lw9b;
+    iput-object v2, v1, Leb2;->e:Ljava/util/Map;
 
-    move-result-object v3
+    iget-wide v6, v0, Lru/ok/tamtam/nano/Protos$Chat;->created:J
 
-    iget-object v3, v3, Lw9b;->c:Lap;
+    iput-wide v6, v1, Leb2;->f:J
 
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->title:Ljava/lang/String;
 
-    sget-object v4, Lxh4;->e0:Lxh4;
+    iput-object v2, v1, Leb2;->g:Ljava/lang/String;
 
-    iget-object v4, v4, Ldqe;->e:Ljava/lang/String;
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->baseIconUrl:Ljava/lang/String;
 
-    iget-object v3, v3, Lc3;->g:Lai7;
+    iput-object v2, v1, Leb2;->h:Ljava/lang/String;
 
-    const-string v5, "app.theme"
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->baseRawIconUrl:Ljava/lang/String;
 
-    invoke-virtual {v3, v5, v4}, Lai7;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iput-object v2, v1, Leb2;->i:Ljava/lang/String;
 
-    move-result-object v3
+    iget-wide v6, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastMessageId:J
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    iput-wide v6, v1, Leb2;->j:J
 
-    move-result v2
+    iget-wide v6, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastEventTime:J
 
-    const/4 v3, 0x4
+    iput-wide v6, v1, Leb2;->k:J
 
-    const/4 v4, 0x0
+    iget-wide v6, v0, Lru/ok/tamtam/nano/Protos$Chat;->joinTime:J
 
-    if-eqz v2, :cond_5
+    iput-wide v6, v1, Leb2;->O:J
 
-    invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-wide v6, v0, Lru/ok/tamtam/nano/Protos$Chat;->cid:J
+
+    iput-wide v6, v1, Leb2;->l:J
+
+    iget v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->newMessages:I
+
+    iput v2, v1, Leb2;->m:I
+
+    iget-boolean v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->markedAsUnread:Z
+
+    iput-boolean v2, v1, Leb2;->h0:Z
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->chunk:[Lru/ok/tamtam/nano/Protos$Chat$Chunk;
+
+    if-eqz v2, :cond_4
+
+    array-length v7, v2
+
+    if-lez v7, :cond_4
+
+    array-length v7, v2
+
+    const/4 v8, 0x0
+
+    :goto_2
+    if-ge v8, v7, :cond_4
+
+    aget-object v9, v2, v8
+
+    iget-object v10, v1, Leb2;->n:Lob2;
+
+    invoke-static {v9}, Lru/ok/tamtam/nano/b;->i(Lru/ok/tamtam/nano/Protos$Chat$Chunk;)Lnb2;
+
+    move-result-object v9
+
+    sget-object v11, Lel4;->X:Lel4;
+
+    invoke-virtual {v10, v9, v11}, Lob2;->a(Lnb2;Lel4;)V
+
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_2
 
-    :cond_5
-    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+    :cond_4
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->delayedChunk:[Lru/ok/tamtam/nano/Protos$Chat$Chunk;
 
-    :goto_2
-    sget-object v1, Ldqe;->a0:Ldle;
+    if-eqz v2, :cond_5
 
-    invoke-virtual {v1}, Ldle;->getValue()Ljava/lang/Object;
+    array-length v7, v2
 
-    move-result-object v1
+    if-lez v7, :cond_5
 
-    check-cast v1, Ljava/util/Set;
+    array-length v7, v2
 
-    invoke-interface {v1, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    const/4 v8, 0x0
 
-    move-result p1
+    :goto_3
+    if-ge v8, v7, :cond_5
 
-    if-eqz p1, :cond_6
+    aget-object v9, v2, v8
 
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object v10, v1, Leb2;->n:Lob2;
+
+    invoke-static {v9}, Lru/ok/tamtam/nano/b;->i(Lru/ok/tamtam/nano/Protos$Chat$Chunk;)Lnb2;
+
+    move-result-object v9
+
+    sget-object v11, Lel4;->Y:Lel4;
+
+    invoke-virtual {v10, v9, v11}, Lob2;->a(Lnb2;Lel4;)V
+
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_3
 
-    :cond_6
-    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+    :cond_5
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->chatSettings:Lru/ok/tamtam/nano/Protos$Chat$ChatSettings;
 
-    :goto_3
-    if-eqz p2, :cond_7
+    if-eqz v2, :cond_a
 
-    goto :goto_4
+    new-instance v7, Lkb2;
 
-    :cond_7
-    iget-object p1, p0, Lyfd;->A0:Lrn4;
+    invoke-direct {v7}, Ljava/lang/Object;-><init>()V
 
-    iget v4, p1, Lrn4;->A:I
+    iget-wide v8, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatSettings;->lastNotifMark:J
+
+    iput-wide v8, v7, Lkb2;->c:J
+
+    iget-wide v8, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatSettings;->lastNotifMessageId:J
+
+    iput-wide v8, v7, Lkb2;->d:J
+
+    iget-wide v8, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatSettings;->dontDisturbUntil:J
+
+    iput-wide v8, v7, Lkb2;->a:J
+
+    iget-object v8, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatSettings;->options:[I
+
+    if-eqz v8, :cond_9
+
+    array-length v9, v8
+
+    if-lez v9, :cond_9
+
+    array-length v9, v8
+
+    const/4 v10, 0x0
 
     :goto_4
-    iget-object p0, p0, Lyfd;->G0:Landroid/view/View;
+    if-ge v10, v9, :cond_9
 
-    invoke-static {p0, v4}, Lgwd;->A(Landroid/view/View;I)V
+    aget v11, v8, v10
 
-    return-void
+    if-eqz v11, :cond_8
 
-    :pswitch_0
-    iget-object v0, p0, Ll13;->L0:Landroid/view/View;
+    if-eq v11, v4, :cond_7
 
-    check-cast v0, Landroid/widget/TextView;
+    if-eq v11, v5, :cond_6
 
-    invoke-super {p0, p1, p2}, Lyfd;->x(Lvfd;Z)V
+    goto :goto_5
 
-    iget-object p1, p1, Lvfd;->X:Ljava/lang/Object;
+    :cond_6
+    sget-object v11, Lib2;->c:Lib2;
 
-    check-cast p1, Ljava/lang/CharSequence;
+    invoke-virtual {v7, v11}, Lkb2;->a(Lib2;)V
 
-    invoke-static {p1}, Lms8;->t(Ljava/lang/CharSequence;)Z
+    goto :goto_5
 
-    move-result p2
+    :cond_7
+    sget-object v11, Lib2;->b:Lib2;
 
-    iget-object p0, p0, Ll13;->M0:Landroid/view/View;
-
-    if-nez p2, :cond_8
-
-    const/16 p2, 0x8
-
-    invoke-virtual {p0, p2}, Landroid/view/View;->setVisibility(I)V
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v7, v11}, Lkb2;->a(Lib2;)V
 
     goto :goto_5
 
     :cond_8
-    const/4 p1, 0x0
+    sget-object v11, Lib2;->a:Lib2;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
-
-    sget p0, Lwsc;->U1:I
-
-    invoke-virtual {v0, p0}, Landroid/widget/TextView;->setText(I)V
+    invoke-virtual {v7, v11}, Lkb2;->a(Lib2;)V
 
     :goto_5
-    return-void
+    add-int/lit8 v10, v10, 0x1
 
-    :pswitch_1
-    invoke-super {p0, p1, p2}, Lyfd;->x(Lvfd;Z)V
+    goto :goto_4
 
-    iget-object p1, p1, Lvfd;->X:Ljava/lang/Object;
+    :cond_9
+    iget-wide v8, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatSettings;->favoriteIndex:J
 
-    check-cast p1, Lmm3;
+    iput-wide v8, v7, Lkb2;->e:J
 
-    iget-object p2, p0, Ll13;->M0:Landroid/view/View;
+    iget-wide v8, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatSettings;->hideMyLiveLocationPanelBeforeTime:J
 
-    check-cast p2, Lru/ok/messages/views/widgets/TamAvatarView;
+    iput-wide v8, v7, Lkb2;->f:J
 
-    const/4 v0, 0x1
+    iget-wide v8, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatSettings;->hideLiveLocationPanelBeforeTime:J
 
-    invoke-virtual {p2, p1, v0}, Lje0;->a(Lmm3;Z)V
+    iput-wide v8, v7, Lkb2;->g:J
 
-    iget-object p2, p0, Ll13;->L0:Landroid/view/View;
+    new-instance v2, Llb2;
 
-    check-cast p2, Landroid/widget/TextView;
+    invoke-direct {v2, v7}, Llb2;-><init>(Lkb2;)V
 
-    invoke-virtual {p1}, Lmm3;->d()Ljava/lang/String;
+    iput-object v2, v1, Leb2;->o:Llb2;
 
-    move-result-object p1
+    :cond_a
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->mediaAll:Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;
 
-    invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    if-eqz v2, :cond_b
 
-    iget-object p0, p0, Lphc;->a:Landroid/view/View;
+    invoke-static {v2}, Lru/ok/tamtam/nano/b;->g(Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;)Lhb2;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setEnabled(Z)V
+    move-result-object v2
 
-    return-void
+    iput-object v2, v1, Leb2;->p:Lhb2;
 
-    :pswitch_2
-    iget-object v0, p0, Ll13;->L0:Landroid/view/View;
+    :cond_b
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->mediaPhotoVideo:Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;
 
-    check-cast v0, Landroid/widget/TextView;
+    if-eqz v2, :cond_c
 
-    invoke-super {p0, p1, p2}, Lyfd;->x(Lvfd;Z)V
+    invoke-static {v2}, Lru/ok/tamtam/nano/b;->g(Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;)Lhb2;
 
-    iget-object p2, p0, Ll13;->M0:Landroid/view/View;
+    move-result-object v2
 
-    check-cast p2, Landroidx/appcompat/widget/SwitchCompat;
+    iput-object v2, v1, Leb2;->q:Lhb2;
 
-    const/4 v1, 0x0
+    :cond_c
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->mediaMusic:Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;
 
-    invoke-virtual {p2, v1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    if-eqz v2, :cond_d
 
-    iget-object p1, p1, Lvfd;->X:Ljava/lang/Object;
+    invoke-static {v2}, Lru/ok/tamtam/nano/b;->g(Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;)Lhb2;
 
-    check-cast p1, Ljava/lang/Boolean;
+    move-result-object v2
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iput-object v2, v1, Leb2;->s:Lhb2;
 
-    move-result p1
+    :cond_d
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->mediaAudio:Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;
 
-    invoke-virtual {p2, p1}, Landroidx/appcompat/widget/SwitchCompat;->setChecked(Z)V
+    if-eqz v2, :cond_e
 
-    new-instance p1, Lk13;
+    invoke-static {v2}, Lru/ok/tamtam/nano/b;->g(Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;)Lhb2;
 
-    const/4 v2, 0x0
+    move-result-object v2
 
-    invoke-direct {p1, v2, p0}, Lk13;-><init>(ILjava/lang/Object;)V
+    iput-object v2, v1, Leb2;->t:Lhb2;
 
-    invoke-virtual {p2, p1}, Landroid/widget/CompoundButton;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+    :cond_e
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->mediaFiles:Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;
 
-    const/4 p1, 0x1
+    if-eqz v2, :cond_f
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-static {v2}, Lru/ok/tamtam/nano/b;->g(Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;)Lhb2;
 
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result-object v2
 
-    move-result p1
+    iput-object v2, v1, Leb2;->u:Lhb2;
 
-    if-eqz p1, :cond_9
+    :cond_f
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->mediaLocations:Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;
 
-    const/16 p1, 0x8
+    if-eqz v2, :cond_10
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-static {v2}, Lru/ok/tamtam/nano/b;->g(Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;)Lhb2;
+
+    move-result-object v2
+
+    iput-object v2, v1, Leb2;->v:Lhb2;
+
+    :cond_10
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->mediaShare:Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;
+
+    if-eqz v2, :cond_11
+
+    invoke-static {v2}, Lru/ok/tamtam/nano/b;->g(Lru/ok/tamtam/nano/Protos$Chat$ChatMedia;)Lhb2;
+
+    move-result-object v2
+
+    iput-object v2, v1, Leb2;->r:Lhb2;
+
+    :cond_11
+    iget-wide v7, v0, Lru/ok/tamtam/nano/Protos$Chat;->firstMessageId:J
+
+    iput-wide v7, v1, Leb2;->w:J
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->sections:[Lru/ok/tamtam/nano/Protos$Chat$Section;
+
+    if-eqz v2, :cond_14
+
+    array-length v7, v2
+
+    if-lez v7, :cond_14
+
+    array-length v7, v2
+
+    const/4 v8, 0x0
+
+    :goto_6
+    if-ge v8, v7, :cond_14
+
+    aget-object v9, v2, v8
+
+    new-instance v10, Lrb2;
+
+    invoke-direct {v10}, Ljava/lang/Object;-><init>()V
+
+    iget-object v11, v9, Lru/ok/tamtam/nano/Protos$Chat$Section;->id:Ljava/lang/String;
+
+    iput-object v11, v10, Lrb2;->c:Ljava/lang/Object;
+
+    iget-object v11, v9, Lru/ok/tamtam/nano/Protos$Chat$Section;->title:Ljava/lang/String;
+
+    iput-object v11, v10, Lrb2;->o:Ljava/lang/Object;
+
+    iget-object v11, v9, Lru/ok/tamtam/nano/Protos$Chat$Section;->stickers:[J
+
+    if-eqz v11, :cond_12
+
+    invoke-static {v11}, Lxfc;->f([J)Ljava/util/ArrayList;
+
+    move-result-object v11
+
+    iput-object v11, v10, Lrb2;->X:Ljava/lang/Object;
+
+    :cond_12
+    iget-wide v11, v9, Lru/ok/tamtam/nano/Protos$Chat$Section;->marker:J
+
+    iput-wide v11, v10, Lrb2;->a:J
+
+    iget-boolean v9, v9, Lru/ok/tamtam/nano/Protos$Chat$Section;->collapsed:Z
+
+    iput-boolean v9, v10, Lrb2;->b:Z
+
+    new-instance v9, Lsb2;
+
+    invoke-direct {v9, v10}, Lsb2;-><init>(Lrb2;)V
+
+    iget-object v10, v1, Leb2;->x:Ljava/util/ArrayList;
+
+    if-nez v10, :cond_13
+
+    new-instance v10, Ljava/util/ArrayList;
+
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v10, v1, Leb2;->x:Ljava/util/ArrayList;
+
+    :cond_13
+    iget-object v10, v1, Leb2;->x:Ljava/util/ArrayList;
+
+    invoke-virtual {v10, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_6
 
-    :cond_9
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    :cond_14
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->stickersOrder:[Ljava/lang/String;
 
-    const/4 p1, 0x0
+    if-eqz v2, :cond_15
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
+    array-length v7, v2
 
-    :goto_6
-    iget-object p1, p0, Lyfd;->H0:Lvfd;
+    if-lez v7, :cond_15
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    const/high16 p1, 0x3f800000    # 1.0f
+    move-result-object v2
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setAlpha(F)V
+    iput-object v2, v1, Leb2;->y:Ljava/util/List;
 
-    iget-object p0, p0, Lyfd;->C0:Landroid/widget/TextView;
+    :cond_15
+    iget-wide v7, v0, Lru/ok/tamtam/nano/Protos$Chat;->stickersSyncTime:J
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
+    iput-wide v7, v1, Leb2;->z:J
 
-    return-void
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->localChanges:[I
 
-    nop
+    if-eqz v2, :cond_1a
+
+    array-length v7, v2
+
+    if-lez v7, :cond_1a
+
+    array-length v7, v2
+
+    const/4 v8, 0x0
+
+    :goto_7
+    if-ge v8, v7, :cond_1a
+
+    aget v9, v2, v8
+
+    if-eqz v9, :cond_19
+
+    if-eq v9, v4, :cond_18
+
+    if-eq v9, v5, :cond_17
+
+    if-eq v9, v3, :cond_16
+
+    goto :goto_8
+
+    :cond_16
+    sget-object v9, Lfb2;->o:Lfb2;
+
+    invoke-virtual {v1, v9}, Leb2;->a(Lfb2;)V
+
+    goto :goto_8
+
+    :cond_17
+    sget-object v9, Lfb2;->c:Lfb2;
+
+    invoke-virtual {v1, v9}, Leb2;->a(Lfb2;)V
+
+    goto :goto_8
+
+    :cond_18
+    sget-object v9, Lfb2;->b:Lfb2;
+
+    invoke-virtual {v1, v9}, Leb2;->a(Lfb2;)V
+
+    goto :goto_8
+
+    :cond_19
+    sget-object v9, Lfb2;->a:Lfb2;
+
+    invoke-virtual {v1, v9}, Leb2;->a(Lfb2;)V
+
+    :goto_8
+    add-int/lit8 v8, v8, 0x1
+
+    goto :goto_7
+
+    :cond_1a
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->chatSubject:Lru/ok/tamtam/nano/Protos$Chat$ChatSubject;
+
+    if-eqz v2, :cond_1b
+
+    iget-object v2, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatSubject;->organizationIds:[J
+
+    array-length v7, v2
+
+    if-lez v7, :cond_1b
+
+    new-instance v7, Lmb2;
+
+    invoke-direct {v7, v2}, Lmb2;-><init>([J)V
+
+    iput-object v7, v1, Leb2;->C:Lmb2;
+
+    :cond_1b
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->channelInfo:Lru/ok/tamtam/nano/Protos$Chat$ChannelInfo;
+
+    if-eqz v2, :cond_1c
+
+    iget v7, v2, Lru/ok/tamtam/nano/Protos$Chat$ChannelInfo;->membersCount:I
+
+    iput v7, v0, Lru/ok/tamtam/nano/Protos$Chat;->participantsCount:I
+
+    iget-object v7, v2, Lru/ok/tamtam/nano/Protos$Chat$ChannelInfo;->description:Ljava/lang/String;
+
+    iput-object v7, v0, Lru/ok/tamtam/nano/Protos$Chat;->description:Ljava/lang/String;
+
+    iget-object v7, v2, Lru/ok/tamtam/nano/Protos$Chat$ChannelInfo;->admins:[J
+
+    iput-object v7, v0, Lru/ok/tamtam/nano/Protos$Chat;->admins:[J
+
+    iget-boolean v2, v2, Lru/ok/tamtam/nano/Protos$Chat$ChannelInfo;->signAdmin:Z
+
+    if-eqz v2, :cond_1c
+
+    new-instance v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;
+
+    invoke-direct {v2}, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;-><init>()V
+
+    iput-boolean v4, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->signAdmin:Z
+
+    iput-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->chatOptions:Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;
+
+    :cond_1c
+    iget v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->participantsCount:I
+
+    if-nez v2, :cond_1d
+
+    invoke-virtual {v1}, Leb2;->c()Ljava/util/Map;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Map;->size()I
+
+    move-result v2
+
+    if-lez v2, :cond_1d
+
+    invoke-virtual {v1}, Leb2;->c()Ljava/util/Map;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Map;->size()I
+
+    move-result v2
+
+    iput v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->participantsCount:I
+
+    :cond_1d
+    iget v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->participantsCount:I
+
+    iput v2, v1, Leb2;->F:I
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->description:Ljava/lang/String;
+
+    iput-object v2, v1, Leb2;->G:Ljava/lang/String;
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->admins:[J
+
+    invoke-static {v2}, Lxfc;->f([J)Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    iput-object v2, v1, Leb2;->H:Ljava/util/List;
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->admins:[J
+
+    if-eqz v2, :cond_22
+
+    iget-object v7, v0, Lru/ok/tamtam/nano/Protos$Chat;->adminParticipants:Ljava/util/Map;
+
+    if-eqz v7, :cond_1e
+
+    array-length v2, v2
+
+    invoke-interface {v7}, Ljava/util/Map;->size()I
+
+    move-result v7
+
+    if-le v2, v7, :cond_22
+
+    :cond_1e
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+
+    iget-object v7, v0, Lru/ok/tamtam/nano/Protos$Chat;->adminParticipants:Ljava/util/Map;
+
+    if-eqz v7, :cond_1f
+
+    invoke-static {v7}, Lru/ok/tamtam/nano/b;->a(Ljava/util/Map;)Ljava/util/HashMap;
+
+    move-result-object v7
+
+    invoke-virtual {v2, v7}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+
+    :cond_1f
+    iget-object v7, v0, Lru/ok/tamtam/nano/Protos$Chat;->admins:[J
+
+    array-length v8, v7
+
+    const/4 v9, 0x0
+
+    :goto_9
+    if-ge v9, v8, :cond_21
+
+    aget-wide v10, v7, v9
+
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v12
+
+    invoke-virtual {v2, v12}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-nez v12, :cond_20
+
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v12
+
+    new-instance v13, Lcb2;
+
+    invoke-direct {v13}, Ljava/lang/Object;-><init>()V
+
+    iput-wide v10, v13, Lcb2;->b:J
+
+    const/16 v10, 0x7fb
+
+    iput v10, v13, Lcb2;->a:I
+
+    new-instance v10, Ldb2;
+
+    invoke-direct {v10, v13}, Ldb2;-><init>(Lcb2;)V
+
+    invoke-virtual {v2, v12, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_20
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_9
+
+    :cond_21
+    invoke-virtual {v1, v2}, Leb2;->d(Ljava/util/Map;)V
+
+    goto :goto_a
+
+    :cond_22
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->adminParticipants:Ljava/util/Map;
+
+    invoke-static {v2}, Lru/ok/tamtam/nano/b;->a(Ljava/util/Map;)Ljava/util/HashMap;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Leb2;->d(Ljava/util/Map;)V
+
+    :goto_a
+    iget v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->blockedParticipantsCount:I
+
+    iput v2, v1, Leb2;->I:I
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->chatOptions:Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;
+
+    if-eqz v2, :cond_24
+
+    iget-object v7, v1, Leb2;->J:Ljb2;
+
+    if-nez v7, :cond_23
+
+    sget-object v7, Ljb2;->k:Ljb2;
+
+    iput-object v7, v1, Leb2;->J:Ljb2;
+
+    :cond_23
+    iget-object v7, v1, Leb2;->J:Ljb2;
+
+    iget-boolean v7, v7, Ljb2;->a:Z
+
+    iget-boolean v10, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->onlyOwnerCanChangeIconTitle:Z
+
+    iget-boolean v9, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->signAdmin:Z
+
+    iget-boolean v11, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->official:Z
+
+    iget-boolean v13, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->allCanPinMessage:Z
+
+    iget-boolean v12, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->onlyAdminCanAddMember:Z
+
+    iget-boolean v14, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->onlyAdminCanCall:Z
+
+    iget-boolean v15, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->sentByPhone:Z
+
+    iget-boolean v7, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->serviceChat:Z
+
+    iget-boolean v8, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->membersCanSeePrivateLink:Z
+
+    iget-boolean v2, v2, Lru/ok/tamtam/nano/Protos$Chat$ChatOptions;->contentLevelChat:Z
+
+    move/from16 v17, v8
+
+    new-instance v8, Ljb2;
+
+    move/from16 v18, v2
+
+    move/from16 v16, v7
+
+    invoke-direct/range {v8 .. v18}, Ljb2;-><init>(ZZZZZZZZZZ)V
+
+    iput-object v8, v1, Leb2;->J:Ljb2;
+
+    :cond_24
+    iget v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->accessType:I
+
+    if-eqz v2, :cond_26
+
+    if-eq v2, v4, :cond_25
+
+    goto :goto_b
+
+    :cond_25
+    iput v5, v1, Leb2;->n0:I
+
+    goto :goto_b
+
+    :cond_26
+    iput v4, v1, Leb2;->n0:I
+
+    :goto_b
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->link:Ljava/lang/String;
+
+    iput-object v2, v1, Leb2;->D:Ljava/lang/String;
+
+    new-instance v2, Lxq5;
+
+    iget v7, v0, Lru/ok/tamtam/nano/Protos$Chat;->restrictions:I
+
+    invoke-direct {v2, v7, v5}, Lxq5;-><init>(II)V
+
+    iput-object v2, v1, Leb2;->E:Lxq5;
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->groupChatInfo:Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;
+
+    if-eqz v2, :cond_2a
+
+    iget-wide v8, v2, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;->groupId:J
+
+    iget-boolean v10, v2, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;->isAnswered:Z
+
+    iget-boolean v11, v2, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;->isModerator:Z
+
+    iget-boolean v12, v2, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;->isImportant:Z
+
+    iget-object v13, v2, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;->name:Ljava/lang/String;
+
+    iget-object v14, v2, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;->baseIconUrl:Ljava/lang/String;
+
+    iget-boolean v15, v2, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;->isCustomTitle:Z
+
+    iget-boolean v7, v2, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;->isMember:Z
+
+    iget-object v3, v2, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;->groupOptions:Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo$GroupOptions;
+
+    if-nez v3, :cond_27
+
+    sget-object v3, Lco6;->b:Lco6;
+
+    move-object/from16 v18, v3
+
+    goto :goto_c
+
+    :cond_27
+    new-instance v6, Lco6;
+
+    iget-boolean v3, v3, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo$GroupOptions;->groupPremium:Z
+
+    invoke-direct {v6, v3}, Lco6;-><init>(Z)V
+
+    move-object/from16 v18, v6
+
+    :goto_c
+    iget v2, v2, Lru/ok/tamtam/nano/Protos$Chat$GroupChatInfo;->messagingPermissions:I
+
+    if-eq v2, v4, :cond_29
+
+    if-eq v2, v5, :cond_28
+
+    move/from16 v17, v4
+
+    :goto_d
+    move/from16 v16, v7
+
+    goto :goto_e
+
+    :cond_28
+    move/from16 v16, v7
+
+    const/16 v17, 0x3
+
+    goto :goto_e
+
+    :cond_29
+    move/from16 v17, v5
+
+    goto :goto_d
+
+    :goto_e
+    new-instance v7, Lpb2;
+
+    invoke-direct/range {v7 .. v18}, Lpb2;-><init>(JZZZLjava/lang/String;Ljava/lang/String;ZZILco6;)V
+
+    iput-object v7, v1, Leb2;->B:Lpb2;
+
+    :cond_2a
+    iget-wide v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->pinnedMessageId:J
+
+    iput-wide v2, v1, Leb2;->K:J
+
+    iget-boolean v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->hidePinnedMessage:Z
+
+    iput-boolean v2, v1, Leb2;->L:Z
+
+    iget-boolean v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->unreadReply:Z
+
+    iput-boolean v2, v1, Leb2;->M:Z
+
+    iget-boolean v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->unreadPin:Z
+
+    iput-boolean v2, v1, Leb2;->N:Z
+
+    iget v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->messagesTtlSec:I
+
+    iput v2, v1, Leb2;->P:I
+
+    iget v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->flagsSettings:I
+
+    iput v2, v1, Leb2;->R:I
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->videoConversation:Lru/ok/tamtam/nano/Protos$Chat$VideoConversation;
+
+    const/4 v3, 0x0
+
+    if-eqz v2, :cond_2f
+
+    iget-object v2, v2, Lru/ok/tamtam/nano/Protos$Chat$VideoConversation;->previewParticipantIds:[J
+
+    if-eqz v2, :cond_2b
+
+    new-instance v6, Ljava/util/ArrayList;
+
+    array-length v7, v2
+
+    invoke-direct {v6, v7}, Ljava/util/ArrayList;-><init>(I)V
+
+    const/4 v7, 0x0
+
+    :goto_f
+    array-length v8, v2
+
+    if-ge v7, v8, :cond_2c
+
+    aget-wide v8, v2, v7
+
+    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v8
+
+    invoke-virtual {v6, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_f
+
+    :cond_2b
+    move-object v6, v3
+
+    :cond_2c
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->videoConversation:Lru/ok/tamtam/nano/Protos$Chat$VideoConversation;
+
+    iget v7, v2, Lru/ok/tamtam/nano/Protos$Chat$VideoConversation;->type:I
+
+    if-eq v7, v4, :cond_2e
+
+    if-eq v7, v5, :cond_2d
+
+    goto :goto_10
+
+    :cond_2d
+    const/4 v4, 0x3
+
+    goto :goto_10
+
+    :cond_2e
+    move v4, v5
+
+    :goto_10
+    new-instance v5, Lf00;
+
+    invoke-direct {v5}, Ljava/lang/Object;-><init>()V
+
+    iget-object v7, v2, Lru/ok/tamtam/nano/Protos$Chat$VideoConversation;->conversationId:Ljava/lang/String;
+
+    iput-object v7, v5, Lf00;->a:Ljava/io/Serializable;
+
+    iget-wide v7, v2, Lru/ok/tamtam/nano/Protos$Chat$VideoConversation;->startedAt:J
+
+    iput-wide v7, v5, Lf00;->b:J
+
+    iget-object v7, v2, Lru/ok/tamtam/nano/Protos$Chat$VideoConversation;->joinLink:Ljava/lang/String;
+
+    iput-object v7, v5, Lf00;->c:Ljava/io/Serializable;
+
+    iget v2, v2, Lru/ok/tamtam/nano/Protos$Chat$VideoConversation;->approxParticipantCount:I
+
+    iput v2, v5, Lf00;->d:I
+
+    iput-object v6, v5, Lf00;->e:Ljava/lang/Object;
+
+    iput v4, v5, Lf00;->f:I
+
+    new-instance v2, Lf00;
+
+    invoke-direct {v2, v5}, Lf00;-><init>(Lf00;)V
+
+    iput-object v2, v1, Leb2;->S:Lf00;
+
+    :cond_2f
+    iget-wide v4, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastOpenPositionTime:J
+
+    iput-wide v4, v1, Leb2;->T:J
+
+    iget v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastOpenPositionOffset:I
+
+    iput v2, v1, Leb2;->U:I
+
+    iget-wide v4, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastOpenReadMark:J
+
+    iput-wide v4, v1, Leb2;->V:J
+
+    iget-wide v4, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastOpenNewMessages:J
+
+    long-to-int v2, v4
+
+    iput v2, v1, Leb2;->W:I
+
+    iget-wide v4, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastSearchClickTime:J
+
+    iput-wide v4, v1, Leb2;->X:J
+
+    iget-wide v4, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastWriteTime:J
+
+    iput-wide v4, v1, Leb2;->Y:J
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->draft:[B
+
+    move-object/from16 v4, p0
+
+    iget-object v4, v4, Ll13;->a:Lru4;
+
+    invoke-interface {v4, v2}, Lru4;->e([B)Lxga;
+
+    move-result-object v2
+
+    iput-object v2, v1, Leb2;->b0:Lxga;
+
+    iget-wide v4, v0, Lru/ok/tamtam/nano/Protos$Chat;->draftUpdateTime:J
+
+    iput-wide v4, v1, Leb2;->c0:J
+
+    iget-wide v4, v0, Lru/ok/tamtam/nano/Protos$Chat;->draftUpdateTimeForSyncLogic:J
+
+    iput-wide v4, v1, Leb2;->d0:J
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->botsInfo:Lru/ok/tamtam/nano/Protos$Chat$BotsInfo;
+
+    if-nez v2, :cond_30
+
+    sget-object v2, Lqq0;->c:Lqq0;
+
+    goto :goto_11
+
+    :cond_30
+    new-instance v4, Lqq0;
+
+    iget-boolean v5, v2, Lru/ok/tamtam/nano/Protos$Chat$BotsInfo;->hasBots:Z
+
+    iget-boolean v2, v2, Lru/ok/tamtam/nano/Protos$Chat$BotsInfo;->suspendedBot:Z
+
+    invoke-direct {v4, v5, v2}, Lqq0;-><init>(ZZ)V
+
+    move-object v2, v4
+
+    :goto_11
+    iput-object v2, v1, Leb2;->Z:Lqq0;
+
+    iget-wide v4, v0, Lru/ok/tamtam/nano/Protos$Chat;->modified:J
+
+    iput-wide v4, v1, Leb2;->a0:J
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->liveLocationMessageIds:Ljava/util/Map;
+
+    iput-object v2, v1, Leb2;->f0:Ljava/util/Map;
+
+    iget-boolean v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->subscribedToUpdates:Z
+
+    iput-boolean v2, v1, Leb2;->e0:Z
+
+    iget-wide v4, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastMentionMessageId:J
+
+    iput-wide v4, v1, Leb2;->g0:J
+
+    iget-wide v4, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastReactedMessageId:J
+
+    iput-wide v4, v1, Leb2;->j0:J
+
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastReaction:Ljava/lang/String;
+
+    invoke-static {v2}, Lm7g;->m(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_31
+
+    iput-object v3, v1, Leb2;->k0:Ljava/lang/String;
+
+    goto :goto_12
+
+    :cond_31
+    iput-object v2, v1, Leb2;->k0:Ljava/lang/String;
+
+    :goto_12
+    iget-object v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastPushMessage:Lru/ok/tamtam/nano/Protos$Chat$PushMessage;
+
+    if-eqz v2, :cond_32
+
+    iget-wide v7, v2, Lru/ok/tamtam/nano/Protos$Chat$PushMessage;->id:J
+
+    iget-object v6, v2, Lru/ok/tamtam/nano/Protos$Chat$PushMessage;->text:Ljava/lang/String;
+
+    iget-wide v4, v2, Lru/ok/tamtam/nano/Protos$Chat$PushMessage;->time:J
+
+    new-instance v3, Lqb2;
+
+    invoke-direct/range {v3 .. v8}, Lqb2;-><init>(JLjava/lang/String;J)V
+
+    iput-object v3, v1, Leb2;->i0:Lqb2;
+
+    :cond_32
+    iget-wide v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastFireDelayedErrorTime:J
+
+    iput-wide v2, v1, Leb2;->m0:J
+
+    iget-wide v2, v0, Lru/ok/tamtam/nano/Protos$Chat;->lastDelayedUpdateTime:J
+
+    iput-wide v2, v1, Leb2;->l0:J
+
+    new-instance v0, Lvb2;
+
+    invoke-direct {v0, v1}, Lvb2;-><init>(Leb2;)V
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Lru/ok/tamtam/nano/ProtoException;
+
+    invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v1
 
     :pswitch_data_0
-    .packed-switch 0x0
+    .packed-switch 0x1
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0

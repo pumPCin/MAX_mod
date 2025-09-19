@@ -1,131 +1,101 @@
-.class public final Laj6;
+.class public final synthetic Laj6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ls0e;
+
 
 # instance fields
-.field public final a:Lzi6;
+.field public final synthetic a:Lmgb;
 
-.field public final b:Lbj6;
+.field public final synthetic b:Lq02;
+
+.field public final synthetic c:Lmz8;
+
+.field public final synthetic d:Lk14;
 
 
 # direct methods
-.method public constructor <init>(Lzi6;Lbj6;)V
-    .registers 3
+.method public synthetic constructor <init>(Lmgb;Lq02;Lmz8;Lk14;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Laj6;->a:Lzi6;
+    iput-object p1, p0, Laj6;->a:Lmgb;
 
-    iput-object p2, p0, Laj6;->b:Lbj6;
+    iput-object p2, p0, Laj6;->b:Lq02;
+
+    iput-object p3, p0, Laj6;->c:Lmz8;
+
+    iput-object p4, p0, Laj6;->d:Lk14;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final k(Lorg/json/JSONObject;)V
+    .registers 5
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Laj6;->b:Lq02;
 
-    if-ne p0, p1, :cond_0
+    iget-object v0, v0, Lq02;->b:Ljava/lang/Object;
 
-    return v0
+    check-cast v0, Lvmd;
+
+    const-string v1, "chunk"
+
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v2, p0, Laj6;->a:Lmgb;
+
+    iget-object v2, v2, Lmgb;->b:Ljava/lang/Object;
+
+    check-cast v2, Lzxc;
+
+    invoke-virtual {v2, v1, v0}, Lzxc;->G(Lorg/json/JSONObject;Lvmd;)Lh1e;
+
+    move-result-object v0
+
+    goto :goto_0
 
     :cond_0
-    instance-of v1, p1, Laj6;
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    :goto_0
+    if-nez v0, :cond_1
 
-    if-nez v1, :cond_1
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    return v2
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "Can\'t parse chunk "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Laj6;->c:Lmz8;
+
+    invoke-virtual {p0, v0}, Lmz8;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
 
     :cond_1
-    check-cast p1, Laj6;
+    iget-object p0, p0, Laj6;->d:Lk14;
 
-    iget-object v1, p0, Laj6;->a:Lzi6;
+    invoke-virtual {p0, v0}, Lk14;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v3, p1, Laj6;->a:Lzi6;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Laj6;->b:Lbj6;
-
-    iget-object p1, p1, Laj6;->b:Lbj6;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-object v0, p0, Laj6;->a:Lzi6;
-
-    invoke-virtual {v0}, Lzi6;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Laj6;->b:Lbj6;
-
-    iget-object p0, p0, Lbj6;->a:[I
-
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "GradientsBannerDKColors(background="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Laj6;->a:Lzi6;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", stroke="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Laj6;->b:Lbj6;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

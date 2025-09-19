@@ -1,50 +1,52 @@
-.class public final synthetic Ltv;
-.super Lma6;
-.source "SourceFile"
-
-# interfaces
-.implements Lj96;
+.class public final Ltv;
+.super Ljx3;
 
 
-# static fields
-.field public static final a:Ltv;
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Luv;
+
+.field public Z:Luv;
+
+.field public synthetic o:Ljava/lang/Object;
+
+.field public r0:Lnu;
+
+.field public s0:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public constructor <init>(Luv;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    new-instance v0, Ltv;
+    iput-object p1, p0, Ltv;->Y:Luv;
 
-    const-string v4, "getTime()J"
-
-    const/4 v5, 0x0
-
-    const/4 v1, 0x1
-
-    const-class v2, Lvo6;
-
-    const-string v3, "getTime"
-
-    invoke-direct/range {v0 .. v5}, Lma6;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sput-object v0, Ltv;->a:Ltv;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    check-cast p1, Lvo6;
+    iput-object p1, p0, Ltv;->o:Ljava/lang/Object;
 
-    invoke-interface {p1}, Lvo6;->l()J
+    iget p1, p0, Ltv;->X:I
 
-    move-result-wide p0
+    const/high16 v0, -0x80000000
 
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    or-int/2addr p1, v0
+
+    iput p1, p0, Ltv;->X:I
+
+    iget-object p1, p0, Ltv;->Y:Luv;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Luv;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

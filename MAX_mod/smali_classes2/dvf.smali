@@ -3,31 +3,36 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lorg/webrtc/VideoSink;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public volatile a:Lorg/webrtc/VideoSink;
+.field public final X:I
+
+.field public final a:Ljava/lang/String;
+
+.field public final b:I
+
+.field public final c:I
+
+.field public final o:I
 
 
-# virtual methods
-.method public final a(Lorg/webrtc/VideoFrame;)V
-    .registers 2
+# direct methods
+.method public constructor <init>(IIIILjava/lang/String;)V
+    .registers 6
 
-    iget-object p0, p0, Ldvf;->a:Lorg/webrtc/VideoSink;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-eqz p0, :cond_0
+    iput-object p5, p0, Ldvf;->a:Ljava/lang/String;
 
-    invoke-interface {p0, p1}, Lorg/webrtc/VideoSink;->onFrame(Lorg/webrtc/VideoFrame;)V
+    iput p1, p0, Ldvf;->b:I
 
-    :cond_0
-    return-void
-.end method
+    iput p2, p0, Ldvf;->c:I
 
-.method public final onFrame(Lorg/webrtc/VideoFrame;)V
-    .registers 2
+    iput p3, p0, Ldvf;->o:I
 
-    invoke-virtual {p0, p1}, Ldvf;->a(Lorg/webrtc/VideoFrame;)V
+    iput p4, p0, Ldvf;->X:I
 
     return-void
 .end method

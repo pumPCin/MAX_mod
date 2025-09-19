@@ -1,243 +1,142 @@
 .class public final Lad8;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/content/ServiceConnection;
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Landroid/os/Bundle;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lbd8;
+.field public final synthetic Y:Landroid/widget/LinearLayout;
+
+.field public final synthetic Z:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
 
 # direct methods
-.method public constructor <init>(Lbd8;Landroid/os/Bundle;)V
-    .registers 3
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Landroid/widget/LinearLayout;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lad8;->Y:Landroid/widget/LinearLayout;
 
-    iput-object p1, p0, Lad8;->b:Lbd8;
+    iput-object p3, p0, Lad8;->Z:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    iput-object p2, p0, Lad8;->a:Landroid/os/Bundle;
+    const/4 p2, 0x2
+
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onBindingDied(Landroid/content/ComponentName;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-object p0, p0, Lad8;->b:Lbd8;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Lbd8;->a:Lhc8;
-
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance p1, Lg56;
-
-    const/16 v0, 0xc
-
-    invoke-direct {p1, v0, p0}, Lg56;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p0, p1}, Lhc8;->q(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .registers 10
-
-    iget-object v0, p0, Lad8;->b:Lbd8;
-
-    iget-object v1, v0, Lbd8;->e:Lcfd;
-
-    iget-object v2, v0, Lbd8;->a:Lhc8;
-
-    const-string v3, "Service "
-
-    const-string v4, "Expected connection to "
-
-    :try_start_0
-    iget-object v5, v1, Lcfd;->a:Lbfd;
-
-    invoke-interface {v5}, Lbfd;->getPackageName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {p1}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_0
-
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    invoke-direct {p0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p2, v1, Lcfd;->a:Lbfd;
-
-    invoke-interface {p2}, Lbfd;->getPackageName()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p2, " but is connected to "
-
-    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lad8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-static {p0}, Lye2;->t(Ljava/lang/String;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    check-cast p0, Lad8;
 
-    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    sget-object p1, Lylf;->a:Lylf;
 
-    new-instance p0, Lg56;
+    invoke-virtual {p0, p1}, Lad8;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/16 p1, 0xc
+    return-object p1
+.end method
 
-    invoke-direct {p0, p1, v2}, Lg56;-><init>(ILjava/lang/Object;)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 5
+
+    new-instance v0, Lad8;
+
+    iget-object v1, p0, Lad8;->Y:Landroid/widget/LinearLayout;
+
+    iget-object p0, p0, Lad8;->Z:Lone/me/chatscreen/mediabar/MediaBarWidget;
+
+    invoke-direct {v0, p2, v1, p0}, Lad8;-><init>(Lkotlin/coroutines/Continuation;Landroid/widget/LinearLayout;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
+
+    iput-object p1, v0, Lad8;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lad8;->X:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    const/16 p1, 0x8
 
     :goto_0
-    invoke-virtual {v2, p0}, Lhc8;->q(Ljava/lang/Runnable;)V
+    iget-object v0, p0, Lad8;->Y:Landroid/widget/LinearLayout;
 
-    return-void
+    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    :catchall_0
-    move-exception p0
+    sget-object p1, Lone/me/chatscreen/mediabar/MediaBarWidget;->c1:[Lxi7;
+
+    iget-object p0, p0, Lad8;->Z:Lone/me/chatscreen/mediabar/MediaBarWidget;
+
+    iget-object p1, p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->H0:Lrm0;
+
+    sget-object v1, Lone/me/chatscreen/mediabar/MediaBarWidget;->c1:[Lxi7;
+
+    const/16 v2, 0xc
+
+    aget-object v2, v1, v2
+
+    invoke-virtual {p1}, Lrm0;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroidx/recyclerview/widget/RecyclerView;
+
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object p0, p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->G0:Lrm0;
+
+    const/16 v0, 0xb
+
+    aget-object v0, v1, v0
+
+    invoke-virtual {p0}, Lrm0;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lrgd;
 
     goto :goto_1
 
-    :cond_0
-    :try_start_1
-    invoke-static {p2}, Lfm8;->j(Landroid/os/IBinder;)Lhv6;
-
-    move-result-object p2
-
-    if-nez p2, :cond_1
-
-    const-string p0, "Service interface is missing."
-
-    invoke-static {p0}, Lye2;->t(Ljava/lang/String;)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance p0, Lg56;
-
-    const/16 p1, 0xc
-
-    invoke-direct {p0, p1, v2}, Lg56;-><init>(ILjava/lang/Object;)V
-
-    goto :goto_0
-
     :cond_1
-    :try_start_2
-    new-instance v1, Lkk3;
-
-    iget-object v4, v0, Lbd8;->d:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {}, Landroid/os/Process;->myPid()I
-
-    move-result v5
-
-    iget-object p0, p0, Lad8;->a:Landroid/os/Bundle;
-
-    invoke-direct {v1, v4, v5, p0}, Lkk3;-><init>(Ljava/lang/String;ILandroid/os/Bundle;)V
-
-    iget-object p0, v0, Lbd8;->c:Lkd8;
-
-    invoke-virtual {v1}, Lkk3;->b()Landroid/os/Bundle;
-
-    move-result-object v0
-
-    invoke-interface {p2, p0, v0}, Lhv6;->I(Lzu6;Landroid/os/Bundle;)V
-    :try_end_2
-    .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    return-void
-
-    :catch_0
-    :try_start_3
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    invoke-direct {p0, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p1, " has died prematurely"
-
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lye2;->r0(Ljava/lang/String;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance p0, Lg56;
-
-    const/16 p1, 0xc
-
-    invoke-direct {p0, p1, v2}, Lg56;-><init>(ILjava/lang/Object;)V
-
-    goto :goto_0
+    const/4 p0, 0x0
 
     :goto_1
-    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Lcoc;)V
 
-    new-instance p1, Lg56;
+    sget-object p0, Lylf;->a:Lylf;
 
-    const/16 p2, 0xc
-
-    invoke-direct {p1, p2, v2}, Lg56;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v2, p1}, Lhc8;->q(Ljava/lang/Runnable;)V
-
-    throw p0
-.end method
-
-.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
-    .registers 3
-
-    iget-object p0, p0, Lad8;->b:Lbd8;
-
-    iget-object p0, p0, Lbd8;->a:Lhc8;
-
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance p1, Lg56;
-
-    const/16 v0, 0xc
-
-    invoke-direct {p1, v0, p0}, Lg56;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p0, p1}, Lhc8;->q(Ljava/lang/Runnable;)V
-
-    return-void
+    return-object p0
 .end method

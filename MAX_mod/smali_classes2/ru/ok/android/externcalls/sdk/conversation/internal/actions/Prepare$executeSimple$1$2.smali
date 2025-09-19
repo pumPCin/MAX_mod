@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ly96;
+.implements Lqc6;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeSimple$1;->invoke()Lcud;
+    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeSimple$1;->invoke()Lk2e;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Ly96;"
+        "Lqc6;"
     }
 .end annotation
 
@@ -35,9 +35,9 @@
     d2 = {
         "Lru/ok/android/externcalls/sdk/api/ConversationParams;",
         "it",
-        "Lepa;",
+        "Lzua;",
         "apply",
-        "(Lru/ok/android/externcalls/sdk/api/ConversationParams;)Lepa;",
+        "(Lru/ok/android/externcalls/sdk/api/ConversationParams;)Lzua;",
         "<anonymous>"
     }
     k = 0x3
@@ -83,32 +83,32 @@
 
 
 # virtual methods
-.method public final apply(Lru/ok/android/externcalls/sdk/api/ConversationParams;)Lepa;
+.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    check-cast p1, Lru/ok/android/externcalls/sdk/api/ConversationParams;
+
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeSimple$1$2;->apply(Lru/ok/android/externcalls/sdk/api/ConversationParams;)Lzua;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final apply(Lru/ok/android/externcalls/sdk/api/ConversationParams;)Lzua;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/api/ConversationParams;",
             ")",
-            "Lepa;"
+            "Lzua;"
         }
     .end annotation
 
-    new-instance p0, Lepa;
+    new-instance p0, Lzua;
 
-    invoke-direct {p0, p1}, Lepa;-><init>(Lru/ok/android/externcalls/sdk/api/ConversationParams;)V
-
-    return-object p0
-.end method
-
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    check-cast p1, Lru/ok/android/externcalls/sdk/api/ConversationParams;
-
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$executeSimple$1$2;->apply(Lru/ok/android/externcalls/sdk/api/ConversationParams;)Lepa;
-
-    move-result-object p0
+    invoke-direct {p0, p1}, Lzua;-><init>(Lru/ok/android/externcalls/sdk/api/ConversationParams;)V
 
     return-object p0
 .end method

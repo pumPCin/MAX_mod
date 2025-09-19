@@ -1,107 +1,66 @@
-.class public final Ly8f;
-.super Lha4;
+.class public final synthetic Ly8f;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lzb6;
 
-# static fields
-.field public static final b:Ly8f;
 
-.field public static final c:Lca4;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final d:Lca4;
-
-.field public static final e:Lca4;
-
-.field public static final f:Lca4;
-
-.field public static final g:Lca4;
+.field public final synthetic b:La9f;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 8
+.method public synthetic constructor <init>(La9f;I)V
+    .registers 3
 
-    new-instance v0, Ly8f;
+    iput p2, p0, Ly8f;->a:I
 
-    invoke-direct {v0}, Lha4;-><init>()V
+    iput-object p1, p0, Ly8f;->b:La9f;
 
-    sput-object v0, Ly8f;->b:Ly8f;
-
-    const-string v1, "state"
-
-    filled-new-array {v1}, [Ljava/lang/String;
-
-    move-result-object v2
-
-    const/16 v5, 0xe
-
-    const/4 v4, 0x0
-
-    const-string v1, ":settings/privacy/onboarding-twofa"
-
-    const/4 v3, 0x0
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v1
-
-    sput-object v1, Ly8f;->c:Lca4;
-
-    const-string v1, "src"
-
-    const-string v6, "track_id"
-
-    filled-new-array {v6, v1}, [Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v1, ":settings/privacy/creation-twofa"
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v1
-
-    sput-object v1, Ly8f;->d:Lca4;
-
-    const/4 v7, 0x0
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const-string v1, ":settings/privacy/profile-deletion"
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v1
-
-    sput-object v1, Ly8f;->e:Lca4;
-
-    new-array v2, v7, [Ljava/lang/String;
-
-    const-string v1, ":twofa/password/check"
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v1
-
-    sput-object v1, Ly8f;->f:Lca4;
-
-    const-string v1, "phone"
-
-    filled-new-array {v6, v1}, [Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x2
-
-    const-string v1, ":twofa/auth/password/check"
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v0
-
-    sput-object v0, Ly8f;->g:Lca4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .registers 4
+
+    iget v0, p0, Ly8f;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Lu8f;
+
+    iget-object p0, p0, Ly8f;->b:La9f;
+
+    iget-object v1, p0, La9f;->c:Lzb6;
+
+    iget v2, p0, La9f;->X:I
+
+    iget p0, p0, La9f;->Y:I
+
+    invoke-direct {v0, v1, v2, p0}, Lu8f;-><init>(Lzb6;II)V
+
+    return-object v0
+
+    :pswitch_0
+    iget-object p0, p0, Ly8f;->b:La9f;
+
+    invoke-virtual {p0}, La9f;->dismiss()V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

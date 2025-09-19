@@ -3,98 +3,52 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:J
+.field public final synthetic a:I
 
-.field public final synthetic b:I
+.field public final synthetic b:Lp17;
 
 
 # direct methods
-.method public synthetic constructor <init>(JI)V
-    .registers 4
+.method public synthetic constructor <init>(Lp17;I)V
+    .registers 3
+
+    iput p2, p0, Lm17;->a:I
+
+    iput-object p1, p0, Lm17;->b:Lp17;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lm17;->a:J
-
-    iput p3, p0, Lm17;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+.method public final run()V
+    .registers 2
 
-    check-cast p1, Ljava/lang/Throwable;
+    iget v0, p0, Lm17;->a:I
 
-    sget-object v0, Ln27;->z0:Ljava/lang/String;
+    iget-object p0, p0, Lm17;->b:Lp17;
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    packed-switch v0, :pswitch_data_0
 
-    move-result-wide v1
+    invoke-interface {p0}, Lp17;->k()V
 
-    iget-wide v3, p0, Lm17;->a:J
+    return-void
 
-    sub-long/2addr v1, v3
+    :pswitch_0
+    invoke-interface {p0}, Lp17;->h()V
 
-    iget p0, p0, Lm17;->b:I
+    return-void
 
-    const-string v3, "ms"
+    nop
 
-    const-string v4, "prefetch "
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    invoke-direct {p1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, " completed, all time = "
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {v0, p0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, " completion error, all time = "
-
-    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {v0, p0, p1}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

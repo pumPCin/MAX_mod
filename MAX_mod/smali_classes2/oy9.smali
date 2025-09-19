@@ -1,55 +1,53 @@
 .class public final Loy9;
-.super Lcx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic b:[Lxi7;
+
+
 # instance fields
-.field public X:Llx0;
-
-.field public Y:Lr04;
-
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public final synthetic n0:Lru/ok/messages/NotificationsImagesProvider;
-
-.field public o:Lru/ok/messages/NotificationsImagesProvider;
-
-.field public o0:I
+.field public final a:Lgr4;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/messages/NotificationsImagesProvider;Lcx3;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 5
 
-    iput-object p1, p0, Loy9;->n0:Lru/ok/messages/NotificationsImagesProvider;
+    new-instance v0, Lsxb;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const-class v1, Loy9;
+
+    const-string v2, "liveLocationManager"
+
+    const-string v3, "getLiveLocationManager()Lru/ok/tamtam/location/live/manager/LiveLocationManager;"
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sget-object v1, Ljpc;->a:Lkpc;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lxi7;
+
+    aput-object v0, v1, v4
+
+    sput-object v1, Loy9;->b:[Lxi7;
 
     return-void
 .end method
 
+.method public constructor <init>(Lgr4;)V
+    .registers 2
 
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Loy9;->Z:Ljava/lang/Object;
+    iput-object p1, p0, Loy9;->a:Lgr4;
 
-    iget p1, p0, Loy9;->o0:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Loy9;->o0:I
-
-    iget-object p1, p0, Loy9;->n0:Lru/ok/messages/NotificationsImagesProvider;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, v0, p0}, Lru/ok/messages/NotificationsImagesProvider;->a(Lru/ok/messages/NotificationsImagesProvider;Lntd;Lr04;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

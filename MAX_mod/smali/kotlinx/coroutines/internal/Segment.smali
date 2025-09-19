@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lst9;
+.implements Lsx9;
 
 
 # annotations
@@ -14,7 +14,7 @@
         "TS;>;>",
         "Lkotlinx/coroutines/internal/ConcurrentLinkedListNode<",
         "TS;>;",
-        "Lst9;"
+        "Lsx9;"
     }
 .end annotation
 
@@ -26,7 +26,7 @@
         "Lkotlinx/coroutines/internal/Segment;",
         "S",
         "Lkotlinx/coroutines/internal/ConcurrentLinkedListNode;",
-        "Lst9;",
+        "Lsx9;",
         "",
         "id",
         "prev",
@@ -43,11 +43,11 @@
         "index",
         "",
         "cause",
-        "Lj04;",
+        "Lq04;",
         "context",
-        "Lncf;",
+        "Lylf;",
         "onCancellation",
-        "(ILjava/lang/Throwable;Lj04;)V",
+        "(ILjava/lang/Throwable;Lq04;)V",
         "onSlotCleaned",
         "()V",
         "J",
@@ -212,7 +212,7 @@
     return p0
 .end method
 
-.method public abstract onCancellation(ILjava/lang/Throwable;Lj04;)V
+.method public abstract onCancellation(ILjava/lang/Throwable;Lq04;)V
 .end method
 
 .method public final onSlotCleaned()V

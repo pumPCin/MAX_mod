@@ -1,102 +1,188 @@
 .class public final Lwcg;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Lcl7;
 
-.field public final synthetic Y:Lone/me/webapp/settings/WebAppSettingsScreen;
+.field public final b:Lcl7;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/settings/WebAppSettingsScreen;)V
+.method public constructor <init>(Lcl7;Lcl7;)V
     .registers 3
 
-    iput-object p2, p0, Lwcg;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lwcg;->a:Lcl7;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lwcg;->b:Lcl7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final a(IJLjava/lang/String;Lpcg;Lb72;)V
+    .registers 11
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object v0, p0, Lwcg;->a:Lcl7;
 
-    invoke-virtual {p0, p1, p2}, Lwcg;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lzc;
+
+    new-instance v1, Lg58;
+
+    invoke-direct {v1}, Lg58;-><init>()V
+
+    iget-object p0, p0, Lwcg;->b:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lf53;
+
+    check-cast v2, Lh53;
+
+    invoke-virtual {v2}, Lh53;->z()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    const-string v3, "sessionId"
+
+    invoke-virtual {v1, v3, v2}, Lg58;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v2, "botId"
+
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p2
+
+    invoke-virtual {v1, v2, p2}, Lg58;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string p2, "webAppName"
+
+    invoke-virtual {v1, p2, p4}, Lg58;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget p2, p5, Lpcg;->b:I
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    const-string p3, "entryPoint"
+
+    invoke-virtual {v1, p3, p2}, Lg58;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget p2, p6, Lb72;->a:I
+
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
+
+    const-string p3, "sourceType"
+
+    invoke-virtual {v1, p3, p2}, Lg58;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p6}, Lb72;->a()Ljava/lang/Long;
+
+    move-result-object p2
+
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide p2
+
+    const-string p4, "sourceId"
+
+    invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p2
+
+    invoke-virtual {v1, p4, p2}, Lg58;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    invoke-virtual {v1}, Lg58;->b()Lg58;
+
+    move-result-object p2
+
+    new-instance p3, Lxa7;
+
+    invoke-direct {p3}, Ljava/lang/Object;-><init>()V
+
+    const-string p4, "WEBAPP_ACTION"
+
+    iput-object p4, p3, Lxa7;->c:Ljava/lang/String;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lwcg;
+    check-cast p0, Lf53;
 
-    sget-object p1, Lncf;->a:Lncf;
+    check-cast p0, Lgad;
 
-    invoke-virtual {p0, p1}, Lwcg;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lgad;->q()J
 
-    return-object p1
-.end method
+    move-result-wide p4
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    iput-wide p4, p3, Lxa7;->b:J
 
-    new-instance v0, Lwcg;
+    const/4 p0, 0x1
 
-    iget-object p0, p0, Lwcg;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
+    if-eq p1, p0, :cond_3
 
-    invoke-direct {v0, p2, p0}, Lwcg;-><init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/settings/WebAppSettingsScreen;)V
+    const/4 p0, 0x2
 
-    iput-object p1, v0, Lwcg;->X:Ljava/lang/Object;
+    if-eq p1, p0, :cond_2
 
-    return-object v0
-.end method
+    const/4 p0, 0x3
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    if-ne p1, p0, :cond_1
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    const-string p0, "REFRESH"
 
-    iget-object p1, p0, Lwcg;->X:Ljava/lang/Object;
-
-    check-cast p1, Lzcg;
-
-    iget-object p0, p0, Lwcg;->Y:Lone/me/webapp/settings/WebAppSettingsScreen;
-
-    if-eqz p1, :cond_1
-
-    iget-object p0, p0, Lone/me/webapp/settings/WebAppSettingsScreen;->Y:Lc6g;
-
-    if-eqz p0, :cond_0
-
-    iget-object v0, p1, Lzcg;->a:Ljava/lang/String;
-
-    iget-object p1, p1, Lzcg;->b:Ld9d;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, p1, v0, v1}, Lc6g;->b(Ld9d;Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    goto :goto_0
 
     :cond_1
-    sget-object p1, Lone/me/webapp/settings/WebAppSettingsScreen;->n0:[Lsf7;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    const/4 p0, 0x0
 
     throw p0
+
+    :cond_2
+    const-string p0, "CLOSE"
+
+    goto :goto_0
+
+    :cond_3
+    const-string p0, "OPEN"
+
+    :goto_0
+    iput-object p0, p3, Lxa7;->o:Ljava/lang/String;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide p0
+
+    iput-wide p0, p3, Lxa7;->a:J
+
+    invoke-virtual {p3, p2}, Lxa7;->b(Ljava/util/Map;)V
+
+    invoke-virtual {p3}, Lxa7;->d()Llz7;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lzc;->j(Llz7;)Z
+
+    return-void
 .end method

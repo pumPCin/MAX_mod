@@ -2,69 +2,116 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lt0a;
 
+# instance fields
+.field public final a:I
 
-# static fields
-.field public static final a:Lt80;
-
-.field public static final b:Lii5;
-
-.field public static final c:Lii5;
+.field public final b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(IJ)V
+    .registers 4
 
-    new-instance v0, Lt80;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lt80;->a:I
 
-    sput-object v0, Lt80;->a:Lt80;
-
-    const-string v0, "networkType"
-
-    invoke-static {v0}, Lii5;->a(Ljava/lang/String;)Lii5;
-
-    move-result-object v0
-
-    sput-object v0, Lt80;->b:Lii5;
-
-    const-string v0, "mobileSubtype"
-
-    invoke-static {v0}, Lii5;->a(Ljava/lang/String;)Lii5;
-
-    move-result-object v0
-
-    sput-object v0, Lt80;->c:Lii5;
+    iput-wide p2, p0, Lt80;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 7
+
+    const/4 v0, 0x1
+
+    if-ne p1, p0, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lt80;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Lt80;
+
+    iget v1, p0, Lt80;->a:I
+
+    iget v3, p1, Lt80;->a:I
+
+    if-ne v1, v3, :cond_1
+
+    iget-wide v3, p0, Lt80;->b:J
+
+    iget-wide p0, p1, Lt80;->b:J
+
+    cmp-long p0, v3, p0
+
+    if-nez p0, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .registers 7
+
+    iget v0, p0, Lt80;->a:I
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v1
+
+    const/16 v1, 0x20
+
+    iget-wide v2, p0, Lt80;->b:J
+
+    ushr-long v4, v2, v1
+
+    xor-long v1, v4, v2
+
+    long-to-int p0, v1
+
+    xor-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 4
 
-    check-cast p1, Leq9;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    check-cast p2, Lu0a;
+    const-string v1, "PacketInfo{sizeInBytes="
 
-    check-cast p1, Lbb0;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p1, Lbb0;->a:Ldq9;
+    iget v1, p0, Lt80;->a:I
 
-    sget-object v0, Lt80;->b:Lii5;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-interface {p2, v0, p0}, Lu0a;->a(Lii5;Ljava/lang/Object;)Lu0a;
+    const-string v1, ", timestampNs="
 
-    sget-object p0, Lt80;->c:Lii5;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p1, Lbb0;->b:Lcq9;
+    iget-wide v1, p0, Lt80;->b:J
 
-    invoke-interface {p2, p0, p1}, Lu0a;->a(Lii5;Ljava/lang/Object;)Lu0a;
+    const-string p0, "}"
 
-    return-void
+    invoke-static {v0, v1, v2, p0}, Lyv7;->j(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

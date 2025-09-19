@@ -19,23 +19,23 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    sget v0, Ld0c;->oneme_permissions_negative:I
+    sget v0, Lyac;->oneme_in_app_review_close:I
 
     sput v0, Lria;->a:I
 
-    sget v0, Ld0c;->oneme_permissions_neutral:I
+    sget v0, Lyac;->oneme_in_app_review_not_now:I
 
     sput v0, Lria;->b:I
 
-    sget v0, Ld0c;->oneme_permissions_positive:I
+    sget v0, Lyac;->oneme_in_app_review_send:I
 
     sput v0, Lria;->c:I
 
-    sget v0, Ld0c;->oneme_permissions_rationale:I
+    sget v0, Lyac;->oneme_in_app_review_subtitle:I
 
     sput v0, Lria;->d:I
 
-    sget v0, Ld0c;->oneme_permissions_title:I
+    sget v0, Lyac;->oneme_in_app_review_thanks:I
 
     sput v0, Lria;->e:I
 

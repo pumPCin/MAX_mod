@@ -1,34 +1,22 @@
 .class public final Lki3;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;
-
-
-# direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)V
-    .registers 3
-
-    iput-object p2, p0, Lki3;->Y:Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;
-
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+.field public synthetic X:Z
 
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -38,156 +26,45 @@
 
     check-cast p0, Lki3;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lki3;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object p1
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
 
-    new-instance v0, Lki3;
-
-    iget-object p0, p0, Lki3;->Y:Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;
-
-    invoke-direct {v0, p2, p0}, Lki3;-><init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)V
-
-    iput-object p1, v0, Lki3;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lki3;->X:Ljava/lang/Object;
-
-    check-cast p1, Lni3;
-
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result p1
-
-    const/4 v0, 0x0
-
-    iget-object p0, p0, Lki3;->Y:Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;
-
-    if-eqz p1, :cond_2
-
-    const/4 v1, 0x1
-
-    if-eq p1, v1, :cond_1
+    new-instance p0, Lki3;
 
     const/4 v0, 0x2
 
-    if-ne p1, v0, :cond_0
+    invoke-direct {p0, v0, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    invoke-static {p0}, Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;->x0(Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)Lw2b;
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result-object p1
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    sget v0, Lt4c;->oneme_settings_privacy_onboarding_error_pin_code_equals:I
+    move-result p1
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    iput-boolean p1, p0, Lki3;->X:Z
 
-    move-result-object v1
+    return-object p0
+.end method
 
-    invoke-static {v1, v0}, Lr7;->v(Landroid/content/Context;I)Ljava/lang/String;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    move-result-object v0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-virtual {p1, v0}, Lw2b;->setErrorText(Ljava/lang/CharSequence;)V
+    iget-boolean p0, p0, Lki3;->X:Z
 
-    invoke-static {p0}, Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;->x0(Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)Lw2b;
-
-    move-result-object p0
-
-    sget-object p1, Lzi3;->c:Lzi3;
-
-    invoke-virtual {p0, p1}, Lw2b;->setState(Lzi3;)V
-
-    goto :goto_1
-
-    :cond_0
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p0}, Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;->x0(Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)Lw2b;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Lw2b;->setErrorText(Ljava/lang/CharSequence;)V
-
-    invoke-static {p0}, Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;->x0(Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)Lw2b;
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
-
-    sget-object p1, Lzi3;->b:Lzi3;
-
-    invoke-virtual {p0, p1}, Lw2b;->setState(Lzi3;)V
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {p0}, Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;->x0(Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)Lw2b;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Lw2b;->setErrorText(Ljava/lang/CharSequence;)V
-
-    invoke-static {p0}, Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;->x0(Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)Lw2b;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lw2b;->E0:Lcj3;
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_4
-
-    invoke-virtual {p1, v2}, Lcj3;->G0(I)Lu47;
-
-    move-result-object v3
-
-    if-eqz v3, :cond_3
-
-    check-cast v3, Lfxd;
-
-    iget-object v3, v3, Lfxd;->C0:Lwi3;
-
-    invoke-virtual {v3, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    :cond_3
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {p1}, Lcj3;->I0()Z
-
-    invoke-static {p0}, Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;->x0(Lone/me/settings/privacy/ui/pincode/ConfirmPinCodeScreen;)Lw2b;
-
-    move-result-object p0
-
-    sget-object p1, Lzi3;->o:Lzi3;
-
-    invoke-virtual {p0, p1}, Lw2b;->setState(Lzi3;)V
-
-    :goto_1
-    sget-object p0, Lncf;->a:Lncf;
 
     return-object p0
 .end method

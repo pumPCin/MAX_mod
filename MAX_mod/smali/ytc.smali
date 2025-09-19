@@ -3,151 +3,68 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Map$Entry;
+.implements Ldjb;
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public final a:Ljava/util/concurrent/Executor;
 
-.field public final b:Ljava/lang/Object;
+.field public final b:Lmgb;
 
-.field public c:Lytc;
+.field public final c:Ldjb;
 
-.field public o:Lytc;
+.field public final d:Z
+
+.field public final e:Ll27;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lmgb;Ldjb;ZLl27;)V
+    .registers 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lytc;->a:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-object p2, p0, Lytc;->b:Ljava/lang/Object;
+    iput-object p1, p0, Lytc;->a:Ljava/util/concurrent/Executor;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p2, p0, Lytc;->b:Lmgb;
+
+    iput-object p3, p0, Lytc;->c:Ldjb;
+
+    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p5, p0, Lytc;->e:Ll27;
+
+    iput-boolean p4, p0, Lytc;->d:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final a(Ldi0;Lejb;)V
+    .registers 9
 
-    const/4 v0, 0x1
+    new-instance v0, Lxtc;
 
-    if-ne p1, p0, :cond_0
+    iget-boolean v4, p0, Lytc;->d:Z
 
-    return v0
+    iget-object v5, p0, Lytc;->e:Ll27;
 
-    :cond_0
-    instance-of v1, p1, Lytc;
+    move-object v1, p0
 
-    const/4 v2, 0x0
+    move-object v2, p1
 
-    if-nez v1, :cond_1
+    move-object v3, p2
 
-    return v2
+    invoke-direct/range {v0 .. v5}, Lxtc;-><init>(Lytc;Ldi0;Lejb;ZLl27;)V
 
-    :cond_1
-    check-cast p1, Lytc;
+    iget-object p0, v1, Lytc;->c:Ldjb;
 
-    iget-object v1, p0, Lytc;->a:Ljava/lang/Object;
+    invoke-interface {p0, v0, v3}, Ldjb;->a(Ldi0;Lejb;)V
 
-    iget-object v3, p1, Lytc;->a:Ljava/lang/Object;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object p0, p0, Lytc;->b:Ljava/lang/Object;
-
-    iget-object p1, p1, Lytc;->b:Ljava/lang/Object;
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public final getKey()Ljava/lang/Object;
-    .registers 1
-
-    iget-object p0, p0, Lytc;->a:Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method public final getValue()Ljava/lang/Object;
-    .registers 1
-
-    iget-object p0, p0, Lytc;->b:Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-object v0, p0, Lytc;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    iget-object p0, p0, Lytc;->b:Ljava/lang/Object;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    xor-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    const-string p1, "An entry modification is not supported"
-
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Lytc;->a:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, "="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lytc;->b:Ljava/lang/Object;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

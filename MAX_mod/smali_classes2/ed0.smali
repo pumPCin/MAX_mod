@@ -1,97 +1,106 @@
 .class public final Led0;
-.super Ljava/lang/Object;
+.super Llj0;
 .source "SourceFile"
-
-# interfaces
-.implements Lfd0;
 
 
 # instance fields
-.field public final a:Landroid/content/Intent;
+.field public final synthetic c:Lgd0;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
+.method public constructor <init>(Lgd0;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Led0;->a:Landroid/content/Intent;
+    iput-object p1, p0, Led0;->c:Lgd0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final c(Landroid/graphics/Bitmap;)V
+    .registers 6
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Led0;->c:Lgd0;
 
-    if-ne p0, p1, :cond_0
+    iget-boolean v0, v0, Lgd0;->s0:Z
 
-    return v0
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    sub-float/2addr v0, v1
+
+    const/4 v1, 0x2
+
+    int-to-float v1, v1
+
+    div-float/2addr v0, v1
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    sub-float/2addr v2, v3
+
+    div-float/2addr v2, v1
+
+    iget-object v1, p0, Led0;->c:Lgd0;
+
+    iget-object v1, v1, Lgd0;->Y:Landroid/graphics/Matrix;
+
+    invoke-virtual {v1, v0, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
     :cond_0
-    instance-of v1, p1, Led0;
+    iget-object v0, p0, Led0;->c:Lgd0;
 
-    const/4 v2, 0x0
+    iget-object v0, v0, Lgd0;->Z:Lzte;
 
-    if-nez v1, :cond_1
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
-    return v2
+    move-result-object v0
 
-    :cond_1
-    check-cast p1, Led0;
+    check-cast v0, Landroid/graphics/Canvas;
 
-    iget-object p0, p0, Led0;->a:Landroid/content/Intent;
+    invoke-virtual {v0, p1}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
 
-    iget-object p1, p1, Led0;->a:Landroid/content/Intent;
+    iget-object v0, p0, Led0;->c:Lgd0;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v0, v0, Lgd0;->Z:Lzte;
 
-    move-result p0
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
-    if-nez p0, :cond_2
+    move-result-object v0
 
-    return v2
+    check-cast v0, Landroid/graphics/Canvas;
 
-    :cond_2
-    return v0
-.end method
+    iget-object p0, p0, Led0;->c:Lgd0;
 
-.method public final hashCode()I
-    .registers 1
+    iget-object p0, p0, Lgd0;->Y:Landroid/graphics/Matrix;
 
-    iget-object p0, p0, Led0;->a:Landroid/content/Intent;
+    const/4 v1, 0x0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0, p1, p0, v1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "CropAvatarScreenIntentReadyOld(intent="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Led0;->a:Landroid/content/Intent;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

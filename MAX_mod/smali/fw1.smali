@@ -1,130 +1,165 @@
-.class public final Lfw1;
+.class public final synthetic Lfw1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lrs1;
+
 
 # instance fields
-.field public a:J
+.field public final synthetic a:I
 
-.field public b:J
+.field public final synthetic b:Lqw1;
 
-.field public c:Ljava/lang/Object;
+
+# direct methods
+.method public synthetic constructor <init>(Lqw1;I)V
+    .registers 3
+
+    iput p2, p0, Lfw1;->a:I
+
+    iput-object p1, p0, Lfw1;->b:Lqw1;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public a()I
-    .registers 7
+.method public t(Lqs1;)Ljava/lang/String;
+    .registers 6
 
-    iget-object v0, p0, Lfw1;->c:Ljava/lang/Object;
+    iget v0, p0, Lfw1;->a:I
 
-    check-cast v0, Lhw1;
+    iget-object p0, p0, Lfw1;->b:Lqw1;
 
-    invoke-virtual {v0}, Lhw1;->c()Z
+    packed-switch v0, :pswitch_data_0
 
-    move-result v0
+    :try_start_0
+    iget-object v0, p0, Lqw1;->a:Lwhe;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Lwhe;->b()Lamd;
 
-    const/16 p0, 0x2bc
+    move-result-object v0
 
-    return p0
+    invoke-virtual {v0}, Lamd;->b()Lbmd;
 
-    :cond_0
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+    move-result-object v0
 
-    move-result-wide v0
+    new-instance v1, Ljava/util/ArrayList;
 
-    iget-wide v2, p0, Lfw1;->b:J
+    iget-object v0, v0, Lbmd;->c:Ljava/util/List;
 
-    const-wide/16 v4, -0x1
+    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    cmp-long v2, v2, v4
+    iget-object v0, p0, Lqw1;->H0:Ls06;
 
-    if-nez v2, :cond_1
+    iget-object v0, v0, Ls06;->f:Ljava/lang/Object;
 
-    iput-wide v0, p0, Lfw1;->b:J
+    check-cast v0, Lbz1;
 
-    :cond_1
-    iget-wide v2, p0, Lfw1;->b:J
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    sub-long/2addr v0, v2
+    new-instance v0, Ljw1;
 
-    const-wide/32 v2, 0x1d4c0
+    invoke-direct {v0, p0, p1}, Ljw1;-><init>(Lqw1;Lqs1;)V
 
-    cmp-long p0, v0, v2
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    if-gtz p0, :cond_2
+    iget-object v0, p0, Lqw1;->b:Lrz1;
 
-    const/16 p0, 0x3e8
+    iget-object v2, p0, Lqw1;->s0:Ltw1;
 
-    return p0
+    iget-object v2, v2, Ltw1;->a:Ljava/lang/String;
 
-    :cond_2
-    const-wide/32 v2, 0x493e0
+    iget-object v3, p0, Lqw1;->c:Lpid;
 
-    cmp-long p0, v0, v2
+    invoke-static {v1}, Lya6;->j(Ljava/util/ArrayList;)Landroid/hardware/camera2/CameraDevice$StateCallback;
 
-    if-gtz p0, :cond_3
+    move-result-object v1
 
-    const/16 p0, 0x7d0
+    iget-object v0, v0, Lrz1;->a:Lsz1;
 
-    return p0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_end_0
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
 
-    :cond_3
-    const/16 p0, 0xfa0
+    :try_start_1
+    iget-object v0, v0, Lpxe;->b:Ljava/lang/Object;
 
-    return p0
-.end method
+    check-cast v0, Landroid/hardware/camera2/CameraManager;
 
-.method public b()I
-    .registers 5
+    invoke-virtual {v0, v2, v3, v1}, Landroid/hardware/camera2/CameraManager;->openCamera(Ljava/lang/String;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraDevice$StateCallback;)V
+    :try_end_1
+    .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_1
 
-    iget-wide v0, p0, Lfw1;->a:J
+    goto :goto_0
 
-    iget-object p0, p0, Lfw1;->c:Ljava/lang/Object;
+    :catch_0
+    move-exception v0
 
-    check-cast p0, Lhw1;
+    :try_start_2
+    new-instance v1, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;
 
-    invoke-virtual {p0}, Lhw1;->c()Z
+    invoke-direct {v1, v0}, Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat;-><init>(Landroid/hardware/camera2/CameraAccessException;)V
 
-    move-result p0
+    throw v1
+    :try_end_2
+    .catch Landroidx/camera/camera2/internal/compat/CameraAccessExceptionCompat; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/SecurityException; {:try_start_2 .. :try_end_2} :catch_1
 
-    const-wide/16 v2, 0x0
+    :catch_1
+    move-exception v0
 
-    if-nez p0, :cond_1
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    cmp-long p0, v0, v2
+    invoke-virtual {p0}, Lqw1;->toString()Ljava/lang/String;
 
-    const/16 v2, 0x2710
+    invoke-virtual {p1, v0}, Lqs1;->d(Ljava/lang/Throwable;)Z
 
-    if-lez p0, :cond_0
+    :goto_0
+    const-string p0, "configAndCloseTask"
 
-    long-to-int p0, v0
+    return-object p0
 
-    invoke-static {p0, v2}, Ljava/lang/Math;->min(II)I
+    :pswitch_0
+    :try_start_3
+    iget-object v0, p0, Lqw1;->c:Lpid;
 
-    move-result p0
+    new-instance v1, Law1;
 
-    return p0
+    const/4 v2, 0x3
 
-    :cond_0
-    return v2
+    invoke-direct {v1, p0, v2, p1}, Law1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    :cond_1
-    cmp-long p0, v0, v2
+    invoke-virtual {v0, v1}, Lpid;->execute(Ljava/lang/Runnable;)V
+    :try_end_3
+    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_3 .. :try_end_3} :catch_2
 
-    const v2, 0x1b7740
+    goto :goto_1
 
-    if-lez p0, :cond_2
+    :catch_2
+    new-instance p0, Ljava/lang/RuntimeException;
 
-    long-to-int p0, v0
+    const-string v0, "Unable to check if MeteringRepeating is attached. Camera executor shut down."
 
-    invoke-static {p0, v2}, Ljava/lang/Math;->min(II)I
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    move-result p0
+    invoke-virtual {p1, p0}, Lqs1;->d(Ljava/lang/Throwable;)Z
 
-    return p0
+    :goto_1
+    const-string p0, "isMeteringRepeatingAttached"
 
-    :cond_2
-    return v2
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,223 +1,141 @@
-.class public final synthetic Lyw1;
+.class public final Lyw1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lls1;
-.implements Llu;
+.implements Lfx1;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lew1;
 
-.field public final synthetic b:Lax1;
+.field public final b:Lqq0;
+
+.field public final c:I
+
+.field public d:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lax1;I)V
-    .registers 3
-
-    iput p2, p0, Lyw1;->a:I
-
-    iput-object p1, p0, Lyw1;->b:Lax1;
+.method public constructor <init>(Lew1;ILqq0;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lyw1;->d:Z
+
+    iput-object p1, p0, Lyw1;->a:Lew1;
+
+    iput p2, p0, Lyw1;->c:I
+
+    iput-object p3, p0, Lyw1;->b:Lqq0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Q(Lks1;)Ljava/lang/String;
-    .registers 5
+.method public final a(Landroid/hardware/camera2/TotalCaptureResult;)Lgt7;
+    .registers 4
 
-    iget-object p0, p0, Lyw1;->b:Lax1;
+    iget v0, p0, Lyw1;->c:I
 
-    iget-object v0, p0, Lax1;->e:Lp4f;
+    invoke-static {v0, p1}, Lj30;->h(ILandroid/hardware/camera2/TotalCaptureResult;)Z
 
-    iget-object v0, v0, Lp4f;->a:Ljava/lang/Object;
+    move-result p1
 
-    check-cast v0, Landroidx/camera/camera2/internal/compat/quirk/TorchFlashRequiredFor3aUpdateQuirk;
+    if-eqz p1, :cond_0
 
-    const/4 v1, 0x0
+    const/4 p1, 0x1
 
-    if-eqz v0, :cond_1
+    iput-boolean p1, p0, Lyw1;->d:Z
 
-    iget-object v0, v0, Landroidx/camera/camera2/internal/compat/quirk/TorchFlashRequiredFor3aUpdateQuirk;->a:Lcy1;
+    new-instance p1, Lqzc;
 
-    const/4 v2, 0x5
+    const/16 v0, 0x1b
 
-    invoke-static {v0, v2}, Lvv1;->t(Lcy1;I)I
+    invoke-direct {p1, v0, p0}, Lqzc;-><init>(ILjava/lang/Object;)V
 
-    move-result v0
+    invoke-static {p1}, Lf54;->l(Lrs1;)Lts1;
 
-    if-ne v0, v2, :cond_0
+    move-result-object p0
 
-    goto :goto_0
+    invoke-static {p0}, Lqd6;->a(Lgt7;)Lqd6;
+
+    move-result-object p0
+
+    new-instance p1, Lxw1;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, v0}, Lxw1;-><init>(I)V
+
+    invoke-static {}, Ln4e;->q()Lep4;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v1, Ly9e;
+
+    invoke-direct {v1, p1}, Ly9e;-><init>(Ljava/lang/Object;)V
+
+    invoke-static {p0, v1, v0}, Lf4h;->J(Lgt7;Lvt;Ljava/util/concurrent/Executor;)Lz32;
+
+    move-result-object p0
+
+    return-object p0
 
     :cond_0
-    iget-object p0, p0, Lax1;->a:Lvv1;
+    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    const/4 v0, 0x1
+    invoke-static {p0}, Lf4h;->w(Ljava/lang/Object;)Lp27;
 
-    invoke-virtual {p0, v0}, Lvv1;->r(Z)V
-
-    invoke-virtual {p1, v1}, Lks1;->b(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    invoke-virtual {p1, v1}, Lks1;->b(Ljava/lang/Object;)Z
-
-    :goto_1
-    const-string p0, "EnableTorchInternal"
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public apply(Ljava/lang/Object;)Lcq7;
-    .registers 10
+.method public final b()Z
+    .registers 1
 
-    iget v0, p0, Lyw1;->a:I
+    iget p0, p0, Lyw1;->c:I
 
-    check-cast p1, Ljava/lang/Void;
+    if-nez p0, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    const/4 p0, 0x1
 
-    sget-wide v0, Lax1;->f:J
-
-    iget-object p0, p0, Lyw1;->b:Lax1;
-
-    iget-object v4, p0, Lax1;->c:Ljava/util/concurrent/ScheduledExecutorService;
-
-    iget-object p0, p0, Lax1;->a:Lvv1;
-
-    new-instance p1, Llo0;
-
-    const/16 v2, 0xc
-
-    invoke-direct {p1, v2}, Llo0;-><init>(I)V
-
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v5
-
-    new-instance v0, Lxw1;
-
-    invoke-direct {v0, p1}, Lxw1;-><init>(Llo0;)V
-
-    invoke-virtual {p0, v0}, Lvv1;->p(Luv1;)V
-
-    new-instance p1, Lzv1;
-
-    const/4 v1, 0x3
-
-    invoke-direct {p1, p0, v1, v0}, Lzv1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    iget-object p0, p0, Lvv1;->c:Ljad;
-
-    iget-object v3, v0, Lxw1;->b:Lns1;
-
-    iget-object v0, v3, Lns1;->b:Lms1;
-
-    invoke-virtual {v0, p1, p0}, Lk3;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    new-instance v2, Lka2;
-
-    const/4 v7, 0x7
-
-    invoke-direct/range {v2 .. v7}, Lka2;-><init>(Ljava/lang/Object;Ljava/lang/Object;JI)V
-
-    invoke-static {v2}, Luo9;->q(Lls1;)Lns1;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    iget-object p0, p0, Lyw1;->b:Lax1;
-
-    iget-object p0, p0, Lax1;->a:Lvv1;
-
-    iget-object p0, p0, Lvv1;->h:Lnv5;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p1, Llv5;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, v0, p0}, Llv5;-><init>(ILjava/lang/Object;)V
-
-    invoke-static {p1}, Luo9;->q(Lls1;)Lns1;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_1
-    new-instance p1, Lyw1;
-
-    const/4 v0, 0x0
-
-    iget-object p0, p0, Lyw1;->b:Lax1;
-
-    invoke-direct {p1, p0, v0}, Lyw1;-><init>(Lax1;I)V
-
-    invoke-static {p1}, Luo9;->q(Lls1;)Lns1;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_2
-    iget-object p0, p0, Lyw1;->b:Lax1;
-
-    iget-object p0, p0, Lax1;->a:Lvv1;
-
-    iget-object p0, p0, Lvv1;->h:Lnv5;
-
-    iget-object p1, p0, Lnv5;->a:Lvv1;
-
-    iget-object p1, p1, Lvv1;->e:Lcy1;
-
-    const/4 v0, 0x5
-
-    invoke-static {p1, v0}, Lvv1;->t(Lcy1;I)I
-
-    move-result p1
-
-    if-eq p1, v0, :cond_0
-
-    sget-object p0, Loz6;->c:Loz6;
-
-    goto :goto_0
+    return p0
 
     :cond_0
-    new-instance p1, Lyh4;
+    const/4 p0, 0x0
 
-    const/4 v0, 0x1
+    return p0
+.end method
+
+.method public final c()V
+    .registers 4
+
+    iget-boolean v0, p0, Lyw1;->d:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lyw1;->a:Lew1;
+
+    iget-object v0, v0, Lew1;->h:Lqx5;
 
     const/4 v1, 0x1
 
-    invoke-direct {p1, p0, v1, v0}, Lyh4;-><init>(Ljava/lang/Object;ZI)V
+    const/4 v2, 0x0
 
-    invoke-static {p1}, Luo9;->q(Lls1;)Lns1;
+    invoke-virtual {v0, v2, v1}, Lqx5;->a(ZZ)V
 
-    move-result-object p0
+    iget-object p0, p0, Lyw1;->b:Lqq0;
 
-    :goto_0
-    return-object p0
+    iput-boolean v2, p0, Lqq0;->b:Z
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :cond_0
+    return-void
 .end method

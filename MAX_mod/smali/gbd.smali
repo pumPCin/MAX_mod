@@ -1,91 +1,34 @@
-.class public final synthetic Lgbd;
+.class public abstract Lgbd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lja6;
+.implements Lts7;
 
 
 # instance fields
-.field public final synthetic a:Lks6;
+.field public final a:I
+
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lks6;)V
-    .registers 2
+.method public constructor <init>(ILjava/util/List;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lgbd;->a:Lks6;
+    iput p1, p0, Lgbd;->a:I
+
+    iput-object p2, p0, Lgbd;->b:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    instance-of v0, p1, Lgbd;
-
-    if-eqz v0, :cond_0
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Lgbd;->getFunctionDelegate()Lca6;
-
-    move-result-object p0
-
-    check-cast p1, Lja6;
-
-    invoke-interface {p1}, Lja6;->getFunctionDelegate()Lca6;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
+.method public abstract l(Lgbd;)Z
 .end method
 
-.method public final getFunctionDelegate()Lca6;
-    .registers 8
-
-    new-instance v0, Lo8;
-
-    const-string v6, "onNewHost(Ljava/lang/String;)Lkotlinx/coroutines/Job;"
-
-    const/16 v2, 0x8
-
-    const/4 v1, 0x1
-
-    const-class v3, Lks6;
-
-    iget-object v4, p0, Lgbd;->a:Lks6;
-
-    const-string v5, "onNewHost"
-
-    invoke-direct/range {v0 .. v6}, Lo8;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    invoke-virtual {p0}, Lgbd;->getFunctionDelegate()Lca6;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
+.method public abstract n(Lgbd;)Z
 .end method

@@ -1,89 +1,82 @@
 .class public final Lu4b;
-.super Ljava/lang/Object;
+.super Lux;
 .source "SourceFile"
-
-# interfaces
-.implements Lv4b;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public X:Ljava/lang/String;
+
+.field public final Y:Ljava/lang/Integer;
+
+.field public final Z:Ljava/lang/Integer;
+
+.field public final o:Ljava/lang/String;
+
+.field public final r0:Z
+
+.field public final s0:[B
+
+.field public final t0:Ljava/lang/String;
+
+.field public final u0:Ljava/lang/String;
+
+.field public final v0:Ljava/lang/Long;
+
+.field public final w0:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Z[BLjava/lang/Long;Ljava/lang/String;Ljava/lang/String;ZZLjava/lang/String;)V
+    .registers 14
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lxz;->o:Lxz;
 
-    iput-object p1, p0, Lu4b;->a:Ljava/lang/String;
+    invoke-direct {p0, v0, p10, p11}, Lux;-><init>(Lxz;ZZ)V
+
+    iput-object p1, p0, Lu4b;->o:Ljava/lang/String;
+
+    iput-object p2, p0, Lu4b;->X:Ljava/lang/String;
+
+    iput-object p3, p0, Lu4b;->Y:Ljava/lang/Integer;
+
+    iput-object p4, p0, Lu4b;->Z:Ljava/lang/Integer;
+
+    iput-boolean p5, p0, Lu4b;->r0:Z
+
+    iput-object p6, p0, Lu4b;->s0:[B
+
+    iput-object p7, p0, Lu4b;->v0:Ljava/lang/Long;
+
+    iput-object p8, p0, Lu4b;->u0:Ljava/lang/String;
+
+    iput-object p9, p0, Lu4b;->t0:Ljava/lang/String;
+
+    iput-object p12, p0, Lu4b;->w0:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lu4b;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lu4b;
-
-    iget-object p0, p0, Lu4b;->a:Ljava/lang/String;
-
-    iget-object p1, p1, Lu4b;->a:Ljava/lang/String;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lu4b;->a:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a()Ljava/util/HashMap;
     .registers 3
 
-    const-string v0, "UserPhoto(url="
+    invoke-super {p0}, Lux;->a()Ljava/util/HashMap;
 
-    const-string v1, ")"
+    move-result-object v0
 
-    iget-object p0, p0, Lu4b;->a:Ljava/lang/String;
+    iget-object p0, p0, Lu4b;->t0:Ljava/lang/String;
 
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lm7g;->m(Ljava/lang/CharSequence;)Z
 
-    move-result-object p0
+    move-result v1
 
-    return-object p0
+    if-nez v1, :cond_0
+
+    const-string v1, "photoToken"
+
+    invoke-virtual {v0, v1, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    return-object v0
 .end method

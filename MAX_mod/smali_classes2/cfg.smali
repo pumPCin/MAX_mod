@@ -4,12 +4,12 @@
 
 
 # virtual methods
-.method public final serializer()Ltf7;
+.method public final serializer()Lyi7;
     .registers 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ltf7;"
+            "Lyi7;"
         }
     .end annotation
 

@@ -1,357 +1,359 @@
-.class public final Lyv4;
-.super Lnq4;
+.class public final enum Lyv4;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public o:I
+# static fields
+.field public static final enum A0:Lyv4;
 
-.field public p:I
+.field public static final enum B0:Lyv4;
 
-.field public final q:Lsxc;
+.field public static final enum C0:Lyv4;
 
-.field public final r:Lsxc;
+.field public static final synthetic D0:[Lyv4;
+
+.field public static final enum X:Lyv4;
+
+.field public static final enum Y:Lyv4;
+
+.field public static final enum Z:Lyv4;
+
+.field public static final enum a:Lyv4;
+
+.field public static final enum b:Lyv4;
+
+.field public static final enum c:Lyv4;
+
+.field public static final enum o:Lyv4;
+
+.field public static final enum r0:Lyv4;
+
+.field public static final enum s0:Lyv4;
+
+.field public static final enum t0:Lyv4;
+
+.field public static final enum u0:Lyv4;
+
+.field public static final enum v0:Lyv4;
+
+.field public static final enum w0:Lyv4;
+
+.field public static final enum x0:Lyv4;
+
+.field public static final enum y0:Lyv4;
+
+.field public static final enum z0:Lyv4;
 
 
 # direct methods
-.method public constructor <init>(Lsxc;Lsxc;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 26
 
-    invoke-direct {p0}, Lnq4;-><init>()V
+    new-instance v1, Lyv4;
 
-    const/4 v0, -0x1
-
-    iput v0, p0, Lyv4;->o:I
-
-    iput v0, p0, Lyv4;->p:I
-
-    iput-object p1, p0, Lyv4;->q:Lsxc;
-
-    iput-object p2, p0, Lyv4;->r:Lsxc;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final n(Lmx4;)Lna0;
-    .registers 3
-
-    sget-object v0, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
-
-    invoke-super {p0, p1}, Lnq4;->n(Lmx4;)Lna0;
-
-    move-result-object p1
-
-    invoke-static {}, Llb6;->g()I
-
-    move-result v0
-
-    iput v0, p0, Lyv4;->o:I
-
-    invoke-static {}, Llb6;->g()I
-
-    move-result v0
-
-    iput v0, p0, Lyv4;->p:I
-
-    return-object p1
-.end method
-
-.method public final q()V
-    .registers 2
-
-    invoke-super {p0}, Lnq4;->q()V
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lyv4;->o:I
-
-    iput v0, p0, Lyv4;->p:I
-
-    return-void
-.end method
-
-.method public final w(JLandroid/view/Surface;Leie;Landroid/graphics/SurfaceTexture;Landroid/graphics/SurfaceTexture;)V
-    .registers 15
-
-    iget-object v0, p0, Lnq4;->c:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Llb6;->d(Ljava/util/concurrent/atomic/AtomicBoolean;Z)V
-
-    iget-object v0, p0, Lnq4;->e:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Thread;
-
-    invoke-static {v0}, Llb6;->c(Ljava/lang/Thread;)V
-
-    invoke-virtual {p0, p3}, Lnq4;->l(Landroid/view/Surface;)Leb0;
-
-    move-result-object v0
-
-    sget-object v1, Llb6;->j:Leb0;
-
-    if-ne v0, v1, :cond_1
-
-    invoke-virtual {p0, p3}, Lnq4;->h(Landroid/view/Surface;)Leb0;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v1, p0, Lnq4;->d:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/HashMap;
-
-    invoke-virtual {v1, p3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_1
-    move-object v3, v0
-
-    iget-object v0, v3, Leb0;->a:Landroid/opengl/EGLSurface;
-
-    iget-object v1, p0, Lnq4;->k:Ljava/lang/Object;
-
-    check-cast v1, Landroid/view/Surface;
-
-    if-eq p3, v1, :cond_2
-
-    invoke-virtual {p0, v0}, Lnq4;->o(Landroid/opengl/EGLSurface;)V
-
-    iput-object p3, p0, Lnq4;->k:Ljava/lang/Object;
-
-    :cond_2
-    const/high16 v1, 0x3f800000    # 1.0f
+    const-string v0, "ON_SET_HIERARCHY"
 
     const/4 v2, 0x0
 
-    invoke-static {v2, v2, v2, v1}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
+    invoke-direct {v1, v0, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const/16 v1, 0x4000
+    sput-object v1, Lyv4;->a:Lyv4;
 
-    invoke-static {v1}, Landroid/opengl/GLES20;->glClear(I)V
+    new-instance v2, Lyv4;
 
-    iget-object v6, p0, Lyv4;->q:Lsxc;
-
-    iget v7, p0, Lyv4;->o:I
-
-    move-object v2, p0
-
-    move-object v4, p4
-
-    move-object v5, p5
-
-    invoke-virtual/range {v2 .. v7}, Lyv4;->x(Leb0;Leie;Landroid/graphics/SurfaceTexture;Lsxc;I)V
-
-    iget-object v6, v2, Lyv4;->r:Lsxc;
-
-    iget v7, v2, Lyv4;->p:I
-
-    move-object v5, p6
-
-    invoke-virtual/range {v2 .. v7}, Lyv4;->x(Leb0;Leie;Landroid/graphics/SurfaceTexture;Lsxc;I)V
-
-    iget-object p0, v2, Lnq4;->f:Ljava/lang/Object;
-
-    check-cast p0, Landroid/opengl/EGLDisplay;
-
-    invoke-static {p0, v0, p1, p2}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
-
-    iget-object p0, v2, Lnq4;->f:Ljava/lang/Object;
-
-    check-cast p0, Landroid/opengl/EGLDisplay;
-
-    invoke-static {p0, v0}, Landroid/opengl/EGL14;->eglSwapBuffers(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    invoke-static {}, Landroid/opengl/EGL14;->eglGetError()I
-
-    move-result p0
-
-    invoke-static {p0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    const/4 p0, 0x0
-
-    invoke-virtual {v2, p3, p0}, Lnq4;->s(Landroid/view/Surface;Z)V
-
-    :cond_3
-    :goto_0
-    return-void
-.end method
-
-.method public final x(Leb0;Leie;Landroid/graphics/SurfaceTexture;Lsxc;I)V
-    .registers 16
-
-    invoke-virtual {p0, p5}, Lnq4;->v(I)V
-
-    iget p5, p1, Leb0;->b:I
-
-    iget p1, p1, Leb0;->c:I
-
-    const/4 v0, 0x0
-
-    invoke-static {v0, v0, p5, p1}, Landroid/opengl/GLES20;->glViewport(IIII)V
-
-    invoke-static {v0, v0, p5, p1}, Landroid/opengl/GLES20;->glScissor(IIII)V
-
-    const/16 v1, 0x10
-
-    new-array v2, v1, [F
-
-    invoke-virtual {p3, v2}, Landroid/graphics/SurfaceTexture;->getTransformMatrix([F)V
-
-    new-array p3, v1, [F
-
-    invoke-virtual {p2, p3, v2}, Leie;->n([F[F)V
-
-    iget-object p0, p0, Lnq4;->m:Ljava/lang/Object;
-
-    check-cast p0, Ljb6;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    instance-of p2, p0, Lkb6;
-
-    const-string v2, "glUniformMatrix4fv"
+    const-string v0, "ON_CLEAR_HIERARCHY"
 
     const/4 v3, 0x1
 
-    if-eqz p2, :cond_0
+    invoke-direct {v2, v0, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    move-object p2, p0
+    sput-object v2, Lyv4;->b:Lyv4;
 
-    check-cast p2, Lkb6;
+    new-instance v3, Lyv4;
 
-    iget p2, p2, Lkb6;->f:I
+    const-string v0, "ON_SET_CONTROLLER"
 
-    invoke-static {p2, v3, v0, p3, v0}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
+    const/4 v4, 0x2
 
-    invoke-static {v2}, Llb6;->b(Ljava/lang/String;)V
+    invoke-direct {v3, v0, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    :cond_0
-    new-instance p2, Landroid/util/Size;
+    sput-object v3, Lyv4;->c:Lyv4;
 
-    int-to-float p3, p5
+    new-instance v4, Lyv4;
 
-    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v0, "ON_CLEAR_OLD_CONTROLLER"
 
-    const/high16 p4, 0x3f800000    # 1.0f
+    const/4 v5, 0x3
 
-    mul-float/2addr p3, p4
+    invoke-direct {v4, v0, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    float-to-int p3, p3
+    sput-object v4, Lyv4;->o:Lyv4;
 
-    int-to-float v4, p1
+    new-instance v5, Lyv4;
 
-    mul-float/2addr v4, p4
+    const-string v0, "ON_CLEAR_CONTROLLER"
 
-    float-to-int v4, v4
+    const/4 v6, 0x4
 
-    invoke-direct {p2, p3, v4}, Landroid/util/Size;-><init>(II)V
+    invoke-direct {v5, v0, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    new-instance p3, Landroid/util/Size;
+    sput-object v5, Lyv4;->X:Lyv4;
 
-    invoke-direct {p3, p5, p1}, Landroid/util/Size;-><init>(II)V
+    new-instance v6, Lyv4;
 
-    new-array v6, v1, [F
+    const-string v0, "ON_INIT_CONTROLLER"
 
-    invoke-static {v6, v0}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    const/4 v7, 0x5
 
-    new-array v8, v1, [F
+    invoke-direct {v6, v0, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-static {v8, v0}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    sput-object v6, Lyv4;->Y:Lyv4;
 
-    new-array v4, v1, [F
+    new-instance v7, Lyv4;
 
-    invoke-static {v4, v0}, Landroid/opengl/Matrix;->setIdentityM([FI)V
+    const-string v0, "ON_ATTACH_CONTROLLER"
 
-    invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
+    const/4 v8, 0x6
 
-    move-result p1
+    invoke-direct {v7, v0, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    int-to-float p1, p1
+    sput-object v7, Lyv4;->Z:Lyv4;
 
-    invoke-virtual {p3}, Landroid/util/Size;->getWidth()I
+    new-instance v8, Lyv4;
 
-    move-result p5
+    const-string v0, "ON_DETACH_CONTROLLER"
 
-    int-to-float p5, p5
+    const/4 v9, 0x7
 
-    div-float/2addr p1, p5
+    invoke-direct {v8, v0, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-virtual {p2}, Landroid/util/Size;->getHeight()I
+    sput-object v8, Lyv4;->r0:Lyv4;
 
-    move-result p2
+    new-instance v9, Lyv4;
 
-    int-to-float p2, p2
+    const-string v0, "ON_RELEASE_CONTROLLER"
 
-    invoke-virtual {p3}, Landroid/util/Size;->getHeight()I
+    const/16 v10, 0x8
 
-    move-result p3
+    invoke-direct {v9, v0, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    int-to-float p3, p3
+    sput-object v9, Lyv4;->s0:Lyv4;
 
-    div-float/2addr p2, p3
+    new-instance v10, Lyv4;
 
-    invoke-static {v6, v0, p1, p2, p4}, Landroid/opengl/Matrix;->scaleM([FIFFF)V
+    const-string v0, "ON_DATASOURCE_SUBMIT"
 
-    const/4 p1, 0x0
+    const/16 v11, 0x9
 
-    invoke-static {v8, v0, p1, p1, p1}, Landroid/opengl/Matrix;->translateM([FIFFF)V
+    invoke-direct {v10, v0, v11}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const/4 v7, 0x0
+    sput-object v10, Lyv4;->t0:Lyv4;
 
-    const/4 v9, 0x0
+    new-instance v11, Lyv4;
 
-    const/4 v5, 0x0
+    const-string v0, "ON_DATASOURCE_RESULT"
 
-    invoke-static/range {v4 .. v9}, Landroid/opengl/Matrix;->multiplyMM([FI[FI[FI)V
+    const/16 v12, 0xa
 
-    iget p1, p0, Ljb6;->b:I
+    invoke-direct {v11, v0, v12}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-static {p1, v3, v0, v4, v0}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
+    sput-object v11, Lyv4;->u0:Lyv4;
 
-    invoke-static {v2}, Llb6;->b(Ljava/lang/String;)V
+    new-instance v12, Lyv4;
 
-    iget p0, p0, Ljb6;->c:I
+    const-string v0, "ON_DATASOURCE_RESULT_INT"
 
-    invoke-static {p0, p4}, Landroid/opengl/GLES20;->glUniform1f(IF)V
+    const/16 v13, 0xb
 
-    const-string p0, "glUniform1f"
+    invoke-direct {v12, v0, v13}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-static {p0}, Llb6;->b(Ljava/lang/String;)V
+    sput-object v12, Lyv4;->v0:Lyv4;
 
-    const/16 p0, 0xbe2
+    new-instance v13, Lyv4;
 
-    invoke-static {p0}, Landroid/opengl/GLES20;->glEnable(I)V
+    const-string v0, "ON_DATASOURCE_FAILURE"
 
-    const/16 p1, 0x302
+    const/16 v14, 0xc
 
-    const/16 p2, 0x303
+    invoke-direct {v13, v0, v14}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-static {p1, p2, v3, p2}, Landroid/opengl/GLES20;->glBlendFuncSeparate(IIII)V
+    sput-object v13, Lyv4;->w0:Lyv4;
 
-    const/4 p1, 0x5
+    new-instance v14, Lyv4;
 
-    const/4 p2, 0x4
+    const-string v0, "ON_DATASOURCE_FAILURE_INT"
 
-    invoke-static {p1, v0, p2}, Landroid/opengl/GLES20;->glDrawArrays(III)V
+    const/16 v15, 0xd
 
-    const-string p1, "glDrawArrays"
+    invoke-direct {v14, v0, v15}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-static {p1}, Llb6;->b(Ljava/lang/String;)V
+    sput-object v14, Lyv4;->x0:Lyv4;
 
-    invoke-static {p0}, Landroid/opengl/GLES20;->glDisable(I)V
+    new-instance v15, Lyv4;
+
+    const-string v0, "ON_HOLDER_ATTACH"
+
+    move-object/from16 v16, v1
+
+    const/16 v1, 0xe
+
+    invoke-direct {v15, v0, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v15, Lyv4;->y0:Lyv4;
+
+    new-instance v0, Lyv4;
+
+    const-string v1, "ON_HOLDER_DETACH"
+
+    move-object/from16 v17, v2
+
+    const/16 v2, 0xf
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lyv4;->z0:Lyv4;
+
+    new-instance v1, Lyv4;
+
+    const-string v2, "ON_DRAWABLE_SHOW"
+
+    move-object/from16 v18, v0
+
+    const/16 v0, 0x10
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lyv4;->A0:Lyv4;
+
+    new-instance v0, Lyv4;
+
+    const-string v2, "ON_DRAWABLE_HIDE"
+
+    move-object/from16 v19, v1
+
+    const/16 v1, 0x11
+
+    invoke-direct {v0, v2, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lyv4;->B0:Lyv4;
+
+    new-instance v1, Lyv4;
+
+    const-string v2, "ON_ACTIVITY_START"
+
+    move-object/from16 v20, v0
+
+    const/16 v0, 0x12
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v0, Lyv4;
+
+    const-string v2, "ON_ACTIVITY_STOP"
+
+    move-object/from16 v21, v1
+
+    const/16 v1, 0x13
+
+    invoke-direct {v0, v2, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v1, Lyv4;
+
+    const-string v2, "ON_RUN_CLEAR_CONTROLLER"
+
+    move-object/from16 v22, v0
+
+    const/16 v0, 0x14
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v0, Lyv4;
+
+    const-string v2, "ON_SCHEDULE_CLEAR_CONTROLLER"
+
+    move-object/from16 v23, v1
+
+    const/16 v1, 0x15
+
+    invoke-direct {v0, v2, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v1, Lyv4;
+
+    const-string v2, "ON_SAME_CONTROLLER_SKIPPED"
+
+    move-object/from16 v24, v0
+
+    const/16 v0, 0x16
+
+    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v0, Lyv4;
+
+    const-string v2, "ON_SUBMIT_CACHE_HIT"
+
+    move-object/from16 v25, v1
+
+    const/16 v1, 0x17
+
+    invoke-direct {v0, v2, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lyv4;->C0:Lyv4;
+
+    move-object/from16 v1, v16
+
+    move-object/from16 v2, v17
+
+    move-object/from16 v16, v18
+
+    move-object/from16 v17, v19
+
+    move-object/from16 v18, v20
+
+    move-object/from16 v19, v21
+
+    move-object/from16 v20, v22
+
+    move-object/from16 v21, v23
+
+    move-object/from16 v22, v24
+
+    move-object/from16 v23, v25
+
+    move-object/from16 v24, v0
+
+    filled-new-array/range {v1 .. v24}, [Lyv4;
+
+    move-result-object v0
+
+    sput-object v0, Lyv4;->D0:[Lyv4;
 
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lyv4;
+    .registers 2
+
+    const-class v0, Lyv4;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lyv4;
+
+    return-object p0
+.end method
+
+.method public static values()[Lyv4;
+    .registers 1
+
+    sget-object v0, Lyv4;->D0:[Lyv4;
+
+    invoke-virtual {v0}, [Lyv4;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lyv4;
+
+    return-object v0
 .end method

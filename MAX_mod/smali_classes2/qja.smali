@@ -24,86 +24,50 @@
 
 .field public static final j:I
 
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-.field public static final p:I
-
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
-    sget v0, Lh0c;->oneme_settings_change_avatar_cancel:I
+    sget v0, Lm6c;->oneme_main_bottom_bar:I
 
     sput v0, Lqja;->a:I
 
-    sget v0, Lh0c;->oneme_settings_change_avatar_upload_from_camera:I
+    sget v0, Lm6c;->oneme_main_calls_bottom_item:I
 
     sput v0, Lqja;->b:I
 
-    sget v0, Lh0c;->oneme_settings_change_avatar_upload_from_gallery:I
+    sget v0, Lm6c;->oneme_main_calls_container:I
 
     sput v0, Lqja;->c:I
 
-    sget v0, Lh0c;->oneme_settings_change_avatar_upload_from_neuroavatars:I
+    sget v0, Lm6c;->oneme_main_chats_bottom_item:I
 
     sput v0, Lqja;->d:I
 
-    sget v0, Lh0c;->oneme_settings_collapsingstoolbar:I
+    sget v0, Lm6c;->oneme_main_chats_container:I
 
     sput v0, Lqja;->e:I
 
-    sget v0, Lh0c;->oneme_settings_container:I
+    sget v0, Lm6c;->oneme_main_contacts_bottom_item:I
 
     sput v0, Lqja;->f:I
 
-    sget v0, Lh0c;->oneme_settings_list_screen_appbar:I
+    sget v0, Lm6c;->oneme_main_contacts_container:I
 
     sput v0, Lqja;->g:I
 
-    sget v0, Lh0c;->oneme_settings_list_screen_pinned_toolbar:I
+    sget v0, Lm6c;->oneme_main_root:I
 
     sput v0, Lqja;->h:I
 
-    sget v0, Lh0c;->oneme_settings_toolbar:I
+    sget v0, Lm6c;->oneme_main_settings_bottom_item:I
 
     sput v0, Lqja;->i:I
 
-    sget v0, Lh0c;->oneme_settings_topbar:I
+    sget v0, Lm6c;->oneme_main_settings_container:I
 
     sput v0, Lqja;->j:I
-
-    sget v0, Lh0c;->oneme_settings_topbar_avatar:I
-
-    sput v0, Lqja;->k:I
-
-    sget v0, Lh0c;->oneme_settings_topbar_container:I
-
-    sput v0, Lqja;->l:I
-
-    sget v0, Lh0c;->oneme_settings_topbar_dotdivider:I
-
-    sput v0, Lqja;->m:I
-
-    sget v0, Lh0c;->oneme_settings_topbar_name:I
-
-    sput v0, Lqja;->n:I
-
-    sget v0, Lh0c;->oneme_settings_topbar_nick:I
-
-    sput v0, Lqja;->o:I
-
-    sget v0, Lh0c;->oneme_settings_topbar_phone:I
-
-    sput v0, Lqja;->p:I
 
     return-void
 .end method

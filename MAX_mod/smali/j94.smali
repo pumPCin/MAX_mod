@@ -1,20 +1,42 @@
-.class public interface abstract Lj94;
+.class public interface abstract annotation Lj94;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/annotation/Annotation;
+
+
+# annotations
+.annotation system Ldalvik/annotation/AnnotationDefault;
+    value = .subannotation Lj94;
+        c = ""
+        f = ""
+        i = {}
+        l = {}
+        m = ""
+        n = {}
+        s = {}
+        v = 0x1
+    .end subannotation
+.end annotation
+
+.annotation runtime Ljava/lang/annotation/Retention;
+    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
+.end annotation
+
 
 # virtual methods
-.method public abstract b()Lg32;
+.method public abstract c()Ljava/lang/String;
 .end method
 
-.method public abstract c()Ljava/lang/Object;
+.method public abstract f()Ljava/lang/String;
 .end method
 
-.method public abstract d(Lcfe;)V
+.method public abstract l()[I
 .end method
 
-.method public abstract flush()V
+.method public abstract m()Ljava/lang/String;
 .end method
 
-.method public abstract release()V
+.method public abstract v()I
 .end method

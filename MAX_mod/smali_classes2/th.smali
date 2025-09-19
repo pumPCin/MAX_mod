@@ -1,21 +1,3 @@
-.class public final Lth;
-.super Lmtg;
+.class public interface abstract Lth;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-
-# static fields
-.field public static final e:Lth;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Lth;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lth;->e:Lth;
-
-    return-void
-.end method

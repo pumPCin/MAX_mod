@@ -2,40 +2,91 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
+
 
 # instance fields
-.field public final a:Lsne;
+.field public final X:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field public final b:Lkra;
+.field public final a:Ljava/lang/String;
 
-.field public final c:J
+.field public final b:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+.field public final c:I
+
+.field public final o:Lv4f;
 
 
 # direct methods
-.method public constructor <init>(Lsne;Lkra;)V
-    .registers 4
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/Thread$UncaughtExceptionHandler;ILv4f;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lira;->a:Lsne;
+    iput-object p1, p0, Lira;->a:Ljava/lang/String;
 
-    iput-object p2, p0, Lira;->b:Lkra;
+    iput-object p2, p0, Lira;->b:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    sget p1, Luf7;->a:I
+    iput p3, p0, Lira;->c:I
 
-    sget p1, Llw4;->o:I
+    iput-object p4, p0, Lira;->o:Lv4f;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    move-result-wide p1
+    const/4 p2, 0x1
 
-    sget-object v0, Lqw4;->c:Lqw4;
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    invoke-static {p1, p2, v0}, Lg5e;->H(JLqw4;)J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lira;->c:J
+    iput-object p1, p0, Lira;->X:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .registers 5
+
+    iget-object v0, p0, Lira;->X:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v2, p0, Lira;->a:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "-"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Lhra;
+
+    invoke-direct {v1, v0, p1}, Lhra;-><init>(Ljava/lang/String;Ljava/lang/Runnable;)V
+
+    iget-object p1, p0, Lira;->b:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+    invoke-virtual {v1, p1}, Ljava/lang/Thread;->setUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+
+    iget p1, p0, Lira;->c:I
+
+    invoke-virtual {v1, p1}, Ljava/lang/Thread;->setPriority(I)V
+
+    iget-object p0, p0, Lira;->o:Lv4f;
+
+    iput-object p0, v1, Lhra;->b:Ljava/lang/Object;
+
+    return-object v1
 .end method

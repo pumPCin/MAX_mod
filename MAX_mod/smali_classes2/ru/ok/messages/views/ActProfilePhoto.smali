@@ -1,10 +1,10 @@
 .class public Lru/ok/messages/views/ActProfilePhoto;
-.super Ln5;
+.super Lu5;
 .source "SourceFile"
 
 # interfaces
-.implements Ly86;
-.implements Lpze;
+.implements Lqb6;
+.implements Lo8f;
 
 
 # annotations
@@ -16,29 +16,29 @@
 
 
 # static fields
-.field public static final synthetic T0:I
+.field public static final synthetic X0:I
 
 
 # instance fields
-.field public Q0:Landroid/view/View;
+.field public U0:Landroid/view/View;
 
-.field public R0:Lf03;
+.field public V0:Lgmd;
 
-.field public S0:Lmg;
+.field public W0:Lvg;
 
 
 # direct methods
 .method public constructor <init>()V
     .registers 1
 
-    invoke-direct {p0}, Lm5;-><init>()V
+    invoke-direct {p0}, Lt5;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Q()Ljava/lang/String;
+.method public final N()Ljava/lang/String;
     .registers 1
 
     const/4 p0, 0x0
@@ -46,30 +46,22 @@
     return-object p0
 .end method
 
-.method public final a()Lf03;
-    .registers 1
-
-    iget-object p0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
-
-    return-object p0
-.end method
-
 .method public final c(ZZZ)V
-    .registers 4
+    .registers 13
 
     const/4 p2, 0x0
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p0, p2}, Lm5;->X(Lru/ok/messages/media/mediabar/ActLocalMedias;)V
+    invoke-virtual {p0, p2}, Lt5;->U(Lru/ok/messages/media/mediabar/ActLocalMedias;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p2}, Lm5;->S(Landroid/view/View$OnSystemUiVisibilityChangeListener;)V
+    invoke-virtual {p0, p2}, Lt5;->P(Landroid/view/View$OnSystemUiVisibilityChangeListener;)V
 
     :goto_0
-    iget-object p2, p0, Lru/ok/messages/views/ActProfilePhoto;->Q0:Landroid/view/View;
+    iget-object p2, p0, Lru/ok/messages/views/ActProfilePhoto;->U0:Landroid/view/View;
 
     if-eqz p1, :cond_1
 
@@ -83,40 +75,164 @@
     :goto_1
     invoke-virtual {p2, p3}, Landroid/view/View;->setVisibility(I)V
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
-    iget-object p1, p0, Lru/ok/messages/views/ActProfilePhoto;->S0:Lmg;
+    iget-object p1, p0, Lru/ok/messages/views/ActProfilePhoto;->W0:Lvg;
 
-    iget-object p0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object p0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    iget-object p0, p0, Lf03;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lgmd;->b:Ljava/lang/Object;
 
     check-cast p0, Landroidx/appcompat/widget/Toolbar;
 
-    invoke-virtual {p1, p0}, Lmg;->f(Landroid/view/View;)Lgl4;
+    invoke-virtual {p1}, Lvg;->a()Z
 
-    return-void
+    move-result p2
+
+    if-eqz p2, :cond_2
+
+    iget-object p1, p1, Lvg;->a:Liy5;
+
+    new-instance v0, Landroid/view/animation/TranslateAnimation;
+
+    const/4 v7, 0x1
+
+    const/4 v8, 0x0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x1
+
+    const/high16 v6, -0x40800000    # -1.0f
+
+    invoke-direct/range {v0 .. v8}, Landroid/view/animation/TranslateAnimation;-><init>(IFIFIFIF)V
+
+    invoke-virtual {p1}, Liy5;->j()Landroid/view/animation/Interpolator;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+
+    const-wide/16 p1, 0xc8
+
+    invoke-virtual {v0, p1, p2}, Landroid/view/animation/Animation;->setDuration(J)V
+
+    new-instance p1, Lmg;
+
+    const/4 p2, 0x2
+
+    invoke-direct {p1, p2, p0}, Lmg;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, p1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    new-instance p0, Lim4;
+
+    const/4 p1, 0x1
+
+    const/4 p2, 0x0
+
+    invoke-direct {p0, v0, p2, p1}, Lim4;-><init>(Ljava/lang/Object;ZI)V
+
+    goto :goto_2
 
     :cond_2
-    iget-object p1, p0, Lru/ok/messages/views/ActProfilePhoto;->S0:Lmg;
+    const/4 p1, 0x0
 
-    iget-object p0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    iget-object p0, p0, Lf03;->b:Ljava/lang/Object;
+    :goto_2
+    return-void
+
+    :cond_3
+    iget-object p1, p0, Lru/ok/messages/views/ActProfilePhoto;->W0:Lvg;
+
+    iget-object p0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
+
+    iget-object p0, p0, Lgmd;->b:Ljava/lang/Object;
 
     check-cast p0, Landroidx/appcompat/widget/Toolbar;
 
-    invoke-virtual {p1, p0}, Lmg;->g(Landroid/view/View;)Lgl4;
+    invoke-virtual {p1}, Lvg;->a()Z
 
+    move-result p2
+
+    if-eqz p2, :cond_4
+
+    iget-object p1, p1, Lvg;->a:Liy5;
+
+    new-instance v0, Landroid/view/animation/TranslateAnimation;
+
+    const/4 v7, 0x1
+
+    const/high16 v8, -0x40800000    # -1.0f
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x1
+
+    const/4 v6, 0x0
+
+    invoke-direct/range {v0 .. v8}, Landroid/view/animation/TranslateAnimation;-><init>(IFIFIFIF)V
+
+    invoke-virtual {p1}, Liy5;->k()Landroid/view/animation/Interpolator;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+
+    const-wide/16 p1, 0xc8
+
+    invoke-virtual {v0, p1, p2}, Landroid/view/animation/Animation;->setDuration(J)V
+
+    new-instance p1, Lmg;
+
+    const/4 p2, 0x3
+
+    invoke-direct {p1, p2, p0}, Lmg;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, p1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    new-instance p0, Lim4;
+
+    const/4 p1, 0x1
+
+    const/4 p2, 0x0
+
+    invoke-direct {p0, v0, p2, p1}, Lim4;-><init>(Ljava/lang/Object;ZI)V
+
+    goto :goto_3
+
+    :cond_4
+    const/16 p1, 0x8
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+
+    :goto_3
     return-void
 .end method
 
 .method public final d()V
     .registers 4
 
-    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    iget-object v0, v0, Lf03;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lgmd;->b:Ljava/lang/Object;
 
     check-cast v0, Landroidx/appcompat/widget/Toolbar;
 
@@ -143,12 +259,12 @@
     return-void
 .end method
 
-.method public final f()Z
+.method public final e()Z
     .registers 1
 
-    iget-object p0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object p0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    iget-object p0, p0, Lf03;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lgmd;->b:Ljava/lang/Object;
 
     check-cast p0, Landroidx/appcompat/widget/Toolbar;
 
@@ -168,24 +284,40 @@
     return p0
 .end method
 
+.method public final m()Lgmd;
+    .registers 1
+
+    iget-object p0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
+
+    return-object p0
+.end method
+
+.method public final o()Lcze;
+    .registers 1
+
+    sget-object p0, Loi4;->e0:Loi4;
+
+    return-object p0
+.end method
+
 .method public final onCreate(Landroid/os/Bundle;)V
     .registers 6
 
-    invoke-super {p0, p1}, Lm5;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lt5;->onCreate(Landroid/os/Bundle;)V
 
-    iget-object v0, p0, Lm5;->F0:Ln9b;
+    iget-object v0, p0, Lt5;->J0:Lr2b;
 
-    iget-object v0, v0, Ln9b;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lr2b;->a:Ljava/lang/Object;
 
-    check-cast v0, Lme3;
+    check-cast v0, Lpe3;
 
-    check-cast v0, Ltaa;
+    check-cast v0, Lbfa;
 
-    invoke-virtual {v0}, Ltaa;->c()Lmg;
+    invoke-virtual {v0}, Lbfa;->c()Lvg;
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->S0:Lmg;
+    iput-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->W0:Lvg;
 
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
@@ -199,21 +331,21 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
 
-    sget v0, Ly1c;->act_profile_photo:I
+    sget v0, Lz8c;->act_profile_photo:I
 
-    invoke-virtual {p0, v0}, Ln5;->a0(I)Lf03;
+    invoke-virtual {p0, v0}, Lu5;->X(I)Lgmd;
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iput-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lm5;->X(Lru/ok/messages/media/mediabar/ActLocalMedias;)V
+    invoke-virtual {p0, v0}, Lt5;->U(Lru/ok/messages/media/mediabar/ActLocalMedias;)V
 
-    sget v0, Lrsc;->b:I
+    sget v0, Ly0d;->b:I
 
-    invoke-virtual {p0}, Lam;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lkm;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -221,9 +353,9 @@
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Lm5;->W(I)V
+    invoke-virtual {p0, v1}, Lt5;->T(I)V
 
-    invoke-virtual {p0}, Lam;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lkm;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -237,28 +369,26 @@
 
     invoke-virtual {v2, v1}, Landroid/view/Window;->setNavigationBarColor(I)V
 
-    iget-object v1, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object v1, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    new-instance v2, Lmx0;
+    new-instance v2, Lbx0;
 
-    const/16 v3, 0xe
+    const/16 v3, 0xc
 
-    invoke-direct {v2, v3}, Lmx0;-><init>(I)V
+    invoke-direct {v2, v3}, Lbx0;-><init>(I)V
 
-    iget-object v1, v1, Lf03;->b:Ljava/lang/Object;
+    iget-object v1, v1, Lgmd;->b:Ljava/lang/Object;
 
     check-cast v1, Landroidx/appcompat/widget/Toolbar;
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {v1, v2}, Landroidx/appcompat/widget/Toolbar;->setOnMenuItemClickListener(Lmze;)V
+    invoke-virtual {v1, v2}, Landroidx/appcompat/widget/Toolbar;->setOnMenuItemClickListener(Lm8f;)V
 
     :cond_0
-    iget-object v1, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object v1, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v1, v1, Lf03;->b:Ljava/lang/Object;
+    iget-object v1, v1, Lgmd;->b:Ljava/lang/Object;
 
     check-cast v1, Landroidx/appcompat/widget/Toolbar;
 
@@ -267,17 +397,17 @@
     invoke-virtual {v1, v0}, Landroid/view/View;->setBackgroundResource(I)V
 
     :cond_1
-    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    sget v1, Ltsc;->p:I
+    sget v1, La1d;->u:I
 
     const/4 v2, -0x1
 
-    invoke-static {v1, v2, p0}, Ly6c;->q(IILandroid/content/Context;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v2, p0}, Li4h;->C(IILandroid/content/Context;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    iget-object v0, v0, Lf03;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lgmd;->b:Ljava/lang/Object;
 
     check-cast v0, Landroidx/appcompat/widget/Toolbar;
 
@@ -286,15 +416,15 @@
     invoke-virtual {v0, v1}, Landroidx/appcompat/widget/Toolbar;->setNavigationIcon(Landroid/graphics/drawable/Drawable;)V
 
     :cond_2
-    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    new-instance v1, Lz4;
+    new-instance v1, Lg5;
 
-    const/4 v3, 0x3
+    const/4 v3, 0x2
 
-    invoke-direct {v1, v3, p0}, Lz4;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v3, p0}, Lg5;-><init>(ILjava/lang/Object;)V
 
-    iget-object v0, v0, Lf03;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lgmd;->b:Ljava/lang/Object;
 
     check-cast v0, Landroidx/appcompat/widget/Toolbar;
 
@@ -303,9 +433,9 @@
     invoke-virtual {v0, v1}, Landroidx/appcompat/widget/Toolbar;->setNavigationOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :cond_3
-    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    iget-object v0, v0, Lf03;->o:Ljava/lang/Object;
+    iget-object v0, v0, Lgmd;->o:Ljava/lang/Object;
 
     check-cast v0, Landroid/widget/TextView;
 
@@ -314,13 +444,13 @@
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_4
-    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    invoke-virtual {v0}, Lf03;->n()V
+    invoke-virtual {v0}, Lgmd;->f()V
 
-    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    iget-object v0, v0, Lf03;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lgmd;->b:Ljava/lang/Object;
 
     check-cast v0, Landroidx/appcompat/widget/Toolbar;
 
@@ -330,18 +460,18 @@
 
     if-eqz v0, :cond_5
 
-    invoke-static {v0, v2}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
+    invoke-static {v0, v2}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
 
     :cond_5
-    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->R0:Lf03;
+    iget-object v0, p0, Lru/ok/messages/views/ActProfilePhoto;->V0:Lgmd;
 
-    sget v1, Ltsc;->W:I
+    sget v1, La1d;->g0:I
 
-    invoke-static {v1, v2, p0}, Ly6c;->q(IILandroid/content/Context;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v2, p0}, Li4h;->C(IILandroid/content/Context;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
-    iget-object v0, v0, Lf03;->b:Ljava/lang/Object;
+    iget-object v0, v0, Lgmd;->b:Ljava/lang/Object;
 
     check-cast v0, Landroidx/appcompat/widget/Toolbar;
 
@@ -374,7 +504,7 @@
 
     move-result-object v0
 
-    check-cast v0, Lww8;
+    check-cast v0, Lvz8;
 
     if-eqz p1, :cond_8
 
@@ -399,15 +529,15 @@
     :cond_7
     invoke-virtual {v1, v2}, Landroidx/fragment/app/a;->L0(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Landroidx/fragment/app/b;->F()Lq56;
+    invoke-virtual {p0}, Landroidx/fragment/app/b;->C()Lj86;
 
     move-result-object p1
 
-    sget v0, Ly0c;->act_profile_photo__container:I
+    sget v0, Lb8c;->act_profile_photo__container:I
 
     const-string v2, "ru.ok.messages.views.fragments.FrgProfilePhoto"
 
-    invoke-static {p1, v0, v1, v2}, Lx44;->a(Lq56;ILru/ok/messages/views/fragments/base/FrgBase;Ljava/lang/String;)V
+    invoke-static {p1, v0, v1, v2}, Ll1h;->a(Lj86;ILru/ok/messages/views/fragments/base/FrgBase;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -422,19 +552,19 @@
 
     :cond_9
     :goto_0
-    sget p1, Ly0c;->act_profile_photo__vw_top_bg:I
+    sget p1, Lb8c;->act_profile_photo__vw_top_bg:I
 
-    invoke-virtual {p0, p1}, Lam;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, p1}, Lkm;->findViewById(I)Landroid/view/View;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/messages/views/ActProfilePhoto;->Q0:Landroid/view/View;
+    iput-object p1, p0, Lru/ok/messages/views/ActProfilePhoto;->U0:Landroid/view/View;
 
-    invoke-static {p0}, Lvn4;->a(Landroid/content/Context;)I
+    invoke-static {p0}, Lvo4;->a(Landroid/content/Context;)I
 
     move-result p1
 
-    iget-object p0, p0, Lru/ok/messages/views/ActProfilePhoto;->Q0:Landroid/view/View;
+    iget-object p0, p0, Lru/ok/messages/views/ActProfilePhoto;->U0:Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -450,35 +580,27 @@
 .method public final onResume()V
     .registers 3
 
-    invoke-super {p0}, Lm5;->onResume()V
+    invoke-super {p0}, Lt5;->onResume()V
 
-    iget-object p0, p0, Lm5;->F0:Ln9b;
+    iget-object p0, p0, Lt5;->J0:Lr2b;
 
-    iget-object p0, p0, Ln9b;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lr2b;->a:Ljava/lang/Object;
 
-    check-cast p0, Lme3;
+    check-cast p0, Lpe3;
 
-    check-cast p0, Ltaa;
+    check-cast p0, Lbfa;
 
-    invoke-virtual {p0}, Ltaa;->m()Lop9;
+    invoke-virtual {p0}, Lbfa;->m()Ldt9;
 
     move-result-object p0
 
-    sget-object v0, Lcsa;->f:Lcsa;
+    sget-object v0, Lyxa;->g:Lyxa;
 
-    sget-object v0, Lcsa;->f:Lcsa;
+    sget-object v0, Lyxa;->g:Lyxa;
 
-    sget-object v1, Lnyc;->B0:Lnyc;
+    sget-object v1, Ls6d;->F0:Ls6d;
 
-    invoke-virtual {p0, v1, v0}, Lop9;->f(Lnyc;Lcsa;)V
+    invoke-virtual {p0, v1, v0}, Ldt9;->f(Ls6d;Lyxa;)V
 
     return-void
-.end method
-
-.method public final p()Ldqe;
-    .registers 1
-
-    sget-object p0, Lxh4;->e0:Lxh4;
-
-    return-object p0
 .end method

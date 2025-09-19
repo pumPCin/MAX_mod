@@ -1,63 +1,52 @@
-.class public final Lanb;
-.super Lqd0;
+.class public final synthetic Lanb;
+.super Ls8;
 .source "SourceFile"
+
+# interfaces
+.implements Lrc6;
 
 
 # static fields
-.field public static final b:Lanb;
+.field public static final r0:Lanb;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 5
 
     new-instance v0, Lanb;
 
-    const/16 v1, 0xf
+    const-string v1, "<init>(Ljava/lang/Object;Ljava/lang/Object;)V"
 
-    invoke-direct {v0, v1}, Lqd0;-><init>(I)V
+    const/4 v2, 0x4
 
-    sput-object v0, Lanb;->b:Lanb;
+    const/4 v3, 0x3
+
+    const-class v4, Lpxa;
+
+    invoke-direct {v0, v3, v4, v1, v2}, Ls8;-><init>(ILjava/lang/Class;Ljava/lang/String;I)V
+
+    sput-object v0, Lanb;->r0:Lanb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
 
-    const/4 v0, 0x1
+    check-cast p1, Ls72;
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Ltm3;
 
-    return v0
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    :cond_0
-    instance-of p0, p1, Lanb;
+    sget-object p0, Lnnb;->F0:[Lxi7;
 
-    if-nez p0, :cond_1
+    new-instance p0, Lpxa;
 
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, 0x68fa3ac7
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "PopToChatsList"
+    invoke-direct {p0, p1, p2}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-object p0
 .end method

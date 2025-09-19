@@ -1,5 +1,5 @@
 .class public final Lxa1;
-.super Lqd0;
+.super Luc0;
 .source "SourceFile"
 
 
@@ -13,7 +13,7 @@
 
     const/4 v0, 0x2
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
 
     iput-object p1, p0, Lxa1;->b:Ljava/lang/CharSequence;
 
@@ -47,7 +47,7 @@
 
     iget-object p1, p1, Lxa1;->b:Ljava/lang/CharSequence;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -76,7 +76,7 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "CopyLink(link="
+    const-string v1, "ShareLink(link="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

@@ -1,45 +1,48 @@
-.class public final synthetic Ls6a;
-.super Lrqb;
+.class public final Ls6a;
+.super Ly4a;
 .source "SourceFile"
 
+# interfaces
+.implements Lf4d;
 
-# static fields
-.field public static final a:Ls6a;
+
+# instance fields
+.field public final a:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public constructor <init>(Ljava/lang/Object;)V
+    .registers 2
 
-    new-instance v0, Ls6a;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "getDependencyDuration()J"
-
-    const/4 v2, 0x0
-
-    const-class v3, Lx68;
-
-    const-string v4, "dependencyDuration"
-
-    invoke-direct {v0, v3, v4, v1, v2}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sput-object v0, Ls6a;->a:Ls6a;
+    iput-object p1, p0, Ls6a;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+.method public final get()Ljava/lang/Object;
+    .registers 1
 
-    check-cast p1, Lx68;
-
-    iget-wide p0, p1, Lx68;->b:J
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
+    iget-object p0, p0, Ls6a;->a:Ljava/lang/Object;
 
     return-object p0
+.end method
+
+.method public final n(Ld8a;)V
+    .registers 3
+
+    new-instance v0, Lr7a;
+
+    iget-object p0, p0, Ls6a;->a:Ljava/lang/Object;
+
+    invoke-direct {v0, p1, p0}, Lr7a;-><init>(Ld8a;Ljava/lang/Object;)V
+
+    invoke-interface {p1, v0}, Ld8a;->c(Loq4;)V
+
+    invoke-virtual {v0}, Lr7a;->run()V
+
+    return-void
 .end method

@@ -1,24 +1,28 @@
-.class public final Lg1g;
+.class public final synthetic Lg1g;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lg3e;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic a:Ljava/lang/Object;
 
-.field public final synthetic b:Lh1g;
+.field public final synthetic b:Ljava/lang/Object;
+
+.field public final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lh1g;I)V
-    .registers 3
+.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 4
 
-    iput p2, p0, Lg1g;->a:I
+    iput-object p1, p0, Lg1g;->a:Ljava/lang/Object;
 
-    iput-object p1, p0, Lg1g;->b:Lh1g;
+    iput-object p2, p0, Lg1g;->b:Ljava/lang/Object;
+
+    iput-object p3, p0, Lg1g;->c:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,45 +31,58 @@
 
 
 # virtual methods
-.method public final run()V
-    .registers 8
+.method public a(Z)V
+    .registers 11
 
-    iget v0, p0, Lg1g;->a:I
+    iget-object v0, p0, Lg1g;->a:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast v0, Lt1g;
 
-    iget-object v0, p0, Lg1g;->b:Lh1g;
+    iget-object v1, p0, Lg1g;->b:Ljava/lang/Object;
 
-    iget-object v0, v0, Lh1g;->b:Ljava/lang/Object;
+    check-cast v1, Lzxc;
 
-    monitor-enter v0
+    iget-object p0, p0, Lg1g;->c:Ljava/lang/Object;
+
+    check-cast p0, Ljava/io/File;
+
+    iget-object v2, v0, Lt1g;->r0:Ljava/lang/String;
+
+    sget-object v3, Ljtg;->g:Loja;
+
+    const/4 v4, 0x0
+
+    if-nez v3, :cond_0
+
+    goto :goto_3
+
+    :cond_0
+    sget-object v5, Lqz7;->o:Lqz7;
+
+    invoke-virtual {v3, v5}, Loja;->a(Lqz7;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_3
+
+    invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v6
 
     :try_start_0
-    iget-object v1, p0, Lg1g;->b:Lh1g;
+    invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
-    iget-object v1, v1, Lh1g;->q:Lsbc;
+    move-result v7
 
-    const-string v2, "transport.DISCONNECT"
+    if-eqz v7, :cond_1
 
-    invoke-virtual {v1, v2}, Lsbc;->k(Ljava/lang/String;)V
+    invoke-virtual {p0}, Ljava/io/File;->canRead()Z
 
-    iget-object v1, p0, Lg1g;->b:Lh1g;
+    move-result p0
 
-    iget-object v1, v1, Lh1g;->c:Lubc;
+    if-eqz p0, :cond_1
 
-    if-eqz v1, :cond_0
-
-    const-string v2, "dispose"
-
-    const/16 v3, 0x3e9
-
-    invoke-virtual {v1, v3, v2}, Lubc;->b(ILjava/lang/String;)Z
-
-    iget-object p0, p0, Lg1g;->b:Lh1g;
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lh1g;->c:Lubc;
+    const/4 p0, 0x1
 
     goto :goto_0
 
@@ -74,201 +91,132 @@
 
     goto :goto_1
 
-    :cond_0
+    :cond_1
+    const/4 p0, 0x0
+
     :goto_0
-    monitor-exit v0
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    return-void
-
-    :goto_1
-    monitor-exit v0
+    move-result-object p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw p0
-
-    :pswitch_0
-    invoke-static {}, Landroid/os/Process;->myTid()I
-
-    move-result v0
-
-    invoke-static {v0}, Landroid/os/Process;->getThreadPriority(I)I
-
-    move-result v0
-
-    const/16 v1, 0xa
-
-    :try_start_1
-    invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
-
-    iget-object v1, p0, Lg1g;->b:Lh1g;
-
-    iget-object v1, v1, Lh1g;->b:Ljava/lang/Object;
-
-    monitor-enter v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
-
-    :try_start_2
-    iget-object v2, p0, Lg1g;->b:Lh1g;
-
-    iget-object v3, v2, Lh1g;->c:Lubc;
-
-    if-eqz v3, :cond_2
-
-    iget-object v2, v2, Lh1g;->q:Lsbc;
-
-    iget-object v3, v3, Lubc;->r:Lvkc;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v3}, Lvkc;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    iget-object v4, v2, Lsbc;->c:Ljava/lang/Object;
-
-    check-cast v4, Le7c;
-
-    invoke-interface {v4}, Le7c;->shouldHideSensitiveInformation()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    invoke-static {v3}, Lds0;->f(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    :cond_1
-    iget-object v2, v2, Lsbc;->b:Ljava/lang/Object;
-
-    check-cast v2, Ld7c;
-
-    const-string v4, "OKWSSignaling"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "May be ERROR, socket is already with "
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v2, v4, v3}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
-
     goto :goto_2
 
-    :catchall_1
-    move-exception p0
+    :goto_1
+    new-instance v7, Lhvc;
 
-    goto :goto_3
+    invoke-direct {v7, p0}, Lhvc;-><init>(Ljava/lang/Throwable;)V
+
+    move-object p0, v7
+
+    :goto_2
+    sget-object v7, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    instance-of v8, p0, Lhvc;
+
+    if-eqz v8, :cond_2
+
+    move-object p0, v7
 
     :cond_2
-    :goto_2
-    iget-object v2, p0, Lg1g;->b:Lh1g;
+    check-cast p0, Ljava/lang/Boolean;
 
-    iget-object v3, v2, Lh1g;->q:Lsbc;
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object v2, v2, Lh1g;->h:Ljava/lang/String;
+    move-result p0
 
-    iget-object v4, v3, Lsbc;->c:Ljava/lang/Object;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    check-cast v4, Le7c;
+    const-string v8, "\n                VideoMessage Recording. File is ready:\n                    File name = "
 
-    invoke-interface {v4}, Le7c;->shouldHideSensitiveInformation()Z
+    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result v4
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v4, :cond_3
+    const-string v6, ";\n                    Ready isSuccessful = "
 
-    invoke-static {v2}, Lds0;->f(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    :cond_3
-    iget-object v3, v3, Lsbc;->b:Ljava/lang/Object;
+    const-string v6, ";\n                    File exists and readable = "
 
-    check-cast v3, Ld7c;
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "OKWSSignaling"
+    invoke-virtual {v7, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    const-string p0, "\n                "
 
-    const-string v6, "Connect to "
+    invoke-virtual {v7, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v3, v4, v2}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v2, Lew5;
-
-    invoke-direct {v2}, Lew5;-><init>()V
-
-    iget-object v3, p0, Lg1g;->b:Lh1g;
-
-    iget-object v3, v3, Lh1g;->h:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Lew5;->i(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Lew5;->b()Lvkc;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lg1g;->b:Lh1g;
-
-    iget-object v4, v3, Lh1g;->o:Ls4a;
-
-    new-instance v5, Lhwf;
-
-    invoke-direct {v5, p0}, Lhwf;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v4, v2, v5}, Ls4a;->c(Lvkc;Lhwf;)Lubc;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    iput-object p0, v3, Lh1g;->c:Lubc;
+    invoke-static {p0}, Lkme;->P(Ljava/lang/String;)Ljava/lang/String;
 
-    monitor-exit v1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    move-result-object p0
 
-    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
+    invoke-virtual {v3, v5, v2, p0, v4}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_3
+    :goto_3
+    if-eqz p1, :cond_4
+
+    iget-object p0, v1, Lzxc;->c:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    sget-object p1, Lgn5;->a:Lgn5;
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    iget-object p0, v1, Lzxc;->b:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    goto :goto_4
+
+    :cond_4
+    iget-object p0, v1, Lzxc;->c:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    sget-object p1, Lfn5;->a:Lfn5;
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    iget-object p0, v1, Lzxc;->b:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    :goto_4
+    iput-object v4, v0, Lt1g;->v0:Lzxc;
 
     return-void
+.end method
 
-    :goto_3
-    :try_start_3
-    monitor-exit v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+.method public i(Lo2e;)V
+    .registers 4
 
-    :try_start_4
-    throw p0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+    iget-object v0, p0, Lg1g;->a:Ljava/lang/Object;
 
-    :catchall_2
-    move-exception p0
+    check-cast v0, Lty0;
 
-    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
+    iget-object v1, p0, Lg1g;->b:Ljava/lang/Object;
 
-    throw p0
+    check-cast v1, Lqr1;
 
-    nop
+    iget-object p0, p0, Lg1g;->c:Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    check-cast p0, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;
+
+    invoke-static {v0, v1, p0, p1}, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;->b(Lty0;Lqr1;Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;Lo2e;)V
+
+    return-void
 .end method

@@ -1,51 +1,58 @@
 .class public final Ln4g;
-.super Lcx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljr1;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lp4g;
-
-.field public Z:I
-
-.field public o:Lco0;
+.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
 
 # direct methods
-.method public constructor <init>(Lp4g;Lcx3;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, Ln4g;->Y:Lp4g;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+
+    iput-object v0, p0, Ln4g;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final d(Lsk6;)V
     .registers 3
 
-    iput-object p1, p0, Ln4g;->X:Ljava/lang/Object;
+    iget-object p0, p0, Ln4g;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    iget p1, p0, Ln4g;->Z:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Ln4g;->Z:I
-
-    iget-object p1, p0, Ln4g;->Y:Lp4g;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, p0}, Lp4g;->c(Lp4g;Lco0;Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    return-object p0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljr1;
+
+    invoke-interface {v0, p1}, Ljr1;->d(Lsk6;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

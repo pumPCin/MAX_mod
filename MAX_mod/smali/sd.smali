@@ -4,61 +4,89 @@
 
 
 # static fields
-.field public static final a:Lqxc;
+.field public static final a:Ljava/util/concurrent/CopyOnWriteArraySet;
+
+.field public static final b:Ljava/util/Map;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 4
 
-    :try_start_0
-    sget-object v0, Lrd;->a:Ldm6;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
 
-    sput-object v0, Lsd;->a:Lqxc;
+    sput-object v0, Lsd;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    return-void
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+
+    const-class v1, Lu8a;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2}, Ljava/lang/Package;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_0
 
     :cond_0
-    :try_start_1
-    new-instance v0, Ljava/lang/NullPointerException;
+    const/4 v2, 0x0
 
-    const-string v1, "Scheduler Callable returned null"
+    :goto_0
+    if-eqz v2, :cond_1
 
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    const-string v3, "OkHttp"
 
-    throw v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-interface {v0, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :catchall_0
-    move-exception v0
+    :cond_1
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    invoke-static {v0}, Lu75;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+    move-result-object v1
+
+    const-string v2, "okhttp.OkHttpClient"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-class v1, Lvv6;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "okhttp.Http2"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-class v1, Lp0f;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "okhttp.TaskRunner"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v1, "okhttp3.mockwebserver.MockWebServer"
+
+    const-string v2, "okhttp.MockWebServer"
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {v0}, Li68;->N(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    throw v0
-.end method
+    sput-object v0, Lsd;->b:Ljava/util/Map;
 
-.method public static a()Lqxc;
-    .registers 2
-
-    sget-object v0, Lsd;->a:Lqxc;
-
-    if-eqz v0, :cond_0
-
-    return-object v0
-
-    :cond_0
-    new-instance v0, Ljava/lang/NullPointerException;
-
-    const-string v1, "scheduler == null"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    return-void
 .end method

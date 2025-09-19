@@ -1,136 +1,145 @@
 .class public final Ltm;
-.super Landroidx/appcompat/widget/ContentFrameLayout;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic r0:Lvm;
+.field public final synthetic a:I
+
+.field public final synthetic b:Len;
 
 
 # direct methods
-.method public constructor <init>(Lvm;Lyw3;)V
+.method public synthetic constructor <init>(Len;I)V
     .registers 3
 
-    iput-object p1, p0, Ltm;->r0:Lvm;
+    iput p2, p0, Ltm;->a:I
 
-    const/4 p1, 0x0
+    iput-object p1, p0, Ltm;->b:Len;
 
-    invoke-direct {p0, p2, p1}, Landroidx/appcompat/widget/ContentFrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .registers 3
+.method public final run()V
+    .registers 6
 
-    iget-object v0, p0, Ltm;->r0:Lvm;
+    iget v0, p0, Ltm;->a:I
 
-    invoke-virtual {v0, p1}, Lvm;->t(Landroid/view/KeyEvent;)Z
+    packed-switch v0, :pswitch_data_0
 
-    move-result v0
+    iget-object v0, p0, Ltm;->b:Len;
 
-    if-nez v0, :cond_1
+    iget-object v1, v0, Len;->G0:Landroid/widget/PopupWindow;
 
-    invoke-super {p0, p1}, Landroid/view/View;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    iget-object v2, v0, Len;->F0:Landroidx/appcompat/widget/ActionBarContextView;
 
-    move-result p0
+    const/16 v3, 0x37
 
-    if-eqz p0, :cond_0
+    const/4 v4, 0x0
 
-    goto :goto_0
+    invoke-virtual {v1, v2, v3, v4, v4}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
+
+    iget-object v1, v0, Len;->I0:Lc9g;
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Lc9g;->b()V
 
     :cond_0
-    const/4 p0, 0x0
+    iget-boolean v1, v0, Len;->J0:Z
 
-    return p0
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
+    if-eqz v1, :cond_1
 
-    return p0
-.end method
+    iget-object v1, v0, Len;->K0:Landroid/view/ViewGroup;
 
-.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 5
+    if-eqz v1, :cond_1
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+    invoke-virtual {v1}, Landroid/view/View;->isLaidOut()Z
 
     move-result v1
 
-    float-to-int v1, v1
+    if-eqz v1, :cond_1
 
-    const/4 v2, -0x5
+    iget-object v1, v0, Len;->F0:Landroidx/appcompat/widget/ActionBarContextView;
 
-    if-lt v0, v2, :cond_0
+    const/4 v3, 0x0
 
-    if-lt v1, v2, :cond_0
+    invoke-virtual {v1, v3}, Landroid/view/View;->setAlpha(F)V
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    iget-object v1, v0, Len;->F0:Landroidx/appcompat/widget/ActionBarContextView;
 
-    move-result v2
+    invoke-static {v1}, Lh7g;->a(Landroid/view/View;)Lc9g;
 
-    add-int/lit8 v2, v2, 0x5
+    move-result-object v1
 
-    if-gt v0, v2, :cond_0
+    invoke-virtual {v1, v2}, Lc9g;->a(F)V
 
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+    iput-object v1, v0, Len;->I0:Lc9g;
 
-    move-result v0
+    new-instance v0, Lum;
 
-    add-int/lit8 v0, v0, 0x5
+    const/4 v2, 0x0
 
-    if-le v1, v0, :cond_1
+    invoke-direct {v0, v2, p0}, Lum;-><init>(ILjava/lang/Object;)V
 
-    :cond_0
-    const/4 p1, 0x0
+    invoke-virtual {v1, v0}, Lc9g;->d(Le9g;)V
 
-    iget-object p0, p0, Ltm;->r0:Lvm;
-
-    invoke-virtual {p0, p1}, Lvm;->y(I)Lum;
-
-    move-result-object p1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, p1, v0}, Lvm;->r(Lum;Z)V
-
-    return v0
+    goto :goto_0
 
     :cond_1
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    iget-object p0, v0, Len;->F0:Landroidx/appcompat/widget/ActionBarContextView;
 
-    move-result p0
+    invoke-virtual {p0, v2}, Landroid/view/View;->setAlpha(F)V
 
-    return p0
-.end method
+    iget-object p0, v0, Len;->F0:Landroidx/appcompat/widget/ActionBarContextView;
 
-.method public final setBackgroundResource(I)V
-    .registers 3
+    invoke-virtual {p0, v4}, Landroidx/appcompat/widget/ActionBarContextView;->setVisibility(I)V
 
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    :goto_0
+    return-void
 
-    move-result-object v0
+    :pswitch_0
+    iget-object p0, p0, Ltm;->b:Len;
 
-    invoke-static {v0, p1}, Lyu0;->n(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    iget v0, p0, Len;->j1:I
 
-    move-result-object p1
+    and-int/lit8 v0, v0, 0x1
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0, v1}, Len;->t(I)V
+
+    :cond_2
+    iget v0, p0, Len;->j1:I
+
+    and-int/lit16 v0, v0, 0x1000
+
+    if-eqz v0, :cond_3
+
+    const/16 v0, 0x6c
+
+    invoke-virtual {p0, v0}, Len;->t(I)V
+
+    :cond_3
+    iput-boolean v1, p0, Len;->i1:Z
+
+    iput v1, p0, Len;->j1:I
 
     return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,25 +1,19 @@
-.class public abstract Ljca;
+.class public final Ljca;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
-
-.field public static final b:I
+# instance fields
+.field public final synthetic a:Lz4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lz4;)V
+    .registers 2
 
-    sget v0, Lbzb;->oneme_file_download_warning_confirm:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Ljca;->a:I
-
-    sget v0, Lbzb;->oneme_file_download_warning_deny:I
-
-    sput v0, Ljca;->b:I
+    iput-object p1, p0, Ljca;->a:Lz4;
 
     return-void
 .end method

@@ -1,211 +1,189 @@
-.class public final synthetic Lyi4;
-.super Ljava/lang/Object;
+.class public final Lyi4;
+.super Llcf;
 .source "SourceFile"
-
-# interfaces
-.implements Llnf;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final F:Z
 
-.field public final synthetic b:Ldj4;
+.field public final G:Z
+
+.field public final H:Z
+
+.field public final I:Z
+
+.field public J:Z
+
+.field public final K:Z
+
+.field public final L:Z
+
+.field public final M:Landroid/util/SparseArray;
+
+.field public final N:Landroid/util/SparseBooleanArray;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldj4;I)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    iput p2, p0, Lyi4;->a:I
+    invoke-direct {p0}, Llcf;-><init>()V
 
-    iput-object p1, p0, Lyi4;->b:Ldj4;
+    new-instance v0, Landroid/util/SparseArray;
+
+    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+
+    iput-object v0, p0, Lyi4;->M:Landroid/util/SparseArray;
+
+    new-instance v0, Landroid/util/SparseBooleanArray;
+
+    invoke-direct {v0}, Landroid/util/SparseBooleanArray;-><init>()V
+
+    iput-object v0, p0, Lyi4;->N:Landroid/util/SparseBooleanArray;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lyi4;->F:Z
+
+    iput-boolean v0, p0, Lyi4;->G:Z
+
+    iput-boolean v0, p0, Lyi4;->H:Z
+
+    iput-boolean v0, p0, Lyi4;->I:Z
+
+    iput-boolean v0, p0, Lyi4;->J:Z
+
+    iput-boolean v0, p0, Lyi4;->K:Z
+
+    iput-boolean v0, p0, Lyi4;->L:Z
+
+    return-void
+.end method
+
+.method public constructor <init>(Laj4;)V
+    .registers 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p0, p1}, Llcf;->d(Lncf;)V
+
+    iget-boolean v0, p1, Laj4;->o0:Z
+
+    iput-boolean v0, p0, Lyi4;->F:Z
+
+    iget-boolean v0, p1, Laj4;->p0:Z
+
+    iput-boolean v0, p0, Lyi4;->G:Z
+
+    iget-boolean v0, p1, Laj4;->q0:Z
+
+    iput-boolean v0, p0, Lyi4;->H:Z
+
+    iget-boolean v0, p1, Laj4;->r0:Z
+
+    iput-boolean v0, p0, Lyi4;->I:Z
+
+    iget-boolean v0, p1, Laj4;->s0:Z
+
+    iput-boolean v0, p0, Lyi4;->J:Z
+
+    iget-boolean v0, p1, Laj4;->t0:Z
+
+    iput-boolean v0, p0, Lyi4;->K:Z
+
+    iget-boolean v0, p1, Laj4;->u0:Z
+
+    iput-boolean v0, p0, Lyi4;->L:Z
+
+    iget-object v0, p1, Laj4;->v0:Landroid/util/SparseArray;
+
+    new-instance v1, Landroid/util/SparseArray;
+
+    invoke-direct {v1}, Landroid/util/SparseArray;-><init>()V
+
+    const/4 v2, 0x0
+
+    :goto_0
+    invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_0
+
+    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->keyAt(I)I
+
+    move-result v3
+
+    new-instance v4, Ljava/util/HashMap;
+
+    invoke-virtual {v0, v2}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/util/Map;
+
+    invoke-direct {v4, v5}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+
+    invoke-virtual {v1, v3, v4}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    iput-object v1, p0, Lyi4;->M:Landroid/util/SparseArray;
+
+    iget-object p1, p1, Laj4;->w0:Landroid/util/SparseBooleanArray;
+
+    invoke-virtual {p1}, Landroid/util/SparseBooleanArray;->clone()Landroid/util/SparseBooleanArray;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lyi4;->N:Landroid/util/SparseBooleanArray;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 5
+.method public final a(Lgcf;)V
+    .registers 3
 
-    iget v0, p0, Lyi4;->a:I
+    iget-object p0, p0, Llcf;->D:Ljava/util/HashMap;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, p1, Lgcf;->a:Lubf;
 
-    iget-object p0, p0, Lyi4;->b:Ldj4;
-
-    invoke-virtual {p0}, Ldj4;->b()V
+    invoke-virtual {p0, v0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
+.end method
 
-    :pswitch_0
-    const-string v0, "Error releasing GL objects"
+.method public final b()Lncf;
+    .registers 2
 
-    iget-object p0, p0, Lyi4;->b:Ldj4;
+    new-instance v0, Laj4;
 
-    iget-object v1, p0, Ldj4;->c:Lah6;
+    invoke-direct {v0, p0}, Laj4;-><init>(Lyi4;)V
 
-    :try_start_0
-    iget-object v2, p0, Ldj4;->e:Lmwg;
+    return-object v0
+.end method
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_0
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_0 .. :try_end_0} :catch_2
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+.method public final c()Llcf;
+    .registers 1
 
-    :try_start_1
-    iget-object v2, v2, Lmwg;->o:Ljava/lang/Object;
+    invoke-super {p0}, Llcf;->c()Llcf;
 
-    check-cast v2, Ln3f;
+    return-object p0
+.end method
 
-    if-eqz v2, :cond_0
+.method public final f([Ljava/lang/String;)Llcf;
+    .registers 2
 
-    iget v2, v2, Ln3f;->b:I
+    invoke-static {p1}, Llcf;->e([Ljava/lang/String;)Llqc;
 
-    invoke-static {v2}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
+    move-result-object p1
 
-    invoke-static {}, Lts;->n()V
-    :try_end_1
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    iput-object p1, p0, Llcf;->p:Ll37;
 
-    goto :goto_0
-
-    :catch_0
-    move-exception v2
-
-    :try_start_2
-    const-string v3, "Error releasing GL Program"
-
-    invoke-static {v3, v2}, Lye2;->u(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_0
-    :goto_0
-    iget-object v2, p0, Ldj4;->i:Lvr0;
-
-    invoke-virtual {v2}, Lvr0;->h()V
-
-    iget-object v2, p0, Ldj4;->m:Landroid/opengl/EGLDisplay;
-
-    iget-object v3, p0, Ldj4;->n:Landroid/opengl/EGLSurface;
-
-    if-eqz v2, :cond_2
-
-    if-nez v3, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {v2, v3}, Landroid/opengl/EGL14;->eglDestroySurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
-
-    const-string v2, "Error destroying surface"
-
-    invoke-static {v2}, Lts;->l(Ljava/lang/String;)V
-    :try_end_2
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_2 .. :try_end_2} :catch_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    :cond_2
-    :goto_1
-    :try_start_3
-    iget-object p0, p0, Ldj4;->m:Landroid/opengl/EGLDisplay;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v1, p0}, Lah6;->o(Landroid/opengl/EGLDisplay;)V
-    :try_end_3
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_3 .. :try_end_3} :catch_1
-
-    goto :goto_2
-
-    :catch_1
-    move-exception p0
-
-    invoke-static {v0, p0}, Lye2;->u(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    goto :goto_2
-
-    :catchall_0
-    move-exception v2
-
-    goto :goto_3
-
-    :catch_2
-    move-exception v2
-
-    :try_start_4
-    const-string v3, "Error releasing GL resources"
-
-    invoke-static {v3, v2}, Lye2;->u(Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
-    :try_start_5
-    iget-object p0, p0, Ldj4;->m:Landroid/opengl/EGLDisplay;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v1, p0}, Lah6;->o(Landroid/opengl/EGLDisplay;)V
-    :try_end_5
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_5 .. :try_end_5} :catch_1
-
-    :goto_2
-    return-void
-
-    :goto_3
-    :try_start_6
-    iget-object p0, p0, Ldj4;->m:Landroid/opengl/EGLDisplay;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-interface {v1, p0}, Lah6;->o(Landroid/opengl/EGLDisplay;)V
-    :try_end_6
-    .catch Landroidx/media3/common/util/GlUtil$GlException; {:try_start_6 .. :try_end_6} :catch_3
-
-    goto :goto_4
-
-    :catch_3
-    move-exception p0
-
-    invoke-static {v0, p0}, Lye2;->u(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_4
-    throw v2
-
-    :pswitch_1
-    invoke-static {}, Lts;->F()Landroid/opengl/EGLDisplay;
-
-    move-result-object v0
-
-    iget-object p0, p0, Lyi4;->b:Ldj4;
-
-    iput-object v0, p0, Ldj4;->m:Landroid/opengl/EGLDisplay;
-
-    iget-object v1, p0, Ldj4;->c:Lah6;
-
-    const/4 v2, 0x2
-
-    sget-object v3, Lts;->b:[I
-
-    invoke-interface {v1, v0, v2, v3}, Lah6;->h(Landroid/opengl/EGLDisplay;I[I)Landroid/opengl/EGLContext;
-
-    move-result-object v0
-
-    iget-object v2, p0, Ldj4;->m:Landroid/opengl/EGLDisplay;
-
-    invoke-interface {v1, v0, v2}, Lah6;->m(Landroid/opengl/EGLContext;Landroid/opengl/EGLDisplay;)Landroid/opengl/EGLSurface;
-
-    move-result-object v0
-
-    iput-object v0, p0, Ldj4;->n:Landroid/opengl/EGLSurface;
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

@@ -1,103 +1,172 @@
 .class public final Lsgg;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final Companion:Lrgg;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Ljava/lang/String;
 
-.field public final synthetic Y:Lone/me/webapp/settings/WebAppsSettingScreen;
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/settings/WebAppsSettingScreen;)V
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Lrgg;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lsgg;->Companion:Lrgg;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/lang/String;IZ)V
+    .registers 6
+
+    and-int/lit8 v0, p2, 0x3
+
+    const/4 v1, 0x3
+
+    if-ne v1, v0, :cond_0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lsgg;->a:Ljava/lang/String;
+
+    iput-boolean p3, p0, Lsgg;->b:Z
+
+    return-void
+
+    :cond_0
+    sget-object p0, Lqgg;->a:Lqgg;
+
+    invoke-virtual {p0}, Lqgg;->d()Lqid;
+
+    move-result-object p0
+
+    invoke-static {p2, v1, p0}, Lla6;->F(IILqid;)V
+
+    const/4 p0, 0x0
+
+    throw p0
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Z)V
     .registers 3
 
-    iput-object p2, p0, Lsgg;->Y:Lone/me/webapp/settings/WebAppsSettingScreen;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lsgg;->a:Ljava/lang/String;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-boolean p2, p0, Lsgg;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, p2}, Lsgg;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    move-result-object p0
-
-    check-cast p0, Lsgg;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lsgg;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lsgg;
-
-    iget-object p0, p0, Lsgg;->Y:Lone/me/webapp/settings/WebAppsSettingScreen;
-
-    invoke-direct {v0, p2, p0}, Lsgg;-><init>(Lkotlin/coroutines/Continuation;Lone/me/webapp/settings/WebAppsSettingScreen;)V
-
-    iput-object p1, v0, Lsgg;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lsgg;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljp9;
-
-    sget-object v0, Lone/me/webapp/settings/WebAppsSettingScreen;->X:[Lsf7;
-
-    instance-of v0, p1, Ls53;
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Lsgg;->Y:Lone/me/webapp/settings/WebAppsSettingScreen;
-
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Llrc;->C()Z
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    instance-of p0, p1, Laa4;
+    instance-of v1, p1, Lsgg;
 
-    if-eqz p0, :cond_1
+    const/4 v2, 0x0
 
-    sget-object p0, Lz9g;->c:Lz9g;
+    if-nez v1, :cond_1
 
-    check-cast p1, Laa4;
-
-    invoke-virtual {p0, p1}, Ls2;->F0(Laa4;)V
+    return v2
 
     :cond_1
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    check-cast p1, Lsgg;
+
+    iget-object v1, p0, Lsgg;->a:Ljava/lang/String;
+
+    iget-object v3, p1, Lsgg;->a:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-boolean p0, p0, Lsgg;->b:Z
+
+    iget-boolean p1, p1, Lsgg;->b:Z
+
+    if-eq p0, p1, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    iget-object v0, p0, Lsgg;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean p0, p0, Lsgg;->b:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "WebAppChangeScreenBrightness(requestId="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lsgg;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", maxBrightness="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lsgg;->b:Z
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

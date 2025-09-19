@@ -1,25 +1,21 @@
 .class public final Lymb;
-.super Lqd0;
+.super Lys9;
 .source "SourceFile"
 
 
 # instance fields
 .field public final b:J
 
-.field public final c:Lkfb;
-
 
 # direct methods
-.method public constructor <init>(JLkfb;)V
-    .registers 5
+.method public constructor <init>(J)V
+    .registers 4
 
-    const/16 v0, 0xf
+    sget-object v0, Lylf;->a:Lylf;
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    invoke-direct {p0, v0}, Lys9;-><init>(Ljava/lang/Object;)V
 
     iput-wide p1, p0, Lymb;->b:J
-
-    iput-object p3, p0, Lymb;->c:Lkfb;
 
     return-void
 .end method
@@ -27,7 +23,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 9
+    .registers 7
 
     const/4 v0, 0x1
 
@@ -49,24 +45,15 @@
 
     iget-wide v3, p0, Lymb;->b:J
 
-    iget-wide v5, p1, Lymb;->b:J
+    iget-wide p0, p1, Lymb;->b:J
 
-    cmp-long v1, v3, v5
+    cmp-long p0, v3, p0
 
-    if-eqz v1, :cond_2
+    if-eqz p0, :cond_2
 
     return v2
 
     :cond_2
-    iget-object p0, p0, Lymb;->c:Lkfb;
-
-    iget-object p1, p1, Lymb;->c:Lkfb;
-
-    if-eq p0, p1, :cond_3
-
-    return v2
-
-    :cond_3
     return v0
 .end method
 
@@ -77,47 +64,21 @@
 
     invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lymb;->c:Lkfb;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
     move-result p0
-
-    add-int/2addr p0, v0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .registers 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "BackToChat(chatId="
 
-    const-string v1, "OpenChat(chatId="
+    const-string v1, ")"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-wide v2, p0, Lymb;->b:J
 
-    iget-wide v1, p0, Lymb;->b:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", type="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lymb;->c:Lkfb;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, v3, v0, v1}, Lwsf;->e(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

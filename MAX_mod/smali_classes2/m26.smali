@@ -1,98 +1,33 @@
-.class public final Lm26;
-.super Ljava/util/concurrent/ForkJoinTask;
+.class public abstract synthetic Lm26;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Luj3;
-
-.field public final b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final c:Ljava/util/concurrent/atomic/AtomicReference;
-
-.field public volatile o:Ljava/lang/Throwable;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Luj3;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/util/concurrent/ForkJoinTask;-><init>()V
-
-    iput-object p2, p0, Lm26;->a:Luj3;
-
-    new-instance p2, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p2, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object p2, p0, Lm26;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    new-instance p2, Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-direct {p2, p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object p2, p0, Lm26;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final exec()Z
-    .registers 4
-
-    iget-object v0, p0, Lm26;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :try_start_0
-    iget-object v0, p0, Lm26;->a:Luj3;
-
-    invoke-virtual {v0}, Luj3;->run()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return v2
-
-    :catchall_0
-    move-exception v0
-
-    iput-object v0, p0, Lm26;->o:Ljava/lang/Throwable;
-
-    throw v0
-
-    :cond_0
-    return v1
-.end method
-
-.method public final getRawResult()Ljava/lang/Object;
-    .registers 1
-
-    iget-object p0, p0, Lm26;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final setRawResult(Ljava/lang/Object;)V
+.method static constructor <clinit>()V
     .registers 2
 
-    iget-object p0, p0, Lm26;->c:Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-static {}, Lvqf;->values()[Lvqf;
 
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    const/4 v1, 0x1
+
+    :try_start_0
+    aput v1, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    sput-object v0, Lm26;->$EnumSwitchMapping$0:[I
 
     return-void
 .end method

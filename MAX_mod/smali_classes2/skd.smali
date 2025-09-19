@@ -1,139 +1,225 @@
 .class public final Lskd;
-.super Lqd0;
+.super Lckd;
 .source "SourceFile"
 
 
-# instance fields
-.field public final b:Lvte;
+# static fields
+.field public static c:J
 
-.field public final c:Ljava/lang/Integer;
+.field public static final synthetic o:I
+
+
+# instance fields
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(Lvte;Ljava/lang/Integer;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
 
-    const/16 v0, 0x12
+    sget v0, Lfy4;->o:I
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    const-wide/16 v0, 0x0
 
-    iput-object p1, p0, Lskd;->b:Lvte;
+    sput-wide v0, Lskd;->c:J
 
-    iput-object p2, p0, Lskd;->c:Ljava/lang/Integer;
+    return-void
+.end method
+
+.method public constructor <init>(Z)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p1, p0, Lskd;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final j(Lkha;Lon4;)Ljava/util/concurrent/ExecutorService;
+    .registers 4
 
-    const/4 v0, 0x1
+    const/16 p0, 0xa
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p1}, Lkha;->b()Lgha;
 
-    return v0
+    move-result-object p2
 
-    :cond_0
-    instance-of v1, p1, Lskd;
+    const-string v0, "logout"
 
-    const/4 v2, 0x0
+    invoke-virtual {p2, p0, v0}, Lgha;->a(ILjava/lang/String;)Llp5;
 
-    if-nez v1, :cond_1
+    move-result-object p0
 
-    return v2
+    invoke-virtual {p1, p0, v0}, Lkha;->i(Llp5;Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
 
-    :cond_1
-    check-cast p1, Lskd;
+    move-result-object p0
 
-    iget-object v1, p0, Lskd;->b:Lvte;
+    new-instance p1, Ljc;
 
-    iget-object v3, p1, Lskd;->b:Lvte;
+    const/16 p2, 0xc
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {p1, p2}, Ljc;-><init>(I)V
 
-    move-result v1
+    invoke-interface {p0, p1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
 
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Lskd;->c:Ljava/lang/Integer;
-
-    iget-object p1, p1, Lskd;->c:Ljava/lang/Integer;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
+    return-object p0
 .end method
 
-.method public final hashCode()I
-    .registers 2
+.method public final u()Z
+    .registers 1
 
-    iget-object v0, p0, Lskd;->b:Lvte;
+    const/4 p0, 0x1
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    return p0
+.end method
 
-    move-result v0
+.method public final w()V
+    .registers 10
 
-    mul-int/lit8 v0, v0, 0x1f
+    sget-object v0, Lqz7;->o:Lqz7;
 
-    iget-object p0, p0, Lskd;->c:Ljava/lang/Integer;
+    const-class v1, Lskd;
 
-    if-nez p0, :cond_0
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    const/4 p0, 0x0
+    move-result-object v2
+
+    sget-object v3, Ljtg;->g:Loja;
+
+    const/4 v4, 0x0
+
+    if-nez v3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v3, v0}, Loja;->a(Lqz7;)Z
 
-    move-result p0
+    move-result v5
 
+    if-eqz v5, :cond_1
+
+    sget v5, Lfy4;->o:I
+
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v5
+
+    sget-object v7, Lky4;->b:Lky4;
+
+    invoke-static {v5, v6, v7}, Lr94;->c0(JLky4;)J
+
+    move-result-wide v5
+
+    sget-wide v7, Lskd;->c:J
+
+    invoke-static {v5, v6, v7, v8}, Lfy4;->g(JJ)J
+
+    move-result-wide v5
+
+    invoke-static {v5, v6}, Lfy4;->j(J)Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v6, "process "
+
+    invoke-virtual {v6, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v0, v2, v5, v4}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
     :goto_0
-    add-int/2addr v0, p0
+    sget v2, Lfy4;->o:I
 
-    return v0
-.end method
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    move-result-wide v2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    sget-object v5, Lky4;->b:Lky4;
 
-    const-string v1, "ShowSnackbar(title="
+    invoke-static {v2, v3, v5}, Lr94;->c0(JLky4;)J
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-wide v2
 
-    iget-object v1, p0, Lskd;->b:Lvte;
+    iget-object v6, p0, Lckd;->a:Ldkd;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    if-eqz v6, :cond_2
 
-    const-string v1, ", icon="
+    goto :goto_1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_2
+    move-object v6, v4
 
-    iget-object p0, p0, Lskd;->c:Ljava/lang/Integer;
+    :goto_1
+    iget-object v6, v6, Ldkd;->F:Lcl7;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-interface {v6}, Lcl7;->getValue()Ljava/lang/Object;
 
-    const-string p0, ")"
+    move-result-object v6
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v6, Lh18;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-boolean v7, p0, Lskd;->b:Z
+
+    invoke-virtual {v6, v7}, Lh18;->a(Z)V
+
+    invoke-virtual {p0}, Lckd;->s()Lfv0;
 
     move-result-object p0
 
-    return-object p0
+    new-instance v6, Lk18;
+
+    invoke-direct {v6}, Loi0;-><init>()V
+
+    invoke-virtual {p0, v6}, Lfv0;->c(Ljava/lang/Object;)V
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p0
+
+    sget-object v1, Ljtg;->g:Loja;
+
+    if-nez v1, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    invoke-virtual {v1, v0}, Loja;->a(Lqz7;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v6
+
+    invoke-static {v6, v7, v5}, Lr94;->c0(JLky4;)J
+
+    move-result-wide v5
+
+    invoke-static {v5, v6, v2, v3}, Lfy4;->g(JJ)J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Lfy4;->j(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "process finish "
+
+    invoke-virtual {v3, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v0, p0, v2, v4}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_4
+    :goto_2
+    return-void
 .end method

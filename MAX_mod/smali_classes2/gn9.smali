@@ -1,108 +1,95 @@
 .class public final Lgn9;
-.super Lkbf;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic b:I
-
-.field public final synthetic c:Ljava/lang/Object;
+.field public final synthetic X:Lon9;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
+.method public constructor <init>(Lon9;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p1, p0, Lgn9;->b:I
+    iput-object p1, p0, Lgn9;->X:Lon9;
 
-    iput-object p2, p0, Lgn9;->c:Ljava/lang/Object;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final B()V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Lgn9;->b:I
+    check-cast p1, Ly04;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Lgn9;->c:Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lgn9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast p0, La4b;
+    move-result-object p0
 
-    iget-object v0, p0, La4b;->y0:Lcq5;
+    check-cast p0, Lgn9;
 
-    if-eqz v0, :cond_1
+    sget-object p1, Lylf;->a:Lylf;
 
-    :try_start_0
-    iget-object v0, v0, Lcq5;->q0:Landroid/animation/ValueAnimator;
+    invoke-virtual {p0, p1}, Lgn9;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lgn9;
+
+    iget-object p0, p0, Lgn9;->X:Lon9;
+
+    invoke-direct {p1, p0, p2}, Lgn9;-><init>(Lon9;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lgn9;->X:Lon9;
+
+    iget-object p0, p0, Lon9;->m:Ljf8;
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Ljf8;->t()V
+
+    iget-object p0, p0, Ljf8;->c:Lif8;
+
+    invoke-interface {p0}, Lif8;->isConnected()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    const-string p0, "The controller is not connected. Ignoring pause()."
+
+    invoke-static {p0}, Lxnd;->l0(Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
+    invoke-interface {p0}, Lif8;->pause()V
 
-    :goto_0
-    iget-object v0, p0, La4b;->y0:Lcq5;
-
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lgwd;->u(Landroid/content/Context;)Landroid/view/WindowManager;
-
-    move-result-object v0
-
-    iget-object v1, p0, La4b;->y0:Lcq5;
-
-    invoke-interface {v0, v1}, Landroid/view/ViewManager;->removeView(Landroid/view/View;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
     :cond_1
-    const/4 v0, 0x0
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    iput-object v0, p0, La4b;->y0:Lcq5;
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lgn9;->c:Ljava/lang/Object;
-
-    check-cast p0, Lhn9;
-
-    iget-object v0, p0, Lhn9;->Y:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V
-
-    iget-object v0, p0, Lhn9;->Y:Landroid/view/View;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    new-instance v0, Lyj0;
-
-    const/16 v1, 0x16
-
-    invoke-direct {v0, v1}, Lyj0;-><init>(I)V
-
-    invoke-virtual {p0, v0}, Lt2;->n(Llm3;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

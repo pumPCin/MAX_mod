@@ -1,8 +1,9 @@
-.class public interface abstract Lld3;
+.class public final Lld3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract u(Lmy5;)Ljava/lang/Object;
-.end method
+# instance fields
+.field public a:Ljava/lang/Object;
+
+.field public b:Lf8g;

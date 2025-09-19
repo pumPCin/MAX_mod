@@ -1,63 +1,75 @@
-.class public final Lycd;
-.super Lucd;
+.class public interface abstract Lycd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final p0:Ljava/lang/String;
-
-.field public final q0:Z
-
-.field public final r0:Ljava/util/List;
-
-
-# direct methods
-.method public constructor <init>(Lwcd;)V
-    .registers 3
-
-    invoke-direct {p0, p1}, Lucd;-><init>(Ltcd;)V
-
-    iget-object v0, p1, Lwcd;->h:Ljava/lang/String;
-
-    iput-object v0, p0, Lycd;->p0:Ljava/lang/String;
-
-    iget-boolean v0, p1, Lwcd;->i:Z
-
-    iput-boolean v0, p0, Lycd;->q0:Z
-
-    iget-object p1, p1, Lwcd;->j:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
-
-    iput-object p1, p0, Lycd;->r0:Ljava/util/List;
-
-    return-void
-.end method
+# interfaces
+.implements Lird;
 
 
 # virtual methods
-.method public final x()Luw8;
-    .registers 3
+.method public abstract a()I
+.end method
 
-    new-instance v0, Luw8;
+.method public b()Lu2f;
+    .registers 1
 
-    invoke-direct {v0}, Luw8;-><init>()V
+    const/4 p0, 0x0
 
-    iget-object v1, p0, Lycd;->p0:Ljava/lang/String;
+    return-object p0
+.end method
 
-    iput-object v1, v0, Luw8;->g:Ljava/lang/String;
+.method public c()Lzqd;
+    .registers 1
 
-    iget-boolean v1, p0, Lycd;->q0:Z
+    const/4 p0, 0x0
 
-    iput-boolean v1, v0, Luw8;->v:Z
+    return-object p0
+.end method
 
-    iget-object p0, p0, Lycd;->r0:Ljava/util/List;
+.method public d()Lu2f;
+    .registers 1
 
-    invoke-static {p0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+    const/4 p0, 0x0
 
-    move-result-object p0
+    return-object p0
+.end method
 
-    iput-object p0, v0, Luw8;->E:Ljava/util/List;
+.method public e()Lfrd;
+    .registers 1
 
-    return-object v0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public f()Lll7;
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public g()Z
+    .registers 1
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public getType()Lhrd;
+    .registers 1
+
+    sget-object p0, Lhrd;->b:Lhrd;
+
+    return-object p0
+.end method
+
+.method public r()Lbc6;
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return-object p0
 .end method

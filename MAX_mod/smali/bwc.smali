@@ -1,302 +1,76 @@
 .class public final Lbwc;
-.super Ljava/lang/Object;
+.super Ls1;
 .source "SourceFile"
-
-# interfaces
-.implements Ln58;
 
 
 # instance fields
-.field public final a:F
+.field public final synthetic X:Lcwc;
 
-.field public final b:Landroid/graphics/Matrix;
+.field public c:I
 
-.field public c:Landroid/graphics/Matrix;
+.field public o:I
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method public constructor <init>(Lcwc;)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lbwc;->a:F
+    iput-object p1, p0, Lbwc;->X:Lcwc;
 
-    new-instance v0, Landroid/graphics/Matrix;
+    iget v0, p1, Lcwc;->o:I
 
-    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+    iput v0, p0, Lbwc;->c:I
 
-    iput-object v0, p0, Lbwc;->b:Landroid/graphics/Matrix;
+    iget p1, p1, Lcwc;->c:I
 
-    const/high16 p0, 0x3f800000    # 1.0f
-
-    invoke-virtual {v0, p0, p0}, Landroid/graphics/Matrix;->postScale(FF)Z
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Matrix;->postRotate(F)Z
+    iput p1, p0, Lbwc;->o:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/graphics/Matrix;
-    .registers 2
+.method public final a()V
+    .registers 5
 
-    iget-object p0, p0, Lbwc;->c:Landroid/graphics/Matrix;
+    iget v0, p0, Lbwc;->c:I
 
-    const-string v0, "configure must be called first"
+    if-nez v0, :cond_0
 
-    invoke-static {p0, v0}, Lr76;->n(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v0, 0x2
 
-    return-object p0
-.end method
+    iput v0, p0, Ls1;->a:I
 
-.method public final b(II)Z
-    .registers 4
-
-    invoke-virtual {p0, p1, p2}, Lbwc;->c(II)Lcwd;
-
-    move-result-object v0
-
-    iget-object p0, p0, Lbwc;->c:Landroid/graphics/Matrix;
-
-    invoke-static {p0}, Lr76;->m(Ljava/lang/Object;)V
-
-    invoke-virtual {p0}, Landroid/graphics/Matrix;->isIdentity()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    iget p0, v0, Lcwd;->a:I
-
-    if-ne p1, p0, :cond_0
-
-    iget p0, v0, Lcwd;->b:I
-
-    if-ne p2, p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
+    return-void
 
     :cond_0
-    const/4 p0, 0x0
+    iget-object v1, p0, Lbwc;->X:Lcwc;
 
-    return p0
-.end method
+    iget-object v2, v1, Lcwc;->a:[Ljava/lang/Object;
 
-.method public final c(II)Lcwd;
-    .registers 15
+    iget v3, p0, Lbwc;->o:I
 
-    const/4 v0, 0x0
+    aget-object v2, v2, v3
 
-    const/4 v1, 0x1
+    iput-object v2, p0, Ls1;->b:Ljava/lang/Object;
 
-    if-lez p1, :cond_0
+    const/4 v2, 0x1
 
-    move v2, v1
+    iput v2, p0, Ls1;->a:I
 
-    goto :goto_0
+    add-int/2addr v3, v2
 
-    :cond_0
-    move v2, v0
+    iget v1, v1, Lcwc;->b:I
 
-    :goto_0
-    const-string v3, "inputWidth must be positive"
+    rem-int/2addr v3, v1
 
-    invoke-static {v3, v2}, Lr76;->g(Ljava/lang/Object;Z)V
+    iput v3, p0, Lbwc;->o:I
 
-    if-lez p2, :cond_1
+    add-int/lit8 v0, v0, -0x1
 
-    move v2, v1
+    iput v0, p0, Lbwc;->c:I
 
-    goto :goto_1
-
-    :cond_1
-    move v2, v0
-
-    :goto_1
-    const-string v3, "inputHeight must be positive"
-
-    invoke-static {v3, v2}, Lr76;->g(Ljava/lang/Object;Z)V
-
-    new-instance v2, Landroid/graphics/Matrix;
-
-    iget-object v3, p0, Lbwc;->b:Landroid/graphics/Matrix;
-
-    invoke-direct {v2, v3}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
-
-    iput-object v2, p0, Lbwc;->c:Landroid/graphics/Matrix;
-
-    invoke-virtual {v3}, Landroid/graphics/Matrix;->isIdentity()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    new-instance p0, Lcwd;
-
-    invoke-direct {p0, p1, p2}, Lcwd;-><init>(II)V
-
-    return-object p0
-
-    :cond_2
-    int-to-float p1, p1
-
-    int-to-float p2, p2
-
-    div-float v2, p1, p2
-
-    iget-object v3, p0, Lbwc;->c:Landroid/graphics/Matrix;
-
-    const/high16 v4, 0x3f800000    # 1.0f
-
-    invoke-virtual {v3, v2, v4}, Landroid/graphics/Matrix;->preScale(FF)Z
-
-    iget-object v3, p0, Lbwc;->c:Landroid/graphics/Matrix;
-
-    div-float v2, v4, v2
-
-    invoke-virtual {v3, v2, v4}, Landroid/graphics/Matrix;->postScale(FF)Z
-
-    const/4 v2, 0x4
-
-    new-array v3, v2, [F
-
-    fill-array-data v3, :array_0
-
-    new-array v5, v2, [F
-
-    fill-array-data v5, :array_1
-
-    new-array v6, v2, [F
-
-    fill-array-data v6, :array_2
-
-    new-array v7, v2, [F
-
-    fill-array-data v7, :array_3
-
-    filled-new-array {v3, v5, v6, v7}, [[F
-
-    move-result-object v3
-
-    const/4 v5, 0x1
-
-    const v6, 0x7f7fffff    # Float.MAX_VALUE
-
-    move v9, v0
-
-    move v7, v6
-
-    move v8, v7
-
-    move v6, v5
-
-    :goto_2
-    if-ge v9, v2, :cond_3
-
-    aget-object v10, v3, v9
-
-    iget-object v11, p0, Lbwc;->c:Landroid/graphics/Matrix;
-
-    invoke-virtual {v11, v10}, Landroid/graphics/Matrix;->mapPoints([F)V
-
-    aget v11, v10, v0
-
-    invoke-static {v7, v11}, Ljava/lang/Math;->min(FF)F
-
-    move-result v7
-
-    aget v11, v10, v0
-
-    invoke-static {v5, v11}, Ljava/lang/Math;->max(FF)F
-
-    move-result v5
-
-    aget v11, v10, v1
-
-    invoke-static {v8, v11}, Ljava/lang/Math;->min(FF)F
-
-    move-result v8
-
-    aget v10, v10, v1
-
-    invoke-static {v6, v10}, Ljava/lang/Math;->max(FF)F
-
-    move-result v6
-
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_2
-
-    :cond_3
-    sub-float/2addr v5, v7
-
-    const/high16 v0, 0x40000000    # 2.0f
-
-    div-float/2addr v5, v0
-
-    sub-float/2addr v6, v8
-
-    div-float/2addr v6, v0
-
-    iget-object p0, p0, Lbwc;->c:Landroid/graphics/Matrix;
-
-    div-float v0, v4, v5
-
-    div-float/2addr v4, v6
-
-    invoke-virtual {p0, v0, v4}, Landroid/graphics/Matrix;->postScale(FF)Z
-
-    new-instance p0, Lcwd;
-
-    mul-float/2addr p1, v5
-
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
-
-    move-result p1
-
-    mul-float/2addr p2, v6
-
-    invoke-static {p2}, Ljava/lang/Math;->round(F)I
-
-    move-result p2
-
-    invoke-direct {p0, p1, p2}, Lcwd;-><init>(II)V
-
-    return-object p0
-
-    :array_0
-    .array-data 4
-        -0x40800000    # -1.0f
-        -0x40800000    # -1.0f
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
-
-    :array_1
-    .array-data 4
-        -0x40800000    # -1.0f
-        0x3f800000    # 1.0f
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
-
-    :array_2
-    .array-data 4
-        0x3f800000    # 1.0f
-        -0x40800000    # -1.0f
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
-
-    :array_3
-    .array-data 4
-        0x3f800000    # 1.0f
-        0x3f800000    # 1.0f
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
+    return-void
 .end method

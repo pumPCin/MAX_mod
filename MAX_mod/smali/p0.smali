@@ -1,64 +1,51 @@
 .class public final Lp0;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Lp0;
-
-.field public static final d:Lp0;
-
-
 # instance fields
-.field public final a:Z
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Ljava/lang/Throwable;
+.field public final synthetic Y:Lc2d;
+
+.field public Z:I
+
+.field public o:Ly1d;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lc2d;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    sget-boolean v0, Ll1;->o:Z
+    iput-object p1, p0, Lp0;->Y:Lc2d;
 
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    sput-object v1, Lp0;->d:Lp0;
-
-    sput-object v1, Lp0;->c:Lp0;
-
-    return-void
-
-    :cond_0
-    new-instance v0, Lp0;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lp0;-><init>(Ljava/lang/Throwable;Z)V
-
-    sput-object v0, Lp0;->d:Lp0;
-
-    new-instance v0, Lp0;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v0, v1, v2}, Lp0;-><init>(Ljava/lang/Throwable;Z)V
-
-    sput-object v0, Lp0;->c:Lp0;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Throwable;Z)V
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lp0;->X:Ljava/lang/Object;
 
-    iput-boolean p2, p0, Lp0;->a:Z
+    iget p1, p0, Lp0;->Z:I
 
-    iput-object p1, p0, Lp0;->b:Ljava/lang/Throwable;
+    const/high16 v0, -0x80000000
 
-    return-void
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lp0;->Z:I
+
+    iget-object p1, p0, Lp0;->Y:Lc2d;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lc2d;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

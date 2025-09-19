@@ -1,136 +1,272 @@
-.class public final Lj9d;
-.super Lpoe;
+.class public abstract Lj9d;
+.super Li3;
 .source "SourceFile"
 
 # interfaces
-.implements Ll9d;
+.implements Lhp;
+
+
+# instance fields
+.field public final h:Lnl0;
+
+.field public final i:Lnl0;
+
+.field public final j:Lnl0;
+
+.field public final k:Lnl0;
+
+.field public final l:Lyce;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method public constructor <init>(Landroid/content/Context;Lzm5;)V
+    .registers 4
 
-    new-instance v0, Liba;
+    const-string v0, "app.prefs"
 
-    const/16 v1, 0x1c
+    invoke-direct {p0, p1, v0, p2}, Li3;-><init>(Landroid/content/Context;Ljava/lang/String;Lzm5;)V
 
-    invoke-direct {v0, v1}, Liba;-><init>(I)V
+    const/4 p1, 0x0
 
-    invoke-direct {p0, v0}, Lpoe;-><init>(Lj96;)V
+    iget-object p2, p0, Li3;->g:Lfl7;
+
+    const-string v0, "app.extra.text.size.sp"
+
+    invoke-virtual {p2, v0, p1}, Lfl7;->getFloat(Ljava/lang/String;F)F
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lnl0;->x(Ljava/lang/Object;)Lnl0;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lj9d;->h:Lnl0;
+
+    iget-object p1, p0, Li3;->g:Lfl7;
+
+    const-string p2, "app.extra.text.size.mode"
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p1, p2, v0}, Lfl7;->getInt(Ljava/lang/String;I)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lnl0;->x(Ljava/lang/Object;)Lnl0;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lj9d;->i:Lnl0;
+
+    invoke-virtual {p0}, Lj9d;->n()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lnl0;->x(Ljava/lang/Object;)Lnl0;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lj9d;->j:Lnl0;
+
+    invoke-virtual {p0}, Lj9d;->m()I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lnl0;->x(Ljava/lang/Object;)Lnl0;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lj9d;->k:Lnl0;
+
+    const-string p1, "app.pinLock.screenshotEnabled"
+
+    iget-object p2, p0, Li3;->g:Lfl7;
+
+    invoke-virtual {p2, p1, v0}, Lfl7;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lzce;->a(Ljava/lang/Object;)Lyce;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lj9d;->l:Lyce;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a0()I
+.method public final l()Z
     .registers 3
 
-    iget-object v0, p0, Lpoe;->c:Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    invoke-static {v0}, Las3;->S(Lxh7;)Z
+    iget-object p0, p0, Li3;->g:Lfl7;
 
-    move-result v0
+    const-string v1, "app.media.load.roaming"
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lpoe;->I()I
+    invoke-virtual {p0, v1, v0}, Lfl7;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result p0
-
-    const/4 v0, 0x4
-
-    int-to-float v0, v0
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
-
-    invoke-static {v0, v1, p0}, Lex3;->b(FFI)I
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final setAlias(Landroid/text/Layout;)V
+.method public final m()I
     .registers 3
 
-    if-nez p1, :cond_1
+    const/4 v0, 0x0
 
-    iget-object p0, p0, Lpoe;->c:Ljava/lang/Object;
+    iget-object p0, p0, Li3;->g:Lfl7;
 
-    invoke-interface {p0}, Lxh7;->a()Z
+    const-string v1, "app.notification.chats.show"
 
-    move-result p1
+    invoke-virtual {p0, v1, v0}, Lfl7;->getInt(Ljava/lang/String;I)I
 
-    if-eqz p1, :cond_0
+    move-result p0
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    return p0
+.end method
+
+.method public final n()I
+    .registers 3
+
+    const/4 v0, 0x0
+
+    iget-object p0, p0, Li3;->g:Lfl7;
+
+    const-string v1, "app.notification.dialogs.show"
+
+    invoke-virtual {p0, v1, v0}, Lfl7;->getInt(Ljava/lang/String;I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final o()Levf;
+    .registers 3
+
+    const-string v0, "app.media.video.compress"
+
+    const/4 v1, 0x0
+
+    iget-object p0, p0, Li3;->g:Lfl7;
+
+    invoke-virtual {p0, v0, v1}, Lfl7;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lk9d;
+    if-nez p0, :cond_0
 
-    const/16 p1, 0x8
+    sget-object p0, Levf;->c:Levf;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    return-object p0
 
     :cond_0
+    invoke-static {p0}, Levf;->valueOf(Ljava/lang/String;)Levf;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final p()Z
+    .registers 3
+
+    const/4 v0, 0x0
+
+    iget-object p0, p0, Li3;->g:Lfl7;
+
+    const-string v1, "app.privacy.safe_mode"
+
+    invoke-virtual {p0, v1, v0}, Lfl7;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final q()Z
+    .registers 3
+
+    const/4 v0, 0x0
+
+    iget-object p0, p0, Li3;->g:Lfl7;
+
+    const-string v1, "app.privacy.safe_mode_no_pin"
+
+    invoke-virtual {p0, v1, v0}, Lfl7;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final r(I)V
+    .registers 3
+
+    const-string v0, "app.notification.chats.show"
+
+    invoke-virtual {p0, p1, v0}, Li3;->i(ILjava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    if-eq p1, v0, :cond_0
+
+    const-string v0, "app.notification.chats.show.last"
+
+    invoke-virtual {p0, p1, v0}, Li3;->i(ILjava/lang/String;)V
+
+    :cond_0
+    iget-object p0, p0, Lj9d;->k:Lnl0;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lnl0;->s(Ljava/lang/Object;)V
+
     return-void
+.end method
 
-    :cond_1
-    invoke-virtual {p0}, Lpoe;->N()Landroid/view/View;
+.method public final s(Z)V
+    .registers 3
 
-    move-result-object v0
+    const-string v0, "app.pinLock.screenshotEnabled"
 
-    check-cast v0, Lk9d;
+    invoke-virtual {p0, v0, p1}, Li3;->h(Ljava/lang/String;Z)V
 
-    invoke-virtual {v0, p1}, Lk9d;->setLayout(Landroid/text/Layout;)V
-
-    invoke-virtual {p0}, Lpoe;->N()Landroid/view/View;
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    iget-object p0, p0, Lj9d;->l:Lyce;
 
-    invoke-virtual {p0}, Lpoe;->t()V
+    invoke-virtual {p0, v0, p1}, Lyce;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    return-void
-.end method
-
-.method public final setAliasColor(I)V
-    .registers 3
-
-    iget-object p0, p0, Lpoe;->c:Ljava/lang/Object;
-
-    invoke-interface {p0}, Lxh7;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lk9d;
-
-    invoke-virtual {p0, p1}, Lk9d;->setTextColor(I)V
-
-    :cond_0
     return-void
 .end method

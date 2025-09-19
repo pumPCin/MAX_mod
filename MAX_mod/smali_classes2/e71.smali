@@ -1,157 +1,89 @@
-.class public final Le71;
+.class public abstract synthetic Le71;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ld71;
-
 
 # static fields
-.field public static final e:Ljava/util/List;
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
-
-# instance fields
-.field public final a:Lru/ok/android/externcalls/analytics/CallAnalyticsSender;
-
-.field public final b:Lxwe;
-
-.field public c:Lru/ok/android/externcalls/analytics/events/EventItemsMap;
-
-.field public final d:Ljava/util/ArrayList;
+.field public static final synthetic $EnumSwitchMapping$1:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 6
 
-    const-string v0, "rtt"
-
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {}, Ld71;->values()[Ld71;
 
     move-result-object v0
 
-    sput-object v0, Le71;->e:Ljava/util/List;
+    array-length v0, v0
 
-    return-void
-.end method
+    new-array v0, v0, [I
 
-.method public constructor <init>(Lru/ok/android/externcalls/analytics/CallAnalyticsSender;Lxwe;)V
-    .registers 3
+    const/4 v1, 0x1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
 
-    iput-object p1, p0, Le71;->a:Lru/ok/android/externcalls/analytics/CallAnalyticsSender;
+    :try_start_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    iput-object p2, p0, Le71;->b:Lxwe;
+    :catch_0
+    const/4 v3, 0x2
 
-    new-instance p1, Ljava/util/ArrayList;
+    :try_start_1
+    aput v3, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+    :catch_1
+    const/4 v4, 0x3
 
-    iput-object p1, p0, Le71;->d:Ljava/util/ArrayList;
+    :try_start_2
+    aput v4, v0, v3
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    return-void
-.end method
+    :catch_2
+    const/4 v5, 0x4
 
+    :try_start_3
+    aput v5, v0, v4
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-# virtual methods
-.method public final b(Lqog;Lru/ok/android/externcalls/analytics/events/EventItemsMap;)V
-    .registers 7
+    :catch_3
+    sput-object v0, Le71;->$EnumSwitchMapping$0:[I
 
-    iget-object v0, p1, Lqog;->c:Lru/ok/android/externcalls/analytics/events/EventItemsMap;
+    invoke-static {}, Lvg1;->values()[Lvg1;
 
-    invoke-virtual {v0, p2}, Lru/ok/android/externcalls/analytics/events/EventItemsMap;->addAll(Lru/ok/android/externcalls/analytics/events/EventItemsMap;)Lru/ok/android/externcalls/analytics/events/EventItemsMap;
+    move-result-object v0
 
-    iget-object p2, p1, Lqog;->d:Ljava/lang/Long;
+    array-length v0, v0
 
-    if-eqz p2, :cond_0
+    new-array v0, v0, [I
 
-    goto :goto_0
+    :try_start_4
+    aput v1, v0, v2
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    :cond_0
-    iget-object p2, p0, Le71;->b:Lxwe;
+    :catch_4
+    :try_start_5
+    aput v3, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
-    invoke-virtual {p2}, Lxwe;->a()Ljava/lang/Long;
+    :catch_5
+    :try_start_6
+    aput v4, v0, v3
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
-    move-result-object p2
-
-    if-eqz p2, :cond_1
-
-    :goto_0
-    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v1
-
-    :goto_1
-    new-instance p2, Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent$Builder;
-
-    iget-object v3, p1, Lqog;->a:Ljava/lang/String;
-
-    iget-object p1, p1, Lqog;->b:Lru/ok/android/externcalls/analytics/events/EventItemValue;
-
-    invoke-direct {p2, v3, p1}, Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent$Builder;-><init>(Ljava/lang/String;Lru/ok/android/externcalls/analytics/events/EventItemValue;)V
-
-    invoke-virtual {v0}, Lru/ok/android/externcalls/analytics/events/EventItemsMap;->getItems()Ljava/util/Map;
-
-    move-result-object p1
-
-    invoke-virtual {p2, p1}, Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent$Builder;->addAll(Ljava/util/Map;)Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent$Builder;
-
-    move-result-object p1
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p2
-
-    const-string v0, "timestamp"
-
-    invoke-virtual {p1, v0, p2}, Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent$Builder;->set(Ljava/lang/String;Ljava/lang/Long;)Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent$Builder;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent$Builder;->build()Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent;
-
-    move-result-object p1
-
-    iget-object p0, p0, Le71;->a:Lru/ok/android/externcalls/analytics/CallAnalyticsSender;
-
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/analytics/CallAnalyticsSender;->send(Lru/ok/android/externcalls/analytics/events/CallAnalyticsEvent;)V
-
-    return-void
-.end method
-
-.method public final c(Ljava/lang/String;Lru/ok/android/externcalls/analytics/events/EventItemValue;Lru/ok/android/externcalls/analytics/events/EventItemsMap;)V
-    .registers 6
-
-    new-instance v0, Lqog;
-
-    iget-object v1, p0, Le71;->b:Lxwe;
-
-    invoke-virtual {v1}, Lxwe;->a()Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-direct {v0, p1, p2, p3, v1}, Lqog;-><init>(Ljava/lang/String;Lru/ok/android/externcalls/analytics/events/EventItemValue;Lru/ok/android/externcalls/analytics/events/EventItemsMap;Ljava/lang/Long;)V
-
-    iget-object p1, p0, Le71;->c:Lru/ok/android/externcalls/analytics/events/EventItemsMap;
-
-    if-nez p1, :cond_0
-
-    iget-object p0, p0, Le71;->d:Ljava/util/ArrayList;
-
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p0, v0, p1}, Le71;->b(Lqog;Lru/ok/android/externcalls/analytics/events/EventItemsMap;)V
+    :catch_6
+    sput-object v0, Le71;->$EnumSwitchMapping$1:[I
 
     return-void
 .end method

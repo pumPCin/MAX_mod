@@ -1,302 +1,239 @@
 .class public final Lm53;
-.super Ls46;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lz2d;
 
 
 # instance fields
-.field public final X:J
+.field public final a:Lz2d;
 
-.field public final Y:Z
+.field public b:Z
 
-.field public final c:J
-
-.field public final o:J
+.field public final synthetic c:Lo53;
 
 
 # direct methods
-.method public constructor <init>(Lnxe;JJ)V
-    .registers 13
+.method public constructor <init>(Lo53;Lz2d;)V
+    .registers 3
 
-    invoke-direct {p0, p1}, Ls46;-><init>(Lnxe;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Lnxe;->h()I
+    iput-object p1, p0, Lm53;->c:Lo53;
 
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_9
-
-    new-instance v0, Llxe;
-
-    invoke-direct {v0}, Llxe;-><init>()V
-
-    const-wide/16 v3, 0x0
-
-    invoke-virtual {p1, v1, v0, v3, v4}, Lnxe;->m(ILlxe;J)Llxe;
-
-    move-result-object p1
-
-    invoke-static {v3, v4, p2, p3}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide p2
-
-    iget-boolean v0, p1, Llxe;->r0:Z
-
-    if-nez v0, :cond_1
-
-    cmp-long v0, p2, v3
-
-    if-eqz v0, :cond_1
-
-    iget-boolean v0, p1, Llxe;->n0:Z
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;
-
-    invoke-direct {p0, v2}, Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;-><init>(I)V
-
-    throw p0
-
-    :cond_1
-    :goto_0
-    const-wide/high16 v5, -0x8000000000000000L
-
-    cmp-long v0, p4, v5
-
-    if-nez v0, :cond_2
-
-    iget-wide p4, p1, Llxe;->t0:J
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {v3, v4, p4, p5}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide p4
-
-    :goto_1
-    iget-wide v3, p1, Llxe;->t0:J
-
-    const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v0, v3, v5
-
-    if-eqz v0, :cond_5
-
-    cmp-long v0, p4, v3
-
-    if-lez v0, :cond_3
-
-    move-wide p4, v3
-
-    :cond_3
-    cmp-long v0, p2, p4
-
-    if-gtz v0, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    new-instance p0, Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1}, Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;-><init>(I)V
-
-    throw p0
-
-    :cond_5
-    :goto_2
-    iput-wide p2, p0, Lm53;->c:J
-
-    iput-wide p4, p0, Lm53;->o:J
-
-    cmp-long v0, p4, v5
-
-    if-nez v0, :cond_6
-
-    move-wide p2, v5
-
-    goto :goto_3
-
-    :cond_6
-    sub-long p2, p4, p2
-
-    :goto_3
-    iput-wide p2, p0, Lm53;->X:J
-
-    iget-boolean p1, p1, Llxe;->o0:Z
-
-    if-eqz p1, :cond_8
-
-    if-eqz v0, :cond_7
-
-    cmp-long p1, v3, v5
-
-    if-eqz p1, :cond_8
-
-    cmp-long p1, p4, v3
-
-    if-nez p1, :cond_8
-
-    :cond_7
-    move v1, v2
-
-    :cond_8
-    iput-boolean v1, p0, Lm53;->Y:Z
+    iput-object p2, p0, Lm53;->a:Lz2d;
 
     return-void
-
-    :cond_9
-    new-instance p0, Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;
-
-    invoke-direct {p0, v1}, Lcom/google/android/exoplayer2/source/ClippingMediaSource$IllegalClippingException;-><init>(I)V
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public final f(ILixe;Z)Lixe;
-    .registers 14
+.method public final b()V
+    .registers 1
 
-    iget-object v2, p0, Ls46;->b:Lnxe;
+    iget-object p0, p0, Lm53;->a:Lz2d;
 
-    const/4 v3, 0x0
+    invoke-interface {p0}, Lz2d;->b()V
 
-    invoke-virtual {v2, v3, p2, p3}, Lnxe;->f(ILixe;Z)Lixe;
+    return-void
+.end method
 
-    iget-wide v2, p2, Lixe;->X:J
+.method public final e()Z
+    .registers 2
 
-    iget-wide v4, p0, Lm53;->c:J
+    iget-object v0, p0, Lm53;->c:Lo53;
 
-    sub-long v6, v2, v4
+    invoke-virtual {v0}, Lo53;->b()Z
 
-    iget-wide v2, p0, Lm53;->X:J
-
-    const-wide v4, -0x7fffffffffffffffL    # -4.9E-324
-
-    cmp-long v0, v2, v4
+    move-result v0
 
     if-nez v0, :cond_0
 
-    goto :goto_0
+    iget-object p0, p0, Lm53;->a:Lz2d;
+
+    invoke-interface {p0}, Lz2d;->e()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_0
-    sub-long v4, v2, v6
+    const/4 p0, 0x0
 
+    return p0
+.end method
+
+.method public final h(J)I
+    .registers 4
+
+    iget-object v0, p0, Lm53;->c:Lo53;
+
+    invoke-virtual {v0}, Lo53;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p0, -0x3
+
+    return p0
+
+    :cond_0
+    iget-object p0, p0, Lm53;->a:Lz2d;
+
+    invoke-interface {p0, p1, p2}, Lz2d;->h(J)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final o(Lzxc;Lga4;I)I
+    .registers 15
+
+    iget-object v0, p0, Lm53;->c:Lo53;
+
+    invoke-virtual {v0}, Lo53;->b()Z
+
+    move-result v1
+
+    const/4 v2, -0x3
+
+    if-eqz v1, :cond_0
+
+    return v2
+
+    :cond_0
+    iget-boolean v1, p0, Lm53;->b:Z
+
+    const/4 v3, 0x4
+
+    const/4 v4, -0x4
+
+    if-eqz v1, :cond_1
+
+    iput v3, p2, Llx;->b:I
+
+    return v4
+
+    :cond_1
+    invoke-virtual {v0}, Lo53;->l()J
+
+    move-result-wide v5
+
+    iget-object v1, p0, Lm53;->a:Lz2d;
+
+    invoke-interface {v1, p1, p2, p3}, Lz2d;->o(Lzxc;Lga4;I)I
+
+    move-result p3
+
+    const/4 v1, -0x5
+
+    const-wide/high16 v7, -0x8000000000000000L
+
+    if-ne p3, v1, :cond_6
+
+    iget-object p0, p1, Lzxc;->c:Ljava/lang/Object;
+
+    check-cast p0, Lx46;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget p2, p0, Lx46;->H:I
+
+    iget p3, p0, Lx46;->G:I
+
+    if-nez p3, :cond_3
+
+    if-eqz p2, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    return v1
+
+    :cond_3
     :goto_0
-    iget-object v0, p2, Lixe;->a:Ljava/lang/Object;
+    iget-wide v2, v0, Lo53;->X:J
 
-    iget-object v2, p2, Lixe;->b:Ljava/lang/Object;
+    const-wide/16 v4, 0x0
 
-    sget-object v8, Lk8;->Y:Lk8;
-
-    const/4 v9, 0x0
+    cmp-long v2, v2, v4
 
     const/4 v3, 0x0
 
-    move-object v1, v0
+    if-eqz v2, :cond_4
 
-    move-object v0, p2
+    move p3, v3
 
-    invoke-virtual/range {v0 .. v9}, Lixe;->g(Ljava/lang/Object;Ljava/lang/Object;IJJLk8;Z)V
+    :cond_4
+    iget-wide v4, v0, Lo53;->Y:J
 
-    return-object p2
-.end method
+    cmp-long v0, v4, v7
 
-.method public final m(ILlxe;J)Llxe;
-    .registers 10
+    if-eqz v0, :cond_5
 
-    const/4 p1, 0x0
+    move p2, v3
 
-    const-wide/16 p3, 0x0
+    :cond_5
+    invoke-virtual {p0}, Lx46;->a()Lu46;
 
-    iget-object v0, p0, Ls46;->b:Lnxe;
+    move-result-object p0
 
-    invoke-virtual {v0, p1, p2, p3, p4}, Lnxe;->m(ILlxe;J)Llxe;
+    iput p3, p0, Lu46;->F:I
 
-    iget-wide p3, p2, Llxe;->w0:J
+    iput p2, p0, Lu46;->G:I
 
-    iget-wide v0, p0, Lm53;->c:J
+    new-instance p2, Lx46;
 
-    add-long/2addr p3, v0
+    invoke-direct {p2, p0}, Lx46;-><init>(Lu46;)V
 
-    iput-wide p3, p2, Llxe;->w0:J
+    iput-object p2, p1, Lzxc;->c:Ljava/lang/Object;
 
-    iget-wide p3, p0, Lm53;->X:J
+    return v1
 
-    iput-wide p3, p2, Llxe;->t0:J
+    :cond_6
+    iget-wide v0, v0, Lo53;->Y:J
 
-    iget-boolean p1, p0, Lm53;->Y:Z
+    cmp-long p1, v0, v7
 
-    iput-boolean p1, p2, Llxe;->o0:Z
+    if-eqz p1, :cond_9
 
-    iget-wide p3, p2, Llxe;->s0:J
+    if-ne p3, v4, :cond_7
 
-    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
+    iget-wide v9, p2, Lga4;->Z:J
 
-    cmp-long p1, p3, v2
+    cmp-long p1, v9, v0
 
-    if-eqz p1, :cond_1
+    if-gez p1, :cond_8
 
-    invoke-static {p3, p4, v0, v1}, Ljava/lang/Math;->max(JJ)J
+    :cond_7
+    if-ne p3, v2, :cond_9
 
-    move-result-wide p3
+    cmp-long p1, v5, v7
 
-    iput-wide p3, p2, Llxe;->s0:J
+    if-nez p1, :cond_9
 
-    iget-wide p0, p0, Lm53;->o:J
+    iget-boolean p1, p2, Lga4;->Y:Z
 
-    cmp-long v4, p0, v2
+    if-nez p1, :cond_9
 
-    if-nez v4, :cond_0
+    :cond_8
+    invoke-virtual {p2}, Lga4;->u()V
 
-    goto :goto_0
+    iput v3, p2, Llx;->b:I
 
-    :cond_0
-    invoke-static {p3, p4, p0, p1}, Ljava/lang/Math;->min(JJ)J
+    const/4 p1, 0x1
 
-    move-result-wide p3
+    iput-boolean p1, p0, Lm53;->b:Z
 
-    :goto_0
-    sub-long/2addr p3, v0
+    return v4
 
-    iput-wide p3, p2, Llxe;->s0:J
-
-    :cond_1
-    invoke-static {v0, v1}, Lyhf;->K(J)J
-
-    move-result-wide p0
-
-    iget-wide p3, p2, Llxe;->X:J
-
-    cmp-long v0, p3, v2
-
-    if-eqz v0, :cond_2
-
-    add-long/2addr p3, p0
-
-    iput-wide p3, p2, Llxe;->X:J
-
-    :cond_2
-    iget-wide p3, p2, Llxe;->Y:J
-
-    cmp-long v0, p3, v2
-
-    if-eqz v0, :cond_3
-
-    add-long/2addr p3, p0
-
-    iput-wide p3, p2, Llxe;->Y:J
-
-    :cond_3
-    return-object p2
+    :cond_9
+    return p3
 .end method

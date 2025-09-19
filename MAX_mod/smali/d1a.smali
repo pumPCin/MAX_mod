@@ -1,355 +1,105 @@
-.class public final Ld1a;
+.class public abstract Ld1a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ld4a;
-.implements Lnp4;
-
-
-# instance fields
-.field public X:Z
-
-.field public final Y:Ljava/lang/Object;
-
-.field public final synthetic a:I
-
-.field public final b:Lw1e;
-
-.field public final c:Ljava/lang/Object;
-
-.field public o:Lnp4;
-
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Lw1e;I)V
-    .registers 5
+.method public static a(Landroid/app/Notification$Builder;Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
+    .registers 2
 
-    iput p4, p0, Ld1a;->a:I
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
 
-    iput-object p1, p0, Ld1a;->Y:Ljava/lang/Object;
+    move-result-object p0
 
-    iput-object p3, p0, Ld1a;->b:Lw1e;
-
-    iput-object p2, p0, Ld1a;->c:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
+    return-object p0
 .end method
 
+.method public static b(Landroid/app/Notification$Action$Builder;Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;
+    .registers 2
 
-# virtual methods
-.method public final b()V
-    .registers 3
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Action$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;
 
-    iget v0, p0, Ld1a;->a:I
+    move-result-object p0
 
-    packed-switch v0, :pswitch_data_0
-
-    iget-boolean v0, p0, Ld1a;->X:Z
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ld1a;->X:Z
-
-    iget-object v0, p0, Ld1a;->Y:Ljava/lang/Object;
-
-    check-cast v0, Lvud;
-
-    iget-object p0, p0, Ld1a;->c:Ljava/lang/Object;
-
-    invoke-interface {v0, p0}, Lvud;->a(Ljava/lang/Object;)V
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Ld1a;->Y:Ljava/lang/Object;
-
-    check-cast v0, Ld4a;
-
-    iget-boolean v1, p0, Ld1a;->X:Z
-
-    if-eqz v1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Ld1a;->X:Z
-
-    iget-object p0, p0, Ld1a;->c:Ljava/lang/Object;
-
-    invoke-interface {v0, p0}, Ld4a;->d(Ljava/lang/Object;)V
-
-    invoke-interface {v0}, Ld4a;->b()V
-
-    :goto_1
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public final c(Lnp4;)V
-    .registers 3
+.method public static c(Landroid/app/Notification$Action$Builder;Landroid/app/RemoteInput;)Landroid/app/Notification$Action$Builder;
+    .registers 2
 
-    iget v0, p0, Ld1a;->a:I
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Action$Builder;->addRemoteInput(Landroid/app/RemoteInput;)Landroid/app/Notification$Action$Builder;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object p0
 
-    iget-object v0, p0, Ld1a;->o:Lnp4;
-
-    invoke-static {v0, p1}, Lrp4;->f(Lnp4;Lnp4;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iput-object p1, p0, Ld1a;->o:Lnp4;
-
-    iget-object p1, p0, Ld1a;->Y:Ljava/lang/Object;
-
-    check-cast p1, Lvud;
-
-    invoke-interface {p1, p0}, Lvud;->c(Lnp4;)V
-
-    :cond_0
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Ld1a;->o:Lnp4;
-
-    invoke-static {v0, p1}, Lrp4;->f(Lnp4;Lnp4;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iput-object p1, p0, Ld1a;->o:Lnp4;
-
-    iget-object p1, p0, Ld1a;->Y:Ljava/lang/Object;
-
-    check-cast p1, Ld4a;
-
-    invoke-interface {p1, p0}, Ld4a;->c(Lnp4;)V
-
-    :cond_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public final d(Ljava/lang/Object;)V
+.method public static d(Landroid/app/Notification$Action$Builder;)Landroid/app/Notification$Action;
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static e(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)Landroid/app/Notification$Action$Builder;
     .registers 4
 
-    iget v0, p0, Ld1a;->a:I
+    new-instance v0, Landroid/app/Notification$Action$Builder;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v0, p0, p1, p2}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    iget-boolean v0, p0, Ld1a;->X:Z
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, Ld1a;->b:Lw1e;
-
-    iget-object v1, p0, Ld1a;->c:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, p1}, Lw1e;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    invoke-static {p1}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    iget-object v0, p0, Ld1a;->o:Lnp4;
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    invoke-virtual {p0, p1}, Ld1a;->onError(Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    iget-boolean v0, p0, Ld1a;->X:Z
-
-    if-eqz v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    :try_start_1
-    iget-object v0, p0, Ld1a;->b:Lw1e;
-
-    iget-object v1, p0, Ld1a;->c:Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, p1}, Lw1e;->accept(Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception p1
-
-    invoke-static {p1}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    iget-object v0, p0, Ld1a;->o:Lnp4;
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    invoke-virtual {p0, p1}, Ld1a;->onError(Ljava/lang/Throwable;)V
-
-    :goto_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method
 
-.method public final g()V
+.method public static f(Landroid/app/Notification;)Ljava/lang/String;
+    .registers 1
+
+    invoke-virtual {p0}, Landroid/app/Notification;->getGroup()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static g(Landroid/app/Notification$Builder;Ljava/lang/String;)Landroid/app/Notification$Builder;
     .registers 2
 
-    iget v0, p0, Ld1a;->a:I
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setGroup(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object p0
 
-    iget-object p0, p0, Ld1a;->o:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Ld1a;->o:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public final h()Z
+.method public static h(Landroid/app/Notification$Builder;Z)Landroid/app/Notification$Builder;
     .registers 2
 
-    iget v0, p0, Ld1a;->a:I
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setGroupSummary(Z)Landroid/app/Notification$Builder;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object p0
 
-    iget-object p0, p0, Ld1a;->o:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->h()Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Ld1a;->o:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->h()Z
-
-    move-result p0
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public final onError(Ljava/lang/Throwable;)V
-    .registers 3
+.method public static i(Landroid/app/Notification$Builder;Z)Landroid/app/Notification$Builder;
+    .registers 2
 
-    iget v0, p0, Ld1a;->a:I
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setLocalOnly(Z)Landroid/app/Notification$Builder;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object p0
 
-    iget-boolean v0, p0, Ld1a;->X:Z
+    return-object p0
+.end method
 
-    if-eqz v0, :cond_0
+.method public static j(Landroid/app/Notification$Builder;Ljava/lang/String;)Landroid/app/Notification$Builder;
+    .registers 2
 
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1}, Landroid/app/Notification$Builder;->setSortKey(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
-    goto :goto_0
+    move-result-object p0
 
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ld1a;->X:Z
-
-    iget-object p0, p0, Ld1a;->Y:Ljava/lang/Object;
-
-    check-cast p0, Lvud;
-
-    invoke-interface {p0, p1}, Lvud;->onError(Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    iget-boolean v0, p0, Ld1a;->X:Z
-
-    if-eqz v0, :cond_1
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ld1a;->X:Z
-
-    iget-object p0, p0, Ld1a;->Y:Ljava/lang/Object;
-
-    check-cast p0, Ld4a;
-
-    invoke-interface {p0, p1}, Ld4a;->onError(Ljava/lang/Throwable;)V
-
-    :goto_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

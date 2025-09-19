@@ -1,54 +1,45 @@
-.class public final synthetic Lt88;
-.super Lo8;
+.class public interface abstract Lt88;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lz96;
-
-
-# static fields
-.field public static final n0:Lt88;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 5
-
-    new-instance v0, Lt88;
-
-    const-string v1, "<init>(Ljava/lang/Object;Ljava/lang/Object;)V"
-
-    const/4 v2, 0x4
-
-    const/4 v3, 0x3
-
-    const-class v4, Lura;
-
-    invoke-direct {v0, v3, v4, v1, v2}, Lo8;-><init>(ILjava/lang/Class;Ljava/lang/String;I)V
-
-    sput-object v0, Lt88;->n0:Lt88;
-
-    return-void
-.end method
+.implements Luj6;
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public a(Landroid/content/Context;Z)Lbk6;
     .registers 4
 
-    check-cast p1, Ljava/lang/Boolean;
+    invoke-static {p0}, Ll37;->m(Ljava/lang/Object;)Llqc;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result-object p0
 
-    check-cast p2, Ljava/util/List;
+    sget-object v0, Llqc;->X:Llqc;
 
-    check-cast p3, Lkotlin/coroutines/Continuation;
+    invoke-static {p1, p0, v0, p2}, Lxh4;->h(Landroid/content/Context;Llqc;Llqc;Z)Lxh4;
 
-    sget-object p0, Lb98;->D0:[Lsf7;
+    move-result-object p0
 
-    new-instance p0, Lura;
+    return-object p0
+.end method
 
-    invoke-direct {p0, p1, p2}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public abstract b()Landroid/graphics/Matrix;
+.end method
+
+.method public c()I
+    .registers 1
+
+    const/16 p0, 0x2601
+
+    return p0
+.end method
+
+.method public e(II)Lk4e;
+    .registers 3
+
+    new-instance p0, Lk4e;
+
+    invoke-direct {p0, p1, p2}, Lk4e;-><init>(II)V
 
     return-object p0
 .end method

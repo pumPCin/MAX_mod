@@ -4,26 +4,10 @@
 
 
 # direct methods
-.method public static a(Ljava/lang/Object;Landroid/util/Property;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
-    .registers 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            ">(TT;",
-            "Landroid/util/Property<",
-            "TT;TV;>;",
-            "Landroid/graphics/Path;",
-            ")",
-            "Landroid/animation/ObjectAnimator;"
-        }
-    .end annotation
+.method public static a(Landroid/app/Notification$MessagingStyle;Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;
+    .registers 2
 
-    const/4 v0, 0x0
-
-    invoke-static {p0, p1, v0, p2}, Landroid/animation/ObjectAnimator;->ofObject(Ljava/lang/Object;Landroid/util/Property;Landroid/animation/TypeConverter;Landroid/graphics/Path;)Landroid/animation/ObjectAnimator;
+    invoke-virtual {p0, p1}, Landroid/app/Notification$MessagingStyle;->addHistoricMessage(Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;
 
     move-result-object p0
 

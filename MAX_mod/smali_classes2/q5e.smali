@@ -1,85 +1,119 @@
-.class public final enum Lq5e;
-.super Ljava/lang/Enum;
+.class public final synthetic Lq5e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/View$OnKeyListener;
 
-# static fields
-.field public static final enum a:Lq5e;
 
-.field public static final enum b:Lq5e;
+# instance fields
+.field public final synthetic a:Ls5e;
 
-.field public static final enum c:Lq5e;
-
-.field public static final synthetic o:[Lq5e;
+.field public final synthetic b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public synthetic constructor <init>(Ls5e;I)V
+    .registers 3
 
-    new-instance v0, Lq5e;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "DEFAULT"
+    iput-object p1, p0, Lq5e;->a:Ls5e;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lq5e;->a:Lq5e;
-
-    new-instance v1, Lq5e;
-
-    const-string v2, "WITH_CALL_PIP"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lq5e;->b:Lq5e;
-
-    new-instance v2, Lq5e;
-
-    const-string v3, "WITH_VIDEO_PIP"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lq5e;->c:Lq5e;
-
-    filled-new-array {v0, v1, v2}, [Lq5e;
-
-    move-result-object v0
-
-    sput-object v0, Lq5e;->o:[Lq5e;
+    iput p2, p0, Lq5e;->b:I
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lq5e;
-    .registers 2
 
-    const-class v0, Lq5e;
+# virtual methods
+.method public final onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
+    .registers 6
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const/16 p1, 0x43
+
+    if-ne p2, p1, :cond_4
+
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+
+    move-result p1
+
+    if-nez p1, :cond_4
+
+    iget-object p1, p0, Lq5e;->a:Ls5e;
+
+    iget-object p1, p1, Ls5e;->F0:Ls77;
+
+    check-cast p1, Ljj3;
+
+    iget p0, p0, Lq5e;->b:I
+
+    add-int/lit8 p2, p0, -0x1
+
+    invoke-virtual {p1, p0}, Ljj3;->G0(I)Ly77;
 
     move-result-object p0
 
-    check-cast p0, Lq5e;
+    if-eqz p0, :cond_0
 
-    return-object p0
-.end method
+    move-object p3, p0
 
-.method public static values()[Lq5e;
-    .registers 1
+    check-cast p3, Ls5e;
 
-    sget-object v0, Lq5e;->o:[Lq5e;
+    invoke-virtual {p3}, Ls5e;->y()Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    move-result-object p3
 
-    move-result-object v0
+    goto :goto_0
 
-    check-cast v0, [Lq5e;
+    :cond_0
+    const/4 p3, 0x0
 
-    return-object v0
+    :goto_0
+    const/4 v0, 0x1
+
+    const-string v1, ""
+
+    if-eqz p3, :cond_2
+
+    invoke-virtual {p3}, Ljava/lang/String;->length()I
+
+    move-result p3
+
+    if-nez p3, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    if-eqz p0, :cond_3
+
+    check-cast p0, Ls5e;
+
+    invoke-virtual {p0, v1}, Ls5e;->A(Ljava/lang/String;)V
+
+    return v0
+
+    :cond_2
+    :goto_1
+    invoke-virtual {p1, p2}, Ljj3;->G0(I)Ly77;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_3
+
+    check-cast p0, Ls5e;
+
+    invoke-virtual {p0, v1}, Ls5e;->A(Ljava/lang/String;)V
+
+    iget-object p0, p0, Ls5e;->G0:Lej3;
+
+    invoke-virtual {p0}, Landroid/view/View;->requestFocus()Z
+
+    :cond_3
+    return v0
+
+    :cond_4
+    const/4 p0, 0x0
+
+    return p0
 .end method

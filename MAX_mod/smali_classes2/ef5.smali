@@ -1,109 +1,51 @@
-.class public final synthetic Lef5;
+.class public abstract Lef5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/concurrent/Callable;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lmg5;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lmg5;I)V
-    .registers 3
+.method public static a([B)Lff5;
+    .registers 11
 
-    iput p2, p0, Lef5;->a:I
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$ExternalVideoSend;
 
-    iput-object p1, p0, Lef5;->b:Lmg5;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final call()Ljava/lang/Object;
-    .registers 5
-
-    iget v0, p0, Lef5;->a:I
-
-    iget-object p0, p0, Lef5;->b:Lmg5;
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lmg5;->c()Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v0, 0x0
-
-    const-string v1, "SELECT COUNT(*) FROM favorite_stickers"
-
-    invoke-static {v0, v1}, Lqpc;->c(ILjava/lang/String;)Lqpc;
-
-    move-result-object v1
-
-    iget-object p0, p0, Lmg5;->a:Lapc;
-
-    invoke-virtual {p0}, Lapc;->b()V
-
-    invoke-virtual {p0, v1}, Lapc;->n(Lshe;)Landroid/database/Cursor;
-
-    move-result-object p0
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$ExternalVideoSend;-><init>()V
 
     :try_start_0
-    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {p0, v0}, Landroid/database/Cursor;->getLong(I)J
-
-    move-result-wide v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_1
-
-    :cond_0
-    const-wide/16 v2, 0x0
-
-    :goto_0
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
-
-    invoke-virtual {v1}, Lqpc;->o()V
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v0, p0}, Lj29;->mergeFrom(Lj29;[B)Lj29;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Lru/ok/tamtam/nano/Tasks$ExternalVideoSend;
+    :try_end_0
+    .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :goto_1
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+    new-instance v0, Lff5;
 
-    invoke-virtual {v1}, Lqpc;->o()V
+    iget-wide v1, p0, Lru/ok/tamtam/nano/Tasks$ExternalVideoSend;->requestId:J
+
+    iget-object v5, p0, Lru/ok/tamtam/nano/Tasks$ExternalVideoSend;->externalUrl:Ljava/lang/String;
+
+    iget-object v8, p0, Lru/ok/tamtam/nano/Tasks$ExternalVideoSend;->attachLocalId:Ljava/lang/String;
+
+    iget-wide v3, p0, Lru/ok/tamtam/nano/Tasks$ExternalVideoSend;->messageId:J
+
+    iget-wide v6, p0, Lru/ok/tamtam/nano/Tasks$ExternalVideoSend;->chatId:J
+
+    iget-object v9, p0, Lru/ok/tamtam/nano/Tasks$ExternalVideoSend;->stickerId:Ljava/lang/String;
+
+    invoke-direct/range {v0 .. v9}, Lff5;-><init>(JJLjava/lang/String;JLjava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    move-object p0, v0
+
+    new-instance v0, Lru/ok/tamtam/nano/ProtoException;
+
+    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
     throw v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

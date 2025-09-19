@@ -1,161 +1,252 @@
-.class public final synthetic Legf;
+.class public final Legf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lwke;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public a:Ljava/lang/String;
 
-.field public final synthetic b:Lfgf;
+.field public b:I
 
-.field public final synthetic c:Lic0;
+.field public c:Z
+
+.field public d:I
+
+.field public e:Z
+
+.field public f:I
+
+.field public g:I
+
+.field public h:I
+
+.field public i:I
+
+.field public j:I
+
+.field public k:F
+
+.field public l:Ljava/lang/String;
+
+.field public m:I
+
+.field public n:I
+
+.field public o:Landroid/text/Layout$Alignment;
+
+.field public p:Landroid/text/Layout$Alignment;
+
+.field public q:I
+
+.field public r:Lo1f;
+
+.field public s:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Lfgf;Lic0;I)V
-    .registers 4
-
-    iput p3, p0, Legf;->a:I
-
-    iput-object p1, p0, Legf;->b:Lfgf;
-
-    iput-object p2, p0, Legf;->c:Lic0;
+.method public constructor <init>()V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Legf;->f:I
+
+    iput v0, p0, Legf;->g:I
+
+    iput v0, p0, Legf;->h:I
+
+    iput v0, p0, Legf;->i:I
+
+    iput v0, p0, Legf;->j:I
+
+    iput v0, p0, Legf;->m:I
+
+    iput v0, p0, Legf;->n:I
+
+    iput v0, p0, Legf;->q:I
+
+    const v0, 0x7f7fffff    # Float.MAX_VALUE
+
+    iput v0, p0, Legf;->s:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .registers 4
+.method public final a(Legf;)V
+    .registers 6
 
-    iget v0, p0, Legf;->a:I
+    if-eqz p1, :cond_e
 
-    packed-switch v0, :pswitch_data_0
+    iget-boolean v0, p0, Legf;->c:Z
 
-    iget-object v0, p0, Legf;->b:Lfgf;
-
-    iget-object v0, v0, Lfgf;->c:Lm75;
-
-    check-cast v0, Lqtc;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v1, Lrl8;
-
-    const/16 v2, 0x1d
-
-    iget-object p0, p0, Legf;->c:Lic0;
-
-    invoke-direct {v1, v0, v2, p0}, Lrl8;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lqtc;->o(Lotc;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/Iterable;
-
-    return-object p0
-
-    :pswitch_0
-    iget-object v0, p0, Legf;->c:Lic0;
-
-    iget-object p0, p0, Legf;->b:Lfgf;
-
-    iget-object p0, p0, Lfgf;->c:Lm75;
-
-    check-cast p0, Lqtc;
-
-    invoke-virtual {p0}, Lqtc;->m()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
-
-    :try_start_0
-    invoke-static {v1, v0}, Lqtc;->n(Landroid/database/sqlite/SQLiteDatabase;Lic0;)Ljava/lang/Long;
-
-    move-result-object v0
+    const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    iget-boolean v0, p1, Legf;->c:Z
 
-    goto :goto_0
+    if-eqz v0, :cond_0
+
+    iget v0, p1, Legf;->b:I
+
+    iput v0, p0, Legf;->b:I
+
+    iput-boolean v1, p0, Legf;->c:Z
 
     :cond_0
-    invoke-virtual {p0}, Lqtc;->m()Landroid/database/sqlite/SQLiteDatabase;
+    iget v0, p0, Legf;->h:I
 
-    move-result-object p0
+    const/4 v2, -0x1
 
-    const-string v2, "SELECT 1 FROM events WHERE context_id = ? LIMIT 1"
+    if-ne v0, v2, :cond_1
 
-    invoke-virtual {v0}, Ljava/lang/Long;->toString()Ljava/lang/String;
+    iget v0, p1, Legf;->h:I
 
-    move-result-object v0
+    iput v0, p0, Legf;->h:I
 
-    filled-new-array {v0}, [Ljava/lang/String;
+    :cond_1
+    iget v0, p0, Legf;->i:I
 
-    move-result-object v0
+    if-ne v0, v2, :cond_2
 
-    invoke-virtual {p0, v2, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
+    iget v0, p1, Legf;->i:I
 
-    move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iput v0, p0, Legf;->i:I
 
-    :try_start_1
-    invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
+    :cond_2
+    iget-object v0, p0, Legf;->a:Ljava/lang/String;
 
-    move-result v0
+    if-nez v0, :cond_3
 
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object v0, p1, Legf;->a:Ljava/lang/String;
 
-    move-result-object v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    if-eqz v0, :cond_3
 
-    :try_start_2
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+    iput-object v0, p0, Legf;->a:Ljava/lang/String;
 
-    move-object p0, v0
+    :cond_3
+    iget v0, p0, Legf;->f:I
 
-    :goto_0
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    if-ne v0, v2, :cond_4
 
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    iget v0, p1, Legf;->f:I
 
-    return-object p0
+    iput v0, p0, Legf;->f:I
 
-    :catchall_0
-    move-exception p0
+    :cond_4
+    iget v0, p0, Legf;->g:I
 
-    goto :goto_1
+    if-ne v0, v2, :cond_5
 
-    :catchall_1
-    move-exception v0
+    iget v0, p1, Legf;->g:I
 
-    :try_start_3
-    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+    iput v0, p0, Legf;->g:I
 
-    throw v0
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :cond_5
+    iget v0, p0, Legf;->n:I
 
-    :goto_1
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+    if-ne v0, v2, :cond_6
 
-    throw p0
+    iget v0, p1, Legf;->n:I
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iput v0, p0, Legf;->n:I
+
+    :cond_6
+    iget-object v0, p0, Legf;->o:Landroid/text/Layout$Alignment;
+
+    if-nez v0, :cond_7
+
+    iget-object v0, p1, Legf;->o:Landroid/text/Layout$Alignment;
+
+    if-eqz v0, :cond_7
+
+    iput-object v0, p0, Legf;->o:Landroid/text/Layout$Alignment;
+
+    :cond_7
+    iget-object v0, p0, Legf;->p:Landroid/text/Layout$Alignment;
+
+    if-nez v0, :cond_8
+
+    iget-object v0, p1, Legf;->p:Landroid/text/Layout$Alignment;
+
+    if-eqz v0, :cond_8
+
+    iput-object v0, p0, Legf;->p:Landroid/text/Layout$Alignment;
+
+    :cond_8
+    iget v0, p0, Legf;->q:I
+
+    if-ne v0, v2, :cond_9
+
+    iget v0, p1, Legf;->q:I
+
+    iput v0, p0, Legf;->q:I
+
+    :cond_9
+    iget v0, p0, Legf;->j:I
+
+    if-ne v0, v2, :cond_a
+
+    iget v0, p1, Legf;->j:I
+
+    iput v0, p0, Legf;->j:I
+
+    iget v0, p1, Legf;->k:F
+
+    iput v0, p0, Legf;->k:F
+
+    :cond_a
+    iget-object v0, p0, Legf;->r:Lo1f;
+
+    if-nez v0, :cond_b
+
+    iget-object v0, p1, Legf;->r:Lo1f;
+
+    iput-object v0, p0, Legf;->r:Lo1f;
+
+    :cond_b
+    iget v0, p0, Legf;->s:F
+
+    const v3, 0x7f7fffff    # Float.MAX_VALUE
+
+    cmpl-float v0, v0, v3
+
+    if-nez v0, :cond_c
+
+    iget v0, p1, Legf;->s:F
+
+    iput v0, p0, Legf;->s:F
+
+    :cond_c
+    iget-boolean v0, p0, Legf;->e:Z
+
+    if-nez v0, :cond_d
+
+    iget-boolean v0, p1, Legf;->e:Z
+
+    if-eqz v0, :cond_d
+
+    iget v0, p1, Legf;->d:I
+
+    iput v0, p0, Legf;->d:I
+
+    iput-boolean v1, p0, Legf;->e:Z
+
+    :cond_d
+    iget v0, p0, Legf;->m:I
+
+    if-ne v0, v2, :cond_e
+
+    iget p1, p1, Legf;->m:I
+
+    if-eq p1, v2, :cond_e
+
+    iput p1, p0, Legf;->m:I
+
+    :cond_e
+    return-void
 .end method

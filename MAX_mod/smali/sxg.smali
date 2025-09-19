@@ -2,321 +2,375 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final g:Ljava/lang/Object;
-
-.field public static h:Lsxg;
-
-.field public static i:Landroid/os/HandlerThread;
+# interfaces
+.implements Lbed;
 
 
 # instance fields
-.field public final a:Ljava/util/HashMap;
+.field public final X:J
 
-.field public final b:Landroid/content/Context;
+.field public final Y:J
 
-.field public volatile c:Lte9;
+.field public final Z:[J
 
-.field public final d:Lhqc;
+.field public final a:J
 
-.field public final e:J
+.field public final b:I
 
-.field public final f:J
+.field public final c:J
+
+.field public final o:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lsxg;->g:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;)V
-    .registers 5
+.method public constructor <init>(JIJIJ[J)V
+    .registers 10
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/HashMap;
+    iput-wide p1, p0, Lsxg;->a:J
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    iput p3, p0, Lsxg;->b:I
 
-    iput-object v0, p0, Lsxg;->a:Ljava/util/HashMap;
+    iput-wide p4, p0, Lsxg;->c:J
 
-    new-instance v0, Lwxd;
+    iput p6, p0, Lsxg;->o:I
 
-    const/4 v1, 0x2
+    iput-wide p7, p0, Lsxg;->X:J
 
-    invoke-direct {v0, v1, p0}, Lwxd;-><init>(ILjava/lang/Object;)V
+    iput-object p9, p0, Lsxg;->Z:[J
 
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    const-wide/16 p3, -0x1
 
-    move-result-object p1
+    cmp-long p5, p7, p3
 
-    iput-object p1, p0, Lsxg;->b:Landroid/content/Context;
+    if-nez p5, :cond_0
 
-    new-instance p1, Lte9;
+    goto :goto_0
 
-    const/4 v1, 0x5
+    :cond_0
+    add-long p3, p1, p7
 
-    invoke-direct {p1, p2, v0, v1}, Lte9;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;I)V
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    iput-object p1, p0, Lsxg;->c:Lte9;
-
-    invoke-static {}, Lhqc;->B()Lhqc;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lsxg;->d:Lhqc;
-
-    const-wide/16 p1, 0x1388
-
-    iput-wide p1, p0, Lsxg;->e:J
-
-    const-wide/32 p1, 0x493e0
-
-    iput-wide p1, p0, Lsxg;->f:J
+    :goto_0
+    iput-wide p3, p0, Lsxg;->Y:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Landroid/content/ServiceConnection;Z)V
-    .registers 8
+.method public final a(J)J
+    .registers 15
 
-    new-instance v0, Laxg;
+    iget-wide v0, p0, Lsxg;->a:J
 
-    invoke-direct {v0, p1, p3}, Laxg;-><init>(Ljava/lang/String;Z)V
+    sub-long/2addr p1, v0
 
-    const-string p1, "Trying to unbind a GmsServiceConnection  that was not bound before.  config="
+    invoke-virtual {p0}, Lsxg;->c()Z
 
-    const-string p3, "Nonexistent connection status for service config: "
+    move-result v0
 
-    const-string v1, "ServiceConnection must not be null"
+    if-eqz v0, :cond_3
 
-    invoke-static {p2, v1}, Lmtg;->m(Ljava/lang/Object;Ljava/lang/String;)V
+    iget v0, p0, Lsxg;->b:I
 
-    iget-object v1, p0, Lsxg;->a:Ljava/util/HashMap;
+    int-to-long v0, v0
 
-    monitor-enter v1
+    cmp-long v0, p1, v0
 
-    :try_start_0
-    iget-object v2, p0, Lsxg;->a:Ljava/util/HashMap;
+    if-gtz v0, :cond_0
 
-    invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_2
 
-    move-result-object v2
+    :cond_0
+    iget-object v0, p0, Lsxg;->Z:[J
 
-    check-cast v2, Lbxg;
+    invoke-static {v0}, Lmq0;->i(Ljava/lang/Object;)V
 
-    if-eqz v2, :cond_2
+    long-to-double p1, p1
 
-    iget-object p3, v2, Lbxg;->a:Ljava/util/HashMap;
+    const-wide/high16 v1, 0x4070000000000000L    # 256.0
 
-    invoke-virtual {p3, p2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+    mul-double/2addr p1, v1
 
-    move-result p3
+    iget-wide v1, p0, Lsxg;->X:J
 
-    if-eqz p3, :cond_1
+    long-to-double v1, v1
 
-    iget-object p1, v2, Lbxg;->a:Ljava/util/HashMap;
+    div-double/2addr p1, v1
 
-    invoke-virtual {p1, p2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    double-to-long v1, p1
 
-    iget-object p1, v2, Lbxg;->a:Ljava/util/HashMap;
+    const/4 v3, 0x1
 
-    invoke-virtual {p1}, Ljava/util/HashMap;->isEmpty()Z
+    invoke-static {v0, v1, v2, v3}, Lnrf;->e([JJZ)I
 
-    move-result p1
+    move-result v1
 
-    if-eqz p1, :cond_0
+    int-to-long v2, v1
 
-    iget-object p1, p0, Lsxg;->c:Lte9;
+    iget-wide v4, p0, Lsxg;->c:J
 
-    const/4 p2, 0x0
+    mul-long/2addr v2, v4
 
-    invoke-virtual {p1, p2, v0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    const-wide/16 v6, 0x64
 
-    move-result-object p1
+    div-long/2addr v2, v6
 
-    iget-object p2, p0, Lsxg;->c:Lte9;
+    aget-wide v8, v0, v1
 
-    iget-wide v2, p0, Lsxg;->e:J
+    add-int/lit8 p0, v1, 0x1
 
-    invoke-virtual {p2, p1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    int-to-long v10, p0
+
+    mul-long/2addr v4, v10
+
+    div-long/2addr v4, v6
+
+    const/16 v6, 0x63
+
+    if-ne v1, v6, :cond_1
+
+    const-wide/16 v0, 0x100
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
+    :cond_1
+    aget-wide v0, v0, p0
+
+    :goto_0
+    cmp-long p0, v8, v0
+
+    if-nez p0, :cond_2
+
+    const-wide/16 p0, 0x0
 
     goto :goto_1
 
-    :cond_0
-    :goto_0
-    monitor-exit v1
-
-    return-void
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    invoke-virtual {v0}, Laxg;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
     :cond_2
-    new-instance p0, Ljava/lang/IllegalStateException;
+    long-to-double v6, v8
 
-    invoke-virtual {v0}, Laxg;->toString()Ljava/lang/String;
+    sub-double/2addr p1, v6
 
-    move-result-object p1
+    sub-long/2addr v0, v8
 
-    invoke-virtual {p3, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    long-to-double v0, v0
 
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    div-double p0, p1, v0
 
     :goto_1
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    sub-long/2addr v4, v2
 
-    throw p0
+    long-to-double v0, v4
+
+    mul-double/2addr p0, v0
+
+    invoke-static {p0, p1}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide p0
+
+    add-long/2addr p0, v2
+
+    return-wide p0
+
+    :cond_3
+    :goto_2
+    const-wide/16 p0, 0x0
+
+    return-wide p0
 .end method
 
-.method public final b(Laxg;Lsug;Ljava/lang/String;)Z
-    .registers 9
+.method public final b()J
+    .registers 3
 
-    const-string v0, "Trying to bind a GmsServiceConnection that was already connected before.  config="
+    iget-wide v0, p0, Lsxg;->Y:J
 
-    iget-object v1, p0, Lsxg;->a:Ljava/util/HashMap;
+    return-wide v0
+.end method
 
-    monitor-enter v1
+.method public final c()Z
+    .registers 1
 
-    :try_start_0
-    iget-object v2, p0, Lsxg;->a:Ljava/util/HashMap;
+    iget-object p0, p0, Lsxg;->Z:[J
 
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz p0, :cond_0
 
-    move-result-object v2
-
-    check-cast v2, Lbxg;
-
-    const/4 v3, 0x0
-
-    if-nez v2, :cond_0
-
-    new-instance v2, Lbxg;
-
-    invoke-direct {v2, p0, p1}, Lbxg;-><init>(Lsxg;Laxg;)V
-
-    iget-object v0, v2, Lbxg;->a:Ljava/util/HashMap;
-
-    invoke-virtual {v0, p2, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v2, p3, v3}, Lbxg;->a(Ljava/lang/String;Ljava/util/concurrent/Executor;)V
-
-    iget-object p0, p0, Lsxg;->a:Ljava/util/HashMap;
-
-    invoke-virtual {p0, p1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_0
-    iget-object p0, p0, Lsxg;->c:Lte9;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {p0, v4, p1}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
-
-    iget-object p0, v2, Lbxg;->a:Ljava/util/HashMap;
-
-    invoke-virtual {p0, p2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    iget-object p0, v2, Lbxg;->a:Ljava/util/HashMap;
-
-    invoke-virtual {p0, p2, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget p0, v2, Lbxg;->b:I
-
-    const/4 p1, 0x1
-
-    if-eq p0, p1, :cond_2
-
-    const/4 p1, 0x2
-
-    if-eq p0, p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v2, p3, v3}, Lbxg;->a(Ljava/lang/String;Ljava/util/concurrent/Executor;)V
-
-    goto :goto_0
-
-    :cond_2
-    iget-object p0, v2, Lbxg;->Y:Landroid/content/ComponentName;
-
-    iget-object p1, v2, Lbxg;->o:Landroid/os/IBinder;
-
-    invoke-virtual {p2, p0, p1}, Lsug;->onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-
-    :goto_0
-    iget-boolean p0, v2, Lbxg;->c:Z
-
-    monitor-exit v1
+    const/4 p0, 0x1
 
     return p0
 
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final e(J)Lrdd;
+    .registers 22
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0}, Lsxg;->c()Z
+
+    move-result v1
+
+    iget v2, v0, Lsxg;->b:I
+
+    iget-wide v3, v0, Lsxg;->a:J
+
+    if-nez v1, :cond_0
+
+    new-instance v0, Lrdd;
+
+    new-instance v1, Lxdd;
+
+    int-to-long v5, v2
+
+    add-long/2addr v3, v5
+
+    const-wide/16 v5, 0x0
+
+    invoke-direct {v1, v5, v6, v3, v4}, Lxdd;-><init>(JJ)V
+
+    invoke-direct {v0, v1, v1}, Lrdd;-><init>(Lxdd;Lxdd;)V
+
+    return-object v0
+
+    :cond_0
+    const-wide/16 v9, 0x0
+
+    iget-wide v11, v0, Lsxg;->c:J
+
+    move-wide/from16 v7, p1
+
+    invoke-static/range {v7 .. v12}, Lnrf;->j(JJJ)J
+
+    move-result-wide v5
+
+    long-to-double v7, v5
+
+    const-wide/high16 v9, 0x4059000000000000L    # 100.0
+
+    mul-double/2addr v7, v9
+
+    iget-wide v11, v0, Lsxg;->c:J
+
+    long-to-double v11, v11
+
+    div-double/2addr v7, v11
+
+    const-wide/16 v11, 0x0
+
+    cmpg-double v1, v7, v11
+
+    if-gtz v1, :cond_1
+
+    const-wide/high16 p1, 0x4070000000000000L    # 256.0
+
+    goto :goto_1
+
+    :cond_1
+    cmpl-double v1, v7, v9
+
+    if-ltz v1, :cond_2
+
+    const-wide/high16 p1, 0x4070000000000000L    # 256.0
+
+    const-wide/high16 v11, 0x4070000000000000L    # 256.0
+
+    goto :goto_1
+
+    :cond_2
+    double-to-int v1, v7
+
+    iget-object v9, v0, Lsxg;->Z:[J
+
+    invoke-static {v9}, Lmq0;->i(Ljava/lang/Object;)V
+
+    aget-wide v10, v9, v1
+
+    long-to-double v10, v10
+
+    const/16 v12, 0x63
+
+    if-ne v1, v12, :cond_3
+
+    const-wide/high16 p1, 0x4070000000000000L    # 256.0
+
+    const-wide/high16 v12, 0x4070000000000000L    # 256.0
+
+    goto :goto_0
+
     :cond_3
-    new-instance p0, Ljava/lang/IllegalStateException;
+    add-int/lit8 v12, v1, 0x1
 
-    invoke-virtual {p1}, Laxg;->toString()Ljava/lang/String;
+    const-wide/high16 p1, 0x4070000000000000L    # 256.0
 
-    move-result-object p1
+    aget-wide v13, v9, v12
 
-    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    long-to-double v12, v13
 
-    move-result-object p1
+    :goto_0
+    int-to-double v14, v1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    sub-double/2addr v7, v14
 
-    throw p0
+    sub-double/2addr v12, v10
+
+    mul-double/2addr v12, v7
+
+    add-double v11, v12, v10
 
     :goto_1
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    div-double v11, v11, p1
 
-    throw p0
+    iget-wide v0, v0, Lsxg;->X:J
+
+    long-to-double v7, v0
+
+    mul-double/2addr v11, v7
+
+    invoke-static {v11, v12}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide v13
+
+    int-to-long v7, v2
+
+    const-wide/16 v9, 0x1
+
+    sub-long v17, v0, v9
+
+    move-wide v15, v7
+
+    invoke-static/range {v13 .. v18}, Lnrf;->j(JJJ)J
+
+    move-result-wide v0
+
+    new-instance v2, Lrdd;
+
+    new-instance v7, Lxdd;
+
+    add-long/2addr v3, v0
+
+    invoke-direct {v7, v5, v6, v3, v4}, Lxdd;-><init>(JJ)V
+
+    invoke-direct {v2, v7, v7}, Lrdd;-><init>(Lxdd;Lxdd;)V
+
+    return-object v2
+.end method
+
+.method public final f()J
+    .registers 3
+
+    iget-wide v0, p0, Lsxg;->c:J
+
+    return-wide v0
+.end method
+
+.method public final g()I
+    .registers 1
+
+    iget p0, p0, Lsxg;->o:I
+
+    return p0
 .end method

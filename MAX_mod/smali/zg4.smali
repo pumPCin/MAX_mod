@@ -2,155 +2,96 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lvjc;
-
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:Lkf9;
 
-.field public final b:Lt14;
+.field public final b:Lql9;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lzg4;
 
-    iput-object p1, p0, Lzg4;->a:Landroid/content/Context;
+    new-instance v1, Lx33;
 
-    new-instance v0, Lt14;
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, p1}, Lt14;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, Lzg4;->b:Lt14;
+    invoke-direct {v0, v1}, Lzg4;-><init>(Ljf9;)V
 
     return-void
 .end method
 
+.method public constructor <init>(Ljf9;)V
+    .registers 3
 
-# virtual methods
-.method public final a(Landroid/os/Handler;Lpa5;Lpa5;Lpa5;Lpa5;)[Lok0;
-    .registers 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance p1, Lkf9;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Lbc8;
+    iput-object p1, p0, Lzg4;->a:Lkf9;
 
-    iget-object v2, p0, Lzg4;->a:Landroid/content/Context;
+    new-instance p1, Lql9;
 
-    iget-object v5, p0, Lzg4;->b:Lt14;
+    const-string v0, "/io/michaelrocks/libphonenumber/android/data/PhoneNumberMetadataProto"
 
-    invoke-direct {v1, v2, v5, p1, p2}, Lbc8;-><init>(Landroid/content/Context;Lya8;Landroid/os/Handler;Lpa5;)V
+    invoke-direct {p1, v0}, Lql9;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iput-object p1, p0, Lzg4;->b:Lql9;
 
-    new-instance p2, Lee3;
+    new-instance p0, Lql9;
 
-    const/4 v1, 0x1
+    const-string p1, "/io/michaelrocks/libphonenumber/android/data/ShortNumberMetadataProto"
 
-    invoke-direct {p2, v2, v1}, Lee3;-><init>(Landroid/content/Context;I)V
+    invoke-direct {p0, p1}, Lql9;-><init>(Ljava/lang/String;)V
 
-    iget-boolean v1, p2, Lee3;->b:Z
+    new-instance p0, Lql9;
 
-    const/4 v3, 0x1
+    const-string p1, "/io/michaelrocks/libphonenumber/android/data/PhoneNumberAlternateFormatsProto"
 
-    xor-int/2addr v1, v3
+    invoke-direct {p0, p1}, Lql9;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1}, Lr76;->l(Z)V
+    new-instance p0, Lim4;
 
-    iput-boolean v3, p2, Lee3;->b:Z
+    new-instance p1, Lua6;
 
-    iget-object v1, p2, Lee3;->o:Ljava/lang/Object;
+    const/16 v0, 0xe
 
-    check-cast v1, Lqo8;
+    invoke-direct {p1, v0}, Lua6;-><init>(I)V
 
-    const/4 v9, 0x0
+    invoke-direct {p0, p1}, Lim4;-><init>(Lc58;)V
 
-    if-nez v1, :cond_0
+    new-instance p0, Lim4;
 
-    new-instance v1, Lqo8;
+    new-instance p1, Lc3e;
 
-    new-array v3, v9, [Ly50;
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v1, v3}, Lqo8;-><init>([Ly50;)V
+    invoke-direct {p0, p1}, Lim4;-><init>(Lc58;)V
 
-    iput-object v1, p2, Lee3;->o:Ljava/lang/Object;
+    new-instance p0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    :cond_0
-    iget-object v1, p2, Lee3;->Y:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    check-cast v1, Lgl4;
+    new-instance p0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    if-nez v1, :cond_1
+    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    new-instance v1, Lgl4;
+    new-instance p0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v1, v2}, Lgl4;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    iput-object v1, p2, Lee3;->Y:Ljava/lang/Object;
+    new-instance p0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    :cond_1
-    new-instance v8, Lac4;
+    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    invoke-direct {v8, p2}, Lac4;-><init>(Lee3;)V
+    new-instance p0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    new-instance v3, Ldb8;
+    invoke-direct {p0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    iget-object v4, p0, Lzg4;->a:Landroid/content/Context;
-
-    move-object v6, p1
-
-    move-object v7, p3
-
-    invoke-direct/range {v3 .. v8}, Ldb8;-><init>(Landroid/content/Context;Lya8;Landroid/os/Handler;Lpa5;Lac4;)V
-
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v6}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
-
-    move-result-object p0
-
-    new-instance p1, Ljte;
-
-    invoke-direct {p1, p4, p0}, Ljte;-><init>(Lpa5;Landroid/os/Looper;)V
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    invoke-virtual {v6}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
-
-    move-result-object p0
-
-    new-instance p1, Lhc9;
-
-    invoke-direct {p1, p5, p0}, Lhc9;-><init>(Lpa5;Landroid/os/Looper;)V
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    new-instance p0, Loz1;
-
-    invoke-direct {p0}, Loz1;-><init>()V
-
-    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    new-instance p0, Lez6;
-
-    sget-object p1, Lzx6;->v:Lm1e;
-
-    invoke-direct {p0, p1}, Lez6;-><init>(Lzx6;)V
-
-    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    new-array p0, v9, [Lok0;
-
-    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, [Lok0;
-
-    return-object p0
+    return-void
 .end method

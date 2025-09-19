@@ -1,170 +1,117 @@
 .class public final Lujb;
-.super Ljava/lang/Object;
+.super Loi0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lgpd;
+.field public final b:J
 
-.field public final b:Lkotlinx/coroutines/internal/ContextScope;
+.field public final c:J
 
 
 # direct methods
-.method public constructor <init>(Lrv0;Lxh7;)V
+.method public constructor <init>(JJ)V
     .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Loi0;-><init>()V
 
-    const/4 v0, 0x0
+    iput-wide p1, p0, Lujb;->b:J
 
-    const/4 v1, 0x7
-
-    invoke-static {v0, v0, v1}, Lhpd;->b(III)Lgpd;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lujb;->a:Lgpd;
-
-    invoke-interface {p2}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lzne;
-
-    check-cast p2, Ltba;
-
-    invoke-virtual {p2}, Ltba;->c()Lm08;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lujb;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-virtual {p1, p0}, Lrv0;->d(Ljava/lang/Object;)V
+    iput-wide p3, p0, Lujb;->c:J
 
     return-void
-.end method
-
-.method public static final a(Lujb;Ldoe;)Lvte;
-    .registers 3
-
-    iget-object p0, p1, Ldoe;->o:Ljava/lang/String;
-
-    iget-object p1, p1, Ldoe;->b:Ljava/lang/String;
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Lute;
-
-    invoke-direct {p1, p0}, Lute;-><init>(Ljava/lang/CharSequence;)V
-
-    return-object p1
-
-    :cond_1
-    :goto_0
-    invoke-static {p1}, Lkv0;->r(Ljava/lang/String;)Z
-
-    move-result p0
-
-    const-string v0, "io.exception"
-
-    if-eqz p0, :cond_2
-
-    invoke-static {p1, v0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    sget p0, Lwsc;->J:I
-
-    new-instance p1, Lqte;
-
-    invoke-direct {p1, p0}, Lqte;-><init>(I)V
-
-    return-object p1
-
-    :cond_2
-    invoke-static {p1}, Lkv0;->r(Ljava/lang/String;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_3
-
-    invoke-static {p1, v0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    sget p0, Lwsc;->M:I
-
-    new-instance p1, Lqte;
-
-    invoke-direct {p1, p0}, Lqte;-><init>(I)V
-
-    return-object p1
-
-    :cond_3
-    sget p0, Lwsc;->I:I
-
-    new-instance p1, Lqte;
-
-    invoke-direct {p1, p0}, Lqte;-><init>(I)V
-
-    return-object p1
 .end method
 
 
 # virtual methods
-.method public final onEvent(Lhj0;)V
-    .registers 4
-    .annotation runtime Lpee;
-    .end annotation
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 9
 
-    new-instance v0, Lsjb;
+    const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    if-ne p0, p1, :cond_0
 
-    invoke-direct {v0, p0, p1, v1}, Lsjb;-><init>(Lujb;Lhj0;Lkotlin/coroutines/Continuation;)V
+    return v0
 
-    const/4 p1, 0x3
+    :cond_0
+    instance-of v1, p1, Lujb;
 
-    iget-object p0, p0, Lujb;->b:Lkotlinx/coroutines/internal/ContextScope;
+    const/4 v2, 0x0
 
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    if-nez v1, :cond_1
 
-    return-void
+    return v2
+
+    :cond_1
+    check-cast p1, Lujb;
+
+    iget-wide v3, p0, Lujb;->b:J
+
+    iget-wide v5, p1, Lujb;->b:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-wide v3, p0, Lujb;->c:J
+
+    iget-wide p0, p1, Lujb;->c:J
+
+    cmp-long p0, v3, p0
+
+    if-eqz p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
 .end method
 
-.method public final onEvent(Lkjb;)V
+.method public final hashCode()I
     .registers 4
-    .annotation runtime Lpee;
-    .end annotation
 
-    new-instance v0, Ltjb;
+    iget-wide v0, p0, Lujb;->b:J
 
-    const/4 v1, 0x0
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
-    invoke-direct {v0, p0, p1, v1}, Ltjb;-><init>(Lujb;Lkjb;Lkotlin/coroutines/Continuation;)V
+    move-result v0
 
-    const/4 p1, 0x3
+    mul-int/lit8 v0, v0, 0x1f
 
-    iget-object p0, p0, Lujb;->b:Lkotlinx/coroutines/internal/ContextScope;
+    iget-wide v1, p0, Lujb;->c:J
 
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
 
-    return-void
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 5
+
+    const-string v0, "ProfileAvatarUpdatedEvent(requestId="
+
+    const-string v1, ", photoId="
+
+    iget-wide v2, p0, Lujb;->b:J
+
+    invoke-static {v2, v3, v0, v1}, Lmw1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    iget-wide v2, p0, Lujb;->c:J
+
+    invoke-static {v0, v2, v3, v1}, Lyv7;->j(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

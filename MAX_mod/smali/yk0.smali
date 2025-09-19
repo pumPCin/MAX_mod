@@ -2,45 +2,24 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/os/Handler$Callback;
 
+# instance fields
+.field public a:I
 
-# virtual methods
-.method public final handleMessage(Landroid/os/Message;)Z
-    .registers 3
+.field public b:I
 
-    iget p0, p1, Landroid/os/Message;->what:I
+.field public c:I
 
-    if-eqz p0, :cond_1
+.field public d:I
 
-    const/4 v0, 0x1
+.field public e:I
 
-    if-eq p0, v0, :cond_0
+.field public f:I
 
-    const/4 p0, 0x0
+.field public g:I
 
-    return p0
+.field public h:Z
 
-    :cond_0
-    iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+.field public i:Z
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p0, Ljava/lang/ClassCastException;
-
-    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
-
-    throw p0
-
-    :cond_1
-    iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p0, Ljava/lang/ClassCastException;
-
-    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
-
-    throw p0
-.end method
+.field public j:I

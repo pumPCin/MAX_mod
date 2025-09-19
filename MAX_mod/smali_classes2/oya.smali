@@ -1,60 +1,134 @@
 .class public final Loya;
-.super Lsoe;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lorg/webrtc/VideoSink;
 
 
 # instance fields
-.field public c:Ljava/lang/String;
+.field public final a:Ljava/lang/String;
+
+.field public b:J
+
+.field public final synthetic c:Lpya;
 
 
 # direct methods
-.method public constructor <init>(Lu09;)V
-    .registers 2
+.method public constructor <init>(Lpya;Ljava/lang/String;)V
+    .registers 5
 
-    invoke-direct {p0, p1}, Lsoe;-><init>(Lu09;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Loya;->c:Lpya;
+
+    const-wide/16 v0, -0x1
+
+    iput-wide v0, p0, Loya;->b:J
+
+    iput-object p2, p0, Loya;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lu09;Ljava/lang/String;)V
-    .registers 4
+.method public final onFrame(Lorg/webrtc/VideoFrame;)V
+    .registers 8
 
-    const-string v0, "url"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p1}, Lu09;->D0()Ljava/lang/String;
+    invoke-virtual {p1}, Lorg/webrtc/VideoFrame;->getCompactParticipantId()Ljava/lang/Long;
 
     move-result-object p1
 
-    iput-object p1, p0, Loya;->c:Ljava/lang/String;
+    const-wide/16 v0, -0x1
 
-    return-void
+    if-nez p1, :cond_0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p1
 
     :cond_0
-    invoke-virtual {p1}, Lu09;->B()V
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
+    move-result-wide v2
+
+    iget-wide v4, p0, Loya;->b:J
+
+    cmp-long v2, v2, v4
+
+    if-eqz v2, :cond_3
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    iput-wide v2, p0, Loya;->b:J
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    cmp-long v0, v2, v0
+
+    if-nez v0, :cond_1
+
+    const/4 p1, 0x0
+
+    :cond_1
+    iget-object v0, p0, Loya;->c:Lpya;
+
+    iget-object v1, v0, Lpya;->k:Ljava/util/concurrent/ConcurrentHashMap;
+
+    iget-object v2, v0, Lpya;->l:Ljava/util/concurrent/ConcurrentHashMap;
+
+    iget-object p0, p0, Loya;->a:Ljava/lang/String;
+
+    invoke-virtual {v1, p0}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lkr1;
+
+    if-eqz v3, :cond_2
+
+    invoke-virtual {v1, p0, v3}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    invoke-virtual {v2, v3, p0}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    :cond_2
+    if-eqz p1, :cond_3
+
+    iget-object v0, v0, Lem3;->e:Ljava/lang/Object;
+
+    check-cast v0, Ltgd;
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v3
+
+    long-to-int p1, v3
+
+    iget-object v0, v0, Ltgd;->b:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lkr1;
+
+    if-eqz p1, :cond_3
+
+    invoke-virtual {v1, p0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v2, p1, p0}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_3
     return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    iget-object p0, p0, Loya;->c:Ljava/lang/String;
-
-    const-string v0, "{url=\'"
-
-    const-string v1, "\'}"
-
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

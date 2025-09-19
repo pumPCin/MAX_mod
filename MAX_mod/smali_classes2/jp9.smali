@@ -1,19 +1,47 @@
-.class public abstract Ljp9;
+.class public interface abstract Ljp9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lgq9;
 
-# instance fields
-.field public final a:Ljava/lang/Object;
 
+# virtual methods
+.method public abstract D()V
+.end method
 
-# direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
+.method public abstract H()V
+.end method
+
+.method public d()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public abstract e(Ljava/lang/String;)V
+.end method
+
+.method public f()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public abstract h()V
+.end method
+
+.method public l(Z)V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
 
-    iput-object p1, p0, Ljp9;->a:Ljava/lang/Object;
+.method public abstract m()V
+.end method
+
+.method public p()V
+    .registers 1
 
     return-void
 .end method

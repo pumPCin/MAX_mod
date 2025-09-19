@@ -1,91 +1,24 @@
-.class public abstract Lu67;
+.class public interface abstract Lu67;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final I:Lt67;
+
+
 # direct methods
-.method public static a(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/Class;)[Ljava/lang/Object;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Landroid/content/Intent;",
-            "Ljava/lang/String;",
-            "Ljava/lang/Class<",
-            "TT;>;)[TT;"
-        }
-    .end annotation
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->getParcelableArrayExtra(Ljava/lang/String;Ljava/lang/Class;)[Ljava/lang/Object;
+    sget-object v0, Lt67;->a:Lt67;
 
-    move-result-object p0
+    sput-object v0, Lu67;->I:Lt67;
 
-    return-object p0
+    return-void
 .end method
 
-.method public static b(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/Class;)Ljava/util/ArrayList;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Landroid/content/Intent;",
-            "Ljava/lang/String;",
-            "Ljava/lang/Class<",
-            "+TT;>;)",
-            "Ljava/util/ArrayList<",
-            "TT;>;"
-        }
-    .end annotation
 
-    invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->getParcelableArrayListExtra(Ljava/lang/String;Ljava/lang/Class;)Ljava/util/ArrayList;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static c(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Landroid/content/Intent;",
-            "Ljava/lang/String;",
-            "Ljava/lang/Class<",
-            "TT;>;)TT;"
-        }
-    .end annotation
-
-    invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static d(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/Class;)Ljava/io/Serializable;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T::",
-            "Ljava/io/Serializable;",
-            ">(",
-            "Landroid/content/Intent;",
-            "Ljava/lang/String;",
-            "Ljava/lang/Class<",
-            "TT;>;)TT;"
-        }
-    .end annotation
-
-    invoke-virtual {p0, p1, p2}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;Ljava/lang/Class;)Ljava/io/Serializable;
-
-    move-result-object p0
-
-    return-object p0
+# virtual methods
+.method public abstract d()Lzu2;
 .end method

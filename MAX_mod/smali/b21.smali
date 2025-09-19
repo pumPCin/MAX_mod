@@ -1,109 +1,143 @@
-.class public final synthetic Lb21;
-.super Ljava/lang/Object;
+.class public final Lb21;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/PopupWindow$OnDismissListener;
+.implements Lvc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Z
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public synthetic Y:Z
+
+.field public synthetic Z:Z
+
+.field public synthetic r0:Z
+
+.field public final synthetic s0:Lcl7;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
+.method public constructor <init>(Lcl7;Ljv5;)V
     .registers 3
 
-    iput p1, p0, Lb21;->a:I
+    iput-object p1, p0, Lb21;->s0:Lcl7;
 
-    iput-object p2, p0, Lb21;->b:Ljava/lang/Object;
+    const/4 p1, 0x5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDismiss()V
-    .registers 2
+.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljv5;)Ljava/lang/Object;
+    .registers 7
 
-    iget v0, p0, Lb21;->a:I
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget-object p0, p0, Lb21;->b:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    packed-switch v0, :pswitch_data_0
+    move-result p1
 
-    check-cast p0, Lone/me/chats/forward/ForwardPickerScreen;
+    check-cast p2, Ljava/lang/Boolean;
 
-    const/4 v0, 0x0
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iput-object v0, p0, Lone/me/chats/forward/ForwardPickerScreen;->D0:Lb0f;
+    move-result p2
 
-    return-void
+    check-cast p3, Ljava/lang/Boolean;
 
-    :pswitch_0
-    check-cast p0, Lxw3;
+    invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
-    iget-object p0, p0, Lxw3;->b:Lb13;
+    move-result p3
 
-    if-eqz p0, :cond_0
+    check-cast p4, Ljava/lang/Boolean;
 
-    invoke-virtual {p0}, Lb13;->invoke()Ljava/lang/Object;
+    invoke-virtual {p4}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p4
+
+    new-instance v0, Lb21;
+
+    iget-object p0, p0, Lb21;->s0:Lcl7;
+
+    invoke-direct {v0, p0, p5}, Lb21;-><init>(Lcl7;Ljv5;)V
+
+    iput-boolean p1, v0, Lb21;->X:Z
+
+    iput-boolean p2, v0, Lb21;->Y:Z
+
+    iput-boolean p3, v0, Lb21;->Z:Z
+
+    iput-boolean p4, v0, Lb21;->r0:Z
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    invoke-virtual {v0, p0}, Lb21;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-boolean p1, p0, Lb21;->X:Z
+
+    iget-boolean v0, p0, Lb21;->Y:Z
+
+    iget-boolean v1, p0, Lb21;->Z:Z
+
+    iget-boolean v2, p0, Lb21;->r0:Z
+
+    iget-object p0, p0, Lb21;->s0:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lrj5;
+
+    check-cast p0, Ltj5;
+
+    invoke-virtual {p0}, Ltj5;->s()Z
+
+    move-result p0
+
+    const/4 v3, 0x0
+
+    if-nez p0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    return-void
+    if-nez v2, :cond_1
 
-    :pswitch_1
-    check-cast p0, Lkp1;
+    goto :goto_0
 
-    const/4 v0, 0x0
+    :cond_1
+    if-eqz v1, :cond_2
 
-    iput-object v0, p0, Lkp1;->E0:Lb0f;
+    goto :goto_0
 
-    return-void
+    :cond_2
+    if-eqz v0, :cond_3
 
-    :pswitch_2
-    check-cast p0, Lgp1;
+    if-eqz p1, :cond_3
 
-    iget-object p0, p0, Lgp1;->D0:Lvqc;
+    const/4 v3, 0x1
 
-    sget-object v0, Lct4;->p0:Lws9;
+    :cond_3
+    :goto_0
+    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {v0, p0}, Lws9;->g(Landroid/view/View;)Ldea;
+    move-result-object p0
 
-    move-result-object v0
-
-    iget-object v0, v0, Ldea;->c:Loma;
-
-    invoke-interface {v0}, Loma;->getIcon()Lpv6;
-
-    move-result-object v0
-
-    iget v0, v0, Lpv6;->f:I
-
-    invoke-virtual {p0, v0}, Lvqc;->setIconTint(I)V
-
-    sget-object v0, Lqqc;->a:Lqqc;
-
-    invoke-virtual {p0, v0}, Lvqc;->setMode(Lqqc;)V
-
-    return-void
-
-    :pswitch_3
-    check-cast p0, Lh96;
-
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

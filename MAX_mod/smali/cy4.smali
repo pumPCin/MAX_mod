@@ -1,65 +1,417 @@
-.class public Lcy4;
-.super Lby4;
+.class public final Lcy4;
+.super Landroid/view/Surface;
 .source "SourceFile"
 
 
-# virtual methods
-.method public a(Lhle;Lhle;Landroid/view/Window;Landroid/view/View;ZZ)V
-    .registers 7
+# static fields
+.field public static X:Z
 
-    const/4 p0, 0x0
+.field public static o:I
 
-    invoke-static {p3, p0}, Lfud;->E(Landroid/view/Window;Z)V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+# instance fields
+.field public final a:Z
 
-    invoke-virtual {p3, p0}, Landroid/view/Window;->setStatusBarColor(I)V
+.field public final b:Lby4;
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.field public c:Z
 
-    invoke-virtual {p3, p0}, Landroid/view/Window;->setNavigationBarColor(I)V
 
-    invoke-virtual {p3, p0}, Landroid/view/Window;->setStatusBarContrastEnforced(Z)V
+# direct methods
+.method public constructor <init>(Lby4;Landroid/graphics/SurfaceTexture;Z)V
+    .registers 4
+
+    invoke-direct {p0, p2}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
+
+    iput-object p1, p0, Lcy4;->b:Lby4;
+
+    iput-boolean p3, p0, Lcy4;->a:Z
+
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;)I
+    .registers 6
+
+    sget v0, Llrf;->a:I
+
+    const/16 v1, 0x18
+
+    const/4 v2, 0x0
+
+    if-ge v0, v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const/16 v1, 0x1a
+
+    if-ge v0, v1, :cond_1
+
+    const-string v3, "samsung"
+
+    sget-object v4, Llrf;->c:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_5
+
+    const-string v3, "XT1650"
+
+    sget-object v4, Llrf;->d:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    if-ge v0, v1, :cond_2
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object p0
+
+    const-string v1, "android.hardware.vr.high_performance"
+
+    invoke-virtual {p0, v1}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    invoke-static {v2}, Landroid/opengl/EGL14;->eglGetDisplay(I)Landroid/opengl/EGLDisplay;
+
+    move-result-object p0
+
+    const/16 v1, 0x3055
+
+    invoke-static {p0, v1}, Landroid/opengl/EGL14;->eglQueryString(Landroid/opengl/EGLDisplay;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_5
+
+    const-string v3, "EGL_EXT_protected_content"
+
+    invoke-virtual {p0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_5
+
+    const/16 p0, 0x11
+
+    if-ge v0, p0, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    invoke-static {v2}, Landroid/opengl/EGL14;->eglGetDisplay(I)Landroid/opengl/EGLDisplay;
+
+    move-result-object p0
+
+    invoke-static {p0, v1}, Landroid/opengl/EGL14;->eglQueryString(Landroid/opengl/EGLDisplay;I)Ljava/lang/String;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_4
+
+    const-string v0, "EGL_KHR_surfaceless_context"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_4
 
     const/4 p0, 0x1
 
-    invoke-virtual {p3, p0}, Landroid/view/Window;->setNavigationBarContrastEnforced(Z)V
+    return p0
 
-    new-instance p1, Lqfd;
+    :cond_4
+    :goto_0
+    const/4 p0, 0x2
 
-    invoke-direct {p1, p4}, Lqfd;-><init>(Landroid/view/View;)V
+    return p0
 
-    sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
+    :cond_5
+    :goto_1
+    return v2
+.end method
 
-    const/16 p4, 0x1e
+.method public static declared-synchronized b(Landroid/content/Context;)Z
+    .registers 4
 
-    if-lt p2, p4, :cond_0
+    const-class v0, Lcy4;
 
-    new-instance p2, Lqkg;
+    monitor-enter v0
 
-    invoke-static {p3}, Lkkg;->d(Landroid/view/Window;)Landroid/view/WindowInsetsController;
+    :try_start_0
+    sget-boolean v1, Lcy4;->X:Z
 
-    move-result-object p4
+    const/4 v2, 0x1
 
-    invoke-direct {p2, p4, p1}, Lqkg;-><init>(Landroid/view/WindowInsetsController;Lqfd;)V
+    if-nez v1, :cond_0
 
-    iput-object p3, p2, Lqkg;->Y:Landroid/view/Window;
+    invoke-static {p0}, Lcy4;->a(Landroid/content/Context;)I
+
+    move-result p0
+
+    sput p0, Lcy4;->o:I
+
+    sput-boolean v2, Lcy4;->X:Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_2
+
+    :cond_0
+    :goto_0
+    sget p0, Lcy4;->o:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz p0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v2, 0x0
+
+    :goto_1
+    monitor-exit v0
+
+    return v2
+
+    :goto_2
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
+.end method
+
+.method public static c(Landroid/content/Context;Z)Lcy4;
+    .registers 7
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    if-eqz p1, :cond_1
+
+    invoke-static {p0}, Lcy4;->b(Landroid/content/Context;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance p2, Lpkg;
+    move p0, v1
 
-    invoke-direct {p2, p3, p1}, Lpkg;-><init>(Landroid/view/Window;Lqfd;)V
+    goto :goto_1
 
+    :cond_1
     :goto_0
-    xor-int/lit8 p1, p5, 0x1
+    move p0, v0
 
-    invoke-virtual {p2, p1}, Lpwe;->x(Z)V
+    :goto_1
+    invoke-static {p0}, Lxnd;->m(Z)V
 
-    xor-int/2addr p0, p6
+    new-instance p0, Lby4;
 
-    invoke-virtual {p2, p0}, Lpwe;->w(Z)V
+    const-string v2, "ExoPlayer:DummySurface"
+
+    const/4 v3, 0x0
+
+    invoke-direct {p0, v2, v3}, Lby4;-><init>(Ljava/lang/String;I)V
+
+    if-eqz p1, :cond_2
+
+    sget p1, Lcy4;->o:I
+
+    goto :goto_2
+
+    :cond_2
+    move p1, v1
+
+    :goto_2
+    invoke-virtual {p0}, Ljava/lang/Thread;->start()V
+
+    new-instance v2, Landroid/os/Handler;
+
+    invoke-virtual {p0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3, p0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+
+    iput-object v2, p0, Lby4;->b:Landroid/os/Handler;
+
+    new-instance v3, Lpz4;
+
+    const/4 v4, 0x0
+
+    invoke-direct {v3, v2, v4}, Lpz4;-><init>(Landroid/os/Handler;I)V
+
+    iput-object v3, p0, Lby4;->X:Ljava/lang/Object;
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v2, p0, Lby4;->b:Landroid/os/Handler;
+
+    invoke-virtual {v2, v0, p1, v1}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
+
+    :goto_3
+    iget-object p1, p0, Lby4;->Y:Landroid/view/Surface;
+
+    check-cast p1, Lcy4;
+
+    if-nez p1, :cond_3
+
+    iget-object p1, p0, Lby4;->o:Ljava/lang/RuntimeException;
+
+    if-nez p1, :cond_3
+
+    iget-object p1, p0, Lby4;->c:Ljava/lang/Error;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez p1, :cond_3
+
+    :try_start_1
+    invoke-virtual {p0}, Ljava/lang/Object;->wait()V
+    :try_end_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_3
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_4
+
+    :catch_0
+    move v1, v0
+
+    goto :goto_3
+
+    :cond_3
+    :try_start_2
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    if-eqz v1, :cond_4
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Thread;->interrupt()V
+
+    :cond_4
+    iget-object p1, p0, Lby4;->o:Ljava/lang/RuntimeException;
+
+    if-nez p1, :cond_6
+
+    iget-object p1, p0, Lby4;->c:Ljava/lang/Error;
+
+    if-nez p1, :cond_5
+
+    iget-object p0, p0, Lby4;->Y:Landroid/view/Surface;
+
+    check-cast p0, Lcy4;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    return-object p0
+
+    :cond_5
+    throw p1
+
+    :cond_6
+    throw p1
+
+    :goto_4
+    :try_start_3
+    monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    throw p1
+.end method
+
+
+# virtual methods
+.method public final release()V
+    .registers 4
+
+    invoke-super {p0}, Landroid/view/Surface;->release()V
+
+    iget-object v0, p0, Lcy4;->b:Lby4;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lcy4;->c:Z
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcy4;->b:Lby4;
+
+    iget-object v2, v1, Lby4;->b:Landroid/os/Handler;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v1, v1, Lby4;->b:Landroid/os/Handler;
+
+    const/4 v2, 0x2
+
+    invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lcy4;->c:Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    monitor-exit v0
 
     return-void
+
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
 .end method

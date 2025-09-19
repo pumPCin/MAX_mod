@@ -2,26 +2,23 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lvb8;
 
-# instance fields
-.field public final a:Ljava/lang/String;
 
-.field public final b:Z
-
-.field public final c:Z
+# static fields
+.field public static final a:Lqb8;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ZZ)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lqb8;
 
-    iput-object p1, p0, Lqb8;->a:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p2, p0, Lqb8;->b:Z
-
-    iput-boolean p3, p0, Lqb8;->c:Z
+    sput-object v0, Lqb8;->a:Lqb8;
 
     return-void
 .end method
@@ -29,7 +26,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .registers 3
 
     const/4 v0, 0x1
 
@@ -38,91 +35,30 @@
     return v0
 
     :cond_0
-    const/4 v1, 0x0
+    instance-of p0, p1, Lqb8;
 
-    if-eqz p1, :cond_2
+    if-nez p0, :cond_1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 p0, 0x0
 
-    move-result-object v2
-
-    const-class v3, Lqb8;
-
-    if-eq v2, v3, :cond_1
-
-    goto :goto_0
+    return p0
 
     :cond_1
-    check-cast p1, Lqb8;
-
-    iget-object v2, p0, Lqb8;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Lqb8;->a:Ljava/lang/String;
-
-    invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-boolean v2, p0, Lqb8;->b:Z
-
-    iget-boolean v3, p1, Lqb8;->b:Z
-
-    if-ne v2, v3, :cond_2
-
-    iget-boolean p0, p0, Lqb8;->c:Z
-
-    iget-boolean p1, p1, Lqb8;->c:Z
-
-    if-ne p0, p1, :cond_2
-
     return v0
-
-    :cond_2
-    :goto_0
-    return v1
 .end method
 
 .method public final hashCode()I
-    .registers 6
+    .registers 1
 
-    iget-object v0, p0, Lqb8;->a:Ljava/lang/String;
+    const p0, 0x5a175638    # 1.064938E16f
 
-    const/16 v1, 0x1f
+    return p0
+.end method
 
-    invoke-static {v1, v1, v0}, Lex3;->d(IILjava/lang/String;)I
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    move-result v0
+    const-string p0, "OnClosing"
 
-    iget-boolean v2, p0, Lqb8;->b:Z
-
-    const/16 v3, 0x4d5
-
-    const/16 v4, 0x4cf
-
-    if-eqz v2, :cond_0
-
-    move v2, v4
-
-    goto :goto_0
-
-    :cond_0
-    move v2, v3
-
-    :goto_0
-    add-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-boolean p0, p0, Lqb8;->c:Z
-
-    if-eqz p0, :cond_1
-
-    move v3, v4
-
-    :cond_1
-    add-int/2addr v0, v3
-
-    return v0
+    return-object p0
 .end method

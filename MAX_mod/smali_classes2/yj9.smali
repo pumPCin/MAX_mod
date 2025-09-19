@@ -1,151 +1,405 @@
 .class public final Lyj9;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lnvf;
 
 
 # instance fields
-.field public final synthetic X:Ldk9;
+.field public final a:Ljava/util/List;
 
-.field public final synthetic Y:Ljava/lang/String;
+.field public final b:Lox;
 
-.field public final synthetic Z:Ljava/lang/String;
+.field public final c:J
 
-.field public final synthetic n0:Lxe8;
+.field public final d:J
 
-.field public final synthetic o0:Ljava/lang/String;
+.field public final e:Z
 
-.field public final synthetic p0:Ljava/lang/String;
+.field public final f:I
 
-.field public final synthetic q0:Landroid/os/Bundle;
+.field public final g:I
+
+.field public final h:J
+
+.field public final i:Landroid/net/Uri;
+
+.field public final j:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ldk9;Ljava/lang/String;Ljava/lang/String;Lxe8;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Lkotlin/coroutines/Continuation;)V
-    .registers 9
+.method public constructor <init>(Ljava/util/List;Lox;JJZII)V
+    .registers 10
 
-    iput-object p1, p0, Lyj9;->X:Ldk9;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lyj9;->Y:Ljava/lang/String;
+    iput-object p1, p0, Lyj9;->a:Ljava/util/List;
 
-    iput-object p3, p0, Lyj9;->Z:Ljava/lang/String;
+    iput-object p2, p0, Lyj9;->b:Lox;
 
-    iput-object p4, p0, Lyj9;->n0:Lxe8;
+    iput-wide p3, p0, Lyj9;->c:J
 
-    iput-object p5, p0, Lyj9;->o0:Ljava/lang/String;
+    iput-wide p5, p0, Lyj9;->d:J
 
-    iput-object p6, p0, Lyj9;->p0:Ljava/lang/String;
+    iput-boolean p7, p0, Lyj9;->e:Z
 
-    iput-object p7, p0, Lyj9;->q0:Landroid/os/Bundle;
+    iput p8, p0, Lyj9;->f:I
 
-    const/4 p1, 0x2
+    iput p9, p0, Lyj9;->g:I
 
-    invoke-direct {p0, p1, p8}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-wide p5, p0, Lyj9;->h:J
+
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    sget-object p1, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p2, 0x0
+
+    invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lwj9;
+
+    iget-object p1, p1, Lwj9;->a:Ljava/lang/String;
+
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p1
+
+    :goto_0
+    iput-object p1, p0, Lyj9;->i:Landroid/net/Uri;
+
+    const-string p1, "video/mp4"
+
+    iput-object p1, p0, Lyj9;->j:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final c()Lox;
+    .registers 1
+
+    iget-object p0, p0, Lyj9;->b:Lox;
+
+    return-object p0
+.end method
+
+.method public final d()J
     .registers 3
 
-    check-cast p1, Lr04;
+    const-wide/16 v0, 0x0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lyj9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lyj9;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lyj9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return-wide v0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 12
+.method public final e()J
+    .registers 3
 
-    new-instance v0, Lyj9;
+    iget-wide v0, p0, Lyj9;->c:J
 
-    iget-object v6, p0, Lyj9;->p0:Ljava/lang/String;
-
-    iget-object v7, p0, Lyj9;->q0:Landroid/os/Bundle;
-
-    iget-object v1, p0, Lyj9;->X:Ldk9;
-
-    iget-object v2, p0, Lyj9;->Y:Ljava/lang/String;
-
-    iget-object v3, p0, Lyj9;->Z:Ljava/lang/String;
-
-    iget-object v4, p0, Lyj9;->n0:Lxe8;
-
-    iget-object v5, p0, Lyj9;->o0:Ljava/lang/String;
-
-    move-object v8, p2
-
-    invoke-direct/range {v0 .. v8}, Lyj9;-><init>(Ldk9;Ljava/lang/String;Ljava/lang/String;Lxe8;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Lkotlin/coroutines/Continuation;)V
-
-    return-object v0
+    return-wide v0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 9
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    const/4 v0, 0x1
 
-    iget-object v4, p0, Lyj9;->p0:Ljava/lang/String;
+    if-ne p0, p1, :cond_0
 
-    iget-object v5, p0, Lyj9;->q0:Landroid/os/Bundle;
+    return v0
 
-    iget-object v0, p0, Lyj9;->Y:Ljava/lang/String;
+    :cond_0
+    instance-of v1, p1, Lyj9;
 
-    iget-object v1, p0, Lyj9;->Z:Ljava/lang/String;
+    const/4 v2, 0x0
 
-    iget-object v2, p0, Lyj9;->n0:Lxe8;
+    if-nez v1, :cond_1
 
-    iget-object v3, p0, Lyj9;->o0:Ljava/lang/String;
+    return v2
 
-    invoke-static/range {v0 .. v5}, Ldk9;->j(Ljava/lang/String;Ljava/lang/String;Lxe8;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Lwe8;
+    :cond_1
+    check-cast p1, Lyj9;
 
-    move-result-object p1
+    iget-object v1, p0, Lyj9;->a:Ljava/util/List;
 
-    iget-object p0, p0, Lyj9;->X:Ldk9;
+    iget-object v3, p1, Lyj9;->a:Ljava/util/List;
 
-    iget-object v0, p0, Ldk9;->m:Lhc8;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Lhc8;->s()V
-
-    iget-object v0, v0, Lhc8;->c:Lgc8;
-
-    invoke-interface {v0}, Lgc8;->isConnected()Z
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_0
+    if-nez v1, :cond_2
 
-    const-string p1, "The controller is not connected. Ignoring setMediaItem()."
+    return v2
 
-    invoke-static {p1}, Lye2;->r0(Ljava/lang/String;)V
+    :cond_2
+    iget-object v1, p0, Lyj9;->b:Lox;
+
+    iget-object v3, p1, Lyj9;->b:Lox;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-wide v3, p0, Lyj9;->c:J
+
+    iget-wide v5, p1, Lyj9;->c:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-wide v3, p0, Lyj9;->d:J
+
+    iget-wide v5, p1, Lyj9;->d:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-boolean v1, p0, Lyj9;->e:Z
+
+    iget-boolean v3, p1, Lyj9;->e:Z
+
+    if-eq v1, v3, :cond_6
+
+    return v2
+
+    :cond_6
+    iget v1, p0, Lyj9;->f:I
+
+    iget v3, p1, Lyj9;->f:I
+
+    if-eq v1, v3, :cond_7
+
+    return v2
+
+    :cond_7
+    iget p0, p0, Lyj9;->g:I
+
+    iget p1, p1, Lyj9;->g:I
+
+    if-eq p0, p1, :cond_8
+
+    return v2
+
+    :cond_8
+    return v0
+.end method
+
+.method public final getContentType()Ljava/lang/String;
+    .registers 1
+
+    iget-object p0, p0, Lyj9;->j:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public final getDuration()J
+    .registers 3
+
+    iget-wide v0, p0, Lyj9;->d:J
+
+    return-wide v0
+.end method
+
+.method public final getHeight()I
+    .registers 1
+
+    iget p0, p0, Lyj9;->g:I
+
+    return p0
+.end method
+
+.method public final getWidth()I
+    .registers 1
+
+    iget p0, p0, Lyj9;->f:I
+
+    return p0
+.end method
+
+.method public final h()J
+    .registers 3
+
+    iget-wide v0, p0, Lyj9;->h:J
+
+    return-wide v0
+.end method
+
+.method public final hashCode()I
+    .registers 5
+
+    iget-object v0, p0, Lyj9;->a:Ljava/util/List;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lyj9;->b:Lox;
+
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x0
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {v0, p1}, Lgc8;->R(Lwe8;)V
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    :cond_1
+    move-result v2
+
     :goto_0
-    invoke-virtual {p0}, Ldk9;->r()V
+    add-int/2addr v0, v2
 
-    sget-object p0, Lncf;->a:Lncf;
+    mul-int/2addr v0, v1
+
+    iget-wide v2, p0, Lyj9;->c:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget-wide v2, p0, Lyj9;->d:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lyj9;->e:Z
+
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
+
+    move-result v0
+
+    iget v2, p0, Lyj9;->f:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget p0, p0, Lyj9;->g:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final i()Landroid/net/Uri;
+    .registers 1
+
+    iget-object p0, p0, Lyj9;->i:Landroid/net/Uri;
 
     return-object p0
+.end method
+
+.method public final j()J
+    .registers 3
+
+    const-wide/16 v0, 0x0
+
+    return-wide v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Mp4VideoContent(items="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lyj9;->a:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", videoCollage="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lyj9;->b:Lox;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", videoId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lyj9;->c:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", duration="
+
+    const-string v2, ", isMute="
+
+    iget-wide v3, p0, Lyj9;->d:J
+
+    invoke-static {v3, v4, v1, v2, v0}, Lmw1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    iget-boolean v1, p0, Lyj9;->e:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", width="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lyj9;->f:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", height="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    iget p0, p0, Lyj9;->g:I
+
+    invoke-static {v0, p0, v1}, Lyv7;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final x()Z
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
 .end method

@@ -1,21 +1,3 @@
-.class public final Li81;
-.super Ljo;
+.class public interface abstract Li81;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-
-# static fields
-.field public static final a:Li81;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Li81;
-
-    invoke-direct {v0}, Ljo;-><init>()V
-
-    sput-object v0, Li81;->a:Li81;
-
-    return-void
-.end method

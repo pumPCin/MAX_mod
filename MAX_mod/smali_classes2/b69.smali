@@ -1,28 +1,26 @@
 .class public final Lb69;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public X:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Ld89;
+.field public final synthetic Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
 
 # direct methods
-.method public constructor <init>(Ld89;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
     .registers 3
 
-    iput-object p1, p0, Lb69;->Z:Ld89;
+    iput-object p2, p0, Lb69;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    const/4 p1, 0x2
+    const/4 p2, 0x2
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -32,8 +30,6 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Ln99;
-
     check-cast p2, Lkotlin/coroutines/Continuation;
 
     invoke-virtual {p0, p1, p2}, Lb69;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -42,13 +38,11 @@
 
     check-cast p0, Lb69;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lb69;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p0
-
-    return-object p0
+    return-object p1
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -56,168 +50,297 @@
 
     new-instance v0, Lb69;
 
-    iget-object p0, p0, Lb69;->Z:Ld89;
+    iget-object p0, p0, Lb69;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    invoke-direct {v0, p0, p2}, Lb69;-><init>(Ld89;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p2, p0}, Lb69;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
 
-    iput-object p1, v0, Lb69;->Y:Ljava/lang/Object;
+    iput-object p1, v0, Lb69;->X:Ljava/lang/Object;
 
     return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 11
+    .registers 20
 
-    iget-object v0, p0, Lb69;->Z:Ld89;
+    move-object/from16 v0, p0
 
-    iget-object v1, v0, Ld89;->Y:Lzne;
+    invoke-static/range {p1 .. p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object v2, v0, Ld89;->v1:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v1, v0, Lb69;->X:Ljava/lang/Object;
 
-    iget v3, p0, Lb69;->X:I
+    check-cast v1, Lfpe;
 
-    const/4 v4, 0x2
+    iget v2, v1, Lfpe;->Z:I
 
-    const/4 v5, 0x1
+    const/4 v3, 0x3
 
-    sget-object v6, Lncf;->a:Lncf;
+    sget-object v4, Lylf;->a:Lylf;
 
-    if-eqz v3, :cond_2
+    const/4 v5, 0x0
 
-    if-eq v3, v5, :cond_1
+    const/4 v6, 0x0
 
-    if-ne v3, v4, :cond_0
+    iget-object v0, v0, Lb69;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    if-ne v2, v3, :cond_0
 
-    return-object v6
+    sget-object v2, Lone/me/sdk/messagewrite/MessageWriteWidget;->E0:[Lxi7;
+
+    invoke-virtual {v0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->H0()Ln59;
+
+    move-result-object v2
+
+    invoke-virtual {v1}, Lfpe;->l()Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    sget-object v3, Ln59;->W0:[Lxi7;
+
+    invoke-virtual {v2, v1, v6}, Ln59;->B(Ljava/lang/CharSequence;Z)V
+
+    invoke-virtual {v0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->C0()Lk19;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v5}, Lk19;->setText(Ljava/lang/CharSequence;)V
+
+    return-object v4
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    sget-object v2, Lone/me/sdk/messagewrite/MessageWriteWidget;->E0:[Lxi7;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-virtual {v0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->I0()Lmpe;
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result-object v2
 
-    throw p0
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    new-instance v3, Landroid/text/SpannableStringBuilder;
 
-    return-object v6
+    invoke-virtual {v1}, Lfpe;->l()Ljava/lang/CharSequence;
 
-    :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    move-result-object v7
 
-    iget-object p1, p0, Lb69;->Y:Ljava/lang/Object;
+    invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    check-cast p1, Ln99;
+    move-result-object v7
 
-    instance-of v3, p1, Ll99;
+    invoke-direct {v3, v7}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    const/4 v7, 0x0
+    sget v7, Lape;->X:I
 
-    sget-object v8, Ls04;->a:Ls04;
+    iget-object v7, v2, Lmpe;->X:Lzb6;
 
-    if-eqz v3, :cond_5
+    new-instance v8, Lhpe;
 
-    check-cast p1, Ll99;
+    invoke-direct {v8, v2, v6}, Lhpe;-><init>(Lmpe;I)V
 
-    iput v5, p0, Lb69;->X:I
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    iget-object v3, p1, Ll99;->b:Ljava/lang/String;
+    new-instance v9, Lape;
 
-    invoke-virtual {v2, v3, v6}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {v9, v7, v1, v8}, Lape;-><init>(Lzb6;Lfpe;Lpc6;)V
 
-    move-result v2
+    invoke-virtual {v3}, Landroid/text/SpannableStringBuilder;->length()I
 
-    if-nez v2, :cond_3
+    move-result v7
+
+    const/16 v8, 0x11
+
+    invoke-virtual {v3, v9, v6, v7, v8}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    new-instance v10, Lf09;
+
+    iget-wide v11, v1, Lfpe;->a:J
+
+    const/4 v15, 0x0
+
+    invoke-virtual {v3}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v16
+
+    const/4 v13, 0x0
+
+    sget-object v14, Le09;->a:Le09;
+
+    const/16 v17, 0x0
+
+    invoke-direct/range {v10 .. v17}, Lf09;-><init>(JLjava/lang/String;Le09;IILjava/util/Map;)V
+
+    iget-object v2, v2, Lmpe;->B0:Lcl7;
+
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ldka;
+
+    const/4 v7, 0x1
+
+    invoke-virtual {v2, v3, v10, v6, v7}, Ldka;->b(Ljava/lang/CharSequence;Lf09;ZZ)Ljava/lang/CharSequence;
+
+    move-result-object v14
+
+    invoke-virtual {v0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->I0()Lmpe;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lmpe;->Y:Lzxc;
+
+    invoke-virtual {v0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->C0()Lk19;
+
+    move-result-object v0
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v2, v0, Lk19;->c:Lh19;
+
+    iget-object v3, v0, Lk19;->c:Lh19;
+
+    invoke-virtual {v0}, Lk19;->getMessagePosition()Lrce;
+
+    move-result-object v7
+
+    invoke-interface {v7}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/lang/Number;
+
+    invoke-virtual {v7}, Ljava/lang/Number;->intValue()I
+
+    move-result v7
+
+    invoke-virtual {v0}, Lk19;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_1
+
+    invoke-static {v8}, Landroid/text/SpannableString;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableString;
+
+    move-result-object v8
 
     goto :goto_0
 
-    :cond_3
-    check-cast v1, Ltba;
+    :cond_1
+    move-object v8, v5
 
-    invoke-virtual {v1}, Ltba;->c()Lm08;
+    :goto_0
+    if-eqz v8, :cond_2
 
-    move-result-object v1
+    invoke-static {v8, v7, v1}, Lzxc;->m(Landroid/text/SpannableString;ILfpe;)Lape;
 
-    new-instance v2, Lj69;
-
-    invoke-direct {v2, v0, p1, v7}, Lj69;-><init>(Ld89;Ll99;Lkotlin/coroutines/Continuation;)V
-
-    invoke-static {v1, v2, p0}, Las3;->m0(Lj04;Lx96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v8, :cond_4
+    move-result-object v7
 
     goto :goto_1
 
-    :cond_4
-    :goto_0
-    move-object p0, v6
+    :cond_2
+    move-object v7, v5
 
     :goto_1
-    if-ne p0, v8, :cond_8
+    const-string v9, " "
 
-    goto :goto_4
+    if-eqz v8, :cond_5
 
-    :cond_5
-    instance-of v3, p1, Lm99;
+    if-eqz v7, :cond_5
 
-    if-eqz v3, :cond_9
+    invoke-interface {v8, v7}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
 
-    check-cast p1, Lm99;
+    move-result v12
 
-    iput v4, p0, Lb69;->X:I
+    invoke-interface {v8, v7}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
 
-    iget-object v3, p1, Lm99;->b:Ljava/lang/String;
+    move-result v13
 
-    invoke-virtual {v2, v3, v6}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    move-result v2
+    move-result-object v11
 
-    if-nez v2, :cond_6
+    if-nez v11, :cond_3
 
     goto :goto_2
 
-    :cond_6
-    check-cast v1, Ltba;
+    :cond_3
+    const/4 v15, 0x0
 
-    invoke-virtual {v1}, Ltba;->c()Lm08;
+    invoke-interface {v14}, Ljava/lang/CharSequence;->length()I
 
-    move-result-object v1
+    move-result v16
 
-    new-instance v2, Lk69;
+    invoke-interface/range {v11 .. v16}, Landroid/text/Editable;->replace(IILjava/lang/CharSequence;II)Landroid/text/Editable;
 
-    invoke-direct {v2, v0, p1, v7}, Lk69;-><init>(Ld89;Lm99;Lkotlin/coroutines/Continuation;)V
+    :goto_2
+    invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    invoke-static {v1, v2, p0}, Las3;->m0(Lj04;Lx96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result-object v5
 
-    move-result-object p0
+    if-nez v5, :cond_4
 
-    if-ne p0, v8, :cond_7
+    invoke-virtual {v0, v9}, Lk19;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_3
 
-    :cond_7
-    :goto_2
-    move-object p0, v6
+    :cond_4
+    invoke-interface {v5, v9}, Landroid/text/Editable;->append(Ljava/lang/CharSequence;)Landroid/text/Editable;
 
     :goto_3
-    if-ne p0, v8, :cond_8
+    move-object v5, v4
+
+    :cond_5
+    if-nez v5, :cond_8
+
+    iget-object v1, v1, Lfpe;->X:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v11
+
+    if-nez v11, :cond_6
+
+    goto :goto_4
+
+    :cond_6
+    invoke-virtual {v2}, Landroid/widget/TextView;->getSelectionStart()I
+
+    move-result v2
+
+    invoke-static {v2, v6}, Ljava/lang/Math;->max(II)I
+
+    move-result v13
+
+    sub-int v1, v13, v1
+
+    invoke-static {v1, v6}, Ljava/lang/Math;->max(II)I
+
+    move-result v12
+
+    const/4 v15, 0x0
+
+    invoke-interface {v14}, Ljava/lang/CharSequence;->length()I
+
+    move-result v16
+
+    invoke-interface/range {v11 .. v16}, Landroid/text/Editable;->replace(IILjava/lang/CharSequence;II)Landroid/text/Editable;
 
     :goto_4
-    return-object v8
+    invoke-virtual {v3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    if-nez v1, :cond_7
+
+    invoke-virtual {v0, v9}, Lk19;->setText(Ljava/lang/CharSequence;)V
+
+    return-object v4
+
+    :cond_7
+    invoke-interface {v1, v9}, Landroid/text/Editable;->append(Ljava/lang/CharSequence;)Landroid/text/Editable;
 
     :cond_8
-    return-object v6
-
-    :cond_9
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
+    return-object v4
 .end method

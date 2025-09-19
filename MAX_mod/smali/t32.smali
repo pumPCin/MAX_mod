@@ -1,54 +1,59 @@
-.class public final synthetic Lt32;
+.class public final Lt32;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Llnf;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lhm3;
 
-.field public final synthetic b:Lgh6;
+.field public b:Lhm3;
+
+.field public c:Lhm3;
+
+.field public d:Lhm3;
+
+.field public e:Lhm3;
+
+.field public f:Lhm3;
+
+.field public g:Lhm3;
+
+.field public h:Ljava/util/ArrayList;
+
+.field public i:I
+
+.field public j:I
+
+.field public k:F
+
+.field public final l:I
+
+.field public final m:Z
+
+.field public n:Z
+
+.field public o:Z
+
+.field public p:Z
+
+.field public q:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgh6;I)V
-    .registers 3
-
-    iput p2, p0, Lt32;->a:I
-
-    iput-object p1, p0, Lt32;->b:Lgh6;
+.method public constructor <init>(Lhm3;IZ)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    const/4 v0, 0x0
 
+    iput v0, p0, Lt32;->k:F
 
-# virtual methods
-.method public final run()V
-    .registers 2
+    iput-object p1, p0, Lt32;->a:Lhm3;
 
-    iget v0, p0, Lt32;->a:I
+    iput p2, p0, Lt32;->l:I
 
-    iget-object p0, p0, Lt32;->b:Lgh6;
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-interface {p0}, Lgh6;->e()V
+    iput-boolean p3, p0, Lt32;->m:Z
 
     return-void
-
-    :pswitch_0
-    invoke-interface {p0}, Lgh6;->flush()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

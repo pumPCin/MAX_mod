@@ -1,61 +1,89 @@
 .class public final Loe1;
-.super Lbud;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lkfc;
+.implements Lpc6;
 
 
 # instance fields
-.field public final A0:Llfc;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Llfc;)V
-    .registers 5
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;)V
+    .registers 3
 
-    new-instance v0, Lmjd;
+    iput-object p2, p0, Loe1;->Y:Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;
 
-    const/4 v1, 0x0
+    const/4 p2, 0x2
 
-    invoke-direct {v0, p1, v1}, Lmjd;-><init>(Landroid/content/Context;I)V
-
-    invoke-direct {p0, v0}, Lphc;-><init>(Landroid/view/View;)V
-
-    iput-object p2, p0, Loe1;->A0:Llfc;
-
-    sget-object p0, Lhjd;->b:Lhjd;
-
-    invoke-virtual {v0, p0}, Lmjd;->setThemeDepended(Lhjd;)V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final x(Lpp7;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-object v0, p0, Loe1;->A0:Llfc;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, v0, Llfc;->a:Ljava/util/LinkedHashSet;
+    invoke-virtual {p0, p1, p2}, Loe1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-interface {v0, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    move-result-object p0
 
-    instance-of v0, p1, Lhz0;
+    check-cast p0, Loe1;
 
-    if-nez v0, :cond_0
+    sget-object p1, Lylf;->a:Lylf;
 
-    return-void
+    invoke-virtual {p0, p1}, Loe1;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Loe1;
+
+    iget-object p0, p0, Loe1;->Y:Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;
+
+    invoke-direct {v0, p2, p0}, Loe1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;)V
+
+    iput-object p1, v0, Loe1;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Loe1;->X:Ljava/lang/Object;
+
+    check-cast p1, Lys9;
+
+    sget-object v0, Lik1;->D:Lik1;
+
+    invoke-static {p1, v0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p0, p0, Loe1;->Y:Lone/me/calls/ui/bottomsheet/more/CallMoreBottomSheet;
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->E0(Z)V
 
     :cond_0
-    iget-object p0, p0, Lphc;->a:Landroid/view/View;
+    sget-object p0, Lylf;->a:Lylf;
 
-    check-cast p0, Lmjd;
-
-    check-cast p1, Lcjd;
-
-    invoke-virtual {p0, p1}, Lmjd;->setModelItem(Lcjd;)V
-
-    return-void
+    return-object p0
 .end method

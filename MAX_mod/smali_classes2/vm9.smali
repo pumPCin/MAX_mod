@@ -4,22 +4,22 @@
 
 
 # virtual methods
-.method public abstract A(Ljava/lang/Throwable;)V
+.method public abstract A()V
 .end method
 
-.method public q(III)V
-    .registers 4
-
-    return-void
+.method public abstract E()V
 .end method
 
-.method public abstract s()V
+.method public abstract I()V
 .end method
 
-.method public t()V
-    .registers 1
+.method public abstract l()V
+.end method
 
-    return-void
+.method public abstract p()V
+.end method
+
+.method public abstract v()V
 .end method
 
 .method public abstract w()V

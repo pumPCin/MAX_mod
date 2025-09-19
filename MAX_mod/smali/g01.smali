@@ -1,48 +1,65 @@
 .class public final Lg01;
-.super Lcx3;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lby3;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lrb;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic a:Lone/me/calls/ui/ui/settings/CallAdminSettingsScreen;
 
 
 # direct methods
-.method public constructor <init>(Lrb;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Lone/me/calls/ui/ui/settings/CallAdminSettingsScreen;)V
+    .registers 2
 
-    iput-object p1, p0, Lg01;->Y:Lrb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lg01;->a:Lone/me/calls/ui/ui/settings/CallAdminSettingsScreen;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final a(Lxx3;Lxx3;Z)V
+    .registers 4
 
-    iput-object p1, p0, Lg01;->o:Ljava/lang/Object;
+    return-void
+.end method
 
-    iget p1, p0, Lg01;->X:I
+.method public final b(Lxx3;Lxx3;Z)V
+    .registers 4
 
-    const/high16 v0, -0x80000000
+    if-eqz p3, :cond_0
 
-    or-int/2addr p1, v0
+    sget-object p1, Lone/me/calls/ui/ui/settings/CallAdminSettingsScreen;->s0:[Lxi7;
 
-    iput p1, p0, Lg01;->X:I
+    iget-object p0, p0, Lg01;->a:Lone/me/calls/ui/ui/settings/CallAdminSettingsScreen;
 
-    iget-object p1, p0, Lg01;->Y:Lrb;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lrb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lone/me/calls/ui/ui/settings/CallAdminSettingsScreen;->y0()Lp01;
 
     move-result-object p0
 
-    return-object p0
+    invoke-virtual {p0}, Lp01;->q()Liz0;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    check-cast p1, Ld01;
+
+    iget-object p1, p1, Ld01;->F0:Lyce;
+
+    invoke-virtual {p1}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ly9;
+
+    invoke-virtual {p0, p1}, Lp01;->r(Ly9;)V
+
+    :cond_0
+    return-void
 .end method

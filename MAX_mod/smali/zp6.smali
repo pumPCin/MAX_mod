@@ -1,27 +1,23 @@
-.class public interface abstract Lzp6;
+.class public abstract Lzp6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lxe4;
+# instance fields
+.field public final a:Lp2f;
+
+.field public final b:Lu2f;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Lp2f;Lp2f;)V
+    .registers 3
 
-    new-instance v0, Lxe4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lzp6;->a:Lp2f;
 
-    new-instance v1, Lyxc;
-
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
-
-    iput-object v1, v0, Lxe4;->b:Lyxc;
-
-    sput-object v0, Lzp6;->a:Lxe4;
+    iput-object p2, p0, Lzp6;->b:Lu2f;
 
     return-void
 .end method

@@ -1,141 +1,63 @@
-.class public final Llld;
-.super Lxie;
+.class public abstract Llld;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
-
-
-# instance fields
-.field public X:I
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lxld;
 
 
 # direct methods
-.method public constructor <init>(Lxld;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public static a([B)Lmld;
+    .registers 8
 
-    iput-object p1, p0, Llld;->Z:Lxld;
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Llld;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Llld;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Llld;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Llld;
-
-    iget-object p0, p0, Llld;->Z:Lxld;
-
-    invoke-direct {v0, p0, p2}, Llld;-><init>(Lxld;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Llld;->Y:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-
-    iget v0, p0, Llld;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;-><init>()V
 
     :try_start_0
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {v0, p0}, Lj29;->mergeFrom(Lj29;[B)Lj29;
+
+    move-result-object p0
+
+    check-cast p0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_0
+    new-instance v0, Lmld;
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iget-wide v1, p0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;->taskId:J
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    iget-wide v3, p0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;->chatId:J
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget v5, p0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;->count:I
 
-    throw p0
+    sget-object v6, Lel4;->o:Lad4;
 
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget p0, p0, Lru/ok/tamtam/nano/Tasks$SyncChatHistory;->itemTypeId:I
 
-    iget-object p1, p0, Llld;->Y:Ljava/lang/Object;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    check-cast p1, Lr04;
+    move-result-object p0
 
-    iget-object v0, p0, Llld;->Z:Lxld;
+    invoke-static {v6, p0}, Lad4;->k(Lad4;Ljava/lang/Integer;)Lel4;
 
-    :try_start_1
-    new-instance v2, Lkld;
+    move-result-object v6
 
-    const/4 v3, 0x0
+    invoke-direct/range {v0 .. v6}, Lmld;-><init>(JJILel4;)V
 
-    invoke-direct {v2, p1, v3, v0}, Lkld;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lxld;)V
+    iget-object p0, v0, Lmld;->Y:Ljava/lang/String;
 
-    iput v1, p0, Llld;->X:I
+    const-string v1, "parseFrom"
 
-    const-wide/16 v0, 0x1f4
+    invoke-static {p0, v1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v0, v1, v2, p0}, Lg53;->I(JLx96;Lcx3;)Ljava/lang/Object;
+    return-object v0
 
-    move-result-object p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :catch_0
+    move-exception v0
 
-    sget-object p0, Ls04;->a:Ls04;
+    move-object p0, v0
 
-    if-ne p1, p0, :cond_2
+    new-instance v0, Lru/ok/tamtam/nano/ProtoException;
 
-    return-object p0
+    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
-    :catchall_0
-    move-exception p0
-
-    new-instance p1, Lanc;
-
-    invoke-direct {p1, p0}, Lanc;-><init>(Ljava/lang/Throwable;)V
-
-    :cond_2
-    :goto_0
-    new-instance p0, Lcnc;
-
-    invoke-direct {p0, p1}, Lcnc;-><init>(Ljava/lang/Object;)V
-
-    return-object p0
+    throw v0
 .end method

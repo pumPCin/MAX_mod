@@ -1,245 +1,80 @@
 .class public final Lvn2;
-.super Lhl;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lwpe;
-.implements Lqwa;
+.implements Lpc6;
 
 
 # instance fields
-.field public final X:Z
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final o:J
+.field public final synthetic Y:Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;
 
 
 # direct methods
-.method public constructor <init>(JJZ)V
-    .registers 6
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;)V
+    .registers 3
 
-    invoke-direct {p0, p1, p2}, Lhl;-><init>(J)V
+    iput-object p2, p0, Lvn2;->Y:Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;
 
-    iput-wide p3, p0, Lvn2;->o:J
+    const/4 p2, 0x2
 
-    iput-boolean p5, p0, Lvn2;->X:Z
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()I
-    .registers 9
-
-    invoke-virtual {p0}, Lhl;->s()Lpre;
-
-    move-result-object v0
-
-    sget-object v1, Lrwa;->A0:Lrwa;
-
-    iget-wide v2, p0, Lhl;->a:J
-
-    invoke-virtual {v0, v2, v3, v1}, Lpre;->h(JLrwa;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lfre;
-
-    iget-object v1, v1, Lfre;->f:Lqwa;
-
-    check-cast v1, Lvn2;
-
-    iget-wide v4, v1, Lvn2;->o:J
-
-    iget-wide v6, p0, Lvn2;->o:J
-
-    cmp-long v4, v4, v6
-
-    if-nez v4, :cond_0
-
-    iget-wide v4, v1, Lhl;->a:J
-
-    cmp-long v1, v4, v2
-
-    if-lez v1, :cond_0
-
-    const/4 p0, 0x3
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final d()V
-    .registers 5
-
-    invoke-virtual {p0}, Lhl;->m()Leb2;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Lvn2;->o:J
-
-    sget-object v3, Lkb2;->o:Lkb2;
-
-    invoke-virtual {v0, v1, v2, v3}, Leb2;->W(JLkb2;)V
-
-    invoke-virtual {p0}, Lhl;->s()Lpre;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Lhl;->a:J
-
-    invoke-virtual {v0, v1, v2}, Lpre;->d(J)V
-
-    return-void
-.end method
-
-.method public final e()[B
-    .registers 4
-
-    new-instance v0, Lru/ok/tamtam/nano/Tasks$ChatPinSetVisibility;
-
-    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$ChatPinSetVisibility;-><init>()V
-
-    iget-wide v1, p0, Lhl;->a:J
-
-    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$ChatPinSetVisibility;->requestId:J
-
-    iget-wide v1, p0, Lvn2;->o:J
-
-    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$ChatPinSetVisibility;->chatServerId:J
-
-    iget-boolean p0, p0, Lvn2;->X:Z
-
-    iput-boolean p0, v0, Lru/ok/tamtam/nano/Tasks$ChatPinSetVisibility;->show:Z
-
-    invoke-static {v0}, Lkz8;->toByteArray(Lkz8;)[B
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final g(Lsoe;)V
-    .registers 6
-
-    check-cast p1, Lwn2;
-
-    iget-object v0, p1, Lwn2;->c:Lp72;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Lhl;->m()Leb2;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Lvn2;->o:J
-
-    sget-object v3, Lkb2;->o:Lkb2;
-
-    invoke-virtual {v0, v1, v2, v3}, Leb2;->W(JLkb2;)V
-
-    invoke-virtual {p0}, Lhl;->m()Leb2;
-
-    move-result-object p0
-
-    iget-object p1, p1, Lwn2;->c:Lp72;
-
-    invoke-static {p1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Leb2;->c0(Ljava/util/List;)Lpk9;
-
-    :cond_0
-    return-void
-.end method
-
-.method public final getId()J
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-wide v0, p0, Lhl;->a:J
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return-wide v0
+    invoke-virtual {p0, p1, p2}, Lvn2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lvn2;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lvn2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public final getType()Lrwa;
-    .registers 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    sget-object p0, Lrwa;->A0:Lrwa;
+    new-instance v0, Lvn2;
 
-    return-object p0
-.end method
+    iget-object p0, p0, Lvn2;->Y:Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;
 
-.method public final h()Lpoe;
-    .registers 5
+    invoke-direct {v0, p2, p0}, Lvn2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;)V
 
-    new-instance v0, Lgc2;
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0xa
-
-    invoke-direct {v0, v1, v2}, Lgc2;-><init>(Lcoa;I)V
-
-    const-string v1, "chatId"
-
-    iget-wide v2, p0, Lvn2;->o:J
-
-    invoke-virtual {v0, v2, v3, v1}, Lpoe;->i(JLjava/lang/String;)V
-
-    const-string v1, "show"
-
-    iget-boolean p0, p0, Lvn2;->X:Z
-
-    invoke-virtual {v0, v1, p0}, Lpoe;->d(Ljava/lang/String;Z)V
+    iput-object p1, v0, Lvn2;->X:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method public final i(Ldoe;)V
-    .registers 6
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    iget-object v0, p1, Ldoe;->b:Ljava/lang/String;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-static {v0}, Lkv0;->r(Ljava/lang/String;)Z
+    iget-object p1, p0, Lvn2;->X:Ljava/lang/Object;
 
-    move-result v0
+    check-cast p1, Ljava/util/List;
 
-    if-nez v0, :cond_0
+    iget-object p0, p0, Lvn2;->Y:Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;
 
-    invoke-virtual {p0}, Lvn2;->d()V
+    iget-object p0, p0, Lone/me/notifications/settings/screens/chat/ChatNotificationsSettingsScreen;->c:Lkrd;
 
-    :cond_0
-    invoke-virtual {p0}, Lhl;->l()Lrv0;
+    invoke-virtual {p0, p1}, Lls7;->E(Ljava/util/List;)V
 
-    move-result-object v0
+    sget-object p0, Lylf;->a:Lylf;
 
-    new-instance v1, Lhj0;
-
-    iget-wide v2, p0, Lhl;->a:J
-
-    invoke-direct {v1, v2, v3, p1}, Lhj0;-><init>(JLdoe;)V
-
-    invoke-virtual {v0, v1}, Lrv0;->c(Ljava/lang/Object;)V
-
-    return-void
+    return-object p0
 .end method

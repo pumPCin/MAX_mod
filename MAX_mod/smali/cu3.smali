@@ -1,144 +1,153 @@
-.class public final synthetic Lcu3;
-.super Ljava/lang/Object;
+.class public final Lcu3;
+.super Lzoc;
 .source "SourceFile"
 
-# interfaces
-.implements Ls7;
+
+# static fields
+.field public static final G0:[I
+
+.field public static final H0:[I
 
 
 # instance fields
-.field public final synthetic a:Leu3;
+.field public final E0:Ltt3;
+
+.field public final F0:Lih0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Leu3;)V
+.method static constructor <clinit>()V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const v0, -0xf7cb2d
 
-    iput-object p1, p0, Lcu3;->a:Leu3;
+    const v1, -0xff6610
+
+    filled-new-array {v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lcu3;->G0:[I
+
+    const v0, -0xb1fb14
+
+    const v1, -0x717a01
+
+    filled-new-array {v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lcu3;->H0:[I
 
     return-void
 .end method
 
+.method public constructor <init>(Landroid/content/Context;Ltt3;)V
+    .registers 7
 
-# virtual methods
-.method public final a(Llrc;)V
-    .registers 6
+    sget-object v0, Lbh0;->a:Lbh0;
 
-    iget-object p0, p0, Lcu3;->a:Leu3;
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
 
-    iget-object p0, p0, Leu3;->b:Lxh7;
+    move-result-object v0
 
-    const/4 v0, 0x0
+    const-class v1, Lih0;
 
-    :try_start_0
-    invoke-static {p1}, Lgwd;->F(Llrc;)Landroid/app/Activity;
+    invoke-virtual {v0, v1}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    new-instance v1, Ltbd;
+    check-cast v0, Lih0;
 
-    invoke-direct {v1, p1}, Ltbd;-><init>(Landroid/content/Context;)V
+    new-instance v1, Lafa;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    const/4 v2, 0x0
 
-    move-result-object v2
+    invoke-direct {v1, p1, v2}, Lafa;-><init>(Landroid/content/Context;I)V
 
-    check-cast v2, Lqbd;
+    invoke-direct {p0, v1}, Lzoc;-><init>(Landroid/view/View;)V
 
-    check-cast v2, Li2d;
+    iput-object p2, p0, Lcu3;->E0:Ltt3;
 
-    const-string v3, "invite-header"
+    iput-object v0, p0, Lcu3;->F0:Lih0;
 
-    iget-object v2, v2, Lc3;->g:Lai7;
+    new-instance p0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    invoke-virtual {v2, v3, v0}, Lai7;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const/4 p1, -0x1
 
-    move-result-object v2
+    invoke-direct {p0, p1, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    if-eqz v2, :cond_0
+    const/16 p1, 0xc
 
-    goto :goto_0
+    int-to-float p1, p1
 
-    :cond_0
-    sget v2, Lqsc;->v:I
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    move-result-object p2
 
-    move-result-object v2
+    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    :goto_0
-    iput-object v2, v1, Ltbd;->a:Ljava/lang/Object;
+    move-result-object p2
 
-    const-string v2, "text/plain"
+    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
 
-    iget-object v3, v1, Ltbd;->c:Ljava/lang/Object;
+    mul-float/2addr p2, p1
 
-    check-cast v3, Landroid/content/Intent;
+    invoke-static {p2}, Lya6;->G(F)I
 
-    invoke-virtual {v3, v2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+    move-result p2
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    move-result-object p0
+    move-result-object v0
 
-    check-cast p0, Lqbd;
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    check-cast p0, Li2d;
+    move-result-object v0
 
-    const-string v2, "invite-long"
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    iget-object v3, p0, Lc3;->g:Lai7;
+    mul-float/2addr v0, p1
 
-    invoke-virtual {v3, v2, v0}, Lai7;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lya6;->G(F)I
 
-    move-result-object v2
+    move-result v0
 
-    if-eqz v2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    sget v2, Lqsc;->C:I
-
-    invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Li2d;->m()Ljava/lang/String;
-
-    move-result-object p0
-
-    filled-new-array {p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    const/4 v2, 0x1
-
-    invoke-static {p0, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p1, p0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    :goto_1
-    invoke-virtual {v1, v2}, Ltbd;->D(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    invoke-virtual {v1}, Ltbd;->E()V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v2
 
-    return-void
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
 
-    :catch_0
-    const-string p0, "ContactsDeepLinkFactory"
+    mul-float/2addr v2, p1
 
-    const-string p1, "shareInvite: failed, no activity found"
+    invoke-static {v2}, Lya6;->G(F)I
 
-    invoke-static {p0, p1, v0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result v2
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v3
+
+    invoke-static {p1}, Lya6;->G(F)I
+
+    move-result p1
+
+    invoke-virtual {p0, p2, v0, v2, p1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
+
+    invoke-virtual {v1, p0}, Lafa;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method

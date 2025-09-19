@@ -1,66 +1,93 @@
 .class public final Lp6b;
-.super Ljava/lang/Object;
+.super Lj2e;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ln6b;
+# virtual methods
+.method public final F(Lo6b;)V
+    .registers 6
 
+    iget-object p0, p0, Lzoc;->a:Landroid/view/View;
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 2
+    check-cast p0, Lkn3;
 
-    sget v0, Lyhf;->a:I
+    iget-wide v0, p1, Lo6b;->u0:J
 
-    const/16 v1, 0x1f
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
-    if-ge v0, v1, :cond_0
+    move-result v0
 
-    new-instance v0, Lp6b;
+    invoke-virtual {p0, v0}, Landroidx/constraintlayout/widget/ConstraintLayout;->setId(I)V
 
-    invoke-direct {v0}, Lp6b;-><init>()V
+    iget-boolean v0, p1, Lo6b;->t0:Z
 
-    return-void
+    invoke-virtual {p0, v0}, Lkn3;->setActivated(Z)V
 
-    :cond_0
-    sget v0, Ln6b;->b:I
+    iget-object v0, p1, Lo6b;->c:Ljava/lang/CharSequence;
 
-    return-void
-.end method
+    invoke-virtual {p0, v0}, Lkn3;->setName(Ljava/lang/CharSequence;)V
 
-.method public constructor <init>()V
-    .registers 2
+    iget-object v0, p1, Lo6b;->o:Lu2f;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    invoke-direct {p0, v0}, Lp6b;-><init>(Ln6b;)V
+    if-eqz v0, :cond_0
 
-    sget p0, Lyhf;->a:I
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    const/16 v0, 0x1f
+    move-result-object v2
 
-    if-ge p0, v0, :cond_0
+    invoke-virtual {v0, v2}, Lu2f;->b(Landroid/content/Context;)Ljava/lang/CharSequence;
 
-    const/4 p0, 0x1
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    move-object v0, v1
 
     :goto_0
-    invoke-static {p0}, Lnc5;->m(Z)V
+    invoke-virtual {p0, v0}, Lkn3;->setMessage(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p0, v1}, Lkn3;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    iget-wide v0, p1, Lo6b;->b:J
+
+    iget-object v2, p1, Lo6b;->s0:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lo6b;->X:Landroid/net/Uri;
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v3}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-nez v3, :cond_2
+
+    :cond_1
+    sget-object v3, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
+
+    invoke-virtual {v3}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    :cond_2
+    invoke-virtual {p0, v0, v1, v2, v3}, Lkn3;->L(JLjava/lang/CharSequence;Ljava/lang/String;)V
+
+    iget-boolean p1, p1, Lo6b;->Z:Z
+
+    invoke-virtual {p0, p1}, Lkn3;->setVerified(Z)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ln6b;)V
+.method public final bridge synthetic y(Lts7;)V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    check-cast p1, Lo6b;
 
-    iput-object p1, p0, Lp6b;->a:Ln6b;
+    invoke-virtual {p0, p1}, Lp6b;->F(Lo6b;)V
 
     return-void
 .end method

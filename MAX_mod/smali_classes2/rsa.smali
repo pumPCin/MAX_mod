@@ -1,18 +1,25 @@
-.class public final synthetic Lrsa;
+.class public abstract Lrsa;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lru/ok/android/externcalls/sdk/ui/FrameDecorator;
+
+# static fields
+.field public static final a:I
+
+.field public static final b:I
 
 
-# virtual methods
-.method public final apply(Lorg/webrtc/VideoFrame;)Lorg/webrtc/VideoFrame;
-    .registers 2
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-static {p1}, Lru/ok/android/externcalls/sdk/video/ParticipantVideoViewManager;->a(Lorg/webrtc/VideoFrame;)Lorg/webrtc/VideoFrame;
+    sget v0, Lgcc;->email_intent_title:I
 
-    move-result-object p0
+    sput v0, Lrsa;->a:I
 
-    return-object p0
+    sget v0, Lgcc;->faq_title:I
+
+    sput v0, Lrsa;->b:I
+
+    return-void
 .end method

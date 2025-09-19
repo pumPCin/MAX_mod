@@ -1,254 +1,259 @@
 .class public final Low0;
-.super Ljava/io/FilterInputStream;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:J
+# static fields
+.field public static final synthetic n:I
 
-.field public b:J
+
+# instance fields
+.field public final a:Z
+
+.field public final b:Z
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:Z
+
+.field public final f:Z
+
+.field public final g:Z
+
+.field public final h:I
+
+.field public final i:I
+
+.field public final j:Z
+
+.field public final k:Z
+
+.field public final l:Z
+
+.field public m:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 3
 
-    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    const-wide/16 v0, -0x1
+    const v1, 0x7fffffff
 
-    iput-wide v0, p0, Low0;->b:J
+    int-to-long v1, v1
 
-    const-wide/32 v0, 0x100001
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toSeconds(J)J
 
-    iput-wide v0, p0, Low0;->a:J
+    return-void
+.end method
+
+.method public constructor <init>(ZZIIZZZIIZZZLjava/lang/String;)V
+    .registers 14
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p1, p0, Low0;->a:Z
+
+    iput-boolean p2, p0, Low0;->b:Z
+
+    iput p3, p0, Low0;->c:I
+
+    iput p4, p0, Low0;->d:I
+
+    iput-boolean p5, p0, Low0;->e:Z
+
+    iput-boolean p6, p0, Low0;->f:Z
+
+    iput-boolean p7, p0, Low0;->g:Z
+
+    iput p8, p0, Low0;->h:I
+
+    iput p9, p0, Low0;->i:I
+
+    iput-boolean p10, p0, Low0;->j:Z
+
+    iput-boolean p11, p0, Low0;->k:Z
+
+    iput-boolean p12, p0, Low0;->l:Z
+
+    iput-object p13, p0, Low0;->m:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final available()I
-    .registers 5
-
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    iget-wide v2, p0, Low0;->a:J
-
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide v0
-
-    long-to-int p0, v0
-
-    return p0
-.end method
-
-.method public final declared-synchronized mark(I)V
-    .registers 4
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
-
-    iget-wide v0, p0, Low0;->a:J
-
-    iput-wide v0, p0, Low0;->b:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final read()I
+.method public final toString()Ljava/lang/String;
     .registers 6
 
-    iget-wide v0, p0, Low0;->a:J
+    iget-object v0, p0, Low0;->m:Ljava/lang/String;
 
-    const-wide/16 v2, 0x0
+    if-nez v0, :cond_d
 
-    cmp-long v0, v0, v2
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const/4 v1, -0x1
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    if-nez v0, :cond_0
+    iget-boolean v1, p0, Low0;->a:Z
 
-    return v1
+    if-eqz v1, :cond_0
+
+    const-string v1, "no-cache, "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_0
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+    iget-boolean v1, p0, Low0;->b:Z
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+    if-eqz v1, :cond_1
 
-    move-result v0
+    const-string v1, "no-store, "
 
-    if-eq v0, v1, :cond_1
-
-    iget-wide v1, p0, Low0;->a:J
-
-    const-wide/16 v3, 0x1
-
-    sub-long/2addr v1, v3
-
-    iput-wide v1, p0, Low0;->a:J
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_1
-    return v0
-.end method
+    iget v1, p0, Low0;->c:I
 
-.method public final read([BII)I
-    .registers 10
-
-    iget-wide v0, p0, Low0;->a:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
+    const-string v2, ", "
 
     const/4 v3, -0x1
 
-    if-nez v2, :cond_0
+    if-eq v1, v3, :cond_2
 
-    return v3
+    const-string v4, "max-age="
 
-    :cond_0
-    int-to-long v4, p3
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v4, v5, v0, v1}, Ljava/lang/Math;->min(JJ)J
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-wide v0
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    long-to-int p3, v0
+    :cond_2
+    iget v1, p0, Low0;->d:I
 
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+    if-eq v1, v3, :cond_3
 
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
+    const-string v4, "s-maxage="
 
-    move-result p1
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eq p1, v3, :cond_1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-wide p2, p0, Low0;->a:J
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    int-to-long v0, p1
+    :cond_3
+    iget-boolean v1, p0, Low0;->e:Z
 
-    sub-long/2addr p2, v0
+    if-eqz v1, :cond_4
 
-    iput-wide p2, p0, Low0;->a:J
+    const-string v1, "private, "
 
-    :cond_1
-    return p1
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final declared-synchronized reset()V
-    .registers 5
+    :cond_4
+    iget-boolean v1, p0, Low0;->f:Z
 
-    monitor-enter p0
+    if-eqz v1, :cond_5
 
-    :try_start_0
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+    const-string v1, "public, "
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v0
+    :cond_5
+    iget-boolean v1, p0, Low0;->g:Z
 
-    if-eqz v0, :cond_1
+    if-eqz v1, :cond_6
 
-    iget-wide v0, p0, Low0;->b:J
+    const-string v1, "must-revalidate, "
 
-    const-wide/16 v2, -0x1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    cmp-long v0, v0, v2
+    :cond_6
+    iget v1, p0, Low0;->h:I
 
-    if-eqz v0, :cond_0
+    if-eq v1, v3, :cond_7
 
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+    const-string v4, "max-stale="
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v0, p0, Low0;->b:J
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iput-wide v0, p0, Low0;->a:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    monitor-exit p0
+    :cond_7
+    iget v1, p0, Low0;->i:I
 
-    return-void
+    if-eq v1, v3, :cond_8
 
-    :catchall_0
-    move-exception v0
+    const-string v3, "min-fresh="
 
-    goto :goto_0
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    :try_start_1
-    new-instance v0, Ljava/io/IOException;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, "Mark not set"
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    :cond_8
+    iget-boolean v1, p0, Low0;->j:Z
 
-    throw v0
+    if-eqz v1, :cond_9
 
-    :cond_1
-    new-instance v0, Ljava/io/IOException;
+    const-string v1, "only-if-cached, "
 
-    const-string v1, "Mark not supported"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    :cond_9
+    iget-boolean v1, p0, Low0;->k:Z
 
-    throw v0
+    if-eqz v1, :cond_a
 
-    :goto_0
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    const-string v1, "no-transform, "
 
-    throw v0
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final skip(J)J
-    .registers 5
+    :cond_a
+    iget-boolean v1, p0, Low0;->l:Z
 
-    iget-wide v0, p0, Low0;->a:J
+    if-eqz v1, :cond_b
 
-    invoke-static {p1, p2, v0, v1}, Ljava/lang/Math;->min(JJ)J
+    const-string v1, "immutable, "
 
-    move-result-wide p1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+    :cond_b
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
-    invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
+    move-result v1
 
-    move-result-wide p1
+    if-nez v1, :cond_c
 
-    iget-wide v0, p0, Low0;->a:J
+    const-string p0, ""
 
-    sub-long/2addr v0, p1
+    return-object p0
 
-    iput-wide v0, p0, Low0;->a:J
+    :cond_c
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
-    return-wide p1
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x2
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Low0;->m:Ljava/lang/String;
+
+    :cond_d
+    return-object v0
 .end method

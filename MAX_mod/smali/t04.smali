@@ -2,10 +2,10 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lo04;
+
 
 # virtual methods
-.method public abstract getCallerFrame()Lt04;
-.end method
-
-.method public abstract getStackTraceElement()Ljava/lang/StackTraceElement;
+.method public abstract i(Lq04;Ljava/lang/Throwable;)V
 .end method

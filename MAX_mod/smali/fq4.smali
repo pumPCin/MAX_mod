@@ -1,123 +1,31 @@
-.class public final Lfq4;
+.class public abstract Lfq4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljavax/inject/Provider;
-
 
 # static fields
-.field public static final c:Ljava/lang/Object;
+.field public static final a:Lsh4;
 
+.field public static final b:Lrlf;
 
-# instance fields
-.field public volatile a:Li02;
-
-.field public volatile b:Ljava/lang/Object;
+.field public static final c:Ldg4;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
-    new-instance v0, Ljava/lang/Object;
+    sget-object v0, Lsh4;->b:Lsh4;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lfq4;->a:Lsh4;
 
-    sput-object v0, Lfq4;->c:Ljava/lang/Object;
+    sget-object v0, Lrlf;->a:Lrlf;
+
+    sput-object v0, Lfq4;->b:Lrlf;
+
+    sget-object v0, Ldg4;->a:Ldg4;
+
+    sput-object v0, Lfq4;->c:Ldg4;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final get()Ljava/lang/Object;
-    .registers 6
-
-    iget-object v0, p0, Lfq4;->b:Ljava/lang/Object;
-
-    sget-object v1, Lfq4;->c:Ljava/lang/Object;
-
-    if-ne v0, v1, :cond_3
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-object v0, p0, Lfq4;->b:Ljava/lang/Object;
-
-    if-ne v0, v1, :cond_2
-
-    iget-object v0, p0, Lfq4;->a:Li02;
-
-    invoke-virtual {v0}, Li02;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lfq4;->b:Ljava/lang/Object;
-
-    if-eq v2, v1, :cond_1
-
-    if-ne v2, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Scoped provider was invoked recursively returning different results: "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v2, " & "
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ". This is likely due to a circular dependency."
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    :cond_1
-    :goto_0
-    iput-object v0, p0, Lfq4;->b:Ljava/lang/Object;
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lfq4;->a:Li02;
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_2
-
-    :cond_2
-    :goto_1
-    monitor-exit p0
-
-    return-object v0
-
-    :goto_2
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    :cond_3
-    return-object v0
 .end method

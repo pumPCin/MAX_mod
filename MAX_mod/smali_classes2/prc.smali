@@ -1,29 +1,27 @@
 .class public final Lprc;
-.super Lphc;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic E0:I
-
-
 # instance fields
-.field public final A0:Lg42;
+.field public final a:Lcta;
 
-.field public B0:Llrc;
+.field public final b:Lzxc;
 
-.field public C0:J
-
-.field public D0:Z
+.field public final c:Landroid/os/Handler;
 
 
 # direct methods
-.method public constructor <init>(Lg42;)V
-    .registers 2
+.method public constructor <init>(Lcta;Lzxc;Landroid/os/Handler;)V
+    .registers 4
 
-    invoke-direct {p0, p1}, Lphc;-><init>(Landroid/view/View;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lprc;->A0:Lg42;
+    iput-object p1, p0, Lprc;->a:Lcta;
+
+    iput-object p2, p0, Lprc;->b:Lzxc;
+
+    iput-object p3, p0, Lprc;->c:Landroid/os/Handler;
 
     return-void
 .end method

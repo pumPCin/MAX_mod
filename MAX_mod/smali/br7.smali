@@ -1,56 +1,78 @@
-.class public final Lbr7;
+.class public final synthetic Lbr7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Le4a;
+.implements Lzb6;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final synthetic a:I
 
-.field public final b:Lx0a;
-
-.field public final c:Ljava/util/concurrent/Executor;
+.field public final synthetic b:Lone/me/android/deeplink/LinkInterceptorWidget;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lx0a;)V
-    .registers 5
+.method public synthetic constructor <init>(Lone/me/android/deeplink/LinkInterceptorWidget;I)V
+    .registers 3
+
+    iput p2, p0, Lbr7;->a:I
+
+    iput-object p1, p0, Lbr7;->b:Lone/me/android/deeplink/LinkInterceptorWidget;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    iput-object v0, p0, Lbr7;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p1, p0, Lbr7;->c:Ljava/util/concurrent/Executor;
-
-    iput-object p2, p0, Lbr7;->b:Lx0a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .registers 4
+.method public final invoke()Ljava/lang/Object;
+    .registers 5
 
-    check-cast p1, Lcr7;
+    iget v0, p0, Lbr7;->a:I
 
-    new-instance v0, Lo77;
+    iget-object p0, p0, Lbr7;->b:Lone/me/android/deeplink/LinkInterceptorWidget;
 
-    const/4 v1, 0x6
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, p0, v1, p1}, Lo77;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    sget v0, Lone/me/android/deeplink/LinkInterceptorWidget;->o:I
 
-    iget-object p0, p0, Lbr7;->c:Ljava/util/concurrent/Executor;
+    invoke-virtual {p0}, Lxx3;->getRouter()Lrzc;
 
-    invoke-interface {p0, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-result-object p0
 
-    return-void
+    return-object p0
+
+    :pswitch_0
+    sget v0, Lone/me/android/deeplink/LinkInterceptorWidget;->o:I
+
+    new-instance v0, Lih1;
+
+    new-instance v1, Lbr7;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, p0, v2}, Lbr7;-><init>(Lone/me/android/deeplink/LinkInterceptorWidget;I)V
+
+    new-instance v2, Lzte;
+
+    invoke-direct {v2, v1}, Lzte;-><init>(Lzb6;)V
+
+    new-instance v1, Litg;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, p0, v3}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
+
+    invoke-direct {v0, v2, v1}, Lih1;-><init>(Lzte;Litg;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

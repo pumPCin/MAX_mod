@@ -2,119 +2,55 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Loqf;
+.implements Lt17;
+.implements Lq4f;
+
 
 # static fields
-.field public static final b:Ljava/util/ArrayList;
+.field public static final b:Ld90;
 
 
 # instance fields
-.field public final a:Landroid/os/Handler;
+.field public final a:Lcva;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 4
 
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v0, Ld90;
 
-    const/16 v1, 0x32
+    const-string v1, "camerax.core.streamSharing.captureTypes"
 
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+    const-class v2, Ljava/util/List;
 
-    sput-object v0, Lqle;->b:Ljava/util/ArrayList;
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lqle;->b:Ld90;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Handler;)V
+.method public constructor <init>(Lcva;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lqle;->a:Landroid/os/Handler;
+    iput-object p1, p0, Lqle;->a:Lcva;
 
     return-void
 .end method
 
-.method public static b()Lole;
-    .registers 2
-
-    sget-object v0, Lqle;->b:Ljava/util/ArrayList;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    new-instance v1, Lole;
-
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    goto :goto_1
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lole;
-
-    :goto_0
-    monitor-exit v0
-
-    return-object v1
-
-    :goto_1
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
 
 # virtual methods
-.method public final a(ILjava/lang/Object;)Lole;
-    .registers 4
+.method public final getConfig()Lzf3;
+    .registers 1
 
-    invoke-static {}, Lqle;->b()Lole;
+    iget-object p0, p0, Lqle;->a:Lcva;
 
-    move-result-object v0
-
-    iget-object p0, p0, Lqle;->a:Landroid/os/Handler;
-
-    invoke-virtual {p0, p1, p2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
-
-    move-result-object p0
-
-    iput-object p0, v0, Lole;->a:Landroid/os/Message;
-
-    return-object v0
-.end method
-
-.method public final c(I)Z
-    .registers 2
-
-    iget-object p0, p0, Lqle;->a:Landroid/os/Handler;
-
-    invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
-
-    move-result p0
-
-    return p0
+    return-object p0
 .end method

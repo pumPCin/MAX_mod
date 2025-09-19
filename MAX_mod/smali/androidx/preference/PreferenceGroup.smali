@@ -31,7 +31,7 @@
 
     invoke-direct {p4}, Ljava/util/ArrayList;-><init>()V
 
-    sget-object p4, Ly5c;->PreferenceGroup:[I
+    sget-object p4, Ladc;->PreferenceGroup:[I
 
     const/4 v0, 0x0
 
@@ -39,7 +39,7 @@
 
     move-result-object p1
 
-    sget p2, Ly5c;->PreferenceGroup_orderingFromXml:I
+    sget p2, Ladc;->PreferenceGroup_orderingFromXml:I
 
     const/4 p3, 0x1
 
@@ -49,7 +49,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    sget p2, Ly5c;->PreferenceGroup_initialExpandedChildrenCount:I
+    sget p2, Ladc;->PreferenceGroup_initialExpandedChildrenCount:I
 
     invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
@@ -57,7 +57,7 @@
 
     if-eqz p2, :cond_0
 
-    sget p2, Ly5c;->PreferenceGroup_initialExpandedChildrenCount:I
+    sget p2, Ladc;->PreferenceGroup_initialExpandedChildrenCount:I
 
     const p3, 0x7fffffff
 

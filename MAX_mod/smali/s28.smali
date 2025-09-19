@@ -1,95 +1,67 @@
-.class public abstract synthetic Ls28;
+.class public abstract Ls28;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+.field public static final a:[B
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 5
 
-    invoke-static {}, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->values()[Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+    const/16 v0, 0x80
 
-    move-result-object v0
+    new-array v0, v0, [B
 
-    array-length v0, v0
+    const/4 v1, -0x1
 
-    new-array v0, v0, [I
+    invoke-static {v0, v1}, Ljava/util/Arrays;->fill([BB)V
 
-    :try_start_0
-    sget-object v1, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->WIRED_HEADSET:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+    const/4 v1, 0x0
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    move v2, v1
 
-    move-result v1
+    :goto_0
+    const/16 v3, 0xa
 
-    const/4 v2, 0x1
+    if-ge v2, v3, :cond_0
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    add-int/lit8 v3, v2, 0x30
 
-    :catch_0
-    :try_start_1
-    sget-object v1, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->EARPIECE:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+    int-to-byte v4, v2
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    aput-byte v4, v0, v3
 
-    move-result v1
+    add-int/lit8 v2, v2, 0x1
 
-    const/4 v2, 0x2
+    goto :goto_0
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    :cond_0
+    :goto_1
+    const/16 v2, 0x1a
 
-    :catch_1
-    :try_start_2
-    sget-object v1, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->BLUETOOTH:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+    if-ge v1, v2, :cond_1
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    add-int/lit8 v2, v1, 0x41
 
-    move-result v1
+    add-int/lit8 v3, v1, 0xa
 
-    const/4 v2, 0x3
+    int-to-byte v3, v3
 
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    aput-byte v3, v0, v2
 
-    :catch_2
-    :try_start_3
-    sget-object v1, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->BLUETOOTH_INTENT:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+    add-int/lit8 v2, v1, 0x61
 
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    aput-byte v3, v0, v2
 
-    move-result v1
+    add-int/lit8 v1, v1, 0x1
 
-    const/4 v2, 0x4
+    goto :goto_1
 
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v1, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->SPEAKER_PHONE:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    sput-object v0, Ls28;->$EnumSwitchMapping$0:[I
+    :cond_1
+    sput-object v0, Ls28;->a:[B
 
     return-void
 .end method

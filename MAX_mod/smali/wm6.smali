@@ -3,71 +3,69 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Lwm6;
+# instance fields
+.field public d:I
 
 
-# direct methods
-.method static constructor <clinit>()V
+# virtual methods
+.method public final a(Lfn6;Landroid/view/View;Lmq0;IZ)I
+    .registers 7
+
+    const/4 v0, 0x0
+
+    invoke-super/range {p0 .. p5}, Lan6;->a(Lfn6;Landroid/view/View;Lmq0;IZ)I
+
+    move-result p0
+
+    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final b(II)V
     .registers 4
 
-    new-instance v0, Lwm6;
+    invoke-super {p0, p1, p2}, Lan6;->b(II)V
 
-    sget v1, Lmaa;->p:I
+    iget v0, p0, Lwm6;->d:I
 
-    new-instance v2, Lqte;
+    add-int/2addr p1, p2
 
-    invoke-direct {v2, v1}, Lqte;-><init>(I)V
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
-    sget v1, Lwsc;->P:I
+    move-result p1
 
-    new-instance v3, Lqte;
-
-    invoke-direct {v3, v1}, Lqte;-><init>(I)V
-
-    invoke-direct {v0, v2, v3}, Lan6;-><init>(Lqte;Lqte;)V
-
-    sput-object v0, Lwm6;->c:Lwm6;
+    iput p1, p0, Lwm6;->d:I
 
     return-void
 .end method
 
+.method public final c()V
+    .registers 2
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    invoke-super {p0}, Lan6;->c()V
 
-    const/4 v0, 0x1
+    const/high16 v0, -0x80000000
 
-    if-ne p0, p1, :cond_0
+    iput v0, p0, Lwm6;->d:I
 
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lwm6;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final d(Z)I
+    .registers 2
 
-    const p0, -0x52663c62
+    invoke-super {p0, p1}, Lan6;->d(Z)I
+
+    move-result p1
+
+    iget p0, p0, Lwm6;->d:I
+
+    invoke-static {p1, p0}, Ljava/lang/Math;->max(II)I
+
+    move-result p0
 
     return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "AwaitingNetwork"
-
-    return-object p0
 .end method

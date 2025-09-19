@@ -1,200 +1,44 @@
-.class public final Luxd;
+.class public final synthetic Luxd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lsb9;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Luxd;",
-            ">;"
-        }
-    .end annotation
-.end field
+.implements Lzm5;
 
 
 # instance fields
-.field public final a:F
-
-.field public final b:I
+.field public final synthetic a:Lcl7;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Lcl7;)V
     .registers 2
 
-    new-instance v0, Lxid;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Lxid;-><init>(I)V
-
-    sput-object v0, Luxd;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(IF)V
-    .registers 3
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Luxd;->a:F
-
-    iput p1, p0, Luxd;->b:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readFloat()F
-
-    move-result v0
-
-    iput v0, p0, Luxd;->a:F
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    iput p1, p0, Luxd;->b:I
+    iput-object p1, p0, Luxd;->a:Lcl7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
+.method public final a()Ls04;
     .registers 1
 
-    const/4 p0, 0x0
+    iget-object p0, p0, Luxd;->a:Lcl7;
 
-    return p0
-.end method
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    move-result-object p0
 
-    const/4 v0, 0x1
+    check-cast p0, Lxwe;
 
-    if-ne p0, p1, :cond_0
+    check-cast p0, Laga;
 
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_2
-
-    const-class v2, Luxd;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Luxd;
-
-    iget v2, p0, Luxd;->a:F
-
-    iget v3, p1, Luxd;->a:F
-
-    cmpl-float v2, v2, v3
-
-    if-nez v2, :cond_2
-
-    iget p0, p0, Luxd;->b:I
-
-    iget p1, p1, Luxd;->b:I
-
-    if-ne p0, p1, :cond_2
-
-    return v0
-
-    :cond_2
-    :goto_0
-    return v1
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget v0, p0, Luxd;->a:F
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Float;->hashCode()I
-
-    move-result v0
-
-    add-int/lit16 v0, v0, 0x20f
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget p0, p0, Luxd;->b:I
-
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x49
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    const-string v1, "smta: captureFrameRate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Luxd;->a:F
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string v1, ", svcTemporalLayerCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Luxd;->b:I
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Laga;->b()Ls04;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
-
-    iget p2, p0, Luxd;->a:F
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeFloat(F)V
-
-    iget p0, p0, Luxd;->b:I
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
-
-    return-void
 .end method

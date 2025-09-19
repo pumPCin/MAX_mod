@@ -1,121 +1,95 @@
-.class public final synthetic Lfjd;
+.class public final Lfjd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
-
 
 # instance fields
-.field public final synthetic a:Lmjd;
+.field public A:Lu6d;
 
-.field public final synthetic b:Lijd;
+.field public a:Ltxd;
+
+.field public b:Ld;
+
+.field public c:Lyfe;
+
+.field public d:Ljava/util/concurrent/ExecutorService;
+
+.field public e:Landroid/content/Context;
+
+.field public f:Lorg/webrtc/EglBase;
+
+.field public g:Leo9;
+
+.field public h:Lbh1;
+
+.field public i:Lt0e;
+
+.field public final j:Ljava/util/ArrayList;
+
+.field public final k:Ljava/util/ArrayList;
+
+.field public final l:Ljava/util/ArrayList;
+
+.field public m:Lrg1;
+
+.field public n:Ln63;
+
+.field public o:Lfec;
+
+.field public p:Liec;
+
+.field public q:Lhq5;
+
+.field public r:Lngb;
+
+.field public s:Z
+
+.field public t:Ltgd;
+
+.field public u:Ln06;
+
+.field public v:Lud1;
+
+.field public w:Lna8;
+
+.field public x:Lbkd;
+
+.field public y:Z
+
+.field public z:Lc0d;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lmjd;Lijd;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfjd;->a:Lmjd;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput-object p2, p0, Lfjd;->b:Lijd;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    return-void
-.end method
+    iput-object v0, p0, Lfjd;->j:Ljava/util/ArrayList;
 
+    new-instance v0, Ljava/util/ArrayList;
 
-# virtual methods
-.method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .registers 6
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p1}, Landroid/view/View;->isPressed()Z
+    iput-object v0, p0, Lfjd;->k:Ljava/util/ArrayList;
 
-    move-result p1
+    new-instance v0, Ljava/util/ArrayList;
 
-    if-eqz p1, :cond_4
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iget-object p1, p0, Lfjd;->a:Lmjd;
+    iput-object v0, p0, Lfjd;->l:Ljava/util/ArrayList;
 
-    invoke-virtual {p1}, Lmjd;->getModelItem()Lcjd;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    iput-boolean v0, p0, Lfjd;->s:Z
 
-    invoke-interface {v0}, Lcjd;->e()Lzid;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    iput-boolean v0, p0, Lfjd;->y:Z
 
-    instance-of v0, v0, Lwid;
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {p1}, Lmjd;->getModelItem()Lcjd;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcjd;->e()Lzid;
-
-    move-result-object v0
-
-    instance-of v1, v0, Lwid;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_0
-
-    check-cast v0, Lwid;
-
-    goto :goto_0
-
-    :cond_0
-    move-object v0, v2
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    iget-boolean v0, v0, Lwid;->a:Z
-
-    if-ne v0, p2, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p1}, Lmjd;->getModelItem()Lcjd;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcjd;->e()Lzid;
-
-    move-result-object v0
-
-    instance-of v1, v0, Lwid;
-
-    if-eqz v1, :cond_2
-
-    move-object v2, v0
-
-    check-cast v2, Lwid;
-
-    :cond_2
-    if-eqz v2, :cond_3
-
-    iput-boolean p2, v2, Lwid;->a:Z
-
-    :cond_3
-    :goto_1
-    invoke-virtual {p1}, Lmjd;->getModelItem()Lcjd;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Lpp7;->getItemId()J
-
-    move-result-wide v0
-
-    iget-object p0, p0, Lfjd;->b:Lijd;
-
-    invoke-interface {p0, v0, v1, p2}, Lijd;->f(JZ)V
-
-    :cond_4
     return-void
 .end method

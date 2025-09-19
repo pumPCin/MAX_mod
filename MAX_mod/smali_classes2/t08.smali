@@ -1,136 +1,244 @@
 .class public final Lt08;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Lone/me/main/MainScreen;
+.field public final a:Lcl7;
 
-.field public final synthetic Y:Ls08;
+.field public final b:Lcl7;
 
-.field public final synthetic Z:Lct4;
+.field public final c:Lcl7;
+
+.field public final d:Lcl7;
+
+.field public final e:Lcl7;
+
+.field public final f:Lcl7;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/main/MainScreen;Ls08;Lct4;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+.method public constructor <init>(Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;)V
+    .registers 7
 
-    iput-object p1, p0, Lt08;->X:Lone/me/main/MainScreen;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lt08;->Y:Ls08;
+    iput-object p1, p0, Lt08;->a:Lcl7;
 
-    iput-object p3, p0, Lt08;->Z:Lct4;
+    iput-object p2, p0, Lt08;->b:Lcl7;
 
-    const/4 p1, 0x2
+    iput-object p3, p0, Lt08;->c:Lcl7;
 
-    invoke-direct {p0, p1, p4}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p4, p0, Lt08;->d:Lcl7;
+
+    iput-object p5, p0, Lt08;->e:Lcl7;
+
+    iput-object p6, p0, Lt08;->f:Lcl7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Loma;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lt08;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lt08;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lt08;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final a(Lcxe;)V
     .registers 5
 
-    new-instance p1, Lt08;
+    const-string v0, "onLoginFail"
 
-    iget-object v0, p0, Lt08;->Y:Ls08;
+    filled-new-array {p1}, [Ljava/lang/Object;
 
-    iget-object v1, p0, Lt08;->Z:Lct4;
+    move-result-object v1
 
-    iget-object p0, p0, Lt08;->X:Lone/me/main/MainScreen;
+    const-string v2, "t08"
 
-    invoke-direct {p1, p0, v0, v1, p2}, Lt08;-><init>(Lone/me/main/MainScreen;Ls08;Lct4;Lkotlin/coroutines/Continuation;)V
+    invoke-static {v2, v0, v1}, Ljtg;->n(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    return-object p1
-.end method
+    const-string v0, "login.blocked"
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    iget-object v1, p1, Lcxe;->b:Ljava/lang/String;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lt08;->X:Lone/me/main/MainScreen;
-
-    iget-object p1, p1, Lone/me/main/MainScreen;->c:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {p1}, Ljava/util/LinkedHashMap;->entrySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :cond_0
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    iget-object v1, p0, Lt08;->Z:Lct4;
+    if-nez v0, :cond_5
+
+    const-string v0, "login.flood"
+
+    iget-object v1, p1, Lcxe;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    const-string v0, "login.token"
+
+    iget-object v1, p1, Lcxe;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto/16 :goto_0
+
+    :cond_0
+    const-string v0, "session.state"
+
+    iget-object v1, p1, Lcxe;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
 
     if-eqz v0, :cond_1
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object p0, p1, Lcxe;->c:Ljava/lang/String;
 
-    move-result-object v0
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    check-cast v0, Ljava/util/Map$Entry;
+    const-string v0, "session state error: "
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    check-cast v0, Landroid/view/ViewGroup;
+    const-string p0, " do nothing"
 
-    invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v2
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    move-result-object p0
 
-    invoke-static {v1, v0}, Lct4;->d(Lct4;Landroid/view/ViewGroup;)V
+    invoke-static {v2, p0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    return-void
 
     :cond_1
-    iget-object p0, p0, Lt08;->Y:Ls08;
+    instance-of v0, p1, Ltwe;
 
-    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+    if-nez v0, :cond_3
+
+    const-string v0, "proto.state"
+
+    iget-object v1, p1, Lcxe;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lt08;->c:Lcl7;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lq95;
+
+    new-instance v1, Lru/ok/tamtam/errors/TamErrorException;
+
+    invoke-direct {v1, p1}, Lru/ok/tamtam/errors/TamErrorException;-><init>(Lcxe;)V
+
+    check-cast v0, Leha;
+
+    invoke-virtual {v0, v1}, Leha;->c(Ljava/lang/Throwable;)V
+
+    :cond_2
+    iget-object p0, p0, Lt08;->f:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lgye;
+
+    check-cast p0, Liye;
+
+    invoke-virtual {p0}, Liye;->h()V
+
+    return-void
+
+    :cond_3
+    iget-object p1, p0, Lt08;->b:Lcl7;
+
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Laba;
+
+    invoke-virtual {p1}, Laba;->d()Z
 
     move-result p1
 
-    if-nez p1, :cond_2
+    if-eqz p1, :cond_4
 
-    invoke-static {v1, p0}, Lct4;->d(Lct4;Landroid/view/ViewGroup;)V
+    iget-object p1, p0, Lt08;->d:Lcl7;
 
-    :cond_2
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    return-object p0
+    move-result-object p1
+
+    check-cast p1, Ldnd;
+
+    check-cast p1, Lfnd;
+
+    iget p1, p1, Lfnd;->h:I
+
+    const/4 v0, 0x2
+
+    if-ne p1, v0, :cond_4
+
+    iget-object p0, p0, Lt08;->e:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ly08;
+
+    invoke-virtual {p0}, Ly08;->d()V
+
+    :cond_4
+    return-void
+
+    :cond_5
+    :goto_0
+    iget-object v0, p0, Lt08;->a:Lcl7;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lqgb;
+
+    check-cast v0, Ltgb;
+
+    iget-object v0, v0, Ltgb;->a:Lh53;
+
+    iget-object p1, p1, Lcxe;->b:Ljava/lang/String;
+
+    const-string v1, "server.loginError"
+
+    invoke-virtual {v0, v1, p1}, Li3;->k(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object p0, p0, Lt08;->b:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Laba;
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Laba;->g(Z)V
+
+    return-void
 .end method

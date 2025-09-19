@@ -1,2815 +1,1848 @@
 .class public final Lb32;
-.super Ljava/lang/Object;
+.super Lo32;
 .source "SourceFile"
 
 
+# static fields
+.field public static final A:[I
+
+.field public static final B:[I
+
+.field public static final C:[I
+
+.field public static final D:[I
+
+.field public static final E:[I
+
+.field public static final F:[Z
+
+.field public static final y:[I
+
+.field public static final z:[I
+
+
 # instance fields
-.field public final synthetic a:I
+.field public final g:Lcsf;
 
-.field public b:[B
+.field public final h:I
 
-.field public c:I
+.field public final i:I
 
-.field public d:I
+.field public final j:I
 
-.field public e:I
+.field public final k:J
+
+.field public final l:Ljava/util/ArrayList;
+
+.field public m:Lz22;
+
+.field public n:Ljava/util/List;
+
+.field public o:Ljava/util/List;
+
+.field public p:I
+
+.field public q:I
+
+.field public r:Z
+
+.field public s:Z
+
+.field public t:B
+
+.field public u:B
+
+.field public v:I
+
+.field public w:Z
+
+.field public x:J
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method static constructor <clinit>()V
     .registers 2
 
-    iput p1, p0, Lb32;->a:I
+    const/16 v0, 0x8
 
-    packed-switch p1, :pswitch_data_0
+    new-array v1, v0, [I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    fill-array-data v1, :array_0
 
-    sget-object p1, Lyhf;->f:[B
+    sput-object v1, Lb32;->y:[I
 
-    iput-object p1, p0, Lb32;->b:[B
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_1
+
+    sput-object v0, Lb32;->z:[I
+
+    const/4 v0, 0x7
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_2
+
+    sput-object v0, Lb32;->A:[I
+
+    const/16 v0, 0x60
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_3
+
+    sput-object v0, Lb32;->B:[I
+
+    const/16 v0, 0x10
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_4
+
+    sput-object v0, Lb32;->C:[I
+
+    const/16 v0, 0x20
+
+    new-array v1, v0, [I
+
+    fill-array-data v1, :array_5
+
+    sput-object v1, Lb32;->D:[I
+
+    new-array v0, v0, [I
+
+    fill-array-data v0, :array_6
+
+    sput-object v0, Lb32;->E:[I
+
+    const/16 v0, 0x100
+
+    new-array v0, v0, [Z
+
+    fill-array-data v0, :array_7
+
+    sput-object v0, Lb32;->F:[Z
 
     return-void
 
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    :array_0
+    .array-data 4
+        0xb
+        0x1
+        0x3
+        0xc
+        0xe
+        0x5
+        0x7
+        0x9
+    .end array-data
 
-    sget-object p1, Laif;->f:[B
+    :array_1
+    .array-data 4
+        0x0
+        0x4
+        0x8
+        0xc
+        0x10
+        0x14
+        0x18
+        0x1c
+    .end array-data
 
-    iput-object p1, p0, Lb32;->b:[B
+    :array_2
+    .array-data 4
+        -0x1
+        -0xff0100
+        -0xffff01
+        -0xff0001
+        -0x10000
+        -0x100
+        -0xff01
+    .end array-data
 
-    return-void
+    :array_3
+    .array-data 4
+        0x20
+        0x21
+        0x22
+        0x23
+        0x24
+        0x25
+        0x26
+        0x27
+        0x28
+        0x29
+        0xe1
+        0x2b
+        0x2c
+        0x2d
+        0x2e
+        0x2f
+        0x30
+        0x31
+        0x32
+        0x33
+        0x34
+        0x35
+        0x36
+        0x37
+        0x38
+        0x39
+        0x3a
+        0x3b
+        0x3c
+        0x3d
+        0x3e
+        0x3f
+        0x40
+        0x41
+        0x42
+        0x43
+        0x44
+        0x45
+        0x46
+        0x47
+        0x48
+        0x49
+        0x4a
+        0x4b
+        0x4c
+        0x4d
+        0x4e
+        0x4f
+        0x50
+        0x51
+        0x52
+        0x53
+        0x54
+        0x55
+        0x56
+        0x57
+        0x58
+        0x59
+        0x5a
+        0x5b
+        0xe9
+        0x5d
+        0xed
+        0xf3
+        0xfa
+        0x61
+        0x62
+        0x63
+        0x64
+        0x65
+        0x66
+        0x67
+        0x68
+        0x69
+        0x6a
+        0x6b
+        0x6c
+        0x6d
+        0x6e
+        0x6f
+        0x70
+        0x71
+        0x72
+        0x73
+        0x74
+        0x75
+        0x76
+        0x77
+        0x78
+        0x79
+        0x7a
+        0xe7
+        0xf7
+        0xd1
+        0xf1
+        0x25a0
+    .end array-data
 
-    nop
+    :array_4
+    .array-data 4
+        0xae
+        0xb0
+        0xbd
+        0xbf
+        0x2122
+        0xa2
+        0xa3
+        0x266a
+        0xe0
+        0x20
+        0xe8
+        0xe2
+        0xea
+        0xee
+        0xf4
+        0xfb
+    .end array-data
 
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
+    :array_5
+    .array-data 4
+        0xc1
+        0xc9
+        0xd3
+        0xda
+        0xdc
+        0xfc
+        0x2018
+        0xa1
+        0x2a
+        0x27
+        0x2014
+        0xa9
+        0x2120
+        0x2022
+        0x201c
+        0x201d
+        0xc0
+        0xc2
+        0xc7
+        0xc8
+        0xca
+        0xcb
+        0xeb
+        0xce
+        0xcf
+        0xef
+        0xd4
+        0xd9
+        0xf9
+        0xdb
+        0xab
+        0xbb
+    .end array-data
+
+    :array_6
+    .array-data 4
+        0xc3
+        0xe3
+        0xcd
+        0xcc
+        0xec
+        0xd2
+        0xf2
+        0xd5
+        0xf5
+        0x7b
+        0x7d
+        0x5c
+        0x5e
+        0x5f
+        0x7c
+        0x7e
+        0xc4
+        0xe4
+        0xd6
+        0xf6
+        0xdf
+        0xa5
+        0xa4
+        0x2502
+        0xc5
+        0xe5
+        0xd8
+        0xf8
+        0x250c
+        0x2510
+        0x2514
+        0x2518
+    .end array-data
+
+    :array_7
+    .array-data 1
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+        0x0t
+        0x1t
+        0x0t
+        0x1t
+        0x1t
+        0x0t
+    .end array-data
 .end method
 
-.method public constructor <init>(II)V
-    .registers 4
+.method public constructor <init>(Ljava/lang/String;I)V
+    .registers 8
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Lo32;-><init>()V
 
-    iput v0, p0, Lb32;->a:I
+    new-instance v0, Lcsf;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x3
 
-    iput p1, p0, Lb32;->c:I
+    const/4 v2, 0x0
 
-    iput p2, p0, Lb32;->d:I
+    invoke-direct {v0, v1, v2}, Lcsf;-><init>(IZ)V
 
-    mul-int/lit8 p2, p2, 0x2
+    iput-object v0, p0, Lb32;->g:Lcsf;
 
-    add-int/lit8 p2, p2, -0x1
+    new-instance v0, Ljava/util/ArrayList;
 
-    new-array p1, p2, [B
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object p1, p0, Lb32;->b:[B
+    iput-object v0, p0, Lb32;->l:Ljava/util/ArrayList;
 
-    const/4 p1, 0x0
+    new-instance v0, Lz22;
 
-    iput p1, p0, Lb32;->e:I
+    const/4 v1, 0x0
 
-    return-void
-.end method
+    const/4 v2, 0x4
 
-.method public constructor <init>(III[B)V
-    .registers 5
+    invoke-direct {v0, v1, v2}, Lz22;-><init>(II)V
 
-    iput p3, p0, Lb32;->a:I
+    iput-object v0, p0, Lb32;->m:Lz22;
 
-    packed-switch p3, :pswitch_data_0
+    iput v1, p0, Lb32;->v:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-wide/32 v3, 0xf42400
 
-    iput-object p4, p0, Lb32;->b:[B
+    iput-wide v3, p0, Lb32;->k:J
 
-    iput p1, p0, Lb32;->d:I
+    const-string v0, "application/x-mp4-cea-608"
 
-    iput p2, p0, Lb32;->c:I
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 p1, 0x0
+    move-result p1
 
-    iput p1, p0, Lb32;->e:I
+    const/4 v0, 0x3
 
-    invoke-virtual {p0}, Lb32;->a()V
+    const/4 v3, 0x2
 
-    return-void
+    if-eqz p1, :cond_0
 
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move p1, v3
 
-    iput-object p4, p0, Lb32;->b:[B
+    goto :goto_0
 
-    iput p1, p0, Lb32;->d:I
+    :cond_0
+    move p1, v0
 
-    iput p2, p0, Lb32;->c:I
+    :goto_0
+    iput p1, p0, Lb32;->h:I
 
-    const/4 p1, 0x0
+    const/4 p1, 0x1
 
-    iput p1, p0, Lb32;->e:I
+    if-eq p2, p1, :cond_4
 
-    invoke-virtual {p0}, Lb32;->a()V
+    if-eq p2, v3, :cond_3
 
-    return-void
+    if-eq p2, v0, :cond_2
 
-    nop
+    if-eq p2, v2, :cond_1
 
-    :pswitch_data_0
-    .packed-switch 0x4
-        :pswitch_0
-    .end packed-switch
-.end method
+    iput v1, p0, Lb32;->j:I
 
-.method public constructor <init>(I[B)V
-    .registers 3
+    iput v1, p0, Lb32;->i:I
 
-    iput p1, p0, Lb32;->a:I
+    goto :goto_1
 
-    packed-switch p1, :pswitch_data_0
+    :cond_1
+    iput p1, p0, Lb32;->j:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lb32;->i:I
 
-    iput-object p2, p0, Lb32;->b:[B
+    goto :goto_1
 
-    array-length p1, p2
+    :cond_2
+    iput v1, p0, Lb32;->j:I
 
-    iput p1, p0, Lb32;->c:I
+    iput p1, p0, Lb32;->i:I
 
-    return-void
+    goto :goto_1
 
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    :cond_3
+    iput p1, p0, Lb32;->j:I
 
-    iput-object p2, p0, Lb32;->b:[B
+    iput v1, p0, Lb32;->i:I
 
-    array-length p1, p2
+    goto :goto_1
 
-    iput p1, p0, Lb32;->c:I
+    :cond_4
+    iput v1, p0, Lb32;->j:I
 
-    return-void
+    iput v1, p0, Lb32;->i:I
 
-    nop
+    :goto_1
+    invoke-virtual {p0, v1}, Lb32;->k(I)V
 
-    :pswitch_data_0
-    .packed-switch 0x6
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-virtual {p0}, Lb32;->j()V
 
-.method public synthetic constructor <init>([BIIB)V
-    .registers 5
+    iput-boolean p1, p0, Lb32;->w:Z
 
-    iput p3, p0, Lb32;->a:I
+    const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
 
-    iput-object p1, p0, Lb32;->b:[B
-
-    iput p2, p0, Lb32;->e:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p1, p0, Lb32;->x:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
+.method public final bridge synthetic b()Lm32;
+    .registers 1
+
+    invoke-virtual {p0}, Lb32;->g()Lm32;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final e()Lnyc;
     .registers 3
 
-    iget v0, p0, Lb32;->a:I
+    iget-object v0, p0, Lb32;->n:Ljava/util/List;
 
-    packed-switch v0, :pswitch_data_0
+    iput-object v0, p0, Lb32;->o:Ljava/util/List;
 
-    iget v0, p0, Lb32;->d:I
+    new-instance p0, Lnyc;
 
-    if-ltz v0, :cond_1
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget v1, p0, Lb32;->c:I
+    const/16 v1, 0x9
 
-    if-lt v0, v1, :cond_0
+    invoke-direct {p0, v1, v0}, Lnyc;-><init>(ILjava/lang/Object;)V
 
-    if-ne v0, v1, :cond_1
-
-    iget p0, p0, Lb32;->e:I
-
-    if-nez p0, :cond_1
-
-    :cond_0
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-static {p0}, Lr76;->l(Z)V
-
-    return-void
-
-    :pswitch_0
-    iget v0, p0, Lb32;->d:I
-
-    if-ltz v0, :cond_3
-
-    iget v1, p0, Lb32;->c:I
-
-    if-lt v0, v1, :cond_2
-
-    if-ne v0, v1, :cond_3
-
-    iget p0, p0, Lb32;->e:I
-
-    if-nez p0, :cond_3
-
-    :cond_2
-    const/4 p0, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    const/4 p0, 0x0
-
-    :goto_1
-    invoke-static {p0}, Lnc5;->m(Z)V
-
-    return-void
-
-    :pswitch_1
-    iget v0, p0, Lb32;->c:I
-
-    if-ltz v0, :cond_5
-
-    iget v1, p0, Lb32;->e:I
-
-    if-lt v0, v1, :cond_4
-
-    if-ne v0, v1, :cond_5
-
-    iget p0, p0, Lb32;->d:I
-
-    if-nez p0, :cond_5
-
-    :cond_4
-    const/4 p0, 0x1
-
-    goto :goto_2
-
-    :cond_5
-    const/4 p0, 0x0
-
-    :goto_2
-    invoke-static {p0}, Lr76;->l(Z)V
-
-    return-void
-
-    :pswitch_2
-    iget v0, p0, Lb32;->c:I
-
-    if-ltz v0, :cond_7
-
-    iget v1, p0, Lb32;->e:I
-
-    if-lt v0, v1, :cond_6
-
-    if-ne v0, v1, :cond_7
-
-    iget p0, p0, Lb32;->d:I
-
-    if-nez p0, :cond_7
-
-    :cond_6
-    const/4 p0, 0x1
-
-    goto :goto_3
-
-    :cond_7
-    const/4 p0, 0x0
-
-    :goto_3
-    invoke-static {p0}, Lnc5;->m(Z)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public b()I
-    .registers 3
+.method public final f(Lk32;)V
+    .registers 16
 
-    iget v0, p0, Lb32;->a:I
+    iget-object p1, p1, Lfa4;->o:Ljava/nio/ByteBuffer;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget v0, p0, Lb32;->e:I
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
 
-    iget v1, p0, Lb32;->c:I
+    move-result-object v0
 
-    sub-int/2addr v0, v1
+    invoke-virtual {p1}, Ljava/nio/Buffer;->limit()I
 
-    mul-int/lit8 v0, v0, 0x8
+    move-result p1
 
-    iget p0, p0, Lb32;->d:I
+    iget-object v1, p0, Lb32;->g:Lcsf;
 
-    :goto_0
-    sub-int/2addr v0, p0
+    invoke-virtual {v1, p1, v0}, Lcsf;->C(I[B)V
 
-    return v0
-
-    :pswitch_0
-    iget v0, p0, Lb32;->e:I
-
-    iget v1, p0, Lb32;->c:I
-
-    sub-int/2addr v0, v1
-
-    mul-int/lit8 v0, v0, 0x8
-
-    iget p0, p0, Lb32;->d:I
-
-    goto :goto_0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public c()V
-    .registers 2
-
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget v0, p0, Lb32;->d:I
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    iput v0, p0, Lb32;->d:I
-
-    iget v0, p0, Lb32;->c:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lb32;->c:I
-
-    invoke-virtual {p0}, Lb32;->a()V
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    iget v0, p0, Lb32;->d:I
-
-    if-nez v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x0
-
-    iput v0, p0, Lb32;->d:I
-
-    iget v0, p0, Lb32;->c:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lb32;->c:I
-
-    invoke-virtual {p0}, Lb32;->a()V
-
-    :goto_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public d(I)Z
-    .registers 6
-
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget v0, p0, Lb32;->d:I
-
-    div-int/lit8 v1, p1, 0x8
-
-    add-int v2, v0, v1
-
-    iget v3, p0, Lb32;->e:I
-
-    add-int/2addr v3, p1
-
-    mul-int/lit8 v1, v1, 0x8
-
-    sub-int/2addr v3, v1
-
-    const/4 p1, 0x7
-
-    if-le v3, p1, :cond_0
-
-    add-int/lit8 v2, v2, 0x1
-
-    add-int/lit8 v3, v3, -0x8
-
-    :cond_0
-    const/4 p1, 0x1
-
-    :cond_1
-    :goto_0
-    add-int/2addr v0, p1
-
-    if-gt v0, v2, :cond_2
-
-    iget v1, p0, Lb32;->c:I
-
-    if-ge v2, v1, :cond_2
-
-    invoke-virtual {p0, v0}, Lb32;->r(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    add-int/lit8 v2, v2, 0x1
-
-    add-int/lit8 v0, v0, 0x2
-
-    goto :goto_0
-
-    :cond_2
-    iget p0, p0, Lb32;->c:I
-
-    if-lt v2, p0, :cond_4
-
-    if-ne v2, p0, :cond_3
-
-    if-nez v3, :cond_3
-
-    goto :goto_1
-
-    :cond_3
     const/4 p1, 0x0
 
-    :cond_4
+    move v0, p1
+
+    :cond_0
+    :goto_0
+    invoke-virtual {v1}, Lcsf;->c()I
+
+    move-result v2
+
+    const/4 v3, 0x3
+
+    const/4 v4, 0x1
+
+    iget v5, p0, Lb32;->h:I
+
+    if-lt v2, v5, :cond_22
+
+    const/4 v2, 0x2
+
+    if-ne v5, v2, :cond_1
+
+    const/4 v5, -0x4
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v1}, Lcsf;->s()I
+
+    move-result v5
+
+    int-to-byte v5, v5
+
     :goto_1
-    return p1
+    invoke-virtual {v1}, Lcsf;->s()I
 
-    :pswitch_0
-    iget v0, p0, Lb32;->d:I
+    move-result v6
 
-    div-int/lit8 v1, p1, 0x8
+    invoke-virtual {v1}, Lcsf;->s()I
 
-    add-int v2, v0, v1
+    move-result v7
 
-    iget v3, p0, Lb32;->e:I
+    and-int/lit8 v8, v5, 0x2
 
-    add-int/2addr v3, p1
+    if-eqz v8, :cond_2
 
-    mul-int/lit8 v1, v1, 0x8
+    goto :goto_0
 
-    sub-int/2addr v3, v1
+    :cond_2
+    and-int/lit8 v8, v5, 0x1
 
-    const/4 p1, 0x7
+    iget v9, p0, Lb32;->i:I
 
-    if-le v3, p1, :cond_5
+    if-eq v8, v9, :cond_3
 
-    add-int/lit8 v2, v2, 0x1
+    goto :goto_0
 
-    add-int/lit8 v3, v3, -0x8
+    :cond_3
+    and-int/lit8 v8, v6, 0x7f
 
-    :cond_5
-    const/4 p1, 0x1
+    int-to-byte v8, v8
 
-    :cond_6
-    :goto_2
-    add-int/2addr v0, p1
+    and-int/lit8 v9, v7, 0x7f
 
-    if-gt v0, v2, :cond_7
+    int-to-byte v9, v9
 
-    iget v1, p0, Lb32;->c:I
+    if-nez v8, :cond_4
 
-    if-ge v2, v1, :cond_7
+    if-nez v9, :cond_4
 
-    invoke-virtual {p0, v0}, Lb32;->r(I)Z
+    goto :goto_0
 
-    move-result v1
+    :cond_4
+    iget-boolean v10, p0, Lb32;->r:Z
 
-    if-eqz v1, :cond_6
+    and-int/lit8 v5, v5, 0x4
 
-    add-int/lit8 v2, v2, 0x1
+    const/4 v11, 0x4
 
-    add-int/lit8 v0, v0, 0x2
+    if-ne v5, v11, :cond_5
+
+    sget-object v5, Lb32;->F:[Z
+
+    aget-boolean v6, v5, v6
+
+    if-eqz v6, :cond_5
+
+    aget-boolean v5, v5, v7
+
+    if-eqz v5, :cond_5
+
+    move v5, v4
 
     goto :goto_2
 
-    :cond_7
-    iget p0, p0, Lb32;->c:I
+    :cond_5
+    move v5, p1
 
-    if-lt v2, p0, :cond_9
+    :goto_2
+    iput-boolean v5, p0, Lb32;->r:Z
 
-    if-ne v2, p0, :cond_8
+    const/16 v6, 0x10
 
-    if-nez v3, :cond_8
+    if-eqz v5, :cond_7
+
+    and-int/lit16 v7, v8, 0xf0
+
+    if-ne v7, v6, :cond_7
+
+    iget-boolean v7, p0, Lb32;->s:Z
+
+    if-eqz v7, :cond_6
+
+    iget-byte v7, p0, Lb32;->t:B
+
+    if-ne v7, v8, :cond_6
+
+    iget-byte v7, p0, Lb32;->u:B
+
+    if-ne v7, v9, :cond_6
+
+    iput-boolean p1, p0, Lb32;->s:Z
+
+    goto :goto_0
+
+    :cond_6
+    iput-boolean v4, p0, Lb32;->s:Z
+
+    iput-byte v8, p0, Lb32;->t:B
+
+    iput-byte v9, p0, Lb32;->u:B
 
     goto :goto_3
+
+    :cond_7
+    iput-boolean p1, p0, Lb32;->s:Z
+
+    :goto_3
+    if-nez v5, :cond_9
+
+    if-eqz v10, :cond_0
+
+    invoke-virtual {p0}, Lb32;->j()V
 
     :cond_8
-    const/4 p1, 0x0
+    :goto_4
+    move v0, v4
+
+    goto :goto_0
 
     :cond_9
-    :goto_3
-    return p1
+    const/16 v5, 0x14
 
-    nop
+    const/16 v7, 0x20
 
-    :pswitch_data_0
-    .packed-switch 0x3
-        :pswitch_0
-    .end packed-switch
-.end method
+    if-gt v4, v8, :cond_a
 
-.method public e()Z
-    .registers 8
+    const/16 v10, 0xf
 
-    iget v0, p0, Lb32;->a:I
+    if-gt v8, v10, :cond_a
 
-    packed-switch v0, :pswitch_data_0
-
-    iget v0, p0, Lb32;->d:I
-
-    iget v1, p0, Lb32;->e:I
-
-    const/4 v2, 0x0
-
-    move v3, v2
-
-    :goto_0
-    iget v4, p0, Lb32;->d:I
-
-    iget v5, p0, Lb32;->c:I
-
-    if-ge v4, v5, :cond_0
-
-    invoke-virtual {p0}, Lb32;->h()Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iget v4, p0, Lb32;->d:I
-
-    iget v5, p0, Lb32;->c:I
-
-    const/4 v6, 0x1
-
-    if-ne v4, v5, :cond_1
-
-    move v4, v6
-
-    goto :goto_1
-
-    :cond_1
-    move v4, v2
-
-    :goto_1
-    iput v0, p0, Lb32;->d:I
-
-    iput v1, p0, Lb32;->e:I
-
-    if-nez v4, :cond_2
-
-    mul-int/lit8 v3, v3, 0x2
-
-    add-int/2addr v3, v6
-
-    invoke-virtual {p0, v3}, Lb32;->d(I)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    move v2, v6
-
-    :cond_2
-    return v2
-
-    :pswitch_0
-    iget v0, p0, Lb32;->d:I
-
-    iget v1, p0, Lb32;->e:I
-
-    const/4 v2, 0x0
-
-    move v3, v2
-
-    :goto_2
-    iget v4, p0, Lb32;->d:I
-
-    iget v5, p0, Lb32;->c:I
-
-    if-ge v4, v5, :cond_3
-
-    invoke-virtual {p0}, Lb32;->h()Z
-
-    move-result v4
-
-    if-nez v4, :cond_3
-
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_2
-
-    :cond_3
-    iget v4, p0, Lb32;->d:I
-
-    iget v5, p0, Lb32;->c:I
-
-    const/4 v6, 0x1
-
-    if-ne v4, v5, :cond_4
-
-    move v4, v6
-
-    goto :goto_3
-
-    :cond_4
-    move v4, v2
-
-    :goto_3
-    iput v0, p0, Lb32;->d:I
-
-    iput v1, p0, Lb32;->e:I
-
-    if-nez v4, :cond_5
-
-    mul-int/lit8 v3, v3, 0x2
-
-    add-int/2addr v3, v6
-
-    invoke-virtual {p0, v3}, Lb32;->d(I)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_5
-
-    move v2, v6
-
-    :cond_5
-    return v2
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x3
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public f()I
-    .registers 2
-
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget v0, p0, Lb32;->d:I
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-static {v0}, Lr76;->l(Z)V
-
-    iget p0, p0, Lb32;->c:I
-
-    return p0
-
-    :pswitch_0
-    iget v0, p0, Lb32;->d:I
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_1
-    invoke-static {v0}, Lnc5;->m(Z)V
-
-    iget p0, p0, Lb32;->c:I
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public g()I
-    .registers 2
-
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget v0, p0, Lb32;->c:I
-
-    mul-int/lit8 v0, v0, 0x8
-
-    iget p0, p0, Lb32;->d:I
-
-    :goto_0
-    add-int/2addr v0, p0
-
-    return v0
-
-    :pswitch_0
-    iget v0, p0, Lb32;->c:I
-
-    mul-int/lit8 v0, v0, 0x8
-
-    iget p0, p0, Lb32;->d:I
-
-    goto :goto_0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public h()Z
-    .registers 4
-
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lb32;->b:[B
-
-    iget v1, p0, Lb32;->d:I
-
-    aget-byte v0, v0, v1
-
-    and-int/lit16 v0, v0, 0xff
-
-    iget v1, p0, Lb32;->e:I
-
-    shr-int/2addr v0, v1
-
-    const/4 v1, 0x1
-
-    and-int/2addr v0, v1
-
-    if-ne v0, v1, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p0, v1}, Lb32;->t(I)V
-
-    return v0
-
-    :pswitch_0
-    iget-object v0, p0, Lb32;->b:[B
-
-    iget v1, p0, Lb32;->d:I
-
-    aget-byte v0, v0, v1
-
-    and-int/lit16 v0, v0, 0xff
-
-    iget v1, p0, Lb32;->e:I
-
-    shr-int/2addr v0, v1
-
-    const/4 v1, 0x1
-
-    and-int/2addr v0, v1
-
-    if-ne v0, v1, :cond_1
-
-    move v0, v1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v0, 0x0
-
-    :goto_1
-    invoke-virtual {p0, v1}, Lb32;->t(I)V
-
-    return v0
-
-    :pswitch_1
-    iget-object v0, p0, Lb32;->b:[B
-
-    iget v1, p0, Lb32;->d:I
-
-    aget-byte v0, v0, v1
-
-    const/16 v1, 0x80
-
-    iget v2, p0, Lb32;->e:I
-
-    shr-int/2addr v1, v2
-
-    and-int/2addr v0, v1
-
-    if-eqz v0, :cond_2
-
-    const/4 v0, 0x1
-
-    goto :goto_2
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_2
-    invoke-virtual {p0}, Lb32;->s()V
-
-    return v0
-
-    :pswitch_2
-    iget-object v0, p0, Lb32;->b:[B
-
-    iget v1, p0, Lb32;->d:I
-
-    aget-byte v0, v0, v1
-
-    const/16 v1, 0x80
-
-    iget v2, p0, Lb32;->e:I
-
-    shr-int/2addr v1, v2
-
-    and-int/2addr v0, v1
-
-    if-eqz v0, :cond_3
-
-    const/4 v0, 0x1
-
-    goto :goto_3
-
-    :cond_3
-    const/4 v0, 0x0
-
-    :goto_3
-    invoke-virtual {p0}, Lb32;->s()V
-
-    return v0
-
-    :pswitch_3
-    iget-object v0, p0, Lb32;->b:[B
-
-    iget v1, p0, Lb32;->c:I
-
-    aget-byte v0, v0, v1
-
-    const/16 v1, 0x80
-
-    iget v2, p0, Lb32;->d:I
-
-    shr-int/2addr v1, v2
-
-    and-int/2addr v0, v1
-
-    if-eqz v0, :cond_4
-
-    const/4 v0, 0x1
-
-    goto :goto_4
-
-    :cond_4
-    const/4 v0, 0x0
-
-    :goto_4
-    invoke-virtual {p0}, Lb32;->s()V
-
-    return v0
-
-    :pswitch_4
-    iget-object v0, p0, Lb32;->b:[B
-
-    iget v1, p0, Lb32;->c:I
-
-    aget-byte v0, v0, v1
-
-    const/16 v1, 0x80
-
-    iget v2, p0, Lb32;->d:I
-
-    shr-int/2addr v1, v2
-
-    and-int/2addr v0, v1
-
-    if-eqz v0, :cond_5
-
-    const/4 v0, 0x1
+    iput-boolean p1, p0, Lb32;->w:Z
 
     goto :goto_5
 
-    :cond_5
-    const/4 v0, 0x0
+    :cond_a
+    and-int/lit16 v10, v8, 0xf7
 
-    :goto_5
-    invoke-virtual {p0}, Lb32;->s()V
+    if-ne v10, v5, :cond_c
 
-    return v0
+    if-eq v9, v7, :cond_b
 
-    nop
+    const/16 v10, 0x2f
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
+    if-eq v9, v10, :cond_b
 
-.method public i(I)I
-    .registers 11
+    packed-switch v9, :pswitch_data_0
 
-    iget v0, p0, Lb32;->a:I
+    packed-switch v9, :pswitch_data_1
 
-    packed-switch v0, :pswitch_data_0
-
-    iget v0, p0, Lb32;->d:I
-
-    iget v1, p0, Lb32;->e:I
-
-    rsub-int/lit8 v1, v1, 0x8
-
-    invoke-static {p1, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v1
-
-    iget-object v2, p0, Lb32;->b:[B
-
-    add-int/lit8 v3, v0, 0x1
-
-    aget-byte v0, v2, v0
-
-    const/16 v4, 0xff
-
-    and-int/2addr v0, v4
-
-    iget v5, p0, Lb32;->e:I
-
-    shr-int/2addr v0, v5
-
-    rsub-int/lit8 v5, v1, 0x8
-
-    shr-int v5, v4, v5
-
-    and-int/2addr v0, v5
-
-    :goto_0
-    if-ge v1, p1, :cond_0
-
-    add-int/lit8 v5, v3, 0x1
-
-    aget-byte v3, v2, v3
-
-    and-int/2addr v3, v4
-
-    shl-int/2addr v3, v1
-
-    or-int/2addr v0, v3
-
-    add-int/lit8 v1, v1, 0x8
-
-    move v3, v5
-
-    goto :goto_0
-
-    :cond_0
-    rsub-int/lit8 v1, p1, 0x20
-
-    const/4 v2, -0x1
-
-    ushr-int v1, v2, v1
-
-    and-int/2addr v0, v1
-
-    invoke-virtual {p0, p1}, Lb32;->t(I)V
-
-    return v0
+    goto :goto_5
 
     :pswitch_0
-    iget v0, p0, Lb32;->d:I
+    iput-boolean p1, p0, Lb32;->w:Z
 
-    iget v1, p0, Lb32;->e:I
+    goto :goto_5
 
-    rsub-int/lit8 v1, v1, 0x8
-
-    invoke-static {p1, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v1
-
-    iget-object v2, p0, Lb32;->b:[B
-
-    add-int/lit8 v3, v0, 0x1
-
-    aget-byte v0, v2, v0
-
-    const/16 v4, 0xff
-
-    and-int/2addr v0, v4
-
-    iget v5, p0, Lb32;->e:I
-
-    shr-int/2addr v0, v5
-
-    rsub-int/lit8 v5, v1, 0x8
-
-    shr-int v5, v4, v5
-
-    and-int/2addr v0, v5
-
-    :goto_1
-    if-ge v1, p1, :cond_1
-
-    add-int/lit8 v5, v3, 0x1
-
-    aget-byte v3, v2, v3
-
-    and-int/2addr v3, v4
-
-    shl-int/2addr v3, v1
-
-    or-int/2addr v0, v3
-
-    add-int/lit8 v1, v1, 0x8
-
-    move v3, v5
-
-    goto :goto_1
-
-    :cond_1
-    rsub-int/lit8 v1, p1, 0x20
-
-    const/4 v2, -0x1
-
-    ushr-int v1, v2, v1
-
-    and-int/2addr v0, v1
-
-    invoke-virtual {p0, p1}, Lb32;->t(I)V
-
-    return v0
-
+    :cond_b
     :pswitch_1
-    iget v0, p0, Lb32;->e:I
+    iput-boolean v4, p0, Lb32;->w:Z
 
-    add-int/2addr v0, p1
+    :cond_c
+    :goto_5
+    iget-boolean v10, p0, Lb32;->w:Z
 
-    iput v0, p0, Lb32;->e:I
+    if-nez v10, :cond_d
 
-    const/4 v0, 0x0
+    goto/16 :goto_0
 
-    move v1, v0
+    :cond_d
+    and-int/lit16 v10, v8, 0xe0
 
-    :goto_2
-    iget v2, p0, Lb32;->e:I
+    if-nez v10, :cond_e
 
-    const/4 v3, 0x2
+    shr-int/lit8 v12, v8, 0x3
 
-    const/4 v4, 0x1
+    and-int/2addr v12, v4
 
-    const/16 v5, 0x8
+    iput v12, p0, Lb32;->v:I
 
-    if-le v2, v5, :cond_3
+    :cond_e
+    iget v12, p0, Lb32;->v:I
 
-    add-int/lit8 v2, v2, -0x8
+    iget v13, p0, Lb32;->j:I
 
-    iput v2, p0, Lb32;->e:I
+    if-ne v12, v13, :cond_0
 
-    iget-object v5, p0, Lb32;->b:[B
+    if-nez v10, :cond_21
 
-    iget v6, p0, Lb32;->d:I
+    and-int/lit16 v0, v8, 0xf7
 
-    aget-byte v5, v5, v6
+    const/16 v10, 0x11
 
-    and-int/lit16 v5, v5, 0xff
+    if-ne v0, v10, :cond_f
 
-    shl-int v2, v5, v2
+    and-int/lit16 v12, v9, 0xf0
 
-    or-int/2addr v1, v2
+    const/16 v13, 0x30
 
-    add-int/lit8 v2, v6, 0x1
+    if-ne v12, v13, :cond_f
 
-    invoke-virtual {p0, v2}, Lb32;->r(I)Z
+    iget-object v0, p0, Lb32;->m:Lz22;
 
-    move-result v2
+    and-int/lit8 v2, v9, 0xf
 
-    if-eqz v2, :cond_2
+    sget-object v3, Lb32;->C:[I
 
-    goto :goto_3
+    aget v2, v3, v2
 
-    :cond_2
-    move v3, v4
+    int-to-char v2, v2
 
-    :goto_3
-    add-int/2addr v6, v3
-
-    iput v6, p0, Lb32;->d:I
-
-    goto :goto_2
-
-    :cond_3
-    iget-object v6, p0, Lb32;->b:[B
-
-    iget v7, p0, Lb32;->d:I
-
-    aget-byte v6, v6, v7
-
-    and-int/lit16 v6, v6, 0xff
-
-    rsub-int/lit8 v8, v2, 0x8
-
-    shr-int/2addr v6, v8
-
-    or-int/2addr v1, v6
-
-    rsub-int/lit8 p1, p1, 0x20
-
-    const/4 v6, -0x1
-
-    ushr-int p1, v6, p1
-
-    and-int/2addr p1, v1
-
-    if-ne v2, v5, :cond_5
-
-    iput v0, p0, Lb32;->e:I
-
-    add-int/lit8 v0, v7, 0x1
-
-    invoke-virtual {p0, v0}, Lb32;->r(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4
+    invoke-virtual {v0, v2}, Lz22;->a(C)V
 
     goto :goto_4
 
-    :cond_4
-    move v3, v4
+    :cond_f
+    and-int/lit16 v12, v8, 0xf6
 
-    :goto_4
-    add-int/2addr v7, v3
+    const/16 v13, 0x12
 
-    iput v7, p0, Lb32;->d:I
+    if-ne v12, v13, :cond_11
 
-    :cond_5
-    invoke-virtual {p0}, Lb32;->a()V
+    and-int/lit16 v13, v9, 0xe0
 
-    return p1
+    if-ne v13, v7, :cond_11
 
-    :pswitch_2
-    iget v0, p0, Lb32;->e:I
+    iget-object v0, p0, Lb32;->m:Lz22;
 
-    add-int/2addr v0, p1
+    invoke-virtual {v0}, Lz22;->b()V
 
-    iput v0, p0, Lb32;->e:I
+    iget-object v0, p0, Lb32;->m:Lz22;
 
-    const/4 v0, 0x0
+    and-int/lit8 v2, v8, 0x1
 
-    move v1, v0
+    if-nez v2, :cond_10
 
-    :goto_5
-    iget v2, p0, Lb32;->e:I
+    and-int/lit8 v2, v9, 0x1f
 
-    const/4 v3, 0x2
+    sget-object v3, Lb32;->D:[I
 
-    const/4 v4, 0x1
-
-    const/16 v5, 0x8
-
-    if-le v2, v5, :cond_7
-
-    add-int/lit8 v2, v2, -0x8
-
-    iput v2, p0, Lb32;->e:I
-
-    iget-object v5, p0, Lb32;->b:[B
-
-    iget v6, p0, Lb32;->d:I
-
-    aget-byte v5, v5, v6
-
-    and-int/lit16 v5, v5, 0xff
-
-    shl-int v2, v5, v2
-
-    or-int/2addr v1, v2
-
-    add-int/lit8 v2, v6, 0x1
-
-    invoke-virtual {p0, v2}, Lb32;->r(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    goto :goto_6
-
-    :cond_6
-    move v3, v4
+    aget v2, v3, v2
 
     :goto_6
-    add-int/2addr v6, v3
-
-    iput v6, p0, Lb32;->d:I
-
-    goto :goto_5
-
-    :cond_7
-    iget-object v6, p0, Lb32;->b:[B
-
-    iget v7, p0, Lb32;->d:I
-
-    aget-byte v6, v6, v7
-
-    and-int/lit16 v6, v6, 0xff
-
-    rsub-int/lit8 v8, v2, 0x8
-
-    shr-int/2addr v6, v8
-
-    or-int/2addr v1, v6
-
-    rsub-int/lit8 p1, p1, 0x20
-
-    const/4 v6, -0x1
-
-    ushr-int p1, v6, p1
-
-    and-int/2addr p1, v1
-
-    if-ne v2, v5, :cond_9
-
-    iput v0, p0, Lb32;->e:I
-
-    add-int/lit8 v0, v7, 0x1
-
-    invoke-virtual {p0, v0}, Lb32;->r(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
+    int-to-char v2, v2
 
     goto :goto_7
 
-    :cond_8
-    move v3, v4
+    :cond_10
+    and-int/lit8 v2, v9, 0x1f
+
+    sget-object v3, Lb32;->E:[I
+
+    aget v2, v3, v2
+
+    goto :goto_6
 
     :goto_7
-    add-int/2addr v7, v3
+    invoke-virtual {v0, v2}, Lz22;->a(C)V
 
-    iput v7, p0, Lb32;->d:I
+    goto :goto_4
 
-    :cond_9
-    invoke-virtual {p0}, Lb32;->a()V
+    :cond_11
+    if-ne v0, v10, :cond_13
 
-    return p1
+    and-int/lit16 v10, v9, 0xf0
 
-    :pswitch_3
-    const/4 v0, 0x0
+    if-ne v10, v7, :cond_13
 
-    if-nez p1, :cond_a
+    iget-object v0, p0, Lb32;->m:Lz22;
 
-    goto :goto_9
+    invoke-virtual {v0, v7}, Lz22;->a(C)V
 
-    :cond_a
-    iget v1, p0, Lb32;->d:I
+    and-int/lit8 v0, v9, 0x1
 
-    add-int/2addr v1, p1
+    if-ne v0, v4, :cond_12
 
-    iput v1, p0, Lb32;->d:I
-
-    move v1, v0
-
-    :goto_8
-    iget v2, p0, Lb32;->d:I
-
-    const/16 v3, 0x8
-
-    if-le v2, v3, :cond_b
-
-    add-int/lit8 v2, v2, -0x8
-
-    iput v2, p0, Lb32;->d:I
-
-    iget-object v3, p0, Lb32;->b:[B
-
-    iget v4, p0, Lb32;->c:I
-
-    add-int/lit8 v5, v4, 0x1
-
-    iput v5, p0, Lb32;->c:I
-
-    aget-byte v3, v3, v4
-
-    and-int/lit16 v3, v3, 0xff
-
-    shl-int v2, v3, v2
-
-    or-int/2addr v1, v2
+    move v0, v4
 
     goto :goto_8
 
-    :cond_b
-    iget-object v4, p0, Lb32;->b:[B
+    :cond_12
+    move v0, p1
 
-    iget v5, p0, Lb32;->c:I
+    :goto_8
+    shr-int/lit8 v2, v9, 0x1
 
-    aget-byte v4, v4, v5
+    and-int/lit8 v2, v2, 0x7
 
-    and-int/lit16 v4, v4, 0xff
+    iget-object v3, p0, Lb32;->m:Lz22;
 
-    rsub-int/lit8 v6, v2, 0x8
+    iget-object v5, v3, Lz22;->a:Ljava/util/ArrayList;
 
-    shr-int/2addr v4, v6
+    new-instance v6, Lx22;
 
-    or-int/2addr v1, v4
+    iget-object v3, v3, Lz22;->c:Ljava/lang/StringBuilder;
 
-    rsub-int/lit8 p1, p1, 0x20
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
 
-    const/4 v4, -0x1
+    move-result v3
 
-    ushr-int p1, v4, p1
+    invoke-direct {v6, v2, v3, v0}, Lx22;-><init>(IIZ)V
 
-    and-int/2addr p1, v1
+    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    if-ne v2, v3, :cond_c
+    goto/16 :goto_4
 
-    iput v0, p0, Lb32;->d:I
+    :cond_13
+    and-int/lit16 v10, v8, 0xf0
 
-    add-int/lit8 v5, v5, 0x1
+    if-ne v10, v6, :cond_1a
 
-    iput v5, p0, Lb32;->c:I
+    and-int/lit16 v10, v9, 0xc0
 
-    :cond_c
-    invoke-virtual {p0}, Lb32;->a()V
+    const/16 v13, 0x40
 
+    if-ne v10, v13, :cond_1a
+
+    and-int/lit8 v0, v8, 0x7
+
+    sget-object v2, Lb32;->y:[I
+
+    aget v0, v2, v0
+
+    and-int/lit8 v2, v9, 0x20
+
+    if-eqz v2, :cond_14
+
+    add-int/lit8 v0, v0, 0x1
+
+    :cond_14
+    iget-object v2, p0, Lb32;->m:Lz22;
+
+    iget v3, v2, Lz22;->d:I
+
+    if-eq v0, v3, :cond_16
+
+    iget v3, p0, Lb32;->p:I
+
+    if-eq v3, v4, :cond_15
+
+    invoke-virtual {v2}, Lz22;->e()Z
+
+    move-result v2
+
+    if-nez v2, :cond_15
+
+    new-instance v2, Lz22;
+
+    iget v3, p0, Lb32;->p:I
+
+    iget v5, p0, Lb32;->q:I
+
+    invoke-direct {v2, v3, v5}, Lz22;-><init>(II)V
+
+    iput-object v2, p0, Lb32;->m:Lz22;
+
+    iget-object v3, p0, Lb32;->l:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_15
+    iget-object v2, p0, Lb32;->m:Lz22;
+
+    iput v0, v2, Lz22;->d:I
+
+    :cond_16
+    and-int/lit8 v0, v9, 0x10
+
+    if-ne v0, v6, :cond_17
+
+    move v0, v4
+
+    goto :goto_9
+
+    :cond_17
     move v0, p1
 
     :goto_9
-    return v0
+    and-int/lit8 v2, v9, 0x1
 
-    :pswitch_4
-    const/4 v0, 0x0
+    if-ne v2, v4, :cond_18
 
-    if-nez p1, :cond_d
-
-    goto :goto_b
-
-    :cond_d
-    iget v1, p0, Lb32;->d:I
-
-    add-int/2addr v1, p1
-
-    iput v1, p0, Lb32;->d:I
-
-    move v1, v0
-
-    :goto_a
-    iget v2, p0, Lb32;->d:I
-
-    const/16 v3, 0x8
-
-    if-le v2, v3, :cond_e
-
-    add-int/lit8 v2, v2, -0x8
-
-    iput v2, p0, Lb32;->d:I
-
-    iget-object v3, p0, Lb32;->b:[B
-
-    iget v4, p0, Lb32;->c:I
-
-    add-int/lit8 v5, v4, 0x1
-
-    iput v5, p0, Lb32;->c:I
-
-    aget-byte v3, v3, v4
-
-    and-int/lit16 v3, v3, 0xff
-
-    shl-int v2, v3, v2
-
-    or-int/2addr v1, v2
+    move v2, v4
 
     goto :goto_a
 
-    :cond_e
-    iget-object v4, p0, Lb32;->b:[B
+    :cond_18
+    move v2, p1
 
-    iget v5, p0, Lb32;->c:I
+    :goto_a
+    shr-int/lit8 v3, v9, 0x1
 
-    aget-byte v4, v4, v5
+    and-int/lit8 v3, v3, 0x7
 
-    and-int/lit16 v4, v4, 0xff
+    iget-object v5, p0, Lb32;->m:Lz22;
 
-    rsub-int/lit8 v6, v2, 0x8
+    if-eqz v0, :cond_19
 
-    shr-int/2addr v4, v6
+    const/16 v6, 0x8
 
-    or-int/2addr v1, v4
+    goto :goto_b
 
-    rsub-int/lit8 p1, p1, 0x20
-
-    const/4 v4, -0x1
-
-    ushr-int p1, v4, p1
-
-    and-int/2addr p1, v1
-
-    if-ne v2, v3, :cond_f
-
-    iput v0, p0, Lb32;->d:I
-
-    add-int/lit8 v5, v5, 0x1
-
-    iput v5, p0, Lb32;->c:I
-
-    :cond_f
-    invoke-virtual {p0}, Lb32;->a()V
-
-    move v0, p1
+    :cond_19
+    move v6, v3
 
     :goto_b
-    return v0
+    iget-object v7, v5, Lz22;->a:Ljava/util/ArrayList;
 
-    nop
+    new-instance v8, Lx22;
+
+    iget-object v5, v5, Lz22;->c:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v5
+
+    invoke-direct {v8, v6, v5, v2}, Lx22;-><init>(IIZ)V
+
+    invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    if-eqz v0, :cond_8
+
+    iget-object v0, p0, Lb32;->m:Lz22;
+
+    sget-object v2, Lb32;->z:[I
+
+    aget v2, v2, v3
+
+    iput v2, v0, Lz22;->e:I
+
+    goto/16 :goto_4
+
+    :cond_1a
+    const/16 v6, 0x17
+
+    const/16 v8, 0x21
+
+    if-ne v0, v6, :cond_1b
+
+    if-lt v9, v8, :cond_1b
+
+    const/16 v0, 0x23
+
+    if-gt v9, v0, :cond_1b
+
+    iget-object v0, p0, Lb32;->m:Lz22;
+
+    add-int/lit8 v9, v9, -0x20
+
+    iput v9, v0, Lz22;->f:I
+
+    goto/16 :goto_4
+
+    :cond_1b
+    if-ne v12, v5, :cond_8
+
+    and-int/lit16 v0, v9, 0xf0
+
+    if-ne v0, v7, :cond_8
+
+    if-eq v9, v7, :cond_20
+
+    const/16 v0, 0x29
+
+    if-eq v9, v0, :cond_1f
+
+    packed-switch v9, :pswitch_data_2
+
+    iget v0, p0, Lb32;->p:I
+
+    if-nez v0, :cond_1c
+
+    goto/16 :goto_4
+
+    :cond_1c
+    if-eq v9, v8, :cond_1e
+
+    packed-switch v9, :pswitch_data_3
+
+    goto/16 :goto_4
+
+    :pswitch_2
+    invoke-virtual {p0}, Lb32;->i()Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lb32;->n:Ljava/util/List;
+
+    invoke-virtual {p0}, Lb32;->j()V
+
+    goto/16 :goto_4
+
+    :pswitch_3
+    invoke-virtual {p0}, Lb32;->j()V
+
+    goto/16 :goto_4
+
+    :pswitch_4
+    if-ne v0, v4, :cond_8
+
+    iget-object v0, p0, Lb32;->m:Lz22;
+
+    invoke-virtual {v0}, Lz22;->e()Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    iget-object v0, p0, Lb32;->m:Lz22;
+
+    iget-object v2, v0, Lz22;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Lz22;->d()Landroid/text/SpannableString;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v3, v0, Lz22;->c:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->setLength(I)V
+
+    iget-object v3, v0, Lz22;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
+
+    iget v3, v0, Lz22;->h:I
+
+    iget v0, v0, Lz22;->d:I
+
+    invoke-static {v3, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    :goto_c
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-lt v3, v0, :cond_8
+
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    goto :goto_c
+
+    :pswitch_5
+    sget-object v2, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    iput-object v2, p0, Lb32;->n:Ljava/util/List;
+
+    if-eq v0, v4, :cond_1d
+
+    if-ne v0, v3, :cond_8
+
+    :cond_1d
+    invoke-virtual {p0}, Lb32;->j()V
+
+    goto/16 :goto_4
+
+    :cond_1e
+    iget-object v0, p0, Lb32;->m:Lz22;
+
+    invoke-virtual {v0}, Lz22;->b()V
+
+    goto/16 :goto_4
+
+    :pswitch_6
+    invoke-virtual {p0, v4}, Lb32;->k(I)V
+
+    iput v11, p0, Lb32;->q:I
+
+    iget-object v0, p0, Lb32;->m:Lz22;
+
+    iput v11, v0, Lz22;->h:I
+
+    goto/16 :goto_4
+
+    :pswitch_7
+    invoke-virtual {p0, v4}, Lb32;->k(I)V
+
+    iput v3, p0, Lb32;->q:I
+
+    iget-object v0, p0, Lb32;->m:Lz22;
+
+    iput v3, v0, Lz22;->h:I
+
+    goto/16 :goto_4
+
+    :pswitch_8
+    invoke-virtual {p0, v4}, Lb32;->k(I)V
+
+    iput v2, p0, Lb32;->q:I
+
+    iget-object v0, p0, Lb32;->m:Lz22;
+
+    iput v2, v0, Lz22;->h:I
+
+    goto/16 :goto_4
+
+    :cond_1f
+    invoke-virtual {p0, v3}, Lb32;->k(I)V
+
+    goto/16 :goto_4
+
+    :cond_20
+    invoke-virtual {p0, v2}, Lb32;->k(I)V
+
+    goto/16 :goto_4
+
+    :cond_21
+    iget-object v0, p0, Lb32;->m:Lz22;
+
+    and-int/lit8 v2, v8, 0x7f
+
+    sub-int/2addr v2, v7
+
+    sget-object v3, Lb32;->B:[I
+
+    aget v2, v3, v2
+
+    int-to-char v2, v2
+
+    invoke-virtual {v0, v2}, Lz22;->a(C)V
+
+    and-int/lit16 v0, v9, 0xe0
+
+    if-eqz v0, :cond_8
+
+    iget-object v0, p0, Lb32;->m:Lz22;
+
+    and-int/lit8 v2, v9, 0x7f
+
+    sub-int/2addr v2, v7
+
+    aget v2, v3, v2
+
+    int-to-char v2, v2
+
+    invoke-virtual {v0, v2}, Lz22;->a(C)V
+
+    goto/16 :goto_4
+
+    :cond_22
+    if-eqz v0, :cond_24
+
+    iget p1, p0, Lb32;->p:I
+
+    if-eq p1, v4, :cond_23
+
+    if-ne p1, v3, :cond_24
+
+    :cond_23
+    invoke-virtual {p0}, Lb32;->i()Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lb32;->n:Ljava/util/List;
+
+    iget-wide v0, p0, Lo32;->e:J
+
+    iput-wide v0, p0, Lb32;->x:J
+
+    :cond_24
+    return-void
 
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x25
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+    .end packed-switch
+
+    :pswitch_data_1
+    .packed-switch 0x29
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+    .end packed-switch
+
+    :pswitch_data_2
+    .packed-switch 0x25
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+    .end packed-switch
+
+    :pswitch_data_3
+    .packed-switch 0x2c
+        :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2
-        :pswitch_1
-        :pswitch_0
     .end packed-switch
 .end method
 
-.method public j(I[B)V
-    .registers 12
+.method public final flush()V
+    .registers 4
 
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    shr-int/lit8 v0, p1, 0x3
-
-    const/4 v1, 0x0
-
-    move v2, v1
-
-    :goto_0
-    const/16 v3, 0xff
-
-    const/16 v4, 0x8
-
-    if-ge v2, v0, :cond_0
-
-    iget-object v5, p0, Lb32;->b:[B
-
-    iget v6, p0, Lb32;->c:I
-
-    add-int/lit8 v7, v6, 0x1
-
-    iput v7, p0, Lb32;->c:I
-
-    aget-byte v6, v5, v6
-
-    iget v8, p0, Lb32;->d:I
-
-    shl-int/2addr v6, v8
-
-    int-to-byte v6, v6
-
-    aput-byte v6, p2, v2
-
-    aget-byte v5, v5, v7
-
-    and-int/2addr v3, v5
-
-    sub-int/2addr v4, v8
-
-    shr-int/2addr v3, v4
-
-    or-int/2addr v3, v6
-
-    int-to-byte v3, v3
-
-    aput-byte v3, p2, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    and-int/lit8 p1, p1, 0x7
-
-    if-nez p1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    aget-byte v2, p2, v0
-
-    shr-int v5, v3, p1
-
-    and-int/2addr v2, v5
-
-    int-to-byte v2, v2
-
-    aput-byte v2, p2, v0
-
-    iget v5, p0, Lb32;->d:I
-
-    add-int v6, v5, p1
-
-    if-le v6, v4, :cond_2
-
-    iget-object v6, p0, Lb32;->b:[B
-
-    iget v7, p0, Lb32;->c:I
-
-    add-int/lit8 v8, v7, 0x1
-
-    iput v8, p0, Lb32;->c:I
-
-    aget-byte v6, v6, v7
-
-    and-int/2addr v6, v3
-
-    shl-int/2addr v6, v5
-
-    or-int/2addr v2, v6
-
-    int-to-byte v2, v2
-
-    aput-byte v2, p2, v0
-
-    sub-int/2addr v5, v4
-
-    iput v5, p0, Lb32;->d:I
-
-    :cond_2
-    iget v2, p0, Lb32;->d:I
-
-    add-int/2addr v2, p1
-
-    iput v2, p0, Lb32;->d:I
-
-    iget-object v5, p0, Lb32;->b:[B
-
-    iget v6, p0, Lb32;->c:I
-
-    aget-byte v5, v5, v6
-
-    and-int/2addr v3, v5
-
-    rsub-int/lit8 v5, v2, 0x8
-
-    shr-int/2addr v3, v5
-
-    aget-byte v5, p2, v0
-
-    rsub-int/lit8 p1, p1, 0x8
-
-    shl-int p1, v3, p1
-
-    int-to-byte p1, p1
-
-    or-int/2addr p1, v5
-
-    int-to-byte p1, p1
-
-    aput-byte p1, p2, v0
-
-    if-ne v2, v4, :cond_3
-
-    iput v1, p0, Lb32;->d:I
-
-    add-int/lit8 v6, v6, 0x1
-
-    iput v6, p0, Lb32;->c:I
-
-    :cond_3
-    invoke-virtual {p0}, Lb32;->a()V
-
-    :goto_1
-    return-void
-
-    :pswitch_0
-    shr-int/lit8 v0, p1, 0x3
-
-    const/4 v1, 0x0
-
-    move v2, v1
-
-    :goto_2
-    const/16 v3, 0xff
-
-    const/16 v4, 0x8
-
-    if-ge v2, v0, :cond_4
-
-    iget-object v5, p0, Lb32;->b:[B
-
-    iget v6, p0, Lb32;->c:I
-
-    add-int/lit8 v7, v6, 0x1
-
-    iput v7, p0, Lb32;->c:I
-
-    aget-byte v6, v5, v6
-
-    iget v8, p0, Lb32;->d:I
-
-    shl-int/2addr v6, v8
-
-    int-to-byte v6, v6
-
-    aput-byte v6, p2, v2
-
-    aget-byte v5, v5, v7
-
-    and-int/2addr v3, v5
-
-    sub-int/2addr v4, v8
-
-    shr-int/2addr v3, v4
-
-    or-int/2addr v3, v6
-
-    int-to-byte v3, v3
-
-    aput-byte v3, p2, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_2
-
-    :cond_4
-    and-int/lit8 p1, p1, 0x7
-
-    if-nez p1, :cond_5
-
-    goto :goto_3
-
-    :cond_5
-    aget-byte v2, p2, v0
-
-    shr-int v5, v3, p1
-
-    and-int/2addr v2, v5
-
-    int-to-byte v2, v2
-
-    aput-byte v2, p2, v0
-
-    iget v5, p0, Lb32;->d:I
-
-    add-int v6, v5, p1
-
-    if-le v6, v4, :cond_6
-
-    iget-object v6, p0, Lb32;->b:[B
-
-    iget v7, p0, Lb32;->c:I
-
-    add-int/lit8 v8, v7, 0x1
-
-    iput v8, p0, Lb32;->c:I
-
-    aget-byte v6, v6, v7
-
-    and-int/2addr v6, v3
-
-    shl-int/2addr v6, v5
-
-    or-int/2addr v2, v6
-
-    int-to-byte v2, v2
-
-    aput-byte v2, p2, v0
-
-    sub-int/2addr v5, v4
-
-    iput v5, p0, Lb32;->d:I
-
-    :cond_6
-    iget v2, p0, Lb32;->d:I
-
-    add-int/2addr v2, p1
-
-    iput v2, p0, Lb32;->d:I
-
-    iget-object v5, p0, Lb32;->b:[B
-
-    iget v6, p0, Lb32;->c:I
-
-    aget-byte v5, v5, v6
-
-    and-int/2addr v3, v5
-
-    rsub-int/lit8 v5, v2, 0x8
-
-    shr-int/2addr v3, v5
-
-    aget-byte v5, p2, v0
-
-    rsub-int/lit8 p1, p1, 0x8
-
-    shl-int p1, v3, p1
-
-    int-to-byte p1, p1
-
-    or-int/2addr p1, v5
-
-    int-to-byte p1, p1
-
-    aput-byte p1, p2, v0
-
-    if-ne v2, v4, :cond_7
-
-    iput v1, p0, Lb32;->d:I
-
-    add-int/lit8 v6, v6, 0x1
-
-    iput v6, p0, Lb32;->c:I
-
-    :cond_7
-    invoke-virtual {p0}, Lb32;->a()V
-
-    :goto_3
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public k(I)J
-    .registers 7
-
-    const-wide v0, 0xffffffffL
-
-    const/16 v2, 0x20
-
-    if-gt p1, v2, :cond_0
-
-    invoke-virtual {p0, p1}, Lb32;->i(I)I
-
-    move-result p0
-
-    sget p1, Laif;->a:I
-
-    int-to-long p0, p0
-
-    and-long/2addr p0, v0
-
-    return-wide p0
-
-    :cond_0
-    sub-int/2addr p1, v2
-
-    invoke-virtual {p0, p1}, Lb32;->i(I)I
-
-    move-result p1
-
-    invoke-virtual {p0, v2}, Lb32;->i(I)I
-
-    move-result p0
-
-    sget v3, Laif;->a:I
-
-    int-to-long v3, p1
-
-    and-long/2addr v3, v0
-
-    shl-long v2, v3, v2
-
-    int-to-long p0, p0
-
-    and-long/2addr p0, v0
-
-    or-long/2addr p0, v2
-
-    return-wide p0
-.end method
-
-.method public l(I[B)V
-    .registers 6
-
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget v0, p0, Lb32;->d:I
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
-    invoke-static {v0}, Lr76;->l(Z)V
-
-    iget-object v0, p0, Lb32;->b:[B
-
-    iget v2, p0, Lb32;->c:I
-
-    invoke-static {v0, v2, p2, v1, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget p2, p0, Lb32;->c:I
-
-    add-int/2addr p2, p1
-
-    iput p2, p0, Lb32;->c:I
-
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    :pswitch_0
-    iget v0, p0, Lb32;->d:I
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    move v0, v1
-
-    :goto_1
-    invoke-static {v0}, Lnc5;->m(Z)V
-
-    iget-object v0, p0, Lb32;->b:[B
-
-    iget v2, p0, Lb32;->c:I
-
-    invoke-static {v0, v2, p2, v1, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    iget p2, p0, Lb32;->c:I
-
-    add-int/2addr p2, p1
-
-    iput p2, p0, Lb32;->c:I
-
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public m()I
-    .registers 5
-
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
+    invoke-super {p0}, Lo32;->flush()V
 
     const/4 v0, 0x0
 
-    move v1, v0
+    iput-object v0, p0, Lb32;->n:Ljava/util/List;
 
-    :goto_0
-    invoke-virtual {p0}, Lb32;->h()Z
+    iput-object v0, p0, Lb32;->o:Ljava/util/List;
 
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v2, 0x1
-
-    shl-int v3, v2, v1
-
-    sub-int/2addr v3, v2
-
-    if-lez v1, :cond_1
-
-    invoke-virtual {p0, v1}, Lb32;->i(I)I
-
-    move-result v0
-
-    :cond_1
-    add-int/2addr v3, v0
-
-    return v3
-
-    :pswitch_0
     const/4 v0, 0x0
 
-    move v1, v0
+    invoke-virtual {p0, v0}, Lb32;->k(I)V
 
-    :goto_1
-    invoke-virtual {p0}, Lb32;->h()Z
+    const/4 v1, 0x4
 
-    move-result v2
+    iput v1, p0, Lb32;->q:I
 
-    if-nez v2, :cond_2
+    iget-object v2, p0, Lb32;->m:Lz22;
 
-    add-int/lit8 v1, v1, 0x1
+    iput v1, v2, Lz22;->h:I
 
-    goto :goto_1
+    invoke-virtual {p0}, Lb32;->j()V
 
-    :cond_2
-    const/4 v2, 0x1
+    iput-boolean v0, p0, Lb32;->r:Z
 
-    shl-int v3, v2, v1
+    iput-boolean v0, p0, Lb32;->s:Z
 
-    sub-int/2addr v3, v2
+    iput-byte v0, p0, Lb32;->t:B
 
-    if-lez v1, :cond_3
+    iput-byte v0, p0, Lb32;->u:B
 
-    invoke-virtual {p0, v1}, Lb32;->i(I)I
+    iput v0, p0, Lb32;->v:I
 
-    move-result v0
+    const/4 v0, 0x1
 
-    :cond_3
-    add-int/2addr v3, v0
+    iput-boolean v0, p0, Lb32;->w:Z
 
-    return v3
+    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
 
-    nop
+    iput-wide v0, p0, Lb32;->x:J
 
-    :pswitch_data_0
-    .packed-switch 0x3
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method
 
-.method public n()I
-    .registers 3
+.method public final g()Lm32;
+    .registers 11
 
-    iget v0, p0, Lb32;->a:I
+    invoke-super {p0}, Lo32;->g()Lm32;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object v0
 
-    invoke-virtual {p0}, Lb32;->m()I
+    if-eqz v0, :cond_0
 
-    move-result p0
+    return-object v0
 
-    rem-int/lit8 v0, p0, 0x2
+    :cond_0
+    iget-wide v0, p0, Lb32;->k:J
 
-    const/4 v1, 0x1
+    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    if-nez v0, :cond_0
+    cmp-long v4, v0, v2
 
-    const/4 v0, -0x1
+    if-eqz v4, :cond_2
+
+    iget-wide v4, p0, Lb32;->x:J
+
+    cmp-long v6, v4, v2
+
+    if-nez v6, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    move v0, v1
+    :cond_1
+    iget-wide v6, p0, Lo32;->e:J
 
+    sub-long/2addr v6, v4
+
+    cmp-long v0, v6, v0
+
+    if-ltz v0, :cond_2
+
+    iget-object v0, p0, Lo32;->b:Ljava/util/ArrayDeque;
+
+    invoke-virtual {v0}, Ljava/util/ArrayDeque;->pollFirst()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v4, v0
+
+    check-cast v4, Lm32;
+
+    if-eqz v4, :cond_2
+
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    iput-object v0, p0, Lb32;->n:Ljava/util/List;
+
+    iput-wide v2, p0, Lb32;->x:J
+
+    invoke-virtual {p0}, Lb32;->e()Lnyc;
+
+    move-result-object v7
+
+    iget-wide v5, p0, Lo32;->e:J
+
+    const-wide v8, 0x7fffffffffffffffL
+
+    invoke-virtual/range {v4 .. v9}, Lm32;->v(JLone;J)V
+
+    return-object v4
+
+    :cond_2
     :goto_0
-    add-int/2addr p0, v1
+    const/4 p0, 0x0
 
-    div-int/lit8 p0, p0, 0x2
+    return-object p0
+.end method
 
-    :goto_1
-    mul-int/2addr p0, v0
+.method public final h()Z
+    .registers 2
+
+    iget-object v0, p0, Lb32;->n:Ljava/util/List;
+
+    iget-object p0, p0, Lb32;->o:Ljava/util/List;
+
+    if-eq v0, p0, :cond_0
+
+    const/4 p0, 0x1
 
     return p0
 
-    :pswitch_0
-    invoke-virtual {p0}, Lb32;->m()I
+    :cond_0
+    const/4 p0, 0x0
 
-    move-result p0
-
-    rem-int/lit8 v0, p0, 0x2
-
-    const/4 v1, 0x1
-
-    if-nez v0, :cond_1
-
-    const/4 v0, -0x1
-
-    goto :goto_2
-
-    :cond_1
-    move v0, v1
-
-    :goto_2
-    add-int/2addr p0, v1
-
-    div-int/lit8 p0, p0, 0x2
-
-    goto :goto_1
-
-    :pswitch_data_0
-    .packed-switch 0x3
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method
 
-.method public o(I[B)V
-    .registers 4
+.method public final i()Ljava/util/ArrayList;
+    .registers 8
 
-    iget v0, p0, Lb32;->a:I
+    iget-object p0, p0, Lb32;->l:Ljava/util/ArrayList;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
-    iput-object p2, p0, Lb32;->b:[B
+    move-result v0
 
-    const/4 p2, 0x0
+    new-instance v1, Ljava/util/ArrayList;
 
-    iput p2, p0, Lb32;->c:I
+    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    iput p2, p0, Lb32;->d:I
+    const/4 v2, 0x2
 
-    iput p1, p0, Lb32;->e:I
+    const/4 v3, 0x0
 
-    return-void
+    move v4, v3
 
-    :pswitch_0
-    iput-object p2, p0, Lb32;->b:[B
+    :goto_0
+    if-ge v4, v0, :cond_1
 
-    const/4 p2, 0x0
+    invoke-virtual {p0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    iput p2, p0, Lb32;->c:I
+    move-result-object v5
 
-    iput p2, p0, Lb32;->d:I
+    check-cast v5, Lz22;
 
-    iput p1, p0, Lb32;->e:I
+    const/high16 v6, -0x80000000
 
-    return-void
+    invoke-virtual {v5, v6}, Lz22;->c(I)Ld44;
 
-    nop
+    move-result-object v5
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-.method public p(Lgsa;)V
-    .registers 4
+    if-eqz v5, :cond_0
 
-    iget-object v0, p1, Lgsa;->a:[B
+    iget v5, v5, Ld44;->s0:I
 
-    iget v1, p1, Lgsa;->c:I
+    invoke-static {v2, v5}, Ljava/lang/Math;->min(II)I
 
-    invoke-virtual {p0, v1, v0}, Lb32;->o(I[B)V
+    move-result v2
 
-    iget p1, p1, Lgsa;->b:I
-
-    mul-int/lit8 p1, p1, 0x8
-
-    invoke-virtual {p0, p1}, Lb32;->q(I)V
-
-    return-void
-.end method
-
-.method public q(I)V
-    .registers 3
-
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    div-int/lit8 v0, p1, 0x8
-
-    iput v0, p0, Lb32;->c:I
-
-    mul-int/lit8 v0, v0, 0x8
-
-    sub-int/2addr p1, v0
-
-    iput p1, p0, Lb32;->d:I
-
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    :pswitch_0
-    div-int/lit8 v0, p1, 0x8
-
-    iput v0, p0, Lb32;->c:I
-
-    mul-int/lit8 v0, v0, 0x8
-
-    sub-int/2addr p1, v0
-
-    iput p1, p0, Lb32;->d:I
-
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public r(I)Z
-    .registers 4
-
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    const/4 v0, 0x2
-
-    if-gt v0, p1, :cond_0
-
-    iget v0, p0, Lb32;->c:I
-
-    if-ge p1, v0, :cond_0
-
-    iget-object p0, p0, Lb32;->b:[B
-
-    aget-byte v0, p0, p1
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_0
-
-    add-int/lit8 v0, p1, -0x2
-
-    aget-byte v0, p0, v0
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    sub-int/2addr p1, v0
-
-    aget-byte p0, p0, p1
-
-    if-nez p0, :cond_0
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-
-    :pswitch_0
-    const/4 v0, 0x2
-
-    if-gt v0, p1, :cond_1
-
-    iget v0, p0, Lb32;->c:I
-
-    if-ge p1, v0, :cond_1
-
-    iget-object p0, p0, Lb32;->b:[B
-
-    aget-byte v0, p0, p1
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_1
-
-    add-int/lit8 v0, p1, -0x2
-
-    aget-byte v0, p0, v0
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    sub-int/2addr p1, v0
-
-    aget-byte p0, p0, p1
-
-    if-nez p0, :cond_1
-
-    goto :goto_1
-
     :cond_1
-    const/4 v0, 0x0
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     :goto_1
-    return v0
+    if-ge v3, v0, :cond_4
 
-    nop
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x3
-        :pswitch_0
-    .end packed-switch
-.end method
+    move-result-object v5
 
-.method public s()V
-    .registers 4
+    check-cast v5, Ld44;
 
-    iget v0, p0, Lb32;->a:I
+    if-eqz v5, :cond_3
 
-    packed-switch v0, :pswitch_data_0
+    iget v6, v5, Ld44;->s0:I
 
-    iget v0, p0, Lb32;->e:I
+    if-eq v6, v2, :cond_2
 
-    const/4 v1, 0x1
+    invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    add-int/2addr v0, v1
+    move-result-object v5
 
-    iput v0, p0, Lb32;->e:I
+    check-cast v5, Lz22;
 
-    const/16 v2, 0x8
+    invoke-virtual {v5, v2}, Lz22;->c(I)Ld44;
 
-    if-ne v0, v2, :cond_1
+    move-result-object v5
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lb32;->e:I
-
-    iget v0, p0, Lb32;->d:I
-
-    add-int/lit8 v2, v0, 0x1
-
-    invoke-virtual {p0, v2}, Lb32;->r(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    const/4 v1, 0x2
-
-    :cond_0
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lb32;->d:I
-
-    :cond_1
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    :pswitch_0
-    iget v0, p0, Lb32;->e:I
-
-    const/4 v1, 0x1
-
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lb32;->e:I
-
-    const/16 v2, 0x8
-
-    if-ne v0, v2, :cond_3
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lb32;->e:I
-
-    iget v0, p0, Lb32;->d:I
-
-    add-int/lit8 v2, v0, 0x1
-
-    invoke-virtual {p0, v2}, Lb32;->r(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    const/4 v1, 0x2
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     :cond_2
-    add-int/2addr v0, v1
-
-    iput v0, p0, Lb32;->d:I
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_3
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    :pswitch_1
-    iget v0, p0, Lb32;->d:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lb32;->d:I
-
-    const/16 v1, 0x8
-
-    if-ne v0, v1, :cond_4
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lb32;->d:I
-
-    iget v0, p0, Lb32;->c:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lb32;->c:I
-
-    :cond_4
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    :pswitch_2
-    iget v0, p0, Lb32;->d:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lb32;->d:I
-
-    const/16 v1, 0x8
-
-    if-ne v0, v1, :cond_5
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lb32;->d:I
-
-    iget v0, p0, Lb32;->c:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p0, Lb32;->c:I
-
-    :cond_5
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public t(I)V
-    .registers 6
-
-    iget v0, p0, Lb32;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    div-int/lit8 v0, p1, 0x8
-
-    iget v1, p0, Lb32;->d:I
-
-    add-int/2addr v1, v0
-
-    iput v1, p0, Lb32;->d:I
-
-    iget v2, p0, Lb32;->e:I
-
-    mul-int/lit8 v0, v0, 0x8
-
-    sub-int/2addr p1, v0
-
-    add-int/2addr p1, v2
-
-    iput p1, p0, Lb32;->e:I
-
-    const/4 v0, 0x7
-
-    const/4 v2, 0x1
-
-    if-le p1, v0, :cond_0
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Lb32;->d:I
-
-    add-int/lit8 p1, p1, -0x8
-
-    iput p1, p0, Lb32;->e:I
-
-    :cond_0
-    iget p1, p0, Lb32;->d:I
-
-    if-ltz p1, :cond_1
-
-    iget v0, p0, Lb32;->c:I
-
-    if-lt p1, v0, :cond_2
-
-    if-ne p1, v0, :cond_1
-
-    iget p0, p0, Lb32;->e:I
-
-    if-nez p0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :cond_2
-    :goto_0
-    invoke-static {v2}, Lr76;->l(Z)V
-
-    return-void
-
-    :pswitch_0
-    div-int/lit8 v0, p1, 0x8
-
-    iget v1, p0, Lb32;->d:I
-
-    add-int/2addr v1, v0
-
-    iput v1, p0, Lb32;->d:I
-
-    iget v2, p0, Lb32;->e:I
-
-    mul-int/lit8 v0, v0, 0x8
-
-    sub-int/2addr p1, v0
-
-    add-int/2addr p1, v2
-
-    iput p1, p0, Lb32;->e:I
-
-    const/4 v0, 0x7
-
-    const/4 v2, 0x1
-
-    if-le p1, v0, :cond_3
-
-    add-int/2addr v1, v2
-
-    iput v1, p0, Lb32;->d:I
-
-    add-int/lit8 p1, p1, -0x8
-
-    iput p1, p0, Lb32;->e:I
-
-    :cond_3
-    iget p1, p0, Lb32;->d:I
-
-    if-ltz p1, :cond_4
-
-    iget v0, p0, Lb32;->c:I
-
-    if-lt p1, v0, :cond_5
-
-    if-ne p1, v0, :cond_4
-
-    iget p0, p0, Lb32;->e:I
-
-    if-nez p0, :cond_4
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     :cond_4
-    const/4 v2, 0x0
-
-    :cond_5
-    :goto_1
-    invoke-static {v2}, Lnc5;->m(Z)V
-
-    return-void
-
-    :pswitch_1
-    iget v0, p0, Lb32;->d:I
-
-    div-int/lit8 v1, p1, 0x8
-
-    add-int v2, v0, v1
-
-    iput v2, p0, Lb32;->d:I
-
-    iget v3, p0, Lb32;->e:I
-
-    mul-int/lit8 v1, v1, 0x8
-
-    sub-int/2addr p1, v1
-
-    add-int/2addr p1, v3
-
-    iput p1, p0, Lb32;->e:I
-
-    const/4 v1, 0x7
-
-    if-le p1, v1, :cond_6
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, p0, Lb32;->d:I
-
-    add-int/lit8 p1, p1, -0x8
-
-    iput p1, p0, Lb32;->e:I
-
-    :cond_6
-    :goto_2
-    add-int/lit8 v0, v0, 0x1
-
-    iget p1, p0, Lb32;->d:I
-
-    if-gt v0, p1, :cond_7
-
-    invoke-virtual {p0, v0}, Lb32;->r(I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_6
-
-    iget p1, p0, Lb32;->d:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    iput p1, p0, Lb32;->d:I
-
-    add-int/lit8 v0, v0, 0x2
-
-    goto :goto_2
-
-    :cond_7
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    :pswitch_2
-    iget v0, p0, Lb32;->d:I
-
-    div-int/lit8 v1, p1, 0x8
-
-    add-int v2, v0, v1
-
-    iput v2, p0, Lb32;->d:I
-
-    iget v3, p0, Lb32;->e:I
-
-    mul-int/lit8 v1, v1, 0x8
-
-    sub-int/2addr p1, v1
-
-    add-int/2addr p1, v3
-
-    iput p1, p0, Lb32;->e:I
-
-    const/4 v1, 0x7
-
-    if-le p1, v1, :cond_8
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, p0, Lb32;->d:I
-
-    add-int/lit8 p1, p1, -0x8
-
-    iput p1, p0, Lb32;->e:I
-
-    :cond_8
-    :goto_3
-    add-int/lit8 v0, v0, 0x1
-
-    iget p1, p0, Lb32;->d:I
-
-    if-gt v0, p1, :cond_9
-
-    invoke-virtual {p0, v0}, Lb32;->r(I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_8
-
-    iget p1, p0, Lb32;->d:I
-
-    add-int/lit8 p1, p1, 0x1
-
-    iput p1, p0, Lb32;->d:I
-
-    add-int/lit8 v0, v0, 0x2
-
-    goto :goto_3
-
-    :cond_9
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    :pswitch_3
-    div-int/lit8 v0, p1, 0x8
-
-    iget v1, p0, Lb32;->c:I
-
-    add-int/2addr v1, v0
-
-    iput v1, p0, Lb32;->c:I
-
-    iget v2, p0, Lb32;->d:I
-
-    mul-int/lit8 v0, v0, 0x8
-
-    sub-int/2addr p1, v0
-
-    add-int/2addr p1, v2
-
-    iput p1, p0, Lb32;->d:I
-
-    const/4 v0, 0x7
-
-    if-le p1, v0, :cond_a
-
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, p0, Lb32;->c:I
-
-    add-int/lit8 p1, p1, -0x8
-
-    iput p1, p0, Lb32;->d:I
-
-    :cond_a
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    :pswitch_4
-    div-int/lit8 v0, p1, 0x8
-
-    iget v1, p0, Lb32;->c:I
-
-    add-int/2addr v1, v0
-
-    iput v1, p0, Lb32;->c:I
-
-    iget v2, p0, Lb32;->d:I
-
-    mul-int/lit8 v0, v0, 0x8
-
-    sub-int/2addr p1, v0
-
-    add-int/2addr p1, v2
-
-    iput p1, p0, Lb32;->d:I
-
-    const/4 v0, 0x7
-
-    if-le p1, v0, :cond_b
-
-    add-int/lit8 v1, v1, 0x1
-
-    iput v1, p0, Lb32;->c:I
-
-    add-int/lit8 p1, p1, -0x8
-
-    iput p1, p0, Lb32;->d:I
-
-    :cond_b
-    invoke-virtual {p0}, Lb32;->a()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v4
 .end method
 
-.method public u(I)V
-    .registers 3
+.method public final j()V
+    .registers 4
 
-    iget v0, p0, Lb32;->a:I
+    iget-object v0, p0, Lb32;->m:Lz22;
 
-    packed-switch v0, :pswitch_data_0
+    iget v1, p0, Lb32;->p:I
 
-    iget v0, p0, Lb32;->d:I
+    iput v1, v0, Lz22;->g:I
 
-    if-nez v0, :cond_0
+    iget-object v1, v0, Lz22;->a:Ljava/util/ArrayList;
 
-    const/4 v0, 0x1
+    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    goto :goto_0
+    iget-object v1, v0, Lz22;->b:Ljava/util/ArrayList;
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    :goto_0
-    invoke-static {v0}, Lr76;->l(Z)V
+    iget-object v1, v0, Lz22;->c:Ljava/lang/StringBuilder;
 
-    iget v0, p0, Lb32;->c:I
+    const/4 v2, 0x0
 
-    add-int/2addr v0, p1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    iput v0, p0, Lb32;->c:I
+    const/16 v1, 0xf
 
-    invoke-virtual {p0}, Lb32;->a()V
+    iput v1, v0, Lz22;->d:I
+
+    iput v2, v0, Lz22;->e:I
+
+    iput v2, v0, Lz22;->f:I
+
+    iget-object v0, p0, Lb32;->l:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    iget-object p0, p0, Lb32;->m:Lz22;
+
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
+.end method
 
-    :pswitch_0
-    iget v0, p0, Lb32;->d:I
+.method public final k(I)V
+    .registers 5
 
-    if-nez v0, :cond_1
+    iget v0, p0, Lb32;->p:I
 
-    const/4 v0, 0x1
+    if-ne v0, p1, :cond_0
 
     goto :goto_1
 
-    :cond_1
+    :cond_0
+    iput p1, p0, Lb32;->p:I
+
+    const/4 v1, 0x3
+
+    if-ne p1, v1, :cond_1
+
     const/4 v0, 0x0
 
+    :goto_0
+    iget-object v1, p0, Lb32;->l:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_2
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lz22;
+
+    iput p1, v1, Lz22;->g:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Lb32;->j()V
+
+    if-eq v0, v1, :cond_3
+
+    const/4 v0, 0x1
+
+    if-eq p1, v0, :cond_3
+
+    if-nez p1, :cond_2
+
+    goto :goto_2
+
+    :cond_2
     :goto_1
-    invoke-static {v0}, Lnc5;->m(Z)V
-
-    iget v0, p0, Lb32;->c:I
-
-    add-int/2addr v0, p1
-
-    iput v0, p0, Lb32;->c:I
-
-    invoke-virtual {p0}, Lb32;->a()V
-
     return-void
 
-    nop
+    :cond_3
+    :goto_2
+    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
+    iput-object p1, p0, Lb32;->n:Ljava/util/List;
+
+    return-void
+.end method
+
+.method public final release()V
+    .registers 1
+
+    return-void
 .end method

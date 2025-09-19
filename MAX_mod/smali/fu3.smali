@@ -1,65 +1,129 @@
-.class public final Lfu3;
-.super Leqc;
+.class public final synthetic Lfu3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Leb4;
 
-# static fields
-.field public static final b:Lfu3;
 
-.field public static final c:Lca4;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final d:Lca4;
-
-.field public static final e:Lca4;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .registers 3
 
-    new-instance v0, Lfu3;
+    iput p1, p0, Lfu3;->a:I
 
-    invoke-direct {v0}, Lha4;-><init>()V
+    iput-object p2, p0, Lfu3;->b:Ljava/lang/Object;
 
-    sput-object v0, Lfu3;->b:Lfu3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v6, 0x0
+    return-void
+.end method
 
-    new-array v2, v6, [Ljava/lang/String;
 
-    const/16 v5, 0xe
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .registers 4
 
-    const/4 v4, 0x0
+    iget v0, p0, Lfu3;->a:I
 
-    const-string v1, ":contact-list/create-contact"
+    iget-object p0, p0, Lfu3;->b:Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
+    check-cast p0, [J
 
-    move-result-object v1
+    new-instance v0, Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;
 
-    sput-object v1, Lfu3;->c:Lca4;
+    sget-object v1, Lyae;->b:Lyae;
 
-    new-array v2, v6, [Ljava/lang/String;
+    invoke-direct {v0, p0, v1}, Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;-><init>([JLyae;)V
 
-    const-string v1, ":contact-list/share-invite"
+    return-object v0
 
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
+    :pswitch_0
+    check-cast p0, Lkud;
 
-    move-result-object v1
+    iget-object p0, p0, Lkud;->a:Lcl7;
 
-    sput-object v1, Lfu3;->d:Lca4;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    new-array v2, v6, [Ljava/lang/String;
+    move-result-object p0
 
-    const-string v1, ":call-contact"
+    check-cast p0, Lrj5;
 
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
+    check-cast p0, Ltj5;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->new-settings-storage-screen-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lnad;->l(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    new-instance p0, Lone/me/settings/storage/ui/SettingsStorageScreen;
+
+    invoke-direct {p0}, Lone/me/settings/storage/ui/SettingsStorageScreen;-><init>()V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Lone/me/sdk/arch/activity/ActivityWrapperWidget;
+
+    const-class v0, Lru/ok/messages/settings/ActSettings;
+
+    invoke-static {v0}, Ljpc;->a(Ljava/lang/Class;)Ly33;
 
     move-result-object v0
 
-    sput-object v0, Lfu3;->e:Lca4;
+    invoke-virtual {v0}, Ly33;->b()Ljava/lang/String;
 
-    return-void
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    new-instance v1, Laqc;
+
+    const/16 v2, 0xc
+
+    invoke-direct {v1, v2}, Laqc;-><init>(I)V
+
+    invoke-direct {p0, v0, v1}, Lone/me/sdk/arch/activity/ActivityWrapperWidget;-><init>(Ljava/lang/String;Lbc6;)V
+
+    :goto_0
+    return-object p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Required value was null."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :pswitch_1
+    check-cast p0, Liu3;
+
+    new-instance v0, Lgu3;
+
+    invoke-direct {v0, p0}, Lgu3;-><init>(Liu3;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

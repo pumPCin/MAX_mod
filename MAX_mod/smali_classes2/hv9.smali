@@ -1,167 +1,270 @@
-.class public final Lhv9;
-.super Lsoe;
+.class public final synthetic Lhv9;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lzb6;
 
 
 # instance fields
-.field public X:J
+.field public final synthetic a:I
 
-.field public c:J
-
-.field public o:Lz9b;
+.field public final synthetic b:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
 
 
 # direct methods
-.method public constructor <init>(Lu09;)V
-    .registers 2
+.method public synthetic constructor <init>(Lone/me/login/neuroavatars/NeuroAvatarsScreen;I)V
+    .registers 3
 
-    invoke-direct {p0, p1}, Lsoe;-><init>(Lu09;)V
+    iput p2, p0, Lhv9;->a:I
+
+    iput-object p1, p0, Lhv9;->b:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lu09;Ljava/lang/String;)V
-    .registers 5
+.method public final invoke()Ljava/lang/Object;
+    .registers 10
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v0, p0, Lhv9;->a:I
 
-    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
+    sget-object v1, Lylf;->a:Lylf;
 
-    move-result v0
+    iget-object p0, p0, Lhv9;->b:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
 
-    const/4 v1, -0x1
+    packed-switch v0, :pswitch_data_0
 
-    sparse-switch v0, :sswitch_data_0
+    new-instance v0, Lcv9;
 
-    goto :goto_0
+    iget-object v1, p0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->C0:Lfr;
 
-    :sswitch_0
-    const-string v0, "time"
+    sget-object v2, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->K0:[Lxi7;
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/16 v3, 0x9
 
-    move-result p2
+    aget-object v2, v2, v3
 
-    if-nez p2, :cond_0
+    invoke-virtual {v1, p0}, Lfr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object p0
 
-    :cond_0
-    const/4 v1, 0x2
+    check-cast p0, Lhhb;
 
-    goto :goto_0
+    invoke-direct {v0, p0}, Lcv9;-><init>(Lhhb;)V
 
-    :sswitch_1
-    const-string v0, "userId"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x1
-
-    goto :goto_0
-
-    :sswitch_2
-    const-string v0, "presence"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v1, 0x0
-
-    :goto_0
-    packed-switch v1, :pswitch_data_0
-
-    invoke-virtual {p1}, Lu09;->B()V
-
-    return-void
+    return-object v0
 
     :pswitch_0
-    invoke-virtual {p1}, Lu09;->A0()J
+    sget-object v0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->K0:[Lxi7;
 
-    move-result-wide p1
+    sget v0, Lq0d;->i0:I
 
-    iput-wide p1, p0, Lhv9;->X:J
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
-    return-void
+    move-result-object p0
 
-    :pswitch_1
-    invoke-virtual {p1}, Lu09;->A0()J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Lhv9;->c:J
-
-    return-void
-
-    :pswitch_2
-    invoke-static {p1}, Lz9b;->a(Lu09;)Lz9b;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lhv9;->o:Lz9b;
-
-    return-void
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x4c186305 -> :sswitch_2
-        -0x31d4d1ba -> :sswitch_1
-        0x3652cd -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 7
-
-    iget-wide v0, p0, Lhv9;->c:J
-
-    iget-object v2, p0, Lhv9;->o:Lz9b;
-
-    iget-wide v3, p0, Lhv9;->X:J
-
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    const-string v5, "{userId="
-
-    invoke-direct {p0, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p0, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v0, ", presence="
-
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", time="
-
-    const-string v1, "}"
-
-    invoke-static {v3, v4, v0, v1, p0}, Lex3;->g(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)Ljava/lang/String;
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_1
+    new-instance v0, Lfw9;
+
+    iget-object v1, p0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->D0:Lfr;
+
+    sget-object v2, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->K0:[Lxi7;
+
+    const/16 v3, 0xa
+
+    aget-object v2, v2, v3
+
+    invoke-virtual {v1, p0}, Lfr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Long;
+
+    invoke-virtual {p0}, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->A0()Lxpc;
+
+    move-result-object v2
+
+    new-instance v3, Lhv9;
+
+    const/4 v4, 0x6
+
+    invoke-direct {v3, p0, v4}, Lhv9;-><init>(Lone/me/login/neuroavatars/NeuroAvatarsScreen;I)V
+
+    move-object p0, v3
+
+    new-instance v3, Lzte;
+
+    invoke-direct {v3, p0}, Lzte;-><init>(Lzb6;)V
+
+    sget-object p0, Lh08;->a:Lh08;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v4, Lrw7;
+
+    const/4 v5, 0x3
+
+    invoke-direct {v4, v5}, Lrw7;-><init>(I)V
+
+    move-object v5, v4
+
+    new-instance v4, Lzte;
+
+    invoke-direct {v4, v5}, Lzte;-><init>(Lzb6;)V
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v5
+
+    const-class v6, Le18;
+
+    invoke-virtual {v5, v6}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v5
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v6
+
+    const-class v7, Lxwe;
+
+    invoke-virtual {v6, v7}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v6
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object p0
+
+    const-class v7, Lik3;
+
+    invoke-virtual {p0, v7}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v7
+
+    const v8, 0x1ff80
+
+    invoke-direct/range {v0 .. v8}, Lfw9;-><init>(Ljava/lang/Long;Lxpc;Lzte;Lzte;Lcl7;Lcl7;Lcl7;I)V
+
+    return-object v0
+
+    :pswitch_2
+    sget-object v0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->K0:[Lxi7;
+
+    invoke-virtual {p0}, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->A0()Lxpc;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    new-instance v0, Lyxa;
+
+    const-wide/16 v1, 0x0
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v5
+
+    const/16 v7, 0x2f
+
+    const/4 v2, 0x0
+
+    const/4 v1, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v6, 0x0
+
+    invoke-direct/range {v0 .. v7}, Lyxa;-><init>(Lcbb;ILi7e;Ljava/lang/Long;Ljava/lang/Long;Ltr;I)V
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v0, Lyxa;->g:Lyxa;
+
+    :goto_0
+    return-object v0
+
+    :pswitch_3
+    sget-object v0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->K0:[Lxi7;
+
+    invoke-virtual {p0}, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->A0()Lxpc;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    sget-object p0, Ls6d;->Z:Ls6d;
+
+    goto :goto_1
+
+    :cond_1
+    sget-object p0, Ls6d;->u1:Ls6d;
+
+    :goto_1
+    return-object p0
+
+    :pswitch_4
+    sget-object v0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->K0:[Lxi7;
+
+    iget-object v0, p0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->Y:Lcic;
+
+    sget-object v2, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->K0:[Lxi7;
+
+    const/4 v3, 0x1
+
+    aget-object v2, v2, v3
+
+    invoke-interface {v0, p0, v2}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Loba;
+
+    invoke-virtual {p0}, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->C0()Lfw9;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lfw9;->s()Z
+
+    move-result p0
+
+    invoke-virtual {v0, p0}, Loba;->setCloseBadgeVisibility(Z)V
+
+    return-object v1
+
+    :pswitch_5
+    sget-object v0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->K0:[Lxi7;
+
+    invoke-virtual {p0}, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->C0()Lfw9;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lfw9;->q()V
+
+    return-object v1
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

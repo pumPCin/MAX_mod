@@ -1,55 +1,92 @@
 .class public final Ls6f;
-.super Ljava/lang/Object;
+.super Lkotlinx/coroutines/internal/ScopeCoroutine;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:F
-
-.field public final c:F
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:F
-
-.field public final g:F
-
-.field public final h:I
-
-.field public final i:F
-
-.field public final j:I
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;FFIIFFIFI)V
-    .registers 11
+.method public constructor <init>(JLjx3;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-interface {p3}, Lkotlin/coroutines/Continuation;->getContext()Lq04;
 
-    iput-object p1, p0, Ls6f;->a:Ljava/lang/String;
+    move-result-object v0
 
-    iput p2, p0, Ls6f;->b:F
+    invoke-direct {p0, v0, p3}, Lkotlinx/coroutines/internal/ScopeCoroutine;-><init>(Lq04;Lkotlin/coroutines/Continuation;)V
 
-    iput p3, p0, Ls6f;->c:F
+    iput-wide p1, p0, Ls6f;->a:J
 
-    iput p4, p0, Ls6f;->d:I
+    return-void
+.end method
 
-    iput p5, p0, Ls6f;->e:I
 
-    iput p6, p0, Ls6f;->f:F
+# virtual methods
+.method public final nameString$kotlinx_coroutines_core()Ljava/lang/String;
+    .registers 4
 
-    iput p7, p0, Ls6f;->g:F
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iput p8, p0, Ls6f;->h:I
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iput p9, p0, Ls6f;->i:F
+    invoke-super {p0}, Le0;->nameString$kotlinx_coroutines_core()Ljava/lang/String;
 
-    iput p10, p0, Ls6f;->j:I
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "(timeMillis="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Ls6f;->a:J
+
+    const/16 p0, 0x29
+
+    invoke-static {v0, v1, v2, p0}, Lbg9;->k(Ljava/lang/StringBuilder;JC)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final run()V
+    .registers 4
+
+    invoke-virtual {p0}, Le0;->getContext()Lq04;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ln2e;->l(Lq04;)Lzk4;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Timed out waiting for "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v1, p0, Ls6f;->a:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, " ms"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Lkotlinx/coroutines/TimeoutCancellationException;
+
+    invoke-direct {v1, v0, p0}, Lkotlinx/coroutines/TimeoutCancellationException;-><init>(Ljava/lang/String;Lqe7;)V
+
+    invoke-virtual {p0, v1}, Lsf7;->cancelCoroutine(Ljava/lang/Throwable;)Z
 
     return-void
 .end method

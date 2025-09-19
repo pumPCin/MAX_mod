@@ -1,48 +1,40 @@
-.class public final Lsa6;
+.class public final synthetic Lsa6;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lz5;
+.implements Lwpe;
 
 
 # instance fields
-.field public final a:Lkxg;
+.field public final synthetic a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public constructor <init>(Lkxg;)V
+.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lsa6;->a:Lkxg;
+    iput-object p1, p0, Lsa6;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 3
+.method public final get()Ljava/lang/Object;
+    .registers 1
 
-    iget-object p0, p0, Lsa6;->a:Lkxg;
+    iget-object p0, p0, Lsa6;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object p0, p0, Lkxg;->b:Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    check-cast p0, Lr77;
+    move-result p0
 
-    iget-object v0, p0, Lr77;->d:Lrv0;
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    invoke-virtual {v0, p0}, Lrv0;->f(Ljava/lang/Object;)V
+    move-result-object p0
 
-    iget-object p0, p0, Lr77;->l:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
-
-    return-void
+    return-object p0
 .end method

@@ -1,397 +1,236 @@
 .class public final Lpvc;
-.super Ljava/lang/Object;
+.super Lh0;
 .source "SourceFile"
 
 
-# static fields
-.field public static final f:[Ljava/lang/Class;
-
-
 # instance fields
-.field public final a:Ljava/util/LinkedHashMap;
-
-.field public final b:Ljava/util/LinkedHashMap;
-
-.field public final c:Ljava/util/LinkedHashMap;
-
-.field public final d:Ljava/util/LinkedHashMap;
-
-.field public final e:Luvc;
+.field public h:Lh0;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 30
+.method public static o(Lh0;)V
+    .registers 1
 
-    const-class v28, Landroid/util/Size;
+    if-eqz p0, :cond_0
 
-    const-class v29, Landroid/util/SizeF;
-
-    sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
-
-    const-class v2, [Z
-
-    sget-object v3, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
-
-    const-class v4, [D
-
-    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    const-class v6, [I
-
-    sget-object v7, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    const-class v8, [J
-
-    const-class v9, Ljava/lang/String;
-
-    const-class v10, [Ljava/lang/String;
-
-    const-class v11, Landroid/os/Binder;
-
-    const-class v12, Landroid/os/Bundle;
-
-    sget-object v13, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
-
-    const-class v14, [B
-
-    sget-object v15, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
-
-    const-class v16, [C
-
-    const-class v17, Ljava/lang/CharSequence;
-
-    const-class v18, [Ljava/lang/CharSequence;
-
-    const-class v19, Ljava/util/ArrayList;
-
-    sget-object v20, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
-    const-class v21, [F
-
-    const-class v22, Landroid/os/Parcelable;
-
-    const-class v23, [Landroid/os/Parcelable;
-
-    const-class v24, Ljava/io/Serializable;
-
-    sget-object v25, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
-
-    const-class v26, [S
-
-    const-class v27, Landroid/util/SparseArray;
-
-    filled-new-array/range {v1 .. v29}, [Ljava/lang/Class;
-
-    move-result-object v0
-
-    sput-object v0, Lpvc;->f:[Ljava/lang/Class;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object v0, p0, Lpvc;->a:Ljava/util/LinkedHashMap;
-
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object v0, p0, Lpvc;->b:Ljava/util/LinkedHashMap;
-
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object v0, p0, Lpvc;->c:Ljava/util/LinkedHashMap;
-
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object v0, p0, Lpvc;->d:Ljava/util/LinkedHashMap;
-
-    new-instance v0, Lf56;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1, p0}, Lf56;-><init>(ILjava/lang/Object;)V
-
-    iput-object v0, p0, Lpvc;->e:Luvc;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/HashMap;)V
-    .registers 5
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object v0, p0, Lpvc;->a:Ljava/util/LinkedHashMap;
-
-    new-instance v1, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object v1, p0, Lpvc;->b:Ljava/util/LinkedHashMap;
-
-    new-instance v1, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object v1, p0, Lpvc;->c:Ljava/util/LinkedHashMap;
-
-    new-instance v1, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v1}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object v1, p0, Lpvc;->d:Ljava/util/LinkedHashMap;
-
-    new-instance v1, Lf56;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, v2, p0}, Lf56;-><init>(ILjava/lang/Object;)V
-
-    iput-object v1, p0, Lpvc;->e:Luvc;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    return-void
-.end method
-
-.method public static a(Lpvc;)Landroid/os/Bundle;
-    .registers 7
-
-    iget-object v0, p0, Lpvc;->a:Ljava/util/LinkedHashMap;
-
-    iget-object v1, p0, Lpvc;->b:Ljava/util/LinkedHashMap;
-
-    invoke-static {v1}, Lc38;->S(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_6
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Map$Entry;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/String;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Luvc;
-
-    invoke-interface {v2}, Luvc;->a()Landroid/os/Bundle;
-
-    move-result-object v2
-
-    if-nez v2, :cond_0
-
-    goto :goto_2
+    invoke-virtual {p0}, Lh0;->a()Z
 
     :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-void
+.end method
 
-    const/4 v4, 0x0
 
-    :goto_1
-    const/16 v5, 0x1d
+# virtual methods
+.method public final a()Z
+    .registers 3
 
-    if-ge v4, v5, :cond_5
+    monitor-enter p0
 
-    sget-object v5, Lpvc;->f:[Ljava/lang/Class;
+    :try_start_0
+    invoke-super {p0}, Lh0;->a()Z
 
-    aget-object v5, v5, v4
+    move-result v0
 
-    invoke-virtual {v5, v2}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+    if-nez v0, :cond_0
 
-    move-result v5
+    const/4 v0, 0x0
 
-    if-eqz v5, :cond_4
+    monitor-exit p0
 
-    :goto_2
-    iget-object v4, p0, Lpvc;->c:Ljava/util/LinkedHashMap;
+    return v0
 
-    invoke-virtual {v4, v3}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    instance-of v5, v4, Llk9;
-
-    if-eqz v5, :cond_1
-
-    check-cast v4, Llk9;
-
-    goto :goto_3
-
-    :cond_1
-    const/4 v4, 0x0
-
-    :goto_3
-    if-eqz v4, :cond_2
-
-    invoke-virtual {v4, v2}, Lyq7;->k(Ljava/lang/Object;)V
-
-    goto :goto_4
-
-    :cond_2
-    iget-object v4, p0, Lpvc;->a:Ljava/util/LinkedHashMap;
-
-    invoke-interface {v4, v3, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :goto_4
-    iget-object v4, p0, Lpvc;->d:Ljava/util/LinkedHashMap;
-
-    invoke-virtual {v4, v3}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lfl9;
-
-    if-nez v3, :cond_3
+    :catchall_0
+    move-exception v0
 
     goto :goto_0
 
-    :cond_3
-    invoke-interface {v3, v2}, Lfl9;->setValue(Ljava/lang/Object;)V
+    :cond_0
+    iget-object v0, p0, Lpvc;->h:Lh0;
+
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lpvc;->h:Lh0;
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-static {v0}, Lpvc;->o(Lh0;)V
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :goto_0
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized e()Ljava/lang/Object;
+    .registers 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lpvc;->h:Lh0;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lh0;->e()Ljava/lang/Object;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    :cond_4
-    add-int/lit8 v4, v4, 0x1
+    :catchall_0
+    move-exception v0
 
     goto :goto_1
 
-    :cond_5
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    :cond_0
+    const/4 v0, 0x0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    :goto_0
+    monitor-exit p0
 
-    const-string v1, "Can\'t put value with type "
+    return-object v0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    throw v0
+.end method
 
-    move-result-object v1
+.method public final declared-synchronized f()Z
+    .registers 2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    monitor-enter p0
 
-    const-string v1, " into saved state"
+    :try_start_0
+    iget-object v0, p0, Lpvc;->h:Lh0;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lh0;->f()Z
 
-    move-result-object v0
+    move-result v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    if-eqz v0, :cond_0
 
-    throw p0
+    const/4 v0, 0x1
 
-    :cond_6
-    invoke-virtual {v0}, Ljava/util/LinkedHashMap;->keySet()Ljava/util/Set;
+    goto :goto_0
 
-    move-result-object p0
+    :catchall_0
+    move-exception v0
 
-    new-instance v1, Ljava/util/ArrayList;
+    goto :goto_1
 
-    invoke-interface {p0}, Ljava/util/Set;->size()I
+    :cond_0
+    const/4 v0, 0x0
 
-    move-result v2
+    :goto_0
+    monitor-exit p0
 
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+    return v0
 
-    new-instance v2, Ljava/util/ArrayList;
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    throw v0
+.end method
 
-    move-result v3
+.method public final p(Lwpe;)V
+    .registers 5
 
-    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-virtual {p0}, Lh0;->g()Z
 
-    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    move-result v0
 
-    move-result-object p0
+    if-eqz v0, :cond_0
 
-    :goto_5
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    return-void
 
-    move-result v3
+    :cond_0
+    if-eqz p1, :cond_1
 
-    if-eqz v3, :cond_7
+    invoke-interface {p1}, Lwpe;->get()Ljava/lang/Object;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object p1
 
-    move-result-object v3
+    check-cast p1, Lh0;
 
-    check-cast v3, Ljava/lang/String;
+    goto :goto_0
 
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :cond_1
+    const/4 p1, 0x0
 
-    invoke-virtual {v0, v3}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    :goto_0
+    monitor-enter p0
 
-    move-result-object v3
+    :try_start_0
+    invoke-virtual {p0}, Lh0;->g()Z
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result v0
 
-    goto :goto_5
+    if-eqz v0, :cond_2
 
-    :cond_7
-    new-instance p0, Lura;
+    invoke-static {p1}, Lpvc;->o(Lh0;)V
 
-    const-string v0, "keys"
+    monitor-exit p0
 
-    invoke-direct {p0, v0, v1}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    return-void
 
-    new-instance v0, Lura;
+    :catchall_0
+    move-exception p1
 
-    const-string v1, "values"
+    goto :goto_1
 
-    invoke-direct {v0, v1, v2}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    :cond_2
+    iget-object v0, p0, Lpvc;->h:Lh0;
 
-    filled-new-array {p0, v0}, [Lura;
+    iput-object p1, p0, Lpvc;->h:Lh0;
 
-    move-result-object p0
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {p0}, La94;->c([Lura;)Landroid/os/Bundle;
+    if-eqz p1, :cond_3
 
-    move-result-object p0
+    new-instance v1, Lck5;
 
-    return-object p0
+    const/4 v2, 0x1
+
+    invoke-direct {v1, v2, p0}, Lck5;-><init>(ILjava/lang/Object;)V
+
+    sget-object p0, Lvs1;->a:Lvs1;
+
+    invoke-virtual {p1, v1, p0}, Lh0;->m(Lo74;Ljava/util/concurrent/Executor;)V
+
+    :cond_3
+    invoke-static {v0}, Lpvc;->o(Lh0;)V
+
+    return-void
+
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
 .end method

@@ -1,90 +1,191 @@
 .class public final Lfq2;
-.super Lxie;
+.super Lso;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
 
-
-# instance fields
-.field public final synthetic X:Las2;
+# static fields
+.field public static final a:Lfq2;
 
 
 # direct methods
-.method public constructor <init>(Las2;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Lfq2;->X:Las2;
+    new-instance v0, Lfq2;
 
-    const/4 p1, 0x2
+    invoke-direct {v0}, Lso;-><init>()V
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Lfq2;->a:Lfq2;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final b()Lo43;
+    .registers 9
 
-    check-cast p1, Lnl5;
+    new-instance v0, Lo43;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
-    invoke-virtual {p0, p1, p2}, Lfq2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    move-result-object v1
+
+    const-class v2, Lyz2;
+
+    invoke-virtual {v1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v2
+
+    const-class v3, Lxwe;
+
+    invoke-virtual {v2, v3}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v4
+
+    const-class v5, Lrk;
+
+    invoke-virtual {v4, v5}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v4
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v5
+
+    const-class v6, Lxjd;
+
+    invoke-virtual {v5, v6}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v5
+
+    new-instance v6, Ll43;
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v3}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v3
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
     move-result-object p0
 
-    check-cast p0, Lfq2;
+    const-class v7, Lo0f;
 
-    sget-object p1, Lncf;->a:Lncf;
+    invoke-virtual {p0, v7}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
-    invoke-virtual {p0, p1}, Lfq2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p0
 
-    return-object p1
+    invoke-direct {v6, v3, p0}, Ll43;-><init>(Lcl7;Lcl7;)V
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v6, v0, Lo43;->b:Ljava/lang/Object;
+
+    const-class p0, Lo43;
+
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p0
+
+    iput-object p0, v0, Lo43;->a:Ljava/lang/Object;
+
+    iput-object v1, v0, Lo43;->c:Ljava/lang/Object;
+
+    iput-object v2, v0, Lo43;->o:Ljava/lang/Object;
+
+    iput-object v4, v0, Lo43;->X:Ljava/lang/Object;
+
+    iput-object v5, v0, Lo43;->Y:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+.method public final c()Lie9;
+    .registers 7
 
-    new-instance p1, Lfq2;
+    new-instance v0, Lie9;
 
-    iget-object p0, p0, Lfq2;->X:Las2;
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
-    invoke-direct {p1, p0, p2}, Lfq2;-><init>(Las2;Lkotlin/coroutines/Continuation;)V
+    move-result-object v1
 
-    return-object p1
+    const-class v2, Lxwe;
+
+    invoke-virtual {v1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v2
+
+    const-class v3, Ltwg;
+
+    invoke-virtual {v2, v3}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v3
+
+    const-class v4, Lni6;
+
+    invoke-virtual {v3, v4}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v3
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v4
+
+    const-class v5, Ln79;
+
+    invoke-virtual {v4, v5}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v4
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object p0
+
+    const-class v5, Lti6;
+
+    invoke-virtual {p0, v5}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v5
+
+    invoke-direct/range {v0 .. v5}, Lie9;-><init>(Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;)V
+
+    return-object v0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+.method public final getDispatchers()Lxwe;
+    .registers 2
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
-    iget-object p0, p0, Lfq2;->X:Las2;
+    move-result-object p0
 
-    iget-object p0, p0, Las2;->W0:Lx65;
+    const-class v0, Lxwe;
 
-    new-instance p1, Lnq2;
+    invoke-virtual {p0, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    sget v0, Lpaa;->l:I
+    move-result-object p0
 
-    sget v1, Lpaa;->k:I
-
-    new-instance v2, Ljava/lang/Integer;
-
-    invoke-direct {v2, v1}, Ljava/lang/Integer;-><init>(I)V
-
-    const/4 v1, 0x0
-
-    const/4 v3, 0x4
-
-    invoke-direct {p1, v0, v2, v1, v3}, Lnq2;-><init>(ILjava/lang/Integer;Ljava/lang/Integer;I)V
-
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    sget-object p0, Lncf;->a:Lncf;
+    check-cast p0, Lxwe;
 
     return-object p0
 .end method

@@ -1,168 +1,80 @@
 .class public final Lpz2;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Ljp9;
+.field public final synthetic Y:Lone/me/chats/list/ChatsListWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljp9;I)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chats/list/ChatsListWidget;)V
     .registers 3
 
-    iput p2, p0, Lpz2;->a:I
+    iput-object p2, p0, Lpz2;->Y:Lone/me/chats/list/ChatsListWidget;
 
-    iput-object p1, p0, Lpz2;->b:Ljp9;
+    const/4 p2, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lpz2;->a:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    packed-switch v0, :pswitch_data_0
-
-    sget-object v0, Lmmb;->c:Lmmb;
-
-    iget-object p0, p0, Lpz2;->b:Ljp9;
-
-    check-cast p0, Lxmb;
-
-    iget-wide v1, p0, Lxmb;->b:J
-
-    iget-boolean p0, p0, Lxmb;->d:Z
-
-    invoke-virtual {v0}, Ls2;->D0()Lea4;
-
-    move-result-object v0
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, ":call-chat?chat_id="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, "&video_enabled="
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lpz2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    const/4 v1, 0x0
+    check-cast p0, Lpz2;
 
-    invoke-virtual {v0, p0, v1}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+    sget-object p1, Lylf;->a:Lylf;
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {p0, p1}, Lpz2;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object p0
+    return-object p1
+.end method
 
-    :pswitch_0
-    sget-object v0, Lmmb;->c:Lmmb;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    iget-object p0, p0, Lpz2;->b:Ljp9;
+    new-instance v0, Lpz2;
 
-    check-cast p0, Lxmb;
+    iget-object p0, p0, Lpz2;->Y:Lone/me/chats/list/ChatsListWidget;
 
-    iget-object p0, p0, Lxmb;->e:Ljava/lang/String;
+    invoke-direct {v0, p2, p0}, Lpz2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chats/list/ChatsListWidget;)V
 
-    invoke-virtual {v0}, Ls2;->D0()Lea4;
+    iput-object p1, v0, Lpz2;->X:Ljava/lang/Object;
 
-    move-result-object v0
+    return-object v0
+.end method
 
-    const-string v1, ":call-join-link?link="
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    move-result-object p0
+    iget-object p1, p0, Lpz2;->X:Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    check-cast p1, Ljava/util/List;
 
-    invoke-virtual {v0, p0, v1}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+    iget-object p0, p0, Lpz2;->Y:Lone/me/chats/list/ChatsListWidget;
 
-    sget-object p0, Lncf;->a:Lncf;
+    iget-object p0, p0, Lone/me/chats/list/ChatsListWidget;->E0:Lf16;
 
-    return-object p0
+    invoke-virtual {p0, p1}, Lls7;->E(Ljava/util/List;)V
 
-    :pswitch_1
-    sget-object v0, Lmmb;->c:Lmmb;
-
-    iget-object p0, p0, Lpz2;->b:Ljp9;
-
-    check-cast p0, Lxmb;
-
-    iget-wide v1, p0, Lxmb;->b:J
-
-    iget-boolean p0, p0, Lxmb;->d:Z
-
-    invoke-virtual {v0}, Ls2;->D0()Lea4;
-
-    move-result-object v0
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, ":call-user?opponent_id="
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, "&video_enabled="
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p0, v1}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
-
-    :pswitch_2
-    sget-object v0, Lnu3;->c:Lnu3;
-
-    iget-object p0, p0, Lpz2;->b:Ljp9;
-
-    check-cast p0, Lb2e;
-
-    iget-wide v1, p0, Lb2e;->b:J
-
-    iget-boolean p0, p0, Lb2e;->c:Z
-
-    invoke-virtual {v0, v1, v2, p0}, Lnu3;->U0(JZ)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -2,47 +2,55 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public a:J
+.field public final synthetic a:I
 
-.field public b:Ljava/lang/String;
+.field public final synthetic b:Lvpa;
 
-.field public c:Llz;
 
-.field public d:Lxpa;
+# direct methods
+.method public synthetic constructor <init>(Lvpa;I)V
+    .registers 3
 
-.field public e:Z
+    iput p2, p0, Lupa;->a:I
 
-.field public f:Z
+    iput-object p1, p0, Lupa;->b:Lvpa;
 
-.field public g:Ljava/util/List;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public h:Lfk4;
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a()Lvpa;
-    .registers 3
+.method public final run()V
+    .registers 2
 
-    iget-object v0, p0, Lupa;->d:Lxpa;
+    iget v0, p0, Lupa;->a:I
 
-    if-eqz v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    iget v0, v0, Lxpa;->a:I
+    iget-object p0, p0, Lupa;->b:Lvpa;
 
-    const/4 v1, 0x3
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    if-ne v0, v1, :cond_0
+    return-void
 
-    const/4 v0, 0x0
+    :pswitch_0
+    iget-object p0, p0, Lupa;->b:Lvpa;
 
-    iput-object v0, p0, Lupa;->b:Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    :cond_0
-    new-instance v0, Lvpa;
+    return-void
 
-    invoke-direct {v0, p0}, Lvpa;-><init>(Lupa;)V
+    nop
 
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

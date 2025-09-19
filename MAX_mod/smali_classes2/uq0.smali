@@ -1,64 +1,152 @@
 .class public final Luq0;
-.super Landroid/text/style/ClickableSpan;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public X:I
 
-.field public final b:I
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public c:Leo7;
+.field public final synthetic Z:Lwq0;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lwq0;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
+    iput-object p1, p0, Luq0;->Z:Lwq0;
 
-    iput-object p1, p0, Luq0;->a:Ljava/lang/String;
+    const/4 p1, 0x2
 
-    iput p2, p0, Luq0;->b:I
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object v0, p0, Luq0;->c:Leo7;
+    check-cast p1, Lks5;
 
-    if-eqz v0, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v1, v0, Leo7;->a:Lko7;
+    invoke-virtual {p0, p1, p2}, Luq0;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    iget-object v0, v0, Leo7;->b:Ljava/lang/Object;
+    move-result-object p0
 
-    sget-object v2, Llo7;->c:Llo7;
+    check-cast p0, Luq0;
 
-    check-cast v0, Landroid/text/style/ClickableSpan;
+    sget-object p1, Lylf;->a:Lylf;
 
-    iget-object p0, p0, Luq0;->a:Ljava/lang/String;
+    invoke-virtual {p0, p1}, Luq0;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v1, p1, p0, v2, v0}, Lko7;->b(Landroid/view/View;Ljava/lang/String;Llo7;Landroid/text/style/ClickableSpan;)V
+    move-result-object p0
 
-    :cond_0
-    return-void
+    return-object p0
 .end method
 
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .registers 2
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    iget p0, p0, Luq0;->b:I
+    new-instance v0, Luq0;
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setColor(I)V
+    iget-object p0, p0, Luq0;->Z:Lwq0;
 
-    const/4 p0, 0x1
+    invoke-direct {v0, p0, p2}, Luq0;-><init>(Lwq0;Lkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+    iput-object p1, v0, Luq0;->Y:Ljava/lang/Object;
 
-    return-void
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
+
+    iget v0, p0, Luq0;->X:I
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
+
+    sget-object v3, Lz04;->a:Lz04;
+
+    if-eqz v0, :cond_2
+
+    if-eq v0, v2, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    iget-object v0, p0, Luq0;->Y:Ljava/lang/Object;
+
+    check-cast v0, Lks5;
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Luq0;->Y:Ljava/lang/Object;
+
+    move-object v0, p1
+
+    check-cast v0, Lks5;
+
+    iput-object v0, p0, Luq0;->Y:Ljava/lang/Object;
+
+    iput v2, p0, Luq0;->X:I
+
+    iget-object p1, p0, Luq0;->Z:Lwq0;
+
+    invoke-static {p1, p0}, Lwq0;->a(Lwq0;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v3, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    :goto_0
+    const/4 v2, 0x0
+
+    iput-object v2, p0, Luq0;->Y:Ljava/lang/Object;
+
+    iput v1, p0, Luq0;->X:I
+
+    invoke-interface {v0, p1, p0}, Lks5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-ne p0, v3, :cond_4
+
+    :goto_1
+    return-object v3
+
+    :cond_4
+    :goto_2
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

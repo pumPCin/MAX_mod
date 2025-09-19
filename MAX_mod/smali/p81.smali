@@ -1,130 +1,158 @@
 .class public final Lp81;
-.super Ls2;
+.super Lv44;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Lp81;
+# instance fields
+.field public final v0:Ljava/lang/String;
+
+.field public w0:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lone/me/calllist/ui/CallHistoryScreen;)V
     .registers 2
 
-    new-instance v0, Lp81;
+    invoke-direct {p0, p1}, Lv44;-><init>(Lone/me/sdk/arch/Widget;)V
 
-    const/16 v1, 0x8
+    const-class p1, Lp81;
 
-    invoke-direct {v0, v1}, Ls2;-><init>(I)V
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    sput-object v0, Lp81;->c:Lp81;
+    move-result-object p1
+
+    iput-object p1, p0, Lp81;->v0:Ljava/lang/String;
+
+    sget-object p1, Lp45;->a:Lp45;
+
+    iput-object p1, p0, Lp81;->w0:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final U0(Ljava/lang/Long;Ljava/lang/String;Ljava/lang/CharSequence;)V
-    .registers 7
+.method public final E(Lrzc;I)V
+    .registers 10
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Lrzc;->n()Z
 
-    const-string v1, ":call-history-info?is_link_call=true"
+    move-result v0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    if-eqz v0, :cond_0
 
-    sget-object v1, Lp81;->c:Lp81;
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v2, "&call_link="
-
-    invoke-virtual {v2, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
 
     :cond_0
-    if-eqz p3, :cond_1
+    iget-object p0, p0, Lp81;->w0:Ljava/util/List;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    const-string v2, "&call_title="
-
-    invoke-direct {p2, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_1
-    if-eqz p1, :cond_2
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    const-string p3, "&call_chat_id="
-
-    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_2
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
+    invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
 
-    const/4 p2, 0x0
+    check-cast p0, Lh91;
 
-    invoke-virtual {p0, p1, p2}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+    iget-object p0, p0, Lh91;->c:Lg91;
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    const/4 p2, 0x1
+
+    if-ne p0, p2, :cond_1
+
+    sget-object p0, Lone/me/calllist/ui/page/CallHistoryPageScreen;->t0:Lr52;
+
+    sget-object p2, Lg91;->c:Lg91;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Lone/me/calllist/ui/page/CallHistoryPageScreen;
+
+    invoke-direct {p0, p2}, Lone/me/calllist/ui/page/CallHistoryPageScreen;-><init>(Lg91;)V
+
+    :goto_0
+    move-object v1, p0
+
+    goto :goto_1
+
+    :cond_1
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :cond_2
+    sget-object p0, Lone/me/calllist/ui/page/CallHistoryPageScreen;->t0:Lr52;
+
+    sget-object p2, Lg91;->b:Lg91;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Lone/me/calllist/ui/page/CallHistoryPageScreen;
+
+    invoke-direct {p0, p2}, Lone/me/calllist/ui/page/CallHistoryPageScreen;-><init>(Lg91;)V
+
+    goto :goto_0
+
+    :goto_1
+    sget-object p0, Lwx3;->b:Lwx3;
+
+    invoke-virtual {v1, p0}, Lxx3;->setRetainViewMode(Lwx3;)V
+
+    new-instance v0, Luzc;
+
+    const/4 v5, 0x0
+
+    const/4 v6, -0x1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-direct/range {v0 .. v6}, Luzc;-><init>(Lxx3;Ljava/lang/String;Lcy3;Lcy3;ZI)V
+
+    invoke-virtual {p1, v0}, Lrzc;->S(Luzc;)V
 
     return-void
 .end method
 
-.method public final V0(JJ)V
-    .registers 7
+.method public final J(Lwzc;)V
+    .registers 3
 
-    const-string v0, ":chats?id="
+    const/4 v0, 0x0
 
-    const-string v1, "&type=local&message_id="
+    iput-object v0, p1, Lwzc;->F0:Lrzc;
 
-    invoke-static {p1, p2, v0, v1}, Lew1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-super {p0, p1}, Lv44;->J(Lwzc;)V
 
-    move-result-object p1
+    return-void
+.end method
 
-    const-string p2, "&highlight_message=true"
+.method public final j()I
+    .registers 1
 
-    invoke-static {p1, p3, p4, p2}, La78;->n(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+    iget-object p0, p0, Lp81;->w0:Ljava/util/List;
 
-    move-result-object p1
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
+    move-result p0
 
-    move-result-object p0
+    return p0
+.end method
 
-    const/4 p2, 0x0
+.method public final bridge synthetic y(Lzoc;)V
+    .registers 2
 
-    invoke-virtual {p0, p1, p2}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+    check-cast p1, Lwzc;
+
+    invoke-virtual {p0, p1}, Lp81;->J(Lwzc;)V
 
     return-void
 .end method

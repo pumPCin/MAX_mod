@@ -103,11 +103,11 @@
 
     iput-object p1, p0, Lorg/webrtc/RenderSynchronizer;->mainThreadHandler:Landroid/os/Handler;
 
-    new-instance v0, Lsjc;
+    new-instance v0, Lmrc;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lsjc;-><init>(Lorg/webrtc/RenderSynchronizer;I)V
+    invoke-direct {v0, p0, v1}, Lmrc;-><init>(Lorg/webrtc/RenderSynchronizer;I)V
 
     invoke-virtual {p1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
@@ -197,11 +197,11 @@
 
     iget-object v0, p0, Lorg/webrtc/RenderSynchronizer;->choreographer:Landroid/view/Choreographer;
 
-    new-instance v1, Lyf;
+    new-instance v1, Lfg;
 
     const/4 v2, 0x2
 
-    invoke-direct {v1, v2, p0}, Lyf;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Lfg;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
@@ -250,11 +250,11 @@
 
     iget-object v0, p0, Lorg/webrtc/RenderSynchronizer;->choreographer:Landroid/view/Choreographer;
 
-    new-instance v1, Lyf;
+    new-instance v1, Lfg;
 
     const/4 v2, 0x2
 
-    invoke-direct {v1, v2, p0}, Lyf;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Lfg;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
@@ -403,11 +403,11 @@
 
     iget-object v0, p0, Lorg/webrtc/RenderSynchronizer;->mainThreadHandler:Landroid/os/Handler;
 
-    new-instance v1, Lsjc;
+    new-instance v1, Lmrc;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Lsjc;-><init>(Lorg/webrtc/RenderSynchronizer;I)V
+    invoke-direct {v1, p0, v2}, Lmrc;-><init>(Lorg/webrtc/RenderSynchronizer;I)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 

@@ -1,14 +1,14 @@
 .class final synthetic Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder$setOnPrepared$2$1;
-.super Lma6;
+.super Led6;
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lbc6;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setOnPrepared(Ljm3;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
+    value = Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setOnPrepared(Lqm3;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lma6;",
-        "Lj96;"
+        "Led6;",
+        "Lbc6;"
     }
 .end annotation
 
@@ -44,7 +44,7 @@
 
     const/4 v1, 0x1
 
-    const-class v3, Ljm3;
+    const-class v3, Lqm3;
 
     const-string v5, "accept"
 
@@ -52,7 +52,7 @@
 
     move-object v4, p1
 
-    invoke-direct/range {v0 .. v6}, Lla6;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v6}, Ldd6;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -66,7 +66,7 @@
 
     invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder$setOnPrepared$2$1;->invoke(Lru/ok/android/externcalls/sdk/Conversation;)V
 
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method
@@ -74,11 +74,11 @@
 .method public final invoke(Lru/ok/android/externcalls/sdk/Conversation;)V
     .registers 2
 
-    iget-object p0, p0, Les1;->receiver:Ljava/lang/Object;
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
 
-    check-cast p0, Ljm3;
+    check-cast p0, Lqm3;
 
-    invoke-interface {p0, p1}, Ljm3;->accept(Ljava/lang/Object;)V
+    invoke-interface {p0, p1}, Lqm3;->accept(Ljava/lang/Object;)V
 
     return-void
 .end method

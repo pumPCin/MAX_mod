@@ -1,360 +1,205 @@
 .class public final Lw7b;
-.super Ljava/io/InputStream;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public X:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public Y:Z
+.field public final synthetic Y:Lone/me/chats/picker/contacts/PickerContactsListWidget;
 
-.field public final a:Ljava/io/InputStream;
-
-.field public final b:[B
-
-.field public final c:Lamc;
-
-.field public o:I
+.field public final synthetic Z:Landroid/view/View;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;[BLamc;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chats/picker/contacts/PickerContactsListWidget;Landroid/view/View;)V
     .registers 4
 
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
+    iput-object p2, p0, Lw7b;->Y:Lone/me/chats/picker/contacts/PickerContactsListWidget;
 
-    iput-object p1, p0, Lw7b;->a:Ljava/io/InputStream;
+    iput-object p3, p0, Lw7b;->Z:Landroid/view/View;
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 p2, 0x2
 
-    iput-object p2, p0, Lw7b;->b:[B
-
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p3, p0, Lw7b;->c:Lamc;
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lw7b;->o:I
-
-    iput p1, p0, Lw7b;->X:I
-
-    iput-boolean p1, p0, Lw7b;->Y:Z
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final available()I
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Lw7b;->X:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget v1, p0, Lw7b;->o:I
+    invoke-virtual {p0, p1, p2}, Lw7b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    if-gt v0, v1, :cond_0
+    move-result-object p0
 
-    const/4 v0, 0x1
+    check-cast p0, Lw7b;
 
-    goto :goto_0
+    sget-object p1, Lylf;->a:Lylf;
 
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {p0, p1}, Lw7b;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_0
-    invoke-static {v0}, Lg53;->k(Z)V
-
-    invoke-virtual {p0}, Lw7b;->m()V
-
-    iget v0, p0, Lw7b;->o:I
-
-    iget v1, p0, Lw7b;->X:I
-
-    sub-int/2addr v0, v1
-
-    iget-object p0, p0, Lw7b;->a:Ljava/io/InputStream;
-
-    invoke-virtual {p0}, Ljava/io/InputStream;->available()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
+    return-object p1
 .end method
 
-.method public final close()V
-    .registers 3
-
-    iget-boolean v0, p0, Lw7b;->Y:Z
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lw7b;->Y:Z
-
-    iget-object v0, p0, Lw7b;->c:Lamc;
-
-    iget-object v1, p0, Lw7b;->b:[B
-
-    invoke-interface {v0, v1}, Lamc;->f(Ljava/lang/Object;)V
-
-    invoke-super {p0}, Ljava/io/InputStream;->close()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final finalize()V
-    .registers 4
-
-    iget-boolean v0, p0, Lw7b;->Y:Z
-
-    if-nez v0, :cond_1
-
-    sget-object v0, Ltd5;->a:Lxw7;
-
-    const/4 v1, 0x6
-
-    invoke-interface {v0, v1}, Lxw7;->i(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    sget-object v0, Ltd5;->a:Lxw7;
-
-    const-string v1, "PooledByteInputStream"
-
-    const-string v2, "Finalized without closing"
-
-    invoke-interface {v0, v1, v2}, Lxw7;->e(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_0
-    invoke-virtual {p0}, Lw7b;->close()V
-
-    :cond_1
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
-
-    return-void
-.end method
-
-.method public final m()V
-    .registers 2
-
-    iget-boolean p0, p0, Lw7b;->Y:Z
-
-    if-nez p0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/io/IOException;
-
-    const-string v0, "stream already closed"
-
-    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final read()I
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 5
 
-    iget v0, p0, Lw7b;->X:I
+    new-instance v0, Lw7b;
 
-    iget v1, p0, Lw7b;->o:I
+    iget-object v1, p0, Lw7b;->Y:Lone/me/chats/picker/contacts/PickerContactsListWidget;
 
-    const/4 v2, 0x0
+    iget-object p0, p0, Lw7b;->Z:Landroid/view/View;
 
-    if-gt v0, v1, :cond_0
+    invoke-direct {v0, p2, v1, p0}, Lw7b;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chats/picker/contacts/PickerContactsListWidget;Landroid/view/View;)V
 
-    const/4 v0, 0x1
+    iput-object p1, v0, Lw7b;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 7
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lw7b;->X:Ljava/lang/Object;
+
+    check-cast p1, Ljava/util/List;
+
+    iget-object v0, p0, Lw7b;->Y:Lone/me/chats/picker/contacts/PickerContactsListWidget;
+
+    iget-object v1, v0, Lone/me/chats/picker/contacts/PickerContactsListWidget;->t0:Lrm0;
+
+    iget-object v2, v0, Lone/me/chats/picker/contacts/PickerContactsListWidget;->Z:Lm6b;
+
+    invoke-virtual {v2, p1}, Lls7;->E(Ljava/util/List;)V
+
+    invoke-virtual {v0}, Lone/me/chats/picker/contacts/PickerContactsListWidget;->z0()Ls6b;
+
+    move-result-object v2
+
+    iget-object v2, v2, Ls6b;->t0:Liic;
+
+    iget-object v2, v2, Liic;->a:Lrce;
+
+    invoke-interface {v2}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/CharSequence;
+
+    invoke-static {v2}, Ljme;->q0(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x4
+
+    if-nez v2, :cond_5
+
+    iget-object p0, p0, Lw7b;->Z:Landroid/view/View;
+
+    instance-of v2, p0, Landroid/view/ViewGroup;
+
+    if-eqz v2, :cond_0
+
+    check-cast p0, Landroid/view/ViewGroup;
 
     goto :goto_0
 
     :cond_0
-    move v0, v2
+    const/4 p0, 0x0
 
     :goto_0
-    invoke-static {v0}, Lg53;->k(Z)V
+    if-eqz p0, :cond_1
 
-    invoke-virtual {p0}, Lw7b;->m()V
+    invoke-virtual {v1}, Lrm0;->getValue()Ljava/lang/Object;
 
-    iget v0, p0, Lw7b;->X:I
+    move-result-object v2
 
-    iget v1, p0, Lw7b;->o:I
+    check-cast v2, Landroid/view/View;
 
-    iget-object v3, p0, Lw7b;->b:[B
-
-    if-ge v0, v1, :cond_1
-
-    goto :goto_1
+    invoke-static {v2, p0}, Ljk7;->j(Landroid/view/View;Landroid/view/ViewGroup;)V
 
     :cond_1
-    iget-object v0, p0, Lw7b;->a:Ljava/io/InputStream;
+    invoke-virtual {v0}, Lone/me/chats/picker/contacts/PickerContactsListWidget;->A0()Landroidx/recyclerview/widget/RecyclerView;
 
-    invoke-virtual {v0, v3}, Ljava/io/InputStream;->read([B)I
+    move-result-object p0
+
+    if-eqz p1, :cond_3
+
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
 
-    if-gtz v0, :cond_2
-
-    const/4 p0, -0x1
-
-    return p0
-
-    :cond_2
-    iput v0, p0, Lw7b;->o:I
-
-    iput v2, p0, Lw7b;->X:I
-
-    :goto_1
-    iget v0, p0, Lw7b;->X:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lw7b;->X:I
-
-    aget-byte p0, v3, v0
-
-    and-int/lit16 p0, p0, 0xff
-
-    return p0
-.end method
-
-.method public final read([BII)I
-    .registers 8
-
-    iget v0, p0, Lw7b;->X:I
-
-    iget v1, p0, Lw7b;->o:I
-
-    const/4 v2, 0x0
-
-    if-gt v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v2
-
-    :goto_0
-    invoke-static {v0}, Lg53;->k(Z)V
-
-    invoke-virtual {p0}, Lw7b;->m()V
-
-    iget v0, p0, Lw7b;->X:I
-
-    iget v1, p0, Lw7b;->o:I
-
-    iget-object v3, p0, Lw7b;->b:[B
-
-    if-ge v0, v1, :cond_1
+    if-nez v0, :cond_2
 
     goto :goto_1
 
-    :cond_1
-    iget-object v0, p0, Lw7b;->a:Ljava/io/InputStream;
-
-    invoke-virtual {v0, v3}, Ljava/io/InputStream;->read([B)I
-
-    move-result v0
-
-    if-gtz v0, :cond_2
-
-    const/4 p0, -0x1
-
-    return p0
-
     :cond_2
-    iput v0, p0, Lw7b;->o:I
+    move v0, v4
 
-    iput v2, p0, Lw7b;->X:I
+    goto :goto_2
 
+    :cond_3
     :goto_1
-    iget v0, p0, Lw7b;->o:I
+    move v0, v3
 
-    iget v1, p0, Lw7b;->X:I
+    :goto_2
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
 
-    sub-int/2addr v0, v1
+    invoke-virtual {v1}, Lrm0;->getValue()Ljava/lang/Object;
 
-    invoke-static {v0, p3}, Ljava/lang/Math;->min(II)I
+    move-result-object p0
 
-    move-result p3
+    check-cast p0, Ldha;
 
-    iget v0, p0, Lw7b;->X:I
+    if-eqz p1, :cond_4
 
-    invoke-static {v3, v0, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    iget p1, p0, Lw7b;->X:I
-
-    add-int/2addr p1, p3
-
-    iput p1, p0, Lw7b;->X:I
-
-    return p3
-.end method
-
-.method public final skip(J)J
-    .registers 8
-
-    iget v0, p0, Lw7b;->X:I
-
-    iget v1, p0, Lw7b;->o:I
-
-    if-gt v0, v1, :cond_0
+    move-result p1
 
     const/4 v0, 0x1
 
-    goto :goto_0
+    if-ne p1, v0, :cond_4
 
-    :cond_0
-    const/4 v0, 0x0
+    goto :goto_3
 
-    :goto_0
-    invoke-static {v0}, Lg53;->k(Z)V
+    :cond_4
+    move v3, v4
 
-    invoke-virtual {p0}, Lw7b;->m()V
+    :goto_3
+    invoke-virtual {p0, v3}, Ldha;->setVisibility(I)V
 
-    iget v0, p0, Lw7b;->o:I
+    goto :goto_4
 
-    iget v1, p0, Lw7b;->X:I
+    :cond_5
+    invoke-virtual {v0}, Lone/me/chats/picker/contacts/PickerContactsListWidget;->A0()Landroidx/recyclerview/widget/RecyclerView;
 
-    sub-int v2, v0, v1
+    move-result-object p0
 
-    int-to-long v2, v2
+    invoke-virtual {p0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    cmp-long v4, v2, p1
+    invoke-virtual {v1}, Lrm0;->getValue()Ljava/lang/Object;
 
-    if-ltz v4, :cond_1
+    move-result-object p0
 
-    int-to-long v0, v1
+    check-cast p0, Ldha;
 
-    add-long/2addr v0, p1
+    invoke-virtual {p0, v4}, Ldha;->setVisibility(I)V
 
-    long-to-int v0, v0
+    :goto_4
+    sget-object p0, Lylf;->a:Lylf;
 
-    iput v0, p0, Lw7b;->X:I
-
-    return-wide p1
-
-    :cond_1
-    iput v0, p0, Lw7b;->X:I
-
-    iget-object p0, p0, Lw7b;->a:Ljava/io/InputStream;
-
-    sub-long/2addr p1, v2
-
-    invoke-virtual {p0, p1, p2}, Ljava/io/InputStream;->skip(J)J
-
-    move-result-wide p0
-
-    add-long/2addr p0, v2
-
-    return-wide p0
+    return-object p0
 .end method

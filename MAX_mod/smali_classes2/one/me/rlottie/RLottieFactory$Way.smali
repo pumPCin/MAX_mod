@@ -89,7 +89,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(IIZLwc4;)V
+.method public synthetic constructor <init>(IIZLld4;)V
     .registers 5
 
     invoke-direct {p0, p1, p2, p3}, Lone/me/rlottie/RLottieFactory$Way;-><init>(IIZ)V

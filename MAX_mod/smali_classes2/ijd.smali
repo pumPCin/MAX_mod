@@ -1,14 +1,3 @@
-.class public interface abstract Lijd;
-.super Ljava/lang/Object;
+.class public final Lijd;
+.super Loi0;
 .source "SourceFile"
-
-
-# virtual methods
-.method public abstract f(JZ)V
-.end method
-
-.method public u(J)V
-    .registers 3
-
-    return-void
-.end method

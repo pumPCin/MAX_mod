@@ -3,29 +3,49 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-.field public final b:I
+    const/4 v0, 0x1
 
-.field public final c:I
+    if-ne p0, p1, :cond_0
 
-.field public final d:J
+    return v0
 
+    :cond_0
+    instance-of p0, p1, Lxtf;
 
-# direct methods
-.method public constructor <init>(JLjava/lang/String;II)V
-    .registers 6
+    if-nez p0, :cond_1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p0, 0x0
 
-    iput-object p3, p0, Lxtf;->a:Ljava/lang/String;
+    return p0
 
-    iput p4, p0, Lxtf;->b:I
+    :cond_1
+    check-cast p1, Lxtf;
 
-    iput p5, p0, Lxtf;->c:I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-wide p1, p0, Lxtf;->d:J
+    return v0
+.end method
 
-    return-void
+.method public final hashCode()I
+    .registers 1
+
+    const/high16 p0, 0x29000000
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "VfxButtonIconOverlayPlainElevation2Colors(color=687865856)"
+
+    return-object p0
 .end method

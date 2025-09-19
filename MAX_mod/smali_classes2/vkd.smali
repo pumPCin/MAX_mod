@@ -1,39 +1,27 @@
 .class public final Lvkd;
-.super Ljo;
+.super Lbld;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lvkd;
+# instance fields
+.field public g:Ljava/lang/String;
 
+.field public h:J
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.field public i:I
 
-    new-instance v0, Lvkd;
+.field public j:Ljava/lang/String;
 
-    invoke-direct {v0}, Ljo;-><init>()V
-
-    sput-object v0, Lvkd;->a:Lvkd;
-
-    return-void
-.end method
+.field public k:Ljava/lang/String;
 
 
 # virtual methods
-.method public final b()Lxh7;
+.method public final a()Lcld;
     .registers 2
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Ls4;
+    new-instance v0, Lwkd;
 
-    move-result-object p0
+    invoke-direct {v0, p0}, Lwkd;-><init>(Lvkd;)V
 
-    const-class v0, Lzne;
-
-    invoke-virtual {p0, v0}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method

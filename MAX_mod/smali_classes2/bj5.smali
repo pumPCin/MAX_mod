@@ -1,56 +1,47 @@
-.class public final synthetic Lbj5;
-.super Ljava/lang/Object;
+.class public final Lbj5;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic X:Lij5;
 
-.field public final synthetic b:Lru/ok/messages/media/attaches/FileAttachView;
+.field public Y:I
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/messages/media/attaches/FileAttachView;I)V
+.method public constructor <init>(Lij5;Ljx3;)V
     .registers 3
 
-    iput p2, p0, Lbj5;->a:I
+    iput-object p1, p0, Lbj5;->X:Lij5;
 
-    iput-object p1, p0, Lbj5;->b:Lru/ok/messages/media/attaches/FileAttachView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget p1, p0, Lbj5;->a:I
+    iput-object p1, p0, Lbj5;->o:Ljava/lang/Object;
 
-    iget-object p0, p0, Lbj5;->b:Lru/ok/messages/media/attaches/FileAttachView;
+    iget p1, p0, Lbj5;->Y:I
 
-    packed-switch p1, :pswitch_data_0
+    const/high16 v0, -0x80000000
 
-    sget-object p1, Lru/ok/messages/media/attaches/FileAttachView;->S0:Landroid/graphics/Typeface;
+    or-int/2addr p1, v0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput p1, p0, Lbj5;->Y:I
 
-    return-void
+    iget-object p1, p0, Lbj5;->X:Lij5;
 
-    :pswitch_0
-    invoke-static {p0}, Lru/ok/messages/media/attaches/FileAttachView;->u(Lru/ok/messages/media/attaches/FileAttachView;)V
+    invoke-virtual {p1, p0}, Lij5;->Z0(Ljx3;)Ljava/lang/Object;
 
-    return-void
+    move-result-object p0
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

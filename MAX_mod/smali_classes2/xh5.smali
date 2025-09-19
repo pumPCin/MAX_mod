@@ -1,115 +1,109 @@
-.class public final Lxh5;
-.super Lxie;
+.class public final synthetic Lxh5;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ljava/util/concurrent/Callable;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lai5;
+.field public final synthetic b:Lhi5;
 
 
 # direct methods
-.method public constructor <init>(Lai5;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lhi5;I)V
     .registers 3
 
-    iput-object p1, p0, Lxh5;->Z:Lai5;
+    iput p2, p0, Lxh5;->a:I
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lxh5;->b:Lhi5;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final call()Ljava/lang/Object;
+    .registers 5
 
-    check-cast p1, Lr04;
+    iget v0, p0, Lxh5;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lxh5;->b:Lhi5;
 
-    invoke-virtual {p0, p1, p2}, Lxh5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
-
-    check-cast p0, Lxh5;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lxh5;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lhi5;->c()Ljava/util/ArrayList;
 
     move-result-object p0
 
     return-object p0
-.end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    :pswitch_0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v0, Lxh5;
+    const/4 v0, 0x0
 
-    iget-object p0, p0, Lxh5;->Z:Lai5;
+    const-string v1, "SELECT COUNT(*) FROM favorite_sticker_sets"
 
-    invoke-direct {v0, p0, p2}, Lxh5;-><init>(Lai5;Lkotlin/coroutines/Continuation;)V
+    invoke-static {v0, v1}, Lvxc;->c(ILjava/lang/String;)Lvxc;
 
-    iput-object p1, v0, Lxh5;->Y:Ljava/lang/Object;
+    move-result-object v1
 
-    return-object v0
-.end method
+    iget-object p0, p0, Lhi5;->a:Lexc;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    invoke-virtual {p0}, Lexc;->b()V
 
-    iget v0, p0, Lxh5;->X:I
+    invoke-virtual {p0, v1}, Lexc;->n(Lpqe;)Landroid/database/Cursor;
 
-    const/4 v1, 0x1
+    move-result-object p0
 
-    if-eqz v0, :cond_1
+    :try_start_0
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
 
-    if-ne v0, v1, :cond_0
+    move-result v2
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    if-eqz v2, :cond_0
 
-    return-object p1
+    invoke-interface {p0, v0}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    const-wide/16 v2, 0x0
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    :goto_0
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1}, Lvxc;->n()V
 
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lxh5;->Y:Ljava/lang/Object;
-
-    check-cast p1, Lr04;
-
-    iput v1, p0, Lxh5;->X:I
-
-    iget-object v0, p0, Lxh5;->Z:Lai5;
-
-    invoke-virtual {v0, p1, p0}, Lai5;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
     return-object p0
+
+    :goto_1
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v1}, Lvxc;->n()V
+
+    throw v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

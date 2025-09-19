@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lbc6;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->createConstructor(Ljava/lang/Class;)Lj96;
+    value = Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->createConstructor(Ljava/lang/Class;)Lbc6;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

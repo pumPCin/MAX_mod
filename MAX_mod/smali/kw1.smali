@@ -1,85 +1,89 @@
 .class public final Lkw1;
-.super Lcq8;
+.super Landroid/hardware/camera2/CameraManager$AvailabilityCallback;
 .source "SourceFile"
 
 
 # instance fields
-.field public m:Lyq7;
+.field public final a:Ljava/lang/String;
 
-.field public final n:Ljava/lang/Object;
+.field public b:Z
+
+.field public final synthetic c:Lqw1;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+.method public constructor <init>(Lqw1;Ljava/lang/String;)V
+    .registers 3
 
-    invoke-direct {p0}, Lcq8;-><init>()V
+    iput-object p1, p0, Lkw1;->c:Lqw1;
 
-    iput-object p1, p0, Lkw1;->n:Ljava/lang/Object;
+    invoke-direct {p0}, Landroid/hardware/camera2/CameraManager$AvailabilityCallback;-><init>()V
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lkw1;->b:Z
+
+    iput-object p2, p0, Lkw1;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d()Ljava/lang/Object;
-    .registers 2
-
-    iget-object v0, p0, Lkw1;->m:Lyq7;
-
-    if-nez v0, :cond_0
-
-    iget-object p0, p0, Lkw1;->n:Ljava/lang/Object;
-
-    return-object p0
-
-    :cond_0
-    invoke-virtual {v0}, Lyq7;->d()Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final l(Lyq7;Le4a;)V
+.method public final onCameraAvailable(Ljava/lang/String;)V
     .registers 3
 
-    const/4 p0, 0x0
+    iget-object v0, p0, Lkw1;->a:Ljava/lang/String;
 
-    throw p0
-.end method
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-.method public final m(Llk9;)V
-    .registers 4
+    move-result p1
 
-    iget-object v0, p0, Lkw1;->m:Lyq7;
+    if-nez p1, :cond_0
 
-    if-eqz v0, :cond_0
-
-    iget-object v1, p0, Lcq8;->l:Lbuc;
-
-    invoke-virtual {v1, v0}, Lbuc;->c(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbq8;
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, v0, Lbq8;->a:Lyq7;
-
-    invoke-virtual {v1, v0}, Lyq7;->j(Le4a;)V
+    goto :goto_0
 
     :cond_0
-    iput-object p1, p0, Lkw1;->m:Lyq7;
+    const/4 p1, 0x1
 
-    new-instance v0, Ljw1;
+    iput-boolean p1, p0, Lkw1;->b:Z
 
-    const/4 v1, 0x0
+    iget-object p1, p0, Lkw1;->c:Lqw1;
 
-    invoke-direct {v0, v1, p0}, Ljw1;-><init>(ILjava/lang/Object;)V
+    iget p1, p1, Lqw1;->R0:I
 
-    invoke-super {p0, p1, v0}, Lcq8;->l(Lyq7;Le4a;)V
+    const/4 v0, 0x4
+
+    if-ne p1, v0, :cond_1
+
+    iget-object p0, p0, Lkw1;->c:Lqw1;
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Lqw1;->I(Z)V
+
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final onCameraUnavailable(Ljava/lang/String;)V
+    .registers 3
+
+    iget-object v0, p0, Lkw1;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    return-void
+
+    :cond_0
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lkw1;->b:Z
 
     return-void
 .end method

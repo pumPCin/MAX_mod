@@ -1,23 +1,14 @@
-.class public final Lw5d;
+.class public interface abstract Lw5d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:J
+# virtual methods
+.method public abstract b()Z
+.end method
 
-.field public final b:I
+.method public abstract c(Ljava/lang/String;)V
+.end method
 
-
-# direct methods
-.method public constructor <init>(JI)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lw5d;->a:J
-
-    iput p3, p0, Lw5d;->b:I
-
-    return-void
+.method public varargs abstract e([Lfwg;)V
 .end method

@@ -1,23 +1,55 @@
 .class public final Ltn0;
-.super Ljava/lang/Object;
+.super Lha4;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ld9d;
+.field public X:Landroid/graphics/Bitmap;
 
-.field public final b:I
+.field public final synthetic Y:Lun0;
 
 
 # direct methods
-.method public constructor <init>(Ld9d;I)V
+.method public constructor <init>(Lun0;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x2
 
-    iput-object p1, p0, Ltn0;->a:Ld9d;
+    invoke-direct {p0, v0}, Llx;-><init>(I)V
 
-    iput p2, p0, Ltn0;->b:I
+    iput-object p1, p0, Ltn0;->Y:Lun0;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final u()V
+    .registers 4
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ltn0;->X:Landroid/graphics/Bitmap;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Llx;->b:I
+
+    const-wide/16 v1, 0x0
+
+    iput-wide v1, p0, Lha4;->c:J
+
+    iput-boolean v0, p0, Lha4;->o:Z
+
+    return-void
+.end method
+
+.method public final v()V
+    .registers 2
+
+    iget-object v0, p0, Ltn0;->Y:Lun0;
+
+    invoke-virtual {v0, p0}, Lun0;->k(Lha4;)V
 
     return-void
 .end method

@@ -1,59 +1,94 @@
 .class public final Lm4e;
-.super Lcx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Lhq5;
-
-.field public Y:Lp4e;
-
-.field public Z:Llb7;
-
-.field public n0:Ljava/lang/Object;
-
-.field public o:Ln4e;
-
-.field public synthetic o0:Ljava/lang/Object;
-
-.field public final synthetic p0:Ln4e;
-
-.field public q0:I
+.field public final a:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(Ln4e;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, Lm4e;->p0:Ln4e;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lm4e;->a:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final varargs a([Lji7;)V
+    .registers 7
 
-    iput-object p1, p0, Lm4e;->o0:Ljava/lang/Object;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iget p1, p0, Lm4e;->q0:I
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    const/high16 v0, -0x80000000
+    array-length v1, p1
 
-    or-int/2addr p1, v0
+    const/4 v2, 0x0
 
-    iput p1, p0, Lm4e;->q0:I
+    move v3, v2
 
-    iget-object p1, p0, Lm4e;->p0:Ln4e;
+    :goto_0
+    if-ge v3, v1, :cond_1
 
-    const/4 v0, 0x0
+    aget-object v4, p1, v3
 
-    invoke-virtual {p1, v0, p0}, Ln4e;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    check-cast v4, Lw33;
 
-    sget-object p0, Ls04;->a:Ls04;
+    invoke-interface {v4}, Lw33;->a()Ljava/lang/Class;
 
-    return-object p0
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    new-array p1, v2, [Ljava/lang/String;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [Ljava/lang/String;
+
+    array-length v0, p1
+
+    invoke-static {p1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [Ljava/lang/String;
+
+    invoke-static {p1}, Lxr;->X([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lq73;->c0(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p1
+
+    iget-object p0, p0, Lm4e;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-void
 .end method

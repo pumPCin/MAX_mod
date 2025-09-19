@@ -1,167 +1,62 @@
 .class public final Ly0e;
-.super La1e;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lw0e;
 
 
 # instance fields
-.field public final l:J
+.field public final a:Lf1e;
 
-.field public final m:J
+.field public final b:Z
 
-.field public final n:J
-
-.field public final o:J
-
-.field public final p:J
-
-.field public final q:J
-
-.field public final r:J
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;JJLjava/lang/String;JJJJJJLmwg;)V
-    .registers 37
+.method public constructor <init>(Lf1e;ZZ)V
+    .registers 4
 
-    const/4 v1, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v0, p0
+    iput-object p1, p0, Ly0e;->a:Lf1e;
 
-    move-wide v2, p1
+    iput-boolean p2, p0, Ly0e;->b:Z
 
-    move-object v4, p3
-
-    move-object/from16 v5, p4
-
-    move-object/from16 v6, p5
-
-    move-object/from16 v7, p6
-
-    move-wide/from16 v8, p9
-
-    move-object/from16 v10, p11
-
-    move-object/from16 v11, p24
-
-    invoke-direct/range {v0 .. v11}, La1e;-><init>(IJLjava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;JLjava/lang/String;Lmwg;)V
-
-    move-wide/from16 p1, p7
-
-    iput-wide p1, p0, Ly0e;->l:J
-
-    move-wide/from16 p1, p12
-
-    iput-wide p1, p0, Ly0e;->m:J
-
-    move-wide/from16 p1, p14
-
-    iput-wide p1, p0, Ly0e;->n:J
-
-    move-wide/from16 p1, p16
-
-    iput-wide p1, p0, Ly0e;->o:J
-
-    move-wide/from16 p1, p18
-
-    iput-wide p1, p0, Ly0e;->p:J
-
-    move-wide/from16 p1, p20
-
-    iput-wide p1, p0, Ly0e;->q:J
-
-    move-wide/from16 p1, p22
-
-    iput-wide p1, p0, Ly0e;->r:J
+    iput-boolean p3, p0, Ly0e;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final a()Lorg/json/JSONObject;
     .registers 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Lorg/json/JSONObject;
 
-    const-string v1, "AudioRecv{ssrc="
+    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v1, "command"
 
-    iget-wide v1, p0, Le1e;->c:J
+    const-string v2, "change-media-settings"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const-string v1, ", transportId=\'"
+    iget-boolean v1, p0, Ly0e;->b:Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-boolean v2, p0, Ly0e;->c:Z
 
-    iget-object v1, p0, Le1e;->d:Ljava/lang/String;
+    iget-object p0, p0, Ly0e;->a:Lf1e;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "\', trackId=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Le1e;->e:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "\', packetsReceived="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, La1e;->h:Ljava/math/BigInteger;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", packetsLost="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, La1e;->i:Ljava/math/BigInteger;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", bytesReceived="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, La1e;->j:Ljava/math/BigInteger;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", jitterBufferMs="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, La1e;->k:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", audioOutputLevel="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Ly0e;->l:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", unknown="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Le1e;->g:Ljava/util/HashMap;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v1, v2}, Lo97;->D(Lf1e;ZZ)Lorg/json/JSONObject;
 
     move-result-object p0
 
-    return-object p0
+    const-string v1, "mediaSettings"
+
+    invoke-virtual {v0, v1, p0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    return-object v0
 .end method

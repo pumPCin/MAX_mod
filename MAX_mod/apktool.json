@@ -1,5 +1,5 @@
 {
-  "apkFileName": "MAX_25.10.2_mod.apk",
+  "apkFileName": "MAX_25.11.0_mod.apk",
   "PackageInfo": {
     "forcedPackageId": "127",
     "renameManifestPackage": null
@@ -11,17 +11,18 @@
     "png",
     "webp",
     "mp3",
-    "META-INF/services/ge7",
-    "META-INF/services/m04",
-    "META-INF/services/c2f"
+    "META-INF/services/cbf",
+    "META-INF/services/y9a",
+    "META-INF/services/mh7",
+    "META-INF/services/t04"
   ],
   "compressionType": false,
   "sparseResources": false,
-  "version": "2.4.0-250812",
+  "version": "2.4.0-250916",
   "sharedLibrary": false,
   "VersionInfo": {
-    "versionName": "25.10.2",
-    "versionCode": "6403"
+    "versionName": "25.11.0",
+    "versionCode": "6409"
   },
   "UsesFramework": {
     "ids": [1],
@@ -92,8 +93,8 @@
     "META-INF/androidx.profileinstaller_profileinstaller.version": "0",
     "review-ktx.properties": "8",
     "META-INF/androidx.cursoradapter_cursoradapter.version": "0",
-    "META-INF/kotlinx_coroutines_guava.version": "0",
     "META-INF/androidx.camera_camera-view.version": "0",
+    "META-INF/kotlinx_coroutines_guava.version": "0",
     "META-INF/androidx.media_media.version": "0",
     "META-INF/androidx.annotation_annotation-experimental.version": "0",
     "META-INF/androidx.drawerlayout_drawerlayout.version": "0",
@@ -136,13 +137,14 @@
     "META-INF/androidx.lifecycle_lifecycle-livedata-ktx.version": "0",
     "META-INF/androidx.arch.core_core-runtime.version": "8",
     "META-INF/androidx.emoji2_emoji2.version": "0",
-    "META-INF/version-control-info.textproto": "0",
     "META-INF/androidx.vectordrawable_vectordrawable-animated.version": "0",
+    "META-INF/version-control-info.textproto": "0",
     "META-INF/androidx.slidingpanelayout_slidingpanelayout.version": "0",
     "META-INF/kotlinx_coroutines_rx3.version": "0",
     "play-services-stats.properties": "8",
-    "META-INF/androidx.lifecycle_lifecycle-viewmodel-ktx.version": "0",
     "META-INF/androidx.lifecycle_lifecycle-runtime-ktx.version": "0",
+    "META-INF/androidx.lifecycle_lifecycle-viewmodel-ktx.version": "0",
+    "META-INF/androidx.preference_preference-ktx.version": "0",
     "play-services-auth-api-phone.properties": "8",
     "META-INF/androidx.dynamicanimation_dynamicanimation.version": "0",
     "META-INF/androidx.viewpager2_viewpager2.version": "0",
@@ -151,7 +153,7 @@
     "okhttp3/internal/publicsuffix/publicsuffixes.gz": "0",
     "review.properties": "8"
   },
-  "apkFilePath": "/storage/emulated/0/Download/MAX_25.10.2.apk",
+  "apkFilePath": "/storage/emulated/0/Download/MAX_25.11.0.apk",
   "compactEntries": false,
   "isFrameworkApk": false,
   "sdkInfo": {

@@ -1,411 +1,129 @@
-.class public final Lqb4;
+.class public final synthetic Lqb4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpt7;
+.implements Laf4;
+.implements Lrs1;
+
 
 # instance fields
-.field public final a:Lt26;
+.field public final synthetic a:I
 
-.field public final b:I
+.field public final synthetic b:I
 
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:I
-
-.field public final i:Lt50;
-
-.field public final j:Z
-
-.field public final k:Z
-
-.field public final l:Z
+.field public final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lt26;IIIIIIILt50;ZZZ)V
-    .registers 13
+.method public synthetic constructor <init>(IILjava/lang/Object;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lqb4;->c:Ljava/lang/Object;
 
-    iput-object p1, p0, Lqb4;->a:Lt26;
+    iput p1, p0, Lqb4;->a:I
 
     iput p2, p0, Lqb4;->b:I
 
-    iput p3, p0, Lqb4;->c:I
-
-    iput p4, p0, Lqb4;->d:I
-
-    iput p5, p0, Lqb4;->e:I
-
-    iput p6, p0, Lqb4;->f:I
-
-    iput p7, p0, Lqb4;->g:I
-
-    iput p8, p0, Lqb4;->h:I
-
-    iput-object p9, p0, Lqb4;->i:Lt50;
-
-    iput-boolean p10, p0, Lqb4;->j:Z
-
-    iput-boolean p11, p0, Lqb4;->k:Z
-
-    iput-boolean p12, p0, Lqb4;->l:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static c(Ls20;Z)Landroid/media/AudioAttributes;
-    .registers 2
-
-    if-eqz p1, :cond_0
-
-    new-instance p0, Landroid/media/AudioAttributes$Builder;
-
-    invoke-direct {p0}, Landroid/media/AudioAttributes$Builder;-><init>()V
-
-    const/4 p1, 0x3
-
-    invoke-virtual {p0, p1}, Landroid/media/AudioAttributes$Builder;->setContentType(I)Landroid/media/AudioAttributes$Builder;
-
-    move-result-object p0
-
-    const/16 p1, 0x10
-
-    invoke-virtual {p0, p1}, Landroid/media/AudioAttributes$Builder;->setFlags(I)Landroid/media/AudioAttributes$Builder;
-
-    move-result-object p0
-
-    const/4 p1, 0x1
-
-    invoke-virtual {p0, p1}, Landroid/media/AudioAttributes$Builder;->setUsage(I)Landroid/media/AudioAttributes$Builder;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/media/AudioAttributes$Builder;->build()Landroid/media/AudioAttributes;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    invoke-virtual {p0}, Ls20;->b()Ldca;
-
-    move-result-object p0
-
-    iget-object p0, p0, Ldca;->b:Ljava/lang/Object;
-
-    check-cast p0, Landroid/media/AudioAttributes;
-
-    return-object p0
-.end method
-
 
 # virtual methods
-.method public final a(Ls20;I)Landroid/media/AudioTrack;
-    .registers 15
+.method public a(Landroid/media/MediaCodecInfo;)I
+    .registers 4
 
-    iget v1, p0, Lqb4;->c:I
+    iget-object v0, p0, Lqb4;->c:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/String;
+
+    iget v1, p0, Lqb4;->a:I
+
+    iget p0, p0, Lqb4;->b:I
+
+    invoke-static {p1, v0, v1, p0}, Lk65;->g(Landroid/media/MediaCodecInfo;Ljava/lang/String;II)Landroid/util/Size;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    const p0, 0x7fffffff
+
+    return p0
+
+    :cond_0
+    mul-int/2addr v1, p0
+
+    invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
+
+    move-result p0
+
+    invoke-virtual {p1}, Landroid/util/Size;->getHeight()I
+
+    move-result p1
+
+    mul-int/2addr p1, p0
+
+    sub-int/2addr v1, p1
+
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public invoke(Ljava/lang/Object;)V
+    .registers 4
+
+    iget-object v0, p0, Lqb4;->c:Ljava/lang/Object;
+
+    check-cast v0, Lfd;
+
+    iget v1, p0, Lqb4;->b:I
+
+    check-cast p1, Lgd;
+
+    iget p0, p0, Lqb4;->a:I
+
+    invoke-interface {p1, v0, p0, v1}, Lgd;->L(Lfd;II)V
+
+    return-void
+.end method
+
+.method public t(Lqs1;)Ljava/lang/String;
+    .registers 5
+
+    iget-object v0, p0, Lqb4;->c:Ljava/lang/Object;
+
+    check-cast v0, Lmi4;
+
+    new-instance v1, Lf90;
+
+    iget v2, p0, Lqb4;->a:I
+
+    iget p0, p0, Lqb4;->b:I
+
+    invoke-direct {v1, v2, p0, p1}, Lf90;-><init>(IILqs1;)V
+
+    new-instance p0, Law1;
+
+    const/16 v2, 0x1a
+
+    invoke-direct {p0, v0, v2, v1}, Law1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    new-instance v1, Lji4;
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x1
+    invoke-direct {v1, p1, v2}, Lji4;-><init>(Lqs1;I)V
 
-    :try_start_0
-    invoke-virtual {p0, p1, p2}, Lqb4;->b(Ls20;I)Landroid/media/AudioTrack;
+    invoke-virtual {v0, p0, v1}, Lmi4;->e(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
+    const-string p0, "DefaultSurfaceProcessor#snapshot"
 
-    invoke-virtual {p1}, Landroid/media/AudioTrack;->getState()I
-
-    move-result v5
-
-    if-ne v5, v3, :cond_0
-
-    return-object p1
-
-    :cond_0
-    :try_start_1
-    invoke-virtual {p1}, Landroid/media/AudioTrack;->release()V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    :catch_0
-    new-instance v4, Landroidx/media3/exoplayer/audio/AudioSink$InitializationException;
-
-    if-ne v1, v3, :cond_1
-
-    move v10, v3
-
-    goto :goto_0
-
-    :cond_1
-    move v10, v2
-
-    :goto_0
-    const/4 v11, 0x0
-
-    iget v6, p0, Lqb4;->e:I
-
-    iget v7, p0, Lqb4;->f:I
-
-    iget v8, p0, Lqb4;->h:I
-
-    iget-object v9, p0, Lqb4;->a:Lt26;
-
-    invoke-direct/range {v4 .. v11}, Landroidx/media3/exoplayer/audio/AudioSink$InitializationException;-><init>(IIIILt26;ZLjava/lang/RuntimeException;)V
-
-    throw v4
-
-    :catch_1
-    move-exception v0
-
-    move-object p1, v0
-
-    move-object v11, p1
-
-    new-instance v4, Landroidx/media3/exoplayer/audio/AudioSink$InitializationException;
-
-    if-ne v1, v3, :cond_2
-
-    move v10, v3
-
-    goto :goto_1
-
-    :cond_2
-    move v10, v2
-
-    :goto_1
-    const/4 v5, 0x0
-
-    iget v6, p0, Lqb4;->e:I
-
-    iget v7, p0, Lqb4;->f:I
-
-    iget v8, p0, Lqb4;->h:I
-
-    iget-object v9, p0, Lqb4;->a:Lt26;
-
-    invoke-direct/range {v4 .. v11}, Landroidx/media3/exoplayer/audio/AudioSink$InitializationException;-><init>(IIIILt26;ZLjava/lang/RuntimeException;)V
-
-    throw v4
-.end method
-
-.method public final b(Ls20;I)Landroid/media/AudioTrack;
-    .registers 15
-
-    sget v2, Laif;->a:I
-
-    const/16 v3, 0x1d
-
-    const/4 v4, 0x0
-
-    const/4 v6, 0x1
-
-    iget-boolean v7, p0, Lqb4;->l:Z
-
-    iget v8, p0, Lqb4;->g:I
-
-    iget v9, p0, Lqb4;->f:I
-
-    iget v10, p0, Lqb4;->e:I
-
-    if-lt v2, v3, :cond_1
-
-    invoke-static {v10, v9, v8}, Laif;->r(III)Landroid/media/AudioFormat;
-
-    move-result-object v2
-
-    invoke-static {p1, v7}, Lqb4;->c(Ls20;Z)Landroid/media/AudioAttributes;
-
-    move-result-object v1
-
-    new-instance v3, Landroid/media/AudioTrack$Builder;
-
-    invoke-direct {v3}, Landroid/media/AudioTrack$Builder;-><init>()V
-
-    invoke-virtual {v3, v1}, Landroid/media/AudioTrack$Builder;->setAudioAttributes(Landroid/media/AudioAttributes;)Landroid/media/AudioTrack$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v2}, Landroid/media/AudioTrack$Builder;->setAudioFormat(Landroid/media/AudioFormat;)Landroid/media/AudioTrack$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v6}, Landroid/media/AudioTrack$Builder;->setTransferMode(I)Landroid/media/AudioTrack$Builder;
-
-    move-result-object v1
-
-    iget v2, p0, Lqb4;->h:I
-
-    invoke-virtual {v1, v2}, Landroid/media/AudioTrack$Builder;->setBufferSizeInBytes(I)Landroid/media/AudioTrack$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Landroid/media/AudioTrack$Builder;->setSessionId(I)Landroid/media/AudioTrack$Builder;
-
-    move-result-object v1
-
-    iget v0, p0, Lqb4;->c:I
-
-    if-ne v0, v6, :cond_0
-
-    move v4, v6
-
-    :cond_0
-    invoke-virtual {v1, v4}, Landroid/media/AudioTrack$Builder;->setOffloadedPlayback(Z)Landroid/media/AudioTrack$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/media/AudioTrack$Builder;->build()Landroid/media/AudioTrack;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_1
-    const/16 v3, 0x15
-
-    if-lt v2, v3, :cond_2
-
-    new-instance v2, Landroid/media/AudioTrack;
-
-    invoke-static {p1, v7}, Lqb4;->c(Ls20;Z)Landroid/media/AudioAttributes;
-
-    move-result-object v1
-
-    invoke-static {v10, v9, v8}, Laif;->r(III)Landroid/media/AudioFormat;
-
-    move-result-object v3
-
-    move-object v4, v2
-
-    move-object v2, v3
-
-    iget v3, p0, Lqb4;->h:I
-
-    move-object v0, v4
-
-    const/4 v4, 0x1
-
-    move v5, p2
-
-    invoke-direct/range {v0 .. v5}, Landroid/media/AudioTrack;-><init>(Landroid/media/AudioAttributes;Landroid/media/AudioFormat;III)V
-
-    return-object v0
-
-    :cond_2
-    iget v1, p1, Ls20;->c:I
-
-    const/16 v2, 0xd
-
-    if-eq v1, v2, :cond_3
-
-    packed-switch v1, :pswitch_data_0
-
-    const/4 v4, 0x3
-
-    :goto_0
-    :pswitch_0
-    move v1, v4
-
-    goto :goto_1
-
-    :pswitch_1
-    const/4 v4, 0x2
-
-    goto :goto_0
-
-    :pswitch_2
-    const/4 v4, 0x5
-
-    goto :goto_0
-
-    :pswitch_3
-    const/4 v4, 0x4
-
-    goto :goto_0
-
-    :pswitch_4
-    const/16 v4, 0x8
-
-    goto :goto_0
-
-    :cond_3
-    move v1, v6
-
-    :goto_1
-    if-nez p2, :cond_4
-
-    new-instance v5, Landroid/media/AudioTrack;
-
-    iget v10, p0, Lqb4;->h:I
-
-    const/4 v11, 0x1
-
-    iget v7, p0, Lqb4;->e:I
-
-    iget v8, p0, Lqb4;->f:I
-
-    iget v9, p0, Lqb4;->g:I
-
-    move v6, v1
-
-    invoke-direct/range {v5 .. v11}, Landroid/media/AudioTrack;-><init>(IIIIII)V
-
-    return-object v5
-
-    :cond_4
-    new-instance v2, Landroid/media/AudioTrack;
-
-    iget v5, p0, Lqb4;->h:I
-
-    const/4 v6, 0x1
-
-    move-object v3, v2
-
-    iget v2, p0, Lqb4;->e:I
-
-    move-object v4, v3
-
-    iget v3, p0, Lqb4;->f:I
-
-    iget v0, p0, Lqb4;->g:I
-
-    move-object v7, v4
-
-    move v4, v0
-
-    move-object v0, v7
-
-    move v7, p2
-
-    invoke-direct/range {v0 .. v7}, Landroid/media/AudioTrack;-><init>(IIIIIII)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
-        :pswitch_2
-    .end packed-switch
+    return-object p0
 .end method

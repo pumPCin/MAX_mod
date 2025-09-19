@@ -252,6 +252,8 @@
     <item type="id" name="call_history_tabs" />
     <item type="id" name="call_ic_share_view" />
     <item type="id" name="call_incoming_avatar" />
+    <item type="id" name="call_incoming_avatar_preview_small" />
+    <item type="id" name="call_incoming_camera_preview" />
     <item type="id" name="call_incoming_subtitle" />
     <item type="id" name="call_incoming_title" />
     <item type="id" name="call_indicator_panel" />
@@ -271,6 +273,10 @@
     <item type="id" name="call_info_icon" />
     <item type="id" name="call_info_link_state" />
     <item type="id" name="call_info_onemetoolbar" />
+    <item type="id" name="call_info_presettings_action_list" />
+    <item type="id" name="call_info_presettings_change_name_vh" />
+    <item type="id" name="call_info_presettings_item_vh" />
+    <item type="id" name="call_info_presettings_toolbar" />
     <item type="id" name="call_info_title" />
     <item type="id" name="call_invite_banner_close_btn" />
     <item type="id" name="call_invite_banner_copy_btn" />
@@ -310,13 +316,13 @@
     <item type="id" name="call_pip_camera_preview" />
     <item type="id" name="call_pip_container_id" />
     <item type="id" name="call_pip_video" />
+    <item type="id" name="call_presettings_call_permissions_item" />
+    <item type="id" name="call_presettings_call_save_changes" />
     <item type="id" name="call_raise_hand" />
     <item type="id" name="call_raise_hand_status" />
     <item type="id" name="call_rate_button_group" />
     <item type="id" name="call_rate_chip_group" />
-    <item type="id" name="call_rate_custom_reason_input" />
     <item type="id" name="call_rate_negative_button" />
-    <item type="id" name="call_rate_normal_button" />
     <item type="id" name="call_rate_positive_button" />
     <item type="id" name="call_rate_send_button" />
     <item type="id" name="call_rate_toolbar" />
@@ -413,9 +419,11 @@
     <item type="id" name="call_user_list_in_call_list" />
     <item type="id" name="call_user_small_avatar" />
     <item type="id" name="call_user_talking_view_label" />
+    <item type="id" name="call_user_top_spacer" />
     <item type="id" name="call_users_action_center" />
     <item type="id" name="call_users_action_negative" />
-    <item type="id" name="call_users_action_positive" />
+    <item type="id" name="call_users_action_one_positive" />
+    <item type="id" name="call_users_action_two_positive" />
     <item type="id" name="call_users_blocked_label" />
     <item type="id" name="call_users_bottom_speaker_panel" />
     <item type="id" name="call_users_large_label_view" />
@@ -1358,6 +1366,10 @@
     <item type="id" name="oneme_chat_action_unmute" />
     <item type="id" name="oneme_chat_list_loading_id" />
     <item type="id" name="oneme_chat_list_loading_view_type" />
+    <item type="id" name="oneme_chatmedia_viewer_bulk_saving_all" />
+    <item type="id" name="oneme_chatmedia_viewer_bulk_saving_only_this" />
+    <item type="id" name="oneme_chatmedia_viewer_content_level_item_view_type" />
+    <item type="id" name="oneme_chatmedia_viewer_content_level_stub_view" />
     <item type="id" name="oneme_chatmedia_viewer_info_panel_author_view" />
     <item type="id" name="oneme_chatmedia_viewer_info_panel_date_view" />
     <item type="id" name="oneme_chatmedia_viewer_info_panel_forward_message_view" />
@@ -1543,8 +1555,13 @@
     <item type="id" name="oneme_login_neuro_avatars_cancel_action" />
     <item type="id" name="oneme_login_neuro_avatars_collapsible" />
     <item type="id" name="oneme_login_neuro_avatars_continue_btn" />
+    <item type="id" name="oneme_login_neuro_avatars_continue_disabled_btn" />
+    <item type="id" name="oneme_login_neuro_avatars_continue_enabled_btn" />
     <item type="id" name="oneme_login_neuro_avatars_description" />
     <item type="id" name="oneme_login_neuro_avatars_load_from_gallery_action" />
+    <item type="id" name="oneme_login_neuro_avatars_pick_image_text" />
+    <item type="id" name="oneme_login_neuro_avatars_pick_neuroavatar_button" />
+    <item type="id" name="oneme_login_neuro_avatars_pick_neuroavatar_icon" />
     <item type="id" name="oneme_login_neuro_avatars_recycler_view" />
     <item type="id" name="oneme_login_neuro_avatars_remove_photo_action" />
     <item type="id" name="oneme_login_neuro_avatars_root_container" />
@@ -1666,6 +1683,7 @@
     <item type="id" name="oneme_picker_toolbar_action_select" />
     <item type="id" name="oneme_right_primary_icon_button" />
     <item type="id" name="oneme_right_secondary_icon_button" />
+    <item type="id" name="oneme_right_third_icon_button" />
     <item type="id" name="oneme_saved_messages_clear_history" />
     <item type="id" name="oneme_search_view_back_button" />
     <item type="id" name="oneme_search_view_edit_text" />
@@ -1732,6 +1750,7 @@
     <item type="id" name="oneme_settings_privacy_black_list_toolbar" />
     <item type="id" name="oneme_settings_privacy_black_list_unblock_action" />
     <item type="id" name="oneme_settings_privacy_black_list_unblock_cancel_action" />
+    <item type="id" name="oneme_settings_privacy_content_level_access" />
     <item type="id" name="oneme_settings_privacy_enter_pin_code_root" />
     <item type="id" name="oneme_settings_privacy_info_header" />
     <item type="id" name="oneme_settings_privacy_onboarding_content" />
@@ -1740,6 +1759,7 @@
     <item type="id" name="oneme_settings_privacy_onboarding_item_1" />
     <item type="id" name="oneme_settings_privacy_onboarding_item_2" />
     <item type="id" name="oneme_settings_privacy_onboarding_item_3" />
+    <item type="id" name="oneme_settings_privacy_onboarding_item_4" />
     <item type="id" name="oneme_settings_privacy_onboarding_lock" />
     <item type="id" name="oneme_settings_privacy_onboarding_lock_background" />
     <item type="id" name="oneme_settings_privacy_onboarding_root" />
@@ -1759,6 +1779,8 @@
     <item type="id" name="oneme_settings_privacy_screen_dialog_add_chat_button_contacts" />
     <item type="id" name="oneme_settings_privacy_screen_dialog_call_button_all" />
     <item type="id" name="oneme_settings_privacy_screen_dialog_call_button_contacts" />
+    <item type="id" name="oneme_settings_privacy_screen_dialog_content_level_access_all" />
+    <item type="id" name="oneme_settings_privacy_screen_dialog_content_level_access_safe" />
     <item type="id" name="oneme_settings_privacy_screen_dialog_finished_session_cancel_btn" />
     <item type="id" name="oneme_settings_privacy_screen_dialog_finished_session_finish_btn" />
     <item type="id" name="oneme_settings_privacy_screen_dialog_online_button_contacts" />
@@ -2066,6 +2088,7 @@
     <item type="id" name="profile_delete_chat_confirmation_sheet_confirm" />
     <item type="id" name="profile_delete_chat_with_bot_confirm_with_suspend" />
     <item type="id" name="profile_delete_chat_with_bot_confirm_without_suspend" />
+    <item type="id" name="profile_delete_chat_with_bot_official_confirm_with_suspend" />
     <item type="id" name="profile_delete_contact_confirmation_sheet_confirm" />
     <item type="id" name="profile_dot_divider_view" />
     <item type="id" name="profile_edit_admin_channel_type" />
@@ -2215,10 +2238,12 @@
     <item type="id" name="profile_more_action_delete_channel" />
     <item type="id" name="profile_more_action_delete_chat" />
     <item type="id" name="profile_more_action_delete_chat_and_suspend_bot" />
+    <item type="id" name="profile_more_action_delete_chat_and_suspend_bot_official" />
     <item type="id" name="profile_more_action_leave_channel" />
     <item type="id" name="profile_more_action_leave_chat" />
     <item type="id" name="profile_more_action_report" />
     <item type="id" name="profile_more_action_suspend_bot" />
+    <item type="id" name="profile_more_action_suspend_bot_official" />
     <item type="id" name="profile_notifications_confirmation_sheet_1_day" />
     <item type="id" name="profile_notifications_confirmation_sheet_1_hour" />
     <item type="id" name="profile_notifications_confirmation_sheet_4_hour" />
@@ -2515,8 +2540,6 @@
     <item type="id" name="row_setting_led__title" />
     <item type="id" name="row_setting_online__circle" />
     <item type="id" name="row_setting_online__tv" />
-    <item type="id" name="row_setting_theme__iv__forward" />
-    <item type="id" name="row_setting_theme__iv__selected" />
     <item type="id" name="row_settings_folder__iv_action" />
     <item type="id" name="row_settings_folder__iv_icon" />
     <item type="id" name="row_settings_folder__name" />

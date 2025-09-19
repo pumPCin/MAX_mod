@@ -3,67 +3,83 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lo49;
+.implements Lp89;
 
 
 # instance fields
-.field public final synthetic a:Lone/me/messages/list/ui/MessagesListWidget;
-
-.field public final synthetic b:Lu0d;
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Lone/me/messages/list/ui/MessagesListWidget;Lu0d;)V
-    .registers 3
+.method public constructor <init>(I)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lm89;->a:Lone/me/messages/list/ui/MessagesListWidget;
-
-    iput-object p2, p0, Lm89;->b:Lu0d;
+    iput p1, p0, Lm89;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    sget-object v0, Lone/me/messages/list/ui/MessagesListWidget;->V0:[Lsf7;
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lm89;->a:Lone/me/messages/list/ui/MessagesListWidget;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {v0}, Lone/me/messages/list/ui/MessagesListWidget;->D0()Lone/me/messages/list/ui/recycler/MessagesLayoutManager;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroidx/recyclerview/widget/a;->w()I
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lm89;->b:Lu0d;
-
-    invoke-static {v0, v1}, Lone/me/messages/list/ui/MessagesListWidget;->z0(Lone/me/messages/list/ui/MessagesListWidget;Lu0d;)V
-
-    invoke-virtual {v0}, Lone/me/messages/list/ui/MessagesListWidget;->D0()Lone/me/messages/list/ui/recycler/MessagesLayoutManager;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lone/me/messages/list/ui/recycler/MessagesLayoutManager;->K:Ldl9;
-
-    invoke-virtual {v0, p0}, Ldl9;->h(Ljava/lang/Object;)V
+    return v0
 
     :cond_0
-    return-void
+    instance-of v1, p1, Lm89;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lm89;
+
+    iget p0, p0, Lm89;->a:I
+
+    iget p1, p1, Lm89;->a:I
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public final getTag()Ljava/lang/String;
+.method public final hashCode()I
     .registers 1
 
-    const-string p0, "ScrollButton"
+    iget p0, p0, Lm89;->a:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    const-string v0, "ProcessClickMultiSelect(actionId="
+
+    const-string v1, ")"
+
+    iget p0, p0, Lm89;->a:I
+
+    invoke-static {p0, v0, v1}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

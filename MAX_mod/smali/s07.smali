@@ -1,75 +1,75 @@
 .class public final Ls07;
-.super La07;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final bridge synthetic c(Ljava/lang/Object;)La07;
-    .registers 2
+# static fields
+.field public static final a:Lv07;
 
-    invoke-virtual {p0, p1}, Ls07;->h(Ljava/lang/Object;)V
 
-    return-object p0
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .registers 5
 
-.method public final h(Ljava/lang/Object;)V
-    .registers 2
+    sget-object v0, Lxq5;->c:Lxq5;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, p1}, La07;->a(Ljava/lang/Object;)V
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return-void
-.end method
+    move-result-object v1
 
-.method public final i()Lt07;
-    .registers 4
+    sget-object v2, Lbuc;->c:Lbuc;
 
-    iget v0, p0, La07;->b:I
+    new-instance v3, Lauc;
 
-    if-eqz v0, :cond_1
+    invoke-direct {v3, v0, v2}, Lauc;-><init>(Lxq5;Lbuc;)V
 
-    const/4 v1, 0x1
+    new-instance v0, Lb07;
 
-    if-eq v0, v1, :cond_0
+    const/4 v2, 0x1
 
-    iget-object v2, p0, La07;->c:[Ljava/lang/Object;
+    invoke-direct {v0, v2}, Lb07;-><init>(I)V
 
-    invoke-static {v0, v2}, Lt07;->i(I[Ljava/lang/Object;)Lt07;
+    sget-object v2, Loqf;->j0:Ld90;
+
+    const/4 v4, 0x4
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    iget-object v0, v0, Lb07;->b:Lko9;
+
+    invoke-virtual {v0, v2, v4}, Lko9;->m(Ld90;Ljava/lang/Object;)V
+
+    sget-object v2, Lt17;->y:Ld90;
+
+    invoke-virtual {v0, v2, v1}, Lko9;->m(Ld90;Ljava/lang/Object;)V
+
+    sget-object v2, Lt17;->G:Ld90;
+
+    invoke-virtual {v0, v2, v3}, Lko9;->m(Ld90;Ljava/lang/Object;)V
+
+    sget-object v2, Lv07;->Y:Ld90;
+
+    invoke-virtual {v0, v2, v1}, Lko9;->m(Ld90;Ljava/lang/Object;)V
+
+    sget-object v1, Lj17;->x:Ld90;
+
+    sget-object v2, Lgz4;->d:Lgz4;
+
+    invoke-virtual {v0, v1, v2}, Lko9;->m(Ld90;Ljava/lang/Object;)V
+
+    new-instance v1, Lv07;
+
+    invoke-static {v0}, Lcva;->a(Lzf3;)Lcva;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/util/AbstractCollection;->size()I
+    invoke-direct {v1, v0}, Lv07;-><init>(Lcva;)V
 
-    move-result v2
+    sput-object v1, Ls07;->a:Lv07;
 
-    iput v2, p0, La07;->b:I
-
-    iput-boolean v1, p0, La07;->a:Z
-
-    return-object v0
-
-    :cond_0
-    iget-object p0, p0, La07;->c:[Ljava/lang/Object;
-
-    const/4 v0, 0x0
-
-    aget-object p0, p0, v0
-
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget v0, Lt07;->c:I
-
-    new-instance v0, Lawd;
-
-    invoke-direct {v0, p0}, Lawd;-><init>(Ljava/lang/Object;)V
-
-    return-object v0
-
-    :cond_1
-    sget p0, Lt07;->c:I
-
-    sget-object p0, Lwic;->p0:Lwic;
-
-    return-object p0
+    return-void
 .end method

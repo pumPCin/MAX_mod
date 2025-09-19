@@ -1,114 +1,235 @@
 .class public final Lhcf;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lxu0;
+
+
+# static fields
+.field public static final c:Luge;
 
 
 # instance fields
-.field public X:I
+.field public final a:Ltbf;
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lhq5;
+.field public final b:Ll37;
 
 
 # direct methods
-.method public constructor <init>(Lhq5;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Lhcf;->Z:Lhq5;
+    new-instance v0, Luge;
 
-    const/4 p1, 0x2
+    const/16 v1, 0x18
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1}, Luge;-><init>(I)V
+
+    sput-object v0, Lhcf;->c:Luge;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ltbf;)V
+    .registers 9
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhcf;->a:Ltbf;
+
+    const-string v0, "initialCapacity"
+
+    const/4 v1, 0x4
+
+    invoke-static {v1, v0}, Lyu0;->e(ILjava/lang/String;)V
+
+    new-array v0, v1, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :goto_0
+    iget v3, p1, Ltbf;->a:I
+
+    if-ge v1, v3, :cond_1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    array-length v4, v0
+
+    add-int/lit8 v5, v2, 0x1
+
+    invoke-static {v4, v5}, Lb37;->g(II)I
+
+    move-result v4
+
+    array-length v6, v0
+
+    if-gt v4, v6, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {v0, v4}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    :goto_1
+    aput-object v3, v0, v2
+
+    add-int/lit8 v1, v1, 0x1
+
+    move v2, v5
+
+    goto :goto_0
+
+    :cond_1
+    invoke-static {v2, v0}, Ll37;->h(I[Ljava/lang/Object;)Llqc;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lhcf;->b:Ll37;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ltbf;Ljava/util/List;)V
+    .registers 5
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-static {p2}, Ljava/util/Collections;->min(Ljava/util/Collection;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    invoke-static {p2}, Ljava/util/Collections;->max(Ljava/util/Collection;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    iget v1, p1, Ltbf;->a:I
+
+    if-ge v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
+
+    invoke-direct {p0}, Ljava/lang/IndexOutOfBoundsException;-><init>()V
+
+    throw p0
+
+    :cond_1
+    :goto_0
+    iput-object p1, p0, Lhcf;->a:Ltbf;
+
+    invoke-static {p2}, Ll37;->j(Ljava/util/Collection;)Ll37;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lhcf;->b:Ll37;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, p2}, Lhcf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    move-result-object p0
+    return v0
 
-    check-cast p0, Lhcf;
+    :cond_0
+    const/4 v1, 0x0
 
-    sget-object p1, Lncf;->a:Lncf;
+    if-eqz p1, :cond_2
 
-    invoke-virtual {p0, p1}, Lhcf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const-class v2, Lhcf;
 
-    move-result-object p0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return-object p0
-.end method
+    move-result-object v3
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lhcf;
-
-    iget-object p0, p0, Lhcf;->Z:Lhq5;
-
-    invoke-direct {v0, p0, p2}, Lhcf;-><init>(Lhq5;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lhcf;->Y:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    iget v0, p0, Lhcf;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    if-eq v2, v3, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    check-cast p1, Lhcf;
 
-    iget-object p1, p0, Lhcf;->Y:Ljava/lang/Object;
+    iget-object v2, p0, Lhcf;->a:Ltbf;
 
-    iput v1, p0, Lhcf;->X:I
+    iget-object v3, p1, Lhcf;->a:Ltbf;
 
-    iget-object v0, p0, Lhcf;->Z:Lhq5;
+    invoke-virtual {v2, v3}, Ltbf;->equals(Ljava/lang/Object;)Z
 
-    invoke-interface {v0, p1, p0}, Lhq5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result v2
 
-    move-result-object p0
+    if-eqz v2, :cond_2
 
-    sget-object p1, Ls04;->a:Ls04;
+    iget-object p0, p0, Lhcf;->b:Ll37;
 
-    if-ne p0, p1, :cond_2
+    iget-object p1, p1, Lhcf;->b:Ll37;
 
-    return-object p1
+    invoke-virtual {p0, p1}, Ll37;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
 
     :cond_2
     :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    return v1
+.end method
 
-    return-object p0
+.method public final hashCode()I
+    .registers 2
+
+    iget-object v0, p0, Lhcf;->a:Ltbf;
+
+    invoke-virtual {v0}, Ltbf;->hashCode()I
+
+    move-result v0
+
+    iget-object p0, p0, Lhcf;->b:Ll37;
+
+    invoke-virtual {p0}, Ll37;->hashCode()I
+
+    move-result p0
+
+    mul-int/lit8 p0, p0, 0x1f
+
+    add-int/2addr p0, v0
+
+    return p0
 .end method

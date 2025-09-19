@@ -1,48 +1,72 @@
 .class public final Lyef;
-.super Lcx3;
+.super Lwef;
+.source "SourceFile"
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lwoa;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final b:Ljava/util/Iterator;
 
 
 # direct methods
-.method public constructor <init>(Lwoa;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lxn5;Ljava/lang/Object;)V
     .registers 3
 
-    iput-object p1, p0, Lyef;->Y:Lwoa;
+    iget-object p1, p1, Lxn5;->X:Lbid;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    check-cast p1, Lor5;
+
+    invoke-direct {p0, p2}, Lbff;-><init>(Ljava/lang/Object;)V
+
+    iget-object p1, p1, Lor5;->c:Lbc6;
+
+    invoke-interface {p1, p2}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lbid;
+
+    if-eqz p1, :cond_0
+
+    invoke-interface {p1}, Lbid;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    iput-object p1, p0, Lyef;->b:Ljava/util/Iterator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()Ljava/lang/Object;
     .registers 3
 
-    iput-object p1, p0, Lyef;->o:Ljava/lang/Object;
+    iget-object p0, p0, Lyef;->b:Ljava/util/Iterator;
 
-    iget p1, p0, Lyef;->X:I
+    if-eqz p0, :cond_0
 
-    const/high16 v0, -0x80000000
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    or-int/2addr p1, v0
+    move-result v0
 
-    iput p1, p0, Lyef;->X:I
+    const/4 v1, 0x1
 
-    iget-object p1, p0, Lyef;->Y:Lwoa;
+    if-ne v0, v1, :cond_0
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lwoa;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
 
     return-object p0
 .end method

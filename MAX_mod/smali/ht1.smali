@@ -1,26 +1,26 @@
 .class public final Lht1;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
 .field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Lit1;
+.field public final synthetic Y:Lot1;
 
 
 # direct methods
-.method public constructor <init>(Lit1;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lot1;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput-object p1, p0, Lht1;->Y:Lit1;
+    iput-object p1, p0, Lht1;->Y:Lot1;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -30,7 +30,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lghf;
+    check-cast p1, Lxg1;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -40,7 +40,7 @@
 
     check-cast p0, Lht1;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lht1;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -52,9 +52,9 @@
 
     new-instance v0, Lht1;
 
-    iget-object p0, p0, Lht1;->Y:Lit1;
+    iget-object p0, p0, Lht1;->Y:Lot1;
 
-    invoke-direct {v0, p0, p2}, Lht1;-><init>(Lit1;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, p0, p2}, Lht1;-><init>(Lot1;Lkotlin/coroutines/Continuation;)V
 
     iput-object p1, v0, Lht1;->X:Ljava/lang/Object;
 
@@ -62,64 +62,45 @@
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 13
+    .registers 3
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lht1;->X:Ljava/lang/Object;
 
-    check-cast p1, Lghf;
+    check-cast p1, Lxg1;
 
-    sget-object v0, Lghf;->a:Lghf;
+    iget-object p0, p0, Lht1;->Y:Lot1;
 
-    iget-object p0, p0, Lht1;->Y:Lit1;
-
-    if-ne p1, v0, :cond_0
-
-    invoke-virtual {p0}, Lit1;->b()Ln4e;
+    invoke-virtual {p0}, Lot1;->c()Lj44;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ln4e;->getValue()Ljava/lang/Object;
+    iget-boolean v0, v0, Lj44;->h:Z
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    check-cast v0, Ld44;
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lit1;->m:Lxh7;
+    invoke-virtual {p0, p1, v0}, Lot1;->h(Lxg1;Z)V
 
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    move-object v2, v1
-
-    check-cast v2, Ldv1;
-
-    iget-object v4, v0, Ld44;->c:Ljava/lang/String;
-
-    iget-boolean v9, v0, Ld44;->h:Z
-
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v8, 0x0
-
-    const/16 v10, 0x38
-
-    const-string v3, "BAD_CONNECTION_ALERT"
-
-    const-string v5, "VPN"
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    invoke-static/range {v2 .. v10}, Ldv1;->c(Ldv1;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;ZI)V
+    goto :goto_0
 
     :cond_0
-    invoke-virtual {p0, p1}, Lit1;->n(Lghf;)V
+    invoke-virtual {p0}, Lot1;->d()Lkya;
 
-    sget-object p0, Lncf;->a:Lncf;
+    move-result-object p1
+
+    iget-object p1, p1, Lkya;->a:Lzg1;
+
+    invoke-interface {p1}, Lzg1;->getId()Lxg1;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lot1;->i(Lxg1;)V
+
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

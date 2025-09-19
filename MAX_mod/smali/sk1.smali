@@ -1,19 +1,19 @@
 .class public final Lsk1;
-.super Lvk1;
+.super Ldl1;
 .source "SourceFile"
 
 
 # instance fields
-.field public final D:Lm41;
+.field public final D:Lxg1;
 
 
 # direct methods
-.method public constructor <init>(Lm41;)V
+.method public constructor <init>(Lxg1;)V
     .registers 2
 
-    invoke-direct {p0}, Lvk1;-><init>()V
+    invoke-direct {p0}, Ldl1;-><init>()V
 
-    iput-object p1, p0, Lsk1;->D:Lm41;
+    iput-object p1, p0, Lsk1;->D:Lxg1;
 
     return-void
 .end method
@@ -41,11 +41,11 @@
     :cond_1
     check-cast p1, Lsk1;
 
-    iget-object p0, p0, Lsk1;->D:Lm41;
+    iget-object p0, p0, Lsk1;->D:Lxg1;
 
-    iget-object p1, p1, Lsk1;->D:Lm41;
+    iget-object p1, p1, Lsk1;->D:Lxg1;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -60,9 +60,9 @@
 .method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lsk1;->D:Lm41;
+    iget-object p0, p0, Lsk1;->D:Lxg1;
 
-    invoke-virtual {p0}, Lm41;->hashCode()I
+    invoke-virtual {p0}, Lxg1;->hashCode()I
 
     move-result p0
 
@@ -74,11 +74,11 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ShowOpponentInfo(contextInfo="
+    const-string v1, "RaiseHandDialog(participantId="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lsk1;->D:Lm41;
+    iget-object p0, p0, Lsk1;->D:Lxg1;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

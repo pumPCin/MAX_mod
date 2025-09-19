@@ -1,61 +1,98 @@
 .class public final Lcj2;
-.super Lcx3;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public X:Ljava/util/List;
-
-.field public Y:Ljava/lang/Long;
-
-.field public Z:Ljava/util/List;
-
-.field public n0:Ljava/util/ArrayList;
-
-.field public o:Lrj2;
-
-.field public o0:Ljava/util/ArrayList;
-
-.field public p0:I
-
-.field public synthetic q0:Ljava/lang/Object;
-
-.field public final synthetic r0:Lrj2;
-
-.field public s0:I
+.field public final synthetic X:Lpj2;
 
 
 # direct methods
-.method public constructor <init>(Lrj2;Lcx3;)V
+.method public constructor <init>(Lpj2;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput-object p1, p0, Lcj2;->r0:Lrj2;
+    iput-object p1, p0, Lcj2;->X:Lpj2;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Ly04;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lcj2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lcj2;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lcj2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lcj2;
+
+    iget-object p0, p0, Lcj2;->X:Lpj2;
+
+    invoke-direct {p1, p0, p2}, Lcj2;-><init>(Lpj2;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iput-object p1, p0, Lcj2;->q0:Ljava/lang/Object;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget p1, p0, Lcj2;->s0:I
+    sget-object p1, Lpj2;->Q0:[Lxi7;
 
-    const/high16 v0, -0x80000000
+    iget-object p0, p0, Lcj2;->X:Lpj2;
 
-    or-int/2addr p1, v0
+    iget-object p0, p0, Lpj2;->w0:Lcl7;
 
-    iput p1, p0, Lcj2;->s0:I
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    iget-object p1, p0, Lcj2;->r0:Lrj2;
+    move-result-object p0
 
-    const/4 v0, 0x0
+    check-cast p0, Lqoa;
 
-    invoke-virtual {p1, v0, v0, p0}, Lrj2;->A(Ljava/util/List;Ljava/lang/Long;Lcx3;)Ljava/lang/Object;
+    sget p1, Lsla;->S1:I
+
+    new-instance v0, Lp2f;
+
+    invoke-direct {v0, p1}, Lp2f;-><init>(I)V
+
+    invoke-virtual {p0, v0}, Lqoa;->g(Lu2f;)V
+
+    new-instance p1, Lepa;
+
+    sget v0, Lq0d;->n:I
+
+    invoke-direct {p1, v0}, Lepa;-><init>(I)V
+
+    invoke-virtual {p0, p1}, Lqoa;->e(Ljpa;)V
+
+    invoke-virtual {p0}, Lqoa;->i()Lpoa;
 
     move-result-object p0
 

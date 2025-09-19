@@ -1,48 +1,43 @@
-.class public final synthetic Lgfb;
+.class public abstract synthetic Lgfb;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lja4;
 
-
-# instance fields
-.field public final synthetic a:J
-
-.field public final synthetic b:Lkfb;
-
-.field public final synthetic c:Z
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(JLkfb;Z)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x2
 
-    iput-wide p1, p0, Lgfb;->a:J
+    invoke-static {v0}, Lmw1;->w(I)[I
 
-    iput-object p3, p0, Lgfb;->b:Lkfb;
+    move-result-object v1
 
-    iput-boolean p4, p0, Lgfb;->c:Z
+    array-length v1, v1
+
+    new-array v1, v1, [I
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    :try_start_0
+    aput v2, v1, v3
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :try_start_1
+    aput v0, v1, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    sput-object v1, Lgfb;->$EnumSwitchMapping$0:[I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .registers 5
-
-    new-instance v0, Lone/me/profile/ProfileScreen;
-
-    iget-wide v1, p0, Lgfb;->a:J
-
-    iget-object v3, p0, Lgfb;->b:Lkfb;
-
-    iget-boolean p0, p0, Lgfb;->c:Z
-
-    invoke-direct {v0, v1, v2, v3, p0}, Lone/me/profile/ProfileScreen;-><init>(JLkfb;Z)V
-
-    return-object v0
 .end method

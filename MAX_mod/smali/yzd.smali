@@ -1,23 +1,17 @@
-.class public final Lyzd;
+.class public interface abstract Lyzd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
+# virtual methods
+.method public abstract a()Z
+.end method
 
-.field public final b:J
+.method public abstract dismiss()V
+.end method
 
+.method public abstract g()V
+.end method
 
-# direct methods
-.method public constructor <init>(IJ)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lyzd;->a:I
-
-    iput-wide p2, p0, Lyzd;->b:J
-
-    return-void
+.method public abstract j()Lex4;
 .end method

@@ -4,106 +4,106 @@
 
 
 # instance fields
-.field public final a:I
+.field public final a:Lcl7;
 
-.field public final b:I
+.field public final b:Lcl7;
+
+.field public final c:Lcl7;
+
+.field public final d:Lcl7;
+
+.field public final e:Lcl7;
+
+.field public final f:Lcl7;
+
+.field public final g:Lcl7;
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .registers 3
+.method public constructor <init>(Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;)V
+    .registers 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lhj6;->a:I
+    iput-object p1, p0, Lhj6;->a:Lcl7;
 
-    iput p2, p0, Lhj6;->b:I
+    iput-object p2, p0, Lhj6;->b:Lcl7;
+
+    iput-object p3, p0, Lhj6;->c:Lcl7;
+
+    iput-object p4, p0, Lhj6;->d:Lcl7;
+
+    iput-object p5, p0, Lhj6;->e:Lcl7;
+
+    iput-object p6, p0, Lhj6;->f:Lcl7;
+
+    iput-object p7, p0, Lhj6;->g:Lcl7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+.method public final a(La0c;ZLure;)Ljava/lang/Object;
+    .registers 6
 
-    if-ne p0, p1, :cond_0
+    sget-object v0, Lone/me/sdk/uikit/qr/QrCodeGenerator;->f:Lpxa;
 
-    goto :goto_1
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, v0, Lpxa;->a:Ljava/lang/Object;
+
+    check-cast v0, La0c;
+
+    goto :goto_0
 
     :cond_0
-    instance-of v0, p1, Lhj6;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lhj6;
-
-    iget v0, p0, Lhj6;->a:I
-
-    iget v1, p1, Lhj6;->a:I
-
-    if-eq v0, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget p0, p0, Lhj6;->b:I
-
-    iget p1, p1, Lhj6;->b:I
-
-    if-eq p0, p1, :cond_3
+    move-object v0, v1
 
     :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget v0, p0, Lhj6;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+    invoke-static {v0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    mul-int/lit8 v0, v0, 0x1f
+    if-eqz v0, :cond_2
 
-    iget p0, p0, Lhj6;->b:I
+    if-nez p2, :cond_2
 
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    sget-object p0, Lone/me/sdk/uikit/qr/QrCodeGenerator;->f:Lpxa;
 
-    move-result p0
+    if-eqz p0, :cond_1
 
-    add-int/2addr p0, v0
+    iget-object p0, p0, Lpxa;->b:Ljava/lang/Object;
 
-    return p0
-.end method
+    check-cast p0, Luzb;
 
-.method public final toString()Ljava/lang/String;
-    .registers 5
+    return-object p0
 
-    const-string v0, ", transparent="
+    :cond_1
+    return-object v1
 
-    const-string v1, ")"
+    :cond_2
+    iget-object p2, p0, Lhj6;->f:Lcl7;
 
-    const-string v2, "GradientsLoadingIconContrastColors(filled="
+    invoke-interface {p2}, Lcl7;->getValue()Ljava/lang/Object;
 
-    iget v3, p0, Lhj6;->a:I
+    move-result-object p2
 
-    iget p0, p0, Lhj6;->b:I
+    check-cast p2, Lxwe;
 
-    invoke-static {v2, v3, v0, p0, v1}, Lnh0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    check-cast p2, Laga;
+
+    invoke-virtual {p2}, Laga;->b()Ls04;
+
+    move-result-object p2
+
+    new-instance v0, Lgj6;
+
+    invoke-direct {v0, p1, p0, v1}, Lgj6;-><init>(La0c;Lhj6;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {p2, v0, p3}, Lvyg;->H(Lq04;Lpc6;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

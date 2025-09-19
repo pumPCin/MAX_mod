@@ -1,21 +1,8 @@
-.class public final Lz95;
+.class public interface abstract Lz95;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lz95;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Lz95;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lz95;->a:Lz95;
-
-    return-void
+# virtual methods
+.method public abstract a(Ljvg;Z)V
 .end method

@@ -1,171 +1,57 @@
 .class public final Lh64;
-.super Lkt7;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljv7;
 
 
 # instance fields
-.field public final synthetic c:I
+.field public final synthetic a:I
+
+.field public final b:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/concurrent/Executor;Lplg;I)V
-    .registers 4
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .registers 3
 
-    iput p3, p0, Lh64;->c:I
+    iput p1, p0, Lh64;->a:I
 
-    invoke-direct {p0, p1, p2}, Lkt7;-><init>(Ljava/util/concurrent/Executor;Lplg;)V
+    iput-object p2, p0, Lh64;->b:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method private final a(Lmv7;JJZ)V
+    .registers 7
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Lhz6;)Lp35;
-    .registers 6
+.method public final p(Lmv7;JJZ)V
+    .registers 7
 
-    iget v0, p0, Lh64;->c:I
+    iget p2, p0, Lh64;->a:I
 
-    packed-switch v0, :pswitch_data_0
+    packed-switch p2, :pswitch_data_0
 
-    new-instance v0, Ljava/io/FileInputStream;
-
-    invoke-virtual {p1}, Lhz6;->d()Ljava/io/File;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/io/File;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1}, Lhz6;->d()Ljava/io/File;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/io/File;->length()J
-
-    move-result-wide v1
-
-    long-to-int p1, v1
-
-    invoke-virtual {p0, v0, p1}, Lkt7;->c(Ljava/io/InputStream;I)Lp35;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 
     :pswitch_0
-    iget-object p1, p1, Lhz6;->b:Landroid/net/Uri;
+    check-cast p1, Lhya;
 
-    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    iget-object p0, p0, Lh64;->b:Ljava/lang/Object;
 
-    move-result-object p1
+    check-cast p0, Lj64;
 
-    const/4 v0, 0x5
+    invoke-virtual {p0, p1, p4, p5}, Lj64;->w(Lhya;J)V
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v2, "data:"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    const/16 v0, 0x2c
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v0
-
-    add-int/lit8 v2, v0, 0x1
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    invoke-virtual {p1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, ";"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    move p1, v1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object p1
-
-    array-length v0, p1
-
-    add-int/lit8 v0, v0, -0x1
-
-    aget-object p1, p1, v0
-
-    const-string v0, "base64"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    :goto_0
-    if-eqz p1, :cond_1
-
-    invoke-static {v2, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
-
-    move-result-object p1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {v2}, Landroid/net/Uri;->decode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object p1
-
-    :goto_1
-    new-instance v0, Ljava/io/ByteArrayInputStream;
-
-    invoke-direct {v0, p1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-
-    array-length p1, p1
-
-    invoke-virtual {p0, v0, p1}, Lkt7;->c(Ljava/io/InputStream;I)Lp35;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw p0
+    return-void
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -173,23 +59,196 @@
     .end packed-switch
 .end method
 
-.method public final e()Ljava/lang/String;
-    .registers 1
+.method public final q(Lmv7;JJ)V
+    .registers 17
 
-    iget p0, p0, Lh64;->c:I
+    iget v0, p0, Lh64;->a:I
 
-    packed-switch p0, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
-    const-string p0, "LocalFileFetchProducer"
+    iget-object p0, p0, Lh64;->b:Ljava/lang/Object;
+
+    check-cast p0, Lf7;
+
+    sget-object v1, Luyg;->c:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    sget-boolean p1, Luyg;->d:Z
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Ljava/io/IOException;
+
+    new-instance v0, Ljava/util/ConcurrentModificationException;
+
+    invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
+
+    invoke-direct {p1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    iget-object p0, p0, Lf7;->b:Ljava/lang/Object;
+
+    check-cast p0, Lj64;
+
+    invoke-virtual {p0, p1}, Lj64;->x(Ljava/io/IOException;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lf7;->D()V
+
+    :goto_0
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    move-object p0, v0
+
+    :try_start_1
+    monitor-exit v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
+
+    :pswitch_0
+    check-cast p1, Lhya;
+
+    iget-object p0, p0, Lh64;->b:Ljava/lang/Object;
+
+    check-cast p0, Lj64;
+
+    new-instance v0, Lev7;
+
+    iget-wide v1, p1, Lhya;->a:J
+
+    iget-object v1, p1, Lhya;->b:Ln74;
+
+    iget-object v2, p1, Lhya;->o:Lbee;
+
+    iget-object v3, v2, Lbee;->c:Landroid/net/Uri;
+
+    iget-wide v4, v2, Lbee;->b:J
+
+    move-wide v2, p4
+
+    invoke-direct/range {v0 .. v5}, Lev7;-><init>(Ln74;JJ)V
+
+    iget-object v1, p0, Lj64;->m:Lw9d;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-object v1, v0
+
+    iget-object v0, p0, Lj64;->q:Lz96;
+
+    iget v2, p1, Lhya;->c:I
+
+    const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
+
+    const-wide v9, -0x7fffffffffffffffL    # -4.9E-324
+
+    const/4 v3, -0x1
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    invoke-virtual/range {v0 .. v10}, Lz96;->P(Lev7;IILx46;ILjava/lang/Object;JJ)V
+
+    iget-object p1, p1, Lhya;->Y:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    sub-long/2addr v0, p2
+
+    iput-wide v0, p0, Lj64;->L:J
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Lj64;->y(Z)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final y(Lmv7;JJLjava/io/IOException;I)Lf11;
+    .registers 14
+
+    iget p2, p0, Lh64;->a:I
+
+    packed-switch p2, :pswitch_data_0
+
+    iget-object p0, p0, Lh64;->b:Ljava/lang/Object;
+
+    check-cast p0, Lf7;
+
+    iget-object p0, p0, Lf7;->b:Ljava/lang/Object;
+
+    check-cast p0, Lj64;
+
+    invoke-virtual {p0, p6}, Lj64;->x(Ljava/io/IOException;)V
+
+    sget-object p0, Lay7;->Y:Lf11;
 
     return-object p0
 
     :pswitch_0
-    const-string p0, "DataFetchProducer"
+    check-cast p1, Lhya;
+
+    iget-object p0, p0, Lh64;->b:Ljava/lang/Object;
+
+    check-cast p0, Lj64;
+
+    iget-object p2, p0, Lj64;->q:Lz96;
+
+    new-instance v0, Lev7;
+
+    iget-wide v1, p1, Lhya;->a:J
+
+    iget-object v1, p1, Lhya;->b:Ln74;
+
+    iget-object p3, p1, Lhya;->o:Lbee;
+
+    iget-object p7, p3, Lbee;->c:Landroid/net/Uri;
+
+    iget-wide v4, p3, Lbee;->b:J
+
+    move-wide v2, p4
+
+    invoke-direct/range {v0 .. v5}, Lev7;-><init>(Ln74;JJ)V
+
+    iget p1, p1, Lhya;->c:I
+
+    const/4 p3, 0x1
+
+    invoke-virtual {p2, v0, p1, p6, p3}, Lz96;->R(Lev7;ILjava/io/IOException;Z)V
+
+    iget-object p1, p0, Lj64;->m:Lw9d;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p0, p6}, Lj64;->x(Ljava/io/IOException;)V
+
+    sget-object p0, Lay7;->Y:Lf11;
 
     return-object p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

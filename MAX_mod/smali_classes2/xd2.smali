@@ -1,120 +1,299 @@
-.class public final synthetic Lxd2;
+.class public final Lxd2;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lkm3;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/lang/String;
 
-.field public final synthetic b:J
+.field public final b:J
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public final c:Ljava/lang/CharSequence;
+
+.field public final d:Ljava/lang/String;
+
+.field public final e:Ljava/lang/String;
+
+.field public final f:Z
+
+.field public final g:Z
+
+.field public final h:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;JI)V
-    .registers 5
+.method public constructor <init>(Ljava/lang/String;JLjava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;ZZZ)V
+    .registers 10
 
-    iput p4, p0, Lxd2;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lxd2;->c:Ljava/lang/Object;
+    iput-object p1, p0, Lxd2;->a:Ljava/lang/String;
 
     iput-wide p2, p0, Lxd2;->b:J
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p4, p0, Lxd2;->c:Ljava/lang/CharSequence;
+
+    iput-object p5, p0, Lxd2;->d:Ljava/lang/String;
+
+    iput-object p6, p0, Lxd2;->e:Ljava/lang/String;
+
+    iput-boolean p7, p0, Lxd2;->f:Z
+
+    iput-boolean p8, p0, Lxd2;->g:Z
+
+    iput-boolean p9, p0, Lxd2;->h:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .registers 12
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 9
 
-    iget v0, p0, Lxd2;->a:I
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lxd2;->c:Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    return v0
 
-    check-cast v1, Lopc;
+    :cond_0
+    instance-of v1, p1, Lxd2;
 
-    check-cast p1, Ljava/util/List;
+    const/4 v2, 0x0
 
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    if-nez v1, :cond_1
 
-    move-result-object p1
+    return v2
 
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    :cond_1
+    check-cast p1, Lxd2;
 
-    move-result v0
+    iget-object v1, p0, Lxd2;->a:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    iget-object v3, p1, Lxd2;->a:Ljava/lang/String;
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v1
 
-    check-cast v0, Lvpa;
+    if-nez v1, :cond_2
 
-    iget-wide v2, p0, Lxd2;->b:J
+    return v2
 
-    invoke-virtual {v1, v0, v2, v3}, Lopc;->g(Lvpa;J)V
+    :cond_2
+    iget-wide v3, p0, Lxd2;->b:J
+
+    iget-wide v5, p1, Lxd2;->b:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lxd2;->c:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lxd2;->c:Ljava/lang/CharSequence;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object v1, p0, Lxd2;->d:Ljava/lang/String;
+
+    iget-object v3, p1, Lxd2;->d:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-object v1, p0, Lxd2;->e:Ljava/lang/String;
+
+    iget-object v3, p1, Lxd2;->e:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-boolean v1, p0, Lxd2;->f:Z
+
+    iget-boolean v3, p1, Lxd2;->f:Z
+
+    if-eq v1, v3, :cond_7
+
+    return v2
+
+    :cond_7
+    iget-boolean v1, p0, Lxd2;->g:Z
+
+    iget-boolean v3, p1, Lxd2;->g:Z
+
+    if-eq v1, v3, :cond_8
+
+    return v2
+
+    :cond_8
+    iget-boolean p0, p0, Lxd2;->h:Z
+
+    iget-boolean p1, p1, Lxd2;->h:Z
+
+    if-eq p0, p1, :cond_9
+
+    return v2
+
+    :cond_9
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 5
+
+    iget-object v0, p0, Lxd2;->a:Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
 
     goto :goto_0
 
     :cond_0
-    return-void
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    :pswitch_0
-    move-object v5, v1
+    move-result v0
 
-    check-cast v5, Lyd2;
+    :goto_0
+    const/16 v1, 0x1f
 
-    move-object v8, p1
+    mul-int/2addr v0, v1
 
-    check-cast v8, Ljava/util/Collection;
+    iget-wide v2, p0, Lxd2;->b:J
 
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
 
-    invoke-interface {v8}, Ljava/util/Collection;->size()I
+    move-result v0
 
-    move-result p1
+    iget-object v2, p0, Lxd2;->c:Ljava/lang/CharSequence;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2, v0, v1}, Lee5;->e(Ljava/lang/CharSequence;II)I
 
-    move-result-object p1
+    move-result v0
 
-    filled-new-array {p1}, [Ljava/lang/Object;
+    iget-object v2, p0, Lxd2;->d:Ljava/lang/String;
 
-    move-result-object p1
+    invoke-static {v0, v1, v2}, Lsq3;->d(IILjava/lang/String;)I
 
-    const-string v0, "yd2"
+    move-result v0
 
-    const-string v1, "ValidateMessagesTimeUseCase found some items for delete, size = %d"
+    iget-object v2, p0, Lxd2;->e:Ljava/lang/String;
 
-    invoke-static {v0, v1, p1}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v1, v2}, Lsq3;->d(IILjava/lang/String;)I
 
-    iget-object p1, v5, Lyd2;->h:Lqxc;
+    move-result v0
 
-    new-instance v4, Lwd2;
+    iget-boolean v2, p0, Lxd2;->f:Z
 
-    const/4 v9, 0x0
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
 
-    iget-wide v6, p0, Lxd2;->b:J
+    move-result v0
 
-    invoke-direct/range {v4 .. v9}, Lwd2;-><init>(Ljava/lang/Object;JLjava/lang/Object;I)V
+    iget-boolean v2, p0, Lxd2;->g:Z
 
-    invoke-virtual {p1, v4}, Lqxc;->b(Ljava/lang/Runnable;)Lnp4;
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
 
-    return-void
+    move-result v0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget-boolean p0, p0, Lxd2;->h:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    const-string v0, "ChatItemModel(avatarUrl="
+
+    const-string v1, ", avatarSourceId="
+
+    iget-wide v2, p0, Lxd2;->b:J
+
+    iget-object v4, p0, Lxd2;->a:Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v4, v1}, Lz7e;->t(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", avatarAbbreviation="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lxd2;->c:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", chatName="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lxd2;->d:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", chatLink="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lxd2;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isLoading="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lxd2;->f:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isPrivate="
+
+    const-string v2, ", hasEditLinkPermission="
+
+    iget-boolean v3, p0, Lxd2;->g:Z
+
+    iget-boolean p0, p0, Lxd2;->h:Z
+
+    invoke-static {v1, v2, v0, v3, p0}, Lsq3;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

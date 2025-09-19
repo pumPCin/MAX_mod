@@ -1,51 +1,50 @@
-.class public final Lev;
-.super Lcx3;
+.class public final synthetic Lev;
+.super Led6;
 .source "SourceFile"
 
+# interfaces
+.implements Lbc6;
 
-# instance fields
-.field public X:Ljava/util/List;
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Low;
-
-.field public n0:I
-
-.field public o:Low;
+# static fields
+.field public static final a:Lev;
 
 
 # direct methods
-.method public constructor <init>(Low;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 6
 
-    iput-object p1, p0, Lev;->Z:Low;
+    new-instance v0, Lev;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const-string v4, "getId()J"
+
+    const/4 v5, 0x0
+
+    const/4 v1, 0x1
+
+    const-class v2, Lur6;
+
+    const-string v3, "getId"
+
+    invoke-direct/range {v0 .. v5}, Led6;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sput-object v0, Lev;->a:Lev;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    iput-object p1, p0, Lev;->Y:Ljava/lang/Object;
+    check-cast p1, Lur6;
 
-    iget p1, p0, Lev;->n0:I
+    invoke-interface {p1}, Lur6;->getId()J
 
-    const/high16 v0, -0x80000000
+    move-result-wide p0
 
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lev;->n0:I
-
-    iget-object p1, p0, Lev;->Z:Low;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Low;->m(Llx8;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
 

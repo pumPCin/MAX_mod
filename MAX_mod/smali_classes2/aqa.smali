@@ -1,25 +1,25 @@
-.class public final Laqa;
+.class public abstract Laqa;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/util/concurrent/LinkedBlockingDeque;
+# static fields
+.field public static final a:I
 
-.field public volatile b:Ljh7;
+.field public static final b:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lu7c;->oneme_stickers_search_stickers_list:I
 
-    new-instance v0, Ljava/util/concurrent/LinkedBlockingDeque;
+    sput v0, Laqa;->a:I
 
-    invoke-direct {v0}, Ljava/util/concurrent/LinkedBlockingDeque;-><init>()V
+    sget v0, Lu7c;->oneme_stickers_search_toolbar:I
 
-    iput-object v0, p0, Laqa;->a:Ljava/util/concurrent/LinkedBlockingDeque;
+    sput v0, Laqa;->b:I
 
     return-void
 .end method

@@ -3,270 +3,84 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lfhe;
-
-
-# static fields
-.field public static final Z:Landroid/util/Size;
-
-.field public static final n0:Landroid/util/Range;
+.implements Lcl7;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final X:Lmx4;
+.field public a:Lzb6;
 
-.field public final Y:Landroid/util/Range;
-
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ldxe;
-
-.field public final c:Lnc0;
-
-.field public final o:Landroid/util/Size;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 3
-
-    new-instance v0, Landroid/util/Size;
-
-    const/16 v1, 0x500
-
-    const/16 v2, 0x2d0
-
-    invoke-direct {v0, v1, v2}, Landroid/util/Size;-><init>(II)V
-
-    sput-object v0, Lrmf;->Z:Landroid/util/Size;
-
-    new-instance v0, Landroid/util/Range;
-
-    const/4 v1, 0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/16 v2, 0x3c
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
-
-    sput-object v0, Lrmf;->n0:Landroid/util/Range;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ldxe;Lnc0;Landroid/util/Size;Lmx4;Landroid/util/Range;)V
-    .registers 7
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lrmf;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Lrmf;->b:Ldxe;
-
-    iput-object p3, p0, Lrmf;->c:Lnc0;
-
-    iput-object p4, p0, Lrmf;->o:Landroid/util/Size;
-
-    iput-object p5, p0, Lrmf;->X:Lmx4;
-
-    iput-object p6, p0, Lrmf;->Y:Landroid/util/Range;
-
-    return-void
-.end method
+.field public b:Ljava/lang/Object;
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .registers 14
+.method public final a()Z
+    .registers 2
 
-    sget-object v0, Llie;->p:Landroid/util/Range;
+    iget-object p0, p0, Lrmf;->b:Ljava/lang/Object;
 
-    iget-object v1, p0, Lrmf;->Y:Landroid/util/Range;
+    sget-object v0, Ld6d;->Z:Ld6d;
 
-    invoke-static {v1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-eq p0, v0, :cond_0
 
-    move-result v2
+    const/4 p0, 0x1
 
-    if-nez v2, :cond_0
-
-    invoke-virtual {v1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    sget-object v3, Lrmf;->n0:Landroid/util/Range;
-
-    invoke-virtual {v3, v2}, Landroid/util/Range;->clamp(Ljava/lang/Comparable;)Ljava/lang/Comparable;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    :goto_0
-    move v6, v2
-
-    goto :goto_1
+    return p0
 
     :cond_0
-    const/16 v2, 0x1e
+    const/4 p0, 0x0
 
-    goto :goto_0
+    return p0
+.end method
 
-    :goto_1
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+.method public final getValue()Ljava/lang/Object;
+    .registers 3
 
-    move-result-object v2
+    iget-object v0, p0, Lrmf;->b:Ljava/lang/Object;
 
-    invoke-static {v1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    sget-object v1, Ld6d;->Z:Ld6d;
 
-    move-result v0
+    if-ne v0, v1, :cond_0
 
-    if-eqz v0, :cond_1
+    iget-object v0, p0, Lrmf;->a:Lzb6;
 
-    goto :goto_2
-
-    :cond_1
-    const-string v1, "<UNSPECIFIED>"
-
-    :goto_2
-    filled-new-array {v2, v1}, [Ljava/lang/Object;
+    invoke-interface {v0}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object v0
 
-    const-string v1, "Default resolved frame rate: %dfps. [Expected operating range: %s]"
+    iput-object v0, p0, Lrmf;->b:Ljava/lang/Object;
 
-    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lrmf;->c:Lnc0;
+    iput-object v0, p0, Lrmf;->a:Lzb6;
 
-    iget-object v12, v0, Lnc0;->c:Landroid/util/Range;
+    :cond_0
+    iget-object p0, p0, Lrmf;->b:Ljava/lang/Object;
 
-    iget-object v0, p0, Lrmf;->X:Lmx4;
+    return-object p0
+.end method
 
-    iget v4, v0, Lmx4;->b:I
+.method public final toString()Ljava/lang/String;
+    .registers 2
 
-    iget-object v1, p0, Lrmf;->o:Landroid/util/Size;
-
-    invoke-virtual {v1}, Landroid/util/Size;->getWidth()I
-
-    move-result v8
-
-    sget-object v2, Lrmf;->Z:Landroid/util/Size;
-
-    invoke-virtual {v2}, Landroid/util/Size;->getWidth()I
-
-    move-result v9
-
-    invoke-virtual {v1}, Landroid/util/Size;->getHeight()I
-
-    move-result v10
-
-    invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
-
-    move-result v11
-
-    const v3, 0xd59f80
-
-    const/16 v5, 0x8
-
-    const/16 v7, 0x1e
-
-    invoke-static/range {v3 .. v12}, Ltlf;->c(IIIIIIIIILandroid/util/Range;)I
-
-    move-result v2
-
-    sget-object v3, Lpx4;->e:Ljava/util/HashMap;
-
-    iget-object v4, p0, Lrmf;->a:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/Map;
-
-    if-eqz v3, :cond_2
-
-    invoke-interface {v3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {p0}, Lrmf;->a()Z
 
     move-result v0
 
-    goto :goto_3
+    if-eqz v0, :cond_0
 
-    :cond_2
-    const/4 v0, -0x1
-
-    :goto_3
-    invoke-static {v0, v4}, Ltlf;->a(ILjava/lang/String;)Lkc0;
-
-    move-result-object v3
-
-    invoke-static {}, Ljc0;->d()Lct4;
-
-    move-result-object v5
-
-    iput-object v4, v5, Lct4;->a:Ljava/lang/Object;
-
-    iget-object p0, p0, Lrmf;->b:Ldxe;
-
-    if-eqz p0, :cond_3
-
-    iput-object p0, v5, Lct4;->c:Ljava/lang/Object;
-
-    iput-object v1, v5, Lct4;->o:Ljava/lang/Object;
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {p0}, Lrmf;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    iput-object p0, v5, Lct4;->o0:Ljava/lang/Object;
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    iput-object p0, v5, Lct4;->Z:Ljava/lang/Object;
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    iput-object p0, v5, Lct4;->b:Ljava/lang/Object;
-
-    iput-object v3, v5, Lct4;->Y:Ljava/lang/Object;
-
-    invoke-virtual {v5}, Lct4;->b()Ljc0;
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    :cond_3
-    new-instance p0, Ljava/lang/NullPointerException;
+    :cond_0
+    const-string p0, "Lazy value not initialized yet."
 
-    const-string v0, "Null inputTimebase"
-
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-object p0
 .end method

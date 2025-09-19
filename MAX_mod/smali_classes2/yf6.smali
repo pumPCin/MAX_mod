@@ -1,25 +1,26 @@
 .class public final Lyf6;
-.super Lcx3;
-.source "SourceFile"
+.super Ljx3;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public X:I
 
-.field public final synthetic Y:Lzf6;
+.field public Y:Lks5;
 
-.field public Z:I
+.field public final synthetic Z:Lzf6;
 
-.field public o:Lzf6;
+.field public synthetic o:Ljava/lang/Object;
+
+.field public r0:Lse6;
 
 
 # direct methods
-.method public constructor <init>(Lzf6;Lcx3;)V
+.method public constructor <init>(Lzf6;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput-object p1, p0, Lyf6;->Y:Lzf6;
+    iput-object p1, p0, Lyf6;->Z:Lzf6;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -27,29 +28,23 @@
 
 # virtual methods
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .registers 3
 
-    iput-object p1, p0, Lyf6;->X:Ljava/lang/Object;
+    iput-object p1, p0, Lyf6;->o:Ljava/lang/Object;
 
-    iget p1, p0, Lyf6;->Z:I
+    iget p1, p0, Lyf6;->X:I
 
     const/high16 v0, -0x80000000
 
     or-int/2addr p1, v0
 
-    iput p1, p0, Lyf6;->Z:I
+    iput p1, p0, Lyf6;->X:I
 
-    const-wide/16 v3, 0x0
+    iget-object p1, p0, Lyf6;->Z:Lzf6;
 
-    const/4 v5, 0x0
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lyf6;->Y:Lzf6;
-
-    const-wide/16 v1, 0x0
-
-    move-object v6, p0
-
-    invoke-virtual/range {v0 .. v6}, Lzf6;->a(JJLjava/lang/Integer;Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, p0}, Lzf6;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

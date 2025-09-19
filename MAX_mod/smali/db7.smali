@@ -1,67 +1,73 @@
 .class public final Ldb7;
-.super Lvcf;
+.super Lbvc;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Ljava/lang/Object;
-
-
 # instance fields
-.field public b:Ljava/lang/Object;
+.field public b:I
+
+.field public final synthetic c:Lpc6;
+
+.field public final synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lpc6;Ljava/lang/Object;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    new-instance v0, Ljava/lang/Object;
+    iput-object p1, p0, Ldb7;->c:Lpc6;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Ldb7;->o:Ljava/lang/Object;
 
-    sput-object v0, Ldb7;->c:Ljava/lang/Object;
+    invoke-direct {p0, p3}, Lbvc;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
 
-    iget-object p0, p0, Ldb7;->b:Ljava/lang/Object;
+    iget v0, p0, Ldb7;->b:I
 
-    sget-object v0, Ldb7;->c:Ljava/lang/Object;
+    const/4 v1, 0x2
 
-    if-eq p0, v0, :cond_0
+    const/4 v2, 0x1
 
-    const/4 p0, 0x1
+    if-eqz v0, :cond_1
 
-    return p0
+    if-ne v0, v2, :cond_0
 
-    :cond_0
-    const/4 p0, 0x0
+    iput v1, p0, Ldb7;->b:I
 
-    return p0
-.end method
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-.method public final next()Ljava/lang/Object;
-    .registers 3
-
-    iget-object v0, p0, Ldb7;->b:Ljava/lang/Object;
-
-    sget-object v1, Ldb7;->c:Ljava/lang/Object;
-
-    if-eq v0, v1, :cond_0
-
-    iput-object v1, p0, Ldb7;->b:Ljava/lang/Object;
-
-    return-object v0
+    return-object p1
 
     :cond_0
-    new-instance p0, Ljava/util/NoSuchElementException;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+    const-string p1, "This coroutine had already completed"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
+
+    :cond_1
+    iput v2, p0, Ldb7;->b:I
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ldb7;->c:Lpc6;
+
+    invoke-static {v1, p1}, Lvkf;->e(ILjava/lang/Object;)V
+
+    iget-object v0, p0, Ldb7;->o:Ljava/lang/Object;
+
+    invoke-interface {p1, v0, p0}, Lpc6;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

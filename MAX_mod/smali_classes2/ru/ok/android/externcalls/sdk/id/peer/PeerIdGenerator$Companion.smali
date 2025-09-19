@@ -26,9 +26,9 @@
         "MAX_JS_SAFE_LONG",
         "J",
         "MIN_JS_SAFE_LONG",
-        "Lkz7;",
+        "Lp28;",
         "PEER_ID_RANGE",
-        "Lkz7;",
+        "Lp28;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -50,7 +50,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lwc4;)V
+.method public synthetic constructor <init>(Lld4;)V
     .registers 2
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/id/peer/PeerIdGenerator$Companion;-><init>()V

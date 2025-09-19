@@ -1,5 +1,5 @@
 .class public final Lok1;
-.super Lvk1;
+.super Ldl1;
 .source "SourceFile"
 
 
@@ -13,7 +13,7 @@
 
     new-instance v0, Lok1;
 
-    invoke-direct {v0}, Lvk1;-><init>()V
+    invoke-direct {v0}, Ldl1;-><init>()V
 
     sput-object v0, Lok1;->D:Lok1;
 
@@ -47,7 +47,7 @@
 .method public final hashCode()I
     .registers 1
 
-    const p0, 0x7f1049e7
+    const p0, -0x343cebf4    # -2.5569304E7f
 
     return p0
 .end method
@@ -55,7 +55,7 @@
 .method public final toString()Ljava/lang/String;
     .registers 1
 
-    const-string p0, "RecordStopDialog"
+    const-string p0, "OpenCallChat"
 
     return-object p0
 .end method

@@ -1,23 +1,13 @@
-.class public interface abstract Luvf;
+.class public final Luvf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract I()I
-.end method
+# instance fields
+.field public a:Ltvf;
 
-.method public abstract Y()V
-.end method
+.field public b:Z
 
-.method public abstract b0()I
-.end method
+.field public c:Ljava/lang/String;
 
-.method public abstract f()I
-.end method
-
-.method public abstract n(Landroid/view/Surface;)V
-.end method
-
-.method public abstract r()I
-.end method
+.field public d:Ljava/lang/String;

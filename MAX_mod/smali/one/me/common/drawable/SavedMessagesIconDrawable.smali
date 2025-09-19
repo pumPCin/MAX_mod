@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lxue;
+.implements Lx3f;
 
 
 # annotations
@@ -17,7 +17,7 @@
     d2 = {
         "Lone/me/common/drawable/SavedMessagesIconDrawable;",
         "Landroid/graphics/drawable/Drawable;",
-        "Lxue;",
+        "Lx3f;",
         "<init>",
         "()V",
         "Landroid/content/res/Resources;",
@@ -28,7 +28,7 @@
         "attrs",
         "Landroid/content/res/Resources$Theme;",
         "theme",
-        "Lncf;",
+        "Lylf;",
         "inflate",
         "(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
         "",
@@ -49,10 +49,10 @@
         "canvas",
         "draw",
         "(Landroid/graphics/Canvas;)V",
-        "Loma;",
+        "Lera;",
         "newAttrs",
         "onThemeChanged",
-        "(Loma;)V",
+        "(Lera;)V",
         "getIntrinsicWidth",
         "getIntrinsicHeight",
         "mutate",
@@ -63,7 +63,7 @@
         "iconDrawable",
         "Landroid/graphics/drawable/Drawable;",
         "Companion",
-        "ovc",
+        "u3d",
         "common_release"
     }
     k = 0x1
@@ -77,7 +77,7 @@
 
 
 # static fields
-.field private static final Companion:Lovc;
+.field private static final Companion:Lu3d;
 
 .field public static final NORMAL_ICON_SIZE:I = 0x18
     .annotation runtime Ljava/lang/Deprecated;
@@ -105,11 +105,11 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    new-instance v0, Lovc;
+    new-instance v0, Lu3d;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lone/me/common/drawable/SavedMessagesIconDrawable;->Companion:Lovc;
+    sput-object v0, Lone/me/common/drawable/SavedMessagesIconDrawable;->Companion:Lu3d;
 
     return-void
 .end method
@@ -225,7 +225,7 @@
 
     int-to-float p0, p0
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -237,7 +237,7 @@
 
     mul-float/2addr p0, v0
 
-    invoke-static {p0}, Lg53;->C(F)I
+    invoke-static {p0}, Lya6;->G(F)I
 
     move-result p0
 
@@ -251,7 +251,7 @@
 
     int-to-float p0, p0
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -263,7 +263,7 @@
 
     mul-float/2addr p0, v0
 
-    invoke-static {p0}, Lg53;->C(F)I
+    invoke-static {p0}, Lya6;->G(F)I
 
     move-result p0
 
@@ -281,13 +281,13 @@
 .method public inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
     .registers 5
 
-    sget p2, Lmxb;->favorites_fill_24:I
+    sget p2, Lr4c;->favorites_fill_24:I
 
-    sget-object p3, Lgmc;->a:Ljava/lang/ThreadLocal;
+    sget-object p3, Lmuc;->a:Ljava/lang/ThreadLocal;
 
     const/4 p3, 0x0
 
-    invoke-static {p1, p2, p3}, Lbmc;->a(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, p2, p3}, Lhuc;->a(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -343,7 +343,7 @@
 
     int-to-float v0, v0
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -355,7 +355,7 @@
 
     mul-float/2addr v0, v1
 
-    invoke-static {v0}, Lg53;->C(F)I
+    invoke-static {v0}, Lya6;->G(F)I
 
     move-result v0
 
@@ -365,7 +365,7 @@
 
     int-to-float p1, p1
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -377,7 +377,7 @@
 
     mul-float/2addr p1, v0
 
-    invoke-static {p1}, Lg53;->C(F)I
+    invoke-static {p1}, Lya6;->G(F)I
 
     move-result p1
 
@@ -388,7 +388,7 @@
 
     int-to-float p1, p1
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -400,7 +400,7 @@
 
     mul-float/2addr p1, v0
 
-    invoke-static {p1}, Lg53;->C(F)I
+    invoke-static {p1}, Lya6;->G(F)I
 
     move-result p1
 
@@ -417,18 +417,18 @@
     return-void
 .end method
 
-.method public onThemeChanged(Loma;)V
+.method public onThemeChanged(Lera;)V
     .registers 3
 
     iget-object v0, p0, Lone/me/common/drawable/SavedMessagesIconDrawable;->backgroundDrawable:Landroid/graphics/drawable/ShapeDrawable;
 
-    invoke-interface {p1}, Loma;->b()Lef0;
+    invoke-interface {p1}, Lera;->b()Lie0;
 
     move-result-object p1
 
-    iget-object p1, p1, Lef0;->a:Ldf0;
+    iget-object p1, p1, Lie0;->a:Lhe0;
 
-    iget p1, p1, Ldf0;->n:I
+    iget p1, p1, Lhe0;->n:I
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 

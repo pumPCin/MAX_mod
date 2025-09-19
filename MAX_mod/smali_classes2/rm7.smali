@@ -1,127 +1,150 @@
 .class public final Lrm7;
-.super Ljava/lang/Object;
+.super Lpke;
 .source "SourceFile"
 
 # interfaces
-.implements Lan7;
-.implements Lym7;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lrm7;",
-            ">;"
-        }
-    .end annotation
-.end field
+.implements Lx3f;
 
 
 # instance fields
-.field public final X:Ljava/lang/String;
-
-.field public final a:J
-
-.field public final b:J
-
-.field public final c:Z
-
-.field public final o:Ljava/lang/Long;
+.field public final o:Landroidx/appcompat/widget/AppCompatTextView;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Landroidx/appcompat/widget/AppCompatTextView;)V
+    .registers 5
 
-    new-instance v0, Ldn6;
+    invoke-direct {p0, p1}, Lpke;-><init>(Landroid/view/View;)V
+
+    iput-object p1, p0, Lrm7;->o:Landroidx/appcompat/widget/AppCompatTextView;
+
+    new-instance v0, Lloc;
 
     const/16 v1, 0x1c
 
-    invoke-direct {v0, v1}, Ldn6;-><init>(I)V
+    int-to-float v1, v1
 
-    sput-object v0, Lrm7;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    return-void
-.end method
+    move-result-object v2
 
-.method public constructor <init>(JJZLjava/lang/Long;Ljava/lang/String;)V
-    .registers 8
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v2
 
-    iput-wide p1, p0, Lrm7;->a:J
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
 
-    iput-wide p3, p0, Lrm7;->b:J
+    mul-float/2addr v1, v2
 
-    iput-boolean p5, p0, Lrm7;->c:Z
+    invoke-static {v1}, Lya6;->G(F)I
 
-    iput-object p6, p0, Lrm7;->o:Ljava/lang/Long;
+    move-result v1
 
-    iput-object p7, p0, Lrm7;->X:Ljava/lang/String;
+    const/4 v2, -0x1
+
+    invoke-direct {v0, v2, v1}, Lloc;-><init>(II)V
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 v2, 0x41a40000    # 20.5f
+
+    mul-float/2addr v1, v2
+
+    float-to-int v1, v1
+
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    const/16 v0, 0x10
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setGravity(I)V
+
+    const/16 v0, 0xc
+
+    int-to-float v0, v0
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v1, v0
+
+    invoke-static {v1}, Lya6;->G(F)I
+
+    move-result v1
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v0, v2
+
+    invoke-static {v0}, Lya6;->G(F)I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v1, v2, v0, v2}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    sget-object v0, Lyu4;->t0:Lbx9;
+
+    invoke-virtual {v0, p1}, Lbx9;->l(Landroid/view/View;)Lera;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lrm7;->onThemeChanged(Lera;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
+.method public final onThemeChanged(Lera;)V
+    .registers 3
 
-    const/4 p0, 0x0
+    sget-object v0, Lclf;->p:Lv2f;
 
-    return p0
-.end method
+    iget-object p0, p0, Lrm7;->o:Landroidx/appcompat/widget/AppCompatTextView;
 
-.method public final n()Ljava/lang/String;
-    .registers 1
+    invoke-static {v0, p0}, Lv2f;->d(Lv2f;Landroid/widget/TextView;)V
 
-    iget-object p0, p0, Lrm7;->X:Ljava/lang/String;
+    invoke-interface {p1}, Lera;->getText()Lh1f;
 
-    return-object p0
-.end method
+    move-result-object v0
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    iget v0, v0, Lh1f;->i:I
 
-    iget-wide v0, p0, Lrm7;->a:J
+    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+    invoke-interface {p1}, Lera;->b()Lie0;
 
-    iget-wide v0, p0, Lrm7;->b:J
+    move-result-object p1
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+    iget p1, p1, Lie0;->l:I
 
-    iget-boolean p2, p0, Lrm7;->c:Z
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-object p2, p0, Lrm7;->o:Ljava/lang/Long;
-
-    if-nez p2, :cond_0
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    :goto_0
-    iget-object p0, p0, Lrm7;->X:Ljava/lang/String;
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
     return-void
 .end method

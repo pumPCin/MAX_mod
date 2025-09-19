@@ -62,7 +62,7 @@
 
     const-string p0, "Unknown camera error: "
 
-    invoke-static {p1, p0}, La78;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p0}, Lyv7;->e(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

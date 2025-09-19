@@ -1,72 +1,68 @@
-.class public final Lmq9;
+.class public final synthetic Lmq9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lze1;
+.implements Lc6;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lnq9;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public synthetic constructor <init>(Lnq9;I)V
+    .registers 3
+
+    iput p2, p0, Lmq9;->a:I
+
+    iput-object p1, p0, Lmq9;->b:Lnq9;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
-
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
-
-    iput-object v0, p0, Lmq9;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCallParticipantNetworkStatusChanged(Ljava/util/List;)V
+.method public final run()V
     .registers 3
 
-    move-object v0, p1
+    iget v0, p0, Lmq9;->a:I
 
-    check-cast v0, Ljava/util/ArrayList;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+    new-instance v0, Lej0;
 
-    move-result v0
+    const/16 v1, 0x15
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0, v1}, Lej0;-><init>(I)V
 
-    goto :goto_1
+    iget-object p0, p0, Lmq9;->b:Lnq9;
 
-    :cond_0
-    iget-object p0, p0, Lmq9;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    invoke-virtual {p0, v0}, Ly2;->n(Lsm3;)V
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lze1;
-
-    invoke-interface {v0, p1}, Lze1;->onCallParticipantNetworkStatusChanged(Ljava/util/List;)V
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
     return-void
+
+    :pswitch_0
+    new-instance v0, Lej0;
+
+    const/16 v1, 0x14
+
+    invoke-direct {v0, v1}, Lej0;-><init>(I)V
+
+    iget-object p0, p0, Lmq9;->b:Lnq9;
+
+    invoke-virtual {p0, v0}, Ly2;->n(Lsm3;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

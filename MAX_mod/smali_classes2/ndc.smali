@@ -1,126 +1,92 @@
-.class public final Lndc;
+.class public abstract Lndc;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lrdc;
 
 
-# instance fields
-.field public final a:Lgdc;
+# static fields
+.field public static AsyncViewStub:[I = null
 
-.field public final b:Z
+.field public static AsyncViewStub_layout:I = 0x0
+
+.field public static LongRoundedTitleSubtitleButton:[I = null
+
+.field public static LongRoundedTitleSubtitleButton_lrts_subtitle:I = 0x0
+
+.field public static LongRoundedTitleSubtitleButton_lrts_title:I = 0x1
+
+.field public static PopupLayout:[I = null
+
+.field public static PopupLayout_sensitivity:I = 0x0
+
+.field public static RoundedRectConstraintLayout:[I = null
+
+.field public static RoundedRectConstraintLayout_roundRadius:I = 0x0
+
+.field public static RoundedRectFrameLayout:[I = null
+
+.field public static RoundedRectFrameLayout_cornersRadius:I = 0x0
+
+.field public static TamLoadingView:[I = null
+
+.field public static TamLoadingView_tlv_auto_repeat:I = 0x0
+
+.field public static TamLoadingView_tlv_network_fetch:I = 0x1
 
 
 # direct methods
-.method public constructor <init>(Lgdc;Z)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lndc;->a:Lgdc;
-
-    iput-boolean p2, p0, Lndc;->b:Z
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Lndc;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lndc;
-
-    iget-object v0, p0, Lndc;->a:Lgdc;
-
-    iget-object v1, p1, Lndc;->a:Lgdc;
-
-    if-eq v0, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-boolean p0, p0, Lndc;->b:Z
-
-    iget-boolean p1, p1, Lndc;->b:Z
-
-    if-eq p0, p1, :cond_3
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
+.method public static constructor <clinit>()V
     .registers 2
 
-    iget-object v0, p0, Lndc;->a:Lgdc;
+    const v0, 0x7f040594
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    filled-new-array {v0}, [I
 
-    move-result v0
+    move-result-object v0
 
-    mul-int/lit8 v0, v0, 0x1f
+    sput-object v0, Lndc;->AsyncViewStub:[I
 
-    iget-boolean p0, p0, Lndc;->b:Z
+    const v0, 0x7f040609
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    const v1, 0x7f04060a
 
-    move-result p0
+    filled-new-array {v0, v1}, [I
 
-    add-int/2addr p0, v0
+    move-result-object v0
 
-    return p0
-.end method
+    sput-object v0, Lndc;->LongRoundedTitleSubtitleButton:[I
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    const v0, 0x7f04074f
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    filled-new-array {v0}, [I
 
-    const-string v1, "OnTyping(type="
+    move-result-object v0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    sput-object v0, Lndc;->PopupLayout:[I
 
-    iget-object v1, p0, Lndc;->a:Lgdc;
+    const v0, 0x7f040728
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    filled-new-array {v0}, [I
 
-    const-string v1, ", isTyping="
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sput-object v0, Lndc;->RoundedRectConstraintLayout:[I
 
-    iget-boolean p0, p0, Lndc;->b:Z
+    const v0, 0x7f04031a
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    filled-new-array {v0}, [I
 
-    const-string p0, ")"
+    move-result-object v0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sput-object v0, Lndc;->RoundedRectFrameLayout:[I
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const v0, 0x7f040898
 
-    move-result-object p0
+    const v1, 0x7f040899
 
-    return-object p0
+    filled-new-array {v0, v1}, [I
+
+    move-result-object v0
+
+    sput-object v0, Lndc;->TamLoadingView:[I
+
+    return-void
 .end method

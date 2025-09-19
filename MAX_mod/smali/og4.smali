@@ -2,133 +2,244 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ln5d;
-
 
 # instance fields
-.field public final synthetic a:Lpg4;
+.field public final synthetic a:I
+
+.field public final b:J
+
+.field public final c:J
+
+.field public d:J
+
+.field public e:J
+
+.field public f:J
+
+.field public g:J
+
+.field public h:J
+
+.field public i:J
+
+.field public j:F
+
+.field public k:F
+
+.field public l:F
+
+.field public m:J
+
+.field public n:J
+
+.field public o:J
 
 
 # direct methods
-.method public constructor <init>(Lpg4;)V
-    .registers 2
+.method public synthetic constructor <init>(IJJ)V
+    .registers 6
+
+    iput p1, p0, Log4;->a:I
+
+    iput-wide p2, p0, Log4;->b:J
+
+    iput-wide p4, p0, Log4;->c:J
+
+    const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
+
+    iput-wide p1, p0, Log4;->d:J
+
+    iput-wide p1, p0, Log4;->e:J
+
+    iput-wide p1, p0, Log4;->g:J
+
+    iput-wide p1, p0, Log4;->h:J
+
+    const p1, 0x3f7851ec    # 0.97f
+
+    iput p1, p0, Log4;->k:F
+
+    const p1, 0x3f83d70a    # 1.03f
+
+    iput p1, p0, Log4;->j:F
+
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    iput p1, p0, Log4;->l:F
+
+    const-wide p1, -0x7fffffffffffffffL    # -4.9E-324
+
+    iput-wide p1, p0, Log4;->m:J
+
+    iput-wide p1, p0, Log4;->f:J
+
+    iput-wide p1, p0, Log4;->i:J
+
+    iput-wide p1, p0, Log4;->n:J
+
+    iput-wide p1, p0, Log4;->o:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Log4;->a:Lpg4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()Z
-    .registers 1
+.method public final a()V
+    .registers 8
 
-    const/4 p0, 0x1
+    iget v0, p0, Log4;->a:I
 
-    return p0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public final e(J)Ll5d;
-    .registers 15
+    iget-wide v0, p0, Log4;->d:J
 
-    iget-object p0, p0, Log4;->a:Lpg4;
+    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    iget-object v0, p0, Lpg4;->s0:Ljava/lang/Object;
+    cmp-long v4, v0, v2
 
-    check-cast v0, Lvce;
+    if-eqz v4, :cond_3
 
-    iget v0, v0, Lvce;->f:I
+    iget-wide v4, p0, Log4;->e:J
 
-    int-to-long v0, v0
+    cmp-long v6, v4, v2
 
-    mul-long/2addr v0, p1
+    if-eqz v6, :cond_0
 
-    const-wide/32 v2, 0xf4240
+    goto :goto_0
 
-    div-long/2addr v0, v2
+    :cond_0
+    iget-wide v4, p0, Log4;->g:J
 
-    iget-wide v2, p0, Lpg4;->b:J
+    cmp-long v6, v4, v2
 
-    invoke-static {v0, v1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    if-eqz v6, :cond_1
 
-    move-result-object v0
+    cmp-long v6, v0, v4
 
-    iget-wide v4, p0, Lpg4;->c:J
+    if-gez v6, :cond_1
 
-    sub-long v6, v4, v2
+    move-wide v0, v4
 
-    invoke-static {v6, v7}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    :cond_1
+    iget-wide v4, p0, Log4;->h:J
 
-    move-result-object v1
+    cmp-long v6, v4, v2
 
-    invoke-virtual {v0, v1}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    if-eqz v6, :cond_2
 
-    move-result-object v0
+    cmp-long v6, v0, v4
 
-    iget-wide v6, p0, Lpg4;->X:J
+    if-lez v6, :cond_2
 
-    invoke-static {v6, v7}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    goto :goto_0
 
-    move-result-object v1
+    :cond_2
+    move-wide v4, v0
 
-    invoke-virtual {v0, v1}, Ljava/math/BigInteger;->divide(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    goto :goto_0
 
-    move-result-object v0
+    :cond_3
+    move-wide v4, v2
 
-    invoke-virtual {v0}, Ljava/math/BigInteger;->longValue()J
+    :goto_0
+    iget-wide v0, p0, Log4;->f:J
 
-    move-result-wide v0
+    cmp-long v0, v0, v4
 
-    add-long/2addr v0, v2
+    if-nez v0, :cond_4
 
-    const-wide/16 v2, 0x7530
+    goto :goto_1
 
-    sub-long v6, v0, v2
+    :cond_4
+    iput-wide v4, p0, Log4;->f:J
 
-    iget-wide v8, p0, Lpg4;->b:J
+    iput-wide v4, p0, Log4;->i:J
 
-    const-wide/16 v0, 0x1
+    iput-wide v2, p0, Log4;->n:J
 
-    sub-long v10, v4, v0
+    iput-wide v2, p0, Log4;->o:J
 
-    invoke-static/range {v6 .. v11}, Laif;->j(JJJ)J
+    iput-wide v2, p0, Log4;->m:J
 
-    move-result-wide v0
+    :goto_1
+    return-void
 
-    new-instance p0, Ll5d;
+    :pswitch_0
+    iget-wide v0, p0, Log4;->d:J
 
-    new-instance v2, Lr5d;
+    const-wide v2, -0x7fffffffffffffffL    # -4.9E-324
 
-    invoke-direct {v2, p1, p2, v0, v1}, Lr5d;-><init>(JJ)V
+    cmp-long v4, v0, v2
 
-    invoke-direct {p0, v2, v2}, Ll5d;-><init>(Lr5d;Lr5d;)V
+    if-eqz v4, :cond_7
 
-    return-object p0
-.end method
+    iget-wide v4, p0, Log4;->e:J
 
-.method public final f()J
-    .registers 6
+    cmp-long v6, v4, v2
 
-    iget-object p0, p0, Log4;->a:Lpg4;
+    if-eqz v6, :cond_5
 
-    iget-object v0, p0, Lpg4;->s0:Ljava/lang/Object;
+    move-wide v0, v4
 
-    check-cast v0, Lvce;
+    :cond_5
+    iget-wide v4, p0, Log4;->g:J
 
-    iget-wide v1, p0, Lpg4;->X:J
+    cmp-long v6, v4, v2
 
-    const-wide/32 v3, 0xf4240
+    if-eqz v6, :cond_6
 
-    mul-long/2addr v1, v3
+    cmp-long v6, v0, v4
 
-    iget p0, v0, Lvce;->f:I
+    if-gez v6, :cond_6
 
-    int-to-long v3, p0
+    move-wide v0, v4
 
-    div-long/2addr v1, v3
+    :cond_6
+    iget-wide v4, p0, Log4;->h:J
 
-    return-wide v1
+    cmp-long v6, v4, v2
+
+    if-eqz v6, :cond_8
+
+    cmp-long v6, v0, v4
+
+    if-lez v6, :cond_8
+
+    move-wide v0, v4
+
+    goto :goto_2
+
+    :cond_7
+    move-wide v0, v2
+
+    :cond_8
+    :goto_2
+    iget-wide v4, p0, Log4;->f:J
+
+    cmp-long v4, v4, v0
+
+    if-nez v4, :cond_9
+
+    goto :goto_3
+
+    :cond_9
+    iput-wide v0, p0, Log4;->f:J
+
+    iput-wide v0, p0, Log4;->i:J
+
+    iput-wide v2, p0, Log4;->n:J
+
+    iput-wide v2, p0, Log4;->o:J
+
+    iput-wide v2, p0, Log4;->m:J
+
+    :goto_3
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,3 +1,3 @@
-.class public final Lkwg;
-.super Lwqg;
+.class public interface abstract Lkwg;
+.super Ljava/lang/Object;
 .source "SourceFile"

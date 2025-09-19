@@ -1,19 +1,22 @@
 .class public final Lcob;
-.super Ljob;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lgob;
 
 
 # instance fields
-.field public final a:Landroid/content/Intent;
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;)V
-    .registers 2
+.method public constructor <init>(J)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcob;->a:Landroid/content/Intent;
+    iput-wide p1, p0, Lcob;->a:J
 
     return-void
 .end method
@@ -21,7 +24,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .registers 7
 
     const/4 v0, 0x1
 
@@ -41,15 +44,13 @@
     :cond_1
     check-cast p1, Lcob;
 
-    iget-object p0, p0, Lcob;->a:Landroid/content/Intent;
+    iget-wide v3, p0, Lcob;->a:J
 
-    iget-object p1, p1, Lcob;->a:Landroid/content/Intent;
+    iget-wide p0, p1, Lcob;->a:J
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    cmp-long p0, v3, p0
 
-    move-result p0
-
-    if-nez p0, :cond_2
+    if-eqz p0, :cond_2
 
     return v2
 
@@ -58,11 +59,11 @@
 .end method
 
 .method public final hashCode()I
-    .registers 1
+    .registers 3
 
-    iget-object p0, p0, Lcob;->a:Landroid/content/Intent;
+    iget-wide v0, p0, Lcob;->a:J
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
     move-result p0
 
@@ -70,23 +71,15 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .registers 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "ChatUpdate(requestId="
 
-    const-string v1, "SelectPhotoFromCamera(intent="
+    const-string v1, ")"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-wide v2, p0, Lcob;->a:J
 
-    iget-object p0, p0, Lcob;->a:Landroid/content/Intent;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, v3, v0, v1}, Lwsf;->e(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

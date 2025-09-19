@@ -1,5 +1,5 @@
 .class final Lru/ok/tamtam/chats/ChatsEventsByBus;
-.super Lvi0;
+.super Lai0;
 .source "SourceFile"
 
 
@@ -10,15 +10,15 @@
     }
     d2 = {
         "Lru/ok/tamtam/chats/ChatsEventsByBus;",
-        "Lvi0;",
-        "Lxdf;",
+        "Lai0;",
+        "Lknf;",
         "updateMessageEvent",
-        "Lncf;",
+        "Lylf;",
         "onEvent",
-        "(Lxdf;)V",
-        "Li13;",
+        "(Lknf;)V",
+        "Lm13;",
         "chatsUpdateEvent",
-        "(Li13;)V",
+        "(Lm13;)V",
         "tamtam-android-sdk_release"
     }
     k = 0x1
@@ -32,48 +32,21 @@
 
 
 # virtual methods
-.method public final onEvent(Li13;)V
+.method public final onEvent(Lknf;)V
     .registers 5
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .annotation runtime Lpee;
+    .annotation runtime Line;
     .end annotation
 
-    new-instance v0, Lru2;
-
-    iget-object v1, p1, Li13;->b:Ljava/util/Collection;
-
-    new-instance v2, Lls;
-
-    invoke-direct {v2, v1}, Lls;-><init>(Ljava/util/Collection;)V
-
-    iget-boolean v1, p1, Li13;->c:Z
-
-    iget-object p1, p1, Li13;->n0:Ljava/util/Set;
-
-    invoke-direct {v0, v2, v1, p1}, Lru2;-><init>(Ljava/util/Set;ZLjava/util/Set;)V
-
-    invoke-virtual {p0, v0}, Lvi0;->a(Ltu2;)V
-
-    return-void
-.end method
-
-.method public final onEvent(Lxdf;)V
-    .registers 5
-    .annotation build Landroidx/annotation/Keep;
-    .end annotation
-
-    .annotation runtime Lpee;
-    .end annotation
-
-    iget-boolean v0, p1, Lxdf;->X:Z
+    iget-boolean v0, p1, Lknf;->X:Z
 
     if-eqz v0, :cond_0
 
-    new-instance v0, Lru2;
+    new-instance v0, Ltu2;
 
-    iget-wide v1, p1, Lxdf;->b:J
+    iget-wide v1, p1, Lknf;->b:J
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -85,12 +58,39 @@
 
     const/4 v1, 0x0
 
-    sget-object v2, Le35;->a:Le35;
+    sget-object v2, Lz45;->a:Lz45;
 
-    invoke-direct {v0, p1, v1, v2}, Lru2;-><init>(Ljava/util/Set;ZLjava/util/Set;)V
+    invoke-direct {v0, p1, v1, v2}, Ltu2;-><init>(Ljava/util/Set;ZLjava/util/Set;)V
 
-    invoke-virtual {p0, v0}, Lvi0;->a(Ltu2;)V
+    invoke-virtual {p0, v0}, Lai0;->a(Lvu2;)V
 
     :cond_0
+    return-void
+.end method
+
+.method public final onEvent(Lm13;)V
+    .registers 5
+    .annotation build Landroidx/annotation/Keep;
+    .end annotation
+
+    .annotation runtime Line;
+    .end annotation
+
+    new-instance v0, Ltu2;
+
+    iget-object v1, p1, Lm13;->b:Ljava/util/Collection;
+
+    new-instance v2, Lwr;
+
+    invoke-direct {v2, v1}, Lwr;-><init>(Ljava/util/Collection;)V
+
+    iget-boolean v1, p1, Lm13;->c:Z
+
+    iget-object p1, p1, Lm13;->r0:Ljava/util/Set;
+
+    invoke-direct {v0, v2, v1, p1}, Ltu2;-><init>(Ljava/util/Set;ZLjava/util/Set;)V
+
+    invoke-virtual {p0, v0}, Lai0;->a(Lvu2;)V
+
     return-void
 .end method

@@ -2,210 +2,104 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final d:Ljava/nio/charset/Charset;
-
-.field public static final e:[Ljava/lang/String;
-
-.field public static final f:[I
+# interfaces
+.implements Lkne;
+.implements Llzb;
 
 
 # instance fields
-.field public final a:I
+.field public final a:Ljava/util/HashMap;
 
-.field public final b:I
+.field public b:Ljava/util/ArrayDeque;
 
-.field public final c:[B
+.field public final c:Lmlf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 15
+.method public constructor <init>()V
+    .registers 3
 
-    sget-object v0, Ljava/nio/charset/StandardCharsets;->US_ASCII:Ljava/nio/charset/Charset;
-
-    sput-object v0, Lu85;->d:Ljava/nio/charset/Charset;
-
-    const-string v13, "DOUBLE"
-
-    const-string v14, "IFD"
-
-    const-string v1, ""
-
-    const-string v2, "BYTE"
-
-    const-string v3, "STRING"
-
-    const-string v4, "USHORT"
-
-    const-string v5, "ULONG"
-
-    const-string v6, "URATIONAL"
-
-    const-string v7, "SBYTE"
-
-    const-string v8, "UNDEFINED"
-
-    const-string v9, "SSHORT"
-
-    const-string v10, "SLONG"
-
-    const-string v11, "SRATIONAL"
-
-    const-string v12, "SINGLE"
-
-    filled-new-array/range {v1 .. v14}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lu85;->e:[Ljava/lang/String;
-
-    const/16 v0, 0xe
-
-    new-array v0, v0, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Lu85;->f:[I
-
-    return-void
-
-    :array_0
-    .array-data 4
-        0x0
-        0x1
-        0x1
-        0x2
-        0x4
-        0x8
-        0x1
-        0x1
-        0x2
-        0x4
-        0x8
-        0x4
-        0x8
-        0x1
-    .end array-data
-.end method
-
-.method public constructor <init>(I[BI)V
-    .registers 4
+    sget-object v0, Lmlf;->a:Lmlf;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lu85;->a:I
+    new-instance v1, Ljava/util/HashMap;
 
-    iput p3, p0, Lu85;->b:I
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    iput-object p2, p0, Lu85;->c:[B
+    iput-object v1, p0, Lu85;->a:Ljava/util/HashMap;
+
+    new-instance v1, Ljava/util/ArrayDeque;
+
+    invoke-direct {v1}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v1, p0, Lu85;->b:Ljava/util/ArrayDeque;
+
+    iput-object v0, p0, Lu85;->c:Lmlf;
 
     return-void
-.end method
-
-.method public static a(JLjava/nio/ByteOrder;)Lu85;
-    .registers 5
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [J
-
-    const/4 v1, 0x0
-
-    aput-wide p0, v0, v1
-
-    invoke-static {v0, p2}, Lu85;->b([JLjava/nio/ByteOrder;)Lu85;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static b([JLjava/nio/ByteOrder;)Lu85;
-    .registers 7
-
-    sget-object v0, Lu85;->f:[I
-
-    const/4 v1, 0x4
-
-    aget v0, v0, v1
-
-    array-length v2, p0
-
-    mul-int/2addr v0, v2
-
-    new-array v0, v0, [B
-
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    array-length p1, p0
-
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, p1, :cond_0
-
-    aget-wide v3, p0, v2
-
-    long-to-int v3, v3
-
-    invoke-virtual {v0, v3}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p1, Lu85;
-
-    array-length p0, p0
-
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
-
-    move-result-object v0
-
-    invoke-direct {p1, v1, v0, p0}, Lu85;-><init>(I[BI)V
-
-    return-object p1
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 4
+.method public final a(Ljl5;)V
+    .registers 6
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-class v0, Lu64;
 
-    const-string v1, "("
+    iget-object v1, p0, Lu85;->c:Lmlf;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    monitor-enter p0
 
-    sget-object v1, Lu85;->e:[Ljava/lang/String;
+    :try_start_0
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget v2, p0, Lu85;->a:I
+    iget-object v2, p0, Lu85;->a:Ljava/util/HashMap;
 
-    aget-object v1, v1, v2
+    invoke-virtual {v2, v0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v2
 
-    const-string v1, ", data length:"
+    if-nez v2, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lu85;->a:Ljava/util/HashMap;
 
-    iget-object p0, p0, Lu85;->c:[B
+    new-instance v3, Ljava/util/concurrent/ConcurrentHashMap;
 
-    array-length p0, p0
+    invoke-direct {v3}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    const-string v1, ")"
+    invoke-virtual {v2, v0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0, p0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    goto :goto_0
 
-    move-result-object p0
+    :catchall_0
+    move-exception p1
 
-    return-object p0
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    iget-object v2, p0, Lu85;->a:Ljava/util/HashMap;
+
+    invoke-virtual {v2, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0, p1, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
 .end method

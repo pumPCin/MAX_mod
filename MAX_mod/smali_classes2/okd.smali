@@ -1,86 +1,41 @@
 .class public final Lokd;
-.super Lqd0;
+.super Lbld;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:J
+.field public final g:J
+
+.field public final h:J
+
+.field public final i:J
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .registers 4
+.method public constructor <init>(JJJ)V
+    .registers 9
 
-    const/16 v0, 0x12
+    const-wide/16 v0, 0x0
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    invoke-direct {p0, v0, v1}, Lbld;-><init>(J)V
 
-    iput-wide p1, p0, Lokd;->b:J
+    iput-wide p1, p0, Lokd;->g:J
+
+    iput-wide p3, p0, Lokd;->h:J
+
+    iput-wide p5, p0, Lokd;->i:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+.method public final a()Lcld;
+    .registers 2
 
-    const/4 v0, 0x1
+    new-instance v0, Lpkd;
 
-    if-ne p0, p1, :cond_0
+    invoke-direct {v0, p0}, Lpkd;-><init>(Lokd;)V
 
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lokd;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lokd;
-
-    iget-wide v3, p0, Lokd;->b:J
-
-    iget-wide p0, p1, Lokd;->b:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    iget-wide v0, p0, Lokd;->b:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 5
-
-    const-string v0, "EditProfile(id="
-
-    const-string v1, ")"
-
-    iget-wide v2, p0, Lokd;->b:J
-
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method

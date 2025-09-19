@@ -1,11 +1,14 @@
-.class public final Lu4a;
-.super Lfi5;
+.class public interface abstract Lu4a;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public d:J
+# virtual methods
+.method public abstract a(Llk5;Ljava/lang/Object;)Lu4a;
+.end method
 
-.field public e:J
+.method public abstract d(Llk5;I)Lu4a;
+.end method
 
-.field public f:J
+.method public abstract e(Llk5;J)Lu4a;
+.end method

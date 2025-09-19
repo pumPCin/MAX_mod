@@ -1,57 +1,37 @@
 .class public final Lote;
-.super Lvte;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final CREATOR:Lnte;
-
-
 # instance fields
-.field public final b:I
+.field public final a:Landroid/graphics/drawable/GradientDrawable;
 
-.field public final c:I
+.field public final b:Landroid/graphics/drawable/GradientDrawable;
 
-.field public final o:Ljava/util/List;
+.field public final c:Landroid/graphics/drawable/GradientDrawable;
+
+.field public final d:Landroid/graphics/drawable/GradientDrawable;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Lnte;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lote;->CREATOR:Lnte;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/List;II)V
-    .registers 4
+.method public constructor <init>(Landroid/graphics/drawable/GradientDrawable;Landroid/graphics/drawable/GradientDrawable;Landroid/graphics/drawable/GradientDrawable;Landroid/graphics/drawable/GradientDrawable;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lote;->b:I
+    iput-object p1, p0, Lote;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    iput p3, p0, Lote;->c:I
+    iput-object p2, p0, Lote;->b:Landroid/graphics/drawable/GradientDrawable;
 
-    iput-object p1, p0, Lote;->o:Ljava/util/List;
+    iput-object p3, p0, Lote;->c:Landroid/graphics/drawable/GradientDrawable;
+
+    iput-object p4, p0, Lote;->d:Landroid/graphics/drawable/GradientDrawable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
     .registers 6
 
@@ -73,60 +53,93 @@
     :cond_1
     check-cast p1, Lote;
 
-    iget v1, p0, Lote;->b:I
+    iget-object v1, p0, Lote;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    iget v3, p1, Lote;->b:I
+    iget-object v3, p1, Lote;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    if-eq v1, v3, :cond_2
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
 
     return v2
 
     :cond_2
-    iget v1, p0, Lote;->c:I
+    iget-object v1, p0, Lote;->b:Landroid/graphics/drawable/GradientDrawable;
 
-    iget v3, p1, Lote;->c:I
+    iget-object v3, p1, Lote;->b:Landroid/graphics/drawable/GradientDrawable;
 
-    if-eq v1, v3, :cond_3
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
 
     return v2
 
     :cond_3
-    iget-object p0, p0, Lote;->o:Ljava/util/List;
+    iget-object v1, p0, Lote;->c:Landroid/graphics/drawable/GradientDrawable;
 
-    iget-object p1, p1, Lote;->o:Ljava/util/List;
+    iget-object v3, p1, Lote;->c:Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result p0
+    move-result v1
 
-    if-nez p0, :cond_4
+    if-nez v1, :cond_4
 
     return v2
 
     :cond_4
+    iget-object p0, p0, Lote;->d:Landroid/graphics/drawable/GradientDrawable;
+
+    iget-object p1, p1, Lote;->d:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_5
+
+    return v2
+
+    :cond_5
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .registers 3
 
-    iget v0, p0, Lote;->b:I
+    iget-object v0, p0, Lote;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lote;->c:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    iget-object p0, p0, Lote;->o:Ljava/util/List;
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lote;->b:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object v0, p0, Lote;->c:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lote;->d:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
@@ -138,47 +151,49 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .registers 3
 
-    const-string v0, ", quantity="
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, ", args="
+    const-string v1, "StateDrawable(enabledChecked="
 
-    const-string v2, "PluralsParams(resId="
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v3, p0, Lote;->b:I
+    iget-object v1, p0, Lote;->a:Landroid/graphics/drawable/GradientDrawable;
 
-    iget v4, p0, Lote;->c:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v3, v0, v4, v1}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", enabledUnchecked="
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    iget-object v1, p0, Lote;->b:Landroid/graphics/drawable/GradientDrawable;
 
-    iget-object p0, p0, Lote;->o:Ljava/util/List;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0, v1}, Lew1;->j(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
+    const-string v1, ", disabledChecked="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lote;->c:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", disabledUnchecked="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lote;->d:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
-
-    iget p2, p0, Lote;->b:I
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget p2, p0, Lote;->c:I
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-object p0, p0, Lote;->o:Ljava/util/List;
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeList(Ljava/util/List;)V
-
-    return-void
 .end method

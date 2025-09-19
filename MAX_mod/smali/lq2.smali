@@ -3,28 +3,46 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpq2;
+.implements Lsq2;
+
+
+# static fields
+.field public static final d:Lax9;
 
 
 # instance fields
-.field public final a:Ljava/lang/CharSequence;
+.field public final a:I
 
-.field public final b:Ljava/lang/Long;
+.field public final b:Li56;
 
-.field public final c:Ljava/lang/Long;
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;Ljava/lang/Long;Ljava/lang/Long;)V
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lax9;
+
+    const/16 v1, 0x9
+
+    invoke-direct {v0, v1}, Lax9;-><init>(I)V
+
+    sput-object v0, Llq2;->d:Lax9;
+
+    return-void
+.end method
+
+.method public constructor <init>(ILi56;Z)V
     .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llq2;->a:Ljava/lang/CharSequence;
+    iput p1, p0, Llq2;->a:I
 
-    iput-object p2, p0, Llq2;->b:Ljava/lang/Long;
+    iput-object p2, p0, Llq2;->b:Li56;
 
-    iput-object p3, p0, Llq2;->c:Ljava/lang/Long;
+    iput-boolean p3, p0, Llq2;->c:Z
 
     return-void
 .end method

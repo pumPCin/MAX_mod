@@ -1,39 +1,37 @@
-.class public final Lpn4;
+.class public abstract Lpn4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:I
-
-.field public d:I
-
-.field public e:Z
+# static fields
+.field public static volatile a:Lkga;
 
 
-# virtual methods
-.method public final a()I
-    .registers 3
+# direct methods
+.method static constructor <clinit>()V
+    .registers 5
 
-    iget v0, p0, Lpn4;->c:I
+    sget-object v0, Lw1c;->c:Lw1c;
 
-    iget v1, p0, Lpn4;->a:I
+    invoke-static {}, Ln4e;->q()Lep4;
 
-    sub-int/2addr v0, v1
+    move-result-object v1
 
-    iget v1, p0, Lpn4;->d:I
+    new-instance v2, Lej0;
 
-    iget p0, p0, Lpn4;->b:I
+    const/16 v3, 0xa
 
-    sub-int/2addr v1, p0
+    invoke-direct {v2, v3}, Lej0;-><init>(I)V
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    iget-object v0, v0, Lw1c;->a:Lax;
 
-    move-result p0
+    new-instance v3, Lv1c;
 
-    return p0
+    const/4 v4, 0x0
+
+    invoke-direct {v3, v4, v2}, Lv1c;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1, v3}, Lax;->f(Ljava/util/concurrent/Executor;Lx4a;)V
+
+    return-void
 .end method

@@ -2,153 +2,195 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lz43;
+
 
 # instance fields
-.field public final a:I
-
-.field public final b:Lqte;
-
-.field public final c:Z
+.field public final a:Lcl7;
 
 
 # direct methods
-.method public constructor <init>(ILqte;Z)V
-    .registers 4
+.method public constructor <init>(Lcl7;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lfmd;->a:I
-
-    iput-object p2, p0, Lfmd;->b:Lqte;
-
-    iput-boolean p3, p0, Lfmd;->c:Z
+    iput-object p1, p0, Lfmd;->a:Lcl7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+.method public final a()Lbl3;
+    .registers 1
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
 
-    goto :goto_1
+    move-result-object p0
 
-    :cond_0
-    instance-of v0, p1, Lfmd;
+    invoke-interface {p0}, Lz43;->a()Lbl3;
 
-    if-nez v0, :cond_1
+    move-result-object p0
 
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lfmd;
-
-    iget v0, p0, Lfmd;->a:I
-
-    iget v1, p1, Lfmd;->a:I
-
-    if-eq v0, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lfmd;->b:Lqte;
-
-    iget-object v1, p1, Lfmd;->b:Lqte;
-
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget-boolean p0, p0, Lfmd;->c:Z
-
-    iget-boolean p1, p1, Lfmd;->c:Z
-
-    if-eq p0, p1, :cond_4
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_4
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
+    return-object p0
 .end method
 
-.method public final hashCode()I
-    .registers 4
+.method public final b()V
+    .registers 1
 
-    iget v0, p0, Lfmd;->a:I
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
 
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+    move-result-object p0
 
-    move-result v0
+    invoke-interface {p0}, Lz43;->b()V
 
-    const/16 v1, 0x1f
+    return-void
+.end method
 
-    mul-int/2addr v0, v1
+.method public final c(Ljava/net/Socket;)V
+    .registers 2
 
-    iget-object v2, p0, Lfmd;->b:Lqte;
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
 
-    iget v2, v2, Lqte;->b:I
+    move-result-object p0
 
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
+    invoke-interface {p0, p1}, Lz43;->c(Ljava/net/Socket;)V
 
-    move-result v0
+    return-void
+.end method
 
-    iget-boolean p0, p0, Lfmd;->c:Z
+.method public final close()V
+    .registers 1
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lz43;->close()V
+
+    return-void
+.end method
+
+.method public final connect()Ljava/net/Socket;
+    .registers 1
+
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lz43;->connect()Ljava/net/Socket;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final d()I
+    .registers 1
+
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lz43;->d()I
 
     move-result p0
 
-    add-int/2addr p0, v0
+    return p0
+.end method
+
+.method public final e()Z
+    .registers 1
+
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lz43;->e()Z
+
+    move-result p0
 
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+.method public final f()V
+    .registers 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Button(id="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lfmd;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", title="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lfmd;->b:Lqte;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isNegative="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ")"
-
-    iget-boolean p0, p0, Lfmd;->c:Z
-
-    invoke-static {v0, p0, v1}, Lew1;->k(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
 
     move-result-object p0
+
+    invoke-interface {p0}, Lz43;->f()V
+
+    return-void
+.end method
+
+.method public final g(Z)V
+    .registers 2
+
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lz43;->g(Z)V
+
+    return-void
+.end method
+
+.method public final h(I)J
+    .registers 2
+
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lz43;->h(I)J
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public final i()Ljava/lang/String;
+    .registers 1
+
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lz43;->i()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final k()Lvj3;
+    .registers 1
+
+    invoke-virtual {p0}, Lfmd;->l()Lz43;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lz43;->k()Lvj3;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final l()Lz43;
+    .registers 1
+
+    iget-object p0, p0, Lfmd;->a:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lz43;
 
     return-object p0
 .end method

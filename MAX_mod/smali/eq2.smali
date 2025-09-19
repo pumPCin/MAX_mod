@@ -1,57 +1,45 @@
-.class public final Leq2;
-.super Ls2;
+.class public abstract Leq2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final c:Leq2;
+.field public static final a:Lcl7;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 3
 
-    new-instance v0, Leq2;
+    sget-object v0, Lfq2;->a:Lfq2;
 
-    const/16 v1, 0x8
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
 
-    invoke-direct {v0, v1}, Ls2;-><init>(I)V
+    move-result-object v1
 
-    sput-object v0, Leq2;->c:Leq2;
+    const-class v2, Lmgd;
 
-    return-void
-.end method
+    invoke-virtual {v1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
+    move-result-object v1
 
-# virtual methods
-.method public final U0(JZ)V
-    .registers 6
+    sput-object v1, Leq2;->a:Lcl7;
 
-    invoke-virtual {p0}, Ls2;->D0()Lea4;
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
 
-    move-result-object p0
+    move-result-object v1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-class v2, Lqoa;
 
-    const-string v1, ":call-user?opponent_id="
+    invoke-virtual {v1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    const-string p1, "&video_enabled="
+    const-class v1, Lp2b;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p1, p2}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+    invoke-virtual {v0, v1}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     return-void
 .end method

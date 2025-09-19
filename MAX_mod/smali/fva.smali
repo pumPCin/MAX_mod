@@ -1,113 +1,47 @@
-.class public final Lfva;
-.super Lf8c;
+.class public abstract Lfva;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final b:F
+# interfaces
+.implements Ljava/util/Comparator;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 0
+.method public constructor <init>()V
+    .registers 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method public static a(Ljava/util/Comparator;)Lfva;
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    instance-of v0, p0, Lfva;
 
-    const/high16 v0, -0x40800000    # -1.0f
+    if-eqz v0, :cond_0
 
-    iput v0, p0, Lfva;->b:F
+    check-cast p0, Lfva;
 
-    return-void
-.end method
-
-.method public constructor <init>(F)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    cmpl-float v0, p1, v0
-
-    if-ltz v0, :cond_0
-
-    const/high16 v0, 0x42c80000    # 100.0f
-
-    cmpg-float v0, p1, v0
-
-    if-gtz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    const/4 v0, 0x0
+    new-instance v0, Lpb3;
 
-    :goto_0
-    const-string v1, "percent must be in the range of [0, 100]"
+    invoke-direct {v0, p0}, Lpb3;-><init>(Ljava/util/Comparator;)V
 
-    invoke-static {v1, v0}, Lnc5;->i(Ljava/lang/String;Z)V
-
-    iput p1, p0, Lfva;->b:F
-
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+.method public b()Lfva;
+    .registers 2
 
-    instance-of v0, p1, Lfva;
+    new-instance v0, Lxvc;
 
-    const/4 v1, 0x0
+    invoke-direct {v0, p0}, Lxvc;-><init>(Lfva;)V
 
-    if-nez v0, :cond_0
-
-    return v1
-
-    :cond_0
-    check-cast p1, Lfva;
-
-    iget p1, p1, Lfva;->b:F
-
-    iget p0, p0, Lfva;->b:F
-
-    cmpl-float p0, p0, p1
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_1
-    return v1
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget p0, p0, Lfva;->b:F
-
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p0
-
-    filled-new-array {p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
-
-    move-result p0
-
-    return p0
+    return-object v0
 .end method

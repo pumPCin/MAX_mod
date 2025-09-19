@@ -1,100 +1,50 @@
 .class public final Lrc5;
-.super Ljp9;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljq8;
 
 
 # instance fields
-.field public final b:Lqte;
+.field public final a:Ljava/lang/Object;
+
+.field public final b:Lk78;
+
+.field public c:Lp6f;
 
 
 # direct methods
-.method public constructor <init>(Lqte;)V
+.method public constructor <init>(Ljava/lang/Object;Lk78;)V
     .registers 3
 
-    sget-object v0, Lncf;->a:Lncf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Ljp9;-><init>(Ljava/lang/Object;)V
+    iput-object p1, p0, Lrc5;->a:Ljava/lang/Object;
 
-    iput-object p1, p0, Lrc5;->b:Lqte;
+    iput-object p2, p0, Lrc5;->b:Lk78;
+
+    iget-object p1, p2, Lk78;->o:Lg78;
+
+    iput-object p1, p0, Lrc5;->c:Lp6f;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Lrc5;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lrc5;
-
-    iget-object p0, p0, Lrc5;->b:Lqte;
-
-    iget-object p1, p1, Lrc5;->b:Lqte;
-
-    invoke-virtual {p0, p1}, Lqte;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
+.method public final a()Ljava/lang/Object;
     .registers 1
 
-    iget-object p0, p0, Lrc5;->b:Lqte;
+    iget-object p0, p0, Lrc5;->a:Ljava/lang/Object;
 
-    iget p0, p0, Lqte;->b:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    return p0
+    return-object p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+.method public final b()Lp6f;
+    .registers 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ShowSnackbar(text="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lrc5;->b:Lqte;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    iget-object p0, p0, Lrc5;->c:Lp6f;
 
     return-object p0
 .end method

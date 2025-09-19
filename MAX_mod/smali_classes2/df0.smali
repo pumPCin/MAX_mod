@@ -1,409 +1,94 @@
 .class public final Ldf0;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic X:Lru/ok/tamtam/workmanager/BacklogWorker;
 
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:I
-
-.field public final i:I
-
-.field public final j:I
-
-.field public final k:I
-
-.field public final l:I
-
-.field public final m:I
-
-.field public final n:I
+.field public final synthetic Y:Ljava/util/HashSet;
 
 
 # direct methods
-.method public constructor <init>(IIIIIIIIIIIIII)V
-    .registers 15
+.method public constructor <init>(Lru/ok/tamtam/workmanager/BacklogWorker;Ljava/util/HashSet;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldf0;->X:Lru/ok/tamtam/workmanager/BacklogWorker;
 
-    iput p1, p0, Ldf0;->a:I
+    iput-object p2, p0, Ldf0;->Y:Ljava/util/HashSet;
 
-    iput p2, p0, Ldf0;->b:I
+    const/4 p1, 0x2
 
-    iput p3, p0, Ldf0;->c:I
-
-    iput p4, p0, Ldf0;->d:I
-
-    iput p5, p0, Ldf0;->e:I
-
-    iput p6, p0, Ldf0;->f:I
-
-    iput p7, p0, Ldf0;->g:I
-
-    iput p8, p0, Ldf0;->h:I
-
-    iput p9, p0, Ldf0;->i:I
-
-    iput p10, p0, Ldf0;->j:I
-
-    iput p11, p0, Ldf0;->k:I
-
-    iput p12, p0, Ldf0;->l:I
-
-    iput p13, p0, Ldf0;->m:I
-
-    iput p14, p0, Ldf0;->n:I
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    if-ne p0, p1, :cond_0
+    check-cast p1, Ly04;
 
-    goto/16 :goto_1
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    :cond_0
-    instance-of v0, p1, Ldf0;
-
-    if-nez v0, :cond_1
-
-    goto/16 :goto_0
-
-    :cond_1
-    check-cast p1, Ldf0;
-
-    iget v0, p0, Ldf0;->a:I
-
-    iget v1, p1, Ldf0;->a:I
-
-    if-eq v0, v1, :cond_2
-
-    goto/16 :goto_0
-
-    :cond_2
-    iget v0, p0, Ldf0;->b:I
-
-    iget v1, p1, Ldf0;->b:I
-
-    if-eq v0, v1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget v0, p0, Ldf0;->c:I
-
-    iget v1, p1, Ldf0;->c:I
-
-    if-eq v0, v1, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    iget v0, p0, Ldf0;->d:I
-
-    iget v1, p1, Ldf0;->d:I
-
-    if-eq v0, v1, :cond_5
-
-    goto :goto_0
-
-    :cond_5
-    iget v0, p0, Ldf0;->e:I
-
-    iget v1, p1, Ldf0;->e:I
-
-    if-eq v0, v1, :cond_6
-
-    goto :goto_0
-
-    :cond_6
-    iget v0, p0, Ldf0;->f:I
-
-    iget v1, p1, Ldf0;->f:I
-
-    if-eq v0, v1, :cond_7
-
-    goto :goto_0
-
-    :cond_7
-    iget v0, p0, Ldf0;->g:I
-
-    iget v1, p1, Ldf0;->g:I
-
-    if-eq v0, v1, :cond_8
-
-    goto :goto_0
-
-    :cond_8
-    iget v0, p0, Ldf0;->h:I
-
-    iget v1, p1, Ldf0;->h:I
-
-    if-eq v0, v1, :cond_9
-
-    goto :goto_0
-
-    :cond_9
-    iget v0, p0, Ldf0;->i:I
-
-    iget v1, p1, Ldf0;->i:I
-
-    if-eq v0, v1, :cond_a
-
-    goto :goto_0
-
-    :cond_a
-    iget v0, p0, Ldf0;->j:I
-
-    iget v1, p1, Ldf0;->j:I
-
-    if-eq v0, v1, :cond_b
-
-    goto :goto_0
-
-    :cond_b
-    iget v0, p0, Ldf0;->k:I
-
-    iget v1, p1, Ldf0;->k:I
-
-    if-eq v0, v1, :cond_c
-
-    goto :goto_0
-
-    :cond_c
-    iget v0, p0, Ldf0;->l:I
-
-    iget v1, p1, Ldf0;->l:I
-
-    if-eq v0, v1, :cond_d
-
-    goto :goto_0
-
-    :cond_d
-    iget v0, p0, Ldf0;->m:I
-
-    iget v1, p1, Ldf0;->m:I
-
-    if-eq v0, v1, :cond_e
-
-    goto :goto_0
-
-    :cond_e
-    iget p0, p0, Ldf0;->n:I
-
-    iget p1, p1, Ldf0;->n:I
-
-    if-eq p0, p1, :cond_f
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_f
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget v0, p0, Ldf0;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Ldf0;->b:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->c:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->d:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    const/4 v2, -0x1
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->e:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->f:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->g:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->h:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->i:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->j:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->k:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->l:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Ldf0;->m:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget p0, p0, Ldf0;->n:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    const-string v0, ", attentionSecondary="
-
-    const-string v1, ", contrast="
-
-    const-string v2, "BackgroundAccentColors(attentionPrimary="
-
-    iget v3, p0, Ldf0;->a:I
-
-    iget v4, p0, Ldf0;->b:I
-
-    invoke-static {v2, v3, v0, v4, v1}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ", contrastSecondary="
-
-    const-string v2, ", contrastStatic=-1, contrastTertiary="
-
-    iget v3, p0, Ldf0;->c:I
-
-    iget v4, p0, Ldf0;->d:I
-
-    invoke-static {v0, v3, v1, v4, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    const-string v1, ", negative="
-
-    const-string v2, ", neutral="
-
-    iget v3, p0, Ldf0;->e:I
-
-    iget v4, p0, Ldf0;->f:I
-
-    invoke-static {v0, v3, v1, v4, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    const-string v1, ", neutralFade="
-
-    const-string v2, ", neutralFadeSecondary="
-
-    iget v3, p0, Ldf0;->g:I
-
-    iget v4, p0, Ldf0;->h:I
-
-    invoke-static {v0, v3, v1, v4, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    const-string v1, ", neutralSecondary="
-
-    const-string v2, ", neutralStatic="
-
-    iget v3, p0, Ldf0;->i:I
-
-    iget v4, p0, Ldf0;->j:I
-
-    invoke-static {v0, v3, v1, v4, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    const-string v1, ", neutralThemed="
-
-    const-string v2, ", positive="
-
-    iget v3, p0, Ldf0;->k:I
-
-    iget v4, p0, Ldf0;->l:I
-
-    invoke-static {v0, v3, v1, v4, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    const-string v1, ", themed="
-
-    const-string v2, ")"
-
-    iget v3, p0, Ldf0;->m:I
-
-    iget p0, p0, Ldf0;->n:I
-
-    invoke-static {v0, v3, v1, p0, v2}, Lnh0;->h(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Ldf0;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Ldf0;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Ldf0;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance p1, Ldf0;
+
+    iget-object v0, p0, Ldf0;->X:Lru/ok/tamtam/workmanager/BacklogWorker;
+
+    iget-object p0, p0, Ldf0;->Y:Ljava/util/HashSet;
+
+    invoke-direct {p1, v0, p0, p2}, Ldf0;-><init>(Lru/ok/tamtam/workmanager/BacklogWorker;Ljava/util/HashSet;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ldf0;->X:Lru/ok/tamtam/workmanager/BacklogWorker;
+
+    invoke-virtual {p1}, Lru/ok/tamtam/workmanager/BacklogWorker;->e()Luvg;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Luvg;->g()Landroidx/work/impl/model/WorkersQueueDao;
+
+    move-result-object p1
+
+    iget-object p0, p0, Ldf0;->Y:Ljava/util/HashSet;
+
+    invoke-static {p0}, Lq73;->B0(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    invoke-interface {p1, v0, p0}, Landroidx/work/impl/model/WorkersQueueDao;->updateState(ILjava/util/List;)V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

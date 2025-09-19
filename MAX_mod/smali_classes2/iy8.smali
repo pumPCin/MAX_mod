@@ -1,32 +1,54 @@
-.class public final Liy8;
-.super Landroid/widget/EditText;
+.class public final synthetic Liy8;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Loy8;
+
+
+# direct methods
+.method public synthetic constructor <init>(Loy8;I)V
+    .registers 3
+
+    iput p2, p0, Liy8;->a:I
+
+    iput-object p1, p0, Liy8;->b:Loy8;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
-    .registers 3
+.method public final run()V
+    .registers 2
 
-    instance-of v0, p1, Landroid/graphics/drawable/Animatable;
+    iget v0, p0, Liy8;->a:I
 
-    if-nez v0, :cond_1
+    iget-object p0, p0, Liy8;->b:Loy8;
 
-    invoke-super {p0, p1}, Landroid/view/View;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
+    packed-switch v0, :pswitch_data_0
 
-    move-result p0
+    invoke-virtual {p0}, Loy8;->S()V
 
-    if-eqz p0, :cond_0
+    return-void
 
-    goto :goto_0
+    :pswitch_0
+    invoke-static {p0}, Loy8;->n(Loy8;)V
 
-    :cond_0
-    const/4 p0, 0x0
+    return-void
 
-    return p0
+    nop
 
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    return p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,32 +1,30 @@
 .class public final Lce9;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
 .field public X:I
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public final synthetic Y:Lfe9;
 
-.field public final synthetic Z:Lls;
-
-.field public final synthetic n0:Lle9;
+.field public final synthetic Z:Lone/me/messages/list/loader/MessageModel;
 
 
 # direct methods
-.method public constructor <init>(Lls;Lle9;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lfe9;Lone/me/messages/list/loader/MessageModel;Lkotlin/coroutines/Continuation;)V
     .registers 4
 
-    iput-object p1, p0, Lce9;->Z:Lls;
+    iput-object p1, p0, Lce9;->Y:Lfe9;
 
-    iput-object p2, p0, Lce9;->n0:Lle9;
+    iput-object p2, p0, Lce9;->Z:Lone/me/messages/list/loader/MessageModel;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -36,7 +34,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -46,7 +44,7 @@
 
     check-cast p0, Lce9;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lce9;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -56,202 +54,400 @@
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .registers 4
 
-    new-instance v0, Lce9;
+    new-instance p1, Lce9;
 
-    iget-object v1, p0, Lce9;->Z:Lls;
+    iget-object v0, p0, Lce9;->Y:Lfe9;
 
-    iget-object p0, p0, Lce9;->n0:Lle9;
+    iget-object p0, p0, Lce9;->Z:Lone/me/messages/list/loader/MessageModel;
 
-    invoke-direct {v0, v1, p0, p2}, Lce9;-><init>(Lls;Lle9;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, v0, p0, p2}, Lce9;-><init>(Lfe9;Lone/me/messages/list/loader/MessageModel;Lkotlin/coroutines/Continuation;)V
 
-    iput-object p1, v0, Lce9;->Y:Ljava/lang/Object;
-
-    return-object v0
+    return-object p1
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
+    .registers 21
 
-    iget v0, p0, Lce9;->X:I
+    move-object/from16 v0, p0
 
-    const/4 v1, 0x0
+    sget-object v1, Lylf;->a:Lylf;
 
-    const/4 v2, 0x2
+    sget-object v2, Lqz7;->o:Lqz7;
 
-    const/4 v3, 0x1
+    sget-object v3, Lz04;->a:Lz04;
 
-    if-eqz v0, :cond_2
+    iget v4, v0, Lce9;->X:I
 
-    if-eq v0, v3, :cond_1
+    const/4 v5, 0x2
 
-    if-ne v0, v2, :cond_0
+    const/4 v6, 0x1
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    if-eqz v4, :cond_2
 
-    goto/16 :goto_4
+    if-eq v4, v6, :cond_1
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    if-ne v4, v5, :cond_0
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    iget-object p0, p0, Lce9;->Y:Ljava/lang/Object;
-
-    check-cast p0, [J
-
-    :try_start_0
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lce9;->Y:Ljava/lang/Object;
-
-    check-cast p1, Lr04;
-
-    iget-object v0, p0, Lce9;->Z:Lls;
-
-    iget v4, v0, Lls;->c:I
-
-    iget-object v5, p0, Lce9;->n0:Lle9;
-
-    sget-object v6, Ls04;->a:Ls04;
-
-    const/16 v7, 0x64
-
-    if-gt v4, v7, :cond_4
-
-    :try_start_1
-    invoke-static {v0}, Lj73;->I0(Ljava/util/Collection;)[J
-
-    move-result-object p1
-
-    iput-object p1, p0, Lce9;->Y:Ljava/lang/Object;
-
-    iput v3, p0, Lce9;->X:I
-
-    new-instance v0, Lke9;
-
-    invoke-direct {v0, v5, v1, p1}, Lke9;-><init>(Lle9;Lkotlin/coroutines/Continuation;[J)V
-
-    invoke-static {v0, p0}, Lms8;->j(Lx96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v6, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move-object v9, p1
-
-    move-object p1, p0
-
-    move-object p0, v9
-
-    :goto_0
-    new-instance v0, Lura;
-
-    invoke-direct {v0, p0, p1}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    return-object p0
-
-    :goto_1
-    const-string p1, "MissedContactsController"
-
-    const-string v0, "fail"
-
-    invoke-static {p1, v0, p0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static/range {p1 .. p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     return-object v1
 
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1
+    invoke-static/range {p1 .. p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    return-object v1
+
+    :cond_2
+    invoke-static/range {p1 .. p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object v4, v0, Lce9;->Y:Lfe9;
+
+    iget-object v4, v4, Lfe9;->i:Ljava/lang/String;
+
+    iget-object v7, v0, Lce9;->Z:Lone/me/messages/list/loader/MessageModel;
+
+    sget-object v8, Ljtg;->g:Loja;
+
+    const/4 v9, 0x0
+
+    if-nez v8, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    invoke-virtual {v8, v2}, Loja;->a(Lqz7;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_4
+
+    invoke-virtual {v7}, Lone/me/messages/list/loader/MessageModel;->o()Ljava/lang/String;
+
+    move-result-object v7
+
+    const-string v10, "On unreadScrollButton clicked, current messageModel="
+
+    invoke-virtual {v10, v7}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v8, v2, v4, v7, v9}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
     :cond_4
-    invoke-static {v0, v7, v7}, Lj73;->M0(Ljava/lang/Iterable;II)Ljava/util/ArrayList;
+    :goto_0
+    iget-object v4, v0, Lce9;->Y:Lfe9;
 
-    move-result-object v0
+    iget-object v4, v4, Lfe9;->d:Lrce;
 
-    iget-object v3, p0, Lcx3;->b:Lj04;
+    invoke-interface {v4}, Lrce;->getValue()Ljava/lang/Object;
 
-    invoke-static {v3}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
+    move-result-object v4
 
-    move-result-object v3
+    check-cast v4, Ls72;
 
-    new-instance v4, Ljava/util/ArrayList;
+    if-nez v4, :cond_5
 
-    const/16 v7, 0xa
+    goto/16 :goto_9
 
-    invoke-static {v0, v7}, Ll73;->U(Ljava/lang/Iterable;I)I
+    :cond_5
+    invoke-virtual {v4}, Ls72;->n()J
 
-    move-result v7
+    move-result-wide v7
 
-    invoke-direct {v4, v7}, Ljava/util/ArrayList;-><init>(I)V
+    iget-object v4, v4, Ls72;->c:Lxx8;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    if-eqz v4, :cond_6
 
-    move-result-object v0
+    invoke-virtual {v4}, Lxx8;->l()J
 
-    :goto_2
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    move-result-wide v10
 
-    move-result v7
-
-    if-eqz v7, :cond_5
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    new-instance v8, Lbe9;
-
-    invoke-direct {v8, v7, v1, p1, v5}, Lbe9;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lr04;Lle9;)V
-
-    const/4 v7, 0x3
-
-    invoke-static {v3, v1, v8, v7}, Las3;->i(Lr04;Ll04;Lx96;I)Lrj4;
-
-    move-result-object v7
-
-    invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :goto_1
+    move-wide v13, v10
 
     goto :goto_2
 
-    :cond_5
-    iput v2, p0, Lce9;->X:I
-
-    invoke-static {v4, p0}, Lsqd;->b(Ljava/util/Collection;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v6, :cond_6
-
-    :goto_3
-    return-object v6
-
     :cond_6
-    :goto_4
-    check-cast p1, Ljava/util/List;
+    const-wide/16 v10, 0x0
 
-    return-object p1
+    goto :goto_1
+
+    :goto_2
+    cmp-long v4, v7, v13
+
+    if-gez v4, :cond_11
+
+    iget-object v4, v0, Lce9;->Z:Lone/me/messages/list/loader/MessageModel;
+
+    iget-wide v10, v4, Lone/me/messages/list/loader/MessageModel;->c:J
+
+    cmp-long v4, v10, v7
+
+    if-ltz v4, :cond_7
+
+    goto/16 :goto_6
+
+    :cond_7
+    iget-object v4, v0, Lce9;->Y:Lfe9;
+
+    iget-object v4, v4, Lfe9;->e:Lrce;
+
+    invoke-interface {v4}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lz79;
+
+    iget-object v10, v4, Lz79;->a:Ljava/util/List;
+
+    invoke-interface {v4, v7, v8}, Le89;->g(J)I
+
+    move-result v4
+
+    if-gez v4, :cond_8
+
+    invoke-static {v4}, Ljava/lang/Math;->abs(I)I
+
+    move-result v4
+
+    sub-int/2addr v4, v6
+
+    :cond_8
+    invoke-static {v4, v10}, Lq73;->h0(ILjava/util/List;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lone/me/messages/list/loader/MessageModel;
+
+    if-nez v4, :cond_b
+
+    iget-object v3, v0, Lce9;->Y:Lfe9;
+
+    iget-object v3, v3, Lfe9;->i:Ljava/lang/String;
+
+    sget-object v4, Ljtg;->g:Loja;
+
+    if-nez v4, :cond_9
+
+    goto :goto_3
+
+    :cond_9
+    invoke-virtual {v4, v2}, Loja;->a(Lqz7;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_a
+
+    const-string v5, "onUnreadScrollButtonClicked: message with ts=selfReadMark is not loaded, load around it"
+
+    invoke-virtual {v4, v2, v3, v5, v9}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_a
+    :goto_3
+    iget-object v2, v0, Lce9;->Y:Lfe9;
+
+    iget-object v2, v2, Lfe9;->m:Ljava/util/concurrent/atomic/AtomicReference;
+
+    new-instance v3, Lpd9;
+
+    const/4 v4, 0x2
+
+    invoke-direct {v3, v7, v8, v4}, Lpd9;-><init>(JI)V
+
+    invoke-virtual {v2, v3}, Ljava/util/concurrent/atomic/AtomicReference;->updateAndGet(Ljava/util/function/UnaryOperator;)Ljava/lang/Object;
+
+    iget-object v0, v0, Lce9;->Y:Lfe9;
+
+    iget-object v0, v0, Lfe9;->g:Lar7;
+
+    new-instance v2, Ljava/lang/Long;
+
+    invoke-direct {v2, v7, v8}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-virtual {v0, v2}, Lar7;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object v1
+
+    :cond_b
+    iget-wide v6, v4, Lone/me/messages/list/loader/MessageModel;->c:J
+
+    iget-object v8, v0, Lce9;->Z:Lone/me/messages/list/loader/MessageModel;
+
+    iget-wide v10, v8, Lone/me/messages/list/loader/MessageModel;->c:J
+
+    cmp-long v6, v6, v10
+
+    if-nez v6, :cond_e
+
+    iget-object v4, v0, Lce9;->Y:Lfe9;
+
+    iget-object v4, v4, Lfe9;->i:Ljava/lang/String;
+
+    sget-object v6, Ljtg;->g:Loja;
+
+    if-nez v6, :cond_c
+
+    goto :goto_4
+
+    :cond_c
+    invoke-virtual {v6, v2}, Loja;->a(Lqz7;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_d
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    const-string v8, "onUnreadScrollButtonClicked: message with ts=selfReadMark is loaded and is last on screen, \n                            |scroll to lastMessageTime="
+
+    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v7, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v7}, Lkme;->Q(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v2, v4, v7, v9}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_d
+    :goto_4
+    iget-object v12, v0, Lce9;->Y:Lfe9;
+
+    iput v5, v0, Lce9;->X:I
+
+    const/16 v17, 0x0
+
+    const-wide/16 v15, 0x0
+
+    const/16 v18, 0xe
+
+    invoke-static/range {v12 .. v18}, Lfe9;->d(Lfe9;JJII)V
+
+    if-ne v1, v3, :cond_14
+
+    goto :goto_8
+
+    :cond_e
+    iget-object v3, v0, Lce9;->Y:Lfe9;
+
+    iget-object v3, v3, Lfe9;->i:Ljava/lang/String;
+
+    sget-object v5, Ljtg;->g:Loja;
+
+    if-nez v5, :cond_f
+
+    goto :goto_5
+
+    :cond_f
+    invoke-virtual {v5, v2}, Loja;->a(Lqz7;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_10
+
+    const-string v6, "onUnreadScrollButtonClicked: message with ts=selfReadMark is loaded, scroll to it"
+
+    invoke-virtual {v5, v2, v3, v6, v9}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_10
+    :goto_5
+    iget-object v2, v0, Lce9;->Y:Lfe9;
+
+    iget-object v2, v2, Lfe9;->m:Ljava/util/concurrent/atomic/AtomicReference;
+
+    new-instance v3, Luf2;
+
+    const/16 v5, 0x8
+
+    invoke-direct {v3, v5}, Luf2;-><init>(I)V
+
+    invoke-virtual {v2, v3}, Ljava/util/concurrent/atomic/AtomicReference;->updateAndGet(Ljava/util/function/UnaryOperator;)Ljava/lang/Object;
+
+    iget-object v0, v0, Lce9;->Y:Lfe9;
+
+    iget-object v0, v0, Lfe9;->p:Lt8d;
+
+    iget-wide v2, v4, Lone/me/messages/list/loader/MessageModel;->c:J
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x6
+
+    invoke-static {v0, v2, v3, v4, v5}, Lt8d;->i(Lt8d;JZI)V
+
+    return-object v1
+
+    :cond_11
+    :goto_6
+    iget-object v4, v0, Lce9;->Y:Lfe9;
+
+    iget-object v4, v4, Lfe9;->i:Ljava/lang/String;
+
+    sget-object v5, Ljtg;->g:Loja;
+
+    if-nez v5, :cond_12
+
+    goto :goto_7
+
+    :cond_12
+    invoke-virtual {v5, v2}, Loja;->a(Lqz7;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_13
+
+    const-string v10, "onUnreadScrollButtonClicked: selfReadMark="
+
+    const-string v11, " >= lastMessageTime="
+
+    invoke-static {v7, v8, v10, v11}, Lmw1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v13, v14}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v5, v2, v4, v7, v9}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_13
+    :goto_7
+    iget-object v12, v0, Lce9;->Y:Lfe9;
+
+    iput v6, v0, Lce9;->X:I
+
+    const/16 v17, 0x0
+
+    const-wide/16 v15, 0x0
+
+    const/16 v18, 0xa
+
+    invoke-static/range {v12 .. v18}, Lfe9;->d(Lfe9;JJII)V
+
+    if-ne v1, v3, :cond_14
+
+    :goto_8
+    return-object v3
+
+    :cond_14
+    :goto_9
+    return-object v1
 .end method

@@ -1,9 +1,9 @@
 .class public final Lmp2;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
@@ -20,7 +20,7 @@
 
     const/4 p2, 0x2
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -38,7 +38,7 @@
 
     check-cast p0, Lmp2;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lmp2;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -60,42 +60,108 @@
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .registers 10
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lmp2;->X:Ljava/lang/Object;
 
-    check-cast p1, Ljp9;
+    check-cast p1, Ljava/lang/Boolean;
 
-    instance-of v0, p1, Ls53;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    if-eqz v0, :cond_0
+    move-result p1
 
     iget-object p0, p0, Lmp2;->Y:Lone/me/chatscreen/ChatScreen;
 
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
+    iget-object v0, p0, Lone/me/chatscreen/ChatScreen;->W0:Lcic;
 
-    move-result-object p0
+    sget-object v1, Lone/me/chatscreen/ChatScreen;->j1:[Lxi7;
 
-    invoke-virtual {p0}, Llrc;->C()Z
+    invoke-virtual {p0}, Lone/me/chatscreen/ChatScreen;->b1()Ll42;
+
+    move-result-object v1
+
+    if-eqz p1, :cond_0
+
+    const/4 v2, 0x0
 
     goto :goto_0
 
     :cond_0
-    instance-of p0, p1, Laa4;
+    const/16 v2, 0x8
 
-    if-eqz p0, :cond_1
+    :goto_0
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    sget-object p0, Leq2;->c:Leq2;
+    const/16 v1, 0x11
 
-    check-cast p1, Laa4;
+    if-eqz p1, :cond_1
 
-    invoke-virtual {p0, p1}, Ls2;->F0(Laa4;)V
+    sget-object p1, Lone/me/chatscreen/ChatScreen;->j1:[Lxi7;
+
+    aget-object p1, p1, v1
+
+    invoke-interface {v0, p0, p1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lc23;
+
+    invoke-virtual {p0}, Lc23;->c()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "video_msg_controller"
+
+    invoke-static {p1, v0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
+
+    iget-object p0, p0, Lc23;->a:Lrzc;
+
+    new-instance v2, Lone/me/chatscreen/videomsg/VideoMessageWidget;
+
+    invoke-direct {v2}, Lone/me/chatscreen/videomsg/VideoMessageWidget;-><init>()V
+
+    new-instance v1, Luzc;
+
+    const/4 v6, 0x0
+
+    const/4 v7, -0x1
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    invoke-direct/range {v1 .. v7}, Luzc;-><init>(Lxx3;Ljava/lang/String;Lcy3;Lcy3;ZI)V
+
+    invoke-virtual {v1, v0}, Luzc;->d(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v1}, Lrzc;->S(Luzc;)V
+
+    goto :goto_1
 
     :cond_1
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p1, Lone/me/chatscreen/ChatScreen;->j1:[Lxi7;
+
+    aget-object p1, p1, v1
+
+    invoke-interface {v0, p0, p1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lc23;
+
+    invoke-virtual {p0}, Lc23;->a()V
+
+    :cond_2
+    :goto_1
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

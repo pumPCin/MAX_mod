@@ -2,47 +2,40 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lv9f;
-
 
 # instance fields
-.field public final a:Lqte;
+.field public final a:I
 
-.field public final b:J
+.field public final b:I
 
 .field public final c:I
 
+.field public final d:I
+
+.field public final e:I
+
 
 # direct methods
-.method public constructor <init>(Lqte;)V
-    .registers 5
-
-    sget v0, Ll0c;->oneme_settings_twofa_configuration_description_item:I
-
-    int-to-long v1, v0
+.method public constructor <init>(IIIII)V
+    .registers 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ls9f;->a:Lqte;
+    iput p1, p0, Ls9f;->a:I
 
-    iput-wide v1, p0, Ls9f;->b:J
+    iput p2, p0, Ls9f;->b:I
 
-    iput v0, p0, Ls9f;->c:I
+    iput p3, p0, Ls9f;->c:I
+
+    iput p4, p0, Ls9f;->d:I
+
+    iput p5, p0, Ls9f;->e:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .registers 1
-
-    const/4 p0, 0x4
-
-    return p0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
     .registers 4
 
@@ -60,69 +53,64 @@
     :cond_1
     check-cast p1, Ls9f;
 
-    iget-object v0, p0, Ls9f;->a:Lqte;
+    iget v0, p0, Ls9f;->a:I
 
-    iget-object v1, p1, Ls9f;->a:Lqte;
+    iget v1, p1, Ls9f;->a:I
 
-    invoke-virtual {v0, v1}, Lqte;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
+    if-eq v0, v1, :cond_2
 
     goto :goto_0
 
     :cond_2
-    iget-wide v0, p0, Ls9f;->b:J
+    iget v0, p0, Ls9f;->b:I
 
-    iget-wide p0, p1, Ls9f;->b:J
+    iget v1, p1, Ls9f;->b:I
 
-    cmp-long p0, v0, p0
+    if-eq v0, v1, :cond_3
 
-    if-eqz p0, :cond_3
+    goto :goto_0
+
+    :cond_3
+    iget v0, p0, Ls9f;->c:I
+
+    iget v1, p1, Ls9f;->c:I
+
+    if-eq v0, v1, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    iget v0, p0, Ls9f;->d:I
+
+    iget v1, p1, Ls9f;->d:I
+
+    if-eq v0, v1, :cond_5
+
+    goto :goto_0
+
+    :cond_5
+    iget p0, p0, Ls9f;->e:I
+
+    iget p1, p1, Ls9f;->e:I
+
+    if-eq p0, p1, :cond_6
 
     :goto_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_3
+    :cond_6
     :goto_1
     const/4 p0, 0x1
 
     return p0
 .end method
 
-.method public final g()Z
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final getItemId()J
-    .registers 3
-
-    iget-wide v0, p0, Ls9f;->b:J
-
-    return-wide v0
-.end method
-
-.method public final getTitle()Lvte;
-    .registers 1
-
-    iget-object p0, p0, Ls9f;->a:Lqte;
-
-    return-object p0
-.end method
-
 .method public final hashCode()I
     .registers 4
 
-    iget-object v0, p0, Ls9f;->a:Lqte;
-
-    iget v0, v0, Lqte;->b:I
+    iget v0, p0, Ls9f;->a:I
 
     invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -132,21 +120,27 @@
 
     mul-int/2addr v0, v1
 
-    const/4 v2, 0x0
+    iget v2, p0, Ls9f;->b:I
 
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    const/4 v2, 0x4
-
-    invoke-static {v2, v0, v1}, Loq9;->f(III)I
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
 
     move-result v0
 
-    iget-wide v1, p0, Ls9f;->b:J
+    iget v2, p0, Ls9f;->c:I
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget v2, p0, Ls9f;->d:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget p0, p0, Ls9f;->e:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result p0
 
@@ -155,60 +149,38 @@
     return p0
 .end method
 
-.method public final m()I
-    .registers 1
-
-    iget p0, p0, Ls9f;->c:I
-
-    return p0
-.end method
-
-.method public final t()I
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .registers 6
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, ", contrastStatic="
 
-    const-string v1, "Description(title="
+    const-string v1, ", primary="
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v2, "TopbarTextDisabledColors(contrast="
 
-    iget-object v1, p0, Ls9f;->a:Lqte;
+    iget v3, p0, Ls9f;->a:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget v4, p0, Ls9f;->b:I
 
-    const-string v1, ", sectionId=0, sectionItemType="
+    invoke-static {v2, v3, v0, v4, v1}, Lsg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    const/4 v1, 0x4
+    const-string v1, ", secondary="
 
-    invoke-static {v1}, Lbkc;->s(I)Ljava/lang/String;
+    const-string v2, ", themed="
 
-    move-result-object v1
+    iget v3, p0, Ls9f;->c:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v4, p0, Ls9f;->d:I
 
-    const-string v1, ", itemId="
+    invoke-static {v0, v3, v1, v4, v2}, Lsq3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ")"
 
-    iget-wide v1, p0, Ls9f;->b:J
+    iget p0, p0, Ls9f;->e:I
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lyv7;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

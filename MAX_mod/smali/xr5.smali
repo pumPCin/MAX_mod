@@ -1,56 +1,92 @@
 .class public final Lxr5;
-.super Lcx3;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lxr5;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public X:I
+.field public a:I
 
-.field public final synthetic Y:Lrq5;
-
-.field public Z:Lrq5;
-
-.field public n0:Lhq5;
-
-.field public synthetic o:Ljava/lang/Object;
-
-.field public o0:Ljava/lang/Throwable;
-
-.field public p0:J
+.field public b:I
 
 
 # direct methods
-.method public constructor <init>(Lrq5;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Lxr5;->Y:Lrq5;
+    new-instance v0, Li84;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/16 v1, 0xe
+
+    invoke-direct {v0, v1}, Li84;-><init>(I)V
+
+    sput-object v0, Lxr5;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final describeContents()I
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    iput-object p1, p0, Lxr5;->o:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget p1, p0, Lxr5;->X:I
+    const-string v1, "SavedState{mAnchorPosition="
 
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    or-int/2addr p1, v0
+    iget v1, p0, Lxr5;->a:I
 
-    iput p1, p0, Lxr5;->X:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lxr5;->Y:Lrq5;
+    const-string v1, ", mAnchorOffset="
 
-    const/4 v0, 0x0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, v0, p0}, Lrq5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget p0, p0, Lxr5;->b:I
+
+    const/16 v1, 0x7d
+
+    invoke-static {v0, p0, v1}, Lmw1;->i(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
+
+    iget p2, p0, Lxr5;->a:I
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget p0, p0, Lxr5;->b:I
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
 .end method

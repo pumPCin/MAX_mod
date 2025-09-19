@@ -1,14 +1,26 @@
-.class public interface abstract Lebf;
+.class public final Lebf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lgbf;
 
-# virtual methods
-.method public abstract a(Ljava/lang/String;)V
-.end method
 
-.method public w()V
-    .registers 1
+# instance fields
+.field public final a:Ljava/util/LinkedList;
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/LinkedList;
+
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
+
+    iput-object v0, p0, Lebf;->a:Ljava/util/LinkedList;
 
     return-void
 .end method

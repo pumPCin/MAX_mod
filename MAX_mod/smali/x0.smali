@@ -2,66 +2,42 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field public static final d:Lx0;
 
 
 # instance fields
-.field public final a:Lrfd;
+.field public final a:Ljava/lang/Runnable;
 
-.field public final b:Lcq7;
+.field public final b:Ljava/util/concurrent/Executor;
+
+.field public c:Lx0;
 
 
 # direct methods
-.method public constructor <init>(Lrfd;Lcq7;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lx0;
 
-    iput-object p1, p0, Lx0;->a:Lrfd;
+    const/4 v1, 0x0
 
-    iput-object p2, p0, Lx0;->b:Lcq7;
+    invoke-direct {v0, v1, v1}, Lx0;-><init>(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    sput-object v0, Lx0;->d:Lx0;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    .registers 3
 
-# virtual methods
-.method public final run()V
-    .registers 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p0, Lx0;->a:Lrfd;
+    iput-object p1, p0, Lx0;->a:Ljava/lang/Runnable;
 
-    iget-object v0, v0, Lk1;->a:Ljava/lang/Object;
+    iput-object p2, p0, Lx0;->b:Ljava/util/concurrent/Executor;
 
-    if-eq v0, p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lx0;->b:Lcq7;
-
-    invoke-static {v0}, Lk1;->h(Lcq7;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Lk1;->Y:Lbv7;
-
-    iget-object v2, p0, Lx0;->a:Lrfd;
-
-    invoke-virtual {v1, v2, p0, v0}, Lbv7;->f(Lk1;Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget-object p0, p0, Lx0;->a:Lrfd;
-
-    const/4 v0, 0x0
-
-    invoke-static {p0, v0}, Lk1;->e(Lk1;Z)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method

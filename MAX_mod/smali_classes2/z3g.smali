@@ -1,49 +1,142 @@
 .class public final Lz3g;
-.super Lcx3;
+.super Lsxe;
 .source "SourceFile"
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public X:J
 
-.field public final synthetic Y:Lp4g;
+.field public c:Ljava/util/Map;
 
-.field public Z:I
-
-.field public o:Lao0;
+.field public o:Z
 
 
 # direct methods
-.method public constructor <init>(Lp4g;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Lt39;)V
+    .registers 2
 
-    iput-object p1, p0, Lz3g;->Y:Lp4g;
+    invoke-direct {p0, p1}, Lsxe;-><init>(Lt39;)V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iget-object p1, p0, Lz3g;->c:Ljava/util/Map;
 
+    if-nez p1, :cond_0
+
+    sget-object p1, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
+
+    iput-object p1, p0, Lz3g;->c:Ljava/util/Map;
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final c(Lt39;Ljava/lang/String;)V
+    .registers 5
 
-    iput-object p1, p0, Lz3g;->X:Ljava/lang/Object;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget p1, p0, Lz3g;->Z:I
+    const-string v0, "startTime"
 
-    const/high16 v0, -0x80000000
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    or-int/2addr p1, v0
+    move-result v0
 
-    iput p1, p0, Lz3g;->Z:I
+    if-nez v0, :cond_3
 
-    iget-object p1, p0, Lz3g;->Y:Lp4g;
+    const-string v0, "live"
 
-    const/4 v0, 0x0
+    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {p1, v0, v0, p0}, Lp4g;->g(Ldo0;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    invoke-static {p1}, Lqe5;->O(Lt39;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lm7g;->m(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lz3g;->c:Ljava/util/Map;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Ltr;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lr1e;-><init>(I)V
+
+    iput-object v0, p0, Lz3g;->c:Ljava/util/Map;
+
+    :cond_0
+    iget-object p0, p0, Lz3g;->c:Ljava/util/Map;
+
+    invoke-interface {p0, p2, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    return-void
+
+    :cond_2
+    invoke-static {p1}, Lqe5;->F(Lt39;)Z
+
+    move-result p1
+
+    iput-boolean p1, p0, Lz3g;->o:Z
+
+    return-void
+
+    :cond_3
+    const-wide/16 v0, 0x0
+
+    invoke-static {p1, v0, v1}, Lqe5;->L(Lt39;J)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Lz3g;->X:J
+
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    iget-object v0, p0, Lz3g;->c:Ljava/util/Map;
+
+    invoke-static {v0}, Lf4h;->y(Ljava/util/Map;)I
+
+    move-result v0
+
+    iget-boolean v1, p0, Lz3g;->o:Z
+
+    iget-wide v2, p0, Lz3g;->X:J
+
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    const-string v4, "{urls="
+
+    invoke-direct {p0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ", live="
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v0, ", startTime="
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "}"
+
+    invoke-static {p0, v2, v3, v0}, Lyv7;->j(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

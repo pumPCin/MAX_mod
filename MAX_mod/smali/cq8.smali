@@ -1,167 +1,86 @@
-.class public Lcq8;
-.super Llk9;
+.class public final synthetic Lcq8;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lom3;
 
 
 # instance fields
-.field public final l:Lbuc;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lz96;
+
+.field public final synthetic c:Lev7;
+
+.field public final synthetic o:Lvi8;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public synthetic constructor <init>(Lz96;Lev7;Lvi8;I)V
+    .registers 5
 
-    invoke-direct {p0}, Lyq7;-><init>()V
+    iput p4, p0, Lcq8;->a:I
 
-    new-instance v0, Lbuc;
+    iput-object p1, p0, Lcq8;->b:Lz96;
 
-    invoke-direct {v0}, Lbuc;-><init>()V
+    iput-object p2, p0, Lcq8;->c:Lev7;
 
-    iput-object v0, p0, Lcq8;->l:Lbuc;
+    iput-object p3, p0, Lcq8;->o:Lvi8;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g()V
-    .registers 3
-
-    iget-object p0, p0, Lcq8;->l:Lbuc;
-
-    invoke-virtual {p0}, Lbuc;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    move-object v0, p0
-
-    check-cast v0, Lxtc;
-
-    invoke-virtual {v0}, Lxtc;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lxtc;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbq8;
-
-    invoke-virtual {v0}, Lbq8;->b()V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final h()V
-    .registers 3
-
-    iget-object p0, p0, Lcq8;->l:Lbuc;
-
-    invoke-virtual {p0}, Lbuc;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    move-object v0, p0
-
-    check-cast v0, Lxtc;
-
-    invoke-virtual {v0}, Lxtc;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Lxtc;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbq8;
-
-    iget-object v1, v0, Lbq8;->a:Lyq7;
-
-    invoke-virtual {v1, v0}, Lyq7;->j(Le4a;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public l(Lyq7;Le4a;)V
+.method public final accept(Ljava/lang/Object;)V
     .registers 5
 
-    if-eqz p1, :cond_4
+    iget v0, p0, Lcq8;->a:I
 
-    new-instance v0, Lbq8;
+    check-cast p1, Lhq8;
 
-    invoke-direct {v0, p1, p2}, Lbq8;-><init>(Lyq7;Le4a;)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v1, p0, Lcq8;->l:Lbuc;
+    iget-object v0, p0, Lcq8;->b:Lz96;
 
-    invoke-virtual {v1, p1, v0}, Lbuc;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget v1, v0, Lz96;->b:I
 
-    move-result-object p1
+    iget-object v0, v0, Lz96;->c:Ljava/lang/Object;
 
-    check-cast p1, Lbq8;
+    check-cast v0, Lyp8;
 
-    if-eqz p1, :cond_1
+    iget-object v2, p0, Lcq8;->c:Lev7;
 
-    iget-object v1, p1, Lbq8;->b:Le4a;
+    iget-object p0, p0, Lcq8;->o:Lvi8;
 
-    if-ne v1, p2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "This source was already added with the different observer"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    :goto_0
-    if-eqz p1, :cond_2
+    invoke-interface {p1, v1, v0, v2, p0}, Lhq8;->c(ILyp8;Lev7;Lvi8;)V
 
     return-void
 
-    :cond_2
-    iget p0, p0, Lyq7;->c:I
+    :pswitch_0
+    iget-object v0, p0, Lcq8;->b:Lz96;
 
-    if-lez p0, :cond_3
+    iget v1, v0, Lz96;->b:I
 
-    invoke-virtual {v0}, Lbq8;->b()V
+    iget-object v0, v0, Lz96;->c:Ljava/lang/Object;
 
-    :cond_3
+    check-cast v0, Lyp8;
+
+    iget-object v2, p0, Lcq8;->c:Lev7;
+
+    iget-object p0, p0, Lcq8;->o:Lvi8;
+
+    invoke-interface {p1, v1, v0, v2, p0}, Lhq8;->u(ILyp8;Lev7;Lvi8;)V
+
     return-void
 
-    :cond_4
-    new-instance p0, Ljava/lang/NullPointerException;
+    nop
 
-    const-string p1, "source cannot be null"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

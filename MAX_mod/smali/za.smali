@@ -3,22 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcb;
+.implements Lhb;
 
 
-# static fields
-.field public static final a:Lza;
+# instance fields
+.field public final a:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Z)V
+    .registers 2
 
-    new-instance v0, Lza;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lza;->a:Lza;
+    iput-boolean p1, p0, Lza;->a:Z
 
     return-void
 .end method
@@ -28,37 +26,62 @@
 .method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    const/4 v0, 0x1
-
     if-ne p0, p1, :cond_0
 
-    return v0
+    goto :goto_1
 
     :cond_0
-    instance-of p0, p1, Lza;
+    instance-of v0, p1, Lza;
 
-    if-nez p0, :cond_1
+    if-nez v0, :cond_1
 
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lza;
+
+    iget-boolean p0, p0, Lza;->a:Z
+
+    iget-boolean p1, p1, Lza;->a:Z
+
+    if-eq p0, p1, :cond_2
+
+    :goto_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_1
-    return v0
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
 .method public final hashCode()I
     .registers 1
 
-    const p0, -0x44b9ef37
+    iget-boolean p0, p0, Lza;->a:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 1
+    .registers 3
 
-    const-string p0, "DisableRaiseHandForParticipant"
+    const-string v0, "DisableAllRaiseHandsOnce(isSuccess="
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Lza;->a:Z
+
+    invoke-static {v0, v1, p0}, Lz7e;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

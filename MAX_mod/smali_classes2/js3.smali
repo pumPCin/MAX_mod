@@ -1,48 +1,80 @@
-.class public final Ljs3;
+.class public final synthetic Ljs3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/io/Serializable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:I
 
-.field public final b:Ljava/lang/String;
+.field public final synthetic b:Lls3;
+
+.field public final synthetic c:Lan3;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+.method public synthetic constructor <init>(Lls3;Lan3;I)V
+    .registers 4
+
+    iput p3, p0, Ljs3;->a:I
+
+    iput-object p1, p0, Ljs3;->b:Lls3;
+
+    iput-object p2, p0, Ljs3;->c:Lan3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ljs3;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Ljs3;->b:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final onClick(Landroid/view/View;)V
     .registers 5
 
-    const-string v0, ", lastName="
+    iget p1, p0, Ljs3;->a:I
 
-    const-string v1, "}"
+    packed-switch p1, :pswitch_data_0
 
-    const-string v2, "ContactNameWrapper{name="
+    iget-object p1, p0, Ljs3;->b:Lls3;
 
-    iget-object v3, p0, Ljs3;->a:Ljava/lang/String;
+    iget-object p1, p1, Lls3;->o:Lbc6;
 
-    iget-object p0, p0, Ljs3;->b:Ljava/lang/String;
+    new-instance v0, Lt69;
 
-    invoke-static {v2, v3, v0, p0, v1}, Lfge;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iget-object p0, p0, Ljs3;->c:Lan3;
 
-    move-result-object p0
+    iget-wide v1, p0, Lan3;->j:J
 
-    return-object p0
+    invoke-direct {v0, v1, v2, p0}, Lt69;-><init>(JLkz;)V
+
+    invoke-interface {p1, v0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+
+    :pswitch_0
+    iget-object p1, p0, Ljs3;->b:Lls3;
+
+    iget-object p1, p1, Lls3;->o:Lbc6;
+
+    new-instance v0, Ls69;
+
+    iget-object p0, p0, Ljs3;->c:Lan3;
+
+    iget-wide v1, p0, Lan3;->j:J
+
+    invoke-direct {v0, v1, v2, p0}, Ls69;-><init>(JLkz;)V
+
+    invoke-interface {p1, v0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

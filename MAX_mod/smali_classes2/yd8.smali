@@ -1,143 +1,71 @@
-.class public final Lyd8;
+.class public abstract Lyd8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lb3f;
 
+# static fields
+.field public static final a:Ljava/lang/Object;
 
-# instance fields
-.field public a:Lt26;
-
-.field public final b:Ldle;
+.field public static final b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
+.method static constructor <clinit>()V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lrw7;
 
-    new-instance v0, Lmt7;
+    const/16 v1, 0xf
 
-    const/16 v1, 0x11
+    invoke-direct {v0, v1}, Lrw7;-><init>(I)V
 
-    invoke-direct {v0, v1}, Lmt7;-><init>(I)V
+    const/4 v1, 0x3
 
-    new-instance v1, Ldle;
-
-    invoke-direct {v1, v0}, Ldle;-><init>(Lh96;)V
-
-    iput-object v1, p0, Lyd8;->b:Ldle;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(JIIILz2f;)V
-    .registers 7
-
-    return-void
-.end method
-
-.method public final b(Lgsa;II)V
-    .registers 6
-
-    :goto_0
-    if-lez p2, :cond_0
-
-    iget-object p3, p0, Lyd8;->b:Ldle;
-
-    invoke-virtual {p3}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-static {v1, v0}, Lcb7;->G(ILzb6;)Lcl7;
 
     move-result-object v0
 
-    check-cast v0, [B
+    sput-object v0, Lyd8;->a:Ljava/lang/Object;
 
-    array-length v0, v0
+    new-instance v0, Lrw7;
 
-    invoke-static {p2, v0}, Ljava/lang/Math;->min(II)I
+    const/16 v2, 0x10
 
-    move-result v0
+    invoke-direct {v0, v2}, Lrw7;-><init>(I)V
 
-    invoke-virtual {p3}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, [B
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v1, p3, v0}, Lgsa;->e(I[BI)V
-
-    sub-int/2addr p2, v0
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final c(Lk64;IZ)I
-    .registers 7
-
-    move p3, p2
-
-    :goto_0
-    if-lez p3, :cond_1
-
-    iget-object v0, p0, Lyd8;->b:Ldle;
-
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, [B
-
-    array-length v1, v1
-
-    invoke-static {p3, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v1
-
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-static {v1, v0}, Lcb7;->G(ILzb6;)Lcl7;
 
     move-result-object v0
 
-    check-cast v0, [B
-
-    const/4 v2, 0x0
-
-    invoke-interface {p1, v0, v2, v1}, Lk64;->read([BII)I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    sub-int/2addr p3, v0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Lone/me/sdk/media/transformer/impl/MediaInfoRetriever$InvalidMediaTrackException;
-
-    const-string p1, "Unexpected end of track"
-
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    return p2
-.end method
-
-.method public final d(Lt26;)V
-    .registers 2
-
-    iput-object p1, p0, Lyd8;->a:Lt26;
+    sput-object v0, Lyd8;->b:Ljava/lang/Object;
 
     return-void
+.end method
+
+.method public static final a()Landroid/graphics/Matrix;
+    .registers 1
+
+    sget-object v0, Lyd8;->a:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Matrix;
+
+    return-object v0
+.end method
+
+.method public static final b()Landroid/graphics/Path;
+    .registers 1
+
+    sget-object v0, Lyd8;->b:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/Path;
+
+    return-object v0
 .end method

@@ -2,53 +2,47 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lq1f;
-
 
 # instance fields
-.field public final a:Z
+.field public a:J
 
-.field public final b:I
+.field public b:Ljava/lang/String;
 
+.field public c:Lsy;
 
-# direct methods
-.method public constructor <init>(Lmi0;)V
-    .registers 3
+.field public d:Lsva;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public e:Z
 
-    iget-object v0, p1, Lmi0;->c:Ljava/lang/Object;
+.field public f:Z
 
-    check-cast v0, Ljava/lang/Boolean;
+.field public g:Ljava/util/List;
 
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iput-boolean v0, p0, Lpva;->a:Z
-
-    iget p1, p1, Lmi0;->b:I
-
-    iput p1, p0, Lpva;->b:I
-
-    return-void
-.end method
+.field public h:Lfl4;
 
 
 # virtual methods
-.method public final a()Lfng;
-    .registers 1
+.method public final a()Lqva;
+    .registers 3
 
-    sget-object p0, Lfog;->a:Lfng;
+    iget-object v0, p0, Lpva;->d:Lsva;
 
-    return-object p0
+    if-eqz v0, :cond_0
+
+    iget v0, v0, Lsva;->a:I
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lpva;->b:Ljava/lang/String;
+
+    :cond_0
+    new-instance v0, Lqva;
+
+    invoke-direct {v0, p0}, Lqva;-><init>(Lpva;)V
+
+    return-object v0
 .end method

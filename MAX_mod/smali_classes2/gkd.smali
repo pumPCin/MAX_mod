@@ -1,41 +1,77 @@
 .class public final Lgkd;
-.super Lha4;
+.super Lbld;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lgkd;
+# instance fields
+.field public final synthetic g:I
 
-.field public static final c:Lca4;
+.field public final h:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public synthetic constructor <init>(JLjava/lang/Object;I)V
+    .registers 5
 
-    new-instance v0, Lgkd;
+    iput p4, p0, Lgkd;->g:I
 
-    invoke-direct {v0}, Lha4;-><init>()V
+    invoke-direct {p0, p1, p2}, Lbld;-><init>(J)V
 
-    sput-object v0, Lgkd;->b:Lgkd;
+    iput-object p3, p0, Lgkd;->h:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lxx8;)V
+    .registers 4
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lgkd;->g:I
+
+    const-wide/16 v0, 0x0
+
+    invoke-direct {p0, v0, v1}, Lbld;-><init>(J)V
+
+    iput-object p1, p0, Lgkd;->h:Ljava/lang/Object;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lcld;
+    .registers 3
+
+    iget v0, p0, Lgkd;->g:I
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Ldld;
+
+    invoke-direct {v0, p0}, Ldld;-><init>(Lgkd;)V
+
+    return-object v0
+
+    :pswitch_0
+    new-instance v0, Lhkd;
 
     const/4 v1, 0x0
 
-    new-array v2, v1, [Ljava/lang/String;
+    invoke-direct {v0, p0, v1}, Lhkd;-><init>(Lgkd;B)V
 
-    const/16 v5, 0xe
+    return-object v0
 
-    const/4 v4, 0x0
+    :pswitch_1
+    new-instance v0, Lhkd;
 
-    const-string v1, ":settings/media"
+    invoke-direct {v0, p0}, Lhkd;-><init>(Lgkd;)V
 
-    const/4 v3, 0x0
+    return-object v0
 
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v0
-
-    sput-object v0, Lgkd;->c:Lca4;
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

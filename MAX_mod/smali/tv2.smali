@@ -1,25 +1,25 @@
 .class public final Ltv2;
-.super Lcx3;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
 .field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Lew2;
+.field public final synthetic Y:Lgw2;
 
 .field public Z:I
 
-.field public o:Lew2;
+.field public o:Lgw2;
 
 
 # direct methods
-.method public constructor <init>(Lew2;Lcx3;)V
+.method public constructor <init>(Lgw2;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput-object p1, p0, Ltv2;->Y:Lew2;
+    iput-object p1, p0, Ltv2;->Y:Lgw2;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -39,9 +39,9 @@
 
     iput p1, p0, Ltv2;->Z:I
 
-    iget-object p1, p0, Ltv2;->Y:Lew2;
+    iget-object p1, p0, Ltv2;->Y:Lgw2;
 
-    invoke-virtual {p1, p0}, Lew2;->d(Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Lgw2;->c(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

@@ -1,11 +1,9 @@
 .class public final Lcye;
-.super Ljava/lang/Exception;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final fillInStackTrace()Ljava/lang/Throwable;
-    .registers 1
+# instance fields
+.field public a:I
 
-    return-object p0
-.end method
+.field public b:J

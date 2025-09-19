@@ -1,47 +1,35 @@
-.class public final Lm54;
+.class public interface abstract Lm54;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:[I
+# virtual methods
+.method public abstract b()V
+.end method
 
-.field public final b:I
+.method public abstract d(JLvdd;)J
+.end method
 
-.field public final c:I
+.method public abstract e(Lwv7;JLjava/util/List;Lcr0;)V
+.end method
 
-.field public final d:I
+.method public abstract f(Lb33;)V
+.end method
 
-.field public final e:I
+.method public abstract g(JLb33;Ljava/util/List;)Z
+.end method
 
-.field public final f:I
+.method public abstract h(Lr54;I)V
+.end method
 
-.field public final g:I
+.method public abstract i(Lpd5;)V
+.end method
 
-.field public final h:Lj07;
+.method public abstract j(JLjava/util/List;)I
+.end method
 
+.method public abstract k(Lb33;ZLcv7;Lw9d;)Z
+.end method
 
-# direct methods
-.method public constructor <init>(II[IIIIILj07;)V
-    .registers 9
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lm54;->b:I
-
-    iput-object p3, p0, Lm54;->a:[I
-
-    iput p2, p0, Lm54;->c:I
-
-    iput p4, p0, Lm54;->e:I
-
-    iput p5, p0, Lm54;->f:I
-
-    iput p6, p0, Lm54;->g:I
-
-    iput p7, p0, Lm54;->d:I
-
-    iput-object p8, p0, Lm54;->h:Lj07;
-
-    return-void
+.method public abstract release()V
 .end method

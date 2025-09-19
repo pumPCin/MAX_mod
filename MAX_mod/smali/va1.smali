@@ -1,105 +1,96 @@
 .class public final Lva1;
-.super Ljtd;
+.super Luc0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final X:Lvtf;
+.field public final b:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method public constructor <init>(Lvtf;Ljava/util/concurrent/ExecutorService;)V
+.method public constructor <init>(Ljava/lang/CharSequence;)V
     .registers 3
 
-    invoke-direct {p0, p2}, Ljtd;-><init>(Ljava/util/concurrent/Executor;)V
+    const/4 v0, 0x2
 
-    iput-object p1, p0, Lva1;->X:Lvtf;
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
+
+    iput-object p1, p0, Lva1;->b:Ljava/lang/CharSequence;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final H(Lbud;I)V
+.method public final equals(Ljava/lang/Object;)Z
     .registers 5
 
-    instance-of v0, p1, Lua1;
+    const/4 v0, 0x1
 
-    if-eqz v0, :cond_1
+    if-ne p0, p1, :cond_0
 
-    check-cast p1, Lua1;
-
-    invoke-virtual {p0, p2}, Lhp7;->C(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lpp7;
-
-    instance-of v0, p2, Lbd1;
-
-    if-nez v0, :cond_0
-
-    return-void
+    return v0
 
     :cond_0
-    invoke-virtual {p1, p2}, Lua1;->x(Lpp7;)V
+    instance-of v1, p1, Lva1;
 
-    iget-object p1, p1, Lphc;->a:Landroid/view/View;
+    const/4 v2, 0x0
 
-    check-cast p1, Lmjd;
+    if-nez v1, :cond_1
 
-    new-instance v0, Llb;
-
-    check-cast p2, Lbd1;
-
-    const/4 v1, 0x2
-
-    iget-object p0, p0, Lva1;->X:Lvtf;
-
-    invoke-direct {v0, p0, v1, p2}, Llb;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-static {p1, v0}, Lbug;->H(Landroid/view/View;Landroid/view/View$OnClickListener;)V
-
-    return-void
+    return v2
 
     :cond_1
-    invoke-virtual {p0, p2}, Lhp7;->C(I)Ljava/lang/Object;
+    check-cast p1, Lva1;
 
-    move-result-object p0
+    iget-object p0, p0, Lva1;->b:Ljava/lang/CharSequence;
 
-    check-cast p0, Lpp7;
+    iget-object p1, p1, Lva1;->b:Ljava/lang/CharSequence;
 
-    invoke-virtual {p1, p0}, Lbud;->x(Lpp7;)V
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    return-void
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public final bridge synthetic r(Lphc;I)V
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lva1;->b:Ljava/lang/CharSequence;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    check-cast p1, Lbud;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0, p1, p2}, Lva1;->H(Lbud;I)V
+    const-string v1, "CopyLink(link="
 
-    return-void
-.end method
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-.method public final t(Landroid/view/ViewGroup;I)Lphc;
-    .registers 4
+    iget-object p0, p0, Lva1;->b:Ljava/lang/CharSequence;
 
-    new-instance p0, Lua1;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    const-string p0, ")"
 
-    move-result-object p1
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance p2, Lmjd;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const/4 v0, 0x0
-
-    invoke-direct {p2, p1, v0}, Lmjd;-><init>(Landroid/content/Context;I)V
-
-    invoke-direct {p0, p2}, Lphc;-><init>(Landroid/view/View;)V
+    move-result-object p0
 
     return-object p0
 .end method

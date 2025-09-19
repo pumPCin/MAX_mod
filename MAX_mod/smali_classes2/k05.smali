@@ -1,66 +1,25 @@
-.class public abstract Lk05;
-.super Lai;
+.class public abstract synthetic Lk05;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public q0:Ll25;
+# static fields
+.field public static final synthetic a:Ly75;
 
 
-# virtual methods
-.method public final onTextContextMenuItem(I)Z
-    .registers 3
-
-    const v0, 0x1020022
-
-    if-ne p1, v0, :cond_0
-
-    const p1, 0x1020031
-
-    invoke-super {p0, p1}, Landroidx/appcompat/widget/AppCompatEditText;->onTextContextMenuItem(I)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_0
-    invoke-super {p0, p1}, Landroidx/appcompat/widget/AppCompatEditText;->onTextContextMenuItem(I)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public setReplaceTextSmiles(Z)V
+# direct methods
+.method static constructor <clinit>()V
     .registers 2
 
-    if-eqz p1, :cond_0
+    invoke-static {}, Lfrf;->values()[Lfrf;
 
-    iget-object p1, p0, Lk05;->q0:Ll25;
+    move-result-object v0
 
-    if-nez p1, :cond_1
+    new-instance v1, Ly75;
 
-    new-instance p1, Ll25;
+    invoke-direct {v1, v0}, Ly75;-><init>([Ljava/lang/Enum;)V
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    sput-object v1, Lk05;->a:Ly75;
 
-    iput-object p1, p0, Lk05;->q0:Ll25;
-
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
-
-    return-void
-
-    :cond_0
-    iget-object p1, p0, Lk05;->q0:Ll25;
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->removeTextChangedListener(Landroid/text/TextWatcher;)V
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lk05;->q0:Ll25;
-
-    :cond_1
     return-void
 .end method

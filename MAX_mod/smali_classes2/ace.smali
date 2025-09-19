@@ -1,289 +1,73 @@
-.class public final Lace;
-.super Lvgc;
+.class public final enum Lace;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static final enum a:Lace;
 
-.field public final synthetic b:Landroidx/recyclerview/widget/RecyclerView;
+.field public static final enum b:Lace;
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public static final synthetic c:[Lace;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Landroidx/recyclerview/widget/RecyclerView;I)V
+.method static constructor <clinit>()V
     .registers 4
 
-    iput p3, p0, Lace;->a:I
+    new-instance v0, Lace;
 
-    iput-object p1, p0, Lace;->c:Ljava/lang/Object;
+    const-string v1, "EXPANDED"
 
-    iput-object p2, p0, Lace;->b:Landroidx/recyclerview/widget/RecyclerView;
+    const/4 v2, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    return-void
-.end method
+    sput-object v0, Lace;->a:Lace;
 
+    new-instance v1, Lace;
 
-# virtual methods
-.method public a()V
-    .registers 2
+    const-string v2, "COLLAPSED"
 
-    iget v0, p0, Lace;->a:I
+    const/4 v3, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    return-void
+    sput-object v1, Lace;->b:Lace;
 
-    :pswitch_0
-    iget-object p0, p0, Lace;->c:Ljava/lang/Object;
-
-    check-cast p0, Lcce;
-
-    invoke-static {p0}, Lcce;->i(Lcce;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public b(II)V
-    .registers 3
-
-    iget p1, p0, Lace;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lace;->c:Ljava/lang/Object;
-
-    check-cast p0, Lcce;
-
-    invoke-static {p0}, Lcce;->i(Lcce;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public c(IILjava/lang/Object;)V
-    .registers 5
-
-    iget v0, p0, Lace;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1, p2, p3}, Lvgc;->c(IILjava/lang/Object;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lace;->c:Ljava/lang/Object;
-
-    check-cast p0, Lcce;
-
-    invoke-static {p0}, Lcce;->i(Lcce;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final d(II)V
-    .registers 8
-
-    iget p2, p0, Lace;->a:I
-
-    packed-switch p2, :pswitch_data_0
-
-    if-nez p1, :cond_0
-
-    iget-object p1, p0, Lace;->c:Ljava/lang/Object;
-
-    check-cast p1, Lc0f;
-
-    iget-object p0, p0, Lace;->b:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-static {p1, p0}, Lc0f;->d(Lc0f;Landroidx/recyclerview/widget/RecyclerView;)V
-
-    :cond_0
-    return-void
-
-    :pswitch_0
-    sget-object p1, Llw7;->o:Llw7;
-
-    const-class p2, Lace;
-
-    invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    filled-new-array {v0, v1}, [Lace;
 
     move-result-object v0
 
-    iget-object v1, p0, Lace;->b:Landroidx/recyclerview/widget/RecyclerView;
+    sput-object v0, Lace;->c:[Lace;
 
-    sget-object v2, Ld86;->f:Lafa;
+    return-void
+.end method
 
-    const/4 v3, 0x0
+.method public static valueOf(Ljava/lang/String;)Lace;
+    .registers 2
 
-    if-nez v2, :cond_1
+    const-class v0, Lace;
 
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {v2, p1}, Lafa;->a(Llw7;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView;->Y()Z
-
-    move-result v1
-
-    const-string v4, "onItemRangeInserted start. isComputingLayout:"
-
-    invoke-static {v4, v1}, Loq9;->g(Ljava/lang/String;Z)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v2, p1, v0, v1, v3}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_2
-    :goto_0
-    iget-object v0, p0, Lace;->c:Ljava/lang/Object;
-
-    check-cast v0, Lcce;
-
-    invoke-static {v0}, Lcce;->i(Lcce;)V
-
-    invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p2
-
-    iget-object p0, p0, Lace;->b:Landroidx/recyclerview/widget/RecyclerView;
-
-    sget-object v0, Ld86;->f:Lafa;
-
-    if-nez v0, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {v0, p1}, Lafa;->a(Llw7;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->Y()Z
-
-    move-result p0
-
-    const-string v1, "onItemRangeInserted end. isComputingLayout:"
-
-    invoke-static {v1, p0}, Loq9;->g(Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    invoke-virtual {v0, p1, p2, p0, v3}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    check-cast p0, Lace;
 
-    :cond_4
-    :goto_1
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public final e(II)V
-    .registers 4
+.method public static values()[Lace;
+    .registers 1
 
-    iget v0, p0, Lace;->a:I
+    sget-object v0, Lace;->c:[Lace;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    if-eqz p1, :cond_0
+    move-result-object v0
 
-    if-nez p2, :cond_1
+    check-cast v0, [Lace;
 
-    :cond_0
-    iget-object p1, p0, Lace;->c:Ljava/lang/Object;
-
-    check-cast p1, Lc0f;
-
-    iget-object p0, p0, Lace;->b:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-static {p1, p0}, Lc0f;->d(Lc0f;Landroidx/recyclerview/widget/RecyclerView;)V
-
-    :cond_1
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lace;->c:Ljava/lang/Object;
-
-    check-cast p0, Lcce;
-
-    invoke-static {p0}, Lcce;->i(Lcce;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final f(II)V
-    .registers 3
-
-    iget p2, p0, Lace;->a:I
-
-    packed-switch p2, :pswitch_data_0
-
-    if-nez p1, :cond_0
-
-    iget-object p1, p0, Lace;->c:Ljava/lang/Object;
-
-    check-cast p1, Lc0f;
-
-    iget-object p0, p0, Lace;->b:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-static {p1, p0}, Lc0f;->d(Lc0f;Landroidx/recyclerview/widget/RecyclerView;)V
-
-    :cond_0
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lace;->c:Ljava/lang/Object;
-
-    check-cast p0, Lcce;
-
-    invoke-static {p0}, Lcce;->i(Lcce;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

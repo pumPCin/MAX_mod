@@ -1,100 +1,116 @@
-.class public final Lgm7;
+.class public final synthetic Lgm7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lan7;
+.implements Leb4;
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lgm7;",
-            ">;"
-        }
-    .end annotation
-.end field
+# instance fields
+.field public final synthetic X:Ljava/lang/Long;
 
-.field public static final a:Lgm7;
+.field public final synthetic a:J
+
+.field public final synthetic b:J
+
+.field public final synthetic c:Ljy7;
+
+.field public final synthetic o:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public synthetic constructor <init>(JJLjy7;FLjava/lang/Long;)V
+    .registers 8
 
-    new-instance v0, Lgm7;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-wide p1, p0, Lgm7;->a:J
 
-    sput-object v0, Lgm7;->a:Lgm7;
+    iput-wide p3, p0, Lgm7;->b:J
 
-    new-instance v0, Ldn6;
+    iput-object p5, p0, Lgm7;->c:Ljy7;
 
-    const/16 v1, 0x11
+    iput p6, p0, Lgm7;->o:F
 
-    invoke-direct {v0, v1}, Ldn6;-><init>(I)V
-
-    sput-object v0, Lgm7;->CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object p7, p0, Lgm7;->X:Ljava/lang/Long;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
+.method public final a()Ljava/lang/Object;
+    .registers 8
 
-    const/4 p0, 0x0
+    new-instance v0, Landroidx/fragment/app/FragmentWrapperWidget;
 
-    return p0
-.end method
+    iget-wide v1, p0, Lgm7;->a:J
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v0, 0x1
+    move-result-object v1
 
-    if-ne p0, p1, :cond_0
+    new-instance v2, Lpxa;
 
-    return v0
+    const-string v3, "ru.ok.tamtam.extra.CHAT_ID"
 
-    :cond_0
-    instance-of p0, p1, Lgm7;
+    invoke-direct {v2, v3, v1}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    if-nez p0, :cond_1
+    iget-wide v3, p0, Lgm7;->b:J
 
-    const/4 p0, 0x0
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    return p0
+    move-result-object v1
 
-    :cond_1
-    return v0
-.end method
+    new-instance v3, Lpxa;
 
-.method public final hashCode()I
-    .registers 1
+    const-string v4, "ru.ok.tamtam.extra.MESSAGE_ID"
 
-    const p0, 0x1269e0f3
+    invoke-direct {v3, v4, v1}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    return p0
-.end method
+    new-instance v1, Lpxa;
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    const-string v4, "ru.ok.tamtam.extra.LOCATION"
 
-    const-string p0, "Error"
+    iget-object v5, p0, Lgm7;->c:Ljy7;
 
-    return-object p0
-.end method
+    invoke-direct {v1, v4, v5}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    iget v4, p0, Lgm7;->o:F
 
-    const/4 p0, 0x1
+    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    move-result-object v4
 
-    return-void
+    new-instance v5, Lpxa;
+
+    const-string v6, "ru.ok.tamtam.extra.ZOOM"
+
+    invoke-direct {v5, v6, v4}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    new-instance v4, Lpxa;
+
+    const-string v6, "ru.ok.tamtam.extra.CONTACT_ID"
+
+    iget-object p0, p0, Lgm7;->X:Ljava/lang/Long;
+
+    invoke-direct {v4, v6, p0}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    filled-new-array {v2, v3, v1, v5, v4}, [Lpxa;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lw7;->c([Lpxa;)Landroid/os/Bundle;
+
+    move-result-object p0
+
+    const v1, 0x7a3a1dca
+
+    const-class v2, Lru/ok/messages/location/FrgLocationMap;
+
+    const-string v3, "ru.ok.messages.location.FrgLocationMap"
+
+    invoke-direct {v0, v1, v2, v3, p0}, Landroidx/fragment/app/FragmentWrapperWidget;-><init>(ILjava/lang/Class;Ljava/lang/String;Landroid/os/Bundle;)V
+
+    return-object v0
 .end method

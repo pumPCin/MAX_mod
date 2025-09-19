@@ -1,100 +1,48 @@
 .class public final Lc7b;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.super Ljx3;
 
 
 # instance fields
-.field public final a:I
+.field public X:I
 
-.field public final b:I
+.field public final synthetic Y:La7b;
 
-.field public final c:Ljava/lang/String;
-
-.field public d:I
-
-.field public e:Landroid/media/VolumeProvider;
-
-.field public final synthetic f:Landroid/os/Handler;
-
-.field public final synthetic g:Le7b;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Le7b;IIILjava/lang/String;Landroid/os/Handler;)V
-    .registers 7
+.method public constructor <init>(La7b;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lc7b;->Y:La7b;
 
-    iput-object p1, p0, Lc7b;->g:Le7b;
-
-    iput-object p6, p0, Lc7b;->f:Landroid/os/Handler;
-
-    iput p2, p0, Lc7b;->a:I
-
-    iput p3, p0, Lc7b;->b:I
-
-    iput p4, p0, Lc7b;->d:I
-
-    iput-object p5, p0, Lc7b;->c:Ljava/lang/String;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/media/VolumeProvider;
-    .registers 9
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object v0, p0, Lc7b;->e:Landroid/media/VolumeProvider;
+    iput-object p1, p0, Lc7b;->o:Ljava/lang/Object;
 
-    if-nez v0, :cond_1
+    iget p1, p0, Lc7b;->X:I
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/high16 v0, -0x80000000
 
-    const/16 v1, 0x1e
+    or-int/2addr p1, v0
 
-    if-lt v0, v1, :cond_0
+    iput p1, p0, Lc7b;->X:I
 
-    new-instance v2, Lt0g;
+    iget-object p1, p0, Lc7b;->Y:La7b;
 
-    iget v6, p0, Lc7b;->d:I
+    const/4 v0, 0x0
 
-    iget-object v7, p0, Lc7b;->c:Ljava/lang/String;
+    invoke-virtual {p1, v0, p0}, La7b;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    iget v4, p0, Lc7b;->a:I
-
-    iget v5, p0, Lc7b;->b:I
-
-    move-object v3, p0
-
-    invoke-direct/range {v2 .. v7}, Lt0g;-><init>(Lc7b;IIILjava/lang/String;)V
-
-    iput-object v2, v3, Lc7b;->e:Landroid/media/VolumeProvider;
-
-    goto :goto_0
-
-    :cond_0
-    move-object v3, p0
-
-    new-instance p0, Lpm1;
-
-    iget v0, v3, Lc7b;->b:I
-
-    iget v1, v3, Lc7b;->d:I
-
-    iget v2, v3, Lc7b;->a:I
-
-    invoke-direct {p0, v3, v2, v0, v1}, Lpm1;-><init>(Lc7b;III)V
-
-    iput-object p0, v3, Lc7b;->e:Landroid/media/VolumeProvider;
-
-    goto :goto_0
-
-    :cond_1
-    move-object v3, p0
-
-    :goto_0
-    iget-object p0, v3, Lc7b;->e:Landroid/media/VolumeProvider;
+    move-result-object p0
 
     return-object p0
 .end method

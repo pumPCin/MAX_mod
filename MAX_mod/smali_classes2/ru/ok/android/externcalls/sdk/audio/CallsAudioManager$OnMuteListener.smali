@@ -22,7 +22,7 @@
         "",
         "",
         "mute",
-        "Lncf;",
+        "Lylf;",
         "onMute",
         "(Z)V",
         "onMutedForever",

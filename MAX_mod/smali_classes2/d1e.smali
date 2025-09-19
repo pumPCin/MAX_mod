@@ -1,229 +1,204 @@
-.class public final Ld1e;
-.super Lb1e;
+.class public final enum Ld1e;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic b:[Ld1e;
+
+.field public static final synthetic c:Ly75;
+
+
 # instance fields
-.field public final l:J
-
-.field public final m:J
-
-.field public final n:J
-
-.field public final o:J
-
-.field public final p:J
-
-.field public final q:J
-
-.field public final r:J
-
-.field public final s:J
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;JJJJJJJJLjava/lang/String;Lmwg;Ljava/lang/Boolean;)V
-    .registers 37
+.method static constructor <clinit>()V
+    .registers 13
 
-    const/4 v1, 0x2
+    new-instance v0, Ld1e;
 
-    move-object v0, p0
+    const-string v1, "CANCELED"
 
-    move-wide v2, p1
+    const/4 v2, 0x0
 
-    move-object v4, p3
+    invoke-direct {v0, v1, v2, v1}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    move-object v5, p4
+    new-instance v1, Ld1e;
 
-    move-object/from16 v6, p5
+    const-string v2, "REJECTED"
 
-    move-object/from16 v7, p6
+    const/4 v3, 0x1
 
-    move-object/from16 v8, p23
+    invoke-direct {v1, v2, v3, v2}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    move-object/from16 v9, p24
+    new-instance v2, Ld1e;
 
-    move-object/from16 v10, p25
+    const-string v3, "HUNGUP"
 
-    invoke-direct/range {v0 .. v10}, Lb1e;-><init>(IJLjava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Lmwg;Ljava/lang/Boolean;)V
+    const/4 v4, 0x2
 
-    move-wide/from16 p1, p7
+    invoke-direct {v2, v3, v4, v3}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    iput-wide p1, p0, Ld1e;->l:J
+    new-instance v3, Ld1e;
 
-    move-wide/from16 p1, p9
+    const-string v4, "MISSED"
 
-    iput-wide p1, p0, Ld1e;->m:J
+    const/4 v5, 0x3
 
-    move-wide/from16 p1, p11
+    invoke-direct {v3, v4, v5, v4}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    iput-wide p1, p0, Ld1e;->n:J
+    new-instance v4, Ld1e;
 
-    move-wide/from16 p1, p13
+    const-string v5, "TIMEOUT"
 
-    iput-wide p1, p0, Ld1e;->o:J
+    const/4 v6, 0x4
 
-    move-wide/from16 p1, p15
+    invoke-direct {v4, v5, v6, v5}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    iput-wide p1, p0, Ld1e;->p:J
+    new-instance v5, Ld1e;
 
-    move-wide/from16 p1, p17
+    const-string v6, "BUSY"
 
-    iput-wide p1, p0, Ld1e;->q:J
+    const/4 v7, 0x5
 
-    move-wide/from16 p1, p19
+    invoke-direct {v5, v6, v7, v6}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
-    iput-wide p1, p0, Ld1e;->r:J
+    new-instance v6, Ld1e;
 
-    move-wide/from16 p1, p21
+    const-string v7, "FAILED"
 
-    iput-wide p1, p0, Ld1e;->s:J
+    const/4 v8, 0x6
+
+    invoke-direct {v6, v7, v8, v7}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    new-instance v7, Ld1e;
+
+    const-string v8, "REMOVED"
+
+    const/4 v9, 0x7
+
+    invoke-direct {v7, v8, v9, v8}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    new-instance v8, Ld1e;
+
+    const-string v9, "ANOTHER_DEVICE"
+
+    const/16 v10, 0x8
+
+    invoke-direct {v8, v9, v10, v9}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    new-instance v9, Ld1e;
+
+    const-string v10, "KILLED"
+
+    const/16 v11, 0x9
+
+    invoke-direct {v9, v10, v11, v10}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    new-instance v10, Ld1e;
+
+    const-string v11, "CALL_TIMEOUT"
+
+    const/16 v12, 0xa
+
+    invoke-direct {v10, v11, v12, v11}, Ld1e;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    filled-new-array/range {v0 .. v10}, [Ld1e;
+
+    move-result-object v0
+
+    sput-object v0, Ld1e;->b:[Ld1e;
+
+    new-instance v1, Ly75;
+
+    invoke-direct {v1, v0}, Ly75;-><init>([Ljava/lang/Enum;)V
+
+    sput-object v1, Ld1e;->c:Ly75;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .registers 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const-string v1, "VideoSend{ssrc="
+    iput-object p3, p0, Ld1e;->a:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    return-void
+.end method
 
-    iget-wide v1, p0, Le1e;->c:J
+.method public static final a(Ljava/lang/String;)Ld1e;
+    .registers 4
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    new-instance v0, Lw1;
 
-    const-string v1, ", transportId=\'"
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object v2, Ld1e;->c:Ly75;
 
-    iget-object v1, p0, Le1e;->d:Ljava/lang/String;
+    invoke-direct {v0, v1, v2}, Lw1;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    invoke-virtual {v0}, Lw1;->hasNext()Z
 
-    const-string v1, "\', trackId=\'"
+    move-result v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v1, :cond_1
 
-    iget-object v1, p0, Le1e;->e:Ljava/lang/String;
+    invoke-virtual {v0}, Lw1;->next()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    const-string v1, "\', packetsSent="
+    move-object v2, v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v2, Ld1e;
 
-    iget-object v1, p0, Lb1e;->h:Ljava/math/BigInteger;
+    iget-object v2, v2, Ld1e;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    const-string v1, ", packetsLost="
+    move-result v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v2, :cond_0
 
-    iget-object v1, p0, Lb1e;->i:Ljava/math/BigInteger;
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :cond_1
+    const/4 v1, 0x0
 
-    const-string v1, ", bytesSent="
+    :goto_0
+    check-cast v1, Ld1e;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object v1
+.end method
 
-    iget-object v1, p0, Lb1e;->j:Ljava/math/BigInteger;
+.method public static valueOf(Ljava/lang/String;)Ld1e;
+    .registers 2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-class v0, Ld1e;
 
-    const-string v1, ", nacksReceived="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Ld1e;->l:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", pliReceived="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Ld1e;->m:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", firReceived="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Ld1e;->n:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", framesEncoded="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Ld1e;->o:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", adaptationChanges="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Ld1e;->p:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", avgEncodeMs="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Ld1e;->q:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", frameWidth="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Ld1e;->r:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", frameHeight="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Ld1e;->s:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isMediaShare="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lb1e;->k:Ljava/lang/Boolean;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", unknown="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Le1e;->g:Ljava/util/HashMap;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Ld1e;
+
     return-object p0
+.end method
+
+.method public static values()[Ld1e;
+    .registers 1
+
+    sget-object v0, Ld1e;->b:[Ld1e;
+
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ld1e;
+
+    return-object v0
 .end method

@@ -1,133 +1,202 @@
 .class public final Liwe;
-.super Ljk4;
+.super Ljava/io/FilterInputStream;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic c:Ljwe;
+.field public final a:[B
+
+.field public b:I
+
+.field public c:I
 
 
 # direct methods
-.method public constructor <init>(Ljwe;Lyi0;)V
+.method public constructor <init>(Ljava/io/InputStream;[B)V
     .registers 3
 
-    iput-object p1, p0, Liwe;->c:Ljwe;
+    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    invoke-direct {p0, p2}, Ljk4;-><init>(Lyi0;)V
+    iput-object p2, p0, Liwe;->a:[B
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d()V
-    .registers 2
-
-    iget-object v0, p0, Ljk4;->b:Lyi0;
-
-    invoke-virtual {v0}, Lyi0;->c()V
-
-    invoke-virtual {p0}, Liwe;->m()V
-
-    return-void
-.end method
-
-.method public final f(Ljava/lang/Throwable;)V
+.method public final mark(I)V
     .registers 3
 
-    iget-object v0, p0, Ljk4;->b:Lyi0;
+    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
 
-    invoke-virtual {v0, p1}, Lyi0;->e(Ljava/lang/Throwable;)V
+    invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
 
-    invoke-virtual {p0}, Liwe;->m()V
+    move-result v0
 
-    return-void
-.end method
+    if-eqz v0, :cond_0
 
-.method public final h(ILjava/lang/Object;)V
-    .registers 4
+    invoke-super {p0, p1}, Ljava/io/FilterInputStream;->mark(I)V
 
-    iget-object v0, p0, Ljk4;->b:Lyi0;
+    iget p1, p0, Liwe;->b:I
 
-    invoke-virtual {v0, p1, p2}, Lyi0;->g(ILjava/lang/Object;)V
-
-    invoke-static {p1}, Lyi0;->a(I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Liwe;->m()V
+    iput p1, p0, Liwe;->c:I
 
     :cond_0
     return-void
 .end method
 
-.method public final m()V
-    .registers 6
+.method public final read()I
+    .registers 5
 
-    iget-object v0, p0, Liwe;->c:Ljwe;
+    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
 
-    monitor-enter v0
+    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
-    :try_start_0
-    iget-object v1, p0, Liwe;->c:Ljwe;
+    move-result v0
 
-    iget-object v1, v1, Ljwe;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
+    const/4 v1, -0x1
 
-    invoke-virtual {v1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->poll()Ljava/lang/Object;
+    if-eq v0, v1, :cond_0
 
-    move-result-object v1
+    return v0
 
-    check-cast v1, Landroid/util/Pair;
+    :cond_0
+    iget v0, p0, Liwe;->b:I
 
-    if-nez v1, :cond_0
+    iget-object v2, p0, Liwe;->a:[B
 
-    iget-object v2, p0, Liwe;->c:Ljwe;
+    array-length v3, v2
 
-    iget v3, v2, Ljwe;->b:I
+    if-lt v0, v3, :cond_1
 
-    add-int/lit8 v3, v3, -0x1
+    return v1
 
-    iput v3, v2, Ljwe;->b:I
+    :cond_1
+    add-int/lit8 v1, v0, 0x1
 
-    goto :goto_0
+    iput v1, p0, Liwe;->b:I
 
-    :catchall_0
-    move-exception p0
+    aget-byte p0, v2, v0
+
+    and-int/lit16 p0, p0, 0xff
+
+    return p0
+.end method
+
+.method public final read([B)I
+    .registers 4
+
+    const/4 v0, 0x0
+
+    array-length v1, p1
+
+    invoke-virtual {p0, p1, v0, v1}, Liwe;->read([BII)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final read([BII)I
+    .registers 9
+
+    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
+
+    move-result v0
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    if-nez p3, :cond_1
+
+    return v0
+
+    :cond_1
+    :goto_0
+    if-ge v0, p3, :cond_4
+
+    iget v2, p0, Liwe;->b:I
+
+    iget-object v3, p0, Liwe;->a:[B
+
+    array-length v4, v3
+
+    if-lt v2, v4, :cond_2
+
+    move v2, v1
 
     goto :goto_1
 
-    :cond_0
-    :goto_0
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :cond_2
+    add-int/lit8 v4, v2, 0x1
 
-    if-eqz v1, :cond_1
+    iput v4, p0, Liwe;->b:I
 
-    iget-object v0, p0, Liwe;->c:Ljwe;
+    aget-byte v2, v3, v2
 
-    iget-object v0, v0, Ljwe;->d:Ljava/util/concurrent/Executor;
-
-    new-instance v2, Leb6;
-
-    const/16 v3, 0x1b
-
-    const/4 v4, 0x0
-
-    invoke-direct {v2, p0, v1, v4, v3}, Leb6;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
-
-    invoke-interface {v0, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    :cond_1
-    return-void
+    and-int/lit16 v2, v2, 0xff
 
     :goto_1
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    if-ne v2, v1, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    add-int v3, p2, v0
+
+    int-to-byte v2, v2
+
+    aput-byte v2, p1, v3
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    :goto_2
+    if-lez v0, :cond_5
+
+    return v0
+
+    :cond_5
+    return v1
+.end method
+
+.method public final reset()V
+    .registers 2
+
+    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+
+    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
+
+    iget v0, p0, Liwe;->c:I
+
+    iput v0, p0, Liwe;->b:I
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/io/IOException;
+
+    const-string v0, "mark is not supported"
+
+    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method

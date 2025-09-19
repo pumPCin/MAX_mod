@@ -1,9 +1,9 @@
 .class final Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;
-.super Lih7;
+.super Lnk7;
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lbc6;
 
 
 # annotations
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lih7;",
-        "Lj96;"
+        "Lnk7;",
+        "Lbc6;"
     }
 .end annotation
 
@@ -28,11 +28,11 @@
         "\u0000\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0010\u0005\u001a\u00020\u00022\u0006\u0010\u0001\u001a\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0003\u0010\u0004"
     }
     d2 = {
-        "Lft9;",
+        "Lfx9;",
         "builder",
-        "Lgt9;",
+        "Lgx9;",
         "invoke",
-        "(Lft9;)Lgt9;",
+        "(Lfx9;)Lgx9;",
         "<anonymous>"
     }
     k = 0x3
@@ -104,14 +104,14 @@
 
     const/4 p1, 0x1
 
-    invoke-direct {p0, p1}, Lih7;-><init>(I)V
+    invoke-direct {p0, p1}, Lnk7;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Lft9;)Lgt9;
+.method public final invoke(Lfx9;)Lgx9;
     .registers 21
 
     move-object/from16 v0, p0
@@ -120,23 +120,23 @@
 
     iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$serversideBasic:Z
 
-    iput-boolean v2, v1, Lft9;->a:Z
+    iput-boolean v2, v1, Lfx9;->a:Z
 
     iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$serversideAnn:Z
 
-    iput-boolean v2, v1, Lft9;->b:Z
+    iput-boolean v2, v1, Lfx9;->b:Z
 
     iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$clientsidePlatform:Z
 
-    iput-boolean v2, v1, Lft9;->c:Z
+    iput-boolean v2, v1, Lfx9;->c:Z
 
     iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$clientsideAnn:Z
 
-    iput-boolean v2, v1, Lft9;->d:Z
+    iput-boolean v2, v1, Lfx9;->d:Z
 
     iget-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$enhancerKind:Lorg/webrtc/PeerConnectionFactory$EnhancerKind;
 
-    iput-object v2, v1, Lft9;->f:Lorg/webrtc/PeerConnectionFactory$EnhancerKind;
+    iput-object v2, v1, Lfx9;->f:Lorg/webrtc/PeerConnectionFactory$EnhancerKind;
 
     if-nez v2, :cond_0
 
@@ -145,7 +145,7 @@
     goto :goto_0
 
     :cond_0
-    sget-object v3, Let9;->$EnumSwitchMapping$1:[I
+    sget-object v3, Lex9;->$EnumSwitchMapping$1:[I
 
     invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
@@ -175,45 +175,45 @@
 
     :cond_2
     :goto_1
-    iput v3, v1, Lft9;->e:I
+    iput v3, v1, Lfx9;->e:I
 
     iget-object v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$filePath:Ljava/lang/String;
 
-    iput-object v2, v1, Lft9;->g:Ljava/lang/String;
+    iput-object v2, v1, Lfx9;->g:Ljava/lang/String;
 
     iget v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$inputSampleRate:I
 
-    iput v2, v1, Lft9;->h:I
+    iput v2, v1, Lfx9;->h:I
 
     iget v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$outputSampleRate:I
 
-    iput v2, v1, Lft9;->i:I
+    iput v2, v1, Lfx9;->i:I
 
     iget v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$fallbackTimeLimitMillis:I
 
-    iput v2, v1, Lft9;->j:I
+    iput v2, v1, Lfx9;->j:I
 
     iget v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$fallbackStutterCountMillis:I
 
-    iput v2, v1, Lft9;->k:I
+    iput v2, v1, Lfx9;->k:I
 
     iget v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$fallbackTimeframeMillis:I
 
-    iput v2, v1, Lft9;->l:I
+    iput v2, v1, Lfx9;->l:I
 
     iget-boolean v2, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$logTimings:Z
 
-    iput-boolean v2, v1, Lft9;->m:Z
+    iput-boolean v2, v1, Lfx9;->m:Z
 
     iget-object v5, v0, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->$onNoiseSuppressorDisabledDueToStutter:Ljava/lang/Runnable;
 
     if-eqz v5, :cond_3
 
-    new-instance v3, Lpf8;
+    new-instance v3, Lnzg;
 
     const/4 v9, 0x0
 
-    const/16 v10, 0x1a
+    const/4 v10, 0x0
 
     const/4 v4, 0x0
 
@@ -223,48 +223,48 @@
 
     const-string v8, "run()V"
 
-    invoke-direct/range {v3 .. v10}, Lpf8;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+    invoke-direct/range {v3 .. v10}, Lnzg;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
 
-    iput-object v3, v1, Lft9;->n:Lpf8;
+    iput-object v3, v1, Lfx9;->n:Lnzg;
 
     :cond_3
-    new-instance v4, Lgt9;
+    new-instance v4, Lgx9;
 
-    iget-boolean v5, v1, Lft9;->a:Z
+    iget-boolean v5, v1, Lfx9;->a:Z
 
-    iget-boolean v6, v1, Lft9;->b:Z
+    iget-boolean v6, v1, Lfx9;->b:Z
 
-    iget-boolean v7, v1, Lft9;->c:Z
+    iget-boolean v7, v1, Lfx9;->c:Z
 
-    iget-boolean v8, v1, Lft9;->d:Z
+    iget-boolean v8, v1, Lfx9;->d:Z
 
-    iget-object v9, v1, Lft9;->f:Lorg/webrtc/PeerConnectionFactory$EnhancerKind;
+    iget-object v9, v1, Lfx9;->f:Lorg/webrtc/PeerConnectionFactory$EnhancerKind;
 
-    iget-object v10, v1, Lft9;->g:Ljava/lang/String;
+    iget-object v10, v1, Lfx9;->g:Ljava/lang/String;
 
-    iget v11, v1, Lft9;->h:I
+    iget v11, v1, Lfx9;->h:I
 
-    iget v12, v1, Lft9;->i:I
+    iget v12, v1, Lfx9;->i:I
 
-    iget v13, v1, Lft9;->j:I
+    iget v13, v1, Lfx9;->j:I
 
-    iget v14, v1, Lft9;->k:I
+    iget v14, v1, Lfx9;->k:I
 
-    iget v15, v1, Lft9;->l:I
+    iget v15, v1, Lfx9;->l:I
 
-    iget-boolean v0, v1, Lft9;->m:Z
+    iget-boolean v0, v1, Lfx9;->m:Z
 
-    iget-object v2, v1, Lft9;->n:Lpf8;
+    iget-object v2, v1, Lfx9;->n:Lnzg;
 
     if-eqz v2, :cond_4
 
-    new-instance v3, Lri0;
+    new-instance v3, Lwh0;
 
     move/from16 v16, v0
 
-    const/4 v0, 0x3
+    const/4 v0, 0x4
 
-    invoke-direct {v3, v0, v2}, Lri0;-><init>(ILh96;)V
+    invoke-direct {v3, v0, v2}, Lwh0;-><init>(ILzb6;)V
 
     :goto_2
     move-object/from16 v17, v3
@@ -279,11 +279,11 @@
     goto :goto_2
 
     :goto_3
-    iget v0, v1, Lft9;->e:I
+    iget v0, v1, Lfx9;->e:I
 
     move/from16 v18, v0
 
-    invoke-direct/range {v4 .. v18}, Lgt9;-><init>(ZZZZLorg/webrtc/PeerConnectionFactory$EnhancerKind;Ljava/lang/String;IIIIIZLri0;I)V
+    invoke-direct/range {v4 .. v18}, Lgx9;-><init>(ZZZZLorg/webrtc/PeerConnectionFactory$EnhancerKind;Ljava/lang/String;IIIIIZLwh0;I)V
 
     return-object v4
 .end method
@@ -291,9 +291,9 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    check-cast p1, Lft9;
+    check-cast p1, Lfx9;
 
-    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->invoke(Lft9;)Lgt9;
+    invoke-virtual {p0, p1}, Lru/ok/android/externcalls/sdk/audio/internal/NoiseSuppressionManagerImpl$setNoiseSuppressorParams$1;->invoke(Lfx9;)Lgx9;
 
     move-result-object p0
 

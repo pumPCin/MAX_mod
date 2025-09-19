@@ -1,48 +1,52 @@
 .class public final synthetic Lsa4;
-.super Ljava/lang/Object;
+.super Led6;
 .source "SourceFile"
 
 # interfaces
-.implements Llq7;
+.implements Lbc6;
 
 
-# instance fields
-.field public final synthetic a:Lxc;
-
-.field public final synthetic b:Z
-
-.field public final synthetic c:I
+# static fields
+.field public static final a:Lsa4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxc;ZI)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lsa4;
 
-    iput-object p1, p0, Lsa4;->a:Lxc;
+    const-string v4, "toLong(Ljava/lang/String;)J"
 
-    iput-boolean p2, p0, Lsa4;->b:Z
+    const/4 v5, 0x1
 
-    iput p3, p0, Lsa4;->c:I
+    const/4 v1, 0x1
+
+    const-class v2, Ljme;
+
+    const-string v3, "toLong"
+
+    invoke-direct/range {v0 .. v5}, Led6;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sput-object v0, Lsa4;->a:Lsa4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .registers 4
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    iget v0, p0, Lsa4;->c:I
+    check-cast p1, Ljava/lang/String;
 
-    check-cast p1, Lyc;
+    invoke-static {p1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    iget-object v1, p0, Lsa4;->a:Lxc;
+    move-result-wide p0
 
-    iget-boolean p0, p0, Lsa4;->b:Z
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-interface {p1, v1, p0, v0}, Lyc;->y0(Lxc;ZI)V
+    move-result-object p0
 
-    return-void
+    return-object p0
 .end method

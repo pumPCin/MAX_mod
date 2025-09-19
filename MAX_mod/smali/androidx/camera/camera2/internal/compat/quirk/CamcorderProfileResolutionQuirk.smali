@@ -3,17 +3,17 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpub;
+.implements Lt1c;
 
 
 # instance fields
-.field public final a:Lwz4;
+.field public final a:Lktb;
 
 .field public b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lcy1;)V
+.method public constructor <init>(Lly1;)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,11 +22,11 @@
 
     iput-object v0, p0, Landroidx/camera/camera2/internal/compat/quirk/CamcorderProfileResolutionQuirk;->b:Ljava/util/List;
 
-    invoke-virtual {p1}, Lcy1;->b()Lwz4;
+    invoke-virtual {p1}, Lly1;->b()Lktb;
 
     move-result-object p1
 
-    iput-object p1, p0, Landroidx/camera/camera2/internal/compat/quirk/CamcorderProfileResolutionQuirk;->a:Lwz4;
+    iput-object p1, p0, Landroidx/camera/camera2/internal/compat/quirk/CamcorderProfileResolutionQuirk;->a:Lktb;
 
     return-void
 .end method

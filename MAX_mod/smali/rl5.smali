@@ -1,14 +1,40 @@
-.class public interface abstract Lrl5;
+.class public abstract Lrl5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(Ljava/io/File;)V
+# direct methods
+.method public static synthetic a(Ljava/lang/Throwable;)Z
+    .registers 1
+
+    invoke-static {p0}, Lrl5;->b(Ljava/lang/Throwable;)Z
+
+    move-result p0
+
+    return p0
 .end method
 
-.method public abstract p(Ljava/io/File;)V
-.end method
+.method private static b(Ljava/lang/Throwable;)Z
+    .registers 2
 
-.method public abstract q(Ljava/io/File;)V
+    instance-of v0, p0, Landroid/system/ErrnoException;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Landroid/system/ErrnoException;
+
+    iget p0, p0, Landroid/system/ErrnoException;->errno:I
+
+    sget v0, Landroid/system/OsConstants;->EACCES:I
+
+    if-ne p0, v0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
 .end method

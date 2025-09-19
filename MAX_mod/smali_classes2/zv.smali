@@ -1,110 +1,108 @@
-.class public final Lzv;
-.super Lxie;
+.class public final synthetic Lzv;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lz96;
+.implements Lbc6;
 
 
 # instance fields
-.field public synthetic X:Ljava/util/List;
+.field public final synthetic a:I
 
-.field public synthetic Y:J
-
-.field public final synthetic Z:Low;
+.field public final synthetic b:Ljava/util/LinkedHashSet;
 
 
 # direct methods
-.method public constructor <init>(Low;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Ljava/util/LinkedHashSet;)V
     .registers 3
 
-    iput-object p1, p0, Lzv;->Z:Low;
+    const/4 v0, 0x0
 
-    const/4 p1, 0x3
+    iput v0, p0, Lzv;->a:I
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lzv;->b:Ljava/util/LinkedHashSet;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/util/LinkedHashSet;Lvz5;)V
+    .registers 3
+
+    const/4 p2, 0x1
+
+    iput p2, p0, Lzv;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lzv;->b:Ljava/util/LinkedHashSet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
 
-    check-cast p1, Ljava/util/List;
+    iget v0, p0, Lzv;->a:I
 
-    check-cast p2, Ljava/lang/Number;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
+    check-cast p1, Ltm3;
+
+    invoke-virtual {p1}, Ltm3;->n()J
 
     move-result-wide v0
 
-    check-cast p3, Lkotlin/coroutines/Continuation;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    new-instance p2, Lzv;
+    move-result-object v0
 
-    iget-object p0, p0, Lzv;->Z:Low;
+    iget-object p0, p0, Lzv;->b:Ljava/util/LinkedHashSet;
 
-    invoke-direct {p2, p0, p3}, Lzv;-><init>(Low;Lkotlin/coroutines/Continuation;)V
+    invoke-interface {p0, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    iput-object p1, p2, Lzv;->X:Ljava/util/List;
+    move-result p0
 
-    iput-wide v0, p2, Lzv;->Y:J
+    if-eqz p0, :cond_0
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {p1}, Ltm3;->t()Z
 
-    invoke-virtual {p2, p0}, Lzv;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
 
     return-object p0
-.end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    :pswitch_0
+    check-cast p1, Luz8;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-wide v0, p1, Luz8;->b:J
 
-    iget-object p1, p0, Lzv;->X:Ljava/util/List;
-
-    iget-wide v0, p0, Lzv;->Y:J
-
-    sget-object v2, Low;->F:[Lsf7;
-
-    iget-object p0, p0, Lzv;->Z:Low;
-
-    invoke-virtual {p0, v0, v1}, Low;->l(J)Ljava/util/List;
-
-    move-result-object v2
-
-    iget-object p0, p0, Low;->c:Liud;
-
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    const-string v4, " out of total "
-
-    const-string v5, " around "
-
-    const-string v6, "getHistoryItems return "
-
-    invoke-static {v6, v3, v4, p1, v5}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lzv;->b:Ljava/util/LinkedHashSet;
 
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
 
-    move-result-object p1
+    sget-object p0, Lylf;->a:Lylf;
 
-    invoke-virtual {p0, p1}, Liud;->B(Ljava/lang/String;)V
+    return-object p0
 
-    return-object v2
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

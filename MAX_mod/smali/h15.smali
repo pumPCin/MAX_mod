@@ -4,8 +4,17 @@
 
 
 # virtual methods
-.method public abstract B(Ljava/lang/CharSequence;IILmbf;)Z
+.method public abstract a()V
 .end method
 
-.method public abstract getResult()Ljava/lang/Object;
+.method public abstract f(Lcsf;)V
+.end method
+
+.method public abstract g(IJ)V
+.end method
+
+.method public abstract h()V
+.end method
+
+.method public abstract k(Lrf5;Lvff;)V
 .end method

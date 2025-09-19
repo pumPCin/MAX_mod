@@ -1,243 +1,146 @@
-.class public abstract Lhb8;
-.super Ljava/lang/Object;
+.class public final Lhb8;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lrc6;
+
+
+# instance fields
+.field public final synthetic X:I
+
+.field public synthetic Y:Lera;
+
+.field public final synthetic Z:Landroid/graphics/drawable/GradientDrawable;
 
 
 # direct methods
-.method public static a(Landroid/media/MediaCodecInfo$VideoCapabilities;IID)I
-    .registers 9
+.method public synthetic constructor <init>(Landroid/graphics/drawable/GradientDrawable;Lkotlin/coroutines/Continuation;I)V
+    .registers 4
 
-    invoke-virtual {p0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedPerformancePoints()Ljava/util/List;
+    iput p3, p0, Lhb8;->X:I
 
-    move-result-object p0
+    iput-object p1, p0, Lhb8;->Z:Landroid/graphics/drawable/GradientDrawable;
+
+    const/4 p1, 0x3
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    iget v0, p0, Lhb8;->X:I
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p1, Lhq0;
+
+    check-cast p2, Lera;
+
+    check-cast p3, Lkotlin/coroutines/Continuation;
+
+    new-instance p1, Lhb8;
+
+    iget-object p0, p0, Lhb8;->Z:Landroid/graphics/drawable/GradientDrawable;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p1, p0, p3, v0}, Lhb8;-><init>(Landroid/graphics/drawable/GradientDrawable;Lkotlin/coroutines/Continuation;I)V
+
+    iput-object p2, p1, Lhb8;->Y:Lera;
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    invoke-virtual {p1, p0}, Lhb8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p0
+
+    :pswitch_0
+    check-cast p1, Landroid/widget/FrameLayout;
+
+    check-cast p2, Lera;
+
+    check-cast p3, Lkotlin/coroutines/Continuation;
+
+    new-instance p1, Lhb8;
+
+    iget-object p0, p0, Lhb8;->Z:Landroid/graphics/drawable/GradientDrawable;
 
     const/4 v0, 0x0
 
-    if-eqz p0, :cond_a
+    invoke-direct {p1, p0, p3, v0}, Lhb8;-><init>(Landroid/graphics/drawable/GradientDrawable;Lkotlin/coroutines/Continuation;I)V
 
-    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
+    iput-object p2, p1, Lhb8;->Y:Lera;
 
-    move-result v1
+    sget-object p0, Lylf;->a:Lylf;
 
-    if-eqz v1, :cond_0
+    invoke-virtual {p1, p0}, Lhb8;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto/16 :goto_6
+    return-object p0
 
-    :cond_0
-    new-instance v1, Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;
+    nop
 
-    double-to-int p3, p3
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    invoke-direct {v1, p1, p2, p3}, Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;-><init>(III)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    move p1, v0
+    iget v0, p0, Lhb8;->X:I
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    packed-switch v0, :pswitch_data_0
 
-    move-result p2
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    const/4 p3, 0x2
+    iget-object p1, p0, Lhb8;->Y:Lera;
 
-    const/4 p4, 0x1
-
-    if-ge p1, p2, :cond_2
-
-    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;
-
-    invoke-virtual {p2, v1}, Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;->covers(Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_1
-
-    move p0, p3
-
-    goto :goto_1
-
-    :cond_1
-    add-int/lit8 p1, p1, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    move p0, p4
-
-    :goto_1
-    if-ne p0, p4, :cond_9
-
-    sget-object p1, Lds0;->u:Ljava/lang/Boolean;
-
-    if-nez p1, :cond_9
-
-    sget p1, Laif;->a:I
-
-    const/16 p2, 0x23
-
-    if-lt p1, p2, :cond_4
-
-    :cond_3
-    move p4, v0
-
-    goto/16 :goto_5
-
-    :cond_4
-    :try_start_0
-    new-instance p1, Lq26;
-
-    invoke-direct {p1}, Lq26;-><init>()V
-
-    const-string p2, "video/avc"
-
-    invoke-static {p2}, Lyc9;->l(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p2
-
-    iput-object p2, p1, Lq26;->l:Ljava/lang/String;
-
-    new-instance p2, Lt26;
-
-    invoke-direct {p2, p1}, Lt26;-><init>(Lq26;)V
-
-    iget-object p1, p2, Lt26;->m:Ljava/lang/String;
-
-    if-eqz p1, :cond_8
-
-    sget-object p1, Lmx0;->n0:Lmx0;
-
-    invoke-static {p1, p2, v0, v0}, Lxb8;->g(Lmx0;Lt26;ZZ)Lqic;
+    invoke-interface {p1}, Lera;->a()Lzs2;
 
     move-result-object p1
 
-    move p2, v0
-
-    :goto_2
-    iget v1, p1, Lqic;->o:I
-
-    if-ge p2, v1, :cond_8
-
-    invoke-virtual {p1, p2}, Lqic;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lgb8;
-
-    iget-object v1, v1, Lgb8;->d:Landroid/media/MediaCodecInfo$CodecCapabilities;
-
-    if-eqz v1, :cond_7
-
-    invoke-virtual {p1, p2}, Lqic;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lgb8;
-
-    iget-object v1, v1, Lgb8;->d:Landroid/media/MediaCodecInfo$CodecCapabilities;
-
-    invoke-virtual {v1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_7
-
-    invoke-virtual {p1, p2}, Lqic;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lgb8;
-
-    iget-object v1, v1, Lgb8;->d:Landroid/media/MediaCodecInfo$CodecCapabilities;
-
-    invoke-virtual {v1}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedPerformancePoints()Ljava/util/List;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_7
-
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v2
-
-    if-nez v2, :cond_7
-
-    new-instance p1, Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;
-
-    const/16 p2, 0x2d0
-
-    const/16 v2, 0x3c
-
-    const/16 v3, 0x500
-
-    invoke-direct {p1, v3, p2, v2}, Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;-><init>(III)V
-
-    move p2, v0
-
-    :goto_3
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    if-ge p2, v2, :cond_6
-
-    invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;
-
-    invoke-virtual {v2, p1}, Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;->covers(Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;)Z
-
-    move-result v2
-    :try_end_0
-    .catch Landroidx/media3/exoplayer/mediacodec/MediaCodecUtil$DecoderQueryException; {:try_start_0 .. :try_end_0} :catch_0
-
-    if-eqz v2, :cond_5
-
-    goto :goto_4
-
-    :cond_5
-    add-int/lit8 p2, p2, 0x1
-
-    goto :goto_3
-
-    :cond_6
-    move p3, p4
-
-    :goto_4
-    if-ne p3, p4, :cond_3
-
-    goto :goto_5
-
-    :cond_7
-    add-int/lit8 p2, p2, 0x1
-
-    goto :goto_2
-
-    :catch_0
-    :cond_8
-    :goto_5
-    invoke-static {p4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-interface {p1}, Lzs2;->I()Loa3;
 
     move-result-object p1
 
-    sput-object p1, Lds0;->u:Ljava/lang/Boolean;
+    iget-object p1, p1, Loa3;->b:Lf93;
 
-    if-eqz p4, :cond_9
+    iget-object p1, p1, Lf93;->w:[I
 
-    goto :goto_6
+    iget-object p0, p0, Lhb8;->Z:Landroid/graphics/drawable/GradientDrawable;
 
-    :cond_9
-    return p0
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/GradientDrawable;->setColors([I)V
 
-    :cond_a
-    :goto_6
-    return v0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lhb8;->Y:Lera;
+
+    invoke-interface {p1}, Lera;->b()Lie0;
+
+    const/high16 p1, -0x67000000
+
+    iget-object p0, p0, Lhb8;->Z:Landroid/graphics/drawable/GradientDrawable;
+
+    invoke-static {p0, p1}, Li4h;->T(Landroid/graphics/drawable/Drawable;I)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

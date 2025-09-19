@@ -1,128 +1,109 @@
-.class public final Lbhd;
-.super Lxie;
+.class public final enum Lbhd;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
 
+# static fields
+.field public static final enum X:Lbhd;
 
-# instance fields
-.field public X:I
+.field public static final synthetic Y:[Lbhd;
 
-.field public final synthetic Y:Lfhd;
+.field public static final enum a:Lbhd;
 
-.field public final synthetic Z:I
+.field public static final enum b:Lbhd;
+
+.field public static final enum c:Lbhd;
+
+.field public static final enum o:Lbhd;
 
 
 # direct methods
-.method public constructor <init>(Lfhd;ILkotlin/coroutines/Continuation;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 7
 
-    iput-object p1, p0, Lbhd;->Y:Lfhd;
+    new-instance v0, Lbhd;
 
-    iput p2, p0, Lbhd;->Z:I
+    const-string v1, "UNKNOWN"
 
-    const/4 p1, 0x2
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbhd;->a:Lbhd;
+
+    new-instance v1, Lbhd;
+
+    const-string v2, "INITIAL"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lbhd;->b:Lbhd;
+
+    new-instance v2, Lbhd;
+
+    const-string v3, "MANUAL"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lbhd;->c:Lbhd;
+
+    new-instance v3, Lbhd;
+
+    const-string v4, "ADAPTIVE"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lbhd;->o:Lbhd;
+
+    new-instance v4, Lbhd;
+
+    const-string v5, "TRICK_PLAY"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Lbhd;->X:Lbhd;
+
+    filled-new-array {v0, v1, v2, v3, v4}, [Lbhd;
+
+    move-result-object v0
+
+    sput-object v0, Lbhd;->Y:[Lbhd;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lbhd;
+    .registers 2
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    const-class v0, Lbhd;
 
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lbhd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
     check-cast p0, Lbhd;
 
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lbhd;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
     return-object p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public static values()[Lbhd;
+    .registers 1
 
-    new-instance p1, Lbhd;
+    sget-object v0, Lbhd;->Y:[Lbhd;
 
-    iget-object v0, p0, Lbhd;->Y:Lfhd;
-
-    iget p0, p0, Lbhd;->Z:I
-
-    invoke-direct {p1, v0, p0, p2}, Lbhd;-><init>(Lfhd;ILkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-
-    iget v0, p0, Lbhd;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    sget-object p1, Lfhd;->v0:[Lsf7;
-
-    iget-object p1, p0, Lbhd;->Y:Lfhd;
-
-    invoke-virtual {p1}, Lfhd;->r()Lc1d;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget v2, p0, Lbhd;->Z:I
+    check-cast v0, [Lbhd;
 
-    const-string v3, "app.media.load.photo"
-
-    invoke-virtual {v0, v2, v3}, Lc3;->h(ILjava/lang/String;)V
-
-    iput v1, p0, Lbhd;->X:I
-
-    invoke-static {p1, p0}, Lfhd;->q(Lfhd;Lxie;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    return-object v0
 .end method

@@ -1,127 +1,62 @@
 .class public abstract Lje7;
-.super Lfe6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final o0:[I
-
-
-# instance fields
-.field public X:[I
-
-.field public final Y:I
-
-.field public Z:Lqad;
-
-.field public final n0:Z
-
-.field public final o:Llv6;
+.field public static final a:Ljava/lang/Integer;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 3
 
-    sget-object v0, Lg72;->h:[I
+    const/4 v0, 0x0
 
-    sput-object v0, Lje7;->o0:[I
+    :try_start_0
+    const-string v1, "android.os.Build$VERSION"
 
-    return-void
-.end method
+    invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-.method public constructor <init>(Llv6;I)V
-    .registers 7
+    move-result-object v1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v2, "SDK_INT"
 
-    iput p2, p0, Lfe6;->a:I
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    sget-object v0, Lhe7;->q0:Lhe7;
+    move-result-object v1
 
-    iget v0, v0, Lhe7;->b:I
+    invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    and-int/2addr v0, p2
+    move-result-object v1
 
-    const/4 v1, 0x0
+    instance-of v2, v1, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_0
 
-    new-instance v0, Ld9d;
-
-    invoke-direct {v0, p0}, Ld9d;-><init>(Ljava/lang/Object;)V
+    check-cast v1, Ljava/lang/Integer;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
+    :catchall_0
     :cond_0
-    move-object v0, v1
+    move-object v1, v0
 
     :goto_0
-    new-instance v2, Laf7;
+    if-eqz v1, :cond_1
 
-    const/4 v3, 0x0
+    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
 
-    invoke-direct {v2, v3, v1, v0}, Laf7;-><init>(ILaf7;Ld9d;)V
+    move-result v2
 
-    iput-object v2, p0, Lfe6;->c:Laf7;
+    if-lez v2, :cond_1
 
-    sget-object v0, Lhe7;->o0:Lhe7;
-
-    iget v0, v0, Lhe7;->b:I
-
-    and-int/2addr v0, p2
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    move v0, v1
-
-    goto :goto_1
+    move-object v0, v1
 
     :cond_1
-    move v0, v3
-
-    :goto_1
-    iput-boolean v0, p0, Lfe6;->b:Z
-
-    sget-object v0, Lje7;->o0:[I
-
-    iput-object v0, p0, Lje7;->X:[I
-
-    sget-object v0, Lug4;->a:Ltad;
-
-    iput-object v0, p0, Lje7;->Z:Lqad;
-
-    iput-object p1, p0, Lje7;->o:Llv6;
-
-    sget-object p1, Lhe7;->n0:Lhe7;
-
-    iget p1, p1, Lhe7;->b:I
-
-    and-int/2addr p1, p2
-
-    if-eqz p1, :cond_2
-
-    const/16 p1, 0x7f
-
-    iput p1, p0, Lje7;->Y:I
-
-    :cond_2
-    sget-object p1, Lhe7;->Y:Lhe7;
-
-    iget p1, p1, Lhe7;->b:I
-
-    and-int/2addr p1, p2
-
-    if-eqz p1, :cond_3
-
-    move v3, v1
-
-    :cond_3
-    xor-int/lit8 p1, v3, 0x1
-
-    iput-boolean p1, p0, Lje7;->n0:Z
+    sput-object v0, Lje7;->a:Ljava/lang/Integer;
 
     return-void
 .end method

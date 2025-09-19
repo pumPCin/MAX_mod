@@ -1,57 +1,85 @@
-.class public final Lz09;
-.super Ljava/lang/Object;
+.class public final enum Lz09;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lhef;
+# static fields
+.field public static final enum a:Lz09;
 
-.field public final b:Ly5e;
+.field public static final enum b:Lz09;
+
+.field public static final enum c:Lz09;
+
+.field public static final synthetic o:[Lz09;
 
 
 # direct methods
-.method public constructor <init>(Lhef;Ly5e;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lz09;
 
-    iput-object p1, p0, Lz09;->a:Lhef;
+    const-string v1, "DISABLED"
 
-    iput-object p2, p0, Lz09;->b:Ly5e;
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lz09;->a:Lz09;
+
+    new-instance v1, Lz09;
+
+    const-string v2, "EXPANDED"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lz09;->b:Lz09;
+
+    new-instance v2, Lz09;
+
+    const-string v3, "COLLAPSED"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lz09;->c:Lz09;
+
+    filled-new-array {v0, v1, v2}, [Lz09;
+
+    move-result-object v0
+
+    sput-object v0, Lz09;->o:[Lz09;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lz09;
+    .registers 2
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    const-class v0, Lz09;
 
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "MessageUploadState{upload="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lz09;->a:Lhef;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", sticker="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lz09;->b:Ly5e;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Lz09;
+
     return-object p0
+.end method
+
+.method public static values()[Lz09;
+    .registers 1
+
+    sget-object v0, Lz09;->o:[Lz09;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lz09;
+
+    return-object v0
 .end method

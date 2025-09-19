@@ -1,90 +1,64 @@
 .class public final Lt29;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lg89;
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+# static fields
+.field public static final a:Lt29;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p2, p0, Lt29;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    new-instance v0, Lt29;
 
-    const/4 p2, 0x2
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Lt29;->a:Lt29;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, p2}, Lt29;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    move-result-object p0
+    return v0
 
-    check-cast p0, Lt29;
+    :cond_0
+    instance-of p0, p1, Lt29;
 
-    sget-object p1, Lncf;->a:Lncf;
+    if-nez p0, :cond_1
 
-    invoke-virtual {p0, p1}, Lt29;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 p0, 0x0
 
-    return-object p1
+    return p0
+
+    :cond_1
+    return v0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public final hashCode()I
+    .registers 1
 
-    new-instance v0, Lt29;
+    const p0, 0x43f6b71e
 
-    iget-object p0, p0, Lt29;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    invoke-direct {v0, p2, p0}, Lt29;-><init>(Lkotlin/coroutines/Continuation;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
-
-    iput-object p1, v0, Lt29;->X:Ljava/lang/Object;
-
-    return-object v0
+    return p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lt29;->X:Ljava/lang/Object;
-
-    check-cast p1, Lncf;
-
-    sget-object p1, Lone/me/sdk/messagewrite/MessageWriteWidget;->z0:[Lsf7;
-
-    iget-object p0, p0, Lt29;->Y:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->B0()Lly8;
-
-    move-result-object p1
-
-    new-instance v0, Lt01;
-
-    const/4 v1, 0x5
-
-    invoke-direct {v0, v1, p0}, Lt01;-><init>(ILjava/lang/Object;)V
-
-    invoke-static {p1, v0}, Las3;->t(Landroid/view/ViewGroup;Lj96;)V
-
-    sget-object p0, Lncf;->a:Lncf;
+    const-string p0, "MessagePinned"
 
     return-object p0
 .end method

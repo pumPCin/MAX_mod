@@ -1,27 +1,86 @@
-.class public final Lud3;
+.class public final synthetic Lud3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lqyb;
+
 
 # instance fields
-.field public final a:Lwj0;
-
-.field public final b:Lsd3;
-
-.field public final c:Lrlg;
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lwj0;Lsd3;Lrlg;)V
-    .registers 4
+.method public synthetic constructor <init>(I)V
+    .registers 2
+
+    iput p1, p0, Lud3;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lud3;->a:Lwj0;
-
-    iput-object p2, p0, Lud3;->b:Lsd3;
-
-    iput-object p3, p0, Lud3;->c:Lrlg;
-
     return-void
+.end method
+
+
+# virtual methods
+.method public final get()Ljava/lang/Object;
+    .registers 2
+
+    iget p0, p0, Lud3;->a:I
+
+    const/4 v0, 0x0
+
+    packed-switch p0, :pswitch_data_0
+
+    return-object v0
+
+    :pswitch_0
+    sget-object p0, Lcom/google/firebase/messaging/FirebaseMessaging;->k:Leuc;
+
+    return-object v0
+
+    :pswitch_1
+    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->b()Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_2
+    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->h()Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_3
+    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->c()Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_4
+    invoke-static {}, Lcom/google/firebase/concurrent/ExecutorsRegistrar;->f()Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_5
+    sget-object p0, Ljava/util/Collections;->EMPTY_SET:Ljava/util/Set;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,107 +1,102 @@
 .class public final Le5a;
-.super Ljava/lang/Object;
+.super Lz2;
 .source "SourceFile"
-
-# interfaces
-.implements Lok7;
-.implements Lw02;
 
 
 # instance fields
-.field public final a:Lyk7;
+.field public final synthetic b:I
 
-.field public final b:Ly4a;
+.field public final c:Ljava/lang/Object;
 
-.field public c:Lf5a;
-
-.field public final synthetic o:Lg5a;
+.field public final o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lg5a;Lyk7;Ly4a;)V
-    .registers 4
+.method public synthetic constructor <init>(Ly4a;Ljava/lang/Object;Ljava/lang/Object;I)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p4, p0, Le5a;->b:I
 
-    iput-object p1, p0, Le5a;->o:Lg5a;
+    invoke-direct {p0, p1}, Lz2;-><init>(Lt7a;)V
 
-    iput-object p2, p0, Le5a;->a:Lyk7;
+    iput-object p2, p0, Le5a;->c:Ljava/lang/Object;
 
-    iput-object p3, p0, Le5a;->b:Ly4a;
-
-    invoke-virtual {p2, p0}, Lyk7;->a(Lsk7;)V
+    iput-object p3, p0, Le5a;->o:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final cancel()V
-    .registers 2
+.method public final n(Ld8a;)V
+    .registers 6
 
-    iget-object v0, p0, Le5a;->a:Lyk7;
+    iget v0, p0, Le5a;->b:I
 
-    invoke-virtual {v0, p0}, Lyk7;->f(Lsk7;)V
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Le5a;->b:Ly4a;
+    new-instance v0, Ltq4;
 
-    iget-object v0, v0, Ly4a;->b:Ljava/util/concurrent/CopyOnWriteArrayList;
+    iget-object v1, p0, Le5a;->c:Ljava/lang/Object;
 
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+    check-cast v1, Lpm3;
 
-    iget-object v0, p0, Le5a;->c:Lf5a;
+    iget-object v2, p0, Le5a;->o:Ljava/lang/Object;
 
-    if-eqz v0, :cond_0
+    check-cast v2, Lc6;
 
-    invoke-virtual {v0}, Lf5a;->cancel()V
+    invoke-direct {v0, p1, v1, v2}, Ltq4;-><init>(Ld8a;Lpm3;Lc6;)V
 
-    :cond_0
-    const/4 v0, 0x0
+    iget-object p0, p0, Lz2;->a:Lt7a;
 
-    iput-object v0, p0, Le5a;->c:Lf5a;
-
-    return-void
-.end method
-
-.method public final d(Lwk7;Lyj7;)V
-    .registers 3
-
-    sget-object p1, Lyj7;->ON_START:Lyj7;
-
-    if-ne p2, p1, :cond_0
-
-    iget-object p1, p0, Le5a;->o:Lg5a;
-
-    iget-object p2, p0, Le5a;->b:Ly4a;
-
-    invoke-virtual {p1, p2}, Lg5a;->b(Ly4a;)Lf5a;
-
-    move-result-object p1
-
-    iput-object p1, p0, Le5a;->c:Lf5a;
+    invoke-interface {p0, v0}, Lt7a;->a(Ld8a;)V
 
     return-void
 
-    :cond_0
-    sget-object p1, Lyj7;->ON_STOP:Lyj7;
+    :pswitch_0
+    :try_start_0
+    iget-object v0, p0, Le5a;->c:Ljava/lang/Object;
 
-    if-ne p2, p1, :cond_1
+    check-cast v0, Lid6;
 
-    iget-object p0, p0, Le5a;->c:Lf5a;
+    iget-object v0, v0, Lid6;->a:Ljava/lang/Object;
 
-    if-eqz p0, :cond_2
+    const-string v1, "The initialSupplier returned a null value"
 
-    invoke-virtual {p0}, Lf5a;->cancel()V
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    new-instance v1, Ld5a;
+
+    iget-object v2, p0, Le5a;->o:Ljava/lang/Object;
+
+    check-cast v2, Liae;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, p1, v0, v2, v3}, Ld5a;-><init>(Ljava/lang/Object;Ljava/lang/Object;Liae;I)V
+
+    iget-object p0, p0, Lz2;->a:Lt7a;
+
+    invoke-interface {p0, v1}, Lt7a;->a(Ld8a;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    invoke-static {p0}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    invoke-static {p0, p1}, Lk45;->b(Ljava/lang/Throwable;Ld8a;)V
+
+    :goto_0
     return-void
 
-    :cond_1
-    sget-object p1, Lyj7;->ON_DESTROY:Lyj7;
+    nop
 
-    if-ne p2, p1, :cond_2
-
-    invoke-virtual {p0}, Le5a;->cancel()V
-
-    :cond_2
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

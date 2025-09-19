@@ -1,237 +1,636 @@
 .class public final Lpsf;
-.super Lxie;
+.super Lqsf;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Ljava/lang/Object;
+.field public final a:Landroid/graphics/Matrix;
 
-.field public final synthetic Y:Lr04;
+.field public final b:Ljava/util/ArrayList;
 
-.field public final synthetic Z:Lysf;
+.field public c:F
+
+.field public d:F
+
+.field public e:F
+
+.field public f:F
+
+.field public g:F
+
+.field public h:F
+
+.field public i:F
+
+.field public final j:Landroid/graphics/Matrix;
+
+.field public k:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lr04;Lysf;)V
-    .registers 5
+.method public constructor <init>()V
+    .registers 3
 
-    iput-object p1, p0, Lpsf;->X:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lpsf;->Y:Lr04;
+    new-instance v0, Landroid/graphics/Matrix;
 
-    iput-object p4, p0, Lpsf;->Z:Lysf;
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    const/4 p1, 0x2
+    iput-object v0, p0, Lpsf;->a:Landroid/graphics/Matrix;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    new-instance v0, Ljava/util/ArrayList;
 
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lpsf;->b:Ljava/util/ArrayList;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lpsf;->c:F
+
+    iput v0, p0, Lpsf;->d:F
+
+    iput v0, p0, Lpsf;->e:F
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    iput v1, p0, Lpsf;->f:F
+
+    iput v1, p0, Lpsf;->g:F
+
+    iput v0, p0, Lpsf;->h:F
+
+    iput v0, p0, Lpsf;->i:F
+
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object v0, p0, Lpsf;->j:Landroid/graphics/Matrix;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lpsf;->k:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lpsf;Ltr;)V
+    .registers 9
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object v0, p0, Lpsf;->a:Landroid/graphics/Matrix;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lpsf;->b:Ljava/util/ArrayList;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lpsf;->c:F
+
+    iput v0, p0, Lpsf;->d:F
+
+    iput v0, p0, Lpsf;->e:F
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    iput v1, p0, Lpsf;->f:F
+
+    iput v1, p0, Lpsf;->g:F
+
+    iput v0, p0, Lpsf;->h:F
+
+    iput v0, p0, Lpsf;->i:F
+
+    new-instance v2, Landroid/graphics/Matrix;
+
+    invoke-direct {v2}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object v2, p0, Lpsf;->j:Landroid/graphics/Matrix;
+
+    const/4 v3, 0x0
+
+    iput-object v3, p0, Lpsf;->k:Ljava/lang/String;
+
+    iget v3, p1, Lpsf;->c:F
+
+    iput v3, p0, Lpsf;->c:F
+
+    iget v3, p1, Lpsf;->d:F
+
+    iput v3, p0, Lpsf;->d:F
+
+    iget v3, p1, Lpsf;->e:F
+
+    iput v3, p0, Lpsf;->e:F
+
+    iget v3, p1, Lpsf;->f:F
+
+    iput v3, p0, Lpsf;->f:F
+
+    iget v3, p1, Lpsf;->g:F
+
+    iput v3, p0, Lpsf;->g:F
+
+    iget v3, p1, Lpsf;->h:F
+
+    iput v3, p0, Lpsf;->h:F
+
+    iget v3, p1, Lpsf;->i:F
+
+    iput v3, p0, Lpsf;->i:F
+
+    iget-object v3, p1, Lpsf;->k:Ljava/lang/String;
+
+    iput-object v3, p0, Lpsf;->k:Ljava/lang/String;
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {p2, v3, p0}, Lr1e;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    iget-object v3, p1, Lpsf;->j:Landroid/graphics/Matrix;
+
+    invoke-virtual {v2, v3}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
+
+    iget-object p1, p1, Lpsf;->b:Ljava/util/ArrayList;
+
+    const/4 v2, 0x0
+
+    :goto_0
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-ge v2, v3, :cond_5
+
+    invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    instance-of v4, v3, Lpsf;
+
+    if-eqz v4, :cond_1
+
+    check-cast v3, Lpsf;
+
+    iget-object v4, p0, Lpsf;->b:Ljava/util/ArrayList;
+
+    new-instance v5, Lpsf;
+
+    invoke-direct {v5, v3, p2}, Lpsf;-><init>(Lpsf;Ltr;)V
+
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    :cond_1
+    instance-of v4, v3, Losf;
+
+    if-eqz v4, :cond_2
+
+    new-instance v4, Losf;
+
+    check-cast v3, Losf;
+
+    invoke-direct {v4, v3}, Lrsf;-><init>(Lrsf;)V
+
+    iput v0, v4, Losf;->e:F
+
+    iput v1, v4, Losf;->g:F
+
+    iput v1, v4, Losf;->h:F
+
+    iput v0, v4, Losf;->i:F
+
+    iput v1, v4, Losf;->j:F
+
+    iput v0, v4, Losf;->k:F
+
+    sget-object v5, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
+
+    iput-object v5, v4, Losf;->l:Landroid/graphics/Paint$Cap;
+
+    sget-object v5, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
+
+    iput-object v5, v4, Losf;->m:Landroid/graphics/Paint$Join;
+
+    const/high16 v5, 0x40800000    # 4.0f
+
+    iput v5, v4, Losf;->n:F
+
+    iget-object v5, v3, Losf;->d:Lz96;
+
+    iput-object v5, v4, Losf;->d:Lz96;
+
+    iget v5, v3, Losf;->e:F
+
+    iput v5, v4, Losf;->e:F
+
+    iget v5, v3, Losf;->g:F
+
+    iput v5, v4, Losf;->g:F
+
+    iget-object v5, v3, Losf;->f:Lz96;
+
+    iput-object v5, v4, Losf;->f:Lz96;
+
+    iget v5, v3, Lrsf;->c:I
+
+    iput v5, v4, Lrsf;->c:I
+
+    iget v5, v3, Losf;->h:F
+
+    iput v5, v4, Losf;->h:F
+
+    iget v5, v3, Losf;->i:F
+
+    iput v5, v4, Losf;->i:F
+
+    iget v5, v3, Losf;->j:F
+
+    iput v5, v4, Losf;->j:F
+
+    iget v5, v3, Losf;->k:F
+
+    iput v5, v4, Losf;->k:F
+
+    iget-object v5, v3, Losf;->l:Landroid/graphics/Paint$Cap;
+
+    iput-object v5, v4, Losf;->l:Landroid/graphics/Paint$Cap;
+
+    iget-object v5, v3, Losf;->m:Landroid/graphics/Paint$Join;
+
+    iput-object v5, v4, Losf;->m:Landroid/graphics/Paint$Join;
+
+    iget v3, v3, Losf;->n:F
+
+    iput v3, v4, Losf;->n:F
+
+    goto :goto_1
+
+    :cond_2
+    instance-of v4, v3, Lnsf;
+
+    if-eqz v4, :cond_4
+
+    new-instance v4, Lnsf;
+
+    check-cast v3, Lnsf;
+
+    invoke-direct {v4, v3}, Lrsf;-><init>(Lrsf;)V
+
+    :goto_1
+    iget-object v3, p0, Lpsf;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object v3, v4, Lrsf;->b:Ljava/lang/String;
+
+    if-eqz v3, :cond_3
+
+    invoke-virtual {p2, v3, v4}, Lr1e;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_3
+    :goto_2
+    add-int/lit8 v2, v2, 0x1
+
+    goto/16 :goto_0
+
+    :cond_4
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "Unknown object in the tree!"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_5
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final a()Z
+    .registers 5
 
-    check-cast p1, Lr04;
+    const/4 v0, 0x0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    move v1, v0
 
-    invoke-virtual {p0, p1, p2}, Lpsf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    :goto_0
+    iget-object v2, p0, Lpsf;->b:Ljava/util/ArrayList;
 
-    move-result-object p0
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
-    check-cast p0, Lpsf;
+    move-result v3
 
-    sget-object p1, Lncf;->a:Lncf;
+    if-ge v1, v3, :cond_1
 
-    invoke-virtual {p0, p1}, Lpsf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p0
+    move-result-object v2
+
+    check-cast v2, Lqsf;
+
+    invoke-virtual {v2}, Lqsf;->a()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final b([I)Z
+    .registers 6
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    iget-object v2, p0, Lpsf;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-ge v0, v3, :cond_0
+
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lqsf;
+
+    invoke-virtual {v2, p1}, Lqsf;->b([I)Z
+
+    move-result v2
+
+    or-int/2addr v1, v2
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return v1
+.end method
+
+.method public final c()V
+    .registers 4
+
+    iget-object v0, p0, Lpsf;->j:Landroid/graphics/Matrix;
+
+    invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
+
+    iget v1, p0, Lpsf;->d:F
+
+    neg-float v1, v1
+
+    iget v2, p0, Lpsf;->e:F
+
+    neg-float v2, v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+
+    iget v1, p0, Lpsf;->f:F
+
+    iget v2, p0, Lpsf;->g:F
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
+
+    iget v1, p0, Lpsf;->c:F
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2, v2}, Landroid/graphics/Matrix;->postRotate(FFF)Z
+
+    iget v1, p0, Lpsf;->h:F
+
+    iget v2, p0, Lpsf;->d:F
+
+    add-float/2addr v1, v2
+
+    iget v2, p0, Lpsf;->i:F
+
+    iget p0, p0, Lpsf;->e:F
+
+    add-float/2addr v2, p0
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+
+    return-void
+.end method
+
+.method public getGroupName()Ljava/lang/String;
+    .registers 1
+
+    iget-object p0, p0, Lpsf;->k:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+.method public getLocalMatrix()Landroid/graphics/Matrix;
+    .registers 1
 
-    new-instance p1, Lpsf;
+    iget-object p0, p0, Lpsf;->j:Landroid/graphics/Matrix;
 
-    iget-object v0, p0, Lpsf;->Y:Lr04;
-
-    iget-object v1, p0, Lpsf;->Z:Lysf;
-
-    iget-object p0, p0, Lpsf;->X:Ljava/lang/Object;
-
-    invoke-direct {p1, p0, p2, v0, v1}, Lpsf;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lr04;Lysf;)V
-
-    return-object p1
+    return-object p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 13
+.method public getPivotX()F
+    .registers 1
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget p0, p0, Lpsf;->d:F
 
-    iget-object p1, p0, Lpsf;->X:Ljava/lang/Object;
+    return p0
+.end method
 
-    check-cast p1, Landroid/net/Uri;
+.method public getPivotY()F
+    .registers 1
 
-    const/4 v1, 0x0
+    iget p0, p0, Lpsf;->e:F
 
-    const-wide/16 v2, 0x0
+    return p0
+.end method
 
-    :try_start_0
-    new-instance v4, Landroid/media/MediaMetadataRetriever;
+.method public getRotation()F
+    .registers 1
 
-    invoke-direct {v4}, Landroid/media/MediaMetadataRetriever;-><init>()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_4
+    iget p0, p0, Lpsf;->c:F
 
-    :try_start_1
-    iget-object v0, p0, Lpsf;->Z:Lysf;
+    return p0
+.end method
 
-    iget-object v0, v0, Lysf;->o:Lxh7;
+.method public getScaleX()F
+    .registers 1
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    iget p0, p0, Lpsf;->f:F
 
-    move-result-object v0
+    return p0
+.end method
 
-    check-cast v0, Landroid/content/Context;
+.method public getScaleY()F
+    .registers 1
 
-    invoke-virtual {v4, v0, p1}, Landroid/media/MediaMetadataRetriever;->setDataSource(Landroid/content/Context;Landroid/net/Uri;)V
+    iget p0, p0, Lpsf;->g:F
 
-    invoke-static {v4}, Lds0;->q(Landroid/media/MediaMetadataRetriever;)Landroid/graphics/Point;
+    return p0
+.end method
 
-    move-result-object v5
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+.method public getTranslateX()F
+    .registers 1
 
-    :try_start_2
-    invoke-static {v4}, Lds0;->o(Landroid/media/MediaMetadataRetriever;)J
+    iget p0, p0, Lpsf;->h:F
 
-    move-result-wide v2
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    return p0
+.end method
 
-    :try_start_3
-    invoke-static {v4, v1}, Ly6c;->j(Ljava/lang/AutoCloseable;Ljava/lang/Throwable;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+.method public getTranslateY()F
+    .registers 1
 
-    :goto_0
-    move-wide v6, v2
+    iget p0, p0, Lpsf;->i:F
 
-    goto :goto_4
+    return p0
+.end method
 
-    :catchall_0
-    move-exception v0
+.method public setPivotX(F)V
+    .registers 3
 
-    move-object v1, v5
+    iget v0, p0, Lpsf;->d:F
 
-    goto :goto_3
+    cmpl-float v0, p1, v0
 
-    :catchall_1
-    move-exception v0
+    if-eqz v0, :cond_0
 
-    :goto_1
-    move-object v1, v0
+    iput p1, p0, Lpsf;->d:F
 
-    goto :goto_2
-
-    :catchall_2
-    move-exception v0
-
-    move-object v5, v1
-
-    goto :goto_1
-
-    :goto_2
-    :try_start_4
-    throw v1
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_3
-
-    :catchall_3
-    move-exception v0
-
-    :try_start_5
-    invoke-static {v4, v1}, Ly6c;->j(Ljava/lang/AutoCloseable;Ljava/lang/Throwable;)V
-
-    throw v0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    :catchall_4
-    move-exception v0
-
-    :goto_3
-    iget-object p0, p0, Lpsf;->Y:Lr04;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "Can\'t get video params for path "
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {p0, v4, v0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    move-object v5, v1
-
-    goto :goto_0
-
-    :goto_4
-    new-instance p0, Lxe3;
-
-    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    const/4 p1, 0x0
-
-    if-eqz v5, :cond_0
-
-    iget v0, v5, Landroid/graphics/Point;->x:I
-
-    move v9, v0
-
-    goto :goto_5
+    invoke-virtual {p0}, Lpsf;->c()V
 
     :cond_0
-    move v9, p1
+    return-void
+.end method
 
-    :goto_5
-    if-eqz v5, :cond_1
+.method public setPivotY(F)V
+    .registers 3
 
-    iget p1, v5, Landroid/graphics/Point;->y:I
+    iget v0, p0, Lpsf;->e:F
 
-    :cond_1
-    move-object v5, p0
+    cmpl-float v0, p1, v0
 
-    move v10, p1
+    if-eqz v0, :cond_0
 
-    invoke-direct/range {v5 .. v10}, Lxe3;-><init>(JLjava/lang/String;II)V
+    iput p1, p0, Lpsf;->e:F
 
-    return-object v5
+    invoke-virtual {p0}, Lpsf;->c()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setRotation(F)V
+    .registers 3
+
+    iget v0, p0, Lpsf;->c:F
+
+    cmpl-float v0, p1, v0
+
+    if-eqz v0, :cond_0
+
+    iput p1, p0, Lpsf;->c:F
+
+    invoke-virtual {p0}, Lpsf;->c()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setScaleX(F)V
+    .registers 3
+
+    iget v0, p0, Lpsf;->f:F
+
+    cmpl-float v0, p1, v0
+
+    if-eqz v0, :cond_0
+
+    iput p1, p0, Lpsf;->f:F
+
+    invoke-virtual {p0}, Lpsf;->c()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setScaleY(F)V
+    .registers 3
+
+    iget v0, p0, Lpsf;->g:F
+
+    cmpl-float v0, p1, v0
+
+    if-eqz v0, :cond_0
+
+    iput p1, p0, Lpsf;->g:F
+
+    invoke-virtual {p0}, Lpsf;->c()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setTranslateX(F)V
+    .registers 3
+
+    iget v0, p0, Lpsf;->h:F
+
+    cmpl-float v0, p1, v0
+
+    if-eqz v0, :cond_0
+
+    iput p1, p0, Lpsf;->h:F
+
+    invoke-virtual {p0}, Lpsf;->c()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setTranslateY(F)V
+    .registers 3
+
+    iget v0, p0, Lpsf;->i:F
+
+    cmpl-float v0, p1, v0
+
+    if-eqz v0, :cond_0
+
+    iput p1, p0, Lpsf;->i:F
+
+    invoke-virtual {p0}, Lpsf;->c()V
+
+    :cond_0
+    return-void
 .end method

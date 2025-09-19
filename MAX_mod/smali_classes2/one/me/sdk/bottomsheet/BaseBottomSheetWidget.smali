@@ -15,8 +15,8 @@
         "args",
         "<init>",
         "(Landroid/os/Bundle;)V",
-        "ms3",
-        "m9",
+        "m48",
+        "r9",
         "bottom-sheet_release"
     }
     k = 0x1
@@ -30,32 +30,32 @@
 
 
 # static fields
-.field public static final Y:Lms3;
+.field public static final Y:Lm48;
 
-.field public static final synthetic Z:[Lsf7;
+.field public static final synthetic Z:[Lxi7;
 
-.field public static final n0:Ljava/lang/String;
+.field public static final r0:Ljava/lang/String;
 
-.field public static final o0:Ljava/lang/String;
+.field public static final s0:Ljava/lang/String;
 
 
 # instance fields
-.field public final X:Lf67;
+.field public final X:Lj97;
 
-.field public a:Lm8b;
+.field public a:Llfb;
 
-.field public final b:Lur;
+.field public final b:Lfr;
 
-.field public final c:Lxac;
+.field public final c:Lcic;
 
-.field public final o:Lur;
+.field public final o:Lfr;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 7
 
-    new-instance v0, Lal9;
+    new-instance v0, Lmo9;
 
     const-class v1, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;
 
@@ -63,9 +63,9 @@
 
     const-string v3, "getNeedDim()Z"
 
-    invoke-direct {v0, v1, v2, v3}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2, v3}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    sget-object v2, Lyhc;->a:Lzhc;
+    sget-object v2, Ljpc;->a:Lkpc;
 
     const-string v3, "cardView"
 
@@ -73,21 +73,21 @@
 
     const/4 v5, 0x0
 
-    invoke-static {v2, v1, v3, v4, v5}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
+    invoke-static {v2, v1, v3, v4, v5}, Lee5;->h(Lkpc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lsxb;
 
     move-result-object v2
 
-    new-instance v3, Lal9;
+    new-instance v3, Lmo9;
 
     const-string v4, "isDialogClosable"
 
     const-string v6, "isDialogClosable()Z"
 
-    invoke-direct {v3, v1, v4, v6}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v3, v1, v4, v6}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v1, 0x3
 
-    new-array v1, v1, [Lsf7;
+    new-array v1, v1, [Lxi7;
 
     aput-object v0, v1, v5
 
@@ -99,23 +99,23 @@
 
     aput-object v3, v1, v0
 
-    sput-object v1, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Z:[Lsf7;
+    sput-object v1, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Z:[Lxi7;
 
-    new-instance v0, Lms3;
+    new-instance v0, Lm48;
 
     const/16 v1, 0x8
 
-    invoke-direct {v0, v1}, Lms3;-><init>(I)V
+    invoke-direct {v0, v1}, Lm48;-><init>(I)V
 
-    sput-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Y:Lms3;
+    sput-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Y:Lm48;
 
     const-string v0, "need_dim"
 
-    sput-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->n0:Ljava/lang/String;
+    sput-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->r0:Ljava/lang/String;
 
     const-string v0, "is_closable"
 
-    sput-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->o0:Ljava/lang/String;
+    sput-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->s0:Ljava/lang/String;
 
     return-void
 .end method
@@ -127,7 +127,7 @@
 
     const/4 v1, 0x1
 
-    invoke-direct {p0, v0, v1, v0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;-><init>(Landroid/os/Bundle;ILwc4;)V
+    invoke-direct {p0, v0, v1, v0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;-><init>(Landroid/os/Bundle;ILld4;)V
 
     return-void
 .end method
@@ -141,54 +141,54 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {p0, p1, v2, v0, v1}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILwc4;)V
+    invoke-direct {p0, p1, v2, v0, v1}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILld4;)V
 
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    new-instance v0, Lur;
+    new-instance v0, Lfr;
 
     const-class v1, Ljava/lang/Boolean;
 
-    sget-object v3, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->n0:Ljava/lang/String;
+    sget-object v3, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->r0:Ljava/lang/String;
 
-    invoke-direct {v0, v1, p1, v3}, Lur;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, v1, p1, v3}, Lfr;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->b:Lur;
+    iput-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->b:Lfr;
 
-    sget v0, Lyha;->b:I
+    sget v0, Lnma;->b:I
 
-    invoke-virtual {p0, v0}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lxac;
+    invoke-virtual {p0, v0}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lcic;
 
     move-result-object v0
 
-    iput-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->c:Lxac;
+    iput-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->c:Lcic;
 
-    new-instance v0, Lur;
+    new-instance v0, Lfr;
 
-    sget-object v3, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->o0:Ljava/lang/String;
+    sget-object v3, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->s0:Ljava/lang/String;
 
-    invoke-direct {v0, v1, p1, v3}, Lur;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v0, v1, p1, v3}, Lfr;-><init>(Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/String;)V
 
-    iput-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->o:Lur;
+    iput-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->o:Lfr;
 
-    new-instance p1, Lqr0;
+    new-instance p1, Lar0;
 
     const/4 v0, 0x3
 
-    invoke-direct {p1, v0, v0, v2}, Lqr0;-><init>(IIZ)V
+    invoke-direct {p1, v0, v0, v2}, Lar0;-><init>(IIZ)V
 
-    new-instance v0, Lf67;
+    new-instance v0, Lj97;
 
     const/4 v1, 0x5
 
-    invoke-direct {v0, v1, p1}, Lf67;-><init>(ILqr0;)V
+    invoke-direct {v0, v1, p1}, Lj97;-><init>(ILar0;)V
 
-    iput-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->X:Lf67;
+    iput-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->X:Lj97;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Landroid/os/Bundle;ILwc4;)V
+.method public synthetic constructor <init>(Landroid/os/Bundle;ILld4;)V
     .registers 4
 
     and-int/lit8 p2, p2, 0x1
@@ -205,18 +205,26 @@
 
 
 # virtual methods
-.method public final A0()Landroid/view/View;
+.method public A0()Lj97;
+    .registers 1
+
+    iget-object p0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->X:Lj97;
+
+    return-object p0
+.end method
+
+.method public final B0()Landroid/view/View;
     .registers 3
 
-    sget-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Z:[Lsf7;
+    sget-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Z:[Lxi7;
 
     const/4 v1, 0x1
 
     aget-object v0, v0, v1
 
-    iget-object v1, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->c:Lxac;
+    iget-object v1, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->c:Lcic;
 
-    invoke-interface {v1, p0, v0}, Lxac;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
+    invoke-interface {v1, p0, v0}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -225,7 +233,7 @@
     return-object p0
 .end method
 
-.method public B0()Loma;
+.method public C0()Lera;
     .registers 1
 
     const/4 p0, 0x0
@@ -233,7 +241,7 @@
     return-object p0
 .end method
 
-.method public C0()Z
+.method public D0()Z
     .registers 1
 
     const/4 p0, 0x1
@@ -241,62 +249,62 @@
     return p0
 .end method
 
-.method public final D0(Z)V
+.method public final E0(Z)V
     .registers 5
 
-    iget-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Lm8b;
+    iget-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Llfb;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lm8b;->getScrollState()Lk8b;
+    invoke-virtual {v0}, Llfb;->getScrollState()Ljfb;
 
     move-result-object v1
 
-    sget-object v2, Lk8b;->a:Lk8b;
+    sget-object v2, Ljfb;->a:Ljfb;
 
     if-ne v1, v2, :cond_0
 
     return-void
 
     :cond_0
-    invoke-virtual {p0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->G0()V
+    invoke-virtual {p0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->H0()V
 
-    invoke-virtual {v0, p1}, Lm8b;->j(Z)V
+    invoke-virtual {v0, p1}, Llfb;->j(Z)V
 
     return-void
 
     :cond_1
-    invoke-virtual {p0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->E0()V
+    invoke-virtual {p0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->F0()V
 
     return-void
 .end method
 
-.method public E0()V
+.method public F0()V
     .registers 2
 
-    invoke-virtual {p0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->G0()V
+    invoke-virtual {p0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->H0()V
 
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
+    invoke-virtual {p0}, Lxx3;->getRouter()Lrzc;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Llrc;->B(Lqx3;)Z
+    invoke-virtual {v0, p0}, Lrzc;->B(Lxx3;)Z
 
     return-void
 .end method
 
-.method public final F0()Z
+.method public final G0()Z
     .registers 3
 
-    sget-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Z:[Lsf7;
+    sget-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Z:[Lxi7;
 
     const/4 v1, 0x2
 
     aget-object v0, v0, v1
 
-    iget-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->o:Lur;
+    iget-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->o:Lfr;
 
-    invoke-virtual {v0, p0}, Lur;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Lfr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -309,16 +317,16 @@
     return p0
 .end method
 
-.method public G0()V
+.method public H0()V
     .registers 1
 
     return-void
 .end method
 
-.method public final H0(Z)V
+.method public final I0(Z)V
     .registers 4
 
-    sget-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Z:[Lsf7;
+    sget-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Z:[Lxi7;
 
     const/4 v1, 0x0
 
@@ -328,14 +336,14 @@
 
     move-result-object p1
 
-    iget-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->b:Lur;
+    iget-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->b:Lfr;
 
-    invoke-virtual {v0, p0, p1}, Lur;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
+    invoke-virtual {v0, p0, p1}, Lfr;->b(Lone/me/sdk/arch/Widget;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public abstract I0(Landroid/widget/FrameLayout;Landroid/view/LayoutInflater;Landroid/os/Bundle;)V
+.method public abstract J0(Landroid/widget/FrameLayout;Landroid/view/LayoutInflater;Landroid/os/Bundle;)V
 .end method
 
 .method public handleBack()Z
@@ -343,7 +351,7 @@
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->D0(Z)V
+    invoke-virtual {p0, v0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->E0(Z)V
 
     return v0
 .end method
@@ -361,27 +369,27 @@
 .method public onAttach(Landroid/view/View;)V
     .registers 3
 
-    invoke-super {p0, p1}, Lqx3;->onAttach(Landroid/view/View;)V
+    invoke-super {p0, p1}, Lxx3;->onAttach(Landroid/view/View;)V
 
-    iget-object p0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Lm8b;
+    iget-object p0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Llfb;
 
     if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Lm8b;->getScrollState()Lk8b;
+    invoke-virtual {p0}, Llfb;->getScrollState()Ljfb;
 
     move-result-object p1
 
-    sget-object v0, Lk8b;->a:Lk8b;
+    sget-object v0, Ljfb;->a:Ljfb;
 
     if-ne p1, v0, :cond_0
 
-    new-instance p1, Lfb6;
+    new-instance p1, Lxd6;
 
     const/4 v0, 0x2
 
-    invoke-direct {p1, p0, v0, p0}, Lfb6;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {p1, p0, v0, p0}, Lxd6;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    invoke-static {p0, p1}, Lzna;->a(Landroid/view/View;Ljava/lang/Runnable;)Lzna;
+    invoke-static {p0, p1}, Lssa;->a(Landroid/view/View;Ljava/lang/Runnable;)Lssa;
 
     :cond_0
     return-void
@@ -390,19 +398,19 @@
 .method public final onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .registers 6
 
-    new-instance p2, Lm8b;
+    new-instance p2, Llfb;
 
     invoke-virtual {p1}, Landroid/view/LayoutInflater;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-direct {p2, v0}, Lm8b;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, v0}, Llfb;-><init>(Landroid/content/Context;)V
 
-    sget v0, Lyha;->a:I
+    sget v0, Lnma;->a:I
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setId(I)V
 
-    invoke-virtual {p0, p1, p3}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->x0(Landroid/view/LayoutInflater;Landroid/os/Bundle;)Landroid/view/View;
+    invoke-virtual {p0, p1, p3}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->y0(Landroid/view/LayoutInflater;Landroid/os/Bundle;)Landroid/view/View;
 
     move-result-object p1
 
@@ -423,29 +431,29 @@
     :cond_0
     invoke-virtual {p2, p1, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {p0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->y0()Lg8b;
+    invoke-virtual {p0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->z0()Lffb;
 
     move-result-object p3
 
-    invoke-virtual {p2, p3}, Lm8b;->setCallback(Lg8b;)V
+    invoke-virtual {p2, p3}, Llfb;->setCallback(Lffb;)V
 
-    invoke-virtual {p0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->z0()Lf67;
+    invoke-virtual {p0}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->A0()Lj97;
 
     move-result-object p3
 
     const/4 v0, 0x0
 
-    invoke-static {p1, p3, v0}, Lgwd;->f(Landroid/view/View;Lf67;Lj96;)V
+    invoke-static {p1, p3, v0}, Ln2e;->b(Landroid/view/View;Lj97;Lbc6;)V
 
-    new-instance p1, La3;
+    new-instance p1, Lg3;
 
     const/4 p3, 0x3
 
-    invoke-direct {p1, p0, v0, p3}, La3;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
+    invoke-direct {p1, p0, v0, p3}, Lg3;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
 
-    invoke-static {p1, p2}, Lx77;->M(Lz96;Landroid/view/View;)V
+    invoke-static {p1, p2}, Ljs9;->t(Lrc6;Landroid/view/View;)V
 
-    iput-object p2, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Lm8b;
+    iput-object p2, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Llfb;
 
     return-object p2
 .end method
@@ -453,37 +461,37 @@
 .method public onDestroyView(Landroid/view/View;)V
     .registers 5
 
-    iget-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Lm8b;
+    iget-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Llfb;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, v1}, Lm8b;->setCallback(Lg8b;)V
+    invoke-virtual {v0, v1}, Llfb;->setCallback(Lffb;)V
 
     :cond_0
-    iget-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Lm8b;
+    iget-object v0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Llfb;
 
     if-eqz v0, :cond_2
 
-    iget-object v2, v0, Lm8b;->n0:Landroid/animation/ValueAnimator;
+    iget-object v2, v0, Llfb;->r0:Landroid/animation/ValueAnimator;
 
     if-eqz v2, :cond_1
 
-    invoke-static {v2}, Lg53;->e(Landroid/animation/Animator;)V
+    invoke-static {v2}, Lxfc;->d(Landroid/animation/Animator;)V
 
     :cond_1
-    iput-object v1, v0, Lm8b;->n0:Landroid/animation/ValueAnimator;
+    iput-object v1, v0, Llfb;->r0:Landroid/animation/ValueAnimator;
 
     :cond_2
-    iput-object v1, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Lm8b;
+    iput-object v1, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->a:Llfb;
 
-    invoke-super {p0, p1}, Lqx3;->onDestroyView(Landroid/view/View;)V
+    invoke-super {p0, p1}, Lxx3;->onDestroyView(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public x0(Landroid/view/LayoutInflater;Landroid/os/Bundle;)Landroid/view/View;
+.method public y0(Landroid/view/LayoutInflater;Landroid/os/Bundle;)Landroid/view/View;
     .registers 7
 
     new-instance v0, Landroid/widget/FrameLayout;
@@ -494,7 +502,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    sget v1, Lyha;->b:I
+    sget v1, Lnma;->b:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
@@ -502,9 +510,9 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
 
-    new-instance v1, Lpr0;
+    new-instance v1, Lzq0;
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -520,41 +528,33 @@
 
     const/4 v3, 0x1
 
-    invoke-direct {v1, v3, v2}, Lpr0;-><init>(IF)V
+    invoke-direct {v1, v3, v2}, Lzq0;-><init>(IF)V
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    invoke-virtual {p0, v0, p1, p2}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->I0(Landroid/widget/FrameLayout;Landroid/view/LayoutInflater;Landroid/os/Bundle;)V
+    invoke-virtual {p0, v0, p1, p2}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->J0(Landroid/widget/FrameLayout;Landroid/view/LayoutInflater;Landroid/os/Bundle;)V
 
-    new-instance p1, Ltd0;
+    new-instance p1, Lxc0;
 
     const/4 p2, 0x0
 
     const/4 v1, 0x1
 
-    invoke-direct {p1, p0, p2, v1}, Ltd0;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
+    invoke-direct {p1, p0, p2, v1}, Lxc0;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
 
-    invoke-static {p1, v0}, Lx77;->M(Lz96;Landroid/view/View;)V
+    invoke-static {p1, v0}, Ljs9;->t(Lrc6;Landroid/view/View;)V
 
     return-object v0
 .end method
 
-.method public y0()Lg8b;
+.method public z0()Lffb;
     .registers 3
 
-    new-instance v0, Lm9;
+    new-instance v0, Lr9;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lm9;-><init>(Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {v0, p0, v1}, Lr9;-><init>(Lone/me/sdk/arch/Widget;I)V
 
     return-object v0
-.end method
-
-.method public z0()Lf67;
-    .registers 1
-
-    iget-object p0, p0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->X:Lf67;
-
-    return-object p0
 .end method

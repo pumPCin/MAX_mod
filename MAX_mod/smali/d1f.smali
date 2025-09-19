@@ -1,81 +1,69 @@
-.class public final synthetic Ld1f;
-.super Ljava/lang/Object;
+.class public final Ld1f;
+.super Lr94;
 .source "SourceFile"
-
-# interfaces
-.implements Luv1;
 
 
 # instance fields
-.field public final synthetic a:Le1f;
+.field public final synthetic i:Lrde;
+
+.field public final synthetic j:Lf1f;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le1f;)V
-    .registers 2
+.method public constructor <init>(Lf1f;Lrde;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ld1f;->a:Le1f;
+    iput-object p1, p0, Ld1f;->j:Lf1f;
+
+    iput-object p2, p0, Ld1f;->i:Lrde;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/hardware/camera2/TotalCaptureResult;)Z
+.method public final S(I)V
     .registers 4
 
-    iget-object p0, p0, Ld1f;->a:Le1f;
+    iget-object v0, p0, Ld1f;->j:Lf1f;
 
-    iget-object v0, p0, Le1f;->f:Lks1;
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
+    iput-boolean v1, v0, Lf1f;->m:Z
 
-    if-eqz v0, :cond_1
+    iget-object p0, p0, Ld1f;->i:Lrde;
 
-    invoke-virtual {p1}, Landroid/hardware/camera2/CaptureResult;->getRequest()Landroid/hardware/camera2/CaptureRequest;
+    invoke-virtual {p0, p1}, Lrde;->q(I)V
+
+    return-void
+.end method
+
+.method public final T(Landroid/graphics/Typeface;)V
+    .registers 4
+
+    iget-object v0, p0, Ld1f;->j:Lf1f;
+
+    iget v1, v0, Lf1f;->c:I
+
+    invoke-static {p1, v1}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;I)Landroid/graphics/Typeface;
 
     move-result-object p1
 
-    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->FLASH_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    invoke-virtual {p1, v0}, Landroid/hardware/camera2/CaptureRequest;->get(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    const/4 v0, 0x2
-
-    if-ne p1, v0, :cond_0
+    iput-object p1, v0, Lf1f;->n:Landroid/graphics/Typeface;
 
     const/4 p1, 0x1
 
-    goto :goto_0
+    iput-boolean p1, v0, Lf1f;->m:Z
 
-    :cond_0
-    move p1, v1
-
-    :goto_0
-    iget-boolean v0, p0, Le1f;->g:Z
-
-    if-ne p1, v0, :cond_1
-
-    iget-object p1, p0, Le1f;->f:Lks1;
+    iget-object p1, v0, Lf1f;->n:Landroid/graphics/Typeface;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Lks1;->b(Ljava/lang/Object;)Z
+    iget-object p0, p0, Ld1f;->i:Lrde;
 
-    iput-object v0, p0, Le1f;->f:Lks1;
+    invoke-virtual {p0, p1, v0}, Lrde;->r(Landroid/graphics/Typeface;Z)V
 
-    :cond_1
-    return v1
+    return-void
 .end method

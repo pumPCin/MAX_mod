@@ -1,124 +1,99 @@
-.class public final synthetic Lgg4;
-.super Ljava/lang/Object;
+.class public final Lgg4;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Lche;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic a:Lzoc;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic b:I
+
+.field public final synthetic c:Landroid/view/View;
+
+.field public final synthetic d:I
+
+.field public final synthetic e:Landroid/view/ViewPropertyAnimator;
+
+.field public final synthetic f:Lkg4;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .registers 3
+.method public constructor <init>(Lkg4;Lzoc;ILandroid/view/View;ILandroid/view/ViewPropertyAnimator;)V
+    .registers 7
 
-    iput p1, p0, Lgg4;->a:I
+    iput-object p1, p0, Lgg4;->f:Lkg4;
 
-    iput-object p2, p0, Lgg4;->b:Ljava/lang/Object;
+    iput-object p2, p0, Lgg4;->a:Lzoc;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Lgg4;->b:I
+
+    iput-object p4, p0, Lgg4;->c:Landroid/view/View;
+
+    iput p5, p0, Lgg4;->d:I
+
+    iput-object p6, p0, Lgg4;->e:Landroid/view/ViewPropertyAnimator;
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .registers 2
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .registers 4
 
-    iget v0, p0, Lgg4;->a:I
-
-    iget-object p0, p0, Lgg4;->b:Ljava/lang/Object;
-
-    packed-switch v0, :pswitch_data_0
-
-    check-cast p0, Lhb5;
-
-    iget-boolean p0, p0, Lhb5;->G0:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    check-cast p0, Lba5;
-
-    return-object p0
-
-    :pswitch_1
-    check-cast p0, Lvi4;
-
-    return-object p0
-
-    :pswitch_2
-    check-cast p0, Lrr7;
-
-    return-object p0
-
-    :pswitch_3
-    check-cast p0, Ltle;
-
-    return-object p0
-
-    :pswitch_4
-    check-cast p0, Lui4;
-
-    return-object p0
-
-    :pswitch_5
-    check-cast p0, Lzm8;
-
-    return-object p0
-
-    :pswitch_6
-    check-cast p0, Lzf4;
-
-    return-object p0
-
-    :pswitch_7
-    check-cast p0, Ljava/lang/Class;
+    iget p1, p0, Lgg4;->b:I
 
     const/4 v0, 0x0
 
-    :try_start_0
-    invoke-virtual {p0, v0}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    iget-object v1, p0, Lgg4;->c:Landroid/view/View;
 
-    move-result-object p0
+    if-eqz p1, :cond_0
 
-    invoke-virtual {p0, v0}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    move-result-object p0
+    :cond_0
+    iget p0, p0, Lgg4;->d:I
 
-    check-cast p0, Lzm8;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz p0, :cond_1
 
-    return-object p0
+    invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    :catch_0
-    move-exception p0
+    :cond_1
+    return-void
+.end method
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .registers 3
 
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+    iget-object p1, p0, Lgg4;->e:Landroid/view/ViewPropertyAnimator;
 
-    throw v0
+    const/4 v0, 0x0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+
+    iget-object p1, p0, Lgg4;->f:Lkg4;
+
+    iget-object p0, p0, Lgg4;->a:Lzoc;
+
+    invoke-virtual {p1, p0}, Lhoc;->c(Lzoc;)V
+
+    iget-object v0, p1, Lkg4;->p:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    invoke-virtual {p1}, Lkg4;->j()V
+
+    return-void
+.end method
+
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .registers 2
+
+    iget-object p0, p0, Lgg4;->f:Lkg4;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    return-void
 .end method

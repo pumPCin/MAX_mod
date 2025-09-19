@@ -1,109 +1,215 @@
 .class public final Lrqc;
-.super Ljava/lang/Object;
+.super Lw37;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
+# static fields
+.field public static final s0:[Ljava/lang/Object;
 
-.field public final b:I
+.field public static final t0:Lrqc;
+
+
+# instance fields
+.field public final transient X:I
+
+.field public final transient Y:[Ljava/lang/Object;
+
+.field public final transient Z:I
+
+.field public final transient o:[Ljava/lang/Object;
+
+.field public final transient r0:I
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iput p1, p0, Lrqc;->a:I
+    new-array v5, v0, [Ljava/lang/Object;
 
-    iput p2, p0, Lrqc;->b:I
+    sput-object v5, Lrqc;->s0:[Ljava/lang/Object;
+
+    new-instance v1, Lrqc;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v2, 0x0
+
+    move-object v6, v5
+
+    invoke-direct/range {v1 .. v6}, Lrqc;-><init>(III[Ljava/lang/Object;[Ljava/lang/Object;)V
+
+    sput-object v1, Lrqc;->t0:Lrqc;
+
+    return-void
+.end method
+
+.method public constructor <init>(III[Ljava/lang/Object;[Ljava/lang/Object;)V
+    .registers 6
+
+    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+
+    iput-object p4, p0, Lrqc;->o:[Ljava/lang/Object;
+
+    iput p1, p0, Lrqc;->X:I
+
+    iput-object p5, p0, Lrqc;->Y:[Ljava/lang/Object;
+
+    iput p2, p0, Lrqc;->Z:I
+
+    iput p3, p0, Lrqc;->r0:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final b(I[Ljava/lang/Object;)I
+    .registers 5
+
+    iget-object v0, p0, Lrqc;->o:[Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    iget p0, p0, Lrqc;->r0:I
+
+    invoke-static {v0, v1, p2, p1, p0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    add-int/2addr p1, p0
+
+    return p1
+.end method
+
+.method public final c()[Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lrqc;->o:[Ljava/lang/Object;
+
+    return-object p0
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
     .registers 6
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    if-ne p0, p1, :cond_0
+    if-eqz p1, :cond_3
+
+    iget-object v1, p0, Lrqc;->Y:[Ljava/lang/Object;
+
+    array-length v2, v1
+
+    if-nez v2, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    invoke-static {p1}, Lgs3;->B(Ljava/lang/Object;)I
+
+    move-result v2
+
+    :goto_0
+    iget v3, p0, Lrqc;->Z:I
+
+    and-int/2addr v2, v3
+
+    aget-object v3, v1, v2
+
+    if-nez v3, :cond_1
 
     return v0
 
-    :cond_0
-    instance-of v1, p1, Lrqc;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
     :cond_1
-    check-cast p1, Lrqc;
+    invoke-virtual {v3, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iget v1, p0, Lrqc;->a:I
+    move-result v3
 
-    iget v3, p1, Lrqc;->a:I
+    if-eqz v3, :cond_2
 
-    if-eq v1, v3, :cond_2
+    const/4 p0, 0x1
 
-    return v2
+    return p0
 
     :cond_2
-    iget p0, p0, Lrqc;->b:I
+    add-int/lit8 v2, v2, 0x1
 
-    iget p1, p1, Lrqc;->b:I
-
-    if-eq p0, p1, :cond_3
-
-    return v2
+    goto :goto_0
 
     :cond_3
+    :goto_1
     return v0
 .end method
 
-.method public final hashCode()I
-    .registers 2
+.method public final d()I
+    .registers 1
 
-    iget v0, p0, Lrqc;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget p0, p0, Lrqc;->b:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
+    iget p0, p0, Lrqc;->r0:I
 
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 5
+.method public final e()I
+    .registers 1
 
-    const-string v0, ", height="
+    const/4 p0, 0x0
 
-    const-string v1, ")"
+    return p0
+.end method
 
-    const-string v2, "IconSize(width="
+.method public final f()Z
+    .registers 1
 
-    iget v3, p0, Lrqc;->a:I
+    const/4 p0, 0x0
 
-    iget p0, p0, Lrqc;->b:I
+    return p0
+.end method
 
-    invoke-static {v2, v3, v0, p0, v1}, Lnh0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+.method public final g()Lgmf;
+    .registers 2
+
+    invoke-virtual {p0}, Lw37;->a()Ll37;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Ll37;->l(I)Lgx5;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget p0, p0, Lrqc;->X:I
+
+    return p0
+.end method
+
+.method public final k()Ll37;
+    .registers 2
+
+    iget-object v0, p0, Lrqc;->o:[Ljava/lang/Object;
+
+    iget p0, p0, Lrqc;->r0:I
+
+    invoke-static {p0, v0}, Ll37;->h(I[Ljava/lang/Object;)Llqc;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final size()I
+    .registers 1
+
+    iget p0, p0, Lrqc;->r0:I
+
+    return p0
 .end method

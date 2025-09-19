@@ -1,164 +1,144 @@
-.class public final Lqh5;
-.super Lg2d;
+.class public final synthetic Lqh5;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Loh5;
-.implements Lobd;
+.implements Lc6;
 
 
 # instance fields
-.field public i:Lxh7;
+.field public final synthetic a:I
+
+.field public final synthetic b:J
 
 
-# virtual methods
-.method public final a()V
-    .registers 2
+# direct methods
+.method public synthetic constructor <init>(JI)V
+    .registers 4
 
-    iget-object p0, p0, Lqh5;->i:Lxh7;
+    iput p3, p0, Lqh5;->a:I
 
-    instance-of v0, p0, Lplc;
+    iput-wide p1, p0, Lqh5;->b:J
 
-    if-eqz v0, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    check-cast p0, Lplc;
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    if-eqz p0, :cond_1
-
-    invoke-interface {p0}, Lplc;->reset()V
-
-    :cond_1
     return-void
 .end method
 
-.method public final n()Z
-    .registers 3
 
-    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->new-crop-screen-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
+# virtual methods
+.method public final run()V
+    .registers 7
 
-    const/4 v1, 0x0
+    iget v0, p0, Lqh5;->a:I
 
-    invoke-virtual {p0, v0, v1}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+    const-string v1, "vh5"
 
-    move-result p0
+    const-string v2, "loadFromMarker: success marker=d"
 
-    return p0
-.end method
+    const-string v3, "oi5"
 
-.method public final o()Z
-    .registers 3
+    iget-wide v4, p0, Lqh5;->b:J
 
-    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->chat-invite-link-permissions-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v1, 0x0
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-virtual {p0, v0, v1}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+    move-result-object p0
 
-    move-result p0
+    filled-new-array {p0}, [Ljava/lang/Object;
 
-    return p0
-.end method
+    move-result-object p0
 
-.method public final p()Z
-    .registers 3
+    const-string v0, "dq9"
 
-    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->gcas:Lru/ok/tamtam/android/prefs/PmsKey;
+    const-string v1, "Update track for message %d: track is empty"
 
-    const/4 v1, 0x0
+    invoke-static {v0, v1, p0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {p0, v0, v1}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+    return-void
 
-    move-result p0
+    :pswitch_0
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    return p0
-.end method
+    move-result-object p0
 
-.method public final q()Z
-    .registers 3
+    filled-new-array {p0}, [Ljava/lang/Object;
 
-    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->gce:Lru/ok/tamtam/android/prefs/PmsKey;
+    move-result-object p0
 
-    const/4 v1, 0x0
+    invoke-static {v3, v2, p0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {p0, v0, v1}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+    return-void
 
-    move-result p0
+    :pswitch_1
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    return p0
-.end method
+    move-result-object p0
 
-.method public final r()Z
-    .registers 3
+    filled-new-array {p0}, [Ljava/lang/Object;
 
-    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->lgce:Lru/ok/tamtam/android/prefs/PmsKey;
+    move-result-object p0
 
-    const/4 v1, 0x0
+    const-string v0, "onNotifAdded: added sticker %d to cache"
 
-    invoke-virtual {p0, v0, v1}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+    invoke-static {v3, v0, p0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    move-result p0
+    return-void
 
-    return p0
-.end method
+    :pswitch_2
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-.method public final s()Z
-    .registers 3
+    move-result-object p0
 
-    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->new-admin-permissions:Lru/ok/tamtam/android/prefs/PmsKey;
+    filled-new-array {p0}, [Ljava/lang/Object;
 
-    const/4 v1, 0x0
+    move-result-object p0
 
-    invoke-virtual {p0, v0, v1}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+    const-string v0, "gi5"
 
-    move-result p0
+    const-string v1, "assetsUpdate: queued on api, sync=%d"
 
-    return p0
-.end method
+    invoke-static {v0, v1, p0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-.method public final t()Z
-    .registers 3
+    return-void
 
-    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->chat-anim:Lru/ok/tamtam/android/prefs/PmsKey;
+    :pswitch_3
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v1, 0x0
+    move-result-object p0
 
-    invoke-virtual {p0, v0, v1}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+    filled-new-array {p0}, [Ljava/lang/Object;
 
-    move-result p0
+    move-result-object p0
 
-    return p0
-.end method
+    invoke-static {v1, v2, p0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-.method public final u()Z
-    .registers 3
+    return-void
 
-    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->video-msg-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
+    :pswitch_4
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v1, 0x0
+    move-result-object p0
 
-    invoke-virtual {p0, v0, v1}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+    filled-new-array {p0}, [Ljava/lang/Object;
 
-    move-result p0
+    move-result-object p0
 
-    return p0
-.end method
+    const-string v0, "onNotifAdded: added sticker set %d to cache"
 
-.method public final v()Z
-    .registers 3
+    invoke-static {v1, v0, p0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    sget-object v0, Lru/ok/tamtam/android/prefs/PmsKey;->webm-stickers-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
+    return-void
 
-    const/4 v1, 0x1
+    nop
 
-    invoke-virtual {p0, v0, v1}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
-
-    move-result p0
-
-    return p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

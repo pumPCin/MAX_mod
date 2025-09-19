@@ -1,68 +1,160 @@
-.class public final synthetic Lagc;
+.class public final Lagc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Llsd;
+.implements Ljava/lang/Comparable;
+.implements Ljava/lang/CharSequence;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lh96;
-
-.field public final synthetic c:Ljava/lang/Object;
+.field public final a:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Lh96;I)V
-    .registers 4
-
-    iput p3, p0, Lagc;->a:I
-
-    iput-object p1, p0, Lagc;->c:Ljava/lang/Object;
-
-    iput-object p2, p0, Lagc;->b:Lh96;
+.method public constructor <init>(Ljava/lang/CharSequence;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lagc;->a:Ljava/lang/CharSequence;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final j(Lorg/json/JSONObject;)V
+.method public final charAt(I)C
+    .registers 2
+
+    iget-object p0, p0, Lagc;->a:Ljava/lang/CharSequence;
+
+    invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final compareTo(Ljava/lang/Object;)I
+    .registers 2
+
+    check-cast p1, Lagc;
+
+    iget-object p0, p0, Lagc;->a:Ljava/lang/CharSequence;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    iget-object p1, p1, Lagc;->a:Ljava/lang/CharSequence;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    iget v0, p0, Lagc;->a:I
+    if-ne p0, p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    const/4 p0, 0x1
 
-    iget-object v0, p0, Lagc;->c:Ljava/lang/Object;
+    return p0
 
-    check-cast v0, Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams;
+    :cond_0
+    instance-of v0, p1, Lagc;
 
-    iget-object p0, p0, Lagc;->b:Lh96;
+    if-nez v0, :cond_1
 
-    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/record/internal/RecordManagerImpl;->d(Lru/ok/android/externcalls/sdk/record/RecordManager$StartParams;Lh96;Lorg/json/JSONObject;)V
+    const/4 p0, 0x0
 
-    return-void
+    return p0
 
-    :pswitch_0
-    iget-object v0, p0, Lagc;->c:Ljava/lang/Object;
+    :cond_1
+    iget-object p0, p0, Lagc;->a:Ljava/lang/CharSequence;
 
-    check-cast v0, Lru/ok/android/externcalls/sdk/record/RecordManager$StopParams;
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    iget-object p0, p0, Lagc;->b:Lh96;
+    move-result-object p0
 
-    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/record/internal/RecordManagerImpl;->c(Lru/ok/android/externcalls/sdk/record/RecordManager$StopParams;Lh96;Lorg/json/JSONObject;)V
+    check-cast p1, Lagc;
 
-    return-void
+    iget-object p1, p1, Lagc;->a:Ljava/lang/CharSequence;
 
-    nop
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    move-result-object p1
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    const-class v0, Lagc;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    iget-object p0, p0, Lagc;->a:Ljava/lang/CharSequence;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    mul-int/lit8 p0, p0, 0x1f
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final length()I
+    .registers 1
+
+    iget-object p0, p0, Lagc;->a:Ljava/lang/CharSequence;
+
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final subSequence(II)Ljava/lang/CharSequence;
+    .registers 3
+
+    iget-object p0, p0, Lagc;->a:Ljava/lang/CharSequence;
+
+    invoke-interface {p0, p1, p2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    iget-object p0, p0, Lagc;->a:Ljava/lang/CharSequence;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,139 +1,70 @@
-.class public abstract Li9a;
+.class public final Li9a;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ld12;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:I
+# instance fields
+.field public final a:Lb9a;
 
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:I
-
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-.field public static final p:I
-
-.field public static final q:I
-
-.field public static final r:I
-
-.field public static final s:I
-
-.field public static final t:I
-
-.field public static final u:I
+.field public final synthetic b:Lj9a;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lj9a;Lb9a;)V
+    .registers 3
 
-    sget v0, Lmyb;->call_history_info_copy_link:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Li9a;->a:I
+    iput-object p1, p0, Li9a;->b:Lj9a;
 
-    sget v0, Lmyb;->call_history_info_open_chat_call:I
+    iput-object p2, p0, Li9a;->a:Lb9a;
 
-    sput v0, Li9a;->b:I
+    return-void
+.end method
 
-    sget v0, Lmyb;->call_history_info_recreate:I
 
-    sput v0, Li9a;->c:I
+# virtual methods
+.method public final cancel()V
+    .registers 5
 
-    sget v0, Lmyb;->call_history_info_send_to_chat:I
+    iget-object v0, p0, Li9a;->b:Lj9a;
 
-    sput v0, Li9a;->d:I
+    iget-object v1, v0, Lj9a;->b:Lhr;
 
-    sget v0, Lmyb;->call_history_info_share_link:I
+    iget-object v2, p0, Li9a;->a:Lb9a;
 
-    sput v0, Li9a;->e:I
+    invoke-virtual {v1, v2}, Lhr;->remove(Ljava/lang/Object;)Z
 
-    sget v0, Lmyb;->call_history_info_start_call:I
+    iget-object v1, v0, Lj9a;->c:Lb9a;
 
-    sput v0, Li9a;->f:I
+    invoke-static {v1, v2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget v0, Lmyb;->call_history_screen_banner:I
+    move-result v1
 
-    sput v0, Li9a;->g:I
+    const/4 v3, 0x0
 
-    sget v0, Lmyb;->call_history_screen_contact_call:I
+    if-eqz v1, :cond_0
 
-    sput v0, Li9a;->h:I
+    invoke-virtual {v2}, Lb9a;->a()V
 
-    sget v0, Lmyb;->call_history_screen_container:I
+    iput-object v3, v0, Lj9a;->c:Lb9a;
 
-    sput v0, Li9a;->i:I
+    :cond_0
+    iget-object v0, v2, Lb9a;->b:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    sget v0, Lmyb;->call_history_screen_group_call:I
+    invoke-virtual {v0, p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
 
-    sput v0, Li9a;->j:I
+    iget-object p0, v2, Lb9a;->c:Led6;
 
-    sget v0, Lmyb;->call_history_screen_toolbar:I
+    if-eqz p0, :cond_1
 
-    sput v0, Li9a;->k:I
+    invoke-interface {p0}, Lzb6;->invoke()Ljava/lang/Object;
 
-    sget v0, Lmyb;->call_info_action_list:I
-
-    sput v0, Li9a;->l:I
-
-    sget v0, Lmyb;->call_info_action_vh:I
-
-    sput v0, Li9a;->m:I
-
-    sget v0, Lmyb;->call_info_appbarlayout:I
-
-    sput v0, Li9a;->n:I
-
-    sget v0, Lmyb;->call_info_button:I
-
-    sput v0, Li9a;->o:I
-
-    sget v0, Lmyb;->call_info_collapsiblecontainerlinearlayout:I
-
-    sput v0, Li9a;->p:I
-
-    sget v0, Lmyb;->call_info_coordinator_layout:I
-
-    sput v0, Li9a;->q:I
-
-    sget v0, Lmyb;->call_info_icon:I
-
-    sput v0, Li9a;->r:I
-
-    sget v0, Lmyb;->call_info_link_state:I
-
-    sput v0, Li9a;->s:I
-
-    sget v0, Lmyb;->call_info_onemetoolbar:I
-
-    sput v0, Li9a;->t:I
-
-    sget v0, Lmyb;->call_info_title:I
-
-    sput v0, Li9a;->u:I
+    :cond_1
+    iput-object v3, v2, Lb9a;->c:Led6;
 
     return-void
 .end method

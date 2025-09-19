@@ -1,163 +1,37 @@
-.class public abstract Ldyc;
+.class public final Ldyc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Lkvd;
+.field public static final synthetic a:Ldyc;
 
-.field public static final b:Lte3;
-
-.field public static final c:Lia7;
-
-.field public static final d:Lw3f;
+.field public static final b:Ljava/util/Set;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 2
 
-    const-string v0, "Scheduler Supplier result can\'t be null"
+    new-instance v0, Ldyc;
 
-    :try_start_0
-    sget-object v1, Lcyc;->a:Lkvd;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_3
+    sput-object v0, Ldyc;->a:Ldyc;
 
-    sput-object v1, Ldyc;->a:Lkvd;
+    const-string v0, "android.intent.action.SEND_MULTIPLE"
 
-    :try_start_1
-    sget-object v1, Lzxc;->a:Lte3;
+    const-string v1, "android.intent.action.SEND"
 
-    invoke-static {v1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+    filled-new-array {v0, v1}, [Ljava/lang/String;
 
-    sput-object v1, Ldyc;->b:Lte3;
+    move-result-object v0
 
-    :try_start_2
-    sget-object v1, Layc;->a:Lia7;
+    invoke-static {v0}, Lxnd;->g0([Ljava/lang/Object;)Ljava/util/Set;
 
-    invoke-static {v1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    move-result-object v0
 
-    sput-object v1, Ldyc;->c:Lia7;
-
-    sget-object v1, Lw3f;->c:Lw3f;
-
-    sput-object v1, Ldyc;->d:Lw3f;
-
-    :try_start_3
-    sget-object v1, Lbyc;->a:Lis9;
-
-    invoke-static {v1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    sput-object v0, Ldyc;->b:Ljava/util/Set;
 
     return-void
-
-    :catchall_0
-    move-exception v0
-
-    invoke-static {v0}, Lu75;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
-
-    move-result-object v0
-
-    throw v0
-
-    :catchall_1
-    move-exception v0
-
-    invoke-static {v0}, Lu75;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
-
-    move-result-object v0
-
-    throw v0
-
-    :catchall_2
-    move-exception v0
-
-    invoke-static {v0}, Lu75;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
-
-    move-result-object v0
-
-    throw v0
-
-    :catchall_3
-    move-exception v0
-
-    invoke-static {v0}, Lu75;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
-
-    move-result-object v0
-
-    throw v0
-.end method
-
-.method public static a()Lqxc;
-    .registers 2
-
-    sget-object v0, Ldyc;->b:Lte3;
-
-    sget-object v1, Lev0;->g:Lws9;
-
-    if-nez v1, :cond_0
-
-    return-object v0
-
-    :cond_0
-    :try_start_0
-    invoke-virtual {v1, v0}, Lws9;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    check-cast v0, Lqxc;
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-static {v0}, Lu75;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
-
-    move-result-object v0
-
-    throw v0
-.end method
-
-.method public static b()Lqxc;
-    .registers 2
-
-    sget-object v0, Ldyc;->c:Lia7;
-
-    sget-object v1, Lev0;->i:Lzs9;
-
-    if-nez v1, :cond_0
-
-    return-object v0
-
-    :cond_0
-    :try_start_0
-    invoke-virtual {v1, v0}, Lzs9;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    check-cast v0, Lqxc;
-
-    return-object v0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-static {v0}, Lu75;->f(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
-
-    move-result-object v0
-
-    throw v0
 .end method

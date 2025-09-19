@@ -1,506 +1,277 @@
-.class public final Li75;
-.super Ljava/lang/Object;
+.class public abstract Li75;
+.super Landroid/app/Service;
 .source "SourceFile"
-
-# interfaces
-.implements Ltb9;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Li75;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final Z:Lt26;
-
-.field public static final n0:Lt26;
 
 
 # instance fields
-.field public final X:[B
+.field public X:I
 
-.field public Y:I
+.field public final a:Ljava/util/concurrent/ExecutorService;
 
-.field public final a:Ljava/lang/String;
+.field public b:Lzug;
 
-.field public final b:Ljava/lang/String;
+.field public final c:Ljava/lang/Object;
 
-.field public final c:J
-
-.field public final o:J
+.field public o:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>()V
+    .registers 9
 
-    new-instance v0, Lq26;
+    invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    invoke-direct {v0}, Lq26;-><init>()V
+    new-instance v7, Les9;
 
-    const-string v1, "application/id3"
+    const-string v0, "Firebase-Messaging-Intent-Handle"
 
-    invoke-static {v1}, Lyc9;->l(Ljava/lang/String;)Ljava/lang/String;
+    const/4 v1, 0x0
 
-    move-result-object v1
+    invoke-direct {v7, v0, v1}, Les9;-><init>(Ljava/lang/String;I)V
 
-    iput-object v1, v0, Lq26;->l:Ljava/lang/String;
+    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
 
-    new-instance v1, Lt26;
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-direct {v1, v0}, Lt26;-><init>(Lq26;)V
+    new-instance v6, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    sput-object v1, Li75;->Z:Lt26;
+    invoke-direct {v6}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
 
-    new-instance v0, Lq26;
+    const/4 v1, 0x1
 
-    invoke-direct {v0}, Lq26;-><init>()V
+    const-wide/16 v3, 0x3c
 
-    const-string v1, "application/x-scte35"
+    move v2, v1
 
-    invoke-static {v1}, Lyc9;->l(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
 
-    iput-object v1, v0, Lq26;->l:Ljava/lang/String;
-
-    new-instance v1, Lt26;
-
-    invoke-direct {v1, v0}, Lt26;-><init>(Lq26;)V
-
-    sput-object v1, Li75;->n0:Lt26;
-
-    new-instance v0, Lfj3;
-
-    const/16 v1, 0x12
-
-    invoke-direct {v0, v1}, Lfj3;-><init>(I)V
-
-    sput-object v0, Li75;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-static {v0}, Ljava/util/concurrent/Executors;->unconfigurableExecutorService(Ljava/util/concurrent/ExecutorService;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
-    sget v1, Laif;->a:I
+    iput-object v0, p0, Li75;->a:Ljava/util/concurrent/ExecutorService;
 
-    iput-object v0, p0, Li75;->a:Ljava/lang/String;
+    new-instance v0, Ljava/lang/Object;
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    iput-object v0, p0, Li75;->c:Ljava/lang/Object;
 
-    iput-object v0, p0, Li75;->b:Ljava/lang/String;
+    const/4 v0, 0x0
 
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Li75;->c:J
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Li75;->o:J
-
-    invoke-virtual {p1}, Landroid/os/Parcel;->createByteArray()[B
-
-    move-result-object p1
-
-    iput-object p1, p0, Li75;->X:[B
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JJ[B)V
-    .registers 8
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Li75;->a:Ljava/lang/String;
-
-    iput-object p2, p0, Li75;->b:Ljava/lang/String;
-
-    iput-wide p3, p0, Li75;->c:J
-
-    iput-wide p5, p0, Li75;->o:J
-
-    iput-object p7, p0, Li75;->X:[B
+    iput v0, p0, Li75;->X:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 8
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_2
-
-    const-class v2, Li75;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Li75;
-
-    iget-wide v2, p0, Li75;->c:J
-
-    iget-wide v4, p1, Li75;->c:J
-
-    cmp-long v2, v2, v4
-
-    if-nez v2, :cond_2
-
-    iget-wide v2, p0, Li75;->o:J
-
-    iget-wide v4, p1, Li75;->o:J
-
-    cmp-long v2, v2, v4
-
-    if-nez v2, :cond_2
-
-    iget-object v2, p0, Li75;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Li75;->a:Ljava/lang/String;
-
-    invoke-static {v2, v3}, Laif;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object v2, p0, Li75;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Li75;->b:Ljava/lang/String;
-
-    invoke-static {v2, v3}, Laif;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    iget-object p0, p0, Li75;->X:[B
-
-    iget-object p1, p1, Li75;->X:[B
-
-    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([B[B)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_2
-
-    return v0
-
-    :cond_2
-    :goto_0
-    return v1
-.end method
-
-.method public final hashCode()I
-    .registers 7
-
-    iget v0, p0, Li75;->Y:I
-
-    if-nez v0, :cond_2
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Li75;->a:Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    goto :goto_0
-
-    :cond_0
-    move v1, v0
-
-    :goto_0
-    const/16 v2, 0x20f
-
-    add-int/2addr v2, v1
-
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget-object v1, p0, Li75;->b:Ljava/lang/String;
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    :cond_1
-    add-int/2addr v2, v0
-
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget-wide v0, p0, Li75;->c:J
-
-    const/16 v3, 0x20
-
-    ushr-long v4, v0, v3
-
-    xor-long/2addr v0, v4
-
-    long-to-int v0, v0
-
-    add-int/2addr v2, v0
-
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget-wide v0, p0, Li75;->o:J
-
-    ushr-long v3, v0, v3
-
-    xor-long/2addr v0, v3
-
-    long-to-int v0, v0
-
-    add-int/2addr v2, v0
-
-    mul-int/lit8 v2, v2, 0x1f
-
-    iget-object v0, p0, Li75;->X:[B
-
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([B)I
-
-    move-result v0
-
-    add-int/2addr v0, v2
-
-    iput v0, p0, Li75;->Y:I
-
-    :cond_2
-    iget p0, p0, Li75;->Y:I
-
-    return p0
-.end method
-
-.method public final l()Lt26;
+.method public final a(Landroid/content/Intent;)V
     .registers 3
 
-    iget-object p0, p0, Li75;->a:Ljava/lang/String;
+    if-eqz p1, :cond_0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1}, Lqbg;->b(Landroid/content/Intent;)V
 
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    :cond_0
+    iget-object p1, p0, Li75;->c:Ljava/lang/Object;
+
+    monitor-enter p1
+
+    :try_start_0
+    iget v0, p0, Li75;->X:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Li75;->X:I
+
+    if-nez v0, :cond_1
+
+    iget v0, p0, Li75;->o:I
+
+    invoke-virtual {p0, v0}, Landroid/app/Service;->stopSelfResult(I)Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    monitor-exit p1
+
+    return-void
+
+    :goto_1
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+.method public abstract b(Landroid/content/Intent;)V
+.end method
+
+.method public final declared-synchronized onBind(Landroid/content/Intent;)Landroid/os/IBinder;
+    .registers 4
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object p1, p0, Li75;->b:Lzug;
+
+    if-nez p1, :cond_0
+
+    new-instance p1, Lzug;
+
+    new-instance v0, Lu35;
+
+    const/16 v1, 0xf
+
+    invoke-direct {v0, v1, p0}, Lu35;-><init>(ILjava/lang/Object;)V
+
+    invoke-direct {p1, v0}, Lzug;-><init>(Lu35;)V
+
+    iput-object p1, p0, Li75;->b:Lzug;
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    iget-object p1, p0, Li75;->b:Lzug;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object p1
+
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+.end method
+
+.method public final onDestroy()V
+    .registers 2
+
+    iget-object v0, p0, Li75;->a:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
+
+    invoke-super {p0}, Landroid/app/Service;->onDestroy()V
+
+    return-void
+.end method
+
+.method public final onStartCommand(Landroid/content/Intent;II)I
+    .registers 8
+
+    iget-object p2, p0, Li75;->c:Ljava/lang/Object;
+
+    monitor-enter p2
+
+    :try_start_0
+    iput p3, p0, Li75;->o:I
+
+    iget p3, p0, Li75;->X:I
+
+    add-int/lit8 p3, p3, 0x1
+
+    iput p3, p0, Li75;->X:I
+
+    monitor-exit p2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-static {}, Lbkd;->o()Lbkd;
+
+    move-result-object p2
+
+    iget-object p2, p2, Lbkd;->o:Ljava/lang/Object;
+
+    check-cast p2, Ljava/util/ArrayDeque;
+
+    invoke-virtual {p2}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/content/Intent;
+
+    const/4 p3, 0x2
+
+    if-nez p2, :cond_0
+
+    invoke-virtual {p0, p1}, Li75;->a(Landroid/content/Intent;)V
+
+    return p3
+
+    :cond_0
+    new-instance v0, La0f;
+
+    invoke-direct {v0}, La0f;-><init>()V
+
+    iget-object v1, p0, Li75;->a:Ljava/util/concurrent/ExecutorService;
+
+    new-instance v2, Ly55;
+
+    const/4 v3, 0x2
+
+    invoke-direct {v2, p0, p2, v0, v3}, Ly55;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    iget-object p2, v0, La0f;->a:Lz8h;
+
+    invoke-virtual {p2}, Lz8h;->g()Z
 
     move-result v0
 
-    const/4 v1, -0x1
+    if-eqz v0, :cond_1
 
-    sparse-switch v0, :sswitch_data_0
+    invoke-virtual {p0, p1}, Li75;->a(Landroid/content/Intent;)V
 
-    goto :goto_0
-
-    :sswitch_0
-    const-string v0, "https://developer.apple.com/streaming/emsg-id3"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x2
-
-    goto :goto_0
-
-    :sswitch_1
-    const-string v0, "https://aomedia.org/emsg/ID3"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_1
-
-    goto :goto_0
+    return p3
 
     :cond_1
-    const/4 v1, 0x1
+    new-instance p3, Lcr;
 
-    goto :goto_0
+    const/4 v0, 0x2
 
-    :sswitch_2
-    const-string v0, "urn:scte:scte35:2014:bin"
+    invoke-direct {p3, v0}, Lcr;-><init>(I)V
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    new-instance v0, Lzb4;
 
-    move-result p0
+    const/16 v1, 0xa
 
-    if-nez p0, :cond_2
+    invoke-direct {v0, p0, v1, p1}, Lzb4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    goto :goto_0
+    invoke-virtual {p2, p3, v0}, Lz8h;->b(Ljava/util/concurrent/Executor;Ll9a;)Lz8h;
 
-    :cond_2
-    const/4 v1, 0x0
+    const/4 p0, 0x3
 
-    :goto_0
-    packed-switch v1, :pswitch_data_0
+    return p0
 
-    const/4 p0, 0x0
+    :catchall_0
+    move-exception p0
 
-    return-object p0
+    :try_start_1
+    monitor-exit p2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :pswitch_0
-    sget-object p0, Li75;->Z:Lt26;
-
-    return-object p0
-
-    :pswitch_1
-    sget-object p0, Li75;->n0:Lt26;
-
-    return-object p0
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x578730ab -> :sswitch_2
-        -0x2f712a89 -> :sswitch_1
-        0x4db418c9 -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final o()[B
-    .registers 2
-
-    invoke-virtual {p0}, Li75;->l()Lt26;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Li75;->X:[B
-
-    return-object p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "EMSG: scheme="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Li75;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", id="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Li75;->o:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", durationMs="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Li75;->c:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", value="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Li75;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
-
-    iget-object p2, p0, Li75;->a:Ljava/lang/String;
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-object p2, p0, Li75;->b:Ljava/lang/String;
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    iget-wide v0, p0, Li75;->c:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-wide v0, p0, Li75;->o:J
-
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
-
-    iget-object p0, p0, Li75;->X:[B
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeByteArray([B)V
-
-    return-void
+    throw p0
 .end method

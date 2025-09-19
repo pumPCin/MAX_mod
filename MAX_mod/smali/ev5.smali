@@ -1,45 +1,51 @@
 .class public final Lev5;
-.super Lfv5;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:[Ljava/lang/Iterable;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lyt5;
+
+.field public Z:I
+
+.field public o:Lyt5;
 
 
 # direct methods
-.method public constructor <init>([Ljava/lang/Iterable;)V
-    .registers 2
+.method public constructor <init>(Lyt5;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lev5;->Y:Lyt5;
 
-    iput-object p1, p0, Lev5;->a:[Ljava/lang/Iterable;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    new-instance v0, Ldv5;
+    iput-object p1, p0, Lev5;->X:Ljava/lang/Object;
 
-    iget-object v1, p0, Lev5;->a:[Ljava/lang/Iterable;
+    iget p1, p0, Lev5;->Z:I
 
-    array-length v1, v1
+    const/high16 v0, -0x80000000
 
-    invoke-direct {v0, p0, v1}, Ldv5;-><init>(Lev5;I)V
+    or-int/2addr p1, v0
 
-    new-instance p0, Lbb7;
+    iput p1, p0, Lev5;->Z:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object p1, p0, Lev5;->Y:Lyt5;
 
-    sget-object v1, Lab7;->X:Lab7;
+    const/4 v0, 0x0
 
-    iput-object v1, p0, Lbb7;->b:Ljava/util/Iterator;
+    invoke-virtual {p1, v0, p0}, Lyt5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lbb7;->c:Ljava/util/Iterator;
+    move-result-object p0
 
     return-object p0
 .end method

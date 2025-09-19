@@ -3,62 +3,62 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lhv6;
+.implements Ljv6;
 
 
-# instance fields
-.field public c:Landroid/os/IBinder;
+# static fields
+.field public static final a:Lgv6;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Lgv6;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lgv6;->a:Lgv6;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final I(Lzu6;Landroid/os/Bundle;)V
-    .registers 5
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+    const/4 v0, 0x1
 
-    move-result-object v0
+    if-ne p0, p1, :cond_0
 
-    :try_start_0
-    const-string v1, "androidx.media3.session.IMediaSessionService"
+    return v0
 
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    :cond_0
+    instance-of p0, p1, Lgv6;
 
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongInterface(Landroid/os/IInterface;)V
+    if-nez p0, :cond_1
 
-    const/4 p1, 0x1
+    const/4 p0, 0x0
 
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+    return p0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p2, v0, v1}, Landroid/os/Bundle;->writeToParcel(Landroid/os/Parcel;I)V
-
-    iget-object p0, p0, Lgv6;->c:Landroid/os/IBinder;
-
-    const/16 p2, 0xbb9
-
-    const/4 v1, 0x0
-
-    invoke-interface {p0, p2, v0, v1, p1}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw p0
+    :cond_1
+    return v0
 .end method
 
-.method public final asBinder()Landroid/os/IBinder;
+.method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lgv6;->c:Landroid/os/IBinder;
+    const p0, -0x5b5c259
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "Close"
 
     return-object p0
 .end method

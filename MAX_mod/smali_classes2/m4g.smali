@@ -1,135 +1,105 @@
-.class public final Lm4g;
-.super Lxie;
+.class public final enum Lm4g;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
 
-
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lp4g;
-
-.field public final synthetic Z:Ljava/lang/String;
+# static fields
+.field public static final synthetic a:[Lm4g;
 
 
 # direct methods
-.method public constructor <init>(Lp4g;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 9
 
-    iput-object p1, p0, Lm4g;->Y:Lp4g;
+    new-instance v0, Lm4g;
 
-    iput-object p2, p0, Lm4g;->Z:Ljava/lang/String;
+    const-string v1, "LOWEST"
 
-    const/4 p1, 0x2
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v1, Lm4g;
+
+    const-string v2, "HIGHEST"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v2, Lm4g;
+
+    const-string v3, "MAX_QVGA"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v3, Lm4g;
+
+    const-string v4, "MAX_480P"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v4, Lm4g;
+
+    const-string v5, "MAX_720P"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v5, Lm4g;
+
+    const-string v6, "MAX_1080P"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v6, Lm4g;
+
+    const-string v7, "MAX_2160P"
+
+    const/4 v8, 0x6
+
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    filled-new-array/range {v0 .. v6}, [Lm4g;
+
+    move-result-object v0
+
+    sput-object v0, Lm4g;->a:[Lm4g;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lm4g;
+    .registers 2
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    const-class v0, Lm4g;
 
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lm4g;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
     check-cast p0, Lm4g;
 
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lm4g;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
     return-object p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public static values()[Lm4g;
+    .registers 1
 
-    new-instance p1, Lm4g;
+    sget-object v0, Lm4g;->a:[Lm4g;
 
-    iget-object v0, p0, Lm4g;->Y:Lp4g;
-
-    iget-object p0, p0, Lm4g;->Z:Ljava/lang/String;
-
-    invoke-direct {p1, v0, p0, p2}, Lm4g;-><init>(Lp4g;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 11
-
-    iget v0, p0, Lm4g;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object p1
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lm4g;->Y:Lp4g;
-
-    iget-object v0, p1, Lp4g;->h:Lxh7;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, [Lm4g;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    move-object v3, v0
+    check-cast v0, [Lm4g;
 
-    check-cast v3, Lm3g;
-
-    iget-wide v5, p1, Lp4g;->a:J
-
-    iget-wide v7, p1, Lp4g;->b:J
-
-    iput v1, p0, Lm4g;->X:I
-
-    iget-object p1, v3, Lm3g;->a:Lapc;
-
-    new-instance v2, La19;
-
-    iget-object v4, p0, Lm4g;->Z:Ljava/lang/String;
-
-    invoke-direct/range {v2 .. v8}, La19;-><init>(Lm3g;Ljava/lang/String;JJ)V
-
-    invoke-static {p1, v2, p0}, Lso9;->l(Lapc;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    return-object p0
+    return-object v0
 .end method

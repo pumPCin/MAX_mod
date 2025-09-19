@@ -2,121 +2,283 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:Lgpd;
+.field public final X:Lbc6;
 
-.field public final b:Lkotlinx/coroutines/internal/ContextScope;
+.field public final Y:Ljava/lang/String;
+
+.field public Z:J
+
+.field public final a:Landroid/os/Handler;
+
+.field public final b:Lodf;
+
+.field public final c:J
+
+.field public final o:J
+
+.field public r0:I
+
+.field public final s0:Lxq5;
 
 
 # direct methods
-.method public constructor <init>(Lrv0;Lzne;)V
-    .registers 5
+.method public constructor <init>(Landroid/os/Handler;Lodf;JJLar7;)V
+    .registers 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lfr8;->a:Landroid/os/Handler;
 
-    const/4 v1, 0x7
+    iput-object p2, p0, Lfr8;->b:Lodf;
 
-    invoke-static {v0, v0, v1}, Lhpd;->b(III)Lgpd;
+    iput-wide p3, p0, Lfr8;->c:J
 
-    move-result-object v0
+    iput-wide p5, p0, Lfr8;->o:J
 
-    iput-object v0, p0, Lfr8;->a:Lgpd;
+    iput-object p7, p0, Lfr8;->X:Lbc6;
 
-    check-cast p2, Ltba;
+    const-class p1, Lfr8;
 
-    invoke-virtual {p2}, Ltba;->a()Ll04;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p1
 
-    invoke-static {p2}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
+    iput-object p1, p0, Lfr8;->Y:Ljava/lang/String;
 
-    move-result-object p2
+    const-wide/high16 p1, -0x8000000000000000L
 
-    iput-object p2, p0, Lfr8;->b:Lkotlinx/coroutines/internal/ContextScope;
+    iput-wide p1, p0, Lfr8;->Z:J
 
-    invoke-virtual {p1, p0}, Lrv0;->d(Ljava/lang/Object;)V
+    const/high16 p1, -0x80000000
+
+    iput p1, p0, Lfr8;->r0:I
+
+    new-instance p1, Lxq5;
+
+    const/16 p2, 0xb
+
+    invoke-direct {p1, p2}, Lxq5;-><init>(I)V
+
+    iput-object p1, p0, Lfr8;->s0:Lxq5;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onChatMembersUpdateEvent(Ldm2;)V
-    .registers 7
-    .annotation runtime Lpee;
-    .end annotation
+.method public final a()V
+    .registers 6
 
-    iget-object v0, p1, Ldm2;->b:Ljava/util/List;
+    iget-object v0, p0, Lfr8;->Y:Ljava/lang/String;
 
-    iget-object v1, p1, Ldm2;->c:Lol2;
+    sget-object v1, Ljtg;->g:Loja;
 
-    iget-wide v2, p1, Ldm2;->o:J
-
-    iget p1, p1, Ldm2;->X:I
-
-    invoke-static {p1}, Lew1;->t(I)I
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    const/4 v4, 0x1
-
-    if-ne p1, v4, :cond_0
-
-    new-instance p1, Lzq8;
-
-    invoke-direct {p1, v2, v3, v1, v0}, Lzq8;-><init>(JLol2;Ljava/util/Collection;)V
+    if-nez v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    sget-object v2, Lqz7;->o:Lqz7;
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    invoke-virtual {v1, v2}, Loja;->a(Lqz7;)Z
 
-    throw p0
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    const-string v3, "cancel"
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v2, v0, v3, v4}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_1
-    new-instance p1, Lxq8;
-
-    invoke-direct {p1, v2, v3, v1, v0}, Lxq8;-><init>(JLol2;Ljava/util/Collection;)V
-
     :goto_0
-    new-instance v0, Lcr8;
+    iget-object v0, p0, Lfr8;->a:Landroid/os/Handler;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    invoke-direct {v0, p0, p1, v1}, Lcr8;-><init>(Lfr8;Lar8;Lkotlin/coroutines/Continuation;)V
+    const-wide/high16 v0, -0x8000000000000000L
 
-    const/4 p1, 0x3
+    iput-wide v0, p0, Lfr8;->Z:J
 
-    iget-object p0, p0, Lfr8;->b:Lkotlinx/coroutines/internal/ContextScope;
+    const/high16 v0, -0x80000000
 
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    iput v0, p0, Lfr8;->r0:I
 
     return-void
 .end method
 
-.method public final onEvent(Liv3;)V
-    .registers 4
-    .annotation runtime Lpee;
-    .end annotation
+.method public final b()V
+    .registers 6
 
-    new-instance v0, Ldr8;
+    iget-object v0, p0, Lfr8;->Y:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    sget-object v1, Ljtg;->g:Loja;
 
-    invoke-direct {v0, p0, p1, v1}, Ldr8;-><init>(Lfr8;Liv3;Lkotlin/coroutines/Continuation;)V
+    if-nez v1, :cond_0
 
-    const/4 p1, 0x3
+    goto :goto_0
 
-    iget-object p0, p0, Lfr8;->b:Lkotlinx/coroutines/internal/ContextScope;
+    :cond_0
+    sget-object v2, Lqz7;->o:Lqz7;
 
-    invoke-static {p0, v1, v1, v0, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    invoke-virtual {v1, v2}, Loja;->a(Lqz7;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    const-string v3, "start"
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v2, v0, v3, v4}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lfr8;->a:Landroid/os/Handler;
+
+    iget-wide v1, p0, Lfr8;->c:J
+
+    invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    return-void
+.end method
+
+.method public final run()V
+    .registers 9
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v0
+
+    iget-object v2, p0, Lfr8;->b:Lodf;
+
+    iget-object v3, p0, Lfr8;->s0:Lxq5;
+
+    invoke-virtual {v2, v3}, Lodf;->d(Lxq5;)I
+
+    move-result v2
+
+    iget-wide v4, p0, Lfr8;->Z:J
+
+    const-wide/high16 v6, -0x8000000000000000L
+
+    cmp-long v6, v4, v6
+
+    const/4 v7, 0x2
+
+    if-nez v6, :cond_0
+
+    iput-wide v0, p0, Lfr8;->Z:J
+
+    if-ne v2, v7, :cond_2
+
+    iget v0, v3, Lxq5;->b:I
+
+    iput v0, p0, Lfr8;->r0:I
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v6, p0, Lfr8;->Y:Ljava/lang/String;
+
+    if-ne v2, v7, :cond_1
+
+    iget v2, v3, Lxq5;->b:I
+
+    iget v3, p0, Lfr8;->r0:I
+
+    if-le v2, v3, :cond_1
+
+    iput-wide v0, p0, Lfr8;->Z:J
+
+    iput v2, p0, Lfr8;->r0:I
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "media transform progress="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, "%"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v6, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lfr8;->X:Lbc6;
+
+    if-eqz v0, :cond_2
+
+    iget v1, p0, Lfr8;->r0:I
+
+    int-to-float v1, v1
+
+    const/high16 v2, 0x42c80000    # 100.0f
+
+    div-float/2addr v1, v2
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_1
+    sub-long/2addr v0, v4
+
+    iget-wide v2, p0, Lfr8;->o:J
+
+    cmp-long v2, v0, v2
+
+    if-ltz v2, :cond_2
+
+    long-to-float v0, v0
+
+    const/high16 v1, 0x447a0000    # 1000.0f
+
+    div-float/2addr v0, v1
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "it seems media transform is stuck, ~ "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v0, " s"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v6, v0}, Ljtg;->S(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_2
+    :goto_0
+    iget-object v0, p0, Lfr8;->a:Landroid/os/Handler;
+
+    iget-wide v1, p0, Lfr8;->c:J
+
+    invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method

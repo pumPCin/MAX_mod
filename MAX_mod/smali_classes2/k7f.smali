@@ -1,25 +1,25 @@
 .class public final Lk7f;
-.super Lcx3;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
 .field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Lr7f;
+.field public final synthetic Y:Lv7f;
 
 .field public Z:I
 
-.field public o:Lr7f;
+.field public o:Lv7f;
 
 
 # direct methods
-.method public constructor <init>(Lr7f;Lcx3;)V
+.method public constructor <init>(Lv7f;Ljx3;)V
     .registers 3
 
-    iput-object p1, p0, Lk7f;->Y:Lr7f;
+    iput-object p1, p0, Lk7f;->Y:Lv7f;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -39,9 +39,9 @@
 
     iput p1, p0, Lk7f;->Z:I
 
-    iget-object p1, p0, Lk7f;->Y:Lr7f;
+    iget-object p1, p0, Lk7f;->Y:Lv7f;
 
-    invoke-static {p1, p0}, Lr7f;->r(Lr7f;Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Lv7f;->e(Ljx3;)Ljava/lang/Object;
 
     move-result-object p0
 

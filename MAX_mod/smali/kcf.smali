@@ -1,168 +1,139 @@
-.class public final Lkcf;
-.super Lol0;
+.class public Lkcf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:Llcf;
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:I
+
+.field public h:I
+
+.field public i:I
+
+.field public j:I
+
+.field public k:Z
+
+.field public l:Ll37;
+
+.field public m:I
+
+.field public n:Ll37;
+
+.field public o:I
+
+.field public p:I
+
+.field public q:I
+
+.field public r:Ll37;
+
+.field public s:Ll37;
+
+.field public t:I
+
+.field public u:Z
+
+.field public v:Z
+
+.field public w:Z
+
+.field public x:Licf;
+
+.field public y:Lw37;
 
 
 # direct methods
-.method public constructor <init>(Llcf;)V
-    .registers 2
+.method public constructor <init>()V
+    .registers 4
 
-    iput-object p1, p0, Lkcf;->a:Llcf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+    const v0, 0x7fffffff
+
+    iput v0, p0, Lkcf;->a:I
+
+    iput v0, p0, Lkcf;->b:I
+
+    iput v0, p0, Lkcf;->c:I
+
+    iput v0, p0, Lkcf;->d:I
+
+    iput v0, p0, Lkcf;->i:I
+
+    iput v0, p0, Lkcf;->j:I
+
+    const/4 v1, 0x1
+
+    iput-boolean v1, p0, Lkcf;->k:Z
+
+    sget-object v1, Ll37;->b:Lgx5;
+
+    sget-object v1, Llqc;->X:Llqc;
+
+    iput-object v1, p0, Lkcf;->l:Ll37;
+
+    const/4 v2, 0x0
+
+    iput v2, p0, Lkcf;->m:I
+
+    iput-object v1, p0, Lkcf;->n:Ll37;
+
+    iput v2, p0, Lkcf;->o:I
+
+    iput v0, p0, Lkcf;->p:I
+
+    iput v0, p0, Lkcf;->q:I
+
+    iput-object v1, p0, Lkcf;->r:Ll37;
+
+    iput-object v1, p0, Lkcf;->s:Ll37;
+
+    iput v2, p0, Lkcf;->t:I
+
+    iput-boolean v2, p0, Lkcf;->u:Z
+
+    iput-boolean v2, p0, Lkcf;->v:Z
+
+    iput-boolean v2, p0, Lkcf;->w:Z
+
+    sget-object v0, Licf;->b:Licf;
+
+    iput-object v0, p0, Lkcf;->x:Licf;
+
+    sget v0, Lw37;->c:I
+
+    sget-object v0, Lrqc;->t0:Lrqc;
+
+    iput-object v0, p0, Lkcf;->y:Lw37;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final cancel()V
+.method public a(II)Lkcf;
     .registers 3
 
-    iget-object v0, p0, Lkcf;->a:Llcf;
+    iput p1, p0, Lkcf;->i:I
 
-    iget-boolean v0, v0, Llcf;->n0:Z
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Lkcf;->a:Llcf;
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, v0, Llcf;->n0:Z
-
-    iget-object v0, p0, Lkcf;->a:Llcf;
-
-    iget-object v0, v0, Llcf;->c:Ljava/util/concurrent/atomic/AtomicReference;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Runnable;
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    :cond_1
-    iget-object v0, p0, Lkcf;->a:Llcf;
-
-    iget-object v0, v0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    iget-object v0, p0, Lkcf;->a:Llcf;
-
-    iget-object v0, v0, Llcf;->p0:Lkcf;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    iget-object v0, p0, Lkcf;->a:Llcf;
-
-    iget-object v0, v0, Llcf;->Z:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lkcf;->a:Llcf;
-
-    iget-boolean v0, p0, Llcf;->r0:Z
-
-    if-nez v0, :cond_2
-
-    iget-object p0, p0, Llcf;->b:Lk0e;
-
-    invoke-virtual {p0}, Lk0e;->clear()V
-
-    :cond_2
-    :goto_0
-    return-void
-.end method
-
-.method public final clear()V
-    .registers 1
-
-    iget-object p0, p0, Lkcf;->a:Llcf;
-
-    iget-object p0, p0, Llcf;->b:Lk0e;
-
-    invoke-virtual {p0}, Lk0e;->clear()V
-
-    return-void
-.end method
-
-.method public final i(J)V
-    .registers 4
-
-    invoke-static {p1, p2}, Luee;->d(J)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Lkcf;->a:Llcf;
-
-    iget-object v0, p0, Llcf;->q0:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-static {v0, p1, p2}, Lpwe;->a(Ljava/util/concurrent/atomic/AtomicLong;J)J
-
-    invoke-virtual {p0}, Llcf;->i()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final isEmpty()Z
-    .registers 1
-
-    iget-object p0, p0, Lkcf;->a:Llcf;
-
-    iget-object p0, p0, Llcf;->b:Lk0e;
-
-    invoke-virtual {p0}, Lk0e;->isEmpty()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final poll()Ljava/lang/Object;
-    .registers 1
-
-    iget-object p0, p0, Lkcf;->a:Llcf;
-
-    iget-object p0, p0, Llcf;->b:Lk0e;
-
-    invoke-virtual {p0}, Lk0e;->poll()Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final t(I)I
-    .registers 2
-
-    iget-object p0, p0, Lkcf;->a:Llcf;
+    iput p2, p0, Lkcf;->j:I
 
     const/4 p1, 0x1
 
-    iput-boolean p1, p0, Llcf;->r0:Z
+    iput-boolean p1, p0, Lkcf;->k:Z
 
-    const/4 p0, 0x2
-
-    return p0
+    return-object p0
 .end method

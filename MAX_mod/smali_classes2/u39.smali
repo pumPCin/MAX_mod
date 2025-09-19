@@ -2,47 +2,16 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lc49;
-
 
 # instance fields
-.field public final a:J
+.field public a:Lg29;
 
-.field public final b:J
+.field public b:Ljava/lang/String;
 
-.field public final c:J
+.field public c:J
 
+.field public d:I
 
-# direct methods
-.method public constructor <init>(JJJ)V
-    .registers 7
+.field public e:Lxvf;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lu39;->a:J
-
-    iput-wide p3, p0, Lu39;->b:J
-
-    iput-wide p5, p0, Lu39;->c:J
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Z
-    .registers 1
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final j()J
-    .registers 3
-
-    iget-wide v0, p0, Lu39;->a:J
-
-    return-wide v0
-.end method
+.field public f:Ljava/lang/String;

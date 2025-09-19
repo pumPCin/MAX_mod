@@ -1,76 +1,19 @@
-.class public final synthetic Lzl5;
-.super Ljava/lang/Object;
+.class public final Lzl5;
+.super Loi0;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lone/me/sdk/richvector/VectorPath;
+.field public final b:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/sdk/richvector/VectorPath;I)V
+.method public constructor <init>(J)V
     .registers 3
 
-    iput p2, p0, Lzl5;->a:I
+    invoke-direct {p0, p1, p2}, Loi0;-><init>(J)V
 
-    iput-object p1, p0, Lzl5;->b:Lone/me/sdk/richvector/VectorPath;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p1, p0, Lzl5;->b:J
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .registers 3
-
-    iget v0, p0, Lzl5;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    iget-object p0, p0, Lzl5;->b:Lone/me/sdk/richvector/VectorPath;
-
-    invoke-interface {p0, p1}, Lone/me/sdk/richvector/VectorPath;->setStrokeAlpha(I)V
-
-    return-void
-
-    :pswitch_0
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Integer;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    iget-object p0, p0, Lzl5;->b:Lone/me/sdk/richvector/VectorPath;
-
-    invoke-interface {p0, p1}, Lone/me/sdk/richvector/VectorPath;->setStrokeAlpha(I)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

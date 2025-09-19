@@ -4,20 +4,65 @@
 
 
 # instance fields
-.field public final a:I
+.field public final a:Ljava/lang/String;
 
-.field public final b:J
+.field public final b:Lll5;
+
+.field public c:J
+
+.field public d:J
 
 
 # direct methods
-.method public constructor <init>(IJ)V
-    .registers 4
+.method public constructor <init>(Ljava/io/File;Ljava/lang/String;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lyd4;->a:I
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iput-wide p2, p0, Lyd4;->b:J
+    iput-object p2, p0, Lyd4;->a:Ljava/lang/String;
+
+    new-instance p2, Lll5;
+
+    invoke-direct {p2, p1}, Lll5;-><init>(Ljava/io/File;)V
+
+    iput-object p2, p0, Lyd4;->b:Lll5;
+
+    const-wide/16 p1, -0x1
+
+    iput-wide p1, p0, Lyd4;->c:J
+
+    iput-wide p1, p0, Lyd4;->d:J
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()J
+    .registers 5
+
+    iget-wide v0, p0, Lyd4;->d:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-gez v0, :cond_0
+
+    iget-object v0, p0, Lyd4;->b:Lll5;
+
+    iget-object v0, v0, Lll5;->a:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->lastModified()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lyd4;->d:J
+
+    :cond_0
+    iget-wide v0, p0, Lyd4;->d:J
+
+    return-wide v0
 .end method

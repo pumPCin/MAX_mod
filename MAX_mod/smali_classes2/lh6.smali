@@ -1,422 +1,403 @@
 .class public final Llh6;
-.super Landroid/widget/ImageView;
+.super Lga7;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Landroid/graphics/Paint;
+.field public M0:Landroid/view/ScaleGestureDetector;
 
-.field public b:Landroid/graphics/LinearGradient;
+.field public N0:Lqyc;
 
-.field public final c:Landroid/graphics/Matrix;
+.field public O0:Landroid/view/GestureDetector;
 
-.field public n0:F
+.field public P0:F
 
-.field public o:Lkh6;
+.field public Q0:F
 
-.field public o0:Landroid/animation/ValueAnimator;
+.field public R0:F
 
+.field public S0:F
 
-# direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 10
+.field public T0:Z
 
-    const/4 v0, 0x0
+.field public U0:Z
 
-    invoke-direct {p0, p1, v0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    new-instance p1, Landroid/graphics/Paint;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, v0}, Landroid/graphics/Paint;-><init>(I)V
-
-    new-instance v0, Landroid/graphics/PorterDuffXfermode;
-
-    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {v0, v1}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
-
-    iput-object p1, p0, Llh6;->a:Landroid/graphics/Paint;
-
-    new-instance p1, Landroid/graphics/Matrix;
-
-    invoke-direct {p1}, Landroid/graphics/Matrix;-><init>()V
-
-    iput-object p1, p0, Llh6;->c:Landroid/graphics/Matrix;
-
-    new-instance v0, Lkh6;
-
-    const/high16 v6, 0x41700000    # 15.0f
-
-    const/16 v7, 0x30
-
-    const/4 v1, -0x1
-
-    const-wide/16 v2, 0x1b58
-
-    const-wide/16 v4, 0xbb8
-
-    invoke-direct/range {v0 .. v7}, Lkh6;-><init>(IJJFI)V
-
-    iput-object v0, p0, Llh6;->o:Lkh6;
-
-    return-void
-.end method
+.field public V0:I
 
 
 # virtual methods
-.method public final a()V
-    .registers 6
+.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
+    .registers 14
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
-    move-result v0
-
-    int-to-float v0, v0
-
-    neg-float v0, v0
-
-    iput v0, p0, Llh6;->n0:F
-
-    iget-object v0, p0, Llh6;->o0:Landroid/animation/ValueAnimator;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
-
-    :cond_0
-    iget-object v0, p0, Llh6;->o:Lkh6;
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    neg-float v1, v1
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const v4, 0x3f19999a    # 0.6f
-
-    mul-float/2addr v3, v4
-
-    add-float/2addr v3, v2
-
-    const/4 v2, 0x2
-
-    new-array v2, v2, [F
-
-    const/4 v4, 0x0
-
-    aput v1, v2, v4
+    move-result-object v0
 
     const/4 v1, 0x1
 
-    aput v3, v2, v1
+    if-nez v0, :cond_0
 
-    invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
-
-    move-result-object v2
-
-    iget-wide v3, v0, Lkh6;->c:J
-
-    invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
-
-    iget-wide v3, v0, Lkh6;->b:J
-
-    invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
-
-    iget v0, v0, Lkh6;->a:I
-
-    invoke-virtual {v2, v0}, Landroid/animation/ValueAnimator;->setRepeatCount(I)V
-
-    invoke-virtual {v2, v1}, Landroid/animation/ValueAnimator;->setRepeatMode(I)V
-
-    new-instance v0, Lo00;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1, p0}, Lo00;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    invoke-virtual {v2}, Landroid/animation/ValueAnimator;->start()V
-
-    iput-object v2, p0, Llh6;->o0:Landroid/animation/ValueAnimator;
-
-    return-void
-.end method
-
-.method public final getAnimConfig()Lkh6;
-    .registers 1
-
-    iget-object p0, p0, Llh6;->o:Lkh6;
-
-    return-object p0
-.end method
-
-.method public final onAttachedToWindow()V
-    .registers 1
-
-    invoke-super {p0}, Landroid/widget/ImageView;->onAttachedToWindow()V
-
-    invoke-virtual {p0}, Llh6;->a()V
-
-    return-void
-.end method
-
-.method public final onDetachedFromWindow()V
-    .registers 1
-
-    invoke-super {p0}, Landroid/widget/ImageView;->onDetachedFromWindow()V
-
-    iget-object p0, p0, Llh6;->o0:Landroid/animation/ValueAnimator;
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Landroid/animation/ValueAnimator;->cancel()V
+    goto/16 :goto_2
 
     :cond_0
-    return-void
-.end method
-
-.method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 9
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    int-to-float v4, v0
+    and-int/lit16 v0, v0, 0xff
 
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lga7;->I0:Lea7;
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    iget-object v0, p0, Lga7;->J0:Lfa7;
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    :cond_1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v0
-
-    int-to-float v5, v0
-
-    const/4 v6, 0x0
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    if-le v0, v1, :cond_2
 
-    move-object v1, p1
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getX(I)F
 
-    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->saveLayer(FFFFLandroid/graphics/Paint;)I
+    move-result v0
 
-    move-result p1
-
-    move-object v0, v1
-
-    invoke-super {p0, v0}, Landroid/widget/ImageView;->onDraw(Landroid/graphics/Canvas;)V
-
-    iget-object v1, p0, Llh6;->c:Landroid/graphics/Matrix;
-
-    invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
-
-    iget-object v2, p0, Llh6;->o:Lkh6;
-
-    iget v2, v2, Lkh6;->d:F
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v3
 
-    int-to-float v3, v3
+    add-float/2addr v3, v0
 
-    const/high16 v4, 0x40000000    # 2.0f
+    const/high16 v0, 0x40000000    # 2.0f
 
-    div-float/2addr v3, v4
+    div-float/2addr v3, v0
 
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+    iput v3, p0, Llh6;->P0:F
 
-    move-result v5
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getY(I)F
 
-    int-to-float v5, v5
+    move-result v3
 
-    div-float/2addr v5, v4
+    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getY(I)F
 
-    invoke-virtual {v1, v2, v3, v5}, Landroid/graphics/Matrix;->setRotate(FFF)V
+    move-result v4
 
-    iget v2, p0, Llh6;->n0:F
+    add-float/2addr v4, v3
 
-    const/4 v3, 0x0
+    div-float/2addr v4, v0
 
-    invoke-virtual {v1, v2, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+    iput v4, p0, Llh6;->Q0:F
 
-    iget-object v2, p0, Llh6;->b:Landroid/graphics/LinearGradient;
+    :cond_2
+    iget-object v0, p0, Llh6;->O0:Landroid/view/GestureDetector;
 
-    if-eqz v2, :cond_0
+    invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    invoke-virtual {v2, v1}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
+    iget-boolean v0, p0, Llh6;->U0:Z
 
-    :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    if-eqz v0, :cond_3
 
-    move-result v1
+    iget-object v0, p0, Llh6;->M0:Landroid/view/ScaleGestureDetector;
 
-    int-to-float v3, v1
+    invoke-virtual {v0, p1}, Landroid/view/ScaleGestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+    :cond_3
+    iget-boolean v0, p0, Llh6;->T0:Z
 
-    move-result v1
+    if-eqz v0, :cond_d
 
-    int-to-float v4, v1
+    iget-object v0, p0, Llh6;->N0:Lqyc;
 
-    iget-object v5, p0, Llh6;->a:Landroid/graphics/Paint;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/4 v1, 0x0
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
-    const/4 v2, 0x0
-
-    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    return-void
-.end method
-
-.method public final onSizeChanged(IIII)V
-    .registers 13
-
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
-
-    int-to-float p1, p1
-
-    iget-object p2, p0, Llh6;->o:Lkh6;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const p2, 0x3f19999a    # 0.6f
-
-    mul-float v3, p1, p2
-
-    new-instance v0, Landroid/graphics/LinearGradient;
-
-    const/4 p1, -0x1
-
-    const p3, 0x3e99999a    # 0.3f
-
-    invoke-static {p1, p3}, Luo9;->W(IF)I
-
-    move-result p1
-
-    const/4 p3, 0x0
-
-    filled-new-array {p3, p1, p3}, [I
-
-    move-result-object v5
-
-    const/4 p1, 0x3
-
-    new-array v6, p1, [F
-
-    fill-array-data v6, :array_0
-
-    sget-object v7, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
+    move-result v3
 
     const/4 v4, 0x0
 
-    invoke-direct/range {v0 .. v7}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
+    if-eqz v3, :cond_c
 
-    iput-object v0, p0, Llh6;->b:Landroid/graphics/LinearGradient;
+    const/4 v5, -0x1
 
-    iget-object p1, p0, Llh6;->a:Landroid/graphics/Paint;
+    if-eq v3, v1, :cond_b
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+    const/4 v6, 0x2
 
-    iget-object p1, p0, Llh6;->o0:Landroid/animation/ValueAnimator;
+    if-eq v3, v6, :cond_6
 
-    if-eqz p1, :cond_0
+    const/4 v2, 0x5
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    if-eq v3, v2, :cond_5
 
-    move-result p4
+    const/4 v2, 0x6
 
-    int-to-float p4, p4
+    if-eq v3, v2, :cond_4
 
-    neg-float p4, p4
+    goto/16 :goto_1
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    :cond_4
+    iput v5, v0, Lqyc;->f:I
 
-    move-result v0
+    goto/16 :goto_1
 
-    int-to-float v0, v0
+    :cond_5
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    move-result v2
 
-    move-result v1
+    iput v2, v0, Lqyc;->a:F
 
-    int-to-float v1, v1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
-    iget-object v2, p0, Llh6;->o:Lkh6;
+    move-result v2
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput v2, v0, Lqyc;->b:F
 
-    mul-float/2addr v1, p2
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
-    add-float/2addr v1, v0
+    move-result v2
 
-    const/4 p2, 0x2
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
 
-    new-array p2, p2, [F
+    move-result v2
 
-    aput p4, p2, p3
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->findPointerIndex(I)I
 
-    const/4 p3, 0x1
+    move-result v2
 
-    aput v1, p2, p3
+    iput v2, v0, Lqyc;->f:I
 
-    invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setFloatValues([F)V
+    iput v4, v0, Lqyc;->g:F
 
-    :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    iput-boolean v1, v0, Lqyc;->h:Z
+
+    goto/16 :goto_1
+
+    :cond_6
+    iget v3, v0, Lqyc;->e:I
+
+    if-eq v3, v5, :cond_d
+
+    iget v3, v0, Lqyc;->f:I
+
+    if-eq v3, v5, :cond_d
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+
+    move-result v3
+
+    iget v5, v0, Lqyc;->f:I
+
+    if-le v3, v5, :cond_d
+
+    iget v3, v0, Lqyc;->e:I
+
+    invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->getX(I)F
+
+    move-result v3
+
+    iget v5, v0, Lqyc;->e:I
+
+    invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getY(I)F
+
+    move-result v5
+
+    iget v6, v0, Lqyc;->f:I
+
+    invoke-virtual {p1, v6}, Landroid/view/MotionEvent;->getX(I)F
+
+    move-result v6
+
+    iget v7, v0, Lqyc;->f:I
+
+    invoke-virtual {p1, v7}, Landroid/view/MotionEvent;->getY(I)F
+
+    move-result v7
+
+    iget-boolean v8, v0, Lqyc;->h:Z
+
+    if-eqz v8, :cond_7
+
+    iput v4, v0, Lqyc;->g:F
+
+    iput-boolean v2, v0, Lqyc;->h:Z
+
+    goto :goto_0
+
+    :cond_7
+    iget v2, v0, Lqyc;->a:F
+
+    iget v8, v0, Lqyc;->b:F
+
+    iget v9, v0, Lqyc;->c:F
+
+    iget v10, v0, Lqyc;->d:F
+
+    sub-float/2addr v8, v10
+
+    float-to-double v10, v8
+
+    sub-float/2addr v2, v9
+
+    float-to-double v8, v2
+
+    invoke-static {v10, v11, v8, v9}, Ljava/lang/Math;->atan2(DD)D
+
+    move-result-wide v8
+
+    double-to-float v2, v8
+
+    float-to-double v8, v2
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->toDegrees(D)D
+
+    move-result-wide v8
+
+    double-to-float v2, v8
+
+    sub-float v8, v7, v5
+
+    float-to-double v8, v8
+
+    sub-float v10, v6, v3
+
+    float-to-double v10, v10
+
+    invoke-static {v8, v9, v10, v11}, Ljava/lang/Math;->atan2(DD)D
+
+    move-result-wide v8
+
+    double-to-float v8, v8
+
+    float-to-double v8, v8
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->toDegrees(D)D
+
+    move-result-wide v8
+
+    double-to-float v8, v8
+
+    const/high16 v9, 0x43b40000    # 360.0f
+
+    rem-float/2addr v8, v9
+
+    rem-float/2addr v2, v9
+
+    sub-float/2addr v8, v2
+
+    iput v8, v0, Lqyc;->g:F
+
+    const/high16 v2, -0x3ccc0000    # -180.0f
+
+    cmpg-float v2, v8, v2
+
+    if-gez v2, :cond_8
+
+    add-float/2addr v8, v9
+
+    iput v8, v0, Lqyc;->g:F
+
+    goto :goto_0
+
+    :cond_8
+    const/high16 v2, 0x43340000    # 180.0f
+
+    cmpl-float v2, v8, v2
+
+    if-lez v2, :cond_9
+
+    sub-float/2addr v8, v9
+
+    iput v8, v0, Lqyc;->g:F
+
+    :cond_9
+    :goto_0
+    iget-object v2, v0, Lqyc;->i:Lnyc;
+
+    iget-object v2, v2, Lnyc;->b:Ljava/lang/Object;
+
+    check-cast v2, Llh6;
+
+    iget v8, v0, Lqyc;->g:F
+
+    iget v9, v2, Llh6;->P0:F
+
+    iget v10, v2, Llh6;->Q0:F
+
+    iget-object v11, v2, Lkdf;->t0:Landroid/graphics/Matrix;
+
+    cmpl-float v4, v8, v4
+
+    if-eqz v4, :cond_a
+
+    invoke-virtual {v11, v8, v9, v10}, Landroid/graphics/Matrix;->postRotate(FFF)Z
+
+    invoke-virtual {v2, v11}, Lkdf;->setImageMatrix(Landroid/graphics/Matrix;)V
+
+    :cond_a
+    iput v6, v0, Lqyc;->a:F
+
+    iput v7, v0, Lqyc;->b:F
+
+    iput v3, v0, Lqyc;->c:F
+
+    iput v5, v0, Lqyc;->d:F
+
+    goto :goto_1
+
+    :cond_b
+    iput v5, v0, Lqyc;->e:I
+
+    goto :goto_1
+
+    :cond_c
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v3
+
+    iput v3, v0, Lqyc;->c:F
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v3
+
+    iput v3, v0, Lqyc;->d:F
+
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    move-result v2
+
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->findPointerIndex(I)I
+
+    move-result v2
+
+    iput v2, v0, Lqyc;->e:I
+
+    iput v4, v0, Lqyc;->g:F
+
+    iput-boolean v1, v0, Lqyc;->h:Z
+
+    :cond_d
+    :goto_1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
 
-    int-to-float p1, p1
+    and-int/lit16 p1, p1, 0xff
 
-    neg-float p1, p1
+    if-ne p1, v1, :cond_e
 
-    iput p1, p0, Llh6;->n0:F
+    invoke-virtual {p0, v1}, Lga7;->setImageToWrapCropBounds(Z)V
 
-    return-void
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x0
-        0x3f000000    # 0.5f
-        0x3f800000    # 1.0f
-    .end array-data
-.end method
-
-.method public final setAnimConfig(Lkh6;)V
-    .registers 2
-
-    iput-object p1, p0, Llh6;->o:Lkh6;
-
-    return-void
+    :cond_e
+    :goto_2
+    return v1
 .end method

@@ -1,88 +1,48 @@
-.class public final synthetic Lf21;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lh96;
+.class public final Lf21;
+.super Ljx3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Landroid/content/Context;
+.field public final synthetic Y:Lmv;
 
-.field public final synthetic c:Lg21;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;Lg21;I)V
-    .registers 4
+.method public constructor <init>(Lmv;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p3, p0, Lf21;->a:I
+    iput-object p1, p0, Lf21;->Y:Lmv;
 
-    iput-object p1, p0, Lf21;->b:Landroid/content/Context;
-
-    iput-object p2, p0, Lf21;->c:Lg21;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Lf21;->a:I
+    iput-object p1, p0, Lf21;->o:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget p1, p0, Lf21;->X:I
 
-    new-instance v0, Lz11;
+    const/high16 v0, -0x80000000
 
-    iget-object v1, p0, Lf21;->b:Landroid/content/Context;
+    or-int/2addr p1, v0
 
-    invoke-direct {v0, v1}, Lz11;-><init>(Landroid/content/Context;)V
+    iput p1, p0, Lf21;->X:I
 
-    iget-object p0, p0, Lf21;->c:Lg21;
+    iget-object p1, p0, Lf21;->Y:Lmv;
 
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    const/4 v0, 0x0
 
-    move-result-object v1
+    invoke-virtual {p1, v0, p0}, Lmv;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    move-result-object p0
 
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->removeAllViews()V
-
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    return-object v0
-
-    :pswitch_0
-    new-instance v0, Le21;
-
-    iget-object v1, p0, Lf21;->b:Landroid/content/Context;
-
-    invoke-direct {v0, v1}, Le21;-><init>(Landroid/content/Context;)V
-
-    iget-object p0, p0, Lf21;->c:Lg21;
-
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->removeAllViews()V
-
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

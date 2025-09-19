@@ -1,391 +1,42 @@
-.class public final Lj8c;
+.class public abstract Lj8c;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lj8c;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static action0:I = 0x7f0a00a5
 
+.field public static action_divider:I = 0x7f0a00b2
 
-# instance fields
-.field public final a:I
+.field public static cancel_action:I = 0x7f0a0237
 
-.field public final b:F
+.field public static chronometer:I = 0x7f0a02b0
 
-.field public c:Ljava/lang/Object;
+.field public static end_padder:I = 0x7f0a0343
 
+.field public static icon:I = 0x7f0a041c
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.field public static info:I = 0x7f0a042b
 
-    new-instance v0, Lz1b;
+.field public static line1:I = 0x7f0a0466
 
-    const/16 v1, 0xf
+.field public static line3:I = 0x7f0a0467
 
-    invoke-direct {v0, v1}, Lz1b;-><init>(I)V
+.field public static media_actions:I = 0x7f0a04c0
 
-    sput-object v0, Lj8c;->CREATOR:Landroid/os/Parcelable$Creator;
+.field public static media_controller_compat_view_tag:I = 0x7f0a04ea
 
-    return-void
-.end method
+.field public static notification_main_column:I = 0x7f0a061e
 
-.method public constructor <init>(IF)V
-    .registers 3
+.field public static notification_main_column_container:I = 0x7f0a061f
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static right_side:I = 0x7f0a0a1f
 
-    iput p1, p0, Lj8c;->a:I
+.field public static status_bar_latest_event_content:I = 0x7f0a0bf8
 
-    iput p2, p0, Lj8c;->b:F
+.field public static text:I = 0x7f0a0c18
 
-    return-void
-.end method
+.field public static text2:I = 0x7f0a0c19
 
-.method public static a(Landroid/os/Parcelable;)Lj8c;
-    .registers 6
+.field public static time:I = 0x7f0a0c36
 
-    const/4 v0, 0x0
-
-    if-eqz p0, :cond_5
-
-    move-object v1, p0
-
-    check-cast v1, Landroid/media/Rating;
-
-    invoke-virtual {v1}, Landroid/media/Rating;->getRatingStyle()I
-
-    move-result v2
-
-    invoke-virtual {v1}, Landroid/media/Rating;->isRated()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    const/4 v4, 0x0
-
-    packed-switch v2, :pswitch_data_0
-
-    goto :goto_4
-
-    :pswitch_0
-    invoke-virtual {v1}, Landroid/media/Rating;->getPercentRating()F
-
-    move-result v1
-
-    cmpg-float v2, v1, v4
-
-    if-ltz v2, :cond_4
-
-    const/high16 v2, 0x42c80000    # 100.0f
-
-    cmpl-float v2, v1, v2
-
-    if-lez v2, :cond_0
-
-    goto :goto_3
-
-    :cond_0
-    new-instance v0, Lj8c;
-
-    const/4 v2, 0x6
-
-    invoke-direct {v0, v2, v1}, Lj8c;-><init>(IF)V
-
-    goto :goto_3
-
-    :pswitch_1
-    invoke-virtual {v1}, Landroid/media/Rating;->getStarRating()F
-
-    move-result v0
-
-    invoke-static {v2, v0}, Lj8c;->d(IF)Lj8c;
-
-    move-result-object v0
-
-    goto :goto_3
-
-    :pswitch_2
-    invoke-virtual {v1}, Landroid/media/Rating;->isThumbUp()Z
-
-    move-result v0
-
-    new-instance v1, Lj8c;
-
-    if-eqz v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    move v3, v4
-
-    :goto_0
-    const/4 v0, 0x2
-
-    invoke-direct {v1, v0, v3}, Lj8c;-><init>(IF)V
-
-    :goto_1
-    move-object v0, v1
-
-    goto :goto_3
-
-    :pswitch_3
-    invoke-virtual {v1}, Landroid/media/Rating;->hasHeart()Z
-
-    move-result v0
-
-    new-instance v1, Lj8c;
-
-    if-eqz v0, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    move v3, v4
-
-    :goto_2
-    const/4 v0, 0x1
-
-    invoke-direct {v1, v0, v3}, Lj8c;-><init>(IF)V
-
-    goto :goto_1
-
-    :cond_3
-    packed-switch v2, :pswitch_data_1
-
-    goto :goto_3
-
-    :pswitch_4
-    new-instance v0, Lj8c;
-
-    const/high16 v1, -0x40800000    # -1.0f
-
-    invoke-direct {v0, v2, v1}, Lj8c;-><init>(IF)V
-
-    :cond_4
-    :goto_3
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p0, v0, Lj8c;->c:Ljava/lang/Object;
-
-    :cond_5
-    :goto_4
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x1
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-    .end packed-switch
-.end method
-
-.method public static d(IF)Lj8c;
-    .registers 5
-
-    const/4 v0, 0x3
-
-    const/4 v1, 0x0
-
-    if-eq p0, v0, :cond_2
-
-    const/4 v0, 0x4
-
-    if-eq p0, v0, :cond_1
-
-    const/4 v0, 0x5
-
-    if-eq p0, v0, :cond_0
-
-    return-object v1
-
-    :cond_0
-    const/high16 v0, 0x40a00000    # 5.0f
-
-    goto :goto_0
-
-    :cond_1
-    const/high16 v0, 0x40800000    # 4.0f
-
-    goto :goto_0
-
-    :cond_2
-    const/high16 v0, 0x40400000    # 3.0f
-
-    :goto_0
-    const/4 v2, 0x0
-
-    cmpg-float v2, p1, v2
-
-    if-ltz v2, :cond_4
-
-    cmpl-float v0, p1, v0
-
-    if-lez v0, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    new-instance v0, Lj8c;
-
-    invoke-direct {v0, p0, p1}, Lj8c;-><init>(IF)V
-
-    return-object v0
-
-    :cond_4
-    :goto_1
-    return-object v1
-.end method
-
-
-# virtual methods
-.method public final b()F
-    .registers 3
-
-    const/4 v0, 0x3
-
-    iget v1, p0, Lj8c;->a:I
-
-    if-eq v1, v0, :cond_0
-
-    const/4 v0, 0x4
-
-    if-eq v1, v0, :cond_0
-
-    const/4 v0, 0x5
-
-    if-eq v1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Lj8c;->c()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget p0, p0, Lj8c;->b:F
-
-    return p0
-
-    :cond_1
-    :goto_0
-    const/high16 p0, -0x40800000    # -1.0f
-
-    return p0
-.end method
-
-.method public final c()Z
-    .registers 2
-
-    iget p0, p0, Lj8c;->b:F
-
-    const/4 v0, 0x0
-
-    cmpl-float p0, p0, v0
-
-    if-ltz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final describeContents()I
-    .registers 1
-
-    iget p0, p0, Lj8c;->a:I
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Rating:style="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lj8c;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " rating="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/4 v1, 0x0
-
-    iget p0, p0, Lj8c;->b:F
-
-    cmpg-float v1, p0, v1
-
-    if-gez v1, :cond_0
-
-    const-string p0, "unrated"
-
-    goto :goto_0
-
-    :cond_0
-    invoke-static {p0}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
-
-    iget p2, p0, Lj8c;->a:I
-
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget p0, p0, Lj8c;->b:F
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeFloat(F)V
-
-    return-void
-.end method
+.field public static title:I = 0x7f0a0c38

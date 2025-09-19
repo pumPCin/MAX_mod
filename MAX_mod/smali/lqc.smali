@@ -1,154 +1,117 @@
 .class public final Llqc;
-.super Ljava/lang/Object;
+.super Ll37;
 .source "SourceFile"
 
 
 # static fields
-.field public static final b:Llqc;
-
-.field public static final c:Llqc;
+.field public static final X:Llqc;
 
 
 # instance fields
-.field public final a:Z
+.field public final transient c:[Ljava/lang/Object;
+
+.field public final transient o:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 3
 
     new-instance v0, Llqc;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Llqc;-><init>(Z)V
+    new-array v2, v1, [Ljava/lang/Object;
 
-    sput-object v0, Llqc;->b:Llqc;
+    invoke-direct {v0, v1, v2}, Llqc;-><init>(I[Ljava/lang/Object;)V
 
-    new-instance v0, Llqc;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Llqc;-><init>(Z)V
-
-    sput-object v0, Llqc;->c:Llqc;
+    sput-object v0, Llqc;->X:Llqc;
 
     return-void
 .end method
 
-.method public constructor <init>(Z)V
-    .registers 2
+.method public constructor <init>(I[Ljava/lang/Object;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
-    iput-boolean p1, p0, Llqc;->a:Z
+    iput-object p2, p0, Llqc;->c:[Ljava/lang/Object;
+
+    iput p1, p0, Llqc;->o:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final b(I[Ljava/lang/Object;)I
+    .registers 5
 
-    if-ne p1, p0, :cond_0
+    iget-object v0, p0, Llqc;->c:[Ljava/lang/Object;
 
-    goto :goto_0
+    const/4 v1, 0x0
 
-    :cond_0
-    instance-of v0, p1, Llqc;
+    iget p0, p0, Llqc;->o:I
 
-    if-nez v0, :cond_1
+    invoke-static {v0, v1, p2, p1, p0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto :goto_1
+    add-int/2addr p1, p0
 
-    :cond_1
-    check-cast p1, Llqc;
+    return p1
+.end method
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public final c()[Ljava/lang/Object;
+    .registers 1
 
-    iget-boolean p0, p0, Llqc;->a:Z
+    iget-object p0, p0, Llqc;->c:[Ljava/lang/Object;
 
-    iget-boolean p1, p1, Llqc;->a:Z
+    return-object p0
+.end method
 
-    if-ne p0, p1, :cond_2
+.method public final d()I
+    .registers 1
 
-    :goto_0
-    const/4 p0, 0x1
+    iget p0, p0, Llqc;->o:I
 
     return p0
+.end method
 
-    :cond_2
-    :goto_1
+.method public final e()I
+    .registers 1
+
     const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final hashCode()I
-    .registers 2
+.method public final f()Z
+    .registers 1
 
-    const/4 v0, -0x1
+    const/4 p0, 0x0
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    iget-boolean p0, p0, Llqc;->a:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/lit8 v0, v0, 0x1f
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    add-int/2addr v0, p0
-
-    return v0
+    return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final get(I)Ljava/lang/Object;
     .registers 3
 
-    const/4 v0, -0x1
+    iget v0, p0, Llqc;->o:I
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1, v0}, Lgy7;->m(II)V
 
-    move-result-object v0
+    iget-object p0, p0, Llqc;->c:[Ljava/lang/Object;
 
-    iget-boolean p0, p0, Llqc;->a:Z
+    aget-object p0, p0, p1
 
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    filled-new-array {v0, p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    const/4 v0, 0x2
-
-    invoke-static {p0, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object p0
-
-    const/4 v0, 0x0
-
-    const-string v1, "%d defer:%b"
-
-    invoke-static {v0, v1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
+    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p0
+.end method
+
+.method public final size()I
+    .registers 1
+
+    iget p0, p0, Llqc;->o:I
+
+    return p0
 .end method

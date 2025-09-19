@@ -1,55 +1,84 @@
-.class public final Latc;
+.class public abstract Latc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Ljava/lang/String;
-
-.field public static final d:Ljava/lang/String;
-
-
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final X:Ltec;
 
-.field public final b:I
+.field public final a:Lv46;
+
+.field public final b:Ll37;
+
+.field public final c:J
+
+.field public final o:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Lv46;Ljava/util/List;Lsed;Ljava/util/List;)V
+    .registers 11
 
-    sget v0, Laif;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
-    const/16 v1, 0x24
+    move-result v0
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+    xor-int/lit8 v0, v0, 0x1
 
-    move-result-object v0
+    invoke-static {v0}, Lxnd;->k(Z)V
 
-    sput-object v0, Latc;->c:Ljava/lang/String;
+    iput-object p1, p0, Latc;->a:Lv46;
 
-    const/4 v0, 0x1
+    invoke-static {p2}, Ll37;->j(Ljava/util/Collection;)Ll37;
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+    move-result-object p1
 
-    move-result-object v0
+    iput-object p1, p0, Latc;->b:Ll37;
 
-    sput-object v0, Latc;->d:Ljava/lang/String;
+    if-nez p4, :cond_0
+
+    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p4}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p1
+
+    :goto_0
+    iput-object p1, p0, Latc;->o:Ljava/util/List;
+
+    invoke-virtual {p3, p0}, Lsed;->a(Latc;)Ltec;
+
+    move-result-object p1
+
+    iput-object p1, p0, Latc;->X:Ltec;
+
+    iget-wide v0, p3, Lsed;->b:J
+
+    const-wide/32 v2, 0xf4240
+
+    iget-wide v4, p3, Lsed;->a:J
+
+    invoke-static/range {v0 .. v5}, Llrf;->H(JJJ)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Latc;->c:J
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;I)V
-    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public abstract b()Ljava/lang/String;
+.end method
 
-    iput-object p1, p0, Latc;->a:Ljava/lang/String;
+.method public abstract d()Lk64;
+.end method
 
-    iput p2, p0, Latc;->b:I
-
-    return-void
+.method public abstract e()Ltec;
 .end method

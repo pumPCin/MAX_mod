@@ -1,306 +1,159 @@
 .class public final Lm77;
-.super Ljava/lang/Object;
+.super Lux;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lm77;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final X:Ljava/lang/String;
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:I
-
-.field public final o:J
+.field public final o:Lgj7;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Ldn6;
-
-    const/16 v1, 0xd
-
-    invoke-direct {v0, v1}, Ldn6;-><init>(I)V
-
-    sput-object v0, Lm77;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(IIJLjava/lang/String;Ljava/lang/String;)V
-    .registers 11
-
-    and-int/lit8 v0, p2, 0x1
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    move-object p5, v1
-
-    :cond_0
-    and-int/lit8 v0, p2, 0x2
-
-    if-eqz v0, :cond_1
-
-    move-object p6, v1
-
-    :cond_1
-    and-int/lit8 v0, p2, 0x4
-
-    if-eqz v0, :cond_2
-
-    const/4 p1, 0x0
-
-    :cond_2
-    and-int/lit8 p2, p2, 0x8
-
-    if-eqz p2, :cond_3
-
-    const-wide/16 p3, 0x0
-
-    :cond_3
-    move-wide v2, p3
-
-    move p3, p1
-
-    move-object p1, p5
-
-    move-wide p4, v2
-
-    move-object p2, p6
-
-    invoke-direct/range {p0 .. p5}, Lm77;-><init>(Ljava/lang/String;Ljava/lang/String;IJ)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;IJ)V
+.method public constructor <init>(Lgj7;Ljava/lang/String;ZZ)V
     .registers 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lxz;->x0:Lxz;
 
-    iput-object p1, p0, Lm77;->a:Ljava/lang/String;
+    invoke-direct {p0, v0, p3, p4}, Lux;-><init>(Lxz;ZZ)V
 
-    iput-object p2, p0, Lm77;->b:Ljava/lang/String;
+    iput-object p1, p0, Lm77;->o:Lgj7;
 
-    iput p3, p0, Lm77;->c:I
-
-    iput-wide p4, p0, Lm77;->o:J
+    iput-object p2, p0, Lm77;->X:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
+.method public final a()Ljava/util/HashMap;
+    .registers 9
 
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lm77;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lm77;
-
-    iget-object v1, p0, Lm77;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Lm77;->a:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lm77;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Lm77;->b:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget v1, p0, Lm77;->c:I
-
-    iget v3, p1, Lm77;->c:I
-
-    if-eq v1, v3, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-wide v3, p0, Lm77;->o:J
-
-    iget-wide p0, p1, Lm77;->o:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_5
-
-    return v2
-
-    :cond_5
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 5
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Lm77;->a:Ljava/lang/String;
-
-    if-nez v1, :cond_0
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    :goto_0
-    const/16 v2, 0x1f
-
-    mul-int/2addr v1, v2
-
-    iget-object v3, p0, Lm77;->b:Ljava/lang/String;
-
-    if-nez v3, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    :goto_1
-    add-int/2addr v1, v0
-
-    mul-int/2addr v1, v2
-
-    iget v0, p0, Lm77;->c:I
-
-    invoke-static {v0, v1, v2}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget-wide v1, p0, Lm77;->o:J
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    const-string v0, ", prevEmail="
-
-    const-string v1, ", emailCodeLength="
-
-    const-string v2, "EmailData(email="
-
-    iget-object v3, p0, Lm77;->a:Ljava/lang/String;
-
-    iget-object v4, p0, Lm77;->b:Ljava/lang/String;
-
-    invoke-static {v2, v3, v0, v4, v1}, Lfge;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-super {p0}, Lux;->a()Ljava/util/HashMap;
 
     move-result-object v0
 
-    iget v1, p0, Lm77;->c:I
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    const-string v1, ", durationTimerForResend="
+    iget-object p0, p0, Lm77;->o:Lgj7;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lgj7;->a:Ljava/io/Serializable;
 
-    iget-wide v1, p0, Lm77;->o:J
+    check-cast p0, Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    return-object p0
-.end method
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    move-result v2
 
-    iget-object p2, p0, Lm77;->a:Ljava/lang/String;
+    if-eqz v2, :cond_2
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    iget-object p2, p0, Lm77;->b:Ljava/lang/String;
+    move-result-object v2
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    check-cast v2, Ljava/util/List;
 
-    iget p2, p0, Lm77;->c:I
+    new-instance v3, Ljava/util/ArrayList;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    iget-wide v0, p0, Lm77;->o:J
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    return-void
+    move-result-object v2
+
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Llv0;
+
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v5, Ljava/util/HashMap;
+
+    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
+
+    iget-object v6, v4, Llv0;->o:Ljava/lang/String;
+
+    if-eqz v6, :cond_1
+
+    const-string v7, "url"
+
+    invoke-virtual {v5, v7, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_1
+    iget-object v6, v4, Llv0;->a:Ljv0;
+
+    iget-object v6, v6, Ljv0;->a:Ljava/lang/String;
+
+    const-string v7, "type"
+
+    invoke-virtual {v5, v7, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v6, "text"
+
+    iget-object v7, v4, Llv0;->b:Ljava/lang/String;
+
+    invoke-virtual {v5, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v6, v4, Llv0;->c:Liv0;
+
+    iget-object v6, v6, Liv0;->a:Ljava/lang/String;
+
+    const-string v7, "intent"
+
+    invoke-virtual {v5, v7, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const-string v6, "payload"
+
+    iget-object v7, v4, Llv0;->X:Ljava/lang/String;
+
+    invoke-virtual {v5, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-boolean v6, v4, Llv0;->Y:Z
+
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v6
+
+    const-string v7, "isQuick"
+
+    invoke-virtual {v5, v7, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-wide v6, v4, Llv0;->Z:J
+
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    const-string v6, "contactId"
+
+    invoke-virtual {v5, v6, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v3, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_2
+    const-string p0, "buttons"
+
+    invoke-virtual {v0, p0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object v0
 .end method

@@ -1,29 +1,45 @@
 .class public final Lwmb;
-.super Lqd0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:J
+.field public final a:Z
+
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .registers 4
+.method public constructor <init>(ZZ)V
+    .registers 3
 
-    const/16 v0, 0xf
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    iput-boolean p1, p0, Lwmb;->a:Z
 
-    iput-wide p1, p0, Lwmb;->b:J
+    iput-boolean p2, p0, Lwmb;->b:Z
 
     return-void
+.end method
+
+.method public static a(Lwmb;Z)Lwmb;
+    .registers 3
+
+    iget-boolean v0, p0, Lwmb;->b:Z
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Lwmb;
+
+    invoke-direct {p0, p1, v0}, Lwmb;-><init>(ZZ)V
+
+    return-object p0
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+    .registers 6
 
     const/4 v0, 0x1
 
@@ -43,42 +59,75 @@
     :cond_1
     check-cast p1, Lwmb;
 
-    iget-wide v3, p0, Lwmb;->b:J
+    iget-boolean v1, p0, Lwmb;->a:Z
 
-    iget-wide p0, p1, Lwmb;->b:J
+    iget-boolean v3, p1, Lwmb;->a:Z
 
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_2
+    if-eq v1, v3, :cond_2
 
     return v2
 
     :cond_2
+    iget-boolean p0, p0, Lwmb;->b:Z
+
+    iget-boolean p1, p1, Lwmb;->b:Z
+
+    if-eq p0, p1, :cond_3
+
+    return v2
+
+    :cond_3
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .registers 2
 
-    iget-wide v0, p0, Lwmb;->b:J
+    iget-boolean v0, p0, Lwmb;->a:Z
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean p0, p0, Lwmb;->b:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .registers 3
 
-    const-string v0, "InviteByLink(chatId="
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    const-string v1, "State(isChecked="
 
-    iget-wide v2, p0, Lwmb;->b:J
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iget-boolean v1, p0, Lwmb;->a:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isEnabled="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lwmb;->b:Z
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

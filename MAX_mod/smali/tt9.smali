@@ -1,3 +1,3 @@
-.class public final Ltt9;
-.super Ljava/lang/Error;
+.class public abstract Ltt9;
+.super Ljava/lang/Object;
 .source "SourceFile"

@@ -1,8 +1,21 @@
-.class public interface abstract Llsd;
-.super Ljava/lang/Object;
+.class public final Llsd;
+.super Lso;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract j(Lorg/json/JSONObject;)V
+# static fields
+.field public static final a:Llsd;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Llsd;
+
+    invoke-direct {v0}, Lso;-><init>()V
+
+    sput-object v0, Llsd;->a:Llsd;
+
+    return-void
 .end method

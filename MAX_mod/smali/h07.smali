@@ -1,31 +1,122 @@
 .class public final Lh07;
-.super La07;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Loqf;
+.implements Lt17;
+.implements Lq4f;
+
+
+# static fields
+.field public static final X:Ld90;
+
+.field public static final Y:Ld90;
+
+.field public static final Z:Ld90;
+
+.field public static final b:Ld90;
+
+.field public static final c:Ld90;
+
+.field public static final o:Ld90;
+
+
+# instance fields
+.field public final a:Lcva;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 4
+
+    new-instance v0, Ld90;
+
+    const-string v1, "camerax.core.imageAnalysis.backpressureStrategy"
+
+    const-class v2, La07;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lh07;->b:Ld90;
+
+    new-instance v0, Ld90;
+
+    const-string v1, "camerax.core.imageAnalysis.imageQueueDepth"
+
+    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lh07;->c:Ld90;
+
+    new-instance v0, Ld90;
+
+    const-string v1, "camerax.core.imageAnalysis.imageReaderProxyProvider"
+
+    const-class v2, Ld27;
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lh07;->o:Ld90;
+
+    new-instance v0, Ld90;
+
+    const-string v1, "camerax.core.imageAnalysis.outputImageFormat"
+
+    const-class v2, Ld07;
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lh07;->X:Ld90;
+
+    new-instance v0, Ld90;
+
+    const-string v1, "camerax.core.imageAnalysis.onePixelShiftEnabled"
+
+    const-class v2, Ljava/lang/Boolean;
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lh07;->Y:Ld90;
+
+    new-instance v0, Ld90;
+
+    const-string v1, "camerax.core.imageAnalysis.outputImageRotationEnabled"
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lh07;->Z:Ld90;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcva;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lh07;->a:Lcva;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final c(Ljava/lang/Object;)La07;
-    .registers 2
+.method public final getConfig()Lzf3;
+    .registers 1
 
-    invoke-virtual {p0, p1}, La07;->a(Ljava/lang/Object;)V
+    iget-object p0, p0, Lh07;->a:Lcva;
 
     return-object p0
 .end method
 
-.method public final h()Lqic;
-    .registers 2
+.method public final getInputFormat()I
+    .registers 1
 
-    const/4 v0, 0x1
+    const/16 p0, 0x23
 
-    iput-boolean v0, p0, La07;->a:Z
-
-    iget-object v0, p0, La07;->c:[Ljava/lang/Object;
-
-    iget p0, p0, La07;->b:I
-
-    invoke-static {p0, v0}, Lj07;->h(I[Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    return-object p0
+    return p0
 .end method

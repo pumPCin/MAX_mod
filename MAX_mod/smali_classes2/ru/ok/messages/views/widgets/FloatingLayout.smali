@@ -114,7 +114,7 @@
     throw p0
 .end method
 
-.method public setListener(Lzp5;)V
+.method public setListener(Lcs5;)V
     .registers 2
 
     return-void

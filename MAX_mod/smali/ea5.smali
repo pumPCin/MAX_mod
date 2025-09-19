@@ -1,154 +1,88 @@
-.class public final synthetic Lea5;
-.super Ljava/lang/Object;
+.class public final Lea5;
+.super Ljava/util/concurrent/atomic/AtomicBoolean;
 .source "SourceFile"
 
 # interfaces
-.implements Llq7;
+.implements Ljava/lang/Runnable;
+.implements Loq4;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Li5b;
+.field public final a:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Li5b;I)V
-    .registers 3
+.method public constructor <init>(Ljava/lang/Runnable;)V
+    .registers 2
 
-    iput p2, p0, Lea5;->a:I
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
-    iput-object p1, p0, Lea5;->b:Li5b;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lea5;->a:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .registers 3
+.method public final e()V
+    .registers 2
 
-    iget v0, p0, Lea5;->a:I
+    const/4 v0, 0x1
 
-    check-cast p1, Lu5b;
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lea5;->b:Li5b;
-
-    iget-object p0, p0, Li5b;->o:Lk5b;
-
-    invoke-interface {p1, p0}, Lu5b;->n0(Lk5b;)V
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->lazySet(Z)V
 
     return-void
+.end method
 
-    :pswitch_0
-    iget-object p0, p0, Lea5;->b:Li5b;
+.method public final f()Z
+    .registers 1
 
-    invoke-virtual {p0}, Li5b;->k()Z
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result p0
 
-    invoke-interface {p1, p0}, Lu5b;->n(Z)V
+    return p0
+.end method
+
+.method public final run()V
+    .registers 3
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     return-void
 
-    :pswitch_1
-    iget-object p0, p0, Lea5;->b:Li5b;
+    :cond_0
+    const/4 v0, 0x1
 
-    iget p0, p0, Li5b;->n:I
+    :try_start_0
+    iget-object v1, p0, Lea5;->a:Ljava/lang/Runnable;
 
-    invoke-interface {p1, p0}, Lu5b;->b(I)V
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
-
-    :pswitch_2
-    iget-object p0, p0, Lea5;->b:Li5b;
-
-    iget-boolean v0, p0, Li5b;->l:Z
-
-    iget p0, p0, Li5b;->m:I
-
-    invoke-interface {p1, p0, v0}, Lu5b;->e(IZ)V
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->lazySet(Z)V
 
     return-void
 
-    :pswitch_3
-    iget-object p0, p0, Lea5;->b:Li5b;
+    :catchall_0
+    move-exception v1
 
-    iget p0, p0, Li5b;->e:I
+    :try_start_1
+    invoke-static {v1}, Ln4e;->D(Ljava/lang/Throwable;)V
 
-    invoke-interface {p1, p0}, Lu5b;->g(I)V
+    throw v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    return-void
+    :catchall_1
+    move-exception v1
 
-    :pswitch_4
-    iget-object p0, p0, Lea5;->b:Li5b;
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->lazySet(Z)V
 
-    iget-boolean v0, p0, Li5b;->l:Z
-
-    iget p0, p0, Li5b;->e:I
-
-    invoke-interface {p1, p0, v0}, Lu5b;->l(IZ)V
-
-    return-void
-
-    :pswitch_5
-    iget-object p0, p0, Lea5;->b:Li5b;
-
-    iget-boolean v0, p0, Li5b;->g:Z
-
-    invoke-interface {p1, v0}, Lu5b;->o(Z)V
-
-    iget-boolean p0, p0, Li5b;->g:Z
-
-    invoke-interface {p1, p0}, Lu5b;->d(Z)V
-
-    return-void
-
-    :pswitch_6
-    iget-object p0, p0, Lea5;->b:Li5b;
-
-    iget-object p0, p0, Li5b;->i:Ln3f;
-
-    iget-object p0, p0, Ln3f;->Y:Ljava/lang/Object;
-
-    check-cast p0, Lr3f;
-
-    invoke-interface {p1, p0}, Lu5b;->W(Lr3f;)V
-
-    return-void
-
-    :pswitch_7
-    iget-object p0, p0, Lea5;->b:Li5b;
-
-    iget-object p0, p0, Li5b;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
-
-    invoke-interface {p1, p0}, Lu5b;->w0(Landroidx/media3/common/PlaybackException;)V
-
-    return-void
-
-    :pswitch_8
-    iget-object p0, p0, Lea5;->b:Li5b;
-
-    iget-object p0, p0, Li5b;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
-
-    invoke-interface {p1, p0}, Lu5b;->p0(Landroidx/media3/common/PlaybackException;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    throw v1
 .end method

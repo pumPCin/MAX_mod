@@ -1,49 +1,23 @@
-.class public final Lprf;
-.super Lcx3;
+.class public abstract Lprf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic X:Lyrf;
-
-.field public Y:I
-
-.field public synthetic o:Ljava/lang/Object;
+# static fields
+.field public static final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
-.method public constructor <init>(Lyrf;Lcx3;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Lprf;->X:Lyrf;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    sput-object v0, Lprf;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    iput-object p1, p0, Lprf;->o:Ljava/lang/Object;
-
-    iget p1, p0, Lprf;->Y:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lprf;->Y:I
-
-    iget-object p1, p0, Lprf;->X:Lyrf;
-
-    const-wide/16 v0, 0x0
-
-    invoke-virtual {p1, v0, v1, p0}, Lyrf;->f(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

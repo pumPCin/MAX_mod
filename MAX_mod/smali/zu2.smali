@@ -1,111 +1,147 @@
-.class public final synthetic Lzu2;
+.class public final Lzu2;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/function/ObjLongConsumer;
+
+# static fields
+.field public static final c:Lzu2;
 
 
 # instance fields
-.field public final synthetic a:La25;
+.field public final a:Ljava/lang/Object;
+
+.field public final b:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(La25;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 3
+
+    new-instance v0, Lzu2;
+
+    sget-object v1, Lp45;->a:Lp45;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v1, v2}, Lzu2;-><init>(Ljava/util/List;Z)V
+
+    sput-object v0, Lzu2;->c:Lzu2;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/List;Z)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lzu2;->a:La25;
+    iput-object p1, p0, Lzu2;->a:Ljava/lang/Object;
+
+    iput-boolean p2, p0, Lzu2;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;J)V
-    .registers 13
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    move-object v4, p1
+    if-ne p0, p1, :cond_0
 
-    check-cast v4, Landroid/view/View;
+    goto :goto_1
 
-    iget-object p0, p0, Lzu2;->a:La25;
+    :cond_0
+    instance-of v0, p1, Lzu2;
 
-    iget-object p0, p0, La25;->b:Ljava/lang/Object;
-
-    move-object v1, p0
-
-    check-cast v1, Lone/me/chats/list/ChatsListWidget;
-
-    iget-object p0, v1, Lone/me/chats/list/ChatsListWidget;->C0:Lqfd;
-
-    sget-object p1, Lone/me/chats/list/ChatsListWidget;->G0:[Lsf7;
-
-    iget-object p1, v1, Lone/me/chats/list/ChatsListWidget;->c:Lur;
-
-    sget-object v6, Lone/me/chats/list/ChatsListWidget;->G0:[Lsf7;
-
-    const/4 v0, 0x0
-
-    aget-object v0, v6, v0
-
-    invoke-virtual {p1, v1}, Lur;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Long;
-
-    if-nez p1, :cond_1
-
-    const/4 p1, 0x4
-
-    aget-object v0, v6, p1
-
-    invoke-virtual {p0, v1, v0}, Lqfd;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Llb7;
-
-    const/4 v7, 0x1
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Llb7;->isActive()Z
-
-    move-result v0
-
-    if-ne v0, v7, :cond_0
+    if-nez v0, :cond_1
 
     goto :goto_0
 
-    :cond_0
-    invoke-virtual {v1}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
-
-    move-result-object v8
-
-    new-instance v0, Lqz2;
-
-    const/4 v5, 0x0
-
-    move-wide v2, p2
-
-    invoke-direct/range {v0 .. v5}, Lqz2;-><init>(Lone/me/chats/list/ChatsListWidget;JLandroid/view/View;Lkotlin/coroutines/Continuation;)V
-
-    const/4 p2, 0x0
-
-    sget-object p3, Lu04;->b:Lu04;
-
-    invoke-static {v8, p2, p3, v0, v7}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    move-result-object p2
-
-    aget-object p1, v6, p1
-
-    invoke-virtual {p0, v1, p1, p2}, Lqfd;->g0(Ljava/lang/Object;Lsf7;Ljava/lang/Object;)V
-
     :cond_1
+    check-cast p1, Lzu2;
+
+    iget-object v0, p0, Lzu2;->a:Ljava/lang/Object;
+
+    iget-object v1, p1, Lzu2;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-boolean p0, p0, Lzu2;->b:Z
+
+    iget-boolean p1, p1, Lzu2;->b:Z
+
+    if-eq p0, p1, :cond_3
+
     :goto_0
-    return-void
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    iget-object v0, p0, Lzu2;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-boolean p0, p0, Lzu2;->b:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ChatsList(chats="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lzu2;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", hasMore="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lzu2;->b:Z
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

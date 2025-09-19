@@ -3,188 +3,95 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/ListIterator;
+.implements Lc04;
 
 
 # instance fields
-.field public final a:Ljava/util/ListIterator;
-
-.field public final b:I
-
-.field public final c:I
+.field public final a:Lu2f;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;III)V
-    .registers 5
+.method public constructor <init>(Lu2f;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p3, p0, La04;->b:I
-
-    iput p4, p0, La04;->c:I
-
-    add-int/2addr p2, p3
-
-    invoke-interface {p1, p2}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
-
-    move-result-object p1
-
-    iput-object p1, p0, La04;->a:Ljava/util/ListIterator;
+    iput-object p1, p0, La04;->a:Lu2f;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final add(Ljava/lang/Object;)V
-    .registers 2
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    const/4 v0, 0x1
 
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    if-ne p0, p1, :cond_0
 
-    throw p0
-.end method
-
-.method public final hasNext()Z
-    .registers 2
-
-    invoke-virtual {p0}, La04;->nextIndex()I
-
-    move-result v0
-
-    iget p0, p0, La04;->c:I
-
-    if-ge v0, p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
+    return v0
 
     :cond_0
-    const/4 p0, 0x0
+    instance-of v1, p1, La04;
 
-    return p0
-.end method
+    const/4 v2, 0x0
 
-.method public final hasPrevious()Z
-    .registers 1
+    if-nez v1, :cond_1
 
-    invoke-virtual {p0}, La04;->previousIndex()I
+    return v2
+
+    :cond_1
+    check-cast p1, La04;
+
+    iget-object p0, p0, La04;->a:Lu2f;
+
+    iget-object p1, p1, La04;->a:Lu2f;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-ltz p0, :cond_0
+    if-nez p0, :cond_2
 
-    const/4 p0, 0x1
+    return v2
 
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .registers 2
-
-    invoke-virtual {p0}, La04;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, La04;->a:Ljava/util/ListIterator;
-
-    invoke-interface {p0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw p0
-.end method
-
-.method public final nextIndex()I
-    .registers 2
-
-    iget-object v0, p0, La04;->a:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I
-
-    move-result v0
-
-    iget p0, p0, La04;->b:I
-
-    sub-int/2addr v0, p0
-
+    :cond_2
     return v0
 .end method
 
-.method public final previous()Ljava/lang/Object;
-    .registers 2
-
-    invoke-virtual {p0}, La04;->hasPrevious()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, La04;->a:Ljava/util/ListIterator;
-
-    invoke-interface {p0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw p0
-.end method
-
-.method public final previousIndex()I
-    .registers 2
-
-    iget-object v0, p0, La04;->a:Ljava/util/ListIterator;
-
-    invoke-interface {v0}, Ljava/util/ListIterator;->previousIndex()I
-
-    move-result v0
-
-    iget p0, p0, La04;->b:I
-
-    sub-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final remove()V
+.method public final hashCode()I
     .registers 1
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    iget-object p0, p0, La04;->a:Lu2f;
 
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    throw p0
+    move-result p0
+
+    return p0
 .end method
 
-.method public final set(Ljava/lang/Object;)V
-    .registers 2
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    const-string v1, "Failed(message="
 
-    throw p0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, La04;->a:Lu2f;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

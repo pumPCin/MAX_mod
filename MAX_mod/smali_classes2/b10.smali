@@ -4,64 +4,78 @@
 
 
 # instance fields
-.field public a:Lc10;
+.field public a:F
 
-.field public b:J
+.field public b:F
 
-.field public c:Ljava/util/Collection;
+.field public c:Le0c;
 
-.field public d:Ljava/lang/String;
-
-.field public e:Ljava/lang/String;
-
-.field public f:Ljava/lang/String;
-
-.field public g:Ljava/lang/String;
-
-.field public h:Ln10;
-
-.field public i:Ljava/lang/String;
-
-.field public j:Ljava/lang/String;
-
-.field public k:Z
-
-.field public l:I
-
-.field public m:J
-
-.field public n:J
-
-.field public o:Ljava/lang/String;
+.field public d:Z
 
 
-# virtual methods
-.method public final a()Ld10;
+# direct methods
+.method public constructor <init>(I)V
     .registers 2
 
-    iget-object v0, p0, Lb10;->c:Ljava/util/Collection;
+    packed-switch p1, :pswitch_data_0
 
-    if-nez v0, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/ArrayList;
+    sget-object p1, Le0c;->Y:Le0c;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iput-object p1, p0, Lb10;->c:Le0c;
 
-    iput-object v0, p0, Lb10;->c:Ljava/util/Collection;
+    return-void
 
-    :cond_0
-    iget-object v0, p0, Lb10;->a:Lc10;
+    :pswitch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-nez v0, :cond_1
+    sget-object p1, Le0c;->Y:Le0c;
 
-    sget-object v0, Lc10;->a:Lc10;
+    iput-object p1, p0, Lb10;->c:Le0c;
 
-    iput-object v0, p0, Lb10;->a:Lc10;
+    const/4 p1, 0x0
 
-    :cond_1
-    new-instance v0, Ld10;
+    iput p1, p0, Lb10;->a:F
 
-    invoke-direct {v0, p0}, Ld10;-><init>(Lb10;)V
+    const/high16 p1, 0x3f800000    # 1.0f
 
-    return-object v0
+    iput p1, p0, Lb10;->b:F
+
+    const/4 p1, 0x0
+
+    iput-boolean p1, p0, Lb10;->d:Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public constructor <init>(Lb10;)V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iget v0, p1, Lb10;->a:F
+
+    iput v0, p0, Lb10;->a:F
+
+    iget v0, p1, Lb10;->b:F
+
+    iput v0, p0, Lb10;->b:F
+
+    iget-object v0, p1, Lb10;->c:Le0c;
+
+    iput-object v0, p0, Lb10;->c:Le0c;
+
+    iget-boolean p1, p1, Lb10;->d:Z
+
+    iput-boolean p1, p0, Lb10;->d:Z
+
+    return-void
 .end method

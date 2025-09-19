@@ -1,15 +1,108 @@
-.class public abstract Lj5f;
-.super Ljava/lang/Object;
+.class public final Lj5f;
+.super Lifc;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Landroid/graphics/Picture;)Landroid/graphics/Bitmap;
-    .registers 1
+# instance fields
+.field public final b:Z
 
-    invoke-static {p0}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Picture;)Landroid/graphics/Bitmap;
+.field public final c:Z
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 0
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lj5f;->b:Z
+
+    iput-boolean v0, p0, Lj5f;->c:Z
+
+    return-void
+.end method
+
+.method public constructor <init>(Z)V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lj5f;->b:Z
+
+    iput-boolean p1, p0, Lj5f;->c:Z
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
+
+    instance-of v0, p1, Lj5f;
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p1, Lj5f;
+
+    iget-boolean v0, p0, Lj5f;->c:Z
+
+    iget-boolean v1, p1, Lj5f;->c:Z
+
+    if-ne v0, v1, :cond_1
+
+    iget-boolean p0, p0, Lj5f;->b:Z
+
+    iget-boolean p1, p1, Lj5f;->b:Z
+
+    if-ne p0, p1, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    iget-boolean v0, p0, Lj5f;->b:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iget-boolean p0, p0, Lj5f;->c:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
 
-    return-object p0
+    filled-new-array {v0, p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
 .end method

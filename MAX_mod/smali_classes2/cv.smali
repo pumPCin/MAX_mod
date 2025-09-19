@@ -1,119 +1,174 @@
 .class public final Lcv;
-.super Ldv;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:J
+.field public X:I
 
-.field public final b:Z
+.field public final synthetic Y:Lyv;
+
+.field public final synthetic Z:J
 
 
 # direct methods
-.method public constructor <init>(JZ)V
-    .registers 4
+.method public constructor <init>(Lyv;JLkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lcv;->Y:Lyv;
 
-    iput-wide p1, p0, Lcv;->a:J
+    iput-wide p2, p0, Lcv;->Z:J
 
-    iput-boolean p3, p0, Lcv;->b:Z
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Ly04;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lcv;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lcv;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lcv;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 6
 
-    if-ne p0, p1, :cond_0
+    new-instance p1, Lcv;
 
-    goto :goto_1
+    iget-object v0, p0, Lcv;->Y:Lyv;
 
-    :cond_0
-    instance-of v0, p1, Lcv;
+    iget-wide v1, p0, Lcv;->Z:J
 
-    if-nez v0, :cond_1
+    invoke-direct {p1, v0, v1, v2, p2}, Lcv;-><init>(Lyv;JLkotlin/coroutines/Continuation;)V
 
-    goto :goto_0
+    return-object p1
+.end method
 
-    :cond_1
-    check-cast p1, Lcv;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 9
 
-    iget-wide v0, p0, Lcv;->a:J
+    iget v0, p0, Lcv;->X:I
 
-    iget-wide v2, p1, Lcv;->a:J
+    const/4 v1, 0x2
 
-    cmp-long v0, v0, v2
+    const/4 v2, 0x1
+
+    iget-object v3, p0, Lcv;->Y:Lyv;
+
+    sget-object v4, Lz04;->a:Lz04;
 
     if-eqz v0, :cond_2
+
+    if-eq v0, v2, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_2
-    iget-boolean p0, p0, Lcv;->b:Z
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-boolean p1, p1, Lcv;->b:Z
+    sget-object p1, Lyv;->F:[Lxi7;
 
-    if-eq p0, p1, :cond_3
+    iget-object p1, v3, Lyv;->p:Lcl7;
 
-    :goto_0
-    const/4 p0, 0x0
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    return p0
+    move-result-object p1
+
+    check-cast p1, Lyz2;
+
+    iget-wide v5, v3, Lyv;->a:J
+
+    iput v2, p0, Lcv;->X:I
+
+    invoke-interface {p1, v5, v6, p0}, Lyz2;->p(JLjx3;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v4, :cond_3
+
+    goto :goto_1
 
     :cond_3
-    :goto_1
-    const/4 p0, 0x1
+    :goto_0
+    check-cast p1, Ls72;
 
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    iget-wide v0, p0, Lcv;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-virtual {p1}, Ls72;->L()Z
 
     move-result v0
 
-    mul-int/lit8 v0, v0, 0x1f
+    if-nez v0, :cond_4
 
-    iget-boolean p0, p0, Lcv;->b:Z
+    iget-object v0, v3, Lyv;->x:Lcl7;
 
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    move-result p0
+    move-result-object v0
 
-    add-int/2addr p0, v0
+    check-cast v0, Lwh6;
 
-    return p0
-.end method
+    iget-object p1, p1, Ls72;->b:Lvb2;
 
-.method public final toString()Ljava/lang/String;
-    .registers 5
+    iget-wide v5, p1, Lvb2;->a:J
 
-    const-string v0, "LoadingPrev(time="
+    iput v1, p0, Lcv;->X:I
 
-    const-string v1, ", isRemoteCaused="
+    invoke-virtual {v0, v5, v6, v2, p0}, Lwh6;->a(JZLjx3;)Ljava/lang/Comparable;
 
-    iget-wide v2, p0, Lcv;->a:J
+    move-result-object p1
 
-    iget-boolean p0, p0, Lcv;->b:Z
+    if-ne p1, v4, :cond_4
 
-    invoke-static {v2, v3, v0, v1, p0}, Lnh0;->i(JLjava/lang/String;Ljava/lang/String;Z)Ljava/lang/StringBuilder;
+    :goto_1
+    return-object v4
 
-    move-result-object p0
+    :cond_4
+    :goto_2
+    iget-wide p0, p0, Lcv;->Z:J
 
-    const-string v0, ")"
+    invoke-virtual {v3, p0, p1}, Lyv;->r(J)V
 
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

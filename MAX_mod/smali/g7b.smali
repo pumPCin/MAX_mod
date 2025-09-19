@@ -1,153 +1,120 @@
-.class public final Lg7b;
-.super Lt46;
+.class public final synthetic Lg7b;
+.super Led6;
 .source "SourceFile"
+
+# interfaces
+.implements Lbc6;
 
 
 # instance fields
-.field public final synthetic f:I
+.field public final synthetic a:I
 
-.field public final g:Ljava/lang/Object;
+.field public final synthetic b:Lone/me/chats/picker/chats/PickerChatsListWidget;
 
 
 # direct methods
-.method public constructor <init>(Loxe;)V
-    .registers 3
+.method public constructor <init>(Lone/me/chats/picker/chats/PickerChatsListWidget;I)V
+    .registers 15
 
-    const/4 v0, 0x0
+    iput p2, p0, Lg7b;->a:I
 
-    iput v0, p0, Lg7b;->f:I
+    packed-switch p2, :pswitch_data_0
 
-    invoke-direct {p0, p1}, Lt46;-><init>(Loxe;)V
+    iput-object p1, p0, Lg7b;->b:Lone/me/chats/picker/chats/PickerChatsListWidget;
 
-    new-instance p1, Lmxe;
+    const-string v4, "checkBoxItemDecoration_delegate$lambda$10$isChatItem(Lone/me/chats/picker/chats/PickerChatsListWidget;I)Z"
 
-    invoke-direct {p1}, Lmxe;-><init>()V
+    const/4 v5, 0x0
 
-    iput-object p1, p0, Lg7b;->g:Ljava/lang/Object;
+    const/4 v1, 0x1
 
-    return-void
-.end method
+    const-class v2, Lcb7;
 
-.method public constructor <init>(Loxe;Lwe8;)V
-    .registers 4
+    const-string v3, "isChatItem"
 
-    const/4 v0, 0x1
+    move-object v0, p0
 
-    iput v0, p0, Lg7b;->f:I
-
-    invoke-direct {p0, p1}, Lt46;-><init>(Loxe;)V
-
-    iput-object p2, p0, Lg7b;->g:Ljava/lang/Object;
+    invoke-direct/range {v0 .. v5}, Led6;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     return-void
+
+    :pswitch_0
+    move-object v0, p0
+
+    iput-object p1, v0, Lg7b;->b:Lone/me/chats/picker/chats/PickerChatsListWidget;
+
+    const-string v10, "checkBoxItemDecoration_delegate$lambda$10$isChatItem(Lone/me/chats/picker/chats/PickerChatsListWidget;I)Z"
+
+    const/4 v11, 0x0
+
+    const/4 v7, 0x1
+
+    const-class v8, Lcb7;
+
+    const-string v9, "isChatItem"
+
+    move-object v6, v0
+
+    invoke-direct/range {v6 .. v11}, Led6;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public f(ILjxe;Z)Ljxe;
-    .registers 15
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lg7b;->f:I
+    iget v0, p0, Lg7b;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-super {p0, p1, p2, p3}, Lt46;->f(ILjxe;Z)Ljxe;
+    check-cast p1, Ljava/lang/Number;
+
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
+
+    move-result p1
+
+    iget-object p0, p0, Lg7b;->b:Lone/me/chats/picker/chats/PickerChatsListWidget;
+
+    invoke-static {p0, p1}, Lone/me/chats/picker/chats/PickerChatsListWidget;->y0(Lone/me/chats/picker/chats/PickerChatsListWidget;I)Z
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
 
     return-object p0
 
     :pswitch_0
-    iget-object v0, p0, Lt46;->e:Loxe;
+    check-cast p1, Ljava/lang/Number;
 
-    invoke-virtual {v0, p1, p2, p3}, Loxe;->f(ILjxe;Z)Ljxe;
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
-    move-result-object v1
+    move-result p1
 
-    iget p1, v1, Ljxe;->c:I
+    iget-object p0, p0, Lg7b;->b:Lone/me/chats/picker/chats/PickerChatsListWidget;
 
-    iget-object p0, p0, Lg7b;->g:Ljava/lang/Object;
-
-    check-cast p0, Lmxe;
-
-    const-wide/16 v2, 0x0
-
-    invoke-virtual {v0, p1, p0, v2, v3}, Loxe;->m(ILmxe;J)Lmxe;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lmxe;->a()Z
+    invoke-static {p0, p1}, Lone/me/chats/picker/chats/PickerChatsListWidget;->y0(Lone/me/chats/picker/chats/PickerChatsListWidget;I)Z
 
     move-result p0
 
-    if-eqz p0, :cond_0
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget-object v2, p2, Ljxe;->a:Ljava/lang/Object;
+    move-result-object p0
 
-    iget-object v3, p2, Ljxe;->b:Ljava/lang/Object;
-
-    iget v4, p2, Ljxe;->c:I
-
-    iget-wide v5, p2, Ljxe;->d:J
-
-    iget-wide v7, p2, Ljxe;->e:J
-
-    sget-object v9, Ll8;->f:Ll8;
-
-    const/4 v10, 0x1
-
-    invoke-virtual/range {v1 .. v10}, Ljxe;->i(Ljava/lang/Object;Ljava/lang/Object;IJJLl8;Z)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x1
-
-    iput-boolean p0, v1, Ljxe;->f:Z
-
-    :goto_0
-    return-object v1
+    return-object p0
 
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public m(ILmxe;J)Lmxe;
-    .registers 6
-
-    iget v0, p0, Lg7b;->f:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1, p2, p3, p4}, Lt46;->m(ILmxe;J)Lmxe;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    invoke-super {p0, p1, p2, p3, p4}, Lt46;->m(ILmxe;J)Lmxe;
-
-    iget-object p0, p0, Lg7b;->g:Ljava/lang/Object;
-
-    check-cast p0, Lwe8;
-
-    iput-object p0, p2, Lmxe;->c:Lwe8;
-
-    iget-object p0, p0, Lwe8;->b:Lme8;
-
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-object p2
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
         :pswitch_0
     .end packed-switch
 .end method

@@ -1,31 +1,52 @@
-.class public final Lls6;
-.super Ljava/lang/Object;
+.class public final synthetic Lls6;
+.super Led6;
 .source "SourceFile"
 
+# interfaces
+.implements Lbc6;
 
-# instance fields
-.field public final a:Ljava/lang/String;
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
-
-.field public final d:Ljava/lang/String;
+# static fields
+.field public static final a:Lls6;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 6
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lls6;
 
-    iput-object p1, p0, Lls6;->a:Ljava/lang/String;
+    const-string v4, "getId()J"
 
-    iput-object p2, p0, Lls6;->b:Ljava/lang/String;
+    const/4 v5, 0x0
 
-    iput-object p3, p0, Lls6;->c:Ljava/lang/String;
+    const/4 v1, 0x1
 
-    iput-object p4, p0, Lls6;->d:Ljava/lang/String;
+    const-class v2, Lur6;
+
+    const-string v3, "getId"
+
+    invoke-direct/range {v0 .. v5}, Led6;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sput-object v0, Lls6;->a:Lls6;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    check-cast p1, Lur6;
+
+    invoke-interface {p1}, Lur6;->getId()J
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    return-object p0
 .end method

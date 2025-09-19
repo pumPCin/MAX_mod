@@ -1,74 +1,53 @@
 .class public final Lqz5;
-.super Lpoe;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final o:J
+.field public X:Lro9;
+
+.field public Y:Ljava/lang/Object;
+
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Lsz5;
+
+.field public final synthetic r0:Lsz5;
+
+.field public s0:I
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .registers 4
+.method public constructor <init>(Lsz5;Ljx3;)V
+    .registers 3
 
-    sget-object v0, Lcoa;->F2:Lcoa;
+    iput-object p1, p0, Lqz5;->r0:Lsz5;
 
-    invoke-direct {p0, v0}, Lpoe;-><init>(Lcoa;)V
-
-    iput-wide p1, p0, Lqz5;->o:J
-
-    const-string v0, "folderSync"
-
-    invoke-virtual {p0, p1, p2, v0}, Lpoe;->i(JLjava/lang/String;)V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lqz5;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lqz5;
-
-    iget-wide v3, p0, Lqz5;->o:J
-
-    iget-wide p0, p1, Lqz5;->o:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-wide v0, p0, Lqz5;->o:J
+    iput-object p1, p0, Lqz5;->Z:Ljava/lang/Object;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    iget p1, p0, Lqz5;->s0:I
 
-    move-result p0
+    const/high16 v0, -0x80000000
 
-    return p0
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lqz5;->s0:I
+
+    iget-object p1, p0, Lqz5;->r0:Lsz5;
+
+    invoke-static {p1, p0}, Lsz5;->r(Lsz5;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,647 +1,390 @@
 .class public final Ljic;
-.super Lyj8;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/content/ServiceConnection;
-
-
-# static fields
-.field public static final w0:Z
+.implements Lhu0;
 
 
 # instance fields
-.field public final o0:Landroid/content/ComponentName;
+.field public final a:Let0;
 
-.field public final p0:Lte9;
+.field public b:Z
 
-.field public final q0:Ljava/util/ArrayList;
-
-.field public r0:Z
-
-.field public s0:Z
-
-.field public t0:Leic;
-
-.field public u0:Z
-
-.field public v0:Lrw8;
+.field public final c:Lj4e;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lj4e;)V
     .registers 2
 
-    const-string v0, "MediaRouteProviderProxy"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x3
+    iput-object p1, p0, Ljic;->c:Lj4e;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    new-instance p1, Let0;
 
-    move-result v0
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    sput-boolean v0, Ljic;->w0:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/content/ComponentName;)V
-    .registers 5
-
-    new-instance v0, Lkxg;
-
-    const/16 v1, 0x12
-
-    invoke-direct {v0, v1, p2}, Lkxg;-><init>(ILjava/lang/Object;)V
-
-    invoke-direct {p0, p1, v0}, Lyj8;-><init>(Landroid/content/Context;Lkxg;)V
-
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Ljic;->q0:Ljava/util/ArrayList;
-
-    iput-object p2, p0, Ljic;->o0:Landroid/content/ComponentName;
-
-    new-instance p1, Lte9;
-
-    invoke-direct {p1}, Lte9;-><init>()V
-
-    iput-object p1, p0, Ljic;->p0:Lte9;
+    iput-object p1, p0, Ljic;->a:Let0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Ljava/lang/String;)Lwj8;
+.method public final A()Lhu0;
     .registers 6
 
-    if-eqz p1, :cond_3
+    iget-boolean v0, p0, Ljic;->b:Z
 
-    iget-object v0, p0, Lyj8;->Z:Lzj8;
+    if-nez v0, :cond_1
 
-    if-eqz v0, :cond_2
+    iget-object v0, p0, Ljic;->a:Let0;
 
-    iget-object v0, v0, Lzj8;->c:Ljava/util/List;
+    iget-wide v1, v0, Let0;->b:J
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    const-wide/16 v3, 0x0
 
-    move-result v1
+    cmp-long v3, v1, v3
 
-    const/4 v2, 0x0
+    if-lez v3, :cond_0
 
-    :goto_0
-    if-ge v2, v1, :cond_2
+    iget-object v3, p0, Ljic;->c:Lj4e;
 
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lej8;
-
-    invoke-virtual {v3}, Lej8;->c()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    new-instance v0, Lhic;
-
-    invoke-direct {v0, p0, p1}, Lhic;-><init>(Ljic;Ljava/lang/String;)V
-
-    iget-object p1, p0, Ljic;->q0:Ljava/util/ArrayList;
-
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-boolean p1, p0, Ljic;->u0:Z
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Ljic;->t0:Leic;
-
-    invoke-virtual {v0, p1}, Lhic;->b(Leic;)V
+    invoke-interface {v3, v0, v1, v2}, Lj4e;->R(Let0;J)V
 
     :cond_0
-    invoke-virtual {p0}, Ljic;->m()V
-
-    return-object v0
-
-    :cond_1
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    const/4 p0, 0x0
-
     return-object p0
 
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string p1, "initialMemberRouteId cannot be null."
+    const-string v0, "closed"
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
 
-.method public final d(Ljava/lang/String;)Lxj8;
+.method public final K(I[B)Lhu0;
+    .registers 4
+
+    iget-boolean v0, p0, Ljic;->b:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljic;->a:Let0;
+
+    invoke-virtual {v0, p1, p2}, Let0;->w0(I[B)V
+
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "closed"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final O(Ljava/lang/String;)Lhu0;
     .registers 3
 
-    if-eqz p1, :cond_0
+    iget-boolean v0, p0, Ljic;->b:Z
 
-    const/4 v0, 0x0
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0, p1, v0}, Ljic;->j(Ljava/lang/String;Ljava/lang/String;)Liic;
+    iget-object v0, p0, Ljic;->a:Let0;
 
-    move-result-object p0
+    invoke-virtual {v0, p1}, Let0;->F0(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
 
     return-object p0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string p1, "routeId cannot be null"
+    const-string p1, "closed"
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
 
-.method public final e(Ljava/lang/String;Ljava/lang/String;)Lxj8;
+.method public final Q(Lfw0;)Lhu0;
     .registers 3
 
-    if-eqz p1, :cond_1
+    iget-boolean v0, p0, Ljic;->b:Z
 
-    if-eqz p2, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Ljic;->j(Ljava/lang/String;Ljava/lang/String;)Liic;
+    iget-object v0, p0, Ljic;->a:Let0;
 
-    move-result-object p0
+    invoke-virtual {v0, p1}, Let0;->x0(Lfw0;)V
+
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
 
     return-object p0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string p1, "routeGroupId cannot be null"
+    const-string p1, "closed"
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "routeId cannot be null"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
 
-.method public final f(Lgj8;)V
-    .registers 9
-
-    iget-boolean v0, p0, Ljic;->u0:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v1, p0, Ljic;->t0:Leic;
-
-    iget v3, v1, Leic;->d:I
-
-    add-int/lit8 v0, v3, 0x1
-
-    iput v0, v1, Leic;->d:I
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p1, Lgj8;->a:Landroid/os/Bundle;
-
-    :goto_0
-    move-object v5, p1
-
-    goto :goto_1
-
-    :cond_0
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :goto_1
-    const/4 v6, 0x0
-
-    const/16 v2, 0xa
-
-    const/4 v4, 0x0
-
-    invoke-virtual/range {v1 .. v6}, Leic;->b(IIILandroid/os/Bundle;Landroid/os/Bundle;)Z
-
-    :cond_1
-    invoke-virtual {p0}, Ljic;->m()V
-
-    return-void
-.end method
-
-.method public final i()V
+.method public final R(Let0;J)V
     .registers 5
 
-    iget-boolean v0, p0, Ljic;->s0:Z
+    iget-boolean v0, p0, Ljic;->b:Z
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
-    sget-boolean v0, Ljic;->w0:Z
+    iget-object v0, p0, Ljic;->a:Let0;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, p1, p2, p3}, Let0;->R(Let0;J)V
 
-    invoke-virtual {p0}, Ljic;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
+
+    return-void
 
     :cond_0
-    new-instance v1, Landroid/content/Intent;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string v2, "android.media.MediaRouteProviderService"
+    const-string p1, "closed"
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    iget-object v2, p0, Ljic;->o0:Landroid/content/ComponentName;
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    :try_start_0
-    iget-object v2, p0, Lyj8;->a:Landroid/content/Context;
-
-    const/16 v3, 0x1001
-
-    invoke-virtual {v2, v1, p0, v3}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
-
-    move-result v1
-
-    iput-boolean v1, p0, Ljic;->s0:Z
-
-    if-nez v1, :cond_1
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Ljic;->toString()Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    if-eqz v0, :cond_1
-
-    invoke-virtual {p0}, Ljic;->toString()Ljava/lang/String;
-
-    :cond_1
-    return-void
+    throw p0
 .end method
 
-.method public final j(Ljava/lang/String;Ljava/lang/String;)Liic;
-    .registers 7
+.method public final U(J)Lhu0;
+    .registers 4
 
-    iget-object v0, p0, Lyj8;->Z:Lzj8;
+    iget-boolean v0, p0, Ljic;->b:Z
 
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_0
 
-    iget-object v0, v0, Lzj8;->c:Ljava/util/List;
+    iget-object v0, p0, Ljic;->a:Let0;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-virtual {v0, p1, p2}, Let0;->B0(J)V
 
-    move-result v1
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
 
-    const/4 v2, 0x0
-
-    :goto_0
-    if-ge v2, v1, :cond_2
-
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lej8;
-
-    invoke-virtual {v3}, Lej8;->c()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    new-instance v0, Liic;
-
-    invoke-direct {v0, p0, p1, p2}, Liic;-><init>(Ljic;Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p1, p0, Ljic;->q0:Ljava/util/ArrayList;
-
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-boolean p1, p0, Ljic;->u0:Z
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, p0, Ljic;->t0:Leic;
-
-    invoke-virtual {v0, p1}, Liic;->b(Leic;)V
+    return-object p0
 
     :cond_0
-    invoke-virtual {p0}, Ljic;->m()V
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    return-object v0
+    const-string p1, "closed"
 
-    :cond_1
-    add-int/lit8 v2, v2, 0x1
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final close()V
+    .registers 7
+
+    iget-object v0, p0, Ljic;->c:Lj4e;
+
+    iget-boolean v1, p0, Ljic;->b:Z
+
+    if-eqz v1, :cond_0
+
+    goto :goto_3
+
+    :cond_0
+    :try_start_0
+    iget-object v1, p0, Ljic;->a:Let0;
+
+    iget-wide v2, v1, Let0;->b:J
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v4, v2, v4
+
+    if-lez v4, :cond_1
+
+    invoke-interface {v0, v1, v2, v3}, Lj4e;->R(Let0;J)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
+    :catchall_0
+    move-exception v1
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v1, 0x0
+
+    :goto_1
+    :try_start_1
+    invoke-interface {v0}, Lj4e;->close()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    goto :goto_2
+
+    :catchall_1
+    move-exception v0
+
+    if-nez v1, :cond_2
+
+    move-object v1, v0
+
     :cond_2
-    const/4 p0, 0x0
+    :goto_2
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Ljic;->b:Z
+
+    if-nez v1, :cond_3
+
+    :goto_3
+    return-void
+
+    :cond_3
+    throw v1
+.end method
+
+.method public final flush()V
+    .registers 6
+
+    iget-boolean v0, p0, Ljic;->b:Z
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Ljic;->a:Let0;
+
+    iget-wide v1, v0, Let0;->b:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v3, v1, v3
+
+    iget-object p0, p0, Ljic;->c:Lj4e;
+
+    if-lez v3, :cond_0
+
+    invoke-interface {p0, v0, v1, v2}, Lj4e;->R(Let0;J)V
+
+    :cond_0
+    invoke-interface {p0}, Lj4e;->flush()V
+
+    return-void
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v0, "closed"
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final getBuffer()Let0;
+    .registers 1
+
+    iget-object p0, p0, Ljic;->a:Let0;
 
     return-object p0
 .end method
 
-.method public final k()V
-    .registers 12
+.method public final isOpen()Z
+    .registers 1
 
-    iget-object v0, p0, Ljic;->t0:Leic;
+    iget-boolean p0, p0, Ljic;->b:Z
 
-    if-eqz v0, :cond_1
+    xor-int/lit8 p0, p0, 0x1
 
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lyj8;->g(Lzj8;)V
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, p0, Ljic;->u0:Z
-
-    iget-object v2, p0, Ljic;->q0:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v3
-
-    move v4, v1
-
-    :goto_0
-    if-ge v4, v3, :cond_0
-
-    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lfic;
-
-    invoke-interface {v5}, Lfic;->c()V
-
-    add-int/lit8 v4, v4, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v5, p0, Ljic;->t0:Leic;
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v6, 0x2
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    invoke-virtual/range {v5 .. v10}, Leic;->b(IIILandroid/os/Bundle;Landroid/os/Bundle;)Z
-
-    iget-object v2, v5, Leic;->b:Lhc;
-
-    iget-object v2, v2, Lhc;->b:Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v2}, Ljava/lang/ref/Reference;->clear()V
-
-    iget-object v2, v5, Leic;->a:Landroid/os/Messenger;
-
-    invoke-virtual {v2}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
-
-    move-result-object v2
-
-    invoke-interface {v2, v5, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
-
-    iget-object v1, v5, Leic;->i:Ljic;
-
-    iget-object v1, v1, Ljic;->p0:Lte9;
-
-    new-instance v2, Ldic;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, v5, v3}, Ldic;-><init>(Leic;I)V
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    iput-object v0, p0, Ljic;->t0:Leic;
-
-    :cond_1
-    return-void
+    return p0
 .end method
 
-.method public final l()V
-    .registers 2
+.method public final m()Lhu0;
+    .registers 6
 
-    iget-boolean v0, p0, Ljic;->s0:Z
-
-    if-eqz v0, :cond_1
-
-    sget-boolean v0, Ljic;->w0:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Ljic;->toString()Ljava/lang/String;
-
-    :cond_0
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ljic;->s0:Z
-
-    invoke-virtual {p0}, Ljic;->k()V
-
-    :try_start_0
-    iget-object v0, p0, Lyj8;->a:Landroid/content/Context;
-
-    invoke-virtual {v0, p0}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    invoke-virtual {p0}, Ljic;->toString()Ljava/lang/String;
-
-    :cond_1
-    return-void
-.end method
-
-.method public final m()V
-    .registers 2
-
-    iget-boolean v0, p0, Ljic;->r0:Z
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Lyj8;->X:Lgj8;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v0, p0, Ljic;->q0:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result v0
+    iget-boolean v0, p0, Ljic;->b:Z
 
     if-nez v0, :cond_1
 
-    :goto_0
-    invoke-virtual {p0}, Ljic;->i()V
+    iget-object v0, p0, Ljic;->a:Let0;
 
-    return-void
+    invoke-virtual {v0}, Let0;->n()J
 
-    :cond_1
-    invoke-virtual {p0}, Ljic;->l()V
+    move-result-wide v1
 
-    return-void
-.end method
+    const-wide/16 v3, 0x0
 
-.method public final onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .registers 10
+    cmp-long v3, v1, v3
 
-    sget-boolean p1, Ljic;->w0:Z
+    if-lez v3, :cond_0
 
-    if-eqz p1, :cond_0
+    iget-object v3, p0, Ljic;->c:Lj4e;
 
-    invoke-virtual {p0}, Ljic;->toString()Ljava/lang/String;
+    invoke-interface {v3, v0, v1, v2}, Lj4e;->R(Let0;J)V
 
     :cond_0
-    iget-boolean v0, p0, Ljic;->s0:Z
-
-    if-eqz v0, :cond_4
-
-    invoke-virtual {p0}, Ljic;->k()V
-
-    if-eqz p2, :cond_1
-
-    new-instance v0, Landroid/os/Messenger;
-
-    invoke-direct {v0, p2}, Landroid/os/Messenger;-><init>(Landroid/os/IBinder;)V
-
-    goto :goto_0
+    return-object p0
 
     :cond_1
-    const/4 v0, 0x0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    :goto_0
-    if-eqz v0, :cond_3
+    const-string v0, "closed"
 
-    :try_start_0
-    invoke-virtual {v0}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result-object p2
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
-
-    if-eqz p2, :cond_3
-
-    new-instance v1, Leic;
-
-    invoke-direct {v1, p0, v0}, Leic;-><init>(Ljic;Landroid/os/Messenger;)V
-
-    iget v3, v1, Leic;->d:I
-
-    add-int/lit8 p2, v3, 0x1
-
-    iput p2, v1, Leic;->d:I
-
-    iput v3, v1, Leic;->g:I
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    const/4 v2, 0x1
-
-    const/4 v4, 0x4
-
-    invoke-virtual/range {v1 .. v6}, Leic;->b(IIILandroid/os/Bundle;Landroid/os/Bundle;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    :try_start_1
-    iget-object p2, v1, Leic;->a:Landroid/os/Messenger;
-
-    invoke-virtual {p2}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
-
-    move-result-object p2
-
-    const/4 v0, 0x0
-
-    invoke-interface {p2, v1, v0}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-
-    iput-object v1, p0, Ljic;->t0:Leic;
-
-    goto :goto_2
-
-    :catch_0
-    invoke-virtual {v1}, Leic;->binderDied()V
-
-    :goto_1
-    if-eqz p1, :cond_4
-
-    invoke-virtual {p0}, Ljic;->toString()Ljava/lang/String;
-
-    goto :goto_2
-
-    :catch_1
-    :cond_3
-    invoke-virtual {p0}, Ljic;->toString()Ljava/lang/String;
-
-    :cond_4
-    :goto_2
-    return-void
+    throw p0
 .end method
 
-.method public final onServiceDisconnected(Landroid/content/ComponentName;)V
-    .registers 2
+.method public final m0(J)Lhu0;
+    .registers 4
 
-    sget-boolean p1, Ljic;->w0:Z
+    iget-boolean v0, p0, Ljic;->b:Z
 
-    if-eqz p1, :cond_0
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Ljic;->toString()Ljava/lang/String;
+    iget-object v0, p0, Ljic;->a:Let0;
+
+    invoke-virtual {v0, p1, p2}, Let0;->A0(J)V
+
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
+
+    return-object p0
 
     :cond_0
-    invoke-virtual {p0}, Ljic;->k()V
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    return-void
+    const-string p1, "closed"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final p()Lr6f;
+    .registers 1
+
+    iget-object p0, p0, Ljic;->c:Lj4e;
+
+    invoke-interface {p0}, Lj4e;->p()Lr6f;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public final toString()Ljava/lang/String;
@@ -649,21 +392,150 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "Service connection "
+    const-string v1, "buffer("
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Ljic;->o0:Landroid/content/ComponentName;
+    iget-object p0, p0, Ljic;->c:Lj4e;
 
-    invoke-virtual {p0}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object p0
+    const/16 p0, 0x29
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final write(Ljava/nio/ByteBuffer;)I
+    .registers 3
+
+    iget-boolean v0, p0, Ljic;->b:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljic;->a:Let0;
+
+    invoke-virtual {v0, p1}, Let0;->write(Ljava/nio/ByteBuffer;)I
+
+    move-result p1
+
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
+
+    return p1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "closed"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final write([B)Lhu0;
+    .registers 4
+
+    iget-boolean v0, p0, Ljic;->b:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljic;->a:Let0;
+
+    array-length v1, p1
+
+    invoke-virtual {v0, v1, p1}, Let0;->w0(I[B)V
+
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "closed"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final writeByte(I)Lhu0;
+    .registers 3
+
+    iget-boolean v0, p0, Ljic;->b:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljic;->a:Let0;
+
+    invoke-virtual {v0, p1}, Let0;->z0(I)V
+
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "closed"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final writeInt(I)Lhu0;
+    .registers 3
+
+    iget-boolean v0, p0, Ljic;->b:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljic;->a:Let0;
+
+    invoke-virtual {v0, p1}, Let0;->C0(I)V
+
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "closed"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final writeShort(I)Lhu0;
+    .registers 3
+
+    iget-boolean v0, p0, Ljic;->b:Z
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Ljic;->a:Let0;
+
+    invoke-virtual {v0, p1}, Let0;->D0(I)V
+
+    invoke-virtual {p0}, Ljic;->m()Lhu0;
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "closed"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

@@ -1,27 +1,22 @@
 .class public final Lzjb;
-.super Lckb;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lakb;
 
 
 # instance fields
-.field public final a:Lqte;
-
-.field public final b:Lqte;
-
-.field public final c:Ljava/util/List;
+.field public final a:Landroid/net/Uri;
 
 
 # direct methods
-.method public constructor <init>(Lqte;Lqte;Ljava/util/List;)V
-    .registers 4
+.method public constructor <init>(Landroid/net/Uri;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lzjb;->a:Lqte;
-
-    iput-object p2, p0, Lzjb;->b:Lqte;
-
-    iput-object p3, p0, Lzjb;->c:Ljava/util/List;
+    iput-object p1, p0, Lzjb;->a:Landroid/net/Uri;
 
     return-void
 .end method
@@ -29,100 +24,50 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    .registers 5
+
+    const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    goto :goto_1
+    return v0
 
     :cond_0
-    instance-of v0, p1, Lzjb;
+    instance-of v1, p1, Lzjb;
 
-    if-nez v0, :cond_1
+    const/4 v2, 0x0
 
-    goto :goto_0
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
     check-cast p1, Lzjb;
 
-    iget-object v0, p0, Lzjb;->a:Lqte;
+    iget-object p0, p0, Lzjb;->a:Landroid/net/Uri;
 
-    iget-object v1, p1, Lzjb;->a:Lqte;
+    iget-object p1, p1, Lzjb;->a:Landroid/net/Uri;
 
-    invoke-virtual {v0, v1}, Lqte;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-object v0, p0, Lzjb;->b:Lqte;
-
-    iget-object v1, p1, Lzjb;->b:Lqte;
-
-    invoke-virtual {v0, v1}, Lqte;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget-object p0, p0, Lzjb;->c:Ljava/util/List;
-
-    iget-object p1, p1, Lzjb;->c:Ljava/util/List;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_2
 
-    :goto_0
-    const/4 p0, 0x0
+    return v2
 
-    return p0
-
-    :cond_4
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
+    :cond_2
+    return v0
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .registers 1
 
-    iget-object v0, p0, Lzjb;->a:Lqte;
+    iget-object p0, p0, Lzjb;->a:Landroid/net/Uri;
 
-    iget v0, v0, Lqte;->b:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lzjb;->b:Lqte;
-
-    iget v2, v2, Lqte;->b:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget-object p0, p0, Lzjb;->c:Ljava/util/List;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {p0}, Landroid/net/Uri;->hashCode()I
 
     move-result p0
-
-    add-int/2addr p0, v0
 
     return p0
 .end method
@@ -132,31 +77,19 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ShowBottomSheet(title="
+    const-string v1, "ShareImage(uri="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lzjb;->a:Lqte;
+    iget-object p0, p0, Lzjb;->a:Landroid/net/Uri;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", description="
+    const-string p0, ")"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lzjb;->b:Lqte;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", buttons="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ")"
-
-    iget-object p0, p0, Lzjb;->c:Ljava/util/List;
-
-    invoke-static {v0, p0, v1}, Lew1;->j(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

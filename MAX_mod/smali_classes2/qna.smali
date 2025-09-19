@@ -1,111 +1,89 @@
-.class public final Lqna;
-.super Landroid/webkit/WebChromeClient;
+.class public final synthetic Lqna;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final a:Lpcg;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lxna;
 
 
 # direct methods
-.method public constructor <init>(Lpcg;)V
-    .registers 2
+.method public synthetic constructor <init>(Lxna;I)V
+    .registers 3
 
-    invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
+    iput p2, p0, Lqna;->a:I
 
-    iput-object p1, p0, Lqna;->a:Lpcg;
+    iput-object p1, p0, Lqna;->b:Lxna;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z
-    .registers 5
+.method public final onClick(Landroid/view/View;)V
+    .registers 2
 
-    new-instance p2, Lrna;
+    iget p1, p0, Lqna;->a:I
 
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    packed-switch p1, :pswitch_data_0
 
-    move-result-object p1
+    iget-object p0, p0, Lqna;->b:Lxna;
 
-    const/16 p3, 0xe
+    iget-object p0, p0, Lxna;->B0:Ljava/lang/Object;
 
-    invoke-direct {p2, p1, p3}, Lrna;-><init>(Landroid/content/Context;I)V
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    new-instance p1, Lpna;
+    move-result-object p0
 
-    invoke-direct {p1, p0, p2}, Lpna;-><init>(Lqna;Lrna;)V
+    check-cast p0, Landroidx/appcompat/widget/AppCompatEditText;
 
-    invoke-virtual {p2, p1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
+    const/4 p1, 0x0
 
-    if-eqz p4, :cond_0
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object p0, p4, Landroid/os/Message;->obj:Ljava/lang/Object;
+    return-void
 
-    goto :goto_0
+    :pswitch_0
+    iget-object p0, p0, Lqna;->b:Lxna;
 
-    :cond_0
-    const/4 p0, 0x0
+    invoke-virtual {p0}, Lxna;->d()V
 
-    :goto_0
-    check-cast p0, Landroid/webkit/WebView$WebViewTransport;
+    return-void
 
-    invoke-virtual {p0, p2}, Landroid/webkit/WebView$WebViewTransport;->setWebView(Landroid/webkit/WebView;)V
+    :pswitch_1
+    iget-object p0, p0, Lqna;->b:Lxna;
 
-    invoke-virtual {p4}, Landroid/os/Message;->sendToTarget()V
+    invoke-virtual {p0}, Lxna;->b()V
 
-    const/4 p0, 0x1
+    iget-object p0, p0, Lxna;->t0:Luna;
 
-    return p0
-.end method
+    if-eqz p0, :cond_0
 
-.method public final onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z
-    .registers 6
-
-    instance-of v0, p1, Lrna;
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    check-cast p1, Lrna;
-
-    goto :goto_0
+    invoke-interface {p0}, Luna;->p()V
 
     :cond_0
-    move-object p1, v1
+    return-void
 
-    :goto_0
-    if-nez p1, :cond_1
+    :pswitch_2
+    iget-object p0, p0, Lqna;->b:Lxna;
 
-    const/4 p0, 0x0
+    invoke-virtual {p0}, Lxna;->d()V
 
-    return p0
+    return-void
 
-    :cond_1
-    invoke-virtual {p1}, Lrna;->getFilePathCallback()Landroid/webkit/ValueCallback;
+    nop
 
-    move-result-object v0
-
-    if-eqz v0, :cond_2
-
-    invoke-interface {v0, v1}, Landroid/webkit/ValueCallback;->onReceiveValue(Ljava/lang/Object;)V
-
-    :cond_2
-    invoke-virtual {p1, p2}, Lrna;->setFilePathCallback(Landroid/webkit/ValueCallback;)V
-
-    iget-object p0, p0, Lqna;->a:Lpcg;
-
-    iget-object p0, p0, Lpcg;->N0:Lx65;
-
-    new-instance p1, Lqbg;
-
-    invoke-direct {p1, p3}, Lqbg;-><init>(Landroid/webkit/WebChromeClient$FileChooserParams;)V
-
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    const/4 p0, 0x1
-
-    return p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -3,246 +3,187 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lxg6;
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static final a:Lyog;
 
-.field public final synthetic b:Lmd;
-
-.field public final synthetic c:[B
-
-.field public final synthetic o:I
+.field private static final descriptor:Lqid;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lmd;[BII)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 4
 
-    iput p4, p0, Lyog;->a:I
+    new-instance v0, Lyog;
 
-    iput-object p1, p0, Lyog;->b:Lmd;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lyog;->c:[B
+    sput-object v0, Lyog;->a:Lyog;
 
-    iput p3, p0, Lyog;->o:I
+    new-instance v1, Ljeb;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v2, "one.me.webapp.domain.jsbridge.delegates.storage.WebAppStorageClearRequest"
+
+    const/4 v3, 0x2
+
+    invoke-direct {v1, v2, v0, v3}, Ljeb;-><init>(Ljava/lang/String;Lxg6;I)V
+
+    const-string v0, "queryId"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
+
+    const-string v0, "requestId"
+
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
+
+    sput-object v1, Lyog;->descriptor:Lqid;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 9
+.method public final a(Lu8;)Ljava/lang/Object;
+    .registers 10
 
-    iget v0, p0, Lyog;->a:I
+    sget-object p0, Lyog;->descriptor:Lqid;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p1, p0}, Lu8;->k(Lqid;)Lu8;
 
-    iget v0, p0, Lyog;->o:I
+    move-result-object p1
 
-    iget-object v1, p0, Lyog;->b:Lmd;
+    const/4 v0, 0x1
 
-    iget-object v2, v1, Lmd;->b:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    check-cast v2, Ljava/util/concurrent/CopyOnWriteArrayList;
+    const/4 v2, 0x0
 
-    invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+    move v4, v0
 
-    move-result-object v2
+    move v5, v1
+
+    move-object v3, v2
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    if-eqz v4, :cond_3
 
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lxrc;
-
-    :try_start_0
-    iget-object v4, v3, Lxrc;->b:Ld7c;
-
-    iget-object v3, v3, Lxrc;->a:Ljava/lang/String;
-
-    sget-object v5, Lnog;->a:[I
-
-    invoke-static {v0}, Lew1;->t(I)I
+    invoke-virtual {p1, p0}, Lu8;->q(Lqid;)I
 
     move-result v6
 
-    aget v5, v5, v6
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v7, -0x1
 
-    const/4 v6, 0x1
+    if-eq v6, v7, :cond_2
 
-    iget-object v7, p0, Lyog;->c:[B
+    if-eqz v6, :cond_1
 
-    if-eq v5, v6, :cond_1
+    if-ne v6, v0, :cond_0
 
-    const/4 v6, 0x2
+    invoke-virtual {p1, p0, v0}, Lu8;->w(Lqid;I)Ljava/lang/String;
 
-    if-eq v5, v6, :cond_0
+    move-result-object v3
 
-    :try_start_1
-    const-string v5, "<unknown>"
-
-    goto :goto_1
-
-    :cond_0
-    invoke-static {v7}, Lwn6;->a([B)Ljava/lang/String;
-
-    move-result-object v5
-
-    goto :goto_1
-
-    :cond_1
-    new-instance v5, Ljava/lang/String;
-
-    invoke-direct {v5, v7}, Ljava/lang/String;-><init>([B)V
-
-    :goto_1
-    const-string v6, "-> "
-
-    invoke-virtual {v6, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-interface {v4, v3, v5}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    or-int/lit8 v5, v5, 0x2
 
     goto :goto_0
 
-    :catchall_0
-    move-exception v3
+    :cond_0
+    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
 
-    iget-object v4, v1, Lmd;->a:Ljava/lang/Object;
+    invoke-direct {p0, v6}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
 
-    check-cast v4, Ld7c;
+    throw p0
 
-    const-string v5, "CallsListeners"
+    :cond_1
+    sget-object v6, Lfme;->a:Lfme;
 
-    const-string v6, "rtc.command.handle.listeners.ondatasend"
+    invoke-virtual {p1, p0, v1, v2}, Lu8;->s(Lqid;ILjava/lang/String;)Ljava/lang/Object;
 
-    invoke-interface {v4, v5, v6, v3}, Ld7c;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    or-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
     :cond_2
-    return-void
+    move v4, v1
 
-    :pswitch_0
-    iget v0, p0, Lyog;->o:I
-
-    iget-object v1, p0, Lyog;->b:Lmd;
-
-    iget-object v2, v1, Lmd;->b:Ljava/lang/Object;
-
-    check-cast v2, Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_2
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_5
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lxrc;
-
-    :try_start_2
-    iget-object v4, v3, Lxrc;->b:Ld7c;
-
-    iget-object v3, v3, Lxrc;->a:Ljava/lang/String;
-
-    sget-object v5, Lnog;->a:[I
-
-    invoke-static {v0}, Lew1;->t(I)I
-
-    move-result v6
-
-    aget v5, v5, v6
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    const/4 v6, 0x1
-
-    iget-object v7, p0, Lyog;->c:[B
-
-    if-eq v5, v6, :cond_4
-
-    const/4 v6, 0x2
-
-    if-eq v5, v6, :cond_3
-
-    :try_start_3
-    const-string v5, "<unknown>"
-
-    goto :goto_3
+    goto :goto_0
 
     :cond_3
-    invoke-static {v7}, Lwn6;->a([B)Ljava/lang/String;
+    invoke-virtual {p1, p0}, Lu8;->z(Lqid;)V
 
-    move-result-object v5
+    new-instance p0, Lapg;
 
-    goto :goto_3
+    invoke-direct {p0, v5, v2, v3}, Lapg;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
-    :cond_4
-    new-instance v5, Ljava/lang/String;
+    return-object p0
+.end method
 
-    invoke-direct {v5, v7}, Ljava/lang/String;-><init>([B)V
+.method public final b(Lay3;Ljava/lang/Object;)V
+    .registers 5
 
-    :goto_3
-    const-string v6, "<- "
+    check-cast p2, Lapg;
 
-    invoke-virtual {v6, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    sget-object p0, Lyog;->descriptor:Lqid;
 
-    move-result-object v5
+    invoke-virtual {p1, p0}, Lay3;->b(Lqid;)Lay3;
 
-    invoke-interface {v4, v3, v5}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+    move-result-object p1
 
-    goto :goto_2
+    sget-object v0, Lfme;->a:Lfme;
 
-    :catchall_1
-    move-exception v3
+    iget-object v0, p2, Lapg;->a:Ljava/lang/String;
 
-    iget-object v4, v1, Lmd;->a:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    check-cast v4, Ld7c;
+    invoke-virtual {p1, p0, v1, v0}, Lay3;->h(Lqid;ILjava/lang/Object;)V
 
-    const-string v5, "CallsListeners"
+    iget-object p2, p2, Lapg;->b:Ljava/lang/String;
 
-    const-string v6, "rtc.command.handle.listeners.ondatareceive"
+    const/4 v0, 0x1
 
-    invoke-interface {v4, v5, v6, v3}, Ld7c;->reportException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p1, p0, v0, p2}, Lay3;->l(Lqid;ILjava/lang/String;)V
 
-    goto :goto_2
+    invoke-virtual {p1}, Lay3;->m()V
 
-    :cond_5
     return-void
+.end method
 
-    nop
+.method public final c()[Lyi7;
+    .registers 3
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    invoke-static {}, Li4h;->E()Lyi7;
+
+    move-result-object p0
+
+    const/4 v0, 0x2
+
+    new-array v0, v0, [Lyi7;
+
+    const/4 v1, 0x0
+
+    aput-object p0, v0, v1
+
+    sget-object p0, Lfme;->a:Lfme;
+
+    const/4 v1, 0x1
+
+    aput-object p0, v0, v1
+
+    return-object v0
+.end method
+
+.method public final d()Lqid;
+    .registers 1
+
+    sget-object p0, Lyog;->descriptor:Lqid;
+
+    return-object p0
 .end method

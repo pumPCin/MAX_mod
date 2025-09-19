@@ -1,76 +1,291 @@
-.class public final Ll58;
-.super Landroidx/appcompat/widget/AppCompatTextView;
+.class public Ll58;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Map$Entry;
+.implements Lmi7;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final b:Ljava/lang/Object;
+
+.field public final c:Ljava/lang/Object;
+
+
+# direct methods
+.method public synthetic constructor <init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    .registers 4
+
+    iput p2, p0, Ll58;->a:I
+
+    iput-object p1, p0, Ll58;->b:Ljava/lang/Object;
+
+    iput-object p3, p0, Ll58;->c:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final setTextAppearance(Landroid/content/Context;I)V
-    .registers 8
+.method public equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    invoke-super {p0, p1, p2}, Landroidx/appcompat/widget/AppCompatTextView;->setTextAppearance(Landroid/content/Context;I)V
+    iget v0, p0, Ll58;->a:I
 
-    sget v0, Lnvb;->textAppearanceLineHeightEnabled:I
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v1, 0x1
+    invoke-super {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {v0, p1, v1}, Lkbf;->H(ILandroid/content/Context;Z)Z
+    move-result p0
 
-    move-result v0
+    return p0
 
-    if-eqz v0, :cond_1
+    :pswitch_0
+    instance-of v0, p1, Ljava/util/Map$Entry;
 
-    invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    if-eqz v0, :cond_0
 
-    move-result-object p1
-
-    sget-object v0, Le6c;->MaterialTextAppearance:[I
-
-    invoke-virtual {p1, p2, v0}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p2
-
-    sget v0, Le6c;->MaterialTextAppearance_android_lineHeight:I
-
-    sget v1, Le6c;->MaterialTextAppearance_lineHeight:I
-
-    filled-new-array {v0, v1}, [I
-
-    move-result-object v0
-
-    const/4 v1, -0x1
-
-    const/4 v2, 0x0
-
-    move v3, v1
-
-    :goto_0
-    const/4 v4, 0x2
-
-    if-ge v2, v4, :cond_0
-
-    if-gez v3, :cond_0
-
-    aget v3, v0, v2
-
-    invoke-static {p2, p1, v3, v1}, Lfog;->E(Landroid/content/Context;Landroid/content/res/TypedArray;II)I
-
-    move-result v3
-
-    add-int/lit8 v2, v2, 0x1
+    check-cast p1, Ljava/util/Map$Entry;
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+    const/4 p1, 0x0
 
-    if-ltz v3, :cond_1
+    :goto_0
+    if-nez p1, :cond_1
 
-    invoke-virtual {p0, v3}, Landroidx/appcompat/widget/AppCompatTextView;->setLineHeight(I)V
+    goto :goto_1
 
     :cond_1
-    return-void
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ll58;->b:Ljava/lang/Object;
+
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Ll58;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p1, p0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    const/4 p0, 0x1
+
+    goto :goto_2
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x0
+
+    :goto_2
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final getKey()Ljava/lang/Object;
+    .registers 2
+
+    iget v0, p0, Ll58;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Ll58;->b:Ljava/lang/Object;
+
+    return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Ll58;->b:Ljava/lang/Object;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public getValue()Ljava/lang/Object;
+    .registers 2
+
+    iget v0, p0, Ll58;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Ll58;->c:Ljava/lang/Object;
+
+    return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Ll58;->c:Ljava/lang/Object;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public hashCode()I
+    .registers 3
+
+    iget v0, p0, Ll58;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
+
+    :pswitch_0
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Ll58;->b:Ljava/lang/Object;
+
+    if-nez v1, :cond_0
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :goto_0
+    invoke-virtual {p0}, Ll58;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-nez p0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    :goto_1
+    xor-int p0, v1, v0
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    iget p0, p0, Ll58;->a:I
+
+    packed-switch p0, :pswitch_data_0
+
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string p1, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :pswitch_0
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string p1, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 3
+
+    iget v0, p0, Ll58;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Ll58;->b:Ljava/lang/Object;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x3d
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ll58;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,53 +1,101 @@
 .class public final Lh4g;
-.super Lcx3;
+.super Ljs9;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Ljava/lang/Object;
+.field public final synthetic f:I
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lp4g;
-
-.field public n0:I
-
-.field public o:Lp4g;
+.field public final synthetic g:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
 
 
 # direct methods
-.method public constructor <init>(Lp4g;Lcx3;)V
+.method public synthetic constructor <init>(Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;I)V
     .registers 3
 
-    iput-object p1, p0, Lh4g;->Z:Lp4g;
+    iput p2, p0, Lh4g;->f:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lh4g;->g:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final q()V
     .registers 3
 
-    iput-object p1, p0, Lh4g;->Y:Ljava/lang/Object;
+    iget v0, p0, Lh4g;->f:I
 
-    iget p1, p0, Lh4g;->n0:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object p0, p0, Lh4g;->g:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
 
-    or-int/2addr p1, v0
+    iget-object v0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->c:Lru/ok/messages/video/widgets/VideoFramePreview;
 
-    iput p1, p0, Lh4g;->n0:I
+    const/4 v1, 0x4
 
-    iget-object p1, p0, Lh4g;->Z:Lp4g;
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->c:Lru/ok/messages/video/widgets/VideoFramePreview;
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lp4g;->j(Lzn0;Lcx3;)Ljava/lang/Object;
+    iput-object v0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->w0:Lim4;
 
-    move-result-object p0
+    return-void
 
-    return-object p0
+    :pswitch_0
+    iget-object p0, p0, Lh4g;->g:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->v0:Lim4;
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public s()V
+    .registers 3
+
+    iget v0, p0, Lh4g;->f:I
+
+    packed-switch v0, :pswitch_data_0
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lh4g;->g:Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;
+
+    iget-object v0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->c:Lru/ok/messages/video/widgets/VideoFramePreview;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object p0, p0, Lru/ok/messages/video/widgets/VideoPlayerSeekBarPreview;->c:Lru/ok/messages/video/widgets/VideoFramePreview;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,168 +1,283 @@
 .class public final Lwi2;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
-
-# static fields
-.field public static final d:Lwi2;
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final synthetic X:Ljava/lang/Object;
 
-.field public final b:Z
+.field public final synthetic Y:Lus8;
 
-.field public final c:Z
+.field public final synthetic Z:J
+
+.field public final synthetic r0:J
+
+.field public final synthetic s0:Lpj2;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lus8;JJLpj2;)V
+    .registers 9
 
-    new-instance v0, Lwi2;
+    iput-object p1, p0, Lwi2;->X:Ljava/lang/Object;
 
-    sget-object v1, Lv25;->a:Lv25;
+    iput-object p3, p0, Lwi2;->Y:Lus8;
 
-    const/4 v2, 0x0
+    iput-wide p4, p0, Lwi2;->Z:J
 
-    invoke-direct {v0, v1, v2, v2}, Lwi2;-><init>(Ljava/util/List;ZZ)V
+    iput-wide p6, p0, Lwi2;->r0:J
 
-    sput-object v0, Lwi2;->d:Lwi2;
+    iput-object p8, p0, Lwi2;->s0:Lpj2;
 
-    return-void
-.end method
+    const/4 p1, 0x2
 
-.method public constructor <init>(Ljava/util/List;ZZ)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lwi2;->a:Ljava/util/List;
-
-    iput-boolean p2, p0, Lwi2;->b:Z
-
-    iput-boolean p3, p0, Lwi2;->c:Z
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lwi2;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lwi2;
-
-    iget-object v1, p0, Lwi2;->a:Ljava/util/List;
-
-    iget-object v3, p1, Lwi2;->a:Ljava/util/List;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-boolean v1, p0, Lwi2;->b:Z
-
-    iget-boolean v3, p1, Lwi2;->b:Z
-
-    if-eq v1, v3, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-boolean p0, p0, Lwi2;->c:Z
-
-    iget-boolean p1, p1, Lwi2;->c:Z
-
-    if-eq p0, p1, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget-object v0, p0, Lwi2;->a:Ljava/util/List;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-boolean v2, p0, Lwi2;->b:Z
-
-    invoke-static {v0, v1, v2}, Lex3;->e(IIZ)I
-
-    move-result v0
-
-    iget-boolean p0, p0, Lwi2;->c:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast p1, Ly04;
 
-    const-string v1, "AttachesViewState(messages="
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0, p1, p2}, Lwi2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    iget-object v1, p0, Lwi2;->a:Ljava/util/List;
+    move-result-object p0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    check-cast p0, Lwi2;
 
-    const-string v1, ", hasMoreNext="
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Lwi2;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-boolean v1, p0, Lwi2;->b:Z
+    move-result-object p0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    return-object p0
+.end method
 
-    const-string v1, ", hasMorePrev="
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 12
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v0, Lwi2;
 
-    const-string v1, ")"
+    iget-wide v6, p0, Lwi2;->r0:J
 
-    iget-boolean p0, p0, Lwi2;->c:Z
+    iget-object v8, p0, Lwi2;->s0:Lpj2;
 
-    invoke-static {v0, p0, v1}, Lew1;->k(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+    iget-object v1, p0, Lwi2;->X:Ljava/lang/Object;
+
+    iget-object v3, p0, Lwi2;->Y:Lus8;
+
+    iget-wide v4, p0, Lwi2;->Z:J
+
+    move-object v2, p2
+
+    invoke-direct/range {v0 .. v8}, Lwi2;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lus8;JJLpj2;)V
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 9
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lwi2;->X:Ljava/lang/Object;
+
+    move-object v0, p1
+
+    check-cast v0, Ld10;
+
+    iget-object p1, v0, Ld10;->a:Lz00;
+
+    if-nez p1, :cond_0
+
+    const/4 p1, -0x1
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v1, Lvi2;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p1
+
+    aget p1, v1, p1
+
+    :goto_0
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lwi2;->Y:Lus8;
+
+    if-eq p1, v1, :cond_7
+
+    const/4 v1, 0x2
+
+    if-eq p1, v1, :cond_5
+
+    const/4 v1, 0x3
+
+    if-eq p1, v1, :cond_3
+
+    const/4 v1, 0x4
+
+    if-eq p1, v1, :cond_1
+
+    const/4 v5, 0x0
+
+    const/16 v6, 0x18
+
+    iget-wide v1, p0, Lwi2;->Z:J
+
+    iget-wide v3, p0, Lwi2;->r0:J
+
+    invoke-static/range {v0 .. v6}, Les3;->c(Ld10;JJZI)Lfz;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    iget-object p1, v0, Ld10;->j:Lm00;
+
+    if-eqz p1, :cond_2
+
+    iget-wide v3, p1, Lm00;->a:J
+
+    invoke-virtual {v2}, Lus8;->i()J
+
+    move-result-wide v1
+
+    cmp-long p1, v3, v1
+
+    if-nez p1, :cond_2
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v5, 0x0
+
+    const/16 v6, 0x18
+
+    iget-wide v1, p0, Lwi2;->Z:J
+
+    iget-wide v3, p0, Lwi2;->r0:J
+
+    invoke-static/range {v0 .. v6}, Les3;->c(Ld10;JJZI)Lfz;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_3
+    iget-object p1, v0, Ld10;->g:Lv00;
+
+    if-eqz p1, :cond_4
+
+    iget-wide v3, p1, Lv00;->a:J
+
+    invoke-virtual {v2}, Lus8;->i()J
+
+    move-result-wide v1
+
+    cmp-long p1, v3, v1
+
+    if-nez p1, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    const/4 v5, 0x0
+
+    const/16 v6, 0x18
+
+    iget-wide v1, p0, Lwi2;->Z:J
+
+    iget-wide v3, p0, Lwi2;->r0:J
+
+    invoke-static/range {v0 .. v6}, Les3;->c(Ld10;JJZI)Lfz;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_5
+    iget-object p1, v0, Ld10;->d:Lc10;
+
+    if-eqz p1, :cond_6
+
+    iget-wide v3, p1, Lc10;->a:J
+
+    invoke-virtual {v2}, Lus8;->i()J
+
+    move-result-wide v1
+
+    cmp-long p1, v3, v1
+
+    if-nez p1, :cond_6
+
+    goto :goto_1
+
+    :cond_6
+    iget-object p1, p0, Lwi2;->s0:Lpj2;
+
+    iget-object p1, p1, Lpj2;->y0:Ltj5;
+
+    invoke-virtual {p1}, Ltj5;->x()Z
+
+    move-result v5
+
+    const/16 v6, 0x8
+
+    iget-wide v1, p0, Lwi2;->Z:J
+
+    iget-wide v3, p0, Lwi2;->r0:J
+
+    invoke-static/range {v0 .. v6}, Les3;->c(Ld10;JJZI)Lfz;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_7
+    iget-object p1, v0, Ld10;->b:Lr00;
+
+    if-eqz p1, :cond_8
+
+    iget-wide v3, p1, Lr00;->r0:J
+
+    invoke-virtual {v2}, Lus8;->i()J
+
+    move-result-wide v1
+
+    cmp-long p1, v3, v1
+
+    if-nez p1, :cond_8
+
+    :goto_1
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_8
+    const/4 v5, 0x0
+
+    const/16 v6, 0x18
+
+    iget-wide v1, p0, Lwi2;->Z:J
+
+    iget-wide v3, p0, Lwi2;->r0:J
+
+    invoke-static/range {v0 .. v6}, Les3;->c(Ld10;JJZI)Lfz;
 
     move-result-object p0
 

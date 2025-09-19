@@ -3,62 +3,175 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Lk51;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-.field public final synthetic b:I
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:Lp2f;
+
+.field public final f:Lp2f;
 
 
 # direct methods
-.method public synthetic constructor <init>(II)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;)V
     .registers 3
 
-    iput p2, p0, Li51;->a:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Li51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    sget p1, Laea;->L:I
 
     iput p1, p0, Li51;->b:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget p1, Lzda;->x0:I
+
+    iput p1, p0, Li51;->c:I
+
+    sget p1, Lzda;->K0:I
+
+    iput p1, p0, Li51;->d:I
+
+    sget p1, Ldea;->x2:I
+
+    new-instance v0, Lp2f;
+
+    invoke-direct {v0, p1}, Lp2f;-><init>(I)V
+
+    iput-object v0, p0, Li51;->e:Lp2f;
+
+    iput-object v0, p0, Li51;->f:Lp2f;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final a()I
+    .registers 1
+
+    iget p0, p0, Li51;->c:I
+
+    return p0
+.end method
+
+.method public final b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    .registers 1
+
+    iget-object p0, p0, Li51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Li51;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Li51;
+
+    iget-object p0, p0, Li51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    iget-object p1, p1, Li51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final getContentDescription()Lu2f;
+    .registers 1
+
+    iget-object p0, p0, Li51;->f:Lp2f;
+
+    return-object p0
+.end method
+
+.method public final getIcon()I
+    .registers 1
+
+    iget p0, p0, Li51;->d:I
+
+    return p0
+.end method
+
+.method public final getId()I
+    .registers 1
+
+    iget p0, p0, Li51;->b:I
+
+    return p0
+.end method
+
+.method public final getTitle()Lu2f;
+    .registers 1
+
+    iget-object p0, p0, Li51;->e:Lp2f;
+
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Li51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    iget v0, p0, Li51;->a:I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    packed-switch v0, :pswitch_data_0
+    const-string v1, "Unknown(device="
 
-    new-instance v0, Ll31;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget p0, p0, Li51;->b:I
+    iget-object p0, p0, Li51;->a:Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
 
-    const/4 v1, 0x2
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, p0, v1}, Ll31;-><init>(II)V
+    const-string p0, ")"
 
-    return-object v0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_0
-    new-instance v0, Ll31;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget p0, p0, Li51;->b:I
+    move-result-object p0
 
-    const/4 v1, 0x2
-
-    invoke-direct {v0, p0, v1}, Ll31;-><init>(II)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

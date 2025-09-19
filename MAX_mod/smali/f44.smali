@@ -1,195 +1,73 @@
 .class public final Lf44;
-.super Landroid/database/ContentObserver;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
+# static fields
+.field public static final c:Lf44;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public static final d:Ljava/lang/String;
+
+.field public static final e:Ljava/lang/String;
+
+
+# instance fields
+.field public final a:Ll37;
+
+.field public final b:J
 
 
 # direct methods
-.method public constructor <init>(Ljge;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 4
+
+    new-instance v0, Lf44;
+
+    sget-object v1, Ll37;->b:Lgx5;
+
+    sget-object v1, Llqc;->X:Llqc;
+
+    const-wide/16 v2, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lf44;-><init>(JLjava/util/List;)V
+
+    sput-object v0, Lf44;->c:Lf44;
+
+    sget v0, Lnrf;->a:I
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lf44;->a:I
+    const/16 v1, 0x24
 
-    iput-object p1, p0, Lf44;->b:Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
-    new-instance p1, Landroid/os/Handler;
+    move-result-object v0
 
-    invoke-direct {p1}, Landroid/os/Handler;-><init>()V
-
-    invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ln27;)V
-    .registers 3
+    sput-object v0, Lf44;->d:Ljava/lang/String;
 
     const/4 v0, 0x1
 
-    iput v0, p0, Lf44;->a:I
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
-    iput-object p1, p0, Lf44;->b:Ljava/lang/Object;
+    move-result-object v0
 
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    sput-object v0, Lf44;->e:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public constructor <init>(Lsxa;Landroid/os/Handler;)V
+.method public constructor <init>(JLjava/util/List;)V
     .registers 4
 
-    const/4 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput v0, p0, Lf44;->a:I
+    invoke-static {p3}, Ll37;->j(Ljava/util/Collection;)Ll37;
 
-    iput-object p1, p0, Lf44;->b:Ljava/lang/Object;
+    move-result-object p3
 
-    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    iput-object p3, p0, Lf44;->a:Ll37;
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public deliverSelfNotifications()Z
-    .registers 2
-
-    iget v0, p0, Lf44;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    :pswitch_0
-    invoke-super {p0}, Landroid/database/ContentObserver;->deliverSelfNotifications()Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_1
-    const/4 p0, 0x0
-
-    return p0
-
-    :pswitch_2
-    const/4 p0, 0x1
-
-    return p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
-.end method
-
-.method public final onChange(Z)V
-    .registers 4
-
-    iget p1, p0, Lf44;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    const-string p1, "Phonebook"
-
-    const-string v0, "contact observer onChange"
-
-    invoke-static {p1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p0, p0, Lf44;->b:Ljava/lang/Object;
-
-    move-object p1, p0
-
-    check-cast p1, Lsxa;
-
-    iget-object v0, p1, Lsxa;->o0:Ln4e;
-
-    :cond_0
-    invoke-virtual {v0}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    move-object v1, p0
-
-    check-cast v1, Ljava/lang/Number;
-
-    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
-
-    iget-object v1, p1, Lsxa;->n0:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
-
-    move-result v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v0, p0, v1}, Ln4e;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
+    iput-wide p1, p0, Lf44;->b:J
 
     return-void
-
-    :pswitch_0
-    sget-object p1, Ln27;->z0:Ljava/lang/String;
-
-    const-string v0, "ContentObserver: on content changed"
-
-    invoke-static {p1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p0, p0, Lf44;->b:Ljava/lang/Object;
-
-    check-cast p0, Ln27;
-
-    invoke-virtual {p0}, Ln27;->d()V
-
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lf44;->b:Ljava/lang/Object;
-
-    check-cast p0, Ljge;
-
-    iget-boolean p1, p0, Lh44;->b:Z
-
-    if-eqz p1, :cond_1
-
-    iget-object p1, p0, Lh44;->c:Landroid/database/Cursor;
-
-    if-eqz p1, :cond_1
-
-    invoke-interface {p1}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    iget-object p1, p0, Lh44;->c:Landroid/database/Cursor;
-
-    invoke-interface {p1}, Landroid/database/Cursor;->requery()Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lh44;->a:Z
-
-    :cond_1
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -1,53 +1,51 @@
 .class public final Ls7f;
-.super Ljo;
+.super Ljx3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ls7f;
+# instance fields
+.field public X:Ll8a;
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lv7f;
+
+.field public o:Lv7f;
+
+.field public r0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lv7f;Ljx3;)V
+    .registers 3
 
-    new-instance v0, Ls7f;
+    iput-object p1, p0, Ls7f;->Z:Lv7f;
 
-    invoke-direct {v0}, Ljo;-><init>()V
-
-    sput-object v0, Ls7f;->a:Ls7f;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lxh7;
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Ls4;
+    iput-object p1, p0, Ls7f;->Y:Ljava/lang/Object;
 
-    move-result-object p0
+    iget p1, p0, Ls7f;->r0:I
 
-    const-class v0, Lik;
+    const/high16 v0, -0x80000000
 
-    invoke-virtual {p0, v0}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    or-int/2addr p1, v0
 
-    move-result-object p0
+    iput p1, p0, Ls7f;->r0:I
 
-    return-object p0
-.end method
+    iget-object p1, p0, Ls7f;->Z:Lv7f;
 
-.method public final c()Lxh7;
-    .registers 2
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object p0
-
-    const-class v0, Lzne;
-
-    invoke-virtual {p0, v0}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {p1, v0, p0}, Lv7f;->n(Ll8a;Ljx3;)Ljava/lang/Object;
 
     move-result-object p0
 

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lvi1;
+.implements Ldj1;
 
 
 # annotations
@@ -19,21 +19,21 @@
     }
     d2 = {
         "Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger;",
-        "Lvi1;",
-        "Ld7c;",
+        "Ldj1;",
+        "Lfec;",
         "log",
         "Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;",
         "config",
         "Lru/ok/android/externcalls/sdk/rate/internal/RateHintCollection;",
         "collection",
         "<init>",
-        "(Ld7c;Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;Lru/ok/android/externcalls/sdk/rate/internal/RateHintCollection;)V",
-        "Lf7c;",
+        "(Lfec;Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;Lru/ok/android/externcalls/sdk/rate/internal/RateHintCollection;)V",
+        "Lhec;",
         "rtcStat",
-        "Lncf;",
+        "Lylf;",
         "onRtcStats",
-        "(Lf7c;)V",
-        "Ld7c;",
+        "(Lhec;)V",
+        "Lfec;",
         "Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;",
         "Lru/ok/android/externcalls/sdk/rate/internal/RateHintCollection;",
         "",
@@ -70,7 +70,7 @@
 
 .field private highRttCount:I
 
-.field private final log:Ld7c;
+.field private final log:Lfec;
 
 .field private wasReported:Z
 
@@ -83,19 +83,19 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger$Companion;-><init>(Lwc4;)V
+    invoke-direct {v0, v1}, Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger$Companion;-><init>(Lld4;)V
 
     sput-object v0, Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger;->Companion:Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger$Companion;
 
     return-void
 .end method
 
-.method public constructor <init>(Ld7c;Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;Lru/ok/android/externcalls/sdk/rate/internal/RateHintCollection;)V
+.method public constructor <init>(Lfec;Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;Lru/ok/android/externcalls/sdk/rate/internal/RateHintCollection;)V
     .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger;->log:Ld7c;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger;->log:Lfec;
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger;->config:Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;
 
@@ -106,7 +106,7 @@
 
 
 # virtual methods
-.method public onRtcStats(Lf7c;)V
+.method public onRtcStats(Lhec;)V
     .registers 7
 
     iget-boolean v0, p0, Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger;->wasReported:Z
@@ -116,22 +116,22 @@
     goto :goto_2
 
     :cond_0
-    invoke-virtual {p1}, Lf7c;->c()Lh12;
+    invoke-virtual {p1}, Lhec;->c()Lo12;
 
     move-result-object p1
 
     if-eqz p1, :cond_2
 
-    iget-object p1, p1, Lh12;->h:Ljava/lang/String;
+    iget-object p1, p1, Lo12;->h:Ljava/lang/String;
 
     if-eqz p1, :cond_2
 
     const/4 v0, 0x0
 
     :try_start_0
-    sget-object v1, Lyyc;->a:Lbic;
+    sget-object v1, Ld7d;->a:Lmpc;
 
-    invoke-virtual {v1, p1}, Lbic;->a(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, p1}, Lmpc;->a(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
@@ -163,7 +163,7 @@
     const-wide/16 v0, 0x0
 
     :goto_0
-    iget-object p1, p0, Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger;->log:Ld7c;
+    iget-object p1, p0, Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger;->log:Lfec;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -179,7 +179,7 @@
 
     const-string v3, "RateManager"
 
-    invoke-interface {p1, v3, v2}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v3, v2}, Lfec;->log(Ljava/lang/String;Ljava/lang/String;)V
 
     iget-object p1, p0, Lru/ok/android/externcalls/sdk/rate/internal/RttRateHintTrigger;->config:Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;
 
@@ -229,7 +229,7 @@
 
     const-string v4, "rtt_"
 
-    invoke-static {v2, v3, v4}, La78;->i(JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v4}, Lbg9;->i(JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 

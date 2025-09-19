@@ -3,62 +3,52 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcb;
+.implements Lga;
 
 
-# static fields
-.field public static final a:Lka;
+# instance fields
+.field public final synthetic a:Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;)V
+    .registers 2
 
-    new-instance v0, Lka;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lka;->a:Lka;
+    iput-object p1, p0, Lka;->a:Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final a(Lxg1;Z)V
+    .registers 4
 
-    const/4 v0, 0x1
+    sget-object v0, Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;->r0:[Lxi7;
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Lka;->a:Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;
 
-    return v0
+    iget-object p0, p0, Lone/me/calls/ui/ui/waitingroom/AdminWaitingRoomScreen;->a:Lcl7;
 
-    :cond_0
-    instance-of p0, p1, Lka;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    if-nez p0, :cond_1
+    move-result-object p0
 
-    const/4 p0, 0x0
+    check-cast p0, Loa;
 
-    return p0
+    iget-object p0, p0, Loa;->c:Lcl7;
 
-    :cond_1
-    return v0
-.end method
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-.method public final hashCode()I
-    .registers 1
+    move-result-object p0
 
-    const p0, 0x28f8c462
+    check-cast p0, Liz0;
 
-    return p0
-.end method
+    check-cast p0, Ld01;
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    invoke-virtual {p0, p1, p2}, Ld01;->c(Lxg1;Z)V
 
-    const-string p0, "AdminDisableMeCamera"
-
-    return-object p0
+    return-void
 .end method

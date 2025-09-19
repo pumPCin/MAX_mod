@@ -1,349 +1,134 @@
-.class public final Lg41;
-.super Landroidx/constraintlayout/widget/ConstraintLayout;
+.class public final synthetic Lg41;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lal1;
-.implements Lyk1;
+.implements Lbc6;
+
+
+# instance fields
+.field public final synthetic X:Lj41;
+
+.field public final synthetic Y:Lst1;
+
+.field public final synthetic Z:Lvv0;
+
+.field public final synthetic a:Ldp1;
+
+.field public final synthetic b:Lorg/json/JSONObject;
+
+.field public final synthetic c:J
+
+.field public final synthetic o:Ltae;
+
+
+# direct methods
+.method public synthetic constructor <init>(Ldp1;Lorg/json/JSONObject;JLtae;Lj41;Lst1;Lvv0;)V
+    .registers 9
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lg41;->a:Ldp1;
+
+    iput-object p2, p0, Lg41;->b:Lorg/json/JSONObject;
+
+    iput-wide p3, p0, Lg41;->c:J
+
+    iput-object p5, p0, Lg41;->o:Ltae;
+
+    iput-object p6, p0, Lg41;->X:Lj41;
+
+    iput-object p7, p0, Lg41;->Y:Lst1;
+
+    iput-object p8, p0, Lg41;->Z:Lvv0;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(Z)V
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    if-nez p1, :cond_0
+    check-cast p1, Lru/ok/android/externcalls/sdk/factory/StartCallParams$Builder;
 
-    goto :goto_1
+    iget-object v0, p0, Lg41;->a:Ldp1;
 
-    :cond_0
-    new-instance v0, Los;
+    iget-wide v0, v0, Ldp1;->c:J
 
-    const/4 v1, 0x7
+    invoke-static {v0, v1}, Lrya;->b(J)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-    invoke-direct {v0, v1, p0}, Los;-><init>(ILjava/lang/Object;)V
+    move-result-object v0
 
-    sget-object p0, Lf41;->o:Lf41;
+    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/StartCallParams$Builder;->setOpponentId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lru/ok/android/externcalls/sdk/factory/StartCallParams$Builder;
 
-    invoke-static {v0, p0}, Lead;->T(Lv9d;Lj96;)Lgn5;
+    move-result-object p1
 
-    move-result-object p0
+    iget-object v0, p0, Lg41;->b:Lorg/json/JSONObject;
 
-    new-instance v0, Lfn5;
+    invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
-    invoke-direct {v0, p0}, Lfn5;-><init>(Lgn5;)V
+    move-result-object v0
 
-    :goto_0
-    invoke-virtual {v0}, Lfn5;->hasNext()Z
+    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/StartCallParams$Builder;->setPayload(Ljava/lang/String;)Lru/ok/android/externcalls/sdk/factory/StartCallParams$Builder;
 
-    move-result p0
+    move-result-object p1
 
-    if-eqz p0, :cond_1
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Lfn5;->next()Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/StartCallParams$Builder;->setWatchTogetherEnabledForAll(Z)Lru/ok/android/externcalls/sdk/factory/StartCallParams$Builder;
 
-    move-result-object p0
+    move-result-object p1
 
-    check-cast p0, Lal1;
+    iget-wide v0, p0, Lg41;->c:J
 
-    invoke-interface {p0, p1}, Lal1;->a(Z)V
+    invoke-static {v0, v1}, Lrya;->b(J)Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
-    goto :goto_0
+    move-result-object v0
 
-    :cond_1
-    :goto_1
-    return-void
-.end method
+    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setMyId(Lru/ok/android/externcalls/sdk/id/ParticipantId;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
 
-.method public final b(Z)V
-    .registers 4
+    move-result-object p1
 
-    new-instance v0, Los;
+    iget-object v0, p0, Lg41;->o:Ltae;
 
-    const/4 v1, 0x7
+    iget-boolean v0, v0, Ltae;->b:Z
 
-    invoke-direct {v0, v1, p0}, Los;-><init>(ILjava/lang/Object;)V
+    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setStartWithVideo(Z)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
 
-    sget-object p0, Lf41;->X:Lf41;
+    move-result-object p1
 
-    invoke-static {v0, p0}, Lead;->T(Lv9d;Lj96;)Lgn5;
+    iget-object v0, p0, Lg41;->X:Lj41;
 
-    move-result-object p0
+    iget-object v0, v0, Lj41;->b:Lcl7;
 
-    new-instance v0, Lfn5;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    invoke-direct {v0, p0}, Lfn5;-><init>(Lgn5;)V
+    move-result-object v0
 
-    :goto_0
-    invoke-virtual {v0}, Lfn5;->hasNext()Z
+    check-cast v0, Lwu1;
 
-    move-result p0
+    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setEventListener(Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
 
-    if-eqz p0, :cond_0
+    move-result-object p1
 
-    invoke-virtual {v0}, Lfn5;->next()Ljava/lang/Object;
+    iget-object v0, p0, Lg41;->Y:Lst1;
 
-    move-result-object p0
+    invoke-virtual {p1, v0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setOnPrepared(Lbc6;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
 
-    check-cast p0, Lal1;
+    move-result-object p1
 
-    invoke-interface {p0, p1}, Lal1;->b(Z)V
+    iget-object p0, p0, Lg41;->Z:Lvv0;
 
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final c(Landroid/graphics/RectF;Z)V
-    .registers 5
-
-    new-instance v0, Los;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1, p0}, Los;-><init>(ILjava/lang/Object;)V
-
-    sget-object p0, Lf41;->o0:Lf41;
-
-    invoke-static {v0, p0}, Lead;->T(Lv9d;Lj96;)Lgn5;
+    invoke-virtual {p1, p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->setOnError(Lbc6;)Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;
 
     move-result-object p0
 
-    new-instance v0, Lfn5;
-
-    invoke-direct {v0, p0}, Lfn5;-><init>(Lgn5;)V
-
-    :goto_0
-    invoke-virtual {v0}, Lfn5;->hasNext()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {v0}, Lfn5;->next()Ljava/lang/Object;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams$Builder;->build()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lyk1;
+    check-cast p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;
 
-    invoke-interface {p0, p1, p2}, Lyk1;->c(Landroid/graphics/RectF;Z)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final d(Z)V
-    .registers 4
-
-    new-instance v0, Los;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1, p0}, Los;-><init>(ILjava/lang/Object;)V
-
-    sget-object p0, Lf41;->c:Lf41;
-
-    invoke-static {v0, p0}, Lead;->T(Lv9d;Lj96;)Lgn5;
-
-    move-result-object p0
-
-    new-instance v0, Lfn5;
-
-    invoke-direct {v0, p0}, Lfn5;-><init>(Lgn5;)V
-
-    :goto_0
-    invoke-virtual {v0}, Lfn5;->hasNext()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {v0}, Lfn5;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lyk1;
-
-    invoke-interface {p0, p1}, Lyk1;->d(Z)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final f(Lkp7;ZJ)V
-    .registers 7
-
-    new-instance v0, Los;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1, p0}, Los;-><init>(ILjava/lang/Object;)V
-
-    sget-object p0, Lf41;->Y:Lf41;
-
-    invoke-static {v0, p0}, Lead;->T(Lv9d;Lj96;)Lgn5;
-
-    move-result-object p0
-
-    new-instance v0, Lfn5;
-
-    invoke-direct {v0, p0}, Lfn5;-><init>(Lgn5;)V
-
-    :goto_0
-    invoke-virtual {v0}, Lfn5;->hasNext()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {v0}, Lfn5;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lyk1;
-
-    invoke-interface {p0, p1, p2, p3, p4}, Lyk1;->f(Lkp7;ZJ)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public final g(Lkp7;ZJ)V
-    .registers 7
-
-    new-instance v0, Los;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1, p0}, Los;-><init>(ILjava/lang/Object;)V
-
-    sget-object p0, Lf41;->Z:Lf41;
-
-    invoke-static {v0, p0}, Lead;->T(Lv9d;Lj96;)Lgn5;
-
-    move-result-object p0
-
-    new-instance v0, Lfn5;
-
-    invoke-direct {v0, p0}, Lfn5;-><init>(Lgn5;)V
-
-    :goto_0
-    invoke-virtual {v0}, Lfn5;->hasNext()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {v0}, Lfn5;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lal1;
-
-    invoke-interface {p0, p1, p2, p3, p4}, Lal1;->g(Lkp7;ZJ)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public getShouldScaleMainOpponent()Z
-    .registers 3
-
-    new-instance v0, Los;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1, p0}, Los;-><init>(ILjava/lang/Object;)V
-
-    sget-object p0, Lf41;->n0:Lf41;
-
-    invoke-static {v0, p0}, Lead;->T(Lv9d;Lj96;)Lgn5;
-
-    move-result-object p0
-
-    new-instance v0, Lfn5;
-
-    invoke-direct {v0, p0}, Lfn5;-><init>(Lgn5;)V
-
-    :cond_0
-    invoke-virtual {v0}, Lfn5;->hasNext()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {v0}, Lfn5;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lyk1;
-
-    invoke-interface {p0}, Lyk1;->getShouldScaleMainOpponent()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final n(Z)V
-    .registers 4
-
-    if-nez p1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    new-instance v0, Los;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1, p0}, Los;-><init>(ILjava/lang/Object;)V
-
-    sget-object p0, Lf41;->b:Lf41;
-
-    invoke-static {v0, p0}, Lead;->T(Lv9d;Lj96;)Lgn5;
-
-    move-result-object p0
-
-    new-instance v0, Lfn5;
-
-    invoke-direct {v0, p0}, Lfn5;-><init>(Lgn5;)V
-
-    :goto_0
-    invoke-virtual {v0}, Lfn5;->hasNext()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {v0}, Lfn5;->next()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lyk1;
-
-    invoke-interface {p0, p1}, Lyk1;->n(Z)V
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
-    return-void
+    return-object p0
 .end method

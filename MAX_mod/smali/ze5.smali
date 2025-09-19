@@ -1,284 +1,111 @@
 .class public final Lze5;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic Y:Lone/me/android/externalcallback/ExternalCallbackWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/android/externalcallback/ExternalCallbackWidget;)V
     .registers 3
 
-    iput p1, p0, Lze5;->a:I
+    iput-object p2, p0, Lze5;->Y:Lone/me/android/externalcallback/ExternalCallbackWidget;
 
-    iput-object p2, p0, Lze5;->b:Ljava/lang/Object;
+    const/4 p2, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .registers 9
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lze5;->a:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/4 v1, 0x1
+    invoke-virtual {p0, p1, p2}, Lze5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    const/4 v2, 0x0
+    move-result-object p0
 
-    iget-object p0, p0, Lze5;->b:Ljava/lang/Object;
+    check-cast p0, Lze5;
 
-    packed-switch v0, :pswitch_data_0
+    sget-object p1, Lylf;->a:Lylf;
 
-    check-cast p1, Landroid/widget/Checkable;
+    invoke-virtual {p0, p1}, Lze5;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {p1}, Landroid/widget/Checkable;->isChecked()Z
+    return-object p1
+.end method
 
-    move-result p1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    if-eqz p1, :cond_0
+    new-instance v0, Lze5;
 
-    check-cast p0, Landroid/view/GestureDetector;
+    iget-object p0, p0, Lze5;->Y:Lone/me/android/externalcallback/ExternalCallbackWidget;
 
-    invoke-virtual {p0, p2}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-direct {v0, p2, p0}, Lze5;-><init>(Lkotlin/coroutines/Continuation;Lone/me/android/externalcallback/ExternalCallbackWidget;)V
 
-    move-result v2
+    iput-object p1, v0, Lze5;->X:Ljava/lang/Object;
 
-    :cond_0
-    return v2
+    return-object v0
+.end method
 
-    :pswitch_0
-    check-cast p0, Lxp7;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object p1, p0, Lxp7;->x0:Lvp7;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lxp7;->B0:Landroid/os/Handler;
+    iget-object p1, p0, Lze5;->X:Ljava/lang/Object;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+    check-cast p1, Lys9;
 
-    move-result v3
+    instance-of v0, p1, Lva4;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+    iget-object p0, p0, Lze5;->Y:Lone/me/android/externalcallback/ExternalCallbackWidget;
 
-    move-result v4
+    if-eqz v0, :cond_0
 
-    float-to-int v4, v4
+    sget-object v0, Lr38;->c:Lr38;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+    check-cast p1, Lva4;
 
-    move-result p2
-
-    float-to-int p2, p2
-
-    if-nez v3, :cond_1
-
-    iget-object v5, p0, Lxp7;->F0:Lcn;
-
-    if-eqz v5, :cond_1
-
-    invoke-virtual {v5}, Landroid/widget/PopupWindow;->isShowing()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1
-
-    if-ltz v4, :cond_1
-
-    iget-object v5, p0, Lxp7;->F0:Lcn;
-
-    invoke-virtual {v5}, Landroid/widget/PopupWindow;->getWidth()I
-
-    move-result v5
-
-    if-ge v4, v5, :cond_1
-
-    if-ltz p2, :cond_1
-
-    iget-object p0, p0, Lxp7;->F0:Lcn;
-
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getHeight()I
-
-    move-result p0
-
-    if-ge p2, p0, :cond_1
-
-    const-wide/16 v3, 0xfa
-
-    invoke-virtual {v0, p1, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, p1}, Lx2;->H0(Lva4;)V
 
     goto :goto_0
 
+    :cond_0
+    instance-of v0, p1, Lue5;
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Lqoa;
+
+    invoke-direct {v0, p0}, Lqoa;-><init>(Lone/me/sdk/arch/Widget;)V
+
+    check-cast p1, Lue5;
+
+    iget-object p1, p1, Lue5;->b:Lp2f;
+
+    invoke-virtual {v0, p1}, Lqoa;->g(Lu2f;)V
+
+    invoke-virtual {v0}, Lqoa;->i()Lpoa;
+
     :cond_1
-    if-ne v3, v1, :cond_2
-
-    invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
-
-    :cond_2
     :goto_0
-    return v2
+    const/4 p1, 0x0
 
-    :pswitch_1
-    check-cast p0, Lcom/futuremind/recyclerviewfastscroll/FastScroller;
+    invoke-virtual {p0, p1}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->E0(Z)V
 
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->requestDisallowInterceptTouchEvent(Z)V
+    sget-object p0, Lylf;->a:Lylf;
 
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result p1
-
-    if-eqz p1, :cond_5
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result p1
-
-    const/4 v0, 0x2
-
-    if-ne p1, v0, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
-
-    move-result p1
-
-    if-ne p1, v1, :cond_4
-
-    iput-boolean v2, p0, Lcom/futuremind/recyclerviewfastscroll/FastScroller;->u0:Z
-
-    goto :goto_4
-
-    :cond_4
-    move v1, v2
-
-    goto :goto_4
-
-    :cond_5
-    :goto_1
-    sget p1, Lcom/futuremind/recyclerviewfastscroll/FastScroller;->w0:I
-
-    iput-boolean v1, p0, Lcom/futuremind/recyclerviewfastscroll/FastScroller;->u0:Z
-
-    invoke-virtual {p0}, Lcom/futuremind/recyclerviewfastscroll/FastScroller;->c()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_6
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
-
-    move-result p1
-
-    iget-object p2, p0, Lcom/futuremind/recyclerviewfastscroll/FastScroller;->o:Landroid/view/View;
-
-    invoke-virtual {p2}, Landroid/view/View;->getY()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    filled-new-array {v2, v0}, [I
-
-    move-result-object v0
-
-    invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/view/View;
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->getLocationInWindow([I)V
-
-    aget p2, v0, v1
-
-    int-to-float p2, p2
-
-    sub-float/2addr p1, p2
-
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
-
-    move-result p2
-
-    iget-object v0, p0, Lcom/futuremind/recyclerviewfastscroll/FastScroller;->o:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
-
-    move-result v0
-
-    :goto_2
-    sub-int/2addr p2, v0
-
-    int-to-float p2, p2
-
-    div-float/2addr p1, p2
-
-    goto :goto_3
-
-    :cond_6
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
-
-    move-result p1
-
-    iget-object p2, p0, Lcom/futuremind/recyclerviewfastscroll/FastScroller;->o:Landroid/view/View;
-
-    invoke-virtual {p2}, Landroid/view/View;->getX()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    filled-new-array {v0, v2}, [I
-
-    move-result-object v0
-
-    invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object p2
-
-    check-cast p2, Landroid/view/View;
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->getLocationInWindow([I)V
-
-    aget p2, v0, v2
-
-    int-to-float p2, p2
-
-    sub-float/2addr p1, p2
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result p2
-
-    iget-object v0, p0, Lcom/futuremind/recyclerviewfastscroll/FastScroller;->o:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
-
-    move-result v0
-
-    goto :goto_2
-
-    :goto_3
-    invoke-virtual {p0, p1}, Lcom/futuremind/recyclerviewfastscroll/FastScroller;->setScrollerPosition(F)V
-
-    invoke-static {p0, p1}, Lcom/futuremind/recyclerviewfastscroll/FastScroller;->a(Lcom/futuremind/recyclerviewfastscroll/FastScroller;F)V
-
-    :goto_4
-    return v1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

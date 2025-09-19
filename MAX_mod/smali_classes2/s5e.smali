@@ -1,58 +1,81 @@
 .class public final Ls5e;
-.super Ljava/lang/Object;
+.super Lzoc;
 .source "SourceFile"
 
 # interfaces
-.implements Luo1;
+.implements Ly77;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
+.field public final E0:I
+
+.field public final F0:Ls77;
+
+.field public final G0:Lej3;
+
+.field public final synthetic H0:Lt5e;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public constructor <init>(Lt5e;ILs77;Lej3;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ls5e;->H0:Lt5e;
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    invoke-direct {p0, p4}, Lzoc;-><init>(Landroid/view/View;)V
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+    iput p2, p0, Ls5e;->E0:I
 
-    iput-object v0, p0, Ls5e;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iput-object p3, p0, Ls5e;->F0:Ls77;
+
+    iput-object p4, p0, Ls5e;->G0:Lej3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onMediaDataReceived(J)V
-    .registers 4
+.method public final A(Ljava/lang/String;)V
+    .registers 2
 
-    iget-object p0, p0, Ls5e;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    iget-object p0, p0, Ls5e;->G0:Lej3;
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->length()I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/EditText;->setSelection(I)V
+
+    return-void
+.end method
+
+.method public final y()Ljava/lang/String;
+    .registers 1
+
+    iget-object p0, p0, Ls5e;->G0:Lej3;
+
+    invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p0
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    if-eqz p0, :cond_0
 
-    move-result v0
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Luo1;
-
-    invoke-interface {v0, p1, p2}, Luo1;->onMediaDataReceived(J)V
+    move-result-object p0
 
     goto :goto_0
 
     :cond_0
-    return-void
+    const/4 p0, 0x0
+
+    :goto_0
+    if-nez p0, :cond_1
+
+    const-string p0, ""
+
+    :cond_1
+    return-object p0
 .end method

@@ -2,128 +2,119 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lgd8;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # instance fields
-.field public final a:Lmc8;
+.field public final a:I
 
-.field public final b:Lp5b;
-
-.field public final c:Llg8;
-
-.field public final d:Ljava/util/List;
-
-.field public final e:Ljava/lang/CharSequence;
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:Landroid/os/Bundle;
+.field public final b:Log8;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lba8;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x1
 
-    iput-object v0, p0, Lgd8;->a:Lmc8;
+    invoke-direct {v0, v1}, Lba8;-><init>(I)V
 
-    iput-object v0, p0, Lgd8;->b:Lp5b;
-
-    iput-object v0, p0, Lgd8;->c:Llg8;
-
-    sget-object v1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
-
-    iput-object v1, p0, Lgd8;->d:Ljava/util/List;
-
-    iput-object v0, p0, Lgd8;->e:Ljava/lang/CharSequence;
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lgd8;->f:I
-
-    iput v0, p0, Lgd8;->g:I
-
-    sget-object v0, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
-
-    iput-object v0, p0, Lgd8;->h:Landroid/os/Bundle;
+    sput-object v0, Lgd8;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public constructor <init>(Lgd8;)V
+.method public constructor <init>(Landroid/os/Parcel;)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v0, p1, Lgd8;->a:Lmc8;
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    iput-object v0, p0, Lgd8;->a:Lmc8;
+    move-result v0
 
-    iget-object v0, p1, Lgd8;->b:Lp5b;
+    iput v0, p0, Lgd8;->a:I
 
-    iput-object v0, p0, Lgd8;->b:Lp5b;
+    sget-object v0, Log8;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    iget-object v0, p1, Lgd8;->c:Llg8;
+    invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lgd8;->c:Llg8;
+    move-result-object p1
 
-    iget-object v0, p1, Lgd8;->d:Ljava/util/List;
+    check-cast p1, Log8;
 
-    iput-object v0, p0, Lgd8;->d:Ljava/util/List;
-
-    iget-object v0, p1, Lgd8;->e:Ljava/lang/CharSequence;
-
-    iput-object v0, p0, Lgd8;->e:Ljava/lang/CharSequence;
-
-    iget v0, p1, Lgd8;->f:I
-
-    iput v0, p0, Lgd8;->f:I
-
-    iget v0, p1, Lgd8;->g:I
-
-    iput v0, p0, Lgd8;->g:I
-
-    iget-object p1, p1, Lgd8;->h:Landroid/os/Bundle;
-
-    iput-object p1, p0, Lgd8;->h:Landroid/os/Bundle;
+    iput-object p1, p0, Lgd8;->b:Log8;
 
     return-void
 .end method
 
-.method public constructor <init>(Lmc8;Lp5b;Llg8;Ljava/util/List;Ljava/lang/CharSequence;IILandroid/os/Bundle;)V
-    .registers 9
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final describeContents()I
+    .registers 1
 
-    iput-object p1, p0, Lgd8;->a:Lmc8;
+    const/4 p0, 0x0
 
-    iput-object p2, p0, Lgd8;->b:Lp5b;
+    return p0
+.end method
 
-    iput-object p3, p0, Lgd8;->c:Llg8;
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iput-object p4, p0, Lgd8;->d:Ljava/util/List;
+    const-string v1, "MediaItem{mFlags="
 
-    iput-object p5, p0, Lgd8;->e:Ljava/lang/CharSequence;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iput p6, p0, Lgd8;->f:I
+    iget v1, p0, Lgd8;->a:I
 
-    iput p7, p0, Lgd8;->g:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    if-eqz p8, :cond_0
+    const-string v1, ", mDescription="
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    sget-object p8, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
+    iget-object p0, p0, Lgd8;->b:Log8;
 
-    :goto_0
-    iput-object p8, p0, Lgd8;->h:Landroid/os/Bundle;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 4
+
+    iget v0, p0, Lgd8;->a:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object p0, p0, Lgd8;->b:Log8;
+
+    invoke-virtual {p0, p1, p2}, Log8;->writeToParcel(Landroid/os/Parcel;I)V
 
     return-void
 .end method

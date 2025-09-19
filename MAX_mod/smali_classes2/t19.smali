@@ -3,96 +3,68 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ly19;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final a:Ljava/lang/CharSequence;
+.field public final X:Ljava/lang/String;
+
+.field public final Y:Ljava/lang/String;
+
+.field public final Z:I
+
+.field public final a:I
+
+.field public final b:J
+
+.field public final c:Lyx8;
+
+.field public final o:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;)V
-    .registers 2
+.method public constructor <init>(IJLyx8;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+    .registers 9
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lt19;->a:Ljava/lang/CharSequence;
+    iput p1, p0, Lt19;->a:I
+
+    iput-wide p2, p0, Lt19;->b:J
+
+    iput-object p4, p0, Lt19;->c:Lyx8;
+
+    iput-object p5, p0, Lt19;->o:Ljava/lang/String;
+
+    iput-object p6, p0, Lt19;->X:Ljava/lang/String;
+
+    iput-object p7, p0, Lt19;->Y:Ljava/lang/String;
+
+    iput p8, p0, Lt19;->Z:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lt19;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lt19;
-
-    iget-object p0, p0, Lt19;->a:Ljava/lang/CharSequence;
-
-    iget-object p1, p1, Lt19;->a:Ljava/lang/CharSequence;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lt19;->a:Ljava/lang/CharSequence;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public final toString()Ljava/lang/String;
     .registers 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "FinishEditMessage(text="
+    const-string v1, "{type="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lt19;->a:Ljava/lang/CharSequence;
+    iget p0, p0, Lt19;->a:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {p0}, Lyv7;->t(I)Ljava/lang/String;
 
-    const-string p0, ")"
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

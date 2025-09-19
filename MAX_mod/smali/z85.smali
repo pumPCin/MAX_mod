@@ -1,91 +1,55 @@
 .class public final Lz85;
-.super Ljava/lang/Object;
+.super La95;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:I
+.field public final c:Ljava/lang/Runnable;
 
-.field public b:I
 
-.field public c:I
+# direct methods
+.method public constructor <init>(Ljava/lang/Runnable;J)V
+    .registers 4
+
+    invoke-direct {p0, p2, p3}, La95;-><init>(J)V
+
+    iput-object p1, p0, Lz85;->c:Ljava/lang/Runnable;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final run()V
+    .registers 1
 
-    const/4 v0, 0x1
+    iget-object p0, p0, Lz85;->c:Ljava/lang/Runnable;
 
-    if-ne p0, p1, :cond_0
+    invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_4
-
-    const-class v2, Lz85;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lz85;
-
-    iget v2, p0, Lz85;->a:I
-
-    iget v3, p1, Lz85;->a:I
-
-    if-eq v2, v3, :cond_2
-
-    return v1
-
-    :cond_2
-    iget v2, p0, Lz85;->b:I
-
-    iget v3, p1, Lz85;->b:I
-
-    if-eq v2, v3, :cond_3
-
-    return v1
-
-    :cond_3
-    iget p0, p0, Lz85;->c:I
-
-    iget p1, p1, Lz85;->c:I
-
-    if-ne p0, p1, :cond_4
-
-    return v0
-
-    :cond_4
-    :goto_0
-    return v1
+    return-void
 .end method
 
-.method public final hashCode()I
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    iget v0, p0, Lz85;->a:I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    mul-int/lit8 v0, v0, 0x1f
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget v1, p0, Lz85;->b:I
+    invoke-super {p0}, La95;->toString()Ljava/lang/String;
 
-    add-int/2addr v0, v1
+    move-result-object v1
 
-    mul-int/lit8 v0, v0, 0x1f
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget p0, p0, Lz85;->c:I
+    iget-object p0, p0, Lz85;->c:Ljava/lang/Runnable;
 
-    add-int/2addr v0, p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    return v0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

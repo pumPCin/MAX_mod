@@ -1,25 +1,49 @@
-.class public final synthetic Ln04;
-.super Ljava/lang/Object;
+.class public final Ln04;
+.super Landroid/view/ViewOutlineProvider;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/function/BinaryOperator;
+
+# instance fields
+.field public a:F
+
+
+# direct methods
+.method public constructor <init>(F)V
+    .registers 2
+
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+
+    iput p1, p0, Ln04;->a:F
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+    .registers 9
 
-    check-cast p1, Llb7;
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    check-cast p2, Llb7;
+    move-result v3
 
-    if-eqz p1, :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
-    const/4 p0, 0x0
+    move-result v4
 
-    invoke-interface {p1, p0}, Llb7;->cancel(Ljava/util/concurrent/CancellationException;)V
+    iget v5, p0, Ln04;->a:F
 
-    :cond_0
-    return-object p2
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    move-object v0, p2
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
+
+    const/4 p0, 0x1
+
+    invoke-virtual {p1, p0}, Landroid/view/View;->setClipToOutline(Z)V
+
+    return-void
 .end method

@@ -29,17 +29,17 @@
         "logTimings",
         "Ljava/lang/Runnable;",
         "onNoiseSuppressorDisabledDueToStutter",
-        "Lncf;",
+        "Lylf;",
         "setNoiseSuppressorParams",
         "(ZZZZLorg/webrtc/PeerConnectionFactory$EnhancerKind;Ljava/lang/String;IIIIIZLjava/lang/Runnable;)V",
         "Lkotlin/Function1;",
-        "Lft9;",
-        "Lgt9;",
+        "Lfx9;",
+        "Lgx9;",
         "paramFun",
         "setNoiseSuppressionParams",
-        "(Lj96;)V",
+        "(Lbc6;)V",
         "getNsActiveState",
-        "()Lgt9;",
+        "()Lgx9;",
         "nsActiveState",
         "calls-sdk_release"
     }
@@ -54,14 +54,14 @@
 
 
 # virtual methods
-.method public abstract getNsActiveState()Lgt9;
+.method public abstract getNsActiveState()Lgx9;
 .end method
 
-.method public abstract setNoiseSuppressionParams(Lj96;)V
+.method public abstract setNoiseSuppressionParams(Lbc6;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lj96;",
+            "Lbc6;",
             ")V"
         }
     .end annotation

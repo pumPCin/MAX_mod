@@ -1,217 +1,51 @@
 .class public final Lng7;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
 
-.field public static final b:Ltk9;
+.field public final synthetic Y:Lpg7;
 
-.field public static c:I
+.field public Z:I
 
-.field public static d:Landroid/content/SharedPreferences;
-
-.field public static final e:Ln4e;
-
-.field public static final f:Ln4e;
+.field public o:Lpg7;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Lpg7;Ljx3;)V
+    .registers 3
 
-    const/16 v0, 0x64
+    iput-object p1, p0, Lng7;->Y:Lpg7;
 
-    int-to-float v0, v0
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Lg53;->C(F)I
-
-    move-result v0
-
-    sput v0, Lng7;->a:I
-
-    new-instance v0, Ltk9;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1}, Ltk9;-><init>(I)V
-
-    sput-object v0, Lng7;->b:Ltk9;
-
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-static {v0}, Lo4e;->a(Ljava/lang/Object;)Ln4e;
-
-    move-result-object v0
-
-    sput-object v0, Lng7;->e:Ln4e;
-
-    sput-object v0, Lng7;->f:Ln4e;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static a(Landroid/content/Context;)I
-    .registers 7
 
-    sget-object v0, Lng7;->b:Ltk9;
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v1, v0, Ltk9;->e:I
+    iput-object p1, p0, Lng7;->X:Ljava/lang/Object;
 
-    const-string v2, "pref_keyboard_height_landscape"
+    iget p1, p0, Lng7;->Z:I
 
-    const-string v3, "pref_keyboard_height_portrait"
+    const/high16 v0, -0x80000000
 
-    if-nez v1, :cond_2
+    or-int/2addr p1, v0
 
-    sget-object v1, Lng7;->d:Landroid/content/SharedPreferences;
+    iput p1, p0, Lng7;->Z:I
 
-    if-nez v1, :cond_0
+    iget-object p1, p0, Lng7;->Y:Lpg7;
 
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    const/4 v0, 0x0
 
-    move-result-object v1
-
-    const-string v4, "keyboard_prefs"
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v1, v4, v5}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    :cond_0
-    sget-object v4, Lng7;->d:Landroid/content/SharedPreferences;
-
-    if-nez v4, :cond_1
-
-    sput-object v1, Lng7;->d:Landroid/content/SharedPreferences;
-
-    :cond_1
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v4
-
-    iget v4, v4, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v5
-
-    iget v5, v5, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->max(II)I
-
-    move-result v4
-
-    div-int/lit8 v4, v4, 0x3
-
-    invoke-interface {v1, v3, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v5
-
-    invoke-virtual {v0, v5, v3}, Ltk9;->d(ILjava/lang/Object;)V
-
-    invoke-interface {v1, v3, v4}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1, v2}, Ltk9;->d(ILjava/lang/Object;)V
-
-    :cond_2
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/content/res/Configuration;->orientation:I
-
-    const/4 v4, 0x1
-
-    if-ne v4, v1, :cond_3
-
-    move-object v2, v3
-
-    :cond_3
-    invoke-virtual {v0, v2}, Ltk9;->b(Ljava/lang/Object;)I
-
-    move-result v1
-
-    if-ltz v1, :cond_4
-
-    iget-object p0, v0, Ltk9;->c:[I
-
-    aget p0, p0, v1
-
-    return p0
-
-    :cond_4
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p1, v0, p0}, Lpg7;->e(Lhhg;Ljx3;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p0
-
-    iget p0, p0, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
-
-    move-result p0
-
-    div-int/lit8 p0, p0, 0x3
-
-    return p0
-.end method
-
-.method public static b(I)Z
-    .registers 2
-
-    sget v0, Lng7;->a:I
-
-    if-le p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
+    return-object p0
 .end method

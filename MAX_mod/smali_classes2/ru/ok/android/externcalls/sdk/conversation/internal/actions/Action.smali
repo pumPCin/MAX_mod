@@ -27,9 +27,9 @@
         "R",
         "",
         "params",
-        "Lcud;",
+        "Lk2e;",
         "execute",
-        "(Lru/ok/android/externcalls/sdk/conversation/internal/actions/ActionParams;)Lcud;",
+        "(Lru/ok/android/externcalls/sdk/conversation/internal/actions/ActionParams;)Lk2e;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -43,11 +43,11 @@
 
 
 # virtual methods
-.method public abstract execute(Lru/ok/android/externcalls/sdk/conversation/internal/actions/ActionParams;)Lcud;
+.method public abstract execute(Lru/ok/android/externcalls/sdk/conversation/internal/actions/ActionParams;)Lk2e;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TP;)",
-            "Lcud;"
+            "Lk2e;"
         }
     .end annotation
 .end method

@@ -1,123 +1,111 @@
 .class public final Le79;
-.super Lxie;
+.super Lscout/Component;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
 
-
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Ld89;
-
-.field public final synthetic Z:J
+# static fields
+.field public static final a:Le79;
 
 
 # direct methods
-.method public constructor <init>(Ld89;JLkotlin/coroutines/Continuation;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Le79;->Y:Ld89;
+    new-instance v0, Le79;
 
-    iput-wide p2, p0, Le79;->Z:J
+    sget-object v1, Ld89;->a:Ln6d;
 
-    const/4 p1, 0x2
+    invoke-direct {v0, v1}, Lscout/Component;-><init>(Ln6d;)V
 
-    invoke-direct {p0, p1, p4}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Le79;->a:Le79;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final b()Lh47;
+    .registers 1
 
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Le79;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
     move-result-object p0
 
-    check-cast p0, Le79;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Le79;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lz4;->e()Ljava/lang/Object;
 
     move-result-object p0
+
+    check-cast p0, Lh47;
 
     return-object p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 6
+.method public final c()Lj3d;
+    .registers 5
 
-    new-instance p1, Le79;
+    new-instance v0, Lj3d;
 
-    iget-object v0, p0, Le79;->Y:Ld89;
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
-    iget-wide v1, p0, Le79;->Z:J
+    move-result-object v1
 
-    invoke-direct {p1, v0, v1, v2, p2}, Le79;-><init>(Ld89;JLkotlin/coroutines/Continuation;)V
+    const-class v2, Lq6d;
 
-    return-object p1
-.end method
+    invoke-virtual {v1, v2}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    move-result-object v1
 
-    iget v0, p0, Le79;->X:I
+    check-cast v1, Lq6d;
 
-    const/4 v1, 0x1
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
-    if-eqz v0, :cond_1
+    move-result-object v2
 
-    if-ne v0, v1, :cond_0
+    const-class v3, Lxwe;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    return-object p1
+    move-result-object v2
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    check-cast v2, Lxwe;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    check-cast v2, Laga;
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v2}, Laga;->b()Ls04;
 
-    throw p0
+    move-result-object v2
 
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Le79;->Y:Ld89;
-
-    iget-object p1, p1, Ld89;->B0:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lga9;
-
-    iput v1, p0, Le79;->X:I
-
-    iget-wide v0, p0, Le79;->Z:J
-
-    invoke-virtual {p1, v0, v1, p0}, Lga9;->a(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
+    const-class v3, Lyza;
 
-    if-ne p0, p1, :cond_2
+    invoke-virtual {p0, v3}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    return-object p1
+    move-result-object p0
 
-    :cond_2
+    check-cast p0, Lyza;
+
+    invoke-direct {v0, v1, v2, p0}, Lj3d;-><init>(Lq6d;Ls04;Lyza;)V
+
+    return-object v0
+.end method
+
+.method public final getDispatchers()Lxwe;
+    .registers 2
+
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object p0
+
+    const-class v0, Lxwe;
+
+    invoke-virtual {p0, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lxwe;
+
     return-object p0
 .end method

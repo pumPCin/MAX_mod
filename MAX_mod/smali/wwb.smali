@@ -1,42 +1,73 @@
-.class public abstract Lwwb;
+.class public final synthetic Lwwb;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static file_fill_24:I = 0x7f08035d
+# instance fields
+.field public final synthetic a:I
 
-.field public static geolocation_fill_24:I = 0x7f080465
+.field public final synthetic b:Lgxb;
 
-.field public static ic_arrow_down_24:I = 0x7f08049e
 
-.field public static ic_arrow_up_24:I = 0x7f0804a6
+# direct methods
+.method public synthetic constructor <init>(Lgxb;I)V
+    .registers 3
 
-.field public static ic_camera_add_36:I = 0x7f0804e6
+    iput p2, p0, Lwwb;->a:I
 
-.field public static ic_clear_24:I = 0x7f080509
+    iput-object p1, p0, Lwwb;->b:Lgxb;
 
-.field public static ic_contact_28:I = 0x7f08051f
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static ic_cross_12:I = 0x7f08052a
+    return-void
+.end method
 
-.field public static ic_document_28:I = 0x7f08053d
 
-.field public static ic_file_mode_24:I = 0x7f08055c
+# virtual methods
+.method public final run()V
+    .registers 2
 
-.field public static ic_gallery_28:I = 0x7f080571
+    iget v0, p0, Lwwb;->a:I
 
-.field public static ic_location_28:I = 0x7f0805d2
+    packed-switch v0, :pswitch_data_0
 
-.field public static ic_media_mode_24:I = 0x7f0805e7
+    iget-object p0, p0, Lwwb;->b:Lgxb;
 
-.field public static ic_snack_file_24:I = 0x7f080713
+    iget-boolean v0, p0, Lgxb;->Z0:Z
 
-.field public static ic_snack_media_24:I = 0x7f080714
+    if-nez v0, :cond_0
 
-.field public static ic_videocam_20:I = 0x7f080758
+    iget-object v0, p0, Lgxb;->C0:Lck8;
 
-.field public static media_fill_24:I = 0x7f080803
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.field public static profile_fill_24:I = 0x7f080892
+    invoke-interface {v0, p0}, Lgid;->e(Liid;)V
 
-.field public static wallet_fill_24:I = 0x7f0808f6
+    :cond_0
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lwwb;->b:Lgxb;
+
+    invoke-virtual {p0}, Lgxb;->x()V
+
+    return-void
+
+    :pswitch_1
+    iget-object p0, p0, Lwwb;->b:Lgxb;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lgxb;->T0:Z
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method

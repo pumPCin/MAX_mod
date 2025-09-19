@@ -1,56 +1,110 @@
-.class public abstract Lkb4;
+.class public final synthetic Lkb4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpt7;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lfd;
+
+.field public final synthetic c:Ljava/lang/String;
+
 
 # direct methods
-.method public static a(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;Z)Lk50;
-    .registers 6
+.method public synthetic constructor <init>(Lfd;Ljava/lang/String;I)V
+    .registers 4
 
-    invoke-static {p0, p1}, Lqv3;->a(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)I
+    iput p3, p0, Lkb4;->a:I
 
-    move-result p0
+    iput-object p1, p0, Lkb4;->b:Lfd;
 
-    if-nez p0, :cond_0
+    iput-object p2, p0, Lkb4;->c:Ljava/lang/String;
 
-    sget-object p0, Lk50;->d:Lk50;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-object p0
+    return-void
+.end method
 
-    :cond_0
-    new-instance p1, Lj50;
+.method public synthetic constructor <init>(Lfd;Ljava/lang/String;JJI)V
+    .registers 8
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    iput p7, p0, Lkb4;->a:I
 
-    sget v0, Laif;->a:I
+    iput-object p1, p0, Lkb4;->b:Lfd;
 
-    const/16 v1, 0x20
+    iput-object p2, p0, Lkb4;->c:Ljava/lang/String;
 
-    const/4 v2, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-le v0, v1, :cond_1
+    return-void
+.end method
 
-    const/4 v0, 0x2
 
-    if-ne p0, v0, :cond_1
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)V
+    .registers 3
 
-    move p0, v2
+    iget v0, p0, Lkb4;->a:I
 
-    goto :goto_0
+    packed-switch v0, :pswitch_data_0
 
-    :cond_1
-    const/4 p0, 0x0
+    iget-object v0, p0, Lkb4;->c:Ljava/lang/String;
 
-    :goto_0
-    iput-boolean v2, p1, Lj50;->a:Z
+    check-cast p1, Lgd;
 
-    iput-boolean p0, p1, Lj50;->b:Z
+    iget-object p0, p0, Lkb4;->b:Lfd;
 
-    iput-boolean p2, p1, Lj50;->c:Z
+    invoke-interface {p1, p0, v0}, Lgd;->y(Lfd;Ljava/lang/String;)V
 
-    invoke-virtual {p1}, Lj50;->a()Lk50;
+    return-void
 
-    move-result-object p0
+    :pswitch_0
+    check-cast p1, Lgd;
 
-    return-object p0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p0, Lkb4;->b:Lfd;
+
+    iget-object p0, p0, Lkb4;->c:Ljava/lang/String;
+
+    invoke-interface {p1, v0, p0}, Lgd;->G0(Lfd;Ljava/lang/String;)V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lkb4;->c:Ljava/lang/String;
+
+    check-cast p1, Lgd;
+
+    iget-object p0, p0, Lkb4;->b:Lfd;
+
+    invoke-interface {p1, p0, v0}, Lgd;->l0(Lfd;Ljava/lang/String;)V
+
+    return-void
+
+    :pswitch_2
+    check-cast p1, Lgd;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p0, Lkb4;->b:Lfd;
+
+    iget-object p0, p0, Lkb4;->c:Ljava/lang/String;
+
+    invoke-interface {p1, v0, p0}, Lgd;->E(Lfd;Ljava/lang/String;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

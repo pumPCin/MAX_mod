@@ -1,59 +1,48 @@
 .class public final Lsab;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Landroid/hardware/display/DisplayManager$DisplayListener;
+.super Ljx3;
 
 
 # instance fields
-.field public final synthetic a:Lwab;
+.field public X:I
+
+.field public final synthetic Y:Leia;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lwab;)V
-    .registers 2
+.method public constructor <init>(Leia;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lsab;->Y:Leia;
 
-    iput-object p1, p0, Lsab;->a:Lwab;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDisplayAdded(I)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public final onDisplayChanged(I)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-object p0, p0, Lsab;->a:Lwab;
+    iput-object p1, p0, Lsab;->o:Ljava/lang/Object;
 
-    invoke-virtual {p0}, Landroid/view/View;->getDisplay()Landroid/view/Display;
+    iget p1, p0, Lsab;->X:I
 
-    move-result-object v0
+    const/high16 v0, -0x80000000
 
-    if-eqz v0, :cond_0
+    or-int/2addr p1, v0
 
-    invoke-virtual {v0}, Landroid/view/Display;->getDisplayId()I
+    iput p1, p0, Lsab;->X:I
 
-    move-result v0
+    iget-object p1, p0, Lsab;->Y:Leia;
 
-    if-ne v0, p1, :cond_0
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Lwab;->b()V
+    invoke-virtual {p1, v0, p0}, Leia;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    :cond_0
-    return-void
-.end method
+    move-result-object p0
 
-.method public final onDisplayRemoved(I)V
-    .registers 2
-
-    return-void
+    return-object p0
 .end method

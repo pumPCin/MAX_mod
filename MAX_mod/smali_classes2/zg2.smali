@@ -1,59 +1,102 @@
-.class public abstract synthetic Lzg2;
+.class public final Lzg2;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lis6;
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+
+# instance fields
+.field public final X:Lxd3;
+
+.field public final Y:Lq95;
+
+.field public Z:Lpj2;
+
+.field public final a:Ljava/lang/String;
+
+.field public final b:Lms6;
+
+.field public final c:Lv5d;
+
+.field public final o:Lv5d;
+
+.field public final r0:Lbu;
+
+.field public final s0:Lbu;
+
+.field public final t0:Lbu;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lms6;Lbx1;Lv5d;Lq95;Ljava/lang/String;)V
+    .registers 7
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lxd3;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lzg2;->X:Lxd3;
+
+    new-instance v0, Lbu;
+
+    invoke-direct {v0}, Lbu;-><init>()V
+
+    iput-object v0, p0, Lzg2;->r0:Lbu;
+
+    new-instance v0, Lbu;
+
+    invoke-direct {v0}, Lbu;-><init>()V
+
+    iput-object v0, p0, Lzg2;->s0:Lbu;
+
+    new-instance v0, Lbu;
+
+    invoke-direct {v0}, Lbu;-><init>()V
+
+    iput-object v0, p0, Lzg2;->t0:Lbu;
+
+    iput-object p1, p0, Lzg2;->b:Lms6;
+
+    iput-object p0, p1, Lms6;->i:Lis6;
+
+    iget-object p1, p2, Lbx1;->b:Ljava/lang/Object;
+
+    check-cast p1, Ltxe;
+
+    check-cast p1, Luxe;
+
+    invoke-virtual {p1}, Luxe;->a()Lv5d;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lzg2;->c:Lv5d;
+
+    iput-object p3, p0, Lzg2;->o:Lv5d;
+
+    iput-object p4, p0, Lzg2;->Y:Lq95;
+
+    iput-object p5, p0, Lzg2;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final k()V
     .registers 3
 
-    invoke-static {}, Lti2;->values()[Lti2;
+    new-instance v0, Lb;
 
-    move-result-object v0
+    const/16 v1, 0x9
 
-    array-length v0, v0
+    invoke-direct {v0, v1, p0}, Lb;-><init>(ILjava/lang/Object;)V
 
-    new-array v0, v0, [I
+    iget-object p0, p0, Lzg2;->o:Lv5d;
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    :try_start_0
-    aput v1, v0, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v2, 0x2
-
-    :try_start_1
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    const/4 v1, 0x3
-
-    :try_start_2
-    aput v1, v0, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    const/4 v2, 0x4
-
-    :try_start_3
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    sput-object v0, Lzg2;->$EnumSwitchMapping$0:[I
+    invoke-virtual {p0, v0}, Lv5d;->b(Ljava/lang/Runnable;)Loq4;
 
     return-void
 .end method

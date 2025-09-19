@@ -2,97 +2,134 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lt0a;
 
+# instance fields
+.field public final a:I
 
-# static fields
-.field public static final a:Ly80;
-
-.field public static final b:Lii5;
-
-.field public static final c:Lii5;
+.field public final b:Ljava/lang/Throwable;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public constructor <init>(Ljava/lang/Throwable;I)V
+    .registers 3
 
-    new-instance v0, Ly80;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Ly80;->a:I
 
-    sput-object v0, Ly80;->a:Ly80;
-
-    new-instance v0, Lxx;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lxx;-><init>(I)V
-
-    const-class v1, Lzqb;
-
-    invoke-static {v1, v0}, Lew1;->o(Ljava/lang/Class;Lxx;)Ljava/util/HashMap;
-
-    move-result-object v0
-
-    new-instance v2, Lii5;
-
-    invoke-static {v0}, Lew1;->p(Ljava/util/HashMap;)Ljava/util/Map;
-
-    move-result-object v0
-
-    const-string v3, "eventsDroppedCount"
-
-    invoke-direct {v2, v3, v0}, Lii5;-><init>(Ljava/lang/String;Ljava/util/Map;)V
-
-    sput-object v2, Ly80;->b:Lii5;
-
-    new-instance v0, Lxx;
-
-    const/4 v2, 0x3
-
-    invoke-direct {v0, v2}, Lxx;-><init>(I)V
-
-    invoke-static {v1, v0}, Lew1;->o(Ljava/lang/Class;Lxx;)Ljava/util/HashMap;
-
-    move-result-object v0
-
-    new-instance v1, Lii5;
-
-    invoke-static {v0}, Lew1;->p(Ljava/util/HashMap;)Ljava/util/Map;
-
-    move-result-object v0
-
-    const-string v2, "reason"
-
-    invoke-direct {v1, v2, v0}, Lii5;-><init>(Ljava/lang/String;Ljava/util/Map;)V
-
-    sput-object v1, Ly80;->c:Lii5;
+    iput-object p1, p0, Ly80;->b:Ljava/lang/Throwable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 5
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    check-cast p1, Ljw7;
+    const/4 v0, 0x1
 
-    check-cast p2, Lu0a;
+    if-ne p1, p0, :cond_0
 
-    sget-object p0, Ly80;->b:Lii5;
+    return v0
 
-    iget-wide v0, p1, Ljw7;->a:J
+    :cond_0
+    instance-of v1, p1, Ly80;
 
-    invoke-interface {p2, p0, v0, v1}, Lu0a;->e(Lii5;J)Lu0a;
+    const/4 v2, 0x0
 
-    sget-object p0, Ly80;->c:Lii5;
+    if-eqz v1, :cond_2
 
-    iget-object p1, p1, Ljw7;->b:Liw7;
+    check-cast p1, Ly80;
 
-    invoke-interface {p2, p0, p1}, Lu0a;->a(Lii5;Ljava/lang/Object;)Lu0a;
+    iget v1, p1, Ly80;->a:I
 
-    return-void
+    iget-object p1, p1, Ly80;->b:Ljava/lang/Throwable;
+
+    iget v3, p0, Ly80;->a:I
+
+    if-ne v3, v1, :cond_2
+
+    iget-object p0, p0, Ly80;->b:Ljava/lang/Throwable;
+
+    if-nez p0, :cond_1
+
+    if-nez p1, :cond_2
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    :goto_0
+    return v0
+
+    :cond_2
+    return v2
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    iget v0, p0, Ly80;->a:I
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v1
+
+    iget-object p0, p0, Ly80;->b:Ljava/lang/Throwable;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    :goto_0
+    xor-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "StateError{code="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v1, p0, Ly80;->a:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", cause="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Ly80;->b:Ljava/lang/Throwable;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

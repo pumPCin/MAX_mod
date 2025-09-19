@@ -1,32 +1,24 @@
-.class public final Ltca;
+.class public final synthetic Ltca;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lzb6;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
-
-.field public final synthetic c:Lgy6;
-
-.field public final synthetic o:Landroid/graphics/drawable/Animatable;
+.field public final synthetic b:Luca;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/sdk/uikit/common/views/OneMeDraweeView;Ljava/lang/String;Lgy6;Landroid/graphics/drawable/Animatable;I)V
-    .registers 6
+.method public synthetic constructor <init>(Luca;I)V
+    .registers 3
 
-    iput p5, p0, Ltca;->a:I
+    iput p2, p0, Ltca;->a:I
 
-    iput-object p1, p0, Ltca;->b:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
-
-    iput-object p3, p0, Ltca;->c:Lgy6;
-
-    iput-object p4, p0, Ltca;->o:Landroid/graphics/drawable/Animatable;
+    iput-object p1, p0, Ltca;->b:Luca;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,43 +27,132 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final invoke()Ljava/lang/Object;
     .registers 3
 
     iget v0, p0, Ltca;->a:I
 
+    iget-object p0, p0, Ltca;->b:Luca;
+
     packed-switch v0, :pswitch_data_0
 
-    iget-object v0, p0, Ltca;->c:Lgy6;
+    iget-object p0, p0, Luca;->a:Landroid/content/Context;
 
-    iget-object v1, p0, Ltca;->o:Landroid/graphics/drawable/Animatable;
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    iget-object p0, p0, Ltca;->b:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
+    move-result-object v0
 
-    invoke-virtual {p0, v0, v1}, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->p(Lgy6;Landroid/graphics/drawable/Animatable;)V
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+    move-result-object v0
 
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    iget v1, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    return-void
+    int-to-float v1, v1
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    div-float/2addr v1, v0
+
+    const/high16 v0, 0x44480000    # 800.0f
+
+    cmpl-float v0, v1, v0
+
+    if-lez v0, :cond_0
+
+    invoke-static {p0}, Lkp;->t(Landroid/content/Context;)Landroid/util/Size;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/util/Size;->getWidth()I
+
+    move-result p0
+
+    const/16 v0, 0x64
+
+    int-to-float v0, v0
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    invoke-static {v0, v1, p0}, Lsq3;->q(FFI)I
+
+    move-result p0
+
+    goto :goto_0
+
+    :cond_0
+    const/high16 p0, 0x43b40000    # 360.0f
+
+    cmpl-float p0, v1, p0
+
+    if-lez p0, :cond_1
+
+    const/16 p0, 0x123
+
+    int-to-float p0, p0
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p0, v0
+
+    invoke-static {p0}, Lya6;->G(F)I
+
+    move-result p0
+
+    goto :goto_0
+
+    :cond_1
+    const/16 p0, 0xf8
+
+    int-to-float p0, p0
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p0, v0
+
+    invoke-static {p0}, Lya6;->G(F)I
+
+    move-result p0
+
+    :goto_0
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
 
     :pswitch_0
-    iget-object v0, p0, Ltca;->c:Lgy6;
+    iget-object p0, p0, Luca;->a:Landroid/content/Context;
 
-    iget-object v1, p0, Ltca;->o:Landroid/graphics/drawable/Animatable;
+    invoke-static {p0}, Lx4h;->a(Landroid/content/Context;)Lnlf;
 
-    iget-object p0, p0, Ltca;->b:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
+    move-result-object p0
 
-    invoke-virtual {p0, v0, v1}, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->p(Lgy6;Landroid/graphics/drawable/Animatable;)V
-
-    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
-
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    return-void
-
-    nop
+    return-object p0
 
     :pswitch_data_0
     .packed-switch 0x0

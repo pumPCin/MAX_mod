@@ -1,90 +1,52 @@
 .class public final Lst5;
-.super Lcud;
-.source "SourceFile"
-
-# interfaces
-.implements Lta6;
+.super Ljx3;
 
 
 # instance fields
-.field public final a:Lot5;
+.field public X:I
 
-.field public final b:Lqa6;
+.field public final synthetic Y:Ltt5;
 
-.field public final c:Lgm0;
+.field public Z:Ljava/lang/Object;
+
+.field public synthetic o:Ljava/lang/Object;
+
+.field public r0:Lks5;
 
 
 # direct methods
-.method public constructor <init>(Lot5;Lqa6;Lgm0;)V
-    .registers 4
+.method public constructor <init>(Ltt5;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lst5;->Y:Ltt5;
 
-    iput-object p1, p0, Lst5;->a:Lot5;
-
-    iput-object p2, p0, Lst5;->b:Lqa6;
-
-    iput-object p3, p0, Lst5;->c:Lgm0;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lot5;
-    .registers 5
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    new-instance v0, Lqt5;
+    iput-object p1, p0, Lst5;->o:Ljava/lang/Object;
 
-    iget-object v1, p0, Lst5;->c:Lgm0;
+    iget p1, p0, Lst5;->X:I
 
-    const/4 v2, 0x0
+    const/high16 v0, -0x80000000
 
-    iget-object v3, p0, Lst5;->a:Lot5;
+    or-int/2addr p1, v0
 
-    iget-object p0, p0, Lst5;->b:Lqa6;
+    iput p1, p0, Lst5;->X:I
 
-    invoke-direct {v0, v3, p0, v1, v2}, Lqt5;-><init>(Lot5;Lqa6;Ljava/lang/Object;I)V
+    iget-object p1, p0, Lst5;->Y:Ltt5;
 
-    return-object v0
-.end method
+    const/4 v0, 0x0
 
-.method public final l(Lvud;)V
-    .registers 5
+    invoke-virtual {p1, v0, p0}, Ltt5;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    :try_start_0
-    iget-object v0, p0, Lst5;->b:Lqa6;
+    move-result-object p0
 
-    iget-object v0, v0, Lqa6;->a:Ljava/lang/Object;
-
-    const-string v1, "The initialSupplier returned a null value"
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    new-instance v1, Lrt5;
-
-    iget-object v2, p0, Lst5;->c:Lgm0;
-
-    invoke-direct {v1, p1, v0, v2}, Lrt5;-><init>(Lvud;Ljava/lang/Object;Lgm0;)V
-
-    iget-object p0, p0, Lst5;->a:Lot5;
-
-    invoke-virtual {p0, v1}, Lot5;->c(Lyu5;)V
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    sget-object v0, Lq25;->a:Lq25;
-
-    invoke-interface {p1, v0}, Lvud;->c(Lnp4;)V
-
-    invoke-interface {p1, p0}, Lvud;->onError(Ljava/lang/Throwable;)V
-
-    return-void
+    return-object p0
 .end method

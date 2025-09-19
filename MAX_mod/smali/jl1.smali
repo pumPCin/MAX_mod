@@ -1,84 +1,84 @@
-.class public final Ljl1;
-.super Lxie;
+.class public final synthetic Ljl1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lzb6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
+
+.field public final synthetic b:Landroid/content/Context;
+
+.field public final synthetic c:Lnl1;
+
+
+# direct methods
+.method public synthetic constructor <init>(Landroid/content/Context;Lnl1;I)V
+    .registers 4
+
+    iput p3, p0, Ljl1;->a:I
+
+    iput-object p1, p0, Ljl1;->b:Landroid/content/Context;
+
+    iput-object p2, p0, Ljl1;->c:Lnl1;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 5
 
-    check-cast p1, Ljava/util/Collection;
+    iget v0, p0, Ljl1;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Ljl1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object v0, p0, Ljl1;->b:Landroid/content/Context;
+
+    iget-object p0, p0, Ljl1;->c:Lnl1;
+
+    invoke-static {v0, p0}, Lnl1;->w(Landroid/content/Context;Lnl1;)Lgo1;
 
     move-result-object p0
 
-    check-cast p0, Ljl1;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Ljl1;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p0, Ljl1;
-
-    const/4 v0, 0x2
-
-    invoke-direct {p0, v0, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    iput-object p1, p0, Ljl1;->X:Ljava/lang/Object;
-
     return-object p0
-.end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    :pswitch_0
+    new-instance v0, Lv21;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object v1, p0, Ljl1;->b:Landroid/content/Context;
 
-    iget-object p0, p0, Ljl1;->X:Ljava/lang/Object;
+    invoke-direct {v0, v1}, Lv21;-><init>(Landroid/content/Context;)V
 
-    check-cast p0, Ljava/util/Collection;
+    new-instance v1, Ltl3;
 
-    sget-object p1, Ld41;->a:Ld41;
+    const/4 v2, -0x1
 
-    invoke-virtual {p1}, Lscout/Component;->getAccessor()Ls4;
+    const/4 v3, 0x0
 
-    move-result-object p1
+    invoke-direct {v1, v2, v3}, Ltl3;-><init>(II)V
 
-    const-class v0, Lmp4;
+    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {p1, v0}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    const/16 v1, 0x8
 
-    move-result-object p1
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    check-cast p1, Lmp4;
+    iget-object p0, p0, Ljl1;->c:Lnl1;
 
-    iget-object p1, p1, Lmp4;->c:Ldle;
+    iget-object p0, p0, Lnl1;->J0:Lml1;
 
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Lv21;->setClickListener(Lu21;)V
 
-    move-result-object p1
+    return-object v0
 
-    check-cast p1, Lel9;
-
-    invoke-interface {p1, p0}, Lel9;->h(Ljava/lang/Object;)Z
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

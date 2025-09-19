@@ -76,16 +76,16 @@
     throw p0
 .end method
 
-.method public final g(Lpz3;)V
+.method public final g(Lwz3;)V
     .registers 2
 
-    iget p0, p1, Lpz3;->h:I
+    iget p0, p1, Lwz3;->h:I
 
     if-nez p0, :cond_0
 
     const/16 p0, 0x50
 
-    iput p0, p1, Lpz3;->h:I
+    iput p0, p1, Lwz3;->h:I
 
     :cond_0
     return-void

@@ -1,48 +1,74 @@
 .class public final Lvy2;
-.super Lcx3;
+.super Lure;
+.source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lgy2;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic X:Lfz2;
 
 
 # direct methods
-.method public constructor <init>(Lgy2;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lfz2;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput-object p1, p0, Lvy2;->Y:Lgy2;
+    iput-object p1, p0, Lvy2;->X:Lfz2;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iput-object p1, p0, Lvy2;->o:Ljava/lang/Object;
+    check-cast p1, Lks5;
 
-    iget p1, p0, Lvy2;->X:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lvy2;->X:I
-
-    iget-object p1, p0, Lvy2;->Y:Lgy2;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lgy2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lvy2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Lvy2;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lvy2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lvy2;
+
+    iget-object p0, p0, Lvy2;->X:Lfz2;
+
+    invoke-direct {p1, p0, p2}, Lvy2;-><init>(Lfz2;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lvy2;->X:Lfz2;
+
+    iget-object p0, p0, Lfz2;->b:Lpq3;
+
+    invoke-interface {p0}, Lpq3;->b()V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

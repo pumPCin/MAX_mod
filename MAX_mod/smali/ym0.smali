@@ -3,92 +3,78 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lm5d;
+.implements Ljava/util/concurrent/Executor;
 
 
 # instance fields
-.field public final a:Lbn0;
+.field public final synthetic a:I
 
-.field public final b:J
-
-.field public final c:J
-
-.field public final d:J
-
-.field public final e:J
-
-.field public final f:J
+.field public final b:Landroid/os/Handler;
 
 
 # direct methods
-.method public constructor <init>(Lbn0;JJJJJ)V
-    .registers 12
+.method public constructor <init>()V
+    .registers 3
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lym0;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lym0;->a:Lbn0;
+    new-instance v0, Landroid/os/Handler;
 
-    iput-wide p2, p0, Lym0;->b:J
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    iput-wide p4, p0, Lym0;->c:J
+    move-result-object v1
 
-    iput-wide p6, p0, Lym0;->d:J
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    iput-wide p8, p0, Lym0;->e:J
+    iput-object v0, p0, Lym0;->b:Landroid/os/Handler;
 
-    iput-wide p10, p0, Lym0;->f:J
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lzh9;)V
+    .registers 3
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lym0;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lym0;->b:Landroid/os/Handler;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()Z
-    .registers 1
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final e(J)Lk5d;
-    .registers 16
-
-    iget-object v0, p0, Lym0;->a:Lbn0;
-
-    invoke-interface {v0, p1, p2}, Lbn0;->b(J)J
-
-    move-result-wide v1
-
-    iget-wide v9, p0, Lym0;->e:J
-
-    iget-wide v11, p0, Lym0;->f:J
-
-    const-wide/16 v3, 0x0
-
-    iget-wide v5, p0, Lym0;->c:J
-
-    iget-wide v7, p0, Lym0;->d:J
-
-    invoke-static/range {v1 .. v12}, Lan0;->a(JJJJJJ)J
-
-    move-result-wide v0
-
-    new-instance p0, Lk5d;
-
-    new-instance v2, Lq5d;
-
-    invoke-direct {v2, p1, p2, v0, v1}, Lq5d;-><init>(JJ)V
-
-    invoke-direct {p0, v2, v2}, Lk5d;-><init>(Lq5d;Lq5d;)V
-
-    return-object p0
-.end method
-
-.method public final f()J
+.method public final execute(Ljava/lang/Runnable;)V
     .registers 3
 
-    iget-wide v0, p0, Lym0;->b:J
+    iget v0, p0, Lym0;->a:I
 
-    return-wide v0
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lym0;->b:Landroid/os/Handler;
+
+    invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lym0;->b:Landroid/os/Handler;
+
+    invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

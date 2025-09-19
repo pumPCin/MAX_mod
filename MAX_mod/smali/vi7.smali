@@ -1,19 +1,18 @@
-.class public final Lvi7;
+.class public interface abstract Lvi7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lxi7;
+.implements Lzb6;
 
-# instance fields
-.field public final synthetic a:Ls4;
 
+# virtual methods
+.method public abstract get()Ljava/lang/Object;
+.end method
 
-# direct methods
-.method public constructor <init>(Ls4;)V
-    .registers 2
+.method public abstract getDelegate()Ljava/lang/Object;
+.end method
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lvi7;->a:Ls4;
-
-    return-void
+.method public abstract getGetter()Lui7;
 .end method

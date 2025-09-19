@@ -3,28 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpq2;
+.implements Lsq2;
 
 
-# instance fields
-.field public final a:Ljava/util/List;
-
-.field public final b:Landroid/os/Bundle;
-
-.field public final c:Landroid/view/View;
+# static fields
+.field public static final a:Lmq2;
 
 
 # direct methods
-.method public constructor <init>(Lkp7;Landroid/os/Bundle;Landroid/view/View;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lmq2;
 
-    iput-object p1, p0, Lmq2;->a:Ljava/util/List;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lmq2;->b:Landroid/os/Bundle;
-
-    iput-object p3, p0, Lmq2;->c:Landroid/view/View;
+    sput-object v0, Lmq2;->a:Lmq2;
 
     return-void
 .end method

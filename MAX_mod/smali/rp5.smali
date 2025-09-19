@@ -4,262 +4,58 @@
 
 
 # instance fields
-.field public a:I
+.field public final a:Ljava/security/Signature;
 
-.field public b:I
+.field public final b:Ljavax/crypto/Cipher;
 
-.field public c:I
-
-.field public d:I
-
-.field public e:Z
-
-.field public f:Z
-
-.field public g:Z
-
-.field public final synthetic h:Lcom/google/android/flexbox/FlexboxLayoutManager;
+.field public final c:Ljavax/crypto/Mac;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/android/flexbox/FlexboxLayoutManager;)V
+.method public constructor <init>(Ljava/security/Signature;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lrp5;->h:Lcom/google/android/flexbox/FlexboxLayoutManager;
+    iput-object p1, p0, Lrp5;->a:Ljava/security/Signature;
 
     const/4 p1, 0x0
 
-    iput p1, p0, Lrp5;->d:I
+    iput-object p1, p0, Lrp5;->b:Ljavax/crypto/Cipher;
+
+    iput-object p1, p0, Lrp5;->c:Ljavax/crypto/Mac;
 
     return-void
 .end method
 
-.method public static a(Lrp5;)V
-    .registers 3
+.method public constructor <init>(Ljavax/crypto/Cipher;)V
+    .registers 2
 
-    iget-object v0, p0, Lrp5;->h:Lcom/google/android/flexbox/FlexboxLayoutManager;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
+    iput-object p1, p0, Lrp5;->b:Ljavax/crypto/Cipher;
 
-    move-result v1
+    const/4 p1, 0x0
 
-    if-nez v1, :cond_1
+    iput-object p1, p0, Lrp5;->a:Ljava/security/Signature;
 
-    iget-boolean v1, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->t:Z
-
-    if-eqz v1, :cond_1
-
-    iget-boolean v1, p0, Lrp5;->e:Z
-
-    if-eqz v1, :cond_0
-
-    iget-object v0, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Ltd7;
-
-    invoke-virtual {v0}, Ltd7;->h()I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    iget v1, v0, Landroidx/recyclerview/widget/a;->n:I
-
-    iget-object v0, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Ltd7;
-
-    invoke-virtual {v0}, Ltd7;->m()I
-
-    move-result v0
-
-    sub-int v0, v1, v0
-
-    :goto_0
-    iput v0, p0, Lrp5;->c:I
-
-    return-void
-
-    :cond_1
-    iget-boolean v1, p0, Lrp5;->e:Z
-
-    if-eqz v1, :cond_2
-
-    iget-object v0, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Ltd7;
-
-    invoke-virtual {v0}, Ltd7;->h()I
-
-    move-result v0
-
-    goto :goto_1
-
-    :cond_2
-    iget-object v0, v0, Lcom/google/android/flexbox/FlexboxLayoutManager;->B:Ltd7;
-
-    invoke-virtual {v0}, Ltd7;->m()I
-
-    move-result v0
-
-    :goto_1
-    iput v0, p0, Lrp5;->c:I
+    iput-object p1, p0, Lrp5;->c:Ljavax/crypto/Mac;
 
     return-void
 .end method
 
-.method public static b(Lrp5;)V
-    .registers 6
+.method public constructor <init>(Ljavax/crypto/Mac;)V
+    .registers 2
 
-    const/4 v0, -0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput v0, p0, Lrp5;->a:I
+    iput-object p1, p0, Lrp5;->c:Ljavax/crypto/Mac;
 
-    iput v0, p0, Lrp5;->b:I
+    const/4 p1, 0x0
 
-    const/high16 v0, -0x80000000
+    iput-object p1, p0, Lrp5;->b:Ljavax/crypto/Cipher;
 
-    iput v0, p0, Lrp5;->c:I
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lrp5;->f:Z
-
-    iput-boolean v0, p0, Lrp5;->g:Z
-
-    iget-object v1, p0, Lrp5;->h:Lcom/google/android/flexbox/FlexboxLayoutManager;
-
-    invoke-virtual {v1}, Lcom/google/android/flexbox/FlexboxLayoutManager;->c1()Z
-
-    move-result v2
-
-    const/4 v3, 0x2
-
-    const/4 v4, 0x1
-
-    if-eqz v2, :cond_3
-
-    iget v2, v1, Lcom/google/android/flexbox/FlexboxLayoutManager;->q:I
-
-    if-nez v2, :cond_1
-
-    iget v1, v1, Lcom/google/android/flexbox/FlexboxLayoutManager;->p:I
-
-    if-ne v1, v4, :cond_0
-
-    move v0, v4
-
-    :cond_0
-    iput-boolean v0, p0, Lrp5;->e:Z
+    iput-object p1, p0, Lrp5;->a:Ljava/security/Signature;
 
     return-void
-
-    :cond_1
-    if-ne v2, v3, :cond_2
-
-    move v0, v4
-
-    :cond_2
-    iput-boolean v0, p0, Lrp5;->e:Z
-
-    return-void
-
-    :cond_3
-    iget v2, v1, Lcom/google/android/flexbox/FlexboxLayoutManager;->q:I
-
-    if-nez v2, :cond_5
-
-    iget v1, v1, Lcom/google/android/flexbox/FlexboxLayoutManager;->p:I
-
-    const/4 v2, 0x3
-
-    if-ne v1, v2, :cond_4
-
-    move v0, v4
-
-    :cond_4
-    iput-boolean v0, p0, Lrp5;->e:Z
-
-    return-void
-
-    :cond_5
-    if-ne v2, v3, :cond_6
-
-    move v0, v4
-
-    :cond_6
-    iput-boolean v0, p0, Lrp5;->e:Z
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "AnchorInfo{mPosition="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Lrp5;->a:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mFlexLinePosition="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lrp5;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mCoordinate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lrp5;->c:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mPerpendicularCoordinate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lrp5;->d:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mLayoutFromEnd="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lrp5;->e:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mValid="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lrp5;->f:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", mAssignedFromSavedState="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Lrp5;->g:Z
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

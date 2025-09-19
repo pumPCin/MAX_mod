@@ -1,96 +1,21 @@
-.class public final synthetic Lfn1;
-.super Ljava/lang/Object;
+.class public final Lfn1;
+.super Lso;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lhn1;
+# static fields
+.field public static final a:Lfn1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhn1;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p2, p0, Lfn1;->a:I
+    new-instance v0, Lfn1;
 
-    iput-object p1, p0, Lfn1;->b:Lhn1;
+    invoke-direct {v0}, Lso;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lfn1;->a:Lfn1;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 3
-
-    iget p1, p0, Lfn1;->a:I
-
-    iget-object p0, p0, Lfn1;->b:Lhn1;
-
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p1, p0, Lhn1;->B0:Lgn1;
-
-    if-eqz p1, :cond_0
-
-    iget-boolean p0, p0, Lhn1;->C0:Z
-
-    xor-int/lit8 p0, p0, 0x1
-
-    check-cast p1, Lrj1;
-
-    iget-object p1, p1, Lrj1;->a:Lone/me/calls/ui/ui/call/CallScreen;
-
-    sget-object v0, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lq1d;
-
-    invoke-virtual {p1}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Lkm1;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lkm1;->c:Lit1;
-
-    iget-object p1, p1, Lit1;->h:Loyc;
-
-    invoke-virtual {p1, p0}, Loyc;->a(Z)V
-
-    :cond_0
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lhn1;->B0:Lgn1;
-
-    if-eqz p0, :cond_1
-
-    check-cast p0, Lrj1;
-
-    iget-object p0, p0, Lrj1;->a:Lone/me/calls/ui/ui/call/CallScreen;
-
-    sget-object p1, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lq1d;
-
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Lkm1;
-
-    move-result-object p0
-
-    const/4 p1, 0x0
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0, p1}, Lkm1;->w(ZLandroid/content/Intent;)V
-
-    :cond_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

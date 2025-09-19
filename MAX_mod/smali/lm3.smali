@@ -1,8 +1,3 @@
-.class public interface abstract Llm3;
+.class public abstract Llm3;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-
-# virtual methods
-.method public abstract accept(Ljava/lang/Object;)V
-.end method

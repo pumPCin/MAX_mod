@@ -1,27 +1,33 @@
 .class public final Lncd;
-.super Ltcd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public g:Ljava/lang/String;
+.field public a:Lyz4;
 
-.field public h:J
+.field public b:Ljava/lang/String;
 
-.field public i:I
+.field public c:Ljava/lang/String;
 
-.field public j:Ljava/lang/String;
+.field public d:Ljava/util/List;
 
-.field public k:Ljava/lang/String;
+.field public e:Ljava/util/List;
 
+.field public f:Ljava/util/List;
 
-# virtual methods
-.method public final a()Lucd;
-    .registers 2
+.field public g:J
 
-    new-instance v0, Locd;
+.field public h:I
 
-    invoke-direct {v0, p0}, Locd;-><init>(Lncd;)V
+.field public i:Z
 
-    return-object v0
-.end method
+.field public j:J
+
+.field public k:Ljava/util/List;
+
+.field public l:Ljava/util/List;
+
+.field public m:Ljava/lang/String;
+
+.field public n:Ljava/util/List;

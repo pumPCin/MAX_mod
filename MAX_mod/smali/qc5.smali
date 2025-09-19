@@ -1,63 +1,44 @@
 .class public final Lqc5;
-.super Ljp9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Liq8;
 
-# static fields
-.field public static final b:Lqc5;
+
+# instance fields
+.field public final a:Ljava/lang/Object;
+
+.field public b:Lo6f;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Ljava/lang/Object;Lo6f;)V
+    .registers 3
 
-    new-instance v0, Lqc5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v1, Lncf;->a:Lncf;
+    iput-object p1, p0, Lqc5;->a:Ljava/lang/Object;
 
-    invoke-direct {v0, v1}, Ljp9;-><init>(Ljava/lang/Object;)V
-
-    sput-object v0, Lqc5;->b:Lqc5;
+    iput-object p2, p0, Lqc5;->b:Lo6f;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lqc5;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final a()Ljava/lang/Object;
     .registers 1
 
-    const p0, -0x13ae8fb3
+    iget-object p0, p0, Lqc5;->a:Ljava/lang/Object;
 
-    return p0
+    return-object p0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final b()Lo6f;
     .registers 1
 
-    const-string p0, "Hide"
+    iget-object p0, p0, Lqc5;->b:Lo6f;
 
     return-object p0
 .end method

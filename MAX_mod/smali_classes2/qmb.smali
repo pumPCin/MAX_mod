@@ -1,86 +1,165 @@
 .class public final Lqmb;
-.super Lqd0;
+.super Lx7g;
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic u0:[Lxi7;
+
+
 # instance fields
-.field public final b:J
+.field public final X:Lcl7;
+
+.field public final Y:Lyce;
+
+.field public final Z:Liic;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:Lcl7;
+
+.field public final o:Lcl7;
+
+.field public final r0:Lv85;
+
+.field public final s0:Lv85;
+
+.field public volatile t0:Lcae;
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method static constructor <clinit>()V
     .registers 4
 
-    const/16 v0, 0xf
+    new-instance v0, Lmo9;
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    const-string v1, "loadInfoJob"
 
-    iput-wide p1, p0, Lqmb;->b:J
+    const-string v2, "getLoadInfoJob()Lkotlinx/coroutines/Job;"
+
+    const-class v3, Lqmb;
+
+    invoke-direct {v0, v3, v1, v2}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v1, Ljpc;->a:Lkpc;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lxi7;
+
+    const/4 v2, 0x0
+
+    aput-object v0, v1, v2
+
+    sput-object v1, Lqmb;->u0:[Lxi7;
 
     return-void
 .end method
 
+.method public constructor <init>()V
+    .registers 6
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+    sget-object v0, Lchf;->a:Lchf;
 
-    const/4 v0, 0x1
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
 
-    if-ne p0, p1, :cond_0
+    move-result-object v1
 
-    return v0
+    const-class v2, Lf53;
 
-    :cond_0
-    instance-of v1, p1, Lqmb;
+    invoke-virtual {v1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
-    const/4 v2, 0x0
+    move-result-object v1
 
-    if-nez v1, :cond_1
+    invoke-virtual {v0}, Lchf;->b()Lcl7;
 
-    return v2
+    move-result-object v2
 
-    :cond_1
-    check-cast p1, Lqmb;
+    invoke-virtual {v0}, Lchf;->c()Lcl7;
 
-    iget-wide v3, p0, Lqmb;->b:J
+    move-result-object v0
 
-    iget-wide p0, p1, Lqmb;->b:J
+    invoke-direct {p0}, Lx7g;-><init>()V
 
-    cmp-long p0, v3, p0
+    const-class v3, Lqmb;
 
-    if-eqz p0, :cond_2
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    return v2
+    move-result-object v3
 
-    :cond_2
-    return v0
-.end method
+    iput-object v3, p0, Lqmb;->b:Ljava/lang/String;
 
-.method public final hashCode()I
-    .registers 3
+    iput-object v1, p0, Lqmb;->c:Lcl7;
 
-    iget-wide v0, p0, Lqmb;->b:J
+    iput-object v2, p0, Lqmb;->o:Lcl7;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    iput-object v0, p0, Lqmb;->X:Lcl7;
 
-    move-result p0
+    const/4 v1, 0x0
 
-    return p0
-.end method
+    invoke-static {v1}, Lzce;->a(Ljava/lang/Object;)Lyce;
 
-.method public final toString()Ljava/lang/String;
-    .registers 5
+    move-result-object v2
 
-    const-string v0, "ChatAttaches(chatId="
+    iput-object v2, p0, Lqmb;->Y:Lyce;
 
-    const-string v1, ")"
+    new-instance v3, Liic;
 
-    iget-wide v2, p0, Lqmb;->b:J
+    invoke-direct {v3, v2}, Liic;-><init>(Lro9;)V
 
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iput-object v3, p0, Lqmb;->Z:Liic;
 
-    move-result-object p0
+    new-instance v2, Lv85;
 
-    return-object p0
+    const/4 v3, 0x0
+
+    invoke-direct {v2, v3}, Lv85;-><init>(I)V
+
+    iput-object v2, p0, Lqmb;->r0:Lv85;
+
+    new-instance v2, Lv85;
+
+    invoke-direct {v2, v3}, Lv85;-><init>(I)V
+
+    iput-object v2, p0, Lqmb;->s0:Lv85;
+
+    invoke-static {}, Lmq0;->L()Lncb;
+
+    move-result-object v2
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxwe;
+
+    check-cast v0, Laga;
+
+    invoke-virtual {v0}, Laga;->b()Ls04;
+
+    move-result-object v0
+
+    new-instance v3, Lomb;
+
+    invoke-direct {v3, p0, v1}, Lomb;-><init>(Lqmb;Lkotlin/coroutines/Continuation;)V
+
+    iget-object v1, p0, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    sget-object v4, Lb14;->b:Lb14;
+
+    invoke-static {v1, v0, v4, v3}, Lvyg;->t(Ly04;Lq04;Lb14;Lpc6;)Lcae;
+
+    move-result-object v0
+
+    sget-object v1, Lqmb;->u0:[Lxi7;
+
+    const/4 v3, 0x0
+
+    aget-object v1, v1, v3
+
+    invoke-virtual {v2, p0, v1, v0}, Lncb;->h0(Ljava/lang/Object;Lxi7;Ljava/lang/Object;)V
+
+    return-void
 .end method

@@ -3,4 +3,4 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpub;
+.implements Lt1c;

@@ -1,61 +1,22 @@
 .class public final Lnof;
-.super Loof;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lqof;
 
-# static fields
-.field public static final a:Lnof;
+
+# instance fields
+.field public final a:Ldf5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ldf5;)V
+    .registers 2
 
-    new-instance v0, Lnof;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lnof;->a:Lnof;
+    iput-object p1, p0, Lnof;->a:Ldf5;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lnof;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, 0x7123af6
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "Recording"
-
-    return-object p0
 .end method

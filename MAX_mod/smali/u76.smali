@@ -1,130 +1,132 @@
-.class public final synthetic Lu76;
-.super Ljava/lang/Object;
+.class public final Lu76;
+.super Lzyd;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Lg8g;
+.implements Lzn7;
+.implements Lb4d;
+.implements Ll86;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final Z:Landroidx/fragment/app/b;
 
-.field public final synthetic b:Lrlg;
+.field public final r0:Landroidx/fragment/app/b;
+
+.field public final s0:Landroid/os/Handler;
+
+.field public final t0:Lj86;
+
+.field public final synthetic u0:Landroidx/fragment/app/b;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lrlg;I)V
+.method public constructor <init>(Landroidx/fragment/app/b;)V
     .registers 3
 
-    iput p2, p0, Lu76;->a:I
-
-    iput-object p1, p0, Lu76;->b:Lrlg;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lu76;->u0:Landroidx/fragment/app/b;
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object p1, p0, Lu76;->Z:Landroidx/fragment/app/b;
+
+    iput-object p1, p0, Lu76;->r0:Landroidx/fragment/app/b;
+
+    iput-object v0, p0, Lu76;->s0:Landroid/os/Handler;
+
+    new-instance p1, Lj86;
+
+    invoke-direct {p1}, Landroidx/fragment/app/c;-><init>()V
+
+    iput-object p1, p0, Lu76;->t0:Lj86;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 4
+.method public final C(I)Landroid/view/View;
+    .registers 2
 
-    iget v0, p0, Lu76;->a:I
+    iget-object p0, p0, Lu76;->u0:Landroidx/fragment/app/b;
 
-    iget-object p0, p0, Lu76;->b:Lrlg;
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
-
-    move-result v0
-
-    iget-object p0, p0, Lrlg;->b:Ljava/lang/Object;
-
-    check-cast p0, Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ldda;
-
-    sget-object v1, Ldda;->p:[Lsf7;
-
-    const/4 v1, 0x5
-
-    const-string v2, "frsc-sch"
-
-    invoke-virtual {p0, v0, v2, v0, v1}, Ldda;->f(ILjava/lang/String;II)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0, v2}, Ldda;->h(Ljava/util/concurrent/ExecutorService;Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
+    invoke-virtual {p0, p1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object p0
 
     return-object p0
+.end method
 
-    :pswitch_0
-    iget-object p0, p0, Lrlg;->b:Ljava/lang/Object;
+.method public final D()Z
+    .registers 1
 
-    check-cast p0, Lxh7;
+    iget-object p0, p0, Lu76;->u0:Landroidx/fragment/app/b;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object p0
 
-    check-cast p0, Ldda;
+    if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Ldda;->a()Ljava/util/concurrent/ExecutorService;
+    invoke-virtual {p0}, Landroid/view/Window;->peekDecorView()Landroid/view/View;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final L()Lbo7;
+    .registers 1
+
+    iget-object p0, p0, Lu76;->u0:Landroidx/fragment/app/b;
+
+    iget-object p0, p0, Landroidx/fragment/app/b;->E0:Lbo7;
+
+    return-object p0
+.end method
+
+.method public final a(Landroidx/fragment/app/a;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method public final v()Lf8g;
+    .registers 1
+
+    iget-object p0, p0, Lu76;->u0:Landroidx/fragment/app/b;
+
+    invoke-virtual {p0}, Lpd3;->v()Lf8g;
 
     move-result-object p0
 
     return-object p0
+.end method
 
-    :pswitch_1
-    iget-object p0, p0, Lrlg;->b:Ljava/lang/Object;
+.method public final y()Lom;
+    .registers 1
 
-    check-cast p0, Lxh7;
+    iget-object p0, p0, Lu76;->u0:Landroidx/fragment/app/b;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    iget-object p0, p0, Lpd3;->o:Lrd;
 
-    move-result-object p0
+    iget-object p0, p0, Lrd;->o:Ljava/lang/Object;
 
-    check-cast p0, Ldda;
-
-    invoke-virtual {p0}, Ldda;->a()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object p0
+    check-cast p0, Lom;
 
     return-object p0
-
-    :pswitch_2
-    iget-object p0, p0, Lrlg;->b:Ljava/lang/Object;
-
-    check-cast p0, Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ldda;
-
-    invoke-virtual {p0}, Ldda;->c()Ljava/util/concurrent/ExecutorService;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

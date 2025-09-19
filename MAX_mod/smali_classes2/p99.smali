@@ -1,101 +1,53 @@
 .class public final Lp99;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lgpd;
+.field public X:Lzp7;
 
-.field public final b:Lkotlinx/coroutines/internal/ContextScope;
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lwb;
+
+.field public o:Lwb;
+
+.field public r0:I
 
 
 # direct methods
-.method public constructor <init>(Lrv0;Lzne;)V
-    .registers 5
+.method public constructor <init>(Lwb;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lp99;->Z:Lwb;
 
-    const/4 v0, 0x0
-
-    const/4 v1, 0x7
-
-    invoke-static {v0, v0, v1}, Lhpd;->b(III)Lgpd;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lp99;->a:Lgpd;
-
-    check-cast p2, Ltba;
-
-    invoke-virtual {p2}, Ltba;->c()Lm08;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
-
-    move-result-object p2
-
-    iput-object p2, p0, Lp99;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-virtual {p1, p0}, Lrv0;->d(Ljava/lang/Object;)V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onEvent(Ltq4;)V
-    .registers 5
-    .annotation runtime Lpee;
-    .end annotation
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    new-instance v0, Ll99;
+    iput-object p1, p0, Lp99;->Y:Ljava/lang/Object;
 
-    iget-wide v1, p1, Ltq4;->X:J
+    iget p1, p0, Lp99;->r0:I
 
-    iget-object p1, p1, Ltq4;->o:Ljava/lang/String;
+    const/high16 v0, -0x80000000
 
-    invoke-direct {v0, v1, v2, p1}, Ll99;-><init>(JLjava/lang/String;)V
+    or-int/2addr p1, v0
 
-    new-instance p1, Lo99;
+    iput p1, p0, Lp99;->r0:I
 
-    const/4 v1, 0x0
+    iget-object p1, p0, Lp99;->Z:Lwb;
 
-    invoke-direct {p1, p0, v0, v1}, Lo99;-><init>(Lp99;Ln99;Lkotlin/coroutines/Continuation;)V
+    const/4 v0, 0x0
 
-    const/4 v0, 0x3
+    invoke-virtual {p1, v0, p0}, Lwb;->b(Ldq7;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    iget-object p0, p0, Lp99;->b:Lkotlinx/coroutines/internal/ContextScope;
+    move-result-object p0
 
-    invoke-static {p0, v1, v1, p1, v0}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    return-void
-.end method
-
-.method public final onEvent(Lvq4;)V
-    .registers 5
-    .annotation runtime Lpee;
-    .end annotation
-
-    new-instance v0, Lm99;
-
-    iget-wide v1, p1, Lvq4;->o:J
-
-    iget-object p1, p1, Lvq4;->c:Ljava/lang/String;
-
-    invoke-direct {v0, v1, v2, p1}, Lm99;-><init>(JLjava/lang/String;)V
-
-    new-instance p1, Lo99;
-
-    const/4 v1, 0x0
-
-    invoke-direct {p1, p0, v0, v1}, Lo99;-><init>(Lp99;Ln99;Lkotlin/coroutines/Continuation;)V
-
-    const/4 v0, 0x3
-
-    iget-object p0, p0, Lp99;->b:Lkotlinx/coroutines/internal/ContextScope;
-
-    invoke-static {p0, v1, v1, p1, v0}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    return-void
+    return-object p0
 .end method

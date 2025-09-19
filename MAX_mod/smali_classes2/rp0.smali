@@ -1,97 +1,96 @@
-.class public final Lrp0;
+.class public final synthetic Lrp0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ltp0;
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
 # instance fields
-.field public final a:Liv3;
+.field public final synthetic a:I
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Liv3;)V
-    .registers 2
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .registers 3
+
+    iput p1, p0, Lrp0;->a:I
+
+    iput-object p2, p0, Lrp0;->b:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lrp0;->a:Liv3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final onPreDraw()Z
+    .registers 4
 
-    const/4 v0, 0x1
+    iget v0, p0, Lrp0;->a:I
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Lrp0;->b:Ljava/lang/Object;
 
-    return v0
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p0, Lsd5;
+
+    iget-boolean v0, p0, Lsd5;->w0:Z
+
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lsd5;->b(I)V
+
+    iput-boolean v1, p0, Lsd5;->w0:Z
+
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     :cond_0
-    instance-of v1, p1, Lrp0;
+    iget-boolean v0, p0, Lsd5;->w0:Z
 
-    const/4 v2, 0x0
+    if-eqz v0, :cond_1
 
-    if-nez v1, :cond_1
+    invoke-virtual {p0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
-    return v2
+    move-result-object v0
+
+    iget-object v2, p0, Lsd5;->A0:Lrp0;
+
+    invoke-virtual {v0, v2}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lsd5;->A0:Lrp0;
 
     :cond_1
-    check-cast p1, Lrp0;
+    return v1
 
-    iget-object p0, p0, Lrp0;->a:Liv3;
+    :pswitch_0
+    check-cast p0, Lsp0;
 
-    iget-object p1, p1, Lrp0;->a:Liv3;
+    invoke-virtual {p0}, Lsp0;->c()V
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lrp0;->a:Liv3;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
-.end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ContactsUpdate(event="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lrp0;->a:Liv3;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

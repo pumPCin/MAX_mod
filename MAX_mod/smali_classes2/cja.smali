@@ -1,232 +1,121 @@
-.class public final synthetic Lcja;
+.class public abstract Lcja;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final synthetic a:I
+.field public static final b:I
 
-.field public final synthetic b:Lija;
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lija;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p2, p0, Lcja;->a:I
+    sget v0, Lj6c;->oneme_media_keyboard_bottom_panel:I
 
-    iput-object p1, p0, Lcja;->b:Lija;
+    sput v0, Lcja;->a:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lj6c;->oneme_media_keyboard_emoji_container:I
 
-    return-void
-.end method
+    sput v0, Lcja;->b:I
 
+    sget v0, Lj6c;->oneme_media_keyboard_emoji_list:I
 
-# virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .registers 6
+    sput v0, Lcja;->c:I
 
-    iget v0, p0, Lcja;->a:I
+    sget v0, Lj6c;->oneme_media_keyboard_emoji_tabs:I
 
-    packed-switch v0, :pswitch_data_0
+    sput v0, Lcja;->d:I
 
-    const/4 v0, 0x1
+    sget v0, Lj6c;->oneme_media_keyboard_fake_search_view:I
 
-    int-to-float v0, v0
+    sput v0, Lcja;->e:I
 
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+    sget v0, Lj6c;->oneme_media_keyboard_pager:I
 
-    move-result p1
+    sput v0, Lcja;->f:I
 
-    sub-float/2addr v0, p1
+    sget v0, Lj6c;->oneme_media_keyboard_recent_clear_confirmation_action:I
 
-    iget-object p0, p0, Lcja;->b:Lija;
+    sput v0, Lcja;->g:I
 
-    iget-object p1, p0, Lija;->w0:Ljava/lang/Object;
+    sget v0, Lj6c;->oneme_media_keyboard_recent_clear_confirmation_cancel:I
 
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    sput v0, Lcja;->h:I
 
-    move-result-object p1
+    sget v0, Lj6c;->oneme_media_keyboard_remove_action:I
 
-    check-cast p1, Landroidx/appcompat/widget/AppCompatImageView;
+    sput v0, Lcja;->i:I
 
-    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
+    sget v0, Lj6c;->oneme_media_keyboard_settings_action:I
 
-    move-result v1
+    sput v0, Lcja;->j:I
 
-    mul-float/2addr v1, v0
+    sget v0, Lj6c;->oneme_media_keyboard_showcase_action:I
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
+    sput v0, Lcja;->k:I
 
-    iget-object p1, p0, Lija;->A0:Ljava/lang/Object;
+    sget v0, Lj6c;->oneme_media_keyboard_stickers_container:I
 
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    sput v0, Lcja;->l:I
 
-    move-result-object p1
+    sget v0, Lj6c;->oneme_media_keyboard_stickers_header_title:I
 
-    check-cast p1, Landroidx/appcompat/widget/AppCompatImageView;
+    sput v0, Lcja;->m:I
 
-    invoke-virtual {p1}, Landroid/view/View;->getAlpha()F
+    sget v0, Lj6c;->oneme_media_keyboard_stickers_list:I
 
-    move-result v1
+    sput v0, Lcja;->n:I
 
-    mul-float/2addr v1, v0
+    sget v0, Lj6c;->oneme_media_keyboard_stickers_tabs:I
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
+    sput v0, Lcja;->o:I
 
-    iget-object p0, p0, Lija;->x0:Ljava/lang/Object;
+    sget v0, Lj6c;->oneme_media_keyboard_tabs:I
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    sput v0, Lcja;->p:I
 
-    move-result-object p1
+    sget v0, Lj6c;->oneme_media_keyboard_view_type_category_emoji:I
 
-    check-cast p1, Landroid/view/View;
+    sput v0, Lcja;->q:I
 
-    invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    sget v0, Lj6c;->oneme_media_keyboard_view_type_fake_search:I
 
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroidx/appcompat/widget/AppCompatEditText;
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result p0
-
-    int-to-float p0, p0
-
-    mul-float/2addr p0, v0
-
-    float-to-int p0, p0
-
-    iput p0, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    sput v0, Lcja;->r:I
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :pswitch_0
-    iget-object p0, p0, Lcja;->b:Lija;
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
-
-    move-result p1
-
-    iget-object v1, p0, Lija;->w0:Ljava/lang/Object;
-
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroidx/appcompat/widget/AppCompatImageView;
-
-    invoke-virtual {v1, p1}, Landroid/view/View;->setAlpha(F)V
-
-    iget-object v1, p0, Lija;->A0:Ljava/lang/Object;
-
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroidx/appcompat/widget/AppCompatImageView;
-
-    invoke-virtual {v1, p1}, Landroid/view/View;->setAlpha(F)V
-
-    iget-object p0, p0, Lija;->x0:Ljava/lang/Object;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_3
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/view/View;
-
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object p0
-
-    instance-of v3, p0, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    if-eqz v3, :cond_1
-
-    check-cast p0, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_0
-    if-eqz p0, :cond_2
-
-    iget p0, p0, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
-    goto :goto_1
-
-    :cond_2
-    const/4 p0, 0x0
-
-    :goto_1
-    sub-int/2addr v0, p0
-
-    int-to-float p0, v0
-
-    mul-float/2addr p0, p1
-
-    float-to-int p0, p0
-
-    iput p0, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
-
-    invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    return-void
-
-    :cond_3
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -1,131 +1,233 @@
 .class public final Li19;
-.super Lj19;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic a:I
+
+.field public final synthetic b:Lk19;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 2
+.method public synthetic constructor <init>(Lk19;I)V
+    .registers 3
+
+    iput p2, p0, Li19;->a:I
+
+    iput-object p1, p0, Li19;->b:Lk19;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Li19;->a:I
+    return-void
+.end method
+
+.method private final a(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final b(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final c(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final d(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final e(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final f(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final g(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final h(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final i(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final j(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final k(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final l(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final m(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final n(Landroid/animation/Animator;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method private final o(Landroid/animation/Animator;)V
+    .registers 2
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Li19;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Li19;
+.method public final onAnimationCancel(Landroid/animation/Animator;)V
+    .registers 2
 
     iget p0, p0, Li19;->a:I
 
-    iget p1, p1, Li19;->a:I
-
-    if-eq p0, p1, :cond_2
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .registers 2
 
-    iget p0, p0, Li19;->a:I
+    iget p1, p0, Li19;->a:I
 
-    invoke-static {p0}, Lew1;->t(I)I
+    packed-switch p1, :pswitch_data_0
 
-    move-result p0
+    return-void
 
-    return p0
+    :pswitch_0
+    iget-object p0, p0, Li19;->b:Lk19;
+
+    iget-object p0, p0, Lk19;->u0:Landroid/widget/ImageView;
+
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
+
+    return-void
+
+    :pswitch_1
+    iget-object p0, p0, Li19;->b:Lk19;
+
+    iget-object p0, p0, Lk19;->u0:Landroid/widget/ImageView;
+
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
+
+    :pswitch_2
+    return-void
+
+    :pswitch_3
+    iget-object p0, p0, Li19;->b:Lk19;
+
+    iget-object p0, p0, Lk19;->u0:Landroid/widget/ImageView;
+
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setAlpha(F)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ToggleEmoji(state="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const/4 v1, 0x1
+.method public final onAnimationRepeat(Landroid/animation/Animator;)V
+    .registers 2
 
     iget p0, p0, Li19;->a:I
 
-    if-eq p0, v1, :cond_3
+    return-void
+.end method
 
-    const/4 v1, 0x2
+.method public final onAnimationStart(Landroid/animation/Animator;)V
+    .registers 3
 
-    if-eq p0, v1, :cond_2
+    iget p1, p0, Li19;->a:I
 
-    const/4 v1, 0x3
+    packed-switch p1, :pswitch_data_0
 
-    if-eq p0, v1, :cond_1
+    iget-object p0, p0, Li19;->b:Lk19;
 
-    const/4 v1, 0x4
+    iget-object p0, p0, Lk19;->u0:Landroid/widget/ImageView;
 
-    if-eq p0, v1, :cond_0
+    const/4 p1, 0x4
 
-    const-string p0, "null"
+    invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto :goto_0
+    :pswitch_0
+    return-void
 
-    :cond_0
-    const-string p0, "KEYBOARD_BY_SYSTEM"
+    :pswitch_1
+    iget-object p0, p0, Li19;->b:Lk19;
 
-    goto :goto_0
+    iget-object p1, p0, Lk19;->u0:Landroid/widget/ImageView;
 
-    :cond_1
-    const-string p0, "KEYBOARD"
+    const/4 v0, 0x0
 
-    goto :goto_0
+    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    :cond_2
-    const-string p0, "EMOJI"
+    iget-object p0, p0, Lk19;->u0:Landroid/widget/ImageView;
 
-    goto :goto_0
+    const/4 p1, 0x0
 
-    :cond_3
-    const-string p0, "DEFAULT"
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    :goto_0
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :pswitch_2
+    return-void
 
-    const-string p0, ")"
+    nop
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+    .end packed-switch
 .end method

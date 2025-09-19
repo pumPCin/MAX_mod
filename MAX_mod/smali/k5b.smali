@@ -1,224 +1,249 @@
 .class public final Lk5b;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
-
-# static fields
-.field public static final d:Lk5b;
-
-.field public static final e:Ljava/lang/String;
-
-.field public static final f:Ljava/lang/String;
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:F
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:F
-
-.field public final c:I
+.field public final synthetic Y:Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Lk5b;
-
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    invoke-direct {v0, v1}, Lk5b;-><init>(F)V
-
-    sput-object v0, Lk5b;->d:Lk5b;
-
-    sget v0, Laif;->a:I
-
-    const/4 v0, 0x0
-
-    const/16 v1, 0x24
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lk5b;->e:Ljava/lang/String;
-
-    const/4 v0, 0x1
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lk5b;->f:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(F)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;)V
     .registers 3
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    iput-object p2, p0, Lk5b;->Y:Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;
 
-    invoke-direct {p0, p1, v0}, Lk5b;-><init>(FF)V
+    const/4 p2, 0x2
 
-    return-void
-.end method
-
-.method public constructor <init>(FF)V
-    .registers 7
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    cmpl-float v1, p1, v0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    if-lez v1, :cond_0
-
-    move v1, v3
-
-    goto :goto_0
-
-    :cond_0
-    move v1, v2
-
-    :goto_0
-    invoke-static {v1}, Lr76;->h(Z)V
-
-    cmpl-float v0, p2, v0
-
-    if-lez v0, :cond_1
-
-    move v2, v3
-
-    :cond_1
-    invoke-static {v2}, Lr76;->h(Z)V
-
-    iput p1, p0, Lk5b;->a:F
-
-    iput p2, p0, Lk5b;->b:F
-
-    const/high16 p2, 0x447a0000    # 1000.0f
-
-    mul-float/2addr p1, p2
-
-    invoke-static {p1}, Ljava/lang/Math;->round(F)I
-
-    move-result p1
-
-    iput p1, p0, Lk5b;->c:I
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    if-eqz p1, :cond_2
-
-    const-class v2, Lk5b;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    if-eq v2, v3, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lk5b;
-
-    iget v2, p0, Lk5b;->a:F
-
-    iget v3, p1, Lk5b;->a:F
-
-    cmpl-float v2, v2, v3
-
-    if-nez v2, :cond_2
-
-    iget p0, p0, Lk5b;->b:F
-
-    iget p1, p1, Lk5b;->b:F
-
-    cmpl-float p0, p0, p1
-
-    if-nez p0, :cond_2
-
-    return v0
-
-    :cond_2
-    :goto_0
-    return v1
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget v0, p0, Lk5b;->a:F
-
-    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    move-result v0
-
-    add-int/lit16 v0, v0, 0x20f
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget p0, p0, Lk5b;->b:F
-
-    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Lk5b;->a:F
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-virtual {p0, p1, p2}, Lk5b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lk5b;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lk5b;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Lk5b;
+
+    iget-object p0, p0, Lk5b;->Y:Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;
+
+    invoke-direct {v0, p2, p0}, Lk5b;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;)V
+
+    iput-object p1, v0, Lk5b;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lk5b;->X:Ljava/lang/Object;
+
+    check-cast p1, Lt85;
+
+    sget-object v0, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->X:[Lxi7;
+
+    instance-of v0, p1, Ll85;
+
+    iget-object p0, p0, Lk5b;->Y:Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;
+
+    if-eqz v0, :cond_3
+
+    check-cast p1, Ll85;
+
+    iget-object v0, p1, Ll85;->a:Lyh8;
+
+    invoke-interface {v0}, Lyh8;->w()Ljava/lang/String;
 
     move-result-object v0
 
-    iget p0, p0, Lk5b;->b:F
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->y0()Ljava/lang/String;
 
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget-object p1, p1, Ll85;->a:Lyh8;
+
+    invoke-interface {p1}, Lyh8;->j()J
+
+    move-result-wide v0
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->z0()J
+
+    move-result-wide v2
+
+    cmp-long p1, v0, v2
+
+    if-nez p1, :cond_4
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->B0()Lql2;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->z0()J
+
+    move-result-wide v0
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->y0()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v0, v1, v2}, Lql2;->B(JLjava/lang/String;)Lyh8;
+
+    move-result-object p1
+
+    instance-of v0, p1, Lqh8;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lqh8;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    if-nez p1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->A0()Li5b;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Li5b;->getFailure()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->B0()Lql2;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->z0()J
+
+    move-result-wide v1
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->y0()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v1, v2, v3}, Lql2;->E(JLjava/lang/String;)V
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->A0()Li5b;
+
+    move-result-object v0
+
+    iget-object p1, p1, Lqh8;->o:Ln07;
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->A0()Li5b;
 
     move-result-object p0
 
-    filled-new-array {v0, p0}, [Ljava/lang/Object;
+    invoke-virtual {p0}, Li5b;->getFailure()Z
+
+    move-result p0
+
+    invoke-virtual {v0, p1, p0}, Li5b;->r(Ln07;Z)V
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->B0()Lql2;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->z0()J
+
+    move-result-wide v0
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->y0()Ljava/lang/String;
 
     move-result-object p0
 
-    sget v0, Laif;->a:I
+    invoke-virtual {p1, v0, v1, p0}, Lql2;->F(JLjava/lang/String;)V
 
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    goto :goto_1
 
-    const-string v1, "PlaybackParameters(speed=%.2f, pitch=%.2f)"
+    :cond_3
+    instance-of v0, p1, Ln85;
 
-    invoke-static {v0, v1, p0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    if-eqz v0, :cond_4
+
+    check-cast p1, Ln85;
+
+    iget-object p1, p1, Ln85;->a:Lqh8;
+
+    iget-object v0, p1, Lqh8;->Y:Ljava/lang/String;
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->y0()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    iget-wide v0, p1, Lqh8;->a:J
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->z0()J
+
+    move-result-wide v2
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_4
+
+    invoke-virtual {p0}, Lone/me/chatmedia/viewer/photo/PhotoViewerWidget;->A0()Li5b;
 
     move-result-object p0
+
+    iget-object p1, p1, Lqh8;->o:Ln07;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Li5b;->r(Ln07;Z)V
+
+    :cond_4
+    :goto_1
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

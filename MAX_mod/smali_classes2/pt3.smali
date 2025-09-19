@@ -1,241 +1,213 @@
-.class public final Lpt3;
-.super Lto5;
+.class public abstract Lpt3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final h:Ljava/util/List;
-
-.field public final i:Z
-
-.field public j:I
-
-
 # direct methods
-.method public constructor <init>(Lq56;Ljava/util/ArrayList;ZI)V
-    .registers 5
+.method public static a([B)Lqt3;
+    .registers 13
 
-    invoke-direct {p0, p1}, Lto5;-><init>(Landroidx/fragment/app/c;)V
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$ContactUpdate;
 
-    iput-object p2, p0, Lpt3;->h:Ljava/util/List;
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$ContactUpdate;-><init>()V
 
-    iput-boolean p3, p0, Lpt3;->i:Z
+    :try_start_0
+    invoke-static {v0, p0}, Lj29;->mergeFrom(Lj29;[B)Lj29;
 
-    iput p4, p0, Lpt3;->j:I
+    move-result-object p0
 
-    return-void
-.end method
+    check-cast p0, Lru/ok/tamtam/nano/Tasks$ContactUpdate;
+    :try_end_0
+    .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_0
 
+    new-instance v0, Lqt3;
 
-# virtual methods
-.method public final b()I
-    .registers 1
+    iget-wide v2, p0, Lru/ok/tamtam/nano/Tasks$ContactUpdate;->requestId:J
 
-    iget-object p0, p0, Lpt3;->h:Ljava/util/List;
+    iget-wide v4, p0, Lru/ok/tamtam/nano/Tasks$ContactUpdate;->contactId:J
 
-    if-nez p0, :cond_0
+    iget-object v1, p0, Lru/ok/tamtam/nano/Tasks$ContactUpdate;->action:Ljava/lang/String;
 
-    const/4 p0, 0x0
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    return p0
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    :cond_0
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    move-result v6
 
-    move-result p0
+    const/4 v7, 0x4
 
-    return p0
-.end method
+    const/4 v8, 0x3
 
-.method public final c(Ljava/lang/Object;)I
-    .registers 5
+    const/4 v9, 0x2
 
-    instance-of v0, p1, Lru/ok/messages/contacts/profile/FrgContactAvatar;
+    const/4 v10, 0x1
 
-    if-eqz v0, :cond_1
+    const/4 v11, -0x1
 
-    check-cast p1, Lru/ok/messages/contacts/profile/FrgContactAvatar;
+    sparse-switch v6, :sswitch_data_0
 
-    const/4 v0, 0x0
+    goto :goto_0
 
-    :goto_0
-    iget-object v1, p0, Lpt3;->h:Ljava/util/List;
+    :sswitch_0
+    const-string v6, "UNBLOCK"
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v6
 
-    if-ge v0, v2, :cond_1
+    if-nez v6, :cond_0
 
-    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/AbstractMap$SimpleEntry;
-
-    invoke-virtual {v1}, Ljava/util/AbstractMap$SimpleEntry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/List;
-
-    iget-object v2, p1, Lru/ok/messages/contacts/profile/FrgContactAvatar;->x1:Ljava/util/ArrayList;
-
-    invoke-interface {v1, v2}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    return v0
+    goto :goto_0
 
     :cond_0
-    add-int/lit8 v0, v0, 0x1
+    move v11, v7
+
+    goto :goto_0
+
+    :sswitch_1
+    const-string v6, "BLOCK"
+
+    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_1
 
     goto :goto_0
 
     :cond_1
-    const/4 p0, -0x2
-
-    return p0
-.end method
-
-.method public final g(I)Landroidx/fragment/app/a;
-    .registers 8
-
-    iget-object v0, p0, Lpt3;->h:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/AbstractMap$SimpleEntry;
-
-    iget v2, p0, Lpt3;->j:I
-
-    if-eq v2, p1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result p1
-
-    const/4 v0, 0x1
-
-    if-eq p1, v0, :cond_0
+    move v11, v8
 
     goto :goto_0
 
-    :cond_0
-    const/4 v0, 0x0
+    :sswitch_2
+    const-string v6, "ADD"
+
+    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    move v11, v9
+
+    goto :goto_0
+
+    :sswitch_3
+    const-string v6, "UPDATE"
+
+    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    move v11, v10
+
+    goto :goto_0
+
+    :sswitch_4
+    const-string v6, "REMOVE"
+
+    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    const/4 v11, 0x0
 
     :goto_0
-    invoke-virtual {v1}, Ljava/util/AbstractMap$SimpleEntry;->getKey()Ljava/lang/Object;
+    packed-switch v11, :pswitch_data_0
 
-    move-result-object p1
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    check-cast p1, Ljava/util/List;
+    const-string v0, "No such value "
 
-    invoke-virtual {v1}, Ljava/util/AbstractMap$SimpleEntry;->getValue()Ljava/lang/Object;
+    const-string v2, " for ContactUpdateAction"
 
-    move-result-object v1
+    invoke-static {v0, v1, v2}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    check-cast v1, Ljava/lang/Long;
+    move-result-object v0
 
-    new-instance v2, Lru/ok/messages/contacts/profile/FrgContactAvatar;
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2}, Lru/ok/messages/contacts/profile/FrgContactAvatar;-><init>()V
+    throw p0
 
-    new-instance v3, Landroid/os/Bundle;
+    :pswitch_0
+    move v1, v9
 
-    invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
+    goto :goto_2
 
-    new-instance v4, Ljava/util/ArrayList;
+    :pswitch_1
+    move v1, v10
 
-    invoke-direct {v4, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    goto :goto_2
 
-    const-string p1, "ru.ok.tamtam.extra.AVATAR_URL"
+    :goto_1
+    :pswitch_2
+    move v1, v7
 
-    invoke-virtual {v3, p1, v4}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
+    goto :goto_2
 
-    const-string p1, "ru.ok.tamtam.extra.AVATAR_ID"
+    :pswitch_3
+    const/4 v7, 0x5
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    goto :goto_1
 
-    move-result-wide v4
+    :pswitch_4
+    move v1, v8
 
-    invoke-virtual {v3, p1, v4, v5}, Landroid/os/BaseBundle;->putLong(Ljava/lang/String;J)V
+    :goto_2
+    iget-object v6, p0, Lru/ok/tamtam/nano/Tasks$ContactUpdate;->oldName:Ljava/lang/String;
 
-    const-string p1, "ru.ok.tamtam.extra.DELETE_OPTION"
+    iget-object v7, p0, Lru/ok/tamtam/nano/Tasks$ContactUpdate;->oldLastName:Ljava/lang/String;
 
-    iget-boolean p0, p0, Lpt3;->i:Z
+    iget-object v8, p0, Lru/ok/tamtam/nano/Tasks$ContactUpdate;->newName:Ljava/lang/String;
 
-    invoke-virtual {v3, p1, p0}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+    iget-object v9, p0, Lru/ok/tamtam/nano/Tasks$ContactUpdate;->lastName:Ljava/lang/String;
 
-    const-string p0, "ru.ok.tamtam.extra.MAKE_MAIN_OPTION"
+    invoke-direct/range {v0 .. v9}, Lqt3;-><init>(IJJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {v3, p0, v0}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+    return-object v0
 
-    invoke-virtual {v2, v3}, Landroidx/fragment/app/a;->L0(Landroid/os/Bundle;)V
+    :catch_0
+    move-exception v0
 
-    return-object v2
-.end method
+    move-object p0, v0
 
-.method public final h(I)Ljava/lang/String;
-    .registers 10
+    new-instance v0, Lru/ok/tamtam/nano/ProtoException;
 
-    iget-object p0, p0, Lpt3;->h:Ljava/util/List;
+    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    throw v0
 
-    move-result-object p0
+    nop
 
-    check-cast p0, Ljava/util/AbstractMap$SimpleEntry;
+    :sswitch_data_0
+    .sparse-switch
+        -0x7022137c -> :sswitch_4
+        -0x6a6cd337 -> :sswitch_3
+        0xfc81 -> :sswitch_2
+        0x3c5cc6d -> :sswitch_1
+        0x19517974 -> :sswitch_0
+    .end sparse-switch
 
-    invoke-virtual {p0}, Ljava/util/AbstractMap$SimpleEntry;->getKey()Ljava/lang/Object;
-
-    move-result-object p0
-
-    move-object v0, p0
-
-    check-cast v0, Ljava/lang/Iterable;
-
-    new-instance p0, Lre7;
-
-    const/4 p1, 0x6
-
-    invoke-direct {p0, p1}, Lre7;-><init>(I)V
-
-    new-instance v7, Lfo7;
-
-    const/4 p1, 0x3
-
-    invoke-direct {v7, p1, p0}, Lfo7;-><init>(ILjava/lang/Object;)V
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, ","
-
-    const-string v3, "["
-
-    const-string v4, "]"
-
-    const/4 v5, -0x1
-
-    const-string v6, ""
-
-    invoke-static/range {v0 .. v7}, Lj73;->p0(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/String;Lj96;)V
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -2,456 +2,330 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lt3a;
+
+# instance fields
+.field public a:Z
+
+.field public b:Ljava/lang/Object;
+
+.field public c:Ljava/lang/Object;
+
+.field public d:Ljava/lang/Object;
 
 
 # direct methods
-.method public static f(Ljava/lang/Throwable;)Lpc3;
-    .registers 3
-
-    const-string v0, "throwable is null"
-
-    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    new-instance v0, Lqa6;
-
-    invoke-direct {v0, p0}, Lqa6;-><init>(Ljava/lang/Object;)V
-
-    new-instance p0, Lpc3;
-
-    const/4 v1, 0x4
-
-    invoke-direct {p0, v1, v0}, Lpc3;-><init>(ILjava/lang/Object;)V
-
-    return-object p0
-.end method
-
-.method public static h(Ljava/lang/Iterable;)Lpc3;
-    .registers 3
-
-    const-string v0, "source is null"
-
-    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    new-instance v0, Lpc3;
-
-    const/4 v1, 0x6
-
-    invoke-direct {v0, v1, p0}, Lpc3;-><init>(ILjava/lang/Object;)V
-
-    return-object v0
-.end method
-
-.method public static i(JJLjava/util/concurrent/TimeUnit;Lqxc;)Lr2a;
-    .registers 14
-
-    const-string v0, "unit is null"
-
-    invoke-static {p4, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    const-string v0, "scheduler is null"
-
-    invoke-static {p5, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    new-instance v1, Lr2a;
-
-    const-wide/16 v2, 0x0
-
-    invoke-static {v2, v3, p0, p1}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide p0
-
-    invoke-static {v2, v3, p2, p3}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v4
-
-    move-wide v2, p0
-
-    move-object v6, p4
-
-    move-object v7, p5
-
-    invoke-direct/range {v1 .. v7}, Lr2a;-><init>(JJLjava/util/concurrent/TimeUnit;Lqxc;)V
-
-    return-object v1
-.end method
-
-.method public static j(JLjava/util/concurrent/TimeUnit;)Lr2a;
-    .registers 9
-
-    invoke-static {}, Ldyc;->a()Lqxc;
-
-    move-result-object v5
-
-    move-wide v2, p0
-
-    move-wide v0, p0
-
-    move-object v4, p2
-
-    invoke-static/range {v0 .. v5}, Ly0a;->i(JJLjava/util/concurrent/TimeUnit;Lqxc;)Lr2a;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static k(Ljava/lang/Object;)Ls2a;
+.method public constructor <init>()V
     .registers 2
 
-    const-string v0, "item is null"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    new-instance v0, Ls2a;
+    iput-boolean v0, p0, Ly0a;->a:Z
 
-    invoke-direct {v0, p0}, Ls2a;-><init>(Ljava/lang/Object;)V
-
-    return-object v0
+    return-void
 .end method
 
-.method public static s(JLjava/util/concurrent/TimeUnit;Lqxc;)Lb4a;
-    .registers 7
+.method public constructor <init>(Landroid/widget/FrameLayout;Lohb;)V
+    .registers 4
 
-    const-string v0, "unit is null"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p2, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    const-string v0, "scheduler is null"
+    iput-boolean v0, p0, Ly0a;->a:Z
 
-    invoke-static {p3, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    iput-object p1, p0, Ly0a;->c:Ljava/lang/Object;
 
-    new-instance v0, Lb4a;
+    iput-object p2, p0, Ly0a;->d:Ljava/lang/Object;
 
-    const-wide/16 v1, 0x0
-
-    invoke-static {p0, p1, v1, v2}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide p0
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lb4a;-><init>(JLjava/util/concurrent/TimeUnit;Lqxc;)V
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ld4a;)V
-    .registers 3
+.method public a(Landroid/os/Bundle;)V
+    .registers 4
 
-    const-string v0, "observer is null"
+    iget-boolean v0, p0, Ly0a;->a:Z
 
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    :try_start_0
-    invoke-virtual {p0, p1}, Ly0a;->o(Ld4a;)V
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-object v0, p0, Ly0a;->d:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/CharSequence;
+
+    const-string v1, "android.summaryText"
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
+
+    :cond_0
+    iget-object v0, p0, Ly0a;->c:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/CharSequence;
+
+    if-eqz v0, :cond_1
+
+    const-string v1, "android.title.big"
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
+
+    :cond_1
+    invoke-virtual {p0}, Ly0a;->c()Ljava/lang/String;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_2
+
+    const-string v0, "androidx.core.app.extra.COMPAT_TEMPLATE"
+
+    invoke-virtual {p1, v0, p0}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_2
+    return-void
+.end method
+
+.method public abstract b(Lyvg;)V
+.end method
+
+.method public c()Ljava/lang/String;
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public abstract d()Landroid/view/View;
+.end method
+
+.method public abstract e()Landroid/graphics/Bitmap;
+.end method
+
+.method public abstract f()V
+.end method
+
+.method public abstract g()V
+.end method
+
+.method public abstract h(Lire;Lqz;)V
+.end method
+
+.method public i()V
+    .registers 8
+
+    iget-object v0, p0, Ly0a;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroid/widget/FrameLayout;
+
+    invoke-virtual {p0}, Ly0a;->d()Landroid/view/View;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_8
+
+    iget-boolean v2, p0, Ly0a;->a:Z
+
+    if-nez v2, :cond_0
+
+    goto/16 :goto_4
+
+    :cond_0
+    iget-object p0, p0, Ly0a;->d:Ljava/lang/Object;
+
+    check-cast p0, Lohb;
+
+    new-instance v2, Landroid/util/Size;
+
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
+
+    move-result v3
+
+    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
+
+    move-result v4
+
+    invoke-direct {v2, v3, v4}, Landroid/util/Size;-><init>(II)V
+
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutDirection()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    invoke-virtual {v2}, Landroid/util/Size;->getWidth()I
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    goto/16 :goto_3
+
+    :cond_1
+    invoke-virtual {p0}, Lohb;->f()Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    goto/16 :goto_4
+
+    :cond_2
+    instance-of v3, v1, Landroid/view/TextureView;
+
+    if-eqz v3, :cond_3
+
+    move-object v3, v1
+
+    check-cast v3, Landroid/view/TextureView;
+
+    invoke-virtual {p0}, Lohb;->d()Landroid/graphics/Matrix;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/view/TextureView;->setTransform(Landroid/graphics/Matrix;)V
+
+    goto :goto_2
+
+    :cond_3
+    invoke-virtual {v1}, Landroid/view/View;->getDisplay()Landroid/view/Display;
+
+    move-result-object v3
+
+    iget-boolean v4, p0, Lohb;->g:Z
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x1
+
+    if-eqz v4, :cond_4
+
+    if-eqz v3, :cond_4
+
+    invoke-virtual {v3}, Landroid/view/Display;->getRotation()I
+
+    move-result v3
+
+    iget v4, p0, Lohb;->e:I
+
+    if-eq v3, v4, :cond_4
+
+    move v3, v6
+
+    goto :goto_0
+
+    :cond_4
+    move v3, v5
+
+    :goto_0
+    iget-boolean v4, p0, Lohb;->g:Z
+
+    if-nez v4, :cond_6
+
+    if-nez v4, :cond_5
+
+    iget v4, p0, Lohb;->c:I
+
+    goto :goto_1
+
+    :cond_5
+    iget v4, p0, Lohb;->e:I
+
+    invoke-static {v4}, Ljk7;->X(I)I
+
+    move-result v4
+
+    neg-int v4, v4
+
+    :goto_1
+    if-eqz v4, :cond_6
+
+    move v5, v6
+
+    :cond_6
+    :goto_2
+    invoke-virtual {p0, v2, v0}, Lohb;->e(Landroid/util/Size;I)Landroid/graphics/RectF;
+
+    move-result-object v0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setPivotX(F)V
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setPivotY(F)V
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
+
+    move-result v2
+
+    iget-object v3, p0, Lohb;->a:Landroid/util/Size;
+
+    invoke-virtual {v3}, Landroid/util/Size;->getWidth()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    div-float/2addr v2, v3
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setScaleX(F)V
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->height()F
+
+    move-result v2
+
+    iget-object p0, p0, Lohb;->a:Landroid/util/Size;
+
+    invoke-virtual {p0}, Landroid/util/Size;->getHeight()I
+
+    move-result p0
+
+    int-to-float p0, p0
+
+    div-float/2addr v2, p0
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setScaleY(F)V
+
+    iget p0, v0, Landroid/graphics/RectF;->left:F
+
+    invoke-virtual {v1}, Landroid/view/View;->getLeft()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    sub-float/2addr p0, v2
+
+    invoke-virtual {v1, p0}, Landroid/view/View;->setTranslationX(F)V
+
+    iget p0, v0, Landroid/graphics/RectF;->top:F
+
+    invoke-virtual {v1}, Landroid/view/View;->getTop()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    sub-float/2addr p0, v0
+
+    invoke-virtual {v1, p0}, Landroid/view/View;->setTranslationY(F)V
 
     return-void
 
-    :catchall_0
-    move-exception p0
+    :cond_7
+    :goto_3
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-static {p0}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    invoke-static {p0}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    new-instance p1, Ljava/lang/NullPointerException;
-
-    const-string v0, "Actually not, but can\'t throw other exceptions due to RS"
-
-    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    throw p1
-
-    :catch_0
-    move-exception p0
-
-    throw p0
+    :cond_8
+    :goto_4
+    return-void
 .end method
 
-.method public final e(Ly96;)Ly0a;
-    .registers 9
-
-    const-string v0, "bufferSize"
-
-    const/4 v4, 0x2
-
-    invoke-static {v4, v0}, Lb38;->I(ILjava/lang/String;)V
-
-    instance-of v0, p0, Lzvc;
-
-    if-eqz v0, :cond_1
-
-    check-cast p0, Lzvc;
-
-    invoke-interface {p0}, Ldhe;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
-
-    sget-object p0, Lb2a;->a:Lb2a;
-
-    return-object p0
-
-    :cond_0
-    new-instance v0, Ld68;
-
-    const/4 v1, 0x2
-
-    invoke-direct {v0, p0, p1, v1}, Ld68;-><init>(Ljava/lang/Object;Ly96;I)V
-
-    return-object v0
-
-    :cond_1
-    new-instance v1, Lj1a;
-
-    const/4 v5, 0x1
-
-    const/4 v6, 0x0
-
-    move-object v2, p0
-
-    move-object v3, p1
-
-    invoke-direct/range {v1 .. v6}, Lj1a;-><init>(Ly0a;Ly96;III)V
-
-    return-object v1
-.end method
-
-.method public final g(Ly96;I)Ly0a;
-    .registers 9
-
-    sget v4, Lot5;->a:I
-
-    const-string v0, "maxConcurrency"
-
-    invoke-static {p2, v0}, Lb38;->I(ILjava/lang/String;)V
-
-    const-string v0, "bufferSize"
-
-    invoke-static {v4, v0}, Lb38;->I(ILjava/lang/String;)V
-
-    instance-of v0, p0, Lzvc;
-
-    if-eqz v0, :cond_1
-
-    check-cast p0, Lzvc;
-
-    invoke-interface {p0}, Ldhe;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
-
-    sget-object p0, Lb2a;->a:Lb2a;
-
-    return-object p0
-
-    :cond_0
-    new-instance p2, Ld68;
-
-    const/4 v0, 0x2
-
-    invoke-direct {p2, p0, p1, v0}, Ld68;-><init>(Ljava/lang/Object;Ly96;I)V
-
-    return-object p2
-
-    :cond_1
-    new-instance v0, Lj1a;
-
-    const/4 v5, 0x1
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move v3, p2
-
-    invoke-direct/range {v0 .. v5}, Lj1a;-><init>(Ly0a;Ly96;III)V
-
-    return-object v0
-.end method
-
-.method public final l(Lqxc;)Lu2a;
-    .registers 4
-
-    sget v0, Lot5;->a:I
-
-    const-string v1, "scheduler is null"
-
-    invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    const-string v1, "bufferSize"
-
-    invoke-static {v0, v1}, Lb38;->I(ILjava/lang/String;)V
-
-    new-instance v1, Lu2a;
-
-    invoke-direct {v1, p0, p1, v0}, Lu2a;-><init>(Ly0a;Lqxc;I)V
-
-    return-object v1
-.end method
-
-.method public final m(JLh9b;)Lw3a;
-    .registers 6
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-ltz v0, :cond_0
-
-    new-instance v0, Lw3a;
-
-    invoke-direct {v0, p0, p1, p2, p3}, Lw3a;-><init>(Ly0a;JLh9b;)V
-
-    return-object v0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p3, "times >= 0 required but it was "
-
-    invoke-static {p1, p2, p3}, La78;->i(JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final n(Lim3;)Ljh7;
-    .registers 5
-
-    sget-object v0, Lr7;->h:Lyr3;
-
-    sget-object v1, Lr7;->f:Loa6;
-
-    new-instance v2, Ljh7;
-
-    invoke-direct {v2, p1, v0, v1}, Ljh7;-><init>(Lim3;Lim3;Lz5;)V
-
-    invoke-virtual {p0, v2}, Ly0a;->a(Ld4a;)V
-
-    return-object v2
-.end method
-
-.method public abstract o(Ld4a;)V
-.end method
-
-.method public final p(Lqxc;)Lo1a;
-    .registers 3
-
-    const-string v0, "scheduler is null"
-
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    new-instance v0, Lo1a;
-
-    invoke-direct {v0, p0, p1}, Lo1a;-><init>(Ly0a;Lqxc;)V
-
-    return-object v0
-.end method
-
-.method public final q(J)Lu3a;
-    .registers 5
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v0, p1, v0
-
-    if-ltz v0, :cond_0
-
-    new-instance v0, Lu3a;
-
-    invoke-direct {v0, p0, p1, p2}, Lu3a;-><init>(Ly0a;J)V
-
-    return-object v0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "count >= 0 required but it was "
-
-    invoke-static {p1, p2, v0}, La78;->i(JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final r(J)Lw3a;
-    .registers 10
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-static {}, Ldyc;->a()Lqxc;
-
-    move-result-object v5
-
-    const-string v1, "unit is null"
-
-    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    const-string v0, "scheduler is null"
-
-    invoke-static {v5, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    new-instance v1, Lw3a;
-
-    const/4 v6, 0x0
-
-    move-object v2, p0
-
-    move-wide v3, p1
-
-    invoke-direct/range {v1 .. v6}, Lw3a;-><init>(Ly0a;JLqxc;I)V
-
-    return-object v1
-.end method
-
-.method public final t()Lc1a;
-    .registers 3
-
-    const/16 v0, 0x10
-
-    const-string v1, "capacityHint"
-
-    invoke-static {v0, v1}, Lb38;->I(ILjava/lang/String;)V
-
-    new-instance v0, Lc1a;
-
-    invoke-direct {v0, p0}, Lc1a;-><init>(Ly0a;)V
-
-    return-object v0
-.end method
-
-.method public final u(Ljava/util/Comparator;)Lmud;
-    .registers 4
-
-    invoke-virtual {p0}, Ly0a;->t()Lc1a;
-
-    move-result-object p0
-
-    new-instance v0, Lwd1;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1, p1}, Lwd1;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p0, v0}, Lcud;->h(Ly96;)Lmud;
-
-    move-result-object p0
-
-    return-object p0
+.method public abstract j()Lgt7;
 .end method

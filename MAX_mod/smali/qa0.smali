@@ -4,20 +4,20 @@
 
 
 # instance fields
-.field public final a:Lfb0;
+.field public final a:Lra0;
 
 .field public final b:I
 
 
 # direct methods
-.method public constructor <init>(Lfb0;I)V
+.method public constructor <init>(Lra0;I)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-eqz p1, :cond_0
 
-    iput-object p1, p0, Lqa0;->a:Lfb0;
+    iput-object p1, p0, Lqa0;->a:Lra0;
 
     iput p2, p0, Lqa0;->b:I
 
@@ -26,7 +26,7 @@
     :cond_0
     new-instance p0, Ljava/lang/NullPointerException;
 
-    const-string p1, "Null packet"
+    const-string p1, "Null quality"
 
     invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -53,11 +53,11 @@
 
     check-cast p1, Lqa0;
 
-    iget-object v1, p0, Lqa0;->a:Lfb0;
+    iget-object v1, p0, Lqa0;->a:Lra0;
 
-    iget-object v3, p1, Lqa0;->a:Lfb0;
+    iget-object v3, p1, Lqa0;->a:Lra0;
 
-    invoke-virtual {v1, v3}, Lfb0;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -78,9 +78,9 @@
 .method public final hashCode()I
     .registers 3
 
-    iget-object v0, p0, Lqa0;->a:Lfb0;
+    iget-object v0, p0, Lqa0;->a:Lra0;
 
-    invoke-virtual {v0}, Lfb0;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
@@ -102,15 +102,15 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "In{packet="
+    const-string v1, "QualityRatio{quality="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lqa0;->a:Lfb0;
+    iget-object v1, p0, Lqa0;->a:Lra0;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", jpegQuality="
+    const-string v1, ", aspectRatio="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -118,7 +118,7 @@
 
     const-string v1, "}"
 
-    invoke-static {v0, p0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lyv7;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

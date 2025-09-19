@@ -1,50 +1,66 @@
-.class public final Lg25;
-.super Ljava/lang/Object;
+.class public abstract Lg25;
+.super Lji;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:I
+.field public u0:Lf45;
 
 
-# direct methods
-.method public constructor <init>(IIII)V
-    .registers 7
+# virtual methods
+.method public final onTextContextMenuItem(I)Z
+    .registers 3
 
-    and-int/lit8 v0, p4, 0x1
+    const v0, 0x1020022
 
-    if-eqz v0, :cond_0
+    if-ne p1, v0, :cond_0
 
-    const/high16 p1, -0x80000000
+    const p1, 0x1020031
+
+    invoke-super {p0, p1}, Landroidx/appcompat/widget/AppCompatEditText;->onTextContextMenuItem(I)Z
+
+    move-result p0
+
+    return p0
 
     :cond_0
-    and-int/lit8 v0, p4, 0x2
+    invoke-super {p0, p1}, Landroidx/appcompat/widget/AppCompatEditText;->onTextContextMenuItem(I)Z
 
-    const/4 v1, -0x1
+    move-result p0
 
-    if-eqz v0, :cond_1
+    return p0
+.end method
 
-    move p2, v1
+.method public setReplaceTextSmiles(Z)V
+    .registers 2
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lg25;->u0:Lf45;
+
+    if-nez p1, :cond_1
+
+    new-instance p1, Lf45;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lg25;->u0:Lf45;
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    return-void
+
+    :cond_0
+    iget-object p1, p0, Lg25;->u0:Lf45;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lg25;->u0:Lf45;
 
     :cond_1
-    and-int/lit8 p4, p4, 0x4
-
-    if-eqz p4, :cond_2
-
-    move p3, v1
-
-    :cond_2
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lg25;->a:I
-
-    iput p2, p0, Lg25;->b:I
-
-    iput p3, p0, Lg25;->c:I
-
     return-void
 .end method

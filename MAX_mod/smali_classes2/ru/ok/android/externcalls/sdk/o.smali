@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lim3;
+.implements Lpm3;
 
 
 # instance fields

@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lmy3;
+.implements Lty3;
 
 
 # annotations
@@ -14,15 +14,15 @@
     d2 = {
         "Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;",
         "Lone/me/sdk/arch/Widget;",
-        "Lmy3;",
+        "Lty3;",
         "Landroid/os/Bundle;",
         "args",
         "<init>",
         "(Landroid/os/Bundle;)V",
-        "Ljyc;",
+        "Lo6d;",
         "scopeId",
-        "(Ljava/lang/String;Lwc4;)V",
-        "x8",
+        "(Ljava/lang/String;Lld4;)V",
+        "c9",
         "calls-ui_release"
     }
     k = 0x1
@@ -36,7 +36,7 @@
 
 
 # static fields
-.field public static final synthetic q0:[Lsf7;
+.field public static final synthetic u0:[Lxi7;
 
 
 # instance fields
@@ -44,28 +44,28 @@
 
 .field public final Y:Ljava/lang/Object;
 
-.field public Z:Lx8;
+.field public Z:Lc9;
 
-.field public a:Lry3;
+.field public a:Lyy3;
 
-.field public final b:Lxh7;
+.field public final b:Lcl7;
 
 .field public c:Landroid/animation/ObjectAnimator;
 
-.field public final n0:Lxac;
-
 .field public final o:Landroid/os/Handler;
 
-.field public final o0:Lxac;
+.field public final r0:Lcic;
 
-.field public final p0:Lxac;
+.field public final s0:Lcic;
+
+.field public final t0:Lcic;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 7
 
-    new-instance v0, Lrqb;
+    new-instance v0, Lsxb;
 
     const-class v1, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;
 
@@ -75,29 +75,29 @@
 
     const/4 v4, 0x0
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    sget-object v2, Lyhc;->a:Lzhc;
+    sget-object v2, Ljpc;->a:Lkpc;
 
     const-string v3, "multiContactCellView"
 
     const-string v5, "getMultiContactCellView()Lone/me/calls/ui/view/event/MultiContactCellView;"
 
-    invoke-static {v2, v1, v3, v5, v4}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
+    invoke-static {v2, v1, v3, v5, v4}, Lee5;->h(Lkpc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lsxb;
 
     move-result-object v2
 
-    new-instance v3, Lrqb;
+    new-instance v3, Lsxb;
 
     const-string v5, "eventContainerView"
 
     const-string v6, "getEventContainerView()Landroid/widget/FrameLayout;"
 
-    invoke-direct {v3, v1, v5, v6, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v3, v1, v5, v6, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     const/4 v1, 0x3
 
-    new-array v1, v1, [Lsf7;
+    new-array v1, v1, [Lxi7;
 
     aput-object v0, v1, v4
 
@@ -109,7 +109,7 @@
 
     aput-object v3, v1, v0
 
-    sput-object v1, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->q0:[Lsf7;
+    sput-object v1, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->u0:[Lxi7;
 
     return-void
 .end method
@@ -123,27 +123,27 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {p0, p1, v2, v0, v1}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILwc4;)V
+    invoke-direct {p0, p1, v2, v0, v1}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILld4;)V
 
-    new-instance p1, Lig1;
+    new-instance p1, Leg1;
 
-    const/16 v0, 0x1c
+    const/16 v0, 0x1d
 
-    invoke-direct {p1, v0}, Lig1;-><init>(I)V
+    invoke-direct {p1, v0}, Leg1;-><init>(I)V
 
-    new-instance v0, Lq;
+    new-instance v0, Lr;
 
     const/16 v1, 0x17
 
-    invoke-direct {v0, v1, p1}, Lq;-><init>(ILh96;)V
+    invoke-direct {v0, v1, p1}, Lr;-><init>(ILzb6;)V
 
-    const-class p1, Lvr1;
+    const-class p1, Lbs1;
 
-    invoke-virtual {p0, p1, v0}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lh96;)Lxh7;
+    invoke-virtual {p0, p1, v0}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lzb6;)Lcl7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->b:Lxh7;
+    iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->b:Lcl7;
 
     new-instance p1, Landroid/os/Handler;
 
@@ -157,71 +157,71 @@
 
     new-instance p1, Lb;
 
-    const/16 v0, 0x1a
+    const/16 v0, 0x1b
 
     invoke-direct {p1, v0, p0}, Lb;-><init>(ILjava/lang/Object;)V
 
     iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->X:Lb;
 
-    new-instance p1, Leb1;
+    new-instance p1, Lzb1;
 
     const/4 v0, 0x7
 
-    invoke-direct {p1, v0, p0}, Leb1;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p1, v0, p0}, Lzb1;-><init>(ILjava/lang/Object;)V
 
     const/4 v0, 0x3
 
-    invoke-static {v0, p1}, Lmtg;->u(ILh96;)Lxh7;
+    invoke-static {v0, p1}, Lcb7;->G(ILzb6;)Lcl7;
 
     move-result-object p1
 
     iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->Y:Ljava/lang/Object;
 
-    sget p1, Ls9a;->Z1:I
+    sget p1, Laea;->b2:I
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lxac;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->n0:Lxac;
-
-    sget p1, Ls9a;->T1:I
-
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lxac;
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lcic;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->o0:Lxac;
+    iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->r0:Lcic;
 
-    sget p1, Ls9a;->S1:I
+    sget p1, Laea;->V1:I
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lxac;
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lcic;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->p0:Lxac;
+    iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->s0:Lcic;
+
+    sget p1, Laea;->U1:I
+
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lcic;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->t0:Lcic;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lwc4;)V
+.method public constructor <init>(Ljava/lang/String;Lld4;)V
     .registers 4
 
-    new-instance p2, Ljyc;
+    new-instance p2, Lo6d;
 
-    invoke-direct {p2, p1}, Ljyc;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, p1}, Lo6d;-><init>(Ljava/lang/String;)V
 
-    new-instance p1, Lura;
+    new-instance p1, Lpxa;
 
     const-string v0, "arg_key_scope_id"
 
-    invoke-direct {p1, v0, p2}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p1, v0, p2}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    filled-new-array {p1}, [Lura;
+    filled-new-array {p1}, [Lpxa;
 
     move-result-object p1
 
-    invoke-static {p1}, La94;->c([Lura;)Landroid/os/Bundle;
+    invoke-static {p1}, Lw7;->c([Lpxa;)Landroid/os/Bundle;
 
     move-result-object p1
 
@@ -230,46 +230,99 @@
     return-void
 .end method
 
-.method public static A0(Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;)V
+.method public static B0(Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;)V
     .registers 3
 
-    iget-object v0, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->b:Lxh7;
+    iget-object v0, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->b:Lcl7;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lvr1;
-
-    iget-object v0, v0, Lvr1;->o:Ldbc;
-
-    iget-object v0, v0, Ldbc;->a:Lg4e;
-
-    invoke-interface {v0}, Lg4e;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ltr1;
+    check-cast v0, Lbs1;
 
-    invoke-interface {v0}, Ltr1;->a()J
+    iget-object v0, v0, Lbs1;->o:Liic;
+
+    iget-object v0, v0, Liic;->a:Lrce;
+
+    invoke-interface {v0}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lzr1;
+
+    invoke-interface {v0}, Lzr1;->a()J
 
     move-result-wide v0
 
-    invoke-virtual {p0, v0, v1}, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->z0(J)V
+    invoke-virtual {p0, v0, v1}, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->A0(J)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final B0()V
+.method public final A0(J)V
+    .registers 6
+
+    invoke-virtual {p0}, Lxx3;->getRouter()Lrzc;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Lrzc;->B(Lxx3;)Z
+
+    iget-object v0, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->Z:Lc9;
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, v0, Lc9;->b:Ljava/lang/Object;
+
+    check-cast v1, Lone/me/calls/ui/ui/call/CallScreen;
+
+    iget-object v0, v0, Lc9;->c:Ljava/lang/Object;
+
+    check-cast v0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;
+
+    sget-object v2, Lone/me/calls/ui/ui/call/CallScreen;->N0:Lad4;
+
+    invoke-virtual {v1}, Lone/me/calls/ui/ui/call/CallScreen;->I0()Lqm1;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lqm1;->c:Lot1;
+
+    invoke-virtual {v2, p1, p2}, Lot1;->g(J)V
+
+    invoke-virtual {v1}, Lone/me/calls/ui/ui/call/CallScreen;->G0()Lyy3;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lyy3;->a:Ljava/util/LinkedHashSet;
+
+    invoke-interface {p1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+    invoke-virtual {v1}, Lone/me/calls/ui/ui/call/CallScreen;->F0()Lc23;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lc23;->a()V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->Z:Lc9;
+
+    return-void
+.end method
+
+.method public final C0()V
     .registers 10
 
     iget-object v0, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->c:Landroid/animation/ObjectAnimator;
 
     if-nez v0, :cond_5
 
-    invoke-virtual {p0}, Lqx3;->getView()Landroid/view/View;
+    invoke-virtual {p0}, Lxx3;->getView()Landroid/view/View;
 
     move-result-object v0
 
@@ -301,7 +354,7 @@
     :goto_1
     if-eqz v0, :cond_4
 
-    iget-object v1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->a:Lry3;
+    iget-object v1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->a:Lyy3;
 
     const/4 v2, 0x0
 
@@ -309,9 +362,9 @@
 
     if-eqz v1, :cond_3
 
-    iget-object v1, v1, Lry3;->j:Lly3;
+    iget-object v1, v1, Lyy3;->j:Lsy3;
 
-    iget-boolean v4, v1, Lly3;->c:Z
+    iget-boolean v4, v1, Lsy3;->c:Z
 
     if-eqz v4, :cond_2
 
@@ -320,9 +373,9 @@
     goto :goto_2
 
     :cond_2
-    iget v4, v1, Lly3;->b:I
+    iget v4, v1, Lsy3;->b:I
 
-    invoke-virtual {v1}, Lly3;->b()I
+    invoke-virtual {v1}, Lsy3;->b()I
 
     move-result v1
 
@@ -341,7 +394,7 @@
     :goto_3
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -407,9 +460,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    new-instance v1, Ldf;
+    new-instance v1, Llf;
 
-    invoke-direct {v1, v7, p0}, Ldf;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v7, p0}, Llf;-><init>(ILjava/lang/Object;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
@@ -461,7 +514,7 @@
     return-void
 .end method
 
-.method public final M(Lky3;Lky3;)Ljava/util/List;
+.method public final M(Lry3;Lry3;)Ljava/util/List;
     .registers 5
 
     iget-object p2, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->c:Landroid/animation/ObjectAnimator;
@@ -471,11 +524,11 @@
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->pause()V
 
     :cond_0
-    invoke-static {}, Lso9;->f()Lkp7;
+    invoke-static {}, Lgs3;->m()Los7;
 
     move-result-object p2
 
-    invoke-virtual {p0}, Lqx3;->getView()Landroid/view/View;
+    invoke-virtual {p0}, Lxx3;->getView()Landroid/view/View;
 
     move-result-object p0
 
@@ -504,42 +557,42 @@
     :cond_2
     if-eqz v0, :cond_3
 
-    iget p0, p1, Lky3;->d:F
+    iget p0, p1, Lry3;->d:F
 
     invoke-static {p0}, Ljava/lang/Math;->abs(F)F
 
     move-result p0
 
-    iget v1, p1, Lky3;->f:I
+    iget v1, p1, Lry3;->f:I
 
     int-to-float v1, v1
 
     sub-float/2addr p0, v1
 
-    iget p1, p1, Lky3;->c:I
+    iget p1, p1, Lry3;->c:I
 
     int-to-float p1, p1
 
     mul-float/2addr p0, p1
 
-    invoke-static {v0, p0}, Lpwe;->k(Landroid/view/View;F)Landroid/animation/ObjectAnimator;
+    invoke-static {v0, p0}, Lhs9;->v(Landroid/view/View;F)Landroid/animation/ObjectAnimator;
 
     move-result-object p0
 
-    invoke-virtual {p2, p0}, Lkp7;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p0}, Los7;->add(Ljava/lang/Object;)Z
 
     :cond_3
-    invoke-static {p2}, Lso9;->a(Ljava/util/List;)Lkp7;
+    invoke-static {p2}, Lgs3;->f(Ljava/util/List;)Los7;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final U()V
+.method public final T()V
     .registers 1
 
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->B0()V
+    invoke-virtual {p0}, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->C0()V
 
     return-void
 .end method
@@ -547,9 +600,9 @@
 .method public final onAttach(Landroid/view/View;)V
     .registers 2
 
-    invoke-super {p0, p1}, Lqx3;->onAttach(Landroid/view/View;)V
+    invoke-super {p0, p1}, Lxx3;->onAttach(Landroid/view/View;)V
 
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->B0()V
+    invoke-virtual {p0}, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->C0()V
 
     return-void
 .end method
@@ -557,13 +610,13 @@
 .method public final onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .registers 5
 
-    new-instance p2, Lnke;
+    new-instance p2, Lkte;
 
     invoke-virtual {p1}, Landroid/view/LayoutInflater;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {p2, p1}, Lnke;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, p1}, Lkte;-><init>(Landroid/content/Context;)V
 
     new-instance p1, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -587,11 +640,11 @@
 
     invoke-direct {p1, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    sget p3, Ls9a;->S1:I
+    sget p3, Laea;->U1:I
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setId(I)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object p3
 
@@ -605,21 +658,21 @@
 
     mul-float/2addr p3, v0
 
-    invoke-static {p1, p3}, Lx44;->H(Landroid/view/View;F)V
+    invoke-static {p1, p3}, Lm7g;->w(Landroid/view/View;F)V
 
-    sget-object p3, Lct4;->p0:Lws9;
+    sget-object p3, Lyu4;->t0:Lbx9;
 
-    invoke-virtual {p3, p1}, Lws9;->g(Landroid/view/View;)Ldea;
-
-    move-result-object p3
-
-    iget-object p3, p3, Ldea;->c:Loma;
-
-    invoke-interface {p3}, Loma;->b()Lef0;
+    invoke-virtual {p3, p1}, Lbx9;->q(Landroid/view/View;)Llia;
 
     move-result-object p3
 
-    iget p3, p3, Lef0;->h:I
+    iget-object p3, p3, Llia;->c:Lera;
+
+    invoke-interface {p3}, Lera;->b()Lie0;
+
+    move-result-object p3
+
+    iget p3, p3, Lie0;->h:I
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setBackgroundColor(I)V
 
@@ -633,21 +686,21 @@
 
     invoke-virtual {p2, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    new-instance p3, Lg38;
+    new-instance p3, Lim4;
 
     const/16 v0, 0x9
 
-    invoke-direct {p3, p0, v0, p1}, Lg38;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {p3, p0, v0, p1}, Lim4;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    invoke-virtual {p2, p3}, Lnke;->setCallback(Lmke;)V
+    invoke-virtual {p2, p3}, Lkte;->setCallback(Ljte;)V
 
-    new-instance p0, Lwr1;
+    new-instance p0, Lcs1;
 
     const/4 p1, 0x0
 
-    invoke-direct {p0, p2, p2, p1}, Lwr1;-><init>(Lnke;Lnke;I)V
+    invoke-direct {p0, p2, p2, p1}, Lcs1;-><init>(Lkte;Lkte;I)V
 
-    invoke-static {p2, p0}, Lzna;->a(Landroid/view/View;Ljava/lang/Runnable;)Lzna;
+    invoke-static {p2, p0}, Lssa;->a(Landroid/view/View;Ljava/lang/Runnable;)Lssa;
 
     return-object p2
 .end method
@@ -655,7 +708,7 @@
 .method public final onDestroyView(Landroid/view/View;)V
     .registers 2
 
-    invoke-super {p0, p1}, Lqx3;->onDestroyView(Landroid/view/View;)V
+    invoke-super {p0, p1}, Lxx3;->onDestroyView(Landroid/view/View;)V
 
     const/4 p1, 0x0
 
@@ -667,7 +720,7 @@
 .method public final onDetach(Landroid/view/View;)V
     .registers 3
 
-    invoke-super {p0, p1}, Lqx3;->onDetach(Landroid/view/View;)V
+    invoke-super {p0, p1}, Lxx3;->onDetach(Landroid/view/View;)V
 
     iget-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->o:Landroid/os/Handler;
 
@@ -690,63 +743,63 @@
 
     invoke-super {p0, p1}, Lone/me/sdk/arch/Widget;->onViewCreated(Landroid/view/View;)V
 
-    iget-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->b:Lxh7;
+    iget-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->b:Lcl7;
 
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lvr1;
-
-    iget-object p1, p1, Lvr1;->o:Ldbc;
-
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleOwner()Lwk7;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lwk7;->L()Lyk7;
-
-    move-result-object v0
-
-    sget-object v1, Lzj7;->o:Lzj7;
-
-    invoke-static {p1, v0, v1}, Lcjg;->j(Lfq5;Lyk7;Lzj7;)Ljs1;
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    new-instance v0, Lxr1;
+    check-cast p1, Lbs1;
+
+    iget-object p1, p1, Lbs1;->o:Liic;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleOwner()Lzn7;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lzn7;->L()Lbo7;
+
+    move-result-object v0
+
+    sget-object v1, Lcn7;->o:Lcn7;
+
+    invoke-static {p1, v0, v1}, Lya6;->n(Lis5;Lbo7;Lcn7;)Lps1;
+
+    move-result-object p1
+
+    new-instance v0, Lds1;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1, p0}, Lxr1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;)V
+    invoke-direct {v0, v1, p0}, Lds1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;)V
 
-    new-instance v1, Lks5;
+    new-instance v1, Lnu5;
 
     const/4 v2, 0x1
 
-    invoke-direct {v1, p1, v0, v2}, Lks5;-><init>(Lfq5;Lx96;I)V
+    invoke-direct {v1, p1, v0, v2}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p0
 
-    invoke-static {v1, p0}, Lfog;->L(Lfq5;Lr04;)Lq1e;
+    invoke-static {v1, p0}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
     return-void
 .end method
 
-.method public final x0()Landroid/widget/FrameLayout;
+.method public final y0()Landroid/widget/FrameLayout;
     .registers 3
 
-    sget-object v0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->q0:[Lsf7;
+    sget-object v0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->u0:[Lxi7;
 
     const/4 v1, 0x2
 
     aget-object v0, v0, v1
 
-    iget-object v1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->p0:Lxac;
+    iget-object v1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->t0:Lcic;
 
-    invoke-interface {v1, p0, v0}, Lxac;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
+    invoke-interface {v1, p0, v0}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -755,75 +808,22 @@
     return-object p0
 .end method
 
-.method public final y0()Lfi9;
+.method public final z0()Lpl9;
     .registers 3
 
-    sget-object v0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->q0:[Lsf7;
+    sget-object v0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->u0:[Lxi7;
 
     const/4 v1, 0x1
 
     aget-object v0, v0, v1
 
-    iget-object v1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->o0:Lxac;
+    iget-object v1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->s0:Lcic;
 
-    invoke-interface {v1, p0, v0}, Lxac;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
+    invoke-interface {v1, p0, v0}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lfi9;
+    check-cast p0, Lpl9;
 
     return-object p0
-.end method
-
-.method public final z0(J)V
-    .registers 6
-
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Llrc;->B(Lqx3;)Z
-
-    iget-object v0, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->Z:Lx8;
-
-    if-eqz v0, :cond_0
-
-    iget-object v1, v0, Lx8;->b:Ljava/lang/Object;
-
-    check-cast v1, Lone/me/calls/ui/ui/call/CallScreen;
-
-    iget-object v0, v0, Lx8;->c:Ljava/lang/Object;
-
-    check-cast v0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;
-
-    sget-object v2, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lq1d;
-
-    invoke-virtual {v1}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Lkm1;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lkm1;->c:Lit1;
-
-    invoke-virtual {v2, p1, p2}, Lit1;->g(J)V
-
-    invoke-virtual {v1}, Lone/me/calls/ui/ui/call/CallScreen;->F0()Lry3;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lry3;->a:Ljava/util/LinkedHashSet;
-
-    invoke-interface {p1, v0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    invoke-virtual {v1}, Lone/me/calls/ui/ui/call/CallScreen;->E0()Ly13;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ly13;->a()V
-
-    :cond_0
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->Z:Lx8;
-
-    return-void
 .end method

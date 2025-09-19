@@ -1,85 +1,54 @@
-.class public final enum Le0d;
-.super Ljava/lang/Enum;
+.class public final Le0d;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Le0d;
+# instance fields
+.field public final a:Ljava/lang/String;
 
-.field public static final enum b:Le0d;
+.field public final b:Lfec;
 
-.field public static final enum c:Le0d;
+.field public final c:Ljava/util/concurrent/atomic/AtomicLong;
 
-.field public static final synthetic o:[Le0d;
+.field public final d:Ljava/util/concurrent/ConcurrentHashMap;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lfec;)V
     .registers 5
 
-    new-instance v0, Le0d;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "UNREAD"
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    const/4 v2, 0x0
+    const-wide/16 v1, 0x1
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
 
-    sput-object v0, Le0d;->a:Le0d;
+    iput-object v0, p0, Le0d;->c:Ljava/util/concurrent/atomic/AtomicLong;
 
-    new-instance v1, Le0d;
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
 
-    const-string v2, "MENTION"
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    const/4 v3, 0x1
+    iput-object v0, p0, Le0d;->d:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    if-eqz p1, :cond_0
 
-    sput-object v1, Le0d;->b:Le0d;
+    const-string v0, "RtcCommands"
 
-    new-instance v2, Le0d;
+    iput-object v0, p0, Le0d;->a:Ljava/lang/String;
 
-    const-string v3, "REACTION"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Le0d;->c:Le0d;
-
-    filled-new-array {v0, v1, v2}, [Le0d;
-
-    move-result-object v0
-
-    sput-object v0, Le0d;->o:[Le0d;
+    iput-object p1, p0, Le0d;->b:Lfec;
 
     return-void
-.end method
 
-.method public static valueOf(Ljava/lang/String;)Le0d;
-    .registers 2
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-class v0, Le0d;
+    const-string p1, "Illegal \'logger\' value: null"
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    move-result-object p0
-
-    check-cast p0, Le0d;
-
-    return-object p0
-.end method
-
-.method public static values()[Le0d;
-    .registers 1
-
-    sget-object v0, Le0d;->o:[Le0d;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Le0d;
-
-    return-object v0
+    throw p0
 .end method

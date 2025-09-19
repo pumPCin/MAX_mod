@@ -1,393 +1,619 @@
 .class public final Lsv3;
-.super Ljava/lang/Object;
+.super Lhi0;
 .source "SourceFile"
-
-# interfaces
-.implements Lrv3;
-.implements Ltv3;
 
 
 # instance fields
-.field public X:Landroid/net/Uri;
+.field public final X:Landroid/content/ContentResolver;
 
-.field public Y:Landroid/os/Bundle;
+.field public Y:Landroid/net/Uri;
 
-.field public final synthetic a:I
+.field public Z:Landroid/content/res/AssetFileDescriptor;
 
-.field public b:Landroid/content/ClipData;
+.field public r0:Ljava/io/FileInputStream;
 
-.field public c:I
+.field public s0:J
 
-.field public o:I
+.field public t0:Z
 
 
 # direct methods
-.method public synthetic constructor <init>()V
-    .registers 2
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lsv3;->a:I
+    invoke-direct {p0, v0}, Lhi0;-><init>(Z)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lsv3;)V
-    .registers 6
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lsv3;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iget-object v0, p1, Lsv3;->b:Landroid/content/ClipData;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object v0, p0, Lsv3;->b:Landroid/content/ClipData;
-
-    iget v0, p1, Lsv3;->c:I
-
-    const/4 v1, 0x5
-
-    const-string v2, "source"
-
-    const/4 v3, 0x0
-
-    invoke-static {v0, v2, v3, v1}, Lts;->j(ILjava/lang/String;II)V
-
-    iput v0, p0, Lsv3;->c:I
-
-    iget v0, p1, Lsv3;->o:I
-
-    and-int/lit8 v1, v0, 0x1
-
-    if-ne v1, v0, :cond_0
-
-    iput v0, p0, Lsv3;->o:I
-
-    iget-object v0, p1, Lsv3;->X:Landroid/net/Uri;
-
-    iput-object v0, p0, Lsv3;->X:Landroid/net/Uri;
-
-    iget-object p1, p1, Lsv3;->Y:Landroid/os/Bundle;
-
-    iput-object p1, p0, Lsv3;->Y:Landroid/os/Bundle;
-
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    const-string v1, "Requested flags 0x"
-
-    invoke-direct {p1, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ", but only 0x"
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/4 v0, 0x1
-
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, " are allowed"
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object p1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lsv3;->X:Landroid/content/ContentResolver;
 
-    throw p0
+    return-void
 .end method
 
 
 # virtual methods
-.method public b()Landroid/content/ClipData;
-    .registers 1
+.method public final P(Lm74;)J
+    .registers 20
 
-    iget-object p0, p0, Lsv3;->b:Landroid/content/ClipData;
+    move-object/from16 v0, p0
 
-    return-object p0
+    move-object/from16 v1, p1
+
+    const/16 v2, 0x7d0
+
+    :try_start_0
+    iget-object v3, v1, Lm74;->a:Landroid/net/Uri;
+
+    iget-wide v4, v1, Lm74;->g:J
+
+    iget-wide v6, v1, Lm74;->f:J
+
+    iput-object v3, v0, Lsv3;->Y:Landroid/net/Uri;
+
+    invoke-virtual {v0}, Lhi0;->c()V
+
+    const-string v8, "content"
+
+    iget-object v9, v1, Lm74;->a:Landroid/net/Uri;
+
+    invoke-virtual {v9}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+    :try_end_0
+    .catch Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    iget-object v9, v0, Lsv3;->X:Landroid/content/ContentResolver;
+
+    if-eqz v8, :cond_1
+
+    :try_start_1
+    new-instance v8, Landroid/os/Bundle;
+
+    invoke-direct {v8}, Landroid/os/Bundle;-><init>()V
+
+    sget v10, Llrf;->a:I
+
+    const/16 v11, 0x1f
+
+    if-lt v10, v11, :cond_0
+
+    invoke-static {v8}, Lrv3;->a(Landroid/os/Bundle;)V
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    goto/16 :goto_5
+
+    :cond_0
+    :goto_0
+    const-string v10, "*/*"
+
+    invoke-virtual {v9, v3, v10, v8}, Landroid/content/ContentResolver;->openTypedAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/res/AssetFileDescriptor;
+
+    move-result-object v8
+
+    goto :goto_1
+
+    :cond_1
+    const-string v8, "r"
+
+    invoke-virtual {v9, v3, v8}, Landroid/content/ContentResolver;->openAssetFileDescriptor(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
+
+    move-result-object v8
+
+    :goto_1
+    iput-object v8, v0, Lsv3;->Z:Landroid/content/res/AssetFileDescriptor;
+
+    if-eqz v8, :cond_c
+
+    invoke-virtual {v8}, Landroid/content/res/AssetFileDescriptor;->getLength()J
+
+    move-result-wide v9
+
+    new-instance v3, Ljava/io/FileInputStream;
+
+    invoke-virtual {v8}, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
+
+    move-result-object v11
+
+    invoke-direct {v3, v11}, Ljava/io/FileInputStream;-><init>(Ljava/io/FileDescriptor;)V
+
+    iput-object v3, v0, Lsv3;->r0:Ljava/io/FileInputStream;
+
+    const-wide/16 v11, -0x1
+
+    cmp-long v13, v9, v11
+
+    const/16 v14, 0x7d8
+
+    const/4 v15, 0x0
+
+    if-eqz v13, :cond_3
+
+    cmp-long v16, v6, v9
+
+    if-gtz v16, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
+
+    invoke-direct {v0, v15, v14}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw v0
+
+    :cond_3
+    :goto_2
+    invoke-virtual {v8}, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
+
+    move-result-wide v16
+
+    add-long v14, v16, v6
+
+    invoke-virtual {v3, v14, v15}, Ljava/io/FileInputStream;->skip(J)J
+
+    move-result-wide v14
+
+    sub-long v14, v14, v16
+
+    cmp-long v6, v14, v6
+
+    if-nez v6, :cond_b
+
+    const-wide/16 v6, 0x0
+
+    if-nez v13, :cond_6
+
+    invoke-virtual {v3}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/nio/channels/FileChannel;->size()J
+
+    move-result-wide v9
+
+    cmp-long v13, v9, v6
+
+    if-nez v13, :cond_4
+
+    iput-wide v11, v0, Lsv3;->s0:J
+
+    goto :goto_3
+
+    :cond_4
+    invoke-virtual {v3}, Ljava/nio/channels/FileChannel;->position()J
+
+    move-result-wide v13
+
+    sub-long/2addr v9, v13
+
+    iput-wide v9, v0, Lsv3;->s0:J
+
+    cmp-long v3, v9, v6
+
+    if-ltz v3, :cond_5
+
+    goto :goto_3
+
+    :cond_5
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
+
+    const/4 v1, 0x0
+
+    const/16 v8, 0x7d8
+
+    invoke-direct {v0, v1, v8}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw v0
+
+    :cond_6
+    sub-long/2addr v9, v14
+
+    iput-wide v9, v0, Lsv3;->s0:J
+    :try_end_1
+    .catch Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+
+    cmp-long v3, v9, v6
+
+    if-ltz v3, :cond_a
+
+    :goto_3
+    cmp-long v2, v4, v11
+
+    if-eqz v2, :cond_8
+
+    iget-wide v6, v0, Lsv3;->s0:J
+
+    cmp-long v3, v6, v11
+
+    if-nez v3, :cond_7
+
+    move-wide v6, v4
+
+    goto :goto_4
+
+    :cond_7
+    invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v6
+
+    :goto_4
+    iput-wide v6, v0, Lsv3;->s0:J
+
+    :cond_8
+    const/4 v3, 0x1
+
+    iput-boolean v3, v0, Lsv3;->t0:Z
+
+    invoke-virtual/range {p0 .. p1}, Lhi0;->e(Lm74;)V
+
+    if-eqz v2, :cond_9
+
+    return-wide v4
+
+    :cond_9
+    iget-wide v0, v0, Lsv3;->s0:J
+
+    return-wide v0
+
+    :cond_a
+    :try_start_2
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
+
+    const/4 v1, 0x0
+
+    const/16 v8, 0x7d8
+
+    invoke-direct {v0, v1, v8}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw v0
+
+    :cond_b
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
+
+    const/4 v1, 0x0
+
+    const/16 v8, 0x7d8
+
+    invoke-direct {v0, v1, v8}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw v0
+
+    :cond_c
+    new-instance v0, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
+
+    new-instance v1, Ljava/io/IOException;
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    add-int/lit8 v4, v4, 0x24
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v4, "Could not open file descriptor for: "
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw v0
+    :try_end_2
+    .catch Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    :goto_5
+    new-instance v1, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
+
+    instance-of v3, v0, Ljava/io/FileNotFoundException;
+
+    if-eqz v3, :cond_d
+
+    const/16 v2, 0x7d5
+
+    :cond_d
+    invoke-direct {v1, v0, v2}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw v1
+
+    :catch_1
+    move-exception v0
+
+    throw v0
 .end method
 
-.method public build()Luv3;
-    .registers 3
+.method public final close()V
+    .registers 6
 
-    new-instance v0, Luv3;
+    const/4 v0, 0x0
 
-    new-instance v1, Lsv3;
+    iput-object v0, p0, Lsv3;->Y:Landroid/net/Uri;
 
-    invoke-direct {v1, p0}, Lsv3;-><init>(Lsv3;)V
+    const/16 v1, 0x7d0
 
-    invoke-direct {v0, v1}, Luv3;-><init>(Ltv3;)V
+    const/4 v2, 0x0
 
-    return-object v0
-.end method
+    :try_start_0
+    iget-object v3, p0, Lsv3;->r0:Ljava/io/FileInputStream;
 
-.method public d(Landroid/net/Uri;)V
-    .registers 2
+    if-eqz v3, :cond_0
 
-    iput-object p1, p0, Lsv3;->X:Landroid/net/Uri;
+    invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    goto :goto_0
+
+    :catchall_0
+    move-exception v3
+
+    goto :goto_5
+
+    :catch_0
+    move-exception v3
+
+    goto :goto_4
+
+    :cond_0
+    :goto_0
+    iput-object v0, p0, Lsv3;->r0:Ljava/io/FileInputStream;
+
+    :try_start_1
+    iget-object v3, p0, Lsv3;->Z:Landroid/content/res/AssetFileDescriptor;
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v3}, Landroid/content/res/AssetFileDescriptor;->close()V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    goto :goto_1
+
+    :catchall_1
+    move-exception v1
+
+    goto :goto_3
+
+    :catch_1
+    move-exception v3
+
+    goto :goto_2
+
+    :cond_1
+    :goto_1
+    iput-object v0, p0, Lsv3;->Z:Landroid/content/res/AssetFileDescriptor;
+
+    iget-boolean v0, p0, Lsv3;->t0:Z
+
+    if-eqz v0, :cond_2
+
+    iput-boolean v2, p0, Lsv3;->t0:Z
+
+    invoke-virtual {p0}, Lhi0;->b()V
+
+    :cond_2
     return-void
+
+    :goto_2
+    :try_start_2
+    new-instance v4, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
+
+    invoke-direct {v4, v3, v1}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw v4
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    :goto_3
+    iput-object v0, p0, Lsv3;->Z:Landroid/content/res/AssetFileDescriptor;
+
+    iget-boolean v0, p0, Lsv3;->t0:Z
+
+    if-eqz v0, :cond_3
+
+    iput-boolean v2, p0, Lsv3;->t0:Z
+
+    invoke-virtual {p0}, Lhi0;->b()V
+
+    :cond_3
+    throw v1
+
+    :goto_4
+    :try_start_3
+    new-instance v4, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
+
+    invoke-direct {v4, v3, v1}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw v4
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :goto_5
+    iput-object v0, p0, Lsv3;->r0:Ljava/io/FileInputStream;
+
+    :try_start_4
+    iget-object v4, p0, Lsv3;->Z:Landroid/content/res/AssetFileDescriptor;
+
+    if-eqz v4, :cond_4
+
+    invoke-virtual {v4}, Landroid/content/res/AssetFileDescriptor;->close()V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+
+    goto :goto_6
+
+    :catchall_2
+    move-exception v1
+
+    goto :goto_8
+
+    :catch_2
+    move-exception v3
+
+    goto :goto_7
+
+    :cond_4
+    :goto_6
+    iput-object v0, p0, Lsv3;->Z:Landroid/content/res/AssetFileDescriptor;
+
+    iget-boolean v0, p0, Lsv3;->t0:Z
+
+    if-eqz v0, :cond_5
+
+    iput-boolean v2, p0, Lsv3;->t0:Z
+
+    invoke-virtual {p0}, Lhi0;->b()V
+
+    :cond_5
+    throw v3
+
+    :goto_7
+    :try_start_5
+    new-instance v4, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
+
+    invoke-direct {v4, v3, v1}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
+
+    throw v4
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+
+    :goto_8
+    iput-object v0, p0, Lsv3;->Z:Landroid/content/res/AssetFileDescriptor;
+
+    iget-boolean v0, p0, Lsv3;->t0:Z
+
+    if-eqz v0, :cond_6
+
+    iput-boolean v2, p0, Lsv3;->t0:Z
+
+    invoke-virtual {p0}, Lhi0;->b()V
+
+    :cond_6
+    throw v1
 .end method
 
-.method public getExtras()Landroid/os/Bundle;
+.method public final getUri()Landroid/net/Uri;
     .registers 1
 
-    iget-object p0, p0, Lsv3;->Y:Landroid/os/Bundle;
+    iget-object p0, p0, Lsv3;->Y:Landroid/net/Uri;
 
     return-object p0
 .end method
 
-.method public getFlags()I
-    .registers 1
+.method public final read([BII)I
+    .registers 12
 
-    iget p0, p0, Lsv3;->o:I
-
-    return p0
-.end method
-
-.method public i()Landroid/net/Uri;
-    .registers 1
-
-    iget-object p0, p0, Lsv3;->X:Landroid/net/Uri;
-
-    return-object p0
-.end method
-
-.method public o()Landroid/view/ContentInfo;
-    .registers 1
+    if-nez p3, :cond_0
 
     const/4 p0, 0x0
 
-    return-object p0
-.end method
-
-.method public r(Landroid/content/ClipData;)V
-    .registers 2
-
-    iput-object p1, p0, Lsv3;->b:Landroid/content/ClipData;
-
-    return-void
-.end method
-
-.method public s()I
-    .registers 1
-
-    iget p0, p0, Lsv3;->c:I
-
     return p0
-.end method
-
-.method public setExtras(Landroid/os/Bundle;)V
-    .registers 2
-
-    iput-object p1, p0, Lsv3;->Y:Landroid/os/Bundle;
-
-    return-void
-.end method
-
-.method public setFlags(I)V
-    .registers 2
-
-    iput p1, p0, Lsv3;->o:I
-
-    return-void
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 6
-
-    iget v0, p0, Lsv3;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    iget-object v0, p0, Lsv3;->X:Landroid/net/Uri;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "ContentInfoCompat{clip="
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Lsv3;->b:Landroid/content/ClipData;
-
-    invoke-virtual {v2}, Landroid/content/ClipData;->getDescription()Landroid/content/ClipDescription;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v2, ", source="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v2, p0, Lsv3;->c:I
-
-    if-eqz v2, :cond_5
-
-    const/4 v3, 0x1
-
-    if-eq v2, v3, :cond_4
-
-    const/4 v3, 0x2
-
-    if-eq v2, v3, :cond_3
-
-    const/4 v3, 0x3
-
-    if-eq v2, v3, :cond_2
-
-    const/4 v3, 0x4
-
-    if-eq v2, v3, :cond_1
-
-    const/4 v3, 0x5
-
-    if-eq v2, v3, :cond_0
-
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    goto :goto_0
 
     :cond_0
-    const-string v2, "SOURCE_PROCESS_TEXT"
+    iget-wide v0, p0, Lsv3;->s0:J
 
-    goto :goto_0
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v0, v2
+
+    const/4 v3, -0x1
+
+    if-nez v2, :cond_1
+
+    goto :goto_1
 
     :cond_1
-    const-string v2, "SOURCE_AUTOFILL"
+    const-wide/16 v4, -0x1
+
+    cmp-long v2, v0, v4
+
+    if-nez v2, :cond_2
 
     goto :goto_0
 
     :cond_2
-    const-string v2, "SOURCE_DRAG_AND_DROP"
+    int-to-long v6, p3
 
-    goto :goto_0
+    :try_start_0
+    invoke-static {v0, v1, v6, v7}, Ljava/lang/Math;->min(JJ)J
 
-    :cond_3
-    const-string v2, "SOURCE_INPUT_METHOD"
+    move-result-wide v0
 
-    goto :goto_0
-
-    :cond_4
-    const-string v2, "SOURCE_CLIPBOARD"
-
-    goto :goto_0
-
-    :cond_5
-    const-string v2, "SOURCE_APP"
+    long-to-int p3, v0
 
     :goto_0
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lsv3;->r0:Ljava/io/FileInputStream;
 
-    const-string v2, ", flags="
+    sget v1, Llrf;->a:I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/FileInputStream;->read([BII)I
 
-    iget v2, p0, Lsv3;->o:I
+    move-result p1
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    and-int/lit8 v3, v2, 0x1
-
-    if-eqz v3, :cond_6
-
-    const-string v2, "FLAG_CONVERT_TO_PLAIN_TEXT"
-
-    goto :goto_1
-
-    :cond_6
-    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object v2
+    if-ne p1, v3, :cond_3
 
     :goto_1
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return v3
 
-    const-string v2, ""
+    :cond_3
+    iget-wide p2, p0, Lsv3;->s0:J
 
-    if-nez v0, :cond_7
+    cmp-long v0, p2, v4
 
-    move-object v0, v2
+    if-eqz v0, :cond_4
 
-    goto :goto_2
+    int-to-long v0, p1
 
-    :cond_7
-    new-instance v3, Ljava/lang/StringBuilder;
+    sub-long/2addr p2, v0
 
-    const-string v4, ", hasLinkUri("
+    iput-wide p2, p0, Lsv3;->s0:J
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :cond_4
+    invoke-virtual {p0, p1}, Lhi0;->a(I)V
 
-    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    return p1
 
-    move-result-object v0
+    :catch_0
+    move-exception p0
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    new-instance p1, Lcom/google/android/exoplayer2/upstream/ContentDataSource$ContentDataSourceException;
 
-    move-result v0
+    const/16 p2, 0x7d0
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {p1, p0, p2}, Lcom/google/android/exoplayer2/upstream/DataSourceException;-><init>(Ljava/lang/Exception;I)V
 
-    const-string v0, ")"
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_2
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lsv3;->Y:Landroid/os/Bundle;
-
-    if-nez p0, :cond_8
-
-    goto :goto_3
-
-    :cond_8
-    const-string v2, ", hasExtras"
-
-    :goto_3
-    const-string p0, "}"
-
-    invoke-static {v1, v2, p0}, La78;->o(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
+    throw p1
 .end method

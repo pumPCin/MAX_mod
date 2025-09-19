@@ -2,255 +2,138 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lnyf;
+
+# static fields
+.field public static final synthetic c:I
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ld5;
 
-.field public final synthetic b:Ln5;
+.field public final b:Lzte;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ln5;I)V
-    .registers 3
-
-    iput p2, p0, Lf5;->a:I
-
-    iput-object p1, p0, Lf5;->b:Ln5;
+.method public constructor <init>(Landroid/content/Context;Ld5;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    iput-object p2, p0, Lf5;->a:Ld5;
 
-.method private final a(I)V
-    .registers 2
+    new-instance p2, Le5;
 
-    return-void
-.end method
+    const/4 v0, 0x0
 
-.method private final b(I)V
-    .registers 2
+    invoke-direct {p2, p1, v0}, Le5;-><init>(Landroid/content/Context;I)V
 
-    return-void
-.end method
+    new-instance p1, Lzte;
 
-.method private final c(IF)V
-    .registers 3
+    invoke-direct {p1, p2}, Lzte;-><init>(Lzb6;)V
 
-    return-void
-.end method
-
-.method private final d(IF)V
-    .registers 3
+    iput-object p1, p0, Lf5;->b:Lzte;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final n(I)V
+.method public final a()Landroid/accounts/Account;
     .registers 2
 
-    iget p0, p0, Lf5;->a:I
+    :try_start_0
+    iget-object v0, p0, Lf5;->b:Lzte;
 
-    return-void
-.end method
-
-.method public final o(I)V
-    .registers 4
-
-    iget v0, p0, Lf5;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lf5;->b:Ln5;
-
-    check-cast p0, Lru/ok/messages/contacts/profile/ActContactAvatars;
-
-    invoke-virtual {p0, p1}, Lru/ok/messages/contacts/profile/ActContactAvatars;->o(I)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lf5;->b:Ln5;
-
-    check-cast p0, Lru/ok/messages/media/attaches/ActAttachesView;
-
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->R0:Ld20;
-
-    if-nez v0, :cond_0
-
-    goto/16 :goto_1
-
-    :cond_0
-    iget-object v1, p0, Lru/ok/messages/media/attaches/ActAttachesView;->c1:Ljava/lang/String;
-
-    iget-object v0, v0, Ld20;->i:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
-
-    move-result v0
-
-    if-ne v0, p1, :cond_1
-
-    goto/16 :goto_1
-
-    :cond_1
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->R0:Ld20;
-
-    iget-object v1, p0, Lru/ok/messages/media/attaches/ActAttachesView;->c1:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ld20;->k(Ljava/lang/String;)Lru/ok/messages/media/attaches/fragments/FrgAttachView;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    instance-of v1, v0, Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;
+    check-cast v0, Landroid/accounts/AccountManager;
 
-    if-eqz v1, :cond_2
+    iget-object p0, p0, Lf5;->a:Ld5;
 
-    check-cast v0, Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;
+    iget-object p0, p0, Ld5;->a:Ljava/lang/String;
 
-    invoke-virtual {v0}, Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;->u1()V
-
-    :cond_2
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->R0:Ld20;
-
-    invoke-virtual {v0, p1}, Ld20;->h(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v0, v0, Lto5;->f:Ljava/util/HashMap;
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroidx/fragment/app/a;
-
-    instance-of v1, v0, Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;
-
-    if-eqz v1, :cond_3
-
-    check-cast v0, Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;
-
-    invoke-virtual {v0}, Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;->t1()V
-
-    :cond_3
-    iget-object v0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->R0:Ld20;
-
-    invoke-virtual {v0, p1}, Ld20;->l(I)Lwra;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_7
-
-    iget-object p1, p1, Lwra;->a:Ljava/lang/Object;
-
-    check-cast p1, Lw10;
-
-    iget-object p1, p1, Lw10;->r:Ljava/lang/String;
-
-    iput-object p1, p0, Lru/ok/messages/media/attaches/ActAttachesView;->c1:Ljava/lang/String;
-
-    const/4 p1, 0x0
-
-    iput-boolean p1, p0, Lru/ok/messages/media/attaches/ActAttachesView;->a1:Z
-
-    invoke-virtual {p0}, Lru/ok/messages/media/attaches/ActAttachesView;->h0()V
-
-    invoke-virtual {p0}, Lru/ok/messages/media/attaches/ActAttachesView;->j0()V
-
-    iget-object p1, p0, Lru/ok/messages/media/attaches/ActAttachesView;->R0:Ld20;
-
-    iget-object p0, p0, Lru/ok/messages/media/attaches/ActAttachesView;->c1:Ljava/lang/String;
-
-    invoke-virtual {p1, p0}, Ld20;->k(Ljava/lang/String;)Lru/ok/messages/media/attaches/fragments/FrgAttachView;
+    invoke-virtual {v0, p0}, Landroid/accounts/AccountManager;->getAccountsByType(Ljava/lang/String;)[Landroid/accounts/Account;
 
     move-result-object p0
 
-    instance-of p1, p0, Lru/ok/messages/media/attaches/fragments/FrgAttachPhoto;
+    const/4 v0, 0x0
 
-    if-eqz p1, :cond_4
+    invoke-static {v0, p0}, Lxr;->R(I[Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string p0, "ATTACH_PHOTO"
+    move-result-object p0
 
-    goto :goto_0
-
-    :cond_4
-    instance-of p1, p0, Lru/ok/messages/media/attaches/fragments/FrgAttachVideo;
-
-    if-eqz p1, :cond_5
-
-    const-string p0, "ATTACH_VIDEO"
+    check-cast p0, Landroid/accounts/Account;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    :cond_5
-    instance-of p0, p0, Lru/ok/messages/media/attaches/fragments/FrgAttachUnknown;
+    :catchall_0
+    move-exception p0
 
-    if-eqz p0, :cond_6
+    new-instance v0, Lhvc;
 
-    const-string p0, "ATTACH_UNKNOWN"
+    invoke-direct {v0, p0}, Lhvc;-><init>(Ljava/lang/Throwable;)V
 
-    goto :goto_0
-
-    :cond_6
-    const/4 p0, 0x0
+    move-object p0, v0
 
     :goto_0
-    invoke-static {p0}, Lms8;->t(Ljava/lang/CharSequence;)Z
+    instance-of v0, p0, Lhvc;
 
-    move-result p1
+    if-eqz v0, :cond_0
 
-    if-nez p1, :cond_7
+    const/4 p0, 0x0
 
-    new-instance p1, Ljava/lang/StringBuilder;
+    :cond_0
+    check-cast p0, Landroid/accounts/Account;
 
-    const-string v0, "sendFragmentStats: "
-
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "ru.ok.messages.media.attaches.ActAttachesView"
-
-    invoke-static {v0, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {}, Lol;->b()Lme3;
-
-    move-result-object p1
-
-    check-cast p1, Ltaa;
-
-    invoke-virtual {p1}, Ltaa;->b()Lsc;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Lsc;->f(Ljava/lang/String;)V
-
-    :cond_7
-    :goto_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public final q(IF)V
+.method public final b()V
     .registers 3
 
-    iget p0, p0, Lf5;->a:I
+    const-string v0, "removeAccount start"
+
+    const-string v1, "f5"
+
+    invoke-static {v1, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lf5;->a()Landroid/accounts/Account;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    :try_start_0
+    iget-object p0, p0, Lf5;->b:Lzte;
+
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/accounts/AccountManager;
+
+    invoke-virtual {p0, v0}, Landroid/accounts/AccountManager;->removeAccountExplicitly(Landroid/accounts/Account;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    const-string v0, "removeAccountExplicitly failed!"
+
+    invoke-static {v1, v0, p0}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_0
+    :goto_0
+    const-string p0, "removeAccount finished!"
+
+    invoke-static {v1, p0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

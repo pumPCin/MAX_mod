@@ -1,131 +1,105 @@
 .class public final Lfye;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lmy9;
 
 
 # instance fields
-.field public X:I
+.field public final a:Lqgb;
 
-.field public final synthetic Y:Lvye;
+.field public final b:Lcl7;
 
-.field public final synthetic Z:Ljava/nio/ByteBuffer;
+.field public final c:Lcl7;
+
+.field public final d:Lcl7;
+
+.field public final e:Lcl7;
+
+.field public final f:Lcl7;
+
+.field public final g:Lcl7;
+
+.field public final h:Lcl7;
+
+.field public final i:Lcl7;
+
+.field public final j:Lcl7;
+
+.field public final k:Lcl7;
+
+.field public final l:Lcl7;
+
+.field public final m:Lcl7;
+
+.field public final n:Lcl7;
+
+.field public o:Ldye;
 
 
 # direct methods
-.method public constructor <init>(Lvye;Ljava/nio/ByteBuffer;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Lqgb;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;)V
+    .registers 15
 
-    iput-object p1, p0, Lfye;->Y:Lvye;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lfye;->Z:Ljava/nio/ByteBuffer;
+    iput-object p1, p0, Lfye;->a:Lqgb;
 
-    const/4 p1, 0x2
+    iput-object p2, p0, Lfye;->b:Lcl7;
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p3, p0, Lfye;->c:Lcl7;
+
+    iput-object p4, p0, Lfye;->d:Lcl7;
+
+    iput-object p5, p0, Lfye;->i:Lcl7;
+
+    iput-object p6, p0, Lfye;->j:Lcl7;
+
+    iput-object p7, p0, Lfye;->e:Lcl7;
+
+    iput-object p8, p0, Lfye;->f:Lcl7;
+
+    iput-object p9, p0, Lfye;->g:Lcl7;
+
+    iput-object p10, p0, Lfye;->h:Lcl7;
+
+    iput-object p11, p0, Lfye;->k:Lcl7;
+
+    iput-object p12, p0, Lfye;->l:Lcl7;
+
+    iput-object p13, p0, Lfye;->m:Lcl7;
+
+    iput-object p14, p0, Lfye;->n:Lcl7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lfye;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lfye;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lfye;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p1, Lfye;
-
-    iget-object v0, p0, Lfye;->Y:Lvye;
-
-    iget-object p0, p0, Lfye;->Z:Ljava/nio/ByteBuffer;
-
-    invoke-direct {p1, v0, p0, p2}, Lfye;-><init>(Lvye;Ljava/nio/ByteBuffer;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a(Lc6;)V
     .registers 5
 
-    iget v0, p0, Lfye;->X:I
+    iget-object v0, p0, Lfye;->o:Ldye;
 
-    const/4 v1, 0x1
+    if-eqz v0, :cond_0
 
-    if-eqz v0, :cond_1
+    new-instance v1, Lz5e;
 
-    if-ne v0, v1, :cond_0
+    const/16 v2, 0x9
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-direct {v1, p0, v2, p1}, Lz5e;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    return-object p1
+    iget-object p0, v0, Ldye;->w0:Lzte;
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lfye;->Y:Lvye;
-
-    iget-object p1, p1, Lvye;->b:Ljava/nio/channels/AsynchronousByteChannel;
-
-    iput v1, p0, Lfye;->X:I
-
-    new-instance v0, Ly02;
-
-    invoke-static {p0}, Lx77;->H(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Ly02;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    invoke-virtual {v0}, Ly02;->o()V
-
-    sget-object v1, Lsu;->b:Lsu;
-
-    iget-object p0, p0, Lfye;->Z:Ljava/nio/ByteBuffer;
-
-    invoke-interface {p1, p0, v0, v1}, Ljava/nio/channels/AsynchronousByteChannel;->read(Ljava/nio/ByteBuffer;Ljava/lang/Object;Ljava/nio/channels/CompletionHandler;)V
-
-    invoke-virtual {v0}, Ly02;->m()Ljava/lang/Object;
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
+    check-cast p0, Ljava/util/concurrent/ExecutorService;
 
-    if-ne p0, p1, :cond_2
+    invoke-interface {p0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    return-object p1
-
-    :cond_2
-    return-object p0
+    :cond_0
+    return-void
 .end method

@@ -1,59 +1,41 @@
-.class public final Lz5d;
-.super Ljava/lang/Object;
+.class public abstract Lz5d;
+.super Lba5;
 .source "SourceFile"
 
 
-# static fields
-.field public static final d:Lf76;
-
-.field public static final e:Lf76;
-
-
 # instance fields
-.field public final a:Ljava/util/ArrayList;
-
-.field public b:I
-
-.field public c:I
+.field public a:Lx04;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
+# virtual methods
+.method public final dispatch(Lq04;Ljava/lang/Runnable;)V
+    .registers 3
 
-    const/16 v0, 0x3a
+    iget-object p0, p0, Lz5d;->a:Lx04;
 
-    invoke-static {v0}, Lf76;->S(C)Lf76;
+    const/4 p1, 0x6
 
-    move-result-object v0
-
-    sput-object v0, Lz5d;->d:Lf76;
-
-    const/16 v0, 0x2a
-
-    invoke-static {v0}, Lf76;->S(C)Lf76;
-
-    move-result-object v0
-
-    sput-object v0, Lz5d;->e:Lf76;
+    invoke-static {p0, p2, p1}, Lx04;->o(Lx04;Ljava/lang/Runnable;I)V
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .registers 2
+.method public final dispatchYield(Lq04;Ljava/lang/Runnable;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object p0, p0, Lz5d;->a:Lx04;
 
-    new-instance v0, Ljava/util/ArrayList;
+    const/4 p1, 0x2
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lz5d;->a:Ljava/util/ArrayList;
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lz5d;->b:I
+    invoke-static {p0, p2, p1}, Lx04;->o(Lx04;Ljava/lang/Runnable;I)V
 
     return-void
+.end method
+
+.method public final n()Ljava/util/concurrent/Executor;
+    .registers 1
+
+    iget-object p0, p0, Lz5d;->a:Lx04;
+
+    return-object p0
 .end method

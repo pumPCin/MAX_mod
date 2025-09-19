@@ -1,17 +1,33 @@
-.class public final Lv09;
+.class public abstract Lv09;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public a:Lhz8;
+# static fields
+.field public static final a:J
 
-.field public b:Ljava/lang/String;
+.field public static final synthetic b:I
 
-.field public c:J
 
-.field public d:I
+# direct methods
+.method static constructor <clinit>()V
+    .registers 6
 
-.field public e:Lfmf;
+    const/4 v0, -0x1
 
-.field public f:Ljava/lang/String;
+    int-to-long v0, v0
+
+    const/16 v2, 0x20
+
+    shl-long v2, v0, v2
+
+    const-wide v4, 0xffffffffL
+
+    and-long/2addr v0, v4
+
+    or-long/2addr v0, v2
+
+    sput-wide v0, Lv09;->a:J
+
+    return-void
+.end method

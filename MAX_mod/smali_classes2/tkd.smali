@@ -1,32 +1,57 @@
 .class public final Ltkd;
-.super Lbud;
+.super Lbld;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final E()V
-    .registers 1
+# instance fields
+.field public final synthetic g:I
+
+.field public final h:J
+
+
+# direct methods
+.method public synthetic constructor <init>(IJJ)V
+    .registers 6
+
+    iput p1, p0, Ltkd;->g:I
+
+    invoke-direct {p0, p2, p3}, Lbld;-><init>(J)V
+
+    iput-wide p4, p0, Ltkd;->h:J
 
     return-void
 .end method
 
-.method public final x(Lpp7;)V
-    .registers 3
 
-    instance-of v0, p1, Lm4d;
+# virtual methods
+.method public final a()Lcld;
+    .registers 6
 
-    if-nez v0, :cond_0
+    iget v0, p0, Ltkd;->g:I
 
-    return-void
+    packed-switch v0, :pswitch_data_0
 
-    :cond_0
-    iget-object p0, p0, Lphc;->a:Landroid/view/View;
+    new-instance v0, Lukd;
 
-    check-cast p0, Lmjd;
+    invoke-direct {v0, p0}, Lukd;-><init>(Ltkd;)V
 
-    check-cast p1, Lcjd;
+    return-object v0
 
-    invoke-virtual {p0, p1}, Lmjd;->setModelItem(Lcjd;)V
+    :pswitch_0
+    new-instance v0, Lukd;
 
-    return-void
+    iget-wide v1, p0, Lbld;->a:J
+
+    iget-wide v3, p0, Ltkd;->h:J
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lukd;-><init>(JJ)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

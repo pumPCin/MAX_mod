@@ -77,7 +77,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lwc4;)V
+.method public synthetic constructor <init>(Lld4;)V
     .registers 2
 
     invoke-direct {p0}, Lone/me/sdk/media/ffmpeg/WebmFactory$Config$Companion;-><init>()V

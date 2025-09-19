@@ -1,10 +1,3 @@
-.class public abstract Liyg;
-.super Lcrg;
+.class public final Liyg;
+.super Le54;
 .source "SourceFile"
-
-# interfaces
-.implements Ljyg;
-
-
-# static fields
-.field public static final synthetic d:I

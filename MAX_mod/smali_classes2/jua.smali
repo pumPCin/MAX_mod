@@ -1,139 +1,133 @@
-.class public final synthetic Ljua;
-.super Ljava/lang/Object;
+.class public final Ljua;
+.super Lys9;
 .source "SourceFile"
-
-# interfaces
-.implements Ljm3;
 
 
 # instance fields
-.field public final synthetic a:Lxua;
+.field public final b:Lq29;
 
-.field public final synthetic b:Lorg/webrtc/Size;
-
-.field public final synthetic c:I
-
-.field public final synthetic d:I
+.field public final c:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxua;Lorg/webrtc/Size;II)V
-    .registers 5
+.method public constructor <init>(Lq29;Ljava/lang/String;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lylf;->a:Lylf;
 
-    iput-object p1, p0, Ljua;->a:Lxua;
+    invoke-direct {p0, v0}, Lys9;-><init>(Ljava/lang/Object;)V
 
-    iput-object p2, p0, Ljua;->b:Lorg/webrtc/Size;
+    iput-object p1, p0, Ljua;->b:Lq29;
 
-    iput p3, p0, Ljua;->c:I
-
-    iput p4, p0, Ljua;->d:I
+    iput-object p2, p0, Ljua;->c:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .registers 12
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    check-cast p1, Lorg/webrtc/PeerConnection;
+    if-ne p0, p1, :cond_0
 
-    iget-object v0, p0, Ljua;->a:Lxua;
-
-    iget-object v1, v0, Lxua;->c0:Lr34;
-
-    invoke-virtual {v0}, Lxua;->E()V
-
-    iget-object v2, p0, Ljua;->b:Lorg/webrtc/Size;
-
-    iget v3, v2, Lorg/webrtc/Size;->width:I
-
-    iget v2, v2, Lorg/webrtc/Size;->height:I
-
-    iget v4, v0, Lxua;->n:I
-
-    const/4 v5, 0x0
-
-    if-ne v4, v3, :cond_0
-
-    iget v4, v0, Lxua;->o:I
-
-    if-eq v4, v2, :cond_1
+    goto :goto_1
 
     :cond_0
-    iput v2, v1, Lr34;->f:I
+    instance-of v0, p1, Ljua;
 
-    iput v3, v1, Lr34;->c:I
+    if-nez v0, :cond_1
 
-    iget-object v4, v0, Lxua;->y:Ld7c;
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    const-string v7, "Camera video size changed: "
-
-    invoke-direct {v6, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v7, v0, Lxua;->n:I
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v7, "x"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v8, v0, Lxua;->o:I
-
-    const-string v9, " -> "
-
-    invoke-static {v6, v8, v9, v3, v7}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "PCRTCClient"
-
-    invoke-interface {v4, v7, v6}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    iput v3, v0, Lxua;->n:I
-
-    iput v2, v0, Lxua;->o:I
-
-    invoke-virtual {v0, p1, v5}, Lxua;->t(Lorg/webrtc/PeerConnection;Z)V
+    goto :goto_0
 
     :cond_1
-    iget v2, v0, Lxua;->l:I
+    check-cast p1, Ljua;
 
-    iget v3, p0, Ljua;->c:I
+    iget-object v0, p0, Ljua;->b:Lq29;
 
-    iget p0, p0, Ljua;->d:I
+    iget-object v1, p1, Ljua;->b:Lq29;
 
-    if-ne v2, v3, :cond_3
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    iget v2, v0, Lxua;->m:I
+    move-result v0
 
-    if-eq v2, p0, :cond_2
+    if-nez v0, :cond_2
 
     goto :goto_0
 
     :cond_2
-    return-void
+    iget-object p0, p0, Ljua;->c:Ljava/lang/String;
+
+    iget-object p1, p1, Ljua;->c:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
 
     :cond_3
-    :goto_0
-    iput v3, v1, Lr34;->g:I
+    :goto_1
+    const/4 p0, 0x1
 
-    iput p0, v1, Lr34;->h:I
+    return p0
+.end method
 
-    iput v3, v0, Lxua;->l:I
+.method public final hashCode()I
+    .registers 2
 
-    iput p0, v0, Lxua;->m:I
+    iget-object v0, p0, Ljua;->b:Lq29;
 
-    invoke-virtual {v0, p1, v5}, Lxua;->k(Lorg/webrtc/PeerConnection;Z)V
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    return-void
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Ljua;->c:Ljava/lang/String;
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "OpenImageLegacy(message="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Ljua;->b:Lq29;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", attachLocalId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Ljua;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,3 +1,6 @@
-.class public final Lz6c;
+.class public abstract Lz6c;
 .super Ljava/lang/Object;
-.source "SourceFile"
+
+
+# static fields
+.field public static swipe_fade:I = 0x7f0a0c03

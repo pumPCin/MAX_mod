@@ -18,38 +18,38 @@
     throw p0
 .end method
 
-.method public static resolveInternalRequest(Ljava/lang/String;Z)Lkl0;
+.method public static resolveInternalRequest(Ljava/lang/String;Z)Ltk0;
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             "Z)",
-            "Lkl0;"
+            "Ltk0;"
         }
     .end annotation
 
     const-string v0, "vchat.getOkIdByExternalId"
 
-    invoke-static {v0}, Lbug;->D(Ljava/lang/String;)Ljl0;
+    invoke-static {v0}, Laec;->D(Ljava/lang/String;)Lsk0;
 
     move-result-object v0
 
-    sget-object v1, Ldl;->c:Ldl;
+    sget-object v1, Lnl;->c:Lnl;
 
-    iput-object v1, v0, Ljl0;->b:Ldl;
+    iput-object v1, v0, Lsk0;->b:Lnl;
 
     const-string v1, "externalId"
 
-    invoke-virtual {v0, v1, p0}, Ljl0;->b(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, p0}, Lsk0;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string p0, "anonym"
 
-    invoke-virtual {v0, p0, p1}, Ljl0;->c(Ljava/lang/String;Z)V
+    invoke-virtual {v0, p0, p1}, Lsk0;->c(Ljava/lang/String;Z)V
 
-    sget-object p0, Lru/ok/android/externcalls/sdk/api/InternalIdResponse;->PARSER:Lpe7;
+    sget-object p0, Lru/ok/android/externcalls/sdk/api/InternalIdResponse;->PARSER:Lvh7;
 
-    invoke-virtual {v0, p0}, Ljl0;->a(Lpe7;)Lkl0;
+    invoke-virtual {v0, p0}, Lsk0;->a(Lvh7;)Ltk0;
 
     move-result-object p0
 

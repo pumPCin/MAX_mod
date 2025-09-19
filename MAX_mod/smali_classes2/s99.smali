@@ -1,32 +1,30 @@
 .class public final Ls99;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
 .field public X:I
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public final synthetic Y:Lfb9;
 
-.field public final synthetic Z:Lxh7;
-
-.field public final synthetic n0:Lmm3;
+.field public final synthetic Z:J
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lmm3;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Lfb9;JLkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    iput-object p1, p0, Ls99;->Z:Lxh7;
+    iput-object p1, p0, Ls99;->Y:Lfb9;
 
-    iput-object p2, p0, Ls99;->n0:Lmm3;
+    iput-wide p2, p0, Ls99;->Z:J
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -36,7 +34,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -46,7 +44,7 @@
 
     check-cast p0, Ls99;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Ls99;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -56,46 +54,37 @@
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .registers 6
 
-    new-instance v0, Ls99;
+    new-instance p1, Ls99;
 
-    iget-object v1, p0, Ls99;->Z:Lxh7;
+    iget-object v0, p0, Ls99;->Y:Lfb9;
 
-    iget-object p0, p0, Ls99;->n0:Lmm3;
+    iget-wide v1, p0, Ls99;->Z:J
 
-    invoke-direct {v0, v1, p0, p2}, Ls99;-><init>(Lxh7;Lmm3;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, v0, v1, v2, p2}, Ls99;-><init>(Lfb9;JLkotlin/coroutines/Continuation;)V
 
-    iput-object p1, v0, Ls99;->Y:Ljava/lang/Object;
-
-    return-object v0
+    return-object p1
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .registers 9
 
-    iget v0, p0, Ls99;->X:I
+    iget-object v0, p0, Ls99;->Y:Lfb9;
 
-    const/4 v1, 0x1
+    iget-object v1, v0, Lfb9;->z1:Lv85;
 
-    if-eqz v0, :cond_1
+    iget v2, p0, Ls99;->X:I
 
-    if-ne v0, v1, :cond_0
+    iget-wide v3, p0, Ls99;->Z:J
 
-    iget-object p0, p0, Ls99;->Y:Ljava/lang/Object;
+    const/4 v5, 0x1
 
-    check-cast p0, Lr04;
+    if-eqz v2, :cond_1
 
-    :try_start_0
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-ne v2, v5, :cond_0
 
-    return-object p1
-
-    :catchall_0
-    move-exception p1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -109,71 +98,124 @@
     throw p0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Ls99;->Y:Ljava/lang/Object;
+    iget-object p1, v0, Lfb9;->Z0:Lcl7;
 
-    check-cast p1, Lr04;
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    iget-object v0, p0, Ls99;->Z:Lxh7;
+    move-result-object p1
 
-    iget-object v2, p0, Ls99;->n0:Lmm3;
+    check-cast p1, Lph6;
 
-    :try_start_1
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    iput v5, p0, Ls99;->X:I
 
-    move-result-object v0
+    invoke-static {p1, v3, v4, p0}, Lph6;->a(Lph6;JLjx3;)Ljava/lang/Object;
 
-    check-cast v0, Lzfa;
+    move-result-object p1
 
-    iput-object p1, p0, Ls99;->Y:Ljava/lang/Object;
+    sget-object p0, Lz04;->a:Lz04;
 
-    iput v1, p0, Ls99;->X:I
+    if-ne p1, p0, :cond_2
 
-    invoke-virtual {v0, v2, p0}, Lzfa;->c(Lmm3;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-    :try_end_1
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
+    return-object p0
 
     :cond_2
-    return-object p0
-
-    :catchall_1
-    move-exception p0
-
-    move-object v3, p1
-
-    move-object p1, p0
-
-    move-object p0, v3
-
     :goto_0
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Ltm3;
 
-    move-result-object p0
+    iget-object p0, v0, Lfb9;->x0:Lf53;
 
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    check-cast p0, Lgad;
 
-    move-result-object p0
+    invoke-virtual {p0}, Lgad;->q()J
 
-    const-string v0, "fail to fetch self avatar"
+    move-result-wide v5
 
-    invoke-static {p0, v0, p1}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    cmp-long p0, v3, v5
 
-    const/4 p0, 0x0
+    const/4 v2, 0x6
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    if-nez p0, :cond_3
+
+    new-instance p0, Lszd;
+
+    sget p1, Ld1d;->Q2:I
+
+    new-instance v0, Lp2f;
+
+    invoke-direct {v0, p1}, Lp2f;-><init>(I)V
+
+    invoke-direct {p0, v0, v6, v5, v2}, Lszd;-><init>(Lu2f;ILp2f;I)V
+
+    invoke-static {v1, p0}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    :cond_3
+    if-eqz p1, :cond_5
+
+    invoke-virtual {p1}, Ltm3;->k()I
+
+    move-result p0
+
+    if-nez p0, :cond_5
+
+    invoke-virtual {p1}, Ltm3;->x()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    iget-object p0, v0, Lfb9;->A1:Lv85;
+
+    sget-object p1, Li89;->c:Li89;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string v0, ":profile?id="
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v0, "&type=contact"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1, p0}, Lsg0;->l(Ljava/lang/String;Lv85;)V
+
+    goto :goto_2
+
+    :cond_5
+    :goto_1
+    new-instance p0, Lszd;
+
+    sget p1, Ljka;->M0:I
+
+    new-instance v0, Lp2f;
+
+    invoke-direct {v0, p1}, Lp2f;-><init>(I)V
+
+    invoke-direct {p0, v0, v6, v5, v2}, Lszd;-><init>(Lu2f;ILp2f;I)V
+
+    invoke-static {v1, p0}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
+
+    :goto_2
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
-
-    :catch_0
-    move-exception p0
-
-    throw p0
 .end method

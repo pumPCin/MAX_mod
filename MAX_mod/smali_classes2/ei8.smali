@@ -1,97 +1,61 @@
-.class public final enum Lei8;
-.super Ljava/lang/Enum;
+.class public final Lei8;
+.super Lgi8;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic X:[Lei8;
-
-.field public static final enum a:Lei8;
-
-.field public static final enum b:Lei8;
-
-.field public static final enum c:Lei8;
-
-.field public static final enum o:Lei8;
+.field public static final a:Lei8;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .registers 1
 
     new-instance v0, Lei8;
 
-    const-string v1, "GIF"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lei8;->a:Lei8;
-
-    new-instance v1, Lei8;
-
-    const-string v2, "STICKER"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lei8;->b:Lei8;
-
-    new-instance v2, Lei8;
-
-    const-string v3, "VIDEO"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lei8;->c:Lei8;
-
-    new-instance v3, Lei8;
-
-    const-string v4, "PIP"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lei8;->o:Lei8;
-
-    filled-new-array {v0, v1, v2, v3}, [Lei8;
-
-    move-result-object v0
-
-    sput-object v0, Lei8;->X:[Lei8;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lei8;
-    .registers 2
 
-    const-class v0, Lei8;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const/4 v0, 0x1
 
-    move-result-object p0
+    if-ne p0, p1, :cond_0
 
-    check-cast p0, Lei8;
+    return v0
 
-    return-object p0
+    :cond_0
+    instance-of p0, p1, Lei8;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
 .end method
 
-.method public static values()[Lei8;
+.method public final hashCode()I
     .registers 1
 
-    sget-object v0, Lei8;->X:[Lei8;
+    const p0, 0x2a092dd5
 
-    invoke-virtual {v0}, [Lei8;->clone()Ljava/lang/Object;
+    return p0
+.end method
 
-    move-result-object v0
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    check-cast v0, [Lei8;
+    const-string p0, "StickerInteraction"
 
-    return-object v0
+    return-object p0
 .end method

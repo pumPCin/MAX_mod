@@ -3,150 +3,190 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lee6;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lmag;
+# instance fields
+.field public final synthetic a:I
 
-.field private static final descriptor:Lkad;
+.field public final synthetic b:Loag;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public synthetic constructor <init>(Loag;I)V
+    .registers 3
 
-    new-instance v0, Lmag;
+    iput p2, p0, Lmag;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lmag;->b:Loag;
 
-    sput-object v0, Lmag;->a:Lmag;
-
-    new-instance v1, Lk7b;
-
-    const-string v2, "one.me.webapp.domain.jsbridge.delegates.phone.WebAppRequestPhoneRequest"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v0, v3}, Lk7b;-><init>(Ljava/lang/String;Lee6;I)V
-
-    const-string v0, "requestId"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Lk7b;->k(Ljava/lang/String;Z)V
-
-    sput-object v1, Lmag;->descriptor:Lkad;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lq8;)Ljava/lang/Object;
-    .registers 9
+.method public final run()V
+    .registers 7
 
-    sget-object p0, Lmag;->descriptor:Lkad;
+    iget v0, p0, Lmag;->a:I
 
-    invoke-virtual {p1, p0}, Lq8;->j(Lkad;)Lq8;
+    const/4 v1, 0x1
 
-    move-result-object p1
+    iget-object p0, p0, Lmag;->b:Loag;
 
-    const/4 v0, 0x1
+    packed-switch v0, :pswitch_data_0
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Loag;->a:Lcl7;
 
-    const/4 v2, 0x0
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    move v3, v0
+    move-result-object v0
 
-    move v4, v1
+    check-cast v0, Lpag;
 
-    :goto_0
-    if-eqz v3, :cond_2
+    iget-object p0, p0, Loag;->e:Lcl7;
 
-    invoke-virtual {p1, p0}, Lq8;->p(Lkad;)I
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lp2b;
+
+    sget-object v2, Lp2b;->d:[Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    aget-object v4, v2, v3
+
+    iget-object v5, p0, Lp2b;->c:Lr2b;
+
+    iget-object v5, v5, Lr2b;->b:Ljava/lang/Object;
+
+    check-cast v5, Lzte;
+
+    invoke-virtual {v5}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/content/SharedPreferences;
+
+    invoke-interface {v5, v4, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v5
 
-    const/4 v6, -0x1
-
-    if-eq v5, v6, :cond_1
-
     if-nez v5, :cond_0
 
-    invoke-virtual {p1, p0, v1}, Lq8;->v(Lkad;I)Ljava/lang/String;
+    iget-object v5, p0, Lp2b;->a:Landroid/content/Context;
 
-    move-result-object v2
+    invoke-static {v5, v4}, Lw7;->d(Landroid/content/Context;Ljava/lang/String;)I
 
-    move v4, v0
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    const-string v4, "oag"
+
+    const-string v5, "forceContactsSync"
+
+    invoke-static {v4, v5}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v4, p0, Lp2b;->c:Lr2b;
+
+    sget-object v5, Lp2b;->f:[Ljava/lang/String;
+
+    invoke-virtual {p0, v5}, Lp2b;->b([Ljava/lang/String;)Z
+
+    move-result p0
+
+    iget-object v4, v4, Lr2b;->b:Ljava/lang/Object;
+
+    check-cast v4, Lzte;
+
+    invoke-virtual {v4}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/content/SharedPreferences;
+
+    invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v4
+
+    aget-object v2, v2, v3
+
+    invoke-interface {v4, v2, p0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+    move v1, v3
 
-    invoke-direct {p0, v5}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
-
-    throw p0
-
-    :cond_1
-    move v3, v1
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p1, p0}, Lq8;->y(Lkad;)V
-
-    new-instance p0, Loag;
-
-    invoke-direct {p0, v4, v2}, Loag;-><init>(ILjava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public final b(Ltx3;Ljava/lang/Object;)V
-    .registers 4
-
-    check-cast p2, Loag;
-
-    sget-object p0, Lmag;->descriptor:Lkad;
-
-    invoke-virtual {p1, p0}, Ltx3;->b(Lkad;)Ltx3;
-
-    move-result-object p1
-
-    iget-object p2, p2, Loag;->a:Ljava/lang/String;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p0, v0, p2}, Ltx3;->l(Lkad;ILjava/lang/String;)V
-
-    invoke-virtual {p1}, Ltx3;->m()V
+    :goto_0
+    invoke-virtual {v0, v1}, Lpag;->b(Z)V
 
     return-void
-.end method
 
-.method public final c()[Ltf7;
-    .registers 3
+    :pswitch_0
+    iget-object v0, p0, Loag;->a:Lcl7;
 
-    const/4 p0, 0x1
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    new-array p0, p0, [Ltf7;
+    move-result-object v0
 
-    sget-object v0, Lmde;->a:Lmde;
+    check-cast v0, Lpag;
 
-    const/4 v1, 0x0
+    invoke-virtual {v0}, Lpag;->a()V
 
-    aput-object v0, p0, v1
+    iget-object p0, p0, Loag;->c:Lcl7;
 
-    return-object p0
-.end method
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-.method public final d()Lkad;
-    .registers 1
+    move-result-object p0
 
-    sget-object p0, Lmag;->descriptor:Lkad;
+    check-cast p0, Lvwe;
 
-    return-object p0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string v0, "vwe"
+
+    const-string v2, "syncAll"
+
+    invoke-static {v0, v2}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    iget-object v2, p0, Lvwe;->e:Lv5d;
+
+    new-instance v3, Lqw2;
+
+    const/4 v4, 0x3
+
+    invoke-direct {v3, p0, v0, v1, v4}, Lqw2;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
+
+    invoke-virtual {v2, v3}, Lv5d;->b(Ljava/lang/Runnable;)Loq4;
+
+    return-void
+
+    :pswitch_1
+    sget-object v0, Lrib;->r0:Lrib;
+
+    iget-object v0, v0, Lrib;->Y:Lbo7;
+
+    iget-object p0, p0, Loag;->m:Lnag;
+
+    invoke-virtual {v0, p0}, Lbo7;->a(Lvn7;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

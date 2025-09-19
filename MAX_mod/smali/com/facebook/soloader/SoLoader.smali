@@ -6,17 +6,17 @@
 # static fields
 .field public static final a:Z
 
-.field public static b:Ltle;
+.field public static b:Lbkd;
 
 .field public static final c:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
 .field public static d:Landroid/content/Context;
 
-.field public static volatile e:[Leyd;
+.field public static volatile e:[Ls6e;
 
 .field public static final f:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field public static g:Lj13;
+.field public static g:Lbh8;
 
 .field public static final h:Ljava/util/HashSet;
 
@@ -45,7 +45,7 @@
 
     sput-object v0, Lcom/facebook/soloader/SoLoader;->d:Landroid/content/Context;
 
-    sput-object v0, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sput-object v0, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
 
     new-instance v1, Ljava/util/concurrent/atomic/AtomicInteger;
 
@@ -55,7 +55,7 @@
 
     sput-object v1, Lcom/facebook/soloader/SoLoader;->f:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    sput-object v0, Lcom/facebook/soloader/SoLoader;->g:Lj13;
+    sput-object v0, Lcom/facebook/soloader/SoLoader;->g:Lbh8;
 
     new-instance v0, Ljava/util/HashSet;
 
@@ -101,7 +101,7 @@
 
     if-eqz v0, :cond_1
 
-    invoke-static {p0, v1}, Lycf;->f(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    invoke-static {p0, v1}, Ljmf;->f(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object p0
 
@@ -112,7 +112,7 @@
 
     if-eqz p1, :cond_0
 
-    invoke-static {p0}, Lele;->b(Ljava/io/File;)V
+    invoke-static {p0}, Lbue;->b(Ljava/io/File;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -139,13 +139,13 @@
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    new-instance v3, Lfg0;
+    new-instance v3, Ljf0;
 
-    invoke-direct {v3, p0, v0, v1}, Lfg0;-><init>(Landroid/content/Context;Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v3, p0, v0, v1}, Ljf0;-><init>(Landroid/content/Context;Ljava/io/File;Ljava/lang/String;)V
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v3}, Lgo4;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Lgp4;->toString()Ljava/lang/String;
 
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
 
@@ -174,7 +174,7 @@
 
     aget-object v6, v0, v4
 
-    new-instance v7, Lfg0;
+    new-instance v7, Ljf0;
 
     new-instance v8, Ljava/io/File;
 
@@ -194,16 +194,16 @@
 
     move-result-object v5
 
-    invoke-direct {v7, p0, v8, v5}, Lfg0;-><init>(Landroid/content/Context;Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v7, p0, v8, v5}, Ljf0;-><init>(Landroid/content/Context;Ljava/io/File;Ljava/lang/String;)V
 
-    invoke-virtual {v7}, Lgo4;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Lgp4;->toString()Ljava/lang/String;
 
     new-instance v5, Lcom/facebook/soloader/a;
 
-    invoke-direct {v5, v7, v7, v1}, Lcom/facebook/soloader/a;-><init>(Lfg0;Lfg0;Z)V
+    invoke-direct {v5, v7, v7, v1}, Lcom/facebook/soloader/a;-><init>(Ljf0;Ljf0;Z)V
 
     :try_start_1
-    invoke-virtual {v5}, Lcom/facebook/soloader/a;->o()[Lkd5;
+    invoke-virtual {v5}, Lcom/facebook/soloader/a;->o()[Lmf5;
 
     move-result-object v6
 
@@ -293,7 +293,7 @@
 
     if-nez v3, :cond_1
 
-    invoke-static {v1, v2, v0}, Lex3;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2, v0}, Lsq3;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -331,11 +331,11 @@
 
     invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    new-instance v1, Lgo4;
+    new-instance v1, Lgp4;
 
     const/4 v3, 0x2
 
-    invoke-direct {v1, v2, v3}, Lgo4;-><init>(Ljava/io/File;I)V
+    invoke-direct {v1, v2, v3}, Lgp4;-><init>(Ljava/io/File;I)V
 
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -359,7 +359,7 @@
     invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->lock()V
 
     :try_start_0
-    sget-object v2, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sget-object v2, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
@@ -408,7 +408,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     :try_start_2
-    sget-object v1, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sget-object v1, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
 
     array-length v3, v1
 
@@ -417,7 +417,7 @@
 
     aget-object v4, v1, v0
 
-    invoke-virtual {v4, p0, p1, p2}, Leyd;->c(Ljava/lang/String;ILandroid/os/StrictMode$ThreadPolicy;)I
+    invoke-virtual {v4, p0, p1, p2}, Ls6e;->c(Ljava/lang/String;ILandroid/os/StrictMode$ThreadPolicy;)I
 
     move-result v4
     :try_end_2
@@ -475,9 +475,9 @@
     :try_start_4
     sget-object p1, Lcom/facebook/soloader/SoLoader;->d:Landroid/content/Context;
 
-    sget-object v0, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sget-object v0, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
 
-    invoke-static {p0, p1, v0}, Lcyd;->a(Ljava/lang/String;Landroid/content/Context;[Leyd;)Lcyd;
+    invoke-static {p0, p1, v0}, Lq6e;->a(Ljava/lang/String;Landroid/content/Context;[Ls6e;)Lq6e;
 
     move-result-object p1
 
@@ -488,13 +488,13 @@
 
     :goto_2
     :try_start_5
-    new-instance v0, Ldyd;
+    new-instance v0, Lr6e;
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Ldyd;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, v1}, Lr6e;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {v0, p1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
@@ -565,7 +565,7 @@
     throw p0
 .end method
 
-.method public static declared-synchronized d()Lmi0;
+.method public static declared-synchronized d()Lrh0;
     .registers 2
 
     const-class v0, Lcom/facebook/soloader/SoLoader;
@@ -573,7 +573,7 @@
     monitor-enter v0
 
     :try_start_0
-    sget-object v1, Lcom/facebook/soloader/SoLoader;->g:Lj13;
+    sget-object v1, Lcom/facebook/soloader/SoLoader;->g:Lbh8;
 
     if-nez v1, :cond_0
 
@@ -582,7 +582,7 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1}, Lj13;->a()Lmi0;
+    invoke-virtual {v1}, Lbh8;->g()Lrh0;
 
     move-result-object v1
     :try_end_0
@@ -607,7 +607,7 @@
 .method public static e()V
     .registers 2
 
-    sget-object v0, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sget-object v0, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
 
     if-eqz v0, :cond_0
 
@@ -623,7 +623,7 @@
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->lock()V
 
     :try_start_0
-    sget-object v1, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sget-object v1, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -642,9 +642,9 @@
     const/4 v1, 0x0
 
     :try_start_1
-    new-array v1, v1, [Leyd;
+    new-array v1, v1, [Ls6e;
 
-    sput-object v1, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sput-object v1, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -665,7 +665,7 @@
 .end method
 
 .method public static declared-synchronized f(Landroid/content/Context;)V
-    .registers 3
+    .registers 4
 
     const-class v0, Lcom/facebook/soloader/SoLoader;
 
@@ -699,14 +699,16 @@
     :goto_0
     sput-object p0, Lcom/facebook/soloader/SoLoader;->d:Landroid/content/Context;
 
-    new-instance v1, Lj13;
+    new-instance v1, Lbh8;
 
-    invoke-direct {v1, p0}, Lj13;-><init>(Landroid/content/Context;)V
+    const/16 v2, 0xf
 
-    sput-object v1, Lcom/facebook/soloader/SoLoader;->g:Lj13;
+    invoke-direct {v1, p0, v2}, Lbh8;-><init>(Landroid/content/Context;I)V
+
+    sput-object v1, Lcom/facebook/soloader/SoLoader;->g:Lbh8;
 
     :cond_1
-    sget-object p0, Lcom/facebook/soloader/SoLoader;->b:Ltle;
+    sget-object p0, Lcom/facebook/soloader/SoLoader;->b:Lbkd;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -718,13 +720,13 @@
 
     :cond_2
     :try_start_1
-    new-instance p0, Ltle;
+    new-instance p0, Lbkd;
 
     const/16 v1, 0xd
 
-    invoke-direct {p0, v1}, Ltle;-><init>(I)V
+    invoke-direct {p0, v1}, Lbkd;-><init>(I)V
 
-    sput-object p0, Lcom/facebook/soloader/SoLoader;->b:Ltle;
+    sput-object p0, Lcom/facebook/soloader/SoLoader;->b:Lbkd;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -744,7 +746,7 @@
 .method public static g(Landroid/content/Context;I)V
     .registers 10
 
-    sget-object v0, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sget-object v0, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
 
     if-eqz v0, :cond_0
 
@@ -760,7 +762,7 @@
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;->lock()V
 
     :try_start_0
-    sget-object v1, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sget-object v1, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
@@ -791,11 +793,11 @@
 
     if-eqz v2, :cond_2
 
-    new-instance p0, Lyle;
+    new-instance p0, Lvue;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0}, Lyle;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lvue;->toString()Ljava/lang/String;
 
     invoke-virtual {v1, v4, p0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
@@ -846,21 +848,21 @@
     move p1, v4
 
     :goto_2
-    new-instance v2, Lpr;
+    new-instance v2, Lar;
 
     sget-object v5, Lcom/facebook/soloader/SoLoader;->d:Landroid/content/Context;
 
-    invoke-direct {v2, v5, p1}, Lpr;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v2, v5, p1}, Lar;-><init>(Landroid/content/Context;I)V
 
-    invoke-virtual {v2}, Lpr;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Lar;->toString()Ljava/lang/String;
 
     invoke-virtual {v1, v4, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    new-instance p1, Lkb5;
+    new-instance p1, Lld5;
 
     const-string v2, "lib-main"
 
-    invoke-direct {p1, p0, v2}, Lycf;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-direct {p1, p0, v2}, Ljmf;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     invoke-virtual {v1, v4, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
@@ -941,13 +943,13 @@
     move p1, v4
 
     :goto_6
-    new-instance v2, Lpr;
+    new-instance v2, Lar;
 
     sget-object v5, Lcom/facebook/soloader/SoLoader;->d:Landroid/content/Context;
 
-    invoke-direct {v2, v5, p1}, Lpr;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v2, v5, p1}, Lar;-><init>(Landroid/content/Context;I)V
 
-    invoke-virtual {v2}, Lpr;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Lar;->toString()Ljava/lang/String;
 
     invoke-virtual {v1, v4, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
@@ -959,13 +961,13 @@
 
     move-result p0
 
-    new-array p0, p0, [Leyd;
+    new-array p0, p0, [Ls6e;
 
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, [Leyd;
+    check-cast p0, [Ls6e;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;
 
@@ -1038,7 +1040,7 @@
     :cond_10
     aget-object v1, p0, v0
 
-    invoke-virtual {v1, v3}, Leyd;->d(I)V
+    invoke-virtual {v1, v3}, Ls6e;->d(I)V
 
     if-eqz p1, :cond_11
 
@@ -1050,13 +1052,13 @@
     goto :goto_9
 
     :cond_12
-    sput-object p0, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sput-object p0, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
 
     sget-object p0, Lcom/facebook/soloader/SoLoader;->f:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
-    sget-object p0, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sget-object p0, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
 
     array-length p0, p0
     :try_end_4
@@ -1101,7 +1103,7 @@
 .method public static h()Z
     .registers 3
 
-    sget-object v0, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sget-object v0, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
 
     const/4 v1, 0x1
 
@@ -1119,7 +1121,7 @@
     invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;->lock()V
 
     :try_start_0
-    sget-object v2, Lcom/facebook/soloader/SoLoader;->e:[Leyd;
+    sget-object v2, Lcom/facebook/soloader/SoLoader;->e:[Ls6e;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1376,7 +1378,7 @@
 
     move-result-object p1
 
-    new-instance p2, Layd;
+    new-instance p2, Lo6e;
 
     new-instance p3, Ljava/lang/StringBuilder;
 
@@ -1616,13 +1618,11 @@
 
     invoke-static {p0, p1}, Lcom/facebook/soloader/SoLoader;->g(Landroid/content/Context;I)V
 
-    new-instance p0, Le38;
+    new-instance p0, Ld6d;
 
-    const/16 p1, 0xe
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Le38;-><init>(I)V
-
-    invoke-static {p0}, Luo9;->v(Lvo9;)V
+    invoke-static {p0}, Ljs9;->n(Lks9;)V
 
     goto :goto_6
 
@@ -1634,11 +1634,11 @@
     :cond_a
     invoke-static {}, Lcom/facebook/soloader/SoLoader;->e()V
 
-    new-instance p0, Lzs9;
+    new-instance p0, Lad4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p0}, Luo9;->v(Lvo9;)V
+    invoke-static {p0}, Ljs9;->n(Lks9;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

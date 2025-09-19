@@ -1,135 +1,136 @@
-.class public final Leo3;
+.class public final synthetic Leo3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/function/Function;
+
 
 # instance fields
-.field public final a:Lw10;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/util/List;
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lw10;Ljava/lang/String;Ljava/util/ArrayList;)V
-    .registers 4
+.method public synthetic constructor <init>(I)V
+    .registers 2
+
+    iput p1, p0, Leo3;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Leo3;->a:Lw10;
-
-    iput-object p2, p0, Leo3;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Leo3;->c:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Leo3;
-
-    const/4 v2, 0x0
-
-    if-eqz v1, :cond_1
-
-    check-cast p1, Leo3;
-
-    iget-object v1, p1, Leo3;->b:Ljava/lang/String;
-
-    iget-object p1, p1, Leo3;->a:Lw10;
-
-    iget-object v3, p0, Leo3;->b:Ljava/lang/String;
-
-    invoke-static {v3, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Leo3;->a:Lw10;
-
-    invoke-static {v1, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object p0, p0, Leo3;->c:Ljava/util/List;
-
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    return v0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final hashCode()I
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    iget-object v0, p0, Leo3;->b:Ljava/lang/String;
+    iget p0, p0, Leo3;->a:I
 
-    iget-object p0, p0, Leo3;->a:Lw10;
+    packed-switch p0, :pswitch_data_0
 
-    filled-new-array {v0, p0}, [Ljava/lang/Object;
+    check-cast p1, Libd;
 
-    move-result-object p0
+    iget-object p0, p1, Libd;->X:Ltm3;
 
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    invoke-virtual {p0}, Ltm3;->n()J
 
-    move-result p0
+    move-result-wide p0
 
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "StartMessage{media=\'"
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Leo3;->a:Lw10;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, "\'text=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Leo3;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "\'elements=\'"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Leo3;->c:Ljava/util/List;
-
-    const-string v1, "\'}"
-
-    invoke-static {v0, p0, v1}, Lew1;->j(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    check-cast p1, Libd;
+
+    iget-object p0, p1, Libd;->o:Ls72;
+
+    iget-object p0, p0, Ls72;->b:Lvb2;
+
+    iget-wide p0, p0, Lvb2;->a:J
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_1
+    check-cast p1, Lho3;
+
+    invoke-virtual {p1}, Lho3;->a()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_2
+    check-cast p1, Libd;
+
+    iget-object p0, p1, Libd;->X:Ltm3;
+
+    invoke-virtual {p0}, Ltm3;->n()J
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_3
+    check-cast p1, Libd;
+
+    iget-object p0, p1, Libd;->o:Ls72;
+
+    iget-wide p0, p0, Ls72;->a:J
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_4
+    check-cast p1, Lvp3;
+
+    iget-wide p0, p1, Lvp3;->a:J
+
+    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_5
+    check-cast p1, Los3;
+
+    iget-object p0, p1, Los3;->b:Lns3;
+
+    return-object p0
+
+    :pswitch_6
+    check-cast p1, Lho3;
+
+    iget-object p0, p1, Lho3;->c:Lgo3;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

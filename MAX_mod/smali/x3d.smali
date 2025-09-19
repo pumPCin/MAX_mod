@@ -3,34 +3,16 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/TextView$OnEditorActionListener;
-
-
-# instance fields
-.field public final synthetic a:Lf4d;
-
-
-# direct methods
-.method public constructor <init>(Lf4d;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lx3d;->a:Lf4d;
-
-    return-void
-.end method
+.implements Ld8g;
 
 
 # virtual methods
-.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .registers 4
+.method public final b(Ljava/lang/Class;Lqn9;)Ly7g;
+    .registers 3
 
-    iget-object p0, p0, Lx3d;->a:Lf4d;
+    new-instance p0, Landroidx/lifecycle/SavedStateHandlesVM;
 
-    invoke-virtual {p0}, Lf4d;->onSubmitQuery()V
+    invoke-direct {p0}, Landroidx/lifecycle/SavedStateHandlesVM;-><init>()V
 
-    const/4 p0, 0x1
-
-    return p0
+    return-object p0
 .end method

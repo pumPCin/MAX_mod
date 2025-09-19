@@ -1,62 +1,289 @@
-.class public final Lge3;
-.super Ljava/lang/Object;
+.class public abstract Lge3;
+.super Lcj0;
 .source "SourceFile"
 
-# interfaces
-.implements Lnnf;
 
+# instance fields
+.field public final h:Ljava/util/HashMap;
 
-# static fields
-.field public static final a:Lche;
+.field public i:Landroid/os/Handler;
+
+.field public j:Ledf;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .registers 2
 
-    new-instance v0, Lfe3;
+    invoke-direct {p0}, Lcj0;-><init>()V
 
-    const/4 v1, 0x0
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v0, v1}, Lfe3;-><init>(I)V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    invoke-static {v0}, Lts;->O(Lche;)Lche;
-
-    move-result-object v0
-
-    sput-object v0, Lge3;->a:Lche;
+    iput-object v0, p0, Lge3;->h:Ljava/util/HashMap;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;Lmx0;Lu73;ZLv13;)Lpnf;
-    .registers 12
+.method public final c()V
+    .registers 3
 
-    sget-object p0, Lge3;->a:Lche;
+    iget-object p0, p0, Lge3;->h:Ljava/util/HashMap;
 
-    invoke-interface {p0}, Lche;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    move-object v0, p0
-
-    check-cast v0, Lnnf;
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    move v4, p4
-
-    move-object v5, p5
-
-    invoke-interface/range {v0 .. v5}, Lnnf;->a(Landroid/content/Context;Lmx0;Lu73;ZLv13;)Lpnf;
+    invoke-virtual {p0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
     move-result-object p0
 
-    return-object p0
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lee3;
+
+    iget-object v1, v0, Lee3;->a:Lcj0;
+
+    iget-object v0, v0, Lee3;->b:Lbe3;
+
+    invoke-virtual {v1, v0}, Lcj0;->b(Lzp8;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final e()V
+    .registers 3
+
+    iget-object p0, p0, Lge3;->h:Ljava/util/HashMap;
+
+    invoke-virtual {p0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lee3;
+
+    iget-object v1, v0, Lee3;->a:Lcj0;
+
+    iget-object v0, v0, Lee3;->b:Lbe3;
+
+    invoke-virtual {v1, v0}, Lcj0;->d(Lzp8;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public g()V
+    .registers 2
+
+    iget-object p0, p0, Lge3;->h:Ljava/util/HashMap;
+
+    invoke-virtual {p0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lee3;
+
+    iget-object v0, v0, Lee3;->a:Lcj0;
+
+    invoke-virtual {v0}, Lcj0;->g()V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public m()V
+    .registers 5
+
+    iget-object p0, p0, Lge3;->h:Ljava/util/HashMap;
+
+    invoke-virtual {p0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lee3;
+
+    iget-object v2, v1, Lee3;->a:Lcj0;
+
+    iget-object v3, v1, Lee3;->c:Lyvg;
+
+    iget-object v1, v1, Lee3;->b:Lbe3;
+
+    invoke-virtual {v2, v1}, Lcj0;->l(Lzp8;)V
+
+    invoke-virtual {v2, v3}, Lcj0;->o(Lgq8;)V
+
+    invoke-virtual {v2, v3}, Lcj0;->n(Lsw4;)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/util/HashMap;->clear()V
+
+    return-void
+.end method
+
+.method public p(Ljava/lang/Object;Lxp8;)Lxp8;
+    .registers 3
+
+    return-object p2
+.end method
+
+.method public abstract q(Ljava/lang/Object;Lcj0;Lo6f;)V
+.end method
+
+.method public final r(Ljava/lang/Integer;Lcj0;)V
+    .registers 7
+
+    iget-object v0, p0, Lge3;->h:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    xor-int/lit8 v1, v1, 0x1
+
+    invoke-static {v1}, Lxnd;->k(Z)V
+
+    new-instance v1, Lbe3;
+
+    invoke-direct {v1, p0, p1}, Lbe3;-><init>(Lge3;Ljava/lang/Object;)V
+
+    new-instance v2, Lyvg;
+
+    invoke-direct {v2, p0, p1}, Lyvg;-><init>(Lge3;Ljava/lang/Object;)V
+
+    new-instance v3, Lee3;
+
+    invoke-direct {v3, p2, v1, v2}, Lee3;-><init>(Lcj0;Lbe3;Lyvg;)V
+
+    invoke-virtual {v0, p1, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object p1, p0, Lge3;->i:Landroid/os/Handler;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p2, Lcj0;->c:Lek4;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, v0, Lek4;->d:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    new-instance v3, Leq8;
+
+    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, v3, Leq8;->a:Landroid/os/Handler;
+
+    iput-object v2, v3, Leq8;->b:Lgq8;
+
+    invoke-virtual {v0, v3}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object p1, p0, Lge3;->i:Landroid/os/Handler;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p1, p2, Lcj0;->d:Lz96;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p1, p1, Lz96;->o:Ljava/lang/Object;
+
+    check-cast p1, Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    new-instance v0, Lpw4;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v2, v0, Lpw4;->a:Lsw4;
+
+    invoke-virtual {p1, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
+
+    iget-object p1, p0, Lge3;->j:Ledf;
+
+    iget-object v0, p0, Lcj0;->g:Lmdb;
+
+    invoke-static {v0}, Lxnd;->n(Ljava/lang/Object;)V
+
+    invoke-virtual {p2, v1, p1, v0}, Lcj0;->h(Lzp8;Ledf;Lmdb;)V
+
+    iget-object p0, p0, Lcj0;->b:Ljava/util/HashSet;
+
+    invoke-virtual {p0}, Ljava/util/HashSet;->isEmpty()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p2, v1}, Lcj0;->b(Lzp8;)V
+
+    :cond_0
+    return-void
 .end method

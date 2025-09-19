@@ -4,12 +4,16 @@
 
 
 # instance fields
-.field public a:Z
+.field public final synthetic a:I
 
-.field public b:I
 
-.field public c:I
+# direct methods
+.method public synthetic constructor <init>(I)V
+    .registers 2
 
-.field public d:Landroidx/recyclerview/widget/RecyclerView;
+    iput p1, p0, Lzd6;->a:I
 
-.field public e:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

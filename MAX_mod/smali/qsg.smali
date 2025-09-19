@@ -4,68 +4,197 @@
 
 
 # static fields
-.field public static final a:Ljava/util/HashMap;
-
-.field public static final b:Ljava/util/HashMap;
+.field public static final a:Ljava/util/regex/Pattern;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .registers 1
 
-    new-instance v0, Ljava/util/HashMap;
+    const-string v0, "^NOTE([ \t].*)?$"
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    sput-object v0, Lqsg;->a:Ljava/util/HashMap;
+    move-result-object v0
 
-    new-instance v1, Ljava/util/HashMap;
+    sput-object v0, Lqsg;->a:Ljava/util/regex/Pattern;
 
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+    return-void
+.end method
 
-    sput-object v1, Lqsg;->b:Ljava/util/HashMap;
+.method public static a(Ljava/lang/String;)F
+    .registers 3
 
-    const/4 v2, -0x1
+    const-string v0, "%"
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+
+    move-result p0
+
+    const/high16 v0, 0x42c80000    # 100.0f
+
+    div-float/2addr p0, v0
+
+    return p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/NumberFormatException;
+
+    const-string v0, "Percentages must end with %"
+
+    invoke-direct {p0, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static b(Ljava/lang/String;)J
+    .registers 10
+
+    sget v0, Llrf;->a:I
+
+    const-string v0, "\\."
+
+    const/4 v1, 0x2
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    aget-object v2, p0, v0
+
+    const-string v3, ":"
+
+    const/4 v4, -0x1
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "The Play Store app is either not installed or not the official version."
+    array-length v3, v2
 
-    invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const-wide/16 v4, 0x0
 
-    const/4 v3, -0x2
+    :goto_0
+    if-ge v0, v3, :cond_0
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aget-object v6, v2, v0
 
-    move-result-object v3
+    const-wide/16 v7, 0x3c
 
-    const-string v4, "Call first requestReviewFlow to get the ReviewInfo."
+    mul-long/2addr v4, v7
 
-    invoke-virtual {v0, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v6}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    const/16 v4, -0x64
+    move-result-wide v6
 
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    add-long/2addr v4, v6
 
-    move-result-object v4
+    add-int/lit8 v0, v0, 0x1
 
-    const-string v5, "Retry with an exponential backoff. Consider filing a bug if fails consistently."
+    goto :goto_0
 
-    invoke-virtual {v0, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_0
+    const-wide/16 v2, 0x3e8
 
-    const-string v0, "PLAY_STORE_NOT_FOUND"
+    mul-long/2addr v4, v2
 
-    invoke-virtual {v1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    array-length v0, p0
 
-    const-string v0, "INVALID_REQUEST"
+    if-ne v0, v1, :cond_1
 
-    invoke-virtual {v1, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    const-string v0, "INTERNAL_ERROR"
+    aget-object p0, p0, v0
 
-    invoke-virtual {v1, v4, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    add-long/2addr v4, v0
+
+    :cond_1
+    mul-long/2addr v4, v2
+
+    return-wide v4
+.end method
+
+.method public static c(Lcsf;)V
+    .registers 4
+
+    iget v0, p0, Lcsf;->b:I
+
+    invoke-virtual {p0}, Lcsf;->g()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    const-string v2, "WEBVTT"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
 
     return-void
+
+    :cond_0
+    invoke-virtual {p0, v0}, Lcsf;->E(I)V
+
+    invoke-virtual {p0}, Lcsf;->g()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    const-string v1, "Expected WEBVTT. Got "
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p0, Ljava/lang/String;
+
+    invoke-direct {p0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    :goto_0
+    const/4 v0, 0x0
+
+    invoke-static {v0, p0}, Lcom/google/android/exoplayer2/ParserException;->a(Ljava/lang/RuntimeException;Ljava/lang/String;)Lcom/google/android/exoplayer2/ParserException;
+
+    move-result-object p0
+
+    throw p0
 .end method

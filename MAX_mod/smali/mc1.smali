@@ -1,48 +1,77 @@
 .class public final Lmc1;
-.super Lcx3;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcr1;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lcw;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic a:Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;
 
 
 # direct methods
-.method public constructor <init>(Lcw;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;)V
+    .registers 2
 
-    iput-object p1, p0, Lmc1;->Y:Lcw;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lmc1;->a:Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final L()V
+    .registers 11
 
-    iput-object p1, p0, Lmc1;->o:Ljava/lang/Object;
+    sget-object v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0:[Lxi7;
 
-    iget p1, p0, Lmc1;->X:I
+    iget-object p0, p0, Lmc1;->a:Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lmc1;->X:I
-
-    iget-object p1, p0, Lmc1;->Y:Lcw;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lcw;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->C0()Lic1;
 
     move-result-object p0
 
-    return-object p0
+    iget-object p0, p0, Lic1;->v0:Lyce;
+
+    :cond_0
+    invoke-virtual {p0}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Lbc1;
+
+    iget-boolean v2, v1, Lbc1;->d:Z
+
+    xor-int/lit8 v5, v2, 0x1
+
+    const/4 v8, 0x0
+
+    const/16 v9, 0x77
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    invoke-static/range {v1 .. v9}, Lbc1;->a(Lbc1;Lhd0;Lfa8;Lfa8;ZLu2f;Ljava/util/ArrayList;Lu2f;I)Lbc1;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Lyce;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-void
 .end method

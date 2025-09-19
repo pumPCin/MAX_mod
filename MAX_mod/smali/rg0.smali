@@ -2,67 +2,162 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Liy7;
-
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:Landroid/app/Application;
 
-.field public final b:Lvz2;
+.field public final b:Lnxd;
 
-.field public final c:Lvi0;
+.field public final c:Lkotlinx/coroutines/internal/ContextScope;
 
-.field public final o:Lkotlinx/coroutines/internal/ContextScope;
+.field public final d:Lo2b;
+
+.field public final e:Lo2b;
+
+.field public final f:Ljg0;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lvz2;Lvi0;Lzne;Lm04;)V
-    .registers 6
+.method public constructor <init>(Landroid/app/Application;Lfv0;Lxwe;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lrg0;->a:Landroid/content/Context;
+    iput-object p1, p0, Lrg0;->a:Landroid/app/Application;
 
-    iput-object p2, p0, Lrg0;->b:Lvz2;
+    const/4 p1, 0x0
 
-    iput-object p3, p0, Lrg0;->c:Lvi0;
+    const/4 v0, 0x7
 
-    check-cast p4, Ltba;
-
-    invoke-virtual {p4}, Ltba;->a()Ll04;
+    invoke-static {p1, p1, v0}, Loxd;->b(III)Lnxd;
 
     move-result-object p1
 
-    const/4 p2, 0x1
+    iput-object p1, p0, Lrg0;->b:Lnxd;
 
-    const-string p3, "badge-count"
+    check-cast p3, Laga;
 
-    invoke-virtual {p1, p2, p3}, Ll04;->limitedParallelism(ILjava/lang/String;)Ll04;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p5}, Lc0;->plus(Lj04;)Lj04;
+    invoke-virtual {p3}, Laga;->c()Lt38;
 
     move-result-object p1
 
-    invoke-static {p1}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
+    invoke-virtual {p1}, Lt38;->getImmediate()Lt38;
 
     move-result-object p1
 
-    iput-object p1, p0, Lrg0;->o:Lkotlinx/coroutines/internal/ContextScope;
+    invoke-static {p1}, Lb0b;->a(Lq04;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lrg0;->c:Lkotlinx/coroutines/internal/ContextScope;
+
+    new-instance p1, Lo2b;
+
+    sget-object p3, Lp2b;->f:[Ljava/lang/String;
+
+    invoke-direct {p1, p3}, Lo2b;-><init>([Ljava/lang/String;)V
+
+    iput-object p1, p0, Lrg0;->d:Lo2b;
+
+    new-instance p1, Lo2b;
+
+    sget-object p3, Lp2b;->l:[Ljava/lang/String;
+
+    invoke-direct {p1, p3}, Lo2b;-><init>([Ljava/lang/String;)V
+
+    iput-object p1, p0, Lrg0;->e:Lo2b;
+
+    new-instance p1, Ljg0;
+
+    const/4 p3, 0x0
+
+    invoke-direct {p1, p3, p0}, Ljg0;-><init>(ILjava/lang/Object;)V
+
+    iput-object p1, p0, Lrg0;->f:Ljg0;
+
+    invoke-virtual {p2, p0}, Lfv0;->d(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final f()V
-    .registers 1
+.method public final onEvent(Lnv3;)V
+    .registers 4
+    .annotation runtime Line;
+    .end annotation
 
-    iget-object p0, p0, Lrg0;->a:Landroid/content/Context;
+    new-instance p1, Lmg0;
 
-    invoke-static {p0}, Lme/leolin/shortcutbadger/ShortcutBadger;->removeCount(Landroid/content/Context;)Z
+    const/4 v0, 0x0
+
+    invoke-direct {p1, p0, v0}, Lmg0;-><init>(Lrg0;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v1, 0x3
+
+    iget-object p0, p0, Lrg0;->c:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {p0, v0, v0, p1, v1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    return-void
+.end method
+
+.method public final onEvent(Lq08;)V
+    .registers 4
+    .annotation runtime Line;
+    .end annotation
+
+    new-instance p1, Lkg0;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, p0, v0}, Lkg0;-><init>(Lrg0;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v1, 0x3
+
+    iget-object p0, p0, Lrg0;->c:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {p0, v0, v0, p1, v1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    return-void
+.end method
+
+.method public final onEvent(Lt4b;)V
+    .registers 4
+    .annotation runtime Line;
+    .end annotation
+
+    new-instance p1, Llg0;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, p0, v0}, Llg0;-><init>(Lrg0;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v1, 0x3
+
+    iget-object p0, p0, Lrg0;->c:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {p0, v0, v0, p1, v1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    return-void
+.end method
+
+.method public final onEvent(Lzmf;)V
+    .registers 4
+    .annotation runtime Line;
+    .end annotation
+
+    new-instance p1, Lng0;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, p0, v0}, Lng0;-><init>(Lrg0;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v1, 0x3
+
+    iget-object p0, p0, Lrg0;->c:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {p0, v0, v0, p1, v1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
 
     return-void
 .end method

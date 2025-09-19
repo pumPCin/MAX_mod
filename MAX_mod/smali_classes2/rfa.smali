@@ -1,85 +1,79 @@
-.class public abstract Lrfa;
-.super Ljava/lang/Object;
+.class public final Lrfa;
+.super Ljx3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
+# instance fields
+.field public A0:I
 
-.field public static final b:I
+.field public B0:I
 
-.field public static final c:I
+.field public synthetic C0:Ljava/lang/Object;
 
-.field public static final d:I
+.field public final synthetic D0:Lyfa;
 
-.field public static final e:I
+.field public E0:I
 
-.field public static final f:I
+.field public X:Ljava/lang/Object;
 
-.field public static final g:I
+.field public Y:Ljava/lang/Object;
 
-.field public static final h:I
+.field public Z:Ljava/lang/Object;
 
-.field public static final i:I
+.field public o:Ljava/lang/Object;
 
-.field public static final j:I
+.field public r0:Ljava/lang/Object;
 
-.field public static final k:I
+.field public s0:Ljava/lang/Object;
 
-.field public static final l:I
+.field public t0:Ljava/lang/CharSequence;
+
+.field public u0:Lxy8;
+
+.field public v0:Z
+
+.field public w0:Z
+
+.field public x0:J
+
+.field public y0:J
+
+.field public z0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lyfa;Ljx3;)V
+    .registers 3
 
-    sget v0, Lbxb;->contact_icon_corner:I
+    iput-object p1, p0, Lrfa;->D0:Lyfa;
 
-    sput v0, Lrfa;->a:I
-
-    sget v0, Lbxb;->geo_icon_corner:I
-
-    sput v0, Lrfa;->b:I
-
-    sget v0, Lbxb;->ic_call_incoming_audio_24:I
-
-    sput v0, Lrfa;->c:I
-
-    sget v0, Lbxb;->ic_call_incoming_audio_missed_24:I
-
-    sput v0, Lrfa;->d:I
-
-    sget v0, Lbxb;->ic_call_incoming_video_missed_24:I
-
-    sput v0, Lrfa;->e:I
-
-    sget v0, Lbxb;->ic_call_incomnig_video_24:I
-
-    sput v0, Lrfa;->f:I
-
-    sget v0, Lbxb;->ic_call_outgoing_audio_24:I
-
-    sput v0, Lrfa;->g:I
-
-    sget v0, Lbxb;->ic_call_outgoing_video_24:I
-
-    sput v0, Lrfa;->h:I
-
-    sget v0, Lbxb;->ic_chat_16:I
-
-    sput v0, Lrfa;->i:I
-
-    sget v0, Lbxb;->ic_contact_16:I
-
-    sput v0, Lrfa;->j:I
-
-    sget v0, Lbxb;->link_icon_corner:I
-
-    sput v0, Lrfa;->k:I
-
-    sget v0, Lbxb;->miniapp_icon_corner:I
-
-    sput v0, Lrfa;->l:I
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iput-object p1, p0, Lrfa;->C0:Ljava/lang/Object;
+
+    iget p1, p0, Lrfa;->E0:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lrfa;->E0:I
+
+    iget-object p1, p0, Lrfa;->D0:Lyfa;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0, v0, p0}, Lyfa;->a(Lyfa;Lw58;Lny;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

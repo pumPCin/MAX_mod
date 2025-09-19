@@ -1,296 +1,125 @@
-.class public final Lurc;
+.class public final synthetic Lurc;
 .super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lzb6;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final b:Ltrc;
-
-.field public c:Lyrc;
-
-.field public d:Ljn4;
-
-.field public final e:J
-
-.field public final f:J
-
-.field public final g:F
-
-.field public final h:F
+.field public final synthetic b:Lwrc;
 
 
 # direct methods
-.method public constructor <init>(Ltrc;)V
-    .registers 5
+.method public synthetic constructor <init>(Lwrc;I)V
+    .registers 3
 
-    const/4 v0, 0x0
+    iput p2, p0, Lurc;->a:I
 
-    iput v0, p0, Lurc;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lurc;->c:Lyrc;
-
-    iput-object v0, p0, Lurc;->d:Ljn4;
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v1, 0xc8
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lurc;->e:J
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v1, 0x4
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lurc;->f:J
-
-    const/high16 v0, 0x40000000    # 2.0f
-
-    iput v0, p0, Lurc;->g:F
-
-    const v0, 0x3dcccccd    # 0.1f
-
-    iput v0, p0, Lurc;->h:F
-
-    iput-object p1, p0, Lurc;->b:Ltrc;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lurc;)V
-    .registers 12
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lurc;->a:I
+    iput-object p1, p0, Lurc;->b:Lwrc;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v0, p1, Lurc;->h:F
-
-    iget v1, p1, Lurc;->g:F
-
-    iget-wide v2, p1, Lurc;->f:J
-
-    iget-wide v4, p1, Lurc;->e:J
-
-    iget-object v6, p1, Lurc;->b:Ltrc;
-
-    if-eqz v6, :cond_4
-
-    const-wide/16 v7, 0x0
-
-    cmp-long v9, v4, v7
-
-    if-ltz v9, :cond_3
-
-    cmp-long v7, v2, v7
-
-    if-ltz v7, :cond_2
-
-    const/4 v7, 0x0
-
-    cmpg-float v8, v1, v7
-
-    if-ltz v8, :cond_1
-
-    cmpg-float v7, v0, v7
-
-    if-ltz v7, :cond_0
-
-    iput-object v6, p0, Lurc;->b:Ltrc;
-
-    iget-object v6, p1, Lurc;->c:Lyrc;
-
-    iput-object v6, p0, Lurc;->c:Lyrc;
-
-    iget-object p1, p1, Lurc;->d:Ljn4;
-
-    iput-object p1, p0, Lurc;->d:Ljn4;
-
-    iput-wide v4, p0, Lurc;->e:J
-
-    iput-wide v2, p0, Lurc;->f:J
-
-    iput v1, p0, Lurc;->g:F
-
-    iput v0, p0, Lurc;->h:F
-
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    const-string v1, "Illegal \'retryBackoffJitter\' value: "
-
-    invoke-direct {p1, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    const-string v0, "Illegal \'retryBackoffFactor\' value: "
-
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Illegal \'maxRetryTimeoutMs\' value: "
-
-    invoke-static {v2, v3, p1}, La78;->i(JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Illegal \'minRetryTimeoutMs\' value: "
-
-    invoke-static {v4, v5, p1}, La78;->i(JLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_4
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "Illegal \'command\' value: null"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
+.method public final invoke()Ljava/lang/Object;
     .registers 4
 
     iget v0, p0, Lurc;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-object p0, p0, Lurc;->b:Lwrc;
 
-    move-result-object p0
+    invoke-virtual {p0}, Lwrc;->a()V
+
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 
     :pswitch_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lurc;->b:Lwrc;
 
-    const-string v1, "RtcCommandConfig{command="
+    iget v0, p0, Lwrc;->f:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    add-int/lit8 v0, v0, 0x1
 
-    iget-object v1, p0, Lurc;->b:Ltrc;
+    iput v0, p0, Lwrc;->f:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lwrc;->b:Llhd;
 
-    const-string v1, ", sentListener=null, successListener="
+    new-instance v1, Lurc;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v2, 0x0
 
-    iget-object v1, p0, Lurc;->c:Lyrc;
+    invoke-direct {v1, p0, v2}, Lurc;-><init>(Lwrc;I)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Llhd;->H(Lzb6;)V
 
-    const-string v1, ", errorListener="
+    invoke-virtual {p0}, Lwrc;->b()V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    iget-object v1, p0, Lurc;->d:Ljn4;
+    :goto_1
+    :pswitch_1
+    iget-object v0, p0, Lurc;->b:Lwrc;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget v1, v0, Lwrc;->f:I
 
-    const-string v1, ", maxRetryCount=0, minRetryTimeoutMs="
+    if-lez v1, :cond_2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, v0, Lwrc;->g:Lz96;
 
-    iget-wide v1, p0, Lurc;->e:J
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    :try_start_0
+    iget-object v2, v1, Lz96;->c:Ljava/lang/Object;
 
-    const-string v1, ", maxRetryTimeoutMs="
+    check-cast v2, Landroid/graphics/SurfaceTexture;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v2, :cond_0
 
-    iget-wide v1, p0, Lurc;->f:J
+    invoke-virtual {v2}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    :cond_0
+    iget-object v1, v1, Lz96;->c:Ljava/lang/Object;
 
-    const-string v1, ", retryBackoffFactor="
+    check-cast v1, Landroid/graphics/SurfaceTexture;
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eqz v1, :cond_1
 
-    iget v1, p0, Lurc;->g:F
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    iput-boolean v1, v0, Lwrc;->e:Z
 
-    const-string v1, ", retryBackoffJitter="
+    :catch_0
+    :cond_1
+    iget v1, v0, Lwrc;->f:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    add-int/lit8 v1, v1, -0x1
 
-    iget p0, p0, Lurc;->h:F
+    iput v1, v0, Lwrc;->f:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    goto :goto_1
 
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    :cond_2
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 
+    nop
+
     :pswitch_data_0
-    .packed-switch 0x1
+    .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

@@ -1,82 +1,62 @@
-.class public final Lkl1;
-.super Lxie;
+.class public final synthetic Lkl1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lzb6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lkm1;
+.field public final synthetic b:Lnl1;
 
 
 # direct methods
-.method public constructor <init>(Lkm1;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lnl1;I)V
     .registers 3
 
-    iput-object p1, p0, Lkl1;->Y:Lkm1;
+    iput p2, p0, Lkl1;->a:I
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lkl1;->b:Lnl1;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 2
 
-    check-cast p1, Ljp9;
+    iget v0, p0, Lkl1;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lkl1;->b:Lnl1;
 
-    invoke-virtual {p0, p1, p2}, Lkl1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
+
+    invoke-static {p0}, Lnl1;->x(Lnl1;)I
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    check-cast p0, Lkl1;
+    return-object p0
 
-    sget-object p1, Lncf;->a:Lncf;
+    :pswitch_0
+    invoke-static {p0}, Lnl1;->v(Lnl1;)Lzd1;
 
-    invoke-virtual {p0, p1}, Lkl1;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lkl1;
-
-    iget-object p0, p0, Lkl1;->Y:Lkm1;
-
-    invoke-direct {v0, p0, p2}, Lkl1;-><init>(Lkm1;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lkl1;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lkl1;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljp9;
-
-    iget-object p0, p0, Lkl1;->Y:Lkm1;
-
-    iget-object p0, p0, Lkm1;->K0:Lx65;
-
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    sget-object p0, Lncf;->a:Lncf;
+    move-result-object p0
 
     return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

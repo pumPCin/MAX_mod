@@ -1,256 +1,221 @@
-.class public final synthetic Lvc8;
-.super Ljava/lang/Object;
+.class public final Lvc8;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Llq7;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lt6b;
+.field public final synthetic Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lt6b;I)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
     .registers 3
 
-    iput p2, p0, Lvc8;->a:I
+    iput-object p2, p0, Lvc8;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    iput-object p1, p0, Lvc8;->b:Lt6b;
+    const/4 p2, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lvc8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lvc8;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lvc8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
 
-    iget v0, p0, Lvc8;->a:I
+    new-instance v0, Lvc8;
 
-    check-cast p1, Lu5b;
+    iget-object p0, p0, Lvc8;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v0, p2, p0}, Lvc8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
 
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    iput-object p1, v0, Lvc8;->X:Ljava/lang/Object;
 
-    iget p0, p0, Lt6b;->y:I
+    return-object v0
+.end method
 
-    invoke-interface {p1, p0}, Lu5b;->g(I)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 9
 
-    return-void
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    :pswitch_0
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    iget-object p1, p0, Lvc8;->X:Ljava/lang/Object;
 
-    iget-boolean p0, p0, Lt6b;->w:Z
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-interface {p1, p0}, Lu5b;->d(Z)V
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    return-void
+    move-result p1
 
-    :pswitch_1
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    const/4 v0, 0x1
 
-    iget-object p0, p0, Lt6b;->z:Lkg8;
+    const/4 v1, 0x0
 
-    invoke-interface {p1, p0}, Lu5b;->a0(Lkg8;)V
+    iget-object p0, p0, Lvc8;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    return-void
+    if-nez p1, :cond_1
 
-    :pswitch_2
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    sget-object p1, Lone/me/chatscreen/mediabar/MediaBarWidget;->c1:[Lxi7;
 
-    iget-object p0, p0, Lt6b;->D:Lr3f;
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->N0()Lhc8;
 
-    invoke-interface {p1, p0}, Lu5b;->W(Lr3f;)V
+    move-result-object p1
 
-    return-void
+    invoke-virtual {p1}, Lhc8;->s()Z
 
-    :pswitch_3
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    move-result p1
 
-    iget-object p0, p0, Lt6b;->E:Lm3f;
+    if-eqz p1, :cond_0
 
-    invoke-interface {p1, p0}, Lu5b;->x(Lm3f;)V
+    goto :goto_0
 
-    return-void
+    :cond_0
+    move p1, v1
 
-    :pswitch_4
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    goto :goto_1
 
-    iget-wide v0, p0, Lt6b;->C:J
+    :cond_1
+    :goto_0
+    move p1, v0
 
-    invoke-interface {p1, v0, v1}, Lu5b;->s0(J)V
+    :goto_1
+    sget-object v2, Lone/me/chatscreen/mediabar/MediaBarWidget;->c1:[Lxi7;
 
-    return-void
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->J0()Llfb;
 
-    :pswitch_5
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    move-result-object v2
 
-    iget-wide v0, p0, Lt6b;->B:J
+    invoke-virtual {v2}, Llfb;->getScrollState()Ljfb;
 
-    invoke-interface {p1, v0, v1}, Lu5b;->c0(J)V
+    move-result-object v2
 
-    return-void
+    sget-object v3, Ljfb;->a:Ljfb;
 
-    :pswitch_6
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    if-ne v2, v3, :cond_2
 
-    iget-wide v0, p0, Lt6b;->A:J
+    move v2, v0
 
-    invoke-interface {p1, v0, v1}, Lu5b;->Z(J)V
+    goto :goto_2
 
-    return-void
+    :cond_2
+    move v2, v1
 
-    :pswitch_7
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    :goto_2
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->I0()Lk19;
 
-    iget-object p0, p0, Lt6b;->l:Llvf;
+    move-result-object v3
 
-    invoke-interface {p1, p0}, Lu5b;->v(Llvf;)V
+    const/16 v4, 0x8
 
-    return-void
+    if-eqz p1, :cond_3
 
-    :pswitch_8
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    move v5, v1
 
-    iget v0, p0, Lt6b;->r:I
+    goto :goto_3
 
-    iget-boolean p0, p0, Lt6b;->s:Z
+    :cond_3
+    move v5, v4
 
-    invoke-interface {p1, v0, p0}, Lu5b;->i(IZ)V
+    :goto_3
+    invoke-virtual {v3, v5}, Landroid/view/View;->setVisibility(I)V
 
-    return-void
+    iget-object v3, p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->O0:Lrm0;
 
-    :pswitch_9
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    sget-object v5, Lone/me/chatscreen/mediabar/MediaBarWidget;->c1:[Lxi7;
 
-    iget-object p0, p0, Lt6b;->q:Llm4;
+    const/16 v6, 0x10
 
-    invoke-interface {p1, p0}, Lu5b;->r0(Llm4;)V
+    aget-object v5, v5, v6
 
-    return-void
+    invoke-virtual {v3}, Lrm0;->getValue()Ljava/lang/Object;
 
-    :pswitch_a
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    move-result-object v3
 
-    iget-object p0, p0, Lt6b;->p:Lz34;
+    check-cast v3, Ll42;
 
-    invoke-interface {p1, p0}, Lu5b;->R(Lz34;)V
+    if-nez p1, :cond_4
 
-    return-void
+    goto :goto_4
 
-    :pswitch_b
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    :cond_4
+    move v1, v4
 
-    iget-object p0, p0, Lt6b;->p:Lz34;
+    :goto_4
+    invoke-virtual {v3, v1}, Landroid/view/View;->setVisibility(I)V
 
-    iget-object p0, p0, Lz34;->a:Lj07;
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->H0()Lrzc;
 
-    invoke-interface {p1, p0}, Lu5b;->k(Ljava/util/List;)V
+    move-result-object v1
 
-    return-void
+    invoke-virtual {v1}, Lrzc;->n()Z
 
-    :pswitch_c
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    move-result v1
 
-    iget-object p0, p0, Lt6b;->o:Ls20;
+    if-eqz v1, :cond_6
 
-    invoke-interface {p1, p0}, Lu5b;->u(Ls20;)V
+    if-eqz p1, :cond_5
 
-    return-void
+    if-eqz v2, :cond_6
 
-    :pswitch_d
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    :cond_5
+    invoke-virtual {p0}, Lone/me/chatscreen/mediabar/MediaBarWidget;->N0()Lhc8;
 
-    iget p0, p0, Lt6b;->n:F
+    move-result-object p0
 
-    invoke-interface {p1, p0}, Lu5b;->f(F)V
+    iget-object p0, p0, Lhc8;->u0:Lmgb;
 
-    return-void
+    invoke-virtual {p0, v0}, Lmgb;->H(I)V
 
-    :pswitch_e
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    goto :goto_5
 
-    iget-object p0, p0, Lt6b;->m:Lkg8;
+    :cond_6
+    if-eqz p1, :cond_7
 
-    invoke-interface {p1, p0}, Lu5b;->b0(Lkg8;)V
+    if-eqz v2, :cond_8
 
-    return-void
+    :cond_7
+    sget p1, Lsj7;->a:I
 
-    :pswitch_f
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    sget p1, Lsj7;->c:I
 
-    iget-boolean p0, p0, Lt6b;->i:Z
+    invoke-static {p1}, Lsj7;->b(I)Z
 
-    invoke-interface {p1, p0}, Lu5b;->N(Z)V
+    move-result p1
 
-    return-void
+    if-eqz p1, :cond_8
 
-    :pswitch_10
-    iget-object p0, p0, Lvc8;->b:Lt6b;
+    iget-object p0, p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Z0:Ld66;
 
-    iget p0, p0, Lt6b;->h:I
+    invoke-virtual {p0}, Ld66;->l()V
 
-    invoke-interface {p1, p0}, Lu5b;->onRepeatModeChanged(I)V
+    :cond_8
+    :goto_5
+    sget-object p0, Lylf;->a:Lylf;
 
-    return-void
-
-    :pswitch_11
-    iget-object p0, p0, Lvc8;->b:Lt6b;
-
-    iget-object p0, p0, Lt6b;->g:Lk5b;
-
-    invoke-interface {p1, p0}, Lu5b;->n0(Lk5b;)V
-
-    return-void
-
-    :pswitch_12
-    iget-object p0, p0, Lvc8;->b:Lt6b;
-
-    iget-boolean p0, p0, Lt6b;->v:Z
-
-    invoke-interface {p1, p0}, Lu5b;->n(Z)V
-
-    return-void
-
-    :pswitch_13
-    iget-object p0, p0, Lvc8;->b:Lt6b;
-
-    iget p0, p0, Lt6b;->x:I
-
-    invoke-interface {p1, p0}, Lu5b;->b(I)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

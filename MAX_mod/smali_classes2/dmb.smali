@@ -1,48 +1,51 @@
-.class public final Ldmb;
-.super Lcx3;
+.class public abstract synthetic Ldmb;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lemb;
-
-.field public synthetic o:Ljava/lang/Object;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public constructor <init>(Lemb;Lkotlin/coroutines/Continuation;)V
+.method static constructor <clinit>()V
     .registers 3
 
-    iput-object p1, p0, Ldmb;->Y:Lemb;
+    invoke-static {}, Lfmb;->values()[Lfmb;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    :try_start_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    const/4 v2, 0x2
+
+    :try_start_1
+    aput v2, v0, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    const/4 v2, 0x3
+
+    :try_start_2
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    sput-object v0, Ldmb;->$EnumSwitchMapping$0:[I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iput-object p1, p0, Ldmb;->o:Ljava/lang/Object;
-
-    iget p1, p0, Ldmb;->X:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Ldmb;->X:I
-
-    iget-object p1, p0, Ldmb;->Y:Lemb;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lemb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

@@ -1,19 +1,56 @@
-.class public interface abstract Lsh5;
+.class public final synthetic Lsh5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lc6;
 
-# static fields
-.field public static final a:Lhy9;
+
+# instance fields
+.field public final synthetic a:J
+
+.field public final synthetic b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(JJ)V
+    .registers 5
 
-    sget-object v0, Lhy9;->b:Lhy9;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lsh5;->a:Lhy9;
+    iput-wide p1, p0, Lsh5;->a:J
+
+    iput-wide p3, p0, Lsh5;->b:J
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .registers 4
+
+    iget-wide v0, p0, Lsh5;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    iget-wide v1, p0, Lsh5;->b:J
+
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    filled-new-array {v0, p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    const-string v0, "vh5"
+
+    const-string v1, "setFavoriteStickerSetMoved: success move stickerSetId=%d, to position of stickerSetId=%d"
+
+    invoke-static {v0, v1, p0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     return-void
 .end method

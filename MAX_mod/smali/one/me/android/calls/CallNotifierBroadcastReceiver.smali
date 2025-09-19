@@ -39,23 +39,23 @@
 .method public final onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .registers 4
 
-    sget-object p0, Ltaa;->a:Ltaa;
+    sget-object p0, Lbfa;->a:Lbfa;
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object p0
-
-    const-class v0, Liz0;
-
-    invoke-virtual {p0, v0}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lscout/Component;->getAccessor()Lz4;
 
     move-result-object p0
 
-    check-cast p0, Liz0;
+    const-class v0, Lxy0;
+
+    invoke-virtual {p0, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lxy0;
 
     const-string v0, "CallNotifierBroadcastReceiver"
 
-    invoke-virtual {p0, p1, p2, v0}, Liz0;->a(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)Z
+    invoke-virtual {p0, p1, p2, v0}, Lxy0;->a(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)Z
 
     return-void
 .end method

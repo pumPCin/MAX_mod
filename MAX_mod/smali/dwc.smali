@@ -1,156 +1,147 @@
-.class public final Ldwc;
-.super Ljava/lang/Object;
+.class public final enum Ldwc;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lewc;
+
+# static fields
+.field public static final enum X:Ldwc;
+
+.field public static final enum Y:Ldwc;
+
+.field public static final enum Z:Ldwc;
+
+.field public static final enum b:Ldwc;
+
+.field public static final enum c:Ldwc;
+
+.field public static final enum o:Ldwc;
+
+.field public static final synthetic r0:[Ldwc;
 
 
 # instance fields
-.field public final a:Lewc;
-
-.field public final b:Lewc;
-
-.field public final c:Landroid/graphics/Rect;
-
-.field public final d:Landroid/graphics/Rect;
-
-.field public final e:[F
-
-.field public final f:[F
-
-.field public final g:[F
-
-.field public h:F
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(La94;La94;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
-    .registers 7
+.method static constructor <clinit>()V
+    .registers 9
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ldwc;
 
-    const/16 v0, 0x9
+    const/4 v1, 0x0
 
-    new-array v1, v0, [F
+    sget v2, Laac;->call_finished:I
 
-    iput-object v1, p0, Ldwc;->e:[F
+    const-string v3, "END"
 
-    new-array v1, v0, [F
+    invoke-direct {v0, v3, v1, v2}, Ldwc;-><init>(Ljava/lang/String;II)V
 
-    iput-object v1, p0, Ldwc;->f:[F
+    sput-object v0, Ldwc;->b:Ldwc;
 
-    new-array v0, v0, [F
+    new-instance v1, Ldwc;
 
-    iput-object v0, p0, Ldwc;->g:[F
+    const/4 v2, 0x1
 
-    iput-object p1, p0, Ldwc;->a:Lewc;
+    sget v3, Laac;->call_incoming:I
 
-    iput-object p2, p0, Ldwc;->b:Lewc;
+    const-string v4, "INCOMING"
 
-    iput-object p3, p0, Ldwc;->c:Landroid/graphics/Rect;
+    invoke-direct {v1, v4, v2, v3}, Ldwc;-><init>(Ljava/lang/String;II)V
 
-    iput-object p4, p0, Ldwc;->d:Landroid/graphics/Rect;
+    sput-object v1, Ldwc;->c:Ldwc;
+
+    new-instance v2, Ldwc;
+
+    const/4 v3, 0x2
+
+    sget v4, Laac;->call_ringing:I
+
+    const-string v5, "BEEP"
+
+    invoke-direct {v2, v5, v3, v4}, Ldwc;-><init>(Ljava/lang/String;II)V
+
+    sput-object v2, Ldwc;->o:Ldwc;
+
+    new-instance v3, Ldwc;
+
+    const/4 v4, 0x3
+
+    sget v5, Laac;->call_busy:I
+
+    const-string v6, "BUSY"
+
+    invoke-direct {v3, v6, v4, v5}, Ldwc;-><init>(Ljava/lang/String;II)V
+
+    sput-object v3, Ldwc;->X:Ldwc;
+
+    new-instance v4, Ldwc;
+
+    const/4 v5, 0x4
+
+    sget v6, Laac;->call_connecting:I
+
+    const-string v7, "CONNECTING"
+
+    invoke-direct {v4, v7, v5, v6}, Ldwc;-><init>(Ljava/lang/String;II)V
+
+    sput-object v4, Ldwc;->Y:Ldwc;
+
+    new-instance v5, Ldwc;
+
+    const/4 v6, 0x5
+
+    sget v7, Laac;->call_connected:I
+
+    const-string v8, "CONNECTED"
+
+    invoke-direct {v5, v8, v6, v7}, Ldwc;-><init>(Ljava/lang/String;II)V
+
+    sput-object v5, Ldwc;->Z:Ldwc;
+
+    filled-new-array/range {v0 .. v5}, [Ldwc;
+
+    move-result-object v0
+
+    sput-object v0, Ldwc;->r0:[Ldwc;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;II)V
+    .registers 4
 
-# virtual methods
-.method public final a(Landroid/graphics/Matrix;Landroid/graphics/Rect;IIFF)Landroid/graphics/Matrix;
-    .registers 15
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Ldwc;->a:Lewc;
+    iput p3, p0, Ldwc;->a:I
 
-    iget-object v2, p0, Ldwc;->c:Landroid/graphics/Rect;
-
-    move-object v1, p1
-
-    move v3, p3
-
-    move v4, p4
-
-    move v5, p5
-
-    move v6, p6
-
-    invoke-interface/range {v0 .. v6}, Lewc;->a(Landroid/graphics/Matrix;Landroid/graphics/Rect;IIFF)Landroid/graphics/Matrix;
-
-    iget-object v7, p0, Ldwc;->e:[F
-
-    invoke-virtual {p1, v7}, Landroid/graphics/Matrix;->getValues([F)V
-
-    iget-object v0, p0, Ldwc;->b:Lewc;
-
-    iget-object v2, p0, Ldwc;->d:Landroid/graphics/Rect;
-
-    invoke-interface/range {v0 .. v6}, Lewc;->a(Landroid/graphics/Matrix;Landroid/graphics/Rect;IIFF)Landroid/graphics/Matrix;
-
-    iget-object v0, p0, Ldwc;->f:[F
-
-    invoke-virtual {p1, v0}, Landroid/graphics/Matrix;->getValues([F)V
-
-    const/4 v2, 0x0
-
-    :goto_0
-    const/16 v3, 0x9
-
-    iget-object v4, p0, Ldwc;->g:[F
-
-    if-ge v2, v3, :cond_0
-
-    aget v3, v7, v2
-
-    iget v5, p0, Ldwc;->h:F
-
-    const/high16 v6, 0x3f800000    # 1.0f
-
-    sub-float/2addr v6, v5
-
-    mul-float/2addr v6, v3
-
-    aget v3, v0, v2
-
-    mul-float/2addr v3, v5
-
-    add-float/2addr v3, v6
-
-    aput v3, v4, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1, v4}, Landroid/graphics/Matrix;->setValues([F)V
-
-    return-object p1
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 5
+.method public static valueOf(Ljava/lang/String;)Ldwc;
+    .registers 2
 
-    iget-object v0, p0, Ldwc;->a:Lewc;
+    const-class v0, Ldwc;
 
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Ldwc;
+
+    return-object p0
+.end method
+
+.method public static values()[Ldwc;
+    .registers 1
+
+    sget-object v0, Ldwc;->r0:[Ldwc;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object p0, p0, Ldwc;->b:Lewc;
+    check-cast v0, [Ldwc;
 
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v1, " (null) -> "
-
-    const-string v2, " (null))"
-
-    const-string v3, "InterpolatingScaleType("
-
-    invoke-static {v3, v0, v1, p0, v2}, Lfge;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method

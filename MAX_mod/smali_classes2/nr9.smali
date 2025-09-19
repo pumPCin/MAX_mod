@@ -1,82 +1,23 @@
-.class public final Lnr9;
-.super Lxie;
+.class public interface abstract Lnr9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
-
-
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
-
-
-# direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/login/neuroavatars/NeuroAvatarsScreen;)V
-    .registers 3
-
-    iput-object p2, p0, Lnr9;->Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
-
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+.implements Liq9;
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Ljava/util/List;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lnr9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lnr9;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lnr9;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+.method public abstract a(II)V
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lnr9;
-
-    iget-object p0, p0, Lnr9;->Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
-
-    invoke-direct {v0, p2, p0}, Lnr9;-><init>(Lkotlin/coroutines/Continuation;Lone/me/login/neuroavatars/NeuroAvatarsScreen;)V
-
-    iput-object p1, v0, Lnr9;->X:Ljava/lang/Object;
-
-    return-object v0
+.method public abstract b(Lz5g;)V
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+.method public abstract d(Lj4g;)V
+.end method
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+.method public abstract e()Landroid/graphics/drawable/BitmapDrawable;
+.end method
 
-    iget-object p1, p0, Lnr9;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
-
-    iget-object p0, p0, Lnr9;->Y:Lone/me/login/neuroavatars/NeuroAvatarsScreen;
-
-    iget-object p0, p0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;->D0:Luy5;
-
-    invoke-virtual {p0, p1}, Lhp7;->E(Ljava/util/List;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+.method public abstract release()V
 .end method

@@ -1,34 +1,27 @@
 .class public final Lplb;
-.super Ljava/lang/Object;
+.super Ltlb;
 .source "SourceFile"
-
-# interfaces
-.implements Lslb;
 
 
 # instance fields
-.field public final a:Lvte;
+.field public final b:Lp2f;
 
-.field public final b:Lvte;
+.field public final c:Lp2f;
 
-.field public final c:Ljava/util/List;
-
-.field public final d:Landroid/os/Bundle;
+.field public final d:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lvte;Lvte;Ljava/util/List;Landroid/os/Bundle;)V
-    .registers 5
+.method public constructor <init>(Lp2f;Lp2f;Ljava/util/List;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ltlb;-><init>()V
 
-    iput-object p1, p0, Lplb;->a:Lvte;
+    iput-object p1, p0, Lplb;->b:Lp2f;
 
-    iput-object p2, p0, Lplb;->b:Lvte;
+    iput-object p2, p0, Lplb;->c:Lp2f;
 
-    iput-object p3, p0, Lplb;->c:Ljava/util/List;
-
-    iput-object p4, p0, Lplb;->d:Landroid/os/Bundle;
+    iput-object p3, p0, Lplb;->d:Ljava/util/List;
 
     return-void
 .end method
@@ -36,87 +29,78 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
+    .registers 4
 
     if-ne p0, p1, :cond_0
 
-    return v0
+    goto :goto_1
 
     :cond_0
-    instance-of v1, p1, Lplb;
+    instance-of v0, p1, Lplb;
 
-    const/4 v2, 0x0
+    if-nez v0, :cond_1
 
-    if-nez v1, :cond_1
-
-    return v2
+    goto :goto_0
 
     :cond_1
     check-cast p1, Lplb;
 
-    iget-object v1, p0, Lplb;->a:Lvte;
+    iget-object v0, p0, Lplb;->b:Lp2f;
 
-    iget-object v3, p1, Lplb;->a:Lvte;
+    iget-object v1, p1, Lplb;->b:Lp2f;
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lp2f;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
-    return v2
+    goto :goto_0
 
     :cond_2
-    iget-object v1, p0, Lplb;->b:Lvte;
+    iget-object v0, p0, Lplb;->c:Lp2f;
 
-    iget-object v3, p1, Lplb;->b:Lvte;
+    iget-object v1, p1, Lplb;->c:Lp2f;
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lp2f;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
-    return v2
+    goto :goto_0
 
     :cond_3
-    iget-object v1, p0, Lplb;->c:Ljava/util/List;
+    iget-object p0, p0, Lplb;->d:Ljava/util/List;
 
-    iget-object v3, p1, Lplb;->c:Ljava/util/List;
+    iget-object p1, p1, Lplb;->d:Ljava/util/List;
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-object p0, p0, Lplb;->d:Landroid/os/Bundle;
-
-    iget-object p1, p1, Lplb;->d:Landroid/os/Bundle;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_5
+    if-nez p0, :cond_4
 
-    return v2
+    :goto_0
+    const/4 p0, 0x0
 
-    :cond_5
-    return v0
+    return p0
+
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
 .method public final hashCode()I
     .registers 4
 
-    iget-object v0, p0, Lplb;->a:Lvte;
+    iget-object v0, p0, Lplb;->b:Lp2f;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    iget v0, v0, Lp2f;->b:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result v0
 
@@ -124,31 +108,15 @@
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Lplb;->b:Lvte;
+    iget-object v2, p0, Lplb;->c:Lp2f;
 
-    if-nez v2, :cond_0
+    iget v2, v2, Lp2f;->b:I
 
-    const/4 v2, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    :goto_0
-    add-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lplb;->c:Ljava/util/List;
-
-    invoke-static {v2, v0, v1}, Lfge;->n(Ljava/util/List;II)I
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
 
     move-result v0
 
-    iget-object p0, p0, Lplb;->d:Landroid/os/Bundle;
+    iget-object p0, p0, Lplb;->d:Ljava/util/List;
 
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
@@ -164,19 +132,19 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ShowConfirmationDialog(title="
+    const-string v1, "ShowConfirmation(title="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lplb;->a:Lvte;
+    iget-object v1, p0, Lplb;->b:Lp2f;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", subtitle="
+    const-string v1, ", description="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lplb;->b:Lvte;
+    iget-object v1, p0, Lplb;->c:Lp2f;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -184,23 +152,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lplb;->c:Ljava/util/List;
+    const-string v1, ")"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lplb;->d:Ljava/util/List;
 
-    const-string v1, ", payload="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lplb;->d:Landroid/os/Bundle;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lmw1;->j(Ljava/lang/StringBuilder;Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

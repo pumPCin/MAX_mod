@@ -1,76 +1,130 @@
-.class public final enum Lpa6;
-.super Ljava/lang/Enum;
+.class public final synthetic Lpa6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ldhe;
+.implements Lzb6;
 
 
-# static fields
-.field public static final enum a:Lpa6;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final synthetic b:[Lpa6;
+.field public final synthetic b:Lyvg;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>(Lyvg;I)V
     .registers 3
 
-    new-instance v0, Lpa6;
+    iput p2, p0, Lpa6;->a:I
 
-    const-string v1, "INSTANCE"
+    iput-object p1, p0, Lpa6;->b:Lyvg;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lpa6;->a:Lpa6;
-
-    filled-new-array {v0}, [Lpa6;
-
-    move-result-object v0
-
-    sput-object v0, Lpa6;->b:[Lpa6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lpa6;
-    .registers 2
 
-    const-class v0, Lpa6;
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .registers 4
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget v0, p0, Lpa6;->a:I
 
-    move-result-object p0
+    iget-object p0, p0, Lpa6;->b:Lyvg;
 
-    check-cast p0, Lpa6;
+    packed-switch v0, :pswitch_data_0
 
-    return-object p0
-.end method
-
-.method public static values()[Lpa6;
-    .registers 1
-
-    sget-object v0, Lpa6;->b:[Lpa6;
-
-    invoke-virtual {v0}, [Lpa6;->clone()Ljava/lang/Object;
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
-    check-cast v0, [Lpa6;
+    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
 
-    return-object v0
-.end method
+    move-result v0
 
+    iget-object p0, p0, Lyvg;->b:Ljava/lang/Object;
 
-# virtual methods
-.method public final get()Ljava/lang/Object;
-    .registers 1
+    check-cast p0, Lcl7;
 
-    new-instance p0, Ljava/util/HashSet;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    invoke-direct {p0}, Ljava/util/HashSet;-><init>()V
+    move-result-object p0
+
+    check-cast p0, Lkha;
+
+    sget-object v1, Lkha;->p:[Lxi7;
+
+    const/4 v1, 0x5
+
+    const-string v2, "frsc-sch"
+
+    invoke-virtual {p0, v0, v2, v0, v1}, Lkha;->f(ILjava/lang/String;II)Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0, v2}, Lkha;->h(Ljava/util/concurrent/ExecutorService;Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
+
+    move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lyvg;->b:Ljava/lang/Object;
+
+    check-cast p0, Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lkha;
+
+    invoke-virtual {p0}, Lkha;->a()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_1
+    iget-object p0, p0, Lyvg;->b:Ljava/lang/Object;
+
+    check-cast p0, Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lkha;
+
+    invoke-virtual {p0}, Lkha;->a()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_2
+    iget-object p0, p0, Lyvg;->b:Ljava/lang/Object;
+
+    check-cast p0, Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lkha;
+
+    invoke-virtual {p0}, Lkha;->c()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

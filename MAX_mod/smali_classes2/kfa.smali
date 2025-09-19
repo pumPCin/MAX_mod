@@ -1,37 +1,70 @@
-.class public abstract Lkfa;
+.class public final synthetic Lkfa;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbc6;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:I
+# instance fields
+.field public final synthetic X:Lzfb;
 
-.field public static final c:I
+.field public final synthetic a:Ls72;
 
-.field public static final d:I
+.field public final synthetic b:I
+
+.field public final synthetic c:Lone/me/messages/list/loader/MessageModel;
+
+.field public final synthetic o:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Ls72;ILone/me/messages/list/loader/MessageModel;Ljava/util/List;Lzfb;)V
+    .registers 6
 
-    sget v0, Lkzb;->members_list_action_view_type:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lkfa;->a:I
+    iput-object p1, p0, Lkfa;->a:Ls72;
 
-    sget v0, Lkzb;->members_list_empty_search_view_type:I
+    iput p2, p0, Lkfa;->b:I
 
-    sput v0, Lkfa;->b:I
+    iput-object p3, p0, Lkfa;->c:Lone/me/messages/list/loader/MessageModel;
 
-    sget v0, Lkzb;->members_list_rv:I
+    iput-object p4, p0, Lkfa;->o:Ljava/util/List;
 
-    sput v0, Lkfa;->c:I
-
-    sget v0, Lkzb;->members_list_shimmer_view_type:I
-
-    sput v0, Lkfa;->d:I
+    iput-object p5, p0, Lkfa;->X:Lzfb;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Lv58;
+
+    iget-object v0, p0, Lkfa;->a:Ls72;
+
+    iput-object v0, p1, Lv58;->a:Ls72;
+
+    iget v0, p0, Lkfa;->b:I
+
+    iput v0, p1, Lv58;->b:I
+
+    iget-object v0, p0, Lkfa;->c:Lone/me/messages/list/loader/MessageModel;
+
+    iput-object v0, p1, Lv58;->d:Lone/me/messages/list/loader/MessageModel;
+
+    iget-object v0, p0, Lkfa;->o:Ljava/util/List;
+
+    iput-object v0, p1, Lv58;->f:Ljava/util/List;
+
+    iget-object p0, p0, Lkfa;->X:Lzfb;
+
+    iput-object p0, p1, Lv58;->e:Lzfb;
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

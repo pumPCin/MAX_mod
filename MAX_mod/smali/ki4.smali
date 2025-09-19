@@ -1,48 +1,56 @@
-.class public final Lki4;
+.class public final synthetic Lki4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/media/Spatializer$OnSpatializerStateChangedListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:Lvi4;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lire;
 
 
 # direct methods
-.method public constructor <init>(Lvi4;)V
-    .registers 2
+.method public synthetic constructor <init>(Lire;I)V
+    .registers 3
+
+    iput p2, p0, Lki4;->a:I
+
+    iput-object p1, p0, Lki4;->b:Lire;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lki4;->a:Lvi4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onSpatializerAvailableChanged(Landroid/media/Spatializer;Z)V
-    .registers 3
+.method public final run()V
+    .registers 2
 
-    sget-object p1, Lvi4;->j:Lkpa;
+    iget v0, p0, Lki4;->a:I
 
-    iget-object p0, p0, Lki4;->a:Lvi4;
+    iget-object p0, p0, Lki4;->b:Lire;
 
-    invoke-virtual {p0}, Lvi4;->f()V
+    packed-switch v0, :pswitch_data_0
 
-    return-void
-.end method
+    iget-object p0, p0, Lire;->g:Lts1;
 
-.method public final onSpatializerEnabledChanged(Landroid/media/Spatializer;Z)V
-    .registers 3
+    const/4 v0, 0x1
 
-    sget-object p1, Lvi4;->j:Lkpa;
-
-    iget-object p0, p0, Lki4;->a:Lvi4;
-
-    invoke-virtual {p0}, Lvi4;->f()V
+    invoke-virtual {p0, v0}, Lts1;->cancel(Z)Z
 
     return-void
+
+    :pswitch_0
+    invoke-virtual {p0}, Lire;->d()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

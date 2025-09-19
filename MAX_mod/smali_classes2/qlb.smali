@@ -1,22 +1,19 @@
 .class public final Lqlb;
-.super Ljava/lang/Object;
+.super Ltlb;
 .source "SourceFile"
-
-# interfaces
-.implements Lslb;
 
 
 # instance fields
-.field public final a:Lvte;
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lvte;)V
+.method public constructor <init>(Los7;)V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ltlb;-><init>()V
 
-    iput-object p1, p0, Lqlb;->a:Lvte;
+    iput-object p1, p0, Lqlb;->b:Ljava/util/List;
 
     return-void
 .end method
@@ -44,11 +41,11 @@
     :cond_1
     check-cast p1, Lqlb;
 
-    iget-object p0, p0, Lqlb;->a:Lvte;
+    iget-object p0, p0, Lqlb;->b:Ljava/util/List;
 
-    iget-object p1, p1, Lqlb;->a:Lvte;
+    iget-object p1, p1, Lqlb;->b:Ljava/util/List;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -63,7 +60,7 @@
 .method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lqlb;->a:Lvte;
+    iget-object p0, p0, Lqlb;->b:Ljava/util/List;
 
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
@@ -77,11 +74,11 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ShowRestoreMembersSnackbar(caption="
+    const-string v1, "ShowContextMenu(actions="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lqlb;->a:Lvte;
+    iget-object p0, p0, Lqlb;->b:Ljava/util/List;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

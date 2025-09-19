@@ -42,7 +42,7 @@
 .method public final getComponents()Ljava/util/List;
     .registers 1
 
-    sget-object p0, Lv25;->a:Lv25;
+    sget-object p0, Lp45;->a:Lp45;
 
     return-object p0
 .end method

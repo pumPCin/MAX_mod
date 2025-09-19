@@ -1,35 +1,82 @@
-.class public abstract Ln7b;
+.class public final synthetic Ln7b;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lzb6;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lone/me/chats/picker/chats/PickerChatsTabWidget;
+
 
 # direct methods
-.method public static a(Landroid/graphics/Bitmap;FF)Landroid/view/PointerIcon;
+.method public synthetic constructor <init>(Lone/me/chats/picker/chats/PickerChatsTabWidget;I)V
     .registers 3
 
-    invoke-static {p0, p1, p2}, Landroid/view/PointerIcon;->create(Landroid/graphics/Bitmap;FF)Landroid/view/PointerIcon;
+    iput p2, p0, Ln7b;->a:I
 
-    move-result-object p0
+    iput-object p1, p0, Ln7b;->b:Lone/me/chats/picker/chats/PickerChatsTabWidget;
 
-    return-object p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
 .end method
 
-.method public static b(Landroid/content/Context;I)Landroid/view/PointerIcon;
-    .registers 2
 
-    invoke-static {p0, p1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .registers 3
+
+    iget v0, p0, Ln7b;->a:I
+
+    iget-object p0, p0, Ln7b;->b:Lone/me/chats/picker/chats/PickerChatsTabWidget;
+
+    packed-switch v0, :pswitch_data_0
+
+    sget-object v0, Lone/me/chats/picker/chats/PickerChatsTabWidget;->x0:[Lxi7;
+
+    new-instance v0, Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
-    return-object p0
-.end method
+    invoke-direct {v0, p0}, Landroidx/viewpager2/widget/ViewPager2;-><init>(Landroid/content/Context;)V
 
-.method public static c(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;
-    .registers 2
+    sget p0, Lsea;->d:I
 
-    invoke-static {p0, p1}, Landroid/view/PointerIcon;->load(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;
+    invoke-virtual {v0, p0}, Landroid/view/View;->setId(I)V
+
+    invoke-static {v0}, Lz48;->n(Landroidx/viewpager2/widget/ViewPager2;)V
+
+    return-object v0
+
+    :pswitch_0
+    sget-object v0, Lone/me/chats/picker/chats/PickerChatsTabWidget;->x0:[Lxi7;
+
+    new-instance v0, Ltqa;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
-    return-object p0
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Ltqa;-><init>(Landroid/content/Context;I)V
+
+    sget p0, Lsea;->e:I
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setId(I)V
+
+    invoke-virtual {v0, v1}, Lcom/google/android/material/tabs/TabLayout;->setTabMode(I)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

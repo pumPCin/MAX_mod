@@ -12,7 +12,7 @@
     return-void
 .end method
 
-.method public static read(Lxjf;)Landroidx/media/AudioAttributesImplApi26;
+.method public static read(Lptf;)Landroidx/media/AudioAttributesImplApi26;
     .registers 4
 
     new-instance v0, Landroidx/media/AudioAttributesImplApi26;
@@ -23,7 +23,7 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {p0, v1, v2}, Lxjf;->g(Landroid/os/Parcelable;I)Landroid/os/Parcelable;
+    invoke-virtual {p0, v1, v2}, Lptf;->g(Landroid/os/Parcelable;I)Landroid/os/Parcelable;
 
     move-result-object v1
 
@@ -35,7 +35,7 @@
 
     const/4 v2, 0x2
 
-    invoke-virtual {p0, v1, v2}, Lxjf;->f(II)I
+    invoke-virtual {p0, v1, v2}, Lptf;->f(II)I
 
     move-result p0
 
@@ -44,7 +44,7 @@
     return-object v0
 .end method
 
-.method public static write(Landroidx/media/AudioAttributesImplApi26;Lxjf;)V
+.method public static write(Landroidx/media/AudioAttributesImplApi26;Lptf;)V
     .registers 4
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -53,13 +53,13 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p1, v0, v1}, Lxjf;->k(Landroid/os/Parcelable;I)V
+    invoke-virtual {p1, v0, v1}, Lptf;->k(Landroid/os/Parcelable;I)V
 
     iget p0, p0, Landroidx/media/AudioAttributesImplApi21;->b:I
 
     const/4 v0, 0x2
 
-    invoke-virtual {p1, p0, v0}, Lxjf;->j(II)V
+    invoke-virtual {p1, p0, v0}, Lptf;->j(II)V
 
     return-void
 .end method

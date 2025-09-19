@@ -1,55 +1,91 @@
-.class public final Loea;
+.class public abstract Loea;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lxh7;
+# static fields
+.field public static final a:I
 
-.field public final b:Ldle;
+.field public static final b:I
 
-.field public final c:Ldle;
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;)V
-    .registers 14
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lnac;->oneme_chatmedia_viewer_close_reason_content_delete_text:I
 
-    iput-object p6, p0, Loea;->a:Lxh7;
+    sput v0, Loea;->a:I
 
-    new-instance v0, Lkea;
+    sget v0, Lnac;->oneme_chatmedia_viewer_close_reason_photo_delete_text:I
 
-    move-object v1, p1
+    sput v0, Loea;->b:I
 
-    move-object v2, p2
+    sget v0, Lnac;->oneme_chatmedia_viewer_close_reason_video_delete_text:I
 
-    move-object v3, p3
+    sput v0, Loea;->c:I
 
-    move-object v4, p4
+    sget v0, Lnac;->oneme_chatmedia_viewer_content_level_subtitle:I
 
-    move-object v5, p5
+    sput v0, Loea;->d:I
 
-    move-object v6, p6
+    sget v0, Lnac;->oneme_chatmedia_viewer_content_level_title:I
 
-    invoke-direct/range {v0 .. v6}, Lkea;-><init>(Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;)V
+    sput v0, Loea;->e:I
 
-    new-instance p1, Ldle;
+    sget v0, Lnac;->oneme_chatmedia_viewer_seek_seconds:I
 
-    invoke-direct {p1, v0}, Ldle;-><init>(Lh96;)V
+    sput v0, Loea;->f:I
 
-    iput-object p1, p0, Loea;->b:Ldle;
+    sget v0, Lnac;->oneme_chatmedia_viewer_toolbar_action_forward_photo:I
 
-    new-instance p1, Lro;
+    sput v0, Loea;->g:I
 
-    invoke-direct {p1, v1, v6, v3, v4}, Lro;-><init>(Lxh7;Lxh7;Lxh7;Lxh7;)V
+    sget v0, Lnac;->oneme_chatmedia_viewer_toolbar_action_forward_video:I
 
-    new-instance p2, Ldle;
+    sput v0, Loea;->h:I
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    sget v0, Lnac;->oneme_chatmedia_viewer_toolbar_action_goto_message:I
 
-    iput-object p2, p0, Loea;->c:Ldle;
+    sput v0, Loea;->i:I
+
+    sget v0, Lnac;->oneme_chatmedia_viewer_toolbar_action_share:I
+
+    sput v0, Loea;->j:I
+
+    sget v0, Lnac;->oneme_chatmedia_viewer_toolbar_countable_title:I
+
+    sput v0, Loea;->k:I
+
+    sget v0, Lnac;->oneme_chatmedia_viewer_toolbar_photo_title:I
+
+    sput v0, Loea;->l:I
+
+    sget v0, Lnac;->oneme_chatmedia_viewer_toolbar_video_title:I
+
+    sput v0, Loea;->m:I
 
     return-void
 .end method

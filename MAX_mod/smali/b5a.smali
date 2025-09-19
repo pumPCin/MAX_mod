@@ -1,67 +1,69 @@
 .class public final Lb5a;
-.super Ljava/lang/Object;
+.super Lz2;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lb5a;
+# instance fields
+.field public final synthetic b:I
+
+.field public final c:Lggb;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Ly4a;Lggb;I)V
+    .registers 4
 
-    new-instance v0, Lb5a;
+    iput p3, p0, Lb5a;->b:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lz2;-><init>(Lt7a;)V
 
-    sput-object v0, Lb5a;->a:Lb5a;
+    iput-object p2, p0, Lb5a;->c:Lggb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lh96;)Landroid/window/OnBackInvokedCallback;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lh96;",
-            ")",
-            "Landroid/window/OnBackInvokedCallback;"
-        }
-    .end annotation
+.method public final n(Ld8a;)V
+    .registers 5
 
-    new-instance p0, Lom;
+    iget v0, p0, Lb5a;->b:I
 
-    const/4 v0, 0x2
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {p0, v0, p1}, Lom;-><init>(ILjava/lang/Object;)V
+    new-instance v0, Lc6a;
 
-    return-object p0
-.end method
+    iget-object v1, p0, Lb5a;->c:Lggb;
 
-.method public final b(Ljava/lang/Object;ILjava/lang/Object;)V
-    .registers 4
+    const/4 v2, 0x0
 
-    check-cast p1, Landroid/window/OnBackInvokedDispatcher;
+    invoke-direct {v0, p1, v1, v2}, Lc6a;-><init>(Ld8a;Ljava/lang/Object;I)V
 
-    check-cast p3, Landroid/window/OnBackInvokedCallback;
+    iget-object p0, p0, Lz2;->a:Lt7a;
 
-    invoke-interface {p1, p2, p3}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
+    invoke-interface {p0, v0}, Lt7a;->a(Ld8a;)V
 
     return-void
-.end method
 
-.method public final c(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    :pswitch_0
+    new-instance v0, La5a;
 
-    check-cast p1, Landroid/window/OnBackInvokedDispatcher;
+    iget-object v1, p0, Lb5a;->c:Lggb;
 
-    check-cast p2, Landroid/window/OnBackInvokedCallback;
+    const/4 v2, 0x0
 
-    invoke-interface {p1, p2}, Landroid/window/OnBackInvokedDispatcher;->unregisterOnBackInvokedCallback(Landroid/window/OnBackInvokedCallback;)V
+    invoke-direct {v0, p1, v1, v2}, La5a;-><init>(Ljava/lang/Object;Lggb;I)V
+
+    iget-object p0, p0, Lz2;->a:Lt7a;
+
+    invoke-interface {p0, v0}, Lt7a;->a(Ld8a;)V
 
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

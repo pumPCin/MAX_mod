@@ -1,88 +1,132 @@
 .class public final Lc13;
-.super Lxie;
+.super Lpke;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lx3f;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lone/me/chats/tab/ChatsTabWidget;
+.field public final o:Landroid/widget/TextView;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chats/tab/ChatsTabWidget;)V
-    .registers 3
+.method public constructor <init>(Landroid/widget/TextView;)V
+    .registers 5
 
-    iput-object p2, p0, Lc13;->Y:Lone/me/chats/tab/ChatsTabWidget;
+    invoke-direct {p0, p1}, Lpke;-><init>(Landroid/view/View;)V
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Lc13;->o:Landroid/widget/TextView;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    new-instance v0, Lloc;
+
+    const/16 v1, 0x28
+
+    int-to-float v1, v1
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v1, v2
+
+    invoke-static {v1}, Lya6;->G(F)I
+
+    move-result v1
+
+    const/4 v2, -0x1
+
+    invoke-direct {v0, v2, v1}, Lloc;-><init>(II)V
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    const/16 v0, 0x10
+
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setGravity(I)V
+
+    const/16 v0, 0xc
+
+    int-to-float v0, v0
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v1, v0
+
+    invoke-static {v1}, Lya6;->G(F)I
+
+    move-result v1
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v0, v2
+
+    invoke-static {v0}, Lya6;->G(F)I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v1, v2, v0, v2}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    sget-object v0, Lyu4;->t0:Lbx9;
+
+    invoke-virtual {v0, p1}, Lbx9;->l(Landroid/view/View;)Lera;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lc13;->onThemeChanged(Lera;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onThemeChanged(Lera;)V
     .registers 3
 
-    check-cast p1, Ljava/util/List;
+    sget-object v0, Lclf;->s:Lv2f;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lc13;->o:Landroid/widget/TextView;
 
-    invoke-virtual {p0, p1, p2}, Lc13;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, p0}, Lv2f;->d(Lv2f;Landroid/widget/TextView;)V
 
-    move-result-object p0
+    invoke-interface {p1}, Lera;->getText()Lh1f;
 
-    check-cast p0, Lc13;
+    move-result-object v0
 
-    sget-object p1, Lncf;->a:Lncf;
+    iget v0, v0, Lh1f;->i:I
 
-    invoke-virtual {p0, p1}, Lc13;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    return-object p1
-.end method
+    invoke-interface {p1}, Lera;->b()Lie0;
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    move-result-object p1
 
-    new-instance v0, Lc13;
+    iget p1, p1, Lie0;->l:I
 
-    iget-object p0, p0, Lc13;->Y:Lone/me/chats/tab/ChatsTabWidget;
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    invoke-direct {v0, p2, p0}, Lc13;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chats/tab/ChatsTabWidget;)V
-
-    iput-object p1, v0, Lc13;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lc13;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/List;
-
-    iget-object p0, p0, Lc13;->Y:Lone/me/chats/tab/ChatsTabWidget;
-
-    iget-object v0, p0, Lone/me/chats/tab/ChatsTabWidget;->t0:Le16;
-
-    invoke-virtual {v0, p1}, Le16;->d(Ljava/util/List;)V
-
-    invoke-virtual {p0}, Lone/me/chats/tab/ChatsTabWidget;->x0()Lf06;
-
-    move-result-object p0
-
-    invoke-virtual {p0, p1}, Lf06;->M(Ljava/util/List;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    return-void
 .end method

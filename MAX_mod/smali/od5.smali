@@ -2,46 +2,84 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lk64;
-
 
 # virtual methods
-.method public abstract M(IZ)Z
+.method public abstract a()Ltbf;
 .end method
 
-.method public abstract c([BIIZ)Z
+.method public abstract b()I
 .end method
 
-.method public abstract e(I[BI)V
+.method public c(Z)V
+    .registers 2
+
+    return-void
 .end method
 
-.method public abstract getLength()J
+.method public abstract d(I)Lv46;
 .end method
 
-.method public abstract getPosition()J
+.method public abstract e()V
 .end method
 
-.method public abstract n([BIIZ)Z
+.method public abstract f(I)I
 .end method
 
-.method public abstract o()J
+.method public abstract g(JLjava/util/List;)I
 .end method
 
-.method public abstract p(I)V
+.method public abstract h()V
 .end method
 
-.method public abstract readFully([BII)V
+.method public abstract i()I
 .end method
 
-.method public abstract s(I[BI)I
+.method public abstract j()Lv46;
 .end method
 
-.method public abstract u(I)I
+.method public abstract k()I
 .end method
 
-.method public abstract x()V
+.method public abstract l(F)V
 .end method
 
-.method public abstract y(I)V
+.method public abstract length()I
+.end method
+
+.method public abstract m()Ljava/lang/Object;
+.end method
+
+.method public n()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public o()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public abstract p(I)I
+.end method
+
+.method public abstract q(Lv46;)I
+.end method
+
+.method public abstract r(IJ)Z
+.end method
+
+.method public abstract s(IJ)Z
+.end method
+
+.method public abstract t(JJJLjava/util/List;[Lwd8;)V
+.end method
+
+.method public u(JLz23;Ljava/util/List;)Z
+    .registers 5
+
+    const/4 p0, 0x0
+
+    return p0
 .end method

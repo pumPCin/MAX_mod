@@ -1,374 +1,217 @@
-.class public abstract Lg77;
-.super Ljava/lang/Object;
+.class public final Lg77;
+.super Lb33;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/nio/charset/Charset;
+# instance fields
+.field public final t0:Lc33;
 
-.field public static final b:Ljava/lang/Object;
+.field public u0:Lmgb;
+
+.field public v0:J
+
+.field public volatile w0:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lf74;Ln74;Lx46;ILjava/lang/Object;Lc33;)V
+    .registers 18
 
-    const-string v0, "UTF-8"
+    const-wide v7, -0x7fffffffffffffffL    # -4.9E-324
 
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    const-wide v9, -0x7fffffffffffffffL    # -4.9E-324
 
-    move-result-object v0
+    const/4 v3, 0x2
 
-    sput-object v0, Lg77;->a:Ljava/nio/charset/Charset;
+    move-object v0, p0
 
-    const-string v0, "ISO-8859-1"
+    move-object v1, p1
 
-    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+    move-object v2, p2
 
-    new-instance v0, Ljava/lang/Object;
+    move-object v4, p3
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    move v5, p4
 
-    sput-object v0, Lg77;->b:Ljava/lang/Object;
+    move-object/from16 v6, p5
+
+    invoke-direct/range {v0 .. v10}, Lb33;-><init>(Lf74;Ln74;ILx46;ILjava/lang/Object;JJ)V
+
+    move-object/from16 p1, p6
+
+    iput-object p1, p0, Lg77;->t0:Lc33;
 
     return-void
 .end method
 
-.method public static a(Ljava/util/Map;III)I
+
+# virtual methods
+.method public final a()V
+    .registers 2
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lg77;->w0:Z
+
+    return-void
+.end method
+
+.method public final load()V
     .registers 8
 
-    invoke-static {p1}, Lk63;->m(I)I
+    iget-wide v0, p0, Lg77;->v0:J
 
-    move-result p1
+    const-wide/16 v2, 0x0
 
-    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    cmp-long v0, v0, v2
 
-    move-result-object p0
+    if-nez v0, :cond_0
 
-    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Lg77;->t0:Lc33;
 
-    move-result-object p0
+    iget-object v2, p0, Lg77;->u0:Lmgb;
 
-    const/4 v0, 0x0
+    const-wide v5, -0x7fffffffffffffffL    # -4.9E-324
+
+    move-object v1, v0
+
+    check-cast v1, Lcv0;
+
+    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
+
+    invoke-virtual/range {v1 .. v6}, Lcv0;->b(Lmgb;JJ)V
+
+    :cond_0
+    :try_start_0
+    iget-object v0, p0, Lb33;->b:Ln74;
+
+    iget-wide v1, p0, Lg77;->v0:J
+
+    invoke-virtual {v0, v1, v2}, Ln74;->c(J)Ln74;
+
+    move-result-object v0
+
+    new-instance v1, Lff4;
+
+    iget-object v2, p0, Lb33;->s0:Lbee;
+
+    iget-wide v3, v0, Ln74;->f:J
+
+    invoke-virtual {v2, v0}, Lbee;->G(Ln74;)J
+
+    move-result-wide v5
+
+    invoke-direct/range {v1 .. v6}, Lff4;-><init>(Ly64;JJ)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    :try_start_1
+    iget-boolean v0, p0, Lg77;->w0:Z
 
-    move-result v1
+    if-nez v0, :cond_3
 
-    if-eqz v1, :cond_1
+    iget-object v0, p0, Lg77;->t0:Lc33;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    check-cast v0, Lcv0;
 
-    move-result-object v1
+    iget-object v0, v0, Lcv0;->a:Lof5;
 
-    check-cast v1, Ljava/util/Map$Entry;
+    sget-object v2, Lcv0;->t0:Lj7;
 
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0, v1, v2}, Lof5;->o(Lqf5;Lj7;)I
 
-    move-result-object v2
+    move-result v0
 
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eqz v2, :cond_0
-
-    if-eqz v1, :cond_0
+    const/4 v2, 0x0
 
     const/4 v3, 0x1
 
-    invoke-static {v3, p2, v2}, Lk63;->d(IILjava/lang/Object;)I
+    if-eq v0, v3, :cond_1
 
-    move-result v2
-
-    const/4 v3, 0x2
-
-    invoke-static {v3, p3, v1}, Lk63;->d(IILjava/lang/Object;)I
-
-    move-result v1
-
-    add-int/2addr v1, v2
-
-    add-int v2, p1, v1
-
-    invoke-static {v1}, Lk63;->j(I)I
-
-    move-result v1
-
-    add-int/2addr v1, v2
-
-    add-int/2addr v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "keys and values in maps cannot be null"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public static final b(Lj63;Ljava/util/Map;Lf28;IILkz8;II)Ljava/util/Map;
-    .registers 10
-
-    invoke-interface {p2, p1}, Lf28;->c(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Lj63;->p()I
-
-    move-result p2
-
-    invoke-virtual {p0, p2}, Lj63;->e(I)I
-
-    move-result p2
-
-    const/4 v0, 0x0
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p0}, Lj63;->s()I
-
-    move-result v1
-
-    if-nez v1, :cond_1
+    move v4, v3
 
     goto :goto_1
 
     :cond_1
-    if-ne v1, p6, :cond_2
-
-    invoke-virtual {p0, p3}, Lj63;->k(I)Ljava/io/Serializable;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_2
-    if-ne v1, p7, :cond_4
-
-    const/16 v1, 0xb
-
-    if-ne p4, v1, :cond_3
-
-    move-object v1, p5
-
-    check-cast v1, Lkz8;
-
-    invoke-virtual {p0, v1}, Lj63;->j(Lkz8;)V
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {p0, p4}, Lj63;->k(I)Ljava/io/Serializable;
-
-    move-result-object p5
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {p0, v1}, Lj63;->u(I)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
+    move v4, v2
 
     :goto_1
-    const/4 p6, 0x0
+    invoke-static {v4}, Lmq0;->h(Z)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    invoke-virtual {p0, p6}, Lj63;->a(I)V
+    if-nez v0, :cond_2
 
-    invoke-virtual {p0, p2}, Lj63;->d(I)V
+    move v2, v3
 
-    if-nez v0, :cond_5
-
-    invoke-static {p3}, Lg77;->c(I)Ljava/io/Serializable;
-
-    move-result-object v0
-
-    :cond_5
-    if-nez p5, :cond_6
-
-    invoke-static {p4}, Lg77;->c(I)Ljava/io/Serializable;
-
-    move-result-object p5
-
-    :cond_6
-    invoke-interface {p1, v0, p5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public static c(I)Ljava/io/Serializable;
-    .registers 4
-
-    packed-switch p0, :pswitch_data_0
-
-    :pswitch_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Type: "
-
-    const-string v2, " is not a primitive type."
-
-    invoke-static {p0, v1, v2}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :pswitch_1
-    sget-object p0, Lx44;->g:[B
-
-    return-object p0
-
-    :pswitch_2
-    const-string p0, ""
-
-    return-object p0
-
-    :pswitch_3
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    return-object p0
-
-    :pswitch_4
-    const/4 p0, 0x0
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_5
-    const-wide/16 v0, 0x0
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_6
-    const/4 p0, 0x0
-
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_7
-    const-wide/16 v0, 0x0
-
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_5
-        :pswitch_4
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_4
-        :pswitch_4
-        :pswitch_4
-        :pswitch_5
-        :pswitch_4
-        :pswitch_5
-    .end packed-switch
-.end method
-
-.method public static d(Lk63;Ljava/util/Map;III)V
-    .registers 11
-
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v1, :cond_0
-
-    if-eqz v0, :cond_0
-
-    const/4 v2, 0x1
-
-    invoke-static {v2, p3, v1}, Lk63;->d(IILjava/lang/Object;)I
-
-    move-result v3
-
-    const/4 v4, 0x2
-
-    invoke-static {v4, p4, v0}, Lk63;->d(IILjava/lang/Object;)I
-
-    move-result v5
-
-    add-int/2addr v5, v3
-
-    invoke-virtual {p0, p2, v4}, Lk63;->F(II)V
-
-    invoke-virtual {p0, v5}, Lk63;->C(I)V
-
-    invoke-virtual {p0, v2, p3, v1}, Lk63;->u(IILjava/lang/Object;)V
-
-    invoke-virtual {p0, v4, p4, v0}, Lk63;->u(IILjava/lang/Object;)V
+    :cond_2
+    if-eqz v2, :cond_3
 
     goto :goto_0
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    :catchall_0
+    move-exception v0
 
-    const-string p1, "keys and values in maps cannot be null"
+    goto :goto_2
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    :cond_3
+    :try_start_2
+    iget-wide v0, v1, Lff4;->o:J
 
-    throw p0
+    iget-object v2, p0, Lb33;->b:Ln74;
 
-    :cond_1
+    iget-wide v2, v2, Ln74;->f:J
+
+    sub-long/2addr v0, v2
+
+    iput-wide v0, p0, Lg77;->v0:J
+
+    iget-object v0, p0, Lg77;->t0:Lc33;
+
+    check-cast v0, Lcv0;
+
+    invoke-virtual {v0}, Lcv0;->a()Le33;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    iget-object p0, p0, Lb33;->s0:Lbee;
+
+    invoke-static {p0}, Lo97;->n(Lf74;)V
+
     return-void
+
+    :catchall_1
+    move-exception v0
+
+    goto :goto_3
+
+    :goto_2
+    :try_start_3
+    iget-wide v1, v1, Lff4;->o:J
+
+    iget-object v3, p0, Lb33;->b:Ln74;
+
+    iget-wide v3, v3, Ln74;->f:J
+
+    sub-long/2addr v1, v3
+
+    iput-wide v1, p0, Lg77;->v0:J
+
+    iget-object v1, p0, Lg77;->t0:Lc33;
+
+    check-cast v1, Lcv0;
+
+    invoke-virtual {v1}, Lcv0;->a()Le33;
+
+    throw v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    :goto_3
+    iget-object p0, p0, Lb33;->s0:Lbee;
+
+    invoke-static {p0}, Lo97;->n(Lf74;)V
+
+    throw v0
 .end method

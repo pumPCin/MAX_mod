@@ -1,34 +1,32 @@
 .class public final Lx52;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
 .field public X:I
 
-.field public final synthetic Y:Lfq5;
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public final synthetic Z:Ls9d;
+.field public final synthetic Z:Lks5;
 
-.field public final synthetic n0:Lx8d;
+.field public final synthetic r0:Lz52;
 
 
 # direct methods
-.method public constructor <init>(Lfq5;Ls9d;Lx8d;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+.method public constructor <init>(Lks5;Lz52;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    iput-object p1, p0, Lx52;->Y:Lfq5;
+    iput-object p1, p0, Lx52;->Z:Lks5;
 
-    iput-object p2, p0, Lx52;->Z:Ls9d;
-
-    iput-object p3, p0, Lx52;->n0:Lx8d;
+    iput-object p2, p0, Lx52;->r0:Lz52;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p4}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -38,7 +36,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -48,7 +46,7 @@
 
     check-cast p0, Lx52;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lx52;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -60,17 +58,17 @@
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 5
 
-    new-instance p1, Lx52;
+    new-instance v0, Lx52;
 
-    iget-object v0, p0, Lx52;->Z:Ls9d;
+    iget-object v1, p0, Lx52;->Z:Lks5;
 
-    iget-object v1, p0, Lx52;->n0:Lx8d;
+    iget-object p0, p0, Lx52;->r0:Lz52;
 
-    iget-object p0, p0, Lx52;->Y:Lfq5;
+    invoke-direct {v0, v1, p0, p2}, Lx52;-><init>(Lks5;Lz52;Lkotlin/coroutines/Continuation;)V
 
-    invoke-direct {p1, p0, v0, v1, p2}, Lx52;-><init>(Lfq5;Ls9d;Lx8d;Lkotlin/coroutines/Continuation;)V
+    iput-object p1, v0, Lx52;->Y:Ljava/lang/Object;
 
-    return-object p1
+    return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
@@ -78,7 +76,7 @@
 
     iget v0, p0, Lx52;->X:I
 
-    iget-object v1, p0, Lx52;->n0:Lx8d;
+    sget-object v1, Lylf;->a:Lylf;
 
     const/4 v2, 0x1
 
@@ -86,15 +84,7 @@
 
     if-ne v0, v2, :cond_0
 
-    :try_start_0
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_1
 
@@ -108,37 +98,41 @@
     throw p0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    :try_start_1
-    iget-object p1, p0, Lx52;->Y:Lfq5;
+    iget-object p1, p0, Lx52;->Y:Ljava/lang/Object;
 
-    iget-object v0, p0, Lx52;->Z:Ls9d;
+    check-cast p1, Ly04;
+
+    iget-object v0, p0, Lx52;->r0:Lz52;
+
+    invoke-virtual {v0, p1}, Lz52;->m(Ly04;)Lbjc;
+
+    move-result-object p1
 
     iput v2, p0, Lx52;->X:I
 
-    invoke-interface {p1, v0, p0}, Lfq5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object v0, p0, Lx52;->Z:Lks5;
+
+    invoke-static {v0, p1, v2, p0}, Lcb7;->n(Lks5;Lbjc;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    sget-object p1, Ls04;->a:Ls04;
+    sget-object p1, Lz04;->a:Lz04;
 
     if-ne p0, p1, :cond_2
 
-    return-object p1
+    goto :goto_0
 
     :cond_2
+    move-object p0, v1
+
     :goto_0
-    invoke-virtual {v1}, Lx8d;->c()V
+    if-ne p0, p1, :cond_3
 
-    sget-object p0, Lncf;->a:Lncf;
+    return-object p1
 
-    return-object p0
-
+    :cond_3
     :goto_1
-    invoke-virtual {v1}, Lx8d;->c()V
-
-    throw p0
+    return-object v1
 .end method

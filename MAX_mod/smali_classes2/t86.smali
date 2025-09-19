@@ -4,11 +4,5 @@
 
 
 # virtual methods
-.method public abstract e()V
-.end method
-
-.method public abstract r()V
-.end method
-
-.method public abstract v()V
+.method public abstract a0(IILandroid/content/Intent;)V
 .end method

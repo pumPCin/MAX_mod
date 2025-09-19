@@ -1,134 +1,88 @@
-.class public final Ltu7;
+.class public interface abstract Ltu7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lgcb;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final b:Ljava/util/concurrent/Executor;
-
-.field public final c:Landroid/content/ContentResolver;
-
-
-# direct methods
-.method public synthetic constructor <init>(Ljava/util/concurrent/Executor;Landroid/content/ContentResolver;I)V
-    .registers 4
-
-    iput p3, p0, Ltu7;->a:I
-
-    iput-object p1, p0, Ltu7;->b:Ljava/util/concurrent/Executor;
-
-    iput-object p2, p0, Ltu7;->c:Landroid/content/ContentResolver;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
 
 # virtual methods
-.method public final a(Lyi0;Lhcb;)V
-    .registers 13
+.method public abstract a(Lsu7;[Lpd5;)V
+.end method
 
-    iget v0, p0, Ltu7;->a:I
+.method public abstract b()Z
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public c()Z
+    .registers 1
 
-    move-object v8, p2
+    const-string p0, "shouldContinuePreloading needs to be implemented when playlist preloading is enabled"
 
-    check-cast v8, Lhk0;
+    invoke-static {p0}, Lxnd;->l0(Ljava/lang/String;)V
 
-    iget-object v3, v8, Lhk0;->c:Lkcb;
+    const/4 p0, 0x0
 
-    iget-object v7, v8, Lhk0;->a:Lhz6;
+    return p0
+.end method
 
-    const-string v0, "local"
+.method public d(J)Z
+    .registers 3
 
-    const-string v2, "video"
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v8, v0, v2}, Lhk0;->h(Ljava/lang/String;Ljava/lang/String;)V
+    const-string p1, "shouldContinueLoading not implemented"
 
-    new-instance v0, Ljt7;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-object v5, v3
+    throw p0
+.end method
 
-    move-object v6, p2
+.method public abstract e(Lndb;)V
+.end method
 
-    move-object v1, p0
+.method public abstract f(Lndb;)V
+.end method
 
-    move-object v2, p1
+.method public g(JZ)Z
+    .registers 4
 
-    move-object v4, p2
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-direct/range {v0 .. v7}, Ljt7;-><init>(Ltu7;Lyi0;Lkcb;Lhcb;Lkcb;Lhcb;Lhz6;)V
+    const-string p1, "shouldStartPlayback not implemented"
 
-    new-instance v2, Lg94;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    const/4 v3, 0x5
+    throw p0
+.end method
 
-    invoke-direct {v2, v3, v0}, Lg94;-><init>(ILjava/lang/Object;)V
+.method public abstract h()J
+.end method
 
-    invoke-virtual {v8, v2}, Lhk0;->a(Lik0;)V
+.method public abstract i(Lndb;)V
+.end method
 
-    iget-object v1, p0, Ltu7;->b:Ljava/util/concurrent/Executor;
+.method public j(Lsu7;)Z
+    .registers 4
 
-    invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    iget-wide v0, p1, Lsu7;->b:J
 
-    return-void
+    invoke-interface {p0, v0, v1}, Ltu7;->d(J)Z
 
-    :pswitch_0
-    move-object v9, p2
+    move-result p0
 
-    check-cast v9, Lhk0;
+    return p0
+.end method
 
-    iget-object v3, v9, Lhk0;->c:Lkcb;
+.method public abstract k()Lib4;
+.end method
 
-    iget-object v7, v9, Lhk0;->a:Lhz6;
+.method public l(Lsu7;)Z
+    .registers 4
 
-    const-string v0, "local"
+    iget-wide v0, p1, Lsu7;->b:J
 
-    const-string v2, "thumbnail_bitmap"
+    iget-boolean p1, p1, Lsu7;->d:Z
 
-    invoke-virtual {v9, v0, v2}, Lhk0;->h(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p0, v0, v1, p1}, Ltu7;->g(JZ)Z
 
-    new-instance v8, Landroid/os/CancellationSignal;
+    move-result p0
 
-    invoke-direct {v8}, Landroid/os/CancellationSignal;-><init>()V
-
-    new-instance v0, Lsu7;
-
-    move-object v5, v3
-
-    move-object v6, p2
-
-    move-object v1, p0
-
-    move-object v2, p1
-
-    move-object v4, p2
-
-    invoke-direct/range {v0 .. v8}, Lsu7;-><init>(Ltu7;Lyi0;Lkcb;Lhcb;Lkcb;Lhcb;Lhz6;Landroid/os/CancellationSignal;)V
-
-    new-instance v2, Lg94;
-
-    const/4 v3, 0x4
-
-    invoke-direct {v2, v3, v0}, Lg94;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v9, v2}, Lhk0;->a(Lik0;)V
-
-    iget-object v1, p0, Ltu7;->b:Ljava/util/concurrent/Executor;
-
-    invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

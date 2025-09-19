@@ -1,30 +1,32 @@
 .class public final Lzt1;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
 .field public X:I
 
-.field public final synthetic Y:Ldu1;
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public final synthetic Z:Liv3;
+.field public final synthetic Z:Leu1;
+
+.field public final synthetic r0:J
 
 
 # direct methods
-.method public constructor <init>(Ldu1;Liv3;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Leu1;JLkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    iput-object p1, p0, Lzt1;->Y:Ldu1;
+    iput-object p1, p0, Lzt1;->Z:Leu1;
 
-    iput-object p2, p0, Lzt1;->Z:Liv3;
+    iput-wide p2, p0, Lzt1;->r0:J
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -34,7 +36,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -44,7 +46,7 @@
 
     check-cast p0, Lzt1;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lzt1;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -54,33 +56,47 @@
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    .registers 7
 
-    new-instance p1, Lzt1;
+    new-instance v0, Lzt1;
 
-    iget-object v0, p0, Lzt1;->Y:Ldu1;
+    iget-object v1, p0, Lzt1;->Z:Leu1;
 
-    iget-object p0, p0, Lzt1;->Z:Liv3;
+    iget-wide v2, p0, Lzt1;->r0:J
 
-    invoke-direct {p1, v0, p0, p2}, Lzt1;-><init>(Ldu1;Liv3;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2, v3, p2}, Lzt1;-><init>(Leu1;JLkotlin/coroutines/Continuation;)V
 
-    return-object p1
+    iput-object p1, v0, Lzt1;->Y:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .registers 11
 
     iget v0, p0, Lzt1;->X:I
 
-    const/4 v1, 0x1
+    sget-object v1, Lylf;->a:Lylf;
+
+    const/4 v2, 0x1
 
     if-eqz v0, :cond_1
 
-    if-ne v0, v1, :cond_0
+    if-ne v0, v2, :cond_0
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    :try_start_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    move-object p0, v0
+
+    goto :goto_1
 
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -92,31 +108,48 @@
     throw p0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lzt1;->Y:Ldu1;
+    iget-object p1, p0, Lzt1;->Y:Ljava/lang/Object;
 
-    iget-object p1, p1, Ldu1;->a:Lgpd;
+    check-cast p1, Ly04;
 
-    new-instance v0, Lj61;
+    iget-object p1, p0, Lzt1;->Z:Leu1;
 
-    iget-object v2, p0, Lzt1;->Z:Liv3;
+    iget-wide v4, p0, Lzt1;->r0:J
 
-    iget-object v2, v2, Liv3;->b:Ljava/util/List;
+    :try_start_1
+    iget-object p1, p1, Leu1;->y:Lcl7;
 
-    invoke-static {v2}, Lj73;->L0(Ljava/util/Collection;)Ljava/util/Set;
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-direct {v0, v2}, Lj61;-><init>(Ljava/util/Set;)V
+    move-object v3, p1
 
-    iput v1, p0, Lzt1;->X:I
+    check-cast v3, Lrh9;
 
-    invoke-virtual {p1, v0, p0}, Lgpd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    sget p1, Lfy4;->o:I
+
+    sget-object p1, Lky4;->o:Lky4;
+
+    const/16 v0, 0xa
+
+    invoke-static {v0, p1}, Lr94;->b0(ILky4;)J
+
+    move-result-wide v6
+
+    iput v2, p0, Lzt1;->X:I
+
+    move-object v8, p0
+
+    invoke-virtual/range {v3 .. v8}, Lrh9;->V(JJLure;)Ljava/lang/Object;
 
     move-result-object p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    sget-object p1, Ls04;->a:Ls04;
+    sget-object p1, Lz04;->a:Lz04;
 
     if-ne p0, p1, :cond_2
 
@@ -124,7 +157,28 @@
 
     :cond_2
     :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    move-object p1, v1
 
-    return-object p0
+    goto :goto_2
+
+    :goto_1
+    new-instance p1, Lhvc;
+
+    invoke-direct {p1, p0}, Lhvc;-><init>(Ljava/lang/Throwable;)V
+
+    :goto_2
+    invoke-static {p1}, Ljvc;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_3
+
+    const-string p1, "CallEngineTag"
+
+    const-string v0, "fail to fetch missed user"
+
+    invoke-static {p1, v0, p0}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_3
+    return-object v1
 .end method

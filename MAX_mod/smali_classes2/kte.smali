@@ -1,86 +1,352 @@
 .class public final Lkte;
-.super Lyfd;
+.super Landroid/widget/FrameLayout;
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic r0:I
+
+
 # instance fields
-.field public final K0:Landroid/widget/TextView;
+.field public final a:Ll7g;
+
+.field public b:Z
+
+.field public c:Landroid/animation/ValueAnimator;
+
+.field public o:Ljte;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/ViewGroup;Landroid/view/LayoutInflater;Lru/ok/messages/settings/FrgBaseSettings;)V
-    .registers 5
-
-    invoke-direct {p0, p1, p3}, Lyfd;-><init>(Landroid/view/View;Lru/ok/messages/settings/FrgBaseSettings;)V
-
-    sget p3, Ly1c;->row_setting_text:I
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 4
 
     const/4 v0, 0x0
 
-    invoke-virtual {p2, p3, p1, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-direct {p0, p1, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    move-result-object p2
+    new-instance p1, Ldr0;
 
-    check-cast p2, Landroid/widget/TextView;
+    const/4 v0, 0x2
 
-    iput-object p2, p0, Lkte;->K0:Landroid/widget/TextView;
+    invoke-direct {p1, v0, p0}, Ldr0;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
+    new-instance v0, Ll7g;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p0, p1}, Ll7g;-><init>(Landroid/content/Context;Landroid/view/ViewGroup;Lo97;)V
+
+    iget p1, v0, Ll7g;->b:I
+
+    int-to-float p1, p1
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    mul-float/2addr v1, p1
+
+    float-to-int p1, v1
+
+    iput p1, v0, Ll7g;->b:I
+
+    iput-object v0, p0, Lkte;->a:Ll7g;
+
+    return-void
+.end method
+
+.method public static a(Lkte;F)V
+    .registers 2
+
+    invoke-direct {p0, p1}, Lkte;->setBackgroundAlpha(F)V
+
+    return-void
+.end method
+
+.method public static b(Lkte;FF)V
+    .registers 5
+
+    const/4 v0, 0x0
+
+    cmpg-float v0, p2, v0
+
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    int-to-float v0, v1
+
+    sub-float p2, v0, p2
+
+    :goto_0
+    cmpl-float p2, p1, p2
+
+    if-lez p2, :cond_1
+
+    int-to-float p2, v1
+
+    sub-float/2addr p2, p1
+
+    invoke-direct {p0, p2}, Lkte;->setBackgroundAlpha(F)V
+
+    :cond_1
+    return-void
+.end method
+
+.method private final setBackgroundAlpha(F)V
+    .registers 5
+
+    invoke-virtual {p0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    sget-object p3, Ldqe;->a0:Ldle;
+    if-eqz p0, :cond_0
 
-    invoke-static {p0}, Lx44;->Q(Landroid/content/Context;)Ldqe;
+    const/16 v0, 0xff
 
-    move-result-object p0
+    int-to-float v0, v0
 
-    iget p0, p0, Ldqe;->F:I
+    const/4 v1, 0x0
 
-    invoke-virtual {p2, p0}, Landroid/widget/TextView;->setTextColor(I)V
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    sget p0, Ly0c;->row_setting__fl_value:I
+    invoke-static {p1, v1, v2}, Lkp;->g(FFF)F
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result p1
 
-    move-result-object p0
+    mul-float/2addr p1, v0
 
-    check-cast p0, Landroid/widget/FrameLayout;
+    float-to-int p1, p1
 
-    invoke-virtual {p0, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
-
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final x(Lvfd;Z)V
-    .registers 3
+.method public final c(IILzb6;Lzb6;Lpc6;)V
+    .registers 10
 
-    invoke-super {p0, p1, p2}, Lyfd;->x(Lvfd;Z)V
+    iget-object v0, p0, Lkte;->o:Ljte;
 
-    iget-object p1, p1, Lvfd;->X:Ljava/lang/Object;
-
-    iget-object p0, p0, Lkte;->K0:Landroid/widget/TextView;
-
-    if-eqz p1, :cond_0
-
-    const/4 p2, 0x0
-
-    invoke-virtual {p0, p2}, Landroid/view/View;->setVisibility(I)V
-
-    check-cast p1, Ljava/lang/String;
-
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    if-nez v0, :cond_0
 
     return-void
 
     :cond_0
-    const/16 p1, 0x8
+    iget-object v1, p0, Lkte;->c:Landroid/animation/ValueAnimator;
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+
+    move-result v1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_0
+    iget-object v2, p0, Lkte;->c:Landroid/animation/ValueAnimator;
+
+    if-eqz v2, :cond_2
+
+    invoke-static {v2}, Lxfc;->d(Landroid/animation/Animator;)V
+
+    :cond_2
+    filled-new-array {p1, p2}, [I
+
+    move-result-object p1
+
+    invoke-static {p1}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
+
+    move-result-object p1
+
+    const-wide/16 v2, 0xc8
+
+    invoke-virtual {p1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    new-instance p2, Lhf;
+
+    const/4 v2, 0x2
+
+    invoke-direct {p2, v0, p5, v1, v2}, Lhf;-><init>(Ljava/lang/Object;Ljava/lang/Object;FI)V
+
+    invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    new-instance p2, Ltg;
+
+    const/4 p5, 0x2
+
+    invoke-direct {p2, p4, p0, p3, p5}, Ltg;-><init>(Lzb6;Landroid/widget/FrameLayout;Lzb6;I)V
+
+    invoke-virtual {p1, p2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
+
+    iput-object p1, p0, Lkte;->c:Landroid/animation/ValueAnimator;
+
+    return-void
+.end method
+
+.method public final computeScroll()V
+    .registers 2
+
+    iget-object v0, p0, Lkte;->a:Ll7g;
+
+    invoke-virtual {v0}, Ll7g;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final d()V
+    .registers 9
+
+    iget-object v0, p0, Lkte;->o:Ljte;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-interface {v0}, Ljte;->l()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+
+    move-result v1
+
+    if-lez v1, :cond_1
+
+    invoke-interface {v0}, Ljte;->n()I
+
+    move-result v3
+
+    invoke-interface {v0}, Ljte;->a()I
+
+    move-result v4
+
+    new-instance v5, Ly5e;
+
+    const/16 v0, 0x10
+
+    invoke-direct {v5, v0}, Ly5e;-><init>(I)V
+
+    new-instance v6, Ly5e;
+
+    invoke-direct {v6, v0}, Ly5e;-><init>(I)V
+
+    new-instance v7, Lite;
+
+    const/4 v0, 0x0
+
+    invoke-direct {v7, p0, v0}, Lite;-><init>(Lkte;I)V
+
+    move-object v2, p0
+
+    invoke-virtual/range {v2 .. v7}, Lkte;->c(IILzb6;Lzb6;Lpc6;)V
+
+    goto :goto_0
+
+    :cond_1
+    move-object v2, p0
+
+    :goto_0
+    invoke-virtual {v2}, Landroid/view/View;->invalidate()V
+
+    return-void
+.end method
+
+.method public final getCallback()Ljte;
+    .registers 1
+
+    iget-object p0, p0, Lkte;->o:Ljte;
+
+    return-object p0
+.end method
+
+.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    .registers 2
+
+    iget-object p0, p0, Lkte;->a:Ll7g;
+
+    invoke-virtual {p0, p1}, Ll7g;->o(Landroid/view/MotionEvent;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final onLayout(ZIIII)V
+    .registers 9
+
+    iget-object v0, p0, Lkte;->o:Ljte;
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    invoke-interface {v0}, Ljte;->l()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+
+    move-result v2
+
+    if-lez v2, :cond_1
+
+    invoke-virtual {v1}, Landroid/view/View;->getTop()I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_1
+    invoke-interface {v0}, Ljte;->n()I
+
+    move-result v0
+
+    :goto_0
+    invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->offsetTopAndBottom(I)V
+
+    return-void
+.end method
+
+.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
+    .registers 2
+
+    iget-object p0, p0, Lkte;->a:Ll7g;
+
+    invoke-virtual {p0, p1}, Ll7g;->i(Landroid/view/MotionEvent;)V
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final setCallback(Ljte;)V
+    .registers 2
+
+    iput-object p1, p0, Lkte;->o:Ljte;
 
     return-void
 .end method

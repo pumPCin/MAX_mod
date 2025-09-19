@@ -1,78 +1,33 @@
-.class public final synthetic Lvm3;
+.class public abstract Lvm3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lh96;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Landroid/content/Context;
-
-.field public final synthetic c:Lxm3;
+# static fields
+.field public static final a:Lmj3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;Lxm3;I)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 5
 
-    iput p3, p0, Lvm3;->a:I
+    new-instance v0, Lmj3;
 
-    iput-object p1, p0, Lvm3;->b:Landroid/content/Context;
+    sget v1, Lcfa;->k:I
 
-    iput-object p2, p0, Lvm3;->c:Lxm3;
+    sget v2, Ld1d;->s:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v3, Lp2f;
+
+    invoke-direct {v3, v2}, Lp2f;-><init>(I)V
+
+    const/4 v2, 0x2
+
+    const/16 v4, 0x38
+
+    invoke-direct {v0, v1, v3, v2, v4}, Lmj3;-><init>(ILu2f;II)V
+
+    sput-object v0, Lvm3;->a:Lmj3;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 2
-
-    iget v0, p0, Lvm3;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lvm3;->b:Landroid/content/Context;
-
-    iget-object p0, p0, Lvm3;->c:Lxm3;
-
-    invoke-static {v0, p0}, Lxm3;->u(Landroid/content/Context;Lxm3;)Landroid/widget/ImageView;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    iget-object v0, p0, Lvm3;->b:Landroid/content/Context;
-
-    iget-object p0, p0, Lvm3;->c:Lxm3;
-
-    invoke-static {v0, p0}, Lxm3;->w(Landroid/content/Context;Lxm3;)Landroid/widget/ImageView;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_1
-    iget-object v0, p0, Lvm3;->b:Landroid/content/Context;
-
-    iget-object p0, p0, Lvm3;->c:Lxm3;
-
-    invoke-static {v0, p0}, Lxm3;->v(Landroid/content/Context;Lxm3;)Landroid/widget/TextView;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

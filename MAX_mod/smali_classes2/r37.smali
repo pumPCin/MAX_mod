@@ -1,19 +1,33 @@
 .class public final Lr37;
-.super Ljava/lang/Object;
+.super Ljava/util/AbstractMap;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:Ls4;
+.field public final a:[Lwrf;
 
 
 # direct methods
-.method public constructor <init>(Ls4;)V
+.method public constructor <init>([Lwrf;)V
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
 
-    iput-object p1, p0, Lr37;->a:Ls4;
+    iput-object p1, p0, Lr37;->a:[Lwrf;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final entrySet()Ljava/util/Set;
+    .registers 2
+
+    new-instance v0, Lor;
+
+    iget-object p0, p0, Lr37;->a:[Lwrf;
+
+    invoke-direct {v0, p0}, Lor;-><init>([Lwrf;)V
+
+    return-object v0
 .end method

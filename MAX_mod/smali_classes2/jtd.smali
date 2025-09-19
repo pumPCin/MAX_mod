@@ -1,154 +1,84 @@
-.class public abstract Ljtd;
-.super Lhp7;
+.class public final Ljtd;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
+
+
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;)V
-    .registers 5
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/SettingsPrivacyScreen;)V
+    .registers 3
 
-    new-instance v0, Lv74;
+    iput-object p2, p0, Ljtd;->Y:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
 
-    const/16 v1, 0x9
+    const/4 p2, 0x2
 
-    invoke-direct {v0, v1}, Lv74;-><init>(I)V
-
-    new-instance v1, Lzd8;
-
-    const/4 v2, 0x4
-
-    invoke-direct {v1, p1, v2, v0}, Lzd8;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-direct {p0, v1}, Lhp7;-><init>(Lzd8;)V
-
-    const/4 p1, 0x1
-
-    invoke-super {p0, p1}, Ltgc;->A(Z)V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final G(I)Lpp7;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    if-ltz p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, p0, Lhp7;->o:Lvu;
-
-    iget-object v0, v0, Lvu;->f:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
-
-    move-result v0
-
-    if-ge p1, v0, :cond_0
-
-    invoke-virtual {p0, p1}, Lhp7;->C(I)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Ljtd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    check-cast p0, Lpp7;
+    check-cast p0, Ljtd;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Ljtd;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Ljtd;
+
+    iget-object p0, p0, Ljtd;->Y:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
+
+    invoke-direct {v0, p2, p0}, Ljtd;-><init>(Lkotlin/coroutines/Continuation;Lone/me/settings/privacy/ui/SettingsPrivacyScreen;)V
+
+    iput-object p1, v0, Ljtd;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ljtd;->X:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/String;
+
+    new-instance v0, Lqoa;
+
+    iget-object p0, p0, Ljtd;->Y:Lone/me/settings/privacy/ui/SettingsPrivacyScreen;
+
+    invoke-direct {v0, p0}, Lqoa;-><init>(Lone/me/sdk/arch/Widget;)V
+
+    invoke-virtual {v0, p1}, Lqoa;->h(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {v0}, Lqoa;->i()Lpoa;
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public H(Lbud;I)V
-    .registers 3
-
-    invoke-virtual {p0, p2}, Lhp7;->C(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lpp7;
-
-    invoke-virtual {p1, p0}, Lbud;->x(Lpp7;)V
-
-    return-void
-.end method
-
-.method public I(Lbud;)V
-    .registers 2
-
-    invoke-virtual {p1}, Lbud;->E()V
-
-    return-void
-.end method
-
-.method public k(I)J
-    .registers 2
-
-    invoke-virtual {p0, p1}, Lhp7;->C(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lpp7;
-
-    invoke-interface {p0}, Lpp7;->getItemId()J
-
-    move-result-wide p0
-
-    return-wide p0
-.end method
-
-.method public l(I)I
-    .registers 2
-
-    invoke-virtual {p0, p1}, Lhp7;->C(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lpp7;
-
-    invoke-interface {p0}, Lpp7;->m()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public bridge synthetic r(Lphc;I)V
-    .registers 3
-
-    check-cast p1, Lbud;
-
-    invoke-virtual {p0, p1, p2}, Ljtd;->H(Lbud;I)V
-
-    return-void
-.end method
-
-.method public final w(Lphc;)V
-    .registers 2
-
-    check-cast p1, Lbud;
-
-    invoke-virtual {p1}, Lbud;->B()V
-
-    return-void
-.end method
-
-.method public final x(Lphc;)V
-    .registers 2
-
-    check-cast p1, Lbud;
-
-    invoke-virtual {p1}, Lbud;->C()V
-
-    return-void
-.end method
-
-.method public bridge synthetic y(Lphc;)V
-    .registers 2
-
-    check-cast p1, Lbud;
-
-    invoke-virtual {p0, p1}, Ljtd;->I(Lbud;)V
-
-    return-void
 .end method

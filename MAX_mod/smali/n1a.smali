@@ -3,201 +3,46 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ld4a;
-.implements Lnp4;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public volatile X:J
-
-.field public Y:Z
-
-.field public final a:Lrad;
-
-.field public final b:Loxc;
-
-.field public c:Lnp4;
-
-.field public o:Lm1a;
+.field public final a:Loq4;
 
 
 # direct methods
-.method public constructor <init>(Lrad;Loxc;)V
-    .registers 4
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+.method public constructor <init>(Loq4;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ln1a;->a:Lrad;
-
-    iput-object p2, p0, Ln1a;->b:Loxc;
+    iput-object p1, p0, Ln1a;->a:Loq4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 2
-
-    iget-boolean v0, p0, Ln1a;->Y:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ln1a;->Y:Z
-
-    iget-object v0, p0, Ln1a;->o:Lm1a;
-
-    if-eqz v0, :cond_1
-
-    invoke-static {v0}, Lrp4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
-
-    :cond_1
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Lm1a;->run()V
-
-    :cond_2
-    iget-object v0, p0, Ln1a;->a:Lrad;
-
-    invoke-virtual {v0}, Lrad;->b()V
-
-    iget-object p0, p0, Ln1a;->b:Loxc;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-.end method
-
-.method public final c(Lnp4;)V
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    iget-object v0, p0, Ln1a;->c:Lnp4;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p1}, Lrp4;->f(Lnp4;Lnp4;)Z
+    const-string v1, "NotificationLite.Disposable["
 
-    move-result v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-eqz v0, :cond_0
+    iget-object p0, p0, Ln1a;->a:Loq4;
 
-    iput-object p1, p0, Ln1a;->c:Lnp4;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Ln1a;->a:Lrad;
+    const-string p0, "]"
 
-    invoke-virtual {p1, p0}, Lrad;->c(Lnp4;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    return-void
-.end method
-
-.method public final d(Ljava/lang/Object;)V
-    .registers 6
-
-    iget-boolean v0, p0, Ln1a;->Y:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-wide v0, p0, Ln1a;->X:J
-
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Ln1a;->X:J
-
-    iget-object v2, p0, Ln1a;->o:Lm1a;
-
-    if-eqz v2, :cond_1
-
-    invoke-static {v2}, Lrp4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
-
-    :cond_1
-    new-instance v2, Lm1a;
-
-    invoke-direct {v2, p1, v0, v1, p0}, Lm1a;-><init>(Ljava/lang/Object;JLn1a;)V
-
-    iput-object v2, p0, Ln1a;->o:Lm1a;
-
-    iget-object p0, p0, Ln1a;->b:Loxc;
-
-    const-wide/16 v0, 0x3e8
-
-    sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {p0, v2, v0, v1, p1}, Loxc;->c(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lnp4;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {v2, p0}, Lrp4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lnp4;)Z
-
-    return-void
-.end method
-
-.method public final g()V
-    .registers 2
-
-    iget-object v0, p0, Ln1a;->c:Lnp4;
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    iget-object p0, p0, Ln1a;->b:Loxc;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-.end method
-
-.method public final h()Z
-    .registers 1
-
-    iget-object p0, p0, Ln1a;->b:Loxc;
-
-    invoke-interface {p0}, Lnp4;->h()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .registers 3
-
-    iget-boolean v0, p0, Ln1a;->Y:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_0
-    iget-object v0, p0, Ln1a;->o:Lm1a;
-
-    if-eqz v0, :cond_1
-
-    invoke-static {v0}, Lrp4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
-
-    :cond_1
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ln1a;->Y:Z
-
-    iget-object v0, p0, Ln1a;->a:Lrad;
-
-    invoke-virtual {v0, p1}, Lrad;->onError(Ljava/lang/Throwable;)V
-
-    iget-object p0, p0, Ln1a;->b:Loxc;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
+    return-object p0
 .end method

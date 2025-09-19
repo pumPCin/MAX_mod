@@ -22,7 +22,7 @@
         "",
         "",
         "dirPath",
-        "Lncf;",
+        "Lylf;",
         "onRecordStarted",
         "(Ljava/lang/String;)V",
         "onRecordCompleted",

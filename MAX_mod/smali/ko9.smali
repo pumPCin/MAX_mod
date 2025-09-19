@@ -1,75 +1,218 @@
 .class public final Lko9;
-.super Ljava/lang/Object;
+.super Lcva;
 .source "SourceFile"
 
-
-# instance fields
-.field public final a:I
-
-.field public final b:Z
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:[I
-
-.field public final h:I
-
-.field public final i:I
-
-.field public final j:I
-
-.field public final k:F
-
-.field public final l:I
-
-.field public final m:I
-
-.field public final n:I
-
-.field public final o:I
+# interfaces
+.implements Lpn9;
 
 
 # direct methods
-.method public constructor <init>(IZIIII[IIIIFIIII)V
-    .registers 16
+.method public static h()Lko9;
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lko9;
 
-    iput p1, p0, Lko9;->a:I
+    new-instance v1, Ljava/util/TreeMap;
 
-    iput-boolean p2, p0, Lko9;->b:Z
+    sget-object v2, Lcva;->b:Lkj4;
 
-    iput p3, p0, Lko9;->c:I
+    invoke-direct {v1, v2}, Ljava/util/TreeMap;-><init>(Ljava/util/Comparator;)V
 
-    iput p4, p0, Lko9;->d:I
+    invoke-direct {v0, v1}, Lcva;-><init>(Ljava/util/TreeMap;)V
 
-    iput p5, p0, Lko9;->e:I
+    return-object v0
+.end method
 
-    iput p6, p0, Lko9;->f:I
+.method public static j(Lzf3;)Lko9;
+    .registers 8
 
-    iput-object p7, p0, Lko9;->g:[I
+    new-instance v0, Ljava/util/TreeMap;
 
-    iput p8, p0, Lko9;->h:I
+    sget-object v1, Lcva;->b:Lkj4;
 
-    iput p9, p0, Lko9;->i:I
+    invoke-direct {v0, v1}, Ljava/util/TreeMap;-><init>(Ljava/util/Comparator;)V
 
-    iput p10, p0, Lko9;->j:I
+    invoke-interface {p0}, Lzf3;->d()Ljava/util/Set;
 
-    iput p11, p0, Lko9;->k:F
+    move-result-object v1
 
-    iput p12, p0, Lko9;->l:I
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    iput p13, p0, Lko9;->m:I
+    move-result-object v1
 
-    iput p14, p0, Lko9;->n:I
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    iput p15, p0, Lko9;->o:I
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ld90;
+
+    invoke-interface {p0, v2}, Lzf3;->f(Ld90;)Ljava/util/Set;
+
+    move-result-object v3
+
+    new-instance v4, Landroid/util/ArrayMap;
+
+    invoke-direct {v4}, Landroid/util/ArrayMap;-><init>()V
+
+    invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_1
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lyf3;
+
+    invoke-interface {p0, v2, v5}, Lzf3;->g(Ld90;Lyf3;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    invoke-virtual {v4, v5, v6}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v0, v2, v4}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p0, Lko9;
+
+    invoke-direct {p0, v0}, Lcva;-><init>(Ljava/util/TreeMap;)V
+
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final k(Ld90;Lyf3;Ljava/lang/Object;)V
+    .registers 8
+
+    iget-object p0, p0, Lcva;->a:Ljava/util/TreeMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/TreeMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Landroid/util/ArrayMap;
+
+    invoke-direct {v0}, Landroid/util/ArrayMap;-><init>()V
+
+    invoke-virtual {p0, p1, v0}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0, p2, p3}, Landroid/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+
+    :cond_0
+    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Collections;->min(Ljava/util/Collection;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lyf3;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v1, p3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    sget-object v1, Lyf3;->c:Lyf3;
+
+    if-ne p0, v1, :cond_2
+
+    if-eq p2, v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance v1, Ljava/lang/IllegalArgumentException;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "Option values conflicts: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p1, p1, Ld90;->a:Ljava/lang/String;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p1, ", existing value ("
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p1, ")="
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ", conflicting ("
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    :cond_2
+    :goto_0
+    invoke-interface {v0, p2, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final m(Ld90;Ljava/lang/Object;)V
+    .registers 4
+
+    sget-object v0, Lyf3;->o:Lyf3;
+
+    invoke-virtual {p0, p1, v0, p2}, Lko9;->k(Ld90;Lyf3;Ljava/lang/Object;)V
 
     return-void
 .end method

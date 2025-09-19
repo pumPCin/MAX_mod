@@ -13,7 +13,7 @@
         "",
         "",
         "millis",
-        "Lncf;",
+        "Lylf;",
         "setTimeout",
         "(J)V",
         "",

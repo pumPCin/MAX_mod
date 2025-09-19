@@ -1,67 +1,23 @@
-.class public final Ll12;
+.class public abstract Ll12;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final g:Ll12;
-
-
-# instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:Landroid/graphics/Typeface;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public static a(Landroid/os/CancellationSignal;)V
+    .registers 1
 
-    new-instance v0, Ll12;
-
-    const/4 v5, -0x1
-
-    const/4 v6, 0x0
-
-    const/4 v1, -0x1
-
-    const/high16 v2, -0x1000000
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-direct/range {v0 .. v6}, Ll12;-><init>(IIIIILandroid/graphics/Typeface;)V
-
-    sput-object v0, Ll12;->g:Ll12;
+    invoke-virtual {p0}, Landroid/os/CancellationSignal;->cancel()V
 
     return-void
 .end method
 
-.method public constructor <init>(IIIIILandroid/graphics/Typeface;)V
-    .registers 7
+.method public static b()Landroid/os/CancellationSignal;
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Landroid/os/CancellationSignal;
 
-    iput p1, p0, Ll12;->a:I
+    invoke-direct {v0}, Landroid/os/CancellationSignal;-><init>()V
 
-    iput p2, p0, Ll12;->b:I
-
-    iput p3, p0, Ll12;->c:I
-
-    iput p4, p0, Ll12;->d:I
-
-    iput p5, p0, Ll12;->e:I
-
-    iput-object p6, p0, Ll12;->f:Landroid/graphics/Typeface;
-
-    return-void
+    return-object v0
 .end method

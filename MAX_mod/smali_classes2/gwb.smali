@@ -1,62 +1,208 @@
-.class public abstract Lgwb;
-.super Ljava/lang/Object;
+.class public final Lgwb;
+.super Lure;
+.source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
-# static fields
-.field public static activity_horizontal_margin:I = 0x7f070051
+# instance fields
+.field public X:I
 
-.field public static activity_vertical_margin:I = 0x7f070052
+.field public final synthetic Y:Lipc;
 
-.field public static avatar_large:I = 0x7f070057
+.field public final synthetic Z:Lhpc;
 
-.field public static avatar_medium:I = 0x7f070058
+.field public final synthetic r0:Lnwb;
 
-.field public static avatar_small:I = 0x7f070059
+.field public final synthetic s0:Z
 
-.field public static folder_filter_item_height:I = 0x7f0700fd
 
-.field public static font_large:I = 0x7f0700ff
+# direct methods
+.method public constructor <init>(Lipc;Lhpc;Lnwb;ZLkotlin/coroutines/Continuation;)V
+    .registers 6
 
-.field public static font_larger:I = 0x7f070100
+    iput-object p1, p0, Lgwb;->Y:Lipc;
 
-.field public static font_medium:I = 0x7f070101
+    iput-object p2, p0, Lgwb;->Z:Lhpc;
 
-.field public static font_normal:I = 0x7f070102
+    iput-object p3, p0, Lgwb;->r0:Lnwb;
 
-.field public static font_normal_subtitle:I = 0x7f070103
+    iput-boolean p4, p0, Lgwb;->s0:Z
 
-.field public static font_only_emoji:I = 0x7f070104
+    const/4 p1, 0x2
 
-.field public static font_small:I = 0x7f070105
+    invoke-direct {p0, p1, p5}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
-.field public static font_smaller:I = 0x7f070106
+    return-void
+.end method
 
-.field public static font_subtitle:I = 0x7f070107
 
-.field public static font_toolbar_subtitle:I = 0x7f070108
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-.field public static font_toolbar_title:I = 0x7f070109
+    check-cast p1, Ly04;
 
-.field public static font_very_small:I = 0x7f07010a
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-.field public static huge_horizontal_margin:I = 0x7f07011f
+    invoke-virtual {p0, p1, p2}, Lgwb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-.field public static match_parent:I = 0x7f0702aa
+    move-result-object p0
 
-.field public static progress_bar_medium:I = 0x7f0703ee
+    check-cast p0, Lgwb;
 
-.field public static progress_bar_small:I = 0x7f0703ef
+    sget-object p1, Lylf;->a:Lylf;
 
-.field public static rounded_button_margin:I = 0x7f0703f6
+    invoke-virtual {p0, p1}, Lgwb;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-.field public static small_vertical_margin:I = 0x7f070400
+    move-result-object p0
 
-.field public static spacing_normal:I = 0x7f070401
+    return-object p0
+.end method
 
-.field public static spacing_small:I = 0x7f07040b
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 9
 
-.field public static spacing_tiny:I = 0x7f07040c
+    new-instance v0, Lgwb;
 
-.field public static tiny_vertical_margin:I = 0x7f07041e
+    iget-object v3, p0, Lgwb;->r0:Lnwb;
 
-.field public static wrap_content:I = 0x7f070429
+    iget-boolean v4, p0, Lgwb;->s0:Z
+
+    iget-object v1, p0, Lgwb;->Y:Lipc;
+
+    iget-object v2, p0, Lgwb;->Z:Lhpc;
+
+    move-object v5, p2
+
+    invoke-direct/range {v0 .. v5}, Lgwb;-><init>(Lipc;Lhpc;Lnwb;ZLkotlin/coroutines/Continuation;)V
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 16
+
+    iget-object v0, p0, Lgwb;->r0:Lnwb;
+
+    iget-object v1, v0, Lnwb;->Q0:Lojb;
+
+    iget v2, p0, Lgwb;->X:I
+
+    const/4 v3, 0x0
+
+    sget-object v4, Lylf;->a:Lylf;
+
+    iget-object v5, p0, Lgwb;->Z:Lhpc;
+
+    const/4 v6, 0x1
+
+    iget-object v7, p0, Lgwb;->Y:Lipc;
+
+    if-eqz v2, :cond_1
+
+    if-ne v2, v6, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, v7, Lipc;->a:Ljava/lang/Object;
+
+    sget-object v2, Lfmb;->b:Lfmb;
+
+    sget-object v8, Lfmb;->c:Lfmb;
+
+    if-ne p1, v2, :cond_3
+
+    invoke-virtual {v1}, Lojb;->j()Ljava/lang/Long;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v9
+
+    iput-wide v9, v5, Lhpc;->a:J
+
+    iput-object v8, v7, Lipc;->a:Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_2
+    return-object v4
+
+    :cond_3
+    :goto_0
+    iget-object p1, v7, Lipc;->a:Ljava/lang/Object;
+
+    if-ne p1, v8, :cond_5
+
+    iput v6, p0, Lgwb;->X:I
+
+    invoke-virtual {v1, p0}, Lojb;->n(Lure;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    sget-object v1, Lz04;->a:Lz04;
+
+    if-ne p1, v1, :cond_4
+
+    return-object v1
+
+    :cond_4
+    :goto_1
+    check-cast p1, Ls72;
+
+    if-eqz p1, :cond_5
+
+    invoke-virtual {p1}, Ls72;->r()Lf00;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_5
+
+    iget-object p1, p1, Lf00;->c:Ljava/io/Serializable;
+
+    move-object v3, p1
+
+    check-cast v3, Ljava/lang/String;
+
+    :cond_5
+    move-object v13, v3
+
+    iget-object p1, v0, Lnwb;->C0:Lv85;
+
+    new-instance v8, Lwtb;
+
+    iget-wide v9, v5, Lhpc;->a:J
+
+    iget-object v0, v7, Lipc;->a:Ljava/lang/Object;
+
+    move-object v11, v0
+
+    check-cast v11, Lfmb;
+
+    iget-boolean v12, p0, Lgwb;->s0:Z
+
+    invoke-direct/range {v8 .. v13}, Lwtb;-><init>(JLfmb;ZLjava/lang/String;)V
+
+    invoke-static {p1, v8}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
+
+    return-object v4
+.end method

@@ -1,396 +1,138 @@
-.class public final Lzfa;
+.class public final synthetic Lzfa;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lzb6;
+
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final synthetic a:I
 
-.field public final b:Lxh7;
-
-.field public final c:Lxh7;
-
-.field public final d:Lxh7;
-
-.field public final e:Lxh7;
+.field public final synthetic b:Laga;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;Lxh7;Lxh7;Landroid/content/Context;)V
-    .registers 6
+.method public synthetic constructor <init>(Laga;I)V
+    .registers 3
+
+    iput p2, p0, Lzfa;->a:I
+
+    iput-object p1, p0, Lzfa;->b:Laga;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p5, p0, Lzfa;->a:Landroid/content/Context;
-
-    iput-object p1, p0, Lzfa;->b:Lxh7;
-
-    iput-object p2, p0, Lzfa;->c:Lxh7;
-
-    iput-object p3, p0, Lzfa;->d:Lxh7;
-
-    iput-object p4, p0, Lzfa;->e:Lxh7;
-
-    sget-object p0, Landroid/provider/Settings$System;->DEFAULT_RINGTONE_URI:Landroid/net/Uri;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lqv9;
-    .registers 1
+.method public final invoke()Ljava/lang/Object;
+    .registers 4
 
-    iget-object p0, p0, Lzfa;->e:Lxh7;
+    iget v0, p0, Lzfa;->a:I
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    iget-object p0, p0, Lzfa;->b:Laga;
 
-    move-result-object p0
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p0, Lqv9;
-
-    return-object p0
-.end method
-
-.method public final b(Lo72;Lcx3;)Ljava/lang/Object;
-    .registers 7
-
-    instance-of v0, p2, Lvfa;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p2
-
-    check-cast v0, Lvfa;
-
-    iget v1, v0, Lvfa;->n0:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lvfa;->n0:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lvfa;
-
-    invoke-direct {v0, p0, p2}, Lvfa;-><init>(Lzfa;Lcx3;)V
-
-    :goto_0
-    iget-object p2, v0, Lvfa;->Y:Ljava/lang/Object;
-
-    sget-object v1, Ls04;->a:Ls04;
-
-    iget v2, v0, Lvfa;->n0:I
-
-    const/4 v3, 0x1
-
-    if-eqz v2, :cond_2
-
-    if-ne v2, v3, :cond_1
-
-    iget-object p1, v0, Lvfa;->X:Lo72;
-
-    iget-object p0, v0, Lvfa;->o:Lzfa;
-
-    invoke-static {p2}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    invoke-static {p2}, Lg53;->F(Ljava/lang/Object;)V
-
-    new-instance p2, Lwfa;
-
-    const/4 v2, 0x0
-
-    invoke-direct {p2, p0, p1, v2}, Lwfa;-><init>(Lzfa;Lo72;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p0, v0, Lvfa;->o:Lzfa;
-
-    iput-object p1, v0, Lvfa;->X:Lo72;
-
-    iput v3, v0, Lvfa;->n0:I
-
-    const-wide/16 v2, 0xc8
-
-    invoke-static {v2, v3, p2, v0}, Lg53;->J(JLx96;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    if-ne p2, v1, :cond_3
-
-    return-object v1
-
-    :cond_3
-    :goto_1
-    check-cast p2, Landroid/graphics/Bitmap;
-
-    if-nez p2, :cond_4
-
-    invoke-virtual {p0}, Lzfa;->a()Lqv9;
+    invoke-virtual {p0}, Laga;->e()Lkha;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Lkha;->i:Laa5;
 
-    invoke-virtual {p1}, Lo72;->j0()V
+    sget-object v1, Lkha;->p:[Lxi7;
 
-    invoke-virtual {p1}, Lo72;->k0()V
+    const/4 v2, 0x3
 
-    iget-object p2, p1, Lo72;->s0:Ljava/lang/CharSequence;
+    aget-object v1, v1, v2
 
-    invoke-virtual {p1}, Lo72;->f()J
-
-    move-result-wide v0
-
-    invoke-virtual {p0, p2, v0, v1}, Lqv9;->e(Ljava/lang/CharSequence;J)Landroid/graphics/Bitmap;
+    invoke-virtual {p0, v0}, Lkha;->e(Laa5;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object p0
 
-    return-object p0
+    new-instance v0, Lca5;
 
-    :cond_4
-    return-object p2
-.end method
-
-.method public final c(Lmm3;Lcx3;)Ljava/lang/Object;
-    .registers 7
-
-    instance-of v0, p2, Lxfa;
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p2
-
-    check-cast v0, Lxfa;
-
-    iget v1, v0, Lxfa;->n0:I
-
-    const/high16 v2, -0x80000000
-
-    and-int v3, v1, v2
-
-    if-eqz v3, :cond_0
-
-    sub-int/2addr v1, v2
-
-    iput v1, v0, Lxfa;->n0:I
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v0, Lxfa;
-
-    invoke-direct {v0, p0, p2}, Lxfa;-><init>(Lzfa;Lcx3;)V
-
-    :goto_0
-    iget-object p2, v0, Lxfa;->Y:Ljava/lang/Object;
-
-    iget v1, v0, Lxfa;->n0:I
-
-    const/4 v2, 0x1
-
-    if-eqz v1, :cond_2
-
-    if-ne v1, v2, :cond_1
-
-    iget-object p1, v0, Lxfa;->X:Lmm3;
-
-    iget-object p0, v0, Lxfa;->o:Lzfa;
-
-    invoke-static {p2}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_2
-    invoke-static {p2}, Lg53;->F(Ljava/lang/Object;)V
-
-    new-instance p2, Lyfa;
-
-    const/4 v1, 0x0
-
-    invoke-direct {p2, p0, p1, v1}, Lyfa;-><init>(Lzfa;Lmm3;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p0, v0, Lxfa;->o:Lzfa;
-
-    iput-object p1, v0, Lxfa;->X:Lmm3;
-
-    iput v2, v0, Lxfa;->n0:I
-
-    const-wide/16 v1, 0xc8
-
-    invoke-static {v1, v2, p2, v0}, Lg53;->J(JLx96;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    sget-object v0, Ls04;->a:Ls04;
-
-    if-ne p2, v0, :cond_3
+    invoke-direct {v0, p0}, Lca5;-><init>(Ljava/util/concurrent/Executor;)V
 
     return-object v0
 
-    :cond_3
-    :goto_1
-    check-cast p2, Landroid/graphics/Bitmap;
-
-    if-nez p2, :cond_4
-
-    invoke-virtual {p0}, Lzfa;->a()Lqv9;
+    :pswitch_0
+    invoke-virtual {p0}, Laga;->e()Lkha;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Lmm3;->m()Ljava/lang/CharSequence;
-
-    move-result-object p2
-
-    invoke-virtual {p1}, Lmm3;->n()J
-
-    move-result-wide v0
-
-    invoke-virtual {p0, p2, v0, v1}, Lqv9;->e(Ljava/lang/CharSequence;J)Landroid/graphics/Bitmap;
+    invoke-virtual {p0}, Lkha;->d()Ljava/util/concurrent/ExecutorService;
 
     move-result-object p0
 
-    return-object p0
+    new-instance v0, Lca5;
 
-    :cond_4
-    return-object p2
-.end method
+    invoke-direct {v0, p0}, Lca5;-><init>(Ljava/util/concurrent/Executor;)V
 
-.method public final d()I
-    .registers 2
+    return-object v0
 
-    sget-object v0, Lct4;->p0:Lws9;
-
-    iget-object p0, p0, Lzfa;->a:Landroid/content/Context;
-
-    invoke-virtual {v0, p0}, Lws9;->c(Landroid/content/Context;)Lct4;
+    :pswitch_1
+    invoke-virtual {p0}, Laga;->e()Lkha;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lct4;->k()Loma;
+    iget-object v0, p0, Lkha;->j:Laa5;
+
+    sget-object v1, Lkha;->p:[Lxi7;
+
+    const/4 v2, 0x4
+
+    aget-object v1, v1, v2
+
+    invoke-virtual {p0, v0}, Lkha;->e(Laa5;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object p0
 
-    invoke-interface {p0}, Loma;->b()Lef0;
+    new-instance v0, Lca5;
+
+    invoke-direct {v0, p0}, Lca5;-><init>(Ljava/util/concurrent/Executor;)V
+
+    return-object v0
+
+    :pswitch_2
+    invoke-virtual {p0}, Laga;->e()Lkha;
 
     move-result-object p0
 
-    iget-object p0, p0, Lef0;->a:Ldf0;
-
-    iget p0, p0, Ldf0;->n:I
-
-    return p0
-.end method
-
-.method public final e()I
-    .registers 3
-
-    iget-object p0, p0, Lzfa;->b:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lkha;->c()Ljava/util/concurrent/ExecutorService;
 
     move-result-object p0
 
-    check-cast p0, Lt9b;
+    new-instance v0, Lca5;
 
-    check-cast p0, Lw9b;
+    invoke-direct {v0, p0}, Lca5;-><init>(Ljava/util/concurrent/Executor;)V
 
-    iget-object p0, p0, Lw9b;->a:Le53;
+    return-object v0
 
-    invoke-virtual {p0}, Lz1d;->p()J
+    :pswitch_3
+    invoke-virtual {p0}, Laga;->e()Lkha;
 
-    move-result-wide v0
+    move-result-object p0
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-virtual {p0}, Lkha;->a()Ljava/util/concurrent/ExecutorService;
 
-    move-result p0
+    move-result-object p0
 
-    return p0
-.end method
+    new-instance v0, Lca5;
 
-.method public final f(Ljava/lang/String;Z)Lmx9;
-    .registers 5
+    invoke-direct {v0, p0}, Lca5;-><init>(Ljava/util/concurrent/Executor;)V
 
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
+    return-object v0
 
-    move-result p0
+    nop
 
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Lmx9;
-
-    new-instance v0, Landroid/net/Uri$Builder;
-
-    invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
-
-    const-string v1, "content"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "one.me.android.notifications"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    const-string v1, "message_image"
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->appendPath(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
-
-    move-result-object v0
-
-    invoke-direct {p0, p1, p2, v0}, Lmx9;-><init>(Ljava/lang/String;ZLandroid/net/Uri;)V
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

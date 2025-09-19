@@ -1,75 +1,85 @@
-.class public final Lyca;
-.super Ljava/util/concurrent/LinkedTransferQueue;
+.class public final enum Lyca;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final bridge contains(Ljava/lang/Object;)Z
-    .registers 3
+# static fields
+.field public static final enum a:Lyca;
 
-    if-nez p1, :cond_0
+.field public static final enum b:Lyca;
 
-    const/4 v0, 0x1
+.field public static final enum c:Lyca;
 
-    goto :goto_0
+.field public static final synthetic o:[Lyca;
 
-    :cond_0
-    instance-of v0, p1, Ljava/lang/Runnable;
 
-    :goto_0
-    if-nez v0, :cond_1
+# direct methods
+.method static constructor <clinit>()V
+    .registers 5
 
-    const/4 p0, 0x0
+    new-instance v0, Lyca;
 
-    return p0
+    const-string v1, "STANDARD"
 
-    :cond_1
-    check-cast p1, Ljava/lang/Runnable;
+    const/4 v2, 0x0
 
-    invoke-super {p0, p1}, Ljava/util/concurrent/LinkedTransferQueue;->contains(Ljava/lang/Object;)Z
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    move-result p0
+    sput-object v0, Lyca;->a:Lyca;
 
-    return p0
+    new-instance v1, Lyca;
+
+    const-string v2, "ICON"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lyca;->b:Lyca;
+
+    new-instance v2, Lyca;
+
+    const-string v3, "PROGRESS_BAR"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lyca;->c:Lyca;
+
+    filled-new-array {v0, v1, v2}, [Lyca;
+
+    move-result-object v0
+
+    sput-object v0, Lyca;->o:[Lyca;
+
+    return-void
 .end method
 
-.method public final offer(Ljava/lang/Object;)Z
+.method public static valueOf(Ljava/lang/String;)Lyca;
     .registers 2
 
-    check-cast p1, Ljava/lang/Runnable;
+    const-class v0, Lyca;
 
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/LinkedTransferQueue;->tryTransfer(Ljava/lang/Object;)Z
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    move-result p0
+    move-result-object p0
 
-    return p0
+    check-cast p0, Lyca;
+
+    return-object p0
 .end method
 
-.method public final bridge remove(Ljava/lang/Object;)Z
-    .registers 3
+.method public static values()[Lyca;
+    .registers 1
 
-    if-nez p1, :cond_0
+    sget-object v0, Lyca;->o:[Lyca;
 
-    const/4 v0, 0x1
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    goto :goto_0
+    move-result-object v0
 
-    :cond_0
-    instance-of v0, p1, Ljava/lang/Runnable;
+    check-cast v0, [Lyca;
 
-    :goto_0
-    if-nez v0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    check-cast p1, Ljava/lang/Runnable;
-
-    invoke-super {p0, p1}, Ljava/util/concurrent/LinkedTransferQueue;->remove(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
+    return-object v0
 .end method

@@ -2,5 +2,13 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lvk0;
+
+# virtual methods
+.method public abstract setTextMessageColors(Lms0;)V
+.end method
+
+.method public abstract setTextMessageLayout(Lp39;)V
+.end method
+
+.method public abstract setTextMessageLinkClickListener(Lkr7;)V
+.end method

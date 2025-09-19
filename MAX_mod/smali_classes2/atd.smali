@@ -1,19 +1,32 @@
 .class public final Latd;
-.super Ljava/lang/Object;
+.super Lj2e;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lplg;
+# virtual methods
+.method public final E()V
+    .registers 1
 
+    return-void
+.end method
 
-# direct methods
-.method public constructor <init>(Lplg;)V
-    .registers 2
+.method public final y(Lts7;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    instance-of v0, p1, Ltcd;
 
-    iput-object p1, p0, Latd;->a:Lplg;
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object p0, p0, Lzoc;->a:Landroid/view/View;
+
+    check-cast p0, Lsrd;
+
+    check-cast p1, Lird;
+
+    invoke-virtual {p0, p1}, Lsrd;->setModelItem(Lird;)V
 
     return-void
 .end method

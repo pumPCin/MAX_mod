@@ -1,23 +1,11 @@
-.class public final Lvx7;
-.super Ls2;
+.class public interface abstract Lvx7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Lvx7;
+# virtual methods
+.method public abstract J(Lzw7;Landroid/net/Uri;ILandroid/net/Uri;)V
+.end method
 
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Lvx7;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Ls2;-><init>(I)V
-
-    sput-object v0, Lvx7;->c:Lvx7;
-
-    return-void
+.method public abstract z(Z)V
 .end method

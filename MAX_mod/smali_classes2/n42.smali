@@ -1,19 +1,23 @@
 .class public final Ln42;
-.super Lo42;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lqte;
+.field public final a:Lb52;
+
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Lqte;)V
-    .registers 2
+.method public constructor <init>(Lb52;Ljava/util/List;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ln42;->a:Lqte;
+    iput-object p1, p0, Ln42;->a:Lb52;
+
+    iput-object p2, p0, Ln42;->b:Ljava/util/List;
 
     return-void
 .end method
@@ -21,54 +25,73 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .registers 6
+
+    const/4 v0, 0x1
 
     if-ne p0, p1, :cond_0
 
-    goto :goto_1
+    return v0
 
     :cond_0
-    instance-of v0, p1, Ln42;
+    instance-of v1, p1, Ln42;
 
-    if-nez v0, :cond_1
+    const/4 v2, 0x0
 
-    goto :goto_0
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
     check-cast p1, Ln42;
 
-    iget-object p0, p0, Ln42;->a:Lqte;
+    iget-object v1, p0, Ln42;->a:Lb52;
 
-    iget-object p1, p1, Ln42;->a:Lqte;
+    iget-object v3, p1, Ln42;->a:Lb52;
 
-    invoke-virtual {p0, p1}, Lqte;->equals(Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object p0, p0, Ln42;->b:Ljava/util/List;
+
+    iget-object p1, p1, Ln42;->b:Ljava/util/List;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_2
+    if-nez p0, :cond_3
 
-    :goto_0
-    const/4 p0, 0x0
+    return v2
 
-    return p0
-
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
+    :cond_3
+    return v0
 .end method
 
 .method public final hashCode()I
-    .registers 1
+    .registers 2
 
-    iget-object p0, p0, Ln42;->a:Lqte;
+    iget-object v0, p0, Ln42;->a:Lb52;
 
-    iget p0, p0, Lqte;->b:I
+    invoke-virtual {v0}, Lb52;->hashCode()I
 
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Ln42;->b:Ljava/util/List;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
 .end method
@@ -78,11 +101,19 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "SomethingWentWrong(text="
+    const-string v1, "State(screenState="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Ln42;->a:Lqte;
+    iget-object v1, p0, Ln42;->a:Lb52;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", items="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Ln42;->b:Ljava/util/List;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

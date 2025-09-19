@@ -1,21 +1,24 @@
 .class public final Lbb1;
-.super Lqd0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lkb1;
 
-# instance fields
-.field public final b:Ljava/lang/String;
+
+# static fields
+.field public static final a:Lbb1;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    const/4 v0, 0x2
+    new-instance v0, Lbb1;
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbb1;->b:Ljava/lang/String;
+    sput-object v0, Lbb1;->a:Lbb1;
 
     return-void
 .end method
@@ -23,7 +26,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+    .registers 3
 
     const/4 v0, 0x1
 
@@ -32,57 +35,30 @@
     return v0
 
     :cond_0
-    instance-of v1, p1, Lbb1;
+    instance-of p0, p1, Lbb1;
 
-    const/4 v2, 0x0
+    if-nez p0, :cond_1
 
-    if-nez v1, :cond_1
+    const/4 p0, 0x0
 
-    return v2
+    return p0
 
     :cond_1
-    check-cast p1, Lbb1;
-
-    iget-object p0, p0, Lbb1;->b:Ljava/lang/String;
-
-    iget-object p1, p1, Lbb1;->b:Ljava/lang/String;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
     return v0
 .end method
 
 .method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lbb1;->b:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    move-result p0
+    const p0, -0x195c98c1
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 3
+    .registers 1
 
-    const-string v0, "StartNewCall(link="
-
-    const-string v1, ")"
-
-    iget-object p0, p0, Lbb1;->b:Ljava/lang/String;
-
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
+    const-string p0, "AcceptCall"
 
     return-object p0
 .end method

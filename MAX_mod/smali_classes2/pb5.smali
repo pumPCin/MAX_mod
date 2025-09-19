@@ -1,201 +1,89 @@
 .class public final Lpb5;
-.super Landroid/view/TouchDelegate;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public a:Z
+.field public final a:Lcl7;
 
-.field public final b:Landroid/graphics/Rect;
+.field public final b:Lzte;
 
-.field public final c:I
+.field public final c:Lzte;
 
-.field public final d:Landroid/graphics/Rect;
+.field public final d:Lzte;
 
-.field public final e:Landroid/view/View;
+.field public final e:Lzte;
+
+.field public final f:Lzte;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/Rect;Landroid/view/View;)V
-    .registers 4
+.method public constructor <init>(Landroid/content/Context;Lcl7;Lcl7;)V
+    .registers 6
 
-    invoke-direct {p0, p1, p2}, Landroid/view/TouchDelegate;-><init>(Landroid/graphics/Rect;Landroid/view/View;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lpb5;->b:Landroid/graphics/Rect;
+    iput-object p2, p0, Lpb5;->a:Lcl7;
 
-    iput-object p2, p0, Lpb5;->e:Landroid/view/View;
+    new-instance v0, Ldn2;
 
-    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
+    const/4 v1, 0x7
 
-    move-result-object p2
+    invoke-direct {v0, p1, v1}, Ldn2;-><init>(Landroid/content/Context;I)V
 
-    invoke-static {p2}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+    new-instance v1, Lzte;
 
-    move-result-object p2
+    invoke-direct {v1, v0}, Lzte;-><init>(Lzb6;)V
 
-    invoke-virtual {p2}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
+    iput-object v1, p0, Lpb5;->b:Lzte;
 
-    move-result p2
+    new-instance v0, Ljv3;
 
-    iput p2, p0, Lpb5;->c:I
+    const/4 v1, 0x4
 
-    new-instance v0, Landroid/graphics/Rect;
+    invoke-direct {v0, p1, v1, p0}, Ljv3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    invoke-direct {v0, p1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+    new-instance p1, Lzte;
 
-    iput-object v0, p0, Lpb5;->d:Landroid/graphics/Rect;
+    invoke-direct {p1, v0}, Lzte;-><init>(Lzb6;)V
 
-    neg-int p0, p2
+    iput-object p1, p0, Lpb5;->c:Lzte;
 
-    invoke-virtual {v0, p0, p0}, Landroid/graphics/Rect;->inset(II)V
+    new-instance p1, Lob5;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, p3, p0, v0}, Lob5;-><init>(Lcl7;Lpb5;I)V
+
+    new-instance v0, Lzte;
+
+    invoke-direct {v0, p1}, Lzte;-><init>(Lzb6;)V
+
+    iput-object v0, p0, Lpb5;->d:Lzte;
+
+    new-instance p1, Lob5;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p1, p2, p0, v0}, Lob5;-><init>(Lcl7;Lpb5;I)V
+
+    new-instance p2, Lzte;
+
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
+
+    iput-object p2, p0, Lpb5;->e:Lzte;
+
+    new-instance p1, Lob5;
+
+    const/4 p2, 0x2
+
+    invoke-direct {p1, p3, p0, p2}, Lob5;-><init>(Lcl7;Lpb5;I)V
+
+    new-instance p2, Lzte;
+
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
+
+    iput-object p2, p0, Lpb5;->f:Lzte;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 9
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v2
-
-    const/4 v3, 0x2
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x1
-
-    if-eqz v2, :cond_3
-
-    if-eq v2, v5, :cond_1
-
-    if-eq v2, v3, :cond_1
-
-    const/4 v6, 0x3
-
-    if-eq v2, v6, :cond_0
-
-    const/4 v6, 0x5
-
-    if-eq v2, v6, :cond_1
-
-    const/4 v6, 0x6
-
-    if-eq v2, v6, :cond_1
-
-    move v0, v4
-
-    goto :goto_0
-
-    :cond_0
-    iget-boolean v0, p0, Lpb5;->a:Z
-
-    iput-boolean v4, p0, Lpb5;->a:Z
-
-    goto :goto_0
-
-    :cond_1
-    iget-boolean v2, p0, Lpb5;->a:Z
-
-    if-eqz v2, :cond_2
-
-    iget-object v6, p0, Lpb5;->d:Landroid/graphics/Rect;
-
-    invoke-virtual {v6, v0, v1}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    move v0, v2
-
-    move v5, v4
-
-    goto :goto_0
-
-    :cond_2
-    move v0, v2
-
-    goto :goto_0
-
-    :cond_3
-    iget-object v2, p0, Lpb5;->b:Landroid/graphics/Rect;
-
-    invoke-virtual {v2, v0, v1}, Landroid/graphics/Rect;->contains(II)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lpb5;->a:Z
-
-    :goto_0
-    if-eqz v0, :cond_5
-
-    iget-object v0, p0, Lpb5;->e:Landroid/view/View;
-
-    if-eqz v5, :cond_4
-
-    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
-
-    move-result p0
-
-    div-int/2addr p0, v3
-
-    int-to-float p0, p0
-
-    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
-
-    move-result v1
-
-    div-int/2addr v1, v3
-
-    int-to-float v1, v1
-
-    invoke-virtual {p1, p0, v1}, Landroid/view/MotionEvent;->setLocation(FF)V
-
-    goto :goto_1
-
-    :cond_4
-    iget p0, p0, Lpb5;->c:I
-
-    mul-int/2addr p0, v3
-
-    int-to-float p0, p0
-
-    neg-float p0, p0
-
-    invoke-virtual {p1, p0, p0}, Landroid/view/MotionEvent;->setLocation(FF)V
-
-    :goto_1
-    invoke-virtual {v0}, Landroid/view/View;->getTouchDelegate()Landroid/view/TouchDelegate;
-
-    move-result-object p0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setTouchDelegate(Landroid/view/TouchDelegate;)V
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->setTouchDelegate(Landroid/view/TouchDelegate;)V
-
-    return p1
-
-    :cond_5
-    return v4
 .end method

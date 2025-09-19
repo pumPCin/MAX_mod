@@ -1,68 +1,118 @@
-.class public final synthetic Lbn9;
+.class public final Lbn9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lz5;
+.implements Lzm9;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lcn9;
+.field public final synthetic a:Lvm9;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcn9;I)V
-    .registers 3
-
-    iput p2, p0, Lbn9;->a:I
-
-    iput-object p1, p0, Lbn9;->b:Lcn9;
+.method public constructor <init>(Lvm9;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lbn9;->a:Lvm9;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 3
-
-    iget v0, p0, Lbn9;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Lyj0;
-
-    const/16 v1, 0x15
-
-    invoke-direct {v0, v1}, Lyj0;-><init>(I)V
-
-    iget-object p0, p0, Lbn9;->b:Lcn9;
-
-    invoke-virtual {p0, v0}, Lt2;->n(Llm3;)V
+.method public final a(JLai8;)V
+    .registers 4
 
     return-void
+.end method
 
-    :pswitch_0
-    new-instance v0, Lyj0;
+.method public final b(JLai8;)V
+    .registers 4
 
-    const/16 v1, 0x14
+    iget-object p0, p0, Lbn9;->a:Lvm9;
 
-    invoke-direct {v0, v1}, Lyj0;-><init>(I)V
-
-    iget-object p0, p0, Lbn9;->b:Lcn9;
-
-    invoke-virtual {p0, v0}, Lt2;->n(Llm3;)V
+    invoke-interface {p0}, Lvm9;->v()V
 
     return-void
+.end method
 
-    nop
+.method public final c(JLai8;JLai8;)V
+    .registers 7
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget-object p0, p0, Lbn9;->a:Lvm9;
+
+    invoke-interface {p0}, Lvm9;->A()V
+
+    return-void
+.end method
+
+.method public final d(JLai8;)V
+    .registers 4
+
+    return-void
+.end method
+
+.method public final e(JLai8;J)V
+    .registers 6
+
+    iget-object p0, p0, Lbn9;->a:Lvm9;
+
+    invoke-interface {p0}, Lvm9;->l()V
+
+    return-void
+.end method
+
+.method public final f(JLai8;)V
+    .registers 4
+
+    iget-object p0, p0, Lbn9;->a:Lvm9;
+
+    invoke-interface {p0}, Lvm9;->I()V
+
+    return-void
+.end method
+
+.method public final g(JLai8;)V
+    .registers 4
+
+    return-void
+.end method
+
+.method public final h(JLai8;)V
+    .registers 4
+
+    iget-object p0, p0, Lbn9;->a:Lvm9;
+
+    invoke-interface {p0}, Lvm9;->E()V
+
+    return-void
+.end method
+
+.method public final i(JLai8;)V
+    .registers 4
+
+    iget-object p0, p0, Lbn9;->a:Lvm9;
+
+    invoke-interface {p0}, Lvm9;->w()V
+
+    return-void
+.end method
+
+.method public final j(JLai8;)V
+    .registers 4
+
+    return-void
+.end method
+
+.method public final p()V
+    .registers 1
+
+    iget-object p0, p0, Lbn9;->a:Lvm9;
+
+    invoke-interface {p0}, Lvm9;->p()V
+
+    return-void
 .end method

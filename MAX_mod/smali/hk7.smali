@@ -1,138 +1,182 @@
 .class public final Lhk7;
-.super Lxie;
+.super Ljava/util/Random;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public X:I
+.field public final a:Lqec;
 
-.field public final synthetic Y:Ljk7;
-
-.field public final synthetic Z:Lfk7;
+.field public b:Z
 
 
 # direct methods
-.method public constructor <init>(Ljk7;Lfk7;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, Lhk7;->Y:Ljk7;
+    sget-object v0, Lrec;->a:Lqec;
 
-    iput-object p2, p0, Lhk7;->Z:Lfk7;
+    invoke-direct {p0}, Ljava/util/Random;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object v0, p0, Lhk7;->a:Lqec;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final next(I)I
+    .registers 2
+
+    iget-object p0, p0, Lhk7;->a:Lqec;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object p0, Lrec;->b:Lh3;
+
+    invoke-virtual {p0, p1}, Lh3;->a(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final nextBoolean()Z
+    .registers 1
+
+    iget-object p0, p0, Lhk7;->a:Lqec;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object p0, Lrec;->b:Lh3;
+
+    invoke-virtual {p0}, Lh3;->h()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final nextBytes([B)V
+    .registers 2
+
+    iget-object p0, p0, Lhk7;->a:Lqec;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object p0, Lrec;->b:Lh3;
+
+    invoke-virtual {p0}, Lh3;->g()Ljava/util/Random;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Ljava/util/Random;->nextBytes([B)V
+
+    return-void
+.end method
+
+.method public final nextDouble()D
     .registers 3
 
-    check-cast p1, Lr04;
+    iget-object p0, p0, Lhk7;->a:Lqec;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p0, p1, p2}, Lhk7;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    sget-object p0, Lrec;->b:Lh3;
 
-    move-result-object p0
-
-    check-cast p0, Lhk7;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lhk7;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lh3;->g()Ljava/util/Random;
 
     move-result-object p0
 
-    return-object p0
+    invoke-virtual {p0}, Ljava/util/Random;->nextDouble()D
+
+    move-result-wide v0
+
+    return-wide v0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public final nextFloat()F
+    .registers 1
 
-    new-instance p1, Lhk7;
+    iget-object p0, p0, Lhk7;->a:Lqec;
 
-    iget-object v0, p0, Lhk7;->Y:Ljk7;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object p0, p0, Lhk7;->Z:Lfk7;
+    sget-object p0, Lrec;->b:Lh3;
 
-    invoke-direct {p1, v0, p0, p2}, Lhk7;-><init>(Ljk7;Lfk7;Lkotlin/coroutines/Continuation;)V
+    invoke-virtual {p0}, Lh3;->i()F
 
-    return-object p1
+    move-result p0
+
+    return p0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+.method public final nextInt()I
+    .registers 1
 
-    iget v0, p0, Lhk7;->X:I
+    iget-object p0, p0, Lhk7;->a:Lqec;
 
-    const/4 v1, 0x1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-eqz v0, :cond_1
+    sget-object p0, Lrec;->b:Lh3;
 
-    if-ne v0, v1, :cond_0
+    invoke-virtual {p0}, Lh3;->b()I
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    move-result p0
 
-    goto :goto_0
+    return p0
+.end method
+
+.method public final nextInt(I)I
+    .registers 2
+
+    iget-object p0, p0, Lhk7;->a:Lqec;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object p0, Lrec;->b:Lh3;
+
+    invoke-virtual {p0, p1}, Lh3;->c(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final nextLong()J
+    .registers 3
+
+    iget-object p0, p0, Lhk7;->a:Lqec;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object p0, Lrec;->b:Lh3;
+
+    invoke-virtual {p0}, Lh3;->d()J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public final setSeed(J)V
+    .registers 3
+
+    iget-boolean p1, p0, Lhk7;->b:Z
+
+    if-nez p1, :cond_0
+
+    const/4 p1, 0x1
+
+    iput-boolean p1, p0, Lhk7;->b:Z
+
+    return-void
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string p1, "Setting seed is not supported."
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lhk7;->Y:Ljk7;
-
-    check-cast p1, Llk7;
-
-    iget-object p1, p1, Llk7;->a:Lyk7;
-
-    iput v1, p0, Lhk7;->X:I
-
-    sget-object v0, Lep4;->a:Lch4;
-
-    sget-object v0, Lkotlinx/coroutines/internal/MainDispatcherLoader;->dispatcher:Lm08;
-
-    invoke-virtual {v0}, Lm08;->getImmediate()Lm08;
-
-    move-result-object v0
-
-    new-instance v1, Lgua;
-
-    const/4 v2, 0x0
-
-    sget-object v3, Lzj7;->c:Lzj7;
-
-    iget-object v4, p0, Lhk7;->Z:Lfk7;
-
-    invoke-direct {v1, p1, v3, v4, v2}, Lgua;-><init>(Lyk7;Lzj7;Lx96;Lkotlin/coroutines/Continuation;)V
-
-    invoke-static {v0, v1, p0}, Las3;->m0(Lj04;Lx96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
 .end method

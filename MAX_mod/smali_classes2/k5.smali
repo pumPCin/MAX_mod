@@ -1,64 +1,90 @@
-.class public final synthetic Lk5;
+.class public final Lk5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ls56;
+.implements Landroid/transition/Transition$TransitionListener;
 
 
 # instance fields
-.field public final synthetic a:Lm5;
+.field public final synthetic a:Lru/ok/messages/media/attaches/fragments/FrgAttachView;
+
+.field public final synthetic b:Lxx8;
+
+.field public final synthetic c:Lru/ok/messages/media/attaches/ActAttachesView;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lm5;)V
-    .registers 2
+.method public constructor <init>(Lru/ok/messages/media/attaches/ActAttachesView;Lru/ok/messages/media/attaches/fragments/FrgAttachView;Lxx8;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lk5;->a:Lm5;
+    iput-object p1, p0, Lk5;->c:Lru/ok/messages/media/attaches/ActAttachesView;
+
+    iput-object p2, p0, Lk5;->a:Lru/ok/messages/media/attaches/fragments/FrgAttachView;
+
+    iput-object p3, p0, Lk5;->b:Lxx8;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroidx/fragment/app/a;)V
+.method public final onTransitionCancel(Landroid/transition/Transition;)V
     .registers 2
 
-    iget-object p0, p0, Lk5;->a:Lm5;
+    sget-object p0, Lru/ok/messages/media/attaches/ActAttachesView;->w1:Ljava/util/HashSet;
 
-    :try_start_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string p0, "ru.ok.messages.media.attaches.ActAttachesView"
 
-    iget-object p0, p0, Lm5;->F0:Ln9b;
+    const-string p1, "onTransitionCancel"
 
-    iget-object p0, p0, Ln9b;->b:Ljava/lang/Object;
+    invoke-static {p0, p1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    check-cast p0, Lme3;
+    return-void
+.end method
 
-    check-cast p0, Ltaa;
+.method public final onTransitionEnd(Landroid/transition/Transition;)V
+    .registers 6
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Ls4;
+    invoke-virtual {p1, p0}, Landroid/transition/Transition;->removeListener(Landroid/transition/Transition$TransitionListener;)Landroid/transition/Transition;
 
-    move-result-object p0
+    iget-object p1, p0, Lk5;->c:Lru/ok/messages/media/attaches/ActAttachesView;
 
-    const-class p1, Lome;
+    iget-object p1, p1, Lru/ok/messages/media/attaches/ActAttachesView;->f1:Landroidx/viewpager/widget/ViewPager;
 
-    invoke-virtual {p0, p1}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    new-instance v0, Lj5;
 
-    move-result-object p0
+    const/4 v1, 0x0
 
-    check-cast p0, Lome;
+    iget-object v2, p0, Lk5;->a:Lru/ok/messages/media/attaches/fragments/FrgAttachView;
 
-    invoke-virtual {p0}, Lome;->x()Ls14;
+    iget-object v3, p0, Lk5;->b:Lxx8;
 
-    move-result-object p0
+    invoke-direct {v0, p0, v2, v3, v1}, Lj5;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-wide/16 v1, 0x64
 
-    :catchall_0
+    invoke-virtual {p1, v0, v1, v2}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    return-void
+.end method
+
+.method public final onTransitionPause(Landroid/transition/Transition;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method public final onTransitionResume(Landroid/transition/Transition;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method public final onTransitionStart(Landroid/transition/Transition;)V
+    .registers 2
+
     return-void
 .end method

@@ -1,113 +1,169 @@
-.class public final Ly81;
-.super Lxie;
+.class public final synthetic Ly81;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lzb6;
 
 
 # instance fields
-.field public synthetic X:Z
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
+.field public final synthetic b:Lone/me/calllist/ui/CallHistoryScreen;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/calllist/ui/page/CallHistoryPageScreen;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(Lone/me/calllist/ui/CallHistoryScreen;I)V
     .registers 3
 
-    iput-object p1, p0, Ly81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
+    iput p2, p0, Ly81;->a:I
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Ly81;->b:Lone/me/calllist/ui/CallHistoryScreen;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 6
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget v0, p0, Ly81;->a:I
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    iget-object p0, p0, Ly81;->b:Lone/me/calllist/ui/CallHistoryScreen;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Ly81;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    sget-object v0, Lone/me/calllist/ui/CallHistoryScreen;->C0:[Lxi7;
+
+    invoke-virtual {p0}, Lxx3;->getRouter()Lrzc;
 
     move-result-object p0
 
-    check-cast p0, Ly81;
+    return-object p0
 
-    sget-object p1, Lncf;->a:Lncf;
+    :pswitch_0
+    sget-object v0, Lone/me/calllist/ui/CallHistoryScreen;->C0:[Lxi7;
 
-    invoke-virtual {p0, p1}, Ly81;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Lih1;
 
-    return-object p1
-.end method
+    new-instance v1, Ly81;
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    const/4 v2, 0x3
 
-    new-instance v0, Ly81;
+    invoke-direct {v1, p0, v2}, Ly81;-><init>(Lone/me/calllist/ui/CallHistoryScreen;I)V
 
-    iget-object p0, p0, Ly81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
+    new-instance v2, Lzte;
 
-    invoke-direct {v0, p0, p2}, Ly81;-><init>(Lone/me/calllist/ui/page/CallHistoryPageScreen;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v2, v1}, Lzte;-><init>(Lzb6;)V
 
-    check-cast p1, Ljava/lang/Boolean;
+    new-instance v1, Litg;
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    const/4 v3, 0x0
 
-    move-result p0
+    invoke-direct {v1, p0, v3}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
 
-    iput-boolean p0, v0, Ly81;->X:Z
+    invoke-direct {v0, v2, v1}, Lih1;-><init>(Lzte;Litg;)V
 
     return-object v0
-.end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    :pswitch_1
+    iget-object v0, p0, Lone/me/calllist/ui/CallHistoryScreen;->a:Lcl7;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    sget-object v1, Lhad;->p:Lcl7;
 
-    iget-boolean p1, p0, Ly81;->X:Z
+    sget-object v2, Lhad;->d:Lcl7;
 
-    sget-object v0, Lone/me/calllist/ui/page/CallHistoryPageScreen;->p0:Lyxc;
+    sget-object v3, Lhad;->g:Lcl7;
 
-    iget-object p0, p0, Ly81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
+    new-instance v4, Lbkd;
 
-    invoke-virtual {p0}, Lone/me/calllist/ui/page/CallHistoryPageScreen;->z0()Lk91;
+    invoke-direct {v4, v1, v2, v0, v3}, Lbkd;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    move-result-object p0
+    iget-object v0, p0, Lone/me/calllist/ui/CallHistoryScreen;->o:Ljava/lang/Object;
 
-    iget-object p0, p0, Lk91;->q0:Ln4e;
-
-    :cond_0
-    invoke-virtual {p0}, Ln4e;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    move-object v1, v0
+    check-cast v0, Lih1;
 
-    check-cast v1, Ljava/lang/Boolean;
+    sget-object v1, Liad;->a:Liad;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v1}, Lscout/Component;->getAccessor()Lz4;
 
     move-result-object v1
 
-    invoke-virtual {p0, v0, v1}, Ln4e;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const-class v2, Lrj5;
 
-    move-result v0
+    invoke-virtual {v1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
-    if-eqz v0, :cond_0
+    move-result-object v1
 
-    sget-object p0, Lncf;->a:Lncf;
+    iget-object p0, p0, Lone/me/calllist/ui/CallHistoryScreen;->b:Lcl7;
+
+    new-instance v2, Le91;
+
+    invoke-direct {v2, p0, v1, v4, v0}, Le91;-><init>(Lcl7;Lcl7;Lbkd;Lih1;)V
+
+    return-object v2
+
+    :pswitch_2
+    sget-object v0, Lone/me/calllist/ui/CallHistoryScreen;->C0:[Lxi7;
+
+    invoke-virtual {p0}, Lone/me/calllist/ui/CallHistoryScreen;->z0()Le91;
+
+    move-result-object v0
+
+    iget-object v0, v0, Le91;->Z:Lyce;
+
+    :cond_0
+    invoke-virtual {v0}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    move-object v2, v1
+
+    check-cast v2, Lc91;
+
+    new-instance v2, Lc91;
+
+    invoke-direct {v2}, Lc91;-><init>()V
+
+    invoke-virtual {v0, v1, v2}, Lyce;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v0, p0, Lone/me/calllist/ui/CallHistoryScreen;->Y:Lcic;
+
+    sget-object v1, Lone/me/calllist/ui/CallHistoryScreen;->C0:[Lxi7;
+
+    const/4 v2, 0x1
+
+    aget-object v1, v1, v2
+
+    invoke-interface {v0, p0, v1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ldsa;
+
+    invoke-virtual {p0}, Ldsa;->a()V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

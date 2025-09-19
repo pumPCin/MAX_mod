@@ -1,9 +1,9 @@
 .class public final Lone/me/android/deeplink/NewWidgetActivity;
-.super Lm5;
+.super Lt5;
 .source "SourceFile"
 
 # interfaces
-.implements Lypc;
+.implements Leyc;
 
 
 # annotations
@@ -13,8 +13,8 @@
     }
     d2 = {
         "Lone/me/android/deeplink/NewWidgetActivity;",
-        "Lm5;",
-        "Lypc;",
+        "Lt5;",
+        "Leyc;",
         "<init>",
         "()V",
         "oneme_playGoogleRelease"
@@ -30,25 +30,25 @@
 
 
 # static fields
-.field public static final synthetic Q0:I
+.field public static final synthetic U0:I
 
 
 # instance fields
-.field public P0:Llrc;
+.field public T0:Lrzc;
 
 
 # direct methods
 .method public constructor <init>()V
     .registers 1
 
-    invoke-direct {p0}, Lm5;-><init>()V
+    invoke-direct {p0}, Lt5;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Q()Ljava/lang/String;
+.method public final N()Ljava/lang/String;
     .registers 1
 
     const/4 p0, 0x0
@@ -56,13 +56,13 @@
     return-object p0
 .end method
 
-.method public final U()V
+.method public final R()V
     .registers 1
 
     return-void
 .end method
 
-.method public final Y()Z
+.method public final V()Z
     .registers 1
 
     const/4 p0, 0x1
@@ -70,10 +70,10 @@
     return p0
 .end method
 
-.method public final g()Llrc;
+.method public final f()Lrzc;
     .registers 1
 
-    iget-object p0, p0, Lone/me/android/deeplink/NewWidgetActivity;->P0:Llrc;
+    iget-object p0, p0, Lone/me/android/deeplink/NewWidgetActivity;->T0:Lrzc;
 
     if-eqz p0, :cond_0
 
@@ -85,7 +85,7 @@
     return-object p0
 .end method
 
-.method public final h()Z
+.method public final g()Z
     .registers 1
 
     const/4 p0, 0x0
@@ -96,61 +96,61 @@
 .method public final onCreate(Landroid/os/Bundle;)V
     .registers 6
 
-    invoke-static {p0}, Lev0;->b(Landroid/content/Context;)Lg42;
+    invoke-static {p0}, Lrde;->a(Landroid/content/Context;)Ll42;
 
     move-result-object v0
 
-    sget v1, Lhyb;->root:I
+    sget v1, Ll5c;->root:I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
 
-    invoke-virtual {p0, v0}, Lm5;->setContentView(Landroid/view/View;)V
+    invoke-virtual {p0, v0}, Lt5;->setContentView(Landroid/view/View;)V
 
-    invoke-static {p0}, Lzx4;->a(Lm5;)V
+    invoke-static {p0}, Ltz4;->a(Lt5;)V
 
-    invoke-super {p0, p1}, Lm5;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lt5;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-static {p0, v0, p1}, Lfog;->b(Lam;Lg42;Landroid/os/Bundle;)Llrc;
+    invoke-static {p0, v0, p1}, Lgy7;->f(Lkm;Ll42;Landroid/os/Bundle;)Lrzc;
 
     move-result-object p1
 
     const/4 v0, 0x1
 
-    iput v0, p1, Llrc;->e:I
+    iput v0, p1, Lrzc;->e:I
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Llrc;->R(Z)V
+    invoke-virtual {p1, v0}, Lrzc;->R(Z)V
 
-    iput-object p1, p0, Lone/me/android/deeplink/NewWidgetActivity;->P0:Llrc;
+    iput-object p1, p0, Lone/me/android/deeplink/NewWidgetActivity;->T0:Lrzc;
 
-    new-instance p1, Lib9;
+    new-instance p1, Lne9;
 
-    const/4 v0, 0x4
+    const/4 v0, 0x3
 
-    invoke-direct {p1, v0}, Lib9;-><init>(I)V
+    invoke-direct {p1, v0}, Lne9;-><init>(I)V
 
-    invoke-static {p0}, Lr7;->q(Lm5;)Lone/me/android/root/RootController;
+    invoke-static {p0}, Lo97;->X(Lt5;)Lone/me/android/root/RootController;
 
     move-result-object v0
 
-    sget-object v1, Ltaa;->a:Ltaa;
+    sget-object v1, Lbfa;->a:Lbfa;
 
-    invoke-virtual {v1}, Ltaa;->o()Leca;
+    invoke-virtual {v1}, Lbfa;->o()Llga;
 
     move-result-object v1
 
-    new-instance v2, Lq81;
+    new-instance v2, Lk81;
 
     const/16 v3, 0x9
 
-    invoke-direct {v2, p0, v0, p1, v3}, Lq81;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v2, p0, v0, p1, v3}, Lk81;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    invoke-virtual {v1, v2}, Leca;->g(Lh96;)V
+    invoke-virtual {v1, v2}, Llga;->g(Lzb6;)V
 
     const/4 p1, 0x0
 
-    invoke-static {p0, p1}, Lr7;->L(Lm5;Landroid/content/Intent;)V
+    invoke-static {p0, p1}, Lo97;->S0(Lt5;Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -158,29 +158,29 @@
 .method public final onNewIntent(Landroid/content/Intent;)V
     .registers 5
 
-    invoke-super {p0, p1}, Lm5;->onNewIntent(Landroid/content/Intent;)V
+    invoke-super {p0, p1}, Lt5;->onNewIntent(Landroid/content/Intent;)V
 
-    invoke-static {p0}, Lr7;->q(Lm5;)Lone/me/android/root/RootController;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lr7;->h(Lone/me/android/root/RootController;Landroid/content/Intent;)V
-
-    sget-object v0, Ltaa;->a:Ltaa;
-
-    invoke-virtual {v0}, Ltaa;->o()Leca;
+    invoke-static {p0}, Lo97;->X(Lt5;)Lone/me/android/root/RootController;
 
     move-result-object v0
 
-    new-instance v1, Lw3b;
+    invoke-static {v0, p1}, Lo97;->c(Lone/me/android/root/RootController;Landroid/content/Intent;)V
 
-    const/16 v2, 0xc
+    sget-object v0, Lbfa;->a:Lbfa;
 
-    invoke-direct {v1, p0, v2, p1}, Lw3b;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-virtual {v0}, Lbfa;->o()Llga;
 
-    invoke-virtual {v0, v1}, Leca;->g(Lh96;)V
+    move-result-object v0
 
-    invoke-static {p0, p1}, Lr7;->L(Lm5;Landroid/content/Intent;)V
+    new-instance v1, Lqqa;
+
+    const/16 v2, 0x10
+
+    invoke-direct {v1, p0, v2, p1}, Lqqa;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Llga;->g(Lzb6;)V
+
+    invoke-static {p0, p1}, Lo97;->S0(Lt5;Landroid/content/Intent;)V
 
     return-void
 .end method

@@ -1,163 +1,118 @@
-.class public abstract Lkja;
-.super Ljava/lang/Object;
+.class public final Lkja;
+.super Lure;
 .source "SourceFile"
 
+# interfaces
+.implements Lpc6;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:I
+# instance fields
+.field public X:I
 
-.field public static final c:I
-
-.field public static final d:I
-
-.field public static final e:I
-
-.field public static final f:I
-
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-.field public static final p:I
-
-.field public static final q:I
-
-.field public static final r:I
-
-.field public static final s:I
-
-.field public static final t:I
-
-.field public static final u:I
-
-.field public static final v:I
-
-.field public static final w:I
-
-.field public static final x:I
-
-.field public static final y:I
+.field public final synthetic Y:Lv94;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lv94;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    sget v0, Ls4c;->oneme_settings_media_action_always:I
+    iput-object p1, p0, Lkja;->Y:Lv94;
 
-    sput v0, Lkja;->a:I
+    const/4 p1, 0x2
 
-    sget v0, Ls4c;->oneme_settings_media_action_disabled:I
-
-    sput v0, Lkja;->b:I
-
-    sget v0, Ls4c;->oneme_settings_media_action_dont_load:I
-
-    sput v0, Lkja;->c:I
-
-    sget v0, Ls4c;->oneme_settings_media_action_video_quality_1080:I
-
-    sput v0, Lkja;->d:I
-
-    sget v0, Ls4c;->oneme_settings_media_action_video_quality_480:I
-
-    sput v0, Lkja;->e:I
-
-    sget v0, Ls4c;->oneme_settings_media_action_video_quality_720:I
-
-    sput v0, Lkja;->f:I
-
-    sget v0, Ls4c;->oneme_settings_media_action_wifi:I
-
-    sput v0, Lkja;->g:I
-
-    sget v0, Ls4c;->oneme_settings_media_animoji:I
-
-    sput v0, Lkja;->h:I
-
-    sget v0, Ls4c;->oneme_settings_media_audio:I
-
-    sput v0, Lkja;->i:I
-
-    sget v0, Ls4c;->oneme_settings_media_audio_title:I
-
-    sput v0, Lkja;->j:I
-
-    sget v0, Ls4c;->oneme_settings_media_caching:I
-
-    sput v0, Lkja;->k:I
-
-    sget v0, Ls4c;->oneme_settings_media_gif:I
-
-    sput v0, Lkja;->l:I
-
-    sget v0, Ls4c;->oneme_settings_media_gif_play:I
-
-    sput v0, Lkja;->m:I
-
-    sget v0, Ls4c;->oneme_settings_media_gif_title:I
-
-    sput v0, Lkja;->n:I
-
-    sget v0, Ls4c;->oneme_settings_media_load_media_in_roaming:I
-
-    sput v0, Lkja;->o:I
-
-    sget v0, Ls4c;->oneme_settings_media_photo:I
-
-    sput v0, Lkja;->p:I
-
-    sget v0, Ls4c;->oneme_settings_media_photo_title:I
-
-    sput v0, Lkja;->q:I
-
-    sget v0, Ls4c;->oneme_settings_media_screen_autoloading_section:I
-
-    sput v0, Lkja;->r:I
-
-    sget v0, Ls4c;->oneme_settings_media_screen_autoplaying_section:I
-
-    sput v0, Lkja;->s:I
-
-    sget v0, Ls4c;->oneme_settings_media_screen_datapressing_section:I
-
-    sput v0, Lkja;->t:I
-
-    sget v0, Ls4c;->oneme_settings_media_screen_toolbar_title:I
-
-    sput v0, Lkja;->u:I
-
-    sget v0, Ls4c;->oneme_settings_media_video:I
-
-    sput v0, Lkja;->v:I
-
-    sget v0, Ls4c;->oneme_settings_media_video_quality:I
-
-    sput v0, Lkja;->w:I
-
-    sget v0, Ls4c;->oneme_settings_media_video_quality_title:I
-
-    sput v0, Lkja;->x:I
-
-    sget v0, Ls4c;->oneme_settings_media_video_title:I
-
-    sput v0, Lkja;->y:I
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Ly04;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lkja;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lkja;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lkja;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lkja;
+
+    iget-object p0, p0, Lkja;->Y:Lv94;
+
+    invoke-direct {p1, p0, p2}, Lkja;-><init>(Lv94;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    iget v0, p0, Lkja;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iput v1, p0, Lkja;->X:I
+
+    new-instance p1, Lwha;
+
+    const/4 v0, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-direct {p1, v1, v0, v2}, Lwha;-><init>(ILkotlin/coroutines/Continuation;I)V
+
+    iget-object v0, p0, Lkja;->Y:Lv94;
+
+    invoke-virtual {v0, p1, p0}, Lv94;->d(Lbc6;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

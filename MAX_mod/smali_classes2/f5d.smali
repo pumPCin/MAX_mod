@@ -1,157 +1,218 @@
 .class public final Lf5d;
-.super Ljava/lang/Object;
+.super Lg5d;
 .source "SourceFile"
 
 
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lf5d;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # instance fields
-.field public final a:Lxh7;
+.field public final a:Lz74;
 
-.field public final b:Lxh7;
+.field public final b:Z
 
-.field public final c:Lxh7;
-
-.field public final d:Lxh7;
-
-.field public final e:Ljava/lang/Object;
+.field public final c:Landroid/os/Parcelable;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;Lxh7;Lxh7;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Le5d;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Le5d;-><init>(I)V
+
+    sput-object v0, Lf5d;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lz74;ZLandroid/os/Parcelable;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lf5d;->a:Lxh7;
+    iput-object p1, p0, Lf5d;->a:Lz74;
 
-    iput-object p2, p0, Lf5d;->b:Lxh7;
+    iput-boolean p2, p0, Lf5d;->b:Z
 
-    iput-object p3, p0, Lf5d;->c:Lxh7;
-
-    iput-object p4, p0, Lf5d;->d:Lxh7;
-
-    new-instance p1, Lwwc;
-
-    const/4 p2, 0x6
-
-    invoke-direct {p1, p2}, Lwwc;-><init>(I)V
-
-    const/4 p2, 0x3
-
-    invoke-static {p2, p1}, Lmtg;->u(ILh96;)Lxh7;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lf5d;->e:Ljava/lang/Object;
+    iput-object p3, p0, Lf5d;->c:Landroid/os/Parcelable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lofa;
+.method public final describeContents()I
     .registers 1
 
-    iget-object p0, p0, Lf5d;->a:Lxh7;
+    const/4 p0, 0x0
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lf5d;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lf5d;
+
+    iget-object v1, p0, Lf5d;->a:Lz74;
+
+    iget-object v3, p1, Lf5d;->a:Lz74;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-boolean v1, p0, Lf5d;->b:Z
+
+    iget-boolean v3, p1, Lf5d;->b:Z
+
+    if-eq v1, v3, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object p0, p0, Lf5d;->c:Landroid/os/Parcelable;
+
+    iget-object p1, p1, Lf5d;->c:Landroid/os/Parcelable;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget-object v0, p0, Lf5d;->a:Lz74;
+
+    invoke-virtual {v0}, Lz74;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-boolean v2, p0, Lf5d;->b:Z
+
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
+
+    move-result v0
+
+    iget-object p0, p0, Lf5d;->c:Landroid/os/Parcelable;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    :goto_0
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "DelayedAttrs(sendTime="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lf5d;->a:Lz74;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", notifySender="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lf5d;->b:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", input="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lf5d;->c:Landroid/os/Parcelable;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
-
-    check-cast p0, Lofa;
 
     return-object p0
 .end method
 
-.method public final b(Lkp7;Lmm3;Lo72;)V
-    .registers 7
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 4
 
-    iget-object v0, p0, Lf5d;->d:Lxh7;
+    iget-object v0, p0, Lf5d;->a:Lz74;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0, p1, p2}, Lz74;->writeToParcel(Landroid/os/Parcel;I)V
 
-    move-result-object v0
+    iget-boolean v0, p0, Lf5d;->b:Z
 
-    check-cast v0, Lqbd;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    check-cast v0, Li2d;
+    iget-object p0, p0, Lf5d;->c:Landroid/os/Parcelable;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    sget-object v1, Lru/ok/tamtam/android/prefs/PmsKey;->debug-profile-info:Lru/ok/tamtam/android/prefs/PmsKey;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Li2d;->k(Ljava/lang/Enum;Z)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object p0, p0, Lf5d;->c:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lc53;
-
-    check-cast p0, Le53;
-
-    const-string v0, "app.debug.profile.info.enabled"
-
-    iget-object p0, p0, Lc3;->g:Lai7;
-
-    invoke-virtual {p0, v0, v2}, Lai7;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    goto :goto_2
-
-    :cond_0
-    if-nez p2, :cond_2
-
-    if-eqz p3, :cond_1
-
-    invoke-virtual {p3}, Lo72;->l()Lmm3;
-
-    move-result-object p2
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p2, 0x0
-
-    :cond_2
-    :goto_0
-    if-eqz p2, :cond_3
-
-    new-instance p0, Lhlb;
-
-    invoke-virtual {p2}, Lmm3;->n()J
-
-    move-result-wide p2
-
-    invoke-direct {p0, p2, p3}, Lhlb;-><init>(J)V
-
-    goto :goto_1
-
-    :cond_3
-    if-eqz p3, :cond_4
-
-    new-instance p0, Lhlb;
-
-    iget-object p2, p3, Lo72;->b:Lac2;
-
-    iget-wide p2, p2, Lac2;->a:J
-
-    invoke-direct {p0, p2, p3}, Lhlb;-><init>(J)V
-
-    :goto_1
-    invoke-virtual {p1, p0}, Lkp7;->add(Ljava/lang/Object;)Z
-
-    :cond_4
-    :goto_2
     return-void
 .end method

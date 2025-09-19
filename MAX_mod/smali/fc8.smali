@@ -1,38 +1,48 @@
-.class public interface abstract Lfc8;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.class public final Lfc8;
+.super Ljx3;
+
+
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Lyf7;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public static a()Lpz6;
-    .registers 2
+.method public constructor <init>(Lyf7;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    new-instance v0, Lged;
+    iput-object p1, p0, Lfc8;->Y:Lyf7;
 
-    const/4 v1, -0x6
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    invoke-direct {v0, v1}, Lged;-><init>(I)V
-
-    invoke-static {v0}, Lnc5;->B(Ljava/lang/Object;)Lpz6;
-
-    move-result-object v0
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public h()V
-    .registers 1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    return-void
-.end method
+    iput-object p1, p0, Lfc8;->o:Ljava/lang/Object;
 
-.method public abstract onDisconnected()V
-.end method
+    iget p1, p0, Lfc8;->X:I
 
-.method public r()V
-    .registers 1
+    const/high16 v0, -0x80000000
 
-    return-void
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lfc8;->X:I
+
+    iget-object p1, p0, Lfc8;->Y:Lyf7;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lyf7;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,311 +1,217 @@
-.class public Lxw3;
-.super Landroid/widget/PopupWindow;
+.class public final Lxw3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic g:[Lsf7;
+# interfaces
+.implements Lrw3;
 
 
 # instance fields
-.field public final a:Luw3;
-
-.field public b:Lb13;
-
-.field public final c:Z
-
-.field public d:Z
-
-.field public final e:F
-
-.field public final f:Lrj;
+.field public final a:Landroid/os/Bundle;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public constructor <init>()V
+    .registers 2
 
-    new-instance v0, Lal9;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "customTheme"
+    new-instance v0, Landroid/os/Bundle;
 
-    const-string v2, "getCustomTheme()Lru/ok/tamtam/themes/TamTheme;"
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    const-class v3, Lxw3;
-
-    invoke-direct {v0, v3, v1, v2}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v1, Lyhc;->a:Lzhc;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Lsf7;
-
-    const/4 v2, 0x0
-
-    aput-object v0, v1, v2
-
-    sput-object v1, Lxw3;->g:[Lsf7;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Landroid/content/Context;)V
-    .registers 3
-
-    const/4 v0, -0x2
-
-    invoke-direct {p0, p1, v0}, Lxw3;-><init>(Landroid/content/Context;I)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;I)V
-    .registers 5
-
-    new-instance v0, Luw3;
-
-    invoke-direct {v0, p1}, Luw3;-><init>(Landroid/content/Context;)V
-
-    const/4 p1, -0x2
-
-    invoke-direct {p0, v0, p2, p1}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
-
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Luw3;
-
-    iput-object p1, p0, Lxw3;->a:Luw3;
-
-    const/4 p2, 0x1
-
-    iput-boolean p2, p0, Lxw3;->c:Z
-
-    iput-boolean p2, p0, Lxw3;->d:Z
-
-    const/high16 v0, 0x3f000000    # 0.5f
-
-    iput v0, p0, Lxw3;->e:F
-
-    new-instance v0, Lrj;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1, p0}, Lrj;-><init>(ILjava/lang/Object;)V
-
-    iput-object v0, p0, Lxw3;->f:Lrj;
-
-    new-instance v0, Lb21;
-
-    const/4 v1, 0x3
-
-    invoke-direct {v0, v1, p0}, Lb21;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
-
-    invoke-virtual {p0, p2}, Landroid/widget/PopupWindow;->setFocusable(Z)V
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p2
-
-    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
-
-    const/high16 v0, 0x41000000    # 8.0f
-
-    mul-float/2addr p2, v0
-
-    invoke-virtual {p0, p2}, Landroid/widget/PopupWindow;->setElevation(F)V
-
-    invoke-virtual {p1}, Luw3;->getCustomTheme()Ldqe;
-
-    move-result-object p1
-
-    if-nez p1, :cond_1
-
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroid/view/View;->isInEditMode()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_0
-
-    sget-object p1, Lxh4;->e0:Lxh4;
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    sget-object p2, Ldqe;->a0:Ldle;
-
-    invoke-static {p1}, Lx44;->Q(Landroid/content/Context;)Ldqe;
-
-    move-result-object p1
-
-    :cond_1
-    :goto_0
-    invoke-virtual {p0, p1}, Lxw3;->a(Ldqe;)V
+    iput-object v0, p0, Lxw3;->a:Landroid/os/Bundle;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ldqe;)V
+.method public final J(F)Lrw3;
     .registers 5
 
-    iget p1, p1, Ldqe;->m:I
+    sget-object v0, Ldr6;->b:Landroid/graphics/Rect;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    sget-object v0, Ldr6;->b:Landroid/graphics/Rect;
 
-    move-result-object p1
+    iget-object v1, p0, Lxw3;->a:Landroid/os/Bundle;
 
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+    const-string v2, "highlight_padding"
 
-    move-result-object v0
+    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    const-string v0, "highlight_radius"
 
-    move-result-object v0
+    invoke-virtual {v1, v0, p1}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
-    sget v1, Lhwb;->bottom_sheet_corner_radius:I
+    return-object p0
+.end method
 
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+.method public final K(Landroid/os/Bundle;)Lrw3;
+    .registers 4
 
-    move-result-object v0
+    iget-object v0, p0, Lxw3;->a:Landroid/os/Bundle;
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
+    const-string v1, "payload"
+
+    invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    return-object p0
+.end method
+
+.method public final N(Landroid/view/View;)Lrw3;
+    .registers 5
+
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    const/16 v1, 0x8
+    const/4 v1, -0x1
 
-    new-array v1, v1, [F
+    if-eq v0, v1, :cond_0
 
-    const/4 v2, 0x0
+    const-string v0, "anchor_id"
 
-    aput v0, v1, v2
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
 
-    const/4 v2, 0x1
+    move-result v1
 
-    aput v0, v1, v2
+    iget-object v2, p0, Lxw3;->a:Landroid/os/Bundle;
 
-    const/4 v2, 0x2
+    invoke-virtual {v2, v0, v1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    aput v0, v1, v2
+    const-string v0, "anchor_class"
 
-    const/4 v2, 0x3
-
-    aput v0, v1, v2
-
-    const/4 v2, 0x4
-
-    aput v0, v1, v2
-
-    const/4 v2, 0x5
-
-    aput v0, v1, v2
-
-    const/4 v2, 0x6
-
-    aput v0, v1, v2
-
-    const/4 v2, 0x7
-
-    aput v0, v1, v2
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, v0, v1}, Lg64;->A(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;[F)Landroid/graphics/drawable/GradientDrawable;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v2, v0, p1}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
-    return-void
-.end method
-
-.method public final b()V
-    .registers 4
-
-    iget-boolean v0, p0, Lxw3;->d:Z
-
-    if-nez v0, :cond_0
-
-    return-void
+    return-object p0
 
     :cond_0
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    move-result-object v0
+    const-string p1, "Check failed."
 
-    invoke-virtual {v0}, Landroid/view/View;->getRootView()Landroid/view/View;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/view/WindowManager$LayoutParams;
-
-    iget v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    or-int/lit8 v2, v2, 0x2
-
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->flags:I
-
-    iget v2, p0, Lxw3;->e:F
-
-    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
-
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lgwd;->u(Landroid/content/Context;)Landroid/view/WindowManager;
-
-    move-result-object p0
-
-    invoke-interface {p0, v0, v1}, Landroid/view/ViewManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    return-void
+    throw p0
 .end method
 
-.method public final showAsDropDown(Landroid/view/View;III)V
-    .registers 5
+.method public final P()Lrw3;
+    .registers 4
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;III)V
+    sget-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Y:Lm48;
 
-    invoke-virtual {p0}, Lxw3;->b()V
+    sget-object v0, Lone/me/sdk/contextmenu/bottomsheet/ContextMenuBottomSheet;->H0:[Lxi7;
 
-    return-void
+    sget-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->Y:Lm48;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v0, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->r0:Ljava/lang/String;
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lxw3;->a:Landroid/os/Bundle;
+
+    invoke-virtual {v2, v0, v1}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
+
+    return-object p0
 .end method
 
-.method public final showAtLocation(Landroid/view/View;III)V
+.method public final Q(Lu2f;)Lrw3;
+    .registers 4
+
+    iget-object v0, p0, Lxw3;->a:Landroid/os/Bundle;
+
+    const-string v1, "header"
+
+    invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    return-object p0
+.end method
+
+.method public final build()Lsw3;
+    .registers 3
+
+    new-instance v0, Lone/me/sdk/contextmenu/bottomsheet/ContextMenuBottomSheet;
+
+    new-instance v1, Landroid/os/Bundle;
+
+    iget-object p0, p0, Lxw3;->a:Landroid/os/Bundle;
+
+    invoke-direct {v1, p0}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
+
+    invoke-direct {v0, v1}, Lone/me/sdk/contextmenu/bottomsheet/ContextMenuBottomSheet;-><init>(Landroid/os/Bundle;)V
+
+    return-object v0
+.end method
+
+.method public final g()Lrw3;
+    .registers 4
+
+    const-string v0, "highlight_padding"
+
+    sget-object v1, Ldr6;->b:Landroid/graphics/Rect;
+
+    iget-object v2, p0, Lxw3;->a:Landroid/os/Bundle;
+
+    invoke-virtual {v2, v0, v1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    const-string v0, "highlight_radius"
+
+    invoke-virtual {v2, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public final o()Lrw3;
+    .registers 3
+
+    const-string v0, "highlight_padding"
+
+    iget-object v1, p0, Lxw3;->a:Landroid/os/Bundle;
+
+    invoke-virtual {v1, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+
+    const-string v0, "highlight_radius"
+
+    invoke-virtual {v1, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public final r(Landroid/graphics/Rect;F)Lrw3;
     .registers 5
 
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
+    const-string v0, "highlight_padding"
 
-    invoke-virtual {p0}, Lxw3;->b()V
+    iget-object v1, p0, Lxw3;->a:Landroid/os/Bundle;
 
-    return-void
+    invoke-virtual {v1, v0, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    const-string p1, "highlight_radius"
+
+    invoke-virtual {v1, p1, p2}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
+
+    return-object p0
+.end method
+
+.method public final x(Ljava/util/Collection;)Lrw3;
+    .registers 4
+
+    const-string v0, "actions"
+
+    invoke-static {p1}, Ljtg;->e(Ljava/util/Collection;)Landroid/os/Bundle;
+
+    move-result-object p1
+
+    iget-object v1, p0, Lxw3;->a:Landroid/os/Bundle;
+
+    invoke-virtual {v1, v0, p1}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    return-object p0
 .end method

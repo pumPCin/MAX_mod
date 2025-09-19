@@ -1,239 +1,130 @@
 .class public final Lkh7;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lyu5;
-.implements Lsee;
-.implements Lnp4;
+.implements Ls55;
+
+
+# static fields
+.field public static final e:Lhh7;
+
+.field public static final f:Lih7;
+
+.field public static final g:Lih7;
+
+.field public static final h:Ljh7;
 
 
 # instance fields
-.field public final a:Li18;
+.field public final a:Ljava/util/HashMap;
 
-.field public final b:Lh18;
+.field public final b:Ljava/util/HashMap;
 
-.field public final c:Loa6;
+.field public final c:Lhh7;
 
-.field public final o:Liu5;
+.field public d:Z
 
 
 # direct methods
-.method public constructor <init>(Li18;Lh18;)V
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lhh7;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lhh7;-><init>(I)V
+
+    sput-object v0, Lkh7;->e:Lhh7;
+
+    new-instance v0, Lih7;
+
+    invoke-direct {v0, v1}, Lih7;-><init>(I)V
+
+    sput-object v0, Lkh7;->f:Lih7;
+
+    new-instance v0, Lih7;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lih7;-><init>(I)V
+
+    sput-object v0, Lkh7;->g:Lih7;
+
+    new-instance v0, Ljh7;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lkh7;->h:Ljh7;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
     .registers 4
 
-    sget-object v0, Lr7;->f:Loa6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    new-instance v0, Ljava/util/HashMap;
 
-    iput-object p1, p0, Lkh7;->a:Li18;
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object p2, p0, Lkh7;->b:Lh18;
+    iput-object v0, p0, Lkh7;->a:Ljava/util/HashMap;
 
-    iput-object v0, p0, Lkh7;->c:Loa6;
+    new-instance v1, Ljava/util/HashMap;
 
-    sget-object p1, Liu5;->a:Liu5;
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    iput-object p1, p0, Lkh7;->o:Liu5;
+    iput-object v1, p0, Lkh7;->b:Ljava/util/HashMap;
+
+    sget-object v2, Lkh7;->e:Lhh7;
+
+    iput-object v2, p0, Lkh7;->c:Lhh7;
+
+    const/4 v2, 0x0
+
+    iput-boolean v2, p0, Lkh7;->d:Z
+
+    sget-object p0, Lkh7;->f:Lih7;
+
+    const-class v2, Ljava/lang/String;
+
+    invoke-virtual {v1, v2, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object p0, Lkh7;->g:Lih7;
+
+    const-class v2, Ljava/lang/Boolean;
+
+    invoke-virtual {v1, v2, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object p0, Lkh7;->h:Ljh7;
+
+    const-class v2, Ljava/util/Date;
+
+    invoke-virtual {v1, v2, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 3
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    sget-object v1, Luee;->a:Luee;
-
-    if-eq v0, v1, :cond_0
-
-    invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    :try_start_0
-    iget-object p0, p0, Lkh7;->c:Loa6;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    invoke-static {p0}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final cancel()V
-    .registers 1
-
-    invoke-static {p0}, Luee;->a(Ljava/util/concurrent/atomic/AtomicReference;)V
-
-    return-void
-.end method
-
-.method public final d(Ljava/lang/Object;)V
-    .registers 3
-
-    invoke-virtual {p0}, Lkh7;->h()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    :try_start_0
-    iget-object v0, p0, Lkh7;->a:Li18;
-
-    invoke-virtual {v0, p1}, Li18;->accept(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    invoke-static {p1}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lsee;
-
-    invoke-interface {v0}, Lsee;->cancel()V
-
-    invoke-virtual {p0, p1}, Lkh7;->onError(Ljava/lang/Throwable;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final f(Lsee;)V
-    .registers 3
-
-    invoke-static {p0, p1}, Luee;->c(Ljava/util/concurrent/atomic/AtomicReference;Lsee;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    :try_start_0
-    iget-object v0, p0, Lkh7;->o:Liu5;
-
-    invoke-virtual {v0, p0}, Liu5;->accept(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    invoke-static {v0}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    invoke-interface {p1}, Lsee;->cancel()V
-
-    invoke-virtual {p0, v0}, Lkh7;->onError(Ljava/lang/Throwable;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final g()V
-    .registers 1
-
-    invoke-static {p0}, Luee;->a(Ljava/util/concurrent/atomic/AtomicReference;)V
-
-    return-void
-.end method
-
-.method public final h()Z
-    .registers 2
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object v0, Luee;->a:Luee;
-
-    if-ne p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final i(J)V
-    .registers 3
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lsee;
-
-    invoke-interface {p0, p1, p2}, Lsee;->i(J)V
-
-    return-void
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
+.method public final a(Ljava/lang/Class;Lt4a;)Ls55;
     .registers 4
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    iget-object v0, p0, Lkh7;->a:Ljava/util/HashMap;
 
-    move-result-object v0
+    invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v1, Luee;->a:Luee;
+    iget-object p2, p0, Lkh7;->b:Ljava/util/HashMap;
 
-    if-eq v0, v1, :cond_0
+    invoke-virtual {p2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    :try_start_0
-    iget-object p0, p0, Lkh7;->b:Lh18;
-
-    invoke-virtual {p0, p1}, Lh18;->accept(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    new-instance v0, Lio/reactivex/rxjava3/exceptions/CompositeException;
-
-    filled-new-array {p1, p0}, [Ljava/lang/Throwable;
-
-    move-result-object p0
-
-    invoke-direct {v0, p0}, Lio/reactivex/rxjava3/exceptions/CompositeException;-><init>([Ljava/lang/Throwable;)V
-
-    invoke-static {v0}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_0
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return-void
+    return-object p0
 .end method

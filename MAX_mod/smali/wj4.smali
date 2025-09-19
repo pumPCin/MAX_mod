@@ -1,11 +1,25 @@
-.class public interface abstract Lwj4;
+.class public final Lwj4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(Ljavax/net/ssl/SSLSocket;)Z
-.end method
+# instance fields
+.field public final a:Ljava/util/ArrayDeque;
 
-.method public abstract l(Ljavax/net/ssl/SSLSocket;)Lfyd;
+.field public b:Z
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayDeque;
+
+    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
+
+    iput-object v0, p0, Lwj4;->a:Ljava/util/ArrayDeque;
+
+    return-void
 .end method

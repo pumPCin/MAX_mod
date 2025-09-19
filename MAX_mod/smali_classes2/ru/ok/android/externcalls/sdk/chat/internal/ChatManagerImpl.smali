@@ -25,13 +25,13 @@
         "Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;",
         "message",
         "Lkotlin/Function0;",
-        "Lncf;",
+        "Lylf;",
         "onSuccess",
         "Lkotlin/Function1;",
         "",
         "onError",
         "sendMessage",
-        "(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Lh96;Lj96;)V",
+        "(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Lzb6;Lbc6;)V",
         "Lru/ok/android/externcalls/sdk/chat/listener/ChatManagerListener;",
         "listener",
         "addListener",
@@ -92,21 +92,21 @@
     return-void
 .end method
 
-.method public sendMessage(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Lh96;Lj96;)V
+.method public sendMessage(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Lzb6;Lbc6;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;",
-            "Lh96;",
-            "Lj96;",
+            "Lzb6;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/chat/internal/ChatManagerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/chat/internal/command/ChatCommandExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/chat/internal/command/ChatCommandExecutor;->sendMessage(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Lh96;Lj96;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/chat/internal/command/ChatCommandExecutor;->sendMessage(Lru/ok/android/externcalls/sdk/chat/message/OutboundMessage;Lzb6;Lbc6;)V
 
     return-void
 .end method

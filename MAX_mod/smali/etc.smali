@@ -1,186 +1,61 @@
 .class public final Letc;
-.super Ljava/lang/Object;
+.super Laec;
 .source "SourceFile"
-
-# interfaces
-.implements Lic3;
-.implements Lvud;
-.implements Ln68;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic X:Lor8;
 
-.field public final synthetic b:Ly02;
+.field public final synthetic Y:I
+
+.field public final synthetic o:[B
 
 
 # direct methods
-.method public synthetic constructor <init>(Ly02;I)V
-    .registers 3
+.method public constructor <init>([BLor8;I)V
+    .registers 5
 
-    iput p2, p0, Letc;->a:I
+    const/4 v0, 0x2
 
-    iput-object p1, p0, Letc;->b:Ly02;
+    invoke-direct {p0, v0}, Laec;-><init>(I)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Letc;->o:[B
+
+    iput-object p2, p0, Letc;->X:Lor8;
+
+    iput p3, p0, Letc;->Y:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Object;)V
+.method public final K(Lhu0;)V
     .registers 3
 
-    iget v0, p0, Letc;->a:I
+    iget-object v0, p0, Letc;->o:[B
 
-    packed-switch v0, :pswitch_data_0
+    iget p0, p0, Letc;->Y:I
 
-    iget-object p0, p0, Letc;->b:Ly02;
-
-    invoke-virtual {p0, p1}, Ly02;->resumeWith(Ljava/lang/Object;)V
+    invoke-interface {p1, p0, v0}, Lhu0;->K(I[B)Lhu0;
 
     return-void
-
-    :pswitch_0
-    iget-object p0, p0, Letc;->b:Ly02;
-
-    invoke-virtual {p0, p1}, Ly02;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
-.method public b()V
-    .registers 2
-
-    iget v0, p0, Letc;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Letc;->b:Ly02;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Ly02;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Letc;->b:Ly02;
-
-    sget-object v0, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, v0}, Ly02;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final c(Lnp4;)V
-    .registers 4
-
-    iget v0, p0, Letc;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    new-instance v0, Lkeb;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1, p1}, Lkeb;-><init>(ILjava/lang/Object;)V
-
-    iget-object p0, p0, Letc;->b:Ly02;
-
-    invoke-virtual {p0, v0}, Ly02;->e(Lj96;)V
-
-    return-void
-
-    :pswitch_0
-    new-instance v0, Lkeb;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1, p1}, Lkeb;-><init>(ILjava/lang/Object;)V
-
-    iget-object p0, p0, Letc;->b:Ly02;
-
-    invoke-virtual {p0, v0}, Ly02;->e(Lj96;)V
-
-    return-void
-
-    :pswitch_1
-    new-instance v0, Lkeb;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1, p1}, Lkeb;-><init>(ILjava/lang/Object;)V
-
-    iget-object p0, p0, Letc;->b:Ly02;
-
-    invoke-virtual {p0, v0}, Ly02;->e(Lj96;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
+.method public final k()J
     .registers 3
 
-    iget v0, p0, Letc;->a:I
+    iget p0, p0, Letc;->Y:I
 
-    packed-switch v0, :pswitch_data_0
+    int-to-long v0, p0
 
-    new-instance v0, Lanc;
+    return-wide v0
+.end method
 
-    invoke-direct {v0, p1}, Lanc;-><init>(Ljava/lang/Throwable;)V
+.method public final l()Lor8;
+    .registers 1
 
-    iget-object p0, p0, Letc;->b:Ly02;
+    iget-object p0, p0, Letc;->X:Lor8;
 
-    invoke-virtual {p0, v0}, Ly02;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
-
-    :pswitch_0
-    new-instance v0, Lanc;
-
-    invoke-direct {v0, p1}, Lanc;-><init>(Ljava/lang/Throwable;)V
-
-    iget-object p0, p0, Letc;->b:Ly02;
-
-    invoke-virtual {p0, v0}, Ly02;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
-
-    :pswitch_1
-    new-instance v0, Lanc;
-
-    invoke-direct {v0, p1}, Lanc;-><init>(Ljava/lang/Throwable;)V
-
-    iget-object p0, p0, Letc;->b:Ly02;
-
-    invoke-virtual {p0, v0}, Ly02;->resumeWith(Ljava/lang/Object;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

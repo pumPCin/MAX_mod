@@ -1,108 +1,48 @@
 .class public final Loq0;
-.super Landroid/text/style/StyleSpan;
-.source "SourceFile"
-
-# interfaces
-.implements Ln38;
+.super Ljx3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final b:I
+.field public final synthetic Y:Lwb;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 2
+.method public constructor <init>(Lwb;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p1, p0, Loq0;->a:I
+    iput-object p1, p0, Loq0;->Y:Lwb;
 
-    packed-switch p1, :pswitch_data_0
-
-    const/4 p1, 0x1
-
-    invoke-direct {p0, p1}, Landroid/text/style/StyleSpan;-><init>(I)V
-
-    const/4 p1, 0x2
-
-    iput p1, p0, Loq0;->b:I
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
-
-    :pswitch_0
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1}, Landroid/text/style/StyleSpan;-><init>(I)V
-
-    const/4 p1, 0x3
-
-    iput p1, p0, Loq0;->b:I
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final copy()Lsz3;
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget p0, p0, Loq0;->a:I
+    iput-object p1, p0, Loq0;->o:Ljava/lang/Object;
 
-    packed-switch p0, :pswitch_data_0
+    iget p1, p0, Loq0;->X:I
 
-    new-instance p0, Loq0;
+    const/high16 v0, -0x80000000
 
-    const/4 v0, 0x1
+    or-int/2addr p1, v0
 
-    invoke-direct {p0, v0}, Loq0;-><init>(I)V
+    iput p1, p0, Loq0;->X:I
 
-    return-object p0
-
-    :pswitch_0
-    new-instance p0, Loq0;
+    iget-object p1, p0, Loq0;->Y:Lwb;
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Loq0;-><init>(I)V
+    invoke-virtual {p1, v0, p0}, Lwb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final getType()I
-    .registers 2
-
-    iget v0, p0, Loq0;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget p0, p0, Loq0;->b:I
-
-    return p0
-
-    :pswitch_0
-    iget p0, p0, Loq0;->b:I
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

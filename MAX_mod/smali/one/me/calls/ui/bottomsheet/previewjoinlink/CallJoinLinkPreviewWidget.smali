@@ -3,9 +3,9 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lhj3;
-.implements Lss9;
-.implements Lrzc;
+.implements Lnj3;
+.implements Lsw9;
+.implements Lw7d;
 
 
 # annotations
@@ -16,9 +16,9 @@
     d2 = {
         "Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;",
         "Lone/me/sdk/arch/Widget;",
-        "Lhj3;",
-        "Lss9;",
-        "Lrzc;",
+        "Lnj3;",
+        "Lsw9;",
+        "Lw7d;",
         "Landroid/os/Bundle;",
         "args",
         "<init>",
@@ -39,48 +39,48 @@
 
 
 # static fields
-.field public static final synthetic w0:[Lsf7;
+.field public static final synthetic A0:[Lxi7;
 
 
 # instance fields
-.field public final X:Lin0;
+.field public final X:Lrm0;
 
-.field public final Y:Lin0;
+.field public final Y:Lrm0;
 
-.field public final Z:Lin0;
+.field public final Z:Lrm0;
 
-.field public final a:Lbjg;
+.field public final a:Litg;
 
-.field public final b:Lbwa;
+.field public final b:Le2b;
 
 .field public final c:Ljava/lang/Object;
 
-.field public final n0:Lin0;
+.field public final o:Lcl7;
 
-.field public final o:Lxh7;
+.field public final r0:Lrm0;
 
-.field public final o0:Lin0;
+.field public final s0:Lrm0;
 
-.field public final p0:Lin0;
+.field public final t0:Lrm0;
 
-.field public final q0:Lxac;
+.field public final u0:Lcic;
 
-.field public final r0:Ljava/lang/Object;
+.field public final v0:Ljava/lang/Object;
 
-.field public final s0:Ljava/lang/Object;
+.field public final w0:Ljava/lang/Object;
 
-.field public final t0:Ljava/lang/Object;
+.field public final x0:Ljava/lang/Object;
 
-.field public final u0:Ljava/lang/Object;
+.field public final y0:Ljava/lang/Object;
 
-.field public final v0:Lls7;
+.field public final z0:Lzlb;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 11
 
-    new-instance v0, Lrqb;
+    new-instance v0, Lsxb;
 
     const-class v1, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;
 
@@ -90,61 +90,61 @@
 
     const/4 v4, 0x0
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    sget-object v2, Lyhc;->a:Lzhc;
+    sget-object v2, Ljpc;->a:Lkpc;
 
     const-string v3, "closeView"
 
     const-string v5, "getCloseView()Lone/me/calls/ui/view/RoundButtonView;"
 
-    invoke-static {v2, v1, v3, v5, v4}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
+    invoke-static {v2, v1, v3, v5, v4}, Lee5;->h(Lkpc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lsxb;
 
     move-result-object v2
 
-    new-instance v3, Lrqb;
+    new-instance v3, Lsxb;
 
     const-string v5, "oneMeStackAvatarView"
 
     const-string v6, "getOneMeStackAvatarView()Lone/me/sdk/uikit/common/avatar/OneMeStackAvatarView;"
 
-    invoke-direct {v3, v1, v5, v6, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v3, v1, v5, v6, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    new-instance v5, Lrqb;
+    new-instance v5, Lsxb;
 
     const-string v6, "microphoneSwitch"
 
     const-string v7, "getMicrophoneSwitch()Lone/me/calls/ui/view/RoundButtonView;"
 
-    invoke-direct {v5, v1, v6, v7, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v5, v1, v6, v7, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    new-instance v6, Lrqb;
+    new-instance v6, Lsxb;
 
     const-string v7, "videoSwitch"
 
     const-string v8, "getVideoSwitch()Lone/me/calls/ui/view/RoundButtonView;"
 
-    invoke-direct {v6, v1, v7, v8, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v6, v1, v7, v8, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    new-instance v7, Lrqb;
+    new-instance v7, Lsxb;
 
     const-string v8, "button"
 
     const-string v9, "getButton()Lone/me/sdk/uikit/common/button/OneMeButton;"
 
-    invoke-direct {v7, v1, v8, v9, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v7, v1, v8, v9, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    new-instance v8, Lrqb;
+    new-instance v8, Lsxb;
 
     const-string v9, "previewView"
 
     const-string v10, "getPreviewView()Lone/me/calls/ui/view/CallUserView;"
 
-    invoke-direct {v8, v1, v9, v10, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v8, v1, v9, v10, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     const/4 v1, 0x7
 
-    new-array v1, v1, [Lsf7;
+    new-array v1, v1, [Lxi7;
 
     aput-object v0, v1, v4
 
@@ -172,7 +172,7 @@
 
     aput-object v8, v1, v0
 
-    sput-object v1, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->w0:[Lsf7;
+    sput-object v1, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0:[Lxi7;
 
     return-void
 .end method
@@ -186,203 +186,203 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {p0, p1, v0, v1, v2}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILwc4;)V
+    invoke-direct {p0, p1, v0, v1, v2}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILld4;)V
 
-    new-instance v0, Lbjg;
+    new-instance v0, Litg;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, v1}, Lbjg;-><init>(Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {v0, p0, v1}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
 
-    iput-object v0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->a:Lbjg;
+    iput-object v0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->a:Litg;
 
-    new-instance v0, Lbwa;
+    new-instance v0, Le2b;
 
-    sget-object v1, Lnwa;->a:Lnwa;
+    sget-object v1, Lq2b;->a:Lq2b;
 
-    invoke-virtual {v1}, Lnwa;->b()Lxh7;
+    invoke-virtual {v1}, Lq2b;->b()Lcl7;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lbwa;-><init>(Lxh7;)V
+    invoke-direct {v0, v1}, Le2b;-><init>(Lcl7;)V
 
-    iput-object v0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->b:Lbwa;
+    iput-object v0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->b:Le2b;
 
-    new-instance v0, Loc1;
+    new-instance v0, Ljc1;
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, p0, v1}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {v0, p0, v1}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
     const/4 v1, 0x3
 
-    invoke-static {v1, v0}, Lmtg;->u(ILh96;)Lxh7;
+    invoke-static {v1, v0}, Lcb7;->G(ILzb6;)Lcl7;
 
     move-result-object v0
 
     iput-object v0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->c:Ljava/lang/Object;
 
-    new-instance v0, Lv2;
+    new-instance v0, Lb3;
 
-    const/16 v3, 0xb
+    const/16 v3, 0xa
 
-    invoke-direct {v0, p1, p0, v3}, Lv2;-><init>(Landroid/os/Bundle;Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {v0, p1, p0, v3}, Lb3;-><init>(Landroid/os/Bundle;Lone/me/sdk/arch/Widget;I)V
 
-    new-instance p1, Lq;
+    new-instance p1, Lr;
 
-    const/16 v3, 0x10
+    const/16 v3, 0xf
 
-    invoke-direct {p1, v3, v0}, Lq;-><init>(ILh96;)V
+    invoke-direct {p1, v3, v0}, Lr;-><init>(ILzb6;)V
 
-    const-class v0, Lnc1;
+    const-class v0, Lic1;
 
-    invoke-virtual {p0, v0, p1}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lh96;)Lxh7;
+    invoke-virtual {p0, v0, p1}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lzb6;)Lcl7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->o:Lxh7;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->o:Lcl7;
 
-    new-instance p1, Loc1;
+    new-instance p1, Ljc1;
 
     const/4 v0, 0x7
 
-    invoke-direct {p1, p0, v0}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {p1, p0, v0}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lh96;)Lin0;
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lzb6;)Lrm0;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->X:Lin0;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->X:Lrm0;
 
-    new-instance p1, Loc1;
+    new-instance p1, Ljc1;
 
     const/16 v0, 0x8
 
-    invoke-direct {p1, p0, v0}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {p1, p0, v0}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lh96;)Lin0;
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lzb6;)Lrm0;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->Y:Lin0;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->Y:Lrm0;
 
-    new-instance p1, Loc1;
+    new-instance p1, Ljc1;
 
     const/16 v0, 0x9
 
-    invoke-direct {p1, p0, v0}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {p1, p0, v0}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lh96;)Lin0;
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lzb6;)Lrm0;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->Z:Lin0;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->Z:Lrm0;
 
-    new-instance p1, Loc1;
+    new-instance p1, Ljc1;
 
     const/16 v0, 0xa
 
-    invoke-direct {p1, p0, v0}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {p1, p0, v0}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lh96;)Lin0;
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lzb6;)Lrm0;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->n0:Lin0;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->r0:Lrm0;
 
-    new-instance p1, Loc1;
+    new-instance p1, Ljc1;
 
     const/16 v0, 0xb
 
-    invoke-direct {p1, p0, v0}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {p1, p0, v0}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lh96;)Lin0;
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lzb6;)Lrm0;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->o0:Lin0;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->s0:Lrm0;
 
-    new-instance p1, Loc1;
+    new-instance p1, Ljc1;
 
     const/4 v0, 0x1
 
-    invoke-direct {p1, p0, v0}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {p1, p0, v0}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lh96;)Lin0;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->p0:Lin0;
-
-    sget p1, Ls9a;->f0:I
-
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lxac;
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lzb6;)Lrm0;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->q0:Lxac;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->t0:Lrm0;
 
-    new-instance p1, Loc1;
+    sget p1, Laea;->h0:I
+
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->viewBinding(I)Lcic;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->u0:Lcic;
+
+    new-instance p1, Ljc1;
 
     const/4 v0, 0x2
 
-    invoke-direct {p1, p0, v0}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {p1, p0, v0}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
-    invoke-static {v1, p1}, Lmtg;->u(ILh96;)Lxh7;
+    invoke-static {v1, p1}, Lcb7;->G(ILzb6;)Lcl7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->r0:Ljava/lang/Object;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->v0:Ljava/lang/Object;
 
-    new-instance p1, Loc1;
+    new-instance p1, Ljc1;
 
     const/4 v0, 0x3
 
-    invoke-direct {p1, p0, v0}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {p1, p0, v0}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
-    invoke-static {v1, p1}, Lmtg;->u(ILh96;)Lxh7;
+    invoke-static {v1, p1}, Lcb7;->G(ILzb6;)Lcl7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->s0:Ljava/lang/Object;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->w0:Ljava/lang/Object;
 
-    new-instance p1, Loc1;
+    new-instance p1, Ljc1;
 
     const/4 v0, 0x5
 
-    invoke-direct {p1, p0, v0}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {p1, p0, v0}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
-    invoke-static {v1, p1}, Lmtg;->u(ILh96;)Lxh7;
+    invoke-static {v1, p1}, Lcb7;->G(ILzb6;)Lcl7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->t0:Ljava/lang/Object;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->x0:Ljava/lang/Object;
 
-    new-instance p1, Loc1;
+    new-instance p1, Ljc1;
 
     const/4 v0, 0x6
 
-    invoke-direct {p1, p0, v0}, Loc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
+    invoke-direct {p1, p0, v0}, Ljc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;I)V
 
-    invoke-static {v1, p1}, Lmtg;->u(ILh96;)Lxh7;
+    invoke-static {v1, p1}, Lcb7;->G(ILzb6;)Lcl7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->u0:Ljava/lang/Object;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->y0:Ljava/lang/Object;
 
-    new-instance p1, Lls7;
+    new-instance p1, Lzlb;
 
-    new-instance v0, Lr01;
+    new-instance v0, Ll11;
 
     const/16 v1, 0x16
 
-    invoke-direct {v0, v1}, Lr01;-><init>(I)V
+    invoke-direct {v0, v1}, Ll11;-><init>(I)V
 
     const/4 v1, 0x6
 
-    invoke-direct {p1, v0, v2, v1}, Lls7;-><init>(Lh96;Lh96;I)V
+    invoke-direct {p1, v0, v2, v1}, Lzlb;-><init>(Lzb6;Lzb6;I)V
 
-    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->v0:Lls7;
+    iput-object p1, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->z0:Lzlb;
 
     return-void
 .end method
@@ -390,17 +390,17 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 4
 
-    new-instance v0, Lura;
+    new-instance v0, Lpxa;
 
     const-string v1, "call_join_link"
 
-    invoke-direct {v0, v1, p1}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {v0, v1, p1}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    filled-new-array {v0}, [Lura;
+    filled-new-array {v0}, [Lpxa;
 
     move-result-object p1
 
-    invoke-static {p1}, La94;->c([Lura;)Landroid/os/Bundle;
+    invoke-static {p1}, Lw7;->c([Lpxa;)Landroid/os/Bundle;
 
     move-result-object p1
 
@@ -409,10 +409,10 @@
     return-void
 .end method
 
-.method public static D0(Lvqc;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Ly68;Lqte;Lqte;)V
+.method public static E0(Lbzc;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Lfa8;Lp2f;Lp2f;)V
     .registers 9
 
-    sget-object v0, Ly68;->o:Ly68;
+    sget-object v0, Lfa8;->o:Lfa8;
 
     if-eq p3, v0, :cond_0
 
@@ -430,9 +430,9 @@
 
     move-result p3
 
-    sget-object v0, Lqqc;->o:Lqqc;
+    sget-object v0, Lwyc;->o:Lwyc;
 
-    sget-object v1, Lct4;->p0:Lws9;
+    sget-object v1, Lyu4;->t0:Lbx9;
 
     if-eqz p3, :cond_5
 
@@ -466,129 +466,149 @@
 
     :cond_3
     :goto_1
-    invoke-virtual {v1, p0}, Lws9;->g(Landroid/view/View;)Ldea;
+    invoke-virtual {v1, p0}, Lbx9;->q(Landroid/view/View;)Llia;
 
     move-result-object p1
 
-    iget-object p1, p1, Ldea;->c:Loma;
+    iget-object p1, p1, Llia;->c:Lera;
 
-    invoke-interface {p1}, Loma;->getIcon()Lpv6;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
     move-result-object p1
 
-    iget p1, p1, Lpv6;->c:I
+    iget p1, p1, Lqy6;->c:I
 
-    invoke-virtual {p0, p2, p1}, Lvqc;->x(Landroid/graphics/drawable/Drawable;I)V
+    invoke-virtual {p0, p2, p1}, Lbzc;->y(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-virtual {p0, v0}, Lvqc;->setMode(Lqqc;)V
+    invoke-virtual {p0, v0}, Lbzc;->setMode(Lwyc;)V
 
-    invoke-virtual {p0, p5}, Lvqc;->setAccessibility(Lvte;)V
+    invoke-virtual {p0, p5}, Lbzc;->setAccessibility(Lu2f;)V
 
     return-void
 
     :cond_4
-    invoke-virtual {v1, p0}, Lws9;->g(Landroid/view/View;)Ldea;
+    invoke-virtual {v1, p0}, Lbx9;->q(Landroid/view/View;)Llia;
 
     move-result-object p2
 
-    iget-object p2, p2, Ldea;->c:Loma;
+    iget-object p2, p2, Llia;->c:Lera;
 
     const/4 p2, -0x1
 
-    invoke-virtual {p0, p1, p2}, Lvqc;->x(Landroid/graphics/drawable/Drawable;I)V
+    invoke-virtual {p0, p1, p2}, Lbzc;->y(Landroid/graphics/drawable/Drawable;I)V
 
-    sget-object p1, Lqqc;->X:Lqqc;
+    sget-object p1, Lwyc;->X:Lwyc;
 
-    invoke-virtual {p0, p1}, Lvqc;->setMode(Lqqc;)V
+    invoke-virtual {p0, p1}, Lbzc;->setMode(Lwyc;)V
 
-    invoke-virtual {p0, p4}, Lvqc;->setAccessibility(Lvte;)V
+    invoke-virtual {p0, p4}, Lbzc;->setAccessibility(Lu2f;)V
 
     return-void
 
     :cond_5
-    invoke-virtual {v1, p0}, Lws9;->g(Landroid/view/View;)Ldea;
+    invoke-virtual {v1, p0}, Lbx9;->q(Landroid/view/View;)Llia;
 
     move-result-object p1
 
-    iget-object p1, p1, Ldea;->c:Loma;
+    iget-object p1, p1, Llia;->c:Lera;
 
-    invoke-interface {p1}, Loma;->getIcon()Lpv6;
+    invoke-interface {p1}, Lera;->getIcon()Lqy6;
 
     move-result-object p1
 
-    iget p1, p1, Lpv6;->g:I
+    iget p1, p1, Lqy6;->g:I
 
-    invoke-virtual {p0, p2, p1}, Lvqc;->x(Landroid/graphics/drawable/Drawable;I)V
+    invoke-virtual {p0, p2, p1}, Lbzc;->y(Landroid/graphics/drawable/Drawable;I)V
 
-    invoke-virtual {p0, v0}, Lvqc;->setMode(Lqqc;)V
+    invoke-virtual {p0, v0}, Lbzc;->setMode(Lwyc;)V
 
-    invoke-virtual {p0, p5}, Lvqc;->setAccessibility(Lvte;)V
+    invoke-virtual {p0, p5}, Lbzc;->setAccessibility(Lu2f;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final A0()Lvqc;
+.method public final A0()Landroid/widget/TextView;
     .registers 3
 
-    sget-object v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->w0:[Lsf7;
+    sget-object v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0:[Lxi7;
+
+    const/4 v1, 0x0
+
+    aget-object v0, v0, v1
+
+    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->X:Lrm0;
+
+    invoke-virtual {p0}, Lrm0;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/widget/TextView;
+
+    return-object p0
+.end method
+
+.method public final B0()Lbzc;
+    .registers 3
+
+    sget-object v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0:[Lxi7;
 
     const/4 v1, 0x4
 
     aget-object v0, v0, v1
 
-    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->o0:Lin0;
+    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->s0:Lrm0;
 
-    invoke-virtual {p0}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lvqc;
+    check-cast p0, Lbzc;
 
     return-object p0
 .end method
 
-.method public final B0()Lnc1;
+.method public final C0()Lic1;
     .registers 1
 
-    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->o:Lxh7;
+    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->o:Lcl7;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lnc1;
+    check-cast p0, Lic1;
 
     return-object p0
 .end method
 
-.method public final C0()V
+.method public final D0()V
     .registers 2
 
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
+    invoke-virtual {p0}, Lxx3;->getRouter()Lrzc;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Llrc;->B(Lqx3;)Z
+    invoke-virtual {v0, p0}, Lrzc;->B(Lxx3;)Z
 
     return-void
 .end method
 
-.method public final getInsetsConfig()Lf67;
+.method public final getInsetsConfig()Lj97;
     .registers 1
 
-    sget-object p0, Lf67;->c:Lf67;
+    sget-object p0, Lj97;->c:Lj97;
 
-    sget-object p0, Lf67;->d:Lf67;
+    sget-object p0, Lj97;->d:Lj97;
 
     return-object p0
 .end method
 
-.method public final getScreenDelegate()Lsyc;
+.method public final getScreenDelegate()Lx6d;
     .registers 1
 
-    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->v0:Lls7;
+    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->z0:Lzlb;
 
     return-object p0
 .end method
@@ -598,13 +618,13 @@
 
     iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->c:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lmh1;
+    check-cast p0, Lih1;
 
-    invoke-virtual {p0, p1}, Lmh1;->g(I)Z
+    invoke-virtual {p0, p1}, Lih1;->g(I)Z
 
     return-void
 .end method
@@ -622,27 +642,27 @@
 
     invoke-direct {v1, v2}, Landroidx/constraintlayout/widget/ConstraintLayout;-><init>(Landroid/content/Context;)V
 
-    new-instance v2, Lnl3;
+    new-instance v2, Ltl3;
 
     const/4 v3, -0x1
 
-    invoke-direct {v2, v3, v3}, Lnl3;-><init>(II)V
+    invoke-direct {v2, v3, v3}, Ltl3;-><init>(II)V
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    sget-object v2, Lct4;->p0:Lws9;
+    sget-object v2, Lyu4;->t0:Lbx9;
 
-    invoke-virtual {v2, v1}, Lws9;->g(Landroid/view/View;)Ldea;
-
-    move-result-object v4
-
-    iget-object v4, v4, Ldea;->c:Loma;
-
-    invoke-interface {v4}, Loma;->b()Lef0;
+    invoke-virtual {v2, v1}, Lbx9;->q(Landroid/view/View;)Llia;
 
     move-result-object v4
 
-    iget v4, v4, Lef0;->k:I
+    iget-object v4, v4, Llia;->c:Lera;
+
+    invoke-interface {v4}, Lera;->b()Lie0;
+
+    move-result-object v4
+
+    iget v4, v4, Lie0;->k:I
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setBackgroundColor(I)V
 
@@ -654,11 +674,11 @@
 
     invoke-direct {v4, v5}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    sget v5, Ls9a;->g0:I
+    sget v5, Laea;->i0:I
 
     invoke-virtual {v4, v5}, Landroid/view/View;->setId(I)V
 
-    new-instance v5, Lzq1;
+    new-instance v5, Lfr1;
 
     invoke-virtual {v4}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -666,21 +686,21 @@
 
     const/4 v7, 0x0
 
-    invoke-direct {v5, v6, v7}, Lzq1;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v5, v6, v7}, Lfr1;-><init>(Landroid/content/Context;I)V
 
-    sget v6, Ls9a;->f0:I
+    sget v6, Laea;->h0:I
 
     invoke-virtual {v5, v6}, Landroidx/constraintlayout/widget/ConstraintLayout;->setId(I)V
 
-    sget-object v6, Lxq1;->o:Lxq1;
+    sget-object v6, Ldr1;->o:Ldr1;
 
-    invoke-virtual {v5, v6}, Lzq1;->setMode(Lxq1;)V
+    invoke-virtual {v5, v6}, Lfr1;->setMode(Ldr1;)V
 
     invoke-virtual {v5}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v6
 
-    sget v8, Lv9a;->h0:I
+    sget v8, Ldea;->r0:I
 
     invoke-virtual {v6, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -688,31 +708,31 @@
 
     const/4 v8, 0x0
 
-    invoke-virtual {v5, v8, v6}, Lzq1;->G(Ljava/lang/String;Ljava/lang/CharSequence;)V
+    invoke-virtual {v5, v8, v6}, Lfr1;->G(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    new-instance v6, Lrc1;
+    new-instance v6, Lmc1;
 
-    invoke-direct {v6, v0}, Lrc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;)V
+    invoke-direct {v6, v0}, Lmc1;-><init>(Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;)V
 
-    sget-object v8, Lbh1;->c:Lbh1;
+    sget-object v8, Lxg1;->c:Lxg1;
 
-    iput-object v8, v5, Lzq1;->c1:Lbh1;
+    iput-object v8, v5, Lfr1;->h1:Lxg1;
 
-    iput-object v6, v5, Lzq1;->W0:Lwq1;
+    iput-object v6, v5, Lfr1;->b1:Lcr1;
 
-    invoke-virtual {v2, v5}, Lws9;->g(Landroid/view/View;)Ldea;
+    invoke-virtual {v2, v5}, Lbx9;->q(Landroid/view/View;)Llia;
 
     move-result-object v2
 
-    iget-object v2, v2, Ldea;->c:Loma;
+    iget-object v2, v2, Llia;->c:Lera;
 
-    invoke-virtual {v5, v2}, Lzq1;->setCustomTheme(Loma;)V
+    invoke-virtual {v5, v2}, Lfr1;->setCustomTheme(Lera;)V
 
     invoke-virtual {v4, v5, v3, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
 
     invoke-virtual {v1, v4, v3, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->z0()Landroid/widget/TextView;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0()Landroid/widget/TextView;
 
     move-result-object v2
 
@@ -720,35 +740,35 @@
 
     invoke-virtual {v1, v2, v5, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
 
-    sget-object v2, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->w0:[Lsf7;
+    sget-object v2, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0:[Lxi7;
 
     const/4 v6, 0x1
 
     aget-object v8, v2, v6
 
-    iget-object v8, v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->Y:Lin0;
+    iget-object v8, v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->Y:Lrm0;
 
-    invoke-virtual {v8}, Lin0;->getValue()Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lvqc;
-
-    invoke-virtual {v1, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->y0()Lgla;
+    invoke-virtual {v8}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object v9
 
+    check-cast v9, Lbzc;
+
     invoke-virtual {v1, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->x0()Lvqc;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->z0()Lvpa;
+
+    move-result-object v9
+
+    invoke-virtual {v1, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->y0()Lbzc;
 
     move-result-object v9
 
     invoke-virtual {v1, v9, v5, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0()Lvqc;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->B0()Lbzc;
 
     move-result-object v9
 
@@ -758,9 +778,9 @@
 
     aget-object v10, v2, v9
 
-    iget-object v10, v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->p0:Lin0;
+    iget-object v10, v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->t0:Lrm0;
 
-    invoke-virtual {v10}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {v10}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object v11
 
@@ -768,11 +788,11 @@
 
     invoke-virtual {v1, v11, v3, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
 
-    invoke-static {v1}, Lbp;->m(Landroidx/constraintlayout/widget/ConstraintLayout;)Lwl3;
+    invoke-static {v1}, Ljs9;->d(Landroidx/constraintlayout/widget/ConstraintLayout;)Ldm3;
 
     move-result-object v3
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->z0()Landroid/widget/TextView;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0()Landroid/widget/TextView;
 
     move-result-object v5
 
@@ -782,19 +802,19 @@
 
     const/4 v11, 0x6
 
-    invoke-virtual {v3, v5, v11, v7, v11}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v11, v7, v11}, Ldm3;->d(IIII)V
 
-    new-instance v12, Lj4a;
+    new-instance v12, Ll8a;
 
     const/4 v13, 0x5
 
-    invoke-direct {v12, v3, v11, v5, v13}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v12, v3, v11, v5, v13}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
     const/16 v13, 0x3c
 
     int-to-float v13, v13
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v14
 
@@ -804,23 +824,23 @@
 
     iget v14, v14, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-static {v13, v14, v12}, Lew1;->q(FFLj4a;)V
+    invoke-static {v13, v14, v12}, Lmw1;->q(FFLl8a;)V
 
     const/4 v12, 0x3
 
-    invoke-virtual {v3, v5, v12, v7, v12}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v12, v7, v12}, Ldm3;->d(IIII)V
 
-    new-instance v14, Lj4a;
+    new-instance v14, Ll8a;
 
     const/4 v15, 0x5
 
-    invoke-direct {v14, v3, v12, v5, v15}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v14, v3, v12, v5, v15}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
     const/16 v15, 0x10
 
     int-to-float v15, v15
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v16
 
@@ -832,19 +852,19 @@
 
     iget v9, v9, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-static {v15, v9, v14}, Lew1;->q(FFLj4a;)V
+    invoke-static {v15, v9, v14}, Lmw1;->q(FFLl8a;)V
 
     const/4 v9, 0x7
 
-    invoke-virtual {v3, v5, v9, v7, v9}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v9, v7, v9}, Ldm3;->d(IIII)V
 
-    new-instance v14, Lj4a;
+    new-instance v14, Ll8a;
 
     const/4 v11, 0x5
 
-    invoke-direct {v14, v3, v9, v5, v11}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v14, v3, v9, v5, v11}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v11
 
@@ -856,33 +876,33 @@
 
     mul-float/2addr v13, v11
 
-    invoke-static {v13}, Lg53;->C(F)I
+    invoke-static {v13}, Lya6;->G(F)I
 
     move-result v11
 
-    invoke-virtual {v14, v11}, Lj4a;->e(I)V
+    invoke-virtual {v14, v11}, Ll8a;->e(I)V
 
-    invoke-virtual {v3, v5}, Lwl3;->g(I)Lrl3;
+    invoke-virtual {v3, v5}, Ldm3;->g(I)Lyl3;
 
     move-result-object v5
 
-    iget-object v5, v5, Lrl3;->d:Lsl3;
+    iget-object v5, v5, Lyl3;->d:Lzl3;
 
-    iput-boolean v6, v5, Lsl3;->l0:Z
+    iput-boolean v6, v5, Lzl3;->l0:Z
 
     aget-object v5, v2, v6
 
-    invoke-virtual {v8}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {v8}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object v5
 
-    check-cast v5, Lvqc;
+    check-cast v5, Lbzc;
 
     invoke-virtual {v5}, Landroid/view/View;->getId()I
 
     move-result v5
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->z0()Landroid/widget/TextView;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0()Landroid/widget/TextView;
 
     move-result-object v6
 
@@ -890,9 +910,9 @@
 
     move-result v6
 
-    invoke-virtual {v3, v5, v12, v6, v12}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v12, v6, v12}, Ldm3;->d(IIII)V
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->z0()Landroid/widget/TextView;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0()Landroid/widget/TextView;
 
     move-result-object v6
 
@@ -902,17 +922,17 @@
 
     const/4 v8, 0x4
 
-    invoke-virtual {v3, v5, v8, v6, v8}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v8, v6, v8}, Ldm3;->d(IIII)V
 
-    invoke-virtual {v3, v5, v9, v7, v9}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v9, v7, v9}, Ldm3;->d(IIII)V
 
-    new-instance v6, Lj4a;
+    new-instance v6, Ll8a;
 
     const/4 v11, 0x5
 
-    invoke-direct {v6, v3, v9, v5, v11}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v6, v3, v9, v5, v11}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v5
 
@@ -924,13 +944,13 @@
 
     mul-float/2addr v5, v15
 
-    invoke-static {v5}, Lg53;->C(F)I
+    invoke-static {v5}, Lya6;->G(F)I
 
     move-result v5
 
-    invoke-virtual {v6, v5}, Lj4a;->e(I)V
+    invoke-virtual {v6, v5}, Ll8a;->e(I)V
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->y0()Lgla;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->z0()Lvpa;
 
     move-result-object v5
 
@@ -938,7 +958,7 @@
 
     move-result v5
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->z0()Landroid/widget/TextView;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0()Landroid/widget/TextView;
 
     move-result-object v6
 
@@ -946,17 +966,17 @@
 
     move-result v6
 
-    invoke-virtual {v3, v5, v12, v6, v8}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v12, v6, v8}, Ldm3;->d(IIII)V
 
-    new-instance v6, Lj4a;
+    new-instance v6, Ll8a;
 
-    invoke-direct {v6, v3, v12, v5, v11}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v6, v3, v12, v5, v11}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
     const/16 v11, 0x18
 
     int-to-float v11, v11
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v13
 
@@ -966,17 +986,17 @@
 
     iget v13, v13, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-static {v11, v13, v6}, Lew1;->q(FFLj4a;)V
+    invoke-static {v11, v13, v6}, Lmw1;->q(FFLl8a;)V
 
-    invoke-virtual {v3, v5, v9, v7, v9}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v9, v7, v9}, Ldm3;->d(IIII)V
 
-    new-instance v6, Lj4a;
+    new-instance v6, Ll8a;
 
     const/4 v13, 0x5
 
-    invoke-direct {v6, v3, v9, v5, v13}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v6, v3, v9, v5, v13}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v13
 
@@ -986,19 +1006,19 @@
 
     iget v13, v13, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-static {v15, v13, v6}, Lew1;->q(FFLj4a;)V
+    invoke-static {v15, v13, v6}, Lmw1;->q(FFLl8a;)V
 
     const/4 v6, 0x6
 
-    invoke-virtual {v3, v5, v6, v7, v6}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v6, v7, v6}, Ldm3;->d(IIII)V
 
-    new-instance v13, Lj4a;
+    new-instance v13, Ll8a;
 
     const/4 v14, 0x5
 
-    invoke-direct {v13, v3, v6, v5, v14}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v13, v3, v6, v5, v14}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v6
 
@@ -1010,23 +1030,23 @@
 
     mul-float/2addr v6, v15
 
-    invoke-static {v6}, Lg53;->C(F)I
+    invoke-static {v6}, Lya6;->G(F)I
 
     move-result v6
 
-    invoke-virtual {v13, v6}, Lj4a;->e(I)V
+    invoke-virtual {v13, v6}, Ll8a;->e(I)V
 
     invoke-virtual {v4}, Landroid/view/View;->getId()I
 
     move-result v6
 
-    invoke-virtual {v3, v5, v8, v6, v12}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v8, v6, v12}, Ldm3;->d(IIII)V
 
     invoke-virtual {v4}, Landroid/view/View;->getId()I
 
     move-result v5
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->y0()Lgla;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->z0()Lvpa;
 
     move-result-object v6
 
@@ -1034,15 +1054,15 @@
 
     move-result v6
 
-    invoke-virtual {v3, v5, v12, v6, v8}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v12, v6, v8}, Ldm3;->d(IIII)V
 
-    new-instance v6, Lj4a;
+    new-instance v6, Ll8a;
 
     const/4 v13, 0x5
 
-    invoke-direct {v6, v3, v12, v5, v13}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v6, v3, v12, v5, v13}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v13
 
@@ -1052,17 +1072,17 @@
 
     iget v13, v13, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-static {v11, v13, v6}, Lew1;->q(FFLj4a;)V
+    invoke-static {v11, v13, v6}, Lmw1;->q(FFLl8a;)V
 
-    invoke-virtual {v3, v5, v9, v7, v9}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v9, v7, v9}, Ldm3;->d(IIII)V
 
-    new-instance v6, Lj4a;
+    new-instance v6, Ll8a;
 
     const/4 v13, 0x5
 
-    invoke-direct {v6, v3, v9, v5, v13}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v6, v3, v9, v5, v13}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v13
 
@@ -1072,17 +1092,17 @@
 
     iget v13, v13, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-static {v15, v13, v6}, Lew1;->q(FFLj4a;)V
+    invoke-static {v15, v13, v6}, Lmw1;->q(FFLl8a;)V
 
     const/4 v6, 0x6
 
-    invoke-virtual {v3, v5, v6, v7, v6}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v6, v7, v6}, Ldm3;->d(IIII)V
 
-    new-instance v13, Lj4a;
+    new-instance v13, Ll8a;
 
-    invoke-direct {v13, v3, v6, v5, v14}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v13, v3, v6, v5, v14}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v6
 
@@ -1092,11 +1112,11 @@
 
     iget v6, v6, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-static {v15, v6, v13}, Lew1;->q(FFLj4a;)V
+    invoke-static {v15, v6, v13}, Lmw1;->q(FFLl8a;)V
 
     aget-object v6, v2, p1
 
-    invoke-virtual {v10}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {v10}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object v6
 
@@ -1106,15 +1126,15 @@
 
     move-result v6
 
-    invoke-virtual {v3, v5, v8, v6, v12}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v8, v6, v12}, Ldm3;->d(IIII)V
 
-    new-instance v6, Lj4a;
+    new-instance v6, Ll8a;
 
     const/4 v13, 0x5
 
-    invoke-direct {v6, v3, v8, v5, v13}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v6, v3, v8, v5, v13}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v5
 
@@ -1126,13 +1146,13 @@
 
     mul-float/2addr v5, v15
 
-    invoke-static {v5}, Lg53;->C(F)I
+    invoke-static {v5}, Lya6;->G(F)I
 
     move-result v5
 
-    invoke-virtual {v6, v5}, Lj4a;->e(I)V
+    invoke-virtual {v6, v5}, Ll8a;->e(I)V
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->x0()Lvqc;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->y0()Lbzc;
 
     move-result-object v5
 
@@ -1144,13 +1164,13 @@
 
     move-result v6
 
-    invoke-virtual {v3, v5, v8, v6, v8}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v8, v6, v8}, Ldm3;->d(IIII)V
 
-    new-instance v6, Lj4a;
+    new-instance v6, Ll8a;
 
-    invoke-direct {v6, v3, v8, v5, v13}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v6, v3, v8, v5, v13}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v13
 
@@ -1162,13 +1182,13 @@
 
     mul-float/2addr v11, v13
 
-    invoke-static {v11}, Lg53;->C(F)I
+    invoke-static {v11}, Lya6;->G(F)I
 
     move-result v11
 
-    invoke-virtual {v6, v11}, Lj4a;->e(I)V
+    invoke-virtual {v6, v11}, Ll8a;->e(I)V
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0()Lvqc;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->B0()Lbzc;
 
     move-result-object v6
 
@@ -1178,21 +1198,21 @@
 
     const/4 v11, 0x6
 
-    invoke-virtual {v3, v5, v9, v6, v11}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v9, v6, v11}, Ldm3;->d(IIII)V
 
-    invoke-virtual {v3, v5, v11, v7, v11}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v11, v7, v11}, Ldm3;->d(IIII)V
 
-    invoke-virtual {v3, v5}, Lwl3;->g(I)Lrl3;
+    invoke-virtual {v3, v5}, Ldm3;->g(I)Lyl3;
 
     move-result-object v5
 
-    iget-object v5, v5, Lrl3;->d:Lsl3;
+    iget-object v5, v5, Lyl3;->d:Lzl3;
 
     const/4 v6, 0x2
 
-    iput v6, v5, Lsl3;->V:I
+    iput v6, v5, Lzl3;->V:I
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0()Lvqc;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->B0()Lbzc;
 
     move-result-object v5
 
@@ -1200,7 +1220,7 @@
 
     move-result v5
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->x0()Lvqc;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->y0()Lbzc;
 
     move-result-object v6
 
@@ -1208,9 +1228,9 @@
 
     move-result v6
 
-    invoke-virtual {v3, v5, v8, v6, v8}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v8, v6, v8}, Ldm3;->d(IIII)V
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->x0()Lvqc;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->y0()Lbzc;
 
     move-result-object v6
 
@@ -1218,11 +1238,11 @@
 
     move-result v6
 
-    invoke-virtual {v3, v5, v12, v6, v12}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v12, v6, v12}, Ldm3;->d(IIII)V
 
-    invoke-virtual {v3, v5, v9, v7, v9}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v9, v7, v9}, Ldm3;->d(IIII)V
 
-    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->x0()Lvqc;
+    invoke-virtual {v0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->y0()Lbzc;
 
     move-result-object v0
 
@@ -1232,15 +1252,15 @@
 
     const/4 v6, 0x6
 
-    invoke-virtual {v3, v5, v6, v0, v9}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v5, v6, v0, v9}, Ldm3;->d(IIII)V
 
-    new-instance v0, Lj4a;
+    new-instance v0, Ll8a;
 
     const/4 v11, 0x5
 
-    invoke-direct {v0, v3, v6, v5, v11}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v0, v3, v6, v5, v11}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v5
 
@@ -1250,11 +1270,11 @@
 
     iget v5, v5, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-static {v15, v5, v0}, Lew1;->q(FFLj4a;)V
+    invoke-static {v15, v5, v0}, Lmw1;->q(FFLl8a;)V
 
     aget-object v0, v2, p1
 
-    invoke-virtual {v10}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {v10}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1268,15 +1288,15 @@
 
     move-result v2
 
-    invoke-virtual {v3, v0, v9, v2, v9}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v0, v9, v2, v9}, Ldm3;->d(IIII)V
 
-    new-instance v2, Lj4a;
+    new-instance v2, Ll8a;
 
     const/4 v5, 0x5
 
-    invoke-direct {v2, v3, v9, v0, v5}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v2, v3, v9, v0, v5}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v5
 
@@ -1288,11 +1308,11 @@
 
     mul-float/2addr v5, v15
 
-    invoke-static {v5}, Lg53;->C(F)I
+    invoke-static {v5}, Lya6;->G(F)I
 
     move-result v5
 
-    invoke-virtual {v2, v5}, Lj4a;->e(I)V
+    invoke-virtual {v2, v5}, Ll8a;->e(I)V
 
     invoke-virtual {v4}, Landroid/view/View;->getId()I
 
@@ -1300,15 +1320,15 @@
 
     const/4 v6, 0x6
 
-    invoke-virtual {v3, v0, v6, v2, v6}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v0, v6, v2, v6}, Ldm3;->d(IIII)V
 
-    new-instance v2, Lj4a;
+    new-instance v2, Ll8a;
 
     const/4 v4, 0x5
 
-    invoke-direct {v2, v3, v6, v0, v4}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v2, v3, v6, v0, v4}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v4
 
@@ -1318,17 +1338,17 @@
 
     iget v4, v4, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-static {v15, v4, v2}, Lew1;->q(FFLj4a;)V
+    invoke-static {v15, v4, v2}, Lmw1;->q(FFLl8a;)V
 
-    invoke-virtual {v3, v0, v8, v7, v8}, Lwl3;->d(IIII)V
+    invoke-virtual {v3, v0, v8, v7, v8}, Ldm3;->d(IIII)V
 
-    new-instance v2, Lj4a;
+    new-instance v2, Ll8a;
 
     const/4 v4, 0x5
 
-    invoke-direct {v2, v3, v8, v0, v4}, Lj4a;-><init>(Ljava/lang/Object;III)V
+    invoke-direct {v2, v3, v8, v0, v4}, Ll8a;-><init>(Ljava/lang/Object;III)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -1340,13 +1360,13 @@
 
     mul-float/2addr v15, v0
 
-    invoke-static {v15}, Lg53;->C(F)I
+    invoke-static {v15}, Lya6;->G(F)I
 
     move-result v0
 
-    invoke-virtual {v2, v0}, Lj4a;->e(I)V
+    invoke-virtual {v2, v0}, Ll8a;->e(I)V
 
-    invoke-virtual {v3, v1}, Lwl3;->a(Landroidx/constraintlayout/widget/ConstraintLayout;)V
+    invoke-virtual {v3, v1}, Ldm3;->a(Landroidx/constraintlayout/widget/ConstraintLayout;)V
 
     return-object v1
 .end method
@@ -1354,33 +1374,33 @@
 .method public final onRequestPermissionsResult(I[Ljava/lang/String;[I)V
     .registers 8
 
-    invoke-super {p0, p1, p2, p3}, Lqx3;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
+    invoke-super {p0, p1, p2, p3}, Lxx3;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
 
     const/16 v0, 0x9f
 
     const/4 v1, 0x1
 
-    iget-object v2, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->b:Lbwa;
+    iget-object v2, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->b:Le2b;
 
     if-ne p1, v0, :cond_0
 
-    invoke-virtual {v2}, Lbwa;->a()Lmwa;
+    invoke-virtual {v2}, Le2b;->b()Lp2b;
 
     move-result-object v0
 
-    sget-object v3, Lmwa;->l:[Ljava/lang/String;
+    sget-object v3, Lp2b;->m:[Ljava/lang/String;
 
-    invoke-virtual {v0, v3}, Lmwa;->b([Ljava/lang/String;)Z
+    invoke-virtual {v0, v3}, Lp2b;->b([Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->B0()Lnc1;
+    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->C0()Lic1;
 
     move-result-object p0
 
-    invoke-virtual {p0, v1}, Lnc1;->s(Z)V
+    invoke-virtual {p0, v1}, Lic1;->s(Z)V
 
     return-void
 
@@ -1389,36 +1409,36 @@
 
     if-ne p1, v0, :cond_1
 
-    invoke-virtual {v2}, Lbwa;->a()Lmwa;
+    invoke-virtual {v2}, Le2b;->b()Lp2b;
 
     move-result-object v0
 
-    sget-object v2, Lmwa;->h:[Ljava/lang/String;
+    sget-object v2, Lp2b;->h:[Ljava/lang/String;
 
-    invoke-virtual {v0, v2}, Lmwa;->b([Ljava/lang/String;)Z
+    invoke-virtual {v0, v2}, Lp2b;->b([Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->B0()Lnc1;
+    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->C0()Lic1;
 
     move-result-object p0
 
-    invoke-virtual {p0, v1}, Lnc1;->r(Z)V
+    invoke-virtual {p0, v1}, Lic1;->r(Z)V
 
     return-void
 
     :cond_1
     iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->c:Ljava/lang/Object;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lmh1;
+    check-cast p0, Lih1;
 
-    invoke-virtual {p0, p1, p2, p3}, Lmh1;->b(I[Ljava/lang/String;[I)Z
+    invoke-virtual {p0, p1, p2, p3}, Lih1;->b(I[Ljava/lang/String;[I)Z
 
     return-void
 .end method
@@ -1428,137 +1448,117 @@
 
     invoke-super {p0, p1}, Lone/me/sdk/arch/Widget;->onViewCreated(Landroid/view/View;)V
 
-    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->B0()Lnc1;
+    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->C0()Lic1;
 
     move-result-object p1
 
-    iget-object p1, p1, Lnc1;->v0:Lx65;
+    iget-object p1, p1, Lic1;->z0:Lv85;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleOwner()Lwk7;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lwk7;->L()Lyk7;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleOwner()Lzn7;
 
     move-result-object v0
 
-    sget-object v1, Lzj7;->o:Lzj7;
+    invoke-interface {v0}, Lzn7;->L()Lbo7;
 
-    invoke-static {p1, v0, v1}, Lcjg;->j(Lfq5;Lyk7;Lzj7;)Ljs1;
+    move-result-object v0
+
+    sget-object v1, Lcn7;->o:Lcn7;
+
+    invoke-static {p1, v0, v1}, Lya6;->n(Lis5;Lbo7;Lcn7;)Lps1;
 
     move-result-object p1
 
-    new-instance v0, Lsc1;
+    new-instance v0, Lnc1;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v2, p0}, Lsc1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;)V
+    invoke-direct {v0, v2, p0}, Lnc1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;)V
 
-    new-instance v3, Lks5;
+    new-instance v3, Lnu5;
 
     const/4 v4, 0x1
 
-    invoke-direct {v3, p1, v0, v4}, Lks5;-><init>(Lfq5;Lx96;I)V
+    invoke-direct {v3, p1, v0, v4}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
-
-    move-result-object p1
-
-    invoke-static {v3, p1}, Lfog;->L(Lfq5;Lr04;)Lq1e;
-
-    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->B0()Lnc1;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p1
 
-    iget-object p1, p1, Lnc1;->s0:Ln4e;
+    invoke-static {v3, p1}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleOwner()Lwk7;
+    invoke-virtual {p0}, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->C0()Lic1;
+
+    move-result-object p1
+
+    iget-object p1, p1, Lic1;->w0:Lyce;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleOwner()Lzn7;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lwk7;->L()Lyk7;
+    invoke-interface {v0}, Lzn7;->L()Lbo7;
 
     move-result-object v0
 
-    invoke-static {p1, v0, v1}, Lcjg;->j(Lfq5;Lyk7;Lzj7;)Ljs1;
+    invoke-static {p1, v0, v1}, Lya6;->n(Lis5;Lbo7;Lcn7;)Lps1;
 
     move-result-object p1
 
-    new-instance v0, Ltc1;
+    new-instance v0, Loc1;
 
-    invoke-direct {v0, v2, p0}, Ltc1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;)V
+    invoke-direct {v0, v2, p0}, Loc1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;)V
 
-    new-instance v1, Lks5;
+    new-instance v1, Lnu5;
 
     const/4 v2, 0x1
 
-    invoke-direct {v1, p1, v0, v2}, Lks5;-><init>(Lfq5;Lx96;I)V
+    invoke-direct {v1, p1, v0, v2}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p0
 
-    invoke-static {v1, p0}, Lfog;->L(Lfq5;Lr04;)Lq1e;
+    invoke-static {v1, p0}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
     return-void
 .end method
 
-.method public final x0()Lvqc;
+.method public final y0()Lbzc;
     .registers 3
 
-    sget-object v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->w0:[Lsf7;
+    sget-object v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0:[Lxi7;
 
     const/4 v1, 0x3
 
     aget-object v0, v0, v1
 
-    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->n0:Lin0;
+    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->r0:Lrm0;
 
-    invoke-virtual {p0}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lvqc;
+    check-cast p0, Lbzc;
 
     return-object p0
 .end method
 
-.method public final y0()Lgla;
+.method public final z0()Lvpa;
     .registers 3
 
-    sget-object v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->w0:[Lsf7;
+    sget-object v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->A0:[Lxi7;
 
     const/4 v1, 0x2
 
     aget-object v0, v0, v1
 
-    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->Z:Lin0;
+    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->Z:Lrm0;
 
-    invoke-virtual {p0}, Lin0;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lgla;
-
-    return-object p0
-.end method
-
-.method public final z0()Landroid/widget/TextView;
-    .registers 3
-
-    sget-object v0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->w0:[Lsf7;
-
-    const/4 v1, 0x0
-
-    aget-object v0, v0, v1
-
-    iget-object p0, p0, Lone/me/calls/ui/bottomsheet/previewjoinlink/CallJoinLinkPreviewWidget;->X:Lin0;
-
-    invoke-virtual {p0}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Landroid/widget/TextView;
+    check-cast p0, Lvpa;
 
     return-object p0
 .end method

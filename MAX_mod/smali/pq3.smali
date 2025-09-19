@@ -1,51 +1,27 @@
-.class public final Lpq3;
-.super Lcx3;
+.class public interface abstract Lpq3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Ljava/util/List;
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lrq3;
-
-.field public n0:I
-
-.field public o:Lrq3;
+# static fields
+.field public static final a:Loq3;
 
 
 # direct methods
-.method public constructor <init>(Lrq3;Lcx3;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Lpq3;->Z:Lrq3;
+    sget-object v0, Loq3;->a:Loq3;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    sput-object v0, Lpq3;->a:Loq3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public abstract a()Lrce;
+.end method
 
-    iput-object p1, p0, Lpq3;->Y:Ljava/lang/Object;
-
-    iget p1, p0, Lpq3;->n0:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lpq3;->n0:I
-
-    iget-object p1, p0, Lpq3;->Z:Lrq3;
-
-    invoke-static {p1, p0}, Lrq3;->d(Lrq3;Lcx3;)Ljava/io/Serializable;
-
-    move-result-object p0
-
-    return-object p0
+.method public abstract b()V
 .end method

@@ -4,100 +4,179 @@
 
 
 # instance fields
-.field public a:I
+.field public final a:Lzqe;
 
-.field public b:I
+.field public final b:Lzqe;
 
-.field public c:F
+.field public final c:Ljava/util/ArrayList;
 
-.field public d:F
 
-.field public e:J
+# direct methods
+.method public constructor <init>(Lzqe;Lzqe;Ljava/util/ArrayList;)V
+    .registers 4
 
-.field public f:J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public g:J
+    if-eqz p1, :cond_1
 
-.field public h:F
+    iput-object p1, p0, Lh90;->a:Lzqe;
 
-.field public i:I
+    if-eqz p2, :cond_0
+
+    iput-object p2, p0, Lh90;->b:Lzqe;
+
+    iput-object p3, p0, Lh90;->c:Ljava/util/ArrayList;
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "Null secondarySurfaceEdge"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string p1, "Null primarySurfaceEdge"
+
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
 
 
 # virtual methods
-.method public final a(J)F
-    .registers 11
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    iget-wide v0, p0, Lh90;->e:J
-
-    cmp-long v2, p1, v0
-
-    const/4 v3, 0x0
-
-    if-gez v2, :cond_0
-
-    return v3
-
-    :cond_0
-    iget-wide v4, p0, Lh90;->g:J
-
-    const-wide/16 v6, 0x0
-
-    cmp-long v2, v4, v6
-
-    const/high16 v6, 0x3f800000    # 1.0f
-
-    if-ltz v2, :cond_2
-
-    cmp-long v2, p1, v4
-
-    if-gez v2, :cond_1
+    if-ne p1, p0, :cond_0
 
     goto :goto_0
 
-    :cond_1
-    sub-long/2addr p1, v4
+    :cond_0
+    instance-of v0, p1, Lh90;
 
-    iget v0, p0, Lh90;->h:F
+    if-eqz v0, :cond_1
 
-    sub-float v1, v6, v0
+    check-cast p1, Lh90;
 
-    long-to-float p1, p1
+    iget-object v0, p0, Lh90;->a:Lzqe;
 
-    iget p0, p0, Lh90;->i:I
+    iget-object v1, p1, Lh90;->a:Lzqe;
 
-    int-to-float p0, p0
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    div-float/2addr p1, p0
+    move-result v0
 
-    invoke-static {p1, v3, v6}, Lzp7;->b(FFF)F
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lh90;->b:Lzqe;
+
+    iget-object v1, p1, Lh90;->b:Lzqe;
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object p0, p0, Lh90;->c:Ljava/util/ArrayList;
+
+    iget-object p1, p1, Lh90;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    mul-float/2addr p0, v0
+    if-eqz p0, :cond_1
 
-    add-float/2addr p0, v1
-
-    return p0
-
-    :cond_2
     :goto_0
-    sub-long/2addr p1, v0
+    const/4 p0, 0x1
 
-    long-to-float p1, p1
+    return p0
 
-    iget p0, p0, Lh90;->a:I
+    :cond_1
+    const/4 p0, 0x0
 
-    int-to-float p0, p0
+    return p0
+.end method
 
-    div-float/2addr p1, p0
+.method public final hashCode()I
+    .registers 4
 
-    invoke-static {p1, v3, v6}, Lzp7;->b(FFF)F
+    iget-object v0, p0, Lh90;->a:Lzqe;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const v1, 0xf4243
+
+    xor-int/2addr v0, v1
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lh90;->b:Lzqe;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object p0, p0, Lh90;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->hashCode()I
 
     move-result p0
 
-    const/high16 p1, 0x3f000000    # 0.5f
-
-    mul-float/2addr p0, p1
+    xor-int/2addr p0, v0
 
     return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "In{primarySurfaceEdge="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lh90;->a:Lzqe;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", secondarySurfaceEdge="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lh90;->b:Lzqe;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", outConfigs="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lh90;->c:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

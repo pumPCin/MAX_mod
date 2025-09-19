@@ -1,394 +1,137 @@
-.class public abstract Lubd;
+.class public final Lubd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lvbd;
+
 
 # instance fields
-.field public a:Lvbd;
+.field public final a:[Ljava/lang/String;
 
+.field public final b:Lza2;
 
-# virtual methods
-.method public final a()Lik;
-    .registers 1
+.field public final c:Lzbd;
 
-    iget-object p0, p0, Lubd;->a:Lvbd;
 
-    if-eqz p0, :cond_0
+# direct methods
+.method public constructor <init>([Ljava/lang/String;Lza2;Lzbd;)V
+    .registers 4
 
-    goto :goto_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    :cond_0
-    const/4 p0, 0x0
+    iput-object p1, p0, Lubd;->a:[Ljava/lang/String;
 
-    :goto_0
-    iget-object p0, p0, Lvbd;->o:Lxh7;
+    iput-object p2, p0, Lubd;->b:Lza2;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lik;
-
-    return-object p0
-.end method
-
-.method public final b()Leb2;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->k:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Leb2;
-
-    return-object p0
-.end method
-
-.method public final g()Lvd2;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->s:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lvd2;
-
-    return-object p0
-.end method
-
-.method public final h()Leb2;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->k:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Leb2;
-
-    return-object p0
-.end method
-
-.method public final i()Lc53;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->f:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lc53;
-
-    return-object p0
-.end method
-
-.method public j(Ldda;Lmm4;)Ljava/util/concurrent/ExecutorService;
-    .registers 3
-
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final k()Lov7;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->E:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lov7;
-
-    return-object p0
-.end method
-
-.method public final l()Lwv7;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->x:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lwv7;
-
-    return-object p0
-.end method
-
-.method public final m()Ltw8;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->n:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ltw8;
-
-    return-object p0
-.end method
-
-.method public final n()Ltw8;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->n:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ltw8;
-
-    return-object p0
-.end method
-
-.method public final o()Lt9b;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->e:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lt9b;
-
-    return-object p0
-.end method
-
-.method public final p()Ltoe;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->v:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ltoe;
-
-    return-object p0
-.end method
-
-.method public final q()Lpre;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->l:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lpre;
-
-    return-object p0
-.end method
-
-.method public final r()Lpre;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->l:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lpre;
-
-    return-object p0
-.end method
-
-.method public final s()Lrv0;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->c:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lrv0;
-
-    return-object p0
-.end method
-
-.method public final t()Llmg;
-    .registers 1
-
-    iget-object p0, p0, Lubd;->a:Lvbd;
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    iget-object p0, p0, Lvbd;->g:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Llmg;
-
-    return-object p0
-.end method
-
-.method public u()Z
-    .registers 1
-
-    instance-of p0, p0, Ledd;
-
-    return p0
-.end method
-
-.method public v()V
-    .registers 1
+    iput-object p3, p0, Lubd;->c:Lzbd;
 
     return-void
 .end method
 
-.method public abstract w()V
+
+# virtual methods
+.method public final a(Ljava/lang/String;)Ljava/util/List;
+    .registers 9
+
+    iget-object v0, p0, Lubd;->c:Lzbd;
+
+    iget-object v1, p0, Lubd;->b:Lza2;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v2, Lja2;
+
+    const/4 v3, 0x2
+
+    invoke-direct {v2, v1, v3}, Lja2;-><init>(Lza2;I)V
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v3, v2}, Lza2;->d0(Ljava/lang/String;Lzpe;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ls72;
+
+    sget-object v2, Lp45;->a:Lp45;
+
+    if-nez v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    :try_start_0
+    invoke-virtual {v0, v1, p1}, Lzbd;->f(Ls72;Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v0, v1, p1}, Lzbd;->a(Ls72;Ljava/lang/String;)Libd;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_2
+
+    :cond_1
+    iget-object p0, p0, Lubd;->a:[Ljava/lang/String;
+
+    array-length v3, p0
+
+    const/4 v4, 0x0
+
+    :goto_0
+    if-ge v4, v3, :cond_3
+
+    aget-object v5, p0, v4
+
+    invoke-virtual {v0, v5, p1}, Lzbd;->h(Ljava/lang/String;Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
+
+    invoke-virtual {v0, v1, v5}, Lzbd;->a(Ls72;Ljava/lang/String;)Libd;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-object p0
+
+    :cond_2
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    :goto_1
+    return-object v2
+
+    :goto_2
+    const-class p1, Lubd;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "fail to search saved messages chat"
+
+    invoke-static {p1, v0, p0}, Ljtg;->Q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-object v2
 .end method

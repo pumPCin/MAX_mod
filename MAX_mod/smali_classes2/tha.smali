@@ -1,68 +1,120 @@
 .class public final Ltha;
-.super Ldn;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lxue;
+.implements Lpc6;
+
+
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Laia;
+
+.field public final synthetic Z:Ljava/nio/file/Path;
+
+
+# direct methods
+.method public constructor <init>(Laia;Ljava/nio/file/Path;Lkotlin/coroutines/Continuation;)V
+    .registers 4
+
+    iput-object p1, p0, Ltha;->Y:Laia;
+
+    iput-object p2, p0, Ltha;->Z:Ljava/nio/file/Path;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final b(ZLoma;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    if-eqz p1, :cond_0
+    check-cast p1, Ly04;
 
-    invoke-interface {p2}, Loma;->getIcon()Lpv6;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    move-result-object p1
+    invoke-virtual {p0, p1, p2}, Ltha;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    iget p1, p1, Lpv6;->k:I
+    move-result-object p0
+
+    check-cast p0, Ltha;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Ltha;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance p1, Ltha;
+
+    iget-object v0, p0, Ltha;->Y:Laia;
+
+    iget-object p0, p0, Ltha;->Z:Ljava/nio/file/Path;
+
+    invoke-direct {p1, v0, p0, p2}, Ltha;-><init>(Laia;Ljava/nio/file/Path;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    iget v0, p0, Ltha;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {p2}, Loma;->i()Lbee;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    move-result-object p1
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    iget-object p1, p1, Lbee;->b:Lgee;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    iget p1, p1, Lgee;->b:I
+    throw p0
 
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ltha;->Z:Ljava/nio/file/Path;
+
+    iget-object v0, p0, Ltha;->Y:Laia;
+
+    invoke-static {v0, p1}, Laia;->c(Laia;Ljava/nio/file/Path;)V
+
+    iput v1, p0, Ltha;->X:I
+
+    invoke-static {v0, p0}, Laia;->a(Laia;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
     :goto_0
-    invoke-static {p1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
+    sget-object p0, Lylf;->a:Lylf;
 
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Landroid/widget/CompoundButton;->setButtonTintList(Landroid/content/res/ColorStateList;)V
-
-    return-void
-.end method
-
-.method public final onThemeChanged(Loma;)V
-    .registers 3
-
-    invoke-virtual {p0}, Landroid/widget/CompoundButton;->isChecked()Z
-
-    move-result v0
-
-    invoke-virtual {p0, v0, p1}, Ltha;->b(ZLoma;)V
-
-    return-void
-.end method
-
-.method public setChecked(Z)V
-    .registers 3
-
-    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->setChecked(Z)V
-
-    sget-object v0, Lct4;->p0:Lws9;
-
-    invoke-virtual {v0, p0}, Lws9;->e(Landroid/view/View;)Loma;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p1, v0}, Ltha;->b(ZLoma;)V
-
-    return-void
+    return-object p0
 .end method

@@ -1,165 +1,148 @@
 .class public final Lcu;
-.super Lni0;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/nio/channels/CompletionHandler;
+
+
+# static fields
+.field public static final b:Lcu;
+
+.field public static final c:Lcu;
 
 
 # instance fields
-.field public final X:[J
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(IJ[J)V
-    .registers 5
+.method static synthetic constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0, p2, p3, p1}, Lni0;-><init>(JI)V
+    new-instance v0, Lcu;
 
-    iput-object p4, p0, Lcu;->X:[J
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcu;-><init>(I)V
+
+    sput-object v0, Lcu;->b:Lcu;
+
+    new-instance v0, Lcu;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lcu;-><init>(I)V
+
+    sput-object v0, Lcu;->c:Lcu;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(I)V
+    .registers 2
+
+    iput p1, p0, Lcu;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e()[B
-    .registers 4
+.method public final completed(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 3
 
-    new-instance v0, Lru/ok/tamtam/nano/Tasks$AssetsRemove;
+    iget p0, p0, Lcu;->a:I
 
-    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$AssetsRemove;-><init>()V
+    packed-switch p0, :pswitch_data_0
 
-    iget v1, p0, Lni0;->o:I
+    check-cast p1, Ljava/lang/Void;
 
-    invoke-static {v1}, Lru/ok/tamtam/nano/b;->p(I)I
+    check-cast p2, Le12;
 
-    move-result v1
+    sget-object p0, Lylf;->a:Lylf;
 
-    iput v1, v0, Lru/ok/tamtam/nano/Tasks$AssetsRemove;->assetType:I
+    invoke-interface {p2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    iget-object v1, p0, Lcu;->X:[J
+    return-void
 
-    iput-object v1, v0, Lru/ok/tamtam/nano/Tasks$AssetsRemove;->ids:[J
+    :pswitch_0
+    check-cast p2, Le12;
 
-    iget-wide v1, p0, Lhl;->a:J
+    invoke-interface {p2, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$AssetsRemove;->requestId:J
+    return-void
 
-    invoke-static {v0}, Lkz8;->toByteArray(Lkz8;)[B
+    nop
 
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final getType()Lrwa;
-    .registers 1
+.method public final failed(Ljava/lang/Throwable;Ljava/lang/Object;)V
+    .registers 3
 
-    sget-object p0, Lrwa;->O0:Lrwa;
+    iget p0, p0, Lcu;->a:I
 
-    return-object p0
-.end method
+    packed-switch p0, :pswitch_data_0
 
-.method public final h()Lpoe;
-    .registers 4
+    check-cast p2, Le12;
 
-    new-instance v0, Lpt;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x5
-
-    invoke-direct {v0, v1, v2}, Lpt;-><init>(Lcoa;I)V
-
-    iget v1, p0, Lni0;->o:I
-
-    if-eqz v1, :cond_1
-
-    iget-object p0, p0, Lcu;->X:[J
+    instance-of p0, p1, Ljava/nio/channels/AsynchronousCloseException;
 
     if-eqz p0, :cond_0
 
-    array-length v2, p0
+    invoke-interface {p2}, Le12;->isCancelled()Z
 
-    if-eqz v2, :cond_0
+    move-result p0
 
-    const-string v2, "type"
+    if-eqz p0, :cond_0
 
-    invoke-static {v1}, Lew1;->d(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v2, v1}, Lpoe;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v1, "ids"
-
-    invoke-virtual {v0, v1, p0}, Lpoe;->h(Ljava/lang/String;[J)V
-
-    return-object v0
+    goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    new-instance p0, Lhvc;
 
-    const-string v0, "ids must not be null or empty"
+    invoke-direct {p0, p1}, Lhvc;-><init>(Ljava/lang/Throwable;)V
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-interface {p2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    throw p0
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string v0, "type must not be null"
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final t(Lsoe;)V
-    .registers 6
-
-    check-cast p1, Ldu;
-
-    iget-boolean v0, p1, Ldu;->c:Z
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
-    iget-wide v2, p1, Ldu;->o:J
-
-    invoke-virtual {p0, v2, v3}, Lni0;->u(J)V
-
-    iget-object p1, p0, Lhl;->c:Lil;
-
-    if-eqz p1, :cond_0
-
-    move-object v1, p1
-
-    :cond_0
-    invoke-virtual {v1}, Lil;->b()Lrv0;
-
-    move-result-object p1
-
-    new-instance v0, Leu;
-
-    iget-wide v1, p0, Lhl;->a:J
-
-    invoke-direct {v0, v1, v2}, Lij0;-><init>(J)V
-
-    invoke-virtual {p1, v0}, Lrv0;->c(Ljava/lang/Object;)V
-
+    :goto_0
     return-void
 
+    :pswitch_0
+    check-cast p2, Le12;
+
+    instance-of p0, p1, Ljava/nio/channels/AsynchronousCloseException;
+
+    if-eqz p0, :cond_1
+
+    invoke-interface {p2}, Le12;->isCancelled()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    goto :goto_1
+
     :cond_1
-    new-instance p1, Ldoe;
+    new-instance p0, Lhvc;
 
-    const-string v0, "asset.task.failed"
+    invoke-direct {p0, p1}, Lhvc;-><init>(Ljava/lang/Throwable;)V
 
-    const-string v2, "failed to remove asset"
+    invoke-interface {p2, p0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    invoke-direct {p1, v0, v2, v1}, Ldoe;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p0, p1}, Lni0;->i(Ldoe;)V
-
+    :goto_1
     return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

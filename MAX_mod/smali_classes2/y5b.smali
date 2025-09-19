@@ -1,118 +1,87 @@
 .class public final Ly5b;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lz5b;
 
 
 # instance fields
-.field public final synthetic X:Ltj4;
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Ltj4;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(J)V
     .registers 3
 
-    iput-object p1, p0, Ly5b;->X:Ltj4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-wide p1, p0, Ly5b;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 7
 
-    check-cast p1, Lhq5;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Ly5b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    return v0
 
-    move-result-object p0
-
-    check-cast p0, Ly5b;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Ly5b;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Ly5b;
-
-    iget-object p0, p0, Ly5b;->X:Ltj4;
-
-    invoke-direct {p1, p0, p2}, Ly5b;-><init>(Ltj4;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Ly5b;->X:Ltj4;
-
-    iget-object p0, p0, Ltj4;->a:Ljava/lang/Object;
-
-    check-cast p0, Lq50;
-
-    iget-object p1, p0, Lq50;->c:Lnj9;
-
-    iget-object v0, p0, Lq50;->o0:Lgng;
-
-    check-cast p1, Ldk9;
-
-    invoke-virtual {p1, v0}, Ldk9;->e(Llj9;)V
-
-    iget-object p1, p0, Lq50;->o:Lr04;
-
-    invoke-interface {p1}, Lr04;->getCoroutineContext()Lj04;
-
-    move-result-object v0
-
-    invoke-static {v0}, Looa;->n(Lj04;)Llb7;
-
-    move-result-object v0
-
-    new-instance v1, Lk;
-
-    const/16 v2, 0xc
-
-    invoke-direct {v1, v2, p0}, Lk;-><init>(ILjava/lang/Object;)V
-
-    invoke-interface {v0, v1}, Llb7;->invokeOnCompletion(Lj96;)Lqp4;
-
-    iget-object v0, p0, Lq50;->a:Lzne;
-
-    check-cast v0, Ltba;
-
-    invoke-virtual {v0}, Ltba;->a()Ll04;
-
-    move-result-object v0
-
-    new-instance v1, Lo50;
+    :cond_0
+    instance-of v1, p1, Ly5b;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Lo50;-><init>(Lq50;Lkotlin/coroutines/Continuation;)V
+    if-nez v1, :cond_1
 
-    const/4 p0, 0x2
+    return v2
 
-    invoke-static {p1, v0, v2, v1, p0}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    :cond_1
+    check-cast p1, Ly5b;
 
-    sget-object p0, Lncf;->a:Lncf;
+    iget-wide v3, p0, Ly5b;->a:J
+
+    iget-wide p0, p1, Ly5b;->a:J
+
+    cmp-long p0, v3, p0
+
+    if-eqz p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    iget-wide v0, p0, Ly5b;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 5
+
+    const-string v0, "Success(requestId="
+
+    const-string v1, ")"
+
+    iget-wide v2, p0, Ly5b;->a:J
+
+    invoke-static {v2, v3, v0, v1}, Lwsf;->e(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

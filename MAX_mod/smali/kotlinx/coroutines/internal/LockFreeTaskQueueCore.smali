@@ -63,7 +63,7 @@
         "transform",
         "",
         "map",
-        "(Lj96;)Ljava/util/List;",
+        "(Lbc6;)Ljava/util/List;",
         "isClosed",
         "I",
         "Z",
@@ -154,7 +154,7 @@
 
     const/4 v1, 0x0
 
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;-><init>(Lwc4;)V
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;-><init>(Lld4;)V
 
     sput-object v0, Lkotlinx/coroutines/internal/LockFreeTaskQueueCore;->Companion:Lkotlinx/coroutines/internal/LockFreeTaskQueueCore$Companion;
 
@@ -476,14 +476,14 @@
     return-object v0
 .end method
 
-.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lj96;)V
+.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lbc6;)V
     .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
-            "Lj96;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
@@ -497,19 +497,19 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
 
-.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lj96;)V
+.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lbc6;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
-            "Lj96;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
@@ -519,7 +519,7 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
@@ -663,14 +663,14 @@
     return-void
 .end method
 
-.method private final synthetic update$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lj96;)V
+.method private final synthetic update$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lbc6;)V
     .registers 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
-            "Lj96;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
@@ -684,7 +684,7 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -714,14 +714,14 @@
     goto :goto_0
 .end method
 
-.method private final synthetic updateAndGet$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lj96;)J
+.method private final synthetic updateAndGet$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;Lbc6;)J
     .registers 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
-            "Lj96;",
+            "Lbc6;",
             ")J"
         }
     .end annotation
@@ -735,7 +735,7 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -1111,14 +1111,14 @@
     return p0
 .end method
 
-.method public final map(Lj96;)Ljava/util/List;
+.method public final map(Lbc6;)Ljava/util/List;
     .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
             "Ljava/lang/Object;",
             ">(",
-            "Lj96;",
+            "Lbc6;",
             ")",
             "Ljava/util/List<",
             "TR;>;"
@@ -1182,7 +1182,7 @@
 
     if-nez v4, :cond_0
 
-    invoke-interface {p1, v2}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v2}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 

@@ -1,108 +1,91 @@
-.class public final synthetic Lxja;
+.class public abstract Lxja;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final synthetic a:I
+.field public static final b:I
 
-.field public final synthetic b:Lyja;
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lyja;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p2, p0, Lxja;->a:I
+    sget v0, Ln6c;->media_editor_bottom_background_id:I
 
-    iput-object p1, p0, Lxja;->b:Lyja;
+    sput v0, Lxja;->a:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Ln6c;->media_editor_close_id:I
+
+    sput v0, Lxja;->b:I
+
+    sget v0, Ln6c;->media_editor_content_id:I
+
+    sput v0, Lxja;->c:I
+
+    sget v0, Ln6c;->media_editor_crop_id:I
+
+    sput v0, Lxja;->d:I
+
+    sget v0, Ln6c;->media_editor_done_id:I
+
+    sput v0, Lxja;->e:I
+
+    sget v0, Ln6c;->media_editor_flip_horizontally_id:I
+
+    sput v0, Lxja;->f:I
+
+    sget v0, Ln6c;->media_editor_reset_id:I
+
+    sput v0, Lxja;->g:I
+
+    sget v0, Ln6c;->media_editor_rotate_id:I
+
+    sput v0, Lxja;->h:I
+
+    sget v0, Ln6c;->media_picker_album_container_id:I
+
+    sput v0, Lxja;->i:I
+
+    sget v0, Ln6c;->media_picker_container_id:I
+
+    sput v0, Lxja;->j:I
+
+    sget v0, Ln6c;->media_picker_content_id:I
+
+    sput v0, Lxja;->k:I
+
+    sget v0, Ln6c;->media_picker_divider_id:I
+
+    sput v0, Lxja;->l:I
+
+    sget v0, Ln6c;->media_picker_toolbar_id:I
+
+    sput v0, Lxja;->m:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .registers 4
-
-    iget v0, p0, Lxja;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lxja;->b:Lyja;
-
-    iget-object v0, p0, Lyja;->w0:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Liq;
-
-    iget-object v2, p0, Lyja;->c:Lpwd;
-
-    iget v2, v2, Lpwd;->d:F
-
-    invoke-virtual {v1, v2}, Liq;->a(F)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lxja;->b:Lyja;
-
-    iget-object v0, p0, Lyja;->w0:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Liq;
-
-    iget-object v2, p0, Lyja;->c:Lpwd;
-
-    iget v2, v2, Lpwd;->d:F
-
-    invoke-virtual {v1, v2}, Liq;->a(F)V
-
-    goto :goto_1
-
-    :cond_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

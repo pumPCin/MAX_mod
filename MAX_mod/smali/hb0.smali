@@ -4,324 +4,257 @@
 
 
 # instance fields
-.field public a:I
+.field public final a:Landroid/graphics/Rect;
 
-.field public b:Ljava/lang/Object;
+.field public final b:I
 
-.field public c:Ljava/lang/Object;
+.field public final c:I
 
-.field public d:Ljava/lang/Object;
+.field public final d:Z
 
-.field public e:Ljava/lang/Object;
+.field public final e:Landroid/graphics/Matrix;
 
-.field public f:Ljava/lang/Object;
-
-.field public g:Ljava/lang/Object;
+.field public final f:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lhz3;Lklc;)V
-    .registers 4
+.method public constructor <init>(Landroid/graphics/Rect;IIZLandroid/graphics/Matrix;Z)V
+    .registers 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    if-eqz p1, :cond_1
 
-    move-result-object p1
+    iput-object p1, p0, Lhb0;->a:Landroid/graphics/Rect;
 
-    iput-object p1, p0, Lhb0;->b:Ljava/lang/Object;
+    iput p2, p0, Lhb0;->b:I
 
-    iput-object p2, p0, Lhb0;->c:Ljava/lang/Object;
+    iput p3, p0, Lhb0;->c:I
 
-    iput-object p3, p0, Lhb0;->d:Ljava/lang/Object;
+    iput-boolean p4, p0, Lhb0;->d:Z
 
-    const/4 p1, 0x0
+    if-eqz p5, :cond_0
 
-    invoke-static {p1}, Laif;->o(Lze3;)Landroid/os/Handler;
+    iput-object p5, p0, Lhb0;->e:Landroid/graphics/Matrix;
 
-    move-result-object p1
-
-    iput-object p1, p0, Lhb0;->e:Ljava/lang/Object;
+    iput-boolean p6, p0, Lhb0;->f:Z
 
     return-void
-.end method
-
-
-# virtual methods
-.method public a()Lib0;
-    .registers 13
-
-    iget v0, p0, Lhb0;->a:I
-
-    if-nez v0, :cond_0
-
-    const-string v0, " registrationStatus"
-
-    goto :goto_0
 
     :cond_0
-    const-string v0, ""
+    new-instance p0, Ljava/lang/NullPointerException;
 
-    :goto_0
-    iget-object v1, p0, Lhb0;->f:Ljava/lang/Object;
+    const-string p1, "Null getSensorToBufferTransform"
 
-    check-cast v1, Ljava/lang/Long;
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    if-nez v1, :cond_1
-
-    const-string v1, " expiresInSecs"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
+    throw p0
 
     :cond_1
-    iget-object v1, p0, Lhb0;->g:Ljava/lang/Object;
+    new-instance p0, Ljava/lang/NullPointerException;
 
-    check-cast v1, Ljava/lang/Long;
+    const-string p1, "Null getCropRect"
 
-    if-nez v1, :cond_2
-
-    const-string v1, " tokenCreationEpochInSecs"
-
-    invoke-static {v0, v1}, Lew1;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_2
-    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    new-instance v2, Lib0;
-
-    iget-object v0, p0, Lhb0;->b:Ljava/lang/Object;
-
-    move-object v8, v0
-
-    check-cast v8, Ljava/lang/String;
-
-    iget v3, p0, Lhb0;->a:I
-
-    iget-object v0, p0, Lhb0;->c:Ljava/lang/Object;
-
-    move-object v9, v0
-
-    check-cast v9, Ljava/lang/String;
-
-    iget-object v0, p0, Lhb0;->d:Ljava/lang/Object;
-
-    move-object v10, v0
-
-    check-cast v10, Ljava/lang/String;
-
-    iget-object v0, p0, Lhb0;->f:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    iget-object v0, p0, Lhb0;->g:Ljava/lang/Object;
-
-    check-cast v0, Ljava/lang/Long;
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v6
-
-    iget-object p0, p0, Lhb0;->e:Ljava/lang/Object;
-
-    move-object v11, p0
-
-    check-cast v11, Ljava/lang/String;
-
-    invoke-direct/range {v2 .. v11}, Lib0;-><init>(IJJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object v2
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string v1, "Missing required properties:"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
 
-.method public b()V
-    .registers 3
 
-    iget-object v0, p0, Lhb0;->d:Ljava/lang/Object;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    check-cast v0, Lklc;
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lhb0;->b:Ljava/lang/Object;
+    if-ne p1, p0, :cond_0
 
-    check-cast v1, Landroid/content/Context;
+    return v0
 
-    invoke-virtual {v0, v1}, Lklc;->a(Landroid/content/Context;)I
+    :cond_0
+    instance-of v1, p1, Lhb0;
+
+    const/4 v2, 0x0
+
+    if-eqz v1, :cond_1
+
+    check-cast p1, Lhb0;
+
+    iget-object v1, p0, Lhb0;->a:Landroid/graphics/Rect;
+
+    iget-object v3, p1, Lhb0;->a:Landroid/graphics/Rect;
+
+    invoke-virtual {v1, v3}, Landroid/graphics/Rect;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget v1, p0, Lhb0;->b:I
+
+    iget v3, p1, Lhb0;->b:I
+
+    if-ne v1, v3, :cond_1
+
+    iget v1, p0, Lhb0;->c:I
+
+    iget v3, p1, Lhb0;->c:I
+
+    if-ne v1, v3, :cond_1
+
+    iget-boolean v1, p0, Lhb0;->d:Z
+
+    iget-boolean v3, p1, Lhb0;->d:Z
+
+    if-ne v1, v3, :cond_1
+
+    iget-object v1, p0, Lhb0;->e:Landroid/graphics/Matrix;
+
+    iget-object v3, p1, Lhb0;->e:Landroid/graphics/Matrix;
+
+    invoke-virtual {v1, v3}, Landroid/graphics/Matrix;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    iget-boolean p0, p0, Lhb0;->f:Z
+
+    iget-boolean p1, p1, Lhb0;->f:Z
+
+    if-ne p0, p1, :cond_1
+
+    return v0
+
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .registers 6
+
+    iget-object v0, p0, Lhb0;->a:Landroid/graphics/Rect;
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->hashCode()I
 
     move-result v0
 
-    iget v1, p0, Lhb0;->a:I
+    const v1, 0xf4243
 
-    if-eq v1, v0, :cond_0
+    xor-int/2addr v0, v1
 
-    iput v0, p0, Lhb0;->a:I
+    mul-int/2addr v0, v1
 
-    iget-object v1, p0, Lhb0;->c:Ljava/lang/Object;
+    iget v2, p0, Lhb0;->b:I
 
-    check-cast v1, Lhz3;
+    xor-int/2addr v0, v2
 
-    iget-object v1, v1, Lhz3;->b:Ljava/lang/Object;
+    mul-int/2addr v0, v1
 
-    check-cast v1, Lgs4;
+    iget v2, p0, Lhb0;->c:I
 
-    invoke-virtual {v1, p0, v0}, Lgs4;->b(Lhb0;I)V
+    xor-int/2addr v0, v2
 
-    :cond_0
-    return-void
-.end method
+    mul-int/2addr v0, v1
 
-.method public c()I
-    .registers 6
+    iget-boolean v2, p0, Lhb0;->d:Z
 
-    iget-object v0, p0, Lhb0;->d:Ljava/lang/Object;
+    const/16 v3, 0x4d5
 
-    check-cast v0, Lklc;
+    const/16 v4, 0x4cf
 
-    iget-object v1, p0, Lhb0;->b:Ljava/lang/Object;
+    if-eqz v2, :cond_0
 
-    check-cast v1, Landroid/content/Context;
-
-    invoke-virtual {v0, v1}, Lklc;->a(Landroid/content/Context;)I
-
-    move-result v2
-
-    iput v2, p0, Lhb0;->a:I
-
-    new-instance v2, Landroid/content/IntentFilter;
-
-    invoke-direct {v2}, Landroid/content/IntentFilter;-><init>()V
-
-    iget v0, v0, Lklc;->a:I
-
-    and-int/lit8 v3, v0, 0x1
-
-    if-eqz v3, :cond_1
-
-    sget v3, Laif;->a:I
-
-    const/16 v4, 0x18
-
-    if-lt v3, v4, :cond_0
-
-    const-string v3, "connectivity"
-
-    invoke-virtual {v1, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/net/ConnectivityManager;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v4, Lmlc;
-
-    invoke-direct {v4, p0}, Lmlc;-><init>(Lhb0;)V
-
-    iput-object v4, p0, Lhb0;->g:Ljava/lang/Object;
-
-    invoke-virtual {v3, v4}, Landroid/net/ConnectivityManager;->registerDefaultNetworkCallback(Landroid/net/ConnectivityManager$NetworkCallback;)V
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
-    const-string v3, "android.net.conn.CONNECTIVITY_CHANGE"
+    move v2, v3
 
-    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    :goto_0
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lhb0;->e:Landroid/graphics/Matrix;
+
+    invoke-virtual {v2}, Landroid/graphics/Matrix;->hashCode()I
+
+    move-result v2
+
+    xor-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget-boolean p0, p0, Lhb0;->f:Z
+
+    if-eqz p0, :cond_1
+
+    move v3, v4
 
     :cond_1
-    :goto_0
-    and-int/lit8 v3, v0, 0x8
-
-    if-eqz v3, :cond_2
-
-    const-string v3, "android.intent.action.ACTION_POWER_CONNECTED"
-
-    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string v3, "android.intent.action.ACTION_POWER_DISCONNECTED"
-
-    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    :cond_2
-    and-int/lit8 v3, v0, 0x4
-
-    if-eqz v3, :cond_4
-
-    sget v3, Laif;->a:I
-
-    const/16 v4, 0x17
-
-    if-lt v3, v4, :cond_3
-
-    const-string v3, "android.os.action.DEVICE_IDLE_MODE_CHANGED"
-
-    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    goto :goto_1
-
-    :cond_3
-    const-string v3, "android.intent.action.SCREEN_ON"
-
-    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string v3, "android.intent.action.SCREEN_OFF"
-
-    invoke-virtual {v2, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    :cond_4
-    :goto_1
-    and-int/lit8 v0, v0, 0x10
-
-    if-eqz v0, :cond_5
-
-    const-string v0, "android.intent.action.DEVICE_STORAGE_LOW"
-
-    invoke-virtual {v2, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    const-string v0, "android.intent.action.DEVICE_STORAGE_OK"
-
-    invoke-virtual {v2, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    :cond_5
-    new-instance v0, Lsm;
-
-    const/16 v3, 0xb
-
-    invoke-direct {v0, v3, p0}, Lsm;-><init>(ILjava/lang/Object;)V
-
-    iput-object v0, p0, Lhb0;->f:Ljava/lang/Object;
-
-    iget-object v3, p0, Lhb0;->e:Ljava/lang/Object;
-
-    check-cast v3, Landroid/os/Handler;
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v0, v2, v4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
-
-    iget p0, p0, Lhb0;->a:I
+    xor-int p0, v0, v3
 
     return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "TransformationInfo{getCropRect="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lhb0;->a:Landroid/graphics/Rect;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", getRotationDegrees="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lhb0;->b:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", getTargetRotation="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lhb0;->c:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", hasCameraTransform="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lhb0;->d:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", getSensorToBufferTransform="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lhb0;->e:Landroid/graphics/Matrix;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isMirroring="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lhb0;->f:Z
+
+    const-string v1, "}"
+
+    invoke-static {v0, p0, v1}, Lmw1;->k(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

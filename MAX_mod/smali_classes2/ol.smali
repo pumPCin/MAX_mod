@@ -1,111 +1,85 @@
-.class public final Lol;
-.super Landroid/content/ContextWrapper;
+.class public final enum Lol;
+.super Ljava/lang/Enum;
 .source "SourceFile"
-
-# interfaces
-.implements Lng;
-.implements Llve;
 
 
 # static fields
-.field public static o:Lol;
+.field public static final enum a:Lol;
 
-
-# instance fields
-.field public final a:Landroid/app/Application;
-
-.field public final b:Lxh7;
-
-.field public final c:Ldle;
+.field public static final synthetic b:[Lol;
 
 
 # direct methods
-.method public constructor <init>(Landroid/app/Application;Lxh7;Ldle;Lo8a;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 6
 
-    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+    new-instance v0, Lol;
 
-    sput-object p4, Lgwd;->Z:Lo8a;
+    const-string v1, "SAME"
 
-    iput-object p2, p0, Lol;->b:Lxh7;
+    const/4 v2, 0x0
 
-    iput-object p1, p0, Lol;->a:Landroid/app/Application;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p3, p0, Lol;->c:Ldle;
+    sput-object v0, Lol;->a:Lol;
 
-    sput-object p0, Lol;->o:Lol;
+    new-instance v1, Lol;
+
+    const-string v2, "NO_SESSION"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v2, Lol;
+
+    const-string v3, "ANONYMOUS_SESSION"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v3, Lol;
+
+    const-string v4, "SESSION"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    filled-new-array {v0, v1, v2, v3}, [Lol;
+
+    move-result-object v0
+
+    sput-object v0, Lol;->b:[Lol;
 
     return-void
 .end method
 
-.method public static b()Lme3;
+.method public static valueOf(Ljava/lang/String;)Lol;
+    .registers 2
+
+    const-class v0, Lol;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lol;
+
+    return-object p0
+.end method
+
+.method public static values()[Lol;
     .registers 1
 
-    sget-object v0, Lol;->o:Lol;
+    sget-object v0, Lol;->b:[Lol;
 
-    iget-object v0, v0, Lol;->c:Ldle;
-
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lme3;
+    check-cast v0, [Lol;
 
     return-object v0
-.end method
-
-
-# virtual methods
-.method public final a()Lw9b;
-    .registers 1
-
-    iget-object p0, p0, Lol;->b:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lw9b;
-
-    return-object p0
-.end method
-
-.method public final getBaseContext()Landroid/content/Context;
-    .registers 1
-
-    iget-object p0, p0, Lol;->a:Landroid/app/Application;
-
-    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final p()Ldqe;
-    .registers 2
-
-    invoke-static {}, Lol;->b()Lme3;
-
-    move-result-object p0
-
-    check-cast p0, Ltaa;
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object p0
-
-    const-class v0, Leqe;
-
-    invoke-virtual {p0, v0}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Leqe;
-
-    invoke-virtual {p0}, Leqe;->c()Ldqe;
-
-    move-result-object p0
-
-    return-object p0
 .end method

@@ -1,157 +1,1047 @@
 .class public final Los7;
-.super Llk9;
+.super Lu2;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/RandomAccess;
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final o:Los7;
 
 
 # instance fields
-.field public final l:Lfug;
+.field public a:[Ljava/lang/Object;
 
-.field public m:Lwk7;
+.field public b:I
 
-.field public n:Lps7;
+.field public c:Z
 
 
 # direct methods
-.method public constructor <init>(Lfug;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Lyq7;-><init>()V
+    new-instance v0, Los7;
 
-    iput-object p1, p0, Los7;->l:Lfug;
+    const/4 v1, 0x0
 
-    iget-object v0, p1, Lfug;->a:Los7;
+    invoke-direct {v0, v1}, Los7;-><init>(I)V
 
-    if-nez v0, :cond_0
+    const/4 v1, 0x1
 
-    iput-object p0, p1, Lfug;->a:Los7;
+    iput-boolean v1, v0, Los7;->c:Z
+
+    sput-object v0, Los7;->o:Los7;
+
+    return-void
+.end method
+
+.method public constructor <init>(I)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
+
+    if-ltz p1, :cond_0
+
+    new-array p1, p1, [Ljava/lang/Object;
+
+    iput-object p1, p0, Los7;->a:[Ljava/lang/Object;
 
     return-void
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "There is already a listener registered"
+    const-string p1, "capacity must be non-negative."
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
 
+.method public static final synthetic b(Los7;)I
+    .registers 1
+
+    iget p0, p0, Ljava/util/AbstractList;->modCount:I
+
+    return p0
+.end method
+
 
 # virtual methods
-.method public final g()V
-    .registers 2
+.method public final a(I)Ljava/lang/Object;
+    .registers 5
 
-    iget-object p0, p0, Los7;->l:Lfug;
+    invoke-virtual {p0}, Los7;->e()V
 
-    const/4 v0, 0x1
+    iget v0, p0, Los7;->b:I
 
-    iput-boolean v0, p0, Lfug;->b:Z
+    if-ltz p1, :cond_0
+
+    if-ge p1, v0, :cond_0
+
+    invoke-virtual {p0, p1}, Los7;->g(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string v1, "index: "
+
+    const-string v2, ", size: "
+
+    invoke-static {v1, p1, v0, v2}, Lyv7;->f(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final add(ILjava/lang/Object;)V
+    .registers 5
+
+    invoke-virtual {p0}, Los7;->e()V
+
+    iget v0, p0, Los7;->b:I
+
+    if-ltz p1, :cond_0
+
+    if-gt p1, v0, :cond_0
+
+    iget v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    const/4 v1, 0x1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    invoke-virtual {p0, p1, v1}, Los7;->f(II)V
+
+    iget-object p0, p0, Los7;->a:[Ljava/lang/Object;
+
+    aput-object p2, p0, p1
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string p2, "index: "
+
+    const-string v1, ", size: "
+
+    invoke-static {p2, p1, v0, v1}, Lyv7;->f(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final add(Ljava/lang/Object;)Z
+    .registers 5
+
+    invoke-virtual {p0}, Los7;->e()V
+
+    iget v0, p0, Los7;->b:I
+
+    iget v1, p0, Ljava/util/AbstractList;->modCount:I
+
+    const/4 v2, 0x1
+
+    add-int/2addr v1, v2
+
+    iput v1, p0, Ljava/util/AbstractList;->modCount:I
+
+    invoke-virtual {p0, v0, v2}, Los7;->f(II)V
+
+    iget-object p0, p0, Los7;->a:[Ljava/lang/Object;
+
+    aput-object p1, p0, v0
+
+    return v2
+.end method
+
+.method public final addAll(ILjava/util/Collection;)Z
+    .registers 5
+
+    invoke-virtual {p0}, Los7;->e()V
+
+    iget v0, p0, Los7;->b:I
+
+    if-ltz p1, :cond_1
+
+    if-gt p1, v0, :cond_1
+
+    invoke-interface {p2}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    invoke-virtual {p0, p1, p2, v0}, Los7;->c(ILjava/util/Collection;I)V
+
+    if-lez v0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string p2, "index: "
+
+    const-string v1, ", size: "
+
+    invoke-static {p2, p1, v0, v1}, Lyv7;->f(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final addAll(Ljava/util/Collection;)Z
+    .registers 4
+
+    invoke-virtual {p0}, Los7;->e()V
+
+    invoke-interface {p1}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    iget v1, p0, Los7;->b:I
+
+    invoke-virtual {p0, v1, p1, v0}, Los7;->c(ILjava/util/Collection;I)V
+
+    if-lez v0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final c(ILjava/util/Collection;I)V
+    .registers 8
+
+    iget v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    invoke-virtual {p0, p1, p3}, Los7;->f(II)V
+
+    invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lfug;->d:Z
+    :goto_0
+    if-ge v0, p3, :cond_0
 
-    iput-boolean v0, p0, Lfug;->c:Z
+    iget-object v1, p0, Los7;->a:[Ljava/lang/Object;
 
-    iget-object v0, p0, Lfug;->i:Ljava/util/concurrent/Semaphore;
+    add-int v2, p1, v0
 
-    invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->drainPermits()I
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {p0}, Lfug;->a()V
+    move-result-object v3
 
-    new-instance v0, Lgx;
+    aput-object v3, v1, v2
 
-    invoke-direct {v0, p0}, Lgx;-><init>(Lfug;)V
+    add-int/lit8 v0, v0, 0x1
 
-    iput-object v0, p0, Lfug;->g:Lgx;
-
-    invoke-virtual {p0}, Lfug;->b()V
-
-    return-void
-.end method
-
-.method public final h()V
-    .registers 2
-
-    iget-object p0, p0, Los7;->l:Lfug;
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lfug;->b:Z
-
-    return-void
-.end method
-
-.method public final j(Le4a;)V
-    .registers 2
-
-    invoke-super {p0, p1}, Lyq7;->j(Le4a;)V
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Los7;->m:Lwk7;
-
-    iput-object p1, p0, Los7;->n:Lps7;
-
-    return-void
-.end method
-
-.method public final l()V
-    .registers 3
-
-    iget-object v0, p0, Los7;->m:Lwk7;
-
-    iget-object v1, p0, Los7;->n:Lps7;
-
-    if-eqz v0, :cond_0
-
-    if-eqz v1, :cond_0
-
-    invoke-super {p0, v1}, Lyq7;->j(Le4a;)V
-
-    invoke-virtual {p0, v0, v1}, Lyq7;->e(Lwk7;Le4a;)V
+    goto :goto_0
 
     :cond_0
     return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final clear()V
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Los7;->e()V
 
-    const/16 v1, 0x40
+    const/4 v0, 0x0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    iget v1, p0, Los7;->b:I
 
-    const-string v1, "LoaderInfo{"
+    invoke-virtual {p0, v0, v1}, Los7;->h(II)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
+.end method
 
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
+.method public final d(ILjava/lang/Object;)V
+    .registers 5
+
+    iget v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    const/4 v1, 0x1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    invoke-virtual {p0, p1, v1}, Los7;->f(II)V
+
+    iget-object p0, p0, Los7;->a:[Ljava/lang/Object;
+
+    aput-object p2, p0, p1
+
+    return-void
+.end method
+
+.method public final e()V
+    .registers 1
+
+    iget-boolean p0, p0, Los7;->c:Z
+
+    if-nez p0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 7
+
+    if-eq p1, p0, :cond_3
+
+    instance-of v0, p1, Ljava/util/List;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_2
+
+    check-cast p1, Ljava/util/List;
+
+    iget-object v0, p0, Los7;->a:[Ljava/lang/Object;
+
+    iget p0, p0, Los7;->b:I
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-eq p0, v2, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    move v2, v1
+
+    :goto_0
+    if-ge v2, p0, :cond_3
+
+    aget-object v3, v0, v2
+
+    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    :goto_1
+    return v1
+
+    :cond_3
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final f(II)V
+    .registers 8
+
+    iget v0, p0, Los7;->b:I
+
+    add-int/2addr v0, p2
+
+    if-ltz v0, :cond_4
+
+    iget-object v1, p0, Los7;->a:[Ljava/lang/Object;
+
+    array-length v2, v1
+
+    if-le v0, v2, :cond_3
+
+    array-length v2, v1
+
+    shr-int/lit8 v3, v2, 0x1
+
+    add-int/2addr v2, v3
+
+    sub-int v3, v2, v0
+
+    if-gez v3, :cond_0
+
+    move v2, v0
+
+    :cond_0
+    const v3, 0x7ffffff7
+
+    sub-int v4, v2, v3
+
+    if-lez v4, :cond_2
+
+    if-le v0, v3, :cond_1
+
+    const v2, 0x7fffffff
+
+    goto :goto_0
+
+    :cond_1
+    move v2, v3
+
+    :cond_2
+    :goto_0
+    invoke-static {v1, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Los7;->a:[Ljava/lang/Object;
+
+    :cond_3
+    iget-object v0, p0, Los7;->a:[Ljava/lang/Object;
+
+    iget v1, p0, Los7;->b:I
+
+    add-int v2, p1, p2
+
+    invoke-static {v2, p1, v1, v0, v0}, Lxr;->I(III[Ljava/lang/Object;[Ljava/lang/Object;)V
+
+    iget p1, p0, Los7;->b:I
+
+    add-int/2addr p1, p2
+
+    iput p1, p0, Los7;->b:I
+
+    return-void
+
+    :cond_4
+    new-instance p0, Ljava/lang/OutOfMemoryError;
+
+    invoke-direct {p0}, Ljava/lang/OutOfMemoryError;-><init>()V
+
+    throw p0
+.end method
+
+.method public final g(I)Ljava/lang/Object;
+    .registers 6
+
+    iget v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    iget-object v0, p0, Los7;->a:[Ljava/lang/Object;
+
+    aget-object v1, v0, p1
+
+    add-int/lit8 v2, p1, 0x1
+
+    iget v3, p0, Los7;->b:I
+
+    invoke-static {p1, v2, v3, v0, v0}, Lxr;->I(III[Ljava/lang/Object;[Ljava/lang/Object;)V
+
+    iget-object p1, p0, Los7;->a:[Ljava/lang/Object;
+
+    iget v0, p0, Los7;->b:I
+
+    add-int/lit8 v2, v0, -0x1
+
+    const/4 v3, 0x0
+
+    aput-object v3, p1, v2
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Los7;->b:I
+
+    return-object v1
+.end method
+
+.method public final get(I)Ljava/lang/Object;
+    .registers 5
+
+    iget v0, p0, Los7;->b:I
+
+    if-ltz p1, :cond_0
+
+    if-ge p1, v0, :cond_0
+
+    iget-object p0, p0, Los7;->a:[Ljava/lang/Object;
+
+    aget-object p0, p0, p1
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string v1, "index: "
+
+    const-string v2, ", size: "
+
+    invoke-static {v1, p1, v0, v2}, Lyv7;->f(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final getSize()I
+    .registers 1
+
+    iget p0, p0, Los7;->b:I
+
+    return p0
+.end method
+
+.method public final h(II)V
+    .registers 6
+
+    if-lez p2, :cond_0
+
+    iget v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Ljava/util/AbstractList;->modCount:I
+
+    :cond_0
+    iget-object v0, p0, Los7;->a:[Ljava/lang/Object;
+
+    add-int v1, p1, p2
+
+    iget v2, p0, Los7;->b:I
+
+    invoke-static {p1, v1, v2, v0, v0}, Lxr;->I(III[Ljava/lang/Object;[Ljava/lang/Object;)V
+
+    iget-object p1, p0, Los7;->a:[Ljava/lang/Object;
+
+    iget v0, p0, Los7;->b:I
+
+    sub-int v1, v0, p2
+
+    invoke-static {v1, v0, p1}, Lzxa;->u(II[Ljava/lang/Object;)V
+
+    iget p1, p0, Los7;->b:I
+
+    sub-int/2addr p1, p2
+
+    iput p1, p0, Los7;->b:I
+
+    return-void
+.end method
+
+.method public final hashCode()I
+    .registers 6
+
+    iget-object v0, p0, Los7;->a:[Ljava/lang/Object;
+
+    iget p0, p0, Los7;->b:I
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    :goto_0
+    if-ge v3, p0, :cond_1
+
+    aget-object v4, v0, v3
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {v4}, Ljava/lang/Object;->hashCode()I
+
+    move-result v4
+
+    goto :goto_1
+
+    :cond_0
+    move v4, v2
+
+    :goto_1
+    add-int/2addr v1, v4
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return v1
+.end method
+
+.method public final i(IILjava/util/Collection;Z)I
+    .registers 10
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    if-ge v0, p2, :cond_1
+
+    iget-object v2, p0, Los7;->a:[Ljava/lang/Object;
+
+    add-int v3, p1, v0
+
+    aget-object v2, v2, v3
+
+    invoke-interface {p3, v2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-ne v2, p4, :cond_0
+
+    iget-object v2, p0, Los7;->a:[Ljava/lang/Object;
+
+    add-int/lit8 v4, v1, 0x1
+
+    add-int/2addr v1, p1
+
+    add-int/lit8 v0, v0, 0x1
+
+    aget-object v3, v2, v3
+
+    aput-object v3, v2, v1
+
+    move v1, v4
+
+    goto :goto_0
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    sub-int p3, p2, v1
+
+    iget-object p4, p0, Los7;->a:[Ljava/lang/Object;
+
+    add-int/2addr p2, p1
+
+    iget v0, p0, Los7;->b:I
+
+    add-int/2addr p1, v1
+
+    invoke-static {p1, p2, v0, p4, p4}, Lxr;->I(III[Ljava/lang/Object;[Ljava/lang/Object;)V
+
+    iget-object p1, p0, Los7;->a:[Ljava/lang/Object;
+
+    iget p2, p0, Los7;->b:I
+
+    sub-int p4, p2, p3
+
+    invoke-static {p4, p2, p1}, Lzxa;->u(II[Ljava/lang/Object;)V
+
+    if-lez p3, :cond_2
+
+    iget p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    add-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Ljava/util/AbstractList;->modCount:I
+
+    :cond_2
+    iget p1, p0, Los7;->b:I
+
+    sub-int/2addr p1, p3
+
+    iput p1, p0, Los7;->b:I
+
+    return p3
+.end method
+
+.method public final indexOf(Ljava/lang/Object;)I
+    .registers 4
+
+    const/4 v0, 0x0
+
+    :goto_0
+    iget v1, p0, Los7;->b:I
+
+    if-ge v0, v1, :cond_1
+
+    iget-object v1, p0, Los7;->a:[Ljava/lang/Object;
+
+    aget-object v1, v1, v0
+
+    invoke-static {v1, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    if-eqz v1, :cond_0
 
-    move-result-object v1
+    return v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
 
-    const-string v1, " #0 : "
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_1
+    const/4 p0, -0x1
 
-    iget-object p0, p0, Los7;->l:Lfug;
+    return p0
+.end method
 
-    invoke-static {v0, p0}, Lts;->g(Ljava/lang/StringBuilder;Ljava/lang/Object;)V
+.method public final isEmpty()Z
+    .registers 1
 
-    const-string p0, "}}"
+    iget p0, p0, Los7;->b:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez p0, :cond_0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .registers 2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Los7;->listIterator(I)Ljava/util/ListIterator;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final lastIndexOf(Ljava/lang/Object;)I
+    .registers 4
+
+    iget v0, p0, Los7;->b:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    :goto_0
+    if-ltz v0, :cond_1
+
+    iget-object v1, p0, Los7;->a:[Ljava/lang/Object;
+
+    aget-object v1, v1, v0
+
+    invoke-static {v1, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return v0
+
+    :cond_0
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 p0, -0x1
+
+    return p0
+.end method
+
+.method public final listIterator()Ljava/util/ListIterator;
+    .registers 2
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Los7;->listIterator(I)Ljava/util/ListIterator;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final listIterator(I)Ljava/util/ListIterator;
+    .registers 5
+
+    iget v0, p0, Los7;->b:I
+
+    if-ltz p1, :cond_0
+
+    if-gt p1, v0, :cond_0
+
+    new-instance v0, Lms7;
+
+    invoke-direct {v0, p0, p1}, Lms7;-><init>(Los7;I)V
+
+    return-object v0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string v1, "index: "
+
+    const-string v2, ", size: "
+
+    invoke-static {v1, p1, v0, v2}, Lyv7;->f(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .registers 2
+
+    invoke-virtual {p0}, Los7;->e()V
+
+    invoke-virtual {p0, p1}, Los7;->indexOf(Ljava/lang/Object;)I
+
+    move-result p1
+
+    if-ltz p1, :cond_0
+
+    invoke-virtual {p0, p1}, Los7;->a(I)Ljava/lang/Object;
+
+    :cond_0
+    if-ltz p1, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_1
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final removeAll(Ljava/util/Collection;)Z
+    .registers 4
+
+    invoke-virtual {p0}, Los7;->e()V
+
+    iget v0, p0, Los7;->b:I
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v1, v0, p1, v1}, Los7;->i(IILjava/util/Collection;Z)I
+
+    move-result p0
+
+    if-lez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    return v1
+.end method
+
+.method public final retainAll(Ljava/util/Collection;)Z
+    .registers 5
+
+    invoke-virtual {p0}, Los7;->e()V
+
+    iget v0, p0, Los7;->b:I
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p0, v1, v0, p1, v2}, Los7;->i(IILjava/util/Collection;Z)I
+
+    move-result p0
+
+    if-lez p0, :cond_0
+
+    return v2
+
+    :cond_0
+    return v1
+.end method
+
+.method public final set(ILjava/lang/Object;)Ljava/lang/Object;
+    .registers 5
+
+    invoke-virtual {p0}, Los7;->e()V
+
+    iget v0, p0, Los7;->b:I
+
+    if-ltz p1, :cond_0
+
+    if-ge p1, v0, :cond_0
+
+    iget-object p0, p0, Los7;->a:[Ljava/lang/Object;
+
+    aget-object v0, p0, p1
+
+    aput-object p2, p0, p1
+
+    return-object v0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string p2, "index: "
+
+    const-string v1, ", size: "
+
+    invoke-static {p2, p1, v0, v1}, Lyv7;->f(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final subList(II)Ljava/util/List;
+    .registers 10
+
+    iget v0, p0, Los7;->b:I
+
+    invoke-static {p1, p2, v0}, Lqe5;->e(III)V
+
+    new-instance v1, Lns7;
+
+    iget-object v2, p0, Los7;->a:[Ljava/lang/Object;
+
+    sub-int v4, p2, p1
+
+    const/4 v5, 0x0
+
+    move-object v6, p0
+
+    move v3, p1
+
+    invoke-direct/range {v1 .. v6}, Lns7;-><init>([Ljava/lang/Object;IILns7;Los7;)V
+
+    return-object v1
+.end method
+
+.method public final toArray()[Ljava/lang/Object;
+    .registers 3
+
+    iget-object v0, p0, Los7;->a:[Ljava/lang/Object;
+
+    iget p0, p0, Los7;->b:I
+
+    array-length v1, v0
+
+    invoke-static {p0, v1}, Les;->e(II)V
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1, p0}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;II)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .registers 5
+
+    array-length v0, p1
+
+    iget v1, p0, Los7;->b:I
+
+    const/4 v2, 0x0
+
+    if-ge v0, v1, :cond_0
+
+    iget-object p0, p0, Los7;->a:[Ljava/lang/Object;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-static {p0, v2, v1, p1}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    iget-object v0, p0, Los7;->a:[Ljava/lang/Object;
+
+    invoke-static {v2, v2, v1, v0, p1}, Lxr;->I(III[Ljava/lang/Object;[Ljava/lang/Object;)V
+
+    iget p0, p0, Los7;->b:I
+
+    array-length v0, p1
+
+    if-ge p0, v0, :cond_1
+
+    const/4 v0, 0x0
+
+    aput-object v0, p1, p0
+
+    :cond_1
+    return-object p1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 4
+
+    iget-object v0, p0, Los7;->a:[Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    iget v2, p0, Los7;->b:I
+
+    invoke-static {v0, v1, v2, p0}, Lzxa;->a([Ljava/lang/Object;IILu2;)Ljava/lang/String;
 
     move-result-object p0
 

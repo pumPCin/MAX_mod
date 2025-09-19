@@ -1,138 +1,117 @@
-.class public abstract Lps6;
-.super Ljava/lang/Object;
+.class public final Lps6;
+.super Lb33;
 .source "SourceFile"
-
-# interfaces
-.implements Loyd;
 
 
 # instance fields
-.field public final a:Lu46;
+.field public t0:[B
 
-.field public b:Z
+.field public volatile u0:Z
 
-.field public final synthetic c:Lq8;
-
-
-# direct methods
-.method public constructor <init>(Lq8;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lps6;->c:Lq8;
-
-    new-instance v0, Lu46;
-
-    iget-object p1, p1, Lq8;->e:Ljava/lang/Object;
-
-    check-cast p1, Luu0;
-
-    invoke-interface {p1}, Loyd;->p()Lqxe;
-
-    move-result-object p1
-
-    invoke-direct {v0, p1}, Lu46;-><init>(Lqxe;)V
-
-    iput-object v0, p0, Lps6;->a:Lu46;
-
-    return-void
-.end method
+.field public v0:[B
 
 
 # virtual methods
-.method public b(Lrt0;J)J
-    .registers 6
+.method public final a()V
+    .registers 2
 
-    iget-object v0, p0, Lps6;->c:Lq8;
+    const/4 v0, 0x1
 
-    :try_start_0
-    iget-object v1, v0, Lq8;->e:Ljava/lang/Object;
+    iput-boolean v0, p0, Lps6;->u0:Z
 
-    check-cast v1, Luu0;
-
-    invoke-interface {v1, p1, p2, p3}, Loyd;->b(Lrt0;J)J
-
-    move-result-wide p0
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-wide p0
-
-    :catch_0
-    move-exception p1
-
-    iget-object p2, v0, Lq8;->d:Ljava/lang/Object;
-
-    check-cast p2, Lmbc;
-
-    invoke-virtual {p2}, Lmbc;->k()V
-
-    invoke-virtual {p0}, Lps6;->m()V
-
-    throw p1
+    return-void
 .end method
 
-.method public final m()V
-    .registers 5
+.method public final load()V
+    .registers 7
 
-    iget-object v0, p0, Lps6;->c:Lq8;
+    :try_start_0
+    iget-object v0, p0, Lb33;->s0:Lbee;
 
-    iget v1, v0, Lq8;->a:I
+    iget-object v1, p0, Lb33;->b:Ln74;
 
-    const/4 v2, 0x6
+    invoke-virtual {v0, v1}, Lbee;->G(Ln74;)J
 
-    if-ne v1, v2, :cond_0
+    const/4 v0, 0x0
 
-    return-void
+    move v1, v0
 
     :cond_0
-    const/4 v3, 0x5
+    :goto_0
+    const/4 v2, -0x1
 
-    if-ne v1, v3, :cond_1
+    if-eq v0, v2, :cond_2
 
-    iget-object p0, p0, Lps6;->a:Lu46;
+    iget-boolean v0, p0, Lps6;->u0:Z
 
-    iget-object v1, p0, Lu46;->e:Lqxe;
+    if-nez v0, :cond_2
 
-    sget-object v3, Lqxe;->d:Lpxe;
+    iget-object v0, p0, Lps6;->t0:[B
 
-    iput-object v3, p0, Lu46;->e:Lqxe;
+    array-length v3, v0
 
-    invoke-virtual {v1}, Lqxe;->a()Lqxe;
+    add-int/lit16 v4, v1, 0x4000
 
-    invoke-virtual {v1}, Lqxe;->b()Lqxe;
+    const/16 v5, 0x4000
 
-    iput v2, v0, Lq8;->a:I
+    if-ge v3, v4, :cond_1
 
-    return-void
+    array-length v3, v0
 
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    add-int/2addr v3, v5
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "state: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v0, v0, Lq8;->a:I
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v3}, Ljava/util/Arrays;->copyOf([BI)[B
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iput-object v0, p0, Lps6;->t0:[B
 
-    throw p0
-.end method
+    :cond_1
+    iget-object v0, p0, Lb33;->s0:Lbee;
 
-.method public final p()Lqxe;
-    .registers 1
+    iget-object v3, p0, Lps6;->t0:[B
 
-    iget-object p0, p0, Lps6;->a:Lu46;
+    invoke-virtual {v0, v3, v1, v5}, Lbee;->read([BII)I
 
-    return-object p0
+    move-result v0
+
+    if-eq v0, v2, :cond_0
+
+    add-int/2addr v1, v0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
+
+    :cond_2
+    iget-boolean v0, p0, Lps6;->u0:Z
+
+    if-nez v0, :cond_3
+
+    iget-object v0, p0, Lps6;->t0:[B
+
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([BI)[B
+
+    move-result-object v0
+
+    iput-object v0, p0, Lps6;->v0:[B
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_3
+    iget-object p0, p0, Lb33;->s0:Lbee;
+
+    invoke-static {p0}, Lo97;->n(Lf74;)V
+
+    return-void
+
+    :goto_1
+    iget-object p0, p0, Lb33;->s0:Lbee;
+
+    invoke-static {p0}, Lo97;->n(Lf74;)V
+
+    throw v0
 .end method

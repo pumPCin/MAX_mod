@@ -1,9 +1,9 @@
 .class public final Lgje;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
@@ -11,22 +11,22 @@
 
 .field public synthetic Y:Ljava/lang/Object;
 
-.field public final synthetic Z:Ltje;
+.field public final synthetic Z:Ljje;
 
-.field public final synthetic n0:Lpef;
+.field public final synthetic r0:J
 
 
 # direct methods
-.method public constructor <init>(Ltje;Lpef;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Ljje;JLkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    iput-object p1, p0, Lgje;->Z:Ltje;
+    iput-object p1, p0, Lgje;->Z:Ljje;
 
-    iput-object p2, p0, Lgje;->n0:Lpef;
+    iput-wide p2, p0, Lgje;->r0:J
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -36,7 +36,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lhq5;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -46,7 +46,7 @@
 
     check-cast p0, Lgje;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lgje;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -56,15 +56,15 @@
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .registers 7
 
     new-instance v0, Lgje;
 
-    iget-object v1, p0, Lgje;->Z:Ltje;
+    iget-object v1, p0, Lgje;->Z:Ljje;
 
-    iget-object p0, p0, Lgje;->n0:Lpef;
+    iget-wide v2, p0, Lgje;->r0:J
 
-    invoke-direct {v0, v1, p0, p2}, Lgje;-><init>(Ltje;Lpef;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1, v2, v3, p2}, Lgje;-><init>(Ljje;JLkotlin/coroutines/Continuation;)V
 
     iput-object p1, v0, Lgje;->Y:Ljava/lang/Object;
 
@@ -72,29 +72,35 @@
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 14
+    .registers 10
 
-    sget-object v0, Llw7;->o:Llw7;
+    iget v0, p0, Lgje;->X:I
 
-    sget-object v1, Ls04;->a:Ls04;
+    sget-object v1, Lylf;->a:Lylf;
 
-    iget v2, p0, Lgje;->X:I
+    iget-object v2, p0, Lgje;->Z:Ljje;
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x2
+    if-eqz v0, :cond_1
 
-    const/4 v5, 0x1
+    if-ne v0, v3, :cond_0
 
-    if-eqz v2, :cond_2
+    iget-object p0, p0, Lgje;->Y:Ljava/lang/Object;
 
-    if-eq v2, v5, :cond_1
+    check-cast p0, Ly04;
 
-    if-ne v2, v4, :cond_0
+    :try_start_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    goto :goto_0
 
-    goto/16 :goto_6
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
 
     :cond_0
     new-instance p0, Ljava/lang/IllegalStateException;
@@ -106,208 +112,123 @@
     throw p0
 
     :cond_1
-    iget-object v2, p0, Lgje;->Y:Ljava/lang/Object;
-
-    check-cast v2, Lhq5;
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto/16 :goto_3
-
-    :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lgje;->Y:Ljava/lang/Object;
 
-    move-object v2, p1
+    check-cast p1, Ly04;
 
-    check-cast v2, Lhq5;
+    iget-wide v4, p0, Lgje;->r0:J
 
-    iget-object p1, p0, Lgje;->Z:Ltje;
+    :try_start_1
+    sget-object v0, Ljje;->A0:[Lxi7;
 
-    iget-object p1, p1, Ltje;->b:Ljava/lang/String;
+    iget-object v0, v2, Ljje;->o:Lcl7;
 
-    iget-object v6, p0, Lgje;->n0:Lpef;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    sget-object v7, Ld86;->f:Lafa;
+    move-result-object v0
 
-    if-nez v7, :cond_3
+    check-cast v0, Lvh5;
 
-    goto :goto_0
+    const/4 v6, 0x0
 
-    :cond_3
-    invoke-virtual {v7, v0}, Lafa;->a(Llw7;)Z
+    invoke-virtual {v0, v4, v5, v6}, Lvh5;->C(JZ)Luc3;
 
-    move-result v8
+    move-result-object v0
 
-    if-eqz v8, :cond_4
+    iput-object p1, p0, Lgje;->Y:Ljava/lang/Object;
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    iput v3, p0, Lgje;->X:I
 
-    const-string v9, "Starting uploading data="
+    invoke-static {v0, p0}, Lgy7;->g(Lhc3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result-object p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    sget-object v0, Lz04;->a:Lz04;
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-ne p0, v0, :cond_2
 
-    move-result-object v6
+    return-object v0
 
-    invoke-virtual {v7, v0, p1, v6, v3}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    :cond_2
+    move-object p0, p1
 
-    :cond_4
     :goto_0
-    iget-object p1, p0, Lgje;->Z:Ltje;
-
-    iget-object v6, p0, Lgje;->n0:Lpef;
-
-    iget-object v7, v6, Lpef;->a:Ljava/lang/String;
-
-    :try_start_0
-    new-instance v8, Ljava/io/File;
-
-    invoke-direct {v8, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v8}, Ljava/io/File;->lastModified()J
-
-    move-result-wide v7
-
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v7
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v7
-
-    new-instance v8, Lanc;
-
-    invoke-direct {v8, v7}, Lanc;-><init>(Ljava/lang/Throwable;)V
-
-    move-object v7, v8
-
-    :goto_1
-    const-wide/16 v8, 0x0
-
-    invoke-static {v8, v9}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v10
-
-    instance-of v11, v7, Lanc;
-
-    if-eqz v11, :cond_5
-
-    move-object v7, v10
-
-    :cond_5
-    check-cast v7, Ljava/lang/Number;
-
-    invoke-virtual {v7}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v10
-
-    cmp-long v7, v10, v8
-
-    if-eqz v7, :cond_7
-
-    iget-wide v6, v6, Lpef;->b:J
-
-    cmp-long v6, v10, v6
-
-    if-nez v6, :cond_6
+    move-object v0, v1
 
     goto :goto_2
 
-    :cond_6
-    iget-object p0, p1, Ltje;->b:Ljava/lang/String;
+    :catchall_1
+    move-exception p0
 
-    const-string p1, "File is changed during uploading, aborting!"
+    move-object v7, p1
 
-    invoke-static {p0, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    move-object p1, p0
 
-    new-instance p0, Lone/me/sdk/transfer/domain/UploadException;
+    move-object p0, v7
 
-    const-string p1, "Error to upload, file changed"
+    :goto_1
+    new-instance v0, Lhvc;
 
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Lhvc;-><init>(Ljava/lang/Throwable;)V
 
-    throw p0
-
-    :cond_7
     :goto_2
-    iget-object p1, p0, Lgje;->Z:Ltje;
+    instance-of p1, v0, Lhvc;
 
-    iget-object v6, p0, Lgje;->n0:Lpef;
+    if-nez p1, :cond_3
 
-    iput-object v2, p0, Lgje;->Y:Ljava/lang/Object;
+    move-object p1, v0
 
-    iput v5, p0, Lgje;->X:I
+    check-cast p1, Lylf;
 
-    invoke-static {p1, v6, p0}, Ltje;->a(Ltje;Lpef;Lcx3;)Ljava/lang/Object;
+    iget-object p1, v2, Ljje;->Z:Lv85;
+
+    new-instance v2, Ltqd;
+
+    sget v3, Lq0d;->w:I
+
+    sget v4, Leqa;->l:I
+
+    new-instance v5, Lp2f;
+
+    invoke-direct {v5, v4}, Lp2f;-><init>(I)V
+
+    invoke-direct {v2, v3, v5}, Ltqd;-><init>(ILu2f;)V
+
+    invoke-static {p1, v2}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
+
+    :cond_3
+    invoke-static {v0}, Ljvc;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
 
     move-result-object p1
 
-    if-ne p1, v1, :cond_8
+    if-eqz p1, :cond_5
 
-    goto :goto_5
+    instance-of v0, p1, Ljava/util/concurrent/CancellationException;
 
-    :cond_8
-    :goto_3
-    check-cast p1, Lhef;
+    if-nez v0, :cond_4
 
-    iget-object v5, p0, Lgje;->Z:Ltje;
-
-    iget-object v5, v5, Ltje;->b:Ljava/lang/String;
-
-    sget-object v6, Ld86;->f:Lafa;
-
-    if-nez v6, :cond_9
-
-    goto :goto_4
-
-    :cond_9
-    invoke-virtual {v6, v0}, Lafa;->a(Llw7;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_a
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    const-string v8, "Retrieved upload from repository = "
-
-    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v0, v5, v7, v3}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_a
-    :goto_4
-    iput-object v3, p0, Lgje;->Y:Ljava/lang/Object;
-
-    iput v4, p0, Lgje;->X:I
-
-    invoke-interface {v2, p1, p0}, Lhq5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
 
-    if-ne p0, v1, :cond_b
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    :goto_5
+    move-result-object p0
+
+    const-string v0, "Can\'t delete sticker set"
+
+    invoke-static {p0, v0, p1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_3
+
+    :cond_4
+    throw p1
+
+    :cond_5
+    :goto_3
     return-object v1
-
-    :cond_b
-    :goto_6
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
 .end method

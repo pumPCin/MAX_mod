@@ -3,55 +3,57 @@
 .source "SourceFile"
 
 
+# static fields
+.field public static final a:I
+
+.field public static final b:I
+
+.field public static volatile c:Lqn0;
+
+
 # direct methods
-.method public static a(Landroid/hardware/biometrics/BiometricManager;)I
-    .registers 1
+.method static constructor <clinit>()V
+    .registers 5
 
-    invoke-virtual {p0}, Landroid/hardware/biometrics/BiometricManager;->canAuthenticate()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static b(Landroid/content/Context;)Landroid/hardware/biometrics/BiometricManager;
-    .registers 2
-
-    const-class v0, Landroid/hardware/biometrics/BiometricManager;
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/hardware/biometrics/BiometricManager;
-
-    return-object p0
-.end method
-
-.method public static c()Ljava/lang/reflect/Method;
-    .registers 3
-
-    :try_start_0
-    const-class v0, Landroid/hardware/biometrics/BiometricManager;
-
-    const-string v1, "canAuthenticate"
-
-    const-class v2, Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;
-
-    filled-new-array {v2}, [Ljava/lang/Class;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v0
+    invoke-virtual {v0}, Ljava/lang/Runtime;->maxMemory()J
 
-    :catch_0
-    const/4 v0, 0x0
+    move-result-wide v0
 
-    return-object v0
+    const-wide/32 v2, 0x7fffffff
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    int-to-long v1, v0
+
+    const-wide/32 v3, 0x1000000
+
+    cmp-long v1, v1, v3
+
+    if-lez v1, :cond_0
+
+    div-int/lit8 v0, v0, 0x4
+
+    mul-int/lit8 v0, v0, 0x3
+
+    goto :goto_0
+
+    :cond_0
+    div-int/lit8 v0, v0, 0x2
+
+    :goto_0
+    sput v0, Lrn0;->a:I
+
+    const/16 v0, 0x180
+
+    sput v0, Lrn0;->b:I
+
+    return-void
 .end method

@@ -1,41 +1,61 @@
 .class public final Ley7;
-.super Lha4;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Ley7;
-
-.field public static final c:Lca4;
+# instance fields
+.field public final a:Landroid/os/LocaleList;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public constructor <init>(Landroid/os/LocaleList;)V
+    .registers 2
 
-    new-instance v0, Ley7;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lha4;-><init>()V
-
-    sput-object v0, Ley7;->b:Ley7;
-
-    const/4 v1, 0x0
-
-    new-array v2, v1, [Ljava/lang/String;
-
-    const/4 v4, 0x1
-
-    const/16 v5, 0xa
-
-    const-string v1, ":logout"
-
-    const/4 v3, 0x0
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v0
-
-    sput-object v0, Ley7;->c:Lca4;
+    iput-object p1, p0, Ley7;->a:Landroid/os/LocaleList;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 2
+
+    check-cast p1, Ley7;
+
+    iget-object p1, p1, Ley7;->a:Landroid/os/LocaleList;
+
+    iget-object p0, p0, Ley7;->a:Landroid/os/LocaleList;
+
+    invoke-virtual {p0, p1}, Landroid/os/LocaleList;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Ley7;->a:Landroid/os/LocaleList;
+
+    invoke-virtual {p0}, Landroid/os/LocaleList;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    iget-object p0, p0, Ley7;->a:Landroid/os/LocaleList;
+
+    invoke-virtual {p0}, Landroid/os/LocaleList;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

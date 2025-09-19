@@ -3,22 +3,26 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lj0d;
+.field public final synthetic b:Ld0d;
+
+.field public final synthetic c:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj0d;I)V
-    .registers 3
+.method public synthetic constructor <init>(Ld0d;JI)V
+    .registers 5
 
-    iput p2, p0, Lb0d;->a:I
+    iput p4, p0, Lb0d;->a:I
 
-    iput-object p1, p0, Lb0d;->b:Lj0d;
+    iput-object p1, p0, Lb0d;->b:Ld0d;
+
+    iput-wide p2, p0, Lb0d;->c:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,40 +31,48 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 2
+.method public final run()V
+    .registers 6
 
-    iget p1, p0, Lb0d;->a:I
+    iget v0, p0, Lb0d;->a:I
 
-    iget-object p0, p0, Lb0d;->b:Lj0d;
+    packed-switch v0, :pswitch_data_0
 
-    packed-switch p1, :pswitch_data_0
+    new-instance v0, Lb0d;
 
-    iget-object p0, p0, Lj0d;->n0:Lh96;
+    const/4 v1, 0x0
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    iget-object v2, p0, Lb0d;->b:Ld0d;
+
+    iget-wide v3, p0, Lb0d;->c:J
+
+    invoke-direct {v0, v2, v3, v4, v1}, Lb0d;-><init>(Ld0d;JI)V
+
+    iget-object p0, v2, Ld0d;->f:Landroid/os/Handler;
+
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 
     :pswitch_0
-    iget-object p0, p0, Lj0d;->c:Lh96;
+    iget-object v0, p0, Lb0d;->b:Ld0d;
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    iget-object v1, v0, Ld0d;->m:Ljava/util/LinkedList;
+
+    iget-wide v2, p0, Lb0d;->c:J
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    invoke-virtual {v1, p0}, Ljava/util/LinkedList;->offer(Ljava/lang/Object;)Z
+
+    invoke-virtual {v0}, Ld0d;->b()V
 
     return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lj0d;->a:Lh96;
-
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
-
-    return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

@@ -1,207 +1,43 @@
 .class public final Ljya;
-.super Lgk0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic c:I
+.field public final a:Lsg1;
 
-.field public final d:I
+.field public final b:Lxxa;
+
+.field public final c:Lxxa;
+
+.field public final d:Lxxa;
+
+.field public final e:Lxxa;
+
+.field public final f:Lxxa;
+
+.field public final g:Lxxa;
 
 
 # direct methods
-.method public synthetic constructor <init>(II)V
-    .registers 3
-
-    iput p2, p0, Ljya;->c:I
-
-    iput p1, p0, Ljya;->d:I
+.method public constructor <init>(Lsg1;Lxxa;Lxxa;Lxxa;Lxxa;Lxxa;Lxxa;)V
+    .registers 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Ljya;->a:Lsg1;
+
+    iput-object p2, p0, Ljya;->b:Lxxa;
+
+    iput-object p3, p0, Ljya;->c:Lxxa;
+
+    iput-object p4, p0, Ljya;->d:Lxxa;
+
+    iput-object p5, p0, Ljya;->e:Lxxa;
+
+    iput-object p6, p0, Ljya;->f:Lxxa;
+
+    iput-object p7, p0, Ljya;->g:Lxxa;
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final a(Landroid/graphics/Bitmap;Lc5b;)La63;
-    .registers 10
-
-    iget p2, p0, Ljya;->c:I
-
-    packed-switch p2, :pswitch_data_0
-
-    new-instance v5, Landroid/graphics/Matrix;
-
-    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
-
-    iget p0, p0, Ljya;->d:I
-
-    if-lez p0, :cond_0
-
-    int-to-float p0, p0
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result p2
-
-    int-to-float p2, p2
-
-    const/high16 v0, 0x40000000    # 2.0f
-
-    div-float/2addr p2, v0
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    div-float/2addr v1, v0
-
-    invoke-virtual {v5, p0, p2, v1}, Landroid/graphics/Matrix;->postRotate(FFF)Z
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    const/4 v6, 0x1
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move-object v0, p1
-
-    invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
-
-    move-result-object p0
-
-    new-instance p1, Liya;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p2}, Liya;-><init>(I)V
-
-    sget-object p2, La63;->Y:Lbt9;
-
-    invoke-static {p0, p1, p2}, La63;->t0(Ljava/lang/Object;Lamc;Lz53;)Lsc4;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    move-object v0, p1
-
-    new-instance v5, Landroid/graphics/Matrix;
-
-    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
-
-    iget p0, p0, Ljya;->d:I
-
-    if-lez p0, :cond_1
-
-    int-to-float p0, p0
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result p1
-
-    div-int/lit8 p1, p1, 0x2
-
-    int-to-float p1, p1
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result p2
-
-    div-int/lit8 p2, p2, 0x2
-
-    int-to-float p2, p2
-
-    invoke-virtual {v5, p0, p1, p2}, Landroid/graphics/Matrix;->postRotate(FFF)Z
-
-    :cond_1
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    const/4 v6, 0x1
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
-
-    move-result-object p0
-
-    new-instance p1, Lxl9;
-
-    const/16 p2, 0x1d
-
-    invoke-direct {p1, p2}, Lxl9;-><init>(I)V
-
-    sget-object p2, La63;->Y:Lbt9;
-
-    invoke-static {p0, p1, p2}, La63;->t0(Ljava/lang/Object;Lamc;Lz53;)Lsc4;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final b()Llx0;
-    .registers 2
-
-    iget v0, p0, Ljya;->c:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget p0, p0, Ljya;->d:I
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance v0, Lntd;
-
-    invoke-direct {v0, p0}, Lntd;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-
-    :pswitch_0
-    iget p0, p0, Ljya;->d:I
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance v0, Lntd;
-
-    invoke-direct {v0, p0}, Lntd;-><init>(Ljava/lang/String;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

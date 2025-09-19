@@ -1,53 +1,45 @@
 .class public final Lrnd;
-.super Lha4;
+.super Loi0;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lrnd;
-
-.field public static final c:Lca4;
-
-.field public static final d:Lca4;
+# instance fields
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public constructor <init>(JLjava/util/List;)V
+    .registers 4
 
-    new-instance v0, Lrnd;
+    invoke-direct {p0, p1, p2}, Loi0;-><init>(J)V
 
-    invoke-direct {v0}, Lha4;-><init>()V
-
-    sput-object v0, Lrnd;->b:Lrnd;
-
-    const/4 v6, 0x0
-
-    new-array v2, v6, [Ljava/lang/String;
-
-    const/16 v5, 0xe
-
-    const/4 v4, 0x0
-
-    const-string v1, ":chats/share"
-
-    const/4 v3, 0x0
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v1
-
-    sput-object v1, Lrnd;->c:Lca4;
-
-    new-array v2, v6, [Ljava/lang/String;
-
-    const-string v1, ":share"
-
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
-
-    move-result-object v0
-
-    sput-object v0, Lrnd;->d:Lca4;
+    iput-object p3, p0, Lrnd;->b:Ljava/util/List;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "SessionsInfoEvent{sessions="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lrnd;->b:Ljava/util/List;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

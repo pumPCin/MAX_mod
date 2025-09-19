@@ -1,169 +1,160 @@
 .class public final Lku5;
-.super Ljava/util/concurrent/atomic/AtomicLong;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lyu5;
-.implements Lsee;
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Lqee;
+.field public X:I
 
-.field public b:Lsee;
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public c:Z
+.field public final synthetic Z:Lis5;
+
+.field public final synthetic r0:Lq23;
 
 
 # direct methods
-.method public constructor <init>(Lqee;)V
-    .registers 2
+.method public constructor <init>(Lis5;Lq23;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
+    iput-object p1, p0, Lku5;->Z:Lis5;
 
-    iput-object p1, p0, Lku5;->a:Lqee;
+    iput-object p2, p0, Lku5;->r0:Lq23;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-boolean v0, p0, Lku5;->c:Z
+    check-cast p1, Lks5;
 
-    if-eqz v0, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return-void
+    invoke-virtual {p0, p1, p2}, Lku5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    :cond_0
-    const/4 v0, 0x1
+    move-result-object p0
 
-    iput-boolean v0, p0, Lku5;->c:Z
+    check-cast p0, Lku5;
 
-    iget-object p0, p0, Lku5;->a:Lqee;
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-interface {p0}, Lqee;->b()V
+    invoke-virtual {p0, p1}, Lku5;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final cancel()V
-    .registers 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 5
 
-    iget-object p0, p0, Lku5;->b:Lsee;
+    new-instance v0, Lku5;
 
-    invoke-interface {p0}, Lsee;->cancel()V
+    iget-object v1, p0, Lku5;->Z:Lis5;
 
-    return-void
+    iget-object p0, p0, Lku5;->r0:Lq23;
+
+    invoke-direct {v0, v1, p0, p2}, Lku5;-><init>(Lis5;Lq23;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lku5;->Y:Ljava/lang/Object;
+
+    return-object v0
 .end method
 
-.method public final d(Ljava/lang/Object;)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 6
 
-    iget-boolean v0, p0, Lku5;->c:Z
+    iget v0, p0, Lku5;->X:I
 
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
+    const/4 v1, 0x1
 
     if-eqz v0, :cond_1
 
-    iget-object v0, p0, Lku5;->a:Lqee;
+    if-ne v0, v1, :cond_0
 
-    invoke-interface {v0, p1}, Lqee;->d(Ljava/lang/Object;)V
+    iget-object p0, p0, Lku5;->Y:Ljava/lang/Object;
 
-    const-wide/16 v0, 0x1
+    check-cast p0, Lju5;
 
-    invoke-static {p0, v0, v1}, Lpwe;->r(Ljava/util/concurrent/atomic/AtomicLong;J)V
+    :try_start_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Lkotlinx/coroutines/flow/internal/AbortFlowException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-void
+    goto :goto_1
+
+    :catch_0
+    move-exception p1
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     :cond_1
-    iget-object p1, p0, Lku5;->b:Lsee;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-interface {p1}, Lsee;->cancel()V
+    iget-object p1, p0, Lku5;->Y:Ljava/lang/Object;
 
-    new-instance p1, Lio/reactivex/rxjava3/exceptions/MissingBackpressureException;
+    check-cast p1, Lks5;
 
-    const-string v0, "Could not emit value due to lack of requests"
+    iget-object v0, p0, Lku5;->Z:Lis5;
 
-    invoke-direct {p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    new-instance v2, Lju5;
 
-    invoke-virtual {p0, p1}, Lku5;->onError(Ljava/lang/Throwable;)V
+    iget-object v3, p0, Lku5;->r0:Lq23;
 
-    return-void
-.end method
+    invoke-direct {v2, v3, p1}, Lju5;-><init>(Lq23;Lks5;)V
 
-.method public final f(Lsee;)V
-    .registers 4
+    :try_start_1
+    iput-object v2, p0, Lku5;->Y:Ljava/lang/Object;
 
-    iget-object v0, p0, Lku5;->b:Lsee;
+    iput v1, p0, Lku5;->X:I
 
-    invoke-static {v0, p1}, Luee;->e(Lsee;Lsee;)Z
+    invoke-interface {v0, v2, p0}, Lis5;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    move-result v0
+    move-result-object p0
+    :try_end_1
+    .catch Lkotlinx/coroutines/flow/internal/AbortFlowException; {:try_start_1 .. :try_end_1} :catch_1
 
-    if-eqz v0, :cond_0
+    sget-object p1, Lz04;->a:Lz04;
 
-    iput-object p1, p0, Lku5;->b:Lsee;
+    if-ne p0, p1, :cond_2
 
-    iget-object v0, p0, Lku5;->a:Lqee;
+    return-object p1
 
-    invoke-interface {v0, p0}, Lqee;->f(Lsee;)V
+    :catch_1
+    move-exception p1
 
-    const-wide v0, 0x7fffffffffffffffL
+    move-object p0, v2
 
-    invoke-interface {p1, v0, v1}, Lsee;->i(J)V
+    :goto_0
+    iget-object v0, p1, Lkotlinx/coroutines/flow/internal/AbortFlowException;->a:Ljava/lang/Object;
 
-    :cond_0
-    return-void
-.end method
+    if-ne v0, p0, :cond_3
 
-.method public final i(J)V
-    .registers 4
+    :cond_2
+    :goto_1
+    sget-object p0, Lylf;->a:Lylf;
 
-    invoke-static {p1, p2}, Luee;->d(J)Z
+    return-object p0
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p0, p1, p2}, Lpwe;->a(Ljava/util/concurrent/atomic/AtomicLong;J)J
-
-    :cond_0
-    return-void
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .registers 3
-
-    iget-boolean v0, p0, Lku5;->c:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lku5;->c:Z
-
-    iget-object p0, p0, Lku5;->a:Lqee;
-
-    invoke-interface {p0, p1}, Lqee;->onError(Ljava/lang/Throwable;)V
-
-    return-void
+    :cond_3
+    throw p1
 .end method

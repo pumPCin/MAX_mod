@@ -1,169 +1,39 @@
-.class public abstract Lhp7;
-.super Ltgc;
+.class public final Lhp7;
+.super Lcb4;
 .source "SourceFile"
 
 
-# instance fields
-.field public final o:Lvu;
+# static fields
+.field public static final b:Lhp7;
 
 
 # direct methods
-.method public constructor <init>(Lx77;)V
-    .registers 8
-
-    invoke-direct {p0}, Ltgc;-><init>()V
-
-    new-instance v0, Lgp7;
-
-    invoke-direct {v0, p0}, Lgp7;-><init>(Lhp7;)V
-
-    new-instance v1, Lvu;
-
-    new-instance v2, Lgng;
-
-    const/4 v3, 0x1
-
-    invoke-direct {v2, v3, p0}, Lgng;-><init>(ILjava/lang/Object;)V
-
-    sget-object v3, Las3;->a:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    :try_start_0
-    sget-object v4, Las3;->b:Ljava/util/concurrent/ExecutorService;
-
-    if-nez v4, :cond_0
-
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Ljava/util/concurrent/Executors;->newFixedThreadPool(I)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v4
-
-    sput-object v4, Las3;->b:Ljava/util/concurrent/ExecutorService;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    sget-object v3, Las3;->b:Ljava/util/concurrent/ExecutorService;
-
-    new-instance v4, Lzd8;
-
-    const/4 v5, 0x4
-
-    invoke-direct {v4, v3, v5, p1}, Lzd8;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-direct {v1, v2, v4}, Lvu;-><init>(Lyp7;Lzd8;)V
-
-    iput-object v1, p0, Lhp7;->o:Lvu;
-
-    iget-object p0, v1, Lvu;->d:Ljava/util/concurrent/CopyOnWriteArrayList;
-
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
-
-    return-void
-
-    :goto_1
-    :try_start_1
-    monitor-exit v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
-.end method
-
-.method public constructor <init>(Lzd8;)V
+.method static constructor <clinit>()V
     .registers 6
 
-    invoke-direct {p0}, Ltgc;-><init>()V
+    new-instance v0, Lhp7;
 
-    new-instance v0, Lgp7;
+    invoke-direct {v0}, Lcb4;-><init>()V
 
-    invoke-direct {v0, p0}, Lgp7;-><init>(Lhp7;)V
+    sput-object v0, Lhp7;->b:Lhp7;
 
-    new-instance v1, Lvu;
+    const/4 v1, 0x0
 
-    new-instance v2, Lgng;
+    new-array v2, v1, [Ljava/lang/String;
 
-    const/4 v3, 0x1
+    const-string v1, "link"
 
-    invoke-direct {v2, v3, p0}, Lgng;-><init>(ILjava/lang/Object;)V
+    invoke-static {v1}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
 
-    invoke-direct {v1, v2, p1}, Lvu;-><init>(Lyp7;Lzd8;)V
+    move-result-object v3
 
-    iput-object v1, p0, Lhp7;->o:Lvu;
+    const/16 v5, 0xc
 
-    iget-object p0, v1, Lvu;->d:Ljava/util/concurrent/CopyOnWriteArrayList;
+    const/4 v4, 0x0
 
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
+    const-string v1, ":link-intercept"
 
-    return-void
-.end method
-
-
-# virtual methods
-.method public final C(I)Ljava/lang/Object;
-    .registers 2
-
-    iget-object p0, p0, Lhp7;->o:Lvu;
-
-    iget-object p0, p0, Lvu;->f:Ljava/util/List;
-
-    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public D(Ljava/util/List;Ljava/util/List;)V
-    .registers 3
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
 
     return-void
-.end method
-
-.method public final E(Ljava/util/List;)V
-    .registers 3
-
-    iget-object p0, p0, Lhp7;->o:Lvu;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Lvu;->b(Ljava/util/List;Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public F(Ljava/util/List;Ljava/lang/Runnable;)V
-    .registers 3
-
-    iget-object p0, p0, Lhp7;->o:Lvu;
-
-    invoke-virtual {p0, p1, p2}, Lvu;->b(Ljava/util/List;Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public j()I
-    .registers 1
-
-    iget-object p0, p0, Lhp7;->o:Lvu;
-
-    iget-object p0, p0, Lvu;->f:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
 .end method

@@ -1,104 +1,163 @@
-.class public final synthetic Lki6;
-.super Ljava/lang/Object;
+.class public final Lki6;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Li5a;
-.implements Lk5a;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:Lhqc;
+.field public X:Lyz2;
+
+.field public Y:I
+
+.field public final synthetic Z:Lni6;
+
+.field public final synthetic r0:Lmc3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhqc;)V
-    .registers 2
+.method public constructor <init>(Lni6;Lmc3;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    iput-object p1, p0, Lki6;->a:Lhqc;
+    iput-object p1, p0, Lki6;->Z:Lni6;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lki6;->r0:Lmc3;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public k(Lcom/google/android/gms/tasks/Task;)V
-    .registers 12
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object p0, p0, Lki6;->a:Lhqc;
+    check-cast p1, Ly04;
 
-    iget-object p0, p0, Lhqc;->b:Ljava/lang/Object;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    check-cast p0, Llv7;
+    invoke-virtual {p0, p1, p2}, Lki6;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->h()Z
+    move-result-object p0
 
-    move-result v0
+    check-cast p0, Lki6;
 
-    if-eqz v0, :cond_0
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->f()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lki6;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
 
-    if-eqz v0, :cond_0
+    return-object p0
+.end method
 
-    invoke-virtual {p1}, Lcom/google/android/gms/tasks/Task;->f()Ljava/lang/Object;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance p1, Lki6;
+
+    iget-object v0, p0, Lki6;->Z:Lni6;
+
+    iget-object p0, p0, Lki6;->r0:Lmc3;
+
+    invoke-direct {p1, v0, p0, p2}, Lki6;-><init>(Lni6;Lmc3;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
+
+    iget v0, p0, Lki6;->Y:I
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
+
+    sget-object v3, Lz04;->a:Lz04;
+
+    if-eqz v0, :cond_2
+
+    if-eq v0, v2, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    return-object p1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    iget-object v0, p0, Lki6;->X:Lyz2;
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lki6;->Z:Lni6;
+
+    iget-object p1, p1, Lni6;->b:Lcl7;
+
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Landroid/location/Location;
+    move-object v0, p1
 
-    new-instance v0, Lev7;
+    check-cast v0, Lyz2;
 
-    invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
+    iput-object v0, p0, Lki6;->X:Lyz2;
 
-    move-result-wide v1
+    iput v2, p0, Lki6;->Y:I
 
-    invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
+    iget-object p1, p0, Lki6;->r0:Lmc3;
 
-    move-result-wide v3
+    invoke-virtual {p1, p0}, Lsf7;->awaitInternal(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Landroid/location/Location;->getAltitude()D
+    move-result-object p1
 
-    move-result-wide v5
+    if-ne p1, v3, :cond_3
 
-    invoke-virtual {p1}, Landroid/location/Location;->getAccuracy()F
+    goto :goto_1
 
-    move-result v7
+    :cond_3
+    :goto_0
+    check-cast p1, Ljava/lang/Number;
 
-    invoke-virtual {p1}, Landroid/location/Location;->getBearing()F
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
 
-    move-result v8
+    move-result-wide v4
 
-    invoke-virtual {p1}, Landroid/location/Location;->getSpeed()F
+    const/4 p1, 0x0
 
-    move-result v9
+    iput-object p1, p0, Lki6;->X:Lyz2;
 
-    invoke-direct/range {v0 .. v9}, Lev7;-><init>(DDDFFF)V
+    iput v1, p0, Lki6;->Y:I
 
-    invoke-interface {p0, v0}, Llv7;->h0(Lev7;)V
+    invoke-interface {v0, v4, v5, p0}, Lyz2;->p(JLjx3;)Ljava/lang/Object;
 
-    return-void
+    move-result-object p0
 
-    :cond_0
-    invoke-interface {p0}, Llv7;->N()V
+    if-ne p0, v3, :cond_4
 
-    return-void
-.end method
+    :goto_1
+    return-object v3
 
-.method public onFailure(Ljava/lang/Exception;)V
-    .registers 2
-
-    iget-object p0, p0, Lki6;->a:Lhqc;
-
-    iget-object p0, p0, Lhqc;->b:Ljava/lang/Object;
-
-    check-cast p0, Llv7;
-
-    invoke-interface {p0}, Llv7;->N()V
-
-    return-void
+    :cond_4
+    return-object p0
 .end method

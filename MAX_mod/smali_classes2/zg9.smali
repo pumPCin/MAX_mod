@@ -1,54 +1,47 @@
 .class public final Lzg9;
-.super Lsoe;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public c:Lzz8;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lkd8;
+
+.field public Z:I
+
+.field public o:Lkd8;
 
 
 # direct methods
-.method public constructor <init>(Lu09;)V
-    .registers 2
+.method public constructor <init>(Lkd8;Ljx3;)V
+    .registers 3
 
-    invoke-direct {p0, p1}, Lsoe;-><init>(Lu09;)V
+    iput-object p1, p0, Lzg9;->Y:Lkd8;
+
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lu09;Ljava/lang/String;)V
-    .registers 4
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    const-string v0, "reactionInfo"
+    iput-object p1, p0, Lzg9;->X:Ljava/lang/Object;
 
-    invoke-static {p2, v0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget p1, p0, Lzg9;->Z:I
 
-    move-result p2
+    const/high16 v0, -0x80000000
 
-    if-eqz p2, :cond_0
+    or-int/2addr p1, v0
 
-    invoke-static {p1}, Lms8;->D(Lu09;)Lzz8;
+    iput p1, p0, Lzg9;->Z:I
 
-    move-result-object p1
+    iget-object p1, p0, Lzg9;->Y:Lkd8;
 
-    iput-object p1, p0, Lzg9;->c:Lzz8;
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p1}, Lu09;->B()V
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    iget-object p0, p0, Lzg9;->c:Lzz8;
-
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p1, p0}, Lkd8;->d(Ljx3;)Ljava/lang/Object;
 
     move-result-object p0
 

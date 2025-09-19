@@ -1,115 +1,93 @@
-.class public final Lqpf;
-.super Lxie;
+.class public abstract synthetic Lqpf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+# direct methods
+.method static constructor <clinit>()V
+    .registers 6
 
+    const/16 v0, 0x9
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    invoke-static {v0}, Lmw1;->w(I)[I
 
-    check-cast p1, Lflg;
+    move-result-object v0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    array-length v0, v0
 
-    invoke-virtual {p0, p1, p2}, Lqpf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    new-array v0, v0, [I
 
-    move-result-object p0
+    const/4 v1, 0x1
 
-    check-cast p0, Lqpf;
+    const/4 v2, 0x0
 
-    sget-object p1, Lncf;->a:Lncf;
+    :try_start_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {p0, p1}, Lqpf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    :catch_0
+    const/4 v2, 0x2
 
-    move-result-object p0
+    :try_start_1
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    return-object p0
-.end method
+    :catch_1
+    const/4 v1, 0x3
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    const/16 v3, 0x8
 
-    new-instance p0, Lqpf;
+    :try_start_2
+    aput v1, v0, v3
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    const/4 v0, 0x2
+    :catch_2
+    const/4 v1, 0x4
 
-    invoke-direct {p0, v0, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v4, 0x6
 
-    iput-object p1, p0, Lqpf;->X:Ljava/lang/Object;
+    :try_start_3
+    aput v1, v0, v4
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    return-object p0
-.end method
+    :catch_3
+    const/4 v5, 0x5
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    :try_start_4
+    aput v5, v0, v2
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    :catch_4
+    :try_start_5
+    aput v4, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
-    iget-object p0, p0, Lqpf;->X:Ljava/lang/Object;
+    :catch_5
+    const/4 v1, 0x7
 
-    check-cast p0, Lflg;
+    :try_start_6
+    aput v1, v0, v5
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
-    const/4 p1, 0x0
+    :catch_6
+    :try_start_7
+    aput v3, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
 
-    if-eqz p0, :cond_0
+    :catch_7
+    sput-object v0, Lqpf;->$EnumSwitchMapping$0:[I
 
-    iget-object v0, p0, Lflg;->b:Lelg;
-
-    goto :goto_0
-
-    :cond_0
-    move-object v0, p1
-
-    :goto_0
-    sget-object v1, Lelg;->c:Lelg;
-
-    if-eq v0, v1, :cond_4
-
-    if-eqz p0, :cond_1
-
-    iget-object v0, p0, Lflg;->b:Lelg;
-
-    goto :goto_1
-
-    :cond_1
-    move-object v0, p1
-
-    :goto_1
-    sget-object v1, Lelg;->o:Lelg;
-
-    if-eq v0, v1, :cond_4
-
-    if-eqz p0, :cond_2
-
-    iget-object p1, p0, Lflg;->b:Lelg;
-
-    :cond_2
-    sget-object p0, Lelg;->Y:Lelg;
-
-    if-ne p1, p0, :cond_3
-
-    goto :goto_2
-
-    :cond_3
-    const/4 p0, 0x0
-
-    goto :goto_3
-
-    :cond_4
-    :goto_2
-    const/4 p0, 0x1
-
-    :goto_3
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

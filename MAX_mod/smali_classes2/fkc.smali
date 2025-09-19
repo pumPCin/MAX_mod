@@ -1,125 +1,51 @@
 .class public final Lfkc;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/util/ArrayList;
+.field public X:Ljava/util/List;
 
-.field public final b:Z
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lgkc;
+
+.field public o:Lgkc;
+
+.field public r0:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/ArrayList;Z)V
+.method public constructor <init>(Lgkc;Ljx3;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lfkc;->Z:Lgkc;
 
-    iput-object p1, p0, Lfkc;->a:Ljava/util/ArrayList;
-
-    iput-boolean p2, p0, Lfkc;->b:Z
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Lfkc;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lfkc;
-
-    iget-object v0, p0, Lfkc;->a:Ljava/util/ArrayList;
-
-    iget-object v1, p1, Lfkc;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-boolean p0, p0, Lfkc;->b:Z
-
-    iget-boolean p1, p1, Lfkc;->b:Z
-
-    if-eq p0, p1, :cond_3
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-object v0, p0, Lfkc;->a:Ljava/util/ArrayList;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean p0, p0, Lfkc;->b:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-object p1, p0, Lfkc;->Y:Ljava/lang/Object;
 
-    const-string v1, "ReplyKeyboard(buttons="
+    iget p1, p0, Lfkc;->r0:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/high16 v0, -0x80000000
 
-    iget-object v1, p0, Lfkc;->a:Ljava/util/ArrayList;
+    or-int/2addr p1, v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iput p1, p0, Lfkc;->r0:I
 
-    const-string v1, ", defaultInputDisabled="
+    iget-object p1, p0, Lfkc;->Z:Lgkc;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    iget-boolean p0, p0, Lfkc;->b:Z
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, v0, p0}, Lgkc;->c(Ljava/util/List;Ljx3;)Ljava/lang/Object;
 
     move-result-object p0
 

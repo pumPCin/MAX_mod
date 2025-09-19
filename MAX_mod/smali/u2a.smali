@@ -1,56 +1,71 @@
 .class public final Lu2a;
-.super Lu2;
+.super Ltg0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Lqxc;
+.field public final a:Lrz;
 
-.field public final c:I
+.field public final b:Lua7;
+
+.field public final c:Lxb3;
 
 
 # direct methods
-.method public constructor <init>(Ly0a;Lqxc;I)V
-    .registers 4
+.method public constructor <init>()V
+    .registers 3
 
-    invoke-direct {p0, p1}, Lu2;-><init>(Lt3a;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lu2a;->b:Lqxc;
+    new-instance v0, Lrz;
 
-    iput p3, p0, Lu2a;->c:I
+    const/16 v1, 0xf
+
+    invoke-direct {v0, v1}, Lrz;-><init>(I)V
+
+    iput-object v0, p0, Lu2a;->a:Lrz;
+
+    new-instance v0, Lua7;
+
+    const/16 v1, 0x1c
+
+    invoke-direct {v0, v1}, Lua7;-><init>(I)V
+
+    iput-object v0, p0, Lu2a;->b:Lua7;
+
+    new-instance v0, Lxb3;
+
+    const/16 v1, 0x18
+
+    invoke-direct {v0, v1}, Lxb3;-><init>(I)V
+
+    iput-object v0, p0, Lu2a;->c:Lxb3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ld4a;)V
-    .registers 5
+.method public final a()Ljava/util/Comparator;
+    .registers 1
 
-    iget-object v0, p0, Lu2a;->b:Lqxc;
+    iget-object p0, p0, Lu2a;->a:Lrz;
 
-    instance-of v1, v0, Lw3f;
+    return-object p0
+.end method
 
-    iget-object v2, p0, Lu2;->a:Lt3a;
+.method public final b()Lbc6;
+    .registers 1
 
-    if-eqz v1, :cond_0
+    iget-object p0, p0, Lu2a;->b:Lua7;
 
-    invoke-interface {v2, p1}, Lt3a;->a(Ld4a;)V
+    return-object p0
+.end method
 
-    return-void
+.method public final c()Lzb6;
+    .registers 1
 
-    :cond_0
-    invoke-virtual {v0}, Lqxc;->a()Loxc;
+    iget-object p0, p0, Lu2a;->c:Lxb3;
 
-    move-result-object v0
-
-    new-instance v1, Lt2a;
-
-    iget p0, p0, Lu2a;->c:I
-
-    invoke-direct {v1, p1, v0, p0}, Lt2a;-><init>(Ld4a;Loxc;I)V
-
-    invoke-interface {v2, v1}, Lt3a;->a(Ld4a;)V
-
-    return-void
+    return-object p0
 .end method

@@ -1,58 +1,213 @@
-.class public abstract Lu1c;
+.class public final Lu1c;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field public static custom_dialog:I = 0x7f0d0037
+# instance fields
+.field public final a:Z
 
-.field public static exo_list_divider:I = 0x7f0d0054
+.field public final b:Ljava/util/Set;
 
-.field public static exo_player_control_view:I = 0x7f0d0055
+.field public final c:Ljava/util/Set;
 
-.field public static exo_player_view:I = 0x7f0d0056
 
-.field public static exo_styled_player_control_ffwd_button:I = 0x7f0d0057
+# direct methods
+.method public constructor <init>(ZLjava/util/HashSet;Ljava/util/HashSet;)V
+    .registers 4
 
-.field public static exo_styled_player_control_rewind_button:I = 0x7f0d0058
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static exo_styled_player_control_view:I = 0x7f0d0059
+    iput-boolean p1, p0, Lu1c;->a:Z
 
-.field public static exo_styled_player_view:I = 0x7f0d005a
+    if-nez p2, :cond_0
 
-.field public static exo_styled_settings_list:I = 0x7f0d005b
+    sget-object p1, Ljava/util/Collections;->EMPTY_SET:Ljava/util/Set;
 
-.field public static exo_styled_settings_list_item:I = 0x7f0d005c
+    goto :goto_0
 
-.field public static exo_styled_sub_settings_list_item:I = 0x7f0d005d
+    :cond_0
+    new-instance p1, Ljava/util/HashSet;
 
-.field public static exo_track_selection_dialog:I = 0x7f0d005e
+    invoke-direct {p1, p2}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-.field public static notification_action:I = 0x7f0d00f3
+    :goto_0
+    iput-object p1, p0, Lu1c;->b:Ljava/util/Set;
 
-.field public static notification_action_tombstone:I = 0x7f0d00f4
+    if-nez p3, :cond_1
 
-.field public static notification_media_action:I = 0x7f0d00f5
+    sget-object p1, Ljava/util/Collections;->EMPTY_SET:Ljava/util/Set;
 
-.field public static notification_media_cancel_action:I = 0x7f0d00f6
+    goto :goto_1
 
-.field public static notification_template_big_media:I = 0x7f0d00f7
+    :cond_1
+    new-instance p1, Ljava/util/HashSet;
 
-.field public static notification_template_big_media_custom:I = 0x7f0d00f8
+    invoke-direct {p1, p3}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-.field public static notification_template_big_media_narrow:I = 0x7f0d00f9
+    :goto_1
+    iput-object p1, p0, Lu1c;->c:Ljava/util/Set;
 
-.field public static notification_template_big_media_narrow_custom:I = 0x7f0d00fa
+    return-void
+.end method
 
-.field public static notification_template_custom_big:I = 0x7f0d00fb
 
-.field public static notification_template_icon_group:I = 0x7f0d00fc
+# virtual methods
+.method public final a(Ljava/lang/Class;Z)Z
+    .registers 4
 
-.field public static notification_template_lines_media:I = 0x7f0d00fd
+    iget-object v0, p0, Lu1c;->b:Ljava/util/Set;
 
-.field public static notification_template_media:I = 0x7f0d00fe
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-.field public static notification_template_media_custom:I = 0x7f0d00ff
+    move-result v0
 
-.field public static notification_template_part_chronometer:I = 0x7f0d0100
+    if-eqz v0, :cond_0
 
-.field public static notification_template_part_time:I = 0x7f0d0101
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lu1c;->c:Ljava/util/Set;
+
+    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    iget-boolean p0, p0, Lu1c;->a:Z
+
+    if-eqz p0, :cond_2
+
+    if-eqz p2, :cond_2
+
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    instance-of v0, p1, Lu1c;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_1
+
+    return v0
+
+    :cond_1
+    check-cast p1, Lu1c;
+
+    iget-boolean v2, p0, Lu1c;->a:Z
+
+    iget-boolean v3, p1, Lu1c;->a:Z
+
+    if-ne v2, v3, :cond_2
+
+    iget-object v2, p0, Lu1c;->b:Ljava/util/Set;
+
+    iget-object v3, p1, Lu1c;->b:Ljava/util/Set;
+
+    invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    iget-object p0, p0, Lu1c;->c:Ljava/util/Set;
+
+    iget-object p1, p1, Lu1c;->c:Ljava/util/Set;
+
+    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
+
+    :cond_2
+    return v1
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    iget-boolean v0, p0, Lu1c;->a:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lu1c;->b:Ljava/util/Set;
+
+    iget-object p0, p0, Lu1c;->c:Ljava/util/Set;
+
+    filled-new-array {v0, v1, p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "QuirkSettings{enabledWhenDeviceHasQuirk="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-boolean v1, p0, Lu1c;->a:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", forceEnabledQuirks="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lu1c;->b:Ljava/util/Set;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", forceDisabledQuirks="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lu1c;->c:Ljava/util/Set;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method

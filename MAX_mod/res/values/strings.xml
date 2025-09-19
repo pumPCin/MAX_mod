@@ -122,6 +122,8 @@
     <string name="call_admins_settings_title">Настройки звонка</string>
     <string name="call_admins_settings_waiting_room">Зал ожидания</string>
     <string name="call_admins_settings_waiting_room_desc">Подключение только после вашего разрешения</string>
+    <string name="call_ask_permission_audio_video_denied_description">Выберите MAX в настройках и включите доступ к камере и микрофону</string>
+    <string name="call_ask_permission_audio_video_denied_title">Разрешите доступ к камере и микрофону в настройках</string>
     <string name="call_ask_permission_denied_description">Выберите MAX в настройках и включите доступ к микрофону</string>
     <string name="call_ask_permission_denied_title">Разрешите доступ к микрофону в настройках</string>
     <string name="call_ask_permission_description">Вы сможете звонить и записывать аудиосообщения</string>
@@ -163,9 +165,10 @@
     <string name="call_history_call_tab_missing">Пропущенные</string>
     <string name="call_history_call_title">Звонки</string>
     <string name="call_history_info_copy_link">Скопировать ссылку</string>
+    <string name="call_history_info_create_failed">Не удалось создать ссылку</string>
+    <string name="call_history_info_creating">Создаём ссылку</string>
+    <string name="call_history_info_join_call">Присоединиться к звонку</string>
     <string name="call_history_info_open_call_chat_title">Чат звонка</string>
-    <string name="call_history_info_recreate">"Не удалось создать ссылку. 
-Попробуйте ещё раз"</string>
     <string name="call_history_info_share">Поделиться ссылкой</string>
     <string name="call_history_info_start_call">Присоединиться к звонку</string>
     <string name="call_history_info_title">Ссылка на звонок</string>
@@ -189,8 +192,16 @@
     <string name="call_history_link_send_title">Отправить ссылку</string>
     <string name="call_history_missed_calls_empty_state_title">Здесь будут звонки без ответа</string>
     <string name="call_history_open_last_message_error">К этому звонку перейти нельзя.</string>
-    <string name="call_incoming_accept_accessibility">Принять вызов</string>
+    <string name="call_incoming_accept_with_audio_accessibility">Принять вызов без видео</string>
+    <string name="call_incoming_accept_with_video_accessibility">Принять вызов с видео</string>
+    <string name="call_incoming_apply_audio_call_description">"Ответить
+с аудио"</string>
+    <string name="call_incoming_apply_video_call_description">"Ответить
+с видео"</string>
     <string name="call_incoming_audio_call">Входящий аудиозвонок MAX</string>
+    <string name="call_incoming_call_video_disable">Выключить камеру</string>
+    <string name="call_incoming_call_video_enable">Включить камеру</string>
+    <string name="call_incoming_cancel_call_description">Отклонить</string>
     <string name="call_incoming_decline_accessibility">Отклонить вызов</string>
     <string name="call_incoming_open_chat_accessibility">Открыть чат</string>
     <string name="call_incoming_video_call">Входящий видеозвонок MAX</string>
@@ -238,20 +249,17 @@
     <string name="call_opponent_unavailable_busy">Занято</string>
     <string name="call_opponent_unavailable_privacy">Пользователь запретил ему звонить</string>
     <string name="call_opponents_scroll_to_start">В начало</string>
+    <string name="call_presettings_call_save_changes">Сохранить</string>
+    <string name="call_presettings_change_call_name_empty_error">Поле не может быть пустым</string>
+    <string name="call_presettings_change_call_name_title">Изменить звонок</string>
     <string name="call_raise_hand_disabled_accessibility">Вы опустили руку</string>
     <string name="call_raise_hand_enabled_accessibility">Вы подняли руку</string>
-    <string name="call_rate_custom_reason_hint_text">Пожелания, мысли и идеи…</string>
-    <string name="call_rate_custom_reason_title_text">Расскажите, что улучшить?</string>
     <string name="call_rate_initial_title_text">Как вам качество звонка?</string>
-    <string name="call_rate_negative_title_text">Что разочаровало?</string>
-    <string name="call_rate_normal_title_text">Что было не так?</string>
-    <string name="call_rate_positive_title_text">Рады, что всё понравилось!</string>
+    <string name="call_rate_negative_title_text">Что не понравилось?</string>
     <string name="call_rate_reason_audio_call_interuption_title">Звонок прервался</string>
     <string name="call_rate_reason_audio_echo_title">Шум, помехи, эхо</string>
     <string name="call_rate_reason_audio_freezes_title">Пропадал звук</string>
     <string name="call_rate_reason_audio_quality_title">Низкое качество звука</string>
-    <string name="call_rate_reason_other_negative_title">Другая причина</string>
-    <string name="call_rate_reason_other_positive_title">Оставить пожелание</string>
     <string name="call_rate_reason_users_freezes_title">Зависание участников</string>
     <string name="call_rate_reason_video_call_interuption_title">Звонок прервался</string>
     <string name="call_rate_reason_video_freezes_title">Видео тормозит или зависает</string>
@@ -414,6 +422,8 @@
     <string name="chat_delete_for_both">Удалить чат у всех</string>
     <string name="chat_delete_for_self">Удалить только у себя</string>
     <string name="chat_delete_title">Вы точно хотите удалить чат «%s»?</string>
+    <string name="chat_deleted_and_bot_official_suspended_snackbar">Вы удалили чат с официальным аккаунтом</string>
+    <string name="chat_deleted_and_bot_suspended_snackbar">Вы удалили чат с ботом</string>
     <string name="chat_extra_actions_show">Показать дополнительные действия</string>
     <string name="chat_input_hint">Сообщение</string>
     <string name="chat_leave_cancel">Остаться</string>
@@ -438,6 +448,9 @@
     <string name="chat_screen__bot_empty_state__subtitle">"Нажмите Начать, чтобы запустить чат
 с ботом и оценить его в деле"</string>
     <string name="chat_screen__bot_empty_state__title">Хотите узнать, что умеет бот?</string>
+    <string name="chat_screen__bot_official_cleared_history_state__title">Хотите продолжить общение с официальным аккаунтом?</string>
+    <string name="chat_screen__bot_official_empty_state__subtitle">Нажмите Начать, чтобы запустить чат</string>
+    <string name="chat_screen__bot_official_empty_state__title">Это официальный аккаунт</string>
     <string name="chat_screen__leave_chat_action">Выйти из чата</string>
     <string name="chat_screen__leave_chat_title">Вы точно хотите выйти из чата «%s»?</string>
     <string name="chat_screen__remove_chat_action">Удалить</string>
@@ -466,7 +479,7 @@
     <string name="chat_screen_action_share_post_success_copied">Вы скопировали ссылку на пост</string>
     <string name="chat_screen_action_unpin">Открепить</string>
     <string name="chat_screen_attach_file_downloading_status">Идет загрузка…</string>
-    <string name="chat_screen_bot">Бот</string>
+    <string name="chat_screen_bot_official">Бот</string>
     <string name="chat_screen_channel_search_hint">Найти в канале</string>
     <string name="chat_screen_confirmation_complain_body">Вашу жалобу увидят только модераторы</string>
     <string name="chat_screen_confirmation_complain_title">На что пожаловаться?</string>
@@ -523,15 +536,12 @@
     <string name="chat_screen_saved_messages_empty_state_subtitle">Сохраняйте сообщения, медиа и файлы — доступ будет только у вас</string>
     <string name="chat_screen_saved_messages_empty_state_title">Это избранное</string>
     <string name="chat_screen_search_hint">Найти в чате</string>
-    <string name="chat_screen_service_notifications">сервисные уведомления</string>
     <string name="chat_screen_snackbar_report_success">Жалоба отправлена</string>
     <string name="chat_screen_status_mute_chat">Отключить уведомления</string>
     <string name="chat_screen_status_subscribe_chat">Подписаться</string>
     <string name="chat_screen_status_unmute_chat">Включить уведомления</string>
     <string name="chat_screen_toolbar_saved_messages_description">сообщения для себя</string>
     <string name="chat_screen_unblock_contact">Разблокировать</string>
-    <string name="chat_suspend_and_delete_bot_snackbar_title">Вы удалили чат с ботом</string>
-    <string name="chat_suspend_bot_snackbar_title">Вы остановили бота</string>
     <string name="chats_list_empty_state_action">Добавить чаты</string>
     <string name="chats_list_empty_state_title">В папке пока нет чатов</string>
     <string name="chats_list_search_clear_recent_dialog_confirm_text">Очистить</string>
@@ -589,7 +599,6 @@
     <string name="contact_list_menu_item_add_contact">Добавить контакт</string>
     <string name="contact_list_search_hint">Имя или фамилия</string>
     <string name="contact_list_search_hint_with_nick">Имя, фамилия или ник</string>
-    <string name="contact_list_suspend_bot_snackbar_title">Вы остановили бота</string>
     <string name="contacts">Контакты</string>
     <string name="contacts_picker_search_hint">Введите имя</string>
     <string name="contacts_picker_send_btn_title">Отправить</string>
@@ -649,6 +658,12 @@
     <string name="feedback_user_info" formatted="false">"user: %s (#%s)
 "</string>
     <string name="file_deleted">Скачанный файл не найден</string>
+    <string name="file_downloading_no_progress">Скачиваем…</string>
+    <string name="file_downloading_progress_media" formatted="false">Скачиваем %d из %d медиа</string>
+    <string name="file_downloading_progress_photo" formatted="false">Скачиваем %d из %d фото</string>
+    <string name="file_downloading_progress_single_photo">Скачиваем фото</string>
+    <string name="file_downloading_progress_single_video">Скачиваем видео</string>
+    <string name="file_downloading_progress_video" formatted="false">Скачиваем %d из %d видео</string>
     <string name="file_error_download">Не удалось скачать файл</string>
     <string name="file_error_download_not_found">Не удалось скачать файл. Файл недоступен или не найден</string>
     <string name="fingerprint_dialog_touch_sensor">Коснитесь сканера отпечатков.</string>
@@ -850,6 +865,7 @@
     <string name="messages_list_bot_button_request_contact_confirm_action">Поделиться</string>
     <string name="messages_list_bot_button_request_contact_confirm_description">Без доступа к данным бот не сможет отправить контакт</string>
     <string name="messages_list_bot_button_request_contact_confirm_title">Поделитесь телефоном и ником?</string>
+    <string name="messages_list_bot_official_button_request_contact_confirm_description">Без доступа к данным официальный аккаунт не сможет отправить контакт</string>
     <string name="messages_list_channel_description_admin_subtitle">Теперь можно создать первый пост и поделиться им, чтобы привлечь подписчиков</string>
     <string name="messages_list_channel_description_admin_title">Канал готов!</string>
     <string name="messages_list_channel_description_private_subscriber_subtitle">Скоро здесь появятся первые посты</string>
@@ -859,6 +875,9 @@
     <string name="messages_list_chat_description_view_subtitle">Можно общаться, ставить реакции и делиться файлами</string>
     <string name="messages_list_contact_removed">Профиль удалён</string>
     <string name="messages_list_date_status_edit">ред</string>
+    <string name="messages_list_message_content_level_chat_reply_text">Вы скрыли чувствительный контент в настройках</string>
+    <string name="messages_list_message_content_level_chat_snackbar_text">Перейти не получится — вы выбрали только безопасный контент в настройках</string>
+    <string name="messages_list_message_content_level_chat_stub_text">Пост скрыт — вы выбрали только безопасный контент в настройках</string>
     <string name="messages_list_message_copy_with_sender_name" formatted="false">"%s:
 %s"</string>
     <string name="messages_list_message_error_open_channel_private">Это приватный канал</string>
@@ -969,15 +988,12 @@
     <string name="oneme_action_share">Поделиться</string>
     <string name="oneme_action_share_qr_code_error">Не удалось поделиться QR кодом</string>
     <string name="oneme_app_name">MAX</string>
-    <string name="oneme_appearance_settings_background_title">Фон</string>
     <string name="oneme_appearance_settings_dark_mode">Тёмная</string>
     <string name="oneme_appearance_settings_font_size_reset">Сбросить</string>
     <string name="oneme_appearance_settings_font_size_title">Размер текста</string>
     <string name="oneme_appearance_settings_light_mode">Светлая</string>
-    <string name="oneme_appearance_settings_message_incoming">Привет, как дела?</string>
     <string name="oneme_appearance_settings_message_incoming_first">Выберите тему, чтобы изменить фон и цвет сообщений 🎨</string>
     <string name="oneme_appearance_settings_message_incoming_second">Меняйте тему в любое время</string>
-    <string name="oneme_appearance_settings_message_outgoing">Хорошо, а у тебя?</string>
     <string name="oneme_appearance_settings_message_outgoing_new">Посмотрите, как с ней будут выглядеть ваши чаты</string>
     <string name="oneme_appearance_settings_mode_title">Тема</string>
     <string name="oneme_appearance_settings_system_mode">Системная</string>
@@ -988,8 +1004,10 @@
     <string name="oneme_appearance_theme_simple_name">Простая</string>
     <string name="oneme_appearance_theme_space_name">Космос</string>
     <string name="oneme_appearance_theme_unknown_name">Неопознанная тема</string>
-    <string name="string_7f1307a6">Сбросить</string>
+    <string name="oneme_avatar_crop_reset">Сбросить</string>
     <string name="oneme_belarus_name">Беларусь</string>
+    <string name="oneme_bot_official_shortlink_action_share_link_text">"Воспользуйся официальным аккаунтом по ссылке:
+%s"</string>
     <string name="oneme_bot_shortlink_action_share_link_text">"Воспользуйся ботом по ссылке:
 %s"</string>
     <string name="oneme_bottom_sheet_cancel">Отменить</string>
@@ -1032,11 +1050,30 @@
     <string name="oneme_chat_toolbar_more_action_notifications">Уведомления</string>
     <string name="oneme_chat_toolbar_more_action_search">Поиск</string>
     <string name="oneme_chat_toolbar_more_action_video_call">Видеозвонок</string>
+    <string name="oneme_chatmedia_viewer_all_media_download_complete">Сохранили %d медиа</string>
+    <string name="oneme_chatmedia_viewer_all_photo_download_complete">Сохранили %d фото</string>
+    <string name="oneme_chatmedia_viewer_all_video_download_complete">Сохранили %d видео</string>
+    <string name="oneme_chatmedia_viewer_close_reason_content_delete_text">Медиа удалили</string>
     <string name="oneme_chatmedia_viewer_close_reason_photo_delete_text">Фото удалили</string>
     <string name="oneme_chatmedia_viewer_close_reason_video_delete_text">Видео удалили</string>
+    <string name="oneme_chatmedia_viewer_content_level_subtitle">Вы выбрали только безопасный контент в настройках</string>
+    <string name="oneme_chatmedia_viewer_content_level_title">Медиа скрыто</string>
     <string name="oneme_chatmedia_viewer_load_photo_fail">Не удалось загрузить фото</string>
     <string name="oneme_chatmedia_viewer_load_video_fail">Не удалось загрузить видео</string>
+    <string name="oneme_chatmedia_viewer_media_download_error">Не удалось сохранить медиа</string>
+    <string name="oneme_chatmedia_viewer_photo_download_complete">Сохранили фото</string>
+    <string name="oneme_chatmedia_viewer_photo_download_error">Не удалось сохранить фото</string>
+    <string name="oneme_chatmedia_viewer_save_all_medias">Все %d медиа</string>
+    <string name="oneme_chatmedia_viewer_save_all_photos">Все %d фото</string>
+    <string name="oneme_chatmedia_viewer_save_all_videos">Все %d видео</string>
+    <string name="oneme_chatmedia_viewer_save_single_photo">Только это фото</string>
+    <string name="oneme_chatmedia_viewer_save_single_video">Только это видео</string>
     <string name="oneme_chatmedia_viewer_seek_seconds">%d сек</string>
+    <string name="oneme_chatmedia_viewer_start_downloading_many_medias">Скачиваем %d медиа…</string>
+    <string name="oneme_chatmedia_viewer_start_downloading_many_photo">Скачиваем %d фото…</string>
+    <string name="oneme_chatmedia_viewer_start_downloading_many_video">Скачиваем %d видео…</string>
+    <string name="oneme_chatmedia_viewer_start_downloading_single_photo">Скачиваем фото…</string>
+    <string name="oneme_chatmedia_viewer_start_downloading_single_video">Скачиваем видео…</string>
     <string name="oneme_chatmedia_viewer_toolbar_action_forward_photo">Переслать фото</string>
     <string name="oneme_chatmedia_viewer_toolbar_action_forward_video">Переслать видео</string>
     <string name="oneme_chatmedia_viewer_toolbar_action_goto_message">Перейти к сообщению</string>
@@ -1044,6 +1081,8 @@
     <string name="oneme_chatmedia_viewer_toolbar_countable_title">%1$d из %2$d</string>
     <string name="oneme_chatmedia_viewer_toolbar_photo_title">Фото</string>
     <string name="oneme_chatmedia_viewer_toolbar_video_title">Видео</string>
+    <string name="oneme_chatmedia_viewer_video_download_complete">Сохранили видео</string>
+    <string name="oneme_chatmedia_viewer_video_download_error">Не удалось сохранить видео</string>
     <string name="oneme_connection_server_error_description">Попробуйте перезапустить MAX</string>
     <string name="oneme_connection_server_error_title">Нет ответа от сервера</string>
     <string name="oneme_contact_not_found_bottom_sheet_negative_button">Не сейчас</string>
@@ -1112,7 +1151,6 @@
     <string name="oneme_invite_by_phone_description">Если владелец уже в MAX, вы сможете сразу начать общаться</string>
     <string name="oneme_invite_by_phone_hint_default">123 456-78-90</string>
     <string name="oneme_invite_by_phone_title">Введите номер телефона</string>
-    <string name="oneme_invite_by_qr_action">Пригласить по QR-коду</string>
     <string name="oneme_invite_friends_to_max_bottom_sheet_title">"Пригласите своих друзей
 в MAX по ссылке"</string>
     <string name="oneme_last_message_pinned">Закреплено</string>
@@ -1144,6 +1182,7 @@
 телефона хотите войти?"</string>
     <string name="oneme_login_neuro_avatars_bottomsheet_title">Фото</string>
     <string name="oneme_login_neuro_avatars_continue_button">Начать общение</string>
+    <string name="oneme_login_neuro_avatars_continue_without_avatar_button">Продолжить без фото</string>
     <string name="oneme_login_neuro_avatars_description">Загрузите своё или подберите аватар</string>
     <string name="oneme_login_neuro_avatars_load_from_gallery_action">Загрузить из галереи</string>
     <string name="oneme_login_neuro_avatars_profile_description">Чтобы персонализировать аккаунт, вы можете выбрать готовый аватар</string>
@@ -1317,6 +1356,7 @@
     <string name="oneme_profile_section_chat_link">Ссылка</string>
     <string name="oneme_profile_section_common_chats">Общие чаты</string>
     <string name="oneme_profile_section_description_bot">Об этом боте</string>
+    <string name="oneme_profile_section_description_bot_official">Об аккаунте</string>
     <string name="oneme_profile_section_description_contact">О себе</string>
     <string name="oneme_profile_section_members">Участники</string>
     <string name="oneme_profile_section_phone">Телефон</string>
@@ -1325,6 +1365,10 @@
     <string name="oneme_profile_start_chat">Чат</string>
     <string name="oneme_profile_unblock">Разблокировать</string>
     <string name="oneme_profile_video">Видео</string>
+    <string name="oneme_registration_neuro_avatars_change_photo">Изменить фото</string>
+    <string name="oneme_registration_neuro_avatars_choose_avatar">Выбрать аватар</string>
+    <string name="oneme_registration_neuro_avatars_choose_photo">Добавить фото</string>
+    <string name="oneme_registration_neuro_avatars_or">или</string>
     <string name="oneme_russia_name">Россия</string>
     <string name="oneme_search_view_default_hint">Поиск</string>
     <string name="oneme_setting_item_about">О приложении</string>
@@ -1382,6 +1426,7 @@
     <string name="oneme_settings_old_dev_menu">Дизайн система</string>
     <string name="oneme_settings_old_logs_menu">Просмотр логов</string>
     <string name="oneme_settings_phonenumber_copied_snackbar_title">Номер скопирован</string>
+    <string name="oneme_settings_privace_screen_dialog_content_level_access_title">Какой контент показывать?</string>
     <string name="oneme_settings_privacy_black_list_dialog_title">Вы уверены, что хотите разблокировать %s?</string>
     <string name="oneme_settings_privacy_black_list_dialog_unblock">Разблокировать</string>
     <string name="oneme_settings_privacy_black_list_empty_state_desc">Список пуст</string>
@@ -1389,6 +1434,10 @@
     <string name="oneme_settings_privacy_black_list_unblocked_success">Пользователь разблокирован</string>
     <string name="oneme_settings_privacy_change_disabled_description">Используйте устройство, на котором вы включали безопасный режим или обратитесь в <a href="https://max.ru/support">техническую поддержку</a> для сброса ПИН-кода</string>
     <string name="oneme_settings_privacy_change_disabled_title">Здесь изменить настройки приватности не получится</string>
+    <string name="oneme_settings_privacy_content_level_access">Контент</string>
+    <string name="oneme_settings_privacy_content_level_access_all">Весь</string>
+    <string name="oneme_settings_privacy_content_level_access_message_success">Вы увидите только безопасный контент в каналах и постах</string>
+    <string name="oneme_settings_privacy_content_level_access_safe">Безопасный</string>
     <string name="oneme_settings_privacy_enter_pin_code_description">Чтобы изменить настройки</string>
     <string name="oneme_settings_privacy_enter_pin_code_title">Введите ПИН-код</string>
     <string name="oneme_settings_privacy_forgot_pin_code">Забыли ПИН-код?</string>
@@ -1403,6 +1452,8 @@
     <string name="oneme_settings_privacy_onboarding_item_2_title">Звонки только от контактов</string>
     <string name="oneme_settings_privacy_onboarding_item_3_subtitle">Пригласить вас в групповой чат смогут только те, с кем вы уже общались</string>
     <string name="oneme_settings_privacy_onboarding_item_3_title">Чаты только со знакомыми</string>
+    <string name="oneme_settings_privacy_onboarding_item_4_subtitle">Вы увидите только безопасные посты и каналы</string>
+    <string name="oneme_settings_privacy_onboarding_item_4_title">Фильтр контента</string>
     <string name="oneme_settings_privacy_onboarding_re_enter_pin_code">Повторите ПИН-код</string>
     <string name="oneme_settings_privacy_safe_files">Предупреждения о файлах для установки</string>
     <string name="oneme_settings_privacy_screen_add_me_to_chat">Приглашения</string>
@@ -1628,6 +1679,9 @@
 - Живая трансляция местоположения в чаты - да, всегда при использовании, при закрытом и свернутом приложении
 
 Изменить доступы для MAX можно в настройках устройства"</string>
+    <string name="permissions_calls_audio_video_request">Чтобы совершать видеозвонки, разрешите доступ к камере и микрофону.</string>
+    <string name="permissions_calls_audio_video_request_title">Разрешите доступ к камере и микрофону</string>
+    <string name="permissions_calls_video_preview_request">Чтобы совершать видеозвонки, разрешите доступ к камере.</string>
     <string name="permissions_camera_request_photo">Чтобы снимать и делиться фото, разрешите доступ к камере</string>
     <string name="permissions_camera_request_photo_denied">Чтобы снимать и делиться фото, разрешите доступ к камере в настройках телефона</string>
     <string name="permissions_camera_request_video">Чтобы отправлять фото и видео, разрешите доступ к камере</string>
@@ -1676,14 +1730,19 @@
     <string name="photo_removed">Фотография успешно удалена</string>
     <string name="picker_chats_add_button">Добавить</string>
     <string name="picker_chats_adding_disabled_bot">Добавить этого бота в чат не получится</string>
+    <string name="picker_chats_adding_disabled_bot_official">Добавить этот официальный аккаунт в чат не получится</string>
     <string name="picker_chats_adding_disabled_default">Добавить этот контакт в чат не получится</string>
     <string name="picker_chats_adding_disabled_to_channel_bot">Добавить этого бота в канал не получится</string>
+    <string name="picker_chats_adding_disabled_to_channel_bot_official">Добавить этот официальный аккаунт в канал не получится</string>
     <string name="picker_chats_adding_disabled_to_channel_default">Добавить этот контакт в чат не получится</string>
     <string name="picker_chats_creating_disabled_bot">Создать чат с этим ботом не получится</string>
+    <string name="picker_chats_creating_disabled_bot_official">Создать чат с этим официальным аккаунтом не получится</string>
     <string name="picker_chats_creating_disabled_channel_bot">Создать канал с этим ботом не получится</string>
+    <string name="picker_chats_creating_disabled_channel_bot_official">Создать канал с этим официальным аккаунтом не получится</string>
     <string name="picker_chats_creating_disabled_channel_default">Создать канал с этим контактом не получится</string>
     <string name="picker_chats_creating_disabled_default">Создать чат с этим контактом не получится</string>
     <string name="picker_chats_forward_disabled_bot">Переслать сообщение этому боту не получится</string>
+    <string name="picker_chats_forward_disabled_bot_official">Переслать сообщение этому официальному аккаунту не получится</string>
     <string name="picker_chats_forward_disabled_channel">Переслать сообщение в этот канал не получится</string>
     <string name="picker_chats_forward_disabled_default">Переслать сообщение этому контакту не получится</string>
     <string name="picker_chats_forward_from_self">Переслать своё сообщение</string>
@@ -1707,7 +1766,6 @@
     <string name="profile_block_bottom_sheet_confirm">Заблокировать</string>
     <string name="profile_block_bottom_sheet_description">Вы больше не сможете писать и звонить друг другу</string>
     <string name="profile_block_bottom_sheet_title">Заблокировать %s?</string>
-    <string name="profile_bot_subtitle">бот</string>
     <string name="profile_change_avatar_error">Не удалось выбрать медиа</string>
     <string name="profile_change_avatar_success">Обновили аватар</string>
     <string name="profile_change_avatar_title">Фото</string>
@@ -1724,7 +1782,6 @@
     <string name="profile_change_owner_toolbar">Передать права</string>
     <string name="profile_channel_deleted_snackbar_title">Канал удалён</string>
     <string name="profile_channel_members_list_toolbar_title">Подписчики</string>
-    <string name="profile_chat_deleted_and_bot_suspended_snackbar">Вы удалили чат с ботом</string>
     <string name="profile_chat_deleted_snackbar_title">Чат удалён</string>
     <string name="profile_chat_media_empty_tab_title">Пока что здесь пусто</string>
     <string name="profile_chat_media_tab_audio">Голосовые</string>
@@ -1899,6 +1956,9 @@
     <string name="profile_media_confirmation_delete_media_description">Вы уверены, что хотите удалить медиа из чата?</string>
     <string name="profile_media_confirmation_delete_media_title">Удаление медиа</string>
     <string name="profile_media_confirmation_delete_self_button">Удалить у меня</string>
+    <string name="profile_media_content_level_link_subtitle">Вы выбрали только безопасный контент в настройках</string>
+    <string name="profile_media_content_level_link_title">Ссылка скрыта</string>
+    <string name="profile_media_content_level_snackbar_text">Перейти не получится — вы выбрали только безопасный контент в настройках</string>
     <string name="profile_media_save_gif_snackbar_success">GIF сохранено в галерею</string>
     <string name="profile_media_save_image_snackbar_success">Фото сохранено в галерею</string>
     <string name="profile_media_save_snackbar_error">Не удалось сохранить в галерею</string>
@@ -1940,10 +2000,10 @@
     <string name="profile_phone_number_action_tt_voice_call">Позвонить через MAX</string>
     <string name="profile_phone_number_action_voice_call">Позвонить по телефону</string>
     <string name="profile_section_item_action_button_all_members">Все участники</string>
-    <string name="profile_suspend_bot_snackbar_title">Вы остановили бота</string>
     <string name="profile_unsubscribe_channel_action_unsubscribe">Отписаться</string>
     <string name="profile_unsubscribe_channel_header">Отписаться от канала «%1$s»?</string>
     <string name="project_id">max-messenger-app</string>
+    <string name="reply_quote_content_level_body">Пост скрыт</string>
     <string name="reply_quote_self">Ответ себе</string>
     <string name="reply_quote_to_somebody">Ответ для %s</string>
     <string name="report_type_extremism">Экстремизм</string>
@@ -1990,10 +2050,6 @@
     <string name="sensitive_content_warning">Возможно, неприемлемый контент! Нажмите, чтобы отобразить</string>
     <string name="service_notifications">Сервисные уведомления</string>
     <string name="set_bg_failed">Ошибка. Не удалось установить фон</string>
-    <string name="setting_day_color">День</string>
-    <string name="setting_default_color">По умолчанию</string>
-    <string name="setting_graphite_color">Графит</string>
-    <string name="setting_night_color">Ночь</string>
     <string name="share">Поделиться</string>
     <string name="share_confirm_cancel">Не прерывать</string>
     <string name="share_confirm_close">Прервать</string>
@@ -2012,17 +2068,21 @@
     <string name="snack_network_error_description">Проверьте сеть и попробуйте снова</string>
     <string name="snack_network_error_title">Что-то с интернетом</string>
     <string name="snackbar_contact_removed">Профиль удалён</string>
+    <string name="snackbar_content_level_error_title">Перейти не получится — вы выбрали только безопасный контент в настройках</string>
     <string name="snackbar_folder_link_error_caption">Подождите и попробуйте снова</string>
     <string name="snackbar_folder_link_error_title">Не удалось открыть папку</string>
     <string name="snackbar_self_contact_open">Это вы</string>
     <string name="snackbar_self_title">Это Вы</string>
     <string name="status_bar_notification_info_overflow">>999</string>
     <string name="sticker_settings">Настройки стикеров</string>
+    <string name="suspend_bot_official_snackbar_title">Вы остановили общение с официальным аккаунтом</string>
+    <string name="suspend_bot_snackbar_title">Вы остановили бота</string>
     <string name="time_before_live_video_start">До начала трансляции</string>
     <string name="time_divider">:</string>
+    <string name="to_save">Сохранить</string>
     <string name="tracer_app_token">t6QnlHov0Gq1UBGYG9GPqZu0EiVMZ922FKvwyAEASa90</string>
     <string name="tracer_environment">playGoogleRelease</string>
-    <string name="tracer_mapping_uuid">1f58ef90-8cca-11f0-b4db-3f92c76adbc7</string>
+    <string name="tracer_mapping_uuid">a1a71110-945f-11f0-ac59-3f92c76adbc7</string>
     <string name="trim_video__reset">Сбросить</string>
     <string name="trim_video__trim">Обрезать</string>
     <string name="tt_active_live_location_in_chat">Вы транслируете местоположение в чат \"%s\"</string>
@@ -2032,12 +2092,15 @@
     <string name="tt_audio">аудиосообщение</string>
     <string name="tt_blocked_user">Пользователь заблокирован</string>
     <string name="tt_bot_control_welcome_message">Вы начали общение c ботом</string>
+    <string name="tt_bot_official_control_welcome_message">Вы начали общение c официальным аккаунтом</string>
     <string name="tt_call_incoming_audio">входящий аудиовызов</string>
     <string name="tt_call_incoming_audio_cap">Входящий аудиовызов</string>
     <string name="tt_call_incoming_video">входящий видеовызов</string>
     <string name="tt_call_incoming_video_cap">Входящий видеовызов</string>
     <string name="tt_call_missed_audio">пропущенный аудиовызов</string>
     <string name="tt_call_missed_audio_cap">Пропущенный аудиовызов</string>
+    <string name="tt_call_missed_video">пропущенный видеовызов</string>
+    <string name="tt_call_missed_video_cap">Пропущенный видеовызов</string>
     <string name="tt_call_outgoing_audio">исходящий аудиовызов</string>
     <string name="tt_call_outgoing_audio_cap">Исходящий аудиовызов</string>
     <string name="tt_call_outgoing_canceled_audio">отменённый аудиовызов</string>

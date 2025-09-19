@@ -3,22 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnFocusChangeListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic b:Lone/me/chats/search/views/ClearRecentSearchBottomSheet;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
+.method public synthetic constructor <init>(Lone/me/chats/search/views/ClearRecentSearchBottomSheet;I)V
     .registers 3
 
-    iput p1, p0, Lq43;->a:I
+    iput p2, p0, Lq43;->a:I
 
-    iput-object p2, p0, Lq43;->b:Ljava/lang/Object;
+    iput-object p1, p0, Lq43;->b:Lone/me/chats/search/views/ClearRecentSearchBottomSheet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -27,84 +27,91 @@
 
 
 # virtual methods
-.method public final onFocusChange(Landroid/view/View;Z)V
-    .registers 3
+.method public final onClick(Landroid/view/View;)V
+    .registers 6
 
     iget p1, p0, Lq43;->a:I
 
-    iget-object p0, p0, Lq43;->b:Ljava/lang/Object;
-
     packed-switch p1, :pswitch_data_0
 
-    check-cast p0, Lz47;
+    iget-object p0, p0, Lq43;->b:Lone/me/chats/search/views/ClearRecentSearchBottomSheet;
 
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    const/4 p1, 0x1
 
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lz47;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->E0(Z)V
 
     return-void
 
     :pswitch_0
-    check-cast p0, Lqga;
+    iget-object p0, p0, Lq43;->b:Lone/me/chats/search/views/ClearRecentSearchBottomSheet;
 
-    if-nez p2, :cond_0
+    const/4 p1, 0x1
 
-    const/4 p1, 0x0
+    invoke-virtual {p0, p1}, Lone/me/sdk/bottomsheet/BaseBottomSheetWidget;->E0(Z)V
 
-    iput-boolean p1, p0, Lqga;->n0:Z
+    invoke-virtual {p0}, Lxx3;->getTargetController()Lxx3;
+
+    move-result-object p0
+
+    instance-of v0, p0, Lp43;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lp43;
+
+    goto :goto_0
 
     :cond_0
-    return-void
+    move-object p0, v1
 
-    :pswitch_1
-    check-cast p0, Lj96;
+    :goto_0
+    if-eqz p0, :cond_2
 
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    check-cast p0, Lone/me/chats/search/ChatsListSearchScreen;
+
+    invoke-virtual {p0}, Lone/me/chats/search/ChatsListSearchScreen;->z0()Lyx2;
+
+    move-result-object p0
+
+    iget-object v0, p0, Lyx2;->Q0:Lcae;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Le0;->isActive()Z
+
+    move-result v0
+
+    if-ne v0, p1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    iget-object p1, p0, Lx7g;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    iget-object v0, p0, Lyx2;->N0:Ls04;
+
+    new-instance v2, Lhx2;
+
+    invoke-direct {v2, p0, v1}, Lhx2;-><init>(Lyx2;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v3, 0x2
+
+    invoke-static {p1, v0, v1, v2, v3}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
 
     move-result-object p1
 
-    invoke-interface {p0, p1}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p1, p0, Lyx2;->Q0:Lcae;
 
-    return-void
-
-    :pswitch_2
-    check-cast p0, Lvv4;
-
-    iput-boolean p2, p0, Lvv4;->l:Z
-
-    invoke-virtual {p0}, Lv45;->q()V
-
-    if-nez p2, :cond_1
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Lvv4;->t(Z)V
-
-    iput-boolean p1, p0, Lvv4;->m:Z
-
-    :cond_1
-    return-void
-
-    :pswitch_3
-    check-cast p0, Lt43;
-
-    invoke-virtual {p0}, Lt43;->u()Z
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Lt43;->t(Z)V
-
+    :cond_2
+    :goto_1
     return-void
 
     nop
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

@@ -1,294 +1,289 @@
 .class public final Lq62;
-.super Lkotlinx/coroutines/internal/Segment;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lou0;
+.field public final a:I
 
-.field public final synthetic b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+.field public final b:I
+
+.field public final c:[F
+
+.field public final d:Z
+
+.field public final e:Z
 
 
 # direct methods
-.method public constructor <init>(JLq62;Lou0;I)V
-    .registers 6
+.method public constructor <init>(II[F)V
+    .registers 14
 
-    invoke-direct {p0, p1, p2, p3, p5}, Lkotlinx/coroutines/internal/Segment;-><init>(JLkotlinx/coroutines/internal/Segment;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lq62;->a:Lou0;
+    const/4 v0, 0x0
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    const/4 v1, 0x1
 
-    sget p2, Lqu0;->b:I
+    if-lez p1, :cond_0
 
-    mul-int/lit8 p2, p2, 0x2
-
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
-
-    iput-object p1, p0, Lq62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/lang/Object;ILjava/lang/Object;)Z
-    .registers 7
-
-    mul-int/lit8 p2, p2, 0x2
-
-    const/4 v0, 0x1
-
-    add-int/2addr p2, v0
-
-    :cond_0
-    iget-object v1, p0, Lq62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {v1, p2, p1, p3}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->compareAndSet(ILjava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    return v0
-
-    :cond_1
-    invoke-virtual {v1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eq v1, p1, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final c(I)Ljava/lang/Object;
-    .registers 2
-
-    mul-int/lit8 p1, p1, 0x2
-
-    add-int/lit8 p1, p1, 0x1
-
-    iget-object p0, p0, Lq62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final d(IZ)V
-    .registers 7
-
-    if-eqz p2, :cond_0
-
-    iget-wide v0, p0, Lkotlinx/coroutines/internal/Segment;->id:J
-
-    sget p2, Lqu0;->b:I
-
-    int-to-long v2, p2
-
-    mul-long/2addr v0, v2
-
-    int-to-long p1, p1
-
-    add-long/2addr v0, p1
-
-    iget-object p1, p0, Lq62;->a:Lou0;
-
-    invoke-virtual {p1, v0, v1}, Lou0;->H(J)V
-
-    :cond_0
-    invoke-virtual {p0}, Lkotlinx/coroutines/internal/Segment;->onSlotCleaned()V
-
-    return-void
-.end method
-
-.method public final e(ILjava/lang/Object;)V
-    .registers 3
-
-    mul-int/lit8 p1, p1, 0x2
-
-    iget-object p0, p0, Lq62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final f(ILjava/lang/Object;)V
-    .registers 3
-
-    mul-int/lit8 p1, p1, 0x2
-
-    add-int/lit8 p1, p1, 0x1
-
-    iget-object p0, p0, Lq62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
-
-    return-void
-.end method
-
-.method public final getNumberOfSlots()I
-    .registers 1
-
-    sget p0, Lqu0;->b:I
-
-    return p0
-.end method
-
-.method public final onCancellation(ILjava/lang/Throwable;Lj04;)V
-    .registers 7
-
-    sget p2, Lqu0;->b:I
-
-    if-lt p1, p2, :cond_0
-
-    const/4 p3, 0x1
+    move v2, v1
 
     goto :goto_0
 
     :cond_0
-    const/4 p3, 0x0
+    move v2, v0
 
     :goto_0
-    if-eqz p3, :cond_1
+    const-string v3, "Input channel count must be positive."
 
-    sub-int/2addr p1, p2
+    invoke-static {v3, v2}, Lmq0;->b(Ljava/lang/Object;Z)V
+
+    if-lez p2, :cond_1
+
+    move v2, v1
+
+    goto :goto_1
 
     :cond_1
-    mul-int/lit8 p2, p1, 0x2
+    move v2, v0
 
-    iget-object v0, p0, Lq62;->b:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    :goto_1
+    const-string v3, "Output channel count must be positive."
 
-    invoke-virtual {v0, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+    invoke-static {v3, v2}, Lmq0;->b(Ljava/lang/Object;Z)V
+
+    array-length v2, p3
+
+    mul-int v3, p1, p2
+
+    if-ne v2, v3, :cond_2
+
+    move v2, v1
+
+    goto :goto_2
 
     :cond_2
-    :goto_1
-    invoke-virtual {p0, p1}, Lq62;->c(I)Ljava/lang/Object;
+    move v2, v0
 
-    move-result-object p2
+    :goto_2
+    const-string v3, "Coefficient array length is invalid."
 
-    instance-of v0, p2, Li1g;
+    invoke-static {v3, v2}, Lmq0;->b(Ljava/lang/Object;Z)V
 
-    iget-object v1, p0, Lq62;->a:Lou0;
+    iput p1, p0, Lq62;->a:I
 
-    const/4 v2, 0x0
+    iput p2, p0, Lq62;->b:I
 
-    if-nez v0, :cond_9
+    move v2, v0
 
-    instance-of v0, p2, Lj1g;
+    :goto_3
+    array-length v3, p3
 
-    if-eqz v0, :cond_3
+    const/4 v4, 0x0
+
+    if-ge v2, v3, :cond_4
+
+    aget v3, p3, v2
+
+    cmpg-float v3, v3, v4
+
+    if-ltz v3, :cond_3
+
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
     :cond_3
-    sget-object v0, Lqu0;->j:Lkotlinx/coroutines/internal/Symbol;
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    if-eq p2, v0, :cond_8
+    const-string p1, "Coefficient at index "
 
-    sget-object v0, Lqu0;->k:Lkotlinx/coroutines/internal/Symbol;
+    const-string p2, " is negative."
 
-    if-ne p2, v0, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    sget-object v0, Lqu0;->g:Lkotlinx/coroutines/internal/Symbol;
-
-    if-eq p2, v0, :cond_2
-
-    sget-object v0, Lqu0;->f:Lkotlinx/coroutines/internal/Symbol;
-
-    if-ne p2, v0, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    sget-object p0, Lqu0;->i:Lkotlinx/coroutines/internal/Symbol;
-
-    if-eq p2, p0, :cond_b
-
-    sget-object p0, Lqu0;->d:Lkotlinx/coroutines/internal/Symbol;
-
-    if-ne p2, p0, :cond_6
-
-    goto :goto_5
-
-    :cond_6
-    sget-object p0, Lqu0;->l:Lkotlinx/coroutines/internal/Symbol;
-
-    if-ne p2, p0, :cond_7
-
-    goto :goto_5
-
-    :cond_7
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    const-string p3, "unexpected state: "
-
-    invoke-direct {p1, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v2, p1, p2}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
+    :cond_4
+    iput-object p3, p0, Lq62;->c:[F
+
+    move p3, v0
+
+    move v2, v1
+
+    move v3, v2
+
+    move v5, v3
+
+    :goto_4
+    if-ge p3, p1, :cond_9
+
+    move v6, v0
+
+    :goto_5
+    if-ge v6, p2, :cond_8
+
+    iget-object v7, p0, Lq62;->c:[F
+
+    iget v8, p0, Lq62;->b:I
+
+    mul-int/2addr v8, p3
+
+    add-int/2addr v8, v6
+
+    aget v7, v7, v8
+
+    if-ne p3, v6, :cond_5
+
+    move v8, v1
+
+    goto :goto_6
+
+    :cond_5
+    move v8, v0
+
+    :goto_6
+    const/high16 v9, 0x3f800000    # 1.0f
+
+    cmpl-float v9, v7, v9
+
+    if-eqz v9, :cond_6
+
+    if-eqz v8, :cond_6
+
+    move v5, v0
+
+    :cond_6
+    cmpl-float v7, v7, v4
+
+    if-eqz v7, :cond_7
+
+    move v2, v0
+
+    if-nez v8, :cond_7
+
+    move v3, v2
+
+    :cond_7
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_5
+
     :cond_8
-    :goto_2
-    invoke-virtual {p0, p1, v2}, Lq62;->e(ILjava/lang/Object;)V
-
-    if-eqz p3, :cond_b
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    return-void
-
-    :cond_9
-    :goto_3
-    if-eqz p3, :cond_a
-
-    sget-object v0, Lqu0;->j:Lkotlinx/coroutines/internal/Symbol;
+    add-int/lit8 p3, p3, 0x1
 
     goto :goto_4
 
+    :cond_9
+    iput-boolean v2, p0, Lq62;->d:Z
+
+    iget p1, p0, Lq62;->a:I
+
+    iget p2, p0, Lq62;->b:I
+
+    if-ne p1, p2, :cond_a
+
+    if-eqz v3, :cond_a
+
+    if-eqz v5, :cond_a
+
+    move v0, v1
+
     :cond_a
-    sget-object v0, Lqu0;->k:Lkotlinx/coroutines/internal/Symbol;
+    iput-boolean v0, p0, Lq62;->e:Z
 
-    :goto_4
-    invoke-virtual {p0, p2, p1, v0}, Lq62;->a(Ljava/lang/Object;ILjava/lang/Object;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_2
-
-    invoke-virtual {p0, p1, v2}, Lq62;->e(ILjava/lang/Object;)V
-
-    xor-int/lit8 p2, p3, 0x1
-
-    invoke-virtual {p0, p1, p2}, Lq62;->d(IZ)V
-
-    if-eqz p3, :cond_b
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    :cond_b
-    :goto_5
     return-void
+.end method
+
+.method public static a(II)Lq62;
+    .registers 7
+
+    new-instance v0, Lq62;
+
+    if-ne p0, p1, :cond_0
+
+    mul-int v1, p1, p1
+
+    new-array v1, v1, [F
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, p1, :cond_2
+
+    mul-int v3, p1, v2
+
+    add-int/2addr v3, v2
+
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    aput v4, v1, v3
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x2
+
+    const/4 v2, 0x1
+
+    if-ne p0, v2, :cond_1
+
+    if-ne p1, v1, :cond_1
+
+    new-array v1, v1, [F
+
+    fill-array-data v1, :array_0
+
+    goto :goto_1
+
+    :cond_1
+    if-ne p0, v1, :cond_3
+
+    if-ne p1, v2, :cond_3
+
+    new-array v1, v1, [F
+
+    fill-array-data v1, :array_1
+
+    :cond_2
+    :goto_1
+    invoke-direct {v0, p0, p1, v1}, Lq62;-><init>(II[F)V
+
+    return-object v0
+
+    :cond_3
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "->"
+
+    const-string v2, " are not yet implemented."
+
+    const-string v3, "Default channel mixing coefficients for "
+
+    invoke-static {v3, p0, v1, p1, v2}, Lsg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :array_0
+    .array-data 4
+        0x3f800000    # 1.0f
+        0x3f800000    # 1.0f
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x3f000000    # 0.5f
+        0x3f000000    # 0.5f
+    .end array-data
 .end method

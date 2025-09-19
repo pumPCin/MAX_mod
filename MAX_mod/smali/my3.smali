@@ -1,26 +1,85 @@
-.class public interface abstract Lmy3;
+.class public final Lmy3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpy3;
+
+
+# instance fields
+.field public final a:I
+
+
+# direct methods
+.method public constructor <init>(I)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lmy3;->a:I
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public A(Lly3;)V
-    .registers 2
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    return-void
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lmy3;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lmy3;
+
+    iget p0, p0, Lmy3;->a:I
+
+    iget p1, p1, Lmy3;->a:I
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
 .end method
 
-.method public I(Lly3;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public abstract M(Lky3;Lky3;)Ljava/util/List;
-.end method
-
-.method public U()V
+.method public final hashCode()I
     .registers 1
 
-    return-void
+    iget p0, p0, Lmy3;->a:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    const-string v0, "Seeking(progress="
+
+    const-string v1, ")"
+
+    iget p0, p0, Lmy3;->a:I
+
+    invoke-static {p0, v0, v1}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,237 +1,229 @@
 .class public final Lp9e;
-.super Landroid/view/ViewGroup;
+.super Ln9e;
 .source "SourceFile"
-
-# interfaces
-.implements Lxue;
 
 
 # instance fields
-.field public final a:Lr9e;
+.field public final l:J
 
-.field public final b:Landroidx/recyclerview/widget/RecyclerView;
+.field public final m:J
+
+.field public final n:J
+
+.field public final o:J
+
+.field public final p:J
+
+.field public final q:J
+
+.field public final r:J
+
+.field public final s:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 8
+.method public constructor <init>(JLjava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;JJJJJJJJLjava/lang/String;Lmr8;Ljava/lang/Boolean;)V
+    .registers 37
 
-    const/4 v0, 0x0
+    const/4 v1, 0x2
 
-    invoke-direct {p0, p1, v0}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    move-object v0, p0
 
-    new-instance v1, Lr9e;
+    move-wide v2, p1
 
-    invoke-direct {v1, p1}, Lr9e;-><init>(Landroid/content/Context;)V
+    move-object v4, p3
 
-    iput-object v1, p0, Lp9e;->a:Lr9e;
+    move-object v5, p4
 
-    new-instance v2, Landroidx/recyclerview/widget/RecyclerView;
+    move-object/from16 v6, p5
 
-    invoke-direct {v2, p1, v0}, Landroidx/recyclerview/widget/RecyclerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    move-object/from16 v7, p6
 
-    sget p1, Lxia;->f:I
+    move-object/from16 v8, p23
 
-    invoke-virtual {v2, p1}, Landroid/view/View;->setId(I)V
+    move-object/from16 v9, p24
 
-    new-instance p1, Landroidx/recyclerview/widget/LinearLayoutManager;
+    move-object/from16 v10, p25
 
-    const/4 v0, 0x0
+    invoke-direct/range {v0 .. v10}, Ln9e;-><init>(IJLjava/lang/String;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Lmr8;Ljava/lang/Boolean;)V
 
-    invoke-direct {p1, v0, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(IZ)V
+    move-wide/from16 p1, p7
 
-    invoke-virtual {v2, p1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
+    iput-wide p1, p0, Lp9e;->l:J
 
-    invoke-virtual {v2, v0}, Landroidx/recyclerview/widget/RecyclerView;->setNestedScrollingEnabled(Z)V
+    move-wide/from16 p1, p9
 
-    const/4 p1, 0x2
+    iput-wide p1, p0, Lp9e;->m:J
 
-    invoke-virtual {v2, p1}, Landroid/view/View;->setOverScrollMode(I)V
+    move-wide/from16 p1, p11
 
-    const/4 p1, 0x4
+    iput-wide p1, p0, Lp9e;->n:J
 
-    int-to-float p1, p1
+    move-wide/from16 p1, p13
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    iput-wide p1, p0, Lp9e;->o:J
 
-    move-result-object v3
+    move-wide/from16 p1, p15
 
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    iput-wide p1, p0, Lp9e;->p:J
 
-    move-result-object v3
+    move-wide/from16 p1, p17
 
-    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+    iput-wide p1, p0, Lp9e;->q:J
 
-    mul-float/2addr p1, v3
+    move-wide/from16 p1, p19
 
-    invoke-static {p1}, Lg53;->C(F)I
+    iput-wide p1, p0, Lp9e;->r:J
 
-    move-result p1
+    move-wide/from16 p1, p21
 
-    new-instance v3, Lgz0;
-
-    const/16 v4, 0xc
-
-    int-to-float v4, v4
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v5
-
-    iget v5, v5, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v4, v5
-
-    invoke-static {v4}, Lg53;->C(F)I
-
-    const/4 v4, 0x7
-
-    invoke-direct {v3, p1, p1, v4}, Lgz0;-><init>(III)V
-
-    invoke-virtual {v2, v3}, Landroidx/recyclerview/widget/RecyclerView;->j(Lzgc;)V
-
-    const/4 p1, 0x1
-
-    invoke-virtual {v2, p1}, Landroidx/recyclerview/widget/RecyclerView;->setHasFixedSize(Z)V
-
-    iput-object v2, p0, Lp9e;->b:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->setClipChildren(Z)V
-
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    iput-wide p1, p0, Lp9e;->s:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onLayout(ZIIII)V
-    .registers 12
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingStart()I
-
-    move-result p2
-
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingTop()I
-
-    move-result p3
-
-    move-object p1, p0
-
-    iget-object p0, p1, Lp9e;->a:Lr9e;
-
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result p4
-
-    add-int/2addr p4, p2
-
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result p5
-
-    add-int/2addr p5, p3
-
-    invoke-static/range {p0 .. p5}, Lts;->N(Landroid/view/View;Landroid/view/ViewGroup;IIII)V
-
-    invoke-virtual {p0}, Landroid/view/View;->getBottom()I
-
-    move-result v3
-
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v4
-
-    invoke-virtual {p0}, Landroid/view/View;->getBottom()I
-
-    move-result p0
-
-    iget-object v0, p1, Lp9e;->b:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result p2
-
-    add-int v5, p2, p0
-
-    const/4 v2, 0x0
-
-    move-object v1, p1
-
-    invoke-static/range {v0 .. v5}, Lts;->N(Landroid/view/View;Landroid/view/ViewGroup;IIII)V
-
-    return-void
-.end method
-
-.method public final onMeasure(II)V
-    .registers 6
-
-    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
-
-    move-result v0
-
-    iget-object v1, p0, Lp9e;->a:Lr9e;
-
-    invoke-virtual {v1, p1, p2}, Landroid/view/View;->measure(II)V
-
-    iget-object v2, p0, Lp9e;->b:Landroidx/recyclerview/widget/RecyclerView;
-
-    invoke-virtual {v2, p1, p2}, Landroid/view/View;->measure(II)V
-
-    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result p1
-
-    invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result p2
-
-    add-int/2addr p2, p1
-
-    invoke-virtual {p0, v0, p2}, Landroid/view/View;->setMeasuredDimension(II)V
-
-    return-void
-.end method
-
-.method public final onThemeChanged(Loma;)V
-    .registers 2
-
-    iget-object p0, p0, Lp9e;->a:Lr9e;
-
-    invoke-virtual {p0, p1}, Lr9e;->onThemeChanged(Loma;)V
-
-    return-void
-.end method
-
-.method public final setHeaderClickAction(Lh96;)V
+.method public final toString()Ljava/lang/String;
     .registers 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lh96;",
-            ")V"
-        }
-    .end annotation
 
-    iget-object p0, p0, Lp9e;->a:Lr9e;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lr9e;->getHeaderButton()Lone/me/sdk/uikit/common/button/OneMeButton;
+    const-string v1, "VideoSend{ssrc="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-wide v1, p0, Lq9e;->c:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", transportId=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lq9e;->d:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "\', trackId=\'"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lq9e;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "\', packetsSent="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Ln9e;->h:Ljava/math/BigInteger;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", packetsLost="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Ln9e;->i:Ljava/math/BigInteger;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", bytesSent="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Ln9e;->j:Ljava/math/BigInteger;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", nacksReceived="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lp9e;->l:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", pliReceived="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lp9e;->m:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", firReceived="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lp9e;->n:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", framesEncoded="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lp9e;->o:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", adaptationChanges="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lp9e;->p:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", avgEncodeMs="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lp9e;->q:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", frameWidth="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lp9e;->r:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", frameHeight="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lp9e;->s:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isMediaShare="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Ln9e;->k:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", unknown="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lq9e;->g:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    new-instance v0, Lg6;
-
-    const/16 v1, 0x10
-
-    invoke-direct {v0, v1, p1}, Lg6;-><init>(ILh96;)V
-
-    invoke-static {p0, v0}, Lbug;->H(Landroid/view/View;Landroid/view/View$OnClickListener;)V
-
-    return-void
+    return-object p0
 .end method

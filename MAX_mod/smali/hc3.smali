@@ -1,81 +1,139 @@
-.class public final Lhc3;
-.super Lyb3;
+.class public abstract Lhc3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final synthetic a:I
+# virtual methods
+.method public final a()V
+    .registers 3
 
-.field public final b:Lyb3;
+    new-instance v0, Lnp0;
 
-.field public final c:Lqxc;
+    const/4 v1, 0x1
 
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-# direct methods
-.method public synthetic constructor <init>(Lyb3;Lqxc;I)V
-    .registers 4
+    invoke-virtual {p0, v0}, Lhc3;->h(Lrc3;)V
 
-    iput p3, p0, Lhc3;->a:I
-
-    iput-object p1, p0, Lhc3;->b:Lyb3;
-
-    iput-object p2, p0, Lhc3;->c:Lqxc;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {v0}, Lnp0;->d()Ljava/lang/Object;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final j(Lic3;)V
+.method public final e(Lhc3;)Lic3;
     .registers 4
 
-    iget v0, p0, Lhc3;->a:I
+    const-string v0, "other is null"
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    new-instance v0, Lgc3;
+    new-instance v0, Lic3;
 
-    iget-object v1, p0, Lhc3;->b:Lyb3;
+    const/4 v1, 0x0
 
-    invoke-direct {v0, p1, v1}, Lgc3;-><init>(Lic3;Lyb3;)V
+    invoke-direct {v0, p0, v1, p1}, Lic3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    invoke-interface {p1, v0}, Lic3;->c(Lnp4;)V
+    return-object v0
+.end method
 
-    iget-object p0, p0, Lhc3;->c:Lqxc;
+.method public final f(Lc6;)Luc3;
+    .registers 4
 
-    invoke-virtual {p0, v0}, Lqxc;->b(Ljava/lang/Runnable;)Lnp4;
+    sget-object v0, Lvyg;->d:Lsh9;
+
+    new-instance v1, Luc3;
+
+    invoke-direct {v1, p0, v0, p1}, Luc3;-><init>(Lhc3;Lpm3;Lc6;)V
+
+    return-object v1
+.end method
+
+.method public final g(Lpm3;)Luc3;
+    .registers 4
+
+    sget-object v0, Lvyg;->c:Lgd6;
+
+    new-instance v1, Luc3;
+
+    invoke-direct {v1, p0, p1, v0}, Luc3;-><init>(Lhc3;Lpm3;Lc6;)V
+
+    return-object v1
+.end method
+
+.method public final h(Lrc3;)V
+    .registers 3
+
+    :try_start_0
+    invoke-virtual {p0, p1}, Lhc3;->i(Lrc3;)V
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    invoke-static {p0}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    invoke-static {p0}, Ln4e;->D(Ljava/lang/Throwable;)V
+
+    new-instance p1, Ljava/lang/NullPointerException;
+
+    const-string v0, "Actually not, but can\'t pass out an exception otherwise..."
+
+    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    throw p1
+
+    :catch_0
+    move-exception p0
+
+    throw p0
+.end method
+
+.method public abstract i(Lrc3;)V
+.end method
+
+.method public final j(Lv5d;)Lqc3;
+    .registers 4
+
+    const-string v0, "scheduler is null"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    new-instance v0, Lqc3;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, p1, v1}, Lqc3;-><init>(Lhc3;Lv5d;I)V
+
+    return-object v0
+.end method
+
+.method public final k()Ly4a;
+    .registers 3
+
+    instance-of v0, p0, Lmd6;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lmd6;
+
+    invoke-interface {p0}, Lmd6;->d()Ly4a;
 
     move-result-object p0
 
-    iget-object p1, v0, Lgc3;->c:Ljava/lang/Object;
+    return-object p0
 
-    check-cast p1, La12;
+    :cond_0
+    new-instance v0, Lxc3;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v1, 0x0
 
-    invoke-static {p1, p0}, Lrp4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lnp4;)Z
+    invoke-direct {v0, v1, p0}, Lxc3;-><init>(ILjava/lang/Object;)V
 
-    return-void
-
-    :pswitch_0
-    new-instance v0, Lgc3;
-
-    iget-object v1, p0, Lhc3;->c:Lqxc;
-
-    invoke-direct {v0, p1, v1}, Lgc3;-><init>(Lic3;Lqxc;)V
-
-    iget-object p0, p0, Lhc3;->b:Lyb3;
-
-    invoke-virtual {p0, v0}, Lyb3;->i(Lic3;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

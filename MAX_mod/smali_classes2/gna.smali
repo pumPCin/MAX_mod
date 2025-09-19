@@ -1,104 +1,43 @@
-.class public final Lgna;
+.class public abstract Lgna;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lhna;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final a:Lfja;
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
 
 
 # direct methods
-.method public constructor <init>(Lfja;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgna;->a:Lfja;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lgna;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lgna;
-
-    iget-object p0, p0, Lgna;->a:Lfja;
-
-    iget-object p1, p1, Lgna;->a:Lfja;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method static constructor <clinit>()V
     .registers 1
 
-    iget-object p0, p0, Lgna;->a:Lfja;
+    sget v0, Lh7c;->oneme_permissions_negative:I
 
-    if-nez p0, :cond_0
+    sput v0, Lgna;->a:I
 
-    const/4 p0, 0x0
+    sget v0, Lh7c;->oneme_permissions_neutral:I
 
-    return p0
+    sput v0, Lgna;->b:I
 
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    sget v0, Lh7c;->oneme_permissions_positive:I
 
-    move-result p0
+    sput v0, Lgna;->c:I
 
-    return p0
-.end method
+    sget v0, Lh7c;->oneme_permissions_rationale:I
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    sput v0, Lgna;->d:I
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    sget v0, Lh7c;->oneme_permissions_title:I
 
-    const-string v1, "Search(listener="
+    sput v0, Lgna;->e:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lgna;->a:Lfja;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

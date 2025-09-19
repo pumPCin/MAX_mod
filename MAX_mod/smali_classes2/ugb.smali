@@ -2,71 +2,26 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lj96;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/util/List;
 
-.field public final synthetic b:Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;
+.field public final b:Z
+
+.field public final c:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;I)V
-    .registers 3
-
-    iput p2, p0, Lugb;->a:I
-
-    iput-object p1, p0, Lugb;->b:Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;
+.method public constructor <init>(Ljava/util/List;ZLjava/lang/CharSequence;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lugb;->a:Ljava/util/List;
+
+    iput-boolean p2, p0, Lugb;->b:Z
+
+    iput-object p3, p0, Lugb;->c:Ljava/lang/CharSequence;
+
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    iget v0, p0, Lugb;->a:I
-
-    sget-object v1, Lncf;->a:Lncf;
-
-    iget-object p0, p0, Lugb;->b:Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;
-
-    packed-switch v0, :pswitch_data_0
-
-    check-cast p1, Landroid/view/View;
-
-    sget-object p1, Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;->s0:[Lsf7;
-
-    invoke-virtual {p0}, Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;->z0()Lsgb;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lsgb;->r()V
-
-    return-object v1
-
-    :pswitch_0
-    check-cast p1, Landroid/view/View;
-
-    sget-object p1, Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;->s0:[Lsf7;
-
-    invoke-virtual {p0}, Lone/me/profileedit/screens/adminpermissions/ProfileEditAdminPermissionsWidget;->z0()Lsgb;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lsgb;->x()V
-
-    return-object v1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

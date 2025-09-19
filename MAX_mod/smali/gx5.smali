@@ -1,96 +1,87 @@
 .class public final Lgx5;
-.super Lxie;
+.super Lr1;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Lox5;
+.field public final X:Ljava/lang/Iterable;
+
+.field public final synthetic o:I
 
 
 # direct methods
-.method public constructor <init>(Lox5;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Lhx5;I)V
+    .registers 4
 
-    iput-object p1, p0, Lgx5;->X:Lox5;
+    const/4 v0, 0x0
 
-    const/4 p1, 0x2
+    iput v0, p0, Lgx5;->o:I
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lgx5;->X:Ljava/lang/Iterable;
+
+    const/4 p1, 0x0
+
+    invoke-direct {p0, p2, p1}, Lr1;-><init>(II)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ll37;I)V
+    .registers 4
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lgx5;->o:I
+
+    invoke-virtual {p1}, Ljava/util/AbstractCollection;->size()I
+
+    move-result v0
+
+    invoke-direct {p0, v0, p2}, Lr1;-><init>(II)V
+
+    iput-object p1, p0, Lgx5;->X:Ljava/lang/Iterable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a(I)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    iget v0, p0, Lgx5;->o:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Lgx5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Lgx5;->X:Ljava/lang/Iterable;
+
+    check-cast p0, Ll37;
+
+    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p0
-
-    check-cast p0, Lgx5;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lgx5;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Lgx5;
-
-    iget-object p0, p0, Lgx5;->X:Lox5;
-
-    invoke-direct {p1, p0, p2}, Lgx5;-><init>(Lox5;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lgx5;->X:Lox5;
-
-    iget-object p0, p0, Lox5;->o0:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lbka;
-
-    sget p1, Lwsc;->o3:I
-
-    new-instance v0, Lqte;
-
-    invoke-direct {v0, p1}, Lqte;-><init>(I)V
-
-    invoke-virtual {p0, v0}, Lbka;->g(Lvte;)V
-
-    sget p1, Lwsc;->n3:I
-
-    new-instance v0, Lqte;
-
-    invoke-direct {v0, p1}, Lqte;-><init>(I)V
-
-    invoke-virtual {p0, v0}, Lbka;->a(Lvte;)V
-
-    invoke-virtual {p0}, Lbka;->i()Laka;
-
-    sget-object p0, Lncf;->a:Lncf;
 
     return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lgx5;->X:Ljava/lang/Iterable;
+
+    check-cast p0, Lhx5;
+
+    iget-object p0, p0, Lhx5;->a:[Ljava/lang/Iterable;
+
+    aget-object p0, p0, p1
+
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,45 +1,121 @@
-.class public final synthetic Ldja;
+.class public abstract Ldja;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/widget/TextView$OnEditorActionListener;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final synthetic a:Landroidx/appcompat/widget/AppCompatEditText;
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/appcompat/widget/AppCompatEditText;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Labc;->oneme_media_keyboard_emoji_animals_and_plants:I
 
-    iput-object p1, p0, Ldja;->a:Landroidx/appcompat/widget/AppCompatEditText;
+    sput v0, Ldja;->a:I
+
+    sget v0, Labc;->oneme_media_keyboard_emoji_classic:I
+
+    sput v0, Ldja;->b:I
+
+    sget v0, Labc;->oneme_media_keyboard_emoji_flags:I
+
+    sput v0, Ldja;->c:I
+
+    sget v0, Labc;->oneme_media_keyboard_emoji_food_and_drink:I
+
+    sput v0, Ldja;->d:I
+
+    sget v0, Labc;->oneme_media_keyboard_emoji_gestures_and_people:I
+
+    sput v0, Ldja;->e:I
+
+    sget v0, Labc;->oneme_media_keyboard_emoji_objects:I
+
+    sput v0, Ldja;->f:I
+
+    sget v0, Labc;->oneme_media_keyboard_emoji_sport_and_activity:I
+
+    sput v0, Ldja;->g:I
+
+    sget v0, Labc;->oneme_media_keyboard_emoji_symbols:I
+
+    sput v0, Ldja;->h:I
+
+    sget v0, Labc;->oneme_media_keyboard_emoji_travels_and_transport:I
+
+    sput v0, Ldja;->i:I
+
+    sget v0, Labc;->oneme_media_keyboard_favorite:I
+
+    sput v0, Ldja;->j:I
+
+    sget v0, Labc;->oneme_media_keyboard_popular:I
+
+    sput v0, Ldja;->k:I
+
+    sget v0, Labc;->oneme_media_keyboard_recent:I
+
+    sput v0, Ldja;->l:I
+
+    sget v0, Labc;->oneme_media_keyboard_recent_clear_action:I
+
+    sput v0, Ldja;->m:I
+
+    sget v0, Labc;->oneme_media_keyboard_recent_clear_cancel:I
+
+    sput v0, Ldja;->n:I
+
+    sget v0, Labc;->oneme_media_keyboard_recent_clear_title:I
+
+    sput v0, Ldja;->o:I
+
+    sget v0, Labc;->oneme_media_keyboard_tab_emoji:I
+
+    sput v0, Ldja;->p:I
+
+    sget v0, Labc;->oneme_media_keyboard_tab_gifs:I
+
+    sput v0, Ldja;->q:I
+
+    sget v0, Labc;->oneme_media_keyboard_tab_stickers:I
+
+    sput v0, Ldja;->r:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .registers 4
-
-    const/4 p1, 0x3
-
-    if-ne p2, p1, :cond_0
-
-    iget-object p0, p0, Ldja;->a:Landroidx/appcompat/widget/AppCompatEditText;
-
-    invoke-static {p0}, Lcjg;->q(Landroid/view/View;)V
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
 .end method

@@ -8,32 +8,59 @@
 
 .field public final b:J
 
-.field public final c:Z
-
-.field public final d:Z
-
-.field public final e:Z
-
-.field public final f:Ljava/lang/Object;
-
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;JJZZZ)V
-    .registers 9
-
-    iput-object p1, p0, Ldb5;->f:Ljava/lang/Object;
-
-    iput-wide p2, p0, Ldb5;->a:J
-
-    iput-wide p4, p0, Ldb5;->b:J
-
-    iput-boolean p6, p0, Ldb5;->c:Z
-
-    iput-boolean p7, p0, Ldb5;->d:Z
-
-    iput-boolean p8, p0, Ldb5;->e:Z
+.method public constructor <init>(JJ)V
+    .registers 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    const-wide/16 v0, 0x0
+
+    cmp-long v2, p3, v0
+
+    if-nez v2, :cond_0
+
+    iput-wide v0, p0, Ldb5;->a:J
+
+    const-wide/16 p1, 0x1
+
+    iput-wide p1, p0, Ldb5;->b:J
+
     return-void
+
+    :cond_0
+    iput-wide p1, p0, Ldb5;->a:J
+
+    iput-wide p3, p0, Ldb5;->b:J
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .registers 4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-wide v1, p0, Ldb5;->a:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, "/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Ldb5;->b:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

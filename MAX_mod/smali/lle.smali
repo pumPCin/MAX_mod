@@ -3,61 +3,30 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lqd0;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Landroid/app/Notification;
-
-.field public final synthetic c:I
-
-.field public final synthetic o:Landroidx/work/impl/foreground/SystemForegroundService;
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/work/impl/foreground/SystemForegroundService;ILandroid/app/Notification;I)V
-    .registers 5
+.method public constructor <init>(Ljava/lang/String;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Llle;->o:Landroidx/work/impl/foreground/SystemForegroundService;
-
-    iput p2, p0, Llle;->a:I
-
-    iput-object p3, p0, Llle;->b:Landroid/app/Notification;
-
-    iput p4, p0, Llle;->c:I
+    iput-object p1, p0, Llle;->a:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 6
+.method public final getType()I
+    .registers 1
 
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    const p0, 0x6e727473
 
-    const/16 v1, 0x1f
-
-    iget v2, p0, Llle;->c:I
-
-    iget-object v3, p0, Llle;->b:Landroid/app/Notification;
-
-    iget v4, p0, Llle;->a:I
-
-    iget-object p0, p0, Llle;->o:Landroidx/work/impl/foreground/SystemForegroundService;
-
-    if-lt v0, v1, :cond_0
-
-    invoke-static {p0, v4, v3, v2}, Lnle;->a(Landroid/app/Service;ILandroid/app/Notification;I)V
-
-    return-void
-
-    :cond_0
-    invoke-static {p0, v4, v3, v2}, Lmle;->a(Landroid/app/Service;ILandroid/app/Notification;I)V
-
-    return-void
+    return p0
 .end method

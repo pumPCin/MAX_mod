@@ -1,66 +1,260 @@
-.class public final synthetic Lzze;
+.class public final Lzze;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lh96;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:J
 
-.field public final synthetic b:Lb0f;
+.field public final b:Ljava/lang/String;
+
+.field public final c:J
+
+.field public final d:J
+
+.field public final e:J
+
+.field public final f:J
+
+.field public final g:Ljava/lang/String;
+
+.field public final h:Z
+
+.field public final i:Z
+
+.field public final j:J
+
+.field public final k:Ljava/lang/String;
+
+.field public final l:I
+
+.field public final m:Z
+
+.field public final n:Z
+
+.field public final o:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lb0f;I)V
-    .registers 3
-
-    iput p2, p0, Lzze;->a:I
-
-    iput-object p1, p0, Lzze;->b:Lb0f;
+.method public constructor <init>(Lyze;)V
+    .registers 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iget-wide v0, p1, Lyze;->a:J
+
+    iput-wide v0, p0, Lzze;->a:J
+
+    iget-object v2, p1, Lyze;->b:Ljava/lang/String;
+
+    iput-object v2, p0, Lzze;->b:Ljava/lang/String;
+
+    iget-wide v3, p1, Lyze;->c:J
+
+    iput-wide v3, p0, Lzze;->c:J
+
+    iget-wide v3, p1, Lyze;->d:J
+
+    iput-wide v3, p0, Lzze;->d:J
+
+    iget-wide v3, p1, Lyze;->e:J
+
+    iput-wide v3, p0, Lzze;->e:J
+
+    iget-wide v3, p1, Lyze;->f:J
+
+    iput-wide v3, p0, Lzze;->f:J
+
+    iget-wide v3, p1, Lyze;->j:J
+
+    iput-wide v3, p0, Lzze;->j:J
+
+    iget-object v3, p1, Lyze;->k:Ljava/lang/String;
+
+    iput-object v3, p0, Lzze;->k:Ljava/lang/String;
+
+    iget-object v3, p1, Lyze;->g:Ljava/lang/String;
+
+    iput-object v3, p0, Lzze;->g:Ljava/lang/String;
+
+    iget-boolean v3, p1, Lyze;->h:Z
+
+    iput-boolean v3, p0, Lzze;->h:Z
+
+    iget-boolean v3, p1, Lyze;->i:Z
+
+    iput-boolean v3, p0, Lzze;->i:Z
+
+    iget v3, p1, Lyze;->l:I
+
+    iput v3, p0, Lzze;->l:I
+
+    iget-boolean v3, p1, Lyze;->m:Z
+
+    iput-boolean v3, p0, Lzze;->m:Z
+
+    iget-boolean p1, p1, Lyze;->n:Z
+
+    iput-boolean p1, p0, Lzze;->n:Z
+
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result p1
+
+    int-to-long v2, p1
+
+    const-wide/16 v4, 0x1f
+
+    mul-long/2addr v0, v4
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p0, Lzze;->o:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 4
+.method public final a()Z
+    .registers 5
 
-    iget v0, p0, Lzze;->a:I
+    iget-wide v0, p0, Lzze;->c:J
 
-    packed-switch v0, :pswitch_data_0
+    const-wide/16 v2, 0x0
 
-    new-instance v0, Lvze;
+    cmp-long v0, v0, v2
 
-    iget-object p0, p0, Lzze;->b:Lb0f;
+    if-gtz v0, :cond_1
 
-    iget-object v1, p0, Lb0f;->c:Lh96;
+    iget-wide v0, p0, Lzze;->d:J
 
-    iget v2, p0, Lb0f;->X:I
+    cmp-long v0, v0, v2
 
-    iget p0, p0, Lb0f;->Y:I
+    if-gtz v0, :cond_1
 
-    invoke-direct {v0, v2, p0, v1}, Lvze;-><init>(IILh96;)V
+    iget-wide v0, p0, Lzze;->e:J
 
-    return-object v0
+    cmp-long v0, v0, v2
 
-    :pswitch_0
-    iget-object p0, p0, Lzze;->b:Lb0f;
+    if-gtz v0, :cond_1
 
-    invoke-virtual {p0}, Lb0f;->dismiss()V
+    iget-wide v0, p0, Lzze;->j:J
 
-    sget-object p0, Lncf;->a:Lncf;
+    cmp-long p0, v0, v2
+
+    if-lez p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    const-string v0, "TaskAttachDownloadData{messageId="
+
+    const-string v1, ", attachId=\'"
+
+    iget-wide v2, p0, Lzze;->a:J
+
+    iget-object v4, p0, Lzze;->b:Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v1, v4}, Lmhc;->i(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\', videoId="
+
+    const-string v2, ", audioId="
+
+    iget-wide v3, p0, Lzze;->c:J
+
+    invoke-static {v3, v4, v1, v2, v0}, Lmw1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    iget-wide v1, p0, Lzze;->d:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mp4GifId="
+
+    const-string v2, ", stickerId="
+
+    iget-wide v3, p0, Lzze;->e:J
+
+    invoke-static {v3, v4, v1, v2, v0}, Lmw1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    const-string v1, ", url=\'"
+
+    iget-wide v2, p0, Lzze;->f:J
+
+    iget-object v4, p0, Lzze;->g:Ljava/lang/String;
+
+    invoke-static {v2, v3, v1, v4, v0}, Lsq3;->l(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    const-string v1, "\', notifyProgress="
+
+    const-string v2, ", checkAutoLoadConnection="
+
+    iget-boolean v3, p0, Lzze;->h:Z
+
+    iget-boolean v4, p0, Lzze;->i:Z
+
+    invoke-static {v1, v2, v0, v3, v4}, Lsq3;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
+
+    const-string v1, ", fileId="
+
+    const-string v2, ", fileName=\'"
+
+    iget-wide v3, p0, Lzze;->j:J
+
+    invoke-static {v3, v4, v1, v2, v0}, Lmw1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    iget-object v1, p0, Lzze;->k:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "\', invalidateCount="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lzze;->l:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", useOriginalExtension="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lzze;->m:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", notCopyVideoToGallery="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lzze;->n:Z
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

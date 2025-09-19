@@ -1,54 +1,19 @@
 .class public final Lb89;
-.super Lcx3;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field public X:I
-
-.field public Y:Lp92;
-
-.field public Z:Ljava/lang/Object;
-
-.field public final synthetic n0:Lp92;
-
-.field public synthetic o:Ljava/lang/Object;
-
-.field public o0:Lo72;
+.field public final synthetic a:Lz4;
 
 
 # direct methods
-.method public constructor <init>(Lp92;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Lz4;)V
+    .registers 2
 
-    iput-object p1, p0, Lb89;->n0:Lp92;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lb89;->a:Lz4;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iput-object p1, p0, Lb89;->o:Ljava/lang/Object;
-
-    iget p1, p0, Lb89;->X:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lb89;->X:I
-
-    iget-object p1, p0, Lb89;->n0:Lp92;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lp92;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

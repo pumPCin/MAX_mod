@@ -1,61 +1,47 @@
 .class public final Lbne;
-.super Ljava/lang/Object;
+.super Lcne;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Comparable;
 
+# static fields
+.field public static final s:Lbne;
 
-# instance fields
-.field public final a:I
+.field public static final t:Lbne;
 
-.field public final b:I
+.field public static final u:Lbne;
 
-.field public final c:Ljava/lang/String;
-
-.field public final o:Ljava/lang/String;
+.field public static final v:Lbne;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
-    .registers 5
+.method static synthetic constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lbne;
 
-    iput p2, p0, Lbne;->a:I
+    const/16 v1, 0x10
 
-    iput p3, p0, Lbne;->b:I
+    invoke-direct {v0, v1}, Lw7;-><init>(I)V
 
-    iput-object p1, p0, Lbne;->c:Ljava/lang/String;
+    sput-object v0, Lbne;->s:Lbne;
 
-    iput-object p4, p0, Lbne;->o:Ljava/lang/String;
+    new-instance v0, Lbne;
+
+    invoke-direct {v0, v1}, Lw7;-><init>(I)V
+
+    sput-object v0, Lbne;->t:Lbne;
+
+    new-instance v0, Lbne;
+
+    invoke-direct {v0, v1}, Lw7;-><init>(I)V
+
+    sput-object v0, Lbne;->u:Lbne;
+
+    new-instance v0, Lbne;
+
+    invoke-direct {v0, v1}, Lw7;-><init>(I)V
+
+    sput-object v0, Lbne;->v:Lbne;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final compareTo(Ljava/lang/Object;)I
-    .registers 4
-
-    check-cast p1, Lbne;
-
-    iget v0, p0, Lbne;->a:I
-
-    iget v1, p1, Lbne;->a:I
-
-    sub-int/2addr v0, v1
-
-    if-nez v0, :cond_0
-
-    iget p0, p0, Lbne;->b:I
-
-    iget p1, p1, Lbne;->b:I
-
-    sub-int/2addr p0, p1
-
-    return p0
-
-    :cond_0
-    return v0
 .end method

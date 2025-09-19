@@ -1,107 +1,326 @@
-.class public final synthetic Lmx;
+.class public final Lmx;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/media/MediaCodec$OnFrameRenderedListener;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lzb8;
+.field public final b:I
+
+.field public c:I
+
+.field public d:I
+
+.field public e:J
+
+.field public final f:Z
+
+.field public g:I
+
+.field public h:I
+
+.field public final i:Ljava/lang/Object;
+
+.field public final j:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lab8;Lzb8;I)V
-    .registers 4
+.method public constructor <init>(Lcsf;Lcsf;Z)V
+    .registers 5
 
-    iput p3, p0, Lmx;->a:I
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lmx;->b:Lzb8;
+    iput v0, p0, Lmx;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmx;->j:Ljava/lang/Object;
+
+    iput-object p2, p0, Lmx;->i:Ljava/lang/Object;
+
+    iput-boolean p3, p0, Lmx;->f:Z
+
+    const/16 p3, 0xc
+
+    invoke-virtual {p2, p3}, Lcsf;->E(I)V
+
+    invoke-virtual {p2}, Lcsf;->v()I
+
+    move-result p2
+
+    iput p2, p0, Lmx;->b:I
+
+    invoke-virtual {p1, p3}, Lcsf;->E(I)V
+
+    invoke-virtual {p1}, Lcsf;->v()I
+
+    move-result p2
+
+    iput p2, p0, Lmx;->h:I
+
+    invoke-virtual {p1}, Lcsf;->f()I
+
+    move-result p1
+
+    const/4 p2, 0x1
+
+    if-ne p1, p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p2, 0x0
+
+    :goto_0
+    const-string p1, "first_chunk must be 1"
+
+    invoke-static {p1, p2}, Luyg;->i(Ljava/lang/String;Z)V
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Lmx;->c:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Lcya;Lcya;Z)V
+    .registers 5
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lmx;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmx;->j:Ljava/lang/Object;
+
+    iput-object p2, p0, Lmx;->i:Ljava/lang/Object;
+
+    iput-boolean p3, p0, Lmx;->f:Z
+
+    const/16 p3, 0xc
+
+    invoke-virtual {p2, p3}, Lcya;->G(I)V
+
+    invoke-virtual {p2}, Lcya;->y()I
+
+    move-result p2
+
+    iput p2, p0, Lmx;->b:I
+
+    invoke-virtual {p1, p3}, Lcya;->G(I)V
+
+    invoke-virtual {p1}, Lcya;->y()I
+
+    move-result p2
+
+    iput p2, p0, Lmx;->h:I
+
+    invoke-virtual {p1}, Lcya;->g()I
+
+    move-result p1
+
+    const/4 p2, 0x1
+
+    if-ne p1, p2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p2, 0x0
+
+    :goto_0
+    const-string p1, "first_chunk must be 1"
+
+    invoke-static {p1, p2}, Lvyg;->f(Ljava/lang/String;Z)V
+
+    const/4 p1, -0x1
+
+    iput p1, p0, Lmx;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onFrameRendered(Landroid/media/MediaCodec;JJ)V
-    .registers 6
+.method public final a()Z
+    .registers 7
 
-    iget p1, p0, Lmx;->a:I
+    iget v0, p0, Lmx;->a:I
 
-    packed-switch p1, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
-    iget-object p0, p0, Lmx;->b:Lzb8;
+    iget-object v0, p0, Lmx;->i:Ljava/lang/Object;
 
-    iget-object p1, p0, Lzb8;->b:Landroid/os/Handler;
+    check-cast v0, Lcya;
 
-    sget p4, Laif;->a:I
+    iget-object v1, p0, Lmx;->j:Ljava/lang/Object;
 
-    const/16 p5, 0x1e
+    check-cast v1, Lcya;
 
-    if-ge p4, p5, :cond_0
+    iget v2, p0, Lmx;->c:I
 
-    const/16 p0, 0x20
+    const/4 v3, 0x1
 
-    shr-long p4, p2, p0
+    add-int/2addr v2, v3
 
-    long-to-int p0, p4
+    iput v2, p0, Lmx;->c:I
 
-    long-to-int p2, p2
+    iget v4, p0, Lmx;->b:I
 
-    const/4 p3, 0x0
+    if-ne v2, v4, :cond_0
 
-    invoke-static {p1, p3, p0, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
+    const/4 v3, 0x0
 
-    move-result-object p0
+    goto :goto_2
 
-    invoke-virtual {p1, p0}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
+    :cond_0
+    iget-boolean v2, p0, Lmx;->f:Z
+
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v0}, Lcya;->z()J
+
+    move-result-wide v4
 
     goto :goto_0
 
-    :cond_0
-    invoke-virtual {p0, p2, p3}, Lzb8;->a(J)V
+    :cond_1
+    invoke-virtual {v0}, Lcya;->w()J
+
+    move-result-wide v4
 
     :goto_0
-    return-void
+    iput-wide v4, p0, Lmx;->e:J
 
-    :pswitch_0
-    iget-object p0, p0, Lmx;->b:Lzb8;
+    iget v0, p0, Lmx;->c:I
 
-    iget-object p1, p0, Lzb8;->b:Landroid/os/Handler;
+    iget v2, p0, Lmx;->g:I
 
-    sget p4, Laif;->a:I
+    if-ne v0, v2, :cond_3
 
-    const/16 p5, 0x1e
+    invoke-virtual {v1}, Lcya;->y()I
 
-    if-ge p4, p5, :cond_1
+    move-result v0
 
-    const/16 p0, 0x20
+    iput v0, p0, Lmx;->d:I
 
-    shr-long p4, p2, p0
+    const/4 v0, 0x4
 
-    long-to-int p0, p4
+    invoke-virtual {v1, v0}, Lcya;->H(I)V
 
-    long-to-int p2, p2
+    iget v0, p0, Lmx;->h:I
 
-    const/4 p3, 0x0
+    sub-int/2addr v0, v3
 
-    invoke-static {p1, p3, p0, p2}, Landroid/os/Message;->obtain(Landroid/os/Handler;III)Landroid/os/Message;
+    iput v0, p0, Lmx;->h:I
 
-    move-result-object p0
+    if-lez v0, :cond_2
 
-    invoke-virtual {p1, p0}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
+    invoke-virtual {v1}, Lcya;->y()I
+
+    move-result v0
+
+    sub-int/2addr v0, v3
 
     goto :goto_1
 
-    :cond_1
-    invoke-virtual {p0, p2, p3}, Lzb8;->a(J)V
+    :cond_2
+    const/4 v0, -0x1
 
     :goto_1
-    return-void
+    iput v0, p0, Lmx;->g:I
+
+    :cond_3
+    :goto_2
+    return v3
+
+    :pswitch_0
+    iget-object v0, p0, Lmx;->i:Ljava/lang/Object;
+
+    check-cast v0, Lcsf;
+
+    iget-object v1, p0, Lmx;->j:Ljava/lang/Object;
+
+    check-cast v1, Lcsf;
+
+    iget v2, p0, Lmx;->c:I
+
+    const/4 v3, 0x1
+
+    add-int/2addr v2, v3
+
+    iput v2, p0, Lmx;->c:I
+
+    iget v4, p0, Lmx;->b:I
+
+    if-ne v2, v4, :cond_4
+
+    const/4 v3, 0x0
+
+    goto :goto_5
+
+    :cond_4
+    iget-boolean v2, p0, Lmx;->f:Z
+
+    if-eqz v2, :cond_5
+
+    invoke-virtual {v0}, Lcsf;->w()J
+
+    move-result-wide v4
+
+    goto :goto_3
+
+    :cond_5
+    invoke-virtual {v0}, Lcsf;->t()J
+
+    move-result-wide v4
+
+    :goto_3
+    iput-wide v4, p0, Lmx;->e:J
+
+    iget v0, p0, Lmx;->c:I
+
+    iget v2, p0, Lmx;->g:I
+
+    if-ne v0, v2, :cond_7
+
+    invoke-virtual {v1}, Lcsf;->v()I
+
+    move-result v0
+
+    iput v0, p0, Lmx;->d:I
+
+    const/4 v0, 0x4
+
+    invoke-virtual {v1, v0}, Lcsf;->F(I)V
+
+    iget v0, p0, Lmx;->h:I
+
+    sub-int/2addr v0, v3
+
+    iput v0, p0, Lmx;->h:I
+
+    if-lez v0, :cond_6
+
+    invoke-virtual {v1}, Lcsf;->v()I
+
+    move-result v0
+
+    sub-int/2addr v0, v3
+
+    goto :goto_4
+
+    :cond_6
+    const/4 v0, -0x1
+
+    :goto_4
+    iput v0, p0, Lmx;->g:I
+
+    :cond_7
+    :goto_5
+    return v3
 
     nop
 

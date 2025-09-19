@@ -2,40 +2,85 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lang;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # instance fields
-.field public final a:I
+.field public final X:Z
 
-.field public final b:I
+.field public final Y:Z
 
-.field public final c:I
+.field public final Z:Z
 
-.field public final d:I
+.field public final a:Ljava/lang/String;
 
-.field public final e:I
+.field public final b:Z
+
+.field public final c:Ljava/lang/String;
+
+.field public final o:I
 
 
 # direct methods
-.method public constructor <init>(IIIII)V
-    .registers 6
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lfvf;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1}, Lfvf;-><init>(I)V
+
+    sput-object v0, Lang;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;ZZZZ)V
+    .registers 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lang;->a:I
+    iput-object p2, p0, Lang;->a:Ljava/lang/String;
 
-    iput p2, p0, Lang;->b:I
+    iput-boolean p4, p0, Lang;->b:Z
 
-    iput p3, p0, Lang;->c:I
+    iput-object p3, p0, Lang;->c:Ljava/lang/String;
 
-    iput p4, p0, Lang;->d:I
+    iput p1, p0, Lang;->o:I
 
-    iput p5, p0, Lang;->e:I
+    iput-boolean p5, p0, Lang;->X:Z
+
+    iput-boolean p6, p0, Lang;->Y:Z
+
+    iput-boolean p7, p0, Lang;->Z:Z
 
     return-void
 .end method
 
 
 # virtual methods
+.method public final describeContents()I
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
 .method public final equals(Ljava/lang/Object;)Z
     .registers 4
 
@@ -53,54 +98,80 @@
     :cond_1
     check-cast p1, Lang;
 
-    iget v0, p0, Lang;->a:I
+    iget-object v0, p0, Lang;->a:Ljava/lang/String;
 
-    iget v1, p1, Lang;->a:I
+    iget-object v1, p1, Lang;->a:Ljava/lang/String;
 
-    if-eq v0, v1, :cond_2
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
 
     goto :goto_0
 
     :cond_2
-    iget v0, p0, Lang;->b:I
+    iget-boolean v0, p0, Lang;->b:Z
 
-    iget v1, p1, Lang;->b:I
+    iget-boolean v1, p1, Lang;->b:Z
 
     if-eq v0, v1, :cond_3
 
     goto :goto_0
 
     :cond_3
-    iget v0, p0, Lang;->c:I
+    iget-object v0, p0, Lang;->c:Ljava/lang/String;
 
-    iget v1, p1, Lang;->c:I
+    iget-object v1, p1, Lang;->c:Ljava/lang/String;
 
-    if-eq v0, v1, :cond_4
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
 
     goto :goto_0
 
     :cond_4
-    iget v0, p0, Lang;->d:I
+    iget v0, p0, Lang;->o:I
 
-    iget v1, p1, Lang;->d:I
+    iget v1, p1, Lang;->o:I
 
     if-eq v0, v1, :cond_5
 
     goto :goto_0
 
     :cond_5
-    iget p0, p0, Lang;->e:I
+    iget-boolean v0, p0, Lang;->X:Z
 
-    iget p1, p1, Lang;->e:I
+    iget-boolean v1, p1, Lang;->X:Z
 
-    if-eq p0, p1, :cond_6
+    if-eq v0, v1, :cond_6
+
+    goto :goto_0
+
+    :cond_6
+    iget-boolean v0, p0, Lang;->Y:Z
+
+    iget-boolean v1, p1, Lang;->Y:Z
+
+    if-eq v0, v1, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    iget-boolean p0, p0, Lang;->Z:Z
+
+    iget-boolean p1, p1, Lang;->Z:Z
+
+    if-eq p0, p1, :cond_8
 
     :goto_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_6
+    :cond_8
     :goto_1
     const/4 p0, 0x1
 
@@ -110,9 +181,9 @@
 .method public final hashCode()I
     .registers 4
 
-    iget v0, p0, Lang;->a:I
+    iget-object v0, p0, Lang;->a:Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
@@ -120,27 +191,51 @@
 
     mul-int/2addr v0, v1
 
-    iget v2, p0, Lang;->b:I
+    iget-boolean v2, p0, Lang;->b:Z
 
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget v2, p0, Lang;->c:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
 
     move-result v0
 
-    iget v2, p0, Lang;->d:I
+    iget-object v2, p0, Lang;->c:Ljava/lang/String;
 
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    :goto_0
+    add-int/2addr v0, v2
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lang;->o:I
+
+    invoke-static {v2, v0, v1}, Lbg9;->h(III)I
 
     move-result v0
 
-    iget p0, p0, Lang;->e:I
+    iget-boolean v2, p0, Lang;->X:Z
 
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
+
+    move-result v0
+
+    iget-boolean v2, p0, Lang;->Y:Z
+
+    invoke-static {v0, v1, v2}, Lsq3;->e(IIZ)I
+
+    move-result v0
+
+    iget-boolean p0, p0, Lang;->Z:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result p0
 
@@ -152,37 +247,155 @@
 .method public final toString()Ljava/lang/String;
     .registers 6
 
-    const-string v0, ", neutralSecondary="
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, ", neutralTertiary="
+    const-string v1, "WebAppRootViewStateParc(title="
 
-    const-string v2, "WritebarIconColors(neutral="
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v3, p0, Lang;->a:I
+    iget-object v1, p0, Lang;->a:Ljava/lang/String;
 
-    iget v4, p0, Lang;->b:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v3, v0, v4, v1}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", isVerified="
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", themed="
+    iget-boolean v1, p0, Lang;->b:Z
 
-    const-string v2, ", verificationReplyTo="
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    iget v3, p0, Lang;->c:I
+    const-string v1, ", url="
 
-    iget v4, p0, Lang;->d:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v3, v1, v4, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
+    iget-object v1, p0, Lang;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", loadingState="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v1, 0x1
+
+    iget v2, p0, Lang;->o:I
+
+    if-eq v2, v1, :cond_2
+
+    const/4 v1, 0x2
+
+    if-eq v2, v1, :cond_1
+
+    const/4 v1, 0x3
+
+    if-eq v2, v1, :cond_0
+
+    const-string v1, "null"
+
+    goto :goto_0
+
+    :cond_0
+    const-string v1, "ERROR"
+
+    goto :goto_0
+
+    :cond_1
+    const-string v1, "WEB_VIEW"
+
+    goto :goto_0
+
+    :cond_2
+    const-string v1, "LOADING"
+
+    :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", showBackButton="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", needShowCloseConfirmationDialog="
+
+    const-string v2, ", isBrightnessMaximized="
+
+    iget-boolean v3, p0, Lang;->X:Z
+
+    iget-boolean v4, p0, Lang;->Y:Z
+
+    invoke-static {v1, v2, v0, v3, v4}, Lmw1;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
 
     const-string v1, ")"
 
-    iget p0, p0, Lang;->e:I
+    iget-boolean p0, p0, Lang;->Z:Z
 
-    invoke-static {v0, p0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lmw1;->k(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 4
+
+    iget-object p2, p0, Lang;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-boolean p2, p0, Lang;->b:Z
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object p2, p0, Lang;->c:Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    const/4 p2, 0x1
+
+    iget v0, p0, Lang;->o:I
+
+    if-eq v0, p2, :cond_2
+
+    const/4 p2, 0x2
+
+    if-eq v0, p2, :cond_1
+
+    const/4 p2, 0x3
+
+    if-ne v0, p2, :cond_0
+
+    const-string p2, "ERROR"
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    throw p0
+
+    :cond_1
+    const-string p2, "WEB_VIEW"
+
+    goto :goto_0
+
+    :cond_2
+    const-string p2, "LOADING"
+
+    :goto_0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-boolean p2, p0, Lang;->X:Z
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-boolean p2, p0, Lang;->Y:Z
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-boolean p0, p0, Lang;->Z:Z
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
 .end method

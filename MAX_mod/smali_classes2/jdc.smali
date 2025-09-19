@@ -1,64 +1,24 @@
-.class public final Ljdc;
+.class public abstract Ljdc;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lkdc;
 
 
 # static fields
-.field public static final a:Ljdc;
+.field public static IconSwitch:[I
+
+.field public static IconSwitch_icon_switch_start_drawable:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .registers 1
 
-    new-instance v0, Ljdc;
+    const v0, 0x7f040548
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    filled-new-array {v0}, [I
 
-    sput-object v0, Ljdc;->a:Ljdc;
+    move-result-object v0
+
+    sput-object v0, Ljdc;->IconSwitch:[I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Ljdc;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, 0x18d35279
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "Stop"
-
-    return-object p0
 .end method

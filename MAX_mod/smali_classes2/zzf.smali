@@ -2,241 +2,124 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
-
 
 # instance fields
-.field public final synthetic a:Lgl9;
+.field public final a:Landroid/net/Uri;
 
-.field public final synthetic b:Landroid/view/View;
-
-.field public final synthetic c:Landroid/view/View;
+.field public b:Z
 
 
 # direct methods
-.method public constructor <init>(Lgl9;Landroid/view/View;Landroid/view/View;)V
-    .registers 4
+.method public constructor <init>(Landroid/net/Uri;Z)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lzzf;->a:Lgl9;
+    iput-object p1, p0, Lzzf;->a:Landroid/net/Uri;
 
-    iput-object p2, p0, Lzzf;->b:Landroid/view/View;
-
-    iput-object p3, p0, Lzzf;->c:Landroid/view/View;
+    iput-boolean p2, p0, Lzzf;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPreDraw()Z
-    .registers 9
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    iget-object v0, p0, Lzzf;->a:Lgl9;
+    const/4 v0, 0x1
 
-    iget-object v1, v0, Lgl9;->X:Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
-    check-cast v1, Ljava/util/ArrayList;
-
-    iget v2, v0, Lgl9;->b:I
-
-    iget-object v3, v0, Lgl9;->Y:Ljava/lang/Object;
-
-    check-cast v3, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v3}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/view/View;
-
-    const/4 v4, 0x1
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    if-eqz v3, :cond_2
-
-    invoke-virtual {v3}, Landroid/view/View;->getId()I
-
-    move-result v7
-
-    if-ne v7, v2, :cond_0
-
-    invoke-virtual {v3}, Landroid/view/View;->isAttachedToWindow()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_0
-
-    invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
-
-    move-result v7
-
-    if-nez v7, :cond_0
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    move-object v3, v5
+    instance-of v1, p1, Lzzf;
 
-    :goto_0
-    if-nez v3, :cond_1
+    const/4 v2, 0x0
 
-    goto :goto_1
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    move v7, v6
+    check-cast p1, Lzzf;
 
-    goto :goto_2
+    iget-object v1, p0, Lzzf;->a:Landroid/net/Uri;
 
-    :cond_2
-    :goto_1
-    iget-object v3, v0, Lgl9;->Y:Ljava/lang/Object;
+    iget-object v3, p1, Lzzf;->a:Landroid/net/Uri;
 
-    check-cast v3, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {v3}, Ljava/lang/ref/Reference;->clear()V
-
-    move v7, v4
-
-    move-object v3, v5
-
-    :goto_2
-    if-nez v3, :cond_5
-
-    iget-object v3, p0, Lzzf;->b:Landroid/view/View;
-
-    if-eqz v3, :cond_3
-
-    invoke-virtual {v3, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    if-nez v3, :cond_4
-
-    :cond_3
-    iget-object p0, p0, Lzzf;->c:Landroid/view/View;
-
-    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
-
-    move-result-object p0
-
-    invoke-virtual {p0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    :cond_4
-    if-eqz v3, :cond_6
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object p0
-
-    iget-object v2, v0, Lgl9;->a:Ljava/lang/Object;
-
-    check-cast v2, Ljava/lang/Class;
-
-    invoke-virtual {p0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_6
-
-    :cond_5
-    move-object v5, v3
-
-    :cond_6
-    if-eqz v5, :cond_9
-
-    if-eqz v7, :cond_7
-
-    new-instance p0, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {p0, v5}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object p0, v0, Lgl9;->Y:Ljava/lang/Object;
-
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/view/View;
-
-    if-eqz p0, :cond_7
-
-    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_7
-
-    invoke-interface {p0, v4}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
-
-    :cond_7
-    iput-boolean v4, v0, Lgl9;->c:Z
-
-    iget-object p0, v0, Lgl9;->o:Ljava/lang/Object;
-
-    check-cast p0, Landroid/graphics/Rect;
-
-    invoke-static {p0, v5}, Lqzf;->d(Landroid/graphics/Rect;Landroid/view/View;)V
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_3
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-nez v1, :cond_2
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    return v2
 
-    move-result-object v1
+    :cond_2
+    iget-boolean p0, p0, Lzzf;->b:Z
 
-    check-cast v1, Lwzf;
+    iget-boolean p1, p1, Lzzf;->b:Z
 
-    invoke-interface {v1, p0, v5}, Lwzf;->c(Landroid/graphics/Rect;Landroid/view/View;)V
+    if-eq p0, p1, :cond_3
 
-    goto :goto_3
+    return v2
 
-    :cond_8
-    return v4
+    :cond_3
+    return v0
+.end method
 
-    :cond_9
-    iget-boolean p0, v0, Lgl9;->c:Z
+.method public final hashCode()I
+    .registers 2
 
-    if-eqz p0, :cond_a
+    iget-object v0, p0, Lzzf;->a:Landroid/net/Uri;
 
-    iput-boolean v6, v0, Lgl9;->c:Z
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_4
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v0}, Landroid/net/Uri;->hashCode()I
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-boolean p0, p0, Lzzf;->b:Z
 
-    move-result-object v0
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
-    check-cast v0, Lwzf;
+    move-result p0
 
-    invoke-interface {v0}, Lwzf;->a()V
+    add-int/2addr p0, v0
 
-    goto :goto_4
+    return p0
+.end method
 
-    :cond_a
-    return v4
+.method public final toString()Ljava/lang/String;
+    .registers 4
+
+    iget-boolean v0, p0, Lzzf;->b:Z
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "PendingFragment(uri="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lzzf;->a:Landroid/net/Uri;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ", finalized="
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,32 +1,24 @@
 .class public final Lx51;
-.super Lq0g;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lz51;
+.implements Ld61;
 
 
 # static fields
-.field public static final c:Lx51;
+.field public static final a:Lx51;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .registers 1
 
     new-instance v0, Lx51;
 
-    sget v1, Lk3c;->call_screen_connection_restored:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 v2, 0x3e8
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Lq0g;-><init>(ILjava/lang/Long;)V
-
-    sput-object v0, Lx51;->c:Lx51;
+    sput-object v0, Lx51;->a:Lx51;
 
     return-void
 .end method
@@ -58,7 +50,7 @@
 .method public final hashCode()I
     .registers 1
 
-    const p0, 0x426150a3
+    const p0, -0x3f0d84a0
 
     return p0
 .end method
@@ -66,7 +58,7 @@
 .method public final toString()Ljava/lang/String;
     .registers 1
 
-    const-string p0, "Restored"
+    const-string p0, "Logout"
 
     return-object p0
 .end method

@@ -1,201 +1,390 @@
-.class public final Lfod;
-.super Lxie;
+.class public Lfod;
+.super Lzoc;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final E0:Lro4;
 
-.field public final synthetic Y:Lone/me/sharedata/ShareDataPickerScreen;
+.field public final F0:Landroid/widget/ImageView;
 
-.field public final synthetic Z:Landroid/view/View;
+.field public final G0:Landroid/widget/TextView;
+
+.field public final H0:Landroid/widget/TextView;
+
+.field public final I0:Landroid/widget/TextView;
+
+.field public final J0:Landroid/view/View;
+
+.field public final K0:Landroid/view/View;
+
+.field public L0:Lcod;
+
+.field public final M0:Lru/ok/messages/settings/FrgBaseSettings;
+
+.field public final N0:Lcze;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/sharedata/ShareDataPickerScreen;Landroid/view/View;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Landroid/view/View;Lru/ok/messages/settings/FrgBaseSettings;)V
+    .registers 7
 
-    iput-object p1, p0, Lfod;->Y:Lone/me/sharedata/ShareDataPickerScreen;
+    invoke-direct {p0, p1}, Lzoc;-><init>(Landroid/view/View;)V
 
-    iput-object p2, p0, Lfod;->Z:Landroid/view/View;
+    sget-object v0, Lyl;->o:Lyl;
 
-    const/4 p1, 0x2
+    invoke-static {}, Lro4;->b()Lro4;
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    move-result-object v0
 
+    iput-object v0, p0, Lfod;->E0:Lro4;
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    sget-object v1, Lcze;->a0:Lzte;
+
+    invoke-static {v0}, Ln4e;->I(Landroid/content/Context;)Lcze;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lfod;->N0:Lcze;
+
+    iget v1, v0, Lcze;->i:I
+
+    iget v2, v0, Lcze;->M:I
+
+    const/4 v3, 0x0
+
+    invoke-static {v3, v1}, Lhv8;->F(II)Landroid/graphics/drawable/RippleDrawable;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    sget v1, Lb8c;->row_setting__iv_icon:I
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/ImageView;
+
+    iput-object v1, p0, Lfod;->F0:Landroid/widget/ImageView;
+
+    if-eqz v1, :cond_0
+
+    iget v3, v0, Lcze;->w:I
+
+    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setColorFilter(I)V
+
+    :cond_0
+    sget v1, Lb8c;->row_setting__tv_title:I
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/TextView;
+
+    iput-object v1, p0, Lfod;->G0:Landroid/widget/TextView;
+
+    if-eqz v1, :cond_1
+
+    iget v3, v0, Lcze;->k:I
+
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :cond_1
+    sget v1, Lb8c;->row_setting__tv_subtitle:I
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/TextView;
+
+    iput-object v1, p0, Lfod;->H0:Landroid/widget/TextView;
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :cond_2
+    sget v1, Lb8c;->row_setting__tv_description:I
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/TextView;
+
+    iput-object v1, p0, Lfod;->I0:Landroid/widget/TextView;
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :cond_3
+    sget v1, Lb8c;->row_setting__separator:I
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lfod;->J0:Landroid/view/View;
+
+    if-eqz v1, :cond_4
+
+    iget v2, v0, Lcze;->H:I
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
+
+    :cond_4
+    sget v1, Lb8c;->row_setting__small_separator:I
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lfod;->K0:Landroid/view/View;
+
+    if-eqz v1, :cond_5
+
+    iget v0, v0, Lcze;->K:I
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->setBackgroundColor(I)V
+
+    :cond_5
+    iput-object p2, p0, Lfod;->M0:Lru/ok/messages/settings/FrgBaseSettings;
+
+    if-eqz p2, :cond_6
+
+    new-instance p2, Lfsa;
+
+    const/16 v0, 0xf
+
+    invoke-direct {p2, v0, p0}, Lfsa;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    :cond_6
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public y(Lcod;Z)V
+    .registers 8
 
-    check-cast p1, Ljava/util/Set;
+    iput-object p1, p0, Lfod;->L0:Lcod;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p0, p1, p2}, Lfod;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object p1, p0, Lzoc;->a:Landroid/view/View;
 
-    move-result-object p0
+    const/4 v0, 0x1
 
-    check-cast p0, Lfod;
+    invoke-virtual {p1, v0}, Landroid/view/View;->setEnabled(Z)V
 
-    sget-object p1, Lncf;->a:Lncf;
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-virtual {p0, p1}, Lfod;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
-
-    new-instance v0, Lfod;
-
-    iget-object v1, p0, Lfod;->Y:Lone/me/sharedata/ShareDataPickerScreen;
-
-    iget-object p0, p0, Lfod;->Z:Landroid/view/View;
-
-    invoke-direct {v0, v1, p0, p2}, Lfod;-><init>(Lone/me/sharedata/ShareDataPickerScreen;Landroid/view/View;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lfod;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lfod;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/Set;
-
-    invoke-interface {p1}, Ljava/util/Set;->size()I
-
-    move-result p1
-
-    iget-object v0, p0, Lfod;->Y:Lone/me/sharedata/ShareDataPickerScreen;
-
-    iget-object v1, v0, Lone/me/sharedata/ShareDataPickerScreen;->s0:Landroid/transition/AutoTransition;
-
-    sget-object v2, Lone/me/sharedata/ShareDataPickerScreen;->z0:[Lsf7;
-
-    invoke-virtual {v0}, Lone/me/sharedata/ShareDataPickerScreen;->I0()Lly8;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    if-nez v2, :cond_0
-
-    move v2, v4
-
-    goto :goto_0
-
-    :cond_0
-    move v2, v3
-
-    :goto_0
-    iget-object p0, p0, Lfod;->Z:Landroid/view/View;
-
-    if-nez v2, :cond_1
-
-    if-lez p1, :cond_1
-
-    check-cast p0, Landroid/view/ViewGroup;
-
-    invoke-static {p0, v1}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
-
-    invoke-virtual {v0}, Lone/me/sharedata/ShareDataPickerScreen;->I0()Lly8;
-
-    move-result-object p0
-
-    invoke-virtual {p0, v3}, Landroid/view/View;->setVisibility(I)V
-
-    goto :goto_1
-
-    :cond_1
-    if-eqz v2, :cond_4
-
-    if-nez p1, :cond_4
-
-    check-cast p0, Landroid/view/ViewGroup;
-
-    invoke-static {p0, v1}, Landroid/transition/TransitionManager;->beginDelayedTransition(Landroid/view/ViewGroup;Landroid/transition/Transition;)V
-
-    iget-object p0, v0, Lone/me/sharedata/ShareDataPickerScreen;->t0:Lin0;
-
-    invoke-virtual {p0}, Lin0;->a()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p0}, Lin0;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lly8;
+    invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
     const/16 p1, 0x8
 
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    iget-object v1, p0, Lfod;->F0:Landroid/widget/ImageView;
+
+    if-eqz v1, :cond_0
+
+    iget-object v2, p0, Lfod;->L0:Lcod;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v1, p1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+    :cond_0
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lfod;->G0:Landroid/widget/TextView;
+
+    if-eqz v2, :cond_2
+
+    iget-object v3, p0, Lfod;->L0:Lcod;
+
+    iget-object v3, v3, Lcod;->b:Ljava/lang/CharSequence;
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v3, p0, Lfod;->L0:Lcod;
+
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setEnabled(Z)V
+
+    iget-object v0, p0, Lfod;->L0:Lcod;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p0, Lfod;->L0:Lcod;
+
+    iget v0, v0, Lcod;->Y:I
+
+    const/4 v3, 0x3
+
+    iget-object v4, p0, Lfod;->N0:Lcze;
+
+    if-ne v0, v3, :cond_1
+
+    iget v0, v4, Lcze;->k:I
+
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    goto :goto_0
+
+    :cond_1
+    iget v0, v4, Lcze;->F:I
+
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    :goto_0
+    iget-object v0, p0, Lfod;->L0:Lcod;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {v2, v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
+
+    iget-object v0, p0, Lfod;->L0:Lcod;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
+
+    const/16 v0, 0x3e7
+
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setMaxLines(I)V
 
     :cond_2
-    iget-object p0, v0, Lone/me/sharedata/ShareDataPickerScreen;->w0:Llrc;
+    iget-object v0, p0, Lfod;->H0:Landroid/widget/TextView;
 
-    if-eqz p0, :cond_3
+    if-eqz v0, :cond_4
 
-    invoke-virtual {p0}, Llrc;->n()Z
+    iget-object v2, p0, Lfod;->L0:Lcod;
 
-    move-result p0
+    iget-object v2, v2, Lcod;->c:Ljava/lang/String;
 
-    if-ne p0, v4, :cond_3
+    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {v0}, Lone/me/chats/picker/AbstractPickerScreen;->G0()La0b;
+    move-result v2
 
-    move-result-object p0
+    if-eqz v2, :cond_3
 
-    iget-object p0, p0, La0b;->c:Ly1b;
-
-    check-cast p0, Lwnd;
-
-    iget-object p0, p0, Lwnd;->l:Lr15;
-
-    invoke-virtual {p0, v4}, Lr15;->a(I)V
+    invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_1
 
     :cond_3
-    sget p0, Lng7;->a:I
+    iget-object v2, p0, Lfod;->L0:Lcod;
 
-    sget p0, Lng7;->c:I
+    iget-object v2, v2, Lcod;->c:Ljava/lang/String;
 
-    invoke-static {p0}, Lng7;->b(I)Z
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    move-result p0
-
-    if-eqz p0, :cond_4
-
-    iget-object p0, v0, Lone/me/sharedata/ShareDataPickerScreen;->x0:Lw36;
-
-    invoke-virtual {p0}, Lw36;->l()V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     :cond_4
     :goto_1
-    sget-object p0, Lncf;->a:Lncf;
+    iget-object v0, p0, Lfod;->J0:Landroid/view/View;
 
-    return-object p0
+    if-eqz v0, :cond_6
+
+    iget-object v2, p0, Lfod;->L0:Lcod;
+
+    iget-boolean v2, v2, Lcod;->Z:Z
+
+    if-eqz v2, :cond_5
+
+    move v2, v1
+
+    goto :goto_2
+
+    :cond_5
+    move v2, p1
+
+    :goto_2
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_6
+    iget-object v0, p0, Lfod;->K0:Landroid/view/View;
+
+    if-eqz v0, :cond_9
+
+    iget-object v2, p0, Lfod;->L0:Lcod;
+
+    iget-boolean v2, v2, Lcod;->Z:Z
+
+    if-nez v2, :cond_7
+
+    move v2, v1
+
+    goto :goto_3
+
+    :cond_7
+    move v2, p1
+
+    :goto_3
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    if-eqz p2, :cond_8
+
+    move p2, v1
+
+    goto :goto_4
+
+    :cond_8
+    iget-object p2, p0, Lfod;->E0:Lro4;
+
+    iget p2, p2, Lro4;->o:I
+
+    :goto_4
+    invoke-static {v0, p2}, Ly30;->B(Landroid/view/View;I)V
+
+    :cond_9
+    iget-object p2, p0, Lfod;->I0:Landroid/widget/TextView;
+
+    if-eqz p2, :cond_b
+
+    iget-object v0, p0, Lfod;->L0:Lcod;
+
+    iget-object v0, v0, Lcod;->o:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    invoke-virtual {p2, p1}, Landroid/view/View;->setVisibility(I)V
+
+    goto :goto_5
+
+    :cond_a
+    iget-object p1, p0, Lfod;->L0:Lcod;
+
+    iget-object p1, p1, Lcod;->o:Ljava/lang/String;
+
+    invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_b
+    :goto_5
+    iget-object p0, p0, Lfod;->L0:Lcod;
+
+    iget p0, p0, Lcod;->Y:I
+
+    return-void
 .end method

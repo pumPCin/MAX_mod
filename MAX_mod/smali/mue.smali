@@ -4,24 +4,63 @@
 
 
 # instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:Ljava/lang/String;
+.field public a:Landroid/os/Message;
 
 
-# direct methods
-.method public constructor <init>(IILjava/lang/String;)V
+# virtual methods
+.method public final a()V
     .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    iput p1, p0, Lmue;->a:I
+    iput-object v0, p0, Lmue;->a:Landroid/os/Message;
 
-    iput p2, p0, Lmue;->b:I
+    sget-object v0, Loue;->b:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lmue;->c:Ljava/lang/String;
+    monitor-enter v0
+
+    :try_start_0
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    const/16 v2, 0x32
+
+    if-ge v1, v2, :cond_0
+
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    monitor-exit v0
+
+    return-void
+
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+.method public final b()V
+    .registers 2
+
+    iget-object v0, p0, Lmue;->a:Landroid/os/Message;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    invoke-virtual {p0}, Lmue;->a()V
 
     return-void
 .end method

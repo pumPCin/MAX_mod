@@ -25,7 +25,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Lca4;Ljava/util/Map;Landroid/os/Bundle;Ljava/lang/Throwable;)V
+.method public constructor <init>(Landroid/net/Uri;Ljava/lang/String;Lxa4;Ljava/util/Map;Landroid/os/Bundle;Ljava/lang/Throwable;)V
     .registers 9
 
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;

@@ -1,183 +1,319 @@
-.class public final enum Llh5;
-.super Ljava/lang/Enum;
+.class public final synthetic Llh5;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final enum X:Llh5;
-
-.field public static final enum Y:Llh5;
-
-.field public static final enum Z:Llh5;
-
-.field public static final b:[Llh5;
-
-.field public static final enum c:Llh5;
-
-.field public static final enum n0:Llh5;
-
-.field public static final enum o:Llh5;
-
-.field public static final enum o0:Llh5;
-
-.field public static final enum p0:Llh5;
-
-.field public static final synthetic q0:[Llh5;
+# interfaces
+.implements Lpm3;
+.implements Lrp8;
+.implements Ltp8;
+.implements Lom3;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:I
+
+.field public final synthetic b:J
+
+.field public final synthetic c:I
+
+.field public final synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 11
+.method public synthetic constructor <init>(Ljava/lang/Object;IJI)V
+    .registers 6
 
-    new-instance v0, Llh5;
+    iput p5, p0, Llh5;->a:I
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Llh5;->o:Ljava/lang/Object;
 
-    const-string v2, "Message"
+    iput p2, p0, Llh5;->c:I
 
-    const-string v3, "MESSAGE"
+    iput-wide p3, p0, Llh5;->b:J
 
-    invoke-direct {v0, v3, v1, v2}, Llh5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Llh5;->c:Llh5;
-
-    new-instance v1, Llh5;
-
-    const/4 v2, 0x1
-
-    const-string v3, "ChatMessage"
-
-    const-string v4, "CHAT_MESSAGE"
-
-    invoke-direct {v1, v4, v2, v3}, Llh5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v1, Llh5;->o:Llh5;
-
-    new-instance v2, Llh5;
-
-    const/4 v3, 0x2
-
-    const-string v4, "ChatMessage-channel"
-
-    const-string v5, "CHANNEL_MESSAGE"
-
-    invoke-direct {v2, v5, v3, v4}, Llh5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v2, Llh5;->X:Llh5;
-
-    new-instance v3, Llh5;
-
-    const/4 v4, 0x3
-
-    const-string v5, "ChatSystemMessage"
-
-    const-string v6, "CHAT_SYSTEM_MESSAGE"
-
-    invoke-direct {v3, v6, v4, v5}, Llh5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v3, Llh5;->Y:Llh5;
-
-    new-instance v4, Llh5;
-
-    const/4 v5, 0x4
-
-    const-string v6, "ChatReply"
-
-    const-string v7, "CHAT_REPLY"
-
-    invoke-direct {v4, v7, v5, v6}, Llh5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v4, Llh5;->Z:Llh5;
-
-    new-instance v5, Llh5;
-
-    const/4 v6, 0x5
-
-    const-string v7, "GroupChat"
-
-    const-string v8, "GROUP_CHAT"
-
-    invoke-direct {v5, v8, v6, v7}, Llh5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v5, Llh5;->n0:Llh5;
-
-    new-instance v6, Llh5;
-
-    const/4 v7, 0x6
-
-    const-string v8, "Scheduled"
-
-    const-string v9, "SCHEDULED"
-
-    invoke-direct {v6, v9, v7, v8}, Llh5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v6, Llh5;->o0:Llh5;
-
-    new-instance v7, Llh5;
-
-    const/4 v8, 0x7
-
-    const-string v9, "Unknown"
-
-    const-string v10, "UNKNOWN"
-
-    invoke-direct {v7, v10, v8, v9}, Llh5;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v7, Llh5;->p0:Llh5;
-
-    filled-new-array/range {v0 .. v7}, [Llh5;
-
-    move-result-object v0
-
-    sput-object v0, Llh5;->q0:[Llh5;
-
-    invoke-static {}, Llh5;->values()[Llh5;
-
-    move-result-object v0
-
-    sput-object v0, Llh5;->b:[Llh5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
+.method public synthetic constructor <init>(Ljava/lang/Object;JII)V
+    .registers 6
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput p5, p0, Llh5;->a:I
 
-    iput-object p3, p0, Llh5;->a:Ljava/lang/String;
+    iput-object p1, p0, Llh5;->o:Ljava/lang/Object;
+
+    iput-wide p2, p0, Llh5;->b:J
+
+    iput p4, p0, Llh5;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Llh5;
-    .registers 2
 
-    const-class v0, Llh5;
+# virtual methods
+.method public accept(Ljava/lang/Object;)V
+    .registers 16
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget v0, p0, Llh5;->a:I
+
+    const-string v1, " to position="
+
+    const-string v2, "onNotifMoved: failed to move id="
+
+    iget v3, p0, Llh5;->c:I
+
+    iget-wide v4, p0, Llh5;->b:J
+
+    iget-object p0, p0, Llh5;->o:Ljava/lang/Object;
+
+    packed-switch v0, :pswitch_data_0
+
+    check-cast p0, Lfoe;
+
+    check-cast p1, Lh44;
+
+    iget-object v0, p0, Lfoe;->h:Lx46;
+
+    invoke-static {v0}, Lmq0;->i(Ljava/lang/Object;)V
+
+    iget-object v0, p1, Lh44;->a:Ll37;
+
+    iget-wide v1, p1, Lh44;->c:J
+
+    invoke-static {v0, v1, v2}, Lm48;->g(Ll37;J)[B
+
+    move-result-object v0
+
+    iget-object v1, p0, Lfoe;->c:Lcya;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    array-length v2, v0
+
+    invoke-virtual {v1, v2, v0}, Lcya;->E(I[B)V
+
+    iget-object v2, p0, Lfoe;->a:Lbcf;
+
+    array-length v6, v0
+
+    const/4 v7, 0x0
+
+    invoke-interface {v2, v1, v6, v7}, Lbcf;->b(Lcya;II)V
+
+    iget-wide v1, p1, Lh44;->b:J
+
+    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
+
+    cmp-long p1, v1, v8
+
+    const/4 v6, 0x1
+
+    const-wide v8, 0x7fffffffffffffffL
+
+    if-nez p1, :cond_1
+
+    iget-object p1, p0, Lfoe;->h:Lx46;
+
+    iget-wide v1, p1, Lx46;->s:J
+
+    cmp-long p1, v1, v8
+
+    if-nez p1, :cond_0
+
+    move v7, v6
+
+    :cond_0
+    invoke-static {v7}, Lmq0;->h(Z)V
+
+    :goto_0
+    move-wide v8, v4
+
+    goto :goto_1
+
+    :cond_1
+    iget-object p1, p0, Lfoe;->h:Lx46;
+
+    iget-wide v10, p1, Lx46;->s:J
+
+    cmp-long p1, v10, v8
+
+    if-nez p1, :cond_2
+
+    add-long/2addr v4, v1
+
+    goto :goto_0
+
+    :cond_2
+    add-long v4, v1, v10
+
+    goto :goto_0
+
+    :goto_1
+    iget-object v7, p0, Lfoe;->a:Lbcf;
+
+    or-int/lit8 v10, v3, 0x1
+
+    array-length v11, v0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    invoke-interface/range {v7 .. v13}, Lbcf;->a(JIIILzbf;)V
+
+    return-void
+
+    :pswitch_0
+    check-cast p0, Loi5;
+
+    check-cast p1, Ljava/lang/Throwable;
+
+    sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "oi5"
+
+    invoke-static {v1, v0, p1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    invoke-virtual {p0}, Loi5;->I()V
+
+    return-void
+
+    :pswitch_1
+    check-cast p0, Lvh5;
+
+    check-cast p1, Ljava/lang/Throwable;
+
+    sget-object v0, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "vh5"
+
+    invoke-static {v1, v0, p1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    invoke-virtual {p0}, Lvh5;->J()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public h(Lbeb;Ltn8;)V
+    .registers 6
+
+    iget-object v0, p0, Llh5;->o:Ljava/lang/Object;
+
+    check-cast v0, Lup8;
+
+    iget v1, p0, Llh5;->c:I
+
+    invoke-virtual {v0, p2, p1, v1}, Lup8;->a0(Ltn8;Lbeb;I)I
+
+    move-result p2
+
+    invoke-virtual {p1}, Lbeb;->p0()V
+
+    iget-object p1, p1, Lbeb;->a:Ltc5;
+
+    const/4 v0, 0x0
+
+    iget-wide v1, p0, Llh5;->b:J
+
+    invoke-virtual {p1, p2, v1, v2, v0}, Ltc5;->S0(IJZ)V
+
+    return-void
+.end method
+
+.method public l(Llo8;Ltn8;I)Ljava/lang/Object;
+    .registers 10
+
+    iget-object p3, p0, Llh5;->o:Ljava/lang/Object;
+
+    move-object v2, p3
+
+    check-cast v2, Ljava/util/List;
+
+    iget p3, p0, Llh5;->c:I
+
+    const/4 v0, -0x1
+
+    if-ne p3, v0, :cond_0
+
+    iget-object v1, p1, Llo8;->t:Lbeb;
+
+    invoke-virtual {v1}, Lbeb;->A()I
+
+    move-result v1
+
+    move v3, v1
+
+    goto :goto_0
+
+    :cond_0
+    move v3, p3
+
+    :goto_0
+    if-ne p3, v0, :cond_1
+
+    iget-object p0, p1, Llo8;->t:Lbeb;
+
+    invoke-virtual {p0}, Lbeb;->c()J
+
+    move-result-wide v0
+
+    :goto_1
+    move-wide v4, v0
+
+    move-object v0, p1
+
+    move-object v1, p2
+
+    goto :goto_2
+
+    :cond_1
+    iget-wide v0, p0, Llh5;->b:J
+
+    goto :goto_1
+
+    :goto_2
+    invoke-virtual/range {v0 .. v5}, Llo8;->p(Ltn8;Ljava/util/List;IJ)Lynd;
 
     move-result-object p0
 
-    check-cast p0, Llh5;
-
     return-object p0
-.end method
-
-.method public static values()[Llh5;
-    .registers 1
-
-    sget-object v0, Llh5;->q0:[Llh5;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Llh5;
-
-    return-object v0
 .end method

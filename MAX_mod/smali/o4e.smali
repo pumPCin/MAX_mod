@@ -1,48 +1,67 @@
-.class public abstract Lo4e;
-.super Ljava/lang/Object;
+.class public final Lo4e;
+.super Lhv8;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lkotlinx/coroutines/internal/Symbol;
-
-.field public static final b:Lkotlinx/coroutines/internal/Symbol;
+# instance fields
+.field public final synthetic l:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public synthetic constructor <init>()V
     .registers 2
 
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
+    const/4 v0, 0x1
 
-    const-string v1, "NONE"
+    iput v0, p0, Lo4e;->l:I
 
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lo4e;->a:Lkotlinx/coroutines/internal/Symbol;
-
-    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
-
-    const-string v1, "PENDING"
-
-    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
-
-    sput-object v0, Lo4e;->b:Lkotlinx/coroutines/internal/Symbol;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static final a(Ljava/lang/Object;)Ln4e;
-    .registers 2
 
-    new-instance v0, Ln4e;
+# virtual methods
+.method public final b(Landroid/view/View;Landroid/view/ViewGroup;)F
+    .registers 3
 
-    if-nez p0, :cond_0
+    iget p0, p0, Lo4e;->l:I
 
-    sget-object p0, Lh0a;->a:Lkotlinx/coroutines/internal/Symbol;
+    packed-switch p0, :pswitch_data_0
 
-    :cond_0
-    invoke-direct {v0, p0}, Ln4e;-><init>(Ljava/lang/Object;)V
+    invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
-    return-object v0
+    move-result p0
+
+    invoke-virtual {p2}, Landroid/view/View;->getHeight()I
+
+    move-result p1
+
+    int-to-float p1, p1
+
+    add-float/2addr p0, p1
+
+    return p0
+
+    :pswitch_0
+    invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
+
+    move-result p0
+
+    invoke-virtual {p2}, Landroid/view/View;->getHeight()I
+
+    move-result p1
+
+    int-to-float p1, p1
+
+    sub-float/2addr p0, p1
+
+    return p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

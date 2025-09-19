@@ -4,42 +4,61 @@
 
 
 # static fields
-.field public static final b:Lr0;
+.field public static final c:Lr0;
+
+.field public static final d:Lr0;
 
 
 # instance fields
-.field public final a:Ljava/lang/Throwable;
+.field public final a:Z
+
+.field public final b:Ljava/lang/Throwable;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .registers 3
+
+    sget-boolean v0, Ln1;->o:Z
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    sput-object v1, Lr0;->d:Lr0;
+
+    sput-object v1, Lr0;->c:Lr0;
+
+    return-void
+
+    :cond_0
+    new-instance v0, Lr0;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lr0;-><init>(Ljava/lang/Throwable;Z)V
+
+    sput-object v0, Lr0;->d:Lr0;
 
     new-instance v0, Lr0;
 
-    new-instance v1, Lq0;
+    const/4 v2, 0x1
 
-    const-string v2, "Failure occurred while trying to finish a future."
+    invoke-direct {v0, v1, v2}, Lr0;-><init>(Ljava/lang/Throwable;Z)V
 
-    const/4 v3, 0x0
-
-    invoke-direct {v1, v2, v3}, Lq0;-><init>(Ljava/lang/String;I)V
-
-    invoke-direct {v0, v1}, Lr0;-><init>(Ljava/lang/Throwable;)V
-
-    sput-object v0, Lr0;->b:Lr0;
+    sput-object v0, Lr0;->c:Lr0;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/Throwable;)V
-    .registers 2
+.method public constructor <init>(Ljava/lang/Throwable;Z)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-boolean p2, p0, Lr0;->a:Z
 
-    iput-object p1, p0, Lr0;->a:Ljava/lang/Throwable;
+    iput-object p1, p0, Lr0;->b:Ljava/lang/Throwable;
 
     return-void
 .end method

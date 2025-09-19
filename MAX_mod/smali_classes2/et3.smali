@@ -1,404 +1,124 @@
 .class public final Let3;
-.super Ljava/lang/Object;
+.super Lspb;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/io/Serializable;
-
-
-# instance fields
-.field public final X:Ljava/util/List;
-
-.field public final Y:I
-
-.field public final Z:Z
-
-.field public final a:Lop3;
-
-.field public final b:Ljava/lang/String;
-
-.field public final c:Ljava/lang/String;
-
-.field public final o:Lz9b;
-
-
-# direct methods
-.method public constructor <init>(Lop3;Ljava/lang/String;Ljava/lang/String;Lz9b;Ljava/util/ArrayList;IZ)V
-    .registers 8
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Let3;->a:Lop3;
-
-    iput-object p2, p0, Let3;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Let3;->c:Ljava/lang/String;
-
-    iput-object p4, p0, Let3;->o:Lz9b;
-
-    iput-object p5, p0, Let3;->X:Ljava/util/List;
-
-    iput p6, p0, Let3;->Y:I
-
-    iput-boolean p7, p0, Let3;->Z:Z
-
-    return-void
-.end method
-
-.method public static a(Lu09;)Let3;
-    .registers 15
-
-    invoke-static {p0}, Lbv7;->h0(Lu09;)I
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move v3, v1
-
-    move v9, v3
-
-    move v10, v9
-
-    move-object v4, v2
-
-    move-object v5, v4
-
-    move-object v6, v5
-
-    move-object v7, v6
-
-    :goto_0
-    if-ge v3, v0, :cond_8
-
-    invoke-virtual {p0}, Lu09;->D0()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v8}, Ljava/lang/String;->hashCode()I
-
-    move-result v11
-
-    const/4 v12, -0x1
-
-    sparse-switch v11, :sswitch_data_0
-
-    goto :goto_1
-
-    :sswitch_0
-    const-string v11, "contact"
-
-    invoke-virtual {v8, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    const/4 v12, 0x6
-
-    goto :goto_1
-
-    :sswitch_1
-    const-string v11, "friendsCount"
-
-    invoke-virtual {v8, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v12, 0x5
-
-    goto :goto_1
-
-    :sswitch_2
-    const-string v11, "feedback"
-
-    invoke-virtual {v8, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v12, 0x4
-
-    goto :goto_1
-
-    :sswitch_3
-    const-string v11, "friends"
-
-    invoke-virtual {v8, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v12, 0x3
-
-    goto :goto_1
-
-    :sswitch_4
-    const-string v11, "presence"
-
-    invoke-virtual {v8, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    const/4 v12, 0x2
-
-    goto :goto_1
-
-    :sswitch_5
-    const-string v11, "restricted"
-
-    invoke-virtual {v8, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_5
-
-    goto :goto_1
-
-    :cond_5
-    const/4 v12, 0x1
-
-    goto :goto_1
-
-    :sswitch_6
-    const-string v11, "summary"
-
-    invoke-virtual {v8, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_6
-
-    goto :goto_1
-
-    :cond_6
-    move v12, v1
-
-    :goto_1
-    packed-switch v12, :pswitch_data_0
-
-    invoke-virtual {p0}, Lu09;->B()V
-
-    goto :goto_3
-
-    :pswitch_0
-    invoke-static {p0}, Lop3;->e(Lu09;)Lop3;
-
-    move-result-object v4
-
-    goto :goto_3
-
-    :pswitch_1
-    invoke-virtual {p0}, Lu09;->z0()I
-
-    move-result v9
-
-    goto :goto_3
-
-    :pswitch_2
-    invoke-virtual {p0}, Lu09;->D0()Ljava/lang/String;
-
-    move-result-object v6
-
-    goto :goto_3
-
-    :pswitch_3
-    invoke-static {p0}, Lbv7;->Z(Lu09;)I
-
-    move-result v2
-
-    new-instance v8, Ljava/util/ArrayList;
-
-    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
-
-    move v11, v1
-
-    :goto_2
-    if-ge v11, v2, :cond_7
-
-    invoke-virtual {p0}, Lu09;->A0()J
-
-    move-result-wide v12
-
-    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v12
-
-    invoke-virtual {v8, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v11, v11, 0x1
-
-    goto :goto_2
-
-    :cond_7
-    move-object v2, v8
-
-    goto :goto_3
-
-    :pswitch_4
-    invoke-static {p0}, Lz9b;->a(Lu09;)Lz9b;
-
-    move-result-object v7
-
-    goto :goto_3
-
-    :pswitch_5
-    invoke-virtual {p0}, Lu09;->y0()Z
-
-    move-result v10
-
-    goto :goto_3
-
-    :pswitch_6
-    invoke-virtual {p0}, Lu09;->D0()Ljava/lang/String;
-
-    move-result-object v5
-
-    :goto_3
-    add-int/lit8 v3, v3, 0x1
-
-    goto/16 :goto_0
-
-    :cond_8
-    if-nez v2, :cond_9
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    :cond_9
-    move-object v8, v2
-
-    new-instance v3, Let3;
-
-    invoke-direct/range {v3 .. v10}, Let3;-><init>(Lop3;Ljava/lang/String;Ljava/lang/String;Lz9b;Ljava/util/ArrayList;IZ)V
-
-    return-object v3
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x6eb9585a -> :sswitch_6
-        -0x4d52f7a5 -> :sswitch_5
-        -0x4c186305 -> :sswitch_4
-        -0x23c4b66b -> :sswitch_3
-        -0xb6a147b -> :sswitch_2
-        0x2490cc7a -> :sswitch_1
-        0x38b72420 -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final y(Lts7;)V
     .registers 6
 
-    iget-object v0, p0, Let3;->b:Ljava/lang/String;
+    check-cast p1, Lzp3;
 
-    invoke-static {v0}, Lms8;->z(Ljava/lang/CharSequence;)Ljava/lang/String;
+    iget-object p0, p0, Lzoc;->a:Landroid/view/View;
 
-    move-result-object v0
+    check-cast p0, Lkn3;
 
-    iget-object v1, p0, Let3;->c:Ljava/lang/String;
+    iget-boolean v0, p1, Lzp3;->s0:Z
 
-    invoke-static {v1}, Lms8;->z(Ljava/lang/CharSequence;)Ljava/lang/String;
+    if-eqz v0, :cond_1
+
+    iget-object v0, p1, Lzp3;->Z:Lzmb;
+
+    sget-object v1, Lzmb;->c:Lzmb;
+
+    if-ne v0, v1, :cond_1
+
+    const/16 v0, 0x40
+
+    int-to-float v0, v0
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    iget-object v2, p0, Let3;->X:Ljava/util/List;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    invoke-static {v2}, Leh7;->n(Ljava/util/Collection;)I
+    move-result-object v1
 
-    move-result v2
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    mul-float/2addr v0, v1
 
-    const-string v4, "{contact="
+    invoke-static {v0}, Lya6;->G(F)I
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    iget-object v4, p0, Let3;->a:Lop3;
+    const/16 v1, 0x50
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    int-to-float v1, v1
 
-    const-string v4, ", summary=\'"
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    const-string v0, "\', feedback=\'"
+    move-result-object v2
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    mul-float/2addr v1, v2
 
-    const-string v0, "\', friends="
+    invoke-static {v1}, Lya6;->G(F)I
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v1
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lkn3;->b1:Lwtc;
 
-    const-string v0, ", friendsCount="
+    sget-object v3, Les3;->u0:Les3;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput-object v3, v2, Lwtc;->b:Ljava/lang/Object;
 
-    iget v0, p0, Let3;->Y:I
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    const-string v0, ", restricted="
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iput v1, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    iget-boolean p0, p0, Let3;->Z:Z
+    invoke-virtual {p0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    iput v0, p0, Lkn3;->g1:I
 
-    const-string p0, "}"
+    invoke-virtual {p0}, Lkn3;->H()V
 
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_0
+    new-instance p0, Ljava/lang/NullPointerException;
 
-    move-result-object p0
+    const-string p1, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams"
 
-    return-object p0
+    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    :goto_0
+    iget-wide v0, p1, Lzp3;->a:J
+
+    iget-object v2, p1, Lzp3;->Y:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lzp3;->o:Ljava/lang/String;
+
+    invoke-virtual {p0, v0, v1, v2, v3}, Lkn3;->L(JLjava/lang/CharSequence;Ljava/lang/String;)V
+
+    iget-object v0, p1, Lzp3;->b:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lkn3;->setName(Ljava/lang/CharSequence;)V
+
+    iget-object p1, p1, Lzp3;->c:Lu2f;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lu2f;->b(Landroid/content/Context;)Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lkn3;->setMessage(Ljava/lang/CharSequence;)V
+
+    return-void
 .end method

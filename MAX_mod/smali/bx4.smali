@@ -1,55 +1,23 @@
-.class public final Lbx4;
+.class public abstract Lbx4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:Z
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:I
-
-.field public final h:I
-
-.field public final i:I
-
-.field public final j:Landroid/util/SparseArray;
-
-
 # direct methods
-.method public constructor <init>(IZIIIIIIILandroid/util/SparseArray;)V
-    .registers 11
+.method public static a(Landroid/widget/AbsListView;)Z
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->isSelectedChildViewEnabled()Z
 
-    iput p1, p0, Lbx4;->a:I
+    move-result p0
 
-    iput-boolean p2, p0, Lbx4;->b:Z
+    return p0
+.end method
 
-    iput p3, p0, Lbx4;->c:I
+.method public static b(Landroid/widget/AbsListView;Z)V
+    .registers 2
 
-    iput p4, p0, Lbx4;->d:I
-
-    iput p5, p0, Lbx4;->e:I
-
-    iput p6, p0, Lbx4;->f:I
-
-    iput p7, p0, Lbx4;->g:I
-
-    iput p8, p0, Lbx4;->h:I
-
-    iput p9, p0, Lbx4;->i:I
-
-    iput-object p10, p0, Lbx4;->j:Landroid/util/SparseArray;
+    invoke-virtual {p0, p1}, Landroid/widget/AbsListView;->setSelectedChildViewEnabled(Z)V
 
     return-void
 .end method

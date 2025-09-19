@@ -1,127 +1,113 @@
-.class public final Loqg;
+.class public abstract synthetic Loqg;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
-.field public final b:Z
+.field public static final synthetic $EnumSwitchMapping$1:[I
 
 
 # direct methods
-.method public constructor <init>(IZ)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 7
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lc47;->values()[Lc47;
 
-    iput p1, p0, Loqg;->a:I
+    move-result-object v0
 
-    iput-boolean p2, p0, Loqg;->b:Z
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    :try_start_0
+    sget-object v3, Lc47;->Companion:Lb47;
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    const/4 v3, 0x2
+
+    :try_start_1
+    sget-object v4, Lc47;->Companion:Lb47;
+
+    aput v3, v0, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    const/4 v4, 0x3
+
+    :try_start_2
+    sget-object v5, Lc47;->Companion:Lb47;
+
+    aput v4, v0, v3
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    const/4 v5, 0x4
+
+    :try_start_3
+    sget-object v6, Lc47;->Companion:Lb47;
+
+    aput v5, v0, v4
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v6, Lc47;->Companion:Lb47;
+
+    const/4 v6, 0x5
+
+    aput v6, v0, v5
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    sput-object v0, Loqg;->$EnumSwitchMapping$0:[I
+
+    invoke-static {}, Ll2a;->values()[Ll2a;
+
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    :try_start_5
+    sget-object v5, Ll2a;->Companion:Lk2a;
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    :catch_5
+    :try_start_6
+    sget-object v1, Ll2a;->Companion:Lk2a;
+
+    aput v3, v0, v2
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    :catch_6
+    :try_start_7
+    sget-object v1, Ll2a;->Companion:Lk2a;
+
+    aput v4, v0, v3
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+
+    :catch_7
+    sput-object v0, Loqg;->$EnumSwitchMapping$1:[I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Loqg;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Loqg;
-
-    iget v0, p0, Loqg;->a:I
-
-    iget v1, p1, Loqg;->a:I
-
-    if-eq v0, v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-boolean p0, p0, Loqg;->b:Z
-
-    iget-boolean p1, p1, Loqg;->b:Z
-
-    if-eq p0, p1, :cond_3
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget v0, p0, Loqg;->a:I
-
-    invoke-static {v0}, Lew1;->t(I)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-boolean p0, p0, Loqg;->b:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "NetworkParameters(condition="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget v1, p0, Loqg;->a:I
-
-    invoke-static {v1}, La78;->t(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", preferHardwareVPX="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Loqg;->b:Z
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

@@ -2,22 +2,25 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final a:Ljava/io/File;
-
-.field public final b:Z
+# interfaces
+.implements Landroid/os/Parcelable$Creator;
 
 
-# direct methods
-.method public constructor <init>(Ljava/io/File;Z)V
-    .registers 3
+# virtual methods
+.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance p0, Lcoe;
 
-    iput-object p1, p0, Lboe;->a:Ljava/io/File;
+    invoke-direct {p0, p1}, Lcoe;-><init>(Landroid/os/Parcel;)V
 
-    iput-boolean p2, p0, Lboe;->b:Z
+    return-object p0
+.end method
 
-    return-void
+.method public final newArray(I)[Ljava/lang/Object;
+    .registers 2
+
+    new-array p0, p1, [Lcoe;
+
+    return-object p0
 .end method

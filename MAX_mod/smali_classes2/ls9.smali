@@ -2,84 +2,52 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lqs9;
-
 
 # instance fields
-.field public final b:I
+.field public final a:Lzte;
+
+.field public final b:Luka;
+
+.field public final c:Ltgd;
+
+.field public final d:I
+
+.field public final e:I
+
+.field public final f:Leca;
+
+.field public final g:Li11;
+
+.field public final h:Landroid/content/res/Resources;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 2
+.method public constructor <init>(Landroid/content/Context;Lzte;Luka;Ltgd;ILeca;Li11;)V
+    .registers 8
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lls9;->b:I
+    iput-object p2, p0, Lls9;->a:Lzte;
+
+    iput-object p3, p0, Lls9;->b:Luka;
+
+    iput-object p4, p0, Lls9;->c:Ltgd;
+
+    iput p5, p0, Lls9;->d:I
+
+    const/4 p2, 0x6
+
+    iput p2, p0, Lls9;->e:I
+
+    iput-object p6, p0, Lls9;->f:Leca;
+
+    iput-object p7, p0, Lls9;->g:Li11;
+
+    iput-object p1, p0, Lls9;->h:Landroid/content/res/Resources;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lls9;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lls9;
-
-    iget p0, p0, Lls9;->b:I
-
-    iget p1, p1, Lls9;->b:I
-
-    if-eq p0, p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget p0, p0, Lls9;->b:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    const-string v0, "Auto(brightnessThreshold="
-
-    const-string v1, ")"
-
-    iget p0, p0, Lls9;->b:I
-
-    invoke-static {p0, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

@@ -1,766 +1,1838 @@
 .class public final Lt1e;
-.super Lcu8;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/widget/PopupWindow$OnDismissListener;
-.implements Landroid/view/View$OnKeyListener;
+.implements Llw0;
 
 
 # static fields
-.field public static final A0:I
+.field public static final j:Ljava/util/HashSet;
 
 
 # instance fields
-.field public final X:Z
+.field public final a:Ljava/io/File;
 
-.field public final Y:I
+.field public final b:Lvw0;
 
-.field public final Z:I
+.field public final c:Lvz5;
 
-.field public final b:Landroid/content/Context;
+.field public final d:Lmgb;
 
-.field public final c:Ltt8;
+.field public final e:Ljava/util/HashMap;
 
-.field public final n0:Liu8;
+.field public final f:Ljava/util/Random;
 
-.field public final o:Lqt8;
+.field public final g:Z
 
-.field public final o0:Ljn;
+.field public h:J
 
-.field public final p0:Lvj;
-
-.field public q0:Landroid/widget/PopupWindow$OnDismissListener;
-
-.field public r0:Landroid/view/View;
-
-.field public s0:Landroid/view/View;
-
-.field public t0:Lju8;
-
-.field public u0:Landroid/view/ViewTreeObserver;
-
-.field public v0:Z
-
-.field public w0:Z
-
-.field public x0:I
-
-.field public y0:I
-
-.field public z0:Z
+.field public i:Landroidx/media3/datasource/cache/Cache$CacheException;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
-    sget v0, Lz1c;->abc_popup_menu_item_layout:I
+    new-instance v0, Ljava/util/HashSet;
 
-    sput v0, Lt1e;->A0:I
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Ltt8;Landroid/view/View;IZ)V
-    .registers 10
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Ljn;
-
-    const/4 v1, 0x4
-
-    invoke-direct {v0, v1, p0}, Ljn;-><init>(ILjava/lang/Object;)V
-
-    iput-object v0, p0, Lt1e;->o0:Ljn;
-
-    new-instance v0, Lvj;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1, p0}, Lvj;-><init>(ILjava/lang/Object;)V
-
-    iput-object v0, p0, Lt1e;->p0:Lvj;
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lt1e;->y0:I
-
-    iput-object p1, p0, Lt1e;->b:Landroid/content/Context;
-
-    iput-object p2, p0, Lt1e;->c:Ltt8;
-
-    iput-boolean p5, p0, Lt1e;->X:Z
-
-    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v1
-
-    new-instance v2, Lqt8;
-
-    sget v3, Lt1e;->A0:I
-
-    invoke-direct {v2, p2, v1, p5, v3}, Lqt8;-><init>(Ltt8;Landroid/view/LayoutInflater;ZI)V
-
-    iput-object v2, p0, Lt1e;->o:Lqt8;
-
-    iput p4, p0, Lt1e;->Z:I
-
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p5
-
-    invoke-virtual {p5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    div-int/lit8 v1, v1, 0x2
-
-    sget v2, Lrwb;->abc_config_prefDialogWidth:I
-
-    invoke-virtual {p5, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result p5
-
-    invoke-static {v1, p5}, Ljava/lang/Math;->max(II)I
-
-    move-result p5
-
-    iput p5, p0, Lt1e;->Y:I
-
-    iput-object p3, p0, Lt1e;->r0:Landroid/view/View;
-
-    new-instance p3, Liu8;
-
-    const/4 p5, 0x0
-
-    invoke-direct {p3, p1, p5, p4, v0}, Lxp7;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-
-    iput-object p3, p0, Lt1e;->n0:Liu8;
-
-    invoke-virtual {p2, p0, p1}, Ltt8;->b(Lku8;Landroid/content/Context;)V
+    sput-object v0, Lt1e;->j:Ljava/util/HashSet;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Z
-    .registers 2
-
-    iget-boolean v0, p0, Lt1e;->v0:Z
-
-    if-nez v0, :cond_0
-
-    iget-object p0, p0, Lt1e;->n0:Liu8;
-
-    iget-object p0, p0, Lxp7;->F0:Lcn;
-
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->isShowing()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final b(Llee;)Z
-    .registers 11
-
-    invoke-virtual {p1}, Ltt8;->hasVisibleItems()Z
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_8
-
-    new-instance v2, Leu8;
-
-    iget-object v5, p0, Lt1e;->s0:Landroid/view/View;
-
-    iget v7, p0, Lt1e;->Z:I
-
-    const/4 v8, 0x0
-
-    iget-object v3, p0, Lt1e;->b:Landroid/content/Context;
-
-    iget-boolean v6, p0, Lt1e;->X:Z
-
-    move-object v4, p1
-
-    invoke-direct/range {v2 .. v8}, Leu8;-><init>(Landroid/content/Context;Ltt8;Landroid/view/View;ZII)V
-
-    iget-object p1, p0, Lt1e;->t0:Lju8;
-
-    iput-object p1, v2, Leu8;->h:Lju8;
-
-    iget-object v0, v2, Leu8;->i:Lcu8;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lku8;->e(Lju8;)V
-
-    :cond_0
-    iget-object p1, v4, Ltt8;->Y:Ljava/util/ArrayList;
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
-
-    move-result p1
-
-    move v0, v1
-
-    :goto_0
-    const/4 v3, 0x1
-
-    if-ge v0, p1, :cond_2
-
-    invoke-virtual {v4, v0}, Ltt8;->getItem(I)Landroid/view/MenuItem;
-
-    move-result-object v5
-
-    invoke-interface {v5}, Landroid/view/MenuItem;->isVisible()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    invoke-interface {v5}, Landroid/view/MenuItem;->getIcon()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_1
-
-    move p1, v3
-
-    goto :goto_1
-
-    :cond_1
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    move p1, v1
-
-    :goto_1
-    iput-boolean p1, v2, Leu8;->g:Z
-
-    iget-object v0, v2, Leu8;->i:Lcu8;
-
-    if-eqz v0, :cond_3
-
-    invoke-virtual {v0, p1}, Lcu8;->o(Z)V
-
-    :cond_3
-    iget-object p1, p0, Lt1e;->q0:Landroid/widget/PopupWindow$OnDismissListener;
-
-    iput-object p1, v2, Leu8;->j:Landroid/widget/PopupWindow$OnDismissListener;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lt1e;->q0:Landroid/widget/PopupWindow$OnDismissListener;
-
-    iget-object p1, p0, Lt1e;->c:Ltt8;
-
-    invoke-virtual {p1, v1}, Ltt8;->c(Z)V
-
-    iget-object p1, p0, Lt1e;->n0:Liu8;
-
-    iget v0, p1, Lxp7;->Y:I
-
-    invoke-virtual {p1}, Lxp7;->o()I
-
-    move-result p1
-
-    iget v5, p0, Lt1e;->y0:I
-
-    iget-object v6, p0, Lt1e;->r0:Landroid/view/View;
-
-    invoke-virtual {v6}, Landroid/view/View;->getLayoutDirection()I
-
-    move-result v6
-
-    invoke-static {v5, v6}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
-
-    move-result v5
-
-    and-int/lit8 v5, v5, 0x7
-
-    const/4 v6, 0x5
-
-    if-ne v5, v6, :cond_4
-
-    iget-object v5, p0, Lt1e;->r0:Landroid/view/View;
-
-    invoke-virtual {v5}, Landroid/view/View;->getWidth()I
-
-    move-result v5
-
-    add-int/2addr v0, v5
-
-    :cond_4
-    invoke-virtual {v2}, Leu8;->b()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_5
-
-    goto :goto_2
-
-    :cond_5
-    iget-object v5, v2, Leu8;->e:Landroid/view/View;
-
-    if-nez v5, :cond_6
-
-    goto :goto_3
-
-    :cond_6
-    invoke-virtual {v2, v0, p1, v3, v3}, Leu8;->d(IIZZ)V
-
-    :goto_2
-    iget-object p0, p0, Lt1e;->t0:Lju8;
-
-    if-eqz p0, :cond_7
-
-    invoke-interface {p0, v4}, Lju8;->V(Ltt8;)Z
-
-    :cond_7
-    return v3
-
-    :cond_8
-    :goto_3
-    return v1
-.end method
-
-.method public final c()Z
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final dismiss()V
-    .registers 2
-
-    invoke-virtual {p0}, Lt1e;->a()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Lt1e;->n0:Liu8;
-
-    invoke-virtual {p0}, Lxp7;->dismiss()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final e(Lju8;)V
-    .registers 2
-
-    iput-object p1, p0, Lt1e;->t0:Lju8;
-
-    return-void
-.end method
-
-.method public final g()V
+.method public constructor <init>(Ljava/io/File;Lvw0;Ls74;Z)V
     .registers 8
 
-    invoke-virtual {p0}, Lt1e;->a()Z
+    new-instance v0, Lvz5;
 
-    move-result v0
+    invoke-direct {v0, p3, p1, p4}, Lvz5;-><init>(Ls74;Ljava/io/File;Z)V
 
-    if-eqz v0, :cond_0
+    if-eqz p3, :cond_0
 
-    return-void
+    if-nez p4, :cond_0
 
-    :cond_0
-    iget-boolean v0, p0, Lt1e;->v0:Z
-
-    if-nez v0, :cond_7
-
-    iget-object v0, p0, Lt1e;->r0:Landroid/view/View;
-
-    if-eqz v0, :cond_7
-
-    iput-object v0, p0, Lt1e;->s0:Landroid/view/View;
-
-    iget-object v0, p0, Lt1e;->n0:Liu8;
-
-    iget-object v1, v0, Lxp7;->F0:Lcn;
-
-    invoke-virtual {v1, p0}, Landroid/widget/PopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
-
-    iput-object p0, v0, Lxp7;->v0:Landroid/widget/AdapterView$OnItemClickListener;
+    new-instance p4, Lmgb;
 
     const/4 v1, 0x1
 
-    iput-boolean v1, v0, Lxp7;->E0:Z
-
-    iget-object v2, v0, Lxp7;->F0:Lcn;
-
-    invoke-virtual {v2, v1}, Landroid/widget/PopupWindow;->setFocusable(Z)V
-
-    iget-object v2, p0, Lt1e;->s0:Landroid/view/View;
-
-    iget-object v3, p0, Lt1e;->u0:Landroid/view/ViewTreeObserver;
-
-    const/4 v4, 0x0
-
-    if-nez v3, :cond_1
-
-    move v3, v1
+    invoke-direct {p4, v1, p3}, Lmgb;-><init>(ILjava/lang/Object;)V
 
     goto :goto_0
 
-    :cond_1
-    move v3, v4
+    :cond_0
+    const/4 p4, 0x0
 
     :goto_0
-    invoke-virtual {v2}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v5
+    const-class p3, Lt1e;
 
-    iput-object v5, p0, Lt1e;->u0:Landroid/view/ViewTreeObserver;
+    monitor-enter p3
 
-    if-eqz v3, :cond_2
+    :try_start_0
+    sget-object v1, Lt1e;->j:Ljava/util/HashSet;
 
-    iget-object v3, p0, Lt1e;->o0:Ljn;
+    invoke-virtual {p1}, Ljava/io/File;->getAbsoluteFile()Ljava/io/File;
 
-    invoke-virtual {v5, v3}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+    move-result-object v2
 
-    :cond_2
-    iget-object v3, p0, Lt1e;->p0:Lvj;
+    invoke-virtual {v1, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+    move-result v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    iput-object v2, v0, Lxp7;->u0:Landroid/view/View;
+    monitor-exit p3
 
-    iget v2, p0, Lt1e;->y0:I
+    if-eqz v1, :cond_1
 
-    iput v2, v0, Lxp7;->r0:I
+    iput-object p1, p0, Lt1e;->a:Ljava/io/File;
 
-    iget-boolean v2, p0, Lt1e;->w0:Z
+    iput-object p2, p0, Lt1e;->b:Lvw0;
 
-    iget-object v3, p0, Lt1e;->b:Landroid/content/Context;
+    iput-object v0, p0, Lt1e;->c:Lvz5;
 
-    iget-object v5, p0, Lt1e;->o:Lqt8;
+    iput-object p4, p0, Lt1e;->d:Lmgb;
 
-    if-nez v2, :cond_3
+    new-instance p1, Ljava/util/HashMap;
 
-    iget v2, p0, Lt1e;->Y:I
+    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
-    invoke-static {v5, v3, v2}, Lcu8;->m(Landroid/widget/ListAdapter;Landroid/content/Context;I)I
+    iput-object p1, p0, Lt1e;->e:Ljava/util/HashMap;
 
-    move-result v2
+    new-instance p1, Ljava/util/Random;
 
-    iput v2, p0, Lt1e;->x0:I
+    invoke-direct {p1}, Ljava/util/Random;-><init>()V
 
-    iput-boolean v1, p0, Lt1e;->w0:Z
+    iput-object p1, p0, Lt1e;->f:Ljava/util/Random;
 
-    :cond_3
-    iget v1, p0, Lt1e;->x0:I
+    const/4 p1, 0x1
 
-    invoke-virtual {v0, v1}, Lxp7;->r(I)V
+    iput-boolean p1, p0, Lt1e;->g:Z
 
-    const/4 v1, 0x2
+    const-wide/16 p1, -0x1
 
-    iget-object v2, v0, Lxp7;->F0:Lcn;
+    iput-wide p1, p0, Lt1e;->h:J
 
-    invoke-virtual {v2, v1}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
+    new-instance p1, Landroid/os/ConditionVariable;
 
-    iget-object v1, p0, Lcu8;->a:Landroid/graphics/Rect;
+    invoke-direct {p1}, Landroid/os/ConditionVariable;-><init>()V
 
-    const/4 v2, 0x0
+    new-instance p2, Lhc4;
 
-    if-eqz v1, :cond_4
+    const/4 p3, 0x2
 
-    new-instance v6, Landroid/graphics/Rect;
+    invoke-direct {p2, p0, p1, p3}, Lhc4;-><init>(Ljava/lang/Object;Landroid/os/ConditionVariable;I)V
 
-    invoke-direct {v6, v1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
+    invoke-virtual {p2}, Ljava/lang/Thread;->start()V
 
-    goto :goto_1
-
-    :cond_4
-    move-object v6, v2
-
-    :goto_1
-    iput-object v6, v0, Lxp7;->D0:Landroid/graphics/Rect;
-
-    invoke-virtual {v0}, Lxp7;->g()V
-
-    iget-object v1, v0, Lxp7;->c:Ljv4;
-
-    invoke-virtual {v1, p0}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
-
-    iget-boolean v6, p0, Lt1e;->z0:Z
-
-    if-eqz v6, :cond_6
-
-    iget-object p0, p0, Lt1e;->c:Ltt8;
-
-    iget-object v6, p0, Ltt8;->s0:Ljava/lang/CharSequence;
-
-    if-eqz v6, :cond_6
-
-    invoke-static {v3}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v3
-
-    sget v6, Lz1c;->abc_popup_menu_header_item_layout:I
-
-    invoke-virtual {v3, v6, v1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/widget/FrameLayout;
-
-    const v6, 0x1020016
-
-    invoke-virtual {v3, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/widget/TextView;
-
-    if-eqz v6, :cond_5
-
-    iget-object p0, p0, Ltt8;->s0:Ljava/lang/CharSequence;
-
-    invoke-virtual {v6, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    :cond_5
-    invoke-virtual {v3, v4}, Landroid/view/View;->setEnabled(Z)V
-
-    invoke-virtual {v1, v3, v2, v4}, Landroid/widget/ListView;->addHeaderView(Landroid/view/View;Ljava/lang/Object;Z)V
-
-    :cond_6
-    invoke-virtual {v0, v5}, Lxp7;->p(Landroid/widget/ListAdapter;)V
-
-    invoke-virtual {v0}, Lxp7;->g()V
+    invoke-virtual {p1}, Landroid/os/ConditionVariable;->block()V
 
     return-void
 
-    :cond_7
+    :cond_1
     new-instance p0, Ljava/lang/IllegalStateException;
 
-    const-string v0, "StandardMenuPopup cannot be used without an anchor"
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const-string p3, "Another SimpleCache instance uses the folder: "
+
+    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :catchall_0
+    move-exception p0
+
+    :try_start_1
+    monitor-exit p3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     throw p0
 .end method
 
-.method public final h(Ltt8;Z)V
-    .registers 4
+.method public static a(Lt1e;)V
+    .registers 13
 
-    iget-object v0, p0, Lt1e;->c:Ltt8;
+    iget-object v0, p0, Lt1e;->d:Lmgb;
 
-    if-eq p1, v0, :cond_0
+    iget-object v1, p0, Lt1e;->c:Lvz5;
+
+    iget-object v2, p0, Lt1e;->a:Ljava/io/File;
+
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    :try_start_0
+    invoke-static {v2}, Lt1e;->e(Ljava/io/File;)V
+    :try_end_0
+    .catch Landroidx/media3/datasource/cache/Cache$CacheException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    iput-object v0, p0, Lt1e;->i:Landroidx/media3/datasource/cache/Cache$CacheException;
+
+    goto/16 :goto_7
+
+    :cond_0
+    :goto_0
+    invoke-virtual {v2}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
+    move-result-object v3
+
+    if-nez v3, :cond_1
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Failed to list cache directory files: "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lxnd;->u(Ljava/lang/String;)V
+
+    new-instance v1, Landroidx/media3/datasource/cache/Cache$CacheException;
+
+    invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    iput-object v1, p0, Lt1e;->i:Landroidx/media3/datasource/cache/Cache$CacheException;
+
+    return-void
+
+    :cond_1
+    array-length v4, v3
+
+    const/4 v5, 0x0
+
+    move v6, v5
+
+    :goto_1
+    const-wide/16 v7, -0x1
+
+    if-ge v6, v4, :cond_3
+
+    aget-object v9, v3, v6
+
+    invoke-virtual {v9}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v10
+
+    const-string v11, ".uid"
+
+    invoke-virtual {v10, v11}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_2
+
+    const/16 v11, 0x2e
+
+    :try_start_1
+    invoke-virtual {v10, v11}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v11
+
+    invoke-virtual {v10, v5, v11}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v10
+
+    const/16 v11, 0x10
+
+    invoke-static {v10, v11}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
+
+    move-result-wide v4
+    :try_end_1
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_2
+
+    :catch_1
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    const-string v8, "Malformed UID file: "
+
+    invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static {v7}, Lxnd;->u(Ljava/lang/String;)V
+
+    invoke-virtual {v9}, Ljava/io/File;->delete()Z
+
+    :cond_2
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_1
+
+    :cond_3
+    move-wide v4, v7
+
+    :goto_2
+    iput-wide v4, p0, Lt1e;->h:J
+
+    cmp-long v4, v4, v7
+
+    if-nez v4, :cond_4
+
+    :try_start_2
+    invoke-static {v2}, Lt1e;->f(Ljava/io/File;)J
+
+    move-result-wide v4
+
+    iput-wide v4, p0, Lt1e;->h:J
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
+
+    goto :goto_3
+
+    :catch_2
+    move-exception v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v3, "Failed to create cache UID: "
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Lxnd;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    new-instance v2, Landroidx/media3/datasource/cache/Cache$CacheException;
+
+    invoke-direct {v2, v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    iput-object v2, p0, Lt1e;->i:Landroidx/media3/datasource/cache/Cache$CacheException;
+
+    goto :goto_7
+
+    :cond_4
+    :goto_3
+    :try_start_3
+    iget-wide v4, p0, Lt1e;->h:J
+
+    invoke-virtual {v1, v4, v5}, Lvz5;->h(J)V
+
+    const/4 v4, 0x1
+
+    if-eqz v0, :cond_5
+
+    iget-wide v5, p0, Lt1e;->h:J
+
+    invoke-virtual {v0, v5, v6}, Lmgb;->w(J)V
+
+    invoke-virtual {v0}, Lmgb;->l()Ljava/util/HashMap;
+
+    move-result-object v5
+
+    invoke-virtual {p0, v2, v4, v3, v5}, Lt1e;->j(Ljava/io/File;Z[Ljava/io/File;Ljava/util/Map;)V
+
+    invoke-virtual {v5}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Lmgb;->D(Ljava/util/Set;)V
+
+    goto :goto_4
+
+    :catch_3
+    move-exception v0
+
+    goto :goto_6
+
+    :cond_5
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v2, v4, v3, v0}, Lt1e;->j(Ljava/io/File;Z[Ljava/io/File;Ljava/util/Map;)V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
+
+    :goto_4
+    iget-object p0, v1, Lvz5;->a:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/HashMap;
+
+    invoke-virtual {p0}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lw37;->j(Ljava/util/Collection;)Lw37;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lc37;->g()Lgmf;
+
+    move-result-object p0
+
+    :goto_5
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Lvz5;->i(Ljava/lang/String;)V
+
+    goto :goto_5
+
+    :cond_6
+    :try_start_4
+    invoke-virtual {v1}, Lvz5;->j()V
+    :try_end_4
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
+
+    goto :goto_7
+
+    :catch_4
+    move-exception p0
+
+    const-string v0, "Storing index file failed"
+
+    invoke-static {v0, p0}, Lxnd;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    goto :goto_7
+
+    :goto_6
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v3, "Failed to initialize cache indices: "
+
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Lxnd;->v(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    new-instance v2, Landroidx/media3/datasource/cache/Cache$CacheException;
+
+    invoke-direct {v2, v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    iput-object v2, p0, Lt1e;->i:Landroidx/media3/datasource/cache/Cache$CacheException;
+
+    :goto_7
+    return-void
+.end method
+
+.method public static e(Ljava/io/File;)V
+    .registers 3
+
+    invoke-virtual {p0}, Ljava/io/File;->mkdirs()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-virtual {p0}, Ljava/io/File;->isDirectory()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lt1e;->dismiss()V
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lt1e;->t0:Lju8;
+    const-string v1, "Failed to create cache directory: "
 
-    if-eqz p0, :cond_1
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {p0, p1, p2}, Lju8;->h(Ltt8;Z)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lxnd;->u(Ljava/lang/String;)V
+
+    new-instance v0, Landroidx/media3/datasource/cache/Cache$CacheException;
+
+    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     :cond_1
     :goto_0
     return-void
 .end method
 
-.method public final i()V
-    .registers 2
+.method public static f(Ljava/io/File;)J
+    .registers 6
 
-    const/4 v0, 0x0
+    new-instance v0, Ljava/security/SecureRandom;
 
-    iput-boolean v0, p0, Lt1e;->w0:Z
+    invoke-direct {v0}, Ljava/security/SecureRandom;-><init>()V
 
-    iget-object p0, p0, Lt1e;->o:Lqt8;
+    invoke-virtual {v0}, Ljava/util/Random;->nextLong()J
 
-    if-eqz p0, :cond_0
+    move-result-wide v0
 
-    invoke-virtual {p0}, Lqt8;->notifyDataSetChanged()V
+    const-wide/high16 v2, -0x8000000000000000L
+
+    cmp-long v2, v0, v2
+
+    if-nez v2, :cond_0
+
+    const-wide/16 v0, 0x0
+
+    goto :goto_0
 
     :cond_0
-    return-void
-.end method
+    invoke-static {v0, v1}, Ljava/lang/Math;->abs(J)J
 
-.method public final j()Ljv4;
-    .registers 1
+    move-result-wide v0
 
-    iget-object p0, p0, Lt1e;->n0:Liu8;
+    :goto_0
+    const/16 v2, 0x10
 
-    iget-object p0, p0, Lxp7;->c:Ljv4;
+    invoke-static {v0, v1, v2}, Ljava/lang/Long;->toString(JI)Ljava/lang/String;
 
-    return-object p0
-.end method
+    move-result-object v2
 
-.method public final l(Ltt8;)V
-    .registers 2
+    new-instance v3, Ljava/io/File;
 
-    return-void
-.end method
+    const-string v4, ".uid"
 
-.method public final n(Landroid/view/View;)V
-    .registers 2
+    invoke-static {v2, v4}, Lmw1;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    iput-object p1, p0, Lt1e;->r0:Landroid/view/View;
+    move-result-object v2
 
-    return-void
-.end method
+    invoke-direct {v3, p0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-.method public final o(Z)V
-    .registers 2
+    invoke-virtual {v3}, Ljava/io/File;->createNewFile()Z
 
-    iget-object p0, p0, Lt1e;->o:Lqt8;
+    move-result p0
 
-    iput-boolean p1, p0, Lqt8;->c:Z
+    if-eqz p0, :cond_1
 
-    return-void
-.end method
+    return-wide v0
 
-.method public final onDismiss()V
-    .registers 3
+    :cond_1
+    new-instance p0, Ljava/io/IOException;
 
-    const/4 v0, 0x1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iput-boolean v0, p0, Lt1e;->v0:Z
+    const-string v1, "Failed to create UID file: "
 
-    iget-object v1, p0, Lt1e;->c:Ltt8;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v1, v0}, Ltt8;->c(Z)V
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lt1e;->u0:Landroid/view/ViewTreeObserver;
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    iget-object v0, p0, Lt1e;->s0:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lt1e;->u0:Landroid/view/ViewTreeObserver;
+    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+
+# virtual methods
+.method public final b(Lw1e;)V
+    .registers 5
+
+    iget-object v0, p1, Lix0;->a:Ljava/lang/String;
+
+    iget-object v1, p0, Lt1e;->c:Lvz5;
+
+    invoke-virtual {v1, v0}, Lvz5;->g(Ljava/lang/String;)Lrx0;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lrx0;->c:Ljava/util/TreeSet;
+
+    invoke-virtual {v1, p1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    iget-object v1, p0, Lt1e;->e:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    :goto_0
+    if-ltz v1, :cond_0
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lvw0;
+
+    invoke-interface {v2, p0, p1}, Lvw0;->a(Lt1e;Lw1e;)V
+
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_0
 
     :cond_0
-    iget-object v0, p0, Lt1e;->u0:Landroid/view/ViewTreeObserver;
+    iget-object v0, p0, Lt1e;->b:Lvw0;
 
-    iget-object v1, p0, Lt1e;->o0:Ljn;
+    invoke-interface {v0, p0, p1}, Lvw0;->a(Lt1e;Lw1e;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+    return-void
+.end method
+
+.method public final declared-synchronized c(Ljava/lang/String;Lew3;)V
+    .registers 5
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-virtual {p0}, Lt1e;->d()V
+
+    iget-object v0, p0, Lt1e;->c:Lvz5;
+
+    invoke-virtual {v0, p1}, Lvz5;->g(Ljava/lang/String;)Lrx0;
+
+    move-result-object p1
+
+    iget-object v1, p1, Lrx0;->e:Lnd4;
+
+    invoke-virtual {v1, p2}, Lnd4;->b(Lew3;)Lnd4;
+
+    move-result-object p2
+
+    iput-object p2, p1, Lrx0;->e:Lnd4;
+
+    invoke-virtual {p2, v1}, Lnd4;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    iget-object p2, v0, Lvz5;->X:Ljava/lang/Object;
+
+    check-cast p2, Lsx0;
+
+    invoke-interface {p2, p1}, Lsx0;->e(Lrx0;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_0
+    :try_start_1
+    iget-object p1, p0, Lt1e;->c:Lvz5;
+
+    invoke-virtual {p1}, Lvz5;->j()V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    :try_start_2
+    new-instance p2, Landroidx/media3/datasource/cache/Cache$CacheException;
+
+    invoke-direct {p2, p1}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    throw p2
+
+    :goto_0
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized d()V
+    .registers 2
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lt1e;->i:Landroidx/media3/datasource/cache/Cache$CacheException;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v0, :cond_0
+
+    monitor-exit p0
+
+    return-void
+
+    :cond_0
+    :try_start_1
+    throw v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v0
+.end method
+
+.method public final declared-synchronized g(JLjava/lang/String;J)J
+    .registers 13
+
+    monitor-enter p0
+
+    const-wide/16 v0, -0x1
+
+    cmp-long v0, p4, v0
+
+    const-wide v1, 0x7fffffffffffffffL
+
+    if-nez v0, :cond_0
+
+    move-wide p4, v1
+
+    goto :goto_0
+
+    :cond_0
+    add-long/2addr p4, p1
+
+    :goto_0
+    const-wide/16 v3, 0x0
+
+    cmp-long v0, p4, v3
+
+    if-gez v0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    move-wide v1, p4
+
+    :goto_1
+    move-wide v5, v3
+
+    :goto_2
+    cmp-long p4, p1, v1
+
+    if-gez p4, :cond_3
+
+    sub-long p4, v1, p1
+
+    :try_start_0
+    invoke-virtual/range {p0 .. p5}, Lt1e;->h(JLjava/lang/String;J)J
+
+    move-result-wide p4
+
+    cmp-long v0, p4, v3
+
+    if-lez v0, :cond_2
+
+    add-long/2addr v5, p4
+
+    goto :goto_3
+
+    :cond_2
+    neg-long p4, p4
+
+    :goto_3
+    add-long/2addr p1, p4
+
+    goto :goto_2
+
+    :catchall_0
+    move-exception v0
+
+    move-object p1, v0
+
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
+
+    :cond_3
+    monitor-exit p0
+
+    return-wide v5
+.end method
+
+.method public final declared-synchronized h(JLjava/lang/String;J)J
+    .registers 8
+
+    monitor-enter p0
+
+    const-wide/16 v0, -0x1
+
+    cmp-long v0, p4, v0
+
+    if-nez v0, :cond_0
+
+    const-wide p4, 0x7fffffffffffffffL
+
+    :cond_0
+    :try_start_0
+    iget-object v0, p0, Lt1e;->c:Lvz5;
+
+    invoke-virtual {v0, p3}, Lvz5;->e(Ljava/lang/String;)Lrx0;
+
+    move-result-object p3
+
+    if-eqz p3, :cond_1
+
+    invoke-virtual {p3, p1, p2, p4, p5}, Lrx0;->a(JJ)J
+
+    move-result-wide p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
+
+    :cond_1
+    neg-long p1, p4
+
+    :goto_0
+    monitor-exit p0
+
+    return-wide p1
+
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+.end method
+
+.method public final declared-synchronized i(Ljava/lang/String;)Lnd4;
+    .registers 3
+
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lt1e;->c:Lvz5;
+
+    invoke-virtual {v0, p1}, Lvz5;->e(Ljava/lang/String;)Lrx0;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p1, Lrx0;->e:Lnd4;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object p1, Lnd4;->c:Lnd4;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :goto_0
+    monitor-exit p0
+
+    return-object p1
+
+    :catchall_0
+    move-exception p1
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
+.end method
+
+.method public final j(Ljava/io/File;Z[Ljava/io/File;Ljava/util/Map;)V
+    .registers 13
+
+    if-eqz p3, :cond_7
+
+    array-length v0, p3
+
+    if-nez v0, :cond_0
+
+    goto :goto_5
+
+    :cond_0
+    array-length p1, p3
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lt1e;->u0:Landroid/view/ViewTreeObserver;
+    move v1, v0
+
+    :goto_0
+    if-ge v1, p1, :cond_8
+
+    aget-object v2, p3, v1
+
+    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz p2, :cond_1
+
+    const/16 v4, 0x2e
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v4
+
+    const/4 v5, -0x1
+
+    if-ne v4, v5, :cond_1
+
+    invoke-virtual {v2}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
+    move-result-object v3
+
+    invoke-virtual {p0, v2, v0, v3, p4}, Lt1e;->j(Ljava/io/File;Z[Ljava/io/File;Ljava/util/Map;)V
+
+    goto :goto_4
 
     :cond_1
-    iget-object v0, p0, Lt1e;->s0:Landroid/view/View;
+    if-eqz p2, :cond_2
 
-    iget-object v1, p0, Lt1e;->p0:Lvj;
+    const-string v4, "cached_content_index.exi"
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    iget-object p0, p0, Lt1e;->q0:Landroid/widget/PopupWindow$OnDismissListener;
+    move-result v4
 
-    if-eqz p0, :cond_2
+    if-nez v4, :cond_6
 
-    invoke-interface {p0}, Landroid/widget/PopupWindow$OnDismissListener;->onDismiss()V
+    const-string v4, ".uid"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    goto :goto_4
 
     :cond_2
+    if-eqz p4, :cond_3
+
+    invoke-interface {p4, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lww0;
+
+    goto :goto_1
+
+    :cond_3
+    const/4 v3, 0x0
+
+    :goto_1
+    if-eqz v3, :cond_4
+
+    iget-wide v4, v3, Lww0;->a:J
+
+    iget-wide v6, v3, Lww0;->b:J
+
+    :goto_2
+    move-wide v3, v4
+
+    move-wide v5, v6
+
+    goto :goto_3
+
+    :cond_4
+    const-wide/16 v4, -0x1
+
+    const-wide v6, -0x7fffffffffffffffL    # -4.9E-324
+
+    goto :goto_2
+
+    :goto_3
+    iget-object v7, p0, Lt1e;->c:Lvz5;
+
+    invoke-static/range {v2 .. v7}, Lw1e;->b(Ljava/io/File;JJLvz5;)Lw1e;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_5
+
+    invoke-virtual {p0, v3}, Lt1e;->b(Lw1e;)V
+
+    goto :goto_4
+
+    :cond_5
+    invoke-virtual {v2}, Ljava/io/File;->delete()Z
+
+    :cond_6
+    :goto_4
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_7
+    :goto_5
+    if-nez p2, :cond_8
+
+    invoke-virtual {p1}, Ljava/io/File;->delete()Z
+
+    :cond_8
     return-void
 .end method
 
-.method public final onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .registers 4
+.method public final declared-synchronized k(Lw1e;)V
+    .registers 8
 
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+    monitor-enter p0
 
-    move-result p1
+    :try_start_0
+    iget-object v0, p0, Lt1e;->c:Lvz5;
 
-    const/4 p3, 0x1
+    iget-object v1, p1, Lix0;->a:Ljava/lang/String;
 
-    if-ne p1, p3, :cond_0
+    invoke-virtual {v0, v1}, Lvz5;->e(Ljava/lang/String;)Lrx0;
 
-    const/16 p1, 0x52
+    move-result-object v0
 
-    if-ne p2, p1, :cond_0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {p0}, Lt1e;->dismiss()V
+    iget-wide v1, p1, Lix0;->b:J
 
-    return p3
+    iget-object p1, v0, Lrx0;->d:Ljava/util/ArrayList;
+
+    const/4 v3, 0x0
+
+    :goto_0
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    if-ge v3, v4, :cond_1
+
+    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lpx0;
+
+    iget-wide v4, v4, Lpx0;->a:J
+
+    cmp-long v4, v4, v1
+
+    if-nez v4, :cond_0
+
+    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    iget-object p1, p0, Lt1e;->c:Lvz5;
+
+    iget-object v0, v0, Lrx0;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lvz5;->i(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
 
     :cond_0
-    const/4 p0, 0x0
+    add-int/lit8 v3, v3, 0x1
 
-    return p0
+    goto :goto_0
+
+    :cond_1
+    :try_start_1
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p1}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw p1
+
+    :goto_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p1
 .end method
 
-.method public final p(I)V
-    .registers 2
+.method public final declared-synchronized l(Ljava/lang/String;)V
+    .registers 3
 
-    iput p1, p0, Lt1e;->y0:I
+    monitor-enter p0
 
+    :try_start_0
+    monitor-enter p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    :try_start_1
+    iget-object v0, p0, Lt1e;->c:Lvz5;
+
+    invoke-virtual {v0, p1}, Lvz5;->e(Ljava/lang/String;)Lrx0;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    iget-object v0, p1, Lrx0;->c:Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v0, Ljava/util/TreeSet;
+
+    iget-object p1, p1, Lrx0;->c:Ljava/util/TreeSet;
+
+    invoke-direct {v0, p1}, Ljava/util/TreeSet;-><init>(Ljava/util/Collection;)V
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_3
+
+    :cond_1
+    :goto_0
+    new-instance v0, Ljava/util/TreeSet;
+
+    invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :goto_1
+    :try_start_2
+    monitor-exit p0
+
+    invoke-interface {v0}, Ljava/util/NavigableSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_2
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lix0;
+
+    invoke-virtual {p0, v0}, Lt1e;->m(Lix0;)V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    goto :goto_2
+
+    :catchall_1
+    move-exception p1
+
+    goto :goto_4
+
+    :cond_2
+    monitor-exit p0
+
+    return-void
+
+    :goto_3
+    :try_start_3
+    monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :try_start_4
+    throw p1
+
+    :goto_4
+    monitor-exit p0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    throw p1
+.end method
+
+.method public final m(Lix0;)V
+    .registers 9
+
+    iget-object v0, p1, Lix0;->a:Ljava/lang/String;
+
+    iget-object v1, p1, Lix0;->X:Ljava/io/File;
+
+    iget-object v2, p0, Lt1e;->c:Lvz5;
+
+    invoke-virtual {v2, v0}, Lvz5;->e(Ljava/lang/String;)Lrx0;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    iget-object v3, v0, Lrx0;->c:Ljava/util/TreeSet;
+
+    invoke-virtual {v3, p1}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Ljava/io/File;->delete()Z
+
+    :cond_0
+    iget-object v3, p0, Lt1e;->d:Lmgb;
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    :try_start_0
+    iget-object v4, v3, Lmgb;->c:Ljava/lang/Object;
+
+    check-cast v4, Ljava/lang/String;
+
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
+
+    :try_start_1
+    iget-object v4, v3, Lmgb;->b:Ljava/lang/Object;
+
+    check-cast v4, Ls74;
+
+    invoke-interface {v4}, Ls74;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v4
+
+    iget-object v3, v3, Lmgb;->c:Ljava/lang/Object;
+
+    check-cast v3, Ljava/lang/String;
+
+    const-string v5, "name = ?"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v4, v3, v5, v6}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+    :try_end_1
+    .catch Landroid/database/SQLException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v3
+
+    :try_start_2
+    new-instance v4, Landroidx/media3/database/DatabaseIOException;
+
+    invoke-direct {v4, v3}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v4
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+
+    :catch_1
+    const-string v3, "Failed to remove file index entry for: "
+
+    invoke-static {v3, v1}, Lb22;->m(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_1
+    :goto_0
+    iget-object v0, v0, Lrx0;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, v0}, Lvz5;->i(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lt1e;->e:Ljava/util/HashMap;
+
+    iget-object v1, p1, Lix0;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, -0x1
+
+    :goto_1
+    if-ltz v1, :cond_2
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lvw0;
+
+    invoke-interface {v2, p0, p1}, Lvw0;->d(Lt1e;Lix0;)V
+
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_1
+
+    :cond_2
+    iget-object v0, p0, Lt1e;->b:Lvw0;
+
+    invoke-interface {v0, p0, p1}, Lvw0;->d(Lt1e;Lix0;)V
+
+    :cond_3
     return-void
 .end method
 
-.method public final q(I)V
-    .registers 2
+.method public final n()V
+    .registers 9
 
-    iget-object p0, p0, Lt1e;->n0:Liu8;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput p1, p0, Lxp7;->Y:I
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    iget-object v1, p0, Lt1e;->c:Lvz5;
+
+    iget-object v1, v1, Lvz5;->a:Ljava/lang/Object;
+
+    check-cast v1, Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-static {v1}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lrx0;
+
+    iget-object v2, v2, Lrx0;->c:Ljava/util/TreeSet;
+
+    invoke-virtual {v2}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :cond_1
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lix0;
+
+    iget-object v4, v3, Lix0;->X:Ljava/io/File;
+
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v4}, Ljava/io/File;->length()J
+
+    move-result-wide v4
+
+    iget-wide v6, v3, Lix0;->c:J
+
+    cmp-long v4, v4, v6
+
+    if-eqz v4, :cond_1
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v1, 0x0
+
+    :goto_1
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_3
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lix0;
+
+    invoke-virtual {p0, v2}, Lt1e;->m(Lix0;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    :cond_3
     return-void
 .end method
 
-.method public final r(Landroid/widget/PopupWindow$OnDismissListener;)V
-    .registers 2
+.method public final declared-synchronized o(JLjava/lang/String;J)Lw1e;
+    .registers 22
 
-    iput-object p1, p0, Lt1e;->q0:Landroid/widget/PopupWindow$OnDismissListener;
+    move-object/from16 v1, p0
 
-    return-void
+    move-object/from16 v3, p3
+
+    monitor-enter p0
+
+    :try_start_0
+    invoke-virtual {v1}, Lt1e;->d()V
+
+    iget-object v0, v1, Lt1e;->c:Lvz5;
+
+    invoke-virtual {v0, v3}, Lvz5;->e(Ljava/lang/String;)Lrx0;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    new-instance v2, Lw1e;
+
+    const-wide v8, -0x7fffffffffffffffL    # -4.9E-324
+
+    const/4 v10, 0x0
+
+    move-wide/from16 v4, p1
+
+    move-wide/from16 v6, p4
+
+    invoke-direct/range {v2 .. v10}, Lix0;-><init>(Ljava/lang/String;JJJLjava/io/File;)V
+
+    goto :goto_1
+
+    :cond_0
+    move-wide/from16 v4, p1
+
+    move-wide/from16 v6, p4
+
+    :goto_0
+    invoke-virtual {v0, v4, v5, v6, v7}, Lrx0;->b(JJ)Lw1e;
+
+    move-result-object v2
+
+    iget-boolean v8, v2, Lix0;->o:Z
+
+    if-eqz v8, :cond_1
+
+    iget-object v8, v2, Lix0;->X:Ljava/io/File;
+
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v8}, Ljava/io/File;->length()J
+
+    move-result-wide v8
+
+    iget-wide v10, v2, Lix0;->c:J
+
+    cmp-long v8, v8, v10
+
+    if-eqz v8, :cond_1
+
+    invoke-virtual {v1}, Lt1e;->n()V
+
+    goto :goto_0
+
+    :cond_1
+    :goto_1
+    iget-boolean v0, v2, Lix0;->o:Z
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v1, v3, v2}, Lt1e;->p(Ljava/lang/String;Lw1e;)Lw1e;
+
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_4
+
+    :cond_2
+    :try_start_1
+    iget-object v0, v1, Lt1e;->c:Lvz5;
+
+    invoke-virtual {v0, v3}, Lvz5;->g(Ljava/lang/String;)Lrx0;
+
+    move-result-object v0
+
+    iget-wide v6, v2, Lix0;->c:J
+
+    iget-object v0, v0, Lrx0;->d:Ljava/util/ArrayList;
+
+    const/4 v3, 0x0
+
+    :goto_2
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v8
+
+    if-ge v3, v8, :cond_6
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lpx0;
+
+    iget-wide v9, v8, Lpx0;->a:J
+
+    cmp-long v11, v9, v4
+
+    const-wide/16 v12, -0x1
+
+    if-gtz v11, :cond_3
+
+    iget-wide v14, v8, Lpx0;->b:J
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    cmp-long v8, v14, v12
+
+    if-eqz v8, :cond_5
+
+    add-long/2addr v9, v14
+
+    cmp-long v8, v9, v4
+
+    if-lez v8, :cond_4
+
+    goto :goto_3
+
+    :cond_3
+    cmp-long v8, v6, v12
+
+    if-eqz v8, :cond_5
+
+    add-long v11, v4, v6
+
+    cmp-long v8, v11, v9
+
+    if-lez v8, :cond_4
+
+    goto :goto_3
+
+    :cond_4
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_2
+
+    :cond_5
+    :goto_3
+    monitor-exit p0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_6
+    :try_start_2
+    new-instance v3, Lpx0;
+
+    invoke-direct {v3, v4, v5, v6, v7}, Lpx0;-><init>(JJ)V
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    monitor-exit p0
+
+    return-object v2
+
+    :goto_4
+    :try_start_3
+    monitor-exit p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    throw v0
 .end method
 
-.method public final s(Z)V
-    .registers 2
+.method public final p(Ljava/lang/String;Lw1e;)Lw1e;
+    .registers 20
 
-    iput-boolean p1, p0, Lt1e;->z0:Z
+    move-object/from16 v0, p0
 
-    return-void
-.end method
+    move-object/from16 v1, p2
 
-.method public final t(I)V
-    .registers 2
+    iget-object v2, v1, Lix0;->X:Ljava/io/File;
 
-    iget-object p0, p0, Lt1e;->n0:Liu8;
+    iget-boolean v3, v0, Lt1e;->g:Z
 
-    invoke-virtual {p0, p1}, Lxp7;->l(I)V
+    if-nez v3, :cond_0
 
-    return-void
+    return-object v1
+
+    :cond_0
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v7
+
+    iget-wide v5, v1, Lix0;->c:J
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v14
+
+    const/4 v3, 0x1
+
+    iget-object v4, v0, Lt1e;->d:Lmgb;
+
+    if-eqz v4, :cond_1
+
+    move-wide v8, v14
+
+    :try_start_0
+    invoke-virtual/range {v4 .. v9}, Lmgb;->F(JLjava/lang/String;J)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-wide v14, v8
+
+    const-string v4, "Failed to update index with new touch timestamp."
+
+    invoke-static {v4}, Lxnd;->l0(Ljava/lang/String;)V
+
+    :goto_0
+    const/4 v4, 0x0
+
+    goto :goto_1
+
+    :cond_1
+    move v4, v3
+
+    :goto_1
+    iget-object v5, v0, Lt1e;->c:Lvz5;
+
+    move-object/from16 v6, p1
+
+    invoke-virtual {v5, v6}, Lvz5;->e(Ljava/lang/String;)Lrx0;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v6, v5, Lrx0;->c:Ljava/util/TreeSet;
+
+    invoke-virtual {v6, v1}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    invoke-static {v7}, Lmq0;->h(Z)V
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    if-eqz v4, :cond_3
+
+    invoke-virtual {v2}, Ljava/io/File;->getParentFile()Ljava/io/File;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-wide v10, v1, Lix0;->b:J
+
+    iget v9, v5, Lrx0;->a:I
+
+    move-wide v12, v14
+
+    invoke-static/range {v8 .. v13}, Lw1e;->c(Ljava/io/File;IJJ)Ljava/io/File;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    move-object/from16 v16, v4
+
+    goto :goto_2
+
+    :cond_2
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    const-string v7, "Failed to rename "
+
+    invoke-direct {v5, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v7, " to "
+
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lxnd;->l0(Ljava/lang/String;)V
+
+    :cond_3
+    move-object/from16 v16, v2
+
+    :goto_2
+    iget-boolean v2, v1, Lix0;->o:Z
+
+    invoke-static {v2}, Lmq0;->h(Z)V
+
+    new-instance v8, Lw1e;
+
+    iget-object v9, v1, Lix0;->a:Ljava/lang/String;
+
+    iget-wide v10, v1, Lix0;->b:J
+
+    iget-wide v12, v1, Lix0;->c:J
+
+    invoke-direct/range {v8 .. v16}, Lix0;-><init>(Ljava/lang/String;JJJLjava/io/File;)V
+
+    invoke-virtual {v6, v8}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+
+    iget-object v2, v0, Lt1e;->e:Ljava/util/HashMap;
+
+    iget-object v4, v1, Lix0;->a:Ljava/lang/String;
+
+    invoke-virtual {v2, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/ArrayList;
+
+    if-eqz v2, :cond_4
+
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    sub-int/2addr v4, v3
+
+    :goto_3
+    if-ltz v4, :cond_4
+
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lvw0;
+
+    invoke-interface {v3, v0, v1, v8}, Lvw0;->c(Lt1e;Lw1e;Lw1e;)V
+
+    add-int/lit8 v4, v4, -0x1
+
+    goto :goto_3
+
+    :cond_4
+    iget-object v2, v0, Lt1e;->b:Lvw0;
+
+    invoke-interface {v2, v0, v1, v8}, Lvw0;->c(Lt1e;Lw1e;Lw1e;)V
+
+    return-object v8
 .end method

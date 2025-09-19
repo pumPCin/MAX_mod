@@ -1,52 +1,49 @@
 .class public final Lsr5;
-.super Lcx3;
+.super Ljava/lang/Object;
+.source "SourceFile"
 
 
 # instance fields
-.field public X:I
+.field public a:I
 
-.field public final synthetic Y:Lrq5;
+.field public b:I
 
-.field public Z:Lrq5;
+.field public c:I
 
-.field public n0:Lhq5;
+.field public d:I
 
-.field public synthetic o:Ljava/lang/Object;
+.field public e:I
+
+.field public f:F
+
+.field public g:F
+
+.field public h:I
+
+.field public i:I
+
+.field public final j:Ljava/util/ArrayList;
+
+.field public k:I
+
+.field public l:I
+
+.field public m:Z
+
+.field public n:Z
 
 
 # direct methods
-.method public constructor <init>(Lrq5;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, Lsr5;->Y:Lrq5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lsr5;->j:Ljava/util/ArrayList;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iput-object p1, p0, Lsr5;->o:Ljava/lang/Object;
-
-    iget p1, p0, Lsr5;->X:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lsr5;->X:I
-
-    iget-object p1, p0, Lsr5;->Y:Lrq5;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lrq5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

@@ -2,151 +2,122 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lme0;
 
-# instance fields
-.field public final a:J
+
+# static fields
+.field public static final a:Ljava/util/concurrent/atomic/AtomicReference;
 
 
 # direct methods
-.method public synthetic constructor <init>(J)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-wide p1, p0, Lvp5;->a:J
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    sput-object v0, Lvp5;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
     return-void
 .end method
 
-.method public static a(FF)J
-    .registers 6
 
-    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    move-result p0
-
-    int-to-long v0, p0
-
-    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    move-result p0
-
-    int-to-long p0, p0
-
-    const/16 v2, 0x20
-
-    shl-long/2addr v0, v2
-
-    const-wide v2, 0xffffffffL
-
-    and-long/2addr p0, v2
-
-    or-long/2addr p0, v0
-
-    return-wide p0
-.end method
-
-.method public static b(J)Ljava/lang/String;
+# virtual methods
+.method public final a(Z)V
     .registers 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    sget-object p0, Lxp5;->j:Ljava/lang/Object;
 
-    const-string v1, "("
+    monitor-enter p0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :try_start_0
+    new-instance v0, Ljava/util/ArrayList;
 
-    const/16 v1, 0x20
+    sget-object v1, Lxp5;->k:Ltr;
 
-    shr-long v1, p0, v1
+    invoke-virtual {v1}, Ltr;->values()Ljava/util/Collection;
 
-    long-to-int v1, v1
+    move-result-object v1
 
-    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    if-eqz v1, :cond_2
 
-    const-string v1, ", "
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    const-wide v1, 0xffffffffL
+    check-cast v1, Lxp5;
 
-    and-long/2addr p0, v1
+    iget-object v2, v1, Lxp5;->e:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    long-to-int p0, p0
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
-    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+    move-result v2
 
-    move-result p0
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    iget-object v1, v1, Lxp5;->i:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    const/16 p0, 0x29
+    invoke-virtual {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_1
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result-object p0
+    move-result v2
 
-    return-object p0
-.end method
+    if-eqz v2, :cond_0
 
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+    move-result-object v2
 
-    instance-of v0, p1, Lvp5;
+    check-cast v2, Lup5;
 
-    if-nez v0, :cond_0
+    iget-object v2, v2, Lup5;->a:Lxp5;
+
+    if-nez p1, :cond_1
+
+    iget-object v2, v2, Lxp5;->h:Lqyb;
+
+    invoke-interface {v2}, Lqyb;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lnf4;
+
+    invoke-virtual {v2}, Lnf4;->b()V
 
     goto :goto_0
 
-    :cond_0
-    check-cast p1, Lvp5;
+    :catchall_0
+    move-exception p1
 
-    iget-wide v0, p1, Lvp5;->a:J
+    goto :goto_1
 
-    iget-wide p0, p0, Lvp5;->a:J
+    :cond_2
+    monitor-exit p0
 
-    cmp-long p0, p0, v0
+    return-void
 
-    if-eqz p0, :cond_1
+    :goto_1
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    iget-wide v0, p0, Lvp5;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    iget-wide v0, p0, Lvp5;->a:J
-
-    invoke-static {v0, v1}, Lvp5;->b(J)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    throw p1
 .end method

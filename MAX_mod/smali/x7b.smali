@@ -1,273 +1,60 @@
-.class public final Lx7b;
-.super Ljava/io/InputStream;
+.class public final synthetic Lx7b;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Lnt8;
+.field public final synthetic a:I
 
-.field public b:I
-
-.field public c:I
+.field public final synthetic b:Landroidx/recyclerview/widget/RecyclerView;
 
 
 # direct methods
-.method public constructor <init>(Lnt8;)V
+.method public synthetic constructor <init>(Landroidx/recyclerview/widget/RecyclerView;I)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
+    iput p2, p0, Lx7b;->a:I
 
-    monitor-enter p1
+    iput-object p1, p0, Lx7b;->b:Landroidx/recyclerview/widget/RecyclerView;
 
-    :try_start_0
-    iget-object v0, p1, Lnt8;->b:La63;
-
-    invoke-static {v0}, La63;->r0(La63;)Z
-
-    move-result v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p1
-
-    if-eqz v0, :cond_0
-
-    iput-object p1, p0, Lx7b;->a:Lnt8;
-
-    const/4 p1, 0x0
-
-    iput p1, p0, Lx7b;->b:I
-
-    iput p1, p0, Lx7b;->c:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw p0
-
-    :catchall_0
-    move-exception p0
-
-    :try_start_1
-    monitor-exit p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public final available()I
+.method public final run()V
     .registers 2
 
-    iget-object v0, p0, Lx7b;->a:Lnt8;
+    iget v0, p0, Lx7b;->a:I
 
-    invoke-virtual {v0}, Lnt8;->X()I
+    iget-object p0, p0, Lx7b;->b:Landroidx/recyclerview/widget/RecyclerView;
 
-    move-result v0
+    packed-switch v0, :pswitch_data_0
 
-    iget p0, p0, Lx7b;->b:I
-
-    sub-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final mark(I)V
-    .registers 2
-
-    iget p1, p0, Lx7b;->b:I
-
-    iput p1, p0, Lx7b;->c:I
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->X()V
 
     return-void
-.end method
 
-.method public final markSupported()Z
-    .registers 1
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final read()I
-    .registers 3
-
-    invoke-virtual {p0}, Lx7b;->available()I
-
-    move-result v0
-
-    if-gtz v0, :cond_0
-
-    const/4 p0, -0x1
-
-    return p0
-
-    :cond_0
-    iget v0, p0, Lx7b;->b:I
-
-    add-int/lit8 v1, v0, 0x1
-
-    iput v1, p0, Lx7b;->b:I
-
-    iget-object p0, p0, Lx7b;->a:Lnt8;
-
-    invoke-virtual {p0, v0}, Lnt8;->o(I)B
-
-    move-result p0
-
-    and-int/lit16 p0, p0, 0xff
-
-    return p0
-.end method
-
-.method public final read([B)I
-    .registers 4
-
-    const/4 v0, 0x0
-
-    array-length v1, p1
-
-    invoke-virtual {p0, p1, v0, v1}, Lx7b;->read([BII)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final read([BII)I
-    .registers 7
-
-    if-ltz p2, :cond_2
-
-    if-ltz p3, :cond_2
-
-    add-int v0, p2, p3
-
-    array-length v1, p1
-
-    if-gt v0, v1, :cond_2
-
-    invoke-virtual {p0}, Lx7b;->available()I
-
-    move-result v0
-
-    if-gtz v0, :cond_0
-
-    const/4 p0, -0x1
-
-    return p0
-
-    :cond_0
-    if-gtz p3, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    invoke-static {v0, p3}, Ljava/lang/Math;->min(II)I
-
-    move-result p3
-
-    iget-object v0, p0, Lx7b;->a:Lnt8;
-
-    iget v1, p0, Lx7b;->b:I
-
-    invoke-virtual {v0, v1, p2, p3, p1}, Lnt8;->W(III[B)V
-
-    iget p1, p0, Lx7b;->b:I
-
-    add-int/2addr p1, p3
-
-    iput p1, p0, Lx7b;->b:I
-
-    return p3
-
-    :cond_2
-    new-instance p0, Ljava/lang/ArrayIndexOutOfBoundsException;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "length="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    array-length p1, p1
-
-    const-string v1, "; regionStart="
-
-    const-string v2, "; regionLength="
-
-    invoke-static {v0, p1, v1, p2, v2}, Lex3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
-
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-direct {p0, p1}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final reset()V
-    .registers 2
-
-    iget v0, p0, Lx7b;->c:I
-
-    iput v0, p0, Lx7b;->b:I
+    :pswitch_0
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->X()V
 
     return-void
-.end method
 
-.method public final skip(J)J
-    .registers 5
+    :pswitch_1
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->X()V
 
-    const-wide/16 v0, 0x0
+    return-void
 
-    cmp-long v0, p1, v0
+    nop
 
-    if-ltz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lg53;->f(Ljava/lang/Boolean;)V
-
-    long-to-int p1, p1
-
-    invoke-virtual {p0}, Lx7b;->available()I
-
-    move-result p2
-
-    invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    iget p2, p0, Lx7b;->b:I
-
-    add-int/2addr p2, p1
-
-    iput p2, p0, Lx7b;->b:I
-
-    int-to-long p0, p1
-
-    return-wide p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

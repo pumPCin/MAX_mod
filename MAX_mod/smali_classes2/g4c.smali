@@ -3,18 +3,32 @@
 
 
 # static fields
-.field public static audio_onboarding_intro:I = 0x7f130086
+.field public static contact_icon_corner:I = 0x7f080316
 
-.field public static pinbars_group_call_bar_button_text:I = 0x7f130aae
+.field public static done_superelips_fill_40:I = 0x7f080334
 
-.field public static pinbars_group_call_bar_title:I = 0x7f130aaf
+.field public static geo_icon_corner:I = 0x7f0804bb
 
-.field public static pinbars_snackbar_unpinned:I = 0x7f130ab0
+.field public static ic_call_incoming_audio_24:I = 0x7f080532
 
-.field public static unknown_contact_add_to_contact:I = 0x7f130dc5
+.field public static ic_call_incoming_audio_missed_24:I = 0x7f080533
 
-.field public static unknown_contact_block_contact:I = 0x7f130dc6
+.field public static ic_call_incoming_video_missed_24:I = 0x7f080535
 
-.field public static unknown_contact_snackbar_add_contact:I = 0x7f130dc7
+.field public static ic_call_incomnig_video_24:I = 0x7f080536
 
-.field public static videomsg_player_type:I = 0x7f130df4
+.field public static ic_call_outgoing_audio_24:I = 0x7f08053c
+
+.field public static ic_call_outgoing_video_24:I = 0x7f08053d
+
+.field public static ic_chat_16:I = 0x7f080553
+
+.field public static ic_contact_16:I = 0x7f08057a
+
+.field public static ic_reply_outline_12:I = 0x7f080746
+
+.field public static link_icon_corner:I = 0x7f0807f9
+
+.field public static miniapp_icon_corner:I = 0x7f080873
+
+.field public static wallet_fill_40:I = 0x7f08095b

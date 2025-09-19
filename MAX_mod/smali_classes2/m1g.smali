@@ -1,178 +1,265 @@
 .class public final Lm1g;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Las1;
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
+.field public X:I
+
+.field public final synthetic Y:Lt1g;
+
+.field public final synthetic Z:J
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public constructor <init>(Lt1g;JLkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lm1g;->Y:Lt1g;
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    iput-wide p2, p0, Lm1g;->Z:J
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+    const/4 p1, 0x2
 
-    iput-object v0, p0, Lm1g;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAttendee(Llr1;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-object p0, p0, Lm1g;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    check-cast p1, Ly04;
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lm1g;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast p0, Lm1g;
 
-    move-result v0
+    sget-object p1, Lylf;->a:Lylf;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p0, p1}, Lm1g;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object p0
 
-    move-result-object v0
-
-    check-cast v0, Las1;
-
-    invoke-interface {v0, p1}, Las1;->onAttendee(Llr1;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return-object p0
 .end method
 
-.method public final onFeedback(Lmr1;)V
-    .registers 3
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 6
 
-    iget-object p0, p0, Lm1g;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    new-instance p1, Lm1g;
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    iget-object v0, p0, Lm1g;->Y:Lt1g;
 
-    move-result-object p0
+    iget-wide v1, p0, Lm1g;->Z:J
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-direct {p1, v0, v1, v2, p2}, Lm1g;-><init>(Lt1g;JLkotlin/coroutines/Continuation;)V
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Las1;
-
-    invoke-interface {v0, p1}, Las1;->onFeedback(Lmr1;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return-object p1
 .end method
 
-.method public final onHandUp(Lnr1;)V
-    .registers 3
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
 
-    iget-object p0, p0, Lm1g;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    sget-object v0, Lqz7;->o:Lqz7;
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    sget-object v1, Lz04;->a:Lz04;
 
-    move-result-object p0
+    iget v2, p0, Lm1g;->X:I
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v3, 0x1
 
-    move-result v0
+    const/4 v4, 0x0
 
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_1
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-ne v2, v3, :cond_0
 
-    move-result-object v0
-
-    check-cast v0, Las1;
-
-    invoke-interface {v0, p1}, Las1;->onHandUp(Lnr1;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    return-void
-.end method
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-.method public final onMeInWaitingRoomChanged(Z)V
-    .registers 3
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    iget-object p0, p0, Lm1g;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    throw p0
 
-    move-result-object p0
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
+    iget-object p1, p0, Lm1g;->Y:Lt1g;
+
+    iget-object p1, p1, Lt1g;->P0:Liic;
+
+    new-instance v2, Ll1g;
+
+    const/4 v5, 0x2
+
+    invoke-direct {v2, v5, v4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    iput v3, p0, Lm1g;->X:I
+
+    invoke-static {p1, v2, p0}, Lo97;->b0(Liic;Ll1g;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v1, :cond_2
+
+    return-object v1
+
+    :cond_2
     :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast p1, Ljava/lang/Boolean;
 
-    move-result v0
+    iget-object v1, p0, Lm1g;->Y:Lt1g;
 
-    if-eqz v0, :cond_0
+    iget-object v1, v1, Lt1g;->r0:Ljava/lang/String;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    sget-object v2, Ljtg;->g:Loja;
+
+    if-nez v2, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    invoke-virtual {v2, v0}, Loja;->a(Lqz7;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_4
+
+    const-string v3, "VideoMessage Recording. Camera preview was bind successfully"
+
+    invoke-virtual {v2, v0, v1, v3, v4}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_4
+    :goto_1
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-static {p1, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_8
+
+    iget-object p1, p0, Lm1g;->Y:Lt1g;
+
+    iget-object v1, p1, Lt1g;->b:Lcl7;
+
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lnn5;
+
+    iget-wide v2, p0, Lm1g;->Z:J
+
+    invoke-static {v2, v3}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    check-cast v1, Lcp5;
+
+    invoke-virtual {v1, v2}, Lcp5;->n(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/io/File;->createNewFile()Z
+
+    iput-object v1, p1, Lt1g;->E0:Ljava/io/File;
+
+    iget-object p1, p0, Lm1g;->Y:Lt1g;
+
+    iget-object v1, p1, Lt1g;->r0:Ljava/lang/String;
+
+    sget-object v2, Ljtg;->g:Loja;
+
+    if-nez v2, :cond_5
+
+    goto :goto_3
+
+    :cond_5
+    invoke-virtual {v2, v0}, Loja;->a(Lqz7;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_7
+
+    iget-object p1, p1, Lt1g;->E0:Ljava/io/File;
+
+    if-eqz p1, :cond_6
+
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_2
+
+    :cond_6
+    move-object p1, v4
+
+    :goto_2
+    const-string v3, "VideoMessage Recording. Prepare to start recording. Output file - "
+
+    invoke-static {v3, p1}, Lsg0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v2, v0, v1, p1, v4}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_7
+    :goto_3
+    iget-object p1, p0, Lm1g;->Y:Lt1g;
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, Las1;
+    invoke-virtual {p1, v0}, Lt1g;->o(Ljava/lang/String;)Ljava/io/File;
 
-    invoke-interface {v0, p1}, Las1;->onMeInWaitingRoomChanged(Z)V
+    move-result-object p1
 
-    goto :goto_0
+    iget-object v0, p0, Lm1g;->Y:Lt1g;
 
-    :cond_0
-    return-void
-.end method
+    new-instance v1, Lzxc;
 
-.method public final onPromotionUpdated(Lor1;)V
-    .registers 3
+    const/16 v2, 0x12
 
-    iget-object p0, p0, Lm1g;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    invoke-direct {v1, v2}, Lzxc;-><init>(I)V
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    iput-object v1, v0, Lt1g;->v0:Lzxc;
 
-    move-result-object p0
+    iget-object p0, p0, Lm1g;->Y:Lt1g;
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {p0, p1}, Lt1g;->v(Ljava/io/File;)V
 
-    move-result v0
+    sget-object p0, Lylf;->a:Lylf;
 
-    if-eqz v0, :cond_0
+    return-object p0
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :cond_8
+    new-instance p0, Lone/me/sdk/messagewrite/recordcontrols/delegates/VideoMessageRecordDelegate$PreviewRenderException;
 
-    move-result-object v0
+    const/4 p1, 0x0
 
-    check-cast v0, Las1;
+    invoke-direct {p0, p1}, Lone/me/sdk/messagewrite/recordcontrols/delegates/VideoMessageRecordDelegate$PreviewRenderException;-><init>(I)V
 
-    invoke-interface {v0, p1}, Las1;->onPromotionUpdated(Lor1;)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    throw p0
 .end method

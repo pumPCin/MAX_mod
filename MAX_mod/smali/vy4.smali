@@ -4,28 +4,52 @@
 
 
 # instance fields
-.field public final a:Lj07;
+.field public final a:I
+
+.field public final b:Z
+
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:I
+
+.field public final f:I
+
+.field public final g:I
+
+.field public final h:I
+
+.field public final i:I
+
+.field public final j:Landroid/util/SparseArray;
 
 
 # direct methods
-.method public constructor <init>(ILjava/util/List;)V
-    .registers 3
+.method public constructor <init>(IZIIIIIIILandroid/util/SparseArray;)V
+    .registers 11
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
+    iput p1, p0, Lvy4;->a:I
 
-    move-result p1
+    iput-boolean p2, p0, Lvy4;->b:Z
 
-    xor-int/lit8 p1, p1, 0x1
+    iput p3, p0, Lvy4;->c:I
 
-    invoke-static {p1}, Lr76;->h(Z)V
+    iput p4, p0, Lvy4;->d:I
 
-    invoke-static {p2}, Lj07;->j(Ljava/util/Collection;)Lj07;
+    iput p5, p0, Lvy4;->e:I
 
-    move-result-object p1
+    iput p6, p0, Lvy4;->f:I
 
-    iput-object p1, p0, Lvy4;->a:Lj07;
+    iput p7, p0, Lvy4;->g:I
+
+    iput p8, p0, Lvy4;->h:I
+
+    iput p9, p0, Lvy4;->i:I
+
+    iput-object p10, p0, Lvy4;->j:Landroid/util/SparseArray;
 
     return-void
 .end method

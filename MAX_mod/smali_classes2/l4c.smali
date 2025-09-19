@@ -3,8 +3,10 @@
 
 
 # static fields
-.field public static chat_media_photo:I = 0x7f130319
+.field public static ic_row_10:I = 0x7f08074e
 
-.field public static chat_media_video:I = 0x7f13031a
+.field public static icon_document_24:I = 0x7f0807df
 
-.field public static media_photo_video:I = 0x7f130627
+.field public static lock:I = 0x7f0807fd
+
+.field public static voice_to_trash:I = 0x7f080959

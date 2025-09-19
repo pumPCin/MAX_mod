@@ -1,83 +1,47 @@
 .class public final Lwq4;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lyq4;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic X:Ln30;
+
+.field public Y:I
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 2
+.method public constructor <init>(Ln30;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lwq4;->X:Ln30;
 
-    iput p1, p0, Lwq4;->a:I
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lwq4;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lwq4;
-
-    iget p0, p0, Lwq4;->a:I
-
-    iget p1, p1, Lwq4;->a:I
-
-    if-eq p0, p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget p0, p0, Lwq4;->a:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    const-string v0, "DownloadFailed(textFailRes="
+    iput-object p1, p0, Lwq4;->o:Ljava/lang/Object;
 
-    const-string v1, ")"
+    iget p1, p0, Lwq4;->Y:I
 
-    iget p0, p0, Lwq4;->a:I
+    const/high16 v0, -0x80000000
 
-    invoke-static {p0, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lwq4;->Y:I
+
+    iget-object p1, p0, Lwq4;->X:Ln30;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Ln30;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

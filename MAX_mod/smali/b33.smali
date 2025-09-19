@@ -1,220 +1,64 @@
-.class public final Lb33;
+.class public abstract Lb33;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lsuc;
+.implements Lmv7;
 
 
 # instance fields
-.field public final synthetic X:Lf33;
+.field public final X:I
 
-.field public final a:Lf33;
+.field public final Y:Ljava/lang/Object;
 
-.field public final b:Lquc;
+.field public final Z:J
+
+.field public final a:J
+
+.field public final b:Ln74;
 
 .field public final c:I
 
-.field public o:Z
+.field public final o:Lx46;
+
+.field public final r0:J
+
+.field public final s0:Lbee;
 
 
 # direct methods
-.method public constructor <init>(Lf33;Lf33;Lquc;I)V
-    .registers 5
+.method public constructor <init>(Lf74;Ln74;ILx46;ILjava/lang/Object;JJ)V
+    .registers 12
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lb33;->X:Lf33;
+    new-instance v0, Lbee;
 
-    iput-object p2, p0, Lb33;->a:Lf33;
+    invoke-direct {v0, p1}, Lbee;-><init>(Lf74;)V
 
-    iput-object p3, p0, Lb33;->b:Lquc;
+    iput-object v0, p0, Lb33;->s0:Lbee;
 
-    iput p4, p0, Lb33;->c:I
+    iput-object p2, p0, Lb33;->b:Ln74;
 
-    return-void
-.end method
+    iput p3, p0, Lb33;->c:I
 
+    iput-object p4, p0, Lb33;->o:Lx46;
 
-# virtual methods
-.method public final a()V
-    .registers 9
+    iput p5, p0, Lb33;->X:I
 
-    iget-boolean v0, p0, Lb33;->o:Z
+    iput-object p6, p0, Lb33;->Y:Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    iput-wide p7, p0, Lb33;->Z:J
 
-    iget-object v0, p0, Lb33;->X:Lf33;
+    iput-wide p9, p0, Lb33;->r0:J
 
-    iget-object v1, v0, Lf33;->Z:Ljn8;
+    sget-object p1, Lev7;->c:Ljava/util/concurrent/atomic/AtomicLong;
 
-    iget-object v2, v0, Lf33;->b:[I
+    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicLong;->getAndIncrement()J
 
-    iget v3, p0, Lb33;->c:I
+    move-result-wide p1
 
-    aget v2, v2, v3
-
-    iget-object v4, v0, Lf33;->c:[Lr26;
-
-    aget-object v3, v4, v3
-
-    const/4 v5, 0x0
-
-    iget-wide v6, v0, Lf33;->z0:J
-
-    const/4 v4, 0x0
-
-    invoke-virtual/range {v1 .. v7}, Ljn8;->b(ILr26;ILjava/lang/Object;J)V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lb33;->o:Z
-
-    :cond_0
-    return-void
-.end method
-
-.method public final b()V
-    .registers 1
+    iput-wide p1, p0, Lb33;->a:J
 
     return-void
-.end method
-
-.method public final d()Z
-    .registers 3
-
-    iget-object v0, p0, Lb33;->X:Lf33;
-
-    invoke-virtual {v0}, Lf33;->t()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    iget-object p0, p0, Lb33;->b:Lquc;
-
-    iget-boolean v0, v0, Lf33;->C0:Z
-
-    invoke-virtual {p0, v0}, Lquc;->r(Z)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final f(J)I
-    .registers 6
-
-    iget-object v0, p0, Lb33;->X:Lf33;
-
-    invoke-virtual {v0}, Lf33;->t()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    iget-boolean v1, v0, Lf33;->C0:Z
-
-    iget-object v2, p0, Lb33;->b:Lquc;
-
-    invoke-virtual {v2, p1, p2, v1}, Lquc;->p(JZ)I
-
-    move-result p1
-
-    iget-object p2, v0, Lf33;->B0:Lrj0;
-
-    if-eqz p2, :cond_1
-
-    iget v0, p0, Lb33;->c:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    invoke-virtual {p2, v0}, Lrj0;->d(I)I
-
-    move-result p2
-
-    invoke-virtual {v2}, Lquc;->n()I
-
-    move-result v0
-
-    sub-int/2addr p2, v0
-
-    invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    :cond_1
-    invoke-virtual {v2, p1}, Lquc;->z(I)V
-
-    if-lez p1, :cond_2
-
-    invoke-virtual {p0}, Lb33;->a()V
-
-    :cond_2
-    return p1
-.end method
-
-.method public final l(Lgl4;Lm94;I)I
-    .registers 8
-
-    iget-object v0, p0, Lb33;->X:Lf33;
-
-    invoke-virtual {v0}, Lf33;->t()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v1, v0, Lf33;->B0:Lrj0;
-
-    iget-object v2, p0, Lb33;->b:Lquc;
-
-    if-eqz v1, :cond_1
-
-    iget v3, p0, Lb33;->c:I
-
-    add-int/lit8 v3, v3, 0x1
-
-    invoke-virtual {v1, v3}, Lrj0;->d(I)I
-
-    move-result v1
-
-    invoke-virtual {v2}, Lquc;->n()I
-
-    move-result v3
-
-    if-gt v1, v3, :cond_1
-
-    :goto_0
-    const/4 p0, -0x3
-
-    return p0
-
-    :cond_1
-    invoke-virtual {p0}, Lb33;->a()V
-
-    iget-boolean p0, v0, Lf33;->C0:Z
-
-    invoke-virtual {v2, p1, p2, p3, p0}, Lquc;->w(Lgl4;Lm94;IZ)I
-
-    move-result p0
-
-    return p0
 .end method

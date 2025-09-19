@@ -1,278 +1,77 @@
 .class public final Ll35;
-.super Lxe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final c:Landroid/graphics/Rect;
+
+
 # instance fields
-.field public final l:Landroid/view/View;
+.field public final a:Lzte;
 
-.field public final m:Landroid/graphics/Rect;
-
-.field public n:I
-
-.field public o:I
-
-.field public p:I
-
-.field public q:Z
+.field public final b:Lzte;
 
 
 # direct methods
-.method public constructor <init>(Lgj0;Landroid/view/View;)V
-    .registers 7
+.method static constructor <clinit>()V
+    .registers 1
 
-    new-instance v0, Lf67;
+    new-instance v0, Landroid/graphics/Rect;
 
-    const/4 v1, 0x3
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    const/4 v2, 0x0
+    sput-object v0, Ll35;->c:Landroid/graphics/Rect;
 
-    const/4 v3, 0x0
+    return-void
+.end method
 
-    invoke-direct {v0, v2, v3, v1}, Lf67;-><init>(ILqr0;I)V
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
 
-    const/16 v1, 0x38
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, v0, v3, v1}, Lxe;-><init>(Landroid/view/View;Lf67;Lj96;I)V
+    new-instance v0, Ldn2;
 
-    iput-object p2, p0, Ll35;->l:Landroid/view/View;
+    invoke-direct {v0, p0, p1}, Ldn2;-><init>(Ll35;Landroid/content/Context;)V
 
-    new-instance p1, Landroid/graphics/Rect;
+    new-instance p1, Lzte;
 
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {p1, v0}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p1, p0, Ll35;->m:Landroid/graphics/Rect;
+    iput-object p1, p0, Ll35;->a:Lzte;
+
+    new-instance p1, Lyu3;
+
+    const/16 v0, 0xf
+
+    invoke-direct {p1, v0, p0}, Lyu3;-><init>(ILjava/lang/Object;)V
+
+    new-instance v0, Lzte;
+
+    invoke-direct {v0, p1}, Lzte;-><init>(Lzb6;)V
+
+    iput-object v0, p0, Ll35;->b:Lzte;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g(Lokg;Lykc;)V
-    .registers 5
+.method public final a()F
+    .registers 1
 
-    iget-object p1, p1, Lokg;->a:Lmkg;
+    iget-object p0, p0, Ll35;->a:Lzte;
 
-    const/16 v0, 0x8
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Lmkg;->f(I)Ld67;
+    move-result-object p0
 
-    move-result-object v0
+    check-cast p0, Ljava/lang/Number;
 
-    iget v0, v0, Ld67;->d:I
+    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
 
-    const/4 v1, 0x7
+    move-result p0
 
-    invoke-virtual {p1, v1}, Lmkg;->f(I)Ld67;
-
-    move-result-object p1
-
-    iget p1, p1, Ld67;->d:I
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-object p2, p2, Lykc;->c:Ljava/lang/Object;
-
-    check-cast p2, Ld67;
-
-    iget p2, p2, Ld67;->d:I
-
-    iput p2, p0, Ll35;->p:I
-
-    iget-object v1, p0, Ll35;->m:Landroid/graphics/Rect;
-
-    if-eqz v0, :cond_1
-
-    iget v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    add-int/2addr v0, p1
-
-    sub-int/2addr v0, p2
-
-    goto :goto_1
-
-    :cond_1
-    iget v0, v1, Landroid/graphics/Rect;->bottom:I
-
-    add-int/2addr v0, p2
-
-    sub-int/2addr v0, p1
-
-    :goto_1
-    iget p1, v1, Landroid/graphics/Rect;->top:I
-
-    sub-int/2addr v0, p1
-
-    iget-object p1, p0, Ld5e;->a:Landroid/view/View;
-
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
-
-    move-result p1
-
-    add-int/2addr p1, v0
-
-    div-int/lit8 p1, p1, 0x2
-
-    iget p2, p0, Ll35;->n:I
-
-    sub-int/2addr p1, p2
-
-    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
-
-    move-result p1
-
-    iput p1, p0, Ll35;->o:I
-
-    return-void
-.end method
-
-.method public final h(Lokg;)Lokg;
-    .registers 8
-
-    iget-object v0, p1, Lokg;->a:Lmkg;
-
-    iget-boolean v1, p0, Ll35;->q:Z
-
-    if-eqz v1, :cond_0
-
-    return-object p1
-
-    :cond_0
-    iget v1, p0, Lxe;->j:I
-
-    invoke-virtual {v0, v1}, Lmkg;->f(I)Ld67;
-
-    move-result-object v1
-
-    iget v2, p0, Ld5e;->d:I
-
-    invoke-virtual {v0, v2}, Lmkg;->f(I)Ld67;
-
-    move-result-object v0
-
-    iget v2, v1, Ld67;->a:I
-
-    iget v3, v0, Ld67;->a:I
-
-    iget v4, v0, Ld67;->d:I
-
-    sub-int/2addr v2, v3
-
-    iget v3, v1, Ld67;->b:I
-
-    iget v5, v0, Ld67;->b:I
-
-    sub-int/2addr v3, v5
-
-    iget v5, v1, Ld67;->c:I
-
-    iget v0, v0, Ld67;->c:I
-
-    sub-int/2addr v5, v0
-
-    iget v0, v1, Ld67;->d:I
-
-    sub-int/2addr v0, v4
-
-    invoke-static {v2, v3, v5, v0}, Ld67;->b(IIII)Ld67;
-
-    move-result-object v0
-
-    iget v1, v0, Ld67;->a:I
-
-    const/4 v2, 0x0
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v1
-
-    iget v3, v0, Ld67;->b:I
-
-    invoke-static {v3, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v3
-
-    iget v5, v0, Ld67;->c:I
-
-    invoke-static {v5, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v5
-
-    iget v0, v0, Ld67;->d:I
-
-    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    invoke-static {v1, v3, v5, v0}, Ld67;->b(IIII)Ld67;
-
-    move-result-object v0
-
-    iget v0, v0, Ld67;->d:I
-
-    int-to-float v0, v0
-
-    iget v1, p0, Ll35;->p:I
-
-    sub-int/2addr v1, v4
-
-    int-to-float v1, v1
-
-    div-float/2addr v0, v1
-
-    iget v1, p0, Ll35;->o:I
-
-    int-to-float v1, v1
-
-    mul-float/2addr v0, v1
-
-    iget-object p0, p0, Ld5e;->a:Landroid/view/View;
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setTranslationY(F)V
-
-    return-object p1
-.end method
-
-.method public final i()V
-    .registers 3
-
-    iget-object v0, p0, Ld5e;->a:Landroid/view/View;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ll35;->q:Z
-
-    return-void
-.end method
-
-.method public final j()V
-    .registers 3
-
-    iget-object v0, p0, Ll35;->l:Landroid/view/View;
-
-    iget-object v1, p0, Ll35;->m:Landroid/graphics/Rect;
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
-
-    iget-object v0, p0, Ld5e;->a:Landroid/view/View;
-
-    invoke-virtual {v0}, Landroid/view/View;->getBottom()I
-
-    move-result v0
-
-    iput v0, p0, Ll35;->n:I
-
-    return-void
+    return p0
 .end method

@@ -1,63 +1,44 @@
 .class public final Lt12;
-.super Lnx1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/util/List;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .registers 2
-
-    iput p1, p0, Lt12;->a:I
+.method public constructor <init>(Ljava/util/List;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    return-void
-.end method
+    if-eqz p1, :cond_0
 
-.method private final e(I)V
-    .registers 2
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
-    return-void
-.end method
+    move-result v0
 
-.method private final f(ILux1;)V
-    .registers 3
+    if-nez v0, :cond_0
 
-    return-void
-.end method
+    new-instance v0, Ljava/util/ArrayList;
 
-.method private final g(ILms3;)V
-    .registers 3
+    invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    return-void
-.end method
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
+    move-result-object p1
 
-# virtual methods
-.method public a(I)V
-    .registers 2
-
-    iget p0, p0, Lt12;->a:I
+    iput-object p1, p0, Lt12;->a:Ljava/util/List;
 
     return-void
-.end method
 
-.method public b(ILux1;)V
-    .registers 3
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    iget p0, p0, Lt12;->a:I
+    const-string p1, "Cannot set an empty CaptureStage list."
 
-    return-void
-.end method
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-.method public c(ILms3;)V
-    .registers 3
-
-    iget p0, p0, Lt12;->a:I
-
-    return-void
+    throw p0
 .end method

@@ -4,5 +4,8 @@
 
 
 # virtual methods
-.method public abstract onRtcStats(Lf7c;)V
+.method public abstract onRecordStarted(Lti1;)V
+.end method
+
+.method public abstract onRecordStopped(Lui1;)V
 .end method

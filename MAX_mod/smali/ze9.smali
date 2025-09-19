@@ -1,372 +1,241 @@
 .class public final Lze9;
-.super Landroid/widget/BaseAdapter;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Landroid/os/Parcelable;
 
 
 # static fields
-.field public static final X:I
-
-.field public static final o:I
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lze9;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final a:Lye9;
-
-.field public b:Lzd8;
-
-.field public final c:Liy0;
+.field public final a:[Lxe9;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .registers 2
 
-    const/4 v0, 0x0
+    new-instance v0, Lba8;
 
-    invoke-static {v0}, Lvhf;->c(Ljava/util/Calendar;)Ljava/util/Calendar;
+    const/16 v1, 0xc
 
-    move-result-object v1
+    invoke-direct {v0, v1}, Lba8;-><init>(I)V
 
-    const/4 v2, 0x4
-
-    invoke-virtual {v1, v2}, Ljava/util/Calendar;->getMaximum(I)I
-
-    move-result v1
-
-    sput v1, Lze9;->o:I
-
-    invoke-static {v0}, Lvhf;->c(Ljava/util/Calendar;)Ljava/util/Calendar;
-
-    move-result-object v1
-
-    const/4 v2, 0x5
-
-    invoke-virtual {v1, v2}, Ljava/util/Calendar;->getMaximum(I)I
-
-    move-result v1
-
-    invoke-static {v0}, Lvhf;->c(Ljava/util/Calendar;)Ljava/util/Calendar;
-
-    move-result-object v0
-
-    const/4 v2, 0x7
-
-    invoke-virtual {v0, v2}, Ljava/util/Calendar;->getMaximum(I)I
-
-    move-result v0
-
-    add-int/2addr v0, v1
-
-    add-int/lit8 v0, v0, -0x1
-
-    sput v0, Lze9;->X:I
+    sput-object v0, Lze9;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public constructor <init>(Lye9;Liy0;)V
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .registers 5
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v0
+
+    new-array v0, v0, [Lxe9;
+
+    iput-object v0, p0, Lze9;->a:[Lxe9;
+
+    const/4 v0, 0x0
+
+    :goto_0
+    iget-object v1, p0, Lze9;->a:[Lxe9;
+
+    array-length v2, v1
+
+    if-ge v0, v2, :cond_0
+
+    const-class v2, Lxe9;
+
+    invoke-virtual {v2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object v2
+
+    check-cast v2, Lxe9;
+
+    aput-object v2, v1, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/List;)V
     .registers 3
 
-    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lze9;->a:Lye9;
+    const/4 v0, 0x0
 
-    iput-object p2, p0, Lze9;->c:Liy0;
+    new-array v0, v0, [Lxe9;
 
-    const/4 p0, 0x0
+    invoke-interface {p1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    throw p0
+    move-result-object p1
+
+    check-cast p1, [Lxe9;
+
+    iput-object p1, p0, Lze9;->a:[Lxe9;
+
+    return-void
+.end method
+
+.method public varargs constructor <init>([Lxe9;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lze9;->a:[Lxe9;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .registers 4
-
-    iget-object v0, p0, Lze9;->c:Liy0;
-
-    iget v0, v0, Liy0;->X:I
-
-    iget-object p0, p0, Lze9;->a:Lye9;
-
-    iget-object v1, p0, Lye9;->a:Ljava/util/Calendar;
-
-    const/4 v2, 0x7
-
-    invoke-virtual {v1, v2}, Ljava/util/Calendar;->get(I)I
-
-    move-result v2
-
-    if-lez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/util/Calendar;->getFirstDayOfWeek()I
-
-    move-result v0
-
-    :goto_0
-    sub-int/2addr v2, v0
-
-    if-gez v2, :cond_1
-
-    iget p0, p0, Lye9;->o:I
-
-    add-int/2addr v2, p0
-
-    :cond_1
-    return v2
-.end method
-
-.method public final b(I)Ljava/lang/Long;
-    .registers 3
-
-    invoke-virtual {p0}, Lze9;->a()I
-
-    move-result v0
-
-    if-lt p1, v0, :cond_1
-
-    invoke-virtual {p0}, Lze9;->c()I
-
-    move-result v0
-
-    if-le p1, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Lze9;->a()I
-
-    move-result v0
-
-    sub-int/2addr p1, v0
-
-    add-int/lit8 p1, p1, 0x1
-
-    iget-object p0, p0, Lze9;->a:Lye9;
-
-    iget-object p0, p0, Lye9;->a:Ljava/util/Calendar;
-
-    invoke-static {p0}, Lvhf;->a(Ljava/util/Calendar;)Ljava/util/Calendar;
-
-    move-result-object p0
-
-    const/4 v0, 0x5
-
-    invoke-virtual {p0, v0, p1}, Ljava/util/Calendar;->set(II)V
-
-    invoke-virtual {p0}, Ljava/util/Calendar;->getTimeInMillis()J
-
-    move-result-wide p0
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x0
-
-    return-object p0
-.end method
-
-.method public final c()I
-    .registers 2
-
-    invoke-virtual {p0}, Lze9;->a()I
-
-    move-result v0
-
-    iget-object p0, p0, Lze9;->a:Lye9;
-
-    iget p0, p0, Lye9;->X:I
-
-    add-int/2addr v0, p0
-
-    add-int/lit8 v0, v0, -0x1
-
-    return v0
-.end method
-
-.method public final getCount()I
+.method public final describeContents()I
     .registers 1
 
-    sget p0, Lze9;->X:I
+    const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final bridge synthetic getItem(I)Ljava/lang/Object;
-    .registers 2
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    invoke-virtual {p0, p1}, Lze9;->b(I)Ljava/lang/Long;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final getItemId(I)J
-    .registers 2
-
-    iget-object p0, p0, Lze9;->a:Lye9;
-
-    iget p0, p0, Lye9;->o:I
-
-    div-int/2addr p1, p0
-
-    int-to-long p0, p1
-
-    return-wide p0
-.end method
-
-.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .registers 8
-
-    invoke-virtual {p3}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lze9;->b:Lzd8;
-
-    if-nez v1, :cond_0
-
-    new-instance v1, Lzd8;
-
-    const/4 v2, 0x7
-
-    invoke-direct {v1, v0, v2}, Lzd8;-><init>(Landroid/content/Context;I)V
-
-    iput-object v1, p0, Lze9;->b:Lzd8;
-
-    :cond_0
-    move-object v0, p2
-
-    check-cast v0, Landroid/widget/TextView;
-
-    const/4 v1, 0x0
-
-    if-nez p2, :cond_1
-
-    invoke-virtual {p3}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p2
-
-    invoke-static {p2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object p2
-
-    sget v0, Lv1c;->mtrl_calendar_day:I
-
-    invoke-virtual {p2, v0, p3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object p2
-
-    move-object v0, p2
-
-    check-cast v0, Landroid/widget/TextView;
-
-    :cond_1
-    invoke-virtual {p0}, Lze9;->a()I
-
-    move-result p2
-
-    sub-int p2, p1, p2
-
-    if-ltz p2, :cond_3
-
-    iget-object p3, p0, Lze9;->a:Lye9;
-
-    iget v2, p3, Lye9;->X:I
-
-    if-lt p2, v2, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v2, 0x1
-
-    add-int/2addr p2, v2
-
-    invoke-virtual {v0, p3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    invoke-virtual {v0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object p3
-
-    iget-object p3, p3, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p2
-
-    filled-new-array {p2}, [Ljava/lang/Object;
-
-    move-result-object p2
-
-    const-string v3, "%d"
-
-    invoke-static {p3, v3, p2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setEnabled(Z)V
-
-    goto :goto_1
-
-    :cond_3
-    :goto_0
-    const/16 p2, 0x8
-
-    invoke-virtual {v0, p2}, Landroid/view/View;->setVisibility(I)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
-
-    :goto_1
-    invoke-virtual {p0, p1}, Lze9;->b(I)Ljava/lang/Long;
-
-    move-result-object p0
-
-    if-nez p0, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    if-nez v0, :cond_5
-
-    :goto_2
-    return-object v0
-
-    :cond_5
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    invoke-static {}, Lvhf;->b()Ljava/util/Calendar;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/util/Calendar;->getTimeInMillis()J
-
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
-.method public final hasStableIds()Z
-    .registers 1
+    if-ne p0, p1, :cond_0
 
     const/4 p0, 0x1
 
     return p0
+
+    :cond_0
+    if-eqz p1, :cond_2
+
+    const-class v0, Lze9;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    if-eq v0, v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lze9;
+
+    iget-object p0, p0, Lze9;->a:[Lxe9;
+
+    iget-object p1, p1, Lze9;->a:[Lxe9;
+
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([Ljava/lang/Object;[Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_2
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lze9;->a:[Lxe9;
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    iget-object p0, p0, Lze9;->a:[Lxe9;
+
+    invoke-static {p0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    const-string v1, "entries="
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/String;
+
+    invoke-direct {p0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 6
+
+    iget-object p0, p0, Lze9;->a:[Lxe9;
+
+    array-length p2, p0
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    array-length p2, p0
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_0
+    if-ge v1, p2, :cond_0
+
+    aget-object v2, p0, v1
+
+    invoke-virtual {p1, v2, v0}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

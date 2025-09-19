@@ -1,136 +1,120 @@
 .class public final Lbw8;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lho7;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic Y:Ldw8;
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public final synthetic Z:Ls72;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;ILjava/lang/Object;)V
+.method public constructor <init>(Ldw8;Ls72;Lkotlin/coroutines/Continuation;)V
     .registers 4
 
-    iput p2, p0, Lbw8;->a:I
+    iput-object p1, p0, Lbw8;->Y:Ldw8;
 
-    iput-object p1, p0, Lbw8;->b:Ljava/lang/Object;
+    iput-object p2, p0, Lbw8;->Z:Ls72;
 
-    iput-object p3, p0, Lbw8;->c:Ljava/lang/Object;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgx8;)V
-    .registers 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lbw8;->a:I
+    check-cast p1, Ly04;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, p0, Lbw8;->b:Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lbw8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast v0, Lz49;
+    move-result-object p0
 
-    iget-object v0, v0, Lz49;->X:Lq89;
+    check-cast p0, Lbw8;
 
-    iget-object p0, p0, Lbw8;->c:Ljava/lang/Object;
+    sget-object p1, Lylf;->a:Lylf;
 
-    check-cast p0, Lone/me/messages/list/loader/MessageModel;
+    invoke-virtual {p0, p1}, Lbw8;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-wide v1, p0, Lone/me/messages/list/loader/MessageModel;->a:J
+    move-result-object p0
 
-    iget-object p0, v0, Lq89;->a:Lone/me/messages/list/ui/MessagesListWidget;
-
-    invoke-static {p0, p1, v1, v2}, Lone/me/messages/list/ui/MessagesListWidget;->y0(Lone/me/messages/list/ui/MessagesListWidget;Lgx8;J)V
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lbw8;->b:Ljava/lang/Object;
-
-    check-cast v0, Ltv8;
-
-    iget-object p0, p0, Lbw8;->c:Ljava/lang/Object;
-
-    check-cast p0, Lcw8;
-
-    iget-wide v1, p0, Lcw8;->E0:J
-
-    check-cast v0, Lq89;
-
-    iget-object p0, v0, Lq89;->a:Lone/me/messages/list/ui/MessagesListWidget;
-
-    invoke-static {p0, p1, v1, v2}, Lone/me/messages/list/ui/MessagesListWidget;->y0(Lone/me/messages/list/ui/MessagesListWidget;Lgx8;J)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public final b(Ljava/lang/String;Llo7;Landroid/text/style/ClickableSpan;)V
-    .registers 6
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    iget p3, p0, Lbw8;->a:I
+    new-instance p1, Lbw8;
 
-    packed-switch p3, :pswitch_data_0
+    iget-object v0, p0, Lbw8;->Y:Ldw8;
 
-    iget-object p3, p0, Lbw8;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lbw8;->Z:Ls72;
 
-    check-cast p3, Lz49;
+    invoke-direct {p1, v0, p0, p2}, Lbw8;-><init>(Ldw8;Ls72;Lkotlin/coroutines/Continuation;)V
 
-    iget-object p3, p3, Lz49;->X:Lq89;
+    return-object p1
+.end method
 
-    iget-object p0, p0, Lbw8;->c:Ljava/lang/Object;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 5
 
-    check-cast p0, Lone/me/messages/list/loader/MessageModel;
+    iget v0, p0, Lbw8;->X:I
 
-    iget-wide v0, p0, Lone/me/messages/list/loader/MessageModel;->a:J
+    iget-object v1, p0, Lbw8;->Y:Ldw8;
 
-    iget-object p0, p3, Lq89;->a:Lone/me/messages/list/ui/MessagesListWidget;
+    const/4 v2, 0x1
 
-    invoke-static {p0, p1, p2, v0, v1}, Lone/me/messages/list/ui/MessagesListWidget;->x0(Lone/me/messages/list/ui/MessagesListWidget;Ljava/lang/String;Llo7;J)V
+    if-eqz v0, :cond_1
 
-    return-void
+    if-ne v0, v2, :cond_0
 
-    :pswitch_0
-    iget-object p3, p0, Lbw8;->b:Ljava/lang/Object;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    check-cast p3, Ltv8;
+    goto :goto_0
 
-    iget-object p0, p0, Lbw8;->c:Ljava/lang/Object;
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    check-cast p0, Lcw8;
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    iget-wide v0, p0, Lcw8;->E0:J
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    check-cast p3, Lq89;
+    throw p0
 
-    iget-object p0, p3, Lq89;->a:Lone/me/messages/list/ui/MessagesListWidget;
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-static {p0, p1, p2, v0, v1}, Lone/me/messages/list/ui/MessagesListWidget;->x0(Lone/me/messages/list/ui/MessagesListWidget;Ljava/lang/String;Llo7;J)V
+    iput v2, p0, Lbw8;->X:I
 
-    return-void
+    iget-object p1, p0, Lbw8;->Z:Ls72;
 
-    nop
+    invoke-static {v1, p1, p0}, Ldw8;->s(Ldw8;Ls72;Ljx3;)Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    invoke-static {v1}, Ldw8;->q(Ldw8;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

@@ -3,22 +3,8 @@
 
 
 # static fields
-.field public static ViewPager2:[I
+.field public static threads_state_recycler:I = 0x7f0a0c33
 
-.field public static ViewPager2_android_orientation:I
+.field public static threads_state_state_view:I = 0x7f0a0c34
 
-
-# direct methods
-.method public static constructor <clinit>()V
-    .registers 1
-
-    const v0, 0x10100c4
-
-    filled-new-array {v0}, [I
-
-    move-result-object v0
-
-    sput-object v0, La6c;->ViewPager2:[I
-
-    return-void
-.end method
+.field public static threads_state_toolbar:I = 0x7f0a0c35

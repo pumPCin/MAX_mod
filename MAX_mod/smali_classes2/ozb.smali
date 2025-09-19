@@ -1,24 +1,49 @@
-.class public abstract Lozb;
-.super Ljava/lang/Object;
+.class public final Lozb;
+.super Ljx3;
+.source "SourceFile"
 
 
-# static fields
-.field public static pinbars_group_call_bar:I = 0x7f0a08e4
+# instance fields
+.field public final synthetic X:Lqzb;
 
-.field public static pinbars_group_call_bar_button:I = 0x7f0a08e5
+.field public Y:I
 
-.field public static pinbars_group_call_bar_divider:I = 0x7f0a08e6
+.field public synthetic o:Ljava/lang/Object;
 
-.field public static pinbars_group_call_bar_stack:I = 0x7f0a08e7
 
-.field public static pinbars_group_call_bar_subtitle:I = 0x7f0a08e8
+# direct methods
+.method public constructor <init>(Lqzb;Ljx3;)V
+    .registers 3
 
-.field public static pinbars_group_call_bar_title:I = 0x7f0a08e9
+    iput-object p1, p0, Lozb;->X:Lqzb;
 
-.field public static pinbars_message:I = 0x7f0a08ea
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
-.field public static pinbars_miniplayer:I = 0x7f0a08eb
+    return-void
+.end method
 
-.field public static pinbars_root:I = 0x7f0a08ec
 
-.field public static unknown_contact:I = 0x7f0a0c55
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iput-object p1, p0, Lozb;->o:Ljava/lang/Object;
+
+    iget p1, p0, Lozb;->Y:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lozb;->Y:I
+
+    iget-object p1, p0, Lozb;->X:Lqzb;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0, v0, p0}, Lqzb;->p(Lqzb;Lkj5;Lwi5;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method

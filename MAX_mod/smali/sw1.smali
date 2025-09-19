@@ -1,86 +1,85 @@
 .class public final Lsw1;
-.super Ljava/lang/Object;
+.super Lys8;
 .source "SourceFile"
-
-# interfaces
-.implements Ltx1;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/Executor;
+.field public m:Lcu7;
 
-.field public final b:Lvw1;
-
-.field public final c:I
+.field public final n:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lvw1;Ljad;I)V
-    .registers 4
+.method public constructor <init>(Ljava/lang/Object;)V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lys8;-><init>()V
 
-    iput-object p1, p0, Lsw1;->b:Lvw1;
-
-    iput-object p2, p0, Lsw1;->a:Ljava/util/concurrent/Executor;
-
-    iput p3, p0, Lsw1;->c:I
+    iput-object p1, p0, Lsw1;->n:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lcq7;
-    .registers 5
+.method public final d()Ljava/lang/Object;
+    .registers 2
 
-    iget-object v0, p0, Lsw1;->b:Lvw1;
+    iget-object v0, p0, Lsw1;->m:Lcu7;
 
-    iget v1, p0, Lsw1;->c:I
+    if-nez v0, :cond_0
 
-    invoke-virtual {v0, v1}, Lvw1;->a(I)Lcq7;
+    iget-object p0, p0, Lsw1;->n:Ljava/lang/Object;
 
-    move-result-object v0
+    return-object p0
 
-    invoke-static {v0}, Lya6;->a(Lcq7;)Lya6;
-
-    move-result-object v0
-
-    new-instance v1, Lpw1;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, v2}, Lpw1;-><init>(I)V
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v2, Lkxg;
-
-    const/16 v3, 0xd
-
-    invoke-direct {v2, v3, v1}, Lkxg;-><init>(ILjava/lang/Object;)V
-
-    iget-object p0, p0, Lsw1;->a:Ljava/util/concurrent/Executor;
-
-    invoke-static {v0, v2, p0}, Lbp;->V(Lcq7;Llu;Ljava/util/concurrent/Executor;)Lu32;
+    :cond_0
+    invoke-virtual {v0}, Lcu7;->d()Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final b()Lcq7;
+.method public final l(Lcu7;Le8a;)V
     .registers 3
 
-    new-instance v0, Lkrc;
+    const/4 p0, 0x0
 
-    const/16 v1, 0x1a
+    throw p0
+.end method
 
-    invoke-direct {v0, v1, p0}, Lkrc;-><init>(ILjava/lang/Object;)V
+.method public final m(Lwn9;)V
+    .registers 4
 
-    invoke-static {v0}, Luo9;->q(Lls1;)Lns1;
+    iget-object v0, p0, Lsw1;->m:Lcu7;
 
-    move-result-object p0
+    if-eqz v0, :cond_0
 
-    return-object p0
+    iget-object v1, p0, Lys8;->l:Lh2d;
+
+    invoke-virtual {v1, v0}, Lh2d;->c(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxs8;
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, v0, Lxs8;->a:Lcu7;
+
+    invoke-virtual {v1, v0}, Lcu7;->j(Le8a;)V
+
+    :cond_0
+    iput-object p1, p0, Lsw1;->m:Lcu7;
+
+    new-instance v0, Lrw1;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1, p0}, Lrw1;-><init>(ILjava/lang/Object;)V
+
+    invoke-super {p0, p1, v0}, Lys8;->l(Lcu7;Le8a;)V
+
+    return-void
 .end method

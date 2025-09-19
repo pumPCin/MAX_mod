@@ -1,123 +1,35 @@
-.class public final Lr0a;
-.super Lgt0;
+.class public abstract Lr0a;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public e:Ljava/util/LinkedList;
+# direct methods
+.method public static a(Landroid/app/Notification$MessagingStyle;Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;
+    .registers 2
 
+    invoke-virtual {p0, p1}, Landroid/app/Notification$MessagingStyle;->addMessage(Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;
 
-# virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .registers 4
+    move-result-object p0
 
-    iget-object v0, p0, Lr0a;->e:Ljava/util/LinkedList;
-
-    invoke-virtual {v0}, Ljava/util/LinkedList;->poll()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lq0a;
-
-    if-nez v0, :cond_0
-
-    new-instance v0, Lq0a;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lq0a;->a:Ljava/lang/ref/SoftReference;
-
-    iput-object v1, v0, Lq0a;->b:Ljava/lang/ref/SoftReference;
-
-    iput-object v1, v0, Lq0a;->c:Ljava/lang/ref/SoftReference;
-
-    :cond_0
-    new-instance v1, Ljava/lang/ref/SoftReference;
-
-    invoke-direct {v1, p1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, v0, Lq0a;->a:Ljava/lang/ref/SoftReference;
-
-    new-instance v1, Ljava/lang/ref/SoftReference;
-
-    invoke-direct {v1, p1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, v0, Lq0a;->b:Ljava/lang/ref/SoftReference;
-
-    new-instance v1, Ljava/lang/ref/SoftReference;
-
-    invoke-direct {v1, p1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, v0, Lq0a;->c:Ljava/lang/ref/SoftReference;
-
-    iget-object p0, p0, Lgt0;->c:Ljava/util/LinkedList;
-
-    invoke-virtual {p0, v0}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
-
-    return-void
+    return-object p0
 .end method
 
-.method public final b()Ljava/lang/Object;
-    .registers 5
+.method public static b(Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;
+    .registers 2
 
-    iget-object v0, p0, Lgt0;->c:Ljava/util/LinkedList;
+    new-instance v0, Landroid/app/Notification$MessagingStyle;
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->poll()Ljava/lang/Object;
+    invoke-direct {v0, p0}, Landroid/app/Notification$MessagingStyle;-><init>(Ljava/lang/CharSequence;)V
 
-    move-result-object v0
+    return-object v0
+.end method
 
-    check-cast v0, Lq0a;
+.method public static c(Landroid/app/Notification$MessagingStyle;Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;
+    .registers 2
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0, p1}, Landroid/app/Notification$MessagingStyle;->setConversationTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;
 
-    iget-object v1, v0, Lq0a;->a:Ljava/lang/ref/SoftReference;
+    move-result-object p0
 
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_0
-
-    move-object v1, v2
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    :goto_0
-    iget-object v3, v0, Lq0a;->a:Ljava/lang/ref/SoftReference;
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v3}, Ljava/lang/ref/Reference;->clear()V
-
-    iput-object v2, v0, Lq0a;->a:Ljava/lang/ref/SoftReference;
-
-    :cond_1
-    iget-object v3, v0, Lq0a;->b:Ljava/lang/ref/SoftReference;
-
-    if-eqz v3, :cond_2
-
-    invoke-virtual {v3}, Ljava/lang/ref/Reference;->clear()V
-
-    iput-object v2, v0, Lq0a;->b:Ljava/lang/ref/SoftReference;
-
-    :cond_2
-    iget-object v3, v0, Lq0a;->c:Ljava/lang/ref/SoftReference;
-
-    if-eqz v3, :cond_3
-
-    invoke-virtual {v3}, Ljava/lang/ref/Reference;->clear()V
-
-    iput-object v2, v0, Lq0a;->c:Ljava/lang/ref/SoftReference;
-
-    :cond_3
-    iget-object p0, p0, Lr0a;->e:Ljava/util/LinkedList;
-
-    invoke-virtual {p0, v0}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
-
-    return-object v1
+    return-object p0
 .end method

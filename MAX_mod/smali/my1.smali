@@ -2,87 +2,100 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lfic;
+
 
 # static fields
-.field public static final a:Lly1;
+.field public static final g:Ld90;
+
+.field public static final h:Ld90;
+
+.field public static final i:Ld90;
+
+.field public static final j:Ld90;
+
+.field public static final k:Ld90;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 4
 
-    new-instance v0, Lly1;
+    new-instance v0, Ld90;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "camerax.core.camera.useCaseConfigFactory"
 
-    sput-object v0, Lmy1;->a:Lly1;
+    const-class v2, Lrqf;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lmy1;->g:Ld90;
+
+    new-instance v0, Ld90;
+
+    const-string v1, "camerax.core.camera.useCaseCombinationRequiredRule"
+
+    const-class v2, Ljava/lang/Integer;
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lmy1;->h:Ld90;
+
+    new-instance v0, Ld90;
+
+    const-string v1, "camerax.core.camera.SessionProcessor"
+
+    const-class v2, Lnmd;
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lmy1;->i:Ld90;
+
+    new-instance v0, Ld90;
+
+    const-string v1, "camerax.core.camera.isPostviewSupported"
+
+    const-class v2, Ljava/lang/Boolean;
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lmy1;->j:Ld90;
+
+    new-instance v0, Ld90;
+
+    const-string v1, "camerax.core.camera.isCaptureProcessProgressSupported"
+
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    sput-object v0, Lmy1;->k:Ld90;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .registers 1
-
-    return-void
-.end method
-
-.method public abstract b(F)Lcq7;
-.end method
-
-.method public abstract c(Lrf3;)V
-.end method
-
-.method public abstract d(F)Lcq7;
-.end method
-
-.method public abstract e()Landroid/graphics/Rect;
-.end method
-
-.method public abstract f(I)V
-.end method
-
-.method public g(Lsx6;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public abstract h(Lkz4;)Lcq7;
-.end method
-
-.method public abstract i(Ljava/util/ArrayList;II)Lcq7;
-.end method
-
-.method public abstract j(Lpdd;)V
-.end method
-
-.method public abstract k(Z)Lcq7;
-.end method
-
-.method public l(II)Lcq7;
+.method public x()V
     .registers 3
 
-    new-instance p0, Lky1;
+    const/4 v0, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v1, Lmy1;->i:Ld90;
 
-    invoke-static {p0}, Lbp;->x(Ljava/lang/Object;)Loz6;
+    invoke-interface {p0, v1, v0}, Lfic;->c(Ld90;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
-.end method
-
-.method public abstract m()Lrf3;
-.end method
-
-.method public abstract n()V
-.end method
-
-.method public o()V
-    .registers 1
+    if-nez p0, :cond_0
 
     return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/ClassCastException;
+
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
+
+    throw p0
 .end method

@@ -1,47 +1,39 @@
 .class public final Lc9f;
-.super Ljava/lang/Object;
+.super Landroid/view/ViewOutlineProvider;
 .source "SourceFile"
-
-# interfaces
-.implements Le9f;
 
 
 # instance fields
-.field public final a:Lvte;
+.field public a:I
 
-.field public final b:I
-
-.field public final c:Z
+.field public b:I
 
 
-# direct methods
-.method public synthetic constructor <init>(IILvte;)V
-    .registers 4
+# virtual methods
+.method public final getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
+    .registers 6
 
-    and-int/lit8 p2, p2, 0x2
+    iget v0, p0, Lc9f;->a:I
 
-    if-eqz p2, :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    sget p1, Ltsc;->A0:I
+    move-result v1
 
-    :cond_0
-    const/4 p2, 0x1
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
-    invoke-direct {p0, p1, p3, p2}, Lc9f;-><init>(ILvte;Z)V
+    move-result v2
 
-    return-void
-.end method
+    iget p0, p0, Lc9f;->b:I
 
-.method public constructor <init>(ILvte;Z)V
-    .registers 4
+    sub-int/2addr v2, p0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p0, 0x0
 
-    iput-object p2, p0, Lc9f;->a:Lvte;
+    invoke-virtual {p2, p0, v0, v1, v2}, Landroid/graphics/Outline;->setRect(IIII)V
 
-    iput p1, p0, Lc9f;->b:I
+    const/4 p0, 0x1
 
-    iput-boolean p3, p0, Lc9f;->c:Z
+    invoke-virtual {p1, p0}, Landroid/view/View;->setClipToOutline(Z)V
 
     return-void
 .end method

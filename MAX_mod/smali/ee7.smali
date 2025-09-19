@@ -1,130 +1,231 @@
 .class public final Lee7;
-.super Ljava/lang/Object;
+.super Lgmf;
 .source "SourceFile"
-
-# interfaces
-.implements Lx35;
-
-
-# static fields
-.field public static final X:Lbe7;
-
-.field public static final Y:Lce7;
-
-.field public static final Z:Lce7;
-
-.field public static final n0:Lde7;
 
 
 # instance fields
-.field public final a:Ljava/util/HashMap;
+.field public final X:Ljava/util/Iterator;
 
-.field public final b:Ljava/util/HashMap;
+.field public final synthetic Y:Ljava/lang/Object;
 
-.field public final c:Lbe7;
+.field public b:I
 
-.field public o:Z
+.field public c:Ljava/lang/Object;
+
+.field public final synthetic o:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .registers 2
 
-    new-instance v0, Lbe7;
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    invoke-direct {p0, v0}, Lgmf;-><init>(I)V
 
-    invoke-direct {v0, v1}, Lbe7;-><init>(I)V
+    const/4 v0, 0x2
 
-    sput-object v0, Lee7;->X:Lbe7;
-
-    new-instance v0, Lce7;
-
-    invoke-direct {v0, v1}, Lce7;-><init>(I)V
-
-    sput-object v0, Lee7;->Y:Lce7;
-
-    new-instance v0, Lce7;
-
-    const/4 v1, 0x1
-
-    invoke-direct {v0, v1}, Lce7;-><init>(I)V
-
-    sput-object v0, Lee7;->Z:Lce7;
-
-    new-instance v0, Lde7;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lee7;->n0:Lde7;
+    iput v0, p0, Lee7;->b:I
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/util/Iterator;Lfgb;)V
     .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
-    new-instance v0, Ljava/util/HashMap;
+    iput v0, p0, Lee7;->o:I
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    iput-object p1, p0, Lee7;->X:Ljava/util/Iterator;
 
-    iput-object v0, p0, Lee7;->a:Ljava/util/HashMap;
+    iput-object p2, p0, Lee7;->Y:Ljava/lang/Object;
 
-    new-instance v1, Ljava/util/HashMap;
+    invoke-direct {p0}, Lee7;-><init>()V
 
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+    return-void
+.end method
 
-    iput-object v1, p0, Lee7;->b:Ljava/util/HashMap;
+.method public constructor <init>(Ltnd;)V
+    .registers 3
 
-    sget-object v2, Lee7;->X:Lbe7;
+    const/4 v0, 0x1
 
-    iput-object v2, p0, Lee7;->c:Lbe7;
+    iput v0, p0, Lee7;->o:I
 
-    const/4 v2, 0x0
+    iput-object p1, p0, Lee7;->Y:Ljava/lang/Object;
 
-    iput-boolean v2, p0, Lee7;->o:Z
+    invoke-direct {p0}, Lee7;-><init>()V
 
-    sget-object p0, Lee7;->Y:Lce7;
+    iget-object p1, p1, Ltnd;->a:Ljava/util/Set;
 
-    const-class v2, Ljava/lang/String;
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v1, v2, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p1
 
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object p0, Lee7;->Z:Lce7;
-
-    const-class v2, Ljava/lang/Boolean;
-
-    invoke-virtual {v1, v2, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object p0, Lee7;->n0:Lde7;
-
-    const-class v2, Ljava/util/Date;
-
-    invoke-virtual {v1, v2, p0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object p1, p0, Lee7;->X:Ljava/util/Iterator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Class;Lt0a;)Lx35;
-    .registers 4
+.method public final hasNext()Z
+    .registers 5
 
-    iget-object v0, p0, Lee7;->a:Ljava/util/HashMap;
+    iget v0, p0, Lee7;->b:I
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, 0x4
 
-    iget-object p2, p0, Lee7;->b:Ljava/util/HashMap;
+    if-eq v0, v1, :cond_6
 
-    invoke-virtual {p2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lmw1;->t(I)I
 
-    return-object p0
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_5
+
+    const/4 v3, 0x2
+
+    if-eq v0, v3, :cond_4
+
+    iput v1, p0, Lee7;->b:I
+
+    iget v0, p0, Lee7;->o:I
+
+    packed-switch v0, :pswitch_data_0
+
+    :cond_0
+    iget-object v0, p0, Lee7;->X:Ljava/util/Iterator;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lee7;->Y:Ljava/lang/Object;
+
+    check-cast v1, Ltnd;
+
+    iget-object v1, v1, Ltnd;->b:Ljava/util/Set;
+
+    invoke-interface {v1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v0, 0x3
+
+    iput v0, p0, Lee7;->b:I
+
+    :goto_0
+    const/4 v0, 0x0
+
+    goto :goto_1
+
+    :cond_2
+    :pswitch_0
+    iget-object v0, p0, Lee7;->X:Ljava/util/Iterator;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lee7;->Y:Ljava/lang/Object;
+
+    check-cast v1, Lfgb;
+
+    invoke-interface {v1, v0}, Lfgb;->apply(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    goto :goto_1
+
+    :cond_3
+    const/4 v0, 0x3
+
+    iput v0, p0, Lee7;->b:I
+
+    goto :goto_0
+
+    :goto_1
+    iput-object v0, p0, Lee7;->c:Ljava/lang/Object;
+
+    iget v0, p0, Lee7;->b:I
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_4
+
+    iput v2, p0, Lee7;->b:I
+
+    return v2
+
+    :cond_4
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_5
+    return v2
+
+    :cond_6
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    throw p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .registers 3
+
+    invoke-virtual {p0}, Lee7;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lee7;->b:I
+
+    iget-object v0, p0, Lee7;->c:Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lee7;->c:Ljava/lang/Object;
+
+    return-object v0
+
+    :cond_0
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw p0
 .end method

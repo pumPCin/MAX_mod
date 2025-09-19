@@ -1,53 +1,62 @@
-.class public final Lzz2;
-.super Lcx3;
+.class public final synthetic Lzz2;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lbc6;
 
 
 # instance fields
-.field public X:J
+.field public final synthetic a:I
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lf03;
-
-.field public n0:I
-
-.field public o:Lf03;
+.field public final synthetic b:Ls72;
 
 
 # direct methods
-.method public constructor <init>(Lf03;Lcx3;)V
+.method public synthetic constructor <init>(Ls72;I)V
     .registers 3
 
-    iput-object p1, p0, Lzz2;->Z:Lf03;
+    iput p2, p0, Lzz2;->a:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lzz2;->b:Ls72;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iput-object p1, p0, Lzz2;->Y:Ljava/lang/Object;
+    iget v0, p0, Lzz2;->a:I
 
-    iget p1, p0, Lzz2;->n0:I
+    check-cast p1, Ljava/lang/Long;
 
-    const/high16 v0, -0x80000000
+    packed-switch v0, :pswitch_data_0
 
-    or-int/2addr p1, v0
+    iget-object p0, p0, Lzz2;->b:Ls72;
 
-    iput p1, p0, Lzz2;->n0:I
-
-    iget-object p1, p0, Lzz2;->Z:Lf03;
-
-    const-wide/16 v0, 0x0
-
-    invoke-static {p1, v0, v1, p0}, Lf03;->a(Lf03;JLcx3;)Ljava/lang/Comparable;
+    invoke-static {p0}, Lzce;->a(Ljava/lang/Object;)Lyce;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lzz2;->b:Ls72;
+
+    invoke-static {p0}, Lzce;->a(Ljava/lang/Object;)Lyce;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

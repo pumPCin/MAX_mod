@@ -1,67 +1,118 @@
-.class public final synthetic Lgk2;
-.super Ljava/lang/Object;
+.class public final Lgk2;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/function/UnaryOperator;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:Lml2;
+.field public X:I
 
-.field public final synthetic b:Ldg8;
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public final synthetic c:Lvw8;
+.field public final synthetic Z:Lql2;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lml2;Ldg8;Lvw8;)V
-    .registers 4
+.method public constructor <init>(Lql2;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgk2;->Z:Lql2;
 
-    iput-object p1, p0, Lgk2;->a:Lml2;
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Lgk2;->b:Ldg8;
-
-    iput-object p3, p0, Lgk2;->c:Lvw8;
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    check-cast p1, Ldg8;
+    check-cast p1, Lq09;
 
-    iget-object p1, p0, Lgk2;->a:Lml2;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, p0, Lgk2;->b:Ldg8;
+    invoke-virtual {p0, p1, p2}, Lgk2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-static {p1, v0}, Lml2;->u(Lml2;Ldg8;)Z
+    move-result-object p0
 
-    move-result v1
+    check-cast p0, Lgk2;
 
-    if-eqz v1, :cond_0
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lgk2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Lgk2;
+
+    iget-object p0, p0, Lgk2;->Z:Lql2;
+
+    invoke-direct {v0, p0, p2}, Lgk2;-><init>(Lql2;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lgk2;->Y:Ljava/lang/Object;
 
     return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    iget v0, p0, Lgk2;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_0
 
     :cond_0
-    new-instance v2, Ldg8;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    iget-object p0, p0, Lgk2;->c:Lvw8;
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    iget-wide v3, p0, Lvw8;->b:J
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    iget-object v7, p1, Lml2;->B0:Ljava/util/Set;
+    throw p0
 
-    iget-wide v8, p1, Lml2;->b:J
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    move-wide v5, v3
+    iget-object p1, p0, Lgk2;->Y:Ljava/lang/Object;
 
-    invoke-direct/range {v2 .. v9}, Ldg8;-><init>(JJLjava/util/Set;J)V
+    check-cast p1, Lq09;
 
-    return-object v2
+    iput v1, p0, Lgk2;->X:I
+
+    iget-object v0, p0, Lgk2;->Z:Lql2;
+
+    invoke-static {v0, p1, p0}, Lql2;->s(Lql2;Lq09;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

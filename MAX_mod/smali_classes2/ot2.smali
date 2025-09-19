@@ -1,180 +1,111 @@
 .class public final Lot2;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:Landroid/graphics/RectF;
+.field public final synthetic Y:Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Landroid/graphics/RectF;)V
-    .registers 4
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lot2;->Y:Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;
 
-    iput-object p1, p0, Lot2;->a:Ljava/lang/String;
+    const/4 p2, 0x2
 
-    iput-object p2, p0, Lot2;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Lot2;->c:Landroid/graphics/RectF;
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    const/4 v0, 0x1
+    check-cast p1, Lpt2;
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return v0
+    invoke-virtual {p0, p1, p2}, Lot2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    :cond_0
-    instance-of v1, p1, Lot2;
+    move-result-object p0
 
-    const/4 v2, 0x0
+    check-cast p0, Lot2;
 
-    if-nez v1, :cond_1
+    sget-object p1, Lylf;->a:Lylf;
 
-    return v2
+    invoke-virtual {p0, p1}, Lot2;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    check-cast p1, Lot2;
-
-    iget-object v1, p0, Lot2;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Lot2;->a:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lot2;->b:Ljava/lang/String;
-
-    iget-object v3, p1, Lot2;->b:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object p0, p0, Lot2;->c:Landroid/graphics/RectF;
-
-    iget-object p1, p1, Lot2;->c:Landroid/graphics/RectF;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
+    return-object p1
 .end method
 
-.method public final hashCode()I
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
+
+    new-instance v0, Lot2;
+
+    iget-object p0, p0, Lot2;->Y:Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;
+
+    invoke-direct {v0, p2, p0}, Lot2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;)V
+
+    iput-object p1, v0, Lot2;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lot2;->X:Ljava/lang/Object;
+
+    check-cast p1, Lpt2;
+
+    sget-object v0, Lpt2;->a:Lpt2;
+
+    invoke-static {p1, v0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    sget-object p1, Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;->z0:[Lxi7;
+
+    iget-object p0, p0, Lot2;->Y:Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;
+
+    invoke-virtual {p0}, Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;->B0()Lone/me/sdk/uikit/common/button/OneMeButton;
+
+    move-result-object p1
 
     const/4 v0, 0x0
 
-    iget-object v1, p0, Lot2;->a:Ljava/lang/String;
+    invoke-virtual {p1, v0}, Lone/me/sdk/uikit/common/button/OneMeButton;->setProgressEnabled(Z)V
 
-    if-nez v1, :cond_0
+    new-instance p1, Lqoa;
 
-    move v1, v0
+    invoke-direct {p1, p0}, Lqoa;-><init>(Lone/me/sdk/arch/Widget;)V
 
-    goto :goto_0
+    sget p0, Lxpa;->b:I
+
+    new-instance v0, Lp2f;
+
+    invoke-direct {v0, p0}, Lp2f;-><init>(I)V
+
+    invoke-virtual {p1, v0}, Lqoa;->g(Lu2f;)V
+
+    invoke-virtual {p1}, Lqoa;->i()Lpoa;
 
     :cond_0
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    :goto_0
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-object v2, p0, Lot2;->b:Ljava/lang/String;
-
-    if-nez v2, :cond_1
-
-    move v2, v0
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
-
-    move-result v2
-
-    :goto_1
-    add-int/2addr v1, v2
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-object p0, p0, Lot2;->c:Landroid/graphics/RectF;
-
-    if-nez p0, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {p0}, Landroid/graphics/RectF;->hashCode()I
-
-    move-result v0
-
-    :goto_2
-    add-int/2addr v1, v0
-
-    return v1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 6
-
-    const-string v0, ", croppedIconPath="
-
-    const-string v1, ", relativeCrop="
-
-    const-string v2, "ChatTitleIconState(newIconPath="
-
-    iget-object v3, p0, Lot2;->a:Ljava/lang/String;
-
-    iget-object v4, p0, Lot2;->b:Ljava/lang/String;
-
-    invoke-static {v2, v3, v0, v4, v1}, Lfge;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object p0, p0, Lot2;->c:Landroid/graphics/RectF;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

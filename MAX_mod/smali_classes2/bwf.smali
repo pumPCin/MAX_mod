@@ -1,93 +1,126 @@
 .class public final Lbwf;
-.super Ls2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic c:I
+.field public final a:Lhl8;
 
-.field public final synthetic o:Lcwf;
+.field public final b:Lewf;
+
+.field public final c:Lnn5;
+
+.field public final d:Lzc;
+
+.field public final e:Lb6d;
+
+.field public final f:Lv5d;
+
+.field public final g:La6d;
+
+.field public final h:Lncg;
+
+.field public final i:Ljava/util/HashMap;
 
 
 # direct methods
-.method public constructor <init>(Lcwf;I)V
-    .registers 3
+.method public constructor <init>(Lhl8;Lewf;Lnn5;Lzc;Lb6d;Lv5d;La6d;)V
+    .registers 9
 
-    iput p2, p0, Lbwf;->c:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbwf;->o:Lcwf;
+    new-instance v0, Lncg;
 
-    const/16 p1, 0x9
+    invoke-direct {v0}, Lncg;-><init>()V
 
-    packed-switch p2, :pswitch_data_0
+    iput-object v0, p0, Lbwf;->h:Lncg;
 
-    const/4 p2, 0x0
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {p0, p1, p2}, Ls2;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
+    iput-object v0, p0, Lbwf;->i:Ljava/util/HashMap;
+
+    iput-object p1, p0, Lbwf;->a:Lhl8;
+
+    iput-object p2, p0, Lbwf;->b:Lewf;
+
+    iput-object p3, p0, Lbwf;->c:Lnn5;
+
+    iput-object p4, p0, Lbwf;->d:Lzc;
+
+    iput-object p5, p0, Lbwf;->e:Lb6d;
+
+    iput-object p6, p0, Lbwf;->f:Lv5d;
+
+    iput-object p7, p0, Lbwf;->g:La6d;
 
     return-void
-
-    :pswitch_0
-    sget-object p2, Lwvf;->a:Lwvf;
-
-    invoke-direct {p0, p1, p2}, Ls2;-><init>(ILjava/lang/Object;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+.method public final declared-synchronized a(Lsvf;)V
+    .registers 7
 
-    iget v0, p0, Lbwf;->c:I
+    monitor-enter p0
 
-    packed-switch v0, :pswitch_data_0
+    :try_start_0
+    iget-object v0, p0, Lbwf;->i:Ljava/util/HashMap;
 
-    invoke-static {p1, p2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result v0
+    iget-object v0, p0, Lbwf;->b:Lewf;
 
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Lewf;->a()Lu2e;
 
-    check-cast p2, Lwvf;
+    move-result-object v0
 
-    check-cast p1, Lwvf;
+    new-instance v1, Lyvf;
 
-    iget-object p0, p0, Lbwf;->o:Lcwf;
+    const/4 v2, 0x2
 
-    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+    invoke-direct {v1, p1, v2}, Lyvf;-><init>(Lsvf;I)V
 
-    :cond_0
+    new-instance v2, Lic3;
+
+    const/4 v3, 0x2
+
+    invoke-direct {v2, v0, v3, v1}, Lic3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v2}, Lhc3;->k()Ly4a;
+
+    move-result-object v0
+
+    sget-object v1, Lvyg;->d:Lsh9;
+
+    new-instance v2, Lyvf;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v2, p1, v3}, Lyvf;-><init>(Lsvf;I)V
+
+    new-instance v3, Li5;
+
+    const/16 v4, 0x17
+
+    invoke-direct {v3, v4, p1}, Li5;-><init>(ILjava/lang/Object;)V
+
+    invoke-static {v0, v1, v2, v3}, Lzxa;->y(Ly4a;Lpm3;Lpm3;Lc6;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
     return-void
 
-    :pswitch_0
-    invoke-static {p1, p2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :catchall_0
+    move-exception p1
 
-    move-result v0
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-nez v0, :cond_1
-
-    check-cast p2, Lzvf;
-
-    check-cast p1, Lzvf;
-
-    iget-object p0, p0, Lbwf;->o:Lcwf;
-
-    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
-
-    :cond_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw p1
 .end method

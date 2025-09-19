@@ -1,100 +1,140 @@
-.class public final Lqi2;
-.super Lxie;
+.class public final enum Lqi2;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Landroid/os/Parcelable;
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lqi2;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final synthetic Y:Lone/me/profile/screens/media/ChatMediaTabWidget;
+.field public static final enum a:Lqi2;
+
+.field public static final enum b:Lqi2;
+
+.field public static final synthetic c:[Lqi2;
+
+.field public static final synthetic o:Ly75;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/profile/screens/media/ChatMediaTabWidget;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 6
 
-    iput-object p2, p0, Lqi2;->Y:Lone/me/profile/screens/media/ChatMediaTabWidget;
+    new-instance v0, Lqi2;
 
-    const/4 p2, 0x2
+    const-string v1, "MEDIA"
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lqi2;->a:Lqi2;
+
+    new-instance v1, Lqi2;
+
+    const-string v2, "FILE"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v2, Lqi2;
+
+    const-string v3, "LINK"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v3, Lqi2;
+
+    const-string v4, "AUDIO"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lqi2;->b:Lqi2;
+
+    filled-new-array {v0, v1, v2, v3}, [Lqi2;
+
+    move-result-object v0
+
+    sput-object v0, Lqi2;->c:[Lqi2;
+
+    new-instance v1, Ly75;
+
+    invoke-direct {v1, v0}, Ly75;-><init>([Ljava/lang/Enum;)V
+
+    sput-object v1, Lqi2;->o:Ly75;
+
+    new-instance v0, Lz7;
+
+    const/16 v1, 0x12
+
+    invoke-direct {v0, v1}, Lz7;-><init>(I)V
+
+    sput-object v0, Lqi2;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Lqi2;
+    .registers 2
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    const-class v0, Lqi2;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lqi2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
     check-cast p0, Lqi2;
 
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lqi2;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+    return-object p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public static values()[Lqi2;
+    .registers 1
 
-    new-instance v0, Lqi2;
+    sget-object v0, Lqi2;->c:[Lqi2;
 
-    iget-object p0, p0, Lqi2;->Y:Lone/me/profile/screens/media/ChatMediaTabWidget;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    invoke-direct {v0, p2, p0}, Lqi2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/profile/screens/media/ChatMediaTabWidget;)V
+    move-result-object v0
 
-    iput-object p1, v0, Lqi2;->X:Ljava/lang/Object;
+    check-cast v0, [Lqi2;
 
     return-object v0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+# virtual methods
+.method public final describeContents()I
+    .registers 1
 
-    iget-object p1, p0, Lqi2;->X:Ljava/lang/Object;
+    const/4 p0, 0x0
 
-    check-cast p1, Lmi2;
+    return p0
+.end method
 
-    sget-object v0, Lone/me/profile/screens/media/ChatMediaTabWidget;->r0:[Lsf7;
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
 
-    iget-object p0, p0, Lqi2;->Y:Lone/me/profile/screens/media/ChatMediaTabWidget;
-
-    iget-object p0, p0, Lone/me/profile/screens/media/ChatMediaTabWidget;->X:Lin0;
-
-    sget-object v0, Lone/me/profile/screens/media/ChatMediaTabWidget;->r0:[Lsf7;
-
-    const/4 v1, 0x0
-
-    aget-object v0, v0, v1
-
-    invoke-virtual {p0}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Llna;
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    iget-object v0, p1, Lmi2;->b:Ljava/lang/String;
-
-    invoke-virtual {p0, v0}, Llna;->setTitle(Ljava/lang/CharSequence;)V
-
-    iget-object p1, p1, Lmi2;->a:Lcna;
-
-    invoke-virtual {p0, p1}, Llna;->setAvatar(Lcna;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    return-void
 .end method

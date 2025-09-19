@@ -2,268 +2,141 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ln18;
+
 
 # instance fields
-.field public final a:Lml5;
+.field public final a:Lexc;
 
-.field public b:Ljava/io/File;
+.field public final b:Luh;
 
-.field public c:Ljava/io/File;
-
-.field public d:Ljava/io/File;
-
-.field public e:Ljava/io/File;
-
-.field public f:Ljava/io/File;
-
-.field public g:Ljava/io/File;
-
-.field public h:Ljava/io/File;
-
-.field public i:Ljava/io/File;
-
-.field public j:Ljava/util/List;
+.field public final c:Lvh;
 
 
 # direct methods
-.method public constructor <init>(Lml5;)V
-    .registers 2
+.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lmj5;->a:Lml5;
+    iput-object p1, p0, Lmj5;->a:Lexc;
+
+    new-instance v0, Luh;
+
+    const/16 v1, 0xa
+
+    invoke-direct {v0, p1, v1}, Luh;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lmj5;->b:Luh;
+
+    new-instance v0, Lvh;
+
+    const/16 v1, 0x17
+
+    invoke-direct {v0, p1, v1}, Lvh;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lmj5;->c:Lvh;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lvx0;)Ljava/io/File;
+.method public final f()V
     .registers 3
 
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+    new-instance v0, Llj5;
 
-    move-result p1
+    const/4 v1, 0x0
 
-    iget-object v0, p0, Lmj5;->a:Lml5;
+    invoke-direct {v0, p0, v1}, Llj5;-><init>(Lmj5;Lkotlin/coroutines/Continuation;)V
 
-    packed-switch p1, :pswitch_data_0
+    invoke-static {v0}, Lvyg;->B(Lpc6;)Ljava/lang/Object;
 
-    const/4 p0, 0x0
+    return-void
+.end method
 
-    return-object p0
+.method public final p(Ljava/util/List;Ljx3;)Ljava/lang/Object;
+    .registers 7
 
-    :pswitch_0
-    iget-object p1, p0, Lmj5;->i:Ljava/io/File;
+    const-string v0, "SELECT * FROM fcm_notifications_history WHERE chat_id IN ("
 
-    if-nez p1, :cond_0
-
-    check-cast v0, Lan5;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p1, v0, Lan5;->c:Landroid/content/Context;
-
-    invoke-static {p1}, Lan5;->b(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "videoCache"
-
-    invoke-static {p1, v0}, Lan5;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lmj5;->i:Ljava/io/File;
-
-    :cond_0
-    iget-object p0, p0, Lmj5;->i:Ljava/io/File;
-
-    return-object p0
-
-    :pswitch_1
-    iget-object p1, p0, Lmj5;->h:Ljava/io/File;
-
-    if-nez p1, :cond_1
-
-    check-cast v0, Lan5;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p1, v0, Lan5;->c:Landroid/content/Context;
-
-    invoke-static {p1}, Lan5;->b(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "exo_files_cache"
-
-    invoke-static {p1, v0}, Lan5;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lmj5;->h:Ljava/io/File;
-
-    :cond_1
-    iget-object p0, p0, Lmj5;->h:Ljava/io/File;
-
-    return-object p0
-
-    :pswitch_2
-    iget-object p1, p0, Lmj5;->c:Ljava/io/File;
-
-    if-nez p1, :cond_2
-
-    check-cast v0, Lan5;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p1, v0, Lan5;->c:Landroid/content/Context;
-
-    invoke-static {p1}, Lan5;->b(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "upload"
-
-    invoke-static {p1, v0}, Lan5;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lmj5;->c:Ljava/io/File;
-
-    :cond_2
-    iget-object p0, p0, Lmj5;->c:Ljava/io/File;
-
-    return-object p0
-
-    :pswitch_3
-    iget-object p1, p0, Lmj5;->f:Ljava/io/File;
-
-    if-nez p1, :cond_3
-
-    check-cast v0, Lan5;
-
-    invoke-virtual {v0}, Lan5;->p()Ljava/io/File;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lmj5;->f:Ljava/io/File;
-
-    :cond_3
-    iget-object p0, p0, Lmj5;->f:Ljava/io/File;
-
-    return-object p0
-
-    :pswitch_4
-    iget-object p1, p0, Lmj5;->g:Ljava/io/File;
-
-    if-nez p1, :cond_4
-
-    check-cast v0, Lan5;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p1, v0, Lan5;->c:Landroid/content/Context;
-
-    invoke-static {p1}, Lan5;->b(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "gifCache"
-
-    invoke-static {p1, v0}, Lan5;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lmj5;->g:Ljava/io/File;
-
-    :cond_4
-    iget-object p0, p0, Lmj5;->g:Ljava/io/File;
-
-    return-object p0
-
-    :pswitch_5
-    iget-object p1, p0, Lmj5;->e:Ljava/io/File;
-
-    if-nez p1, :cond_5
-
-    check-cast v0, Lan5;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p1, v0, Lan5;->c:Landroid/content/Context;
-
-    invoke-static {p1}, Lan5;->b(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "audioCache"
-
-    invoke-static {p1, v0}, Lan5;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lmj5;->e:Ljava/io/File;
-
-    :cond_5
-    iget-object p0, p0, Lmj5;->e:Ljava/io/File;
-
-    return-object p0
-
-    :pswitch_6
-    iget-object p1, p0, Lmj5;->d:Ljava/io/File;
-
-    if-nez p1, :cond_6
-
-    check-cast v0, Lan5;
-
-    invoke-virtual {v0}, Lan5;->m()Ljava/io/File;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lmj5;->d:Ljava/io/File;
-
-    :cond_6
-    iget-object p0, p0, Lmj5;->d:Ljava/io/File;
-
-    return-object p0
-
-    :pswitch_7
-    iget-object p1, p0, Lmj5;->b:Ljava/io/File;
-
-    if-nez p1, :cond_7
-
-    new-instance p1, Ljava/io/File;
-
-    check-cast v0, Lan5;
-
-    iget-object v0, v0, Lan5;->c:Landroid/content/Context;
-
-    invoke-static {v0}, Lan5;->b(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lmw1;->m(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-direct {p1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
-    iput-object p1, p0, Lmj5;->b:Ljava/io/File;
+    move-result v1
 
-    :cond_7
-    iget-object p0, p0, Lmj5;->b:Ljava/io/File;
+    invoke-static {v0, v1}, Lte2;->c(Ljava/lang/StringBuilder;I)V
+
+    const-string v2, ")"
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lvxc;->c(ILjava/lang/String;)Lvxc;
+
+    move-result-object v0
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    const/4 v1, 0x1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Long;
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {v0, v1}, Lvxc;->Z(I)V
+
+    goto :goto_1
+
+    :cond_0
+    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-virtual {v0, v1, v2, v3}, Lvxc;->k(IJ)V
+
+    :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p1, Landroid/os/CancellationSignal;
+
+    invoke-direct {p1}, Landroid/os/CancellationSignal;-><init>()V
+
+    new-instance v1, Lwh;
+
+    const/16 v2, 0xf
+
+    invoke-direct {v1, p0, v2, v0}, Lwh;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    iget-object p0, p0, Lmj5;->a:Lexc;
+
+    invoke-static {p0, p1, v1, p2}, Lmu0;->h(Lexc;Landroid/os/CancellationSignal;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

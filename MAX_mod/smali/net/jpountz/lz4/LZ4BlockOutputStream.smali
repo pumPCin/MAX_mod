@@ -111,7 +111,7 @@
 .method public constructor <init>(Ljava/io/OutputStream;ILnet/jpountz/lz4/LZ4Compressor;)V
     .registers 4
 
-    invoke-static {}, Lfng;->b()Lfng;
+    invoke-static {}, Lpxg;->b()Lpxg;
 
     const/4 p0, 0x0
 
@@ -200,7 +200,7 @@
 
     const-string v1, "blockSize must be <= 33554432, got "
 
-    invoke-static {p0, v1}, La78;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v1}, Lyv7;->e(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -213,7 +213,7 @@
 
     const-string v1, "blockSize must be >= 64, got "
 
-    invoke-static {p0, v1}, La78;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v1}, Lyv7;->e(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -635,7 +635,7 @@
         }
     .end annotation
 
-    invoke-static {p2, p1, p3}, Liuc;->b(I[BI)V
+    invoke-static {p2, p1, p3}, Lo2d;->b(I[BI)V
 
     invoke-direct {p0}, Lnet/jpountz/lz4/LZ4BlockOutputStream;->ensureNotFinished()V
 

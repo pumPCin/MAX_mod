@@ -1,102 +1,68 @@
-.class public final Ly21;
-.super Lxie;
+.class public final synthetic Ly21;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lzb6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+.field public final synthetic b:Lz21;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;)V
+.method public synthetic constructor <init>(Lz21;I)V
     .registers 3
 
-    iput-object p2, p0, Ly21;->Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
+    iput p2, p0, Ly21;->a:I
 
-    const/4 p2, 0x2
+    iput-object p1, p0, Ly21;->b:Lz21;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke()Ljava/lang/Object;
     .registers 3
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget v0, p0, Ly21;->a:I
 
-    invoke-virtual {p0, p1, p2}, Ly21;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
+    iget-object p0, p0, Ly21;->b:Lz21;
 
-    check-cast p0, Ly21;
+    iget-boolean v0, p0, Lz21;->b:Z
 
-    sget-object p1, Lncf;->a:Lncf;
+    iget-boolean v1, p0, Lz21;->c:Z
 
-    invoke-virtual {p0, p1}, Ly21;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, v0, v1}, Lz21;->a(ZZ)V
 
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Ly21;
-
-    iget-object p0, p0, Ly21;->Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
-
-    invoke-direct {v0, p2, p0}, Ly21;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;)V
-
-    iput-object p1, v0, Ly21;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Ly21;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    iget-object p0, p0, Ly21;->Y:Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;
-
-    if-eqz p1, :cond_0
-
-    sget-object p1, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->n0:[Lsf7;
-
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->x0()Lg21;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lg21;->f()V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object p1, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->n0:[Lsf7;
-
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/panels/CallBottomPanelWidget;->x0()Lg21;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lg21;->b()V
-
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
+
+    :pswitch_0
+    new-instance v0, Lx21;
+
+    iget-object p0, p0, Ly21;->b:Lz21;
+
+    invoke-static {p0}, Lt7g;->a(Landroid/view/View;)Lzn7;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Lx21;-><init>(Lzn7;)V
+
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

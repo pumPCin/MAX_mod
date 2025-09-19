@@ -1,21 +1,21 @@
 .class public final Lbt2;
-.super Lqd0;
+.super Luc0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:J
+.field public final b:Landroid/content/Intent;
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .registers 4
+.method public constructor <init>(Landroid/content/Intent;)V
+    .registers 3
 
     const/4 v0, 0x4
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
 
-    iput-wide p1, p0, Lbt2;->b:J
+    iput-object p1, p0, Lbt2;->b:Landroid/content/Intent;
 
     return-void
 .end method
@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+    .registers 5
 
     const/4 v0, 0x1
 
@@ -43,13 +43,15 @@
     :cond_1
     check-cast p1, Lbt2;
 
-    iget-wide v3, p0, Lbt2;->b:J
+    iget-object p0, p0, Lbt2;->b:Landroid/content/Intent;
 
-    iget-wide p0, p1, Lbt2;->b:J
+    iget-object p1, p1, Lbt2;->b:Landroid/content/Intent;
 
-    cmp-long p0, v3, p0
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz p0, :cond_2
+    move-result p0
+
+    if-nez p0, :cond_2
 
     return v2
 
@@ -58,11 +60,11 @@
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .registers 1
 
-    iget-wide v0, p0, Lbt2;->b:J
+    iget-object p0, p0, Lbt2;->b:Landroid/content/Intent;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
@@ -70,15 +72,23 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .registers 3
 
-    const-string v0, "OpenChatAndUpdateBackstack(chatId="
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, ")"
+    const-string v1, "CropPhotoOld(data="
 
-    iget-wide v2, p0, Lbt2;->b:J
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iget-object p0, p0, Lbt2;->b:Landroid/content/Intent;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

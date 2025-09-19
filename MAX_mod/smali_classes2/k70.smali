@@ -1,120 +1,40 @@
 .class public final Lk70;
-.super Lsoe;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lj63;
 
-# instance fields
-.field public final c:Lj70;
+
+# static fields
+.field public static final a:Lk70;
+
+.field public static final b:Lk70;
+
+.field public static final c:Lk70;
 
 
 # direct methods
-.method public constructor <init>(Lj70;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lk70;->c:Lj70;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lk70;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lk70;
-
-    iget-object p0, p0, Lk70;->c:Lj70;
-
-    iget-object p1, p1, Lk70;->c:Lj70;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method static synthetic constructor <clinit>()V
     .registers 1
 
-    iget-object p0, p0, Lk70;->c:Lj70;
+    new-instance v0, Lk70;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    move-result p0
+    sput-object v0, Lk70;->a:Lk70;
 
-    return p0
-.end method
+    new-instance v0, Lk70;
 
-.method public final toString()Ljava/lang/String;
-    .registers 5
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p0, p0, Lk70;->c:Lj70;
+    sput-object v0, Lk70;->b:Lk70;
 
-    iget-boolean v0, p0, Lj70;->a:Z
+    new-instance v0, Lk70;
 
-    iget-object v1, p0, Lj70;->b:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p0, p0, Lj70;->c:Ljava/lang/String;
+    sput-object v0, Lk70;->c:Lk70;
 
-    invoke-static {p0}, Lms8;->z(Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "Response(enabled="
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v0, ",\n                |hint=\'"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, "\',\n                |email=\'"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, "\')\n                |"
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lrde;->X(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

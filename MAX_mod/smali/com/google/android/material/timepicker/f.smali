@@ -23,7 +23,7 @@
 .method public final onDoubleTap(Landroid/view/MotionEvent;)Z
     .registers 2
 
-    sget p1, Lcom/google/android/material/timepicker/TimePickerView;->C0:I
+    sget p1, Lcom/google/android/material/timepicker/TimePickerView;->G0:I
 
     iget-object p0, p0, Lcom/google/android/material/timepicker/f;->a:Lcom/google/android/material/timepicker/TimePickerView;
 

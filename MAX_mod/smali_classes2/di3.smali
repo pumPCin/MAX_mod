@@ -1,32 +1,26 @@
 .class public final Ldi3;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public X:Ljava/lang/Object;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public Y:I
-
-.field public final synthetic Z:Lii3;
-
-.field public final synthetic n0:Ljava/lang/String;
+.field public final synthetic Y:Lone/me/login/confirm/ConfirmPhoneScreen;
 
 
 # direct methods
-.method public constructor <init>(Lii3;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Lone/me/login/confirm/ConfirmPhoneScreen;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput-object p1, p0, Ldi3;->Z:Lii3;
-
-    iput-object p2, p0, Ldi3;->n0:Ljava/lang/String;
+    iput-object p1, p0, Ldi3;->Y:Lone/me/login/confirm/ConfirmPhoneScreen;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -36,7 +30,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Lys9;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -46,332 +40,162 @@
 
     check-cast p0, Ldi3;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Ldi3;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p0
-
-    return-object p0
+    return-object p1
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
 
-    new-instance p1, Ldi3;
+    new-instance v0, Ldi3;
 
-    iget-object v0, p0, Ldi3;->Z:Lii3;
+    iget-object p0, p0, Ldi3;->Y:Lone/me/login/confirm/ConfirmPhoneScreen;
 
-    iget-object p0, p0, Ldi3;->n0:Ljava/lang/String;
+    invoke-direct {v0, p0, p2}, Ldi3;-><init>(Lone/me/login/confirm/ConfirmPhoneScreen;Lkotlin/coroutines/Continuation;)V
 
-    invoke-direct {p1, v0, p0, p2}, Ldi3;-><init>(Lii3;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+    iput-object p1, v0, Ldi3;->X:Ljava/lang/Object;
 
-    return-object p1
+    return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 15
+    .registers 8
 
-    iget-object v0, p0, Ldi3;->Z:Lii3;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object v1, v0, Lii3;->q0:Lgpd;
+    iget-object p1, p0, Ldi3;->X:Ljava/lang/Object;
 
-    iget-object v2, v0, Lii3;->s0:Lx65;
+    check-cast p1, Lys9;
 
-    iget v3, p0, Ldi3;->Y:I
+    instance-of v0, p1, Lwh3;
 
-    const/4 v4, 0x5
+    const/4 v1, 0x0
 
-    const/4 v5, 0x4
+    iget-object p0, p0, Ldi3;->Y:Lone/me/login/confirm/ConfirmPhoneScreen;
 
-    const/4 v6, 0x3
+    if-eqz v0, :cond_0
 
-    const/4 v7, 0x1
+    sget-object p1, Lh08;->a:Lh08;
 
-    const/4 v8, 0x2
+    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lz4;
 
-    const/4 v9, 0x0
+    move-result-object p1
 
-    sget-object v10, Ls04;->a:Ls04;
+    const-class v0, Lt1b;
 
-    if-eqz v3, :cond_5
+    invoke-virtual {p1, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    if-eq v3, v7, :cond_4
+    move-result-object p1
 
-    if-eq v3, v8, :cond_3
+    check-cast p1, Lt1b;
 
-    if-eq v3, v6, :cond_2
+    invoke-virtual {p1}, Lt1b;->e()V
 
-    if-eq v3, v5, :cond_1
+    invoke-static {p0}, Lqe5;->t(Lxx3;)V
 
-    if-ne v3, v4, :cond_0
+    sget-object p0, La18;->c:La18;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    goto/16 :goto_7
+    const-string p1, ":chat-list"
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    invoke-virtual {p0}, Lx2;->F0()Lza4;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    move-result-object p0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    iget-object v1, p0, Ldi3;->X:Ljava/lang/Object;
-
-    check-cast v1, Lq70;
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto/16 :goto_5
-
-    :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto/16 :goto_4
-
-    :cond_3
-    iget-object v1, p0, Ldi3;->X:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto/16 :goto_3
-
-    :cond_4
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-virtual {p0, p1, v1}, Lza4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
 
     goto :goto_0
 
-    :cond_5
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    :cond_0
+    instance-of v0, p1, Lyh3;
 
-    iget-object p1, v0, Lii3;->Z:Ldle;
+    if-eqz v0, :cond_1
 
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lxx3;->getRouter()Lrzc;
 
-    move-result-object p1
+    move-result-object p0
 
-    check-cast p1, Lc80;
+    invoke-virtual {p0}, Lrzc;->D()Z
 
-    iget-object v3, v0, Lii3;->o:Ljava/lang/String;
+    sget-object p0, La18;->c:La18;
 
-    iput v7, p0, Ldi3;->Y:I
+    check-cast p1, Lyh3;
 
-    iget-object v7, p0, Ldi3;->n0:Ljava/lang/String;
+    iget-object p1, p1, Lyh3;->b:Lva4;
 
-    invoke-virtual {p1, v7, v3, p0}, Lc80;->a(Ljava/lang/String;Ljava/lang/String;Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lx2;->H0(Lva4;)V
 
-    move-result-object p1
+    goto :goto_0
 
-    if-ne p1, v10, :cond_6
+    :cond_1
+    instance-of v0, p1, Lxh3;
 
-    goto/16 :goto_6
+    if-eqz v0, :cond_2
 
-    :cond_6
+    iget-object v0, p0, Lone/me/login/confirm/ConfirmPhoneScreen;->r0:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lka7;
+
+    check-cast p1, Lxh3;
+
+    iget-object v2, p1, Lxh3;->b:Ljava/lang/String;
+
+    iget-object v3, p0, Lone/me/login/confirm/ConfirmPhoneScreen;->o:Lfr;
+
+    sget-object v4, Lone/me/login/confirm/ConfirmPhoneScreen;->B0:[Lxi7;
+
+    const/4 v5, 0x1
+
+    aget-object v4, v4, v5
+
+    invoke-virtual {v3, p0}, Lfr;->a(Lone/me/sdk/arch/Widget;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
+
+    iget-object p1, p1, Lxh3;->c:Lhhb;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v3, Lone/me/login/inputname/InputNameScreen;
+
+    invoke-direct {v3, v2, p0, p1}, Lone/me/login/inputname/InputNameScreen;-><init>(Ljava/lang/String;Ljava/lang/String;Lhhb;)V
+
+    invoke-static {v3, v1, v1}, Lcb7;->d(Lxx3;Leh;Leh;)Luzc;
+
+    move-result-object p0
+
+    const-string p1, "InputNameScreen"
+
+    invoke-virtual {v0, p0, p1}, Lka7;->a(Luzc;Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_2
+    instance-of v0, p1, Lva4;
+
+    if-eqz v0, :cond_3
+
+    invoke-static {p0}, Lqe5;->t(Lxx3;)V
+
+    sget-object p0, La18;->c:La18;
+
+    check-cast p1, Lva4;
+
+    invoke-virtual {p0, p1}, Lx2;->H0(Lva4;)V
+
+    :cond_3
     :goto_0
-    check-cast p1, Lq70;
-
-    iget-object v3, p1, Lq70;->X:Lrlg;
-
-    iget-object v7, p1, Lq70;->c:Ljava/util/LinkedHashMap;
-
-    if-eqz v3, :cond_9
-
-    iget-object p0, v3, Lrlg;->b:Ljava/lang/Object;
-
-    move-object v5, p0
-
-    check-cast v5, Ljava/lang/String;
-
-    iget-object p0, v3, Lrlg;->c:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    const-string p1, ""
-
-    if-nez p0, :cond_7
-
-    move-object v6, p1
-
-    goto :goto_1
-
-    :cond_7
-    move-object v6, p0
-
-    :goto_1
-    iget-object p0, v3, Lrlg;->o:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    if-nez p0, :cond_8
-
-    move-object v7, p1
-
-    goto :goto_2
-
-    :cond_8
-    move-object v7, p0
-
-    :goto_2
-    iget-object p0, v3, Lrlg;->X:Ljava/lang/Object;
-
-    check-cast p0, La80;
-
-    sget-object p1, Lvx7;->c:Lvx7;
-
-    iget-object v8, v0, Lii3;->X:Ljava/lang/String;
-
-    iget v9, p0, La80;->b:I
-
-    iget v10, p0, La80;->c:I
-
-    iget v11, p0, La80;->d:I
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v4, Lux7;
-
-    invoke-direct/range {v4 .. v11}, Lux7;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)V
-
-    invoke-static {v4}, Ls2;->O0(Lj96;)Laa4;
-
-    move-result-object p0
-
-    new-instance p1, Lqh3;
-
-    invoke-direct {p1, p0}, Lqh3;-><init>(Laa4;)V
-
-    invoke-static {v2, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    goto :goto_7
-
-    :cond_9
-    const-string v3, "LOGIN"
-
-    invoke-interface {v7, v3}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    sget-object v12, Lixd;->a:Lixd;
-
-    if-eqz v11, :cond_c
-
-    invoke-static {v7, v3}, Lc38;->M(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/String;
-
-    iput-object p1, p0, Ldi3;->X:Ljava/lang/Object;
-
-    iput v8, p0, Ldi3;->Y:I
-
-    invoke-virtual {v1, v12, p0}, Lgpd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-ne v1, v10, :cond_a
-
-    goto :goto_6
-
-    :cond_a
-    move-object v1, p1
-
-    :goto_3
-    iget-object p1, v0, Lii3;->Y:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lzx7;
-
-    iget-object v0, v0, Lii3;->X:Ljava/lang/String;
-
-    iput-object v9, p0, Ldi3;->X:Ljava/lang/Object;
-
-    iput v6, p0, Ldi3;->Y:I
-
-    invoke-virtual {p1, v1, v0, p0}, Lzx7;->a(Ljava/lang/String;Ljava/lang/String;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v10, :cond_b
-
-    goto :goto_6
-
-    :cond_b
-    :goto_4
-    sget-object p0, Loh3;->b:Loh3;
-
-    invoke-static {v2, p0}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    goto :goto_7
-
-    :cond_c
-    const-string v2, "REGISTER"
-
-    invoke-interface {v7, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_e
-
-    iput-object p1, p0, Ldi3;->X:Ljava/lang/Object;
-
-    iput v5, p0, Ldi3;->Y:I
-
-    invoke-virtual {v1, v12, p0}, Lgpd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-ne v1, v10, :cond_d
-
-    goto :goto_6
-
-    :cond_d
-    move-object v1, p1
-
-    :goto_5
-    iget-object p1, v0, Lii3;->w0:Ln4e;
-
-    new-instance v2, Lci3;
-
-    invoke-direct {v2, v8, v9}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    const-wide/16 v5, 0x7d0
-
-    invoke-static {p1, v5, v6, v2}, Lkbf;->r(Lfq5;JLx96;)Lrq5;
-
-    move-result-object p1
-
-    new-instance v2, Lrb;
-
-    const/16 v3, 0x10
-
-    invoke-direct {v2, v0, v3, v1}, Lrb;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    iput-object v9, p0, Ldi3;->X:Ljava/lang/Object;
-
-    iput v4, p0, Ldi3;->Y:I
-
-    invoke-virtual {p1, v2, p0}, Lrq5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v10, :cond_e
-
-    :goto_6
-    return-object v10
-
-    :cond_e
-    :goto_7
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

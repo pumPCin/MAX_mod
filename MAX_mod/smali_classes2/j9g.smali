@@ -1,49 +1,87 @@
 .class public final Lj9g;
-.super Lpoe;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic o:I
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Landroid/widget/TextView;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcoa;I)V
+.method public constructor <init>(Landroid/widget/TextView;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p2, p0, Lj9g;->o:I
+    iput-object p1, p0, Lj9g;->Y:Landroid/widget/TextView;
 
-    invoke-direct {p0, p1}, Lpoe;-><init>(Lcoa;)V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public K()S
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Lera;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lj9g;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lj9g;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lj9g;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Lj9g;
+
+    iget-object p0, p0, Lj9g;->Y:Landroid/widget/TextView;
+
+    invoke-direct {v0, p0, p2}, Lj9g;-><init>(Landroid/widget/TextView;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lj9g;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    iget v0, p0, Lj9g;->o:I
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p1, p0, Lj9g;->X:Ljava/lang/Object;
 
-    invoke-super {p0}, Lpoe;->K()S
+    check-cast p1, Lera;
 
-    move-result p0
+    iget-object p0, p0, Lj9g;->Y:Landroid/widget/TextView;
 
-    return p0
+    invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
-    :pswitch_0
-    sget-object p0, Lcoa;->c:Lxe2;
+    move-result-object p0
 
-    const/16 p0, 0x3f
+    if-eqz p0, :cond_0
 
-    return p0
+    invoke-static {p0, p1}, Lvyg;->e(Ljava/lang/CharSequence;Lera;)V
 
-    nop
+    :cond_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

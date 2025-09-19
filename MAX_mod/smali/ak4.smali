@@ -1,31 +1,68 @@
-.class public final Lak4;
-.super Lcx3;
+.class public final synthetic Lak4;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lexf;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic b:Lfk4;
+
+.field public final synthetic c:Lek4;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lfk4;Lek4;I)V
+    .registers 4
+
+    iput p3, p0, Lak4;->a:I
+
+    iput-object p1, p0, Lak4;->b:Lfk4;
+
+    iput-object p2, p0, Lak4;->c:Lek4;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final run()V
     .registers 3
 
-    iput-object p1, p0, Lak4;->o:Ljava/lang/Object;
+    iget v0, p0, Lak4;->a:I
 
-    iget p1, p0, Lak4;->X:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object v0, p0, Lak4;->c:Lek4;
 
-    or-int/2addr p1, v0
+    const/4 v1, 0x0
 
-    iput p1, p0, Lak4;->X:I
+    iget-object p0, p0, Lak4;->b:Lfk4;
 
-    invoke-static {p0}, Las3;->k(Lcx3;)V
+    invoke-virtual {p0, v0, v1}, Lfk4;->a(Lek4;Z)V
 
-    sget-object p0, Ls04;->a:Ls04;
+    return-void
 
-    return-object p0
+    :pswitch_0
+    iget-object v0, p0, Lak4;->c:Lek4;
+
+    const/4 v1, 0x1
+
+    iget-object p0, p0, Lak4;->b:Lfk4;
+
+    invoke-virtual {p0, v0, v1}, Lfk4;->a(Lek4;Z)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

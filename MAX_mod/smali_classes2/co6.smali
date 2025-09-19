@@ -1,50 +1,103 @@
 .class public final Lco6;
-.super Landroid/graphics/drawable/ColorDrawable;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final b:Lco6;
 
 
 # instance fields
-.field public final synthetic a:Luhc;
-
-.field public final synthetic b:Landroid/graphics/Path;
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(Luhc;Landroid/graphics/Path;I)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Lco6;->a:Luhc;
+    new-instance v0, Lco6;
 
-    iput-object p2, p0, Lco6;->b:Landroid/graphics/Path;
+    const/4 v1, 0x0
 
-    invoke-direct {p0, p3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+    invoke-direct {v0, v1}, Lco6;-><init>(Z)V
+
+    sput-object v0, Lco6;->b:Lco6;
+
+    return-void
+.end method
+
+.method public constructor <init>(Z)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-boolean p1, p0, Lco6;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final draw(Landroid/graphics/Canvas;)V
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    const/4 v0, 0x1
 
-    move-result v0
+    if-ne p0, p1, :cond_0
 
-    iget-object v1, p0, Lco6;->a:Luhc;
-
-    iget-boolean v1, v1, Luhc;->a:Z
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lco6;->b:Landroid/graphics/Path;
-
-    invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->clipOutPath(Landroid/graphics/Path;)Z
+    return v0
 
     :cond_0
-    invoke-super {p0, p1}, Landroid/graphics/drawable/ColorDrawable;->draw(Landroid/graphics/Canvas;)V
+    instance-of v1, p1, Lco6;
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    const/4 v2, 0x0
 
-    return-void
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lco6;
+
+    iget-boolean p0, p0, Lco6;->a:Z
+
+    iget-boolean p1, p1, Lco6;->a:Z
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-boolean p0, p0, Lco6;->a:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    const-string v0, "GroupOptions(isPremium="
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Lco6;->a:Z
+
+    invoke-static {v0, v1, p0}, Lz7e;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

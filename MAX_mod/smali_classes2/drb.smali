@@ -1,151 +1,190 @@
 .class public final Ldrb;
-.super Lkz8;
+.super Lure;
 .source "SourceFile"
 
-
-# static fields
-.field public static volatile c:[Ldrb;
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public b:I
+.field public final synthetic Y:Lone/me/profile/screens/invite/ProfileInviteScreen;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/profile/screens/invite/ProfileInviteScreen;)V
+    .registers 3
 
-    invoke-direct {p0}, Lkz8;-><init>()V
+    iput-object p2, p0, Ldrb;->Y:Lone/me/profile/screens/invite/ProfileInviteScreen;
 
-    const/4 v0, 0x0
+    const/4 p2, 0x2
 
-    iput v0, p0, Ldrb;->a:I
-
-    iput v0, p0, Ldrb;->b:I
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lkz8;->cachedSize:I
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final computeSerializedSize()I
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Ldrb;->a:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Ldrb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Ldrb;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Ldrb;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Ldrb;
+
+    iget-object p0, p0, Ldrb;->Y:Lone/me/profile/screens/invite/ProfileInviteScreen;
+
+    invoke-direct {v0, p2, p0}, Ldrb;-><init>(Lkotlin/coroutines/Continuation;Lone/me/profile/screens/invite/ProfileInviteScreen;)V
+
+    iput-object p1, v0, Ldrb;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 15
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ldrb;->X:Ljava/lang/Object;
+
+    check-cast p1, Lvqb;
+
+    sget-object v0, Lone/me/sdk/bottomsheet/BottomSheetWidget;->y0:[Lxi7;
+
+    iget-object v0, p1, Lvqb;->a:Lp2f;
+
+    const/4 v1, 0x6
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2, v2, v1}, Lhv8;->c(Lu2f;Landroid/os/Bundle;Ls6d;I)Llj3;
+
+    move-result-object v5
+
+    iget-object v0, p1, Lvqb;->b:Lp2f;
+
+    invoke-virtual {v5, v0}, Llj3;->f(Lu2f;)V
+
+    iget-object p1, p1, Lvqb;->c:Ljava/util/List;
+
+    new-instance v3, Lyl2;
+
+    const/16 v9, 0x8
+
+    const/16 v10, 0xc
+
+    const/4 v4, 0x1
+
+    const-class v6, Llj3;
+
+    const-string v7, "addButton"
+
+    const-string v8, "addButton([Lone/me/sdk/bottomsheet/ConfirmationBottomSheet$Button;)Lone/me/sdk/bottomsheet/ConfirmationBottomSheet$Builder;"
+
+    invoke-direct/range {v3 .. v10}, Lyl2;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+
+    new-instance v0, Laq2;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v3, v1}, Laq2;-><init>(Ls8;I)V
+
+    invoke-interface {p1, v0}, Ljava/lang/Iterable;->forEach(Ljava/util/function/Consumer;)V
+
+    invoke-virtual {v5}, Llj3;->e()Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
+
+    move-result-object v7
+
+    iget-object p0, p0, Ldrb;->Y:Lone/me/profile/screens/invite/ProfileInviteScreen;
+
+    invoke-virtual {v7, p0}, Lxx3;->setTargetController(Lxx3;)V
+
+    invoke-virtual {v7, p0}, Lone/me/sdk/arch/Widget;->saveTarget(Lone/me/sdk/arch/Widget;)V
+
+    move-object p1, p0
+
+    :goto_0
+    invoke-virtual {p1}, Lxx3;->getParentController()Lxx3;
+
+    move-result-object v0
 
     if-eqz v0, :cond_0
 
-    const/4 v1, 0x1
+    invoke-virtual {p1}, Lxx3;->getParentController()Lxx3;
 
-    invoke-static {v1, v0}, Lk63;->f(II)I
-
-    move-result v0
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    instance-of v0, p1, Lxzc;
 
-    :goto_0
-    iget p0, p0, Ldrb;->b:I
+    if-eqz v0, :cond_1
 
-    if-eqz p0, :cond_1
-
-    const/4 v1, 0x2
-
-    invoke-static {v1, p0}, Lk63;->f(II)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final mergeFrom(Lj63;)Lkz8;
-    .registers 4
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lj63;->s()I
-
-    move-result v0
-
-    if-eqz v0, :cond_4
-
-    const/16 v1, 0x8
-
-    if-eq v0, v1, :cond_2
-
-    const/16 v1, 0x10
-
-    if-eq v0, v1, :cond_1
-
-    invoke-virtual {p1, v0}, Lj63;->u(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
+    check-cast p1, Lxzc;
 
     goto :goto_1
 
     :cond_1
-    invoke-virtual {p1}, Lj63;->p()I
+    move-object p1, v2
 
-    move-result v0
+    :goto_1
+    if-eqz p1, :cond_2
 
-    iput v0, p0, Ldrb;->b:I
+    invoke-interface {p1}, Lxzc;->d0()Lrzc;
 
-    goto :goto_0
+    move-result-object v2
 
     :cond_2
-    invoke-virtual {p1}, Lj63;->p()I
+    invoke-virtual {v7, p0}, Lone/me/sdk/bottomsheet/BottomSheetWidget;->M0(Lone/me/sdk/arch/Widget;)V
 
-    move-result v0
+    if-eqz v2, :cond_3
 
-    if-eqz v0, :cond_3
+    new-instance v6, Luzc;
 
-    goto :goto_0
+    const/4 v11, 0x0
+
+    const/4 v12, -0x1
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    invoke-direct/range {v6 .. v12}, Luzc;-><init>(Lxx3;Ljava/lang/String;Lcy3;Lcy3;ZI)V
+
+    const/4 p0, 0x0
+
+    const/4 p1, 0x1
+
+    const-string v0, "BottomSheetWidget"
+
+    invoke-static {p0, v6, p1, v0}, Lsg0;->m(ZLuzc;ZLjava/lang/String;)V
+
+    invoke-virtual {v2, v6}, Lrzc;->H(Luzc;)V
 
     :cond_3
-    iput v0, p0, Ldrb;->a:I
+    sget-object p0, Lylf;->a:Lylf;
 
-    goto :goto_0
-
-    :cond_4
-    :goto_1
     return-object p0
-.end method
-
-.method public final writeTo(Lk63;)V
-    .registers 4
-
-    iget v0, p0, Ldrb;->a:I
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v1, v0}, Lk63;->w(II)V
-
-    :cond_0
-    iget p0, p0, Ldrb;->b:I
-
-    if-eqz p0, :cond_1
-
-    const/4 v0, 0x2
-
-    invoke-virtual {p1, v0, p0}, Lk63;->w(II)V
-
-    :cond_1
-    return-void
 .end method

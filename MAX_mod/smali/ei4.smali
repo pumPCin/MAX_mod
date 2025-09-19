@@ -2,77 +2,32 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Comparable;
 
-
-# instance fields
-.field public final a:Z
-
-.field public final b:Z
+# static fields
+.field public static final a:Lei4;
 
 
 # direct methods
-.method public constructor <init>(ILt26;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lei4;
 
-    iget p2, p2, Lt26;->e:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
-
-    and-int/2addr p2, v0
-
-    const/4 v1, 0x0
-
-    if-eqz p2, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    move v0, v1
-
-    :goto_0
-    iput-boolean v0, p0, Lei4;->a:Z
-
-    invoke-static {p1, v1}, Lok0;->j(IZ)Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lei4;->b:Z
+    sput-object v0, Lei4;->a:Lei4;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compareTo(Ljava/lang/Object;)I
-    .registers 5
+.method public final a(Landroid/animation/AnimatorSet;)J
+    .registers 2
 
-    check-cast p1, Lei4;
+    invoke-virtual {p1}, Landroid/animation/AnimatorSet;->getTotalDuration()J
 
-    iget-boolean v0, p0, Lei4;->b:Z
+    move-result-wide p0
 
-    iget-boolean v1, p1, Lei4;->b:Z
-
-    sget-object v2, Ljb3;->a:Lhb3;
-
-    invoke-virtual {v2, v0, v1}, Lhb3;->d(ZZ)Ljb3;
-
-    move-result-object v0
-
-    iget-boolean p0, p0, Lei4;->a:Z
-
-    iget-boolean p1, p1, Lei4;->a:Z
-
-    invoke-virtual {v0, p0, p1}, Ljb3;->d(ZZ)Ljb3;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljb3;->f()I
-
-    move-result p0
-
-    return p0
+    return-wide p0
 .end method

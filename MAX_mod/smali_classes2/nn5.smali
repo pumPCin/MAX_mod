@@ -1,58 +1,55 @@
-.class public final Lnn5;
+.class public interface abstract Lnn5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lt71;
 
-
-# instance fields
-.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
+# static fields
+.field public static final a:[Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 9
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v7, "/exo_files_cache/"
 
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    const-string v8, "/font/"
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+    const-string v0, "/videoCache/"
 
-    iput-object v0, p0, Lnn5;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    const-string v1, "/previewVideoCache/"
+
+    const-string v2, "/stickerCache/"
+
+    const-string v3, "/upload/"
+
+    const-string v4, "/imageCache/"
+
+    const-string v5, "/audioCache/"
+
+    const-string v6, "/gifCache/"
+
+    filled-new-array/range {v0 .. v8}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lnn5;->a:[Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCallParticipantFingerprint(Lah1;J)V
-    .registers 5
+.method public a(Ljava/lang/String;)Ljava/io/File;
+    .registers 3
 
-    iget-object p0, p0, Lnn5;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+    check-cast p0, Lcp5;
+
+    invoke-virtual {p0, v0, p1}, Lcp5;->o(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object p0
 
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lt71;
-
-    invoke-interface {v0, p1, p2, p3}, Lt71;->onCallParticipantFingerprint(Lah1;J)V
-
-    goto :goto_0
-
-    :cond_0
-    return-void
+    return-object p0
 .end method

@@ -1,138 +1,138 @@
-.class public final Lx09;
+.class public final synthetic Lx09;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lzb6;
+
 
 # instance fields
-.field public final a:Lxh7;
+.field public final synthetic a:I
 
-.field public final b:Lxh7;
-
-.field public final c:Lxh7;
-
-.field public final d:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final e:Ldle;
+.field public final synthetic b:Lk19;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;Lxh7;Lxh7;)V
-    .registers 5
+.method public synthetic constructor <init>(Lk19;I)V
+    .registers 3
+
+    iput p2, p0, Lx09;->a:I
+
+    iput-object p1, p0, Lx09;->b:Lk19;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lx09;->a:Lxh7;
-
-    iput-object p2, p0, Lx09;->b:Lxh7;
-
-    iput-object p4, p0, Lx09;->c:Lxh7;
-
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
-
-    iput-object p1, p0, Lx09;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    new-instance p1, Lk30;
-
-    const/16 p2, 0x10
-
-    invoke-direct {p1, p3, p2}, Lk30;-><init>(Lxh7;I)V
-
-    new-instance p2, Ldle;
-
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
-
-    iput-object p2, p0, Lx09;->e:Ldle;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(JLjava/lang/String;J)V
-    .registers 8
+.method public final invoke()Ljava/lang/Object;
+    .registers 2
 
-    iget-object p0, p0, Lx09;->c:Lxh7;
+    iget v0, p0, Lx09;->a:I
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
+
+    sget v0, Lq0d;->a1:I
+
+    iget-object p0, p0, Lx09;->b:Lk19;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
-    check-cast p0, Laj5;
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object p0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    return-object p0
 
-    const-string v1, "UploadFileAttachWorker:"
+    :pswitch_0
+    iget-object p0, p0, Lx09;->b:Lk19;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {p0}, Lk19;->b(Lk19;)Landroid/graphics/drawable/LayerDrawable;
 
-    invoke-virtual {v0, p4, p5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    const-string p4, ":"
+    return-object p0
 
-    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :pswitch_1
+    sget v0, Lq0d;->l0:I
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lx09;->b:Lk19;
 
-    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object p1
+    move-result-object p0
 
-    iget-object p0, p0, Laj5;->a:Lnlg;
+    return-object p0
 
-    invoke-virtual {p0, p1}, Lnlg;->c(Ljava/lang/String;)V
+    :pswitch_2
+    iget-object p0, p0, Lx09;->b:Lk19;
 
-    return-void
-.end method
+    invoke-static {p0}, Lk19;->c(Lk19;)Landroid/graphics/drawable/LayerDrawable;
 
-.method public final b()V
-    .registers 4
+    move-result-object p0
 
-    const-class v0, Lx09;
+    return-object p0
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    :pswitch_3
+    sget v0, Lq0d;->W0:I
 
-    move-result-object v0
+    iget-object p0, p0, Lx09;->b:Lk19;
 
-    const-string v1, "try to restore uploads"
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-static {v0, v1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object p0
 
-    const/4 v0, 0x0
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    const/4 v1, 0x1
+    move-result-object p0
 
-    iget-object v2, p0, Lx09;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    return-object p0
 
-    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    :pswitch_4
+    sget v0, Lq0d;->a0:I
 
-    move-result v0
+    iget-object p0, p0, Lx09;->b:Lk19;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    iget-object v0, p0, Lx09;->e:Ldle;
+    move-result-object p0
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v0
+    move-result-object p0
 
-    check-cast v0, Ljava/util/concurrent/ExecutorService;
+    return-object p0
 
-    new-instance v1, Lg56;
+    :pswitch_5
+    sget v0, Lq0d;->c0:I
 
-    const/16 v2, 0x12
+    iget-object p0, p0, Lx09;->b:Lk19;
 
-    invoke-direct {v1, v2, p0}, Lg56;-><init>(ILjava/lang/Object;)V
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    move-result-object p0
 
-    :cond_0
-    return-void
+    invoke-static {p0, v0}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

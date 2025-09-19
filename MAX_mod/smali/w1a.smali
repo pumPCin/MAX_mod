@@ -2,176 +2,38 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ld4a;
-.implements Lnp4;
-
 
 # instance fields
-.field public X:Z
+.field public final a:Landroid/content/ComponentName;
 
-.field public final a:Ld4a;
+.field public b:Z
 
-.field public final b:Z
+.field public c:Landroid/support/v4/app/INotificationSideChannel;
 
-.field public c:Lnp4;
+.field public final d:Ljava/util/ArrayDeque;
 
-.field public o:J
+.field public e:I
 
 
 # direct methods
-.method public constructor <init>(Ld4a;Z)V
-    .registers 3
+.method public constructor <init>(Landroid/content/ComponentName;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lw1a;->a:Ld4a;
+    const/4 v0, 0x0
 
-    iput-boolean p2, p0, Lw1a;->b:Z
+    iput-boolean v0, p0, Lw1a;->b:Z
 
-    return-void
-.end method
+    new-instance v1, Ljava/util/ArrayDeque;
 
+    invoke-direct {v1}, Ljava/util/ArrayDeque;-><init>()V
 
-# virtual methods
-.method public final b()V
-    .registers 2
+    iput-object v1, p0, Lw1a;->d:Ljava/util/ArrayDeque;
 
-    iget-boolean v0, p0, Lw1a;->X:Z
+    iput v0, p0, Lw1a;->e:I
 
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lw1a;->X:Z
-
-    iget-boolean v0, p0, Lw1a;->b:Z
-
-    iget-object p0, p0, Lw1a;->a:Ld4a;
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    invoke-interface {p0, v0}, Ld4a;->onError(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_0
-    invoke-interface {p0}, Ld4a;->b()V
-
-    :cond_1
-    return-void
-.end method
-
-.method public final c(Lnp4;)V
-    .registers 3
-
-    iget-object v0, p0, Lw1a;->c:Lnp4;
-
-    invoke-static {v0, p1}, Lrp4;->f(Lnp4;Lnp4;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iput-object p1, p0, Lw1a;->c:Lnp4;
-
-    iget-object p1, p0, Lw1a;->a:Ld4a;
-
-    invoke-interface {p1, p0}, Ld4a;->c(Lnp4;)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public final d(Ljava/lang/Object;)V
-    .registers 6
-
-    iget-boolean v0, p0, Lw1a;->X:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-wide v0, p0, Lw1a;->o:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    if-nez v2, :cond_1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lw1a;->X:Z
-
-    iget-object v0, p0, Lw1a;->c:Lnp4;
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    iget-object p0, p0, Lw1a;->a:Ld4a;
-
-    invoke-interface {p0, p1}, Ld4a;->d(Ljava/lang/Object;)V
-
-    invoke-interface {p0}, Ld4a;->b()V
-
-    return-void
-
-    :cond_1
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lw1a;->o:J
-
-    return-void
-.end method
-
-.method public final g()V
-    .registers 1
-
-    iget-object p0, p0, Lw1a;->c:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-.end method
-
-.method public final h()Z
-    .registers 1
-
-    iget-object p0, p0, Lw1a;->c:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->h()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .registers 3
-
-    iget-boolean v0, p0, Lw1a;->X:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lw1a;->X:Z
-
-    iget-object p0, p0, Lw1a;->a:Ld4a;
-
-    invoke-interface {p0, p1}, Ld4a;->onError(Ljava/lang/Throwable;)V
+    iput-object p1, p0, Lw1a;->a:Landroid/content/ComponentName;
 
     return-void
 .end method

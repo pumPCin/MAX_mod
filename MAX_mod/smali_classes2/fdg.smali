@@ -1,251 +1,222 @@
-.class public final Lfdg;
-.super Luxf;
+.class public final synthetic Lfdg;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lxg6;
 
 
 # static fields
-.field public static final synthetic u0:[Lsf7;
+.field public static final a:Lfdg;
 
-
-# instance fields
-.field public final X:Ljava/lang/String;
-
-.field public final Y:Lxh7;
-
-.field public final Z:Lxh7;
-
-.field public final b:J
-
-.field public final c:J
-
-.field public final n0:Lxh7;
-
-.field public final o:Lv7g;
-
-.field public final o0:Ln4e;
-
-.field public final p0:Ldbc;
-
-.field public final q0:Lx65;
-
-.field public final r0:Lx65;
-
-.field public final s0:Lqfd;
-
-.field public final t0:Lqfd;
+.field private static final descriptor:Lqid;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .registers 4
 
-    new-instance v0, Lal9;
+    new-instance v0, Lfdg;
 
-    const-string v1, "toggleBiometryJob"
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const-string v2, "getToggleBiometryJob()Lkotlinx/coroutines/Job;"
+    sput-object v0, Lfdg;->a:Lfdg;
 
-    const-class v3, Lfdg;
+    new-instance v1, Ljeb;
 
-    invoke-direct {v0, v3, v1, v2}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    const-string v2, "one.me.webapp.domain.jsbridge.delegates.biometry.WebAppBiometryAuthResponse"
 
-    sget-object v1, Lyhc;->a:Lzhc;
+    const/4 v3, 0x3
 
-    const-string v2, "loadWebAppSectionsJob"
+    invoke-direct {v1, v2, v0, v3}, Ljeb;-><init>(Ljava/lang/String;Lxg6;I)V
 
-    const-string v4, "getLoadWebAppSectionsJob()Lkotlinx/coroutines/Job;"
+    const-string v0, "requestId"
 
-    invoke-static {v1, v3, v2, v4}, Lgl5;->f(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Lal9;
+    const/4 v2, 0x0
 
-    move-result-object v1
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
 
-    const/4 v2, 0x2
+    const-string v0, "token"
 
-    new-array v2, v2, [Lsf7;
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
 
-    const/4 v3, 0x0
+    const-string v0, "status"
 
-    aput-object v0, v2, v3
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
 
-    const/4 v0, 0x1
-
-    aput-object v1, v2, v0
-
-    sput-object v2, Lfdg;->u0:[Lsf7;
-
-    return-void
-.end method
-
-.method public constructor <init>(JJ)V
-    .registers 10
-
-    new-instance v0, Lv7g;
-
-    const-string v1, "webapp_biom_s_key_"
-
-    const-string v2, "_"
-
-    invoke-static {p1, p2, v1, v2}, Lew1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p3, p4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-direct {v0, v1, v2}, Lv7g;-><init>(Ljava/lang/String;Z)V
-
-    sget-object v1, Lu6g;->a:Lu6g;
-
-    invoke-virtual {v1}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v2
-
-    const-class v3, Lm3g;
-
-    invoke-virtual {v2, v3}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    move-result-object v2
-
-    invoke-virtual {v1}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v3
-
-    const-class v4, Lug6;
-
-    invoke-virtual {v3, v4}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    move-result-object v3
-
-    invoke-virtual {v1}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v1
-
-    const-class v4, Lzne;
-
-    invoke-virtual {v1, v4}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    move-result-object v1
-
-    invoke-direct {p0}, Luxf;-><init>()V
-
-    iput-wide p1, p0, Lfdg;->b:J
-
-    iput-wide p3, p0, Lfdg;->c:J
-
-    iput-object v0, p0, Lfdg;->o:Lv7g;
-
-    const-class p1, Lfdg;
-
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lfdg;->X:Ljava/lang/String;
-
-    iput-object v2, p0, Lfdg;->Y:Lxh7;
-
-    iput-object v3, p0, Lfdg;->Z:Lxh7;
-
-    iput-object v1, p0, Lfdg;->n0:Lxh7;
-
-    new-instance p1, Lbdg;
-
-    const-string p2, ""
-
-    sget-object p3, Lv25;->a:Lv25;
-
-    invoke-direct {p1, p2, p3}, Lbdg;-><init>(Ljava/lang/String;Ljava/util/List;)V
-
-    invoke-static {p1}, Lo4e;->a(Ljava/lang/Object;)Ln4e;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lfdg;->o0:Ln4e;
-
-    new-instance p2, Ldbc;
-
-    invoke-direct {p2, p1}, Ldbc;-><init>(Lfl9;)V
-
-    iput-object p2, p0, Lfdg;->p0:Ldbc;
-
-    new-instance p1, Lx65;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p2}, Lx65;-><init>(I)V
-
-    iput-object p1, p0, Lfdg;->q0:Lx65;
-
-    new-instance p1, Lx65;
-
-    invoke-direct {p1, p2}, Lx65;-><init>(I)V
-
-    iput-object p1, p0, Lfdg;->r0:Lx65;
-
-    invoke-static {}, Lb38;->C()Lqfd;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lfdg;->s0:Lqfd;
-
-    invoke-static {}, Lb38;->C()Lqfd;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lfdg;->t0:Lqfd;
-
-    invoke-virtual {p0}, Lfdg;->q()V
+    sput-object v1, Lfdg;->descriptor:Lqid;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final q()V
-    .registers 5
+.method public final a(Lu8;)Ljava/lang/Object;
+    .registers 12
 
-    iget-object v0, p0, Lfdg;->n0:Lxh7;
+    sget-object p0, Lfdg;->descriptor:Lqid;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Lu8;->k(Lqid;)Lu8;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Lzne;
+    sget-object v0, Lhdg;->d:[Lyi7;
 
-    check-cast v0, Ltba;
-
-    invoke-virtual {v0}, Ltba;->b()Ll04;
-
-    move-result-object v0
-
-    new-instance v1, Lcdg;
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p0, v2}, Lcdg;-><init>(Lfdg;Lkotlin/coroutines/Continuation;)V
+    const/4 v3, 0x0
 
-    iget-object v2, p0, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
+    move v6, v1
 
-    sget-object v3, Lu04;->b:Lu04;
+    move v7, v2
 
-    invoke-static {v2, v0, v3, v1}, Las3;->T(Lr04;Lj04;Lu04;Lx96;)Lq1e;
+    move-object v4, v3
 
-    move-result-object v0
+    move-object v5, v4
 
-    sget-object v1, Lfdg;->u0:[Lsf7;
+    :goto_0
+    if-eqz v6, :cond_4
 
-    const/4 v2, 0x1
+    invoke-virtual {p1, p0}, Lu8;->q(Lqid;)I
 
-    aget-object v1, v1, v2
+    move-result v8
 
-    iget-object v2, p0, Lfdg;->t0:Lqfd;
+    const/4 v9, -0x1
 
-    invoke-virtual {v2, p0, v1, v0}, Lqfd;->g0(Ljava/lang/Object;Lsf7;Ljava/lang/Object;)V
+    if-eq v8, v9, :cond_3
+
+    if-eqz v8, :cond_2
+
+    if-eq v8, v1, :cond_1
+
+    const/4 v9, 0x2
+
+    if-ne v8, v9, :cond_0
+
+    aget-object v8, v0, v9
+
+    invoke-virtual {p1, p0, v9, v8, v5}, Lu8;->t(Lqid;ILyi7;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lloe;
+
+    or-int/lit8 v7, v7, 0x4
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+
+    invoke-direct {p0, v8}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
+
+    throw p0
+
+    :cond_1
+    invoke-virtual {p1, p0, v1}, Lu8;->w(Lqid;I)Ljava/lang/String;
+
+    move-result-object v4
+
+    or-int/lit8 v7, v7, 0x2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p1, p0, v2}, Lu8;->w(Lqid;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    or-int/lit8 v7, v7, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    move v6, v2
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p1, p0}, Lu8;->z(Lqid;)V
+
+    new-instance p0, Lhdg;
+
+    invoke-direct {p0, v7, v3, v4, v5}, Lhdg;-><init>(ILjava/lang/String;Ljava/lang/String;Lloe;)V
+
+    return-object p0
+.end method
+
+.method public final b(Lay3;Ljava/lang/Object;)V
+    .registers 6
+
+    check-cast p2, Lhdg;
+
+    sget-object p0, Lfdg;->descriptor:Lqid;
+
+    invoke-virtual {p1, p0}, Lay3;->b(Lqid;)Lay3;
+
+    move-result-object p1
+
+    sget-object v0, Lhdg;->d:[Lyi7;
+
+    iget-object v1, p2, Lhdg;->a:Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, p0, v2, v1}, Lay3;->l(Lqid;ILjava/lang/String;)V
+
+    const/4 v1, 0x1
+
+    iget-object v2, p2, Lhdg;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, p0, v1, v2}, Lay3;->l(Lqid;ILjava/lang/String;)V
+
+    const/4 v1, 0x2
+
+    aget-object v0, v0, v1
+
+    iget-object p2, p2, Lhdg;->c:Lloe;
+
+    invoke-virtual {p1, p0, v1, v0, p2}, Lay3;->i(Lqid;ILyi7;Ljava/lang/Object;)V
+
+    invoke-virtual {p1}, Lay3;->m()V
 
     return-void
+.end method
+
+.method public final c()[Lyi7;
+    .registers 5
+
+    sget-object p0, Lhdg;->d:[Lyi7;
+
+    const/4 v0, 0x2
+
+    aget-object p0, p0, v0
+
+    const/4 v1, 0x3
+
+    new-array v1, v1, [Lyi7;
+
+    sget-object v2, Lfme;->a:Lfme;
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    const/4 v3, 0x1
+
+    aput-object v2, v1, v3
+
+    aput-object p0, v1, v0
+
+    return-object v1
+.end method
+
+.method public final d()Lqid;
+    .registers 1
+
+    sget-object p0, Lfdg;->descriptor:Lqid;
+
+    return-object p0
 .end method

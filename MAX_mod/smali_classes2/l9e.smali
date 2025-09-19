@@ -1,68 +1,85 @@
-.class public final synthetic Ll9e;
-.super Ljava/lang/Object;
+.class public final Ll9e;
+.super Ln9e;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/function/UnaryOperator;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/String;
-
-
-# direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;I)V
-    .registers 3
-
-    iput p2, p0, Ll9e;->a:I
-
-    iput-object p1, p0, Ll9e;->b:Ljava/lang/String;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final toString()Ljava/lang/String;
+    .registers 4
 
-    iget v0, p0, Ll9e;->a:I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    packed-switch v0, :pswitch_data_0
+    const-string v1, "AudioSend{ssrc="
 
-    check-cast p1, Lx9e;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    new-instance p1, Lx9e;
+    iget-wide v1, p0, Lq9e;->c:J
 
-    const/4 v0, 0x1
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Ll9e;->b:Ljava/lang/String;
+    const-string v1, ", transportId=\'"
 
-    invoke-direct {p1, p0, v0}, Lx9e;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object p1
+    iget-object v1, p0, Lq9e;->d:Ljava/lang/String;
 
-    :pswitch_0
-    check-cast p1, Li9e;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-instance p1, Li9e;
+    const-string v1, "\', trackId=\'"
 
-    const/4 v0, 0x2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Ll9e;->b:Ljava/lang/String;
+    iget-object v1, p0, Lq9e;->e:Ljava/lang/String;
 
-    invoke-direct {p1, p0, v0}, Li9e;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object p1
+    const-string v1, "\', packetsSent="
 
-    nop
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget-object v1, p0, Ln9e;->h:Ljava/math/BigInteger;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", packetsLost="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Ln9e;->i:Ljava/math/BigInteger;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", bytesSent="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Ln9e;->j:Ljava/math/BigInteger;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isMediaShare="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Ln9e;->k:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", unknown="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lq9e;->g:Ljava/util/HashMap;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

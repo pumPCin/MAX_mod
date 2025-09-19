@@ -1,129 +1,148 @@
-.class public final synthetic Lya4;
+.class public final Lya4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Llq7;
-.implements Lke4;
-.implements Lls1;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public a:Ljava/lang/String;
 
-.field public final synthetic b:I
-
-.field public final synthetic c:Ljava/lang/Object;
+.field public final b:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(IILjava/lang/Object;)V
-    .registers 4
-
-    iput-object p3, p0, Lya4;->c:Ljava/lang/Object;
-
-    iput p1, p0, Lya4;->a:I
-
-    iput p2, p0, Lya4;->b:I
+.method public constructor <init>()V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-string v0, ""
+
+    iput-object v0, p0, Lya4;->a:Ljava/lang/String;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lya4;->b:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public Q(Lks1;)Ljava/lang/String;
-    .registers 5
+.method public final a()Landroid/net/Uri;
+    .registers 1
 
-    iget-object v0, p0, Lya4;->c:Ljava/lang/Object;
+    invoke-virtual {p0}, Lya4;->b()Ljava/lang/String;
 
-    check-cast v0, Lvh4;
+    move-result-object p0
 
-    new-instance v1, Lba0;
+    invoke-static {p0}, Lzxa;->d(Ljava/lang/String;)Landroid/net/Uri;
 
-    iget v2, p0, Lya4;->a:I
-
-    iget p0, p0, Lya4;->b:I
-
-    invoke-direct {v1, v2, p0, p1}, Lba0;-><init>(IILks1;)V
-
-    new-instance p0, Lzv1;
-
-    const/16 v2, 0x16
-
-    invoke-direct {p0, v0, v2, v1}, Lzv1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    new-instance v1, Lsh4;
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, p1, v2}, Lsh4;-><init>(Lks1;I)V
-
-    invoke-virtual {v0, p0, v1}, Lvh4;->c(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
-
-    const-string p0, "DefaultSurfaceProcessor#snapshot"
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public a(Landroid/media/MediaCodecInfo;)I
+.method public final b()Ljava/lang/String;
     .registers 4
 
-    iget-object v0, p0, Lya4;->c:Ljava/lang/Object;
+    iget-object v0, p0, Lya4;->a:Ljava/lang/String;
 
-    check-cast v0, Ljava/lang/String;
+    const-string v1, ":"
 
-    iget v1, p0, Lya4;->a:I
+    const/4 v2, 0x0
 
-    iget p0, p0, Lya4;->b:I
+    invoke-static {v0, v1, v2}, Lrme;->c0(Ljava/lang/String;Ljava/lang/String;Z)Z
 
-    invoke-static {p1, v0, v1, p0}, Lp45;->f(Landroid/media/MediaCodecInfo;Ljava/lang/String;II)Landroid/util/Size;
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v1, p0, Lya4;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x3f
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lya4;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x26
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {v0}, Ljme;->j0(Ljava/lang/CharSequence;)I
+
+    move-result p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->deleteCharAt(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    new-instance v0, Lone/me/deeplink/InvalidDeeplinkNamingException;
+
+    iget-object p0, p0, Lya4;->a:Ljava/lang/String;
+
+    invoke-direct {v0, p0}, Lone/me/deeplink/InvalidDeeplinkNamingException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public final c(Ljava/lang/Object;Ljava/lang/String;)V
+    .registers 4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p2, "="
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    if-nez p1, :cond_0
+    iget-object p0, p0, Lya4;->b:Ljava/util/ArrayList;
 
-    const p0, 0x7fffffff
-
-    return p0
-
-    :cond_0
-    mul-int/2addr v1, p0
-
-    invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
-
-    move-result p0
-
-    invoke-virtual {p1}, Landroid/util/Size;->getHeight()I
-
-    move-result p1
-
-    mul-int/2addr p1, p0
-
-    sub-int/2addr v1, p1
-
-    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public invoke(Ljava/lang/Object;)V
-    .registers 4
-
-    iget-object v0, p0, Lya4;->c:Ljava/lang/Object;
-
-    check-cast v0, Lxc;
-
-    iget v1, p0, Lya4;->b:I
-
-    check-cast p1, Lyc;
-
-    iget p0, p0, Lya4;->a:I
-
-    invoke-interface {p1, v0, p0, v1}, Lyc;->H(Lxc;II)V
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method

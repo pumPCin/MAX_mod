@@ -2,95 +2,87 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lzn7;
+
 
 # instance fields
-.field public final a:I
+.field public final synthetic a:I
+
+.field public final b:Lbo7;
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>()V
     .registers 2
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lpz1;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lpz1;->a:I
+    new-instance v0, Lbo7;
+
+    invoke-direct {v0, p0}, Lbo7;-><init>(Lzn7;)V
+
+    iput-object v0, p0, Lpz1;->b:Lbo7;
+
+    sget-object p0, Lbn7;->ON_CREATE:Lbn7;
+
+    invoke-virtual {v0, p0}, Lbo7;->d(Lbn7;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lone/me/sdk/arch/Widget;)V
+    .registers 4
+
+    const/4 v0, 0x1
+
+    iput v0, p0, Lpz1;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lbo7;
+
+    invoke-direct {v0, p0}, Lbo7;-><init>(Lzn7;)V
+
+    iput-object v0, p0, Lpz1;->b:Lbo7;
+
+    new-instance v0, Lbc3;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1, p0}, Lbc3;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {p1, v0}, Lxx3;->addLifecycleListener(Lvx3;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final L()Lbo7;
+    .registers 2
 
-    if-ne p0, p1, :cond_0
+    iget v0, p0, Lpz1;->a:I
 
-    goto :goto_1
+    packed-switch v0, :pswitch_data_0
 
-    :cond_0
-    instance-of v0, p1, Lpz1;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lpz1;
-
-    iget p0, p0, Lpz1;->a:I
-
-    iget p1, p1, Lpz1;->a:I
-
-    if-eq p0, p1, :cond_2
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget p0, p0, Lpz1;->a:I
-
-    invoke-static {p0}, Lew1;->t(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "CameraParams(facing="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget p0, p0, Lpz1;->a:I
-
-    invoke-static {p0}, Lnh0;->s(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
+    iget-object p0, p0, Lpz1;->b:Lbo7;
 
     return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lpz1;->b:Lbo7;
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

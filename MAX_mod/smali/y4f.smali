@@ -1,36 +1,53 @@
-.class public interface abstract Ly4f;
-.super Ljava/lang/Object;
+.class public final Ly4f;
+.super Ljx3;
 .source "SourceFile"
 
 
+# instance fields
+.field public X:Lks5;
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lt8d;
+
+.field public o:Lt8d;
+
+.field public r0:I
+
+
+# direct methods
+.method public constructor <init>(Lt8d;Lkotlin/coroutines/Continuation;)V
+    .registers 3
+
+    iput-object p1, p0, Ly4f;->Z:Lt8d;
+
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a(La5f;)V
-.end method
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-.method public abstract b()V
-.end method
+    iput-object p1, p0, Ly4f;->Y:Ljava/lang/Object;
 
-.method public abstract c(La5f;)V
-.end method
+    iget p1, p0, Ly4f;->r0:I
 
-.method public d(La5f;)V
-    .registers 2
+    const/high16 v0, -0x80000000
 
-    invoke-interface {p0, p1}, Ly4f;->a(La5f;)V
+    or-int/2addr p1, v0
 
-    return-void
-.end method
+    iput p1, p0, Ly4f;->r0:I
 
-.method public e(La5f;)V
-    .registers 2
+    iget-object p1, p0, Ly4f;->Z:Lt8d;
 
-    invoke-interface {p0, p1}, Ly4f;->c(La5f;)V
+    const/4 v0, 0x0
 
-    return-void
-.end method
+    invoke-virtual {p1, v0, p0}, Lt8d;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-.method public abstract f()V
-.end method
+    sget-object p0, Lz04;->a:Lz04;
 
-.method public abstract h(La5f;)V
+    return-object p0
 .end method

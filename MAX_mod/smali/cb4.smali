@@ -1,175 +1,138 @@
-.class public final synthetic Lcb4;
+.class public abstract Lcb4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lkq7;
-
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lkvf;
+.field public final a:Ljava/util/LinkedHashSet;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkvf;)V
+.method public constructor <init>()V
     .registers 3
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lcb4;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcb4;->b:Lkvf;
+    new-instance v0, Ljava/util/LinkedHashSet;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Ljava/util/LinkedHashSet;-><init>(I)V
+
+    iput-object v0, p0, Lcb4;->a:Ljava/util/LinkedHashSet;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lwc;Lkvf;)V
-    .registers 3
+.method public static a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+    .registers 12
 
-    const/4 p1, 0x0
+    and-int/lit8 v0, p5, 0x2
 
-    iput p1, p0, Lcb4;->a:I
+    if-eqz v0, :cond_0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p3, 0x0
 
-    iput-object p2, p0, Lcb4;->b:Lkvf;
+    :cond_0
+    move-object v5, p3
 
-    return-void
-.end method
+    and-int/lit8 p3, p5, 0x4
 
+    if-eqz p3, :cond_1
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .registers 8
+    const/4 p4, 0x2
 
-    iget v0, p0, Lcb4;->a:I
+    :cond_1
+    move v2, p4
 
-    iget-object p0, p0, Lcb4;->b:Lkvf;
+    and-int/lit8 p3, p5, 0x8
 
-    packed-switch v0, :pswitch_data_0
+    const/4 p4, 0x0
 
-    check-cast p1, Lt5b;
+    if-eqz p3, :cond_2
 
-    invoke-interface {p1, p0}, Lt5b;->x(Lkvf;)V
+    const/4 p3, 0x1
 
-    return-void
-
-    :pswitch_0
-    check-cast p1, Lv95;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const-string v0, "videoDebugListener.onVideoSizeChanged: %s"
-
-    filled-new-array {p0}, [Ljava/lang/Object;
-
-    move-result-object v1
-
-    const-string v2, "v95"
-
-    invoke-static {v2, v0, v1}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget v0, p0, Lkvf;->c:I
-
-    iget v1, p0, Lkvf;->b:I
-
-    iget p0, p0, Lkvf;->a:I
-
-    const/16 v2, 0x5a
-
-    if-eq v0, v2, :cond_1
-
-    const/16 v2, 0x10e
-
-    if-ne v0, v2, :cond_0
+    move v4, p3
 
     goto :goto_0
 
-    :cond_0
-    iput p0, p1, Lv95;->p0:I
+    :cond_2
+    move v4, p4
 
-    iput v1, p1, Lv95;->q0:I
+    :goto_0
+    const/16 p3, 0x3a
+
+    invoke-static {p1, p3}, Ljme;->F0(Ljava/lang/String;C)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_4
+
+    new-instance p3, Ljava/util/ArrayList;
+
+    array-length p5, p2
+
+    invoke-direct {p3, p5}, Ljava/util/ArrayList;-><init>(I)V
+
+    array-length p5, p2
+
+    :goto_1
+    if-ge p4, p5, :cond_3
+
+    aget-object v0, p2, p4
+
+    sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    add-int/lit8 p4, p4, 0x1
 
     goto :goto_1
 
-    :cond_1
-    :goto_0
-    iput v1, p1, Lv95;->p0:I
-
-    iput p0, p1, Lv95;->q0:I
-
-    :goto_1
-    iput v0, p1, Lv95;->r0:I
-
-    iget-object v0, p1, Lv95;->Z:Lulf;
-
-    if-eqz v0, :cond_3
-
-    int-to-float v0, p0
-
-    int-to-float v2, v1
-
-    div-float/2addr v0, v2
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    div-float/2addr v2, v0
-
-    iget v0, p1, Lv95;->n0:F
-
-    sub-float/2addr v0, v2
-
-    const/4 v2, 0x0
-
-    cmpl-float v2, v0, v2
-
-    if-eqz v2, :cond_2
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
-
-    move-result v0
-
-    float-to-double v2, v0
-
-    const-wide v4, 0x3f1a36e2eb1c432dL    # 1.0E-4
-
-    cmpg-double v0, v2, v4
-
-    if-gtz v0, :cond_3
-
-    :cond_2
-    iput v1, p1, Lv95;->p0:I
-
-    iput p0, p1, Lv95;->q0:I
-
     :cond_3
-    iget-object p0, p1, Lv95;->Y:Lcu7;
+    new-instance v3, Ljava/util/LinkedHashSet;
 
-    if-eqz p0, :cond_4
+    invoke-direct {v3, p3}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
 
-    iget v0, p1, Lv95;->p0:I
+    sget-object p2, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    iget v1, p1, Lv95;->q0:I
+    invoke-virtual {p1, p2}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    iget p1, p1, Lv95;->r0:I
+    move-result-object p1
 
-    iget-object p0, p0, Lcu7;->e:Ls2;
+    invoke-static {p1}, Lzxa;->d(Ljava/lang/String;)Landroid/net/Uri;
 
-    if-eqz p0, :cond_4
+    move-result-object v1
 
-    invoke-interface {p0, v0, v1, p1}, Lai8;->q(III)V
+    new-instance v0, Lxa4;
+
+    invoke-direct/range {v0 .. v5}, Lxa4;-><init>(Landroid/net/Uri;ILjava/util/LinkedHashSet;ZLjava/util/Set;)V
+
+    iget-object p0, p0, Lcb4;->a:Ljava/util/LinkedHashSet;
+
+    invoke-virtual {p0, v0}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+
+    return-object v0
 
     :cond_4
-    return-void
+    const-string p0, "invalid route "
 
-    nop
+    invoke-virtual {p0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    move-result-object p0
+
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

@@ -3,108 +3,146 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lz94;
+.implements Laxf;
+.implements Luz1;
+.implements Ltdb;
 
 
-# static fields
-.field public static final a:Loc5;
+# instance fields
+.field public a:Laxf;
 
-.field public static final b:Lpc5;
+.field public b:Luz1;
+
+.field public c:Laxf;
+
+.field public o:Luz1;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
+# virtual methods
+.method public final a(ILjava/lang/Object;)V
+    .registers 4
 
-    new-instance v0, Loc5;
+    const/4 v0, 0x7
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    if-eq p1, v0, :cond_3
 
-    sput-object v0, Loc5;->a:Loc5;
+    const/16 v0, 0x8
 
-    sget-object v0, Lpc5;->b:Lpc5;
+    if-eq p1, v0, :cond_2
 
-    sput-object v0, Loc5;->b:Lpc5;
+    const/16 v0, 0x2710
+
+    if-eq p1, v0, :cond_0
+
+    return-void
+
+    :cond_0
+    check-cast p2, Lc8e;
+
+    if-nez p2, :cond_1
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Loc5;->c:Laxf;
+
+    iput-object p1, p0, Loc5;->o:Luz1;
+
+    return-void
+
+    :cond_1
+    invoke-virtual {p2}, Lc8e;->getVideoFrameMetadataListener()Laxf;
+
+    move-result-object p1
+
+    iput-object p1, p0, Loc5;->c:Laxf;
+
+    invoke-virtual {p2}, Lc8e;->getCameraMotionListener()Luz1;
+
+    move-result-object p1
+
+    iput-object p1, p0, Loc5;->o:Luz1;
+
+    return-void
+
+    :cond_2
+    check-cast p2, Luz1;
+
+    iput-object p2, p0, Loc5;->b:Luz1;
+
+    return-void
+
+    :cond_3
+    check-cast p2, Laxf;
+
+    iput-object p2, p0, Loc5;->a:Laxf;
 
     return-void
 .end method
 
+.method public final b(J[F)V
+    .registers 5
 
-# virtual methods
-.method public final a()Lha4;
-    .registers 1
+    iget-object v0, p0, Loc5;->o:Luz1;
 
-    sget-object p0, Loc5;->b:Lpc5;
+    if-eqz v0, :cond_0
 
-    return-object p0
-.end method
-
-.method public final b(Ljava/lang/String;Lca4;Landroid/os/Bundle;)Lka4;
-    .registers 12
-
-    sget-object p0, Loc5;->b:Lpc5;
-
-    iget-object p0, p0, Lha4;->a:Ljava/util/LinkedHashSet;
-
-    invoke-interface {p0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
+    invoke-interface {v0, p1, p2, p3}, Luz1;->b(J[F)V
 
     :cond_0
-    sget-object p0, Lpc5;->b:Lpc5;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object p0, Lpc5;->c:Lca4;
-
-    invoke-virtual {p2, p0}, Lca4;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
+    iget-object p0, p0, Loc5;->b:Luz1;
 
     if-eqz p0, :cond_1
 
-    new-instance v6, Lbn1;
-
-    const/4 p0, 0x3
-
-    invoke-direct {v6, p3, p0}, Lbn1;-><init>(Landroid/os/Bundle;I)V
-
-    new-instance v0, Lka4;
-
-    const/16 v7, 0x18
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v3, p3
-
-    invoke-direct/range {v0 .. v7}, Lka4;-><init>(Ljava/lang/String;Lca4;Landroid/os/Bundle;ILia4;Lja4;I)V
-
-    return-object v0
+    invoke-interface {p0, p1, p2, p3}, Luz1;->b(J[F)V
 
     :cond_1
-    move-object v2, p2
+    return-void
+.end method
 
-    new-instance p0, Ljava/lang/IllegalStateException;
+.method public final c()V
+    .registers 2
 
-    const-string p1, "unknown screen "
+    iget-object v0, p0, Loc5;->o:Luz1;
 
-    invoke-static {p1, v2}, Lew1;->g(Ljava/lang/String;Lca4;)Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    move-result-object p1
+    invoke-interface {v0}, Luz1;->c()V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    :cond_0
+    iget-object p0, p0, Loc5;->b:Luz1;
 
-    throw p0
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0}, Luz1;->c()V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final d(JJLv46;Landroid/media/MediaFormat;)V
+    .registers 14
+
+    iget-object v0, p0, Loc5;->c:Laxf;
+
+    if-eqz v0, :cond_0
+
+    move-wide v1, p1
+
+    move-wide v3, p3
+
+    move-object v5, p5
+
+    move-object v6, p6
+
+    invoke-interface/range {v0 .. v6}, Laxf;->d(JJLv46;Landroid/media/MediaFormat;)V
+
+    :cond_0
+    iget-object p0, p0, Loc5;->a:Laxf;
+
+    if-eqz p0, :cond_1
+
+    invoke-interface/range {p0 .. p6}, Laxf;->d(JJLv46;Landroid/media/MediaFormat;)V
+
+    :cond_1
+    return-void
 .end method

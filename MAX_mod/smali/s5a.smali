@@ -1,83 +1,129 @@
-.class public final synthetic Ls5a;
-.super Lma6;
+.class public final Ls5a;
+.super Lvk0;
 .source "SourceFile"
 
-# interfaces
-.implements Lz96;
 
+# instance fields
+.field public Y:Ljava/lang/Object;
 
-# static fields
-.field public static final a:Ls5a;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 6
-
-    new-instance v0, Ls5a;
-
-    const-string v4, "register(Lkotlinx/coroutines/selects/SelectInstance;Ljava/lang/Object;)V"
-
-    const/4 v5, 0x0
-
-    const/4 v1, 0x3
-
-    const-class v2, Lt5a;
-
-    const-string v3, "register"
-
-    invoke-direct/range {v0 .. v5}, Lma6;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sput-object v0, Ls5a;->a:Ls5a;
-
-    return-void
-.end method
+.field public Z:Z
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+.method public final poll()Ljava/lang/Object;
+    .registers 3
 
-    check-cast p1, Lt5a;
+    :goto_0
+    iget-object v0, p0, Lvk0;->c:Lr0c;
 
-    check-cast p2, Ls7d;
+    invoke-interface {v0}, Lf2e;->poll()Ljava/lang/Object;
 
-    iget-wide v0, p1, Lt5a;->a:J
+    move-result-object v0
 
-    const-wide/16 v2, 0x0
+    if-nez v0, :cond_0
 
-    cmp-long p0, v0, v2
+    const/4 p0, 0x0
 
-    sget-object p3, Lncf;->a:Lncf;
-
-    if-gtz p0, :cond_0
-
-    check-cast p2, Lr7d;
-
-    iput-object p3, p2, Lr7d;->X:Ljava/lang/Object;
-
-    return-object p3
+    return-object p0
 
     :cond_0
-    new-instance p0, Lfb6;
+    iget-boolean v1, p0, Ls5a;->Z:Z
 
-    const/16 v2, 0x10
+    if-nez v1, :cond_1
 
-    invoke-direct {p0, p2, v2, p1}, Lfb6;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    const/4 v1, 0x1
 
-    check-cast p2, Lr7d;
+    iput-boolean v1, p0, Ls5a;->Z:Z
 
-    iget-object p1, p2, Lr7d;->a:Lj04;
+    iput-object v0, p0, Ls5a;->Y:Ljava/lang/Object;
 
-    invoke-static {p1}, Las3;->H(Lj04;)Lzj4;
+    return-object v0
 
-    move-result-object v2
+    :cond_1
+    iget-object v1, p0, Ls5a;->Y:Ljava/lang/Object;
 
-    invoke-interface {v2, v0, v1, p0, p1}, Lzj4;->invokeOnTimeout(JLjava/lang/Runnable;Lj04;)Lqp4;
+    invoke-static {v1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object p0
+    move-result v1
 
-    iput-object p0, p2, Lr7d;->c:Ljava/lang/Object;
+    if-nez v1, :cond_2
 
-    return-object p3
+    iput-object v0, p0, Ls5a;->Y:Ljava/lang/Object;
+
+    return-object v0
+
+    :cond_2
+    iput-object v0, p0, Ls5a;->Y:Ljava/lang/Object;
+
+    goto :goto_0
+.end method
+
+.method public final s(Ljava/lang/Object;)V
+    .registers 4
+
+    iget-boolean v0, p0, Lvk0;->o:Z
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget v0, p0, Lvk0;->X:I
+
+    iget-object v1, p0, Lvk0;->a:Ld8a;
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {v1, p1}, Ld8a;->s(Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_1
+    :try_start_0
+    iget-boolean v0, p0, Ls5a;->Z:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Ls5a;->Y:Ljava/lang/Object;
+
+    invoke-static {v0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    iput-object p1, p0, Ls5a;->Y:Ljava/lang/Object;
+
+    if-eqz v0, :cond_3
+
+    :goto_0
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    goto :goto_1
+
+    :cond_2
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Ls5a;->Z:Z
+
+    iput-object p1, p0, Ls5a;->Y:Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :cond_3
+    invoke-interface {v1, p1}, Ld8a;->s(Ljava/lang/Object;)V
+
+    return-void
+
+    :goto_1
+    invoke-static {p1}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    iget-object v0, p0, Lvk0;->b:Loq4;
+
+    invoke-interface {v0}, Loq4;->e()V
+
+    invoke-virtual {p0, p1}, Lvk0;->onError(Ljava/lang/Throwable;)V
+
+    return-void
 .end method

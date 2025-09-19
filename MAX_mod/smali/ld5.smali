@@ -1,20 +1,23 @@
-.class public interface abstract Lld5;
-.super Ljava/lang/Object;
+.class public final Lld5;
+.super Ljmf;
 .source "SourceFile"
 
 
 # virtual methods
-.method public abstract d(JJ)V
+.method public final b()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "ExoSoSource"
+
+    return-object p0
 .end method
 
-.method public abstract g(Lpd5;)V
-.end method
+.method public final g(Z)Lcom/facebook/soloader/e;
+    .registers 2
 
-.method public abstract h(Lnd5;)Z
-.end method
+    new-instance p1, Lcom/facebook/soloader/c;
 
-.method public abstract i(Lnd5;Le7;)I
-.end method
+    invoke-direct {p1, p0, p0}, Lcom/facebook/soloader/c;-><init>(Lld5;Lld5;)V
 
-.method public abstract release()V
+    return-object p1
 .end method

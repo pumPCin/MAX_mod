@@ -1,25 +1,21 @@
 .class public final Lhkc;
-.super Lqy;
+.super Lpcd;
 .source "SourceFile"
 
 
 # instance fields
-.field public final X:Lgkc;
-
-.field public final o:Z
+.field public final c:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(ZLgkc;ZZ)V
-    .registers 6
+.method public constructor <init>(Ljava/lang/String;Ljava/util/ArrayList;)V
+    .registers 4
 
-    sget-object v0, Lq00;->v0:Lq00;
+    const/4 v0, 0x4
 
-    invoke-direct {p0, v0, p3, p4}, Lqy;-><init>(Lq00;ZZ)V
+    invoke-direct {p0, v0, p1}, Lpcd;-><init>(ILjava/lang/String;)V
 
-    iput-boolean p1, p0, Lhkc;->o:Z
-
-    iput-object p2, p0, Lhkc;->X:Lgkc;
+    iput-object p2, p0, Lhkc;->c:Ljava/util/ArrayList;
 
     return-void
 .end method

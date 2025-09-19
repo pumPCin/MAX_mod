@@ -1,94 +1,218 @@
-.class public final Lede;
+.class public abstract Lede;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final X:Ljava/lang/String;
+
+.field public final a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field public final b:Ldi0;
+
+.field public final c:Lhjb;
+
+.field public final o:Lejb;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
-    .registers 2
+.method public constructor <init>(Ldi0;Lhjb;Lejb;Ljava/lang/String;)V
+    .registers 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lede;->a:Ljava/util/List;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    iput-object v0, p0, Lede;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    iput-object p1, p0, Lede;->b:Ldi0;
+
+    iput-object p2, p0, Lede;->c:Lhjb;
+
+    iput-object p3, p0, Lede;->o:Lejb;
+
+    iput-object p4, p0, Lede;->X:Ljava/lang/String;
+
+    invoke-interface {p2, p3, p4}, Lhjb;->j(Lejb;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final a()V
+    .registers 4
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x2
+
+    iget-object v2, p0, Lede;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lede;->e()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public abstract b(Ljava/lang/Object;)V
+.end method
+
+.method public c(Ljava/lang/Object;)Ljava/util/Map;
+    .registers 2
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public abstract d()Ljava/lang/Object;
+.end method
+
+.method public e()V
+    .registers 4
+
+    iget-object v0, p0, Lede;->c:Lhjb;
+
+    iget-object v1, p0, Lede;->o:Lejb;
+
+    iget-object v2, p0, Lede;->X:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Lhjb;->i(Lejb;Ljava/lang/String;)Z
+
+    invoke-interface {v0, v1, v2}, Lhjb;->k(Lejb;Ljava/lang/String;)V
+
+    iget-object p0, p0, Lede;->b:Ldi0;
+
+    invoke-virtual {p0}, Ldi0;->c()V
+
+    return-void
+.end method
+
+.method public f(Ljava/lang/Exception;)V
+    .registers 6
+
+    iget-object v0, p0, Lede;->c:Lhjb;
+
+    iget-object v1, p0, Lede;->o:Lejb;
+
+    iget-object v2, p0, Lede;->X:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Lhjb;->i(Lejb;Ljava/lang/String;)Z
+
+    const/4 v3, 0x0
+
+    invoke-interface {v0, v1, v2, p1, v3}, Lhjb;->d(Lejb;Ljava/lang/String;Ljava/lang/Throwable;Ljava/util/Map;)V
+
+    iget-object p0, p0, Lede;->b:Ldi0;
+
+    invoke-virtual {p0, p1}, Ldi0;->e(Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method public g(Ljava/lang/Object;)V
+    .registers 6
+
+    iget-object v0, p0, Lede;->c:Lhjb;
+
+    iget-object v1, p0, Lede;->o:Lejb;
+
+    iget-object v2, p0, Lede;->X:Ljava/lang/String;
+
+    invoke-interface {v0, v1, v2}, Lhjb;->i(Lejb;Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-virtual {p0, p1}, Lede;->c(Ljava/lang/Object;)Ljava/util/Map;
+
+    move-result-object v3
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v3, 0x0
+
+    :goto_0
+    invoke-interface {v0, v1, v2, v3}, Lhjb;->a(Lejb;Ljava/lang/String;Ljava/util/Map;)V
+
+    iget-object p0, p0, Lede;->b:Ldi0;
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p0, v0, p1}, Ldi0;->g(ILjava/lang/Object;)V
 
-    return v0
+    return-void
+.end method
+
+.method public final run()V
+    .registers 4
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lede;->a:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
 
     :cond_0
-    instance-of v1, p1, Lede;
+    :try_start_0
+    invoke-virtual {p0}, Lede;->d()Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    if-nez v1, :cond_1
+    const/4 v1, 0x3
 
-    return v2
+    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    :cond_1
-    check-cast p1, Lede;
+    :try_start_1
+    invoke-virtual {p0, v0}, Lede;->g(Ljava/lang/Object;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object p0, p0, Lede;->a:Ljava/util/List;
+    invoke-virtual {p0, v0}, Lede;->b(Ljava/lang/Object;)V
 
-    iget-object p1, p1, Lede;->a:Ljava/util/List;
+    return-void
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :catchall_0
+    move-exception v1
 
-    move-result p0
+    invoke-virtual {p0, v0}, Lede;->b(Ljava/lang/Object;)V
 
-    if-nez p0, :cond_2
+    throw v1
 
-    return v2
+    :catch_0
+    move-exception v0
 
-    :cond_2
-    return v0
-.end method
+    const/4 v1, 0x4
 
-.method public final hashCode()I
-    .registers 1
+    invoke-virtual {v2, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    iget-object p0, p0, Lede;->a:Ljava/util/List;
+    invoke-virtual {p0, v0}, Lede;->f(Ljava/lang/Exception;)V
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "SkipAnyOf(containsAnyOf="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lede;->a:Ljava/util/List;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

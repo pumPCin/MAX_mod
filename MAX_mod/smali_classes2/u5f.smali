@@ -1,60 +1,64 @@
 .class public final Lu5f;
-.super Lw5f;
+.super Lzoc;
 .source "SourceFile"
+
+# interfaces
+.implements Lgze;
 
 
 # instance fields
-.field public b:Z
-
-.field public final synthetic c:Lwl5;
+.field public final E0:Landroidx/appcompat/widget/AppCompatTextView;
 
 
 # direct methods
-.method public constructor <init>(Lwl5;Ljava/lang/Object;)V
+.method public constructor <init>(Landroid/view/View;)V
     .registers 3
 
-    iput-object p1, p0, Lu5f;->c:Lwl5;
+    invoke-direct {p0, p1}, Lzoc;-><init>(Landroid/view/View;)V
 
-    invoke-direct {p0, p2}, Lw5f;-><init>(Ljava/lang/Object;)V
+    move-object v0, p1
+
+    check-cast v0, Landroidx/appcompat/widget/AppCompatTextView;
+
+    iput-object v0, p0, Lu5f;->E0:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p1}, Landroid/view/View;->isInEditMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object p1, Loi4;->e0:Loi4;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    sget-object v0, Lcze;->a0:Lzte;
+
+    invoke-static {p1}, Ln4e;->I(Landroid/content/Context;)Lcze;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-virtual {p0, p1}, Lu5f;->s(Lcze;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
+.method public final s(Lcze;)V
     .registers 2
 
-    iget-boolean v0, p0, Lu5f;->b:Z
+    iget-object p0, p0, Lu5f;->E0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    if-eqz v0, :cond_0
+    iget p1, p1, Lcze;->F:I
 
-    const/4 p0, 0x0
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    return-object p0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lu5f;->b:Z
-
-    iget-object v0, p0, Lu5f;->c:Lwl5;
-
-    iget-object v0, v0, Lwl5;->X:Lv9d;
-
-    check-cast v0, Lmp5;
-
-    iget-object v0, v0, Lmp5;->d:Ljava/lang/Object;
-
-    check-cast v0, Lj96;
-
-    iget-object p0, p0, Lw5f;->a:Ljava/lang/Object;
-
-    invoke-interface {v0, p0}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    return-object p0
+    return-void
 .end method

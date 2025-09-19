@@ -1,133 +1,149 @@
-.class public final synthetic Ld91;
-.super Ljava/lang/Object;
+.class public final Ld91;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lone/me/calllist/ui/CallHistoryScreen;
+.field public final synthetic Y:Le91;
+
+.field public final synthetic Z:Ljava/util/List;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/calllist/ui/CallHistoryScreen;I)V
-    .registers 3
+.method public constructor <init>(Le91;Ljava/util/List;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    iput p2, p0, Ld91;->a:I
+    iput-object p1, p0, Ld91;->Y:Le91;
 
-    iput-object p1, p0, Ld91;->b:Lone/me/calllist/ui/CallHistoryScreen;
+    iput-object p2, p0, Ld91;->Z:Ljava/util/List;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget p1, p0, Ld91;->a:I
+    check-cast p1, Ly04;
 
-    const/4 v0, 0x0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Ld91;->b:Lone/me/calllist/ui/CallHistoryScreen;
-
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p1, p0, Lone/me/calllist/ui/CallHistoryScreen;->b:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lmwa;
-
-    new-instance v1, Lbjg;
-
-    invoke-direct {v1, p0, v0}, Lbjg;-><init>(Lone/me/sdk/arch/Widget;I)V
-
-    sget-object p0, Lmwa;->h:[Ljava/lang/String;
-
-    const/16 v0, 0xa0
-
-    invoke-virtual {p1, v1, p0, v0}, Lmwa;->f(Lbjg;[Ljava/lang/String;I)V
-
-    return-void
-
-    :pswitch_0
-    sget-object p1, Lone/me/calllist/ui/CallHistoryScreen;->x0:[Lsf7;
-
-    invoke-virtual {p0}, Lone/me/calllist/ui/CallHistoryScreen;->y0()Lk91;
+    invoke-virtual {p0, p1, p2}, Ld91;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    iget-object p0, p0, Lk91;->o:Lmh1;
+    check-cast p0, Ld91;
 
-    new-instance p1, Lr01;
+    sget-object p1, Lylf;->a:Lylf;
 
-    const/16 v1, 0x12
-
-    invoke-direct {p1, v1}, Lr01;-><init>(I)V
-
-    invoke-virtual {p0}, Lmh1;->c()V
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lmh1;->j:Z
-
-    invoke-virtual {p0}, Lmh1;->e()Lmwa;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lmh1;->a:Lbjg;
-
-    invoke-virtual {v1, v0, v2}, Lmwa;->a(ZLbjg;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object p0, p0, Lmh1;->d:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Ld91;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lck3;
+    return-object p0
+.end method
 
-    invoke-interface {p0}, Lck3;->f()Z
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    move-result p0
+    new-instance p1, Ld91;
 
-    if-nez p0, :cond_0
+    iget-object v0, p0, Ld91;->Y:Le91;
 
-    invoke-virtual {v2}, Lbjg;->b()V
+    iget-object p0, p0, Ld91;->Z:Ljava/util/List;
 
-    goto :goto_0
+    invoke-direct {p1, v0, p0, p2}, Ld91;-><init>(Le91;Ljava/util/List;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 7
+
+    iget v0, p0, Ld91;->X:I
+
+    sget-object v1, Lylf;->a:Lylf;
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v2, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    return-object v1
 
     :cond_0
-    invoke-virtual {p1}, Lr01;->invoke()Ljava/lang/Object;
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ld91;->Y:Le91;
+
+    iget-object p1, p1, Le91;->c:Lbkd;
+
+    iput v2, p0, Ld91;->X:I
+
+    iget-object v0, p1, Lbkd;->c:Ljava/lang/Object;
+
+    check-cast v0, Lcl7;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxwe;
+
+    check-cast v0, Laga;
+
+    invoke-virtual {v0}, Laga;->b()Ls04;
+
+    move-result-object v0
+
+    new-instance v2, Lvu1;
+
+    const/4 v3, 0x0
+
+    iget-object v4, p0, Ld91;->Z:Ljava/util/List;
+
+    invoke-direct {v2, v4, p1, v3}, Lvu1;-><init>(Ljava/util/List;Lbkd;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, v2, p0}, Lvyg;->H(Lq04;Lpc6;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
 
     goto :goto_0
 
-    :cond_1
-    iput-object p1, p0, Lmh1;->l:Lh96;
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lmh1;->h:Lg2e;
-
-    iput-boolean v0, p0, Lmh1;->i:Z
+    :cond_2
+    move-object p0, v1
 
     :goto_0
-    return-void
+    if-ne p0, p1, :cond_3
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p1
+
+    :cond_3
+    return-object v1
 .end method

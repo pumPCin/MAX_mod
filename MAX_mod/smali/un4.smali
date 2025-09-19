@@ -1,78 +1,53 @@
-.class public Lun4;
-.super Lil4;
+.class public final Lun4;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public m:I
+.field public final a:Ljava/lang/String;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:J
+
+.field public d:J
+
+.field public e:I
+
+.field public final f:I
+
+.field public final g:I
+
+.field public h:[I
+
+.field public final i:Ljava/util/TreeMap;
 
 
 # direct methods
-.method public constructor <init>(Lijg;)V
-    .registers 2
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JIII[ILjava/util/TreeMap;)V
+    .registers 10
 
-    invoke-direct {p0, p1}, Lil4;-><init>(Lijg;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    instance-of p1, p1, Las6;
+    iput-object p1, p0, Lun4;->a:Ljava/lang/String;
 
-    if-eqz p1, :cond_0
+    iput-object p2, p0, Lun4;->b:Ljava/lang/String;
 
-    const/4 p1, 0x2
+    iput-wide p3, p0, Lun4;->c:J
 
-    iput p1, p0, Lil4;->e:I
+    const-wide/16 p1, 0x0
 
-    return-void
+    iput-wide p1, p0, Lun4;->d:J
 
-    :cond_0
-    const/4 p1, 0x3
+    iput p5, p0, Lun4;->e:I
 
-    iput p1, p0, Lil4;->e:I
+    iput p6, p0, Lun4;->f:I
 
-    return-void
-.end method
+    iput p7, p0, Lun4;->g:I
 
+    iput-object p8, p0, Lun4;->h:[I
 
-# virtual methods
-.method public final d(I)V
-    .registers 3
+    iput-object p9, p0, Lun4;->i:Ljava/util/TreeMap;
 
-    iget-boolean v0, p0, Lil4;->j:Z
-
-    if-eqz v0, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lil4;->j:Z
-
-    iput p1, p0, Lil4;->g:I
-
-    iget-object p0, p0, Lil4;->k:Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lfl4;
-
-    invoke-interface {p1, p1}, Lfl4;->a(Lfl4;)V
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
     return-void
 .end method

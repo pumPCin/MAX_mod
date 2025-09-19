@@ -1,26 +1,6 @@
-.class public final Ld2e;
+.class public interface abstract Ld2e;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lg2e;
-
-
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Z
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/String;Z)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ld2e;->a:Ljava/lang/String;
-
-    iput-boolean p2, p0, Ld2e;->b:Z
-
-    return-void
-.end method
+.implements Lf2e;

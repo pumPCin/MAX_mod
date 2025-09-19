@@ -4,16 +4,22 @@
 
 
 # instance fields
-.field public final a:Lorc;
+.field public final a:Lcl7;
 
 
 # direct methods
-.method public constructor <init>(Lorc;)V
-    .registers 2
+.method public constructor <init>(Lz4;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcca;->a:Lorc;
+    const-class v0, Lp2b;
+
+    invoke-virtual {p1, v0}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcca;->a:Lcl7;
 
     return-void
 .end method

@@ -2,218 +2,212 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lnkf;
+
 
 # instance fields
-.field public final a:Lnya;
+.field public final a:Lp2f;
 
-.field public final b:Lxh7;
+.field public final b:Lr2f;
 
-.field public final c:Ldle;
-
-.field public final d:Ldle;
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lxh7;Lxh7;Lnya;)V
+.method public constructor <init>(Lp2f;Lr2f;I)V
     .registers 5
+
+    sget v0, La1d;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p4, p0, Lmkf;->a:Lnya;
+    iput-object p1, p0, Lmkf;->a:Lp2f;
 
-    iput-object p3, p0, Lmkf;->b:Lxh7;
+    iput-object p2, p0, Lmkf;->b:Lr2f;
 
-    new-instance p3, Lmya;
-
-    const/4 p4, 0x2
-
-    invoke-direct {p3, p2, p1, p4}, Lmya;-><init>(Lxh7;Landroid/content/Context;I)V
-
-    new-instance p1, Ldle;
-
-    invoke-direct {p1, p3}, Ldle;-><init>(Lh96;)V
-
-    iput-object p1, p0, Lmkf;->c:Ldle;
-
-    new-instance p1, Lq9d;
-
-    const/16 p2, 0x19
-
-    invoke-direct {p1, p2, p0}, Lq9d;-><init>(ILjava/lang/Object;)V
-
-    new-instance p2, Ldle;
-
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
-
-    iput-object p2, p0, Lmkf;->d:Ldle;
+    iput p3, p0, Lmkf;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lv10;Lw10;Ljava/lang/String;)Llkf;
-    .registers 24
+.method public final a()Lu2f;
+    .registers 1
 
-    move-object/from16 v0, p0
+    iget-object p0, p0, Lmkf;->b:Lr2f;
 
-    move-object/from16 v1, p1
+    return-object p0
+.end method
 
-    move-object/from16 v2, p2
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    iget v3, v1, Lv10;->f:I
-
-    iget v4, v1, Lv10;->e:I
-
-    iget-wide v5, v1, Lv10;->c:J
-
-    iget-object v7, v2, Lw10;->o:Lp10;
-
-    iget-object v8, v2, Lw10;->s:Ljava/lang/String;
-
-    invoke-static {v8}, Lye2;->E(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v8
-
-    iget-object v9, v1, Lv10;->d:Ljava/lang/String;
-
-    invoke-static {v9}, Lye2;->E(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v9
-
-    iget-object v10, v0, Lmkf;->b:Lxh7;
-
-    invoke-interface {v10}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Li00;
-
-    const/4 v11, 0x0
-
-    check-cast v10, Lz10;
-
-    invoke-virtual {v10, v2, v11}, Lz10;->c(Lw10;Z)Landroid/net/Uri;
-
-    move-result-object v17
-
-    if-nez v9, :cond_0
-
-    if-eqz v8, :cond_0
-
-    :goto_0
-    move-object v10, v8
+    if-ne p0, p1, :cond_0
 
     goto :goto_1
 
     :cond_0
-    if-eqz v9, :cond_1
+    instance-of v0, p1, Lmkf;
 
-    move-object v10, v9
-
-    goto :goto_1
-
-    :cond_1
-    if-eqz v17, :cond_2
-
-    move-object/from16 v10, v17
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v8, 0x0
+    if-nez v0, :cond_1
 
     goto :goto_0
 
-    :goto_1
-    iget-object v2, v0, Lmkf;->d:Ldle;
+    :cond_1
+    check-cast p1, Lmkf;
 
-    iget-object v0, v0, Lmkf;->a:Lnya;
+    sget v0, La1d;->a:I
 
-    if-nez v10, :cond_3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object v8, Llkf;->k:Llkf;
+    iget-object v0, p0, Lmkf;->a:Lp2f;
 
-    iget-wide v9, v1, Lv10;->a:J
+    iget-object v1, p1, Lmkf;->a:Lp2f;
 
-    iget v11, v1, Lv10;->e:I
+    invoke-virtual {v0, v1}, Lp2f;->equals(Ljava/lang/Object;)Z
 
-    iget v12, v1, Lv10;->f:I
+    move-result v0
 
-    invoke-virtual {v2}, Ldle;->getValue()Ljava/lang/Object;
+    if-nez v0, :cond_2
 
-    move-result-object v1
+    goto :goto_0
 
-    check-cast v1, Ljava/lang/Number;
+    :cond_2
+    iget-object v0, p0, Lmkf;->b:Lr2f;
 
-    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
+    iget-object v1, p1, Lmkf;->b:Lr2f;
 
-    move-result v13
+    invoke-virtual {v0, v1}, Lr2f;->equals(Ljava/lang/Object;)Z
 
-    sget v1, Llw4;->o:I
+    move-result v0
 
-    sget-object v1, Lqw4;->c:Lqw4;
+    if-nez v0, :cond_3
 
-    invoke-static {v5, v6, v1}, Lg5e;->H(JLqw4;)J
-
-    move-result-wide v14
-
-    invoke-virtual {v0, v4, v3}, Lnya;->a(II)Lulc;
-
-    move-result-object v18
-
-    iget-object v0, v8, Llkf;->b:Landroid/net/Uri;
-
-    move-object/from16 v19, v7
-
-    new-instance v7, Llkf;
-
-    move-object/from16 v16, p3
-
-    move-wide v8, v9
-
-    move-object v10, v0
-
-    invoke-direct/range {v7 .. v19}, Llkf;-><init>(JLandroid/net/Uri;IIIJLjava/lang/String;Landroid/net/Uri;Lulc;Lp10;)V
-
-    return-object v7
+    goto :goto_0
 
     :cond_3
-    move-object/from16 v19, v7
+    iget p0, p0, Lmkf;->c:I
 
-    new-instance v7, Llkf;
+    iget p1, p1, Lmkf;->c:I
 
-    iget-wide v8, v1, Lv10;->a:J
+    if-eq p0, p1, :cond_4
 
-    iget v11, v1, Lv10;->e:I
+    :goto_0
+    const/4 p0, 0x0
 
-    iget v12, v1, Lv10;->f:I
+    return p0
 
-    invoke-virtual {v2}, Ldle;->getValue()Ljava/lang/Object;
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
 
-    move-result-object v1
+    return p0
+.end method
 
-    check-cast v1, Ljava/lang/Number;
+.method public final getIcon()I
+    .registers 1
 
-    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
+    sget p0, La1d;->f:I
 
-    move-result v13
+    return p0
+.end method
 
-    sget v1, Llw4;->o:I
+.method public final getTitle()Lu2f;
+    .registers 1
 
-    sget-object v1, Lqw4;->c:Lqw4;
+    iget-object p0, p0, Lmkf;->a:Lp2f;
 
-    invoke-static {v5, v6, v1}, Lg5e;->H(JLqw4;)J
+    return-object p0
+.end method
 
-    move-result-wide v14
+.method public final hashCode()I
+    .registers 4
 
-    invoke-virtual {v0, v4, v3}, Lnya;->a(II)Lulc;
+    sget v0, La1d;->f:I
 
-    move-result-object v18
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
-    move-object/from16 v16, p3
+    move-result v0
 
-    invoke-direct/range {v7 .. v19}, Llkf;-><init>(JLandroid/net/Uri;IIIJLjava/lang/String;Landroid/net/Uri;Lulc;Lp10;)V
+    const/16 v1, 0x1f
 
-    return-object v7
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lmkf;->a:Lp2f;
+
+    iget v2, v2, Lp2f;->b:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-object v2, p0, Lmkf;->b:Lr2f;
+
+    invoke-virtual {v2}, Lr2f;->hashCode()I
+
+    move-result v2
+
+    add-int/2addr v2, v0
+
+    mul-int/2addr v2, v1
+
+    iget p0, p0, Lmkf;->c:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    add-int/2addr p0, v2
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 4
+
+    sget v0, La1d;->f:I
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "VerifyEmail(icon="
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v0, ", title="
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lmkf;->a:Lp2f;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", subtitle="
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v0, p0, Lmkf;->b:Lr2f;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", codeLength="
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget p0, p0, Lmkf;->c:I
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

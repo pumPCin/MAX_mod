@@ -1,65 +1,85 @@
-.class public final Lau9;
-.super Ljava/lang/Object;
+.class public final enum Lau9;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic c:[Lsf7;
+.field public static final enum a:Lau9;
 
-.field public static final d:Ljava/lang/String;
+.field public static final enum b:Lau9;
 
+.field public static final enum c:Lau9;
 
-# instance fields
-.field public final a:Lrv0;
-
-.field public final b:Lfq4;
+.field public static final synthetic o:[Lau9;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 5
 
-    new-instance v0, Lrqb;
+    new-instance v0, Lau9;
 
-    const-class v1, Lau9;
+    const-string v1, "GOOD"
 
-    const-string v2, "chats"
+    const/4 v2, 0x0
 
-    const-string v3, "getChats()Lru/ok/tamtam/chats/ChatController;"
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    const/4 v4, 0x0
+    sput-object v0, Lau9;->a:Lau9;
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    new-instance v1, Lau9;
 
-    sget-object v2, Lyhc;->a:Lzhc;
+    const-string v2, "MEDIUM"
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v3, 0x1
 
-    const/4 v2, 0x1
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    new-array v2, v2, [Lsf7;
+    sput-object v1, Lau9;->b:Lau9;
 
-    aput-object v0, v2, v4
+    new-instance v2, Lau9;
 
-    sput-object v2, Lau9;->c:[Lsf7;
+    const-string v3, "BAD"
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lau9;->c:Lau9;
+
+    filled-new-array {v0, v1, v2}, [Lau9;
 
     move-result-object v0
 
-    sput-object v0, Lau9;->d:Ljava/lang/String;
+    sput-object v0, Lau9;->o:[Lau9;
 
     return-void
 .end method
 
-.method public constructor <init>(Lrv0;Lfq4;)V
-    .registers 3
+.method public static valueOf(Ljava/lang/String;)Lau9;
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Lau9;
 
-    iput-object p1, p0, Lau9;->a:Lrv0;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    iput-object p2, p0, Lau9;->b:Lfq4;
+    move-result-object p0
 
-    return-void
+    check-cast p0, Lau9;
+
+    return-object p0
+.end method
+
+.method public static values()[Lau9;
+    .registers 1
+
+    sget-object v0, Lau9;->o:[Lau9;
+
+    invoke-virtual {v0}, [Lau9;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lau9;
+
+    return-object v0
 .end method

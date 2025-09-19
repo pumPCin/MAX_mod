@@ -1,94 +1,65 @@
 .class public final Lju3;
-.super Lbud;
+.super Lkyc;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final F(Liu3;)V
-    .registers 4
+# static fields
+.field public static final b:Lju3;
 
-    iget-object p0, p0, Lphc;->a:Landroid/view/View;
+.field public static final c:Lxa4;
 
-    check-cast p0, Lwca;
+.field public static final d:Lxa4;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.field public static final e:Lxa4;
 
-    sget v0, Ljsc;->I0:I
 
-    invoke-virtual {p0, v0}, Lwca;->setIcon(I)V
+# direct methods
+.method static constructor <clinit>()V
+    .registers 7
 
-    sget v0, Lvaa;->q:I
+    new-instance v0, Lju3;
 
-    new-instance v1, Lqte;
+    invoke-direct {v0}, Lcb4;-><init>()V
 
-    invoke-direct {v1, v0}, Lqte;-><init>(I)V
+    sput-object v0, Lju3;->b:Lju3;
 
-    invoke-virtual {p0, v1}, Lwca;->setTitle(Lvte;)V
+    const/4 v6, 0x0
 
-    iget p1, p1, Liu3;->a:I
+    new-array v2, v6, [Ljava/lang/String;
 
-    new-instance v0, Lqte;
+    const/16 v5, 0xe
 
-    invoke-direct {v0, p1}, Lqte;-><init>(I)V
+    const/4 v4, 0x0
 
-    invoke-virtual {p0, v0}, Lwca;->setSubtitle(Lvte;)V
+    const-string v1, ":contact-list/create-contact"
 
-    return-void
-.end method
+    const/4 v3, 0x0
 
-.method public final G(Ljava/lang/Integer;Lh96;)V
-    .registers 4
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
 
-    iget-object p0, p0, Lphc;->a:Landroid/view/View;
+    move-result-object v1
 
-    if-eqz p1, :cond_0
+    sput-object v1, Lju3;->c:Lxa4;
 
-    check-cast p0, Lwca;
+    new-array v2, v6, [Ljava/lang/String;
 
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    const-string v1, ":contact-list/share-invite"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lju3;->d:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v1, ":call-contact"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
 
     move-result-object v0
 
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    new-instance v0, Lz4;
-
-    invoke-direct {v0, p2}, Lz4;-><init>(Lh96;)V
-
-    invoke-virtual {p0, p1, v0}, Lwca;->v(Ljava/lang/String;Landroid/view/View$OnClickListener;)V
-
-    return-void
-
-    :cond_0
-    check-cast p0, Lwca;
-
-    iget-object p0, p0, Lwca;->E0:Lone/me/sdk/uikit/common/button/OneMeButton;
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    const/16 p1, 0x8
-
-    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
-
-    return-void
-.end method
-
-.method public final bridge synthetic x(Lpp7;)V
-    .registers 2
-
-    check-cast p1, Liu3;
-
-    invoke-virtual {p0, p1}, Lju3;->F(Liu3;)V
+    sput-object v0, Lju3;->e:Lxa4;
 
     return-void
 .end method

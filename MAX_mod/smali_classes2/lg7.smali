@@ -1,67 +1,53 @@
-.class public abstract synthetic Llg7;
-.super Ljava/lang/Object;
+.class public final Llg7;
+.super Ljx3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+# instance fields
+.field public X:Lpg7;
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lpg7;
+
+.field public o:Ljava/lang/Object;
+
+.field public r0:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lpg7;Ljx3;)V
     .registers 3
 
-    invoke-static {}, Ltg7;->values()[Ltg7;
+    iput-object p1, p0, Llg7;->Z:Lpg7;
 
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    :try_start_0
-    sget-object v1, Ltg7;->Y:Ltg7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    sget-object v1, Ltg7;->Z:Ltg7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :try_start_2
-    sget-object v1, Ltg7;->n0:Ltg7;
-
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    sput-object v0, Llg7;->$EnumSwitchMapping$0:[I
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iput-object p1, p0, Llg7;->Y:Ljava/lang/Object;
+
+    iget p1, p0, Llg7;->r0:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Llg7;->r0:I
+
+    iget-object p1, p0, Llg7;->Z:Lpg7;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lpg7;->c(Lpc6;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,88 +1,51 @@
-.class public final synthetic Lzv8;
-.super Ljava/lang/Object;
+.class public final Lzv8;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Ldw8;
 
-.field public final synthetic b:Lcw8;
+.field public synthetic Y:Ljava/lang/Object;
 
-.field public final synthetic c:Ltv8;
+.field public final synthetic Z:Ldw8;
+
+.field public o:Ldw8;
+
+.field public r0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcw8;Lq89;)V
-    .registers 4
+.method public constructor <init>(Ldw8;Ljx3;)V
+    .registers 3
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Lzv8;->Z:Ldw8;
 
-    iput v0, p0, Lzv8;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lzv8;->b:Lcw8;
-
-    iput-object p2, p0, Lzv8;->c:Ltv8;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lq89;Lcw8;)V
-    .registers 4
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lzv8;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lzv8;->c:Ltv8;
-
-    iput-object p2, p0, Lzv8;->b:Lcw8;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 5
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget p1, p0, Lzv8;->a:I
+    iput-object p1, p0, Lzv8;->Y:Ljava/lang/Object;
 
-    iget-object v0, p0, Lzv8;->c:Ltv8;
+    iget p1, p0, Lzv8;->r0:I
 
-    iget-object p0, p0, Lzv8;->b:Lcw8;
+    const/high16 v0, -0x80000000
 
-    packed-switch p1, :pswitch_data_0
+    or-int/2addr p1, v0
 
-    const/4 p1, 0x0
+    iput p1, p0, Lzv8;->r0:I
 
-    invoke-virtual {p0, v0, p1}, Lcw8;->L(Ltv8;Ljava/lang/String;)V
+    iget-object p1, p0, Lzv8;->Z:Ldw8;
 
-    return-void
+    invoke-virtual {p1, p0}, Ldw8;->x(Ljx3;)Ljava/lang/Object;
 
-    :pswitch_0
-    iget-wide v1, p0, Lcw8;->E0:J
+    move-result-object p0
 
-    iget-object p0, p0, Lcw8;->D0:Landroid/view/ViewGroup;
-
-    check-cast v0, Lq89;
-
-    iget-object p1, v0, Lq89;->a:Lone/me/messages/list/ui/MessagesListWidget;
-
-    sget-object v0, Lone/me/messages/list/ui/MessagesListWidget;->V0:[Lsf7;
-
-    invoke-virtual {p1, v1, v2, p0}, Lone/me/messages/list/ui/MessagesListWidget;->L0(JLandroid/view/View;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

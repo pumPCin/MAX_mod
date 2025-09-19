@@ -1,19 +1,19 @@
 .class public final Lsb1;
-.super Lyb1;
+.super Lub1;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Luhf;
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(Luhf;)V
+.method public constructor <init>(Z)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lsb1;->a:Luhf;
+    iput-boolean p1, p0, Lsb1;->a:Z
 
     return-void
 .end method
@@ -41,9 +41,9 @@
     :cond_1
     check-cast p1, Lsb1;
 
-    iget-object p0, p0, Lsb1;->a:Luhf;
+    iget-boolean p0, p0, Lsb1;->a:Z
 
-    iget-object p1, p1, Lsb1;->a:Luhf;
+    iget-boolean p1, p1, Lsb1;->a:Z
 
     if-eq p0, p1, :cond_2
 
@@ -56,9 +56,9 @@
 .method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lsb1;->a:Luhf;
+    iget-boolean p0, p0, Lsb1;->a:Z
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result p0
 
@@ -68,21 +68,13 @@
 .method public final toString()Ljava/lang/String;
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "TalkingState(isEnabled="
 
-    const-string v1, "ButtonAction(state="
+    const-string v1, ")"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-boolean p0, p0, Lsb1;->a:Z
 
-    iget-object p0, p0, Lsb1;->a:Luhf;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1, p0}, Lz7e;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object p0
 

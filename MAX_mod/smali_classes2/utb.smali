@@ -1,24 +1,21 @@
 .class public final Lutb;
-.super Ljava/lang/Object;
+.super Luc0;
 .source "SourceFile"
 
-# interfaces
-.implements Lvtb;
 
-
-# static fields
-.field public static final a:Lutb;
+# instance fields
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ljava/lang/String;)V
+    .registers 3
 
-    new-instance v0, Lutb;
+    const/16 v0, 0xf
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
 
-    sput-object v0, Lutb;->a:Lutb;
+    iput-object p1, p0, Lutb;->b:Ljava/lang/String;
 
     return-void
 .end method
@@ -26,7 +23,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    .registers 5
 
     const/4 v0, 0x1
 
@@ -35,30 +32,57 @@
     return v0
 
     :cond_0
-    instance-of p0, p1, Lutb;
+    instance-of v1, p1, Lutb;
 
-    if-nez p0, :cond_1
+    const/4 v2, 0x0
 
-    const/4 p0, 0x0
+    if-nez v1, :cond_1
 
-    return p0
+    return v2
 
     :cond_1
+    check-cast p1, Lutb;
+
+    iget-object p0, p0, Lutb;->b:Ljava/lang/String;
+
+    iget-object p1, p1, Lutb;->b:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
     return v0
 .end method
 
 .method public final hashCode()I
     .registers 1
 
-    const p0, -0x47cfa8d4
+    iget-object p0, p0, Lutb;->b:Ljava/lang/String;
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 1
+    .registers 3
 
-    const-string p0, "TakePhoto"
+    const-string v0, "ExternalCallback(params="
+
+    const-string v1, ")"
+
+    iget-object p0, p0, Lutb;->b:Ljava/lang/String;
+
+    invoke-static {v0, p0, v1}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

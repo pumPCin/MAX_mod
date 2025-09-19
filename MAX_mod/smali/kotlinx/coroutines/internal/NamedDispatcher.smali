@@ -1,9 +1,9 @@
 .class public final Lkotlinx/coroutines/internal/NamedDispatcher;
-.super Ll04;
+.super Ls04;
 .source "SourceFile"
 
 # interfaces
-.implements Lzj4;
+.implements Lzk4;
 
 
 # annotations
@@ -13,40 +13,40 @@
     }
     d2 = {
         "Lkotlinx/coroutines/internal/NamedDispatcher;",
-        "Ll04;",
-        "Lzj4;",
+        "Ls04;",
+        "Lzk4;",
         "dispatcher",
         "",
         "name",
         "<init>",
-        "(Ll04;Ljava/lang/String;)V",
+        "(Ls04;Ljava/lang/String;)V",
         "",
         "timeMillis",
-        "Lx02;",
-        "Lncf;",
+        "Le12;",
+        "Lylf;",
         "continuation",
         "scheduleResumeAfterDelay",
-        "(JLx02;)V",
+        "(JLe12;)V",
         "Ljava/lang/Runnable;",
         "Lkotlinx/coroutines/Runnable;",
         "block",
-        "Lj04;",
+        "Lq04;",
         "context",
-        "Lqp4;",
+        "Lrq4;",
         "invokeOnTimeout",
-        "(JLjava/lang/Runnable;Lj04;)Lqp4;",
+        "(JLjava/lang/Runnable;Lq04;)Lrq4;",
         "",
         "isDispatchNeeded",
-        "(Lj04;)Z",
+        "(Lq04;)Z",
         "dispatch",
-        "(Lj04;Ljava/lang/Runnable;)V",
+        "(Lq04;Ljava/lang/Runnable;)V",
         "dispatchYield",
         "toString",
         "()Ljava/lang/String;",
         "time",
         "delay",
         "(J)V",
-        "Ll04;",
+        "Ls04;",
         "Ljava/lang/String;",
         "kotlinx-coroutines-core"
     }
@@ -61,26 +61,26 @@
 
 
 # instance fields
-.field private final synthetic $$delegate_0:Lzj4;
+.field private final synthetic $$delegate_0:Lzk4;
 
-.field private final dispatcher:Ll04;
+.field private final dispatcher:Ls04;
 
 .field private final name:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ll04;Ljava/lang/String;)V
+.method public constructor <init>(Ls04;Ljava/lang/String;)V
     .registers 4
 
-    invoke-direct {p0}, Ll04;-><init>()V
+    invoke-direct {p0}, Ls04;-><init>()V
 
-    instance-of v0, p1, Lzj4;
+    instance-of v0, p1, Lzk4;
 
     if-eqz v0, :cond_0
 
     move-object v0, p1
 
-    check-cast v0, Lzj4;
+    check-cast v0, Lzk4;
 
     goto :goto_0
 
@@ -90,12 +90,12 @@
     :goto_0
     if-nez v0, :cond_1
 
-    sget-object v0, Lme4;->a:Lzj4;
+    sget-object v0, Ldf4;->a:Lzk4;
 
     :cond_1
-    iput-object v0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->$$delegate_0:Lzj4;
+    iput-object v0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->$$delegate_0:Lzk4;
 
-    iput-object p1, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->dispatcher:Ll04;
+    iput-object p1, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->dispatcher:Ls04;
 
     iput-object p2, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->name:Ljava/lang/String;
 
@@ -111,78 +111,78 @@
             "(J",
             "Lkotlin/coroutines/Continuation<",
             "-",
-            "Lncf;",
+            "Lylf;",
             ">;)",
             "Ljava/lang/Object;"
         }
     .end annotation
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->$$delegate_0:Lzj4;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->$$delegate_0:Lzk4;
 
-    invoke-interface {p0, p1, p2, p3}, Lzj4;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p0, p1, p2, p3}, Lzk4;->delay(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public dispatch(Lj04;Ljava/lang/Runnable;)V
+.method public dispatch(Lq04;Ljava/lang/Runnable;)V
     .registers 3
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->dispatcher:Ll04;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->dispatcher:Ls04;
 
-    invoke-virtual {p0, p1, p2}, Ll04;->dispatch(Lj04;Ljava/lang/Runnable;)V
+    invoke-virtual {p0, p1, p2}, Ls04;->dispatch(Lq04;Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method public dispatchYield(Lj04;Ljava/lang/Runnable;)V
+.method public dispatchYield(Lq04;Ljava/lang/Runnable;)V
     .registers 3
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->dispatcher:Ll04;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->dispatcher:Ls04;
 
-    invoke-virtual {p0, p1, p2}, Ll04;->dispatchYield(Lj04;Ljava/lang/Runnable;)V
+    invoke-virtual {p0, p1, p2}, Ls04;->dispatchYield(Lq04;Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method public invokeOnTimeout(JLjava/lang/Runnable;Lj04;)Lqp4;
+.method public invokeOnTimeout(JLjava/lang/Runnable;Lq04;)Lrq4;
     .registers 5
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->$$delegate_0:Lzj4;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->$$delegate_0:Lzk4;
 
-    invoke-interface {p0, p1, p2, p3, p4}, Lzj4;->invokeOnTimeout(JLjava/lang/Runnable;Lj04;)Lqp4;
+    invoke-interface {p0, p1, p2, p3, p4}, Lzk4;->invokeOnTimeout(JLjava/lang/Runnable;Lq04;)Lrq4;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public isDispatchNeeded(Lj04;)Z
+.method public isDispatchNeeded(Lq04;)Z
     .registers 2
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->dispatcher:Ll04;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->dispatcher:Ls04;
 
-    invoke-virtual {p0, p1}, Ll04;->isDispatchNeeded(Lj04;)Z
+    invoke-virtual {p0, p1}, Ls04;->isDispatchNeeded(Lq04;)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public scheduleResumeAfterDelay(JLx02;)V
+.method public scheduleResumeAfterDelay(JLe12;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
-            "Lx02;",
+            "Le12;",
             ")V"
         }
     .end annotation
 
-    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->$$delegate_0:Lzj4;
+    iget-object p0, p0, Lkotlinx/coroutines/internal/NamedDispatcher;->$$delegate_0:Lzk4;
 
-    invoke-interface {p0, p1, p2, p3}, Lzj4;->scheduleResumeAfterDelay(JLx02;)V
+    invoke-interface {p0, p1, p2, p3}, Lzk4;->scheduleResumeAfterDelay(JLe12;)V
 
     return-void
 .end method

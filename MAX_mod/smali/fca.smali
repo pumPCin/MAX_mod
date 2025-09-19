@@ -1,47 +1,118 @@
 .class public final Lfca;
-.super Lga4;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ln18;
 
 
 # instance fields
-.field public final a:Lxh7;
+.field public final synthetic a:I
 
-.field public final b:Lxh7;
-
-.field public final c:Ljava/util/List;
+.field public final synthetic b:Lz4;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;)V
+.method public synthetic constructor <init>(Lz4;I)V
     .registers 3
+
+    iput p2, p0, Lfca;->a:I
+
+    iput-object p1, p0, Lfca;->b:Lz4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lfca;->a:Lxh7;
+    return-void
+.end method
 
-    iput-object p2, p0, Lfca;->b:Lxh7;
 
-    sget-object p1, Lex7;->b:Lex7;
+# virtual methods
+.method public final f()V
+    .registers 3
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v0, p0, Lfca;->a:I
 
-    sget-object p1, Lex7;->c:Lca4;
+    packed-switch v0, :pswitch_data_0
 
-    sget-object p2, Ly8f;->b:Ly8f;
+    iget-object p0, p0, Lfca;->b:Lz4;
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-class v0, Lz43;
 
-    sget-object p2, Ly8f;->g:Lca4;
+    invoke-virtual {p0, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
-    filled-new-array {p1, p2}, [Lca4;
+    move-result-object p0
 
-    move-result-object p1
+    check-cast p0, Lz43;
 
-    invoke-static {p1}, Lk73;->O([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lfca;->c:Ljava/util/List;
+    invoke-interface {p0}, Lz43;->b()V
 
     return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lfca;->b:Lz4;
+
+    const-class v0, Landroid/content/Context;
+
+    invoke-virtual {p0, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/content/Context;
+
+    sget-object v0, Lyu4;->t0:Lbx9;
+
+    invoke-virtual {v0, p0}, Lbx9;->k(Landroid/content/Context;)Lyu4;
+
+    move-result-object p0
+
+    iget-object p0, p0, Lyu4;->Y:Ljava/lang/Object;
+
+    check-cast p0, Lv94;
+
+    iget-object v0, p0, Lv94;->a:Ljava/lang/Object;
+
+    check-cast v0, Lzte;
+
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/SharedPreferences;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    sget-object v1, Lqw9;->a:Lm48;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v1, Lpw9;->b:Lpw9;
+
+    iput-object v1, p0, Lv94;->c:Ljava/lang/Object;
+
+    const-string p0, "nightmode"
+
+    invoke-static {v1}, Lm48;->l(Lqw9;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    sget-object p0, Llia;->d:Llia;
+
+    iget-object p0, p0, Llia;->a:Ljava/lang/String;
+
+    const-string v1, "themename"
+
+    invoke-interface {v0, v1, p0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -4,12 +4,12 @@
 
 # interfaces
 .implements Lru/ok/android/externcalls/sdk/rate/internal/RateHintCollection;
-.implements Lja6;
+.implements Lbd6;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl;-><init>(Ld7c;Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;)V
+    value = Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl;-><init>(Lfec;Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -62,21 +62,21 @@
 
     if-eqz v0, :cond_0
 
-    instance-of v0, p1, Lja6;
+    instance-of v0, p1, Lbd6;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl$rttTrigger$1;->getFunctionDelegate()Lca6;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl$rttTrigger$1;->getFunctionDelegate()Luc6;
 
     move-result-object p0
 
-    check-cast p1, Lja6;
+    check-cast p1, Lbd6;
 
-    invoke-interface {p1}, Lja6;->getFunctionDelegate()Lca6;
+    invoke-interface {p1}, Lbd6;->getFunctionDelegate()Luc6;
 
     move-result-object p1
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -88,16 +88,16 @@
     return p0
 .end method
 
-.method public final getFunctionDelegate()Lca6;
+.method public final getFunctionDelegate()Luc6;
     .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lca6;"
+            "Luc6;"
         }
     .end annotation
 
-    new-instance v0, Lma6;
+    new-instance v0, Led6;
 
     iget-object v4, p0, Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl$rttTrigger$1;->$tmp0:Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl;
 
@@ -111,7 +111,7 @@
 
     const-string v5, "addRateHint"
 
-    invoke-direct/range {v0 .. v6}, Lla6;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v6}, Ldd6;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -119,7 +119,7 @@
 .method public final hashCode()I
     .registers 1
 
-    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl$rttTrigger$1;->getFunctionDelegate()Lca6;
+    invoke-virtual {p0}, Lru/ok/android/externcalls/sdk/rate/internal/RateManagerImpl$rttTrigger$1;->getFunctionDelegate()Luc6;
 
     move-result-object p0
 

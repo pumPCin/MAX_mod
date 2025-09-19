@@ -1,24 +1,38 @@
-.class public final Lgc5;
+.class public final synthetic Lgc5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljc5;
+.implements Lot7;
 
 
-# static fields
-.field public static final a:Lgc5;
+# instance fields
+.field public final synthetic a:Lsc5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lsc5;)V
+    .registers 2
 
-    new-instance v0, Lgc5;
+    iput-object p1, p0, Lgc5;->a:Lsc5;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lgc5;->a:Lgc5;
+    return-void
+.end method
+
+
+# virtual methods
+.method public invoke(Ljava/lang/Object;)V
+    .registers 2
+
+    check-cast p1, Lrcb;
+
+    iget-object p0, p0, Lgc5;->a:Lsc5;
+
+    iget-object p0, p0, Lsc5;->T0:Locb;
+
+    invoke-interface {p1, p0}, Lrcb;->H(Locb;)V
 
     return-void
 .end method

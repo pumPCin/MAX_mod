@@ -1,180 +1,87 @@
 .class public final Lq6a;
-.super Lxie;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Loq4;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Ld8a;
 
-.field public final synthetic Y:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final synthetic Z:Landroid/os/Handler;
+.field public b:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/os/Handler;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Ld8a;)V
+    .registers 2
 
-    iput-object p1, p0, Lq6a;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    iput-object p2, p0, Lq6a;->Z:Landroid/os/Handler;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lq6a;->a:Ld8a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final e()V
+    .registers 1
 
-    check-cast p1, Lzj;
+    invoke-static {p0}, Lsq4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    return-void
+.end method
 
-    invoke-virtual {p0, p1, p2}, Lq6a;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final f()Z
+    .registers 2
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lq6a;
+    sget-object v0, Lsq4;->a:Lsq4;
 
-    sget-object p1, Lncf;->a:Lncf;
+    if-ne p0, v0, :cond_0
 
-    invoke-virtual {p0, p1}, Lq6a;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 p0, 0x1
 
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
-
-    new-instance v0, Lq6a;
-
-    iget-object v1, p0, Lq6a;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iget-object p0, p0, Lq6a;->Z:Landroid/os/Handler;
-
-    invoke-direct {v0, v1, p0, p2}, Lq6a;-><init>(Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/os/Handler;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lq6a;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
-
-    sget-object v0, Lncf;->a:Lncf;
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lq6a;->X:Ljava/lang/Object;
-
-    check-cast p1, Lzj;
-
-    iget-object v1, p0, Lq6a;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    goto :goto_1
+    return p0
 
     :cond_0
-    invoke-static {}, Lpfd;->A()Lhtc;
+    const/4 p0, 0x0
 
-    move-result-object v1
+    return p0
+.end method
 
-    iget-object v2, v1, Lhtc;->c:Ljava/lang/Object;
+.method public final run()V
+    .registers 5
 
-    check-cast v2, Ljava/lang/Throwable;
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    invoke-virtual {p1, v2}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    move-result-object v0
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    sget-object v1, Lsq4;->a:Lsq4;
 
-    const-string v3, "detect "
+    if-eq v0, v1, :cond_0
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-wide v0, p0, Lq6a;->b:J
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-wide/16 v2, 0x1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    add-long/2addr v2, v0
 
-    move-result-object v2
+    iput-wide v2, p0, Lq6a;->b:J
 
-    const-string v3, "ANR"
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    invoke-static {v3, v2, p1}, Ld86;->H(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object v0
 
-    sget-object v2, Ld86;->f:Lafa;
+    iget-object p0, p0, Lq6a;->a:Ld8a;
 
-    const/4 v3, 0x0
+    invoke-interface {p0, v0}, Ld8a;->s(Ljava/lang/Object;)V
 
-    if-nez v2, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    sget-object v4, Llw7;->X:Llw7;
-
-    invoke-virtual {v2, v4}, Lafa;->a(Llw7;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
-
-    invoke-virtual {v1}, Lhtc;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v5, "ANR-ThreadDump"
-
-    invoke-virtual {v2, v4, v5, v1, v3}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_2
-    :goto_0
-    sget-object v1, Lpjf;->a:Lpjf;
-
-    invoke-virtual {v1}, Lpjf;->c()Ls14;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v3, p1}, Ls14;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    iget-object p1, p0, Lq6a;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    iget-object p1, p0, Lq6a;->Z:Landroid/os/Handler;
-
-    iget-object p0, p0, Lq6a;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    new-instance v1, Lg56;
-
-    const/16 v2, 0x19
-
-    invoke-direct {v1, v2, p0}, Lg56;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {p1, v1}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
-
-    :cond_3
-    :goto_1
-    return-object v0
+    :cond_0
+    return-void
 .end method

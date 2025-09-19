@@ -1,219 +1,98 @@
 .class public final Ldl7;
-.super Ljava/io/FilterInputStream;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lqyb;
+
+
+# static fields
+.field public static final c:Ljava/lang/Object;
 
 
 # instance fields
-.field public a:I
+.field public volatile a:Ljava/lang/Object;
 
-.field public b:I
+.field public volatile b:Lqyb;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
+    new-instance v0, Ljava/lang/Object;
 
-    if-ltz p2, :cond_0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Ldl7;->a:I
-
-    const/4 p1, -0x1
-
-    iput p1, p0, Ldl7;->b:I
+    sput-object v0, Ldl7;->c:Ljava/lang/Object;
 
     return-void
+.end method
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+.method public constructor <init>(Lqyb;)V
+    .registers 3
 
-    const-string p1, "limit must be >= 0"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    sget-object v0, Ldl7;->c:Ljava/lang/Object;
 
-    throw p0
+    iput-object v0, p0, Ldl7;->a:Ljava/lang/Object;
+
+    iput-object p1, p0, Ldl7;->b:Lqyb;
+
+    return-void
 .end method
 
 
 # virtual methods
-.method public final available()I
-    .registers 2
-
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->available()I
-
-    move-result v0
-
-    iget p0, p0, Ldl7;->a:I
-
-    invoke-static {v0, p0}, Ljava/lang/Math;->min(II)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final mark(I)V
+.method public final get()Ljava/lang/Object;
     .registers 3
 
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+    iget-object v0, p0, Ldl7;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
+    sget-object v1, Ldl7;->c:Ljava/lang/Object;
 
-    move-result v0
+    if-ne v0, v1, :cond_1
 
-    if-eqz v0, :cond_0
+    monitor-enter p0
 
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
+    :try_start_0
+    iget-object v0, p0, Ldl7;->a:Ljava/lang/Object;
 
-    invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
+    if-ne v0, v1, :cond_0
 
-    iget p1, p0, Ldl7;->a:I
+    iget-object v0, p0, Ldl7;->b:Lqyb;
 
-    iput p1, p0, Ldl7;->b:I
+    invoke-interface {v0}, Lqyb;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ldl7;->a:Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Ldl7;->b:Lqyb;
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_1
 
     :cond_0
-    return-void
-.end method
+    :goto_0
+    monitor-exit p0
 
-.method public final read()I
-    .registers 3
+    return-object v0
 
-    iget v0, p0, Ldl7;->a:I
+    :goto_1
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const/4 v1, -0x1
-
-    if-nez v0, :cond_0
-
-    return v1
-
-    :cond_0
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
-
-    move-result v0
-
-    if-eq v0, v1, :cond_1
-
-    iget v1, p0, Ldl7;->a:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, p0, Ldl7;->a:I
+    throw v0
 
     :cond_1
-    return v0
-.end method
-
-.method public final read([BII)I
-    .registers 5
-
-    iget v0, p0, Ldl7;->a:I
-
-    if-nez v0, :cond_0
-
-    const/4 p0, -0x1
-
-    return p0
-
-    :cond_0
-    invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
-
-    move-result p3
-
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
-
-    move-result p1
-
-    if-lez p1, :cond_1
-
-    iget p2, p0, Ldl7;->a:I
-
-    sub-int/2addr p2, p1
-
-    iput p2, p0, Ldl7;->a:I
-
-    :cond_1
-    return p1
-.end method
-
-.method public final reset()V
-    .registers 3
-
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->markSupported()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    iget v0, p0, Ldl7;->b:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
-
-    iget v0, p0, Ldl7;->b:I
-
-    iput v0, p0, Ldl7;->a:I
-
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/io/IOException;
-
-    const-string v0, "mark not set"
-
-    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    new-instance p0, Ljava/io/IOException;
-
-    const-string v0, "mark is not supported"
-
-    invoke-direct {p0, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final skip(J)J
-    .registers 5
-
-    iget v0, p0, Ldl7;->a:I
-
-    int-to-long v0, v0
-
-    invoke-static {p1, p2, v0, v1}, Ljava/lang/Math;->min(JJ)J
-
-    move-result-wide p1
-
-    iget-object v0, p0, Ljava/io/FilterInputStream;->in:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2}, Ljava/io/InputStream;->skip(J)J
-
-    move-result-wide p1
-
-    iget v0, p0, Ldl7;->a:I
-
-    int-to-long v0, v0
-
-    sub-long/2addr v0, p1
-
-    long-to-int v0, v0
-
-    iput v0, p0, Ldl7;->a:I
-
-    return-wide p1
+    return-object v0
 .end method

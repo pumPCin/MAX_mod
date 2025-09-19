@@ -1,135 +1,185 @@
 .class public final Lo5e;
-.super Ljava/lang/Object;
+.super La3;
 .source "SourceFile"
 
 # interfaces
-.implements Lr64;
+.implements Lm37;
+
+
+# static fields
+.field public static final b:Lo5e;
 
 
 # instance fields
-.field public final a:Lr64;
-
-.field public b:J
-
-.field public c:Landroid/net/Uri;
+.field public final a:[Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lr64;)V
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lo5e;
+
+    const/4 v1, 0x0
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    invoke-direct {v0, v1}, Lo5e;-><init>([Ljava/lang/Object;)V
+
+    sput-object v0, Lo5e;->b:Lo5e;
+
+    return-void
+.end method
+
+.method public constructor <init>([Ljava/lang/Object;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, p0, Lo5e;->a:Lr64;
-
-    sget-object p1, Landroid/net/Uri;->EMPTY:Landroid/net/Uri;
-
-    iput-object p1, p0, Lo5e;->c:Landroid/net/Uri;
-
-    sget-object p0, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
+    iput-object p1, p0, Lo5e;->a:[Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final F(Ly64;)J
+.method public final a()Lh3b;
     .registers 5
 
-    iget-object v0, p1, Ly64;->a:Landroid/net/Uri;
+    new-instance v0, Lh3b;
 
-    iput-object v0, p0, Lo5e;->c:Landroid/net/Uri;
+    iget-object v1, p0, Lo5e;->a:[Ljava/lang/Object;
 
-    sget-object v0, Ljava/util/Collections;->EMPTY_MAP:Ljava/util/Map;
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lo5e;->a:Lr64;
+    const/4 v3, 0x0
 
-    invoke-interface {v0, p1}, Lr64;->F(Ly64;)J
+    invoke-direct {v0, p0, v3, v1, v2}, Lh3b;-><init>(La3;[Ljava/lang/Object;[Ljava/lang/Object;I)V
 
-    move-result-wide v1
-
-    invoke-interface {v0}, Lr64;->getUri()Landroid/net/Uri;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iput-object p1, p0, Lo5e;->c:Landroid/net/Uri;
-
-    invoke-interface {v0}, Lr64;->w()Ljava/util/Map;
-
-    return-wide v1
+    return-object v0
 .end method
 
-.method public final G(Lb4f;)V
+.method public final get(I)Ljava/lang/Object;
+    .registers 3
+
+    invoke-virtual {p0}, Lo5e;->getSize()I
+
+    move-result v0
+
+    invoke-static {p1, v0}, Laec;->f(II)V
+
+    iget-object p0, p0, Lo5e;->a:[Ljava/lang/Object;
+
+    aget-object p0, p0, p1
+
+    return-object p0
+.end method
+
+.method public final getSize()I
+    .registers 1
+
+    iget-object p0, p0, Lo5e;->a:[Ljava/lang/Object;
+
+    array-length p0, p0
+
+    return p0
+.end method
+
+.method public final indexOf(Ljava/lang/Object;)I
     .registers 2
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lo5e;->a:[Ljava/lang/Object;
 
-    iget-object p0, p0, Lo5e;->a:Lr64;
+    invoke-static {p0, p1}, Lxr;->S([Ljava/lang/Object;Ljava/lang/Object;)I
 
-    invoke-interface {p0, p1}, Lr64;->G(Lb4f;)V
+    move-result p0
 
-    return-void
+    return p0
 .end method
 
-.method public final close()V
-    .registers 1
-
-    iget-object p0, p0, Lo5e;->a:Lr64;
-
-    invoke-interface {p0}, Lr64;->close()V
-
-    return-void
-.end method
-
-.method public final getUri()Landroid/net/Uri;
-    .registers 1
-
-    iget-object p0, p0, Lo5e;->a:Lr64;
-
-    invoke-interface {p0}, Lr64;->getUri()Landroid/net/Uri;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final read([BII)I
+.method public final lastIndexOf(Ljava/lang/Object;)I
     .registers 6
 
-    iget-object v0, p0, Lo5e;->a:Lr64;
+    iget-object p0, p0, Lo5e;->a:[Ljava/lang/Object;
 
-    invoke-interface {v0, p1, p2, p3}, Lk64;->read([BII)I
+    const/4 v0, -0x1
 
-    move-result p1
+    if-nez p1, :cond_2
 
-    const/4 p2, -0x1
+    array-length p1, p0
 
-    if-eq p1, p2, :cond_0
+    add-int/2addr p1, v0
 
-    iget-wide p2, p0, Lo5e;->b:J
+    if-ltz p1, :cond_5
 
-    int-to-long v0, p1
+    :goto_0
+    add-int/lit8 v1, p1, -0x1
 
-    add-long/2addr p2, v0
+    aget-object v2, p0, p1
 
-    iput-wide p2, p0, Lo5e;->b:J
+    if-nez v2, :cond_0
+
+    return p1
 
     :cond_0
-    return p1
+    if-gez v1, :cond_1
+
+    goto :goto_2
+
+    :cond_1
+    move p1, v1
+
+    goto :goto_0
+
+    :cond_2
+    array-length v1, p0
+
+    add-int/2addr v1, v0
+
+    if-ltz v1, :cond_5
+
+    :goto_1
+    add-int/lit8 v2, v1, -0x1
+
+    aget-object v3, p0, v1
+
+    invoke-virtual {p1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    return v1
+
+    :cond_3
+    if-gez v2, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    move v1, v2
+
+    goto :goto_1
+
+    :cond_5
+    :goto_2
+    return v0
 .end method
 
-.method public final w()Ljava/util/Map;
-    .registers 1
+.method public final listIterator(I)Ljava/util/ListIterator;
+    .registers 4
 
-    iget-object p0, p0, Lo5e;->a:Lr64;
+    iget-object p0, p0, Lo5e;->a:[Ljava/lang/Object;
 
-    invoke-interface {p0}, Lr64;->w()Ljava/util/Map;
+    array-length v0, p0
 
-    move-result-object p0
+    invoke-static {p1, v0}, Laec;->g(II)V
 
-    return-object p0
+    new-instance v0, Lnt0;
+
+    array-length v1, p0
+
+    invoke-direct {v0, p1, v1, p0}, Lnt0;-><init>(II[Ljava/lang/Object;)V
+
+    return-object v0
 .end method

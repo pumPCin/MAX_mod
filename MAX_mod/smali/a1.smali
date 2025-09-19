@@ -1,135 +1,67 @@
 .class public final La1;
-.super Lp18;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# instance fields
+.field public final a:Lynd;
+
+.field public final b:Lgt7;
+
+
+# direct methods
+.method public constructor <init>(Lynd;Lgt7;)V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, La1;->a:Lynd;
+
+    iput-object p2, p0, La1;->b:Lgt7;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final D(Lj1;Lj1;)V
-    .registers 3
+.method public final run()V
+    .registers 4
 
-    iput-object p2, p1, Lj1;->b:Lj1;
+    iget-object v0, p0, La1;->a:Lynd;
 
+    iget-object v0, v0, Ln1;->a:Ljava/lang/Object;
+
+    if-eq v0, p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, La1;->b:Lgt7;
+
+    invoke-static {v0}, Ln1;->h(Lgt7;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    sget-object v1, Ln1;->Y:Lf54;
+
+    iget-object v2, p0, La1;->a:Lynd;
+
+    invoke-virtual {v1, v2, p0, v0}, Lf54;->d(Ln1;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object p0, p0, La1;->a:Lynd;
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0}, Ln1;->e(Ln1;Z)V
+
+    :cond_1
+    :goto_0
     return-void
-.end method
-
-.method public final E(Lj1;Ljava/lang/Thread;)V
-    .registers 3
-
-    iput-object p2, p1, Lj1;->a:Ljava/lang/Thread;
-
-    return-void
-.end method
-
-.method public final b(Ll1;Lu0;Lu0;)Z
-    .registers 4
-
-    monitor-enter p1
-
-    :try_start_0
-    iget-object p0, p1, Ll1;->b:Lu0;
-
-    if-ne p0, p2, :cond_0
-
-    iput-object p3, p1, Ll1;->b:Lu0;
-
-    const/4 p0, 0x1
-
-    monitor-exit p1
-
-    return p0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    monitor-exit p1
-
-    return p0
-
-    :goto_0
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-.end method
-
-.method public final c(Ll1;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 4
-
-    monitor-enter p1
-
-    :try_start_0
-    iget-object p0, p1, Ll1;->a:Ljava/lang/Object;
-
-    if-ne p0, p2, :cond_0
-
-    iput-object p3, p1, Ll1;->a:Ljava/lang/Object;
-
-    const/4 p0, 0x1
-
-    monitor-exit p1
-
-    return p0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    monitor-exit p1
-
-    return p0
-
-    :goto_0
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-.end method
-
-.method public final d(Ll1;Lj1;Lj1;)Z
-    .registers 4
-
-    monitor-enter p1
-
-    :try_start_0
-    iget-object p0, p1, Ll1;->c:Lj1;
-
-    if-ne p0, p2, :cond_0
-
-    iput-object p3, p1, Ll1;->c:Lj1;
-
-    const/4 p0, 0x1
-
-    monitor-exit p1
-
-    return p0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    monitor-exit p1
-
-    return p0
-
-    :goto_0
-    monitor-exit p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
 .end method

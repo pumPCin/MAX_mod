@@ -1,82 +1,51 @@
 .class public final Lav;
-.super Ldv;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:J
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lyv;
+
+.field public Z:I
+
+.field public o:Lyv;
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method public constructor <init>(Lyv;Ljx3;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lav;->Y:Lyv;
 
-    iput-wide p1, p0, Lav;->a:J
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lav;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lav;
-
-    iget-wide v3, p0, Lav;->a:J
-
-    iget-wide p0, p1, Lav;->a:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    iget-wide v0, p0, Lav;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
 
-    const-string v0, "LoadingAround(time="
+    iput-object p1, p0, Lav;->X:Ljava/lang/Object;
 
-    const-string v1, ")"
+    iget p1, p0, Lav;->Z:I
 
-    iget-wide v2, p0, Lav;->a:J
+    const/high16 v0, -0x80000000
 
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lav;->Z:I
+
+    const/4 p1, 0x0
+
+    const-wide/16 v0, 0x0
+
+    iget-object v2, p0, Lav;->Y:Lyv;
+
+    invoke-static {v2, p1, v0, v1, p0}, Lyv;->c(Lyv;Lvqc;JLjx3;)Ljava/lang/Object;
 
     move-result-object p0
 

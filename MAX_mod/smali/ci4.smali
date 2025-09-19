@@ -1,87 +1,81 @@
 .class public final Lci4;
-.super Lqi4;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Comparable;
 
 
 # instance fields
-.field public final X:I
+.field public final synthetic a:Landroid/view/ViewGroup;
 
-.field public final Y:I
+.field public final synthetic b:Landroid/view/View;
+
+.field public final synthetic c:Z
+
+.field public final synthetic d:Ly7e;
+
+.field public final synthetic e:Ldi4;
 
 
 # direct methods
-.method public constructor <init>(ILu2f;ILhi4;I)V
+.method public constructor <init>(Landroid/view/ViewGroup;Landroid/view/View;ZLy7e;Ldi4;)V
     .registers 6
 
-    invoke-direct {p0, p1, p2, p3}, Lqi4;-><init>(ILu2f;I)V
+    iput-object p1, p0, Lci4;->a:Landroid/view/ViewGroup;
 
-    iget-boolean p1, p4, Lhi4;->n0:Z
+    iput-object p2, p0, Lci4;->b:Landroid/view/View;
 
-    invoke-static {p5, p1}, Lok0;->j(IZ)Z
+    iput-boolean p3, p0, Lci4;->c:Z
 
-    move-result p1
+    iput-object p4, p0, Lci4;->d:Ly7e;
 
-    iput p1, p0, Lci4;->X:I
+    iput-object p5, p0, Lci4;->e:Ldi4;
 
-    iget-object p1, p0, Lqi4;->o:Lt26;
-
-    iget p2, p1, Lt26;->s:I
-
-    const/4 p3, -0x1
-
-    if-eq p2, p3, :cond_1
-
-    iget p1, p1, Lt26;->t:I
-
-    if-ne p1, p3, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    mul-int p3, p2, p1
-
-    :cond_1
-    :goto_0
-    iput p3, p0, Lci4;->Y:I
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .registers 1
+.method public final onAnimationEnd(Landroid/animation/Animator;)V
+    .registers 5
 
-    iget p0, p0, Lci4;->X:I
+    iget-object p1, p0, Lci4;->a:Landroid/view/ViewGroup;
 
-    return p0
-.end method
+    iget-object v0, p0, Lci4;->b:Landroid/view/View;
 
-.method public final bridge synthetic b(Lqi4;)Z
-    .registers 2
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->endViewTransition(Landroid/view/View;)V
 
-    check-cast p1, Lci4;
+    iget-boolean v1, p0, Lci4;->c:Z
 
-    const/4 p0, 0x0
+    iget-object v2, p0, Lci4;->d:Ly7e;
 
-    return p0
-.end method
+    if-eqz v1, :cond_0
 
-.method public final compareTo(Ljava/lang/Object;)I
-    .registers 2
+    iget v1, v2, Ly7e;->a:I
 
-    check-cast p1, Lci4;
+    invoke-static {v1, v0, p1}, Lz7e;->a(ILandroid/view/View;Landroid/view/ViewGroup;)V
 
-    iget p0, p0, Lci4;->Y:I
+    :cond_0
+    iget-object p0, p0, Lci4;->e:Ldi4;
 
-    iget p1, p1, Lci4;->Y:I
+    iget-object p1, p0, Ldi4;->c:Lbi4;
 
-    invoke-static {p0, p1}, Ljava/lang/Integer;->compare(II)I
+    iget-object p1, p1, Lx2;->b:Ljava/lang/Object;
+
+    check-cast p1, Ly7e;
+
+    invoke-virtual {p1, p0}, Ly7e;->c(Lx7e;)V
+
+    const/4 p0, 0x2
+
+    invoke-static {p0}, Landroidx/fragment/app/c;->K(I)Z
 
     move-result p0
 
-    return p0
+    if-eqz p0, :cond_1
+
+    invoke-static {v2}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
+
+    :cond_1
+    return-void
 .end method

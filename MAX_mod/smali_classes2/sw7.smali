@@ -1,40 +1,46 @@
-.class public final synthetic Lsw7;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lj96;
+.class public final Lsw7;
+.super Ljx3;
 
 
 # instance fields
-.field public final synthetic a:Z
+.field public X:I
 
-.field public final synthetic b:Z
+.field public final synthetic Y:Lp83;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(ZZ)V
+.method public constructor <init>(Lp83;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lsw7;->Y:Lp83;
 
-    iput-boolean p1, p0, Lsw7;->a:Z
-
-    iput-boolean p2, p0, Lsw7;->b:Z
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget-boolean v0, p0, Lsw7;->a:Z
+    iput-object p1, p0, Lsw7;->o:Ljava/lang/Object;
 
-    iget-boolean p0, p0, Lsw7;->b:Z
+    iget p1, p0, Lsw7;->X:I
 
-    invoke-static {p1, v0, p0}, Lbv7;->r0(Ljava/lang/Object;ZZ)Ljava/lang/String;
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lsw7;->X:I
+
+    iget-object p1, p0, Lsw7;->Y:Lp83;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lp83;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

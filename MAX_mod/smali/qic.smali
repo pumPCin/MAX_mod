@@ -1,117 +1,46 @@
 .class public final Lqic;
-.super Lj07;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final X:Lqic;
+# interfaces
+.implements Ljava/io/Closeable;
 
 
 # instance fields
-.field public final transient c:[Ljava/lang/Object;
+.field public final a:Liu0;
 
-.field public final transient o:I
+.field public final b:Lhu0;
+
+.field public final synthetic c:Lque;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public constructor <init>(Lque;Liu0;Lhu0;)V
+    .registers 4
 
-    new-instance v0, Lqic;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Lqic;->c:Lque;
 
-    new-array v2, v1, [Ljava/lang/Object;
+    iput-object p2, p0, Lqic;->a:Liu0;
 
-    invoke-direct {v0, v1, v2}, Lqic;-><init>(I[Ljava/lang/Object;)V
-
-    sput-object v0, Lqic;->X:Lqic;
-
-    return-void
-.end method
-
-.method public constructor <init>(I[Ljava/lang/Object;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
-
-    iput-object p2, p0, Lqic;->c:[Ljava/lang/Object;
-
-    iput p1, p0, Lqic;->o:I
+    iput-object p3, p0, Lqic;->b:Lhu0;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(I[Ljava/lang/Object;)I
-    .registers 5
+.method public final close()V
+    .registers 3
 
-    iget-object v0, p0, Lqic;->c:[Ljava/lang/Object;
+    const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    iget p0, p0, Lqic;->o:I
+    iget-object p0, p0, Lqic;->c:Lque;
 
-    invoke-static {v0, v1, p2, p1, p0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-virtual {p0, v0, v0, v1}, Lque;->c(ZZLjava/io/IOException;)Ljava/io/IOException;
 
-    add-int/2addr p1, p0
-
-    return p1
-.end method
-
-.method public final c()[Ljava/lang/Object;
-    .registers 1
-
-    iget-object p0, p0, Lqic;->c:[Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method public final d()I
-    .registers 1
-
-    iget p0, p0, Lqic;->o:I
-
-    return p0
-.end method
-
-.method public final e()I
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final f()Z
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final get(I)Ljava/lang/Object;
-    .registers 3
-
-    iget v0, p0, Lqic;->o:I
-
-    invoke-static {p1, v0}, Lbug;->k(II)V
-
-    iget-object p0, p0, Lqic;->c:[Ljava/lang/Object;
-
-    aget-object p0, p0, p1
-
-    invoke-static {p0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method public final size()I
-    .registers 1
-
-    iget p0, p0, Lqic;->o:I
-
-    return p0
+    return-void
 .end method

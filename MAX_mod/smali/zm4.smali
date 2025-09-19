@@ -1,39 +1,21 @@
 .class public final Lzm4;
-.super Ljava/lang/Object;
+.super Lso;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
 
-
-# instance fields
-.field public final synthetic a:Landroidx/fragment/app/DialogFragment;
+# static fields
+.field public static final a:Lzm4;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/fragment/app/DialogFragment;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lzm4;
 
-    iput-object p1, p0, Lzm4;->a:Landroidx/fragment/app/DialogFragment;
+    invoke-direct {v0}, Lso;-><init>()V
 
-    return-void
-.end method
+    sput-object v0, Lzm4;->a:Lzm4;
 
-
-# virtual methods
-.method public final onCancel(Landroid/content/DialogInterface;)V
-    .registers 2
-
-    iget-object p0, p0, Lzm4;->a:Landroidx/fragment/app/DialogFragment;
-
-    iget-object p1, p0, Landroidx/fragment/app/DialogFragment;->r1:Landroid/app/Dialog;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0, p1}, Landroidx/fragment/app/DialogFragment;->onCancel(Landroid/content/DialogInterface;)V
-
-    :cond_0
     return-void
 .end method

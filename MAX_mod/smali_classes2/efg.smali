@@ -1,208 +1,218 @@
-.class public final synthetic Lefg;
-.super Ljava/lang/Object;
+.class public final enum Lefg;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 # interfaces
-.implements Lee6;
+.implements Lxjg;
 
 
 # static fields
-.field public static final a:Lefg;
+.field public static final enum X:Lefg;
 
-.field private static final descriptor:Lkad;
+.field public static final enum Y:Lefg;
+
+.field public static final enum Z:Lefg;
+
+.field public static final enum o:Lefg;
+
+.field public static final enum r0:Lefg;
+
+.field public static final synthetic s0:[Lefg;
+
+.field public static final synthetic t0:Ly75;
+
+
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/Integer;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .registers 10
 
     new-instance v0, Lefg;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/16 v1, 0x12
 
-    sput-object v0, Lefg;->a:Lefg;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    new-instance v1, Lk7b;
+    move-result-object v5
 
-    const-string v2, "one.me.webapp.domain.jsbridge.delegates.storage.WebAppStorageGetKeyResponse"
-
-    const/4 v3, 0x3
-
-    invoke-direct {v1, v2, v0, v3}, Lk7b;-><init>(Ljava/lang/String;Lee6;I)V
-
-    const-string v0, "requestId"
+    const-string v1, "GET_INFO"
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v0, v2}, Lk7b;->k(Ljava/lang/String;Z)V
+    const-string v3, "WebAppBiometryGetInfo"
 
-    const-string v0, "key"
+    const-string v4, "biometry_get_info"
 
-    invoke-virtual {v1, v0, v2}, Lk7b;->k(Ljava/lang/String;Z)V
+    invoke-direct/range {v0 .. v5}, Lefg;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
 
-    const-string v0, "value"
+    sput-object v0, Lefg;->o:Lefg;
 
-    invoke-virtual {v1, v0, v2}, Lk7b;->k(Ljava/lang/String;Z)V
+    new-instance v1, Lefg;
 
-    sput-object v1, Lefg;->descriptor:Lkad;
+    const/16 v2, 0x9
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    const-string v2, "REQUEST_ACCESS"
+
+    const/4 v3, 0x1
+
+    const-string v4, "WebAppBiometryRequestAccess"
+
+    const-string v5, "biometry_request_access"
+
+    invoke-direct/range {v1 .. v6}, Lefg;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
+
+    sput-object v1, Lefg;->X:Lefg;
+
+    new-instance v2, Lefg;
+
+    const/16 v3, 0xa
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    const-string v3, "UPDATE_TOKEN"
+
+    const/4 v4, 0x2
+
+    const-string v5, "WebAppBiometryUpdateToken"
+
+    const-string v6, "biometry_update_token"
+
+    invoke-direct/range {v2 .. v7}, Lefg;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
+
+    sput-object v2, Lefg;->Y:Lefg;
+
+    new-instance v3, Lefg;
+
+    const/16 v4, 0xb
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    const-string v4, "REQUEST_AUTH"
+
+    const/4 v5, 0x3
+
+    const-string v6, "WebAppBiometryRequestAuth"
+
+    const-string v7, "biometry_request_auth"
+
+    invoke-direct/range {v3 .. v8}, Lefg;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
+
+    sput-object v3, Lefg;->Z:Lefg;
+
+    new-instance v4, Lefg;
+
+    const/16 v5, 0xd
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v9
+
+    const-string v5, "OPEN_SETTINGS"
+
+    const/4 v6, 0x4
+
+    const-string v7, "WebAppBiometryOpenSettings"
+
+    const-string v8, "biometry_open_settings"
+
+    invoke-direct/range {v4 .. v9}, Lefg;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
+
+    sput-object v4, Lefg;->r0:Lefg;
+
+    filled-new-array {v0, v1, v2, v3, v4}, [Lefg;
+
+    move-result-object v0
+
+    sput-object v0, Lefg;->s0:[Lefg;
+
+    new-instance v1, Ly75;
+
+    invoke-direct {v1, v0}, Ly75;-><init>([Ljava/lang/Enum;)V
+
+    sput-object v1, Lefg;->t0:Ly75;
 
     return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;)V
+    .registers 6
+
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    iput-object p3, p0, Lefg;->a:Ljava/lang/String;
+
+    iput-object p4, p0, Lefg;->b:Ljava/lang/String;
+
+    iput-object p5, p0, Lefg;->c:Ljava/lang/Integer;
+
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lefg;
+    .registers 2
+
+    const-class v0, Lefg;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lefg;
+
+    return-object p0
+.end method
+
+.method public static values()[Lefg;
+    .registers 1
+
+    sget-object v0, Lefg;->s0:[Lefg;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lefg;
+
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lq8;)Ljava/lang/Object;
-    .registers 11
-
-    sget-object p0, Lefg;->descriptor:Lkad;
-
-    invoke-virtual {p1, p0}, Lq8;->j(Lkad;)Lq8;
-
-    move-result-object p1
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move v5, v0
-
-    move v6, v1
-
-    move-object v3, v2
-
-    move-object v4, v3
-
-    :goto_0
-    if-eqz v5, :cond_4
-
-    invoke-virtual {p1, p0}, Lq8;->p(Lkad;)I
-
-    move-result v7
-
-    const/4 v8, -0x1
-
-    if-eq v7, v8, :cond_3
-
-    if-eqz v7, :cond_2
-
-    if-eq v7, v0, :cond_1
-
-    const/4 v4, 0x2
-
-    if-ne v7, v4, :cond_0
-
-    invoke-virtual {p1, p0, v4}, Lq8;->v(Lkad;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    or-int/lit8 v6, v6, 0x4
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
-
-    invoke-direct {p0, v7}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
-
-    throw p0
-
-    :cond_1
-    invoke-virtual {p1, p0, v0}, Lq8;->v(Lkad;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    or-int/lit8 v6, v6, 0x2
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p1, p0, v1}, Lq8;->v(Lkad;I)Ljava/lang/String;
-
-    move-result-object v2
-
-    or-int/lit8 v6, v6, 0x1
-
-    goto :goto_0
-
-    :cond_3
-    move v5, v1
-
-    goto :goto_0
-
-    :cond_4
-    invoke-virtual {p1, p0}, Lq8;->y(Lkad;)V
-
-    new-instance p0, Lgfg;
-
-    invoke-direct {p0, v2, v6, v3, v4}, Lgfg;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public final b(Ltx3;Ljava/lang/Object;)V
-    .registers 5
-
-    check-cast p2, Lgfg;
-
-    sget-object p0, Lefg;->descriptor:Lkad;
-
-    invoke-virtual {p1, p0}, Ltx3;->b(Lkad;)Ltx3;
-
-    move-result-object p1
-
-    iget-object v0, p2, Lgfg;->a:Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, p0, v1, v0}, Ltx3;->l(Lkad;ILjava/lang/String;)V
-
-    const/4 v0, 0x1
-
-    iget-object v1, p2, Lgfg;->b:Ljava/lang/String;
-
-    invoke-virtual {p1, p0, v0, v1}, Ltx3;->l(Lkad;ILjava/lang/String;)V
-
-    const/4 v0, 0x2
-
-    iget-object p2, p2, Lgfg;->c:Ljava/lang/String;
-
-    invoke-virtual {p1, p0, v0, p2}, Ltx3;->l(Lkad;ILjava/lang/String;)V
-
-    invoke-virtual {p1}, Ltx3;->m()V
-
-    return-void
-.end method
-
-.method public final c()[Ltf7;
-    .registers 3
-
-    const/4 p0, 0x3
-
-    new-array p0, p0, [Ltf7;
-
-    sget-object v0, Lmde;->a:Lmde;
-
-    const/4 v1, 0x0
-
-    aput-object v0, p0, v1
-
-    const/4 v1, 0x1
-
-    aput-object v0, p0, v1
-
-    const/4 v1, 0x2
-
-    aput-object v0, p0, v1
-
-    return-object p0
-.end method
-
-.method public final d()Lkad;
+.method public final a()Ljava/lang/Integer;
     .registers 1
 
-    sget-object p0, Lefg;->descriptor:Lkad;
+    iget-object p0, p0, Lefg;->c:Ljava/lang/Integer;
+
+    return-object p0
+.end method
+
+.method public final b()Ljava/lang/String;
+    .registers 1
+
+    iget-object p0, p0, Lefg;->a:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public final c()Ljava/lang/String;
+    .registers 1
+
+    iget-object p0, p0, Lefg;->b:Ljava/lang/String;
 
     return-object p0
 .end method

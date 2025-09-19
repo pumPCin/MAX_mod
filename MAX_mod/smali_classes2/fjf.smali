@@ -1,59 +1,67 @@
-.class public abstract synthetic Lfjf;
+.class public interface abstract Lfjf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lird;
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
 
+# virtual methods
+.method public abstract a()I
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public b()Lu2f;
+    .registers 1
 
-    const/4 v0, 0x4
+    const/4 p0, 0x0
 
-    invoke-static {v0}, Lew1;->w(I)[I
+    return-object p0
+.end method
 
-    move-result-object v1
+.method public c()Lzqd;
+    .registers 1
 
-    array-length v1, v1
+    const/4 p0, 0x0
 
-    new-array v1, v1, [I
+    return-object p0
+.end method
 
-    const/4 v2, 0x1
+.method public d()Lu2f;
+    .registers 1
 
-    const/4 v3, 0x0
+    const/4 p0, 0x0
 
-    :try_start_0
-    aput v2, v1, v3
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    return-object p0
+.end method
 
-    :catch_0
-    const/4 v3, 0x2
+.method public e()Lfrd;
+    .registers 1
 
-    :try_start_1
-    aput v3, v1, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    const/4 p0, 0x0
 
-    :catch_1
-    const/4 v2, 0x3
+    return-object p0
+.end method
 
-    :try_start_2
-    aput v2, v1, v3
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+.method public f()Lll7;
+    .registers 1
 
-    :catch_2
-    :try_start_3
-    aput v0, v1, v2
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+    const/4 p0, 0x0
 
-    :catch_3
-    sput-object v1, Lfjf;->$EnumSwitchMapping$0:[I
+    return-object p0
+.end method
 
-    return-void
+.method public g()Z
+    .registers 1
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public getType()Lhrd;
+    .registers 1
+
+    sget-object p0, Lhrd;->b:Lhrd;
+
+    return-object p0
 .end method

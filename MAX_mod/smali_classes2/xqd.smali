@@ -1,8 +1,64 @@
-.class public interface abstract Lxqd;
+.class public final Lxqd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lzqd;
+
+
+# static fields
+.field public static final a:Lxqd;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Lxqd;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lxqd;->a:Lxqd;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract onRateCall(Lorg/json/JSONObject;)V
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lxqd;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, 0x589f1ca
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "Alert"
+
+    return-object p0
 .end method

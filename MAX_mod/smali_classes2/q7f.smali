@@ -1,27 +1,31 @@
 .class public final Lq7f;
-.super Lcx3;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public X:Ljava/lang/CharSequence;
+.field public X:Ll8a;
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public Y:J
 
-.field public final synthetic Z:Lr7f;
+.field public Z:I
 
-.field public n0:I
+.field public o:Lv7f;
 
-.field public o:Lr7f;
+.field public synthetic r0:Ljava/lang/Object;
+
+.field public final synthetic s0:Lv7f;
+
+.field public t0:I
 
 
 # direct methods
-.method public constructor <init>(Lr7f;Lcx3;)V
+.method public constructor <init>(Lv7f;Ljx3;)V
     .registers 3
 
-    iput-object p1, p0, Lq7f;->Z:Lr7f;
+    iput-object p1, p0, Lq7f;->s0:Lv7f;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -31,21 +35,21 @@
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iput-object p1, p0, Lq7f;->Y:Ljava/lang/Object;
+    iput-object p1, p0, Lq7f;->r0:Ljava/lang/Object;
 
-    iget p1, p0, Lq7f;->n0:I
+    iget p1, p0, Lq7f;->t0:I
 
     const/high16 v0, -0x80000000
 
     or-int/2addr p1, v0
 
-    iput p1, p0, Lq7f;->n0:I
+    iput p1, p0, Lq7f;->t0:I
 
-    iget-object p1, p0, Lq7f;->Z:Lr7f;
+    iget-object p1, p0, Lq7f;->s0:Lv7f;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0, p0}, Lr7f;->s(Lr7f;Ljava/lang/CharSequence;Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, p0}, Lv7f;->l(Ll8a;Ljx3;)Ljava/lang/Object;
 
     move-result-object p0
 

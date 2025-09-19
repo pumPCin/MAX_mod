@@ -14,36 +14,30 @@
 
 .field public static final e:I
 
-.field public static final f:I
-
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
-    sget v0, Lryb;->oneme_picker_input_view:I
+    sget v0, Lm5c;->oneme_force_update_app_icon:I
 
     sput v0, Lhaa;->a:I
 
-    sget v0, Lryb;->oneme_picker_media_keyboard_container:I
+    sget v0, Lm5c;->oneme_force_update_subtitle:I
 
     sput v0, Lhaa;->b:I
 
-    sget v0, Lryb;->oneme_picker_quote_view:I
+    sget v0, Lm5c;->oneme_force_update_title:I
 
     sput v0, Lhaa;->c:I
 
-    sget v0, Lryb;->oneme_picker_toolbar:I
+    sget v0, Lm5c;->oneme_force_update_update_button:I
 
     sput v0, Lhaa;->d:I
 
-    sget v0, Lryb;->oneme_picker_toolbar_action_cancel_selection:I
+    sget v0, Lm5c;->oneme_force_update_update_icon:I
 
     sput v0, Lhaa;->e:I
-
-    sget v0, Lryb;->oneme_picker_toolbar_action_select:I
-
-    sput v0, Lhaa;->f:I
 
     return-void
 .end method

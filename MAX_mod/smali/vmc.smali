@@ -1,57 +1,25 @@
-.class public abstract Lvmc;
-.super Lumc;
+.class public final Lvmc;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lka6;
 
 
 # instance fields
-.field public final b:I
+.field public final a:Ljava/util/LinkedHashSet;
+
+.field public b:Ljava/lang/CharSequence;
 
 
 # direct methods
-.method public constructor <init>(ILkotlin/coroutines/Continuation;)V
-    .registers 3
-
-    invoke-direct {p0, p2}, Lumc;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    iput p1, p0, Lvmc;->b:I
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final getArity()I
-    .registers 1
-
-    iget p0, p0, Lvmc;->b:I
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public constructor <init>()V
     .registers 2
 
-    iget-object v0, p0, Lzi0;->a:Lkotlin/coroutines/Continuation;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    if-nez v0, :cond_0
+    new-instance v0, Ljava/util/LinkedHashSet;
 
-    sget-object v0, Lyhc;->a:Lzhc;
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object v0, p0, Lvmc;->a:Ljava/util/LinkedHashSet;
 
-    invoke-static {p0}, Lzhc;->a(Lka6;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_0
-    invoke-super {p0}, Lzi0;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

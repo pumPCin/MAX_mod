@@ -1,45 +1,99 @@
 .class public final Lpc5;
-.super Lha4;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final b:Lpc5;
-
-.field public static final c:Lca4;
+# interfaces
+.implements Lbxf;
+.implements Ludb;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 6
+# instance fields
+.field public a:Lbxf;
 
-    new-instance v0, Lpc5;
+.field public b:Lpc5;
 
-    invoke-direct {v0}, Lha4;-><init>()V
 
-    sput-object v0, Lpc5;->b:Lpc5;
+# virtual methods
+.method public final a(ILjava/lang/Object;)V
+    .registers 4
 
-    const/4 v1, 0x0
+    const/4 v0, 0x7
 
-    new-array v2, v1, [Ljava/lang/String;
+    if-eq p1, v0, :cond_3
 
-    const-string v1, "params"
+    const/16 v0, 0x8
 
-    invoke-static {v1}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
+    if-eq p1, v0, :cond_2
 
-    move-result-object v3
+    const/16 p0, 0x2710
 
-    const/16 v5, 0xc
+    if-eq p1, p0, :cond_0
 
-    const/4 v4, 0x0
+    goto :goto_0
 
-    const-string v1, ":external_callback"
+    :cond_0
+    if-nez p2, :cond_1
 
-    invoke-static/range {v0 .. v5}, Lha4;->a(Lha4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lca4;
+    :goto_0
+    return-void
 
-    move-result-object v0
+    :cond_1
+    new-instance p0, Ljava/lang/ClassCastException;
 
-    sput-object v0, Lpc5;->c:Lca4;
+    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
 
+    throw p0
+
+    :cond_2
+    check-cast p2, Lpc5;
+
+    iput-object p2, p0, Lpc5;->b:Lpc5;
+
+    return-void
+
+    :cond_3
+    check-cast p2, Lbxf;
+
+    iput-object p2, p0, Lpc5;->a:Lbxf;
+
+    return-void
+.end method
+
+.method public final b(JJLx46;Landroid/media/MediaFormat;)V
+    .registers 7
+
+    iget-object p0, p0, Lpc5;->a:Lbxf;
+
+    if-eqz p0, :cond_0
+
+    invoke-interface/range {p0 .. p6}, Lbxf;->b(JJLx46;Landroid/media/MediaFormat;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c()V
+    .registers 1
+
+    iget-object p0, p0, Lpc5;->b:Lpc5;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Lpc5;->c()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final d()V
+    .registers 1
+
+    iget-object p0, p0, Lpc5;->b:Lpc5;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Lpc5;->d()V
+
+    :cond_0
     return-void
 .end method

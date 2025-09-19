@@ -1,94 +1,61 @@
-.class public final Ldve;
+.class public final synthetic Ldve;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
+
 
 # instance fields
-.field public final a:Ldke;
+.field public final synthetic a:Ljava/lang/String;
+
+.field public final synthetic b:Lnve;
 
 
 # direct methods
-.method public constructor <init>(Ldke;)V
-    .registers 2
+.method public synthetic constructor <init>(Ljava/lang/String;Lnve;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldve;->a:Ldke;
+    iput-object p1, p0, Ldve;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Ldve;->b:Lnve;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final onPushTokenGenerated(Ljava/lang/String;)V
+    .registers 4
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Ldve;->a:Ljava/lang/String;
 
-    if-ne p0, p1, :cond_0
+    invoke-static {v0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    return v0
+    move-result v0
 
-    :cond_0
-    instance-of v1, p1, Ldve;
+    if-nez v0, :cond_0
 
-    const/4 v2, 0x0
+    iget-object p0, p0, Ldve;->b:Lnve;
 
-    if-nez v1, :cond_1
+    iget-object v0, p0, Lnve;->b:Ljava/lang/String;
 
-    return v2
+    const-string v1, "checkTokenChanged: token changed"
 
-    :cond_1
-    check-cast p1, Ldve;
+    invoke-static {v0, v1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object p0, p0, Ldve;->a:Ldke;
+    iget-object p0, p0, Lnve;->Y:Lcl7;
 
-    iget-object p1, p1, Ldve;->a:Ldke;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Ldve;->a:Ldke;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "SvgPattern(svgPattern="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Ldve;->a:Ldke;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;
+
+    invoke-interface {p0, p1}, Lone/me/sdk/vendor/SystemServicesManager$PushTokenGeneratedListener;->onPushTokenGenerated(Ljava/lang/String;)V
+
+    :cond_0
+    return-void
 .end method

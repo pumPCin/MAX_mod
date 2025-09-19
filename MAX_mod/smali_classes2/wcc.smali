@@ -1,80 +1,138 @@
-.class public final Lwcc;
+.class public abstract Lwcc;
 .super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Comparable;
 
 
-# instance fields
-.field public final a:Lo72;
+# static fields
+.field public static ActionBarTheme:I = 0x7f140000
 
-.field public final b:Lmm3;
+.field public static AttachButton:I = 0x7f14000c
 
+.field public static AttachButton_QuickCamera:I = 0x7f14000d
 
-# direct methods
-.method public constructor <init>(Lo72;Lmm3;)V
-    .registers 3
+.field public static AttachButton_SmallQuickCameraButton:I = 0x7f14000e
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static ComposeMessage:I = 0x7f14017e
 
-    iput-object p1, p0, Lwcc;->a:Lo72;
+.field public static ContactLastSeen:I = 0x7f14017f
 
-    iput-object p2, p0, Lwcc;->b:Lmm3;
+.field public static ContactName:I = 0x7f140180
 
-    return-void
-.end method
+.field public static DrawerArrowStyle:I = 0x7f140182
 
+.field public static ExtraActionButton:I = 0x7f1401a4
 
-# virtual methods
-.method public final compareTo(Ljava/lang/Object;)I
-    .registers 4
+.field public static ExtraActionButton_Down:I = 0x7f1401a5
 
-    check-cast p1, Lwcc;
+.field public static ExtraActionButton_Up:I = 0x7f1401a6
 
-    iget-object v0, p0, Lwcc;->a:Lo72;
+.field public static LandscapeAttachButton:I = 0x7f1401ef
 
-    if-eqz v0, :cond_0
+.field public static LandscapeAttachButton_LandscapeQuickCamera:I = 0x7f1401f0
 
-    iget-object p0, v0, Lo72;->b:Lac2;
+.field public static LandscapeAttachButton_LandscapeSmallQuickCameraButton:I = 0x7f1401f1
 
-    iget-wide v0, p0, Lac2;->X:J
+.field public static LayoutPadding:I = 0x7f1401f2
 
-    goto :goto_0
+.field public static MediaTabText:I = 0x7f140208
 
-    :cond_0
-    iget-object p0, p0, Lwcc;->b:Lmm3;
+.field public static MenuActionButtonNoCaps:I = 0x7f140209
 
-    iget-object p0, p0, Lmm3;->a:Lio3;
+.field public static MenuOverflow:I = 0x7f14020a
 
-    iget-object p0, p0, Lio3;->b:Lho3;
+.field public static MenuOverflowWhite:I = 0x7f14020b
 
-    iget-wide v0, p0, Lho3;->r:J
+.field public static MessageActionButton:I = 0x7f14020c
 
-    :goto_0
-    iget-object p0, p1, Lwcc;->a:Lo72;
+.field public static MessagesProgressBar:I = 0x7f14020d
 
-    if-eqz p0, :cond_1
+.field public static NavigationDrawerTheme:I = 0x7f14020e
 
-    iget-object p0, p0, Lo72;->b:Lac2;
+.field public static ProgressBarOrange:I = 0x7f140244
 
-    iget-wide p0, p0, Lac2;->X:J
+.field public static ProgressBarWhite:I = 0x7f140245
 
-    goto :goto_1
+.field public static RoundedButton24:I = 0x7f140246
 
-    :cond_1
-    iget-object p0, p1, Lwcc;->b:Lmm3;
+.field public static RoundedButton24_Blue:I = 0x7f140247
 
-    iget-object p0, p0, Lmm3;->a:Lio3;
+.field public static RoundedButton24_Blue_DisabledDark:I = 0x7f140248
 
-    iget-object p0, p0, Lio3;->b:Lho3;
+.field public static RoundedButton24_Orange:I = 0x7f140249
 
-    iget-wide p0, p0, Lho3;->r:J
+.field public static RoundedButton24_Serif:I = 0x7f14024a
 
-    :goto_1
-    invoke-static {p0, p1, v0, v1}, La94;->g(JJ)I
+.field public static RoundedButton24_Transparent:I = 0x7f14024b
 
-    move-result p0
+.field public static RoundedButton24_Transparent_WhiteText:I = 0x7f14024c
 
-    return p0
-.end method
+.field public static RoundedButton24_White:I = 0x7f14024d
+
+.field public static RowPadding:I = 0x7f14024e
+
+.field public static SearchTabText:I = 0x7f140269
+
+.field public static SmallProgressBar:I = 0x7f1402a8
+
+.field public static SpinnerDropDown:I = 0x7f1402a9
+
+.field public static SubtitleCollapsed:I = 0x7f1402aa
+
+.field public static SubtitleExpanded:I = 0x7f1402ab
+
+.field public static TabText:I = 0x7f1402af
+
+.field public static TamTamFab:I = 0x7f1402b0
+
+.field public static TamTamTheme:I = 0x7f1402b1
+
+.field public static TamTamTheme_Base:I = 0x7f1402b2
+
+.field public static TamTamTheme_Base_Dark:I = 0x7f1402b3
+
+.field public static TamTamTheme_Base_PopupNotification:I = 0x7f1402b4
+
+.field public static TamTamTheme_CloseMode:I = 0x7f1402b5
+
+.field public static Text:I = 0x7f1402b7
+
+.field public static TextInputLayoutHint:I = 0x7f140345
+
+.field public static Text_Attach:I = 0x7f1402b8
+
+.field public static Text_Large:I = 0x7f1402b9
+
+.field public static Text_Largest:I = 0x7f1402ba
+
+.field public static Text_LocalMediaCount:I = 0x7f1402bb
+
+.field public static Text_LocalMediaCount_FullScreen:I = 0x7f1402bc
+
+.field public static Text_Normal:I = 0x7f1402bd
+
+.field public static Text_Small:I = 0x7f1402be
+
+.field public static Theme_Transparent:I = 0x7f1403b7
+
+.field public static Theme_Transparent_DarkMenuOverflow:I = 0x7f1403b8
+
+.field public static Theme_Transparent_WhiteMenuOverflow:I = 0x7f1403b9
+
+.field public static Theme_Transparent_WhiteMenuOverflow_NoCaps:I = 0x7f1403ba
+
+.field public static TimePicker:I = 0x7f140431
+
+.field public static TimePickerShape:I = 0x7f140434
+
+.field public static TimePicker_Day:I = 0x7f140432
+
+.field public static TimePicker_Night:I = 0x7f140433
+
+.field public static TitleCollapsed:I = 0x7f140435
+
+.field public static TitleExpanded:I = 0x7f140436
+
+.field public static TitleExpandedSmall:I = 0x7f140437
+
+.field public static frg_auth_native_ok__common:I = 0x7f140681
+
+.field public static frg_auth_native_ok__et_login:I = 0x7f140682

@@ -1,190 +1,85 @@
-.class public final Lbe6;
-.super Ljava/lang/Object;
+.class public final enum Lbe6;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
 # static fields
-.field public static final c:Ljava/util/regex/Pattern;
+.field public static final enum a:Lbe6;
 
+.field public static final enum b:Lbe6;
 
-# instance fields
-.field public a:I
+.field public static final enum c:Lbe6;
 
-.field public b:I
+.field public static final synthetic o:[Lbe6;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 5
 
-    const-string v0, "^ [0-9a-fA-F]{8} ([0-9a-fA-F]{8}) ([0-9a-fA-F]{8})"
+    new-instance v0, Lbe6;
 
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    const-string v1, "UNKNOWN"
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lbe6;->a:Lbe6;
+
+    new-instance v1, Lbe6;
+
+    const-string v2, "DEFAULT"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lbe6;->b:Lbe6;
+
+    new-instance v2, Lbe6;
+
+    const-string v3, "YUV"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lbe6;->c:Lbe6;
+
+    filled-new-array {v0, v1, v2}, [Lbe6;
 
     move-result-object v0
 
-    sput-object v0, Lbe6;->c:Ljava/util/regex/Pattern;
+    sput-object v0, Lbe6;->o:[Lbe6;
 
     return-void
 .end method
 
-.method public constructor <init>()V
+.method public static valueOf(Ljava/lang/String;)Lbe6;
     .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Lbe6;
 
-    const/4 v0, -0x1
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    iput v0, p0, Lbe6;->a:I
+    move-result-object p0
 
-    iput v0, p0, Lbe6;->b:I
+    check-cast p0, Lbe6;
 
-    return-void
+    return-object p0
 .end method
 
+.method public static values()[Lbe6;
+    .registers 1
 
-# virtual methods
-.method public final a(Ljava/lang/String;)Z
-    .registers 6
+    sget-object v0, Lbe6;->o:[Lbe6;
 
-    sget-object v0, Lbe6;->c:Ljava/util/regex/Pattern;
+    invoke-virtual {v0}, [Lbe6;->clone()Ljava/lang/Object;
 
-    invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    move-result-object v0
 
-    move-result-object p1
+    check-cast v0, [Lbe6;
 
-    invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const/4 v0, 0x1
-
-    :try_start_0
-    invoke-virtual {p1, v0}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    sget v2, Lyhf;->a:I
-
-    const/16 v2, 0x10
-
-    invoke-static {v1, v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    const/4 v3, 0x2
-
-    invoke-virtual {p1, v3}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1, v2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
-
-    move-result p1
-
-    if-gtz v1, :cond_0
-
-    if-lez p1, :cond_1
-
-    :cond_0
-    iput v1, p0, Lbe6;->a:I
-
-    iput p1, p0, Lbe6;->b:I
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return v0
-
-    :catch_0
-    :cond_1
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final b(Lub9;)V
-    .registers 7
-
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-object v1, p1, Lub9;->a:[Lsb9;
-
-    array-length v2, v1
-
-    if-ge v0, v2, :cond_2
-
-    aget-object v1, v1, v0
-
-    instance-of v2, v1, Lq83;
-
-    const-string v3, "iTunSMPB"
-
-    if-eqz v2, :cond_0
-
-    check-cast v1, Lq83;
-
-    iget-object v2, v1, Lq83;->c:Ljava/lang/String;
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    iget-object v1, v1, Lq83;->o:Ljava/lang/String;
-
-    invoke-virtual {p0, v1}, Lbe6;->a(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    goto :goto_1
-
-    :cond_0
-    instance-of v2, v1, Lc77;
-
-    if-eqz v2, :cond_1
-
-    check-cast v1, Lc77;
-
-    const-string v2, "com.apple.iTunes"
-
-    iget-object v4, v1, Lc77;->b:Ljava/lang/String;
-
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    iget-object v2, v1, Lc77;->c:Ljava/lang/String;
-
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    iget-object v1, v1, Lc77;->o:Ljava/lang/String;
-
-    invoke-virtual {p0, v1}, Lbe6;->a(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    :goto_1
-    return-void
+    return-object v0
 .end method

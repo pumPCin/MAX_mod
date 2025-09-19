@@ -1,40 +1,35 @@
-.class public abstract Lh0c;
+.class public final Lh0c;
 .super Ljava/lang/Object;
+.source "SourceFile"
 
 
-# static fields
-.field public static oneme_settings_avatar_select_screen:I = 0x7f0a0797
+# instance fields
+.field public a:I
 
-.field public static oneme_settings_change_avatar_cancel:I = 0x7f0a0798
+.field public b:I
 
-.field public static oneme_settings_change_avatar_remove_current:I = 0x7f0a0799
+.field public final c:I
 
-.field public static oneme_settings_change_avatar_upload_from_camera:I = 0x7f0a079a
+.field public final d:J
 
-.field public static oneme_settings_change_avatar_upload_from_gallery:I = 0x7f0a079b
+.field public final e:I
 
-.field public static oneme_settings_change_avatar_upload_from_neuroavatars:I = 0x7f0a079c
 
-.field public static oneme_settings_collapsingstoolbar:I = 0x7f0a079d
+# direct methods
+.method public constructor <init>(IIIJI)V
+    .registers 7
 
-.field public static oneme_settings_container:I = 0x7f0a079e
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static oneme_settings_list_screen_appbar:I = 0x7f0a07a5
+    iput p1, p0, Lh0c;->a:I
 
-.field public static oneme_settings_list_screen_pinned_toolbar:I = 0x7f0a07a6
+    iput p2, p0, Lh0c;->b:I
 
-.field public static oneme_settings_toolbar:I = 0x7f0a0833
+    iput p3, p0, Lh0c;->c:I
 
-.field public static oneme_settings_topbar:I = 0x7f0a0834
+    iput-wide p4, p0, Lh0c;->d:J
 
-.field public static oneme_settings_topbar_avatar:I = 0x7f0a0835
+    iput p6, p0, Lh0c;->e:I
 
-.field public static oneme_settings_topbar_container:I = 0x7f0a0836
-
-.field public static oneme_settings_topbar_dotdivider:I = 0x7f0a0837
-
-.field public static oneme_settings_topbar_name:I = 0x7f0a0838
-
-.field public static oneme_settings_topbar_nick:I = 0x7f0a0839
-
-.field public static oneme_settings_topbar_phone:I = 0x7f0a083a
+    return-void
+.end method

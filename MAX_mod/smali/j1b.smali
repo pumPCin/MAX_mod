@@ -1,90 +1,63 @@
 .class public final Lj1b;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public final synthetic X:Ll1b;
+.field public final a:Ly88;
 
-.field public final synthetic Y:Ljava/lang/String;
+.field public final b:La5e;
+
+.field public final c:F
+
+.field public final d:Lgue;
+
+.field public e:Z
 
 
 # direct methods
-.method public constructor <init>(Ll1b;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(I)V
+    .registers 5
 
-    iput-object p1, p0, Lj1b;->X:Ll1b;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lj1b;->Y:Ljava/lang/String;
+    const/4 v0, 0x1
 
-    const/4 p1, 0x2
+    if-lez p1, :cond_0
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-static {v1}, Lmq0;->c(Z)V
+
+    const/high16 v1, 0x3f000000    # 0.5f
+
+    iput v1, p0, Lj1b;->c:F
+
+    sget-object v1, Lgue;->a:Lgue;
+
+    iput-object v1, p0, Lj1b;->d:Lgue;
+
+    new-instance v1, Ly88;
+
+    invoke-direct {v1}, Ly88;-><init>()V
+
+    iput-object v1, p0, Lj1b;->a:Ly88;
+
+    new-instance v1, La5e;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, p1, v2}, La5e;-><init>(II)V
+
+    iput-object v1, p0, Lj1b;->b:La5e;
+
+    iput-boolean v0, p0, Lj1b;->e:Z
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lj1b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lj1b;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lj1b;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p1, Lj1b;
-
-    iget-object v0, p0, Lj1b;->X:Ll1b;
-
-    iget-object p0, p0, Lj1b;->Y:Ljava/lang/String;
-
-    invoke-direct {p1, v0, p0, p2}, Lj1b;-><init>(Ll1b;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lj1b;->X:Ll1b;
-
-    iget-object p1, p1, Ll1b;->o:Ldv3;
-
-    iget-object p1, p1, Ldv3;->g:Ldle;
-
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lfl9;
-
-    iget-object p0, p0, Lj1b;->Y:Ljava/lang/String;
-
-    invoke-interface {p1, p0}, Lfl9;->setValue(Ljava/lang/Object;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
 .end method

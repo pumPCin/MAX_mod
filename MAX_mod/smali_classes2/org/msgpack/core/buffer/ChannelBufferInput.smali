@@ -30,7 +30,7 @@
 
     const-string v0, "input channel is null"
 
-    invoke-static {p1, v0}, Lbp;->k(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lz48;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lorg/msgpack/core/buffer/ChannelBufferInput;->channel:Ljava/nio/channels/ReadableByteChannel;
 
@@ -46,7 +46,7 @@
     :goto_0
     const-string v0, "buffer size must be > 0: "
 
-    invoke-static {p2, v0}, La78;->h(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lyv7;->e(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

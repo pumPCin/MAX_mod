@@ -4,7 +4,7 @@
 
 
 # static fields
-.field static final d:Lso8;
+.field static final d:Lor8;
 
 
 # instance fields
@@ -21,10 +21,10 @@
 
     const-string v0, "application/octet-stream"
 
-    sget-object v1, Lso8;->d:Ljava/util/regex/Pattern;
+    sget-object v1, Lor8;->d:Ljava/util/regex/Pattern;
 
     :try_start_0
-    invoke-static {v0}, La94;->r(Ljava/lang/String;)Lso8;
+    invoke-static {v0}, Lvkf;->l(Ljava/lang/String;)Lor8;
 
     move-result-object v0
     :try_end_0
@@ -36,7 +36,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    sput-object v0, Lcom/my/tracker/obfuscated/m0;->d:Lso8;
+    sput-object v0, Lcom/my/tracker/obfuscated/m0;->d:Lor8;
 
     return-void
 .end method

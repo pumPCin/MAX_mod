@@ -1,59 +1,48 @@
 .class public final Lq61;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Lso1;
+.super Ljx3;
 
 
 # instance fields
-.field public final synthetic a:Llcb;
+.field public X:I
+
+.field public final synthetic Y:Lwb;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Llcb;)V
-    .registers 2
+.method public constructor <init>(Lwb;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lq61;->Y:Lwb;
 
-    iput-object p1, p0, Lq61;->a:Llcb;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onMediaConnected(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;)V
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;->isFirstConnection()Z
+    iput-object p1, p0, Lq61;->o:Ljava/lang/Object;
 
-    move-result p1
+    iget p1, p0, Lq61;->X:I
 
-    if-nez p1, :cond_0
+    const/high16 v0, -0x80000000
 
-    sget-object p1, Lx51;->c:Lx51;
+    or-int/2addr p1, v0
 
-    iget-object p0, p0, Lq61;->a:Llcb;
+    iput p1, p0, Lq61;->X:I
 
-    check-cast p0, Licb;
+    iget-object p1, p0, Lq61;->Y:Lwb;
 
-    invoke-virtual {p0, p1}, Licb;->g(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    :cond_0
-    return-void
-.end method
+    invoke-virtual {p1, v0, p0}, Lwb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-.method public final onMediaDisconnected(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$DisconnectedInfo;)V
-    .registers 2
+    move-result-object p0
 
-    sget-object p1, Ly51;->c:Ly51;
-
-    iget-object p0, p0, Lq61;->a:Llcb;
-
-    check-cast p0, Licb;
-
-    invoke-virtual {p0, p1}, Licb;->g(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
+    return-object p0
 .end method

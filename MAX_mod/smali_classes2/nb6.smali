@@ -1,126 +1,94 @@
 .class public final Lnb6;
-.super Ll3;
+.super Lure;
 .source "SourceFile"
 
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lnb6;",
-            ">;"
-        }
-    .end annotation
-.end field
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic X:Lru/ok/messages/settings/FrgMessagesSettings;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Lru/ok/messages/settings/FrgMessagesSettings;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    new-instance v0, Lfj3;
+    iput-object p1, p0, Lnb6;->X:Lru/ok/messages/settings/FrgMessagesSettings;
 
-    const/16 v1, 0x19
+    const/4 p1, 0x2
 
-    invoke-direct {v0, v1}, Lfj3;-><init>(I)V
-
-    sput-object v0, Lnb6;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lnb6;->a:I
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lnb6;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lnb6;
-
-    iget p0, p0, Lnb6;->a:I
-
-    iget p1, p1, Lnb6;->a:I
-
-    if-eq p0, p1, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget p0, p0, Lnb6;->a:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    const-string v0, "AsRes(res="
+    check-cast p1, Ly04;
 
-    const-string v1, ")"
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget p0, p0, Lnb6;->a:I
-
-    invoke-static {p0, v0, v1}, Lnh0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Lnb6;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Lnb6;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lnb6;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 3
 
-    iget p0, p0, Lnb6;->a:I
+    new-instance p1, Lnb6;
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object p0, p0, Lnb6;->X:Lru/ok/messages/settings/FrgMessagesSettings;
 
-    return-void
+    invoke-direct {p1, p0, p2}, Lnb6;-><init>(Lru/ok/messages/settings/FrgMessagesSettings;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lnb6;->X:Lru/ok/messages/settings/FrgMessagesSettings;
+
+    iget-object p1, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Liad;
+
+    invoke-virtual {p1}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object p1
+
+    const-class v0, Lyfb;
+
+    invoke-virtual {p1, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lyfb;
+
+    invoke-virtual {p1}, Lyfb;->d()V
+
+    iget-object p0, p0, Lru/ok/messages/views/fragments/base/FrgBase;->p1:Liad;
+
+    invoke-virtual {p0}, Liad;->f()Lza2;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lza2;->O()V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

@@ -3,127 +3,183 @@
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lm0f;
+# static fields
+.field public static final synthetic b:I
 
-.field public final b:Ln0f;
+
+# instance fields
+.field public final a:Luvg;
 
 
 # direct methods
-.method public constructor <init>(Lm0f;Ln0f;)V
-    .registers 3
+.method public constructor <init>(Luvg;)V
+    .registers 13
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ll0f;->a:Lm0f;
+    iput-object p1, p0, Ll0f;->a:Luvg;
 
-    iput-object p2, p0, Ll0f;->b:Ln0f;
+    new-instance p0, Ljava/util/LinkedHashSet;
+
+    invoke-direct {p0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    invoke-static {p0}, Lq73;->F0(Ljava/lang/Iterable;)Ljava/util/Set;
+
+    move-result-object v10
+
+    new-instance v0, Lkm3;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const-wide/16 v6, -0x1
+
+    const-wide/16 v8, -0x1
+
+    invoke-direct/range {v0 .. v10}, Lkm3;-><init>(IZZZZJJLjava/util/Set;)V
+
+    new-instance p0, Lw1b;
+
+    const-wide/16 v1, 0x6
+
+    sget-object v3, Ljava/util/concurrent/TimeUnit;->HOURS:Ljava/util/concurrent/TimeUnit;
+
+    const-class v4, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;
+
+    invoke-direct {p0, v4, v1, v2, v3}, Lw1b;-><init>(Ljava/lang/Class;JLjava/util/concurrent/TimeUnit;)V
+
+    invoke-virtual {p0, v0}, Landroidx/work/WorkRequest$Builder;->setConstraints(Lkm3;)Landroidx/work/WorkRequest$Builder;
+
+    move-result-object p0
+
+    check-cast p0, Lw1b;
+
+    const-string v0, "TASK_MONITOR_PERIODIC_TASK"
+
+    invoke-virtual {p0, v0}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
+
+    move-result-object p0
+
+    check-cast p0, Lw1b;
+
+    invoke-virtual {p0}, Landroidx/work/WorkRequest$Builder;->build()Landroidx/work/WorkRequest;
+
+    move-result-object p0
+
+    check-cast p0, Lx1b;
+
+    invoke-virtual {p0}, Landroidx/work/WorkRequest;->getId()Ljava/util/UUID;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "work "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, " try to add TASK_MONITOR_PERIODIC_TASK request"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "l0f"
+
+    invoke-static {v2, v1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v1, 0x2
+
+    const/16 v2, 0x18
+
+    invoke-static {p1, v0, v1, p0, v2}, Luvg;->e(Luvg;Ljava/lang/String;ILx1b;I)Lxf3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a()V
     .registers 6
 
-    const/4 v0, 0x1
+    new-instance v0, Ltsa;
 
-    if-ne p0, p1, :cond_0
+    const-class v1, Lone/me/sdk/tasks/TaskMonitor$TaskMonitorWorker;
 
-    return v0
+    invoke-direct {v0, v1}, Ltsa;-><init>(Ljava/lang/Class;)V
 
-    :cond_0
-    instance-of v1, p1, Ll0f;
+    const-wide/16 v1, 0x2710
+
+    sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    sget-object v4, Lhf0;->a:Lhf0;
+
+    invoke-virtual {v0, v4, v1, v2, v3}, Landroidx/work/WorkRequest$Builder;->setBackoffCriteria(Lhf0;JLjava/util/concurrent/TimeUnit;)Landroidx/work/WorkRequest$Builder;
+
+    move-result-object v0
+
+    check-cast v0, Ltsa;
+
+    const-string v1, "TASK_MONITOR_ONE_TIME_TASK"
+
+    invoke-virtual {v0, v1}, Landroidx/work/WorkRequest$Builder;->addTag(Ljava/lang/String;)Landroidx/work/WorkRequest$Builder;
+
+    move-result-object v0
+
+    check-cast v0, Ltsa;
+
+    invoke-virtual {v0}, Landroidx/work/WorkRequest$Builder;->build()Landroidx/work/WorkRequest;
+
+    move-result-object v0
+
+    check-cast v0, Lusa;
+
+    invoke-virtual {v0}, Landroidx/work/WorkRequest;->getId()Ljava/util/UUID;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "work "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v2, " try to add TASK_MONITOR_ONE_TIME_TASK request"
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "l0f"
+
+    invoke-static {v3, v2}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_1
+    iget-object p0, p0, Ll0f;->a:Luvg;
 
-    return v2
+    sget-object v3, Lkb5;->b:Lkb5;
 
-    :cond_1
-    check-cast p1, Ll0f;
-
-    iget-object v1, p0, Ll0f;->a:Lm0f;
-
-    iget-object v3, p1, Ll0f;->a:Lm0f;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Ll0f;->b:Ln0f;
-
-    iget-object p1, p1, Ll0f;->b:Ln0f;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-object v0, p0, Ll0f;->a:Lm0f;
-
-    invoke-virtual {v0}, Lm0f;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Ll0f;->b:Ln0f;
-
-    invoke-virtual {p0}, Ln0f;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "TopbarIconColors(default="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Ll0f;->a:Lm0f;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", disabled="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Ll0f;->b:Ln0f;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v1, v3, v0, v2}, Luvg;->b(Ljava/lang/String;Lkb5;Lusa;Z)Lho7;
 
     move-result-object p0
 
-    return-object p0
+    invoke-virtual {p0}, Lho7;->P()Lxf3;
+
+    return-void
 .end method

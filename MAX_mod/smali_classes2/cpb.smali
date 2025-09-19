@@ -1,128 +1,106 @@
 .class public final Lcpb;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lgpb;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lnpb;
-
-.field public final synthetic Z:Ljava/lang/String;
-
-.field public final synthetic n0:Landroid/graphics/RectF;
+.field public final a:Lu83;
 
 
 # direct methods
-.method public constructor <init>(Lnpb;Ljava/lang/String;Landroid/graphics/RectF;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+.method public constructor <init>(Lu83;)V
+    .registers 2
 
-    iput-object p1, p0, Lcpb;->Y:Lnpb;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lcpb;->Z:Ljava/lang/String;
-
-    iput-object p3, p0, Lcpb;->n0:Landroid/graphics/RectF;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p4}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lcpb;->a:Lu83;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lcpb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lcpb;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lcpb;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 5
 
-    new-instance p1, Lcpb;
+    const/4 v0, 0x1
 
-    iget-object v0, p0, Lcpb;->Z:Ljava/lang/String;
+    if-ne p0, p1, :cond_0
 
-    iget-object v1, p0, Lcpb;->n0:Landroid/graphics/RectF;
-
-    iget-object p0, p0, Lcpb;->Y:Lnpb;
-
-    invoke-direct {p1, p0, v0, v1, p2}, Lcpb;-><init>(Lnpb;Ljava/lang/String;Landroid/graphics/RectF;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    iget v0, p0, Lcpb;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    instance-of v1, p1, Lcpb;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const/4 v2, 0x0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    if-nez v1, :cond_1
 
-    throw p0
+    return v2
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    check-cast p1, Lcpb;
 
-    iget-object p1, p0, Lcpb;->Y:Lnpb;
+    iget-object p0, p0, Lcpb;->a:Lu83;
 
-    iget-object p1, p1, Lnpb;->M0:Lrcb;
+    iget-object p1, p1, Lcpb;->a:Lu83;
 
-    iput v1, p0, Lcpb;->X:I
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget-object v0, p0, Lcpb;->Z:Ljava/lang/String;
+    move-result p0
 
-    iget-object v1, p0, Lcpb;->n0:Landroid/graphics/RectF;
+    if-nez p0, :cond_2
 
-    invoke-virtual {p1, v0, v1, p0}, Lrcb;->c(Ljava/lang/String;Landroid/graphics/RectF;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
+    return v2
 
     :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lcpb;->a:Lu83;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    iget-object p0, p0, Lu83;->a:Ljava/util/List;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ChatNamePayload(errorText="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lcpb;->a:Lu83;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

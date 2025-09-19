@@ -20,27 +20,27 @@
         "(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;)V",
         "Lkotlin/Function1;",
         "",
-        "Lncf;",
+        "Lylf;",
         "onError",
         "Lkotlin/Function0;",
         "Lorg/json/JSONObject;",
         "createParamsAction",
         "createParamsOrPassExceptionToOnError",
-        "(Lj96;Lh96;)Lorg/json/JSONObject;",
-        "Ll71;",
+        "(Lbc6;Lzb6;)Lorg/json/JSONObject;",
+        "Ld71;",
         "feature",
         "onComplete",
         "enableFeatureForAll",
-        "(Ll71;Lh96;Lj96;)V",
+        "(Ld71;Lzb6;Lbc6;)V",
         "",
-        "Lzg1;",
+        "Lvg1;",
         "roles",
         "enableFeatureForRoles",
-        "(Ll71;Ljava/util/Set;Lh96;Lj96;)V",
+        "(Ld71;Ljava/util/Set;Lzb6;Lbc6;)V",
         "Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;",
-        "Ln71;",
+        "Lf71;",
         "paramsCreator",
-        "Ln71;",
+        "Lf71;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -54,7 +54,7 @@
 
 
 # instance fields
-.field private final paramsCreator:Ln71;
+.field private final paramsCreator:Lf71;
 
 .field private final signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
@@ -67,53 +67,53 @@
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
-    new-instance p1, Ln71;
+    new-instance p1, Lf71;
 
     invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->paramsCreator:Ln71;
+    iput-object p1, p0, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->paramsCreator:Lf71;
 
     return-void
 .end method
 
-.method public static synthetic a(Lh96;Lorg/json/JSONObject;)V
+.method public static synthetic a(Lzb6;Lorg/json/JSONObject;)V
     .registers 2
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->enableFeatureForRoles$lambda$0(Lh96;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->enableFeatureForRoles$lambda$0(Lzb6;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static final synthetic access$getParamsCreator$p(Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;)Ln71;
+.method public static final synthetic access$getParamsCreator$p(Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;)Lf71;
     .registers 1
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->paramsCreator:Ln71;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->paramsCreator:Lf71;
 
     return-object p0
 .end method
 
-.method public static synthetic b(Lj96;Lorg/json/JSONObject;)V
+.method public static synthetic b(Lbc6;Lorg/json/JSONObject;)V
     .registers 2
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->enableFeatureForRoles$lambda$1(Lj96;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->enableFeatureForRoles$lambda$1(Lbc6;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method private final createParamsOrPassExceptionToOnError(Lj96;Lh96;)Lorg/json/JSONObject;
+.method private final createParamsOrPassExceptionToOnError(Lbc6;Lzb6;)Lorg/json/JSONObject;
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lj96;",
-            "Lh96;",
+            "Lbc6;",
+            "Lzb6;",
             ")",
             "Lorg/json/JSONObject;"
         }
     .end annotation
 
     :try_start_0
-    invoke-interface {p2}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {p2}, Lzb6;->invoke()Ljava/lang/Object;
 
     move-result-object p0
 
@@ -134,7 +134,7 @@
 
     invoke-direct {p2, v0, p0}, Lru/ok/android/externcalls/sdk/feature/exception/ConversationFeatureException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    invoke-interface {p1, p2}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, p2}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     const/4 p0, 0x0
@@ -142,18 +142,18 @@
     return-object p0
 .end method
 
-.method private static final enableFeatureForRoles$lambda$0(Lh96;Lorg/json/JSONObject;)V
+.method private static final enableFeatureForRoles$lambda$0(Lzb6;Lorg/json/JSONObject;)V
     .registers 2
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lzb6;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final enableFeatureForRoles$lambda$1(Lj96;Lorg/json/JSONObject;)V
+.method private static final enableFeatureForRoles$lambda$1(Lbc6;Lorg/json/JSONObject;)V
     .registers 5
 
     if-eqz p0, :cond_0
@@ -174,7 +174,7 @@
 
     invoke-direct {v0, p1}, Lru/ok/android/externcalls/sdk/feature/exception/ConversationFeatureException;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {p0, v0}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, v0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
     return-void
@@ -182,44 +182,44 @@
 
 
 # virtual methods
-.method public enableFeatureForAll(Ll71;Lh96;Lj96;)V
+.method public enableFeatureForAll(Ld71;Lzb6;Lbc6;)V
     .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ll71;",
-            "Lh96;",
-            "Lj96;",
+            "Ld71;",
+            "Lzb6;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
 
-    sget-object v0, Le35;->a:Le35;
+    sget-object v0, Lz45;->a:Lz45;
 
-    invoke-virtual {p0, p1, v0, p2, p3}, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->enableFeatureForRoles(Ll71;Ljava/util/Set;Lh96;Lj96;)V
+    invoke-virtual {p0, p1, v0, p2, p3}, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->enableFeatureForRoles(Ld71;Ljava/util/Set;Lzb6;Lbc6;)V
 
     return-void
 .end method
 
-.method public enableFeatureForRoles(Ll71;Ljava/util/Set;Lh96;Lj96;)V
+.method public enableFeatureForRoles(Ld71;Ljava/util/Set;Lzb6;Lbc6;)V
     .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ll71;",
+            "Ld71;",
             "Ljava/util/Set<",
             "+",
-            "Lzg1;",
+            "Lvg1;",
             ">;",
-            "Lh96;",
-            "Lj96;",
+            "Lzb6;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
-    invoke-static {v0, p4}, Lru/ok/android/externcalls/sdk/signaling/SignalingProviderKt;->get(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lj96;)Lmsd;
+    invoke-static {v0, p4}, Lru/ok/android/externcalls/sdk/signaling/SignalingProviderKt;->get(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lbc6;)Lt0e;
 
     move-result-object v0
 
@@ -230,9 +230,9 @@
     :cond_0
     new-instance v1, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl$enableFeatureForRoles$params$1;
 
-    invoke-direct {v1, p0, p1, p2}, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl$enableFeatureForRoles$params$1;-><init>(Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;Ll71;Ljava/util/Set;)V
+    invoke-direct {v1, p0, p1, p2}, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl$enableFeatureForRoles$params$1;-><init>(Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;Ld71;Ljava/util/Set;)V
 
-    invoke-direct {p0, p4, v1}, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->createParamsOrPassExceptionToOnError(Lj96;Lh96;)Lorg/json/JSONObject;
+    invoke-direct {p0, p4, v1}, Lru/ok/android/externcalls/sdk/feature/internal/commands/ConversationFeatureCommandExecutorImpl;->createParamsOrPassExceptionToOnError(Lbc6;Lzb6;)Lorg/json/JSONObject;
 
     move-result-object p0
 
@@ -242,19 +242,19 @@
     return-void
 
     :cond_1
-    new-instance p1, Lzs;
+    new-instance p1, Lks;
 
     const/4 p2, 0x3
 
-    invoke-direct {p1, p2, p3}, Lzs;-><init>(ILh96;)V
+    invoke-direct {p1, p2, p3}, Lks;-><init>(ILzb6;)V
 
-    new-instance p2, Lat;
+    new-instance p2, Lls;
 
     const/4 p3, 0x3
 
-    invoke-direct {p2, p3, p4}, Lat;-><init>(ILj96;)V
+    invoke-direct {p2, p3, p4}, Lls;-><init>(ILbc6;)V
 
-    invoke-virtual {v0, p0, p1, p2}, Lmsd;->j(Lorg/json/JSONObject;Llsd;Llsd;)V
+    invoke-virtual {v0, p0, p1, p2}, Lt0e;->j(Lorg/json/JSONObject;Ls0e;Ls0e;)V
 
     return-void
 .end method

@@ -1,43 +1,71 @@
-.class public abstract Lmv3;
-.super Ljava/lang/Object;
+.class public final Lmv3;
+.super Ltg0;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:Lrz;
+
+.field public final b:Lu13;
+
+.field public final c:Lxb3;
+
+
 # direct methods
-.method public static a(Landroid/os/Bundle;)V
+.method public constructor <init>()V
     .registers 3
 
-    invoke-static {}, Lx20;->c()Landroid/media/ApplicationMediaCapabilities$Builder;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object v0
+    new-instance v0, Lrz;
 
-    invoke-static {v0}, Lx20;->d(Landroid/media/ApplicationMediaCapabilities$Builder;)Landroid/media/ApplicationMediaCapabilities$Builder;
+    const/16 v1, 0xf
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Lrz;-><init>(I)V
 
-    invoke-static {v0}, Lx20;->z(Landroid/media/ApplicationMediaCapabilities$Builder;)Landroid/media/ApplicationMediaCapabilities$Builder;
+    iput-object v0, p0, Lmv3;->a:Lrz;
 
-    move-result-object v0
+    new-instance v0, Lu13;
 
-    invoke-static {v0}, Lx20;->B(Landroid/media/ApplicationMediaCapabilities$Builder;)Landroid/media/ApplicationMediaCapabilities$Builder;
+    const/16 v1, 0x8
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Lu13;-><init>(I)V
 
-    invoke-static {v0}, Lx20;->C(Landroid/media/ApplicationMediaCapabilities$Builder;)Landroid/media/ApplicationMediaCapabilities$Builder;
+    iput-object v0, p0, Lmv3;->b:Lu13;
 
-    move-result-object v0
+    new-instance v0, Lxb3;
 
-    invoke-static {v0}, Lx20;->D(Landroid/media/ApplicationMediaCapabilities$Builder;)Landroid/media/ApplicationMediaCapabilities$Builder;
+    const/16 v1, 0x18
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Lxb3;-><init>(I)V
 
-    invoke-static {v0}, Lx20;->e(Landroid/media/ApplicationMediaCapabilities$Builder;)Landroid/media/ApplicationMediaCapabilities;
-
-    move-result-object v0
-
-    const-string v1, "android.provider.extra.MEDIA_CAPABILITIES"
-
-    invoke-virtual {p0, v1, v0}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    iput-object v0, p0, Lmv3;->c:Lxb3;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljava/util/Comparator;
+    .registers 1
+
+    iget-object p0, p0, Lmv3;->a:Lrz;
+
+    return-object p0
+.end method
+
+.method public final b()Lbc6;
+    .registers 1
+
+    iget-object p0, p0, Lmv3;->b:Lu13;
+
+    return-object p0
+.end method
+
+.method public final c()Lzb6;
+    .registers 1
+
+    iget-object p0, p0, Lmv3;->c:Lxb3;
+
+    return-object p0
 .end method

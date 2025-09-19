@@ -1,66 +1,33 @@
-.class public final Le95;
+.class public abstract Le95;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:J
+# static fields
+.field public static final a:Lkotlinx/coroutines/internal/Symbol;
 
-.field public final b:J
+.field public static final b:Lkotlinx/coroutines/internal/Symbol;
 
 
 # direct methods
-.method public constructor <init>(JJ)V
-    .registers 8
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    const-wide/16 v0, 0x0
+    const-string v1, "REMOVED_TASK"
 
-    cmp-long v2, p3, v0
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-    if-nez v2, :cond_0
+    sput-object v0, Le95;->a:Lkotlinx/coroutines/internal/Symbol;
 
-    iput-wide v0, p0, Le95;->a:J
+    new-instance v0, Lkotlinx/coroutines/internal/Symbol;
 
-    const-wide/16 p1, 0x1
+    const-string v1, "CLOSED_EMPTY"
 
-    iput-wide p1, p0, Le95;->b:J
+    invoke-direct {v0, v1}, Lkotlinx/coroutines/internal/Symbol;-><init>(Ljava/lang/String;)V
 
-    return-void
-
-    :cond_0
-    iput-wide p1, p0, Le95;->a:J
-
-    iput-wide p3, p0, Le95;->b:J
+    sput-object v0, Le95;->b:Lkotlinx/coroutines/internal/Symbol;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-wide v1, p0, Le95;->a:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, "/"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Le95;->b:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

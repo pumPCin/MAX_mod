@@ -1,246 +1,154 @@
-.class public Ld58;
-.super Landroid/graphics/drawable/Drawable$ConstantState;
+.class public final Ld58;
+.super Lf58;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/util/Iterator;
+.implements Lmi7;
 
 
 # instance fields
-.field public a:Land;
-
-.field public b:Lnz4;
-
-.field public c:Landroid/content/res/ColorStateList;
-
-.field public d:Landroid/content/res/ColorStateList;
-
-.field public e:Landroid/content/res/ColorStateList;
-
-.field public f:Landroid/graphics/PorterDuff$Mode;
-
-.field public g:Landroid/graphics/Rect;
-
-.field public final h:F
-
-.field public i:F
-
-.field public j:F
-
-.field public k:I
-
-.field public l:F
-
-.field public m:F
-
-.field public n:I
-
-.field public o:I
-
-.field public p:I
-
-.field public final q:Landroid/graphics/Paint$Style;
+.field public final synthetic X:I
 
 
 # direct methods
-.method public constructor <init>(Land;)V
-    .registers 4
+.method public constructor <init>(ILg58;)V
+    .registers 3
 
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
+    iput p1, p0, Ld58;->X:I
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Ld58;->c:Landroid/content/res/ColorStateList;
+    iput-object p2, p0, Lf58;->o:Ljava/lang/Object;
 
-    iput-object v0, p0, Ld58;->d:Landroid/content/res/ColorStateList;
+    const/4 p1, -0x1
 
-    iput-object v0, p0, Ld58;->e:Landroid/content/res/ColorStateList;
+    iput p1, p0, Lf58;->b:I
 
-    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+    iget p1, p2, Lg58;->r0:I
 
-    iput-object v1, p0, Ld58;->f:Landroid/graphics/PorterDuff$Mode;
+    iput p1, p0, Lf58;->c:I
 
-    iput-object v0, p0, Ld58;->g:Landroid/graphics/Rect;
+    invoke-virtual {p0}, Lf58;->e()V
 
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    iput v1, p0, Ld58;->h:F
-
-    iput v1, p0, Ld58;->i:F
-
-    const/16 v1, 0xff
-
-    iput v1, p0, Ld58;->k:I
-
-    const/4 v1, 0x0
-
-    iput v1, p0, Ld58;->l:F
-
-    iput v1, p0, Ld58;->m:F
-
-    const/4 v1, 0x0
-
-    iput v1, p0, Ld58;->n:I
-
-    iput v1, p0, Ld58;->o:I
-
-    iput v1, p0, Ld58;->p:I
-
-    sget-object v1, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
-
-    iput-object v1, p0, Ld58;->q:Landroid/graphics/Paint$Style;
-
-    iput-object p1, p0, Ld58;->a:Land;
-
-    iput-object v0, p0, Ld58;->b:Lnz4;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ld58;)V
-    .registers 4
-
-    invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Ld58;->c:Landroid/content/res/ColorStateList;
-
-    iput-object v0, p0, Ld58;->d:Landroid/content/res/ColorStateList;
-
-    iput-object v0, p0, Ld58;->e:Landroid/content/res/ColorStateList;
-
-    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
-
-    iput-object v1, p0, Ld58;->f:Landroid/graphics/PorterDuff$Mode;
-
-    iput-object v0, p0, Ld58;->g:Landroid/graphics/Rect;
-
-    const/high16 v0, 0x3f800000    # 1.0f
-
-    iput v0, p0, Ld58;->h:F
-
-    iput v0, p0, Ld58;->i:F
-
-    const/16 v0, 0xff
-
-    iput v0, p0, Ld58;->k:I
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Ld58;->l:F
-
-    iput v0, p0, Ld58;->m:F
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Ld58;->n:I
-
-    iput v0, p0, Ld58;->o:I
-
-    iput v0, p0, Ld58;->p:I
-
-    sget-object v0, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
-
-    iput-object v0, p0, Ld58;->q:Landroid/graphics/Paint$Style;
-
-    iget-object v0, p1, Ld58;->a:Land;
-
-    iput-object v0, p0, Ld58;->a:Land;
-
-    iget-object v0, p1, Ld58;->b:Lnz4;
-
-    iput-object v0, p0, Ld58;->b:Lnz4;
-
-    iget v0, p1, Ld58;->j:F
-
-    iput v0, p0, Ld58;->j:F
-
-    iget-object v0, p1, Ld58;->c:Landroid/content/res/ColorStateList;
-
-    iput-object v0, p0, Ld58;->c:Landroid/content/res/ColorStateList;
-
-    iget-object v0, p1, Ld58;->d:Landroid/content/res/ColorStateList;
-
-    iput-object v0, p0, Ld58;->d:Landroid/content/res/ColorStateList;
-
-    iget-object v0, p1, Ld58;->f:Landroid/graphics/PorterDuff$Mode;
-
-    iput-object v0, p0, Ld58;->f:Landroid/graphics/PorterDuff$Mode;
-
-    iget-object v0, p1, Ld58;->e:Landroid/content/res/ColorStateList;
-
-    iput-object v0, p0, Ld58;->e:Landroid/content/res/ColorStateList;
-
-    iget v0, p1, Ld58;->k:I
-
-    iput v0, p0, Ld58;->k:I
-
-    iget v0, p1, Ld58;->h:F
-
-    iput v0, p0, Ld58;->h:F
-
-    iget v0, p1, Ld58;->p:I
-
-    iput v0, p0, Ld58;->p:I
-
-    iget v0, p1, Ld58;->n:I
-
-    iput v0, p0, Ld58;->n:I
-
-    iget v0, p1, Ld58;->i:F
-
-    iput v0, p0, Ld58;->i:F
-
-    iget v0, p1, Ld58;->l:F
-
-    iput v0, p0, Ld58;->l:F
-
-    iget v0, p1, Ld58;->m:F
-
-    iput v0, p0, Ld58;->m:F
-
-    iget v0, p1, Ld58;->o:I
-
-    iput v0, p0, Ld58;->o:I
-
-    iget-object v0, p1, Ld58;->q:Landroid/graphics/Paint$Style;
-
-    iput-object v0, p0, Ld58;->q:Landroid/graphics/Paint$Style;
-
-    iget-object v0, p1, Ld58;->g:Landroid/graphics/Rect;
-
-    if-eqz v0, :cond_0
-
-    new-instance v0, Landroid/graphics/Rect;
-
-    iget-object p1, p1, Ld58;->g:Landroid/graphics/Rect;
-
-    invoke-direct {v0, p1}, Landroid/graphics/Rect;-><init>(Landroid/graphics/Rect;)V
-
-    iput-object v0, p0, Ld58;->g:Landroid/graphics/Rect;
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final getChangingConfigurations()I
-    .registers 1
+.method public final next()Ljava/lang/Object;
+    .registers 4
 
-    const/4 p0, 0x0
+    iget v0, p0, Ld58;->X:I
 
-    return p0
-.end method
+    packed-switch v0, :pswitch_data_0
 
-.method public newDrawable()Landroid/graphics/drawable/Drawable;
-    .registers 2
+    invoke-virtual {p0}, Lf58;->b()V
 
-    new-instance v0, Le58;
+    iget v0, p0, Lf58;->a:I
 
-    invoke-direct {v0, p0}, Le58;-><init>(Ld58;)V
+    iget-object v1, p0, Lf58;->o:Ljava/lang/Object;
 
-    const/4 p0, 0x1
+    check-cast v1, Lg58;
 
-    iput-boolean p0, v0, Le58;->X:Z
+    iget v2, v1, Lg58;->Y:I
+
+    if-ge v0, v2, :cond_0
+
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Lf58;->a:I
+
+    iput v0, p0, Lf58;->b:I
+
+    iget-object v1, v1, Lg58;->b:[Ljava/lang/Object;
+
+    aget-object v0, v1, v0
+
+    invoke-virtual {p0}, Lf58;->e()V
 
     return-object v0
+
+    :cond_0
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw p0
+
+    :pswitch_0
+    invoke-virtual {p0}, Lf58;->b()V
+
+    iget v0, p0, Lf58;->a:I
+
+    iget-object v1, p0, Lf58;->o:Ljava/lang/Object;
+
+    check-cast v1, Lg58;
+
+    iget v2, v1, Lg58;->Y:I
+
+    if-ge v0, v2, :cond_1
+
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Lf58;->a:I
+
+    iput v0, p0, Lf58;->b:I
+
+    iget-object v1, v1, Lg58;->a:[Ljava/lang/Object;
+
+    aget-object v0, v1, v0
+
+    invoke-virtual {p0}, Lf58;->e()V
+
+    return-object v0
+
+    :cond_1
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw p0
+
+    :pswitch_1
+    invoke-virtual {p0}, Lf58;->b()V
+
+    iget v0, p0, Lf58;->a:I
+
+    iget-object v1, p0, Lf58;->o:Ljava/lang/Object;
+
+    check-cast v1, Lg58;
+
+    iget v2, v1, Lg58;->Y:I
+
+    if-ge v0, v2, :cond_2
+
+    add-int/lit8 v2, v0, 0x1
+
+    iput v2, p0, Lf58;->a:I
+
+    iput v0, p0, Lf58;->b:I
+
+    new-instance v2, Le58;
+
+    invoke-direct {v2, v0, v1}, Le58;-><init>(ILg58;)V
+
+    invoke-virtual {p0}, Lf58;->e()V
+
+    return-object v2
+
+    :cond_2
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

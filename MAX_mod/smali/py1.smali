@@ -1,22 +1,21 @@
-.class public final Lpy1;
+.class public abstract Lpy1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lsx6;
+
+# static fields
+.field public static final a:Loy1;
 
 
-# virtual methods
-.method public final a(JLzw1;)V
-    .registers 4
-
-    invoke-virtual {p3}, Lzw1;->a()V
-
-    return-void
-.end method
-
-.method public final clear()V
+# direct methods
+.method static constructor <clinit>()V
     .registers 1
+
+    new-instance v0, Loy1;
+
+    invoke-direct {v0}, Loy1;-><init>()V
+
+    sput-object v0, Lpy1;->a:Loy1;
 
     return-void
 .end method

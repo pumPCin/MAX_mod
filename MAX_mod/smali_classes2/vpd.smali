@@ -1,73 +1,63 @@
-.class public final enum Lvpd;
-.super Ljava/lang/Enum;
+.class public final Lvpd;
+.super Luc0;
 .source "SourceFile"
 
 
 # static fields
-.field public static final enum a:Lvpd;
-
-.field public static final enum b:Lvpd;
-
-.field public static final synthetic c:[Lvpd;
+.field public static final b:Lvpd;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .registers 2
 
     new-instance v0, Lvpd;
 
-    const-string v1, "NONE"
+    const/16 v1, 0x10
 
-    const/4 v2, 0x0
+    invoke-direct {v0, v1}, Luc0;-><init>(I)V
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lvpd;->a:Lvpd;
-
-    new-instance v1, Lvpd;
-
-    const-string v2, "SURFACE"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lvpd;->b:Lvpd;
-
-    filled-new-array {v0, v1}, [Lvpd;
-
-    move-result-object v0
-
-    sput-object v0, Lvpd;->c:[Lvpd;
+    sput-object v0, Lvpd;->b:Lvpd;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lvpd;
-    .registers 2
 
-    const-class v0, Lvpd;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const/4 v0, 0x1
 
-    move-result-object p0
+    if-ne p0, p1, :cond_0
 
-    check-cast p0, Lvpd;
+    return v0
 
-    return-object p0
+    :cond_0
+    instance-of p0, p1, Lvpd;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
 .end method
 
-.method public static values()[Lvpd;
+.method public final hashCode()I
     .registers 1
 
-    sget-object v0, Lvpd;->c:[Lvpd;
+    const p0, 0x38170d6b
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    return p0
+.end method
 
-    move-result-object v0
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    check-cast v0, [Lvpd;
+    const-string p0, "ChangeDisabled"
 
-    return-object v0
+    return-object p0
 .end method

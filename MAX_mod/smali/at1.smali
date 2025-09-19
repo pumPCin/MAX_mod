@@ -2,50 +2,48 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lwn1;
-
 
 # instance fields
-.field public final synthetic a:Lit1;
+.field public final a:Lcl7;
+
+.field public final b:Lcl7;
+
+.field public final c:Lvyb;
+
+.field public final d:Lcl7;
+
+.field public final e:Lcl7;
+
+.field public final f:Lzte;
 
 
 # direct methods
-.method public constructor <init>(Lit1;)V
-    .registers 2
+.method public constructor <init>(Lcl7;Lcl7;Lvyb;Lcl7;Lcl7;)V
+    .registers 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lat1;->a:Lit1;
+    iput-object p1, p0, Lat1;->a:Lcl7;
 
-    return-void
-.end method
+    iput-object p2, p0, Lat1;->b:Lcl7;
 
+    iput-object p3, p0, Lat1;->c:Lvyb;
 
-# virtual methods
-.method public final h()V
-    .registers 3
+    iput-object p4, p0, Lat1;->d:Lcl7;
 
-    iget-object p0, p0, Lat1;->a:Lit1;
+    iput-object p5, p0, Lat1;->e:Lcl7;
 
-    iget-object p0, p0, Lit1;->n:Ln4e;
+    new-instance p1, Lws1;
 
-    :cond_0
-    invoke-virtual {p0}, Ln4e;->getValue()Ljava/lang/Object;
+    const/4 p2, 0x0
 
-    move-result-object v0
+    invoke-direct {p1, p2}, Lws1;-><init>(I)V
 
-    move-object v1, v0
+    new-instance p2, Lzte;
 
-    check-cast v1, Lsq1;
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    sget-object v1, Lsq1;->i:Lsq1;
-
-    invoke-virtual {p0, v0, v1}, Ln4e;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    iput-object p2, p0, Lat1;->f:Lzte;
 
     return-void
 .end method

@@ -1,122 +1,255 @@
 .class public final Ln32;
-.super Ljava/lang/Object;
+.super Lha4;
 .source "SourceFile"
 
-
-# static fields
-.field public static final c:Ln32;
+# interfaces
+.implements Lpne;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field public X:Lpne;
 
-.field public final b:Lcr0;
+.field public Y:J
+
+.field public final synthetic Z:I
+
+.field public r0:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public synthetic constructor <init>()V
+    .registers 2
 
-    new-instance v0, Ljava/util/ArrayList;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iput v0, p0, Ln32;->Z:I
 
-    new-instance v1, Ln32;
+    const/4 v0, 0x2
 
-    invoke-static {v0}, Lj73;->L0(Ljava/util/Collection;)Ljava/util/Set;
-
-    move-result-object v0
-
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v0, v2}, Ln32;-><init>(Ljava/util/Set;Lcr0;)V
-
-    sput-object v1, Ln32;->c:Ln32;
+    invoke-direct {p0, v0}, Llx;-><init>(I)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/util/Set;Lcr0;)V
+.method public synthetic constructor <init>(Lrne;I)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Ln32;->Z:I
 
-    iput-object p1, p0, Ln32;->a:Ljava/util/Set;
+    const/4 p2, 0x2
 
-    iput-object p2, p0, Ln32;->b:Lcr0;
+    invoke-direct {p0, p2}, Llx;-><init>(I)V
+
+    iput-object p1, p0, Ln32;->r0:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+.method public final f(J)I
+    .registers 6
 
-    instance-of v0, p1, Ln32;
+    iget-object v0, p0, Ln32;->X:Lpne;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    check-cast p1, Ln32;
+    iget-wide v1, p0, Ln32;->Y:J
 
-    iget-object v0, p1, Ln32;->a:Ljava/util/Set;
+    sub-long/2addr p1, v1
 
-    iget-object v1, p0, Ln32;->a:Ljava/util/Set;
-
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p1, p1, Ln32;->b:Lcr0;
-
-    iget-object p0, p0, Ln32;->b:Lcr0;
-
-    invoke-static {p1, p0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-interface {v0, p1, p2}, Lpne;->f(J)I
 
     move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final hashCode()I
+.method public final g(I)J
     .registers 4
 
-    iget-object v0, p0, Ln32;->a:Ljava/util/Set;
+    iget-object v0, p0, Ln32;->X:Lpne;
 
-    const/16 v1, 0x29
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const/16 v2, 0x5ed
+    invoke-interface {v0, p1}, Lpne;->g(I)J
 
-    invoke-static {v0, v2, v1}, Lgl5;->e(Ljava/util/Set;II)I
+    move-result-wide v0
 
-    move-result v0
+    iget-wide p0, p0, Ln32;->Y:J
 
-    iget-object p0, p0, Ln32;->b:Lcr0;
+    add-long/2addr v0, p0
 
-    if-eqz p0, :cond_0
+    return-wide v0
+.end method
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+.method public final m(J)Ljava/util/List;
+    .registers 6
+
+    iget-object v0, p0, Ln32;->X:Lpne;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-wide v1, p0, Ln32;->Y:J
+
+    sub-long/2addr p1, v1
+
+    invoke-interface {v0, p1, p2}, Lpne;->m(J)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final r()I
+    .registers 1
+
+    iget-object p0, p0, Ln32;->X:Lpne;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {p0}, Lpne;->r()I
 
     move-result p0
+
+    return p0
+.end method
+
+.method public final u()V
+    .registers 4
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Llx;->b:I
+
+    const-wide/16 v1, 0x0
+
+    iput-wide v1, p0, Lha4;->c:J
+
+    iput-boolean v0, p0, Lha4;->o:Z
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Ln32;->X:Lpne;
+
+    return-void
+.end method
+
+.method public final v()V
+    .registers 6
+
+    iget v0, p0, Ln32;->Z:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Ln32;->r0:Ljava/lang/Object;
+
+    check-cast v0, Lun0;
+
+    invoke-virtual {v0, p0}, Lun0;->k(Lha4;)V
+
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Ln32;->r0:Ljava/lang/Object;
+
+    check-cast v0, Lpta;
+
+    iget-object v1, v0, Lpta;->b:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    invoke-virtual {p0}, Ln32;->u()V
+
+    iget-object v2, v0, Lpta;->f:[Lha4;
+
+    iget v3, v0, Lpta;->h:I
+
+    add-int/lit8 v4, v3, 0x1
+
+    iput v4, v0, Lpta;->h:I
+
+    aput-object p0, v2, v3
+
+    iget-object p0, v0, Lpta;->c:Ljava/util/ArrayDeque;
+
+    invoke-virtual {p0}, Ljava/util/ArrayDeque;->isEmpty()Z
+
+    move-result p0
+
+    if-nez p0, :cond_0
+
+    iget p0, v0, Lpta;->h:I
+
+    if-lez p0, :cond_0
+
+    iget-object p0, v0, Lpta;->b:Ljava/lang/Object;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->notify()V
+
+    :cond_0
+    monitor-exit v1
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+
+    :pswitch_1
+    iget-object v0, p0, Ln32;->r0:Ljava/lang/Object;
+
+    check-cast v0, Lbx1;
+
+    iget-object v0, v0, Lbx1;->b:Ljava/lang/Object;
+
+    check-cast v0, Lp32;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-virtual {p0}, Ln32;->u()V
+
+    iget-object v0, v0, Lp32;->b:Ljava/util/ArrayDeque;
+
+    invoke-virtual {v0, p0}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final w(JLpne;J)V
+    .registers 8
+
+    iput-wide p1, p0, Lha4;->c:J
+
+    iput-object p3, p0, Ln32;->X:Lpne;
+
+    const-wide v0, 0x7fffffffffffffffL
+
+    cmp-long p3, p4, v0
+
+    if-nez p3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 p0, 0x0
+    move-wide p1, p4
 
     :goto_0
-    add-int/2addr v0, p0
+    iput-wide p1, p0, Ln32;->Y:J
 
-    return v0
+    return-void
 .end method

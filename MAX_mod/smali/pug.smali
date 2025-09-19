@@ -1,207 +1,115 @@
-.class public final Lpug;
-.super Lcom/google/android/gms/common/internal/a;
+.class public abstract Lpug;
+.super Loug;
 .source "SourceFile"
 
 
-# instance fields
-.field public final E0:Lktd;
-
-.field public final F0:Lktd;
-
-.field public final G0:Lktd;
-
-
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Lnc9;Lerg;Lerg;)V
-    .registers 14
+.method public constructor <init>(Lvug;Landroid/view/WindowInsets;)V
+    .registers 3
 
-    const/16 v3, 0x17
-
-    const/4 v7, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move-object v4, p3
-
-    move-object v5, p4
-
-    move-object v6, p5
-
-    invoke-direct/range {v0 .. v7}, Lcom/google/android/gms/common/internal/a;-><init>(Landroid/content/Context;Landroid/os/Looper;ILnc9;Lgi6;Lhi6;I)V
-
-    new-instance p0, Lktd;
-
-    const/4 p1, 0x0
-
-    invoke-direct {p0, p1}, Lktd;-><init>(I)V
-
-    iput-object p0, v0, Lpug;->E0:Lktd;
-
-    new-instance p0, Lktd;
-
-    invoke-direct {p0, p1}, Lktd;-><init>(I)V
-
-    iput-object p0, v0, Lpug;->F0:Lktd;
-
-    new-instance p0, Lktd;
-
-    invoke-direct {p0, p1}, Lktd;-><init>(I)V
-
-    iput-object p0, v0, Lpug;->G0:Lktd;
+    invoke-direct {p0, p1, p2}, Loug;-><init>(Lvug;Landroid/view/WindowInsets;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final f()I
-    .registers 1
+.method public a()Lvug;
+    .registers 2
 
-    const p0, 0xb2c988
+    iget-object p0, p0, Lnug;->c:Landroid/view/WindowInsets;
 
-    return p0
+    invoke-virtual {p0}, Landroid/view/WindowInsets;->consumeDisplayCutout()Landroid/view/WindowInsets;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    invoke-static {v0, p0}, Lvug;->f(Landroid/view/View;Landroid/view/WindowInsets;)Lvug;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final l(Landroid/os/IBinder;)Landroid/os/IInterface;
-    .registers 4
+.method public e()Liq4;
+    .registers 2
 
-    if-nez p1, :cond_0
+    iget-object p0, p0, Lnug;->c:Landroid/view/WindowInsets;
+
+    invoke-virtual {p0}, Landroid/view/WindowInsets;->getDisplayCutout()Landroid/view/DisplayCutout;
+
+    move-result-object p0
+
+    if-nez p0, :cond_0
 
     const/4 p0, 0x0
 
     return-object p0
 
     :cond_0
-    const-string p0, "com.google.android.gms.location.internal.IGoogleLocationManagerService"
+    new-instance v0, Liq4;
 
-    invoke-interface {p1, p0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
-
-    move-result-object v0
-
-    instance-of v1, v0, Lwxg;
-
-    if-eqz v1, :cond_1
-
-    check-cast v0, Lwxg;
+    invoke-direct {v0, p0}, Liq4;-><init>(Landroid/view/DisplayCutout;)V
 
     return-object v0
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lpug;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    new-instance v0, Lwxg;
+    check-cast p1, Lpug;
 
-    const/4 v1, 0x2
+    iget-object v1, p0, Lnug;->c:Landroid/view/WindowInsets;
 
-    invoke-direct {v0, p1, p0, v1}, Lwqg;-><init>(Landroid/os/IBinder;Ljava/lang/String;I)V
+    iget-object v3, p1, Lnug;->c:Landroid/view/WindowInsets;
 
-    return-object v0
+    invoke-static {v1, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    iget-object p0, p0, Lnug;->g:Lh97;
+
+    iget-object p1, p1, Lnug;->g:Lh97;
+
+    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v0
+
+    :cond_2
+    return v2
 .end method
 
-.method public final m()[Lnh5;
+.method public hashCode()I
     .registers 1
 
-    sget-object p0, Lj67;->f:[Lnh5;
+    iget-object p0, p0, Lnug;->c:Landroid/view/WindowInsets;
 
-    return-object p0
-.end method
+    invoke-virtual {p0}, Landroid/view/WindowInsets;->hashCode()I
 
-.method public final p()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "com.google.android.gms.location.internal.IGoogleLocationManagerService"
-
-    return-object p0
-.end method
-
-.method public final q()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "com.google.android.location.internal.GoogleLocationManagerService.START"
-
-    return-object p0
-.end method
-
-.method public final s()V
-    .registers 3
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    iget-object v0, p0, Lpug;->E0:Lktd;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lpug;->E0:Lktd;
-
-    invoke-virtual {v1}, Lktd;->clear()V
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
-
-    iget-object v1, p0, Lpug;->F0:Lktd;
-
-    monitor-enter v1
-
-    :try_start_1
-    iget-object v0, p0, Lpug;->F0:Lktd;
-
-    invoke-virtual {v0}, Lktd;->clear()V
-
-    monitor-exit v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    iget-object v0, p0, Lpug;->G0:Lktd;
-
-    monitor-enter v0
-
-    :try_start_2
-    iget-object p0, p0, Lpug;->G0:Lktd;
-
-    invoke-virtual {p0}, Lktd;->clear()V
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw p0
-
-    :catchall_1
-    move-exception p0
-
-    :try_start_3
-    monitor-exit v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    throw p0
-
-    :catchall_2
-    move-exception p0
-
-    :try_start_4
-    monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
-
-    throw p0
-.end method
-
-.method public final t()Z
-    .registers 1
-
-    const/4 p0, 0x1
+    move-result p0
 
     return p0
 .end method

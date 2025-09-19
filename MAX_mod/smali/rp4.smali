@@ -1,308 +1,234 @@
-.class public final enum Lrp4;
-.super Ljava/lang/Enum;
+.class public final synthetic Lrp4;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lnp4;
+.implements Lzb6;
 
 
-# static fields
-.field public static final enum a:Lrp4;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final synthetic b:[Lrp4;
+.field public final synthetic b:Lsp4;
+
+.field public final synthetic c:Ltp4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
-
-    new-instance v0, Lrp4;
-
-    const-string v1, "DISPOSED"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lrp4;->a:Lrp4;
-
-    filled-new-array {v0}, [Lrp4;
-
-    move-result-object v0
-
-    sput-object v0, Lrp4;->b:[Lrp4;
-
-    return-void
-.end method
-
-.method public static a(Ljava/util/concurrent/atomic/AtomicReference;)Z
-    .registers 3
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lnp4;
-
-    sget-object v1, Lrp4;->a:Lrp4;
-
-    if-eq v0, v1, :cond_1
-
-    invoke-virtual {p0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lnp4;
-
-    if-eq p0, v1, :cond_1
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    :cond_0
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static b(Lnp4;)Z
-    .registers 2
-
-    sget-object v0, Lrp4;->a:Lrp4;
-
-    if-ne p0, v0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static c(Ljava/util/concurrent/atomic/AtomicReference;Lnp4;)Z
+.method public synthetic constructor <init>(Lsp4;Ltp4;I)V
     .registers 4
 
-    :goto_0
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    iput p3, p0, Lrp4;->a:I
 
-    move-result-object v0
+    iput-object p1, p0, Lrp4;->b:Lsp4;
 
-    check-cast v0, Lnp4;
+    iput-object p2, p0, Lrp4;->c:Ltp4;
 
-    sget-object v1, Lrp4;->a:Lrp4;
-
-    if-ne v0, v1, :cond_1
-
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lnp4;->g()V
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    invoke-virtual {p0, v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_2
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eq v1, v0, :cond_1
-
-    goto :goto_0
-.end method
-
-.method public static d(Ljava/util/concurrent/atomic/AtomicReference;Lnp4;)V
-    .registers 4
-
-    :goto_0
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lnp4;
-
-    sget-object v1, Lrp4;->a:Lrp4;
-
-    if-ne v0, v1, :cond_0
-
-    invoke-interface {p1}, Lnp4;->g()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-
-    :cond_0
-    invoke-virtual {p0, v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    :cond_1
-    return-void
-
-    :cond_2
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    if-eq v1, v0, :cond_0
-
-    goto :goto_0
-.end method
-
-.method public static e(Ljava/util/concurrent/atomic/AtomicReference;Lnp4;)Z
-    .registers 3
-
-    const-string v0, "d is null"
-
-    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    :cond_0
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_1
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {p1}, Lnp4;->g()V
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Lrp4;->a:Lrp4;
-
-    if-eq p0, p1, :cond_2
-
-    new-instance p0, Lio/reactivex/rxjava3/exceptions/ProtocolViolationException;
-
-    const-string p1, "Disposable already set!"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p0}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    :cond_2
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public static f(Lnp4;Lnp4;)Z
-    .registers 3
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_0
-
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "next is null"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p0}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return v0
-
-    :cond_0
-    if-eqz p0, :cond_1
-
-    invoke-interface {p1}, Lnp4;->g()V
-
-    new-instance p0, Lio/reactivex/rxjava3/exceptions/ProtocolViolationException;
-
-    const-string p1, "Disposable already set!"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    invoke-static {p0}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return v0
-
-    :cond_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lrp4;
-    .registers 2
-
-    const-class v0, Lrp4;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Lrp4;
-
-    return-object p0
-.end method
-
-.method public static values()[Lrp4;
-    .registers 1
-
-    sget-object v0, Lrp4;->b:[Lrp4;
-
-    invoke-virtual {v0}, [Lrp4;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lrp4;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final g()V
-    .registers 1
+.method public final invoke()Ljava/lang/Object;
+    .registers 14
 
-    return-void
-.end method
+    iget v0, p0, Lrp4;->a:I
 
-.method public final h()Z
-    .registers 1
+    packed-switch v0, :pswitch_data_0
 
-    const/4 p0, 0x1
+    iget-object v0, p0, Lrp4;->c:Ltp4;
 
-    return p0
+    iget-object v1, v0, Ltp4;->c:Lra5;
+
+    iget-object v2, v0, Ltp4;->b:Lseb;
+
+    iget-object p0, p0, Lrp4;->b:Lsp4;
+
+    iget-object p0, p0, Lsp4;->e:Ljava/lang/Object;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/util/Map;
+
+    new-instance v3, Ljava/util/LinkedHashMap;
+
+    invoke-interface {p0}, Ljava/util/Map;->size()I
+
+    move-result v4
+
+    invoke-static {v4}, Li68;->I(I)I
+
+    move-result v4
+
+    invoke-direct {v3, v4}, Ljava/util/LinkedHashMap;-><init>(I)V
+
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/util/Map$Entry;
+
+    invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v5
+
+    invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v4
+
+    move-object v7, v4
+
+    check-cast v7, Lml5;
+
+    new-instance v6, Lgu0;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v4}, Lseb;->c(I)Lmgb;
+
+    move-result-object v8
+
+    invoke-virtual {v2}, Lseb;->d()Lrh0;
+
+    move-result-object v9
+
+    invoke-interface {v1}, Lra5;->m()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v10
+
+    invoke-interface {v1}, Lra5;->h()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v11
+
+    iget-object v12, v0, Ltp4;->d:Lzw9;
+
+    invoke-direct/range {v6 .. v12}, Lgu0;-><init>(Lml5;Lmgb;Lrh0;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lzw9;)V
+
+    invoke-interface {v3, v5, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Lq37;
+
+    invoke-direct {p0, v3}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+
+    return-object p0
+
+    :pswitch_0
+    new-instance v4, Lgu0;
+
+    iget-object v0, p0, Lrp4;->b:Lsp4;
+
+    iget-object v0, v0, Lsp4;->c:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Lml5;
+
+    iget-object p0, p0, Lrp4;->c:Ltp4;
+
+    iget-object v0, p0, Ltp4;->b:Lseb;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lseb;->c(I)Lmgb;
+
+    move-result-object v6
+
+    invoke-virtual {v0}, Lseb;->d()Lrh0;
+
+    move-result-object v7
+
+    iget-object v0, p0, Ltp4;->c:Lra5;
+
+    invoke-interface {v0}, Lra5;->m()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v8
+
+    invoke-interface {v0}, Lra5;->h()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v9
+
+    iget-object v10, p0, Ltp4;->d:Lzw9;
+
+    invoke-direct/range {v4 .. v10}, Lgu0;-><init>(Lml5;Lmgb;Lrh0;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lzw9;)V
+
+    return-object v4
+
+    :pswitch_1
+    new-instance v5, Lgu0;
+
+    iget-object v0, p0, Lrp4;->b:Lsp4;
+
+    iget-object v0, v0, Lsp4;->a:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v6, v0
+
+    check-cast v6, Lml5;
+
+    iget-object p0, p0, Lrp4;->c:Ltp4;
+
+    iget-object v0, p0, Ltp4;->b:Lseb;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lseb;->c(I)Lmgb;
+
+    move-result-object v7
+
+    invoke-virtual {v0}, Lseb;->d()Lrh0;
+
+    move-result-object v8
+
+    iget-object v0, p0, Ltp4;->c:Lra5;
+
+    invoke-interface {v0}, Lra5;->m()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v9
+
+    invoke-interface {v0}, Lra5;->h()Ljava/util/concurrent/ExecutorService;
+
+    move-result-object v10
+
+    iget-object v11, p0, Ltp4;->d:Lzw9;
+
+    invoke-direct/range {v5 .. v11}, Lgu0;-><init>(Lml5;Lmgb;Lrh0;Ljava/util/concurrent/Executor;Ljava/util/concurrent/Executor;Lzw9;)V
+
+    return-object v5
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

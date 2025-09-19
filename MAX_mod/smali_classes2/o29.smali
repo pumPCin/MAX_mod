@@ -1,169 +1,73 @@
-.class public final synthetic Lo29;
+.class public abstract Lo29;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
 
+# static fields
+.field public static final a:Ljava/nio/charset/Charset;
 
-# instance fields
-.field public final synthetic a:I
+.field public static final b:Lm29;
 
-.field public final synthetic b:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.field public static final c:Ln29;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput p2, p0, Lo29;->a:I
+    const-string v0, "UTF-8"
 
-    iput-object p1, p0, Lo29;->b:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
+
+    sput-object v0, Lo29;->a:Ljava/nio/charset/Charset;
+
+    new-instance v0, Lm29;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lo29;->b:Lm29;
+
+    new-instance v0, Ln29;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sget-object v1, Ljava/nio/charset/CodingErrorAction;->REPLACE:Ljava/nio/charset/CodingErrorAction;
+
+    iput-object v1, v0, Ln29;->a:Ljava/nio/charset/CodingErrorAction;
+
+    iput-object v1, v0, Ln29;->b:Ljava/nio/charset/CodingErrorAction;
+
+    const v1, 0x7fffffff
+
+    iput v1, v0, Ln29;->c:I
+
+    const/16 v1, 0x2000
+
+    iput v1, v0, Ln29;->o:I
+
+    iput v1, v0, Ln29;->X:I
+
+    sput-object v0, Lo29;->c:Ln29;
 
     return-void
 .end method
 
+.method public static a([B)Lt39;
+    .registers 3
 
-# virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 6
-
-    iget p1, p0, Lo29;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p0, p0, Lo29;->b:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    iget-object p1, p0, Lone/me/sdk/messagewrite/MessageWriteWidget;->X:Lxt7;
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->B0()Lly8;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lly8;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v0
-
-    iget-object p1, p1, Lxt7;->f:Li8d;
-
-    iput-object v0, p1, Li8d;->k:Ljava/lang/CharSequence;
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->G0()Lm29;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lm29;->v0:Lx65;
-
-    sget-object p1, Lx19;->a:Lx19;
-
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lo29;->b:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    iget p1, p0, Lone/me/sdk/messagewrite/MessageWriteWidget;->y0:I
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->G0()Lm29;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->B0()Lly8;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lly8;->getMessageState()Lg4e;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lg4e;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/CharSequence;
-
-    invoke-virtual {p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->B0()Lly8;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lly8;->getMessagePosition()Lg4e;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Lg4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/Integer;
+    sget-object v0, Lo29;->c:Ln29;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {p1}, Lew1;->t(I)I
+    new-instance v1, Lorg/msgpack/core/buffer/ArrayBufferInput;
 
-    move-result p1
+    invoke-direct {v1, p0}, Lorg/msgpack/core/buffer/ArrayBufferInput;-><init>([B)V
 
-    const/4 v2, 0x0
+    new-instance p0, Lt39;
 
-    if-eqz p1, :cond_3
+    invoke-direct {p0, v1, v0}, Lt39;-><init>(Lorg/msgpack/core/buffer/ArrayBufferInput;Ln29;)V
 
-    const/4 v3, 0x1
-
-    if-eq p1, v3, :cond_2
-
-    const/4 p0, 0x2
-
-    if-ne p1, p0, :cond_1
-
-    iget-object p0, v0, Lm29;->v0:Lx65;
-
-    new-instance p1, Lw19;
-
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_1
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
-
-    :cond_2
-    iget-object p1, v0, Lm29;->L0:Ln4e;
-
-    new-instance v3, Lp19;
-
-    invoke-direct {v3, v1, p0}, Lp19;-><init>(Ljava/lang/CharSequence;Ljava/lang/Integer;)V
-
-    invoke-virtual {p1, v2, v3}, Ln4e;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    invoke-virtual {v0, v2}, Lm29;->D(Ljava/lang/Long;)V
-
-    goto :goto_0
-
-    :cond_3
-    const/16 p0, 0xe
-
-    invoke-static {v0, v2, v2, v2, p0}, Lm29;->C(Lm29;Ljava/lang/Long;Ljava/lang/CharSequence;Ljava/lang/Integer;I)V
-
-    :goto_0
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

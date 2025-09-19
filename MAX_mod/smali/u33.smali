@@ -1,180 +1,159 @@
-.class public final Lu33;
-.super Ljava/lang/Object;
+.class public abstract Lu33;
+.super Lqj0;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Ljava/util/HashMap;
-
-.field public final b:Ljava/util/HashMap;
+# static fields
+.field public static final z0:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/HashMap;)V
-    .registers 6
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Ltcc;->Widget_MaterialComponents_CircularProgressIndicator:I
 
-    iput-object p1, p0, Lu33;->b:Ljava/util/HashMap;
+    sput v0, Lu33;->z0:I
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lu33;->a:Ljava/util/HashMap;
-
-    invoke-virtual {p1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p1
-
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lyj7;
-
-    iget-object v2, p0, Lu33;->a:Ljava/util/HashMap;
-
-    invoke-virtual {v2, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/List;
-
-    if-nez v2, :cond_0
-
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    iget-object v3, p0, Lu33;->a:Ljava/util/HashMap;
-
-    invoke-virtual {v3, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lv33;
-
-    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_1
     return-void
 .end method
 
-.method public static a(Ljava/util/List;Lwk7;Lyj7;Ljava/lang/Object;)V
-    .registers 9
 
-    if-eqz p0, :cond_3
+# virtual methods
+.method public final a(Landroid/content/Context;)Lrj0;
+    .registers 2
 
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    new-instance p0, Lv33;
+
+    invoke-direct {p0, p1}, Lv33;-><init>(Landroid/content/Context;)V
+
+    return-object p0
+.end method
+
+.method public getIndicatorDirection()I
+    .registers 1
+
+    iget-object p0, p0, Lqj0;->a:Lrj0;
+
+    check-cast p0, Lv33;
+
+    iget p0, p0, Lv33;->j:I
+
+    return p0
+.end method
+
+.method public getIndicatorInset()I
+    .registers 1
+
+    iget-object p0, p0, Lqj0;->a:Lrj0;
+
+    check-cast p0, Lv33;
+
+    iget p0, p0, Lv33;->i:I
+
+    return p0
+.end method
+
+.method public getIndicatorSize()I
+    .registers 1
+
+    iget-object p0, p0, Lqj0;->a:Lrj0;
+
+    check-cast p0, Lv33;
+
+    iget p0, p0, Lv33;->h:I
+
+    return p0
+.end method
+
+.method public setIndicatorDirection(I)V
+    .registers 3
+
+    iget-object v0, p0, Lqj0;->a:Lrj0;
+
+    check-cast v0, Lv33;
+
+    iput p1, v0, Lv33;->j:I
+
+    invoke-virtual {p0}, Lqj0;->invalidate()V
+
+    return-void
+.end method
+
+.method public setIndicatorInset(I)V
+    .registers 4
+
+    iget-object v0, p0, Lqj0;->a:Lrj0;
+
+    move-object v1, v0
+
+    check-cast v1, Lv33;
+
+    iget v1, v1, Lv33;->i:I
+
+    if-eq v1, p1, :cond_0
+
+    check-cast v0, Lv33;
+
+    iput p1, v0, Lv33;->i:I
+
+    invoke-virtual {p0}, Lqj0;->invalidate()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public setIndicatorSize(I)V
+    .registers 4
+
+    invoke-virtual {p0}, Lqj0;->getTrackThickness()I
 
     move-result v0
 
-    const/4 v1, 0x1
+    mul-int/lit8 v0, v0, 0x2
 
-    sub-int/2addr v0, v1
+    invoke-static {p1, v0}, Ljava/lang/Math;->max(II)I
 
-    :goto_0
-    if-ltz v0, :cond_3
+    move-result p1
 
-    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget-object v0, p0, Lqj0;->a:Lrj0;
 
-    move-result-object v2
+    move-object v1, v0
 
-    check-cast v2, Lv33;
+    check-cast v1, Lv33;
 
-    iget-object v3, v2, Lv33;->b:Ljava/lang/reflect/Method;
+    iget v1, v1, Lv33;->h:I
 
-    :try_start_0
-    iget v2, v2, Lv33;->a:I
+    if-eq v1, p1, :cond_0
 
-    if-eqz v2, :cond_2
+    move-object v1, v0
 
-    if-eq v2, v1, :cond_1
+    check-cast v1, Lv33;
 
-    const/4 v4, 0x2
+    iput p1, v1, Lv33;->h:I
 
-    if-eq v2, v4, :cond_0
+    check-cast v0, Lv33;
 
-    goto :goto_1
+    invoke-virtual {v0}, Lrj0;->a()V
+
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+
+    invoke-virtual {p0}, Lqj0;->invalidate()V
 
     :cond_0
-    filled-new-array {p1, p2}, [Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object v2
+.method public setTrackThickness(I)V
+    .registers 2
 
-    invoke-virtual {v3, p3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-super {p0, p1}, Lqj0;->setTrackThickness(I)V
 
-    goto :goto_1
+    iget-object p0, p0, Lqj0;->a:Lrj0;
 
-    :cond_1
-    filled-new-array {p1}, [Ljava/lang/Object;
+    check-cast p0, Lv33;
 
-    move-result-object v2
+    invoke-virtual {p0}, Lrj0;->a()V
 
-    invoke-virtual {v3, p3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_1
-
-    :cond_2
-    const/4 v2, 0x0
-
-    invoke-virtual {v3, p3, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
-
-    :goto_1
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p0
-
-    new-instance p1, Ljava/lang/RuntimeException;
-
-    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw p1
-
-    :catch_1
-    move-exception p0
-
-    new-instance p1, Ljava/lang/RuntimeException;
-
-    const-string p2, "Failed to call observer method"
-
-    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object p0
-
-    invoke-direct {p1, p2, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    throw p1
-
-    :cond_3
     return-void
 .end method

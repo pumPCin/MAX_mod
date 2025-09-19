@@ -1,146 +1,91 @@
 .class public final Lwr5;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lba6;
 
 
 # instance fields
-.field public X:I
+.field public a:I
 
-.field public synthetic Y:Ljava/lang/Throwable;
+.field public b:Z
 
-.field public synthetic Z:J
+.field public c:I
 
-.field public final synthetic n0:J
+.field public d:I
 
-.field public final synthetic o0:Lxie;
+.field public e:I
 
+.field public f:I
 
-# direct methods
-.method public constructor <init>(JLx96;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+.field public g:I
 
-    iput-wide p1, p0, Lwr5;->n0:J
+.field public h:I
 
-    check-cast p3, Lxie;
-
-    iput-object p3, p0, Lwr5;->o0:Lxie;
-
-    const/4 p1, 0x4
-
-    invoke-direct {p0, p1, p4}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+.field public i:Z
 
 
 # virtual methods
-.method public final i(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    check-cast p1, Lhq5;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    check-cast p2, Ljava/lang/Throwable;
+    const-string v1, "LayoutState{mAvailable="
 
-    check-cast p3, Ljava/lang/Number;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p3}, Ljava/lang/Number;->longValue()J
+    iget v1, p0, Lwr5;->a:I
 
-    move-result-wide v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    check-cast p4, Lkotlin/coroutines/Continuation;
+    const-string v1, ", mFlexLinePosition="
 
-    new-instance p1, Lwr5;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v2, p0, Lwr5;->n0:J
+    iget v1, p0, Lwr5;->c:I
 
-    iget-object p0, p0, Lwr5;->o0:Lxie;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-direct {p1, v2, v3, p0, p4}, Lwr5;-><init>(JLx96;Lkotlin/coroutines/Continuation;)V
+    const-string v1, ", mPosition="
 
-    iput-object p2, p1, Lwr5;->Y:Ljava/lang/Throwable;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iput-wide v0, p1, Lwr5;->Z:J
+    iget v1, p0, Lwr5;->d:I
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p1, p0}, Lwr5;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v1, ", mOffset="
 
-    move-result-object p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object p0
-.end method
+    iget v1, p0, Lwr5;->e:I
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget v0, p0, Lwr5;->X:I
+    const-string v1, ", mScrollingOffset="
 
-    const/4 v1, 0x1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-eqz v0, :cond_1
+    iget v1, p0, Lwr5;->f:I
 
-    if-ne v0, v1, :cond_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    const-string v1, ", mLastScrollDelta="
 
-    goto :goto_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iget v1, p0, Lwr5;->g:I
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const-string v1, ", mItemDirection=1, mLayoutDirection="
 
-    throw p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget p0, p0, Lwr5;->h:I
 
-    iget-object p1, p0, Lwr5;->Y:Ljava/lang/Throwable;
+    const/16 v1, 0x7d
 
-    iget-wide v2, p0, Lwr5;->Z:J
-
-    iget-wide v4, p0, Lwr5;->n0:J
-
-    cmp-long v0, v2, v4
-
-    if-gez v0, :cond_3
-
-    iput v1, p0, Lwr5;->X:I
-
-    iget-object v0, p0, Lwr5;->o0:Lxie;
-
-    invoke-interface {v0, p1, p0}, Lx96;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object p0, Ls04;->a:Ls04;
-
-    if-ne p1, p0, :cond_2
-
-    return-object p0
-
-    :cond_2
-    :goto_0
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    const/4 v1, 0x0
-
-    :goto_1
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v0, p0, v1}, Lmw1;->i(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
 
     move-result-object p0
 

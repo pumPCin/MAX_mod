@@ -1,19 +1,3 @@
-.class public final Lqdg;
+.class public interface abstract Lqdg;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-
-# virtual methods
-.method public final serializer()Ltf7;
-    .registers 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ltf7;"
-        }
-    .end annotation
-
-    sget-object p0, Lpdg;->a:Lpdg;
-
-    return-object p0
-.end method

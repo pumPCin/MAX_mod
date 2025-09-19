@@ -1,115 +1,74 @@
-.class public abstract Ld2f;
-.super Ljava/lang/Object;
+.class public final Ld2f;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
+
+
+# instance fields
+.field public final synthetic X:Le2f;
 
 
 # direct methods
-.method public static a()Z
-    .registers 1
+.method public constructor <init>(Le2f;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    :try_start_0
-    invoke-static {}, Lru/ok/tracer/minidump/Minidump;->getInstance()Lru/ok/tracer/minidump/Minidump;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iput-object p1, p0, Ld2f;->X:Le2f;
 
-    const/4 v0, 0x1
+    const/4 p1, 0x2
 
-    return v0
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    :catchall_0
-    const/4 v0, 0x0
-
-    return v0
+    return-void
 .end method
 
-.method public static b(Landroid/content/Context;)Ljava/io/File;
-    .registers 6
 
-    invoke-static {}, Lyu0;->q()Ljava/lang/String;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    move-result-object v0
+    check-cast p1, Lylf;
 
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const-string v0, "tracer"
-
-    goto :goto_0
-
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "tracer-"
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const/16 v2, 0x2d
-
-    const/4 v3, 0x0
-
-    const/16 v4, 0x3a
-
-    invoke-static {v0, v4, v2, v3}, Lyde;->h0(Ljava/lang/String;CCZ)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_0
-    new-instance v1, Ljava/io/File;
-
-    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+    invoke-virtual {p0, p1, p2}, Ld2f;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-direct {v1, p0, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    check-cast p0, Ld2f;
 
-    const-string p0, "minidump"
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-static {v1, p0}, Lbn5;->V(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {p0, p1}, Ld2f;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object p0
-
-    return-object p0
+    return-object p1
 .end method
 
-.method public static c(Landroid/content/Context;)V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Ld2f;
+
+    iget-object p0, p0, Ld2f;->X:Le2f;
+
+    invoke-direct {p1, p0, p2}, Ld2f;-><init>(Le2f;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    :try_start_0
-    invoke-static {p0}, Ld2f;->b(Landroid/content/Context;)Ljava/io/File;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    move-result-object p0
+    iget-object p0, p0, Ld2f;->X:Le2f;
 
-    invoke-static {p0}, Lms8;->C(Ljava/io/File;)V
+    iget-object p0, p0, Le2f;->c:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-static {}, Lru/ok/tracer/minidump/Minidump;->getInstance()Lru/ok/tracer/minidump/Minidump;
+    invoke-virtual {p0}, Ljava/util/concurrent/ConcurrentHashMap;->clear()V
 
-    move-result-object v0
+    sget-object p0, Lylf;->a:Lylf;
 
-    invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Lru/ok/tracer/minidump/Minidump;->installMinidumpWriter(Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    :catchall_0
-    return-void
+    return-object p0
 .end method

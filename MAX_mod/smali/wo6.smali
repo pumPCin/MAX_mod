@@ -3,219 +3,201 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lap6;
+.implements Ljava/util/concurrent/RunnableScheduledFuture;
 
 
 # instance fields
-.field public final a:J
+.field public final a:Ljava/util/concurrent/atomic/AtomicReference;
 
 .field public final b:J
 
-.field public final c:Z
+.field public final c:Ljava/util/concurrent/Callable;
 
-.field public final d:Ljava/util/ArrayList;
-
-.field public final e:Ljava/lang/String;
+.field public final o:Lts1;
 
 
 # direct methods
-.method public constructor <init>(JJZLjava/util/ArrayList;Ljava/lang/String;)V
-    .registers 8
+.method public constructor <init>(Landroid/os/Handler;JLjava/util/concurrent/Callable;)V
+    .registers 7
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lwo6;->a:J
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-wide p3, p0, Lwo6;->b:J
+    const/4 v1, 0x0
 
-    iput-boolean p5, p0, Lwo6;->c:Z
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object p6, p0, Lwo6;->d:Ljava/util/ArrayList;
+    iput-object v0, p0, Lwo6;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput-object p7, p0, Lwo6;->e:Ljava/lang/String;
+    iput-wide p2, p0, Lwo6;->b:J
+
+    iput-object p4, p0, Lwo6;->c:Ljava/util/concurrent/Callable;
+
+    new-instance p2, Li7h;
+
+    invoke-direct {p2, p0, p1, p4}, Li7h;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    invoke-static {p2}, Lf54;->l(Lrs1;)Lts1;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lwo6;->o:Lts1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final cancel(Z)Z
+    .registers 2
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Lwo6;->o:Lts1;
 
-    goto :goto_1
-
-    :cond_0
-    instance-of v0, p1, Lwo6;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lwo6;
-
-    iget-wide v0, p0, Lwo6;->a:J
-
-    iget-wide v2, p1, Lwo6;->a:J
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-wide v0, p0, Lwo6;->b:J
-
-    iget-wide v2, p1, Lwo6;->b:J
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget-boolean v0, p0, Lwo6;->c:Z
-
-    iget-boolean v1, p1, Lwo6;->c:Z
-
-    if-eq v0, v1, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    iget-object v0, p0, Lwo6;->d:Ljava/util/ArrayList;
-
-    iget-object v1, p1, Lwo6;->d:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    goto :goto_0
-
-    :cond_5
-    iget-object p0, p0, Lwo6;->e:Ljava/lang/String;
-
-    iget-object p1, p1, Lwo6;->e:Ljava/lang/String;
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Lts1;->cancel(Z)Z
 
     move-result p0
-
-    if-nez p0, :cond_6
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_6
-    :goto_1
-    const/4 p0, 0x1
 
     return p0
 .end method
 
-.method public final hashCode()I
+.method public final compareTo(Ljava/lang/Object;)I
     .registers 5
 
-    iget-wide v0, p0, Lwo6;->a:J
+    check-cast p1, Ljava/util/concurrent/Delayed;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    move-result v0
+    invoke-virtual {p0, v0}, Lwo6;->getDelay(Ljava/util/concurrent/TimeUnit;)J
 
-    const/16 v1, 0x1f
+    move-result-wide v1
 
-    mul-int/2addr v0, v1
+    invoke-interface {p1, v0}, Ljava/util/concurrent/Delayed;->getDelay(Ljava/util/concurrent/TimeUnit;)J
 
-    iget-wide v2, p0, Lwo6;->b:J
+    move-result-wide p0
 
-    invoke-static {v0, v1, v2, v3}, Lp2g;->a(IIJ)I
-
-    move-result v0
-
-    iget-boolean v2, p0, Lwo6;->c:Z
-
-    invoke-static {v0, v1, v2}, Lex3;->e(IIZ)I
-
-    move-result v0
-
-    iget-object v2, p0, Lwo6;->d:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
-
-    move-result v2
-
-    add-int/2addr v2, v0
-
-    mul-int/2addr v2, v1
-
-    iget-object p0, p0, Lwo6;->e:Ljava/lang/String;
-
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    invoke-static {v1, v2, p0, p1}, Ljava/lang/Long;->compare(JJ)I
 
     move-result p0
-
-    add-int/2addr p0, v2
 
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 5
+.method public final get()Ljava/lang/Object;
+    .registers 1
 
-    const-string v0, "Group(chatServerId="
+    iget-object p0, p0, Lwo6;->o:Lts1;
 
-    const-string v1, ", chatLocalId="
+    iget-object p0, p0, Lts1;->b:Lss1;
 
-    iget-wide v2, p0, Lwo6;->a:J
-
-    invoke-static {v2, v3, v0, v1}, Lew1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-wide v1, p0, Lwo6;->b:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", isGroupCallAvailable="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean v1, p0, Lwo6;->c:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", messagesIds="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lwo6;->d:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", link="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lwo6;->e:Ljava/lang/String;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lq3;->get()Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    .registers 4
+
+    iget-object p0, p0, Lwo6;->o:Lts1;
+
+    iget-object p0, p0, Lts1;->b:Lss1;
+
+    invoke-virtual {p0, p1, p2, p3}, Lq3;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final getDelay(Ljava/util/concurrent/TimeUnit;)J
+    .registers 6
+
+    iget-wide v0, p0, Lwo6;->b:J
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    sub-long/2addr v0, v2
+
+    sget-object p0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {p1, v0, v1, p0}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
+
+    move-result-wide p0
+
+    return-wide p0
+.end method
+
+.method public final isCancelled()Z
+    .registers 1
+
+    iget-object p0, p0, Lwo6;->o:Lts1;
+
+    invoke-virtual {p0}, Lts1;->isCancelled()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final isDone()Z
+    .registers 1
+
+    iget-object p0, p0, Lwo6;->o:Lts1;
+
+    iget-object p0, p0, Lts1;->b:Lss1;
+
+    invoke-virtual {p0}, Lq3;->isDone()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final isPeriodic()Z
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final run()V
+    .registers 3
+
+    iget-object v0, p0, Lwo6;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lqs1;
+
+    if-eqz v0, :cond_0
+
+    :try_start_0
+    iget-object p0, p0, Lwo6;->c:Ljava/util/concurrent/Callable;
+
+    invoke-interface {p0}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Lqs1;->b(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception p0
+
+    invoke-virtual {v0, p0}, Lqs1;->d(Ljava/lang/Throwable;)Z
+
+    :cond_0
+    return-void
 .end method

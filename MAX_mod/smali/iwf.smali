@@ -1,232 +1,272 @@
 .class public final Liwf;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Laqe;
+
+
+# static fields
+.field public static final Z:Landroid/util/Size;
+
+.field public static final r0:Landroid/util/Range;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final X:Lgz4;
 
-.field public final synthetic Y:Lone/me/chatmedia/viewer/video/VideoViewerWidget;
+.field public final Y:Landroid/util/Range;
+
+.field public final a:Ljava/lang/String;
+
+.field public final b:Le6f;
+
+.field public final c:Lrb0;
+
+.field public final o:Landroid/util/Size;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatmedia/viewer/video/VideoViewerWidget;)V
+.method static constructor <clinit>()V
     .registers 3
 
-    iput-object p2, p0, Liwf;->Y:Lone/me/chatmedia/viewer/video/VideoViewerWidget;
+    new-instance v0, Landroid/util/Size;
 
-    const/4 p2, 0x2
+    const/16 v1, 0x500
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/16 v2, 0x2d0
+
+    invoke-direct {v0, v1, v2}, Landroid/util/Size;-><init>(II)V
+
+    sput-object v0, Liwf;->Z:Landroid/util/Size;
+
+    new-instance v0, Landroid/util/Range;
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    const/16 v2, 0x3c
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Landroid/util/Range;-><init>(Ljava/lang/Comparable;Ljava/lang/Comparable;)V
+
+    sput-object v0, Liwf;->r0:Landroid/util/Range;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Le6f;Lrb0;Landroid/util/Size;Lgz4;Landroid/util/Range;)V
+    .registers 7
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liwf;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Liwf;->b:Le6f;
+
+    iput-object p3, p0, Liwf;->c:Lrb0;
+
+    iput-object p4, p0, Liwf;->o:Landroid/util/Size;
+
+    iput-object p5, p0, Liwf;->X:Lgz4;
+
+    iput-object p6, p0, Liwf;->Y:Landroid/util/Range;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final get()Ljava/lang/Object;
+    .registers 14
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    sget-object v0, Lire;->p:Landroid/util/Range;
 
-    invoke-virtual {p0, p1, p2}, Liwf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object v1, p0, Liwf;->Y:Landroid/util/Range;
 
-    move-result-object p0
+    invoke-static {v1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    check-cast p0, Liwf;
+    move-result v2
 
-    sget-object p1, Lncf;->a:Lncf;
+    if-nez v2, :cond_0
 
-    invoke-virtual {p0, p1}, Liwf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1}, Landroid/util/Range;->getUpper()Ljava/lang/Comparable;
 
-    return-object p1
-.end method
+    move-result-object v2
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    check-cast v2, Ljava/lang/Integer;
 
-    new-instance v0, Liwf;
+    sget-object v3, Liwf;->r0:Landroid/util/Range;
 
-    iget-object p0, p0, Liwf;->Y:Lone/me/chatmedia/viewer/video/VideoViewerWidget;
+    invoke-virtual {v3, v2}, Landroid/util/Range;->clamp(Ljava/lang/Comparable;)Ljava/lang/Comparable;
 
-    invoke-direct {v0, p2, p0}, Liwf;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatmedia/viewer/video/VideoViewerWidget;)V
+    move-result-object v2
 
-    iput-object p1, v0, Liwf;->X:Ljava/lang/Object;
+    check-cast v2, Ljava/lang/Integer;
 
-    return-object v0
-.end method
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
+    move-result v2
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Liwf;->X:Ljava/lang/Object;
-
-    check-cast p1, Lok2;
-
-    iget-object p0, p0, Liwf;->Y:Lone/me/chatmedia/viewer/video/VideoViewerWidget;
-
-    iget-object v0, p0, Lone/me/chatmedia/viewer/video/VideoViewerWidget;->a:Ljava/lang/String;
-
-    sget-object v1, Ld86;->f:Lafa;
-
-    if-nez v1, :cond_0
+    :goto_0
+    move v6, v2
 
     goto :goto_1
 
     :cond_0
-    sget-object v2, Llw7;->o:Llw7;
-
-    invoke-virtual {v1, v2}, Lafa;->a(Llw7;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    iget-object v3, p1, Lok2;->b:Lvlf;
-
-    if-eqz v3, :cond_1
-
-    const/4 v3, 0x1
+    const/16 v2, 0x1e
 
     goto :goto_0
 
-    :cond_1
-    const/4 v3, 0x0
-
-    :goto_0
-    iget-object v4, p1, Lok2;->a:Lve8;
-
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/video/VideoViewerWidget;->y0()J
-
-    move-result-wide v5
-
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/video/VideoViewerWidget;->x0()Ljava/lang/String;
-
-    move-result-object v7
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    const-string v9, "Media viewer. Video page state changed, \n                        |hasContent:"
-
-    invoke-direct {v8, v9}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v3, ", \n                        |item:"
-
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v3, ", curMsgId:"
-
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, ", \n                        |curAttachId:"
-
-    invoke-static {v5, v6, v3, v7, v8}, Lex3;->l(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
-
-    const-string v3, "\n                        |"
-
-    invoke-virtual {v8, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lrde;->X(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v2, v0, v3, v4}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_2
     :goto_1
-    iget-object v0, p1, Lok2;->a:Lve8;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    if-eqz v0, :cond_6
+    move-result-object v2
 
-    invoke-interface {v0}, Lve8;->j()J
-
-    move-result-wide v0
-
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/video/VideoViewerWidget;->y0()J
-
-    move-result-wide v2
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_6
-
-    iget-object v0, p1, Lok2;->a:Lve8;
-
-    invoke-interface {v0}, Lve8;->w()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/video/VideoViewerWidget;->x0()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-eqz v0, :cond_1
 
     goto :goto_2
 
-    :cond_3
-    iget-object v0, p1, Lok2;->b:Lvlf;
+    :cond_1
+    const-string v1, "<UNSPECIFIED>"
 
-    if-eqz v0, :cond_6
-
-    iput-object v0, p0, Lone/me/chatmedia/viewer/video/VideoViewerWidget;->n0:Lvlf;
-
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/video/VideoViewerWidget;->z0()Lgwf;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_4
-
-    check-cast v0, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;
-
-    invoke-virtual {v0}, Lone/me/chatmedia/viewer/ChatMediaViewerScreen;->L0()Lduf;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_4
-
-    iget-object p1, p1, Lok2;->b:Lvlf;
-
-    invoke-static {v0, p1}, Lduf;->I0(Lduf;Lvlf;)V
-
-    :cond_4
-    iget-object p1, p0, Lone/me/chatmedia/viewer/video/VideoViewerWidget;->Z:Lvu7;
-
-    if-eqz p1, :cond_5
-
-    invoke-virtual {p1}, Lvu7;->d()V
-
-    :cond_5
-    invoke-virtual {p0}, Lone/me/chatmedia/viewer/video/VideoViewerWidget;->A0()Lcwf;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lone/me/chatmedia/viewer/video/VideoViewerWidget;->o0:Lvtf;
-
-    invoke-virtual {p1, p0}, Lcwf;->a(Lvvf;)V
-
-    :cond_6
     :goto_2
-    sget-object p0, Lncf;->a:Lncf;
+    filled-new-array {v2, v1}, [Ljava/lang/Object;
+
+    move-result-object v0
+
+    const-string v1, "Default resolved frame rate: %dfps. [Expected operating range: %s]"
+
+    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    iget-object v0, p0, Liwf;->c:Lrb0;
+
+    iget-object v12, v0, Lrb0;->c:Landroid/util/Range;
+
+    iget-object v0, p0, Liwf;->X:Lgz4;
+
+    iget v4, v0, Lgz4;->b:I
+
+    iget-object v1, p0, Liwf;->o:Landroid/util/Size;
+
+    invoke-virtual {v1}, Landroid/util/Size;->getWidth()I
+
+    move-result v8
+
+    sget-object v2, Liwf;->Z:Landroid/util/Size;
+
+    invoke-virtual {v2}, Landroid/util/Size;->getWidth()I
+
+    move-result v9
+
+    invoke-virtual {v1}, Landroid/util/Size;->getHeight()I
+
+    move-result v10
+
+    invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
+
+    move-result v11
+
+    const v3, 0xd59f80
+
+    const/16 v5, 0x8
+
+    const/16 v7, 0x1e
+
+    invoke-static/range {v3 .. v12}, Llvf;->c(IIIIIIIIILandroid/util/Range;)I
+
+    move-result v2
+
+    sget-object v3, Ljz4;->e:Ljava/util/HashMap;
+
+    iget-object v4, p0, Liwf;->a:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/Map;
+
+    if-eqz v3, :cond_2
+
+    invoke-interface {v3, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    goto :goto_3
+
+    :cond_2
+    const/4 v0, -0x1
+
+    :goto_3
+    invoke-static {v0, v4}, Llvf;->a(ILjava/lang/String;)Lob0;
+
+    move-result-object v3
+
+    invoke-static {}, Lnb0;->d()Lyu4;
+
+    move-result-object v5
+
+    iput-object v4, v5, Lyu4;->a:Ljava/lang/Object;
+
+    iget-object p0, p0, Liwf;->b:Le6f;
+
+    if-eqz p0, :cond_3
+
+    iput-object p0, v5, Lyu4;->c:Ljava/lang/Object;
+
+    iput-object v1, v5, Lyu4;->o:Ljava/lang/Object;
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    iput-object p0, v5, Lyu4;->s0:Ljava/lang/Object;
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    iput-object p0, v5, Lyu4;->Z:Ljava/lang/Object;
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    iput-object p0, v5, Lyu4;->b:Ljava/lang/Object;
+
+    iput-object v3, v5, Lyu4;->Y:Ljava/lang/Object;
+
+    invoke-virtual {v5}, Lyu4;->b()Lnb0;
+
+    move-result-object p0
 
     return-object p0
+
+    :cond_3
+    new-instance p0, Ljava/lang/NullPointerException;
+
+    const-string v0, "Null inputTimebase"
+
+    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

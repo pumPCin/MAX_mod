@@ -3,10 +3,6 @@
 
 
 # static fields
-.field public static oneme_stickers_set_add_button:I = 0x7f1309f5
+.field public static oneme_settings_privacy_cloud_2fa_end_icon:I = 0x7f0808d3
 
-.field public static oneme_stickers_set_remove_button:I = 0x7f1309f6
-
-.field public static oneme_stickers_set_snackbar_favorite_added:I = 0x7f1309f7
-
-.field public static oneme_stickers_set_snackbar_favorite_removed:I = 0x7f1309f8
+.field public static oneme_settings_privacy_cloud_2fa_start_icon:I = 0x7f0808d4

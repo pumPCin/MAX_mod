@@ -1,92 +1,84 @@
 .class public final Lg1b;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lg1b;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final synthetic X:Lone/me/chats/picker/contacts/PickerContactsListWidget;
+.field public final a:Ljava/lang/String;
+
+.field public final b:[Ljava/lang/String;
+
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(Lone/me/chats/picker/contacts/PickerContactsListWidget;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Lg1b;->X:Lone/me/chats/picker/contacts/PickerContactsListWidget;
+    new-instance v0, Lgpa;
 
-    const/4 p1, 0x2
+    const/16 v1, 0x8
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v0, v1}, Lgpa;-><init>(I)V
+
+    sput-object v0, Lg1b;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;[Ljava/lang/String;I)V
+    .registers 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lg1b;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lg1b;->b:[Ljava/lang/String;
+
+    iput p3, p0, Lg1b;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Ljava/util/Set;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lg1b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lg1b;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lg1b;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Lg1b;
-
-    iget-object p0, p0, Lg1b;->X:Lone/me/chats/picker/contacts/PickerContactsListWidget;
-
-    invoke-direct {p1, p0, p2}, Lg1b;-><init>(Lone/me/chats/picker/contacts/PickerContactsListWidget;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    sget-object p1, Lone/me/chats/picker/contacts/PickerContactsListWidget;->u0:[Lsf7;
-
-    iget-object p0, p0, Lg1b;->X:Lone/me/chats/picker/contacts/PickerContactsListWidget;
-
-    invoke-virtual {p0}, Lone/me/chats/picker/contacts/PickerContactsListWidget;->z0()Landroidx/recyclerview/widget/RecyclerView;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Lone/me/chats/picker/contacts/PickerContactsListWidget;->z0()Landroidx/recyclerview/widget/RecyclerView;
-
-    move-result-object p0
-
-    new-instance v0, Lf1b;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lf1b;-><init>(Landroidx/recyclerview/widget/RecyclerView;I)V
+.method public final describeContents()I
+    .registers 1
 
     const/4 p0, 0x0
 
-    const/4 v1, 0x5
+    return p0
+.end method
 
-    invoke-static {v1, p1, v0, p0}, Lfud;->C(ILandroidx/recyclerview/widget/RecyclerView;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
 
-    sget-object p0, Lncf;->a:Lncf;
+    iget-object p2, p0, Lg1b;->a:Ljava/lang/String;
 
-    return-object p0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-object p2, p0, Lg1b;->b:[Ljava/lang/String;
+
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringArray([Ljava/lang/String;)V
+
+    iget p0, p0, Lg1b;->c:I
+
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
 .end method

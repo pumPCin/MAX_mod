@@ -749,7 +749,7 @@
 
     const-string v2, " (reason: invalid url), using default = tracker-api.vk-analytics.ru,\norig error = "
 
-    invoke-static {v1, p1, v2}, Lew1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, p1, v2}, Lmw1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p1
 

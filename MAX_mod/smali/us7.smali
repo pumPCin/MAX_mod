@@ -1,282 +1,197 @@
 .class public final Lus7;
-.super Lkt7;
+.super Landroid/widget/BaseAdapter;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic c:I
+.field public a:I
 
-.field public final d:Ljava/lang/Object;
+.field public final synthetic b:Lvs7;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .registers 0
+.method public constructor <init>(Lvs7;)V
+    .registers 2
 
-    return-void
-.end method
+    iput-object p1, p0, Lus7;->b:Lvs7;
 
-.method public synthetic constructor <init>(Ljava/util/concurrent/Executor;Lplg;Ljava/lang/Object;I)V
-    .registers 5
+    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
-    iput p4, p0, Lus7;->c:I
+    const/4 p1, -0x1
 
-    invoke-direct {p0, p1, p2}, Lkt7;-><init>(Ljava/util/concurrent/Executor;Lplg;)V
+    iput p1, p0, Lus7;->a:I
 
-    iput-object p3, p0, Lus7;->d:Ljava/lang/Object;
+    invoke-virtual {p0}, Lus7;->a()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Lhz6;)Lp35;
-    .registers 8
+.method public final a()V
+    .registers 6
 
-    iget v0, p0, Lus7;->c:I
+    iget-object v0, p0, Lus7;->b:Lvs7;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, v0, Lvs7;->c:Lpw8;
 
-    iget-object v0, p0, Lus7;->d:Ljava/lang/Object;
+    iget-object v1, v0, Lpw8;->F0:Ltw8;
 
-    check-cast v0, Landroid/content/res/Resources;
+    if-eqz v1, :cond_1
 
-    iget-object v1, p1, Lhz6;->b:Landroid/net/Uri;
+    invoke-virtual {v0}, Lpw8;->i()V
 
-    invoke-virtual {v1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+    iget-object v0, v0, Lpw8;->t0:Ljava/util/ArrayList;
 
-    move-result-object v1
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    const-string v2, "Required value was null."
-
-    if-eqz v1, :cond_3
-
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
-
-    move-result-object v1
-
-    const/4 v4, 0x0
-
-    :try_start_0
-    iget-object p1, p1, Lhz6;->b:Landroid/net/Uri;
-
-    invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result p1
-
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->openRawResourceFd(I)Landroid/content/res/AssetFileDescriptor;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/res/AssetFileDescriptor;->getLength()J
-
-    move-result-wide v2
-    :try_end_0
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_1
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    long-to-int p1, v2
-
-    :try_start_1
-    invoke-virtual {v4}, Landroid/content/res/AssetFileDescriptor;->close()V
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_3
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_0
-
-    :cond_0
-    :try_start_2
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p1
-    :try_end_2
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_2 .. :try_end_2} :catch_1
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    :goto_0
-    if-eqz v4, :cond_1
-
-    :try_start_3
-    invoke-virtual {v4}, Landroid/content/res/AssetFileDescriptor;->close()V
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
-
-    :catch_0
-    :cond_1
-    throw p0
-
-    :catch_1
-    if-eqz v4, :cond_2
-
-    :try_start_4
-    invoke-virtual {v4}, Landroid/content/res/AssetFileDescriptor;->close()V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
-
-    :catch_2
-    :cond_2
-    const/4 p1, -0x1
-
-    :catch_3
-    :goto_1
-    invoke-virtual {p0, v1, p1}, Lkt7;->c(Ljava/io/InputStream;I)Lp35;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {p0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :pswitch_0
-    iget-object v0, p0, Lus7;->d:Ljava/lang/Object;
-
-    check-cast v0, Landroid/content/res/AssetManager;
-
-    iget-object v1, p1, Lhz6;->b:Landroid/net/Uri;
-
-    invoke-virtual {v1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v3, 0x2
-
-    invoke-virtual {v0, v1, v3}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;I)Ljava/io/InputStream;
-
-    move-result-object v1
+    move-result v2
 
     const/4 v3, 0x0
 
-    :try_start_5
-    iget-object p1, p1, Lhz6;->b:Landroid/net/Uri;
+    :goto_0
+    if-ge v3, v2, :cond_1
 
-    invoke-virtual {p1}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v4
 
-    invoke-virtual {p1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    check-cast v4, Ltw8;
 
-    move-result-object p1
+    if-ne v4, v1, :cond_0
 
-    invoke-virtual {v0, p1}, Landroid/content/res/AssetManager;->openFd(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;
+    iput v3, p0, Lus7;->a:I
 
-    move-result-object v3
+    return-void
 
-    invoke-virtual {v3}, Landroid/content/res/AssetFileDescriptor;->getLength()J
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
 
-    move-result-wide v4
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+    goto :goto_0
 
-    long-to-int p1, v4
+    :cond_1
+    const/4 v0, -0x1
 
-    :try_start_6
-    invoke-virtual {v3}, Landroid/content/res/AssetFileDescriptor;->close()V
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_7
+    iput v0, p0, Lus7;->a:I
 
-    goto :goto_2
+    return-void
+.end method
 
-    :catchall_1
-    move-exception p0
+.method public final b(I)Ltw8;
+    .registers 4
 
-    if-eqz v3, :cond_4
+    iget-object v0, p0, Lus7;->b:Lvs7;
 
-    :try_start_7
-    invoke-virtual {v3}, Landroid/content/res/AssetFileDescriptor;->close()V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_4
+    iget-object v1, v0, Lvs7;->c:Lpw8;
 
-    :catch_4
-    :cond_4
-    throw p0
+    invoke-virtual {v1}, Lpw8;->i()V
 
-    :catch_5
-    if-eqz v3, :cond_5
+    iget-object v1, v1, Lpw8;->t0:Ljava/util/ArrayList;
 
-    :try_start_8
-    invoke-virtual {v3}, Landroid/content/res/AssetFileDescriptor;->close()V
-    :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_6
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :catch_6
-    :cond_5
-    const/4 p1, -0x1
+    iget p0, p0, Lus7;->a:I
 
-    :catch_7
-    :goto_2
-    invoke-virtual {p0, v1, p1}, Lkt7;->c(Ljava/io/InputStream;I)Lp35;
+    if-ltz p0, :cond_0
+
+    if-lt p1, p0, :cond_0
+
+    add-int/lit8 p1, p1, 0x1
+
+    :cond_0
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ltw8;
+
+    return-object p0
+.end method
+
+.method public final getCount()I
+    .registers 3
+
+    iget-object v0, p0, Lus7;->b:Lvs7;
+
+    iget-object v1, v0, Lvs7;->c:Lpw8;
+
+    invoke-virtual {v1}, Lpw8;->i()V
+
+    iget-object v1, v1, Lpw8;->t0:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget p0, p0, Lus7;->a:I
+
+    if-gez p0, :cond_0
+
+    return v1
+
+    :cond_0
+    add-int/lit8 v1, v1, -0x1
+
+    return v1
+.end method
+
+.method public final bridge synthetic getItem(I)Ljava/lang/Object;
+    .registers 2
+
+    invoke-virtual {p0, p1}, Lus7;->b(I)Ltw8;
 
     move-result-object p0
 
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method
 
-.method public final e()Ljava/lang/String;
+.method public final getItemId(I)J
+    .registers 2
+
+    int-to-long p0, p1
+
+    return-wide p0
+.end method
+
+.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .registers 6
+
+    if-nez p2, :cond_0
+
+    iget-object p2, p0, Lus7;->b:Lvs7;
+
+    iget-object v0, p2, Lvs7;->b:Landroid/view/LayoutInflater;
+
+    iget p2, p2, Lvs7;->X:I
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, p2, p3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object p2
+
+    :cond_0
+    move-object p3, p2
+
+    check-cast p3, Lhx8;
+
+    invoke-virtual {p0, p1}, Lus7;->b(I)Ltw8;
+
+    move-result-object p0
+
+    invoke-interface {p3, p0}, Lhx8;->d(Ltw8;)V
+
+    return-object p2
+.end method
+
+.method public final notifyDataSetChanged()V
     .registers 1
 
-    iget p0, p0, Lus7;->c:I
+    invoke-virtual {p0}, Lus7;->a()V
 
-    packed-switch p0, :pswitch_data_0
+    invoke-super {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
-    const-string p0, "LocalResourceFetchProducer"
-
-    return-object p0
-
-    :pswitch_0
-    const-string p0, "LocalAssetFetchProducer"
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

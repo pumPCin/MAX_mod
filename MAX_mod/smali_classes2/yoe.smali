@@ -1,74 +1,127 @@
-.class public final synthetic Lyoe;
+.class public final Lyoe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lxoe;
 
-.field public final synthetic b:Lwpe;
-
-.field public final synthetic c:Ldoe;
+.field public final b:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lwpe;Ldoe;I)V
-    .registers 4
-
-    iput p3, p0, Lyoe;->a:I
-
-    iput-object p1, p0, Lyoe;->b:Lwpe;
-
-    iput-object p2, p0, Lyoe;->c:Ldoe;
+.method public constructor <init>(Lxoe;Ljava/util/ArrayList;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lyoe;->a:Lxoe;
+
+    iput-object p2, p0, Lyoe;->b:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
+
+    if-ne p0, p1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    instance-of v0, p1, Lyoe;
+
+    if-nez v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lyoe;
+
+    iget-object v0, p0, Lyoe;->a:Lxoe;
+
+    iget-object v1, p1, Lyoe;->a:Lxoe;
+
+    if-eq v0, v1, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    iget-object p0, p0, Lyoe;->b:Ljava/util/ArrayList;
+
+    iget-object p1, p1, Lyoe;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
     .registers 2
 
-    iget v0, p0, Lyoe;->a:I
+    iget-object v0, p0, Lyoe;->a:Lxoe;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    iget-object v0, p0, Lyoe;->b:Lwpe;
+    move-result v0
 
-    iget-object p0, p0, Lyoe;->c:Ldoe;
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-interface {v0, p0}, Lwpe;->i(Ldoe;)V
+    iget-object p0, p0, Lyoe;->b:Ljava/util/ArrayList;
 
-    return-void
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    :pswitch_0
-    iget-object v0, p0, Lyoe;->b:Lwpe;
+    move-result p0
 
-    iget-object p0, p0, Lyoe;->c:Ldoe;
+    add-int/2addr p0, v0
 
-    invoke-interface {v0, p0}, Lwpe;->i(Ldoe;)V
+    return p0
+.end method
 
-    return-void
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    :pswitch_1
-    iget-object v0, p0, Lyoe;->b:Lwpe;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lyoe;->c:Ldoe;
+    const-string v1, "SuggestionSearchResult(state="
 
-    invoke-interface {v0, p0}, Lwpe;->i(Ldoe;)V
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    return-void
+    iget-object v1, p0, Lyoe;->a:Lxoe;
 
-    nop
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    const-string v1, ", mentions="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lyoe;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,55 +1,129 @@
-.class public final Ltf6;
-.super Lcx3;
+.class public final synthetic Ltf6;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lkgd;
 
 
 # instance fields
-.field public X:J
-
-.field public Y:J
-
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public final synthetic n0:Luf6;
-
-.field public o:Lav8;
-
-.field public o0:I
+.field public final synthetic a:Lqg6;
 
 
 # direct methods
-.method public constructor <init>(Luf6;Lcx3;)V
-    .registers 3
+.method public synthetic constructor <init>(Lqg6;)V
+    .registers 2
 
-    iput-object p1, p0, Ltf6;->n0:Luf6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Ltf6;->a:Lqg6;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final r0(Ljava/util/Set;)V
+    .registers 7
 
-    iput-object p1, p0, Ltf6;->Z:Ljava/lang/Object;
+    iget-object p0, p0, Ltf6;->a:Lqg6;
 
-    iget p1, p0, Ltf6;->o0:I
+    iget-object v0, p0, Lqg6;->u0:Lyce;
 
-    const/high16 v0, -0x80000000
+    invoke-interface {p1}, Ljava/util/Set;->size()I
 
-    or-int/2addr p1, v0
+    move-result v1
 
-    iput p1, p0, Ltf6;->o0:I
+    const/16 v2, 0x64
 
-    iget-object p1, p0, Ltf6;->n0:Luf6;
+    const/4 v3, 0x1
 
-    const/4 v0, 0x0
+    if-lt v1, v2, :cond_0
 
-    invoke-static {p1, v0, v0, p0}, Luf6;->a(Luf6;Lqj4;Lav8;Lcx3;)Ljava/lang/Object;
+    move v1, v3
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2, v1}, Lyce;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    invoke-interface {p1}, Ljava/util/Set;->size()I
+
+    move-result v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v4, "onSelectedMediasChangeListener(), selectedCount "
+
+    invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "qg6"
+
+    invoke-static {v1, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    iget-object v0, p0, Lqg6;->K0:Lcae;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0, v2}, Lsf7;->cancel(Ljava/util/concurrent/CancellationException;)V
+
+    :cond_1
+    iget-object v0, p0, Lqg6;->o:Lsj;
+
+    new-instance v1, Lkg6;
+
+    invoke-direct {v1, p0, p1, v2}, Lkg6;-><init>(Lqg6;Ljava/util/Set;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x2
+
+    invoke-static {p0, v0, v1, p1}, Lx7g;->n(Lx7g;Lq04;Lpc6;I)Lcae;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lqg6;->K0:Lcae;
+
+    goto :goto_1
+
+    :cond_2
+    invoke-static {p0, v3}, Lqg6;->r(Lqg6;I)V
+
+    :goto_1
+    iget-object p1, p0, Lqg6;->Y:Ljf6;
+
+    iget-object p0, p0, Lqg6;->E0:Lmgd;
+
+    invoke-static {p0}, Lrde;->l(Lmgd;)Ljava/util/ArrayList;
 
     move-result-object p0
 
-    return-object p0
+    iget-object p1, p1, Ljf6;->c:Lv85;
+
+    new-instance v0, Ldf6;
+
+    invoke-direct {v0, p0}, Ldf6;-><init>(Ljava/util/List;)V
+
+    invoke-static {p1, v0}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
+
+    return-void
 .end method

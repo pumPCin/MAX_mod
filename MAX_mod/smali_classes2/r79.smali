@@ -1,55 +1,100 @@
-.class public final Lr79;
-.super Lcx3;
+.class public final synthetic Lr79;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lzb6;
 
 
 # instance fields
-.field public X:Lvw8;
+.field public final synthetic X:I
 
-.field public Y:Lw10;
+.field public final synthetic Y:Ljava/lang/CharSequence;
 
-.field public synthetic Z:Ljava/lang/Object;
+.field public final synthetic Z:Z
 
-.field public final synthetic n0:Ld89;
+.field public final synthetic a:I
 
-.field public o:Ld89;
+.field public final synthetic b:Ly79;
 
-.field public o0:I
+.field public final synthetic c:Ls72;
+
+.field public final synthetic o:Lxx8;
 
 
 # direct methods
-.method public constructor <init>(Ld89;Lcx3;)V
-    .registers 3
+.method public synthetic constructor <init>(Ly79;Ls72;Lxx8;ILjava/lang/CharSequence;ZI)V
+    .registers 8
 
-    iput-object p1, p0, Lr79;->n0:Ld89;
+    iput p7, p0, Lr79;->a:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lr79;->b:Ly79;
+
+    iput-object p2, p0, Lr79;->c:Ls72;
+
+    iput-object p3, p0, Lr79;->o:Lxx8;
+
+    iput p4, p0, Lr79;->X:I
+
+    iput-object p5, p0, Lr79;->Y:Ljava/lang/CharSequence;
+
+    iput-boolean p6, p0, Lr79;->Z:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke()Ljava/lang/Object;
+    .registers 8
 
-    iput-object p1, p0, Lr79;->Z:Ljava/lang/Object;
+    iget v0, p0, Lr79;->a:I
 
-    iget p1, p0, Lr79;->o0:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object v5, p0, Lr79;->Y:Ljava/lang/CharSequence;
 
-    or-int/2addr p1, v0
+    iget-boolean v6, p0, Lr79;->Z:Z
 
-    iput p1, p0, Lr79;->o0:I
+    iget-object v1, p0, Lr79;->b:Ly79;
 
-    iget-object p1, p0, Lr79;->n0:Ld89;
+    iget-object v2, p0, Lr79;->c:Ls72;
 
-    const/4 v0, 0x0
+    iget-object v3, p0, Lr79;->o:Lxx8;
 
-    invoke-static {p1, v0, p0}, Ld89;->s(Ld89;Lvw8;Lcx3;)Ljava/lang/Object;
+    iget v4, p0, Lr79;->X:I
+
+    invoke-virtual/range {v1 .. v6}, Ly79;->b(Ls72;Lxx8;ILjava/lang/CharSequence;Z)Landroid/text/Layout;
 
     move-result-object p0
 
     return-object p0
+
+    :pswitch_0
+    iget-object v4, p0, Lr79;->Y:Ljava/lang/CharSequence;
+
+    iget-boolean v5, p0, Lr79;->Z:Z
+
+    iget-object v0, p0, Lr79;->b:Ly79;
+
+    iget-object v1, p0, Lr79;->c:Ls72;
+
+    iget-object v2, p0, Lr79;->o:Lxx8;
+
+    iget v3, p0, Lr79;->X:I
+
+    invoke-virtual/range {v0 .. v5}, Ly79;->b(Ls72;Lxx8;ILjava/lang/CharSequence;Z)Landroid/text/Layout;
+
+    move-result-object p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

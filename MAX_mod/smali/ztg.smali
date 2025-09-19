@@ -1,81 +1,108 @@
 .class public final Lztg;
-.super Ll3;
+.super Lf9g;
 .source "SourceFile"
 
 
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lztg;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:I
 
-.field public final b:I
+.field public final synthetic b:Lbug;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Latg;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1}, Latg;-><init>(I)V
-
-    sput-object v0, Lztg;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;I)V
+.method public synthetic constructor <init>(Lbug;I)V
     .registers 3
 
+    iput p2, p0, Lztg;->a:I
+
+    iput-object p1, p0, Lztg;->b:Lbug;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lztg;->a:Ljava/lang/String;
-
-    iput p2, p0, Lztg;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+.method public final c()V
+    .registers 4
 
-    const/16 p2, 0x4f45
+    iget v0, p0, Lztg;->a:I
 
-    invoke-static {p1, p2}, Las3;->v0(Landroid/os/Parcel;I)I
+    const/4 v1, 0x0
 
-    move-result p2
+    iget-object p0, p0, Lztg;->b:Lbug;
 
-    const/4 v0, 0x1
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v1, p0, Lztg;->a:Ljava/lang/String;
+    iput-object v1, p0, Lbug;->w:Ld9g;
 
-    invoke-static {p1, v0, v1}, Las3;->r0(Landroid/os/Parcel;ILjava/lang/String;)V
+    iget-object p0, p0, Lbug;->h:Landroidx/appcompat/widget/ActionBarContainer;
 
-    const/4 v0, 0x4
-
-    const/4 v1, 0x2
-
-    invoke-static {p1, v1, v0}, Las3;->y0(Landroid/os/Parcel;II)V
-
-    iget p0, p0, Lztg;->b:I
-
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-static {p1, p2}, Las3;->x0(Landroid/os/Parcel;I)V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return-void
+
+    :pswitch_0
+    iget-boolean v0, p0, Lbug;->s:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lbug;->k:Landroid/view/View;
+
+    if-eqz v0, :cond_0
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setTranslationY(F)V
+
+    iget-object v0, p0, Lbug;->h:Landroidx/appcompat/widget/ActionBarContainer;
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setTranslationY(F)V
+
+    :cond_0
+    iget-object v0, p0, Lbug;->h:Landroidx/appcompat/widget/ActionBarContainer;
+
+    const/16 v2, 0x8
+
+    invoke-virtual {v0, v2}, Landroidx/appcompat/widget/ActionBarContainer;->setVisibility(I)V
+
+    iget-object v0, p0, Lbug;->h:Landroidx/appcompat/widget/ActionBarContainer;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v2}, Landroidx/appcompat/widget/ActionBarContainer;->setTransitioning(Z)V
+
+    iput-object v1, p0, Lbug;->w:Ld9g;
+
+    iget-object v0, p0, Lbug;->o:Lwvg;
+
+    if-eqz v0, :cond_1
+
+    iget-object v2, p0, Lbug;->n:Laug;
+
+    invoke-virtual {v0, v2}, Lwvg;->A(Lh7;)V
+
+    iput-object v1, p0, Lbug;->n:Laug;
+
+    iput-object v1, p0, Lbug;->o:Lwvg;
+
+    :cond_1
+    iget-object p0, p0, Lbug;->g:Landroidx/appcompat/widget/ActionBarOverlayLayout;
+
+    if-eqz p0, :cond_2
+
+    sget-object v0, Lh7g;->a:Ljava/util/WeakHashMap;
+
+    invoke-static {p0}, Lu6g;->c(Landroid/view/View;)V
+
+    :cond_2
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

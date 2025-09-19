@@ -1,63 +1,35 @@
 .class public final Lphd;
-.super Lqd0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final b:Lphd;
+# instance fields
+.field public final a:Lcl7;
+
+.field public final b:Lcl7;
+
+.field public final c:Lcl7;
+
+.field public final d:Lcl7;
+
+.field public final e:Lcl7;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;)V
+    .registers 6
 
-    new-instance v0, Lphd;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x10
+    iput-object p1, p0, Lphd;->a:Lcl7;
 
-    invoke-direct {v0, v1}, Lqd0;-><init>(I)V
+    iput-object p2, p0, Lphd;->b:Lcl7;
 
-    sput-object v0, Lphd;->b:Lphd;
+    iput-object p3, p0, Lphd;->c:Lcl7;
+
+    iput-object p4, p0, Lphd;->d:Lcl7;
+
+    iput-object p5, p0, Lphd;->e:Lcl7;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lphd;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, 0x38170d6b
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "ChangeDisabled"
-
-    return-object p0
 .end method

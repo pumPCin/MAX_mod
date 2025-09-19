@@ -1,172 +1,153 @@
 .class public final Lhi9;
-.super Ljava/lang/Object;
+.super Laec;
 .source "SourceFile"
 
 # interfaces
-.implements Lkz6;
+.implements Ljava/util/concurrent/ScheduledFuture;
+.implements Lgt7;
+.implements Ljava/util/concurrent/Future;
 
 
 # instance fields
-.field public final a:I
+.field public final X:Ljava/util/concurrent/ScheduledFuture;
+
+.field public final o:Ln1;
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .registers 2
+.method public constructor <init>(Ln1;Ljava/util/concurrent/ScheduledFuture;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0x9
 
-    iput p1, p0, Lhi9;->a:I
+    invoke-direct {p0, v0}, Laec;-><init>(I)V
+
+    iput-object p1, p0, Lhi9;->o:Ln1;
+
+    iput-object p2, p0, Lhi9;->X:Ljava/util/concurrent/ScheduledFuture;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final createImageTranscoder(Ldy6;Z)Ljz6;
-    .registers 8
+.method public final L(Z)Z
+    .registers 2
 
-    iget v0, p0, Lhi9;->a:I
+    iget-object p0, p0, Lhi9;->o:Ln1;
 
-    const-string v1, "Dependency \':native-imagetranscoder\' is needed to use the default native image transcoder."
+    invoke-interface {p0, p1}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
-    :try_start_0
-    const-class v2, Lcom/facebook/imagepipeline/nativecode/NativeJpegTranscoderFactory;
+    move-result p0
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    return p0
+.end method
 
-    sget-object v4, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+.method public final cancel(Z)Z
+    .registers 3
 
-    filled-new-array {v3, v4, v4}, [Ljava/lang/Class;
+    invoke-virtual {p0, p1}, Lhi9;->L(Z)Z
 
-    move-result-object v3
+    move-result v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    if-eqz v0, :cond_0
 
-    move-result-object v2
+    iget-object p0, p0, Lhi9;->X:Ljava/util/concurrent/ScheduledFuture;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    sget-object v3, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    sget-object v4, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    filled-new-array {v0, v3, v4}, [Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lkz6;
-    :try_end_0
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_6
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_5
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_4
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_3
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    invoke-interface {v0, p1, p2}, Lkz6;->createImageTranscoder(Ldy6;Z)Ljz6;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Lue3;
-
-    iget p0, p0, Lhi9;->a:I
-
-    invoke-direct {p1, p2, p0}, Lue3;-><init>(ZI)V
+    invoke-interface {p0, p1}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
     :cond_0
-    return-object p1
+    return v0
+.end method
 
-    :catch_0
-    move-exception p0
+.method public final compareTo(Ljava/lang/Object;)I
+    .registers 2
 
-    goto :goto_0
+    check-cast p1, Ljava/util/concurrent/Delayed;
 
-    :catch_1
-    move-exception p0
+    iget-object p0, p0, Lhi9;->X:Ljava/util/concurrent/ScheduledFuture;
 
-    goto :goto_1
+    invoke-interface {p0, p1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
-    :catch_2
-    move-exception p0
+    move-result p0
 
-    goto :goto_2
+    return p0
+.end method
 
-    :catch_3
-    move-exception p0
+.method public final d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    .registers 3
 
-    goto :goto_3
+    iget-object p0, p0, Lhi9;->o:Ln1;
 
-    :catch_4
-    move-exception p0
+    invoke-interface {p0, p1, p2}, Lgt7;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    goto :goto_4
+    return-void
+.end method
 
-    :catch_5
-    move-exception p0
+.method public final get()Ljava/lang/Object;
+    .registers 1
 
-    goto :goto_5
+    iget-object p0, p0, Lhi9;->o:Ln1;
 
-    :catch_6
-    move-exception p0
+    invoke-interface {p0}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
 
-    goto :goto_6
+    move-result-object p0
 
-    :goto_0
-    new-instance p1, Ljava/lang/RuntimeException;
+    return-object p0
+.end method
 
-    invoke-direct {p1, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+.method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    .registers 4
 
-    throw p1
+    iget-object p0, p0, Lhi9;->o:Ln1;
 
-    :goto_1
-    new-instance p1, Ljava/lang/RuntimeException;
+    invoke-interface {p0, p1, p2, p3}, Ljava/util/concurrent/Future;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
 
-    invoke-direct {p1, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result-object p0
 
-    throw p1
+    return-object p0
+.end method
 
-    :goto_2
-    new-instance p1, Ljava/lang/RuntimeException;
+.method public final getDelay(Ljava/util/concurrent/TimeUnit;)J
+    .registers 2
 
-    invoke-direct {p1, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    iget-object p0, p0, Lhi9;->X:Ljava/util/concurrent/ScheduledFuture;
 
-    throw p1
+    invoke-interface {p0, p1}, Ljava/util/concurrent/Delayed;->getDelay(Ljava/util/concurrent/TimeUnit;)J
 
-    :goto_3
-    new-instance p1, Ljava/lang/RuntimeException;
+    move-result-wide p0
 
-    invoke-direct {p1, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    return-wide p0
+.end method
 
-    throw p1
+.method public final isCancelled()Z
+    .registers 1
 
-    :goto_4
-    new-instance p1, Ljava/lang/RuntimeException;
+    iget-object p0, p0, Lhi9;->o:Ln1;
 
-    invoke-direct {p1, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {p0}, Ljava/util/concurrent/Future;->isCancelled()Z
 
-    throw p1
+    move-result p0
 
-    :goto_5
-    new-instance p1, Ljava/lang/RuntimeException;
+    return p0
+.end method
 
-    invoke-direct {p1, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+.method public final isDone()Z
+    .registers 1
 
-    throw p1
+    iget-object p0, p0, Lhi9;->o:Ln1;
 
-    :goto_6
-    new-instance p1, Ljava/lang/RuntimeException;
+    invoke-interface {p0}, Ljava/util/concurrent/Future;->isDone()Z
 
-    invoke-direct {p1, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    move-result p0
 
-    throw p1
+    return p0
+.end method
+
+.method public final s()Ljava/lang/Object;
+    .registers 1
+
+    iget-object p0, p0, Lhi9;->o:Ln1;
+
+    return-object p0
 .end method

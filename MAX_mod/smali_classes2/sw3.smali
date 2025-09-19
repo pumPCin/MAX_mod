@@ -4,11 +4,8 @@
 
 
 # virtual methods
-.method public abstract E(ILandroid/os/Bundle;)V
+.method public abstract dismiss()V
 .end method
 
-.method public onDismiss()V
-    .registers 1
-
-    return-void
+.method public abstract u(Lone/me/sdk/arch/Widget;)V
 .end method

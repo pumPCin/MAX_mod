@@ -1,87 +1,67 @@
 .class public final Lyg7;
-.super Ljava/lang/Object;
+.super Lzg7;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
-
-# instance fields
-.field public X:Z
-
-.field public final a:I
-
-.field public final b:Landroid/graphics/Rect;
-
-.field public final c:Lr5;
-
-.field public o:I
+# static fields
+.field public static final d:Lyg7;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/messages/media/mediabar/ActLocalMedias;Lr5;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lyg7;
 
-    new-instance p1, Landroid/graphics/Rect;
+    const/4 v1, 0x6
 
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+    const/4 v2, 0x0
 
-    iput-object p1, p0, Lyg7;->b:Landroid/graphics/Rect;
+    const-string v3, "unknown"
 
-    const/16 p1, 0x190
+    invoke-direct {v0, v3, v1, v2}, Lzg7;-><init>(Ljava/lang/String;ILah7;)V
 
-    iput p1, p0, Lyg7;->a:I
-
-    iput-object p2, p0, Lyg7;->c:Lr5;
+    sput-object v0, Lyg7;->d:Lyg7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onGlobalLayout()V
-    .registers 5
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    iget-object v0, p0, Lyg7;->c:Lr5;
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lyg7;->b:Landroid/graphics/Rect;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {v0, v1}, Lr5;->accept(Ljava/lang/Object;)V
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
-
-    move-result v0
-
-    iget v1, p0, Lyg7;->o:I
-
-    if-eqz v1, :cond_1
-
-    iget v2, p0, Lyg7;->a:I
-
-    add-int v3, v0, v2
-
-    if-le v1, v3, :cond_0
-
-    const/4 v1, 0x1
-
-    iput-boolean v1, p0, Lyg7;->X:Z
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    add-int/2addr v1, v2
+    instance-of p0, p1, Lyg7;
 
-    if-ge v1, v0, :cond_1
+    if-nez p0, :cond_1
 
-    const/4 v1, 0x0
+    const/4 p0, 0x0
 
-    iput-boolean v1, p0, Lyg7;->X:Z
+    return p0
 
     :cond_1
-    :goto_0
-    iput v0, p0, Lyg7;->o:I
+    return v0
+.end method
 
-    return-void
+.method public final hashCode()I
+    .registers 1
+
+    const p0, -0x2c724b44
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "UnknownError"
+
+    return-object p0
 .end method

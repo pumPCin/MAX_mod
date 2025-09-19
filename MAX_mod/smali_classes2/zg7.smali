@@ -1,90 +1,207 @@
-.class public final Lzg7;
+.class public abstract Lzg7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Luf4;
-
 
 # instance fields
-.field public final a:Landroid/view/View;
+.field public a:I
 
-.field public final b:Lyg7;
+.field public final b:Ljava/lang/Object;
 
-.field public c:I
+.field public final c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lru/ok/messages/media/mediabar/ActLocalMedias;)V
-    .registers 6
+.method public constructor <init>(Landroidx/recyclerview/widget/a;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x0
+    const/high16 v0, -0x80000000
 
-    iput v0, p0, Lzg7;->c:I
+    iput v0, p0, Lzg7;->a:I
 
-    iput-object p1, p0, Lzg7;->a:Landroid/view/View;
+    new-instance v0, Landroid/graphics/Rect;
 
-    new-instance v0, Lyg7;
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object v0, p0, Lzg7;->c:Ljava/lang/Object;
 
-    new-instance v1, Lr5;
-
-    const/4 v2, 0x4
-
-    invoke-direct {v1, v2, p1}, Lr5;-><init>(ILjava/lang/Object;)V
-
-    invoke-direct {v0, p2, v1}, Lyg7;-><init>(Lru/ok/messages/media/mediabar/ActLocalMedias;Lr5;)V
-
-    iput-object v0, p0, Lzg7;->b:Lyg7;
+    iput-object p1, p0, Lzg7;->b:Ljava/lang/Object;
 
     return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ILah7;)V
+    .registers 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lzg7;->b:Ljava/lang/Object;
+
+    iput p2, p0, Lzg7;->a:I
+
+    iput-object p3, p0, Lzg7;->c:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public static b(Landroidx/recyclerview/widget/a;I)Lzg7;
+    .registers 3
+
+    if-eqz p1, :cond_1
+
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_0
+
+    new-instance p1, Lgva;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p1, p0, v0}, Lgva;-><init>(Landroidx/recyclerview/widget/a;I)V
+
+    return-object p1
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "invalid orientation"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    new-instance p1, Lgva;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, p0, v0}, Lgva;-><init>(Landroidx/recyclerview/widget/a;I)V
+
+    return-object p1
 .end method
 
 
 # virtual methods
-.method public final onPause(Lwk7;)V
-    .registers 3
+.method public a(Ljava/lang/String;)Ljava/lang/String;
+    .registers 5
 
-    const-string p1, "zg7"
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v0, "onPause: unregisterGlobalLayoutListener"
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {p1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v1, p0, Lzg7;->b:Ljava/lang/Object;
 
-    iget-object p1, p0, Lzg7;->a:Landroid/view/View;
+    check-cast v1, Ljava/lang/String;
 
-    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    const-string v2, "."
 
-    move-result-object p1
+    invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
-    iget-object p0, p0, Lzg7;->b:Lyg7;
+    move-result-object v1
 
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lzg7;->l()Lah7;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    iget-object p0, p0, Lah7;->a:Ljava/lang/String;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {v2, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final onResume(Lwk7;)V
+.method public abstract c(Landroid/view/View;)I
+.end method
+
+.method public abstract d(Landroid/view/View;)I
+.end method
+
+.method public abstract e(Landroid/view/View;)I
+.end method
+
+.method public abstract f(Landroid/view/View;)I
+.end method
+
+.method public abstract g()I
+.end method
+
+.method public abstract h()I
+.end method
+
+.method public abstract i()I
+.end method
+
+.method public abstract j()I
+.end method
+
+.method public abstract k()I
+.end method
+
+.method public l()Lah7;
+    .registers 1
+
+    iget-object p0, p0, Lzg7;->c:Ljava/lang/Object;
+
+    check-cast p0, Lah7;
+
+    return-object p0
+.end method
+
+.method public abstract m()I
+.end method
+
+.method public abstract n()I
+.end method
+
+.method public o()I
     .registers 3
 
-    const-string p1, "zg7"
+    const/high16 v0, -0x80000000
 
-    const-string v0, "onResume: registerGlobalLayoutListener"
+    iget v1, p0, Lzg7;->a:I
 
-    invoke-static {p1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    if-ne v0, v1, :cond_0
 
-    iget-object p1, p0, Lzg7;->a:Landroid/view/View;
+    const/4 p0, 0x0
 
-    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    return p0
 
-    move-result-object p1
+    :cond_0
+    invoke-virtual {p0}, Lzg7;->n()I
 
-    iget-object p0, p0, Lzg7;->b:Lyg7;
+    move-result v0
 
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+    iget p0, p0, Lzg7;->a:I
 
-    return-void
+    sub-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public abstract p(Landroid/view/View;)I
+.end method
+
+.method public abstract q(Landroid/view/View;)I
+.end method
+
+.method public abstract r(I)V
 .end method

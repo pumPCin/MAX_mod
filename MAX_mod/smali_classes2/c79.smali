@@ -1,25 +1,16 @@
-.class public abstract synthetic Lc79;
+.class public interface abstract Lc79;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ld79;
 
-# static fields
-.field public static final synthetic a:Lc65;
 
+# virtual methods
+.method public a()Z
+    .registers 1
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 2
+    const/4 p0, 0x1
 
-    invoke-static {}, Llb3;->values()[Llb3;
-
-    move-result-object v0
-
-    new-instance v1, Lc65;
-
-    invoke-direct {v1, v0}, Lc65;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lc79;->a:Lc65;
-
-    return-void
+    return p0
 .end method

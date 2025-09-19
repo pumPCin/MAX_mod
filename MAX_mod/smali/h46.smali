@@ -1,236 +1,153 @@
-.class public abstract Lh46;
+.class public final Lh46;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lez1;
-
 
 # instance fields
-.field public final a:Lez1;
+.field public final a:I
+
+.field public final b:I
+
+.field public final c:Landroid/app/Notification;
 
 
 # direct methods
-.method public constructor <init>(Lez1;)V
-    .registers 2
+.method public constructor <init>(ILandroid/app/Notification;I)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lh46;->a:Lez1;
+    iput p1, p0, Lh46;->a:I
+
+    iput-object p2, p0, Lh46;->c:Landroid/app/Notification;
+
+    iput p3, p0, Lh46;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/Set;
-    .registers 1
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    iget-object p0, p0, Lh46;->a:Lez1;
+    if-ne p0, p1, :cond_0
 
-    invoke-interface {p0}, Lez1;->a()Ljava/util/Set;
+    const/4 p0, 0x1
 
-    move-result-object p0
+    return p0
 
-    return-object p0
-.end method
+    :cond_0
+    const/4 v0, 0x0
 
-.method public b()I
-    .registers 1
+    if-eqz p1, :cond_4
 
-    iget-object p0, p0, Lh46;->a:Lez1;
+    const-class v1, Lh46;
 
-    invoke-interface {p0}, Lez1;->b()I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    if-eq v1, v2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Lh46;
+
+    iget v1, p0, Lh46;->a:I
+
+    iget v2, p1, Lh46;->a:I
+
+    if-eq v1, v2, :cond_2
+
+    return v0
+
+    :cond_2
+    iget v1, p0, Lh46;->b:I
+
+    iget v2, p1, Lh46;->b:I
+
+    if-eq v1, v2, :cond_3
+
+    return v0
+
+    :cond_3
+    iget-object p0, p0, Lh46;->c:Landroid/app/Notification;
+
+    iget-object p1, p1, Lh46;->c:Landroid/app/Notification;
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     return p0
+
+    :cond_4
+    :goto_0
+    return v0
 .end method
 
-.method public final c()Z
-    .registers 1
-
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0}, Lez1;->c()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public d()Ljava/lang/String;
-    .registers 1
-
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0}, Lez1;->d()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public e()Lyq7;
-    .registers 1
-
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0}, Lez1;->e()Lyq7;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final f(Ljava/util/concurrent/Executor;Lsv1;)V
+.method public final hashCode()I
     .registers 3
 
-    iget-object p0, p0, Lh46;->a:Lez1;
+    iget v0, p0, Lh46;->a:I
 
-    invoke-interface {p0, p1, p2}, Lez1;->f(Ljava/util/concurrent/Executor;Lsv1;)V
+    mul-int/lit8 v0, v0, 0x1f
 
-    return-void
-.end method
+    iget v1, p0, Lh46;->b:I
 
-.method public g()Lez1;
-    .registers 1
+    add-int/2addr v0, v1
 
-    iget-object p0, p0, Lh46;->a:Lez1;
+    mul-int/lit8 v0, v0, 0x1f
 
-    invoke-interface {p0}, Lez1;->g()Lez1;
+    iget-object p0, p0, Lh46;->c:Landroid/app/Notification;
 
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final h()I
-    .registers 1
-
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0}, Lez1;->h()I
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
 .end method
 
-.method public final i()Ldxe;
-    .registers 1
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    iget-object p0, p0, Lh46;->a:Lez1;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-interface {p0}, Lez1;->i()Ldxe;
+    const-string v1, "ForegroundInfo{mNotificationId="
 
-    move-result-object p0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    return-object p0
-.end method
+    iget v1, p0, Lh46;->a:I
 
-.method public final j()Luz1;
-    .registers 1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lh46;->a:Lez1;
+    const-string v1, ", mForegroundServiceType="
 
-    invoke-interface {p0}, Lez1;->j()Luz1;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p0
+    iget v1, p0, Lh46;->b:I
 
-    return-object p0
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method public final k()Ljava/lang/String;
-    .registers 1
+    const-string v1, ", mNotification="
 
-    iget-object p0, p0, Lh46;->a:Lez1;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-interface {p0}, Lez1;->k()Ljava/lang/String;
+    iget-object p0, p0, Lh46;->c:Landroid/app/Notification;
 
-    move-result-object p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    return-object p0
-.end method
+    const/16 p0, 0x7d
 
-.method public l(I)I
-    .registers 2
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0, p1}, Lez1;->l(I)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public m()Z
-    .registers 1
-
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0}, Lez1;->m()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final n()Lm45;
-    .registers 1
-
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0}, Lez1;->n()Lm45;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-.end method
-
-.method public final o()Lxg7;
-    .registers 1
-
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0}, Lez1;->o()Lxg7;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final p(I)Ljava/util/List;
-    .registers 2
-
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0, p1}, Lez1;->p(I)Ljava/util/List;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public q()Lyq7;
-    .registers 1
-
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0}, Lez1;->q()Lyq7;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final r(Lnx1;)V
-    .registers 2
-
-    iget-object p0, p0, Lh46;->a:Lez1;
-
-    invoke-interface {p0, p1}, Lez1;->r(Lnx1;)V
-
-    return-void
 .end method

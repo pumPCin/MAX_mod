@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public final a(Lez1;Lnb0;)Z
+.method public final a(Lmz1;Lra0;)Z
     .registers 5
 
     const-string p0, "positivo"
@@ -42,13 +42,13 @@
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p1}, Lez1;->h()I
+    invoke-interface {p1}, Lmz1;->h()I
 
     move-result p0
 
     if-nez p0, :cond_0
 
-    sget-object p0, Lnb0;->d:Lnb0;
+    sget-object p0, Lra0;->d:Lra0;
 
     if-ne p2, p0, :cond_0
 

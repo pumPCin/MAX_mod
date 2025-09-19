@@ -1,157 +1,161 @@
-.class public final enum Lnm3;
-.super Ljava/lang/Enum;
+.class public final synthetic Lnm3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lqm3;
 
-# static fields
-.field public static final enum X:Lnm3;
 
-.field public static final enum Y:Lnm3;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final enum Z:Lnm3;
-
-.field public static final enum a:Lnm3;
-
-.field public static final enum b:Lnm3;
-
-.field public static final enum c:Lnm3;
-
-.field public static final enum n0:Lnm3;
-
-.field public static final enum o:Lnm3;
-
-.field public static final enum o0:Lnm3;
-
-.field public static final synthetic p0:[Lnm3;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 11
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .registers 3
 
-    new-instance v0, Lnm3;
+    iput p1, p0, Lnm3;->a:I
 
-    const-string v1, "OPEN_PROFILE"
+    iput-object p2, p0, Lnm3;->b:Ljava/lang/Object;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lnm3;->a:Lnm3;
-
-    new-instance v1, Lnm3;
-
-    const-string v2, "SHARE_CONTACT"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lnm3;->b:Lnm3;
-
-    new-instance v2, Lnm3;
-
-    const-string v3, "WRITE"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lnm3;->c:Lnm3;
-
-    new-instance v3, Lnm3;
-
-    const-string v4, "SELECT"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lnm3;->o:Lnm3;
-
-    new-instance v4, Lnm3;
-
-    const-string v5, "BLOCK"
-
-    const/4 v6, 0x4
-
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v4, Lnm3;->X:Lnm3;
-
-    new-instance v5, Lnm3;
-
-    const-string v6, "DELETE"
-
-    const/4 v7, 0x5
-
-    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lnm3;->Y:Lnm3;
-
-    new-instance v6, Lnm3;
-
-    const-string v7, "AUDIO_CALL"
-
-    const/4 v8, 0x6
-
-    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v6, Lnm3;->Z:Lnm3;
-
-    new-instance v7, Lnm3;
-
-    const-string v8, "VIDEO_CALL"
-
-    const/4 v9, 0x7
-
-    invoke-direct {v7, v8, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Lnm3;->n0:Lnm3;
-
-    new-instance v8, Lnm3;
-
-    const-string v9, "SUSPEND"
-
-    const/16 v10, 0x8
-
-    invoke-direct {v8, v9, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v8, Lnm3;->o0:Lnm3;
-
-    filled-new-array/range {v0 .. v8}, [Lnm3;
-
-    move-result-object v0
-
-    sput-object v0, Lnm3;->p0:[Lnm3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lnm3;
-    .registers 2
 
-    const-class v0, Lnm3;
+# virtual methods
+.method public final accept(Ljava/lang/Object;)V
+    .registers 6
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget v0, p0, Lnm3;->a:I
 
-    move-result-object p0
+    iget-object p0, p0, Lnm3;->b:Ljava/lang/Object;
 
-    check-cast p0, Lnm3;
+    packed-switch v0, :pswitch_data_0
 
-    return-object p0
-.end method
+    check-cast p0, Ls2e;
 
-.method public static values()[Lnm3;
-    .registers 1
+    check-cast p1, Lsg1;
 
-    sget-object v0, Lnm3;->p0:[Lnm3;
+    check-cast p0, Lo2e;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lo2e;->a(Ljava/lang/Object;)V
+
+    return-void
+
+    :pswitch_0
+    check-cast p0, Lbc6;
+
+    check-cast p1, Lsg1;
+
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/StereoRoomManagerImpl;->f(Lbc6;Lsg1;)V
+
+    return-void
+
+    :pswitch_1
+    check-cast p0, Lyde;
+
+    check-cast p1, Lorg/webrtc/PeerConnection;
+
+    new-instance v0, Ljy8;
+
+    const/16 v1, 0xf
+
+    invoke-direct {v0, v1, p0}, Ljy8;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {p1, v0}, Lorg/webrtc/PeerConnection;->getStats(Lorg/webrtc/RTCStatsCollectorCallback;)V
+
+    return-void
+
+    :pswitch_2
+    check-cast p0, [Lorg/webrtc/IceCandidate;
+
+    check-cast p1, Lorg/webrtc/PeerConnection;
+
+    invoke-virtual {p1, p0}, Lorg/webrtc/PeerConnection;->removeIceCandidates([Lorg/webrtc/IceCandidate;)Z
+
+    return-void
+
+    :pswitch_3
+    check-cast p0, Loh4;
+
+    check-cast p1, Lorg/webrtc/PeerConnection;
+
+    iget-object p1, p0, Loh4;->f:Ljava/util/concurrent/ConcurrentHashMap;
+
+    monitor-enter p1
+
+    :try_start_0
+    iget-object v0, p0, Loh4;->h:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
-    check-cast v0, [Lnm3;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    return-object v0
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    iget-object v2, p0, Loh4;->h:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v2, v1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lkr1;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {p0, v1, v2, v3}, Loh4;->u(Ljava/lang/String;Lkr1;Ljava/util/List;)V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    monitor-exit p1
+
+    return-void
+
+    :goto_1
+    monitor-exit p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+
+    :pswitch_4
+    check-cast p0, Ljava/lang/Runnable;
+
+    invoke-interface {p0}, Ljava/lang/Runnable;->run()V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

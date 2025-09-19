@@ -1,49 +1,13 @@
 .class public final Ltye;
-.super Lcx3;
+.super Luye;
 .source "SourceFile"
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+# virtual methods
+.method public final a(Ljava/lang/Runnable;)V
+    .registers 2
 
-.field public final synthetic Y:Lvye;
-
-.field public Z:I
-
-.field public o:Lvye;
-
-
-# direct methods
-.method public constructor <init>(Lvye;Lcx3;)V
-    .registers 3
-
-    iput-object p1, p0, Ltye;->Y:Lvye;
-
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iput-object p1, p0, Ltye;->X:Ljava/lang/Object;
-
-    iget p1, p0, Ltye;->Z:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Ltye;->Z:I
-
-    iget-object p1, p0, Ltye;->Y:Lvye;
-
-    invoke-virtual {p1, p0}, Lvye;->o(Lcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

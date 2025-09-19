@@ -1,48 +1,68 @@
-.class public final Lx57;
-.super Lcx3;
+.class public final synthetic Lx57;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/util/function/ToLongFunction;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lrb;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Lrb;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public synthetic constructor <init>(I)V
+    .registers 2
 
-    iput-object p1, p0, Lx57;->Y:Lrb;
+    iput p1, p0, Lx57;->a:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final applyAsLong(Ljava/lang/Object;)J
     .registers 3
 
-    iput-object p1, p0, Lx57;->o:Ljava/lang/Object;
+    iget p0, p0, Lx57;->a:I
 
-    iget p1, p0, Lx57;->X:I
+    packed-switch p0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    sget-object p0, Lyaa;->a:Lyaa;
 
-    or-int/2addr p1, v0
+    sget v0, Lone/me/android/OneMeApplication;->s0:I
 
-    iput p1, p0, Lx57;->X:I
-
-    iget-object p1, p0, Lx57;->Y:Lrb;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lrb;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lyaa;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Ljava/lang/Number;
+
+    invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
+
+    move-result-wide p0
+
+    return-wide p0
+
+    :pswitch_0
+    check-cast p1, Ljava/util/Map$Entry;
+
+    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lux9;
+
+    iget-wide p0, p0, Lux9;->a:J
+
+    return-wide p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

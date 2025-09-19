@@ -1,150 +1,91 @@
-.class public final Llr7;
-.super Lphc;
+.class public final synthetic Llr7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lqve;
+.implements Lbd6;
 
 
 # instance fields
-.field public final A0:Landroid/widget/ImageView;
-
-.field public final B0:Lru/ok/messages/views/widgets/ImageSpanEllipsizedTextView;
-
-.field public final C0:Lru/ok/messages/views/widgets/EllipsizingEndTextView;
+.field public final synthetic a:Lnr7;
 
 
 # direct methods
-.method public constructor <init>(Lmr7;Landroid/view/View;)V
-    .registers 6
+.method public constructor <init>(Lnr7;)V
+    .registers 2
 
-    invoke-direct {p0, p2}, Lphc;-><init>(Landroid/view/View;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sget p1, Ly0c;->row_chat_location__vw_avatar:I
-
-    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Lru/ok/messages/views/widgets/TamAvatarView;
-
-    sget p1, Ly0c;->row_chat_location__stop:I
-
-    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/ImageView;
-
-    iput-object p1, p0, Llr7;->A0:Landroid/widget/ImageView;
-
-    sget v0, Ly0c;->row_chat_location__tv_title:I
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lru/ok/messages/views/widgets/ImageSpanEllipsizedTextView;
-
-    iput-object v0, p0, Llr7;->B0:Lru/ok/messages/views/widgets/ImageSpanEllipsizedTextView;
-
-    new-instance v1, Ljue;
-
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-static {v2}, Lev0;->c(Landroid/content/Context;)Lccf;
-
-    move-result-object v2
-
-    invoke-direct {v1, v0, v2}, Ljue;-><init>(Landroid/widget/TextView;Lccf;)V
-
-    invoke-virtual {v1}, Ljue;->a()V
-
-    sget v0, Ly0c;->row_chat_location__tv_subtitle:I
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lru/ok/messages/views/widgets/EllipsizingEndTextView;
-
-    iput-object v0, p0, Llr7;->C0:Lru/ok/messages/views/widgets/EllipsizingEndTextView;
-
-    new-instance v0, Lb5;
-
-    const/16 v1, 0xc
-
-    invoke-direct {v0, v1, p0}, Lb5;-><init>(ILjava/lang/Object;)V
-
-    invoke-static {p2, v0}, Lkv0;->f(Landroid/view/View;Lz5;)Ljh7;
-
-    new-instance p2, Lb5;
-
-    const/16 v0, 0xc
-
-    invoke-direct {p2, v0, p0}, Lb5;-><init>(ILjava/lang/Object;)V
-
-    invoke-static {p1, p2}, Lkv0;->f(Landroid/view/View;Lz5;)Ljh7;
-
-    invoke-virtual {p0}, Llr7;->e()V
+    iput-object p1, p0, Llr7;->a:Lnr7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e()V
-    .registers 5
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    iget-object v0, p0, Lphc;->a:Landroid/view/View;
+    instance-of v0, p1, Llr7;
 
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    if-eqz v0, :cond_0
 
-    move-result-object v1
+    if-eqz p1, :cond_0
 
-    sget-object v2, Ldqe;->a0:Ldle;
+    invoke-virtual {p0}, Llr7;->getFunctionDelegate()Luc6;
 
-    invoke-static {v1}, Lx44;->Q(Landroid/content/Context;)Ldqe;
+    move-result-object p0
 
-    move-result-object v1
+    check-cast p1, Lbd6;
+
+    invoke-interface {p1}, Lbd6;->getFunctionDelegate()Luc6;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final getFunctionDelegate()Luc6;
+    .registers 8
+
+    new-instance v0, Led6;
+
+    const-string v6, "onProfileTagClicked(Landroid/view/View;Ljava/lang/String;)V"
 
     const/4 v2, 0x0
 
-    iget v3, v1, Ldqe;->i:I
+    const/4 v1, 0x2
 
-    invoke-static {v2, v3}, Lg64;->r(II)Landroid/graphics/drawable/RippleDrawable;
+    const-class v3, Lnr7;
 
-    move-result-object v2
+    iget-object v4, p0, Llr7;->a:Lnr7;
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    const-string v5, "onProfileTagClicked"
 
-    invoke-virtual {v1}, Ldqe;->a()Landroid/graphics/drawable/RippleDrawable;
+    invoke-direct/range {v0 .. v6}, Ldd6;-><init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v0
+    return-object v0
+.end method
 
-    iget-object v2, p0, Llr7;->A0:Landroid/widget/ImageView;
+.method public final hashCode()I
+    .registers 1
 
-    invoke-virtual {v2, v0}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0}, Llr7;->getFunctionDelegate()Luc6;
 
-    iget v0, v1, Ldqe;->M:I
+    move-result-object p0
 
-    sget-object v3, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    invoke-virtual {v2, v0, v3}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+    move-result p0
 
-    iget-object v0, p0, Llr7;->B0:Lru/ok/messages/views/widgets/ImageSpanEllipsizedTextView;
-
-    iget v2, v1, Ldqe;->F:I
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    iget-object p0, p0, Llr7;->C0:Lru/ok/messages/views/widgets/EllipsizingEndTextView;
-
-    iget v0, v1, Ldqe;->J:I
-
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTextColor(I)V
-
-    return-void
+    return p0
 .end method

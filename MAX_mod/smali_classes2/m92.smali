@@ -1,48 +1,52 @@
-.class public final Lm92;
-.super Lcx3;
+.class public final synthetic Lm92;
+.super Ls8;
+.source "SourceFile"
+
+# interfaces
+.implements Lrc6;
 
 
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lxl1;
-
-.field public synthetic o:Ljava/lang/Object;
+# static fields
+.field public static final r0:Lm92;
 
 
 # direct methods
-.method public constructor <init>(Lxl1;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 5
 
-    iput-object p1, p0, Lm92;->Y:Lxl1;
+    new-instance v0, Lm92;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const-string v1, "<init>(Lone/me/profileedit/screens/changelink/ChangeLinkScreenState;Ljava/util/List;)V"
+
+    const/4 v2, 0x4
+
+    const/4 v3, 0x3
+
+    const-class v4, Ln42;
+
+    invoke-direct {v0, v3, v4, v1, v2}, Ls8;-><init>(ILjava/lang/Class;Ljava/lang/String;I)V
+
+    sput-object v0, Lm92;->r0:Lm92;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
 
-    iput-object p1, p0, Lm92;->o:Ljava/lang/Object;
+    check-cast p1, Lb52;
 
-    iget p1, p0, Lm92;->X:I
+    check-cast p2, Ljava/util/List;
 
-    const/high16 v0, -0x80000000
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    or-int/2addr p1, v0
+    sget-object p0, Lr92;->A:[Lxi7;
 
-    iput p1, p0, Lm92;->X:I
+    new-instance p0, Ln42;
 
-    iget-object p1, p0, Lm92;->Y:Lxl1;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Lxl1;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
+    invoke-direct {p0, p1, p2}, Ln42;-><init>(Lb52;Ljava/util/List;)V
 
     return-object p0
 .end method

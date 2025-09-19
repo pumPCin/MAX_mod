@@ -1,104 +1,55 @@
-.class public final synthetic Lwl9;
-.super Ljava/lang/Object;
+.class public final Lwl9;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Llm3;
 
 
 # instance fields
-.field public final synthetic a:Lzl9;
+.field public X:Los7;
 
-.field public final synthetic b:Z
+.field public Y:Los7;
 
-.field public final synthetic c:Landroid/net/Uri;
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Lbm9;
+
+.field public final synthetic r0:Lbm9;
+
+.field public s0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lzl9;ZLandroid/net/Uri;)V
-    .registers 4
+.method public constructor <init>(Lbm9;Ljx3;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lwl9;->r0:Lbm9;
 
-    iput-object p1, p0, Lwl9;->a:Lzl9;
-
-    iput-boolean p2, p0, Lwl9;->b:Z
-
-    iput-object p3, p0, Lwl9;->c:Landroid/net/Uri;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .registers 6
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    check-cast p1, Lhuf;
+    iput-object p1, p0, Lwl9;->Z:Ljava/lang/Object;
 
-    iget-object v0, p0, Lwl9;->a:Lzl9;
+    iget p1, p0, Lwl9;->s0:I
 
-    iget-object v1, v0, Lzl9;->c:Lbi8;
+    const/high16 v0, -0x80000000
 
-    check-cast v1, Lcu7;
+    or-int/2addr p1, v0
 
-    invoke-virtual {v1}, Lcu7;->k()Z
+    iput p1, p0, Lwl9;->s0:I
 
-    move-result v1
-
-    iput-boolean v1, p1, Lhuf;->e:Z
-
-    iget-object v1, v0, Lzl9;->v0:Lv10;
-
-    iget-boolean v2, v1, Lv10;->g:Z
-
-    iput-boolean v2, p1, Lhuf;->f:Z
-
-    iget-object v2, v0, Lzl9;->o0:Lt9b;
-
-    invoke-static {v2, v1}, Lbv7;->n0(Lt9b;Lv10;)Z
-
-    move-result v1
-
-    iput-boolean v1, p1, Lhuf;->g:Z
-
-    iget-boolean v1, p0, Lwl9;->b:Z
-
-    iput-boolean v1, p1, Lhuf;->h:Z
-
-    iget-object v1, v0, Lzl9;->v0:Lv10;
-
-    iget-wide v2, v1, Lv10;->c:J
-
-    iput-wide v2, p1, Lhuf;->i:J
-
-    iget-wide v2, v1, Lv10;->k:J
-
-    iput-wide v2, p1, Lhuf;->j:J
-
-    const/4 v2, 0x0
-
-    iput-object v2, p1, Lhuf;->m:Lulf;
-
-    iput-object v1, p1, Lhuf;->n:Lv10;
-
-    iput-object v2, p1, Lhuf;->o:Landroid/graphics/drawable/BitmapDrawable;
-
-    iget-object p0, p0, Lwl9;->c:Landroid/net/Uri;
-
-    iput-object p0, p1, Lhuf;->p:Landroid/net/Uri;
-
-    invoke-virtual {v0}, Lzl9;->X0()Z
-
-    const/4 p0, 0x1
-
-    iput-boolean p0, p1, Lhuf;->r:Z
+    iget-object p1, p0, Lwl9;->r0:Lbm9;
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p1, Lhuf;->s:Z
+    invoke-virtual {p1, v0, p0}, Lbm9;->b(Ljava/util/Set;Ljx3;)Ljava/io/Serializable;
 
-    iput-boolean p0, p1, Lhuf;->q:Z
+    move-result-object p0
 
-    return-void
+    return-object p0
 .end method

@@ -1,54 +1,55 @@
-.class public final synthetic Ln1g;
-.super Ljava/lang/Object;
+.class public final Ln1g;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Lc1g;
 
-.field public final synthetic b:Lkud;
+.field public Y:Lc1g;
+
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Lt1g;
+
+.field public final synthetic r0:Lt1g;
+
+.field public s0:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkud;I)V
+.method public constructor <init>(Lt1g;Ljx3;)V
     .registers 3
 
-    iput p2, p0, Ln1g;->a:I
+    iput-object p1, p0, Ln1g;->r0:Lt1g;
 
-    iput-object p1, p0, Ln1g;->b:Lkud;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Ln1g;->a:I
+    iput-object p1, p0, Ln1g;->Z:Ljava/lang/Object;
 
-    iget-object p0, p0, Ln1g;->b:Lkud;
+    iget p1, p0, Ln1g;->s0:I
 
-    packed-switch v0, :pswitch_data_0
+    const/high16 v0, -0x80000000
 
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;->a(Lkud;)V
+    or-int/2addr p1, v0
 
-    return-void
+    iput p1, p0, Ln1g;->s0:I
 
-    :pswitch_0
-    invoke-static {p0}, Lru/ok/android/externcalls/sdk/waiting_room/WaitingRoomParticipants;->e(Lkud;)V
+    iget-object p1, p0, Ln1g;->r0:Lt1g;
 
-    return-void
+    const/4 v0, 0x0
 
-    nop
+    invoke-virtual {p1, v0, v0, p0}, Lt1g;->t(Lf1g;Landroid/util/Size;Ljx3;)Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    move-result-object p0
+
+    return-object p0
 .end method

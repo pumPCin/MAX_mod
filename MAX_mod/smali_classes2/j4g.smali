@@ -1,123 +1,217 @@
 .class public final Lj4g;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public X:I
+.field public final a:Z
 
-.field public final synthetic Y:Lp4g;
+.field public final b:Z
+
+.field public final c:Z
+
+.field public final d:Z
+
+.field public final e:Z
+
+.field public final f:Z
+
+.field public final g:Z
+
+.field public final h:Z
+
+.field public final i:J
+
+.field public final j:J
+
+.field public final k:J
+
+.field public final l:Le0c;
+
+.field public final m:Lmvf;
+
+.field public final n:Lc10;
+
+.field public final o:Landroid/graphics/drawable/BitmapDrawable;
+
+.field public final p:Landroid/net/Uri;
+
+.field public final q:Z
+
+.field public final r:Z
+
+.field public final s:Z
 
 
 # direct methods
-.method public constructor <init>(Lp4g;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Li4g;)V
+    .registers 4
 
-    iput-object p1, p0, Lj4g;->Y:Lp4g;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iget-boolean v0, p1, Li4g;->a:Z
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-boolean v0, p0, Lj4g;->a:Z
+
+    iget-boolean v0, p1, Li4g;->b:Z
+
+    iput-boolean v0, p0, Lj4g;->b:Z
+
+    iget-boolean v0, p1, Li4g;->c:Z
+
+    iput-boolean v0, p0, Lj4g;->c:Z
+
+    iget-boolean v0, p1, Li4g;->d:Z
+
+    iput-boolean v0, p0, Lj4g;->d:Z
+
+    iget-boolean v0, p1, Li4g;->e:Z
+
+    iput-boolean v0, p0, Lj4g;->e:Z
+
+    iget-boolean v0, p1, Li4g;->f:Z
+
+    iput-boolean v0, p0, Lj4g;->f:Z
+
+    iget-boolean v0, p1, Li4g;->g:Z
+
+    iput-boolean v0, p0, Lj4g;->g:Z
+
+    iget-boolean v0, p1, Li4g;->h:Z
+
+    iput-boolean v0, p0, Lj4g;->h:Z
+
+    iget-wide v0, p1, Li4g;->i:J
+
+    iput-wide v0, p0, Lj4g;->i:J
+
+    iget-wide v0, p1, Li4g;->j:J
+
+    iput-wide v0, p0, Lj4g;->j:J
+
+    iget-wide v0, p1, Li4g;->k:J
+
+    iput-wide v0, p0, Lj4g;->k:J
+
+    iget-object v0, p1, Li4g;->l:Le0c;
+
+    iput-object v0, p0, Lj4g;->l:Le0c;
+
+    iget-object v0, p1, Li4g;->m:Lmvf;
+
+    iput-object v0, p0, Lj4g;->m:Lmvf;
+
+    iget-object v0, p1, Li4g;->n:Lc10;
+
+    iput-object v0, p0, Lj4g;->n:Lc10;
+
+    iget-object v0, p1, Li4g;->o:Landroid/graphics/drawable/BitmapDrawable;
+
+    iput-object v0, p0, Lj4g;->o:Landroid/graphics/drawable/BitmapDrawable;
+
+    iget-object v0, p1, Li4g;->p:Landroid/net/Uri;
+
+    iput-object v0, p0, Lj4g;->p:Landroid/net/Uri;
+
+    iget-boolean v0, p1, Li4g;->q:Z
+
+    iput-boolean v0, p0, Lj4g;->q:Z
+
+    iget-boolean v0, p1, Li4g;->r:Z
+
+    iput-boolean v0, p0, Lj4g;->r:Z
+
+    iget-boolean p1, p1, Li4g;->s:Z
+
+    iput-boolean p1, p0, Lj4g;->s:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final a()Li4g;
+    .registers 4
 
-    check-cast p1, Lr04;
+    new-instance v0, Li4g;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0, p1, p2}, Lj4g;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-boolean v1, p0, Lj4g;->a:Z
 
-    move-result-object p0
+    iput-boolean v1, v0, Li4g;->a:Z
 
-    check-cast p0, Lj4g;
+    iget-boolean v1, p0, Lj4g;->b:Z
 
-    sget-object p1, Lncf;->a:Lncf;
+    iput-boolean v1, v0, Li4g;->b:Z
 
-    invoke-virtual {p0, p1}, Lj4g;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-boolean v1, p0, Lj4g;->c:Z
 
-    move-result-object p0
+    iput-boolean v1, v0, Li4g;->c:Z
 
-    return-object p0
-.end method
+    iget-boolean v1, p0, Lj4g;->d:Z
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+    iput-boolean v1, v0, Li4g;->d:Z
 
-    new-instance p1, Lj4g;
+    iget-boolean v1, p0, Lj4g;->e:Z
 
-    iget-object p0, p0, Lj4g;->Y:Lp4g;
+    iput-boolean v1, v0, Li4g;->e:Z
 
-    invoke-direct {p1, p0, p2}, Lj4g;-><init>(Lp4g;Lkotlin/coroutines/Continuation;)V
+    iget-boolean v1, p0, Lj4g;->f:Z
 
-    return-object p1
-.end method
+    iput-boolean v1, v0, Li4g;->f:Z
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 10
+    iget-boolean v1, p0, Lj4g;->g:Z
 
-    iget v0, p0, Lj4g;->X:I
+    iput-boolean v1, v0, Li4g;->g:Z
 
-    const/4 v1, 0x1
+    iget-boolean v1, p0, Lj4g;->h:Z
 
-    if-eqz v0, :cond_1
+    iput-boolean v1, v0, Li4g;->h:Z
 
-    if-ne v0, v1, :cond_0
+    iget-wide v1, p0, Lj4g;->i:J
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iput-wide v1, v0, Li4g;->i:J
 
-    return-object p1
+    iget-wide v1, p0, Lj4g;->j:J
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iput-wide v1, v0, Li4g;->j:J
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    iget-wide v1, p0, Lj4g;->k:J
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iput-wide v1, v0, Li4g;->k:J
 
-    throw p0
+    iget-object v1, p0, Lj4g;->l:Le0c;
 
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iput-object v1, v0, Li4g;->l:Le0c;
 
-    iget-object p1, p0, Lj4g;->Y:Lp4g;
+    iget-object v1, p0, Lj4g;->m:Lmvf;
 
-    iget-object v0, p1, Lp4g;->h:Lxh7;
+    iput-object v1, v0, Li4g;->m:Lmvf;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    iget-object v1, p0, Lj4g;->n:Lc10;
 
-    move-result-object v0
+    iput-object v1, v0, Li4g;->n:Lc10;
 
-    move-object v2, v0
+    iget-object v1, p0, Lj4g;->o:Landroid/graphics/drawable/BitmapDrawable;
 
-    check-cast v2, Lm3g;
+    iput-object v1, v0, Li4g;->o:Landroid/graphics/drawable/BitmapDrawable;
 
-    iget-wide v3, p1, Lp4g;->a:J
+    iget-object v1, p0, Lj4g;->p:Landroid/net/Uri;
 
-    iget-wide v5, p1, Lp4g;->b:J
+    iput-object v1, v0, Li4g;->p:Landroid/net/Uri;
 
-    iput v1, p0, Lj4g;->X:I
+    iget-boolean v1, p0, Lj4g;->q:Z
 
-    move-object v7, p0
+    iput-boolean v1, v0, Li4g;->q:Z
 
-    invoke-virtual/range {v2 .. v7}, Lm3g;->a(JJLxie;)Ljava/lang/Object;
+    iget-boolean v1, p0, Lj4g;->r:Z
 
-    move-result-object p0
+    iput-boolean v1, v0, Li4g;->r:Z
 
-    sget-object p1, Ls04;->a:Ls04;
+    iget-boolean p0, p0, Lj4g;->s:Z
 
-    if-ne p0, p1, :cond_2
+    iput-boolean p0, v0, Li4g;->s:Z
 
-    return-object p1
-
-    :cond_2
-    return-object p0
+    return-object v0
 .end method

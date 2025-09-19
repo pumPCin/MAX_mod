@@ -1,26 +1,63 @@
 .class public final Lkq2;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lpq2;
 
 
 # instance fields
-.field public final a:Lvte;
+.field public X:I
 
-.field public final b:Ljava/util/List;
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lax9;
+
+.field public o:Z
+
+.field public r0:I
 
 
 # direct methods
-.method public constructor <init>(Lvte;Ljava/util/List;)V
+.method public constructor <init>(Lax9;Ljx3;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lkq2;->Z:Lax9;
 
-    iput-object p1, p0, Lkq2;->a:Lvte;
-
-    iput-object p2, p0, Lkq2;->b:Ljava/util/List;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 10
+
+    iput-object p1, p0, Lkq2;->Y:Ljava/lang/Object;
+
+    iget p1, p0, Lkq2;->r0:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lkq2;->r0:I
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    iget-object v0, p0, Lkq2;->Z:Lax9;
+
+    const-wide/16 v1, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    move-object v7, p0
+
+    invoke-virtual/range {v0 .. v7}, Lax9;->f(JILqu0;Ll56;ZLjx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

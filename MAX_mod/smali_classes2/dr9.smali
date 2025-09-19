@@ -1,133 +1,137 @@
 .class public final Ldr9;
-.super Ljava/lang/Object;
+.super Ly2;
 .source "SourceFile"
+
+# interfaces
+.implements Lnr9;
 
 
 # instance fields
-.field public final a:I
+.field public X:Lru/ok/messages/video/widgets/VideoView;
 
-.field public final b:Ljava/lang/Integer;
+.field public final o:[F
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/Integer;)V
+.method public constructor <init>(Landroid/content/Context;[F)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Ly2;-><init>(Landroid/content/Context;)V
 
-    iput p1, p0, Ldr9;->a:I
+    iput-object p2, p0, Ldr9;->o:[F
 
-    iput-object p2, p0, Ldr9;->b:Ljava/lang/Integer;
+    sget p1, Lz8c;->view_raw_video_player:I
+
+    const/4 p2, 0x0
+
+    invoke-virtual {p0, p2, p1}, Ly2;->l(Landroid/view/ViewGroup;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Ldr9;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Ldr9;
-
-    iget v1, p0, Ldr9;->a:I
-
-    iget v3, p1, Ldr9;->a:I
-
-    if-eq v1, v3, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Ldr9;->b:Ljava/lang/Integer;
-
-    iget-object p1, p1, Ldr9;->b:Ljava/lang/Integer;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget v0, p0, Ldr9;->a:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Ldr9;->b:Ljava/lang/Integer;
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    :goto_0
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final a(II)V
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p0, Ldr9;->X:Lru/ok/messages/video/widgets/VideoView;
 
-    const-string v1, "NeuroAvatarScrollEvent(tabIndex="
+    invoke-virtual {p0}, Lru/ok/messages/video/widgets/VideoView;->d()V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    return-void
+.end method
 
-    iget v1, p0, Ldr9;->a:I
+.method public final b(Lz5g;)V
+    .registers 2
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Ldr9;->X:Lru/ok/messages/video/widgets/VideoView;
 
-    const-string v1, ", firstIndex="
+    invoke-virtual {p0, p1}, Lru/ok/messages/video/widgets/VideoView;->a(Lz5g;)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
+.end method
 
-    iget-object p0, p0, Ldr9;->b:Ljava/lang/Integer;
+.method public final d(Lj4g;)V
+    .registers 2
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    return-void
+.end method
 
-    const-string p0, ")"
+.method public final e()Landroid/graphics/drawable/BitmapDrawable;
+    .registers 1
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Ldr9;->X:Lru/ok/messages/video/widgets/VideoView;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Lru/ok/messages/video/widgets/VideoView;->getVideoScreenShot()Landroid/graphics/drawable/BitmapDrawable;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final m()V
+    .registers 5
+
+    iget-object v0, p0, Ldr9;->o:[F
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Ly2;->c:Ljava/lang/Object;
+
+    check-cast v1, Landroid/view/View;
+
+    check-cast v1, Lru/ok/utils/widgets/RoundedRectFrameLayout;
+
+    invoke-virtual {v1, v0}, Lru/ok/utils/widgets/RoundedRectFrameLayout;->setCornersRadii([F)V
+
+    :cond_0
+    iget-object v0, p0, Ly2;->c:Ljava/lang/Object;
+
+    check-cast v0, Landroid/view/View;
+
+    sget v1, Lb8c;->view_raw_video_player__v_video:I
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lru/ok/messages/video/widgets/VideoView;
+
+    iput-object v0, p0, Ldr9;->X:Lru/ok/messages/video/widgets/VideoView;
+
+    new-instance v1, Lu84;
+
+    new-instance v2, Lux5;
+
+    const/16 v3, 0x19
+
+    invoke-direct {v2, v3, p0}, Lux5;-><init>(ILjava/lang/Object;)V
+
+    const/4 v3, 0x0
+
+    invoke-direct {v1, v2, v3}, Lu84;-><init>(Landroid/view/View$OnClickListener;I)V
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    new-instance v0, Lam0;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, v1, p0}, Lam0;-><init>(ILjava/lang/Object;)V
+
+    iget-object p0, p0, Ldr9;->X:Lru/ok/messages/video/widgets/VideoView;
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+
+    return-void
+.end method
+
+.method public final release()V
+    .registers 1
+
+    iget-object p0, p0, Ldr9;->X:Lru/ok/messages/video/widgets/VideoView;
+
+    invoke-virtual {p0}, Lru/ok/messages/video/widgets/VideoView;->b()V
+
+    return-void
 .end method

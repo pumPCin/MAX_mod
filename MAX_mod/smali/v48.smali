@@ -1,403 +1,498 @@
 .class public final Lv48;
-.super Lx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic d:I
+.field public final a:Lhd0;
+
+.field public final b:Ljava/lang/CharSequence;
+
+.field public final c:Lxg1;
+
+.field public final d:Z
+
+.field public final e:Z
+
+.field public final f:Z
+
+.field public final g:Z
+
+.field public final h:Lhrf;
+
+.field public final i:Z
+
+.field public final j:Z
+
+.field public final k:I
+
+.field public final l:Ljava/lang/CharSequence;
+
+.field public final m:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .registers 2
+.method public constructor <init>(Lhd0;Ljava/lang/CharSequence;Lxg1;ZZZZLhrf;ZZILandroid/text/SpannableStringBuilder;Ljava/lang/String;)V
+    .registers 14
 
-    iput p1, p0, Lv48;->d:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Lx3;-><init>()V
+    iput-object p1, p0, Lv48;->a:Lhd0;
+
+    iput-object p2, p0, Lv48;->b:Ljava/lang/CharSequence;
+
+    iput-object p3, p0, Lv48;->c:Lxg1;
+
+    iput-boolean p4, p0, Lv48;->d:Z
+
+    iput-boolean p5, p0, Lv48;->e:Z
+
+    iput-boolean p6, p0, Lv48;->f:Z
+
+    iput-boolean p7, p0, Lv48;->g:Z
+
+    iput-object p8, p0, Lv48;->h:Lhrf;
+
+    iput-boolean p9, p0, Lv48;->i:Z
+
+    iput-boolean p10, p0, Lv48;->j:Z
+
+    iput p11, p0, Lv48;->k:I
+
+    iput-object p12, p0, Lv48;->l:Ljava/lang/CharSequence;
+
+    iput-object p13, p0, Lv48;->m:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public c(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+.method public final equals(Ljava/lang/Object;)Z
     .registers 4
 
-    iget v0, p0, Lv48;->d:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1, p2}, Lx3;->c(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
-
-    return-void
-
-    :pswitch_0
-    invoke-super {p0, p1, p2}, Lx3;->c(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
-
-    check-cast p1, Landroidx/core/widget/NestedScrollView;
-
-    const-class p0, Landroid/widget/ScrollView;
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
-
-    move-result p0
-
-    if-lez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setScrollable(Z)V
-
-    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
-
-    move-result p0
-
-    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setScrollX(I)V
-
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
-
-    move-result p0
-
-    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setScrollY(I)V
-
-    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
-
-    move-result p0
-
-    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setMaxScrollX(I)V
-
-    invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
-
-    move-result p0
-
-    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setMaxScrollY(I)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x3
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final d(Landroid/view/View;Li4;)V
-    .registers 4
-
-    iget v0, p0, Lv48;->d:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lx3;->a:Landroid/view/View$AccessibilityDelegate;
-
-    iget-object v0, p2, Li4;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
-
-    invoke-virtual {p0, p1, v0}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
-
-    check-cast p1, Landroidx/core/widget/NestedScrollView;
-
-    const-class p0, Landroid/widget/ScrollView;
-
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p2, p0}, Li4;->h(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {p1}, Landroid/view/View;->isEnabled()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
-
-    move-result p0
-
-    if-lez p0, :cond_1
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p2, v0}, Li4;->j(Z)V
-
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
-
-    move-result v0
-
-    if-lez v0, :cond_0
-
-    sget-object v0, Lc4;->g:Lc4;
-
-    invoke-virtual {p2, v0}, Li4;->b(Lc4;)V
-
-    sget-object v0, Lc4;->k:Lc4;
-
-    invoke-virtual {p2, v0}, Li4;->b(Lc4;)V
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
-
-    move-result p1
-
-    if-ge p1, p0, :cond_1
-
-    sget-object p0, Lc4;->f:Lc4;
-
-    invoke-virtual {p2, p0}, Li4;->b(Lc4;)V
-
-    sget-object p0, Lc4;->l:Lc4;
-
-    invoke-virtual {p2, p0}, Li4;->b(Lc4;)V
-
-    :cond_1
-    return-void
-
-    :pswitch_0
-    iget-object p2, p2, Li4;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
-
-    iget-object p0, p0, Lx3;->a:Landroid/view/View$AccessibilityDelegate;
-
-    invoke-virtual {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
-
-    const/4 p0, 0x0
-
-    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCollectionInfo(Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;)V
-
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lx3;->a:Landroid/view/View$AccessibilityDelegate;
-
-    iget-object v0, p2, Li4;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
-
-    invoke-virtual {p0, p1, v0}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
-
-    const/4 p0, 0x0
-
-    invoke-virtual {p2, p0}, Li4;->j(Z)V
-
-    return-void
-
-    :pswitch_2
-    iget-object p2, p2, Li4;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
-
-    iget-object p0, p0, Lx3;->a:Landroid/view/View$AccessibilityDelegate;
-
-    invoke-virtual {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
-
-    const/4 p0, 0x0
-
-    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCollectionInfo(Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public g(Landroid/view/View;ILandroid/os/Bundle;)Z
-    .registers 7
-
-    iget v0, p0, Lv48;->d:I
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-super {p0, p1, p2, p3}, Lx3;->g(Landroid/view/View;ILandroid/os/Bundle;)Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    invoke-super {p0, p1, p2, p3}, Lx3;->g(Landroid/view/View;ILandroid/os/Bundle;)Z
-
-    move-result p0
-
-    const/4 p3, 0x1
-
-    if-eqz p0, :cond_0
+    if-ne p0, p1, :cond_0
 
     goto/16 :goto_1
 
     :cond_0
-    check-cast p1, Landroidx/core/widget/NestedScrollView;
+    instance-of v0, p1, Lv48;
 
-    invoke-virtual {p1}, Landroid/view/View;->isEnabled()Z
-
-    move-result p0
-
-    const/4 v0, 0x0
-
-    if-nez p0, :cond_1
+    if-nez v0, :cond_1
 
     goto/16 :goto_0
 
     :cond_1
-    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+    check-cast p1, Lv48;
 
-    move-result p0
+    iget-object v0, p0, Lv48;->a:Lhd0;
 
-    new-instance v1, Landroid/graphics/Rect;
+    iget-object v1, p1, Lv48;->a:Lhd0;
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p1}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
+    move-result v0
 
-    move-result-object v2
+    if-nez v0, :cond_2
 
-    invoke-virtual {v2}, Landroid/graphics/Matrix;->isIdentity()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {p1, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
-
-    move-result p0
+    goto/16 :goto_0
 
     :cond_2
-    const/16 v1, 0x1000
+    iget-object v0, p0, Lv48;->b:Ljava/lang/CharSequence;
 
-    if-eq p2, v1, :cond_4
+    iget-object v1, p1, Lv48;->b:Ljava/lang/CharSequence;
 
-    const/16 v1, 0x2000
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eq p2, v1, :cond_3
+    move-result v0
 
-    const v1, 0x1020038
-
-    if-eq p2, v1, :cond_3
-
-    const v1, 0x102003a
-
-    if-eq p2, v1, :cond_4
+    if-nez v0, :cond_3
 
     goto :goto_0
 
     :cond_3
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingBottom()I
+    iget-object v0, p0, Lv48;->c:Lxg1;
 
-    move-result p2
+    iget-object v1, p1, Lv48;->c:Lxg1;
 
-    sub-int/2addr p0, p2
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
+    move-result v0
 
-    move-result p2
+    if-nez v0, :cond_4
 
-    sub-int/2addr p0, p2
-
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
-
-    move-result p2
-
-    sub-int/2addr p2, p0
-
-    invoke-static {p2, v0}, Ljava/lang/Math;->max(II)I
-
-    move-result p0
-
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
-
-    move-result p2
-
-    if-eq p0, p2, :cond_5
-
-    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
-
-    move-result p2
-
-    sub-int/2addr v0, p2
-
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
-
-    move-result p2
-
-    sub-int/2addr p0, p2
-
-    invoke-virtual {p1, v0, p0, p3}, Landroidx/core/widget/NestedScrollView;->v(IIZ)V
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_4
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingBottom()I
+    iget-boolean v0, p0, Lv48;->d:Z
 
-    move-result p2
+    iget-boolean v1, p1, Lv48;->d:Z
 
-    sub-int/2addr p0, p2
+    if-eq v0, v1, :cond_5
 
-    invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
+    goto :goto_0
 
-    move-result p2
+    :cond_5
+    iget-boolean v0, p0, Lv48;->e:Z
 
-    sub-int/2addr p0, p2
+    iget-boolean v1, p1, Lv48;->e:Z
 
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+    if-eq v0, v1, :cond_6
 
-    move-result p2
+    goto :goto_0
 
-    add-int/2addr p2, p0
+    :cond_6
+    iget-boolean v0, p0, Lv48;->f:Z
 
-    invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
+    iget-boolean v1, p1, Lv48;->f:Z
+
+    if-eq v0, v1, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    iget-boolean v0, p0, Lv48;->g:Z
+
+    iget-boolean v1, p1, Lv48;->g:Z
+
+    if-eq v0, v1, :cond_8
+
+    goto :goto_0
+
+    :cond_8
+    iget-object v0, p0, Lv48;->h:Lhrf;
+
+    iget-object v1, p1, Lv48;->h:Lhrf;
+
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_9
+
+    goto :goto_0
+
+    :cond_9
+    iget-boolean v0, p0, Lv48;->i:Z
+
+    iget-boolean v1, p1, Lv48;->i:Z
+
+    if-eq v0, v1, :cond_a
+
+    goto :goto_0
+
+    :cond_a
+    iget-boolean v0, p0, Lv48;->j:Z
+
+    iget-boolean v1, p1, Lv48;->j:Z
+
+    if-eq v0, v1, :cond_b
+
+    goto :goto_0
+
+    :cond_b
+    iget v0, p0, Lv48;->k:I
+
+    iget v1, p1, Lv48;->k:I
+
+    if-eq v0, v1, :cond_c
+
+    goto :goto_0
+
+    :cond_c
+    iget-object v0, p0, Lv48;->l:Ljava/lang/CharSequence;
+
+    iget-object v1, p1, Lv48;->l:Ljava/lang/CharSequence;
+
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_d
+
+    goto :goto_0
+
+    :cond_d
+    iget-object p0, p0, Lv48;->m:Ljava/lang/String;
+
+    iget-object p1, p1, Lv48;->m:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
-    invoke-static {p2, p0}, Ljava/lang/Math;->min(II)I
+    if-nez p0, :cond_e
 
-    move-result p0
+    :goto_0
+    const/4 p0, 0x0
 
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+    return p0
 
-    move-result p2
+    :cond_e
+    :goto_1
+    const/4 p0, 0x1
 
-    if-eq p0, p2, :cond_5
+    return p0
+.end method
 
-    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
+.method public final hashCode()I
+    .registers 5
 
-    move-result p2
+    const/4 v0, 0x0
 
-    sub-int/2addr v0, p2
+    iget-object v1, p0, Lv48;->a:Lhd0;
 
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+    if-nez v1, :cond_0
 
-    move-result p2
+    move v1, v0
 
-    sub-int/2addr p0, p2
+    goto :goto_0
 
-    invoke-virtual {p1, v0, p0, p3}, Landroidx/core/widget/NestedScrollView;->v(IIZ)V
+    :cond_0
+    invoke-virtual {v1}, Lhd0;->hashCode()I
+
+    move-result v1
+
+    :goto_0
+    const/16 v2, 0x1f
+
+    mul-int/2addr v1, v2
+
+    iget-object v3, p0, Lv48;->b:Ljava/lang/CharSequence;
+
+    if-nez v3, :cond_1
+
+    move v3, v0
 
     goto :goto_1
 
-    :cond_5
-    :goto_0
-    move p3, v0
+    :cond_1
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
 
     :goto_1
-    return p3
+    add-int/2addr v1, v3
 
-    :pswitch_data_0
-    .packed-switch 0x3
-        :pswitch_0
-    .end packed-switch
+    mul-int/2addr v1, v2
+
+    iget-object v3, p0, Lv48;->c:Lxg1;
+
+    if-nez v3, :cond_2
+
+    move v3, v0
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {v3}, Lxg1;->hashCode()I
+
+    move-result v3
+
+    :goto_2
+    add-int/2addr v1, v3
+
+    mul-int/2addr v1, v2
+
+    iget-boolean v3, p0, Lv48;->d:Z
+
+    invoke-static {v1, v2, v3}, Lsq3;->e(IIZ)I
+
+    move-result v1
+
+    iget-boolean v3, p0, Lv48;->e:Z
+
+    invoke-static {v1, v2, v3}, Lsq3;->e(IIZ)I
+
+    move-result v1
+
+    iget-boolean v3, p0, Lv48;->f:Z
+
+    invoke-static {v1, v2, v3}, Lsq3;->e(IIZ)I
+
+    move-result v1
+
+    iget-boolean v3, p0, Lv48;->g:Z
+
+    invoke-static {v1, v2, v3}, Lsq3;->e(IIZ)I
+
+    move-result v1
+
+    iget-object v3, p0, Lv48;->h:Lhrf;
+
+    if-nez v3, :cond_3
+
+    move v3, v0
+
+    goto :goto_3
+
+    :cond_3
+    invoke-virtual {v3}, Lhrf;->hashCode()I
+
+    move-result v3
+
+    :goto_3
+    add-int/2addr v1, v3
+
+    mul-int/2addr v1, v2
+
+    iget-boolean v3, p0, Lv48;->i:Z
+
+    invoke-static {v1, v2, v3}, Lsq3;->e(IIZ)I
+
+    move-result v1
+
+    iget-boolean v3, p0, Lv48;->j:Z
+
+    invoke-static {v1, v2, v3}, Lsq3;->e(IIZ)I
+
+    move-result v1
+
+    iget v3, p0, Lv48;->k:I
+
+    invoke-static {v3, v1, v2}, Lbg9;->h(III)I
+
+    move-result v1
+
+    iget-object v3, p0, Lv48;->l:Ljava/lang/CharSequence;
+
+    if-nez v3, :cond_4
+
+    move v3, v0
+
+    goto :goto_4
+
+    :cond_4
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
+
+    :goto_4
+    add-int/2addr v1, v3
+
+    mul-int/2addr v1, v2
+
+    iget-object p0, p0, Lv48;->m:Ljava/lang/String;
+
+    if-nez p0, :cond_5
+
+    goto :goto_5
+
+    :cond_5
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    :goto_5
+    add-int/2addr v1, v0
+
+    return v1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "MainSpeakerState(avatar="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lv48;->a:Lhd0;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", name="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lv48;->b:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", id="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lv48;->c:Lxg1;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isTalking="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v1, p0, Lv48;->d:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isConnectedOnce="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isUserConnectionOnce="
+
+    const-string v2, ", isConnecting="
+
+    iget-boolean v3, p0, Lv48;->e:Z
+
+    iget-boolean v4, p0, Lv48;->f:Z
+
+    invoke-static {v1, v2, v0, v3, v4}, Lmw1;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
+
+    iget-boolean v1, p0, Lv48;->g:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", videoState="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lv48;->h:Lhrf;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isMe="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isRaiseHand="
+
+    const-string v2, ", talkingState="
+
+    iget-boolean v3, p0, Lv48;->i:Z
+
+    iget-boolean v4, p0, Lv48;->j:Z
+
+    invoke-static {v1, v2, v0, v3, v4}, Lmw1;->s(Ljava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;ZZ)V
+
+    iget v1, p0, Lv48;->k:I
+
+    invoke-static {v1}, Lmhc;->m(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", label="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lv48;->l:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", userNameAccessibility="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    iget-object p0, p0, Lv48;->m:Ljava/lang/String;
+
+    invoke-static {v0, p0, v1}, Lyv7;->k(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

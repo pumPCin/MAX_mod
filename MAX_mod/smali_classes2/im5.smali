@@ -1,139 +1,213 @@
 .class public final Lim5;
-.super Lxie;
+.super Lx7g;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final synthetic w0:[Lxi7;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final X:J
 
-.field public final synthetic Y:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final Y:Ljava/lang/String;
 
-.field public final synthetic Z:Lom5;
+.field public final Z:Ljava/lang/String;
 
-.field public final synthetic n0:Ljava/nio/channels/AsynchronousFileChannel;
+.field public final b:J
 
-.field public final synthetic o0:Ljava/util/concurrent/atomic/AtomicReference;
+.field public final c:J
 
-.field public final synthetic p0:Llcb;
+.field public final o:Ljava/lang/String;
+
+.field public final r0:Lcl7;
+
+.field public final s0:Lcl7;
+
+.field public final t0:Lcl7;
+
+.field public final u0:Lcl7;
+
+.field public final v0:Lncb;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lom5;Ljava/nio/channels/AsynchronousFileChannel;Ljava/util/concurrent/atomic/AtomicReference;Llcb;Lkotlin/coroutines/Continuation;)V
-    .registers 7
+.method static constructor <clinit>()V
+    .registers 4
 
-    iput-object p1, p0, Lim5;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance v0, Lmo9;
 
-    iput-object p2, p0, Lim5;->Z:Lom5;
+    const-string v1, "downloadJob"
 
-    iput-object p3, p0, Lim5;->n0:Ljava/nio/channels/AsynchronousFileChannel;
+    const-string v2, "getDownloadJob()Lkotlinx/coroutines/Job;"
 
-    iput-object p4, p0, Lim5;->o0:Ljava/util/concurrent/atomic/AtomicReference;
+    const-class v3, Lim5;
 
-    iput-object p5, p0, Lim5;->p0:Llcb;
+    invoke-direct {v0, v3, v1, v2}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 p1, 0x2
+    sget-object v1, Ljpc;->a:Lkpc;
 
-    invoke-direct {p0, p1, p6}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lxi7;
+
+    const/4 v2, 0x0
+
+    aput-object v0, v1, v2
+
+    sput-object v1, Lim5;->w0:[Lxi7;
+
+    return-void
+.end method
+
+.method public constructor <init>(JJLjava/lang/String;JLjava/lang/String;Ljava/lang/String;)V
+    .registers 15
+
+    sget-object v0, Ldm5;->a:Ldm5;
+
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v1
+
+    const-class v2, Lxwe;
+
+    invoke-virtual {v1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v2
+
+    const-class v3, Lsk5;
+
+    invoke-virtual {v2, v3}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v3
+
+    const-class v4, Ljnf;
+
+    invoke-virtual {v3, v4}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Lscout/Component;->getAccessor()Lz4;
+
+    move-result-object v0
+
+    const-class v4, Lyz2;
+
+    invoke-virtual {v0, v4}, Lz4;->d(Ljava/lang/Class;)Lzte;
+
+    move-result-object v0
+
+    invoke-direct {p0}, Lx7g;-><init>()V
+
+    iput-wide p1, p0, Lim5;->b:J
+
+    iput-wide p3, p0, Lim5;->c:J
+
+    iput-object p5, p0, Lim5;->o:Ljava/lang/String;
+
+    iput-wide p6, p0, Lim5;->X:J
+
+    iput-object p8, p0, Lim5;->Y:Ljava/lang/String;
+
+    iput-object p9, p0, Lim5;->Z:Ljava/lang/String;
+
+    iput-object v1, p0, Lim5;->r0:Lcl7;
+
+    iput-object v2, p0, Lim5;->s0:Lcl7;
+
+    iput-object v3, p0, Lim5;->t0:Lcl7;
+
+    iput-object v0, p0, Lim5;->u0:Lcl7;
+
+    invoke-static {}, Lmq0;->L()Lncb;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lim5;->v0:Lncb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final p()V
+    .registers 6
 
-    check-cast p1, Lyye;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lim5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lim5;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lim5;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 10
-
-    new-instance v0, Lim5;
-
-    iget-object v4, p0, Lim5;->o0:Ljava/util/concurrent/atomic/AtomicReference;
-
-    iget-object v5, p0, Lim5;->p0:Llcb;
-
-    iget-object v1, p0, Lim5;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iget-object v2, p0, Lim5;->Z:Lom5;
-
-    iget-object v3, p0, Lim5;->n0:Ljava/nio/channels/AsynchronousFileChannel;
-
-    move-object v6, p2
-
-    invoke-direct/range {v0 .. v6}, Lim5;-><init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lom5;Ljava/nio/channels/AsynchronousFileChannel;Ljava/util/concurrent/atomic/AtomicReference;Llcb;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lim5;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lim5;->X:Ljava/lang/Object;
-
-    move-object v2, p1
-
-    check-cast v2, Lyye;
-
-    iget-object v4, p0, Lim5;->Y:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result p1
-
-    sget-object v8, Lncf;->a:Lncf;
-
-    if-nez p1, :cond_0
-
-    return-object v8
-
-    :cond_0
-    iget-object v1, p0, Lim5;->Z:Lom5;
-
-    iget-object p1, v1, Lom5;->q:Lkotlinx/coroutines/internal/ContextScope;
-
-    iget-object v9, v1, Lom5;->p:Lmb7;
-
-    new-instance v0, Lhm5;
-
-    iget-object v6, p0, Lim5;->p0:Llcb;
-
-    const/4 v7, 0x0
-
-    iget-object v3, p0, Lim5;->n0:Ljava/nio/channels/AsynchronousFileChannel;
-
-    iget-object v5, p0, Lim5;->o0:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-direct/range {v0 .. v7}, Lhm5;-><init>(Lom5;Lyye;Ljava/nio/channels/AsynchronousFileChannel;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicReference;Llcb;Lkotlin/coroutines/Continuation;)V
-
-    const/4 p0, 0x2
+    sget-object v0, Lim5;->w0:[Lxi7;
 
     const/4 v1, 0x0
 
-    invoke-static {p1, v9, v1, v0, p0}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
+    aget-object v2, v0, v1
 
-    return-object v8
+    iget-object v3, p0, Lim5;->v0:Lncb;
+
+    invoke-virtual {v3, p0, v2}, Lncb;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lqe7;
+
+    const/4 v4, 0x0
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v2, v4}, Lqe7;->cancel(Ljava/util/concurrent/CancellationException;)V
+
+    :cond_0
+    aget-object v0, v0, v1
+
+    invoke-virtual {v3, p0, v0, v4}, Lncb;->h0(Ljava/lang/Object;Lxi7;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final q()Lj7e;
+    .registers 4
+
+    iget-object v0, p0, Lim5;->u0:Lcl7;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lyz2;
+
+    iget-wide v1, p0, Lim5;->b:J
+
+    check-cast v0, Ly03;
+
+    invoke-virtual {v0, v1, v2}, Ly03;->N(J)Liic;
+
+    move-result-object p0
+
+    iget-object p0, p0, Liic;->a:Lrce;
+
+    invoke-interface {p0}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ls72;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    :cond_0
+    invoke-static {p0}, Lzxa;->b(Ls72;)Lj7e;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,115 +1,223 @@
-.class public final Lhx1;
-.super Lgng;
+.class public final synthetic Lhx1;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lrs1;
+.implements Lvt;
 
-# static fields
-.field public static final X:Lz90;
 
-.field public static final Y:Lz90;
+# instance fields
+.field public final synthetic a:I
 
-.field public static final Z:Lz90;
-
-.field public static final c:Lz90;
-
-.field public static final n0:Lz90;
-
-.field public static final o:Lz90;
+.field public final synthetic b:Ljx1;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public synthetic constructor <init>(Ljx1;I)V
+    .registers 3
 
-    new-instance v0, Lz90;
+    iput p2, p0, Lhx1;->a:I
 
-    const-string v1, "camera2.captureRequest.templateType"
+    iput-object p1, p0, Lhx1;->b:Ljx1;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v1, v2, v3}, Lz90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
-
-    sput-object v0, Lhx1;->c:Lz90;
-
-    new-instance v0, Lz90;
-
-    const-string v1, "camera2.cameraCaptureSession.streamUseCase"
-
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
-
-    invoke-direct {v0, v1, v2, v3}, Lz90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
-
-    sput-object v0, Lhx1;->o:Lz90;
-
-    new-instance v0, Lz90;
-
-    const-string v1, "camera2.cameraDevice.stateCallback"
-
-    const-class v2, Landroid/hardware/camera2/CameraDevice$StateCallback;
-
-    invoke-direct {v0, v1, v2, v3}, Lz90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
-
-    sput-object v0, Lhx1;->X:Lz90;
-
-    new-instance v0, Lz90;
-
-    const-string v1, "camera2.cameraCaptureSession.stateCallback"
-
-    const-class v2, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
-
-    invoke-direct {v0, v1, v2, v3}, Lz90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
-
-    sput-object v0, Lhx1;->Y:Lz90;
-
-    new-instance v0, Lz90;
-
-    const-string v1, "camera2.cameraCaptureSession.captureCallback"
-
-    const-class v2, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
-
-    invoke-direct {v0, v1, v2, v3}, Lz90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
-
-    sput-object v0, Lhx1;->Z:Lz90;
-
-    new-instance v0, Lz90;
-
-    const-string v1, "camera2.cameraCaptureSession.physicalCameraId"
-
-    const-class v2, Ljava/lang/String;
-
-    invoke-direct {v0, v1, v2, v3}, Lz90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
-
-    sput-object v0, Lhx1;->n0:Lz90;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static g0(Landroid/hardware/camera2/CaptureRequest$Key;)Lz90;
-    .registers 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+# virtual methods
+.method public apply(Ljava/lang/Object;)Lgt7;
+    .registers 10
 
-    const-string v1, "camera2.captureRequest.option."
+    iget v0, p0, Lhx1;->a:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    check-cast p1, Ljava/lang/Void;
 
-    invoke-virtual {p0}, Landroid/hardware/camera2/CaptureRequest$Key;->getName()Ljava/lang/String;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v1
+    sget-wide v0, Ljx1;->f:J
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lhx1;->b:Ljx1;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v4, p0, Ljx1;->c:Ljava/util/concurrent/ScheduledExecutorService;
 
-    move-result-object v0
+    iget-object p0, p0, Ljx1;->a:Lew1;
 
-    new-instance v1, Lz90;
+    new-instance p1, Ldq0;
 
-    const-class v2, Ljava/lang/Object;
+    const/16 v2, 0xb
 
-    invoke-direct {v1, v0, v2, p0}, Lz90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+    invoke-direct {p1, v2}, Ldq0;-><init>(I)V
 
-    return-object v1
+    sget-object v2, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+
+    move-result-wide v5
+
+    new-instance v0, Lgx1;
+
+    invoke-direct {v0, p1}, Lgx1;-><init>(Ldq0;)V
+
+    invoke-virtual {p0, v0}, Lew1;->p(Ldw1;)V
+
+    new-instance p1, Law1;
+
+    const/4 v1, 0x6
+
+    invoke-direct {p1, p0, v1, v0}, Law1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    iget-object p0, p0, Lew1;->c:Lpid;
+
+    iget-object v3, v0, Lgx1;->b:Lts1;
+
+    iget-object v0, v3, Lts1;->b:Lss1;
+
+    invoke-virtual {v0, p1, p0}, Lq3;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    new-instance v2, Lfa2;
+
+    const/4 v7, 0x7
+
+    invoke-direct/range {v2 .. v7}, Lfa2;-><init>(Ljava/lang/Object;Ljava/lang/Object;JI)V
+
+    invoke-static {v2}, Lf54;->l(Lrs1;)Lts1;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    iget-object p0, p0, Lhx1;->b:Ljx1;
+
+    iget-object p0, p0, Ljx1;->a:Lew1;
+
+    iget-object p0, p0, Lew1;->h:Lqx5;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p1, Lar5;
+
+    const/4 v0, 0x2
+
+    invoke-direct {p1, v0, p0}, Lar5;-><init>(ILjava/lang/Object;)V
+
+    invoke-static {p1}, Lf54;->l(Lrs1;)Lts1;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_1
+    new-instance p1, Lhx1;
+
+    const/4 v0, 0x0
+
+    iget-object p0, p0, Lhx1;->b:Ljx1;
+
+    invoke-direct {p1, p0, v0}, Lhx1;-><init>(Ljx1;I)V
+
+    invoke-static {p1}, Lf54;->l(Lrs1;)Lts1;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_2
+    iget-object p0, p0, Lhx1;->b:Ljx1;
+
+    iget-object p0, p0, Ljx1;->a:Lew1;
+
+    iget-object p0, p0, Lew1;->h:Lqx5;
+
+    iget-object p1, p0, Lqx5;->a:Lew1;
+
+    iget-object p1, p1, Lew1;->e:Lly1;
+
+    const/4 v0, 0x5
+
+    invoke-static {p1, v0}, Lew1;->t(Lly1;I)I
+
+    move-result p1
+
+    if-eq p1, v0, :cond_0
+
+    sget-object p0, Lp27;->c:Lp27;
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Lri4;
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x1
+
+    invoke-direct {p1, p0, v1, v0}, Lri4;-><init>(Ljava/lang/Object;ZI)V
+
+    invoke-static {p1}, Lf54;->l(Lrs1;)Lts1;
+
+    move-result-object p0
+
+    :goto_0
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public t(Lqs1;)Ljava/lang/String;
+    .registers 5
+
+    iget-object p0, p0, Lhx1;->b:Ljx1;
+
+    iget-object v0, p0, Ljx1;->e:Lj9e;
+
+    iget-object v0, v0, Lj9e;->a:Ljava/lang/Object;
+
+    check-cast v0, Landroidx/camera/camera2/internal/compat/quirk/TorchFlashRequiredFor3aUpdateQuirk;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, v0, Landroidx/camera/camera2/internal/compat/quirk/TorchFlashRequiredFor3aUpdateQuirk;->a:Lly1;
+
+    const/4 v2, 0x5
+
+    invoke-static {v0, v2}, Lew1;->t(Lly1;I)I
+
+    move-result v0
+
+    if-ne v0, v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p0, p0, Ljx1;->a:Lew1;
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Lew1;->r(Z)V
+
+    invoke-virtual {p1, v1}, Lqs1;->b(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p1, v1}, Lqs1;->b(Ljava/lang/Object;)Z
+
+    :goto_1
+    const-string p0, "EnableTorchInternal"
+
+    return-object p0
 .end method

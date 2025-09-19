@@ -1,277 +1,102 @@
 .class public final Los3;
-.super Lsoe;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public X:I
+.field public final a:Ljava/lang/String;
 
-.field public c:Ljava/util/List;
+.field public final b:Lns3;
 
-.field public o:Ljava/util/List;
+.field public final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lu09;)V
-    .registers 2
+.method public constructor <init>(Ljava/lang/String;Lns3;Ljava/lang/String;)V
+    .registers 4
 
-    invoke-direct {p0, p1}, Lsoe;-><init>(Lu09;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object p1, p0, Los3;->c:Ljava/util/List;
+    iput-object p1, p0, Los3;->a:Ljava/lang/String;
 
-    if-nez p1, :cond_0
+    iput-object p2, p0, Los3;->b:Lns3;
 
-    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+    iput-object p3, p0, Los3;->c:Ljava/lang/String;
 
-    iput-object p1, p0, Los3;->c:Ljava/util/List;
-
-    :cond_0
-    iget-object p1, p0, Los3;->o:Ljava/util/List;
-
-    if-nez p1, :cond_1
-
-    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
-
-    iput-object p1, p0, Los3;->o:Ljava/util/List;
-
-    :cond_1
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Lu09;Ljava/lang/String;)V
-    .registers 7
+.method public final a()Ljava/lang/String;
+    .registers 4
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v0, Lns3;->b:Lns3;
 
-    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
+    iget-object v1, p0, Los3;->a:Ljava/lang/String;
 
-    move-result v0
+    iget-object v2, p0, Los3;->b:Lns3;
 
-    const/4 v1, 0x0
+    if-eq v2, v0, :cond_0
 
-    const/4 v2, -0x1
+    sget-object v0, Lns3;->a:Lns3;
 
-    sparse-switch v0, :sswitch_data_0
-
-    goto :goto_0
-
-    :sswitch_0
-    const-string v0, "total"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    goto :goto_0
+    if-ne v2, v0, :cond_1
 
     :cond_0
-    const/4 v2, 0x2
+    iget-object p0, p0, Los3;->c:Ljava/lang/String;
 
-    goto :goto_0
+    invoke-static {p0}, Lm7g;->n(Ljava/lang/CharSequence;)Z
 
-    :sswitch_1
-    const-string v0, "urls"
+    move-result v0
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v0, :cond_1
 
-    move-result p2
+    const-string v0, " "
 
-    if-nez p2, :cond_1
+    invoke-static {v1, v0, p0}, Lsq3;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object p0
+
+    return-object p0
 
     :cond_1
-    const/4 v2, 0x1
-
-    goto :goto_0
-
-    :sswitch_2
-    const-string v0, "ids"
-
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    move v2, v1
-
-    :goto_0
-    const/4 p2, 0x0
-
-    const/4 v0, 0x7
-
-    packed-switch v2, :pswitch_data_0
-
-    invoke-virtual {p1}, Lu09;->B()V
-
-    return-void
-
-    :pswitch_0
-    invoke-virtual {p1}, Lu09;->z0()I
-
-    move-result p1
-
-    iput p1, p0, Los3;->X:I
-
-    return-void
-
-    :pswitch_1
-    invoke-virtual {p1}, Lu09;->n()Ltx8;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ltx8;->a()I
-
-    move-result v2
-
-    if-ne v2, v0, :cond_3
-
-    new-instance p2, Ljava/util/ArrayList;
-
-    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {p1}, Lu09;->w0()I
-
-    move-result v0
-
-    :goto_1
-    if-ge v1, v0, :cond_4
-
-    invoke-static {p1}, Lbv7;->j0(Lu09;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p2, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {p1}, Lu09;->B()V
-
-    :cond_4
-    if-eqz p2, :cond_5
-
-    goto :goto_2
-
-    :cond_5
-    sget-object p2, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
-
-    :goto_2
-    iput-object p2, p0, Los3;->c:Ljava/util/List;
-
-    return-void
-
-    :pswitch_2
-    invoke-virtual {p1}, Lu09;->n()Ltx8;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ltx8;->a()I
-
-    move-result v2
-
-    if-ne v2, v0, :cond_6
-
-    new-instance p2, Ljava/util/ArrayList;
-
-    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-virtual {p1}, Lu09;->w0()I
-
-    move-result v0
-
-    :goto_3
-    if-ge v1, v0, :cond_7
-
-    const-wide/16 v2, 0x0
-
-    invoke-static {p1, v2, v3}, Lbv7;->g0(Lu09;J)J
-
-    move-result-wide v2
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-virtual {p2, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_3
-
-    :cond_6
-    invoke-virtual {p1}, Lu09;->B()V
-
-    :cond_7
-    if-eqz p2, :cond_8
-
-    goto :goto_4
-
-    :cond_8
-    sget-object p2, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
-
-    :goto_4
-    iput-object p2, p0, Los3;->o:Ljava/util/List;
-
-    return-void
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        0x196b8 -> :sswitch_2
-        0x36e8e4 -> :sswitch_1
-        0x696db44 -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v1
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .registers 3
 
-    iget-object v0, p0, Los3;->c:Ljava/util/List;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Leh7;->n(Ljava/util/Collection;)I
+    const-string v1, "{firstName=\'"
 
-    move-result v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Los3;->o:Ljava/util/List;
+    iget-object v1, p0, Los3;->a:Ljava/lang/String;
 
-    invoke-static {v1}, Leh7;->n(Ljava/util/Collection;)I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v1
+    const-string v1, "\', type="
 
-    iget p0, p0, Los3;->X:I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v2, ", ids="
+    iget-object v1, p0, Los3;->b:Lns3;
 
-    const-string v3, ", total="
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v4, "{urls="
+    const-string v1, "\', lastName="
 
-    invoke-static {v4, v0, v2, v1, v3}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, "}"
 
-    invoke-static {v0, p0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    iget-object p0, p0, Los3;->c:Ljava/lang/String;
+
+    invoke-static {v0, p0, v1}, Lyv7;->k(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

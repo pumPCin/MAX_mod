@@ -1,37 +1,25 @@
-.class public abstract Losc;
-.super Ljava/lang/Object;
+.class public final Losc;
+.super Lux;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:I
+# instance fields
+.field public final X:Lnsc;
 
-.field public static final b:I
-
-.field public static final c:I
-
-.field public static final d:I
+.field public final o:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(ZLnsc;ZZ)V
+    .registers 6
 
-    sget v0, Loxb;->ic_file_24:I
+    sget-object v0, Lxz;->z0:Lxz;
 
-    sput v0, Losc;->a:I
+    invoke-direct {p0, v0, p3, p4}, Lux;-><init>(Lxz;ZZ)V
 
-    sget v0, Loxb;->ic_geolocation_24:I
+    iput-boolean p1, p0, Losc;->o:Z
 
-    sput v0, Losc;->b:I
-
-    sget v0, Loxb;->ic_microphone_24:I
-
-    sput v0, Losc;->c:I
-
-    sget v0, Loxb;->picture_plus_outline_24:I
-
-    sput v0, Losc;->d:I
+    iput-object p2, p0, Losc;->X:Lnsc;
 
     return-void
 .end method

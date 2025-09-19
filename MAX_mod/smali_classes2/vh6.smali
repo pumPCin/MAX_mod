@@ -1,105 +1,76 @@
-.class public final enum Lvh6;
-.super Ljava/lang/Enum;
+.class public final Lvh6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic X:[Lvh6;
-
-.field public static final enum b:Lvh6;
-
-.field public static final enum c:Lvh6;
-
-.field public static final enum o:Lvh6;
-
-
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public volatile a:J
+
+.field public volatile b:J
+
+.field public final synthetic c:Lwh6;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
-
-    new-instance v0, Lvh6;
-
-    const/4 v1, 0x0
-
-    const-string v2, "int_data"
-
-    const-string v3, "INTERNAL_DATA"
-
-    invoke-direct {v0, v3, v1, v2}, Lvh6;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lvh6;->b:Lvh6;
-
-    new-instance v1, Lvh6;
-
-    const/4 v2, 0x1
-
-    const-string v3, "ext_data"
-
-    const-string v4, "EXTERNAL_DATA"
-
-    invoke-direct {v1, v4, v2, v3}, Lvh6;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v1, Lvh6;->c:Lvh6;
-
-    new-instance v2, Lvh6;
-
-    const/4 v3, 0x2
-
-    const-string v4, "src_data"
-
-    const-string v5, "SRC"
-
-    invoke-direct {v2, v5, v3, v4}, Lvh6;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v2, Lvh6;->o:Lvh6;
-
-    filled-new-array {v0, v1, v2}, [Lvh6;
-
-    move-result-object v0
-
-    sput-object v0, Lvh6;->X:[Lvh6;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput-object p3, p0, Lvh6;->a:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lvh6;
+.method public constructor <init>(Lwh6;)V
     .registers 2
 
-    const-class v0, Lvh6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iput-object p1, p0, Lvh6;->c:Lwh6;
 
-    move-result-object p0
-
-    check-cast p0, Lvh6;
-
-    return-object p0
+    return-void
 .end method
 
-.method public static values()[Lvh6;
-    .registers 1
 
-    sget-object v0, Lvh6;->X:[Lvh6;
+# virtual methods
+.method public final onEvent(Lwd2;)V
+    .registers 6
+    .annotation runtime Line;
+    .end annotation
 
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-wide v0, p1, Loi0;->a:J
 
-    move-result-object v0
+    iget-wide v2, p0, Lvh6;->b:J
 
-    check-cast v0, [Lvh6;
+    cmp-long v0, v0, v2
 
-    return-object v0
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "onEvent "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "wh6"
+
+    invoke-static {v0, p1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object p1, p0, Lvh6;->c:Lwh6;
+
+    iget-object p1, p1, Lwh6;->c:Lza2;
+
+    iget-wide v0, p0, Lvh6;->a:J
+
+    invoke-virtual {p1, v0, v1}, Lza2;->z(J)Ls72;
+
+    move-result-object p1
+
+    iget-object p0, p0, Lvh6;->c:Lwh6;
+
+    iget-object p0, p0, Lwh6;->d:Lmc3;
+
+    invoke-virtual {p0, p1}, Lsf7;->makeCompleting$kotlinx_coroutines_core(Ljava/lang/Object;)Z
+
+    return-void
 .end method

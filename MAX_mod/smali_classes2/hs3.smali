@@ -1,93 +1,63 @@
-.class public final enum Lhs3;
-.super Ljava/lang/Enum;
+.class public final Lhs3;
+.super Lzoc;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Lhs3;
+# instance fields
+.field public final E0:Landroid/widget/ImageView;
 
-.field public static final enum b:Lhs3;
+.field public final F0:Lru/ok/messages/views/widgets/TamAvatarView;
 
-.field public static final enum c:Lhs3;
+.field public final G0:Landroid/view/View;
 
-.field public static final synthetic o:[Lhs3;
+.field public H0:Lz68;
+
+.field public final synthetic I0:Lis3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public constructor <init>(Lis3;Landroid/view/View;)V
+    .registers 4
 
-    new-instance v0, Lhs3;
+    iput-object p1, p0, Lhs3;->I0:Lis3;
 
-    const-string v1, "CUSTOM"
+    invoke-direct {p0, p2}, Lzoc;-><init>(Landroid/view/View;)V
 
-    const/4 v2, 0x0
+    sget p1, Lb8c;->row_contact_location__static_image:I
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    sput-object v0, Lhs3;->a:Lhs3;
+    move-result-object p1
 
-    new-instance v1, Lhs3;
+    check-cast p1, Landroid/widget/ImageView;
 
-    const-string v2, "DEVICE"
+    iput-object p1, p0, Lhs3;->E0:Landroid/widget/ImageView;
 
-    const/4 v3, 0x1
+    sget p1, Lb8c;->row_contact_location__live_image:I
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    new-instance v2, Lhs3;
+    move-result-object p1
 
-    const-string v3, "ONEME"
+    check-cast p1, Lru/ok/messages/views/widgets/TamAvatarView;
 
-    const/4 v4, 0x2
+    iput-object p1, p0, Lhs3;->F0:Lru/ok/messages/views/widgets/TamAvatarView;
 
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    sget p1, Lb8c;->row_contact_location__indicator:I
 
-    sput-object v2, Lhs3;->b:Lhs3;
+    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    new-instance v3, Lhs3;
+    move-result-object p1
 
-    const-string v4, "UNKNOWN"
+    iput-object p1, p0, Lhs3;->G0:Landroid/view/View;
 
-    const/4 v5, 0x3
+    new-instance p1, Li5;
 
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/4 v0, 0x5
 
-    sput-object v3, Lhs3;->c:Lhs3;
+    invoke-direct {p1, v0, p0}, Li5;-><init>(ILjava/lang/Object;)V
 
-    filled-new-array {v0, v1, v2, v3}, [Lhs3;
-
-    move-result-object v0
-
-    sput-object v0, Lhs3;->o:[Lhs3;
+    invoke-static {p2, p1}, Lhv8;->j(Landroid/view/View;Lc6;)Lok7;
 
     return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lhs3;
-    .registers 2
-
-    const-class v0, Lhs3;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Lhs3;
-
-    return-object p0
-.end method
-
-.method public static values()[Lhs3;
-    .registers 1
-
-    sget-object v0, Lhs3;->o:[Lhs3;
-
-    invoke-virtual {v0}, [Lhs3;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lhs3;
-
-    return-object v0
 .end method

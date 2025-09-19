@@ -1,59 +1,86 @@
-.class public final Lp02;
-.super Lcx3;
+.class public final synthetic Lp02;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Le8a;
+.implements Lbd6;
 
 
 # instance fields
-.field public X:Ljava/lang/String;
-
-.field public Y:Lvw8;
-
-.field public Z:J
-
-.field public synthetic n0:Ljava/lang/Object;
-
-.field public o:Lq02;
-
-.field public final synthetic o0:Lq02;
-
-.field public p0:I
+.field public final synthetic a:Ll;
 
 
 # direct methods
-.method public constructor <init>(Lq02;Lcx3;)V
-    .registers 3
+.method public constructor <init>(Ll;)V
+    .registers 2
 
-    iput-object p1, p0, Lp02;->o0:Lq02;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lp02;->a:Ll;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+.method public final synthetic a(Ljava/lang/Object;)V
+    .registers 2
 
-    iput-object p1, p0, Lp02;->n0:Ljava/lang/Object;
+    iget-object p0, p0, Lp02;->a:Ll;
 
-    iget p1, p0, Lp02;->p0:I
+    invoke-virtual {p0, p1}, Ll;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/high16 v0, -0x80000000
+    return-void
+.end method
 
-    or-int/2addr p1, v0
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    iput p1, p0, Lp02;->p0:I
+    instance-of v0, p1, Le8a;
 
-    const-wide/16 v0, 0x0
+    if-eqz v0, :cond_0
 
-    const/4 p1, 0x0
+    instance-of v0, p1, Lbd6;
 
-    iget-object v2, p0, Lp02;->o0:Lq02;
+    if-eqz v0, :cond_0
 
-    invoke-virtual {v2, v0, v1, p0, p1}, Lq02;->a(JLcx3;Ljava/lang/String;)Ljava/lang/Object;
+    check-cast p1, Lbd6;
 
-    move-result-object p0
+    invoke-interface {p1}, Lbd6;->getFunctionDelegate()Luc6;
+
+    move-result-object p1
+
+    iget-object p0, p0, Lp02;->a:Ll;
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final getFunctionDelegate()Luc6;
+    .registers 1
+
+    iget-object p0, p0, Lp02;->a:Ll;
 
     return-object p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lp02;->a:Ll;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
 .end method

@@ -1,186 +1,118 @@
-.class public final synthetic La01;
-.super Ljava/lang/Object;
+.class public final La01;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lo01;
+.field public final synthetic Y:Ld01;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lo01;I)V
+.method public constructor <init>(Ld01;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p2, p0, La01;->a:I
+    iput-object p1, p0, La01;->Y:Ld01;
 
-    iput-object p1, p0, La01;->b:Lo01;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, La01;->a:I
+    check-cast p1, Ly04;
 
-    iget-object p0, p0, La01;->b:Lo01;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    check-cast p1, Ljava/lang/Throwable;
+    invoke-virtual {p0, p1, p2}, La01;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object p0
 
-    sget-object v0, Ld86;->f:Lafa;
+    check-cast p0, La01;
 
-    if-nez v0, :cond_0
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, La01;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, La01;
+
+    iget-object p0, p0, La01;->Y:Ld01;
+
+    invoke-direct {p1, p0, p2}, La01;-><init>(Ld01;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    iget v0, p0, La01;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    sget-object v1, Llw7;->o:Llw7;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {v0, v1}, Lafa;->a(Llw7;)Z
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    move-result v2
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    if-eqz v2, :cond_1
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v2, "Disable microphone for all once failed due to: "
-
-    invoke-static {v2, p1}, Lnh0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v2, 0x0
-
-    const-string v3, "CallAdminSettingsController"
-
-    invoke-virtual {v0, v1, v3, p1, v2}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    throw p0
 
     :cond_1
-    :goto_0
-    iget-object p0, p0, Lo01;->x0:Lgpd;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    new-instance p1, Lta;
+    iget-object p1, p0, La01;->Y:Ld01;
 
-    const/4 v0, 0x0
+    iget-object v0, p1, Ld01;->r0:Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-direct {p1, v0}, Lta;-><init>(Z)V
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    invoke-virtual {p0, p1}, Lgpd;->h(Ljava/lang/Object;)Z
+    move-result-object v0
 
-    :goto_1
-    sget-object p0, Lncf;->a:Lncf;
+    check-cast v0, Lwr;
 
-    return-object p0
+    iput v1, p0, La01;->X:I
 
-    :pswitch_0
-    sget-object v0, Ld86;->f:Lafa;
+    invoke-static {p1, v0, p0}, Ld01;->a(Ld01;Lwr;Ljx3;)Ljava/lang/Object;
 
-    if-nez v0, :cond_2
+    move-result-object p0
 
-    goto :goto_2
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
 
     :cond_2
-    sget-object v1, Llw7;->o:Llw7;
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    invoke-virtual {v0, v1}, Lafa;->a(Llw7;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v2, "Disable cameras for all once failed due to: "
-
-    invoke-static {v2, p1}, Lnh0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v2, 0x0
-
-    const-string v3, "CallAdminSettingsController"
-
-    invoke-virtual {v0, v1, v3, p1, v2}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_3
-    :goto_2
-    iget-object p0, p0, Lo01;->x0:Lgpd;
-
-    new-instance p1, Lra;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, v0}, Lra;-><init>(Z)V
-
-    invoke-virtual {p0, p1}, Lgpd;->h(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :pswitch_1
-    sget-object v0, Ld86;->f:Lafa;
-
-    if-nez v0, :cond_4
-
-    goto :goto_3
-
-    :cond_4
-    sget-object v1, Llw7;->o:Llw7;
-
-    invoke-virtual {v0, v1}, Lafa;->a(Llw7;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v2, "Low hands for all failed due to: "
-
-    invoke-static {v2, p1}, Lnh0;->g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    const/4 v2, 0x0
-
-    const-string v3, "CallAdminSettingsController"
-
-    invoke-virtual {v0, v1, v3, p1, v2}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_5
-    :goto_3
-    iget-object p0, p0, Lo01;->x0:Lgpd;
-
-    new-instance p1, Lua;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, v0}, Lua;-><init>(Z)V
-
-    invoke-virtual {p0, p1}, Lgpd;->h(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

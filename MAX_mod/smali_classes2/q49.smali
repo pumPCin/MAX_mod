@@ -1,100 +1,145 @@
-.class public final synthetic Lq49;
+.class public final Lq49;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lh96;
-
 
 # instance fields
-.field public final synthetic X:I
+.field public final a:Ljava/lang/CharSequence;
 
-.field public final synthetic Y:Ljava/lang/CharSequence;
-
-.field public final synthetic Z:Z
-
-.field public final synthetic a:I
-
-.field public final synthetic b:Lx49;
-
-.field public final synthetic c:Lo72;
-
-.field public final synthetic o:Lav8;
+.field public final b:Ljava/lang/Integer;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lx49;Lo72;Lav8;ILjava/lang/CharSequence;ZI)V
-    .registers 8
-
-    iput p7, p0, Lq49;->a:I
-
-    iput-object p1, p0, Lq49;->b:Lx49;
-
-    iput-object p2, p0, Lq49;->c:Lo72;
-
-    iput-object p3, p0, Lq49;->o:Lav8;
-
-    iput p4, p0, Lq49;->X:I
-
-    iput-object p5, p0, Lq49;->Y:Ljava/lang/CharSequence;
-
-    iput-boolean p6, p0, Lq49;->Z:Z
+.method public constructor <init>(Ljava/lang/CharSequence;Ljava/lang/Integer;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lq49;->a:Ljava/lang/CharSequence;
+
+    iput-object p2, p0, Lq49;->b:Ljava/lang/Integer;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 8
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    iget v0, p0, Lq49;->a:I
+    const/4 v0, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-ne p0, p1, :cond_0
 
-    iget-object v5, p0, Lq49;->Y:Ljava/lang/CharSequence;
+    return v0
 
-    iget-boolean v6, p0, Lq49;->Z:Z
+    :cond_0
+    instance-of v1, p1, Lq49;
 
-    iget-object v1, p0, Lq49;->b:Lx49;
+    const/4 v2, 0x0
 
-    iget-object v2, p0, Lq49;->c:Lo72;
+    if-nez v1, :cond_1
 
-    iget-object v3, p0, Lq49;->o:Lav8;
+    return v2
 
-    iget v4, p0, Lq49;->X:I
+    :cond_1
+    check-cast p1, Lq49;
 
-    invoke-virtual/range {v1 .. v6}, Lx49;->b(Lo72;Lav8;ILjava/lang/CharSequence;Z)Landroid/text/Layout;
+    iget-object v1, p0, Lq49;->a:Ljava/lang/CharSequence;
+
+    iget-object v3, p1, Lq49;->a:Ljava/lang/CharSequence;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object p0, p0, Lq49;->b:Ljava/lang/Integer;
+
+    iget-object p1, p1, Lq49;->b:Ljava/lang/Integer;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lq49;->a:Ljava/lang/CharSequence;
+
+    if-nez v1, :cond_0
+
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :goto_0
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-object p0, p0, Lq49;->b:Ljava/lang/Integer;
+
+    if-nez p0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    :goto_1
+    add-int/2addr v1, v0
+
+    return v1
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "InputTextData(inputText="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lq49;->a:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", inputCursorPosition="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lq49;->b:Ljava/lang/Integer;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-
-    :pswitch_0
-    iget-object v4, p0, Lq49;->Y:Ljava/lang/CharSequence;
-
-    iget-boolean v5, p0, Lq49;->Z:Z
-
-    iget-object v0, p0, Lq49;->b:Lx49;
-
-    iget-object v1, p0, Lq49;->c:Lo72;
-
-    iget-object v2, p0, Lq49;->o:Lav8;
-
-    iget v3, p0, Lq49;->X:I
-
-    invoke-virtual/range {v0 .. v5}, Lx49;->b(Lo72;Lav8;ILjava/lang/CharSequence;Z)Landroid/text/Layout;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -1,100 +1,68 @@
-.class public final Lub4;
+.class public final synthetic Lub4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpt7;
+
 
 # instance fields
-.field public final a:Landroid/media/AudioTrack;
+.field public final synthetic a:I
 
-.field public final b:Li30;
+.field public final synthetic b:Lfd;
 
-.field public c:Ltb4;
+.field public final synthetic c:Lx46;
 
 
 # direct methods
-.method public constructor <init>(Landroid/media/AudioTrack;Li30;)V
-    .registers 4
+.method public synthetic constructor <init>(Lfd;Lx46;Lja4;I)V
+    .registers 5
+
+    iput p4, p0, Lub4;->a:I
+
+    iput-object p1, p0, Lub4;->b:Lfd;
+
+    iput-object p2, p0, Lub4;->c:Lx46;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lub4;->a:Landroid/media/AudioTrack;
-
-    iput-object p2, p0, Lub4;->b:Li30;
-
-    new-instance p2, Ltb4;
-
-    invoke-direct {p2, p0}, Ltb4;-><init>(Lub4;)V
-
-    iput-object p2, p0, Lub4;->c:Ltb4;
-
-    new-instance p2, Landroid/os/Handler;
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-direct {p2, v0}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    iget-object p0, p0, Lub4;->c:Ltb4;
-
-    invoke-virtual {p1, p0, p2}, Landroid/media/AudioTrack;->addOnRoutingChangedListener(Landroid/media/AudioRouting$OnRoutingChangedListener;Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-.method public static synthetic a(Lub4;Landroid/media/AudioRouting;)V
-    .registers 2
-
-    invoke-direct {p0, p1}, Lub4;->b(Landroid/media/AudioRouting;)V
-
-    return-void
-.end method
-
-.method private b(Landroid/media/AudioRouting;)V
-    .registers 3
-
-    iget-object v0, p0, Lub4;->c:Ltb4;
-
-    if-nez v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-interface {p1}, Landroid/media/AudioRouting;->getRoutedDevice()Landroid/media/AudioDeviceInfo;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    iget-object p0, p0, Lub4;->b:Li30;
-
-    invoke-interface {p1}, Landroid/media/AudioRouting;->getRoutedDevice()Landroid/media/AudioDeviceInfo;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Li30;->b(Landroid/media/AudioDeviceInfo;)V
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
 
 # virtual methods
-.method public c()V
+.method public final invoke(Ljava/lang/Object;)V
     .registers 3
 
-    iget-object v0, p0, Lub4;->c:Ltb4;
+    iget v0, p0, Lub4;->a:I
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    packed-switch v0, :pswitch_data_0
 
-    iget-object v1, p0, Lub4;->a:Landroid/media/AudioTrack;
+    iget-object v0, p0, Lub4;->c:Lx46;
 
-    invoke-virtual {v1, v0}, Landroid/media/AudioTrack;->removeOnRoutingChangedListener(Landroid/media/AudioRouting$OnRoutingChangedListener;)V
+    check-cast p1, Lgd;
 
-    const/4 v0, 0x0
+    iget-object p0, p0, Lub4;->b:Lfd;
 
-    iput-object v0, p0, Lub4;->c:Ltb4;
+    invoke-interface {p1, p0, v0}, Lgd;->K(Lfd;Lx46;)V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lub4;->c:Lx46;
+
+    check-cast p1, Lgd;
+
+    iget-object p0, p0, Lub4;->b:Lfd;
+
+    invoke-interface {p1, p0, v0}, Lgd;->Z(Lfd;Lx46;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

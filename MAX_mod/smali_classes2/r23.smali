@@ -1,100 +1,127 @@
 .class public final Lr23;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lfq5;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lfq5;
-
-.field public final synthetic c:Lct4;
+.field public final synthetic Y:Lyu4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lfq5;Lct4;I)V
-    .registers 4
+.method public constructor <init>(Lyu4;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p3, p0, Lr23;->a:I
+    iput-object p1, p0, Lr23;->Y:Lyu4;
 
-    iput-object p1, p0, Lr23;->b:Lfq5;
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Lr23;->c:Lct4;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lr23;->a:I
+    check-cast p1, Lera;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    new-instance v0, Lj23;
-
-    iget-object v1, p0, Lr23;->c:Lct4;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v0, p1, v1, v2}, Lj23;-><init>(Lhq5;Lct4;I)V
-
-    iget-object p0, p0, Lr23;->b:Lfq5;
-
-    invoke-interface {p0, v0, p2}, Lfq5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lr23;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
+    check-cast p0, Lr23;
 
-    if-ne p0, p1, :cond_0
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lr23;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Lr23;
+
+    iget-object p0, p0, Lr23;->Y:Lyu4;
+
+    invoke-direct {v0, p0, p2}, Lr23;-><init>(Lyu4;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lr23;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lr23;->X:Ljava/lang/Object;
+
+    check-cast p1, Lera;
+
+    iget-object v0, p0, Lr23;->Y:Lyu4;
+
+    iget-object v0, v0, Lyu4;->Z:Ljava/lang/Object;
+
+    check-cast v0, Lyce;
+
+    invoke-virtual {v0, p1}, Lyce;->setValue(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lr23;->Y:Lyu4;
+
+    iget-object p0, p0, Lyu4;->a:Ljava/lang/Object;
+
+    check-cast p0, Ljava/lang/String;
+
+    sget-object v0, Ljtg;->g:Loja;
+
+    if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object v1, Lqz7;->o:Lqz7;
 
-    :goto_0
-    return-object p0
+    invoke-virtual {v0, v1}, Loja;->a(Lqz7;)Z
 
-    :pswitch_0
-    new-instance v0, Lj23;
+    move-result v2
 
-    iget-object v1, p0, Lr23;->c:Lct4;
+    if-eqz v2, :cond_1
 
-    const/4 v2, 0x1
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, p1, v1, v2}, Lj23;-><init>(Lhq5;Lct4;I)V
+    const-string v3, "big_flow: onEach "
 
-    iget-object p0, p0, Lr23;->b:Lfq5;
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {p0, v0, p2}, Lfq5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object p0
+    const-string p1, ", isEmitted=true"
 
-    sget-object p1, Ls04;->a:Ls04;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-ne p0, p1, :cond_1
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_1
+    move-result-object p1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, p0, p1, v2}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_1
-    sget-object p0, Lncf;->a:Lncf;
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    :goto_1
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

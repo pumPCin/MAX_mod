@@ -1,59 +1,77 @@
 .class public final Lbbe;
-.super Lcx3;
+.super Lx2;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:Ljava/util/Collection;
-
-.field public Y:Ljava/util/Iterator;
-
-.field public Z:Lg7e;
-
-.field public n0:Ljava/util/Collection;
-
-.field public o:Ldbe;
-
-.field public synthetic o0:Ljava/lang/Object;
-
-.field public final synthetic p0:Ldbe;
-
-.field public q0:I
+# static fields
+.field public static final c:Lbbe;
 
 
 # direct methods
-.method public constructor <init>(Ldbe;Lcx3;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Lbbe;->p0:Ldbe;
+    new-instance v0, Lbbe;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    const/16 v1, 0x8
+
+    invoke-direct {v0, v1}, Lx2;-><init>(I)V
+
+    sput-object v0, Lbbe;->c:Lbbe;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final W0(J)Lva4;
+    .registers 4
 
-    iput-object p1, p0, Lbbe;->o0:Ljava/lang/Object;
+    const-string p0, ":chats?id="
 
-    iget p1, p0, Lbbe;->q0:I
+    const-string v0, "&type=local"
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lbbe;->q0:I
-
-    iget-object p1, p0, Lbbe;->p0:Ldbe;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p0}, Ldbe;->t(Ljava/util/List;Lcx3;)Ljava/lang/Object;
+    invoke-static {p1, p2, p0, v0}, Lwsf;->e(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    return-object p0
+    new-instance p1, Lva4;
+
+    invoke-direct {p1, p0}, Lva4;-><init>(Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public final X0()V
+    .registers 3
+
+    invoke-virtual {p0}, Lx2;->F0()Lza4;
+
+    move-result-object p0
+
+    const-string v0, ":chat-list"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lza4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    return-void
+.end method
+
+.method public final Y0(Lbc6;)V
+    .registers 4
+
+    invoke-virtual {p0}, Lx2;->F0()Lza4;
+
+    move-result-object p0
+
+    new-instance v0, Li8d;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1, p1}, Li8d;-><init>(ILbc6;)V
+
+    invoke-virtual {p0, v0}, Lza4;->e(Lzb6;)V
+
+    return-void
 .end method

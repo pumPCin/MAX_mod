@@ -1,5 +1,5 @@
 .class public final Lone/me/sdk/gl/effects/objects/TrivialFragmentShader;
-.super Lbpg;
+.super Ltzg;
 .source "SourceFile"
 
 
@@ -44,11 +44,11 @@
     :goto_1
     const-string v1, " sTexture;\nvoid main() {\n   gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n"
 
-    invoke-static {v0, p2, v1}, La78;->o(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p2, v1}, Lyv7;->k(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-direct {p0, p2, p1}, Lbpg;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0, p2, p1}, Ltzg;-><init>(Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -58,7 +58,7 @@
 .method public bridge synthetic getSource()Ljava/lang/String;
     .registers 1
 
-    invoke-super {p0}, Lbpg;->getSource()Ljava/lang/String;
+    invoke-super {p0}, Ltzg;->getSource()Ljava/lang/String;
 
     move-result-object p0
 
@@ -68,7 +68,7 @@
 .method public bridge synthetic getTextureCoordLoc()I
     .registers 1
 
-    invoke-super {p0}, Laqg;->getTextureCoordLoc()I
+    invoke-super {p0}, Lr0h;->getTextureCoordLoc()I
 
     move-result p0
 
@@ -78,7 +78,7 @@
 .method public bridge synthetic getVertexCoordLoc()I
     .registers 1
 
-    invoke-super {p0}, Laqg;->getVertexCoordLoc()I
+    invoke-super {p0}, Lr0h;->getVertexCoordLoc()I
 
     move-result p0
 
@@ -100,7 +100,7 @@
 .method public bridge synthetic release()V
     .registers 1
 
-    invoke-super {p0}, Laqg;->release()V
+    invoke-super {p0}, Lr0h;->release()V
 
     return-void
 .end method
@@ -108,7 +108,7 @@
 .method public bridge synthetic render()V
     .registers 1
 
-    invoke-super {p0}, Laqg;->render()V
+    invoke-super {p0}, Lr0h;->render()V
 
     return-void
 .end method
@@ -116,7 +116,7 @@
 .method public bridge synthetic setCustomParameter(Ljava/lang/String;F)V
     .registers 3
 
-    invoke-super {p0, p1, p2}, Laqg;->setCustomParameter(Ljava/lang/String;F)V
+    invoke-super {p0, p1, p2}, Lr0h;->setCustomParameter(Ljava/lang/String;F)V
 
     return-void
 .end method
@@ -124,7 +124,7 @@
 .method public bridge synthetic setCustomParameter(Ljava/lang/String;I)V
     .registers 3
 
-    invoke-super {p0, p1, p2}, Laqg;->setCustomParameter(Ljava/lang/String;I)V
+    invoke-super {p0, p1, p2}, Lr0h;->setCustomParameter(Ljava/lang/String;I)V
 
     return-void
 .end method
@@ -132,7 +132,7 @@
 .method public bridge synthetic setMVPMat([F)V
     .registers 2
 
-    invoke-super {p0, p1}, Laqg;->setMVPMat([F)V
+    invoke-super {p0, p1}, Lr0h;->setMVPMat([F)V
 
     return-void
 .end method
@@ -140,7 +140,7 @@
 .method public bridge synthetic setTexMat([F)V
     .registers 2
 
-    invoke-super {p0, p1}, Laqg;->setTexMat([F)V
+    invoke-super {p0, p1}, Lr0h;->setTexMat([F)V
 
     return-void
 .end method
@@ -148,7 +148,7 @@
 .method public bridge synthetic setTextureAlpha(F)V
     .registers 2
 
-    invoke-super {p0, p1}, Laqg;->setTextureAlpha(F)V
+    invoke-super {p0, p1}, Lr0h;->setTextureAlpha(F)V
 
     return-void
 .end method
@@ -156,7 +156,7 @@
 .method public bridge synthetic setTextureId(I)V
     .registers 2
 
-    invoke-super {p0, p1}, Laqg;->setTextureId(I)V
+    invoke-super {p0, p1}, Lr0h;->setTextureId(I)V
 
     return-void
 .end method
@@ -164,7 +164,7 @@
 .method public bridge synthetic unUse()V
     .registers 1
 
-    invoke-super {p0}, Laqg;->unUse()V
+    invoke-super {p0}, Lr0h;->unUse()V
 
     return-void
 .end method
@@ -172,7 +172,7 @@
 .method public bridge synthetic use()V
     .registers 1
 
-    invoke-super {p0}, Laqg;->use()V
+    invoke-super {p0}, Lr0h;->use()V
 
     return-void
 .end method

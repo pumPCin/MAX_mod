@@ -4,28 +4,20 @@
 
 
 # instance fields
-.field public final a:Lwx4;
+.field public final a:I
 
-.field public final b:Lwx4;
-
-.field public final c:I
-
-.field public final d:I
+.field public final b:Landroidx/camera/core/ImageCaptureException;
 
 
 # direct methods
-.method public constructor <init>(Lwx4;Lwx4;II)V
-    .registers 5
+.method public constructor <init>(ILandroidx/camera/core/ImageCaptureException;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ljb0;->a:Lwx4;
+    iput p1, p0, Ljb0;->a:I
 
-    iput-object p2, p0, Ljb0;->b:Lwx4;
-
-    iput p3, p0, Ljb0;->c:I
-
-    iput p4, p0, Ljb0;->d:I
+    iput-object p2, p0, Ljb0;->b:Landroidx/camera/core/ImageCaptureException;
 
     return-void
 .end method
@@ -50,37 +42,21 @@
 
     check-cast p1, Ljb0;
 
-    iget-object v1, p0, Ljb0;->a:Lwx4;
+    iget v1, p0, Ljb0;->a:I
 
-    iget-object v3, p1, Ljb0;->a:Lwx4;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget-object v1, p0, Ljb0;->b:Lwx4;
-
-    iget-object v3, p1, Ljb0;->b:Lwx4;
-
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    iget v1, p0, Ljb0;->c:I
-
-    iget v3, p1, Ljb0;->c:I
+    iget v3, p1, Ljb0;->a:I
 
     if-ne v1, v3, :cond_1
 
-    iget p0, p0, Ljb0;->d:I
+    iget-object p0, p0, Ljb0;->b:Landroidx/camera/core/ImageCaptureException;
 
-    iget p1, p1, Ljb0;->d:I
+    iget-object p1, p1, Ljb0;->b:Landroidx/camera/core/ImageCaptureException;
 
-    if-ne p0, p1, :cond_1
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
 
     return v0
 
@@ -89,13 +65,9 @@
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .registers 3
 
-    iget-object v0, p0, Ljb0;->a:Lwx4;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
+    iget v0, p0, Ljb0;->a:I
 
     const v1, 0xf4243
 
@@ -103,23 +75,11 @@
 
     mul-int/2addr v0, v1
 
-    iget-object v2, p0, Ljb0;->b:Lwx4;
+    iget-object p0, p0, Ljb0;->b:Landroidx/camera/core/ImageCaptureException;
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    move-result v2
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Ljb0;->c:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget p0, p0, Ljb0;->d:I
+    move-result p0
 
     xor-int/2addr p0, v0
 
@@ -131,39 +91,27 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "In{edge="
+    const-string v1, "CaptureError{requestId="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Ljb0;->a:Lwx4;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", postviewEdge="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Ljb0;->b:Lwx4;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", inputFormat="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Ljb0;->c:I
+    iget v1, p0, Ljb0;->a:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v1, ", outputFormat="
+    const-string v1, ", imageCaptureException="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget p0, p0, Ljb0;->d:I
+    iget-object p0, p0, Ljb0;->b:Landroidx/camera/core/ImageCaptureException;
 
-    const-string v1, "}"
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    const-string p0, "}"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

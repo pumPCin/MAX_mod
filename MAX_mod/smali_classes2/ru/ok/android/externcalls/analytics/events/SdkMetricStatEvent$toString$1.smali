@@ -1,9 +1,9 @@
 .class final Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent$toString$1;
-.super Lih7;
+.super Lnk7;
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lbc6;
 
 
 # annotations
@@ -18,8 +18,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lih7;",
-        "Lj96;"
+        "Lnk7;",
+        "Lbc6;"
     }
 .end annotation
 
@@ -68,7 +68,7 @@
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lih7;-><init>(I)V
+    invoke-direct {p0, v0}, Lnk7;-><init>(I)V
 
     return-void
 .end method

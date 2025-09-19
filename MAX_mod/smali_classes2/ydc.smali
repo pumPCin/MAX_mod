@@ -1,64 +1,103 @@
-.class public final Lydc;
+.class public final synthetic Lydc;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Laec;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lydc;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lone/me/rlottie/RLottieDrawable;
+
+.field public final synthetic c:Ljava/lang/Runnable;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lone/me/rlottie/RLottieDrawable;Ljava/lang/Runnable;I)V
+    .registers 4
 
-    new-instance v0, Lydc;
+    iput p3, p0, Lydc;->a:I
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lydc;->b:Lone/me/rlottie/RLottieDrawable;
 
-    sput-object v0, Lydc;->a:Lydc;
+    iput-object p2, p0, Lydc;->c:Ljava/lang/Runnable;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final run()V
+    .registers 4
 
-    const/4 v0, 0x1
+    iget v0, p0, Lydc;->a:I
 
-    if-ne p0, p1, :cond_0
+    iget-object v1, p0, Lydc;->c:Ljava/lang/Runnable;
 
-    return v0
+    iget-object p0, p0, Lydc;->b:Lone/me/rlottie/RLottieDrawable;
+
+    packed-switch v0, :pswitch_data_0
+
+    sget-object v0, Lone/me/rlottie/RLottieDrawable;->gson:Lcom/google/gson/Gson;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {v1}, Ljava/lang/Runnable;->run()V
+
+    iget-object v0, p0, Lone/me/rlottie/RLottieDrawable;->F0:Ljava/lang/Runnable;
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lone/me/rlottie/RLottieDrawable;->F0:Ljava/lang/Runnable;
+
+    invoke-static {}, Lvo0;->c()V
 
     :cond_0
-    instance-of p0, p1, Lydc;
+    return-void
 
-    if-nez p0, :cond_1
+    :pswitch_0
+    sget-object v0, Lone/me/rlottie/RLottieDrawable;->gson:Lcom/google/gson/Gson;
 
-    const/4 p0, 0x0
+    :try_start_0
+    iget-object v0, p0, Lone/me/rlottie/RLottieDrawable;->r1:Lvo0;
 
-    return p0
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lvo0;->b()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    invoke-static {}, Lone/me/rlottie/RLottie;->getLogger()Lns9;
+
+    move-result-object v2
+
+    invoke-interface {v2, v0}, Lns9;->F(Ljava/lang/Throwable;)V
 
     :cond_1
-    return v0
-.end method
+    :goto_0
+    new-instance v0, Lydc;
 
-.method public final hashCode()I
-    .registers 1
+    const/4 v2, 0x1
 
-    const p0, -0x3f572bba
+    invoke-direct {v0, p0, v1, v2}, Lydc;-><init>(Lone/me/rlottie/RLottieDrawable;Ljava/lang/Runnable;I)V
 
-    return p0
-.end method
+    invoke-static {v0}, Lee;->d(Ljava/lang/Runnable;)V
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    return-void
 
-    const-string p0, "RequestPermission"
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

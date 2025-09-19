@@ -1,84 +1,52 @@
 .class public final Lvu5;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Ljx3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:J
+.field public Y:I
 
-.field public final c:Ljava/lang/Object;
+.field public final synthetic Z:Lsu5;
+
+.field public o:Lsu5;
+
+.field public r0:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(JLsee;)V
-    .registers 5
+.method public constructor <init>(Lsu5;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    const/4 v0, 0x0
+    iput-object p1, p0, Lvu5;->Z:Lsu5;
 
-    iput v0, p0, Lvu5;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p3, p0, Lvu5;->c:Ljava/lang/Object;
-
-    iput-wide p1, p0, Lvu5;->b:J
-
-    return-void
-.end method
-
-.method public constructor <init>(JLz3a;)V
-    .registers 5
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lvu5;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Lvu5;->b:J
-
-    iput-object p3, p0, Lvu5;->c:Ljava/lang/Object;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 4
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lvu5;->a:I
+    iput-object p1, p0, Lvu5;->X:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget p1, p0, Lvu5;->Y:I
 
-    iget-object v0, p0, Lvu5;->c:Ljava/lang/Object;
+    const/high16 v0, -0x80000000
 
-    iget-wide v1, p0, Lvu5;->b:J
+    or-int/2addr p1, v0
 
-    invoke-interface {v0, v1, v2}, Lz3a;->a(J)V
+    iput p1, p0, Lvu5;->Y:I
 
-    return-void
+    iget-object p1, p0, Lvu5;->Z:Lsu5;
 
-    :pswitch_0
-    iget-object v0, p0, Lvu5;->c:Ljava/lang/Object;
+    const/4 v0, 0x0
 
-    check-cast v0, Lsee;
+    invoke-virtual {p1, v0, p0}, Lsu5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    iget-wide v1, p0, Lvu5;->b:J
+    move-result-object p0
 
-    invoke-interface {v0, v1, v2}, Lsee;->i(J)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

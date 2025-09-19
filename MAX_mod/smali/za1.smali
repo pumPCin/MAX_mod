@@ -1,21 +1,21 @@
 .class public final Lza1;
-.super Lqd0;
+.super Luc0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Ljava/lang/CharSequence;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .registers 3
 
     const/4 v0, 0x2
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
 
-    iput-object p1, p0, Lza1;->b:Ljava/lang/CharSequence;
+    iput-object p1, p0, Lza1;->b:Ljava/lang/String;
 
     return-void
 .end method
@@ -43,11 +43,11 @@
     :cond_1
     check-cast p1, Lza1;
 
-    iget-object p0, p0, Lza1;->b:Ljava/lang/CharSequence;
+    iget-object p0, p0, Lza1;->b:Ljava/lang/String;
 
-    iget-object p1, p1, Lza1;->b:Ljava/lang/CharSequence;
+    iget-object p1, p1, Lza1;->b:Ljava/lang/String;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -62,9 +62,9 @@
 .method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lza1;->b:Ljava/lang/CharSequence;
+    iget-object p0, p0, Lza1;->b:Ljava/lang/String;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result p0
 
@@ -74,21 +74,13 @@
 .method public final toString()Ljava/lang/String;
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v0, "StartNewCall(link="
 
-    const-string v1, "ShareLink(link="
+    const-string v1, ")"
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lza1;->b:Ljava/lang/String;
 
-    iget-object p0, p0, Lza1;->b:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

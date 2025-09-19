@@ -4,11 +4,5 @@
 
 
 # virtual methods
-.method public abstract a()Ls8a;
-.end method
-
-.method public abstract getItemId()J
-.end method
-
-.method public abstract getTitle()Lqte;
+.method public abstract getText()Lu2f;
 .end method

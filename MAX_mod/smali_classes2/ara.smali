@@ -1,150 +1,328 @@
 .class public final Lara;
-.super Ljava/lang/Object;
+.super Lx2;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Handler$Callback;
-
-
-# static fields
-.field public static final X:Ljava/lang/ThreadLocal;
-
-.field public static final o:Ljava/util/concurrent/ExecutorService;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/ExecutorService;
+.field public final synthetic c:I
 
-.field public final b:Landroid/os/Handler;
-
-.field public final c:Lg7c;
+.field public final synthetic o:Lbra;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lbra;I)V
     .registers 3
 
-    invoke-static {}, Ljava/util/concurrent/Executors;->newSingleThreadExecutor()Ljava/util/concurrent/ExecutorService;
+    iput p2, p0, Lara;->c:I
 
-    move-result-object v0
+    packed-switch p2, :pswitch_data_0
 
-    sput-object v0, Lara;->o:Ljava/util/concurrent/ExecutorService;
+    :pswitch_0
+    const/4 p2, 0x0
 
-    new-instance v1, Ljava/lang/ThreadLocal;
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-direct {v1}, Ljava/lang/ThreadLocal;-><init>()V
+    move-result-object p2
 
-    sput-object v1, Lara;->X:Ljava/lang/ThreadLocal;
+    iput-object p1, p0, Lara;->o:Lbra;
 
-    new-instance v1, Lcc;
+    const/16 p1, 0x9
 
-    const/16 v2, 0xb
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
 
-    invoke-direct {v1, v2}, Lcc;-><init>(I)V
+    return-void
 
-    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    :pswitch_1
+    iput-object p1, p0, Lara;->o:Lbra;
+
+    const/16 p1, 0x9
+
+    const-string p2, ""
+
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    :pswitch_2
+    iput-object p1, p0, Lara;->o:Lbra;
+
+    const/16 p1, 0x9
+
+    sget-object p2, Lzqa;->a:Lzqa;
+
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_2
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method
+
+.method public synthetic constructor <init>(Lbra;IZ)V
+    .registers 4
+
+    iput p2, p0, Lara;->c:I
+
+    iput-object p1, p0, Lara;->o:Lbra;
+
+    const/4 p1, 0x0
+
+    const/16 p2, 0x9
+
+    invoke-direct {p0, p2, p1}, Lx2;-><init>(ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lg7c;)V
-    .registers 2
+.method public synthetic constructor <init>(Ljava/lang/Object;Lbra;I)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Lara;->c:I
 
-    iput-object p1, p0, Lara;->c:Lg7c;
+    iput-object p2, p0, Lara;->o:Lbra;
 
-    const/4 p1, 0x0
+    const/16 p2, 0x9
 
-    iput-object p1, p0, Lara;->b:Landroid/os/Handler;
-
-    sget-object p1, Lara;->o:Ljava/util/concurrent/ExecutorService;
-
-    iput-object p1, p0, Lara;->a:Ljava/util/concurrent/ExecutorService;
+    invoke-direct {p0, p2, p1}, Lx2;-><init>(ILjava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final handleMessage(Landroid/os/Message;)Z
-    .registers 7
+.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 4
 
-    iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget v0, p0, Lara;->c:I
 
-    check-cast p1, Leqg;
+    packed-switch v0, :pswitch_data_0
 
-    iget-boolean v0, p1, Leqg;->c:Z
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    const/4 v1, 0x1
+    move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_0
 
-    goto :goto_0
+    check-cast p2, Lyqa;
+
+    check-cast p1, Lyqa;
+
+    if-eqz p2, :cond_0
+
+    sget-object p1, Lyu4;->t0:Lbx9;
+
+    iget-object p0, p0, Lara;->o:Lbra;
+
+    invoke-virtual {p1, p0}, Lbx9;->l(Landroid/view/View;)Lera;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1, p2}, Lbra;->i(Lera;Lyqa;)V
 
     :cond_0
-    iget v0, p1, Leqg;->o:I
+    return-void
 
-    add-int/2addr v0, v1
+    :pswitch_0
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iput v0, p1, Leqg;->o:I
+    move-result v0
 
-    iget-object v0, p0, Lara;->c:Lg7c;
+    if-nez v0, :cond_1
 
-    sget-object v2, Lb4e;->q0:Lb4e;
+    check-cast p2, Ljava/lang/Number;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
 
-    const-string v4, "rtc.long.executor.task."
+    check-cast p1, Ljava/lang/Number;
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
-    iget v4, p1, Leqg;->o:I
+    sget-object p1, Lyu4;->t0:Lbx9;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lara;->o:Lbra;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, p0}, Lbx9;->l(Landroid/view/View;)Lera;
 
-    move-result-object v3
+    move-result-object p1
 
-    iget-object v4, p1, Leqg;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3, v4}, Lg7c;->log(Lb4e;Ljava/lang/String;Ljava/lang/String;)V
-
-    iget v0, p1, Leqg;->o:I
-
-    const/4 v2, 0x4
-
-    if-lt v0, v2, :cond_1
-
-    :goto_0
-    return v1
+    invoke-virtual {p0, p1}, Lbra;->onThemeChanged(Lera;)V
 
     :cond_1
-    iget-object v0, p0, Lara;->b:Landroid/os/Handler;
+    return-void
 
-    if-eqz v0, :cond_2
+    :pswitch_1
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
+    move-result v0
 
-    move-result-object v0
+    if-nez v0, :cond_2
 
-    iput-object p1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
+    check-cast p2, Ljava/lang/Number;
 
-    iget-object p0, p0, Lara;->b:Landroid/os/Handler;
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
 
-    const-wide/16 v2, 0x1388
+    check-cast p1, Ljava/lang/Number;
 
-    invoke-virtual {p0, v0, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
-    return v1
+    sget-object p1, Lyu4;->t0:Lbx9;
+
+    iget-object p0, p0, Lara;->o:Lbra;
+
+    invoke-virtual {p1, p0}, Lbx9;->l(Landroid/view/View;)Lera;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lbra;->onThemeChanged(Lera;)V
 
     :cond_2
-    new-instance p0, Ljava/lang/IllegalStateException;
+    return-void
 
-    const-string p1, "No task duration check thread"
+    :pswitch_2
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result v0
 
-    throw p0
+    if-nez v0, :cond_3
+
+    check-cast p2, [Landroid/text/InputFilter;
+
+    check-cast p1, [Landroid/text/InputFilter;
+
+    iget-object p0, p0, Lara;->o:Lbra;
+
+    iget-object p0, p0, Lbra;->a:Landroid/widget/EditText;
+
+    invoke-virtual {p0, p2}, Landroid/widget/TextView;->setFilters([Landroid/text/InputFilter;)V
+
+    :cond_3
+    return-void
+
+    :pswitch_3
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    check-cast p2, Ljava/lang/String;
+
+    check-cast p1, Ljava/lang/String;
+
+    iget-object p0, p0, Lara;->o:Lbra;
+
+    iget-object p0, p0, Lbra;->a:Landroid/widget/EditText;
+
+    invoke-virtual {p0, p2}, Landroid/widget/TextView;->setHint(Ljava/lang/CharSequence;)V
+
+    :cond_4
+    return-void
+
+    :pswitch_4
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_5
+
+    check-cast p2, Ljava/lang/Integer;
+
+    check-cast p1, Ljava/lang/Integer;
+
+    sget-object p1, Lyu4;->t0:Lbx9;
+
+    iget-object p0, p0, Lara;->o:Lbra;
+
+    invoke-virtual {p1, p0}, Lbx9;->l(Landroid/view/View;)Lera;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lbra;->onThemeChanged(Lera;)V
+
+    :cond_5
+    return-void
+
+    :pswitch_5
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_6
+
+    check-cast p2, Lzqa;
+
+    check-cast p1, Lzqa;
+
+    iget-object p0, p0, Lara;->o:Lbra;
+
+    invoke-static {p0, p2}, Lbra;->d(Lbra;Lzqa;)V
+
+    :cond_6
+    return-void
+
+    :pswitch_6
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    check-cast p2, Ljava/lang/Number;
+
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
+
+    move-result p2
+
+    check-cast p1, Ljava/lang/Number;
+
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
+
+    iget-object p0, p0, Lara;->o:Lbra;
+
+    invoke-virtual {p0}, Lbra;->getText()Ljava/lang/CharSequence;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result p1
+
+    invoke-static {p0, p2, p1}, Lbra;->c(Lbra;II)V
+
+    :cond_7
+    return-void
+
+    :pswitch_7
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_8
+
+    check-cast p2, Lcl7;
+
+    check-cast p1, Lcl7;
+
+    iget-object p0, p0, Lara;->o:Lbra;
+
+    invoke-static {p0, p2}, Lbra;->b(Lbra;Lcl7;)V
+
+    :cond_8
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

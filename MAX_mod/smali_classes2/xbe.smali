@@ -1,25 +1,24 @@
-.class public abstract Lxbe;
+.class public final Lxbe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lybe;
 
-# instance fields
-.field public final a:Landroid/view/View;
 
-.field public b:I
-
-.field public c:I
+# static fields
+.field public static final a:Lxbe;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lxbe;
 
-    iput-object p1, p0, Lxbe;->a:Landroid/view/View;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lts;->b(Landroid/view/View;)V
+    sput-object v0, Lxbe;->a:Lxbe;
 
     return-void
 .end method

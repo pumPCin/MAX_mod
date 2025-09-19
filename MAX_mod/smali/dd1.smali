@@ -6,91 +6,66 @@
 .implements Led1;
 
 
-# static fields
-.field public static final a:Ldd1;
-
-.field public static final b:J
-
-.field public static final c:Lqte;
-
-.field public static final d:Ls8a;
+# instance fields
+.field public final a:Lt2f;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lt2f;)V
     .registers 2
 
-    new-instance v0, Ldd1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Ldd1;->a:Ldd1;
-
-    sget v0, Li9a;->c:I
-
-    int-to-long v0, v0
-
-    sput-wide v0, Ldd1;->b:J
-
-    sget v0, Lk9a;->k:I
-
-    new-instance v1, Lqte;
-
-    invoke-direct {v1, v0}, Lqte;-><init>(I)V
-
-    sput-object v1, Ldd1;->c:Lqte;
-
-    sget-object v0, Ls8a;->b:Ls8a;
-
-    sput-object v0, Ldd1;->d:Ls8a;
+    iput-object p1, p0, Ldd1;->a:Lt2f;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ls8a;
-    .registers 1
-
-    sget-object p0, Ldd1;->d:Ls8a;
-
-    return-object p0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    const/4 v0, 0x1
-
     if-ne p0, p1, :cond_0
 
-    return v0
+    goto :goto_1
 
     :cond_0
-    instance-of p0, p1, Ldd1;
+    instance-of v0, p1, Ldd1;
 
-    if-nez p0, :cond_1
+    if-nez v0, :cond_1
 
+    goto :goto_0
+
+    :cond_1
+    check-cast p1, Ldd1;
+
+    iget-object p0, p0, Ldd1;->a:Lt2f;
+
+    iget-object p1, p1, Ldd1;->a:Lt2f;
+
+    invoke-virtual {p0, p1}, Lt2f;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    :goto_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_1
-    return v0
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
-.method public final getItemId()J
-    .registers 3
-
-    sget-wide v0, Ldd1;->b:J
-
-    return-wide v0
-.end method
-
-.method public final getTitle()Lqte;
+.method public final getText()Lu2f;
     .registers 1
 
-    sget-object p0, Ldd1;->c:Lqte;
+    iget-object p0, p0, Ldd1;->a:Lt2f;
 
     return-object p0
 .end method
@@ -98,15 +73,35 @@
 .method public final hashCode()I
     .registers 1
 
-    const p0, -0x1dcefff1
+    iget-object p0, p0, Ldd1;->a:Lt2f;
+
+    invoke-virtual {p0}, Lt2f;->hashCode()I
+
+    move-result p0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 1
+    .registers 3
 
-    const-string p0, "TryLoadLinkAgain"
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Success(text="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Ldd1;->a:Lt2f;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

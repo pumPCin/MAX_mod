@@ -1,131 +1,114 @@
 .class public final Leaf;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:Landroid/view/View;
 
-.field public final synthetic Y:Ljaf;
+.field public final synthetic b:Landroid/graphics/Rect;
+
+.field public final synthetic c:I
+
+.field public final synthetic d:I
 
 
 # direct methods
-.method public constructor <init>(Ljaf;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Landroid/view/View;Landroid/graphics/Rect;II)V
+    .registers 5
 
-    iput-object p1, p0, Leaf;->Y:Ljaf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Leaf;->a:Landroid/view/View;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Leaf;->b:Landroid/graphics/Rect;
+
+    iput p3, p0, Leaf;->c:I
+
+    iput p4, p0, Leaf;->d:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .registers 10
 
-    check-cast p1, Lr04;
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p1, p0, Leaf;->a:Landroid/view/View;
 
-    invoke-virtual {p0, p1, p2}, Leaf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object p2, p0, Leaf;->b:Landroid/graphics/Rect;
 
-    move-result-object p0
+    invoke-virtual {p1, p2}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    check-cast p0, Leaf;
+    invoke-virtual {p2}, Landroid/graphics/Rect;->width()I
 
-    sget-object p1, Lncf;->a:Lncf;
+    move-result p3
 
-    invoke-virtual {p0, p1}, Leaf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget p4, p0, Leaf;->c:I
 
-    move-result-object p0
+    if-ge p3, p4, :cond_0
 
-    return-object p0
-.end method
+    invoke-virtual {p2}, Landroid/graphics/Rect;->width()I
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+    move-result p3
 
-    new-instance p1, Leaf;
+    sub-int/2addr p4, p3
 
-    iget-object p0, p0, Leaf;->Y:Ljaf;
+    iget p3, p2, Landroid/graphics/Rect;->left:I
 
-    invoke-direct {p1, p0, p2}, Leaf;-><init>(Ljaf;Lkotlin/coroutines/Continuation;)V
+    div-int/lit8 p4, p4, 0x2
 
-    return-object p1
-.end method
+    sub-int/2addr p3, p4
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    iput p3, p2, Landroid/graphics/Rect;->left:I
 
-    iget v0, p0, Leaf;->X:I
+    iget p3, p2, Landroid/graphics/Rect;->right:I
 
-    const/4 v1, 0x1
+    add-int/2addr p3, p4
 
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object p1
+    iput p3, p2, Landroid/graphics/Rect;->right:I
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    invoke-virtual {p2}, Landroid/graphics/Rect;->height()I
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    move-result p3
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget p0, p0, Leaf;->d:I
 
-    throw p0
+    if-ge p3, p0, :cond_1
+
+    invoke-virtual {p2}, Landroid/graphics/Rect;->height()I
+
+    move-result p3
+
+    sub-int/2addr p0, p3
+
+    iget p3, p2, Landroid/graphics/Rect;->top:I
+
+    div-int/lit8 p0, p0, 0x2
+
+    sub-int/2addr p3, p0
+
+    iput p3, p2, Landroid/graphics/Rect;->top:I
+
+    iget p3, p2, Landroid/graphics/Rect;->bottom:I
+
+    add-int/2addr p3, p0
+
+    iput p3, p2, Landroid/graphics/Rect;->bottom:I
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    new-instance p0, Lrd5;
 
-    sget-object p1, Ljaf;->t0:[Lsf7;
+    invoke-direct {p0, p2, p1}, Lrd5;-><init>(Landroid/graphics/Rect;Landroid/view/View;)V
 
-    iget-object p1, p0, Leaf;->Y:Ljaf;
+    invoke-virtual {p1, p0}, Landroid/view/View;->setTouchDelegate(Landroid/view/TouchDelegate;)V
 
-    iget-object v0, p1, Ljaf;->Y:Lxh7;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lmnb;
-
-    iget-object p1, p1, Ljaf;->X:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lc53;
-
-    check-cast p1, Lz1d;
-
-    invoke-virtual {p1}, Lz1d;->p()J
-
-    move-result-wide v2
-
-    iput v1, p0, Leaf;->X:I
-
-    invoke-virtual {v0, v2, v3, p0}, Lmnb;->a(JLcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    return-object p0
+    return-void
 .end method

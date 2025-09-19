@@ -1,62 +1,21 @@
-.class public final synthetic Lf56;
-.super Ljava/lang/Object;
+.class public final Lf56;
+.super Lso;
 .source "SourceFile"
 
-# interfaces
-.implements Luvc;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/Object;
+# static fields
+.field public static final a:Lf56;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p1, p0, Lf56;->a:I
+    new-instance v0, Lf56;
 
-    iput-object p2, p0, Lf56;->b:Ljava/lang/Object;
+    invoke-direct {v0}, Lso;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lf56;->a:Lf56;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Landroid/os/Bundle;
-    .registers 2
-
-    iget v0, p0, Lf56;->a:I
-
-    iget-object p0, p0, Lf56;->b:Ljava/lang/Object;
-
-    packed-switch v0, :pswitch_data_0
-
-    check-cast p0, Lpvc;
-
-    invoke-static {p0}, Lpvc;->a(Lpvc;)Landroid/os/Bundle;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    check-cast p0, Landroidx/fragment/app/c;
-
-    invoke-virtual {p0}, Landroidx/fragment/app/c;->Z()Landroid/os/Bundle;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

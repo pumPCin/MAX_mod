@@ -3,100 +3,129 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljv0;
-
-
-# static fields
-.field public static final b:Lt3f;
+.implements Landroid/view/TextureView$SurfaceTextureListener;
 
 
 # instance fields
-.field public final a:Lj07;
+.field public final synthetic a:Lu3f;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Lt3f;
-
-    sget-object v1, Lj07;->b:Ldv5;
-
-    sget-object v1, Lqic;->X:Lqic;
-
-    invoke-direct {v0, v1}, Lt3f;-><init>(Lqic;)V
-
-    sput-object v0, Lt3f;->b:Lt3f;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lqic;)V
+.method public constructor <init>(Lu3f;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lj07;->j(Ljava/util/Collection;)Lj07;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lt3f;->a:Lj07;
+    iput-object p1, p0, Lt3f;->a:Lu3f;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
     .registers 4
 
-    if-ne p0, p1, :cond_0
+    iget-object p0, p0, Lt3f;->a:Lu3f;
 
-    const/4 p0, 0x1
+    iput-object p1, p0, Lu3f;->f:Landroid/graphics/SurfaceTexture;
+
+    iget-object p1, p0, Lu3f;->g:Lts1;
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lu3f;->h:Lire;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p1, p0, Lu3f;->h:Lire;
+
+    invoke-static {p1}, Ljava/util/Objects;->toString(Ljava/lang/Object;)Ljava/lang/String;
+
+    iget-object p0, p0, Lu3f;->h:Lire;
+
+    iget-object p0, p0, Lire;->l:Lr27;
+
+    invoke-virtual {p0}, Lpk4;->a()V
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0}, Lu3f;->k()V
+
+    return-void
+.end method
+
+.method public final onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
+    .registers 7
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lt3f;->a:Lu3f;
+
+    iput-object v0, v1, Lu3f;->f:Landroid/graphics/SurfaceTexture;
+
+    iget-object v0, v1, Lu3f;->g:Lts1;
+
+    if-eqz v0, :cond_0
+
+    new-instance v2, Lzab;
+
+    const/16 v3, 0xb
+
+    const/4 v4, 0x0
+
+    invoke-direct {v2, p0, p1, v4, v3}, Lzab;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
+
+    iget-object p0, v1, Lu3f;->e:Landroid/view/TextureView;
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lpw3;->a(Landroid/content/Context;)Ljava/util/concurrent/Executor;
+
+    move-result-object p0
+
+    invoke-static {v0, v2, p0}, Lf4h;->a(Lgt7;Lpd6;Ljava/util/concurrent/Executor;)V
+
+    iput-object p1, v1, Lu3f;->j:Landroid/graphics/SurfaceTexture;
+
+    const/4 p0, 0x0
 
     return p0
 
     :cond_0
-    if-eqz p1, :cond_2
-
-    const-class v0, Lt3f;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    if-eq v0, v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lt3f;
-
-    iget-object p0, p0, Lt3f;->a:Lj07;
-
-    iget-object p1, p1, Lt3f;->a:Lj07;
-
-    invoke-virtual {p0, p1}, Lj07;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_2
-    :goto_0
-    const/4 p0, 0x0
+    const/4 p0, 0x1
 
     return p0
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
+    .registers 4
 
-    iget-object p0, p0, Lt3f;->a:Lj07;
+    return-void
+.end method
 
-    invoke-virtual {p0}, Lj07;->hashCode()I
+.method public final onSurfaceTextureUpdated(Landroid/graphics/SurfaceTexture;)V
+    .registers 2
 
-    move-result p0
+    iget-object p0, p0, Lt3f;->a:Lu3f;
 
-    return p0
+    iget-object p0, p0, Lu3f;->k:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqs1;
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0, p1}, Lqs1;->b(Ljava/lang/Object;)Z
+
+    :cond_0
+    return-void
 .end method

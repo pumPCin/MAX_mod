@@ -1,155 +1,26 @@
-.class public final synthetic Lhfb;
+.class public final Lhfb;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lja4;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:J
-
-.field public final synthetic c:Ljava/lang/Object;
-
-
-# direct methods
-.method public synthetic constructor <init>(JLandroid/os/Parcelable;I)V
-    .registers 5
-
-    iput p4, p0, Lhfb;->a:I
-
-    iput-wide p1, p0, Lhfb;->b:J
-
-    iput-object p3, p0, Lhfb;->c:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(JLol2;)V
-    .registers 5
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lhfb;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p3, p0, Lhfb;->c:Ljava/lang/Object;
-
-    iput-wide p1, p0, Lhfb;->b:J
-
-    return-void
-.end method
+.implements Landroid/os/Parcelable$Creator;
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .registers 14
+.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .registers 2
 
-    iget v0, p0, Lhfb;->a:I
+    new-instance p0, Lifb;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {p0, p1}, Lifb;-><init>(Landroid/os/Parcel;)V
 
-    iget-object v0, p0, Lhfb;->c:Ljava/lang/Object;
-
-    check-cast v0, Landroid/os/Bundle;
-
-    new-instance v1, Lone/me/stickerspreview/StickerPreviewScreen;
-
-    const-string v2, "chat_id"
-
-    invoke-static {v2, v0}, Lds0;->O(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/Long;
-
-    move-result-object v2
-
-    const-wide/16 v3, 0x0
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v5
-
-    goto :goto_0
-
-    :cond_0
-    move-wide v5, v3
-
-    :goto_0
-    const-string v2, "forward_id"
-
-    invoke-static {v2, v0}, Lds0;->O(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/Long;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    :cond_1
-    iget-wide v7, p0, Lhfb;->b:J
-
-    move-wide v9, v5
-
-    move-wide v11, v7
-
-    move-wide v6, v3
-
-    move-wide v4, v9
-
-    move-wide v2, v11
-
-    invoke-direct/range {v1 .. v7}, Lone/me/stickerspreview/StickerPreviewScreen;-><init>(JJJ)V
-
-    return-object v1
-
-    :pswitch_0
-    iget-object v0, p0, Lhfb;->c:Ljava/lang/Object;
-
-    check-cast v0, Lehb;
-
-    new-instance v1, Lone/me/profileedit/ProfileEditScreen;
-
-    iget-wide v2, p0, Lhfb;->b:J
-
-    invoke-direct {v1, v2, v3, v0}, Lone/me/profileedit/ProfileEditScreen;-><init>(JLehb;)V
-
-    return-object v1
-
-    :pswitch_1
-    iget-object v0, p0, Lhfb;->c:Ljava/lang/Object;
-
-    check-cast v0, Lol2;
-
-    sget-object v1, Lol2;->c:Lol2;
-
-    iget-wide v2, p0, Lhfb;->b:J
-
-    if-ne v0, v1, :cond_2
-
-    new-instance p0, Lone/me/profile/screens/members/ChatAdminsScreen;
-
-    invoke-direct {p0, v2, v3}, Lone/me/profile/screens/members/ChatAdminsScreen;-><init>(J)V
-
-    goto :goto_1
-
-    :cond_2
-    new-instance p0, Lone/me/profile/screens/members/ChatMembersScreen;
-
-    invoke-direct {p0, v2, v3, v0}, Lone/me/profile/screens/members/ChatMembersScreen;-><init>(JLol2;)V
-
-    :goto_1
     return-object p0
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+.method public final newArray(I)[Ljava/lang/Object;
+    .registers 2
+
+    new-array p0, p1, [Lifb;
+
+    return-object p0
 .end method

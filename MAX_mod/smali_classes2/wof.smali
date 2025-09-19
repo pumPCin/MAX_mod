@@ -1,24 +1,24 @@
 .class public final Lwof;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic X:Lcpf;
+.field public final synthetic X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
 
 # direct methods
-.method public constructor <init>(Lcpf;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput-object p1, p0, Lwof;->X:Lcpf;
+    iput-object p1, p0, Lwof;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -28,7 +28,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Lr04;
+    check-cast p1, Ly04;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -38,11 +38,13 @@
 
     check-cast p0, Lwof;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lwof;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object p1
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -50,32 +52,58 @@
 
     new-instance p1, Lwof;
 
-    iget-object p0, p0, Lwof;->X:Lcpf;
+    iget-object p0, p0, Lwof;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    invoke-direct {p1, p0, p2}, Lwof;-><init>(Lcpf;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {p1, p0, p2}, Lwof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
 
     return-object p1
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .registers 4
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object p0, p0, Lwof;->X:Lcpf;
+    :try_start_0
+    new-instance p1, Ljava/io/File;
 
-    invoke-virtual {p0}, Lcpf;->c()Ldrf;
+    iget-object p0, p0, Lwof;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object p0
 
-    iget-object p0, p0, Ldrf;->X:Lduf;
+    iget-object p0, p0, Lv39;->b:Ljava/lang/String;
 
-    if-eqz p0, :cond_0
+    invoke-direct {p1, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lduf;->N0()V
+    invoke-virtual {p1}, Ljava/io/File;->length()J
 
-    :cond_0
-    sget-object p0, Lncf;->a:Lncf;
+    move-result-wide p0
 
-    return-object p0
+    const-wide/16 v0, 0x400
+
+    div-long/2addr p0, v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    const-string p1, "UploadFileAttachWorker"
+
+    const-string v0, "fileSize fail!"
+
+    invoke-static {p1, v0, p0}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    const-wide/16 p0, 0x0
+
+    :goto_0
+    new-instance v0, Ljava/lang/Long;
+
+    invoke-direct {v0, p0, p1}, Ljava/lang/Long;-><init>(J)V
+
+    return-object v0
 .end method

@@ -1,219 +1,92 @@
 .class public final Llc8;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Landroid/media/session/MediaController;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Ljava/lang/Object;
-
-.field public final c:Ljava/util/ArrayList;
-
-.field public final d:Ljava/util/HashMap;
-
-.field public final e:Lel8;
+.field public final synthetic Y:Lsy1;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lel8;)V
-    .registers 5
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lsy1;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Llc8;->Y:Lsy1;
 
-    new-instance v0, Ljava/lang/Object;
+    const/4 p2, 0x2
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    iput-object v0, p0, Llc8;->b:Ljava/lang/Object;
-
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Llc8;->c:Ljava/util/ArrayList;
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Llc8;->d:Ljava/util/HashMap;
-
-    iput-object p2, p0, Llc8;->e:Lel8;
-
-    new-instance v0, Landroid/media/session/MediaController;
-
-    iget-object v1, p2, Lel8;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    check-cast v1, Landroid/media/session/MediaSession$Token;
-
-    invoke-direct {v0, p1, v1}, Landroid/media/session/MediaController;-><init>(Landroid/content/Context;Landroid/media/session/MediaSession$Token;)V
-
-    iput-object v0, p0, Llc8;->a:Landroid/media/session/MediaController;
-
-    invoke-virtual {p2}, Lel8;->a()Lev6;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    new-instance p1, Ljc8;
-
-    const/4 p2, 0x0
-
-    invoke-direct {p1, p2}, Ljc8;-><init>(Landroid/os/Handler;)V
-
-    new-instance v1, Ljava/lang/ref/WeakReference;
-
-    invoke-direct {v1, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    iput-object v1, p1, Ljc8;->b:Ljava/lang/Object;
-
-    const-string p0, "android.support.v4.media.session.command.GET_EXTRA_BINDER"
-
-    invoke-virtual {v0, p0, p2, p1}, Landroid/media/session/MediaController;->sendCommand(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .registers 7
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object v0, p0, Llc8;->e:Lel8;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {v0}, Lel8;->a()Lev6;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    iget-object v1, p0, Llc8;->c:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lfd8;
-
-    new-instance v4, Lkc8;
-
-    invoke-direct {v4, v3}, Lkc8;-><init>(Lfd8;)V
-
-    iget-object v5, p0, Llc8;->d:Ljava/util/HashMap;
-
-    invoke-virtual {v5, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iput-object v4, v3, Lfd8;->c:Lkc8;
-
-    :try_start_0
-    invoke-interface {v0, v4}, Lev6;->J(Lbv6;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    const/16 v4, 0xd
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v3, v4, v5, v5}, Lfd8;->i(ILjava/lang/Object;Landroid/os/Bundle;)V
-
-    goto :goto_0
-
-    :catch_0
-    :cond_1
-    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
-
-    return-void
-.end method
-
-.method public final b(Lfd8;)V
-    .registers 5
-
-    iget-object v0, p0, Llc8;->a:Landroid/media/session/MediaController;
-
-    iget-object v1, p1, Lfd8;->a:Lic8;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {v0, v1}, Landroid/media/session/MediaController;->unregisterCallback(Landroid/media/session/MediaController$Callback;)V
-
-    iget-object v0, p0, Llc8;->b:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Llc8;->e:Lel8;
-
-    invoke-virtual {v1}, Lel8;->a()Lev6;
-
-    move-result-object v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v1, :cond_0
-
-    :try_start_1
-    iget-object p0, p0, Llc8;->d:Ljava/util/HashMap;
-
-    invoke-virtual {p0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Llc8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    check-cast p0, Lkc8;
+    check-cast p0, Llc8;
 
-    if-eqz p0, :cond_1
+    sget-object p1, Lylf;->a:Lylf;
 
-    const/4 v2, 0x0
+    invoke-virtual {p0, p1}, Llc8;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object v2, p1, Lfd8;->c:Lkc8;
+    return-object p1
+.end method
 
-    invoke-interface {v1, p0}, Lev6;->C(Lbv6;)V
-    :try_end_1
-    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Llc8;
+
+    iget-object p0, p0, Llc8;->Y:Lsy1;
+
+    invoke-direct {v0, p2, p0}, Llc8;-><init>(Lkotlin/coroutines/Continuation;Lsy1;)V
+
+    iput-object p1, v0, Llc8;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Llc8;->X:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x0
 
     goto :goto_0
 
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
     :cond_0
-    :try_start_2
-    iget-object p0, p0, Llc8;->c:Ljava/util/ArrayList;
+    const/16 p1, 0x8
 
-    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    :catch_0
-    :cond_1
     :goto_0
-    monitor-exit v0
+    iget-object p0, p0, Llc8;->Y:Lsy1;
 
-    return-void
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    :goto_1
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    throw p0
+    return-object p0
 .end method

@@ -1,66 +1,103 @@
-.class public final synthetic Lln9;
-.super Ljava/lang/Object;
+.class public final Lln9;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic X:Lon9;
 
-.field public final synthetic b:Lqn9;
+.field public final synthetic Y:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Lqn9;I)V
-    .registers 3
+.method public constructor <init>(Lon9;FLkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    iput p2, p0, Lln9;->a:I
+    iput-object p1, p0, Lln9;->X:Lon9;
 
-    iput-object p1, p0, Lln9;->b:Lqn9;
+    iput p2, p0, Lln9;->Y:F
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget p1, p0, Lln9;->a:I
+    check-cast p1, Ly04;
 
-    packed-switch p1, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    new-instance p1, Lnn9;
+    invoke-virtual {p0, p1, p2}, Lln9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    const/4 v0, 0x0
+    move-result-object p0
 
-    invoke-direct {p1, v0}, Lnn9;-><init>(I)V
+    check-cast p0, Lln9;
 
-    iget-object p0, p0, Lln9;->b:Lqn9;
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-virtual {p0, p1}, Lt2;->n(Llm3;)V
+    invoke-virtual {p0, p1}, Lln9;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
+    return-object p1
+.end method
 
-    :pswitch_0
-    new-instance p1, Lyj0;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    const/16 v0, 0x1b
+    new-instance p1, Lln9;
 
-    invoke-direct {p1, v0}, Lyj0;-><init>(I)V
+    iget-object v0, p0, Lln9;->X:Lon9;
 
-    iget-object p0, p0, Lln9;->b:Lqn9;
+    iget p0, p0, Lln9;->Y:F
 
-    invoke-virtual {p0, p1}, Lt2;->n(Llm3;)V
+    invoke-direct {p1, v0, p0, p2}, Lln9;-><init>(Lon9;FLkotlin/coroutines/Continuation;)V
 
-    return-void
+    return-object p1
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lln9;->X:Lon9;
+
+    iget-object p1, p1, Lon9;->m:Ljf8;
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Ljf8;->t()V
+
+    iget-object p1, p1, Ljf8;->c:Lif8;
+
+    invoke-interface {p1}, Lif8;->isConnected()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string p0, "The controller is not connected. Ignoring setPlaybackSpeed()."
+
+    invoke-static {p0}, Lxnd;->l0(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_0
+    iget p0, p0, Lln9;->Y:F
+
+    invoke-interface {p1, p0}, Lif8;->setPlaybackSpeed(F)V
+
+    :cond_1
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

@@ -4,173 +4,46 @@
 
 
 # static fields
-.field public static final d:Ljava/lang/String;
-
-.field public static final e:Ljava/lang/String;
-
-.field public static final f:Ljava/lang/String;
+.field public static final c:Lwdd;
 
 
 # instance fields
-.field public final a:I
+.field public final a:J
 
-.field public final b:Ljava/lang/String;
-
-.field public final c:Landroid/os/Bundle;
+.field public final b:J
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 3
 
-    sget v0, Laif;->a:I
+    new-instance v0, Lwdd;
 
-    const/4 v0, 0x0
+    const-wide/16 v1, 0x0
 
-    const/16 v1, 0x24
+    invoke-direct {v0, v1, v2, v1, v2}, Lwdd;-><init>(JJ)V
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lwdd;->d:Ljava/lang/String;
-
-    const/4 v0, 0x1
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lwdd;->e:Ljava/lang/String;
-
-    const/4 v0, 0x2
-
-    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lwdd;->f:Ljava/lang/String;
+    sput-object v0, Lwdd;->c:Lwdd;
 
     return-void
 .end method
 
-.method public constructor <init>(I)V
-    .registers 4
-
-    const-string v0, "no error message provided"
-
-    sget-object v1, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
-
-    invoke-direct {p0, v0, p1, v1}, Lwdd;-><init>(Ljava/lang/String;ILandroid/os/Bundle;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;ILandroid/os/Bundle;)V
+.method public constructor <init>(JJ)V
     .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    iput-wide p1, p0, Lwdd;->a:J
 
-    if-ltz p2, :cond_1
-
-    if-ne p2, v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :cond_1
-    :goto_0
-    invoke-static {v0}, Lr76;->h(Z)V
-
-    iput p2, p0, Lwdd;->a:I
-
-    iput-object p1, p0, Lwdd;->b:Ljava/lang/String;
-
-    iput-object p3, p0, Lwdd;->c:Landroid/os/Bundle;
+    iput-wide p3, p0, Lwdd;->b:J
 
     return-void
 .end method
 
-.method public static a(Landroid/os/Bundle;)Lwdd;
-    .registers 4
-
-    sget-object v0, Lwdd;->d:Ljava/lang/String;
-
-    const/16 v1, 0x3e8
-
-    invoke-virtual {p0, v0, v1}, Landroid/os/BaseBundle;->getInt(Ljava/lang/String;I)I
-
-    move-result v0
-
-    sget-object v1, Lwdd;->e:Ljava/lang/String;
-
-    const-string v2, ""
-
-    invoke-virtual {p0, v1, v2}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    sget-object v2, Lwdd;->f:Ljava/lang/String;
-
-    invoke-virtual {p0, v2}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
-
-    move-result-object p0
-
-    new-instance v2, Lwdd;
-
-    if-nez p0, :cond_0
-
-    sget-object p0, Landroid/os/Bundle;->EMPTY:Landroid/os/Bundle;
-
-    :cond_0
-    invoke-direct {v2, v1, v0, p0}, Lwdd;-><init>(Ljava/lang/String;ILandroid/os/Bundle;)V
-
-    return-object v2
-.end method
-
 
 # virtual methods
-.method public final b()Landroid/os/Bundle;
-    .registers 4
-
-    new-instance v0, Landroid/os/Bundle;
-
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
-    sget-object v1, Lwdd;->d:Ljava/lang/String;
-
-    iget v2, p0, Lwdd;->a:I
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
-
-    sget-object v1, Lwdd;->e:Ljava/lang/String;
-
-    iget-object v2, p0, Lwdd;->b:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p0, p0, Lwdd;->c:Landroid/os/Bundle;
-
-    invoke-virtual {p0}, Landroid/os/BaseBundle;->isEmpty()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    sget-object v1, Lwdd;->f:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
-
-    :cond_0
-    return-object v0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+    .registers 8
 
     const/4 v0, 0x1
 
@@ -179,57 +52,92 @@
     return v0
 
     :cond_0
-    instance-of v1, p1, Lwdd;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    if-eqz p1, :cond_2
 
-    if-nez v1, :cond_1
+    const-class v2, Lwdd;
 
-    return v2
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v3
+
+    if-eq v2, v3, :cond_1
+
+    goto :goto_0
 
     :cond_1
     check-cast p1, Lwdd;
 
-    iget v1, p0, Lwdd;->a:I
+    iget-wide v2, p0, Lwdd;->a:J
 
-    iget v3, p1, Lwdd;->a:I
+    iget-wide v4, p1, Lwdd;->a:J
 
-    if-ne v1, v3, :cond_2
+    cmp-long v2, v2, v4
 
-    iget-object p0, p0, Lwdd;->b:Ljava/lang/String;
+    if-nez v2, :cond_2
 
-    iget-object p1, p1, Lwdd;->b:Ljava/lang/String;
+    iget-wide v2, p0, Lwdd;->b:J
 
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-wide p0, p1, Lwdd;->b:J
 
-    move-result p0
+    cmp-long p0, v2, p0
 
-    if-eqz p0, :cond_2
+    if-nez p0, :cond_2
 
     return v0
 
     :cond_2
-    return v2
+    :goto_0
+    return v1
 .end method
 
 .method public final hashCode()I
-    .registers 2
+    .registers 4
 
-    iget v0, p0, Lwdd;->a:I
+    iget-wide v0, p0, Lwdd;->a:J
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    long-to-int v0, v0
 
-    move-result-object v0
+    mul-int/lit8 v0, v0, 0x1f
 
-    iget-object p0, p0, Lwdd;->b:Ljava/lang/String;
+    iget-wide v1, p0, Lwdd;->b:J
 
-    filled-new-array {v0, p0}, [Ljava/lang/Object;
+    long-to-int p0, v1
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 5
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x3c
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    const-string v1, "[timeUs="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-wide v1, p0, Lwdd;->a:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, ", position="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "]"
+
+    iget-wide v2, p0, Lwdd;->b:J
+
+    invoke-static {v0, v2, v3, v1}, Lyv7;->j(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
-
-    move-result p0
-
-    return p0
+    return-object p0
 .end method

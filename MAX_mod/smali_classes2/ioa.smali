@@ -1,131 +1,175 @@
-.class public final Lioa;
-.super Ljp9;
+.class public abstract Lioa;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final b:Landroid/content/Intent;
+# static fields
+.field public static final A:I
 
-.field public final c:Landroid/net/Uri;
+.field public static final a:I
+
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
+.field public static final s:I
+
+.field public static final t:I
+
+.field public static final u:I
+
+.field public static final v:I
+
+.field public static final w:I
+
+.field public static final x:I
+
+.field public static final y:I
+
+.field public static final z:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;Landroid/net/Uri;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 1
 
-    sget-object v0, Lncf;->a:Lncf;
+    sget v0, Lwbc;->oneme_settings_storage_action_one_month:I
 
-    invoke-direct {p0, v0}, Ljp9;-><init>(Ljava/lang/Object;)V
+    sput v0, Lioa;->a:I
 
-    iput-object p1, p0, Lioa;->b:Landroid/content/Intent;
+    sget v0, Lwbc;->oneme_settings_storage_action_one_week:I
 
-    iput-object p2, p0, Lioa;->c:Landroid/net/Uri;
+    sput v0, Lioa;->b:I
+
+    sget v0, Lwbc;->oneme_settings_storage_action_six_month:I
+
+    sput v0, Lioa;->c:I
+
+    sget v0, Lwbc;->oneme_settings_storage_action_unlimited:I
+
+    sput v0, Lioa;->d:I
+
+    sget v0, Lwbc;->oneme_settings_storage_audio_messages:I
+
+    sput v0, Lioa;->e:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache:I
+
+    sput v0, Lioa;->f:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_dialog_action_clear:I
+
+    sput v0, Lioa;->g:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_dialog_all_title:I
+
+    sput v0, Lioa;->h:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_dialog_audio_title:I
+
+    sput v0, Lioa;->i:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_dialog_desc:I
+
+    sput v0, Lioa;->j:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_dialog_files_title:I
+
+    sput v0, Lioa;->k:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_dialog_gif_title:I
+
+    sput v0, Lioa;->l:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_dialog_images_title:I
+
+    sput v0, Lioa;->m:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_dialog_music_title:I
+
+    sput v0, Lioa;->n:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_dialog_stickers_title:I
+
+    sput v0, Lioa;->o:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_dialog_video_title:I
+
+    sput v0, Lioa;->p:I
+
+    sget v0, Lwbc;->oneme_settings_storage_clear_cache_success_snackbar:I
+
+    sput v0, Lioa;->q:I
+
+    sget v0, Lwbc;->oneme_settings_storage_files:I
+
+    sput v0, Lioa;->r:I
+
+    sget v0, Lwbc;->oneme_settings_storage_gif:I
+
+    sput v0, Lioa;->s:I
+
+    sget v0, Lwbc;->oneme_settings_storage_images:I
+
+    sput v0, Lioa;->t:I
+
+    sget v0, Lwbc;->oneme_settings_storage_music:I
+
+    sput v0, Lioa;->u:I
+
+    sget v0, Lwbc;->oneme_settings_storage_screen_data_section:I
+
+    sput v0, Lioa;->v:I
+
+    sget v0, Lwbc;->oneme_settings_storage_screen_preserve_media_cache_desc:I
+
+    sput v0, Lioa;->w:I
+
+    sget v0, Lwbc;->oneme_settings_storage_screen_preserve_media_cache_title:I
+
+    sput v0, Lioa;->x:I
+
+    sget v0, Lwbc;->oneme_settings_storage_screen_toolbar_title:I
+
+    sput v0, Lioa;->y:I
+
+    sget v0, Lwbc;->oneme_settings_storage_stickers:I
+
+    sput v0, Lioa;->z:I
+
+    sget v0, Lwbc;->oneme_settings_storage_video:I
+
+    sput v0, Lioa;->A:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lioa;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lioa;
-
-    iget-object v1, p0, Lioa;->b:Landroid/content/Intent;
-
-    iget-object v3, p1, Lioa;->b:Landroid/content/Intent;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object p0, p0, Lioa;->c:Landroid/net/Uri;
-
-    iget-object p1, p1, Lioa;->c:Landroid/net/Uri;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-object v0, p0, Lioa;->b:Landroid/content/Intent;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lioa;->c:Landroid/net/Uri;
-
-    invoke-virtual {p0}, Landroid/net/Uri;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "OpenFile(intent="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lioa;->b:Landroid/content/Intent;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", uri="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lioa;->c:Landroid/net/Uri;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

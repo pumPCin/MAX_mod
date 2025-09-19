@@ -1,99 +1,100 @@
 .class public final Lpy2;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lis5;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public final synthetic b:Lis5;
+
+.field public final synthetic c:Lfz2;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lis5;Lfz2;I)V
+    .registers 4
+
+    iput p3, p0, Lpy2;->a:I
+
+    iput-object p1, p0, Lpy2;->b:Lis5;
+
+    iput-object p2, p0, Lpy2;->c:Lfz2;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .registers 6
 
-    check-cast p1, Lhq5;
+    iget v0, p0, Lpy2;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Lpy2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    new-instance v0, Ljy2;
+
+    iget-object v1, p0, Lpy2;->c:Lfz2;
+
+    const/4 v2, 0x3
+
+    invoke-direct {v0, p1, v1, v2}, Ljy2;-><init>(Lks5;Lfz2;I)V
+
+    iget-object p0, p0, Lpy2;->b:Lis5;
+
+    invoke-interface {p0, v0, p2}, Lis5;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lpy2;
+    sget-object p1, Lz04;->a:Lz04;
 
-    sget-object p1, Lncf;->a:Lncf;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1}, Lpy2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    goto :goto_0
 
-    move-result-object p0
+    :cond_0
+    sget-object p0, Lylf;->a:Lylf;
 
+    :goto_0
     return-object p0
-.end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    :pswitch_0
+    new-instance v0, Ljy2;
 
-    new-instance p0, Lpy2;
-
-    const/4 v0, 0x2
-
-    invoke-direct {p0, v0, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    iput-object p1, p0, Lpy2;->Y:Ljava/lang/Object;
-
-    return-object p0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    iget v0, p0, Lpy2;->X:I
-
-    sget-object v1, Lncf;->a:Lncf;
+    iget-object v1, p0, Lpy2;->c:Lfz2;
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_1
+    invoke-direct {v0, p1, v1, v2}, Ljy2;-><init>(Lks5;Lfz2;I)V
 
-    if-ne v0, v2, :cond_0
+    iget-object p0, p0, Lpy2;->b:Lis5;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object v1
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lpy2;->Y:Ljava/lang/Object;
-
-    check-cast p1, Lhq5;
-
-    iput v2, p0, Lpy2;->X:I
-
-    invoke-interface {p1, v1, p0}, Lhq5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-interface {p0, v0, p2}, Lis5;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
+    sget-object p1, Lz04;->a:Lz04;
 
-    if-ne p0, p1, :cond_2
+    if-ne p0, p1, :cond_1
 
-    return-object p1
+    goto :goto_1
 
-    :cond_2
-    return-object v1
+    :cond_1
+    sget-object p0, Lylf;->a:Lylf;
+
+    :goto_1
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

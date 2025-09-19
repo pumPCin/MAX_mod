@@ -1,152 +1,61 @@
-.class public final synthetic Ltb3;
+.class public abstract Ltb3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lja4;
 
+# static fields
+.field public static final a:Lrb3;
 
-# instance fields
-.field public final synthetic a:I
+.field public static final b:Lsb3;
 
-.field public final synthetic b:J
+.field public static final c:Lsb3;
 
 
 # direct methods
-.method public synthetic constructor <init>(JI)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput p3, p0, Ltb3;->a:I
+    new-instance v0, Lrb3;
 
-    iput-wide p1, p0, Ltb3;->b:J
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Ltb3;->a:Lrb3;
+
+    new-instance v0, Lsb3;
+
+    const/4 v1, -0x1
+
+    invoke-direct {v0, v1}, Lsb3;-><init>(I)V
+
+    sput-object v0, Ltb3;->b:Lsb3;
+
+    new-instance v0, Lsb3;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lsb3;-><init>(I)V
+
+    sput-object v0, Ltb3;->c:Lsb3;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .registers 5
+.method public abstract a(II)Ltb3;
+.end method
 
-    iget v0, p0, Ltb3;->a:I
+.method public abstract b(JJ)Ltb3;
+.end method
 
-    packed-switch v0, :pswitch_data_0
+.method public abstract c(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/Comparator;)Ltb3;
+.end method
 
-    new-instance v0, Lone/me/webapp/settings/WebAppSettingsScreen;
+.method public abstract d(ZZ)Ltb3;
+.end method
 
-    iget-wide v1, p0, Ltb3;->b:J
+.method public abstract e(ZZ)Ltb3;
+.end method
 
-    invoke-direct {v0, v1, v2}, Lone/me/webapp/settings/WebAppSettingsScreen;-><init>(J)V
-
-    return-object v0
-
-    :pswitch_0
-    new-instance v0, Lone/me/stickerssettings/stickersscreen/StickersScreen;
-
-    sget-object v1, Lx8e;->o:Lx8e;
-
-    iget-wide v2, p0, Ltb3;->b:J
-
-    invoke-direct {v0, v1, v2, v3}, Lone/me/stickerssettings/stickersscreen/StickersScreen;-><init>(Lx8e;J)V
-
-    return-object v0
-
-    :pswitch_1
-    new-instance v0, Lone/me/startconversation/channel/PickSubscribersScreen;
-
-    iget-wide v1, p0, Ltb3;->b:J
-
-    invoke-direct {v0, v1, v2}, Lone/me/startconversation/channel/PickSubscribersScreen;-><init>(J)V
-
-    return-object v0
-
-    :pswitch_2
-    new-instance v0, Lone/me/profileedit/screens/memberpermissions/ProfileMemberPermissionsScreen;
-
-    iget-wide v1, p0, Ltb3;->b:J
-
-    invoke-direct {v0, v1, v2}, Lone/me/profileedit/screens/memberpermissions/ProfileMemberPermissionsScreen;-><init>(J)V
-
-    return-object v0
-
-    :pswitch_3
-    new-instance v0, Lone/me/profile/screens/addadmins/AddChatAdminsScreen;
-
-    iget-wide v1, p0, Ltb3;->b:J
-
-    invoke-direct {v0, v1, v2}, Lone/me/profile/screens/addadmins/AddChatAdminsScreen;-><init>(J)V
-
-    return-object v0
-
-    :pswitch_4
-    new-instance v0, Lone/me/profile/screens/invite/ProfileInviteScreen;
-
-    iget-wide v1, p0, Ltb3;->b:J
-
-    invoke-direct {v0, v1, v2}, Lone/me/profile/screens/invite/ProfileInviteScreen;-><init>(J)V
-
-    return-object v0
-
-    :pswitch_5
-    new-instance v0, Lone/me/profile/screens/media/ChatMediaTabWidget;
-
-    iget-wide v1, p0, Ltb3;->b:J
-
-    invoke-direct {v0, v1, v2}, Lone/me/profile/screens/media/ChatMediaTabWidget;-><init>(J)V
-
-    return-object v0
-
-    :pswitch_6
-    new-instance v0, Lone/me/login/neuroavatars/NeuroAvatarsScreen;
-
-    iget-wide v1, p0, Ltb3;->b:J
-
-    invoke-direct {v0, v1, v2}, Lone/me/login/neuroavatars/NeuroAvatarsScreen;-><init>(J)V
-
-    return-object v0
-
-    :pswitch_7
-    new-instance v0, Lone/me/folders/pickerfolders/FoldersPickerScreen;
-
-    iget-wide v1, p0, Ltb3;->b:J
-
-    invoke-direct {v0, v1, v2}, Lone/me/folders/pickerfolders/FoldersPickerScreen;-><init>(J)V
-
-    return-object v0
-
-    :pswitch_8
-    new-instance v0, Lone/me/folders/edit/FolderEditScreen;
-
-    iget-wide v1, p0, Ltb3;->b:J
-
-    invoke-direct {v0, v1, v2}, Lone/me/folders/edit/FolderEditScreen;-><init>(J)V
-
-    return-object v0
-
-    :pswitch_9
-    new-instance v0, Lone/me/complaintbottomsheet/ComplaintBottomSheet;
-
-    iget-wide v1, p0, Ltb3;->b:J
-
-    invoke-direct {v0, v1, v2}, Lone/me/complaintbottomsheet/ComplaintBottomSheet;-><init>(J)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+.method public abstract f()I
 .end method

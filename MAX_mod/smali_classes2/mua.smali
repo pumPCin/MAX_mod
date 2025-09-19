@@ -1,210 +1,119 @@
-.class public final synthetic Lmua;
-.super Ljava/lang/Object;
+.class public final Lmua;
+.super Lys9;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final b:J
 
-.field public final synthetic b:Lxua;
+.field public final c:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxua;I)V
-    .registers 3
+.method public constructor <init>(JZ)V
+    .registers 5
 
-    iput p2, p0, Lmua;->a:I
+    sget-object v0, Lylf;->a:Lylf;
 
-    iput-object p1, p0, Lmua;->b:Lxua;
+    invoke-direct {p0, v0}, Lys9;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p1, p0, Lmua;->b:J
 
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lxua;Ljava/lang/String;I)V
-    .registers 4
-
-    iput p3, p0, Lmua;->a:I
-
-    iput-object p1, p0, Lmua;->b:Lxua;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean p3, p0, Lmua;->c:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 9
 
-    iget v0, p0, Lmua;->a:I
-
-    iget-object p0, p0, Lmua;->b:Lxua;
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lxua;->q()V
-
-    return-void
-
-    :pswitch_0
-    invoke-virtual {p0}, Lxua;->q()V
-
-    iget-object v0, p0, Lxua;->i:Ldj;
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0}, Ldj;->a()V
-
-    :cond_0
-    iget-object v0, p0, Lxua;->k:Lgi;
-
-    if-eqz v0, :cond_2
-
-    iget-object v1, v0, Lgi;->b:Lc64;
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v1, v0}, Lc64;->c(Lhsc;)V
-
-    :cond_1
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lgi;->b:Lc64;
-
-    :cond_2
-    iget-object v0, p0, Lxua;->y:Ld7c;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v2, ": "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p0}, Lxd9;->c(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p0, " was released"
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v1, "PCRTCClient"
-
-    invoke-interface {v0, v1, p0}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :pswitch_1
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lxua;->K:Z
+    if-ne p0, p1, :cond_0
 
-    return-void
+    return v0
 
-    :pswitch_2
-    iget-object v0, p0, Lxua;->N:Lwua;
+    :cond_0
+    instance-of v1, p1, Lmua;
 
-    if-eqz v0, :cond_3
+    const/4 v2, 0x0
 
-    invoke-interface {v0, p0}, Lwua;->r(Lxua;)V
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lmua;
+
+    iget-wide v3, p0, Lmua;->b:J
+
+    iget-wide v5, p1, Lmua;->b:J
+
+    cmp-long v1, v3, v5
+
+    if-eqz v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-boolean p0, p0, Lmua;->c:Z
+
+    iget-boolean p1, p1, Lmua;->c:Z
+
+    if-eq p0, p1, :cond_3
+
+    return v2
 
     :cond_3
-    return-void
+    return v0
+.end method
 
-    :pswitch_3
-    iget-object v0, p0, Lxua;->N:Lwua;
+.method public final hashCode()I
+    .registers 3
 
-    if-eqz v0, :cond_4
+    iget-wide v0, p0, Lmua;->b:J
 
-    invoke-interface {v0, p0}, Lwua;->b(Lxua;)V
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
-    :cond_4
-    return-void
+    move-result v0
 
-    :pswitch_4
-    iget-object p0, p0, Lxua;->N:Lwua;
+    mul-int/lit8 v0, v0, 0x1f
 
-    if-eqz p0, :cond_5
+    iget-boolean p0, p0, Lmua;->c:Z
 
-    invoke-interface {p0}, Lwua;->f()V
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
-    :cond_5
-    return-void
+    move-result p0
 
-    :pswitch_5
-    iget-object v0, p0, Lxua;->y:Ld7c;
+    add-int/2addr p0, v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    return p0
+.end method
 
-    const-string v2, "createPeerConnectionFactoryInternal, "
+.method public final toString()Ljava/lang/String;
+    .registers 5
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-string v0, "OpenOneToOneCall(opponentId="
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v1, ", isVideo="
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-wide v2, p0, Lmua;->b:J
 
-    move-result-object v1
+    iget-boolean p0, p0, Lmua;->c:Z
 
-    const-string v2, "PCRTCClient"
+    invoke-static {v2, v3, v0, v1, p0}, Lsg0;->i(JLjava/lang/String;Ljava/lang/String;Z)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0, v2, v1}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object p0
 
-    const/4 v0, 0x0
+    const-string v0, ")"
 
-    iput-boolean v0, p0, Lxua;->K:Z
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :pswitch_6
-    iget-object p0, p0, Lxua;->N:Lwua;
+    move-result-object p0
 
-    if-eqz p0, :cond_6
-
-    invoke-interface {p0}, Lwua;->d()V
-
-    :cond_6
-    return-void
-
-    :pswitch_7
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lxua;->X:Z
-
-    iget-object v0, p0, Lxua;->N:Lwua;
-
-    if-eqz v0, :cond_7
-
-    invoke-interface {v0, p0}, Lwua;->c(Lxua;)V
-
-    :cond_7
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

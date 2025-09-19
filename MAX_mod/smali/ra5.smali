@@ -1,98 +1,23 @@
-.class public final Lra5;
+.class public interface abstract Lra5;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx6b;
-
-
-# instance fields
-.field public a:Lra5;
-
-.field public b:Lra5;
-
 
 # virtual methods
-.method public final a(ILjava/lang/Object;)V
-    .registers 4
-
-    const/4 v0, 0x7
-
-    if-eq p1, v0, :cond_3
-
-    const/16 v0, 0x8
-
-    if-eq p1, v0, :cond_2
-
-    const/16 p0, 0x2710
-
-    if-eq p1, p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    if-nez p2, :cond_1
-
-    :goto_0
-    return-void
-
-    :cond_1
-    new-instance p0, Ljava/lang/ClassCastException;
-
-    invoke-direct {p0}, Ljava/lang/ClassCastException;-><init>()V
-
-    throw p0
-
-    :cond_2
-    check-cast p2, Lra5;
-
-    iput-object p2, p0, Lra5;->b:Lra5;
-
-    return-void
-
-    :cond_3
-    check-cast p2, Lra5;
-
-    iput-object p2, p0, Lra5;->a:Lra5;
-
-    return-void
+.method public abstract b()Ljava/util/concurrent/ExecutorService;
 .end method
 
-.method public final b()V
-    .registers 1
-
-    iget-object p0, p0, Lra5;->b:Lra5;
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Lra5;->b()V
-
-    :cond_0
-    return-void
+.method public abstract d()Ljava/util/concurrent/ExecutorService;
 .end method
 
-.method public final c()V
-    .registers 1
-
-    iget-object p0, p0, Lra5;->b:Lra5;
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Lra5;->c()V
-
-    :cond_0
-    return-void
+.method public abstract g()Ljava/util/concurrent/ExecutorService;
 .end method
 
-.method public final d()V
-    .registers 1
+.method public abstract h()Ljava/util/concurrent/ExecutorService;
+.end method
 
-    iget-object p0, p0, Lra5;->a:Lra5;
+.method public abstract m()Ljava/util/concurrent/ExecutorService;
+.end method
 
-    if-eqz p0, :cond_0
-
-    invoke-virtual {p0}, Lra5;->d()V
-
-    :cond_0
-    return-void
+.method public abstract n()Ljava/util/concurrent/ExecutorService;
 .end method

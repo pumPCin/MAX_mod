@@ -1,117 +1,52 @@
-.class public final enum Lhnb;
-.super Ljava/lang/Enum;
-.source "SourceFile"
-
-
-# static fields
-.field public static final synthetic X:[Lhnb;
-
-.field public static final synthetic Y:Lc65;
-
-.field public static final enum b:Lhnb;
-
-.field public static final enum c:Lhnb;
-
-.field public static final enum o:Lhnb;
+.class public final Lhnb;
+.super Ljx3;
 
 
 # instance fields
-.field public final a:I
+.field public X:I
+
+.field public Y:Lhc9;
+
+.field public final synthetic Z:Lhc9;
+
+.field public synthetic o:Ljava/lang/Object;
+
+.field public r0:Lks5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public constructor <init>(Lhc9;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    new-instance v0, Lhnb;
+    iput-object p1, p0, Lhnb;->Z:Lhc9;
 
-    const-string v1, "ESIA_CONNECTION"
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
-
-    invoke-direct {v0, v1, v2, v3}, Lhnb;-><init>(Ljava/lang/String;II)V
-
-    sput-object v0, Lhnb;->b:Lhnb;
-
-    new-instance v1, Lhnb;
-
-    const-string v2, "SECOND_FACTOR_PASSWORD_ENABLED"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v1, v2, v3, v4}, Lhnb;-><init>(Ljava/lang/String;II)V
-
-    sput-object v1, Lhnb;->c:Lhnb;
-
-    new-instance v2, Lhnb;
-
-    const-string v3, "SECOND_FACTOR_HAS_EMAIL"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v2, v3, v4, v5}, Lhnb;-><init>(Ljava/lang/String;II)V
-
-    sput-object v2, Lhnb;->o:Lhnb;
-
-    new-instance v3, Lhnb;
-
-    const-string v4, "SECOND_FACTOR_HAS_HINT"
-
-    const/4 v6, 0x4
-
-    invoke-direct {v3, v4, v5, v6}, Lhnb;-><init>(Ljava/lang/String;II)V
-
-    filled-new-array {v0, v1, v2, v3}, [Lhnb;
-
-    move-result-object v0
-
-    sput-object v0, Lhnb;->X:[Lhnb;
-
-    new-instance v1, Lc65;
-
-    invoke-direct {v1, v0}, Lc65;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lhnb;->Y:Lc65;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;II)V
-    .registers 4
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iput p3, p0, Lhnb;->a:I
+    iput-object p1, p0, Lhnb;->o:Ljava/lang/Object;
 
-    return-void
-.end method
+    iget p1, p0, Lhnb;->X:I
 
-.method public static valueOf(Ljava/lang/String;)Lhnb;
-    .registers 2
+    const/high16 v0, -0x80000000
 
-    const-class v0, Lhnb;
+    or-int/2addr p1, v0
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iput p1, p0, Lhnb;->X:I
+
+    iget-object p1, p0, Lhnb;->Z:Lhc9;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lhc9;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lhnb;
-
     return-object p0
-.end method
-
-.method public static values()[Lhnb;
-    .registers 1
-
-    sget-object v0, Lhnb;->X:[Lhnb;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lhnb;
-
-    return-object v0
 .end method

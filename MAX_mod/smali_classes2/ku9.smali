@@ -1,113 +1,120 @@
 .class public final Lku9;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic d:[Lsf7;
-
-.field public static final e:Ljava/lang/String;
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Lfq4;
+.field public final synthetic X:Lnu9;
 
-.field public final b:Lfq4;
+.field public final synthetic Y:Landroid/graphics/Rect;
 
-.field public final c:Lfq4;
+.field public final synthetic Z:Landroid/graphics/RectF;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public constructor <init>(Lnu9;Landroid/graphics/Rect;Landroid/graphics/RectF;Lkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    new-instance v0, Lrqb;
+    iput-object p1, p0, Lku9;->X:Lnu9;
 
-    const-class v1, Lku9;
+    iput-object p2, p0, Lku9;->Y:Landroid/graphics/Rect;
 
-    const-string v2, "prefs"
+    iput-object p3, p0, Lku9;->Z:Landroid/graphics/RectF;
 
-    const-string v3, "getPrefs()Lru/ok/tamtam/Prefs;"
+    const/4 p1, 0x2
 
-    const/4 v4, 0x0
-
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    sget-object v2, Lyhc;->a:Lzhc;
-
-    const-string v3, "discardServerDraftUseCase"
-
-    const-string v5, "getDiscardServerDraftUseCase()Lru/ok/tamtam/draft/DiscardServerDraftUseCase;"
-
-    invoke-static {v2, v1, v3, v5, v4}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
-
-    move-result-object v2
-
-    new-instance v3, Lrqb;
-
-    const-string v5, "downloadDraftUseCase"
-
-    const-string v6, "getDownloadDraftUseCase()Lru/ok/tamtam/draft/DownloadDraftUseCase;"
-
-    invoke-direct {v3, v1, v5, v6, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    const/4 v5, 0x3
-
-    new-array v5, v5, [Lsf7;
-
-    aput-object v0, v5, v4
-
-    const/4 v0, 0x1
-
-    aput-object v2, v5, v0
-
-    const/4 v0, 0x2
-
-    aput-object v3, v5, v0
-
-    sput-object v5, Lku9;->d:[Lsf7;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lku9;->e:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lfq4;Lfq4;Lfq4;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lku9;->a:Lfq4;
-
-    iput-object p2, p0, Lku9;->b:Lfq4;
-
-    iput-object p3, p0, Lku9;->c:Lfq4;
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lt9b;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    sget-object v0, Lku9;->d:[Lsf7;
+    check-cast p1, Ly04;
 
-    const/4 v1, 0x0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    aget-object v0, v0, v1
-
-    iget-object p0, p0, Lku9;->a:Lfq4;
-
-    invoke-virtual {p0}, Lfq4;->get()Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lku9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    check-cast p0, Lt9b;
+    check-cast p0, Lku9;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lku9;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 5
+
+    new-instance p1, Lku9;
+
+    iget-object v0, p0, Lku9;->Y:Landroid/graphics/Rect;
+
+    iget-object v1, p0, Lku9;->Z:Landroid/graphics/RectF;
+
+    iget-object p0, p0, Lku9;->X:Lnu9;
+
+    invoke-direct {p1, p0, v0, v1, p2}, Lku9;-><init>(Lnu9;Landroid/graphics/Rect;Landroid/graphics/RectF;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 9
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lku9;->X:Lnu9;
+
+    invoke-virtual {p1}, Lnu9;->a()Lcp5;
+
+    move-result-object p1
+
+    iget-object v0, p0, Lku9;->X:Lnu9;
+
+    iget-object v0, v0, Lnu9;->m:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcp5;->r(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lku9;->X:Lnu9;
+
+    iget-object v5, p0, Lku9;->Y:Landroid/graphics/Rect;
+
+    iget-object v3, p0, Lku9;->Z:Landroid/graphics/RectF;
+
+    iget-object p0, v2, Lnu9;->h:Lkotlinx/coroutines/internal/ContextScope;
+
+    new-instance v0, Lju9;
+
+    const/4 v6, 0x0
+
+    const/4 v4, 0x1
+
+    invoke-direct/range {v0 .. v6}, Lju9;-><init>(Ljava/lang/String;Lnu9;Landroid/graphics/RectF;ILandroid/graphics/Rect;Lkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x3
+
+    const/4 v1, 0x0
+
+    invoke-static {p0, v1, v1, v0, p1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

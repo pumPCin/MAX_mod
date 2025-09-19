@@ -1,66 +1,705 @@
-.class public final Ld0;
-.super Ljava/lang/Object;
+.class public abstract Ld0;
+.super Lp6f;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
+
+# static fields
+.field public static final synthetic g:I
 
 
 # instance fields
-.field public final synthetic a:Z
+.field public final e:I
 
-.field public final synthetic b:Lz64;
-
-.field public final synthetic c:Z
-
-.field public final synthetic o:Le0;
+.field public final f:Lh0e;
 
 
 # direct methods
-.method public constructor <init>(Le0;ZLz64;Z)V
-    .registers 5
+.method public constructor <init>(Lh0e;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ld0;->o:Le0;
+    iput-object p1, p0, Ld0;->f:Lh0e;
 
-    iput-boolean p2, p0, Ld0;->a:Z
+    iget-object p1, p1, Lh0e;->b:[I
 
-    iput-object p3, p0, Ld0;->b:Lz64;
+    array-length p1, p1
 
-    iput-boolean p4, p0, Ld0;->c:Z
+    iput p1, p0, Ld0;->e:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 4
+.method public final a(Z)I
+    .registers 6
 
-    iget-boolean v0, p0, Ld0;->a:Z
+    iget v0, p0, Ld0;->e:I
 
-    iget-object v1, p0, Ld0;->o:Le0;
+    const/4 v1, -0x1
 
-    iget-object v2, p0, Ld0;->b:Lz64;
+    if-nez v0, :cond_0
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v2, v1}, Lz64;->c(Le0;)V
-
-    return-void
+    goto :goto_1
 
     :cond_0
-    iget-boolean p0, p0, Ld0;->c:Z
+    const/4 v0, 0x0
 
-    if-eqz p0, :cond_1
+    if-eqz p1, :cond_2
 
-    invoke-interface {v2}, Lz64;->d()V
+    iget-object v2, p0, Ld0;->f:Lh0e;
 
-    return-void
+    iget-object v2, v2, Lh0e;->b:[I
+
+    array-length v3, v2
+
+    if-lez v3, :cond_1
+
+    aget v0, v2, v0
+
+    goto :goto_0
 
     :cond_1
-    invoke-interface {v2, v1}, Lz64;->a(Le0;)V
+    move v0, v1
 
-    return-void
+    :cond_2
+    :goto_0
+    invoke-virtual {p0, v0}, Ld0;->y(I)Lp6f;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lp6f;->p()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    invoke-virtual {p0, v0, p1}, Ld0;->w(IZ)I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_2
+
+    :goto_1
+    return v1
+
+    :cond_3
+    invoke-virtual {p0, v0}, Ld0;->v(I)I
+
+    move-result v1
+
+    invoke-virtual {p0, v0}, Ld0;->y(I)Lp6f;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Lp6f;->a(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v1
+
+    return p0
+.end method
+
+.method public final b(Ljava/lang/Object;)I
+    .registers 5
+
+    instance-of v0, p1, Landroid/util/Pair;
+
+    const/4 v1, -0x1
+
+    if-nez v0, :cond_0
+
+    return v1
+
+    :cond_0
+    check-cast p1, Landroid/util/Pair;
+
+    iget-object v0, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    iget-object p1, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    invoke-virtual {p0, v0}, Ld0;->q(Ljava/lang/Object;)I
+
+    move-result v0
+
+    if-ne v0, v1, :cond_1
+
+    return v1
+
+    :cond_1
+    invoke-virtual {p0, v0}, Ld0;->y(I)Lp6f;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Lp6f;->b(Ljava/lang/Object;)I
+
+    move-result p1
+
+    if-ne p1, v1, :cond_2
+
+    return v1
+
+    :cond_2
+    invoke-virtual {p0, v0}, Ld0;->u(I)I
+
+    move-result p0
+
+    add-int/2addr p0, p1
+
+    return p0
+.end method
+
+.method public final c(Z)I
+    .registers 5
+
+    const/4 v0, -0x1
+
+    iget v1, p0, Ld0;->e:I
+
+    if-nez v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    if-eqz p1, :cond_2
+
+    iget-object v1, p0, Ld0;->f:Lh0e;
+
+    iget-object v1, v1, Lh0e;->b:[I
+
+    array-length v2, v1
+
+    if-lez v2, :cond_1
+
+    array-length v2, v1
+
+    add-int/lit8 v2, v2, -0x1
+
+    aget v1, v1, v2
+
+    goto :goto_0
+
+    :cond_1
+    move v1, v0
+
+    goto :goto_0
+
+    :cond_2
+    add-int/lit8 v1, v1, -0x1
+
+    :cond_3
+    :goto_0
+    invoke-virtual {p0, v1}, Ld0;->y(I)Lp6f;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lp6f;->p()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    invoke-virtual {p0, v1, p1}, Ld0;->x(IZ)I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_3
+
+    :goto_1
+    return v0
+
+    :cond_4
+    invoke-virtual {p0, v1}, Ld0;->v(I)I
+
+    move-result v0
+
+    invoke-virtual {p0, v1}, Ld0;->y(I)Lp6f;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p1}, Lp6f;->c(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final e(IIZ)I
+    .registers 9
+
+    invoke-virtual {p0, p1}, Ld0;->s(I)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Ld0;->v(I)I
+
+    move-result v1
+
+    invoke-virtual {p0, v0}, Ld0;->y(I)Lp6f;
+
+    move-result-object v2
+
+    sub-int/2addr p1, v1
+
+    const/4 v3, 0x2
+
+    if-ne p2, v3, :cond_0
+
+    const/4 v4, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    move v4, p2
+
+    :goto_0
+    invoke-virtual {v2, p1, v4, p3}, Lp6f;->e(IIZ)I
+
+    move-result p1
+
+    const/4 v2, -0x1
+
+    if-eq p1, v2, :cond_1
+
+    add-int/2addr v1, p1
+
+    return v1
+
+    :cond_1
+    invoke-virtual {p0, v0, p3}, Ld0;->w(IZ)I
+
+    move-result p1
+
+    :goto_1
+    if-eq p1, v2, :cond_2
+
+    invoke-virtual {p0, p1}, Ld0;->y(I)Lp6f;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lp6f;->p()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0, p1, p3}, Ld0;->w(IZ)I
+
+    move-result p1
+
+    goto :goto_1
+
+    :cond_2
+    if-eq p1, v2, :cond_3
+
+    invoke-virtual {p0, p1}, Ld0;->v(I)I
+
+    move-result p2
+
+    invoke-virtual {p0, p1}, Ld0;->y(I)Lp6f;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p3}, Lp6f;->a(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, p2
+
+    return p0
+
+    :cond_3
+    if-ne p2, v3, :cond_4
+
+    invoke-virtual {p0, p3}, Ld0;->a(Z)I
+
+    move-result p0
+
+    return p0
+
+    :cond_4
+    return v2
+.end method
+
+.method public final f(ILk6f;Z)Lk6f;
+    .registers 8
+
+    invoke-virtual {p0, p1}, Ld0;->r(I)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Ld0;->v(I)I
+
+    move-result v1
+
+    invoke-virtual {p0, v0}, Ld0;->u(I)I
+
+    move-result v2
+
+    invoke-virtual {p0, v0}, Ld0;->y(I)Lp6f;
+
+    move-result-object v3
+
+    sub-int/2addr p1, v2
+
+    invoke-virtual {v3, p1, p2, p3}, Lp6f;->f(ILk6f;Z)Lk6f;
+
+    iget p1, p2, Lk6f;->c:I
+
+    add-int/2addr p1, v1
+
+    iput p1, p2, Lk6f;->c:I
+
+    if-eqz p3, :cond_0
+
+    invoke-virtual {p0, v0}, Ld0;->t(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    iget-object p1, p2, Lk6f;->b:Ljava/lang/Object;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p0, p1}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object p0
+
+    iput-object p0, p2, Lk6f;->b:Ljava/lang/Object;
+
+    :cond_0
+    return-object p2
+.end method
+
+.method public final g(Ljava/lang/Object;Lk6f;)Lk6f;
+    .registers 6
+
+    move-object v0, p1
+
+    check-cast v0, Landroid/util/Pair;
+
+    iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    iget-object v0, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
+
+    invoke-virtual {p0, v1}, Ld0;->q(Ljava/lang/Object;)I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Ld0;->v(I)I
+
+    move-result v2
+
+    invoke-virtual {p0, v1}, Ld0;->y(I)Lp6f;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v0, p2}, Lp6f;->g(Ljava/lang/Object;Lk6f;)Lk6f;
+
+    iget p0, p2, Lk6f;->c:I
+
+    add-int/2addr p0, v2
+
+    iput p0, p2, Lk6f;->c:I
+
+    iput-object p1, p2, Lk6f;->b:Ljava/lang/Object;
+
+    return-object p2
+.end method
+
+.method public final k(IIZ)I
+    .registers 9
+
+    invoke-virtual {p0, p1}, Ld0;->s(I)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Ld0;->v(I)I
+
+    move-result v1
+
+    invoke-virtual {p0, v0}, Ld0;->y(I)Lp6f;
+
+    move-result-object v2
+
+    sub-int/2addr p1, v1
+
+    const/4 v3, 0x2
+
+    if-ne p2, v3, :cond_0
+
+    const/4 v4, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    move v4, p2
+
+    :goto_0
+    invoke-virtual {v2, p1, v4, p3}, Lp6f;->k(IIZ)I
+
+    move-result p1
+
+    const/4 v2, -0x1
+
+    if-eq p1, v2, :cond_1
+
+    add-int/2addr v1, p1
+
+    return v1
+
+    :cond_1
+    invoke-virtual {p0, v0, p3}, Ld0;->x(IZ)I
+
+    move-result p1
+
+    :goto_1
+    if-eq p1, v2, :cond_2
+
+    invoke-virtual {p0, p1}, Ld0;->y(I)Lp6f;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lp6f;->p()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0, p1, p3}, Ld0;->x(IZ)I
+
+    move-result p1
+
+    goto :goto_1
+
+    :cond_2
+    if-eq p1, v2, :cond_3
+
+    invoke-virtual {p0, p1}, Ld0;->v(I)I
+
+    move-result p2
+
+    invoke-virtual {p0, p1}, Ld0;->y(I)Lp6f;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p3}, Lp6f;->c(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, p2
+
+    return p0
+
+    :cond_3
+    if-ne p2, v3, :cond_4
+
+    invoke-virtual {p0, p3}, Ld0;->c(Z)I
+
+    move-result p0
+
+    return p0
+
+    :cond_4
+    return v2
+.end method
+
+.method public final l(I)Ljava/lang/Object;
+    .registers 5
+
+    invoke-virtual {p0, p1}, Ld0;->r(I)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Ld0;->u(I)I
+
+    move-result v1
+
+    invoke-virtual {p0, v0}, Ld0;->y(I)Lp6f;
+
+    move-result-object v2
+
+    sub-int/2addr p1, v1
+
+    invoke-virtual {v2, p1}, Lp6f;->l(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-virtual {p0, v0}, Ld0;->t(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0, p1}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(ILn6f;J)Ln6f;
+    .registers 9
+
+    invoke-virtual {p0, p1}, Ld0;->s(I)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Ld0;->v(I)I
+
+    move-result v1
+
+    invoke-virtual {p0, v0}, Ld0;->u(I)I
+
+    move-result v2
+
+    invoke-virtual {p0, v0}, Ld0;->y(I)Lp6f;
+
+    move-result-object v3
+
+    sub-int/2addr p1, v1
+
+    invoke-virtual {v3, p1, p2, p3, p4}, Lp6f;->m(ILn6f;J)Ln6f;
+
+    invoke-virtual {p0, v0}, Ld0;->t(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Ln6f;->q:Ljava/lang/Object;
+
+    iget-object p3, p2, Ln6f;->a:Ljava/lang/Object;
+
+    invoke-virtual {p1, p3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p1, p2, Ln6f;->a:Ljava/lang/Object;
+
+    invoke-static {p0, p1}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
+
+    move-result-object p0
+
+    :goto_0
+    iput-object p0, p2, Ln6f;->a:Ljava/lang/Object;
+
+    iget p0, p2, Ln6f;->n:I
+
+    add-int/2addr p0, v2
+
+    iput p0, p2, Ln6f;->n:I
+
+    iget p0, p2, Ln6f;->o:I
+
+    add-int/2addr p0, v2
+
+    iput p0, p2, Ln6f;->o:I
+
+    return-object p2
+.end method
+
+.method public abstract q(Ljava/lang/Object;)I
+.end method
+
+.method public abstract r(I)I
+.end method
+
+.method public abstract s(I)I
+.end method
+
+.method public abstract t(I)Ljava/lang/Object;
+.end method
+
+.method public abstract u(I)I
+.end method
+
+.method public abstract v(I)I
+.end method
+
+.method public final w(IZ)I
+    .registers 4
+
+    const/4 v0, -0x1
+
+    if-eqz p2, :cond_1
+
+    iget-object p0, p0, Ld0;->f:Lh0e;
+
+    iget-object p2, p0, Lh0e;->c:[I
+
+    aget p1, p2, p1
+
+    add-int/lit8 p1, p1, 0x1
+
+    iget-object p0, p0, Lh0e;->b:[I
+
+    array-length p2, p0
+
+    if-ge p1, p2, :cond_0
+
+    aget p0, p0, p1
+
+    return p0
+
+    :cond_0
+    return v0
+
+    :cond_1
+    iget p0, p0, Ld0;->e:I
+
+    add-int/lit8 p0, p0, -0x1
+
+    if-ge p1, p0, :cond_2
+
+    add-int/lit8 p1, p1, 0x1
+
+    return p1
+
+    :cond_2
+    return v0
+.end method
+
+.method public final x(IZ)I
+    .registers 4
+
+    const/4 v0, -0x1
+
+    if-eqz p2, :cond_1
+
+    iget-object p0, p0, Ld0;->f:Lh0e;
+
+    iget-object p2, p0, Lh0e;->c:[I
+
+    aget p1, p2, p1
+
+    add-int/2addr p1, v0
+
+    if-ltz p1, :cond_0
+
+    iget-object p0, p0, Lh0e;->b:[I
+
+    aget p0, p0, p1
+
+    return p0
+
+    :cond_0
+    return v0
+
+    :cond_1
+    if-lez p1, :cond_2
+
+    add-int/lit8 p1, p1, -0x1
+
+    return p1
+
+    :cond_2
+    return v0
+.end method
+
+.method public abstract y(I)Lp6f;
 .end method

@@ -2,333 +2,328 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lqs9;
-
 
 # instance fields
-.field public final b:J
+.field public final a:Luka;
 
-.field public final c:J
+.field public final b:Lch4;
+
+.field public final c:Ljava/util/concurrent/ExecutorService;
+
+.field public final d:Ljava/lang/String;
+
+.field public volatile e:Z
+
+.field public final f:Ljava/util/concurrent/atomic/AtomicReference;
+
+.field public volatile g:Ljava/util/concurrent/Future;
 
 
 # direct methods
-.method public constructor <init>(JJ)V
-    .registers 5
+.method public constructor <init>(Luka;Lch4;Ljava/util/concurrent/ExecutorService;Ljava/lang/String;Z)V
+    .registers 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Los9;->b:J
+    iput-object p1, p0, Los9;->a:Luka;
 
-    iput-wide p3, p0, Los9;->c:J
+    iput-object p2, p0, Los9;->b:Lch4;
+
+    iput-object p3, p0, Los9;->c:Ljava/util/concurrent/ExecutorService;
+
+    iput-object p4, p0, Los9;->d:Ljava/lang/String;
+
+    iput-boolean p5, p0, Los9;->e:Z
+
+    new-instance p1, Ljava/util/concurrent/atomic/AtomicReference;
+
+    new-instance p2, Ljava/util/ArrayList;
+
+    invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
+
+    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object p1, p0, Los9;->f:Ljava/util/concurrent/atomic/AtomicReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/Date;)Ljava/util/Date;
-    .registers 10
+.method public final a(Lps9;)V
+    .registers 9
 
-    new-instance v0, Ljava/util/Date;
+    const/4 v0, 0x0
 
-    invoke-virtual {p1}, Ljava/util/Date;->getYear()I
+    :goto_0
+    iget-object v1, p0, Los9;->f:Ljava/util/concurrent/atomic/AtomicReference;
 
-    move-result v1
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    invoke-virtual {p1}, Ljava/util/Date;->getMonth()I
+    move-result-object v2
 
-    move-result v2
+    check-cast v2, Ljava/util/ArrayList;
 
-    invoke-virtual {p1}, Ljava/util/Date;->getDate()I
+    new-instance v3, Ljava/util/ArrayList;
 
-    move-result v3
+    invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    sget p1, Llw4;->o:I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    sget-object p1, Lqw4;->Y:Lqw4;
+    move-result-object v4
 
-    iget-wide v4, p0, Los9;->c:J
+    :cond_0
+    :goto_1
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-static {v4, v5, p1}, Llw4;->i(JLqw4;)J
+    move-result v5
 
-    move-result-wide p0
+    if-eqz v5, :cond_2
 
-    long-to-int p0, p0
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    sget-object p1, Lqw4;->X:Lqw4;
+    move-result-object v5
 
-    invoke-static {v4, v5, p1}, Llw4;->i(JLqw4;)J
+    check-cast v5, Ljava/lang/ref/WeakReference;
 
-    move-result-wide v4
+    invoke-virtual {v5}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
-    const/16 p1, 0x3c
+    move-result-object v6
 
-    int-to-long v6, p1
+    if-nez v6, :cond_1
 
-    rem-long/2addr v4, v6
+    invoke-interface {v4}, Ljava/util/Iterator;->remove()V
 
-    long-to-int v5, v4
+    goto :goto_1
 
-    move v4, p0
+    :cond_1
+    invoke-virtual {v5}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v5}, Ljava/util/Date;-><init>(IIIII)V
+    move-result-object v5
 
-    return-object v0
-.end method
+    if-ne v5, p1, :cond_0
 
-.method public final b()Z
-    .registers 8
+    const/4 v0, 0x1
 
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    :cond_2
+    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v4
 
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+    if-eqz v4, :cond_6
 
-    move-result-object v0
+    if-eqz v0, :cond_3
 
-    invoke-virtual {p0, v0}, Los9;->c(Ljava/util/Date;)Ljava/util/Date;
+    return-void
 
-    move-result-object v1
-
-    invoke-virtual {p0, v0}, Los9;->a(Ljava/util/Date;)Ljava/util/Date;
+    :cond_3
+    :goto_2
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-interface {v0, v1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+    move-object v4, p0
 
-    move-result v2
+    check-cast v4, Ljava/util/ArrayList;
 
-    const-wide/16 v3, 0x1
+    new-instance v5, Ljava/util/ArrayList;
 
-    if-ltz v2, :cond_0
+    invoke-direct {v5, v4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    invoke-interface {v0, p0}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+    new-instance p0, Ljava/lang/ref/WeakReference;
 
-    move-result v2
+    invoke-direct {p0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    if-gtz v2, :cond_0
+    invoke-virtual {v5, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_4
+    invoke-virtual {v1, v4, v5}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_5
+
+    return-void
+
+    :cond_5
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-eq p0, v4, :cond_4
+
+    goto :goto_2
+
+    :cond_6
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    if-eq v4, v2, :cond_2
+
+    goto :goto_0
+.end method
+
+.method public final b(Lss9;Lps9;)V
+    .registers 5
+
+    if-eqz p1, :cond_1
+
+    :try_start_0
+    iget-object v0, p1, Lss9;->b:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p1, Lss9;->b:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->canRead()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v1, p0}, Ljava/util/Date;->compareTo(Ljava/util/Date;)I
+    iget-object v0, p0, Los9;->d:Ljava/lang/String;
 
-    move-result v2
+    iget-object v1, p1, Lss9;->b:Ljava/io/File;
 
-    if-lez v2, :cond_1
+    iget-object p1, p1, Lss9;->a:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
+    invoke-interface {p2, v0, v1, p1}, Lps9;->onFinished(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)V
 
-    move-result-wide v5
+    return-void
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v2, v3, v4}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v2
-
-    sub-long/2addr v5, v2
-
-    invoke-virtual {v1, v5, v6}, Ljava/util/Date;->setTime(J)V
+    :catchall_0
+    move-exception p1
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    invoke-virtual {p0, v1}, Ljava/util/Date;->compareTo(Ljava/util/Date;)I
+    iget-boolean p1, p0, Los9;->e:Z
 
-    move-result v2
+    if-eqz p1, :cond_4
 
-    if-gez v2, :cond_2
+    invoke-virtual {p0, p2}, Los9;->a(Lps9;)V
 
-    invoke-virtual {p0}, Ljava/util/Date;->getTime()J
+    invoke-virtual {p0}, Los9;->d()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result-wide v5
+    return-void
 
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {v2, v3, v4}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v2
-
-    add-long/2addr v2, v5
-
-    invoke-virtual {p0, v2, v3}, Ljava/util/Date;->setTime(J)V
-
-    :cond_2
     :goto_1
-    invoke-virtual {v0, v1}, Ljava/util/Date;->compareTo(Ljava/util/Date;)I
+    instance-of v0, p1, Ljava/util/concurrent/ExecutionException;
 
-    move-result v1
+    if-eqz v0, :cond_2
 
-    if-ltz v1, :cond_3
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
-    invoke-virtual {v0, p0}, Ljava/util/Date;->compareTo(Ljava/util/Date;)I
+    move-result-object p1
 
-    move-result p0
+    if-eqz p1, :cond_3
 
-    if-gez p0, :cond_3
+    invoke-interface {p2, p1}, Lps9;->onFailed(Ljava/lang/Throwable;)V
 
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_3
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final c(Ljava/util/Date;)Ljava/util/Date;
-    .registers 10
-
-    new-instance v0, Ljava/util/Date;
-
-    invoke-virtual {p1}, Ljava/util/Date;->getYear()I
-
-    move-result v1
-
-    invoke-virtual {p1}, Ljava/util/Date;->getMonth()I
-
-    move-result v2
-
-    invoke-virtual {p1}, Ljava/util/Date;->getDate()I
-
-    move-result v3
-
-    sget p1, Llw4;->o:I
-
-    sget-object p1, Lqw4;->Y:Lqw4;
-
-    iget-wide v4, p0, Los9;->b:J
-
-    invoke-static {v4, v5, p1}, Llw4;->i(JLqw4;)J
-
-    move-result-wide p0
-
-    long-to-int p0, p0
-
-    sget-object p1, Lqw4;->X:Lqw4;
-
-    invoke-static {v4, v5, p1}, Llw4;->i(JLqw4;)J
-
-    move-result-wide v4
-
-    const/16 p1, 0x3c
-
-    int-to-long v6, p1
-
-    rem-long/2addr v4, v6
-
-    long-to-int v5, v4
-
-    move v4, p0
-
-    invoke-direct/range {v0 .. v5}, Ljava/util/Date;-><init>(IIIII)V
-
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 9
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Los9;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Los9;
-
-    iget-wide v3, p0, Los9;->b:J
-
-    iget-wide v5, p1, Los9;->b:J
-
-    invoke-static {v3, v4, v5, v6}, Llw4;->d(JJ)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
+    goto :goto_2
 
     :cond_2
-    iget-wide v3, p0, Los9;->c:J
-
-    iget-wide p0, p1, Los9;->c:J
-
-    invoke-static {v3, v4, p0, p1}, Llw4;->d(JJ)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    return v2
+    invoke-interface {p2, p1}, Lps9;->onFailed(Ljava/lang/Throwable;)V
 
     :cond_3
-    return v0
+    :goto_2
+    iget-boolean p1, p0, Los9;->e:Z
+
+    if-eqz p1, :cond_4
+
+    invoke-virtual {p0, p2}, Los9;->a(Lps9;)V
+
+    invoke-virtual {p0}, Los9;->d()V
+
+    :cond_4
+    return-void
 .end method
 
-.method public final hashCode()I
+.method public final c(Ljava/io/File;Ljava/lang/String;)V
+    .registers 3
+
+    return-void
+.end method
+
+.method public final d()V
     .registers 4
 
-    sget v0, Llw4;->o:I
+    iget-object v0, p0, Los9;->g:Ljava/util/concurrent/Future;
 
-    iget-wide v0, p0, Los9;->b:J
+    if-eqz v0, :cond_0
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-interface {v0}, Ljava/util/concurrent/Future;->isDone()Z
 
     move-result v0
 
-    mul-int/lit8 v0, v0, 0x1f
+    if-nez v0, :cond_0
 
-    iget-wide v1, p0, Los9;->c:J
+    return-void
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+    :cond_0
+    iget-object v0, p0, Los9;->c:Ljava/util/concurrent/ExecutorService;
 
-    move-result p0
+    new-instance v1, Lo5;
 
-    add-int/2addr p0, v0
+    const/16 v2, 0xa
 
-    return p0
-.end method
+    invoke-direct {v1, v2, p0}, Lo5;-><init>(ILjava/lang/Object;)V
 
-.method public final toString()Ljava/lang/String;
-    .registers 5
-
-    iget-wide v0, p0, Los9;->b:J
-
-    invoke-static {v0, v1}, Llw4;->j(J)Ljava/lang/String;
+    invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
 
     move-result-object v0
 
-    iget-wide v1, p0, Los9;->c:J
+    iput-object v0, p0, Los9;->g:Ljava/util/concurrent/Future;
 
-    invoke-static {v1, v2}, Llw4;->j(J)Ljava/lang/String;
+    return-void
+.end method
 
-    move-result-object p0
+.method public final e(Lps9;)V
+    .registers 5
 
-    const-string v1, ", endTime="
+    iget-object v0, p0, Los9;->g:Ljava/util/concurrent/Future;
 
-    const-string v2, ")"
+    if-eqz v0, :cond_1
 
-    const-string v3, "Schedule(startTime="
+    iget-object v0, p0, Los9;->g:Ljava/util/concurrent/Future;
 
-    invoke-static {v3, v0, v1, p0, v2}, Lfge;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    if-eqz v0, :cond_0
 
-    move-result-object p0
+    invoke-interface {v0}, Ljava/util/concurrent/Future;->isDone()Z
 
-    return-object p0
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Los9;->c:Ljava/util/concurrent/ExecutorService;
+
+    new-instance v1, Lep8;
+
+    const/4 v2, 0x5
+
+    invoke-direct {v1, p0, v2, p1}, Lep8;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+
+    :cond_1
+    :goto_0
+    invoke-virtual {p0, p1}, Los9;->a(Lps9;)V
+
+    return-void
 .end method

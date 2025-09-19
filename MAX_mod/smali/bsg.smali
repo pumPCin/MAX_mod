@@ -1,178 +1,265 @@
 .class public final Lbsg;
-.super Lirg;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:La07;
+.field public a:Ljava/lang/String;
 
-.field public final c:Lbre;
+.field public b:Ljava/lang/String;
 
-.field public final d:Lpz9;
+.field public c:Ljava/util/Set;
+
+.field public d:Ljava/lang/String;
+
+.field public e:Ljava/lang/String;
+
+.field public f:I
+
+.field public g:Z
+
+.field public h:I
+
+.field public i:Z
+
+.field public final j:I
+
+.field public k:I
+
+.field public l:I
+
+.field public m:I
+
+.field public n:I
+
+.field public o:F
+
+.field public p:I
+
+.field public q:Z
 
 
 # direct methods
-.method public constructor <init>(ILa07;Lbre;Lpz9;)V
+.method public constructor <init>()V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-string v0, ""
+
+    iput-object v0, p0, Lbsg;->a:Ljava/lang/String;
+
+    iput-object v0, p0, Lbsg;->b:Ljava/lang/String;
+
+    sget-object v1, Ljava/util/Collections;->EMPTY_SET:Ljava/util/Set;
+
+    iput-object v1, p0, Lbsg;->c:Ljava/util/Set;
+
+    iput-object v0, p0, Lbsg;->d:Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lbsg;->e:Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lbsg;->g:Z
+
+    iput-boolean v0, p0, Lbsg;->i:Z
+
+    const/4 v1, -0x1
+
+    iput v1, p0, Lbsg;->j:I
+
+    iput v1, p0, Lbsg;->k:I
+
+    iput v1, p0, Lbsg;->l:I
+
+    iput v1, p0, Lbsg;->m:I
+
+    iput v1, p0, Lbsg;->n:I
+
+    iput v1, p0, Lbsg;->p:I
+
+    iput-boolean v0, p0, Lbsg;->q:Z
+
+    return-void
+.end method
+
+.method public static c(Ljava/lang/String;IILjava/lang/String;)I
     .registers 5
 
-    invoke-direct {p0, p1}, Lgsg;-><init>(I)V
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
-    iput-object p3, p0, Lbsg;->c:Lbre;
+    move-result v0
 
-    iput-object p2, p0, Lbsg;->b:La07;
+    if-nez v0, :cond_2
 
-    iput-object p4, p0, Lbsg;->d:Lpz9;
+    const/4 v0, -0x1
 
-    const/4 p0, 0x2
-
-    if-ne p1, p0, :cond_1
-
-    iget-boolean p0, p2, La07;->a:Z
-
-    if-nez p0, :cond_0
+    if-ne p1, v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    invoke-virtual {p0, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const-string p1, "Best-effort write calls cannot pass methods that should auto-resolve missing features."
+    move-result p0
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    if-eqz p0, :cond_1
 
-    throw p0
+    add-int/2addr p1, p2
+
+    return p1
 
     :cond_1
+    return v0
+
+    :cond_2
     :goto_0
-    return-void
+    return p1
 .end method
 
 
 # virtual methods
-.method public final a(Lcom/google/android/gms/common/api/Status;)V
-    .registers 3
+.method public final a(Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;Ljava/lang/String;)I
+    .registers 8
 
-    iget-object v0, p0, Lbsg;->d:Lpz9;
+    iget-object v0, p0, Lbsg;->a:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
-    invoke-static {p1}, Lcr0;->P(Lcom/google/android/gms/common/api/Status;)Lcom/google/android/gms/common/api/ApiException;
+    move-result v0
 
-    move-result-object p1
+    if-eqz v0, :cond_0
 
-    iget-object p0, p0, Lbsg;->c:Lbre;
+    iget-object v0, p0, Lbsg;->b:Ljava/lang/String;
 
-    invoke-virtual {p0, p1}, Lbre;->c(Ljava/lang/Exception;)V
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
-    return-void
-.end method
+    move-result v0
 
-.method public final b(Ljava/lang/Exception;)V
-    .registers 2
+    if-eqz v0, :cond_0
 
-    iget-object p0, p0, Lbsg;->c:Lbre;
+    iget-object v0, p0, Lbsg;->c:Ljava/util/Set;
 
-    invoke-virtual {p0, p1}, Lbre;->c(Ljava/lang/Exception;)V
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
-    return-void
-.end method
+    move-result v0
 
-.method public final c(Lerg;)V
-    .registers 4
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lbsg;->c:Lbre;
+    iget-object v0, p0, Lbsg;->d:Ljava/lang/String;
 
-    :try_start_0
-    iget-object v1, p0, Lbsg;->b:La07;
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
-    iget-object p1, p1, Lerg;->d:Lhk;
+    move-result v0
 
-    invoke-virtual {v1, p1, v0}, La07;->e(Lhk;Lbre;)V
-    :try_end_0
-    .catch Landroid/os/DeadObjectException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz v0, :cond_0
 
-    return-void
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    :catch_0
-    move-exception p0
+    move-result p0
 
-    goto :goto_0
+    return p0
 
-    :catch_1
-    move-exception p1
+    :cond_0
+    iget-object v0, p0, Lbsg;->a:Ljava/lang/String;
 
-    goto :goto_1
-
-    :goto_0
-    invoke-virtual {v0, p0}, Lbre;->c(Ljava/lang/Exception;)V
-
-    return-void
-
-    :goto_1
-    invoke-static {p1}, Lgsg;->e(Landroid/os/RemoteException;)Lcom/google/android/gms/common/api/Status;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lbsg;->a(Lcom/google/android/gms/common/api/Status;)V
-
-    return-void
-
-    :catch_2
-    move-exception p0
-
-    throw p0
-.end method
-
-.method public final d(Lhtc;Z)V
-    .registers 6
-
-    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p2
-
-    iget-object v0, p1, Lhtc;->c:Ljava/lang/Object;
-
-    check-cast v0, Ljava/util/Map;
-
-    iget-object p0, p0, Lbsg;->c:Lbre;
-
-    invoke-interface {v0, p0, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object p2, p0, Lbre;->a:Ldyg;
-
-    new-instance v0, Ldcb;
-
-    const/16 v1, 0xe
+    const/high16 v1, 0x40000000    # 2.0f
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, p1, p0, v2, v1}, Ldcb;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
+    invoke-static {v0, v2, v1, p1}, Lbsg;->c(Ljava/lang/String;IILjava/lang/String;)I
 
-    invoke-virtual {p2, v0}, Ldyg;->i(Li5a;)Ldyg;
+    move-result p1
 
-    return-void
-.end method
+    iget-object v0, p0, Lbsg;->b:Ljava/lang/String;
 
-.method public final f(Lerg;)Z
-    .registers 2
+    const/4 v1, 0x2
 
-    iget-object p0, p0, Lbsg;->b:La07;
+    invoke-static {v0, p1, v1, p2}, Lbsg;->c(Ljava/lang/String;IILjava/lang/String;)I
 
-    iget-boolean p0, p0, La07;->a:Z
+    move-result p1
+
+    iget-object p2, p0, Lbsg;->d:Ljava/lang/String;
+
+    const/4 v0, 0x4
+
+    invoke-static {p2, p1, v0, p4}, Lbsg;->c(Ljava/lang/String;IILjava/lang/String;)I
+
+    move-result p1
+
+    const/4 p2, -0x1
+
+    if-eq p1, p2, :cond_2
+
+    iget-object p2, p0, Lbsg;->c:Ljava/util/Set;
+
+    invoke-interface {p3, p2}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object p0, p0, Lbsg;->c:Ljava/util/Set;
+
+    invoke-interface {p0}, Ljava/util/Set;->size()I
+
+    move-result p0
+
+    mul-int/2addr p0, v0
+
+    add-int/2addr p0, p1
 
     return p0
+
+    :cond_2
+    :goto_0
+    return v2
 .end method
 
-.method public final g(Lerg;)[Lnh5;
-    .registers 2
+.method public final b()I
+    .registers 4
 
-    iget-object p0, p0, Lbsg;->b:La07;
+    iget v0, p0, Lbsg;->l:I
 
-    iget-object p0, p0, La07;->c:[Ljava/lang/Object;
+    const/4 v1, -0x1
 
-    check-cast p0, [Lnh5;
+    if-ne v0, v1, :cond_0
 
-    return-object p0
+    iget v2, p0, Lbsg;->m:I
+
+    if-ne v2, v1, :cond_0
+
+    return v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_1
+
+    move v0, v2
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v1
+
+    :goto_0
+    iget p0, p0, Lbsg;->m:I
+
+    if-ne p0, v2, :cond_2
+
+    const/4 v1, 0x2
+
+    :cond_2
+    or-int p0, v0, v1
+
+    return p0
 .end method

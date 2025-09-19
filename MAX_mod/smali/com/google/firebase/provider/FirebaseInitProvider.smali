@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final a:Ltb0;
+.field public static final a:Lxa0;
 
 .field public static final b:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -25,11 +25,11 @@
 
     move-result-wide v5
 
-    new-instance v0, Ltb0;
+    new-instance v0, Lxa0;
 
-    invoke-direct/range {v0 .. v6}, Ltb0;-><init>(JJJ)V
+    invoke-direct/range {v0 .. v6}, Lxa0;-><init>(JJJ)V
 
-    sput-object v0, Lcom/google/firebase/provider/FirebaseInitProvider;->a:Ltb0;
+    sput-object v0, Lcom/google/firebase/provider/FirebaseInitProvider;->a:Lxa0;
 
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -57,7 +57,7 @@
 
     const-string v0, "FirebaseInitProvider ProviderInfo cannot be null."
 
-    invoke-static {p2, v0}, Lmtg;->m(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Ljk7;->u(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "com.google.firebase.firebaseinitprovider"
 

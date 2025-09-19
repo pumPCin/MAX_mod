@@ -24,11 +24,11 @@
         "()V",
         "Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;",
         "store",
-        "Lgt;",
+        "Lqs;",
         "asrRecvDataPackage",
         "Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineChunk;",
         "chunkFromPackage$calls_sdk_release",
-        "(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lgt;)Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineChunk;",
+        "(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lqs;)Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineChunk;",
         "chunkFromPackage",
         "calls-sdk_release"
     }
@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lwc4;)V
+.method public synthetic constructor <init>(Lld4;)V
     .registers 2
 
     invoke-direct {p0}, Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineChunk$Companion;-><init>()V
@@ -61,16 +61,16 @@
 
 
 # virtual methods
-.method public final chunkFromPackage$calls_sdk_release(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lgt;)Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineChunk;
+.method public final chunkFromPackage$calls_sdk_release(Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;Lqs;)Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineChunk;
     .registers 4
 
-    iget-object p0, p2, Lgt;->a:Lwg1;
+    iget-object p0, p2, Lqs;->a:Lsg1;
 
     const/4 v0, 0x0
 
     if-eqz p0, :cond_0
 
-    invoke-virtual {p1, p0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getByInternal(Lwg1;)Lru/ok/android/externcalls/sdk/ConversationParticipant;
+    invoke-virtual {p1, p0}, Lru/ok/android/externcalls/sdk/participant/collection/ParticipantStore;->getByInternal(Lsg1;)Lru/ok/android/externcalls/sdk/ConversationParticipant;
 
     move-result-object p0
 
@@ -89,7 +89,7 @@
     move-result-object v0
 
     :cond_1
-    iget-object p0, p2, Lgt;->b:Ljava/lang/String;
+    iget-object p0, p2, Lqs;->b:Ljava/lang/String;
 
     invoke-direct {p1, v0, p0}, Lru/ok/android/externcalls/sdk/asr_online/AsrOnlineChunk;-><init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;)V
 

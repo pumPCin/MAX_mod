@@ -1,146 +1,403 @@
 .class public final Lb88;
-.super Lxie;
+.super Le4;
 .source "SourceFile"
-
-# interfaces
-.implements Lz96;
 
 
 # instance fields
-.field public final synthetic X:I
-
-.field public synthetic Y:Loma;
-
-.field public final synthetic Z:Landroid/graphics/drawable/GradientDrawable;
+.field public final synthetic d:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/graphics/drawable/GradientDrawable;Lkotlin/coroutines/Continuation;I)V
-    .registers 4
+.method public synthetic constructor <init>(I)V
+    .registers 2
 
-    iput p3, p0, Lb88;->X:I
+    iput p1, p0, Lb88;->d:I
 
-    iput-object p1, p0, Lb88;->Z:Landroid/graphics/drawable/GradientDrawable;
-
-    const/4 p1, 0x3
-
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Le4;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+.method public c(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+    .registers 4
 
-    iget v0, p0, Lb88;->X:I
+    iget v0, p0, Lb88;->d:I
 
     packed-switch v0, :pswitch_data_0
 
-    check-cast p1, Lxq0;
+    invoke-super {p0, p1, p2}, Le4;->c(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
 
-    check-cast p2, Loma;
-
-    check-cast p3, Lkotlin/coroutines/Continuation;
-
-    new-instance p1, Lb88;
-
-    iget-object p0, p0, Lb88;->Z:Landroid/graphics/drawable/GradientDrawable;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, p0, p3, v0}, Lb88;-><init>(Landroid/graphics/drawable/GradientDrawable;Lkotlin/coroutines/Continuation;I)V
-
-    iput-object p2, p1, Lb88;->Y:Loma;
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    invoke-virtual {p1, p0}, Lb88;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p0
+    return-void
 
     :pswitch_0
-    check-cast p1, Landroid/widget/FrameLayout;
+    invoke-super {p0, p1, p2}, Le4;->c(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
 
-    check-cast p2, Loma;
+    check-cast p1, Landroidx/core/widget/NestedScrollView;
 
-    check-cast p3, Lkotlin/coroutines/Continuation;
+    const-class p0, Landroid/widget/ScrollView;
 
-    new-instance p1, Lb88;
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    iget-object p0, p0, Lb88;->Z:Landroid/graphics/drawable/GradientDrawable;
+    move-result-object p0
 
-    const/4 v0, 0x0
+    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
 
-    invoke-direct {p1, p0, p3, v0}, Lb88;-><init>(Landroid/graphics/drawable/GradientDrawable;Lkotlin/coroutines/Continuation;I)V
+    invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
 
-    iput-object p2, p1, Lb88;->Y:Loma;
+    move-result p0
 
-    sget-object p0, Lncf;->a:Lncf;
+    if-lez p0, :cond_0
 
-    invoke-virtual {p1, p0}, Lb88;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 p0, 0x1
 
-    return-object p0
+    goto :goto_0
 
-    nop
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setScrollable(Z)V
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
+
+    move-result p0
+
+    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setScrollX(I)V
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result p0
+
+    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setScrollY(I)V
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
+
+    move-result p0
+
+    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setMaxScrollX(I)V
+
+    invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
+
+    move-result p0
+
+    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityRecord;->setMaxScrollY(I)V
+
+    return-void
 
     :pswitch_data_0
-    .packed-switch 0x0
+    .packed-switch 0x3
         :pswitch_0
     .end packed-switch
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final d(Landroid/view/View;Lp4;)V
+    .registers 4
 
-    iget v0, p0, Lb88;->X:I
+    iget v0, p0, Lb88;->d:I
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object p0, p0, Le4;->a:Landroid/view/View$AccessibilityDelegate;
 
-    iget-object p1, p0, Lb88;->Y:Loma;
+    iget-object v0, p2, Lp4;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    invoke-interface {p1}, Loma;->a()Lws2;
+    invoke-virtual {p0, p1, v0}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    move-result-object p1
+    check-cast p1, Landroidx/core/widget/NestedScrollView;
 
-    invoke-interface {p1}, Lws2;->v()Lfa3;
+    const-class p0, Landroid/widget/ScrollView;
 
-    move-result-object p1
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    iget-object p1, p1, Lfa3;->b:Lw83;
+    move-result-object p0
 
-    iget-object p1, p1, Lw83;->w:[I
+    invoke-virtual {p2, p0}, Lp4;->h(Ljava/lang/CharSequence;)V
 
-    iget-object p0, p0, Lb88;->Z:Landroid/graphics/drawable/GradientDrawable;
+    invoke-virtual {p1}, Landroid/view/View;->isEnabled()Z
 
-    invoke-virtual {p0, p1}, Landroid/graphics/drawable/GradientDrawable;->setColors([I)V
+    move-result p0
 
-    sget-object p0, Lncf;->a:Lncf;
+    if-eqz p0, :cond_1
 
-    return-object p0
+    invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
+
+    move-result p0
+
+    if-lez p0, :cond_1
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p2, v0}, Lp4;->j(Z)V
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    sget-object v0, Lj4;->g:Lj4;
+
+    invoke-virtual {p2, v0}, Lp4;->b(Lj4;)V
+
+    sget-object v0, Lj4;->k:Lj4;
+
+    invoke-virtual {p2, v0}, Lp4;->b(Lj4;)V
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result p1
+
+    if-ge p1, p0, :cond_1
+
+    sget-object p0, Lj4;->f:Lj4;
+
+    invoke-virtual {p2, p0}, Lp4;->b(Lj4;)V
+
+    sget-object p0, Lj4;->l:Lj4;
+
+    invoke-virtual {p2, p0}, Lp4;->b(Lj4;)V
+
+    :cond_1
+    return-void
 
     :pswitch_0
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object p2, p2, Lp4;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
 
-    iget-object p1, p0, Lb88;->Y:Loma;
+    iget-object p0, p0, Le4;->a:Landroid/view/View$AccessibilityDelegate;
 
-    invoke-interface {p1}, Loma;->b()Lef0;
+    invoke-virtual {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    const/high16 p1, -0x67000000
+    const/4 p0, 0x0
 
-    iget-object p0, p0, Lb88;->Z:Landroid/graphics/drawable/GradientDrawable;
+    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCollectionInfo(Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;)V
 
-    invoke-static {p0, p1}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
+    return-void
 
-    sget-object p0, Lncf;->a:Lncf;
+    :pswitch_1
+    iget-object p0, p0, Le4;->a:Landroid/view/View$AccessibilityDelegate;
 
-    return-object p0
+    iget-object v0, p2, Lp4;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    invoke-virtual {p0, p1, v0}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+    const/4 p0, 0x0
+
+    invoke-virtual {p2, p0}, Lp4;->j(Z)V
+
+    return-void
+
+    :pswitch_2
+    iget-object p2, p2, Lp4;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    iget-object p0, p0, Le4;->a:Landroid/view/View$AccessibilityDelegate;
+
+    invoke-virtual {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+    const/4 p0, 0x0
+
+    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCollectionInfo(Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;)V
+
+    return-void
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public g(Landroid/view/View;ILandroid/os/Bundle;)Z
+    .registers 7
+
+    iget v0, p0, Lb88;->d:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0, p1, p2, p3}, Le4;->g(Landroid/view/View;ILandroid/os/Bundle;)Z
+
+    move-result p0
+
+    return p0
+
+    :pswitch_0
+    invoke-super {p0, p1, p2, p3}, Le4;->g(Landroid/view/View;ILandroid/os/Bundle;)Z
+
+    move-result p0
+
+    const/4 p3, 0x1
+
+    if-eqz p0, :cond_0
+
+    goto/16 :goto_1
+
+    :cond_0
+    check-cast p1, Landroidx/core/widget/NestedScrollView;
+
+    invoke-virtual {p1}, Landroid/view/View;->isEnabled()Z
+
+    move-result p0
+
+    const/4 v0, 0x0
+
+    if-nez p0, :cond_1
+
+    goto/16 :goto_0
+
+    :cond_1
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+
+    move-result p0
+
+    new-instance v1, Landroid/graphics/Rect;
+
+    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+
+    invoke-virtual {p1}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/graphics/Matrix;->isIdentity()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+
+    move-result p0
+
+    :cond_2
+    const/16 v1, 0x1000
+
+    if-eq p2, v1, :cond_4
+
+    const/16 v1, 0x2000
+
+    if-eq p2, v1, :cond_3
+
+    const v1, 0x1020038
+
+    if-eq p2, v1, :cond_3
+
+    const v1, 0x102003a
+
+    if-eq p2, v1, :cond_4
+
+    goto :goto_0
+
+    :cond_3
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingBottom()I
+
+    move-result p2
+
+    sub-int/2addr p0, p2
+
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
+
+    move-result p2
+
+    sub-int/2addr p0, p2
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result p2
+
+    sub-int/2addr p2, p0
+
+    invoke-static {p2, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result p0
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result p2
+
+    if-eq p0, p2, :cond_5
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
+
+    move-result p2
+
+    sub-int/2addr v0, p2
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result p2
+
+    sub-int/2addr p0, p2
+
+    invoke-virtual {p1, v0, p0, p3}, Landroidx/core/widget/NestedScrollView;->v(IIZ)V
+
+    goto :goto_1
+
+    :cond_4
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingBottom()I
+
+    move-result p2
+
+    sub-int/2addr p0, p2
+
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
+
+    move-result p2
+
+    sub-int/2addr p0, p2
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result p2
+
+    add-int/2addr p2, p0
+
+    invoke-virtual {p1}, Landroidx/core/widget/NestedScrollView;->getScrollRange()I
+
+    move-result p0
+
+    invoke-static {p2, p0}, Ljava/lang/Math;->min(II)I
+
+    move-result p0
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result p2
+
+    if-eq p0, p2, :cond_5
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
+
+    move-result p2
+
+    sub-int/2addr v0, p2
+
+    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
+
+    move-result p2
+
+    sub-int/2addr p0, p2
+
+    invoke-virtual {p1, v0, p0, p3}, Landroidx/core/widget/NestedScrollView;->v(IIZ)V
+
+    goto :goto_1
+
+    :cond_5
+    :goto_0
+    move p3, v0
+
+    :goto_1
+    return p3
+
+    :pswitch_data_0
+    .packed-switch 0x3
         :pswitch_0
     .end packed-switch
 .end method

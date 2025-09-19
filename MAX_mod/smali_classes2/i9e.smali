@@ -4,37 +4,58 @@
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:J
 
 .field public final b:J
 
+.field public final c:I
+
+.field public final d:J
+
+.field public final e:J
+
+.field public final f:I
+
+.field public final g:J
+
+.field public final h:J
+
+.field public final i:I
+
+.field public final j:J
+
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;I)V
-    .registers 5
-
-    and-int/lit8 p2, p2, 0x1
-
-    if-eqz p2, :cond_0
-
-    const/4 p1, 0x0
-
-    :cond_0
-    const-wide/16 v0, 0x0
-
-    invoke-direct {p0, p1, v0, v1}, Li9e;-><init>(Ljava/lang/String;J)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;J)V
-    .registers 4
+.method public constructor <init>(JJIJJIJJI)V
+    .registers 16
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Li9e;->a:Ljava/lang/String;
+    iput-wide p1, p0, Li9e;->a:J
 
-    iput-wide p2, p0, Li9e;->b:J
+    iput-wide p3, p0, Li9e;->b:J
+
+    iput p5, p0, Li9e;->c:I
+
+    iput-wide p6, p0, Li9e;->d:J
+
+    iput-wide p8, p0, Li9e;->e:J
+
+    iput p10, p0, Li9e;->f:I
+
+    iput-wide p11, p0, Li9e;->g:J
+
+    move-wide p1, p13
+
+    iput-wide p1, p0, Li9e;->h:J
+
+    move p1, p15
+
+    iput p1, p0, Li9e;->i:I
+
+    add-long p1, p11, p6
+
+    iput-wide p1, p0, Li9e;->j:J
 
     return-void
 .end method
@@ -42,75 +63,212 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 7
-
-    const/4 v0, 0x1
+    .registers 6
 
     if-ne p0, p1, :cond_0
 
-    return v0
+    goto :goto_1
 
     :cond_0
-    instance-of v1, p1, Li9e;
+    instance-of v0, p1, Li9e;
 
-    const/4 v2, 0x0
+    if-nez v0, :cond_1
 
-    if-nez v1, :cond_1
-
-    return v2
+    goto :goto_0
 
     :cond_1
     check-cast p1, Li9e;
 
-    iget-object v1, p0, Li9e;->a:Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget-object v3, p1, Li9e;->a:Ljava/lang/String;
+    iget-wide v0, p0, Li9e;->a:J
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-wide v2, p1, Li9e;->a:J
 
-    move-result v1
+    cmp-long v0, v0, v2
 
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-wide v3, p0, Li9e;->b:J
-
-    iget-wide p0, p1, Li9e;->b:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_3
-
-    return v2
-
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget-object v0, p0, Li9e;->a:Ljava/lang/String;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
+    if-eqz v0, :cond_2
 
     goto :goto_0
 
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    :cond_2
+    iget-wide v0, p0, Li9e;->b:J
+
+    iget-wide v2, p1, Li9e;->b:J
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    iget v0, p0, Li9e;->c:I
+
+    iget v1, p1, Li9e;->c:I
+
+    if-eq v0, v1, :cond_4
+
+    goto :goto_0
+
+    :cond_4
+    iget-wide v0, p0, Li9e;->d:J
+
+    iget-wide v2, p1, Li9e;->d:J
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_5
+
+    goto :goto_0
+
+    :cond_5
+    iget-wide v0, p0, Li9e;->e:J
+
+    iget-wide v2, p1, Li9e;->e:J
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_6
+
+    goto :goto_0
+
+    :cond_6
+    iget v0, p0, Li9e;->f:I
+
+    iget v1, p1, Li9e;->f:I
+
+    if-eq v0, v1, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    iget-wide v0, p0, Li9e;->g:J
+
+    iget-wide v2, p1, Li9e;->g:J
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_8
+
+    goto :goto_0
+
+    :cond_8
+    iget-wide v0, p0, Li9e;->h:J
+
+    iget-wide v2, p1, Li9e;->h:J
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_9
+
+    goto :goto_0
+
+    :cond_9
+    iget p0, p0, Li9e;->i:I
+
+    iget p1, p1, Li9e;->i:I
+
+    if-eq p0, p1, :cond_a
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_a
+    :goto_1
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 6
+
+    const v0, -0x7e85e6e2
+
+    const/16 v1, 0x1f
+
+    const-wide/16 v2, 0x0
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
 
     move-result v0
 
-    :goto_0
-    mul-int/lit8 v0, v0, 0x1f
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
 
-    iget-wide v1, p0, Li9e;->b:J
+    move-result v0
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+    const/4 v4, 0x0
+
+    invoke-static {v4, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    invoke-static {v4, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-wide v2, p0, Li9e;->a:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget-wide v2, p0, Li9e;->b:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget v2, p0, Li9e;->c:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-wide v2, p0, Li9e;->d:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget-wide v2, p0, Li9e;->e:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget v2, p0, Li9e;->f:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-wide v2, p0, Li9e;->g:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget-wide v2, p0, Li9e;->h:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget p0, p0, Li9e;->i:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     move-result p0
 
@@ -120,25 +278,55 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 5
+    .registers 8
 
-    const-string v0, "QueryState(query="
+    iget-wide v0, p0, Li9e;->a:J
 
-    const-string v1, ", marker="
+    const-string v2, "SslProviderStat(DEF_SSL|v=<unknown>|init=0/0_0|scc=0/0_0|sfc="
 
-    iget-wide v2, p0, Li9e;->b:J
+    const-string v3, "/"
 
-    iget-object p0, p0, Li9e;->a:Ljava/lang/String;
+    invoke-static {v0, v1, v2, v3}, Lmw1;->l(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v2, v3, p0, v1}, Lfge;->t(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object p0
+    iget-wide v1, p0, Li9e;->b:J
 
-    const-string v0, ")"
+    const-string v4, "_"
 
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v5, p0, Li9e;->c:I
 
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1, v2, v4, v5}, Lsq3;->p(Ljava/lang/StringBuilder;JLjava/lang/String;I)V
+
+    const-string v1, "|sh="
+
+    iget-wide v5, p0, Li9e;->g:J
+
+    invoke-static {v5, v6, v1, v3, v0}, Lmw1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    iget-wide v1, p0, Li9e;->h:J
+
+    iget v5, p0, Li9e;->i:I
+
+    invoke-static {v0, v1, v2, v4, v5}, Lsq3;->p(Ljava/lang/StringBuilder;JLjava/lang/String;I)V
+
+    const-string v1, "|sv="
+
+    iget-wide v5, p0, Li9e;->d:J
+
+    invoke-static {v5, v6, v1, v3, v0}, Lmw1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+
+    iget-wide v1, p0, Li9e;->e:J
+
+    iget p0, p0, Li9e;->f:I
+
+    invoke-static {v0, v1, v2, v4, p0}, Lsq3;->p(Ljava/lang/StringBuilder;JLjava/lang/String;I)V
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

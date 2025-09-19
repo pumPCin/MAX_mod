@@ -1,211 +1,174 @@
-.class public final synthetic Ln29;
+.class public final Ln29;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Ljava/lang/Cloneable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.field public a:Ljava/nio/charset/CodingErrorAction;
 
+.field public b:Ljava/nio/charset/CodingErrorAction;
 
-# direct methods
-.method public synthetic constructor <init>(Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
-    .registers 3
+.field public c:I
 
-    iput p2, p0, Ln29;->a:I
-
-    iput-object p1, p0, Ln29;->b:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public o:I
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 6
+.method public final clone()Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Ln29;->a:I
+    new-instance v0, Ln29;
 
-    const/4 v1, 0x0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sget-object v2, Lct4;->p0:Lws9;
+    sget-object v1, Ljava/nio/charset/CodingErrorAction;->REPLACE:Ljava/nio/charset/CodingErrorAction;
 
-    iget-object p0, p0, Ln29;->b:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    iput-object v1, v0, Ln29;->a:Ljava/nio/charset/CodingErrorAction;
 
-    packed-switch v0, :pswitch_data_0
+    iput-object v1, v0, Ln29;->b:Ljava/nio/charset/CodingErrorAction;
 
-    sget-object v0, Lone/me/sdk/messagewrite/MessageWriteWidget;->z0:[Lsf7;
+    const v1, 0x7fffffff
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    iput v1, v0, Ln29;->c:I
 
-    move-result-object p0
+    const/16 v1, 0x2000
 
-    invoke-virtual {v2, p0}, Lws9;->f(Landroid/content/Context;)Ldea;
+    iput v1, v0, Ln29;->o:I
 
-    move-result-object p0
+    iput v1, v0, Ln29;->X:I
 
-    iget-object p0, p0, Ldea;->c:Loma;
+    iget-object v1, p0, Ln29;->a:Ljava/nio/charset/CodingErrorAction;
 
-    return-object p0
+    iput-object v1, v0, Ln29;->a:Ljava/nio/charset/CodingErrorAction;
 
-    :pswitch_0
-    sget-object v0, Lone/me/sdk/messagewrite/MessageWriteWidget;->z0:[Lsf7;
+    iget-object v1, p0, Ln29;->b:Ljava/nio/charset/CodingErrorAction;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    iput-object v1, v0, Ln29;->b:Ljava/nio/charset/CodingErrorAction;
 
-    move-result-object p0
+    iget v1, p0, Ln29;->c:I
 
-    invoke-virtual {v2, p0}, Lws9;->f(Landroid/content/Context;)Ldea;
+    iput v1, v0, Ln29;->c:I
 
-    move-result-object p0
+    iget p0, p0, Ln29;->o:I
 
-    iget-object p0, p0, Ldea;->c:Loma;
+    iput p0, v0, Ln29;->o:I
 
-    return-object p0
+    return-object v0
+.end method
 
-    :pswitch_1
-    sget-object v0, Lone/me/sdk/messagewrite/MessageWriteWidget;->z0:[Lsf7;
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    new-instance v0, Lwub;
+    instance-of v0, p1, Ln29;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Lwub;-><init>(Landroid/content/Context;)V
-
-    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
-
-    const/16 v3, 0x34
-
-    int-to-float v3, v3
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v4
-
-    iget v4, v4, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v3, v4
-
-    invoke-static {v3}, Lg53;->C(F)I
-
-    move-result v3
-
-    const/4 v4, -0x1
-
-    invoke-direct {v2, v4, v3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    sget v2, Ljsc;->v:I
-
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {v3, v2}, Lfw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Lwub;->setEndIconDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    new-instance v2, Lo29;
-
-    invoke-direct {v2, p0, v1}, Lo29;-><init>(Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
-
-    invoke-virtual {v0, v2}, Lwub;->setEndIconClickListener(Landroid/view/View$OnClickListener;)V
-
-    new-instance v1, Lhq;
-
-    const/4 v2, 0x3
-
-    const/16 v3, 0x8
-
-    const/4 v4, 0x0
-
-    invoke-direct {v1, v2, v4, v3}, Lhq;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    invoke-static {v1, v0}, Lx77;->M(Lz96;Landroid/view/View;)V
-
-    invoke-virtual {v0}, Landroid/view/View;->isLaidOut()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v0}, Landroid/view/View;->isLayoutRequested()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-virtual {v0}, Lwub;->getTitleView()Landroid/widget/TextView;
-
-    move-result-object p0
-
-    invoke-static {p0}, Leue;->c(Landroid/widget/TextView;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    const/4 p0, 0x1
-
-    invoke-static {v0, p0}, Lone/me/sdk/messagewrite/MessageWriteWidget;->L0(Lwub;Z)V
+    if-nez v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Lir0;
+    check-cast p1, Ln29;
 
-    invoke-direct {v1, v0, p0}, Lir0;-><init>(Lwub;Lone/me/sdk/messagewrite/MessageWriteWidget;)V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+    iget-object v0, p0, Ln29;->a:Ljava/nio/charset/CodingErrorAction;
+
+    iget-object v1, p1, Ln29;->a:Ljava/nio/charset/CodingErrorAction;
+
+    if-ne v0, v1, :cond_1
+
+    iget-object v0, p0, Ln29;->b:Ljava/nio/charset/CodingErrorAction;
+
+    iget-object v1, p1, Ln29;->b:Ljava/nio/charset/CodingErrorAction;
+
+    if-ne v0, v1, :cond_1
+
+    iget v0, p0, Ln29;->c:I
+
+    iget v1, p1, Ln29;->c:I
+
+    if-ne v0, v1, :cond_1
+
+    iget v0, p0, Ln29;->X:I
+
+    iget v1, p1, Ln29;->X:I
+
+    if-ne v0, v1, :cond_1
+
+    iget p0, p0, Ln29;->o:I
+
+    iget p1, p1, Ln29;->o:I
+
+    if-ne p0, p1, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
     :goto_0
-    return-object v0
+    const/4 p0, 0x0
 
-    :pswitch_2
-    iget-object p0, p0, Lone/me/sdk/messagewrite/MessageWriteWidget;->Y:Lxh7;
+    return p0
+.end method
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+.method public final hashCode()I
+    .registers 4
 
-    move-result-object p0
+    iget-object v0, p0, Ln29;->a:Ljava/nio/charset/CodingErrorAction;
 
-    check-cast p0, Lyo;
+    const/4 v1, 0x0
 
-    check-cast p0, Lap;
+    if-eqz v0, :cond_0
 
-    const-string v0, "app.messages.send.by.enter"
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    iget-object p0, p0, Lc3;->g:Lai7;
+    move-result v0
 
-    invoke-virtual {p0, v0, v1}, Lai7;->getBoolean(Ljava/lang/String;Z)Z
+    goto :goto_0
 
-    move-result p0
+    :cond_0
+    move v0, v1
 
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :goto_0
+    const/16 v2, 0x3e0
 
-    move-result-object p0
+    add-int/2addr v2, v0
 
-    return-object p0
+    mul-int/lit8 v2, v2, 0x1f
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget-object v0, p0, Ln29;->b:Ljava/nio/charset/CodingErrorAction;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v1
+
+    :cond_1
+    add-int/2addr v2, v1
+
+    mul-int/lit8 v2, v2, 0x1f
+
+    iget v0, p0, Ln29;->c:I
+
+    add-int/2addr v2, v0
+
+    mul-int/lit8 v2, v2, 0x1f
+
+    iget v0, p0, Ln29;->o:I
+
+    add-int/2addr v2, v0
+
+    mul-int/lit8 v2, v2, 0x1f
+
+    iget p0, p0, Ln29;->X:I
+
+    add-int/2addr v2, p0
+
+    return v2
 .end method

@@ -1,11 +1,61 @@
-.class public interface abstract Lju;
-.super Ljava/lang/Object;
+.class public final Lju;
+.super Lnu;
 .source "SourceFile"
 
 
-# virtual methods
-.method public abstract a(IJJLcx3;)Ljava/lang/Object;
+# static fields
+.field public static final a:Lju;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Lju;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lju;->a:Lju;
+
+    return-void
 .end method
 
-.method public abstract b(IJJLcx3;)Ljava/lang/Object;
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of p0, p1, Lju;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const p0, 0x2c75b5e3
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "Idle"
+
+    return-object p0
 .end method

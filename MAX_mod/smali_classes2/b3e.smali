@@ -1,131 +1,72 @@
-.class public final Lb3e;
-.super Lxie;
+.class public abstract Lb3e;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lm97;
 
 
 # instance fields
-.field public final synthetic X:Lh3e;
+.field public volatile a:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lh3e;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, Lb3e;->X:Lh3e;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    sget-object v0, Ll1h;->c:Ljava/lang/Object;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object v0, p0, Lb3e;->a:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final a(Lz4;)Ljava/lang/Object;
+    .registers 4
 
-    check-cast p1, Lr04;
+    iget-object v0, p0, Lb3e;->a:Ljava/lang/Object;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    sget-object v1, Ll1h;->c:Ljava/lang/Object;
 
-    invoke-virtual {p0, p1, p2}, Lb3e;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    if-eq v0, v1, :cond_0
 
-    move-result-object p0
+    return-object v0
 
-    check-cast p0, Lb3e;
+    :cond_0
+    monitor-enter p0
 
-    sget-object p1, Lncf;->a:Lncf;
+    :try_start_0
+    iget-object v0, p0, Lb3e;->a:Ljava/lang/Object;
 
-    invoke-virtual {p0, p1}, Lb3e;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eq v0, v1, :cond_1
 
-    return-object p1
-.end method
+    goto :goto_0
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Lb3e;
-
-    iget-object p0, p0, Lb3e;->X:Lh3e;
-
-    invoke-direct {p1, p0, p2}, Lb3e;-><init>(Lh3e;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lb3e;->X:Lh3e;
-
-    iget-object p1, p0, Lh3e;->s0:Ln4e;
-
-    invoke-static {}, Lso9;->f()Lkp7;
+    :cond_1
+    invoke-virtual {p0, p1}, Lb3e;->b(Lz4;)Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v1, Lu14;
+    iput-object v0, p0, Lb3e;->a:Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget v2, Lhla;->s:I
+    :goto_0
+    monitor-exit p0
 
-    sget v3, Ljsc;->d2:I
+    return-object v0
 
-    sget v4, Lwsc;->C:I
+    :catchall_0
+    move-exception p1
 
-    new-instance v5, Lqte;
+    monitor-exit p0
 
-    invoke-direct {v5, v4}, Lqte;-><init>(I)V
+    throw p1
+.end method
 
-    invoke-direct {v1, v2, v3, v5}, Lu14;-><init>(IILqte;)V
-
-    invoke-virtual {v0, v1}, Lkp7;->add(Ljava/lang/Object;)Z
-
-    iget-object p0, p0, Lh3e;->c:Lqbd;
-
-    check-cast p0, Li2d;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    sget-object v1, Lru/ok/tamtam/android/prefs/PmsKey;->channels-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v2}, Li2d;->k(Ljava/lang/Enum;Z)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    new-instance p0, Lu14;
-
-    sget v1, Lhla;->r:I
-
-    sget v2, Lcia;->j:I
-
-    sget v3, Lwsc;->V:I
-
-    new-instance v4, Lqte;
-
-    invoke-direct {v4, v3}, Lqte;-><init>(I)V
-
-    invoke-direct {p0, v1, v2, v4}, Lu14;-><init>(IILqte;)V
-
-    invoke-virtual {v0, p0}, Lkp7;->add(Ljava/lang/Object;)Z
-
-    :cond_0
-    invoke-static {v0}, Lso9;->a(Ljava/util/List;)Lkp7;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p0}, Ln4e;->setValue(Ljava/lang/Object;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+.method public abstract b(Lz4;)Ljava/lang/Object;
 .end method

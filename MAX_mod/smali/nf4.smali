@@ -3,208 +3,124 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lkq6;
+.implements Llq6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lvd3;
 
-.field public final synthetic b:Ljava/util/ArrayList;
+.field public final b:Landroid/content/Context;
 
-.field public final synthetic c:Ltf4;
+.field public final c:Lqyb;
+
+.field public final d:Ljava/util/Set;
+
+.field public final e:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ltf4;Ljava/util/ArrayList;I)V
-    .registers 4
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;Ljava/util/Set;Lqyb;Ljava/util/concurrent/Executor;)V
+    .registers 8
 
-    iput p3, p0, Lnf4;->a:I
+    new-instance v0, Lvd3;
 
-    iput-object p1, p0, Lnf4;->c:Ltf4;
+    const/4 v1, 0x1
 
-    iput-object p2, p0, Lnf4;->b:Ljava/util/ArrayList;
+    invoke-direct {v0, p1, v1, p2}, Lvd3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lnf4;->a:Lvd3;
+
+    iput-object p3, p0, Lnf4;->d:Ljava/util/Set;
+
+    iput-object p5, p0, Lnf4;->e:Ljava/util/concurrent/Executor;
+
+    iput-object p4, p0, Lnf4;->c:Lqyb;
+
+    iput-object p1, p0, Lnf4;->b:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 13
+.method public final a()Lz8h;
+    .registers 3
 
-    iget v0, p0, Lnf4;->a:I
+    iget-object v0, p0, Lnf4;->b:Landroid/content/Context;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-static {v0}, Ldrf;->a(Landroid/content/Context;)Z
 
-    iget-object v0, p0, Lnf4;->b:Ljava/util/ArrayList;
+    move-result v0
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    if-nez v0, :cond_0
 
-    move-result-object v1
+    const-string p0, ""
 
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {p0}, Lzyd;->n(Ljava/lang/Object;)Lz8h;
 
-    move-result v2
+    move-result-object p0
 
-    iget-object v3, p0, Lnf4;->c:Ltf4;
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lphc;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object v4, v2, Lphc;->a:Landroid/view/View;
-
-    invoke-virtual {v4}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v5
-
-    iget-object v6, v3, Ltf4;->o:Ljava/util/ArrayList;
-
-    invoke-virtual {v6, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    const/high16 v6, 0x3f800000    # 1.0f
-
-    invoke-virtual {v5, v6}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v6
-
-    iget-wide v7, v3, Lygc;->c:J
-
-    invoke-virtual {v6, v7, v8}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v6
-
-    new-instance v7, Lof4;
-
-    invoke-direct {v7, v3, v2, v4, v5}, Lof4;-><init>(Ltf4;Lphc;Landroid/view/View;Landroid/view/ViewPropertyAnimator;)V
-
-    invoke-virtual {v6, v7}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+    new-instance v0, Lmf4;
 
-    iget-object p0, v3, Ltf4;->l:Ljava/util/ArrayList;
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-direct {v0, p0, v1}, Lmf4;-><init>(Lnf4;I)V
+
+    iget-object p0, p0, Lnf4;->e:Ljava/util/concurrent/Executor;
+
+    invoke-static {v0, p0}, Lzyd;->g(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lz8h;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final b()V
+    .registers 3
+
+    iget-object v0, p0, Lnf4;->d:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-gtz v0, :cond_0
+
+    invoke-static {v1}, Lzyd;->n(Ljava/lang/Object;)Lz8h;
 
     return-void
 
-    :pswitch_0
-    iget-object v0, p0, Lnf4;->b:Ljava/util/ArrayList;
+    :cond_0
+    iget-object v0, p0, Lnf4;->b:Landroid/content/Context;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-static {v0}, Ldrf;->a(Landroid/content/Context;)Z
 
-    move-result-object v1
+    move-result v0
 
-    :goto_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    if-nez v0, :cond_1
 
-    move-result v2
+    invoke-static {v1}, Lzyd;->n(Ljava/lang/Object;)Lz8h;
 
-    iget-object v4, p0, Lnf4;->c:Ltf4;
-
-    if-eqz v2, :cond_3
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lsf4;
-
-    iget-object v5, v2, Lsf4;->a:Lphc;
-
-    iget v3, v2, Lsf4;->b:I
-
-    iget v6, v2, Lsf4;->c:I
-
-    iget v7, v2, Lsf4;->d:I
-
-    iget v2, v2, Lsf4;->e:I
-
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move v8, v7
-
-    iget-object v7, v5, Lphc;->a:Landroid/view/View;
-
-    sub-int v3, v8, v3
-
-    sub-int v8, v2, v6
-
-    const/4 v2, 0x0
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v7}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v2}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
+    return-void
 
     :cond_1
-    if-eqz v8, :cond_2
+    new-instance v0, Lmf4;
 
-    invoke-virtual {v7}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+    const/4 v1, 0x1
 
-    move-result-object v6
+    invoke-direct {v0, p0, v1}, Lmf4;-><init>(Lnf4;I)V
 
-    invoke-virtual {v6, v2}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+    iget-object p0, p0, Lnf4;->e:Ljava/util/concurrent/Executor;
 
-    :cond_2
-    invoke-virtual {v7}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v9
-
-    iget-object v2, v4, Ltf4;->p:Ljava/util/ArrayList;
-
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    iget-wide v10, v4, Lygc;->e:J
-
-    invoke-virtual {v9, v10, v11}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v2
-
-    move v6, v3
-
-    new-instance v3, Lpf4;
-
-    invoke-direct/range {v3 .. v9}, Lpf4;-><init>(Ltf4;Lphc;ILandroid/view/View;ILandroid/view/ViewPropertyAnimator;)V
-
-    invoke-virtual {v2, v3}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
-
-    iget-object p0, v4, Ltf4;->m:Ljava/util/ArrayList;
-
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-static {v0, p0}, Lzyd;->g(Ljava/util/concurrent/Callable;Ljava/util/concurrent/Executor;)Lz8h;
 
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

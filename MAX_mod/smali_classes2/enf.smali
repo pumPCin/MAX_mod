@@ -1,59 +1,104 @@
 .class public final Lenf;
-.super Lcx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lk0d;
 
 
 # instance fields
-.field public X:Lw10;
-
-.field public Y:Lv10;
-
-.field public synthetic Z:Ljava/lang/Object;
-
-.field public final synthetic n0:Lgnf;
-
-.field public o:Lgnf;
-
-.field public o0:I
+.field public final a:Ljava/util/Map;
 
 
 # direct methods
-.method public constructor <init>(Lgnf;Lcx3;)V
-    .registers 3
+.method public constructor <init>(Ljava/util/Map;)V
+    .registers 2
 
-    iput-object p1, p0, Lenf;->n0:Lgnf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lenf;->a:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    iput-object p1, p0, Lenf;->Z:Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
-    iget p1, p0, Lenf;->o0:I
+    const/4 p0, 0x1
 
-    const/high16 v0, -0x80000000
+    return p0
 
-    or-int/2addr p1, v0
+    :cond_0
+    if-eqz p1, :cond_2
 
-    iput p1, p0, Lenf;->o0:I
+    const-class v0, Lenf;
 
-    const-wide/16 v2, 0x0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-wide/16 v4, 0x0
+    move-result-object v1
 
-    iget-object v0, p0, Lenf;->n0:Lgnf;
+    if-eq v0, v1, :cond_1
 
-    const/4 v1, 0x0
+    goto :goto_0
 
-    move-object v6, p0
+    :cond_1
+    check-cast p1, Lenf;
 
-    invoke-virtual/range {v0 .. v6}, Lgnf;->c(Lw10;JJLcx3;)Ljava/lang/Object;
+    iget-object p0, p0, Lenf;->a:Ljava/util/Map;
+
+    iget-object p1, p1, Lenf;->a:Ljava/util/Map;
+
+    invoke-interface {p0, p1}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+
+    :cond_2
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lenf;->a:Ljava/util/Map;
+
+    filled-new-array {p0}, [Ljava/lang/Object;
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "UpdateDisplayLayoutCommandV2Response{participantsToErrorMap="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lenf;->a:Ljava/util/Map;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

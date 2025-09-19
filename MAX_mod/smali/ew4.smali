@@ -2,43 +2,12 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lyo0;
 
+# instance fields
+.field public a:F
 
-# virtual methods
-.method public final f(Ljava/lang/Object;)V
-    .registers 2
+.field public b:F
 
-    check-cast p1, Landroid/graphics/Bitmap;
+.field public c:I
 
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
-
-    return-void
-.end method
-
-.method public final get(I)Ljava/lang/Object;
-    .registers 4
-
-    int-to-double p0, p1
-
-    const-wide/high16 v0, 0x4000000000000000L    # 2.0
-
-    div-double/2addr p0, v0
-
-    invoke-static {p0, p1}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide p0
-
-    double-to-int p0, p0
-
-    sget-object p1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
-
-    const/4 v0, 0x1
-
-    invoke-static {v0, p0, p1}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object p0
-
-    return-object p0
-.end method
+.field public d:I

@@ -1,42 +1,31 @@
-.class public abstract Lmvg;
+.class public final Lmvg;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic a:I
+# instance fields
+.field public final a:Ljava/util/concurrent/Executor;
+
+.field public final b:Lk95;
+
+.field public final c:Lse7;
+
+.field public final d:Lute;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lk95;Lse7;Lute;)V
+    .registers 5
 
-    const-class v0, Lmvg;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    iput-object p1, p0, Lmvg;->a:Ljava/util/concurrent/Executor;
+
+    iput-object p2, p0, Lmvg;->b:Lk95;
+
+    iput-object p3, p0, Lmvg;->c:Lse7;
+
+    iput-object p4, p0, Lmvg;->d:Lute;
 
     return-void
-.end method
-
-.method public static a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
-    .registers 3
-
-    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    invoke-interface {p1, p0}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/os/Parcelable;
-
-    return-object p0
 .end method

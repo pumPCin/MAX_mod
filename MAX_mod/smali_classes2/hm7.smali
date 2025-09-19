@@ -1,100 +1,85 @@
 .class public final Lhm7;
-.super Ljava/lang/Object;
+.super Lcb4;
 .source "SourceFile"
-
-# interfaces
-.implements Lan7;
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lhm7;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final b:Lhm7;
 
-.field public static final a:Lhm7;
+.field public static final c:Lxa4;
+
+.field public static final d:Lxa4;
+
+.field public static final e:Lxa4;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 6
 
     new-instance v0, Lhm7;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Lcb4;-><init>()V
 
-    sput-object v0, Lhm7;->a:Lhm7;
+    sput-object v0, Lhm7;->b:Lhm7;
 
-    new-instance v0, Ldn6;
+    const-string v1, "lat"
 
-    const/16 v1, 0x12
+    const-string v2, "lon"
 
-    invoke-direct {v0, v1}, Ldn6;-><init>(I)V
+    filled-new-array {v1, v2}, [Ljava/lang/String;
 
-    sput-object v0, Lhm7;->CREATOR:Landroid/os/Parcelable$Creator;
+    move-result-object v2
 
-    return-void
-.end method
+    const/16 v5, 0xe
 
+    const/4 v4, 0x0
 
-# virtual methods
-.method public final describeContents()I
-    .registers 1
+    const-string v1, ":location/show"
 
-    const/4 p0, 0x0
+    const/4 v3, 0x0
 
-    return p0
-.end method
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
 
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+    move-result-object v1
 
-    const/4 v0, 0x1
+    sput-object v1, Lhm7;->c:Lxa4;
 
-    if-ne p0, p1, :cond_0
+    const-string v1, "request_code"
 
-    return v0
+    filled-new-array {v1}, [Ljava/lang/String;
 
-    :cond_0
-    instance-of p0, p1, Lhm7;
+    move-result-object v2
 
-    if-nez p0, :cond_1
+    const-string v1, ":location/pick"
 
-    const/4 p0, 0x0
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
 
-    return p0
+    move-result-object v1
 
-    :cond_1
-    return v0
-.end method
+    sput-object v1, Lhm7;->d:Lxa4;
 
-.method public final hashCode()I
-    .registers 1
+    const-string v1, "attachment_id"
 
-    const p0, 0x2f7912c2
+    filled-new-array {v1}, [Ljava/lang/String;
 
-    return p0
-.end method
+    move-result-object v2
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    const-string v1, "message"
 
-    const-string p0, "ErrorBrokenLink"
+    invoke-static {v1}, Ljava/util/Collections;->singleton(Ljava/lang/Object;)Ljava/util/Set;
 
-    return-object p0
-.end method
+    move-result-object v3
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
+    const/16 v5, 0xc
 
-    const/4 p0, 0x1
+    const-string v1, ":attach/fullscreen"
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v0
+
+    sput-object v0, Lhm7;->e:Lxa4;
 
     return-void
 .end method

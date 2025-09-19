@@ -1,188 +1,55 @@
 .class public final Lqta;
-.super Ljava/lang/Object;
+.super Lww9;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/view/ActionMode$Callback;
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final t0:Lzsa;
 
-.field public final b:Lo47;
-
-.field public final c:I
-
-.field public final d:I
+.field public final u0:Lzsa;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lo47;II)V
-    .registers 5
+.method public constructor <init>(Lzsa;Lzsa;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x7
 
-    iput-object p1, p0, Lqta;->a:Landroid/content/Context;
+    invoke-direct {p0, v0}, Lww9;-><init>(I)V
 
-    iput-object p2, p0, Lqta;->b:Lo47;
+    iput-object p1, p0, Lqta;->t0:Lzsa;
 
-    iput p3, p0, Lqta;->c:I
-
-    iput p4, p0, Lqta;->d:I
+    iput-object p2, p0, Lqta;->u0:Lzsa;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
-    .registers 8
+.method public final d(Lubf;[ILdg0;Ll37;)Ly8;
+    .registers 12
 
-    if-eqz p2, :cond_0
+    new-instance v0, Lrta;
 
-    invoke-interface {p2}, Landroid/view/MenuItem;->getItemId()I
+    sget v1, Locf;->a:I
 
-    move-result p1
+    sget v1, Locf;->a:I
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v1, p1, Lubf;->d:[Lx46;
 
-    move-result-object p1
+    iget-object v5, p0, Lqta;->t0:Lzsa;
 
-    goto :goto_0
+    iget-object v6, p0, Lqta;->u0:Lzsa;
 
-    :cond_0
-    const/4 p1, 0x0
+    move-object v1, p1
 
-    :goto_0
-    const/4 p2, 0x0
+    move-object v2, p2
 
-    if-nez p1, :cond_1
+    move-object v3, p3
 
-    goto :goto_2
+    move-object v4, p4
 
-    :cond_1
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    invoke-direct/range {v0 .. v6}, Lrta;-><init>(Lubf;[ILdg0;Ll37;Lzsa;Lzsa;)V
 
-    move-result p1
-
-    const v0, 0x1020022
-
-    if-ne p1, v0, :cond_5
-
-    iget-object p1, p0, Lqta;->a:Landroid/content/Context;
-
-    invoke-static {p1}, Lbv7;->U(Landroid/content/Context;)Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    if-nez p1, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v1
-
-    move v2, p2
-
-    :goto_1
-    if-ge v2, v1, :cond_4
-
-    invoke-interface {p1, v2}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Character;->isDigit(C)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/Appendable;
-
-    :cond_3
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    :cond_4
-    iget p1, p0, Lqta;->d:I
-
-    invoke-static {p1, v0}, Lqde;->Q0(ILjava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    iget v0, p0, Lqta;->c:I
-
-    iget-object p0, p0, Lqta;->b:Lo47;
-
-    check-cast p0, Lcj3;
-
-    invoke-virtual {p0, v0, p1}, Lcj3;->H0(ILjava/lang/String;)V
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result p0
-
-    if-lez p0, :cond_5
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_5
-    :goto_2
-    return p2
-.end method
-
-.method public final onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .registers 3
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final onDestroyActionMode(Landroid/view/ActionMode;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public final onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .registers 4
-
-    const p0, 0x1020022
-
-    invoke-interface {p2, p0}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_0
-
-    return v0
-
-    :cond_0
-    invoke-interface {p2}, Landroid/view/Menu;->clear()V
-
-    invoke-interface {p1}, Landroid/view/MenuItem;->getTitle()Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    invoke-interface {p2, v0, p0, v0, p1}, Landroid/view/Menu;->add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
-
-    const/4 p0, 0x1
-
-    return p0
+    return-object v0
 .end method

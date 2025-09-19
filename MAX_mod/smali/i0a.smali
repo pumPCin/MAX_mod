@@ -1,138 +1,155 @@
 .class public final Li0a;
-.super Ljava/lang/Object;
+.super Ly0a;
 .source "SourceFile"
-
-# interfaces
-.implements Ltf7;
 
 
 # instance fields
-.field public final a:Llad;
+.field public final synthetic e:I
+
+.field public f:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method public synthetic constructor <init>(I)V
+    .registers 2
 
-    sget-object v0, Lmde;->a:Lmde;
+    iput p1, p0, Li0a;->e:I
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Llad;
-
-    sget-object v1, Lmde;->b:Lebb;
-
-    invoke-direct {v0, v1}, Llad;-><init>(Lkad;)V
-
-    iput-object v0, p0, Li0a;->a:Llad;
+    invoke-direct {p0}, Ly0a;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lq8;)Ljava/lang/Object;
-    .registers 2
+.method public final b(Lyvg;)V
+    .registers 3
 
-    invoke-virtual {p1}, Lq8;->q()Z
+    iget v0, p0, Li0a;->e:I
 
-    move-result p0
+    packed-switch v0, :pswitch_data_0
 
-    if-eqz p0, :cond_0
+    iget-object p1, p1, Lyvg;->c:Ljava/lang/Object;
 
-    sget-object p0, Lmde;->a:Lmde;
+    check-cast p1, Landroid/app/Notification$Builder;
 
-    invoke-virtual {p1, p0}, Lq8;->t(Ltf7;)Ljava/lang/Object;
+    new-instance v0, Landroid/app/Notification$InboxStyle;
+
+    invoke-direct {v0, p1}, Landroid/app/Notification$InboxStyle;-><init>(Landroid/app/Notification$Builder;)V
+
+    iget-object p1, p0, Ly0a;->c:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, p1}, Landroid/app/Notification$InboxStyle;->setBigContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;
+
+    move-result-object p1
+
+    iget-boolean v0, p0, Ly0a;->a:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ly0a;->d:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/CharSequence;
+
+    invoke-virtual {p1, v0}, Landroid/app/Notification$InboxStyle;->setSummaryText(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;
+
+    :cond_0
+    iget-object p0, p0, Li0a;->f:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    return-object p0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    :cond_0
-    const/4 p0, 0x0
+    move-result v0
 
-    return-object p0
-.end method
+    if-eqz v0, :cond_1
 
-.method public final b(Ltx3;Ljava/lang/Object;)V
-    .registers 3
-
-    if-eqz p2, :cond_0
-
-    sget-object p0, Lmde;->a:Lmde;
-
-    invoke-virtual {p1, p0, p2}, Ltx3;->j(Ltf7;Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_0
-    invoke-virtual {p1}, Ltx3;->g()V
-
-    return-void
-.end method
-
-.method public final d()Lkad;
-    .registers 1
-
-    iget-object p0, p0, Li0a;->a:Llad;
-
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    if-eqz p1, :cond_3
-
-    const-class p0, Li0a;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eq p0, v0, :cond_1
+    check-cast v0, Ljava/lang/CharSequence;
 
-    goto :goto_1
+    invoke-virtual {p1, v0}, Landroid/app/Notification$InboxStyle;->addLine(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;
+
+    goto :goto_0
 
     :cond_1
-    check-cast p1, Li0a;
+    return-void
 
-    sget-object p0, Lmde;->a:Lmde;
+    :pswitch_0
+    iget-object p1, p1, Lyvg;->c:Ljava/lang/Object;
 
-    invoke-virtual {p0, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    check-cast p1, Landroid/app/Notification$Builder;
 
-    move-result p0
+    new-instance v0, Landroid/app/Notification$BigTextStyle;
 
-    if-nez p0, :cond_2
+    invoke-direct {v0, p1}, Landroid/app/Notification$BigTextStyle;-><init>(Landroid/app/Notification$Builder;)V
 
-    goto :goto_1
+    iget-object p1, p0, Ly0a;->c:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, p1}, Landroid/app/Notification$BigTextStyle;->setBigContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;
+
+    move-result-object p1
+
+    iget-object v0, p0, Li0a;->f:Ljava/lang/Object;
+
+    check-cast v0, Ljava/lang/CharSequence;
+
+    invoke-virtual {p1, v0}, Landroid/app/Notification$BigTextStyle;->bigText(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;
+
+    move-result-object p1
+
+    iget-boolean v0, p0, Ly0a;->a:Z
+
+    if-eqz v0, :cond_2
+
+    iget-object p0, p0, Ly0a;->d:Ljava/lang/Object;
+
+    check-cast p0, Ljava/lang/CharSequence;
+
+    invoke-virtual {p1, p0}, Landroid/app/Notification$BigTextStyle;->setSummaryText(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;
 
     :cond_2
-    :goto_0
-    const/4 p0, 0x1
+    return-void
 
-    return p0
+    nop
 
-    :cond_3
-    :goto_1
-    const/4 p0, 0x0
-
-    return p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
+.method public final c()Ljava/lang/String;
     .registers 1
 
-    sget-object p0, Lmde;->a:Lmde;
+    iget p0, p0, Li0a;->e:I
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    packed-switch p0, :pswitch_data_0
 
-    move-result p0
+    const-string p0, "androidx.core.app.NotificationCompat$InboxStyle"
 
-    return p0
+    return-object p0
+
+    :pswitch_0
+    const-string p0, "androidx.core.app.NotificationCompat$BigTextStyle"
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

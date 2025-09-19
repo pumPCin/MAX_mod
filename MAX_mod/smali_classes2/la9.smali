@@ -1,90 +1,72 @@
-.class public final synthetic Lla9;
-.super Ljava/lang/Object;
+.class public final Lla9;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/function/UnaryOperator;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:I
-
-.field public final synthetic c:Z
-
-.field public final synthetic d:J
+.field public final synthetic X:Lfb9;
 
 
 # direct methods
-.method public synthetic constructor <init>(JIIZ)V
-    .registers 6
+.method public constructor <init>(Lfb9;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p4, p0, Lla9;->a:I
+    iput-object p1, p0, Lla9;->X:Lfb9;
 
-    iput p3, p0, Lla9;->b:I
+    const/4 p1, 0x2
 
-    iput-boolean p5, p0, Lla9;->c:Z
-
-    iput-wide p1, p0, Lla9;->d:J
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 11
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lla9;->a:I
+    check-cast p1, Ly04;
 
-    check-cast p1, Lna9;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0, p1, p2}, Lla9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    new-instance v0, Lna9;
+    move-result-object p0
 
-    const-wide/16 v4, 0x0
+    check-cast p0, Lla9;
 
-    const/16 v8, 0x16
+    sget-object p1, Lylf;->a:Lylf;
 
-    iget v1, p0, Lla9;->b:I
+    invoke-virtual {p0, p1}, Lla9;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    return-object p1
+.end method
 
-    iget-boolean v3, p0, Lla9;->c:Z
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    iget-wide v6, p0, Lla9;->d:J
+    new-instance p1, Lla9;
 
-    invoke-direct/range {v0 .. v8}, Lna9;-><init>(IZZJJI)V
+    iget-object p0, p0, Lla9;->X:Lfb9;
 
-    return-object v0
+    invoke-direct {p1, p0, p2}, Lla9;-><init>(Lfb9;Lkotlin/coroutines/Continuation;)V
 
-    :pswitch_0
-    new-instance v0, Lna9;
+    return-object p1
+.end method
 
-    const-wide/16 v4, 0x0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    const/16 v8, 0x16
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget v1, p0, Lla9;->b:I
+    iget-object p0, p0, Lla9;->X:Lfb9;
 
-    const/4 v2, 0x0
+    invoke-static {p0}, Lfb9;->u(Lfb9;)V
 
-    iget-boolean v3, p0, Lla9;->c:Z
+    sget-object p0, Lylf;->a:Lylf;
 
-    iget-wide v6, p0, Lla9;->d:J
-
-    invoke-direct/range {v0 .. v8}, Lna9;-><init>(IZZJJI)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

@@ -64,7 +64,7 @@
     return-wide p1
 
     :cond_0
-    invoke-static {v0}, Lxde;->a0(Ljava/lang/String;)Ljava/lang/Long;
+    invoke-static {v0}, Lqme;->T(Ljava/lang/String;)Ljava/lang/Long;
 
     move-result-object p1
 
@@ -93,7 +93,7 @@
 
     const-string v0, "\' should be in range "
 
-    invoke-static {v1, p3, p4, p0, v0}, Lfge;->t(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, p3, p4, p0, v0}, Lz7e;->t(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object p0
 
@@ -101,7 +101,7 @@
 
     const-string p4, ", but is \'"
 
-    invoke-static {p5, p6, p3, p4, p0}, Lew1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
+    invoke-static {p5, p6, p3, p4, p0}, Lmw1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
     invoke-virtual {p0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 

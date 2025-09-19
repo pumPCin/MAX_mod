@@ -1,72 +1,46 @@
 .class public final Lvw3;
-.super Landroid/widget/TextView;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lxue;
+.implements Lts7;
 
 
 # instance fields
-.field public final synthetic a:Lone/me/sdk/contextmenu/popup/ContextMenuPopupWindow;
+.field public final a:Ljava/util/List;
+
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(Lvte;Lone/me/sdk/contextmenu/popup/ContextMenuPopupWindow;Landroid/content/Context;)V
-    .registers 4
+.method public constructor <init>(Ljava/util/List;)V
+    .registers 2
 
-    iput-object p2, p0, Lvw3;->a:Lone/me/sdk/contextmenu/popup/ContextMenuPopupWindow;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    iput-object p1, p0, Lvw3;->a:Ljava/util/List;
 
-    sget-object p3, Lrbf;->m:Lwte;
+    sget p1, Lhka;->D:I
 
-    invoke-static {p3, p0}, Lwte;->d(Lwte;Landroid/widget/TextView;)V
-
-    const/4 p3, 0x1
-
-    invoke-virtual {p0, p3}, Landroid/widget/TextView;->setMaxLines(I)V
-
-    sget-object p3, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
-
-    invoke-virtual {p0, p3}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
-
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p3
-
-    invoke-virtual {p1, p3}, Lvte;->b(Landroid/content/Context;)Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-static {p2}, Lone/me/sdk/contextmenu/popup/ContextMenuPopupWindow;->x0(Lone/me/sdk/contextmenu/popup/ContextMenuPopupWindow;)Loma;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lvw3;->onThemeChanged(Loma;)V
+    iput p1, p0, Lvw3;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onThemeChanged(Loma;)V
-    .registers 2
+.method public final getItemId()J
+    .registers 3
 
-    iget-object p1, p0, Lvw3;->a:Lone/me/sdk/contextmenu/popup/ContextMenuPopupWindow;
+    const-wide/high16 v0, -0x8000000000000000L
 
-    invoke-static {p1}, Lone/me/sdk/contextmenu/popup/ContextMenuPopupWindow;->x0(Lone/me/sdk/contextmenu/popup/ContextMenuPopupWindow;)Loma;
+    return-wide v0
+.end method
 
-    move-result-object p1
+.method public final m()I
+    .registers 1
 
-    invoke-interface {p1}, Loma;->getText()Lise;
+    iget p0, p0, Lvw3;->b:I
 
-    move-result-object p1
-
-    iget p1, p1, Lise;->h:I
-
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    return-void
+    return p0
 .end method

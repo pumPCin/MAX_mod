@@ -1,136 +1,66 @@
-.class public final synthetic Lyn3;
-.super Ljava/lang/Object;
+.class public final Lyn3;
+.super Landroid/text/style/ClickableSpan;
 .source "SourceFile"
-
-# interfaces
-.implements Ljava/util/function/Function;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:J
+
+.field public b:Lnx3;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .registers 2
+.method public constructor <init>(J)V
+    .registers 3
 
-    iput p1, p0, Lyn3;->a:I
+    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p1, p0, Lyn3;->a:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onClick(Landroid/view/View;)V
+    .registers 4
+
+    iget-object p1, p0, Lyn3;->b:Lnx3;
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p1, Lnx3;->b:Ljava/lang/Object;
+
+    check-cast p1, Lox3;
+
+    iget-object p1, p1, Lox3;->H0:Lq02;
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p1, Lq02;->b:Ljava/lang/Object;
+
+    check-cast p1, Lone/me/messages/list/ui/MessagesListWidget;
+
+    sget-object v0, Lone/me/messages/list/ui/MessagesListWidget;->Z0:[Lxi7;
+
+    invoke-virtual {p1}, Lone/me/messages/list/ui/MessagesListWidget;->K0()Lfb9;
+
+    move-result-object p1
+
+    iget-wide v0, p0, Lyn3;->a:J
+
+    invoke-virtual {p1, v0, v1}, Lfb9;->E(J)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final updateDrawState(Landroid/text/TextPaint;)V
     .registers 2
 
-    iget p0, p0, Lyn3;->a:I
+    const/4 p0, 0x1
 
-    packed-switch p0, :pswitch_data_0
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
 
-    check-cast p1, Lb3d;
-
-    iget-object p0, p1, Lb3d;->X:Lmm3;
-
-    invoke-virtual {p0}, Lmm3;->n()J
-
-    move-result-wide p0
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    check-cast p1, Lb3d;
-
-    iget-object p0, p1, Lb3d;->o:Lo72;
-
-    iget-object p0, p0, Lo72;->b:Lac2;
-
-    iget-wide p0, p0, Lac2;->a:J
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_1
-    check-cast p1, Lbo3;
-
-    invoke-virtual {p1}, Lbo3;->a()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_2
-    check-cast p1, Lb3d;
-
-    iget-object p0, p1, Lb3d;->X:Lmm3;
-
-    invoke-virtual {p0}, Lmm3;->n()J
-
-    move-result-wide p0
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_3
-    check-cast p1, Lb3d;
-
-    iget-object p0, p1, Lb3d;->o:Lo72;
-
-    iget-wide p0, p0, Lo72;->a:J
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_4
-    check-cast p1, Lop3;
-
-    iget-wide p0, p1, Lop3;->a:J
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_5
-    check-cast p1, Lis3;
-
-    iget-object p0, p1, Lis3;->b:Lhs3;
-
-    return-object p0
-
-    :pswitch_6
-    check-cast p1, Lbo3;
-
-    iget-object p0, p1, Lbo3;->c:Lao3;
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

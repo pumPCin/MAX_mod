@@ -1,41 +1,34 @@
-.class public final Lj2e;
-.super Ljo;
+.class public abstract Lj2e;
+.super Lzoc;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lj2e;
+# virtual methods
+.method public A(Lts7;Ljava/lang/Object;)V
+    .registers 3
 
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Lj2e;
-
-    invoke-direct {v0}, Ljo;-><init>()V
-
-    sput-object v0, Lj2e;->a:Lj2e;
+    invoke-virtual {p0, p1}, Lj2e;->y(Lts7;)V
 
     return-void
 .end method
 
+.method public B()V
+    .registers 1
 
-# virtual methods
-.method public final b()Lqbd;
-    .registers 2
+    return-void
+.end method
 
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Ls4;
+.method public C()V
+    .registers 1
 
-    move-result-object p0
+    return-void
+.end method
 
-    const-class v0, Lqbd;
+.method public E()V
+    .registers 1
 
-    invoke-virtual {p0, v0}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    return-void
+.end method
 
-    move-result-object p0
-
-    check-cast p0, Lqbd;
-
-    return-object p0
+.method public abstract y(Lts7;)V
 .end method

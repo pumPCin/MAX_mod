@@ -1,85 +1,68 @@
-.class public final enum Lima;
-.super Ljava/lang/Enum;
+.class public final Lima;
+.super Lmn;
 .source "SourceFile"
 
-
-# static fields
-.field public static final enum a:Lima;
-
-.field public static final enum b:Lima;
-
-.field public static final enum c:Lima;
-
-.field public static final synthetic o:[Lima;
+# interfaces
+.implements Lx3f;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 5
+# virtual methods
+.method public final b(ZLera;)V
+    .registers 3
 
-    new-instance v0, Lima;
+    if-eqz p1, :cond_0
 
-    const-string v1, "ERROR"
+    invoke-interface {p2}, Lera;->getIcon()Lqy6;
 
-    const/4 v2, 0x0
+    move-result-object p1
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iget p1, p1, Lqy6;->k:I
 
-    sput-object v0, Lima;->a:Lima;
+    goto :goto_0
 
-    new-instance v1, Lima;
+    :cond_0
+    invoke-interface {p2}, Lera;->i()Lume;
 
-    const-string v2, "HINT"
+    move-result-object p1
 
-    const/4 v3, 0x1
+    iget-object p1, p1, Lume;->b:Lzme;
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iget p1, p1, Lzme;->b:I
 
-    sput-object v1, Lima;->b:Lima;
+    :goto_0
+    invoke-static {p1}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
 
-    new-instance v2, Lima;
+    move-result-object p1
 
-    const-string v3, "DESCRIPTION"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lima;->c:Lima;
-
-    filled-new-array {v0, v1, v2}, [Lima;
-
-    move-result-object v0
-
-    sput-object v0, Lima;->o:[Lima;
+    invoke-virtual {p0, p1}, Landroid/widget/CompoundButton;->setButtonTintList(Landroid/content/res/ColorStateList;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lima;
-    .registers 2
+.method public final onThemeChanged(Lera;)V
+    .registers 3
 
-    const-class v0, Lima;
+    invoke-virtual {p0}, Landroid/widget/CompoundButton;->isChecked()Z
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    move-result v0
 
-    move-result-object p0
+    invoke-virtual {p0, v0, p1}, Lima;->b(ZLera;)V
 
-    check-cast p0, Lima;
-
-    return-object p0
+    return-void
 .end method
 
-.method public static values()[Lima;
-    .registers 1
+.method public setChecked(Z)V
+    .registers 3
 
-    sget-object v0, Lima;->o:[Lima;
+    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->setChecked(Z)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    sget-object v0, Lyu4;->t0:Lbx9;
+
+    invoke-virtual {v0, p0}, Lbx9;->l(Landroid/view/View;)Lera;
 
     move-result-object v0
 
-    check-cast v0, [Lima;
+    invoke-virtual {p0, p1, v0}, Lima;->b(ZLera;)V
 
-    return-object v0
+    return-void
 .end method

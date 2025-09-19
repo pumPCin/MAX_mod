@@ -3,22 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lcb;
+.implements Lhb;
 
 
 # instance fields
-.field public final a:Lbh1;
+.field public final a:Z
 
 .field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(Lbh1;Z)V
+.method public constructor <init>(ZZ)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lxa;->a:Lbh1;
+    iput-boolean p1, p0, Lxa;->a:Z
 
     iput-boolean p2, p0, Lxa;->b:Z
 
@@ -44,15 +44,11 @@
     :cond_1
     check-cast p1, Lxa;
 
-    iget-object v0, p0, Lxa;->a:Lbh1;
+    iget-boolean v0, p0, Lxa;->a:Z
 
-    iget-object v1, p1, Lxa;->a:Lbh1;
+    iget-boolean v1, p1, Lxa;->a:Z
 
-    invoke-virtual {v0, v1}, Lbh1;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
+    if-eq v0, v1, :cond_2
 
     goto :goto_0
 
@@ -78,9 +74,9 @@
 .method public final hashCode()I
     .registers 2
 
-    iget-object v0, p0, Lxa;->a:Lbh1;
+    iget-boolean v0, p0, Lxa;->a:Z
 
-    invoke-virtual {v0}, Lbh1;->hashCode()I
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     move-result v0
 
@@ -102,15 +98,15 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "DisableCameraForParticipant(id="
+    const-string v1, "DisableAllMicInCall(isSuccess="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lxa;->a:Lbh1;
+    iget-boolean v1, p0, Lxa;->a:Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    const-string v1, ", isSuccess="
+    const-string v1, ", isEnabled="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

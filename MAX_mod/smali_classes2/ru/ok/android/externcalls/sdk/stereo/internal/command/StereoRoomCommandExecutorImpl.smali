@@ -16,41 +16,41 @@
         "Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor;",
         "Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;",
         "signalingProvider",
-        "Ld7c;",
+        "Lfec;",
         "log",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Ld7c;)V",
+        "(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lfec;)V",
         "",
         "method",
         "Lorg/json/JSONObject;",
         "errorResponse",
         "Lkotlin/Function1;",
         "",
-        "Lncf;",
+        "Lylf;",
         "onError",
         "parseErrorResponse",
-        "(Ljava/lang/String;Lorg/json/JSONObject;Lj96;)V",
+        "(Ljava/lang/String;Lorg/json/JSONObject;Lbc6;)V",
         "Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;",
         "params",
         "Lkotlin/Function0;",
         "onSuccess",
         "promoteParticipant",
-        "(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;Lh96;Lj96;)V",
+        "(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;Lzb6;Lbc6;)V",
         "Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;",
         "requestPromotion",
-        "(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;Lh96;Lj96;)V",
+        "(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;Lzb6;Lbc6;)V",
         "Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;",
         "acceptPromotion",
-        "(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;Lh96;Lj96;)V",
+        "(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;Lzb6;Lbc6;)V",
         "Lkotlin/Function3;",
         "",
         "",
         "",
-        "Lkr1;",
+        "Lqr1;",
         "getHandsQueue",
-        "(Lz96;Lj96;)V",
+        "(Lrc6;Lbc6;)V",
         "Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;",
-        "Ld7c;",
+        "Lfec;",
         "calls-sdk_release"
     }
     k = 0x1
@@ -64,135 +64,135 @@
 
 
 # instance fields
-.field private final log:Ld7c;
+.field private final log:Lfec;
 
 .field private final signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
 
 # direct methods
-.method public constructor <init>(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Ld7c;)V
+.method public constructor <init>(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lfec;)V
     .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
-    iput-object p2, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->log:Ld7c;
+    iput-object p2, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->log:Lfec;
 
     return-void
 .end method
 
-.method public static synthetic a(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+.method public static synthetic a(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
     .registers 3
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->requestPromotion$lambda$3(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->requestPromotion$lambda$3(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method private static final acceptPromotion$lambda$4(Lh96;Lorg/json/JSONObject;)V
+.method private static final acceptPromotion$lambda$4(Lzb6;Lorg/json/JSONObject;)V
     .registers 2
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lzb6;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final acceptPromotion$lambda$5(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+.method private static final acceptPromotion$lambda$5(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
     .registers 4
 
     const-string v0, "acceptPromotion"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lj96;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lbc6;)V
 
     return-void
 .end method
 
-.method public static synthetic b(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+.method public static synthetic b(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
     .registers 3
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->getHandsQueue$lambda$9(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->getHandsQueue$lambda$9(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic c(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+.method public static synthetic c(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
     .registers 3
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->promoteParticipant$lambda$1(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->promoteParticipant$lambda$1(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic d(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lz96;Lorg/json/JSONObject;)V
+.method public static synthetic d(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lrc6;Lorg/json/JSONObject;)V
     .registers 4
 
-    invoke-static {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->getHandsQueue$lambda$8(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lz96;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->getHandsQueue$lambda$8(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lrc6;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic e(Lh96;Lorg/json/JSONObject;)V
+.method public static synthetic e(Lzb6;Lorg/json/JSONObject;)V
     .registers 2
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->requestPromotion$lambda$2(Lh96;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->requestPromotion$lambda$2(Lzb6;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic f(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+.method public static synthetic f(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
     .registers 3
 
-    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->acceptPromotion$lambda$5(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1, p2}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->acceptPromotion$lambda$5(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method public static synthetic g(Lh96;Lorg/json/JSONObject;)V
+.method public static synthetic g(Lzb6;Lorg/json/JSONObject;)V
     .registers 2
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->promoteParticipant$lambda$0(Lh96;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->promoteParticipant$lambda$0(Lzb6;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method private static final getHandsQueue$lambda$8(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lz96;Lorg/json/JSONObject;)V
+.method private static final getHandsQueue$lambda$8(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lrc6;Lorg/json/JSONObject;)V
     .registers 6
 
-    new-instance v0, Lcs1;
+    new-instance v0, Lncb;
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->log:Ld7c;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->log:Lfec;
 
-    invoke-direct {v0, p0}, Lcs1;-><init>(Ld7c;)V
+    invoke-direct {v0, p0}, Lncb;-><init>(Ljava/lang/Object;)V
 
-    invoke-virtual {v0, p3}, Lcs1;->a(Lorg/json/JSONObject;)Lbs1;
+    invoke-virtual {v0, p3}, Lncb;->L(Lorg/json/JSONObject;)Lis1;
 
     move-result-object p0
 
     if-eqz p0, :cond_1
 
-    iget p1, p0, Lbs1;->c:I
+    iget p1, p0, Lis1;->c:I
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
-    iget-boolean p3, p0, Lbs1;->b:Z
+    iget-boolean p3, p0, Lis1;->b:Z
 
     invoke-static {p3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p3
 
-    iget-object p0, p0, Lbs1;->a:Ljava/util/ArrayList;
+    iget-object p0, p0, Lis1;->a:Ljava/util/ArrayList;
 
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
 
-    invoke-static {p0, v1}, Ll73;->U(Ljava/lang/Iterable;I)I
+    invoke-static {p0, v1}, Ls73;->O(Ljava/lang/Iterable;I)I
 
     move-result v1
 
@@ -213,16 +213,16 @@
 
     move-result-object v1
 
-    check-cast v1, Ljr1;
+    check-cast v1, Lpr1;
 
-    iget-object v1, v1, Ljr1;->a:Lkr1;
+    iget-object v1, v1, Lpr1;->a:Lqr1;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_0
-    invoke-interface {p2, p1, p3, v0}, Lz96;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, p1, p3, v0}, Lrc6;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 
@@ -237,40 +237,40 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p2, v0, p3, v0}, Lru/ok/android/externcalls/sdk/stereo/exception/StereoRoomException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILwc4;)V
+    invoke-direct {p0, p2, v0, p3, v0}, Lru/ok/android/externcalls/sdk/stereo/exception/StereoRoomException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILld4;)V
 
-    invoke-interface {p1, p0}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, p0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_2
     return-void
 .end method
 
-.method private static final getHandsQueue$lambda$9(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+.method private static final getHandsQueue$lambda$9(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
     .registers 4
 
     const-string v0, "getHandQueue"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lj96;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lbc6;)V
 
     return-void
 .end method
 
-.method public static synthetic h(Lh96;Lorg/json/JSONObject;)V
+.method public static synthetic h(Lzb6;Lorg/json/JSONObject;)V
     .registers 2
 
-    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->acceptPromotion$lambda$4(Lh96;Lorg/json/JSONObject;)V
+    invoke-static {p0, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->acceptPromotion$lambda$4(Lzb6;Lorg/json/JSONObject;)V
 
     return-void
 .end method
 
-.method private final parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lj96;)V
+.method private final parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lbc6;)V
     .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             "Lorg/json/JSONObject;",
-            "Lj96;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
@@ -283,7 +283,7 @@
 
     const-string v0, "chatRoom.partNotFound"
 
-    invoke-static {p0, v0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, v0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -316,7 +316,7 @@
     :cond_0
     const-string v0, "chatRoom.promotedLimit"
 
-    invoke-static {p0, v0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, v0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -351,76 +351,76 @@
 
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0, p2, v0}, Lru/ok/android/externcalls/sdk/stereo/exception/StereoRoomException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILwc4;)V
+    invoke-direct {p0, p1, v0, p2, v0}, Lru/ok/android/externcalls/sdk/stereo/exception/StereoRoomException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;ILld4;)V
 
     :goto_0
     if-eqz p3, :cond_2
 
-    invoke-interface {p3, p0}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_2
     return-void
 .end method
 
-.method private static final promoteParticipant$lambda$0(Lh96;Lorg/json/JSONObject;)V
+.method private static final promoteParticipant$lambda$0(Lzb6;Lorg/json/JSONObject;)V
     .registers 2
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lzb6;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final promoteParticipant$lambda$1(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+.method private static final promoteParticipant$lambda$1(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
     .registers 4
 
     const-string v0, "promoteParticipant"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lj96;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lbc6;)V
 
     return-void
 .end method
 
-.method private static final requestPromotion$lambda$2(Lh96;Lorg/json/JSONObject;)V
+.method private static final requestPromotion$lambda$2(Lzb6;Lorg/json/JSONObject;)V
     .registers 2
 
     if-eqz p0, :cond_0
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {p0}, Lzb6;->invoke()Ljava/lang/Object;
 
     :cond_0
     return-void
 .end method
 
-.method private static final requestPromotion$lambda$3(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;Lorg/json/JSONObject;)V
+.method private static final requestPromotion$lambda$3(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
     .registers 4
 
     const-string v0, "requestPromotion"
 
-    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lj96;)V
+    invoke-direct {p0, v0, p2, p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->parseErrorResponse(Ljava/lang/String;Lorg/json/JSONObject;Lbc6;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public acceptPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;Lh96;Lj96;)V
+.method public acceptPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;Lzb6;Lbc6;)V
     .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$AcceptPromotionParams;",
-            "Lh96;",
-            "Lj96;",
+            "Lzb6;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
-    invoke-static {v0, p3}, Lru/ok/android/externcalls/sdk/signaling/SignalingProviderKt;->get(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lj96;)Lmsd;
+    invoke-static {v0, p3}, Lru/ok/android/externcalls/sdk/signaling/SignalingProviderKt;->get(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lbc6;)Lt0e;
 
     move-result-object v0
 
@@ -447,43 +447,43 @@
 
     invoke-virtual {v1, v2, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    new-instance p1, Lie6;
+    new-instance p1, Lbh6;
 
-    invoke-direct {p1, v1}, Lie6;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {p1, v1}, Lbh6;-><init>(Lorg/json/JSONObject;)V
 
-    new-instance v1, Lzs;
+    new-instance v1, Lks;
 
     const/16 v2, 0xe
 
-    invoke-direct {v1, v2, p2}, Lzs;-><init>(ILh96;)V
+    invoke-direct {v1, v2, p2}, Lks;-><init>(ILzb6;)V
 
-    new-instance p2, Lx5e;
+    new-instance p2, Lkee;
 
     const/4 v2, 0x2
 
-    invoke-direct {p2, p0, p3, v2}, Lx5e;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;I)V
+    invoke-direct {p2, p0, p3, v2}, Lkee;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;I)V
 
     const/4 p0, 0x0
 
-    invoke-virtual {v0, p1, p0, v1, p2}, Lmsd;->d(Lpsd;ZLlsd;Llsd;)V
+    invoke-virtual {v0, p1, p0, v1, p2}, Lt0e;->d(Lw0e;ZLs0e;Ls0e;)V
 
     return-void
 .end method
 
-.method public getHandsQueue(Lz96;Lj96;)V
+.method public getHandsQueue(Lrc6;Lbc6;)V
     .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lz96;",
-            "Lj96;",
+            "Lrc6;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
-    invoke-static {v0, p2}, Lru/ok/android/externcalls/sdk/signaling/SignalingProviderKt;->get(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lj96;)Lmsd;
+    invoke-static {v0, p2}, Lru/ok/android/externcalls/sdk/signaling/SignalingProviderKt;->get(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lbc6;)Lt0e;
 
     move-result-object v0
 
@@ -502,44 +502,44 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    new-instance v2, Lie6;
+    new-instance v2, Lbh6;
 
-    invoke-direct {v2, v1}, Lie6;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {v2, v1}, Lbh6;-><init>(Lorg/json/JSONObject;)V
 
-    new-instance v1, Lty0;
+    new-instance v1, Liy0;
 
     const/4 v3, 0x6
 
-    invoke-direct {v1, p0, p2, p1, v3}, Lty0;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+    invoke-direct {v1, p0, p2, p1, v3}, Liy0;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    new-instance p1, Lx5e;
+    new-instance p1, Lkee;
 
     const/4 v3, 0x0
 
-    invoke-direct {p1, p0, p2, v3}, Lx5e;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;I)V
+    invoke-direct {p1, p0, p2, v3}, Lkee;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;I)V
 
     const/4 p0, 0x0
 
-    invoke-virtual {v0, v2, p0, v1, p1}, Lmsd;->d(Lpsd;ZLlsd;Llsd;)V
+    invoke-virtual {v0, v2, p0, v1, p1}, Lt0e;->d(Lw0e;ZLs0e;Ls0e;)V
 
     return-void
 .end method
 
-.method public promoteParticipant(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;Lh96;Lj96;)V
+.method public promoteParticipant(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;Lzb6;Lbc6;)V
     .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;",
-            "Lh96;",
-            "Lj96;",
+            "Lzb6;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
-    invoke-static {v0, p3}, Lru/ok/android/externcalls/sdk/signaling/SignalingProviderKt;->get(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lj96;)Lmsd;
+    invoke-static {v0, p3}, Lru/ok/android/externcalls/sdk/signaling/SignalingProviderKt;->get(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lbc6;)Lt0e;
 
     move-result-object v0
 
@@ -548,7 +548,7 @@
     return-void
 
     :cond_0
-    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->getParticipantId()Lwg1;
+    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$PromoteParticipantParams;->getParticipantId()Lsg1;
 
     move-result-object v1
 
@@ -556,44 +556,44 @@
 
     move-result p1
 
-    invoke-static {v1, p1}, Lcr0;->x(Lwg1;Z)Lie6;
+    invoke-static {v1, p1}, Lo97;->F(Lsg1;Z)Lbh6;
 
     move-result-object p1
 
-    new-instance v1, Lzs;
+    new-instance v1, Lks;
 
     const/16 v2, 0xf
 
-    invoke-direct {v1, v2, p2}, Lzs;-><init>(ILh96;)V
+    invoke-direct {v1, v2, p2}, Lks;-><init>(ILzb6;)V
 
-    new-instance p2, Lx5e;
+    new-instance p2, Lkee;
 
     const/4 v2, 0x3
 
-    invoke-direct {p2, p0, p3, v2}, Lx5e;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;I)V
+    invoke-direct {p2, p0, p3, v2}, Lkee;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;I)V
 
     const/4 p0, 0x0
 
-    invoke-virtual {v0, p1, p0, v1, p2}, Lmsd;->d(Lpsd;ZLlsd;Llsd;)V
+    invoke-virtual {v0, p1, p0, v1, p2}, Lt0e;->d(Lw0e;ZLs0e;Ls0e;)V
 
     return-void
 .end method
 
-.method public requestPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;Lh96;Lj96;)V
+.method public requestPromotion(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;Lzb6;Lbc6;)V
     .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutor$RequestPromotionParams;",
-            "Lh96;",
-            "Lj96;",
+            "Lzb6;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;->signalingProvider:Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;
 
-    invoke-static {v0, p3}, Lru/ok/android/externcalls/sdk/signaling/SignalingProviderKt;->get(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lj96;)Lmsd;
+    invoke-static {v0, p3}, Lru/ok/android/externcalls/sdk/signaling/SignalingProviderKt;->get(Lru/ok/android/externcalls/sdk/signaling/SignalingProvider;Lbc6;)Lt0e;
 
     move-result-object v0
 
@@ -620,25 +620,25 @@
 
     invoke-virtual {v1, v2, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
-    new-instance p1, Lie6;
+    new-instance p1, Lbh6;
 
-    invoke-direct {p1, v1}, Lie6;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {p1, v1}, Lbh6;-><init>(Lorg/json/JSONObject;)V
 
-    new-instance v1, Lzs;
+    new-instance v1, Lks;
 
     const/16 v2, 0xd
 
-    invoke-direct {v1, v2, p2}, Lzs;-><init>(ILh96;)V
+    invoke-direct {v1, v2, p2}, Lks;-><init>(ILzb6;)V
 
-    new-instance p2, Lx5e;
+    new-instance p2, Lkee;
 
     const/4 v2, 0x1
 
-    invoke-direct {p2, p0, p3, v2}, Lx5e;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lj96;I)V
+    invoke-direct {p2, p0, p3, v2}, Lkee;-><init>(Lru/ok/android/externcalls/sdk/stereo/internal/command/StereoRoomCommandExecutorImpl;Lbc6;I)V
 
     const/4 p0, 0x0
 
-    invoke-virtual {v0, p1, p0, v1, p2}, Lmsd;->d(Lpsd;ZLlsd;Llsd;)V
+    invoke-virtual {v0, p1, p0, v1, p2}, Lt0e;->d(Lw0e;ZLs0e;Ls0e;)V
 
     return-void
 .end method

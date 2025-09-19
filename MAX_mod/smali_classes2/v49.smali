@@ -1,88 +1,104 @@
 .class public final Lv49;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lz49;
 
 
 # instance fields
-.field public final synthetic X:Lwh7;
-
-.field public final synthetic Y:Ldle;
+.field public final a:Ll56;
 
 
 # direct methods
-.method public constructor <init>(Lwh7;Ldle;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Ll56;)V
+    .registers 2
 
-    iput-object p1, p0, Lv49;->X:Lwh7;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lv49;->Y:Ldle;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lv49;->a:Ll56;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lv49;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lv49;
+
+    iget-object p0, p0, Lv49;->a:Ll56;
+
+    iget-object p1, p1, Lv49;->a:Ll56;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lv49;->a:Ll56;
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_0
+    invoke-virtual {p0}, Ll56;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    check-cast p1, Lr04;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const-string v1, "OnMessageSend(forwardMessagesSendData="
 
-    invoke-virtual {p0, p1, p2}, Lv49;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object p0
+    iget-object p0, p0, Lv49;->a:Ll56;
 
-    check-cast p0, Lv49;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    sget-object p1, Lncf;->a:Lncf;
+    const-string p0, ")"
 
-    invoke-virtual {p0, p1}, Lv49;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p1, Lv49;
-
-    iget-object v0, p0, Lv49;->X:Lwh7;
-
-    iget-object p0, p0, Lv49;->Y:Ldle;
-
-    invoke-direct {p1, v0, p0, p2}, Lv49;-><init>(Lwh7;Ldle;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lv49;->X:Lwh7;
-
-    iget-object p1, p1, Lwh7;->a:Lq09;
-
-    iget-object p0, p0, Lv49;->Y:Ldle;
-
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
-
-    check-cast p0, Landroid/text/Layout;
-
-    invoke-virtual {p1, p0}, Lq09;->b(Landroid/text/Layout;)V
-
-    sget-object p0, Lncf;->a:Lncf;
 
     return-object p0
 .end method

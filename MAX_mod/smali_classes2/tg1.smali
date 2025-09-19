@@ -4,70 +4,20 @@
 
 
 # instance fields
-.field public a:Z
+.field public final a:Ljava/lang/String;
 
-.field public b:Z
-
-.field public c:F
-
-.field public d:F
-
-.field public e:Ljava/lang/Integer;
-
-.field public f:Lug1;
-
-.field public g:Z
-
-.field public h:Z
-
-.field public i:Z
-
-.field public j:Z
-
-.field public k:Z
+.field public final b:J
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method public constructor <init>(Ljava/lang/String;J)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v0, 0x1
+    iput-object p1, p0, Ltg1;->a:Ljava/lang/String;
 
-    iput-boolean v0, p0, Ltg1;->a:Z
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ltg1;->b:Z
-
-    const v1, 0x3f333333    # 0.7f
-
-    iput v1, p0, Ltg1;->c:F
-
-    const/high16 v1, 0x3f400000    # 0.75f
-
-    iput v1, p0, Ltg1;->d:F
-
-    const/16 v1, 0x3c0
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    iput-object v1, p0, Ltg1;->e:Ljava/lang/Integer;
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Ltg1;->f:Lug1;
-
-    iput-boolean v0, p0, Ltg1;->g:Z
-
-    iput-boolean v0, p0, Ltg1;->h:Z
-
-    iput-boolean v0, p0, Ltg1;->i:Z
-
-    iput-boolean v0, p0, Ltg1;->j:Z
+    iput-wide p2, p0, Ltg1;->b:J
 
     return-void
 .end method

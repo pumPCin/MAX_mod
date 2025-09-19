@@ -1,142 +1,156 @@
 .class public final Ljt2;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lrc6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic X:I
 
-.field public final synthetic Y:Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;
+.field public synthetic Y:Lbra;
+
+.field public synthetic Z:Lera;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;)V
-    .registers 3
+.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;I)V
+    .registers 4
 
-    iput-object p2, p0, Ljt2;->Y:Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;
+    iput p3, p0, Ljt2;->X:I
 
-    const/4 p2, 0x2
-
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget p0, p0, Ljt2;->X:I
 
-    invoke-virtual {p0, p1, p2}, Ljt2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    check-cast p1, Lbra;
 
-    move-result-object p0
+    check-cast p2, Lera;
 
-    check-cast p0, Ljt2;
+    check-cast p3, Lkotlin/coroutines/Continuation;
 
-    sget-object p1, Lncf;->a:Lncf;
+    packed-switch p0, :pswitch_data_0
+
+    new-instance p0, Ljt2;
+
+    const/4 v0, 0x3
+
+    const/4 v1, 0x2
+
+    invoke-direct {p0, v0, p3, v1}, Ljt2;-><init>(ILkotlin/coroutines/Continuation;I)V
+
+    iput-object p1, p0, Ljt2;->Y:Lbra;
+
+    iput-object p2, p0, Ljt2;->Z:Lera;
+
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Ljt2;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object p1
-.end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    :pswitch_0
+    new-instance p0, Ljt2;
 
-    new-instance v0, Ljt2;
+    const/4 v0, 0x3
 
-    iget-object p0, p0, Ljt2;->Y:Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;
+    const/4 v1, 0x1
 
-    invoke-direct {v0, p2, p0}, Ljt2;-><init>(Lkotlin/coroutines/Continuation;Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;)V
+    invoke-direct {p0, v0, p3, v1}, Ljt2;-><init>(ILkotlin/coroutines/Continuation;I)V
 
-    iput-object p1, v0, Ljt2;->X:Ljava/lang/Object;
+    iput-object p1, p0, Ljt2;->Y:Lbra;
 
-    return-object v0
+    iput-object p2, p0, Ljt2;->Z:Lera;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Ljt2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+
+    :pswitch_1
+    new-instance p0, Ljt2;
+
+    const/4 v0, 0x3
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, p3, v1}, Ljt2;-><init>(ILkotlin/coroutines/Continuation;I)V
+
+    iput-object p1, p0, Ljt2;->Y:Lbra;
+
+    iput-object p2, p0, Ljt2;->Z:Lera;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Ljt2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .registers 3
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget v0, p0, Ljt2;->X:I
 
-    iget-object p1, p0, Ljt2;->X:Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p1, Lot2;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object v0, p1, Lot2;->b:Ljava/lang/String;
+    iget-object p1, p0, Ljt2;->Y:Lbra;
 
-    iget-object v1, p1, Lot2;->a:Ljava/lang/String;
+    iget-object p0, p0, Ljt2;->Z:Lera;
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p1, p0}, Lbra;->onThemeChanged(Lera;)V
 
-    invoke-static {v0}, Lqde;->x0(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v1, p1, Lot2;->b:Ljava/lang/String;
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    if-eqz v1, :cond_2
-
-    invoke-static {v1}, Lqde;->x0(Ljava/lang/CharSequence;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    :cond_2
-    const/4 v1, 0x0
-
-    :cond_3
-    :goto_1
-    iget-object p0, p0, Ljt2;->Y:Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;
-
-    invoke-static {p0}, Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;->y0(Lone/me/startconversation/chattitleicon/ChatTitleIconScreen;)Li7a;
-
-    move-result-object p0
-
-    invoke-virtual {p0, v1}, Li7a;->setAvatarUrl(Ljava/lang/String;)V
-
-    const/4 p1, 0x1
-
-    if-eqz v1, :cond_5
-
-    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    const/4 v0, 0x0
-
-    goto :goto_3
-
-    :cond_5
-    :goto_2
-    move v0, p1
-
-    :goto_3
-    xor-int/2addr p1, v0
-
-    invoke-virtual {p0, p1}, Li7a;->setCloseBadgeVisibility(Z)V
-
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
+
+    :pswitch_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ljt2;->Y:Lbra;
+
+    iget-object p0, p0, Ljt2;->Z:Lera;
+
+    invoke-virtual {p1, p0}, Lbra;->onThemeChanged(Lera;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ljt2;->Y:Lbra;
+
+    iget-object p0, p0, Ljt2;->Z:Lera;
+
+    invoke-virtual {p1, p0}, Lbra;->onThemeChanged(Lera;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

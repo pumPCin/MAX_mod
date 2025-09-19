@@ -1,193 +1,135 @@
-.class public final synthetic Lneg;
-.super Ljava/lang/Object;
+.class public final Lneg;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lee6;
+.implements Lpc6;
 
 
-# static fields
-.field public static final a:Lneg;
+# instance fields
+.field public X:I
 
-.field private static final descriptor:Lkad;
+.field public final synthetic Y:Loeg;
+
+.field public final synthetic Z:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Loeg;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
     .registers 4
 
-    new-instance v0, Lneg;
+    iput-object p1, p0, Lneg;->Y:Loeg;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lneg;->Z:Ljava/lang/String;
 
-    sput-object v0, Lneg;->a:Lneg;
+    const/4 p1, 0x2
 
-    new-instance v1, Lk7b;
-
-    const-string v2, "one.me.webapp.domain.jsbridge.delegates.share.WebAppShareResponse"
-
-    const/4 v3, 0x2
-
-    invoke-direct {v1, v2, v0, v3}, Lk7b;-><init>(Ljava/lang/String;Lee6;I)V
-
-    const-string v0, "requestId"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v0, v2}, Lk7b;->k(Ljava/lang/String;Z)V
-
-    const-string v0, "status"
-
-    invoke-virtual {v1, v0, v2}, Lk7b;->k(Ljava/lang/String;Z)V
-
-    sput-object v1, Lneg;->descriptor:Lkad;
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lq8;)Ljava/lang/Object;
-    .registers 11
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    sget-object p0, Lneg;->descriptor:Lkad;
+    check-cast p1, Ly04;
 
-    invoke-virtual {p1, p0}, Lq8;->j(Lkad;)Lq8;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    move-result-object p1
+    invoke-virtual {p0, p1, p2}, Lneg;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    sget-object v0, Lpeg;->c:[Ltf7;
+    move-result-object p0
 
-    const/4 v1, 0x1
+    check-cast p0, Lneg;
 
-    const/4 v2, 0x0
+    sget-object p1, Lylf;->a:Lylf;
 
-    const/4 v3, 0x0
+    invoke-virtual {p0, p1}, Lneg;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move v5, v1
-
-    move v6, v2
-
-    move-object v4, v3
-
-    :goto_0
-    if-eqz v5, :cond_3
-
-    invoke-virtual {p1, p0}, Lq8;->p(Lkad;)I
-
-    move-result v7
-
-    const/4 v8, -0x1
-
-    if-eq v7, v8, :cond_2
-
-    if-eqz v7, :cond_1
-
-    if-ne v7, v1, :cond_0
-
-    aget-object v7, v0, v1
-
-    invoke-virtual {p1, p0, v1, v7, v4}, Lq8;->s(Lkad;ILtf7;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lreg;
-
-    or-int/lit8 v6, v6, 0x2
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
-
-    invoke-direct {p0, v7}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
-
-    throw p0
-
-    :cond_1
-    invoke-virtual {p1, p0, v2}, Lq8;->v(Lkad;I)Ljava/lang/String;
-
-    move-result-object v3
-
-    or-int/lit8 v6, v6, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    move v5, v2
-
-    goto :goto_0
-
-    :cond_3
-    invoke-virtual {p1, p0}, Lq8;->y(Lkad;)V
-
-    new-instance p0, Lpeg;
-
-    invoke-direct {p0, v6, v3, v4}, Lpeg;-><init>(ILjava/lang/String;Lreg;)V
+    move-result-object p0
 
     return-object p0
 .end method
 
-.method public final b(Ltx3;Ljava/lang/Object;)V
-    .registers 6
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    check-cast p2, Lpeg;
+    new-instance p1, Lneg;
 
-    sget-object p0, Lneg;->descriptor:Lkad;
+    iget-object v0, p0, Lneg;->Y:Loeg;
 
-    invoke-virtual {p1, p0}, Ltx3;->b(Lkad;)Ltx3;
+    iget-object p0, p0, Lneg;->Z:Ljava/lang/String;
 
-    move-result-object p1
+    invoke-direct {p1, v0, p0, p2}, Lneg;-><init>(Loeg;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
 
-    sget-object v0, Lpeg;->c:[Ltf7;
+    return-object p1
+.end method
 
-    iget-object v1, p2, Lpeg;->a:Ljava/lang/String;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 11
 
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, p0, v2, v1}, Ltx3;->l(Lkad;ILjava/lang/String;)V
+    iget v0, p0, Lneg;->X:I
 
     const/4 v1, 0x1
 
-    aget-object v0, v0, v1
+    if-eqz v0, :cond_1
 
-    iget-object p2, p2, Lpeg;->b:Lreg;
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {p1, p0, v1, v0, p2}, Ltx3;->i(Lkad;ILtf7;Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-virtual {p1}, Ltx3;->m()V
+    return-object p1
 
-    return-void
-.end method
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-.method public final c()[Ltf7;
-    .registers 5
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    sget-object p0, Lpeg;->c:[Ltf7;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    const/4 v0, 0x1
+    throw p0
 
-    aget-object p0, p0, v0
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    const/4 v1, 0x2
+    iget-object p1, p0, Lneg;->Y:Loeg;
 
-    new-array v1, v1, [Ltf7;
+    iget-object v0, p1, Loeg;->h:Lcl7;
 
-    sget-object v2, Lmde;->a:Lmde;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    aput-object v2, v1, v3
+    move-object v3, v0
 
-    aput-object p0, v1, v0
+    check-cast v3, Lldg;
 
-    return-object v1
-.end method
+    iget-wide v5, p1, Loeg;->a:J
 
-.method public final d()Lkad;
-    .registers 1
+    iget-wide v7, p1, Loeg;->b:J
 
-    sget-object p0, Lneg;->descriptor:Lkad;
+    iput v1, p0, Lneg;->X:I
 
+    iget-object p1, v3, Lldg;->a:Lexc;
+
+    new-instance v2, Lz39;
+
+    iget-object v4, p0, Lneg;->Z:Ljava/lang/String;
+
+    invoke-direct/range {v2 .. v8}, Lz39;-><init>(Lldg;Ljava/lang/String;JJ)V
+
+    invoke-static {p1, v2, p0}, Lmu0;->i(Lexc;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
     return-object p0
 .end method

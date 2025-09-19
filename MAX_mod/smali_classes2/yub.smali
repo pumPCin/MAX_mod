@@ -1,8 +1,3 @@
-.class public abstract Lyub;
+.class public interface abstract Lyub;
 .super Ljava/lang/Object;
-
-
-# static fields
-.field public static fullscreen_to_pip:I = 0x7f010020
-
-.field public static pip_to_fullscreen:I = 0x7f010032
+.source "SourceFile"

@@ -1,183 +1,178 @@
 .class public final Lurb;
-.super Ljava/lang/Object;
+.super Lmsb;
 .source "SourceFile"
-
-# interfaces
-.implements Lpbd;
 
 
 # instance fields
-.field public final a:Lxh7;
+.field public final a:Ljava/util/List;
 
-.field public final b:Lxh7;
+.field public final b:Ljava/util/List;
+
+.field public final c:Z
+
+.field public final o:I
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;)V
-    .registers 3
+.method public constructor <init>(Ljava/util/List;Ljava/util/List;Z)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lurb;->a:Lxh7;
+    iput-object p1, p0, Lurb;->a:Ljava/util/List;
 
-    iput-object p2, p0, Lurb;->b:Lxh7;
+    iput-object p2, p0, Lurb;->b:Ljava/util/List;
+
+    iput-boolean p3, p0, Lurb;->c:Z
+
+    const/4 p1, 0x1
+
+    iput p1, p0, Lurb;->o:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 5
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 v0, 0x1
 
-    const-string v1, "onProxyEnableChange: oldValue="
+    if-ne p0, p1, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, ", newValue="
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "urb"
-
-    invoke-static {v0, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p1, p0, Lurb;->a:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lhoe;
-
-    invoke-virtual {p1, p2}, Lhoe;->f(Ljava/lang/String;)V
-
-    if-eqz p2, :cond_1
-
-    invoke-virtual {p2}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    iget-object p0, p0, Lurb;->b:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ls14;
-
-    const-string p1, "proxy"
-
-    invoke-virtual {p0, p1, p2}, Ls14;->b(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_1
-    :goto_0
-    return-void
-.end method
-
-.method public final b(Ljava/util/List;Ljava/util/List;)V
-    .registers 9
-
-    const-string v0, "urb"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "onProxyDomainsChanged: oldValue="
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p1, ", newValue="
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {v0, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p1, p0, Lurb;->a:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lhoe;
-
-    monitor-enter p1
-
-    :try_start_0
-    iput-object p2, p1, Lhoe;->g:Ljava/util/List;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p1
-
-    invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    iget-object p0, p0, Lurb;->b:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ls14;
-
-    const-string p1, "proxyDomains"
-
-    const/4 v4, 0x0
-
-    const/16 v5, 0x3f
-
-    const/4 v1, 0x0
+    instance-of v1, p1, Lurb;
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    if-nez v1, :cond_1
 
-    move-object v0, p2
+    return v2
 
-    invoke-static/range {v0 .. v5}, Lj73;->r0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lj96;I)Ljava/lang/String;
+    :cond_1
+    check-cast p1, Lurb;
 
-    move-result-object p2
+    iget-object v1, p0, Lurb;->a:Ljava/util/List;
 
-    invoke-virtual {p0, p1, p2}, Ls14;->b(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v3, p1, Lurb;->a:Ljava/util/List;
 
-    :cond_0
-    return-void
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    :catchall_0
-    move-exception v0
+    move-result v1
 
-    move-object p0, v0
+    if-nez v1, :cond_2
 
-    :try_start_1
-    monitor-exit p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    return v2
 
-    throw p0
+    :cond_2
+    iget-object v1, p0, Lurb;->b:Ljava/util/List;
+
+    iget-object v3, p1, Lurb;->b:Ljava/util/List;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-boolean p0, p0, Lurb;->c:Z
+
+    iget-boolean p1, p1, Lurb;->c:Z
+
+    if-eq p0, p1, :cond_4
+
+    return v2
+
+    :cond_4
+    return v0
+.end method
+
+.method public final getItemId()J
+    .registers 3
+
+    const/4 p0, 0x1
+
+    int-to-long v0, p0
+
+    return-wide v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget-object v0, p0, Lurb;->a:Ljava/util/List;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lurb;->b:Ljava/util/List;
+
+    invoke-static {v2, v0, v1}, Lz7e;->n(Ljava/util/List;II)I
+
+    move-result v0
+
+    iget-boolean p0, p0, Lurb;->c:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final m()I
+    .registers 1
+
+    iget p0, p0, Lurb;->o:I
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ButtonsStack(buttons="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lurb;->a:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", contextMenuButtons="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lurb;->b:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isMoreButtonEnabled="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Lurb;->c:Z
+
+    invoke-static {v0, p0, v1}, Lmw1;->k(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

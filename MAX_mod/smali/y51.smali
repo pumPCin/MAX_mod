@@ -1,9 +1,9 @@
 .class public final Ly51;
-.super Lq0g;
+.super Lrag;
 .source "SourceFile"
 
 # interfaces
-.implements Lz51;
+.implements La61;
 
 
 # static fields
@@ -16,11 +16,11 @@
 
     new-instance v0, Ly51;
 
-    sget v1, Lk3c;->call_screen_connection_restoring:I
+    sget v1, Lmac;->call_main_speaker_phone_disabled:I
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Lq0g;-><init>(ILjava/lang/Long;)V
+    invoke-direct {v0, v1, v2}, Lrag;-><init>(ILjava/lang/Long;)V
 
     sput-object v0, Ly51;->c:Ly51;
 
@@ -54,7 +54,7 @@
 .method public final hashCode()I
     .registers 1
 
-    const p0, 0x9c8d45e
+    const p0, 0x6535960a
 
     return p0
 .end method
@@ -62,7 +62,7 @@
 .method public final toString()Ljava/lang/String;
     .registers 1
 
-    const-string p0, "Restoring"
+    const-string p0, "Muted"
 
     return-object p0
 .end method

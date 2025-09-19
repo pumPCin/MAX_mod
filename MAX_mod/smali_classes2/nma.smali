@@ -1,58 +1,37 @@
-.class public final Lnma;
+.class public abstract Lnma;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Laue;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final a:Landroid/content/Context;
+.field public static final b:I
 
-.field public final b:Lw9b;
+.field public static final c:I
 
-.field public final c:Ljava/lang/String;
-
-.field public final d:Lxh7;
-
-.field public final e:Lxh7;
-
-.field public final f:Ldle;
+.field public static final d:I
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Landroid/content/Context;Lw9b;Lxh7;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lx6c;->oneme_bottom_sheet_popup:I
 
-    iput-object p2, p0, Lnma;->a:Landroid/content/Context;
+    sput v0, Lnma;->a:I
 
-    iput-object p3, p0, Lnma;->b:Lw9b;
+    sget v0, Lx6c;->oneme_bottom_sheet_popup_card:I
 
-    const-class p2, Lnma;
+    sput v0, Lnma;->b:I
 
-    invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    sget v0, Lx6c;->oneme_bottom_sheet_toolbar:I
 
-    move-result-object p2
+    sput v0, Lnma;->c:I
 
-    iput-object p2, p0, Lnma;->c:Ljava/lang/String;
+    sget v0, Lx6c;->oneme_too_many_requests_bottomsheet_positive_button:I
 
-    iput-object p4, p0, Lnma;->d:Lxh7;
-
-    iput-object p1, p0, Lnma;->e:Lxh7;
-
-    new-instance p1, Lh6a;
-
-    const/16 p2, 0x1c
-
-    invoke-direct {p1, p2}, Lh6a;-><init>(I)V
-
-    new-instance p2, Ldle;
-
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
-
-    iput-object p2, p0, Lnma;->f:Ldle;
+    sput v0, Lnma;->d:I
 
     return-void
 .end method

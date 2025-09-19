@@ -1,85 +1,48 @@
-.class public final enum Ll18;
-.super Ljava/lang/Enum;
-.source "SourceFile"
+.class public final Ll18;
+.super Ljx3;
 
 
-# static fields
-.field public static final enum a:Ll18;
+# instance fields
+.field public X:I
 
-.field public static final enum b:Ll18;
+.field public final synthetic Y:Lyf7;
 
-.field public static final enum c:Ll18;
-
-.field public static final synthetic o:[Ll18;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public constructor <init>(Lyf7;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    new-instance v0, Ll18;
+    iput-object p1, p0, Ll18;->Y:Lyf7;
 
-    const-string v1, "LOCAL"
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ll18;->a:Ll18;
-
-    new-instance v1, Ll18;
-
-    const-string v2, "GLOBAL"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ll18;->b:Ll18;
-
-    new-instance v2, Ll18;
-
-    const-string v3, "MESSAGES"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Ll18;->c:Ll18;
-
-    filled-new-array {v0, v1, v2}, [Ll18;
-
-    move-result-object v0
-
-    sput-object v0, Ll18;->o:[Ll18;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ll18;
-    .registers 2
 
-    const-class v0, Ll18;
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iput-object p1, p0, Ll18;->o:Ljava/lang/Object;
+
+    iget p1, p0, Ll18;->X:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Ll18;->X:I
+
+    iget-object p1, p0, Ll18;->Y:Lyf7;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lyf7;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Ll18;
-
     return-object p0
-.end method
-
-.method public static values()[Ll18;
-    .registers 1
-
-    sget-object v0, Ll18;->o:[Ll18;
-
-    invoke-virtual {v0}, [Ll18;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ll18;
-
-    return-object v0
 .end method

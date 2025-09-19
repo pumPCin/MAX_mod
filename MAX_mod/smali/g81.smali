@@ -2,81 +2,96 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Li81;
+
 
 # instance fields
-.field public final a:Lxh7;
-
-.field public final b:Lxh7;
+.field public final a:Ll41;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;)V
-    .registers 3
+.method public constructor <init>(Ll41;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lg81;->a:Lxh7;
-
-    iput-object p2, p0, Lg81;->b:Lxh7;
+    iput-object p1, p0, Lg81;->a:Ll41;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    const-string v0, "HandleSilenceMode"
+    const/4 v0, 0x1
 
-    const-string v1, "try mute ringtones"
+    if-ne p0, p1, :cond_0
 
-    invoke-static {v0, v1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p0, p0, Lg81;->b:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lync;
-
-    invoke-virtual {p0}, Lync;->a()Lui1;
-
-    move-result-object p0
-
-    iget-object v0, p0, Lui1;->g:Landroid/media/MediaPlayer;
-
-    const-string v1, "RingtoneManagerTag"
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lui1;->e:Ldle;
-
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/os/Vibrator;
-
-    if-eqz v0, :cond_0
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    const-string p0, " mute already set"
+    instance-of v1, p1, Lg81;
 
-    invoke-static {v1, p0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v2, 0x0
 
-    return-void
+    if-nez v1, :cond_1
+
+    return v2
 
     :cond_1
-    :goto_0
-    const-string v0, " set mute"
+    check-cast p1, Lg81;
 
-    invoke-static {v1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object p0, p0, Lg81;->a:Ll41;
 
-    invoke-virtual {p0}, Lui1;->c()V
+    iget-object p1, p1, Lg81;->a:Ll41;
 
-    return-void
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lg81;->a:Ll41;
+
+    invoke-virtual {p0}, Ll41;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "CreateJoinLinkEvent(event="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lg81;->a:Ll41;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

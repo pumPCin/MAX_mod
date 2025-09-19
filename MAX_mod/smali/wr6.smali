@@ -1,179 +1,188 @@
 .class public final Lwr6;
-.super Lvg;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lzr6;
+
+
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:J
+
+.field public final c:Ljava/lang/CharSequence;
+
+.field public final d:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public constructor <init>(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)V
+    .registers 6
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, v0}, Lvg;-><init>(I)V
+    iput-object p1, p0, Lwr6;->a:Ljava/lang/String;
 
-    return-void
-.end method
+    iput-wide p2, p0, Lwr6;->b:J
 
-.method public constructor <init>(I)V
-    .registers 4
+    iput-object p4, p0, Lwr6;->c:Ljava/lang/CharSequence;
 
-    const-wide/16 v0, 0xc8
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, v0, v1, p1}, Lvg;-><init>(JI)V
+    iput-object p5, p0, Lwr6;->d:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lvx3;
-    .registers 4
-
-    new-instance v0, Lwr6;
-
-    iget-wide v1, p0, Lvg;->o:J
-
-    iget-boolean p0, p0, Lvg;->p0:Z
-
-    invoke-direct {v0, v1, v2, p0}, Lvg;-><init>(JZ)V
-
-    return-object v0
-.end method
-
-.method public final l(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/View;ZZ)Landroid/animation/AnimatorSet;
-    .registers 10
-
-    new-instance p0, Landroid/animation/AnimatorSet;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorSet;-><init>()V
-
-    const/4 p1, 0x2
-
-    const/4 p5, 0x0
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 9
 
     const/4 v0, 0x1
 
-    const/4 v1, 0x0
+    if-ne p0, p1, :cond_0
 
-    if-eqz p4, :cond_1
-
-    if-eqz p2, :cond_0
-
-    sget-object p4, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
-
-    invoke-virtual {p2}, Landroid/view/View;->getWidth()I
-
-    move-result v2
-
-    int-to-float v2, v2
-
-    neg-float v2, v2
-
-    new-array v3, v0, [F
-
-    aput v2, v3, p5
-
-    invoke-static {p2, p4, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p2}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    return v0
 
     :cond_0
-    if-eqz p3, :cond_4
+    instance-of v1, p1, Lwr6;
 
-    sget-object p2, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
+    const/4 v2, 0x0
 
-    invoke-virtual {p3}, Landroid/view/View;->getWidth()I
+    if-nez v1, :cond_1
 
-    move-result p4
-
-    int-to-float p4, p4
-
-    new-array p1, p1, [F
-
-    aput p4, p1, p5
-
-    aput v1, p1, v0
-
-    invoke-static {p3, p2, p1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
-
-    return-object p0
+    return v2
 
     :cond_1
-    if-eqz p2, :cond_2
+    check-cast p1, Lwr6;
 
-    sget-object p4, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
+    iget-object v1, p0, Lwr6;->a:Ljava/lang/String;
 
-    invoke-virtual {p2}, Landroid/view/View;->getWidth()I
+    iget-object v3, p1, Lwr6;->a:Ljava/lang/String;
 
-    move-result v2
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    int-to-float v2, v2
+    move-result v1
 
-    new-array v3, v0, [F
+    if-nez v1, :cond_2
 
-    aput v2, v3, p5
-
-    invoke-static {p2, p4, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object p4
-
-    invoke-virtual {p0, p4}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    return v2
 
     :cond_2
-    if-eqz p3, :cond_4
+    iget-wide v3, p0, Lwr6;->b:J
 
-    if-eqz p2, :cond_3
+    iget-wide v5, p1, Lwr6;->b:J
 
-    invoke-virtual {p2}, Landroid/view/View;->getTranslationX()F
+    cmp-long v1, v3, v5
 
-    move-result p2
+    if-eqz v1, :cond_3
 
-    goto :goto_0
+    return v2
 
     :cond_3
-    move p2, v1
+    iget-object v1, p0, Lwr6;->c:Ljava/lang/CharSequence;
 
-    :goto_0
-    sget-object p4, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
+    iget-object v3, p1, Lwr6;->c:Ljava/lang/CharSequence;
 
-    invoke-virtual {p3}, Landroid/view/View;->getWidth()I
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    int-to-float v2, v2
+    if-nez v1, :cond_4
 
-    sub-float/2addr p2, v2
-
-    new-array p1, p1, [F
-
-    aput p2, p1, p5
-
-    aput v1, p1, v0
-
-    invoke-static {p3, p4, p1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Landroid/animation/AnimatorSet;->play(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;
+    return v2
 
     :cond_4
-    return-object p0
+    iget-object p0, p0, Lwr6;->d:Ljava/lang/String;
+
+    iget-object p1, p1, Lwr6;->d:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_5
+
+    return v2
+
+    :cond_5
+    return v0
 .end method
 
-.method public final n(Landroid/view/View;)V
-    .registers 2
+.method public final hashCode()I
+    .registers 5
 
-    const/4 p0, 0x0
+    iget-object v0, p0, Lwr6;->a:Ljava/lang/String;
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->setTranslationX(F)V
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    return-void
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-wide v2, p0, Lwr6;->b:J
+
+    invoke-static {v0, v1, v2, v3}, Lwsf;->d(IIJ)I
+
+    move-result v0
+
+    iget-object v2, p0, Lwr6;->c:Ljava/lang/CharSequence;
+
+    invoke-static {v2, v0, v1}, Lee5;->e(Ljava/lang/CharSequence;II)I
+
+    move-result v0
+
+    iget-object p0, p0, Lwr6;->d:Ljava/lang/String;
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    const-string v0, "Link(link="
+
+    const-string v1, ", chatId="
+
+    iget-wide v2, p0, Lwr6;->b:J
+
+    iget-object v4, p0, Lwr6;->a:Ljava/lang/String;
+
+    invoke-static {v0, v2, v3, v4, v1}, Lz7e;->t(Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", chatName="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lwr6;->c:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", conversationId="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lwr6;->d:Ljava/lang/String;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

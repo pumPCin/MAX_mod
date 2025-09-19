@@ -1,15 +1,49 @@
-.class public abstract Lxn;
+.class public final Lxn;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/widget/PopupWindow$OnDismissListener;
+
+
+# instance fields
+.field public final synthetic a:Lsn;
+
+.field public final synthetic b:Lyn;
+
 
 # direct methods
-.method public static a(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+.method public constructor <init>(Lyn;Lsn;)V
     .registers 3
 
-    invoke-static {p0, p1, p2}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-result-object p0
+    iput-object p1, p0, Lxn;->b:Lyn;
 
-    return-object p0
+    iput-object p2, p0, Lxn;->a:Lsn;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onDismiss()V
+    .registers 2
+
+    iget-object v0, p0, Lxn;->b:Lyn;
+
+    iget-object v0, v0, Lyn;->O0:Lbo;
+
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object p0, p0, Lxn;->a:Lsn;
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    :cond_0
+    return-void
 .end method

@@ -1,265 +1,238 @@
 .class public final Ltt5;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lvud;
-.implements Ld4a;
+.implements Lis5;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic a:Lis5;
 
-.field public final b:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public final synthetic b:Lure;
 
 
 # direct methods
-.method public constructor <init>(Li2a;)V
+.method public constructor <init>(Lis5;Lrc6;)V
     .registers 3
 
-    const/4 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput v0, p0, Ltt5;->a:I
+    iput-object p1, p0, Ltt5;->a:Lis5;
 
-    iput-object p1, p0, Ltt5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+    check-cast p2, Lure;
 
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicInteger;I)V
-    .registers 3
-
-    iput p2, p0, Ltt5;->a:I
-
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    iput-object p1, p0, Ltt5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object p2, p0, Ltt5;->b:Lure;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Object;)V
-    .registers 3
+.method public final d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .registers 11
 
-    iget v0, p0, Ltt5;->a:I
+    instance-of v0, p2, Lst5;
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz v0, :cond_0
 
-    iget-object p0, p0, Ltt5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+    move-object v0, p2
 
-    check-cast p0, Lk1a;
+    check-cast v0, Lst5;
 
-    iput-object p1, p0, Lk1a;->q0:Ljava/lang/Object;
+    iget v1, v0, Lst5;->X:I
 
-    const/4 p1, 0x2
+    const/high16 v2, -0x80000000
 
-    iput p1, p0, Lk1a;->r0:I
+    and-int v3, v1, v2
 
-    invoke-virtual {p0}, Lk1a;->a()V
+    if-eqz v3, :cond_0
 
-    return-void
+    sub-int/2addr v1, v2
 
-    :pswitch_0
-    iget-object p0, p0, Ltt5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput v1, v0, Lst5;->X:I
 
-    check-cast p0, Lut5;
-
-    iput-object p1, p0, Lut5;->u0:Ljava/lang/Object;
-
-    const/4 p1, 0x2
-
-    iput p1, p0, Lut5;->v0:I
-
-    invoke-virtual {p0}, Lut5;->a()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public b()V
-    .registers 3
-
-    iget-object p0, p0, Ltt5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    check-cast p0, Li2a;
-
-    iget-object v0, p0, Li2a;->Z:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-static {v0}, Lrp4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
-
-    iget-object v0, p0, Li2a;->b:Ld4a;
-
-    iget-object v1, p0, Li2a;->X:Lpy;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    invoke-virtual {v1, v0}, Lpy;->d(Ld4a;)V
+    goto :goto_0
 
     :cond_0
-    return-void
-.end method
+    new-instance v0, Lst5;
 
-.method public final c(Lnp4;)V
-    .registers 3
+    invoke-direct {v0, p0, p2}, Lst5;-><init>(Ltt5;Lkotlin/coroutines/Continuation;)V
 
-    iget v0, p0, Ltt5;->a:I
+    :goto_0
+    iget-object p2, v0, Lst5;->o:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget v1, v0, Lst5;->X:I
 
-    invoke-static {p0, p1}, Lrp4;->e(Ljava/util/concurrent/atomic/AtomicReference;Lnp4;)Z
+    const/4 v2, 0x3
 
-    return-void
+    const/4 v3, 0x2
 
-    :pswitch_0
-    invoke-static {p0, p1}, Lrp4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lnp4;)Z
+    const/4 v4, 0x1
 
-    return-void
+    const/4 v5, 0x0
 
-    :pswitch_1
-    invoke-static {p0, p1}, Lrp4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lnp4;)Z
+    sget-object v6, Lz04;->a:Lz04;
 
-    return-void
+    if-eqz v1, :cond_4
 
-    nop
+    if-eq v1, v4, :cond_3
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
+    if-eq v1, v3, :cond_2
 
-.method public d(Ljava/lang/Object;)V
-    .registers 2
+    if-ne v1, v2, :cond_1
 
-    iget-object p0, p0, Ltt5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object p0, v0, Lst5;->Z:Ljava/lang/Object;
 
-    check-cast p0, Li2a;
+    check-cast p0, Ly1d;
 
-    invoke-virtual {p0}, Li2a;->e()V
+    :try_start_0
+    invoke-static {p2}, Lqe5;->V(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-void
-.end method
+    goto :goto_2
 
-.method public final onError(Ljava/lang/Throwable;)V
-    .registers 4
+    :catchall_0
+    move-exception p1
 
-    iget v0, p0, Ltt5;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Ltt5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    check-cast p0, Li2a;
-
-    iget-object v0, p0, Li2a;->Z:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-static {v0}, Lrp4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
-
-    iget-object v0, p0, Li2a;->b:Ld4a;
-
-    iget-object v1, p0, Li2a;->X:Lpy;
-
-    invoke-virtual {v1, p1}, Lpy;->a(Ljava/lang/Throwable;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    invoke-virtual {v1, v0}, Lpy;->d(Ld4a;)V
-
-    :cond_0
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Ltt5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    check-cast p0, Lk1a;
-
-    iget-object v0, p0, Lk1a;->a:Lpy;
-
-    invoke-virtual {v0, p1}, Lpy;->a(Ljava/lang/Throwable;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    iget p1, p0, Lk1a;->c:I
-
-    const/4 v0, 0x3
-
-    if-eq p1, v0, :cond_1
-
-    iget-object p1, p0, Lk1a;->X:Lnp4;
-
-    invoke-interface {p1}, Lnp4;->g()V
+    goto :goto_3
 
     :cond_1
-    const/4 p1, 0x0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    iput p1, p0, Lk1a;->r0:I
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    invoke-virtual {p0}, Lk1a;->a()V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 
     :cond_2
-    return-void
+    iget-object p0, v0, Lst5;->Z:Ljava/lang/Object;
 
-    :pswitch_1
-    iget-object p0, p0, Ltt5;->b:Ljava/util/concurrent/atomic/AtomicInteger;
+    check-cast p0, Ljava/lang/Throwable;
 
-    check-cast p0, Lut5;
+    invoke-static {p2}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lut5;->a:Lpy;
-
-    invoke-virtual {v0, p1}, Lpy;->a(Ljava/lang/Throwable;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_4
-
-    iget p1, p0, Lut5;->c:I
-
-    const/4 v0, 0x3
-
-    if-eq p1, v0, :cond_3
-
-    iget-object p1, p0, Lut5;->X:Lsee;
-
-    invoke-interface {p1}, Lsee;->cancel()V
+    goto :goto_6
 
     :cond_3
-    const/4 p1, 0x0
+    iget-object p1, v0, Lst5;->r0:Lks5;
 
-    iput p1, p0, Lut5;->v0:I
+    iget-object p0, v0, Lst5;->Z:Ljava/lang/Object;
 
-    invoke-virtual {p0}, Lut5;->a()V
+    check-cast p0, Ltt5;
+
+    :try_start_1
+    invoke-static {p2}, Lqe5;->V(Ljava/lang/Object;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    goto :goto_1
+
+    :catchall_1
+    move-exception p1
+
+    move-object v7, p1
+
+    move-object p1, p0
+
+    move-object p0, v7
+
+    goto :goto_4
 
     :cond_4
-    return-void
+    invoke-static {p2}, Lqe5;->V(Ljava/lang/Object;)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :try_start_2
+    iget-object p2, p0, Ltt5;->a:Lis5;
+
+    iput-object p0, v0, Lst5;->Z:Ljava/lang/Object;
+
+    iput-object p1, v0, Lst5;->r0:Lks5;
+
+    iput v4, v0, Lst5;->X:I
+
+    invoke-interface {p2, p1, v0}, Lis5;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+
+    if-ne p2, v6, :cond_5
+
+    goto :goto_5
+
+    :cond_5
+    :goto_1
+    new-instance p2, Ly1d;
+
+    iget-object v1, v0, Ljx3;->b:Lq04;
+
+    invoke-direct {p2, p1, v1}, Ly1d;-><init>(Lks5;Lq04;)V
+
+    :try_start_3
+    iget-object p0, p0, Ltt5;->b:Lure;
+
+    iput-object p2, v0, Lst5;->Z:Ljava/lang/Object;
+
+    iput-object v5, v0, Lst5;->r0:Lks5;
+
+    iput v2, v0, Lst5;->X:I
+
+    invoke-interface {p0, p2, v5, v0}, Lrc6;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
+
+    if-ne p0, v6, :cond_6
+
+    goto :goto_5
+
+    :cond_6
+    move-object p0, p2
+
+    :goto_2
+    invoke-virtual {p0}, Ljx3;->p()V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :catchall_2
+    move-exception p1
+
+    move-object p0, p2
+
+    :goto_3
+    invoke-virtual {p0}, Ljx3;->p()V
+
+    throw p1
+
+    :goto_4
+    new-instance p2, Li5f;
+
+    invoke-direct {p2, p0}, Li5f;-><init>(Ljava/lang/Throwable;)V
+
+    iget-object p1, p1, Ltt5;->b:Lure;
+
+    iput-object p0, v0, Lst5;->Z:Ljava/lang/Object;
+
+    iput-object v5, v0, Lst5;->r0:Lks5;
+
+    iput v3, v0, Lst5;->X:I
+
+    invoke-static {p2, p1, p0, v0}, Ljk7;->d(Li5f;Lrc6;Ljava/lang/Throwable;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v6, :cond_7
+
+    :goto_5
+    return-object v6
+
+    :cond_7
+    :goto_6
+    throw p0
 .end method

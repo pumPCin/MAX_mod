@@ -1,210 +1,117 @@
 .class public final Loyc;
-.super Ljava/lang/Object;
+.super Lr3;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lxh7;
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Loyc;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public final b:Ln4e;
+
+# instance fields
+.field public final X:I
+
+.field public final a:I
+
+.field public final b:Z
+
+.field public final c:Z
+
+.field public final o:I
 
 
 # direct methods
-.method public constructor <init>(Lxh7;)V
+.method static constructor <clinit>()V
     .registers 2
+
+    new-instance v0, Lp3h;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, v1}, Lp3h;-><init>(I)V
+
+    sput-object v0, Loyc;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public constructor <init>(IIIZZ)V
+    .registers 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Loyc;->a:Lxh7;
+    iput p1, p0, Loyc;->a:I
 
-    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    iput-boolean p4, p0, Loyc;->b:Z
 
-    invoke-static {p1}, Lo4e;->a(Ljava/lang/Object;)Ln4e;
+    iput-boolean p5, p0, Loyc;->c:Z
 
-    move-result-object p1
+    iput p2, p0, Loyc;->o:I
 
-    iput-object p1, p0, Loyc;->b:Ln4e;
+    iput p3, p0, Loyc;->X:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)V
+.method public final writeToParcel(Landroid/os/Parcel;I)V
     .registers 5
 
-    :cond_0
-    iget-object v0, p0, Loyc;->b:Ln4e;
+    const/16 p2, 0x4f45
 
-    invoke-virtual {v0}, Ln4e;->getValue()Ljava/lang/Object;
+    invoke-static {p1, p2}, Ljs9;->U(Landroid/os/Parcel;I)I
 
-    move-result-object v1
+    move-result p2
 
-    move-object v2, v1
+    const/4 v0, 0x1
 
-    check-cast v2, Ljava/lang/Boolean;
+    const/4 v1, 0x4
 
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p1, v0, v1}, Ljs9;->W(Landroid/os/Parcel;II)V
 
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget v0, p0, Loyc;->a:I
 
-    move-result-object v2
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-virtual {v0, v1, v2}, Ln4e;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const/4 v0, 0x2
 
-    move-result v0
+    invoke-static {p1, v0, v1}, Ljs9;->W(Landroid/os/Parcel;II)V
 
-    if-eqz v0, :cond_0
+    iget-boolean v0, p0, Loyc;->b:Z
 
-    iget-object p0, p0, Loyc;->a:Lxh7;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    const/4 v0, 0x3
 
-    move-result-object p0
+    invoke-static {p1, v0, v1}, Ljs9;->W(Landroid/os/Parcel;II)V
 
-    check-cast p0, Lbz3;
+    iget-boolean v0, p0, Loyc;->c:Z
 
-    invoke-virtual {p0}, Lbz3;->a()Lru/ok/android/externcalls/sdk/Conversation;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    move-result-object p0
+    invoke-static {p1, v1, v1}, Ljs9;->W(Landroid/os/Parcel;II)V
 
-    if-eqz p0, :cond_1
+    iget v0, p0, Loyc;->o:I
 
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/Conversation;->getScreenCaptureManager()Lru/ok/android/externcalls/sdk/video/ScreenCaptureManager;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    move-result-object p0
+    const/4 v0, 0x5
 
-    goto :goto_0
+    invoke-static {p1, v0, v1}, Ljs9;->W(Landroid/os/Parcel;II)V
 
-    :cond_1
-    const/4 p0, 0x0
+    iget p0, p0, Loyc;->X:I
 
-    :goto_0
-    if-eqz p0, :cond_2
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-interface {p0, p1}, Lru/ok/android/externcalls/sdk/video/ScreenCaptureManager;->setAudioCaptureEnabled(Z)V
-
-    :cond_2
-    return-void
-.end method
-
-.method public final b(Z)V
-    .registers 4
-
-    iget-object v0, p0, Loyc;->a:Lxh7;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbz3;
-
-    invoke-virtual {v0}, Lbz3;->a()Lru/ok/android/externcalls/sdk/Conversation;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0}, Lru/ok/android/externcalls/sdk/Conversation;->getScreenCaptureManager()Lru/ok/android/externcalls/sdk/video/ScreenCaptureManager;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0, p1, v1}, Lru/ok/android/externcalls/sdk/video/ScreenCaptureManager;->setScreenCaptureEnabled(ZZ)V
-
-    :cond_1
-    if-eqz p1, :cond_2
-
-    iget-object p1, p0, Loyc;->b:Ln4e;
-
-    invoke-virtual {p1}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Loyc;->a(Z)V
+    invoke-static {p1, p2}, Ljs9;->V(Landroid/os/Parcel;I)V
 
     return-void
-
-    :cond_2
-    invoke-virtual {p0, v1}, Loyc;->a(Z)V
-
-    return-void
-.end method
-
-.method public final c()Z
-    .registers 3
-
-    iget-object p0, p0, Loyc;->a:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbz3;
-
-    invoke-virtual {v0}, Lbz3;->a()Lru/ok/android/externcalls/sdk/Conversation;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {v0}, Lru/ok/android/externcalls/sdk/Conversation;->isPrepared()Z
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_1
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lbz3;
-
-    invoke-virtual {p0}, Lbz3;->a()Lru/ok/android/externcalls/sdk/Conversation;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_0
-
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/Conversation;->getScreenCaptureManager()Lru/ok/android/externcalls/sdk/video/ScreenCaptureManager;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    if-eqz p0, :cond_1
-
-    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/video/ScreenCaptureManager;->isScreenCaptureEnabled()Z
-
-    move-result p0
-
-    if-ne p0, v1, :cond_1
-
-    return v1
-
-    :cond_1
-    const/4 p0, 0x0
-
-    return p0
 .end method

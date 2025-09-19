@@ -1,53 +1,38 @@
 .class public final Lvqg;
-.super Lt02;
+.super Lj2e;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic c:I
-
-.field public final synthetic o:Lxua;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lxua;I)V
-    .registers 3
-
-    iput p2, p0, Lvqg;->c:I
-
-    iput-object p1, p0, Lvqg;->o:Lxua;
-
-    invoke-direct {p0, p1}, Lt02;-><init>(Lxua;)V
-
-    return-void
-.end method
+.field public E0:Lsqg;
 
 
 # virtual methods
-.method public final a(Lorg/webrtc/PeerConnection;)V
-    .registers 2
+.method public final y(Lts7;)V
+    .registers 3
 
-    iget p1, p0, Lvqg;->c:I
+    instance-of v0, p1, Lrqg;
 
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p0, p0, Lvqg;->o:Lxua;
-
-    invoke-virtual {p0}, Lxua;->E()V
+    if-nez v0, :cond_0
 
     return-void
 
-    :pswitch_0
-    iget-object p0, p0, Lvqg;->o:Lxua;
+    :cond_0
+    move-object v0, p1
 
-    invoke-virtual {p0}, Lxua;->E()V
+    check-cast v0, Lsqg;
+
+    iput-object v0, p0, Lvqg;->E0:Lsqg;
+
+    iget-object p0, p0, Lzoc;->a:Landroid/view/View;
+
+    check-cast p0, Lsrd;
+
+    check-cast p1, Lrqg;
+
+    iget-object p1, p1, Lrqg;->a:Ltrd;
+
+    invoke-virtual {p0, p1}, Lsrd;->setModelItem(Lird;)V
 
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

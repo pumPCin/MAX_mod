@@ -1,45 +1,57 @@
-.class public final Laf7;
-.super Lwe7;
+.class public abstract Laf7;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final c:Laf7;
+.field public a:Z
 
-.field public final d:Ld9d;
-
-.field public e:Laf7;
-
-.field public f:Ljava/lang/String;
-
-.field public g:Z
-
-
-# direct methods
-.method public constructor <init>(ILaf7;Ld9d;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lwe7;->a:I
-
-    iput-object p2, p0, Laf7;->c:Laf7;
-
-    iput-object p3, p0, Laf7;->d:Ld9d;
-
-    const/4 p1, -0x1
-
-    iput p1, p0, Lwe7;->b:I
-
-    return-void
-.end method
+.field public b:I
 
 
 # virtual methods
-.method public final a()Ljava/lang/String;
-    .registers 1
+.method public final a(I)V
+    .registers 5
 
-    iget-object p0, p0, Laf7;->f:Ljava/lang/String;
+    iget-boolean v0, p0, Laf7;->a:Z
 
-    return-object p0
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Laf7;->a:Z
+
+    iput p1, p0, Laf7;->b:I
+
+    return-void
+
+    :cond_0
+    iget v0, p0, Laf7;->b:I
+
+    if-ne v0, p1, :cond_1
+
+    return-void
+
+    :cond_1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Given job ID "
+
+    const-string v2, " is different than previous "
+
+    invoke-static {p1, v1, v2}, Lee5;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    iget p0, p0, Laf7;->b:I
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method

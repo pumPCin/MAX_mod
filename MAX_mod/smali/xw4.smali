@@ -1,27 +1,44 @@
-.class public final Lxw4;
+.class public interface abstract Lxw4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:Landroid/util/SparseArray;
+# static fields
+.field public static final a:Luw4;
 
 
 # direct methods
-.method public synthetic constructor <init>(IILandroid/util/SparseArray;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p1, p0, Lxw4;->a:I
+    new-instance v0, Luw4;
 
-    iput p2, p0, Lxw4;->b:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lxw4;->c:Landroid/util/SparseArray;
+    sput-object v0, Lxw4;->a:Luw4;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract a(Lz96;Lv46;)Lsk6;
+.end method
+
+.method public abstract b(Lv46;)I
+.end method
+
+.method public abstract c(Landroid/os/Looper;Lmdb;)V
+.end method
+
+.method public prepare()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public release()V
+    .registers 1
 
     return-void
 .end method

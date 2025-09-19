@@ -1,140 +1,169 @@
-.class public final synthetic Lqc8;
-.super Ljava/lang/Object;
+.class public final Lqc8;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lzc8;
-.implements Llq7;
-.implements Lnq7;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lbd8;
+.field public final synthetic Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lbd8;I)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
     .registers 3
 
-    iput p2, p0, Lqc8;->a:I
+    iput-object p2, p0, Lqc8;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    iput-object p1, p0, Lqc8;->b:Lbd8;
+    const/4 p2, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public c(Ljava/lang/Object;Llp5;)V
-    .registers 4
-
-    check-cast p1, Lu5b;
-
-    iget-object p0, p0, Lqc8;->b:Lbd8;
-
-    iget-object p0, p0, Lbd8;->a:Lhc8;
-
-    new-instance v0, Ls5b;
-
-    invoke-direct {v0, p2}, Ls5b;-><init>(Llp5;)V
-
-    invoke-interface {p1, p0, v0}, Lu5b;->X(Lx5b;Ls5b;)V
-
-    return-void
-.end method
-
-.method public d(Lfv6;I)V
-    .registers 4
-
-    iget v0, p0, Lqc8;->a:I
-
-    iget-object p0, p0, Lqc8;->b:Lbd8;
-
-    packed-switch v0, :pswitch_data_0
-
-    :pswitch_0
-    iget-object p0, p0, Lbd8;->c:Lkd8;
-
-    invoke-interface {p1, p0, p2}, Lfv6;->S(Lzu6;I)V
-
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Lbd8;->c:Lkd8;
-
-    invoke-interface {p1, p0, p2}, Lfv6;->o(Lzu6;I)V
-
-    return-void
-
-    :pswitch_2
-    iget-object p0, p0, Lbd8;->c:Lkd8;
-
-    invoke-interface {p1, p0, p2}, Lfv6;->d(Lzu6;I)V
-
-    return-void
-
-    :pswitch_3
-    iget-object p0, p0, Lbd8;->c:Lkd8;
-
-    invoke-interface {p1, p0, p2}, Lfv6;->A(Lzu6;I)V
-
-    return-void
-
-    :pswitch_4
-    iget-object p0, p0, Lbd8;->c:Lkd8;
-
-    invoke-interface {p1, p0, p2}, Lfv6;->E(Lzu6;I)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
-.end method
-
-.method public invoke(Ljava/lang/Object;)V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Lqc8;->a:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    check-cast p1, Lu5b;
+    invoke-virtual {p0, p1, p2}, Lqc8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    packed-switch v0, :pswitch_data_0
+    move-result-object p0
 
-    iget-object p0, p0, Lqc8;->b:Lbd8;
+    check-cast p0, Lqc8;
 
-    iget-object p0, p0, Lbd8;->t:Lr5b;
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-interface {p1, p0}, Lu5b;->o0(Lr5b;)V
+    invoke-virtual {p0, p1}, Lqc8;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-void
+    return-object p1
+.end method
 
-    :pswitch_0
-    iget-object p0, p0, Lqc8;->b:Lbd8;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    iget-object p0, p0, Lbd8;->t:Lr5b;
+    new-instance v0, Lqc8;
 
-    invoke-interface {p1, p0}, Lu5b;->o0(Lr5b;)V
+    iget-object p0, p0, Lqc8;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    return-void
+    invoke-direct {v0, p2, p0}, Lqc8;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/mediabar/MediaBarWidget;)V
 
-    nop
+    iput-object p1, v0, Lqc8;->X:Ljava/lang/Object;
 
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 11
+
+    iget-object v0, p0, Lqc8;->Y:Lone/me/chatscreen/mediabar/MediaBarWidget;
+
+    iget-object v1, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->c:Lcl7;
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lqc8;->X:Ljava/lang/Object;
+
+    check-cast p0, Lj1c;
+
+    instance-of p1, p0, Lg1c;
+
+    if-eqz p1, :cond_0
+
+    check-cast p0, Lg1c;
+
+    iget-object p1, p0, Lg1c;->a:Lzw7;
+
+    iget p0, p0, Lg1c;->b:I
+
+    sget-object v1, Lone/me/chatscreen/mediabar/MediaBarWidget;->c1:[Lxi7;
+
+    const-string v1, "SELECTED_MEDIA_ALBUM"
+
+    invoke-virtual {v0, p1, p0, v1}, Lone/me/chatscreen/mediabar/MediaBarWidget;->O0(Lzw7;ILjava/lang/String;)V
+
+    goto :goto_0
+
+    :cond_0
+    instance-of p1, p0, Li1c;
+
+    const/4 v2, 0x1
+
+    if-eqz p1, :cond_1
+
+    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->c1:[Lxi7;
+
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lp2b;
+
+    new-instance p1, Litg;
+
+    invoke-direct {p1, v0, v2}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
+
+    invoke-virtual {p0, p1}, Lp2b;->h(Litg;)V
+
+    goto :goto_0
+
+    :cond_1
+    instance-of p0, p0, Lh1c;
+
+    if-eqz p0, :cond_3
+
+    sget-object p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->c1:[Lxi7;
+
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lp2b;
+
+    new-instance v3, Litg;
+
+    invoke-direct {v3, v0, v2}, Litg;-><init>(Lone/me/sdk/arch/Widget;I)V
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v4, Lp2b;->h:[Ljava/lang/String;
+
+    sget v7, Lpbc;->permissions_audio_for_video_request:I
+
+    sget v6, Lhna;->a:I
+
+    sget v8, Lhna;->g:I
+
+    invoke-static {v3, v4}, Lp2b;->i(Litg;[Ljava/lang/String;)Z
+
+    move-result p1
+
+    const/16 v5, 0xab
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual/range {v3 .. v8}, Litg;->c([Ljava/lang/String;IIII)V
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p0, v3, v4, v5}, Lp2b;->f(Litg;[Ljava/lang/String;I)V
+
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
+
+    :cond_3
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
 .end method

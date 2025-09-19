@@ -1,25 +1,3 @@
-.class public abstract Lffd;
+.class public interface abstract Lffd;
 .super Ljava/lang/Object;
 .source "SourceFile"
-
-
-# static fields
-.field public static final a:Ljava/lang/String;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/util/UUID;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lffd;->a:Ljava/lang/String;
-
-    return-void
-.end method

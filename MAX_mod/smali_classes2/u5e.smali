@@ -1,70 +1,97 @@
-.class public abstract Lu5e;
+.class public final Lu5e;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lw5e;
+
+
+# instance fields
+.field public final a:Lp08;
+
 
 # direct methods
-.method public static a([B)Lgw7;
-    .registers 11
+.method public constructor <init>(Lp08;)V
+    .registers 2
 
-    :try_start_0
-    new-instance v0, Lru/ok/tamtam/nano/Protos$LogEvent;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Lru/ok/tamtam/nano/Protos$LogEvent;-><init>()V
+    iput-object p1, p0, Lu5e;->a:Lp08;
 
-    invoke-static {v0, p0}, Lkz8;->mergeFrom(Lkz8;[B)Lkz8;
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lu5e;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lu5e;
+
+    iget-object p0, p0, Lu5e;->a:Lp08;
+
+    iget-object p1, p1, Lu5e;->a:Lp08;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-object p0, p0, Lu5e;->a:Lp08;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Error(error="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lu5e;->a:Lp08;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    check-cast p0, Lru/ok/tamtam/nano/Protos$LogEvent;
-
-    iget-wide v1, p0, Lru/ok/tamtam/nano/Protos$LogEvent;->time:J
-
-    iget-object v7, p0, Lru/ok/tamtam/nano/Protos$LogEvent;->type:Ljava/lang/String;
-
-    iget-object v8, p0, Lru/ok/tamtam/nano/Protos$LogEvent;->event:Ljava/lang/String;
-
-    iget-object v0, p0, Lru/ok/tamtam/nano/Protos$LogEvent;->params:[B
-
-    if-eqz v0, :cond_0
-
-    invoke-static {v0}, Lbv7;->m([B)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map;
-
-    :goto_0
-    move-object v9, v0
-
-    goto :goto_1
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :goto_1
-    iget-wide v3, p0, Lru/ok/tamtam/nano/Protos$LogEvent;->userId:J
-
-    iget-wide v5, p0, Lru/ok/tamtam/nano/Protos$LogEvent;->sessionId:J
-
-    new-instance v0, Lgw7;
-
-    invoke-direct/range {v0 .. v9}, Lgw7;-><init>(JJJLjava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
-    :try_end_0
-    .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-object v0
-
-    :catch_0
-    move-exception v0
-
-    move-object p0, v0
-
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v0
+    return-object p0
 .end method

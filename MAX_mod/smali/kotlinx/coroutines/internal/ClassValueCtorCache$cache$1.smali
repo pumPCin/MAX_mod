@@ -16,7 +16,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/ClassValue<",
-        "Lj96;",
+        "Lbc6;",
         ">;"
     }
 .end annotation
@@ -34,7 +34,7 @@
         "Ljava/lang/Class;",
         "type",
         "computeValue",
-        "(Ljava/lang/Class;)Lj96;",
+        "(Ljava/lang/Class;)Lbc6;",
         "kotlinx-coroutines-core"
     }
     k = 0x1
@@ -58,18 +58,18 @@
 
 
 # virtual methods
-.method public computeValue(Ljava/lang/Class;)Lj96;
+.method public computeValue(Ljava/lang/Class;)Lbc6;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Class<",
             "*>;)",
-            "Lj96;"
+            "Lbc6;"
         }
     .end annotation
 
-    invoke-static {p1}, Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->access$createConstructor(Ljava/lang/Class;)Lj96;
+    invoke-static {p1}, Lkotlinx/coroutines/internal/ExceptionsConstructorKt;->access$createConstructor(Ljava/lang/Class;)Lbc6;
 
     move-result-object p0
 
@@ -79,7 +79,7 @@
 .method public bridge synthetic computeValue(Ljava/lang/Class;)Ljava/lang/Object;
     .registers 2
 
-    invoke-virtual {p0, p1}, Lkotlinx/coroutines/internal/ClassValueCtorCache$cache$1;->computeValue(Ljava/lang/Class;)Lj96;
+    invoke-virtual {p0, p1}, Lkotlinx/coroutines/internal/ClassValueCtorCache$cache$1;->computeValue(Ljava/lang/Class;)Lbc6;
 
     move-result-object p0
 

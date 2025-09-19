@@ -1,89 +1,67 @@
-.class public interface abstract Lez1;
+.class public final synthetic Lez1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/concurrent/RejectedExecutionHandler;
+
+
+# instance fields
+.field public final synthetic a:I
+
+
+# direct methods
+.method public synthetic constructor <init>(I)V
+    .registers 2
+
+    iput p1, p0, Lez1;->a:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a()Ljava/util/Set;
-.end method
-
-.method public abstract b()I
-.end method
-
-.method public abstract c()Z
-.end method
-
-.method public abstract d()Ljava/lang/String;
-.end method
-
-.method public abstract e()Lyq7;
-.end method
-
-.method public abstract f(Ljava/util/concurrent/Executor;Lsv1;)V
-.end method
-
-.method public g()Lez1;
-    .registers 1
-
-    return-object p0
-.end method
-
-.method public abstract h()I
-.end method
-
-.method public abstract i()Ldxe;
-.end method
-
-.method public j()Luz1;
+.method public final rejectedExecution(Ljava/lang/Runnable;Ljava/util/concurrent/ThreadPoolExecutor;)V
     .registers 3
 
-    new-instance v0, Ljava/util/LinkedHashSet;
+    iget p0, p0, Lez1;->a:I
 
-    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+    packed-switch p0, :pswitch_data_0
 
-    new-instance v1, Ldz1;
+    :try_start_0
+    invoke-virtual {p2}, Ljava/util/concurrent/ThreadPoolExecutor;->getQueue()Ljava/util/concurrent/BlockingQueue;
 
-    invoke-direct {v1, p0}, Ldz1;-><init>(Lez1;)V
+    move-result-object p0
 
-    invoke-virtual {v0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+    invoke-interface {p0, p1}, Ljava/util/concurrent/BlockingQueue;->put(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    new-instance v1, Lnj7;
+    goto :goto_0
 
-    invoke-interface {p0}, Lez1;->h()I
+    :catch_0
+    move-exception p0
 
-    move-result p0
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    invoke-direct {v1, p0}, Lnj7;-><init>(I)V
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p1}, Ljava/lang/Thread;->interrupt()V
 
-    new-instance p0, Luz1;
+    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    invoke-direct {p0, v0}, Luz1;-><init>(Ljava/util/LinkedHashSet;)V
+    :goto_0
+    return-void
 
-    return-object p0
-.end method
+    :pswitch_0
+    sget-object p0, Lfz1;->c:Lu20;
 
-.method public abstract k()Ljava/lang/String;
-.end method
+    return-void
 
-.method public abstract l(I)I
-.end method
-
-.method public abstract m()Z
-.end method
-
-.method public abstract n()Lm45;
-.end method
-
-.method public abstract o()Lxg7;
-.end method
-
-.method public abstract p(I)Ljava/util/List;
-.end method
-
-.method public abstract q()Lyq7;
-.end method
-
-.method public abstract r(Lnx1;)V
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

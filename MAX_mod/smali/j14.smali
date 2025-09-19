@@ -1,55 +1,74 @@
 .class public final Lj14;
-.super Ljava/io/FilterOutputStream;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public a:J
+.field public final synthetic X:Ljava/util/concurrent/Callable;
+
+
+# direct methods
+.method public constructor <init>(Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)V
+    .registers 3
+
+    iput-object p1, p0, Lj14;->X:Ljava/util/concurrent/Callable;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final close()V
-    .registers 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object p0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
+    check-cast p1, Ly04;
 
-    invoke-virtual {p0}, Ljava/io/OutputStream;->close()V
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return-void
+    invoke-virtual {p0, p1, p2}, Lj14;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lj14;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lj14;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final write(I)V
-    .registers 6
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
+    new-instance p1, Lj14;
 
-    invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
+    iget-object p0, p0, Lj14;->X:Ljava/util/concurrent/Callable;
 
-    iget-wide v0, p0, Lj14;->a:J
+    invoke-direct {p1, p0, p2}, Lj14;-><init>(Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)V
 
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Lj14;->a:J
-
-    return-void
+    return-object p1
 .end method
 
-.method public final write([BII)V
-    .registers 6
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    iget-object v0, p0, Ljava/io/FilterOutputStream;->out:Ljava/io/OutputStream;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
+    iget-object p0, p0, Lj14;->X:Ljava/util/concurrent/Callable;
 
-    iget-wide p1, p0, Lj14;->a:J
+    invoke-interface {p0}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
 
-    int-to-long v0, p3
+    move-result-object p0
 
-    add-long/2addr p1, v0
-
-    iput-wide p1, p0, Lj14;->a:J
-
-    return-void
+    return-object p0
 .end method

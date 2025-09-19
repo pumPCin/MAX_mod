@@ -1,83 +1,143 @@
-.class public final synthetic Luq1;
-.super Ljava/lang/Object;
+.class public final Luq1;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lzq1;
+.field public final synthetic Y:Lxq1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lzq1;I)V
+.method public constructor <init>(Lxq1;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p2, p0, Luq1;->a:I
+    iput-object p1, p0, Luq1;->Y:Lxq1;
 
-    iput-object p1, p0, Luq1;->b:Lzq1;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget p1, p0, Luq1;->a:I
+    check-cast p1, Ly04;
 
-    packed-switch p1, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object p0, p0, Luq1;->b:Lzq1;
+    invoke-virtual {p0, p1, p2}, Luq1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    iget-object p1, p0, Lzq1;->W0:Lwq1;
+    move-result-object p0
 
-    if-eqz p1, :cond_0
+    check-cast p0, Luq1;
 
-    iget-object p0, p0, Lzq1;->c1:Lbh1;
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-interface {p1, p0}, Lwq1;->D(Lbh1;)V
+    invoke-virtual {p0, p1}, Luq1;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Luq1;
+
+    iget-object p0, p0, Luq1;->Y:Lxq1;
+
+    invoke-direct {p1, p0, p2}, Luq1;-><init>(Lxq1;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 9
+
+    iget v0, p0, Luq1;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_0
 
     :cond_0
-    return-void
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    :pswitch_0
-    iget-object p0, p0, Luq1;->b:Lzq1;
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    iget-object p0, p0, Lzq1;->W0:Lwq1;
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    if-eqz p0, :cond_1
-
-    invoke-interface {p0}, Lwq1;->B()V
+    throw p0
 
     :cond_1
-    return-void
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    :pswitch_1
-    iget-object p0, p0, Luq1;->b:Lzq1;
+    iput v1, p0, Luq1;->X:I
 
-    iget-object p1, p0, Lzq1;->W0:Lwq1;
+    iget-object p1, p0, Luq1;->Y:Lxq1;
 
-    if-eqz p1, :cond_2
+    invoke-static {p1, p0}, Lxq1;->a(Lxq1;Ljx3;)Ljava/lang/Comparable;
 
-    iget-object p0, p0, Lzq1;->c1:Lbh1;
+    move-result-object p1
 
-    invoke-interface {p1, p0}, Lwq1;->u(Lbh1;)V
+    sget-object p0, Lz04;->a:Lz04;
+
+    if-ne p1, p0, :cond_2
+
+    return-object p0
 
     :cond_2
-    return-void
+    :goto_0
+    check-cast p1, Ltm3;
 
-    nop
+    invoke-virtual {p1}, Ltm3;->n()J
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    move-result-wide v1
+
+    invoke-virtual {p1}, Ltm3;->d()Ljava/lang/String;
+
+    move-result-object p0
+
+    if-nez p0, :cond_3
+
+    const-string p0, ""
+
+    :cond_3
+    move-object v3, p0
+
+    invoke-virtual {p1}, Ltm3;->m()Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    sget-object p0, Lhk0;->o:Lhk0;
+
+    invoke-virtual {p1, p0}, Ltm3;->p(Lhk0;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {p1}, Ltm3;->x()Z
+
+    move-result v5
+
+    new-instance v0, Lbrf;
+
+    invoke-direct/range {v0 .. v6}, Lbrf;-><init>(JLjava/lang/String;Ljava/lang/CharSequence;ZLjava/lang/String;)V
+
+    return-object v0
 .end method

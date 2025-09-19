@@ -1,51 +1,93 @@
 .class public final Lzae;
-.super Lcx3;
+.super Lcb4;
 .source "SourceFile"
 
 
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
+# static fields
+.field public static final b:Lzae;
 
-.field public final synthetic Y:Ldbe;
+.field public static final c:Lxa4;
 
-.field public Z:I
+.field public static final d:Lxa4;
 
-.field public o:Ldbe;
+.field public static final e:Lxa4;
+
+.field public static final f:Lxa4;
+
+.field public static final g:Lxa4;
 
 
 # direct methods
-.method public constructor <init>(Ldbe;Lcx3;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 7
 
-    iput-object p1, p0, Lzae;->Y:Ldbe;
+    new-instance v0, Lzae;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v0}, Lcb4;-><init>()V
+
+    sput-object v0, Lzae;->b:Lzae;
+
+    const/4 v6, 0x0
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const/16 v5, 0xe
+
+    const/4 v4, 0x0
+
+    const-string v1, ":start-conversation"
+
+    const/4 v3, 0x0
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lzae;->c:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v1, ":start-conversation/chat"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lzae;->d:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v1, ":start-conversation/channel"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lzae;->e:Lxa4;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v1, ":chat/add-icon"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lzae;->f:Lxa4;
+
+    const-string v1, "id"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v1, ":start-conversation/add-subscribers"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v0
+
+    sput-object v0, Lzae;->g:Lxa4;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iput-object p1, p0, Lzae;->X:Ljava/lang/Object;
-
-    iget p1, p0, Lzae;->Z:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lzae;->Z:I
-
-    iget-object p1, p0, Lzae;->Y:Ldbe;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0, v0, p0}, Ldbe;->q(Ldbe;Ljava/util/List;Ly9e;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
 .end method

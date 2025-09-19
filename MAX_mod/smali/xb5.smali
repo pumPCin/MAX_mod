@@ -1,13 +1,21 @@
 .class public final Lxb5;
-.super Ljava/io/ByteArrayOutputStream;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final m()[B
+# static fields
+.field public static final a:Lxb5;
+
+
+# direct methods
+.method static constructor <clinit>()V
     .registers 1
 
-    iget-object p0, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
+    new-instance v0, Lxb5;
 
-    return-object p0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lxb5;->a:Lxb5;
+
+    return-void
 .end method

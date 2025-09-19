@@ -1,367 +1,358 @@
-.class public final enum Lye7;
-.super Ljava/lang/Enum;
+.class public final Lye7;
+.super Landroid/app/job/JobServiceEngine;
 .source "SourceFile"
 
-
-# static fields
-.field public static final enum Z:Lye7;
-
-.field public static final enum n0:Lye7;
-
-.field public static final enum o0:Lye7;
-
-.field public static final enum p0:Lye7;
-
-.field public static final enum q0:Lye7;
-
-.field public static final enum r0:Lye7;
-
-.field public static final enum s0:Lye7;
-
-.field public static final enum t0:Lye7;
-
-.field public static final enum u0:Lye7;
-
-.field public static final enum v0:Lye7;
-
-.field public static final enum w0:Lye7;
-
-.field public static final enum x0:Lye7;
-
-.field public static final synthetic y0:[Lye7;
+# interfaces
+.implements Lue7;
 
 
 # instance fields
-.field public final X:Z
+.field public final synthetic a:I
 
-.field public final Y:Z
+.field public final b:Ljava/lang/Object;
 
-.field public final a:Ljava/lang/String;
+.field public c:Landroid/app/job/JobParameters;
 
-.field public final b:[C
-
-.field public final c:[B
-
-.field public final o:I
+.field public final d:Lbf7;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 17
+.method public constructor <init>(Lbf7;)V
+    .registers 3
 
-    new-instance v0, Lye7;
+    const/4 v0, 0x0
 
-    const/4 v1, -0x1
+    iput v0, p0, Lye7;->a:I
 
-    const-string v2, "NOT_AVAILABLE"
+    invoke-direct {p0, p1}, Landroid/app/job/JobServiceEngine;-><init>(Landroid/app/Service;)V
 
-    const/4 v3, 0x0
+    new-instance v0, Ljava/lang/Object;
 
-    const/4 v4, 0x0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v2, v3, v1, v4}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    iput-object v0, p0, Lye7;->b:Ljava/lang/Object;
 
-    sput-object v0, Lye7;->Z:Lye7;
-
-    new-instance v1, Lye7;
-
-    const/4 v2, 0x1
-
-    const-string v3, "{"
-
-    const-string v5, "START_OBJECT"
-
-    invoke-direct {v1, v5, v2, v2, v3}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v1, Lye7;->n0:Lye7;
-
-    new-instance v2, Lye7;
-
-    const/4 v3, 0x2
-
-    const-string v5, "}"
-
-    const-string v6, "END_OBJECT"
-
-    invoke-direct {v2, v6, v3, v3, v5}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v2, Lye7;->o0:Lye7;
-
-    new-instance v3, Lye7;
-
-    const/4 v5, 0x3
-
-    const-string v6, "["
-
-    const-string v7, "START_ARRAY"
-
-    invoke-direct {v3, v7, v5, v5, v6}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v3, Lye7;->p0:Lye7;
-
-    new-instance v5, Lye7;
-
-    const/4 v6, 0x4
-
-    const-string v7, "]"
-
-    const-string v8, "END_ARRAY"
-
-    invoke-direct {v5, v8, v6, v6, v7}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v5, Lye7;->q0:Lye7;
-
-    move-object v6, v5
-
-    new-instance v5, Lye7;
-
-    const-string v7, "FIELD_NAME"
-
-    const/4 v8, 0x5
-
-    invoke-direct {v5, v7, v8, v8, v4}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v5, Lye7;->r0:Lye7;
-
-    move-object v7, v6
-
-    new-instance v6, Lye7;
-
-    const-string v8, "VALUE_EMBEDDED_OBJECT"
-
-    const/4 v9, 0x6
-
-    const/16 v10, 0xc
-
-    invoke-direct {v6, v8, v9, v10, v4}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    move-object v8, v7
-
-    new-instance v7, Lye7;
-
-    const-string v11, "VALUE_STRING"
-
-    const/4 v12, 0x7
-
-    invoke-direct {v7, v11, v12, v9, v4}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v7, Lye7;->s0:Lye7;
-
-    move-object v9, v8
-
-    new-instance v8, Lye7;
-
-    const-string v11, "VALUE_NUMBER_INT"
-
-    const/16 v13, 0x8
-
-    invoke-direct {v8, v11, v13, v12, v4}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v8, Lye7;->t0:Lye7;
-
-    move-object v11, v9
-
-    new-instance v9, Lye7;
-
-    const-string v12, "VALUE_NUMBER_FLOAT"
-
-    const/16 v14, 0x9
-
-    invoke-direct {v9, v12, v14, v13, v4}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v9, Lye7;->u0:Lye7;
-
-    new-instance v4, Lye7;
-
-    const-string v12, "true"
-
-    const-string v13, "VALUE_TRUE"
-
-    const/16 v15, 0xa
-
-    invoke-direct {v4, v13, v15, v14, v12}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v4, Lye7;->v0:Lye7;
-
-    move-object v12, v4
-
-    move-object v4, v11
-
-    new-instance v11, Lye7;
-
-    const-string v13, "false"
-
-    const-string v14, "VALUE_FALSE"
-
-    const/16 v10, 0xb
-
-    invoke-direct {v11, v14, v10, v15, v13}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v11, Lye7;->w0:Lye7;
-
-    move-object v13, v12
-
-    new-instance v12, Lye7;
-
-    const-string v14, "VALUE_NULL"
-
-    const-string v15, "null"
-
-    move-object/from16 v16, v0
-
-    const/16 v0, 0xc
-
-    invoke-direct {v12, v14, v0, v10, v15}, Lye7;-><init>(Ljava/lang/String;IILjava/lang/String;)V
-
-    sput-object v12, Lye7;->x0:Lye7;
-
-    move-object v10, v13
-
-    move-object/from16 v0, v16
-
-    filled-new-array/range {v0 .. v12}, [Lye7;
-
-    move-result-object v0
-
-    sput-object v0, Lye7;->y0:[Lye7;
+    iput-object p1, p0, Lye7;->d:Lbf7;
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
-    .registers 7
+.method public constructor <init>(Li2d;)V
+    .registers 3
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/4 v0, 0x1
 
-    const/4 p1, 0x0
+    iput v0, p0, Lye7;->a:I
 
-    if-nez p4, :cond_0
+    invoke-direct {p0, p1}, Landroid/app/job/JobServiceEngine;-><init>(Landroid/app/Service;)V
 
-    const/4 p2, 0x0
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p2, p0, Lye7;->a:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lye7;->b:[C
+    iput-object v0, p0, Lye7;->b:Ljava/lang/Object;
 
-    iput-object p2, p0, Lye7;->c:[B
-
-    goto :goto_1
-
-    :cond_0
-    iput-object p4, p0, Lye7;->a:Ljava/lang/String;
-
-    invoke-virtual {p4}, Ljava/lang/String;->toCharArray()[C
-
-    move-result-object p2
-
-    iput-object p2, p0, Lye7;->b:[C
-
-    array-length p2, p2
-
-    new-array p4, p2, [B
-
-    iput-object p4, p0, Lye7;->c:[B
-
-    move p4, p1
-
-    :goto_0
-    if-ge p4, p2, :cond_1
-
-    iget-object v0, p0, Lye7;->c:[B
-
-    iget-object v1, p0, Lye7;->b:[C
-
-    aget-char v1, v1, p4
-
-    int-to-byte v1, v1
-
-    aput-byte v1, v0, p4
-
-    add-int/lit8 p4, p4, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    :goto_1
-    iput p3, p0, Lye7;->o:I
-
-    const/16 p2, 0xa
-
-    if-eq p3, p2, :cond_2
-
-    const/16 p2, 0x9
-
-    :cond_2
-    const/4 p2, 0x7
-
-    if-eq p3, p2, :cond_3
-
-    const/16 p2, 0x8
-
-    :cond_3
-    const/4 p2, 0x1
-
-    if-eq p3, p2, :cond_5
-
-    const/4 p4, 0x3
-
-    if-ne p3, p4, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    move p4, p1
-
-    goto :goto_3
-
-    :cond_5
-    :goto_2
-    move p4, p2
-
-    :goto_3
-    iput-boolean p4, p0, Lye7;->X:Z
-
-    const/4 p4, 0x2
-
-    if-eq p3, p4, :cond_6
-
-    const/4 p4, 0x4
-
-    if-ne p3, p4, :cond_7
-
-    :cond_6
-    move p1, p2
-
-    :cond_7
-    iput-boolean p1, p0, Lye7;->Y:Z
+    iput-object p1, p0, Lye7;->d:Lbf7;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lye7;
+
+# virtual methods
+.method public final a()Landroid/os/IBinder;
     .registers 2
 
-    const-class v0, Lye7;
+    iget v0, p0, Lye7;->a:I
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    packed-switch v0, :pswitch_data_0
+
+    invoke-virtual {p0}, Landroid/app/job/JobServiceEngine;->getBinder()Landroid/os/IBinder;
 
     move-result-object p0
 
-    check-cast p0, Lye7;
+    return-object p0
+
+    :pswitch_0
+    invoke-virtual {p0}, Landroid/app/job/JobServiceEngine;->getBinder()Landroid/os/IBinder;
+
+    move-result-object p0
 
     return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public static values()[Lye7;
-    .registers 1
+.method public final b()Lwe7;
+    .registers 4
 
-    sget-object v0, Lye7;->y0:[Lye7;
+    iget v0, p0, Lye7;->a:I
 
-    invoke-virtual {v0}, [Lye7;->clone()Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
+
+    iget-object v0, p0, Lye7;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lye7;->c:Landroid/app/job/JobParameters;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_0
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_2
+
+    :cond_0
+    :try_start_1
+    invoke-virtual {v1}, Landroid/app/job/JobParameters;->dequeueWork()Landroid/app/job/JobWorkItem;
+
+    move-result-object v1
+    :try_end_1
+    .catch Ljava/lang/SecurityException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    :try_start_2
+    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
+
+    move-object v1, v2
+
+    :goto_0
+    monitor-exit v0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Landroid/app/job/JobWorkItem;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    check-cast v0, [Lye7;
+    iget-object v2, p0, Lye7;->d:Lbf7;
 
-    return-object v0
+    check-cast v2, Li2d;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
+
+    new-instance v2, Lxe7;
+
+    const/4 v0, 0x1
+
+    invoke-direct {v2, p0, v1, v0}, Lxe7;-><init>(Landroid/app/job/JobServiceEngine;Landroid/app/job/JobWorkItem;I)V
+
+    :cond_1
+    :goto_1
+    return-object v2
+
+    :goto_2
+    :try_start_3
+    monitor-exit v0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    throw p0
+
+    :pswitch_0
+    iget-object v0, p0, Lye7;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_4
+    iget-object v1, p0, Lye7;->c:Landroid/app/job/JobParameters;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_2
+
+    monitor-exit v0
+
+    goto :goto_3
+
+    :catchall_1
+    move-exception p0
+
+    goto :goto_4
+
+    :cond_2
+    invoke-virtual {v1}, Landroid/app/job/JobParameters;->dequeueWork()Landroid/app/job/JobWorkItem;
+
+    move-result-object v1
+
+    monitor-exit v0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v1}, Landroid/app/job/JobWorkItem;->getIntent()Landroid/content/Intent;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lye7;->d:Lbf7;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->setExtrasClassLoader(Ljava/lang/ClassLoader;)V
+
+    new-instance v2, Lxe7;
+
+    const/4 v0, 0x0
+
+    invoke-direct {v2, p0, v1, v0}, Lxe7;-><init>(Landroid/app/job/JobServiceEngine;Landroid/app/job/JobWorkItem;I)V
+
+    :cond_3
+    :goto_3
+    return-object v2
+
+    :goto_4
+    :try_start_5
+    monitor-exit v0
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
+
+    throw p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onStartJob(Landroid/app/job/JobParameters;)Z
+    .registers 3
+
+    iget v0, p0, Lye7;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iput-object p1, p0, Lye7;->c:Landroid/app/job/JobParameters;
+
+    iget-object p0, p0, Lye7;->d:Lbf7;
+
+    check-cast p0, Li2d;
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Lbf7;->ensureProcessorRunningLocked(Z)V
+
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+
+    :pswitch_0
+    iput-object p1, p0, Lye7;->c:Landroid/app/job/JobParameters;
+
+    iget-object p0, p0, Lye7;->d:Lbf7;
+
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Lbf7;->ensureProcessorRunningLocked(Z)V
+
+    goto :goto_0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onStopJob(Landroid/app/job/JobParameters;)Z
+    .registers 4
+
+    iget p1, p0, Lye7;->a:I
+
+    packed-switch p1, :pswitch_data_0
+
+    iget-object p1, p0, Lye7;->d:Lbf7;
+
+    check-cast p1, Li2d;
+
+    invoke-virtual {p1}, Lbf7;->doStopCurrentWork()Z
+
+    move-result p1
+
+    iget-object v0, p0, Lye7;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    const/4 v1, 0x0
+
+    :try_start_0
+    iput-object v1, p0, Lye7;->c:Landroid/app/job/JobParameters;
+
+    monitor-exit v0
+
+    return p1
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+
+    :pswitch_0
+    iget-object p1, p0, Lye7;->d:Lbf7;
+
+    invoke-virtual {p1}, Lbf7;->doStopCurrentWork()Z
+
+    move-result p1
+
+    iget-object v0, p0, Lye7;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    const/4 v1, 0x0
+
+    :try_start_1
+    iput-object v1, p0, Lye7;->c:Landroid/app/job/JobParameters;
+
+    monitor-exit v0
+
+    return p1
+
+    :catchall_1
+    move-exception p0
+
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    throw p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

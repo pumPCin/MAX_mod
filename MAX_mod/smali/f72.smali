@@ -1,31 +1,39 @@
 .class public final Lf72;
-.super Ljava/lang/Object;
+.super Ld72;
 .source "SourceFile"
 
 
 # static fields
-.field public static final b:Lf72;
-
-
-# instance fields
-.field public a:[[I
+.field public static final a:Lf72;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 1
 
     new-instance v0, Lf72;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const/16 v1, 0x80
-
-    new-array v1, v1, [[I
-
-    iput-object v1, v0, Lf72;->a:[[I
-
-    sput-object v0, Lf72;->b:Lf72;
+    sput-object v0, Lf72;->a:Lf72;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final a(C)Z
+    .registers 2
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "CharMatcher.none()"
+
+    return-object p0
 .end method

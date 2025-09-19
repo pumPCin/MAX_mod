@@ -3,126 +3,120 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lfq5;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:I
 
-.field public final synthetic b:Lfq5;
-
-.field public final synthetic c:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.field public final b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldbc;Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
-    .registers 4
-
-    iput p3, p0, Li39;->a:I
-
-    iput-object p1, p0, Li39;->b:Lfq5;
-
-    iput-object p2, p0, Li39;->c:Lone/me/sdk/messagewrite/MessageWriteWidget;
+.method public constructor <init>(II)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Li39;->a:I
+
+    iput p2, p0, Li39;->b:I
 
     return-void
 .end method
 
+.method public static a(Lt39;)Li39;
+    .registers 7
 
-# virtual methods
-.method public final d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    invoke-static {p0}, Lqe5;->M(Lt39;)I
 
-    iget v0, p0, Li39;->a:I
+    move-result v0
 
-    packed-switch v0, :pswitch_data_0
+    if-nez v0, :cond_0
 
-    new-instance v0, Lh39;
+    const/4 p0, 0x0
 
-    iget-object v1, p0, Li39;->c:Lone/me/sdk/messagewrite/MessageWriteWidget;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v0, p1, v1, v2}, Lh39;-><init>(Lhq5;Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
-
-    iget-object p0, p0, Li39;->b:Lfq5;
-
-    invoke-interface {p0, v0, p2}, Lfq5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    :goto_0
     return-object p0
 
-    :pswitch_0
-    new-instance v0, Lh39;
+    :cond_0
+    const/4 v1, 0x0
 
-    iget-object v1, p0, Li39;->c:Lone/me/sdk/messagewrite/MessageWriteWidget;
+    move v2, v1
 
-    const/4 v2, 0x1
+    move v3, v2
 
-    invoke-direct {v0, p1, v1, v2}, Lh39;-><init>(Lhq5;Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
+    :goto_0
+    if-ge v1, v0, :cond_3
 
-    iget-object p0, p0, Li39;->b:Lfq5;
+    invoke-virtual {p0}, Lt39;->D0()Ljava/lang/String;
 
-    invoke-interface {p0, v0, p2}, Lfq5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-result-object v4
 
-    move-result-object p0
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    sget-object p1, Ls04;->a:Ls04;
+    const-string v5, "views"
 
-    if-ne p0, p1, :cond_1
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_2
+
+    const-string v5, "forwards"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    invoke-virtual {p0}, Lt39;->B()V
 
     goto :goto_1
 
     :cond_1
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {p0}, Lt39;->z0()I
+
+    move-result v3
+
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {p0}, Lt39;->z0()I
+
+    move-result v2
 
     :goto_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    new-instance p0, Li39;
+
+    invoke-direct {p0, v2, v3}, Li39;-><init>(II)V
+
     return-object p0
+.end method
 
-    :pswitch_1
-    new-instance v0, Lh39;
 
-    iget-object v1, p0, Li39;->c:Lone/me/sdk/messagewrite/MessageWriteWidget;
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .registers 5
 
-    const/4 v2, 0x0
+    const-string v0, ", forwards="
 
-    invoke-direct {v0, p1, v1, v2}, Lh39;-><init>(Lhq5;Lone/me/sdk/messagewrite/MessageWriteWidget;I)V
+    const-string v1, "}"
 
-    iget-object p0, p0, Li39;->b:Lfq5;
+    const-string v2, "{views="
 
-    invoke-interface {p0, v0, p2}, Lfq5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget v3, p0, Li39;->a:I
+
+    iget p0, p0, Li39;->b:I
+
+    invoke-static {v2, v3, v0, p0, v1}, Lsg0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    sget-object p0, Lncf;->a:Lncf;
-
-    :goto_2
     return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

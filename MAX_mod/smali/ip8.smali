@@ -1,64 +1,52 @@
-.class public final Lip8;
+.class public final synthetic Lip8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lkp8;
+.implements Lom3;
 
 
-# static fields
-.field public static final a:Lip8;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:I
+
+.field public final synthetic c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(III)V
+    .registers 4
 
-    new-instance v0, Lip8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lip8;->a:I
 
-    sput-object v0, Lip8;->a:Lip8;
+    iput p2, p0, Lip8;->b:I
+
+    iput p3, p0, Lip8;->c:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final accept(Ljava/lang/Object;)V
+    .registers 4
 
-    const/4 v0, 0x1
+    check-cast p1, Lbeb;
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p1}, Lbeb;->p0()V
 
-    return v0
+    iget-object p1, p1, Lbeb;->a:Ltc5;
 
-    :cond_0
-    instance-of p0, p1, Lip8;
+    iget v0, p0, Lip8;->a:I
 
-    if-nez p0, :cond_1
+    iget v1, p0, Lip8;->b:I
 
-    const/4 p0, 0x0
+    iget p0, p0, Lip8;->c:I
 
-    return p0
+    invoke-virtual {p1, v0, v1, p0}, Ltc5;->q1(III)V
 
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, -0x3b9180b8
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "Location"
-
-    return-object p0
+    return-void
 .end method

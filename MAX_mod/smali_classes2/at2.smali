@@ -1,21 +1,25 @@
 .class public final Lat2;
-.super Lqd0;
+.super Luc0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:J
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
 
     const/4 v0, 0x4
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    invoke-direct {p0, v0}, Luc0;-><init>(I)V
 
-    iput-wide p1, p0, Lat2;->b:J
+    iput-object p1, p0, Lat2;->b:Ljava/lang/String;
+
+    iput-object p2, p0, Lat2;->c:Ljava/lang/String;
 
     return-void
 .end method
@@ -23,7 +27,7 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+    .registers 6
 
     const/4 v0, 0x1
 
@@ -43,28 +47,53 @@
     :cond_1
     check-cast p1, Lat2;
 
-    iget-wide v3, p0, Lat2;->b:J
+    iget-object v1, p0, Lat2;->b:Ljava/lang/String;
 
-    iget-wide p0, p1, Lat2;->b:J
+    iget-object v3, p1, Lat2;->b:Ljava/lang/String;
 
-    cmp-long p0, v3, p0
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz p0, :cond_2
+    move-result v1
+
+    if-nez v1, :cond_2
 
     return v2
 
     :cond_2
+    iget-object p0, p0, Lat2;->c:Ljava/lang/String;
+
+    iget-object p1, p1, Lat2;->c:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
     return v0
 .end method
 
 .method public final hashCode()I
-    .registers 3
+    .registers 2
 
-    iget-wide v0, p0, Lat2;->b:J
+    iget-object v0, p0, Lat2;->b:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lat2;->c:Ljava/lang/String;
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result p0
+
+    add-int/2addr p0, v0
 
     return p0
 .end method
@@ -72,13 +101,17 @@
 .method public final toString()Ljava/lang/String;
     .registers 5
 
-    const-string v0, "OpenChangeChannelTypeAndUpdateBackstack(chatId="
+    const-string v0, ", path="
 
     const-string v1, ")"
 
-    iget-wide v2, p0, Lat2;->b:J
+    const-string v2, "CropPhoto(uriAsString="
 
-    invoke-static {v2, v3, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iget-object v3, p0, Lat2;->b:Ljava/lang/String;
+
+    iget-object p0, p0, Lat2;->c:Ljava/lang/String;
+
+    invoke-static {v2, v3, v0, p0, v1}, Lz7e;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,48 +1,68 @@
-.class public final Lyd6;
-.super Lcx3;
+.class public final synthetic Lyd6;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lky2;
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lky2;Lkotlin/coroutines/Continuation;)V
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
     .registers 3
 
-    iput-object p1, p0, Lyd6;->Y:Lky2;
+    iput p1, p0, Lyd6;->a:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lyd6;->b:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
     .registers 3
 
-    iput-object p1, p0, Lyd6;->o:Ljava/lang/Object;
+    iget v0, p0, Lyd6;->a:I
 
-    iget p1, p0, Lyd6;->X:I
+    iget-object p0, p0, Lyd6;->b:Ljava/lang/Object;
 
-    const/high16 v0, -0x80000000
+    packed-switch v0, :pswitch_data_0
 
-    or-int/2addr p1, v0
+    check-cast p0, Lorg/webrtc/SurfaceTextureHelper;
 
-    iput p1, p0, Lyd6;->X:I
+    invoke-static {p0, p1}, Lorg/webrtc/SurfaceTextureHelper;->d(Lorg/webrtc/SurfaceTextureHelper;Landroid/graphics/SurfaceTexture;)V
 
-    iget-object p1, p0, Lyd6;->Y:Lky2;
+    return-void
 
-    const/4 v0, 0x0
+    :pswitch_0
+    check-cast p0, Ls4d;
 
-    invoke-virtual {p1, v0, p0}, Lky2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object p0, p0, Ls4d;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object p0
+    const/4 p1, 0x1
 
-    return-object p0
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    return-void
+
+    :pswitch_1
+    check-cast p0, Lurc;
+
+    invoke-virtual {p0}, Lurc;->invoke()Ljava/lang/Object;
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

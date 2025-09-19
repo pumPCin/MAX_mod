@@ -1,19 +1,19 @@
 .class public final Lteg;
-.super Ljava/lang/Object;
+.super Lxeg;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final serializer()Ltf7;
-    .registers 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ltf7;"
-        }
-    .end annotation
+# instance fields
+.field public final a:Lefg;
 
-    sget-object p0, Lseg;->a:Lseg;
 
-    return-object p0
+# direct methods
+.method public constructor <init>(Lefg;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Throwable;-><init>()V
+
+    iput-object p1, p0, Lteg;->a:Lefg;
+
+    return-void
 .end method

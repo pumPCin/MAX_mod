@@ -1,163 +1,90 @@
-.class public Lb8b;
-.super Ljava/lang/Object;
+.class public final Lb8b;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements La8b;
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:[Ljava/lang/Object;
+.field public final synthetic X:Ld8b;
 
-.field public b:I
+.field public final synthetic Y:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public constructor <init>(Ld8b;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lb8b;->X:Ld8b;
 
-    const/16 v0, 0x100
+    iput-object p2, p0, Lb8b;->Y:Ljava/lang/String;
 
-    new-array v0, v0, [Ljava/lang/Object;
+    const/4 p1, 0x2
 
-    iput-object v0, p0, Lb8b;->a:[Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(I)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    if-lez p1, :cond_0
-
-    new-array p1, p1, [Ljava/lang/Object;
-
-    iput-object p1, p0, Lb8b;->a:[Ljava/lang/Object;
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "The max pool size must be > 0"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public a(Lks;)V
-    .registers 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lb8b;->b:I
+    check-cast p1, Ly04;
 
-    iget-object v1, p0, Lb8b;->a:[Ljava/lang/Object;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    array-length v2, v1
+    invoke-virtual {p0, p1, p2}, Lb8b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    if-ge v0, v2, :cond_0
+    move-result-object p0
 
-    aput-object p1, v1, v0
+    check-cast p0, Lb8b;
 
-    add-int/lit8 v0, v0, 0x1
+    sget-object p1, Lylf;->a:Lylf;
 
-    iput v0, p0, Lb8b;->b:I
+    invoke-virtual {p0, p1}, Lb8b;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
-    return-void
+    return-object p1
 .end method
 
-.method public f(Ljava/lang/Object;)Z
-    .registers 8
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    iget v0, p0, Lb8b;->b:I
+    new-instance p1, Lb8b;
 
-    const/4 v1, 0x0
+    iget-object v0, p0, Lb8b;->X:Ld8b;
 
-    move v2, v1
+    iget-object p0, p0, Lb8b;->Y:Ljava/lang/String;
 
-    :goto_0
-    iget-object v3, p0, Lb8b;->a:[Ljava/lang/Object;
+    invoke-direct {p1, v0, p0, p2}, Lb8b;-><init>(Ld8b;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
 
-    const/4 v4, 0x1
-
-    if-ge v2, v0, :cond_1
-
-    aget-object v5, v3, v2
-
-    if-ne v5, p1, :cond_0
-
-    move v0, v4
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    move v0, v1
-
-    :goto_1
-    if-nez v0, :cond_3
-
-    iget v0, p0, Lb8b;->b:I
-
-    array-length v2, v3
-
-    if-ge v0, v2, :cond_2
-
-    aput-object p1, v3, v0
-
-    add-int/2addr v0, v4
-
-    iput v0, p0, Lb8b;->b:I
-
-    return v4
-
-    :cond_2
-    return v1
-
-    :cond_3
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "Already in the pool!"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-object p1
 .end method
 
-.method public g()Ljava/lang/Object;
-    .registers 6
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    iget v0, p0, Lb8b;->b:I
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    const/4 v1, 0x0
+    iget-object p1, p0, Lb8b;->X:Ld8b;
 
-    if-lez v0, :cond_0
+    iget-object p1, p1, Ld8b;->o:Lhv3;
 
-    add-int/lit8 v2, v0, -0x1
+    iget-object p1, p1, Lhv3;->g:Lzte;
 
-    iget-object v3, p0, Lb8b;->a:[Ljava/lang/Object;
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
 
-    aget-object v4, v3, v2
+    move-result-object p1
 
-    aput-object v1, v3, v2
+    check-cast p1, Lro9;
 
-    add-int/lit8 v0, v0, -0x1
+    iget-object p0, p0, Lb8b;->Y:Ljava/lang/String;
 
-    iput v0, p0, Lb8b;->b:I
+    invoke-interface {p1, p0}, Lro9;->setValue(Ljava/lang/Object;)V
 
-    return-object v4
+    sget-object p0, Lylf;->a:Lylf;
 
-    :cond_0
-    return-object v1
+    return-object p0
 .end method

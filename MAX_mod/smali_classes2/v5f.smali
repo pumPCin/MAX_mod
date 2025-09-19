@@ -1,131 +1,83 @@
 .class public final Lv5f;
-.super Lr5f;
+.super Lls7;
 .source "SourceFile"
 
 
-# instance fields
-.field public b:Z
-
-.field public c:Ljava/util/Iterator;
-
-.field public final synthetic d:Lwl5;
-
-
 # direct methods
-.method public constructor <init>(Lwl5;Ljava/lang/Object;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, Lv5f;->d:Lwl5;
+    sget-object v0, Lm84;->l:Lm84;
 
-    invoke-direct {p0, p2}, Lw5f;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p0, v0}, Lls7;-><init>(Li4h;)V
+
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Lcoc;->A(Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .registers 6
+.method public final k(I)J
+    .registers 2
 
-    iget-object v0, p0, Lv5f;->d:Lwl5;
-
-    iget-object v0, v0, Lwl5;->X:Lv9d;
-
-    check-cast v0, Lmp5;
-
-    iget-boolean v1, p0, Lv5f;->b:Z
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    iget-object v4, p0, Lw5f;->a:Ljava/lang/Object;
-
-    if-nez v1, :cond_1
-
-    iget-object v0, v0, Lmp5;->d:Ljava/lang/Object;
-
-    check-cast v0, Lj96;
-
-    invoke-interface {v0, v4}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-object v3
-
-    :cond_0
-    iput-boolean v2, p0, Lv5f;->b:Z
-
-    return-object v4
-
-    :cond_1
-    iget-object v1, p0, Lv5f;->c:Ljava/util/Iterator;
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return-object v3
-
-    :cond_2
-    iget-object v1, p0, Lv5f;->c:Ljava/util/Iterator;
-
-    if-nez v1, :cond_5
-
-    iget-object v0, v0, Lmp5;->c:Lj96;
-
-    invoke-interface {v0, v4}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lv9d;
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v0}, Lv9d;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_3
-    move-object v0, v3
-
-    :goto_0
-    iput-object v0, p0, Lv5f;->c:Ljava/util/Iterator;
-
-    if-eqz v0, :cond_4
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-ne v0, v2, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    return-object v3
-
-    :cond_5
-    :goto_1
-    iget-object p0, p0, Lv5f;->c:Ljava/util/Iterator;
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lls7;->C(I)Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Lt5f;
+
+    iget p0, p0, Lt5f;->a:I
+
+    int-to-long p0, p0
+
+    return-wide p0
+.end method
+
+.method public final r(Lzoc;I)V
+    .registers 3
+
+    check-cast p1, Lu5f;
+
+    iget-object p1, p1, Lu5f;->E0:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p0, p2}, Lls7;->C(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lt5f;
+
+    iget-object p0, p0, Lt5f;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method public final t(Landroid/view/ViewGroup;I)Lzoc;
+    .registers 4
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p0
+
+    invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    move-result-object p0
+
+    sget p2, La9c;->number_item:I
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p2, p1, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object p0
+
+    new-instance p1, Lu5f;
+
+    invoke-direct {p1, p0}, Lu5f;-><init>(Landroid/view/View;)V
+
+    return-object p1
 .end method

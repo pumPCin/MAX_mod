@@ -1,42 +1,37 @@
-.class public abstract Lrxb;
-.super Ljava/lang/Object;
+.class public Lrxb;
+.super Lqxb;
+.source "SourceFile"
 
 
-# static fields
-.field public static ic_call_answer:I = 0x7f0804cc
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .registers 9
 
-.field public static ic_call_answer_low:I = 0x7f0804cd
+    const/4 v5, 0x1
 
-.field public static ic_call_answer_video:I = 0x7f0804ce
+    sget-object v1, Lks1;->NO_RECEIVER:Ljava/lang/Object;
 
-.field public static ic_call_answer_video_low:I = 0x7f0804cf
+    const-class v2, Lfy3;
 
-.field public static ic_call_decline:I = 0x7f0804d1
+    move-object v0, p0
 
-.field public static ic_call_decline_low:I = 0x7f0804d2
+    move-object v3, p1
 
-.field public static notification_action_background:I = 0x7f080860
+    move-object v4, p2
 
-.field public static notification_bg:I = 0x7f080861
+    invoke-direct/range {v0 .. v5}, Ltxb;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-.field public static notification_bg_low:I = 0x7f080862
+    return-void
+.end method
 
-.field public static notification_bg_low_normal:I = 0x7f080863
 
-.field public static notification_bg_low_pressed:I = 0x7f080864
+# virtual methods
+.method public get()Ljava/lang/Object;
+    .registers 1
 
-.field public static notification_bg_normal:I = 0x7f080865
+    invoke-virtual {p0}, Lqxb;->getGetter()Lui7;
 
-.field public static notification_bg_normal_pressed:I = 0x7f080866
+    const/4 p0, 0x0
 
-.field public static notification_icon_background:I = 0x7f080867
-
-.field public static notification_oversize_large_icon_bg:I = 0x7f08086a
-
-.field public static notification_template_icon_bg:I = 0x7f08086b
-
-.field public static notification_template_icon_low_bg:I = 0x7f08086c
-
-.field public static notification_tile_bg:I = 0x7f08086d
-
-.field public static notify_panel_notification_icon_bg:I = 0x7f08086e
+    throw p0
+.end method

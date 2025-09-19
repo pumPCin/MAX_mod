@@ -1,153 +1,157 @@
-.class public final Lum3;
-.super Ljava/lang/Object;
+.class public final enum Lum3;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lxh7;
+# static fields
+.field public static final enum X:Lum3;
 
-.field public final b:Lxh7;
+.field public static final enum Y:Lum3;
 
-.field public final c:Lxh7;
+.field public static final enum Z:Lum3;
 
-.field public final d:Lxh7;
+.field public static final enum a:Lum3;
 
-.field public final e:Lxh7;
+.field public static final enum b:Lum3;
+
+.field public static final enum c:Lum3;
+
+.field public static final enum o:Lum3;
+
+.field public static final enum r0:Lum3;
+
+.field public static final enum s0:Lum3;
+
+.field public static final synthetic t0:[Lum3;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lxh7;Lxh7;Lxh7;Lxh7;)V
-    .registers 6
+.method static constructor <clinit>()V
+    .registers 11
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lum3;
 
-    iput-object p1, p0, Lum3;->a:Lxh7;
+    const-string v1, "OPEN_PROFILE"
 
-    iput-object p2, p0, Lum3;->b:Lxh7;
+    const/4 v2, 0x0
 
-    iput-object p3, p0, Lum3;->c:Lxh7;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p4, p0, Lum3;->d:Lxh7;
+    sput-object v0, Lum3;->a:Lum3;
 
-    iput-object p5, p0, Lum3;->e:Lxh7;
+    new-instance v1, Lum3;
+
+    const-string v2, "SHARE_CONTACT"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Lum3;->b:Lum3;
+
+    new-instance v2, Lum3;
+
+    const-string v3, "WRITE"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v2, Lum3;->c:Lum3;
+
+    new-instance v3, Lum3;
+
+    const-string v4, "SELECT"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v3, Lum3;->o:Lum3;
+
+    new-instance v4, Lum3;
+
+    const-string v5, "BLOCK"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v4, Lum3;->X:Lum3;
+
+    new-instance v5, Lum3;
+
+    const-string v6, "DELETE"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v5, Lum3;->Y:Lum3;
+
+    new-instance v6, Lum3;
+
+    const-string v7, "AUDIO_CALL"
+
+    const/4 v8, 0x6
+
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v6, Lum3;->Z:Lum3;
+
+    new-instance v7, Lum3;
+
+    const-string v8, "VIDEO_CALL"
+
+    const/4 v9, 0x7
+
+    invoke-direct {v7, v8, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v7, Lum3;->r0:Lum3;
+
+    new-instance v8, Lum3;
+
+    const-string v9, "SUSPEND"
+
+    const/16 v10, 0x8
+
+    invoke-direct {v8, v9, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v8, Lum3;->s0:Lum3;
+
+    filled-new-array/range {v0 .. v8}, [Lum3;
+
+    move-result-object v0
+
+    sput-object v0, Lum3;->t0:[Lum3;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(J)V
-    .registers 14
+.method public static valueOf(Ljava/lang/String;)Lum3;
+    .registers 2
 
     const-class v0, Lum3;
 
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "block, id = "
-
-    invoke-static {p1, p2, v1, v0}, Lf22;->l(JLjava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lum3;->a:Lxh7;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lwn3;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v1, Loy1;
-
-    const/16 v2, 0x13
-
-    sget-object v3, Lfo3;->a:Lfo3;
-
-    invoke-direct {v1, v2, v3}, Loy1;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v0, p1, p2, v1}, Lwn3;->c(JLim3;)Lmm3;
-
-    iget-object v0, p0, Lum3;->d:Lxh7;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lik;
-
-    check-cast v0, Lb6a;
-
-    new-instance v1, Lmt3;
-
-    invoke-virtual {v0}, Lb6a;->x()Lt9b;
-
-    move-result-object v2
-
-    check-cast v2, Lw9b;
-
-    iget-object v2, v2, Lw9b;->a:Le53;
-
-    invoke-virtual {v2}, Lz1d;->l()J
-
-    move-result-wide v3
-
-    const/4 v9, 0x0
-
-    const/4 v10, 0x0
-
-    const/4 v2, 0x1
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    move-wide v5, p1
-
-    invoke-direct/range {v1 .. v10}, Lmt3;-><init>(IJJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-static {v0, v1}, Lb6a;->v(Lb6a;Lhl;)J
-
-    iget-object p1, p0, Lum3;->b:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Leb2;
-
-    sget-object p2, Lyb2;->X:Lyb2;
-
-    invoke-virtual {p1, v5, v6, p2}, Leb2;->j(JLyb2;)V
-
-    iget-object p1, p0, Lum3;->c:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lxne;
-
-    invoke-static {v5, v6}, Lf22;->i(J)Ljava/util/List;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lxne;->f(Ljava/util/Collection;)V
-
-    iget-object p0, p0, Lum3;->e:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    check-cast p0, Lrv0;
+    check-cast p0, Lum3;
 
-    new-instance p1, Liv3;
+    return-object p0
+.end method
 
-    invoke-direct {p1, v5, v6}, Liv3;-><init>(J)V
+.method public static values()[Lum3;
+    .registers 1
 
-    invoke-virtual {p0, p1}, Lrv0;->c(Ljava/lang/Object;)V
+    sget-object v0, Lum3;->t0:[Lum3;
 
-    return-void
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lum3;
+
+    return-object v0
 .end method

@@ -1,65 +1,112 @@
-.class public final Lbq8;
+.class public final synthetic Lbq8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Le4a;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:Lyq7;
+.field public final synthetic X:Lvi8;
 
-.field public final b:Le4a;
+.field public final synthetic a:I
 
-.field public c:I
+.field public final synthetic b:Lek4;
+
+.field public final synthetic c:Lgq8;
+
+.field public final synthetic o:Ldv7;
 
 
 # direct methods
-.method public constructor <init>(Lyq7;Le4a;)V
-    .registers 4
+.method public synthetic constructor <init>(Lek4;Lgq8;Ldv7;Lvi8;I)V
+    .registers 6
+
+    iput p5, p0, Lbq8;->a:I
+
+    iput-object p1, p0, Lbq8;->b:Lek4;
+
+    iput-object p2, p0, Lbq8;->c:Lgq8;
+
+    iput-object p3, p0, Lbq8;->o:Ldv7;
+
+    iput-object p4, p0, Lbq8;->X:Lvi8;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lbq8;->c:I
-
-    iput-object p1, p0, Lbq8;->a:Lyq7;
-
-    iput-object p2, p0, Lbq8;->b:Le4a;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)V
-    .registers 4
+.method public final run()V
+    .registers 5
 
-    iget v0, p0, Lbq8;->c:I
+    iget v0, p0, Lbq8;->a:I
 
-    iget-object v1, p0, Lbq8;->a:Lyq7;
+    packed-switch v0, :pswitch_data_0
 
-    iget v1, v1, Lyq7;->g:I
+    iget-object v0, p0, Lbq8;->b:Lek4;
 
-    if-eq v0, v1, :cond_0
+    iget v1, v0, Lek4;->a:I
 
-    iput v1, p0, Lbq8;->c:I
+    iget-object v0, v0, Lek4;->c:Ljava/lang/Object;
 
-    iget-object p0, p0, Lbq8;->b:Le4a;
+    check-cast v0, Lxp8;
 
-    invoke-interface {p0, p1}, Le4a;->a(Ljava/lang/Object;)V
+    iget-object v2, p0, Lbq8;->c:Lgq8;
 
-    :cond_0
-    return-void
-.end method
+    iget-object v3, p0, Lbq8;->o:Ldv7;
 
-.method public final b()V
-    .registers 2
+    iget-object p0, p0, Lbq8;->X:Lvi8;
 
-    iget-object v0, p0, Lbq8;->a:Lyq7;
-
-    invoke-virtual {v0, p0}, Lyq7;->f(Le4a;)V
+    invoke-interface {v2, v1, v0, v3, p0}, Lgq8;->c(ILxp8;Ldv7;Lvi8;)V
 
     return-void
+
+    :pswitch_0
+    iget-object v0, p0, Lbq8;->b:Lek4;
+
+    iget v1, v0, Lek4;->a:I
+
+    iget-object v0, v0, Lek4;->c:Ljava/lang/Object;
+
+    check-cast v0, Lxp8;
+
+    iget-object v2, p0, Lbq8;->c:Lgq8;
+
+    iget-object v3, p0, Lbq8;->o:Ldv7;
+
+    iget-object p0, p0, Lbq8;->X:Lvi8;
+
+    invoke-interface {v2, v1, v0, v3, p0}, Lgq8;->I(ILxp8;Ldv7;Lvi8;)V
+
+    return-void
+
+    :pswitch_1
+    iget-object v0, p0, Lbq8;->b:Lek4;
+
+    iget v1, v0, Lek4;->a:I
+
+    iget-object v0, v0, Lek4;->c:Ljava/lang/Object;
+
+    check-cast v0, Lxp8;
+
+    iget-object v2, p0, Lbq8;->c:Lgq8;
+
+    iget-object v3, p0, Lbq8;->o:Ldv7;
+
+    iget-object p0, p0, Lbq8;->X:Lvi8;
+
+    invoke-interface {v2, v1, v0, v3, p0}, Lgq8;->J(ILxp8;Ldv7;Lvi8;)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

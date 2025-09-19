@@ -1,356 +1,117 @@
-.class public final synthetic Lgub;
-.super Ljava/lang/Object;
+.class public final enum Lgub;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
+
+# static fields
+.field public static final synthetic X:[Lgub;
+
+.field public static final synthetic Y:Ly75;
+
+.field public static final enum b:Lgub;
+
+.field public static final enum c:Lgub;
+
+.field public static final enum o:Lgub;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Llub;
+.field public final a:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Llub;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 7
 
-    iput p2, p0, Lgub;->a:I
+    new-instance v0, Lgub;
 
-    iput-object p1, p0, Lgub;->b:Llub;
+    const-string v1, "ESIA_CONNECTION"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-direct {v0, v1, v2, v3}, Lgub;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lgub;->b:Lgub;
+
+    new-instance v1, Lgub;
+
+    const-string v2, "SECOND_FACTOR_PASSWORD_ENABLED"
+
+    const/4 v4, 0x2
+
+    invoke-direct {v1, v2, v3, v4}, Lgub;-><init>(Ljava/lang/String;II)V
+
+    sput-object v1, Lgub;->c:Lgub;
+
+    new-instance v2, Lgub;
+
+    const-string v3, "SECOND_FACTOR_HAS_EMAIL"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v2, v3, v4, v5}, Lgub;-><init>(Ljava/lang/String;II)V
+
+    sput-object v2, Lgub;->o:Lgub;
+
+    new-instance v3, Lgub;
+
+    const-string v4, "SECOND_FACTOR_HAS_HINT"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v3, v4, v5, v6}, Lgub;-><init>(Ljava/lang/String;II)V
+
+    filled-new-array {v0, v1, v2, v3}, [Lgub;
+
+    move-result-object v0
+
+    sput-object v0, Lgub;->X:[Lgub;
+
+    new-instance v1, Ly75;
+
+    invoke-direct {v1, v0}, Ly75;-><init>([Ljava/lang/Enum;)V
+
+    sput-object v1, Lgub;->Y:Ly75;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/lang/String;II)V
+    .registers 4
 
-# virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .registers 7
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iget p1, p0, Lgub;->a:I
-
-    sget-object v0, Laub;->a:Laub;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    iget-object p0, p0, Lgub;->b:Llub;
-
-    packed-switch p1, :pswitch_data_0
-
-    iget-object p0, p0, Llub;->o:Loub;
-
-    if-nez p0, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    move-object v2, p0
-
-    :goto_0
-    iget-object p1, v2, Loub;->o0:Ln4e;
-
-    :cond_1
-    invoke-virtual {p1}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    move-object v1, p0
-
-    check-cast v1, Lbub;
-
-    instance-of v2, v1, Lxtb;
-
-    if-eqz v2, :cond_2
-
-    move-object v1, v0
-
-    goto :goto_1
-
-    :cond_2
-    instance-of v2, v1, Laub;
-
-    if-eqz v2, :cond_3
-
-    sget-object v1, Lxtb;->a:Lxtb;
-
-    goto :goto_1
-
-    :cond_3
-    instance-of v2, v1, Lztb;
-
-    if-nez v2, :cond_5
-
-    instance-of v2, v1, Lytb;
-
-    if-eqz v2, :cond_4
-
-    goto :goto_1
-
-    :cond_4
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
-
-    :cond_5
-    :goto_1
-    invoke-virtual {p1, p0, v1}, Ln4e;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
+    iput p3, p0, Lgub;->a:I
 
     return-void
+.end method
 
-    :pswitch_0
-    invoke-virtual {p0}, Llub;->getCameraApi()Lmx1;
+.method public static valueOf(Ljava/lang/String;)Lgub;
+    .registers 2
 
-    move-result-object p1
+    const-class v0, Lgub;
 
-    invoke-virtual {p0}, Llub;->getCameraApi()Lmx1;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Lmx1;->j()Z
-
-    move-result p0
-
-    xor-int/2addr p0, v1
-
-    invoke-interface {p1, p0}, Lmx1;->f(Z)V
-
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Llub;->o:Loub;
-
-    if-nez p0, :cond_6
-
-    move-object p0, v2
-
-    :cond_6
-    iget-object p1, p0, Loub;->q0:Lx65;
-
-    const-string v1, "QuickCameraViewModel"
-
-    const-string v3, "onClickTake()"
-
-    invoke-static {v1, v3}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v1, p0, Loub;->o0:Ln4e;
-
-    invoke-virtual {v1}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lbub;
-
-    instance-of v4, v3, Lxtb;
-
-    if-eqz v4, :cond_7
-
-    sget-object p0, Lytb;->a:Lytb;
-
-    invoke-virtual {v1, v2, p0}, Ln4e;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    sget-object p0, Lutb;->a:Lutb;
-
-    invoke-static {p1, p0}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_7
-    instance-of v4, v3, Lytb;
-
-    if-nez v4, :cond_b
-
-    instance-of v4, v3, Laub;
-
-    if-eqz v4, :cond_9
-
-    iget-object v0, p0, Loub;->s0:Llwa;
-
-    invoke-virtual {v0}, Llwa;->i()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8
-
-    new-instance v0, Lztb;
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v3
-
-    invoke-direct {v0, v3, v4}, Lztb;-><init>(J)V
-
-    invoke-virtual {v1, v2, v0}, Ln4e;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    iget-object v0, p0, Loub;->X:Lml5;
-
-    iget-object p0, p0, Loub;->Y:Llyc;
-
-    invoke-interface {p0}, Llyc;->a()Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
-    check-cast v0, Lan5;
+    check-cast p0, Lgub;
 
-    invoke-virtual {v0, p0}, Lan5;->n(Ljava/lang/String;)Ljava/io/File;
+    return-object p0
+.end method
 
-    move-result-object p0
+.method public static values()[Lgub;
+    .registers 1
 
-    new-instance v0, Lstb;
+    sget-object v0, Lgub;->X:[Lgub;
 
-    invoke-direct {v0, p0}, Lstb;-><init>(Ljava/io/File;)V
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    invoke-static {p1, v0}, Luxf;->o(Lx65;Ljava/lang/Object;)V
+    move-result-object v0
 
-    goto :goto_2
+    check-cast v0, [Lgub;
 
-    :cond_8
-    iget-object p0, p0, Loub;->r0:Lx65;
-
-    sget-object p1, Ldub;->a:Ldub;
-
-    invoke-static {p0, p1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_9
-    instance-of p0, v3, Lztb;
-
-    if-eqz p0, :cond_a
-
-    invoke-virtual {v1, v2, v0}, Ln4e;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    sget-object p0, Lttb;->a:Lttb;
-
-    invoke-static {p1, p0}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_a
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
-
-    :cond_b
-    :goto_2
-    return-void
-
-    :pswitch_2
-    iget-object p0, p0, Llub;->o:Loub;
-
-    if-nez p0, :cond_c
-
-    goto :goto_3
-
-    :cond_c
-    move-object v2, p0
-
-    :goto_3
-    iget-object p1, v2, Loub;->p0:Ln4e;
-
-    :cond_d
-    invoke-virtual {p1}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    move-object v0, p0
-
-    check-cast v0, Llx1;
-
-    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    if-eq v0, v1, :cond_f
-
-    const/4 v2, 0x2
-
-    sget-object v3, Llx1;->a:Llx1;
-
-    if-eq v0, v2, :cond_11
-
-    const/4 v2, 0x3
-
-    if-ne v0, v2, :cond_e
-
-    goto :goto_4
-
-    :cond_e
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
-
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
-
-    :cond_f
-    sget-object v3, Llx1;->c:Llx1;
-
-    goto :goto_4
-
-    :cond_10
-    sget-object v3, Llx1;->b:Llx1;
-
-    :cond_11
-    :goto_4
-    invoke-virtual {p1, p0, v3}, Ln4e;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_d
-
-    return-void
-
-    :pswitch_3
-    iget-object p0, p0, Llub;->o0:Li02;
-
-    if-eqz p0, :cond_12
-
-    iget-object p0, p0, Li02;->a:Ljava/lang/Object;
-
-    check-cast p0, Ljy1;
-
-    sget p1, Ljy1;->v0:I
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1, v1}, Ljy1;->a(ZZ)V
-
-    invoke-virtual {p0}, Ljy1;->getListener()Liy1;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_12
-
-    check-cast p0, Lone/me/chatscreen/mediabar/MediaBarWidget;
-
-    iget-object p0, p0, Lone/me/chatscreen/mediabar/MediaBarWidget;->o:Lop9;
-
-    sget-object p1, Lnyc;->J0:Lnyc;
-
-    invoke-static {p0, p1}, Lop9;->g(Lop9;Lnyc;)V
-
-    :cond_12
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

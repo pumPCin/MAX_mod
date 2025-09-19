@@ -1,12 +1,12 @@
 .class public abstract Lcom/google/android/material/transformation/ExpandableBehavior;
-.super Lmz3;
+.super Ltz3;
 .source "SourceFile"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lmz3;"
+        "Ltz3;"
     }
 .end annotation
 
@@ -51,7 +51,7 @@
 .method public final l(Landroidx/coordinatorlayout/widget/CoordinatorLayout;Landroid/view/View;I)Z
     .registers 7
 
-    sget-object p3, Lexf;->a:Ljava/util/WeakHashMap;
+    sget-object p3, Lh7g;->a:Ljava/util/WeakHashMap;
 
     invoke-virtual {p2}, Landroid/view/View;->isLaidOut()Z
 

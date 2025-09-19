@@ -1,77 +1,73 @@
-.class public final Ljug;
-.super Lcom/google/android/gms/common/internal/a;
+.class public abstract Ljug;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final f()I
-    .registers 1
+# static fields
+.field public static final a:Ljava/lang/reflect/Field;
 
-    const p0, 0xcaf1200
+.field public static final b:Ljava/lang/reflect/Field;
 
-    return p0
-.end method
+.field public static final c:Ljava/lang/reflect/Field;
 
-.method public final synthetic l(Landroid/os/IBinder;)Landroid/os/IInterface;
+.field public static final d:Z
+
+
+# direct methods
+.method static constructor <clinit>()V
     .registers 3
 
-    if-nez p1, :cond_0
+    :try_start_0
+    const-class v0, Landroid/view/View;
 
-    const/4 p0, 0x0
+    const-string v1, "mAttachInfo"
 
-    return-object p0
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    :cond_0
-    const-string p0, "com.google.android.gms.appset.internal.IAppSetService"
+    move-result-object v0
 
-    invoke-interface {p1, p0}, Landroid/os/IBinder;->queryLocalInterface(Ljava/lang/String;)Landroid/os/IInterface;
+    sput-object v0, Ljug;->a:Ljava/lang/reflect/Field;
 
-    move-result-object p0
+    const/4 v1, 0x1
 
-    instance-of v0, p0, Lqvg;
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
-    if-eqz v0, :cond_1
+    const-string v0, "android.view.View$AttachInfo"
 
-    check-cast p0, Lqvg;
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
-    return-object p0
+    move-result-object v0
 
-    :cond_1
-    new-instance p0, Lqvg;
+    const-string v2, "mStableInsets"
 
-    invoke-direct {p0, p1}, Lqvg;-><init>(Landroid/os/IBinder;)V
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    return-object p0
-.end method
+    move-result-object v2
 
-.method public final m()[Lnh5;
-    .registers 1
+    sput-object v2, Ljug;->b:Ljava/lang/reflect/Field;
 
-    sget-object p0, Ld86;->e:[Lnh5;
+    invoke-virtual {v2, v1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
-    return-object p0
-.end method
+    const-string v2, "mContentInsets"
 
-.method public final p()Ljava/lang/String;
-    .registers 1
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    const-string p0, "com.google.android.gms.appset.internal.IAppSetService"
+    move-result-object v0
 
-    return-object p0
-.end method
+    sput-object v0, Ljug;->c:Ljava/lang/reflect/Field;
 
-.method public final q()Ljava/lang/String;
-    .registers 1
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
 
-    const-string p0, "com.google.android.gms.appset.service.START"
+    sput-boolean v1, Ljug;->d:Z
+    :try_end_0
+    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object p0
-.end method
+    return-void
 
-.method public final r()Z
-    .registers 1
+    :catch_0
+    move-exception v0
 
-    const/4 p0, 0x1
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    return p0
+    return-void
 .end method

@@ -1,61 +1,32 @@
 .class public final Lxyf;
-.super Landroid/view/View$BaseSavedState;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lazf;
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lxyf;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final a:Lxyf;
 
-
-# instance fields
-.field public a:I
-
-.field public b:I
-
-.field public c:Landroid/os/Parcelable;
+.field public static final b:Lxyf;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method static synthetic constructor <clinit>()V
+    .registers 1
 
-    new-instance v0, Lw;
+    new-instance v0, Lxyf;
 
-    const/16 v1, 0xa
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0, v1}, Lw;-><init>(I)V
+    sput-object v0, Lxyf;->a:Lxyf;
 
-    sput-object v0, Lxyf;->CREATOR:Landroid/os/Parcelable$Creator;
+    new-instance v0, Lxyf;
 
-    return-void
-.end method
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-
-# virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .registers 4
-
-    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
-
-    iget v0, p0, Lxyf;->a:I
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget v0, p0, Lxyf;->b:I
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    iget-object p0, p0, Lxyf;->c:Landroid/os/Parcelable;
-
-    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    sput-object v0, Lxyf;->b:Lxyf;
 
     return-void
 .end method

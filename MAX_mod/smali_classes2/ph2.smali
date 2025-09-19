@@ -1,5 +1,5 @@
 .class public final Lph2;
-.super Lzh2;
+.super Lwh2;
 .source "SourceFile"
 
 
@@ -11,7 +11,7 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 2
 
-    invoke-direct {p0}, Lzh2;-><init>()V
+    invoke-direct {p0}, Lwh2;-><init>()V
 
     iput-object p1, p0, Lph2;->b:Ljava/lang/String;
 
@@ -45,7 +45,7 @@
 
     iget-object p1, p1, Lph2;->b:Ljava/lang/String;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -72,13 +72,13 @@
 .method public final toString()Ljava/lang/String;
     .registers 3
 
-    const-string v0, "CopyLink(link="
+    const-string v0, "OpenLink(attachUrl="
 
     const-string v1, ")"
 
     iget-object p0, p0, Lph2;->b:Ljava/lang/String;
 
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

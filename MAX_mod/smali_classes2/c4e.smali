@@ -1,68 +1,80 @@
-.class public final synthetic Lc4e;
-.super Ljava/lang/Object;
+.class public final Lc4e;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic b:Lxn8;
-
-.field public final synthetic c:Lqpg;
+.field public final synthetic Y:Ld4e;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxn8;Lqpg;I)V
-    .registers 4
+.method public constructor <init>(Ld4e;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p3, p0, Lc4e;->a:I
+    iput-object p1, p0, Lc4e;->Y:Ld4e;
 
-    iput-object p1, p0, Lc4e;->b:Lxn8;
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Lc4e;->c:Lqpg;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Lxy;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lc4e;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lc4e;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lc4e;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Lc4e;
+
+    iget-object p0, p0, Lc4e;->Y:Ld4e;
+
+    invoke-direct {v0, p0, p2}, Lc4e;-><init>(Ld4e;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lc4e;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    iget v0, p0, Lc4e;->a:I
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p1, p0, Lc4e;->X:Ljava/lang/Object;
 
-    iget-object v0, p0, Lc4e;->b:Lxn8;
+    check-cast p1, Lxy;
 
-    iget-object v0, v0, Lxn8;->f:Ljava/lang/Object;
+    iget-object p0, p0, Lc4e;->Y:Ld4e;
 
-    check-cast v0, Ljava/util/LinkedHashSet;
+    invoke-static {p0, p1}, Ld4e;->f(Ld4e;Lxy;)V
 
-    iget-object p0, p0, Lc4e;->c:Lqpg;
+    sget-object p0, Lylf;->a:Lylf;
 
-    invoke-interface {v0, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lc4e;->b:Lxn8;
-
-    iget-object p0, p0, Lc4e;->c:Lqpg;
-
-    invoke-virtual {v0, p0}, Lxn8;->m(Lqpg;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

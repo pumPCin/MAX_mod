@@ -1,87 +1,218 @@
 .class public final Ln78;
-.super Ljava/lang/Object;
+.super Landroid/widget/ArrayAdapter;
 .source "SourceFile"
-
-# interfaces
-.implements Lw78;
 
 
 # instance fields
-.field public final a:Z
+.field public a:Landroid/content/res/ColorStateList;
+
+.field public b:Landroid/content/res/ColorStateList;
+
+.field public final synthetic c:Lo78;
 
 
 # direct methods
-.method public constructor <init>(Z)V
-    .registers 2
+.method public constructor <init>(Lo78;Landroid/content/Context;I[Ljava/lang/String;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ln78;->c:Lo78;
 
-    iput-boolean p1, p0, Ln78;->a:Z
+    invoke-direct {p0, p2, p3, p4}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
+
+    invoke-virtual {p0}, Ln78;->a()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final a()V
+    .registers 8
 
-    if-ne p0, p1, :cond_0
+    iget-object v0, p0, Ln78;->c:Lo78;
 
-    goto :goto_1
+    iget-object v1, v0, Lo78;->y0:Landroid/content/res/ColorStateList;
 
-    :cond_0
-    instance-of v0, p1, Ln78;
+    const/4 v2, 0x0
 
-    if-nez v0, :cond_1
+    const/4 v3, 0x0
+
+    if-eqz v1, :cond_0
+
+    const v4, 0x10100a7
+
+    filled-new-array {v4}, [I
+
+    move-result-object v4
+
+    invoke-virtual {v1, v4, v3}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result v1
+
+    filled-new-array {v1, v3}, [I
+
+    move-result-object v1
+
+    new-array v5, v3, [I
+
+    filled-new-array {v4, v5}, [[I
+
+    move-result-object v4
+
+    new-instance v5, Landroid/content/res/ColorStateList;
+
+    invoke-direct {v5, v4, v1}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
 
     goto :goto_0
 
-    :cond_1
-    check-cast p1, Ln78;
-
-    iget-boolean p0, p0, Ln78;->a:Z
-
-    iget-boolean p1, p1, Ln78;->a:Z
-
-    if-eq p0, p1, :cond_2
+    :cond_0
+    move-object v5, v2
 
     :goto_0
-    const/4 p0, 0x0
+    iput-object v5, p0, Ln78;->b:Landroid/content/res/ColorStateList;
 
-    return p0
+    iget v1, v0, Lo78;->x0:I
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, v0, Lo78;->y0:Landroid/content/res/ColorStateList;
+
+    if-eqz v1, :cond_1
+
+    const v1, 0x1010367
+
+    const v2, -0x10100a7
+
+    filled-new-array {v1, v2}, [I
+
+    move-result-object v1
+
+    const v4, 0x10100a1
+
+    filled-new-array {v4, v2}, [I
+
+    move-result-object v2
+
+    iget-object v4, v0, Lo78;->y0:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v4, v2, v3}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result v4
+
+    iget-object v5, v0, Lo78;->y0:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v5, v1, v3}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+
+    move-result v5
+
+    iget v6, v0, Lo78;->x0:I
+
+    invoke-static {v4, v6}, Lm83;->g(II)I
+
+    move-result v4
+
+    iget v6, v0, Lo78;->x0:I
+
+    invoke-static {v5, v6}, Lm83;->g(II)I
+
+    move-result v5
+
+    iget v0, v0, Lo78;->x0:I
+
+    filled-new-array {v4, v5, v0}, [I
+
+    move-result-object v0
+
+    new-array v3, v3, [I
+
+    filled-new-array {v2, v1, v3}, [[I
+
+    move-result-object v1
+
+    new-instance v2, Landroid/content/res/ColorStateList;
+
+    invoke-direct {v2, v1, v0}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
+
+    :cond_1
+    iput-object v2, p0, Ln78;->a:Landroid/content/res/ColorStateList;
+
+    return-void
+.end method
+
+.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .registers 6
+
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object p1
+
+    instance-of p2, p1, Landroid/widget/TextView;
+
+    if-eqz p2, :cond_2
+
+    move-object p2, p1
+
+    check-cast p2, Landroid/widget/TextView;
+
+    iget-object p3, p0, Ln78;->c:Lo78;
+
+    invoke-virtual {p3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contentEquals(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    iget v0, p3, Lo78;->x0:I
+
+    if-eqz v0, :cond_1
+
+    new-instance v0, Landroid/graphics/drawable/ColorDrawable;
+
+    iget p3, p3, Lo78;->x0:I
+
+    invoke-direct {v0, p3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+
+    iget-object p3, p0, Ln78;->b:Landroid/content/res/ColorStateList;
+
+    if-eqz p3, :cond_0
+
+    iget-object p3, p0, Ln78;->a:Landroid/content/res/ColorStateList;
+
+    invoke-static {v0, p3}, Liv4;->h(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
+
+    new-instance p3, Landroid/graphics/drawable/RippleDrawable;
+
+    iget-object p0, p0, Ln78;->b:Landroid/content/res/ColorStateList;
+
+    invoke-direct {p3, p0, v0, v1}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+    move-object v1, p3
+
+    goto :goto_0
+
+    :cond_0
+    move-object v1, v0
+
+    :cond_1
+    :goto_0
+    sget-object p0, Lh7g;->a:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p2, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-boolean p0, p0, Ln78;->a:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    const-string v0, "Close(withClear="
-
-    const-string v1, ")"
-
-    iget-boolean p0, p0, Ln78;->a:Z
-
-    invoke-static {v0, v1, p0}, Lfge;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-object p1
 .end method

@@ -1,67 +1,61 @@
 .class public final La71;
-.super Ltf4;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final synthetic t:Lb71;
-
-
-# direct methods
-.method public constructor <init>(Lb71;)V
-    .registers 4
-
-    iput-object p1, p0, La71;->t:Lb71;
-
-    invoke-direct {p0}, Ltf4;-><init>()V
-
-    const-wide/16 v0, 0x12c
-
-    iput-wide v0, p0, Lygc;->d:J
-
-    iput-wide v0, p0, Lygc;->c:J
-
-    iput-wide v0, p0, Lygc;->f:J
-
-    iput-wide v0, p0, Lygc;->e:J
-
-    return-void
-.end method
+# interfaces
+.implements Lfec;
 
 
 # virtual methods
-.method public final l()V
-    .registers 3
+.method public final log(Ljava/lang/String;Ljava/lang/String;)V
+    .registers 6
 
-    iget-object p0, p0, La71;->t:Lb71;
+    sget-object p0, Ljtg;->g:Loja;
 
-    iget-object p0, p0, Lb71;->a:Landroidx/recyclerview/widget/RecyclerView;
+    if-nez p0, :cond_0
 
-    if-eqz p0, :cond_1
-
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v1, -0x2
-
-    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    return-void
+    goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
+    sget-object v0, Lqz7;->o:Lqz7;
 
-    const-string v0, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams"
+    invoke-virtual {p0, v0}, Loja;->a(Lqz7;)Z
 
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw p0
+    if-eqz v1, :cond_1
+
+    const-string v1, "["
+
+    const-string v2, "] "
+
+    invoke-static {v1, p1, v2, p2}, Lee5;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const/4 p2, 0x0
+
+    const-string v1, "CallsSdk"
+
+    invoke-virtual {p0, v0, v1, p1, p2}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public final logException(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    .registers 4
+
+    const-string p0, "[%s] %s"
+
+    filled-new-array {p1, p2}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string p2, "CallsSdk"
+
+    invoke-static {p2, p3, p0, p1}, Ljtg;->o(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
     return-void
 .end method

@@ -6,81 +6,50 @@
 # instance fields
 .field public final a:J
 
-.field public final b:J
+.field public final b:I
+
+.field public final c:Ljava/util/List;
+
+.field public final d:Ljava/util/List;
+
+.field public final e:Ljava/util/List;
+
+.field public final f:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(JJ)V
-    .registers 5
+.method public constructor <init>(JILjava/util/ArrayList;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
+    .registers 8
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-wide p1, p0, Lr8;->a:J
 
-    iput-wide p3, p0, Lr8;->b:J
+    iput p3, p0, Lr8;->b:I
+
+    invoke-static {p4}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lr8;->c:Ljava/util/List;
+
+    invoke-static {p5}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lr8;->d:Ljava/util/List;
+
+    invoke-static {p6}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lr8;->e:Ljava/util/List;
+
+    invoke-static {p7}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lr8;->f:Ljava/util/List;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 9
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lr8;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lr8;
-
-    iget-wide v3, p0, Lr8;->a:J
-
-    iget-wide v5, p1, Lr8;->a:J
-
-    cmp-long v1, v3, v5
-
-    if-nez v1, :cond_2
-
-    iget-wide v3, p0, Lr8;->b:J
-
-    iget-wide p0, p1, Lr8;->b:J
-
-    cmp-long p0, v3, p0
-
-    if-nez p0, :cond_2
-
-    return v0
-
-    :cond_2
-    return v2
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget-wide v0, p0, Lr8;->a:J
-
-    long-to-int v0, v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-wide v1, p0, Lr8;->b:J
-
-    long-to-int p0, v1
-
-    add-int/2addr v0, p0
-
-    return v0
 .end method

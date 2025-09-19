@@ -1,74 +1,74 @@
-.class public final Lsmd;
-.super Lxie;
+.class public final synthetic Lsmd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ls0e;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;
+
+.field public final synthetic c:Lbc6;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;Lbc6;I)V
+    .registers 4
+
+    iput p3, p0, Lsmd;->a:I
+
+    iput-object p1, p0, Lsmd;->b:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;
+
+    iput-object p2, p0, Lsmd;->c:Lbc6;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final k(Lorg/json/JSONObject;)V
     .registers 3
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget v0, p0, Lsmd;->a:I
 
-    invoke-virtual {p0, p1, p2}, Lsmd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
+    iget-object v0, p0, Lsmd;->b:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;
 
-    check-cast p0, Lsmd;
+    iget-object p0, p0, Lsmd;->c:Lbc6;
 
-    sget-object p1, Lncf;->a:Lncf;
+    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;->f(Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
 
-    invoke-virtual {p0, p1}, Lsmd;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
 
-    return-object p1
-.end method
+    :pswitch_0
+    iget-object v0, p0, Lsmd;->b:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    iget-object p0, p0, Lsmd;->c:Lbc6;
 
-    new-instance p0, Lsmd;
+    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;->d(Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
 
-    const/4 v0, 0x2
+    return-void
 
-    invoke-direct {p0, v0, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    :pswitch_1
+    iget-object v0, p0, Lsmd;->b:Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;
 
-    iput-object p1, p0, Lsmd;->X:Ljava/lang/Object;
+    iget-object p0, p0, Lsmd;->c:Lbc6;
 
-    return-object p0
-.end method
+    invoke-static {v0, p0, p1}, Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;->c(Lru/ok/android/externcalls/sdk/sessionroom/internal/command/SessionRoomCommandExecutorImpl;Lbc6;Lorg/json/JSONObject;)V
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    return-void
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    nop
 
-    iget-object p0, p0, Lsmd;->X:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    sget-object p1, Lzkd;->c:Lzkd;
-
-    invoke-virtual {p1}, Ls2;->D0()Lea4;
-
-    move-result-object p1
-
-    const-string v0, ":settings/privacy/pincode?mode=confirm&hash="
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, p0, v0}, Lea4;->b(Ljava/lang/String;Landroid/os/Bundle;)Z
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

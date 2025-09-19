@@ -30,41 +30,43 @@
 
 
 # instance fields
-.field public final X:Ldle;
+.field public A0:Lok7;
 
-.field public final Y:Ldle;
+.field public volatile B0:F
 
-.field public final Z:Ldle;
+.field public volatile C0:Lkt7;
 
-.field public final a:Ldle;
+.field public final X:Lzte;
 
-.field public final b:Ldle;
+.field public final Y:Lzte;
 
-.field public final c:Ldle;
+.field public final Z:Lzte;
 
-.field public final n0:Ldle;
+.field public final a:Lzte;
 
-.field public final o:Ldle;
+.field public final b:Lzte;
 
-.field public final o0:Ldle;
+.field public final c:Lzte;
 
-.field public final p0:Ldle;
+.field public final o:Lzte;
 
-.field public final q0:Ldle;
+.field public final r0:Lzte;
 
-.field public final r0:Ldle;
+.field public final s0:Lzte;
 
-.field public final s0:Ldle;
+.field public final t0:Lzte;
 
-.field public final t0:Ldle;
+.field public final u0:Lzte;
 
-.field public final u0:Ldle;
+.field public final v0:Lzte;
 
-.field public v0:Ljh7;
+.field public final w0:Lzte;
 
-.field public volatile w0:F
+.field public final x0:Lzte;
 
-.field public volatile x0:Lgq7;
+.field public final y0:Lzte;
+
+.field public final z0:Lzte;
 
 
 # direct methods
@@ -73,219 +75,231 @@
 
     invoke-direct {p0, p1, p2}, Lru/ok/tamtam/upload/workers/ForegroundWorker;-><init>(Landroid/content/Context;Landroidx/work/WorkerParameters;)V
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/4 p2, 0x0
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->a:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->a:Lzte;
 
-    new-instance p1, Lgff;
-
-    const/16 p2, 0xb
-
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
-
-    new-instance p2, Ldle;
-
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
-
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b:Ldle;
-
-    new-instance p1, Lgff;
-
-    const/16 p2, 0xc
-
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
-
-    new-instance p2, Ldle;
-
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
-
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Ldle;
-
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/16 p2, 0xd
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->o:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/16 p2, 0xe
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->X:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
+
+    const/16 p2, 0xf
+
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+
+    new-instance p2, Lzte;
+
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
+
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->o:Lzte;
+
+    new-instance p1, Ltof;
 
     const/4 p2, 0x1
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Y:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->X:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/4 p2, 0x2
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Z:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Y:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/4 p2, 0x3
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->n0:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Z:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/4 p2, 0x4
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->o0:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->r0:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/4 p2, 0x5
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->p0:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->s0:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/4 p2, 0x6
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->q0:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->t0:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/4 p2, 0x7
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->r0:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->u0:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/16 p2, 0x8
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->s0:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->v0:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/16 p2, 0x9
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->t0:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->w0:Lzte;
 
-    new-instance p1, Lgff;
+    new-instance p1, Ltof;
 
     const/16 p2, 0xa
 
-    invoke-direct {p1, p0, p2}, Lgff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
 
-    new-instance p2, Ldle;
+    new-instance p2, Lzte;
 
-    invoke-direct {p2, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->u0:Ldle;
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lzte;
+
+    new-instance p1, Ltof;
+
+    const/16 p2, 0xb
+
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+
+    new-instance p2, Lzte;
+
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
+
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->y0:Lzte;
+
+    new-instance p1, Ltof;
+
+    const/16 p2, 0xc
+
+    invoke-direct {p1, p0, p2}, Ltof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;I)V
+
+    new-instance p2, Lzte;
+
+    invoke-direct {p2, p1}, Lzte;-><init>(Lzb6;)V
+
+    iput-object p2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->z0:Lzte;
 
     const/high16 p1, -0x40800000    # -1.0f
 
-    iput p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->w0:F
+    iput p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->B0:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Lw09;
+.method public final b()Lv39;
     .registers 1
 
-    iget-object p0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->a:Ldle;
+    iget-object p0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->a:Lzte;
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lw09;
+    check-cast p0, Lv39;
 
     return-object p0
 .end method
 
-.method public final c()Ltw8;
+.method public final c()Lsz8;
     .registers 1
 
-    iget-object p0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->o:Ldle;
+    iget-object p0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->o:Lzte;
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Ltw8;
+    check-cast p0, Lsz8;
 
     return-object p0
 .end method
@@ -293,39 +307,39 @@
 .method public final createForegroundInfo(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .registers 13
 
-    invoke-virtual {p0}, Lhq7;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p0}, Llt7;->getApplicationContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-static {p1}, Lklg;->d(Landroid/content/Context;)Lklg;
+    invoke-static {p1}, Lqvg;->d(Landroid/content/Context;)Lqvg;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lhq7;->getId()Ljava/util/UUID;
+    invoke-virtual {p0}, Llt7;->getId()Ljava/util/UUID;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lklg;->c(Ljava/util/UUID;)Landroid/app/PendingIntent;
+    invoke-virtual {p1, v0}, Lqvg;->c(Ljava/util/UUID;)Landroid/app/PendingIntent;
 
     move-result-object v10
 
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Z:Ldle;
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Z:Lzte;
 
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Leb2;
+    check-cast p1, Lza2;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
-    iget-object v0, v0, Lw09;->a:Lhz8;
+    iget-object v0, v0, Lv39;->a:Lg29;
 
-    iget-wide v0, v0, Lhz8;->b:J
+    iget-wide v0, v0, Lg29;->b:J
 
-    invoke-virtual {p1, v0, v1}, Leb2;->C(J)Lo72;
+    invoke-virtual {p1, v0, v1}, Lza2;->C(J)Ls72;
 
     move-result-object p1
 
@@ -337,25 +351,25 @@
 
     const-string v2, "chat is null in getForegroundInfo!"
 
-    invoke-static {v0, v2, v1}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v0, v2, v1}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->h()V
 
-    invoke-static {}, Lgq7;->a()Ldq7;
+    invoke-static {}, Lkt7;->a()Lht7;
 
     move-result-object v0
 
-    iput-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lgq7;
+    iput-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->C0:Lkt7;
 
     :cond_0
     :try_start_0
     new-instance v0, Ljava/io/File;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v2
 
-    iget-object v2, v2, Lw09;->b:Ljava/lang/String;
+    iget-object v2, v2, Lv39;->b:Ljava/lang/String;
 
     invoke-direct {v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -370,14 +384,14 @@
     :catchall_0
     move-exception v0
 
-    new-instance v2, Lanc;
+    new-instance v2, Lhvc;
 
-    invoke-direct {v2, v0}, Lanc;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v2, v0}, Lhvc;-><init>(Ljava/lang/Throwable;)V
 
     move-object v0, v2
 
     :goto_0
-    instance-of v2, v0, Lanc;
+    instance-of v2, v0, Lhvc;
 
     if-eqz v2, :cond_1
 
@@ -386,19 +400,19 @@
     :cond_1
     check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {p0}, Lhq7;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p0}, Llt7;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
-    iget-object v3, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->q0:Ldle;
+    iget-object v3, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->u0:Lzte;
 
-    invoke-virtual {v3}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v3}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lmk5;
+    check-cast v3, Lom5;
 
-    iget v3, v3, Lmk5;->h:I
+    iget v3, v3, Lom5;->h:I
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -406,29 +420,29 @@
 
     const-string v3, " "
 
-    invoke-static {v2, v3, v0}, Lex3;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3, v0}, Lsq3;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->q0:Ldle;
+    iget-object v2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->u0:Lzte;
 
-    invoke-virtual {v2}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v2}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lmk5;
+    check-cast v2, Lom5;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v3
 
-    iget-object v3, v3, Lw09;->a:Lhz8;
+    iget-object v3, v3, Lv39;->a:Lg29;
 
-    iget-wide v3, v3, Lhz8;->b:J
+    iget-wide v3, v3, Lg29;->b:J
 
     if-eqz p1, :cond_3
 
-    invoke-virtual {p1}, Lo72;->q()Ljava/lang/String;
+    invoke-virtual {p1}, Ls72;->q()Ljava/lang/String;
 
     move-result-object v5
 
@@ -444,19 +458,19 @@
 
     :cond_3
     :goto_2
-    invoke-virtual {p0}, Lhq7;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p0}, Llt7;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v5
 
-    iget-object v6, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->q0:Ldle;
+    iget-object v6, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->u0:Lzte;
 
-    invoke-virtual {v6}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v6}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v6
 
-    check-cast v6, Lmk5;
+    check-cast v6, Lom5;
 
-    iget v6, v6, Lmk5;->h:I
+    iget v6, v6, Lom5;->h:I
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -475,9 +489,9 @@
     move-object v7, v0
 
     :goto_4
-    iget p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->w0:F
+    iget p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->B0:F
 
-    invoke-static {p1}, Lg53;->C(F)I
+    invoke-static {p1}, Lya6;->G(F)I
 
     move-result v8
 
@@ -491,25 +505,25 @@
 
     const/4 v5, 0x0
 
-    invoke-virtual/range {v1 .. v10}, Lmk5;->b(JLjava/lang/Long;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;IZLandroid/app/PendingIntent;)Landroid/app/Notification;
+    invoke-virtual/range {v1 .. v10}, Lom5;->b(JLjava/lang/Long;Ljava/lang/Long;Ljava/lang/CharSequence;Ljava/lang/String;IZLandroid/app/PendingIntent;)Landroid/app/Notification;
 
     move-result-object p1
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object p0
 
-    iget-object p0, p0, Lw09;->a:Lhz8;
+    iget-object p0, p0, Lv39;->a:Lg29;
 
-    invoke-virtual {p0}, Lhz8;->hashCode()I
+    invoke-virtual {p0}, Lg29;->hashCode()I
 
     move-result p0
 
-    new-instance v0, Le26;
+    new-instance v0, Lh46;
 
     const/4 v1, 0x1
 
-    invoke-direct {v0, p0, p1, v1}, Le26;-><init>(ILandroid/app/Notification;I)V
+    invoke-direct {v0, p0, p1, v1}, Lh46;-><init>(ILandroid/app/Notification;I)V
 
     return-object v0
 .end method
@@ -517,17 +531,17 @@
 .method public final doForegroundWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .registers 11
 
-    sget-object v0, Llw7;->o:Llw7;
+    sget-object v0, Lqz7;->o:Lqz7;
 
-    instance-of v1, p1, Liff;
+    instance-of v1, p1, Lvof;
 
     if-eqz v1, :cond_0
 
     move-object v1, p1
 
-    check-cast v1, Liff;
+    check-cast v1, Lvof;
 
-    iget v2, v1, Liff;->Z:I
+    iget v2, v1, Lvof;->Z:I
 
     const/high16 v3, -0x80000000
 
@@ -537,23 +551,23 @@
 
     sub-int/2addr v2, v3
 
-    iput v2, v1, Liff;->Z:I
+    iput v2, v1, Lvof;->Z:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Liff;
+    new-instance v1, Lvof;
 
-    check-cast p1, Lcx3;
+    check-cast p1, Ljx3;
 
-    invoke-direct {v1, p0, p1}, Liff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lcx3;)V
+    invoke-direct {v1, p0, p1}, Lvof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Ljx3;)V
 
     :goto_0
-    iget-object p1, v1, Liff;->X:Ljava/lang/Object;
+    iget-object p1, v1, Lvof;->X:Ljava/lang/Object;
 
-    sget-object v2, Ls04;->a:Ls04;
+    sget-object v2, Lz04;->a:Lz04;
 
-    iget v3, v1, Liff;->Z:I
+    iget v3, v1, Lvof;->Z:I
 
     const/4 v4, 0x3
 
@@ -569,7 +583,7 @@
 
     if-ne v3, v4, :cond_1
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     return-object p1
 
@@ -583,60 +597,60 @@
     throw p0
 
     :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     return-object p1
 
     :cond_3
-    iget-object p0, v1, Liff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iget-object p0, v1, Lvof;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_2
 
     :cond_4
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->u0:Ldle;
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->y0:Lzte;
 
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lck3;
+    check-cast p1, Lik3;
 
-    iput-object p0, v1, Liff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object p0, v1, Lvof;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput v6, v1, Liff;->Z:I
+    iput v6, v1, Lvof;->Z:I
 
-    new-instance v3, Ly02;
+    new-instance v3, Lf12;
 
-    invoke-static {v1}, Lx77;->H(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v1}, Lf4h;->x(Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object v7
 
-    invoke-direct {v3, v6, v7}, Ly02;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {v3, v6, v7}, Lf12;-><init>(ILkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v3}, Ly02;->o()V
+    invoke-virtual {v3}, Lf12;->o()V
 
-    invoke-interface {p1}, Lck3;->f()Z
+    invoke-interface {p1}, Lik3;->f()Z
 
     move-result v6
 
     if-eqz v6, :cond_5
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-virtual {v3, p1}, Ly02;->resumeWith(Ljava/lang/Object;)V
+    invoke-virtual {v3, p1}, Lf12;->resumeWith(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_5
-    new-instance v6, Lft1;
+    new-instance v6, Llt1;
 
     const/4 v7, 0x1
 
-    invoke-direct {v6, p1, v3, v7}, Lft1;-><init>(Lck3;Ljava/lang/Object;I)V
+    invoke-direct {v6, p1, v3, v7}, Llt1;-><init>(Lik3;Ljava/lang/Object;I)V
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -648,20 +662,20 @@
 
     const-string v8, "Network connection lost, waiting network."
 
-    invoke-static {v7, v8}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v7, v8}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface {p1, v6}, Lck3;->c(Lbk3;)V
+    invoke-interface {p1, v6}, Lik3;->c(Lhk3;)V
 
-    new-instance v7, Lyr1;
+    new-instance v7, Les1;
 
     const/4 v8, 0x3
 
-    invoke-direct {v7, p1, v8, v6}, Lyr1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v7, p1, v8, v6}, Les1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    invoke-virtual {v3, v7}, Ly02;->e(Lj96;)V
+    invoke-virtual {v3, v7}, Lf12;->e(Lbc6;)V
 
     :goto_1
-    invoke-virtual {v3}, Ly02;->m()Ljava/lang/Object;
+    invoke-virtual {v3}, Lf12;->m()Ljava/lang/Object;
 
     move-result-object p1
 
@@ -671,17 +685,17 @@
 
     :cond_6
     :goto_2
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->r0:Ldle;
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->v0:Lzte;
 
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lt9b;
+    check-cast p1, Lqgb;
 
-    check-cast p1, Lw9b;
+    check-cast p1, Ltgb;
 
-    iget-object p1, p1, Lw9b;->e:Lqh5;
+    iget-object p1, p1, Ltgb;->e:Ltj5;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -689,7 +703,7 @@
 
     const/4 v6, 0x0
 
-    invoke-virtual {p1, v3, v6}, Lg2d;->k(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
+    invoke-virtual {p1, v3, v6}, Lnad;->l(Lru/ok/tamtam/android/prefs/PmsKey;Z)Z
 
     move-result p1
 
@@ -699,14 +713,14 @@
 
     if-eqz p1, :cond_a
 
-    sget-object p1, Ld86;->f:Lafa;
+    sget-object p1, Ljtg;->g:Loja;
 
     if-nez p1, :cond_7
 
     goto :goto_3
 
     :cond_7
-    invoke-virtual {p1, v0}, Lafa;->a(Llw7;)Z
+    invoke-virtual {p1, v0}, Loja;->a(Lqz7;)Z
 
     move-result v4
 
@@ -714,15 +728,15 @@
 
     const-string v4, "doForegroundWork: Using new uploader"
 
-    invoke-virtual {p1, v0, v3, v4, v6}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p1, v0, v3, v4, v6}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_8
     :goto_3
-    iput-object v6, v1, Liff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v6, v1, Lvof;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput v5, v1, Liff;->Z:I
+    iput v5, v1, Lvof;->Z:I
 
-    invoke-virtual {p0, v1}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->k(Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->k(Ljx3;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -734,14 +748,14 @@
     return-object p0
 
     :cond_a
-    sget-object p1, Ld86;->f:Lafa;
+    sget-object p1, Ljtg;->g:Loja;
 
     if-nez p1, :cond_b
 
     goto :goto_4
 
     :cond_b
-    invoke-virtual {p1, v0}, Lafa;->a(Llw7;)Z
+    invoke-virtual {p1, v0}, Loja;->a(Lqz7;)Z
 
     move-result v5
 
@@ -749,15 +763,15 @@
 
     const-string v5, "doForegroundWork: Using old uploader"
 
-    invoke-virtual {p1, v0, v3, v5, v6}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p1, v0, v3, v5, v6}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_c
     :goto_4
-    iput-object v6, v1, Liff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v6, v1, Lvof;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput v4, v1, Liff;->Z:I
+    iput v4, v1, Lvof;->Z:I
 
-    invoke-virtual {p0, v1}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->l(Lcx3;)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->l(Ljx3;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -771,228 +785,365 @@
 .end method
 
 .method public final e(Ljava/lang/Throwable;)V
-    .registers 8
+    .registers 21
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    move-object/from16 v0, p0
 
-    move-result-object v0
+    move-object/from16 v1, p1
 
-    iget-object v0, v0, Lw09;->a:Lhz8;
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
-    filled-new-array {v0, p1}, [Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v0
+    iget-object v2, v2, Lv39;->a:Lg29;
 
-    const-string v1, "UploadFileAttachWorker"
+    filled-new-array {v2, v1}, [Ljava/lang/Object;
 
-    const-string v2, "onUploadFailed: %s"
+    move-result-object v2
 
-    invoke-static {v1, v2, v0}, Ld86;->o(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    const-string v3, "UploadFileAttachWorker"
 
-    instance-of v0, p1, Lone/me/sdk/transfer/exceptions/HttpErrorException;
+    const-string v4, "onUploadFailed: %s"
 
-    if-eqz v0, :cond_0
+    invoke-static {v3, v4, v2}, Ljtg;->n(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Ldle;
+    instance-of v2, v1, Lone/me/sdk/transfer/exceptions/HttpErrorException;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    if-eqz v2, :cond_0
 
-    move-result-object v0
+    iget-object v2, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Lzte;
 
-    check-cast v0, Lrv0;
+    invoke-virtual {v2}, Lzte;->getValue()Ljava/lang/Object;
 
-    new-instance v2, Lvm5;
+    move-result-object v2
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    check-cast v2, Lfv0;
 
-    move-result-object v3
+    new-instance v4, Lwo5;
 
-    iget-object v3, v3, Lw09;->a:Lhz8;
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
-    iget-wide v3, v3, Lhz8;->b:J
+    move-result-object v5
 
-    check-cast p1, Lone/me/sdk/transfer/exceptions/HttpErrorException;
+    iget-object v5, v5, Lv39;->a:Lg29;
 
-    iget-object p1, p1, Lone/me/sdk/transfer/exceptions/HttpErrorException;->a:Lvt6;
+    iget-wide v5, v5, Lg29;->b:J
 
-    invoke-direct {v2, p1}, Lvm5;-><init>(Lvt6;)V
+    check-cast v1, Lone/me/sdk/transfer/exceptions/HttpErrorException;
 
-    invoke-virtual {v0, v2}, Lrv0;->c(Ljava/lang/Object;)V
+    iget-object v1, v1, Lone/me/sdk/transfer/exceptions/HttpErrorException;->a:Lww6;
+
+    invoke-direct {v4, v1}, Lwo5;-><init>(Lww6;)V
+
+    invoke-virtual {v2, v4}, Lfv0;->c(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    instance-of v0, p1, Lru/ok/tamtam/errors/TamErrorException;
+    instance-of v2, v1, Lru/ok/tamtam/errors/TamErrorException;
 
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_1
 
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Ldle;
+    iget-object v2, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lrv0;
-
-    new-instance v2, Lgg8;
-
-    check-cast p1, Lru/ok/tamtam/errors/TamErrorException;
-
-    iget-object p1, p1, Lru/ok/tamtam/errors/TamErrorException;->a:Ldoe;
-
-    invoke-direct {v2, p1}, Lhj0;-><init>(Ldoe;)V
-
-    invoke-virtual {v0, v2}, Lrv0;->c(Ljava/lang/Object;)V
-
-    :cond_1
-    :goto_0
-    const/high16 p1, -0x40800000    # -1.0f
-
-    iput p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->w0:F
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Ltw8;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lw09;->a:Lhz8;
-
-    iget-wide v2, v0, Lhz8;->a:J
-
-    invoke-virtual {p1, v2, v3}, Ltw8;->q(J)Lvw8;
-
-    move-result-object p1
-
-    if-eqz p1, :cond_2
-
-    iget-object v0, p1, Lvw8;->p0:Lk09;
-
-    sget-object v2, Lk09;->c:Lk09;
-
-    if-eq v0, v2, :cond_2
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Ltw8;
-
-    move-result-object v0
-
-    sget-object v1, Lbx8;->Z:Lbx8;
-
-    invoke-virtual {v0, p1, v1}, Ltw8;->x(Lvw8;Lbx8;)V
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Ltw8;
-
-    move-result-object p1
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lw09;->a:Lhz8;
-
-    iget-wide v0, v0, Lhz8;->a:J
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {v2}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
-    iget-object v2, v2, Lw09;->a:Lhz8;
+    check-cast v2, Lfv0;
 
-    iget-object v2, v2, Lhz8;->c:Ljava/lang/String;
+    new-instance v4, Lij8;
 
-    new-instance v3, Lz4f;
+    check-cast v1, Lru/ok/tamtam/errors/TamErrorException;
 
-    const/16 v4, 0xe
+    iget-object v1, v1, Lru/ok/tamtam/errors/TamErrorException;->a:Lcxe;
 
-    invoke-direct {v3, v4}, Lz4f;-><init>(I)V
+    invoke-direct {v4, v1}, Lni0;-><init>(Lcxe;)V
 
-    invoke-virtual {p1, v0, v1, v2, v3}, Ltw8;->v(JLjava/lang/String;Lim3;)V
+    invoke-virtual {v2, v4}, Lfv0;->c(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Ldle;
+    :cond_1
+    :goto_0
+    const/high16 v1, -0x40800000    # -1.0f
 
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
+    iput v1, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->B0:F
 
-    move-result-object p1
-
-    check-cast p1, Lrv0;
-
-    new-instance v0, Lxdf;
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Lsz8;
 
     move-result-object v1
 
-    iget-object v1, v1, Lw09;->a:Lhz8;
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
-    iget-wide v1, v1, Lhz8;->b:J
+    move-result-object v2
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    iget-object v2, v2, Lv39;->a:Lg29;
+
+    iget-wide v4, v2, Lg29;->a:J
+
+    invoke-virtual {v1, v4, v5}, Lsz8;->q(J)Luz8;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_2
+
+    iget-object v2, v1, Luz8;->t0:Lj39;
+
+    sget-object v4, Lj39;->c:Lj39;
+
+    if-eq v2, v4, :cond_2
+
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Lsz8;
+
+    move-result-object v2
+
+    sget-object v3, La09;->Z:La09;
+
+    invoke-virtual {v2, v1, v3}, Lsz8;->x(Luz8;La09;)V
+
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Lsz8;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lv39;->a:Lg29;
+
+    iget-wide v2, v2, Lg29;->a:J
+
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lv39;->a:Lg29;
+
+    iget-object v4, v4, Lg29;->c:Ljava/lang/String;
+
+    new-instance v5, Leef;
+
+    const/16 v6, 0xe
+
+    invoke-direct {v5, v6}, Leef;-><init>(I)V
+
+    invoke-virtual {v1, v2, v3, v4, v5}, Lsz8;->v(JLjava/lang/String;Lpm3;)V
+
+    iget-object v1, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Lzte;
+
+    invoke-virtual {v1}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lfv0;
+
+    new-instance v2, Lknf;
+
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v3
 
-    iget-object v3, v3, Lw09;->a:Lhz8;
+    iget-object v3, v3, Lv39;->a:Lg29;
 
-    iget-wide v3, v3, Lhz8;->a:J
+    iget-wide v4, v3, Lg29;->b:J
 
-    const/4 v5, 0x0
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
-    invoke-direct/range {v0 .. v5}, Lxdf;-><init>(JJI)V
+    move-result-object v3
 
-    invoke-virtual {p1, v0}, Lrv0;->c(Ljava/lang/Object;)V
+    iget-object v3, v3, Lv39;->a:Lg29;
+
+    iget-wide v6, v3, Lg29;->a:J
+
+    const/4 v3, 0x0
+
+    invoke-direct/range {v2 .. v7}, Lknf;-><init>(IJJ)V
+
+    invoke-virtual {v1, v2}, Lfv0;->c(Ljava/lang/Object;)V
 
     goto :goto_1
 
     :cond_2
-    const-string p1, "failMessageUpload: message is deleted"
+    const-string v1, "failMessageUpload: message is deleted"
 
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    invoke-static {v1, p1, v0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v3, v1, v2}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :goto_1
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->X:Ldle;
+    iget-object v1, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->X:Lzte;
 
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v1}, Lzte;->getValue()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v1
 
-    check-cast p1, Llmg;
+    check-cast v1, Ltwg;
 
-    invoke-static {p1}, Lfdd;->x(Llmg;)V
+    invoke-static {v1}, Lnld;->x(Ltwg;)V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->h()V
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->h()V
 
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Y:Ldle;
+    iget-object v1, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Y:Lzte;
 
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v1}, Lzte;->getValue()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v1
 
-    check-cast p1, Laj5;
+    check-cast v1, Lel5;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
-    move-result-object v0
+    move-result-object v2
 
-    iget-object v0, v0, Lw09;->a:Lhz8;
+    iget-object v2, v2, Lv39;->a:Lg29;
 
-    iget-wide v0, v0, Lhz8;->a:J
+    iget-wide v2, v2, Lg29;->a:J
 
-    invoke-virtual {p1, v0, v1}, Laj5;->a(J)V
+    invoke-virtual {v1, v2, v3}, Lel5;->a(J)V
 
-    invoke-static {}, Lgq7;->a()Ldq7;
+    invoke-static {}, Lkt7;->a()Lht7;
 
-    move-result-object p1
+    move-result-object v1
 
-    iput-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lgq7;
+    iput-object v1, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->C0:Lkt7;
 
+    iget-object v1, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->z0:Lzte;
+
+    invoke-virtual {v1}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/List;
+
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_3
+    :goto_2
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lad;
+
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v3
+
+    iget v3, v3, Lv39;->d:I
+
+    invoke-static {v3}, Ljtg;->b(I)Lxz;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lv39;->b:Ljava/lang/String;
+
+    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
+
+    move-result v4
+
+    int-to-long v4, v4
+
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v6
+
+    iget-object v6, v6, Lv39;->a:Lg29;
+
+    iget-wide v6, v6, Lg29;->a:J
+
+    invoke-virtual {v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v8
+
+    iget-object v8, v8, Lv39;->a:Lg29;
+
+    iget-wide v8, v8, Lg29;->b:J
+
+    move-object v10, v2
+
+    check-cast v10, Ld2g;
+
+    invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v2, Lxz;->A0:Lxz;
+
+    if-eq v3, v2, :cond_4
+
+    goto :goto_2
+
+    :cond_4
+    iget-object v2, v10, Ld2g;->c:Lcl7;
+
+    invoke-interface {v2}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lyz2;
+
+    check-cast v2, Ly03;
+
+    invoke-virtual {v2, v8, v9}, Ly03;->N(J)Liic;
+
+    move-result-object v2
+
+    iget-object v2, v2, Liic;->a:Lrce;
+
+    invoke-interface {v2}, Lrce;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ls72;
+
+    if-eqz v2, :cond_3
+
+    invoke-static {v2}, Lzxa;->b(Ls72;)Lj7e;
+
+    move-result-object v13
+
+    if-nez v13, :cond_5
+
+    goto :goto_2
+
+    :cond_5
+    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v14
+
+    sget-object v15, La2g;->Z:La2g;
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v12
+
+    const/16 v18, 0x60
+
+    const/16 v16, 0x0
+
+    const/4 v11, 0x5
+
+    const/16 v17, 0x0
+
+    invoke-static/range {v10 .. v18}, Ld2g;->a(Ld2g;ILjava/lang/Long;Lj7e;Ljava/lang/Long;Lb2g;ILjava/lang/Long;I)V
+
+    goto :goto_2
+
+    :cond_6
     return-void
 .end method
 
-.method public final g(Lz09;)V
-    .registers 13
+.method public final g(Ly39;)V
+    .registers 15
 
     const-string v0, "onUploadUpdate %s"
 
@@ -1002,23 +1153,25 @@
 
     const-string v2, "UploadFileAttachWorker"
 
-    invoke-static {v2, v0, v1}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v0, v1}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object v0, p1, Lz09;->a:Lhef;
+    iget-object v0, p1, Ly39;->a:Lvnf;
 
-    iget-object v1, v0, Lhef;->g:Lcgf;
+    iget-object v1, v0, Lvnf;->g:Lppf;
 
-    invoke-virtual {v0}, Lhef;->a()Z
+    invoke-virtual {v0}, Lvnf;->a()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    const/4 v3, 0x0
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
-    iget-object v0, v0, Lw09;->a:Lhz8;
+    iget-object v0, v0, Lv39;->a:Lg29;
 
     filled-new-array {v0, p1}, [Ljava/lang/Object;
 
@@ -1026,104 +1179,195 @@
 
     const-string v1, "onUploadSuccess: key=%s, messageUploadState=%s"
 
-    invoke-static {v2, v1, v0}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v1, v0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lw09;->a:Lhz8;
-
-    iget-wide v4, v0, Lhz8;->a:J
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
-    iget-object v0, v0, Lw09;->a:Lhz8;
+    iget-object v0, v0, Lv39;->a:Lg29;
 
-    iget-object v0, v0, Lhz8;->c:Ljava/lang/String;
+    iget-wide v8, v0, Lg29;->a:J
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lv39;->a:Lg29;
+
+    iget-object v0, v0, Lg29;->c:Ljava/lang/String;
+
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v1
 
-    iget-object v1, v1, Lw09;->a:Lhz8;
+    iget-object v1, v1, Lv39;->a:Lg29;
 
-    iget-wide v2, v1, Lhz8;->b:J
+    iget-wide v6, v1, Lg29;->b:J
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Ltw8;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Lsz8;
 
     move-result-object v1
 
-    new-instance v6, Lsef;
+    new-instance v2, Lgof;
 
-    const/4 v7, 0x2
+    const/4 v4, 0x2
 
-    invoke-direct {v6, p1, v7}, Lsef;-><init>(Lz09;I)V
+    invoke-direct {v2, p1, v4}, Lgof;-><init>(Ly39;I)V
 
-    invoke-virtual {v1, v4, v5, v0, v6}, Ltw8;->v(JLjava/lang/String;Lim3;)V
+    invoke-virtual {v1, v8, v9, v0, v2}, Lsz8;->v(JLjava/lang/String;Lpm3;)V
 
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->t0:Ldle;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lsz;
+    check-cast v0, Lzy;
 
-    new-instance v1, Lr8c;
+    new-instance v1, Lufc;
 
-    iget-object p1, p1, Lz09;->a:Lhef;
+    iget-object p1, p1, Ly39;->a:Lvnf;
 
-    iget-wide v6, p1, Lhef;->f:J
+    iget-wide v4, p1, Lvnf;->f:J
 
-    invoke-direct {v1, v4, v5, v6, v7}, Lr8c;-><init>(JJ)V
+    invoke-direct {v1, v8, v9, v4, v5}, Lufc;-><init>(JJ)V
 
-    invoke-virtual {v0, v1}, Lsz;->a(Lt8c;)V
+    invoke-virtual {v0, v1}, Lzy;->a(Lwfc;)V
 
     invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->h()V
 
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Ldle;
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Lzte;
 
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lrv0;
-
-    new-instance v1, Lxdf;
-
-    const/4 v6, 0x0
-
-    invoke-direct/range {v1 .. v6}, Lxdf;-><init>(JJI)V
-
-    invoke-virtual {p1, v1}, Lrv0;->c(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->X:Ldle;
-
-    invoke-virtual {p1}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Llmg;
+    check-cast p1, Lfv0;
 
-    invoke-static {p1}, Lfdd;->x(Llmg;)V
+    new-instance v4, Lknf;
 
-    invoke-static {}, Lgq7;->b()Lfq7;
+    const/4 v5, 0x0
+
+    invoke-direct/range {v4 .. v9}, Lknf;-><init>(IJJ)V
+
+    invoke-virtual {p1, v4}, Lfv0;->c(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->X:Lzte;
+
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lgq7;
+    check-cast p1, Ltwg;
 
-    return-void
+    invoke-static {p1}, Lnld;->x(Ltwg;)V
+
+    invoke-static {}, Lkt7;->b()Ljt7;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->C0:Lkt7;
+
+    iget-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->z0:Lzte;
+
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lad;
+
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v1
+
+    iget v1, v1, Lv39;->d:I
+
+    invoke-static {v1}, Ljtg;->b(I)Lxz;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lv39;->b:Ljava/lang/String;
+
+    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+
+    move-result v2
+
+    int-to-long v10, v2
+
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lv39;->a:Lg29;
+
+    iget-wide v8, v2, Lg29;->a:J
+
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lv39;->a:Lg29;
+
+    iget-wide v6, v2, Lg29;->b:J
+
+    move-object v5, v0
+
+    check-cast v5, Ld2g;
+
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object v0, Lxz;->A0:Lxz;
+
+    if-eq v1, v0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    sget-object v0, Lcgf;->c:Lcgf;
+    iget-object v0, v5, Ld2g;->e:Lkotlinx/coroutines/internal/ContextScope;
 
-    if-ne v1, v0, :cond_4
+    new-instance v4, Lc2g;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    const/4 v12, 0x0
+
+    invoke-direct/range {v4 .. v12}, Lc2g;-><init>(Ld2g;JJJLkotlin/coroutines/Continuation;)V
+
+    const/4 v1, 0x3
+
+    invoke-static {v0, v3, v3, v4, v1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+
+    :cond_2
+    sget-object v0, Lppf;->c:Lppf;
+
+    if-ne v1, v0, :cond_6
+
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
@@ -1133,70 +1377,70 @@
 
     const-string v1, "onUploadProgress %s, %s"
 
-    invoke-static {v2, v1, v0}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v1, v0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lw09;->a:Lhz8;
-
-    iget-wide v5, v0, Lhz8;->a:J
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
-    iget-object v0, v0, Lw09;->a:Lhz8;
+    iget-object v0, v0, Lv39;->a:Lg29;
 
-    iget-object v0, v0, Lhz8;->c:Ljava/lang/String;
+    iget-wide v6, v0, Lg29;->a:J
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v1, v1, Lw09;->a:Lhz8;
+    iget-object v0, v0, Lv39;->a:Lg29;
 
-    iget-wide v9, v1, Lhz8;->b:J
+    iget-object v0, v0, Lg29;->c:Ljava/lang/String;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Ltw8;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
-
-    move-result-object v3
-
-    iget-object v3, v3, Lw09;->a:Lhz8;
-
-    iget-wide v3, v3, Lhz8;->a:J
-
-    invoke-virtual {v1, v3, v4}, Ltw8;->q(J)Lvw8;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v1
 
-    if-eqz v1, :cond_3
+    iget-object v1, v1, Lv39;->a:Lg29;
 
-    iget-object v3, v1, Lvw8;->p0:Lk09;
+    iget-wide v10, v1, Lg29;->b:J
 
-    sget-object v4, Lk09;->c:Lk09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Lsz8;
 
-    if-eq v3, v4, :cond_3
+    move-result-object v1
 
-    iget-object v1, v1, Lvw8;->t0:Lmwg;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
-    if-eqz v1, :cond_3
+    move-result-object v4
 
-    invoke-virtual {v1}, Lmwg;->q()I
+    iget-object v4, v4, Lv39;->a:Lg29;
 
-    move-result v3
+    iget-wide v4, v4, Lg29;->a:J
 
-    if-gtz v3, :cond_1
+    invoke-virtual {v1, v4, v5}, Lsz8;->q(J)Luz8;
 
-    goto :goto_0
+    move-result-object v1
 
-    :cond_1
-    iget-object v1, v1, Lmwg;->b:Ljava/lang/Object;
+    if-eqz v1, :cond_5
+
+    iget-object v4, v1, Luz8;->t0:Lj39;
+
+    sget-object v5, Lj39;->c:Lj39;
+
+    if-eq v4, v5, :cond_5
+
+    iget-object v1, v1, Luz8;->x0:Ljwg;
+
+    if-eqz v1, :cond_5
+
+    invoke-virtual {v1}, Ljwg;->d()I
+
+    move-result v4
+
+    if-gtz v4, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    iget-object v1, v1, Ljwg;->a:Ljava/lang/Object;
 
     check-cast v1, Ljava/util/List;
 
@@ -1204,106 +1448,106 @@
 
     move-result-object v1
 
-    :cond_2
+    :cond_4
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_3
+    if-eqz v4, :cond_5
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
-
-    check-cast v3, Lw10;
-
-    iget-object v3, v3, Lw10;->r:Ljava/lang/String;
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
-
     move-result-object v4
 
-    iget-object v4, v4, Lw09;->a:Lhz8;
+    check-cast v4, Ld10;
 
-    iget-object v4, v4, Lhz8;->c:Ljava/lang/String;
+    iget-object v4, v4, Ld10;->r:Ljava/lang/String;
 
-    invoke-static {v3, v4}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
-    move-result v3
+    move-result-object v5
 
-    if-eqz v3, :cond_2
+    iget-object v5, v5, Lv39;->a:Lg29;
 
-    iget-object p1, p1, Lz09;->a:Lhef;
+    iget-object v5, v5, Lg29;->c:Ljava/lang/String;
 
-    iget-object v1, p1, Lhef;->a:Lpef;
+    invoke-static {v4, v5}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    iget v1, v1, Lpef;->c:I
+    move-result v4
 
-    invoke-static {v1}, Looa;->b(I)Lq00;
+    if-eqz v4, :cond_4
 
-    move-result-object v1
+    iget-object p1, p1, Ly39;->a:Lvnf;
 
-    invoke-virtual {p0, v1}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->i(Lq00;)V
+    iget-object v1, p1, Lvnf;->a:Ldof;
 
-    iget v1, p1, Lhef;->e:F
+    iget v1, v1, Ldof;->c:I
 
-    iput v1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->w0:F
-
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Ltw8;
+    invoke-static {v1}, Ljtg;->b(I)Lxz;
 
     move-result-object v1
 
-    new-instance v2, Lmef;
+    invoke-virtual {p0, v1}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->i(Lxz;)V
+
+    iget v1, p1, Lvnf;->e:F
+
+    iput v1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->B0:F
+
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c()Lsz8;
+
+    move-result-object v1
+
+    new-instance v2, Laof;
 
     const/4 v3, 0x2
 
-    invoke-direct {v2, p1, v3}, Lmef;-><init>(Lhef;I)V
+    invoke-direct {v2, p1, v3}, Laof;-><init>(Lvnf;I)V
 
-    invoke-virtual {v1, v5, v6, v0, v2}, Ltw8;->v(JLjava/lang/String;Lim3;)V
+    invoke-virtual {v1, v6, v7, v0, v2}, Lsz8;->v(JLjava/lang/String;Lpm3;)V
 
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->t0:Ldle;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lsz;
+    check-cast v0, Lzy;
 
-    iget v4, p1, Lhef;->e:F
+    iget v5, p1, Lvnf;->e:F
 
-    iget-wide v7, p1, Lhef;->f:J
+    iget-wide v8, p1, Lvnf;->f:J
 
-    new-instance v3, Ls8c;
+    new-instance v4, Lvfc;
 
-    invoke-direct/range {v3 .. v8}, Ls8c;-><init>(FJJ)V
+    invoke-direct/range {v4 .. v9}, Lvfc;-><init>(FJJ)V
 
-    invoke-virtual {v0, v3}, Lsz;->a(Lt8c;)V
+    invoke-virtual {v0, v4}, Lzy;->a(Lwfc;)V
 
-    iget-object p0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Ldle;
+    iget-object p0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->c:Lzte;
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lrv0;
+    check-cast p0, Lfv0;
 
-    new-instance v3, Lxdf;
+    new-instance v4, Lknf;
 
-    const/4 v8, 0x0
+    const/4 v5, 0x0
 
-    move-wide v6, v5
+    move-wide v8, v6
 
-    move-wide v4, v9
+    move-wide v6, v10
 
-    invoke-direct/range {v3 .. v8}, Lxdf;-><init>(JJI)V
+    invoke-direct/range {v4 .. v9}, Lknf;-><init>(IJJ)V
 
-    invoke-virtual {p0, v3}, Lrv0;->c(Ljava/lang/Object;)V
+    invoke-virtual {p0, v4}, Lfv0;->c(Ljava/lang/Object;)V
 
     return-void
 
-    :cond_3
-    :goto_0
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    :cond_5
+    :goto_1
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object p1
 
@@ -1317,34 +1561,32 @@
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    const-string v0, "cancelUploadIfMessageIsDeleted: message or attach is deleted %s"
 
-    const-string v1, "cancelUploadIfMessageIsDeleted: message or attach is deleted %s"
-
-    invoke-static {v2, v0, v1, p1}, Ld86;->G(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v3, v0, p1}, Ljtg;->P(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->h()V
 
-    invoke-static {}, Lgq7;->a()Ldq7;
+    invoke-static {}, Lkt7;->a()Lht7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lgq7;
+    iput-object p1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->C0:Lkt7;
 
     return-void
 
-    :cond_4
+    :cond_6
     new-instance v0, Ljava/lang/Throwable;
 
     const-string v1, "Internal error. Unknown upload state"
 
     invoke-direct {v0, v1}, Ljava/lang/Throwable;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v1
 
-    iget-object v1, v1, Lw09;->a:Lhz8;
+    iget-object v1, v1, Lv39;->a:Lg29;
 
     filled-new-array {v1, p1}, [Ljava/lang/Object;
 
@@ -1352,7 +1594,7 @@
 
     const-string v1, "onUploadUpdate: failed. Unknown upload state. key=%s, state=%s"
 
-    invoke-static {v2, v0, v1, p1}, Ld86;->p(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v2, v0, v1, p1}, Ljtg;->o(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
 
     invoke-virtual {p0, v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->e(Ljava/lang/Throwable;)V
 
@@ -1362,13 +1604,13 @@
 .method public final getName()Ljava/lang/String;
     .registers 2
 
-    invoke-virtual {p0}, Lhq7;->getInputData()Lb64;
+    invoke-virtual {p0}, Llt7;->getInputData()Lp64;
 
     move-result-object p0
 
     const-string v0, "workName"
 
-    invoke-virtual {p0, v0}, Lb64;->e(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lp64;->e(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -1383,7 +1625,7 @@
 .method public final h()V
     .registers 8
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
@@ -1395,9 +1637,9 @@
 
     const-string v2, "removeUpload %s"
 
-    invoke-static {v1, v2, v0}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v2, v0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
@@ -1407,25 +1649,25 @@
 
     const-string v2, "stopTyping %s"
 
-    invoke-static {v1, v2, v0}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v2, v0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Z:Ldle;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Z:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Leb2;
+    check-cast v0, Lza2;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v2
 
-    iget-object v2, v2, Lw09;->a:Lhz8;
+    iget-object v2, v2, Lv39;->a:Lg29;
 
-    iget-wide v2, v2, Lhz8;->b:J
+    iget-wide v2, v2, Lg29;->b:J
 
-    invoke-virtual {v0, v2, v3}, Leb2;->C(J)Lo72;
+    invoke-virtual {v0, v2, v3}, Lza2;->C(J)Ls72;
 
     move-result-object v0
 
@@ -1434,74 +1676,74 @@
     goto :goto_0
 
     :cond_0
-    iget-object v2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->n0:Ldle;
+    iget-object v2, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->r0:Lzte;
 
-    invoke-virtual {v2}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v2}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lcqa;
+    check-cast v2, Lxva;
 
-    iget-object v0, v0, Lo72;->b:Lac2;
+    iget-object v0, v0, Ls72;->b:Lvb2;
 
-    iget-wide v3, v0, Lac2;->a:J
+    iget-wide v3, v0, Lvb2;->a:J
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
-    iget-object v0, v0, Lw09;->a:Lhz8;
+    iget-object v0, v0, Lv39;->a:Lg29;
 
-    iget-wide v5, v0, Lhz8;->a:J
+    iget-wide v5, v0, Lg29;->a:J
 
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-static {v3, v4, v5, v6}, Lcqa;->b(JJ)V
+    invoke-static {v3, v4, v5, v6}, Lxva;->b(JJ)V
 
     :goto_0
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->v0:Ljh7;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->A0:Lok7;
 
     if-eqz v0, :cond_1
 
-    invoke-static {v0}, Lrp4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+    invoke-static {v0}, Lsq4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
 
     :cond_1
     :try_start_0
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b:Ldle;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ld19;
+    check-cast v0, Lc49;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v2
 
-    iget-object v2, v2, Lw09;->a:Lhz8;
+    iget-object v2, v2, Lv39;->a:Lg29;
 
-    invoke-virtual {v0}, Ld19;->b()Lmud;
+    invoke-virtual {v0}, Lc49;->b()Lu2e;
 
     move-result-object v0
 
-    new-instance v3, Lrw8;
+    new-instance v3, Ljy8;
 
-    const/4 v4, 0x3
+    const/4 v4, 0x4
 
-    invoke-direct {v3, v4, v2}, Lrw8;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v3, v4, v2}, Ljy8;-><init>(ILjava/lang/Object;)V
 
-    new-instance v2, Lzb3;
+    new-instance v2, Lic3;
 
-    const/4 v4, 0x3
+    const/4 v4, 0x2
 
-    invoke-direct {v2, v0, v4, v3}, Lzb3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v2, v0, v4, v3}, Lic3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    invoke-virtual {v2}, Lyb3;->a()V
+    invoke-virtual {v2}, Lhc3;->a()V
 
     const-string v0, "removeUploadFromStorage: success %s"
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object p0
 
@@ -1509,7 +1751,7 @@
 
     move-result-object p0
 
-    invoke-static {v1, v0, p0}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v0, p0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -1520,15 +1762,15 @@
 
     const-string v0, "removeUploadFromStorage failure"
 
-    invoke-static {v1, v0, p0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, v0, p0}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method
 
-.method public final i(Lq00;)V
+.method public final i(Lxz;)V
     .registers 10
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
@@ -1540,25 +1782,25 @@
 
     const-string v2, "sendTyping %s"
 
-    invoke-static {v1, v2, v0}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v1, v2, v0}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Z:Ldle;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->Z:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Leb2;
+    check-cast v0, Lza2;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v1
 
-    iget-object v1, v1, Lw09;->a:Lhz8;
+    iget-object v1, v1, Lv39;->a:Lg29;
 
-    iget-wide v1, v1, Lhz8;->b:J
+    iget-wide v1, v1, Lg29;->b:J
 
-    invoke-virtual {v0, v1, v2}, Leb2;->C(J)Lo72;
+    invoke-virtual {v0, v1, v2}, Lza2;->C(J)Ls72;
 
     move-result-object v0
 
@@ -1567,31 +1809,31 @@
     return-void
 
     :cond_0
-    iget-object v1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->n0:Ldle;
+    iget-object v1, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->r0:Lzte;
 
-    invoke-virtual {v1}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v1}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
     move-object v2, v1
 
-    check-cast v2, Lcqa;
+    check-cast v2, Lxva;
 
-    iget-object v0, v0, Lo72;->b:Lac2;
+    iget-object v0, v0, Ls72;->b:Lvb2;
 
-    iget-wide v3, v0, Lac2;->a:J
+    iget-wide v3, v0, Lvb2;->a:J
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object p0
 
-    iget-object p0, p0, Lw09;->a:Lhz8;
+    iget-object p0, p0, Lv39;->a:Lg29;
 
-    iget-wide v6, p0, Lhz8;->a:J
+    iget-wide v6, p0, Lg29;->a:J
 
     move-object v5, p1
 
-    invoke-virtual/range {v2 .. v7}, Lcqa;->f(JLq00;J)V
+    invoke-virtual/range {v2 .. v7}, Lxva;->f(JLxz;J)V
 
     return-void
 .end method
@@ -1603,19 +1845,19 @@
 
     const-string v1, "startUpload"
 
-    invoke-static {v0, v1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
-
-    move-result-object v0
-
-    iget v0, v0, Lw09;->d:I
-
-    invoke-static {v0}, Looa;->b(I)Lq00;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
-    sget-object v1, Lq00;->b:Lq00;
+    iget v0, v0, Lv39;->d:I
+
+    invoke-static {v0}, Ljtg;->b(I)Lxz;
+
+    move-result-object v0
+
+    sget-object v1, Lxz;->b:Lxz;
 
     if-ne v0, v1, :cond_0
 
@@ -1630,73 +1872,71 @@
     return-void
 
     :cond_0
-    invoke-virtual {p0, v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->i(Lq00;)V
+    invoke-virtual {p0, v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->i(Lxz;)V
 
-    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->o0:Ldle;
+    iget-object v0, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->s0:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lsff;
+    check-cast v0, Lfpf;
 
-    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {p0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lsff;->a(Lw09;)Lo1a;
+    invoke-virtual {v0, v1}, Lfpf;->a(Lv39;)Lo5a;
 
     move-result-object v0
 
-    sget-object v1, Ldyc;->d:Lw3f;
+    sget-object v1, Li6d;->d:Lzcf;
 
-    invoke-virtual {v0, v1}, Ly0a;->l(Lqxc;)Lu2a;
+    invoke-virtual {v0, v1}, Ly4a;->k(Lv5d;)Lu6a;
 
     move-result-object v0
 
-    new-instance v1, Lm1e;
+    new-instance v1, Lxge;
 
-    const/16 v2, 0x1d
+    const/4 v2, 0x3
 
-    invoke-direct {v1, v2, p0}, Lm1e;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v1, v2, p0}, Lxge;-><init>(ILjava/lang/Object;)V
 
-    new-instance v2, Lvtf;
+    new-instance v2, Lidf;
 
-    const/16 v3, 0x1c
+    invoke-direct {v2, p0}, Lidf;-><init>(Ljava/lang/Object;)V
 
-    invoke-direct {v2, v3, p0}, Lvtf;-><init>(ILjava/lang/Object;)V
+    sget-object v3, Lvyg;->c:Lgd6;
 
-    sget-object v3, Lr7;->f:Loa6;
+    new-instance v4, Lok7;
 
-    new-instance v4, Ljh7;
+    invoke-direct {v4, v1, v2, v3}, Lok7;-><init>(Lpm3;Lpm3;Lc6;)V
 
-    invoke-direct {v4, v1, v2, v3}, Ljh7;-><init>(Lim3;Lim3;Lz5;)V
+    invoke-virtual {v0, v4}, Ly4a;->a(Ld8a;)V
 
-    invoke-virtual {v0, v4}, Ly0a;->a(Ld4a;)V
-
-    iput-object v4, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->v0:Ljh7;
+    iput-object v4, p0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->A0:Lok7;
 
     return-void
 .end method
 
-.method public final k(Lcx3;)Ljava/lang/Object;
+.method public final k(Ljx3;)Ljava/lang/Object;
     .registers 26
 
     move-object/from16 v0, p0
 
     move-object/from16 v1, p1
 
-    sget-object v2, Llw7;->o:Llw7;
+    sget-object v2, Lqz7;->o:Lqz7;
 
-    instance-of v3, v1, Llff;
+    instance-of v3, v1, Lyof;
 
     if-eqz v3, :cond_0
 
     move-object v3, v1
 
-    check-cast v3, Llff;
+    check-cast v3, Lyof;
 
-    iget v4, v3, Llff;->n0:I
+    iget v4, v3, Lyof;->r0:I
 
     const/high16 v5, -0x80000000
 
@@ -1706,21 +1946,21 @@
 
     sub-int/2addr v4, v5
 
-    iput v4, v3, Llff;->n0:I
+    iput v4, v3, Lyof;->r0:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v3, Llff;
+    new-instance v3, Lyof;
 
-    invoke-direct {v3, v0, v1}, Llff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lcx3;)V
+    invoke-direct {v3, v0, v1}, Lyof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Ljx3;)V
 
     :goto_0
-    iget-object v1, v3, Llff;->Y:Ljava/lang/Object;
+    iget-object v1, v3, Lyof;->Y:Ljava/lang/Object;
 
-    sget-object v4, Ls04;->a:Ls04;
+    sget-object v4, Lz04;->a:Lz04;
 
-    iget v5, v3, Llff;->n0:I
+    iget v5, v3, Lyof;->r0:I
 
     const-string v6, "UploadFileAttachWorker"
 
@@ -1736,11 +1976,11 @@
 
     if-ne v5, v7, :cond_1
 
-    iget-wide v4, v3, Llff;->X:J
+    iget-wide v4, v3, Lyof;->X:J
 
-    iget-object v0, v3, Llff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iget-object v0, v3, Lyof;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    invoke-static {v1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {v1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto/16 :goto_5
 
@@ -1754,9 +1994,9 @@
     throw v0
 
     :cond_2
-    iget-object v0, v3, Llff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iget-object v0, v3, Lyof;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    invoke-static {v1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {v1}, Lqe5;->V(Ljava/lang/Object;)V
 
     :cond_3
     move-object v12, v0
@@ -1764,16 +2004,16 @@
     goto :goto_3
 
     :cond_4
-    invoke-static {v1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {v1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    sget-object v1, Ld86;->f:Lafa;
+    sget-object v1, Ljtg;->g:Loja;
 
     if-nez v1, :cond_5
 
     goto :goto_1
 
     :cond_5
-    invoke-virtual {v1, v2}, Lafa;->a(Llw7;)Z
+    invoke-virtual {v1, v2}, Loja;->a(Lqz7;)Z
 
     move-result v5
 
@@ -1781,33 +2021,33 @@
 
     const-string v5, "Started foreground uploading"
 
-    invoke-virtual {v1, v2, v6, v5, v9}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v2, v6, v5, v9}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_6
     :goto_1
-    iput-object v0, v3, Llff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v0, v3, Lyof;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput v8, v3, Llff;->n0:I
+    iput v8, v3, Lyof;->r0:I
 
-    iget-object v1, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->s0:Ldle;
+    iget-object v1, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->w0:Lzte;
 
-    invoke-virtual {v1}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lzne;
-
-    check-cast v1, Ltba;
-
-    invoke-virtual {v1}, Ltba;->b()Ll04;
+    invoke-virtual {v1}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    new-instance v5, Lkff;
+    check-cast v1, Lxwe;
 
-    invoke-direct {v5, v0, v9}, Lkff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
+    check-cast v1, Laga;
 
-    invoke-static {v1, v5, v3}, Las3;->m0(Lj04;Lx96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v1}, Laga;->b()Ls04;
+
+    move-result-object v1
+
+    new-instance v5, Lxof;
+
+    invoke-direct {v5, v0, v9}, Lxof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v1, v5, v3}, Lvyg;->H(Lq04;Lpc6;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -1816,7 +2056,7 @@
     goto :goto_2
 
     :cond_7
-    sget-object v1, Lncf;->a:Lncf;
+    sget-object v1, Lylf;->a:Lylf;
 
     :goto_2
     if-ne v1, v4, :cond_3
@@ -1824,17 +2064,17 @@
     goto/16 :goto_4
 
     :goto_3
-    invoke-virtual {v12}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {v12}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v0
 
-    iget v0, v0, Lw09;->d:I
+    iget v0, v0, Lv39;->d:I
 
-    invoke-static {v0}, Looa;->b(I)Lq00;
+    invoke-static {v0}, Ljtg;->b(I)Lxz;
 
     move-result-object v0
 
-    sget-object v1, Lq00;->b:Lq00;
+    sget-object v1, Lxz;->b:Lxz;
 
     if-ne v0, v1, :cond_9
 
@@ -1846,7 +2086,7 @@
 
     invoke-virtual {v12, v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->e(Ljava/lang/Throwable;)V
 
-    iget-object v0, v12, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lgq7;
+    iget-object v0, v12, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->C0:Lkt7;
 
     if-eqz v0, :cond_8
 
@@ -1862,141 +2102,141 @@
     throw v0
 
     :cond_9
-    invoke-virtual {v12, v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->i(Lq00;)V
+    invoke-virtual {v12, v0}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->i(Lxz;)V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    new-instance v5, Lwhc;
+    new-instance v5, Lhpc;
 
     invoke-direct {v5}, Ljava/lang/Object;-><init>()V
 
     const-wide/16 v10, -0x1
 
-    iput-wide v10, v5, Lwhc;->a:J
+    iput-wide v10, v5, Lhpc;->a:J
 
-    iget-object v10, v12, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->p0:Ldle;
+    iget-object v10, v12, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->t0:Lzte;
 
-    invoke-virtual {v10}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v10}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v10
 
-    check-cast v10, Lzje;
+    check-cast v10, Lwse;
 
-    invoke-virtual {v12}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lw09;
+    invoke-virtual {v12}, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->b()Lv39;
 
     move-result-object v11
 
     invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    new-instance v13, Lf01;
+    new-instance v13, Luz0;
 
     const/16 v14, 0xb
 
-    invoke-direct {v13, v14, v11}, Lf01;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v13, v14, v11}, Luz0;-><init>(ILjava/lang/Object;)V
 
-    new-instance v14, Lxje;
+    new-instance v14, Luse;
 
-    invoke-direct {v14, v10, v9}, Lxje;-><init>(Lzje;Lkotlin/coroutines/Continuation;)V
+    invoke-direct {v14, v10, v9}, Luse;-><init>(Lwse;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v13, v14}, Lfog;->y(Lfq5;Lx96;)Lxv2;
+    invoke-static {v13, v14}, Lo97;->c0(Lis5;Lpc6;)Lzv2;
 
     move-result-object v13
 
-    new-instance v14, Lwje;
+    new-instance v14, Ltse;
 
     const/4 v15, 0x0
 
-    invoke-direct {v14, v13, v10, v15}, Lwje;-><init>(Lxv2;Lzje;I)V
+    invoke-direct {v14, v13, v10, v15}, Ltse;-><init>(Lzv2;Lwse;I)V
 
-    new-instance v16, Lf3b;
+    new-instance v16, Lj8b;
 
-    iget-object v13, v10, Lzje;->b:Lxh7;
+    iget-object v13, v10, Lwse;->b:Lcl7;
 
-    invoke-interface {v13}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {v13}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v13
 
     move-object/from16 v18, v13
 
-    check-cast v18, Ltje;
+    check-cast v18, Lqse;
 
     const/16 v22, 0x4
 
-    const/16 v23, 0x18
+    const/16 v23, 0x19
 
     const/16 v17, 0x2
 
-    const-class v19, Ltje;
+    const-class v19, Lqse;
 
     const-string v20, "upload"
 
     const-string v21, "upload(Lone/me/sdk/transfer/domain/UploadData;)Lkotlinx/coroutines/flow/Flow;"
 
-    invoke-direct/range {v16 .. v23}, Lf3b;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+    invoke-direct/range {v16 .. v23}, Lj8b;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
 
     move-object/from16 v13, v16
 
-    invoke-static {v14, v13}, Lfog;->y(Lfq5;Lx96;)Lxv2;
+    invoke-static {v14, v13}, Lo97;->c0(Lis5;Lpc6;)Lzv2;
 
     move-result-object v13
 
-    new-instance v14, Lwje;
+    new-instance v14, Ltse;
 
-    invoke-direct {v14, v13, v10, v8}, Lwje;-><init>(Lxv2;Lzje;I)V
+    invoke-direct {v14, v13, v10, v8}, Ltse;-><init>(Lzv2;Lwse;I)V
 
-    new-instance v13, Lk34;
+    new-instance v13, Lq34;
 
     const/16 v15, 0xa
 
-    invoke-direct {v13, v10, v11, v9, v15}, Lk34;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
+    invoke-direct {v13, v10, v11, v9, v15}, Lq34;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
 
-    new-instance v11, Lrq5;
+    new-instance v11, Lus5;
 
-    invoke-direct {v11, v14, v13}, Lrq5;-><init>(Lfq5;Lz96;)V
+    invoke-direct {v11, v14, v13}, Lus5;-><init>(Lis5;Lrc6;)V
 
-    new-instance v13, Lije;
+    new-instance v13, Lfse;
 
-    invoke-direct {v13, v10, v9, v8}, Lije;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
+    invoke-direct {v13, v10, v9, v8}, Lfse;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
 
-    new-instance v14, Lrq5;
+    new-instance v14, Lus5;
 
-    invoke-direct {v14, v11, v13}, Lrq5;-><init>(Lfq5;Lba6;)V
+    invoke-direct {v14, v11, v13}, Lus5;-><init>(Lis5;Ltc6;)V
 
-    iget-object v10, v10, Lzje;->a:Lxh7;
+    iget-object v10, v10, Lwse;->a:Lcl7;
 
-    invoke-interface {v10}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v10
-
-    check-cast v10, Lzne;
-
-    check-cast v10, Ltba;
-
-    invoke-virtual {v10}, Ltba;->b()Ll04;
+    invoke-interface {v10}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object v10
 
-    invoke-static {v14, v10}, Lfog;->A(Lfq5;Lj04;)Lfq5;
+    check-cast v10, Lxwe;
+
+    check-cast v10, Laga;
+
+    invoke-virtual {v10}, Laga;->b()Ls04;
 
     move-result-object v10
 
-    new-instance v11, Lmff;
+    invoke-static {v14, v10}, Lo97;->e0(Lis5;Lq04;)Lis5;
 
-    invoke-direct {v11, v12, v9}, Lmff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
+    move-result-object v10
 
-    new-instance v13, Ljn3;
+    new-instance v11, Lzof;
 
-    const/4 v14, 0x4
+    invoke-direct {v11, v12, v9}, Lzof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
 
-    invoke-direct {v13, v10, v14, v11}, Ljn3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    new-instance v13, Lap3;
 
-    new-instance v10, Lf3b;
+    const/4 v14, 0x3
+
+    invoke-direct {v13, v10, v14, v11}, Lap3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    new-instance v10, Lj8b;
 
     const/16 v16, 0x4
 
-    const/16 v17, 0x1b
+    const/16 v17, 0x1c
 
     const/4 v11, 0x2
 
@@ -2014,49 +2254,49 @@
 
     move-object/from16 v7, v18
 
-    invoke-direct/range {v10 .. v17}, Lf3b;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+    invoke-direct/range {v10 .. v17}, Lj8b;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
 
-    new-instance v11, Lks5;
+    new-instance v11, Lnu5;
 
-    invoke-direct {v11, v7, v10, v8}, Lks5;-><init>(Lfq5;Lx96;I)V
+    invoke-direct {v11, v7, v10, v8}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    sget v7, Llw4;->o:I
+    sget v7, Lfy4;->o:I
 
     const/16 v7, 0x1f4
 
-    sget-object v8, Lqw4;->c:Lqw4;
+    sget-object v8, Lky4;->c:Lky4;
 
-    invoke-static {v7, v8}, Lg5e;->G(ILqw4;)J
+    invoke-static {v7, v8}, Lr94;->b0(ILky4;)J
 
     move-result-wide v7
 
-    invoke-static {v11, v7, v8}, Lkbf;->M(Lfq5;J)Lw52;
+    invoke-static {v11, v7, v8}, Lla6;->E(Lis5;J)La62;
 
     move-result-object v7
 
-    new-instance v8, Lk2b;
+    new-instance v8, Lc9b;
 
     const/16 v10, 0x19
 
-    invoke-direct {v8, v12, v9, v10}, Lk2b;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
+    invoke-direct {v8, v12, v9, v10}, Lc9b;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;I)V
 
-    new-instance v10, Lqr5;
+    new-instance v10, Ltt5;
 
-    invoke-direct {v10, v7, v8}, Lqr5;-><init>(Lfq5;Lz96;)V
+    invoke-direct {v10, v7, v8}, Ltt5;-><init>(Lis5;Lrc6;)V
 
-    new-instance v7, Loff;
+    new-instance v7, Lbpf;
 
-    invoke-direct {v7, v12, v5}, Loff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lwhc;)V
+    invoke-direct {v7, v12, v5}, Lbpf;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lhpc;)V
 
-    iput-object v12, v3, Llff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v12, v3, Lyof;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput-wide v0, v3, Llff;->X:J
+    iput-wide v0, v3, Lyof;->X:J
 
     const/4 v5, 0x2
 
-    iput v5, v3, Llff;->n0:I
+    iput v5, v3, Lyof;->r0:I
 
-    invoke-virtual {v10, v7, v3}, Lqr5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v10, v7, v3}, Ltt5;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -2077,20 +2317,20 @@
 
     sub-long/2addr v7, v4
 
-    sget-object v1, Ld86;->f:Lafa;
+    sget-object v1, Ljtg;->g:Loja;
 
     if-nez v1, :cond_b
 
     goto :goto_6
 
     :cond_b
-    invoke-virtual {v1, v2}, Lafa;->a(Llw7;)Z
+    invoke-virtual {v1, v2}, Loja;->a(Lqz7;)Z
 
     move-result v3
 
     if-eqz v3, :cond_c
 
-    iget-object v3, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lgq7;
+    iget-object v3, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->C0:Lkt7;
 
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -2110,15 +2350,15 @@
 
     move-result-object v3
 
-    invoke-virtual {v1, v2, v6, v3, v9}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v2, v6, v3, v9}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_c
     :goto_6
-    iget-object v0, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lgq7;
+    iget-object v0, v0, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->C0:Lkt7;
 
     if-nez v0, :cond_d
 
-    invoke-static {}, Lgq7;->a()Ldq7;
+    invoke-static {}, Lkt7;->a()Lht7;
 
     move-result-object v0
 
@@ -2126,22 +2366,22 @@
     return-object v0
 .end method
 
-.method public final l(Lcx3;)Ljava/lang/Object;
+.method public final l(Ljx3;)Ljava/lang/Object;
     .registers 23
 
     move-object/from16 v1, p0
 
     move-object/from16 v0, p1
 
-    instance-of v2, v0, Lpff;
+    instance-of v2, v0, Lcpf;
 
     if-eqz v2, :cond_0
 
     move-object v2, v0
 
-    check-cast v2, Lpff;
+    check-cast v2, Lcpf;
 
-    iget v3, v2, Lpff;->p0:I
+    iget v3, v2, Lcpf;->t0:I
 
     const/high16 v4, -0x80000000
 
@@ -2151,21 +2391,21 @@
 
     sub-int/2addr v3, v4
 
-    iput v3, v2, Lpff;->p0:I
+    iput v3, v2, Lcpf;->t0:I
 
     goto :goto_0
 
     :cond_0
-    new-instance v2, Lpff;
+    new-instance v2, Lcpf;
 
-    invoke-direct {v2, v1, v0}, Lpff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lcx3;)V
+    invoke-direct {v2, v1, v0}, Lcpf;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Ljx3;)V
 
     :goto_0
-    iget-object v0, v2, Lpff;->n0:Ljava/lang/Object;
+    iget-object v0, v2, Lcpf;->r0:Ljava/lang/Object;
 
-    sget-object v3, Ls04;->a:Ls04;
+    sget-object v3, Lz04;->a:Lz04;
 
-    iget v4, v2, Lpff;->p0:I
+    iget v4, v2, Lcpf;->t0:I
 
     const/4 v7, 0x5
 
@@ -2193,16 +2433,16 @@
 
     if-ne v4, v7, :cond_2
 
-    iget-wide v14, v2, Lpff;->Z:J
+    iget-wide v14, v2, Lcpf;->Z:J
 
     const-wide/16 v16, -0x1
 
-    iget-wide v5, v2, Lpff;->Y:J
+    iget-wide v5, v2, Lcpf;->Y:J
 
-    iget-object v1, v2, Lpff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iget-object v1, v2, Lcpf;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
     :try_start_0
-    invoke-static {v0}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {v0}, Lqe5;->V(Ljava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2228,14 +2468,14 @@
     :cond_3
     const-wide/16 v16, -0x1
 
-    iget-wide v4, v2, Lpff;->Z:J
+    iget-wide v4, v2, Lcpf;->Z:J
 
-    iget-wide v14, v2, Lpff;->Y:J
+    iget-wide v14, v2, Lcpf;->Y:J
 
-    iget-object v1, v2, Lpff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iget-object v1, v2, Lcpf;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
     :try_start_1
-    invoke-static {v0}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {v0}, Lqe5;->V(Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -2244,16 +2484,16 @@
     :cond_4
     const-wide/16 v16, -0x1
 
-    iget-wide v4, v2, Lpff;->Z:J
+    iget-wide v4, v2, Lcpf;->Z:J
 
-    iget-wide v14, v2, Lpff;->Y:J
+    iget-wide v14, v2, Lcpf;->Y:J
 
-    iget-object v1, v2, Lpff;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iget-object v1, v2, Lcpf;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iget-object v6, v2, Lpff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iget-object v6, v2, Lcpf;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
     :try_start_2
-    invoke-static {v0}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {v0}, Lqe5;->V(Ljava/lang/Object;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
@@ -2283,12 +2523,12 @@
     :cond_5
     const-wide/16 v16, -0x1
 
-    iget-wide v4, v2, Lpff;->Y:J
+    iget-wide v4, v2, Lcpf;->Y:J
 
-    iget-object v1, v2, Lpff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iget-object v1, v2, Lcpf;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
     :try_start_3
-    invoke-static {v0}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {v0}, Lqe5;->V(Ljava/lang/Object;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -2297,10 +2537,10 @@
     :cond_6
     const-wide/16 v16, -0x1
 
-    iget-object v1, v2, Lpff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iget-object v1, v2, Lcpf;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
     :try_start_4
-    invoke-static {v0}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {v0}, Lqe5;->V(Ljava/lang/Object;)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
@@ -2309,36 +2549,36 @@
     :cond_7
     const-wide/16 v16, -0x1
 
-    invoke-static {v0}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {v0}, Lqe5;->V(Ljava/lang/Object;)V
 
     :try_start_5
     const-string v0, "doWork"
 
-    invoke-static {v12, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v12, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
-    iput-object v1, v2, Lpff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v1, v2, Lcpf;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput v10, v2, Lpff;->p0:I
+    iput v10, v2, Lcpf;->t0:I
 
-    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->s0:Ldle;
+    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->w0:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lzne;
-
-    check-cast v0, Ltba;
-
-    invoke-virtual {v0}, Ltba;->b()Ll04;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v4, Lkff;
+    check-cast v0, Lxwe;
 
-    invoke-direct {v4, v1, v11}, Lkff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
+    check-cast v0, Laga;
 
-    invoke-static {v0, v4, v2}, Las3;->m0(Lj04;Lx96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v0}, Laga;->b()Ls04;
+
+    move-result-object v0
+
+    new-instance v4, Lxof;
+
+    invoke-direct {v4, v1, v11}, Lxof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, v4, v2}, Lvyg;->H(Lq04;Lpc6;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2347,7 +2587,7 @@
     goto :goto_1
 
     :cond_8
-    sget-object v0, Lncf;->a:Lncf;
+    sget-object v0, Lylf;->a:Lylf;
 
     :goto_1
     if-ne v0, v3, :cond_9
@@ -2365,13 +2605,13 @@
     move-wide/from16 v14, v16
 
     :goto_3
-    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lgq7;
+    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->C0:Lkt7;
 
     if-nez v0, :cond_f
 
     const-string v0, "progress =%f"
 
-    iget v6, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->w0:F
+    iget v6, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->B0:F
 
     new-instance v10, Ljava/lang/Float;
 
@@ -2381,11 +2621,11 @@
 
     move-result-object v6
 
-    invoke-static {v12, v0, v6}, Ld86;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v12, v0, v6}, Ljtg;->k(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    iget v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->w0:F
+    iget v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->B0:F
 
-    invoke-static {v0}, Lg53;->C(F)I
+    invoke-static {v0}, Lya6;->G(F)I
 
     move-result v0
 
@@ -2401,31 +2641,31 @@
 
     if-nez v0, :cond_b
 
-    iput-object v1, v2, Lpff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v1, v2, Lcpf;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput-wide v4, v2, Lpff;->Y:J
+    iput-wide v4, v2, Lcpf;->Y:J
 
-    iput v9, v2, Lpff;->p0:I
+    iput v9, v2, Lcpf;->t0:I
 
-    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->s0:Ldle;
+    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->w0:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lzne;
-
-    check-cast v0, Ltba;
-
-    invoke-virtual {v0}, Ltba;->b()Ll04;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    new-instance v6, Ljff;
+    check-cast v0, Lxwe;
 
-    invoke-direct {v6, v1, v11}, Ljff;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
+    check-cast v0, Laga;
 
-    invoke-static {v0, v6, v2}, Las3;->m0(Lj04;Lx96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v0}, Laga;->b()Ls04;
+
+    move-result-object v0
+
+    new-instance v6, Lwof;
+
+    invoke-direct {v6, v1, v11}, Lwof;-><init>(Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, v6, v2}, Lvyg;->H(Lq04;Lpc6;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2442,17 +2682,17 @@
     move-result-wide v14
 
     :cond_b
-    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->r0:Ldle;
+    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->v0:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lt9b;
+    check-cast v0, Lqgb;
 
-    check-cast v0, Lw9b;
+    check-cast v0, Ltgb;
 
-    iget-object v0, v0, Lw9b;->b:Lrbd;
+    iget-object v0, v0, Ltgb;->b:Lyjd;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -2462,7 +2702,7 @@
 
     int-to-long v9, v10
 
-    invoke-virtual {v0, v6, v9, v10}, Li2d;->n(Ljava/lang/Enum;J)J
+    invoke-virtual {v0, v6, v9, v10}, Lpad;->o(Ljava/lang/Enum;J)J
 
     move-result-wide v9
 
@@ -2474,15 +2714,15 @@
 
     if-lez v0, :cond_e
 
-    iput-object v1, v2, Lpff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v1, v2, Lcpf;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput-object v1, v2, Lpff;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v1, v2, Lcpf;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput-wide v4, v2, Lpff;->Y:J
+    iput-wide v4, v2, Lcpf;->Y:J
 
-    iput-wide v14, v2, Lpff;->Z:J
+    iput-wide v14, v2, Lcpf;->Z:J
 
-    iput v8, v2, Lpff;->p0:I
+    iput v8, v2, Lcpf;->t0:I
 
     invoke-virtual {v1, v2}, Lru/ok/tamtam/upload/workers/ForegroundWorker;->getForegroundInfo(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
@@ -2500,19 +2740,19 @@
     move-object v2, v1
 
     :goto_5
-    check-cast v0, Le26;
+    check-cast v0, Lh46;
 
-    iput-object v1, v4, Lpff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v1, v4, Lcpf;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput-object v11, v4, Lpff;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v11, v4, Lcpf;->X:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput-wide v5, v4, Lpff;->Y:J
+    iput-wide v5, v4, Lcpf;->Y:J
 
-    iput-wide v14, v4, Lpff;->Z:J
+    iput-wide v14, v4, Lcpf;->Z:J
 
-    iput v13, v4, Lpff;->p0:I
+    iput v13, v4, Lcpf;->t0:I
 
-    invoke-virtual {v2, v0, v4}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;->setForeground(Le26;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v2, v0, v4}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;->setForeground(Lh46;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2546,15 +2786,15 @@
 
     move-result-wide v9
 
-    iput-object v1, v2, Lpff;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
+    iput-object v1, v2, Lcpf;->o:Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;
 
-    iput-wide v5, v2, Lpff;->Y:J
+    iput-wide v5, v2, Lcpf;->Y:J
 
-    iput-wide v14, v2, Lpff;->Z:J
+    iput-wide v14, v2, Lcpf;->Z:J
 
-    iput v7, v2, Lpff;->p0:I
+    iput v7, v2, Lcpf;->t0:I
 
-    invoke-static {v9, v10, v2}, Las3;->r(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-static {v9, v10, v2}, Ln2e;->h(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2575,22 +2815,22 @@
 
     sub-long/2addr v2, v4
 
-    sget-object v0, Ld86;->f:Lafa;
+    sget-object v0, Ljtg;->g:Loja;
 
     if-nez v0, :cond_10
 
     goto :goto_a
 
     :cond_10
-    sget-object v4, Llw7;->o:Llw7;
+    sget-object v4, Lqz7;->o:Lqz7;
 
-    invoke-virtual {v0, v4}, Lafa;->a(Llw7;)Z
+    invoke-virtual {v0, v4}, Loja;->a(Lqz7;)Z
 
     move-result v5
 
     if-eqz v5, :cond_11
 
-    iget-object v5, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lgq7;
+    iget-object v5, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->C0:Lkt7;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -2612,15 +2852,15 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v4, v12, v2, v11}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {v0, v4, v12, v2, v11}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_11
     :goto_a
-    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->x0:Lgq7;
+    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->C0:Lkt7;
 
     if-nez v0, :cond_12
 
-    invoke-static {}, Lgq7;->a()Ldq7;
+    invoke-static {}, Lkt7;->a()Lht7;
 
     move-result-object v0
     :try_end_5
@@ -2632,16 +2872,16 @@
     :goto_b
     const-string v2, "cancelled!"
 
-    invoke-static {v12, v2, v0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v12, v2, v0}, Ljtg;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->v0:Ljh7;
+    iget-object v0, v1, Lru/ok/tamtam/upload/workers/UploadFileAttachWorker;->A0:Lok7;
 
     if-eqz v0, :cond_13
 
-    invoke-static {v0}, Lrp4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+    invoke-static {v0}, Lsq4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
 
     :cond_13
-    invoke-static {}, Lgq7;->a()Ldq7;
+    invoke-static {}, Lkt7;->a()Lht7;
 
     move-result-object v0
 

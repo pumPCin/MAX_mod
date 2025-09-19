@@ -1,38 +1,21 @@
-.class public abstract Ld5f;
-.super Ljava/lang/Object;
+.class public final Ld5f;
+.super Lso;
 .source "SourceFile"
 
-# interfaces
-.implements Ly4f;
+
+# static fields
+.field public static final a:Ld5f;
 
 
-# virtual methods
-.method public a(La5f;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public b()V
+# direct methods
+.method static constructor <clinit>()V
     .registers 1
 
-    return-void
-.end method
+    new-instance v0, Ld5f;
 
-.method public c(La5f;)V
-    .registers 2
+    invoke-direct {v0}, Lso;-><init>()V
 
-    return-void
-.end method
-
-.method public f()V
-    .registers 1
-
-    return-void
-.end method
-
-.method public h(La5f;)V
-    .registers 2
+    sput-object v0, Ld5f;->a:Ld5f;
 
     return-void
 .end method

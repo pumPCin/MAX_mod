@@ -1,191 +1,316 @@
-.class public final Lks1;
+.class public abstract Lks1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lii7;
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final NO_RECEIVER:Ljava/lang/Object;
+
 
 # instance fields
-.field public a:Ljava/lang/Object;
+.field private final isTopLevel:Z
 
-.field public b:Lns1;
+.field private final name:Ljava/lang/String;
 
-.field public c:Lylc;
+.field private final owner:Ljava/lang/Class;
 
-.field public d:Z
+.field protected final receiver:Ljava/lang/Object;
+
+.field private transient reflected:Lii7;
+
+.field private final signature:Ljava/lang/String;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    sget-object v0, Ljs1;->a:Ljs1;
+
+    sput-object v0, Lks1;->NO_RECEIVER:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)V
+    .registers 6
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    iput-object p2, p0, Lks1;->owner:Ljava/lang/Class;
+
+    iput-object p3, p0, Lks1;->name:Ljava/lang/String;
+
+    iput-object p4, p0, Lks1;->signature:Ljava/lang/String;
+
+    iput-boolean p5, p0, Lks1;->isTopLevel:Z
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-    .registers 3
+.method public varargs call([Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    iget-object p0, p0, Lks1;->c:Lylc;
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
 
-    if-eqz p0, :cond_0
+    move-result-object p0
 
-    invoke-virtual {p0, p1, p2}, Lk3;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+    invoke-interface {p0, p1}, Lii7;->call([Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_0
-    return-void
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final b(Ljava/lang/Object;)Z
-    .registers 4
+.method public callBy(Ljava/util/Map;)Ljava/lang/Object;
+    .registers 2
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
 
-    iput-boolean v0, p0, Lks1;->d:Z
+    move-result-object p0
 
-    iget-object v1, p0, Lks1;->b:Lns1;
+    invoke-interface {p0, p1}, Lii7;->callBy(Ljava/util/Map;)Ljava/lang/Object;
 
-    if-eqz v1, :cond_0
+    move-result-object p0
 
-    iget-object v1, v1, Lns1;->b:Lms1;
-
-    invoke-virtual {v1, p1}, Lk3;->j(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lks1;->a:Ljava/lang/Object;
-
-    iput-object p1, p0, Lks1;->b:Lns1;
-
-    iput-object p1, p0, Lks1;->c:Lylc;
-
-    :cond_1
-    return v0
+    return-object p0
 .end method
 
-.method public final c()V
-    .registers 3
+.method public compute()Lii7;
+    .registers 2
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lks1;->reflected:Lii7;
 
-    iput-boolean v0, p0, Lks1;->d:Z
+    if-nez v0, :cond_0
 
-    iget-object v1, p0, Lks1;->b:Lns1;
+    invoke-virtual {p0}, Lks1;->computeReflected()Lii7;
 
-    if-eqz v1, :cond_0
+    move-result-object v0
 
-    iget-object v1, v1, Lns1;->b:Lms1;
-
-    invoke-virtual {v1, v0}, Lk3;->cancel(Z)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lks1;->a:Ljava/lang/Object;
-
-    iput-object v0, p0, Lks1;->b:Lns1;
-
-    iput-object v0, p0, Lks1;->c:Lylc;
+    iput-object v0, p0, Lks1;->reflected:Lii7;
 
     :cond_0
-    return-void
+    return-object v0
 .end method
 
-.method public final d(Ljava/lang/Throwable;)Z
-    .registers 4
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lks1;->d:Z
-
-    iget-object v1, p0, Lks1;->b:Lns1;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, v1, Lns1;->b:Lms1;
-
-    invoke-virtual {v1, p1}, Lk3;->k(Ljava/lang/Throwable;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lks1;->a:Ljava/lang/Object;
-
-    iput-object p1, p0, Lks1;->b:Lns1;
-
-    iput-object p1, p0, Lks1;->c:Lylc;
-
-    :cond_1
-    return v0
+.method public abstract computeReflected()Lii7;
 .end method
 
-.method public final finalize()V
-    .registers 5
+.method public getAnnotations()Ljava/util/List;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/annotation/Annotation;",
+            ">;"
+        }
+    .end annotation
 
-    iget-object v0, p0, Lks1;->b:Lns1;
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
 
-    if-eqz v0, :cond_0
+    move-result-object p0
 
-    iget-object v0, v0, Lns1;->b:Lms1;
+    invoke-interface {p0}, Lhi7;->getAnnotations()Ljava/util/List;
 
-    invoke-virtual {v0}, Lk3;->isDone()Z
+    move-result-object p0
 
-    move-result v1
+    return-object p0
+.end method
 
-    if-nez v1, :cond_0
+.method public getBoundReceiver()Ljava/lang/Object;
+    .registers 1
 
-    new-instance v1, Lq0;
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    return-object p0
+.end method
 
-    const-string v3, "The completer object was garbage collected - this future would otherwise never complete. The tag was: "
+.method public getName()Ljava/lang/String;
+    .registers 1
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lks1;->name:Ljava/lang/String;
 
-    iget-object v3, p0, Lks1;->a:Ljava/lang/Object;
+    return-object p0
+.end method
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+.method public getOwner()Lki7;
+    .registers 2
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v0, p0, Lks1;->owner:Ljava/lang/Class;
 
-    move-result-object v2
+    if-nez v0, :cond_0
 
-    const/4 v3, 0x3
+    const/4 p0, 0x0
 
-    invoke-direct {v1, v2, v3}, Lq0;-><init>(Ljava/lang/String;I)V
-
-    invoke-virtual {v0, v1}, Lk3;->k(Ljava/lang/Throwable;)Z
+    return-object p0
 
     :cond_0
-    iget-boolean v0, p0, Lks1;->d:Z
-
-    if-nez v0, :cond_1
-
-    iget-object p0, p0, Lks1;->c:Lylc;
+    iget-boolean p0, p0, Lks1;->isTopLevel:Z
 
     if-eqz p0, :cond_1
 
-    const/4 v0, 0x0
+    sget-object p0, Ljpc;->a:Lkpc;
 
-    invoke-virtual {p0, v0}, Lk3;->j(Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Lcxa;
+
+    invoke-direct {p0, v0}, Lcxa;-><init>(Ljava/lang/Class;)V
+
+    return-object p0
 
     :cond_1
-    return-void
+    invoke-static {v0}, Ljpc;->a(Ljava/lang/Class;)Ly33;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public getParameters()Ljava/util/List;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lii7;->getParameters()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public abstract getReflected()Lii7;
+.end method
+
+.method public getReturnType()Laj7;
+    .registers 1
+
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lii7;->getReturnType()Laj7;
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public getSignature()Ljava/lang/String;
+    .registers 1
+
+    iget-object p0, p0, Lks1;->signature:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method public getTypeParameters()Ljava/util/List;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lii7;->getTypeParameters()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public getVisibility()Lbj7;
+    .registers 1
+
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lii7;->getVisibility()Lbj7;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public isAbstract()Z
+    .registers 1
+
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lii7;->isAbstract()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public isFinal()Z
+    .registers 1
+
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lii7;->isFinal()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public isOpen()Z
+    .registers 1
+
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lii7;->isOpen()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public isSuspend()Z
+    .registers 1
+
+    invoke-virtual {p0}, Lks1;->getReflected()Lii7;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lii7;->isSuspend()Z
+
+    move-result p0
+
+    return p0
 .end method

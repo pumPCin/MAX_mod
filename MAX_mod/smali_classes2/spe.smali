@@ -1,191 +1,408 @@
-.class public final synthetic Lspe;
+.class public final Lspe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ly96;
+.implements Lppe;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lrk;
 
-.field public final synthetic b:Lqpe;
+.field public final b:Lfv0;
+
+.field public final c:Lza2;
+
+.field public final d:Lfq0;
+
+.field public final e:Lxge;
+
+.field public final f:Lu35;
+
+.field public final g:Lv5d;
+
+.field public final h:Lzbd;
+
+.field public final i:Lr2b;
+
+.field public final j:Lqgb;
+
+.field public final k:Lygb;
+
+.field public final l:Ldnd;
+
+.field public final m:Lcl7;
+
+.field public n:Ls72;
+
+.field public final o:Ljava/util/ArrayList;
+
+.field public final p:Ljava/util/ArrayList;
+
+.field public q:Lns1;
+
+.field public r:Lns1;
+
+.field public final s:Lcl7;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lqpe;I)V
-    .registers 3
-
-    iput p2, p0, Lspe;->a:I
-
-    iput-object p1, p0, Lspe;->b:Lqpe;
+.method public constructor <init>(Lrk;Lfv0;Lza2;Lfq0;Ls72;Lv5d;Lzbd;Ldka;Lqgb;Lygb;Ldnd;Lcl7;Lcl7;)V
+    .registers 15
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lspe;->o:Ljava/util/ArrayList;
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lspe;->p:Ljava/util/ArrayList;
+
+    iput-object p2, p0, Lspe;->b:Lfv0;
+
+    iput-object p3, p0, Lspe;->c:Lza2;
+
+    iput-object p4, p0, Lspe;->d:Lfq0;
+
+    new-instance p3, Lu35;
+
+    iget-object p4, p5, Ls72;->b:Lvb2;
+
+    iget-object p4, p4, Lvb2;->b:Lub2;
+
+    const/4 v0, 0x4
+
+    invoke-direct {p3, v0, p4}, Lu35;-><init>(ILjava/lang/Object;)V
+
+    iput-object p3, p0, Lspe;->f:Lu35;
+
+    iput-object p5, p0, Lspe;->n:Ls72;
+
+    iput-object p1, p0, Lspe;->a:Lrk;
+
+    new-instance p1, Lxge;
+
+    const/4 p3, 0x1
+
+    invoke-direct {p1, p3, p4}, Lxge;-><init>(ILjava/lang/Object;)V
+
+    iput-object p1, p0, Lspe;->e:Lxge;
+
+    iput-object p6, p0, Lspe;->g:Lv5d;
+
+    iput-object p7, p0, Lspe;->h:Lzbd;
+
+    iput-object p9, p0, Lspe;->j:Lqgb;
+
+    iput-object p10, p0, Lspe;->k:Lygb;
+
+    iput-object p11, p0, Lspe;->l:Ldnd;
+
+    new-instance p1, Lr2b;
+
+    invoke-direct {p1, p7, p8}, Lr2b;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    iput-object p1, p0, Lspe;->i:Lr2b;
+
+    iput-object p12, p0, Lspe;->s:Lcl7;
+
+    iput-object p13, p0, Lspe;->m:Lcl7;
+
+    invoke-virtual {p2, p0}, Lfv0;->d(Ljava/lang/Object;)V
+
+    invoke-virtual {p0}, Lspe;->b()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+.method public final a()Lsoe;
+    .registers 10
 
-    iget v0, p0, Lspe;->a:I
+    iget-object v0, p0, Lspe;->l:Ldnd;
 
-    const/4 v1, 0x1
+    check-cast v0, Lfnd;
 
-    iget-object p0, p0, Lspe;->b:Lqpe;
+    iget v0, v0, Lfnd;->h:I
 
-    packed-switch v0, :pswitch_data_0
+    const/4 v1, 0x3
 
-    check-cast p1, Ljava/lang/Throwable;
-
-    instance-of v0, p1, Lone/me/sdk/transfer/exceptions/HttpErrorException;
-
-    if-nez v0, :cond_0
-
-    invoke-static {p1}, Ly0a;->f(Ljava/lang/Throwable;)Lpc3;
-
-    move-result-object p0
+    if-eq v0, v1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    instance-of v0, p1, Lone/me/sdk/transfer/exceptions/HttpUrlExpiredException;
+    iget-object v0, p0, Lspe;->n:Ls72;
 
-    const/4 v2, 0x0
+    iget-object v0, v0, Ls72;->b:Lvb2;
 
-    const-string v3, "tpe"
+    iget-object v0, v0, Lvb2;->e:Ljava/util/Map;
 
-    if-eqz v0, :cond_1
+    invoke-interface {v0}, Ljava/util/Map;->size()I
 
-    const-string p0, "retryWhenTamHttpError: skipped retry on TamHttpUrlExpiredException"
+    move-result v0
 
-    invoke-static {v3, p0, v2}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    iget-object v1, p0, Lspe;->n:Ls72;
 
-    invoke-static {p1}, Ly0a;->f(Ljava/lang/Throwable;)Lpc3;
+    iget-object v1, v1, Ls72;->b:Lvb2;
 
-    move-result-object p0
+    invoke-virtual {v1}, Lvb2;->c()I
 
-    goto :goto_0
+    move-result v1
+
+    if-lt v0, v1, :cond_1
+
+    :goto_0
+    new-instance v2, Lvz5;
+
+    iget-object v3, p0, Lspe;->h:Lzbd;
+
+    iget-object v4, p0, Lspe;->i:Lr2b;
+
+    iget-object v5, p0, Lspe;->j:Lqgb;
+
+    iget-object v6, p0, Lspe;->k:Lygb;
+
+    iget-object v7, p0, Lspe;->s:Lcl7;
+
+    new-instance v8, Lrpe;
+
+    invoke-direct {v8, p0}, Lrpe;-><init>(Lspe;)V
+
+    invoke-direct/range {v2 .. v8}, Lvz5;-><init>(Lzbd;Lr2b;Lqgb;Lygb;Lcl7;Lqoe;)V
+
+    return-object v2
 
     :cond_1
-    move-object v0, p1
+    new-instance v0, Lso8;
 
-    check-cast v0, Lone/me/sdk/transfer/exceptions/HttpErrorException;
+    iget-object v1, p0, Lspe;->n:Ls72;
 
-    iget-object v4, v0, Lone/me/sdk/transfer/exceptions/HttpErrorException;->a:Lvt6;
+    iget-object v1, v1, Ls72;->b:Lvb2;
 
-    invoke-static {v4}, Lds0;->D(Lvt6;)Z
+    iget-wide v1, v1, Lvb2;->a:J
 
-    move-result v4
+    iget-object v3, p0, Lspe;->a:Lrk;
 
-    if-eqz v4, :cond_2
+    iget-object v4, p0, Lspe;->i:Lr2b;
 
-    new-instance p0, Ljava/lang/StringBuilder;
+    iget-object v5, p0, Lspe;->g:Lv5d;
 
-    const-string v1, "retryWhenTamHttpError: critical upload error="
+    iget-object p0, p0, Lspe;->s:Lcl7;
 
-    invoke-direct {p0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iput-wide v1, v0, Lso8;->o:J
 
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iput-object v3, v0, Lso8;->a:Ljava/lang/Object;
 
-    move-result-object p0
+    iput-object v4, v0, Lso8;->b:Ljava/lang/Object;
 
-    invoke-static {v3, p0, v2}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    iput-object v5, v0, Lso8;->c:Ljava/lang/Object;
 
-    invoke-static {p1}, Ly0a;->f(Ljava/lang/Throwable;)Lpc3;
+    iput-object p0, v0, Lso8;->X:Ljava/lang/Object;
 
-    move-result-object p0
+    return-object v0
+.end method
 
-    goto :goto_0
+.method public final b()V
+    .registers 6
 
-    :cond_2
-    iget-object p1, p0, Lqpe;->a:Lxh7;
+    iget-object v0, p0, Lspe;->r:Lns1;
 
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-static {v0}, Ls1d;->b(Loq4;)V
 
-    move-result-object p1
+    invoke-virtual {p0}, Lspe;->c()Z
 
-    check-cast p1, Lved;
+    move-result v0
 
-    check-cast p1, Lxed;
+    if-nez v0, :cond_0
 
-    iget p1, p1, Lxed;->h:I
+    return-void
 
-    invoke-static {p1}, Lqpe;->a(I)Z
+    :cond_0
+    new-instance v0, Lys;
 
-    move-result p1
+    iget-object v1, p0, Lspe;->n:Ls72;
 
-    if-nez p1, :cond_3
+    iget-object v1, v1, Ls72;->b:Lvb2;
 
-    const-string p1, "retryWhenTamHttpError: no connection, await for connection available"
+    iget-wide v1, v1, Lvb2;->a:J
 
-    invoke-static {v3, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v3, 0x0
 
-    invoke-virtual {p0}, Lqpe;->b()Lu3a;
+    const/16 v4, 0x18
 
-    move-result-object p0
+    invoke-direct {v0, v3, v4}, Lys;-><init>(Lyta;I)V
 
-    new-instance p1, Lf8e;
+    const-string v3, "chatId"
 
-    const/4 v0, 0x6
+    invoke-virtual {v0, v1, v2, v3}, Lpxe;->j(JLjava/lang/String;)V
 
-    invoke-direct {p1, v0}, Lf8e;-><init>(I)V
-
-    sget-object v0, Lr7;->g:Lm52;
-
-    sget-object v1, Lr7;->f:Loa6;
-
-    new-instance v2, Lv1a;
-
-    invoke-direct {v2, p0, p1, v0, v1}, Lv1a;-><init>(Ly0a;Lim3;Lim3;Lz5;)V
-
-    move-object p0, v2
-
-    goto :goto_0
-
-    :cond_3
-    const-string p0, "retryWhenTamHttpError: http error"
-
-    invoke-static {v3, p0, v0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    int-to-long p0, v1
-
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-static {}, Ldyc;->a()Lqxc;
+    invoke-static {}, Li6d;->b()Lv5d;
 
     move-result-object v1
 
-    invoke-static {p0, p1, v0, v1}, Ly0a;->s(JLjava/util/concurrent/TimeUnit;Lqxc;)Lb4a;
+    iget-object v2, p0, Lspe;->a:Lrk;
 
-    move-result-object p0
+    check-cast v2, Lgaa;
+
+    invoke-virtual {v2, v0, v1}, Lgaa;->I(Lpxe;Lv5d;)Ld3e;
+
+    move-result-object v0
+
+    new-instance v1, Lrpe;
+
+    invoke-direct {v1, p0}, Lrpe;-><init>(Lspe;)V
+
+    new-instance v2, Luge;
+
+    const/4 v3, 0x2
+
+    invoke-direct {v2, v3}, Luge;-><init>(I)V
+
+    new-instance v3, Lns1;
+
+    const/4 v4, 0x2
+
+    invoke-direct {v3, v1, v4, v2}, Lns1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v3}, Lk2e;->k(Le3e;)V
+
+    iput-object v3, p0, Lspe;->r:Lns1;
+
+    return-void
+.end method
+
+.method public final c()Z
+    .registers 6
+
+    iget-object v0, p0, Lspe;->n:Ls72;
+
+    iget-object v1, v0, Ls72;->b:Lvb2;
+
+    iget-wide v1, v1, Lvb2;->a:J
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v1, v1, v3
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v0}, Ls72;->e0()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lspe;->n:Ls72;
+
+    invoke-virtual {v0}, Ls72;->B()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object p0, p0, Lspe;->n:Ls72;
+
+    invoke-virtual {p0}, Ls72;->n0()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final clear()V
+    .registers 2
+
+    iget-object v0, p0, Lspe;->o:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    iget-object v0, p0, Lspe;->p:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    :try_start_0
+    iget-object v0, p0, Lspe;->b:Lfv0;
+
+    invoke-virtual {v0, p0}, Lfv0;->f(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-void
+.end method
+
+.method public onEvent(Lm13;)V
+    .registers 4
+    .annotation runtime Line;
+    .end annotation
+
+    iget-object v0, p0, Lspe;->n:Ls72;
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p1, p1, Lm13;->b:Ljava/util/Collection;
+
+    iget-wide v0, v0, Ls72;->a:J
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-interface {p1, v0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
 
     :goto_0
-    return-object p0
+    return-void
 
-    :pswitch_0
-    check-cast p1, Ly0a;
+    :cond_1
+    iget-object p1, p0, Lspe;->q:Lns1;
 
-    new-instance v0, Lspe;
+    invoke-static {p1}, Ls1d;->b(Loq4;)V
 
-    invoke-direct {v0, p0, v1}, Lspe;-><init>(Lqpe;I)V
+    new-instance p1, Li5;
 
-    const p0, 0x7fffffff
+    const/16 v0, 0x12
 
-    invoke-virtual {p1, v0, p0}, Ly0a;->g(Ly96;I)Ly0a;
+    invoke-direct {p1, v0, p0}, Li5;-><init>(ILjava/lang/Object;)V
 
-    move-result-object p0
+    new-instance v0, Luge;
 
-    return-object p0
+    const/4 v1, 0x1
 
-    nop
+    invoke-direct {v0, v1}, Luge;-><init>(I)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget-object v1, p0, Lspe;->g:Lv5d;
+
+    invoke-static {p1, v0, v1}, Ls1d;->a(Lc6;Lpm3;Lv5d;)Lns1;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lspe;->q:Lns1;
+
+    return-void
 .end method

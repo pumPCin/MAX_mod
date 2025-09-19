@@ -1,117 +1,107 @@
-.class public abstract Lf4;
+.class public final Lf4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/accessibility/AccessibilityManager$TouchExplorationStateChangeListener;
+
+
+# instance fields
+.field public final a:Lnx3;
+
 
 # direct methods
-.method public static a()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .registers 1
-
-    sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_IN_DIRECTION:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-
-    return-object v0
-.end method
-
-.method public static b(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/graphics/Rect;)V
+.method public constructor <init>(Lnx3;)V
     .registers 2
 
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getBoundsInWindow(Landroid/graphics/Rect;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lf4;->a:Lnx3;
 
     return-void
 .end method
 
-.method public static c(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/CharSequence;
-    .registers 1
 
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getContainerTitle()Ljava/lang/CharSequence;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static d(Landroid/view/accessibility/AccessibilityNodeInfo;)J
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getMinDurationBetweenContentChanges()Ljava/time/Duration;
+    if-ne p0, p1, :cond_0
 
-    move-result-object p0
+    const/4 p0, 0x1
 
-    invoke-virtual {p0}, Ljava/time/Duration;->toMillis()J
+    return p0
 
-    move-result-wide v0
+    :cond_0
+    instance-of v0, p1, Lf4;
 
-    return-wide v0
-.end method
+    if-nez v0, :cond_1
 
-.method public static e(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .registers 1
+    const/4 p0, 0x0
 
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->hasRequestInitialAccessibilityFocus()Z
+    return p0
+
+    :cond_1
+    check-cast p1, Lf4;
+
+    iget-object p0, p0, Lf4;->a:Lnx3;
+
+    iget-object p1, p1, Lf4;->a:Lnx3;
+
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public static f(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
+.method public final hashCode()I
     .registers 1
 
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isAccessibilityDataSensitive()Z
+    iget-object p0, p0, Lf4;->a:Lnx3;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
     return p0
 .end method
 
-.method public static g(Landroid/view/accessibility/AccessibilityNodeInfo;Z)V
-    .registers 2
-
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setAccessibilityDataSensitive(Z)V
-
-    return-void
-.end method
-
-.method public static h(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/graphics/Rect;)V
-    .registers 2
-
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInWindow(Landroid/graphics/Rect;)V
-
-    return-void
-.end method
-
-.method public static i(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/CharSequence;)V
-    .registers 2
-
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContainerTitle(Ljava/lang/CharSequence;)V
-
-    return-void
-.end method
-
-.method public static j(Landroid/view/accessibility/AccessibilityNodeInfo;J)V
+.method public final onTouchExplorationStateChanged(Z)V
     .registers 3
 
-    invoke-static {p1, p2}, Ljava/time/Duration;->ofMillis(J)Ljava/time/Duration;
+    iget-object p0, p0, Lf4;->a:Lnx3;
 
-    move-result-object p1
+    iget-object p0, p0, Lnx3;->b:Ljava/lang/Object;
 
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setMinDurationBetweenContentChanges(Ljava/time/Duration;)V
+    check-cast p0, Lqx4;
 
-    return-void
-.end method
+    iget-object v0, p0, Lqx4;->h:Landroid/widget/AutoCompleteTextView;
 
-.method public static k(Landroid/view/accessibility/AccessibilityNodeInfo;Landroid/view/View;Z)V
-    .registers 3
+    if-eqz v0, :cond_1
 
-    invoke-virtual {p0, p1, p2}, Landroid/view/accessibility/AccessibilityNodeInfo;->setQueryFromAppProcessEnabled(Landroid/view/View;Z)V
+    invoke-static {v0}, Lo97;->t0(Landroid/widget/EditText;)Z
 
-    return-void
-.end method
+    move-result v0
 
-.method public static l(Landroid/view/accessibility/AccessibilityNodeInfo;Z)V
-    .registers 2
+    if-nez v0, :cond_1
 
-    invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setRequestInitialAccessibilityFocus(Z)V
+    iget-object p0, p0, Lq65;->d:Lcom/google/android/material/internal/CheckableImageButton;
 
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x2
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x1
+
+    :goto_0
+    sget-object v0, Lh7g;->a:Ljava/util/WeakHashMap;
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setImportantForAccessibility(I)V
+
+    :cond_1
     return-void
 .end method

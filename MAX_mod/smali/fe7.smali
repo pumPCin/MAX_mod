@@ -1,43 +1,55 @@
 .class public final Lfe7;
-.super Ljava/lang/Object;
+.super Lr1;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lkz4;
+# static fields
+.field public static final X:Lfe7;
 
-.field public b:Z
+
+# instance fields
+.field public final o:[Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lkad;)V
-    .registers 11
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lfe7;
 
-    new-instance v0, Lkz4;
+    const/4 v1, 0x0
 
-    new-instance v1, Liw;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const/4 v7, 0x0
+    invoke-direct {v0, v1}, Lfe7;-><init>([Ljava/lang/Object;)V
 
-    const/16 v8, 0x17
-
-    const/4 v2, 0x2
-
-    const-class v4, Lfe7;
-
-    const-string v5, "readIfAbsent"
-
-    const-string v6, "readIfAbsent(Lkotlinx/serialization/descriptors/SerialDescriptor;I)Z"
-
-    move-object v3, p0
-
-    invoke-direct/range {v1 .. v8}, Liw;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
-
-    invoke-direct {v0, p1, v1}, Lkz4;-><init>(Lkad;Liw;)V
-
-    iput-object v0, v3, Lfe7;->a:Lkz4;
+    sput-object v0, Lfe7;->X:Lfe7;
 
     return-void
+.end method
+
+.method public constructor <init>([Ljava/lang/Object;)V
+    .registers 4
+
+    const/4 v0, 0x0
+
+    array-length v1, p1
+
+    invoke-direct {p0, v1, v0}, Lr1;-><init>(II)V
+
+    iput-object p1, p0, Lfe7;->o:[Ljava/lang/Object;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(I)Ljava/lang/Object;
+    .registers 2
+
+    iget-object p0, p0, Lfe7;->o:[Ljava/lang/Object;
+
+    aget-object p0, p0, p1
+
+    return-object p0
 .end method

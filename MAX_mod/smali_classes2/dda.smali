@@ -1,608 +1,621 @@
 .class public final Ldda;
-.super Ljava/lang/Object;
+.super Landroid/widget/FrameLayout;
 .source "SourceFile"
+
+# interfaces
+.implements Lx3f;
 
 
 # static fields
-.field public static final synthetic p:[Lsf7;
+.field public static final synthetic u0:[Lxi7;
+
+.field public static final v0:[F
 
 
 # instance fields
-.field public final a:Lkk8;
+.field public final a:Lak;
 
-.field public volatile b:Lvd;
+.field public final b:Landroid/graphics/drawable/ShapeDrawable;
 
-.field public final c:Lgf3;
+.field public final c:Landroid/graphics/drawable/ShapeDrawable;
 
-.field public final d:Ljava/util/concurrent/ConcurrentHashMap;
+.field public final o:Landroid/graphics/drawable/ShapeDrawable;
 
-.field public final e:Ldle;
+.field public final r0:Landroid/graphics/Matrix;
 
-.field public final f:Lb85;
+.field public final s0:Ljava/lang/Object;
 
-.field public final g:Lb85;
-
-.field public final h:Lb85;
-
-.field public final i:Lb85;
-
-.field public final j:Lb85;
-
-.field public final k:Lb85;
-
-.field public final l:Ldle;
-
-.field public final m:Ldle;
-
-.field public final n:Ldle;
-
-.field public final o:Ldle;
+.field public final t0:Ljava/lang/Object;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 16
+    .registers 4
 
-    new-instance v0, Lrqb;
+    new-instance v0, Lmo9;
 
-    const-class v1, Ldda;
+    const-string v1, "state"
 
-    const-string v2, "ioExecutor"
+    const-string v2, "getState()Lone/me/sdk/uikit/common/button/OneMeButtonTextPromo$State;"
 
-    const-string v3, "getIoExecutor()Ljava/util/concurrent/ExecutorService;"
+    const-class v3, Ldda;
 
-    const/4 v4, 0x0
+    invoke-direct {v0, v3, v1, v2}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    sget-object v1, Ljpc;->a:Lkpc;
 
-    sget-object v2, Lyhc;->a:Lzhc;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    const-string v3, "computationExecutor"
+    const/4 v1, 0x1
 
-    const-string v5, "getComputationExecutor()Ljava/util/concurrent/ExecutorService;"
+    new-array v1, v1, [Lxi7;
 
-    invoke-static {v2, v1, v3, v5, v4}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
+    const/4 v2, 0x0
 
-    move-result-object v2
+    aput-object v0, v1, v2
 
-    new-instance v3, Lrqb;
-
-    const-string v5, "singleExecutor"
-
-    const-string v6, "getSingleExecutor()Ljava/util/concurrent/ExecutorService;"
-
-    invoke-direct {v3, v1, v5, v6, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    new-instance v5, Lrqb;
-
-    const-string v6, "singleLowPriorityExecutor"
-
-    const-string v7, "getSingleLowPriorityExecutor()Ljava/util/concurrent/ExecutorService;"
-
-    invoke-direct {v5, v1, v6, v7, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    new-instance v6, Lrqb;
-
-    const-string v7, "network"
-
-    const-string v8, "getNetwork()Ljava/util/concurrent/ExecutorService;"
-
-    invoke-direct {v6, v1, v7, v8, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    new-instance v7, Lrqb;
-
-    const-string v8, "singleTransmitExecutor"
-
-    const-string v9, "getSingleTransmitExecutor()Ljava/util/concurrent/ExecutorService;"
-
-    invoke-direct {v7, v1, v8, v9, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    const/4 v1, 0x6
-
-    new-array v1, v1, [Lsf7;
-
-    aput-object v0, v1, v4
-
-    const/4 v0, 0x1
-
-    aput-object v2, v1, v0
-
-    const/4 v0, 0x2
-
-    aput-object v3, v1, v0
+    sput-object v1, Ldda;->u0:[Lxi7;
 
     const/4 v0, 0x3
 
-    aput-object v5, v1, v0
+    new-array v0, v0, [F
 
-    const/4 v2, 0x4
+    fill-array-data v0, :array_0
 
-    aput-object v6, v1, v2
-
-    const/4 v2, 0x5
-
-    aput-object v7, v1, v2
-
-    sput-object v1, Ldda;->p:[Lsf7;
-
-    new-instance v8, Lkk8;
-
-    sget v1, Llw4;->o:I
-
-    sget-object v1, Lqw4;->o:Lqw4;
-
-    const v2, 0x7fffffff
-
-    invoke-static {v2, v1}, Lg5e;->G(ILqw4;)J
-
-    move-result-wide v10
-
-    invoke-static {v2, v1}, Lg5e;->G(ILqw4;)J
-
-    move-result-wide v12
-
-    new-instance v14, Liba;
-
-    invoke-direct {v14, v0}, Liba;-><init>(I)V
-
-    new-instance v15, Liba;
-
-    invoke-direct {v15, v0}, Liba;-><init>(I)V
-
-    const/4 v9, 0x0
-
-    invoke-direct/range {v8 .. v15}, Lkk8;-><init>(ZJJLj96;Lj96;)V
+    sput-object v0, Ldda;->v0:[F
 
     return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        0x0
+        0x3ed1eb85    # 0.41f
+        0x3f800000    # 1.0f
+    .end array-data
 .end method
 
-.method public constructor <init>(Lkk8;Lgf3;Lb85;Lb85;Lb85;)V
-    .registers 20
-
-    move-object/from16 v0, p3
-
-    move-object/from16 v1, p5
-
-    sget-object v2, Lvd;->a:Lvd;
-
-    new-instance v3, Lb85;
-
-    const/4 v9, 0x1
-
-    const/16 v10, 0x48
-
-    const-string v4, "single"
-
-    const/4 v5, 0x1
-
-    const-wide/16 v6, 0x0
-
-    const/4 v8, 0x0
-
-    invoke-direct/range {v3 .. v10}, Lb85;-><init>(Ljava/lang/String;IJZZI)V
-
-    new-instance v4, Lb85;
-
-    const/4 v10, 0x1
-
-    const/16 v11, 0x8
-
-    const-string v5, "single-low"
-
-    const/4 v6, 0x1
-
-    const-wide/16 v7, 0x0
-
-    const/4 v9, 0x0
-
-    invoke-direct/range {v4 .. v11}, Lb85;-><init>(Ljava/lang/String;IJZZI)V
-
-    new-instance v5, Lb85;
-
-    const/4 v13, 0x0
-
-    const/16 v8, 0xa
-
-    const/4 v7, 0x1
-
-    const-wide/16 v9, 0x0
-
-    const-string v11, "trnsmt"
-
-    const/4 v12, 0x1
-
-    invoke-direct/range {v5 .. v13}, Lb85;-><init>(IIIJLjava/lang/String;ZZ)V
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ldda;->a:Lkk8;
-
-    iput-object v2, p0, Ldda;->b:Lvd;
-
-    move-object/from16 p1, p2
-
-    iput-object p1, p0, Ldda;->c:Lgf3;
-
-    new-instance p1, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {p1}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object p1, p0, Ldda;->d:Ljava/util/concurrent/ConcurrentHashMap;
-
-    new-instance p1, Lbda;
-
-    const/4 v2, 0x1
-
-    invoke-direct {p1, p0, v2}, Lbda;-><init>(Ldda;I)V
-
-    new-instance v2, Ldle;
-
-    invoke-direct {v2, p1}, Ldle;-><init>(Lh96;)V
-
-    iput-object v2, p0, Ldda;->e:Ldle;
-
-    iput-object v0, p0, Ldda;->f:Lb85;
-
-    iput-object v1, p0, Ldda;->g:Lb85;
-
-    iput-object v3, p0, Ldda;->h:Lb85;
-
-    iput-object v4, p0, Ldda;->i:Lb85;
-
-    move-object/from16 p1, p4
-
-    iput-object p1, p0, Ldda;->j:Lb85;
-
-    iput-object v5, p0, Ldda;->k:Lb85;
-
-    new-instance p1, Lada;
-
-    const/4 v2, 0x1
-
-    invoke-direct {p1, p0, v0, v2}, Lada;-><init>(Ldda;Lb85;I)V
-
-    new-instance v0, Ldle;
-
-    invoke-direct {v0, p1}, Ldle;-><init>(Lh96;)V
-
-    iput-object v0, p0, Ldda;->l:Ldle;
-
-    new-instance p1, Lada;
-
-    const/4 v0, 0x2
-
-    invoke-direct {p1, p0, v1, v0}, Lada;-><init>(Ldda;Lb85;I)V
-
-    new-instance v0, Ldle;
-
-    invoke-direct {v0, p1}, Ldle;-><init>(Lh96;)V
-
-    iput-object v0, p0, Ldda;->m:Ldle;
-
-    new-instance p1, Lada;
-
-    const/4 v0, 0x3
-
-    invoke-direct {p1, p0, v3, v0}, Lada;-><init>(Ldda;Lb85;I)V
-
-    new-instance v0, Ldle;
-
-    invoke-direct {v0, p1}, Ldle;-><init>(Lh96;)V
-
-    iput-object v0, p0, Ldda;->n:Ldle;
-
-    new-instance p1, Lada;
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 8
 
     const/4 v0, 0x0
 
-    invoke-direct {p1, p0, v3, v0}, Lada;-><init>(Ldda;Lb85;I)V
+    invoke-direct {p0, p1, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    new-instance v0, Ldle;
+    new-instance v0, Lak;
 
-    invoke-direct {v0, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {v0, p0}, Lak;-><init>(Ldda;)V
 
-    iput-object v0, p0, Ldda;->o:Ldle;
+    iput-object v0, p0, Ldda;->a:Lak;
+
+    new-instance v0, Landroid/graphics/drawable/ShapeDrawable;
+
+    invoke-direct {v0}, Landroid/graphics/drawable/ShapeDrawable;-><init>()V
+
+    iput-object v0, p0, Ldda;->b:Landroid/graphics/drawable/ShapeDrawable;
+
+    new-instance v1, Landroid/graphics/drawable/ShapeDrawable;
+
+    invoke-direct {v1}, Landroid/graphics/drawable/ShapeDrawable;-><init>()V
+
+    iput-object v1, p0, Ldda;->c:Landroid/graphics/drawable/ShapeDrawable;
+
+    new-instance v2, Landroid/graphics/drawable/ShapeDrawable;
+
+    invoke-direct {v2}, Landroid/graphics/drawable/ShapeDrawable;-><init>()V
+
+    iput-object v2, p0, Ldda;->o:Landroid/graphics/drawable/ShapeDrawable;
+
+    new-instance v3, Landroid/graphics/Matrix;
+
+    invoke-direct {v3}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object v3, p0, Ldda;->r0:Landroid/graphics/Matrix;
+
+    new-instance v3, Ldn2;
+
+    const/16 v4, 0x18
+
+    invoke-direct {v3, p1, v4}, Ldn2;-><init>(Landroid/content/Context;I)V
+
+    const/4 v4, 0x3
+
+    invoke-static {v4, v3}, Lcb7;->G(ILzb6;)Lcl7;
+
+    move-result-object v3
+
+    iput-object v3, p0, Ldda;->s0:Ljava/lang/Object;
+
+    new-instance v3, Ljv3;
+
+    const/16 v5, 0x19
+
+    invoke-direct {v3, p1, v5, p0}, Ljv3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-static {v4, v3}, Lcb7;->G(ILzb6;)Lcl7;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ldda;->t0:Ljava/lang/Object;
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setClipToOutline(Z)V
+
+    new-instance p1, Ln04;
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+
+    const/high16 v4, 0x41800000    # 16.0f
+
+    mul-float/2addr v3, v4
+
+    invoke-direct {p1, v3}, Ln04;-><init>(F)V
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
+
+    const/16 p1, 0x34
+
+    int-to-float p1, p1
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v3, p1
+
+    invoke-static {v3}, Lya6;->G(F)I
+
+    move-result v3
+
+    invoke-virtual {p0, v3}, Landroid/view/View;->setMinimumWidth(I)V
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v3
+
+    invoke-static {p1}, Lya6;->G(F)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setMinimumHeight(I)V
+
+    new-instance p1, Landroid/graphics/drawable/StateListDrawable;
+
+    invoke-direct {p1}, Landroid/graphics/drawable/StateListDrawable;-><init>()V
+
+    const v3, 0x10100a7
+
+    filled-new-array {v3}, [I
+
+    move-result-object v3
+
+    invoke-virtual {p1, v3, v1}, Landroid/graphics/drawable/StateListDrawable;->addState([ILandroid/graphics/drawable/Drawable;)V
+
+    const v1, 0x101009e
+
+    filled-new-array {v1}, [I
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1, v0}, Landroid/graphics/drawable/StateListDrawable;->addState([ILandroid/graphics/drawable/Drawable;)V
+
+    const v0, -0x101009e
+
+    filled-new-array {v0}, [I
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0, v2}, Landroid/graphics/drawable/StateListDrawable;->addState([ILandroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    const/16 p1, 0x14
+
+    int-to-float p1, p1
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr v0, p1
+
+    invoke-static {v0}, Lya6;->G(F)I
+
+    move-result v0
+
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object v1
+
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+
+    mul-float/2addr p1, v1
+
+    invoke-static {p1}, Lya6;->G(F)I
+
+    move-result p1
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1, p1, v1}, Landroid/view/View;->setPadding(IIII)V
+
+    invoke-virtual {p0}, Ldda;->getState()Lcda;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ldda;->a(Lcda;)V
+
+    sget-object p1, Lyu4;->t0:Lbx9;
+
+    invoke-virtual {p1, p0}, Lbx9;->l(Landroid/view/View;)Lera;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ldda;->onThemeChanged(Lera;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/concurrent/ExecutorService;
-    .registers 3
+.method public final a(Lcda;)V
+    .registers 6
 
-    sget-object v0, Ldda;->p:[Lsf7;
+    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
-    const/4 v1, 0x1
+    move-result p1
 
-    aget-object v0, v0, v1
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Ldda;->g:Lb85;
+    iget-object v1, p0, Ldda;->t0:Ljava/lang/Object;
 
-    invoke-virtual {p0, v0}, Ldda;->e(Lb85;)Ljava/util/concurrent/ExecutorService;
+    const/16 v2, 0x8
 
-    move-result-object p0
+    iget-object p0, p0, Ldda;->s0:Ljava/lang/Object;
 
-    return-object p0
-.end method
+    if-eqz p1, :cond_1
 
-.method public final b()Lzca;
-    .registers 1
+    const/4 v3, 0x1
 
-    iget-object p0, p0, Ldda;->e:Ldle;
+    if-ne p1, v3, :cond_0
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lzca;
+    check-cast p0, Landroid/view/View;
 
-    return-object p0
+    invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/view/View;
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+
+    return-void
+
+    :cond_0
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
+    :cond_1
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/view/View;
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+
+    invoke-interface {v1}, Lcl7;->a()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    invoke-interface {v1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lhma;
+
+    invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    :cond_2
+    return-void
 .end method
 
-.method public final c()Ljava/util/concurrent/ExecutorService;
+.method public final getState()Lcda;
     .registers 3
 
-    sget-object v0, Ldda;->p:[Lsf7;
+    sget-object v0, Ldda;->u0:[Lxi7;
 
     const/4 v1, 0x0
 
     aget-object v0, v0, v1
 
-    iget-object v0, p0, Ldda;->f:Lb85;
+    iget-object p0, p0, Ldda;->a:Lak;
 
-    invoke-virtual {p0, v0}, Ldda;->e(Lb85;)Ljava/util/concurrent/ExecutorService;
+    iget-object p0, p0, Lx2;->b:Ljava/lang/Object;
 
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final d()Ljava/util/concurrent/ExecutorService;
-    .registers 3
-
-    sget-object v0, Ldda;->p:[Lsf7;
-
-    const/4 v1, 0x2
-
-    aget-object v0, v0, v1
-
-    iget-object v0, p0, Ldda;->h:Lb85;
-
-    invoke-virtual {p0, v0}, Ldda;->e(Lb85;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object p0
+    check-cast p0, Lcda;
 
     return-object p0
 .end method
 
-.method public final e(Lb85;)Ljava/util/concurrent/ExecutorService;
+.method public final onSizeChanged(IIII)V
     .registers 5
 
-    new-instance v0, Lz9;
+    iget-object p3, p0, Ldda;->r0:Landroid/graphics/Matrix;
 
-    const/16 v1, 0x19
+    invoke-virtual {p3}, Landroid/graphics/Matrix;->reset()V
 
-    invoke-direct {v0, p0, v1, p1}, Lz9;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    int-to-float p1, p1
 
-    new-instance v1, Lwh;
+    int-to-float p2, p2
 
-    const/16 v2, 0xd
+    invoke-virtual {p3, p1, p2}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    invoke-direct {v1, v2, v0}, Lwh;-><init>(ILjava/lang/Object;)V
+    const/4 p1, 0x0
 
-    iget-object p0, p0, Ldda;->d:Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-virtual {p3, p1, p1}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    invoke-virtual {p0, p1, v1}, Ljava/util/concurrent/ConcurrentHashMap;->computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
+    iget-object p1, p0, Ldda;->b:Landroid/graphics/drawable/ShapeDrawable;
 
-    move-result-object p0
+    invoke-virtual {p1}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
-    check-cast p0, Ljava/util/concurrent/ExecutorService;
+    move-result-object p1
 
-    return-object p0
-.end method
+    invoke-virtual {p1}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
 
-.method public final f(ILjava/lang/String;II)Ljava/util/concurrent/ExecutorService;
-    .registers 14
+    move-result-object p1
 
-    invoke-virtual {p0}, Ldda;->b()Lzca;
+    check-cast p1, Landroid/graphics/LinearGradient;
 
-    move-result-object v0
+    invoke-virtual {p1, p3}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p1, p0, Ldda;->c:Landroid/graphics/drawable/ShapeDrawable;
 
-    new-instance v7, Lyca;
+    invoke-virtual {p1}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
-    invoke-direct {v7}, Ljava/util/concurrent/LinkedTransferQueue;-><init>()V
+    move-result-object p1
 
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    invoke-virtual {p1}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
 
-    iget-object v0, v0, Lzca;->a:Lxoc;
+    move-result-object p1
 
-    invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    check-cast p1, Landroid/graphics/LinearGradient;
 
-    move-result-object p4
+    invoke-virtual {p1, p3}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    invoke-virtual {v0, p2, p4}, Lxoc;->t(Ljava/lang/String;Ljava/lang/Integer;)Ljava/util/concurrent/ThreadFactory;
+    iget-object p0, p0, Ldda;->o:Landroid/graphics/drawable/ShapeDrawable;
 
-    move-result-object v8
-
-    new-instance v1, Ljn5;
-
-    const-wide/32 v4, 0xea60
-
-    move v2, p1
-
-    move v3, p3
-
-    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
-
-    const/4 p1, 0x1
-
-    invoke-virtual {v1, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
-
-    new-instance p1, Lwy1;
-
-    const/4 p3, 0x1
-
-    invoke-direct {p1, p3}, Lwy1;-><init>(I)V
-
-    invoke-virtual {v1, p1}, Ljava/util/concurrent/ThreadPoolExecutor;->setRejectedExecutionHandler(Ljava/util/concurrent/RejectedExecutionHandler;)V
-
-    invoke-virtual {p0, v1, p2}, Ldda;->i(Ljn5;Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+    invoke-virtual {p0}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
     move-result-object p0
 
-    return-object p0
+    invoke-virtual {p0}, Landroid/graphics/Paint;->getShader()Landroid/graphics/Shader;
+
+    move-result-object p0
+
+    check-cast p0, Landroid/graphics/LinearGradient;
+
+    invoke-virtual {p0, p3}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
+
+    return-void
 .end method
 
-.method public final g()Ljava/util/concurrent/ExecutorService;
-    .registers 11
+.method public final onThemeChanged(Lera;)V
+    .registers 18
 
-    invoke-virtual {p0}, Ldda;->b()Lzca;
+    move-object/from16 v0, p0
 
-    move-result-object v0
+    iget-object v1, v0, Ldda;->b:Landroid/graphics/drawable/ShapeDrawable;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance v7, Lyca;
-
-    invoke-direct {v7}, Ljava/util/concurrent/LinkedTransferQueue;-><init>()V
-
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    iget-object v0, v0, Lzca;->a:Lxoc;
-
-    const/4 v1, 0x5
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v1}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
     move-result-object v1
 
-    const-string v9, "tam-srvc"
+    new-instance v2, Landroid/graphics/LinearGradient;
 
-    invoke-virtual {v0, v9, v1}, Lxoc;->t(Ljava/lang/String;Ljava/lang/Integer;)Ljava/util/concurrent/ThreadFactory;
+    invoke-interface/range {p1 .. p1}, Lera;->d()Lam6;
 
-    move-result-object v8
+    move-result-object v3
 
-    new-instance v1, Ljn5;
+    iget-object v3, v3, Lam6;->b:Lzl6;
 
-    const/4 v2, 0x3
+    iget-object v7, v3, Lzl6;->a:[I
 
-    const/4 v3, 0x3
+    sget-object v15, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    const-wide/32 v4, 0xea60
+    const/4 v3, 0x0
 
-    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
+    const v4, 0x3e99999a    # 0.3f
 
-    const/4 v0, 0x1
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    invoke-virtual {v1, v0}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
+    const v6, 0x3f333333    # 0.7f
 
-    new-instance v0, Lwy1;
+    sget-object v14, Ldda;->v0:[F
 
-    const/4 v2, 0x1
+    move-object v8, v14
 
-    invoke-direct {v0, v2}, Lwy1;-><init>(I)V
+    move-object v9, v15
 
-    invoke-virtual {v1, v0}, Ljava/util/concurrent/ThreadPoolExecutor;->setRejectedExecutionHandler(Ljava/util/concurrent/RejectedExecutionHandler;)V
+    invoke-direct/range {v2 .. v9}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    invoke-virtual {p0, v1, v9}, Ldda;->i(Ljn5;Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
+    iget-object v3, v0, Ldda;->r0:Landroid/graphics/Matrix;
 
-    move-result-object p0
+    invoke-virtual {v2, v3}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    return-object p0
-.end method
+    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-.method public final h(Ljava/util/concurrent/ExecutorService;Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
-    .registers 5
+    iget-object v1, v0, Ldda;->c:Landroid/graphics/drawable/ShapeDrawable;
 
-    instance-of v0, p1, Lq85;
+    invoke-virtual {v1}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
-    iget-object v1, p0, Ldda;->o:Ldle;
+    move-result-object v1
 
-    if-eqz v0, :cond_0
+    new-instance v8, Landroid/graphics/LinearGradient;
 
-    new-instance p0, Lrk4;
+    invoke-interface/range {p1 .. p1}, Lera;->d()Lam6;
 
-    invoke-direct {p0, p1, v1}, Lrk4;-><init>(Ljava/util/concurrent/ExecutorService;Ldle;)V
+    move-result-object v2
 
-    return-object p0
+    iget-object v2, v2, Lam6;->b:Lzl6;
 
-    :cond_0
-    new-instance v0, Lrk4;
+    iget-object v13, v2, Lzl6;->c:[I
 
-    invoke-direct {v0, p1, v1}, Lrk4;-><init>(Ljava/util/concurrent/ExecutorService;Ldle;)V
+    const/4 v9, 0x0
 
-    invoke-virtual {p0, v0, p2}, Ldda;->j(Ljava/util/concurrent/ScheduledExecutorService;Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
+    const v10, 0x3e99999a    # 0.3f
 
-    move-result-object p0
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    return-object p0
-.end method
+    const v12, 0x3f333333    # 0.7f
 
-.method public final i(Ljn5;Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
-    .registers 6
+    invoke-direct/range {v8 .. v15}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    iget-object v0, p0, Ldda;->a:Lkk8;
+    invoke-virtual {v8, v3}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    iget-boolean v0, v0, Lkk8;->b:Z
+    invoke-virtual {v1, v8}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    if-eqz v0, :cond_0
+    iget-object v1, v0, Ldda;->o:Landroid/graphics/drawable/ShapeDrawable;
 
-    new-instance v0, Lq85;
+    invoke-virtual {v1}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
 
-    new-instance v1, Lcda;
+    move-result-object v1
 
-    const/4 v2, 0x0
+    new-instance v8, Landroid/graphics/LinearGradient;
 
-    invoke-direct {v1, p0, v2}, Lcda;-><init>(Ldda;I)V
+    invoke-interface/range {p1 .. p1}, Lera;->d()Lam6;
 
-    new-instance p0, Lc42;
+    move-result-object v2
 
-    const/4 v2, 0x1
+    iget-object v2, v2, Lam6;->b:Lzl6;
 
-    invoke-direct {p0, p2, v2}, Lc42;-><init>(Ljava/lang/String;I)V
+    iget-object v13, v2, Lzl6;->b:[I
 
-    invoke-direct {v0, p1, v1, p0}, Lq85;-><init>(Ljava/util/concurrent/ExecutorService;Lcda;Lj96;)V
+    invoke-direct/range {v8 .. v15}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    return-object v0
+    invoke-virtual {v8, v3}, Landroid/graphics/Shader;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    :cond_0
-    return-object p1
-.end method
+    invoke-virtual {v1, v8}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-.method public final j(Ljava/util/concurrent/ScheduledExecutorService;Ljava/lang/String;)Ljava/util/concurrent/ScheduledExecutorService;
-    .registers 6
+    iget-object v0, v0, Ldda;->s0:Ljava/lang/Object;
 
-    iget-object v0, p0, Ldda;->a:Lkk8;
+    invoke-interface {v0}, Lcl7;->a()Z
 
-    iget-boolean v0, v0, Lkk8;->b:Z
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    instance-of v0, p1, Lrwc;
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    if-nez v0, :cond_0
+    move-result-object v0
 
-    new-instance v0, Lrwc;
+    check-cast v0, Landroid/widget/TextView;
 
-    new-instance v1, Lcda;
+    const/4 v1, -0x1
 
-    const/4 v2, 0x1
-
-    invoke-direct {v1, p0, v2}, Lcda;-><init>(Ldda;I)V
-
-    new-instance p0, Lc42;
-
-    const/4 v2, 0x2
-
-    invoke-direct {p0, p2, v2}, Lc42;-><init>(Ljava/lang/String;I)V
-
-    invoke-direct {v0, p1, v1, p0}, Lrwc;-><init>(Ljava/util/concurrent/ScheduledExecutorService;Lcda;Lc42;)V
-
-    return-object v0
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     :cond_0
-    return-object p1
+    return-void
+.end method
+
+.method public final setState(Lcda;)V
+    .registers 4
+
+    sget-object v0, Ldda;->u0:[Lxi7;
+
+    const/4 v1, 0x0
+
+    aget-object v0, v0, v1
+
+    iget-object v1, p0, Ldda;->a:Lak;
+
+    invoke-virtual {v1, p0, v0, p1}, Lx2;->h0(Ljava/lang/Object;Lxi7;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final setText(I)V
+    .registers 3
+
+    iget-object v0, p0, Ldda;->s0:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(I)V
+
+    invoke-static {v0, p0}, Lcb7;->b(Landroid/view/View;Landroid/view/ViewGroup;)V
+
+    return-void
+.end method
+
+.method public final setText(Ljava/lang/CharSequence;)V
+    .registers 4
+
+    iget-object v0, p0, Ldda;->s0:Ljava/lang/Object;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    sget v1, Lr0d;->j:I
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-static {v0, p0}, Lcb7;->b(Landroid/view/View;Landroid/view/ViewGroup;)V
+
+    return-void
 .end method

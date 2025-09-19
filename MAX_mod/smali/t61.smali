@@ -1,163 +1,69 @@
 .class public final Lt61;
-.super Lxie;
+.super Lkg4;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public X:I
-
-.field public final synthetic Y:Lk61;
-
-.field public final synthetic Z:Ly61;
+.field public final synthetic t:Ly9e;
 
 
 # direct methods
-.method public constructor <init>(Lk61;Ly61;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ly9e;)V
     .registers 4
 
-    iput-object p1, p0, Lt61;->Y:Lk61;
+    iput-object p1, p0, Lt61;->t:Ly9e;
 
-    iput-object p2, p0, Lt61;->Z:Ly61;
+    invoke-direct {p0}, Lkg4;-><init>()V
 
-    const/4 p1, 0x2
+    const-wide/16 v0, 0x12c
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-wide v0, p0, Lhoc;->d:J
+
+    iput-wide v0, p0, Lhoc;->c:J
+
+    iput-wide v0, p0, Lhoc;->f:J
+
+    iput-wide v0, p0, Lhoc;->e:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final m()V
     .registers 3
 
-    check-cast p1, Lr04;
+    iget-object p0, p0, Lt61;->t:Ly9e;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object p0, p0, Ly9e;->a:Ljava/lang/Object;
 
-    invoke-virtual {p0, p1, p2}, Lt61;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    check-cast p0, Landroidx/recyclerview/widget/RecyclerView;
 
-    move-result-object p0
+    if-eqz p0, :cond_1
 
-    check-cast p0, Lt61;
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    sget-object p1, Lncf;->a:Lncf;
+    move-result-object v0
 
-    invoke-virtual {p0, p1}, Lt61;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object p0
+    const/4 v1, -0x2
 
-    return-object p0
-.end method
+    iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    invoke-virtual {p0, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    new-instance p1, Lt61;
-
-    iget-object v0, p0, Lt61;->Y:Lk61;
-
-    iget-object p0, p0, Lt61;->Z:Ly61;
-
-    invoke-direct {p1, v0, p0, p2}, Lt61;-><init>(Lk61;Ly61;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
-
-    iget v0, p0, Lt61;->X:I
-
-    iget-object v1, p0, Lt61;->Y:Lk61;
-
-    const/4 v2, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v2, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
+    return-void
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    new-instance p0, Ljava/lang/NullPointerException;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    const-string v0, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams"
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    move-object p1, v1
-
-    check-cast p1, Lq0g;
-
-    iget-object p1, p1, Lq0g;->b:Ljava/lang/Long;
-
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    iput v2, p0, Lt61;->X:I
-
-    invoke-static {v3, v4, p0}, Las3;->r(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object v0, Ls04;->a:Ls04;
-
-    if-ne p1, v0, :cond_2
-
-    return-object v0
-
-    :cond_2
-    :goto_0
-    iget-object p0, p0, Lt61;->Z:Ly61;
-
-    iget-object p0, p0, Ly61;->o:Ln4e;
-
-    :cond_3
-    invoke-virtual {p0}, Ln4e;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    move-object v0, p1
-
-    check-cast v0, Ljava/util/Map;
-
-    new-instance v2, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v2, v0}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
-
-    invoke-interface {v1}, Lk61;->getPriority()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-interface {v2, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {v2}, Lc38;->S(Ljava/util/Map;)Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p1, v0}, Ln4e;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    return-void
 .end method

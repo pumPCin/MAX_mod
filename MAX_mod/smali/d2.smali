@@ -1,539 +1,169 @@
 .class public final Ld2;
-.super Lg2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/NavigableMap;
+.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field public final synthetic Z:Laj9;
+.field public final synthetic X:Lb2;
+
+.field public final a:Ljava/util/Iterator;
+
+.field public b:Ljava/lang/Object;
+
+.field public c:Ljava/util/Collection;
+
+.field public o:Ljava/util/Iterator;
 
 
 # direct methods
-.method public constructor <init>(Laj9;Ljava/util/NavigableMap;)V
-    .registers 3
+.method public constructor <init>(Lb2;)V
+    .registers 2
 
-    iput-object p1, p0, Ld2;->Z:Laj9;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1, p2}, Lg2;-><init>(Laj9;Ljava/util/SortedMap;)V
+    iput-object p1, p0, Ld2;->X:Lb2;
+
+    iget-object p1, p1, Lb2;->o:Ljava/util/Map;
+
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ld2;->a:Ljava/util/Iterator;
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Ld2;->b:Ljava/lang/Object;
+
+    iput-object p1, p0, Ld2;->c:Ljava/util/Collection;
+
+    sget-object p1, Lhe7;->a:Lhe7;
+
+    iput-object p1, p0, Ld2;->o:Ljava/util/Iterator;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Ljava/util/SortedSet;
-    .registers 3
-
-    new-instance v0, Le2;
-
-    iget-object v1, p0, Ld2;->Z:Laj9;
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object p0
-
-    invoke-direct {v0, v1, p0}, Le2;-><init>(Laj9;Ljava/util/NavigableMap;)V
-
-    return-object v0
-.end method
-
-.method public final c()Ljava/util/SortedSet;
-    .registers 1
-
-    invoke-super {p0}, Lg2;->c()Ljava/util/SortedSet;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/util/NavigableSet;
-
-    return-object p0
-.end method
-
-.method public final ceilingEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
-    .registers 3
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/NavigableMap;->ceilingEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    invoke-virtual {p0, p1}, Lb2;->a(Ljava/util/Map$Entry;)Ld07;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final ceilingKey(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final hasNext()Z
     .registers 2
 
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
+    iget-object v0, p0, Ld2;->a:Ljava/util/Iterator;
 
-    move-result-object p0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-interface {p0, p1}, Ljava/util/NavigableMap;->ceilingKey(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object p0
+    if-nez v0, :cond_1
 
-    return-object p0
+    iget-object p0, p0, Ld2;->o:Ljava/util/Iterator;
+
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
 .end method
 
-.method public final bridge synthetic d()Ljava/util/SortedMap;
-    .registers 1
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final descendingKeySet()Ljava/util/NavigableSet;
-    .registers 1
-
-    invoke-virtual {p0}, Ld2;->descendingMap()Ljava/util/NavigableMap;
-
-    move-result-object p0
-
-    check-cast p0, Ld2;
-
-    invoke-super {p0}, Lg2;->c()Ljava/util/SortedSet;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/util/NavigableSet;
-
-    return-object p0
-.end method
-
-.method public final descendingMap()Ljava/util/NavigableMap;
+.method public final next()Ljava/lang/Object;
     .registers 3
 
-    new-instance v0, Ld2;
+    iget-object v0, p0, Ld2;->o:Ljava/util/Iterator;
 
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/NavigableMap;->descendingMap()Ljava/util/NavigableMap;
-
-    move-result-object v1
-
-    iget-object p0, p0, Ld2;->Z:Laj9;
-
-    invoke-direct {v0, p0, v1}, Ld2;-><init>(Laj9;Ljava/util/NavigableMap;)V
-
-    return-object v0
-.end method
-
-.method public final e(Ljava/util/Iterator;)Ld07;
-    .registers 4
-
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    const/4 p0, 0x0
+    iget-object v0, p0, Ld2;->a:Ljava/util/Iterator;
 
-    return-object p0
-
-    :cond_0
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    iget-object p0, p0, Ld2;->Z:Laj9;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    invoke-virtual {p0}, Laj9;->d()Ljava/util/Collection;
+    move-result-object v1
 
-    move-result-object p0
+    iput-object v1, p0, Ld2;->b:Ljava/lang/Object;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/util/Collection;
+    check-cast v0, Ljava/util/Collection;
 
-    invoke-interface {p0, v1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+    iput-object v0, p0, Ld2;->c:Ljava/util/Collection;
 
-    invoke-interface {p1}, Ljava/util/Iterator;->remove()V
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p0, Ljava/util/List;
-
-    invoke-static {p0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object p0
-
-    new-instance v0, Ld07;
-
-    invoke-direct {v0, p1, p0}, Ld07;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    return-object v0
-.end method
-
-.method public final f()Ljava/util/NavigableMap;
-    .registers 1
-
-    iget-object p0, p0, Lb2;->c:Ljava/util/Map;
-
-    check-cast p0, Ljava/util/SortedMap;
-
-    check-cast p0, Ljava/util/NavigableMap;
-
-    return-object p0
-.end method
-
-.method public final firstEntry()Ljava/util/Map$Entry;
-    .registers 2
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/NavigableMap;->firstEntry()Ljava/util/Map$Entry;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
+    iput-object v0, p0, Ld2;->o:Ljava/util/Iterator;
 
     :cond_0
-    invoke-virtual {p0, v0}, Lb2;->a(Ljava/util/Map$Entry;)Ld07;
+    iget-object p0, p0, Ld2;->o:Ljava/util/Iterator;
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final floorEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
-    .registers 3
+.method public final remove()V
+    .registers 2
 
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
+    iget-object v0, p0, Ld2;->o:Ljava/util/Iterator;
 
-    move-result-object v0
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    invoke-interface {v0, p1}, Ljava/util/NavigableMap;->floorEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+    iget-object v0, p0, Ld2;->c:Ljava/util/Collection;
 
-    move-result-object p1
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez p1, :cond_0
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    const/4 p0, 0x0
+    move-result v0
 
-    return-object p0
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ld2;->a:Ljava/util/Iterator;
+
+    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
     :cond_0
-    invoke-virtual {p0, p1}, Lb2;->a(Ljava/util/Map$Entry;)Ld07;
+    iget-object p0, p0, Ld2;->X:Lb2;
 
-    move-result-object p0
+    iget v0, p0, Lb2;->X:I
 
-    return-object p0
-.end method
+    add-int/lit8 v0, v0, -0x1
 
-.method public final floorKey(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    iput v0, p0, Lb2;->X:I
 
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Ljava/util/NavigableMap;->floorKey(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
-    .registers 5
-
-    new-instance v0, Ld2;
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1, p2}, Ljava/util/NavigableMap;->headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
-
-    move-result-object p1
-
-    iget-object p0, p0, Ld2;->Z:Laj9;
-
-    invoke-direct {v0, p0, p1}, Ld2;-><init>(Laj9;Ljava/util/NavigableMap;)V
-
-    return-object v0
-.end method
-
-.method public final headMap(Ljava/lang/Object;)Ljava/util/SortedMap;
-    .registers 3
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Ld2;->headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final higherEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
-    .registers 3
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/NavigableMap;->higherEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    invoke-virtual {p0, p1}, Lb2;->a(Ljava/util/Map$Entry;)Ld07;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final higherKey(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Ljava/util/NavigableMap;->higherKey(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final keySet()Ljava/util/Set;
-    .registers 1
-
-    invoke-super {p0}, Lg2;->c()Ljava/util/SortedSet;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/util/NavigableSet;
-
-    return-object p0
-.end method
-
-.method public final lastEntry()Ljava/util/Map$Entry;
-    .registers 2
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/NavigableMap;->lastEntry()Ljava/util/Map$Entry;
-
-    move-result-object v0
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    invoke-virtual {p0, v0}, Lb2;->a(Ljava/util/Map$Entry;)Ld07;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final lowerEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
-    .registers 3
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Ljava/util/NavigableMap;->lowerEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    const/4 p0, 0x0
-
-    return-object p0
-
-    :cond_0
-    invoke-virtual {p0, p1}, Lb2;->a(Ljava/util/Map$Entry;)Ld07;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final lowerKey(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object p0
-
-    invoke-interface {p0, p1}, Ljava/util/NavigableMap;->lowerKey(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final navigableKeySet()Ljava/util/NavigableSet;
-    .registers 1
-
-    invoke-super {p0}, Lg2;->c()Ljava/util/SortedSet;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/util/NavigableSet;
-
-    return-object p0
-.end method
-
-.method public final pollFirstEntry()Ljava/util/Map$Entry;
-    .registers 2
-
-    invoke-virtual {p0}, Lb2;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    check-cast v0, Lz1;
-
-    invoke-virtual {v0}, Lz1;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ld2;->e(Ljava/util/Iterator;)Ld07;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final pollLastEntry()Ljava/util/Map$Entry;
-    .registers 2
-
-    invoke-virtual {p0}, Ld2;->descendingMap()Ljava/util/NavigableMap;
-
-    move-result-object v0
-
-    check-cast v0, Lb2;
-
-    invoke-virtual {v0}, Lb2;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    check-cast v0, Lz1;
-
-    invoke-virtual {v0}, Lz1;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Ld2;->e(Ljava/util/Iterator;)Ld07;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;
-    .registers 7
-
-    new-instance v0, Ld2;
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1, p2, p3, p4}, Ljava/util/NavigableMap;->subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;
-
-    move-result-object p1
-
-    iget-object p0, p0, Ld2;->Z:Laj9;
-
-    invoke-direct {v0, p0, p1}, Ld2;-><init>(Laj9;Ljava/util/NavigableMap;)V
-
-    return-object v0
-.end method
-
-.method public final subMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedMap;
-    .registers 5
-
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, p1, v0, p2, v1}, Ld2;->subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
-    .registers 5
-
-    new-instance v0, Ld2;
-
-    invoke-virtual {p0}, Ld2;->f()Ljava/util/NavigableMap;
-
-    move-result-object v1
-
-    invoke-interface {v1, p1, p2}, Ljava/util/NavigableMap;->tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
-
-    move-result-object p1
-
-    iget-object p0, p0, Ld2;->Z:Laj9;
-
-    invoke-direct {v0, p0, p1}, Ld2;-><init>(Laj9;Ljava/util/NavigableMap;)V
-
-    return-object v0
-.end method
-
-.method public final tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;
-    .registers 3
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, p1, v0}, Ld2;->tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

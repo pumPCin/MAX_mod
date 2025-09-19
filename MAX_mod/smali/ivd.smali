@@ -1,40 +1,21 @@
-.class public final Livd;
+.class public abstract Livd;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ln5d;
+
+# static fields
+.field public static final a:Luq8;
 
 
-# virtual methods
-.method public final c()Z
+# direct methods
+.method static constructor <clinit>()V
     .registers 1
 
-    const/4 p0, 0x1
+    new-instance v0, Luq8;
 
-    return p0
-.end method
+    invoke-direct {v0}, Luq8;-><init>()V
 
-.method public final e(J)Ll5d;
-    .registers 6
+    sput-object v0, Livd;->a:Luq8;
 
-    new-instance p0, Ll5d;
-
-    new-instance v0, Lr5d;
-
-    const-wide/16 v1, 0x0
-
-    invoke-direct {v0, p1, p2, v1, v2}, Lr5d;-><init>(JJ)V
-
-    invoke-direct {p0, v0, v0}, Ll5d;-><init>(Lr5d;Lr5d;)V
-
-    return-object p0
-.end method
-
-.method public final f()J
-    .registers 3
-
-    const-wide v0, -0x7fffffffffffffffL    # -4.9E-324
-
-    return-wide v0
+    return-void
 .end method

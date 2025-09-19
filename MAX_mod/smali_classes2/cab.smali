@@ -1,138 +1,64 @@
 .class public final Lcab;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Leab;
 
 
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Ldab;
-
-.field public final synthetic Z:J
+# static fields
+.field public static final a:Lcab;
 
 
 # direct methods
-.method public constructor <init>(Ldab;JLkotlin/coroutines/Continuation;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Lcab;->Y:Ldab;
+    new-instance v0, Lcab;
 
-    iput-wide p2, p0, Lcab;->Z:J
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p4}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Lcab;->a:Lcab;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 3
 
-    check-cast p1, Lr04;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Lcab;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lcab;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lcab;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 6
-
-    new-instance p1, Lcab;
-
-    iget-object v0, p0, Lcab;->Y:Ldab;
-
-    iget-wide v1, p0, Lcab;->Z:J
-
-    invoke-direct {p1, v0, v1, v2, p2}, Lcab;-><init>(Ldab;JLkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
-
-    iget v0, p0, Lcab;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    instance-of p0, p1, Lcab;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    if-nez p0, :cond_1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const/4 p0, 0x0
 
-    throw p0
+    return p0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    return v0
+.end method
 
-    iget-object p1, p0, Lcab;->Y:Ldab;
+.method public final hashCode()I
+    .registers 1
 
-    iget-object v0, p1, Ldab;->o0:Lgpd;
+    const p0, 0x2dab04c7
 
-    sget v2, Llw4;->o:I
+    return p0
+.end method
 
-    iget-wide v2, p0, Lcab;->Z:J
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    sget-object v4, Lqw4;->c:Lqw4;
-
-    invoke-static {v2, v3, v4}, Lg5e;->H(JLqw4;)J
-
-    move-result-wide v2
-
-    invoke-static {v0, v2, v3}, Lkbf;->M(Lfq5;J)Lw52;
-
-    move-result-object v0
-
-    new-instance v2, Lkw;
-
-    const/16 v3, 0xa
-
-    invoke-direct {v2, v3, p1}, Lkw;-><init>(ILjava/lang/Object;)V
-
-    iput v1, p0, Lcab;->X:I
-
-    invoke-virtual {v0, v2, p0}, Lv52;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    const-string p0, "Empty"
 
     return-object p0
 .end method

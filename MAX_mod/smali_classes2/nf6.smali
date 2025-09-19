@@ -1,139 +1,252 @@
 .class public final Lnf6;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public X:I
+.field public final a:I
 
-.field public final synthetic Y:Ljava/lang/Object;
+.field public final b:I
 
-.field public final synthetic Z:Luf6;
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:I
+
+.field public final f:Lztc;
+
+.field public final g:Lztc;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Luf6;)V
-    .registers 4
+.method public constructor <init>(IIIIILztc;)V
+    .registers 7
 
-    iput-object p1, p0, Lnf6;->Y:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lnf6;->Z:Luf6;
+    iput p1, p0, Lnf6;->a:I
 
-    const/4 p1, 0x2
+    iput p2, p0, Lnf6;->b:I
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput p3, p0, Lnf6;->c:I
+
+    iput p4, p0, Lnf6;->d:I
+
+    iput p5, p0, Lnf6;->e:I
+
+    iput-object p6, p0, Lnf6;->f:Lztc;
+
+    if-gtz p5, :cond_0
+
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p1, Lztc;
+
+    const/4 p2, 0x0
+
+    const/16 p3, 0xc
+
+    invoke-direct {p1, p2, p5, p5, p3}, Lztc;-><init>(FIII)V
+
+    :goto_0
+    iput-object p1, p0, Lnf6;->g:Lztc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
 
-    check-cast p1, Lr04;
+    const/4 v0, 0x1
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    if-ne p0, p1, :cond_0
 
-    invoke-virtual {p0, p1, p2}, Lnf6;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lnf6;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lnf6;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p1, Lnf6;
-
-    iget-object v0, p0, Lnf6;->Y:Ljava/lang/Object;
-
-    iget-object p0, p0, Lnf6;->Z:Luf6;
-
-    invoke-direct {p1, v0, p2, p0}, Lnf6;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Luf6;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
-
-    iget v0, p0, Lnf6;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object p1
+    return v0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    instance-of v1, p1, Lnf6;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    if-nez v1, :cond_1
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    goto :goto_0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    check-cast p1, Lnf6;
 
-    iget-object p1, p0, Lnf6;->Y:Ljava/lang/Object;
+    iget v1, p0, Lnf6;->a:I
 
-    check-cast p1, Ljava/lang/Number;
+    iget v2, p1, Lnf6;->a:I
 
-    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+    if-eq v1, v2, :cond_2
 
-    move-result-wide v2
+    goto :goto_0
 
-    iget-object p1, p0, Lnf6;->Z:Luf6;
+    :cond_2
+    iget v1, p0, Lnf6;->b:I
 
-    iget-object p1, p1, Luf6;->c:Lxh7;
+    iget v2, p1, Lnf6;->b:I
 
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    if-eq v1, v2, :cond_3
 
-    move-result-object p1
+    goto :goto_0
 
-    check-cast p1, Ltt7;
+    :cond_3
+    iget v1, p0, Lnf6;->c:I
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v2, p1, Lnf6;->c:I
 
-    const/16 v0, 0x1a
+    if-eq v1, v2, :cond_4
 
-    const/4 v4, 0x0
+    goto :goto_0
 
-    invoke-static {p1, v2, v3, v4, v0}, Ltt7;->b(Ltt7;JZI)Ls3a;
+    :cond_4
+    iget v1, p0, Lnf6;->d:I
 
-    move-result-object p1
+    iget v2, p1, Lnf6;->d:I
 
-    iput v1, p0, Lnf6;->X:I
+    if-eq v1, v2, :cond_5
 
-    invoke-static {p1, p0}, Lcr0;->e(Lcud;Lcx3;)Ljava/lang/Object;
+    goto :goto_0
+
+    :cond_5
+    iget v1, p0, Lnf6;->e:I
+
+    iget v2, p1, Lnf6;->e:I
+
+    if-eq v1, v2, :cond_6
+
+    goto :goto_0
+
+    :cond_6
+    iget-object p0, p0, Lnf6;->f:Lztc;
+
+    iget-object p1, p1, Lnf6;->f:Lztc;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_7
+
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_7
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget v0, p0, Lnf6;->a:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Lnf6;->b:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget v2, p0, Lnf6;->c:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget v2, p0, Lnf6;->d:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget v2, p0, Lnf6;->e:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-object p0, p0, Lnf6;->f:Lztc;
+
+    invoke-virtual {p0}, Lztc;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    mul-int/2addr p0, v1
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result v0
+
+    add-int/2addr v0, p0
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    const-string v0, ", threshold="
+
+    const-string v1, ", spanCount="
+
+    const-string v2, "GalleryUiOptions(cellSize="
+
+    iget v3, p0, Lnf6;->a:I
+
+    iget v4, p0, Lnf6;->b:I
+
+    invoke-static {v2, v3, v0, v4, v1}, Lsg0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", spanSpacing="
+
+    const-string v2, ", thumbnailSize="
+
+    iget v3, p0, Lnf6;->c:I
+
+    iget v4, p0, Lnf6;->d:I
+
+    invoke-static {v0, v3, v1, v4, v2}, Lsq3;->o(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)V
+
+    iget v1, p0, Lnf6;->e:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", albumsCoverResizeOptions="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lnf6;->f:Lztc;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ", isItemAnimatorEnabled=false)"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
     return-object p0
 .end method

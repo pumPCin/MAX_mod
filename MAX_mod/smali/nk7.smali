@@ -2,22 +2,46 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lcd6;
+.implements Ljava/io/Serializable;
 
-# static fields
-.field public static final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+# instance fields
+.field private final arity:I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(I)V
     .registers 2
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
-    sput-object v0, Lnk7;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput p1, p0, Lnk7;->arity:I
 
     return-void
+.end method
+
+
+# virtual methods
+.method public getArity()I
+    .registers 1
+
+    iget p0, p0, Lnk7;->arity:I
+
+    return p0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 2
+
+    sget-object v0, Ljpc;->a:Lkpc;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p0}, Lkpc;->a(Lcd6;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

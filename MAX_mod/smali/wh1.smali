@@ -1,26 +1,26 @@
 .class public final Lwh1;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
 .field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Lone/me/calls/ui/bottomsheet/ratecall/CallRateBottomSheet;
+.field public final synthetic Y:Lone/me/calllist/ui/callpresettings/CallPresettingsScreen;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/ratecall/CallRateBottomSheet;)V
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calllist/ui/callpresettings/CallPresettingsScreen;)V
     .registers 3
 
-    iput-object p2, p0, Lwh1;->Y:Lone/me/calls/ui/bottomsheet/ratecall/CallRateBottomSheet;
+    iput-object p2, p0, Lwh1;->Y:Lone/me/calllist/ui/callpresettings/CallPresettingsScreen;
 
     const/4 p2, 0x2
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -38,7 +38,7 @@
 
     check-cast p0, Lwh1;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lwh1;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -50,9 +50,9 @@
 
     new-instance v0, Lwh1;
 
-    iget-object p0, p0, Lwh1;->Y:Lone/me/calls/ui/bottomsheet/ratecall/CallRateBottomSheet;
+    iget-object p0, p0, Lwh1;->Y:Lone/me/calllist/ui/callpresettings/CallPresettingsScreen;
 
-    invoke-direct {v0, p2, p0}, Lwh1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/bottomsheet/ratecall/CallRateBottomSheet;)V
+    invoke-direct {v0, p2, p0}, Lwh1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calllist/ui/callpresettings/CallPresettingsScreen;)V
 
     iput-object p1, v0, Lwh1;->X:Ljava/lang/Object;
 
@@ -62,39 +62,43 @@
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     iget-object p1, p0, Lwh1;->X:Ljava/lang/Object;
 
-    check-cast p1, Lvte;
+    check-cast p1, Lyh1;
 
-    iget-object p0, p0, Lwh1;->Y:Lone/me/calls/ui/bottomsheet/ratecall/CallRateBottomSheet;
+    iget-object p0, p0, Lwh1;->Y:Lone/me/calllist/ui/callpresettings/CallPresettingsScreen;
 
-    iget-object v0, p0, Lone/me/calls/ui/bottomsheet/ratecall/CallRateBottomSheet;->A0:Lxac;
+    iget-object v0, p0, Lone/me/calllist/ui/callpresettings/CallPresettingsScreen;->Z:Lcic;
 
-    sget-object v1, Lone/me/calls/ui/bottomsheet/ratecall/CallRateBottomSheet;->F0:[Lsf7;
+    sget-object v1, Lone/me/calllist/ui/callpresettings/CallPresettingsScreen;->r0:[Lxi7;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x2
 
     aget-object v1, v1, v2
 
-    invoke-interface {v0, p0, v1}, Lxac;->M(Ljava/lang/Object;Lsf7;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    invoke-interface {v0, p0, v1}, Lcic;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {p1, p0}, Lvte;->b(Landroid/content/Context;)Ljava/lang/CharSequence;
+    check-cast p0, Lone/me/sdk/uikit/common/button/OneMeButton;
 
-    move-result-object p0
+    iget-boolean p1, p1, Lyh1;->a:Z
 
-    invoke-virtual {v0, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    if-eqz p1, :cond_0
 
-    sget-object p0, Lncf;->a:Lncf;
+    const/4 p1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    const/16 p1, 0x8
+
+    :goto_0
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

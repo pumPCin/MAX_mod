@@ -1,3 +1,7 @@
-.class public interface abstract Lpw5;
-.super Ljava/lang/Object;
+.class public abstract Lpw5;
+.super Lrv5;
 .source "SourceFile"
+
+# interfaces
+.implements Ljne;
+.implements Lbx5;

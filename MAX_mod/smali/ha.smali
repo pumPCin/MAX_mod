@@ -1,211 +1,248 @@
 .class public final Lha;
-.super Ljava/lang/Object;
+.super Lq1e;
 .source "SourceFile"
 
 
-# static fields
-.field public static final d:Lha;
-
-
 # instance fields
-.field public final a:Ljava/util/Map;
+.field public final X:Lga;
 
-.field public final b:Ljava/util/Set;
-
-.field public final c:J
+.field public final Y:Lmbg;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public constructor <init>(Lga;Ljava/util/concurrent/ExecutorService;Lmbg;)V
+    .registers 4
 
-    new-instance v0, Lha;
+    invoke-direct {p0, p2}, Lq1e;-><init>(Ljava/util/concurrent/Executor;)V
 
-    sget-object v1, Le35;->a:Le35;
+    iput-object p1, p0, Lha;->X:Lga;
 
-    const-wide/16 v2, 0x0
-
-    sget-object v4, Lw25;->a:Lw25;
-
-    invoke-direct {v0, v4, v1, v2, v3}, Lha;-><init>(Ljava/util/Map;Ljava/util/Set;J)V
-
-    sput-object v0, Lha;->d:Lha;
+    iput-object p3, p0, Lha;->Y:Lmbg;
 
     return-void
-.end method
-
-.method public constructor <init>(Ljava/util/Map;Ljava/util/Set;J)V
-    .registers 5
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lha;->a:Ljava/util/Map;
-
-    iput-object p2, p0, Lha;->b:Ljava/util/Set;
-
-    iput-wide p3, p0, Lha;->c:J
-
-    return-void
-.end method
-
-.method public static a(Lha;Ljava/util/LinkedHashMap;Lls;JI)Lha;
-    .registers 7
-
-    and-int/lit8 v0, p5, 0x1
-
-    if-eqz v0, :cond_0
-
-    iget-object p1, p0, Lha;->a:Ljava/util/Map;
-
-    :cond_0
-    and-int/lit8 v0, p5, 0x2
-
-    if-eqz v0, :cond_1
-
-    iget-object p2, p0, Lha;->b:Ljava/util/Set;
-
-    :cond_1
-    and-int/lit8 p5, p5, 0x4
-
-    if-eqz p5, :cond_2
-
-    iget-wide p3, p0, Lha;->c:J
-
-    :cond_2
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    new-instance p0, Lha;
-
-    invoke-direct {p0, p1, p2, p3, p4}, Lha;-><init>(Ljava/util/Map;Ljava/util/Set;J)V
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final H(Lj2e;I)V
     .registers 7
 
-    const/4 v0, 0x1
+    iget-object v0, p0, Lls7;->o:Lfu;
 
-    if-ne p0, p1, :cond_0
+    iget-object v1, v0, Lfu;->f:Ljava/util/List;
 
-    return v0
+    invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    :cond_0
-    instance-of v1, p1, Lha;
+    move-result-object v1
 
-    const/4 v2, 0x0
+    check-cast v1, Lts7;
 
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lha;
-
-    iget-object v1, p0, Lha;->a:Ljava/util/Map;
-
-    iget-object v3, p1, Lha;->a:Ljava/util/Map;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-interface {v1}, Lts7;->m()I
 
     move-result v1
 
-    if-nez v1, :cond_2
+    sget v2, Laea;->W0:I
 
-    return v2
+    iget-object v3, p0, Lha;->X:Lga;
 
-    :cond_2
-    iget-object v1, p0, Lha;->b:Ljava/util/Set;
+    if-ne v1, v2, :cond_1
 
-    iget-object v3, p1, Lha;->b:Ljava/util/Set;
+    check-cast p1, Lfa;
 
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-wide v3, p0, Lha;->c:J
-
-    iget-wide p0, p1, Lha;->c:J
-
-    cmp-long p0, v3, p0
-
-    if-eqz p0, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget-object v0, p0, Lha;->a:Ljava/util/Map;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget-object v2, p0, Lha;->b:Ljava/util/Set;
-
-    invoke-static {v2, v0, v1}, Lgl5;->e(Ljava/util/Set;II)I
-
-    move-result v0
-
-    iget-wide v1, p0, Lha;->c:J
-
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 5
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "AdminWaitingRoomUsers(usersInWaitingRoom="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lha;->a:Ljava/util/Map;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", lastNewUsersIds="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lha;->b:Ljava/util/Set;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", lastUpdate="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ")"
-
-    iget-wide v2, p0, Lha;->c:J
-
-    invoke-static {v0, v2, v3, v1}, La78;->n(Ljava/lang/StringBuilder;JLjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p2}, Lls7;->C(I)Ljava/lang/Object;
 
     move-result-object p0
 
+    check-cast p0, Lts7;
+
+    iget-object p2, p1, Lfa;->E0:Lmbg;
+
+    iget-object v0, p1, Lzoc;->a:Landroid/view/View;
+
+    instance-of v1, p0, Lzqf;
+
+    if-nez v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move-object v1, p0
+
+    check-cast v1, Lzqf;
+
+    invoke-virtual {p1, v1}, Lfa;->F(Lzqf;)V
+
+    check-cast v0, Lkn3;
+
+    invoke-virtual {v0}, Lkn3;->K()V
+
+    iget-object p1, p2, Lmbg;->b:Lzte;
+
+    invoke-virtual {p1}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/graphics/drawable/LayerDrawable;
+
+    iget-object p2, p2, Lmbg;->c:Lzte;
+
+    invoke-virtual {p2}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/graphics/drawable/LayerDrawable;
+
+    new-instance v1, Lea;
+
+    check-cast p0, Lzqf;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, v3, v2, p0}, Lea;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v0, p1, p2, v1}, Lkn3;->O(Landroid/graphics/drawable/LayerDrawable;Landroid/graphics/drawable/LayerDrawable;Lbc6;)V
+
+    return-void
+
+    :cond_1
+    iget-object v0, v0, Lfu;->f:Ljava/util/List;
+
+    invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lts7;
+
+    invoke-interface {v0}, Lts7;->m()I
+
+    move-result v0
+
+    sget v1, Laea;->T0:I
+
+    if-ne v0, v1, :cond_3
+
+    check-cast p1, Lda;
+
+    iget-object p1, p1, Lzoc;->a:Landroid/view/View;
+
+    invoke-virtual {p0, p2}, Lls7;->C(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lts7;
+
+    instance-of p2, p0, Larf;
+
+    if-nez p2, :cond_2
+
+    :goto_0
+    return-void
+
+    :cond_2
+    check-cast p0, Larf;
+
+    move-object p2, p1
+
+    check-cast p2, Lsrd;
+
+    invoke-virtual {p2, p0}, Lsrd;->setModelItem(Lird;)V
+
+    new-instance p0, Lg5;
+
+    const/4 p2, 0x6
+
+    invoke-direct {p0, p2, v3}, Lg5;-><init>(ILjava/lang/Object;)V
+
+    invoke-static {p1, p0}, Lz48;->D(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+
+    return-void
+
+    :cond_3
+    invoke-virtual {p0, p2}, Lls7;->C(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lts7;
+
+    invoke-virtual {p1, p0}, Lj2e;->y(Lts7;)V
+
+    return-void
+.end method
+
+.method public final bridge synthetic r(Lzoc;I)V
+    .registers 3
+
+    check-cast p1, Lj2e;
+
+    invoke-virtual {p0, p1, p2}, Lha;->H(Lj2e;I)V
+
+    return-void
+.end method
+
+.method public final t(Landroid/view/ViewGroup;I)Lzoc;
+    .registers 4
+
+    sget v0, Laea;->W0:I
+
+    if-ne p2, v0, :cond_0
+
+    new-instance p2, Lfa;
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    iget-object p0, p0, Lha;->Y:Lmbg;
+
+    invoke-direct {p2, p1, p0}, Lfa;-><init>(Landroid/content/Context;Lmbg;)V
+
+    return-object p2
+
+    :cond_0
+    sget p0, Laea;->T0:I
+
+    if-ne p2, p0, :cond_1
+
+    new-instance p0, Lda;
+
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    new-instance p2, Lsrd;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p2, p1, v0}, Lsrd;-><init>(Landroid/content/Context;I)V
+
+    invoke-direct {p0, p2}, Lzoc;-><init>(Landroid/view/View;)V
+
+    sget-object p1, Lnrd;->b:Lnrd;
+
+    invoke-virtual {p2, p1}, Lsrd;->setThemeDepended(Lnrd;)V
+
     return-object p0
+
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    const-string v0, "unknown item viewType "
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

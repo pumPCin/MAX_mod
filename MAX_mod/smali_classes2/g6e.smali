@@ -1,150 +1,183 @@
-.class public final synthetic Lg6e;
+.class public final Lg6e;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ly96;
+
+# static fields
+.field public static final synthetic e:[Lxi7;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lon7;
 
-.field public final synthetic b:Li6e;
+.field public final b:Ljava/lang/Object;
 
-.field public final synthetic c:Ljava/util/List;
+.field public final c:Lncb;
+
+.field public final d:Lncb;
 
 
 # direct methods
-.method public synthetic constructor <init>(Li6e;Ljava/util/List;I)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 5
 
-    iput p3, p0, Lg6e;->a:I
+    new-instance v0, Lmo9;
 
-    iput-object p1, p0, Lg6e;->b:Li6e;
+    const-string v1, "infiniteAnimationJob"
 
-    iput-object p2, p0, Lg6e;->c:Ljava/util/List;
+    const-string v2, "getInfiniteAnimationJob()Lkotlinx/coroutines/Job;"
+
+    const-class v3, Lg6e;
+
+    invoke-direct {v0, v3, v1, v2}, Lmo9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v1, Ljpc;->a:Lkpc;
+
+    const-string v2, "stateAnimationJob"
+
+    const-string v4, "getStateAnimationJob()Lkotlinx/coroutines/Job;"
+
+    invoke-static {v1, v3, v2, v4}, Lee5;->g(Lkpc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Lmo9;
+
+    move-result-object v1
+
+    const/4 v2, 0x2
+
+    new-array v2, v2, [Lxi7;
+
+    const/4 v3, 0x0
+
+    aput-object v0, v2, v3
+
+    const/4 v0, 0x1
+
+    aput-object v1, v2, v0
+
+    sput-object v2, Lg6e;->e:[Lxi7;
+
+    return-void
+.end method
+
+.method public constructor <init>(Lon7;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lg6e;->a:Lon7;
+
+    new-instance p1, Ly5e;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p1, v0}, Ly5e;-><init>(I)V
+
+    const/4 v0, 0x3
+
+    invoke-static {v0, p1}, Lcb7;->G(ILzb6;)Lcl7;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lg6e;->b:Ljava/lang/Object;
+
+    invoke-static {}, Lmq0;->L()Lncb;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lg6e;->c:Lncb;
+
+    invoke-static {}, Lmq0;->L()Lncb;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lg6e;->d:Lncb;
+
+    return-void
+.end method
+
+.method public static a(Ly77;I)V
+    .registers 4
+
+    if-nez p0, :cond_0
+
+    return-void
+
+    :cond_0
+    move-object v0, p0
+
+    check-cast v0, Ls5e;
+
+    iget-object v0, v0, Ls5e;->G0:Lej3;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getCurrentTextColor()I
+
+    move-result v0
+
+    new-instance v1, Landroid/animation/ArgbEvaluator;
+
+    invoke-direct {v1}, Landroid/animation/ArgbEvaluator;-><init>()V
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    filled-new-array {v0, p1}, [Ljava/lang/Object;
+
+    move-result-object p1
+
+    invoke-static {v1, p1}, Landroid/animation/ValueAnimator;->ofObject(Landroid/animation/TypeEvaluator;[Ljava/lang/Object;)Landroid/animation/ValueAnimator;
+
+    move-result-object p1
+
+    const-wide/16 v0, 0xc8
+
+    invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+
+    new-instance v0, La6e;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, p0, v1}, La6e;-><init>(Ly77;I)V
+
+    invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+.method public final b()V
+    .registers 6
 
-    iget v0, p0, Lg6e;->a:I
+    sget-object v0, Lg6e;->e:[Lxi7;
 
     const/4 v1, 0x0
 
-    iget-object v2, p0, Lg6e;->c:Ljava/util/List;
+    aget-object v2, v0, v1
 
-    iget-object p0, p0, Lg6e;->b:Li6e;
+    iget-object v3, p0, Lg6e;->c:Lncb;
 
-    const/4 v3, 0x1
+    invoke-virtual {v3, p0, v2}, Lncb;->N(Ljava/lang/Object;Lxi7;)Ljava/lang/Object;
 
-    check-cast p1, Ljava/util/List;
+    move-result-object v2
 
-    packed-switch v0, :pswitch_data_0
+    check-cast v2, Lqe7;
 
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+    const/4 v4, 0x0
 
-    move-result v0
+    if-eqz v2, :cond_0
 
-    if-eqz v0, :cond_0
-
-    invoke-static {v2}, Lcud;->g(Ljava/lang/Object;)Ls3a;
-
-    move-result-object p0
-
-    goto :goto_0
+    invoke-interface {v2, v4}, Lqe7;->cancel(Ljava/util/concurrent/CancellationException;)V
 
     :cond_0
-    invoke-static {v2}, Lcud;->g(Ljava/lang/Object;)Ls3a;
+    aget-object v0, v0, v1
 
-    move-result-object v0
+    invoke-virtual {v3, p0, v0, v4}, Lncb;->h0(Ljava/lang/Object;Lxi7;Ljava/lang/Object;)V
 
-    invoke-virtual {p0, p1}, Li6e;->d(Ljava/util/List;)Luud;
-
-    move-result-object p0
-
-    const/4 p1, 0x2
-
-    new-array p1, p1, [Lcud;
-
-    aput-object v0, p1, v1
-
-    aput-object p0, p1, v3
-
-    invoke-static {p1}, Lot5;->a([Ljava/lang/Object;)Lot5;
-
-    move-result-object p0
-
-    const p1, 0x7fffffff
-
-    const-string v0, "maxConcurrency"
-
-    invoke-static {p1, v0}, Lb38;->I(ILjava/lang/String;)V
-
-    new-instance p1, Ldu5;
-
-    invoke-direct {p1, p0}, Ldu5;-><init>(Lot5;)V
-
-    new-instance p0, Ljava/util/ArrayList;
-
-    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
-
-    new-instance v0, Lw1e;
-
-    const/4 v1, 0x7
-
-    invoke-direct {v0, v1}, Lw1e;-><init>(I)V
-
-    new-instance v1, Lqa6;
-
-    invoke-direct {v1, p0}, Lqa6;-><init>(Ljava/lang/Object;)V
-
-    new-instance p0, Lst5;
-
-    invoke-direct {p0, p1, v1, v0}, Lst5;-><init>(Lot5;Lqa6;Lgm0;)V
-
-    :goto_0
-    return-object p0
-
-    :pswitch_0
-    invoke-static {v2}, Ly0a;->h(Ljava/lang/Iterable;)Lpc3;
-
-    move-result-object v0
-
-    new-instance v2, Lma2;
-
-    const/16 v4, 0x17
-
-    invoke-direct {v2, v4, p1}, Lma2;-><init>(ILjava/util/List;)V
-
-    new-instance v4, Lb1a;
-
-    invoke-direct {v4, v0, v2, v3}, Lb1a;-><init>(Ly0a;Lh9b;I)V
-
-    invoke-virtual {v4}, Ly0a;->t()Lc1a;
-
-    move-result-object v0
-
-    new-instance v2, Lg6e;
-
-    invoke-direct {v2, p0, p1, v3}, Lg6e;-><init>(Li6e;Ljava/util/List;I)V
-
-    new-instance p0, Lmud;
-
-    invoke-direct {p0, v0, v2, v1}, Lmud;-><init>(Lcud;Ly96;I)V
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

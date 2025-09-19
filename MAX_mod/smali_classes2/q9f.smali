@@ -1,65 +1,129 @@
 .class public final Lq9f;
-.super Luxf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final X:Lx65;
+.field public final a:Lr9f;
 
-.field public final Y:Lx65;
-
-.field public volatile Z:Lq1e;
-
-.field public final b:Lm9f;
-
-.field public final c:Lxh7;
-
-.field public final o:Lxh7;
+.field public final b:Ls9f;
 
 
 # direct methods
-.method public constructor <init>(Lm9f;)V
-    .registers 5
+.method public constructor <init>(Lr9f;Ls9f;)V
+    .registers 3
 
-    sget-object v0, Ls7f;->a:Ls7f;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Ls4;
+    iput-object p1, p0, Lq9f;->a:Lr9f;
 
-    move-result-object v1
-
-    const-class v2, Lc53;
-
-    invoke-virtual {v1, v2}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    invoke-virtual {v0}, Ls7f;->b()Lxh7;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Ls7f;->c()Lxh7;
-
-    move-result-object v0
-
-    invoke-direct {p0}, Luxf;-><init>()V
-
-    iput-object p1, p0, Lq9f;->b:Lm9f;
-
-    iput-object v1, p0, Lq9f;->c:Lxh7;
-
-    iput-object v0, p0, Lq9f;->o:Lxh7;
-
-    new-instance p1, Lx65;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, v0}, Lx65;-><init>(I)V
-
-    iput-object p1, p0, Lq9f;->X:Lx65;
-
-    new-instance p1, Lx65;
-
-    invoke-direct {p1, v0}, Lx65;-><init>(I)V
-
-    iput-object p1, p0, Lq9f;->Y:Lx65;
+    iput-object p2, p0, Lq9f;->b:Ls9f;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lq9f;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lq9f;
+
+    iget-object v1, p0, Lq9f;->a:Lr9f;
+
+    iget-object v3, p1, Lq9f;->a:Lr9f;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object p0, p0, Lq9f;->b:Ls9f;
+
+    iget-object p1, p1, Lq9f;->b:Ls9f;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_3
+
+    return v2
+
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    iget-object v0, p0, Lq9f;->a:Lr9f;
+
+    invoke-virtual {v0}, Lr9f;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lq9f;->b:Ls9f;
+
+    invoke-virtual {p0}, Ls9f;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "TopbarTextColors(default="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lq9f;->a:Lr9f;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", disabled="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lq9f;->b:Ls9f;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,86 +1,113 @@
 .class public final Lht7;
-.super Ljava/lang/Object;
+.super Lkt7;
 .source "SourceFile"
-
-# interfaces
-.implements Lowe;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/Executor;
-
-.field public final b:Lplg;
-
-.field public final c:Landroid/content/ContentResolver;
+.field public final a:Lp64;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/concurrent/Executor;Lplg;Landroid/content/ContentResolver;)V
-    .registers 4
+.method public constructor <init>(Lp64;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lht7;->a:Ljava/util/concurrent/Executor;
-
-    iput-object p2, p0, Lht7;->b:Lplg;
-
-    iput-object p3, p0, Lht7;->c:Landroid/content/ContentResolver;
+    iput-object p1, p0, Lht7;->a:Lp64;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lyi0;Lhcb;)V
-    .registers 10
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    move-object v0, p2
+    if-ne p0, p1, :cond_0
 
-    check-cast v0, Lhk0;
+    const/4 p0, 0x1
 
-    iget-object v4, v0, Lhk0;->c:Lkcb;
+    return p0
 
-    iget-object v6, v0, Lhk0;->a:Lhz6;
+    :cond_0
+    if-eqz p1, :cond_2
 
-    const-string v1, "local"
+    const-class v0, Lht7;
 
-    const-string v2, "exif"
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    invoke-virtual {v0, v1, v2}, Lhk0;->h(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v1
 
-    new-instance v1, Lgt7;
+    if-eq v0, v1, :cond_1
 
-    move-object v2, p0
+    goto :goto_0
 
-    move-object v3, p1
+    :cond_1
+    check-cast p1, Lht7;
 
-    move-object v5, p2
+    iget-object p0, p0, Lht7;->a:Lp64;
 
-    invoke-direct/range {v1 .. v6}, Lgt7;-><init>(Lht7;Lyi0;Lkcb;Lhcb;Lhz6;)V
+    iget-object p1, p1, Lht7;->a:Lp64;
 
-    new-instance p0, Lg94;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, v1}, Lg94;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v0, p0}, Lhk0;->a(Lik0;)V
-
-    iget-object p0, v2, Lht7;->a:Ljava/util/concurrent/Executor;
-
-    invoke-interface {p0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final b(Lulc;)Z
-    .registers 2
-
-    const/16 p0, 0x200
-
-    invoke-static {p0, p0, p1}, Lfog;->J(IILulc;)Z
+    invoke-virtual {p0, p1}, Lp64;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     return p0
+
+    :cond_2
+    :goto_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    const-class v0, Lht7;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object p0, p0, Lht7;->a:Lp64;
+
+    invoke-virtual {p0}, Lp64;->hashCode()I
+
+    move-result p0
+
+    add-int/2addr p0, v0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "Failure {mOutputData="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p0, p0, Lht7;->a:Lp64;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

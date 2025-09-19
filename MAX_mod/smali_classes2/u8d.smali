@@ -1,14 +1,55 @@
-.class public interface abstract Lu8d;
-.super Ljava/lang/Object;
+.class public final Lu8d;
+.super Lx2;
 .source "SourceFile"
 
 
+# instance fields
+.field public final synthetic c:I
+
+
+# direct methods
+.method public synthetic constructor <init>(Landroid/view/View;I)V
+    .registers 3
+
+    iput p2, p0, Lu8d;->c:I
+
+    const/16 p2, 0xa
+
+    invoke-direct {p0, p2, p1}, Lx2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+.end method
+
+.method private final W0(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+    .registers 3
+
+    return-void
+.end method
+
+.method private final X0(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+    .registers 3
+
+    return-void
+.end method
+
+.method private final Y0(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+    .registers 3
+
+    return-void
+.end method
+
+.method private final Z0(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+    .registers 3
+
+    return-void
+.end method
+
+
 # virtual methods
-.method public abstract a()V
-.end method
+.method public final B0(Landroid/graphics/Rect;Landroid/graphics/Rect;)V
+    .registers 3
 
-.method public abstract b()Z
-.end method
+    iget p0, p0, Lu8d;->c:I
 
-.method public abstract c(Ljava/lang/String;Ljava/util/List;Lh96;Lj96;)V
+    return-void
 .end method

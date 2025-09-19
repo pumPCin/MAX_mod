@@ -1,178 +1,177 @@
-.class public final Lj22;
-.super Lxie;
+.class public final synthetic Lj22;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lz96;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # instance fields
-.field public final synthetic X:I
+.field public final synthetic a:I
 
-.field public synthetic Y:Landroidx/appcompat/widget/AppCompatTextView;
+.field public final synthetic b:I
+
+.field public final synthetic c:I
+
+.field public final synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILkotlin/coroutines/Continuation;I)V
-    .registers 4
+.method public synthetic constructor <init>(Ljava/lang/Object;III)V
+    .registers 5
 
-    iput p3, p0, Lj22;->X:I
+    iput p4, p0, Lj22;->a:I
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lj22;->o:Ljava/lang/Object;
+
+    iput p2, p0, Lj22;->b:I
+
+    iput p3, p0, Lj22;->c:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .registers 11
 
-    iget p0, p0, Lj22;->X:I
-
-    check-cast p1, Landroidx/appcompat/widget/AppCompatTextView;
-
-    check-cast p2, Loma;
-
-    check-cast p3, Lkotlin/coroutines/Continuation;
-
-    packed-switch p0, :pswitch_data_0
-
-    new-instance p0, Lj22;
-
-    const/4 p2, 0x3
-
-    const/4 v0, 0x2
-
-    invoke-direct {p0, p2, p3, v0}, Lj22;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p1, p0, Lj22;->Y:Landroidx/appcompat/widget/AppCompatTextView;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lj22;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_0
-    new-instance p0, Lj22;
-
-    const/4 p2, 0x3
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p2, p3, v0}, Lj22;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p1, p0, Lj22;->Y:Landroidx/appcompat/widget/AppCompatTextView;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lj22;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_1
-    new-instance p0, Lj22;
-
-    const/4 p2, 0x3
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p2, p3, v0}, Lj22;-><init>(ILkotlin/coroutines/Continuation;I)V
-
-    iput-object p1, p0, Lj22;->Y:Landroidx/appcompat/widget/AppCompatTextView;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lj22;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iget v0, p0, Lj22;->X:I
+    iget v0, p0, Lj22;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object v0, p0, Lj22;->o:Ljava/lang/Object;
 
-    iget-object p0, p0, Lj22;->Y:Landroidx/appcompat/widget/AppCompatTextView;
+    check-cast v0, Lone/me/chatscreen/mediabar/MediaBarWidget;
 
-    sget-object p1, Lct4;->p0:Lws9;
+    iget-object v1, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->Y:Landroid/animation/IntEvaluator;
 
-    invoke-virtual {p1, p0}, Lws9;->e(Landroid/view/View;)Loma;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
 
-    move-result-object p1
+    move-result p1
 
-    invoke-interface {p1}, Loma;->getText()Lise;
+    iget v2, p0, Lj22;->b:I
 
-    move-result-object p1
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    iget p1, p1, Lise;->e:I
+    move-result-object v2
 
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+    iget p0, p0, Lj22;->c:I
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    return-object p0
+    move-result-object p0
+
+    invoke-virtual {v1, p1, v2, p0}, Landroid/animation/IntEvaluator;->evaluate(FLjava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    iget-object p1, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->L0:Landroid/graphics/drawable/ColorDrawable;
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-virtual {p1, v1}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
+
+    iget-object p1, v0, Lone/me/chatscreen/mediabar/MediaBarWidget;->B0:Landroid/graphics/drawable/ColorDrawable;
+
+    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
+
+    move-result p0
+
+    invoke-virtual {p1, p0}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
+
+    return-void
 
     :pswitch_0
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget-object v0, p0, Lj22;->o:Ljava/lang/Object;
 
-    iget-object p0, p0, Lj22;->Y:Landroidx/appcompat/widget/AppCompatTextView;
+    check-cast v0, Ll22;
 
-    sget-object p1, Lct4;->p0:Lws9;
+    iget v1, v0, Ll22;->o:F
 
-    invoke-virtual {p1, p0}, Lws9;->e(Landroid/view/View;)Loma;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+
+    move-result p1
+
+    iget-object v2, v0, Ll22;->X:[Ljava/lang/Float;
+
+    iget v3, p0, Lj22;->b:I
+
+    aget-object v4, v2, v3
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x1
+
+    if-eqz v4, :cond_0
+
+    move v4, v6
+
+    goto :goto_0
+
+    :cond_0
+    move v4, v5
+
+    :goto_0
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    if-eqz v4, :cond_1
+
+    sub-float v8, v1, v7
+
+    mul-float/2addr v8, p1
+
+    add-float/2addr v8, v7
+
+    invoke-static {v8}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v8
+
+    aput-object v8, v2, v3
+
+    :cond_1
+    iget p0, p0, Lj22;->c:I
+
+    aget-object v3, v2, p0
+
+    if-eqz v3, :cond_2
+
+    move v5, v6
+
+    :cond_2
+    if-eqz v5, :cond_3
+
+    sub-float v3, v1, v7
+
+    mul-float/2addr v3, p1
+
+    sub-float/2addr v1, v3
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
 
-    invoke-interface {p1}, Loma;->getText()Lise;
+    aput-object p1, v2, p0
 
-    move-result-object p1
+    :cond_3
+    if-nez v4, :cond_4
 
-    iget p1, p1, Lise;->h:I
+    if-eqz v5, :cond_5
 
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
+    :cond_4
+    iget-object p0, v0, Ll22;->a:Lspa;
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {p0}, Lspa;->invoke()Ljava/lang/Object;
 
-    return-object p0
-
-    :pswitch_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lj22;->Y:Landroidx/appcompat/widget/AppCompatTextView;
-
-    sget-object p1, Lct4;->p0:Lws9;
-
-    invoke-virtual {p1, p0}, Lws9;->e(Landroid/view/View;)Loma;
-
-    move-result-object p1
-
-    invoke-interface {p1}, Loma;->getText()Lise;
-
-    move-result-object p1
-
-    iget p1, p1, Lise;->i:I
-
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    :cond_5
+    return-void
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

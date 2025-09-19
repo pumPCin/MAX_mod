@@ -1,87 +1,46 @@
 .class public final Lmw5;
-.super Ljava/lang/Object;
+.super Lrv5;
 .source "SourceFile"
 
 # interfaces
-.implements Lpw5;
+.implements Lf4d;
 
 
 # instance fields
-.field public final a:Z
+.field public final b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Z)V
+.method public constructor <init>(Ljava/lang/Object;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p1, p0, Lmw5;->a:Z
+    iput-object p1, p0, Lmw5;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final f(Lbx5;)V
     .registers 3
 
-    if-ne p0, p1, :cond_0
+    new-instance v0, Le4d;
 
-    goto :goto_1
+    iget-object p0, p0, Lmw5;->b:Ljava/lang/Object;
 
-    :cond_0
-    instance-of v0, p1, Lmw5;
+    invoke-direct {v0, p1, p0}, Le4d;-><init>(Ljne;Ljava/lang/Object;)V
 
-    if-nez v0, :cond_1
+    invoke-interface {p1, v0}, Ljne;->d(Llne;)V
 
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lmw5;
-
-    iget-boolean p0, p0, Lmw5;->a:Z
-
-    iget-boolean p1, p1, Lmw5;->a:Z
-
-    if-eq p0, p1, :cond_2
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
+    return-void
 .end method
 
-.method public final hashCode()I
+.method public final get()Ljava/lang/Object;
     .registers 1
 
-    iget-boolean p0, p0, Lmw5;->a:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    const-string v0, "Close(afterCreate="
-
-    const-string v1, ")"
-
-    iget-boolean p0, p0, Lmw5;->a:Z
-
-    invoke-static {v0, v1, p0}, Lfge;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
-
-    move-result-object p0
+    iget-object p0, p0, Lmw5;->b:Ljava/lang/Object;
 
     return-object p0
 .end method

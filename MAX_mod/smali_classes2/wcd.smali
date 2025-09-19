@@ -1,79 +1,64 @@
 .class public final Lwcd;
-.super Ltcd;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lxcd;
 
 
 # instance fields
-.field public final synthetic g:I
+.field public final X:I
 
-.field public final h:Ljava/lang/String;
+.field public final a:Ltrd;
 
-.field public i:Z
+.field public final b:Lva4;
 
-.field public final j:Ljava/lang/Object;
+.field public final c:I
+
+.field public final o:J
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Lw10;)V
-    .registers 6
-
-    const/4 v0, 0x0
-
-    iput v0, p0, Lwcd;->g:I
-
-    invoke-direct {p0, p1, p2}, Ltcd;-><init>(J)V
-
-    iput-object p3, p0, Lwcd;->h:Ljava/lang/String;
-
-    iput-object p4, p0, Lwcd;->j:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(JLjava/lang/String;ZLjava/util/List;)V
+.method public constructor <init>(Ltrd;Lva4;IJI)V
     .registers 7
 
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput v0, p0, Lwcd;->g:I
+    iput-object p1, p0, Lwcd;->a:Ltrd;
 
-    invoke-direct {p0, p1, p2}, Ltcd;-><init>(J)V
+    iput-object p2, p0, Lwcd;->b:Lva4;
 
-    iput-object p3, p0, Lwcd;->h:Ljava/lang/String;
+    iput p3, p0, Lwcd;->c:I
 
-    iput-boolean p4, p0, Lwcd;->i:Z
+    iput-wide p4, p0, Lwcd;->o:J
 
-    iput-object p5, p0, Lwcd;->j:Ljava/lang/Object;
+    iput p6, p0, Lwcd;->X:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lucd;
-    .registers 2
+.method public final a()I
+    .registers 1
 
-    iget v0, p0, Lwcd;->g:I
+    iget p0, p0, Lwcd;->X:I
 
-    packed-switch v0, :pswitch_data_0
+    return p0
+.end method
 
-    new-instance v0, Lycd;
+.method public final getItemId()J
+    .registers 3
 
-    invoke-direct {v0, p0}, Lycd;-><init>(Lwcd;)V
+    iget-wide v0, p0, Lwcd;->o:J
 
-    return-object v0
+    return-wide v0
+.end method
 
-    :pswitch_0
-    new-instance v0, Lxcd;
+.method public final m()I
+    .registers 1
 
-    invoke-direct {v0, p0}, Lxcd;-><init>(Lwcd;)V
+    iget p0, p0, Lwcd;->c:I
 
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

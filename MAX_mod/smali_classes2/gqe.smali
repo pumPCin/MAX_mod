@@ -1,28 +1,26 @@
 .class public final Lgqe;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic X:Luw3;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final synthetic Y:Landroid/view/View;
+.field public final synthetic Y:Lru/ok/messages/location/view/SupportMapFragmentImpl;
 
 
 # direct methods
-.method public constructor <init>(Luw3;Landroid/view/View;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(Lru/ok/messages/location/view/SupportMapFragmentImpl;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput-object p1, p0, Lgqe;->X:Luw3;
-
-    iput-object p2, p0, Lgqe;->Y:Landroid/view/View;
+    iput-object p1, p0, Lgqe;->Y:Lru/ok/messages/location/view/SupportMapFragmentImpl;
 
     const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -32,7 +30,7 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    check-cast p1, Ldqe;
+    check-cast p1, Lera;
 
     check-cast p2, Lkotlin/coroutines/Continuation;
 
@@ -42,7 +40,7 @@
 
     check-cast p0, Lgqe;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lgqe;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -52,51 +50,31 @@
 .method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
 
-    new-instance p1, Lgqe;
+    new-instance v0, Lgqe;
 
-    iget-object v0, p0, Lgqe;->X:Luw3;
+    iget-object p0, p0, Lgqe;->Y:Lru/ok/messages/location/view/SupportMapFragmentImpl;
 
-    iget-object p0, p0, Lgqe;->Y:Landroid/view/View;
+    invoke-direct {v0, p0, p2}, Lgqe;-><init>(Lru/ok/messages/location/view/SupportMapFragmentImpl;Lkotlin/coroutines/Continuation;)V
 
-    invoke-direct {p1, v0, p0, p2}, Lgqe;-><init>(Luw3;Landroid/view/View;Lkotlin/coroutines/Continuation;)V
+    iput-object p1, v0, Lgqe;->X:Ljava/lang/Object;
 
-    return-object p1
+    return-object v0
 .end method
 
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .registers 2
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object p1, p0, Lgqe;->Y:Landroid/view/View;
+    iget-object p1, p0, Lgqe;->X:Ljava/lang/Object;
 
-    invoke-virtual {p1}, Landroid/view/View;->isInEditMode()Z
+    check-cast p1, Lera;
 
-    move-result v0
+    iget-object p0, p0, Lgqe;->Y:Lru/ok/messages/location/view/SupportMapFragmentImpl;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {p0, p1}, Lru/ok/messages/location/view/SupportMapFragmentImpl;->S0(Lera;)V
 
-    sget-object p1, Lxh4;->e0:Lxh4;
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    sget-object v0, Ldqe;->a0:Ldle;
-
-    invoke-static {p1}, Lx44;->Q(Landroid/content/Context;)Ldqe;
-
-    move-result-object p1
-
-    :goto_0
-    iget-object p0, p0, Lgqe;->X:Luw3;
-
-    invoke-virtual {p0, p1}, Luw3;->y(Ldqe;)V
-
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

@@ -1,232 +1,125 @@
 .class public final Ll5f;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljl4;
 .source "SourceFile"
-
-# interfaces
-.implements Ly4f;
 
 
 # instance fields
-.field public final a:Landroid/view/View;
+.field public final c:Lejb;
 
-.field public final b:Landroid/view/View;
+.field public final d:I
 
-.field public c:[I
+.field public final e:Lztc;
 
-.field public d:F
-
-.field public e:F
-
-.field public final f:F
-
-.field public final g:F
-
-.field public h:Z
+.field public final synthetic f:Lp9;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Landroid/view/View;FF)V
+.method public constructor <init>(Lp9;Ldi0;Lejb;I)V
     .registers 5
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput-object p1, p0, Ll5f;->f:Lp9;
 
-    iput-object p1, p0, Ll5f;->b:Landroid/view/View;
+    invoke-direct {p0, p2}, Ljl4;-><init>(Ldi0;)V
 
-    iput-object p2, p0, Ll5f;->a:Landroid/view/View;
+    iput-object p3, p0, Ll5f;->c:Lejb;
 
-    iput p3, p0, Ll5f;->f:F
+    iput p4, p0, Ll5f;->d:I
 
-    iput p4, p0, Ll5f;->g:F
+    check-cast p3, Lmj0;
 
-    sget p1, Ldyb;->transition_position:I
+    iget-object p1, p3, Lmj0;->a:Li27;
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    iget-object p1, p1, Li27;->h:Lztc;
 
-    move-result-object p1
+    iput-object p1, p0, Ll5f;->e:Lztc;
 
-    check-cast p1, [I
-
-    iput-object p1, p0, Ll5f;->c:[I
-
-    if-eqz p1, :cond_0
-
-    sget p0, Ldyb;->transition_position:I
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p2, p0, p1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(La5f;)V
-    .registers 2
-
-    return-void
-.end method
-
-.method public final b()V
+.method public final f(Ljava/lang/Throwable;)V
     .registers 5
 
-    iget-object v0, p0, Ll5f;->c:[I
+    iget v0, p0, Ll5f;->d:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iget-object v1, p0, Ll5f;->c:Lejb;
+
+    iget-object v2, p0, Ll5f;->f:Lp9;
+
+    iget-object p0, p0, Ljl4;->b:Ldi0;
+
+    invoke-virtual {v2, v0, p0, v1}, Lp9;->c(ILdi0;Lejb;)Z
+
+    move-result v0
 
     if-nez v0, :cond_0
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [I
-
-    iput-object v0, p0, Ll5f;->c:[I
-
-    :cond_0
-    iget-object v0, p0, Ll5f;->c:[I
-
-    iget-object v1, p0, Ll5f;->b:Landroid/view/View;
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->getLocationOnScreen([I)V
-
-    sget v0, Ldyb;->transition_position:I
-
-    iget-object v2, p0, Ll5f;->c:[I
-
-    iget-object v3, p0, Ll5f;->a:Landroid/view/View;
-
-    invoke-virtual {v3, v0, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    invoke-virtual {v1}, Landroid/view/View;->getTranslationX()F
-
-    move-result v0
-
-    iput v0, p0, Ll5f;->d:F
-
-    invoke-virtual {v1}, Landroid/view/View;->getTranslationY()F
-
-    move-result v0
-
-    iput v0, p0, Ll5f;->e:F
-
-    iget v0, p0, Ll5f;->f:F
-
-    invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationX(F)V
-
-    iget p0, p0, Ll5f;->g:F
-
-    invoke-virtual {v1, p0}, Landroid/view/View;->setTranslationY(F)V
-
-    return-void
-.end method
-
-.method public final c(La5f;)V
-    .registers 2
-
-    invoke-virtual {p0, p1}, Ll5f;->e(La5f;)V
-
-    return-void
-.end method
-
-.method public final e(La5f;)V
-    .registers 3
-
-    iget-boolean p1, p0, Ll5f;->h:Z
-
-    if-nez p1, :cond_0
-
-    sget p1, Ldyb;->transition_position:I
-
-    const/4 v0, 0x0
-
-    iget-object p0, p0, Ll5f;->a:Landroid/view/View;
-
-    invoke-virtual {p0, p1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p0, p1}, Ldi0;->e(Ljava/lang/Throwable;)V
 
     :cond_0
     return-void
 .end method
 
-.method public final f()V
-    .registers 3
+.method public final h(ILjava/lang/Object;)V
+    .registers 5
 
-    iget v0, p0, Ll5f;->d:F
+    check-cast p2, Lk55;
 
-    iget-object v1, p0, Ll5f;->b:Landroid/view/View;
+    iget-object v0, p0, Ljl4;->b:Ldi0;
 
-    invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationX(F)V
+    if-eqz p2, :cond_1
 
-    iget p0, p0, Ll5f;->e:F
+    invoke-static {p1}, Ldi0;->b(I)Z
 
-    invoke-virtual {v1, p0}, Landroid/view/View;->setTranslationY(F)V
+    move-result v1
 
-    return-void
-.end method
+    if-nez v1, :cond_0
 
-.method public final h(La5f;)V
-    .registers 3
+    iget-object v1, p0, Ll5f;->e:Lztc;
 
-    const/4 p1, 0x1
+    invoke-static {p2, v1}, Lb0b;->t(Lk55;Lztc;)Z
 
-    iput-boolean p1, p0, Ll5f;->h:Z
+    move-result v1
 
-    iget p1, p0, Ll5f;->f:F
-
-    iget-object v0, p0, Ll5f;->b:Landroid/view/View;
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationX(F)V
-
-    iget p0, p0, Ll5f;->g:F
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->setTranslationY(F)V
-
-    return-void
-.end method
-
-.method public final onAnimationCancel(Landroid/animation/Animator;)V
-    .registers 3
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Ll5f;->h:Z
-
-    iget p1, p0, Ll5f;->f:F
-
-    iget-object v0, p0, Ll5f;->b:Landroid/view/View;
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationX(F)V
-
-    iget p0, p0, Ll5f;->g:F
-
-    invoke-virtual {v0, p0}, Landroid/view/View;->setTranslationY(F)V
-
-    return-void
-.end method
-
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .registers 3
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Ll5f;->onAnimationEnd(Landroid/animation/Animator;Z)V
-
-    return-void
-.end method
-
-.method public final onAnimationEnd(Landroid/animation/Animator;Z)V
-    .registers 3
-
-    if-nez p2, :cond_0
-
-    iget p1, p0, Ll5f;->f:F
-
-    iget-object p2, p0, Ll5f;->b:Landroid/view/View;
-
-    invoke-virtual {p2, p1}, Landroid/view/View;->setTranslationX(F)V
-
-    iget p0, p0, Ll5f;->g:F
-
-    invoke-virtual {p2, p0}, Landroid/view/View;->setTranslationY(F)V
+    if-eqz v1, :cond_1
 
     :cond_0
+    invoke-virtual {v0, p1, p2}, Ldi0;->g(ILjava/lang/Object;)V
+
+    return-void
+
+    :cond_1
+    invoke-static {p1}, Ldi0;->a(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    invoke-static {p2}, Lk55;->d(Lk55;)V
+
+    iget p1, p0, Ll5f;->d:I
+
+    const/4 p2, 0x1
+
+    add-int/2addr p1, p2
+
+    iget-object v1, p0, Ll5f;->c:Lejb;
+
+    iget-object p0, p0, Ll5f;->f:Lp9;
+
+    invoke-virtual {p0, p1, v0, v1}, Lp9;->c(ILdi0;Lejb;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    const/4 p0, 0x0
+
+    invoke-virtual {v0, p2, p0}, Ldi0;->g(ILjava/lang/Object;)V
+
+    :cond_2
     return-void
 .end method

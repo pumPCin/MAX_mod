@@ -1,154 +1,161 @@
 .class public final Lw18;
-.super Ly18;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/util/Iterator;
-.implements Lhf7;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic X:I
+.field public X:I
+
+.field public final synthetic Y:Li28;
 
 
 # direct methods
-.method public constructor <init>(ILz18;)V
+.method public constructor <init>(Li28;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p1, p0, Lw18;->X:I
+    iput-object p1, p0, Lw18;->Y:Li28;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
 
-    iput-object p2, p0, Ly18;->o:Ljava/lang/Object;
-
-    const/4 p1, -0x1
-
-    iput p1, p0, Ly18;->b:I
-
-    iget p1, p2, Lz18;->n0:I
-
-    iput p1, p0, Ly18;->c:I
-
-    invoke-virtual {p0}, Ly18;->e()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final next()Ljava/lang/Object;
-    .registers 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Ly04;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lw18;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lw18;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lw18;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lw18;
+
+    iget-object p0, p0, Lw18;->Y:Li28;
+
+    invoke-direct {p1, p0, p2}, Lw18;-><init>(Li28;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 10
 
     iget v0, p0, Lw18;->X:I
 
-    packed-switch v0, :pswitch_data_0
+    sget-object v1, Lylf;->a:Lylf;
 
-    invoke-virtual {p0}, Ly18;->b()V
+    const/4 v2, 0x1
 
-    iget v0, p0, Ly18;->a:I
+    if-eqz v0, :cond_1
 
-    iget-object v1, p0, Ly18;->o:Ljava/lang/Object;
+    if-ne v0, v2, :cond_0
 
-    check-cast v1, Lz18;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget v2, v1, Lz18;->Y:I
-
-    if-ge v0, v2, :cond_0
-
-    add-int/lit8 v2, v0, 0x1
-
-    iput v2, p0, Ly18;->a:I
-
-    iput v0, p0, Ly18;->b:I
-
-    iget-object v1, v1, Lz18;->b:[Ljava/lang/Object;
-
-    aget-object v0, v1, v0
-
-    invoke-virtual {p0}, Ly18;->e()V
-
-    return-object v0
+    return-object v1
 
     :cond_0
-    new-instance p0, Ljava/util/NoSuchElementException;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw p0
-
-    :pswitch_0
-    invoke-virtual {p0}, Ly18;->b()V
-
-    iget v0, p0, Ly18;->a:I
-
-    iget-object v1, p0, Ly18;->o:Ljava/lang/Object;
-
-    check-cast v1, Lz18;
-
-    iget v2, v1, Lz18;->Y:I
-
-    if-ge v0, v2, :cond_1
-
-    add-int/lit8 v2, v0, 0x1
-
-    iput v2, p0, Ly18;->a:I
-
-    iput v0, p0, Ly18;->b:I
-
-    iget-object v1, v1, Lz18;->a:[Ljava/lang/Object;
-
-    aget-object v0, v1, v0
-
-    invoke-virtual {p0}, Ly18;->e()V
-
-    return-object v0
 
     :cond_1
-    new-instance p0, Ljava/util/NoSuchElementException;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+    iget-object p1, p0, Lw18;->Y:Li28;
 
-    throw p0
+    iget-object v0, p1, Li28;->o:Lzte;
 
-    :pswitch_1
-    invoke-virtual {p0}, Ly18;->b()V
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
-    iget v0, p0, Ly18;->a:I
+    move-result-object v0
 
-    iget-object v1, p0, Ly18;->o:Ljava/lang/Object;
+    check-cast v0, Lis5;
 
-    check-cast v1, Lz18;
+    new-instance v3, Lzv2;
 
-    iget v2, v1, Lz18;->Y:I
+    const/16 v4, 0xb
 
-    if-ge v0, v2, :cond_2
+    invoke-direct {v3, v0, v4}, Lzv2;-><init>(Lis5;I)V
 
-    add-int/lit8 v2, v0, 0x1
+    new-instance v0, Ljava/util/ArrayList;
 
-    iput v2, p0, Ly18;->a:I
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput v0, p0, Ly18;->b:I
+    new-instance v4, Ls18;
 
-    new-instance v2, Lx18;
+    const/4 v5, 0x3
 
-    invoke-direct {v2, v0, v1}, Lx18;-><init>(ILz18;)V
+    const/4 v6, 0x0
 
-    invoke-virtual {p0}, Ly18;->e()V
+    const/4 v7, 0x0
 
-    return-object v2
+    invoke-direct {v4, v5, v7, v6}, Ls18;-><init>(ILkotlin/coroutines/Continuation;I)V
+
+    new-instance v5, Lq31;
+
+    invoke-direct {v5, v0, v3, v4}, Lq31;-><init>(Ljava/lang/Object;Lis5;Lrc6;)V
+
+    new-instance v0, Lu18;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, p1, v3}, Lu18;-><init>(Li28;I)V
+
+    iput v2, p0, Lw18;->X:I
+
+    new-instance p1, Lyf7;
+
+    const/4 v2, 0x4
+
+    invoke-direct {p1, v0, v2}, Lyf7;-><init>(Lks5;I)V
+
+    invoke-virtual {v5, p1, p0}, Lq31;->d(Lks5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    goto :goto_0
 
     :cond_2
-    new-instance p0, Ljava/util/NoSuchElementException;
+    move-object p0, v1
 
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+    :goto_0
+    if-ne p0, p1, :cond_3
 
-    throw p0
+    return-object p1
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :cond_3
+    return-object v1
 .end method

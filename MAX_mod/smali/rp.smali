@@ -1,93 +1,41 @@
-.class public final enum Lrp;
-.super Ljava/lang/Enum;
+.class public final Lrp;
+.super Lcb4;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic X:Lc65;
+.field public static final b:Lrp;
 
-.field public static final enum a:Lrp;
-
-.field public static final enum b:Lrp;
-
-.field public static final enum c:Lrp;
-
-.field public static final synthetic o:[Lrp;
+.field public static final c:Lxa4;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .registers 6
 
     new-instance v0, Lrp;
 
-    const-string v1, "SYSTEM"
+    invoke-direct {v0}, Lcb4;-><init>()V
 
-    const/4 v2, 0x0
+    sput-object v0, Lrp;->b:Lrp;
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/4 v1, 0x0
 
-    sput-object v0, Lrp;->a:Lrp;
+    new-array v2, v1, [Ljava/lang/String;
 
-    new-instance v1, Lrp;
+    const/4 v4, 0x1
 
-    const-string v2, "LIGHT"
+    const/16 v5, 0xa
 
-    const/4 v3, 0x1
+    const-string v1, ":app-update/force"
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/4 v3, 0x0
 
-    sput-object v1, Lrp;->b:Lrp;
-
-    new-instance v2, Lrp;
-
-    const-string v3, "DARK"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lrp;->c:Lrp;
-
-    filled-new-array {v0, v1, v2}, [Lrp;
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
 
     move-result-object v0
 
-    sput-object v0, Lrp;->o:[Lrp;
-
-    new-instance v1, Lc65;
-
-    invoke-direct {v1, v0}, Lc65;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lrp;->X:Lc65;
+    sput-object v0, Lrp;->c:Lxa4;
 
     return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lrp;
-    .registers 2
-
-    const-class v0, Lrp;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object p0
-
-    check-cast p0, Lrp;
-
-    return-object p0
-.end method
-
-.method public static values()[Lrp;
-    .registers 1
-
-    sget-object v0, Lrp;->o:[Lrp;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Lrp;
-
-    return-object v0
 .end method

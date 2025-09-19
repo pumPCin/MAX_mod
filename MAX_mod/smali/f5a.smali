@@ -1,70 +1,92 @@
 .class public final Lf5a;
-.super Ljava/lang/Object;
+.super Lk2e;
 .source "SourceFile"
 
 # interfaces
-.implements Lw02;
+.implements Lmd6;
 
 
 # instance fields
-.field public final a:Ly4a;
+.field public final a:Lj98;
 
-.field public final synthetic b:Lg5a;
+.field public final b:Lid6;
+
+.field public final c:Liae;
 
 
 # direct methods
-.method public constructor <init>(Lg5a;Ly4a;)V
-    .registers 3
+.method public constructor <init>(Lj98;Lid6;Liae;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lf5a;->b:Lg5a;
+    iput-object p1, p0, Lf5a;->a:Lj98;
 
-    iput-object p2, p0, Lf5a;->a:Ly4a;
+    iput-object p2, p0, Lf5a;->b:Lid6;
+
+    iput-object p3, p0, Lf5a;->c:Liae;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final cancel()V
+.method public final d()Ly4a;
     .registers 5
 
-    iget-object v0, p0, Lf5a;->b:Lg5a;
+    new-instance v0, Le5a;
 
-    iget-object v1, v0, Lg5a;->b:Lwr;
+    iget-object v1, p0, Lf5a;->c:Liae;
 
-    iget-object v2, p0, Lf5a;->a:Ly4a;
+    const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Lwr;->remove(Ljava/lang/Object;)Z
+    iget-object v3, p0, Lf5a;->a:Lj98;
 
-    iget-object v1, v0, Lg5a;->c:Ly4a;
+    iget-object p0, p0, Lf5a;->b:Lid6;
 
-    invoke-static {v1, v2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {v0, v3, p0, v1, v2}, Le5a;-><init>(Ly4a;Ljava/lang/Object;Ljava/lang/Object;I)V
 
-    move-result v1
+    return-object v0
+.end method
 
-    const/4 v3, 0x0
+.method public final l(Le3e;)V
+    .registers 6
 
-    if-eqz v1, :cond_0
+    :try_start_0
+    iget-object v0, p0, Lf5a;->b:Lid6;
 
-    invoke-virtual {v2}, Ly4a;->a()V
+    iget-object v0, v0, Lid6;->a:Ljava/lang/Object;
 
-    iput-object v3, v0, Lg5a;->c:Ly4a;
+    const-string v1, "The initialSupplier returned a null value"
 
-    :cond_0
-    iget-object v0, v2, Ly4a;->b:Ljava/util/concurrent/CopyOnWriteArrayList;
+    invoke-static {v0, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
+    new-instance v1, Ld5a;
 
-    iget-object p0, v2, Ly4a;->c:Lma6;
+    iget-object v2, p0, Lf5a;->c:Liae;
 
-    if-eqz p0, :cond_1
+    const/4 v3, 0x1
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-direct {v1, p1, v0, v2, v3}, Ld5a;-><init>(Ljava/lang/Object;Ljava/lang/Object;Liae;I)V
 
-    :cond_1
-    iput-object v3, v2, Ly4a;->c:Lma6;
+    iget-object p0, p0, Lf5a;->a:Lj98;
+
+    invoke-virtual {p0, v1}, Ly4a;->a(Ld8a;)V
+
+    return-void
+
+    :catchall_0
+    move-exception p0
+
+    invoke-static {p0}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    sget-object v0, Lk45;->a:Lk45;
+
+    invoke-interface {p1, v0}, Le3e;->c(Loq4;)V
+
+    invoke-interface {p1, p0}, Le3e;->onError(Ljava/lang/Throwable;)V
 
     return-void
 .end method

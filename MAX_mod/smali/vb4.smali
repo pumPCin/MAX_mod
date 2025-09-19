@@ -1,21 +1,28 @@
-.class public final Lvb4;
+.class public final synthetic Lvb4;
 .super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lpt7;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public b:Ljava/lang/Exception;
+.field public final synthetic b:Lfd;
 
-.field public c:J
+.field public final synthetic c:La4;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .registers 2
+.method public synthetic constructor <init>(Lfd;La4;I)V
+    .registers 4
 
-    iput p1, p0, Lvb4;->a:I
+    iput p3, p0, Lvb4;->a:I
+
+    iput-object p1, p0, Lvb4;->b:Lfd;
+
+    iput-object p2, p0, Lvb4;->c:La4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,94 +31,32 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Exception;)V
-    .registers 6
+.method public final invoke(Ljava/lang/Object;)V
+    .registers 3
 
     iget v0, p0, Lvb4;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    iget-object v0, p0, Lvb4;->c:La4;
 
-    move-result-wide v0
+    check-cast p1, Lgd;
 
-    iget-object v2, p0, Lvb4;->b:Ljava/lang/Exception;
+    iget-object p0, p0, Lvb4;->b:Lfd;
 
-    if-nez v2, :cond_0
+    invoke-interface {p1, p0, v0}, Lgd;->J0(Lfd;La4;)V
 
-    iput-object p1, p0, Lvb4;->b:Ljava/lang/Exception;
-
-    const-wide/16 v2, 0x64
-
-    add-long/2addr v2, v0
-
-    iput-wide v2, p0, Lvb4;->c:J
-
-    :cond_0
-    iget-wide v2, p0, Lvb4;->c:J
-
-    cmp-long v0, v0, v2
-
-    if-ltz v0, :cond_2
-
-    iget-object v0, p0, Lvb4;->b:Ljava/lang/Exception;
-
-    if-eq v0, p1, :cond_1
-
-    invoke-virtual {v0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
-
-    :cond_1
-    iget-object p1, p0, Lvb4;->b:Ljava/lang/Exception;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lvb4;->b:Ljava/lang/Exception;
-
-    throw p1
-
-    :cond_2
     return-void
 
     :pswitch_0
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    iget-object v0, p0, Lvb4;->c:La4;
 
-    move-result-wide v0
+    check-cast p1, Lgd;
 
-    iget-object v2, p0, Lvb4;->b:Ljava/lang/Exception;
+    iget-object p0, p0, Lvb4;->b:Lfd;
 
-    if-nez v2, :cond_3
+    invoke-interface {p1, p0, v0}, Lgd;->r0(Lfd;La4;)V
 
-    iput-object p1, p0, Lvb4;->b:Ljava/lang/Exception;
-
-    const-wide/16 v2, 0x64
-
-    add-long/2addr v2, v0
-
-    iput-wide v2, p0, Lvb4;->c:J
-
-    :cond_3
-    iget-wide v2, p0, Lvb4;->c:J
-
-    cmp-long v0, v0, v2
-
-    if-ltz v0, :cond_5
-
-    iget-object v0, p0, Lvb4;->b:Ljava/lang/Exception;
-
-    if-eq v0, p1, :cond_4
-
-    invoke-virtual {v0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
-
-    :cond_4
-    iget-object p1, p0, Lvb4;->b:Ljava/lang/Exception;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lvb4;->b:Ljava/lang/Exception;
-
-    throw p1
-
-    :cond_5
     return-void
 
     nop

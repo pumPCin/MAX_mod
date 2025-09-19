@@ -1,70 +1,64 @@
 .class public final Lci3;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public synthetic X:Z
+.field public final synthetic a:I
+
+.field public final synthetic b:Ljj3;
+
+
+# direct methods
+.method public synthetic constructor <init>(Ljj3;Ljj3;I)V
+    .registers 4
+
+    iput p3, p0, Lci3;->a:I
+
+    iput-object p2, p0, Lci3;->b:Ljj3;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lci3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lci3;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lci3;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p0, Lci3;
-
-    const/4 v0, 0x2
-
-    invoke-direct {p0, v0, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lci3;->X:Z
-
-    return-object p0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final run()V
     .registers 2
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget v0, p0, Lci3;->a:I
 
-    iget-boolean p0, p0, Lci3;->X:Z
+    packed-switch v0, :pswitch_data_0
 
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object p0, p0, Lci3;->b:Ljj3;
 
-    move-result-object p0
+    invoke-virtual {p0}, Ljj3;->J0()V
 
-    return-object p0
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lci3;->b:Ljj3;
+
+    invoke-virtual {p0}, Ljj3;->J0()V
+
+    return-void
+
+    :pswitch_1
+    iget-object p0, p0, Lci3;->b:Ljj3;
+
+    invoke-virtual {p0}, Ljj3;->J0()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

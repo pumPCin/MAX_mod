@@ -1,204 +1,58 @@
 .class public final Liqf;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Ldq1;
 
 
 # instance fields
-.field public X:Lnl9;
-
-.field public Y:Lrqf;
-
-.field public Z:Landroid/net/Uri;
-
-.field public n0:I
-
-.field public final synthetic o0:Lrqf;
-
-.field public final synthetic p0:Landroid/net/Uri;
+.field public final a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
 
 # direct methods
-.method public constructor <init>(Lrqf;Landroid/net/Uri;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, Liqf;->o0:Lrqf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Liqf;->p0:Landroid/net/Uri;
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    const/4 p1, 0x2
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object v0, p0, Liqf;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onUrlSharingInfoUpdated(Lcq1;)V
     .registers 3
 
-    check-cast p1, Lr04;
+    iget-object p0, p0, Liqf;->a:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Liqf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    check-cast p0, Liqf;
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    sget-object p1, Lncf;->a:Lncf;
+    move-result v0
 
-    invoke-virtual {p0, p1}, Liqf;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object p0
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    return-object p0
-.end method
+    move-result-object v0
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    check-cast v0, Ldq1;
 
-    new-instance p1, Liqf;
-
-    iget-object v0, p0, Liqf;->o0:Lrqf;
-
-    iget-object p0, p0, Liqf;->p0:Landroid/net/Uri;
-
-    invoke-direct {p1, v0, p0, p2}, Liqf;-><init>(Lrqf;Landroid/net/Uri;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
-
-    iget v0, p0, Liqf;->n0:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    iget-object v0, p0, Liqf;->Z:Landroid/net/Uri;
-
-    iget-object v2, p0, Liqf;->Y:Lrqf;
-
-    iget-object p0, p0, Liqf;->X:Lnl9;
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-interface {v0, p1}, Ldq1;->onUrlSharingInfoUpdated(Lcq1;)V
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object v2, p0, Liqf;->o0:Lrqf;
-
-    iget-object p1, v2, Lrqf;->e:Lnl9;
-
-    iput-object p1, p0, Liqf;->X:Lnl9;
-
-    iput-object v2, p0, Liqf;->Y:Lrqf;
-
-    iget-object v0, p0, Liqf;->p0:Landroid/net/Uri;
-
-    iput-object v0, p0, Liqf;->Z:Landroid/net/Uri;
-
-    iput v1, p0, Liqf;->n0:I
-
-    invoke-virtual {p1, p0}, Lnl9;->d(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object v3, Ls04;->a:Ls04;
-
-    if-ne p0, v3, :cond_2
-
-    return-object v3
-
-    :cond_2
-    move-object p0, p1
-
-    :goto_0
-    const/4 p1, 0x0
-
-    :try_start_0
-    iget-object v3, v2, Lrqf;->g:Landroid/net/Uri;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v4, v2, Lrqf;->f:Lwr;
-
-    const/4 v5, 0x0
-
-    if-nez v3, :cond_4
-
-    :try_start_1
-    iget-object v3, v2, Lrqf;->h:Lq1e;
-
-    if-eqz v3, :cond_3
-
-    invoke-virtual {v3}, Lb0;->isActive()Z
-
-    move-result v3
-
-    if-ne v3, v1, :cond_3
-
-    goto :goto_1
-
-    :cond_3
-    move v1, v5
-
-    :goto_1
-    if-nez v1, :cond_4
-
-    invoke-virtual {v4}, Lwr;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    iput-object v0, v2, Lrqf;->g:Landroid/net/Uri;
-
-    goto :goto_2
-
-    :catchall_0
-    move-exception v0
-
-    goto :goto_3
-
-    :cond_4
-    :goto_2
-    new-instance v1, Lfqf;
-
-    invoke-direct {v1, v0, v5}, Lfqf;-><init>(Landroid/net/Uri;Z)V
-
-    invoke-virtual {v4, v1}, Lwr;->addLast(Ljava/lang/Object;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    invoke-virtual {p0, p1}, Lnl9;->f(Ljava/lang/Object;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    :goto_3
-    invoke-virtual {p0, p1}, Lnl9;->f(Ljava/lang/Object;)V
-
-    throw v0
+    return-void
 .end method

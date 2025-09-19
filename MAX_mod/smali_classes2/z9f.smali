@@ -1,311 +1,119 @@
-.class public final Lz9f;
-.super Lzgc;
+.class public final enum Lz9f;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
+# static fields
+.field public static final enum a:Lz9f;
 
-.field public final b:I
+.field public static final enum b:Lz9f;
 
-.field public final c:I
+.field public static final enum c:Lz9f;
 
-.field public final o:I
+.field public static final synthetic o:[Lz9f;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lz9f;
 
-    const/16 v0, 0x18
+    const-string v1, "DUMMY"
 
-    int-to-float v0, v0
+    const/4 v2, 0x0
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    move-result-object v1
+    sput-object v0, Lz9f;->a:Lz9f;
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    new-instance v1, Lz9f;
 
-    move-result-object v1
+    const-string v2, "DIRECT"
 
-    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
+    const/4 v3, 0x1
 
-    mul-float/2addr v0, v1
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-static {v0}, Lg53;->C(F)I
+    sput-object v1, Lz9f;->b:Lz9f;
 
-    move-result v0
+    new-instance v2, Lz9f;
 
-    iput v0, p0, Lz9f;->a:I
+    const-string v3, "SERVER"
 
-    const/16 v0, 0x10
+    const/4 v4, 0x2
 
-    int-to-float v0, v0
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    sput-object v2, Lz9f;->c:Lz9f;
 
-    move-result-object v1
+    filled-new-array {v0, v1, v2}, [Lz9f;
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    move-result-object v0
 
-    move-result-object v1
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Lg53;->C(F)I
-
-    move-result v0
-
-    iput v0, p0, Lz9f;->b:I
-
-    const/16 v0, 0x8
-
-    int-to-float v0, v0
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Lg53;->C(F)I
-
-    move-result v0
-
-    iput v0, p0, Lz9f;->c:I
-
-    const/16 v0, 0xc
-
-    int-to-float v0, v0
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v0, v1
-
-    invoke-static {v0}, Lg53;->C(F)I
-
-    move-result v0
-
-    iput v0, p0, Lz9f;->o:I
+    sput-object v0, Lz9f;->o:[Lz9f;
 
     return-void
 .end method
 
+.method public static final a(Ljava/lang/String;)Lz9f;
+    .registers 2
 
-# virtual methods
-.method public final f(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Llhc;)V
-    .registers 9
+    const-string v0, "DIRECT"
 
-    invoke-static {p2}, Landroidx/recyclerview/widget/RecyclerView;->R(Landroid/view/View;)I
+    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result p2
+    move-result v0
 
-    invoke-virtual {p3}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Ltgc;
+    if-eqz v0, :cond_0
 
-    move-result-object p3
+    sget-object p0, Lz9f;->b:Lz9f;
 
-    instance-of p4, p3, Ly9f;
-
-    const/4 v0, 0x0
-
-    if-eqz p4, :cond_0
-
-    check-cast p3, Ly9f;
-
-    goto :goto_0
+    return-object p0
 
     :cond_0
-    move-object p3, v0
+    const-string v0, "SERVER"
 
-    :goto_0
-    if-nez p3, :cond_1
-
-    goto/16 :goto_8
-
-    :cond_1
-    if-ltz p2, :cond_c
-
-    invoke-virtual {p3}, Lhp7;->j()I
-
-    move-result p4
-
-    if-ge p2, p4, :cond_c
-
-    invoke-virtual {p3, p2}, Lhp7;->C(I)Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Lpp7;
-
-    instance-of v1, p4, Lv9f;
-
-    if-eqz v1, :cond_2
-
-    check-cast p4, Lv9f;
-
-    goto :goto_1
-
-    :cond_2
-    move-object p4, v0
-
-    :goto_1
-    add-int/lit8 v1, p2, 0x1
-
-    invoke-virtual {p3, v1}, Ljtd;->G(I)Lpp7;
-
-    move-result-object p3
-
-    instance-of v1, p3, Lv9f;
-
-    if-eqz v1, :cond_3
-
-    check-cast p3, Lv9f;
-
-    goto :goto_2
-
-    :cond_3
-    move-object p3, v0
-
-    :goto_2
-    iget v1, p0, Lz9f;->c:I
-
-    const/4 v2, 0x0
-
-    if-nez p2, :cond_4
-
-    iget p2, p0, Lz9f;->a:I
-
-    goto :goto_3
-
-    :cond_4
-    instance-of p2, p4, Ls9f;
-
-    if-eqz p2, :cond_5
-
-    move p2, v1
-
-    goto :goto_3
-
-    :cond_5
-    move p2, v2
-
-    :goto_3
-    iput p2, p1, Landroid/graphics/Rect;->top:I
-
-    iget p2, p0, Lz9f;->o:I
-
-    if-eqz p4, :cond_6
-
-    invoke-interface {p4}, Lv9f;->g()Z
-
-    move-result v3
-
-    if-nez v3, :cond_6
-
-    move v3, p2
-
-    goto :goto_4
-
-    :cond_6
-    move v3, v2
-
-    :goto_4
-    iput v3, p1, Landroid/graphics/Rect;->left:I
-
-    if-eqz p4, :cond_7
-
-    invoke-interface {p4}, Lv9f;->g()Z
-
-    move-result v3
-
-    if-nez v3, :cond_7
-
-    goto :goto_5
-
-    :cond_7
-    move p2, v2
-
-    :goto_5
-    iput p2, p1, Landroid/graphics/Rect;->right:I
-
-    if-eqz p4, :cond_8
-
-    invoke-interface {p4}, Lcjd;->t()I
-
-    move-result p2
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p2
-
-    goto :goto_6
-
-    :cond_8
-    move-object p2, v0
-
-    :goto_6
-    if-eqz p3, :cond_9
-
-    invoke-interface {p3}, Lcjd;->t()I
-
-    move-result p3
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    :cond_9
-    invoke-static {p2, v0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_a
-
-    iget v1, p0, Lz9f;->b:I
-
-    goto :goto_7
-
-    :cond_a
-    if-eqz p4, :cond_b
-
-    invoke-interface {p4}, Lv9f;->g()Z
+    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-nez p0, :cond_b
+    if-eqz p0, :cond_1
 
-    instance-of p0, p4, Ls9f;
+    sget-object p0, Lz9f;->c:Lz9f;
 
-    if-nez p0, :cond_b
+    return-object p0
 
-    goto :goto_7
+    :cond_1
+    sget-object p0, Lz9f;->a:Lz9f;
 
-    :cond_b
-    move v1, v2
+    return-object p0
+.end method
 
-    :goto_7
-    iput v1, p1, Landroid/graphics/Rect;->bottom:I
+.method public static valueOf(Ljava/lang/String;)Lz9f;
+    .registers 2
 
-    :cond_c
-    :goto_8
-    return-void
+    const-class v0, Lz9f;
+
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object p0
+
+    check-cast p0, Lz9f;
+
+    return-object p0
+.end method
+
+.method public static values()[Lz9f;
+    .registers 1
+
+    sget-object v0, Lz9f;->o:[Lz9f;
+
+    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Lz9f;
+
+    return-object v0
 .end method

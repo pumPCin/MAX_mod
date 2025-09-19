@@ -1,23 +1,19 @@
-.class public final Lk6d;
-.super Lm6d;
+.class public final synthetic Lk6d;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final d:J
-
-.field public final e:J
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>(Ls7c;JJJJ)V
-    .registers 10
+.method public synthetic constructor <init>(I)V
+    .registers 2
 
-    invoke-direct/range {p0 .. p5}, Lm6d;-><init>(Ljava/lang/Object;JJ)V
+    iput p1, p0, Lk6d;->a:I
 
-    iput-wide p6, p0, Lk6d;->d:J
-
-    iput-wide p8, p0, Lk6d;->e:J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

@@ -1,95 +1,90 @@
-.class public final enum Lff0;
-.super Ljava/lang/Enum;
+.class public final Lff0;
+.super Lure;
 .source "SourceFile"
 
-
-# static fields
-.field public static final synthetic c:[Lff0;
-
-.field public static final synthetic o:Lc65;
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic X:Lru/ok/tamtam/workmanager/BacklogWorker;
 
-.field public final b:Z
+.field public final synthetic Y:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public constructor <init>(Lru/ok/tamtam/workmanager/BacklogWorker;ILkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    new-instance v0, Lff0;
+    iput-object p1, p0, Lff0;->X:Lru/ok/tamtam/workmanager/BacklogWorker;
 
-    const/4 v1, 0x0
+    iput p2, p0, Lff0;->Y:I
 
-    const-string v2, "Light"
+    const/4 p1, 0x2
 
-    const-string v3, "LIGHT"
-
-    invoke-direct {v0, v3, v1, v2, v1}, Lff0;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    new-instance v1, Lff0;
-
-    const/4 v2, 0x1
-
-    const-string v3, "Dark"
-
-    const-string v4, "DARK"
-
-    invoke-direct {v1, v4, v2, v3, v2}, Lff0;-><init>(Ljava/lang/String;ILjava/lang/String;Z)V
-
-    filled-new-array {v0, v1}, [Lff0;
-
-    move-result-object v0
-
-    sput-object v0, Lff0;->c:[Lff0;
-
-    new-instance v1, Lc65;
-
-    invoke-direct {v1, v0}, Lc65;-><init>([Ljava/lang/Enum;)V
-
-    sput-object v1, Lff0;->o:Lc65;
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Z)V
-    .registers 5
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iput-object p3, p0, Lff0;->a:Ljava/lang/String;
+    check-cast p1, Ly04;
 
-    iput-boolean p4, p0, Lff0;->b:Z
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lff0;
-    .registers 2
-
-    const-class v0, Lff0;
-
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-virtual {p0, p1, p2}, Lff0;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lff0;
 
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lff0;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
     return-object p0
 .end method
 
-.method public static values()[Lff0;
-    .registers 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    sget-object v0, Lff0;->c:[Lff0;
+    new-instance p1, Lff0;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lff0;->X:Lru/ok/tamtam/workmanager/BacklogWorker;
 
-    move-result-object v0
+    iget p0, p0, Lff0;->Y:I
 
-    check-cast v0, [Lff0;
+    invoke-direct {p1, v0, p0, p2}, Lff0;-><init>(Lru/ok/tamtam/workmanager/BacklogWorker;ILkotlin/coroutines/Continuation;)V
 
-    return-object v0
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lff0;->X:Lru/ok/tamtam/workmanager/BacklogWorker;
+
+    invoke-virtual {p1}, Lru/ok/tamtam/workmanager/BacklogWorker;->e()Luvg;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Luvg;->g()Landroidx/work/impl/model/WorkersQueueDao;
+
+    move-result-object p1
+
+    iget p0, p0, Lff0;->Y:I
+
+    invoke-interface {p1, p0}, Landroidx/work/impl/model/WorkersQueueDao;->getItemsForRunning(I)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,149 +1,104 @@
 .class public final Lcx5;
-.super Lxie;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Llne;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public X:I
+.field public final a:Ljne;
 
-.field public final synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lox5;
+.field public volatile b:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lox5;)V
-    .registers 4
+.method public constructor <init>(Ljne;)V
+    .registers 2
 
-    iput-object p1, p0, Lcx5;->Y:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    iput-object p3, p0, Lcx5;->Z:Lox5;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lcx5;->a:Ljne;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final cancel()V
+    .registers 1
+
+    invoke-static {p0}, Lsq4;->a(Ljava/util/concurrent/atomic/AtomicReference;)Z
+
+    return-void
+.end method
+
+.method public final h(J)V
     .registers 3
 
-    check-cast p1, Lr04;
+    invoke-static {p1, p2}, Lnne;->d(J)Z
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    move-result p1
 
-    invoke-virtual {p0, p1, p2}, Lcx5;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    if-eqz p1, :cond_0
 
-    move-result-object p0
+    const/4 p1, 0x1
 
-    check-cast p0, Lcx5;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lcx5;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance p1, Lcx5;
-
-    iget-object v0, p0, Lcx5;->Y:Ljava/lang/Object;
-
-    iget-object p0, p0, Lcx5;->Z:Lox5;
-
-    invoke-direct {p1, v0, p2, p0}, Lcx5;-><init>(Ljava/lang/Object;Lkotlin/coroutines/Continuation;Lox5;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-
-    iget v0, p0, Lcx5;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
+    iput-boolean p1, p0, Lcx5;->b:Z
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    return-void
+.end method
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+.method public final run()V
+    .registers 5
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    sget-object v0, Lk45;->a:Lk45;
 
-    throw p0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    sget-object v2, Lsq4;->a:Lsq4;
+
+    if-eq v1, v2, :cond_1
+
+    iget-boolean v1, p0, Lcx5;->b:Z
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcx5;->a:Ljne;
+
+    const-wide/16 v2, 0x0
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2}, Ljne;->s(Ljava/lang/Object;)V
+
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lcx5;->a:Ljne;
+
+    invoke-interface {p0}, Ljne;->b()V
+
+    return-void
+
+    :cond_0
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lcx5;->a:Ljne;
+
+    new-instance v0, Lio/reactivex/rxjava3/exceptions/MissingBackpressureException;
+
+    const-string v1, "Could not emit value due to lack of requests"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {p0, v0}, Ljne;->onError(Ljava/lang/Throwable;)V
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lcx5;->Y:Ljava/lang/Object;
-
-    check-cast p1, Ljava/lang/Number;
-
-    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
-
-    move-result-wide v2
-
-    sget-object p1, Lox5;->C0:[Lsf7;
-
-    iget-object p1, p0, Lcx5;->Z:Lox5;
-
-    iget-object p1, p1, Lox5;->q0:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lvz2;
-
-    iput v1, p0, Lcx5;->X:I
-
-    check-cast p1, Lv03;
-
-    invoke-virtual {p1, v2, v3, p0}, Lv03;->L(JLcx3;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    sget-object p0, Ls04;->a:Ls04;
-
-    if-ne p1, p0, :cond_2
-
-    return-object p0
-
-    :cond_2
-    :goto_0
-    check-cast p1, Lo72;
-
-    if-eqz p1, :cond_3
-
-    iget-wide p0, p1, Lo72;->a:J
-
-    new-instance v0, Ljava/lang/Long;
-
-    invoke-direct {v0, p0, p1}, Ljava/lang/Long;-><init>(J)V
-
-    return-object v0
-
-    :cond_3
-    const/4 p0, 0x0
-
-    return-object p0
+    return-void
 .end method

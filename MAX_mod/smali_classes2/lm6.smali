@@ -1,128 +1,90 @@
-.class public final enum Llm6;
-.super Ljava/lang/Enum;
+.class public final Llm6;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lom6;
-
-
-# static fields
-.field public static final enum b:Llm6;
-
-.field public static final synthetic c:[Llm6;
 
 
 # instance fields
-.field public final a:I
+.field public final a:[I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 8
-
-    new-instance v0, Llm6;
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x7
-
-    const-string v3, "KEYBOARD_RELEASE"
-
-    invoke-direct {v0, v3, v1, v2}, Llm6;-><init>(Ljava/lang/String;II)V
-
-    new-instance v1, Llm6;
-
-    const/4 v2, 0x1
-
-    const/16 v3, 0x8
-
-    const-string v4, "VIRTUAL_KEY_RELEASE"
-
-    invoke-direct {v1, v4, v2, v3}, Llm6;-><init>(Ljava/lang/String;II)V
-
-    new-instance v2, Llm6;
-
-    const-string v3, "CLOCK_TICK"
-
-    const/4 v4, 0x2
-
-    const/4 v5, 0x4
-
-    invoke-direct {v2, v3, v4, v5}, Llm6;-><init>(Ljava/lang/String;II)V
-
-    sput-object v2, Llm6;->b:Llm6;
-
-    new-instance v3, Llm6;
-
-    const/4 v4, 0x3
-
-    const/16 v6, 0x9
-
-    const-string v7, "TEXT_HANDLE_MOVE"
-
-    invoke-direct {v3, v7, v4, v6}, Llm6;-><init>(Ljava/lang/String;II)V
-
-    new-instance v4, Llm6;
-
-    const-string v6, "GESTURE_END"
-
-    const/16 v7, 0xd
-
-    invoke-direct {v4, v6, v5, v7}, Llm6;-><init>(Ljava/lang/String;II)V
-
-    filled-new-array {v0, v1, v2, v3, v4}, [Llm6;
-
-    move-result-object v0
-
-    sput-object v0, Llm6;->c:[Llm6;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;II)V
-    .registers 4
-
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    iput p3, p0, Llm6;->a:I
-
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Llm6;
+.method public constructor <init>([I)V
     .registers 2
 
-    const-class v0, Llm6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iput-object p1, p0, Llm6;->a:[I
 
-    move-result-object p0
-
-    check-cast p0, Llm6;
-
-    return-object p0
-.end method
-
-.method public static values()[Llm6;
-    .registers 1
-
-    sget-object v0, Llm6;->c:[Llm6;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Llm6;
-
-    return-object v0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Llm6;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Llm6;
+
+    iget-object p0, p0, Llm6;->a:[I
+
+    iget-object p1, p1, Llm6;->a:[I
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
     .registers 1
 
-    iget p0, p0, Llm6;->a:I
+    iget-object p0, p0, Llm6;->a:[I
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([I)I
+
+    move-result p0
 
     return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    iget-object p0, p0, Llm6;->a:[I
+
+    invoke-static {p0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "GradientsLocalColors(promoTextGradient="
+
+    const-string v1, ")"
+
+    invoke-static {v0, p0, v1}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

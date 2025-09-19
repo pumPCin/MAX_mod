@@ -1,64 +1,90 @@
 .class public final Lbd0;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lfd0;
+.implements Lpc6;
 
 
-# static fields
-.field public static final a:Lbd0;
+# instance fields
+.field public final synthetic X:Lbc6;
+
+.field public final synthetic Y:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lbc6;Landroid/graphics/Bitmap;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    new-instance v0, Lbd0;
+    iput-object p1, p0, Lbd0;->X:Lbc6;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lbd0;->Y:Landroid/graphics/Bitmap;
 
-    sput-object v0, Lbd0;->a:Lbd0;
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    const/4 v0, 0x1
+    check-cast p1, Ly04;
 
-    if-ne p0, p1, :cond_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    return v0
+    invoke-virtual {p0, p1, p2}, Lbd0;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    :cond_0
-    instance-of p0, p1, Lbd0;
+    move-result-object p0
 
-    if-nez p0, :cond_1
+    check-cast p0, Lbd0;
 
-    const/4 p0, 0x0
+    sget-object p1, Lylf;->a:Lylf;
 
-    return p0
+    invoke-virtual {p0, p1}, Lbd0;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_1
-    return v0
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    const p0, 0x41a3d8e8
+    new-instance p1, Lbd0;
 
-    return p0
+    iget-object v0, p0, Lbd0;->X:Lbc6;
+
+    iget-object p0, p0, Lbd0;->Y:Landroid/graphics/Bitmap;
+
+    invoke-direct {p1, v0, p0, p2}, Lbd0;-><init>(Lbc6;Landroid/graphics/Bitmap;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    const-string p0, "CameraPermissionDeclined"
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lbd0;->Y:Landroid/graphics/Bitmap;
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result p1
+
+    new-instance v0, Ljava/lang/Integer;
+
+    invoke-direct {v0, p1}, Ljava/lang/Integer;-><init>(I)V
+
+    iget-object p0, p0, Lbd0;->X:Lbc6;
+
+    invoke-interface {p0, v0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
 
     return-object p0
 .end method

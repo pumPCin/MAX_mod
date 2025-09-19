@@ -1,204 +1,95 @@
 .class public final Lqs6;
-.super Ljava/lang/Object;
+.super Lzi0;
 .source "SourceFile"
-
-# interfaces
-.implements Lbwd;
 
 
 # instance fields
-.field public final a:Lu46;
+.field public final X:Ljava/util/List;
 
-.field public b:Z
-
-.field public final synthetic c:Lq8;
+.field public final Y:J
 
 
 # direct methods
-.method public constructor <init>(Lq8;)V
-    .registers 3
+.method public constructor <init>(JLjava/util/List;)V
+    .registers 11
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-interface {p3}, Ljava/util/List;->size()I
 
-    iput-object p1, p0, Lqs6;->c:Lq8;
+    move-result v0
 
-    new-instance v0, Lu46;
+    add-int/lit8 v0, v0, -0x1
 
-    iget-object p1, p1, Lq8;->f:Ljava/lang/Object;
+    int-to-long v5, v0
 
-    check-cast p1, Ltu0;
+    const/4 v2, 0x0
 
-    invoke-interface {p1}, Lbwd;->p()Lqxe;
+    const-wide/16 v3, 0x0
 
-    move-result-object p1
+    move-object v1, p0
 
-    invoke-direct {v0, p1}, Lu46;-><init>(Lqxe;)V
+    invoke-direct/range {v1 .. v6}, Lzi0;-><init>(IJJ)V
 
-    iput-object v0, p0, Lqs6;->a:Lu46;
+    iput-wide p1, v1, Lqs6;->Y:J
+
+    iput-object p3, v1, Lqs6;->X:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final R(Lrt0;J)V
-    .registers 7
+.method public final a()J
+    .registers 5
 
-    iget-object v0, p0, Lqs6;->c:Lq8;
+    invoke-virtual {p0}, Lzi0;->c()V
 
-    iget-object v0, v0, Lq8;->f:Ljava/lang/Object;
+    iget-wide v0, p0, Lzi0;->o:J
 
-    check-cast v0, Ltu0;
+    long-to-int v0, v0
 
-    iget-boolean p0, p0, Lqs6;->b:Z
+    iget-object v1, p0, Lqs6;->X:Ljava/util/List;
 
-    if-nez p0, :cond_1
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    const-wide/16 v1, 0x0
+    move-result-object v0
 
-    cmp-long p0, p2, v1
+    check-cast v0, Llt6;
 
-    if-nez p0, :cond_0
+    iget-wide v0, v0, Llt6;->X:J
 
-    return-void
+    iget-wide v2, p0, Lqs6;->Y:J
 
-    :cond_0
-    invoke-interface {v0, p2, p3}, Ltu0;->U(J)Ltu0;
+    add-long/2addr v2, v0
 
-    const-string p0, "\r\n"
-
-    invoke-interface {v0, p0}, Ltu0;->O(Ljava/lang/String;)Ltu0;
-
-    invoke-interface {v0, p1, p2, p3}, Lbwd;->R(Lrt0;J)V
-
-    invoke-interface {v0, p0}, Ltu0;->O(Ljava/lang/String;)Ltu0;
-
-    return-void
-
-    :cond_1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "closed"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return-wide v2
 .end method
 
-.method public final declared-synchronized close()V
-    .registers 4
+.method public final b()J
+    .registers 6
 
-    monitor-enter p0
+    invoke-virtual {p0}, Lzi0;->c()V
 
-    :try_start_0
-    iget-boolean v0, p0, Lqs6;->b:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-wide v0, p0, Lzi0;->o:J
 
-    if-eqz v0, :cond_0
+    long-to-int v0, v0
 
-    monitor-exit p0
+    iget-object v1, p0, Lqs6;->X:Ljava/util/List;
 
-    return-void
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    :cond_0
-    const/4 v0, 0x1
+    move-result-object v0
 
-    :try_start_1
-    iput-boolean v0, p0, Lqs6;->b:Z
+    check-cast v0, Llt6;
 
-    iget-object v0, p0, Lqs6;->c:Lq8;
+    iget-wide v1, p0, Lqs6;->Y:J
 
-    iget-object v0, v0, Lq8;->f:Ljava/lang/Object;
+    iget-wide v3, v0, Llt6;->X:J
 
-    check-cast v0, Ltu0;
+    add-long/2addr v1, v3
 
-    const-string v1, "0\r\n\r\n"
+    iget-wide v3, v0, Llt6;->c:J
 
-    invoke-interface {v0, v1}, Ltu0;->O(Ljava/lang/String;)Ltu0;
+    add-long/2addr v1, v3
 
-    iget-object v0, p0, Lqs6;->a:Lu46;
-
-    iget-object v1, v0, Lu46;->e:Lqxe;
-
-    sget-object v2, Lqxe;->d:Lpxe;
-
-    iput-object v2, v0, Lu46;->e:Lqxe;
-
-    invoke-virtual {v1}, Lqxe;->a()Lqxe;
-
-    invoke-virtual {v1}, Lqxe;->b()Lqxe;
-
-    iget-object v0, p0, Lqs6;->c:Lq8;
-
-    const/4 v1, 0x3
-
-    iput v1, v0, Lq8;->a:I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v0
-.end method
-
-.method public final declared-synchronized flush()V
-    .registers 2
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Lqs6;->b:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v0, :cond_0
-
-    monitor-exit p0
-
-    return-void
-
-    :cond_0
-    :try_start_1
-    iget-object v0, p0, Lqs6;->c:Lq8;
-
-    iget-object v0, v0, Lq8;->f:Ljava/lang/Object;
-
-    check-cast v0, Ltu0;
-
-    invoke-interface {v0}, Ltu0;->flush()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    throw v0
-.end method
-
-.method public final p()Lqxe;
-    .registers 1
-
-    iget-object p0, p0, Lqs6;->a:Lu46;
-
-    return-object p0
+    return-wide v1
 .end method

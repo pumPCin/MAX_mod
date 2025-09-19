@@ -1,97 +1,130 @@
-.class public final enum Ltg8;
-.super Ljava/lang/Enum;
+.class public final Ltg8;
+.super Lure;
 .source "SourceFile"
 
+# interfaces
+.implements Lpc6;
 
-# static fields
-.field public static final synthetic X:[Ltg8;
 
-.field public static final enum a:Ltg8;
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
 
-.field public static final enum b:Ltg8;
-
-.field public static final enum c:Ltg8;
-
-.field public static final enum o:Ltg8;
+.field public final synthetic Y:Lone/me/sdk/gallery/MediaGalleryWidget;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public constructor <init>(Lone/me/sdk/gallery/MediaGalleryWidget;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    new-instance v0, Ltg8;
+    iput-object p1, p0, Ltg8;->Y:Lone/me/sdk/gallery/MediaGalleryWidget;
 
-    const-string v1, "AUDIO"
+    const/4 p1, 0x2
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Ltg8;->a:Ltg8;
-
-    new-instance v1, Ltg8;
-
-    const-string v2, "VIDEO"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Ltg8;->b:Ltg8;
-
-    new-instance v2, Ltg8;
-
-    const-string v3, "SCREEN_SHARING"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Ltg8;->c:Ltg8;
-
-    new-instance v3, Ltg8;
-
-    const-string v4, "MOVIE_SHARING"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Ltg8;->o:Ltg8;
-
-    filled-new-array {v0, v1, v2, v3}, [Ltg8;
-
-    move-result-object v0
-
-    sput-object v0, Ltg8;->X:[Ltg8;
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ltg8;
-    .registers 2
 
-    const-class v0, Ltg8;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    check-cast p1, Ljava/util/List;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Ltg8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Ltg8;
 
-    return-object p0
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Ltg8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public static values()[Ltg8;
-    .registers 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    sget-object v0, Ltg8;->X:[Ltg8;
+    new-instance v0, Ltg8;
 
-    invoke-virtual {v0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object p0, p0, Ltg8;->Y:Lone/me/sdk/gallery/MediaGalleryWidget;
+
+    invoke-direct {v0, p0, p2}, Ltg8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Ltg8;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ltg8;->X:Ljava/lang/Object;
+
+    check-cast p1, Ljava/util/List;
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    sget-object v0, Lone/me/sdk/gallery/MediaGalleryWidget;->Z:[Lxi7;
+
+    iget-object p0, p0, Ltg8;->Y:Lone/me/sdk/gallery/MediaGalleryWidget;
+
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->y0()Lc75;
 
     move-result-object v0
 
-    check-cast v0, [Ltg8;
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
-    return-object v0
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v1, 0x8
+
+    :goto_0
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    iget-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->o:Lzte;
+
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lfe6;
+
+    invoke-virtual {v0, p1}, Lls7;->E(Ljava/util/List;)V
+
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Ljf6;
+
+    move-result-object p0
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result p1
+
+    iget-object p0, p0, Ljf6;->X:Lyce;
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0, p1}, Lyce;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

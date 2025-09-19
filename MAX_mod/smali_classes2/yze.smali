@@ -1,79 +1,33 @@
-.class public final synthetic Lyze;
+.class public final Lyze;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lh96;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public a:J
 
-.field public final synthetic b:Lh96;
+.field public b:Ljava/lang/String;
 
+.field public c:J
 
-# direct methods
-.method public synthetic constructor <init>(ILh96;)V
-    .registers 3
+.field public d:J
 
-    iput p1, p0, Lyze;->a:I
+.field public e:J
 
-    iput-object p2, p0, Lyze;->b:Lh96;
+.field public f:J
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public g:Ljava/lang/String;
 
-    return-void
-.end method
+.field public h:Z
 
+.field public i:Z
 
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 2
+.field public j:J
 
-    iget v0, p0, Lyze;->a:I
+.field public k:Ljava/lang/String;
 
-    iget-object p0, p0, Lyze;->b:Lh96;
+.field public l:I
 
-    packed-switch v0, :pswitch_data_0
+.field public m:Z
 
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Loma;
-
-    invoke-interface {p0}, Loma;->getIcon()Lpv6;
-
-    move-result-object p0
-
-    iget p0, p0, Lpv6;->f:I
-
-    :goto_0
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    invoke-interface {p0}, Lh96;->invoke()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Loma;
-
-    invoke-interface {p0}, Loma;->b()Lef0;
-
-    move-result-object p0
-
-    iget p0, p0, Lef0;->e:I
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+.field public n:Z

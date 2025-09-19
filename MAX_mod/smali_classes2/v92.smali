@@ -1,120 +1,255 @@
 .class public final Lv92;
-.super Lxie;
+.super Lrl;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lvye;
+.implements Lt2b;
 
 
 # instance fields
-.field public X:I
+.field public final X:Lvb3;
 
-.field public final synthetic Y:Lw92;
+.field public final Y:Ljava/lang/String;
 
-.field public final synthetic Z:Ljava/lang/String;
+.field public final o:J
 
 
 # direct methods
-.method public constructor <init>(Lw92;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public constructor <init>(JJLvb3;)V
+    .registers 6
 
-    iput-object p1, p0, Lv92;->Y:Lw92;
+    invoke-direct {p0, p1, p2}, Lrl;-><init>(J)V
 
-    iput-object p2, p0, Lv92;->Z:Ljava/lang/String;
+    iput-wide p3, p0, Lv92;->o:J
 
-    const/4 p1, 0x2
+    iput-object p5, p0, Lv92;->X:Lvb3;
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const-class p1, Lv92;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lv92;->Y:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final c()I
+    .registers 4
 
-    check-cast p1, Lr04;
+    invoke-virtual {p0}, Lrl;->m()Lza2;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    move-result-object v0
 
-    invoke-virtual {p0, p1, p2}, Lv92;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-wide v1, p0, Lv92;->o:J
+
+    invoke-virtual {v0, v1, v2}, Lza2;->C(J)Ls72;
 
     move-result-object p0
 
-    check-cast p0, Lv92;
+    if-eqz p0, :cond_1
 
-    sget-object p1, Lncf;->a:Lncf;
+    iget-object p0, p0, Ls72;->b:Lvb2;
 
-    invoke-virtual {p0, p1}, Lv92;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p0, p0, Lvb2;->c:Ltb2;
 
-    move-result-object p0
+    sget-object v0, Ltb2;->o:Ltb2;
 
-    return-object p0
-.end method
+    if-eq p0, v0, :cond_1
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    sget-object v0, Ltb2;->X:Ltb2;
 
-    new-instance p1, Lv92;
-
-    iget-object v0, p0, Lv92;->Y:Lw92;
-
-    iget-object p0, p0, Lv92;->Z:Ljava/lang/String;
-
-    invoke-direct {p1, v0, p0, p2}, Lv92;-><init>(Lw92;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
-
-    iget v0, p0, Lv92;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    if-ne p0, v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    const/4 p0, 0x1
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
+    return p0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    :goto_0
+    const/4 p0, 0x3
 
-    iget-object p1, p0, Lv92;->Y:Lw92;
+    return p0
+.end method
 
-    iget-object p1, p1, Lw92;->s:Lgpd;
+.method public final d()V
+    .registers 4
 
-    iput v1, p0, Lv92;->X:I
+    invoke-virtual {p0}, Lrl;->s()Lo0f;
 
-    iget-object v0, p0, Lv92;->Z:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-virtual {p1, v0, p0}, Lgpd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-wide v1, p0, Lrl;->a:J
+
+    invoke-virtual {v0, v1, v2}, Lo0f;->d(J)V
+
+    return-void
+.end method
+
+.method public final e(Lsxe;)V
+    .registers 7
+
+    invoke-virtual {p0}, Lrl;->l()Lfv0;
+
+    move-result-object p1
+
+    new-instance v0, Lw92;
+
+    iget-wide v1, p0, Lrl;->a:J
+
+    iget-wide v3, p0, Lv92;->o:J
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lw92;-><init>(JJ)V
+
+    invoke-virtual {p1, v0}, Lfv0;->c(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public final f()[B
+    .registers 4
+
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$ChatComplain;
+
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$ChatComplain;-><init>()V
+
+    iget-wide v1, p0, Lrl;->a:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$ChatComplain;->requestId:J
+
+    iget-wide v1, p0, Lv92;->o:J
+
+    iput-wide v1, v0, Lru/ok/tamtam/nano/Tasks$ChatComplain;->chatId:J
+
+    iget-object p0, p0, Lv92;->X:Lvb3;
+
+    if-nez p0, :cond_0
+
+    const-string p0, ""
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p0, p0, Lvb3;->a:Ljava/lang/String;
+
+    :goto_0
+    iput-object p0, v0, Lru/ok/tamtam/nano/Tasks$ChatComplain;->complaint:Ljava/lang/String;
+
+    invoke-static {v0}, Lj29;->toByteArray(Lj29;)[B
 
     move-result-object p0
 
-    sget-object p1, Ls04;->a:Ls04;
+    return-object p0
+.end method
 
-    if-ne p0, p1, :cond_2
+.method public final g()I
+    .registers 1
 
-    return-object p1
+    const p0, 0xf4240
 
-    :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    return p0
+.end method
+
+.method public final getId()J
+    .registers 3
+
+    iget-wide v0, p0, Lrl;->a:J
+
+    return-wide v0
+.end method
+
+.method public final getType()Lu2b;
+    .registers 1
+
+    sget-object p0, Lu2b;->I0:Lu2b;
 
     return-object p0
+.end method
+
+.method public final h()Lpxe;
+    .registers 6
+
+    invoke-virtual {p0}, Lrl;->m()Lza2;
+
+    move-result-object v0
+
+    iget-wide v1, p0, Lv92;->o:J
+
+    invoke-virtual {v0, v1, v2}, Lza2;->C(J)Ls72;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    iget-object p0, p0, Lv92;->Y:Ljava/lang/String;
+
+    const-string v0, "chat is null"
+
+    invoke-static {p0, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v1
+
+    :cond_0
+    new-instance v2, Lys;
+
+    iget-object v0, v0, Ls72;->b:Lvb2;
+
+    iget-wide v3, v0, Lvb2;->a:J
+
+    const/16 v0, 0x1c
+
+    invoke-direct {v2, v1, v0}, Lys;-><init>(Lyta;I)V
+
+    const-string v0, "chatId"
+
+    invoke-virtual {v2, v3, v4, v0}, Lpxe;->j(JLjava/lang/String;)V
+
+    iget-object p0, p0, Lv92;->X:Lvb3;
+
+    if-eqz p0, :cond_1
+
+    const-string v0, "complaint"
+
+    iget-object p0, p0, Lvb3;->a:Ljava/lang/String;
+
+    invoke-virtual {v2, v0, p0}, Lpxe;->q(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_1
+    return-object v2
+.end method
+
+.method public final j(Lcxe;)V
+    .registers 3
+
+    iget-object v0, p1, Lcxe;->b:Ljava/lang/String;
+
+    invoke-static {v0}, Lxfc;->s(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lv92;->d()V
+
+    invoke-virtual {p0}, Lrl;->l()Lfv0;
+
+    move-result-object p0
+
+    new-instance v0, Lni0;
+
+    invoke-direct {v0, p1}, Lni0;-><init>(Lcxe;)V
+
+    invoke-virtual {p0, v0}, Lfv0;->c(Ljava/lang/Object;)V
+
+    :cond_0
+    return-void
 .end method

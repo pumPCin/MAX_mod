@@ -3,78 +3,83 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lpp7;
+.implements Ld8a;
+.implements Llne;
 
 
-# static fields
-.field public static final a:Lkw5;
+# instance fields
+.field public final a:Ljne;
+
+.field public b:Loq4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Ljne;)V
+    .registers 2
 
-    new-instance v0, Lkw5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lkw5;->a:Lkw5;
+    iput-object p1, p0, Lkw5;->a:Ljne;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final b()V
+    .registers 1
+
+    iget-object p0, p0, Lkw5;->a:Ljne;
+
+    invoke-interface {p0}, Ljne;->b()V
+
+    return-void
+.end method
+
+.method public final c(Loq4;)V
+    .registers 2
+
+    iput-object p1, p0, Lkw5;->b:Loq4;
+
+    iget-object p1, p0, Lkw5;->a:Ljne;
+
+    invoke-interface {p1, p0}, Ljne;->d(Llne;)V
+
+    return-void
+.end method
+
+.method public final cancel()V
+    .registers 1
+
+    iget-object p0, p0, Lkw5;->b:Loq4;
+
+    invoke-interface {p0}, Loq4;->e()V
+
+    return-void
+.end method
+
+.method public final h(J)V
     .registers 3
 
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lkw5;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
+    return-void
 .end method
 
-.method public final getItemId()J
-    .registers 3
+.method public final onError(Ljava/lang/Throwable;)V
+    .registers 2
 
-    const-wide v0, 0x7ffffffffffffffdL
+    iget-object p0, p0, Lkw5;->a:Ljne;
 
-    return-wide v0
+    invoke-interface {p0, p1}, Ljne;->onError(Ljava/lang/Throwable;)V
+
+    return-void
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final s(Ljava/lang/Object;)V
+    .registers 2
 
-    const p0, 0xb62c3a2
+    iget-object p0, p0, Lkw5;->a:Ljne;
 
-    return p0
-.end method
+    invoke-interface {p0, p1}, Ljne;->s(Ljava/lang/Object;)V
 
-.method public final m()I
-    .registers 1
-
-    const/16 p0, 0x8
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "FolderEditDeleteItem"
-
-    return-object p0
+    return-void
 .end method

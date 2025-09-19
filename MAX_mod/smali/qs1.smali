@@ -2,122 +2,190 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lru/ok/android/externcalls/sdk/audio/Logger;
+
+# instance fields
+.field public a:Ljava/lang/Object;
+
+.field public b:Lts1;
+
+.field public c:Lduc;
+
+.field public d:Z
 
 
 # virtual methods
-.method public final d(Ljava/lang/String;Ljava/lang/String;)V
+.method public final a(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
     .registers 3
 
-    invoke-static {p1, p2}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object p0, p0, Lqs1;->c:Lduc;
 
-    return-void
-.end method
+    if-eqz p0, :cond_0
 
-.method public final d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
-
-    invoke-static {p1, p2, p3}, Ld86;->j(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final e(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
-
-    const/4 p0, 0x0
-
-    invoke-static {p1, p2, p0}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
-
-    invoke-static {p1, p2, p3}, Ld86;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final i(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
-
-    const/4 p0, 0x0
-
-    invoke-static {p1, p2, p0}, Ld86;->r(Ljava/lang/String;Ljava/lang/String;Ljava/util/concurrent/CancellationException;)V
-
-    return-void
-.end method
-
-.method public final i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 4
-
-    const/4 p0, 0x0
-
-    invoke-static {p1, p2, p0}, Ld86;->r(Ljava/lang/String;Ljava/lang/String;Ljava/util/concurrent/CancellationException;)V
-
-    return-void
-.end method
-
-.method public final v(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
-
-    invoke-static {p1, p2}, Ld86;->F(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 11
-
-    sget-object v0, Ld86;->f:Lafa;
-
-    if-eqz v0, :cond_0
-
-    sget-object v1, Llw7;->c:Llw7;
-
-    const/4 v4, 0x0
-
-    const/16 v6, 0x8
-
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v5, p3
-
-    invoke-static/range {v0 .. v6}, Lafa;->e(Lafa;Llw7;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Throwable;I)V
+    invoke-virtual {p0, p1, p2}, Lq3;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
     :cond_0
     return-void
 .end method
 
-.method public final w(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
-
-    invoke-static {p1, p2}, Ld86;->J(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method public final w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+.method public final b(Ljava/lang/Object;)Z
     .registers 4
 
-    invoke-static {p1, p2, p3}, Ld86;->H(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    const/4 v0, 0x1
 
+    iput-boolean v0, p0, Lqs1;->d:Z
+
+    iget-object v1, p0, Lqs1;->b:Lts1;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, v1, Lts1;->b:Lss1;
+
+    invoke-virtual {v1, p1}, Lq3;->j(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lqs1;->a:Ljava/lang/Object;
+
+    iput-object p1, p0, Lqs1;->b:Lts1;
+
+    iput-object p1, p0, Lqs1;->c:Lduc;
+
+    :cond_1
+    return v0
+.end method
+
+.method public final c()V
+    .registers 3
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lqs1;->d:Z
+
+    iget-object v1, p0, Lqs1;->b:Lts1;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, v1, Lts1;->b:Lss1;
+
+    invoke-virtual {v1, v0}, Lq3;->cancel(Z)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lqs1;->a:Ljava/lang/Object;
+
+    iput-object v0, p0, Lqs1;->b:Lts1;
+
+    iput-object v0, p0, Lqs1;->c:Lduc;
+
+    :cond_0
     return-void
 .end method
 
-.method public final w(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 3
+.method public final d(Ljava/lang/Throwable;)Z
+    .registers 4
 
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    const/4 v0, 0x1
 
-    move-result-object p0
+    iput-boolean v0, p0, Lqs1;->d:Z
 
-    invoke-static {p1, p0}, Ld86;->J(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v1, p0, Lqs1;->b:Lts1;
 
+    if-eqz v1, :cond_0
+
+    iget-object v1, v1, Lts1;->b:Lss1;
+
+    invoke-virtual {v1, p1}, Lq3;->k(Ljava/lang/Throwable;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lqs1;->a:Ljava/lang/Object;
+
+    iput-object p1, p0, Lqs1;->b:Lts1;
+
+    iput-object p1, p0, Lqs1;->c:Lduc;
+
+    :cond_1
+    return v0
+.end method
+
+.method public final finalize()V
+    .registers 5
+
+    iget-object v0, p0, Lqs1;->b:Lts1;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, v0, Lts1;->b:Lss1;
+
+    invoke-virtual {v0}, Lq3;->isDone()Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Lt0;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "The completer object was garbage collected - this future would otherwise never complete. The tag was: "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v3, p0, Lqs1;->a:Ljava/lang/Object;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x3
+
+    invoke-direct {v1, v2, v3}, Lt0;-><init>(Ljava/lang/String;I)V
+
+    invoke-virtual {v0, v1}, Lq3;->k(Ljava/lang/Throwable;)Z
+
+    :cond_0
+    iget-boolean v0, p0, Lqs1;->d:Z
+
+    if-nez v0, :cond_1
+
+    iget-object p0, p0, Lqs1;->c:Lduc;
+
+    if-eqz p0, :cond_1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lq3;->j(Ljava/lang/Object;)Z
+
+    :cond_1
     return-void
 .end method

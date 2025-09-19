@@ -1,96 +1,49 @@
 .class public final Lt7f;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lt7f;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field public static final o:Lt7f;
 
 
 # instance fields
-.field public final a:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:I
+.field public final synthetic Y:Lv7f;
 
-.field public final c:I
+.field public Z:I
+
+.field public o:Lv7f;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lv7f;Ljx3;)V
     .registers 3
 
-    new-instance v0, Lxid;
+    iput-object p1, p0, Lt7f;->Y:Lv7f;
 
-    const/16 v1, 0x1b
-
-    invoke-direct {v0, v1}, Lxid;-><init>(I)V
-
-    sput-object v0, Lt7f;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    new-instance v0, Lt7f;
-
-    const/4 v1, 0x1
-
-    const v2, 0x7fffffff
-
-    invoke-direct {v0, v1, v2, v2}, Lt7f;-><init>(III)V
-
-    sput-object v0, Lt7f;->o:Lt7f;
-
-    return-void
-.end method
-
-.method public constructor <init>(III)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lt7f;->a:I
-
-    iput p2, p0, Lt7f;->b:I
-
-    iput p3, p0, Lt7f;->c:I
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget p2, p0, Lt7f;->a:I
+    iput-object p1, p0, Lt7f;->X:Ljava/lang/Object;
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    iget p1, p0, Lt7f;->Z:I
 
-    iget p2, p0, Lt7f;->b:I
+    const/high16 v0, -0x80000000
 
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    or-int/2addr p1, v0
 
-    iget p0, p0, Lt7f;->c:I
+    iput p1, p0, Lt7f;->Z:I
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object p1, p0, Lt7f;->Y:Lv7f;
 
-    return-void
+    invoke-virtual {p1, p0}, Lv7f;->o(Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

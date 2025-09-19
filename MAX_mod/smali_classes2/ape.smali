@@ -1,170 +1,125 @@
-.class public final synthetic Lape;
-.super Ljava/lang/Object;
+.class public final Lape;
+.super Landroid/text/style/ClickableSpan;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/text/style/UpdateAppearance;
+.implements Lx3f;
+
+
+# static fields
+.field public static final synthetic X:I
 
 
 # instance fields
-.field public final synthetic X:Lhl;
+.field public final a:Lfpe;
 
-.field public final synthetic a:I
+.field public final b:Lpc6;
 
-.field public final synthetic b:Lvu7;
+.field public c:I
 
-.field public final synthetic c:Lwpe;
-
-.field public final synthetic o:Lsoe;
+.field public o:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lvu7;Lhl;Lwpe;Lsoe;)V
-    .registers 6
+.method public constructor <init>(Lzb6;Lfpe;Lpc6;)V
+    .registers 4
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
-    iput v0, p0, Lape;->a:I
+    iput-object p2, p0, Lape;->a:Lfpe;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Lape;->b:Lpc6;
 
-    iput-object p1, p0, Lape;->b:Lvu7;
+    invoke-interface {p1}, Lzb6;->invoke()Ljava/lang/Object;
 
-    iput-object p2, p0, Lape;->X:Lhl;
+    move-result-object p2
 
-    iput-object p3, p0, Lape;->c:Lwpe;
+    check-cast p2, Lera;
 
-    iput-object p4, p0, Lape;->o:Lsoe;
+    invoke-interface {p2}, Lera;->e()Lb4;
 
-    return-void
-.end method
+    move-result-object p2
 
-.method public synthetic constructor <init>(Lvu7;Lwpe;Lsoe;Lhl;)V
-    .registers 6
+    iget p2, p2, Lb4;->c:I
 
-    const/4 v0, 0x1
+    iput p2, p0, Lape;->c:I
 
-    iput v0, p0, Lape;->a:I
+    invoke-interface {p1}, Lzb6;->invoke()Ljava/lang/Object;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object p1
 
-    iput-object p1, p0, Lape;->b:Lvu7;
+    check-cast p1, Lera;
 
-    iput-object p2, p0, Lape;->c:Lwpe;
+    invoke-interface {p1}, Lera;->e()Lb4;
 
-    iput-object p3, p0, Lape;->o:Lsoe;
+    move-result-object p1
 
-    iput-object p4, p0, Lape;->X:Lhl;
+    iget p1, p1, Lb4;->c:I
+
+    iput p1, p0, Lape;->o:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 6
+.method public final onClick(Landroid/view/View;)V
+    .registers 3
 
-    iget v0, p0, Lape;->a:I
+    iget-object v0, p0, Lape;->b:Lpc6;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Lape;->a:Lfpe;
 
-    iget-object v0, p0, Lape;->b:Lvu7;
+    invoke-interface {v0, p1, p0}, Lpc6;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, p0, Lape;->c:Lwpe;
+    return-void
+.end method
 
-    iget-object v2, p0, Lape;->o:Lsoe;
+.method public final onThemeChanged(Lera;)V
+    .registers 3
 
-    iget-object p0, p0, Lape;->X:Lhl;
-
-    :try_start_0
-    invoke-interface {v1, v2}, Lwpe;->g(Lsoe;)V
-
-    iget-object v0, v0, Lvu7;->c:Ljava/lang/Object;
-
-    check-cast v0, Lepe;
-
-    invoke-static {v0, p0}, Lepe;->a(Lepe;Lhl;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    sget-object v2, Lepe;->v0:Ljava/lang/String;
-
-    const-string v3, "failure to run task %s"
-
-    filled-new-array {p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {v2, v0, v3, p0}, Ld86;->p(Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    new-instance p0, Ldoe;
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-interface {p1}, Lera;->e()Lb4;
 
     move-result-object v0
 
-    const/4 v2, 0x0
+    iget v0, v0, Lb4;->c:I
 
-    const-string v3, "app.exception"
+    iput v0, p0, Lape;->c:I
 
-    invoke-direct {p0, v3, v0, v2}, Ldoe;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1}, Lera;->e()Lb4;
 
-    invoke-interface {v1, p0}, Lwpe;->i(Ldoe;)V
+    move-result-object p1
 
-    :goto_0
-    return-void
+    iget p1, p1, Lb4;->c:I
 
-    :pswitch_0
-    iget-object v0, p0, Lape;->X:Lhl;
-
-    invoke-virtual {v0}, Lhl;->r()Lpoe;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lape;->b:Lvu7;
-
-    if-eqz v1, :cond_0
-
-    iget-object v3, v2, Lvu7;->c:Ljava/lang/Object;
-
-    check-cast v3, Lepe;
-
-    iget-object v3, v3, Lepe;->a:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v3, v1}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_0
-    iget-object v1, p0, Lape;->c:Lwpe;
-
-    invoke-interface {v1}, Lwpe;->b()Lvpe;
-
-    move-result-object v3
-
-    new-instance v4, Lape;
-
-    iget-object p0, p0, Lape;->o:Lsoe;
-
-    invoke-direct {v4, v2, v1, p0, v0}, Lape;-><init>(Lvu7;Lwpe;Lsoe;Lhl;)V
-
-    invoke-virtual {v3, v4}, Lvpe;->a(Ljava/lang/Runnable;)V
+    iput p1, p0, Lape;->o:I
 
     return-void
+.end method
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public final updateDrawState(Landroid/text/TextPaint;)V
+    .registers 3
+
+    invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
+
+    iget v0, p0, Lape;->c:I
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget p0, p0, Lape;->o:I
+
+    const/16 v0, 0x50
+
+    invoke-static {p0, v0}, Lm83;->i(II)I
+
+    move-result p0
+
+    iput p0, p1, Landroid/text/TextPaint;->bgColor:I
+
+    const/4 p0, 0x0
+
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+
+    return-void
 .end method

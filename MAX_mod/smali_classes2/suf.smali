@@ -1,460 +1,265 @@
 .class public final Lsuf;
-.super Lxl3;
+.super Lx2;
 .source "SourceFile"
-
-# interfaces
-.implements Lorg/webrtc/SurfaceTextureHelper$FrameGeometryAdjuster;
 
 
 # instance fields
-.field public final f:Lorg/webrtc/PeerConnectionFactory;
+.field public final synthetic c:I
 
-.field public final g:Lmqg;
-
-.field public h:Lorg/webrtc/SurfaceTextureHelper;
-
-.field public i:Ldcb;
-
-.field public final j:Lbof;
-
-.field public volatile k:Lorg/webrtc/Size;
-
-.field public volatile l:F
+.field public final synthetic o:Ltuf;
 
 
 # direct methods
-.method public constructor <init>(Lorg/webrtc/PeerConnectionFactory;Ljava/lang/String;Lorg/webrtc/MediaStream;Ljava/lang/Integer;ZLmqg;Ld7c;)V
-    .registers 16
+.method public constructor <init>(Ltuf;I)V
+    .registers 3
 
-    invoke-direct {p0, p2, p3, p7}, Lxl3;-><init>(Ljava/lang/String;Lorg/webrtc/MediaStream;Ld7c;)V
+    iput p2, p0, Lsuf;->c:I
 
-    iput-object p1, p0, Lsuf;->f:Lorg/webrtc/PeerConnectionFactory;
+    packed-switch p2, :pswitch_data_0
 
-    iput-object p6, p0, Lsuf;->g:Lmqg;
+    iput-object p1, p0, Lsuf;->o:Ltuf;
 
-    new-instance p1, Lbof;
+    const/16 p1, 0x9
 
-    const/16 p2, 0x3c0
+    const/4 p2, 0x0
 
-    if-eqz p4, :cond_0
-
-    invoke-virtual {p4}, Ljava/lang/Integer;->intValue()I
-
-    move-result p3
-
-    goto :goto_0
-
-    :cond_0
-    move p3, p2
-
-    :goto_0
-    new-instance v0, Liq8;
-
-    const/4 v6, 0x0
-
-    const/16 v7, 0x17
-
-    const/4 v1, 0x1
-
-    const-class v3, Lsuf;
-
-    const-string v4, "logBufferTransform"
-
-    const-string v5, "logBufferTransform(Ljava/lang/String;)V"
-
-    move-object v2, p0
-
-    invoke-direct/range {v0 .. v7}, Liq8;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
-
-    invoke-direct {p1, p5, p3, v0}, Lbof;-><init>(ZILiq8;)V
-
-    iput-object p1, v2, Lsuf;->j:Lbof;
-
-    new-instance p0, Lorg/webrtc/Size;
-
-    const/16 p1, 0x21c
-
-    invoke-direct {p0, p2, p1}, Lorg/webrtc/Size;-><init>(II)V
-
-    iput-object p0, v2, Lsuf;->k:Lorg/webrtc/Size;
-
-    const/high16 p0, 0x3f800000    # 1.0f
-
-    iput p0, v2, Lsuf;->l:F
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
 
     return-void
+
+    :pswitch_0
+    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    iput-object p1, p0, Lsuf;->o:Ltuf;
+
+    const/16 p1, 0x9
+
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    :pswitch_1
+    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    iput-object p1, p0, Lsuf;->o:Ltuf;
+
+    const/16 p1, 0x9
+
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    :pswitch_2
+    sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    iput-object p1, p0, Lsuf;->o:Ltuf;
+
+    const/16 p1, 0x9
+
+    invoke-direct {p0, p1, p2}, Lx2;-><init>(ILjava/lang/Object;)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final adjustFrameGeometry(Landroid/graphics/Matrix;II)Lorg/webrtc/SurfaceTextureHelper$FrameGeometry;
-    .registers 10
+.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 11
 
-    iget-object p0, p0, Lsuf;->j:Lbof;
+    iget v0, p0, Lsuf;->c:I
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    packed-switch v0, :pswitch_data_0
 
-    const-string v0, "x"
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    if-eqz p2, :cond_8
+    move-result v0
 
-    if-nez p3, :cond_0
+    if-nez v0, :cond_1
 
-    goto/16 :goto_2
+    check-cast p2, Ljava/lang/Boolean;
+
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p2
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p0, p0, Lsuf;->o:Ltuf;
+
+    if-eqz p2, :cond_0
+
+    sget p1, Lq0d;->m2:I
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    invoke-static {p2, p1}, Llw3;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    iget p2, p0, Ltuf;->c:I
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, v0, p2, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    invoke-static {p0}, Ltuf;->a(Ltuf;)I
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/graphics/drawable/Drawable;->setTint(I)V
+
+    goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lbof;->f:Lwwa;
+    const/4 p1, 0x0
 
-    iget-object v2, p0, Lbof;->d:Ljava/lang/Integer;
+    :goto_0
+    iput-object p1, p0, Ltuf;->y0:Landroid/graphics/drawable/Drawable;
 
-    iget-object v3, p0, Lbof;->e:Ljava/lang/Integer;
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
-    iget v4, p0, Lbof;->c:I
-
-    if-eqz v2, :cond_1
-
-    if-eqz v3, :cond_1
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-
-    goto :goto_0
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
-    if-eqz v2, :cond_2
+    return-void
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    :pswitch_0
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v0
 
-    goto :goto_0
+    if-nez v0, :cond_2
+
+    check-cast p2, Ljava/lang/Boolean;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p0, p0, Lsuf;->o:Ltuf;
+
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_2
-    if-eqz v3, :cond_3
+    return-void
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    :pswitch_1
+    invoke-static {p1, p2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    check-cast p2, Ljava/lang/Boolean;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object p0, p0, Lsuf;->o:Ltuf;
+
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_3
-    :goto_0
-    if-eqz v1, :cond_7
+    return-void
 
-    iget-object v2, p0, Lbof;->g:Ljava/lang/Integer;
+    :pswitch_2
+    move-object v1, p2
 
-    if-nez v2, :cond_4
+    check-cast v1, Ljava/lang/CharSequence;
+
+    check-cast p1, Ljava/lang/CharSequence;
+
+    invoke-static {p1, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_5
+
+    if-eqz v1, :cond_5
+
+    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
+
+    move-result p1
+
+    if-nez p1, :cond_4
 
     goto :goto_1
 
     :cond_4
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    iget-object p0, p0, Lsuf;->o:Ltuf;
 
-    move-result v2
+    invoke-static {p0}, Ltuf;->b(Ltuf;)Landroid/text/BoringLayout$Metrics;
 
-    if-ne v2, p2, :cond_7
+    move-result-object p1
 
-    iget-object v2, p0, Lbof;->h:Ljava/lang/Integer;
+    sget-object v2, Ltuf;->D0:Landroid/text/TextPaint;
 
-    if-nez v2, :cond_5
+    const/4 p2, 0x0
 
-    goto :goto_1
+    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    invoke-virtual {v2, v1, p2, v0}, Landroid/graphics/Paint;->measureText(Ljava/lang/CharSequence;II)F
+
+    move-result p2
+
+    invoke-static {p2}, Lya6;->G(F)I
+
+    move-result p2
+
+    iput p2, p1, Landroid/text/BoringLayout$Metrics;->width:I
+
+    iget p2, p0, Ltuf;->u0:I
+
+    invoke-virtual {v2, p2}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget-object v0, p0, Ltuf;->a:Lzk7;
+
+    iget v3, p1, Landroid/text/BoringLayout$Metrics;->width:I
+
+    const/4 v6, 0x0
+
+    const/16 v7, 0x50
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    invoke-static/range {v0 .. v7}, Lzk7;->a(Lzk7;Ljava/lang/CharSequence;Landroid/text/TextPaint;IIZLandroid/text/TextUtils$TruncateAt;I)Landroid/text/Layout;
+
+    move-result-object p1
+
+    iput-object p1, p0, Ltuf;->z0:Landroid/text/Layout;
+
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     :cond_5
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    if-ne v2, p3, :cond_7
-
-    iget-object v2, p0, Lbof;->i:Ljava/lang/Integer;
-
-    if-nez v2, :cond_6
-
-    goto :goto_1
-
-    :cond_6
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    if-ne v2, v4, :cond_7
-
-    goto :goto_3
-
-    :cond_7
     :goto_1
-    invoke-virtual {p0, p2, p3}, Lbof;->a(II)Lwwa;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lbof;->f:Lwwa;
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lbof;->g:Ljava/lang/Integer;
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lbof;->h:Ljava/lang/Integer;
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lbof;->i:Ljava/lang/Integer;
-
-    iget-object p0, p0, Lbof;->b:Liq8;
-
-    iget v2, v1, Lwwa;->g:I
-
-    iget v3, v1, Lwwa;->h:I
-
-    const-string v4, "get new transform "
-
-    const-string v5, " -> "
-
-    invoke-static {v4, p2, v0, p3, v5}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Liq8;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_3
-
-    :cond_8
-    :goto_2
-    iget-object p0, p0, Lbof;->b:Liq8;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "Wrong frame size: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Liq8;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    sget-object v1, Lznf;->a:Lznf;
-
-    :goto_3
-    invoke-interface {v1, p1, p2, p3}, Laof;->a(Landroid/graphics/Matrix;II)Lorg/webrtc/SurfaceTextureHelper$FrameGeometry;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final b(Lorg/webrtc/MediaStream;Lorg/webrtc/MediaStreamTrack;)V
-    .registers 3
-
-    check-cast p2, Lorg/webrtc/VideoTrack;
-
-    sget-object p0, Lorg/webrtc/VideoTrack$ContentHint;->NONE:Lorg/webrtc/VideoTrack$ContentHint;
-
-    invoke-virtual {p2, p0}, Lorg/webrtc/VideoTrack;->setContentHint(Lorg/webrtc/VideoTrack$ContentHint;)V
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1, p2}, Lorg/webrtc/MediaStream;->addTrack(Lorg/webrtc/VideoTrack;)Z
-
-    :cond_0
-    return-void
-.end method
-
-.method public final c(Lorg/webrtc/MediaStream;Lorg/webrtc/MediaStreamTrack;)V
-    .registers 3
-
-    check-cast p2, Lorg/webrtc/VideoTrack;
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1, p2}, Lorg/webrtc/MediaStream;->removeTrack(Lorg/webrtc/VideoTrack;)Z
-
-    :cond_0
-    iget-object p1, p0, Lsuf;->h:Lorg/webrtc/SurfaceTextureHelper;
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Lorg/webrtc/SurfaceTextureHelper;->dispose()V
-
-    :cond_1
-    const/4 p1, 0x0
-
-    iput-object p1, p0, Lsuf;->h:Lorg/webrtc/SurfaceTextureHelper;
-
-    return-void
-.end method
-
-.method public final g()Lorg/webrtc/MediaSource;
-    .registers 2
-
-    iget-object p0, p0, Lsuf;->f:Lorg/webrtc/PeerConnectionFactory;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lorg/webrtc/PeerConnectionFactory;->createVideoSource(Z)Lorg/webrtc/VideoSource;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final h(Ljava/lang/String;Lorg/webrtc/MediaSource;)Lorg/webrtc/MediaStreamTrack;
-    .registers 3
-
-    check-cast p2, Lorg/webrtc/VideoSource;
-
-    iget-object p0, p0, Lsuf;->f:Lorg/webrtc/PeerConnectionFactory;
-
-    invoke-virtual {p0, p1, p2}, Lorg/webrtc/PeerConnectionFactory;->createVideoTrack(Ljava/lang/String;Lorg/webrtc/VideoSource;)Lorg/webrtc/VideoTrack;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final j()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "VideoRecord"
-
-    return-object p0
-.end method
-
-.method public final m()V
-    .registers 2
-
-    invoke-super {p0}, Lxl3;->m()V
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lsuf;->i:Ldcb;
-
-    return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "OkSdkVideoRecord(isScreenCast=false)"
-
-    return-object p0
-.end method
-
-.method public final u()V
-    .registers 9
-
-    iget-object v0, p0, Lxl3;->d:Ljava/lang/Object;
-
-    check-cast v0, Lorg/webrtc/MediaSource;
-
-    check-cast v0, Lorg/webrtc/VideoSource;
-
-    const-string v1, "VideoRecord"
-
-    if-nez v0, :cond_0
-
-    iget-object p0, p0, Lxl3;->c:Ljava/lang/Object;
-
-    check-cast p0, Ld7c;
-
-    const-string v0, "No source while trying to update video format"
-
-    invoke-interface {p0, v1, v0}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
-
     return-void
 
-    :cond_0
-    iget-object v2, p0, Lsuf;->j:Lbof;
-
-    iget-object v3, p0, Lsuf;->k:Lorg/webrtc/Size;
-
-    iget v3, v3, Lorg/webrtc/Size;->width:I
-
-    iget-object v4, p0, Lsuf;->k:Lorg/webrtc/Size;
-
-    iget v4, v4, Lorg/webrtc/Size;->height:I
-
-    invoke-virtual {v2, v3, v4}, Lbof;->b(II)Lorg/webrtc/Size;
-
-    move-result-object v2
-
-    if-nez v2, :cond_1
-
-    new-instance v2, Lorg/webrtc/Size;
-
-    const/16 v3, 0x3c0
-
-    const/16 v4, 0x21c
-
-    invoke-direct {v2, v3, v4}, Lorg/webrtc/Size;-><init>(II)V
-
-    :cond_1
-    iget-object v3, p0, Lxl3;->c:Ljava/lang/Object;
-
-    check-cast v3, Ld7c;
-
-    iget v4, v2, Lorg/webrtc/Size;->width:I
-
-    iget v5, v2, Lorg/webrtc/Size;->height:I
-
-    const-string v6, "Apply output format adaptation: size= "
-
-    const-string v7, "x"
-
-    invoke-static {v6, v4, v5, v7}, Lex3;->h(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-interface {v3, v1, v4}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget v1, v2, Lorg/webrtc/Size;->width:I
-
-    iget v2, v2, Lorg/webrtc/Size;->height:I
-
-    iget p0, p0, Lsuf;->l:F
-
-    const/high16 v3, 0x41c00000    # 24.0f
-
-    mul-float/2addr p0, v3
-
-    invoke-static {p0}, Lg53;->C(F)I
-
-    move-result p0
-
-    invoke-virtual {v0, v1, v2, p0}, Lorg/webrtc/VideoSource;->adaptOutputFormat(III)V
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

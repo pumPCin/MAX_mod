@@ -1,230 +1,70 @@
-.class public final Lk9c;
+.class public abstract Lk9c;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
-# interfaces
-.implements Lpp7;
 
+# static fields
+.field public static auth_call_code_hint:I = 0x7f110000
 
-# instance fields
-.field public final X:I
+.field public static auth_call_description:I = 0x7f110001
 
-.field public final Y:J
+.field public static call_dialog_participants:I = 0x7f110002
 
-.field public final a:J
+.field public static call_dialog_participants_when_join:I = 0x7f110003
 
-.field public final b:Lw8c;
+.field public static call_history_dlg_delete:I = 0x7f110004
 
-.field public final c:Landroid/graphics/drawable/Drawable;
+.field public static delete_favorite_sticker_question:I = 0x7f11000a
 
-.field public final o:Z
+.field public static delete_recent_sticker_question:I = 0x7f11000b
 
+.field public static field_length_exceeded_error:I = 0x7f11000e
 
-# direct methods
-.method public constructor <init>(JLw8c;Landroid/graphics/drawable/Drawable;Z)V
-    .registers 6
+.field public static folder_filtered_title_bot_plural:I = 0x7f11000f
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public static folder_filtered_title_channel_plural:I = 0x7f110010
 
-    iput-wide p1, p0, Lk9c;->a:J
+.field public static folder_filtered_title_chat_plural:I = 0x7f110011
 
-    iput-object p3, p0, Lk9c;->b:Lw8c;
+.field public static folder_filtered_title_contact_plural:I = 0x7f110012
 
-    iput-object p4, p0, Lk9c;->c:Landroid/graphics/drawable/Drawable;
+.field public static folder_filtered_title_not_contact_plural:I = 0x7f110013
 
-    iput-boolean p5, p0, Lk9c;->o:Z
+.field public static inactive_ttl:I = 0x7f110015
 
-    sget p3, Lnsc;->b:I
+.field public static max_attach_count_error:I = 0x7f110017
 
-    iput p3, p0, Lk9c;->X:I
+.field public static max_favorite_sticker_sets_count_reached:I = 0x7f110018
 
-    iput-wide p1, p0, Lk9c;->Y:J
+.field public static max_favorite_stickers_count_reached:I = 0x7f110019
 
-    return-void
-.end method
+.field public static max_message_length_error:I = 0x7f11001a
 
+.field public static menu_copy_success:I = 0x7f11001b
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 9
+.field public static message_compose_forward_or_share__forwarded_messages:I = 0x7f11001c
 
-    const/4 v0, 0x1
+.field public static mutual_friends:I = 0x7f11001e
 
-    if-ne p0, p1, :cond_0
+.field public static n_contacts:I = 0x7f11001f
 
-    return v0
+.field public static phone_weight:I = 0x7f11002c
 
-    :cond_0
-    instance-of v1, p1, Lk9c;
+.field public static pin_lock_wrong_code_with_attempts:I = 0x7f110031
 
-    const/4 v2, 0x0
+.field public static question_delete_messages:I = 0x7f11003a
 
-    if-nez v1, :cond_1
+.field public static results_more:I = 0x7f11003b
 
-    return v2
+.field public static selected_messages:I = 0x7f11003c
 
-    :cond_1
-    check-cast p1, Lk9c;
+.field public static sticker_removed_from_favorites:I = 0x7f11003d
 
-    iget-wide v3, p0, Lk9c;->a:J
+.field public static sticker_removed_from_recents:I = 0x7f11003e
 
-    iget-wide v5, p1, Lk9c;->a:J
+.field public static sticker_set_description:I = 0x7f11003f
 
-    cmp-long v1, v3, v5
+.field public static sticker_set_description_with_author:I = 0x7f110040
 
-    if-eqz v1, :cond_2
+.field public static to_chats:I = 0x7f110041
 
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lk9c;->b:Lw8c;
-
-    iget-object v3, p1, Lk9c;->b:Lw8c;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-object v1, p0, Lk9c;->c:Landroid/graphics/drawable/Drawable;
-
-    iget-object v3, p1, Lk9c;->c:Landroid/graphics/drawable/Drawable;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-boolean p0, p0, Lk9c;->o:Z
-
-    iget-boolean p1, p1, Lk9c;->o:Z
-
-    if-eq p0, p1, :cond_5
-
-    return v2
-
-    :cond_5
-    return v0
-.end method
-
-.method public final getItemId()J
-    .registers 3
-
-    iget-wide v0, p0, Lk9c;->Y:J
-
-    return-wide v0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    iget-wide v0, p0, Lk9c;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object v1, p0, Lk9c;->b:Lw8c;
-
-    invoke-virtual {v1}, Lw8c;->hashCode()I
-
-    move-result v1
-
-    add-int/2addr v1, v0
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-object v0, p0, Lk9c;->c:Landroid/graphics/drawable/Drawable;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    :goto_0
-    add-int/2addr v1, v0
-
-    mul-int/lit8 v1, v1, 0x1f
-
-    iget-boolean p0, p0, Lk9c;->o:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    add-int/2addr p0, v1
-
-    return p0
-.end method
-
-.method public final m()I
-    .registers 1
-
-    iget p0, p0, Lk9c;->X:I
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 4
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ReactionModel(animojiId="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-wide v1, p0, Lk9c;->a:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", reaction="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lk9c;->b:Lw8c;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", reactionDrawable="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lk9c;->c:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", selected="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-boolean p0, p0, Lk9c;->o:Z
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
+.field public static you_sent_messages:I = 0x7f110072

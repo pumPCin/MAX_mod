@@ -1,157 +1,396 @@
-.class public abstract Liga;
+.class public final Liga;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/os/Parcelable;
+
 
 # static fields
-.field public static final a:I
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Liga;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field public static final b:I
 
-.field public static final c:I
+# instance fields
+.field public final X:Ljava/lang/Integer;
 
-.field public static final d:I
+.field public final Y:Lu2f;
 
-.field public static final e:I
+.field public final a:Ljava/lang/String;
 
-.field public static final f:I
+.field public final b:I
 
-.field public static final g:I
+.field public final c:Lu2f;
 
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-.field public static final p:I
-
-.field public static final q:I
-
-.field public static final r:I
-
-.field public static final s:I
-
-.field public static final t:I
-
-.field public static final u:I
-
-.field public static final v:I
-
-.field public static final w:I
-
-.field public static final x:I
+.field public final o:Ljava/lang/Integer;
 
 
 # direct methods
 .method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lba8;
+
+    const/16 v1, 0x14
+
+    invoke-direct {v0, v1}, Lba8;-><init>(I)V
+
+    sput-object v0, Liga;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/lang/String;ILp2f;Ljava/lang/Integer;)V
+    .registers 12
+
+    const/4 v6, 0x0
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-direct/range {v0 .. v6}, Liga;-><init>(Ljava/lang/String;ILu2f;Ljava/lang/Integer;Ljava/lang/Integer;Lu2f;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ILu2f;Ljava/lang/Integer;Ljava/lang/Integer;Lu2f;)V
+    .registers 7
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Liga;->a:Ljava/lang/String;
+
+    iput p2, p0, Liga;->b:I
+
+    iput-object p3, p0, Liga;->c:Lu2f;
+
+    iput-object p4, p0, Liga;->o:Ljava/lang/Integer;
+
+    iput-object p5, p0, Liga;->X:Ljava/lang/Integer;
+
+    iput-object p6, p0, Liga;->Y:Lu2f;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final describeContents()I
     .registers 1
 
-    sget v0, Lnzb;->oneme_notifications_settings_chat_enable_notifications_button:I
+    const/4 p0, 0x0
 
-    sput v0, Liga;->a:I
+    return p0
+.end method
 
-    sget v0, Lnzb;->oneme_notifications_settings_chat_linearlayout:I
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    sput v0, Liga;->b:I
+    const/4 v0, 0x1
 
-    sget v0, Lnzb;->oneme_notifications_settings_chat_recycler_view:I
+    if-ne p0, p1, :cond_0
 
-    sput v0, Liga;->c:I
+    return v0
 
-    sget v0, Lnzb;->oneme_notifications_settings_chat_settings_button:I
+    :cond_0
+    instance-of v1, p1, Liga;
 
-    sput v0, Liga;->d:I
+    const/4 v2, 0x0
 
-    sget v0, Lnzb;->oneme_notifications_settings_chat_toolbar:I
+    if-nez v1, :cond_1
 
-    sput v0, Liga;->e:I
+    return v2
 
-    sget v0, Lnzb;->oneme_notifications_settings_chat_type_all_button:I
+    :cond_1
+    check-cast p1, Liga;
 
-    sput v0, Liga;->f:I
+    iget-object v1, p0, Liga;->a:Ljava/lang/String;
 
-    sget v0, Lnzb;->oneme_notifications_settings_chat_type_pin_reply_button:I
+    iget-object v3, p1, Liga;->a:Ljava/lang/String;
 
-    sput v0, Liga;->g:I
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget v0, Lnzb;->oneme_notifications_settings_dialog_enable_notifications_button:I
+    move-result v1
 
-    sput v0, Liga;->h:I
+    if-nez v1, :cond_2
 
-    sget v0, Lnzb;->oneme_notifications_settings_dialog_linearlayout:I
+    return v2
 
-    sput v0, Liga;->i:I
+    :cond_2
+    iget v1, p0, Liga;->b:I
 
-    sget v0, Lnzb;->oneme_notifications_settings_dialog_recycler_view:I
+    iget v3, p1, Liga;->b:I
 
-    sput v0, Liga;->j:I
+    if-eq v1, v3, :cond_3
 
-    sget v0, Lnzb;->oneme_notifications_settings_dialog_settings_button:I
+    return v2
 
-    sput v0, Liga;->k:I
+    :cond_3
+    iget-object v1, p0, Liga;->c:Lu2f;
 
-    sget v0, Lnzb;->oneme_notifications_settings_dialog_toolbar:I
+    iget-object v3, p1, Liga;->c:Lu2f;
 
-    sput v0, Liga;->l:I
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget v0, Lnzb;->oneme_notifications_settings_enable_all_notifications_button:I
+    move-result v1
 
-    sput v0, Liga;->m:I
+    if-nez v1, :cond_4
 
-    sget v0, Lnzb;->oneme_notifications_settings_linearlayout:I
+    return v2
 
-    sput v0, Liga;->n:I
+    :cond_4
+    iget-object v1, p0, Liga;->o:Ljava/lang/Integer;
 
-    sget v0, Lnzb;->oneme_notifications_settings_open_settings_button:I
+    iget-object v3, p1, Liga;->o:Ljava/lang/Integer;
 
-    sput v0, Liga;->o:I
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget v0, Lnzb;->oneme_notifications_settings_other_linearlayout:I
+    move-result v1
 
-    sput v0, Liga;->p:I
+    if-nez v1, :cond_5
 
-    sget v0, Lnzb;->oneme_notifications_settings_other_new_user_button:I
+    return v2
 
-    sput v0, Liga;->q:I
+    :cond_5
+    iget-object v1, p0, Liga;->X:Ljava/lang/Integer;
 
-    sget v0, Lnzb;->oneme_notifications_settings_other_recycler_view:I
+    iget-object v3, p1, Liga;->X:Ljava/lang/Integer;
 
-    sput v0, Liga;->r:I
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget v0, Lnzb;->oneme_notifications_settings_other_settings_button:I
+    move-result v1
 
-    sput v0, Liga;->s:I
+    if-nez v1, :cond_6
 
-    sget v0, Lnzb;->oneme_notifications_settings_other_toolbar:I
+    return v2
 
-    sput v0, Liga;->t:I
+    :cond_6
+    iget-object p0, p0, Liga;->Y:Lu2f;
 
-    sget v0, Lnzb;->oneme_notifications_settings_recycler_view:I
+    iget-object p1, p1, Liga;->Y:Lu2f;
 
-    sput v0, Liga;->u:I
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    sget v0, Lnzb;->oneme_notifications_settings_reset_default_button:I
+    move-result p0
 
-    sput v0, Liga;->v:I
+    if-nez p0, :cond_7
 
-    sget v0, Lnzb;->oneme_notifications_settings_show_content_button:I
+    return v2
 
-    sput v0, Liga;->w:I
+    :cond_7
+    return v0
+.end method
 
-    sget v0, Lnzb;->oneme_notifications_settings_toolbar:I
+.method public final hashCode()I
+    .registers 5
 
-    sput v0, Liga;->x:I
+    iget-object v0, p0, Liga;->a:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Liga;->b:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-object v2, p0, Liga;->c:Lu2f;
+
+    invoke-static {v0, v1, v2}, Lsg0;->c(IILu2f;)I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Liga;->o:Ljava/lang/Integer;
+
+    if-nez v3, :cond_0
+
+    move v3, v2
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
+
+    :goto_0
+    add-int/2addr v0, v3
+
+    mul-int/2addr v0, v1
+
+    iget-object v3, p0, Liga;->X:Ljava/lang/Integer;
+
+    if-nez v3, :cond_1
+
+    move v3, v2
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
+
+    :goto_1
+    add-int/2addr v0, v3
+
+    mul-int/2addr v0, v1
+
+    iget-object p0, p0, Liga;->Y:Lu2f;
+
+    if-nez p0, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    :goto_2
+    add-int/2addr v0, v2
+
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 6
+
+    const-string v0, ", countryPhoneCode="
+
+    const-string v1, ", countryName="
+
+    iget v2, p0, Liga;->b:I
+
+    const-string v3, "OneMeCountryModel(countryNameCode="
+
+    iget-object v4, p0, Liga;->a:Ljava/lang/String;
+
+    invoke-static {v2, v3, v4, v0, v1}, Lyv7;->m(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Liga;->c:Lu2f;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", flagDrawable="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Liga;->o:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", maxNumbersSize="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Liga;->X:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", hint="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Liga;->Y:Lu2f;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 6
+
+    iget-object v0, p0, Liga;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget v0, p0, Liga;->b:I
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    iget-object v0, p0, Liga;->c:Lu2f;
+
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Liga;->o:Ljava/lang/Integer;
+
+    if-nez v2, :cond_0
+
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
+
+    :goto_0
+    iget-object v2, p0, Liga;->X:Ljava/lang/Integer;
+
+    if-nez v2, :cond_1
+
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    :goto_1
+    iget-object p0, p0, Liga;->Y:Lu2f;
+
+    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     return-void
 .end method

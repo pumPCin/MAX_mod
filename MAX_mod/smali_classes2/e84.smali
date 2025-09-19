@@ -1,119 +1,206 @@
-.class public final Le84;
+.class public final synthetic Le84;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final f:Le84;
+# interfaces
+.implements Lv4e;
 
 
 # instance fields
-.field public final a:Z
+.field public final synthetic a:I
 
-.field public final b:Z
+.field public final synthetic b:Lru/ok/tamtam/messages/scheduled/DateTimePicker;
 
-.field public final c:Z
-
-.field public final d:Lhh5;
-
-.field public final e:Lpk9;
+.field public final synthetic c:Lv5f;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public synthetic constructor <init>(Lru/ok/tamtam/messages/scheduled/DateTimePicker;Lv5f;I)V
+    .registers 4
 
-    new-instance v0, Le84;
+    iput p3, p0, Le84;->a:I
 
-    sget-object v3, Llz7;->a:Lpk9;
+    iput-object p1, p0, Le84;->b:Lru/ok/tamtam/messages/scheduled/DateTimePicker;
 
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-direct/range {v0 .. v5}, Le84;-><init>(ZZLpk9;ZLhh5;)V
-
-    sput-object v0, Le84;->f:Le84;
-
-    return-void
-.end method
-
-.method public constructor <init>(ZZLpk9;ZLhh5;)V
-    .registers 6
+    iput-object p2, p0, Le84;->c:Lv5f;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean p1, p0, Le84;->a:Z
-
-    iput-boolean p2, p0, Le84;->b:Z
-
-    iput-boolean p4, p0, Le84;->c:Z
-
-    iput-object p5, p0, Le84;->d:Lhh5;
-
-    new-instance p1, Lpk9;
-
-    iget p2, p3, Lpk9;->d:I
-
-    invoke-direct {p1, p2}, Lpk9;-><init>(I)V
-
-    invoke-virtual {p1, p3}, Lpk9;->b(Lpk9;)V
-
-    iput-object p1, p0, Le84;->e:Lpk9;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
+.method public final a(I)V
     .registers 6
 
-    const-string v0, ", skipDebounce="
+    iget v0, p0, Le84;->a:I
 
-    const-string v1, ", allChats="
+    packed-switch v0, :pswitch_data_0
 
-    const-string v2, "DispatchParams(retry="
+    iget-object v0, p0, Le84;->b:Lru/ok/tamtam/messages/scheduled/DateTimePicker;
 
-    iget-boolean v3, p0, Le84;->a:Z
+    iget-boolean v1, v0, Lru/ok/tamtam/messages/scheduled/DateTimePicker;->O0:Z
 
-    iget-boolean v4, p0, Le84;->b:Z
+    if-eqz v1, :cond_0
 
-    invoke-static {v2, v3, v0, v4, v1}, Lgl5;->n(Ljava/lang/String;ZLjava/lang/String;ZLjava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
-    move-result-object v0
+    :cond_0
+    iget-object p0, p0, Le84;->c:Lv5f;
 
-    iget-boolean v1, p0, Le84;->c:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", serverChats="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Le84;->e:Lpk9;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", notification="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Le84;->d:Lhh5;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lls7;->C(I)Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    check-cast p0, Lt5f;
+
+    iget-object p1, v0, Lru/ok/tamtam/messages/scheduled/DateTimePicker;->L0:Lh84;
+
+    if-eqz p1, :cond_3
+
+    check-cast p1, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerViewModel;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "minute = "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "ScheduledSendPickerViewModel"
+
+    invoke-static {v1, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p1, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerViewModel;->e:Lyce;
+
+    invoke-virtual {v0}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lz74;
+
+    if-nez v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v2, v1, Lz74;->c:Lt5f;
+
+    invoke-static {v2, p0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    const/4 v2, 0x3
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v3, v3, p0, v2}, Lz74;->a(Lz74;Ll84;Lt5f;Lt5f;I)Lz74;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v3, p0}, Lyce;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    invoke-virtual {p1}, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerViewModel;->h()Z
+
+    :cond_3
+    :goto_0
+    return-void
+
+    :pswitch_0
+    iget-object v0, p0, Le84;->b:Lru/ok/tamtam/messages/scheduled/DateTimePicker;
+
+    iget-boolean v1, v0, Lru/ok/tamtam/messages/scheduled/DateTimePicker;->N0:Z
+
+    if-eqz v1, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    iget-object p0, p0, Le84;->c:Lv5f;
+
+    invoke-virtual {p0, p1}, Lls7;->C(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lt5f;
+
+    iget-object p1, v0, Lru/ok/tamtam/messages/scheduled/DateTimePicker;->L0:Lh84;
+
+    if-eqz p1, :cond_7
+
+    check-cast p1, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerViewModel;
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "hour = "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "ScheduledSendPickerViewModel"
+
+    invoke-static {v1, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p1, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerViewModel;->e:Lyce;
+
+    invoke-virtual {v0}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lz74;
+
+    if-nez v1, :cond_5
+
+    goto :goto_1
+
+    :cond_5
+    iget-object v2, v1, Lz74;->b:Lt5f;
+
+    invoke-static {v2, p0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_6
+
+    goto :goto_1
+
+    :cond_6
+    const/4 v2, 0x5
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v3, p0, v3, v2}, Lz74;->a(Lz74;Ll84;Lt5f;Lt5f;I)Lz74;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v3, p0}, Lyce;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    invoke-virtual {p1}, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerViewModel;->f()V
+
+    :cond_7
+    :goto_1
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

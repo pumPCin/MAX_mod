@@ -1,45 +1,114 @@
-.class public interface abstract Ltu0;
+.class public abstract Ltu0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lbwd;
-.implements Ljava/nio/channels/WritableByteChannel;
 
+# direct methods
+.method public static a(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroid/os/Bundle;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Class<",
+            "TT;>;)TT;"
+        }
+    .end annotation
 
-# virtual methods
-.method public abstract A()Ltu0;
+    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public abstract K(I[B)Ltu0;
+.method public static b(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)[Ljava/lang/Object;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroid/os/Bundle;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Class<",
+            "TT;>;)[TT;"
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getParcelableArray(Ljava/lang/String;Ljava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public abstract O(Ljava/lang/String;)Ltu0;
+.method public static c(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Ljava/util/ArrayList;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroid/os/Bundle;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Class<",
+            "+TT;>;)",
+            "Ljava/util/ArrayList<",
+            "TT;>;"
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;Ljava/lang/Class;)Ljava/util/ArrayList;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public abstract Q(Lqw0;)Ltu0;
+.method public static d(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Ljava/io/Serializable;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Ljava/io/Serializable;",
+            ">(",
+            "Landroid/os/Bundle;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Class<",
+            "TT;>;)TT;"
+        }
+    .end annotation
+
+    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getSerializable(Ljava/lang/String;Ljava/lang/Class;)Ljava/io/Serializable;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public abstract U(J)Ltu0;
-.end method
+.method public static e(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Landroid/util/SparseArray;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Landroid/os/Bundle;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Class<",
+            "+TT;>;)",
+            "Landroid/util/SparseArray<",
+            "TT;>;"
+        }
+    .end annotation
 
-.method public abstract flush()V
-.end method
+    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;Ljava/lang/Class;)Landroid/util/SparseArray;
 
-.method public abstract getBuffer()Lrt0;
-.end method
+    move-result-object p0
 
-.method public abstract m0(J)Ltu0;
-.end method
-
-.method public abstract write([B)Ltu0;
-.end method
-
-.method public abstract writeByte(I)Ltu0;
-.end method
-
-.method public abstract writeInt(I)Ltu0;
-.end method
-
-.method public abstract writeShort(I)Ltu0;
+    return-object p0
 .end method

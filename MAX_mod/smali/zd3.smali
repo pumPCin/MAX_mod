@@ -1,90 +1,57 @@
 .class public final Lzd3;
-.super Ljava/lang/Object;
+.super Lcb7;
 .source "SourceFile"
-
-# interfaces
-.implements Lcad;
 
 
 # instance fields
-.field public final a:Lcad;
+.field public final synthetic d:I
 
-.field public final b:Lj07;
+.field public final e:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lcad;Ljava/util/List;)V
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
     .registers 3
 
+    iput p1, p0, Lzd3;->d:I
+
+    iput-object p2, p0, Lzd3;->e:Ljava/lang/Object;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lzd3;->a:Lcad;
-
-    invoke-static {p2}, Lj07;->j(Ljava/util/Collection;)Lj07;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lzd3;->b:Lj07;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()J
+.method public final c(Ljava/io/Serializable;)Lcb7;
     .registers 3
 
-    iget-object p0, p0, Lzd3;->a:Lcad;
+    iget v0, p0, Lzd3;->d:I
 
-    invoke-interface {p0}, Lcad;->c()J
+    packed-switch v0, :pswitch_data_0
 
-    move-result-wide v0
+    iget-object v0, p0, Lzd3;->e:Ljava/lang/Object;
 
-    return-wide v0
-.end method
+    check-cast v0, Ljava/io/PrintWriter;
 
-.method public final h()Z
-    .registers 1
+    invoke-virtual {v0, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    iget-object p0, p0, Lzd3;->a:Lcad;
+    return-object p0
 
-    invoke-interface {p0}, Lcad;->h()Z
+    :pswitch_0
+    iget-object v0, p0, Lzd3;->e:Ljava/lang/Object;
 
-    move-result p0
+    check-cast v0, Ljava/io/PrintStream;
 
-    return p0
-.end method
+    invoke-virtual {v0, p1}, Ljava/io/PrintStream;->print(Ljava/lang/Object;)V
 
-.method public final k()J
-    .registers 3
+    return-object p0
 
-    iget-object p0, p0, Lzd3;->a:Lcad;
+    nop
 
-    invoke-interface {p0}, Lcad;->k()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public final m(J)V
-    .registers 3
-
-    iget-object p0, p0, Lzd3;->a:Lcad;
-
-    invoke-interface {p0, p1, p2}, Lcad;->m(J)V
-
-    return-void
-.end method
-
-.method public final r(Lss7;)Z
-    .registers 2
-
-    iget-object p0, p0, Lzd3;->a:Lcad;
-
-    invoke-interface {p0, p1}, Lcad;->r(Lss7;)Z
-
-    move-result p0
-
-    return p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

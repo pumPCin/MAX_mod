@@ -2,38 +2,61 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:I
-
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
+# interfaces
+.implements Lxw4;
 
 
-# direct methods
-.method public synthetic constructor <init>(IIIIII)V
-    .registers 7
+# virtual methods
+.method public final a(Lz96;Lv46;)Lsk6;
+    .registers 4
 
-    iput p1, p0, Luw4;->a:I
+    iget-object p0, p2, Lv46;->y0:Llw4;
 
-    iput p2, p0, Luw4;->b:I
+    if-nez p0, :cond_0
 
-    iput p3, p0, Luw4;->c:I
+    const/4 p0, 0x0
 
-    iput p4, p0, Luw4;->d:I
+    return-object p0
 
-    iput p5, p0, Luw4;->e:I
+    :cond_0
+    new-instance p0, Lsk6;
 
-    iput p6, p0, Luw4;->f:I
+    new-instance p1, Lcom/google/android/exoplayer2/drm/DrmSession$DrmSessionException;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance p2, Lcom/google/android/exoplayer2/drm/UnsupportedDrmException;
+
+    invoke-direct {p2}, Ljava/lang/Exception;-><init>()V
+
+    const/16 v0, 0x1771
+
+    invoke-direct {p1, p2, v0}, Lcom/google/android/exoplayer2/drm/DrmSession$DrmSessionException;-><init>(Ljava/lang/Exception;I)V
+
+    const/16 p2, 0x10
+
+    invoke-direct {p0, p2, p1}, Lsk6;-><init>(ILjava/lang/Object;)V
+
+    return-object p0
+.end method
+
+.method public final b(Lv46;)I
+    .registers 2
+
+    iget-object p0, p1, Lv46;->y0:Llw4;
+
+    if-eqz p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final c(Landroid/os/Looper;Lmdb;)V
+    .registers 3
 
     return-void
 .end method

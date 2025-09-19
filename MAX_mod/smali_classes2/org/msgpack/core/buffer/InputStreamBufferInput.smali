@@ -30,7 +30,7 @@
 
     const-string v0, "input is null"
 
-    invoke-static {p1, v0}, Lbp;->k(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v0}, Lz48;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
     iput-object p1, p0, Lorg/msgpack/core/buffer/InputStreamBufferInput;->in:Ljava/io/InputStream;
 
@@ -46,7 +46,7 @@
 
     const-string v0, "InputStream is null"
 
-    invoke-static {p0, v0}, Lbp;->k(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lz48;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
     instance-of v0, p0, Ljava/io/FileInputStream;
 

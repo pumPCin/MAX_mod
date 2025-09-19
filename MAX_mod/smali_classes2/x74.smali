@@ -1,21 +1,20 @@
-.class public final Lx74;
-.super Lphc;
+.class public interface abstract Lx74;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final A0:Landroidx/appcompat/widget/AppCompatTextView;
+# virtual methods
+.method public abstract h(Ljava/lang/CharSequence;Z)V
+.end method
 
+.method public abstract setCountView(Ljava/lang/CharSequence;)V
+.end method
 
-# direct methods
-.method public constructor <init>(Landroid/view/View;)V
-    .registers 2
+.method public abstract setDateBackgroundColor(I)V
+.end method
 
-    invoke-direct {p0, p1}, Lphc;-><init>(Landroid/view/View;)V
+.method public abstract setDateTextColor(I)V
+.end method
 
-    check-cast p1, Landroidx/appcompat/widget/AppCompatTextView;
-
-    iput-object p1, p0, Lx74;->A0:Landroidx/appcompat/widget/AppCompatTextView;
-
-    return-void
+.method public abstract setDateViewStatus(Lg9g;)V
 .end method

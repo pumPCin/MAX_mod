@@ -4,81 +4,32 @@
 
 
 # instance fields
-.field public final a:J
+.field public final a:Ljava/lang/String;
 
-.field public final b:J
+.field public final b:I
 
-.field public final c:Lo90;
+.field public final c:Lk90;
 
 
 # direct methods
-.method public constructor <init>(JJLo90;)V
-    .registers 6
+.method public constructor <init>(Ljava/lang/String;ILk90;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Lpb0;->a:J
+    iput-object p1, p0, Lpb0;->a:Ljava/lang/String;
 
-    iput-wide p3, p0, Lpb0;->b:J
+    iput p2, p0, Lpb0;->b:I
 
-    iput-object p5, p0, Lpb0;->c:Lo90;
+    iput-object p3, p0, Lpb0;->c:Lk90;
 
     return-void
-.end method
-
-.method public static a(JJLo90;)Lpb0;
-    .registers 15
-
-    const-wide/16 v0, 0x0
-
-    cmp-long v2, p0, v0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    if-ltz v2, :cond_0
-
-    move v2, v4
-
-    goto :goto_0
-
-    :cond_0
-    move v2, v3
-
-    :goto_0
-    const-string v5, "duration must be positive value."
-
-    invoke-static {v5, v2}, Lts;->h(Ljava/lang/String;Z)V
-
-    cmp-long v0, p2, v0
-
-    if-ltz v0, :cond_1
-
-    move v3, v4
-
-    :cond_1
-    const-string v0, "bytes must be positive value."
-
-    invoke-static {v0, v3}, Lts;->h(Ljava/lang/String;Z)V
-
-    new-instance v4, Lpb0;
-
-    move-wide v5, p0
-
-    move-wide v7, p2
-
-    move-object v9, p4
-
-    invoke-direct/range {v4 .. v9}, Lpb0;-><init>(JJLo90;)V
-
-    return-object v4
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 9
+    .registers 7
 
     const/4 v0, 0x1
 
@@ -91,54 +42,58 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     check-cast p1, Lpb0;
 
-    iget-wide v3, p0, Lpb0;->a:J
+    iget-object v1, p1, Lpb0;->a:Ljava/lang/String;
 
-    iget-wide v5, p1, Lpb0;->a:J
+    iget-object v3, p1, Lpb0;->c:Lk90;
 
-    cmp-long v1, v3, v5
+    iget-object v4, p0, Lpb0;->a:Ljava/lang/String;
 
-    if-nez v1, :cond_1
+    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    iget-wide v3, p0, Lpb0;->b:J
+    move-result v1
 
-    iget-wide v5, p1, Lpb0;->b:J
+    if-eqz v1, :cond_2
 
-    cmp-long v1, v3, v5
+    iget v1, p0, Lpb0;->b:I
 
-    if-nez v1, :cond_1
+    iget p1, p1, Lpb0;->b:I
 
-    iget-object p0, p0, Lpb0;->c:Lo90;
+    if-ne v1, p1, :cond_2
 
-    iget-object p1, p1, Lpb0;->c:Lo90;
+    iget-object p0, p0, Lpb0;->c:Lk90;
 
-    invoke-virtual {p0, p1}, Lo90;->equals(Ljava/lang/Object;)Z
+    if-nez p0, :cond_1
+
+    if-nez v3, :cond_2
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0, v3}, Lk90;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_2
 
+    :goto_0
     return v0
 
-    :cond_1
+    :cond_2
     return v2
 .end method
 
 .method public final hashCode()I
-    .registers 8
+    .registers 4
 
-    iget-wide v0, p0, Lpb0;->a:J
+    iget-object v0, p0, Lpb0;->a:Ljava/lang/String;
 
-    const/16 v2, 0x20
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    ushr-long v3, v0, v2
-
-    xor-long/2addr v0, v3
-
-    long-to-int v0, v0
+    move-result v0
 
     const v1, 0xf4243
 
@@ -146,55 +101,57 @@
 
     mul-int/2addr v0, v1
 
-    iget-wide v3, p0, Lpb0;->b:J
-
-    ushr-long v5, v3, v2
-
-    xor-long v2, v5, v3
-
-    long-to-int v2, v2
+    iget v2, p0, Lpb0;->b:I
 
     xor-int/2addr v0, v2
 
     mul-int/2addr v0, v1
 
-    iget-object p0, p0, Lpb0;->c:Lo90;
+    iget-object p0, p0, Lpb0;->c:Lk90;
 
-    invoke-virtual {p0}, Lo90;->hashCode()I
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lk90;->hashCode()I
 
     move-result p0
 
+    :goto_0
     xor-int/2addr p0, v0
 
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 4
+    .registers 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "RecordingStats{recordedDurationNanos="
+    const-string v1, "VideoMimeInfo{mimeType="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-wide v1, p0, Lpb0;->a:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", numBytesRecorded="
+    iget-object v1, p0, Lpb0;->a:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v1, p0, Lpb0;->b:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", audioStats="
+    const-string v1, ", profile="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lpb0;->c:Lo90;
+    iget v1, p0, Lpb0;->b:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", compatibleVideoProfile="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lpb0;->c:Lk90;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

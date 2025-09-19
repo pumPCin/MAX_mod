@@ -4,30 +4,36 @@
 
 
 # direct methods
-.method public static a(Landroid/view/ViewGroup;)I
-    .registers 1
+.method public static a(Landroid/view/Surface;F)V
+    .registers 3
 
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getNestedScrollAxes()I
+    const/4 v0, 0x0
 
-    move-result p0
+    cmpl-float v0, p1, v0
 
-    return p0
-.end method
+    if-nez v0, :cond_0
 
-.method public static b(Landroid/view/ViewGroup;)Z
-    .registers 1
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->isTransitionGroup()Z
+    goto :goto_0
 
-    move-result p0
+    :cond_0
+    const/4 v0, 0x1
 
-    return p0
-.end method
+    :goto_0
+    :try_start_0
+    invoke-static {p0, p1, v0}, Laxa;->s(Landroid/view/Surface;FI)V
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
-.method public static c(Landroid/view/ViewGroup;Z)V
-    .registers 2
+    return-void
 
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->setTransitionGroup(Z)V
+    :catch_0
+    move-exception p0
+
+    const-string p1, "Failed to call Surface.setFrameRate"
+
+    invoke-static {p1, p0}, Lm7g;->b(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
 .end method

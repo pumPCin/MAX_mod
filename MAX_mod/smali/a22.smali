@@ -1,191 +1,123 @@
-.class public final La22;
-.super Lzgc;
+.class public final synthetic La22;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lrs1;
 
 
 # instance fields
-.field public final a:Landroid/graphics/Paint;
-
-.field public final b:Ljava/util/List;
+.field public final synthetic a:Ld22;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method public synthetic constructor <init>(Ld22;)V
+    .registers 2
+
+    iput-object p1, p0, La22;->a:Ld22;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Landroid/graphics/Paint;
-
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v0, p0, La22;->a:Landroid/graphics/Paint;
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-static {v1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v1
-
-    iput-object v1, p0, La22;->b:Ljava/util/List;
-
-    const/high16 p0, 0x40a00000    # 5.0f
-
-    invoke-virtual {v0, p0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    const p0, -0xff01
-
-    invoke-virtual {v0, p0}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final h(Landroid/graphics/Canvas;Landroidx/recyclerview/widget/RecyclerView;)V
-    .registers 10
+.method public a()V
+    .registers 4
 
-    invoke-virtual {p2}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    iget-object p0, p0, La22;->a:Ld22;
 
-    move-result-object v0
+    iget-object v0, p0, Ld22;->a:Ljava/lang/Object;
 
-    sget v1, Lmwb;->m3_carousel_debug_keyline_width:I
+    monitor-enter v0
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
+    :try_start_0
+    iget v1, p0, Ld22;->i:I
 
-    move-result v0
+    const/4 v2, 0x5
 
-    iget-object v6, p0, La22;->a:Landroid/graphics/Paint;
+    if-ne v1, v2, :cond_0
 
-    invoke-virtual {v6, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    iget-object v1, p0, Ld22;->f:Lbmd;
 
-    iget-object p0, p0, La22;->b:Ljava/util/List;
+    invoke-virtual {p0, v1}, Ld22;->k(Lbmd;)V
 
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    goto :goto_0
 
-    move-result-object p0
-
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lbh7;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const v0, -0xff01
-
-    const/4 v1, 0x0
-
-    const v2, -0xffff01
-
-    invoke-static {v0, v1, v2}, Le83;->c(IFI)I
-
-    move-result v0
-
-    invoke-virtual {v6, v0}, Landroid/graphics/Paint;->setColor(I)V
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    invoke-virtual {v0}, Lcom/google/android/material/carousel/CarouselLayoutManager;->K0()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    iget-object v0, v0, Lcom/google/android/material/carousel/CarouselLayoutManager;->q:Ldy;
-
-    invoke-virtual {v0}, Ldy;->n()I
-
-    move-result v0
-
-    int-to-float v3, v0
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    iget-object v0, v0, Lcom/google/android/material/carousel/CarouselLayoutManager;->q:Ldy;
-
-    invoke-virtual {v0}, Ldy;->i()I
-
-    move-result v0
-
-    int-to-float v5, v0
-
-    const/4 v2, 0x0
-
-    const/4 v4, 0x0
-
-    move-object v1, p1
-
-    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+    :catchall_0
+    move-exception p0
 
     goto :goto_1
 
     :cond_0
-    move-object v1, p1
+    :goto_0
+    monitor-exit v0
 
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    iget-object p1, p1, Lcom/google/android/material/carousel/CarouselLayoutManager;->q:Ldy;
-
-    invoke-virtual {p1}, Ldy;->j()I
-
-    move-result p1
-
-    int-to-float v2, p1
-
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/a;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/google/android/material/carousel/CarouselLayoutManager;
-
-    iget-object p1, p1, Lcom/google/android/material/carousel/CarouselLayoutManager;->q:Ldy;
-
-    invoke-virtual {p1}, Ldy;->k()I
-
-    move-result p1
-
-    int-to-float v4, p1
-
-    const/4 v5, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+    return-void
 
     :goto_1
-    move-object p1, v1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+.method public t(Lqs1;)Ljava/lang/String;
+    .registers 6
+
+    iget-object p0, p0, La22;->a:Ld22;
+
+    const-string v0, "Release[session="
+
+    iget-object v1, p0, Ld22;->a:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    :try_start_0
+    iget-object v2, p0, Ld22;->k:Lqs1;
+
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x1
 
     goto :goto_0
 
-    :cond_1
-    return-void
+    :cond_0
+    const/4 v2, 0x0
+
+    :goto_0
+    const-string v3, "Release completer expected to be null"
+
+    invoke-static {v3, v2}, Ln4e;->n(Ljava/lang/String;Z)V
+
+    iput-object p1, p0, Ld22;->k:Lqs1;
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "]"
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    monitor-exit v1
+
+    return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    monitor-exit v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
 .end method

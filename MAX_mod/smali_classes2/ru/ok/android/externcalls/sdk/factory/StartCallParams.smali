@@ -32,9 +32,9 @@
         "opponentId",
         "",
         "payload",
-        "Lfze;",
+        "Lg8f;",
         "tokenProvider",
-        "Lkl;",
+        "Lul;",
         "tokenInfoProvider",
         "",
         "chatId",
@@ -43,31 +43,31 @@
         "myId",
         "Lkotlin/Function1;",
         "Lru/ok/android/externcalls/sdk/Conversation;",
-        "Lncf;",
+        "Lylf;",
         "onPrepared",
         "",
         "onError",
-        "Ly12;",
+        "Lf22;",
         "frameInterceptor",
         "Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;",
         "eventListener",
-        "Ln0a;",
+        "Ln4a;",
         "cameraCapturerFactory",
         "shouldStartWithVideo",
         "<init>",
-        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;Lfze;Lkl;Ljava/lang/Long;ZLru/ok/android/externcalls/sdk/id/ParticipantId;Lj96;Lj96;Ly12;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ln0a;Z)V",
+        "(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;Lg8f;Lul;Ljava/lang/Long;ZLru/ok/android/externcalls/sdk/id/ParticipantId;Lbc6;Lbc6;Lf22;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ln4a;Z)V",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "getOpponentId",
         "()Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "Ljava/lang/String;",
         "getPayload",
         "()Ljava/lang/String;",
-        "Lfze;",
+        "Lg8f;",
         "getTokenProvider",
-        "()Lfze;",
-        "Lkl;",
+        "()Lg8f;",
+        "Lul;",
         "getTokenInfoProvider",
-        "()Lkl;",
+        "()Lul;",
         "Ljava/lang/Long;",
         "getChatId",
         "()Ljava/lang/Long;",
@@ -95,29 +95,29 @@
 
 .field private final payload:Ljava/lang/String;
 
-.field private final tokenInfoProvider:Lkl;
+.field private final tokenInfoProvider:Lul;
 
-.field private final tokenProvider:Lfze;
+.field private final tokenProvider:Lg8f;
 
 
 # direct methods
-.method private constructor <init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;Lfze;Lkl;Ljava/lang/Long;ZLru/ok/android/externcalls/sdk/id/ParticipantId;Lj96;Lj96;Ly12;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ln0a;Z)V
+.method private constructor <init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;Lg8f;Lul;Ljava/lang/Long;ZLru/ok/android/externcalls/sdk/id/ParticipantId;Lbc6;Lbc6;Lf22;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ln4a;Z)V
     .registers 22
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
             "Ljava/lang/String;",
-            "Lfze;",
-            "Lkl;",
+            "Lg8f;",
+            "Lul;",
             "Ljava/lang/Long;",
             "Z",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
-            "Lj96;",
-            "Lj96;",
-            "Ly12;",
+            "Lbc6;",
+            "Lbc6;",
+            "Lf22;",
             "Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;",
-            "Ln0a;",
+            "Ln4a;",
             "Z)V"
         }
     .end annotation
@@ -138,15 +138,15 @@
 
     move/from16 v5, p13
 
-    invoke-direct/range {v0 .. v7}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;-><init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lj96;Lj96;ZLy12;Ln0a;)V
+    invoke-direct/range {v0 .. v7}, Lru/ok/android/externcalls/sdk/factory/BaseCallParams;-><init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Lbc6;Lbc6;ZLf22;Ln4a;)V
 
     iput-object p1, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->opponentId:Lru/ok/android/externcalls/sdk/id/ParticipantId;
 
     iput-object p2, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->payload:Ljava/lang/String;
 
-    iput-object p3, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->tokenProvider:Lfze;
+    iput-object p3, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->tokenProvider:Lg8f;
 
-    iput-object p4, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->tokenInfoProvider:Lkl;
+    iput-object p4, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->tokenInfoProvider:Lul;
 
     iput-object p5, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->chatId:Ljava/lang/Long;
 
@@ -155,10 +155,10 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;Lfze;Lkl;Ljava/lang/Long;ZLru/ok/android/externcalls/sdk/id/ParticipantId;Lj96;Lj96;Ly12;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ln0a;ZLwc4;)V
+.method public synthetic constructor <init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;Lg8f;Lul;Ljava/lang/Long;ZLru/ok/android/externcalls/sdk/id/ParticipantId;Lbc6;Lbc6;Lf22;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ln4a;ZLld4;)V
     .registers 15
 
-    invoke-direct/range {p0 .. p13}, Lru/ok/android/externcalls/sdk/factory/StartCallParams;-><init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;Lfze;Lkl;Ljava/lang/Long;ZLru/ok/android/externcalls/sdk/id/ParticipantId;Lj96;Lj96;Ly12;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ln0a;Z)V
+    invoke-direct/range {p0 .. p13}, Lru/ok/android/externcalls/sdk/factory/StartCallParams;-><init>(Lru/ok/android/externcalls/sdk/id/ParticipantId;Ljava/lang/String;Lg8f;Lul;Ljava/lang/Long;ZLru/ok/android/externcalls/sdk/id/ParticipantId;Lbc6;Lbc6;Lf22;Lru/ok/android/externcalls/sdk/events/ConversationEventsListener;Ln4a;Z)V
 
     return-void
 .end method
@@ -189,18 +189,18 @@
     return-object p0
 .end method
 
-.method public final getTokenInfoProvider()Lkl;
+.method public final getTokenInfoProvider()Lul;
     .registers 1
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->tokenInfoProvider:Lkl;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->tokenInfoProvider:Lul;
 
     return-object p0
 .end method
 
-.method public final getTokenProvider()Lfze;
+.method public final getTokenProvider()Lg8f;
     .registers 1
 
-    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->tokenProvider:Lfze;
+    iget-object p0, p0, Lru/ok/android/externcalls/sdk/factory/StartCallParams;->tokenProvider:Lg8f;
 
     return-object p0
 .end method

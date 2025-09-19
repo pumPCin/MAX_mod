@@ -1,18 +1,13 @@
 .class public abstract Lxtg;
 .super Ljava/lang/Object;
-
-
-# static fields
-.field public static final synthetic a:I
+.source "SourceFile"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public static a(Landroid/view/Window$Callback;Z)V
+    .registers 2
 
-    const-class v0, Lxtg;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-interface {p0, p1}, Landroid/view/Window$Callback;->onPointerCaptureChanged(Z)V
 
     return-void
 .end method

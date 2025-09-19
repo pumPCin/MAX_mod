@@ -1,384 +1,181 @@
 .class public final Lr81;
-.super Lj67;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic g:I
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final h:Ljava/util/List;
-
-.field public final i:Ljava/util/List;
+.field public final synthetic Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/util/List;Ljava/util/List;)V
-    .registers 4
+.method public constructor <init>(Lone/me/calllist/ui/page/CallHistoryPageScreen;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p1, p0, Lr81;->g:I
+    iput-object p1, p0, Lr81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
 
-    iput-object p2, p0, Lr81;->h:Ljava/util/List;
+    const/4 p1, 0x2
 
-    iput-object p3, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final e(II)Z
-    .registers 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lr81;->g:I
+    check-cast p1, Lkxa;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-static {p1, v0}, Lj73;->n0(ILjava/util/List;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-static {p2, p0}, Lj73;->n0(ILjava/util/List;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lr81;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-static {p1, p0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    check-cast p0, Lr81;
 
-    move-result p0
+    sget-object p1, Lylf;->a:Lylf;
 
-    return p0
+    invoke-virtual {p0, p1}, Lr81;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :pswitch_0
-    iget-object v0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p1, p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-
-    :pswitch_1
-    iget-object v0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p1, p0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_2
-    iget-object v0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-static {p1, p0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p1
 .end method
 
-.method public final g(II)Z
-    .registers 6
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
 
-    iget v0, p0, Lr81;->g:I
+    new-instance v0, Lr81;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Lr81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
 
-    iget-object v0, p0, Lr81;->h:Ljava/util/List;
+    invoke-direct {v0, p0, p2}, Lr81;-><init>(Lone/me/calllist/ui/page/CallHistoryPageScreen;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {p1, v0}, Lj73;->n0(ILjava/util/List;)Ljava/lang/Object;
+    iput-object p1, v0, Lr81;->X:Ljava/lang/Object;
 
-    move-result-object p1
+    return-object v0
+.end method
 
-    check-cast p1, Lwcb;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
 
-    const/4 v0, 0x0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    if-eqz p1, :cond_0
+    iget-object p1, p0, Lr81;->X:Ljava/lang/Object;
 
-    iget-wide v1, p1, Lwcb;->a:J
+    check-cast p1, Lkxa;
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    sget-object v0, Ljxa;->a:Ljxa;
 
-    move-result-object p1
+    invoke-static {p1, v0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    goto :goto_0
+    move-result v0
 
-    :cond_0
-    move-object p1, v0
+    if-nez v0, :cond_2
 
-    :goto_0
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
+    instance-of v0, p1, Lixa;
 
-    invoke-static {p2, p0}, Lj73;->n0(ILjava/util/List;)Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
-    move-result-object p0
+    check-cast p1, Lixa;
 
-    check-cast p0, Lwcb;
+    sget-object v0, Lone/me/calllist/ui/page/CallHistoryPageScreen;->t0:Lr52;
 
-    if-eqz p0, :cond_1
+    iget-object p0, p0, Lr81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
 
-    iget-wide v0, p0, Lwcb;->a:J
+    iget-object v0, p0, Lone/me/calllist/ui/page/CallHistoryPageScreen;->Z:Lzte;
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    :cond_1
-    invoke-static {p1, v0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    check-cast v0, Lo81;
 
-    move-result p0
+    iget-object p1, p1, Lixa;->a:Ljava/util/LinkedHashMap;
 
-    return p0
-
-    :pswitch_0
-    iget-object v0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
     move-result-object p1
 
-    check-cast p1, Ltg7;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget p1, p1, Ltg7;->c:I
+    invoke-static {p1}, Lq73;->B0(Ljava/lang/Iterable;)Ljava/util/List;
 
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
+    move-result-object p1
 
-    invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lls7;->E(Ljava/util/List;)V
+
+    invoke-virtual {p0}, Lone/me/calllist/ui/page/CallHistoryPageScreen;->z0()Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lone/me/calllist/ui/page/CallHistoryPageScreen;->B0()Lw81;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lw81;->r()Z
+
+    move-result v0
+
+    invoke-virtual {p1, v0}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setRefreshingNext(Z)V
+
+    invoke-virtual {p0}, Lone/me/calllist/ui/page/CallHistoryPageScreen;->z0()Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+
+    move-result-object p1
+
+    invoke-virtual {p0}, Lone/me/calllist/ui/page/CallHistoryPageScreen;->B0()Lw81;
 
     move-result-object p0
 
-    check-cast p0, Ltg7;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    iget p0, p0, Ltg7;->c:I
+    sget-object v0, Lg91;->b:Lg91;
 
-    if-ne p1, p0, :cond_2
+    iget-object v0, p0, Lw81;->b:Lg91;
+
+    sget-object v1, Lg91;->b:Lg91;
+
+    if-ne v0, v1, :cond_0
+
+    iget-object p0, p0, Lw81;->o:Lzo5;
+
+    iget-object p0, p0, Lzo5;->o:Ljava/lang/Object;
+
+    check-cast p0, Ljava/util/ArrayList;
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result p0
+
+    if-nez p0, :cond_0
 
     const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    invoke-virtual {p1, p0}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setRefreshingPrev(Z)V
 
     goto :goto_1
 
+    :cond_1
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
     :cond_2
-    const/4 p0, 0x0
-
     :goto_1
-    return p0
+    sget-object p0, Lylf;->a:Lylf;
 
-    :pswitch_1
-    iget-object v0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Ley5;
-
-    iget-object p1, p1, Ley5;->a:Ljava/lang/String;
-
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ley5;
-
-    iget-object p0, p0, Ley5;->a:Ljava/lang/String;
-
-    invoke-static {p1, p0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_2
-    iget-object v0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lm91;
-
-    iget-object p1, p1, Lm91;->c:Ll91;
-
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-interface {p0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lm91;
-
-    iget-object p0, p0, Lm91;->c:Ll91;
-
-    if-ne p1, p0, :cond_3
-
-    const/4 p0, 0x1
-
-    goto :goto_2
-
-    :cond_3
-    const/4 p0, 0x0
-
-    :goto_2
-    return p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final r()I
-    .registers 2
-
-    iget v0, p0, Lr81;->g:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_1
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_2
-    iget-object p0, p0, Lr81;->i:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final s()I
-    .registers 2
-
-    iget v0, p0, Lr81;->g:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_1
-    iget-object p0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
-
-    :pswitch_2
-    iget-object p0, p0, Lr81;->h:Ljava/util/List;
-
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    move-result p0
-
-    return p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

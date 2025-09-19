@@ -1,121 +1,172 @@
 .class public final Li1b;
-.super Lxie;
+.super Ljfc;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final c:Ljava/lang/String;
 
 
 # instance fields
-.field public X:I
-
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Ll1b;
+.field public final b:F
 
 
 # direct methods
-.method public constructor <init>(Ll1b;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Li1b;->Z:Ll1b;
+    sget v0, Lnrf;->a:I
 
-    const/4 p1, 0x2
+    const/16 v0, 0x24
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v1, 0x1
+
+    invoke-static {v1, v0}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Li1b;->c:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/high16 v0, -0x40800000    # -1.0f
+
+    iput v0, p0, Li1b;->b:F
+
+    return-void
+.end method
+
+.method public constructor <init>(F)V
+    .registers 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    cmpl-float v0, p1, v0
+
+    if-ltz v0, :cond_0
+
+    const/high16 v0, 0x42c80000    # 100.0f
+
+    cmpg-float v0, p1, v0
+
+    if-gtz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    const-string v1, "percent must be in the range of [0, 100]"
+
+    invoke-static {v1, v0}, Lmq0;->b(Ljava/lang/Object;Z)V
+
+    iput p1, p0, Li1b;->b:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final b()Z
+    .registers 2
 
-    check-cast p1, Lwp3;
+    iget p0, p0, Li1b;->b:F
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const/high16 v0, -0x40800000    # -1.0f
 
-    invoke-virtual {p0, p1, p2}, Li1b;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    cmpl-float p0, p0, v0
 
-    move-result-object p0
+    if-eqz p0, :cond_0
 
-    check-cast p0, Li1b;
+    const/4 p0, 0x1
 
-    sget-object p1, Lncf;->a:Lncf;
+    return p0
 
-    invoke-virtual {p0, p1}, Li1b;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_0
+    const/4 p0, 0x0
 
-    move-result-object p0
-
-    return-object p0
+    return p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final c()Landroid/os/Bundle;
     .registers 4
 
-    new-instance v0, Li1b;
+    new-instance v0, Landroid/os/Bundle;
 
-    iget-object p0, p0, Li1b;->Z:Ll1b;
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    invoke-direct {v0, p0, p2}, Li1b;-><init>(Ll1b;Lkotlin/coroutines/Continuation;)V
+    sget-object v1, Ljfc;->a:Ljava/lang/String;
 
-    iput-object p1, v0, Li1b;->Y:Ljava/lang/Object;
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+
+    sget-object v1, Li1b;->c:Ljava/lang/String;
+
+    iget p0, p0, Li1b;->b:F
+
+    invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putFloat(Ljava/lang/String;F)V
 
     return-object v0
 .end method
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    iget v0, p0, Li1b;->X:I
+    instance-of v0, p1, Li1b;
 
-    sget-object v1, Lncf;->a:Lncf;
+    const/4 v1, 0x0
 
-    const/4 v2, 0x1
+    if-nez v0, :cond_0
 
-    if-eqz v0, :cond_1
-
-    if-ne v0, v2, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    return-object v1
+    return v1
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    check-cast p1, Li1b;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    iget p1, p1, Li1b;->b:F
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget p0, p0, Li1b;->b:F
 
-    throw p0
+    cmpl-float p0, p0, p1
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x1
+
+    return p0
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    return v1
+.end method
 
-    iget-object p1, p0, Li1b;->Y:Ljava/lang/Object;
+.method public final hashCode()I
+    .registers 1
 
-    check-cast p1, Lwp3;
+    iget p0, p0, Li1b;->b:F
 
-    iget-object v0, p0, Li1b;->Z:Ll1b;
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    iget-object v3, v0, Ll1b;->X:Ln4e;
+    move-result-object p0
 
-    invoke-static {v0, p1}, Ll1b;->q(Ll1b;Lwp3;)Ljava/util/List;
+    filled-new-array {p0}, [Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object p0
 
-    iput v2, p0, Li1b;->X:I
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
-    invoke-virtual {v3, p1}, Ln4e;->setValue(Ljava/lang/Object;)V
+    move-result p0
 
-    sget-object p0, Ls04;->a:Ls04;
-
-    if-ne v1, p0, :cond_2
-
-    return-object p0
-
-    :cond_2
-    return-object v1
+    return p0
 .end method

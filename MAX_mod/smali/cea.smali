@@ -1,19 +1,25 @@
-.class public final Lcea;
+.class public abstract Lcea;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Landroid/content/Context;
+# static fields
+.field public static final a:I
+
+.field public static final b:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lm9c;->call_users_in_wait_room_count:I
 
-    iput-object p1, p0, Lcea;->a:Landroid/content/Context;
+    sput v0, Lcea;->a:I
+
+    sget v0, Lm9c;->call_users_info_count:I
+
+    sput v0, Lcea;->b:I
 
     return-void
 .end method

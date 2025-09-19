@@ -1,90 +1,48 @@
-.class public final synthetic Lec8;
-.super Ljava/lang/Object;
-.source "SourceFile"
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public final Lec8;
+.super Ljx3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Lpc8;
+.field public final synthetic Y:Lyf7;
 
-.field public final synthetic c:Lhc8;
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lpc8;Lhc8;I)V
-    .registers 4
+.method public constructor <init>(Lyf7;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p3, p0, Lec8;->a:I
+    iput-object p1, p0, Lec8;->Y:Lyf7;
 
-    iput-object p1, p0, Lec8;->b:Lpc8;
-
-    iput-object p2, p0, Lec8;->c:Lhc8;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .registers 4
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lec8;->a:I
+    iput-object p1, p0, Lec8;->o:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget p1, p0, Lec8;->X:I
 
-    iget-object v0, p0, Lec8;->b:Lpc8;
+    const/high16 v0, -0x80000000
 
-    iget-object p0, p0, Lec8;->c:Lhc8;
+    or-int/2addr p1, v0
 
-    iget-object v0, v0, Lk1;->a:Ljava/lang/Object;
+    iput p1, p0, Lec8;->X:I
 
-    instance-of v0, v0, Lo0;
+    iget-object p1, p0, Lec8;->Y:Lyf7;
 
-    if-eqz v0, :cond_0
+    const/4 v0, 0x0
 
-    invoke-virtual {p0}, Lhc8;->o()V
+    invoke-virtual {p1, v0, p0}, Lyf7;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
-    :cond_0
-    return-void
+    move-result-object p0
 
-    :pswitch_0
-    iget-object v0, p0, Lec8;->b:Lpc8;
-
-    iget-object p0, p0, Lec8;->c:Lhc8;
-
-    iput-object p0, v0, Lpc8;->o0:Lhc8;
-
-    iget-boolean v1, v0, Lpc8;->p0:Z
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v0, p0}, Lk1;->k(Ljava/lang/Object;)Z
-
-    :cond_1
-    new-instance v1, Lec8;
-
-    const/4 v2, 0x1
-
-    invoke-direct {v1, v0, p0, v2}, Lec8;-><init>(Lpc8;Lhc8;I)V
-
-    new-instance p0, Lws1;
-
-    const/4 v2, 0x2
-
-    invoke-direct {p0, v2, v0}, Lws1;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v0, v1, p0}, Lk1;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

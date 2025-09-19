@@ -1,81 +1,76 @@
-.class public final enum Lqe1;
-.super Ljava/lang/Enum;
+.class public final Lqe1;
+.super Lure;
 .source "SourceFile"
 
+# interfaces
+.implements Lpc6;
 
-# static fields
-.field public static final enum a:Lqe1;
 
-.field public static final enum b:Lqe1;
-
-.field public static final synthetic c:[Lqe1;
+# instance fields
+.field public final synthetic X:Lte1;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public constructor <init>(Lte1;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    new-instance v0, Lqe1;
+    iput-object p1, p0, Lqe1;->X:Lte1;
 
-    const-string v1, "UNDEFINE"
+    const/4 p1, 0x2
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    new-instance v1, Lqe1;
-
-    const-string v2, "MENU"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lqe1;->a:Lqe1;
-
-    new-instance v2, Lqe1;
-
-    const-string v3, "RECORD"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lqe1;->b:Lqe1;
-
-    filled-new-array {v0, v1, v2}, [Lqe1;
-
-    move-result-object v0
-
-    sput-object v0, Lqe1;->c:[Lqe1;
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lqe1;
-    .registers 2
 
-    const-class v0, Lqe1;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    check-cast p1, Lr7d;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lqe1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
     check-cast p0, Lqe1;
 
-    return-object p0
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lqe1;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
 .end method
 
-.method public static values()[Lqe1;
-    .registers 1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    sget-object v0, Lqe1;->c:[Lqe1;
+    new-instance p1, Lqe1;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object p0, p0, Lqe1;->X:Lte1;
 
-    move-result-object v0
+    invoke-direct {p1, p0, p2}, Lqe1;-><init>(Lte1;Lkotlin/coroutines/Continuation;)V
 
-    check-cast v0, [Lqe1;
+    return-object p1
+.end method
 
-    return-object v0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lqe1;->X:Lte1;
+
+    iget-object p0, p0, Lte1;->t0:Lv85;
+
+    sget-object p1, Lik1;->D:Lik1;
+
+    invoke-static {p0, p1}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

@@ -1,215 +1,109 @@
 .class public final Lwic;
-.super Lt07;
+.super Lwze;
 .source "SourceFile"
 
 
-# static fields
-.field public static final o0:[Ljava/lang/Object;
-
-.field public static final p0:Lwic;
-
-
 # instance fields
-.field public final transient X:I
+.field public final synthetic e:I
 
-.field public final transient Y:[Ljava/lang/Object;
-
-.field public final transient Z:I
-
-.field public final transient n0:I
-
-.field public final transient o:[Ljava/lang/Object;
+.field public final synthetic f:Lyic;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 7
+.method public constructor <init>(Ljava/lang/String;Lyic;)V
+    .registers 4
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    new-array v5, v0, [Ljava/lang/Object;
+    iput v0, p0, Lwic;->e:I
 
-    sput-object v5, Lwic;->o0:[Ljava/lang/Object;
+    iput-object p2, p0, Lwic;->f:Lyic;
 
-    new-instance v1, Lwic;
+    const/4 p2, 0x1
 
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/4 v2, 0x0
-
-    move-object v6, v5
-
-    invoke-direct/range {v1 .. v6}, Lwic;-><init>(III[Ljava/lang/Object;[Ljava/lang/Object;)V
-
-    sput-object v1, Lwic;->p0:Lwic;
+    invoke-direct {p0, p1, p2}, Lwze;-><init>(Ljava/lang/String;Z)V
 
     return-void
 .end method
 
-.method public constructor <init>(III[Ljava/lang/Object;[Ljava/lang/Object;)V
-    .registers 6
+.method public constructor <init>(Lyic;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
+    const/4 v0, 0x0
 
-    iput-object p4, p0, Lwic;->o:[Ljava/lang/Object;
+    iput v0, p0, Lwic;->e:I
 
-    iput p1, p0, Lwic;->X:I
+    iput-object p1, p0, Lwic;->f:Lyic;
 
-    iput-object p5, p0, Lwic;->Y:[Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iput p2, p0, Lwic;->Z:I
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iput p3, p0, Lwic;->n0:I
+    iget-object p1, p1, Lyic;->g:Ljava/lang/String;
+
+    const-string v1, " writer"
+
+    invoke-static {v0, p1, v1}, Lyv7;->k(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const/4 v0, 0x1
+
+    invoke-direct {p0, p1, v0}, Lwze;-><init>(Ljava/lang/String;Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(I[Ljava/lang/Object;)I
-    .registers 5
+.method public final a()J
+    .registers 3
 
-    iget-object v0, p0, Lwic;->o:[Ljava/lang/Object;
+    iget v0, p0, Lwic;->e:I
 
-    const/4 v1, 0x0
+    packed-switch v0, :pswitch_data_0
 
-    iget p0, p0, Lwic;->n0:I
+    iget-object p0, p0, Lwic;->f:Lyic;
 
-    invoke-static {v0, v1, p2, p1, p0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    iget-object p0, p0, Lyic;->b:Lnic;
 
-    add-int/2addr p1, p0
+    invoke-virtual {p0}, Lnic;->d()V
 
-    return p1
-.end method
+    const-wide/16 v0, -0x1
 
-.method public final c()[Ljava/lang/Object;
-    .registers 1
+    return-wide v0
 
-    iget-object p0, p0, Lwic;->o:[Ljava/lang/Object;
+    :pswitch_0
+    iget-object p0, p0, Lwic;->f:Lyic;
 
-    return-object p0
-.end method
+    :try_start_0
+    invoke-virtual {p0}, Lyic;->h()Z
 
-.method public final contains(Ljava/lang/Object;)Z
-    .registers 6
+    move-result p0
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/4 v0, 0x0
+    if-eqz p0, :cond_0
 
-    if-eqz p1, :cond_3
-
-    iget-object v1, p0, Lwic;->Y:[Ljava/lang/Object;
-
-    array-length v2, v1
-
-    if-nez v2, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    invoke-static {p1}, Ly6c;->J(Ljava/lang/Object;)I
-
-    move-result v2
-
-    :goto_0
-    iget v3, p0, Lwic;->Z:I
-
-    and-int/2addr v2, v3
-
-    aget-object v3, v1, v2
-
-    if-nez v3, :cond_1
-
-    return v0
-
-    :cond_1
-    invoke-virtual {v3, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_2
-    add-int/lit8 v2, v2, 0x1
+    const-wide/16 v0, 0x0
 
     goto :goto_0
 
-    :cond_3
-    :goto_1
-    return v0
-.end method
+    :catch_0
+    move-exception v0
 
-.method public final d()I
-    .registers 1
+    invoke-virtual {p0, v0}, Lyic;->c(Ljava/lang/Exception;)V
 
-    iget p0, p0, Lwic;->n0:I
+    :cond_0
+    const-wide/16 v0, -0x1
 
-    return p0
-.end method
+    :goto_0
+    return-wide v0
 
-.method public final e()I
-    .registers 1
+    nop
 
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final f()Z
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final g()Lvcf;
-    .registers 2
-
-    invoke-virtual {p0}, Lt07;->a()Lj07;
-
-    move-result-object p0
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lj07;->l(I)Ldv5;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget p0, p0, Lwic;->X:I
-
-    return p0
-.end method
-
-.method public final k()Lj07;
-    .registers 2
-
-    iget-object v0, p0, Lwic;->o:[Ljava/lang/Object;
-
-    iget p0, p0, Lwic;->n0:I
-
-    invoke-static {p0, v0}, Lj07;->h(I[Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public final size()I
-    .registers 1
-
-    iget p0, p0, Lwic;->n0:I
-
-    return p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

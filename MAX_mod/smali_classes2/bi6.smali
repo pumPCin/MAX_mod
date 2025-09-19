@@ -1,47 +1,49 @@
 .class public final Lbi6;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
-# static fields
-.field public static final c:Lc8b;
-
-
 # instance fields
-.field public final a:Lkotlinx/coroutines/internal/ContextScope;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final b:Ljava/lang/String;
+.field public final synthetic Y:Lci6;
+
+.field public Z:I
+
+.field public o:Lci6;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Lci6;Ljx3;)V
+    .registers 3
 
-    new-instance v0, Lc8b;
+    iput-object p1, p0, Lbi6;->Y:Lci6;
 
-    const/16 v1, 0x1e
-
-    invoke-direct {v0, v1}, Lc8b;-><init>(I)V
-
-    sput-object v0, Lbi6;->c:Lc8b;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Lkotlinx/coroutines/internal/ContextScope;)V
-    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iput-object p1, p0, Lbi6;->a:Lkotlinx/coroutines/internal/ContextScope;
+    iput-object p1, p0, Lbi6;->X:Ljava/lang/Object;
 
-    const-class p1, Lbi6;
+    iget p1, p0, Lbi6;->Z:I
 
-    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    const/high16 v0, -0x80000000
 
-    move-result-object p1
+    or-int/2addr p1, v0
 
-    iput-object p1, p0, Lbi6;->b:Ljava/lang/String;
+    iput p1, p0, Lbi6;->Z:I
 
-    return-void
+    iget-object p1, p0, Lbi6;->Y:Lci6;
+
+    invoke-virtual {p1, p0}, Lci6;->d(Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

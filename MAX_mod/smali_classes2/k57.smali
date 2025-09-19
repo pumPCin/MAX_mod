@@ -1,26 +1,26 @@
 .class public final Lk57;
-.super Lxie;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lpc6;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public X:I
 
-.field public final synthetic Y:Lone/me/login/inputphone/InputPhoneScreen;
+.field public final synthetic Y:Lr57;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/login/inputphone/InputPhoneScreen;)V
+.method public constructor <init>(Lr57;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput-object p2, p0, Lk57;->Y:Lone/me/login/inputphone/InputPhoneScreen;
+    iput-object p1, p0, Lk57;->Y:Lr57;
 
-    const/4 p2, 0x2
+    const/4 p1, 0x2
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
@@ -30,6 +30,8 @@
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
+    check-cast p1, Ly04;
+
     check-cast p2, Lkotlin/coroutines/Continuation;
 
     invoke-virtual {p0, p1, p2}, Lk57;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -38,51 +40,86 @@
 
     check-cast p0, Lk57;
 
-    sget-object p1, Lncf;->a:Lncf;
+    sget-object p1, Lylf;->a:Lylf;
 
     invoke-virtual {p0, p1}, Lk57;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p1, Lk57;
+
+    iget-object p0, p0, Lk57;->Y:Lr57;
+
+    invoke-direct {p1, p0, p2}, Lk57;-><init>(Lr57;Lkotlin/coroutines/Continuation;)V
 
     return-object p1
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lk57;
-
-    iget-object p0, p0, Lk57;->Y:Lone/me/login/inputphone/InputPhoneScreen;
-
-    invoke-direct {v0, p2, p0}, Lk57;-><init>(Lkotlin/coroutines/Continuation;Lone/me/login/inputphone/InputPhoneScreen;)V
-
-    iput-object p1, v0, Lk57;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
 .method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .registers 5
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    iget v0, p0, Lk57;->X:I
 
-    iget-object p1, p0, Lk57;->X:Ljava/lang/Object;
+    sget-object v1, Lylf;->a:Lylf;
 
-    check-cast p1, Ljava/lang/Boolean;
+    const/4 v2, 0x1
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    if-eqz v0, :cond_1
 
-    move-result p1
+    if-ne v0, v2, :cond_0
 
-    sget-object v0, Lone/me/login/inputphone/InputPhoneScreen;->z0:[Lsf7;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-object p0, p0, Lk57;->Y:Lone/me/login/inputphone/InputPhoneScreen;
+    return-object v1
 
-    invoke-virtual {p0}, Lone/me/login/inputphone/InputPhoneScreen;->z0()Lone/me/sdk/uikit/common/button/OneMeButton;
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iput v2, p0, Lk57;->X:I
+
+    sget-object p1, Lr57;->D0:Ljava/lang/String;
+
+    new-instance p1, Ld57;
+
+    const/4 v0, 0x0
+
+    iget-object v2, p0, Lk57;->Y:Lr57;
+
+    invoke-direct {p1, v2, v0}, Ld57;-><init>(Lr57;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {p1, p0}, Lb0b;->f(Lpc6;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/uikit/common/button/OneMeButton;->setEnabled(Z)V
+    sget-object p1, Lz04;->a:Lz04;
 
-    sget-object p0, Lncf;->a:Lncf;
+    if-ne p0, p1, :cond_2
 
-    return-object p0
+    goto :goto_0
+
+    :cond_2
+    move-object p0, v1
+
+    :goto_0
+    if-ne p0, p1, :cond_3
+
+    return-object p1
+
+    :cond_3
+    return-object v1
 .end method

@@ -1,273 +1,136 @@
 .class public final Ld14;
-.super Lih7;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:I
 
-.field public final synthetic b:Ljava/lang/Object;
-
-.field public final synthetic c:Ljava/lang/Object;
+.field public final synthetic Y:Landroidx/work/CoroutineWorker;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;ILjava/lang/Object;)V
-    .registers 4
+.method public constructor <init>(Landroidx/work/CoroutineWorker;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    iput p2, p0, Ld14;->a:I
+    iput-object p1, p0, Ld14;->Y:Landroidx/work/CoroutineWorker;
 
-    iput-object p1, p0, Ld14;->b:Ljava/lang/Object;
+    const/4 p1, 0x2
 
-    iput-object p3, p0, Ld14;->c:Ljava/lang/Object;
-
-    const/4 p1, 0x1
-
-    invoke-direct {p0, p1}, Lih7;-><init>(I)V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Ld14;->a:I
+    check-cast p1, Ly04;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    check-cast p1, Lcf1;
-
-    iget-object v0, p0, Ld14;->b:Ljava/lang/Object;
-
-    check-cast v0, Ldf1;
-
-    iget-object v1, v0, Ldf1;->a:Landroid/opengl/EGLSurface;
-
-    invoke-virtual {p1, v1}, Lcf1;->d(Landroid/opengl/EGLSurface;)V
-
-    iget-object p0, p0, Ld14;->c:Ljava/lang/Object;
-
-    check-cast p0, Landroid/view/Surface;
-
-    invoke-virtual {p0}, Landroid/view/Surface;->isValid()Z
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object v1, p1, Lcf1;->e:Landroid/opengl/EGLDisplay;
-
-    if-nez v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v3, p1, Lcf1;->f:Landroid/opengl/EGLConfig;
-
-    if-nez v3, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/16 v2, 0x3038
-
-    filled-new-array {v2}, [I
-
-    move-result-object v2
-
-    const/4 v4, 0x0
-
-    invoke-static {v1, v3, p0, v2, v4}, Landroid/opengl/EGL14;->eglCreateWindowSurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/lang/Object;[II)Landroid/opengl/EGLSurface;
-
-    move-result-object v2
-
-    sget-object p0, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
-
-    if-eq v2, p0, :cond_3
-
-    invoke-virtual {p1, v2}, Lcf1;->b(Landroid/opengl/EGLSurface;)V
-
-    const/16 p0, 0xcf5
-
-    const/4 v1, 0x1
-
-    invoke-static {p0, v1}, Landroid/opengl/GLES20;->glPixelStorei(II)V
-
-    sget-object p0, Lcf1;->l:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
-
-    move-result p0
-
-    iget-object v1, p1, Lcf1;->a:Ld7c;
-
-    iget-object p1, p1, Lcf1;->j:Ljava/lang/String;
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "Surface created, total count is "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Ld14;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-interface {v1, p1, p0}, Ld7c;->log(Ljava/lang/String;Ljava/lang/String;)V
+    check-cast p0, Ld14;
 
-    :goto_0
-    iput-object v2, v0, Ldf1;->a:Landroid/opengl/EGLSurface;
+    sget-object p1, Lylf;->a:Lylf;
 
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    :cond_3
-    new-instance p0, Lru/ok/android/webrtc/opengl/CallOpenGLContext$CallOpenGLContextGLException;
-
-    invoke-static {}, Landroid/opengl/EGL14;->eglGetError()I
-
-    move-result p1
-
-    const-string v0, "createSurface()"
-
-    invoke-direct {p0, p1, v0}, Lru/ok/android/webrtc/opengl/CallOpenGLContext$CallOpenGLContextGLException;-><init>(ILjava/lang/String;)V
-
-    throw p0
-
-    :pswitch_0
-    check-cast p1, Ljava/lang/String;
-
-    iget-object v0, p0, Ld14;->b:Ljava/lang/Object;
-
-    check-cast v0, Llg0;
-
-    iget-object v0, v0, Llg0;->d:Ljg0;
-
-    iget-object p0, p0, Ld14;->c:Ljava/lang/Object;
-
-    check-cast p0, Ld7c;
-
-    const-string v1, "P2PNetworkStatusReporter"
-
-    invoke-virtual {v0, p0, v1, p1}, Ljg0;->b(Ld7c;Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    :pswitch_1
-    check-cast p1, Latd;
-
-    iget-object p1, p1, Latd;->a:Lplg;
-
-    iget-object v0, p0, Ld14;->b:Ljava/lang/Object;
-
-    check-cast v0, Lym1;
-
-    iget-object p0, p0, Ld14;->c:Ljava/lang/Object;
-
-    check-cast p0, Lned;
-
-    iget-object v1, v0, Lym1;->b:Lfh1;
-
-    iget-object v2, v1, Lfh1;->a:Lah1;
-
-    invoke-virtual {v2}, Lah1;->a()Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    iget-object v2, v1, Lfh1;->k:Lned;
-
-    invoke-static {v2, p0}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    iget-object v2, p1, Lplg;->b:Ljava/lang/Object;
-
-    invoke-virtual {v1, p0, v2}, Lfh1;->g(Lned;Ljava/util/List;)Ljava/util/ArrayList;
-
-    iget-object p0, p1, Lplg;->c:Ljava/lang/Object;
-
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p0, p1}, Ld14;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
-    :goto_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    return-object p0
+.end method
 
-    move-result p1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    if-eqz p1, :cond_5
+    new-instance p1, Ld14;
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-object p0, p0, Ld14;->Y:Landroidx/work/CoroutineWorker;
 
-    move-result-object p1
+    invoke-direct {p1, p0, p2}, Ld14;-><init>(Landroidx/work/CoroutineWorker;Lkotlin/coroutines/Continuation;)V
 
-    check-cast p1, Lyg1;
+    return-object p1
+.end method
 
-    iget-object v1, v0, Lym1;->e:Lyd1;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
 
-    iget-object v1, v1, Lyd1;->n:Lqsa;
+    iget-object v0, p0, Ld14;->Y:Landroidx/work/CoroutineWorker;
 
-    iget-object v2, p1, Lyg1;->b:Lwg1;
+    iget-object v1, v0, Landroidx/work/CoroutineWorker;->b:Lznd;
 
-    invoke-virtual {v1, v2, p1}, Lqsa;->onStateChanged(Lwg1;Lyg1;)V
+    iget v2, p0, Ld14;->X:I
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_1
+
+    if-ne v2, v3, :cond_0
+
+    :try_start_0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
 
     goto :goto_1
 
-    :cond_5
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    :try_start_1
+    iput v3, p0, Ld14;->X:I
+
+    invoke-virtual {v0, p0}, Landroidx/work/CoroutineWorker;->doWork(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    sget-object p0, Lz04;->a:Lz04;
+
+    if-ne p1, p0, :cond_2
+
+    return-object p0
+
+    :cond_2
+    :goto_0
+    :try_start_2
+    check-cast p1, Lkt7;
+
+    invoke-virtual {v1, p1}, Lznd;->i(Ljava/lang/Object;)Z
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_2
+
+    :goto_1
+    invoke-virtual {v1, p0}, Lznd;->j(Ljava/lang/Throwable;)Z
+
     :goto_2
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
-
-    :pswitch_2
-    check-cast p1, Ljava/lang/Throwable;
-
-    iget-object p1, p0, Ld14;->b:Ljava/lang/Object;
-
-    check-cast p1, Landroid/os/CancellationSignal;
-
-    invoke-virtual {p1}, Landroid/os/CancellationSignal;->cancel()V
-
-    iget-object p0, p0, Ld14;->c:Ljava/lang/Object;
-
-    check-cast p0, Lq1e;
-
-    const/4 p1, 0x0
-
-    invoke-virtual {p0, p1}, Lnc7;->cancel(Ljava/util/concurrent/CancellationException;)V
-
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

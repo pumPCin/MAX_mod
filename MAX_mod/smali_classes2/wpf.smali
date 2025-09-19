@@ -1,110 +1,69 @@
 .class public final Lwpf;
-.super Landroid/graphics/drawable/LayerDrawable;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# instance fields
+.field public final a:Lexc;
+
+.field public final b:Luh;
+
+.field public final c:Lwwc;
+
+.field public final d:Lwwc;
+
+.field public final e:Lwwc;
+
+.field public final f:Lwwc;
+
+
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
+    .registers 4
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-array v0, v0, [Landroid/graphics/drawable/Drawable;
+    iput-object p1, p0, Lwpf;->a:Lexc;
 
-    invoke-direct {p0, v0}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
+    new-instance v0, Luh;
 
-    return-void
-.end method
+    const/16 v1, 0x1c
 
+    invoke-direct {v0, p1, v1}, Luh;-><init>(Lexc;I)V
 
-# virtual methods
-.method public final a()V
-    .registers 3
+    iput-object v0, p0, Lwpf;->b:Luh;
 
-    const/4 v0, 0x0
+    new-instance v0, Lwwc;
 
-    invoke-virtual {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    const/16 v1, 0x11
 
-    move-result-object v0
+    invoke-direct {v0, p1, v1}, Lwwc;-><init>(Lexc;I)V
 
-    instance-of v1, v0, Landroid/graphics/drawable/ShapeDrawable;
+    iput-object v0, p0, Lwpf;->c:Lwwc;
 
-    if-eqz v1, :cond_0
+    new-instance v0, Lwwc;
 
-    check-cast v0, Landroid/graphics/drawable/ShapeDrawable;
+    const/16 v1, 0x12
 
-    goto :goto_0
+    invoke-direct {v0, p1, v1}, Lwwc;-><init>(Lexc;I)V
 
-    :cond_0
-    const/4 v0, 0x0
+    iput-object v0, p0, Lwpf;->d:Lwwc;
 
-    :goto_0
-    if-eqz v0, :cond_1
+    new-instance v0, Lwwc;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
+    const/16 v1, 0x13
 
-    move-result-object v0
+    invoke-direct {v0, p1, v1}, Lwwc;-><init>(Lexc;I)V
 
-    if-eqz v0, :cond_1
+    iput-object v0, p0, Lwpf;->e:Lwwc;
 
-    const/high16 v1, 0x5c000000
+    new-instance v0, Lwwc;
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+    const/16 v1, 0x14
 
-    :cond_1
-    const/4 v0, 0x1
+    invoke-direct {v0, p1, v1}, Lwwc;-><init>(Lexc;I)V
 
-    invoke-virtual {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_2
-
-    const/4 v0, -0x1
-
-    invoke-virtual {p0, v0}, Landroid/graphics/drawable/Drawable;->setTint(I)V
-
-    :cond_2
-    return-void
-.end method
-
-.method public final b(ILjava/lang/Integer;)V
-    .registers 5
-
-    new-instance v0, Landroid/graphics/drawable/ShapeDrawable;
-
-    new-instance v1, Landroid/graphics/drawable/shapes/OvalShape;
-
-    invoke-direct {v1}, Landroid/graphics/drawable/shapes/OvalShape;-><init>()V
-
-    invoke-direct {v0, v1}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
-
-    invoke-virtual {p0, v0}, Landroid/graphics/drawable/LayerDrawable;->addLayer(Landroid/graphics/drawable/Drawable;)I
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
-
-    :cond_0
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
-
-    move-result p2
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0, p1, p2}, Landroid/graphics/drawable/LayerDrawable;->setLayerSize(III)V
-
-    const/16 p1, 0x11
-
-    invoke-virtual {p0, v0, p1}, Landroid/graphics/drawable/LayerDrawable;->setLayerGravity(II)V
+    iput-object v0, p0, Lwpf;->f:Lwwc;
 
     return-void
 .end method

@@ -1,136 +1,145 @@
 .class public final Lbgd;
-.super Lxie;
+.super Lj2e;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final synthetic I0:I
 
 
 # instance fields
-.field public X:I
+.field public final E0:Lvpc;
 
-.field public synthetic Y:Ljava/lang/Object;
+.field public final F0:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
 
-.field public final synthetic Z:Lxh7;
+.field public final G0:Landroidx/appcompat/widget/AppCompatTextView;
+
+.field public H0:Lte6;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public constructor <init>(Lvpc;Lone/me/sdk/uikit/common/views/OneMeDraweeView;Landroidx/appcompat/widget/AppCompatTextView;Landroid/widget/LinearLayout;)V
+    .registers 5
 
-    iput-object p1, p0, Lbgd;->Z:Lxh7;
+    invoke-direct {p0, p4}, Lzoc;-><init>(Landroid/view/View;)V
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lbgd;->E0:Lvpc;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lbgd;->F0:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
+
+    iput-object p3, p0, Lbgd;->G0:Landroidx/appcompat/widget/AppCompatTextView;
+
+    new-instance p1, Lfsa;
+
+    const/16 p2, 0xd
+
+    invoke-direct {p1, p2, p0}, Lfsa;-><init>(ILjava/lang/Object;)V
+
+    invoke-static {p4, p1}, Lz48;->D(Landroid/view/View;Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final F(Lte6;)V
+    .registers 5
 
-    check-cast p1, Lhq5;
+    iput-object p1, p0, Lbgd;->H0:Lte6;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object v0, p1, Lte6;->a:Lse6;
 
-    invoke-virtual {p0, p1, p2}, Lbgd;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iget-object v0, v0, Lse6;->a:Lre6;
 
-    move-result-object p0
+    invoke-virtual {v0}, Lre6;->c()Lr3;
 
-    check-cast p0, Lbgd;
+    move-result-object v0
 
-    sget-object p1, Lncf;->a:Lncf;
+    instance-of v1, v0, Lge6;
 
-    invoke-virtual {p0, p1}, Lbgd;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v2, p0, Lbgd;->G0:Landroidx/appcompat/widget/AppCompatTextView;
 
-    move-result-object p0
+    if-eqz v1, :cond_0
 
-    return-object p0
-.end method
+    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    move-result-object v1
 
-    new-instance v0, Lbgd;
+    check-cast v0, Lge6;
 
-    iget-object p0, p0, Lbgd;->Z:Lxh7;
+    iget v0, v0, Lge6;->a:I
 
-    invoke-direct {v0, p0, p2}, Lbgd;-><init>(Lxh7;Lkotlin/coroutines/Continuation;)V
+    invoke-virtual {v1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    iput-object p1, v0, Lbgd;->Y:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-
-    iget v0, p0, Lbgd;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    move-result-object v0
 
     goto :goto_0
 
     :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    instance-of v1, v0, Lhe6;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    if-eqz v1, :cond_2
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    check-cast v0, Lhe6;
 
-    throw p0
+    iget-object v0, v0, Lhe6;->a:Ljava/lang/String;
+
+    :goto_0
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    new-instance v0, Lhqc;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, p0, v1}, Lhqc;-><init>(Lte6;Lbgd;Lkotlin/coroutines/Continuation;)V
+
+    invoke-static {v0, v2}, Ljs9;->t(Lrc6;Landroid/view/View;)V
+
+    iget-object p1, p1, Lte6;->b:Landroid/net/Uri;
+
+    iget-object p0, p0, Lbgd;->F0:Lone/me/sdk/uikit/common/views/OneMeDraweeView;
+
+    if-eqz p1, :cond_1
+
+    invoke-static {p1}, Lj27;->d(Landroid/net/Uri;)Lj27;
+
+    move-result-object p1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p1, Lj27;->h:Z
+
+    invoke-virtual {p1}, Lj27;->a()Li27;
+
+    move-result-object p1
+
+    sget v0, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->A0:I
+
+    invoke-virtual {p0, p1, v1}, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->o(Li27;Li27;)V
+
+    return-void
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    sget p1, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->A0:I
 
-    iget-object p1, p0, Lbgd;->Y:Ljava/lang/Object;
+    invoke-virtual {p0, v1, v1}, Lone/me/sdk/uikit/common/views/OneMeDraweeView;->o(Li27;Li27;)V
 
-    check-cast p1, Lhq5;
-
-    iget-object v0, p0, Lbgd;->Z:Lxh7;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lt9b;
-
-    check-cast v0, Lw9b;
-
-    iget-object v0, v0, Lw9b;->a:Le53;
-
-    invoke-virtual {v0}, Lz1d;->p()J
-
-    move-result-wide v2
-
-    new-instance v0, Ljava/lang/Long;
-
-    invoke-direct {v0, v2, v3}, Ljava/lang/Long;-><init>(J)V
-
-    iput v1, p0, Lbgd;->X:I
-
-    invoke-interface {p1, v0, p0}, Lhq5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    sget-object p1, Ls04;->a:Ls04;
-
-    if-ne p0, p1, :cond_2
-
-    return-object p1
+    return-void
 
     :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
-    return-object p0
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+.end method
+
+.method public final bridge synthetic y(Lts7;)V
+    .registers 2
+
+    check-cast p1, Lte6;
+
+    invoke-virtual {p0, p1}, Lbgd;->F(Lte6;)V
+
+    return-void
 .end method

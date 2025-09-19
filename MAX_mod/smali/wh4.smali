@@ -1,41 +1,24 @@
-.class public final Lwh4;
-.super Ld86;
+.class public final synthetic Lwh4;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# instance fields
-.field public final h:Ljava/lang/Object;
-
-.field public final i:Ljava/util/concurrent/ExecutorService;
-
-.field public volatile j:Landroid/os/Handler;
+# interfaces
+.implements Lt88;
 
 
-# direct methods
-.method public constructor <init>()V
+# virtual methods
+.method public final b()Landroid/graphics/Matrix;
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance p0, Landroid/graphics/Matrix;
 
-    new-instance v0, Ljava/lang/Object;
+    invoke-direct {p0}, Landroid/graphics/Matrix;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    iput-object v0, p0, Lwh4;->h:Ljava/lang/Object;
+    const/high16 v1, -0x40800000    # -1.0f
 
-    new-instance v0, Lu30;
+    invoke-virtual {p0, v0, v1}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    const/4 v1, 0x2
-
-    invoke-direct {v0, v1}, Lu30;-><init>(I)V
-
-    const/4 v1, 0x4
-
-    invoke-static {v1, v0}, Ljava/util/concurrent/Executors;->newFixedThreadPool(ILjava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lwh4;->i:Ljava/util/concurrent/ExecutorService;
-
-    return-void
+    return-object p0
 .end method

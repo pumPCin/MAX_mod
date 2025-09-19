@@ -1,61 +1,97 @@
 .class public final Lbob;
-.super Ljob;
+.super Lcb4;
 .source "SourceFile"
 
 
 # static fields
-.field public static final a:Lbob;
+.field public static final b:Lbob;
+
+.field public static final c:Lxa4;
+
+.field public static final d:Lxa4;
+
+.field public static final e:Lxa4;
+
+.field public static final f:Lxa4;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 8
 
     new-instance v0, Lbob;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Lcb4;-><init>()V
 
-    sput-object v0, Lbob;->a:Lbob;
+    sput-object v0, Lbob;->b:Lbob;
+
+    const-string v6, "id"
+
+    const-string v7, "type"
+
+    filled-new-array {v6, v7}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    const/16 v5, 0xe
+
+    const/4 v4, 0x0
+
+    const-string v1, ":profile/edit"
+
+    const/4 v3, 0x0
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lbob;->c:Lxa4;
+
+    filled-new-array {v6}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v1, ":profile/member_permissions"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lbob;->d:Lxa4;
+
+    const-string v1, "flow"
+
+    filled-new-array {v6, v7, v1}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v1, ":profile/edit/link"
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v1
+
+    sput-object v1, Lbob;->e:Lxa4;
+
+    const-string v1, "contact_id"
+
+    const-string v2, "permissions_type"
+
+    const-string v3, "chat_id"
+
+    filled-new-array {v3, v1, v2}, [Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v1, ":profile/edit/admin_permission"
+
+    const/4 v3, 0x0
+
+    invoke-static/range {v0 .. v5}, Lcb4;->a(Lcb4;Ljava/lang/String;[Ljava/lang/String;Ljava/util/Set;II)Lxa4;
+
+    move-result-object v0
+
+    sput-object v0, Lbob;->f:Lxa4;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of p0, p1, Lbob;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    const p0, -0x399cc60
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "OpenCameraPermission"
-
-    return-object p0
 .end method

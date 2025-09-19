@@ -1,127 +1,244 @@
-.class public abstract Lf6a;
-.super Ljava/lang/Object;
+.class public final Lf6a;
+.super Lwk0;
 .source "SourceFile"
 
+# interfaces
+.implements Ld8a;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:I
+# instance fields
+.field public X:Loq4;
 
-.field public static final c:I
+.field public volatile Y:Z
 
-.field public static final d:I
+.field public final a:Ld8a;
 
-.field public static final e:I
+.field public final b:Ltx;
 
-.field public static final f:I
+.field public final c:Lqc6;
 
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
-
-.field public static final k:I
-
-.field public static final l:I
-
-.field public static final m:I
-
-.field public static final n:I
-
-.field public static final o:I
-
-.field public static final p:I
-
-.field public static final q:I
-
-.field public static final r:I
-
-.field public static final s:I
+.field public final o:Lxd3;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ld8a;Lqc6;)V
+    .registers 3
+
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+
+    iput-object p1, p0, Lf6a;->a:Ld8a;
+
+    iput-object p2, p0, Lf6a;->c:Lqc6;
+
+    new-instance p1, Ltx;
+
+    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object p1, p0, Lf6a;->b:Ltx;
+
+    new-instance p1, Lxd3;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lf6a;->o:Lxd3;
+
+    const/4 p1, 0x1
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicInteger;->lazySet(I)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b()V
+    .registers 2
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lf6a;->b:Ltx;
+
+    iget-object p0, p0, Lf6a;->a:Ld8a;
+
+    invoke-virtual {v0, p0}, Ltx;->d(Ld8a;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c(Loq4;)V
+    .registers 3
+
+    iget-object v0, p0, Lf6a;->X:Loq4;
+
+    invoke-static {v0, p1}, Lsq4;->h(Loq4;Loq4;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iput-object p1, p0, Lf6a;->X:Loq4;
+
+    iget-object p1, p0, Lf6a;->a:Ld8a;
+
+    invoke-interface {p1, p0}, Ld8a;->c(Loq4;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final clear()V
     .registers 1
 
-    sget v0, Ld3c;->oneme_appearance_settings_background_title:I
+    return-void
+.end method
 
-    sput v0, Lf6a;->a:I
+.method public final e()V
+    .registers 2
 
-    sget v0, Ld3c;->oneme_appearance_settings_dark_mode:I
+    const/4 v0, 0x1
 
-    sput v0, Lf6a;->b:I
+    iput-boolean v0, p0, Lf6a;->Y:Z
 
-    sget v0, Ld3c;->oneme_appearance_settings_font_size_reset:I
+    iget-object v0, p0, Lf6a;->X:Loq4;
 
-    sput v0, Lf6a;->c:I
+    invoke-interface {v0}, Loq4;->e()V
 
-    sget v0, Ld3c;->oneme_appearance_settings_font_size_title:I
+    iget-object v0, p0, Lf6a;->o:Lxd3;
 
-    sput v0, Lf6a;->d:I
+    invoke-virtual {v0}, Lxd3;->e()V
 
-    sget v0, Ld3c;->oneme_appearance_settings_light_mode:I
+    iget-object p0, p0, Lf6a;->b:Ltx;
 
-    sput v0, Lf6a;->e:I
+    invoke-virtual {p0}, Ltx;->b()V
 
-    sget v0, Ld3c;->oneme_appearance_settings_message_incoming:I
+    return-void
+.end method
 
-    sput v0, Lf6a;->f:I
+.method public final f()Z
+    .registers 1
 
-    sget v0, Ld3c;->oneme_appearance_settings_message_incoming_first:I
+    iget-object p0, p0, Lf6a;->X:Loq4;
 
-    sput v0, Lf6a;->g:I
+    invoke-interface {p0}, Loq4;->f()Z
 
-    sget v0, Ld3c;->oneme_appearance_settings_message_incoming_second:I
+    move-result p0
 
-    sput v0, Lf6a;->h:I
+    return p0
+.end method
 
-    sget v0, Ld3c;->oneme_appearance_settings_message_outgoing:I
+.method public final isEmpty()Z
+    .registers 1
 
-    sput v0, Lf6a;->i:I
+    const/4 p0, 0x1
 
-    sget v0, Ld3c;->oneme_appearance_settings_message_outgoing_new:I
+    return p0
+.end method
 
-    sput v0, Lf6a;->j:I
+.method public final onError(Ljava/lang/Throwable;)V
+    .registers 3
 
-    sget v0, Ld3c;->oneme_appearance_settings_mode_title:I
+    iget-object v0, p0, Lf6a;->b:Ltx;
 
-    sput v0, Lf6a;->k:I
+    invoke-virtual {v0, p1}, Ltx;->a(Ljava/lang/Throwable;)Z
 
-    sget v0, Ld3c;->oneme_appearance_settings_system_mode:I
+    move-result p1
 
-    sput v0, Lf6a;->l:I
+    if-eqz p1, :cond_0
 
-    sget v0, Ld3c;->oneme_appearance_settings_toolbar_title:I
+    const/4 p1, 0x1
 
-    sput v0, Lf6a;->m:I
+    iput-boolean p1, p0, Lf6a;->Y:Z
 
-    sget v0, Ld3c;->oneme_appearance_theme_moscow_name:I
+    iget-object p1, p0, Lf6a;->X:Loq4;
 
-    sput v0, Lf6a;->n:I
+    invoke-interface {p1}, Loq4;->e()V
 
-    sget v0, Ld3c;->oneme_appearance_theme_nature_name:I
+    iget-object p1, p0, Lf6a;->o:Lxd3;
 
-    sput v0, Lf6a;->o:I
+    invoke-virtual {p1}, Lxd3;->e()V
 
-    sget v0, Ld3c;->oneme_appearance_theme_neon_name:I
+    iget-object p1, p0, Lf6a;->b:Ltx;
 
-    sput v0, Lf6a;->p:I
+    iget-object p0, p0, Lf6a;->a:Ld8a;
 
-    sget v0, Ld3c;->oneme_appearance_theme_simple_name:I
+    invoke-virtual {p1, p0}, Ltx;->d(Ld8a;)V
 
-    sput v0, Lf6a;->q:I
+    :cond_0
+    return-void
+.end method
 
-    sget v0, Ld3c;->oneme_appearance_theme_space_name:I
+.method public final poll()Ljava/lang/Object;
+    .registers 1
 
-    sput v0, Lf6a;->r:I
+    const/4 p0, 0x0
 
-    sget v0, Ld3c;->oneme_appearance_theme_unknown_name:I
+    return-object p0
+.end method
 
-    sput v0, Lf6a;->s:I
+.method public final q(I)I
+    .registers 2
+
+    const/4 p0, 0x2
+
+    return p0
+.end method
+
+.method public final s(Ljava/lang/Object;)V
+    .registers 4
+
+    :try_start_0
+    iget-object v0, p0, Lf6a;->c:Lqc6;
+
+    invoke-interface {v0, p1}, Lqc6;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string v0, "The mapper returned a null CompletableSource"
+
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    check-cast p1, Lhc3;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    new-instance v0, Lo2e;
+
+    invoke-direct {v0, p0}, Lo2e;-><init>(Lf6a;)V
+
+    iget-boolean v1, p0, Lf6a;->Y:Z
+
+    if-nez v1, :cond_0
+
+    iget-object p0, p0, Lf6a;->o:Lxd3;
+
+    invoke-virtual {p0, v0}, Lxd3;->a(Loq4;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p1, v0}, Lhc3;->h(Lrc3;)V
+
+    :cond_0
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    invoke-static {p1}, Lzyd;->F(Ljava/lang/Throwable;)V
+
+    iget-object v0, p0, Lf6a;->X:Loq4;
+
+    invoke-interface {v0}, Loq4;->e()V
+
+    invoke-virtual {p0, p1}, Lf6a;->onError(Ljava/lang/Throwable;)V
 
     return-void
 .end method

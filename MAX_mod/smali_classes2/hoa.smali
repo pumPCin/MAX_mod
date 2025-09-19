@@ -1,88 +1,223 @@
-.class public final Lhoa;
-.super Ljp9;
+.class public abstract Lhoa;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final b:Ljava/lang/String;
+# static fields
+.field public static final A:I
+
+.field public static final B:I
+
+.field public static final C:I
+
+.field public static final D:I
+
+.field public static final E:I
+
+.field public static final F:I
+
+.field public static final G:I
+
+.field public static final H:I
+
+.field public static final I:I
+
+.field public static final a:I
+
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
+.field public static final s:I
+
+.field public static final t:I
+
+.field public static final u:I
+
+.field public static final v:I
+
+.field public static final w:I
+
+.field public static final x:I
+
+.field public static final y:I
+
+.field public static final z:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
-
-    sget-object v0, Lncf;->a:Lncf;
-
-    invoke-direct {p0, v0}, Ljp9;-><init>(Ljava/lang/Object;)V
-
-    iput-object p1, p0, Lhoa;->b:Ljava/lang/String;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lhoa;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lhoa;
-
-    iget-object p0, p0, Lhoa;->b:Ljava/lang/String;
-
-    iget-object p1, p1, Lhoa;->b:Ljava/lang/String;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method static constructor <clinit>()V
     .registers 1
 
-    iget-object p0, p0, Lhoa;->b:Ljava/lang/String;
+    sget v0, Lo7c;->oneme_settings_storage_item_action_all_cancel:I
 
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    sput v0, Lhoa;->a:I
 
-    move-result p0
+    sget v0, Lo7c;->oneme_settings_storage_item_action_all_clear:I
 
-    return p0
-.end method
+    sput v0, Lhoa;->b:I
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    sget v0, Lo7c;->oneme_settings_storage_item_action_audio_cancel:I
 
-    const-string v0, "OpenExternalLink(url="
+    sput v0, Lhoa;->c:I
 
-    const-string v1, ")"
+    sget v0, Lo7c;->oneme_settings_storage_item_action_audio_clear:I
 
-    iget-object p0, p0, Lhoa;->b:Ljava/lang/String;
+    sput v0, Lhoa;->d:I
 
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    sget v0, Lo7c;->oneme_settings_storage_item_action_files_cancel:I
 
-    move-result-object p0
+    sput v0, Lhoa;->e:I
 
-    return-object p0
+    sget v0, Lo7c;->oneme_settings_storage_item_action_files_clear:I
+
+    sput v0, Lhoa;->f:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_action_gif_cancel:I
+
+    sput v0, Lhoa;->g:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_action_gif_clear:I
+
+    sput v0, Lhoa;->h:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_action_images_cancel:I
+
+    sput v0, Lhoa;->i:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_action_images_clear:I
+
+    sput v0, Lhoa;->j:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_action_music_cancel:I
+
+    sput v0, Lhoa;->k:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_action_music_clear:I
+
+    sput v0, Lhoa;->l:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_action_stickers_cancel:I
+
+    sput v0, Lhoa;->m:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_action_stickers_clear:I
+
+    sput v0, Lhoa;->n:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_action_video_cancel:I
+
+    sput v0, Lhoa;->o:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_action_video_clear:I
+
+    sput v0, Lhoa;->p:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_audio_messages:I
+
+    sput v0, Lhoa;->q:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_clear_cache:I
+
+    sput v0, Lhoa;->r:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_files:I
+
+    sput v0, Lhoa;->s:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_gif:I
+
+    sput v0, Lhoa;->t:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_images:I
+
+    sput v0, Lhoa;->u:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_music:I
+
+    sput v0, Lhoa;->v:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_one_month:I
+
+    sput v0, Lhoa;->w:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_one_week:I
+
+    sput v0, Lhoa;->x:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_six_month:I
+
+    sput v0, Lhoa;->y:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_stickers:I
+
+    sput v0, Lhoa;->z:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_unlimited:I
+
+    sput v0, Lhoa;->A:I
+
+    sget v0, Lo7c;->oneme_settings_storage_item_video:I
+
+    sput v0, Lhoa;->B:I
+
+    sget v0, Lo7c;->oneme_settings_storage_screen_data_section_header:I
+
+    sput v0, Lhoa;->C:I
+
+    sget v0, Lo7c;->oneme_settings_storage_screen_list:I
+
+    sput v0, Lhoa;->D:I
+
+    sget v0, Lo7c;->oneme_settings_storage_screen_preserve_media_section:I
+
+    sput v0, Lhoa;->E:I
+
+    sget v0, Lo7c;->oneme_settings_storage_screen_settings_button_vh:I
+
+    sput v0, Lhoa;->F:I
+
+    sget v0, Lo7c;->oneme_settings_storage_screen_settings_header_vh:I
+
+    sput v0, Lhoa;->G:I
+
+    sget v0, Lo7c;->oneme_settings_storage_screen_settings_item_vh:I
+
+    sput v0, Lhoa;->H:I
+
+    sget v0, Lo7c;->oneme_settings_storage_screen_toolbar:I
+
+    sput v0, Lhoa;->I:I
+
+    return-void
 .end method

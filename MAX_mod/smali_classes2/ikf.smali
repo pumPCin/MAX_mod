@@ -2,36 +2,65 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lnkf;
+
 
 # instance fields
-.field public final a:I
+.field public final a:Lp2f;
 
-.field public final b:I
+.field public final b:Lp2f;
 
-.field public final c:I
-
-.field public final d:I
+.field public final c:Llkf;
 
 
 # direct methods
-.method public constructor <init>(IIII)V
+.method public constructor <init>(Lp2f;Lp2f;Llkf;)V
     .registers 5
+
+    sget v0, La1d;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Likf;->a:I
+    iput-object p1, p0, Likf;->a:Lp2f;
 
-    iput p2, p0, Likf;->b:I
+    iput-object p2, p0, Likf;->b:Lp2f;
 
-    iput p3, p0, Likf;->c:I
-
-    iput p4, p0, Likf;->d:I
+    iput-object p3, p0, Likf;->c:Llkf;
 
     return-void
 .end method
 
+.method public static b(Likf;Llkf;)Likf;
+    .registers 4
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget v0, La1d;->a:I
+
+    iget-object v0, p0, Likf;->a:Lp2f;
+
+    iget-object v1, p0, Likf;->b:Lp2f;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance p0, Likf;
+
+    invoke-direct {p0, v0, v1, p1}, Likf;-><init>(Lp2f;Lp2f;Llkf;)V
+
+    return-object p0
+.end method
+
 
 # virtual methods
+.method public final a()Lu2f;
+    .registers 1
+
+    iget-object p0, p0, Likf;->b:Lp2f;
+
+    return-object p0
+.end method
+
 .method public final equals(Ljava/lang/Object;)Z
     .registers 4
 
@@ -49,55 +78,78 @@
     :cond_1
     check-cast p1, Likf;
 
-    iget v0, p0, Likf;->a:I
+    sget v0, La1d;->a:I
 
-    iget v1, p1, Likf;->a:I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    if-eq v0, v1, :cond_2
+    iget-object v0, p0, Likf;->a:Lp2f;
+
+    iget-object v1, p1, Likf;->a:Lp2f;
+
+    invoke-virtual {v0, v1}, Lp2f;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
 
     goto :goto_0
 
     :cond_2
-    iget v0, p0, Likf;->b:I
+    iget-object v0, p0, Likf;->b:Lp2f;
 
-    iget v1, p1, Likf;->b:I
+    iget-object v1, p1, Likf;->b:Lp2f;
 
-    if-eq v0, v1, :cond_3
+    invoke-virtual {v0, v1}, Lp2f;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
 
     goto :goto_0
 
     :cond_3
-    iget v0, p0, Likf;->c:I
+    iget-object p0, p0, Likf;->c:Llkf;
 
-    iget v1, p1, Likf;->c:I
+    iget-object p1, p1, Likf;->c:Llkf;
 
-    if-eq v0, v1, :cond_4
+    invoke-virtual {p0, p1}, Llkf;->equals(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    move-result p0
 
-    :cond_4
-    iget p0, p0, Likf;->d:I
-
-    iget p1, p1, Likf;->d:I
-
-    if-eq p0, p1, :cond_5
+    if-nez p0, :cond_4
 
     :goto_0
     const/4 p0, 0x0
 
     return p0
 
-    :cond_5
+    :cond_4
     :goto_1
     const/4 p0, 0x1
 
     return p0
 .end method
 
+.method public final getIcon()I
+    .registers 1
+
+    sget p0, La1d;->Y0:I
+
+    return p0
+.end method
+
+.method public final getTitle()Lu2f;
+    .registers 1
+
+    iget-object p0, p0, Likf;->a:Lp2f;
+
+    return-object p0
+.end method
+
 .method public final hashCode()I
     .registers 4
 
-    iget v0, p0, Likf;->a:I
+    sget v0, La1d;->Y0:I
 
     invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -107,21 +159,25 @@
 
     mul-int/2addr v0, v1
 
-    iget v2, p0, Likf;->b:I
+    iget-object v2, p0, Likf;->a:Lp2f;
 
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
+    iget v2, v2, Lp2f;->b:I
 
-    move-result v0
-
-    iget v2, p0, Likf;->c:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
 
     move-result v0
 
-    iget p0, p0, Likf;->d:I
+    iget-object v2, p0, Likf;->b:Lp2f;
 
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    iget v2, v2, Lp2f;->b:I
+
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
+
+    move-result v0
+
+    iget-object p0, p0, Likf;->c:Llkf;
+
+    invoke-virtual {p0}, Llkf;->hashCode()I
 
     move-result p0
 
@@ -131,31 +187,47 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .registers 6
+    .registers 4
 
-    const-string v0, ", bubble2="
+    sget v0, La1d;->Y0:I
 
-    const-string v1, ", bubble3="
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "VfxEmptyBlockHaloColors(bubble1="
+    const-string v2, "CheckPassword(icon="
 
-    iget v3, p0, Likf;->a:I
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v4, p0, Likf;->b:I
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v3, v0, v4, v1}, Lnh0;->j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v0, ", title="
 
-    move-result-object v0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", bubble4="
+    iget-object v0, p0, Likf;->a:Lp2f;
 
-    const-string v2, ")"
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    iget v3, p0, Likf;->c:I
+    const-string v0, ", subtitle="
 
-    iget p0, p0, Likf;->d:I
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v3, v1, p0, v2}, Lnh0;->h(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    iget-object v0, p0, Likf;->b:Lp2f;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v0, ", inputState="
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Likf;->c:Llkf;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

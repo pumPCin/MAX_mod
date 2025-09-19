@@ -1,48 +1,64 @@
 .class public final Loq5;
-.super Lcx3;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public X:I
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lky2;
+.field public final synthetic b:Landroid/widget/TextView;
 
-.field public synthetic o:Ljava/lang/Object;
+.field public final synthetic c:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Lky2;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public synthetic constructor <init>(Landroid/widget/TextView;Ljava/lang/Runnable;I)V
+    .registers 4
 
-    iput-object p1, p0, Loq5;->Y:Lky2;
+    iput p3, p0, Loq5;->a:I
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Loq5;->b:Landroid/widget/TextView;
+
+    iput-object p2, p0, Loq5;->c:Ljava/lang/Runnable;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final run()V
+    .registers 2
 
-    iput-object p1, p0, Loq5;->o:Ljava/lang/Object;
+    iget v0, p0, Loq5;->a:I
 
-    iget p1, p0, Loq5;->X:I
+    packed-switch v0, :pswitch_data_0
 
-    const/high16 v0, -0x80000000
+    iget-object v0, p0, Loq5;->b:Landroid/widget/TextView;
 
-    or-int/2addr p1, v0
+    iget-object p0, p0, Loq5;->c:Ljava/lang/Runnable;
 
-    iput p1, p0, Loq5;->X:I
+    invoke-virtual {v0, p0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    iget-object p1, p0, Loq5;->Y:Lky2;
+    return-void
 
-    const/4 v0, 0x0
+    :pswitch_0
+    iget-object v0, p0, Loq5;->b:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v0, p0}, Lky2;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iget-object p0, p0, Loq5;->c:Ljava/lang/Runnable;
 
-    move-result-object p0
+    invoke-virtual {v0, p0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    return-object p0
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

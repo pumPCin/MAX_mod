@@ -1,125 +1,39 @@
 .class public final Luu5;
-.super Lcud;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lta6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public X:Lipc;
 
-.field public final b:Ln0;
+.field public Y:Lsu5;
 
+.field public synthetic Z:Ljava/lang/Object;
 
-# direct methods
-.method public synthetic constructor <init>(Ln0;I)V
-    .registers 3
+.field public o:Lure;
 
-    iput p2, p0, Luu5;->a:I
-
-    iput-object p1, p0, Luu5;->b:Ln0;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.field public r0:I
 
 
 # virtual methods
-.method public final b()Lot5;
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Luu5;->a:I
+    iput-object p1, p0, Luu5;->Z:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    iget p1, p0, Luu5;->r0:I
 
-    new-instance v0, Lpu5;
+    const/high16 v0, -0x80000000
 
-    iget-object p0, p0, Luu5;->b:Ln0;
+    or-int/2addr p1, v0
 
-    check-cast p0, Lqt5;
+    iput p1, p0, Luu5;->r0:I
 
-    invoke-direct {v0, p0}, Lpu5;-><init>(Lqt5;)V
+    const/4 p1, 0x0
 
-    return-object v0
+    invoke-static {p1, p1, p0}, Lo97;->Y(Lis5;Lpc6;Ljx3;)Ljava/lang/Object;
 
-    :pswitch_0
-    new-instance v0, Lsu5;
+    move-result-object p0
 
-    iget-object p0, p0, Luu5;->b:Ln0;
-
-    check-cast p0, Lpu5;
-
-    invoke-direct {v0, p0}, Lsu5;-><init>(Lpu5;)V
-
-    return-object v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final l(Lvud;)V
-    .registers 4
-
-    iget v0, p0, Luu5;->a:I
-
-    iget-object p0, p0, Luu5;->b:Ln0;
-
-    packed-switch v0, :pswitch_data_0
-
-    :try_start_0
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    sget-object v1, Lu75;->a:Lt75;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    check-cast p0, Lqt5;
-
-    new-instance v1, Lcv5;
-
-    invoke-direct {v1, p1, v0}, Lcv5;-><init>(Lvud;Ljava/util/ArrayList;)V
-
-    invoke-virtual {p0, v1}, Lot5;->c(Lyu5;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    invoke-static {p0}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    sget-object v0, Lq25;->a:Lq25;
-
-    invoke-interface {p1, v0}, Lvud;->c(Lnp4;)V
-
-    invoke-interface {p1, p0}, Lvud;->onError(Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    check-cast p0, Lpu5;
-
-    new-instance v0, Ltu5;
-
-    invoke-direct {v0, p1}, Ltu5;-><init>(Lvud;)V
-
-    invoke-virtual {p0, v0}, Lot5;->c(Lyu5;)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

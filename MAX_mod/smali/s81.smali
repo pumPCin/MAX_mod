@@ -1,83 +1,113 @@
-.class public final synthetic Ls81;
-.super Ljava/lang/Object;
+.class public final Ls81;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public synthetic X:Z
 
-.field public final synthetic b:Lt81;
+.field public final synthetic Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lt81;I)V
+.method public constructor <init>(Lone/me/calllist/ui/page/CallHistoryPageScreen;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p2, p0, Ls81;->a:I
+    iput-object p1, p0, Ls81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
 
-    iput-object p1, p0, Ls81;->b:Lt81;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iget v0, p0, Ls81;->a:I
+    check-cast p1, Ljava/lang/Boolean;
 
-    check-cast p1, Loma;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    sget-object p1, Lct4;->p0:Lws9;
-
-    iget-object p0, p0, Ls81;->b:Lt81;
-
-    iget-object p0, p0, Lphc;->a:Landroid/view/View;
-
-    invoke-virtual {p1, p0}, Lws9;->e(Landroid/view/View;)Loma;
+    invoke-virtual {p0, p1, p2}, Ls81;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-interface {p0}, Loma;->b()Lef0;
+    check-cast p0, Ls81;
 
-    const/4 p0, 0x0
+    sget-object p1, Lylf;->a:Lylf;
 
-    :goto_0
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {p0, p1}, Ls81;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Ls81;
+
+    iget-object p0, p0, Ls81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
+
+    invoke-direct {v0, p0, p2}, Ls81;-><init>(Lone/me/calllist/ui/page/CallHistoryPageScreen;Lkotlin/coroutines/Continuation;)V
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p0
+
+    iput-boolean p0, v0, Ls81;->X:Z
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-boolean p1, p0, Ls81;->X:Z
+
+    sget-object v0, Lone/me/calllist/ui/page/CallHistoryPageScreen;->t0:Lr52;
+
+    iget-object p0, p0, Ls81;->Y:Lone/me/calllist/ui/page/CallHistoryPageScreen;
+
+    invoke-virtual {p0}, Lone/me/calllist/ui/page/CallHistoryPageScreen;->A0()Le91;
 
     move-result-object p0
+
+    iget-object p0, p0, Le91;->u0:Lyce;
+
+    :cond_0
+    invoke-virtual {p0}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Ljava/lang/Boolean;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v0, v1}, Lyce;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
-
-    :pswitch_0
-    sget-object p1, Lct4;->p0:Lws9;
-
-    iget-object p0, p0, Ls81;->b:Lt81;
-
-    iget-object p0, p0, Lphc;->a:Landroid/view/View;
-
-    invoke-virtual {p1, p0}, Lws9;->e(Landroid/view/View;)Loma;
-
-    move-result-object p0
-
-    invoke-interface {p0}, Loma;->getIcon()Lpv6;
-
-    const/4 p0, -0x1
-
-    goto :goto_0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

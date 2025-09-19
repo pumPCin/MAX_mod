@@ -1,36 +1,92 @@
-.class public abstract Ljb4;
+.class public final synthetic Ljb4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lpt7;
+
+
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:Lfd;
+
+.field public final synthetic c:Z
+
 
 # direct methods
-.method public static a(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;Z)Lk50;
-    .registers 3
+.method public synthetic constructor <init>(Lfd;ZI)V
+    .registers 4
 
-    invoke-static {p0, p1}, Landroid/media/AudioManager;->isOffloadedPlaybackSupported(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)Z
+    iput p3, p0, Ljb4;->a:I
 
-    move-result p0
+    iput-object p1, p0, Ljb4;->b:Lfd;
 
-    if-nez p0, :cond_0
-
-    sget-object p0, Lk50;->d:Lk50;
-
-    return-object p0
-
-    :cond_0
-    new-instance p0, Lj50;
+    iput-boolean p2, p0, Ljb4;->c:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x1
+    return-void
+.end method
 
-    iput-boolean p1, p0, Lj50;->a:Z
 
-    iput-boolean p2, p0, Lj50;->c:Z
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)V
+    .registers 3
 
-    invoke-virtual {p0}, Lj50;->a()Lk50;
+    iget v0, p0, Ljb4;->a:I
 
-    move-result-object p0
+    packed-switch v0, :pswitch_data_0
 
-    return-object p0
+    iget-boolean v0, p0, Ljb4;->c:Z
+
+    check-cast p1, Lgd;
+
+    iget-object p0, p0, Ljb4;->b:Lfd;
+
+    invoke-interface {p1, p0, v0}, Lgd;->u(Lfd;Z)V
+
+    return-void
+
+    :pswitch_0
+    check-cast p1, Lgd;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-object v0, p0, Ljb4;->b:Lfd;
+
+    iget-boolean p0, p0, Ljb4;->c:Z
+
+    invoke-interface {p1, v0, p0}, Lgd;->I0(Lfd;Z)V
+
+    return-void
+
+    :pswitch_1
+    iget-boolean v0, p0, Ljb4;->c:Z
+
+    check-cast p1, Lgd;
+
+    iget-object p0, p0, Ljb4;->b:Lfd;
+
+    invoke-interface {p1, p0, v0}, Lgd;->A(Lfd;Z)V
+
+    return-void
+
+    :pswitch_2
+    iget-boolean v0, p0, Ljb4;->c:Z
+
+    check-cast p1, Lgd;
+
+    iget-object p0, p0, Ljb4;->b:Lfd;
+
+    invoke-interface {p1, p0, v0}, Lgd;->w(Lfd;Z)V
+
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

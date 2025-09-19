@@ -1,42 +1,51 @@
 .class public final Lxv8;
-.super Lpo5;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Lvs2;
 
 
 # instance fields
-.field public final synthetic Z:Landroid/graphics/drawable/Drawable;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Ldw8;
+
+.field public Z:I
+
+.field public o:Ldw8;
 
 
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/Drawable;)V
-    .registers 4
+.method public constructor <init>(Ldw8;Ljx3;)V
+    .registers 3
 
-    iput-object p1, p0, Lxv8;->Z:Landroid/graphics/drawable/Drawable;
+    iput-object p1, p0, Lxv8;->Y:Ldw8;
 
-    const/4 v0, 0x0
-
-    const/4 v1, 0x6
-
-    invoke-direct {p0, p1, v0, v1}, Lpo5;-><init>(Landroid/graphics/drawable/Drawable;Ljo5;I)V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lzs0;)V
-    .registers 2
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object p1, p1, Lzs0;->b:Lat0;
+    iput-object p1, p0, Lxv8;->X:Ljava/lang/Object;
 
-    iget p1, p1, Lat0;->i:I
+    iget p1, p0, Lxv8;->Z:I
 
-    iget-object p0, p0, Lxv8;->Z:Landroid/graphics/drawable/Drawable;
+    const/high16 v0, -0x80000000
 
-    invoke-static {p0, p1}, Ly6c;->G(Landroid/graphics/drawable/Drawable;I)V
+    or-int/2addr p1, v0
 
-    return-void
+    iput p1, p0, Lxv8;->Z:I
+
+    iget-object p1, p0, Lxv8;->Y:Ldw8;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0, p0}, Ldw8;->s(Ldw8;Ls72;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

@@ -1,63 +1,44 @@
-.class public final Lpvd;
-.super Lcud;
+.class public abstract Lpvd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
+# static fields
+.field public static final b:Landroid/graphics/Matrix;
+
+
 # instance fields
-.field public final a:Lmud;
-
-.field public final b:J
-
-.field public final c:Lqxc;
+.field public final a:Landroid/graphics/Matrix;
 
 
 # direct methods
-.method public constructor <init>(Lmud;JLqxc;)V
-    .registers 6
+.method static constructor <clinit>()V
+    .registers 1
 
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    sput-object v0, Lpvd;->b:Landroid/graphics/Matrix;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lpvd;->a:Lmud;
+    new-instance v0, Landroid/graphics/Matrix;
 
-    iput-wide p2, p0, Lpvd;->b:J
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-object p4, p0, Lpvd;->c:Lqxc;
+    iput-object v0, p0, Lpvd;->a:Landroid/graphics/Matrix;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final l(Lvud;)V
-    .registers 7
-
-    new-instance v0, Lm1a;
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    iget-wide v2, p0, Lpvd;->b:J
-
-    invoke-direct {v0, p1, v2, v3}, Lm1a;-><init>(Lvud;J)V
-
-    invoke-interface {p1, v0}, Lvud;->c(Lnp4;)V
-
-    iget-object p1, v0, Lm1a;->o:Ljava/lang/Object;
-
-    check-cast p1, Ljava/util/concurrent/atomic/AtomicReference;
-
-    iget-object v4, p0, Lpvd;->c:Lqxc;
-
-    invoke-virtual {v4, v0, v2, v3, v1}, Lqxc;->c(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Lnp4;
-
-    move-result-object v1
-
-    invoke-static {p1, v1}, Lrp4;->c(Ljava/util/concurrent/atomic/AtomicReference;Lnp4;)Z
-
-    iget-object p0, p0, Lpvd;->a:Lmud;
-
-    invoke-virtual {p0, v0}, Lcud;->k(Lvud;)V
-
-    return-void
+.method public abstract a(Landroid/graphics/Matrix;Lfvd;ILandroid/graphics/Canvas;)V
 .end method

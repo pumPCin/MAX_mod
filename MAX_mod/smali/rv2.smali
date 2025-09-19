@@ -1,49 +1,50 @@
 .class public final Lrv2;
-.super Lcx3;
+.super Lure;
 .source "SourceFile"
 
-
-# instance fields
-.field public synthetic X:Ljava/lang/Object;
-
-.field public final synthetic Y:Lew2;
-
-.field public Z:I
-
-.field public o:Lew2;
-
-
-# direct methods
-.method public constructor <init>(Lew2;Lkotlin/coroutines/Continuation;)V
-    .registers 3
-
-    iput-object p1, p0, Lrv2;->Y:Lew2;
-
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+# interfaces
+.implements Lpc6;
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    iput-object p1, p0, Lrv2;->X:Ljava/lang/Object;
+    check-cast p1, Ly04;
 
-    iget p1, p0, Lrv2;->Z:I
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lrv2;->Z:I
-
-    iget-object p1, p0, Lrv2;->Y:Lew2;
-
-    invoke-virtual {p1, p0}, Lew2;->c(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Lrv2;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
+
+    check-cast p0, Lrv2;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lrv2;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
+
+    new-instance p0, Lrv2;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
+
+    return-object p0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

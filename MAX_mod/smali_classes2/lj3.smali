@@ -1,167 +1,199 @@
-.class public final synthetic Llj3;
+.class public final Llj3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
-
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lru/ok/messages/views/dialogs/ConfirmationDialog;
+.field public final a:Landroid/os/Bundle;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/messages/views/dialogs/ConfirmationDialog;I)V
-    .registers 3
-
-    iput p2, p0, Llj3;->a:I
-
-    iput-object p1, p0, Llj3;->b:Lru/ok/messages/views/dialogs/ConfirmationDialog;
+.method public constructor <init>(Lu2f;Landroid/os/Bundle;Ls6d;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    new-instance v0, Landroid/os/Bundle;
+
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    iput-object v0, p0, Llj3;->a:Landroid/os/Bundle;
+
+    const-string p0, "title"
+
+    invoke-virtual {v0, p0, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+
+    const-string p0, "payload"
+
+    invoke-virtual {v0, p0, p2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+
+    if-eqz p3, :cond_0
+
+    const-string p0, "stat_screen"
+
+    invoke-virtual {p3}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p0, p1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .registers 7
+.method public final varargs a([Lmj3;)V
+    .registers 4
 
-    iget p1, p0, Llj3;->a:I
+    iget-object p0, p0, Llj3;->a:Landroid/os/Bundle;
 
-    packed-switch p1, :pswitch_data_0
+    const-string v0, "buttons"
 
-    iget-object p0, p0, Llj3;->b:Lru/ok/messages/views/dialogs/ConfirmationDialog;
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    invoke-virtual {p0}, Lru/ok/messages/views/dialogs/ConfirmationDialog;->Z0()V
+    move-result-object v1
 
-    return-void
+    if-nez v1, :cond_0
 
-    :pswitch_0
-    iget-object p0, p0, Llj3;->b:Lru/ok/messages/views/dialogs/ConfirmationDialog;
+    new-instance v1, Ljava/util/ArrayList;
 
-    iget-object p1, p0, Landroidx/fragment/app/a;->Z:Landroid/os/Bundle;
-
-    const-string p2, "oneme:share:data"
-
-    if-eqz p1, :cond_0
-
-    invoke-virtual {p1, p2}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
-
-    move-result-object p1
-
-    goto :goto_0
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     :cond_0
-    const/4 p1, 0x0
+    invoke-static {v1, p1}, Lw73;->S(Ljava/util/AbstractList;[Ljava/lang/Object;)V
 
-    :goto_0
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->U()Landroidx/fragment/app/c;
+    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    move-result-object v0
+    return-void
+.end method
 
-    new-instance v1, Lura;
+.method public final b(ILu2f;)V
+    .registers 8
 
-    const-string v2, "POSITIVE"
+    iget-object p0, p0, Llj3;->a:Landroid/os/Bundle;
 
-    sget-object v3, Lnj3;->a:Lnj3;
+    const-string v0, "buttons"
 
-    invoke-direct {v1, v2, v3}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    filled-new-array {v1}, [Lura;
-
-    move-result-object v1
-
-    invoke-static {v1}, La94;->c([Lura;)Landroid/os/Bundle;
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    const-string v2, "ConfirmationDialog:request_key"
+    if-nez v1, :cond_0
 
-    invoke-virtual {v0, v2, v1}, Landroidx/fragment/app/c;->d0(Ljava/lang/String;Landroid/os/Bundle;)V
+    new-instance v1, Ljava/util/ArrayList;
 
-    const/4 v0, 0x1
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0, v0}, Landroidx/fragment/app/a;->X(Z)Landroidx/fragment/app/a;
+    :cond_0
+    new-instance v2, Lmj3;
 
-    move-result-object v1
+    const/4 v3, 0x1
 
-    const/4 v2, -0x1
+    const/16 v4, 0x38
 
-    if-eqz v1, :cond_2
+    invoke-direct {v2, p1, p2, v3, v4}, Lmj3;-><init>(ILu2f;II)V
 
-    instance-of v3, v1, Lmj3;
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    if-eqz v3, :cond_1
+    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    check-cast v1, Lmj3;
+    return-void
+.end method
 
-    invoke-interface {v1, p1}, Lmj3;->M(Landroid/os/Bundle;)V
+.method public final c(ILu2f;)V
+    .registers 8
 
-    goto :goto_1
+    iget-object p0, p0, Llj3;->a:Landroid/os/Bundle;
 
-    :cond_1
-    new-instance v3, Landroid/content/Intent;
+    const-string v0, "buttons"
 
-    invoke-direct {v3}, Landroid/content/Intent;-><init>()V
-
-    invoke-virtual {v3, p2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
-
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->Y()I
-
-    move-result p1
-
-    invoke-virtual {v1, p1, v2, v3}, Landroidx/fragment/app/a;->h0(IILandroid/content/Intent;)V
-
-    goto :goto_1
-
-    :cond_2
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->Q()Landroidx/fragment/app/b;
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    instance-of v3, v1, Lmj3;
+    if-nez v1, :cond_0
 
-    if-eqz v3, :cond_3
+    new-instance v1, Ljava/util/ArrayList;
 
-    check-cast v1, Lmj3;
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-interface {v1, p1}, Lmj3;->M(Landroid/os/Bundle;)V
+    :cond_0
+    new-instance v2, Lmj3;
 
-    goto :goto_1
+    const/4 v3, 0x2
 
-    :cond_3
-    instance-of v3, v1, Lm5;
+    const/16 v4, 0x38
 
-    if-eqz v3, :cond_4
+    invoke-direct {v2, p1, p2, v3, v4}, Lmj3;-><init>(ILu2f;II)V
 
-    new-instance v3, Landroid/content/Intent;
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-direct {v3}, Landroid/content/Intent;-><init>()V
+    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    invoke-virtual {v3, p2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
+    return-void
+.end method
 
-    check-cast v1, Lm5;
+.method public final d(ILu2f;)V
+    .registers 8
 
-    invoke-virtual {p0}, Landroidx/fragment/app/a;->Y()I
+    iget-object p0, p0, Llj3;->a:Landroid/os/Bundle;
 
-    move-result p1
+    const-string v0, "buttons"
 
-    invoke-virtual {v1, p1, v2, v3}, Lm5;->onActivityResult(IILandroid/content/Intent;)V
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getParcelableArrayList(Ljava/lang/String;)Ljava/util/ArrayList;
 
-    :cond_4
-    :goto_1
-    iput-boolean v0, p0, Lru/ok/messages/views/dialogs/ConfirmationDialog;->w1:Z
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    :cond_0
+    new-instance v2, Lmj3;
+
+    const/4 v3, 0x3
+
+    const/16 v4, 0x38
+
+    invoke-direct {v2, p1, p2, v3, v4}, Lmj3;-><init>(ILu2f;II)V
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {p0, v0, v1}, Landroid/os/Bundle;->putParcelableArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
+
+    return-void
+.end method
+
+.method public final e()Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
+    .registers 2
+
+    new-instance v0, Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;
+
+    iget-object p0, p0, Llj3;->a:Landroid/os/Bundle;
+
+    invoke-direct {v0, p0}, Lone/me/sdk/bottomsheet/ConfirmationBottomSheet;-><init>(Landroid/os/Bundle;)V
+
+    return-object v0
+.end method
+
+.method public final f(Lu2f;)V
+    .registers 3
+
+    const-string v0, "description"
+
+    iget-object p0, p0, Llj3;->a:Landroid/os/Bundle;
+
+    if-nez p1, :cond_0
+
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->remove(Ljava/lang/String;)V
 
     return-void
 
-    nop
+    :cond_0
+    invoke-virtual {p0, v0, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

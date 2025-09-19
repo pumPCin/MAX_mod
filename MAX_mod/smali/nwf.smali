@@ -2,119 +2,245 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Landroid/view/View$OnClickListener;
-.implements Lnp4;
+
+# static fields
+.field public static final j:Lnwf;
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final a:I
 
-.field public final b:Landroid/view/View;
+.field public final b:I
 
-.field public final c:Ld4a;
+.field public final c:I
+
+.field public final d:I
+
+.field public final e:F
+
+.field public final f:I
+
+.field public final g:I
+
+.field public final h:J
+
+.field public final i:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Ld4a;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 11
+
+    new-instance v0, Lnwf;
+
+    const/4 v1, -0x1
+
+    const/4 v2, 0x1
+
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    const-wide/16 v8, -0x1
+
+    const/4 v10, 0x0
+
+    move v3, v1
+
+    move v4, v1
+
+    move v6, v1
+
+    move v7, v1
+
+    invoke-direct/range {v0 .. v10}, Lnwf;-><init>(IIIIFIIJZ)V
+
+    sput-object v0, Lnwf;->j:Lnwf;
+
+    return-void
+.end method
+
+.method public constructor <init>(IIIIFIIJZ)V
+    .registers 11
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput p1, p0, Lnwf;->a:I
 
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+    iput p2, p0, Lnwf;->b:I
 
-    iput-object v0, p0, Lnwf;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput p3, p0, Lnwf;->c:I
 
-    iput-object p1, p0, Lnwf;->b:Landroid/view/View;
+    iput p4, p0, Lnwf;->d:I
 
-    iput-object p2, p0, Lnwf;->c:Ld4a;
+    iput p5, p0, Lnwf;->e:F
+
+    iput p6, p0, Lnwf;->f:I
+
+    iput p7, p0, Lnwf;->g:I
+
+    iput-wide p8, p0, Lnwf;->h:J
+
+    iput-boolean p10, p0, Lnwf;->i:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final g()V
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
 
-    const/4 v0, 0x0
+    if-ne p0, p1, :cond_0
 
-    const/4 v1, 0x1
-
-    iget-object v2, p0, Lnwf;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    if-ne v0, v1, :cond_0
-
-    iget-object p0, p0, Lnwf;->b:Landroid/view/View;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    return-void
+    goto :goto_0
 
     :cond_0
-    invoke-static {}, Lsd;->a()Lqxc;
+    instance-of v0, p1, Lnwf;
 
-    move-result-object v0
+    if-nez v0, :cond_1
 
-    new-instance v1, Lg56;
-
-    const/16 v2, 0xb
-
-    invoke-direct {v1, v2, p0}, Lg56;-><init>(ILjava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lqxc;->b(Ljava/lang/Runnable;)Lnp4;
+    goto :goto_1
 
     :cond_1
-    return-void
-.end method
+    check-cast p1, Lnwf;
 
-.method public final h()Z
-    .registers 1
+    iget v0, p0, Lnwf;->a:I
 
-    iget-object p0, p0, Lnwf;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget v1, p1, Lnwf;->a:I
 
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    if-ne v0, v1, :cond_2
 
-    move-result p0
+    iget v0, p0, Lnwf;->b:I
+
+    iget v1, p1, Lnwf;->b:I
+
+    if-ne v0, v1, :cond_2
+
+    iget v0, p0, Lnwf;->c:I
+
+    iget v1, p1, Lnwf;->c:I
+
+    if-ne v0, v1, :cond_2
+
+    iget v0, p0, Lnwf;->d:I
+
+    iget v1, p1, Lnwf;->d:I
+
+    if-ne v0, v1, :cond_2
+
+    iget v0, p0, Lnwf;->e:F
+
+    iget v1, p1, Lnwf;->e:F
+
+    cmpl-float v0, v0, v1
+
+    if-nez v0, :cond_2
+
+    iget v0, p0, Lnwf;->f:I
+
+    iget v1, p1, Lnwf;->f:I
+
+    if-ne v0, v1, :cond_2
+
+    iget v0, p0, Lnwf;->g:I
+
+    iget v1, p1, Lnwf;->g:I
+
+    if-ne v0, v1, :cond_2
+
+    iget-wide v0, p0, Lnwf;->h:J
+
+    iget-wide v2, p1, Lnwf;->h:J
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_2
+
+    iget-boolean p0, p0, Lnwf;->i:Z
+
+    iget-boolean p1, p1, Lnwf;->i:Z
+
+    if-ne p0, p1, :cond_2
+
+    :goto_0
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_2
+    :goto_1
+    const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public final onClick(Landroid/view/View;)V
-    .registers 2
+.method public final hashCode()I
+    .registers 7
 
-    iget-object p1, p0, Lnwf;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    const/16 v0, 0xd9
 
-    invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    iget v1, p0, Lnwf;->a:I
 
-    move-result p1
+    add-int/2addr v0, v1
 
-    if-nez p1, :cond_0
+    mul-int/lit8 v0, v0, 0x1f
 
-    iget-object p0, p0, Lnwf;->c:Ld4a;
+    iget v1, p0, Lnwf;->b:I
 
-    sget-object p1, Lncf;->a:Lncf;
+    add-int/2addr v0, v1
 
-    invoke-interface {p0, p1}, Ld4a;->d(Ljava/lang/Object;)V
+    mul-int/lit8 v0, v0, 0x1f
 
-    :cond_0
-    return-void
+    iget v1, p0, Lnwf;->c:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lnwf;->d:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lnwf;->e:F
+
+    invoke-static {v1}, Ljava/lang/Float;->floatToIntBits(F)I
+
+    move-result v1
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget v0, p0, Lnwf;->f:I
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget v0, p0, Lnwf;->g:I
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    const/16 v0, 0x20
+
+    iget-wide v2, p0, Lnwf;->h:J
+
+    ushr-long v4, v2, v0
+
+    xor-long/2addr v2, v4
+
+    long-to-int v0, v2
+
+    add-int/2addr v1, v0
+
+    mul-int/lit8 v1, v1, 0x1f
+
+    iget-boolean p0, p0, Lnwf;->i:Z
+
+    add-int/2addr v1, p0
+
+    return v1
 .end method

@@ -1,39 +1,55 @@
 .class public final Lmi6;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lisg;
+.field public X:J
 
-.field public final b:Ljava/util/HashMap;
+.field public Y:J
+
+.field public synthetic Z:Ljava/lang/Object;
+
+.field public o:Lxx8;
+
+.field public final synthetic r0:Lni6;
+
+.field public s0:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 6
+.method public constructor <init>(Lni6;Ljx3;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lmi6;->r0:Lni6;
 
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lmi6;->b:Ljava/util/HashMap;
-
-    sget v0, Lpv7;->a:I
-
-    new-instance v0, Lisg;
-
-    sget-object v1, Lisg;->r0:Lg38;
-
-    sget-object v2, Lgk;->d:Lfk;
-
-    sget-object v3, Lci6;->c:Lci6;
-
-    invoke-direct {v0, p1, v1, v2, v3}, Ldi6;-><init>(Landroid/content/Context;Lg38;Lgk;Lci6;)V
-
-    iput-object v0, p0, Lmi6;->a:Lisg;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    iput-object p1, p0, Lmi6;->Z:Ljava/lang/Object;
+
+    iget p1, p0, Lmi6;->s0:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lmi6;->s0:I
+
+    iget-object p1, p0, Lmi6;->r0:Lni6;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0, v0, p0}, Lni6;->a(Lni6;Lqk4;Lxx8;Ljx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

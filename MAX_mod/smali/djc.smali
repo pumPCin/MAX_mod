@@ -1,80 +1,93 @@
-.class public abstract Ldjc;
-.super Ljava/lang/Object;
+.class public final Ldjc;
+.super Lmq0;
 .source "SourceFile"
 
 
+# instance fields
+.field public final s0:Ljava/lang/String;
+
+
 # direct methods
-.method public static a(Lfjc;Landroid/content/Intent;Ljava/util/Map;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lfjc;",
-            "Landroid/content/Intent;",
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Landroid/net/Uri;",
-            ">;)V"
-        }
-    .end annotation
 
-    invoke-static {p0}, Lfjc;->a(Lfjc;)Landroid/app/RemoteInput;
+    const/16 v0, 0xf
 
-    move-result-object p0
+    invoke-direct {p0, v0}, Lmq0;-><init>(I)V
 
-    invoke-static {p0, p1, p2}, Landroid/app/RemoteInput;->addDataResultToIntent(Landroid/app/RemoteInput;Landroid/content/Intent;Ljava/util/Map;)V
+    iput-object p1, p0, Ldjc;->s0:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static b(Ljava/lang/Object;)Ljava/util/Set;
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Ldjc;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Ldjc;
+
+    iget-object p0, p0, Ldjc;->s0:Ljava/lang/String;
+
+    iget-object p1, p1, Ldjc;->s0:Ljava/lang/String;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
     .registers 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")",
-            "Ljava/util/Set<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
 
-    check-cast p0, Landroid/app/RemoteInput;
+    iget-object p0, p0, Ldjc;->s0:Ljava/lang/String;
 
-    invoke-virtual {p0}, Landroid/app/RemoteInput;->getAllowedDataTypes()Ljava/util/Set;
+    if-nez p0, :cond_0
 
-    move-result-object p0
+    const/4 p0, 0x0
 
-    return-object p0
+    return p0
+
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    move-result p0
+
+    return p0
 .end method
 
-.method public static c(Landroid/content/Intent;Ljava/lang/String;)Ljava/util/Map;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Intent;",
-            "Ljava/lang/String;",
-            ")",
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Landroid/net/Uri;",
-            ">;"
-        }
-    .end annotation
-
-    invoke-static {p0, p1}, Landroid/app/RemoteInput;->getDataResultsFromIntent(Landroid/content/Intent;Ljava/lang/String;)Ljava/util/Map;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static d(Landroid/app/RemoteInput$Builder;Ljava/lang/String;Z)Landroid/app/RemoteInput$Builder;
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    invoke-virtual {p0, p1, p2}, Landroid/app/RemoteInput$Builder;->setAllowDataType(Ljava/lang/String;Z)Landroid/app/RemoteInput$Builder;
+    const-string v0, "Avatar(avatarUrl="
+
+    const-string v1, ")"
+
+    iget-object p0, p0, Ldjc;->s0:Ljava/lang/String;
+
+    invoke-static {v0, p0, v1}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

@@ -1,104 +1,130 @@
-.class public final synthetic Ljr7;
-.super Ljava/lang/Object;
+.class public final Ljr7;
+.super Landroid/text/style/URLSpan;
 .source "SourceFile"
-
-# interfaces
-.implements Lh96;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public a:Lkr7;
 
-.field public final synthetic b:Lru/ok/tamtam/location/live/LiveLocationWorker;
+.field public b:I
+
+.field public final c:Z
+
+.field public final o:Lj7;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/tamtam/location/live/LiveLocationWorker;I)V
-    .registers 3
+.method public constructor <init>(Ljava/lang/String;IZ)V
+    .registers 4
 
-    iput p2, p0, Ljr7;->a:I
+    invoke-direct {p0, p1}, Landroid/text/style/URLSpan;-><init>(Ljava/lang/String;)V
 
-    iput-object p1, p0, Ljr7;->b:Lru/ok/tamtam/location/live/LiveLocationWorker;
+    const/4 p1, 0x0
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljr7;->a:Lkr7;
+
+    iput p2, p0, Ljr7;->b:I
+
+    iput-boolean p3, p0, Ljr7;->c:Z
+
+    new-instance p1, Lj7;
+
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ljr7;->o:Lj7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 4
+.method public final onClick(Landroid/view/View;)V
+    .registers 9
 
-    iget v0, p0, Ljr7;->a:I
-
-    iget-object p0, p0, Ljr7;->b:Lru/ok/tamtam/location/live/LiveLocationWorker;
-
-    packed-switch v0, :pswitch_data_0
-
-    invoke-virtual {p0}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;->getTamComponent()Lune;
-
-    move-result-object p0
-
-    check-cast p0, Lb2d;
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object p0
-
-    const-class v0, Ler7;
-
-    invoke-virtual {p0, v0}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ler7;
-
-    return-object p0
-
-    :pswitch_0
-    invoke-virtual {p0}, Lru/ok/tamtam/workmanager/SdkCoroutineWorker;->getTamComponent()Lune;
-
-    move-result-object p0
-
-    check-cast p0, Lb2d;
-
-    invoke-virtual {p0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object p0
-
-    const-class v0, Lir7;
-
-    invoke-virtual {p0, v0}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lir7;
-
-    return-object p0
-
-    :pswitch_1
-    invoke-virtual {p0}, Lhq7;->getInputData()Lb64;
-
-    move-result-object p0
-
-    const-string v0, "chatId"
-
-    const-wide/16 v1, -0x1
-
-    invoke-virtual {p0, v0, v1, v2}, Lb64;->d(Ljava/lang/String;J)J
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget-object v2, p0, Ljr7;->o:Lj7;
 
-    move-result-object p0
+    iget-wide v3, v2, Lj7;->a:J
 
-    return-object p0
+    sub-long v3, v0, v3
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    const-wide/16 v5, 0x12c
+
+    cmp-long v3, v3, v5
+
+    if-lez v3, :cond_3
+
+    iput-wide v0, v2, Lj7;->a:J
+
+    instance-of v0, p1, Landroid/widget/TextView;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p1
+
+    check-cast v0, Landroid/widget/TextView;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getLinksClickable()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    iget-object v0, p0, Ljr7;->a:Lkr7;
+
+    if-nez v0, :cond_2
+
+    instance-of v0, p1, Lkr7;
+
+    if-eqz v0, :cond_1
+
+    move-object v0, p1
+
+    check-cast v0, Lkr7;
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    :cond_2
+    :goto_0
+    if-eqz v0, :cond_3
+
+    invoke-virtual {p0}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
+
+    move-result-object p1
+
+    sget-object v1, Lor7;->a:Lor7;
+
+    invoke-interface {v0, p1, v1, p0}, Lkr7;->b(Ljava/lang/String;Lor7;Landroid/text/style/ClickableSpan;)V
+
+    :cond_3
+    :goto_1
+    return-void
+.end method
+
+.method public final updateDrawState(Landroid/text/TextPaint;)V
+    .registers 4
+
+    iget v0, p1, Landroid/text/TextPaint;->bgColor:I
+
+    iget v1, p0, Ljr7;->b:I
+
+    if-eq v0, v1, :cond_0
+
+    invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    :cond_0
+    iget-boolean p0, p0, Ljr7;->c:Z
+
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setUnderlineText(Z)V
+
+    return-void
 .end method

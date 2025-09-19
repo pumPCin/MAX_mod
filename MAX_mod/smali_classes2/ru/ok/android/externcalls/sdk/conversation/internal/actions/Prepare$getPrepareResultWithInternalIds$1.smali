@@ -3,12 +3,12 @@
 .source "SourceFile"
 
 # interfaces
-.implements Laa6;
+.implements Lsc6;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->getPrepareResultWithInternalIds(Lh96;)Lcud;
+    value = Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare;->getPrepareResultWithInternalIds(Lzb6;)Lk2e;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -28,7 +28,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Laa6;"
+        "Lsc6;"
     }
 .end annotation
 
@@ -37,18 +37,18 @@
         "\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0010\u000c\u001a\n \u0002*\u0004\u0018\u00010\t0\t2\u001a\u0010\u0003\u001a\u0016\u0012\u0004\u0012\u00020\u0001 \u0002*\n\u0012\u0004\u0012\u00020\u0001\u0018\u00010\u00000\u00002\u001e\u0010\u0006\u001a\u001a\u0012\u0006\u0012\u0004\u0018\u00010\u0005 \u0002*\u000c\u0012\u0006\u0012\u0004\u0018\u00010\u0005\u0018\u00010\u00040\u00042\u000e\u0010\u0008\u001a\n \u0002*\u0004\u0018\u00010\u00070\u0007H\n\u00a2\u0006\u0004\u0008\n\u0010\u000b"
     }
     d2 = {
-        "Lepa;",
+        "Lzua;",
         "Lru/ok/android/externcalls/sdk/api/ConversationParams;",
         "kotlin.jvm.PlatformType",
         "params",
         "",
         "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
         "participants",
-        "Lncf;",
+        "Lylf;",
         "<anonymous parameter 2>",
         "Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;",
         "apply",
-        "(Lepa;Ljava/util/Set;Lncf;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;",
+        "(Lzua;Ljava/util/Set;Lylf;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;",
         "<anonymous>"
     }
     k = 0x3
@@ -97,29 +97,29 @@
 .method public bridge synthetic apply(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    check-cast p1, Lepa;
+    check-cast p1, Lzua;
 
     check-cast p2, Ljava/util/Set;
 
-    check-cast p3, Lncf;
+    check-cast p3, Lylf;
 
-    invoke-virtual {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$getPrepareResultWithInternalIds$1;->apply(Lepa;Ljava/util/Set;Lncf;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;
+    invoke-virtual {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$getPrepareResultWithInternalIds$1;->apply(Lzua;Ljava/util/Set;Lylf;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final apply(Lepa;Ljava/util/Set;Lncf;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;
+.method public final apply(Lzua;Ljava/util/Set;Lylf;)Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lepa;",
+            "Lzua;",
             "Ljava/util/Set<",
             "Lru/ok/android/externcalls/sdk/id/ParticipantId;",
             ">;",
-            "Lncf;",
+            "Lylf;",
             ")",
             "Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;"
         }
@@ -127,7 +127,7 @@
 
     new-instance p0, Lru/ok/android/externcalls/sdk/conversation/internal/actions/Prepare$PrepareResult;
 
-    iget-object p1, p1, Lepa;->a:Ljava/lang/Object;
+    iget-object p1, p1, Lzua;->a:Ljava/lang/Object;
 
     if-eqz p1, :cond_1
 
@@ -148,11 +148,11 @@
     const/4 p1, 0x0
 
     :goto_0
-    invoke-static {p2}, Lj73;->i0(Ljava/lang/Iterable;)Ljava/util/List;
+    invoke-static {p2}, Lq73;->c0(Ljava/lang/Iterable;)Ljava/util/List;
 
     move-result-object p2
 
-    invoke-static {p2}, Lj73;->L0(Ljava/util/Collection;)Ljava/util/Set;
+    invoke-static {p2}, Lq73;->F0(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object p2
 

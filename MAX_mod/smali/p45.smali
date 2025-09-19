@@ -1,726 +1,121 @@
-.class public abstract Lp45;
+.class public final Lp45;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/List;
+.implements Ljava/io/Serializable;
+.implements Ljava/util/RandomAccess;
+.implements Lmi7;
+
 
 # static fields
-.field public static final a:Las;
+.field public static final a:Lp45;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 1
 
-    new-instance v0, Las;
+    new-instance v0, Lp45;
 
-    invoke-direct {v0}, Las;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lp45;->a:Las;
+    sput-object v0, Lp45;->a:Lp45;
 
     return-void
 .end method
 
-.method public static a(II)I
-    .registers 4
 
-    rem-int/lit8 v0, p0, 0xa
+# virtual methods
+.method public final bridge synthetic add(ILjava/lang/Object;)V
+    .registers 3
 
-    const/4 v1, 0x1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    if-ne v0, v1, :cond_0
+    const-string p1, "Operation is not supported for read-only collection"
 
-    int-to-double v0, p1
-
-    int-to-float p0, p0
-
-    int-to-float p1, p1
-
-    div-float/2addr p0, p1
-
-    float-to-double p0, p0
-
-    invoke-static {p0, p1}, Ljava/lang/Math;->floor(D)D
-
-    move-result-wide p0
-
-    mul-double/2addr p0, v0
-
-    double-to-int p0, p0
-
-    return p0
-
-    :cond_0
-    int-to-float p0, p0
-
-    int-to-float v0, p1
-
-    div-float/2addr p0, v0
-
-    invoke-static {p0}, Ljava/lang/Math;->round(F)I
-
-    move-result p0
-
-    mul-int/2addr p0, p1
-
-    return p0
-.end method
-
-.method public static b(Landroid/media/MediaCodecInfo;Ljava/lang/String;I)I
-    .registers 7
-
-    invoke-virtual {p0, p1}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
-
-    move-result-object p0
-
-    iget-object p0, p0, Landroid/media/MediaCodecInfo$CodecCapabilities;->profileLevels:[Landroid/media/MediaCodecInfo$CodecProfileLevel;
-
-    array-length p1, p0
-
-    const/4 v0, -0x1
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, p1, :cond_1
-
-    aget-object v2, p0, v1
-
-    iget v3, v2, Landroid/media/MediaCodecInfo$CodecProfileLevel;->profile:I
-
-    if-ne v3, p2, :cond_0
-
-    iget v2, v2, Landroid/media/MediaCodecInfo$CodecProfileLevel;->level:I
-
-    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    :cond_0
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    return v0
-.end method
-
-.method public static c(ILjava/lang/String;)Lqic;
-    .registers 7
-
-    const/4 v0, 0x2
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const/16 v2, 0x1000
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
-
-    move-result v3
-
-    const/4 v4, -0x1
-
-    sparse-switch v3, :sswitch_data_0
-
-    :goto_0
-    move v0, v4
-
-    goto :goto_1
-
-    :sswitch_0
-    const-string v0, "video/x-vnd.on2.vp9"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x3
-
-    goto :goto_1
-
-    :sswitch_1
-    const-string v3, "video/avc"
-
-    invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_3
-
-    goto :goto_0
-
-    :sswitch_2
-    const-string v0, "video/hevc"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x1
-
-    goto :goto_1
-
-    :sswitch_3
-    const-string v0, "video/av01"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v0, 0x0
-
-    :cond_3
-    :goto_1
-    const/4 p1, 0x6
-
-    const/4 v3, 0x7
-
-    packed-switch v0, :pswitch_data_0
-
-    goto :goto_2
-
-    :pswitch_0
-    if-eq p0, v3, :cond_4
-
-    if-ne p0, p1, :cond_7
-
-    :cond_4
-    const/16 p0, 0x2000
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    invoke-static {v2, p0}, Lj07;->n(Ljava/lang/Object;Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_1
-    if-ne p0, v3, :cond_7
-
-    const/16 p0, 0x10
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lj07;->m(Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_2
-    if-ne p0, v3, :cond_5
-
-    invoke-static {v1}, Lj07;->m(Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_5
-    if-ne p0, p1, :cond_7
-
-    invoke-static {v2}, Lj07;->m(Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_3
-    if-ne p0, v3, :cond_6
-
-    invoke-static {v1}, Lj07;->m(Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_6
-    if-ne p0, p1, :cond_7
-
-    invoke-static {v2}, Lj07;->m(Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_7
-    :goto_2
-    sget-object p0, Lj07;->b:Ldv5;
-
-    sget-object p0, Lqic;->X:Lqic;
-
-    return-object p0
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x631b55f6 -> :sswitch_3
-        -0x63185e82 -> :sswitch_2
-        0x4f62373a -> :sswitch_1
-        0x5f50bed9 -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public static declared-synchronized d(Ljava/lang/String;)Lj07;
-    .registers 6
-
-    const-class v0, Lp45;
-
-    monitor-enter v0
-
-    :try_start_0
-    invoke-static {}, Lp45;->h()V
-
-    sget-object v1, Lp45;->a:Las;
-
-    invoke-static {p0}, La94;->H(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    iget-object v2, v1, Lx1;->o:Ljava/util/Map;
-
-    invoke-interface {v2, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Collection;
-
-    if-nez v2, :cond_0
-
-    invoke-virtual {v1}, Lx1;->d()Ljava/util/Collection;
-
-    move-result-object v2
-
-    :cond_0
-    check-cast v2, Ljava/util/List;
-
-    instance-of v3, v2, Ljava/util/RandomAccess;
-
-    const/4 v4, 0x0
-
-    if-eqz v3, :cond_1
-
-    new-instance v3, Lf2;
-
-    invoke-direct {v3, v1, p0, v2, v4}, Lj2;-><init>(Lx1;Ljava/lang/Object;Ljava/util/List;Lj2;)V
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v3, Lj2;
-
-    invoke-direct {v3, v1, p0, v2, v4}, Lj2;-><init>(Lx1;Ljava/lang/Object;Ljava/util/List;Lj2;)V
-
-    :goto_0
-    invoke-static {v3}, Lj07;->j(Ljava/util/Collection;)Lj07;
-
-    move-result-object p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit v0
-
-    return-object p0
-
-    :catchall_0
-    move-exception p0
-
-    :try_start_1
-    monitor-exit v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw p0
 .end method
 
-.method public static e(Ljava/lang/String;Lu73;)Lqic;
-    .registers 13
+.method public final bridge synthetic add(Ljava/lang/Object;)Z
+    .registers 2
 
-    sget v0, Laif;->a:I
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    const/16 v1, 0x21
+    const-string p1, "Operation is not supported for read-only collection"
 
-    if-lt v0, v1, :cond_6
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    if-nez p1, :cond_0
-
-    goto :goto_3
-
-    :cond_0
-    invoke-static {p0}, Lp45;->d(Ljava/lang/String;)Lj07;
-
-    move-result-object v0
-
-    iget p1, p1, Lu73;->c:I
-
-    invoke-static {p1, p0}, Lp45;->c(ILjava/lang/String;)Lqic;
-
-    move-result-object p1
-
-    const-string v1, "initialCapacity"
-
-    const/4 v2, 0x4
-
-    invoke-static {v2, v1}, Lb38;->c(ILjava/lang/String;)V
-
-    new-array v1, v2, [Ljava/lang/Object;
-
-    const/4 v2, 0x0
-
-    move v3, v2
-
-    move v4, v3
-
-    :goto_0
-    invoke-virtual {v0}, Ljava/util/AbstractCollection;->size()I
-
-    move-result v5
-
-    if-ge v3, v5, :cond_5
-
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/media/MediaCodecInfo;
-
-    invoke-virtual {v5}, Landroid/media/MediaCodecInfo;->isAlias()Z
-
-    move-result v6
-
-    if-nez v6, :cond_4
-
-    const-string v6, "hdr-editing"
-
-    invoke-virtual {v5, p0}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v6}, Landroid/media/MediaCodecInfo$CodecCapabilities;->isFeatureSupported(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_1
-
-    goto :goto_2
-
-    :cond_1
-    invoke-virtual {v5, p0}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
-
-    move-result-object v6
-
-    iget-object v6, v6, Landroid/media/MediaCodecInfo$CodecCapabilities;->profileLevels:[Landroid/media/MediaCodecInfo$CodecProfileLevel;
-
-    array-length v7, v6
-
-    move v8, v2
-
-    :goto_1
-    if-ge v8, v7, :cond_4
-
-    aget-object v9, v6, v8
-
-    iget v9, v9, Landroid/media/MediaCodecInfo$CodecProfileLevel;->profile:I
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    invoke-virtual {p1, v9}, Lj07;->contains(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_3
-
-    add-int/lit8 v9, v4, 0x1
-
-    array-length v10, v1
-
-    if-ge v10, v9, :cond_2
-
-    array-length v10, v1
-
-    invoke-static {v10, v9}, La07;->f(II)I
-
-    move-result v10
-
-    invoke-static {v1, v10}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v1
-
-    :cond_2
-    aput-object v5, v1, v4
-
-    move v4, v9
-
-    :cond_3
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_1
-
-    :cond_4
-    :goto_2
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    :cond_5
-    invoke-static {v4, v1}, Lj07;->h(I[Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    return-object p0
-
-    :cond_6
-    :goto_3
-    sget-object p0, Lj07;->b:Ldv5;
-
-    sget-object p0, Lqic;->X:Lqic;
-
-    return-object p0
+    throw p0
 .end method
 
-.method public static f(Landroid/media/MediaCodecInfo;Ljava/lang/String;II)Landroid/util/Size;
-    .registers 13
+.method public final addAll(ILjava/util/Collection;)Z
+    .registers 3
 
-    invoke-virtual {p0, p1}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    move-result-object v0
+    const-string p1, "Operation is not supported for read-only collection"
 
-    invoke-virtual {v0}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v0
+    throw p0
+.end method
 
-    invoke-virtual {v0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getWidthAlignment()I
+.method public final addAll(Ljava/util/Collection;)Z
+    .registers 2
 
-    move-result v1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-virtual {v0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getHeightAlignment()I
+    const-string p1, "Operation is not supported for read-only collection"
 
-    move-result v2
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-static {p2, v1}, Lp45;->a(II)I
+    throw p0
+.end method
 
-    move-result v3
+.method public final clear()V
+    .registers 2
 
-    invoke-static {p3, v2}, Lp45;->a(II)I
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    move-result v4
+    const-string v0, "Operation is not supported for read-only collection"
 
-    invoke-static {p0, p1, v3, v4}, Lp45;->g(Landroid/media/MediaCodecInfo;Ljava/lang/String;II)Z
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    move-result v5
+    throw p0
+.end method
 
-    if-eqz v5, :cond_0
+.method public final bridge contains(Ljava/lang/Object;)Z
+    .registers 2
 
-    new-instance p0, Landroid/util/Size;
+    const/4 p0, 0x0
 
-    invoke-direct {p0, v3, v4}, Landroid/util/Size;-><init>(II)V
+    return p0
+.end method
 
-    return-object p0
+.method public final containsAll(Ljava/util/Collection;)Z
+    .registers 2
 
-    :cond_0
-    const/16 v3, 0xd
-
-    new-array v4, v3, [F
-
-    fill-array-data v4, :array_0
-
-    const/4 v5, 0x0
-
-    :goto_0
-    if-ge v5, v3, :cond_2
-
-    aget v6, v4, v5
-
-    int-to-float v7, p2
-
-    mul-float/2addr v7, v6
-
-    invoke-static {v7}, Ljava/lang/Math;->round(F)I
-
-    move-result v7
-
-    invoke-static {v7, v1}, Lp45;->a(II)I
-
-    move-result v7
-
-    int-to-float v8, p3
-
-    mul-float/2addr v8, v6
-
-    invoke-static {v8}, Ljava/lang/Math;->round(F)I
-
-    move-result v6
-
-    invoke-static {v6, v2}, Lp45;->a(II)I
-
-    move-result v6
-
-    invoke-static {p0, p1, v7, v6}, Lp45;->g(Landroid/media/MediaCodecInfo;Ljava/lang/String;II)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_1
-
-    new-instance p0, Landroid/util/Size;
-
-    invoke-direct {p0, v7, v6}, Landroid/util/Size;-><init>(II)V
-
-    return-object p0
-
-    :cond_1
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {v0}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedWidths()Landroid/util/Range;
-
-    move-result-object v3
-
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Landroid/util/Range;->clamp(Ljava/lang/Comparable;)Ljava/lang/Comparable;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Integer;
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    invoke-virtual {v0, v3}, Landroid/media/MediaCodecInfo$VideoCapabilities;->getSupportedHeightsFor(I)Landroid/util/Range;
-
-    move-result-object v0
-
-    invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v0, v3}, Landroid/util/Range;->clamp(Ljava/lang/Comparable;)Ljava/lang/Comparable;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    if-eq v0, p3, :cond_3
-
-    int-to-double v3, p2
-
-    int-to-double v5, v0
-
-    mul-double/2addr v3, v5
-
-    int-to-double p2, p3
-
-    div-double/2addr v3, p2
-
-    invoke-static {v3, v4}, Ljava/lang/Math;->round(D)J
-
-    move-result-wide p2
-
-    long-to-int p2, p2
-
-    invoke-static {p2, v1}, Lp45;->a(II)I
-
-    move-result p2
-
-    invoke-static {v0, v2}, Lp45;->a(II)I
-
-    move-result p3
-
-    :cond_3
-    invoke-static {p0, p1, p2, p3}, Lp45;->g(Landroid/media/MediaCodecInfo;Ljava/lang/String;II)Z
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result p0
 
-    if-eqz p0, :cond_4
-
-    new-instance p0, Landroid/util/Size;
-
-    invoke-direct {p0, p2, p3}, Landroid/util/Size;-><init>(II)V
-
-    return-object p0
-
-    :cond_4
-    const/4 p0, 0x0
-
-    return-object p0
-
-    nop
-
-    :array_0
-    .array-data 4
-        0x3f733333    # 0.95f
-        0x3f666666    # 0.9f
-        0x3f59999a    # 0.85f
-        0x3f4ccccd    # 0.8f
-        0x3f400000    # 0.75f
-        0x3f333333    # 0.7f
-        0x3f2aaaab
-        0x3f19999a    # 0.6f
-        0x3f0ccccd    # 0.55f
-        0x3f000000    # 0.5f
-        0x3ecccccd    # 0.4f
-        0x3eaaaaab
-        0x3e800000    # 0.25f
-    .end array-data
+    return p0
 .end method
 
-.method public static g(Landroid/media/MediaCodecInfo;Ljava/lang/String;II)Z
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 2
 
-    invoke-virtual {p0, p1}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
+    instance-of p0, p1, Ljava/util/List;
 
-    move-result-object p0
+    if-eqz p0, :cond_0
 
-    invoke-virtual {p0}, Landroid/media/MediaCodecInfo$CodecCapabilities;->getVideoCapabilities()Landroid/media/MediaCodecInfo$VideoCapabilities;
+    check-cast p1, Ljava/util/List;
 
-    move-result-object p0
-
-    invoke-virtual {p0, p2, p3}, Landroid/media/MediaCodecInfo$VideoCapabilities;->isSizeSupported(II)Z
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result p0
 
@@ -731,155 +126,225 @@
     return p0
 
     :cond_0
-    const/16 p0, 0x780
-
-    if-ne p2, p0, :cond_1
-
-    const/16 p0, 0x438
-
-    if-ne p3, p0, :cond_1
-
-    const/4 p0, 0x6
-
-    invoke-static {p0}, Landroid/media/CamcorderProfile;->hasProfile(I)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_1
-    const/16 p0, 0xf00
-
-    if-ne p2, p0, :cond_2
-
-    const/16 p0, 0x870
-
-    if-ne p3, p0, :cond_2
-
-    const/16 p0, 0x8
-
-    invoke-static {p0}, Landroid/media/CamcorderProfile;->hasProfile(I)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_2
     const/4 p0, 0x0
 
     return p0
 .end method
 
-.method public static declared-synchronized h()V
-    .registers 11
+.method public final get(I)Ljava/lang/Object;
+    .registers 4
 
-    const-class v0, Lp45;
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
-    monitor-enter v0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    :try_start_0
-    sget-object v1, Lp45;->a:Las;
+    const-string v1, "Empty list doesn\'t contain element at index "
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget v1, v1, Lx1;->X:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x0
+    const/16 p1, 0x2e
 
-    if-nez v1, :cond_0
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    goto :goto_0
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final bridge indexOf(Ljava/lang/Object;)I
+    .registers 2
+
+    const/4 p0, -0x1
+
+    return p0
+.end method
+
+.method public final isEmpty()Z
+    .registers 1
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .registers 1
+
+    sget-object p0, Lo45;->a:Lo45;
+
+    return-object p0
+.end method
+
+.method public final bridge lastIndexOf(Ljava/lang/Object;)I
+    .registers 2
+
+    const/4 p0, -0x1
+
+    return p0
+.end method
+
+.method public final listIterator()Ljava/util/ListIterator;
+    .registers 1
+
+    sget-object p0, Lo45;->a:Lo45;
+
+    return-object p0
+.end method
+
+.method public final listIterator(I)Ljava/util/ListIterator;
+    .registers 3
+
+    if-nez p1, :cond_0
+
+    sget-object p0, Lo45;->a:Lo45;
+
+    return-object p0
 
     :cond_0
-    move v1, v2
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
-    :goto_0
-    if-nez v1, :cond_1
+    const-string v0, "Index: "
 
-    monitor-exit v0
+    invoke-static {p1, v0}, Lyv7;->e(ILjava/lang/String;)Ljava/lang/String;
 
-    return-void
+    move-result-object p1
 
-    :cond_1
-    :try_start_1
-    new-instance v1, Landroid/media/MediaCodecList;
+    invoke-direct {p0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v1, v2}, Landroid/media/MediaCodecList;-><init>(I)V
+    throw p0
+.end method
 
-    invoke-virtual {v1}, Landroid/media/MediaCodecList;->getCodecInfos()[Landroid/media/MediaCodecInfo;
+.method public final bridge synthetic remove(I)Ljava/lang/Object;
+    .registers 2
 
-    move-result-object v1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    array-length v3, v1
+    const-string p1, "Operation is not supported for read-only collection"
 
-    move v4, v2
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    :goto_1
-    if-ge v4, v3, :cond_4
+    throw p0
+.end method
 
-    aget-object v5, v1, v4
+.method public final remove(Ljava/lang/Object;)Z
+    .registers 2
 
-    invoke-virtual {v5}, Landroid/media/MediaCodecInfo;->isEncoder()Z
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    move-result v6
+    const-string p1, "Operation is not supported for read-only collection"
 
-    if-nez v6, :cond_2
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    goto :goto_3
+    throw p0
+.end method
 
-    :cond_2
-    invoke-virtual {v5}, Landroid/media/MediaCodecInfo;->getSupportedTypes()[Ljava/lang/String;
+.method public final removeAll(Ljava/util/Collection;)Z
+    .registers 2
 
-    move-result-object v6
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    array-length v7, v6
+    const-string p1, "Operation is not supported for read-only collection"
 
-    move v8, v2
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    :goto_2
-    if-ge v8, v7, :cond_3
+    throw p0
+.end method
 
-    aget-object v9, v6, v8
+.method public final retainAll(Ljava/util/Collection;)Z
+    .registers 2
 
-    sget-object v10, Lp45;->a:Las;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    invoke-static {v9}, La94;->H(Ljava/lang/String;)Ljava/lang/String;
+    const-string p1, "Operation is not supported for read-only collection"
 
-    move-result-object v9
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v10, v9, v5}, Lx1;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    throw p0
+.end method
 
-    add-int/lit8 v8, v8, 0x1
+.method public final bridge synthetic set(ILjava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    goto :goto_2
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    :catchall_0
-    move-exception v1
+    const-string p1, "Operation is not supported for read-only collection"
 
-    goto :goto_4
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    :cond_3
-    :goto_3
-    add-int/lit8 v4, v4, 0x1
+    throw p0
+.end method
 
-    goto :goto_1
+.method public final bridge size()I
+    .registers 1
 
-    :cond_4
-    monitor-exit v0
+    const/4 p0, 0x0
 
-    return-void
+    return p0
+.end method
 
-    :goto_4
-    :try_start_2
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+.method public final subList(II)Ljava/util/List;
+    .registers 5
 
-    throw v1
+    if-nez p1, :cond_0
+
+    if-nez p2, :cond_0
+
+    return-object p0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IndexOutOfBoundsException;
+
+    const-string v0, "fromIndex: "
+
+    const-string v1, ", toIndex: "
+
+    invoke-static {v0, p1, p2, v1}, Lyv7;->f(Ljava/lang/String;IILjava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {p0, p1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final toArray()[Ljava/lang/Object;
+    .registers 1
+
+    invoke-static {p0}, Lqe5;->W(Ljava/util/Collection;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .registers 2
+
+    invoke-static {p0, p1}, Lqe5;->X(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "[]"
+
+    return-object p0
 .end method

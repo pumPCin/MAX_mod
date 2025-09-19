@@ -21,7 +21,7 @@
         "findPrevNonRemoved",
         "(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)Lkotlinx/coroutines/internal/LockFreeLinkedListNode;",
         "next",
-        "Lncf;",
+        "Lylf;",
         "finishAdd",
         "(Lkotlinx/coroutines/internal/LockFreeLinkedListNode;)V",
         "correctPrev",
@@ -397,14 +397,14 @@
     return-object v0
 .end method
 
-.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lj96;)V
+.method private final synthetic loop$atomicfu(Ljava/lang/Object;Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;Lbc6;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Object;",
             "Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;",
-            "Lj96;",
+            "Lbc6;",
             ")V"
         }
     .end annotation
@@ -414,7 +414,7 @@
 
     move-result-object p0
 
-    invoke-interface {p3, p0}, Lj96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p3, p0}, Lbc6;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 .end method
@@ -822,7 +822,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, La94;->t(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lr94;->x(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 

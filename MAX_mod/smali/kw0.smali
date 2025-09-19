@@ -1,351 +1,210 @@
 .class public final Lkw0;
-.super Ljava/io/FilterOutputStream;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lj55;
+
+
+# static fields
+.field public static final c:Ljava/lang/String;
+
+.field public static final d:Ljava/util/Set;
+
+.field public static final e:Lkw0;
+
+.field public static final f:Lkw0;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/lang/String;
 
-.field public final b:Ljava/io/OutputStream;
-
-.field public c:Ljava/nio/ByteOrder;
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/OutputStream;)V
+.method static constructor <clinit>()V
+    .registers 7
+
+    const-string v0, "hts/frbslgiggolai.o/0clgbthfra=snpoo"
+
+    const-string v1, "tp:/ieaeogn.ogepscmvc/o/ac?omtjo_rt3"
+
+    invoke-static {v0, v1}, Lyu0;->y(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lkw0;->c:Ljava/lang/String;
+
+    const-string v1, "hts/frbslgigp.ogepscmv/ieo/eaybtho"
+
+    const-string v2, "tp:/ieaeogn-agolai.o/1frlglgc/aclg"
+
+    invoke-static {v1, v2}, Lyu0;->y(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "AzSCki82AwsLzKd5O8zo"
+
+    const-string v3, "IayckHiZRO1EFl1aGoK"
+
+    invoke-static {v2, v3}, Lyu0;->y(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/util/HashSet;
+
+    new-instance v4, Ll65;
+
+    const-string v5, "proto"
+
+    invoke-direct {v4, v5}, Ll65;-><init>(Ljava/lang/String;)V
+
+    new-instance v5, Ll65;
+
+    const-string v6, "json"
+
+    invoke-direct {v5, v6}, Ll65;-><init>(Ljava/lang/String;)V
+
+    filled-new-array {v4, v5}, [Ll65;
+
+    move-result-object v4
+
+    invoke-static {v4}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+
+    invoke-static {v3}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v3
+
+    sput-object v3, Lkw0;->d:Ljava/util/Set;
+
+    new-instance v3, Lkw0;
+
+    const/4 v4, 0x0
+
+    invoke-direct {v3, v0, v4}, Lkw0;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    sput-object v3, Lkw0;->e:Lkw0;
+
+    new-instance v0, Lkw0;
+
+    invoke-direct {v0, v1, v2}, Lkw0;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lkw0;->f:Lkw0;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lkw0;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lkw0;->b:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public static a([B)Lkw0;
+    .registers 4
+
+    new-instance v0, Ljava/lang/String;
+
+    const-string v1, "UTF-8"
+
+    invoke-static {v1}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
+
+    const-string p0, "1$"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_3
+
+    const/4 p0, 0x2
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "\\"
+
+    invoke-static {v1}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1, p0}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object v0
+
+    array-length v1, v0
+
+    if-ne v1, p0, :cond_2
+
+    const/4 p0, 0x0
+
+    aget-object p0, v0, p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    const/4 v1, 0x1
+
+    aget-object v0, v0, v1
+
+    new-instance v1, Lkw0;
+
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lkw0;->a:I
-
-    sget-object v0, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
-
-    invoke-direct {p0, p1}, Ljava/io/FilterOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    iput-object p1, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    iput-object v0, p0, Lkw0;->c:Ljava/nio/ByteOrder;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/io/OutputStream;Ljava/nio/ByteOrder;)V
-    .registers 4
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lkw0;->a:I
-
-    invoke-direct {p0, p1}, Ljava/io/FilterOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    iput-object p1, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    iput-object p2, p0, Lkw0;->c:Ljava/nio/ByteOrder;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public c(I)V
-    .registers 2
-
-    iget-object p0, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write(I)V
-
-    return-void
-.end method
-
-.method public final d(I)V
-    .registers 4
-
-    iget v0, p0, Lkw0;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lkw0;->c:Ljava/nio/ByteOrder;
-
-    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
-
-    iget-object p0, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    if-ne v0, v1, :cond_0
-
-    and-int/lit16 v0, p1, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 v0, p1, 0x8
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 v0, p1, 0x10
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 p1, p1, 0x18
-
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write(I)V
-
-    goto :goto_0
-
     :cond_0
-    sget-object v1, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
+    invoke-direct {v1, p0, v0}, Lkw0;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    if-ne v0, v1, :cond_1
-
-    ushr-int/lit8 v0, p1, 0x18
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 v0, p1, 0x10
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 v0, p1, 0x8
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write(I)V
+    return-object v1
 
     :cond_1
-    :goto_0
-    return-void
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    :pswitch_0
-    iget-object v0, p0, Lkw0;->c:Ljava/nio/ByteOrder;
+    const-string v0, "Missing endpoint in CCTDestination extras"
 
-    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    if-ne v0, v1, :cond_2
-
-    and-int/lit16 v0, p1, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 v0, p1, 0x8
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 v0, p1, 0x10
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 p1, p1, 0x18
-
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write(I)V
-
-    goto :goto_1
+    throw p0
 
     :cond_2
-    sget-object v1, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    if-ne v0, v1, :cond_3
+    const-string v0, "Extra is not a valid encoded LegacyFlgDestination"
 
-    ushr-int/lit8 v0, p1, 0x18
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 v0, p1, 0x10
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 v0, p1, 0x8
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write(I)V
+    throw p0
 
     :cond_3
-    :goto_1
-    return-void
+    new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    nop
+    const-string v0, "Version marker missing from extras"
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-.method public final i(S)V
-    .registers 4
-
-    iget v0, p0, Lkw0;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object v0, p0, Lkw0;->c:Ljava/nio/ByteOrder;
-
-    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
-
-    iget-object p0, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    if-ne v0, v1, :cond_0
-
-    and-int/lit16 v0, p1, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 p1, p1, 0x8
-
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write(I)V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v1, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
-
-    if-ne v0, v1, :cond_1
-
-    ushr-int/lit8 v0, p1, 0x8
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write(I)V
-
-    :cond_1
-    :goto_0
-    return-void
-
-    :pswitch_0
-    iget-object v0, p0, Lkw0;->c:Ljava/nio/ByteOrder;
-
-    sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
-
-    iget-object p0, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    if-ne v0, v1, :cond_2
-
-    and-int/lit16 v0, p1, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    ushr-int/lit8 p1, p1, 0x8
-
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write(I)V
-
-    goto :goto_1
-
-    :cond_2
-    sget-object v1, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
-
-    if-ne v0, v1, :cond_3
-
-    ushr-int/lit8 v0, p1, 0x8
-
-    and-int/lit16 v0, v0, 0xff
-
-    invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write(I)V
-
-    and-int/lit16 p1, p1, 0xff
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write(I)V
-
-    :cond_3
-    :goto_1
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final write([B)V
-    .registers 3
-
-    iget v0, p0, Lkw0;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write([B)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    invoke-virtual {p0, p1}, Ljava/io/OutputStream;->write([B)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final write([BII)V
-    .registers 5
-
-    iget v0, p0, Lkw0;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    invoke-virtual {p0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lkw0;->b:Ljava/io/OutputStream;
-
-    invoke-virtual {p0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw p0
 .end method

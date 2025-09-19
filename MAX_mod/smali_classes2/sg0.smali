@@ -1,178 +1,514 @@
-.class public final Lsg0;
+.class public abstract synthetic Lsg0;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Landroid/graphics/drawable/GradientDrawable;
-
-.field public final b:I
-
-.field public final c:F
-
-
 # direct methods
-.method public constructor <init>(Landroid/graphics/drawable/GradientDrawable;II)V
-    .registers 4
+.method public static synthetic a(I)C
+    .registers 2
 
-    and-int/lit8 p3, p3, 0x8
+    const/4 v0, 0x1
 
-    if-eqz p3, :cond_0
+    if-eq p0, v0, :cond_1
 
-    const/high16 p3, 0x41400000    # 12.0f
+    const/4 v0, 0x2
 
-    goto :goto_0
+    if-ne p0, v0, :cond_0
 
-    :cond_0
-    const/high16 p3, 0x41200000    # 10.0f
+    const/16 p0, 0x67
 
-    :goto_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lsg0;->a:Landroid/graphics/drawable/GradientDrawable;
-
-    iput p2, p0, Lsg0;->b:I
-
-    iput p3, p0, Lsg0;->c:F
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
-
-    if-ne p0, p1, :cond_0
-
-    goto :goto_1
+    return p0
 
     :cond_0
-    instance-of v0, p1, Lsg0;
-
-    if-nez v0, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lsg0;
-
-    iget-object v0, p0, Lsg0;->a:Landroid/graphics/drawable/GradientDrawable;
-
-    iget-object v1, p1, Lsg0;->a:Landroid/graphics/drawable/GradientDrawable;
-
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget v0, p0, Lsg0;->b:I
-
-    iget v1, p1, Lsg0;->b:I
-
-    if-eq v0, v1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    iget p0, p0, Lsg0;->c:F
-
-    iget p1, p1, Lsg0;->c:F
-
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
-
-    move-result p0
-
-    if-eqz p0, :cond_4
-
-    :goto_0
     const/4 p0, 0x0
 
-    return p0
+    throw p0
 
-    :cond_4
-    :goto_1
-    const/4 p0, 0x1
+    :cond_1
+    const/16 p0, 0x75
 
     return p0
 .end method
 
-.method public final hashCode()I
+.method public static b(FFII)I
     .registers 4
 
-    iget-object v0, p0, Lsg0;->a:Landroid/graphics/drawable/GradientDrawable;
+    mul-float/2addr p0, p1
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lsg0;->b:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    const/16 v2, 0x14
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget p0, p0, Lsg0;->c:F
-
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+    invoke-static {p0}, Lya6;->G(F)I
 
     move-result p0
 
-    add-int/2addr p0, v0
+    add-int/2addr p0, p2
+
+    add-int/2addr p0, p3
 
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public static c(IILu2f;)I
     .registers 3
+
+    invoke-virtual {p2}, Ljava/lang/Object;->hashCode()I
+
+    move-result p2
+
+    add-int/2addr p2, p0
+
+    mul-int/2addr p2, p1
+
+    return p2
+.end method
+
+.method public static d(ILandroid/os/Bundle;Ls6d;I)Llj3;
+    .registers 5
+
+    new-instance v0, Lp2f;
+
+    invoke-direct {v0, p0}, Lp2f;-><init>(I)V
+
+    invoke-static {v0, p1, p2, p3}, Lhv8;->c(Lu2f;Landroid/os/Bundle;Ls6d;I)Llj3;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .registers 4
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "Style(backgroundDrawable="
+    invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lsg0;->a:Landroid/graphics/drawable/GradientDrawable;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", width="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lsg0;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", height=20, textSize="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget p0, p0, Lsg0;->c:F
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    .registers 6
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, p0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static g(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, p0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static h(Ljava/lang/StringBuilder;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    .registers 5
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static i(JLjava/lang/String;Ljava/lang/String;Z)Ljava/lang/StringBuilder;
+    .registers 6
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, p2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    return-object v0
+.end method
+
+.method public static j(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/StringBuilder;
+    .registers 6
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, p0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    return-object v0
+.end method
+
+.method public static k(ILjava/lang/String;Ljava/lang/String;)V
+    .registers 4
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p2, p0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static l(Ljava/lang/String;Lv85;)V
+    .registers 3
+
+    new-instance v0, Lva4;
+
+    invoke-direct {v0, p0}, Lva4;-><init>(Ljava/lang/String;)V
+
+    invoke-static {p1, v0}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static m(ZLuzc;ZLjava/lang/String;)V
+    .registers 5
+
+    new-instance v0, Li2e;
+
+    invoke-direct {v0, p0}, Li2e;-><init>(Z)V
+
+    invoke-virtual {p1, v0}, Luzc;->c(Lcy3;)V
+
+    new-instance p0, Li2e;
+
+    invoke-direct {p0, p2}, Li2e;-><init>(Z)V
+
+    invoke-virtual {p1, p0}, Luzc;->a(Lcy3;)V
+
+    invoke-virtual {p1, p3}, Luzc;->d(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static synthetic n(I)Ljava/lang/String;
+    .registers 2
+
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x2
+
+    if-ne p0, v0, :cond_0
+
+    const-string p0, "GROUP"
+
+    return-object p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    throw p0
+
+    :cond_1
+    const-string p0, "USER"
+
+    return-object p0
+.end method
+
+.method public static synthetic o(I)Ljava/lang/String;
+    .registers 1
+
+    packed-switch p0, :pswitch_data_0
+
+    const/4 p0, 0x0
+
+    throw p0
+
+    :pswitch_0
+    const-string p0, "CONFIGURED"
+
+    return-object p0
+
+    :pswitch_1
+    const-string p0, "OPENED"
+
+    return-object p0
+
+    :pswitch_2
+    const-string p0, "OPENING"
+
+    return-object p0
+
+    :pswitch_3
+    const-string p0, "REOPENING"
+
+    return-object p0
+
+    :pswitch_4
+    const-string p0, "REOPENING_QUIRK"
+
+    return-object p0
+
+    :pswitch_5
+    const-string p0, "CLOSING"
+
+    return-object p0
+
+    :pswitch_6
+    const-string p0, "PENDING_OPEN"
+
+    return-object p0
+
+    :pswitch_7
+    const-string p0, "INITIALIZED"
+
+    return-object p0
+
+    :pswitch_8
+    const-string p0, "RELEASING"
+
+    return-object p0
+
+    :pswitch_9
+    const-string p0, "RELEASED"
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static synthetic p(I)Ljava/lang/String;
+    .registers 2
+
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_2
+
+    const/4 v0, 0x2
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x3
+
+    if-eq p0, v0, :cond_0
+
+    const-string p0, "null"
+
+    return-object p0
+
+    :cond_0
+    const-string p0, "DROP_LATEST"
+
+    return-object p0
+
+    :cond_1
+    const-string p0, "DROP_OLDEST"
+
+    return-object p0
+
+    :cond_2
+    const-string p0, "SUSPEND"
+
+    return-object p0
+.end method
+
+.method public static synthetic q(I)Ljava/lang/String;
+    .registers 2
+
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_2
+
+    const/4 v0, 0x2
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x3
+
+    if-eq p0, v0, :cond_0
+
+    const-string p0, "null"
+
+    return-object p0
+
+    :cond_0
+    const-string p0, "VIDEO"
+
+    return-object p0
+
+    :cond_1
+    const-string p0, "AUDIO"
+
+    return-object p0
+
+    :cond_2
+    const-string p0, "UNKNOWN"
+
+    return-object p0
+.end method
+
+.method public static synthetic r(I)Ljava/lang/String;
+    .registers 1
+
+    packed-switch p0, :pswitch_data_0
+
+    const-string p0, "null"
+
+    return-object p0
+
+    :pswitch_0
+    const-string p0, "CONFIGURED"
+
+    return-object p0
+
+    :pswitch_1
+    const-string p0, "OPENED"
+
+    return-object p0
+
+    :pswitch_2
+    const-string p0, "OPENING"
+
+    return-object p0
+
+    :pswitch_3
+    const-string p0, "REOPENING"
+
+    return-object p0
+
+    :pswitch_4
+    const-string p0, "REOPENING_QUIRK"
+
+    return-object p0
+
+    :pswitch_5
+    const-string p0, "CLOSING"
+
+    return-object p0
+
+    :pswitch_6
+    const-string p0, "PENDING_OPEN"
+
+    return-object p0
+
+    :pswitch_7
+    const-string p0, "INITIALIZED"
+
+    return-object p0
+
+    :pswitch_8
+    const-string p0, "RELEASING"
+
+    return-object p0
+
+    :pswitch_9
+    const-string p0, "RELEASED"
+
+    return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static synthetic s(I)Ljava/lang/String;
+    .registers 2
+
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_2
+
+    const/4 v0, 0x2
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x3
+
+    if-eq p0, v0, :cond_0
+
+    const-string p0, "null"
+
+    return-object p0
+
+    :cond_0
+    const-string p0, "UNKNOWN"
+
+    return-object p0
+
+    :cond_1
+    const-string p0, "BACK"
+
+    return-object p0
+
+    :cond_2
+    const-string p0, "FRONT"
 
     return-object p0
 .end method

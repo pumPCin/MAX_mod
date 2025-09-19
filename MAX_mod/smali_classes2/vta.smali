@@ -1,41 +1,31 @@
-.class public abstract Lvta;
+.class public final Lvta;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/lang/Object;
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:I
+
+.field public final c:Ljava/lang/String;
+
+.field public final d:Ljava/util/Set;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/util/Set;)V
+    .registers 5
 
-    new-instance v0, Lmna;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 v1, 0x3
+    iput p2, p0, Lvta;->b:I
 
-    invoke-direct {v0, v1}, Lmna;-><init>(I)V
+    iput-object p1, p0, Lvta;->a:Ljava/lang/String;
 
-    invoke-static {v1, v0}, Lmtg;->u(ILh96;)Lxh7;
+    iput-object p3, p0, Lvta;->c:Ljava/lang/String;
 
-    move-result-object v0
-
-    sput-object v0, Lvta;->a:Ljava/lang/Object;
+    iput-object p4, p0, Lvta;->d:Ljava/util/Set;
 
     return-void
-.end method
-
-.method public static final a()Landroid/graphics/Paint;
-    .registers 1
-
-    sget-object v0, Lvta;->a:Ljava/lang/Object;
-
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/Paint;
-
-    return-object v0
 .end method

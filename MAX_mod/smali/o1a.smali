@@ -1,139 +1,85 @@
 .class public final Lo1a;
-.super Lu2;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final synthetic b:I
-
-.field public final c:Lqxc;
+.field public final a:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public constructor <init>(Lhsb;Lqxc;I)V
-    .registers 4
+.method public constructor <init>(Ljava/lang/Throwable;)V
+    .registers 2
 
-    iput p3, p0, Lo1a;->b:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    packed-switch p3, :pswitch_data_0
-
-    sget-object p3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-direct {p0, p1}, Lu2;-><init>(Lt3a;)V
-
-    iput-object p2, p0, Lo1a;->c:Lqxc;
-
-    return-void
-
-    :pswitch_0
-    sget-object p3, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-direct {p0, p1}, Lu2;-><init>(Lt3a;)V
-
-    iput-object p2, p0, Lo1a;->c:Lqxc;
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public constructor <init>(Ly0a;Lqxc;)V
-    .registers 4
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lo1a;->b:I
-
-    invoke-direct {p0, p1}, Lu2;-><init>(Lt3a;)V
-
-    iput-object p2, p0, Lo1a;->c:Lqxc;
+    iput-object p1, p0, Lo1a;->a:Ljava/lang/Throwable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ld4a;)V
-    .registers 5
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    iget v0, p0, Lo1a;->b:I
+    instance-of v0, p1, Lo1a;
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz v0, :cond_0
 
-    new-instance v0, Lx3a;
+    check-cast p1, Lo1a;
 
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    iget-object p0, p0, Lo1a;->a:Ljava/lang/Throwable;
 
-    iget-object v1, p0, Lo1a;->c:Lqxc;
+    iget-object p1, p1, Lo1a;->a:Ljava/lang/Throwable;
 
-    invoke-virtual {v1}, Lqxc;->a()Loxc;
+    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result-object v1
+    move-result p0
 
-    invoke-direct {v0, p1, v1}, Lx3a;-><init>(Ld4a;Loxc;)V
+    return p0
 
-    iget-object p0, p0, Lu2;->a:Lt3a;
+    :cond_0
+    const/4 p0, 0x0
 
-    invoke-interface {p0, v0}, Lt3a;->a(Ld4a;)V
+    return p0
+.end method
 
-    return-void
+.method public final hashCode()I
+    .registers 1
 
-    :pswitch_0
-    new-instance v0, Lhs1;
+    iget-object p0, p0, Lo1a;->a:Ljava/lang/Throwable;
 
-    invoke-direct {v0, p1}, Lhs1;-><init>(Ld4a;)V
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    invoke-interface {p1, v0}, Ld4a;->c(Lnp4;)V
+    move-result p0
 
-    new-instance p1, Leb6;
+    return p0
+.end method
 
-    const/16 v1, 0x10
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    const/4 v2, 0x0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {p1, p0, v0, v2, v1}, Leb6;-><init>(Ljava/lang/Object;Ljava/lang/Object;ZI)V
+    const-string v1, "NotificationLite.Error["
 
-    iget-object p0, p0, Lo1a;->c:Lqxc;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p0, p1}, Lqxc;->b(Ljava/lang/Runnable;)Lnp4;
+    iget-object p0, p0, Lo1a;->a:Ljava/lang/Throwable;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, "]"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {v0, p0}, Lrp4;->e(Ljava/util/concurrent/atomic/AtomicReference;Lnp4;)Z
-
-    return-void
-
-    :pswitch_1
-    new-instance v0, Ln1a;
-
-    new-instance v1, Lrad;
-
-    invoke-direct {v1, p1}, Lrad;-><init>(Ld4a;)V
-
-    sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    iget-object p1, p0, Lo1a;->c:Lqxc;
-
-    invoke-virtual {p1}, Lqxc;->a()Loxc;
-
-    move-result-object p1
-
-    invoke-direct {v0, v1, p1}, Ln1a;-><init>(Lrad;Loxc;)V
-
-    iget-object p0, p0, Lu2;->a:Lt3a;
-
-    invoke-interface {p0, v0}, Lt3a;->a(Ld4a;)V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

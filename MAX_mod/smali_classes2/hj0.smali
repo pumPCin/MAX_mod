@@ -1,59 +1,71 @@
-.class public Lhj0;
-.super Lij0;
+.class public final Lhj0;
+.super Lief;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Ldoe;
+.field public final synthetic a:I
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(JLdoe;)V
-    .registers 4
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
+    .registers 3
 
-    invoke-direct {p0, p1, p2}, Lij0;-><init>(J)V
+    iput p1, p0, Lhj0;->a:I
 
-    iput-object p3, p0, Lhj0;->b:Ldoe;
+    iput-object p2, p0, Lhj0;->b:Ljava/lang/Object;
 
-    return-void
-.end method
-
-.method public constructor <init>(Ldoe;)V
-    .registers 4
-
-    const-wide/high16 v0, -0x8000000000000000L
-
-    invoke-direct {p0, v0, v1, p1}, Lhj0;-><init>(JLdoe;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public toString()Ljava/lang/String;
+.method public final c(Lfef;)V
     .registers 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget v0, p0, Lhj0;->a:I
 
-    const-string v1, "BaseErrorEvent{error="
+    packed-switch v0, :pswitch_data_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object v0, p0, Lhj0;->b:Ljava/lang/Object;
 
-    iget-object v1, p0, Lhj0;->b:Ldoe;
+    check-cast v0, Lfef;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lfef;->H()V
 
-    const-string v1, ", requestId="
+    invoke-virtual {p1, p0}, Lfef;->E(Ldef;)Lfef;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-void
 
-    iget-wide v1, p0, Lij0;->a:J
+    :pswitch_0
+    iget-object p0, p0, Lhj0;->b:Ljava/lang/Object;
 
-    const/16 p0, 0x7d
+    check-cast p0, Lzp9;
 
-    invoke-static {v0, v1, v2, p0}, Loq9;->h(Ljava/lang/StringBuilder;JC)Ljava/lang/String;
+    iget-object p0, p0, Lzp9;->b:Ldq9;
 
-    move-result-object p0
+    iget-object p1, p0, Ldq9;->c:Ljava/util/concurrent/ConcurrentHashMap;
 
-    return-object p0
+    const-wide/16 v0, 0x0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0}, Ldq9;->b1()V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

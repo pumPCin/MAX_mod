@@ -3,32 +3,80 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final r:Lys9;
+# virtual methods
+.method public abstract a()Lubf;
+.end method
 
+.method public abstract b()I
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public abstract c(Z)V
+.end method
 
-    new-instance v0, Lys9;
+.method public abstract d(I)Lx46;
+.end method
 
-    const/16 v1, 0xb
+.method public abstract e()V
+.end method
 
-    invoke-direct {v0, v1}, Lys9;-><init>(I)V
+.method public abstract f(I)I
+.end method
 
-    sput-object v0, Lpd5;->r:Lys9;
+.method public abstract g(JLjava/util/List;)I
+.end method
+
+.method public abstract h()V
+.end method
+
+.method public abstract i()I
+.end method
+
+.method public abstract j()Lx46;
+.end method
+
+.method public abstract k()I
+.end method
+
+.method public abstract l(F)V
+.end method
+
+.method public abstract length()I
+.end method
+
+.method public abstract m()Ljava/lang/Object;
+.end method
+
+.method public n()V
+    .registers 1
 
     return-void
 .end method
 
+.method public o()V
+    .registers 1
 
-# virtual methods
-.method public abstract A(II)La3f;
+    return-void
 .end method
 
-.method public abstract K(Lm5d;)V
+.method public abstract p(I)I
 .end method
 
-.method public abstract v()V
+.method public abstract q(IJ)Z
+.end method
+
+.method public abstract r(JJJLjava/util/List;[Lxd8;)V
+.end method
+
+.method public abstract s(Lx46;)I
+.end method
+
+.method public t(JLb33;Ljava/util/List;)Z
+    .registers 5
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public abstract u(IJ)Z
 .end method

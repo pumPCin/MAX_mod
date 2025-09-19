@@ -61,7 +61,7 @@
 
     move-object v0, p0
 
-    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;-><init>(JIILwc4;)V
+    invoke-direct/range {v0 .. v5}, Lru/ok/android/externcalls/sdk/rate/rtt/RttRateHintConfig;-><init>(JIILld4;)V
 
     return-void
 .end method
@@ -78,7 +78,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(JIILwc4;)V
+.method public synthetic constructor <init>(JIILld4;)V
     .registers 6
 
     and-int/lit8 p5, p4, 0x1

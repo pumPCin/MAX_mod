@@ -1,398 +1,460 @@
-.class public final synthetic Lpk4;
+.class public abstract Lpk4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ltk4;
-.implements Lxud;
+
+# static fields
+.field public static final k:Landroid/util/Size;
+
+.field public static final l:Ljava/util/concurrent/atomic/AtomicInteger;
+
+.field public static final m:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # instance fields
-.field public final synthetic X:J
+.field public final a:Ljava/lang/Object;
 
-.field public final synthetic Y:Ljava/lang/Object;
+.field public b:I
 
-.field public final synthetic a:I
+.field public c:Z
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public d:Lqs1;
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public final e:Lts1;
 
-.field public final synthetic o:J
+.field public f:Lqs1;
+
+.field public final g:Lts1;
+
+.field public final h:Landroid/util/Size;
+
+.field public final i:I
+
+.field public j:Ljava/lang/Class;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;JJLjava/lang/Object;I)V
-    .registers 9
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput p8, p0, Lpk4;->a:I
+    new-instance v0, Landroid/util/Size;
 
-    iput-object p1, p0, Lpk4;->b:Ljava/lang/Object;
+    const/4 v1, 0x0
 
-    iput-object p2, p0, Lpk4;->c:Ljava/lang/Object;
+    invoke-direct {v0, v1, v1}, Landroid/util/Size;-><init>(II)V
 
-    iput-wide p3, p0, Lpk4;->o:J
+    sput-object v0, Lpk4;->k:Landroid/util/Size;
 
-    iput-wide p5, p0, Lpk4;->X:J
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    iput-object p7, p0, Lpk4;->Y:Ljava/lang/Object;
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    sput-object v0, Lpk4;->l:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    sput-object v0, Lpk4;->m:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/util/Size;I)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lpk4;->a:Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    iput v0, p0, Lpk4;->b:I
+
+    iput-boolean v0, p0, Lpk4;->c:Z
+
+    iput-object p1, p0, Lpk4;->h:Landroid/util/Size;
+
+    iput p2, p0, Lpk4;->i:I
+
+    new-instance p1, Lnk4;
+
+    const/4 p2, 0x0
+
+    invoke-direct {p1, p0, p2}, Lnk4;-><init>(Lpk4;I)V
+
+    invoke-static {p1}, Lf54;->l(Lrs1;)Lts1;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lpk4;->e:Lts1;
+
+    new-instance p2, Lnk4;
+
+    const/4 v0, 0x1
+
+    invoke-direct {p2, p0, v0}, Lnk4;-><init>(Lpk4;I)V
+
+    invoke-static {p2}, Lf54;->l(Lrs1;)Lts1;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lpk4;->g:Lts1;
+
+    const-string p2, "DeferrableSurface"
+
+    const/4 v0, 0x3
+
+    invoke-static {v0, p2}, Lx4h;->u(ILjava/lang/String;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    sget-object p2, Lpk4;->m:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+
+    sget-object p2, Lpk4;->l:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {p2}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    new-instance p2, Ljava/lang/Exception;
+
+    invoke-direct {p2}, Ljava/lang/Exception;-><init>()V
+
+    invoke-static {p2}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
+
+    move-result-object p2
+
+    new-instance v0, Lok4;
+
+    invoke-direct {v0, p0, p2}, Lok4;-><init>(Lpk4;Ljava/lang/String;)V
+
+    invoke-static {}, Ln4e;->q()Lep4;
+
+    move-result-object p0
+
+    iget-object p1, p1, Lts1;->b:Lss1;
+
+    invoke-virtual {p1, v0, p0}, Lq3;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
+
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public b(Lp8d;)Ljava/util/concurrent/ScheduledFuture;
-    .registers 12
+.method public a()V
+    .registers 6
 
-    iget v0, p0, Lpk4;->a:I
+    iget-object v0, p0, Lpk4;->a:Ljava/lang/Object;
 
-    packed-switch v0, :pswitch_data_0
+    monitor-enter v0
 
-    iget-object v0, p0, Lpk4;->b:Ljava/lang/Object;
-
-    check-cast v0, Lsk4;
-
-    iget-object v1, p0, Lpk4;->c:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Runnable;
-
-    iget-object v2, p0, Lpk4;->Y:Ljava/lang/Object;
-
-    move-object v9, v2
-
-    check-cast v9, Ljava/util/concurrent/TimeUnit;
-
-    iget-object v3, v0, Lsk4;->b:Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance v4, Lqk4;
-
-    const/4 v2, 0x2
-
-    invoke-direct {v4, v0, v1, p1, v2}, Lqk4;-><init>(Lsk4;Ljava/lang/Runnable;Lp8d;I)V
-
-    iget-wide v5, p0, Lpk4;->o:J
-
-    iget-wide v7, p0, Lpk4;->X:J
-
-    invoke-interface/range {v3 .. v9}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleWithFixedDelay(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    iget-object v0, p0, Lpk4;->b:Ljava/lang/Object;
-
-    check-cast v0, Lsk4;
-
-    iget-object v1, p0, Lpk4;->c:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/Runnable;
-
-    iget-object v2, p0, Lpk4;->Y:Ljava/lang/Object;
-
-    move-object v9, v2
-
-    check-cast v9, Ljava/util/concurrent/TimeUnit;
-
-    iget-object v3, v0, Lsk4;->b:Ljava/util/concurrent/ScheduledExecutorService;
-
-    new-instance v4, Lqk4;
+    :try_start_0
+    iget-boolean v1, p0, Lpk4;->c:Z
 
     const/4 v2, 0x0
 
-    invoke-direct {v4, v0, v1, p1, v2}, Lqk4;-><init>(Lsk4;Ljava/lang/Runnable;Lp8d;I)V
+    if-nez v1, :cond_1
 
-    iget-wide v5, p0, Lpk4;->o:J
+    const/4 v1, 0x1
 
-    iget-wide v7, p0, Lpk4;->X:J
+    iput-boolean v1, p0, Lpk4;->c:Z
 
-    invoke-interface/range {v3 .. v9}, Ljava/util/concurrent/ScheduledExecutorService;->scheduleAtFixedRate(Ljava/lang/Runnable;JJLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;
+    iget-object v1, p0, Lpk4;->f:Lqs1;
 
-    move-result-object p0
+    invoke-virtual {v1, v2}, Lqs1;->b(Ljava/lang/Object;)Z
 
-    return-object p0
+    iget v1, p0, Lpk4;->b:I
 
-    nop
+    if-nez v1, :cond_0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    iget-object v1, p0, Lpk4;->d:Lqs1;
 
-.method public h(Lgud;)V
-    .registers 25
+    iput-object v2, p0, Lpk4;->d:Lqs1;
 
-    move-object/from16 v0, p0
+    goto :goto_0
 
-    move-object/from16 v1, p1
-
-    iget-object v2, v0, Lpk4;->b:Ljava/lang/Object;
-
-    check-cast v2, Lfvf;
-
-    iget-object v3, v0, Lpk4;->c:Ljava/lang/Object;
-
-    check-cast v3, Lw10;
-
-    iget-object v4, v0, Lpk4;->Y:Ljava/lang/Object;
-
-    check-cast v4, Lv10;
-
-    iget-object v5, v2, Lfvf;->b:Landroid/content/Context;
-
-    invoke-virtual {v3}, Lw10;->i()Z
-
-    move-result v6
-
-    iget-object v7, v3, Lw10;->d:Lv10;
-
-    invoke-static {v3}, Lbv7;->G(Lw10;)Z
-
-    move-result v8
-
-    invoke-virtual {v2, v3}, Lfvf;->b(Lw10;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v9}, Lms8;->t(Ljava/lang/CharSequence;)Z
-
-    move-result v10
-
-    if-nez v10, :cond_0
-
-    new-instance v0, Luu7;
-
-    invoke-direct {v0, v5, v9}, Luu7;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-
-    goto/16 :goto_2
-
-    :cond_0
-    const/4 v9, 0x0
-
-    if-nez v6, :cond_1
-
-    if-nez v8, :cond_1
-
-    :goto_0
-    move-object v0, v9
-
-    goto/16 :goto_2
-
-    :cond_1
-    iget-wide v10, v0, Lpk4;->o:J
-
-    iget-wide v12, v0, Lpk4;->X:J
-
-    const-string v0, "VideoRipper"
-
-    if-eqz v6, :cond_2
-
-    iget-object v6, v7, Lv10;->h:Ljava/lang/String;
-
-    invoke-static {v6}, Lms8;->t(Ljava/lang/CharSequence;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    const-string v5, "buildFetcher: video from ok"
-
-    invoke-static {v0, v5}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-wide/from16 v16, v10
-
-    new-instance v10, Lr77;
-
-    iget-object v11, v2, Lfvf;->j:Lyj3;
-
-    move-wide/from16 v18, v12
-
-    iget-object v12, v2, Lfvf;->i:Lqpe;
-
-    iget-object v13, v2, Lfvf;->e:Lvoe;
-
-    iget-object v14, v2, Lfvf;->k:Lrv0;
-
-    iget-object v15, v2, Lfvf;->h:Lik;
-
-    iget-wide v5, v7, Lv10;->a:J
-
-    iget-object v0, v7, Lv10;->m:Ljava/lang/String;
-
-    move-object/from16 v22, v0
-
-    move-wide/from16 v20, v18
-
-    move-wide/from16 v18, v16
-
-    move-wide/from16 v16, v5
-
-    invoke-direct/range {v10 .. v22}, Lr77;-><init>(Lyj3;Lqpe;Ltoe;Lrv0;Lik;JJJLjava/lang/String;)V
-
-    :goto_1
-    move-object v0, v10
+    :catchall_0
+    move-exception p0
 
     goto :goto_2
 
-    :cond_2
-    move-wide/from16 v16, v10
+    :cond_0
+    move-object v1, v2
 
-    move-wide/from16 v18, v12
+    :goto_0
+    const-string v3, "DeferrableSurface"
 
-    if-eqz v8, :cond_3
+    const/4 v4, 0x3
 
-    const-string v5, "buildFetcher: video file"
+    invoke-static {v4, v3}, Lx4h;->u(ILjava/lang/String;)Z
 
-    invoke-static {v0, v5}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    move-result v3
 
-    new-instance v10, Lxm5;
+    if-eqz v3, :cond_2
 
-    iget-object v11, v2, Lfvf;->h:Lik;
-
-    iget-object v12, v2, Lfvf;->f:Lqxc;
-
-    iget-object v13, v2, Lfvf;->i:Lqpe;
-
-    iget-object v0, v3, Lw10;->j:Lf10;
-
-    iget-wide v14, v0, Lf10;->a:J
-
-    invoke-direct/range {v10 .. v19}, Lxm5;-><init>(Lik;Lqxc;Lqpe;JJJ)V
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     goto :goto_1
 
+    :cond_1
+    move-object v1, v2
+
+    :cond_2
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v1, :cond_3
+
+    invoke-virtual {v1, v2}, Lqs1;->b(Ljava/lang/Object;)Z
+
     :cond_3
-    iget-object v6, v7, Lv10;->h:Ljava/lang/String;
-
-    invoke-static {v6}, Long;->b(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_4
-
-    const-string v7, "buildFetcher: youtube video"
-
-    invoke-static {v0, v7}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Long;
-
-    invoke-direct {v0, v5, v6}, Long;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :cond_4
-    invoke-static {v6}, Lc0g;->b(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lms8;->t(Ljava/lang/CharSequence;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_5
-
-    const-string v6, "buildFetcher: vimeo"
-
-    invoke-static {v0, v6}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    new-instance v0, Lc0g;
-
-    invoke-direct {v0, v5}, Lc0g;-><init>(Ljava/lang/String;)V
-
-    goto :goto_2
-
-    :cond_5
-    const/4 v5, 0x0
-
-    new-array v6, v5, [Ljava/lang/Object;
-
-    invoke-static {v6, v5}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v5
-
-    const-string v6, "buildFetcher: unknown type! null"
-
-    invoke-static {v0, v9, v6, v5}, Ld86;->G(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    goto/16 :goto_0
+    return-void
 
     :goto_2
-    if-nez v0, :cond_8
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    iget-object v0, v3, Lw10;->x:Lm10;
+    throw p0
+.end method
 
-    sget-object v3, Lm10;->b:Lm10;
+.method public final b()V
+    .registers 6
 
-    if-ne v0, v3, :cond_6
+    iget-object v0, p0, Lpk4;->a:Ljava/lang/Object;
 
-    invoke-virtual {v1}, Lgud;->h()Z
+    monitor-enter v0
 
-    move-result v0
+    :try_start_0
+    iget v1, p0, Lpk4;->b:I
 
-    if-nez v0, :cond_9
+    if-eqz v1, :cond_3
 
-    new-instance v0, Lru/ok/messages/video/fetcher/FetcherException;
+    add-int/lit8 v1, v1, -0x1
 
-    const/16 v2, 0x9
+    iput v1, p0, Lpk4;->b:I
 
-    const-string v3, "video is processing"
+    const/4 v2, 0x0
 
-    invoke-direct {v0, v2, v3}, Lru/ok/messages/video/fetcher/FetcherException;-><init>(ILjava/lang/String;)V
+    if-nez v1, :cond_0
 
-    invoke-virtual {v1, v0}, Lgud;->onError(Ljava/lang/Throwable;)V
+    iget-boolean v1, p0, Lpk4;->c:Z
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lpk4;->d:Lqs1;
+
+    iput-object v2, p0, Lpk4;->d:Lqs1;
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_0
+    move-object v1, v2
+
+    :goto_0
+    const-string v3, "DeferrableSurface"
+
+    const/4 v4, 0x3
+
+    invoke-static {v4, v3}, Lx4h;->u(ILjava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    iget v3, p0, Lpk4;->b:I
+
+    if-nez v3, :cond_1
+
+    sget-object v3, Lpk4;->m:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    sget-object v3, Lpk4;->l:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicInteger;->decrementAndGet()I
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    :cond_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-eqz v1, :cond_2
+
+    invoke-virtual {v1, v2}, Lqs1;->b(Ljava/lang/Object;)Z
+
+    :cond_2
+    return-void
+
+    :cond_3
+    :try_start_1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Decrementing use count occurs more times than incrementing"
+
+    invoke-direct {p0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :goto_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
+.end method
+
+.method public final c()Lgt7;
+    .registers 4
+
+    iget-object v0, p0, Lpk4;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-boolean v1, p0, Lpk4;->c:Z
+
+    if-eqz v1, :cond_0
+
+    new-instance v1, Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException;
+
+    const-string v2, "DeferrableSurface already closed."
+
+    invoke-direct {v1, p0, v2}, Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException;-><init>(Lpk4;Ljava/lang/String;)V
+
+    new-instance p0, Lp27;
+
+    const/4 v2, 0x1
+
+    invoke-direct {p0, v2, v1}, Lp27;-><init>(ILjava/lang/Object;)V
+
+    monitor-exit v0
+
+    return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {p0}, Lpk4;->e()Lgt7;
+
+    move-result-object p0
+
+    monitor-exit v0
+
+    return-object p0
+
+    :goto_0
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p0
+.end method
+
+.method public final d()V
+    .registers 5
+
+    iget-object v0, p0, Lpk4;->a:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget v1, p0, Lpk4;->b:I
+
+    if-nez v1, :cond_1
+
+    iget-boolean v2, p0, Lpk4;->c:Z
+
+    if-nez v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    new-instance v1, Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException;
+
+    const-string v2, "Cannot begin use on a closed surface."
+
+    invoke-direct {v1, p0, v2}, Landroidx/camera/core/impl/DeferrableSurface$SurfaceClosedException;-><init>(Lpk4;Ljava/lang/String;)V
+
+    throw v1
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    const/4 v2, 0x1
+
+    add-int/2addr v1, v2
+
+    iput v1, p0, Lpk4;->b:I
+
+    const-string v1, "DeferrableSurface"
+
+    const/4 v3, 0x3
+
+    invoke-static {v3, v1}, Lx4h;->u(ILjava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    iget v1, p0, Lpk4;->b:I
+
+    if-ne v1, v2, :cond_2
+
+    sget-object v1, Lpk4;->m:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    sget-object v1, Lpk4;->l:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    :cond_2
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    :cond_3
+    monitor-exit v0
 
     return-void
 
-    :cond_6
-    iget-object v0, v2, Lfvf;->c:Lxi7;
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {v0}, Lxi7;->get()Ljava/lang/Object;
+    throw p0
+.end method
 
-    move-result-object v0
-
-    check-cast v0, Lsc;
-
-    if-eqz v0, :cond_7
-
-    const-string v2, "ACTION_VIDEO_FETCH_UNSUPPORTED"
-
-    iget-object v3, v4, Lv10;->h:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v3}, Lsc;->g(Ljava/lang/String;Ljava/lang/String;)V
-
-    :cond_7
-    invoke-virtual {v1}, Lgud;->h()Z
-
-    move-result v0
-
-    if-nez v0, :cond_9
-
-    new-instance v0, Lru/ok/messages/video/fetcher/FetcherException;
-
-    const/4 v2, 0x3
-
-    const-string v3, "Unsupported video hosting"
-
-    invoke-direct {v0, v2, v3}, Lru/ok/messages/video/fetcher/FetcherException;-><init>(ILjava/lang/String;)V
-
-    invoke-virtual {v1, v0}, Lgud;->onError(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_8
-    invoke-virtual {v1}, Lgud;->h()Z
-
-    move-result v2
-
-    if-nez v2, :cond_9
-
-    invoke-virtual {v1, v0}, Lgud;->a(Ljava/lang/Object;)V
-
-    :cond_9
-    return-void
+.method public abstract e()Lgt7;
 .end method

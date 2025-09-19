@@ -1,217 +1,116 @@
 .class public final Liuf;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Z
-
-.field public final b:Z
-
-.field public final c:Z
-
-.field public final d:Z
-
-.field public final e:Z
-
-.field public final f:Z
-
-.field public final g:Z
-
-.field public final h:Z
-
-.field public final i:J
-
-.field public final j:J
-
-.field public final k:J
-
-.field public final l:Lbtb;
-
-.field public final m:Lulf;
-
-.field public final n:Lv10;
-
-.field public final o:Landroid/graphics/drawable/BitmapDrawable;
-
-.field public final p:Landroid/net/Uri;
-
-.field public final q:Z
-
-.field public final r:Z
-
-.field public final s:Z
+.field public final synthetic X:Lnuf;
 
 
 # direct methods
-.method public constructor <init>(Lhuf;)V
-    .registers 4
+.method public constructor <init>(Lnuf;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Liuf;->X:Lnuf;
 
-    iget-boolean v0, p1, Lhuf;->a:Z
+    const/4 p1, 0x2
 
-    iput-boolean v0, p0, Liuf;->a:Z
-
-    iget-boolean v0, p1, Lhuf;->b:Z
-
-    iput-boolean v0, p0, Liuf;->b:Z
-
-    iget-boolean v0, p1, Lhuf;->c:Z
-
-    iput-boolean v0, p0, Liuf;->c:Z
-
-    iget-boolean v0, p1, Lhuf;->d:Z
-
-    iput-boolean v0, p0, Liuf;->d:Z
-
-    iget-boolean v0, p1, Lhuf;->e:Z
-
-    iput-boolean v0, p0, Liuf;->e:Z
-
-    iget-boolean v0, p1, Lhuf;->f:Z
-
-    iput-boolean v0, p0, Liuf;->f:Z
-
-    iget-boolean v0, p1, Lhuf;->g:Z
-
-    iput-boolean v0, p0, Liuf;->g:Z
-
-    iget-boolean v0, p1, Lhuf;->h:Z
-
-    iput-boolean v0, p0, Liuf;->h:Z
-
-    iget-wide v0, p1, Lhuf;->i:J
-
-    iput-wide v0, p0, Liuf;->i:J
-
-    iget-wide v0, p1, Lhuf;->j:J
-
-    iput-wide v0, p0, Liuf;->j:J
-
-    iget-wide v0, p1, Lhuf;->k:J
-
-    iput-wide v0, p0, Liuf;->k:J
-
-    iget-object v0, p1, Lhuf;->l:Lbtb;
-
-    iput-object v0, p0, Liuf;->l:Lbtb;
-
-    iget-object v0, p1, Lhuf;->m:Lulf;
-
-    iput-object v0, p0, Liuf;->m:Lulf;
-
-    iget-object v0, p1, Lhuf;->n:Lv10;
-
-    iput-object v0, p0, Liuf;->n:Lv10;
-
-    iget-object v0, p1, Lhuf;->o:Landroid/graphics/drawable/BitmapDrawable;
-
-    iput-object v0, p0, Liuf;->o:Landroid/graphics/drawable/BitmapDrawable;
-
-    iget-object v0, p1, Lhuf;->p:Landroid/net/Uri;
-
-    iput-object v0, p0, Liuf;->p:Landroid/net/Uri;
-
-    iget-boolean v0, p1, Lhuf;->q:Z
-
-    iput-boolean v0, p0, Liuf;->q:Z
-
-    iget-boolean v0, p1, Lhuf;->r:Z
-
-    iput-boolean v0, p0, Liuf;->r:Z
-
-    iget-boolean p1, p1, Lhuf;->s:Z
-
-    iput-boolean p1, p0, Liuf;->s:Z
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lhuf;
-    .registers 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    new-instance v0, Lhuf;
+    check-cast p1, Lylf;
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-boolean v1, p0, Liuf;->a:Z
+    invoke-virtual {p0, p1, p2}, Liuf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    iput-boolean v1, v0, Lhuf;->a:Z
+    move-result-object p0
 
-    iget-boolean v1, p0, Liuf;->b:Z
+    check-cast p0, Liuf;
 
-    iput-boolean v1, v0, Lhuf;->b:Z
+    sget-object p1, Lylf;->a:Lylf;
 
-    iget-boolean v1, p0, Liuf;->c:Z
+    invoke-virtual {p0, p1}, Liuf;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-boolean v1, v0, Lhuf;->c:Z
+    return-object p1
+.end method
 
-    iget-boolean v1, p0, Liuf;->d:Z
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    iput-boolean v1, v0, Lhuf;->d:Z
+    new-instance p1, Liuf;
 
-    iget-boolean v1, p0, Liuf;->e:Z
+    iget-object p0, p0, Liuf;->X:Lnuf;
 
-    iput-boolean v1, v0, Lhuf;->e:Z
+    invoke-direct {p1, p0, p2}, Liuf;-><init>(Lnuf;Lkotlin/coroutines/Continuation;)V
 
-    iget-boolean v1, p0, Liuf;->f:Z
+    return-object p1
+.end method
 
-    iput-boolean v1, v0, Lhuf;->f:Z
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
 
-    iget-boolean v1, p0, Liuf;->g:Z
+    sget-object v0, Lylf;->a:Lylf;
 
-    iput-boolean v1, v0, Lhuf;->g:Z
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    iget-boolean v1, p0, Liuf;->h:Z
+    iget-object p1, p0, Liuf;->X:Lnuf;
 
-    iput-boolean v1, v0, Lhuf;->h:Z
+    iget-object v1, p1, Lnuf;->f:Landroidx/recyclerview/widget/RecyclerView;
 
-    iget-wide v1, p0, Liuf;->i:J
+    if-nez v1, :cond_0
 
-    iput-wide v1, v0, Lhuf;->i:J
+    goto :goto_1
 
-    iget-wide v1, p0, Liuf;->j:J
+    :cond_0
+    iget-object p1, p1, Lnuf;->e:Ljava/lang/String;
 
-    iput-wide v1, v0, Lhuf;->j:J
+    sget-object v2, Ljtg;->g:Loja;
 
-    iget-wide v1, p0, Liuf;->k:J
+    if-nez v2, :cond_1
 
-    iput-wide v1, v0, Lhuf;->k:J
+    goto :goto_0
 
-    iget-object v1, p0, Liuf;->l:Lbtb;
+    :cond_1
+    sget-object v3, Lqz7;->o:Lqz7;
 
-    iput-object v1, v0, Lhuf;->l:Lbtb;
+    invoke-virtual {v2, v3}, Loja;->a(Lqz7;)Z
 
-    iget-object v1, p0, Liuf;->m:Lulf;
+    move-result v4
 
-    iput-object v1, v0, Lhuf;->m:Lulf;
+    if-eqz v4, :cond_2
 
-    iget-object v1, p0, Liuf;->n:Lv10;
+    const-string v4, "Player autoplay. Handle fetch event for video message, try start autoplay."
 
-    iput-object v1, v0, Lhuf;->n:Lv10;
+    const/4 v5, 0x0
 
-    iget-object v1, p0, Liuf;->o:Landroid/graphics/drawable/BitmapDrawable;
+    invoke-virtual {v2, v3, p1, v4, v5}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    iput-object v1, v0, Lhuf;->o:Landroid/graphics/drawable/BitmapDrawable;
+    :cond_2
+    :goto_0
+    invoke-virtual {v1}, Landroidx/recyclerview/widget/RecyclerView;->getScrollState()I
 
-    iget-object v1, p0, Liuf;->p:Landroid/net/Uri;
+    move-result p1
 
-    iput-object v1, v0, Lhuf;->p:Landroid/net/Uri;
+    if-nez p1, :cond_3
 
-    iget-boolean v1, p0, Liuf;->q:Z
+    iget-object p0, p0, Liuf;->X:Lnuf;
 
-    iput-boolean v1, v0, Lhuf;->q:Z
+    const/4 p1, 0x0
 
-    iget-boolean v1, p0, Liuf;->r:Z
+    invoke-virtual {p0, v1, p1}, Lnuf;->e(Landroidx/recyclerview/widget/RecyclerView;Z)V
 
-    iput-boolean v1, v0, Lhuf;->r:Z
-
-    iget-boolean p0, p0, Liuf;->s:Z
-
-    iput-boolean p0, v0, Lhuf;->s:Z
-
+    :cond_3
+    :goto_1
     return-object v0
 .end method

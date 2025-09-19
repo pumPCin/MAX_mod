@@ -1,66 +1,23 @@
-.class public final synthetic Lsfe;
+.class public final Lsfe;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lj96;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public a:J
 
-.field public final synthetic b:Lrx5;
+.field public b:Ljava/lang/String;
 
+.field public c:Ljava/lang/String;
 
-# direct methods
-.method public synthetic constructor <init>(Lrx5;I)V
-    .registers 3
+.field public d:J
 
-    iput p2, p0, Lsfe;->a:I
+.field public e:J
 
-    iput-object p1, p0, Lsfe;->b:Lrx5;
+.field public f:J
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public g:Ljava/lang/String;
 
-    return-void
-.end method
+.field public h:Ljava/util/List;
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iget v0, p0, Lsfe;->a:I
-
-    check-cast p1, Lmm3;
-
-    packed-switch v0, :pswitch_data_0
-
-    const-string v0, "@"
-
-    iget-object p0, p0, Lsfe;->b:Lrx5;
-
-    invoke-virtual {p0, p1, v0}, Lrx5;->j(Lmm3;Ljava/lang/String;)Lrfe;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    const-string v0, "@"
-
-    iget-object p0, p0, Lsfe;->b:Lrx5;
-
-    invoke-virtual {p0, p1, v0}, Lrx5;->j(Lmm3;Ljava/lang/String;)Lrfe;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+.field public i:Z

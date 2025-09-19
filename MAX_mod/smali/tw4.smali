@@ -1,31 +1,20 @@
-.class public final Ltw4;
+.class public interface abstract Ltw4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:I
+# virtual methods
+.method public abstract A(ILyp8;)V
+.end method
 
-.field public final b:[I
+.method public abstract B(ILyp8;)V
+.end method
 
-.field public final c:[I
+.method public abstract d(ILyp8;Ljava/lang/Exception;)V
+.end method
 
-.field public final d:[I
+.method public abstract v(ILyp8;I)V
+.end method
 
-
-# direct methods
-.method public constructor <init>(I[I[I[I)V
-    .registers 5
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Ltw4;->a:I
-
-    iput-object p2, p0, Ltw4;->b:[I
-
-    iput-object p3, p0, Ltw4;->c:[I
-
-    iput-object p4, p0, Ltw4;->d:[I
-
-    return-void
+.method public abstract w(ILyp8;)V
 .end method

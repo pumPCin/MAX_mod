@@ -1,136 +1,98 @@
 .class public final Lc88;
-.super Lxie;
+.super Landroidx/recyclerview/widget/LinearLayoutManager;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public synthetic X:Z
+.field public final synthetic E:I
 
-.field public final synthetic Y:Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;
-
-.field public final synthetic Z:Landroid/widget/FrameLayout;
+.field public final synthetic F:Lcom/google/android/material/datepicker/MaterialCalendar;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;Landroid/widget/FrameLayout;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Lcom/google/android/material/datepicker/MaterialCalendar;II)V
     .registers 4
 
-    iput-object p1, p0, Lc88;->Y:Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;
+    iput-object p1, p0, Lc88;->F:Lcom/google/android/material/datepicker/MaterialCalendar;
 
-    iput-object p2, p0, Lc88;->Z:Landroid/widget/FrameLayout;
+    iput p3, p0, Lc88;->E:I
 
-    const/4 p1, 0x2
+    const/4 p1, 0x0
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0, p2, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(IZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lc88;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lc88;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lc88;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final H0(Landroidx/recyclerview/widget/RecyclerView;I)V
     .registers 5
 
-    new-instance v0, Lc88;
+    new-instance v0, Ltu9;
 
-    iget-object v1, p0, Lc88;->Y:Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;
-
-    iget-object p0, p0, Lc88;->Z:Landroid/widget/FrameLayout;
-
-    invoke-direct {v0, v1, p0, p2}, Lc88;-><init>(Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;Landroid/widget/FrameLayout;Lkotlin/coroutines/Continuation;)V
-
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p0
-
-    iput-boolean p0, v0, Lc88;->X:Z
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-boolean p1, p0, Lc88;->X:Z
-
-    iget-object v0, p0, Lc88;->Y:Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;
-
-    if-eqz p1, :cond_0
-
-    iget-object p1, v0, Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;->o:Lin0;
-
-    invoke-virtual {p1}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    check-cast p1, Lmx1;
+    const/4 v1, 0x2
 
-    invoke-interface {p1}, Lmx1;->getRootView()Landroid/view/View;
+    invoke-direct {v0, p1, v1}, Ltu9;-><init>(Landroid/content/Context;I)V
 
-    move-result-object p1
+    iput p2, v0, Lto7;->a:I
 
-    new-instance v1, La88;
+    invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/a;->I0(Lto7;)V
 
-    const/4 v2, 0x2
+    return-void
+.end method
 
-    invoke-direct {v1, v0, v2}, La88;-><init>(Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;I)V
+.method public final K0(Lvoc;[I)V
+    .registers 5
 
-    invoke-static {p1, v1}, Lbug;->H(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+    iget p1, p0, Lc88;->E:I
 
-    goto :goto_0
-
-    :cond_0
-    iget-object p1, v0, Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;->c:Lin0;
-
-    sget-object v0, Lone/me/chatscreen/mediabar/permission/MediaBarPermissionWidget;->Z:[Lsf7;
+    const/4 v0, 0x1
 
     const/4 v1, 0x0
 
-    aget-object v0, v0, v1
+    iget-object p0, p0, Lc88;->F:Lcom/google/android/material/datepicker/MaterialCalendar;
 
-    invoke-virtual {p1}, Lin0;->getValue()Ljava/lang/Object;
+    if-nez p1, :cond_0
 
-    move-result-object p1
+    iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->r1:Landroidx/recyclerview/widget/RecyclerView;
 
-    check-cast p1, Landroid/widget/LinearLayout;
+    invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
-    :goto_0
-    iget-object p0, p0, Lc88;->Z:Landroid/widget/FrameLayout;
+    move-result p1
 
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->removeAllViews()V
+    aput p1, p2, v1
 
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    iget-object p0, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->r1:Landroidx/recyclerview/widget/RecyclerView;
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
-    return-object p0
+    move-result p0
+
+    aput p0, p2, v0
+
+    return-void
+
+    :cond_0
+    iget-object p1, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->r1:Landroidx/recyclerview/widget/RecyclerView;
+
+    invoke-virtual {p1}, Landroid/view/View;->getHeight()I
+
+    move-result p1
+
+    aput p1, p2, v1
+
+    iget-object p0, p0, Lcom/google/android/material/datepicker/MaterialCalendar;->r1:Landroidx/recyclerview/widget/RecyclerView;
+
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+
+    move-result p0
+
+    aput p0, p2, v0
+
+    return-void
 .end method

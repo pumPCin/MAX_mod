@@ -1,112 +1,348 @@
-.class public final synthetic Lqn8;
+.class public abstract Lqn8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Runnable;
 
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ltpc;
-
-.field public final synthetic c:Landroid/util/Pair;
-
-.field public final synthetic o:Ltf8;
+# static fields
+.field public static final a:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ltpc;Landroid/util/Pair;Ltf8;I)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p4, p0, Lqn8;->a:I
+    sget v0, Lc3c;->mr_dynamic_dialog_icon_light:I
 
-    iput-object p1, p0, Lqn8;->b:Ltpc;
-
-    iput-object p2, p0, Lqn8;->c:Landroid/util/Pair;
-
-    iput-object p3, p0, Lqn8;->o:Ltf8;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput v0, Lqn8;->a:I
 
     return-void
 .end method
 
+.method public static a(Landroid/content/Context;Z)Landroid/view/ContextThemeWrapper;
+    .registers 3
 
-# virtual methods
-.method public final run()V
+    if-nez p1, :cond_0
+
+    sget p1, Lu2c;->dialogTheme:I
+
+    goto :goto_0
+
+    :cond_0
+    sget p1, Lu2c;->alertDialogTheme:I
+
+    :goto_0
+    invoke-static {p0, p1}, Lqn8;->g(Landroid/content/Context;I)I
+
+    move-result p1
+
+    new-instance v0, Landroid/view/ContextThemeWrapper;
+
+    invoke-direct {v0, p0, p1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+
+    sget p0, Lp2c;->mediaRouteTheme:I
+
+    invoke-static {v0, p0}, Lqn8;->g(Landroid/content/Context;I)I
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    new-instance p0, Landroid/view/ContextThemeWrapper;
+
+    invoke-static {v0}, Lqn8;->e(Landroid/content/Context;)I
+
+    move-result p1
+
+    invoke-direct {p0, v0, p1}, Landroid/view/ContextThemeWrapper;-><init>(Landroid/content/Context;I)V
+
+    return-object p0
+
+    :cond_1
+    return-object v0
+.end method
+
+.method public static b(Landroid/content/Context;)I
+    .registers 6
+
+    sget v0, Lu2c;->colorPrimary:I
+
+    invoke-static {p0, v0}, Lqn8;->f(Landroid/content/Context;I)I
+
+    move-result p0
+
+    const/4 v0, -0x1
+
+    invoke-static {v0, p0}, Lm83;->d(II)D
+
+    move-result-wide v1
+
+    const-wide/high16 v3, 0x4008000000000000L    # 3.0
+
+    cmpl-double p0, v1, v3
+
+    if-ltz p0, :cond_0
+
+    return v0
+
+    :cond_0
+    const/high16 p0, -0x22000000
+
+    return p0
+.end method
+
+.method public static c(Landroid/content/Context;)F
     .registers 4
 
-    iget v0, p0, Lqn8;->a:I
+    new-instance v0, Landroid/util/TypedValue;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    iget-object v0, p0, Lqn8;->b:Ltpc;
+    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    iget-object v0, v0, Ltpc;->c:Ljava/lang/Object;
+    move-result-object p0
 
-    check-cast v0, Lxn8;
+    const v1, 0x1010033
 
-    iget-object v0, v0, Lxn8;->j:Ljava/lang/Object;
+    const/4 v2, 0x1
 
-    check-cast v0, Lgb4;
+    invoke-virtual {p0, v1, v0, v2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    iget-object v1, p0, Lqn8;->c:Landroid/util/Pair;
+    move-result p0
 
-    iget-object v2, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
+    if-eqz p0, :cond_0
 
-    check-cast v2, Ljava/lang/Integer;
+    invoke-virtual {v0}, Landroid/util/TypedValue;->getFloat()F
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    move-result p0
 
-    move-result v2
+    return p0
 
-    iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
+    :cond_0
+    const/high16 p0, 0x3f000000    # 0.5f
 
-    check-cast v1, Lbn8;
+    return p0
+.end method
 
-    iget-object p0, p0, Lqn8;->o:Ltf8;
+.method public static d(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    .registers 4
 
-    invoke-virtual {v0, v2, v1, p0}, Lgb4;->G(ILbn8;Ltf8;)V
+    filled-new-array {p1}, [I
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v0
+
+    invoke-static {p0, v0}, Luyg;->p(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-static {p0}, Lqn8;->h(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    sget v1, Lqn8;->a:I
+
+    invoke-static {p0, v1}, Lmw3;->a(Landroid/content/Context;I)I
+
+    move-result p0
+
+    invoke-static {v0, p0}, Liv4;->g(Landroid/graphics/drawable/Drawable;I)V
+
+    :cond_0
+    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
+
+    return-object v0
+.end method
+
+.method public static e(Landroid/content/Context;)I
+    .registers 3
+
+    invoke-static {p0}, Lqn8;->h(Landroid/content/Context;)Z
+
+    move-result v0
+
+    const/high16 v1, -0x22000000
+
+    if-eqz v0, :cond_1
+
+    invoke-static {p0}, Lqn8;->b(Landroid/content/Context;)I
+
+    move-result p0
+
+    if-ne p0, v1, :cond_0
+
+    sget p0, Lscc;->Theme_MediaRouter_Light:I
+
+    return p0
+
+    :cond_0
+    sget p0, Lscc;->Theme_MediaRouter_Light_DarkControlPanel:I
+
+    return p0
+
+    :cond_1
+    invoke-static {p0}, Lqn8;->b(Landroid/content/Context;)I
+
+    move-result p0
+
+    if-ne p0, v1, :cond_2
+
+    sget p0, Lscc;->Theme_MediaRouter_LightControlPanel:I
+
+    return p0
+
+    :cond_2
+    sget p0, Lscc;->Theme_MediaRouter:I
+
+    return p0
+.end method
+
+.method public static f(Landroid/content/Context;I)I
+    .registers 5
+
+    new-instance v0, Landroid/util/TypedValue;
+
+    invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
+
+    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, p1, v0, v2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    iget p1, v0, Landroid/util/TypedValue;->resourceId:I
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p0
+
+    iget p1, v0, Landroid/util/TypedValue;->resourceId:I
+
+    invoke-virtual {p0, p1}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result p0
+
+    return p0
+
+    :cond_0
+    iget p0, v0, Landroid/util/TypedValue;->data:I
+
+    return p0
+.end method
+
+.method public static g(Landroid/content/Context;I)I
+    .registers 4
+
+    new-instance v0, Landroid/util/TypedValue;
+
+    invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
+
+    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object p0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, p1, v0, v1}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    iget p0, v0, Landroid/util/TypedValue;->resourceId:I
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public static h(Landroid/content/Context;)Z
+    .registers 4
+
+    new-instance v0, Landroid/util/TypedValue;
+
+    invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
+
+    invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+
+    move-result-object p0
+
+    sget v1, Lu2c;->isLightTheme:I
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p0, v1, v0, v2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    iget p0, v0, Landroid/util/TypedValue;->data:I
+
+    if-eqz p0, :cond_0
+
+    return v2
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public static i(Landroid/content/Context;Landroid/widget/ProgressBar;)V
+    .registers 3
+
+    invoke-virtual {p1}, Landroid/widget/ProgressBar;->isIndeterminate()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     return-void
 
-    :pswitch_0
-    iget-object v0, p0, Lqn8;->b:Ltpc;
+    :cond_0
+    invoke-static {p0}, Lqn8;->h(Landroid/content/Context;)Z
 
-    iget-object v0, v0, Ltpc;->c:Ljava/lang/Object;
+    move-result v0
 
-    check-cast v0, Lxn8;
+    if-eqz v0, :cond_1
 
-    iget-object v0, v0, Lxn8;->j:Ljava/lang/Object;
+    sget v0, Lc3c;->mr_cast_progressbar_progress_and_thumb_light:I
 
-    check-cast v0, Lgb4;
+    goto :goto_0
 
-    iget-object v1, p0, Lqn8;->c:Landroid/util/Pair;
+    :cond_1
+    sget v0, Lc3c;->mr_cast_progressbar_progress_and_thumb_dark:I
 
-    iget-object v2, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
+    :goto_0
+    invoke-static {p0, v0}, Lmw3;->a(Landroid/content/Context;I)I
 
-    check-cast v2, Ljava/lang/Integer;
+    move-result p0
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {p1}, Landroid/widget/ProgressBar;->getIndeterminateDrawable()Landroid/graphics/drawable/Drawable;
 
-    move-result v2
+    move-result-object p1
 
-    iget-object v1, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
+    sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    check-cast v1, Lbn8;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    iget-object p0, p0, Lqn8;->o:Ltf8;
-
-    invoke-virtual {v0, v2, v1, p0}, Lgb4;->B(ILbn8;Ltf8;)V
+    invoke-virtual {p1, p0, v0}, Landroid/graphics/drawable/Drawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
     return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

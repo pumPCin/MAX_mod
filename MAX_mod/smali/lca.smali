@@ -1,93 +1,178 @@
-.class public final enum Llca;
-.super Ljava/lang/Enum;
+.class public final Llca;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final enum a:Llca;
+# instance fields
+.field public final a:Lkotlinx/coroutines/internal/ContextScope;
 
-.field public static final enum b:Llca;
+.field public final b:Lf53;
 
-.field public static final enum c:Llca;
+.field public final c:Lxjd;
 
-.field public static final synthetic o:[Llca;
+.field public final d:Lvca;
+
+.field public final e:Lrt1;
+
+.field public final f:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public constructor <init>(Lz4;)V
+    .registers 3
 
-    new-instance v0, Llca;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "Themed"
+    const-class v0, Lxwe;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Llca;->a:Llca;
-
-    new-instance v1, Llca;
-
-    const-string v2, "ContrastPinned"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    new-instance v2, Llca;
-
-    const-string v3, "NeutralFade"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Llca;->b:Llca;
-
-    new-instance v3, Llca;
-
-    const-string v4, "AccentRed"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Llca;->c:Llca;
-
-    filled-new-array {v0, v1, v2, v3}, [Llca;
+    invoke-virtual {p1, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    sput-object v0, Llca;->o:[Llca;
+    check-cast v0, Lxwe;
+
+    check-cast v0, Laga;
+
+    invoke-virtual {v0}, Laga;->c()Lt38;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lb0b;->a(Lq04;)Lkotlinx/coroutines/internal/ContextScope;
+
+    move-result-object v0
+
+    iput-object v0, p0, Llca;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    const-class v0, Lf53;
+
+    invoke-virtual {p1, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lf53;
+
+    iput-object v0, p0, Llca;->b:Lf53;
+
+    const-class v0, Lxjd;
+
+    invoke-virtual {p1, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lxjd;
+
+    iput-object v0, p0, Llca;->c:Lxjd;
+
+    const-class v0, Lvca;
+
+    invoke-virtual {p1, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lvca;
+
+    iput-object v0, p0, Llca;->d:Lvca;
+
+    const-class v0, Lrt1;
+
+    invoke-virtual {p1, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lrt1;
+
+    iput-object p1, p0, Llca;->e:Lrt1;
+
+    sget-object p1, Ley3;->u0:Ley3;
+
+    const/4 v0, 0x3
+
+    invoke-static {v0, p1}, Lcb7;->G(ILzb6;)Lcl7;
+
+    move-result-object p1
+
+    iput-object p1, p0, Llca;->f:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Llca;
-    .registers 2
 
-    const-class v0, Llca;
+# virtual methods
+.method public final a()Z
+    .registers 6
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget-object v0, p0, Llca;->c:Lxjd;
 
-    move-result-object p0
+    check-cast v0, Lpad;
 
-    check-cast p0, Llca;
+    const/4 v1, 0x0
 
-    return-object p0
-.end method
+    int-to-long v2, v1
 
-.method public static values()[Llca;
-    .registers 1
+    sget-object v4, Load;->a:Load;
 
-    sget-object v0, Llca;->o:[Llca;
+    invoke-virtual {v0, v4, v2, v3}, Lpad;->o(Ljava/lang/Enum;J)J
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    move-result-wide v2
+
+    long-to-int v0, v2
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    iget-object v0, p0, Llca;->b:Lf53;
+
+    check-cast v0, Lh53;
+
+    const-string v3, ""
+
+    iget-object v0, v0, Li3;->g:Lfl7;
+
+    const-string v4, "version.force.update.received"
+
+    invoke-virtual {v0, v4, v3}, Lfl7;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, [Llca;
+    iget-object p0, p0, Llca;->d:Lvca;
 
-    return-object v0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string p0, "25.11.0"
+
+    invoke-static {v0, p0}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_0
+
+    return v2
+
+    :cond_0
+    return v1
+.end method
+
+.method public final b()V
+    .registers 4
+
+    iget-object v0, p0, Llca;->e:Lrt1;
+
+    check-cast v0, Leu1;
+
+    invoke-virtual {v0}, Leu1;->y()V
+
+    new-instance v0, Lkca;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lkca;-><init>(Llca;Lkotlin/coroutines/Continuation;)V
+
+    const/4 v2, 0x3
+
+    iget-object p0, p0, Llca;->a:Lkotlinx/coroutines/internal/ContextScope;
+
+    invoke-static {p0, v1, v1, v0, v2}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    return-void
 .end method

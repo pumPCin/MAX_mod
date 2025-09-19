@@ -1,52 +1,65 @@
-.class public final synthetic Llm8;
-.super Ljava/lang/Object;
+.class public final Llm8;
+.super Lzoc;
 .source "SourceFile"
-
-# interfaces
-.implements Lhm3;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final E0:Landroid/view/View;
 
-.field public final synthetic b:I
+.field public final F0:Landroid/widget/ImageView;
 
-.field public final synthetic c:I
+.field public final G0:Landroid/widget/ProgressBar;
+
+.field public final H0:Landroid/widget/TextView;
+
+.field public final synthetic I0:Lmm8;
 
 
 # direct methods
-.method public synthetic constructor <init>(III)V
-    .registers 4
+.method public constructor <init>(Lmm8;Landroid/view/View;)V
+    .registers 5
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Llm8;->I0:Lmm8;
 
-    iput p1, p0, Llm8;->a:I
+    invoke-direct {p0, p2}, Lzoc;-><init>(Landroid/view/View;)V
 
-    iput p2, p0, Llm8;->b:I
+    iput-object p2, p0, Llm8;->E0:Landroid/view/View;
 
-    iput p3, p0, Llm8;->c:I
+    sget v0, Le5c;->mr_picker_route_icon:I
 
-    return-void
-.end method
+    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
+    move-result-object v0
 
-# virtual methods
-.method public final accept(Ljava/lang/Object;)V
-    .registers 4
+    check-cast v0, Landroid/widget/ImageView;
 
-    check-cast p1, Le7b;
+    iput-object v0, p0, Llm8;->F0:Landroid/widget/ImageView;
 
-    invoke-virtual {p1}, Le7b;->o0()V
+    sget v0, Le5c;->mr_picker_route_progress_bar:I
 
-    iget-object p1, p1, Le7b;->a:Lva5;
+    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    iget v0, p0, Llm8;->a:I
+    move-result-object v0
 
-    iget v1, p0, Llm8;->b:I
+    check-cast v0, Landroid/widget/ProgressBar;
 
-    iget p0, p0, Llm8;->c:I
+    iput-object v0, p0, Llm8;->G0:Landroid/widget/ProgressBar;
 
-    invoke-virtual {p1, v0, v1, p0}, Lva5;->k1(III)V
+    sget v1, Le5c;->mr_picker_route_name:I
+
+    invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p2
+
+    check-cast p2, Landroid/widget/TextView;
+
+    iput-object p2, p0, Llm8;->H0:Landroid/widget/TextView;
+
+    iget-object p0, p1, Lmm8;->t0:Lnm8;
+
+    iget-object p0, p0, Lnm8;->r0:Landroid/content/Context;
+
+    invoke-static {p0, v0}, Lqn8;->i(Landroid/content/Context;Landroid/widget/ProgressBar;)V
 
     return-void
 .end method

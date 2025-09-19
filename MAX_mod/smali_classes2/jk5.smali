@@ -3,86 +3,30 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
-
-
-# instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lkk5;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lkk5;I)V
-    .registers 3
-
-    iput p2, p0, Ljk5;->a:I
-
-    iput-object p1, p0, Ljk5;->b:Lkk5;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Lone/me/sdk/media/ffmpeg/FfmpegLibraryLoader;
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final load(Ljava/lang/String;)V
     .registers 2
 
-    iget v0, p0, Ljk5;->a:I
+    :try_start_0
+    const-string p0, "ffmpg"
 
-    iget-object p0, p0, Ljk5;->b:Lkk5;
+    invoke-static {p0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    packed-switch v0, :pswitch_data_0
+    return-void
 
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
+    :catchall_0
+    move-exception p0
 
-    move-result-object p0
+    invoke-static {}, Lone/me/sdk/media/ffmpeg/WebmConfig;->getLogger()Lns9;
 
-    check-cast p0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
+    move-result-object p1
 
-    const-string v0, "corner"
+    invoke-interface {p1, p0}, Lns9;->F(Ljava/lang/Throwable;)V
 
-    invoke-virtual {p0, v0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;->findPath(Ljava/lang/String;)Lone/me/sdk/richvector/VectorPath;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    check-cast p0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
-
-    const-string v0, "foreground"
-
-    invoke-virtual {p0, v0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;->findPath(Ljava/lang/String;)Lone/me/sdk/richvector/VectorPath;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_1
-    invoke-virtual {p0}, Landroid/graphics/drawable/DrawableWrapper;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    check-cast p0, Lone/me/sdk/richvector/EnhancedVectorDrawable;
-
-    const-string v0, "background"
-
-    invoke-virtual {p0, v0}, Lone/me/sdk/richvector/EnhancedVectorDrawable;->findPath(Ljava/lang/String;)Lone/me/sdk/richvector/VectorPath;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

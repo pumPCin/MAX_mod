@@ -1,23 +1,17 @@
-.class public final Lgh1;
+.class public interface abstract Lgh1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lned;
+# virtual methods
+.method public abstract onCallParticipantsAdded(Lch1;)V
+.end method
 
-.field public final b:Ljava/util/List;
+.method public abstract onCallParticipantsChanged(Ldh1;)V
+.end method
 
+.method public abstract onCallParticipantsDeAnonimized(Leh1;)V
+.end method
 
-# direct methods
-.method public constructor <init>(Lned;Ljava/util/List;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lgh1;->a:Lned;
-
-    iput-object p2, p0, Lgh1;->b:Ljava/util/List;
-
-    return-void
+.method public abstract onCallParticipantsRemoved(Lfh1;)V
 .end method

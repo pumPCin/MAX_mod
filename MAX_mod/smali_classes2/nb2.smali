@@ -1,85 +1,116 @@
-.class public final enum Lnb2;
-.super Ljava/lang/Enum;
+.class public final Lnb2;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/io/Serializable;
+.implements La33;
 
-# static fields
-.field public static final enum a:Lnb2;
 
-.field public static final enum b:Lnb2;
+# instance fields
+.field public final a:J
 
-.field public static final enum c:Lnb2;
-
-.field public static final synthetic o:[Lnb2;
+.field public final b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public constructor <init>(JJ)V
+    .registers 8
 
-    new-instance v0, Lnb2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "SOUND"
+    iput-wide p1, p0, Lnb2;->a:J
 
-    const/4 v2, 0x0
+    iput-wide p3, p0, Lnb2;->b:J
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const-wide/16 v0, -0x1
 
-    sput-object v0, Lnb2;->a:Lnb2;
+    cmp-long p0, p1, v0
 
-    new-instance v1, Lnb2;
+    const-string p1, ""
 
-    const-string v2, "VIBRATION"
+    const-string p2, "Chunk"
 
-    const/4 v3, 0x1
+    if-nez p0, :cond_0
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    sput-object v1, Lnb2;->b:Lnb2;
+    const-string v2, "start time is -1"
 
-    new-instance v2, Lnb2;
+    invoke-direct {p0, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    const-string v3, "LED"
+    invoke-static {p2, p1, p0}, Ljtg;->Q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    const/4 v4, 0x2
+    :cond_0
+    cmp-long p0, p3, v0
 
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    if-nez p0, :cond_1
 
-    sput-object v2, Lnb2;->c:Lnb2;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    filled-new-array {v0, v1, v2}, [Lnb2;
+    const-string p3, "end time is -1"
 
-    move-result-object v0
+    invoke-direct {p0, p3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lnb2;->o:[Lnb2;
+    invoke-static {p2, p1, p0}, Ljtg;->Q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
+    :cond_1
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lnb2;
-    .registers 2
 
-    const-class v0, Lnb2;
+# virtual methods
+.method public final a()J
+    .registers 3
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget-wide v0, p0, Lnb2;->a:J
 
-    move-result-object p0
-
-    check-cast p0, Lnb2;
-
-    return-object p0
+    return-wide v0
 .end method
 
-.method public static values()[Lnb2;
-    .registers 1
+.method public final b()J
+    .registers 3
 
-    sget-object v0, Lnb2;->o:[Lnb2;
+    iget-wide v0, p0, Lnb2;->b:J
 
-    invoke-virtual {v0}, [Lnb2;->clone()Ljava/lang/Object;
+    return-wide v0
+.end method
 
-    move-result-object v0
+.method public final c()Lwo0;
+    .registers 7
 
-    check-cast v0, [Lnb2;
+    new-instance v0, Lwo0;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, v1}, Lwo0;-><init>(I)V
+
+    const-wide/16 v1, -0x1
+
+    iget-wide v3, p0, Lnb2;->a:J
+
+    cmp-long v1, v3, v1
+
+    if-nez v1, :cond_0
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const-string v2, "start time is -1"
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "Chunk.Builder"
+
+    const-string v5, ""
+
+    invoke-static {v2, v5, v1}, Ljtg;->Q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :cond_0
+    iput-wide v3, v0, Lwo0;->b:J
+
+    iget-wide v1, p0, Lnb2;->b:J
+
+    invoke-virtual {v0, v1, v2}, Lwo0;->b(J)V
 
     return-object v0
 .end method

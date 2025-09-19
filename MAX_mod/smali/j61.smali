@@ -3,95 +3,57 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ll61;
+.implements Lyo1;
 
 
 # instance fields
-.field public final a:Ljava/util/Set;
+.field public final synthetic a:Lijb;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Set;)V
+.method public constructor <init>(Lijb;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lj61;->a:Ljava/util/Set;
+    iput-object p1, p0, Lj61;->a:Lijb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final onMediaConnected(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;)V
+    .registers 2
 
-    const/4 v0, 0x1
+    invoke-virtual {p1}, Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$ConnectedInfo;->isFirstConnection()Z
 
-    if-ne p0, p1, :cond_0
+    move-result p1
 
-    return v0
+    if-nez p1, :cond_0
+
+    sget-object p1, Lp51;->c:Lp51;
+
+    iget-object p0, p0, Lj61;->a:Lijb;
+
+    check-cast p0, Lfjb;
+
+    invoke-virtual {p0, p1}, Lfjb;->g(Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_0
-    instance-of v1, p1, Lj61;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lj61;
-
-    iget-object p0, p0, Lj61;->a:Ljava/util/Set;
-
-    iget-object p1, p1, Lj61;->a:Ljava/util/Set;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .registers 1
+.method public final onMediaDisconnected(Lru/ok/android/externcalls/sdk/connection/MediaConnectionListener$DisconnectedInfo;)V
+    .registers 2
 
-    iget-object p0, p0, Lj61;->a:Ljava/util/Set;
+    sget-object p1, Lq51;->c:Lq51;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    iget-object p0, p0, Lj61;->a:Lijb;
 
-    move-result p0
+    check-cast p0, Lfjb;
 
-    return p0
-.end method
+    invoke-virtual {p0, p1}, Lfjb;->g(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "UpdateContacts(contactIds="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lj61;->a:Ljava/util/Set;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

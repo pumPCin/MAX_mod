@@ -1,103 +1,107 @@
 .class public final Lkae;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
+
+# static fields
+.field public static final synthetic e:[Lxi7;
+
+.field public static final f:Ljava/lang/String;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Lgr4;
 
-.field public final synthetic Y:Lone/me/stickerssettings/StickersSettingsScreen;
+.field public final b:Lgr4;
+
+.field public final c:Lgr4;
+
+.field public final d:Lgr4;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/stickerssettings/StickersSettingsScreen;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 8
 
-    iput-object p2, p0, Lkae;->Y:Lone/me/stickerssettings/StickersSettingsScreen;
+    new-instance v0, Lsxb;
 
-    const/4 p2, 0x2
+    const-class v1, Lkae;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const-string v2, "messageController"
+
+    const-string v3, "getMessageController()Lru/ok/tamtam/messages/MessageController;"
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    sget-object v2, Ljpc;->a:Lkpc;
+
+    const-string v3, "workerService"
+
+    const-string v5, "getWorkerService()Lru/ok/tamtam/services/WorkerService;"
+
+    invoke-static {v2, v1, v3, v5, v4}, Lee5;->h(Lkpc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lsxb;
+
+    move-result-object v2
+
+    new-instance v3, Lsxb;
+
+    const-string v5, "fileAttachUploader"
+
+    const-string v6, "getFileAttachUploader()Lru/ok/tamtam/FileAttachUploader;"
+
+    invoke-direct {v3, v1, v5, v6, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    new-instance v5, Lsxb;
+
+    const-string v6, "clientPrefs"
+
+    const-string v7, "getClientPrefs()Lru/ok/tamtam/prefs/ClientPrefs;"
+
+    invoke-direct {v5, v1, v6, v7, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    const/4 v6, 0x4
+
+    new-array v6, v6, [Lxi7;
+
+    aput-object v0, v6, v4
+
+    const/4 v0, 0x1
+
+    aput-object v2, v6, v0
+
+    const/4 v0, 0x2
+
+    aput-object v3, v6, v0
+
+    const/4 v0, 0x3
+
+    aput-object v5, v6, v0
+
+    sput-object v6, Lkae;->e:[Lxi7;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lkae;->f:Ljava/lang/String;
 
     return-void
 .end method
 
+.method public constructor <init>(Lgr4;Lgr4;Lgr4;Lgr4;)V
+    .registers 5
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iput-object p1, p0, Lkae;->a:Lgr4;
 
-    invoke-virtual {p0, p1, p2}, Lkae;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iput-object p2, p0, Lkae;->b:Lgr4;
 
-    move-result-object p0
+    iput-object p3, p0, Lkae;->c:Lgr4;
 
-    check-cast p0, Lkae;
+    iput-object p4, p0, Lkae;->d:Lgr4;
 
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lkae;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
-
-    new-instance v0, Lkae;
-
-    iget-object p0, p0, Lkae;->Y:Lone/me/stickerssettings/StickersSettingsScreen;
-
-    invoke-direct {v0, p2, p0}, Lkae;-><init>(Lkotlin/coroutines/Continuation;Lone/me/stickerssettings/StickersSettingsScreen;)V
-
-    iput-object p1, v0, Lkae;->X:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lkae;->X:Ljava/lang/Object;
-
-    check-cast p1, Ljp9;
-
-    sget-object v0, Lone/me/stickerssettings/StickersSettingsScreen;->Y:[Lsf7;
-
-    instance-of v0, p1, Ls53;
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Lkae;->Y:Lone/me/stickerssettings/StickersSettingsScreen;
-
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Llrc;->C()Z
-
-    goto :goto_0
-
-    :cond_0
-    instance-of p0, p1, Laa4;
-
-    if-eqz p0, :cond_1
-
-    sget-object p0, Lgae;->c:Lgae;
-
-    check-cast p1, Laa4;
-
-    invoke-virtual {p0, p1}, Ls2;->F0(Laa4;)V
-
-    :cond_1
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    return-void
 .end method

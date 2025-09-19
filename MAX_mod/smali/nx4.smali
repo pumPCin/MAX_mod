@@ -1,271 +1,261 @@
-.class public abstract Lnx4;
+.class public final Lnx4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lbid;
+.implements Lox4;
 
-# static fields
-.field public static final a:Ljava/util/HashMap;
 
-.field public static final b:Ljava/util/HashMap;
+# instance fields
+.field public final synthetic a:I
+
+.field public final b:Lbid;
+
+.field public final c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 5
+.method public constructor <init>(Lbid;II)V
+    .registers 4
 
-    new-instance v0, Ljava/util/HashMap;
+    iput p3, p0, Lnx4;->a:I
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    packed-switch p3, :pswitch_data_0
 
-    sput-object v0, Lnx4;->a:Ljava/util/HashMap;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v1, Ljava/util/HashMap;
+    iput-object p1, p0, Lnx4;->b:Lbid;
 
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+    iput p2, p0, Lnx4;->c:I
 
-    sput-object v1, Lnx4;->b:Ljava/util/HashMap;
+    if-ltz p2, :cond_0
 
-    const-wide/16 v2, 0x1
+    return-void
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    :cond_0
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    const-string p1, "count must be non-negative, but was "
 
-    sget-object v3, Lmx4;->d:Lmx4;
+    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-static {v2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    const/16 p1, 0x2e
 
-    move-result-object v2
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    const-wide/16 v2, 0x2
+    move-result-object p0
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    move-result-object v2
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    sget-object v3, Lmx4;->e:Lmx4;
+    move-result-object p0
 
-    invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    throw p1
 
-    move-result-object v3
+    :pswitch_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    check-cast v3, Lmx4;
+    iput-object p1, p0, Lnx4;->b:Lbid;
 
-    invoke-static {v2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    iput p2, p0, Lnx4;->c:I
 
-    move-result-object v2
+    if-ltz p2, :cond_1
 
-    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    return-void
 
-    const-wide/16 v2, 0x4
+    :cond_1
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const-string p1, "count must be non-negative, but was "
 
-    move-result-object v2
+    invoke-direct {p0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    sget-object v3, Lmx4;->f:Lmx4;
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/16 p1, 0x2e
 
-    invoke-static {v2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1, v3, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p0
 
-    const-wide/16 v2, 0x8
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p0
 
-    sget-object v3, Lmx4;->g:Lmx4;
+    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    throw p1
 
-    invoke-static {v2}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    nop
 
-    move-result-object v0
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    invoke-virtual {v1, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-wide/16 v0, 0x40
+# virtual methods
+.method public final a(I)Lbid;
+    .registers 4
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    iget v0, p0, Lnx4;->a:I
 
-    move-result-object v0
+    packed-switch v0, :pswitch_data_0
 
-    const-wide/16 v1, 0x80
+    iget v0, p0, Lnx4;->c:I
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v1
-
-    const-wide/16 v2, 0x10
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    const-wide/16 v3, 0x20
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    filled-new-array {v0, v1, v2, v3}, [Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    sget-object v3, Lmx4;->h:Lmx4;
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Long;
-
-    sget-object v4, Lnx4;->a:Ljava/util/HashMap;
-
-    invoke-virtual {v4, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    if-lt p1, v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    sget-object v1, Lnx4;->b:Ljava/util/HashMap;
+    new-instance v0, Lnx4;
 
-    invoke-virtual {v1, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p0, p0, Lnx4;->b:Lbid;
 
-    const-wide/16 v0, 0x400
+    const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-direct {v0, p0, p1, v1}, Lnx4;-><init>(Lbid;II)V
 
-    move-result-object v0
+    move-object p0, v0
 
-    const-wide/16 v1, 0x800
+    :goto_0
+    return-object p0
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    :pswitch_0
+    iget v0, p0, Lnx4;->c:I
 
-    move-result-object v1
+    add-int v1, v0, p1
 
-    const-wide/16 v2, 0x100
+    if-gez v1, :cond_1
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    new-instance v0, Lnx4;
 
-    move-result-object v2
+    const/4 v1, 0x1
 
-    const-wide/16 v3, 0x200
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    filled-new-array {v0, v1, v2, v3}, [Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_1
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    sget-object v3, Lmx4;->i:Lmx4;
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Long;
-
-    sget-object v4, Lnx4;->a:Ljava/util/HashMap;
-
-    invoke-virtual {v4, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0, p0, p1, v1}, Lnx4;-><init>(Lbid;II)V
 
     goto :goto_1
 
     :cond_1
-    sget-object v1, Lnx4;->b:Ljava/util/HashMap;
+    new-instance p1, Lfne;
 
-    invoke-virtual {v1, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object p0, p0, Lnx4;->b:Lbid;
 
-    return-void
+    invoke-direct {p1, p0, v0, v1}, Lfne;-><init>(Lbid;II)V
+
+    move-object v0, p1
+
+    :goto_1
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public static a(Lmx4;Landroid/hardware/camera2/params/DynamicRangeProfiles;)Ljava/lang/Long;
+.method public final b(I)Lbid;
     .registers 4
 
-    sget-object v0, Lnx4;->b:Ljava/util/HashMap;
+    iget v0, p0, Lnx4;->a:I
 
-    invoke-virtual {v0, p0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object p0
+    iget v0, p0, Lnx4;->c:I
 
-    check-cast p0, Ljava/util/List;
+    if-lt p1, v0, :cond_0
 
-    if-eqz p0, :cond_1
+    sget-object p0, Ly45;->a:Ly45;
 
-    invoke-static {p1}, Lb4;->q(Landroid/hardware/camera2/params/DynamicRangeProfiles;)Ljava/util/Set;
-
-    move-result-object p1
-
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
+    goto :goto_0
 
     :cond_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    new-instance v1, Lfne;
 
-    move-result v0
+    iget-object p0, p0, Lnx4;->b:Lbid;
 
-    if-eqz v0, :cond_1
+    invoke-direct {v1, p0, p1, v0}, Lfne;-><init>(Lbid;II)V
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-object p0, v1
 
-    move-result-object v0
+    :goto_0
+    return-object p0
 
-    check-cast v0, Ljava/lang/Long;
+    :pswitch_0
+    iget v0, p0, Lnx4;->c:I
 
-    invoke-interface {p1, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    add-int/2addr v0, p1
 
-    move-result v1
+    if-gez v0, :cond_1
 
-    if-eqz v1, :cond_0
+    new-instance v0, Lnx4;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, p1, v1}, Lnx4;-><init>(Lbid;II)V
+
+    goto :goto_1
+
+    :cond_1
+    new-instance p1, Lnx4;
+
+    iget-object p0, p0, Lnx4;->b:Lbid;
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, p0, v0, v1}, Lnx4;-><init>(Lbid;II)V
+
+    move-object v0, p1
+
+    :goto_1
+    return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .registers 3
+
+    iget v0, p0, Lnx4;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    new-instance v0, Lmx4;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lmx4;-><init>(Lnx4;B)V
 
     return-object v0
 
-    :cond_1
-    const/4 p0, 0x0
+    :pswitch_0
+    new-instance v0, Lmx4;
 
-    return-object p0
+    invoke-direct {v0, p0}, Lmx4;-><init>(Lnx4;)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

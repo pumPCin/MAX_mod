@@ -1,82 +1,136 @@
 .class public final Lul8;
-.super Ljava/lang/Object;
+.super Landroid/os/AsyncTask;
 .source "SourceFile"
-
-# interfaces
-.implements Lrk8;
 
 
 # instance fields
-.field public final a:Lam8;
+.field public final a:I
+
+.field public final b:Landroid/content/Context;
+
+.field public final synthetic c:Lvl8;
 
 
 # direct methods
-.method public constructor <init>(Lam8;)V
-    .registers 2
+.method public constructor <init>(Lvl8;ILandroid/content/Context;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lul8;->c:Lvl8;
 
-    iput-object p1, p0, Lul8;->a:Lam8;
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
+
+    iput p2, p0, Lul8;->a:I
+
+    iput-object p3, p0, Lul8;->b:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+.method public final doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    if-ne p0, p1, :cond_0
+    check-cast p1, [Ljava/lang/Void;
 
-    const/4 p0, 0x1
+    sget-object p1, Lvl8;->E0:Landroid/util/SparseArray;
 
-    return p0
+    iget v0, p0, Lul8;->a:I
 
-    :cond_0
-    if-eqz p1, :cond_2
+    invoke-virtual {p1, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object p1
 
-    move-result-object v0
+    check-cast p1, Landroid/graphics/drawable/Drawable$ConstantState;
 
-    const-class v1, Lul8;
+    if-nez p1, :cond_0
 
-    if-eq v0, v1, :cond_1
+    iget-object p0, p0, Lul8;->b:Landroid/content/Context;
 
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lul8;
-
-    iget-object p0, p0, Lul8;->a:Lam8;
-
-    iget-object p1, p1, Lul8;->a:Lam8;
-
-    invoke-static {p0, p1}, Laif;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    return p0
-
-    :cond_2
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lul8;->a:Lam8;
-
-    filled-new-array {p0}, [Ljava/lang/Object;
+    invoke-static {p0, v0}, Luyg;->p(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    return-object p0
 
-    move-result p0
+    :cond_0
+    const/4 p0, 0x0
 
-    return p0
+    return-object p0
+.end method
+
+.method public final onCancelled(Ljava/lang/Object;)V
+    .registers 4
+
+    check-cast p1, Landroid/graphics/drawable/Drawable;
+
+    if-eqz p1, :cond_0
+
+    sget-object v0, Lvl8;->E0:Landroid/util/SparseArray;
+
+    iget v1, p0, Lul8;->a:I
+
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+
+    move-result-object p1
+
+    invoke-virtual {v0, v1, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    :cond_0
+    iget-object p0, p0, Lul8;->c:Lvl8;
+
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Lvl8;->t0:Lul8;
+
+    return-void
+.end method
+
+.method public final onPostExecute(Ljava/lang/Object;)V
+    .registers 6
+
+    check-cast p1, Landroid/graphics/drawable/Drawable;
+
+    const/4 v0, 0x0
+
+    iget v1, p0, Lul8;->a:I
+
+    iget-object p0, p0, Lul8;->c:Lvl8;
+
+    if-eqz p1, :cond_0
+
+    sget-object v2, Lvl8;->E0:Landroid/util/SparseArray;
+
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v1, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+
+    iput-object v0, p0, Lvl8;->t0:Lul8;
+
+    goto :goto_0
+
+    :cond_0
+    sget-object v2, Lvl8;->E0:Landroid/util/SparseArray;
+
+    invoke-virtual {v2, v1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/graphics/drawable/Drawable$ConstantState;
+
+    if-eqz v1, :cond_1
+
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    :cond_1
+    iput-object v0, p0, Lvl8;->t0:Lul8;
+
+    :goto_0
+    invoke-virtual {p0, p1}, Lvl8;->setRemoteIndicatorDrawableInternal(Landroid/graphics/drawable/Drawable;)V
+
+    return-void
 .end method

@@ -4,67 +4,34 @@
 
 
 # instance fields
-.field public a:Lnx1;
+.field public final a:Ljava/lang/String;
 
-.field public b:Lqz6;
+.field public final b:Ljava/lang/String;
 
-.field public final c:Lqz6;
+.field public final c:Ljava/lang/String;
 
-.field public final d:Landroid/util/Size;
+.field public final d:Llb0;
 
 .field public final e:I
 
-.field public final f:I
-
-.field public final g:Z
-
-.field public final h:Lwx4;
-
-.field public final i:Lwx4;
-
 
 # direct methods
-.method public constructor <init>(Landroid/util/Size;IIZLwx4;Lwx4;)V
-    .registers 9
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Llb0;I)V
+    .registers 6
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    new-instance v0, Lt12;
+    iput-object p1, p0, Lx90;->a:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    iput-object p2, p0, Lx90;->b:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Lt12;-><init>(I)V
+    iput-object p3, p0, Lx90;->c:Ljava/lang/String;
 
-    iput-object v0, p0, Lx90;->a:Lnx1;
+    iput-object p4, p0, Lx90;->d:Llb0;
 
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lx90;->c:Lqz6;
-
-    if-eqz p1, :cond_0
-
-    iput-object p1, p0, Lx90;->d:Landroid/util/Size;
-
-    iput p2, p0, Lx90;->e:I
-
-    iput p3, p0, Lx90;->f:I
-
-    iput-boolean p4, p0, Lx90;->g:Z
-
-    iput-object p5, p0, Lx90;->h:Lwx4;
-
-    iput-object p6, p0, Lx90;->i:Lwx4;
+    iput p5, p0, Lx90;->e:I
 
     return-void
-
-    :cond_0
-    new-instance p0, Ljava/lang/NullPointerException;
-
-    const-string p1, "Null size"
-
-    invoke-direct {p0, p1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
-
-    throw p0
 .end method
 
 
@@ -74,140 +41,217 @@
 
     if-ne p1, p0, :cond_0
 
-    goto :goto_0
+    goto :goto_4
 
     :cond_0
     instance-of v0, p1, Lx90;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_6
 
     check-cast p1, Lx90;
 
-    iget-object v0, p0, Lx90;->d:Landroid/util/Size;
+    iget-object v0, p0, Lx90;->a:Ljava/lang/String;
 
-    iget-object v1, p1, Lx90;->d:Landroid/util/Size;
+    if-nez v0, :cond_1
 
-    invoke-virtual {v0, v1}, Landroid/util/Size;->equals(Ljava/lang/Object;)Z
+    iget-object v0, p1, Lx90;->a:Ljava/lang/String;
 
-    move-result v0
+    if-nez v0, :cond_6
 
-    if-eqz v0, :cond_1
+    goto :goto_0
 
-    iget v0, p0, Lx90;->e:I
+    :cond_1
+    iget-object v1, p1, Lx90;->a:Ljava/lang/String;
 
-    iget v1, p1, Lx90;->e:I
-
-    if-ne v0, v1, :cond_1
-
-    iget v0, p0, Lx90;->f:I
-
-    iget v1, p1, Lx90;->f:I
-
-    if-ne v0, v1, :cond_1
-
-    iget-boolean v0, p0, Lx90;->g:Z
-
-    iget-boolean v1, p1, Lx90;->g:Z
-
-    if-ne v0, v1, :cond_1
-
-    iget-object v0, p0, Lx90;->h:Lwx4;
-
-    iget-object v1, p1, Lx90;->h:Lwx4;
-
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_6
 
-    iget-object p0, p0, Lx90;->i:Lwx4;
+    :goto_0
+    iget-object v0, p0, Lx90;->b:Ljava/lang/String;
 
-    iget-object p1, p1, Lx90;->i:Lwx4;
+    if-nez v0, :cond_2
 
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget-object v0, p1, Lx90;->b:Ljava/lang/String;
+
+    if-nez v0, :cond_6
+
+    goto :goto_1
+
+    :cond_2
+    iget-object v1, p1, Lx90;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    :goto_1
+    iget-object v0, p0, Lx90;->c:Ljava/lang/String;
+
+    if-nez v0, :cond_3
+
+    iget-object v0, p1, Lx90;->c:Ljava/lang/String;
+
+    if-nez v0, :cond_6
+
+    goto :goto_2
+
+    :cond_3
+    iget-object v1, p1, Lx90;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    :goto_2
+    iget-object v0, p0, Lx90;->d:Llb0;
+
+    if-nez v0, :cond_4
+
+    iget-object v0, p1, Lx90;->d:Llb0;
+
+    if-nez v0, :cond_6
+
+    goto :goto_3
+
+    :cond_4
+    iget-object v1, p1, Lx90;->d:Llb0;
+
+    invoke-virtual {v0, v1}, Llb0;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    :goto_3
+    iget p0, p0, Lx90;->e:I
+
+    if-nez p0, :cond_5
+
+    iget p0, p1, Lx90;->e:I
+
+    if-nez p0, :cond_6
+
+    goto :goto_4
+
+    :cond_5
+    iget p1, p1, Lx90;->e:I
+
+    invoke-static {p0, p1}, Lmw1;->c(II)Z
 
     move-result p0
 
-    if-eqz p0, :cond_1
+    if-eqz p0, :cond_6
 
-    :goto_0
+    :goto_4
     const/4 p0, 0x1
 
     return p0
 
-    :cond_1
+    :cond_6
     const/4 p0, 0x0
 
     return p0
 .end method
 
 .method public final hashCode()I
-    .registers 4
+    .registers 5
 
-    iget-object v0, p0, Lx90;->d:Landroid/util/Size;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0}, Landroid/util/Size;->hashCode()I
+    iget-object v1, p0, Lx90;->a:Ljava/lang/String;
 
-    move-result v0
+    if-nez v1, :cond_0
 
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lx90;->e:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lx90;->f:I
-
-    xor-int/2addr v0, v2
-
-    mul-int/2addr v0, v1
-
-    iget-boolean v2, p0, Lx90;->g:Z
-
-    if-eqz v2, :cond_0
-
-    const/16 v2, 0x4cf
+    move v1, v0
 
     goto :goto_0
 
     :cond_0
-    const/16 v2, 0x4d5
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
 
     :goto_0
-    xor-int/2addr v0, v2
+    const v2, 0xf4243
 
-    const v2, 0x22cd8cdb
+    xor-int/2addr v1, v2
 
-    mul-int/2addr v0, v2
+    mul-int/2addr v1, v2
 
-    xor-int/lit8 v0, v0, 0x23
+    iget-object v3, p0, Lx90;->b:Ljava/lang/String;
 
-    mul-int/2addr v0, v1
+    if-nez v3, :cond_1
 
-    iget-object v2, p0, Lx90;->h:Lwx4;
+    move v3, v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+    goto :goto_1
 
-    move-result v2
+    :cond_1
+    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
-    xor-int/2addr v0, v2
+    move-result v3
 
-    mul-int/2addr v0, v1
+    :goto_1
+    xor-int/2addr v1, v3
 
-    iget-object p0, p0, Lx90;->i:Lwx4;
+    mul-int/2addr v1, v2
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    iget-object v3, p0, Lx90;->c:Ljava/lang/String;
 
-    move-result p0
+    if-nez v3, :cond_2
 
-    xor-int/2addr p0, v0
+    move v3, v0
+
+    goto :goto_2
+
+    :cond_2
+    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
+
+    move-result v3
+
+    :goto_2
+    xor-int/2addr v1, v3
+
+    mul-int/2addr v1, v2
+
+    iget-object v3, p0, Lx90;->d:Llb0;
+
+    if-nez v3, :cond_3
+
+    move v3, v0
+
+    goto :goto_3
+
+    :cond_3
+    invoke-virtual {v3}, Llb0;->hashCode()I
+
+    move-result v3
+
+    :goto_3
+    xor-int/2addr v1, v3
+
+    mul-int/2addr v1, v2
+
+    iget p0, p0, Lx90;->e:I
+
+    if-nez p0, :cond_4
+
+    goto :goto_4
+
+    :cond_4
+    invoke-static {p0}, Lmw1;->t(I)I
+
+    move-result v0
+
+    :goto_4
+    xor-int p0, v1, v0
 
     return p0
 .end method
@@ -217,53 +261,66 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "In{size="
+    const-string v1, "InstallationResponse{uri="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lx90;->d:Landroid/util/Size;
+    iget-object v1, p0, Lx90;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", fid="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lx90;->b:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", refreshToken="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lx90;->c:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", authToken="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lx90;->d:Llb0;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    const-string v1, ", inputFormat="
+    const-string v1, ", responseCode="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p0, Lx90;->e:I
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget p0, p0, Lx90;->e:I
 
-    const-string v1, ", outputFormat="
+    if-eq p0, v1, :cond_1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v1, 0x2
 
-    iget v1, p0, Lx90;->f:I
+    if-eq p0, v1, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string p0, "null"
 
-    const-string v1, ", virtualCamera="
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    const-string p0, "BAD_CONFIG"
 
-    iget-boolean v1, p0, Lx90;->g:Z
+    goto :goto_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    :cond_1
+    const-string p0, "OK"
 
-    const-string v1, ", imageReaderProxyProvider=null, postviewSize=null, postviewImageFormat=35, requestEdge="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lx90;->h:Lwx4;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", errorEdge="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lx90;->i:Lwx4;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :goto_0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string p0, "}"
 

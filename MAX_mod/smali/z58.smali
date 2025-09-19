@@ -1,51 +1,95 @@
-.class public final Lz58;
-.super Lu58;
+.class public abstract synthetic Lz58;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Lq68;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public constructor <init>(Lq68;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->values()[Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
-    iput-object p1, p0, Lz58;->a:Lq68;
+    move-result-object v0
 
-    return-void
-.end method
+    array-length v0, v0
 
-
-# virtual methods
-.method public final g(Ln68;)V
-    .registers 4
-
-    new-instance v0, Ly58;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1, p1}, Ly58;-><init>(ILjava/lang/Object;)V
-
-    invoke-interface {p1, v0}, Ln68;->c(Lnp4;)V
+    new-array v0, v0, [I
 
     :try_start_0
-    iget-object p0, p0, Lz58;->a:Lq68;
+    sget-object v1, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->WIRED_HEADSET:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
-    invoke-interface {p0, v0}, Lq68;->b(Ly58;)V
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-void
+    :catch_0
+    :try_start_1
+    sget-object v1, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->EARPIECE:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
 
-    :catchall_0
-    move-exception p0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    invoke-static {p0}, Lye2;->k0(Ljava/lang/Throwable;)V
+    move-result v1
 
-    invoke-virtual {v0, p0}, Ly58;->onError(Ljava/lang/Throwable;)V
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    :try_start_2
+    sget-object v1, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->BLUETOOTH:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    :try_start_3
+    sget-object v1, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->BLUETOOTH_INTENT:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+    :try_start_4
+    sget-object v1, Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;->SPEAKER_PHONE:Lru/ok/android/externcalls/sdk/audio/CallsAudioManager$AudioDeviceType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    :catch_4
+    sput-object v0, Lz58;->$EnumSwitchMapping$0:[I
 
     return-void
 .end method

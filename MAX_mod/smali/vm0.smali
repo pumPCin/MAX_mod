@@ -3,29 +3,63 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic a:I
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .registers 3
+.method public static a(Landroid/hardware/biometrics/BiometricPrompt;Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V
+    .registers 5
 
-    new-instance v0, Ljava/math/BigInteger;
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/hardware/biometrics/BiometricPrompt;->authenticate(Landroid/hardware/biometrics/BiometricPrompt$CryptoObject;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V
 
-    const-string v1, "16a09e667f3bcc908b2fb1366ea957d3e3adec17512775099da2f590b0667322a"
+    return-void
+.end method
 
-    const/16 v2, 0x10
+.method public static b(Landroid/hardware/biometrics/BiometricPrompt;Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V
+    .registers 4
 
-    invoke-direct {v0, v1, v2}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {p0, p1, p2, p3}, Landroid/hardware/biometrics/BiometricPrompt;->authenticate(Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V
 
-    const-wide/high16 v0, 0x4024000000000000L    # 10.0
+    return-void
+.end method
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
+.method public static c(Landroid/hardware/biometrics/BiometricPrompt$Builder;)Landroid/hardware/biometrics/BiometricPrompt;
+    .registers 1
 
-    const-wide/high16 v0, 0x4000000000000000L    # 2.0
+    invoke-virtual {p0}, Landroid/hardware/biometrics/BiometricPrompt$Builder;->build()Landroid/hardware/biometrics/BiometricPrompt;
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static d(Landroid/content/Context;)Landroid/hardware/biometrics/BiometricPrompt$Builder;
+    .registers 2
+
+    new-instance v0, Landroid/hardware/biometrics/BiometricPrompt$Builder;
+
+    invoke-direct {v0, p0}, Landroid/hardware/biometrics/BiometricPrompt$Builder;-><init>(Landroid/content/Context;)V
+
+    return-object v0
+.end method
+
+.method public static e(Landroid/hardware/biometrics/BiometricPrompt$Builder;Ljava/lang/CharSequence;)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/hardware/biometrics/BiometricPrompt$Builder;->setDescription(Ljava/lang/CharSequence;)Landroid/hardware/biometrics/BiometricPrompt$Builder;
+
+    return-void
+.end method
+
+.method public static f(Landroid/hardware/biometrics/BiometricPrompt$Builder;Ljava/lang/CharSequence;Ljava/util/concurrent/Executor;Landroid/content/DialogInterface$OnClickListener;)V
+    .registers 4
+
+    invoke-virtual {p0, p1, p2, p3}, Landroid/hardware/biometrics/BiometricPrompt$Builder;->setNegativeButton(Ljava/lang/CharSequence;Ljava/util/concurrent/Executor;Landroid/content/DialogInterface$OnClickListener;)Landroid/hardware/biometrics/BiometricPrompt$Builder;
+
+    return-void
+.end method
+
+.method public static g(Landroid/hardware/biometrics/BiometricPrompt$Builder;Ljava/lang/CharSequence;)V
+    .registers 2
+
+    invoke-virtual {p0, p1}, Landroid/hardware/biometrics/BiometricPrompt$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/hardware/biometrics/BiometricPrompt$Builder;
 
     return-void
 .end method

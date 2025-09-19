@@ -2,36 +2,23 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lme5;
 
-# instance fields
-.field public final a:Landroidx/viewpager2/widget/ViewPager2;
 
-.field public final b:Ln0d;
-
-.field public final c:Landroidx/recyclerview/widget/RecyclerView;
-
-.field public d:Landroid/view/VelocityTracker;
-
-.field public e:I
-
-.field public f:F
-
-.field public g:I
-
-.field public h:J
+# static fields
+.field public static final a:Lke5;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/viewpager2/widget/ViewPager2;Ln0d;Lwyf;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lke5;
 
-    iput-object p1, p0, Lke5;->a:Landroidx/viewpager2/widget/ViewPager2;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p2, p0, Lke5;->b:Ln0d;
-
-    iput-object p3, p0, Lke5;->c:Landroidx/recyclerview/widget/RecyclerView;
+    sput-object v0, Lke5;->a:Lke5;
 
     return-void
 .end method

@@ -1,105 +1,112 @@
-.class public final Lw44;
-.super Le58;
+.class public abstract Lw44;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final synthetic F0:I
+.field public static final a:Ljava/lang/String;
+
+.field public static final b:Ljava/lang/String;
+
+.field public static final c:Ljava/lang/String;
+
+.field public static final d:Ljava/lang/String;
+
+.field public static final e:Ljava/lang/String;
 
 
-# instance fields
-.field public E0:Lv44;
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
 
+    sget v0, Lnrf;->a:I
 
-# virtual methods
-.method public final f(Landroid/graphics/Canvas;)V
-    .registers 3
+    const/4 v0, 0x0
 
-    iget-object v0, p0, Lw44;->E0:Lv44;
+    const/16 v1, 0x24
 
-    iget-object v0, v0, Lv44;->r:Landroid/graphics/RectF;
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/graphics/RectF;->isEmpty()Z
+    move-result-object v0
 
-    move-result v0
+    sput-object v0, Lw44;->a:Ljava/lang/String;
 
-    if-eqz v0, :cond_0
+    const/4 v0, 0x1
 
-    invoke-super {p0, p1}, Le58;->f(Landroid/graphics/Canvas;)V
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
-    return-void
+    move-result-object v0
 
-    :cond_0
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    sput-object v0, Lw44;->b:Ljava/lang/String;
 
-    iget-object v0, p0, Lw44;->E0:Lv44;
+    const/4 v0, 0x2
 
-    iget-object v0, v0, Lv44;->r:Landroid/graphics/RectF;
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
-    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipOutRect(Landroid/graphics/RectF;)Z
+    move-result-object v0
 
-    invoke-super {p0, p1}, Le58;->f(Landroid/graphics/Canvas;)V
+    sput-object v0, Lw44;->c:Ljava/lang/String;
 
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+    const/4 v0, 0x3
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lw44;->d:Ljava/lang/String;
+
+    const/4 v0, 0x4
+
+    invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lw44;->e:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public final mutate()Landroid/graphics/drawable/Drawable;
-    .registers 3
-
-    new-instance v0, Lv44;
-
-    iget-object v1, p0, Lw44;->E0:Lv44;
-
-    invoke-direct {v0, v1}, Lv44;-><init>(Lv44;)V
-
-    iput-object v0, p0, Lw44;->E0:Lv44;
-
-    return-object p0
-.end method
-
-.method public final q(FFFF)V
+.method public static a(Landroid/text/Spanned;Ljava/lang/Object;ILandroid/os/Bundle;)Landroid/os/Bundle;
     .registers 7
 
-    iget-object v0, p0, Lw44;->E0:Lv44;
+    new-instance v0, Landroid/os/Bundle;
 
-    iget-object v0, v0, Lv44;->r:Landroid/graphics/RectF;
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    iget v1, v0, Landroid/graphics/RectF;->left:F
+    sget-object v1, Lw44;->a:Ljava/lang/String;
 
-    cmpl-float v1, p1, v1
+    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
 
-    if-nez v1, :cond_1
+    move-result v2
 
-    iget v1, v0, Landroid/graphics/RectF;->top:F
+    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    cmpl-float v1, p2, v1
+    sget-object v1, Lw44;->b:Ljava/lang/String;
 
-    if-nez v1, :cond_1
+    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
 
-    iget v1, v0, Landroid/graphics/RectF;->right:F
+    move-result v2
 
-    cmpl-float v1, p3, v1
+    invoke-virtual {v0, v1, v2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    if-nez v1, :cond_1
+    sget-object v1, Lw44;->c:Ljava/lang/String;
 
-    iget v1, v0, Landroid/graphics/RectF;->bottom:F
+    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanFlags(Ljava/lang/Object;)I
 
-    cmpl-float v1, p4, v1
+    move-result p0
 
-    if-eqz v1, :cond_0
+    invoke-virtual {v0, v1, p0}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
-    goto :goto_0
+    sget-object p0, Lw44;->d:Ljava/lang/String;
+
+    invoke-virtual {v0, p0, p2}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+
+    if-eqz p3, :cond_0
+
+    sget-object p0, Lw44;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, p0, p3}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     :cond_0
-    return-void
-
-    :cond_1
-    :goto_0
-    invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/RectF;->set(FFFF)V
-
-    invoke-virtual {p0}, Le58;->invalidateSelf()V
-
-    return-void
+    return-object v0
 .end method

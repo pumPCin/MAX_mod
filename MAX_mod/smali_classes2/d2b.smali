@@ -1,5 +1,5 @@
 .class public final Ld2b;
-.super Ljo;
+.super Lso;
 .source "SourceFile"
 
 
@@ -13,7 +13,7 @@
 
     new-instance v0, Ld2b;
 
-    invoke-direct {v0}, Ljo;-><init>()V
+    invoke-direct {v0}, Lso;-><init>()V
 
     sput-object v0, Ld2b;->a:Ld2b;
 

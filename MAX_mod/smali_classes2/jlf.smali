@@ -1,225 +1,123 @@
-.class public final Ljlf;
-.super Lsoe;
+.class public abstract synthetic Ljlf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public X:J
-
-.field public Y:Z
-
-.field public c:Ljava/util/List;
-
-.field public o:J
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public constructor <init>(Lu09;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 3
 
-    invoke-direct {p0, p1}, Lsoe;-><init>(Lu09;)V
+    invoke-static {}, Ljava/util/concurrent/TimeUnit;->values()[Ljava/util/concurrent/TimeUnit;
 
-    iget-object p1, p0, Ljlf;->c:Ljava/util/List;
+    move-result-object v0
 
-    if-nez p1, :cond_0
+    array-length v0, v0
 
-    sget-object p1, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+    new-array v0, v0, [I
 
-    iput-object p1, p0, Ljlf;->c:Ljava/util/List;
+    :try_start_0
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
-    :cond_0
-    return-void
-.end method
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
+    move-result v1
 
-# virtual methods
-.method public final c(Lu09;Ljava/lang/String;)V
-    .registers 7
+    const/4 v2, 0x1
 
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
+    :catch_0
+    :try_start_1
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MICROSECONDS:Ljava/util/concurrent/TimeUnit;
 
-    move-result v0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    const/4 v1, -0x1
+    move-result v1
 
-    sparse-switch v0, :sswitch_data_0
+    const/4 v2, 0x2
 
-    goto :goto_0
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    :sswitch_0
-    const-string v0, "backwardMarker"
+    :catch_1
+    :try_start_2
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    move-result p2
+    move-result v1
 
-    if-nez p2, :cond_0
+    const/4 v2, 0x3
 
-    goto :goto_0
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    :cond_0
-    const/4 v1, 0x3
+    :catch_2
+    :try_start_3
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    goto :goto_0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    :sswitch_1
-    const-string v0, "history"
+    move-result v1
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const/4 v2, 0x4
 
-    move-result p2
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    if-nez p2, :cond_1
+    :catch_3
+    :try_start_4
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
-    goto :goto_0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    :cond_1
-    const/4 v1, 0x2
+    move-result v1
 
-    goto :goto_0
+    const/4 v2, 0x5
 
-    :sswitch_2
-    const-string v0, "hasMore"
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :catch_4
+    :try_start_5
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->HOURS:Ljava/util/concurrent/TimeUnit;
 
-    move-result p2
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    if-nez p2, :cond_2
+    move-result v1
 
-    goto :goto_0
+    const/4 v2, 0x6
 
-    :cond_2
-    const/4 v1, 0x1
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
-    goto :goto_0
+    :catch_5
+    :try_start_6
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
 
-    :sswitch_3
-    const-string v0, "forwardMarker"
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    invoke-virtual {p2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v1
 
-    move-result p2
+    const/4 v2, 0x7
 
-    if-nez p2, :cond_3
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
-    goto :goto_0
-
-    :cond_3
-    const/4 v1, 0x0
-
-    :goto_0
-    const-wide/16 v2, 0x0
-
-    packed-switch v1, :pswitch_data_0
-
-    invoke-virtual {p1}, Lu09;->B()V
-
-    return-void
-
-    :pswitch_0
-    invoke-static {p1, v2, v3}, Lbv7;->g0(Lu09;J)J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Ljlf;->X:J
-
-    return-void
-
-    :pswitch_1
-    new-instance p2, Le38;
-
-    const/16 v0, 0x12
-
-    invoke-direct {p2, v0}, Le38;-><init>(I)V
-
-    invoke-static {p1, p2}, Lbv7;->s0(Lu09;Lph9;)Ljava/util/ArrayList;
-
-    move-result-object p1
-
-    iput-object p1, p0, Ljlf;->c:Ljava/util/List;
+    :catch_6
+    sput-object v0, Ljlf;->$EnumSwitchMapping$0:[I
 
     return-void
-
-    :pswitch_2
-    invoke-static {p1}, Lbv7;->a0(Lu09;)Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Ljlf;->Y:Z
-
-    return-void
-
-    :pswitch_3
-    invoke-static {p1, v2, v3}, Lbv7;->g0(Lu09;J)J
-
-    move-result-wide p1
-
-    iput-wide p1, p0, Ljlf;->o:J
-
-    return-void
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x22b4d4a1 -> :sswitch_3
-        0x2987650f -> :sswitch_2
-        0x373fe494 -> :sswitch_1
-        0x3d0e95fd -> :sswitch_0
-    .end sparse-switch
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 8
-
-    iget-object v0, p0, Ljlf;->c:Ljava/util/List;
-
-    invoke-static {v0}, Leh7;->n(Ljava/util/Collection;)I
-
-    move-result v0
-
-    iget-wide v1, p0, Ljlf;->o:J
-
-    iget-wide v3, p0, Ljlf;->X:J
-
-    iget-boolean p0, p0, Ljlf;->Y:Z
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    const-string v6, "{calls="
-
-    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v0, ", forwardMarker="
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v0, ", backwardMarker="
-
-    const-string v1, ", hasMore="
-
-    invoke-static {v3, v4, v0, v1, v5}, Lew1;->r(JLjava/lang/String;Ljava/lang/String;Ljava/lang/StringBuilder;)V
-
-    const-string v0, "}"
-
-    invoke-static {v5, p0, v0}, Lew1;->k(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

@@ -1,58 +1,64 @@
-.class public interface abstract Lab8;
+.class public final Lab8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lcb8;
+
+
+# static fields
+.field public static final a:Lab8;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    new-instance v0, Lab8;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Lab8;->a:Lab8;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a(JIII)V
-.end method
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-.method public abstract c(IJ)V
-.end method
+    const/4 v0, 0x1
 
-.method public abstract d()I
-.end method
+    if-ne p0, p1, :cond_0
 
-.method public abstract e(Landroid/media/MediaCodec$BufferInfo;)I
-.end method
+    return v0
 
-.method public abstract flush()V
-.end method
+    :cond_0
+    instance-of p0, p1, Lab8;
 
-.method public abstract getInputBuffer(I)Ljava/nio/ByteBuffer;
-.end method
-
-.method public abstract getOutputBuffer(I)Ljava/nio/ByteBuffer;
-.end method
-
-.method public abstract getOutputFormat()Landroid/media/MediaFormat;
-.end method
-
-.method public abstract j(I)V
-.end method
-
-.method public abstract k(Landroid/view/Surface;)V
-.end method
-
-.method public abstract n(ILr34;JI)V
-.end method
-
-.method public o(Llb8;)Z
-    .registers 2
+    if-nez p0, :cond_1
 
     const/4 p0, 0x0
 
     return p0
+
+    :cond_1
+    return v0
 .end method
 
-.method public abstract release()V
+.method public final hashCode()I
+    .registers 1
+
+    const p0, 0x142af9ca
+
+    return p0
 .end method
 
-.method public abstract releaseOutputBuffer(IZ)V
-.end method
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-.method public abstract setParameters(Landroid/os/Bundle;)V
-.end method
+    const-string p0, "ShowMediaModeSnack"
 
-.method public abstract y(Lzb8;Landroid/os/Handler;)V
+    return-object p0
 .end method

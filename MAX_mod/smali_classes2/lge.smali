@@ -1,31 +1,39 @@
 .class public final Llge;
-.super Lbud;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public final x(Lpp7;)V
-    .registers 5
+# instance fields
+.field public final a:Lexc;
 
-    check-cast p1, Lkge;
+.field public final b:Luh;
 
-    iget-object p0, p0, Lphc;->a:Landroid/view/View;
+.field public final c:Lwwc;
 
-    check-cast p0, Ldn3;
 
-    iget-object v0, p1, Lkge;->b:Ljava/lang/CharSequence;
+# direct methods
+.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
+    .registers 4
 
-    invoke-virtual {p0, v0}, Ldn3;->setName(Ljava/lang/CharSequence;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget-object v1, p1, Lkge;->o:Ljava/lang/CharSequence;
+    iput-object p1, p0, Llge;->a:Lexc;
 
-    invoke-virtual {p0, v1}, Ldn3;->setMessage(Ljava/lang/CharSequence;)V
+    new-instance v0, Luh;
 
-    iget-wide v1, p1, Lkge;->a:J
+    const/16 v1, 0x18
 
-    iget-object p1, p1, Lkge;->c:Ljava/lang/String;
+    invoke-direct {v0, p1, v1}, Luh;-><init>(Lexc;I)V
 
-    invoke-virtual {p0, v1, v2, v0, p1}, Ldn3;->L(JLjava/lang/CharSequence;Ljava/lang/String;)V
+    iput-object v0, p0, Llge;->b:Luh;
+
+    new-instance v0, Lwwc;
+
+    const/4 v1, 0x6
+
+    invoke-direct {v0, p1, v1}, Lwwc;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Llge;->c:Lwwc;
 
     return-void
 .end method

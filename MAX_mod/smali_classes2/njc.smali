@@ -1,45 +1,49 @@
 .class public final Lnjc;
-.super Lij0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final b:Lop3;
+.field public final a:Lexc;
+
+.field public final b:Luh;
+
+.field public final c:Lte4;
+
+.field public final d:Lf79;
 
 
 # direct methods
-.method public constructor <init>(JLop3;)V
+.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
     .registers 4
 
-    invoke-direct {p0, p1, p2}, Lij0;-><init>(J)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lnjc;->b:Lop3;
+    iput-object p1, p0, Lnjc;->a:Lexc;
+
+    new-instance v0, Luh;
+
+    const/16 v1, 0x13
+
+    invoke-direct {v0, p1, v1}, Luh;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lnjc;->b:Luh;
+
+    new-instance v0, Lte4;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, p1, v1}, Lte4;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lnjc;->c:Lte4;
+
+    new-instance v0, Lf79;
+
+    const/16 v1, 0x18
+
+    invoke-direct {v0, p1, v1}, Lf79;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lnjc;->d:Lf79;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ProfileEvent{contactInfo="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lnjc;->b:Lop3;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const/16 p0, 0x7d
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
 .end method

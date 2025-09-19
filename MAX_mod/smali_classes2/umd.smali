@@ -1,156 +1,85 @@
 .class public final Lumd;
-.super Luxf;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lyi3;
-
-
-# static fields
-.field public static final synthetic Y:[Lsf7;
+.implements Lvmd;
 
 
 # instance fields
-.field public final X:Lx65;
-
-.field public final b:Lxh7;
-
-.field public final c:Lxh7;
-
-.field public final o:Lqfd;
+.field public final a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
+.method public constructor <init>(I)V
+    .registers 2
 
-    new-instance v0, Lal9;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "codeJob"
-
-    const-string v2, "getCodeJob()Lkotlinx/coroutines/Job;"
-
-    const-class v3, Lumd;
-
-    invoke-direct {v0, v3, v1, v2}, Lal9;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
-
-    sget-object v1, Lyhc;->a:Lzhc;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Lsf7;
-
-    const/4 v2, 0x0
-
-    aput-object v0, v1, v2
-
-    sput-object v1, Lumd;->Y:[Lsf7;
-
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .registers 4
-
-    sget-object v0, Lvkd;->a:Lvkd;
-
-    invoke-virtual {v0}, Lvkd;->b()Lxh7;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Ls4;
-
-    move-result-object v0
-
-    const-class v2, Ls75;
-
-    invoke-virtual {v0, v2}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    move-result-object v0
-
-    invoke-direct {p0}, Luxf;-><init>()V
-
-    iput-object v1, p0, Lumd;->b:Lxh7;
-
-    iput-object v0, p0, Lumd;->c:Lxh7;
-
-    invoke-static {}, Lb38;->C()Lqfd;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lumd;->o:Lqfd;
-
-    new-instance v0, Lx65;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, v1}, Lx65;-><init>(I)V
-
-    iput-object v0, p0, Lumd;->X:Lx65;
+    iput p1, p0, Lumd;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)V
+.method public final equals(Ljava/lang/Object;)Z
     .registers 5
 
-    iget-object v0, p0, Lumd;->b:Lxh7;
+    const/4 v0, 0x1
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
-    move-result-object v0
+    return v0
 
-    check-cast v0, Lzne;
-
-    check-cast v0, Ltba;
-
-    invoke-virtual {v0}, Ltba;->a()Ll04;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lumd;->c:Lxh7;
-
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ls75;
-
-    new-instance v2, Ljj;
-
-    invoke-direct {v2, v1}, Ljj;-><init>(Ls75;)V
-
-    invoke-virtual {v0, v2}, Lc0;->plus(Lj04;)Lj04;
-
-    move-result-object v0
-
-    new-instance v1, Ltmd;
+    :cond_0
+    instance-of v1, p1, Lumd;
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, p1, p0, v2}, Ltmd;-><init>(Ljava/lang/String;Lumd;Lkotlin/coroutines/Continuation;)V
+    if-nez v1, :cond_1
 
-    iget-object p1, p0, Luxf;->a:Lkotlinx/coroutines/internal/ContextScope;
+    return v2
 
-    sget-object v2, Lu04;->b:Lu04;
+    :cond_1
+    check-cast p1, Lumd;
 
-    invoke-static {p1, v0, v2, v1}, Las3;->T(Lr04;Lj04;Lu04;Lx96;)Lq1e;
+    iget p0, p0, Lumd;->a:I
 
-    move-result-object p1
+    iget p1, p1, Lumd;->a:I
 
-    sget-object v0, Lumd;->Y:[Lsf7;
+    if-eq p0, p1, :cond_2
 
-    const/4 v1, 0x0
+    return v2
 
-    aget-object v0, v0, v1
+    :cond_2
+    return v0
+.end method
 
-    iget-object v1, p0, Lumd;->o:Lqfd;
+.method public final hashCode()I
+    .registers 1
 
-    invoke-virtual {v1, p0, v0, p1}, Lqfd;->g0(Ljava/lang/Object;Lsf7;Ljava/lang/Object;)V
+    iget p0, p0, Lumd;->a:I
 
-    return-void
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    const-string v0, "Room(id="
+
+    const-string v1, ")"
+
+    iget p0, p0, Lumd;->a:I
+
+    invoke-static {p0, v0, v1}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

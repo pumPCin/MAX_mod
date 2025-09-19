@@ -1,52 +1,27 @@
 .class public final Lpr5;
-.super Lcx3;
-
-
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lqr5;
-
-.field public Z:Ljava/lang/Object;
-
-.field public n0:Lhq5;
-
-.field public synthetic o:Ljava/lang/Object;
-
-
-# direct methods
-.method public constructor <init>(Lqr5;Lkotlin/coroutines/Continuation;)V
-    .registers 3
-
-    iput-object p1, p0, Lpr5;->Y:Lqr5;
-
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
+.super Lah6;
+.source "SourceFile"
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final m(I)Lts0;
+    .registers 4
 
-    iput-object p1, p0, Lpr5;->o:Ljava/lang/Object;
+    new-instance v0, Lr4a;
 
-    iget p1, p0, Lpr5;->X:I
+    iget-object p0, p0, Lkj0;->c:Lteb;
 
-    const/high16 v0, -0x80000000
+    iget p0, p0, Lteb;->d:I
 
-    or-int/2addr p1, v0
+    const/4 v1, 0x0
 
-    iput p1, p0, Lpr5;->X:I
+    invoke-direct {v0, p1, p0, v1}, Lts0;-><init>(III)V
 
-    iget-object p1, p0, Lpr5;->Y:Lqr5;
+    new-instance p0, Ljava/util/LinkedList;
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/util/LinkedList;-><init>()V
 
-    invoke-virtual {p1, v0, p0}, Lqr5;->d(Lhq5;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iput-object p0, v0, Lr4a;->e:Ljava/util/LinkedList;
 
-    move-result-object p0
-
-    return-object p0
+    return-object v0
 .end method

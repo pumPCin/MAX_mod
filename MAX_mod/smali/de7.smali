@@ -1,56 +1,45 @@
 .class public final Lde7;
-.super Ljava/lang/Object;
+.super Lix5;
 .source "SourceFile"
 
-# interfaces
-.implements Ljif;
 
+# instance fields
+.field public final synthetic a:Ljava/lang/Iterable;
 
-# static fields
-.field public static final a:Ljava/text/SimpleDateFormat;
+.field public final synthetic b:Lfgb;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Ljava/lang/Iterable;Lfgb;)V
     .registers 3
 
-    new-instance v0, Ljava/text/SimpleDateFormat;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "yyyy-MM-dd\'T\'HH:mm:ss.SSS\'Z\'"
+    iput-object p1, p0, Lde7;->a:Ljava/lang/Iterable;
 
-    sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    invoke-direct {v0, v1, v2}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    sput-object v0, Lde7;->a:Ljava/text/SimpleDateFormat;
-
-    const-string v1, "UTC"
-
-    invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+    iput-object p2, p0, Lde7;->b:Lfgb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final iterator()Ljava/util/Iterator;
     .registers 3
 
-    check-cast p1, Ljava/util/Date;
+    iget-object v0, p0, Lde7;->a:Ljava/lang/Iterable;
 
-    check-cast p2, Lkif;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    sget-object p0, Lde7;->a:Ljava/text/SimpleDateFormat;
+    move-result-object v0
 
-    invoke-virtual {p0, p1}, Ljava/text/DateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object p0
+    new-instance v1, Lee7;
 
-    invoke-interface {p2, p0}, Lkif;->b(Ljava/lang/String;)Lkif;
+    iget-object p0, p0, Lde7;->b:Lfgb;
 
-    return-void
+    invoke-direct {v1, v0, p0}, Lee7;-><init>(Ljava/util/Iterator;Lfgb;)V
+
+    return-object v1
 .end method

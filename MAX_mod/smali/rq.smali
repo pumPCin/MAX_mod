@@ -1,244 +1,194 @@
-.class public final synthetic Lrq;
+.class public final Lrq;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lh96;
+
+# static fields
+.field public static final d:Lrq;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/lang/Object;
 
-.field public final synthetic b:Lxh7;
+.field public final b:Ljava/lang/Object;
 
-.field public final synthetic c:Lxh7;
+.field public final c:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxh7;Lxh7;I)V
+.method static constructor <clinit>()V
+    .registers 3
+
+    new-instance v0, Lrq;
+
+    sget-object v1, Lp45;->a:Lp45;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v1, v2}, Lrq;-><init>(Ljava/util/List;Ljava/util/List;Landroid/graphics/drawable/Drawable;)V
+
+    sput-object v0, Lrq;->d:Lrq;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/List;Ljava/util/List;Landroid/graphics/drawable/Drawable;)V
     .registers 4
 
-    iput p3, p0, Lrq;->a:I
-
-    iput-object p1, p0, Lrq;->b:Lxh7;
-
-    iput-object p2, p0, Lrq;->c:Lxh7;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lrq;->a:Ljava/lang/Object;
+
+    iput-object p2, p0, Lrq;->b:Ljava/lang/Object;
+
+    iput-object p3, p0, Lrq;->c:Landroid/graphics/drawable/Drawable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 5
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 4
 
-    iget v0, p0, Lrq;->a:I
+    if-ne p0, p1, :cond_0
 
-    packed-switch v0, :pswitch_data_0
+    goto :goto_1
 
-    new-instance v0, Li71;
+    :cond_0
+    instance-of v0, p1, Lrq;
 
-    iget-object v1, p0, Lrq;->b:Lxh7;
+    if-nez v0, :cond_1
 
-    iget-object p0, p0, Lrq;->c:Lxh7;
+    goto :goto_0
 
-    invoke-direct {v0, v1, p0}, Li71;-><init>(Lxh7;Lxh7;)V
+    :cond_1
+    check-cast p1, Lrq;
 
-    return-object v0
+    iget-object v0, p0, Lrq;->a:Ljava/lang/Object;
 
-    :pswitch_0
-    iget-object v0, p0, Lrq;->b:Lxh7;
+    iget-object v1, p1, Lrq;->a:Ljava/lang/Object;
 
-    invoke-interface {v0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v0
 
-    check-cast v0, Lzne;
+    if-nez v0, :cond_2
 
-    check-cast v0, Ltba;
+    goto :goto_0
 
-    invoke-virtual {v0}, Ltba;->b()Ll04;
+    :cond_2
+    iget-object v0, p0, Lrq;->b:Ljava/lang/Object;
 
-    move-result-object v0
+    iget-object v1, p1, Lrq;->b:Ljava/lang/Object;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    const-string v2, "shortcuts"
+    move-result v0
 
-    invoke-virtual {v0, v1, v2}, Ll04;->limitedParallelism(ILjava/lang/String;)Ll04;
+    if-nez v0, :cond_3
 
-    move-result-object v0
+    goto :goto_0
 
-    iget-object p0, p0, Lrq;->c:Lxh7;
+    :cond_3
+    iget-object p0, p0, Lrq;->c:Landroid/graphics/drawable/Drawable;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    iget-object p1, p1, Lrq;->c:Landroid/graphics/drawable/Drawable;
 
-    move-result-object p0
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    check-cast p0, Lj04;
+    move-result p0
 
-    invoke-virtual {v0, p0}, Lc0;->plus(Lj04;)Lj04;
+    if-nez p0, :cond_4
 
-    move-result-object p0
+    :goto_0
+    const/4 p0, 0x0
 
-    invoke-static {p0}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
+    return p0
 
-    move-result-object p0
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
 
-    return-object p0
+    return p0
+.end method
 
-    :pswitch_1
-    new-instance v0, Lhf0;
+.method public final hashCode()I
+    .registers 3
 
-    iget-object v1, p0, Lrq;->b:Lxh7;
+    iget-object v0, p0, Lrq;->a:Ljava/lang/Object;
 
-    iget-object p0, p0, Lrq;->c:Lxh7;
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    invoke-direct {v0, v1, p0}, Lhf0;-><init>(Lxh7;Lxh7;)V
+    move-result v0
 
-    return-object v0
+    mul-int/lit8 v0, v0, 0x1f
 
-    :pswitch_2
-    invoke-static {}, Looa;->a()Lmb7;
+    iget-object v1, p0, Lrq;->b:Ljava/lang/Object;
 
-    move-result-object v0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
-    iget-object v1, p0, Lrq;->b:Lxh7;
+    move-result v1
 
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
+    add-int/2addr v1, v0
 
-    move-result-object v1
+    mul-int/lit8 v1, v1, 0x1f
 
-    check-cast v1, Lzne;
+    iget-object p0, p0, Lrq;->c:Landroid/graphics/drawable/Drawable;
 
-    check-cast v1, Ltba;
+    if-nez p0, :cond_0
 
-    invoke-virtual {v1}, Ltba;->a()Ll04;
+    const/4 p0, 0x0
 
-    move-result-object v1
+    goto :goto_0
 
-    const-string v2, "non-contacts"
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    const/4 v3, 0x1
+    move-result p0
 
-    invoke-virtual {v1, v3, v2}, Ll04;->limitedParallelism(ILjava/lang/String;)Ll04;
+    :goto_0
+    add-int/2addr v1, p0
 
-    move-result-object v1
+    return v1
+.end method
 
-    invoke-virtual {v0, v1}, Lnc7;->plus(Lj04;)Lj04;
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    move-result-object v0
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget-object p0, p0, Lrq;->c:Lxh7;
+    const-string v1, "State(themes="
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object p0
+    iget-object v1, p0, Lrq;->a:Ljava/lang/Object;
 
-    check-cast p0, Lj04;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-interface {v0, p0}, Lj04;->plus(Lj04;)Lj04;
+    const-string v1, ", modes="
 
-    move-result-object p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {p0}, Lms8;->a(Lj04;)Lkotlinx/coroutines/internal/ContextScope;
+    iget-object v1, p0, Lrq;->b:Ljava/lang/Object;
 
-    move-result-object p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    return-object p0
+    const-string v1, ", currentThemeDrawable="
 
-    :pswitch_3
-    new-instance v0, Lhf0;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lrq;->b:Lxh7;
+    iget-object p0, p0, Lrq;->c:Landroid/graphics/drawable/Drawable;
 
-    iget-object p0, p0, Lrq;->c:Lxh7;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v1, p0}, Lhf0;-><init>(Lxh7;Lxh7;)V
+    const-string p0, ")"
 
-    return-object v0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :pswitch_4
-    new-instance v0, Lhf0;
-
-    iget-object v1, p0, Lrq;->b:Lxh7;
-
-    iget-object p0, p0, Lrq;->c:Lxh7;
-
-    invoke-direct {v0, v1, p0}, Lhf0;-><init>(Lxh7;Lxh7;)V
-
-    return-object v0
-
-    :pswitch_5
-    invoke-static {}, Lbp;->a()Lahe;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lrq;->b:Lxh7;
-
-    invoke-interface {v1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lzne;
-
-    check-cast v1, Ltba;
-
-    invoke-virtual {v1}, Ltba;->b()Ll04;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Lj04;->plus(Lj04;)Lj04;
-
-    move-result-object v0
-
-    iget-object p0, p0, Lrq;->c:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lj04;
-
-    invoke-interface {v0, p0}, Lj04;->plus(Lj04;)Lj04;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
-
-    :pswitch_6
-    new-instance v0, Lcs7;
-
-    iget-object v1, p0, Lrq;->b:Lxh7;
-
-    iget-object p0, p0, Lrq;->c:Lxh7;
-
-    invoke-direct {v0, v1, p0}, Lcs7;-><init>(Lxh7;Lxh7;)V
-
-    return-object v0
-
-    :pswitch_7
-    new-instance v0, Lcs7;
-
-    iget-object v1, p0, Lrq;->b:Lxh7;
-
-    iget-object p0, p0, Lrq;->c:Lxh7;
-
-    invoke-direct {v0, v1, p0}, Lcs7;-><init>(Lxh7;Lxh7;)V
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -45,7 +45,7 @@
         "(Lone/me/sdk/richvector/internal/element/PathElement;)V",
         "Landroid/graphics/Matrix;",
         "matrix",
-        "Lncf;",
+        "Lylf;",
         "transform",
         "(Landroid/graphics/Matrix;)V",
         "ratio",
@@ -56,9 +56,9 @@
         "draw",
         "(Landroid/graphics/Canvas;)V",
         "",
-        "Lbua;",
+        "La0b;",
         "setPathData",
-        "([Lbua;)V",
+        "([La0b;)V",
         "alpha",
         "setStrokeAlpha",
         "updatePath",
@@ -71,7 +71,7 @@
         "Lkotlin/Function0;",
         "action",
         "reuse",
-        "(Landroid/graphics/Paint;Lh96;)V",
+        "(Landroid/graphics/Paint;Lzb6;)V",
         "Ljava/lang/String;",
         "getName",
         "()Ljava/lang/String;",
@@ -129,7 +129,7 @@
         "trimmedPath",
         "strokeRatio",
         "pathDataNodes",
-        "[Lbua;",
+        "[La0b;",
         "rich-vector_release"
     }
     k = 0x1
@@ -173,7 +173,7 @@
 
 .field private final pathData:Ljava/lang/String;
 
-.field private pathDataNodes:[Lbua;
+.field private pathDataNodes:[La0b;
 
 .field private final scaleMatrix:Landroid/graphics/Matrix;
 
@@ -260,7 +260,7 @@
 
     if-eqz p5, :cond_0
 
-    invoke-static {p5}, Lms8;->l(Ljava/lang/String;)Landroid/graphics/Path;
+    invoke-static {p5}, Lmq0;->p(Ljava/lang/String;)Landroid/graphics/Path;
 
     move-result-object p1
 
@@ -392,11 +392,11 @@
 
     iput v1, v0, Lone/me/sdk/richvector/internal/element/PathElement;->strokeRatio:F
 
-    iget-object v1, v15, Lone/me/sdk/richvector/internal/element/PathElement;->pathDataNodes:[Lbua;
+    iget-object v1, v15, Lone/me/sdk/richvector/internal/element/PathElement;->pathDataNodes:[La0b;
 
     if-eqz v1, :cond_0
 
-    invoke-static {v1}, Lms8;->m([Lbua;)[Lbua;
+    invoke-static {v1}, Lmq0;->s([La0b;)[La0b;
 
     move-result-object v1
 
@@ -406,7 +406,7 @@
     const/4 v1, 0x0
 
     :goto_0
-    iput-object v1, v0, Lone/me/sdk/richvector/internal/element/PathElement;->pathDataNodes:[Lbua;
+    iput-object v1, v0, Lone/me/sdk/richvector/internal/element/PathElement;->pathDataNodes:[La0b;
 
     iget v1, v15, Lone/me/sdk/richvector/internal/element/PathElement;->paintStrokeWidth:F
 
@@ -481,13 +481,13 @@
     return-void
 .end method
 
-.method private final reuse(Landroid/graphics/Paint;Lh96;)V
+.method private final reuse(Landroid/graphics/Paint;Lzb6;)V
     .registers 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/graphics/Paint;",
-            "Lh96;",
+            "Lzb6;",
             ")V"
         }
     .end annotation
@@ -566,7 +566,7 @@
 
     :cond_0
     :goto_0
-    invoke-interface {p2}, Lh96;->invoke()Ljava/lang/Object;
+    invoke-interface {p2}, Lzb6;->invoke()Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -810,7 +810,7 @@
 .method private final updatePath()V
     .registers 3
 
-    iget-object v0, p0, Lone/me/sdk/richvector/internal/element/PathElement;->pathDataNodes:[Lbua;
+    iget-object v0, p0, Lone/me/sdk/richvector/internal/element/PathElement;->pathDataNodes:[La0b;
 
     if-eqz v0, :cond_0
 
@@ -824,7 +824,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lms8;->E([Lbua;Landroid/graphics/Path;)V
+    invoke-static {v0, v1}, Lmq0;->G([La0b;Landroid/graphics/Path;)V
 
     invoke-virtual {p0}, Lone/me/sdk/richvector/internal/element/PathElement;->getPath()Landroid/graphics/Path;
 
@@ -853,7 +853,7 @@
 
     invoke-direct {p0}, Lone/me/sdk/richvector/internal/element/PathElement;->makeFillPaint()V
 
-    invoke-static {}, Lvta;->a()Landroid/graphics/Paint;
+    invoke-static {}, Luza;->a()Landroid/graphics/Paint;
 
     move-result-object v0
 
@@ -935,7 +935,7 @@
 
     move-result-object v8
 
-    invoke-static {}, Lvta;->a()Landroid/graphics/Paint;
+    invoke-static {}, Luza;->a()Landroid/graphics/Paint;
 
     move-result-object v9
 
@@ -959,7 +959,7 @@
 
     invoke-direct {p0}, Lone/me/sdk/richvector/internal/element/PathElement;->makeStrokePaint()V
 
-    invoke-static {}, Lvta;->a()Landroid/graphics/Paint;
+    invoke-static {}, Luza;->a()Landroid/graphics/Paint;
 
     move-result-object v0
 
@@ -1041,7 +1041,7 @@
 
     move-result-object p0
 
-    invoke-static {}, Lvta;->a()Landroid/graphics/Paint;
+    invoke-static {}, Luza;->a()Landroid/graphics/Paint;
 
     move-result-object v8
 
@@ -1100,7 +1100,7 @@
     throw p0
 
     :cond_2
-    invoke-static {}, Lvta;->a()Landroid/graphics/Paint;
+    invoke-static {}, Luza;->a()Landroid/graphics/Paint;
 
     move-result-object v0
 
@@ -1182,7 +1182,7 @@
 
     move-result-object p0
 
-    invoke-static {}, Lvta;->a()Landroid/graphics/Paint;
+    invoke-static {}, Luza;->a()Landroid/graphics/Paint;
 
     move-result-object v8
 
@@ -1360,14 +1360,14 @@
     return-void
 .end method
 
-.method public final setPathData([Lbua;)V
+.method public final setPathData([La0b;)V
     .registers 2
 
-    invoke-static {p1}, Lms8;->m([Lbua;)[Lbua;
+    invoke-static {p1}, Lmq0;->s([La0b;)[La0b;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/sdk/richvector/internal/element/PathElement;->pathDataNodes:[Lbua;
+    iput-object p1, p0, Lone/me/sdk/richvector/internal/element/PathElement;->pathDataNodes:[La0b;
 
     invoke-direct {p0}, Lone/me/sdk/richvector/internal/element/PathElement;->updatePath()V
 

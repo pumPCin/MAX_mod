@@ -1,61 +1,61 @@
 .class public final Lgha;
-.super Llha;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Lgha;
+# instance fields
+.field public final a:Lay7;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public constructor <init>(Lay7;)V
+    .registers 2
 
-    new-instance v0, Lgha;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lgha;->a:Lgha;
+    iput-object p1, p0, Lgha;->a:Lay7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final a(ILjava/lang/String;)Llp5;
+    .registers 11
 
-    const/4 v0, 0x1
+    new-instance v6, Lfha;
 
-    if-ne p0, p1, :cond_0
+    invoke-direct {v6}, Ljava/util/concurrent/LinkedTransferQueue;-><init>()V
 
-    return v0
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    :cond_0
-    instance-of p0, p1, Lgha;
+    iget-object p0, p0, Lgha;->a:Lay7;
 
-    if-nez p0, :cond_1
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 p0, 0x0
+    move-result-object p1
 
-    return p0
+    invoke-virtual {p0, p2, p1}, Lay7;->y(Ljava/lang/String;Ljava/lang/Integer;)Ljava/util/concurrent/ThreadFactory;
 
-    :cond_1
-    return v0
-.end method
+    move-result-object v7
 
-.method public final hashCode()I
-    .registers 1
+    new-instance v0, Llp5;
 
-    const p0, 0x4ec2eb76
+    const/4 v1, 0x1
 
-    return p0
-.end method
+    const/4 v2, 0x1
 
-.method public final toString()Ljava/lang/String;
-    .registers 1
+    const-wide/16 v3, 0x0
 
-    const-string p0, "Negative"
+    invoke-direct/range {v0 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
 
-    return-object p0
+    new-instance p0, Lez1;
+
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lez1;-><init>(I)V
+
+    invoke-virtual {v0, p0}, Ljava/util/concurrent/ThreadPoolExecutor;->setRejectedExecutionHandler(Ljava/util/concurrent/RejectedExecutionHandler;)V
+
+    return-object v0
 .end method

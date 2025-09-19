@@ -1,320 +1,156 @@
 .class public final Leh0;
-.super Ln25;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic X:Lhh0;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
+.method public constructor <init>(Lhh0;Lkotlin/coroutines/Continuation;)V
     .registers 3
 
-    iput p1, p0, Leh0;->a:I
+    iput-object p1, p0, Leh0;->X:Lhh0;
 
-    iput-object p2, p0, Leh0;->b:Ljava/lang/Object;
+    const/4 p1, 0x2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onActivityResumed(Landroid/app/Activity;)V
-    .registers 9
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget p1, p0, Leh0;->a:I
+    check-cast p1, Ly04;
 
-    packed-switch p1, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object p1, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast p1, Ln0g;
-
-    iget-boolean p1, p1, Ln0g;->k:Z
-
-    iget-object v0, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast v0, Ln0g;
-
-    iget-boolean v0, v0, Ln0g;->k:Z
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    const-string v4, "n0g"
-
-    if-nez v0, :cond_0
-
-    new-array v0, v3, [Ljava/lang/Object;
-
-    invoke-static {v0, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    const-string v5, "set visible=true on onActivityResumed"
-
-    invoke-static {v4, v1, v5, v0}, Ld86;->G(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v0, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast v0, Ln0g;
-
-    iput-boolean v2, v0, Ln0g;->k:Z
-
-    :cond_0
-    iget-object v0, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast v0, Ln0g;
-
-    iget-boolean v0, v0, Ln0g;->l:Z
-
-    iget-object v5, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast v5, Ln0g;
-
-    iget-boolean v5, v5, Ln0g;->l:Z
-
-    if-nez v5, :cond_1
-
-    new-array v5, v3, [Ljava/lang/Object;
-
-    invoke-static {v5, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object v5
-
-    const-string v6, "set screenOn=true on onActivityResumed"
-
-    invoke-static {v4, v1, v6, v5}, Ld86;->G(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object v5, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast v5, Ln0g;
-
-    iput-boolean v2, v5, Ln0g;->l:Z
-
-    :cond_1
-    if-eqz p1, :cond_2
-
-    if-nez v0, :cond_3
-
-    :cond_2
-    new-array p1, v3, [Ljava/lang/Object;
-
-    invoke-static {p1, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
-    move-result-object p1
-
-    const-string v0, "crutch! call onAppGoesForeground"
-
-    invoke-static {v4, v1, v0, p1}, Ld86;->G(Ljava/lang/String;Ljava/lang/Exception;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    iget-object p0, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast p0, Ln0g;
-
-    invoke-virtual {p0}, Ln0g;->b()V
-
-    :cond_3
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast p0, Lmh0;
-
-    iget-object p1, p0, Lmh0;->d:Llwa;
-
-    invoke-virtual {p1}, Llwa;->f()V
-
-    iget-object p0, p0, Lmh0;->e:Llwa;
-
-    invoke-virtual {p0}, Llwa;->f()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public onActivityStarted(Landroid/app/Activity;)V
-    .registers 5
-
-    iget p1, p0, Leh0;->a:I
-
-    packed-switch p1, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p1, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast p1, Ln0g;
-
-    iget v0, p1, Ln0g;->f:I
-
-    add-int/lit8 v0, v0, 0x1
-
-    iput v0, p1, Ln0g;->f:I
-
-    sget-object p1, Ld86;->f:Lafa;
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v0, Llw7;->o:Llw7;
-
-    invoke-virtual {p1, v0}, Lafa;->a(Llw7;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "onActivityStarted, visibleActivitiesCount: "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast p0, Ln0g;
-
-    iget p0, p0, Ln0g;->f:I
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, p1, p2}, Leh0;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    const/4 v1, 0x0
+    check-cast p0, Leh0;
 
-    const-string v2, "n0g"
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-virtual {p1, v0, v2, p0, v1}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0, p1}, Leh0;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_0
-    return-void
+    move-result-object p0
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method
 
-.method public onActivityStopped(Landroid/app/Activity;)V
-    .registers 6
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    iget p1, p0, Leh0;->a:I
+    new-instance p1, Leh0;
 
-    packed-switch p1, :pswitch_data_0
+    iget-object p0, p0, Leh0;->X:Lhh0;
 
-    return-void
+    invoke-direct {p1, p0, p2}, Leh0;-><init>(Lhh0;Lkotlin/coroutines/Continuation;)V
 
-    :pswitch_0
-    iget-object p1, p0, Leh0;->b:Ljava/lang/Object;
+    return-object p1
+.end method
 
-    check-cast p1, Ln0g;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
 
-    iget v0, p1, Ln0g;->f:I
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    add-int/lit8 v0, v0, -0x1
+    iget-object p0, p0, Leh0;->X:Lhh0;
 
-    iput v0, p1, Ln0g;->f:I
+    iget-object p0, p0, Lhh0;->c:Lcl7;
 
-    sget-object p1, Ld86;->f:Lafa;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-    if-nez p1, :cond_0
+    move-result-object p0
 
-    goto :goto_0
+    check-cast p0, Lhh4;
 
-    :cond_0
-    sget-object v0, Llw7;->o:Llw7;
+    iget-object p0, p0, Lhh4;->a:Lcl7;
 
-    invoke-virtual {p1, v0}, Lafa;->a(Llw7;)Z
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Luxc;
+
+    invoke-virtual {p0}, Luxc;->c()Ls4b;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const/4 p1, 0x0
+
+    const-string v0, "SELECT COUNT(*) FROM phones"
+
+    invoke-static {p1, v0}, Lvxc;->c(ILjava/lang/String;)Lvxc;
+
+    move-result-object v0
+
+    iget-object p0, p0, Ls4b;->a:Lexc;
+
+    invoke-virtual {p0}, Lexc;->b()V
+
+    invoke-virtual {p0, v0}, Lexc;->n(Lpqe;)Landroid/database/Cursor;
+
+    move-result-object p0
+
+    :try_start_0
+    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
-    if-nez v1, :cond_1
+    const-wide/16 v2, 0x0
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {p0, p1}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    :cond_1
-    new-instance v1, Ljava/lang/StringBuilder;
+    :catchall_0
+    move-exception p1
 
-    const-string v2, "onActivityStopped, visibleActivitiesCount: "
+    goto :goto_1
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v2, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast v2, Ln0g;
-
-    iget v2, v2, Ln0g;->f:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    const-string v3, "n0g"
-
-    invoke-virtual {p1, v0, v3, v1, v2}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    :cond_0
+    move-wide v4, v2
 
     :goto_0
-    iget-object p1, p0, Leh0;->b:Ljava/lang/Object;
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
-    check-cast p1, Ln0g;
+    invoke-virtual {v0}, Lvxc;->n()V
 
-    iget-boolean p1, p1, Ln0g;->k:Z
+    cmp-long p0, v4, v2
 
-    if-eqz p1, :cond_2
+    if-nez p0, :cond_1
 
-    iget-object p1, p0, Leh0;->b:Ljava/lang/Object;
+    const/4 p1, 0x1
 
-    check-cast p1, Ln0g;
+    :cond_1
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    iget v0, p1, Ln0g;->f:I
+    move-result-object p0
 
-    if-nez v0, :cond_2
+    return-object p0
 
-    const/4 v0, 0x0
+    :goto_1
+    invoke-interface {p0}, Landroid/database/Cursor;->close()V
 
-    iput-boolean v0, p1, Ln0g;->k:Z
+    invoke-virtual {v0}, Lvxc;->n()V
 
-    iget-object p0, p0, Leh0;->b:Ljava/lang/Object;
-
-    check-cast p0, Ln0g;
-
-    invoke-virtual {p0}, Ln0g;->a()V
-
-    :cond_2
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
+    throw p1
 .end method

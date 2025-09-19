@@ -1,98 +1,163 @@
-.class public final Luma;
+.class public abstract Luma;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lzma;
-.implements Lbna;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final a:Lj96;
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:I
+
+.field public static final e:I
+
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
+.field public static final s:I
+
+.field public static final t:I
+
+.field public static final u:I
+
+.field public static final v:I
+
+.field public static final w:I
+
+.field public static final x:I
+
+.field public static final y:I
 
 
 # direct methods
-.method public constructor <init>(Lj96;)V
-    .registers 2
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Luma;->a:Lj96;
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Luma;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Luma;
-
-    iget-object p0, p0, Luma;->a:Lj96;
-
-    iget-object p1, p1, Luma;->a:Lj96;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_2
-
-    return v2
-
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method static constructor <clinit>()V
     .registers 1
 
-    iget-object p0, p0, Luma;->a:Lj96;
+    sget v0, Lk4c;->emoji_sprite_0:I
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    sput v0, Luma;->a:I
 
-    move-result p0
+    sget v0, Lk4c;->emoji_sprite_1:I
 
-    return p0
-.end method
+    sput v0, Luma;->b:I
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+    sget v0, Lk4c;->emoji_sprite_10:I
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    sput v0, Luma;->c:I
 
-    const-string v1, "Close(onClick="
+    sget v0, Lk4c;->emoji_sprite_11:I
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    sput v0, Luma;->d:I
 
-    iget-object p0, p0, Luma;->a:Lj96;
+    sget v0, Lk4c;->emoji_sprite_12:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    sput v0, Luma;->e:I
 
-    const-string p0, ")"
+    sget v0, Lk4c;->emoji_sprite_13:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sput v0, Luma;->f:I
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sget v0, Lk4c;->emoji_sprite_14:I
 
-    move-result-object p0
+    sput v0, Luma;->g:I
 
-    return-object p0
+    sget v0, Lk4c;->emoji_sprite_15:I
+
+    sput v0, Luma;->h:I
+
+    sget v0, Lk4c;->emoji_sprite_16:I
+
+    sput v0, Luma;->i:I
+
+    sget v0, Lk4c;->emoji_sprite_17:I
+
+    sput v0, Luma;->j:I
+
+    sget v0, Lk4c;->emoji_sprite_18:I
+
+    sput v0, Luma;->k:I
+
+    sget v0, Lk4c;->emoji_sprite_19:I
+
+    sput v0, Luma;->l:I
+
+    sget v0, Lk4c;->emoji_sprite_2:I
+
+    sput v0, Luma;->m:I
+
+    sget v0, Lk4c;->emoji_sprite_20:I
+
+    sput v0, Luma;->n:I
+
+    sget v0, Lk4c;->emoji_sprite_21:I
+
+    sput v0, Luma;->o:I
+
+    sget v0, Lk4c;->emoji_sprite_22:I
+
+    sput v0, Luma;->p:I
+
+    sget v0, Lk4c;->emoji_sprite_23:I
+
+    sput v0, Luma;->q:I
+
+    sget v0, Lk4c;->emoji_sprite_24:I
+
+    sput v0, Luma;->r:I
+
+    sget v0, Lk4c;->emoji_sprite_3:I
+
+    sput v0, Luma;->s:I
+
+    sget v0, Lk4c;->emoji_sprite_4:I
+
+    sput v0, Luma;->t:I
+
+    sget v0, Lk4c;->emoji_sprite_5:I
+
+    sput v0, Luma;->u:I
+
+    sget v0, Lk4c;->emoji_sprite_6:I
+
+    sput v0, Luma;->v:I
+
+    sget v0, Lk4c;->emoji_sprite_7:I
+
+    sput v0, Luma;->w:I
+
+    sget v0, Lk4c;->emoji_sprite_8:I
+
+    sput v0, Luma;->x:I
+
+    sget v0, Lk4c;->emoji_sprite_9:I
+
+    sput v0, Luma;->y:I
+
+    return-void
 .end method

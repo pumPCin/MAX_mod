@@ -1,131 +1,294 @@
-.class public abstract Ljsf;
+.class public final Ljsf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# static fields
-.field public static final a:Ljava/util/List;
+# instance fields
+.field public final a:F
 
-.field public static final b:Ljava/util/List;
+.field public final b:F
+
+.field public final c:F
+
+.field public final d:F
+
+.field public final e:F
+
+.field public final f:[I
+
+.field public final g:[F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 13
+.method public constructor <init>(FFFFF[F[I)V
+    .registers 8
 
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    iput p1, p0, Ljsf;->a:F
 
-    invoke-static {v0, v1}, Lvp5;->a(FF)J
+    iput p2, p0, Ljsf;->b:F
 
-    move-result-wide v2
+    iput p3, p0, Ljsf;->c:F
 
-    new-instance v4, Lvp5;
+    iput p4, p0, Ljsf;->d:F
 
-    invoke-direct {v4, v2, v3}, Lvp5;-><init>(J)V
+    iput p5, p0, Ljsf;->e:F
 
-    const/high16 v2, 0x44610000    # 900.0f
+    iput-object p7, p0, Ljsf;->f:[I
 
-    invoke-static {v2, v1}, Lvp5;->a(FF)J
-
-    move-result-wide v5
-
-    new-instance v3, Lvp5;
-
-    invoke-direct {v3, v5, v6}, Lvp5;-><init>(J)V
-
-    const v5, 0x44c1c000    # 1550.0f
-
-    invoke-static {v5, v0}, Lvp5;->a(FF)J
-
-    move-result-wide v6
-
-    new-instance v8, Lvp5;
-
-    invoke-direct {v8, v6, v7}, Lvp5;-><init>(J)V
-
-    const v6, 0x44dac000    # 1750.0f
-
-    invoke-static {v6, v1}, Lvp5;->a(FF)J
-
-    move-result-wide v9
-
-    new-instance v7, Lvp5;
-
-    invoke-direct {v7, v9, v10}, Lvp5;-><init>(J)V
-
-    const/high16 v9, 0x44fa0000    # 2000.0f
-
-    invoke-static {v9, v1}, Lvp5;->a(FF)J
-
-    move-result-wide v10
-
-    new-instance v12, Lvp5;
-
-    invoke-direct {v12, v10, v11}, Lvp5;-><init>(J)V
-
-    filled-new-array {v4, v3, v8, v7, v12}, [Lvp5;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lk73;->O([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v3
-
-    sput-object v3, Ljsf;->a:Ljava/util/List;
-
-    new-instance v3, Lqr;
-
-    const v4, 0x3ba3d70a    # 0.005f
-
-    invoke-direct {v3, v0, v0, v4, v0}, Lqr;-><init>(FFFF)V
-
-    new-instance v4, Lqr;
-
-    const v7, 0x3f03d70a    # 0.515f
-
-    const/high16 v8, 0x43370000    # 183.0f
-
-    invoke-direct {v4, v2, v0, v7, v8}, Lqr;-><init>(FFFF)V
-
-    new-instance v0, Lqr;
-
-    const v2, 0x3f5be76d    # 0.859f
-
-    const/high16 v7, 0x43890000    # 274.0f
-
-    const v8, 0x3f05e354    # 0.523f
-
-    invoke-direct {v0, v5, v8, v2, v7}, Lqr;-><init>(FFFF)V
-
-    new-instance v2, Lqr;
-
-    const v5, 0x3f7020c5    # 0.938f
-
-    const v7, 0x43988000    # 305.0f
-
-    const v8, 0x3f445a1d    # 0.767f
-
-    invoke-direct {v2, v6, v8, v5, v7}, Lqr;-><init>(FFFF)V
-
-    new-instance v5, Lqr;
-
-    const v6, 0x3f7eb852    # 0.995f
-
-    const/high16 v7, 0x43b40000    # 360.0f
-
-    invoke-direct {v5, v9, v6, v1, v7}, Lqr;-><init>(FFFF)V
-
-    filled-new-array {v3, v4, v0, v2, v5}, [Lqr;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lk73;->O([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    sput-object v0, Ljsf;->b:Ljava/util/List;
+    iput-object p6, p0, Ljsf;->g:[F
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Ljsf;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Ljsf;
+
+    iget v1, p0, Ljsf;->a:F
+
+    iget v3, p1, Ljsf;->a:F
+
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    return v2
+
+    :cond_2
+    iget v1, p0, Ljsf;->b:F
+
+    iget v3, p1, Ljsf;->b:F
+
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget v1, p0, Ljsf;->c:F
+
+    iget v3, p1, Ljsf;->c:F
+
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    return v2
+
+    :cond_4
+    iget v1, p0, Ljsf;->d:F
+
+    iget v3, p1, Ljsf;->d:F
+
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget v1, p0, Ljsf;->e:F
+
+    iget v3, p1, Ljsf;->e:F
+
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    return v2
+
+    :cond_6
+    iget-object v1, p0, Ljsf;->f:[I
+
+    iget-object v3, p1, Ljsf;->f:[I
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_7
+
+    return v2
+
+    :cond_7
+    iget-object p0, p0, Ljsf;->g:[F
+
+    iget-object p1, p1, Ljsf;->g:[F
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_8
+
+    return v2
+
+    :cond_8
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 4
+
+    iget v0, p0, Ljsf;->a:F
+
+    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget v2, p0, Ljsf;->b:F
+
+    invoke-static {v0, v2, v1}, Lsq3;->c(IFI)I
+
+    move-result v0
+
+    iget v2, p0, Ljsf;->c:F
+
+    invoke-static {v0, v2, v1}, Lsq3;->c(IFI)I
+
+    move-result v0
+
+    iget v2, p0, Ljsf;->d:F
+
+    invoke-static {v0, v2, v1}, Lsq3;->c(IFI)I
+
+    move-result v0
+
+    iget v2, p0, Ljsf;->e:F
+
+    invoke-static {v0, v2, v1}, Lsq3;->c(IFI)I
+
+    move-result v0
+
+    iget-object v2, p0, Ljsf;->f:[I
+
+    invoke-static {v2}, Ljava/util/Arrays;->hashCode([I)I
+
+    move-result v2
+
+    add-int/2addr v2, v0
+
+    mul-int/2addr v2, v1
+
+    iget-object p0, p0, Ljsf;->g:[F
+
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([F)I
+
+    move-result p0
+
+    add-int/2addr p0, v2
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 5
+
+    iget-object v0, p0, Ljsf;->f:[I
+
+    invoke-static {v0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ljsf;->g:[F
+
+    invoke-static {v1}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "GradientEllipse(x="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget v3, p0, Ljsf;->a:F
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v3, ", y="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v3, p0, Ljsf;->b:F
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v3, ", radiusX="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v3, p0, Ljsf;->c:F
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v3, ", radiusY="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v3, p0, Ljsf;->d:F
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string v3, ", angle="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget p0, p0, Ljsf;->e:F
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    const-string p0, ", color="
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ", stops="
+
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-static {v2, v1, p0}, Lyv7;->k(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method

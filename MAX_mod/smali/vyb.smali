@@ -1,48 +1,91 @@
-.class public abstract Lvyb;
+.class public final Lvyb;
 .super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lru/ok/android/externcalls/sdk/audio/ProximityTracker;
 
 
-# static fields
-.field public static oneme_contactlist_action_audio_call:I = 0x7f0a068e
+# instance fields
+.field public final a:Lcl7;
 
-.field public static oneme_contactlist_action_block:I = 0x7f0a068f
 
-.field public static oneme_contactlist_action_delete:I = 0x7f0a0690
+# direct methods
+.method public constructor <init>(Lcl7;)V
+    .registers 2
 
-.field public static oneme_contactlist_action_open_profile:I = 0x7f0a0691
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public static oneme_contactlist_action_select:I = 0x7f0a0692
+    iput-object p1, p0, Lvyb;->a:Lcl7;
 
-.field public static oneme_contactlist_action_share_contact:I = 0x7f0a0693
+    return-void
+.end method
 
-.field public static oneme_contactlist_action_suspend_bot:I = 0x7f0a0694
 
-.field public static oneme_contactlist_action_video_call:I = 0x7f0a0695
+# virtual methods
+.method public final getCanUseSpeaker()Z
+    .registers 2
 
-.field public static oneme_contactlist_action_write:I = 0x7f0a0696
+    iget-object p0, p0, Lvyb;->a:Lcl7;
 
-.field public static oneme_contactlist_confirm_block:I = 0x7f0a0697
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-.field public static oneme_contactlist_confirm_cancel:I = 0x7f0a0698
+    move-result-object v0
 
-.field public static oneme_contactlist_confirm_delete:I = 0x7f0a0699
+    check-cast v0, Luyb;
 
-.field public static oneme_contactlist_contact_view_type:I = 0x7f0a069a
+    iget-object v0, v0, Luyb;->f:Landroid/os/PowerManager$WakeLock;
 
-.field public static oneme_contactlist_container:I = 0x7f0a069b
+    if-eqz v0, :cond_0
 
-.field public static oneme_contactlist_empty_search_result_view_type:I = 0x7f0a069c
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
-.field public static oneme_contactlist_global_contact_view_type:I = 0x7f0a069d
+    move-result-object p0
 
-.field public static oneme_contactlist_menu_item_add_contact:I = 0x7f0a069e
+    check-cast p0, Luyb;
 
-.field public static oneme_contactlist_menu_item_create_chat:I = 0x7f0a069f
+    iget-boolean p0, p0, Luyb;->e:Z
 
-.field public static oneme_contactlist_menu_item_invite:I = 0x7f0a06a0
+    if-nez p0, :cond_0
 
-.field public static oneme_contactlist_phonebook_contact_view_type:I = 0x7f0a06a1
+    const/4 p0, 0x1
 
-.field public static oneme_contactlist_rv:I = 0x7f0a06a2
+    return p0
 
-.field public static oneme_contactlist_toolbar:I = 0x7f0a06a3
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final startTrackingProximity()V
+    .registers 1
+
+    iget-object p0, p0, Lvyb;->a:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Luyb;
+
+    invoke-virtual {p0}, Luyb;->a()V
+
+    return-void
+.end method
+
+.method public final stopTrackingProximity()V
+    .registers 1
+
+    iget-object p0, p0, Lvyb;->a:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Luyb;
+
+    invoke-virtual {p0}, Luyb;->b()V
+
+    return-void
+.end method

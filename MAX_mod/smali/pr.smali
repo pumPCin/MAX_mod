@@ -1,126 +1,242 @@
 .class public final Lpr;
-.super Leyd;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lpgc;
+.implements Ljava/util/Iterator;
+.implements Lmi7;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic X:Ljava/lang/Object;
 
-.field public b:Lgo4;
+.field public a:I
+
+.field public b:I
+
+.field public c:Z
+
+.field public final synthetic o:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;I)V
-    .registers 5
+.method public constructor <init>(I)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p2, p0, Lpr;->a:I
+    iput p1, p0, Lpr;->a:I
 
-    new-instance v0, Lgo4;
+    return-void
+.end method
 
-    new-instance v1, Ljava/io/File;
+.method public constructor <init>(Ltr;I)V
+    .registers 3
 
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+    iput p2, p0, Lpr;->o:I
 
-    move-result-object p1
+    packed-switch p2, :pswitch_data_0
 
-    iget-object p1, p1, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;
+    iput-object p1, p0, Lpr;->X:Ljava/lang/Object;
 
-    invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    iget p1, p1, Lr1e;->c:I
 
-    invoke-direct {v0, v1, p2}, Lgo4;-><init>(Ljava/io/File;I)V
+    invoke-direct {p0, p1}, Lpr;-><init>(I)V
 
-    iput-object v0, p0, Lpr;->b:Lgo4;
+    return-void
+
+    :pswitch_0
+    iput-object p1, p0, Lpr;->X:Ljava/lang/Object;
+
+    iget p1, p1, Lr1e;->c:I
+
+    invoke-direct {p0, p1}, Lpr;-><init>(I)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public constructor <init>(Lwr;)V
+    .registers 3
+
+    const/4 v0, 0x2
+
+    iput v0, p0, Lpr;->o:I
+
+    iput-object p1, p0, Lpr;->X:Ljava/lang/Object;
+
+    iget p1, p1, Lwr;->c:I
+
+    invoke-direct {p0, p1}, Lpr;-><init>(I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Leyd;
-    .registers 4
+.method public final hasNext()Z
+    .registers 2
 
-    new-instance v0, Lgo4;
+    iget v0, p0, Lpr;->b:I
 
-    new-instance v1, Ljava/io/File;
+    iget p0, p0, Lpr;->a:I
 
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+    if-ge v0, p0, :cond_0
 
-    move-result-object p1
+    const/4 p0, 0x1
 
-    iget-object p1, p1, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;
+    return p0
 
-    invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    iget p1, p0, Lpr;->a:I
-
-    or-int/lit8 p1, p1, 0x1
-
-    invoke-direct {v0, v1, p1}, Lgo4;-><init>(Ljava/io/File;I)V
-
-    iput-object v0, p0, Lpr;->b:Lgo4;
-
-    return-object p0
-.end method
-
-.method public final b()Ljava/lang/String;
-    .registers 1
-
+    :cond_0
     const/4 p0, 0x0
-
-    throw p0
-.end method
-
-.method public final c(Ljava/lang/String;ILandroid/os/StrictMode$ThreadPolicy;)I
-    .registers 4
-
-    iget-object p0, p0, Lpr;->b:Lgo4;
-
-    invoke-virtual {p0, p1, p2, p3}, Lgo4;->c(Ljava/lang/String;ILandroid/os/StrictMode$ThreadPolicy;)I
-
-    move-result p0
 
     return p0
 .end method
 
-.method public final d(I)V
-    .registers 2
+.method public final next()Ljava/lang/Object;
+    .registers 4
 
-    iget-object p0, p0, Lpr;->b:Lgo4;
+    invoke-virtual {p0}, Lpr;->hasNext()Z
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result v0
 
-    return-void
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lpr;->b:I
+
+    iget v1, p0, Lpr;->o:I
+
+    packed-switch v1, :pswitch_data_0
+
+    iget-object v1, p0, Lpr;->X:Ljava/lang/Object;
+
+    check-cast v1, Lwr;
+
+    iget-object v1, v1, Lwr;->b:[Ljava/lang/Object;
+
+    aget-object v0, v1, v0
+
+    goto :goto_0
+
+    :pswitch_0
+    iget-object v1, p0, Lpr;->X:Ljava/lang/Object;
+
+    check-cast v1, Ltr;
+
+    invoke-virtual {v1, v0}, Lr1e;->i(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object v1, p0, Lpr;->X:Ljava/lang/Object;
+
+    check-cast v1, Ltr;
+
+    invoke-virtual {v1, v0}, Lr1e;->f(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    :goto_0
+    iget v1, p0, Lpr;->b:I
+
+    const/4 v2, 0x1
+
+    add-int/2addr v1, v2
+
+    iput v1, p0, Lpr;->b:I
+
+    iput-boolean v2, p0, Lpr;->c:Z
+
+    return-object v0
+
+    :cond_0
+    new-instance p0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final remove()V
     .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-boolean v0, p0, Lpr;->c:Z
 
-    const-string v1, "ApplicationSoSource["
+    if-eqz v0, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget v0, p0, Lpr;->b:I
 
-    iget-object p0, p0, Lpr;->b:Lgo4;
+    add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {p0}, Lgo4;->toString()Ljava/lang/String;
+    iput v0, p0, Lpr;->b:I
 
-    move-result-object p0
+    iget v1, p0, Lpr;->o:I
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    packed-switch v1, :pswitch_data_0
 
-    const-string p0, "]"
+    iget-object v1, p0, Lpr;->X:Ljava/lang/Object;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v1, Lwr;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v0}, Lwr;->d(I)Ljava/lang/Object;
 
-    move-result-object p0
+    goto :goto_0
 
-    return-object p0
+    :pswitch_0
+    iget-object v1, p0, Lpr;->X:Ljava/lang/Object;
+
+    check-cast v1, Ltr;
+
+    invoke-virtual {v1, v0}, Lr1e;->g(I)Ljava/lang/Object;
+
+    goto :goto_0
+
+    :pswitch_1
+    iget-object v1, p0, Lpr;->X:Ljava/lang/Object;
+
+    check-cast v1, Ltr;
+
+    invoke-virtual {v1, v0}, Lr1e;->g(I)Ljava/lang/Object;
+
+    :goto_0
+    iget v0, p0, Lpr;->a:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lpr;->a:I
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lpr;->c:Z
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string v0, "Call next() before removing an element."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

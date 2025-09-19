@@ -26,7 +26,7 @@
 .method public final onClick(Landroid/view/View;)V
     .registers 2
 
-    sget p1, Lcom/google/android/material/timepicker/TimePickerView;->C0:I
+    sget p1, Lcom/google/android/material/timepicker/TimePickerView;->G0:I
 
     iget-object p0, p0, Lcom/google/android/material/timepicker/e;->a:Lcom/google/android/material/timepicker/TimePickerView;
 

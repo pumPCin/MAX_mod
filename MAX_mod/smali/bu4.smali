@@ -1,359 +1,388 @@
-.class public final enum Lbu4;
-.super Ljava/lang/Enum;
+.class public final Lbu4;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final enum X:Lbu4;
+.field public static final n:Lptc;
 
-.field public static final enum Y:Lbu4;
 
-.field public static final enum Z:Lbu4;
+# instance fields
+.field public final a:Landroid/content/Context;
 
-.field public static final enum a:Lbu4;
+.field public final b:Lde4;
 
-.field public static final enum b:Lbu4;
+.field public final c:Lyt4;
 
-.field public static final enum c:Lbu4;
+.field public final d:Lnx3;
 
-.field public static final enum n0:Lbu4;
+.field public final e:Ljava/util/concurrent/CopyOnWriteArraySet;
 
-.field public static final enum o:Lbu4;
+.field public f:I
 
-.field public static final enum o0:Lbu4;
+.field public g:I
 
-.field public static final enum p0:Lbu4;
+.field public h:Z
 
-.field public static final enum q0:Lbu4;
+.field public i:Z
 
-.field public static final enum r0:Lbu4;
+.field public j:I
 
-.field public static final enum s0:Lbu4;
+.field public k:Z
 
-.field public static final enum t0:Lbu4;
+.field public l:Ljava/util/List;
 
-.field public static final enum u0:Lbu4;
-
-.field public static final enum v0:Lbu4;
-
-.field public static final enum w0:Lbu4;
-
-.field public static final enum x0:Lbu4;
-
-.field public static final enum y0:Lbu4;
-
-.field public static final synthetic z0:[Lbu4;
+.field public m:Lla0;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 26
+    .registers 2
 
-    new-instance v1, Lbu4;
+    new-instance v0, Lptc;
 
-    const-string v0, "ON_SET_HIERARCHY"
+    const/4 v1, 0x1
 
-    const/4 v2, 0x0
+    invoke-direct {v0, v1}, Lptc;-><init>(I)V
 
-    invoke-direct {v1, v0, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lbu4;->a:Lbu4;
-
-    new-instance v2, Lbu4;
-
-    const-string v0, "ON_CLEAR_HIERARCHY"
-
-    const/4 v3, 0x1
-
-    invoke-direct {v2, v0, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v2, Lbu4;->b:Lbu4;
-
-    new-instance v3, Lbu4;
-
-    const-string v0, "ON_SET_CONTROLLER"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v3, v0, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v3, Lbu4;->c:Lbu4;
-
-    new-instance v4, Lbu4;
-
-    const-string v0, "ON_CLEAR_OLD_CONTROLLER"
-
-    const/4 v5, 0x3
-
-    invoke-direct {v4, v0, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v4, Lbu4;->o:Lbu4;
-
-    new-instance v5, Lbu4;
-
-    const-string v0, "ON_CLEAR_CONTROLLER"
-
-    const/4 v6, 0x4
-
-    invoke-direct {v5, v0, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v5, Lbu4;->X:Lbu4;
-
-    new-instance v6, Lbu4;
-
-    const-string v0, "ON_INIT_CONTROLLER"
-
-    const/4 v7, 0x5
-
-    invoke-direct {v6, v0, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v6, Lbu4;->Y:Lbu4;
-
-    new-instance v7, Lbu4;
-
-    const-string v0, "ON_ATTACH_CONTROLLER"
-
-    const/4 v8, 0x6
-
-    invoke-direct {v7, v0, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v7, Lbu4;->Z:Lbu4;
-
-    new-instance v8, Lbu4;
-
-    const-string v0, "ON_DETACH_CONTROLLER"
-
-    const/4 v9, 0x7
-
-    invoke-direct {v8, v0, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v8, Lbu4;->n0:Lbu4;
-
-    new-instance v9, Lbu4;
-
-    const-string v0, "ON_RELEASE_CONTROLLER"
-
-    const/16 v10, 0x8
-
-    invoke-direct {v9, v0, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v9, Lbu4;->o0:Lbu4;
-
-    new-instance v10, Lbu4;
-
-    const-string v0, "ON_DATASOURCE_SUBMIT"
-
-    const/16 v11, 0x9
-
-    invoke-direct {v10, v0, v11}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v10, Lbu4;->p0:Lbu4;
-
-    new-instance v11, Lbu4;
-
-    const-string v0, "ON_DATASOURCE_RESULT"
-
-    const/16 v12, 0xa
-
-    invoke-direct {v11, v0, v12}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v11, Lbu4;->q0:Lbu4;
-
-    new-instance v12, Lbu4;
-
-    const-string v0, "ON_DATASOURCE_RESULT_INT"
-
-    const/16 v13, 0xb
-
-    invoke-direct {v12, v0, v13}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v12, Lbu4;->r0:Lbu4;
-
-    new-instance v13, Lbu4;
-
-    const-string v0, "ON_DATASOURCE_FAILURE"
-
-    const/16 v14, 0xc
-
-    invoke-direct {v13, v0, v14}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v13, Lbu4;->s0:Lbu4;
-
-    new-instance v14, Lbu4;
-
-    const-string v0, "ON_DATASOURCE_FAILURE_INT"
-
-    const/16 v15, 0xd
-
-    invoke-direct {v14, v0, v15}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v14, Lbu4;->t0:Lbu4;
-
-    new-instance v15, Lbu4;
-
-    const-string v0, "ON_HOLDER_ATTACH"
-
-    move-object/from16 v16, v1
-
-    const/16 v1, 0xe
-
-    invoke-direct {v15, v0, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v15, Lbu4;->u0:Lbu4;
-
-    new-instance v0, Lbu4;
-
-    const-string v1, "ON_HOLDER_DETACH"
-
-    move-object/from16 v17, v2
-
-    const/16 v2, 0xf
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbu4;->v0:Lbu4;
-
-    new-instance v1, Lbu4;
-
-    const-string v2, "ON_DRAWABLE_SHOW"
-
-    move-object/from16 v18, v0
-
-    const/16 v0, 0x10
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v1, Lbu4;->w0:Lbu4;
-
-    new-instance v0, Lbu4;
-
-    const-string v2, "ON_DRAWABLE_HIDE"
-
-    move-object/from16 v19, v1
-
-    const/16 v1, 0x11
-
-    invoke-direct {v0, v2, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbu4;->x0:Lbu4;
-
-    new-instance v1, Lbu4;
-
-    const-string v2, "ON_ACTIVITY_START"
-
-    move-object/from16 v20, v0
-
-    const/16 v0, 0x12
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    new-instance v0, Lbu4;
-
-    const-string v2, "ON_ACTIVITY_STOP"
-
-    move-object/from16 v21, v1
-
-    const/16 v1, 0x13
-
-    invoke-direct {v0, v2, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    new-instance v1, Lbu4;
-
-    const-string v2, "ON_RUN_CLEAR_CONTROLLER"
-
-    move-object/from16 v22, v0
-
-    const/16 v0, 0x14
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    new-instance v0, Lbu4;
-
-    const-string v2, "ON_SCHEDULE_CLEAR_CONTROLLER"
-
-    move-object/from16 v23, v1
-
-    const/16 v1, 0x15
-
-    invoke-direct {v0, v2, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    new-instance v1, Lbu4;
-
-    const-string v2, "ON_SAME_CONTROLLER_SKIPPED"
-
-    move-object/from16 v24, v0
-
-    const/16 v0, 0x16
-
-    invoke-direct {v1, v2, v0}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    new-instance v0, Lbu4;
-
-    const-string v2, "ON_SUBMIT_CACHE_HIT"
-
-    move-object/from16 v25, v1
-
-    const/16 v1, 0x17
-
-    invoke-direct {v0, v2, v1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    sput-object v0, Lbu4;->y0:Lbu4;
-
-    move-object/from16 v1, v16
-
-    move-object/from16 v2, v17
-
-    move-object/from16 v16, v18
-
-    move-object/from16 v17, v19
-
-    move-object/from16 v18, v20
-
-    move-object/from16 v19, v21
-
-    move-object/from16 v20, v22
-
-    move-object/from16 v21, v23
-
-    move-object/from16 v22, v24
-
-    move-object/from16 v23, v25
-
-    move-object/from16 v24, v0
-
-    filled-new-array/range {v1 .. v24}, [Lbu4;
-
-    move-result-object v0
-
-    sput-object v0, Lbu4;->z0:[Lbu4;
+    sput-object v0, Lbu4;->n:Lptc;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lbu4;
-    .registers 2
+.method public constructor <init>(Landroid/content/Context;Ls74;Llw0;Lc74;Ljava/util/concurrent/ExecutorService;)V
+    .registers 12
 
-    const-class v0, Lbu4;
+    new-instance v2, Lde4;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-direct {v2, p2}, Lde4;-><init>(Ls74;)V
+
+    new-instance v3, Lee4;
+
+    new-instance p2, Lrw0;
+
+    invoke-direct {p2}, Lrw0;-><init>()V
+
+    iput-object p3, p2, Lrw0;->a:Llw0;
+
+    iput-object p4, p2, Lrw0;->e:Lc74;
+
+    invoke-direct {v3, p2, p5}, Lee4;-><init>(Lrw0;Ljava/util/concurrent/ExecutorService;)V
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object p2
+
+    iput-object p2, p0, Lbu4;->a:Landroid/content/Context;
+
+    iput-object v2, p0, Lbu4;->b:Lde4;
+
+    const/4 p2, 0x1
+
+    iput-boolean p2, p0, Lbu4;->i:Z
+
+    sget-object p3, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
+    iput-object p3, p0, Lbu4;->l:Ljava/util/List;
+
+    new-instance p3, Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    invoke-direct {p3}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+
+    iput-object p3, p0, Lbu4;->e:Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    new-instance p3, Lcf3;
+
+    const/4 p4, 0x3
+
+    invoke-direct {p3, p4, p0}, Lcf3;-><init>(ILjava/lang/Object;)V
+
+    invoke-static {p3}, Lnrf;->o(Lcf3;)Landroid/os/Handler;
+
+    move-result-object v4
+
+    new-instance v1, Landroid/os/HandlerThread;
+
+    const-string p3, "ExoPlayer:DownloadManager"
+
+    invoke-direct {v1, p3}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
+
+    new-instance v0, Lyt4;
+
+    iget-boolean v5, p0, Lbu4;->i:Z
+
+    invoke-direct/range {v0 .. v5}, Lyt4;-><init>(Landroid/os/HandlerThread;Lde4;Lee4;Landroid/os/Handler;Z)V
+
+    iput-object v0, p0, Lbu4;->c:Lyt4;
+
+    new-instance p3, Lnx3;
+
+    const/16 p4, 0xb
+
+    invoke-direct {p3, p4, p0}, Lnx3;-><init>(ILjava/lang/Object;)V
+
+    iput-object p3, p0, Lbu4;->d:Lnx3;
+
+    new-instance p4, Lla0;
+
+    sget-object p5, Lbu4;->n:Lptc;
+
+    invoke-direct {p4, p1, p3, p5}, Lla0;-><init>(Landroid/content/Context;Lnx3;Lptc;)V
+
+    iput-object p4, p0, Lbu4;->m:Lla0;
+
+    invoke-virtual {p4}, Lla0;->c()I
+
+    move-result p1
+
+    iput p1, p0, Lbu4;->j:I
+
+    iput p2, p0, Lbu4;->f:I
+
+    const/4 p0, 0x0
+
+    invoke-virtual {v0, p2, p1, p0}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object p0
 
-    check-cast p0, Lbu4;
+    invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
 
-    return-object p0
+    return-void
 .end method
 
-.method public static values()[Lbu4;
-    .registers 1
 
-    sget-object v0, Lbu4;->z0:[Lbu4;
+# virtual methods
+.method public final a()V
+    .registers 4
 
-    invoke-virtual {v0}, [Lbu4;->clone()Ljava/lang/Object;
+    iget-object v0, p0, Lbu4;->e:Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    check-cast v0, [Lbu4;
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    return-object v0
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lzt4;
+
+    iget-boolean v2, p0, Lbu4;->k:Z
+
+    invoke-interface {v1, p0, v2}, Lzt4;->d(Lbu4;Z)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final b(Lla0;I)V
+    .registers 5
+
+    iget-object p1, p1, Lla0;->d:Ljava/lang/Object;
+
+    iget p1, p0, Lbu4;->j:I
+
+    if-eq p1, p2, :cond_0
+
+    iput p2, p0, Lbu4;->j:I
+
+    iget p1, p0, Lbu4;->f:I
+
+    add-int/lit8 p1, p1, 0x1
+
+    iput p1, p0, Lbu4;->f:I
+
+    const/4 p1, 0x3
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lbu4;->c:Lyt4;
+
+    invoke-virtual {v1, p1, p2, v0}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
+
+    :cond_0
+    invoke-virtual {p0}, Lbu4;->d()Z
+
+    move-result p1
+
+    iget-object p2, p0, Lbu4;->e:Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    invoke-virtual {p2}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+
+    move-result-object p2
+
+    :goto_0
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lzt4;
+
+    invoke-interface {v0}, Lzt4;->b()V
+
+    goto :goto_0
+
+    :cond_1
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0}, Lbu4;->a()V
+
+    :cond_2
+    return-void
+.end method
+
+.method public final c(Z)V
+    .registers 5
+
+    iget-boolean v0, p0, Lbu4;->i:Z
+
+    if-ne v0, p1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    iput-boolean p1, p0, Lbu4;->i:Z
+
+    iget v0, p0, Lbu4;->f:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    iput v0, p0, Lbu4;->f:I
+
+    const/4 v0, 0x2
+
+    const/4 v1, 0x0
+
+    iget-object v2, p0, Lbu4;->c:Lyt4;
+
+    invoke-virtual {v2, v0, p1, v1}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/os/Message;->sendToTarget()V
+
+    invoke-virtual {p0}, Lbu4;->d()Z
+
+    move-result p1
+
+    iget-object v0, p0, Lbu4;->e:Ljava/util/concurrent/CopyOnWriteArraySet;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lzt4;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    goto :goto_0
+
+    :cond_1
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0}, Lbu4;->a()V
+
+    :cond_2
+    :goto_1
+    return-void
+.end method
+
+.method public final d()Z
+    .registers 5
+
+    iget-boolean v0, p0, Lbu4;->i:Z
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    if-nez v0, :cond_1
+
+    iget v0, p0, Lbu4;->j:I
+
+    if-eqz v0, :cond_1
+
+    move v0, v2
+
+    :goto_0
+    iget-object v3, p0, Lbu4;->l:Ljava/util/List;
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v0, v3, :cond_1
+
+    iget-object v3, p0, Lbu4;->l:Ljava/util/List;
+
+    invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lsr4;
+
+    iget v3, v3, Lsr4;->b:I
+
+    if-nez v3, :cond_0
+
+    move v0, v1
+
+    goto :goto_1
+
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    move v0, v2
+
+    :goto_1
+    iget-boolean v3, p0, Lbu4;->k:Z
+
+    if-eq v3, v0, :cond_2
+
+    goto :goto_2
+
+    :cond_2
+    move v1, v2
+
+    :goto_2
+    iput-boolean v0, p0, Lbu4;->k:Z
+
+    return v1
 .end method

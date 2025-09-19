@@ -1,26 +1,23 @@
-.class public interface abstract Lfm4;
+.class public final Lfm4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public a(Lz84;Ljava/lang/String;)V
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
 
-    return-void
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public b()V
-    .registers 1
+    iput-object p1, p0, Lfm4;->a:Ljava/lang/String;
 
-    return-void
-.end method
-
-.method public abstract c()Lg4e;
-.end method
-
-.method public d(Lz84;)V
-    .registers 2
+    iput-object p2, p0, Lfm4;->b:Ljava/lang/String;
 
     return-void
 .end method

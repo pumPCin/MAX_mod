@@ -1,120 +1,105 @@
-.class public final Lqjb;
-.super Lxie;
+.class public abstract Lqjb;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
-
-
-# instance fields
-.field public X:I
-
-.field public final synthetic Y:Lrjb;
-
-.field public final synthetic Z:Lpjb;
 
 
 # direct methods
-.method public constructor <init>(Lrjb;Lpjb;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public static a([B)Lrjb;
+    .registers 15
 
-    iput-object p1, p0, Lqjb;->Y:Lrjb;
+    new-instance v0, Lru/ok/tamtam/nano/Tasks$Profile;
 
-    iput-object p2, p0, Lqjb;->Z:Lpjb;
+    invoke-direct {v0}, Lru/ok/tamtam/nano/Tasks$Profile;-><init>()V
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lqjb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    :try_start_0
+    invoke-static {v0, p0}, Lj29;->mergeFrom(Lj29;[B)Lj29;
 
     move-result-object p0
 
-    check-cast p0, Lqjb;
+    check-cast p0, Lru/ok/tamtam/nano/Tasks$Profile;
+    :try_end_0
+    .catch Lcom/google/protobuf/nano/InvalidProtocolBufferNanoException; {:try_start_0 .. :try_end_0} :catch_0
 
-    sget-object p1, Lncf;->a:Lncf;
+    iget-object v0, p0, Lru/ok/tamtam/nano/Tasks$Profile;->crop:Lru/ok/tamtam/nano/Tasks$Rect;
 
-    invoke-virtual {p0, p1}, Lqjb;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
-    move-result-object p0
+    new-instance v1, Lu00;
 
-    return-object p0
-.end method
+    iget v2, v0, Lru/ok/tamtam/nano/Tasks$Rect;->left:F
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    iget v3, v0, Lru/ok/tamtam/nano/Tasks$Rect;->top:F
 
-    new-instance p1, Lqjb;
+    iget v4, v0, Lru/ok/tamtam/nano/Tasks$Rect;->right:F
 
-    iget-object v0, p0, Lqjb;->Y:Lrjb;
+    iget v5, v0, Lru/ok/tamtam/nano/Tasks$Rect;->bottom:F
 
-    iget-object p0, p0, Lqjb;->Z:Lpjb;
+    const/4 v6, 0x2
 
-    invoke-direct {p1, v0, p0, p2}, Lqjb;-><init>(Lrjb;Lpjb;Lkotlin/coroutines/Continuation;)V
+    invoke-direct/range {v1 .. v6}, Lu00;-><init>(FFFFI)V
 
-    return-object p1
-.end method
+    :goto_0
+    move-object v10, v1
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    goto :goto_1
 
-    iget v0, p0, Lqjb;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    :cond_0
+    const/4 v1, 0x0
 
     goto :goto_0
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    :goto_1
+    new-instance v2, Lrjb;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    iget-wide v3, p0, Lru/ok/tamtam/nano/Tasks$Profile;->requestId:J
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget-object v5, p0, Lru/ok/tamtam/nano/Tasks$Profile;->firstName:Ljava/lang/String;
 
-    throw p0
+    iget-object v6, p0, Lru/ok/tamtam/nano/Tasks$Profile;->lastName:Ljava/lang/String;
+
+    iget-object v7, p0, Lru/ok/tamtam/nano/Tasks$Profile;->photoToken:Ljava/lang/String;
+
+    iget-wide v8, p0, Lru/ok/tamtam/nano/Tasks$Profile;->photoId:J
+
+    iget-object v11, p0, Lru/ok/tamtam/nano/Tasks$Profile;->description:Ljava/lang/String;
+
+    iget-object v12, p0, Lru/ok/tamtam/nano/Tasks$Profile;->link:Ljava/lang/String;
+
+    iget-object p0, p0, Lru/ok/tamtam/nano/Tasks$Profile;->avatarType:Ljava/lang/String;
+
+    const-string v0, "PRESET_AVATAR"
+
+    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    const/4 p0, 0x1
+
+    :goto_2
+    move v13, p0
+
+    goto :goto_3
 
     :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    const/4 p0, 0x2
 
-    iget-object p1, p0, Lqjb;->Y:Lrjb;
+    goto :goto_2
 
-    iget-object p1, p1, Lrjb;->b:Lgpd;
+    :goto_3
+    invoke-direct/range {v2 .. v13}, Lrjb;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;JLu00;Ljava/lang/String;Ljava/lang/String;I)V
 
-    iput v1, p0, Lqjb;->X:I
+    return-object v2
 
-    iget-object v0, p0, Lqjb;->Z:Lpjb;
+    :catch_0
+    move-exception v0
 
-    invoke-virtual {p1, v0, p0}, Lgpd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-object p0, v0
 
-    move-result-object p0
+    new-instance v0, Lru/ok/tamtam/nano/ProtoException;
 
-    sget-object p1, Ls04;->a:Ls04;
+    invoke-direct {v0, p0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
-    if-ne p0, p1, :cond_2
-
-    return-object p1
-
-    :cond_2
-    :goto_0
-    sget-object p0, Lncf;->a:Lncf;
-
-    return-object p0
+    throw v0
 .end method

@@ -1,152 +1,141 @@
 .class public final Lcnf;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lzzc;
 
 
 # instance fields
-.field public X:I
+.field public final a:Ljava/util/ArrayList;
 
-.field public synthetic Y:Ljava/lang/Object;
-
-.field public final synthetic Z:Lhnf;
+.field public final b:Z
 
 
 # direct methods
-.method public constructor <init>(Lhnf;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Ljava/util/ArrayList;Z)V
     .registers 3
 
-    iput-object p1, p0, Lcnf;->Z:Lhnf;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lcnf;->a:Ljava/util/ArrayList;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-boolean p2, p0, Lcnf;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final a()Z
+    .registers 1
 
-    check-cast p1, Lhq5;
+    const/4 p0, 0x0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lcnf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lcnf;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lcnf;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    return-object p0
+    return p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final equals(Ljava/lang/Object;)Z
     .registers 4
 
-    new-instance v0, Lcnf;
-
-    iget-object p0, p0, Lcnf;->Z:Lhnf;
-
-    invoke-direct {v0, p0, p2}, Lcnf;-><init>(Lhnf;Lkotlin/coroutines/Continuation;)V
-
-    iput-object p1, v0, Lcnf;->Y:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-
-    iget v0, p0, Lcnf;->X:I
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x1
-
-    sget-object v3, Ls04;->a:Ls04;
-
-    if-eqz v0, :cond_2
-
-    if-eq v0, v2, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    iget-object v0, p0, Lcnf;->Y:Ljava/lang/Object;
-
-    check-cast v0, Lhq5;
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    if-ne p0, p1, :cond_0
 
     goto :goto_0
 
-    :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    :cond_0
+    if-eqz p1, :cond_2
 
-    iget-object p1, p0, Lcnf;->Y:Ljava/lang/Object;
+    const-class v0, Lcnf;
 
-    move-object v0, p1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    check-cast v0, Lhq5;
+    move-result-object v1
 
-    iput-object v0, p0, Lcnf;->Y:Ljava/lang/Object;
-
-    iput v2, p0, Lcnf;->X:I
-
-    iget-object p1, p0, Lcnf;->Z:Lhnf;
-
-    invoke-interface {p1, p0}, Lhnf;->a(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v3, :cond_3
+    if-eq v0, v1, :cond_1
 
     goto :goto_1
 
-    :cond_3
+    :cond_1
+    check-cast p1, Lcnf;
+
+    iget-boolean v0, p0, Lcnf;->b:Z
+
+    iget-boolean v1, p1, Lcnf;->b:Z
+
+    if-ne v0, v1, :cond_2
+
+    iget-object p0, p0, Lcnf;->a:Ljava/util/ArrayList;
+
+    iget-object p1, p1, Lcnf;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
     :goto_0
-    const/4 v2, 0x0
+    const/4 p0, 0x1
 
-    iput-object v2, p0, Lcnf;->Y:Ljava/lang/Object;
+    return p0
 
-    iput v1, p0, Lcnf;->X:I
+    :cond_2
+    :goto_1
+    const/4 p0, 0x0
 
-    invoke-interface {v0, p1, p0}, Lhq5;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    return p0
+.end method
+
+.method public final hashCode()I
+    .registers 2
+
+    iget-boolean v0, p0, Lcnf;->b:Z
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    iget-object p0, p0, Lcnf;->a:Ljava/util/ArrayList;
+
+    filled-new-array {p0, v0}, [Ljava/lang/Object;
 
     move-result-object p0
 
-    if-ne p0, v3, :cond_4
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
-    :goto_1
-    return-object v3
+    move-result p0
 
-    :cond_4
-    :goto_2
-    sget-object p0, Lncf;->a:Lncf;
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "UpdateDisplayLayoutV2Command{layouts="
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcnf;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", isSnapshot="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean p0, p0, Lcnf;->b:Z
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const/16 p0, 0x7d
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     return-object p0
 .end method

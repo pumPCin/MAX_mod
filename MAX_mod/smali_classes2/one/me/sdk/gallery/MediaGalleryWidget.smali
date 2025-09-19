@@ -21,11 +21,11 @@
         "args",
         "<init>",
         "(Landroid/os/Bundle;)V",
-        "Ljyc;",
+        "Lo6d;",
         "scopeId",
-        "Lbc6;",
+        "Lue6;",
         "galleryMode",
-        "(Ljava/lang/String;Lbc6;Lwc4;)V",
+        "(Ljava/lang/String;Lue6;Lld4;)V",
         "media-gallery-widget_release"
     }
     k = 0x1
@@ -39,28 +39,28 @@
 
 
 # static fields
-.field public static final synthetic Z:[Lsf7;
+.field public static final synthetic Z:[Lxi7;
 
 
 # instance fields
-.field public final X:Lin0;
+.field public final X:Lrm0;
 
-.field public final Y:Lz81;
+.field public final Y:Lt81;
 
-.field public final a:Lxh7;
+.field public final a:Lcl7;
 
-.field public final b:Lxh7;
+.field public final b:Lcl7;
 
-.field public final c:Lxh7;
+.field public final c:Lcl7;
 
-.field public final o:Ldle;
+.field public final o:Lzte;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 5
 
-    new-instance v0, Lrqb;
+    new-instance v0, Lsxb;
 
     const-class v1, Lone/me/sdk/gallery/MediaGalleryWidget;
 
@@ -70,19 +70,19 @@
 
     const/4 v4, 0x0
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v2, v3, v4}, Lsxb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    sget-object v1, Lyhc;->a:Lzhc;
+    sget-object v1, Ljpc;->a:Lkpc;
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const/4 v1, 0x1
 
-    new-array v1, v1, [Lsf7;
+    new-array v1, v1, [Lxi7;
 
     aput-object v0, v1, v4
 
-    sput-object v1, Lone/me/sdk/gallery/MediaGalleryWidget;->Z:[Lsf7;
+    sput-object v1, Lone/me/sdk/gallery/MediaGalleryWidget;->Z:[Lxi7;
 
     return-void
 .end method
@@ -96,21 +96,21 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {p0, p1, v0, v1, v2}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILwc4;)V
+    invoke-direct {p0, p1, v0, v1, v2}, Lone/me/sdk/arch/Widget;-><init>(Landroid/os/Bundle;IILld4;)V
 
-    sget-object v0, Lnwa;->a:Lnwa;
+    sget-object v0, Lq2b;->a:Lq2b;
 
-    invoke-virtual {v0}, Lnwa;->b()Lxh7;
+    invoke-virtual {v0}, Lq2b;->b()Lcl7;
 
     move-result-object v0
 
-    iput-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->a:Lxh7;
+    iput-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->a:Lcl7;
 
     const-string v0, "arg_scope_id"
 
-    const-class v1, Ljyc;
+    const-class v1, Lo6d;
 
-    invoke-static {p1, v0, v1}, Lg64;->m(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-static {p1, v0, v1}, Lx4h;->o(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -118,69 +118,69 @@
 
     check-cast v0, Landroid/os/Parcelable;
 
-    check-cast v0, Ljyc;
+    check-cast v0, Lo6d;
 
-    iget-object v0, v0, Ljyc;->a:Ljava/lang/String;
+    iget-object v0, v0, Lo6d;->a:Ljava/lang/String;
 
-    const-class v1, Lqc6;
+    const-class v1, Ljf6;
 
-    invoke-virtual {p0, v0, v1, v2}, Lone/me/sdk/arch/Widget;->getSharedViewModel-cp94BC8(Ljava/lang/String;Ljava/lang/Class;Lh96;)Lxh7;
+    invoke-virtual {p0, v0, v1, v2}, Lone/me/sdk/arch/Widget;->getSharedViewModel-cp94BC8(Ljava/lang/String;Ljava/lang/Class;Lzb6;)Lcl7;
 
     move-result-object v0
 
-    iput-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->b:Lxh7;
+    iput-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->b:Lcl7;
 
-    new-instance v0, Lsq3;
+    new-instance v0, Ljv3;
 
     const/16 v1, 0x10
 
-    invoke-direct {v0, p1, v1, p0}, Lsq3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v0, p1, v1, p0}, Ljv3;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    new-instance p1, Lv98;
+    new-instance p1, Lcd8;
 
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
-    invoke-direct {p1, v1, v0}, Lv98;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p1, v1, v0}, Lcd8;-><init>(ILjava/lang/Object;)V
 
-    const-class v0, Lxd6;
+    const-class v0, Lqg6;
 
-    invoke-virtual {p0, v0, p1}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lh96;)Lxh7;
+    invoke-virtual {p0, v0, p1}, Lone/me/sdk/arch/Widget;->createViewModelLazy(Ljava/lang/Class;Lzb6;)Lcl7;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->c:Lxh7;
+    iput-object p1, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->c:Lcl7;
 
-    new-instance p1, Lqd8;
+    new-instance p1, Lsg8;
 
     const/4 v0, 0x0
 
-    invoke-direct {p1, p0, v0}, Lqd8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;I)V
+    invoke-direct {p1, p0, v0}, Lsg8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;I)V
 
-    new-instance v0, Ldle;
+    new-instance v0, Lzte;
 
-    invoke-direct {v0, p1}, Ldle;-><init>(Lh96;)V
+    invoke-direct {v0, p1}, Lzte;-><init>(Lzb6;)V
 
-    iput-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->o:Ldle;
+    iput-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->o:Lzte;
 
-    new-instance p1, Lqd8;
+    new-instance p1, Lsg8;
 
     const/4 v0, 0x1
 
-    invoke-direct {p1, p0, v0}, Lqd8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;I)V
+    invoke-direct {p1, p0, v0}, Lsg8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;I)V
 
-    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lh96;)Lin0;
+    invoke-virtual {p0, p1}, Lone/me/sdk/arch/Widget;->binding(Lzb6;)Lrm0;
 
     move-result-object p1
 
-    iput-object p1, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->X:Lin0;
+    iput-object p1, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->X:Lrm0;
 
-    new-instance p1, Lz81;
+    new-instance p1, Lt81;
 
     const/4 v0, 0x4
 
-    invoke-direct {p1, p0, v0}, Lz81;-><init>(Lone/me/sdk/arch/Widget;I)V
+    invoke-direct {p1, p0, v0}, Lt81;-><init>(Lone/me/sdk/arch/Widget;I)V
 
-    iput-object p1, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->Y:Lz81;
+    iput-object p1, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->Y:Lt81;
 
     return-void
 
@@ -193,7 +193,7 @@
 
     const-string v0, " in bundle"
 
-    invoke-static {p1, p0, v0}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p0, v0}, Lyv7;->h(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -208,49 +208,49 @@
     throw p1
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lbc6;ILwc4;)V
+.method public constructor <init>(Ljava/lang/String;Lue6;ILld4;)V
     .registers 5
 
     and-int/lit8 p3, p3, 0x2
 
     if-eqz p3, :cond_0
 
-    sget-object p2, Lbc6;->CREATOR:Landroid/os/Parcelable$Creator;
+    sget-object p2, Lue6;->CREATOR:Landroid/os/Parcelable$Creator;
 
-    sget-object p2, Lbc6;->o0:Lbc6;
+    sget-object p2, Lue6;->s0:Lue6;
 
     :cond_0
     const/4 p3, 0x0
 
-    invoke-direct {p0, p1, p2, p3}, Lone/me/sdk/gallery/MediaGalleryWidget;-><init>(Ljava/lang/String;Lbc6;Lwc4;)V
+    invoke-direct {p0, p1, p2, p3}, Lone/me/sdk/gallery/MediaGalleryWidget;-><init>(Ljava/lang/String;Lue6;Lld4;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Lbc6;Lwc4;)V
+.method public constructor <init>(Ljava/lang/String;Lue6;Lld4;)V
     .registers 5
 
-    new-instance p3, Ljyc;
+    new-instance p3, Lo6d;
 
-    invoke-direct {p3, p1}, Ljyc;-><init>(Ljava/lang/String;)V
+    invoke-direct {p3, p1}, Lo6d;-><init>(Ljava/lang/String;)V
 
-    new-instance p1, Lura;
+    new-instance p1, Lpxa;
 
     const-string v0, "arg_scope_id"
 
-    invoke-direct {p1, v0, p3}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p1, v0, p3}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    new-instance p3, Lura;
+    new-instance p3, Lpxa;
 
     const-string v0, "arg_gallery_mode"
 
-    invoke-direct {p3, v0, p2}, Lura;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-direct {p3, v0, p2}, Lpxa;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    filled-new-array {p1, p3}, [Lura;
+    filled-new-array {p1, p3}, [Lpxa;
 
     move-result-object p1
 
-    invoke-static {p1}, La94;->c([Lura;)Landroid/os/Bundle;
+    invoke-static {p1}, Lw7;->c([Lpxa;)Landroid/os/Bundle;
 
     move-result-object p1
 
@@ -261,6 +261,20 @@
 
 
 # virtual methods
+.method public final A0()Lqg6;
+    .registers 1
+
+    iget-object p0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->c:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lqg6;
+
+    return-object p0
+.end method
+
 .method public final onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .registers 4
 
@@ -272,7 +286,7 @@
 
     invoke-direct {p1, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->x0()Lh55;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->y0()Lc75;
 
     move-result-object p0
 
@@ -286,17 +300,17 @@
 
     invoke-super {p0, p1}, Lone/me/sdk/arch/Widget;->onViewCreated(Landroid/view/View;)V
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object v0
 
-    iget-object v1, v0, Lxd6;->c:Landroid/content/Context;
+    iget-object v1, v0, Lqg6;->c:Landroid/content/Context;
 
-    invoke-static {v1}, Lj67;->a(Landroid/content/Context;)Luc6;
+    invoke-static {v1}, Li4h;->a(Landroid/content/Context;)Lnf6;
 
     move-result-object v1
 
-    iput-object v1, v0, Lxd6;->t0:Luc6;
+    iput-object v1, v0, Lqg6;->x0:Lnf6;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -310,9 +324,9 @@
 
     move-result-object v0
 
-    const-string v1, "xd6"
+    const-string v1, "qg6"
 
-    invoke-static {v1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-virtual {p1}, Landroid/view/View;->isLaidOut()Z
 
@@ -328,29 +342,29 @@
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object v0
 
-    iget-object v0, v0, Lxd6;->t0:Luc6;
+    iget-object v0, v0, Lqg6;->x0:Lnf6;
 
-    iget v0, v0, Luc6;->c:I
+    iget v0, v0, Lnf6;->c:I
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object v2
 
-    iget-object v2, v2, Lxd6;->t0:Luc6;
+    iget-object v2, v2, Lqg6;->x0:Lnf6;
 
-    iget v2, v2, Luc6;->d:I
+    iget v2, v2, Lnf6;->d:I
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object v3
 
-    iget-object v3, v3, Lxd6;->t0:Luc6;
+    iget-object v3, v3, Lqg6;->x0:Lnf6;
 
-    iget v3, v3, Luc6;->d:I
+    iget v3, v3, Lnf6;->d:I
 
     div-int/2addr v3, v0
 
@@ -364,261 +378,247 @@
 
     sub-int/2addr p1, v2
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->y0()Lqc6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Ljf6;
 
     move-result-object v0
 
-    iget-object v0, v0, Lqc6;->c:Lx65;
+    iget-object v0, v0, Ljf6;->c:Lv85;
 
-    new-instance v2, Lnc6;
+    new-instance v2, Lgf6;
 
-    invoke-direct {v2, p1}, Lnc6;-><init>(I)V
+    invoke-direct {v2, p1}, Lgf6;-><init>(I)V
 
-    invoke-static {v0, v2}, Luxf;->o(Lx65;Ljava/lang/Object;)V
+    invoke-static {v0, v2}, Lx7g;->o(Lv85;Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    new-instance v0, Lgr1;
+    new-instance v0, Lmr1;
 
-    invoke-direct {v0, p0, v1, p1}, Lgr1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+    invoke-direct {v0, p0, v1, p1}, Lmr1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
     invoke-virtual {p1, v0}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
     :goto_0
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->x0()Lh55;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->y0()Lc75;
 
     move-result-object p1
 
-    iget-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->Y:Lz81;
+    iget-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->Y:Lt81;
 
-    invoke-virtual {p1, v0}, Lh55;->setPager(Lb55;)V
+    invoke-virtual {p1, v0}, Lc75;->setPager(Lw65;)V
 
-    sget v0, Lkia;->a:I
+    sget v0, Lzma;->a:I
 
-    invoke-virtual {p1, v0}, Lh55;->setProgressView(I)V
+    invoke-virtual {p1, v0}, Lc75;->setProgressView(I)V
 
     invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/RecyclerView;->setHasFixedSize(Z)V
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object v0
 
-    iget-object v0, v0, Lxd6;->t0:Luc6;
+    iget-object v0, v0, Lqg6;->x0:Lnf6;
 
-    iget v0, v0, Luc6;->b:I
+    iget v0, v0, Lnf6;->b:I
 
-    invoke-virtual {p1, v0}, Lh55;->setThreshold(I)V
+    invoke-virtual {p1, v0}, Lc75;->setThreshold(I)V
 
-    iget-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->o:Ldle;
+    iget-object v0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->o:Lzte;
 
-    invoke-virtual {v0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lmb6;
+    check-cast v0, Lfe6;
 
-    invoke-virtual {p1, v0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Ltgc;)V
+    invoke-virtual {p1, v0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Lcoc;)V
 
     new-instance v0, Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object v2
 
-    iget-object v2, v2, Lxd6;->t0:Luc6;
+    iget-object v2, v2, Lqg6;->x0:Lnf6;
 
-    iget v2, v2, Luc6;->c:I
+    iget v2, v2, Lnf6;->c:I
 
     invoke-direct {v0, v2}, Landroidx/recyclerview/widget/GridLayoutManager;-><init>(I)V
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object v2
 
-    iget-object v2, v2, Lxd6;->t0:Luc6;
+    iget-object v2, v2, Lqg6;->x0:Lnf6;
 
-    iget v2, v2, Luc6;->c:I
+    iget v2, v2, Lnf6;->c:I
 
     mul-int/lit8 v2, v2, 0x4
 
     iput v2, v0, Landroidx/recyclerview/widget/LinearLayoutManager;->C:I
 
-    invoke-virtual {p1, v0}, Lh55;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
+    invoke-virtual {p1, v0}, Lc75;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object v0
 
-    iget-object v0, v0, Lxd6;->t0:Luc6;
+    iget-object v0, v0, Lqg6;->x0:Lnf6;
 
-    iget v0, v0, Luc6;->d:I
+    iget v0, v0, Lnf6;->d:I
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object v2
 
-    iget-object v2, v2, Lxd6;->t0:Luc6;
+    iget-object v2, v2, Lqg6;->x0:Lnf6;
 
-    iget v2, v2, Luc6;->c:I
+    iget v2, v2, Lnf6;->c:I
 
-    new-instance v3, Lgz0;
+    new-instance v3, Lvy0;
 
     const/4 v4, 0x5
 
-    invoke-direct {v3, v2, v0, v4}, Lgz0;-><init>(III)V
+    invoke-direct {v3, v2, v0, v4}, Lvy0;-><init>(III)V
 
-    invoke-virtual {p1, v3}, Landroidx/recyclerview/widget/RecyclerView;->j(Lzgc;)V
+    invoke-virtual {p1, v3}, Landroidx/recyclerview/widget/RecyclerView;->j(Ljoc;)V
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object v0
 
-    iget-object v0, v0, Lxd6;->t0:Luc6;
+    iget-object v0, v0, Lqg6;->x0:Lnf6;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Lygc;)V
+    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Lhoc;)V
 
-    new-instance v2, La55;
+    new-instance v2, Lv65;
 
     const/4 v3, 0x3
 
-    invoke-direct {v2, v3, p0}, La55;-><init>(ILjava/lang/Object;)V
+    invoke-direct {v2, v3, p0}, Lv65;-><init>(ILjava/lang/Object;)V
 
-    invoke-virtual {p1, v2}, Lh55;->m(Lfhc;)V
+    invoke-virtual {p1, v2}, Lc75;->m(Lpoc;)V
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lxd6;->s0:Ljn3;
-
-    new-instance v2, Lrd8;
-
-    invoke-direct {v2, p0, v0}, Lrd8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;Lkotlin/coroutines/Continuation;)V
-
-    new-instance v3, Lks5;
-
-    invoke-direct {v3, p1, v2, v1}, Lks5;-><init>(Lfq5;Lx96;I)V
-
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object p1
 
-    invoke-static {v3, p1}, Lfog;->L(Lfq5;Lr04;)Lq1e;
+    iget-object p1, p1, Lqg6;->w0:Lap3;
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
+    new-instance v2, Ltg8;
 
-    move-result-object p1
+    invoke-direct {v2, p0, v0}, Ltg8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;Lkotlin/coroutines/Continuation;)V
 
-    iget-object p1, p1, Lxd6;->z0:Lp52;
+    new-instance v3, Lnu5;
 
-    new-instance v2, Lsd8;
+    invoke-direct {v3, p1, v2, v1}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    invoke-direct {v2, p0, v0}, Lsd8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;Lkotlin/coroutines/Continuation;)V
-
-    new-instance v3, Lks5;
-
-    invoke-direct {v3, p1, v2, v1}, Lks5;-><init>(Lfq5;Lx96;I)V
-
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p1
 
-    invoke-static {v3, p1}, Lfog;->L(Lfq5;Lr04;)Lq1e;
+    invoke-static {v3, p1}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Lxd6;
-
-    move-result-object p1
-
-    iget-object p1, p1, Lxd6;->v0:Ln4e;
-
-    new-instance v2, Ltd8;
-
-    invoke-direct {v2, p0, v0}, Ltd8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;Lkotlin/coroutines/Continuation;)V
-
-    new-instance v3, Lks5;
-
-    invoke-direct {v3, p1, v2, v1}, Lks5;-><init>(Lfq5;Lx96;I)V
-
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
     move-result-object p1
 
-    invoke-static {v3, p1}, Lfog;->L(Lfq5;Lr04;)Lq1e;
+    iget-object p1, p1, Lqg6;->D0:Lu52;
 
-    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->y0()Lqc6;
+    new-instance v2, Lug8;
+
+    invoke-direct {v2, p0, v0}, Lug8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;Lkotlin/coroutines/Continuation;)V
+
+    new-instance v3, Lnu5;
+
+    invoke-direct {v3, p1, v2, v1}, Lnu5;-><init>(Lis5;Lpc6;I)V
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p1
 
-    iget-object p1, p1, Lqc6;->o:Lx65;
+    invoke-static {v3, p1}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
-    new-instance v2, Lud8;
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->A0()Lqg6;
 
-    invoke-direct {v2, p0, v0}, Lud8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;Lkotlin/coroutines/Continuation;)V
+    move-result-object p1
 
-    new-instance v0, Lks5;
+    iget-object p1, p1, Lqg6;->z0:Lyce;
 
-    invoke-direct {v0, p1, v2, v1}, Lks5;-><init>(Lfq5;Lx96;I)V
+    new-instance v2, Lvg8;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Ljk7;
+    invoke-direct {v2, p0, v0}, Lvg8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;Lkotlin/coroutines/Continuation;)V
+
+    new-instance v3, Lnu5;
+
+    invoke-direct {v3, p1, v2, v1}, Lnu5;-><init>(Lis5;Lpc6;I)V
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
+
+    move-result-object p1
+
+    invoke-static {v3, p1}, Lo97;->u0(Lis5;Ly04;)Lcae;
+
+    invoke-virtual {p0}, Lone/me/sdk/gallery/MediaGalleryWidget;->z0()Ljf6;
+
+    move-result-object p1
+
+    iget-object p1, p1, Ljf6;->o:Lv85;
+
+    new-instance v2, Lwg8;
+
+    invoke-direct {v2, p0, v0}, Lwg8;-><init>(Lone/me/sdk/gallery/MediaGalleryWidget;Lkotlin/coroutines/Continuation;)V
+
+    new-instance v0, Lnu5;
+
+    invoke-direct {v0, p1, v2, v1}, Lnu5;-><init>(Lis5;Lpc6;I)V
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getViewLifecycleScope()Lmn7;
 
     move-result-object p0
 
-    invoke-static {v0, p0}, Lcr0;->V(Lfq5;Ljk7;)Lq1e;
+    invoke-static {v0, p0}, Ln4e;->y(Lis5;Lmn7;)Lcae;
 
     return-void
 .end method
 
-.method public final x0()Lh55;
+.method public final y0()Lc75;
     .registers 3
 
-    sget-object v0, Lone/me/sdk/gallery/MediaGalleryWidget;->Z:[Lsf7;
+    sget-object v0, Lone/me/sdk/gallery/MediaGalleryWidget;->Z:[Lxi7;
 
     const/4 v1, 0x0
 
     aget-object v0, v0, v1
 
-    iget-object p0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->X:Lin0;
+    iget-object p0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->X:Lrm0;
 
-    invoke-virtual {p0}, Lin0;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lrm0;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lh55;
+    check-cast p0, Lc75;
 
     return-object p0
 .end method
 
-.method public final y0()Lqc6;
+.method public final z0()Ljf6;
     .registers 1
 
-    iget-object p0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->b:Lxh7;
+    iget-object p0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->b:Lcl7;
 
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Lqc6;
-
-    return-object p0
-.end method
-
-.method public final z0()Lxd6;
-    .registers 1
-
-    iget-object p0, p0, Lone/me/sdk/gallery/MediaGalleryWidget;->c:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lxd6;
+    check-cast p0, Ljf6;
 
     return-object p0
 .end method

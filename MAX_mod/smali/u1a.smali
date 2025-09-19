@@ -2,205 +2,68 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ld4a;
-.implements Lnp4;
-
 
 # instance fields
-.field public X:Lnp4;
+.field public final a:Ljava/lang/String;
 
-.field public Y:Z
+.field public final b:I
 
-.field public final a:Ld4a;
+.field public final c:Ljava/lang/String;
 
-.field public final b:Lim3;
-
-.field public final c:Lim3;
-
-.field public final o:Lz5;
+.field public final d:Landroid/app/Notification;
 
 
 # direct methods
-.method public constructor <init>(Ld4a;Lim3;Lim3;Lz5;)V
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
     .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lu1a;->a:Ld4a;
+    iput-object p1, p0, Lu1a;->a:Ljava/lang/String;
 
-    iput-object p2, p0, Lu1a;->b:Lim3;
+    iput p2, p0, Lu1a;->b:I
 
-    iput-object p3, p0, Lu1a;->c:Lim3;
+    iput-object p3, p0, Lu1a;->c:Ljava/lang/String;
 
-    iput-object p4, p0, Lu1a;->o:Lz5;
+    iput-object p4, p0, Lu1a;->d:Landroid/app/Notification;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 2
-
-    iget-boolean v0, p0, Lu1a;->Y:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, Lu1a;->o:Lz5;
-
-    invoke-interface {v0}, Lz5;->run()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lu1a;->Y:Z
-
-    iget-object p0, p0, Lu1a;->a:Ld4a;
-
-    invoke-interface {p0}, Ld4a;->b()V
-
-    return-void
-
-    :catchall_0
-    move-exception v0
-
-    invoke-static {v0}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    invoke-virtual {p0, v0}, Lu1a;->onError(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final c(Lnp4;)V
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    iget-object v0, p0, Lu1a;->X:Lnp4;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p1}, Lrp4;->f(Lnp4;Lnp4;)Z
+    const-string v1, "NotifyTask[packageName:"
 
-    move-result v0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    if-eqz v0, :cond_0
+    iget-object v1, p0, Lu1a;->a:Ljava/lang/String;
 
-    iput-object p1, p0, Lu1a;->X:Lnp4;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lu1a;->a:Ld4a;
+    const-string v1, ", id:"
 
-    invoke-interface {p1, p0}, Ld4a;->c(Lnp4;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    return-void
-.end method
+    iget v1, p0, Lu1a;->b:I
 
-.method public final d(Ljava/lang/Object;)V
-    .registers 3
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    iget-boolean v0, p0, Lu1a;->Y:Z
+    const-string v1, ", tag:"
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    return-void
+    iget-object p0, p0, Lu1a;->c:Ljava/lang/String;
 
-    :cond_0
-    :try_start_0
-    iget-object v0, p0, Lu1a;->b:Lim3;
+    const-string v1, "]"
 
-    invoke-interface {v0, p1}, Lim3;->accept(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-static {v0, p0, v1}, Lyv7;->k(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    iget-object p0, p0, Lu1a;->a:Ld4a;
+    move-result-object p0
 
-    invoke-interface {p0, p1}, Ld4a;->d(Ljava/lang/Object;)V
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    invoke-static {p1}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    iget-object v0, p0, Lu1a;->X:Lnp4;
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    invoke-virtual {p0, p1}, Lu1a;->onError(Ljava/lang/Throwable;)V
-
-    return-void
-.end method
-
-.method public final g()V
-    .registers 1
-
-    iget-object p0, p0, Lu1a;->X:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-.end method
-
-.method public final h()Z
-    .registers 1
-
-    iget-object p0, p0, Lu1a;->X:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->h()Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .registers 4
-
-    iget-boolean v0, p0, Lu1a;->Y:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lu1a;->Y:Z
-
-    :try_start_0
-    iget-object v0, p0, Lu1a;->c:Lim3;
-
-    invoke-interface {v0, p1}, Lim3;->accept(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    invoke-static {v0}, Lye2;->k0(Ljava/lang/Throwable;)V
-
-    new-instance v1, Lio/reactivex/rxjava3/exceptions/CompositeException;
-
-    filled-new-array {p1, v0}, [Ljava/lang/Throwable;
-
-    move-result-object p1
-
-    invoke-direct {v1, p1}, Lio/reactivex/rxjava3/exceptions/CompositeException;-><init>([Ljava/lang/Throwable;)V
-
-    move-object p1, v1
-
-    :goto_0
-    iget-object p0, p0, Lu1a;->a:Ld4a;
-
-    invoke-interface {p0, p1}, Ld4a;->onError(Ljava/lang/Throwable;)V
-
-    return-void
+    return-object p0
 .end method

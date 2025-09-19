@@ -1,56 +1,49 @@
-.class public abstract Lswb;
-.super Ljava/lang/Object;
+.class public final Lswb;
+.super Lj1d;
+.source "SourceFile"
 
 
-# static fields
-.field public static ic_call_16:I = 0x7f0804c7
+# instance fields
+.field public final synthetic r0:Ltwb;
 
-.field public static ic_call_22:I = 0x7f0804c8
 
-.field public static ic_call_24:I = 0x7f0804c9
+# direct methods
+.method public constructor <init>(Ltwb;)V
+    .registers 2
 
-.field public static ic_call_contact_20:I = 0x7f0804d0
+    iput-object p1, p0, Lswb;->r0:Ltwb;
 
-.field public static ic_call_link_preview_36:I = 0x7f0804da
+    invoke-direct {p0}, Lj1d;-><init>()V
 
-.field public static ic_checked_22:I = 0x7f080503
+    return-void
+.end method
 
-.field public static ic_copy_20:I = 0x7f080522
 
-.field public static ic_copy_28:I = 0x7f080525
+# virtual methods
+.method public final b()V
+    .registers 2
 
-.field public static ic_delete_22:I = 0x7f080534
+    iget-object p0, p0, Lswb;->r0:Ltwb;
 
-.field public static ic_edit_22:I = 0x7f08054e
+    iget-object p0, p0, Ltwb;->d:Lnx0;
 
-.field public static ic_incoming_audio_call_13:I = 0x7f0805b5
+    const/4 v0, 0x1
 
-.field public static ic_incoming_video_call_15:I = 0x7f0805b8
+    iput-boolean v0, p0, Lnx0;->j:Z
 
-.field public static ic_link_16:I = 0x7f0805c9
+    return-void
+.end method
 
-.field public static ic_link_22:I = 0x7f0805cb
+.method public final c()Ljava/lang/Object;
+    .registers 1
 
-.field public static ic_loading_16:I = 0x7f0805cf
+    iget-object p0, p0, Lswb;->r0:Ltwb;
 
-.field public static ic_more_14:I = 0x7f08060b
+    iget-object p0, p0, Ltwb;->d:Lnx0;
 
-.field public static ic_open_call_chat_24:I = 0x7f0806ab
+    invoke-virtual {p0}, Lnx0;->a()V
 
-.field public static ic_outgoing_audio_call_13:I = 0x7f0806b0
+    const/4 p0, 0x0
 
-.field public static ic_outgoing_video_call_15:I = 0x7f0806b1
-
-.field public static ic_reject_audio_call_12:I = 0x7f0806dc
-
-.field public static ic_reject_video_call_15:I = 0x7f0806dd
-
-.field public static ic_send_link_22:I = 0x7f0806fc
-
-.field public static ic_share_link_20:I = 0x7f08070a
-
-.field public static ic_uncheced_22:I = 0x7f080736
-
-.field public static illustration_empty_58:I = 0x7f080784
-
-.field public static illustration_placeholder_casper:I = 0x7f080786
+    return-object p0
+.end method

@@ -1,89 +1,90 @@
-.class public abstract synthetic Lij7;
-.super Ljava/lang/Object;
+.class public final Lij7;
+.super Lure;
 .source "SourceFile"
 
+# interfaces
+.implements Lpc6;
 
-# static fields
-.field public static final synthetic $EnumSwitchMapping$0:[I
+
+# instance fields
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 6
+.method public constructor <init>(Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-static {}, Lq00;->values()[Lq00;
+    iput-object p1, p0, Lij7;->Y:Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;
 
-    move-result-object v0
+    const/4 p1, 0x2
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    :try_start_0
-    sget-object v1, Lq00;->b:Lq00;
-
-    const/16 v1, 0x9
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    const/4 v1, 0x2
-
-    :try_start_1
-    sget-object v2, Lq00;->b:Lq00;
-
-    const/16 v2, 0xf
-
-    aput v1, v0, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    const/4 v2, 0x3
-
-    const/4 v3, 0x4
-
-    :try_start_2
-    sget-object v4, Lq00;->b:Lq00;
-
-    aput v2, v0, v3
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
-    const/4 v4, 0x5
-
-    :try_start_3
-    sget-object v5, Lq00;->b:Lq00;
-
-    aput v3, v0, v4
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    :catch_3
-    :try_start_4
-    sget-object v3, Lq00;->b:Lq00;
-
-    aput v4, v0, v2
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
-
-    :catch_4
-    :try_start_5
-    sget-object v2, Lq00;->b:Lq00;
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
-
-    :catch_5
-    sput-object v0, Lij7;->$EnumSwitchMapping$0:[I
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Lz35;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lij7;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lij7;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lij7;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance v0, Lij7;
+
+    iget-object p0, p0, Lij7;->Y:Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;
+
+    invoke-direct {v0, p0, p2}, Lij7;-><init>(Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Lij7;->X:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Lij7;->X:Ljava/lang/Object;
+
+    check-cast p1, Lz35;
+
+    iget-object p0, p0, Lij7;->Y:Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;
+
+    iget-object v0, p0, Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;->Y:Lcv2;
+
+    iget-object v1, p1, Lz35;->a:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Lls7;->E(Ljava/util/List;)V
+
+    iget-object p0, p0, Lone/me/keyboardmedia/emoji/KeyboardEmojiWidget;->X:Lv06;
+
+    iget-object p1, p1, Lz35;->b:Ljava/util/List;
+
+    invoke-virtual {p0, p1}, Lls7;->E(Ljava/util/List;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

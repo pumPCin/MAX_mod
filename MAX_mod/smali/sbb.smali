@@ -1,97 +1,87 @@
-.class public final Lsbb;
-.super Lo25;
+.class public abstract synthetic Lsbb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field final synthetic this$0:Ltbb;
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(Ltbb;)V
-    .registers 2
-
-    iput-object p1, p0, Lsbb;->this$0:Ltbb;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
+.method static constructor <clinit>()V
     .registers 3
 
-    return-void
-.end method
+    invoke-static {}, Landroid/graphics/Bitmap$Config;->values()[Landroid/graphics/Bitmap$Config;
 
-.method public onActivityPaused(Landroid/app/Activity;)V
-    .registers 4
+    move-result-object v0
 
-    iget-object p0, p0, Lsbb;->this$0:Ltbb;
+    array-length v0, v0
 
-    iget p1, p0, Ltbb;->b:I
+    new-array v0, v0, [I
 
-    add-int/lit8 p1, p1, -0x1
+    sput-object v0, Lsbb;->a:[I
 
-    iput p1, p0, Ltbb;->b:I
+    :try_start_0
+    sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    if-nez p1, :cond_0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    iget-object p1, p0, Ltbb;->X:Landroid/os/Handler;
+    move-result v1
 
-    iget-object p0, p0, Ltbb;->Z:Lp9b;
+    const/4 v2, 0x1
 
-    const-wide/16 v0, 0x2bc
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {p1, p0, v0, v1}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    :catch_0
+    :try_start_1
+    sget-object v0, Lsbb;->a:[I
 
-    :cond_0
-    return-void
-.end method
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
-.method public onActivityPreCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
-    .registers 3
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    new-instance p2, Lsbb$a;
+    move-result v1
 
-    iget-object p0, p0, Lsbb;->this$0:Ltbb;
+    const/4 v2, 0x2
 
-    invoke-direct {p2, p0}, Lsbb$a;-><init>(Ltbb;)V
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    invoke-static {p1, p2}, Lrbb;->a(Landroid/app/Activity;Landroid/app/Application$ActivityLifecycleCallbacks;)V
+    :catch_1
+    :try_start_2
+    sget-object v0, Lsbb;->a:[I
 
-    return-void
-.end method
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
 
-.method public onActivityStopped(Landroid/app/Activity;)V
-    .registers 3
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    iget-object p0, p0, Lsbb;->this$0:Ltbb;
+    move-result v1
 
-    iget p1, p0, Ltbb;->a:I
+    const/4 v2, 0x3
 
-    add-int/lit8 p1, p1, -0x1
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    iput p1, p0, Ltbb;->a:I
+    :catch_2
+    :try_start_3
+    sget-object v0, Lsbb;->a:[I
 
-    if-nez p1, :cond_0
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    iget-boolean p1, p0, Ltbb;->c:Z
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    if-eqz p1, :cond_0
+    move-result v1
 
-    iget-object p1, p0, Ltbb;->Y:Lyk7;
+    const/4 v2, 0x4
 
-    sget-object v0, Lyj7;->ON_STOP:Lyj7;
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    invoke-virtual {p1, v0}, Lyk7;->d(Lyj7;)V
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, Ltbb;->o:Z
-
-    :cond_0
+    :catch_3
     return-void
 .end method

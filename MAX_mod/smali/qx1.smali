@@ -1,121 +1,115 @@
-.class public final enum Lqx1;
-.super Ljava/lang/Enum;
+.class public final Lqx1;
+.super Lb7;
 .source "SourceFile"
 
 
 # static fields
-.field public static final enum X:Lqx1;
+.field public static final X:Ld90;
 
-.field public static final enum Y:Lqx1;
+.field public static final Y:Ld90;
 
-.field public static final synthetic Z:[Lqx1;
+.field public static final Z:Ld90;
 
-.field public static final enum a:Lqx1;
+.field public static final c:Ld90;
 
-.field public static final enum b:Lqx1;
+.field public static final o:Ld90;
 
-.field public static final enum c:Lqx1;
-
-.field public static final enum o:Lqx1;
+.field public static final r0:Ld90;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .registers 4
 
-    new-instance v0, Lqx1;
+    new-instance v0, Ld90;
 
-    const-string v1, "UNKNOWN"
+    const-string v1, "camera2.captureRequest.templateType"
 
-    const/4 v2, 0x0
+    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/4 v3, 0x0
 
-    sput-object v0, Lqx1;->a:Lqx1;
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
 
-    new-instance v1, Lqx1;
+    sput-object v0, Lqx1;->c:Ld90;
 
-    const-string v2, "INACTIVE"
+    new-instance v0, Ld90;
 
-    const/4 v3, 0x1
+    const-string v1, "camera2.cameraCaptureSession.streamUseCase"
 
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    sput-object v1, Lqx1;->b:Lqx1;
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
 
-    new-instance v2, Lqx1;
+    sput-object v0, Lqx1;->o:Ld90;
 
-    const-string v3, "SEARCHING"
+    new-instance v0, Ld90;
 
-    const/4 v4, 0x2
+    const-string v1, "camera2.cameraDevice.stateCallback"
 
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const-class v2, Landroid/hardware/camera2/CameraDevice$StateCallback;
 
-    sput-object v2, Lqx1;->c:Lqx1;
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
 
-    new-instance v3, Lqx1;
+    sput-object v0, Lqx1;->X:Ld90;
 
-    const-string v4, "FLASH_REQUIRED"
+    new-instance v0, Ld90;
 
-    const/4 v5, 0x3
+    const-string v1, "camera2.cameraCaptureSession.stateCallback"
 
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const-class v2, Landroid/hardware/camera2/CameraCaptureSession$StateCallback;
 
-    sput-object v3, Lqx1;->o:Lqx1;
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
 
-    new-instance v4, Lqx1;
+    sput-object v0, Lqx1;->Y:Ld90;
 
-    const-string v5, "CONVERGED"
+    new-instance v0, Ld90;
 
-    const/4 v6, 0x4
+    const-string v1, "camera2.cameraCaptureSession.captureCallback"
 
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const-class v2, Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;
 
-    sput-object v4, Lqx1;->X:Lqx1;
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
 
-    new-instance v5, Lqx1;
+    sput-object v0, Lqx1;->Z:Ld90;
 
-    const-string v6, "LOCKED"
+    new-instance v0, Ld90;
 
-    const/4 v7, 0x5
+    const-string v1, "camera2.cameraCaptureSession.physicalCameraId"
 
-    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const-class v2, Ljava/lang/String;
 
-    sput-object v5, Lqx1;->Y:Lqx1;
+    invoke-direct {v0, v1, v2, v3}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
 
-    filled-new-array/range {v0 .. v5}, [Lqx1;
-
-    move-result-object v0
-
-    sput-object v0, Lqx1;->Z:[Lqx1;
+    sput-object v0, Lqx1;->r0:Ld90;
 
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lqx1;
-    .registers 2
+.method public static F(Landroid/hardware/camera2/CaptureRequest$Key;)Ld90;
+    .registers 4
 
-    const-class v0, Lqx1;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const-string v1, "camera2.captureRequest.option."
 
-    move-result-object p0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    check-cast p0, Lqx1;
+    invoke-virtual {p0}, Landroid/hardware/camera2/CaptureRequest$Key;->getName()Ljava/lang/String;
 
-    return-object p0
-.end method
+    move-result-object v1
 
-.method public static values()[Lqx1;
-    .registers 1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lqx1;->Z:[Lqx1;
-
-    invoke-virtual {v0}, [Lqx1;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    check-cast v0, [Lqx1;
+    new-instance v1, Ld90;
 
-    return-object v0
+    const-class v2, Ljava/lang/Object;
+
+    invoke-direct {v1, v0, v2, p0}, Ld90;-><init>(Ljava/lang/String;Ljava/lang/Class;Landroid/hardware/camera2/CaptureRequest$Key;)V
+
+    return-object v1
 .end method

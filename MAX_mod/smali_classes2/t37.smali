@@ -1,160 +1,100 @@
 .class public final Lt37;
-.super Lkz8;
+.super Lq1;
 .source "SourceFile"
 
+# interfaces
+.implements Lwrf;
 
-# instance fields
-.field public a:I
 
-.field public b:[B
+# static fields
+.field public static final a:Lt37;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Lkz8;-><init>()V
+    new-instance v0, Lt37;
 
-    const/4 v0, 0x0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput v0, p0, Lt37;->a:I
-
-    sget-object v0, Lx44;->g:[B
-
-    iput-object v0, p0, Lt37;->b:[B
-
-    const/4 v0, -0x1
-
-    iput v0, p0, Lkz8;->cachedSize:I
+    sput-object v0, Lt37;->a:Lt37;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final computeSerializedSize()I
-    .registers 4
+.method public final a()Ljava/lang/String;
+    .registers 1
 
-    iget v0, p0, Lt37;->a:I
+    const-string p0, "null"
 
-    if-eqz v0, :cond_0
-
-    const/4 v1, 0x1
-
-    invoke-static {v1, v0}, Lk63;->n(II)I
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    iget-object v1, p0, Lt37;->b:[B
-
-    sget-object v2, Lx44;->g:[B
-
-    invoke-static {v1, v2}, Ljava/util/Arrays;->equals([B[B)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    const/4 v1, 0x2
-
-    iget-object p0, p0, Lt37;->b:[B
-
-    invoke-static {v1, p0}, Lk63;->b(I[B)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-
-    :cond_1
-    return v0
-.end method
-
-.method public final mergeFrom(Lj63;)Lkz8;
-    .registers 4
-
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Lj63;->s()I
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    const/16 v1, 0x8
-
-    if-eq v0, v1, :cond_2
-
-    const/16 v1, 0x12
-
-    if-eq v0, v1, :cond_1
-
-    invoke-virtual {p1, v0}, Lj63;->u(I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {p1}, Lj63;->g()[B
-
-    move-result-object v0
-
-    iput-object v0, p0, Lt37;->b:[B
-
-    goto :goto_0
-
-    :cond_2
-    invoke-virtual {p1}, Lj63;->p()I
-
-    move-result v0
-
-    iput v0, p0, Lt37;->a:I
-
-    goto :goto_0
-
-    :cond_3
-    :goto_1
     return-object p0
 .end method
 
-.method public final writeTo(Lk63;)V
+.method public final e()I
+    .registers 1
+
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .registers 4
 
-    iget v0, p0, Lt37;->a:I
+    const/4 v0, 0x1
 
-    if-eqz v0, :cond_0
+    if-ne p1, p0, :cond_0
 
-    const/4 v1, 0x1
-
-    invoke-virtual {p1, v1, v0}, Lk63;->G(II)V
+    return v0
 
     :cond_0
-    iget-object v0, p0, Lt37;->b:[B
+    instance-of p0, p1, Lwrf;
 
-    sget-object v1, Lx44;->g:[B
+    const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Ljava/util/Arrays;->equals([B[B)Z
+    if-nez p0, :cond_1
 
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x2
-
-    iget-object p0, p0, Lt37;->b:[B
-
-    invoke-virtual {p1, v0, p0}, Lk63;->s(I[B)V
+    return v1
 
     :cond_1
-    return-void
+    check-cast p1, Lwrf;
+
+    check-cast p1, Lq1;
+
+    invoke-interface {p1}, Lwrf;->e()I
+
+    move-result p0
+
+    if-eqz p0, :cond_3
+
+    if-ne p0, v0, :cond_2
+
+    return v0
+
+    :cond_2
+    return v1
+
+    :cond_3
+    const/4 p0, 0x0
+
+    throw p0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 1
+
+    const-string p0, "null"
+
+    return-object p0
 .end method

@@ -1,60 +1,58 @@
-.class public final Ldf4;
+.class public abstract Ldf4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ln64;
 
-
-# instance fields
-.field public final a:Lgl4;
-
-.field public b:Ljava/lang/String;
-
-.field public final c:I
-
-.field public final d:I
+# static fields
+.field public static final a:Lzk4;
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 2
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "kotlinx.coroutines.main.delay"
 
-    new-instance v0, Lgl4;
+    const/4 v1, 0x0
 
-    const/16 v1, 0x15
+    invoke-static {v0, v1}, Lkotlinx/coroutines/internal/SystemPropsKt;->systemProp(Ljava/lang/String;Z)Z
 
-    invoke-direct {v0, v1}, Lgl4;-><init>(I)V
+    move-result v0
 
-    iput-object v0, p0, Ldf4;->a:Lgl4;
+    if-nez v0, :cond_0
 
-    const/16 v0, 0x1f40
+    sget-object v0, Lcf4;->r0:Lcf4;
 
-    iput v0, p0, Ldf4;->c:I
+    goto :goto_1
 
-    iput v0, p0, Ldf4;->d:I
+    :cond_0
+    sget-object v0, Lfq4;->a:Lsh4;
+
+    sget-object v0, Lkotlinx/coroutines/internal/MainDispatcherLoader;->dispatcher:Lt38;
+
+    invoke-static {v0}, Lkotlinx/coroutines/internal/MainDispatchersKt;->isMissing(Lt38;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    instance-of v1, v0, Lzk4;
+
+    if-nez v1, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    check-cast v0, Lzk4;
+
+    goto :goto_1
+
+    :cond_2
+    :goto_0
+    sget-object v0, Lcf4;->r0:Lcf4;
+
+    :goto_1
+    sput-object v0, Ldf4;->a:Lzk4;
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Lp64;
-    .registers 5
-
-    new-instance v0, Lhf4;
-
-    iget-object v1, p0, Ldf4;->b:Ljava/lang/String;
-
-    iget v2, p0, Ldf4;->d:I
-
-    iget-object v3, p0, Ldf4;->a:Lgl4;
-
-    iget p0, p0, Ldf4;->c:I
-
-    invoke-direct {v0, v1, p0, v2, v3}, Lhf4;-><init>(Ljava/lang/String;IILgl4;)V
-
-    return-object v0
 .end method

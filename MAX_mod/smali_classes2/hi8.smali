@@ -1,70 +1,61 @@
-.class public final synthetic Lhi8;
+.class public final Lhi8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lh96;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lii8;
 
-.field public final synthetic b:Lru/ok/tamtam/android/calls/MediaProjectionService;
+.field public final b:Lk19;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lru/ok/tamtam/android/calls/MediaProjectionService;I)V
+.method public constructor <init>(Lii8;Lk19;)V
     .registers 3
 
-    iput p2, p0, Lhi8;->a:I
-
-    iput-object p1, p0, Lhi8;->b:Lru/ok/tamtam/android/calls/MediaProjectionService;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lhi8;->a:Lii8;
+
+    iput-object p2, p0, Lhi8;->b:Lk19;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 2
+.method public final a(Lmn7;)V
+    .registers 11
 
-    iget v0, p0, Lhi8;->a:I
+    iget-object v0, p0, Lhi8;->a:Lii8;
 
-    iget-object p0, p0, Lhi8;->b:Lru/ok/tamtam/android/calls/MediaProjectionService;
+    iget-object v0, v0, Lii8;->X:Lv85;
 
-    packed-switch v0, :pswitch_data_0
+    new-instance v1, Lnq0;
 
-    sget v0, Lru/ok/tamtam/android/calls/MediaProjectionService;->X:I
+    const/4 v7, 0x4
 
-    invoke-static {p0}, Lgwd;->D(Landroid/content/Context;)Lb2d;
+    const/16 v8, 0x15
 
-    move-result-object p0
+    const/4 v2, 0x2
 
-    invoke-virtual {p0}, Lb2d;->l()Lwoe;
+    const-class v4, Lhi8;
 
-    move-result-object p0
+    const-string v5, "handleMediaKeyboardEvents"
 
-    return-object p0
+    const-string v6, "handleMediaKeyboardEvents(Lone/me/sdk/arch/event/Event;)V"
 
-    :pswitch_0
-    sget v0, Lru/ok/tamtam/android/calls/MediaProjectionService;->X:I
+    move-object v3, p0
 
-    invoke-static {p0}, Lgwd;->D(Landroid/content/Context;)Lb2d;
+    invoke-direct/range {v1 .. v8}, Lnq0;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
 
-    move-result-object p0
+    new-instance p0, Lnu5;
 
-    invoke-virtual {p0}, Lb2d;->h()Lhm4;
+    const/4 v2, 0x1
 
-    move-result-object p0
+    invoke-direct {p0, v0, v1, v2}, Lnu5;-><init>(Lis5;Lpc6;I)V
 
-    return-object p0
+    invoke-static {p0, p1}, Lo97;->u0(Lis5;Ly04;)Lcae;
 
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

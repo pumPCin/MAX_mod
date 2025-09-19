@@ -1,5 +1,5 @@
 .class public Lru/ok/messages/views/widgets/StickyHeaderRecyclerView;
-.super Lh55;
+.super Lc75;
 .source "SourceFile"
 
 
@@ -7,7 +7,7 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 3
 
-    invoke-direct {p0, p1, p2}, Lh55;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lc75;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     return-void
 .end method
@@ -24,7 +24,7 @@
     return-void
 .end method
 
-.method public setStickyHeaderDecorator(Lbce;)V
+.method public setStickyHeaderDecorator(Ltke;)V
     .registers 2
 
     return-void

@@ -1,136 +1,363 @@
 .class public final synthetic Lys1;
-.super Ljava/lang/Object;
+.super Llo9;
 .source "SourceFile"
-
-# interfaces
-.implements Lh96;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Lit1;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lit1;I)V
-    .registers 3
+.method public synthetic constructor <init>(IILjava/lang/Class;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 7
 
     iput p2, p0, Lys1;->a:I
 
-    iput-object p1, p0, Lys1;->b:Lit1;
+    move-object p2, p3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object p3, p5
+
+    move p5, p1
+
+    move-object p1, p4
+
+    move-object p4, p6
+
+    invoke-direct/range {p0 .. p5}, Ltxb;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 5
+.method public final get()Ljava/lang/Object;
+    .registers 2
 
     iget v0, p0, Lys1;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    new-instance v0, Ldt1;
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
 
-    iget-object p0, p0, Lys1;->b:Lit1;
+    check-cast p0, Lco9;
 
-    invoke-direct {v0, p0}, Ldt1;-><init>(Lit1;)V
+    iget-object p0, p0, Lco9;->d:Lwj8;
 
-    return-object v0
+    return-object p0
 
     :pswitch_0
-    new-instance v0, Lru/ok/android/externcalls/sdk/AudioLevelListener;
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
 
-    new-instance v1, Landroid/os/Handler;
+    check-cast p0, Lco9;
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    iget-object p0, p0, Lco9;->d:Lwj8;
 
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    new-instance v2, Lb;
-
-    const/16 v3, 0x1b
-
-    iget-object p0, p0, Lys1;->b:Lit1;
-
-    invoke-direct {v2, v3, p0}, Lb;-><init>(ILjava/lang/Object;)V
-
-    const/16 p0, 0x1f4
-
-    invoke-direct {v0, p0, v1, v2}, Lru/ok/android/externcalls/sdk/AudioLevelListener;-><init>(SLandroid/os/Handler;Ljava/lang/Runnable;)V
-
-    return-object v0
+    return-object p0
 
     :pswitch_1
-    iget-object p0, p0, Lys1;->b:Lit1;
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
 
-    iget-object p0, p0, Lit1;->r:Ldle;
+    check-cast p0, Lco9;
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lel9;
+    iget-object p0, p0, Lco9;->c:Lwj8;
 
     return-object p0
 
     :pswitch_2
-    iget-object p0, p0, Lys1;->b:Lit1;
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
 
-    iget-object p0, p0, Lit1;->r:Ldle;
+    check-cast p0, Lco9;
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lel9;
-
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-interface {p0, v0}, Lel9;->h(Ljava/lang/Object;)Z
-
-    sget-object p0, Lncf;->a:Lncf;
+    iget-object p0, p0, Lco9;->b:Lwj8;
 
     return-object p0
 
     :pswitch_3
-    iget-object p0, p0, Lys1;->b:Lit1;
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
 
-    iget-object p0, p0, Lit1;->p:Ldle;
+    check-cast p0, Lco9;
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lfl9;
+    iget-object p0, p0, Lco9;->a:Lwj8;
 
     return-object p0
 
     :pswitch_4
-    iget-object p0, p0, Lys1;->b:Lit1;
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
 
-    iget-object p0, p0, Lit1;->b:Lo11;
+    check-cast p0, Lco9;
 
-    check-cast p0, Lp11;
+    iget-object p0, p0, Lco9;->d:Lwj8;
 
-    invoke-virtual {p0}, Lp11;->b()Lru/ok/android/externcalls/sdk/audio/CallsAudioDeviceInfo;
+    return-object p0
+
+    :pswitch_5
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    iget-object p0, p0, Lco9;->c:Lwj8;
+
+    return-object p0
+
+    :pswitch_6
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    iget-object p0, p0, Lco9;->b:Lwj8;
+
+    return-object p0
+
+    :pswitch_7
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    iget-object p0, p0, Lco9;->a:Lwj8;
+
+    return-object p0
+
+    :pswitch_8
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    iget-object p0, p0, Lco9;->b:Lwj8;
+
+    return-object p0
+
+    :pswitch_9
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    iget-object p0, p0, Lco9;->c:Lwj8;
+
+    return-object p0
+
+    :pswitch_a
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    iget-object p0, p0, Lco9;->a:Lwj8;
+
+    return-object p0
+
+    :pswitch_b
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lw21;
+
+    invoke-virtual {p0}, Lw21;->a()Lru/ok/android/externcalls/sdk/video/CameraManager;
 
     move-result-object p0
 
-    invoke-static {p0}, Lo4e;->a(Ljava/lang/Object;)Ln4e;
+    if-eqz p0, :cond_0
+
+    invoke-interface {p0}, Lru/ok/android/externcalls/sdk/video/CameraManager;->isCameraEnabled()Z
+
+    move-result p0
+
+    const/4 v0, 0x1
+
+    if-ne p0, v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p0
 
     return-object p0
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final set(Ljava/lang/Object;)V
+    .registers 3
+
+    iget v0, p0, Lys1;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->d:Lwj8;
+
+    return-void
+
+    :pswitch_0
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->d:Lwj8;
+
+    return-void
+
+    :pswitch_1
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->c:Lwj8;
+
+    return-void
+
+    :pswitch_2
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->b:Lwj8;
+
+    return-void
+
+    :pswitch_3
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->a:Lwj8;
+
+    return-void
+
+    :pswitch_4
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->d:Lwj8;
+
+    return-void
+
+    :pswitch_5
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->c:Lwj8;
+
+    return-void
+
+    :pswitch_6
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->b:Lwj8;
+
+    return-void
+
+    :pswitch_7
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->a:Lwj8;
+
+    return-void
+
+    :pswitch_8
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->b:Lwj8;
+
+    return-void
+
+    :pswitch_9
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->c:Lwj8;
+
+    return-void
+
+    :pswitch_a
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lco9;
+
+    check-cast p1, Lwj8;
+
+    iput-object p1, p0, Lco9;->a:Lwj8;
+
+    return-void
+
+    :pswitch_b
+    iget-object p0, p0, Lks1;->receiver:Ljava/lang/Object;
+
+    check-cast p0, Lw21;
+
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Lw21;->c(Z)V
+
+    return-void
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2

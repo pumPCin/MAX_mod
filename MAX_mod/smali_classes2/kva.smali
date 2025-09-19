@@ -1,161 +1,164 @@
-.class public final enum Lkva;
-.super Ljava/lang/Enum;
+.class public final synthetic Lkva;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final enum X:Lkva;
-
-.field public static final enum Y:Lkva;
-
-.field public static final enum Z:Lkva;
-
-.field public static final enum b:Lkva;
-
-.field public static final enum c:Lkva;
-
-.field public static final enum n0:Lkva;
-
-.field public static final enum o:Lkva;
-
-.field public static final synthetic o0:[Lkva;
+# interfaces
+.implements Lzb6;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic a:I
+
+.field public final synthetic b:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 10
+.method public synthetic constructor <init>(Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;I)V
+    .registers 3
 
-    new-instance v0, Lkva;
+    iput p2, p0, Lkva;->a:I
 
-    const/4 v1, 0x0
+    iput-object p1, p0, Lkva;->b:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
 
-    const-string v2, "app_init"
-
-    const-string v3, "APP_INIT"
-
-    invoke-direct {v0, v3, v1, v2}, Lkva;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v0, Lkva;->b:Lkva;
-
-    new-instance v1, Lkva;
-
-    const/4 v2, 0x1
-
-    const-string v3, "open_chats_to_render"
-
-    const-string v4, "OPEN_CHATS_ROOT_SPAN"
-
-    invoke-direct {v1, v4, v2, v3}, Lkva;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v1, Lkva;->c:Lkva;
-
-    new-instance v2, Lkva;
-
-    const/4 v3, 0x2
-
-    const-string v4, "open_chat_to_render"
-
-    const-string v5, "OPEN_CHAT_ROOT_SPAN"
-
-    invoke-direct {v2, v5, v3, v4}, Lkva;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v2, Lkva;->o:Lkva;
-
-    new-instance v3, Lkva;
-
-    const/4 v4, 0x3
-
-    const-string v5, "main_screen_init_to_render"
-
-    const-string v6, "MAIN_SCREEN_INIT_TO_RENDER"
-
-    invoke-direct {v3, v6, v4, v5}, Lkva;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v3, Lkva;->X:Lkva;
-
-    new-instance v4, Lkva;
-
-    const/4 v5, 0x4
-
-    const-string v6, "folders_init_to_render"
-
-    const-string v7, "FOLDERS_INIT_TO_RENDER"
-
-    invoke-direct {v4, v7, v5, v6}, Lkva;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v4, Lkva;->Y:Lkva;
-
-    new-instance v5, Lkva;
-
-    const/4 v6, 0x5
-
-    const-string v7, "chats_init_to_render"
-
-    const-string v8, "CHATS_INIT_TO_RENDER"
-
-    invoke-direct {v5, v8, v6, v7}, Lkva;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v5, Lkva;->Z:Lkva;
-
-    new-instance v6, Lkva;
-
-    const/4 v7, 0x6
-
-    const-string v8, "chat_init_to_render"
-
-    const-string v9, "CHAT_INIT_TO_RENDER"
-
-    invoke-direct {v6, v9, v7, v8}, Lkva;-><init>(Ljava/lang/String;ILjava/lang/String;)V
-
-    sput-object v6, Lkva;->n0:Lkva;
-
-    filled-new-array/range {v0 .. v6}, [Lkva;
-
-    move-result-object v0
-
-    sput-object v0, Lkva;->o0:[Lkva;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
-    .registers 4
 
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .registers 8
 
-    iput-object p3, p0, Lkva;->a:Ljava/lang/String;
+    iget v0, p0, Lkva;->a:I
 
-    return-void
-.end method
+    const/4 v1, -0x1
 
-.method public static valueOf(Ljava/lang/String;)Lkva;
-    .registers 2
+    const/4 v2, 0x6
 
-    const-class v0, Lkva;
+    iget-object p0, p0, Lkva;->b:Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;
 
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    packed-switch v0, :pswitch_data_0
+
+    sget-object v0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->Y:[Lxi7;
+
+    new-instance v0, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    invoke-direct {v0, v3, v4, v2}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+    sget v2, Lxka;->r:I
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setId(I)V
+
+    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
+
+    invoke-direct {v2, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    invoke-direct {v1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>()V
+
+    invoke-virtual {v0, v1}, Lone/me/sdk/lists/widgets/EndlessRecyclerView2;->setLayoutManager(Landroidx/recyclerview/widget/a;)V
+
+    const/4 v1, 0x2
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setOverScrollMode(I)V
+
+    iget-object p0, p0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->c:Lkrd;
+
+    invoke-virtual {v0, p0}, Lone/me/sdk/lists/widgets/EmptyRecyclerView;->setAdapter(Lcoc;)V
+
+    new-instance v3, Lip9;
+
+    const/16 p0, 0x18
+
+    invoke-direct {v3, p0}, Lip9;-><init>(I)V
+
+    new-instance v1, Lodd;
+
+    sget-object p0, Lyu4;->t0:Lbx9;
+
+    invoke-virtual {p0, v0}, Lbx9;->l(Landroid/view/View;)Lera;
+
+    move-result-object v2
+
+    const/4 v5, 0x0
+
+    const/16 v6, 0x1c
+
+    invoke-direct/range {v1 .. v6}, Lodd;-><init>(Lera;Lmdd;Ll;Lxrc;I)V
+
+    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->j(Ljoc;)V
+
+    new-instance p0, Lvy0;
+
+    const/4 v1, 0x3
+
+    invoke-direct {p0, v1}, Lvy0;-><init>(I)V
+
+    invoke-virtual {v0, p0}, Landroidx/recyclerview/widget/RecyclerView;->j(Ljoc;)V
+
+    return-object v0
+
+    :pswitch_0
+    sget-object v0, Lone/me/notifications/settings/screens/other/OtherNotificationsSettingsScreen;->Y:[Lxi7;
+
+    new-instance v0, Ldsa;
+
+    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
-    check-cast p0, Lkva;
+    invoke-direct {v0, p0, v2}, Ldsa;-><init>(Landroid/content/Context;I)V
 
-    return-object p0
-.end method
+    sget p0, Lxka;->t:I
 
-.method public static values()[Lkva;
-    .registers 1
+    invoke-virtual {v0, p0}, Landroid/view/View;->setId(I)V
 
-    sget-object v0, Lkva;->o0:[Lkva;
+    new-instance p0, Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    const/4 v2, -0x2
 
-    move-result-object v0
+    invoke-direct {p0, v1, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    check-cast v0, [Lkva;
+    invoke-virtual {v0, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    sget-object p0, Lvra;->a:Lvra;
+
+    invoke-virtual {v0, p0}, Ldsa;->setForm(Lvra;)V
+
+    sget p0, Lyka;->o:I
+
+    invoke-virtual {v0, p0}, Ldsa;->setTitle(I)V
+
+    new-instance p0, Llra;
+
+    new-instance v1, Lnaa;
+
+    const/16 v2, 0xe
+
+    invoke-direct {v1, v2}, Lnaa;-><init>(I)V
+
+    invoke-direct {p0, v1}, Llra;-><init>(Lbc6;)V
+
+    invoke-virtual {v0, p0}, Ldsa;->setLeftActions(Lrra;)V
 
     return-object v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

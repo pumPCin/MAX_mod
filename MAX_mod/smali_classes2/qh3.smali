@@ -1,96 +1,85 @@
-.class public final Lqh3;
-.super Lqd0;
+.class public abstract synthetic Lqh3;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final b:Laa4;
+# static fields
+.field public static final synthetic $EnumSwitchMapping$0:[I
 
 
 # direct methods
-.method public constructor <init>(Laa4;)V
+.method static constructor <clinit>()V
     .registers 3
 
-    const/4 v0, 0x6
+    const/16 v0, 0x9
 
-    invoke-direct {p0, v0}, Lqd0;-><init>(I)V
+    invoke-static {v0}, Lmw1;->w(I)[I
 
-    iput-object p1, p0, Lqh3;->b:Laa4;
+    move-result-object v0
 
-    return-void
-.end method
+    array-length v0, v0
 
+    new-array v0, v0, [I
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lqh3;
+    const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_1
+    :try_start_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    return v2
+    :catch_0
+    const/4 v2, 0x2
 
-    :cond_1
-    check-cast p1, Lqh3;
+    :try_start_1
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    iget-object p0, p0, Lqh3;->b:Laa4;
+    :catch_1
+    const/4 v1, 0x3
 
-    iget-object p1, p1, Lqh3;->b:Laa4;
+    :try_start_2
+    aput v1, v0, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :catch_2
+    const/4 v2, 0x4
 
-    move-result p0
+    :try_start_3
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    if-nez p0, :cond_2
+    :catch_3
+    const/4 v1, 0x5
 
-    return v2
+    :try_start_4
+    aput v1, v0, v2
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    :cond_2
-    return v0
-.end method
+    :catch_4
+    const/4 v1, 0x6
 
-.method public final hashCode()I
-    .registers 1
+    :try_start_5
+    aput v1, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
-    iget-object p0, p0, Lqh3;->b:Laa4;
+    :catch_5
+    const/4 v1, 0x7
 
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    :try_start_6
+    aput v1, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
-    move-result p0
+    :catch_6
+    sput-object v0, Lqh3;->$EnumSwitchMapping$0:[I
 
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "TwoFACheckPassword(twoFALink="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object p0, p0, Lqh3;->b:Laa4;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

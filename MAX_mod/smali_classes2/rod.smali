@@ -1,58 +1,102 @@
-.class public final synthetic Lrod;
-.super Ljava/lang/Object;
+.class public final Lrod;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lh96;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final synthetic X:Lyod;
 
-.field public final synthetic b:Ltod;
+.field public final synthetic Y:Landroid/graphics/RectF;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ltod;I)V
-    .registers 3
+.method public constructor <init>(Lyod;Landroid/graphics/RectF;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    iput p2, p0, Lrod;->a:I
+    iput-object p1, p0, Lrod;->X:Lyod;
 
-    iput-object p1, p0, Lrod;->b:Ltod;
+    iput-object p2, p0, Lrod;->Y:Landroid/graphics/RectF;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .registers 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lrod;->a:I
+    check-cast p1, Ly04;
 
-    iget-object p0, p0, Lrod;->b:Ltod;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    packed-switch v0, :pswitch_data_0
-
-    invoke-static {p0}, Ltod;->i(Ltod;)Landroid/graphics/drawable/ShapeDrawable;
+    invoke-virtual {p0, p1, p2}, Lrod;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
+    check-cast p0, Lrod;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lrod;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 4
+
+    new-instance p1, Lrod;
+
+    iget-object v0, p0, Lrod;->X:Lyod;
+
+    iget-object p0, p0, Lrod;->Y:Landroid/graphics/RectF;
+
+    invoke-direct {p1, v0, p0, p2}, Lrod;-><init>(Lyod;Landroid/graphics/RectF;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    sget-object p1, Lyod;->J0:[Lxi7;
+
+    iget-object p1, p0, Lrod;->X:Lyod;
+
+    invoke-virtual {p1}, Lyod;->s()Lcp5;
+
+    move-result-object v0
+
+    iget-object v1, p1, Lyod;->E0:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcp5;->r(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object p0, p0, Lrod;->Y:Landroid/graphics/RectF;
+
+    invoke-virtual {p1, v0, p0}, Lyod;->v(Ljava/lang/String;Landroid/graphics/RectF;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
     return-object p0
-
-    :pswitch_0
-    invoke-static {p0}, Ltod;->b(Ltod;)Landroid/graphics/drawable/RippleDrawable;
-
-    move-result-object p0
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -1,5 +1,5 @@
 .class public abstract Landroidx/lifecycle/AndroidViewModel;
-.super Lvxf;
+.super Ly7g;
 .source "SourceFile"
 
 
@@ -10,7 +10,7 @@
     }
     d2 = {
         "Landroidx/lifecycle/AndroidViewModel;",
-        "Lvxf;",
+        "Ly7g;",
         "lifecycle-viewmodel_release"
     }
     k = 0x1
@@ -31,7 +31,7 @@
 .method public constructor <init>(Landroid/app/Application;)V
     .registers 2
 
-    invoke-direct {p0}, Lvxf;-><init>()V
+    invoke-direct {p0}, Ly7g;-><init>()V
 
     iput-object p1, p0, Landroidx/lifecycle/AndroidViewModel;->b:Landroid/app/Application;
 

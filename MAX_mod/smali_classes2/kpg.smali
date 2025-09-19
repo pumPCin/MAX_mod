@@ -3,220 +3,206 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lim3;
+.implements Lxg6;
 
 
-# instance fields
-.field public final a:Ljava/lang/Object;
+# static fields
+.field public static final a:Lkpg;
+
+.field private static final descriptor:Lqid;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;)V
-    .registers 2
-
-    iput-object p1, p0, Lkpg;->a:Ljava/lang/Object;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
-    .registers 7
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    invoke-static {}, Landroid/os/Process;->myUid()I
-
-    move-result v0
-
-    invoke-static {}, Landroid/os/Process;->myPid()I
-
-    move-result v1
-
-    const-string v2, "]  PID: ["
-
-    const-string v3, "] "
-
-    const-string v4, "UID: ["
-
-    invoke-static {v4, v0, v2, v1, v3}, Lnh0;->f(Ljava/lang/String;ILjava/lang/String;ILjava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lkpg;->a:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public static varargs b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+.method static constructor <clinit>()V
     .registers 4
 
-    array-length v0, p2
+    new-instance v0, Lkpg;
 
-    if-lez v0, :cond_0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    :try_start_0
-    sget-object v0, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sput-object v0, Lkpg;->a:Lkpg;
 
-    invoke-static {v0, p1, p2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    new-instance v1, Ljeb;
 
-    move-result-object p1
-    :try_end_0
-    .catch Ljava/util/IllegalFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    const-string v2, "one.me.webapp.domain.jsbridge.delegates.storage.WebAppStorageGetKeyResponse"
 
-    goto :goto_0
+    const/4 v3, 0x3
 
-    :catch_0
-    const-string v0, "Unable to format "
+    invoke-direct {v1, v2, v0, v3}, Ljeb;-><init>(Ljava/lang/String;Lxg6;I)V
 
-    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    const-string v0, "requestId"
 
-    const-string v0, ", "
+    const/4 v2, 0x0
 
-    invoke-static {v0, p2}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
 
-    move-result-object p2
+    const-string v0, "key"
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v0, "value"
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0, v2}, Ljeb;->k(Ljava/lang/String;Z)V
 
-    const-string p1, " ["
+    sput-object v1, Lkpg;->descriptor:Lqid;
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string p1, "]"
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    :cond_0
-    :goto_0
-    const-string p2, " : "
-
-    invoke-static {p0, p2, p1}, Lex3;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method
 
 
 # virtual methods
-.method public varargs a(Ljava/lang/String;[Ljava/lang/Object;)V
-    .registers 5
-
-    const-string v0, "PlayCore"
-
-    const/4 v1, 0x4
-
-    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object p0, p0, Lkpg;->a:Ljava/lang/Object;
-
-    check-cast p0, Ljava/lang/String;
-
-    invoke-static {p0, p1, p2}, Lkpg;->b(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    :cond_0
-    return-void
-.end method
-
-.method public accept(Ljava/lang/Object;)V
+.method public final a(Lu8;)Ljava/lang/Object;
     .registers 11
 
-    check-cast p1, Lf7c;
+    sget-object p0, Lkpg;->descriptor:Lqid;
 
-    iget-object p0, p0, Lkpg;->a:Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Lu8;->k(Lqid;)Lu8;
 
-    check-cast p0, Lxn8;
+    move-result-object p1
 
-    iget-object v0, p0, Lxn8;->j:Ljava/lang/Object;
+    const/4 v0, 0x1
 
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    const/4 v1, 0x0
 
-    move-result-wide v0
+    const/4 v2, 0x0
 
-    iget-object p0, p0, Lxn8;->d:Ljava/lang/Object;
+    move v5, v0
 
-    check-cast p0, Ljava/util/HashMap;
+    move v6, v1
 
-    invoke-virtual {p0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+    move-object v3, v2
 
-    move-result-object p0
+    move-object v4, v3
 
-    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :cond_0
     :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    if-eqz v5, :cond_4
 
-    move-result v2
+    invoke-virtual {p1, p0}, Lu8;->q(Lqid;)I
 
-    if-eqz v2, :cond_1
+    move-result v7
 
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const/4 v8, -0x1
 
-    move-result-object v2
+    if-eq v7, v8, :cond_3
 
-    check-cast v2, Ljava/util/Map$Entry;
+    if-eqz v7, :cond_2
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    if-eq v7, v0, :cond_1
 
-    move-result-object v3
+    const/4 v4, 0x2
 
-    check-cast v3, Lj5e;
+    if-ne v7, v4, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1, p0, v4}, Lu8;->w(Lqid;I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v4
 
-    check-cast v2, Lsog;
-
-    iget-wide v4, v2, Lsog;->c:J
-
-    iget-object v6, v2, Lsog;->b:Ljava/util/concurrent/TimeUnit;
-
-    iget-wide v7, v2, Lsog;->a:J
-
-    invoke-virtual {v6, v7, v8}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v6
-
-    add-long/2addr v6, v4
-
-    const-wide/16 v4, 0xa
-
-    sub-long/2addr v6, v4
-
-    cmp-long v4, v6, v0
-
-    if-gez v4, :cond_0
-
-    iput-wide v0, v2, Lsog;->c:J
-
-    invoke-interface {v3, p1}, Lj5e;->a(Lf7c;)V
+    or-int/lit8 v6, v6, 0x4
 
     goto :goto_0
 
+    :cond_0
+    new-instance p0, Lkotlinx/serialization/UnknownFieldException;
+
+    invoke-direct {p0, v7}, Lkotlinx/serialization/UnknownFieldException;-><init>(I)V
+
+    throw p0
+
     :cond_1
+    invoke-virtual {p1, p0, v0}, Lu8;->w(Lqid;I)Ljava/lang/String;
+
+    move-result-object v3
+
+    or-int/lit8 v6, v6, 0x2
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p1, p0, v1}, Lu8;->w(Lqid;I)Ljava/lang/String;
+
+    move-result-object v2
+
+    or-int/lit8 v6, v6, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    move v5, v1
+
+    goto :goto_0
+
+    :cond_4
+    invoke-virtual {p1, p0}, Lu8;->z(Lqid;)V
+
+    new-instance p0, Lmpg;
+
+    invoke-direct {p0, v2, v6, v3, v4}, Lmpg;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+
+    return-object p0
+.end method
+
+.method public final b(Lay3;Ljava/lang/Object;)V
+    .registers 5
+
+    check-cast p2, Lmpg;
+
+    sget-object p0, Lkpg;->descriptor:Lqid;
+
+    invoke-virtual {p1, p0}, Lay3;->b(Lqid;)Lay3;
+
+    move-result-object p1
+
+    iget-object v0, p2, Lmpg;->a:Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, p0, v1, v0}, Lay3;->l(Lqid;ILjava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    iget-object v1, p2, Lmpg;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, p0, v0, v1}, Lay3;->l(Lqid;ILjava/lang/String;)V
+
+    const/4 v0, 0x2
+
+    iget-object p2, p2, Lmpg;->c:Ljava/lang/String;
+
+    invoke-virtual {p1, p0, v0, p2}, Lay3;->l(Lqid;ILjava/lang/String;)V
+
+    invoke-virtual {p1}, Lay3;->m()V
+
     return-void
+.end method
+
+.method public final c()[Lyi7;
+    .registers 3
+
+    const/4 p0, 0x3
+
+    new-array p0, p0, [Lyi7;
+
+    sget-object v0, Lfme;->a:Lfme;
+
+    const/4 v1, 0x0
+
+    aput-object v0, p0, v1
+
+    const/4 v1, 0x1
+
+    aput-object v0, p0, v1
+
+    const/4 v1, 0x2
+
+    aput-object v0, p0, v1
+
+    return-object p0
+.end method
+
+.method public final d()Lqid;
+    .registers 1
+
+    sget-object p0, Lkpg;->descriptor:Lqid;
+
+    return-object p0
 .end method

@@ -1,41 +1,48 @@
-.class public abstract Lp8b;
-.super Ljava/lang/Object;
-.source "SourceFile"
+.class public final Lp8b;
+.super Ljx3;
+
+
+# instance fields
+.field public X:I
+
+.field public final synthetic Y:Lhc9;
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method public static a(Landroid/widget/PopupWindow;)Z
-    .registers 1
+.method public constructor <init>(Lhc9;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getOverlapAnchor()Z
+    iput-object p1, p0, Lp8b;->Y:Lhc9;
 
-    move-result p0
-
-    return p0
-.end method
-
-.method public static b(Landroid/widget/PopupWindow;)I
-    .registers 1
-
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getWindowLayoutType()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static c(Landroid/widget/PopupWindow;Z)V
-    .registers 2
-
-    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setOverlapAnchor(Z)V
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public static d(Landroid/widget/PopupWindow;I)V
-    .registers 2
 
-    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
+# virtual methods
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    return-void
+    iput-object p1, p0, Lp8b;->o:Ljava/lang/Object;
+
+    iget p1, p0, Lp8b;->X:I
+
+    const/high16 v0, -0x80000000
+
+    or-int/2addr p1, v0
+
+    iput p1, p0, Lp8b;->X:I
+
+    iget-object p1, p0, Lp8b;->Y:Lhc9;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, p0}, Lhc9;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method

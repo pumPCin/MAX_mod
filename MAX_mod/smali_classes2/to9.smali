@@ -1,16 +1,19 @@
-.class public final synthetic Lto9;
+.class public final Lto9;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lone/me/rlottie/NativeLibraryLoader;
+
+# instance fields
+.field public final a:Ljava/util/AbstractMap;
 
 
-# virtual methods
-.method public final load(Ljava/lang/String;)V
+# direct methods
+.method public constructor <init>(Ljava/util/AbstractMap;)V
     .registers 2
 
-    invoke-static {p1}, Lone/me/rlottie/NativeLibraryLoader$Companion;->a(Ljava/lang/String;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lto9;->a:Ljava/util/AbstractMap;
 
     return-void
 .end method

@@ -1,52 +1,48 @@
-.class public final synthetic Llp6;
-.super Lma6;
+.class public interface abstract Llp6;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lj96;
 
+# virtual methods
+.method public a(Landroid/view/View;)V
+    .registers 3
 
-# static fields
-.field public static final a:Llp6;
+    :try_start_0
+    invoke-static {p1, p0}, Lyu0;->C(Landroid/view/View;Llp6;)Z
 
+    move-result p0
 
-# direct methods
-.method static constructor <clinit>()V
-    .registers 6
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    new-instance v0, Llp6;
+    move-result-object p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    const-string v4, "getTime()J"
+    goto :goto_0
 
-    const/4 v5, 0x0
+    :catchall_0
+    move-exception p0
 
-    const/4 v1, 0x1
+    new-instance p1, Lhvc;
 
-    const-class v2, Lvo6;
+    invoke-direct {p1, p0}, Lhvc;-><init>(Ljava/lang/Throwable;)V
 
-    const-string v3, "getTime"
+    move-object p0, p1
 
-    invoke-direct/range {v0 .. v5}, Lma6;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    :goto_0
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    sput-object v0, Llp6;->a:Llp6;
+    instance-of v0, p0, Lhvc;
+
+    if-eqz v0, :cond_0
+
+    move-object p0, p1
+
+    :cond_0
+    check-cast p0, Ljava/lang/Boolean;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
-
-    check-cast p1, Lvo6;
-
-    invoke-interface {p1}, Lvo6;->l()J
-
-    move-result-wide p0
-
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p0
-
-    return-object p0
+.method public abstract b()I
 .end method

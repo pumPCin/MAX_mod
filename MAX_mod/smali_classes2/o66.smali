@@ -4,155 +4,142 @@
 
 
 # instance fields
-.field public final a:Landroid/graphics/Bitmap;
-
-.field public final b:I
-
-.field public final c:I
+.field public final a:Ljava/util/concurrent/CopyOnWriteArrayList;
 
 
 # direct methods
-.method public constructor <init>(IILandroid/graphics/Bitmap;)V
-    .registers 4
+.method public constructor <init>()V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lo66;->a:Landroid/graphics/Bitmap;
+    new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    iput p1, p0, Lo66;->b:I
+    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
-    iput p2, p0, Lo66;->c:I
+    iput-object v0, p0, Lo66;->a:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 6
+.method public final a(Lmta;)V
+    .registers 3
 
-    const/4 v0, 0x1
+    iget-object p0, p0, Lo66;->a:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
-    return v0
+    move-result-object p0
 
-    :cond_0
-    instance-of v1, p1, Lo66;
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    const/4 v2, 0x0
+    move-result v0
 
-    if-nez v1, :cond_1
+    if-eqz v0, :cond_0
 
-    return v2
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    :cond_1
-    check-cast p1, Lo66;
+    move-result-object v0
 
-    iget-object v1, p0, Lo66;->a:Landroid/graphics/Bitmap;
+    check-cast v0, Lo66;
 
-    iget-object v3, p1, Lo66;->a:Landroid/graphics/Bitmap;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget v1, p0, Lo66;->b:I
-
-    iget v3, p1, Lo66;->b:I
-
-    if-eq v1, v3, :cond_3
-
-    return v2
-
-    :cond_3
-    iget p0, p0, Lo66;->c:I
-
-    iget p1, p1, Lo66;->c:I
-
-    if-eq p0, p1, :cond_4
-
-    return v2
-
-    :cond_4
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 4
-
-    iget-object v0, p0, Lo66;->a:Landroid/graphics/Bitmap;
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x0
+    invoke-virtual {v0, p1}, Lo66;->a(Lmta;)V
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    :goto_0
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    iget v2, p0, Lo66;->b:I
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget p0, p0, Lo66;->c:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 3
+.method public final b(Lmta;Lysa;Lita;)V
+    .registers 5
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lo66;->a:Ljava/util/concurrent/CopyOnWriteArrayList;
 
-    const-string v1, "ResultFrame(bitmap="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lo66;->a:Landroid/graphics/Bitmap;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", width="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v1, p0, Lo66;->b:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, ", height="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ")"
-
-    iget p0, p0, Lo66;->c:I
-
-    invoke-static {v0, p0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
 
-    return-object p0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lo66;
+
+    invoke-virtual {v0, p1, p2, p3}, Lo66;->b(Lmta;Lysa;Lita;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final c(Lmta;Lysa;Lita;Ljava/io/IOException;)V
+    .registers 6
+
+    iget-object p0, p0, Lo66;->a:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lo66;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Lo66;->c(Lmta;Lysa;Lita;Ljava/io/IOException;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
+.method public final d(Lmta;Lysa;Lita;)V
+    .registers 5
+
+    iget-object p0, p0, Lo66;->a:Ljava/util/concurrent/CopyOnWriteArrayList;
+
+    invoke-virtual {p0}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lo66;
+
+    invoke-virtual {v0, p1, p2, p3}, Lo66;->d(Lmta;Lysa;Lita;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
 .end method

@@ -1,60 +1,192 @@
-.class public final Lmug;
-.super Lcrg;
+.class public abstract Lmug;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # instance fields
-.field public final synthetic d:Ljava/lang/Object;
+.field public final a:Lvug;
 
-.field public final synthetic e:Lbre;
+.field public b:[Lh97;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Boolean;Lbre;)V
-    .registers 3
+.method public constructor <init>()V
+    .registers 2
 
-    iput-object p1, p0, Lmug;->d:Ljava/lang/Object;
+    new-instance v0, Lvug;
 
-    iput-object p2, p0, Lmug;->e:Lbre;
+    invoke-direct {v0}, Lvug;-><init>()V
 
-    const-string p1, "com.google.android.gms.common.api.internal.IStatusCallback"
+    invoke-direct {p0, v0}, Lmug;-><init>(Lvug;)V
 
-    const/4 p2, 0x0
+    return-void
+.end method
 
-    invoke-direct {p0, p1, p2}, Lcrg;-><init>(Ljava/lang/String;I)V
+.method public constructor <init>(Lvug;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmug;->a:Lvug;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final W(ILandroid/os/Parcel;Landroid/os/Parcel;)Z
-    .registers 4
+.method public final a()V
+    .registers 6
 
-    const/4 p3, 0x1
+    iget-object v0, p0, Lmug;->b:[Lh97;
 
-    if-ne p1, p3, :cond_0
+    if-eqz v0, :cond_4
 
-    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+    const/4 v1, 0x0
 
-    invoke-static {p2, p1}, Llrg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    aget-object v1, v0, v1
 
-    move-result-object p1
+    const/4 v2, 0x1
 
-    check-cast p1, Lcom/google/android/gms/common/api/Status;
+    aget-object v0, v0, v2
 
-    invoke-static {p2}, Llrg;->b(Landroid/os/Parcel;)V
+    iget-object v3, p0, Lmug;->a:Lvug;
 
-    iget-object p2, p0, Lmug;->d:Ljava/lang/Object;
+    if-nez v0, :cond_0
 
-    iget-object p0, p0, Lmug;->e:Lbre;
+    const/4 v0, 0x2
 
-    invoke-static {p1, p2, p0}, Lx77;->V(Lcom/google/android/gms/common/api/Status;Ljava/lang/Object;Lbre;)V
+    iget-object v4, v3, Lvug;->a:Ltug;
 
-    return p3
+    invoke-virtual {v4, v0}, Ltug;->f(I)Lh97;
+
+    move-result-object v0
 
     :cond_0
-    const/4 p0, 0x0
+    if-nez v1, :cond_1
 
-    return p0
+    iget-object v1, v3, Lvug;->a:Ltug;
+
+    invoke-virtual {v1, v2}, Ltug;->f(I)Lh97;
+
+    move-result-object v1
+
+    :cond_1
+    invoke-static {v1, v0}, Lh97;->a(Lh97;Lh97;)Lh97;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lmug;->f(Lh97;)V
+
+    iget-object v0, p0, Lmug;->b:[Lh97;
+
+    const/16 v1, 0x10
+
+    invoke-static {v1}, Lx4h;->s(I)I
+
+    move-result v1
+
+    aget-object v0, v0, v1
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p0, v0}, Lmug;->e(Lh97;)V
+
+    :cond_2
+    iget-object v0, p0, Lmug;->b:[Lh97;
+
+    const/16 v1, 0x20
+
+    invoke-static {v1}, Lx4h;->s(I)I
+
+    move-result v1
+
+    aget-object v0, v0, v1
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {p0, v0}, Lmug;->d(Lh97;)V
+
+    :cond_3
+    iget-object v0, p0, Lmug;->b:[Lh97;
+
+    const/16 v1, 0x40
+
+    invoke-static {v1}, Lx4h;->s(I)I
+
+    move-result v1
+
+    aget-object v0, v0, v1
+
+    if-eqz v0, :cond_4
+
+    invoke-virtual {p0, v0}, Lmug;->g(Lh97;)V
+
+    :cond_4
+    return-void
+.end method
+
+.method public abstract b()Lvug;
+.end method
+
+.method public c(ILh97;)V
+    .registers 6
+
+    iget-object v0, p0, Lmug;->b:[Lh97;
+
+    if-nez v0, :cond_0
+
+    const/16 v0, 0x9
+
+    new-array v0, v0, [Lh97;
+
+    iput-object v0, p0, Lmug;->b:[Lh97;
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    const/16 v1, 0x100
+
+    if-gt v0, v1, :cond_2
+
+    and-int v1, p1, v0
+
+    if-nez v1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    iget-object v1, p0, Lmug;->b:[Lh97;
+
+    invoke-static {v0}, Lx4h;->s(I)I
+
+    move-result v2
+
+    aput-object p2, v1, v2
+
+    :goto_1
+    shl-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_2
+    return-void
+.end method
+
+.method public abstract d(Lh97;)V
+.end method
+
+.method public abstract e(Lh97;)V
+.end method
+
+.method public abstract f(Lh97;)V
+.end method
+
+.method public abstract g(Lh97;)V
+.end method
+
+.method public h(IZ)V
+    .registers 3
+
+    return-void
 .end method

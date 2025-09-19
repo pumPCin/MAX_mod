@@ -2,90 +2,126 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/concurrent/Callable;
+
 
 # instance fields
-.field public final a:Ljava/util/List;
+.field public final synthetic a:Ljava/lang/String;
 
-.field public final b:Ljava/util/List;
+.field public final synthetic b:Ljava/lang/String;
 
-.field public final c:Ljava/util/List;
+.field public final synthetic c:Ljava/lang/String;
 
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
+.field public final synthetic o:Lxwc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 0
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/List;Ljava/util/List;Ljava/util/List;III)V
-    .registers 7
+.method public constructor <init>(Lxwc;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Luwc;->a:Ljava/util/List;
+    iput-object p1, p0, Luwc;->o:Lxwc;
 
-    iput-object p2, p0, Luwc;->b:Ljava/util/List;
+    iput-object p2, p0, Luwc;->a:Ljava/lang/String;
 
-    iput-object p3, p0, Luwc;->c:Ljava/util/List;
+    iput-object p3, p0, Luwc;->b:Ljava/lang/String;
 
-    iput p4, p0, Luwc;->d:I
-
-    iput p5, p0, Luwc;->e:I
-
-    iput p6, p0, Luwc;->f:I
+    iput-object p4, p0, Luwc;->c:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .registers 4
+.method public final call()Ljava/lang/Object;
+    .registers 6
 
-    iget-object v0, p0, Luwc;->b:Ljava/util/List;
+    iget-object v0, p0, Luwc;->o:Lxwc;
 
-    iget v1, p0, Luwc;->e:I
+    iget-object v1, v0, Lxwc;->h:Lf79;
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget-object v0, v0, Lxwc;->a:Lru/ok/tamtam/android/db/room/OneMeRoomDatabase_Impl;
 
-    move-result-object v0
+    invoke-virtual {v1}, Ly2;->f()Lqqe;
 
-    iget-object v1, p0, Luwc;->c:Ljava/util/List;
+    move-result-object v2
 
-    iget p0, p0, Luwc;->f:I
+    const/4 v3, 0x1
 
-    invoke-interface {v1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    iget-object v4, p0, Luwc;->a:Ljava/lang/String;
 
-    move-result-object p0
+    invoke-interface {v2, v3, v4}, Loqe;->f(ILjava/lang/String;)V
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/4 v3, 0x2
 
-    const-string v2, "ScheduledSendPickerData(currentHour="
+    iget-object v4, p0, Luwc;->b:Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    if-nez v4, :cond_0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-interface {v2, v3}, Loqe;->Z(I)V
 
-    const-string v0, ", currentMinute="
+    goto :goto_0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    invoke-interface {v2, v3, v4}, Loqe;->f(ILjava/lang/String;)V
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :goto_0
+    const/4 v3, 0x3
 
-    const-string p0, ")"
+    iget-object p0, p0, Luwc;->c:Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-nez p0, :cond_1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {v2, v3}, Loqe;->Z(I)V
 
-    move-result-object p0
+    goto :goto_1
+
+    :cond_1
+    invoke-interface {v2, v3, p0}, Loqe;->f(ILjava/lang/String;)V
+
+    :goto_1
+    :try_start_0
+    invoke-virtual {v0}, Lexc;->c()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    :try_start_1
+    invoke-interface {v2}, Lqqe;->C()I
+
+    invoke-virtual {v0}, Lexc;->q()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+
+    :try_start_2
+    invoke-virtual {v0}, Lexc;->k()V
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    invoke-virtual {v1, v2}, Ly2;->u(Lqqe;)V
+
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
+
+    :catchall_0
+    move-exception p0
+
+    goto :goto_2
+
+    :catchall_1
+    move-exception p0
+
+    :try_start_3
+    invoke-virtual {v0}, Lexc;->k()V
+
+    throw p0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    :goto_2
+    invoke-virtual {v1, v2}, Ly2;->u(Lqqe;)V
+
+    throw p0
 .end method

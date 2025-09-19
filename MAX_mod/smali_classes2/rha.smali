@@ -1,295 +1,161 @@
 .class public final Lrha;
-.super Ls2;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic c:I
+.field public X:I
 
-.field public final synthetic o:Lsha;
+.field public final synthetic Y:Ljava/lang/Throwable;
+
+.field public final synthetic Z:Laia;
+
+.field public final synthetic r0:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+.field public final synthetic s0:Ljava/lang/Thread;
 
 
 # direct methods
-.method public constructor <init>(Lsha;I)V
-    .registers 3
+.method public constructor <init>(Ljava/lang/Throwable;Laia;Ljava/lang/Thread$UncaughtExceptionHandler;Ljava/lang/Thread;Lkotlin/coroutines/Continuation;)V
+    .registers 6
 
-    iput p2, p0, Lrha;->c:I
+    iput-object p1, p0, Lrha;->Y:Ljava/lang/Throwable;
 
-    iput-object p1, p0, Lrha;->o:Lsha;
+    iput-object p2, p0, Lrha;->Z:Laia;
 
-    const/16 p1, 0x9
+    iput-object p3, p0, Lrha;->r0:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    packed-switch p2, :pswitch_data_0
+    iput-object p4, p0, Lrha;->s0:Ljava/lang/Thread;
 
-    sget-object p2, Ljha;->a:Ljha;
+    const/4 p1, 0x2
 
-    invoke-direct {p0, p1, p2}, Ls2;-><init>(ILjava/lang/Object;)V
-
-    return-void
-
-    :pswitch_0
-    sget-object p2, Lpha;->a:Lpha;
-
-    invoke-direct {p0, p1, p2}, Ls2;-><init>(ILjava/lang/Object;)V
+    invoke-direct {p0, p1, p5}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final x0(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget v0, p0, Lrha;->c:I
+    check-cast p1, Ly04;
 
-    packed-switch v0, :pswitch_data_0
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-static {p1, p2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1, p2}, Lrha;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    move-result v0
+    move-result-object p0
 
-    if-nez v0, :cond_4
+    check-cast p0, Lrha;
 
-    check-cast p2, Lqha;
+    sget-object p1, Lylf;->a:Lylf;
 
-    check-cast p1, Lqha;
+    invoke-virtual {p0, p1}, Lrha;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object p1, Lmha;->a:Lmha;
+    move-result-object p0
 
-    invoke-static {p2, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return-object p0
+.end method
 
-    move-result p1
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 9
 
-    iget-object p0, p0, Lrha;->o:Lsha;
+    new-instance v0, Lrha;
 
-    if-eqz p1, :cond_0
+    iget-object v3, p0, Lrha;->r0:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    const/16 p1, 0x28
+    iget-object v4, p0, Lrha;->s0:Ljava/lang/Thread;
 
-    int-to-float p1, p1
+    iget-object v1, p0, Lrha;->Y:Ljava/lang/Throwable;
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    iget-object v2, p0, Lrha;->Z:Laia;
 
-    move-result-object p2
+    move-object v5, p2
 
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-direct/range {v0 .. v5}, Lrha;-><init>(Ljava/lang/Throwable;Laia;Ljava/lang/Thread$UncaughtExceptionHandler;Ljava/lang/Thread;Lkotlin/coroutines/Continuation;)V
 
-    move-result-object p2
+    return-object v0
+.end method
 
-    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 11
 
-    mul-float/2addr p1, p2
+    iget-object v5, p0, Lrha;->Y:Ljava/lang/Throwable;
 
-    invoke-static {p1}, Lg53;->C(F)I
+    sget-object v7, Lz04;->a:Lz04;
 
-    move-result p1
+    iget v0, p0, Lrha;->X:I
 
-    invoke-virtual {p0, p1}, Lp33;->setIndicatorSize(I)V
+    const/4 v8, 0x1
 
-    const/4 p1, 0x4
+    if-eqz v0, :cond_1
 
-    int-to-float p1, p1
+    if-ne v0, v8, :cond_0
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p2
-
-    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p1, p2
-
-    invoke-static {p1}, Lg53;->C(F)I
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Lp33;->setTrackThickness(I)V
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
-    sget-object p1, Lnha;->a:Lnha;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-static {p2, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    move-result p1
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    if-eqz p1, :cond_1
-
-    const/16 p1, 0x18
-
-    int-to-float p1, p1
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p2
-
-    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p1, p2
-
-    invoke-static {p1}, Lg53;->C(F)I
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Lp33;->setIndicatorSize(I)V
-
-    const/4 p1, 0x2
-
-    int-to-float p1, p1
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p2
-
-    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p1, p2
-
-    invoke-static {p1}, Lg53;->C(F)I
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Lp33;->setTrackThickness(I)V
-
-    goto :goto_0
+    throw p0
 
     :cond_1
-    sget-object p1, Loha;->a:Loha;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-static {p2, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    sget-object v0, Ljtg;->g:Loja;
 
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    const/16 p1, 0x10
-
-    int-to-float p1, p1
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p2
-
-    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p1, p2
-
-    invoke-static {p1}, Lg53;->C(F)I
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Lp33;->setIndicatorSize(I)V
-
-    const/4 p1, 0x1
-
-    int-to-float p1, p1
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p2
-
-    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p1, p2
-
-    invoke-static {p1}, Lg53;->C(F)I
-
-    move-result p1
-
-    invoke-virtual {p0, p1}, Lp33;->setTrackThickness(I)V
+    if-nez v0, :cond_2
 
     goto :goto_0
 
     :cond_2
-    sget-object p1, Lpha;->a:Lpha;
+    sget-object v1, Lqz7;->r0:Lqz7;
 
-    invoke-static {p2, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const/4 v4, 0x0
 
-    move-result p1
+    const/16 v6, 0x8
 
-    if-eqz p1, :cond_3
+    const-string v2, "APP_CRASH"
+
+    const-string v3, "!!! APP_CRASH !!!"
+
+    invoke-static/range {v0 .. v6}, Loja;->e(Loja;Lqz7;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;Ljava/lang/Throwable;I)V
 
     :goto_0
-    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+    iget-object p1, p0, Lrha;->Z:Laia;
 
-    invoke-virtual {p0}, Llk0;->invalidate()V
+    iput v8, p0, Lrha;->X:I
 
-    goto :goto_1
+    invoke-virtual {p1, p0}, Laia;->d(Ljx3;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    if-ne p1, v7, :cond_3
+
+    return-object v7
 
     :cond_3
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    :goto_1
+    iget-object p1, p0, Lrha;->r0:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    if-eqz p1, :cond_4
 
-    throw p0
+    iget-object p0, p0, Lrha;->s0:Ljava/lang/Thread;
+
+    invoke-interface {p1, p0, v5}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
 
     :cond_4
-    :goto_1
-    return-void
+    sget-object p0, Lylf;->a:Lylf;
 
-    :pswitch_0
-    invoke-static {p1, p2}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    check-cast p2, Llha;
-
-    check-cast p1, Llha;
-
-    sget-object p1, Lct4;->p0:Lws9;
-
-    iget-object p0, p0, Lrha;->o:Lsha;
-
-    invoke-virtual {p1, p0}, Lws9;->e(Landroid/view/View;)Loma;
-
-    move-result-object p1
-
-    invoke-static {p2, p1}, Lsha;->d(Llha;Loma;)I
-
-    move-result p1
-
-    filled-new-array {p1}, [I
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Llk0;->setIndicatorColor([I)V
-
-    :cond_5
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

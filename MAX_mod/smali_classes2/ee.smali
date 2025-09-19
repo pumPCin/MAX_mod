@@ -1,85 +1,174 @@
-.class public final Lee;
-.super Landroid/view/View;
+.class public abstract Lee;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# instance fields
-.field public final a:Landroid/graphics/Paint;
+# static fields
+.field public static final a:Landroid/os/Handler;
+
+.field public static final b:F
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    sput-object v0, Lee;->a:Landroid/os/Handler;
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    sput v0, Lee;->b:F
+
+    return-void
+.end method
+
+.method public static a(F)I
+    .registers 3
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    cmpl-float v0, p0, v0
 
-    invoke-direct {p0, p1, v0, v1}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    if-nez v0, :cond_0
 
-    new-instance p1, Landroid/graphics/Paint;
+    const/4 p0, 0x0
 
-    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
+    return p0
 
-    iput-object p1, p0, Lee;->a:Landroid/graphics/Paint;
+    :cond_0
+    sget v0, Lee;->b:F
 
-    return-void
+    mul-float/2addr v0, p0
+
+    float-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v0
+
+    double-to-int p0, v0
+
+    return p0
 .end method
 
+.method public static b()Z
+    .registers 2
 
-# virtual methods
-.method public final onDraw(Landroid/graphics/Canvas;)V
-    .registers 6
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    move-result-object v0
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public static c(Ljava/util/ArrayList;)V
+    .registers 5
+
+    invoke-virtual {p0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
 
-    int-to-float v0, v0
+    if-nez v0, :cond_2
 
-    const/high16 v1, 0x40000000    # 2.0f
+    new-instance v0, Ljava/util/ArrayList;
 
-    div-float/2addr v0, v1
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+    const/4 v1, 0x0
+
+    :goto_0
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    int-to-float v2, v2
+    if-ge v1, v2, :cond_1
 
-    div-float/2addr v2, v1
+    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    move-result-object v2
+
+    check-cast v2, Landroid/graphics/Bitmap;
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v3
 
-    int-to-float v3, v3
+    if-nez v3, :cond_0
 
-    div-float/2addr v3, v1
+    new-instance v3, Ljava/lang/ref/WeakReference;
 
-    iget-object v1, p0, Lee;->a:Landroid/graphics/Paint;
+    invoke-direct {v3, v2}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    invoke-virtual {p1, v0, v2, v3, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    new-instance p0, Lde;
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lde;-><init>(Ljava/util/ArrayList;I)V
+
+    invoke-static {p0}, Lee;->d(Ljava/lang/Runnable;)V
+
+    :cond_2
+    return-void
+.end method
+
+.method public static d(Ljava/lang/Runnable;)V
+    .registers 3
+
+    const-wide/16 v0, 0x0
+
+    invoke-static {p0, v0, v1}, Lee;->e(Ljava/lang/Runnable;J)V
 
     return-void
 .end method
 
-.method public final onMeasure(II)V
+.method public static e(Ljava/lang/Runnable;J)V
     .registers 5
 
-    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
+    const-wide/16 v0, 0x0
 
-    move-result v0
+    cmp-long v0, p1, v0
 
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+    sget-object v1, Lee;->a:Landroid/os/Handler;
 
-    move-result v1
+    if-nez v0, :cond_0
 
-    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setMeasuredDimension(II)V
+    invoke-virtual {v1, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
+    return-void
+
+    :cond_0
+    invoke-virtual {v1, p0, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method

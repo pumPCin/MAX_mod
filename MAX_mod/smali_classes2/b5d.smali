@@ -1,213 +1,61 @@
-.class public final Lb5d;
+.class public final synthetic Lb5d;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ld5d;
+.implements Landroid/content/DialogInterface$OnKeyListener;
 
 
 # instance fields
-.field public final a:Lqte;
-
-.field public final b:J
-
-.field public final c:I
+.field public final synthetic a:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
 
 
 # direct methods
-.method public constructor <init>(Lqte;J)V
-    .registers 4
+.method public synthetic constructor <init>(Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lb5d;->a:Lqte;
-
-    iput-wide p2, p0, Lb5d;->b:J
-
-    sget p1, Lsja;->G:I
-
-    iput p1, p0, Lb5d;->c:I
+    iput-object p1, p0, Lb5d;->a:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .registers 1
-
-    const/4 p0, 0x4
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-
-    const/4 v0, 0x1
-
-    if-ne p0, p1, :cond_0
-
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lb5d;
-
-    if-nez v1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    check-cast p1, Lb5d;
-
-    iget-object v1, p0, Lb5d;->a:Lqte;
-
-    iget-object v2, p1, Lb5d;->a:Lqte;
-
-    invoke-virtual {v1, v2}, Lqte;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    iget-wide v1, p0, Lb5d;->b:J
-
-    iget-wide p0, p1, Lb5d;->b:J
-
-    cmp-long p0, v1, p0
-
-    if-eqz p0, :cond_3
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_3
-    return v0
-.end method
-
-.method public final g()Z
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final getItemId()J
-    .registers 3
-
-    iget-wide v0, p0, Lb5d;->b:J
-
-    return-wide v0
-.end method
-
-.method public final getTitle()Lvte;
-    .registers 1
-
-    iget-object p0, p0, Lb5d;->a:Lqte;
-
-    return-object p0
-.end method
-
-.method public final hashCode()I
-    .registers 5
-
-    iget-object v0, p0, Lb5d;->a:Lqte;
-
-    iget v0, v0, Lqte;->b:I
-
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result v0
-
-    const/16 v1, 0x1f
-
-    mul-int/2addr v0, v1
-
-    const/4 v2, 0x1
-
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
-
-    move-result v0
-
-    iget-wide v2, p0, Lb5d;->b:J
-
-    invoke-static {v0, v1, v2, v3}, Lp2g;->a(IIJ)I
-
-    move-result p0
-
-    const/4 v0, 0x4
-
-    invoke-static {v0}, Lew1;->t(I)I
-
-    move-result v0
-
-    add-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public final m()I
-    .registers 1
-
-    iget p0, p0, Lb5d;->c:I
-
-    return p0
-.end method
-
-.method public final t()I
-    .registers 1
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
     .registers 4
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    const/4 p1, 0x4
 
-    const-string v1, "Header(title="
+    if-ne p2, p1, :cond_0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
-    iget-object v1, p0, Lb5d;->a:Lqte;
+    move-result p1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/4 p2, 0x1
 
-    const-string v1, ", sectionId=1, itemId="
+    if-ne p1, p2, :cond_0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance p1, Ld5d;
 
-    iget-wide v1, p0, Lb5d;->b:J
+    iget-object p0, p0, Lb5d;->a:Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    iget-object p2, p0, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;->E1:Ljava/lang/Object;
 
-    const-string p0, ", sectionItemType="
+    invoke-interface {p2}, Lcl7;->getValue()Ljava/lang/Object;
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object p2
 
-    const/4 p0, 0x4
+    check-cast p2, Landroid/os/Parcelable;
 
-    invoke-static {p0}, Lbkc;->s(I)Ljava/lang/String;
+    invoke-direct {p1, p2}, Ld5d;-><init>(Landroid/os/Parcelable;)V
 
-    move-result-object p0
+    invoke-virtual {p0, p1}, Lru/ok/tamtam/messages/scheduled/ScheduledSendPickerDialogFragment;->c1(Lg5d;)V
 
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    const/4 p0, 0x0
 
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return p0
 .end method

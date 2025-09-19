@@ -1,63 +1,126 @@
 .class public final Loh3;
-.super Lqd0;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 
 # static fields
-.field public static final b:Loh3;
+.field public static final c:I
+
+.field public static final d:I
+
+
+# instance fields
+.field public final a:Ljava/util/concurrent/ConcurrentHashMap;
+
+.field public b:Landroid/content/res/Configuration;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 3
 
-    new-instance v0, Loh3;
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/4 v1, 0x6
+    const/16 v1, 0x1f
 
-    invoke-direct {v0, v1}, Lqd0;-><init>(I)V
+    if-lt v0, v1, :cond_0
 
-    sput-object v0, Loh3;->b:Loh3;
+    const v2, 0x10003d84
+
+    goto :goto_0
+
+    :cond_0
+    const/16 v2, 0x3d84
+
+    :goto_0
+    sput v2, Loh3;->c:I
+
+    if-lt v0, v1, :cond_1
+
+    const/high16 v0, 0x50000000
+
+    goto :goto_1
+
+    :cond_1
+    const/high16 v0, 0x40000000    # 2.0f
+
+    :goto_1
+    sput v0, Loh3;->d:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 4
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Loh3;->a:Ljava/util/concurrent/ConcurrentHashMap;
+
+    new-instance v0, Landroid/content/res/Configuration;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
+
+    iput-object v0, p0, Loh3;->b:Landroid/content/res/Configuration;
+
+    new-instance v0, Lke2;
+
+    invoke-direct {v0, p0, p1}, Lke2;-><init>(Loh3;Landroid/content/Context;)V
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 3
+.method public final a(ILnh3;)V
+    .registers 4
 
-    const/4 v0, 0x1
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    if-ne p0, p1, :cond_0
+    move-result-object p1
 
-    return v0
+    iget-object p0, p0, Loh3;->a:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    invoke-virtual {p0, p1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-nez p0, :cond_0
+
+    goto :goto_0
 
     :cond_0
-    instance-of p0, p1, Loh3;
-
-    if-nez p0, :cond_1
-
-    const/4 p0, 0x0
-
-    return p0
+    move-object v0, p0
 
     :cond_1
-    return v0
-.end method
+    :goto_0
+    check-cast v0, Ljava/util/Set;
 
-.method public final hashCode()I
-    .registers 1
+    invoke-interface {v0, p2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const p0, 0x420fd21c
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 1
-
-    const-string p0, "MainScreen"
-
-    return-object p0
+    return-void
 .end method

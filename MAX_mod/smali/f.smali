@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Li67;
+.implements Lm97;
 
 
 # instance fields
@@ -23,133 +23,133 @@
 
 
 # virtual methods
-.method public final a(Ls4;)Ljava/lang/Object;
+.method public final a(Lz4;)Ljava/lang/Object;
     .registers 13
 
     iget p0, p0, Lf;->a:I
 
     packed-switch p0, :pswitch_data_0
 
-    new-instance p0, Llh8;
+    new-instance p0, Lnk8;
 
-    const/16 p1, 0xa
+    const/16 p1, 0xb
 
-    invoke-direct {p0, p1}, Llh8;-><init>(I)V
+    invoke-direct {p0, p1}, Lnk8;-><init>(I)V
 
     return-object p0
 
     :pswitch_0
-    sget-object p0, Lx03;->a:Lx03;
+    sget-object p0, La13;->a:La13;
 
     return-object p0
 
     :pswitch_1
-    new-instance p0, Lt66;
+    new-instance p0, Ln96;
 
-    const-class v0, Lwy6;
+    const-class v0, Lx17;
 
-    invoke-virtual {p1, v0}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {p1, v0}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     move-result-object v0
 
-    const-class v1, Lova;
+    const-class v1, Lr1b;
 
-    invoke-virtual {p1, v1}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {p1, v1}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     move-result-object v1
 
-    const-class v2, Lzne;
+    const-class v2, Lxwe;
 
-    invoke-virtual {p1, v2}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {p1, v2}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     move-result-object p1
 
-    invoke-direct {p0, v0, v1, p1}, Lt66;-><init>(Lxh7;Lxh7;Lxh7;)V
+    invoke-direct {p0, v0, v1, p1}, Ln96;-><init>(Lcl7;Lcl7;Lcl7;)V
 
     return-object p0
 
     :pswitch_2
-    new-instance p0, Lchb;
+    new-instance p0, Lemb;
 
-    const-class v0, Loh5;
+    const-class v0, Lrj5;
 
-    invoke-virtual {p1, v0}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {p1, v0}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     move-result-object p1
 
     const/4 v0, 0x1
 
-    invoke-direct {p0, p1, v0}, Lchb;-><init>(Lxh7;I)V
+    invoke-direct {p0, p1, v0}, Lemb;-><init>(Lcl7;I)V
 
     return-object p0
 
     :pswitch_3
-    new-instance p0, Lql5;
+    new-instance p0, Lrn5;
 
-    const-class v0, Lrv0;
+    const-class v0, Lfv0;
 
-    invoke-virtual {p1, v0}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lrv0;
+    check-cast v0, Lfv0;
 
-    const-class v1, Lzne;
+    const-class v1, Lxwe;
 
-    invoke-virtual {p1, v1}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p1, v1}, Lz4;->c(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lzne;
+    check-cast p1, Lxwe;
 
-    invoke-direct {p0, v0, p1}, Lql5;-><init>(Lrv0;Lzne;)V
+    invoke-direct {p0, v0, p1}, Lrn5;-><init>(Lfv0;Lxwe;)V
 
     return-object p0
 
     :pswitch_4
-    new-instance p0, Lxad;
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->chat-anim:Lru/ok/tamtam/android/prefs/PmsKey;
 
-    invoke-direct {p0, p1}, Lxad;-><init>(Lru/ok/tamtam/android/prefs/PmsKey;)V
+    invoke-direct {p0, p1}, Ldjd;-><init>(Lru/ok/tamtam/android/prefs/PmsKey;)V
 
     return-object p0
 
     :pswitch_5
-    new-instance p0, Lcc2;
+    new-instance p0, Lxb2;
 
-    const-class v0, Loh5;
+    const-class v0, Lrj5;
 
-    invoke-virtual {p1, v0}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {p1, v0}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     move-result-object v0
 
-    const-class v1, Lmvc;
+    const-class v1, Ls3d;
 
-    invoke-virtual {p1, v1}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {p1, v1}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     move-result-object p1
 
-    invoke-direct {p0, v0, p1}, Lcc2;-><init>(Lxh7;Lxh7;)V
+    invoke-direct {p0, v0, p1}, Lxb2;-><init>(Lcl7;Lcl7;)V
 
     return-object p0
 
     :pswitch_6
-    new-instance p0, Llh8;
+    new-instance p0, Lnk8;
 
-    const/4 p1, 0x1
+    const/4 p1, 0x2
 
-    invoke-direct {p0, p1}, Llh8;-><init>(I)V
+    invoke-direct {p0, p1}, Lnk8;-><init>(I)V
 
     return-object p0
 
     :pswitch_7
-    sget-object p0, Lk81;->a:Lk81;
+    sget-object p0, Le81;->a:Le81;
 
     return-object p0
 
     :pswitch_8
-    new-instance p0, Lxad;
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->gcas:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -157,12 +157,12 @@
 
     const-string v1, "\ud83d\udcde \u0410\u0434\u043c\u0438\u043d\u0441\u043a\u0438\u0435 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0432 \u0433\u0440\u0443\u043f\u043f\u043e\u0432\u044b\u0445 \u0437\u0432\u043e\u043d\u043a\u0430\u0445"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
     :pswitch_9
-    new-instance p0, Lxad;
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->lgce:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -170,12 +170,12 @@
 
     const-string v1, "\ud83d\udcde \u0413\u0440\u0443\u043f\u043f\u043e\u0432\u044b\u0435 \u0437\u0432\u043e\u043d\u043a\u0438 \u043f\u043e \u0441\u0441\u044b\u043b\u043a\u0435"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
     :pswitch_a
-    new-instance p0, Lxad;
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->grse:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -183,12 +183,12 @@
 
     const-string v1, "\ud83d\udcde \u0417\u0430\u043f\u0438\u0441\u044c \u0437\u0432\u043e\u043d\u043a\u0430"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
     :pswitch_b
-    new-instance p0, Lxad;
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->gcmpe:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -196,12 +196,12 @@
 
     const-string v1, "\ud83d\udcde \u0413\u0440\u0443\u043f\u043f\u043e\u0432\u044b\u0435 \u0437\u0432\u043e\u043d\u043a\u0438: \u043f\u0435\u0440\u043c\u0438\u0448\u0435\u043d \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u043e\u0432 \u0447\u0430\u0442\u0430"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
     :pswitch_c
-    new-instance p0, Lxad;
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->gce:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -209,12 +209,12 @@
 
     const-string v1, "\ud83d\udcde \u0413\u0440\u0443\u043f\u043f\u043e\u0432\u044b\u0435 \u0437\u0432\u043e\u043d\u043a\u0438"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
     :pswitch_d
-    new-instance p0, Lxad;
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->gsse:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -222,12 +222,12 @@
 
     const-string v1, "\ud83d\udcde \u0428\u0435\u0440\u0438\u043d\u0433 \u0432 \u0433\u0440\u0443\u043f\u043f\u043e\u0432\u043e\u043c"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
     :pswitch_e
-    new-instance p0, Lxad;
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->show-vpn-snackbar:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -235,12 +235,12 @@
 
     const-string v1, "\ud83d\udcde \u041e\u0442\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435 VPN \u0441\u043d\u0435\u043a\u0431\u0430\u0440\u0430"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
     :pswitch_f
-    new-instance p0, Lxad;
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->sse:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -248,26 +248,52 @@
 
     const-string v1, "\ud83d\udcde \u0428\u0435\u0440\u0438\u043d\u0433 \u0432 1-1"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
     :pswitch_10
-    sget-object p0, Lj51;->a:Lj51;
+    sget-object p0, Lb51;->a:Lb51;
 
     return-object p0
 
     :pswitch_11
-    new-instance p0, Lv11;
+    new-instance p0, Lk11;
 
     const/4 p1, 0x0
 
-    invoke-direct {p0, p1}, Lv11;-><init>(I)V
+    invoke-direct {p0, p1}, Lk11;-><init>(I)V
 
     return-object p0
 
     :pswitch_12
-    new-instance p0, Lxad;
+    new-instance p0, Ldjd;
+
+    sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->gc-link-pre-settings:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    const/4 v0, 0x0
+
+    const-string v1, "\ud83d\udcde \u041f\u0440\u0435\u0434\u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0433\u0440\u0443\u043f\u043f\u043e\u0432\u043e\u0433\u043e \u0437\u0432\u043e\u043d\u043a\u0430 \u043f\u043e \u0441\u0441\u044b\u043b\u043a\u0435"
+
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+
+    return-object p0
+
+    :pswitch_13
+    new-instance p0, Ldjd;
+
+    sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->chat-video-call-button:Lru/ok/tamtam/android/prefs/PmsKey;
+
+    const/4 v0, 0x0
+
+    const-string v1, "\ud83d\udcde \u041a\u043d\u043e\u043f\u043a\u0430 \u0432\u0438\u0434\u0435\u043e \u0437\u0432\u043e\u043d\u043a\u0430 \u0432 \u0447\u0430\u0442\u0435"
+
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+
+    return-object p0
+
+    :pswitch_14
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->gc-from-p2p:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -275,12 +301,12 @@
 
     const-string v1, "\ud83d\udcde \u041f\u0435\u0440\u0435\u0445\u043e\u0434 \u0438\u0437 1-1 \u0437\u0432\u043e\u043d\u043a\u0430 \u0432 \u0433\u0440\u0443\u043f\u043f\u043e\u0432\u043e\u0439"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
-    :pswitch_13
-    new-instance p0, Lxad;
+    :pswitch_15
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->group-call-chat-support:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -288,34 +314,34 @@
 
     const-string v1, "\ud83d\udcde \u0427\u0430\u0442 \u0432 \u0433\u0440\u0443\u043f\u043f\u043e\u0432\u043e\u043c \u0437\u0432\u043e\u043d\u043a\u0435"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
-    :pswitch_14
-    const-class p0, Lc53;
+    :pswitch_16
+    const-class p0, Lf53;
 
-    invoke-virtual {p1, p0}, Ls4;->d(Ljava/lang/Class;)Ldle;
+    invoke-virtual {p1, p0}, Lz4;->d(Ljava/lang/Class;)Lzte;
 
     move-result-object p0
 
-    new-instance v0, Lit7;
+    new-instance v0, Lnw7;
 
-    new-instance v1, Lute;
+    new-instance v1, Lt2f;
 
     const-string p1, "\ud83d\udcde \u041b\u043e\u0433\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 WebRtc \u0432 \u0437\u0432\u043e\u043d\u043a\u0430\u0445"
 
-    invoke-direct {v1, p1}, Lute;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v1, p1}, Lt2f;-><init>(Ljava/lang/CharSequence;)V
 
-    new-instance v2, Lu11;
+    new-instance v2, Lj11;
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p1
 
     move-object v4, p1
 
-    check-cast v4, Lc53;
+    check-cast v4, Lf53;
 
     const/4 v8, 0x0
 
@@ -323,46 +349,46 @@
 
     const/4 v3, 0x0
 
-    const-class v5, Lc53;
+    const-class v5, Lf53;
 
     const-string v6, "isWebRtcLoggingEnabled"
 
     const-string v7, "isWebRtcLoggingEnabled()Z"
 
-    invoke-direct/range {v2 .. v9}, Lu11;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+    invoke-direct/range {v2 .. v9}, Lj11;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
 
-    new-instance v3, Lzp;
+    new-instance v3, Lvv0;
 
-    invoke-virtual {p0}, Ldle;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lzte;->getValue()Ljava/lang/Object;
 
     move-result-object p0
 
     move-object v5, p0
 
-    check-cast v5, Lc53;
+    check-cast v5, Lf53;
 
-    const/4 v10, 0x2
+    const/4 v10, 0x1
 
     const/4 v4, 0x1
 
-    const-class v6, Lc53;
+    const-class v6, Lf53;
 
     const-string v7, "setWebRtcLoggingEnabled"
 
     const-string v8, "setWebRtcLoggingEnabled(Z)V"
 
-    invoke-direct/range {v3 .. v10}, Lzp;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
+    invoke-direct/range {v3 .. v10}, Lvv0;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;II)V
 
-    sget v4, Luwb;->ic_call_22:I
+    sget v4, Lz3c;->ic_call_22:I
 
     const/16 v5, 0x10
 
-    invoke-direct/range {v0 .. v5}, Lit7;-><init>(Lvte;Lh96;Lj96;II)V
+    invoke-direct/range {v0 .. v5}, Lnw7;-><init>(Lu2f;Lzb6;Lbc6;II)V
 
     return-object v0
 
-    :pswitch_15
-    new-instance p0, Lxad;
+    :pswitch_17
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->gcwre:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -370,45 +396,26 @@
 
     const-string v1, "\ud83d\udcde \u0417\u0430\u043b \u043e\u0436\u0438\u0434\u0430\u043d\u0438\u044f \u0432 \u0433\u0440\u0443\u043f\u043f\u043e\u0432\u044b\u0445 \u0437\u0432\u043e\u043d\u043a\u0430\u0445"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
-
-    return-object p0
-
-    :pswitch_16
-    new-instance p0, Lxad;
-
-    sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->appearance-multi-theme-screen-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
-
-    const/4 v0, 0x0
-
-    const-string v1, "\u0412\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u043d\u043e\u0432\u044b\u0439 \u044d\u043a\u0440\u0430\u043d \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u044f"
-
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
-
-    return-object p0
-
-    :pswitch_17
-    new-instance p0, Ljfb;
-
-    const-class v0, Loh5;
-
-    invoke-virtual {p1, v0}, Ls4;->d(Ljava/lang/Class;)Ldle;
-
-    move-result-object p1
-
-    const/4 v0, 0x1
-
-    invoke-direct {p0, p1, v0}, Ljfb;-><init>(Lxh7;I)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
     :pswitch_18
-    sget-object p0, Lhp;->a:Lhp;
+    new-instance p0, Lnk8;
+
+    const/4 p1, 0x1
+
+    invoke-direct {p0, p1}, Lnk8;-><init>(I)V
 
     return-object p0
 
     :pswitch_19
-    new-instance p0, Lxad;
+    sget-object p0, Lqp;->a:Lqp;
+
+    return-object p0
+
+    :pswitch_1a
+    new-instance p0, Ldjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->post-link-enabled:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -416,25 +423,12 @@
 
     const-string v1, "post-link-enabled"
 
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
-
-    return-object p0
-
-    :pswitch_1a
-    new-instance p0, Lxad;
-
-    sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->show-reactions-on-multiselect:Lru/ok/tamtam/android/prefs/PmsKey;
-
-    const/4 v0, 0x0
-
-    const-string v1, "show-reactions-on-multiselect"
-
-    invoke-direct {p0, v1, p1, v0}, Lxad;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
+    invoke-direct {p0, v1, p1, v0}, Ldjd;-><init>(Ljava/lang/String;Lru/ok/tamtam/android/prefs/PmsKey;Z)V
 
     return-object p0
 
     :pswitch_1b
-    new-instance p0, Ljbd;
+    new-instance p0, Lpjd;
 
     sget-object p1, Lru/ok/tamtam/android/prefs/PmsKey;->media-order:Lru/ok/tamtam/android/prefs/PmsKey;
 
@@ -450,7 +444,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0, p1, v0}, Ljbd;-><init>(Lru/ok/tamtam/android/prefs/PmsKey;[Ljava/lang/String;)V
+    invoke-direct {p0, p1, v0}, Lpjd;-><init>(Lru/ok/tamtam/android/prefs/PmsKey;[Ljava/lang/String;)V
 
     return-object p0
 

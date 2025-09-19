@@ -1,173 +1,346 @@
 .class public final Lat8;
-.super Lxie;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lat8;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public X:Lo72;
+.field public final X:Lfrd;
 
-.field public Y:I
+.field public final a:I
 
-.field public final synthetic Z:Lht8;
+.field public final b:Lu2f;
 
-.field public final synthetic n0:Z
+.field public final c:Lhrd;
+
+.field public final o:Ljava/lang/Integer;
 
 
 # direct methods
-.method public constructor <init>(Lht8;ZLkotlin/coroutines/Continuation;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 2
 
-    iput-object p1, p0, Lat8;->Z:Lht8;
+    new-instance v0, Lba8;
 
-    iput-boolean p2, p0, Lat8;->n0:Z
+    const/4 v1, 0x7
 
-    const/4 p1, 0x2
+    invoke-direct {v0, v1}, Lba8;-><init>(I)V
 
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    sput-object v0, Lat8;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(ILp2f;Ljava/lang/Integer;)V
+    .registers 10
+
+    const/4 v5, 0x0
+
+    sget-object v3, Lhrd;->a:Lhrd;
+
+    move-object v0, p0
+
+    move v1, p1
+
+    move-object v2, p2
+
+    move-object v4, p3
+
+    invoke-direct/range {v0 .. v5}, Lat8;-><init>(ILu2f;Lhrd;Ljava/lang/Integer;Lfrd;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(ILu2f;Lhrd;Ljava/lang/Integer;Lfrd;)V
+    .registers 6
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lat8;->a:I
+
+    iput-object p2, p0, Lat8;->b:Lu2f;
+
+    iput-object p3, p0, Lat8;->c:Lhrd;
+
+    iput-object p4, p0, Lat8;->o:Ljava/lang/Integer;
+
+    iput-object p5, p0, Lat8;->X:Lfrd;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final describeContents()I
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 6
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lat8;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lat8;
+
+    iget v1, p0, Lat8;->a:I
+
+    iget v3, p1, Lat8;->a:I
+
+    if-eq v1, v3, :cond_2
+
+    return v2
+
+    :cond_2
+    iget-object v1, p0, Lat8;->b:Lu2f;
+
+    iget-object v3, p1, Lat8;->b:Lu2f;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_3
+
+    return v2
+
+    :cond_3
+    iget-object v1, p0, Lat8;->c:Lhrd;
+
+    iget-object v3, p1, Lat8;->c:Lhrd;
+
+    if-eq v1, v3, :cond_4
+
+    return v2
+
+    :cond_4
+    iget-object v1, p0, Lat8;->o:Ljava/lang/Integer;
+
+    iget-object v3, p1, Lat8;->o:Ljava/lang/Integer;
+
+    invoke-static {v1, v3}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_5
+
+    return v2
+
+    :cond_5
+    iget-object p0, p0, Lat8;->X:Lfrd;
+
+    iget-object p1, p1, Lat8;->X:Lfrd;
+
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_6
+
+    return v2
+
+    :cond_6
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 5
+
+    iget v0, p0, Lat8;->a:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result v0
+
+    const/16 v1, 0x1f
+
+    mul-int/2addr v0, v1
+
+    iget-object v2, p0, Lat8;->b:Lu2f;
+
+    invoke-static {v0, v1, v2}, Lsg0;->c(IILu2f;)I
+
+    move-result v0
+
+    iget-object v2, p0, Lat8;->c:Lhrd;
+
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
+
+    move-result v2
+
+    add-int/2addr v2, v0
+
+    mul-int/2addr v2, v1
+
+    const/4 v0, 0x0
+
+    iget-object v3, p0, Lat8;->o:Ljava/lang/Integer;
+
+    if-nez v3, :cond_0
+
+    move v3, v0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    move-result v3
+
+    :goto_0
+    add-int/2addr v2, v3
+
+    mul-int/2addr v2, v1
+
+    iget-object p0, p0, Lat8;->X:Lfrd;
+
+    if-nez p0, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    move-result v0
+
+    :goto_1
+    add-int/2addr v2, v0
+
+    return v2
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    check-cast p1, Lr04;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const-string v1, "MemberListAction(id="
 
-    invoke-virtual {p0, p1, p2}, Lat8;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    move-result-object p0
+    iget v1, p0, Lat8;->a:I
 
-    check-cast p0, Lat8;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    sget-object p1, Lncf;->a:Lncf;
+    const-string v1, ", text="
 
-    invoke-virtual {p0, p1}, Lat8;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lat8;->b:Lu2f;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", type="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lat8;->c:Lhrd;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", startIconRes="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lat8;->o:Ljava/lang/Integer;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", endViewType="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object p0, p0, Lat8;->X:Lfrd;
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string p0, ")"
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .registers 5
 
-    new-instance p1, Lat8;
+    iget v0, p0, Lat8;->a:I
 
-    iget-object v0, p0, Lat8;->Z:Lht8;
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    iget-boolean p0, p0, Lat8;->n0:Z
+    iget-object v0, p0, Lat8;->b:Lu2f;
 
-    invoke-direct {p1, v0, p0, p2}, Lat8;-><init>(Lht8;ZLkotlin/coroutines/Continuation;)V
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    return-object p1
-.end method
+    iget-object v0, p0, Lat8;->c:Lhrd;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
-
-    iget v0, p0, Lat8;->Y:I
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x1
-
-    sget-object v3, Lncf;->a:Lncf;
-
-    iget-object v4, p0, Lat8;->Z:Lht8;
-
-    sget-object v5, Ls04;->a:Ls04;
-
-    if-eqz v0, :cond_2
-
-    if-eq v0, v2, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_3
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    iget-object v0, p0, Lat8;->X:Lo72;
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_2
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, v4, Lht8;->E0:Ljava/lang/String;
-
-    const-string v0, "load members with read status"
-
-    invoke-static {p1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v4}, Lht8;->t()Lo72;
+    invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v0
 
-    if-nez v0, :cond_3
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lat8;->o:Ljava/lang/Integer;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     goto :goto_1
 
-    :cond_3
-    iput-object v0, p0, Lat8;->X:Lo72;
+    :cond_0
+    const/4 v1, 0x1
 
-    iput v2, p0, Lat8;->Y:I
+    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-static {v4, v0, p0}, Lht8;->r(Lht8;Lo72;Lcx3;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move-result-object p1
+    move-result v0
 
-    if-ne p1, v5, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    :goto_0
-    iget-boolean p1, p0, Lat8;->n0:Z
-
-    if-nez p1, :cond_5
+    goto :goto_0
 
     :goto_1
-    return-object v3
+    iget-object p0, p0, Lat8;->X:Lfrd;
 
-    :cond_5
-    const/4 p1, 0x0
+    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
-    iput-object p1, p0, Lat8;->X:Lo72;
-
-    iput v1, p0, Lat8;->Y:I
-
-    invoke-static {v4, v0, p0}, Lht8;->s(Lht8;Lo72;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v5, :cond_6
-
-    :goto_2
-    return-object v5
-
-    :cond_6
-    :goto_3
-    invoke-static {v4}, Lht8;->q(Lht8;)V
-
-    return-object v3
+    return-void
 .end method

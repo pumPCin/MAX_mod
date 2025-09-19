@@ -1,25 +1,35 @@
-.class public abstract Lhxf;
+.class public interface abstract Lhxf;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# direct methods
-.method public static a(Landroid/view/ViewConfiguration;III)I
-    .registers 4
+# virtual methods
+.method public E(F)V
+    .registers 2
 
-    invoke-virtual {p0, p1, p2, p3}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity(III)I
-
-    move-result p0
-
-    return p0
+    return-void
 .end method
 
-.method public static b(Landroid/view/ViewConfiguration;III)I
-    .registers 4
+.method public F(J)V
+    .registers 3
 
-    invoke-virtual {p0, p1, p2, p3}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity(III)I
+    return-void
+.end method
 
-    move-result p0
+.method public J()V
+    .registers 1
 
-    return p0
+    return-void
+.end method
+
+.method public abstract M()V
+.end method
+
+.method public abstract b(Landroidx/media3/common/VideoFrameProcessingException;)V
+.end method
+
+.method public l(II)V
+    .registers 3
+
+    return-void
 .end method

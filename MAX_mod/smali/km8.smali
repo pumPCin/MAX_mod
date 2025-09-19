@@ -1,76 +1,47 @@
-.class public final synthetic Lkm8;
+.class public final Lkm8;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lwm8;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/lang/Object;
 
-.field public final synthetic b:Lwe8;
+.field public final b:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lwe8;I)V
+.method public constructor <init>(Ljava/lang/Object;)V
     .registers 3
-
-    iput p2, p0, Lkm8;->a:I
-
-    iput-object p1, p0, Lkm8;->b:Lwe8;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Lkm8;->a:Ljava/lang/Object;
+
+    instance-of v0, p1, Ljava/lang/String;
+
+    if-eqz v0, :cond_0
+
+    const/4 p1, 0x1
+
+    iput p1, p0, Lkm8;->b:I
+
     return-void
-.end method
 
+    :cond_0
+    instance-of p1, p1, Ljn8;
 
-# virtual methods
-.method public final k(Lml8;Lsk8;I)Ljava/lang/Object;
-    .registers 4
+    if-eqz p1, :cond_1
 
-    iget p3, p0, Lkm8;->a:I
+    const/4 p1, 0x2
 
-    iget-object p0, p0, Lkm8;->b:Lwe8;
+    iput p1, p0, Lkm8;->b:I
 
-    packed-switch p3, :pswitch_data_0
+    return-void
 
-    invoke-static {p0}, Lj07;->m(Ljava/lang/Object;)Lqic;
+    :cond_1
+    const/4 p1, 0x0
 
-    move-result-object p0
+    iput p1, p0, Lkm8;->b:I
 
-    invoke-virtual {p1, p2, p0}, Lml8;->j(Lsk8;Ljava/util/List;)Lcq7;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_0
-    invoke-static {p0}, Lj07;->m(Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p2, p0}, Lml8;->j(Lsk8;Ljava/util/List;)Lcq7;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_1
-    invoke-static {p0}, Lj07;->m(Ljava/lang/Object;)Lqic;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p2, p0}, Lml8;->j(Lsk8;Ljava/util/List;)Lcq7;
-
-    move-result-object p0
-
-    return-object p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

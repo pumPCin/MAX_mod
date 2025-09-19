@@ -1,107 +1,177 @@
 .class public final Ly1e;
-.super Ljava/lang/Object;
+.super Landroid/widget/PopupWindow;
 .source "SourceFile"
 
 
-# static fields
-.field public static final synthetic e:[Lsf7;
-
-.field public static final f:Ljava/lang/String;
-
-
 # instance fields
-.field public final a:Lfq4;
+.field public final a:Ljava/util/ArrayList;
 
-.field public final b:Lfq4;
-
-.field public final c:Lfq4;
-
-.field public final d:Lfq4;
+.field public final b:Lar7;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 8
+.method public constructor <init>(Landroid/content/Context;ZLjava/util/ArrayList;Lar7;)V
+    .registers 16
 
-    new-instance v0, Lrqb;
+    invoke-direct {p0}, Landroid/widget/PopupWindow;-><init>()V
 
-    const-class v1, Ly1e;
+    iput-object p3, p0, Ly1e;->a:Ljava/util/ArrayList;
 
-    const-string v2, "messageController"
+    iput-object p4, p0, Ly1e;->b:Lar7;
 
-    const-string v3, "getMessageController()Lru/ok/tamtam/messages/MessageController;"
+    const/4 p4, -0x2
 
-    const/4 v4, 0x0
+    invoke-virtual {p0, p4}, Landroid/widget/PopupWindow;->setHeight(I)V
 
-    invoke-direct {v0, v1, v2, v3, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    const/16 v0, 0xfa
 
-    sget-object v2, Lyhc;->a:Lzhc;
+    int-to-float v0, v0
 
-    const-string v3, "workerService"
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
-    const-string v5, "getWorkerService()Lru/ok/tamtam/services/WorkerService;"
+    move-result-object v1
 
-    invoke-static {v2, v1, v3, v5, v4}, Lgl5;->g(Lzhc;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)Lrqb;
+    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v2
+    move-result-object v1
 
-    new-instance v3, Lrqb;
+    iget v1, v1, Landroid/util/DisplayMetrics;->density:F
 
-    const-string v5, "fileAttachUploader"
+    mul-float/2addr v0, v1
 
-    const-string v6, "getFileAttachUploader()Lru/ok/tamtam/FileAttachUploader;"
+    invoke-static {v0}, Lya6;->G(F)I
 
-    invoke-direct {v3, v1, v5, v6, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    move-result v0
 
-    new-instance v5, Lrqb;
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setWidth(I)V
 
-    const-string v6, "clientPrefs"
-
-    const-string v7, "getClientPrefs()Lru/ok/tamtam/prefs/ClientPrefs;"
-
-    invoke-direct {v5, v1, v6, v7, v4}, Lrqb;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    const/4 v6, 0x4
-
-    new-array v6, v6, [Lsf7;
-
-    aput-object v0, v6, v4
-
-    const/4 v0, 0x1
-
-    aput-object v2, v6, v0
-
-    const/4 v0, 0x2
-
-    aput-object v3, v6, v0
-
-    const/4 v0, 0x3
-
-    aput-object v5, v6, v0
-
-    sput-object v6, Ly1e;->e:[Lsf7;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-static {}, Lvo4;->d()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    sput-object v0, Ly1e;->f:Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    return-void
-.end method
+    move-result-object v0
 
-.method public constructor <init>(Lfq4;Lfq4;Lfq4;Lfq4;)V
-    .registers 5
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/high16 v1, 0x41400000    # 12.0f
 
-    iput-object p1, p0, Ly1e;->a:Lfq4;
+    mul-float/2addr v0, v1
 
-    iput-object p2, p0, Ly1e;->b:Lfq4;
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setElevation(F)V
 
-    iput-object p3, p0, Ly1e;->c:Lfq4;
+    const/4 v0, 0x1
 
-    iput-object p4, p0, Ly1e;->d:Lfq4;
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
+
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setFocusable(Z)V
+
+    new-instance v1, Lnfb;
+
+    invoke-direct {v1, p1, p2}, Lnfb;-><init>(Landroid/content/Context;Z)V
+
+    invoke-virtual {p3}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    if-eqz v2, :cond_1
+
+    :cond_0
+    move v9, v3
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p3
+
+    :cond_2
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lx1e;
+
+    iget-object v2, v2, Lx1e;->d:Ljava/lang/Integer;
+
+    if-eqz v2, :cond_2
+
+    move v9, v0
+
+    :goto_0
+    iget-object p3, p0, Ly1e;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {p3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object p3
+
+    :goto_1
+    invoke-interface {p3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lx1e;
+
+    new-instance v4, Lmfb;
+
+    invoke-direct {v4, p1, p2}, Lmfb;-><init>(Landroid/content/Context;Z)V
+
+    iget-object v6, v2, Lx1e;->b:Lu2f;
+
+    iget-object v10, v2, Lx1e;->d:Ljava/lang/Integer;
+
+    iget-object v7, v2, Lx1e;->c:Ljava/lang/Integer;
+
+    if-eqz v10, :cond_3
+
+    move v8, v0
+
+    goto :goto_2
+
+    :cond_3
+    move v8, v3
+
+    :goto_2
+    move-object v5, v4
+
+    invoke-virtual/range {v4 .. v9}, Lmfb;->c(Lmfb;Lu2f;Ljava/lang/Integer;ZZ)V
+
+    iget-object v5, v2, Lx1e;->e:Ljava/lang/Integer;
+
+    invoke-virtual {v4, v10, v5}, Lmfb;->b(Ljava/lang/Integer;Ljava/lang/Integer;)V
+
+    new-instance v5, Lsfd;
+
+    const/16 v6, 0xa
+
+    invoke-direct {v5, p0, v6, v2}, Lsfd;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-static {v4, v5}, Lz48;->D(Landroid/view/View;Landroid/view/View$OnClickListener;)V
+
+    const/4 v2, -0x1
+
+    invoke-virtual {v1, v4, v2, p4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
+
+    goto :goto_1
+
+    :cond_4
+    invoke-virtual {p0, v1}, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
 
     return-void
 .end method

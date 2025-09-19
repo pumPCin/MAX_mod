@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lgy6;
+.implements Lh17;
 
 
 # instance fields
@@ -20,7 +20,7 @@
 
 .field private final height:I
 
-.field private final qualityInfo:Letb;
+.field private final qualityInfo:Li0c;
 
 .field private final sizeInBytes:I
 
@@ -28,12 +28,12 @@
 
 
 # direct methods
-.method public constructor <init>(IIILetb;Ljava/util/Map;)V
+.method public constructor <init>(IIILi0c;Ljava/util/Map;)V
     .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(III",
-            "Letb;",
+            "Li0c;",
             "Ljava/util/Map<",
             "Ljava/lang/String;",
             "Ljava/lang/Object;",
@@ -49,7 +49,7 @@
 
     iput p3, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->sizeInBytes:I
 
-    iput-object p4, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->qualityInfo:Letb;
+    iput-object p4, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->qualityInfo:Li0c;
 
     iput-object p5, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->extras:Ljava/util/Map;
 
@@ -83,10 +83,10 @@
     return p0
 .end method
 
-.method public getQualityInfo()Letb;
+.method public getQualityInfo()Li0c;
     .registers 1
 
-    iget-object p0, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->qualityInfo:Letb;
+    iget-object p0, p0, Lcom/facebook/imagepipeline/image/ImageInfoImpl;->qualityInfo:Li0c;
 
     return-object p0
 .end method

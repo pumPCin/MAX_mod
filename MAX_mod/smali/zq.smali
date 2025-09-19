@@ -1,23 +1,6 @@
-.class public final Lzq;
-.super Ls2;
+.class public interface abstract Lzq;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final c:Lzq;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Lzq;
-
-    const/16 v1, 0x8
-
-    invoke-direct {v0, v1}, Ls2;-><init>(I)V
-
-    sput-object v0, Lzq;->c:Lzq;
-
-    return-void
-.end method
+# interfaces
+.implements Lggb;

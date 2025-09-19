@@ -1,81 +1,65 @@
-.class public final synthetic Lrh3;
+.class public final Lrh3;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lj96;
-
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Ljava/lang/String;
 
-.field public final synthetic b:Lone/me/login/confirm/ConfirmPhoneScreen;
+.field public final b:Ljava/lang/String;
+
+.field public final c:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lone/me/login/confirm/ConfirmPhoneScreen;I)V
-    .registers 3
-
-    iput p2, p0, Lrh3;->a:I
-
-    iput-object p1, p0, Lrh3;->b:Lone/me/login/confirm/ConfirmPhoneScreen;
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lrh3;->a:Ljava/lang/String;
+
+    iput-object p2, p0, Lrh3;->b:Ljava/lang/String;
+
+    iput-object p3, p0, Lrh3;->c:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+.method public final toString()Ljava/lang/String;
+    .registers 3
 
-    iget v0, p0, Lrh3;->a:I
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    sget-object v1, Lncf;->a:Lncf;
+    const-string v1, "SessionInfo{sessionKey=\'"
 
-    iget-object p0, p0, Lrh3;->b:Lone/me/login/confirm/ConfirmPhoneScreen;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p0, Lrh3;->a:Ljava/lang/String;
 
-    check-cast p1, Lzi3;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object v0, Lone/me/login/confirm/ConfirmPhoneScreen;->x0:[Lsf7;
+    const-string v1, "\', sessionSecret=\'"
 
-    sget-object v0, Lzi3;->b:Lzi3;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-ne p1, v0, :cond_0
+    iget-object v1, p0, Lrh3;->b:Ljava/lang/String;
 
-    invoke-virtual {p0}, Lone/me/login/confirm/ConfirmPhoneScreen;->C0()Lii3;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object p0
+    const-string v1, "\', apiEndpoint=\'"
 
-    iget-object p0, p0, Lii3;->w0:Ln4e;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    iget-object p0, p0, Lrh3;->c:Ljava/lang/String;
 
-    const/4 v0, 0x0
+    const-string v1, "\', authToken=\'null\'}"
 
-    invoke-virtual {p0, v0, p1}, Ln4e;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    :cond_0
-    return-object v1
-
-    :pswitch_0
-    check-cast p1, Landroid/view/View;
-
-    sget-object p1, Lone/me/login/confirm/ConfirmPhoneScreen;->x0:[Lsf7;
-
-    invoke-virtual {p0}, Lqx3;->getRouter()Llrc;
+    invoke-static {v0, p0, v1}, Lyv7;->k(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Llrc;->C()Z
-
-    return-object v1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

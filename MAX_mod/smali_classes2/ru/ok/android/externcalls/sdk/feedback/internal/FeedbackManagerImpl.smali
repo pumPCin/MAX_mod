@@ -26,12 +26,12 @@
         "key",
         "Lkotlin/Function1;",
         "",
-        "Lncf;",
+        "Lylf;",
         "onError",
         "Lkotlin/Function0;",
         "onSuccess",
         "sendFeedback",
-        "(Ljava/lang/String;Lj96;Lh96;)V",
+        "(Ljava/lang/String;Lbc6;Lzb6;)V",
         "Lru/ok/android/externcalls/sdk/feedback/listener/FeedbackListener;",
         "listener",
         "addListener",
@@ -48,7 +48,7 @@
         "millis",
         "setTimeout",
         "(J)V",
-        "(Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lj96;Lh96;)V",
+        "(Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lbc6;Lzb6;)V",
         "Lru/ok/android/externcalls/sdk/feedback/internal/commands/FeedbackCommandsExecutor;",
         "Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManager;",
         "calls-sdk_release"
@@ -126,41 +126,41 @@
     return-void
 .end method
 
-.method public sendFeedback(Ljava/lang/String;Lj96;Lh96;)V
+.method public sendFeedback(Ljava/lang/String;Lbc6;Lzb6;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "Lj96;",
-            "Lh96;",
+            "Lbc6;",
+            "Lzb6;",
             ")V"
         }
     .end annotation
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/feedback/internal/FeedbackManagerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/feedback/internal/commands/FeedbackCommandsExecutor;
 
-    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/feedback/internal/commands/FeedbackCommandsExecutor;->sendFeedback(Ljava/lang/String;Lj96;Lh96;)V
+    invoke-interface {p0, p1, p2, p3}, Lru/ok/android/externcalls/sdk/feedback/internal/commands/FeedbackCommandsExecutor;->sendFeedback(Ljava/lang/String;Lbc6;Lzb6;)V
 
     return-void
 .end method
 
-.method public sendFeedback(Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lj96;Lh96;)V
+.method public sendFeedback(Ljava/lang/String;Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;Lbc6;Lzb6;)V
     .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
             "Lru/ok/android/externcalls/sdk/feedback/ParticipantFeedbackSource;",
-            "Lj96;",
-            "Lh96;",
+            "Lbc6;",
+            "Lzb6;",
             ")V"
         }
     .end annotation
 
     iget-object v0, p0, Lru/ok/android/externcalls/sdk/feedback/internal/FeedbackManagerImpl;->commandExecutor:Lru/ok/android/externcalls/sdk/feedback/internal/commands/FeedbackCommandsExecutor;
 
-    invoke-interface {v0, p1, p3, p4}, Lru/ok/android/externcalls/sdk/feedback/internal/commands/FeedbackCommandsExecutor;->sendFeedback(Ljava/lang/String;Lj96;Lh96;)V
+    invoke-interface {v0, p1, p3, p4}, Lru/ok/android/externcalls/sdk/feedback/internal/commands/FeedbackCommandsExecutor;->sendFeedback(Ljava/lang/String;Lbc6;Lzb6;)V
 
     iget-object p0, p0, Lru/ok/android/externcalls/sdk/feedback/internal/FeedbackManagerImpl;->listenerManager:Lru/ok/android/externcalls/sdk/feedback/internal/listeners/FeedbackListenerManager;
 

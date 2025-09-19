@@ -4,11 +4,14 @@
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/Integer;
+.method public abstract a()V
 .end method
 
-.method public abstract b()Ljava/lang/String;
+.method public b()V
+    .registers 1
+
+    return-void
 .end method
 
-.method public abstract c()Ljava/lang/String;
+.method public abstract c(Landroid/graphics/Rect;Landroid/view/View;)V
 .end method

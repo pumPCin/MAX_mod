@@ -1,45 +1,95 @@
 .class public final Lhf6;
-.super Lcx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lif6;
 
 
 # instance fields
-.field public final synthetic X:Ljf6;
-
-.field public Y:I
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final a:F
 
 
 # direct methods
-.method public constructor <init>(Ljf6;Lcx3;)V
-    .registers 3
+.method public constructor <init>(F)V
+    .registers 2
 
-    iput-object p1, p0, Lhf6;->X:Ljf6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput p1, p0, Lhf6;->a:F
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lhf6;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lhf6;
+
+    iget p0, p0, Lhf6;->a:F
+
+    iget p1, p1, Lhf6;->a:F
+
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+
+    move-result p0
+
+    if-eqz p0, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget p0, p0, Lhf6;->a:F
+
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    iput-object p1, p0, Lhf6;->o:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    iget p1, p0, Lhf6;->Y:I
+    const-string v1, "UpdateCameraTranslation(translationY="
 
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    or-int/2addr p1, v0
+    iget p0, p0, Lhf6;->a:F
 
-    iput p1, p0, Lhf6;->Y:I
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    iget-object p1, p0, Lhf6;->X:Ljf6;
+    const-string p0, ")"
 
-    invoke-virtual {p1, p0}, Ljf6;->c(Lcx3;)Ljava/lang/Object;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 

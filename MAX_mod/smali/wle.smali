@@ -3,23 +3,41 @@
 .source "SourceFile"
 
 
+# static fields
+.field public static final synthetic a:I
+
+
 # direct methods
-.method public static a(Landroid/app/job/JobParameters;)[Ljava/lang/String;
-    .registers 1
+.method static constructor <clinit>()V
+    .registers 3
 
-    invoke-virtual {p0}, Landroid/app/job/JobParameters;->getTriggeredContentAuthorities()[Ljava/lang/String;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    move-result-object p0
+    const/4 v1, 0x0
 
-    return-object p0
-.end method
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-.method public static b(Landroid/app/job/JobParameters;)[Landroid/net/Uri;
-    .registers 1
+    new-instance v0, Ly5e;
 
-    invoke-virtual {p0}, Landroid/app/job/JobParameters;->getTriggeredContentUris()[Landroid/net/Uri;
+    const/16 v2, 0xb
 
-    move-result-object p0
+    invoke-direct {v0, v2}, Ly5e;-><init>(I)V
 
-    return-object p0
+    new-instance v2, Lzte;
+
+    invoke-direct {v2, v0}, Lzte;-><init>(Lzb6;)V
+
+    const/4 v0, 0x3
+
+    invoke-static {v0, v1, v0}, Loxd;->a(III)Lnxd;
+
+    move-result-object v1
+
+    new-instance v2, Lhic;
+
+    invoke-direct {v2, v1}, Lhic;-><init>(Lqo9;)V
+
+    invoke-static {v2, v0}, Lo97;->W0(Lis5;I)Leu5;
+
+    return-void
 .end method

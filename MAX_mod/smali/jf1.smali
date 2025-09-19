@@ -1,93 +1,81 @@
 .class public final Ljf1;
-.super Lkf1;
+.super Lj2e;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final E0:Lcr1;
+
+.field public final F0:Lfr1;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .registers 2
+.method public constructor <init>(Landroid/widget/FrameLayout;Lcr1;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lzoc;-><init>(Landroid/view/View;)V
 
-    iput-object p1, p0, Ljf1;->a:Ljava/lang/String;
+    iput-object p2, p0, Ljf1;->E0:Lcr1;
+
+    sget p2, Lt5c;->call_opponent:I
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Lfr1;
+
+    iput-object p1, p0, Ljf1;->F0:Lfr1;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final y(Lts7;)V
     .registers 5
 
-    const/4 v0, 0x1
+    check-cast p1, Lvb1;
 
-    if-ne p0, p1, :cond_0
+    iget-object v0, p1, Lvb1;->c:Ljava/lang/CharSequence;
 
-    return v0
+    iget-object v1, p1, Lvb1;->o:Ljava/lang/String;
 
-    :cond_0
-    instance-of v1, p1, Ljf1;
+    iget-object v2, p0, Ljf1;->F0:Lfr1;
 
-    const/4 v2, 0x0
+    invoke-virtual {v2, v1, v0}, Lfr1;->G(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
-    if-nez v1, :cond_1
+    iget-boolean v0, p1, Lvb1;->r0:Z
 
-    return v2
+    invoke-virtual {v2, v0}, Lfr1;->D(Z)V
 
-    :cond_1
-    check-cast p1, Ljf1;
+    iget-boolean v0, p1, Lvb1;->Y:Z
 
-    iget-object p0, p0, Ljf1;->a:Ljava/lang/String;
+    invoke-virtual {v2, v0}, Lfr1;->E(Z)V
 
-    iget-object p1, p1, Ljf1;->a:Ljava/lang/String;
+    iget-object v0, p1, Lvb1;->X:Lhd0;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Lfr1;->setAvatar(Lhd0;)V
 
-    move-result p0
+    iget-boolean v0, p1, Lvb1;->u0:Z
 
-    if-nez p0, :cond_2
+    invoke-virtual {v2, v0}, Lfr1;->setRaiseHand(Z)V
 
-    return v2
+    iget-object v0, p1, Lvb1;->y0:Lhrf;
 
-    :cond_2
-    return v0
-.end method
+    invoke-virtual {v2, v0}, Lfr1;->setOpponentVideo(Lhrf;)V
 
-.method public final hashCode()I
-    .registers 1
+    iget-object v0, p1, Lvb1;->z0:Lirf;
 
-    iget-object p0, p0, Ljf1;->a:Ljava/lang/String;
+    invoke-virtual {v2, v0}, Lfr1;->setButtonAction(Lirf;)V
 
-    if-nez p0, :cond_0
+    iget-object p1, p1, Lvb1;->a:Lxg1;
 
-    const/4 p0, 0x0
+    iput-object p1, v2, Lfr1;->h1:Lxg1;
 
-    return p0
+    iget-object p0, p0, Ljf1;->E0:Lcr1;
 
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    iput-object p0, v2, Lfr1;->b1:Lcr1;
 
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    const-string v0, "Name(name="
-
-    const-string v1, ")"
-
-    iget-object p0, p0, Ljf1;->a:Ljava/lang/String;
-
-    invoke-static {v0, p0, v1}, La78;->l(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    return-void
 .end method

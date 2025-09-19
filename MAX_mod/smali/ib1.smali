@@ -3,7 +3,7 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lob1;
+.implements Lkb1;
 
 
 # static fields
@@ -50,7 +50,7 @@
 .method public final hashCode()I
     .registers 1
 
-    const p0, 0x3669a369
+    const p0, 0xe924260
 
     return p0
 .end method
@@ -58,7 +58,7 @@
 .method public final toString()Ljava/lang/String;
     .registers 1
 
-    const-string p0, "FinishedCall"
+    const-string p0, "ShowRateCallBottomSheet"
 
     return-object p0
 .end method

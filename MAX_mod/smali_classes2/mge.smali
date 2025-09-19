@@ -1,74 +1,95 @@
-.class public final synthetic Lmge;
+.class public final Lmge;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
-
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Lrge;
+.field public final a:Lfxc;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lrge;I)V
-    .registers 3
-
-    iput p2, p0, Lmge;->a:I
-
-    iput-object p1, p0, Lmge;->b:Lrge;
+.method public constructor <init>(Ljma;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmge;->a:Lfxc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a([J)Lh98;
     .registers 4
 
-    iget v0, p0, Lmge;->a:I
+    iget-object p0, p0, Lmge;->a:Lfxc;
 
-    check-cast p1, Landroid/view/View;
+    invoke-virtual {p0}, Lfxc;->n()Ls7a;
 
-    check-cast p2, Lkge;
+    move-result-object p0
 
-    packed-switch v0, :pswitch_data_0
+    new-instance v0, Liae;
 
-    iget-object p0, p0, Lmge;->b:Lrge;
+    const/16 v1, 0x1c
 
-    iget-object p0, p0, Lrge;->O0:Lxp3;
+    invoke-direct {v0, v1}, Liae;-><init>(I)V
 
-    if-eqz p0, :cond_0
+    invoke-virtual {p0, v0}, Lk2e;->h(Lqc6;)Lu2e;
 
-    invoke-virtual {p0, p1, p2}, Lxp3;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p0
 
-    :cond_0
-    sget-object p0, Lncf;->a:Lncf;
+    new-instance v0, Lvpc;
 
-    return-object p0
+    const/16 v1, 0x14
 
-    :pswitch_0
-    iget-object p0, p0, Lmge;->b:Lrge;
+    invoke-direct {v0, v1, p1}, Lvpc;-><init>(ILjava/lang/Object;)V
 
-    iget-object p0, p0, Lrge;->O0:Lxp3;
+    new-instance p1, Lh98;
 
-    if-eqz p0, :cond_1
+    const/4 v1, 0x2
 
-    invoke-virtual {p0, p1, p2}, Lxp3;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p1, p0, v1, v0}, Lh98;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    :cond_1
-    sget-object p0, Lncf;->a:Lncf;
+    new-instance p0, Lip9;
 
-    return-object p0
+    const/4 v0, 0x2
 
-    nop
+    invoke-direct {p0, v0}, Lip9;-><init>(I)V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    new-instance v0, Lj98;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, p0, v1}, Lj98;-><init>(Ljava/lang/Object;Lqc6;I)V
+
+    new-instance p0, Liae;
+
+    const/16 p1, 0x1a
+
+    invoke-direct {p0, p1}, Liae;-><init>(I)V
+
+    new-instance p1, Lr5a;
+
+    const/4 v1, 0x5
+
+    invoke-direct {p1, v0, p0, v1}, Lr5a;-><init>(Ly4a;Lqc6;I)V
+
+    invoke-virtual {p1}, Ly4a;->t()Lc5a;
+
+    move-result-object p0
+
+    new-instance p1, Liae;
+
+    const/16 v0, 0x1b
+
+    invoke-direct {p1, v0}, Liae;-><init>(I)V
+
+    new-instance v0, Lh98;
+
+    const/4 v1, 0x2
+
+    invoke-direct {v0, p0, v1, p1}, Lh98;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    return-object v0
 .end method

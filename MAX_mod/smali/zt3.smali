@@ -1,153 +1,186 @@
 .class public final Lzt3;
-.super Lphc;
+.super Lure;
 .source "SourceFile"
 
-
-# static fields
-.field public static final C0:[I
-
-.field public static final D0:[I
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final A0:Lqt3;
+.field public synthetic X:Ljava/lang/Object;
 
-.field public final B0:Ldi0;
+.field public final synthetic Y:Lg8b;
+
+.field public final synthetic Z:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Lg8b;JLkotlin/coroutines/Continuation;)V
+    .registers 5
 
-    const v0, -0xf7cb2d
+    iput-object p1, p0, Lzt3;->Y:Lg8b;
 
-    const v1, -0xff6610
+    iput-wide p2, p0, Lzt3;->Z:J
 
-    filled-new-array {v0, v1}, [I
+    const/4 p1, 0x2
 
-    move-result-object v0
-
-    sput-object v0, Lzt3;->C0:[I
-
-    const v0, -0xb1fb14
-
-    const v1, -0x717a01
-
-    filled-new-array {v0, v1}, [I
-
-    move-result-object v0
-
-    sput-object v0, Lzt3;->D0:[I
+    invoke-direct {p0, p1, p4}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Lqt3;)V
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    check-cast p1, Lcq3;
+
+    check-cast p2, Lkotlin/coroutines/Continuation;
+
+    invoke-virtual {p0, p1, p2}, Lzt3;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+
+    move-result-object p0
+
+    check-cast p0, Lzt3;
+
+    sget-object p1, Lylf;->a:Lylf;
+
+    invoke-virtual {p0, p1}, Lzt3;->o(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 7
 
-    sget-object v0, Lwh0;->a:Lwh0;
+    new-instance v0, Lzt3;
 
-    invoke-virtual {v0}, Lscout/Component;->getAccessor()Ls4;
+    iget-object v1, p0, Lzt3;->Y:Lg8b;
 
-    move-result-object v0
+    iget-wide v2, p0, Lzt3;->Z:J
 
-    const-class v1, Ldi0;
+    invoke-direct {v0, v1, v2, v3, p2}, Lzt3;-><init>(Lg8b;JLkotlin/coroutines/Continuation;)V
 
-    invoke-virtual {v0, v1}, Ls4;->c(Ljava/lang/Class;)Ljava/lang/Object;
+    iput-object p1, v0, Lzt3;->X:Ljava/lang/Object;
 
-    move-result-object v0
+    return-object v0
+.end method
 
-    check-cast v0, Ldi0;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 8
 
-    new-instance v1, Lsaa;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    const/4 v2, 0x0
+    iget-object p1, p0, Lzt3;->X:Ljava/lang/Object;
 
-    invoke-direct {v1, p1, v2}, Lsaa;-><init>(Landroid/content/Context;I)V
+    check-cast p1, Lcq3;
 
-    invoke-direct {p0, v1}, Lphc;-><init>(Landroid/view/View;)V
+    iget-object v0, p0, Lzt3;->Y:Lg8b;
 
-    iput-object p2, p0, Lzt3;->A0:Lqt3;
+    iget v0, v0, Lg8b;->c:I
 
-    iput-object v0, p0, Lzt3;->B0:Ldi0;
-
-    new-instance p0, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    const/4 p1, -0x1
-
-    invoke-direct {p0, p1, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
-
-    const/16 p1, 0xc
-
-    int-to-float p1, p1
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object p2
-
-    iget p2, p2, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr p2, p1
-
-    invoke-static {p2}, Lg53;->C(F)I
-
-    move-result p2
-
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v0, p1
-
-    invoke-static {v0}, Lg53;->C(F)I
+    invoke-static {v0}, Lmw1;->t(I)I
 
     move-result v0
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    const/4 v1, 0x1
 
-    move-result-object v2
+    iget-wide v2, p0, Lzt3;->Z:J
 
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    const/4 p0, 0x0
 
-    move-result-object v2
+    if-eq v0, v1, :cond_3
 
-    iget v2, v2, Landroid/util/DisplayMetrics;->density:F
+    const/4 v1, 0x2
 
-    mul-float/2addr v2, p1
+    if-eq v0, v1, :cond_0
 
-    invoke-static {v2}, Lg53;->C(F)I
+    const/4 v1, 0x3
 
-    move-result v2
+    if-eq v0, v1, :cond_3
 
-    invoke-static {}, Lvn4;->d()Landroid/content/res/Resources;
+    const/4 v1, 0x4
 
-    move-result-object v3
+    if-eq v0, v1, :cond_3
 
-    invoke-virtual {v3}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    goto :goto_0
 
-    move-result-object v3
+    :cond_0
+    iget-object p1, p1, Lcq3;->c:Ljava/util/List;
 
-    iget v3, v3, Landroid/util/DisplayMetrics;->density:F
+    if-eqz p1, :cond_6
 
-    mul-float/2addr p1, v3
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    invoke-static {p1}, Lg53;->C(F)I
+    move-result-object p1
 
-    move-result p1
+    :cond_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    invoke-virtual {p0, p2, v0, v2, p1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
+    move-result v0
 
-    invoke-virtual {v1, p0}, Lsaa;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    if-eqz v0, :cond_2
 
-    return-void
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Lmq3;
+
+    iget-wide v4, v1, Lmq3;->a:J
+
+    cmp-long v1, v4, v2
+
+    if-nez v1, :cond_1
+
+    move-object p0, v0
+
+    :cond_2
+    check-cast p0, Lmq3;
+
+    return-object p0
+
+    :cond_3
+    iget-object p1, p1, Lcq3;->a:Ljava/util/List;
+
+    if-eqz p1, :cond_6
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :cond_4
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    check-cast v1, Lmq3;
+
+    iget-wide v4, v1, Lmq3;->a:J
+
+    cmp-long v1, v4, v2
+
+    if-nez v1, :cond_4
+
+    move-object p0, v0
+
+    :cond_5
+    check-cast p0, Lmq3;
+
+    :cond_6
+    :goto_0
+    return-object p0
 .end method

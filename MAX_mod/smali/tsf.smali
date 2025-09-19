@@ -1,48 +1,59 @@
 .class public final Ltsf;
-.super Lcx3;
+.super Landroid/graphics/drawable/Drawable$ConstantState;
+.source "SourceFile"
 
 
 # instance fields
-.field public X:I
+.field public a:I
 
-.field public final synthetic Y:Lwoa;
+.field public b:Lssf;
 
-.field public synthetic o:Ljava/lang/Object;
+.field public c:Landroid/content/res/ColorStateList;
 
+.field public d:Landroid/graphics/PorterDuff$Mode;
 
-# direct methods
-.method public constructor <init>(Lwoa;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.field public e:Z
 
-    iput-object p1, p0, Ltsf;->Y:Lwoa;
+.field public f:Landroid/graphics/Bitmap;
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+.field public g:Landroid/content/res/ColorStateList;
 
-    return-void
-.end method
+.field public h:Landroid/graphics/PorterDuff$Mode;
+
+.field public i:I
+
+.field public j:Z
+
+.field public k:Z
+
+.field public l:Landroid/graphics/Paint;
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public getChangingConfigurations()I
+    .registers 1
 
-    iput-object p1, p0, Ltsf;->o:Ljava/lang/Object;
+    iget p0, p0, Ltsf;->a:I
 
-    iget p1, p0, Ltsf;->X:I
+    return p0
+.end method
 
-    const/high16 v0, -0x80000000
+.method public final newDrawable()Landroid/graphics/drawable/Drawable;
+    .registers 2
 
-    or-int/2addr p1, v0
+    new-instance v0, Lvsf;
 
-    iput p1, p0, Ltsf;->X:I
+    invoke-direct {v0, p0}, Lvsf;-><init>(Ltsf;)V
 
-    iget-object p1, p0, Ltsf;->Y:Lwoa;
+    return-object v0
+.end method
 
-    const/4 v0, 0x0
+.method public final newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+    .registers 2
 
-    invoke-virtual {p1, v0, p0}, Lwoa;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    new-instance p1, Lvsf;
 
-    move-result-object p0
+    invoke-direct {p1, p0}, Lvsf;-><init>(Ltsf;)V
 
-    return-object p0
+    return-object p1
 .end method

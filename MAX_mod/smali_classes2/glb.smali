@@ -1,151 +1,62 @@
-.class public final Lglb;
-.super Lmlb;
+.class public final synthetic Lglb;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lbc6;
 
 
 # instance fields
-.field public final a:Ljava/lang/CharSequence;
+.field public final synthetic a:I
 
-.field public final b:Lqte;
+.field public final synthetic b:Lheb;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;Lqte;)V
+.method public synthetic constructor <init>(Lheb;I)V
     .registers 3
 
+    iput p2, p0, Lglb;->a:I
+
+    iput-object p1, p0, Lglb;->b:Lheb;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lglb;->a:Ljava/lang/CharSequence;
-
-    iput-object p2, p0, Lglb;->b:Lqte;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    if-ne p0, p1, :cond_0
+    iget v0, p0, Lglb;->a:I
 
-    goto :goto_1
+    sget-object v1, Lylf;->a:Lylf;
 
-    :cond_0
-    instance-of v0, p1, Lglb;
+    iget-object p0, p0, Lglb;->b:Lheb;
 
-    if-nez v0, :cond_1
+    check-cast p1, Landroid/view/View;
 
-    goto :goto_0
+    packed-switch v0, :pswitch_data_0
 
-    :cond_1
-    check-cast p1, Lglb;
+    sget-object v0, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->u0:[Lxi7;
 
-    iget-object v0, p0, Lglb;->a:Ljava/lang/CharSequence;
+    invoke-virtual {p0, p1}, Lheb;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, p1, Lglb;->a:Ljava/lang/CharSequence;
+    return-object v1
 
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :pswitch_0
+    sget-object v0, Lone/me/profileedit/screens/changelink/ProfileChangeLinkScreen;->u0:[Lxi7;
 
-    move-result v0
+    invoke-virtual {p0, p1}, Lheb;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    if-nez v0, :cond_2
+    return-object v1
 
-    goto :goto_0
+    nop
 
-    :cond_2
-    iget-object p0, p0, Lglb;->b:Lqte;
-
-    iget-object p1, p1, Lglb;->b:Lqte;
-
-    invoke-virtual {p0, p1}, Lqte;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-nez p0, :cond_3
-
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final getItemId()J
-    .registers 3
-
-    const/high16 p0, 0x10000
-
-    int-to-long v0, p0
-
-    return-wide v0
-.end method
-
-.method public final hashCode()I
-    .registers 2
-
-    iget-object v0, p0, Lglb;->a:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x1f
-
-    iget-object p0, p0, Lglb;->b:Lqte;
-
-    iget p0, p0, Lqte;->b:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    move-result p0
-
-    add-int/2addr p0, v0
-
-    return p0
-.end method
-
-.method public final m()I
-    .registers 1
-
-    const/high16 p0, 0x10000
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "ContactDescription(text="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lglb;->a:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", title="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lglb;->b:Lqte;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

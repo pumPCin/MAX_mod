@@ -158,7 +158,7 @@
 
     const-string p2, " method not supported"
 
-    invoke-static {p1, p2}, Lew1;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lmw1;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -230,7 +230,7 @@
 
     const-string v0, " method not supported"
 
-    invoke-static {p0, v0}, Lew1;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lmw1;->h(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

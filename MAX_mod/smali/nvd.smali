@@ -1,64 +1,31 @@
 .class public final Lnvd;
-.super Ljava/util/concurrent/atomic/AtomicReference;
+.super Lovd;
 .source "SourceFile"
-
-# interfaces
-.implements Lnp4;
 
 
 # instance fields
-.field public final a:Lvud;
+.field public b:F
 
-
-# direct methods
-.method public constructor <init>(Lvud;Lovd;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    iput-object p1, p0, Lnvd;->a:Lvud;
-
-    invoke-virtual {p0, p2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
-
-    return-void
-.end method
+.field public c:F
 
 
 # virtual methods
-.method public final g()V
-    .registers 2
+.method public final a(Landroid/graphics/Matrix;Landroid/graphics/Path;)V
+    .registers 4
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lovd;->a:Landroid/graphics/Matrix;
 
-    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
 
-    move-result-object v0
+    invoke-virtual {p2, v0}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
 
-    check-cast v0, Lovd;
+    iget v0, p0, Lnvd;->b:F
 
-    if-eqz v0, :cond_0
+    iget p0, p0, Lnvd;->c:F
 
-    invoke-virtual {v0, p0}, Lovd;->o(Lnvd;)V
+    invoke-virtual {p2, v0, p0}, Landroid/graphics/Path;->lineTo(FF)V
 
-    :cond_0
+    invoke-virtual {p2, p1}, Landroid/graphics/Path;->transform(Landroid/graphics/Matrix;)V
+
     return-void
-.end method
-
-.method public final h()Z
-    .registers 1
-
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-nez p0, :cond_0
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :cond_0
-    const/4 p0, 0x0
-
-    return p0
 .end method

@@ -1,122 +1,120 @@
 .class public final Lm67;
-.super Ljava/lang/Object;
+.super Landroid/view/View$AccessibilityDelegate;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic a:I
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(J)V
+.method public synthetic constructor <init>(ILjava/lang/Object;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lm67;->a:I
 
-    iput-wide p1, p0, Lm67;->a:J
+    iput-object p2, p0, Lm67;->b:Ljava/lang/Object;
+
+    invoke-direct {p0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
 
     return-void
 .end method
 
-.method public static a(II)J
-    .registers 6
-
-    int-to-long v0, p0
-
-    const/16 p0, 0x20
-
-    shl-long/2addr v0, p0
-
-    int-to-long p0, p1
-
-    const-wide v2, 0xffffffffL
-
-    and-long/2addr p0, v2
-
-    or-long/2addr p0, v0
-
-    return-wide p0
-.end method
-
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .registers 4
 
-    instance-of v0, p1, Lm67;
+    iget v0, p0, Lm67;->a:I
 
-    if-nez v0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
-    goto :goto_0
+    invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    :cond_0
-    check-cast p1, Lm67;
+    return-void
 
-    iget-wide v0, p1, Lm67;->a:J
+    :pswitch_0
+    invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    iget-wide p0, p0, Lm67;->a:J
+    iget-object p0, p0, Lm67;->b:Ljava/lang/Object;
 
-    cmp-long p0, p0, v0
+    check-cast p0, Ln67;
 
-    if-eqz p0, :cond_1
+    iget-object p0, p0, Ln67;->h:Lcom/google/android/material/textfield/TextInputLayout;
 
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_1
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    iget-wide v0, p0, Lm67;->a:J
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 7
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "("
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const/16 v1, 0x20
-
-    iget-wide v2, p0, Lm67;->a:J
-
-    shr-long v4, v2, v1
-
-    long-to-int p0, v4
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string p0, ", "
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-wide v4, 0xffffffffL
-
-    and-long v1, v2, v4
-
-    long-to-int p0, v1
-
-    const/16 v1, 0x29
-
-    invoke-static {v0, p0, v1}, Lew1;->i(Ljava/lang/StringBuilder;IC)Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/material/textfield/TextInputLayout;->getEditText()Landroid/widget/EditText;
 
     move-result-object p0
 
-    return-object p0
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p2, p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setLabeledBy(Landroid/view/View;)V
+
+    :cond_0
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public sendAccessibilityEvent(Landroid/view/View;I)V
+    .registers 4
+
+    iget v0, p0, Lm67;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0, p1, p2}, Landroid/view/View$AccessibilityDelegate;->sendAccessibilityEvent(Landroid/view/View;I)V
+
+    return-void
+
+    :pswitch_0
+    const/16 p1, 0x2000
+
+    if-ne p2, p1, :cond_1
+
+    iget-object p0, p0, Lm67;->b:Ljava/lang/Object;
+
+    check-cast p0, Lk19;
+
+    iget-object p1, p0, Lk19;->K0:Lyce;
+
+    :cond_0
+    invoke-virtual {p1}, Lyce;->getValue()Ljava/lang/Object;
+
+    move-result-object p2
+
+    move-object v0, p2
+
+    check-cast v0, Ljava/lang/Number;
+
+    invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+
+    iget-object v0, p0, Lk19;->c:Lh19;
+
+    invoke-virtual {v0}, Landroid/widget/TextView;->getSelectionEnd()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {p1, p2, v0}, Lyce;->c(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    :cond_1
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method

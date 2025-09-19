@@ -1,79 +1,102 @@
-.class public final synthetic Lkp6;
-.super Ljava/lang/Object;
+.class public final enum Lkp6;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
 # interfaces
-.implements Lj96;
+.implements Llp6;
+
+
+# static fields
+.field public static final enum b:Lkp6;
+
+.field public static final enum c:Lkp6;
+
+.field public static final synthetic o:[Lkp6;
 
 
 # instance fields
-.field public final synthetic a:I
-
-.field public final synthetic b:Ljava/util/List;
+.field public final a:I
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/util/List;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 5
 
-    iput p1, p0, Lkp6;->a:I
+    new-instance v0, Lkp6;
 
-    iput-object p2, p0, Lkp6;->b:Ljava/util/List;
+    const-string v1, "LONG_PRESS"
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2, v2}, Lkp6;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lkp6;->b:Lkp6;
+
+    new-instance v1, Lkp6;
+
+    const/4 v2, 0x1
+
+    const/16 v3, 0x11
+
+    const-string v4, "REJECT"
+
+    invoke-direct {v1, v4, v2, v3}, Lkp6;-><init>(Ljava/lang/String;II)V
+
+    sput-object v1, Lkp6;->c:Lkp6;
+
+    filled-new-array {v0, v1}, [Lkp6;
+
+    move-result-object v0
+
+    sput-object v0, Lkp6;->o:[Lkp6;
 
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public constructor <init>(Ljava/lang/String;II)V
     .registers 4
 
-    iget v0, p0, Lkp6;->a:I
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    packed-switch v0, :pswitch_data_0
+    iput p3, p0, Lkp6;->a:I
 
-    check-cast p1, Lmq8;
+    return-void
+.end method
 
-    iget-wide v0, p1, Lmq8;->a:J
+.method public static valueOf(Ljava/lang/String;)Lkp6;
+    .registers 2
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    const-class v0, Lkp6;
 
-    move-result-object p1
-
-    iget-object p0, p0, Lkp6;->b:Ljava/util/List;
-
-    invoke-interface {p0, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    :goto_0
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
+    check-cast p0, Lkp6;
+
     return-object p0
+.end method
 
-    :pswitch_0
-    check-cast p1, Lvo6;
+.method public static values()[Lkp6;
+    .registers 1
 
-    invoke-interface {p1}, Lvo6;->l()J
+    sget-object v0, Lkp6;->o:[Lkp6;
 
-    move-result-wide v0
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    iget-object p0, p0, Lkp6;->b:Ljava/util/List;
+    move-result-object v0
 
-    invoke-static {v0, v1, p0}, Lj67;->k(JLjava/util/List;)Z
+    check-cast v0, [Lkp6;
 
-    move-result p0
+    return-object v0
+.end method
 
-    goto :goto_0
 
-    nop
+# virtual methods
+.method public final b()I
+    .registers 1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    iget p0, p0, Lkp6;->a:I
+
+    return p0
 .end method

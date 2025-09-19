@@ -1,26 +1,62 @@
-.class public interface abstract Lkcb;
+.class public final Lkcb;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lgxf;
+
+
+# static fields
+.field public static final a:Lxpe;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 2
+
+    new-instance v0, Lg74;
+
+    const/4 v1, 0x4
+
+    invoke-direct {v0, v1}, Lg74;-><init>(I)V
+
+    invoke-static {v0}, Lr94;->R(Lxpe;)Lxpe;
+
+    move-result-object v0
+
+    sput-object v0, Lkcb;->a:Lxpe;
+
+    return-void
+.end method
+
 
 # virtual methods
-.method public abstract a(Lhcb;Ljava/lang/String;Ljava/util/Map;)V
-.end method
+.method public final a(Landroid/content/Context;Lbx0;Lc83;ZLz13;)Lixf;
+    .registers 12
 
-.method public abstract c(Lhcb;)V
-.end method
+    sget-object p0, Lkcb;->a:Lxpe;
 
-.method public abstract d(Lhcb;Ljava/lang/String;Ljava/lang/Throwable;Ljava/util/Map;)V
-.end method
+    invoke-interface {p0}, Lxpe;->get()Ljava/lang/Object;
 
-.method public abstract e(Lhcb;Ljava/lang/String;Z)V
-.end method
+    move-result-object p0
 
-.method public abstract i(Lhcb;Ljava/lang/String;)Z
-.end method
+    move-object v0, p0
 
-.method public abstract j(Lhcb;Ljava/lang/String;)V
-.end method
+    check-cast v0, Lgxf;
 
-.method public abstract k(Lhcb;Ljava/lang/String;)V
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move-object v3, p3
+
+    move v4, p4
+
+    move-object v5, p5
+
+    invoke-interface/range {v0 .. v5}, Lgxf;->a(Landroid/content/Context;Lbx0;Lc83;ZLz13;)Lixf;
+
+    move-result-object p0
+
+    return-object p0
 .end method

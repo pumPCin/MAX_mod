@@ -1,162 +1,562 @@
-.class public final Lptf;
-.super Lxie;
+.class public abstract Lptf;
+.super Ljava/lang/Object;
 .source "SourceFile"
-
-# interfaces
-.implements Lx96;
 
 
 # instance fields
-.field public synthetic X:Ljava/lang/Object;
+.field public final a:Ltr;
 
-.field public final synthetic Y:Lone/me/chatscreen/videomsg/VideoMessageWidget;
+.field public final b:Ltr;
 
-.field public final synthetic Z:Landroid/view/View;
+.field public final c:Ltr;
 
 
 # direct methods
-.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/videomsg/VideoMessageWidget;Landroid/view/View;)V
+.method public constructor <init>(Ltr;Ltr;Ltr;)V
     .registers 4
 
-    iput-object p2, p0, Lptf;->Y:Lone/me/chatscreen/videomsg/VideoMessageWidget;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p3, p0, Lptf;->Z:Landroid/view/View;
+    iput-object p1, p0, Lptf;->a:Ltr;
 
-    const/4 p2, 0x2
+    iput-object p2, p0, Lptf;->b:Ltr;
 
-    invoke-direct {p0, p2, p1}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p3, p0, Lptf;->c:Ltr;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Lptf;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-
-    move-result-object p0
-
-    check-cast p0, Lptf;
-
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lptf;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
+.method public abstract a()Lqtf;
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+.method public final b(Ljava/lang/Class;)Ljava/lang/Class;
     .registers 5
 
-    new-instance v0, Lptf;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    iget-object v1, p0, Lptf;->Y:Lone/me/chatscreen/videomsg/VideoMessageWidget;
+    move-result-object v0
 
-    iget-object p0, p0, Lptf;->Z:Landroid/view/View;
+    iget-object p0, p0, Lptf;->c:Ltr;
 
-    invoke-direct {v0, p2, v1, p0}, Lptf;-><init>(Lkotlin/coroutines/Continuation;Lone/me/chatscreen/videomsg/VideoMessageWidget;Landroid/view/View;)V
+    invoke-virtual {p0, v0}, Lr1e;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p1, v0, Lptf;->X:Ljava/lang/Object;
+    move-result-object v0
 
-    return-object v0
-.end method
+    check-cast v0, Ljava/lang/Class;
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    if-nez v0, :cond_0
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-virtual {p1}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
 
-    iget-object p1, p0, Lptf;->X:Ljava/lang/Object;
+    move-result-object v0
 
-    check-cast p1, Lncf;
+    invoke-virtual {v0}, Ljava/lang/Package;->getName()Ljava/lang/String;
 
-    iget-object p1, p0, Lptf;->Y:Lone/me/chatscreen/videomsg/VideoMessageWidget;
+    move-result-object v0
 
-    sget-object v0, Lone/me/chatscreen/videomsg/VideoMessageWidget;->B0:[Lsf7;
+    invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    invoke-virtual {p1}, Lone/me/chatscreen/videomsg/VideoMessageWidget;->A0()Ltof;
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "."
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "Parcelizer"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v2
+
+    invoke-static {v0, v1, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object p1
 
-    new-instance v0, Lir0;
+    invoke-virtual {p0, p1, v0}, Lr1e;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget-object v1, p0, Lptf;->Y:Lone/me/chatscreen/videomsg/VideoMessageWidget;
+    :cond_0
+    return-object v0
+.end method
 
-    iget-object v2, p0, Lptf;->Z:Landroid/view/View;
+.method public final c(Ljava/lang/String;)Ljava/lang/reflect/Method;
+    .registers 5
 
-    invoke-direct {v0, v1, v2}, Lir0;-><init>(Lone/me/chatscreen/videomsg/VideoMessageWidget;Landroid/view/View;)V
+    iget-object p0, p0, Lptf;->a:Ltr;
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+    invoke-virtual {p0, p1}, Lr1e;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p1}, Landroid/view/View;->isLaidOut()Z
+    move-result-object v0
 
-    move-result v1
+    check-cast v0, Ljava/lang/reflect/Method;
 
-    if-eqz v1, :cond_2
+    if-nez v0, :cond_0
 
-    const-class v1, Lone/me/chatscreen/videomsg/VideoMessageWidget;
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    const/4 v0, 0x1
+
+    const-class v1, Lptf;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object v2
+
+    invoke-static {p1, v0, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    const-string v2, "read"
+
+    filled-new-array {v1}, [Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0}, Lr1e;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public final d(Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .registers 5
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lptf;->b:Ltr;
+
+    invoke-virtual {v1, v0}, Lr1e;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/reflect/Method;
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0, p1}, Lptf;->b(Ljava/lang/Class;)Ljava/lang/Class;
+
+    move-result-object p0
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    const-class v0, Lptf;
+
+    filled-new-array {p1, v0}, [Ljava/lang/Class;
+
+    move-result-object v0
+
+    const-string v2, "write"
+
+    invoke-virtual {p0, v2, v0}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object p0
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1, p0}, Lr1e;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    return-object p0
+
+    :cond_0
+    return-object v0
+.end method
+
+.method public abstract e(I)Z
+.end method
+
+.method public final f(II)I
+    .registers 3
+
+    invoke-virtual {p0, p2}, Lptf;->e(I)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    return p1
+
+    :cond_0
+    check-cast p0, Lqtf;
+
+    iget-object p0, p0, Lqtf;->e:Landroid/os/Parcel;
+
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final g(Landroid/os/Parcelable;I)Landroid/os/Parcelable;
+    .registers 3
+
+    invoke-virtual {p0, p2}, Lptf;->e(I)Z
+
+    move-result p2
+
+    if-nez p2, :cond_0
+
+    return-object p1
+
+    :cond_0
+    check-cast p0, Lqtf;
+
+    const-class p1, Lqtf;
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+
+    move-result-object p1
+
+    iget-object p0, p0, Lqtf;->e:Landroid/os/Parcel;
+
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final h()Lrtf;
+    .registers 4
+
+    move-object v0, p0
+
+    check-cast v0, Lqtf;
+
+    iget-object v0, v0, Lqtf;->e:Landroid/os/Parcel;
+
+    invoke-virtual {v0}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_0
+
+    return-object v1
+
+    :cond_0
+    invoke-virtual {p0}, Lptf;->a()Lqtf;
+
+    move-result-object v2
+
+    :try_start_0
+    invoke-virtual {p0, v0}, Lptf;->c(Ljava/lang/String;)Ljava/lang/reflect/Method;
+
+    move-result-object p0
+
+    filled-new-array {v2}, [Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lrtf;
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_3
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception p0
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "VersionedParcel encountered ClassNotFoundException"
+
+    invoke-direct {v0, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :catch_1
+    move-exception p0
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "VersionedParcel encountered NoSuchMethodException"
+
+    invoke-direct {v0, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :catch_2
+    move-exception p0
+
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    instance-of v0, v0, Ljava/lang/RuntimeException;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/RuntimeException;
+
+    throw p0
+
+    :cond_1
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "VersionedParcel encountered InvocationTargetException"
+
+    invoke-direct {v0, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+
+    :catch_3
+    move-exception p0
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "VersionedParcel encountered IllegalAccessException"
+
+    invoke-direct {v0, v1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
+.end method
+
+.method public abstract i(I)V
+.end method
+
+.method public final j(II)V
+    .registers 3
+
+    invoke-virtual {p0, p2}, Lptf;->i(I)V
+
+    check-cast p0, Lqtf;
+
+    iget-object p0, p0, Lqtf;->e:Landroid/os/Parcel;
+
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    return-void
+.end method
+
+.method public final k(Landroid/os/Parcelable;I)V
+    .registers 3
+
+    invoke-virtual {p0, p2}, Lptf;->i(I)V
+
+    check-cast p0, Lqtf;
+
+    iget-object p0, p0, Lqtf;->e:Landroid/os/Parcel;
+
+    const/4 p2, 0x0
+
+    invoke-virtual {p0, p1, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+
+    return-void
+.end method
+
+.method public final l(Lrtf;)V
+    .registers 5
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_0
+
+    check-cast p0, Lqtf;
+
+    iget-object p0, p0, Lqtf;->e:Landroid/os/Parcel;
+
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_0
+    :try_start_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lptf;->b(Ljava/lang/Class;)Ljava/lang/Class;
+
+    move-result-object v1
+    :try_end_0
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_4
 
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    sget-object v2, Ld86;->f:Lafa;
+    move-object v2, p0
 
-    if-nez v2, :cond_0
+    check-cast v2, Lqtf;
 
-    goto :goto_0
+    iget-object v2, v2, Lqtf;->e:Landroid/os/Parcel;
 
-    :cond_0
-    sget-object v3, Llw7;->X:Llw7;
+    invoke-virtual {v2, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v3}, Lafa;->a(Llw7;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    const-string v4, "updating blur for video message screen"
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v2, v3, v1, v4, v5}, Lafa;->b(Llw7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :cond_1
-    :goto_0
-    iget-object v1, p0, Lptf;->Z:Landroid/view/View;
-
-    invoke-virtual {v1}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p0}, Lptf;->a()Lqtf;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
+    :try_start_1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    :cond_2
-    new-instance v1, Lrtf;
+    move-result-object v2
 
-    invoke-direct {v1, p1, v0}, Lrtf;-><init>(Ltof;Lir0;)V
+    invoke-virtual {p0, v2}, Lptf;->d(Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    iget-object p1, p0, Lptf;->Y:Lone/me/chatscreen/videomsg/VideoMessageWidget;
+    move-result-object p0
 
-    invoke-virtual {p1}, Lone/me/chatscreen/videomsg/VideoMessageWidget;->A0()Ltof;
+    filled-new-array {p1, v1}, [Ljava/lang/Object;
 
     move-result-object p1
 
-    new-instance v0, Lyr1;
+    invoke-virtual {p0, v0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_3
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
 
-    iget-object v2, p0, Lptf;->Y:Lone/me/chatscreen/videomsg/VideoMessageWidget;
+    iget-object p0, v1, Lqtf;->e:Landroid/os/Parcel;
 
-    iget-object p0, p0, Lptf;->Z:Landroid/view/View;
+    iget p1, v1, Lqtf;->i:I
 
-    invoke-direct {v0, v1, v2, p0}, Lyr1;-><init>(Lrtf;Lone/me/chatscreen/videomsg/VideoMessageWidget;Landroid/view/View;)V
+    if-ltz p1, :cond_1
 
-    invoke-static {p1, v0}, Las3;->t(Landroid/view/ViewGroup;Lj96;)V
+    iget-object v0, v1, Lqtf;->d:Landroid/util/SparseIntArray;
 
-    sget-object p0, Lncf;->a:Lncf;
+    invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
 
-    return-object p0
+    move-result p1
+
+    invoke-virtual {p0}, Landroid/os/Parcel;->dataPosition()I
+
+    move-result v0
+
+    sub-int v1, v0, p1
+
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    invoke-virtual {p0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-virtual {p0, v0}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    :cond_1
+    return-void
+
+    :catch_0
+    move-exception p0
+
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    const-string v0, "VersionedParcel encountered ClassNotFoundException"
+
+    invoke-direct {p1, v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :catch_1
+    move-exception p0
+
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    const-string v0, "VersionedParcel encountered NoSuchMethodException"
+
+    invoke-direct {p1, v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :catch_2
+    move-exception p0
+
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p1
+
+    instance-of p1, p1, Ljava/lang/RuntimeException;
+
+    if-eqz p1, :cond_2
+
+    invoke-virtual {p0}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/RuntimeException;
+
+    throw p0
+
+    :cond_2
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    const-string v0, "VersionedParcel encountered InvocationTargetException"
+
+    invoke-direct {p1, v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :catch_3
+    move-exception p0
+
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    const-string v0, "VersionedParcel encountered IllegalAccessException"
+
+    invoke-direct {p1, v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw p1
+
+    :catch_4
+    move-exception p0
+
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v1, " does not have a Parcelizer"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-direct {v0, p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v0
 .end method

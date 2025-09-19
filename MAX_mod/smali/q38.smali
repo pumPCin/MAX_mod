@@ -1,117 +1,82 @@
-.class public Lq38;
-.super Ljava/lang/Object;
+.class public final Lq38;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Lctg;
+.field public final synthetic X:Lone/me/android/MainActivity;
 
 
 # direct methods
-.method public constructor <init>(Lctg;)V
-    .registers 2
+.method public constructor <init>(Lone/me/android/MainActivity;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lq38;->X:Lone/me/android/MainActivity;
 
-    iput-object p1, p0, Lq38;->a:Lctg;
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    instance-of v0, p1, Lq38;
+    check-cast p1, Ljava/lang/Number;
 
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    return v1
-
-    :cond_0
-    :try_start_0
-    iget-object p0, p0, Lq38;->a:Lctg;
-
-    check-cast p1, Lq38;
-
-    iget-object p1, p1, Lq38;->a:Lctg;
-
-    check-cast p0, Lzsg;
-
-    invoke-virtual {p0}, Lwqg;->W()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lptg;->c(Landroid/os/Parcel;Landroid/os/IInterface;)V
-
-    const/16 p1, 0x10
-
-    invoke-virtual {p0, v0, p1}, Lwqg;->z(Landroid/os/Parcel;I)Landroid/os/Parcel;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
     move-result p1
 
-    if-eqz p1, :cond_1
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    const/4 v1, 0x1
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    :cond_1
-    invoke-virtual {p0}, Landroid/os/Parcel;->recycle()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object p1
 
-    return v1
-
-    :catch_0
-    move-exception p0
-
-    new-instance p1, Lcom/google/android/gms/maps/model/RuntimeRemoteException;
-
-    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    throw p1
-.end method
-
-.method public final hashCode()I
-    .registers 3
-
-    :try_start_0
-    iget-object p0, p0, Lq38;->a:Lctg;
-
-    check-cast p0, Lzsg;
-
-    invoke-virtual {p0}, Lwqg;->W()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    const/16 v1, 0x11
-
-    invoke-virtual {p0, v0, v1}, Lwqg;->z(Landroid/os/Parcel;I)Landroid/os/Parcel;
+    invoke-virtual {p0, p1, p2}, Lq38;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
+    check-cast p0, Lq38;
 
-    move-result v0
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-virtual {p0}, Landroid/os/Parcel;->recycle()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0, p1}, Lq38;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    return v0
+    return-object p1
+.end method
 
-    :catch_0
-    move-exception p0
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    new-instance v0, Lcom/google/android/gms/maps/model/RuntimeRemoteException;
+    new-instance p1, Lq38;
 
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    iget-object p0, p0, Lq38;->X:Lone/me/android/MainActivity;
 
-    throw v0
+    invoke-direct {p1, p0, p2}, Lq38;-><init>(Lone/me/android/MainActivity;Lkotlin/coroutines/Continuation;)V
+
+    return-object p1
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p0, p0, Lq38;->X:Lone/me/android/MainActivity;
+
+    iget-object p1, p0, Lone/me/android/MainActivity;->X0:Ls25;
+
+    invoke-interface {p1, p0}, Ls25;->b(Landroid/app/Activity;)V
+
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

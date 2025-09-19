@@ -4,204 +4,129 @@
 
 
 # instance fields
-.field public a:I
+.field public a:Leoc;
 
-.field public final b:Ljava/lang/Object;
-
-.field public final c:Ljava/lang/Object;
+.field public b:Lcoc;
 
 
-# direct methods
-.method public constructor <init>(Landroidx/recyclerview/widget/a;)V
+# virtual methods
+.method public final a(Landroidx/recyclerview/widget/RecyclerView;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p0, p1}, Ltd7;->b(Landroidx/recyclerview/widget/RecyclerView;)V
 
-    const/high16 v0, -0x80000000
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lcoc;
 
-    iput v0, p0, Ltd7;->a:I
+    move-result-object v0
 
-    new-instance v0, Landroid/graphics/Rect;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+    iput-object v0, p0, Ltd7;->b:Lcoc;
 
-    iput-object v0, p0, Ltd7;->c:Ljava/lang/Object;
+    invoke-virtual {p0, p1, v0}, Ltd7;->c(Landroidx/recyclerview/widget/RecyclerView;Lcoc;)Leoc;
 
-    iput-object p1, p0, Ltd7;->b:Ljava/lang/Object;
+    move-result-object p1
 
-    return-void
-.end method
+    iput-object p1, p0, Ltd7;->a:Leoc;
 
-.method public constructor <init>(Ljava/lang/String;ILud7;)V
-    .registers 4
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Ltd7;->b:Ljava/lang/Object;
-
-    iput p2, p0, Ltd7;->a:I
-
-    iput-object p3, p0, Ltd7;->c:Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lcoc;->z(Leoc;)V
 
     return-void
-.end method
-
-.method public static b(Landroidx/recyclerview/widget/a;I)Ltd7;
-    .registers 3
-
-    if-eqz p1, :cond_1
-
-    const/4 v0, 0x1
-
-    if-ne p1, v0, :cond_0
-
-    new-instance p1, Llpa;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p1, p0, v0}, Llpa;-><init>(Landroidx/recyclerview/widget/a;I)V
-
-    return-object p1
 
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "invalid orientation"
+    const-string p1, "require not null adapter"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw p0
+.end method
+
+.method public final b(Landroidx/recyclerview/widget/RecyclerView;)V
+    .registers 6
+
+    iget-object v0, p0, Ltd7;->b:Lcoc;
+
+    if-nez v0, :cond_0
+
+    iget-object v1, p0, Ltd7;->a:Leoc;
+
+    if-nez v1, :cond_0
+
+    return-void
+
+    :cond_0
+    if-eqz v0, :cond_1
+
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lcoc;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ltd7;->b:Lcoc;
+
+    if-eq v0, v1, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ltd7;->b:Lcoc;
+
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Lcoc;
+
+    move-result-object p1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "adapter was changed! cached adapter = "
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", recyclerView.adapter = "
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    const-string v2, "adapter was changed"
+
+    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0, p1, v1}, Ljtg;->Q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     :cond_1
-    new-instance p1, Llpa;
+    iget-object p1, p0, Ltd7;->b:Lcoc;
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Ltd7;->a:Leoc;
 
-    invoke-direct {p1, p0, v0}, Llpa;-><init>(Landroidx/recyclerview/widget/a;I)V
+    if-eqz p1, :cond_2
 
-    return-object p1
+    if-eqz v0, :cond_2
+
+    invoke-virtual {p1, v0}, Lcoc;->B(Leoc;)V
+
+    :cond_2
+    const/4 p1, 0x0
+
+    iput-object p1, p0, Ltd7;->b:Lcoc;
+
+    iput-object p1, p0, Ltd7;->a:Leoc;
+
+    return-void
 .end method
 
-
-# virtual methods
-.method public a(Ljava/lang/String;)Ljava/lang/String;
-    .registers 5
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v1, p0, Ltd7;->b:Ljava/lang/Object;
-
-    check-cast v1, Ljava/lang/String;
-
-    const-string v2, "."
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p0}, Ltd7;->l()Lud7;
-
-    move-result-object p0
-
-    if-eqz p0, :cond_0
-
-    iget-object p0, p0, Lud7;->a:Ljava/lang/String;
-
-    if-eqz p0, :cond_0
-
-    invoke-virtual {v2, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public abstract c(Landroid/view/View;)I
-.end method
-
-.method public abstract d(Landroid/view/View;)I
-.end method
-
-.method public abstract e(Landroid/view/View;)I
-.end method
-
-.method public abstract f(Landroid/view/View;)I
-.end method
-
-.method public abstract g()I
-.end method
-
-.method public abstract h()I
-.end method
-
-.method public abstract i()I
-.end method
-
-.method public abstract j()I
-.end method
-
-.method public abstract k()I
-.end method
-
-.method public l()Lud7;
-    .registers 1
-
-    iget-object p0, p0, Ltd7;->c:Ljava/lang/Object;
-
-    check-cast p0, Lud7;
-
-    return-object p0
-.end method
-
-.method public abstract m()I
-.end method
-
-.method public abstract n()I
-.end method
-
-.method public o()I
-    .registers 3
-
-    const/high16 v0, -0x80000000
-
-    iget v1, p0, Ltd7;->a:I
-
-    if-ne v0, v1, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    invoke-virtual {p0}, Ltd7;->n()I
-
-    move-result v0
-
-    iget p0, p0, Ltd7;->a:I
-
-    sub-int/2addr v0, p0
-
-    return v0
-.end method
-
-.method public abstract p(Landroid/view/View;)I
-.end method
-
-.method public abstract q(Landroid/view/View;)I
-.end method
-
-.method public abstract r(I)V
+.method public abstract c(Landroidx/recyclerview/widget/RecyclerView;Lcoc;)Leoc;
 .end method

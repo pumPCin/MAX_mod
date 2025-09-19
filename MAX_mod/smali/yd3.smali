@@ -1,44 +1,49 @@
 .class public final Lyd3;
-.super Ljava/lang/Object;
+.super Ljava/lang/RuntimeException;
 .source "SourceFile"
-
-# interfaces
-.implements Lxb9;
 
 
 # instance fields
-.field public final a:Lg38;
-
-.field public final b:Lg38;
+.field public final synthetic a:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 4
+.method public synthetic constructor <init>(Ljava/lang/String;I)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lyd3;->a:I
 
-    new-instance v0, Lg38;
-
-    new-instance v1, Lvs9;
-
-    const/16 v2, 0xd
-
-    invoke-direct {v1, v2}, Lvs9;-><init>(I)V
-
-    invoke-direct {v0, v1}, Lg38;-><init>(Lv18;)V
-
-    iput-object v0, p0, Lyd3;->a:Lg38;
-
-    new-instance v0, Lg38;
-
-    new-instance v1, Lme9;
-
-    invoke-direct {v1, v2}, Lme9;-><init>(I)V
-
-    invoke-direct {v0, v1}, Lg38;-><init>(Lv18;)V
-
-    iput-object v0, p0, Lyd3;->b:Lg38;
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     return-void
+.end method
+
+
+# virtual methods
+.method public declared-synchronized fillInStackTrace()Ljava/lang/Throwable;
+    .registers 2
+
+    iget v0, p0, Lyd3;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0}, Ljava/lang/Throwable;->fillInStackTrace()Ljava/lang/Throwable;
+
+    move-result-object p0
+
+    return-object p0
+
+    :pswitch_0
+    monitor-enter p0
+
+    monitor-exit p0
+
+    return-object p0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

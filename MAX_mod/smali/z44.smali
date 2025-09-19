@@ -2,89 +2,101 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
+
+
+# static fields
+.field public static final X:Ljava/util/concurrent/ThreadFactory;
+
 
 # instance fields
-.field public final a:Latb;
+.field public final a:Ljava/util/concurrent/atomic/AtomicLong;
 
-.field public final b:Z
+.field public final b:Ljava/lang/String;
+
+.field public final c:I
+
+.field public final o:Landroid/os/StrictMode$ThreadPolicy;
 
 
 # direct methods
-.method public constructor <init>(Latb;Z)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
+
+    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
+
+    move-result-object v0
+
+    sput-object v0, Lz44;->X:Ljava/util/concurrent/ThreadFactory;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ILandroid/os/StrictMode$ThreadPolicy;)V
+    .registers 5
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lz44;->a:Latb;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    iput-boolean p2, p0, Lz44;->b:Z
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
+
+    iput-object v0, p0, Lz44;->a:Ljava/util/concurrent/atomic/AtomicLong;
+
+    iput-object p1, p0, Lz44;->b:Ljava/lang/String;
+
+    iput p2, p0, Lz44;->c:I
+
+    iput-object p3, p0, Lz44;->o:Landroid/os/StrictMode$ThreadPolicy;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .registers 5
 
-    instance-of v0, p1, Lz44;
+    new-instance v0, Law1;
 
-    const/4 v1, 0x0
+    const/16 v1, 0x14
 
-    if-eqz v0, :cond_0
+    invoke-direct {v0, p0, v1, p1}, Law1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
 
-    check-cast p1, Lz44;
+    sget-object p1, Lz44;->X:Ljava/util/concurrent/ThreadFactory;
 
-    iget-object v0, p1, Lz44;->a:Latb;
+    invoke-interface {p1, v0}, Ljava/util/concurrent/ThreadFactory;->newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
 
-    iget-object v2, p0, Lz44;->a:Latb;
+    move-result-object p1
 
-    invoke-virtual {v0, v2}, Latb;->equals(Ljava/lang/Object;)Z
+    sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    move-result v0
+    iget-object v0, p0, Lz44;->a:Ljava/util/concurrent/atomic/AtomicLong;
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->getAndIncrement()J
 
-    iget-boolean p1, p1, Lz44;->b:Z
+    move-result-wide v0
 
-    iget-boolean p0, p0, Lz44;->b:Z
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    if-ne p1, p0, :cond_0
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const/4 p0, 0x1
+    iget-object p0, p0, Lz44;->b:Ljava/lang/String;
 
-    return p0
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_0
-    return v1
-.end method
+    const-string p0, " Thread #"
 
-.method public final hashCode()I
-    .registers 3
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v0, p0, Lz44;->a:Latb;
+    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Latb;->hashCode()I
-
-    move-result v0
-
-    const v1, 0xf4243
-
-    xor-int/2addr v0, v1
-
-    mul-int/2addr v0, v1
-
-    iget-boolean p0, p0, Lz44;->b:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Ljava/lang/Boolean;->hashCode()I
+    invoke-virtual {p1, p0}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    move-result p0
-
-    xor-int/2addr p0, v0
-
-    return p0
+    return-object p1
 .end method

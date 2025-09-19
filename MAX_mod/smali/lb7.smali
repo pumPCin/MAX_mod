@@ -1,41 +1,24 @@
-.class public interface abstract Llb7;
+.class public abstract Llb7;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Lh04;
+
+# instance fields
+.field public final a:[Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>([Ljava/lang/String;)V
+    .registers 2
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Llb7;->a:[Ljava/lang/String;
+
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract attachChild(Lw13;)Lt13;
-.end method
-
-.method public abstract cancel(Ljava/util/concurrent/CancellationException;)V
-.end method
-
-.method public abstract getCancellationException()Ljava/util/concurrent/CancellationException;
-.end method
-
-.method public abstract getChildren()Lv9d;
-.end method
-
-.method public abstract invokeOnCompletion(Lj96;)Lqp4;
-.end method
-
-.method public abstract invokeOnCompletion(ZZLj96;)Lqp4;
-.end method
-
-.method public abstract isActive()Z
-.end method
-
-.method public abstract isCancelled()Z
-.end method
-
-.method public abstract isCompleted()Z
-.end method
-
-.method public abstract join(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-.end method
-
-.method public abstract start()Z
+.method public abstract a(Ljava/util/Set;)V
 .end method

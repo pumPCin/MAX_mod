@@ -1,216 +1,207 @@
-.class public final Lamb;
-.super Lxie;
+.class public final synthetic Lamb;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Leb4;
 
 
 # instance fields
-.field public X:Lvlb;
+.field public final synthetic a:I
 
-.field public Y:I
+.field public final synthetic b:J
 
-.field public final synthetic Z:Ljmb;
+.field public final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Ljmb;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public synthetic constructor <init>(JLandroid/os/Parcelable;I)V
+    .registers 5
 
-    iput-object p1, p0, Lamb;->Z:Ljmb;
+    iput p4, p0, Lamb;->a:I
 
-    const/4 p1, 0x2
+    iput-wide p1, p0, Lamb;->b:J
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p3, p0, Lamb;->c:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/lang/Enum;JI)V
+    .registers 5
+
+    iput p4, p0, Lamb;->a:I
+
+    iput-object p1, p0, Lamb;->c:Ljava/lang/Object;
+
+    iput-wide p2, p0, Lamb;->b:J
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final a()Ljava/lang/Object;
+    .registers 14
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget v0, p0, Lamb;->a:I
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    packed-switch v0, :pswitch_data_0
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    iget-object v0, p0, Lamb;->c:Ljava/lang/Object;
 
-    invoke-virtual {p0, p1, p2}, Lamb;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    check-cast v0, Landroid/os/Bundle;
 
-    move-result-object p0
+    new-instance v1, Lone/me/stickerspreview/StickerPreviewScreen;
 
-    check-cast p0, Lamb;
+    const-string v2, "chat_id"
 
-    sget-object p1, Lncf;->a:Lncf;
+    invoke-static {v2, v0}, Lkua;->t(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/Long;
 
-    invoke-virtual {p0, p1}, Lamb;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object p0
+    const-wide/16 v3, 0x0
 
-    return-object p0
-.end method
+    if-eqz v2, :cond_0
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
-    new-instance p1, Lamb;
+    move-result-wide v5
 
-    iget-object p0, p0, Lamb;->Z:Ljmb;
+    goto :goto_0
 
-    invoke-direct {p1, p0, p2}, Lamb;-><init>(Ljmb;Lkotlin/coroutines/Continuation;)V
+    :cond_0
+    move-wide v5, v3
 
-    return-object p1
-.end method
+    :goto_0
+    const-string v2, "forward_id"
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
+    invoke-static {v2, v0}, Lkua;->t(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/Long;
 
-    iget v0, p0, Lamb;->Y:I
+    move-result-object v0
 
-    sget-object v1, Lncf;->a:Lncf;
+    if-eqz v0, :cond_1
 
-    const/4 v2, 0x0
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    const/4 v3, 0x3
+    move-result-wide v3
 
-    const/4 v4, 0x2
+    :cond_1
+    iget-wide v7, p0, Lamb;->b:J
 
-    const/4 v5, 0x1
+    move-wide v9, v5
 
-    iget-object v6, p0, Lamb;->Z:Ljmb;
+    move-wide v11, v7
 
-    sget-object v7, Ls04;->a:Ls04;
+    move-wide v6, v3
 
-    if-eqz v0, :cond_3
+    move-wide v4, v9
 
-    if-eq v0, v5, :cond_2
+    move-wide v2, v11
 
-    if-eq v0, v4, :cond_1
-
-    if-ne v0, v3, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-direct/range {v1 .. v7}, Lone/me/stickerspreview/StickerPreviewScreen;-><init>(JJJ)V
 
     return-object v1
 
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
+    :pswitch_0
+    iget-object v0, p0, Lamb;->c:Ljava/lang/Object;
 
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+    check-cast v0, Laob;
 
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    new-instance v1, Lone/me/profileedit/ProfileEditScreen;
 
-    throw p0
+    iget-wide v2, p0, Lamb;->b:J
 
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-direct {v1, v2, v3, v0}, Lone/me/profileedit/ProfileEditScreen;-><init>(JLaob;)V
+
+    return-object v1
+
+    :pswitch_1
+    iget-object v0, p0, Lamb;->c:Ljava/lang/Object;
+
+    check-cast v0, Lsl2;
+
+    sget-object v1, Lsl2;->c:Lsl2;
+
+    iget-wide v2, p0, Lamb;->b:J
+
+    if-ne v0, v1, :cond_2
+
+    new-instance p0, Lone/me/profile/screens/members/ChatAdminsScreen;
+
+    invoke-direct {p0, v2, v3}, Lone/me/profile/screens/members/ChatAdminsScreen;-><init>(J)V
 
     goto :goto_1
 
     :cond_2
-    iget-object v0, p0, Lamb;->X:Lvlb;
+    new-instance p0, Lone/me/profile/screens/members/ChatMembersScreen;
 
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    invoke-direct {p0, v2, v3, v0}, Lone/me/profile/screens/members/ChatMembersScreen;-><init>(JLsl2;)V
 
-    goto :goto_0
+    :goto_1
+    return-object p0
 
-    :cond_3
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
+    :pswitch_2
+    iget-object v0, p0, Lamb;->c:Ljava/lang/Object;
 
-    iget-object p1, v6, Ljmb;->c:Lxh7;
+    check-cast v0, Lfmb;
 
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
+    sget-object v1, Ldmb;->$EnumSwitchMapping$0:[I
 
-    move-result-object p1
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
 
-    check-cast p1, Lvz2;
+    move-result v2
 
-    iget-wide v8, v6, Ljmb;->b:J
+    aget v1, v1, v2
 
-    check-cast p1, Lv03;
+    const/4 v2, 0x1
 
-    invoke-virtual {p1, v8, v9}, Lv03;->N(J)Ldbc;
+    iget-wide v3, p0, Lamb;->b:J
 
-    move-result-object p1
+    if-eq v1, v2, :cond_5
 
-    iget-object p1, p1, Ldbc;->a:Lg4e;
+    const/4 p0, 0x2
 
-    invoke-interface {p1}, Lg4e;->getValue()Ljava/lang/Object;
+    if-eq v1, p0, :cond_4
 
-    move-result-object p1
+    const/4 p0, 0x3
 
-    check-cast p1, Lo72;
+    if-ne v1, p0, :cond_3
 
-    if-eqz p1, :cond_6
-
-    invoke-static {v6, p1}, Ljmb;->r(Ljmb;Lo72;)Lvlb;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lamb;->X:Lvlb;
-
-    iput v5, p0, Lamb;->Y:I
-
-    const-wide/16 v8, 0xc8
-
-    invoke-static {v8, v9, p0}, Las3;->r(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v7, :cond_4
+    sget-object p0, Lylf;->a:Lylf;
 
     goto :goto_2
 
+    :cond_3
+    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+
+    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+
+    throw p0
+
     :cond_4
-    :goto_0
-    iput-object v2, p0, Lamb;->X:Lvlb;
+    new-instance p0, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;
 
-    iput v4, p0, Lamb;->Y:I
-
-    invoke-static {v6, v0, p0}, Ljmb;->q(Ljmb;Lvlb;Lcx3;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-ne p1, v7, :cond_5
+    invoke-direct {p0, v3, v4, v0}, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;-><init>(JLfmb;)V
 
     goto :goto_2
 
     :cond_5
-    :goto_1
-    sget-object p1, Ljmb;->w0:[Lsf7;
+    new-instance p0, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;
 
-    iget-object p1, v6, Ljmb;->o:Lxh7;
-
-    invoke-interface {p1}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lzne;
-
-    check-cast p1, Ltba;
-
-    invoke-virtual {p1}, Ltba;->c()Lm08;
-
-    move-result-object p1
-
-    new-instance v0, Lzlb;
-
-    invoke-direct {v0, v6, v2}, Lzlb;-><init>(Ljmb;Lkotlin/coroutines/Continuation;)V
-
-    iput v3, p0, Lamb;->Y:I
-
-    invoke-static {p1, v0, p0}, Las3;->m0(Lj04;Lx96;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v7, :cond_6
+    invoke-direct {p0, v3, v4, v0}, Lone/me/profile/screens/avatars/ProfileAvatarsScreen;-><init>(JLfmb;)V
 
     :goto_2
-    return-object v7
+    return-object p0
 
-    :cond_6
-    return-object v1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

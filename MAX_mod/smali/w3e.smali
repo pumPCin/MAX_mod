@@ -1,49 +1,64 @@
 .class public final Lw3e;
-.super Lcx3;
+.super Ljava/util/concurrent/atomic/AtomicReference;
 .source "SourceFile"
+
+# interfaces
+.implements Loq4;
 
 
 # instance fields
-.field public final synthetic X:Lp69;
-
-.field public Y:I
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final a:Le3e;
 
 
 # direct methods
-.method public constructor <init>(Lp69;Lkotlin/coroutines/Continuation;)V
+.method public constructor <init>(Le3e;Lx3e;)V
     .registers 3
 
-    iput-object p1, p0, Lw3e;->X:Lp69;
+    invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput-object p1, p0, Lw3e;->a:Le3e;
+
+    invoke-virtual {p0, p2}, Ljava/util/concurrent/atomic/AtomicReference;->lazySet(Ljava/lang/Object;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    iput-object p1, p0, Lw3e;->o:Ljava/lang/Object;
-
-    iget p1, p0, Lw3e;->Y:I
-
-    const/high16 v0, -0x80000000
-
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lw3e;->Y:I
-
-    iget-object p1, p0, Lw3e;->X:Lp69;
+.method public final e()V
+    .registers 2
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p0}, Lp69;->b(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lx3e;
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0, p0}, Lx3e;->o(Lw3e;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final f()Z
+    .registers 1
+
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object p0
 
-    return-object p0
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    return p0
 .end method

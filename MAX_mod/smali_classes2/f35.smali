@@ -1,288 +1,301 @@
 .class public final Lf35;
-.super Ljava/lang/Object;
+.super Lz15;
 .source "SourceFile"
 
 # interfaces
-.implements Li35;
+.implements Lz25;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final a:Lcl7;
 
-.field public final b:Ljava/lang/CharSequence;
+.field public final b:Lcl7;
 
-.field public final c:J
+.field public c:Lf25;
 
-.field public final d:Lmx6;
+.field public d:Lm35;
 
-.field public final e:Lvte;
-
-.field public final f:Lvte;
+.field public e:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/CharSequence;JLmx6;Lvte;Lvte;)V
-    .registers 8
+.method public constructor <init>(Lcl7;Lcl7;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lf35;->a:Ljava/lang/String;
+    iput-object p1, p0, Lf35;->a:Lcl7;
 
-    iput-object p2, p0, Lf35;->b:Ljava/lang/CharSequence;
-
-    iput-wide p3, p0, Lf35;->c:J
-
-    iput-object p5, p0, Lf35;->d:Lmx6;
-
-    iput-object p6, p0, Lf35;->e:Lvte;
-
-    iput-object p7, p0, Lf35;->f:Lvte;
+    iput-object p2, p0, Lf35;->b:Lcl7;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 9
+.method public final a(ILjava/lang/CharSequence;)Z
+    .registers 3
 
-    const/4 v0, 0x1
+    invoke-virtual {p0}, Lf35;->j()Lz25;
 
-    if-ne p0, p1, :cond_0
+    move-result-object p0
 
-    return v0
-
-    :cond_0
-    instance-of v1, p1, Lf35;
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_1
-
-    return v2
-
-    :cond_1
-    check-cast p1, Lf35;
-
-    iget-object v1, p0, Lf35;->a:Ljava/lang/String;
-
-    iget-object v3, p1, Lf35;->a:Ljava/lang/String;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    return v2
-
-    :cond_2
-    iget-object v1, p0, Lf35;->b:Ljava/lang/CharSequence;
-
-    iget-object v3, p1, Lf35;->b:Ljava/lang/CharSequence;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    return v2
-
-    :cond_3
-    iget-wide v3, p0, Lf35;->c:J
-
-    iget-wide v5, p1, Lf35;->c:J
-
-    cmp-long v1, v3, v5
-
-    if-eqz v1, :cond_4
-
-    return v2
-
-    :cond_4
-    iget-object v1, p0, Lf35;->d:Lmx6;
-
-    iget-object v3, p1, Lf35;->d:Lmx6;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_5
-
-    return v2
-
-    :cond_5
-    iget-object v1, p0, Lf35;->e:Lvte;
-
-    iget-object v3, p1, Lf35;->e:Lvte;
-
-    invoke-static {v1, v3}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_6
-
-    return v2
-
-    :cond_6
-    iget-object p0, p0, Lf35;->f:Lvte;
-
-    iget-object p1, p1, Lf35;->f:Lvte;
-
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-interface {p0, p1, p2}, Lz25;->a(ILjava/lang/CharSequence;)Z
 
     move-result p0
-
-    if-nez p0, :cond_7
-
-    return v2
-
-    :cond_7
-    return v0
-.end method
-
-.method public final hashCode()I
-    .registers 6
-
-    const/4 v0, 0x0
-
-    iget-object v1, p0, Lf35;->a:Ljava/lang/String;
-
-    if-nez v1, :cond_0
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    move-result v1
-
-    :goto_0
-    const/16 v2, 0x1f
-
-    mul-int/2addr v1, v2
-
-    iget-object v3, p0, Lf35;->b:Ljava/lang/CharSequence;
-
-    if-nez v3, :cond_1
-
-    move v3, v0
-
-    goto :goto_1
-
-    :cond_1
-    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
-
-    move-result v3
-
-    :goto_1
-    add-int/2addr v1, v3
-
-    mul-int/2addr v1, v2
-
-    iget-wide v3, p0, Lf35;->c:J
-
-    invoke-static {v1, v2, v3, v4}, Lp2g;->a(IIJ)I
-
-    move-result v1
-
-    iget-object v3, p0, Lf35;->d:Lmx6;
-
-    if-nez v3, :cond_2
-
-    goto :goto_2
-
-    :cond_2
-    invoke-virtual {v3}, Lmx6;->hashCode()I
-
-    move-result v0
-
-    :goto_2
-    add-int/2addr v1, v0
-
-    mul-int/2addr v1, v2
-
-    iget-object v0, p0, Lf35;->e:Lvte;
-
-    invoke-static {v1, v2, v0}, Lnh0;->c(IILvte;)I
-
-    move-result v0
-
-    iget-object p0, p0, Lf35;->f:Lvte;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    add-int/2addr p0, v0
 
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .registers 4
+.method public final c(Ljava/lang/CharSequence;)Ljava/util/List;
+    .registers 2
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lf35;->j()Lz25;
 
-    const-string v1, "EmptyBot(avatar="
+    move-result-object p0
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lf35;->a:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", avatarPlaceholder="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lf35;->b:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", avatarPlaceholderId="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-wide v1, p0, Lf35;->c:J
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    const-string v1, ", imageAttachConfig="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lf35;->d:Lmx6;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", title="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v1, p0, Lf35;->e:Lvte;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v1, ", subtitle="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object p0, p0, Lf35;->f:Lvte;
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string p0, ")"
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-interface {p0, p1}, Lz25;->c(Ljava/lang/CharSequence;)Ljava/util/List;
 
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public final e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .registers 2
+
+    invoke-virtual {p0}, Lf35;->j()Lz25;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lz25;->e(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final f(Ljava/lang/CharSequence;)Ljava/util/List;
+    .registers 2
+
+    invoke-virtual {p0}, Lf35;->j()Lz25;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lz25;->f(Ljava/lang/CharSequence;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final g(Ljava/lang/CharSequence;)Z
+    .registers 2
+
+    invoke-virtual {p0}, Lf35;->j()Lz25;
+
+    move-result-object p0
+
+    invoke-interface {p0, p1}, Lz25;->g(Ljava/lang/CharSequence;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final h(Ljava/lang/Throwable;)V
+    .registers 4
+
+    iget-object p0, p0, Lf35;->b:Lcl7;
+
+    if-eqz p0, :cond_0
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lb35;
+
+    if-eqz p0, :cond_0
+
+    iget-object p0, p0, Lb35;->e:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lq95;
+
+    new-instance v0, Lru/ok/tamtam/util/HandledException;
+
+    const-string v1, "Can\'t load emoji"
+
+    invoke-direct {v0, v1, p1}, Ljava/lang/Exception;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    check-cast p0, Leha;
+
+    invoke-virtual {p0, v0}, Leha;->c(Ljava/lang/Throwable;)V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final i()V
+    .registers 5
+
+    invoke-static {}, Lb25;->a()Lb25;
+
+    move-result-object v0
+
+    new-instance v1, Lf25;
+
+    invoke-direct {v1, v0}, Lf25;-><init>(Lb25;)V
+
+    iput-object v1, p0, Lf35;->c:Lf25;
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lf35;->e:Z
+
+    iget-object p0, p0, Lf35;->b:Lcl7;
+
+    if-eqz p0, :cond_1
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lb35;
+
+    if-eqz p0, :cond_1
+
+    iget-object v0, p0, Lb35;->d:Lcl7;
+
+    invoke-interface {v0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ltxe;
+
+    check-cast v0, Luxe;
+
+    invoke-virtual {v0}, Luxe;->a()Lv5d;
+
+    move-result-object v0
+
+    new-instance v1, Lje4;
+
+    const/16 v2, 0x10
+
+    invoke-direct {v1, v2, p0}, Lje4;-><init>(ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v1}, Lv5d;->b(Ljava/lang/Runnable;)Loq4;
+
+    iget-object p0, p0, Lb35;->f:Lcl7;
+
+    invoke-interface {p0}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ly25;
+
+    iget-object v0, p0, Ly25;->c:Ljava/util/List;
+
+    const-string v1, "y25"
+
+    if-nez v0, :cond_0
+
+    const-string p0, "invalidate: palette is null. Ignore"
+
+    invoke-static {v1, p0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+
+    :cond_0
+    const-string v0, "invalidate"
+
+    invoke-static {v1, v0}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object v0, p0, Ly25;->c:Ljava/util/List;
+
+    invoke-static {v0}, Ly4a;->g(Ljava/lang/Iterable;)Lxc3;
+
+    move-result-object v0
+
+    new-instance v1, Lqj4;
+
+    const/4 v2, 0x7
+
+    invoke-direct {v1, v2, p0}, Lqj4;-><init>(ILjava/lang/Object;)V
+
+    new-instance v2, Lr5a;
+
+    const/4 v3, 0x3
+
+    invoke-direct {v2, v0, v1, v3}, Lr5a;-><init>(Ly4a;Lqc6;I)V
+
+    invoke-virtual {v2}, Ly4a;->t()Lc5a;
+
+    move-result-object v0
+
+    iget-object v1, p0, Ly25;->b:Ltxe;
+
+    check-cast v1, Luxe;
+
+    invoke-virtual {v1}, Luxe;->a()Lv5d;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lk2e;->m(Lv5d;)Ld3e;
+
+    move-result-object v0
+
+    new-instance v1, Lnx3;
+
+    const/16 v2, 0xd
+
+    invoke-direct {v1, v2, p0}, Lnx3;-><init>(ILjava/lang/Object;)V
+
+    new-instance p0, Lqj4;
+
+    const/16 v2, 0x8
+
+    invoke-direct {p0, v2}, Lqj4;-><init>(I)V
+
+    new-instance v2, Lns1;
+
+    const/4 v3, 0x2
+
+    invoke-direct {v2, v1, v3, p0}, Lns1;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    invoke-virtual {v0, v2}, Lk2e;->k(Le3e;)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public final j()Lz25;
+    .registers 2
+
+    iget-object v0, p0, Lf35;->c:Lf25;
+
+    if-nez v0, :cond_1
+
+    iget-object v0, p0, Lf35;->d:Lm35;
+
+    if-nez v0, :cond_0
+
+    new-instance v0, Lm35;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    iput-object v0, p0, Lf35;->d:Lm35;
+
+    :cond_0
+    iget-object p0, p0, Lf35;->d:Lm35;
+
+    return-object p0
+
+    :cond_1
+    return-object v0
 .end method

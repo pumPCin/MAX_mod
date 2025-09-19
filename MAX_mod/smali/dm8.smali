@@ -2,127 +2,248 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:I
-
-.field public final c:I
+.field public final synthetic a:Landroidx/mediarouter/app/d;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+.method public constructor <init>(Landroidx/mediarouter/app/d;)V
+    .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ldm8;->a:Ljava/lang/String;
-
-    iput p2, p0, Ldm8;->b:I
-
-    iput p3, p0, Ldm8;->c:I
+    iput-object p1, p0, Ldm8;->a:Landroidx/mediarouter/app/d;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 7
+.method public final onClick(Landroid/view/View;)V
+    .registers 12
 
-    const/4 v0, 0x1
+    iget-object p0, p0, Ldm8;->a:Landroidx/mediarouter/app/d;
 
-    if-ne p0, p1, :cond_0
+    iget-object v0, p0, Landroidx/mediarouter/app/d;->w1:Landroid/view/accessibility/AccessibilityManager;
 
-    return v0
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
+
+    move-result p1
+
+    const/4 v1, 0x1
+
+    const v2, 0x1020019
+
+    if-eq p1, v2, :cond_7
+
+    const v3, 0x102001a
+
+    if-ne p1, v3, :cond_0
+
+    goto/16 :goto_2
 
     :cond_0
-    instance-of v1, p1, Ldm8;
+    sget v2, Le5c;->mr_control_playback_ctrl:I
 
-    const/4 v2, 0x0
+    if-ne p1, v2, :cond_5
 
-    if-nez v1, :cond_1
+    iget-object p1, p0, Landroidx/mediarouter/app/d;->b1:Landroid/support/v4/media/session/MediaControllerCompat;
 
-    return v2
+    if-eqz p1, :cond_6
 
-    :cond_1
-    check-cast p1, Ldm8;
+    iget-object p1, p0, Landroidx/mediarouter/app/d;->d1:Landroid/support/v4/media/session/PlaybackStateCompat;
 
-    iget v1, p0, Ldm8;->c:I
+    if-eqz p1, :cond_6
 
-    iget-object v3, p0, Ldm8;->a:Ljava/lang/String;
+    invoke-virtual {p1}, Landroid/support/v4/media/session/PlaybackStateCompat;->getState()I
 
-    iget p0, p0, Ldm8;->b:I
+    move-result p1
 
-    if-ltz p0, :cond_4
+    const/4 v2, 0x3
 
-    iget v4, p1, Ldm8;->b:I
+    const/4 v3, 0x0
 
-    if-gez v4, :cond_2
+    if-ne p1, v2, :cond_1
 
     goto :goto_0
 
+    :cond_1
+    move v1, v3
+
+    :goto_0
+    const-wide/16 v4, 0x0
+
+    if-eqz v1, :cond_2
+
+    iget-object p1, p0, Landroidx/mediarouter/app/d;->d1:Landroid/support/v4/media/session/PlaybackStateCompat;
+
+    invoke-virtual {p1}, Landroid/support/v4/media/session/PlaybackStateCompat;->getActions()J
+
+    move-result-wide v6
+
+    const-wide/16 v8, 0x202
+
+    and-long/2addr v6, v8
+
+    cmp-long p1, v6, v4
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p0, Landroidx/mediarouter/app/d;->b1:Landroid/support/v4/media/session/MediaControllerCompat;
+
+    invoke-virtual {p1}, Landroid/support/v4/media/session/MediaControllerCompat;->getTransportControls()Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;->pause()V
+
+    sget v3, Lsbc;->mr_controller_pause:I
+
+    goto :goto_1
+
     :cond_2
-    iget-object v4, p1, Ldm8;->a:Ljava/lang/String;
+    if-eqz v1, :cond_3
 
-    invoke-static {v3, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    iget-object p1, p0, Landroidx/mediarouter/app/d;->d1:Landroid/support/v4/media/session/PlaybackStateCompat;
 
-    move-result v3
+    invoke-virtual {p1}, Landroid/support/v4/media/session/PlaybackStateCompat;->getActions()J
 
-    if-eqz v3, :cond_3
+    move-result-wide v6
 
-    iget v3, p1, Ldm8;->b:I
+    const-wide/16 v8, 0x1
 
-    if-ne p0, v3, :cond_3
+    and-long/2addr v6, v8
 
-    iget p0, p1, Ldm8;->c:I
+    cmp-long p1, v6, v4
 
-    if-ne v1, p0, :cond_3
+    if-eqz p1, :cond_3
 
-    return v0
+    iget-object p1, p0, Landroidx/mediarouter/app/d;->b1:Landroid/support/v4/media/session/MediaControllerCompat;
+
+    invoke-virtual {p1}, Landroid/support/v4/media/session/MediaControllerCompat;->getTransportControls()Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;->stop()V
+
+    sget v3, Lsbc;->mr_controller_stop:I
+
+    goto :goto_1
 
     :cond_3
-    return v2
+    if-nez v1, :cond_4
+
+    iget-object p1, p0, Landroidx/mediarouter/app/d;->d1:Landroid/support/v4/media/session/PlaybackStateCompat;
+
+    invoke-virtual {p1}, Landroid/support/v4/media/session/PlaybackStateCompat;->getActions()J
+
+    move-result-wide v1
+
+    const-wide/16 v6, 0x204
+
+    and-long/2addr v1, v6
+
+    cmp-long p1, v1, v4
+
+    if-eqz p1, :cond_4
+
+    iget-object p1, p0, Landroidx/mediarouter/app/d;->b1:Landroid/support/v4/media/session/MediaControllerCompat;
+
+    invoke-virtual {p1}, Landroid/support/v4/media/session/MediaControllerCompat;->getTransportControls()Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/support/v4/media/session/MediaControllerCompat$TransportControls;->play()V
+
+    sget v3, Lsbc;->mr_controller_play:I
 
     :cond_4
-    :goto_0
-    iget-object p0, p1, Ldm8;->a:Ljava/lang/String;
+    :goto_1
+    if-eqz v0, :cond_6
 
-    invoke-static {v3, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0}, Landroid/view/accessibility/AccessibilityManager;->isEnabled()Z
 
-    move-result p0
+    move-result p1
 
-    if-eqz p0, :cond_5
+    if-eqz p1, :cond_6
 
-    iget p0, p1, Ldm8;->c:I
+    if-eqz v3, :cond_6
 
-    if-ne v1, p0, :cond_5
+    const/16 p1, 0x4000
 
-    return v0
+    invoke-static {p1}, Landroid/view/accessibility/AccessibilityEvent;->obtain(I)Landroid/view/accessibility/AccessibilityEvent;
 
-    :cond_5
-    return v2
-.end method
+    move-result-object p1
 
-.method public final hashCode()I
-    .registers 2
+    iget-object v1, p0, Landroidx/mediarouter/app/d;->t0:Landroid/content/Context;
 
-    iget v0, p0, Ldm8;->c:I
+    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v1
 
-    move-result-object v0
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityEvent;->setPackageName(Ljava/lang/CharSequence;)V
 
-    iget-object p0, p0, Ldm8;->a:Ljava/lang/String;
+    const-class v1, Ldm8;
 
-    filled-new-array {p0, v0}, [Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityRecord;->setClassName(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getText()Ljava/util/List;
+
+    move-result-object v1
+
+    iget-object p0, p0, Landroidx/mediarouter/app/d;->t0:Landroid/content/Context;
+
+    invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    invoke-interface {v1, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    move-result p0
+    invoke-virtual {v0, p1}, Landroid/view/accessibility/AccessibilityManager;->sendAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
-    return p0
+    return-void
+
+    :cond_5
+    sget v0, Le5c;->mr_close:I
+
+    if-ne p1, v0, :cond_6
+
+    invoke-virtual {p0}, Lgn;->dismiss()V
+
+    :cond_6
+    return-void
+
+    :cond_7
+    :goto_2
+    iget-object v0, p0, Landroidx/mediarouter/app/d;->s0:Ljn8;
+
+    invoke-virtual {v0}, Ljn8;->g()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    iget-object v0, p0, Landroidx/mediarouter/app/d;->Z:Lkn8;
+
+    if-ne p1, v2, :cond_8
+
+    const/4 v1, 0x2
+
+    :cond_8
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-static {v1}, Lkn8;->g(I)V
+
+    :cond_9
+    invoke-virtual {p0}, Lgn;->dismiss()V
+
+    return-void
 .end method

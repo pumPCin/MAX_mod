@@ -1,3 +1,8 @@
-.class public final Lyo7;
-.super Ldp7;
+.class public abstract Lyo7;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+
+# virtual methods
+.method public abstract a()J
+.end method

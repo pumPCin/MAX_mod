@@ -3,46 +3,62 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lho7;
+.implements Lp89;
 
 
-# instance fields
-.field public final synthetic a:Lone/me/messages/list/ui/MessagesListWidget;
+# static fields
+.field public static final a:Ln89;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/messages/list/ui/MessagesListWidget;)V
-    .registers 2
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ln89;
 
-    iput-object p1, p0, Ln89;->a:Lone/me/messages/list/ui/MessagesListWidget;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ln89;->a:Ln89;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgx8;)V
-    .registers 4
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 3
 
-    iget-object p0, p0, Ln89;->a:Lone/me/messages/list/ui/MessagesListWidget;
+    const/4 v0, 0x1
 
-    const-wide/16 v0, 0x0
+    if-ne p0, p1, :cond_0
 
-    invoke-static {p0, p1, v0, v1}, Lone/me/messages/list/ui/MessagesListWidget;->y0(Lone/me/messages/list/ui/MessagesListWidget;Lgx8;J)V
+    return v0
 
-    return-void
+    :cond_0
+    instance-of p0, p1, Ln89;
+
+    if-nez p0, :cond_1
+
+    const/4 p0, 0x0
+
+    return p0
+
+    :cond_1
+    return v0
 .end method
 
-.method public final b(Ljava/lang/String;Llo7;Landroid/text/style/ClickableSpan;)V
-    .registers 6
+.method public final hashCode()I
+    .registers 1
 
-    iget-object p0, p0, Ln89;->a:Lone/me/messages/list/ui/MessagesListWidget;
+    const p0, 0x19157898
 
-    const-wide/16 v0, 0x0
+    return p0
+.end method
 
-    invoke-static {p0, p1, p2, v0, v1}, Lone/me/messages/list/ui/MessagesListWidget;->x0(Lone/me/messages/list/ui/MessagesListWidget;Ljava/lang/String;Llo7;J)V
+.method public final toString()Ljava/lang/String;
+    .registers 1
 
-    return-void
+    const-string p0, "ScrollToBottom"
+
+    return-object p0
 .end method

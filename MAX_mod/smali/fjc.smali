@@ -1,132 +1,82 @@
 .class public final Lfjc;
-.super Ljava/lang/Object;
+.super Lmq0;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/CharSequence;
-
-.field public final c:[Ljava/lang/CharSequence;
-
-.field public final d:Z
-
-.field public final e:I
-
-.field public final f:Landroid/os/Bundle;
-
-.field public final g:Ljava/util/Set;
+.field public final s0:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/CharSequence;[Ljava/lang/CharSequence;ZILandroid/os/Bundle;Ljava/util/HashSet;)V
-    .registers 8
+.method public constructor <init>(Z)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0xf
 
-    iput-object p1, p0, Lfjc;->a:Ljava/lang/String;
+    invoke-direct {p0, v0}, Lmq0;-><init>(I)V
 
-    iput-object p2, p0, Lfjc;->b:Ljava/lang/CharSequence;
+    iput-boolean p1, p0, Lfjc;->s0:Z
 
-    iput-object p3, p0, Lfjc;->c:[Ljava/lang/CharSequence;
-
-    iput-boolean p4, p0, Lfjc;->d:Z
-
-    iput p5, p0, Lfjc;->e:I
-
-    iput-object p6, p0, Lfjc;->f:Landroid/os/Bundle;
-
-    iput-object p7, p0, Lfjc;->g:Ljava/util/Set;
-
-    const/4 p0, 0x2
-
-    if-ne p5, p0, :cond_1
-
-    if-eqz p4, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalArgumentException;
-
-    const-string p1, "setEditChoicesBeforeSending requires setAllowFreeFormInput"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    :goto_0
     return-void
 .end method
 
-.method public static a(Lfjc;)Landroid/app/RemoteInput;
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
     .registers 5
 
-    new-instance v0, Landroid/app/RemoteInput$Builder;
+    const/4 v0, 0x1
 
-    iget-object v1, p0, Lfjc;->a:Ljava/lang/String;
+    if-ne p0, p1, :cond_0
 
-    invoke-direct {v0, v1}, Landroid/app/RemoteInput$Builder;-><init>(Ljava/lang/String;)V
-
-    iget-object v1, p0, Lfjc;->b:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Landroid/app/RemoteInput$Builder;->setLabel(Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lfjc;->c:[Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Landroid/app/RemoteInput$Builder;->setChoices([Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lfjc;->d:Z
-
-    invoke-virtual {v0, v1}, Landroid/app/RemoteInput$Builder;->setAllowFreeFormInput(Z)Landroid/app/RemoteInput$Builder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lfjc;->f:Landroid/os/Bundle;
-
-    invoke-virtual {v0, v1}, Landroid/app/RemoteInput$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/RemoteInput$Builder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lfjc;->g:Ljava/util/Set;
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    const/4 v3, 0x1
-
-    invoke-static {v0, v2, v3}, Ldjc;->d(Landroid/app/RemoteInput$Builder;Ljava/lang/String;Z)Landroid/app/RemoteInput$Builder;
-
-    goto :goto_0
+    return v0
 
     :cond_0
-    iget p0, p0, Lfjc;->e:I
+    instance-of v1, p1, Lfjc;
 
-    invoke-static {v0, p0}, Lejc;->b(Landroid/app/RemoteInput$Builder;I)Landroid/app/RemoteInput$Builder;
+    const/4 v2, 0x0
 
-    invoke-virtual {v0}, Landroid/app/RemoteInput$Builder;->build()Landroid/app/RemoteInput;
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lfjc;
+
+    iget-boolean p0, p0, Lfjc;->s0:Z
+
+    iget-boolean p1, p1, Lfjc;->s0:Z
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget-boolean p0, p0, Lfjc;->s0:Z
+
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .registers 3
+
+    const-string v0, "Online(online="
+
+    const-string v1, ")"
+
+    iget-boolean p0, p0, Lfjc;->s0:Z
+
+    invoke-static {v0, v1, p0}, Lz7e;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object p0
 

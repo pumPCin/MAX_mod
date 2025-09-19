@@ -1,176 +1,114 @@
 .class public final Lho4;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Lxh7;
+.field public X:I
+
+.field public final synthetic Y:Lio4;
 
 
 # direct methods
-.method public constructor <init>(Lxh7;)V
-    .registers 2
+.method public constructor <init>(Lio4;Lkotlin/coroutines/Continuation;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lho4;->Y:Lio4;
 
-    iput-object p1, p0, Lho4;->a:Lxh7;
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p2}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(JLjava/lang/Long;Ljava/lang/Long;)V
-    .registers 11
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast p1, Ly04;
 
-    const-string v1, "execute: chatId="
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0, p1, p2}, Lho4;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object p0
 
-    const-string v1, ", contactId="
+    check-cast p0, Lho4;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    sget-object p1, Lylf;->a:Lylf;
 
-    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Lho4;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v1, ", serverTime="
+    move-result-object p0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object p0
+.end method
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 3
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    new-instance p1, Lho4;
 
-    move-result-object v0
+    iget-object p0, p0, Lho4;->Y:Lio4;
 
-    const-string v1, "ho4"
+    invoke-direct {p1, p0, p2}, Lho4;-><init>(Lio4;Lkotlin/coroutines/Continuation;)V
 
-    invoke-static {v1, v0}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
+    return-object p1
+.end method
 
-    iget-object p0, p0, Lho4;->a:Lxh7;
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 4
 
-    const-wide/16 v2, 0x0
+    iget v0, p0, Lho4;->X:I
 
-    const/4 v0, 0x0
+    const/4 v1, 0x1
 
-    if-eqz p3, :cond_0
+    if-eqz v0, :cond_1
 
-    invoke-virtual {p3}, Ljava/lang/Long;->longValue()J
+    if-ne v0, v1, :cond_0
 
-    move-result-wide v4
-
-    cmp-long v4, v4, v2
-
-    if-eqz v4, :cond_0
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p4
-
-    check-cast p4, Leb2;
-
-    invoke-virtual {p3}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    invoke-virtual {p4, v4, v5}, Leb2;->z(J)Lo72;
-
-    move-result-object p3
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
     goto :goto_0
 
     :cond_0
-    if-eqz p4, :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    invoke-virtual {p4}, Ljava/lang/Long;->longValue()J
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
 
-    move-result-wide v4
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    cmp-long p3, v4, v2
-
-    if-eqz p3, :cond_1
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p3
-
-    check-cast p3, Leb2;
-
-    invoke-virtual {p4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    invoke-virtual {p3, v4, v5}, Leb2;->F(J)Lo72;
-
-    move-result-object p3
-
-    goto :goto_0
+    throw p0
 
     :cond_1
-    move-object p3, v0
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    :goto_0
-    if-nez p3, :cond_2
+    iget-object p1, p0, Lho4;->Y:Lio4;
 
-    const-string p0, "Chat is null. Ignore"
+    iget-object p1, p1, Lio4;->d:Lnxd;
 
-    invoke-static {v1, p0}, Ld86;->J(Ljava/lang/String;Ljava/lang/String;)V
+    iput v1, p0, Lho4;->X:I
 
-    return-void
+    sget-object v0, Lgo4;->a:Lgo4;
 
-    :cond_2
-    iget-object p4, p3, Lo72;->b:Lac2;
-
-    iget-object p4, p4, Lac2;->b0:Lqca;
-
-    if-nez p4, :cond_3
-
-    const-string p0, "draft is null, ignore"
-
-    invoke-static {v1, p0, v0}, Ld86;->r(Ljava/lang/String;Ljava/lang/String;Ljava/util/concurrent/CancellationException;)V
-
-    return-void
-
-    :cond_3
-    invoke-virtual {p4}, Lqca;->b()Ljava/lang/Long;
-
-    move-result-object p4
-
-    if-eqz p4, :cond_4
-
-    invoke-virtual {p4}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    :cond_4
-    cmp-long p1, v2, p1
-
-    if-lez p1, :cond_5
-
-    const-string p0, "try to rewrite draft by old, ignore it!"
-
-    invoke-static {v1, p0}, Ld86;->J(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-
-    :cond_5
-    const-string p1, "Discard server draft"
-
-    invoke-static {v1, p1}, Ld86;->l(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1, v0, p0}, Lnxd;->a(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    check-cast p0, Leb2;
+    sget-object p1, Lz04;->a:Lz04;
 
-    iget-wide p1, p3, Lo72;->a:J
+    if-ne p0, p1, :cond_2
 
-    invoke-virtual {p0, p1, p2}, Leb2;->p(J)V
+    return-object p1
 
-    return-void
+    :cond_2
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

@@ -3,113 +3,105 @@
 .source "SourceFile"
 
 
-# static fields
-.field public static final Companion:Lkdg;
-
-
 # instance fields
-.field public final a:Z
+.field public final a:Lexc;
+
+.field public final b:Ljdg;
+
+.field public final c:Lte4;
+
+.field public final d:Lwwc;
+
+.field public final e:Lwwc;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
-
-    new-instance v0, Lkdg;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    sput-object v0, Lldg;->Companion:Lkdg;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(IZ)V
-    .registers 5
-
-    and-int/lit8 v0, p1, 0x1
-
-    const/4 v1, 0x1
-
-    if-ne v1, v0, :cond_0
+.method public constructor <init>(Lru/ok/tamtam/android/db/room/OneMeRoomDatabase;)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-boolean p2, p0, Lldg;->a:Z
+    iput-object p1, p0, Lldg;->a:Lexc;
+
+    new-instance v0, Ljdg;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1}, Ljdg;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lldg;->b:Ljdg;
+
+    new-instance v0, Lte4;
+
+    const/4 v1, 0x7
+
+    invoke-direct {v0, p1, v1}, Lte4;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lldg;->c:Lte4;
+
+    new-instance v0, Lwwc;
+
+    const/16 v1, 0x17
+
+    invoke-direct {v0, p1, v1}, Lwwc;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lldg;->d:Lwwc;
+
+    new-instance v0, Lwwc;
+
+    const/16 v1, 0x18
+
+    invoke-direct {v0, p1, v1}, Lwwc;-><init>(Lexc;I)V
+
+    iput-object v0, p0, Lldg;->e:Lwwc;
+
+    new-instance p0, Lwwc;
+
+    const/16 v0, 0x19
+
+    invoke-direct {p0, p1, v0}, Lwwc;-><init>(Lexc;I)V
+
+    new-instance p0, Lwwc;
+
+    const/16 v0, 0x1a
+
+    invoke-direct {p0, p1, v0}, Lwwc;-><init>(Lexc;I)V
 
     return-void
-
-    :cond_0
-    sget-object p0, Ljdg;->a:Ljdg;
-
-    invoke-virtual {p0}, Ljdg;->d()Lkad;
-
-    move-result-object p0
-
-    invoke-static {p1, v1, p0}, Lcjg;->G(IILkad;)V
-
-    const/4 p0, 0x0
-
-    throw p0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 5
+.method public final a(JJLure;)Ljava/lang/Object;
+    .registers 9
 
-    const/4 v0, 0x1
+    const/4 v0, 0x2
 
-    if-ne p0, p1, :cond_0
+    const-string v1, "SELECT * FROM webapp_biometry WHERE user_id = ? AND bot_id = ?"
 
-    return v0
+    invoke-static {v0, v1}, Lvxc;->c(ILjava/lang/String;)Lvxc;
 
-    :cond_0
-    instance-of v1, p1, Lldg;
+    move-result-object v1
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
-    if-nez v1, :cond_1
+    invoke-virtual {v1, v2, p1, p2}, Lvxc;->k(IJ)V
 
-    return v2
+    invoke-virtual {v1, v0, p3, p4}, Lvxc;->k(IJ)V
 
-    :cond_1
-    check-cast p1, Lldg;
+    new-instance p1, Landroid/os/CancellationSignal;
 
-    iget-boolean p0, p0, Lldg;->a:Z
+    invoke-direct {p1}, Landroid/os/CancellationSignal;-><init>()V
 
-    iget-boolean p1, p1, Lldg;->a:Z
+    new-instance p2, Lidg;
 
-    if-eq p0, p1, :cond_2
+    const/4 p3, 0x1
 
-    return v2
+    invoke-direct {p2, p0, v1, p3}, Lidg;-><init>(Lldg;Lvxc;I)V
 
-    :cond_2
-    return v0
-.end method
+    iget-object p0, p0, Lldg;->a:Lexc;
 
-.method public final hashCode()I
-    .registers 1
-
-    iget-boolean p0, p0, Lldg;->a:Z
-
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .registers 3
-
-    const-string v0, "WebAppSetupClosingBehaviorRequest(needConfirmation="
-
-    const-string v1, ")"
-
-    iget-boolean p0, p0, Lldg;->a:Z
-
-    invoke-static {v0, v1, p0}, Lfge;->r(Ljava/lang/String;Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {p0, p1, p2, p5}, Lmu0;->h(Lexc;Landroid/os/CancellationSignal;Ljava/util/concurrent/Callable;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 

@@ -3,20 +3,20 @@
 .source "SourceFile"
 
 # interfaces
-.implements Ll61;
+.implements Ld61;
 
 
 # instance fields
-.field public final a:Li13;
+.field public final a:Lcp7;
 
 
 # direct methods
-.method public constructor <init>(Li13;)V
+.method public constructor <init>(Lcp7;)V
     .registers 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lw51;->a:Li13;
+    iput-object p1, p0, Lw51;->a:Lcp7;
 
     return-void
 .end method
@@ -44,11 +44,11 @@
     :cond_1
     check-cast p1, Lw51;
 
-    iget-object p0, p0, Lw51;->a:Li13;
+    iget-object p0, p0, Lw51;->a:Lcp7;
 
-    iget-object p1, p1, Lw51;->a:Li13;
+    iget-object p1, p1, Lw51;->a:Lcp7;
 
-    invoke-static {p0, p1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p0
 
@@ -63,9 +63,9 @@
 .method public final hashCode()I
     .registers 1
 
-    iget-object p0, p0, Lw51;->a:Li13;
+    iget-object p0, p0, Lw51;->a:Lcp7;
 
-    invoke-virtual {p0}, Li13;->hashCode()I
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result p0
 
@@ -77,11 +77,11 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "ChatsUpdate(info="
+    const-string v1, "LinkInfo(info="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object p0, p0, Lw51;->a:Li13;
+    iget-object p0, p0, Lw51;->a:Lcp7;
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

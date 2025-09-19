@@ -1,10 +1,10 @@
 .class public final Ll6;
-.super Lm6;
+.super Lp6;
 .source "SourceFile"
 
 
 # instance fields
-.field public final a:Lqte;
+.field public final a:Lp2f;
 
 .field public final b:I
 
@@ -15,19 +15,19 @@
 .method public constructor <init>()V
     .registers 4
 
-    sget v0, Lv9a;->J:I
+    sget v0, Ldea;->M:I
 
-    new-instance v1, Lqte;
+    new-instance v1, Lp2f;
 
-    invoke-direct {v1, v0}, Lqte;-><init>(I)V
+    invoke-direct {v1, v0}, Lp2f;-><init>(I)V
 
-    sget v0, Ltsc;->V:I
+    sget v0, Lzda;->N0:I
 
-    sget v2, Ls9a;->G:I
+    sget v2, Laea;->r:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v1, p0, Ll6;->a:Lqte;
+    iput-object v1, p0, Ll6;->a:Lp2f;
 
     iput v0, p0, Ll6;->b:I
 
@@ -55,11 +55,11 @@
     :cond_1
     check-cast p1, Ll6;
 
-    iget-object v0, p0, Ll6;->a:Lqte;
+    iget-object v0, p0, Ll6;->a:Lp2f;
 
-    iget-object v1, p1, Ll6;->a:Lqte;
+    iget-object v1, p1, Ll6;->a:Lp2f;
 
-    invoke-static {v0, v1}, Lj67;->f(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, v1}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -111,10 +111,10 @@
     return p0
 .end method
 
-.method public final getName()Lvte;
+.method public final getName()Lu2f;
     .registers 1
 
-    iget-object p0, p0, Ll6;->a:Lqte;
+    iget-object p0, p0, Ll6;->a:Lp2f;
 
     return-object p0
 .end method
@@ -122,9 +122,9 @@
 .method public final hashCode()I
     .registers 4
 
-    iget-object v0, p0, Ll6;->a:Lqte;
+    iget-object v0, p0, Ll6;->a:Lp2f;
 
-    iget v0, v0, Lqte;->b:I
+    iget v0, v0, Lp2f;->b:I
 
     invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -136,7 +136,7 @@
 
     iget v2, p0, Ll6;->b:I
 
-    invoke-static {v2, v0, v1}, Lfge;->m(III)I
+    invoke-static {v2, v0, v1}, Lz7e;->m(III)I
 
     move-result v0
 
@@ -156,11 +156,11 @@
 
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "WriteToChat(name="
+    const-string v1, "OpenProfile(name="
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v1, p0, Ll6;->a:Lqte;
+    iget-object v1, p0, Ll6;->a:Lp2f;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -180,7 +180,7 @@
 
     iget p0, p0, Ll6;->c:I
 
-    invoke-static {v0, p0, v1}, La78;->m(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lyv7;->i(Ljava/lang/StringBuilder;ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

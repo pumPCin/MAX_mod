@@ -1,138 +1,170 @@
-.class public final Ll17;
-.super Ljava/lang/Object;
+.class public final enum Ll17;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/lang/Thread$UncaughtExceptionHandler;
 
-
-# instance fields
-.field public final a:Lml5;
-
-.field public final b:Landroid/content/SharedPreferences;
-
-.field public final c:Ljava/lang/Thread$UncaughtExceptionHandler;
-
-.field public final d:Ljava/util/concurrent/atomic/AtomicBoolean;
+# static fields
+.field public static final synthetic a:[Ll17;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lml5;Lp77;)V
-    .registers 4
+.method static constructor <clinit>()V
+    .registers 9
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ll17;
 
-    iput-object p2, p0, Ll17;->a:Lml5;
+    const-string v1, "UNKNOWN"
 
-    const-string p2, "app_crash_prefs"
+    const/4 v2, 0x0
 
-    const/4 p3, 0x0
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    invoke-virtual {p1, p2, p3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    new-instance v1, Ll17;
 
-    move-result-object p1
+    const-string v2, "REQUESTED"
 
-    iput-object p1, p0, Ll17;->b:Landroid/content/SharedPreferences;
+    const/4 v3, 0x1
 
-    invoke-static {}, Ljava/lang/Thread;->getDefaultUncaughtExceptionHandler()Ljava/lang/Thread$UncaughtExceptionHandler;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    move-result-object p1
+    new-instance v2, Ll17;
 
-    iput-object p1, p0, Ll17;->c:Ljava/lang/Thread$UncaughtExceptionHandler;
+    const-string v3, "INTERMEDIATE_AVAILABLE"
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicBoolean;
+    const/4 v4, 0x2
 
-    invoke-direct {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    iput-object p1, p0, Ll17;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
+    new-instance v3, Ll17;
+
+    const-string v4, "SUCCESS"
+
+    const/4 v5, 0x3
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v4, Ll17;
+
+    const-string v5, "ERROR"
+
+    const/4 v6, 0x4
+
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v5, Ll17;
+
+    const-string v6, "EMPTY_EVENT"
+
+    const/4 v7, 0x5
+
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    new-instance v6, Ll17;
+
+    const-string v7, "RELEASED"
+
+    const/4 v8, 0x6
+
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    filled-new-array/range {v0 .. v6}, [Ll17;
+
+    move-result-object v0
+
+    sput-object v0, Ll17;->a:[Ll17;
+
+    invoke-static {}, Ll17;->values()[Ll17;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Ll17;
+    .registers 2
 
-# virtual methods
-.method public final uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
-    .registers 7
+    const-class v0, Ll17;
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    move-result-wide v0
+    move-result-object p0
 
-    iget-object v2, p0, Ll17;->b:Landroid/content/SharedPreferences;
+    check-cast p0, Ll17;
 
-    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    return-object p0
+.end method
 
-    move-result-object v2
+.method public static values()[Ll17;
+    .registers 1
 
-    const-string v3, "pref_last_crash_time"
+    sget-object v0, Ll17;->a:[Ll17;
 
-    invoke-interface {v2, v3, v0, v1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    check-cast v0, [Ll17;
 
-    iget-object v0, p0, Ll17;->c:Ljava/lang/Thread$UncaughtExceptionHandler;
+    return-object v0
+.end method
 
-    if-eqz v0, :cond_0
 
-    invoke-interface {v0, p1, p2}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .registers 2
+
+    sget-object v0, Lk17;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+
+    move-result p0
+
+    aget p0, v0, p0
+
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_4
+
+    const/4 v0, 0x2
+
+    if-eq p0, v0, :cond_3
+
+    const/4 v0, 0x3
+
+    if-eq p0, v0, :cond_2
+
+    const/4 v0, 0x4
+
+    if-eq p0, v0, :cond_1
+
+    const/4 v0, 0x5
+
+    if-eq p0, v0, :cond_0
+
+    const-string p0, "unknown"
+
+    return-object p0
 
     :cond_0
-    sget p1, Lone/me/android/OneMeApplication;->o0:I
+    const-string p0, "released"
 
-    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    const/4 p2, 0x1
-
-    if-ne p1, p2, :cond_1
-
-    iget-object p1, p0, Ll17;->d:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_1
-
-    iget-object p0, p0, Ll17;->a:Lml5;
-
-    if-eqz p0, :cond_1
-
-    new-instance p1, Ljava/util/Date;
-
-    invoke-direct {p1}, Ljava/util/Date;-><init>()V
-
-    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
-
-    move-result-wide p1
-
-    const-string v0, "oneme_heap_dump_-"
-
-    const-string v1, ".hprof"
-
-    invoke-static {p1, p2, v0, v1}, La78;->j(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p1
-
-    check-cast p0, Lan5;
-
-    invoke-virtual {p0, p1}, Lan5;->i(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Landroid/os/Debug;->dumpHprofData(Ljava/lang/String;)V
+    return-object p0
 
     :cond_1
-    return-void
+    const-string p0, "error"
+
+    return-object p0
+
+    :cond_2
+    const-string p0, "intermediate_available"
+
+    return-object p0
+
+    :cond_3
+    const-string p0, "success"
+
+    return-object p0
+
+    :cond_4
+    const-string p0, "requested"
+
+    return-object p0
 .end method

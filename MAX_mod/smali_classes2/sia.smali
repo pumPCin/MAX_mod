@@ -1,73 +1,66 @@
-.class public abstract Lsia;
+.class public final synthetic Lsia;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lzb6;
 
-# static fields
-.field public static final a:I
 
-.field public static final b:I
+# instance fields
+.field public final synthetic X:Lcl7;
 
-.field public static final c:I
+.field public final synthetic Y:Lcl7;
 
-.field public static final d:I
+.field public final synthetic a:Lcl7;
 
-.field public static final e:I
+.field public final synthetic b:Lcl7;
 
-.field public static final f:I
+.field public final synthetic c:Lcl7;
 
-.field public static final g:I
-
-.field public static final h:I
-
-.field public static final i:I
-
-.field public static final j:I
+.field public final synthetic o:Lcl7;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 1
+.method public synthetic constructor <init>(Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;)V
+    .registers 7
 
-    sget v0, Ln4c;->permissions_allow_access:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    sput v0, Lsia;->a:I
+    iput-object p1, p0, Lsia;->a:Lcl7;
 
-    sget v0, Ln4c;->permissions_audio_denied_title:I
+    iput-object p2, p0, Lsia;->b:Lcl7;
 
-    sput v0, Lsia;->b:I
+    iput-object p3, p0, Lsia;->c:Lcl7;
 
-    sget v0, Ln4c;->permissions_audio_request_denied:I
+    iput-object p4, p0, Lsia;->o:Lcl7;
 
-    sput v0, Lsia;->c:I
+    iput-object p5, p0, Lsia;->X:Lcl7;
 
-    sget v0, Ln4c;->permissions_audio_title:I
-
-    sput v0, Lsia;->d:I
-
-    sget v0, Ln4c;->permissions_dialog_no:I
-
-    sput v0, Lsia;->e:I
-
-    sget v0, Ln4c;->permissions_dialog_open_setting:I
-
-    sput v0, Lsia;->f:I
-
-    sget v0, Ln4c;->permissions_dialog_yes:I
-
-    sput v0, Lsia;->g:I
-
-    sget v0, Ln4c;->permissions_video_message_request:I
-
-    sput v0, Lsia;->h:I
-
-    sget v0, Ln4c;->permissions_video_message_request_only_camera_title:I
-
-    sput v0, Lsia;->i:I
-
-    sget v0, Ln4c;->permissions_video_message_request_title:I
-
-    sput v0, Lsia;->j:I
+    iput-object p6, p0, Lsia;->Y:Lcl7;
 
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .registers 8
+
+    new-instance v0, Ljg9;
+
+    iget-object v1, p0, Lsia;->a:Lcl7;
+
+    iget-object v2, p0, Lsia;->b:Lcl7;
+
+    iget-object v3, p0, Lsia;->c:Lcl7;
+
+    iget-object v4, p0, Lsia;->o:Lcl7;
+
+    iget-object v5, p0, Lsia;->X:Lcl7;
+
+    iget-object v6, p0, Lsia;->Y:Lcl7;
+
+    invoke-direct/range {v0 .. v6}, Ljg9;-><init>(Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;Lcl7;)V
+
+    return-object v0
 .end method

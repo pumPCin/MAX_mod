@@ -1,45 +1,83 @@
 .class public final Lgf6;
-.super Lcx3;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Lif6;
 
 
 # instance fields
-.field public final synthetic X:Ljf6;
-
-.field public Y:I
-
-.field public synthetic o:Ljava/lang/Object;
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Ljf6;Lcx3;)V
-    .registers 3
+.method public constructor <init>(I)V
+    .registers 2
 
-    iput-object p1, p0, Lgf6;->X:Ljf6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p2}, Lcx3;-><init>(Lkotlin/coroutines/Continuation;)V
+    iput p1, p0, Lgf6;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
+    .registers 5
+
+    const/4 v0, 0x1
+
+    if-ne p0, p1, :cond_0
+
+    return v0
+
+    :cond_0
+    instance-of v1, p1, Lgf6;
+
+    const/4 v2, 0x0
+
+    if-nez v1, :cond_1
+
+    return v2
+
+    :cond_1
+    check-cast p1, Lgf6;
+
+    iget p0, p0, Lgf6;->a:I
+
+    iget p1, p1, Lgf6;->a:I
+
+    if-eq p0, p1, :cond_2
+
+    return v2
+
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .registers 1
+
+    iget p0, p0, Lgf6;->a:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
     .registers 3
 
-    iput-object p1, p0, Lgf6;->o:Ljava/lang/Object;
+    const-string v0, "UpdateCameraLayoutParams(size="
 
-    iget p1, p0, Lgf6;->Y:I
+    const-string v1, ")"
 
-    const/high16 v0, -0x80000000
+    iget p0, p0, Lgf6;->a:I
 
-    or-int/2addr p1, v0
-
-    iput p1, p0, Lgf6;->Y:I
-
-    iget-object p1, p0, Lgf6;->X:Ljf6;
-
-    invoke-virtual {p1, p0}, Ljf6;->b(Lcx3;)Ljava/lang/Object;
+    invoke-static {p0, v0, v1}, Lsg0;->e(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 

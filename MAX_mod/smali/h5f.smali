@@ -1,154 +1,129 @@
 .class public final Lh5f;
-.super Ld5f;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ldjb;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lytc;
 
-.field public b:Li5f;
+.field public b:I
+
+.field public final c:Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+.field public final d:Ljava/util/concurrent/Executor;
 
 
 # direct methods
-.method public synthetic constructor <init>()V
-    .registers 2
-
-    const/4 v0, 0x1
-
-    iput v0, p0, Lh5f;->a:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Li5f;)V
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lytc;)V
     .registers 3
 
-    const/4 v0, 0x0
-
-    iput v0, p0, Lh5f;->a:I
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lh5f;->b:Li5f;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iput-object p1, p0, Lh5f;->d:Ljava/util/concurrent/Executor;
+
+    iput-object p2, p0, Lh5f;->a:Lytc;
+
+    new-instance p1, Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    invoke-direct {p1}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
+
+    iput-object p1, p0, Lh5f;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
+
+    const/4 p1, 0x0
+
+    iput p1, p0, Lh5f;->b:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public a(La5f;)V
-    .registers 2
+.method public final a(Ldi0;Lejb;)V
+    .registers 6
 
-    iget p1, p0, Lh5f;->a:I
+    move-object v0, p2
 
-    packed-switch p1, :pswitch_data_0
+    check-cast v0, Lmj0;
 
-    return-void
+    iget-object v0, v0, Lmj0;->c:Lhjb;
 
-    :pswitch_0
-    iget-object p0, p0, Lh5f;->b:Li5f;
+    const-string v1, "ThrottlingProducer"
 
-    iget-boolean p1, p0, Li5f;->P0:Z
+    invoke-interface {v0, p2, v1}, Lhjb;->j(Lejb;Ljava/lang/String;)V
 
-    if-nez p1, :cond_0
+    monitor-enter p0
 
-    invoke-virtual {p0}, La5f;->P()V
+    :try_start_0
+    iget v0, p0, Lh5f;->b:I
 
-    const/4 p1, 0x1
+    const/4 v1, 0x5
 
-    iput-boolean p1, p0, Li5f;->P0:Z
+    const/4 v2, 0x1
 
-    :cond_0
-    return-void
+    if-lt v0, v1, :cond_0
 
-    nop
+    iget-object v0, p0, Lh5f;->c:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
+    invoke-static {p1, p2}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
-.method public c(La5f;)V
-    .registers 4
+    move-result-object v1
 
-    iget v0, p0, Lh5f;->a:I
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->add(Ljava/lang/Object;)Z
 
-    packed-switch v0, :pswitch_data_0
+    goto :goto_0
 
-    return-void
+    :catchall_0
+    move-exception p1
 
-    :pswitch_0
-    iget-object v0, p0, Lh5f;->b:Li5f;
-
-    iget v1, v0, Li5f;->O0:I
-
-    add-int/lit8 v1, v1, -0x1
-
-    iput v1, v0, Li5f;->O0:I
-
-    if-nez v1, :cond_0
-
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Li5f;->P0:Z
-
-    invoke-virtual {v0}, La5f;->n()V
+    goto :goto_1
 
     :cond_0
-    invoke-virtual {p1, p0}, La5f;->E(Ly4f;)La5f;
+    add-int/2addr v0, v2
 
+    iput v0, p0, Lh5f;->b:I
+
+    const/4 v2, 0x0
+
+    :goto_0
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    if-nez v2, :cond_1
+
+    move-object v0, p2
+
+    check-cast v0, Lmj0;
+
+    iget-object v0, v0, Lmj0;->c:Lhjb;
+
+    const-string v1, "ThrottlingProducer"
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0, p2, v1, v2}, Lhjb;->a(Lejb;Ljava/lang/String;Ljava/util/Map;)V
+
+    iget-object v0, p0, Lh5f;->a:Lytc;
+
+    new-instance v1, Lg5f;
+
+    invoke-direct {v1, p0, p1}, Lg5f;-><init>(Lh5f;Ldi0;)V
+
+    invoke-virtual {v0, v1, p2}, Lytc;->a(Ldi0;Lejb;)V
+
+    :cond_1
     return-void
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-.method public h(La5f;)V
-    .registers 3
-
-    iget v0, p0, Lh5f;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Lh5f;->b:Li5f;
-
-    iget-object v0, p0, Li5f;->M0:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    invoke-virtual {p0}, Li5f;->w()Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    sget-object p1, Lz4f;->o:Lz4f;
-
-    invoke-virtual {p0, p1}, La5f;->B(Lz4f;)V
-
-    const/4 p1, 0x1
-
-    iput-boolean p1, p0, La5f;->z0:Z
-
-    sget-object p1, Lz4f;->c:Lz4f;
-
-    invoke-virtual {p0, p1}, La5f;->B(Lz4f;)V
-
-    :cond_0
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    throw p1
 .end method

@@ -2,936 +2,1142 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements La85;
-.implements Lg26;
-
 
 # static fields
-.field public static final s0:Ljava/lang/String;
+.field public static final u:Lyp8;
 
 
 # instance fields
-.field public final X:Landroidx/work/impl/WorkDatabase;
+.field public final a:Lp6f;
 
-.field public final Y:Ljava/util/HashMap;
+.field public final b:Lyp8;
 
-.field public final Z:Ljava/util/HashMap;
+.field public final c:J
 
-.field public a:Landroid/os/PowerManager$WakeLock;
+.field public final d:J
 
-.field public final b:Landroid/content/Context;
+.field public final e:I
 
-.field public final c:Leh3;
+.field public final f:Landroidx/media3/exoplayer/ExoPlaybackException;
 
-.field public final n0:Ljava/util/HashMap;
+.field public final g:Z
 
-.field public final o:Lqo8;
+.field public final h:Lwbf;
 
-.field public final o0:Ljava/util/List;
+.field public final i:Lpcf;
 
-.field public final p0:Ljava/util/HashSet;
+.field public final j:Ljava/util/List;
 
-.field public final q0:Ljava/util/ArrayList;
+.field public final k:Lyp8;
 
-.field public final r0:Ljava/lang/Object;
+.field public final l:Z
+
+.field public final m:I
+
+.field public final n:I
+
+.field public final o:Ldcb;
+
+.field public final p:Z
+
+.field public volatile q:J
+
+.field public volatile r:J
+
+.field public volatile s:J
+
+.field public volatile t:J
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 2
 
-    const-string v0, "Processor"
+    new-instance v0, Lyp8;
 
-    invoke-static {v0}, Las3;->f0(Ljava/lang/String;)Ljava/lang/String;
+    new-instance v1, Ljava/lang/Object;
 
-    move-result-object v0
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lbcb;->s0:Ljava/lang/String;
+    invoke-direct {v0, v1}, Lyp8;-><init>(Ljava/lang/Object;)V
+
+    sput-object v0, Lbcb;->u:Lyp8;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Leh3;Lqo8;Landroidx/work/impl/WorkDatabase;Ljava/util/List;)V
-    .registers 6
+.method public constructor <init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
+    .registers 27
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lbcb;->b:Landroid/content/Context;
+    iput-object p1, p0, Lbcb;->a:Lp6f;
 
-    iput-object p2, p0, Lbcb;->c:Leh3;
+    iput-object p2, p0, Lbcb;->b:Lyp8;
 
-    iput-object p3, p0, Lbcb;->o:Lqo8;
+    iput-wide p3, p0, Lbcb;->c:J
 
-    iput-object p4, p0, Lbcb;->X:Landroidx/work/impl/WorkDatabase;
+    iput-wide p5, p0, Lbcb;->d:J
 
-    new-instance p1, Ljava/util/HashMap;
+    iput p7, p0, Lbcb;->e:I
 
-    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
+    iput-object p8, p0, Lbcb;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
 
-    iput-object p1, p0, Lbcb;->Z:Ljava/util/HashMap;
+    iput-boolean p9, p0, Lbcb;->g:Z
 
-    new-instance p1, Ljava/util/HashMap;
+    iput-object p10, p0, Lbcb;->h:Lwbf;
 
-    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
+    iput-object p11, p0, Lbcb;->i:Lpcf;
 
-    iput-object p1, p0, Lbcb;->Y:Ljava/util/HashMap;
+    iput-object p12, p0, Lbcb;->j:Ljava/util/List;
 
-    iput-object p5, p0, Lbcb;->o0:Ljava/util/List;
+    iput-object p13, p0, Lbcb;->k:Lyp8;
 
-    new-instance p1, Ljava/util/HashSet;
+    iput-boolean p14, p0, Lbcb;->l:Z
 
-    invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
+    iput p15, p0, Lbcb;->m:I
 
-    iput-object p1, p0, Lbcb;->p0:Ljava/util/HashSet;
+    move/from16 p1, p16
 
-    new-instance p1, Ljava/util/ArrayList;
+    iput p1, p0, Lbcb;->n:I
 
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+    move-object/from16 p1, p17
 
-    iput-object p1, p0, Lbcb;->q0:Ljava/util/ArrayList;
+    iput-object p1, p0, Lbcb;->o:Ldcb;
 
-    const/4 p1, 0x0
+    move-wide/from16 p1, p18
 
-    iput-object p1, p0, Lbcb;->a:Landroid/os/PowerManager$WakeLock;
+    iput-wide p1, p0, Lbcb;->q:J
 
-    new-instance p1, Ljava/lang/Object;
+    move-wide/from16 p1, p20
 
-    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+    iput-wide p1, p0, Lbcb;->r:J
 
-    iput-object p1, p0, Lbcb;->r0:Ljava/lang/Object;
+    move-wide/from16 p1, p22
 
-    new-instance p1, Ljava/util/HashMap;
+    iput-wide p1, p0, Lbcb;->s:J
 
-    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
+    move-wide/from16 p1, p24
 
-    iput-object p1, p0, Lbcb;->n0:Ljava/util/HashMap;
+    iput-wide p1, p0, Lbcb;->t:J
+
+    move/from16 p1, p26
+
+    iput-boolean p1, p0, Lbcb;->p:Z
 
     return-void
 .end method
 
-.method public static c(Ljava/lang/String;Lnmg;)Z
-    .registers 6
+.method public static j(Lpcf;)Lbcb;
+    .registers 28
 
-    if-eqz p1, :cond_1
+    new-instance v0, Lbcb;
 
-    const/4 v0, 0x1
+    sget-object v1, Lp6f;->a:Li6f;
 
-    iput-boolean v0, p1, Lnmg;->x0:Z
+    sget-object v10, Lwbf;->d:Lwbf;
 
-    invoke-virtual {p1}, Lnmg;->h()Z
+    sget-object v12, Llqc;->X:Llqc;
 
-    iget-object v1, p1, Lnmg;->w0:Lsfd;
+    sget-object v17, Ldcb;->d:Ldcb;
 
-    invoke-virtual {v1, v0}, Ll1;->cancel(Z)Z
+    const-wide/16 v24, 0x0
 
-    iget-object v1, p1, Lnmg;->Y:Lhq7;
+    const/16 v26, 0x0
 
-    if-eqz v1, :cond_0
+    sget-object v2, Lbcb;->u:Lyp8;
 
-    iget-object v1, p1, Lnmg;->w0:Lsfd;
+    const-wide v3, -0x7fffffffffffffffL    # -4.9E-324
 
-    iget-object v1, v1, Ll1;->a:Ljava/lang/Object;
+    const-wide/16 v5, 0x0
 
-    instance-of v1, v1, Lp0;
+    const/4 v7, 0x1
 
-    if-eqz v1, :cond_0
+    const/4 v8, 0x0
 
-    iget-object p1, p1, Lnmg;->Y:Lhq7;
+    const/4 v9, 0x0
 
-    invoke-virtual {p1}, Lhq7;->stop()V
+    const/4 v14, 0x0
 
-    goto :goto_0
+    const/4 v15, 0x1
 
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    const/16 v16, 0x0
 
-    const-string v2, "WorkSpec "
+    const-wide/16 v18, 0x0
 
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const-wide/16 v20, 0x0
 
-    iget-object p1, p1, Lnmg;->X:Lylg;
+    const-wide/16 v22, 0x0
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-object v13, v2
 
-    const-string p1, " is already done. Not interrupting."
+    move-object/from16 v11, p0
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct/range {v0 .. v26}, Lbcb;-><init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object v1
-
-    sget-object v2, Lnmg;->y0:Ljava/lang/String;
-
-    invoke-virtual {v1, v2, p1}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    :goto_0
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object p1
-
-    sget-object v1, Lbcb;->s0:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "WorkerWrapper interrupted for "
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p1, v1, p0}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    return v0
-
-    :cond_1
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object p1
-
-    sget-object v0, Lbcb;->s0:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    const-string v2, "WorkerWrapper could not be found for "
-
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {p1, v0, p0}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 p0, 0x0
-
-    return p0
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Ldlg;Z)V
-    .registers 8
+.method public final a()Lbcb;
+    .registers 30
 
-    iget-object v0, p0, Lbcb;->r0:Ljava/lang/Object;
+    move-object/from16 v0, p0
 
-    monitor-enter v0
+    new-instance v1, Lbcb;
 
-    :try_start_0
-    iget-object v1, p0, Lbcb;->Z:Ljava/util/HashMap;
+    move-object v2, v1
 
-    iget-object v2, p1, Ldlg;->a:Ljava/lang/String;
+    iget-object v1, v0, Lbcb;->a:Lp6f;
 
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v3, v2
 
-    move-result-object v1
+    iget-object v2, v0, Lbcb;->b:Lyp8;
 
-    check-cast v1, Lnmg;
+    move-object v5, v3
 
-    if-eqz v1, :cond_0
+    iget-wide v3, v0, Lbcb;->c:J
 
-    iget-object v1, v1, Lnmg;->X:Lylg;
+    move-object v7, v5
 
-    invoke-static {v1}, Lfog;->B(Lylg;)Ldlg;
+    iget-wide v5, v0, Lbcb;->d:J
 
-    move-result-object v1
+    move-object v8, v7
 
-    invoke-virtual {p1, v1}, Ldlg;->equals(Ljava/lang/Object;)Z
+    iget v7, v0, Lbcb;->e:I
 
-    move-result v1
+    move-object v9, v8
 
-    if-eqz v1, :cond_0
+    iget-object v8, v0, Lbcb;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
 
-    iget-object v1, p0, Lbcb;->Z:Ljava/util/HashMap;
+    move-object v10, v9
 
-    iget-object v2, p1, Ldlg;->a:Ljava/lang/String;
+    iget-boolean v9, v0, Lbcb;->g:Z
 
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v11, v10
 
-    goto :goto_0
+    iget-object v10, v0, Lbcb;->h:Lwbf;
 
-    :catchall_0
-    move-exception p0
+    move-object v12, v11
 
-    goto :goto_2
+    iget-object v11, v0, Lbcb;->i:Lpcf;
+
+    move-object v13, v12
+
+    iget-object v12, v0, Lbcb;->j:Ljava/util/List;
+
+    move-object v14, v13
+
+    iget-object v13, v0, Lbcb;->k:Lyp8;
+
+    move-object v15, v14
+
+    iget-boolean v14, v0, Lbcb;->l:Z
+
+    move-object/from16 v16, v15
+
+    iget v15, v0, Lbcb;->m:I
+
+    move-object/from16 v17, v1
+
+    iget v1, v0, Lbcb;->n:I
+
+    move/from16 v18, v1
+
+    iget-object v1, v0, Lbcb;->o:Ldcb;
+
+    move-object/from16 v20, v1
+
+    move-object/from16 v19, v2
+
+    iget-wide v1, v0, Lbcb;->q:J
+
+    move-wide/from16 v21, v1
+
+    iget-wide v1, v0, Lbcb;->r:J
+
+    move-object/from16 v24, v17
+
+    move-object/from16 v17, v20
+
+    move-wide/from16 v27, v1
+
+    move-object/from16 v1, v16
+
+    move/from16 v16, v18
+
+    move-object/from16 v2, v19
+
+    move-wide/from16 v18, v21
+
+    move-wide/from16 v20, v27
+
+    invoke-virtual {v0}, Lbcb;->k()J
+
+    move-result-wide v22
+
+    move-object/from16 v26, v1
+
+    move-object/from16 v1, v24
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v24
+
+    iget-boolean v0, v0, Lbcb;->p:Z
+
+    move-object/from16 v27, v26
+
+    move/from16 v26, v0
+
+    move-object/from16 v0, v27
+
+    invoke-direct/range {v0 .. v26}, Lbcb;-><init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
+
+    return-object v0
+.end method
+
+.method public final b(Z)Lbcb;
+    .registers 31
+
+    move-object/from16 v0, p0
+
+    new-instance v1, Lbcb;
+
+    move-object v2, v1
+
+    iget-object v1, v0, Lbcb;->a:Lp6f;
+
+    move-object v3, v2
+
+    iget-object v2, v0, Lbcb;->b:Lyp8;
+
+    move-object v5, v3
+
+    iget-wide v3, v0, Lbcb;->c:J
+
+    move-object v7, v5
+
+    iget-wide v5, v0, Lbcb;->d:J
+
+    move-object v8, v7
+
+    iget v7, v0, Lbcb;->e:I
+
+    move-object v9, v8
+
+    iget-object v8, v0, Lbcb;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
+
+    iget-object v10, v0, Lbcb;->h:Lwbf;
+
+    iget-object v11, v0, Lbcb;->i:Lpcf;
+
+    iget-object v12, v0, Lbcb;->j:Ljava/util/List;
+
+    iget-object v13, v0, Lbcb;->k:Lyp8;
+
+    iget-boolean v14, v0, Lbcb;->l:Z
+
+    iget v15, v0, Lbcb;->m:I
+
+    move-object/from16 v16, v1
+
+    iget v1, v0, Lbcb;->n:I
+
+    move/from16 v17, v1
+
+    iget-object v1, v0, Lbcb;->o:Ldcb;
+
+    move-object/from16 v19, v1
+
+    move-object/from16 v18, v2
+
+    iget-wide v1, v0, Lbcb;->q:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lbcb;->r:J
+
+    move-wide/from16 v22, v1
+
+    iget-wide v1, v0, Lbcb;->s:J
+
+    move-wide/from16 v24, v1
+
+    iget-wide v1, v0, Lbcb;->t:J
+
+    iget-boolean v0, v0, Lbcb;->p:Z
+
+    move/from16 v26, v0
+
+    move-object v0, v9
+
+    move/from16 v9, p1
+
+    move-wide/from16 v27, v1
+
+    move-object/from16 v1, v16
+
+    move/from16 v16, v17
+
+    move-object/from16 v2, v18
+
+    move-object/from16 v17, v19
+
+    move-wide/from16 v18, v20
+
+    move-wide/from16 v20, v22
+
+    move-wide/from16 v22, v24
+
+    move-wide/from16 v24, v27
+
+    invoke-direct/range {v0 .. v26}, Lbcb;-><init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
+
+    return-object v0
+.end method
+
+.method public final c(Lyp8;)Lbcb;
+    .registers 31
+
+    move-object/from16 v0, p0
+
+    new-instance v1, Lbcb;
+
+    move-object v2, v1
+
+    iget-object v1, v0, Lbcb;->a:Lp6f;
+
+    move-object v3, v2
+
+    iget-object v2, v0, Lbcb;->b:Lyp8;
+
+    move-object v5, v3
+
+    iget-wide v3, v0, Lbcb;->c:J
+
+    move-object v7, v5
+
+    iget-wide v5, v0, Lbcb;->d:J
+
+    move-object v8, v7
+
+    iget v7, v0, Lbcb;->e:I
+
+    move-object v9, v8
+
+    iget-object v8, v0, Lbcb;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
+
+    move-object v10, v9
+
+    iget-boolean v9, v0, Lbcb;->g:Z
+
+    move-object v11, v10
+
+    iget-object v10, v0, Lbcb;->h:Lwbf;
+
+    move-object v12, v11
+
+    iget-object v11, v0, Lbcb;->i:Lpcf;
+
+    move-object v13, v12
+
+    iget-object v12, v0, Lbcb;->j:Ljava/util/List;
+
+    iget-boolean v14, v0, Lbcb;->l:Z
+
+    iget v15, v0, Lbcb;->m:I
+
+    move-object/from16 v16, v1
+
+    iget v1, v0, Lbcb;->n:I
+
+    move/from16 v17, v1
+
+    iget-object v1, v0, Lbcb;->o:Ldcb;
+
+    move-object/from16 v19, v1
+
+    move-object/from16 v18, v2
+
+    iget-wide v1, v0, Lbcb;->q:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lbcb;->r:J
+
+    move-wide/from16 v22, v1
+
+    iget-wide v1, v0, Lbcb;->s:J
+
+    move-wide/from16 v24, v1
+
+    iget-wide v1, v0, Lbcb;->t:J
+
+    iget-boolean v0, v0, Lbcb;->p:Z
+
+    move/from16 v26, v0
+
+    move-object v0, v13
+
+    move-object/from16 v13, p1
+
+    move-wide/from16 v27, v1
+
+    move-object/from16 v1, v16
+
+    move/from16 v16, v17
+
+    move-object/from16 v2, v18
+
+    move-object/from16 v17, v19
+
+    move-wide/from16 v18, v20
+
+    move-wide/from16 v20, v22
+
+    move-wide/from16 v22, v24
+
+    move-wide/from16 v24, v27
+
+    invoke-direct/range {v0 .. v26}, Lbcb;-><init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
+
+    return-object v0
+.end method
+
+.method public final d(Lyp8;JJJJLwbf;Lpcf;Ljava/util/List;)Lbcb;
+    .registers 40
+
+    move-object/from16 v0, p0
+
+    new-instance v1, Lbcb;
+
+    move-object v2, v1
+
+    iget-object v1, v0, Lbcb;->a:Lp6f;
+
+    iget v7, v0, Lbcb;->e:I
+
+    iget-object v8, v0, Lbcb;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
+
+    iget-boolean v9, v0, Lbcb;->g:Z
+
+    iget-object v13, v0, Lbcb;->k:Lyp8;
+
+    iget-boolean v14, v0, Lbcb;->l:Z
+
+    iget v15, v0, Lbcb;->m:I
+
+    iget v3, v0, Lbcb;->n:I
+
+    iget-object v4, v0, Lbcb;->o:Ldcb;
+
+    iget-wide v5, v0, Lbcb;->q:J
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v24
+
+    iget-boolean v0, v0, Lbcb;->p:Z
+
+    move-wide/from16 v22, p2
+
+    move-wide/from16 v20, p8
+
+    move-object/from16 v10, p10
+
+    move-object/from16 v11, p11
+
+    move-object/from16 v12, p12
+
+    move/from16 v26, v0
+
+    move-object v0, v2
+
+    move/from16 v16, v3
+
+    move-object/from16 v17, v4
+
+    move-wide/from16 v18, v5
+
+    move-object/from16 v2, p1
+
+    move-wide/from16 v3, p4
+
+    move-wide/from16 v5, p6
+
+    invoke-direct/range {v0 .. v26}, Lbcb;-><init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
+
+    return-object v0
+.end method
+
+.method public final e(IIZ)Lbcb;
+    .registers 31
+
+    move-object/from16 v0, p0
+
+    new-instance v1, Lbcb;
+
+    move-object v2, v1
+
+    iget-object v1, v0, Lbcb;->a:Lp6f;
+
+    move-object v3, v2
+
+    iget-object v2, v0, Lbcb;->b:Lyp8;
+
+    move-object v5, v3
+
+    iget-wide v3, v0, Lbcb;->c:J
+
+    move-object v7, v5
+
+    iget-wide v5, v0, Lbcb;->d:J
+
+    move-object v8, v7
+
+    iget v7, v0, Lbcb;->e:I
+
+    move-object v9, v8
+
+    iget-object v8, v0, Lbcb;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
+
+    move-object v10, v9
+
+    iget-boolean v9, v0, Lbcb;->g:Z
+
+    move-object v11, v10
+
+    iget-object v10, v0, Lbcb;->h:Lwbf;
+
+    move-object v12, v11
+
+    iget-object v11, v0, Lbcb;->i:Lpcf;
+
+    move-object v13, v12
+
+    iget-object v12, v0, Lbcb;->j:Ljava/util/List;
+
+    move-object v14, v13
+
+    iget-object v13, v0, Lbcb;->k:Lyp8;
+
+    iget-object v15, v0, Lbcb;->o:Ldcb;
+
+    move-object/from16 v16, v1
+
+    move-object/from16 v17, v2
+
+    iget-wide v1, v0, Lbcb;->q:J
+
+    move-wide/from16 v18, v1
+
+    iget-wide v1, v0, Lbcb;->r:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lbcb;->s:J
+
+    move-wide/from16 v22, v1
+
+    iget-wide v1, v0, Lbcb;->t:J
+
+    iget-boolean v0, v0, Lbcb;->p:Z
+
+    move/from16 v26, v0
+
+    move-wide/from16 v24, v1
+
+    move-object v0, v14
+
+    move-object/from16 v1, v16
+
+    move-object/from16 v2, v17
+
+    move/from16 v16, p2
+
+    move/from16 v14, p3
+
+    move-object/from16 v17, v15
+
+    move/from16 v15, p1
+
+    invoke-direct/range {v0 .. v26}, Lbcb;-><init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
+
+    move-object v12, v0
+
+    return-object v12
+.end method
+
+.method public final f(Landroidx/media3/exoplayer/ExoPlaybackException;)Lbcb;
+    .registers 31
+
+    move-object/from16 v0, p0
+
+    new-instance v1, Lbcb;
+
+    move-object v2, v1
+
+    iget-object v1, v0, Lbcb;->a:Lp6f;
+
+    move-object v3, v2
+
+    iget-object v2, v0, Lbcb;->b:Lyp8;
+
+    move-object v5, v3
+
+    iget-wide v3, v0, Lbcb;->c:J
+
+    move-object v7, v5
+
+    iget-wide v5, v0, Lbcb;->d:J
+
+    move-object v8, v7
+
+    iget v7, v0, Lbcb;->e:I
+
+    iget-boolean v9, v0, Lbcb;->g:Z
+
+    iget-object v10, v0, Lbcb;->h:Lwbf;
+
+    iget-object v11, v0, Lbcb;->i:Lpcf;
+
+    iget-object v12, v0, Lbcb;->j:Ljava/util/List;
+
+    iget-object v13, v0, Lbcb;->k:Lyp8;
+
+    iget-boolean v14, v0, Lbcb;->l:Z
+
+    iget v15, v0, Lbcb;->m:I
+
+    move-object/from16 v16, v1
+
+    iget v1, v0, Lbcb;->n:I
+
+    move/from16 v17, v1
+
+    iget-object v1, v0, Lbcb;->o:Ldcb;
+
+    move-object/from16 v19, v1
+
+    move-object/from16 v18, v2
+
+    iget-wide v1, v0, Lbcb;->q:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lbcb;->r:J
+
+    move-wide/from16 v22, v1
+
+    iget-wide v1, v0, Lbcb;->s:J
+
+    move-wide/from16 v24, v1
+
+    iget-wide v1, v0, Lbcb;->t:J
+
+    iget-boolean v0, v0, Lbcb;->p:Z
+
+    move/from16 v26, v0
+
+    move-object v0, v8
+
+    move-object/from16 v8, p1
+
+    move-wide/from16 v27, v1
+
+    move-object/from16 v1, v16
+
+    move/from16 v16, v17
+
+    move-object/from16 v2, v18
+
+    move-object/from16 v17, v19
+
+    move-wide/from16 v18, v20
+
+    move-wide/from16 v20, v22
+
+    move-wide/from16 v22, v24
+
+    move-wide/from16 v24, v27
+
+    invoke-direct/range {v0 .. v26}, Lbcb;-><init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
+
+    return-object v0
+.end method
+
+.method public final g(Ldcb;)Lbcb;
+    .registers 32
+
+    move-object/from16 v0, p0
+
+    new-instance v1, Lbcb;
+
+    move-object v2, v1
+
+    iget-object v1, v0, Lbcb;->a:Lp6f;
+
+    move-object v3, v2
+
+    iget-object v2, v0, Lbcb;->b:Lyp8;
+
+    move-object v5, v3
+
+    iget-wide v3, v0, Lbcb;->c:J
+
+    move-object v7, v5
+
+    iget-wide v5, v0, Lbcb;->d:J
+
+    move-object v8, v7
+
+    iget v7, v0, Lbcb;->e:I
+
+    move-object v9, v8
+
+    iget-object v8, v0, Lbcb;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
+
+    move-object v10, v9
+
+    iget-boolean v9, v0, Lbcb;->g:Z
+
+    move-object v11, v10
+
+    iget-object v10, v0, Lbcb;->h:Lwbf;
+
+    move-object v12, v11
+
+    iget-object v11, v0, Lbcb;->i:Lpcf;
+
+    move-object v13, v12
+
+    iget-object v12, v0, Lbcb;->j:Ljava/util/List;
+
+    move-object v14, v13
+
+    iget-object v13, v0, Lbcb;->k:Lyp8;
+
+    move-object v15, v14
+
+    iget-boolean v14, v0, Lbcb;->l:Z
+
+    move-object/from16 v16, v15
+
+    iget v15, v0, Lbcb;->m:I
+
+    move-object/from16 v17, v1
+
+    iget v1, v0, Lbcb;->n:I
+
+    move/from16 v19, v1
+
+    move-object/from16 v18, v2
+
+    iget-wide v1, v0, Lbcb;->q:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lbcb;->r:J
+
+    move-wide/from16 v22, v1
+
+    iget-wide v1, v0, Lbcb;->s:J
+
+    move-wide/from16 v24, v1
+
+    iget-wide v1, v0, Lbcb;->t:J
+
+    iget-boolean v0, v0, Lbcb;->p:Z
+
+    move/from16 v26, v0
+
+    move-object/from16 v0, v16
+
+    move/from16 v16, v19
+
+    move-object/from16 v27, v17
+
+    move-object/from16 v17, p1
+
+    move-wide/from16 v28, v1
+
+    move-object/from16 v1, v27
+
+    move-object/from16 v2, v18
+
+    move-wide/from16 v18, v20
+
+    move-wide/from16 v20, v22
+
+    move-wide/from16 v22, v24
+
+    move-wide/from16 v24, v28
+
+    invoke-direct/range {v0 .. v26}, Lbcb;-><init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
+
+    return-object v0
+.end method
+
+.method public final h(I)Lbcb;
+    .registers 31
+
+    move-object/from16 v0, p0
+
+    new-instance v1, Lbcb;
+
+    move-object v2, v1
+
+    iget-object v1, v0, Lbcb;->a:Lp6f;
+
+    move-object v3, v2
+
+    iget-object v2, v0, Lbcb;->b:Lyp8;
+
+    move-object v5, v3
+
+    iget-wide v3, v0, Lbcb;->c:J
+
+    move-object v7, v5
+
+    iget-wide v5, v0, Lbcb;->d:J
+
+    iget-object v8, v0, Lbcb;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
+
+    iget-boolean v9, v0, Lbcb;->g:Z
+
+    iget-object v10, v0, Lbcb;->h:Lwbf;
+
+    iget-object v11, v0, Lbcb;->i:Lpcf;
+
+    iget-object v12, v0, Lbcb;->j:Ljava/util/List;
+
+    iget-object v13, v0, Lbcb;->k:Lyp8;
+
+    iget-boolean v14, v0, Lbcb;->l:Z
+
+    iget v15, v0, Lbcb;->m:I
+
+    move-object/from16 v16, v1
+
+    iget v1, v0, Lbcb;->n:I
+
+    move/from16 v17, v1
+
+    iget-object v1, v0, Lbcb;->o:Ldcb;
+
+    move-object/from16 v19, v1
+
+    move-object/from16 v18, v2
+
+    iget-wide v1, v0, Lbcb;->q:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lbcb;->r:J
+
+    move-wide/from16 v22, v1
+
+    iget-wide v1, v0, Lbcb;->s:J
+
+    move-wide/from16 v24, v1
+
+    iget-wide v1, v0, Lbcb;->t:J
+
+    iget-boolean v0, v0, Lbcb;->p:Z
+
+    move/from16 v26, v0
+
+    move-object v0, v7
+
+    move/from16 v7, p1
+
+    move-wide/from16 v27, v1
+
+    move-object/from16 v1, v16
+
+    move/from16 v16, v17
+
+    move-object/from16 v2, v18
+
+    move-object/from16 v17, v19
+
+    move-wide/from16 v18, v20
+
+    move-wide/from16 v20, v22
+
+    move-wide/from16 v22, v24
+
+    move-wide/from16 v24, v27
+
+    invoke-direct/range {v0 .. v26}, Lbcb;-><init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
+
+    return-object v0
+.end method
+
+.method public final i(Lp6f;)Lbcb;
+    .registers 31
+
+    move-object/from16 v0, p0
+
+    new-instance v1, Lbcb;
+
+    iget-object v2, v0, Lbcb;->b:Lyp8;
+
+    iget-wide v3, v0, Lbcb;->c:J
+
+    iget-wide v5, v0, Lbcb;->d:J
+
+    iget v7, v0, Lbcb;->e:I
+
+    iget-object v8, v0, Lbcb;->f:Landroidx/media3/exoplayer/ExoPlaybackException;
+
+    iget-boolean v9, v0, Lbcb;->g:Z
+
+    iget-object v10, v0, Lbcb;->h:Lwbf;
+
+    iget-object v11, v0, Lbcb;->i:Lpcf;
+
+    iget-object v12, v0, Lbcb;->j:Ljava/util/List;
+
+    iget-object v13, v0, Lbcb;->k:Lyp8;
+
+    iget-boolean v14, v0, Lbcb;->l:Z
+
+    iget v15, v0, Lbcb;->m:I
+
+    move-object/from16 v16, v1
+
+    iget v1, v0, Lbcb;->n:I
+
+    move/from16 v17, v1
+
+    iget-object v1, v0, Lbcb;->o:Ldcb;
+
+    move-object/from16 v19, v1
+
+    move-object/from16 v18, v2
+
+    iget-wide v1, v0, Lbcb;->q:J
+
+    move-wide/from16 v20, v1
+
+    iget-wide v1, v0, Lbcb;->r:J
+
+    move-wide/from16 v22, v1
+
+    iget-wide v1, v0, Lbcb;->s:J
+
+    move-wide/from16 v24, v1
+
+    iget-wide v1, v0, Lbcb;->t:J
+
+    iget-boolean v0, v0, Lbcb;->p:Z
+
+    move/from16 v26, v0
+
+    move-object/from16 v0, v16
+
+    move/from16 v16, v17
+
+    move-object/from16 v17, v19
+
+    move-wide/from16 v27, v1
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, v18
+
+    move-wide/from16 v18, v20
+
+    move-wide/from16 v20, v22
+
+    move-wide/from16 v22, v24
+
+    move-wide/from16 v24, v27
+
+    invoke-direct/range {v0 .. v26}, Lbcb;-><init>(Lp6f;Lyp8;JJILandroidx/media3/exoplayer/ExoPlaybackException;ZLwbf;Lpcf;Ljava/util/List;Lyp8;ZIILdcb;JJJJZ)V
+
+    return-object v0
+.end method
+
+.method public final k()J
+    .registers 7
+
+    invoke-virtual {p0}, Lbcb;->l()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    iget-wide v0, p0, Lbcb;->s:J
+
+    return-wide v0
 
     :cond_0
-    :goto_0
-    invoke-static {}, Las3;->C()Las3;
+    iget-wide v0, p0, Lbcb;->t:J
 
-    move-result-object v1
+    iget-wide v2, p0, Lbcb;->s:J
 
-    sget-object v2, Lbcb;->s0:Ljava/lang/String;
+    iget-wide v4, p0, Lbcb;->t:J
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    cmp-long v4, v0, v4
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    if-nez v4, :cond_0
 
-    const-class v4, Lbcb;
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    invoke-virtual {v4}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    move-result-wide v4
 
-    move-result-object v4
+    sub-long/2addr v4, v0
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2, v3}, Lnrf;->j0(J)J
 
-    const-string v4, " "
+    move-result-wide v0
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    long-to-float v2, v4
 
-    iget-object v4, p1, Ldlg;->a:Ljava/lang/String;
+    iget-object p0, p0, Lbcb;->o:Ldcb;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget p0, p0, Ldcb;->a:F
 
-    const-string v4, " executed; reschedule = "
+    mul-float/2addr v2, p0
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    float-to-long v2, v2
 
-    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    add-long/2addr v0, v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1}, Lnrf;->U(J)J
 
-    move-result-object v3
+    move-result-wide v0
 
-    invoke-virtual {v1, v2, v3}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object p0, p0, Lbcb;->q0:Ljava/util/ArrayList;
-
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object p0
-
-    :goto_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, La85;
-
-    invoke-interface {v1, p1, p2}, La85;->a(Ldlg;Z)V
-
-    goto :goto_1
-
-    :cond_1
-    monitor-exit v0
-
-    return-void
-
-    :goto_2
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
+    return-wide v0
 .end method
 
-.method public final b(La85;)V
+.method public final l()Z
     .registers 3
 
-    iget-object v0, p0, Lbcb;->r0:Ljava/lang/Object;
+    iget v0, p0, Lbcb;->e:I
 
-    monitor-enter v0
+    const/4 v1, 0x3
 
-    :try_start_0
-    iget-object p0, p0, Lbcb;->q0:Ljava/util/ArrayList;
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    iget-boolean v0, p0, Lbcb;->l:Z
 
-    monitor-exit v0
+    if-eqz v0, :cond_0
 
-    return-void
+    iget p0, p0, Lbcb;->n:I
 
-    :catchall_0
-    move-exception p0
+    if-nez p0, :cond_0
 
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 p0, 0x1
 
-    throw p0
-.end method
-
-.method public final d(Ljava/lang/String;)Z
-    .registers 4
-
-    iget-object v0, p0, Lbcb;->r0:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lbcb;->Z:Ljava/util/HashMap;
-
-    invoke-virtual {v1, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_1
-
-    iget-object p0, p0, Lbcb;->Y:Ljava/util/HashMap;
-
-    invoke-virtual {p0, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    goto :goto_0
+    return p0
 
     :cond_0
     const/4 p0, 0x0
 
-    goto :goto_1
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_2
-
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    :goto_1
-    monitor-exit v0
-
     return p0
-
-    :goto_2
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-.end method
-
-.method public final e(La85;)V
-    .registers 3
-
-    iget-object v0, p0, Lbcb;->r0:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object p0, p0, Lbcb;->q0:Ljava/util/ArrayList;
-
-    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    monitor-exit v0
-
-    return-void
-
-    :catchall_0
-    move-exception p0
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-.end method
-
-.method public final f(Ldlg;)V
-    .registers 5
-
-    iget-object v0, p0, Lbcb;->o:Lqo8;
-
-    iget-object v0, v0, Lqo8;->o:Ljava/lang/Object;
-
-    check-cast v0, Lv30;
-
-    new-instance v1, Lsua;
-
-    const/16 v2, 0xd
-
-    invoke-direct {v1, p0, v2, p1}, Lsua;-><init>(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    invoke-virtual {v0, v1}, Lv30;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public final g(Ljava/lang/String;Le26;)V
-    .registers 8
-
-    const-string v0, "Moving WorkSpec ("
-
-    iget-object v1, p0, Lbcb;->r0:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    :try_start_0
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object v2
-
-    sget-object v3, Lbcb;->s0:Ljava/lang/String;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ") to the foreground"
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v3, v0}, Las3;->O(Ljava/lang/String;Ljava/lang/String;)V
-
-    iget-object v0, p0, Lbcb;->Z:Ljava/util/HashMap;
-
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lnmg;
-
-    if-eqz v0, :cond_1
-
-    iget-object v2, p0, Lbcb;->a:Landroid/os/PowerManager$WakeLock;
-
-    if-nez v2, :cond_0
-
-    iget-object v2, p0, Lbcb;->b:Landroid/content/Context;
-
-    const-string v3, "ProcessorForegroundLck"
-
-    invoke-static {v2, v3}, Lq1g;->a(Landroid/content/Context;Ljava/lang/String;)Landroid/os/PowerManager$WakeLock;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lbcb;->a:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->acquire()V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto :goto_1
-
-    :cond_0
-    :goto_0
-    iget-object v2, p0, Lbcb;->Y:Ljava/util/HashMap;
-
-    invoke-virtual {v2, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object p1, p0, Lbcb;->b:Landroid/content/Context;
-
-    iget-object v0, v0, Lnmg;->X:Lylg;
-
-    invoke-static {v0}, Lfog;->B(Lylg;)Ldlg;
-
-    move-result-object v0
-
-    invoke-static {p1, v0, p2}, Lkle;->c(Landroid/content/Context;Ldlg;Le26;)Landroid/content/Intent;
-
-    move-result-object p1
-
-    iget-object p0, p0, Lbcb;->b:Landroid/content/Context;
-
-    invoke-static {p0, p1}, Liw3;->b(Landroid/content/Context;Landroid/content/Intent;)Landroid/content/ComponentName;
-
-    :cond_1
-    monitor-exit v1
-
-    return-void
-
-    :goto_1
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw p0
-.end method
-
-.method public final h(Lv3e;Lefb;)Z
-    .registers 14
-
-    const-string v0, "Work "
-
-    iget-object v1, p1, Lv3e;->a:Ldlg;
-
-    iget-object v2, v1, Ldlg;->a:Ljava/lang/String;
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    iget-object v4, p0, Lbcb;->X:Landroidx/work/impl/WorkDatabase;
-
-    new-instance v5, Lru0;
-
-    const/4 v6, 0x2
-
-    invoke-direct {v5, p0, v3, v2, v6}, Lru0;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
-
-    invoke-virtual {v4, v5}, Lapc;->o(Ljava/util/concurrent/Callable;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lylg;
-
-    const/4 v5, 0x0
-
-    if-nez v4, :cond_0
-
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object p1
-
-    sget-object p2, Lbcb;->s0:Ljava/lang/String;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v2, "Didn\'t find WorkSpec for id "
-
-    invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, p2, v0}, Las3;->k0(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {p0, v1}, Lbcb;->f(Ldlg;)V
-
-    return v5
-
-    :cond_0
-    iget-object v6, p0, Lbcb;->r0:Ljava/lang/Object;
-
-    monitor-enter v6
-
-    :try_start_0
-    invoke-virtual {p0, v2}, Lbcb;->d(Ljava/lang/String;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2
-
-    iget-object p2, p0, Lbcb;->n0:Ljava/util/HashMap;
-
-    invoke-virtual {p2, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Ljava/util/Set;
-
-    invoke-interface {p2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lv3e;
-
-    iget-object v2, v2, Lv3e;->a:Ldlg;
-
-    iget v2, v2, Ldlg;->b:I
-
-    iget v3, v1, Ldlg;->b:I
-
-    if-ne v2, v3, :cond_1
-
-    invoke-interface {p2, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object p0
-
-    sget-object p1, Lbcb;->s0:Ljava/lang/String;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    const-string v0, " is already enqueued for processing"
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p1, p2}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p0
-
-    goto/16 :goto_1
-
-    :cond_1
-    invoke-virtual {p0, v1}, Lbcb;->f(Ldlg;)V
-
-    :goto_0
-    monitor-exit v6
-
-    return v5
-
-    :cond_2
-    iget v0, v4, Lylg;->t:I
-
-    iget v7, v1, Ldlg;->b:I
-
-    if-eq v0, v7, :cond_3
-
-    invoke-virtual {p0, v1}, Lbcb;->f(Ldlg;)V
-
-    monitor-exit v6
-
-    return v5
-
-    :cond_3
-    new-instance v0, Lct4;
-
-    iget-object v5, p0, Lbcb;->b:Landroid/content/Context;
-
-    iget-object v7, p0, Lbcb;->c:Leh3;
-
-    iget-object v8, p0, Lbcb;->o:Lqo8;
-
-    iget-object v9, p0, Lbcb;->X:Landroidx/work/impl/WorkDatabase;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v10, Lefb;
-
-    invoke-direct {v10}, Lefb;-><init>()V
-
-    iput-object v10, v0, Lct4;->o0:Ljava/lang/Object;
-
-    invoke-virtual {v5}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    iput-object v5, v0, Lct4;->b:Ljava/lang/Object;
-
-    iput-object v8, v0, Lct4;->a:Ljava/lang/Object;
-
-    iput-object p0, v0, Lct4;->c:Ljava/lang/Object;
-
-    iput-object v7, v0, Lct4;->o:Ljava/lang/Object;
-
-    iput-object v9, v0, Lct4;->X:Ljava/lang/Object;
-
-    iput-object v4, v0, Lct4;->Y:Ljava/lang/Object;
-
-    iput-object v3, v0, Lct4;->n0:Ljava/lang/Object;
-
-    iget-object v3, p0, Lbcb;->o0:Ljava/util/List;
-
-    iput-object v3, v0, Lct4;->Z:Ljava/lang/Object;
-
-    if-eqz p2, :cond_4
-
-    iput-object p2, v0, Lct4;->o0:Ljava/lang/Object;
-
-    :cond_4
-    new-instance p2, Lnmg;
-
-    invoke-direct {p2, v0}, Lnmg;-><init>(Lct4;)V
-
-    iget-object v0, p2, Lnmg;->v0:Lsfd;
-
-    new-instance v3, Loc3;
-
-    iget-object v4, p1, Lv3e;->a:Ldlg;
-
-    const/4 v5, 0x5
-
-    invoke-direct {v3, p0, v4, v0, v5}, Loc3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
-
-    iget-object v4, p0, Lbcb;->o:Lqo8;
-
-    iget-object v4, v4, Lqo8;->o:Ljava/lang/Object;
-
-    check-cast v4, Lv30;
-
-    invoke-virtual {v0, v3, v4}, Ll1;->d(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
-
-    iget-object v0, p0, Lbcb;->Z:Ljava/util/HashMap;
-
-    invoke-virtual {v0, v2, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    invoke-virtual {v0, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    iget-object p1, p0, Lbcb;->n0:Ljava/util/HashMap;
-
-    invoke-virtual {p1, v2, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    monitor-exit v6
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object p0, p0, Lbcb;->o:Lqo8;
-
-    iget-object p0, p0, Lqo8;->b:Ljava/lang/Object;
-
-    check-cast p0, Lnad;
-
-    invoke-virtual {p0, p2}, Lnad;->execute(Ljava/lang/Runnable;)V
-
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object p0
-
-    sget-object p1, Lbcb;->s0:Ljava/lang/String;
-
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-class v0, Lbcb;
-
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v0, ": processing "
-
-    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-virtual {p0, p1, p2}, Las3;->p(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 p0, 0x1
-
-    return p0
-
-    :goto_1
-    :try_start_1
-    monitor-exit v6
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p0
-.end method
-
-.method public final i()V
-    .registers 6
-
-    iget-object v0, p0, Lbcb;->r0:Ljava/lang/Object;
-
-    monitor-enter v0
-
-    :try_start_0
-    iget-object v1, p0, Lbcb;->Y:Ljava/util/HashMap;
-
-    invoke-virtual {v1}, Ljava/util/HashMap;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lbcb;->b:Landroid/content/Context;
-
-    sget-object v2, Lkle;->p0:Ljava/lang/String;
-
-    new-instance v2, Landroid/content/Intent;
-
-    const-class v3, Landroidx/work/impl/foreground/SystemForegroundService;
-
-    invoke-direct {v2, v1, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string v1, "ACTION_STOP_FOREGROUND"
-
-    invoke-virtual {v2, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    :try_start_1
-    iget-object v1, p0, Lbcb;->b:Landroid/content/Context;
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v1
-
-    :try_start_2
-    invoke-static {}, Las3;->C()Las3;
-
-    move-result-object v2
-
-    sget-object v3, Lbcb;->s0:Ljava/lang/String;
-
-    const-string v4, "Unable to stop foreground service"
-
-    invoke-virtual {v2, v3, v4, v1}, Las3;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    :goto_0
-    iget-object v1, p0, Lbcb;->a:Landroid/os/PowerManager$WakeLock;
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
-
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lbcb;->a:Landroid/os/PowerManager$WakeLock;
-
-    goto :goto_1
-
-    :catchall_1
-    move-exception p0
-
-    goto :goto_2
-
-    :cond_0
-    :goto_1
-    monitor-exit v0
-
-    return-void
-
-    :goto_2
-    monitor-exit v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    throw p0
 .end method

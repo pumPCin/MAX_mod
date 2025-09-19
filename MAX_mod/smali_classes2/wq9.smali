@@ -1,153 +1,66 @@
-.class public final Lwq9;
-.super Lxie;
+.class public final synthetic Lwq9;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final synthetic X:Landroid/content/Intent;
+.field public final synthetic a:I
 
-.field public final synthetic Y:Lyq9;
+.field public final synthetic b:Lbr9;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Intent;Lyq9;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+.method public synthetic constructor <init>(Lbr9;I)V
+    .registers 3
 
-    iput-object p1, p0, Lwq9;->X:Landroid/content/Intent;
+    iput p2, p0, Lwq9;->a:I
 
-    iput-object p2, p0, Lwq9;->Y:Lyq9;
+    iput-object p1, p0, Lwq9;->b:Lbr9;
 
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onClick(Landroid/view/View;)V
     .registers 3
 
-    check-cast p1, Lr04;
+    iget p1, p0, Lwq9;->a:I
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    packed-switch p1, :pswitch_data_0
 
-    invoke-virtual {p0, p1, p2}, Lwq9;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    new-instance p1, Lyq9;
 
-    move-result-object p0
+    const/4 v0, 0x0
 
-    check-cast p0, Lwq9;
+    invoke-direct {p1, v0}, Lyq9;-><init>(I)V
 
-    sget-object p1, Lncf;->a:Lncf;
+    iget-object p0, p0, Lwq9;->b:Lbr9;
 
-    invoke-virtual {p0, p1}, Lwq9;->o(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Ly2;->n(Lsm3;)V
 
-    return-object p1
-.end method
+    return-void
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 4
+    :pswitch_0
+    new-instance p1, Lej0;
 
-    new-instance p1, Lwq9;
+    const/16 v0, 0x1b
 
-    iget-object v0, p0, Lwq9;->X:Landroid/content/Intent;
+    invoke-direct {p1, v0}, Lej0;-><init>(I)V
 
-    iget-object p0, p0, Lwq9;->Y:Lyq9;
+    iget-object p0, p0, Lwq9;->b:Lbr9;
 
-    invoke-direct {p1, v0, p0, p2}, Lwq9;-><init>(Landroid/content/Intent;Lyq9;Lkotlin/coroutines/Continuation;)V
+    invoke-virtual {p0, p1}, Ly2;->n(Lsm3;)V
 
-    return-object p1
-.end method
+    return-void
 
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 10
-
-    sget-object v0, Lncf;->a:Lncf;
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p1, p0, Lwq9;->X:Landroid/content/Intent;
-
-    const-string v1, "ru.ok.tamtam.extra.CROPPED_RECT"
-
-    const-class v2, Landroid/graphics/RectF;
-
-    invoke-static {p1, v1, v2}, Lnc5;->z(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/os/Parcelable;
-
-    move-object v4, p1
-
-    check-cast v4, Landroid/graphics/RectF;
-
-    if-nez v4, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    iget-object p1, p0, Lwq9;->X:Landroid/content/Intent;
-
-    const-string v1, "ru.ok.tamtam.extra.CROPPED_ABSOLUTE"
-
-    const-class v2, Landroid/graphics/Rect;
-
-    invoke-static {p1, v1, v2}, Lnc5;->z(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/os/Parcelable;
-
-    move-object v6, p1
-
-    check-cast v6, Landroid/graphics/Rect;
-
-    if-nez v6, :cond_1
-
-    :goto_0
-    return-object v0
-
-    :cond_1
-    iget-object p1, p0, Lwq9;->Y:Lyq9;
-
-    invoke-virtual {p1}, Lyq9;->a()Lan5;
-
-    move-result-object p1
-
-    iget-object v1, p0, Lwq9;->Y:Lyq9;
-
-    iget-object v1, v1, Lyq9;->m:Ljava/lang/String;
-
-    invoke-virtual {p1, v1}, Lan5;->r(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lwq9;->Y:Lyq9;
-
-    iget-object p0, v3, Lyq9;->h:Lkotlinx/coroutines/internal/ContextScope;
-
-    new-instance v1, Luq9;
-
-    const/4 v7, 0x0
-
-    const/4 v5, 0x1
-
-    invoke-direct/range {v1 .. v7}, Luq9;-><init>(Ljava/lang/String;Lyq9;Landroid/graphics/RectF;ILandroid/graphics/Rect;Lkotlin/coroutines/Continuation;)V
-
-    const/4 p1, 0x3
-
-    const/4 v2, 0x0
-
-    invoke-static {p0, v2, v2, v1, p1}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

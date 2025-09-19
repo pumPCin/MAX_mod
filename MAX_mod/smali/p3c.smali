@@ -3,40 +3,40 @@
 
 
 # static fields
-.field public static contact_list_call_contact_title:I = 0x7f1303fd
+.field public static mediarouter_chooser_list_item_padding_bottom:I = 0x7f0702d0
 
-.field public static contact_list_confirm_contact_block_action:I = 0x7f1303fe
+.field public static mediarouter_chooser_list_item_padding_end:I = 0x7f0702d1
 
-.field public static contact_list_confirm_contact_block_description:I = 0x7f1303ff
+.field public static mediarouter_chooser_list_item_padding_start:I = 0x7f0702d2
 
-.field public static contact_list_confirm_contact_block_title:I = 0x7f130400
+.field public static mediarouter_chooser_list_item_padding_top:I = 0x7f0702d3
 
-.field public static contact_list_confirm_contact_delete_action:I = 0x7f130401
+.field public static mr_cast_group_volume_seekbar_height:I = 0x7f0702d8
 
-.field public static contact_list_confirm_contact_delete_title:I = 0x7f130402
+.field public static mr_cast_meta_art_size:I = 0x7f0702d9
 
-.field public static contact_list_contact_block_snackbar_title:I = 0x7f130403
+.field public static mr_cast_meta_subtitle_text_size:I = 0x7f0702da
 
-.field public static contact_list_contact_delete_snackbar_title:I = 0x7f130404
+.field public static mr_cast_route_volume_seekbar_height:I = 0x7f0702db
 
-.field public static contact_list_menu_item_add_contact:I = 0x7f130405
+.field public static mr_cast_seekbar_thumb_size:I = 0x7f0702dc
 
-.field public static contact_list_search_hint:I = 0x7f130406
+.field public static mr_controller_volume_group_list_item_height:I = 0x7f0702dd
 
-.field public static contact_list_search_hint_with_nick:I = 0x7f130407
+.field public static mr_controller_volume_group_list_item_icon_size:I = 0x7f0702de
 
-.field public static contact_list_suspend_bot_snackbar_title:I = 0x7f130408
+.field public static mr_controller_volume_group_list_max_height:I = 0x7f0702df
 
-.field public static empty_contact_list_description:I = 0x7f130477
+.field public static mr_controller_volume_group_list_padding_top:I = 0x7f0702e0
 
-.field public static empty_contact_list_title:I = 0x7f130478
+.field public static mr_dialog_fixed_width_major:I = 0x7f0702e1
 
-.field public static empty_search_contact_btn_title:I = 0x7f13047b
+.field public static mr_dialog_fixed_width_minor:I = 0x7f0702e2
 
-.field public static empty_search_contact_disabled_description:I = 0x7f13047c
+.field public static mr_dynamic_dialog_header_text_size:I = 0x7f0702e3
 
-.field public static empty_search_contact_enabled_description:I = 0x7f13047d
+.field public static mr_dynamic_dialog_route_text_size:I = 0x7f0702e4
 
-.field public static empty_search_contact_title:I = 0x7f13047e
+.field public static mr_dynamic_dialog_row_height:I = 0x7f0702e5
 
-.field public static snackbar_self_title:I = 0x7f130ca2
+.field public static mr_dynamic_volume_group_list_item_height:I = 0x7f0702e6

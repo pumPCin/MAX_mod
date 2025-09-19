@@ -3,197 +3,456 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lqa8;
-.implements Lra8;
+.implements Ludb;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public A0:Loj4;
 
-.field public final b:J
+.field public X:I
 
-.field public final c:J
+.field public Y:Lndb;
 
-.field public o:J
+.field public Z:Lgue;
+
+.field public final a:Ljava/lang/Object;
+
+.field public final b:I
+
+.field public final c:Lzxc;
+
+.field public o:Lorc;
+
+.field public r0:I
+
+.field public s0:Lz2d;
+
+.field public t0:[Lx46;
+
+.field public u0:J
+
+.field public v0:J
+
+.field public w0:J
+
+.field public x0:Z
+
+.field public y0:Z
+
+.field public z0:Lp6f;
 
 
 # direct methods
-.method public constructor <init>(JJI)V
-    .registers 6
-
-    iput p5, p0, Ltj0;->a:I
-
-    packed-switch p5, :pswitch_data_0
+.method public constructor <init>(I)V
+    .registers 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p1, p0, Ltj0;->b:J
+    new-instance v0, Ljava/lang/Object;
 
-    iput-wide p3, p0, Ltj0;->c:J
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    const-wide/16 p3, 0x1
+    iput-object v0, p0, Ltj0;->a:Ljava/lang/Object;
 
-    sub-long/2addr p1, p3
+    iput p1, p0, Ltj0;->b:I
 
-    iput-wide p1, p0, Ltj0;->o:J
+    new-instance p1, Lzxc;
+
+    const/16 v0, 0x13
+
+    const/4 v1, 0x0
+
+    invoke-direct {p1, v0, v1}, Lzxc;-><init>(IZ)V
+
+    iput-object p1, p0, Ltj0;->c:Lzxc;
+
+    const-wide/high16 v0, -0x8000000000000000L
+
+    iput-wide v0, p0, Ltj0;->w0:J
+
+    sget-object p1, Lp6f;->a:Li6f;
+
+    iput-object p1, p0, Ltj0;->z0:Lp6f;
 
     return-void
-
-    :pswitch_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-wide p1, p0, Ltj0;->b:J
-
-    iput-wide p3, p0, Ltj0;->c:J
-
-    const-wide/16 p3, 0x1
-
-    sub-long/2addr p1, p3
-
-    iput-wide p1, p0, Ltj0;->o:J
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
+.method public static b(IIII)I
+    .registers 4
 
-# virtual methods
-.method public final c()V
-    .registers 5
+    or-int/2addr p0, p1
 
-    iget v0, p0, Ltj0;->a:I
+    or-int/2addr p0, p2
 
-    packed-switch v0, :pswitch_data_0
+    or-int/lit16 p0, p0, 0x80
 
-    iget-wide v0, p0, Ltj0;->o:J
+    or-int/2addr p0, p3
 
-    iget-wide v2, p0, Ltj0;->b:J
-
-    cmp-long v2, v0, v2
-
-    if-ltz v2, :cond_0
-
-    iget-wide v2, p0, Ltj0;->c:J
-
-    cmp-long p0, v0, v2
-
-    if-gtz p0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw p0
-
-    :pswitch_0
-    iget-wide v0, p0, Ltj0;->o:J
-
-    iget-wide v2, p0, Ltj0;->b:J
-
-    cmp-long v2, v0, v2
-
-    if-ltz v2, :cond_1
-
-    iget-wide v2, p0, Ltj0;->c:J
-
-    cmp-long p0, v0, v2
-
-    if-gtz p0, :cond_1
-
-    return-void
-
-    :cond_1
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    throw p0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method
 
-.method public final next()Z
-    .registers 5
+.method public static j(IZ)Z
+    .registers 3
 
-    iget v0, p0, Ltj0;->a:I
+    and-int/lit8 p0, p0, 0x7
 
-    packed-switch v0, :pswitch_data_0
+    const/4 v0, 0x4
 
-    iget-wide v0, p0, Ltj0;->o:J
+    if-eq p0, v0, :cond_1
 
-    const-wide/16 v2, 0x1
+    if-eqz p1, :cond_0
 
-    add-long/2addr v0, v2
+    const/4 p1, 0x3
 
-    iput-wide v0, p0, Ltj0;->o:J
-
-    iget-wide v2, p0, Ltj0;->c:J
-
-    cmp-long p0, v0, v2
-
-    const/4 v0, 0x1
-
-    if-lez p0, :cond_0
-
-    move p0, v0
+    if-ne p0, p1, :cond_0
 
     goto :goto_0
 
     :cond_0
     const/4 p0, 0x0
 
-    :goto_0
-    xor-int/2addr p0, v0
-
     return p0
 
-    :pswitch_0
-    iget-wide v0, p0, Ltj0;->o:J
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
 
-    const-wide/16 v2, 0x1
+    return p0
+.end method
 
-    add-long/2addr v0, v2
 
-    iput-wide v0, p0, Ltj0;->o:J
+# virtual methods
+.method public a(ILjava/lang/Object;)V
+    .registers 3
 
-    iget-wide v2, p0, Ltj0;->c:J
+    return-void
+.end method
 
-    cmp-long p0, v0, v2
+.method public final c(Ljava/lang/Exception;Lx46;ZI)Landroidx/media3/exoplayer/ExoPlaybackException;
+    .registers 14
 
-    const/4 v0, 0x1
+    const/4 v0, 0x4
 
-    if-lez p0, :cond_1
+    if-eqz p2, :cond_0
 
-    move p0, v0
+    iget-boolean v2, p0, Ltj0;->y0:Z
+
+    if-nez v2, :cond_0
+
+    const/4 v2, 0x1
+
+    iput-boolean v2, p0, Ltj0;->y0:Z
+
+    const/4 v2, 0x0
+
+    :try_start_0
+    invoke-virtual {p0, p2}, Ltj0;->y(Lx46;)I
+
+    move-result v3
+    :try_end_0
+    .catch Landroidx/media3/exoplayer/ExoPlaybackException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    and-int/lit8 v3, v3, 0x7
+
+    iput-boolean v2, p0, Ltj0;->y0:Z
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    iput-boolean v2, p0, Ltj0;->y0:Z
+
+    throw v0
+
+    :catch_0
+    iput-boolean v2, p0, Ltj0;->y0:Z
+
+    :cond_0
+    move v3, v0
+
+    :goto_0
+    invoke-virtual {p0}, Ltj0;->g()Ljava/lang/String;
+
+    move-result-object v4
+
+    iget v5, p0, Ltj0;->X:I
+
+    move v1, v0
+
+    new-instance v0, Landroidx/media3/exoplayer/ExoPlaybackException;
+
+    if-nez p2, :cond_1
+
+    move v7, v1
 
     goto :goto_1
 
     :cond_1
-    const/4 p0, 0x0
+    move v7, v3
 
     :goto_1
-    xor-int/2addr p0, v0
+    const/4 v1, 0x1
+
+    move-object v2, p1
+
+    move-object v6, p2
+
+    move v8, p3
+
+    move v3, p4
+
+    invoke-direct/range {v0 .. v8}, Landroidx/media3/exoplayer/ExoPlaybackException;-><init>(ILjava/lang/Exception;ILjava/lang/String;ILx46;IZ)V
+
+    return-object v0
+.end method
+
+.method public d()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public f()Lae8;
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public abstract g()Ljava/lang/String;
+.end method
+
+.method public final h()Z
+    .registers 5
+
+    iget-wide v0, p0, Ltj0;->w0:J
+
+    const-wide/high16 v2, -0x8000000000000000L
+
+    cmp-long p0, v0, v2
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
 
     return p0
 
-    nop
+    :cond_0
+    const/4 p0, 0x0
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
+.end method
+
+.method public abstract i()Z
+.end method
+
+.method public abstract k()Z
+.end method
+
+.method public l()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public m(ZZ)V
+    .registers 3
+
+    return-void
+.end method
+
+.method public n(JZ)V
+    .registers 4
+
+    return-void
+.end method
+
+.method public o()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public p()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public r()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public s()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public t([Lx46;JJLyp8;)V
+    .registers 7
+
+    return-void
+.end method
+
+.method public final u(Lzxc;Lga4;I)I
+    .registers 8
+
+    iget-object v0, p0, Ltj0;->s0:Lz2d;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {v0, p1, p2, p3}, Lz2d;->o(Lzxc;Lga4;I)I
+
+    move-result p3
+
+    const/4 v0, -0x4
+
+    if-ne p3, v0, :cond_2
+
+    const/4 p1, 0x4
+
+    invoke-virtual {p2, p1}, Llx;->h(I)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    const-wide/high16 p1, -0x8000000000000000L
+
+    iput-wide p1, p0, Ltj0;->w0:J
+
+    iget-boolean p0, p0, Ltj0;->x0:Z
+
+    if-eqz p0, :cond_0
+
+    return v0
+
+    :cond_0
+    const/4 p0, -0x3
+
+    return p0
+
+    :cond_1
+    iget-wide v0, p2, Lga4;->Z:J
+
+    iget-wide v2, p0, Ltj0;->u0:J
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p2, Lga4;->Z:J
+
+    iget-wide p1, p0, Ltj0;->w0:J
+
+    invoke-static {p1, p2, v0, v1}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide p1
+
+    iput-wide p1, p0, Ltj0;->w0:J
+
+    return p3
+
+    :cond_2
+    const/4 p2, -0x5
+
+    if-ne p3, p2, :cond_3
+
+    iget-object p2, p1, Lzxc;->c:Ljava/lang/Object;
+
+    check-cast p2, Lx46;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    iget-wide v0, p2, Lx46;->s:J
+
+    const-wide v2, 0x7fffffffffffffffL
+
+    cmp-long v2, v0, v2
+
+    if-eqz v2, :cond_3
+
+    invoke-virtual {p2}, Lx46;->a()Lu46;
+
+    move-result-object p2
+
+    iget-wide v2, p0, Ltj0;->u0:J
+
+    add-long/2addr v0, v2
+
+    iput-wide v0, p2, Lu46;->r:J
+
+    new-instance p0, Lx46;
+
+    invoke-direct {p0, p2}, Lx46;-><init>(Lu46;)V
+
+    iput-object p0, p1, Lzxc;->c:Ljava/lang/Object;
+
+    :cond_3
+    return p3
+.end method
+
+.method public abstract v(JJ)V
+.end method
+
+.method public final w([Lx46;Lz2d;JJLyp8;)V
+    .registers 15
+
+    iget-boolean v0, p0, Ltj0;->x0:Z
+
+    xor-int/lit8 v0, v0, 0x1
+
+    invoke-static {v0}, Lmq0;->h(Z)V
+
+    iput-object p2, p0, Ltj0;->s0:Lz2d;
+
+    iget-wide v0, p0, Ltj0;->w0:J
+
+    const-wide/high16 v2, -0x8000000000000000L
+
+    cmp-long p2, v0, v2
+
+    if-nez p2, :cond_0
+
+    iput-wide p3, p0, Ltj0;->w0:J
+
+    :cond_0
+    iput-object p1, p0, Ltj0;->t0:[Lx46;
+
+    iput-wide p5, p0, Ltj0;->u0:J
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-wide v2, p3
+
+    move-wide v4, p5
+
+    move-object v6, p7
+
+    invoke-virtual/range {v0 .. v6}, Ltj0;->t([Lx46;JJLyp8;)V
+
+    return-void
+.end method
+
+.method public x(FF)V
+    .registers 3
+
+    return-void
+.end method
+
+.method public abstract y(Lx46;)I
+.end method
+
+.method public z()I
+    .registers 1
+
+    const/4 p0, 0x0
+
+    return p0
 .end method

@@ -1,89 +1,148 @@
 .class public final Ljhg;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
+
+# interfaces
+.implements Lpc6;
 
 
 # instance fields
-.field public final a:Lpcg;
+.field public X:I
+
+.field public synthetic Y:Ljava/lang/Object;
+
+.field public final synthetic Z:Lnhg;
+
+.field public final synthetic r0:Lqhg;
 
 
 # direct methods
-.method public constructor <init>(Lpcg;)V
-    .registers 2
+.method public constructor <init>(Lnhg;Lqhg;Lkotlin/coroutines/Continuation;)V
+    .registers 4
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljhg;->Z:Lnhg;
 
-    iput-object p1, p0, Ljhg;->a:Lpcg;
+    iput-object p2, p0, Ljhg;->r0:Lqhg;
+
+    const/4 p1, 0x2
+
+    invoke-direct {p0, p1, p3}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final postEvent(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
-    .annotation runtime Landroid/webkit/JavascriptInterface;
-    .end annotation
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object p0, p0, Ljhg;->a:Lpcg;
+    check-cast p1, Ljava/lang/Throwable;
 
-    iget-object p0, p0, Lpcg;->C0:Lnc9;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    iget-object v0, p0, Lnc9;->a:Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Ljhg;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
-    check-cast v0, Lr04;
+    move-result-object p0
 
-    iget-object v1, p0, Lnc9;->b:Ljava/lang/Object;
+    check-cast p0, Ljhg;
 
-    check-cast v1, Lzne;
+    sget-object p1, Lylf;->a:Lylf;
 
-    check-cast v1, Ltba;
+    invoke-virtual {p0, p1}, Ljhg;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ltba;->a()Ll04;
+    move-result-object p0
 
-    move-result-object v1
-
-    new-instance v2, Lpd7;
-
-    const/4 v3, 0x0
-
-    invoke-direct {v2, p1, p2, p0, v3}, Lpd7;-><init>(Ljava/lang/String;Ljava/lang/String;Lnc9;Lkotlin/coroutines/Continuation;)V
-
-    const/4 p0, 0x2
-
-    invoke-static {v0, v1, v3, v2, p0}, Las3;->U(Lr04;Lj04;Lu04;Lx96;I)Lq1e;
-
-    return-void
+    return-object p0
 .end method
 
-.method public final resolveShare(Ljava/lang/String;[BLjava/lang/String;Ljava/lang/String;)V
-    .registers 12
-    .annotation runtime Landroid/webkit/JavascriptInterface;
-    .end annotation
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    .registers 5
 
-    iget-object v1, p0, Ljhg;->a:Lpcg;
+    new-instance v0, Ljhg;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v1, p0, Ljhg;->Z:Lnhg;
 
-    new-instance v0, Lhcg;
+    iget-object p0, p0, Ljhg;->r0:Lqhg;
 
-    const/4 v6, 0x0
+    invoke-direct {v0, v1, p0, p2}, Ljhg;-><init>(Lnhg;Lqhg;Lkotlin/coroutines/Continuation;)V
+
+    iput-object p1, v0, Ljhg;->Y:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 10
+
+    iget v0, p0, Ljhg;->X:I
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v1, :cond_0
+
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_1
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
+
+    iget-object p1, p0, Ljhg;->Y:Ljava/lang/Object;
+
+    check-cast p1, Ljava/lang/Throwable;
+
+    iget-object v0, p0, Ljhg;->Z:Lnhg;
+
+    invoke-static {v0, p1}, Lnhg;->e(Lnhg;Ljava/lang/Throwable;)Lzg7;
+
+    move-result-object v4
+
+    iget-object p1, v0, Lnhg;->c:Lcl7;
+
+    invoke-interface {p1}, Lcl7;->getValue()Ljava/lang/Object;
+
+    move-result-object p1
 
     move-object v2, p1
 
-    move-object v3, p2
+    check-cast v2, Lra3;
 
-    move-object v4, p3
+    iget-object v3, v0, Lnhg;->e:Lcu0;
 
-    move-object v5, p4
+    iget-object p1, p0, Ljhg;->r0:Lqhg;
 
-    invoke-direct/range {v0 .. v6}, Lhcg;-><init>(Lpcg;Ljava/lang/String;[BLjava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)V
+    iget-object v6, p1, Lqhg;->a:Ljava/lang/String;
 
-    const/4 p0, 0x3
+    iput v1, p0, Ljhg;->X:I
 
-    const/4 p1, 0x0
+    sget-object v5, Ldhg;->a:Ldhg;
 
-    invoke-static {v1, p1, v0, p0}, Luxf;->n(Luxf;Lj04;Lx96;I)Lq1e;
+    move-object v7, p0
 
-    return-void
+    invoke-virtual/range {v2 .. v7}, Lra3;->a(Lt52;Lzg7;Lxjg;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    sget-object p1, Lz04;->a:Lz04;
+
+    if-ne p0, p1, :cond_2
+
+    return-object p1
+
+    :cond_2
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
+
+    return-object p0
 .end method

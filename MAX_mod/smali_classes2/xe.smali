@@ -1,244 +1,111 @@
-.class public abstract Lxe;
-.super Ld5e;
+.class public final synthetic Lxe;
+.super Ljava/lang/Object;
 .source "SourceFile"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final j:I
+.field public final synthetic a:I
 
-.field public k:I
+.field public final synthetic b:Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lf67;Lj96;I)V
-    .registers 5
+.method public synthetic constructor <init>(Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;I)V
+    .registers 3
 
-    and-int/lit8 p4, p4, 0x10
+    iput p2, p0, Lxe;->a:I
 
-    if-eqz p4, :cond_0
+    iput-object p1, p0, Lxe;->b:Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
 
-    const/4 p3, 0x0
-
-    :cond_0
-    invoke-direct {p0, p1, p2, p3}, Ld5e;-><init>(Landroid/view/View;Lf67;Lj96;)V
-
-    const/16 p2, 0x8
-
-    iput p2, p0, Lxe;->j:I
-
-    const/4 p2, -0x1
-
-    iput p2, p0, Lxe;->k:I
-
-    new-instance p2, Lwe;
-
-    invoke-direct {p2, p0}, Lwe;-><init>(Lxe;)V
-
-    invoke-static {p1, p2}, Lexf;->l(Landroid/view/View;Lx62;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method public static final f(Lxe;Lokg;)Lokg;
-    .registers 6
-
-    iget v0, p0, Ld5e;->f:I
-
-    if-nez v0, :cond_0
-
-    return-object p1
-
-    :cond_0
-    iget-object v0, p1, Lokg;->a:Lmkg;
-
-    const/4 v1, 0x7
-
-    invoke-virtual {v0, v1}, Lmkg;->f(I)Ld67;
-
-    move-result-object v0
-
-    iget v2, v0, Ld67;->d:I
-
-    iget v3, p0, Ld5e;->f:I
-
-    if-le v2, v3, :cond_1
-
-    return-object p1
-
-    :cond_1
-    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x1e
-
-    if-lt v2, v3, :cond_2
-
-    new-instance v2, Lekg;
-
-    invoke-direct {v2, p1}, Lekg;-><init>(Lokg;)V
-
-    goto :goto_0
-
-    :cond_2
-    new-instance v2, Ldkg;
-
-    invoke-direct {v2, p1}, Ldkg;-><init>(Lokg;)V
-
-    :goto_0
-    iget p1, v0, Ld67;->a:I
-
-    iget v3, v0, Ld67;->b:I
-
-    iget v0, v0, Ld67;->c:I
-
-    iget p0, p0, Ld5e;->f:I
-
-    invoke-static {p1, v3, v0, p0}, Ld67;->b(IIII)Ld67;
-
-    move-result-object p0
-
-    invoke-virtual {v2, v1, p0}, Lfkg;->c(ILd67;)V
-
-    invoke-virtual {v2}, Ldkg;->b()Lokg;
-
-    move-result-object p0
-
-    return-object p0
 .end method
 
 
 # virtual methods
-.method public final b(Lokg;Lqr0;)V
-    .registers 6
+.method public final run()V
+    .registers 5
 
-    iget-object p1, p1, Lokg;->a:Lmkg;
+    iget v0, p0, Lxe;->a:I
 
-    iget v0, p0, Ld5e;->d:I
+    iget-object p0, p0, Lxe;->b:Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;
 
-    invoke-virtual {p1, v0}, Lmkg;->f(I)Ld67;
+    packed-switch v0, :pswitch_data_0
 
-    move-result-object v0
-
-    iget v1, p0, Lxe;->j:I
-
-    invoke-virtual {p1, v1}, Lmkg;->f(I)Ld67;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v1}, Lmkg;->o(I)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    move-object v0, v2
-
-    :cond_0
-    invoke-virtual {p0, v0, p2}, Ld5e;->a(Ld67;Lqr0;)V
+    iget-object p0, p0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->p1:Lvo0;
 
     return-void
-.end method
 
-.method public final c(Lokg;)V
-    .registers 4
+    :pswitch_0
+    iget-object v0, p0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->k1:Ljava/util/ArrayList;
 
-    iget v0, p0, Lxe;->k:I
-
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x1e
-
-    if-lt v0, v1, :cond_1
-
-    new-instance v0, Lekg;
-
-    invoke-direct {v0, p1}, Lekg;-><init>(Lokg;)V
-
-    goto :goto_0
-
-    :cond_1
-    new-instance v0, Ldkg;
-
-    invoke-direct {v0, p1}, Ldkg;-><init>(Lokg;)V
-
-    :goto_0
-    sget-object p1, Ld67;->e:Ld67;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1, p1}, Lfkg;->c(ILd67;)V
-
-    const/4 p1, 0x0
-
-    invoke-virtual {v0, v1, p1}, Lfkg;->h(IZ)V
-
-    invoke-virtual {v0}, Ldkg;->b()Lokg;
-
-    move-result-object p1
-
-    :goto_1
-    invoke-super {p0, p1}, Ld5e;->c(Lokg;)V
-
-    return-void
-.end method
-
-.method public final d(Lokg;)Lokg;
-    .registers 2
-
-    return-object p1
-.end method
-
-.method public final e()V
-    .registers 3
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Ld5e;->g:Z
-
-    iget-object p0, p0, Ld5e;->a:Landroid/view/View;
-
-    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
 
-    sget-object v0, Lexf;->a:Ljava/util/WeakHashMap;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    invoke-static {p0}, Lrwf;->c(Landroid/view/View;)V
+    move-result v1
 
-    return-void
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/view/View;
+
+    invoke-virtual {v3}, Landroid/view/View;->invalidate()V
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
 
     :cond_0
-    new-instance v1, Lve;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
-    invoke-direct {v1, p0, v0}, Lve;-><init>(Landroid/view/View;I)V
+    move-result v0
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+    if-nez v0, :cond_1
+
+    iget-boolean v0, p0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->H0:Z
+
+    if-eqz v0, :cond_2
+
+    :cond_1
+    iget-object p0, p0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->j1:Landroid/view/View;
+
+    if-eqz p0, :cond_2
+
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    :cond_2
+    return-void
+
+    :pswitch_1
+    iget-boolean v0, p0, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->W0:Z
+
+    if-nez v0, :cond_3
+
+    invoke-virtual {p0}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->start()V
+
+    :cond_3
+    invoke-virtual {p0}, Lone/me/sdk/media/ffmpeg/AnimatedFileDrawable;->invalidateInternal()V
 
     return-void
-.end method
 
-.method public g(Lokg;Lykc;)V
-    .registers 3
-
-    return-void
-.end method
-
-.method public abstract h(Lokg;)Lokg;
-.end method
-
-.method public abstract i()V
-.end method
-
-.method public j()V
-    .registers 1
-
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

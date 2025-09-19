@@ -2,527 +2,169 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ld4a;
-.implements Lnp4;
+
+# static fields
+.field public static final c:Ljava/lang/Object;
+
+.field public static d:Ljava/lang/String;
+
+.field public static e:Ljava/util/HashSet;
+
+.field public static final f:Ljava/lang/Object;
+
+.field public static g:Lx1a;
 
 
 # instance fields
-.field public final X:Ljava/lang/Object;
+.field public final a:Landroid/content/Context;
 
-.field public final synthetic a:I
-
-.field public b:Lnp4;
-
-.field public c:J
-
-.field public o:Z
+.field public final b:Landroid/app/NotificationManager;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p1, p0, Ly1a;->a:I
+    new-instance v0, Ljava/lang/Object;
 
-    iput-object p2, p0, Ly1a;->X:Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Ly1a;->c:Ljava/lang/Object;
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    sput-object v0, Ly1a;->e:Ljava/util/HashSet;
+
+    new-instance v0, Ljava/lang/Object;
+
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    sput-object v0, Ly1a;->f:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public constructor <init>(Ld4a;J)V
-    .registers 5
-
-    const/4 v0, 0x2
-
-    iput v0, p0, Ly1a;->a:I
+.method public constructor <init>(Landroid/content/Context;)V
+    .registers 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Ly1a;->X:Ljava/lang/Object;
+    iput-object p1, p0, Ly1a;->a:Landroid/content/Context;
 
-    iput-wide p2, p0, Ly1a;->c:J
+    const-string v0, "notification"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/app/NotificationManager;
+
+    iput-object p1, p0, Ly1a;->b:Landroid/app/NotificationManager;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 2
+.method public final a(ILjava/lang/String;)V
+    .registers 3
 
-    iget v0, p0, Ly1a;->a:I
+    iget-object p0, p0, Ly1a;->b:Landroid/app/NotificationManager;
 
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0, p2, p1}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
 
-    iget-boolean v0, p0, Ly1a;->o:Z
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ly1a;->o:Z
-
-    iget-object v0, p0, Ly1a;->b:Lnp4;
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    iget-object p0, p0, Ly1a;->X:Ljava/lang/Object;
-
-    check-cast p0, Ld4a;
-
-    invoke-interface {p0}, Ld4a;->b()V
-
-    :cond_0
     return-void
-
-    :pswitch_0
-    iget-boolean v0, p0, Ly1a;->o:Z
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ly1a;->o:Z
-
-    iget-object p0, p0, Ly1a;->X:Ljava/lang/Object;
-
-    check-cast p0, Lvud;
-
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    invoke-interface {p0, v0}, Lvud;->onError(Ljava/lang/Throwable;)V
-
-    :cond_1
-    return-void
-
-    :pswitch_1
-    iget-boolean v0, p0, Ly1a;->o:Z
-
-    if-nez v0, :cond_2
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ly1a;->o:Z
-
-    iget-object p0, p0, Ly1a;->X:Ljava/lang/Object;
-
-    check-cast p0, Ln68;
-
-    invoke-interface {p0}, Ln68;->b()V
-
-    :cond_2
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
-.method public final c(Lnp4;)V
+.method public final b(Ljava/lang/String;ILandroid/app/Notification;)V
     .registers 7
 
-    iget v0, p0, Ly1a;->a:I
+    iget-object v0, p0, Ly1a;->b:Landroid/app/NotificationManager;
 
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p3, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
-    iget-object v0, p0, Ly1a;->X:Ljava/lang/Object;
+    if-eqz v1, :cond_1
 
-    check-cast v0, Ld4a;
+    const-string v2, "android.support.useSideChannel"
 
-    iget-object v1, p0, Ly1a;->b:Lnp4;
-
-    invoke-static {v1, p1}, Lrp4;->f(Lnp4;Lnp4;)Z
+    invoke-virtual {v1, v2}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    iput-object p1, p0, Ly1a;->b:Lnp4;
+    new-instance v1, Lu1a;
 
-    iget-wide v1, p0, Ly1a;->c:J
+    iget-object v2, p0, Ly1a;->a:Landroid/content/Context;
 
-    const-wide/16 v3, 0x0
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    cmp-long v1, v1, v3
+    move-result-object v2
 
-    if-nez v1, :cond_0
+    invoke-direct {v1, v2, p2, p1, p3}, Lu1a;-><init>(Ljava/lang/String;ILjava/lang/String;Landroid/app/Notification;)V
 
-    const/4 v1, 0x1
+    sget-object v2, Ly1a;->f:Ljava/lang/Object;
 
-    iput-boolean v1, p0, Ly1a;->o:Z
+    monitor-enter v2
 
-    invoke-interface {p1}, Lnp4;->g()V
+    :try_start_0
+    sget-object p3, Ly1a;->g:Lx1a;
 
-    invoke-static {v0}, Lq25;->a(Ld4a;)V
+    if-nez p3, :cond_0
 
-    goto :goto_0
+    new-instance p3, Lx1a;
 
-    :cond_0
-    invoke-interface {v0, p0}, Ld4a;->c(Lnp4;)V
+    iget-object p0, p0, Ly1a;->a:Landroid/content/Context;
 
-    :cond_1
-    :goto_0
-    return-void
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    :pswitch_0
-    iget-object v0, p0, Ly1a;->b:Lnp4;
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lrp4;->f(Lnp4;Lnp4;)Z
+    invoke-direct {p3, p0}, Lx1a;-><init>(Landroid/content/Context;)V
 
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    iput-object p1, p0, Ly1a;->b:Lnp4;
-
-    iget-object p1, p0, Ly1a;->X:Ljava/lang/Object;
-
-    check-cast p1, Lvud;
-
-    invoke-interface {p1, p0}, Lvud;->c(Lnp4;)V
-
-    :cond_2
-    return-void
-
-    :pswitch_1
-    iget-object v0, p0, Ly1a;->b:Lnp4;
-
-    invoke-static {v0, p1}, Lrp4;->f(Lnp4;Lnp4;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    iput-object p1, p0, Ly1a;->b:Lnp4;
-
-    iget-object p1, p0, Ly1a;->X:Ljava/lang/Object;
-
-    check-cast p1, Ln68;
-
-    invoke-interface {p1, p0}, Ln68;->c(Lnp4;)V
-
-    :cond_3
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final d(Ljava/lang/Object;)V
-    .registers 8
-
-    iget v0, p0, Ly1a;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-boolean v0, p0, Ly1a;->o:Z
-
-    if-nez v0, :cond_1
-
-    iget-wide v0, p0, Ly1a;->c:J
-
-    const-wide/16 v2, 0x1
-
-    sub-long v2, v0, v2
-
-    iput-wide v2, p0, Ly1a;->c:J
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v0, v0, v4
-
-    if-lez v0, :cond_1
-
-    cmp-long v0, v2, v4
-
-    if-nez v0, :cond_0
-
-    const/4 v0, 0x1
+    sput-object p3, Ly1a;->g:Lx1a;
 
     goto :goto_0
 
+    :catchall_0
+    move-exception p0
+
+    goto :goto_1
+
     :cond_0
-    const/4 v0, 0x0
-
     :goto_0
-    iget-object v1, p0, Ly1a;->X:Ljava/lang/Object;
+    sget-object p0, Ly1a;->g:Lx1a;
 
-    check-cast v1, Ld4a;
+    iget-object p0, p0, Lx1a;->b:Landroid/os/Handler;
 
-    invoke-interface {v1, p1}, Ld4a;->d(Ljava/lang/Object;)V
+    const/4 p3, 0x0
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p0, p3, v1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
-    invoke-virtual {p0}, Ly1a;->b()V
+    move-result-object p0
 
-    :cond_1
+    invoke-virtual {p0}, Landroid/os/Message;->sendToTarget()V
+
+    monitor-exit v2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    invoke-virtual {v0, p1, p2}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
+
     return-void
-
-    :pswitch_0
-    iget-boolean v0, p0, Ly1a;->o:Z
-
-    if-eqz v0, :cond_2
-
-    goto :goto_1
-
-    :cond_2
-    iget-wide v0, p0, Ly1a;->c:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    if-nez v2, :cond_3
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ly1a;->o:Z
-
-    iget-object v0, p0, Ly1a;->b:Lnp4;
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    iget-object p0, p0, Ly1a;->X:Ljava/lang/Object;
-
-    check-cast p0, Lvud;
-
-    invoke-interface {p0, p1}, Lvud;->a(Ljava/lang/Object;)V
-
-    goto :goto_1
-
-    :cond_3
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Ly1a;->c:J
 
     :goto_1
-    return-void
-
-    :pswitch_1
-    iget-boolean v0, p0, Ly1a;->o:Z
-
-    if-eqz v0, :cond_4
-
-    goto :goto_2
-
-    :cond_4
-    iget-wide v0, p0, Ly1a;->c:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    if-nez v2, :cond_5
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ly1a;->o:Z
-
-    iget-object v0, p0, Ly1a;->b:Lnp4;
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    iget-object p0, p0, Ly1a;->X:Ljava/lang/Object;
-
-    check-cast p0, Ln68;
-
-    invoke-interface {p0, p1}, Ln68;->a(Ljava/lang/Object;)V
-
-    goto :goto_2
-
-    :cond_5
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    iput-wide v0, p0, Ly1a;->c:J
-
-    :goto_2
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final g()V
-    .registers 2
-
-    iget v0, p0, Ly1a;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Ly1a;->b:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-
-    :pswitch_0
-    iget-object p0, p0, Ly1a;->b:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-
-    :pswitch_1
-    iget-object p0, p0, Ly1a;->b:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->g()V
-
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final h()Z
-    .registers 2
-
-    iget v0, p0, Ly1a;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-object p0, p0, Ly1a;->b:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->h()Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_0
-    iget-object p0, p0, Ly1a;->b:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->h()Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_1
-    iget-object p0, p0, Ly1a;->b:Lnp4;
-
-    invoke-interface {p0}, Lnp4;->h()Z
-
-    move-result p0
-
-    return p0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .registers 3
-
-    iget v0, p0, Ly1a;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    iget-boolean v0, p0, Ly1a;->o:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ly1a;->o:Z
-
-    iget-object v0, p0, Ly1a;->b:Lnp4;
-
-    invoke-interface {v0}, Lnp4;->g()V
-
-    iget-object p0, p0, Ly1a;->X:Ljava/lang/Object;
-
-    check-cast p0, Ld4a;
-
-    invoke-interface {p0, p1}, Ld4a;->onError(Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
-
-    :pswitch_0
-    iget-boolean v0, p0, Ly1a;->o:Z
-
-    if-eqz v0, :cond_1
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    goto :goto_1
+    :try_start_1
+    monitor-exit v2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw p0
 
     :cond_1
-    const/4 v0, 0x1
+    invoke-virtual {v0, p1, p2, p3}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
 
-    iput-boolean v0, p0, Ly1a;->o:Z
-
-    iget-object p0, p0, Ly1a;->X:Ljava/lang/Object;
-
-    check-cast p0, Lvud;
-
-    invoke-interface {p0, p1}, Lvud;->onError(Ljava/lang/Throwable;)V
-
-    :goto_1
     return-void
-
-    :pswitch_1
-    iget-boolean v0, p0, Ly1a;->o:Z
-
-    if-eqz v0, :cond_2
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    goto :goto_2
-
-    :cond_2
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Ly1a;->o:Z
-
-    iget-object p0, p0, Ly1a;->X:Ljava/lang/Object;
-
-    check-cast p0, Ln68;
-
-    invoke-interface {p0, p1}, Ln68;->onError(Ljava/lang/Throwable;)V
-
-    :goto_2
-    return-void
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

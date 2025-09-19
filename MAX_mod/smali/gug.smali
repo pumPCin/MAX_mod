@@ -1,138 +1,73 @@
 .class public final Lgug;
-.super Ljava/lang/Object;
+.super Lhug;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lgug;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 
 # instance fields
-.field public final a:Landroid/os/Messenger;
+.field public final e:Landroid/view/WindowInsetsAnimation;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
+.method public constructor <init>(Landroid/view/WindowInsetsAnimation;)V
+    .registers 6
 
-    new-instance v0, Latg;
+    const/4 v0, 0x0
 
-    const/16 v1, 0x8
+    const-wide/16 v1, 0x0
 
-    invoke-direct {v0, v1}, Latg;-><init>(I)V
+    const/4 v3, 0x0
 
-    sput-object v0, Lgug;->CREATOR:Landroid/os/Parcelable$Creator;
+    invoke-direct {p0, v3, v0, v1, v2}, Lhug;-><init>(ILandroid/view/animation/Interpolator;J)V
 
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/IBinder;)V
-    .registers 3
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    new-instance v0, Landroid/os/Messenger;
-
-    invoke-direct {v0, p1}, Landroid/os/Messenger;-><init>(Landroid/os/IBinder;)V
-
-    iput-object v0, p0, Lgug;->a:Landroid/os/Messenger;
+    iput-object p1, p0, Lgug;->e:Landroid/view/WindowInsetsAnimation;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .registers 2
-
-    if-nez p1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    :try_start_0
-    iget-object p0, p0, Lgug;->a:Landroid/os/Messenger;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
-
-    move-result-object p0
-
-    check-cast p1, Lgug;
-
-    iget-object p1, p1, Lgug;->a:Landroid/os/Messenger;
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p1}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p0
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-
-    return p0
-
-    :catch_0
-    :goto_0
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final hashCode()I
-    .registers 1
-
-    iget-object p0, p0, Lgug;->a:Landroid/os/Messenger;
-
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    invoke-virtual {p0}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final a()J
     .registers 3
 
-    iget-object p0, p0, Lgug;->a:Landroid/os/Messenger;
+    iget-object p0, p0, Lgug;->e:Landroid/view/WindowInsetsAnimation;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p0}, Laxa;->d(Landroid/view/WindowInsetsAnimation;)J
 
-    invoke-virtual {p0}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
+    move-result-wide v0
 
-    move-result-object p0
+    return-wide v0
+.end method
 
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
+.method public final b()F
+    .registers 1
+
+    iget-object p0, p0, Lgug;->e:Landroid/view/WindowInsetsAnimation;
+
+    invoke-static {p0}, Laxa;->a(Landroid/view/WindowInsetsAnimation;)F
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final c()I
+    .registers 1
+
+    iget-object p0, p0, Lgug;->e:Landroid/view/WindowInsetsAnimation;
+
+    invoke-static {p0}, Laxa;->c(Landroid/view/WindowInsetsAnimation;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public final d(F)V
+    .registers 2
+
+    iget-object p0, p0, Lgug;->e:Landroid/view/WindowInsetsAnimation;
+
+    invoke-static {p0, p1}, Laxa;->w(Landroid/view/WindowInsetsAnimation;F)V
 
     return-void
 .end method

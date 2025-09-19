@@ -1,123 +1,108 @@
-.class public final Loug;
-.super Lcrg;
+.class public abstract Loug;
+.super Lnug;
 .source "SourceFile"
-
-# interfaces
-.implements Lcyg;
-
-
-# static fields
-.field public static final synthetic e:I
 
 
 # instance fields
-.field public final d:Ljd;
+.field public m:Lh97;
 
 
 # direct methods
-.method public constructor <init>(Ljd;)V
-    .registers 4
+.method public constructor <init>(Lvug;Landroid/view/WindowInsets;)V
+    .registers 3
 
-    const-string v0, "com.google.android.gms.location.ILocationCallback"
+    invoke-direct {p0, p1, p2}, Lnug;-><init>(Lvug;Landroid/view/WindowInsets;)V
 
-    const/4 v1, 0x5
+    const/4 p1, 0x0
 
-    invoke-direct {p0, v0, v1}, Lcrg;-><init>(Ljava/lang/String;I)V
-
-    iput-object p1, p0, Loug;->d:Ljd;
+    iput-object p1, p0, Loug;->m:Lh97;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final Y(Landroid/os/Parcel;I)Z
-    .registers 6
+.method public b()Lvug;
+    .registers 2
 
-    iget-object v0, p0, Loug;->d:Ljd;
+    iget-object p0, p0, Lnug;->c:Landroid/view/WindowInsets;
 
-    const/4 v1, 0x1
-
-    if-eq p2, v1, :cond_2
-
-    const/4 v2, 0x2
-
-    if-eq p2, v2, :cond_1
-
-    const/4 p1, 0x3
-
-    if-eq p2, p1, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    :cond_0
-    invoke-virtual {p0}, Loug;->a0()V
-
-    return v1
-
-    :cond_1
-    sget-object p0, Lcom/google/android/gms/location/LocationAvailability;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, p0}, Lotg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-virtual {p0}, Landroid/view/WindowInsets;->consumeStableInsets()Landroid/view/WindowInsets;
 
     move-result-object p0
 
-    check-cast p0, Lcom/google/android/gms/location/LocationAvailability;
+    const/4 v0, 0x0
 
-    invoke-static {p1}, Lotg;->c(Landroid/os/Parcel;)V
-
-    invoke-virtual {v0}, Ljd;->v()Lb05;
-
-    move-result-object p1
-
-    new-instance p2, Lhwf;
-
-    invoke-direct {p2, p0}, Lhwf;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {p1, p2}, Lb05;->a(Ljq7;)V
-
-    return v1
-
-    :cond_2
-    sget-object p0, Lcom/google/android/gms/location/LocationResult;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-static {p1, p0}, Lotg;->a(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+    invoke-static {v0, p0}, Lvug;->f(Landroid/view/View;Landroid/view/WindowInsets;)Lvug;
 
     move-result-object p0
 
-    check-cast p0, Lcom/google/android/gms/location/LocationResult;
-
-    invoke-static {p1}, Lotg;->c(Landroid/os/Parcel;)V
-
-    invoke-virtual {v0}, Ljd;->v()Lb05;
-
-    move-result-object p1
-
-    new-instance p2, Lvef;
-
-    invoke-direct {p2, p0}, Lvef;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {p1, p2}, Lb05;->a(Ljq7;)V
-
-    return v1
+    return-object p0
 .end method
 
-.method public final a0()V
-    .registers 3
+.method public c()Lvug;
+    .registers 2
 
-    iget-object v0, p0, Loug;->d:Ljd;
+    iget-object p0, p0, Lnug;->c:Landroid/view/WindowInsets;
 
-    invoke-virtual {v0}, Ljd;->v()Lb05;
+    invoke-virtual {p0}, Landroid/view/WindowInsets;->consumeSystemWindowInsets()Landroid/view/WindowInsets;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    invoke-static {v0, p0}, Lvug;->f(Landroid/view/View;Landroid/view/WindowInsets;)Lvug;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final h()Lh97;
+    .registers 5
+
+    iget-object v0, p0, Loug;->m:Lh97;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lnug;->c:Landroid/view/WindowInsets;
+
+    invoke-virtual {v0}, Landroid/view/WindowInsets;->getStableInsetLeft()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Landroid/view/WindowInsets;->getStableInsetTop()I
+
+    move-result v2
+
+    invoke-virtual {v0}, Landroid/view/WindowInsets;->getStableInsetRight()I
+
+    move-result v3
+
+    invoke-virtual {v0}, Landroid/view/WindowInsets;->getStableInsetBottom()I
+
+    move-result v0
+
+    invoke-static {v1, v2, v3, v0}, Lh97;->b(IIII)Lh97;
 
     move-result-object v0
 
-    new-instance v1, Lhqg;
+    iput-object v0, p0, Loug;->m:Lh97;
 
-    invoke-direct {v1, p0}, Lhqg;-><init>(Ljava/lang/Object;)V
+    :cond_0
+    iget-object p0, p0, Loug;->m:Lh97;
 
-    invoke-virtual {v0, v1}, Lb05;->a(Ljq7;)V
+    return-object p0
+.end method
 
-    return-void
+.method public m()Z
+    .registers 1
+
+    iget-object p0, p0, Lnug;->c:Landroid/view/WindowInsets;
+
+    invoke-virtual {p0}, Landroid/view/WindowInsets;->isConsumed()Z
+
+    move-result p0
+
+    return p0
 .end method

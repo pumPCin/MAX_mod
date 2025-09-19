@@ -1,145 +1,192 @@
 .class public final Le81;
-.super Lbud;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
+# interfaces
+.implements Lua4;
 
-# instance fields
-.field public final A0:Ld81;
+
+# static fields
+.field public static final a:Le81;
+
+.field public static final b:Lf81;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/FrameLayout;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0, p1}, Lphc;-><init>(Landroid/view/View;)V
+    new-instance v0, Le81;
 
-    sget v0, Lpyb;->call_opponents:I
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    sput-object v0, Le81;->a:Le81;
 
-    move-result-object p1
+    sget-object v0, Lf81;->b:Lf81;
 
-    check-cast p1, Ld81;
-
-    iput-object p1, p0, Le81;->A0:Ld81;
+    sput-object v0, Le81;->b:Lf81;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic A(Lpp7;Ljava/lang/Object;)V
-    .registers 3
+.method public final a()Lcb4;
+    .registers 1
 
-    check-cast p1, Ldpa;
+    sget-object p0, Le81;->b:Lf81;
 
-    invoke-virtual {p0, p1, p2}, Le81;->F(Ldpa;Ljava/lang/Object;)V
-
-    return-void
+    return-object p0
 .end method
 
-.method public final F(Ldpa;Ljava/lang/Object;)V
-    .registers 5
+.method public final b(Ljava/lang/String;Lxa4;Landroid/os/Bundle;)Lfb4;
+    .registers 15
 
-    instance-of v0, p2, Ljava/util/List;
+    sget-object p0, Le81;->b:Lf81;
 
-    if-eqz v0, :cond_0
+    iget-object p0, p0, Lcb4;->a:Ljava/util/LinkedHashSet;
 
-    check-cast p2, Ljava/util/List;
+    invoke-interface {p0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    move-result p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
 
     :cond_0
-    const/4 p2, 0x0
+    sget-object p0, Lf81;->b:Lf81;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    sget-object p0, Lf81;->c:Lxa4;
+
+    invoke-virtual {p2, p0}, Lxa4;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_1
+
+    new-instance p0, Lh;
+
+    const/4 v0, 0x7
+
+    invoke-direct {p0, v0}, Lh;-><init>(I)V
 
     :goto_0
-    iget-object p0, p0, Le81;->A0:Ld81;
-
-    if-eqz p2, :cond_4
-
-    invoke-interface {p2}, Ljava/util/Collection;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
+    move-object v9, p0
 
     goto :goto_2
 
     :cond_1
-    new-instance p1, Los;
+    sget-object p0, Lf81;->d:Lxa4;
 
-    const/4 v0, 0x2
+    invoke-virtual {p2, p0}, Lxa4;->equals(Ljava/lang/Object;)Z
 
-    invoke-direct {p1, v0, p2}, Los;-><init>(ILjava/lang/Object;)V
+    move-result p0
 
-    new-instance p2, Ld8;
+    if-eqz p0, :cond_3
 
-    const/16 v0, 0x14
+    const-string p0, "call_link"
 
-    invoke-direct {p2, v0}, Ld8;-><init>(I)V
+    invoke-virtual {p3, p0}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    new-instance v0, Lmp5;
+    move-result-object p0
 
-    sget-object v1, Lgad;->a:Lgad;
+    const-string v0, "call_title"
 
-    invoke-direct {v0, p1, p2, v1}, Lmp5;-><init>(Lv9d;Lj96;Lj96;)V
+    invoke-virtual {p3, v0}, Landroid/os/BaseBundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    sget-object p1, Lf41;->p0:Lf41;
+    move-result-object v0
 
-    invoke-static {v0, p1}, Lead;->T(Lv9d;Lj96;)Lgn5;
+    const-string v1, "call_chat_id"
 
-    move-result-object p1
+    invoke-static {v1, p3}, Lkua;->t(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/Long;
 
-    new-instance p2, Lfn5;
+    move-result-object v1
 
-    invoke-direct {p2, p1}, Lfn5;-><init>(Lgn5;)V
+    const-string v2, "is_link_call"
 
-    :goto_1
-    invoke-virtual {p2}, Lfn5;->hasNext()Z
+    invoke-static {v2, p3}, Lkua;->r(Ljava/lang/String;Landroid/os/Bundle;)Ljava/lang/Boolean;
 
-    move-result p1
+    move-result-object v2
 
-    if-eqz p1, :cond_3
+    if-eqz v2, :cond_2
 
-    invoke-virtual {p2}, Lfn5;->next()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-object p1
-
-    check-cast p1, Lcpa;
-
-    if-eqz p1, :cond_2
-
-    iget-object p1, p1, Lcpa;->a:Ldpa;
-
-    invoke-virtual {p0, p1}, Ld81;->setOpponents(Ldpa;)V
+    move-result v2
 
     goto :goto_1
 
     :cond_2
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    const/4 v2, 0x0
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
+    :goto_1
+    new-instance v3, Lc81;
 
-    throw p0
+    invoke-direct {v3, v1, p0, v0, v2}, Lc81;-><init>(Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    move-object v9, v3
+
+    goto :goto_2
 
     :cond_3
-    return-void
+    sget-object p0, Lf81;->e:Lxa4;
+
+    invoke-virtual {p2, p0}, Lxa4;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_4
+
+    const-string p0, "chat_id"
+
+    invoke-static {p0, p3}, Lkua;->z(Ljava/lang/String;Landroid/os/Bundle;)J
+
+    move-result-wide v0
+
+    new-instance p0, Ld81;
+
+    const/4 v2, 0x0
+
+    invoke-direct {p0, v0, v1, v2}, Ld81;-><init>(JI)V
+
+    goto :goto_0
+
+    :goto_2
+    new-instance v3, Lfb4;
+
+    const/16 v10, 0x18
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    move-object v4, p1
+
+    move-object v5, p2
+
+    move-object v6, p3
+
+    invoke-direct/range {v3 .. v10}, Lfb4;-><init>(Ljava/lang/String;Lxa4;Landroid/os/Bundle;ILdb4;Leb4;I)V
+
+    return-object v3
 
     :cond_4
-    :goto_2
-    invoke-virtual {p0, p1}, Ld81;->setOpponents(Ldpa;)V
+    move-object v5, p2
 
-    return-void
-.end method
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-.method public final x(Lpp7;)V
-    .registers 2
+    const-string p1, "invalid route "
 
-    check-cast p1, Ldpa;
+    invoke-static {p1, v5}, Lmw1;->g(Ljava/lang/String;Lxa4;)Ljava/lang/String;
 
-    iget-object p0, p0, Le81;->A0:Ld81;
+    move-result-object p1
 
-    invoke-virtual {p0, p1}, Ld81;->setOpponents(Ldpa;)V
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    return-void
+    throw p0
 .end method

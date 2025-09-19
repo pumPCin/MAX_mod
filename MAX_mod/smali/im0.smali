@@ -2,137 +2,93 @@
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-
-# static fields
-.field public static final e:[B
+# interfaces
+.implements Ltdd;
 
 
 # instance fields
-.field public final a:Ljava/lang/CharSequence;
+.field public final X:J
 
-.field public final b:I
+.field public final Y:J
 
-.field public c:I
+.field public final a:Llm0;
 
-.field public d:C
+.field public final b:J
+
+.field public final c:J
+
+.field public final o:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 4
-
-    const/16 v0, 0x700
-
-    new-array v1, v0, [B
-
-    sput-object v1, Lim0;->e:[B
-
-    const/4 v1, 0x0
-
-    :goto_0
-    if-ge v1, v0, :cond_0
-
-    sget-object v2, Lim0;->e:[B
-
-    invoke-static {v1}, Ljava/lang/Character;->getDirectionality(I)B
-
-    move-result v3
-
-    aput-byte v3, v2, v1
-
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/CharSequence;)V
-    .registers 2
+.method public constructor <init>(Llm0;JJJJJ)V
+    .registers 12
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lim0;->a:Ljava/lang/CharSequence;
+    iput-object p1, p0, Lim0;->a:Llm0;
 
-    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+    iput-wide p2, p0, Lim0;->b:J
 
-    move-result p1
+    iput-wide p4, p0, Lim0;->c:J
 
-    iput p1, p0, Lim0;->b:I
+    iput-wide p6, p0, Lim0;->o:J
+
+    iput-wide p8, p0, Lim0;->X:J
+
+    iput-wide p10, p0, Lim0;->Y:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()B
-    .registers 4
+.method public final c()Z
+    .registers 1
 
-    iget v0, p0, Lim0;->c:I
-
-    add-int/lit8 v0, v0, -0x1
-
-    iget-object v1, p0, Lim0;->a:Ljava/lang/CharSequence;
-
-    invoke-interface {v1, v0}, Ljava/lang/CharSequence;->charAt(I)C
-
-    move-result v0
-
-    iput-char v0, p0, Lim0;->d:C
-
-    invoke-static {v0}, Ljava/lang/Character;->isLowSurrogate(C)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget v0, p0, Lim0;->c:I
-
-    invoke-static {v1, v0}, Ljava/lang/Character;->codePointBefore(Ljava/lang/CharSequence;I)I
-
-    move-result v0
-
-    iget v1, p0, Lim0;->c:I
-
-    invoke-static {v0}, Ljava/lang/Character;->charCount(I)I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    iput v1, p0, Lim0;->c:I
-
-    invoke-static {v0}, Ljava/lang/Character;->getDirectionality(I)B
-
-    move-result p0
+    const/4 p0, 0x1
 
     return p0
+.end method
 
-    :cond_0
-    iget v0, p0, Lim0;->c:I
+.method public final e(J)Lrdd;
+    .registers 16
 
-    add-int/lit8 v0, v0, -0x1
+    iget-object v0, p0, Lim0;->a:Llm0;
 
-    iput v0, p0, Lim0;->c:I
+    invoke-interface {v0, p1, p2}, Llm0;->b(J)J
 
-    iget-char p0, p0, Lim0;->d:C
+    move-result-wide v1
 
-    const/16 v0, 0x700
+    iget-wide v9, p0, Lim0;->X:J
 
-    if-ge p0, v0, :cond_1
+    iget-wide v11, p0, Lim0;->Y:J
 
-    sget-object v0, Lim0;->e:[B
+    const-wide/16 v3, 0x0
 
-    aget-byte p0, v0, p0
+    iget-wide v5, p0, Lim0;->c:J
 
-    goto :goto_0
+    iget-wide v7, p0, Lim0;->o:J
 
-    :cond_1
-    invoke-static {p0}, Ljava/lang/Character;->getDirectionality(C)B
+    invoke-static/range {v1 .. v12}, Ljm0;->b(JJJJJJ)J
 
-    move-result p0
+    move-result-wide v0
 
-    :goto_0
-    return p0
+    new-instance p0, Lrdd;
+
+    new-instance v2, Lxdd;
+
+    invoke-direct {v2, p1, p2, v0, v1}, Lxdd;-><init>(JJ)V
+
+    invoke-direct {p0, v2, v2}, Lrdd;-><init>(Lxdd;Lxdd;)V
+
+    return-object p0
+.end method
+
+.method public final f()J
+    .registers 3
+
+    iget-wide v0, p0, Lim0;->b:J
+
+    return-wide v0
 .end method

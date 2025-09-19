@@ -1,56 +1,60 @@
-.class public final synthetic Lth4;
+.class public final Lth4;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lu5d;
+
+
+# static fields
+.field public static final f:Ljava/util/logging/Logger;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final a:Lse7;
 
-.field public final synthetic b:Llie;
+.field public final b:Ljava/util/concurrent/Executor;
+
+.field public final c:Lbf9;
+
+.field public final d:Lk95;
+
+.field public final e:Lute;
 
 
 # direct methods
-.method public synthetic constructor <init>(Llie;I)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput p2, p0, Lth4;->a:I
+    const-class v0, Lvef;
 
-    iput-object p1, p0, Lth4;->b:Llie;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
+
+    move-result-object v0
+
+    sput-object v0, Lth4;->f:Ljava/util/logging/Logger;
 
     return-void
 .end method
 
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lbf9;Lse7;Lk95;Lute;)V
+    .registers 6
 
-# virtual methods
-.method public final run()V
-    .registers 2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iget v0, p0, Lth4;->a:I
+    iput-object p1, p0, Lth4;->b:Ljava/util/concurrent/Executor;
 
-    iget-object p0, p0, Lth4;->b:Llie;
+    iput-object p2, p0, Lth4;->c:Lbf9;
 
-    packed-switch v0, :pswitch_data_0
+    iput-object p3, p0, Lth4;->a:Lse7;
 
-    iget-object p0, p0, Llie;->g:Lns1;
+    iput-object p4, p0, Lth4;->d:Lk95;
 
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lns1;->cancel(Z)Z
+    iput-object p5, p0, Lth4;->e:Lute;
 
     return-void
-
-    :pswitch_0
-    invoke-virtual {p0}, Llie;->d()V
-
-    return-void
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

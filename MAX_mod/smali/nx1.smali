@@ -1,29 +1,27 @@
-.class public abstract Lnx1;
+.class public final synthetic Lnx1;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
 
-# virtual methods
-.method public a(I)V
-    .registers 2
+# direct methods
+.method public static a(Landroid/content/Context;Ljava/lang/Object;Ljava/util/LinkedHashSet;)Lm68;
+    .registers 4
 
-    return-void
-.end method
+    :try_start_0
+    new-instance v0, Lm68;
 
-.method public b(ILux1;)V
-    .registers 3
+    invoke-direct {v0, p0, p1, p2}, Lm68;-><init>(Landroid/content/Context;Ljava/lang/Object;Ljava/util/LinkedHashSet;)V
+    :try_end_0
+    .catch Landroidx/camera/core/CameraUnavailableException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-void
-.end method
+    return-object v0
 
-.method public c(ILms3;)V
-    .registers 3
+    :catch_0
+    move-exception p0
 
-    return-void
-.end method
+    new-instance p1, Landroidx/camera/core/InitializationException;
 
-.method public d(I)V
-    .registers 2
+    invoke-direct {p1, p0}, Ljava/lang/Exception;-><init>(Ljava/lang/Throwable;)V
 
-    return-void
+    throw p1
 .end method

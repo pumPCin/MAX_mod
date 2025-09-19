@@ -1,205 +1,190 @@
 .class public final Lsj1;
-.super Ljava/lang/Object;
+.super Lure;
 .source "SourceFile"
 
 # interfaces
-.implements Lho1;
+.implements Lpc6;
 
 
 # instance fields
-.field public final synthetic a:Lone/me/calls/ui/ui/call/CallScreen;
+.field public synthetic X:Ljava/lang/Object;
+
+.field public final synthetic Y:Lone/me/calls/ui/ui/call/CallScreen;
 
 
 # direct methods
-.method public constructor <init>(Lone/me/calls/ui/ui/call/CallScreen;)V
-    .registers 2
+.method public constructor <init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/call/CallScreen;)V
+    .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lsj1;->Y:Lone/me/calls/ui/ui/call/CallScreen;
 
-    iput-object p1, p0, Lsj1;->a:Lone/me/calls/ui/ui/call/CallScreen;
+    const/4 p2, 0x2
+
+    invoke-direct {p0, p2, p1}, Lure;-><init>(ILkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final d()V
-    .registers 4
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
 
-    iget-object p0, p0, Lsj1;->a:Lone/me/calls/ui/ui/call/CallScreen;
+    check-cast p2, Lkotlin/coroutines/Continuation;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Lkm1;
+    invoke-virtual {p0, p1, p2}, Lsj1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
 
     move-result-object p0
 
-    invoke-virtual {p0}, Lkm1;->s()Lcb1;
+    check-cast p0, Lsj1;
 
-    move-result-object p0
+    sget-object p1, Lylf;->a:Lylf;
 
-    iget-object p0, p0, Lcb1;->k:Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lsj1;->o(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p0}, Lkv0;->G(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance v1, Ltbd;
-
-    invoke-direct {v1, v0}, Ltbd;-><init>(Landroid/content/Context;)V
-
-    sget v2, Lk3c;->call_link_share_dialog_share_link_description:I
-
-    filled-new-array {p0}, [Ljava/lang/Object;
-
-    move-result-object p0
-
-    invoke-virtual {v0, v2, p0}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-virtual {v1, p0}, Ltbd;->D(Ljava/lang/CharSequence;)V
-
-    sget p0, Lk3c;->call_link_share_dialog_share_link_dialog_intent_title:I
-
-    invoke-virtual {v0, p0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object p0
-
-    iput-object p0, v1, Ltbd;->a:Ljava/lang/Object;
-
-    iget-object p0, v1, Ltbd;->c:Ljava/lang/Object;
-
-    check-cast p0, Landroid/content/Intent;
-
-    const-string v0, "text/plain"
-
-    invoke-virtual {p0, v0}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-virtual {v1}, Ltbd;->E()V
-
-    return-void
+    return-object p1
 .end method
 
-.method public final g()V
+.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 4
 
-    sget-object v0, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lq1d;
+    new-instance v0, Lsj1;
 
-    iget-object p0, p0, Lsj1;->a:Lone/me/calls/ui/ui/call/CallScreen;
+    iget-object p0, p0, Lsj1;->Y:Lone/me/calls/ui/ui/call/CallScreen;
 
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Lkm1;
+    invoke-direct {v0, p2, p0}, Lsj1;-><init>(Lkotlin/coroutines/Continuation;Lone/me/calls/ui/ui/call/CallScreen;)V
 
-    move-result-object v0
+    iput-object p1, v0, Lsj1;->X:Ljava/lang/Object;
 
-    invoke-virtual {v0}, Lkm1;->s()Lcb1;
+    return-object v0
+.end method
 
-    move-result-object v0
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 12
 
-    iget-object v0, v0, Lcb1;->k:Ljava/lang/String;
+    invoke-static {p1}, Lqe5;->V(Ljava/lang/Object;)V
 
-    invoke-static {v0}, Lkv0;->G(Ljava/lang/String;)Ljava/lang/String;
+    iget-object p1, p0, Lsj1;->X:Ljava/lang/Object;
 
-    move-result-object v0
+    check-cast p1, Ljava/lang/Boolean;
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result p1
+
+    sget-object v0, Lone/me/calls/ui/ui/call/CallScreen;->N0:Lad4;
+
+    iget-object p0, p0, Lsj1;->Y:Lone/me/calls/ui/ui/call/CallScreen;
+
+    const/4 v0, 0x0
+
+    if-nez p1, :cond_1
+
+    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->F0()Lc23;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lc23;->b()Lxx3;
+
+    move-result-object p0
+
+    instance-of p1, p0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;
+
+    if-eqz p1, :cond_0
+
+    move-object v0, p0
+
+    check-cast v0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;
+
+    :cond_0
+    if-eqz v0, :cond_4
+
+    invoke-static {v0}, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;->B0(Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;)V
+
+    goto :goto_0
+
+    :cond_1
+    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->F0()Lc23;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lc23;->b()Lxx3;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_3
+
+    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->F0()Lc23;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lc23;->b()Lxx3;
+
+    move-result-object p1
+
+    instance-of v1, p1, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;
+
+    if-eqz v1, :cond_2
+
+    move-object v0, p1
+
+    check-cast v0, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;
+
+    :cond_2
+    if-eqz v0, :cond_4
+
+    invoke-virtual {p0, v0}, Lone/me/calls/ui/ui/call/CallScreen;->B0(Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;)V
+
+    goto :goto_0
+
+    :cond_3
+    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->F0()Lc23;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lc23;->c()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v1, v0}, Lbv7;->i(Landroid/content/Context;Ljava/lang/String;)V
+    const-string v2, "call_waiting_room_widget_tag"
 
-    invoke-static {}, Lbv7;->t()Z
+    invoke-static {v1, v2}, Lvyg;->b(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-nez v1, :cond_4
 
-    invoke-virtual {p0}, Lone/me/sdk/arch/Widget;->getContext()Landroid/content/Context;
+    iget-object p1, p1, Lc23;->a:Lrzc;
 
-    move-result-object v0
+    new-instance v4, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;
 
-    sget v1, Lk3c;->call_link_share_dialog_share_link_copy:I
+    iget-object v1, p0, Lone/me/calls/ui/ui/call/CallScreen;->s0:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-direct {v4, v1, v0}, Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;-><init>(Ljava/lang/String;Lld4;)V
 
-    move-result-object v0
+    invoke-virtual {p0, v4}, Lone/me/calls/ui/ui/call/CallScreen;->B0(Lone/me/calls/ui/ui/waitingroom/event/CallWaitingRoomEventsWidget;)V
 
-    new-instance v1, Lbka;
+    new-instance v3, Luzc;
 
-    invoke-direct {v1, p0}, Lbka;-><init>(Lone/me/sdk/arch/Widget;)V
+    const/4 v8, 0x0
 
-    invoke-virtual {v1, v0}, Lbka;->h(Ljava/lang/CharSequence;)V
+    const/4 v9, -0x1
 
-    new-instance p0, Lgq1;
+    const/4 v5, 0x0
 
-    const/4 v0, 0x3
+    const/4 v6, 0x0
 
-    const/4 v2, 0x0
+    const/4 v7, 0x0
 
-    invoke-direct {p0, v0, v2}, Lgq1;-><init>(ILh96;)V
+    invoke-direct/range {v3 .. v9}, Luzc;-><init>(Lxx3;Ljava/lang/String;Lcy3;Lcy3;ZI)V
 
-    invoke-virtual {v1, p0}, Lbka;->d(Ldka;)V
+    invoke-virtual {v3, v2}, Luzc;->d(Ljava/lang/String;)V
 
-    new-instance p0, Lkka;
+    invoke-virtual {p1, v3}, Lrzc;->S(Luzc;)V
 
-    const/4 v2, 0x0
+    :cond_4
+    :goto_0
+    sget-object p0, Lylf;->a:Lylf;
 
-    invoke-direct {p0, v2, v2, v2, v0}, Lkka;-><init>(IIII)V
-
-    invoke-virtual {v1, p0}, Lbka;->c(Lkka;)V
-
-    invoke-virtual {v1}, Lbka;->i()Laka;
-
-    :cond_0
-    return-void
-.end method
-
-.method public final i()V
-    .registers 2
-
-    sget-object v0, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lq1d;
-
-    iget-object p0, p0, Lsj1;->a:Lone/me/calls/ui/ui/call/CallScreen;
-
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Lkm1;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lkm1;->r()V
-
-    return-void
-.end method
-
-.method public final j()V
-    .registers 3
-
-    sget-object v0, Lone/me/calls/ui/ui/call/CallScreen;->I0:Lq1d;
-
-    iget-object p0, p0, Lsj1;->a:Lone/me/calls/ui/ui/call/CallScreen;
-
-    invoke-virtual {p0}, Lone/me/calls/ui/ui/call/CallScreen;->H0()Lkm1;
-
-    move-result-object p0
-
-    iget-object v0, p0, Lkm1;->K0:Lx65;
-
-    new-instance v1, Lpk1;
-
-    invoke-virtual {p0}, Lkm1;->s()Lcb1;
-
-    move-result-object p0
-
-    iget-object p0, p0, Lcb1;->k:Ljava/lang/String;
-
-    invoke-static {p0}, Lkv0;->G(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-direct {v1, p0}, Lpk1;-><init>(Ljava/lang/String;)V
-
-    invoke-static {v0, v1}, Luxf;->o(Lx65;Ljava/lang/Object;)V
-
-    return-void
+    return-object p0
 .end method

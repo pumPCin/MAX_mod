@@ -1,448 +1,250 @@
-.class public final Luad;
-.super Lrj3;
+.class public final synthetic Luad;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lor;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
-.field public final a:Lhsb;
+.field public final synthetic a:I
 
-.field public b:Z
-
-.field public c:Lf76;
-
-.field public volatile o:Z
+.field public final synthetic b:Lone/me/chatscreen/search/SearchMessageBottomWidget;
 
 
 # direct methods
-.method public constructor <init>(Lhsb;)V
-    .registers 2
+.method public synthetic constructor <init>(Lone/me/chatscreen/search/SearchMessageBottomWidget;I)V
+    .registers 3
+
+    iput p2, p0, Luad;->a:I
+
+    iput-object p1, p0, Luad;->b:Lone/me/chatscreen/search/SearchMessageBottomWidget;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Luad;->a:Lhsb;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .registers 4
+.method public final onClick(Landroid/view/View;)V
+    .registers 8
 
-    iget-boolean v0, p0, Luad;->o:Z
+    iget p1, p0, Luad;->a:I
 
-    if-eqz v0, :cond_0
+    iget-object p0, p0, Luad;->b:Lone/me/chatscreen/search/SearchMessageBottomWidget;
 
-    return-void
+    packed-switch p1, :pswitch_data_0
 
-    :cond_0
-    monitor-enter p0
+    iget-boolean p1, p0, Lone/me/chatscreen/search/SearchMessageBottomWidget;->Y:Z
 
-    :try_start_0
-    iget-boolean v0, p0, Luad;->o:Z
+    if-eqz p1, :cond_4
 
-    if-eqz v0, :cond_1
+    invoke-virtual {p0}, Lone/me/chatscreen/search/SearchMessageBottomWidget;->C0()Lfbd;
 
-    monitor-exit p0
+    move-result-object p0
 
-    return-void
+    iget-object p0, p0, Lfbd;->o:Ltm2;
 
-    :catchall_0
-    move-exception v0
+    iget-object p0, p0, Ltm2;->a:Ljava/lang/Object;
 
-    goto :goto_0
+    move-object v1, p0
 
-    :cond_1
-    const/4 v0, 0x1
+    check-cast v1, Lwm2;
 
-    iput-boolean v0, p0, Luad;->o:Z
+    iget-object p0, v1, Lwm2;->f:Ljava/util/ArrayList;
 
-    iget-boolean v1, p0, Luad;->b:Z
+    iget p1, v1, Lwm2;->d:I
 
-    if-eqz v1, :cond_3
+    add-int/lit8 p1, p1, 0x1
 
-    iget-object v0, p0, Luad;->c:Lf76;
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
-    if-nez v0, :cond_2
+    move-result v0
 
-    new-instance v0, Lf76;
+    if-gt p1, v0, :cond_2
 
-    const/4 v1, 0x2
+    iget p1, v1, Lwm2;->d:I
 
-    const/4 v2, 0x0
+    add-int/lit8 p1, p1, 0x1
 
-    invoke-direct {v0, v1, v2}, Lf76;-><init>(IB)V
+    iput p1, v1, Lwm2;->d:I
 
-    iput-object v0, p0, Luad;->c:Lf76;
-
-    :cond_2
-    sget-object v1, Lqx9;->a:Lqx9;
-
-    invoke-virtual {v0, v1}, Lf76;->t(Ljava/lang/Object;)V
-
-    monitor-exit p0
-
-    return-void
-
-    :cond_3
-    iput-boolean v0, p0, Luad;->b:Z
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object p0, p0, Luad;->a:Lhsb;
-
-    invoke-virtual {p0}, Lhsb;->b()V
-
-    return-void
-
-    :goto_0
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw v0
-.end method
-
-.method public final c(Lnp4;)V
-    .registers 5
-
-    iget-boolean v0, p0, Luad;->o:Z
-
-    const/4 v1, 0x1
-
-    if-nez v0, :cond_3
-
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Luad;->o:Z
+    iget-object v0, v1, Lwm2;->g:Ltm2;
 
     if-eqz v0, :cond_0
 
-    goto :goto_1
+    iget v2, v1, Lwm2;->k:I
+
+    invoke-virtual {v0, p1, v2}, Ltm2;->d(II)V
 
     :cond_0
-    iget-boolean v0, p0, Luad;->b:Z
+    iget-object p1, v1, Lwm2;->g:Ltm2;
 
-    if-eqz v0, :cond_2
+    if-eqz p1, :cond_1
 
-    iget-object v0, p0, Luad;->c:Lf76;
+    iget v0, v1, Lwm2;->d:I
 
-    if-nez v0, :cond_1
+    add-int/lit8 v0, v0, -0x1
 
-    new-instance v0, Lf76;
+    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    const/4 v1, 0x2
+    move-result-object v0
 
-    const/4 v2, 0x0
+    check-cast v0, Lg39;
 
-    invoke-direct {v0, v1, v2}, Lf76;-><init>(IB)V
-
-    iput-object v0, p0, Luad;->c:Lf76;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_2
+    invoke-virtual {p1, v0}, Ltm2;->e(Lg39;)V
 
     :cond_1
-    :goto_0
-    new-instance v1, Lnx9;
+    iget p1, v1, Lwm2;->d:I
 
-    invoke-direct {v1, p1}, Lnx9;-><init>(Lnp4;)V
+    add-int/lit8 p1, p1, 0x1
 
-    invoke-virtual {v0, v1}, Lf76;->t(Ljava/lang/Object;)V
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
-    monitor-exit p0
+    move-result v0
 
-    return-void
+    if-gt p1, v0, :cond_2
 
-    :cond_2
-    iput-boolean v1, p0, Luad;->b:Z
+    iget-object p1, v1, Lwm2;->g:Ltm2;
 
-    const/4 v1, 0x0
+    if-eqz p1, :cond_2
 
-    :goto_1
-    monitor-exit p0
+    iget p1, v1, Lwm2;->d:I
 
-    goto :goto_3
+    add-int/lit8 p1, p1, -0x1
 
-    :goto_2
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    throw p1
+    move-result-object p1
 
-    :cond_3
-    :goto_3
-    if-eqz v1, :cond_4
-
-    invoke-interface {p1}, Lnp4;->g()V
-
-    return-void
-
-    :cond_4
-    iget-object v0, p0, Luad;->a:Lhsb;
-
-    invoke-virtual {v0, p1}, Lhsb;->c(Lnp4;)V
-
-    invoke-virtual {p0}, Luad;->x()V
-
-    return-void
-.end method
-
-.method public final d(Ljava/lang/Object;)V
-    .registers 5
-
-    iget-boolean v0, p0, Luad;->o:Z
-
-    if-eqz v0, :cond_0
-
-    return-void
-
-    :cond_0
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Luad;->o:Z
-
-    if-eqz v0, :cond_1
-
-    monitor-exit p0
-
-    return-void
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_0
-
-    :cond_1
-    iget-boolean v0, p0, Luad;->b:Z
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Luad;->c:Lf76;
-
-    if-nez v0, :cond_2
-
-    new-instance v0, Lf76;
-
-    const/4 v1, 0x2
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, v2}, Lf76;-><init>(IB)V
-
-    iput-object v0, p0, Luad;->c:Lf76;
+    check-cast p1, Lg39;
 
     :cond_2
-    invoke-virtual {v0, p1}, Lf76;->t(Ljava/lang/Object;)V
+    iget-object v2, v1, Lwm2;->c:Ljava/lang/String;
 
-    monitor-exit p0
+    iget-boolean p1, v1, Lwm2;->h:Z
 
-    return-void
+    if-eqz p1, :cond_4
 
-    :cond_3
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Luad;->b:Z
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    iget-object v0, p0, Luad;->a:Lhsb;
-
-    invoke-virtual {v0, p1}, Lhsb;->d(Ljava/lang/Object;)V
-
-    invoke-virtual {p0}, Luad;->x()V
-
-    return-void
-
-    :goto_0
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final o(Ld4a;)V
-    .registers 2
-
-    iget-object p0, p0, Luad;->a:Lhsb;
-
-    invoke-virtual {p0, p1}, Ly0a;->a(Ld4a;)V
-
-    return-void
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
-    .registers 6
-
-    iget-boolean v0, p0, Luad;->o:Z
-
-    if-eqz v0, :cond_0
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_0
-    monitor-enter p0
-
-    :try_start_0
-    iget-boolean v0, p0, Luad;->o:Z
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    goto :goto_1
-
-    :cond_1
-    iput-boolean v1, p0, Luad;->o:Z
-
-    iget-boolean v0, p0, Luad;->b:Z
-
-    const/4 v2, 0x0
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Luad;->c:Lf76;
-
-    if-nez v0, :cond_2
-
-    new-instance v0, Lf76;
-
-    const/4 v1, 0x2
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v1, v3}, Lf76;-><init>(IB)V
-
-    iput-object v0, p0, Luad;->c:Lf76;
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_2
-
-    :cond_2
-    :goto_0
-    new-instance v1, Lox9;
-
-    invoke-direct {v1, p1}, Lox9;-><init>(Ljava/lang/Throwable;)V
-
-    iget-object p1, v0, Lf76;->c:Ljava/lang/Object;
-
-    check-cast p1, [Ljava/lang/Object;
-
-    aput-object v1, p1, v2
-
-    monitor-exit p0
-
-    return-void
-
-    :cond_3
-    iput-boolean v1, p0, Luad;->b:Z
-
-    move v1, v2
-
-    :goto_1
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    if-eqz v1, :cond_4
-
-    invoke-static {p1}, Lev0;->x(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :cond_4
-    iget-object p0, p0, Luad;->a:Lhsb;
-
-    invoke-virtual {p0, p1}, Lhsb;->onError(Ljava/lang/Throwable;)V
-
-    return-void
-
-    :goto_2
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    throw p1
-.end method
-
-.method public final test(Ljava/lang/Object;)Z
-    .registers 2
-
-    iget-object p0, p0, Luad;->a:Lhsb;
-
-    invoke-static {p0, p1}, Lqx9;->b(Ld4a;Ljava/lang/Object;)Z
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result p0
 
-    return p0
-.end method
+    iget p1, v1, Lwm2;->d:I
 
-.method public final x()V
-    .registers 3
+    sub-int/2addr p0, p1
 
-    :goto_0
-    monitor-enter p0
+    const/4 p1, 0x5
 
-    :try_start_0
-    iget-object v0, p0, Luad;->c:Lf76;
+    if-ge p0, p1, :cond_4
 
-    if-nez v0, :cond_0
+    iget-wide p0, v1, Lwm2;->j:J
 
-    const/4 v0, 0x0
+    const-wide/16 v3, 0x0
 
-    iput-boolean v0, p0, Luad;->b:Z
+    cmp-long p0, p0, v3
 
-    monitor-exit p0
+    if-eqz p0, :cond_4
 
-    return-void
+    if-eqz v2, :cond_4
 
-    :catchall_0
-    move-exception v0
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    goto :goto_1
+    move-result p0
 
-    :cond_0
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Luad;->c:Lf76;
-
-    monitor-exit p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    invoke-virtual {v0, p0}, Lf76;->B(Lor;)V
+    if-nez p0, :cond_3
 
     goto :goto_0
 
-    :goto_1
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :cond_3
+    const-string p0, "wm2"
 
-    throw v0
+    const-string p1, "Search for next messages"
+
+    invoke-static {p0, p1}, Ljtg;->l(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 p0, 0x0
+
+    iput-boolean p0, v1, Lwm2;->h:Z
+
+    iget-wide v3, v1, Lwm2;->j:J
+
+    iget-object p0, v1, Lwm2;->e:Lkotlinx/coroutines/internal/ContextScope;
+
+    new-instance v0, Lum2;
+
+    const/4 v5, 0x0
+
+    invoke-direct/range {v0 .. v5}, Lum2;-><init>(Lwm2;Ljava/lang/String;JLkotlin/coroutines/Continuation;)V
+
+    const/4 p1, 0x3
+
+    const/4 v1, 0x0
+
+    invoke-static {p0, v1, v1, v0, p1}, Lvyg;->u(Ly04;Lq04;Lb14;Lpc6;I)Lcae;
+
+    :cond_4
+    :goto_0
+    return-void
+
+    :pswitch_0
+    iget-boolean p1, p0, Lone/me/chatscreen/search/SearchMessageBottomWidget;->Z:Z
+
+    if-eqz p1, :cond_6
+
+    invoke-virtual {p0}, Lone/me/chatscreen/search/SearchMessageBottomWidget;->C0()Lfbd;
+
+    move-result-object p0
+
+    iget-object p0, p0, Lfbd;->o:Ltm2;
+
+    iget-object p0, p0, Ltm2;->a:Ljava/lang/Object;
+
+    check-cast p0, Lwm2;
+
+    iget-object p1, p0, Lwm2;->f:Ljava/util/ArrayList;
+
+    iget v0, p0, Lwm2;->d:I
+
+    add-int/lit8 v1, v0, -0x1
+
+    if-ltz v1, :cond_6
+
+    add-int/lit8 v0, v0, -0x1
+
+    iput v0, p0, Lwm2;->d:I
+
+    iget-object v1, p0, Lwm2;->g:Ltm2;
+
+    if-eqz v1, :cond_5
+
+    iget v2, p0, Lwm2;->k:I
+
+    invoke-virtual {v1, v0, v2}, Ltm2;->d(II)V
+
+    :cond_5
+    iget-object v0, p0, Lwm2;->g:Ltm2;
+
+    if-eqz v0, :cond_6
+
+    iget p0, p0, Lwm2;->d:I
+
+    add-int/lit8 p0, p0, -0x1
+
+    invoke-virtual {p1, p0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lg39;
+
+    invoke-virtual {v0, p0}, Ltm2;->e(Lg39;)V
+
+    :cond_6
+    return-void
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

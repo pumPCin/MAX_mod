@@ -1,84 +1,132 @@
-.class public final Lz08;
-.super Lxie;
+.class public final synthetic Lz08;
+.super Ljava/lang/Object;
 .source "SourceFile"
 
 # interfaces
-.implements Lx96;
+.implements Lbc6;
 
 
 # instance fields
-.field public final synthetic X:Lb18;
+.field public final synthetic X:I
+
+.field public final synthetic Y:I
+
+.field public final synthetic Z:I
+
+.field public final synthetic a:Ljava/lang/String;
+
+.field public final synthetic b:Ljava/lang/String;
+
+.field public final synthetic c:Ljava/lang/String;
+
+.field public final synthetic o:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lb18;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)V
+    .registers 8
 
-    iput-object p1, p0, Lz08;->X:Lb18;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const/4 p1, 0x2
+    iput-object p1, p0, Lz08;->a:Ljava/lang/String;
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    iput-object p2, p0, Lz08;->b:Ljava/lang/String;
+
+    iput-object p3, p0, Lz08;->c:Ljava/lang/String;
+
+    iput-object p4, p0, Lz08;->o:Ljava/lang/String;
+
+    iput p5, p0, Lz08;->X:I
+
+    iput p6, p0, Lz08;->Y:I
+
+    iput p7, p0, Lz08;->Z:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 6
 
-    check-cast p1, Lr04;
+    check-cast p1, Lya4;
 
-    check-cast p2, Lkotlin/coroutines/Continuation;
+    const-string v0, ":twofa/auth/password/check"
 
-    invoke-virtual {p0, p1, p2}, Lz08;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    iput-object v0, p1, Lya4;->a:Ljava/lang/String;
+
+    const-string v0, "track_id"
+
+    iget-object v1, p0, Lz08;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, v1, v0}, Lya4;->c(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p1, Lya4;->b:Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lz08;->b:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/net/Uri;->encode(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "hint="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v0, "email"
+
+    iget-object v1, p0, Lz08;->c:Ljava/lang/String;
+
+    invoke-virtual {p1, v1, v0}, Lya4;->c(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "phone"
+
+    iget-object v1, p0, Lz08;->o:Ljava/lang/String;
+
+    invoke-virtual {p1, v1, v0}, Lya4;->c(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "p_mn_l"
+
+    iget v1, p0, Lz08;->X:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1, v0}, Lya4;->c(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "p_mx_l"
+
+    iget v1, p0, Lz08;->Y:I
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1, v0}, Lya4;->c(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "h_mx_l"
+
+    iget p0, p0, Lz08;->Z:I
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    check-cast p0, Lz08;
+    invoke-virtual {p1, p0, v0}, Lya4;->c(Ljava/lang/Object;Ljava/lang/String;)V
 
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Lz08;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p1
-.end method
-
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
-
-    new-instance p1, Lz08;
-
-    iget-object p0, p0, Lz08;->X:Lb18;
-
-    invoke-direct {p1, p0, p2}, Lz08;-><init>(Lb18;Lkotlin/coroutines/Continuation;)V
-
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iget-object p0, p0, Lz08;->X:Lb18;
-
-    iget-object p0, p0, Lb18;->c:Lxh7;
-
-    invoke-interface {p0}, Lxh7;->getValue()Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Lqva;
-
-    const/4 p1, 0x2
-
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, p1, v0}, Lqva;->e(II)V
-
-    sget-object p0, Lncf;->a:Lncf;
+    sget-object p0, Lylf;->a:Lylf;
 
     return-object p0
 .end method

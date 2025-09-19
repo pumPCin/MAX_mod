@@ -1,92 +1,163 @@
-.class public final Lrma;
+.class public abstract Lrma;
 .super Ljava/lang/Object;
 .source "SourceFile"
 
-# interfaces
-.implements Ljava/util/concurrent/ThreadFactory;
 
+# static fields
+.field public static final a:I
 
-# instance fields
-.field public final X:Ljava/util/concurrent/atomic/AtomicInteger;
+.field public static final b:I
 
-.field public final a:Ljava/lang/String;
+.field public static final c:I
 
-.field public final b:Ljava/lang/Thread$UncaughtExceptionHandler;
+.field public static final d:I
 
-.field public final c:I
+.field public static final e:I
 
-.field public final o:Lxve;
+.field public static final f:I
+
+.field public static final g:I
+
+.field public static final h:I
+
+.field public static final i:I
+
+.field public static final j:I
+
+.field public static final k:I
+
+.field public static final l:I
+
+.field public static final m:I
+
+.field public static final n:I
+
+.field public static final o:I
+
+.field public static final p:I
+
+.field public static final q:I
+
+.field public static final r:I
+
+.field public static final s:I
+
+.field public static final t:I
+
+.field public static final u:I
+
+.field public static final v:I
+
+.field public static final w:I
+
+.field public static final x:I
+
+.field public static final y:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/Thread$UncaughtExceptionHandler;ILxve;)V
-    .registers 5
+.method static constructor <clinit>()V
+    .registers 1
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget v0, Lj4c;->add_24:I
 
-    iput-object p1, p0, Lrma;->a:Ljava/lang/String;
+    sput v0, Lrma;->a:I
 
-    iput-object p2, p0, Lrma;->b:Ljava/lang/Thread$UncaughtExceptionHandler;
+    sget v0, Lj4c;->call_fill_16:I
 
-    iput p3, p0, Lrma;->c:I
+    sput v0, Lrma;->b:I
 
-    iput-object p4, p0, Lrma;->o:Lxve;
+    sget v0, Lj4c;->cancel_outline_28:I
 
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicInteger;
+    sput v0, Lrma;->c:I
 
-    const/4 p2, 0x1
+    sget v0, Lj4c;->copy_24:I
 
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+    sput v0, Lrma;->d:I
 
-    iput-object p1, p0, Lrma;->X:Ljava/util/concurrent/atomic/AtomicInteger;
+    sget v0, Lj4c;->download_24:I
+
+    sput v0, Lrma;->e:I
+
+    sget v0, Lj4c;->edit_outline_24:I
+
+    sput v0, Lrma;->f:I
+
+    sget v0, Lj4c;->file_24:I
+
+    sput v0, Lrma;->g:I
+
+    sget v0, Lj4c;->forward_24:I
+
+    sput v0, Lrma;->h:I
+
+    sget v0, Lj4c;->ic_add_16:I
+
+    sput v0, Lrma;->i:I
+
+    sget v0, Lj4c;->ic_channel_outline_28:I
+
+    sput v0, Lrma;->j:I
+
+    sget v0, Lj4c;->ic_check_filled_24:I
+
+    sput v0, Lrma;->k:I
+
+    sget v0, Lj4c;->ic_delete_filled_apart_24:I
+
+    sput v0, Lrma;->l:I
+
+    sget v0, Lj4c;->ic_done_28:I
+
+    sput v0, Lrma;->m:I
+
+    sget v0, Lj4c;->ic_heart_outline_24:I
+
+    sput v0, Lrma;->n:I
+
+    sget v0, Lj4c;->ic_mention_24:I
+
+    sput v0, Lrma;->o:I
+
+    sget v0, Lj4c;->ic_next_16:I
+
+    sput v0, Lrma;->p:I
+
+    sget v0, Lj4c;->ic_search_outline_16:I
+
+    sput v0, Lrma;->q:I
+
+    sget v0, Lj4c;->ic_stub_outline_24:I
+
+    sput v0, Lrma;->r:I
+
+    sget v0, Lj4c;->ic_swap_24:I
+
+    sput v0, Lrma;->s:I
+
+    sget v0, Lj4c;->link_24:I
+
+    sput v0, Lrma;->t:I
+
+    sget v0, Lj4c;->media_24:I
+
+    sput v0, Lrma;->u:I
+
+    sget v0, Lj4c;->microphone_on_24:I
+
+    sput v0, Lrma;->v:I
+
+    sget v0, Lj4c;->settings_outline_24:I
+
+    sput v0, Lrma;->w:I
+
+    sget v0, Lj4c;->share_24_android:I
+
+    sput v0, Lrma;->x:I
+
+    sget v0, Lj4c;->support_24:I
+
+    sput v0, Lrma;->y:I
 
     return-void
-.end method
-
-
-# virtual methods
-.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .registers 5
-
-    iget-object v0, p0, Lrma;->X:Ljava/util/concurrent/atomic/AtomicInteger;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
-
-    move-result v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v2, p0, Lrma;->a:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v2, "-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Lqma;
-
-    invoke-direct {v1, v0, p1}, Lqma;-><init>(Ljava/lang/String;Ljava/lang/Runnable;)V
-
-    iget-object p1, p0, Lrma;->b:Ljava/lang/Thread$UncaughtExceptionHandler;
-
-    invoke-virtual {v1, p1}, Ljava/lang/Thread;->setUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
-
-    iget p1, p0, Lrma;->c:I
-
-    invoke-virtual {v1, p1}, Ljava/lang/Thread;->setPriority(I)V
-
-    iget-object p0, p0, Lrma;->o:Lxve;
-
-    iput-object p0, v1, Lqma;->b:Ljava/lang/Object;
-
-    return-object v1
 .end method

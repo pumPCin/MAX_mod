@@ -3,30 +3,22 @@
 .source "SourceFile"
 
 # interfaces
-.implements Lz5;
+.implements Lrm3;
 
 
 # instance fields
 .field public final synthetic a:I
 
-.field public final synthetic b:Leb2;
-
-.field public final synthetic c:J
-
-.field public final synthetic d:J
+.field public final synthetic b:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Leb2;JJI)V
-    .registers 7
+.method public synthetic constructor <init>(ZI)V
+    .registers 3
 
-    iput p6, p0, Lla2;->a:I
+    iput p2, p0, Lla2;->a:I
 
-    iput-object p1, p0, Lla2;->b:Leb2;
-
-    iput-wide p2, p0, Lla2;->c:J
-
-    iput-wide p4, p0, Lla2;->d:J
+    iput-boolean p1, p0, Lla2;->b:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,39 +27,29 @@
 
 
 # virtual methods
-.method public final run()V
-    .registers 8
+.method public final accept(Ljava/lang/Object;)V
+    .registers 3
 
     iget v0, p0, Lla2;->a:I
 
     packed-switch v0, :pswitch_data_0
 
-    iget-object v1, p0, Lla2;->b:Leb2;
+    check-cast p1, Ls72;
 
-    iget-wide v2, p0, Lla2;->c:J
+    iget-object p1, p1, Ls72;->b:Lvb2;
 
-    invoke-virtual {v1, v2, v3}, Leb2;->A(J)Lbc2;
+    iget-boolean p0, p0, Lla2;->b:Z
 
-    move-result-object v0
-
-    iget-wide v2, v0, Lfj0;->a:J
-
-    iget-object v4, v0, Lbc2;->b:Lac2;
-
-    iget-wide v5, p0, Lla2;->d:J
-
-    invoke-virtual/range {v1 .. v6}, Leb2;->i0(JLac2;J)V
+    iput-boolean p0, p1, Lvb2;->e0:Z
 
     return-void
 
     :pswitch_0
-    iget-wide v0, p0, Lla2;->c:J
+    iget-boolean p0, p0, Lla2;->b:Z
 
-    iget-wide v2, p0, Lla2;->d:J
+    check-cast p1, Leb2;
 
-    iget-object p0, p0, Lla2;->b:Leb2;
-
-    invoke-virtual {p0, v0, v1, v2, v3}, Leb2;->h0(JJ)V
+    iput-boolean p0, p1, Leb2;->h0:Z
 
     return-void
 

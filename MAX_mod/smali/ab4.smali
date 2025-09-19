@@ -1,63 +1,21 @@
-.class public final synthetic Lab4;
-.super Ljava/lang/Object;
+.class public final Lab4;
+.super Lso;
 .source "SourceFile"
 
-# interfaces
-.implements Llq7;
-.implements Lwl8;
 
-
-# instance fields
-.field public final synthetic a:F
-
-.field public final synthetic b:Ljava/lang/Object;
+# static fields
+.field public static final a:Lab4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;F)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 1
 
-    iput-object p1, p0, Lab4;->b:Ljava/lang/Object;
+    new-instance v0, Lab4;
 
-    iput p2, p0, Lab4;->a:F
+    invoke-direct {v0}, Lso;-><init>()V
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public b(Lsk8;)V
-    .registers 2
-
-    iget-object p1, p0, Lab4;->b:Ljava/lang/Object;
-
-    check-cast p1, Lxl8;
-
-    iget-object p1, p1, Lxl8;->f:Lml8;
-
-    iget-object p1, p1, Lml8;->s:Le7b;
-
-    iget p0, p0, Lab4;->a:F
-
-    invoke-virtual {p1, p0}, Le7b;->j0(F)V
-
-    return-void
-.end method
-
-.method public invoke(Ljava/lang/Object;)V
-    .registers 3
-
-    iget-object v0, p0, Lab4;->b:Ljava/lang/Object;
-
-    check-cast v0, Lxc;
-
-    iget p0, p0, Lab4;->a:F
-
-    check-cast p1, Lyc;
-
-    invoke-interface {p1, v0, p0}, Lyc;->l0(Lxc;F)V
+    sput-object v0, Lab4;->a:Lab4;
 
     return-void
 .end method

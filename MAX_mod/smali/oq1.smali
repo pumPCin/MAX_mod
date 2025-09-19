@@ -1,143 +1,73 @@
-.class public final Loq1;
-.super Lxie;
+.class public final enum Loq1;
+.super Ljava/lang/Enum;
 .source "SourceFile"
 
-# interfaces
-.implements Lx96;
 
+# static fields
+.field public static final enum a:Loq1;
 
-# instance fields
-.field public X:I
+.field public static final enum b:Loq1;
 
-.field public final synthetic Y:Lrq1;
+.field public static final synthetic c:[Loq1;
 
 
 # direct methods
-.method public constructor <init>(Lrq1;Lkotlin/coroutines/Continuation;)V
-    .registers 3
+.method static constructor <clinit>()V
+    .registers 4
 
-    iput-object p1, p0, Loq1;->Y:Lrq1;
+    new-instance v0, Loq1;
 
-    const/4 p1, 0x2
+    const-string v1, "NEGATIVE_POSITIVE"
 
-    invoke-direct {p0, p1, p2}, Lxie;-><init>(ILkotlin/coroutines/Continuation;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Loq1;->a:Loq1;
+
+    new-instance v1, Loq1;
+
+    const-string v2, "NEUTRAL_POSITIVE"
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    sput-object v1, Loq1;->b:Loq1;
+
+    filled-new-array {v0, v1}, [Loq1;
+
+    move-result-object v0
+
+    sput-object v0, Loq1;->c:[Loq1;
 
     return-void
 .end method
 
+.method public static valueOf(Ljava/lang/String;)Loq1;
+    .registers 2
 
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    const-class v0, Loq1;
 
-    check-cast p1, Lr04;
-
-    check-cast p2, Lkotlin/coroutines/Continuation;
-
-    invoke-virtual {p0, p1, p2}, Loq1;->m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     move-result-object p0
 
     check-cast p0, Loq1;
 
-    sget-object p1, Lncf;->a:Lncf;
-
-    invoke-virtual {p0, p1}, Loq1;->o(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p0
-
     return-object p0
 .end method
 
-.method public final m(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 3
+.method public static values()[Loq1;
+    .registers 1
 
-    new-instance p1, Loq1;
+    sget-object v0, Loq1;->c:[Loq1;
 
-    iget-object p0, p0, Loq1;->Y:Lrq1;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    invoke-direct {p1, p0, p2}, Loq1;-><init>(Lrq1;Lkotlin/coroutines/Continuation;)V
+    move-result-object v0
 
-    return-object p1
-.end method
-
-.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
-
-    iget v0, p0, Loq1;->X:I
-
-    const/4 v1, 0x1
-
-    if-eqz v0, :cond_1
-
-    if-ne v0, v1, :cond_0
-
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    goto :goto_0
-
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    const-string p1, "call to \'resume\' before \'invoke\' with coroutine"
-
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-
-    :cond_1
-    invoke-static {p1}, Lg53;->F(Ljava/lang/Object;)V
-
-    iput v1, p0, Loq1;->X:I
-
-    iget-object p1, p0, Loq1;->Y:Lrq1;
-
-    invoke-static {p1, p0}, Lrq1;->a(Lrq1;Lcx3;)Ljava/lang/Comparable;
-
-    move-result-object p1
-
-    sget-object p0, Ls04;->a:Ls04;
-
-    if-ne p1, p0, :cond_2
-
-    return-object p0
-
-    :cond_2
-    :goto_0
-    check-cast p1, Lmm3;
-
-    invoke-virtual {p1}, Lmm3;->n()J
-
-    move-result-wide v1
-
-    invoke-virtual {p1}, Lmm3;->d()Ljava/lang/String;
-
-    move-result-object p0
-
-    if-nez p0, :cond_3
-
-    const-string p0, ""
-
-    :cond_3
-    move-object v3, p0
-
-    invoke-virtual {p1}, Lmm3;->m()Ljava/lang/CharSequence;
-
-    move-result-object v4
-
-    sget-object p0, Lcl0;->o:Lcl0;
-
-    invoke-virtual {p1, p0}, Lmm3;->p(Lcl0;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {p1}, Lmm3;->w()Z
-
-    move-result v5
-
-    new-instance v0, Lnhf;
-
-    invoke-direct/range {v0 .. v6}, Lnhf;-><init>(JLjava/lang/String;Ljava/lang/CharSequence;ZLjava/lang/String;)V
+    check-cast v0, [Loq1;
 
     return-object v0
 .end method

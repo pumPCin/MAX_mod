@@ -1,76 +1,51 @@
 .class public final Lf3d;
-.super Ljava/lang/Object;
+.super Ljx3;
 .source "SourceFile"
-
-# interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lf3d;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 
 # instance fields
-.field public final a:Landroid/text/style/ForegroundColorSpan;
+.field public final synthetic X:Lj3d;
 
-.field public final b:Landroid/text/style/BackgroundColorSpan;
+.field public Y:I
+
+.field public synthetic o:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .registers 2
-
-    new-instance v0, Lz1b;
-
-    const/16 v1, 0x17
-
-    invoke-direct {v0, v1}, Lz1b;-><init>(I)V
-
-    sput-object v0, Lf3d;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/text/style/ForegroundColorSpan;Landroid/text/style/BackgroundColorSpan;)V
+.method public constructor <init>(Lj3d;Ljx3;)V
     .registers 3
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lf3d;->X:Lj3d;
 
-    iput-object p1, p0, Lf3d;->a:Landroid/text/style/ForegroundColorSpan;
-
-    iput-object p2, p0, Lf3d;->b:Landroid/text/style/BackgroundColorSpan;
+    invoke-direct {p0, p2}, Ljx3;-><init>(Lkotlin/coroutines/Continuation;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final describeContents()I
-    .registers 1
-
-    const/4 p0, 0x0
-
-    return p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
+.method public final o(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    iget-object v0, p0, Lf3d;->a:Landroid/text/style/ForegroundColorSpan;
+    iput-object p1, p0, Lf3d;->o:Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    iget p1, p0, Lf3d;->Y:I
 
-    iget-object p0, p0, Lf3d;->b:Landroid/text/style/BackgroundColorSpan;
+    const/high16 v0, -0x80000000
 
-    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    or-int/2addr p1, v0
 
-    return-void
+    iput p1, p0, Lf3d;->Y:I
+
+    const/4 p1, 0x0
+
+    const/4 v0, 0x0
+
+    iget-object v1, p0, Lf3d;->X:Lj3d;
+
+    invoke-virtual {v1, p1, v0, p0}, Lj3d;->b(Ljava/lang/String;ZLjx3;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
 .end method
