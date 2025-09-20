@@ -719,9 +719,260 @@
 
 # virtual methods
 .method public final c(Ljava/net/URL;Ljava/lang/String;)Ljava/net/HttpURLConnection;
-    .registers 3
+    .registers 10
 
+    :try_start_0
+    invoke-virtual {p1}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/net/HttpURLConnection;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
+
+    const/16 v0, 0x2710
+
+    invoke-virtual {p1, v0}, Ljava/net/URLConnection;->setConnectTimeout(I)V
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v1}, Ljava/net/URLConnection;->setUseCaches(Z)V
+
+    invoke-virtual {p1, v0}, Ljava/net/URLConnection;->setReadTimeout(I)V
+
+    const-string v0, "Content-Type"
+
+    const-string v2, "application/json"
+
+    invoke-virtual {p1, v0, v2}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v0, "Accept"
+
+    invoke-virtual {p1, v0, v2}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v0, "Content-Encoding"
+
+    const-string v2, "gzip"
+
+    invoke-virtual {p1, v0, v2}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v0, "Cache-Control"
+
+    const-string v2, "no-cache"
+
+    invoke-virtual {p1, v0, v2}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v0, "X-Android-Package"
+
+    iget-object v2, p0, Lyp5;->a:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v0, v3}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    iget-object p0, p0, Lyp5;->b:Lqyb;
+
+    invoke-interface {p0}, Lqyb;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lkq6;
+
+    if-eqz p0, :cond_0
+
+    :try_start_1
+    const-string v0, "x-firebase-client"
+
+    check-cast p0, Lnf4;
+
+    invoke-virtual {p0}, Lnf4;->a()Lz8h;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lzyd;->e(Lcom/google/android/gms/tasks/Task;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
+
+    invoke-virtual {p1, v0, p0}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_1
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/Thread;->interrupt()V
+
+    :catch_1
+    :cond_0
+    :goto_0
     const/4 p0, 0x0
 
-    return-object p0
+    :try_start_2
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2}, Lcxg;->a(Landroid/content/Context;)Lpl6;
+
+    move-result-object v3
+
+    iget-object v3, v3, Lpl6;->a:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v3
+
+    const/16 v4, 0x40
+
+    invoke-virtual {v3, v0, v4}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object v0
+
+    iget-object v3, v0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
+
+    if-eqz v3, :cond_4
+
+    array-length v3, v3
+
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_4
+
+    const-string v3, "SHA1"
+    :try_end_2
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2 .. :try_end_2} :catch_3
+
+    move v4, v1
+
+    :goto_1
+    const/4 v5, 0x2
+
+    if-ge v4, v5, :cond_1
+
+    :try_start_3
+    invoke-static {v3}, Ljava/security/MessageDigest;->getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+
+    move-result-object v5
+    :try_end_3
+    .catch Ljava/security/NoSuchAlgorithmException; {:try_start_3 .. :try_end_3} :catch_2
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_3 .. :try_end_3} :catch_3
+
+    if-nez v5, :cond_2
+
+    :catch_2
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    move-object v5, p0
+
+    :cond_2
+    if-nez v5, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    :try_start_4
+    iget-object v0, v0, Landroid/content/pm/PackageInfo;->signatures:[Landroid/content/pm/Signature;
+
+    aget-object v0, v0, v1
+
+    invoke-virtual {v0}, Landroid/content/pm/Signature;->toByteArray()[B
+
+    move-result-object v0
+
+    invoke-virtual {v5, v0}, Ljava/security/MessageDigest;->digest([B)[B
+
+    move-result-object v0
+
+    goto :goto_3
+
+    :cond_4
+    :goto_2
+    move-object v0, p0
+
+    :goto_3
+    if-nez v0, :cond_5
+
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    goto :goto_5
+
+    :cond_5
+    array-length v3, v0
+
+    add-int v4, v3, v3
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    :goto_4
+    if-ge v1, v3, :cond_6
+
+    sget-object v4, Lx4h;->a:[C
+
+    aget-byte v6, v0, v1
+
+    and-int/lit16 v6, v6, 0xf0
+
+    ushr-int/lit8 v6, v6, 0x4
+
+    aget-char v6, v4, v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    aget-byte v6, v0, v1
+
+    and-int/lit8 v6, v6, 0xf
+
+    aget-char v4, v4, v6
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_4
+
+    :cond_6
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+    :try_end_4
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_4 .. :try_end_4} :catch_3
+
+    goto :goto_5
+
+    :catch_3
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    :goto_5
+    const-string v0, "X-Android-Cert"
+
+    invoke-virtual {p1, v0, p0}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string p0, "x-goog-api-key"
+
+    invoke-virtual {p1, p0, p2}, Ljava/net/URLConnection;->addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object p1
+
+    :catch_4
+    new-instance p0, Lcom/google/firebase/installations/FirebaseInstallationsException;
+
+    const-string p1, "Firebase Installations Service is unavailable. Please try again later."
+
+    invoke-direct {p0, p1}, Lcom/google/firebase/installations/FirebaseInstallationsException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method

@@ -132,17 +132,11 @@
 
     sub-long/2addr v0, v2
 
-    const-wide/16 v2, 0x7d0
+    const-wide/16 v2, 0x7530
 
     cmp-long p1, v0, v2
 
     if-lez p1, :cond_3
-
-    invoke-virtual {p0}, Lxx3;->getRouter()Lrzc;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Lrzc;->D()Z
 
     :cond_3
     sget-object p0, Lylf;->a:Lylf;

@@ -84,7 +84,7 @@
 
     new-instance v3, Lcom/google/android/gms/common/api/Scope;
 
-    const-string v4, "http://localhost"
+    const-string v4, "https://www.googleapis.com/auth/games_lite"
 
     invoke-direct {v3, v1, v4}, Lcom/google/android/gms/common/api/Scope;-><init>(ILjava/lang/String;)V
 
@@ -92,7 +92,7 @@
 
     new-instance v4, Lcom/google/android/gms/common/api/Scope;
 
-    const-string v5, "http://localhost"
+    const-string v5, "https://www.googleapis.com/auth/games"
 
     invoke-direct {v4, v1, v5}, Lcom/google/android/gms/common/api/Scope;-><init>(ILjava/lang/String;)V
 

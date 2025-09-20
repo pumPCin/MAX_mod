@@ -112,24 +112,15 @@
 .method public getApiMethodName()Ljava/lang/String;
     .registers 1
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent;->apiMethodName:Ljava/lang/String;
+    const/4 p0, 0x0
 
     return-object p0
 .end method
 
 .method public getItems()Ljava/util/Map;
     .registers 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map<",
-            "Ljava/lang/String;",
-            "Lru/ok/android/externcalls/analytics/events/EventItemValue;",
-            ">;"
-        }
-    .end annotation
 
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/events/SdkMetricStatEvent;->items:Ljava/util/Map;
+    const/4 p0, 0x0
 
     return-object p0
 .end method

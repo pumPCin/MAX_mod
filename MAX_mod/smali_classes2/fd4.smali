@@ -890,7 +890,7 @@
 
     if-eqz p2, :cond_8
 
-    const-string p3, "localhost"
+    const-string p3, "gstatic.com"
 
     sget-object v0, Lqz7;->c:Lqz7;
 

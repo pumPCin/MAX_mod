@@ -23,7 +23,7 @@
 .method public final run()V
     .registers 5
 
-    const-string v0, "http://localhost"
+    const-string v0, "https://pagead2.googlesyndication.com/pagead/gen_204?id=gmob-apps"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 

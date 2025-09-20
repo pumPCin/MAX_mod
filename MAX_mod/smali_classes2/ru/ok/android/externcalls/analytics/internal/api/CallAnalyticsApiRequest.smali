@@ -73,35 +73,7 @@
 .end method
 
 .method private synthetic lambda$getOkParser$0(Lzh7;)Ljava/lang/Void;
-    .registers 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lru/ok/android/api/json/JsonParseException;
-        }
-    .end annotation
-
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->logger:Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "Send response: "
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-interface {p1}, Lzh7;->H()Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    const-string v0, "CallAnalyticsApiRequest"
-
-    invoke-interface {p0, v0, p1}, Lru/ok/android/externcalls/analytics/log/CallAnalyticsLogger;->d(Ljava/lang/String;Ljava/lang/String;)V
+    .registers 2
 
     const/4 p0, 0x0
 
@@ -248,7 +220,7 @@
 .method public shouldPost()Z
     .registers 1
 
-    const/4 p0, 0x1
+    const/4 p0, 0x0
 
     return p0
 .end method
@@ -278,71 +250,7 @@
 .end method
 
 .method public writeParams(Lgi7;)V
-    .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lru/ok/android/api/json/JsonSerializeException;
-        }
-    .end annotation
-
-    const-string v0, "data"
-
-    invoke-interface {p1, v0}, Lgi7;->k0(Ljava/lang/String;)Lgi7;
-
-    invoke-interface {p1}, Lgi7;->s()V
-
-    iget-object v0, p0, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->platform:Ljava/lang/String;
-
-    const/4 v1, 0x1
-
-    const-string v2, "platform"
-
-    invoke-direct {p0, p1, v2, v0, v1}, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->writeString(Lgi7;Ljava/lang/String;Ljava/lang/String;Z)V
-
-    const-string v0, "app_version"
-
-    iget-object v1, p0, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->appVersion:Ljava/lang/String;
-
-    invoke-direct {p0, p1, v0, v1}, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->writeString(Lgi7;Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v0, "sdk_type"
-
-    iget-object v1, p0, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->sdkType:Ljava/lang/String;
-
-    invoke-direct {p0, p1, v0, v1}, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->writeString(Lgi7;Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v0, "sdk_version"
-
-    iget-object v1, p0, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->sdkVersion:Ljava/lang/String;
-
-    invoke-direct {p0, p1, v0, v1}, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->writeString(Lgi7;Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v0, "version"
-
-    invoke-interface {p1, v0}, Lgi7;->k0(Ljava/lang/String;)Lgi7;
-
-    iget v0, p0, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->version:I
-
-    move-object v1, p1
-
-    check-cast v1, Lv1;
-
-    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Lv1;->d(Ljava/lang/String;)V
-
-    const-string v0, "items"
-
-    invoke-interface {p1, v0}, Lgi7;->k0(Ljava/lang/String;)Lgi7;
-
-    iget-object p0, p0, Lru/ok/android/externcalls/analytics/internal/api/CallAnalyticsApiRequest;->items:Lwr0;
-
-    invoke-virtual {p0, p1}, Lwr0;->write(Lgi7;)V
-
-    invoke-interface {p1}, Lgi7;->q()V
+    .registers 2
 
     return-void
 .end method

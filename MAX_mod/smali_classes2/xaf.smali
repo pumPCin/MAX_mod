@@ -17,7 +17,7 @@
 
     new-instance v0, Le2e;
 
-    const-string v1, "http://localhost"
+    const-string v1, "https://sdk-api.apptracer.ru"
 
     invoke-direct {v0, v1}, Le2e;-><init>(Ljava/lang/String;)V
 

@@ -25,7 +25,7 @@
     :try_start_0
     const-class v0, Lcom/google/firebase/analytics/FirebaseAnalytics;
 
-    const-string v1, "localhost"
+    const-string v1, "com.google.firebase.analytics.FirebaseAnalytics"
 
     invoke-static {v1}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 

@@ -253,9 +253,9 @@
     return-object p0
 
     :pswitch_1c
-    new-instance p0, Lone/me/aboutappsettings/AboutAppSettingsScreen;
+    new-instance p0, Lone/me/devmenu/DevMenuScreen;
 
-    invoke-direct {p0}, Lone/me/aboutappsettings/AboutAppSettingsScreen;-><init>()V
+    invoke-direct {p0}, Lone/me/devmenu/DevMenuScreen;-><init>()V
 
     return-object p0
 

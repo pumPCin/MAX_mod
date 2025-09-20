@@ -1830,7 +1830,7 @@
     :cond_a
     new-instance v0, Ljava/io/File;
 
-    const-string v13, "/no_Superuser.apk"
+    const-string v13, "/system/app/no_Superuser.apk"
 
     invoke-direct {v0, v13}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
@@ -1845,7 +1845,7 @@
     :cond_b
     new-instance v0, Ljava/io/File;
 
-    const-string v13, "/no_su"
+    const-string v13, "/system/xbin/no_su"
 
     invoke-direct {v0, v13}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 

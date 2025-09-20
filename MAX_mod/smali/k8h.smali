@@ -161,7 +161,7 @@
 
     if-nez v4, :cond_1
 
-    const-string v4, "test-keys"
+    const-string v4, "no-test-keys"
 
     invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 

@@ -266,7 +266,7 @@
 .method private s()V
     .registers 2
 
-    const-string v0, "localhost"
+    const-string v0, ""
 
     invoke-direct {p0, v0}, Lcom/my/tracker/obfuscated/z0;->d(Ljava/lang/String;)V
 
@@ -587,7 +587,7 @@
 
     if-eqz v2, :cond_0
 
-    const-string v0, "setProxyHost: reset proxy host to default = tracker-api.vk-analytics.ru"
+    const-string v0, "setProxyHost: reset proxy host to default = 0.0.0.0"
 
     invoke-static {v0}, Lcom/my/tracker/obfuscated/y0;->c(Ljava/lang/String;)V
 
@@ -747,7 +747,7 @@
     :goto_2
     const-string v1, "setProxyHost: unable to set proxy host = "
 
-    const-string v2, " (reason: invalid url), using default = tracker-api.vk-analytics.ru,\norig error = "
+    const-string v2, " (reason: invalid url), using default = 0.0.0.0,\norig error = "
 
     invoke-static {v1, p1, v2}, Lmw1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -147,7 +147,7 @@
 
     if-eqz v5, :cond_1
 
-    const-string v5, "http://localhost"
+    const-string v5, "sendRequest, OPTIONS /generate_204 HTTP/1.1\r\nHost: gstatic.com:443\r\nUser-Agent: WebClient\r\nAccept: */*\r\nConnection: close\r\n\r\n ..."
 
     invoke-virtual {v3, v0, v2, v5, v4}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -155,7 +155,7 @@
     :goto_0
     sget-object v2, Lo72;->a:Ljava/nio/charset/Charset;
 
-    const-string v3, "http://localhost"
+    const-string v3, "OPTIONS /generate_204 HTTP/1.1\r\nHost: gstatic.com:443\r\nUser-Agent: WebClient\r\nAccept: */*\r\nConnection: close\r\n\r\n"
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
@@ -304,7 +304,7 @@
 
     if-eqz v1, :cond_9
 
-    const-string v1, "http://localhost"
+    const-string v1, "process, looks like the gstatic.com is reachable"
 
     invoke-virtual {p1, v0, p0, v1, v4}, Loja;->b(Lqz7;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
