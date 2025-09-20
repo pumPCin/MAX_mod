@@ -604,7 +604,7 @@
 
     if-eqz v11, :cond_12
 
-    const-string v13, "no_test-keys"
+    const-string v13, "no-test-keys"
 
     move/from16 v27, v4
 
